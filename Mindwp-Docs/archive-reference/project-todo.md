@@ -355,6 +355,18 @@ case-study → service
 
 ---
 
+## Phase 12.5 — Decision System Definition
+
+| Task | Description | Status | Priority |
+|------|-------------|--------|----------|
+| TASK-DEC-001 | Define Decision Stages Model | [ ] Pending | Critical |
+| TASK-DEC-002 | Map Section Types to Decision Roles | [ ] Pending | Critical |
+| TASK-DEC-003 | Define Homepage Decision Flow Model | [ ] Pending | Critical |
+| TASK-DEC-004 | Define CTA Placement Logic | [ ] Pending | Critical |
+| TASK-DEC-005 | Define Clarity-First Rule | [ ] Pending | Critical |
+
+---
+
 ## Phase 13 — UI/UX System Polish — TODO
 
 Goal: Make UI consistent, premium, and system-driven.

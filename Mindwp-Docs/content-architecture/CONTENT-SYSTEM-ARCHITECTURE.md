@@ -2281,4 +2281,32 @@ Use this checklist before approving copy or structure updates in any tier, indus
 
 ---
 
+## Decision Layer (Human-Guided)
+
+### Purpose
+
+Translate system insights into human decisions.
+
+### System Role
+
+System provides:
+- analysis
+- scoring
+- insights
+
+Human performs:
+- interpretation
+- prioritization
+- content decisions
+
+### Flow
+
+Analyze -> Insight -> Decision -> Update -> Re-validate
+
+### Important Rule
+
+System MUST NOT auto-fix content or UI.
+
+---
+
 END OF DOCUMENT.

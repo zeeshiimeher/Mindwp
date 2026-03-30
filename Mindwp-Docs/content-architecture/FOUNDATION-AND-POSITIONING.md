@@ -470,6 +470,25 @@ Before finalising any page rewrite or new page, apply these checks:
 
 If any check fails, rewrite before publishing.
 
+## Clarity-First Rule
+
+### Core Principle
+
+Clarity must come before persuasion, curiosity, or explanation.
+
+### Rules
+
+- User must understand WHAT this is early
+- Avoid delayed definitions
+- Avoid layered abstraction before clarity
+- Reduce cognitive effort
+
+### Anti-Patterns
+
+- Explaining before defining
+- Using internal/system language early
+- Forcing users to "figure it out"
+
 ---
 
 ## 2. Strategic Positioning

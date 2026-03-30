@@ -450,6 +450,90 @@ Within each domain, prioritise pages with the most vocabulary violations first.
 
 ---
 
+## Decision Framework (Mandatory)
+
+### Purpose
+
+Define how content guides user decisions instead of only presenting information.
+
+### Core Rule
+
+Every page must follow a Decision Progression Model.
+
+### Decision Stages
+
+1. Awareness — "Do I have this problem?"
+2. Understanding — "What is this about?"
+3. Trust — "Can I trust this?"
+4. Evaluation — "Is this right for me?"
+5. Decision — "Should I take action?"
+
+### Section-Level Requirement
+
+For every section:
+
+- Define its Decision Stage
+- Define User State
+- Define Intended Outcome
+
+### Enforcement Rules
+
+- No section exists without a decision role
+- Sections must follow logical progression
+- Skipping stages must be intentional and documented
+
+## Homepage Decision Flow Model (Critical)
+
+### Objective
+
+Ensure homepage guides users from clarity to decision without confusion.
+
+### Required Flow Order
+
+1. Clear Positioning (Hero)
+2. Problem Recognition
+3. Simple Definition (Core Concept)
+4. Authority / Differentiation
+5. System Understanding (How it works)
+6. Trust / Proof
+7. Decision Readiness
+8. Primary CTA
+
+### Critical Rules
+
+- Core concept MUST be introduced early (within first 3 sections)
+- Do NOT delay definition for curiosity
+- Do NOT place primary CTA before understanding
+
+## CTA Placement Logic
+
+### Core Principle
+
+CTA placement is based on user readiness, not layout or design.
+
+### CTA Types
+
+1. Early CTA (Low Pressure)
+   - Optional
+   - Exploration-focused
+   - No decision expectation
+
+2. Mid CTA (Contextual)
+   - Reinforces understanding
+   - Light intent
+
+3. Primary CTA (Decision)
+   - Only after trust + clarity
+   - Direct action (Start Conversation)
+
+### Forbidden Patterns
+
+- CTA based on section count
+- CTA placed before concept clarity
+- CTA used only for visual balance
+
+---
+
 ## 11. Code Comment System (LOCKED)
 
 **Purpose:** Ensure all code comments describe system behavior, not development history.
