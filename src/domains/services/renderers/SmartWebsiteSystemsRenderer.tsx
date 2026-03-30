@@ -8,6 +8,7 @@ import {
   TechnologyCardsSection,
 } from '@/components/reusable/sections';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
+import { CTASection } from '@/components/reusable/single/CTASection';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { IconBenefitCard } from '@/components/reusable/single/IconBenefitCard';
@@ -29,6 +30,10 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
   const ctaDescription = data.cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
   const ctaButtonText = data.cta?.buttonText ?? SERVICE_RENDERER_DEFAULTS.ctaButtonText;
   const ctaButtonHref = data.cta?.buttonHref ?? SERVICE_RENDERER_DEFAULTS.ctaButtonHref;
+  const inlineCtaTitle = data.inlineCta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
+  const inlineCtaDescription = data.inlineCta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
+  const inlineCtaButtonText = data.inlineCta?.buttonText ?? SERVICE_RENDERER_DEFAULTS.ctaButtonText;
+  const inlineCtaButtonHref = data.inlineCta?.buttonHref ?? SERVICE_RENDERER_DEFAULTS.ctaButtonHref;
 
   return (
     <>
@@ -46,7 +51,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
 
           {/* Value Blocks */}
           {data.sections.value && (
-            <section className='smart-websites-value l-section bg-background'>
+            <section className='smart-websites-value l-section'>
               <div className='l-container'>
                 <SectionIntro
                   title={data.sections.value.header.title}
@@ -67,28 +72,29 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                 </div>
               </div>
             </section>
-          )}
-          {data.sections.coreLayer && (
-            <ServiceSpectrumCardsSection
-              title={data.sections.coreLayer.header.title}
-              description={data.sections.coreLayer.header.description}
-              cards={data.sections.coreLayer.cards}
-              backgroundColor='bg-background'
-              cssPrefix='smart-websites-core-layer'
-            />
-          )}
-          {/* Before/After Comparison */}
+          )}{/* Before/After Comparison */}
           {data.sections.comparison && (
             <ComparisonSection
               title={data.sections.comparison.header.title}
               description={data.sections.comparison.header.description}
               comparisons={data.sections.comparison.items}
-              cssPrefix='smart-websites-comparison'
+              cssPrefix='smart-websites-comparison bg-background'
             />
           )}
+           {/* What's Included */}
+          {data.sections.included && (
+            <ChecklistCardsSection
+              title={data.sections.included.header.title}
+              description={data.sections.included.header.description}
+              items={data.sections.included.items}
+              columns={2}
+              cssPrefix='smart-websites-included'
+            />
+          )}
+
           {/* Implementation Types */}
           {data.sections.types && (
-            <section className='smart-websites-types l-section bg-muted/30'>
+            <section className='smart-websites-types l-section bg-background '>
               <div className='l-container'>
                 <SectionIntro
                   title={data.sections.types.header.title}
@@ -111,18 +117,21 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               </div>
             </section>
           )}
-
-          {/* What's Included */}
-          {data.sections.included && (
-            <ChecklistCardsSection
-              title={data.sections.included.header.title}
-              description={data.sections.included.header.description}
-              items={data.sections.included.items}
-              columns={2}
-              cssPrefix='smart-websites-included'
+          <CTASection
+            title={inlineCtaTitle}
+            description={inlineCtaDescription}
+            primaryAction={{ label: inlineCtaButtonText, href: inlineCtaButtonHref, variant: 'white' }}
+            cssPrefix='smart-websites-cta bg-background'
+          />
+          {data.sections.coreLayer && (
+            <ServiceSpectrumCardsSection
+              title={data.sections.coreLayer.header.title}
+              description={data.sections.coreLayer.header.description}
+              cards={data.sections.coreLayer.cards}
+              backgroundColor=''
+              cssPrefix='smart-websites-core-layer'
             />
           )}
-
           {/* Strategic Bridge */}
           {data.sections.visibilityFoundations && (
             <StackedFeatureListSection
@@ -248,10 +257,10 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             title={ctaTitle}
             description={ctaDescription}
             primaryAction={{ label: ctaButtonText, href: ctaButtonHref, variant: 'white' }}
-            cssPrefix='smart-websites-cta'
+            cssPrefix='smart-websites-cta bg-background'
           />
 
-          <ServiceRelatedServicesSection serviceSlug={slug} />
+          <ServiceRelatedServicesSection serviceSlug={slug} cssPrefix='bg-white' />
         </main>
       </ErrorBoundary>
     </>

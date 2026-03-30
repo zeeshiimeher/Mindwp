@@ -240,13 +240,13 @@ export const homepageData: HomepageData = {
   },
   hero: {
     badge: 'Smart Websites for Service Businesses',
-    title: 'A website that actually helps run your service business',
+    title: 'A website that helps your service business bring in and handle enquiries properly',
     description:
-      'We build Smart Websites that connect how people find you, how they get in touch, and what happens next — so your website works as part of the business, not just a page people land on.',
+      'We build Smart Websites that connect how people find you, how they get in touch, and how enquiries are handled — so your website works as part of the business, not just a page people land on.',
     valueProps: [
-      'Built to bring in the right enquiries',
-      'Set up to show in search and maps',
-      'Designed to grow with your business',
+      'Right Enquiries',
+      'Search Ready',
+      'Built to Grow',
     ],
     primaryAction: {
       label: 'Start a Conversation',
@@ -260,7 +260,7 @@ export const homepageData: HomepageData = {
   },
   infrastructureGaps: {
     badge: 'Where Websites Fall Short',
-    title: 'When your website is not doing its job',
+    title: 'Traffic that doesn’t turn into enquiries',
     description:
       'Most service businesses have a website that looks fine but does not do enough. It does not help people find you, does not make it easy to get in touch, and does not support follow-up — leading to missed opportunities and unnecessary manual work.',
     problems: [
@@ -275,9 +275,9 @@ export const homepageData: HomepageData = {
       },
       {
         icon: Workflow,
-        title: 'Enquiries without a clear next step',
+        title: 'Unclear enquiry handling',
         description:
-          'When enquiries come in without a clear next step, responses become inconsistent and time gets lost.',
+          'When enquiries come in without clear handling, responses become inconsistent and time gets lost.',
         solution:
           'We set up clear steps — forms, notifications, and team assignments — so every enquiry gets a proper response.',
         impact: 'Inconsistent follow-up',
@@ -286,7 +286,7 @@ export const homepageData: HomepageData = {
         icon: SlidersHorizontal,
         title: 'Traffic without a clear next step',
         description:
-          'Website visits don’t become enquiries when the journey and decision path aren’t clear.',
+          'Website visits don’t become enquiries when the journey and decision path aren’t clear or easy to follow.',
         solution:
           'We implement clear page structure and calls-to-action that guide visitors to the right next step—without pressure.',
         impact: 'Unclear on-site journey',
@@ -295,9 +295,9 @@ export const homepageData: HomepageData = {
   },
   smartWebsiteFramework: {
     badge: 'The Smart Website Difference',
-    title: 'What makes a Smart Website different',
+    title: 'How a Smart Website actually works',
     description:
-      'A Smart Website is built around how your business actually works. How people find you, how they get in touch, and how you follow up are all connected — instead of working in separate pieces.',
+      'A Smart Website connects how people find you, how they get in touch, and how you or your team handles enquiries — so nothing is missed and every enquiry is handled properly.',
     journeyTitle: 'How it works: from search to follow-up',
     principles: [
       {
@@ -341,19 +341,19 @@ export const homepageData: HomepageData = {
     ],
     journeyNote: 'Each step connects to the next',
     cta: {
-      title: 'Want your website to handle enquiries properly?',
+      title: 'See how this could work for your business',
       description:
-        'We will look at how your website handles search and enquiries today, and show you what could work better.',
+        'We can walk through how your website currently handles enquiries and where a more structured setup could make things easier.',
       primaryAction: {
-        label: 'Start a Conversation',
+        label: 'See How It Works',
         href: '/contact',
       },
     },
   },
   implementationSection: {
-    title: 'Built around how your business actually runs',
+    title: 'Built to match how your business actually runs',
     description:
-      'We build Smart Websites as a working part of your business — connecting your services, enquiry handling, and follow-up so your team always knows what to do next.',
+      'We build Smart Websites as a working part of your business — connecting your services, enquiry handling, and follow-up so your team can handle work consistently.',
     steps: [
       {
         number: '01',
@@ -385,7 +385,7 @@ export const homepageData: HomepageData = {
     badge: 'How Enquiries Flow',
     title: 'From first enquiry to reliable follow-up',
     description:
-      'Every enquiry is captured, sent to the right person, and recorded properly. Follow-up happens consistently — so nothing slips through the cracks.',
+      'Every enquiry is captured, sent to the right person, and recorded properly. Follow-up happens consistently — so enquiries are handled properly and nothing slips through the cracks.',
     steps: [
       {
         number: '01',
@@ -431,9 +431,9 @@ export const homepageData: HomepageData = {
       },
     ],
     cta: {
-      title: 'Let us look at how your enquiries and follow-up work today.',
+      title: 'Let’s review how your enquiries and follow-up are currently handled',
       description:
-        'We will review how enquiries come in, who handles them, how they are recorded, and where things might be falling through — then suggest practical fixes.',
+        'We will look at how enquiries come in, how your team handles them, and where things could be made more consistent and easier to manage.',
       primaryAction: {
         label: 'Start a Conversation',
         href: '/contact',
@@ -441,7 +441,7 @@ export const homepageData: HomepageData = {
     },
   },
   systemCapabilities: {
-    title: 'What is inside a Smart Website',
+    title: 'What’s inside your Smart Website',
     description:
       'These are the main parts that work together inside your Smart Website — handling enquiries, bookings, follow-up, and search visibility as one connected system.',
     visualMetaLabel: 'Component overview',
@@ -576,14 +576,14 @@ export const homepageData: HomepageData = {
     ],
   },
   infrastructureLayers: {
-    title: 'What sits inside a Smart Website',
+    title: 'What your Smart Website is built on',
     description:
       'A Smart Website is the foundation. Everything else — enquiry handling, bookings, records, and follow-up — works on top of it as one connected system.',
     foundation: {
       badge: 'Foundation',
       title: 'Smart Website',
       description:
-        'Clear page structure, easy-to-follow journeys, and reliable enquiry handling — forming the foundation of a website that supports how your business runs day to day.',
+        'Clear page structure, easy-to-follow journeys, and reliable enquiry handling — forming the foundation of a website that supports how your business runs reliably day to day.',
       checklist: [
         'Services clearly organised and easy to navigate',
         'Clear contact options with obvious next steps',
@@ -710,7 +710,7 @@ export const homepageData: HomepageData = {
     badge: 'Search Visibility Over Time',
     title: 'How your search visibility grows over time',
     description:
-      'SEO results do not happen overnight, and they do not grow in a straight line. Here is how most service businesses see progress when the work is done properly.',
+      'SEO results do not happen overnight, and they do not grow in a straight line. Here is how progress typically develops when the work is done properly.',
     items: [
       {
         phase: 'Stage 1',
@@ -762,7 +762,7 @@ export const homepageData: HomepageData = {
   caseStudies: {
     title: 'How this works in real businesses',
     description:
-      'Examples of Smart Websites improving enquiry handling and day-to-day reliability.',
+      'Examples of Smart Websites improving enquiry handling and making day-to-day operations more reliable.',
     quote:
       'We moved from a basic website to a connected system. Enquiries now land in the right place, follow-up is clearer, and the business feels easier and more organised day to day.',
     quoteAuthor: '— Lisa Chen, Pawfect Mobile Grooming, Birmingham',
@@ -821,9 +821,9 @@ export const homepageData: HomepageData = {
   },
   cta: {
     footer: {
-      title: 'Considering a more structured approach?',
+      title: 'If your website is not supporting enquiries properly, it is worth fixing',
       description:
-        'If you are wondering whether your website could do more to support enquiries and search visibility, we are happy to take a look and discuss what makes sense.',
+        'We can look at how your website is currently set up, how enquiries are handled, and what could be improved to make enquiry handling more reliable.',
       primaryAction: {
         label: 'Start a Conversation',
         href: '/contact',
