@@ -1,0 +1,60 @@
+'use client';
+
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+
+import { PrimaryCta } from '@/components/PrimaryCta';
+
+type HeaderMobileMenuIslandProps = {
+  navLinks: Array<{ label: string; to: string }>;
+};
+
+export function HeaderMobileMenuIsland({ navLinks }: HeaderMobileMenuIslandProps) {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+  return (
+    <>
+      <button
+        className='header-mobile-toggle md:hidden p-2 rounded-lg transition-colors'
+        onClick={() => setMobileMenuOpen(open => !open)}
+        aria-label='Toggle menu'
+        style={{ color: 'var(--color-text-muted)' }}
+      >
+        {mobileMenuOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}
+      </button>
+
+      {mobileMenuOpen && (
+        <div
+          className='header-mobile-menu md:hidden py-4 border-t'
+          style={{ borderColor: 'var(--border-light)' }}
+        >
+          <nav className='header-mobile-nav l-row flex-col'>
+            {navLinks.map((link, index) => (
+              <a
+                key={link.label}
+                href={link.to}
+                className={`header-mobile-link-${index + 1} py-2 transition-colors`}
+                style={{ color: 'var(--color-text-muted)' }}
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {link.label}
+              </a>
+            ))}
+            <div
+              className='header-mobile-cta l-row flex-col l-gap-3 pt-4 border-t'
+              style={{ borderColor: 'var(--border-light)' }}
+            >
+              <a
+                href='/contact'
+                className='btn btn-outline btn-small btn-block header-mobile-button-1'
+              >
+                Contact Us
+              </a>
+              <PrimaryCta className='btn btn-primary btn-small btn-block header-mobile-button-2' />
+            </div>
+          </nav>
+        </div>
+      )}
+    </>
+  );
+}

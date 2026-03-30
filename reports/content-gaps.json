@@ -1,0 +1,834 @@
+{
+  "generatedAt": "2026-03-26T10:30:38.538Z",
+  "stats": {
+    "totalNodes": 207,
+    "blogs": 77,
+    "resources": 52,
+    "industries": 32,
+    "caseStudies": 22,
+    "topics": 41
+  },
+  "topicGaps": [
+    {
+      "topic": "authority-signals",
+      "blogCount": 0,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "caseStudyCount": 0,
+      "missing": [
+        "blog",
+        "industry"
+      ],
+      "suggestions": [
+        "3 more blog posts covering \"authority signals\"",
+        "automotive services — authority signals implementation",
+        "auto repair — authority signals implementation",
+        "body shops — authority signals implementation"
+      ]
+    },
+    {
+      "topic": "client-reactivation",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 2,
+      "caseStudyCount": 2,
+      "missing": [
+        "blog"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"client reactivation\""
+      ]
+    },
+    {
+      "topic": "conversion-optimization",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "caseStudyCount": 2,
+      "missing": [
+        "blog",
+        "industry"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"conversion optimization\"",
+        "automotive services — conversion optimization implementation",
+        "auto repair — conversion optimization implementation",
+        "body shops — conversion optimization implementation"
+      ]
+    },
+    {
+      "topic": "conversion-tracking",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "caseStudyCount": 0,
+      "missing": [
+        "blog",
+        "industry"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"conversion tracking\"",
+        "automotive services — conversion tracking implementation",
+        "auto repair — conversion tracking implementation",
+        "body shops — conversion tracking implementation"
+      ]
+    },
+    {
+      "topic": "crm-enabled-websites",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "caseStudyCount": 0,
+      "missing": [
+        "blog",
+        "industry"
+      ],
+      "suggestions": [
+        "2 more blog posts covering \"crm enabled websites\"",
+        "automotive services — crm enabled websites implementation",
+        "auto repair — crm enabled websites implementation",
+        "body shops — crm enabled websites implementation"
+      ]
+    },
+    {
+      "topic": "crm-integration",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 2,
+      "caseStudyCount": 1,
+      "missing": [
+        "blog"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"crm integration\""
+      ]
+    },
+    {
+      "topic": "crm-pipeline",
+      "blogCount": 4,
+      "resourceCount": 0,
+      "industryCount": 3,
+      "caseStudyCount": 5,
+      "missing": [
+        "resource"
+      ],
+      "suggestions": [
+        "resource framework for \"crm pipeline\""
+      ]
+    },
+    {
+      "topic": "crm-visibility",
+      "blogCount": 1,
+      "resourceCount": 0,
+      "industryCount": 0,
+      "caseStudyCount": 0,
+      "missing": [
+        "blog",
+        "resource"
+      ],
+      "suggestions": [
+        "2 more blog posts covering \"crm visibility\"",
+        "resource framework for \"crm visibility\""
+      ]
+    },
+    {
+      "topic": "customer-feedback",
+      "blogCount": 0,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "caseStudyCount": 0,
+      "missing": [
+        "blog",
+        "industry"
+      ],
+      "suggestions": [
+        "3 more blog posts covering \"customer feedback\"",
+        "automotive services — customer feedback implementation",
+        "auto repair — customer feedback implementation",
+        "body shops — customer feedback implementation"
+      ]
+    },
+    {
+      "topic": "customer-lifetime-value",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "caseStudyCount": 0,
+      "missing": [
+        "blog",
+        "industry"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"customer lifetime value\"",
+        "automotive services — customer lifetime value implementation",
+        "auto repair — customer lifetime value implementation",
+        "body shops — customer lifetime value implementation"
+      ]
+    },
+    {
+      "topic": "emergency-handling",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "industryCount": 2,
+      "caseStudyCount": 1,
+      "missing": [
+        "blog"
+      ],
+      "suggestions": [
+        "2 more blog posts covering \"emergency handling\""
+      ]
+    },
+    {
+      "topic": "feedback-loops",
+      "blogCount": 2,
+      "resourceCount": 0,
+      "industryCount": 1,
+      "caseStudyCount": 0,
+      "missing": [
+        "blog",
+        "resource",
+        "case-study"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"feedback loops\"",
+        "resource framework for \"feedback loops\"",
+        "plumbing companies — feedback loops case study"
+      ]
+    },
+    {
+      "topic": "follow-up",
+      "blogCount": 2,
+      "resourceCount": 2,
+      "industryCount": 10,
+      "caseStudyCount": 4,
+      "missing": [
+        "blog"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"follow up\""
+      ]
+    },
+    {
+      "topic": "google-business-profile",
+      "blogCount": 3,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "caseStudyCount": 0,
+      "missing": [
+        "industry"
+      ],
+      "suggestions": [
+        "automotive services — google business profile implementation",
+        "auto repair — google business profile implementation",
+        "body shops — google business profile implementation"
+      ]
+    },
+    {
+      "topic": "lead-capture",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "caseStudyCount": 4,
+      "missing": [
+        "blog",
+        "industry"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"lead capture\"",
+        "automotive services — lead capture implementation",
+        "auto repair — lead capture implementation",
+        "body shops — lead capture implementation"
+      ]
+    },
+    {
+      "topic": "lead-qualification",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 6,
+      "caseStudyCount": 0,
+      "missing": [
+        "blog",
+        "case-study"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"lead qualification\"",
+        "aesthetic cosmetic clinics — lead qualification case study",
+        "accounting firms — lead qualification case study",
+        "consultants — lead qualification case study"
+      ]
+    },
+    {
+      "topic": "lead-response-time",
+      "blogCount": 2,
+      "resourceCount": 2,
+      "industryCount": 4,
+      "caseStudyCount": 4,
+      "missing": [
+        "blog"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"lead response time\""
+      ]
+    },
+    {
+      "topic": "lead-routing",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 2,
+      "caseStudyCount": 2,
+      "missing": [
+        "blog"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"lead routing\""
+      ]
+    },
+    {
+      "topic": "lifetime-value",
+      "blogCount": 0,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "caseStudyCount": 0,
+      "missing": [
+        "blog",
+        "industry"
+      ],
+      "suggestions": [
+        "3 more blog posts covering \"lifetime value\"",
+        "automotive services — lifetime value implementation",
+        "auto repair — lifetime value implementation",
+        "body shops — lifetime value implementation"
+      ]
+    },
+    {
+      "topic": "local-authority",
+      "blogCount": 3,
+      "resourceCount": 0,
+      "industryCount": 0,
+      "caseStudyCount": 1,
+      "missing": [
+        "resource"
+      ],
+      "suggestions": [
+        "resource framework for \"local authority\""
+      ]
+    },
+    {
+      "topic": "local-seo",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "caseStudyCount": 0,
+      "missing": [
+        "blog",
+        "industry"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"local seo\"",
+        "automotive services — local seo implementation",
+        "auto repair — local seo implementation",
+        "body shops — local seo implementation"
+      ]
+    },
+    {
+      "topic": "local-service-pages",
+      "blogCount": 2,
+      "resourceCount": 0,
+      "industryCount": 1,
+      "caseStudyCount": 0,
+      "missing": [
+        "blog",
+        "resource",
+        "case-study"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"local service pages\"",
+        "resource framework for \"local service pages\"",
+        "landscaping companies — local service pages case study"
+      ]
+    },
+    {
+      "topic": "local-visibility",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 2,
+      "caseStudyCount": 1,
+      "missing": [
+        "blog"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"local visibility\""
+      ]
+    },
+    {
+      "topic": "negative-review-response",
+      "blogCount": 2,
+      "resourceCount": 0,
+      "industryCount": 0,
+      "caseStudyCount": 0,
+      "missing": [
+        "blog",
+        "resource"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"negative review response\"",
+        "resource framework for \"negative review response\""
+      ]
+    },
+    {
+      "topic": "negative-reviews",
+      "blogCount": 0,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "caseStudyCount": 0,
+      "missing": [
+        "blog",
+        "industry"
+      ],
+      "suggestions": [
+        "3 more blog posts covering \"negative reviews\"",
+        "automotive services — negative reviews implementation",
+        "auto repair — negative reviews implementation",
+        "body shops — negative reviews implementation"
+      ]
+    },
+    {
+      "topic": "no-show-reduction",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "industryCount": 3,
+      "caseStudyCount": 2,
+      "missing": [
+        "blog"
+      ],
+      "suggestions": [
+        "2 more blog posts covering \"no show reduction\""
+      ]
+    },
+    {
+      "topic": "pipeline-architecture",
+      "blogCount": 0,
+      "resourceCount": 4,
+      "industryCount": 0,
+      "caseStudyCount": 0,
+      "missing": [
+        "blog",
+        "industry"
+      ],
+      "suggestions": [
+        "3 more blog posts covering \"pipeline architecture\"",
+        "automotive services — pipeline architecture implementation",
+        "auto repair — pipeline architecture implementation",
+        "body shops — pipeline architecture implementation"
+      ]
+    },
+    {
+      "topic": "pipeline-visibility",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 3,
+      "caseStudyCount": 0,
+      "missing": [
+        "blog",
+        "case-study"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"pipeline visibility\"",
+        "consultants — pipeline visibility case study",
+        "mortgage brokers — pipeline visibility case study",
+        "property managers — pipeline visibility case study"
+      ]
+    },
+    {
+      "topic": "reputation-monitoring",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "industryCount": 2,
+      "caseStudyCount": 1,
+      "missing": [
+        "blog"
+      ],
+      "suggestions": [
+        "2 more blog posts covering \"reputation monitoring\""
+      ]
+    },
+    {
+      "topic": "revenue-tracking",
+      "blogCount": 0,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "caseStudyCount": 3,
+      "missing": [
+        "blog",
+        "industry"
+      ],
+      "suggestions": [
+        "3 more blog posts covering \"revenue tracking\"",
+        "automotive services — revenue tracking implementation",
+        "auto repair — revenue tracking implementation",
+        "body shops — revenue tracking implementation"
+      ]
+    },
+    {
+      "topic": "revenue-visibility",
+      "blogCount": 2,
+      "resourceCount": 0,
+      "industryCount": 0,
+      "caseStudyCount": 0,
+      "missing": [
+        "blog",
+        "resource"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"revenue visibility\"",
+        "resource framework for \"revenue visibility\""
+      ]
+    },
+    {
+      "topic": "review-automation",
+      "blogCount": 4,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "caseStudyCount": 1,
+      "missing": [
+        "industry"
+      ],
+      "suggestions": [
+        "automotive services — review automation implementation",
+        "auto repair — review automation implementation",
+        "body shops — review automation implementation"
+      ]
+    },
+    {
+      "topic": "service-page-architecture",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "caseStudyCount": 0,
+      "missing": [
+        "blog",
+        "industry"
+      ],
+      "suggestions": [
+        "2 more blog posts covering \"service page architecture\"",
+        "automotive services — service page architecture implementation",
+        "auto repair — service page architecture implementation",
+        "body shops — service page architecture implementation"
+      ]
+    },
+    {
+      "topic": "service-pages",
+      "blogCount": 0,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "caseStudyCount": 0,
+      "missing": [
+        "blog",
+        "industry"
+      ],
+      "suggestions": [
+        "3 more blog posts covering \"service pages\"",
+        "automotive services — service pages implementation",
+        "auto repair — service pages implementation",
+        "body shops — service pages implementation"
+      ]
+    },
+    {
+      "topic": "service-reminders",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "industryCount": 1,
+      "caseStudyCount": 0,
+      "missing": [
+        "blog",
+        "industry",
+        "case-study"
+      ],
+      "suggestions": [
+        "2 more blog posts covering \"service reminders\"",
+        "automotive services — service reminders implementation",
+        "auto repair — service reminders implementation",
+        "body shops — service reminders implementation",
+        "plumbing companies — service reminders case study"
+      ]
+    },
+    {
+      "topic": "systems-first-websites",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "caseStudyCount": 2,
+      "missing": [
+        "blog",
+        "industry"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"systems first websites\"",
+        "automotive services — systems first websites implementation",
+        "auto repair — systems first websites implementation",
+        "body shops — systems first websites implementation"
+      ]
+    },
+    {
+      "topic": "website-infrastructure",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "caseStudyCount": 4,
+      "missing": [
+        "blog",
+        "industry"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"website infrastructure\"",
+        "automotive services — website infrastructure implementation",
+        "auto repair — website infrastructure implementation",
+        "body shops — website infrastructure implementation"
+      ]
+    }
+  ],
+  "resourceIndustryGaps": [
+    {
+      "slug": "authority-signals-for-local-search",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — authority signals for local search adaptation",
+        "auto repair — authority signals for local search adaptation",
+        "body shops — authority signals for local search adaptation"
+      ]
+    },
+    {
+      "slug": "automotive-crm-pipeline-for-repair-jobs",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — automotive crm pipeline for repair jobs adaptation",
+        "auto repair — automotive crm pipeline for repair jobs adaptation",
+        "body shops — automotive crm pipeline for repair jobs adaptation"
+      ]
+    },
+    {
+      "slug": "automotive-service-reminder-automation",
+      "industryCount": 1,
+      "suggestions": [
+        "automotive services — automotive service reminder automation adaptation",
+        "auto repair — automotive service reminder automation adaptation",
+        "body shops — automotive service reminder automation adaptation"
+      ]
+    },
+    {
+      "slug": "building-revenue-visibility-through-crm-tracking",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — building revenue visibility through crm tracking adaptation",
+        "auto repair — building revenue visibility through crm tracking adaptation",
+        "body shops — building revenue visibility through crm tracking adaptation"
+      ]
+    },
+    {
+      "slug": "conversion-architecture-for-service-websites",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — conversion architecture for service websites adaptation",
+        "auto repair — conversion architecture for service websites adaptation",
+        "body shops — conversion architecture for service websites adaptation"
+      ]
+    },
+    {
+      "slug": "conversion-tracking-for-service-businesses",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — conversion tracking for service businesses adaptation",
+        "auto repair — conversion tracking for service businesses adaptation",
+        "body shops — conversion tracking for service businesses adaptation"
+      ]
+    },
+    {
+      "slug": "crm-pipeline-architecture",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — crm pipeline architecture adaptation",
+        "auto repair — crm pipeline architecture adaptation",
+        "body shops — crm pipeline architecture adaptation"
+      ]
+    },
+    {
+      "slug": "customer-feedback-loop-framework",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — customer feedback loop framework adaptation",
+        "auto repair — customer feedback loop framework adaptation",
+        "body shops — customer feedback loop framework adaptation"
+      ]
+    },
+    {
+      "slug": "designing-websites-that-support-crm-systems",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — designing websites that support crm systems adaptation",
+        "auto repair — designing websites that support crm systems adaptation",
+        "body shops — designing websites that support crm systems adaptation"
+      ]
+    },
+    {
+      "slug": "google-business-profile-system-architecture",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — google business profile system architecture adaptation",
+        "auto repair — google business profile system architecture adaptation",
+        "body shops — google business profile system architecture adaptation"
+      ]
+    },
+    {
+      "slug": "how-review-automation-improves-local-authority",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — how review automation improves local authority adaptation",
+        "auto repair — how review automation improves local authority adaptation",
+        "body shops — how review automation improves local authority adaptation"
+      ]
+    },
+    {
+      "slug": "how-smart-website-systems-work",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — how smart website systems work adaptation",
+        "auto repair — how smart website systems work adaptation",
+        "body shops — how smart website systems work adaptation"
+      ]
+    },
+    {
+      "slug": "hvac-crm-pipeline-structure",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — hvac crm pipeline structure adaptation",
+        "auto repair — hvac crm pipeline structure adaptation",
+        "body shops — hvac crm pipeline structure adaptation"
+      ]
+    },
+    {
+      "slug": "local-seo-vs-website-optimization",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — local seo vs website optimization adaptation",
+        "auto repair — local seo vs website optimization adaptation",
+        "body shops — local seo vs website optimization adaptation"
+      ]
+    },
+    {
+      "slug": "local-service-page-architecture",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — local service page architecture adaptation",
+        "auto repair — local service page architecture adaptation",
+        "body shops — local service page architecture adaptation"
+      ]
+    },
+    {
+      "slug": "multi-channel-lead-capture-systems",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — multi channel lead capture systems adaptation",
+        "auto repair — multi channel lead capture systems adaptation",
+        "body shops — multi channel lead capture systems adaptation"
+      ]
+    },
+    {
+      "slug": "responding-to-negative-reviews-systematically",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — responding to negative reviews systematically adaptation",
+        "auto repair — responding to negative reviews systematically adaptation",
+        "body shops — responding to negative reviews systematically adaptation"
+      ]
+    },
+    {
+      "slug": "roofing-crm-pipeline-structure",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — roofing crm pipeline structure adaptation",
+        "auto repair — roofing crm pipeline structure adaptation",
+        "body shops — roofing crm pipeline structure adaptation"
+      ]
+    },
+    {
+      "slug": "service-page-architecture-that-converts",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — service page architecture that converts adaptation",
+        "auto repair — service page architecture that converts adaptation",
+        "body shops — service page architecture that converts adaptation"
+      ]
+    },
+    {
+      "slug": "tracking-customer-lifetime-value-using-crm",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — tracking customer lifetime value using crm adaptation",
+        "auto repair — tracking customer lifetime value using crm adaptation",
+        "body shops — tracking customer lifetime value using crm adaptation"
+      ]
+    },
+    {
+      "slug": "tracking-salon-client-lifetime-value",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — tracking salon client lifetime value adaptation",
+        "auto repair — tracking salon client lifetime value adaptation",
+        "body shops — tracking salon client lifetime value adaptation"
+      ]
+    },
+    {
+      "slug": "what-is-a-systems-first-website",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — what is a systems first website adaptation",
+        "auto repair — what is a systems first website adaptation",
+        "body shops — what is a systems first website adaptation"
+      ]
+    }
+  ],
+  "industryCaseStudyGaps": [
+    {
+      "slug": "automotive-services",
+      "caseStudyCount": 0,
+      "suggestions": [
+        "automotive services proof-of-results case study"
+      ]
+    },
+    {
+      "slug": "home-services",
+      "caseStudyCount": 0,
+      "suggestions": [
+        "home services proof-of-results case study"
+      ]
+    },
+    {
+      "slug": "beauty-personal-care",
+      "caseStudyCount": 0,
+      "suggestions": [
+        "beauty personal care proof-of-results case study"
+      ]
+    },
+    {
+      "slug": "legal-professional-services",
+      "caseStudyCount": 0,
+      "suggestions": [
+        "legal professional services proof-of-results case study"
+      ]
+    },
+    {
+      "slug": "local-appointment-businesses",
+      "caseStudyCount": 0,
+      "suggestions": [
+        "local appointment businesses proof-of-results case study"
+      ]
+    },
+    {
+      "slug": "real-estate-property-services",
+      "caseStudyCount": 0,
+      "suggestions": [
+        "real estate property services proof-of-results case study"
+      ]
+    }
+  ]
+}

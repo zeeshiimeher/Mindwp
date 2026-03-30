@@ -1,0 +1,524 @@
+/* ==========================================================================
+  Foundation Tokens (Canonical Runtime Truth)
+  Purpose:
+  - Canonical home for runtime design tokens and aliases
+  - Keep src/index.css focused on global/Tailwind layers
+
+  Token Selection Guide (Style-Guide Contract)
+  1) Use semantic UI tokens in components/pages first.
+  2) Use brand tokens to define semantic tokens, not directly in UI code.
+  3) Keep alias chains shallow (semantic -> brand, or one semantic hop max).
+  4) Add component helper tokens only when reused by multiple components.
+  ========================================================================== */
+
+:root,
+:host {
+  /* SPACING SCALE */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-7: 32px;
+  --space-8: 48px;
+  --space-9: 64px;
+  --space-10: 80px;
+
+  /* TYPOGRAPHY SCALE PRIMITIVES */
+  --font-xs: .75rem;
+  --font-sm: .875rem;
+  --font-base: 1rem;
+  --font-lg: 1.125rem;
+  --font-xl: 1.25rem;
+  --font-2xl: 1.563rem;
+  --font-3xl: 1.953rem;
+  --font-4xl: 2.441rem;
+  --font-5xl: 3.052rem;
+
+  --font-size: 16px;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  --line-height-ui: 1.55;
+  --line-height-prose: 1.6;
+  --line-height-prose-relaxed: 1.7;
+  --line-height-quote: 1.625;
+
+
+  /* LAYOUT + FOUNDATION PRIMITIVES */
+  --max-width: 1366px;
+  --site-padding-y: var(--space-9);
+  --site-padding-x: var(--space-7);
+
+  --radius: .625rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+
+  --transition-fast: 150ms ease-in-out;
+  --transition-normal: 250ms ease-in-out;
+  --blur-3xl: 64px;
+  --default-transition-duration: .15s;
+  --default-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+
+/* brand */
+--brand-primary:#0A1628;
+--brand-secondary:#2E5C8A;
+--brand-accent:#4A9AB2;
+--brand-primary-mid:#1B2845;
+  --brand-purple: var(--brand-secondary);
+  --brand-teal: var(--brand-accent);
+
+--brand-neutral-700:#3D4B5C;
+--brand-neutral-500:#9CA3AF;
+
+--brand-neutral-300:#D1D5DB;
+--brand-neutral-200:#E5E7EB;
+
+--brand-surface:#F9FAFB;
+
+--brand-white:#FFFFFF;
+
+/* text */
+
+--brand-heading-color:var(--brand-primary);
+--brand-text-color:var(--brand-neutral-700);
+--brand-text-light:var(--brand-neutral-500);
+
+
+/* surfaces */
+
+--brand-light-bg:var(--brand-surface);
+--brand-light-on-dark:var(--brand-neutral-300);
+
+
+/* borders */
+
+--brand-border-dark:#374151;
+--brand-border-light:var(--brand-neutral-200);
+
+
+
+
+
+--brand-accent-20:color-mix(in srgb, var(--brand-accent) 20%, transparent);
+--brand-secondary-10:color-mix(in srgb, var(--brand-secondary) 10%, transparent);
+
+--brand-white-5:color-mix(in srgb, var(--brand-white) 5%, transparent);
+--brand-white-10:color-mix(in srgb, var(--brand-white) 10%, transparent);
+--brand-white-20:color-mix(in srgb, var(--brand-white) 20%, transparent);
+
+
+
+--gradient-hero:
+linear-gradient(135deg,var(--brand-primary),var(--brand-primary-mid),var(--brand-secondary));
+
+--gradient-dark:
+linear-gradient(135deg,var(--brand-primary),var(--brand-primary-mid));
+
+--gradient-primary:
+linear-gradient(135deg,var(--brand-secondary),var(--brand-primary));
+
+--gradient-blue:
+linear-gradient(135deg,var(--brand-secondary),var(--brand-accent));
+
+--gradient-blue-reverse:
+linear-gradient(135deg,var(--brand-accent),var(--brand-secondary));
+
+--gradient-dark-secondary:
+linear-gradient(135deg,var(--brand-neutral-700),var(--brand-primary));
+
+--gradient-light:
+linear-gradient(180deg,var(--brand-surface),var(--brand-white));
+
+--gradient-image-overlay:
+linear-gradient(45deg,var(--brand-accent-20),transparent);
+
+--gradient-secondary-light:
+linear-gradient(
+135deg,
+color-mix(in srgb,var(--brand-secondary) 5%,transparent),
+transparent
+);
+
+--gradient-accent-light:
+linear-gradient(
+135deg,
+color-mix(in srgb,var(--brand-neutral-700) 5%,transparent),
+transparent
+);
+
+--gradient-blue-light:
+linear-gradient(
+135deg,
+color-mix(in srgb,var(--brand-secondary) 5%,transparent),
+var(--brand-white)
+);
+
+--shadow-1:
+0px 4px 6px -4px rgba(0,0,0,0.10),
+0px 10px 15px -3px rgba(0,0,0,0.10);
+
+
+--icon-text-primary: var(--brand-primary);
+  --icon-bg-primary: var(--brand-primary-10);
+  --icon-text-accent: var(--brand-accent);
+
+  --gradient-primary-from: var(--brand-primary);
+  --gradient-primary-to: var(--brand-primary-90);
+  --gradient-secondary-from: var(--brand-purple);
+  --gradient-secondary-to: var(--brand-purple-90);
+  --gradient-accent-from: var(--brand-teal);
+  --gradient-accent-to: var(--brand-teal-90);
+
+  --icon-bg-primary-alpha: var(--brand-primary-10);
+  --icon-bg-secondary-alpha: var(--brand-purple-10);
+  --icon-bg-accent-alpha: var(--brand-teal-10);
+  --icon-bg-warm-alpha: var(--brand-amber-10);
+  
+  --icon-text-secondary: var(--brand-secondary);
+  --icon-bg-secondary: var(--brand-secondary-10);
+  
+  --icon-bg-accent: var(--icon-bg-accent-alpha);
+  --icon-text-warm: var(--brand-amber);
+  --icon-bg-warm: var(--icon-bg-warm-alpha);
+
+  /* ----------------------------------------------------------------------
+     BRAND PRIMITIVES (SOURCE OF TRUTH)
+     ---------------------------------------------------------------------- */
+
+
+
+
+
+  --brand-text: var(--brand-text-color);
+--brand-headline: var(--brand-heading-color);
+--brand-primary-light: #60a5fa;
+
+  --brand-amber: #070606;
+  --brand-dark: #0a0a0a;
+  --brand-white: #fff;
+  --brand-grey: #f8fafc;
+  --brand-grey-light: #f1f5f9;
+  --brand-blue-lightest: #eff6ff;
+  --brand-teal-lightest: #f0fdfa;
+  --brand-teal-lighter: #ccfbf1;
+  --brand-yellow-star: #fbbf24;
+
+  /* ----------------------------------------------------------------------
+     BRAND SHADES (DERIVED FROM BRAND PRIMITIVES)
+     ---------------------------------------------------------------------- */
+  --brand-primary-90: color-mix(in srgb, var(--brand-primary) 90%, transparent);
+  --brand-primary-30: color-mix(in srgb, var(--brand-primary) 30%, transparent);
+  --brand-primary-10: color-mix(in srgb, var(--brand-primary) 10%, transparent);
+  --brand-dark-90: color-mix(in srgb, var(--brand-dark) 90%, transparent);
+  --brand-purple-90: color-mix(in srgb, var(--brand-purple) 90%, transparent);
+  --brand-purple-30: color-mix(in srgb, var(--brand-purple) 30%, transparent);
+  --brand-purple-10: color-mix(in srgb, var(--brand-purple) 10%, transparent);
+  --brand-teal-10: color-mix(in srgb, var(--brand-teal) 10%, transparent);
+  --brand-amber-90: color-mix(in srgb, var(--brand-amber) 90%, transparent);
+  --brand-amber-10: color-mix(in srgb, var(--brand-amber) 10%, transparent);
+  --brand-teal-90: color-mix(in srgb, var(--brand-teal) 90%, transparent);
+  --brand-white-80: color-mix(in srgb, var(--brand-white) 80%, transparent);
+  --brand-white-90: color-mix(in srgb, var(--brand-white) 90%, transparent);
+  --brand-white-15: color-mix(in srgb, var(--brand-white) 15%, transparent);
+  --brand-white-70: color-mix(in srgb, var(--brand-white) 70%, transparent);
+  --brand-white-60: color-mix(in srgb, var(--brand-white) 60%, transparent);
+  --brand-white-30: color-mix(in srgb, var(--brand-white) 30%, transparent);
+  --brand-white-10: color-mix(in srgb, var(--brand-white) 10%, transparent);
+  --brand-dark-30: color-mix(in srgb, var(--brand-dark) 30%, transparent);
+  --shadow-ink-12: color-mix(in srgb, var(--brand-dark) 12%, transparent);
+  --shadow-ink-18: color-mix(in srgb, var(--brand-dark) 18%, transparent);
+  --shadow-ink-25: color-mix(in srgb, var(--brand-dark) 25%, transparent);
+  --border-default: #0000001a;
+  --border-light: #0000000d;
+
+  /* ----------------------------------------------------------------------
+     RAW PALETTE TOKENS 
+     ---------------------------------------------------------------------- */
+  --color-red-50: oklch(.971 .013 17.38);
+  --color-red-100: oklch(.936 .032 17.717);
+  --color-red-200: oklch(.885 .062 18.334);
+  --color-red-500: oklch(.637 .237 25.331);
+  --color-red-600: oklch(.577 .245 27.325);
+  --color-red-700: oklch(.505 .213 27.518);
+  --color-orange-500: oklch(.705 .213 47.604);
+  --color-orange-600: oklch(.646 .222 41.116);
+  --color-amber-500: oklch(.769 .188 70.08);
+  --color-amber-600: oklch(.666 .179 58.318);
+  --color-yellow-50: oklch(.987 .026 102.212);
+  --color-yellow-200: oklch(.945 .129 101.54);
+  --color-yellow-500: oklch(.795 .184 86.047);
+  --color-yellow-600: oklch(.681 .162 75.834);
+  --color-green-500: oklch(.723 .219 149.579);
+  --color-green-600: oklch(.627 .194 149.214);
+  --color-emerald-500: oklch(.696 .17 162.48);
+  --color-emerald-600: oklch(.596 .145 163.225);
+  --color-teal-500: oklch(.704 .14 182.503);
+  --color-teal-600: oklch(.6 .118 184.704);
+  --color-cyan-500: oklch(.715 .143 215.221);
+  --color-cyan-600: oklch(.609 .126 221.723);
+  --color-blue-500: oklch(.623 .214 259.815);
+  --color-blue-600: oklch(.546 .245 262.881);
+  --color-indigo-500: oklch(.585 .233 277.117);
+  --color-indigo-600: oklch(.511 .262 276.966);
+  --color-violet-500: oklch(.606 .25 292.717);
+  --color-violet-600: oklch(.541 .281 293.009);
+  --color-purple-500: oklch(.627 .265 303.9);
+  --color-purple-600: oklch(.558 .288 302.321);
+  --color-fuchsia-500: oklch(.667 .295 322.15);
+  --color-fuchsia-600: oklch(.591 .293 322.896);
+  --color-pink-500: oklch(.656 .241 354.308);
+  --color-pink-600: oklch(.592 .249 .584);
+  --color-rose-500: oklch(.645 .246 16.439);
+  --color-rose-600: oklch(.586 .253 17.585);
+  --color-slate-500: oklch(.554 .046 257.417);
+  --color-slate-600: oklch(.446 .043 257.281);
+  --color-gray-300: oklch(.872 .01 258.338);
+  --color-gray-500: oklch(.551 .027 264.364);
+  --color-zinc-500: oklch(.552 .016 285.938);
+
+  --brand-logo-ring: var(--color-gray-300);
+
+  /* ----------------------------------------------------------------------
+     SEMANTIC UI TOKENS (author-facing + framework)
+     ---------------------------------------------------------------------- */
+  --background: var(--brand-grey);
+  --foreground: var(--brand-dark);
+  --muted: var(--brand-grey);
+  --muted-foreground: var(--brand-text);
+  --border: var(--border-default);
+  --card: var(--brand-white);
+  --card-foreground: var(--brand-dark);
+  --primary-foreground: var(--brand-white);
+  --secondary: var(--brand-dark);
+  --secondary-foreground: var(--brand-white);
+  --accent: var(--brand-teal);
+  --accent-foreground: var(--brand-white);
+  --destructive: var(--brand-primary);
+  --destructive-foreground: var(--brand-white);
+  --input: transparent;
+  --input-background: var(--brand-grey-light);
+  --ring: var(--brand-primary);
+
+  --color-success: var(--brand-teal);
+  --color-success-bg: var(--brand-teal-10);
+  --color-warning: var(--brand-amber);
+  --color-warning-bg: var(--brand-amber-10);
+  --color-info: var(--brand-primary);
+  --color-info-bg: var(--brand-primary-10);
+
+  --color-primary: var(--color-action-primary);
+  --color-secondary: var(--color-text-secondary);
+  --color-accent: var(--brand-amber);
+
+  --color-text-primary: var(--foreground);
+  --color-text-secondary: var(--brand-text);
+  --color-text-muted: var(--brand-text);
+  --color-text-heading: var(--color-text-primary);
+  --color-text-body: var(--color-text-secondary);
+  --color-text-inverse: var(--color-inverse-100);
+  --color-text-muted-strong: var(--color-text-secondary);
+
+  --color-border: var(--border);
+  --color-action-primary: var(--brand-primary);
+  --color-action-primary-90: var(--brand-primary-90);
+  --color-action-primary-30: var(--brand-primary-30);
+
+  --color-surface-default: var(--card);
+  --color-surface-muted: var(--brand-grey-light);
+  --color-surface-page: var(--background);
+  --color-surface-strong: var(--foreground);
+  --color-surface-strong-90: var(--brand-dark-90);
+  --color-surface-accent-blue: var(--brand-blue-lightest);
+  --color-surface-accent-teal: var(--brand-teal-lightest);
+  --color-surface-accent-teal-strong: var(--brand-teal-lighter);
+
+  --color-danger-50: var(--color-red-50);
+  --color-danger-100: var(--color-red-100);
+  --color-danger-200: var(--color-red-200);
+  --color-danger-500: var(--color-red-500);
+  --color-danger-600: var(--color-red-600);
+  --color-danger-700: var(--color-red-700);
+
+  --color-warning-50: var(--color-yellow-50);
+  --color-warning-200: var(--color-yellow-200);
+  --color-warning-500: var(--color-yellow-500);
+  --color-warning-600: var(--color-yellow-600);
+  --color-warning-90: var(--brand-amber-90);
+
+  --color-success-500: var(--color-green-500);
+  --color-success-600: var(--color-green-600);
+  --color-success-strong: var(--color-success-600);
+
+  --color-accent-primary-soft: var(--brand-primary-light);
+  --color-accent-purple: var(--brand-purple);
+  --color-accent-purple-30: var(--brand-purple-30);
+  --color-accent-teal: var(--brand-teal);
+  --color-accent-warning: var(--color-warning);
+  --color-accent-warning-90: var(--color-warning-90);
+  --color-accent-star: var(--brand-yellow-star);
+
+  --color-inverse-100: var(--brand-white);
+  --color-inverse-80: var(--brand-white-80);
+  --color-inverse-70: var(--brand-white-70);
+  --color-inverse-60: var(--brand-white-60);
+  --color-inverse-30: var(--brand-white-30);
+  --color-inverse-10: var(--brand-white-10);
+
+  /* UI semantic aliases (used by shared UI primitives) */
+  --popover: var(--card);
+  --popover-foreground: var(--foreground);
+
+  /* Shadcn-style sidebar tokens (used in UI sidebar utility classes) */
+  --sidebar-border: 214.3 31.8% 91.4%;
+  --sidebar-accent: 210 40% 96.1%;
+
+  /* Resource template callouts */
+  --error-60: var(--color-danger-600);
+  --success-60: var(--color-success-600);
+
+  /* ----------------------------------------------------------------------
+     COMPONENT HELPER TOKENS (gradients/icons/data aliases)
+     ---------------------------------------------------------------------- */
+  --gradient-cta-1: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-purple) 100%);
+  --gradient-cta-2: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-primary) 100%);
+  --gradient-cta-3: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-teal) 100%);
+  --gradient-cta-4: linear-gradient(135deg, var(--brand-teal) 0%, var(--brand-purple) 100%);
+  --gradient-cta-10: linear-gradient(135deg, var(--color-blue-600) 0%, var(--color-purple-700) 100%);
+  --gradient-cta-11: linear-gradient(135deg, var(--color-yellow-500) 0%, var(--color-orange-600) 100%);
+  --gradient-cta-12: linear-gradient(135deg, var(--color-indigo-600) 0%, var(--color-green-500) 100%);
+  --gradient-cta-13: linear-gradient(135deg, var(--color-green-500) 0%, var(--color-blue-600) 100%);
+  --gradient-cta-14: linear-gradient(135deg, var(--color-purple-700) 0%, var(--color-blue-600) 100%);
+  --gradient-cta-warm: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-amber) 100%);
+  --gradient-section: radial-gradient(circle at 100% 110%, var(--brand-purple) 0%, var(--brand-primary) 20%);
+  --gradient-bg-light: linear-gradient(135deg, var(--brand-grey) 0%, var(--brand-blue-lightest) 100%);
+
+
+  /* Data-gradient palette aliases (exact wrappers over raw palette tokens) */
+  --color-gradient-blue-500: var(--color-blue-500);
+  --color-gradient-blue-600: var(--color-blue-600);
+  --color-gradient-purple-500: var(--color-purple-500);
+  --color-gradient-purple-600: var(--color-purple-600);
+  --color-gradient-teal-500: var(--color-teal-500);
+  --color-gradient-teal-600: var(--color-teal-600);
+  --color-gradient-indigo-500: var(--color-indigo-500);
+  --color-gradient-indigo-600: var(--color-indigo-600);
+  --color-gradient-rose-500: var(--color-rose-500);
+  --color-gradient-rose-600: var(--color-rose-600);
+  --color-gradient-emerald-500: var(--color-emerald-500);
+  --color-gradient-emerald-600: var(--color-emerald-600);
+  --color-gradient-orange-500: var(--color-orange-500);
+  --color-gradient-orange-600: var(--color-orange-600);
+  --color-gradient-violet-500: var(--color-violet-500);
+  --color-gradient-violet-600: var(--color-violet-600);
+  --color-gradient-cyan-500: var(--color-cyan-500);
+  --color-gradient-cyan-600: var(--color-cyan-600);
+  --color-gradient-pink-500: var(--color-pink-500);
+  --color-gradient-pink-600: var(--color-pink-600);
+  --color-gradient-slate-500: var(--color-slate-500);
+  --color-gradient-slate-600: var(--color-slate-600);
+  --color-gradient-fuchsia-500: var(--color-fuchsia-500);
+  --color-gradient-fuchsia-600: var(--color-fuchsia-600);
+  --color-gradient-amber-500: var(--color-amber-500);
+  --color-gradient-amber-600: var(--color-amber-600);
+  --color-gradient-gray-500: var(--color-gray-500);
+  --color-gradient-zinc-500: var(--color-zinc-500);
+
+  /* Default gradient stop vars (per-component values may override) */
+  --from: var(--color-action-primary);
+  --to: var(--color-action-primary);
+
+  /* Optional gradient aliases (fallbacks already exist in utilities) */
+  --gradient-cta-5: var(--gradient-cta-warm);
+  --gradient-cta-6: var(--gradient-cta-warm);
+
+  /* =========================================================
+     COMPONENT RHYTHM (site-wide defaults)
+     ========================================================= */
+  --card-padding: var(--space-5); /* 20px (default card padding) */
+  --card-padding-lg: var(--space-6); /* 24px (roomier cards) */
+  --card-padding-tight: var(--space-4); /* 16px (dense cards) */
+  --card-gap: var(--space-4); /* 16px */
+  --card-gap-lg: var(--space-6); /* 24px */
+
+  /* Focus ring (keyboard accessibility) */
+  --focus-ring-color: color-mix(in oklab, var(--ring) 35%, transparent);
+  --focus-ring-shadow: 0 0 0 3px var(--focus-ring-color);
+}
+
+@media (width >= 992px) and (width <= 1180px) {
+  :root,
+  :host {
+    --font-xs: .75rem;
+    --font-sm: .875rem;
+    --font-base: 1rem;
+    --font-lg: 1.125rem;
+    --font-xl: 1.188rem;
+    --font-2xl: 1.438rem;
+    --font-3xl: 1.75rem;
+    --font-4xl: 2.188rem;
+    --font-5xl: 2.75rem;
+  }
+}
+
+@media (width >= 769px) and (width <= 991px) {
+  :root,
+  :host {
+    --font-xs: .75rem;
+    --font-sm: .813rem;
+    --font-base: .938rem;
+    --font-lg: 1.063rem;
+    --font-xl: 1.125rem;
+    --font-2xl: 1.313rem;
+    --font-3xl: 1.625rem;
+    --font-4xl: 2rem;
+    --font-5xl: 2.5rem;
+  }
+}
+
+@media (width >= 481px) and (width <= 768px) {
+  :root,
+  :host {
+    --font-xs: .688rem;
+    --font-sm: .813rem;
+    --font-base: .938rem;
+    --font-lg: 1rem;
+    --font-xl: 1.125rem;
+    --font-2xl: 1.25rem;
+    --font-3xl: 1.5rem;
+    --font-4xl: 1.875rem;
+    --font-5xl: 2.25rem;
+  }
+}
+
+@media (width >= 360px) and (width <= 480px) {
+  :root,
+  :host {
+    --font-xs: .688rem;
+    --font-sm: .813rem;
+    --font-base: .938rem;
+    --font-lg: 1rem;
+    --font-xl: 1.125rem;
+    --font-2xl: 1.25rem;
+    --font-3xl: 1.5rem;
+    --font-4xl: 1.875rem;
+    --font-5xl: 2.25rem;
+  }
+}
+

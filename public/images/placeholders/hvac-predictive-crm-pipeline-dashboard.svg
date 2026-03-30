@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="80" y1="60" x2="1120" y2="740" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#103A5E" />
+      <stop offset="1" stop-color="#1F7A8C" />
+    </linearGradient>
+    <linearGradient id="panel" x1="280" y1="180" x2="920" y2="620" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity="0.18" />
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.08" />
+    </linearGradient>
+    <linearGradient id="lineA" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#9BE7FF" />
+      <stop offset="1" stop-color="#E8FFF8" />
+    </linearGradient>
+    <linearGradient id="lineB" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FFD166" />
+      <stop offset="1" stop-color="#FF9F1C" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="800" rx="32" fill="url(#bg)" />
+  <circle cx="1040" cy="132" r="148" fill="#FFFFFF" fill-opacity="0.08" />
+  <circle cx="156" cy="684" r="192" fill="#FFFFFF" fill-opacity="0.06" />
+
+  <rect x="170" y="118" width="860" height="564" rx="28" fill="url(#panel)" stroke="#FFFFFF" stroke-opacity="0.22" />
+  <rect x="212" y="160" width="776" height="76" rx="18" fill="#0D2C45" fill-opacity="0.55" />
+  <rect x="244" y="186" width="186" height="24" rx="12" fill="#FFFFFF" fill-opacity="0.18" />
+  <rect x="772" y="184" width="94" height="28" rx="14" fill="#4FD1C5" fill-opacity="0.32" />
+  <rect x="880" y="184" width="76" height="28" rx="14" fill="#FFD166" fill-opacity="0.32" />
+
+  <rect x="212" y="266" width="488" height="290" rx="24" fill="#0B263C" fill-opacity="0.56" />
+  <rect x="732" y="266" width="256" height="132" rx="24" fill="#0B263C" fill-opacity="0.56" />
+  <rect x="732" y="424" width="256" height="132" rx="24" fill="#0B263C" fill-opacity="0.56" />
+
+  <path d="M252 504 L332 462 L404 472 L498 378 L584 340 L660 308" stroke="url(#lineA)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M252 520 L340 516 L420 470 L488 448 L582 402 L660 356" stroke="url(#lineB)" stroke-width="8" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="14 16" />
+
+  <circle cx="332" cy="462" r="10" fill="#9BE7FF" />
+  <circle cx="498" cy="378" r="10" fill="#9BE7FF" />
+  <circle cx="584" cy="340" r="10" fill="#9BE7FF" />
+  <circle cx="404" cy="472" r="10" fill="#FFD166" />
+  <circle cx="582" cy="402" r="10" fill="#FFD166" />
+
+  <rect x="252" y="300" width="140" height="16" rx="8" fill="#FFFFFF" fill-opacity="0.18" />
+  <rect x="252" y="332" width="212" height="12" rx="6" fill="#FFFFFF" fill-opacity="0.12" />
+  <rect x="252" y="354" width="174" height="12" rx="6" fill="#FFFFFF" fill-opacity="0.12" />
+
+  <rect x="760" y="294" width="92" height="18" rx="9" fill="#FFFFFF" fill-opacity="0.16" />
+  <rect x="760" y="332" width="196" height="12" rx="6" fill="#FFFFFF" fill-opacity="0.12" />
+  <rect x="760" y="356" width="146" height="12" rx="6" fill="#FFFFFF" fill-opacity="0.12" />
+  <rect x="760" y="452" width="112" height="18" rx="9" fill="#FFFFFF" fill-opacity="0.16" />
+  <rect x="760" y="490" width="176" height="12" rx="6" fill="#FFFFFF" fill-opacity="0.12" />
+  <rect x="760" y="514" width="134" height="12" rx="6" fill="#FFFFFF" fill-opacity="0.12" />
+
+  <rect x="252" y="582" width="220" height="46" rx="14" fill="#FFFFFF" fill-opacity="0.12" />
+  <rect x="492" y="582" width="220" height="46" rx="14" fill="#FFFFFF" fill-opacity="0.12" />
+  <rect x="732" y="582" width="220" height="46" rx="14" fill="#FFFFFF" fill-opacity="0.12" />
+
+  <text x="244" y="722" fill="#EAFBFF" font-family="Arial, sans-serif" font-size="34" font-weight="700">
+    Predictive HVAC CRM Dashboard
+  </text>
+  <text x="244" y="756" fill="#D3F5F7" font-family="Arial, sans-serif" font-size="20">
+    Forecast demand, pipeline health, and technician capacity before the next surge hits.
+  </text>
+</svg>

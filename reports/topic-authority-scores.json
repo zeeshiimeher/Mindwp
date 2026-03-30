@@ -1,0 +1,427 @@
+{
+  "generatedAt": "2026-03-30T14:48:40.810Z",
+  "topicsAnalyzed": 42,
+  "averageScore": 53,
+  "scores": [
+    {
+      "topic": "lead-management",
+      "blogCount": 5,
+      "resourceCount": 6,
+      "industryCount": 4,
+      "serviceCount": 1,
+      "caseStudyCount": 4,
+      "score": 100,
+      "level": "Dominant"
+    },
+    {
+      "topic": "missed-calls",
+      "blogCount": 5,
+      "resourceCount": 5,
+      "industryCount": 2,
+      "serviceCount": 2,
+      "caseStudyCount": 4,
+      "score": 100,
+      "level": "Dominant"
+    },
+    {
+      "topic": "review-generation",
+      "blogCount": 5,
+      "resourceCount": 5,
+      "industryCount": 18,
+      "serviceCount": 2,
+      "caseStudyCount": 4,
+      "score": 100,
+      "level": "Dominant"
+    },
+    {
+      "topic": "lead-response-time",
+      "blogCount": 2,
+      "resourceCount": 2,
+      "industryCount": 4,
+      "serviceCount": 2,
+      "caseStudyCount": 4,
+      "score": 85,
+      "level": "Strong"
+    },
+    {
+      "topic": "follow-up",
+      "blogCount": 2,
+      "resourceCount": 2,
+      "industryCount": 10,
+      "serviceCount": 2,
+      "caseStudyCount": 4,
+      "score": 85,
+      "level": "Strong"
+    },
+    {
+      "topic": "lead-routing",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 2,
+      "serviceCount": 1,
+      "caseStudyCount": 2,
+      "score": 85,
+      "level": "Strong"
+    },
+    {
+      "topic": "client-reactivation",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 2,
+      "serviceCount": 2,
+      "caseStudyCount": 2,
+      "score": 85,
+      "level": "Strong"
+    },
+    {
+      "topic": "no-show-reduction",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "industryCount": 3,
+      "serviceCount": 1,
+      "caseStudyCount": 2,
+      "score": 80,
+      "level": "Strong"
+    },
+    {
+      "topic": "crm-integration",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 2,
+      "serviceCount": 1,
+      "caseStudyCount": 1,
+      "score": 78,
+      "level": "Strong"
+    },
+    {
+      "topic": "local-visibility",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 2,
+      "serviceCount": 1,
+      "caseStudyCount": 1,
+      "score": 78,
+      "level": "Strong"
+    },
+    {
+      "topic": "reputation-monitoring",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "industryCount": 2,
+      "serviceCount": 1,
+      "caseStudyCount": 1,
+      "score": 73,
+      "level": "Growing"
+    },
+    {
+      "topic": "crm-pipeline",
+      "blogCount": 4,
+      "resourceCount": 0,
+      "industryCount": 3,
+      "serviceCount": 1,
+      "caseStudyCount": 5,
+      "score": 70,
+      "level": "Growing"
+    },
+    {
+      "topic": "pipeline-visibility",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 3,
+      "serviceCount": 1,
+      "caseStudyCount": 0,
+      "score": 70,
+      "level": "Growing"
+    },
+    {
+      "topic": "review-automation",
+      "blogCount": 4,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "serviceCount": 2,
+      "caseStudyCount": 1,
+      "score": 68,
+      "level": "Growing"
+    },
+    {
+      "topic": "lead-capture",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "serviceCount": 3,
+      "caseStudyCount": 4,
+      "score": 65,
+      "level": "Growing"
+    },
+    {
+      "topic": "website-infrastructure",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "serviceCount": 4,
+      "caseStudyCount": 4,
+      "score": 65,
+      "level": "Growing"
+    },
+    {
+      "topic": "systems-first-websites",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "serviceCount": 1,
+      "caseStudyCount": 2,
+      "score": 65,
+      "level": "Growing"
+    },
+    {
+      "topic": "booking-systems",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 7,
+      "serviceCount": 0,
+      "caseStudyCount": 1,
+      "score": 63,
+      "level": "Growing"
+    },
+    {
+      "topic": "conversion-optimization",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "serviceCount": 4,
+      "caseStudyCount": 2,
+      "score": 60,
+      "level": "Growing"
+    },
+    {
+      "topic": "emergency-handling",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "industryCount": 2,
+      "serviceCount": 0,
+      "caseStudyCount": 1,
+      "score": 58,
+      "level": "Weak"
+    },
+    {
+      "topic": "booking-automation",
+      "blogCount": 1,
+      "resourceCount": 0,
+      "industryCount": 3,
+      "serviceCount": 1,
+      "caseStudyCount": 7,
+      "score": 55,
+      "level": "Weak"
+    },
+    {
+      "topic": "lead-qualification",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 6,
+      "serviceCount": 0,
+      "caseStudyCount": 0,
+      "score": 55,
+      "level": "Weak"
+    },
+    {
+      "topic": "google-business-profile",
+      "blogCount": 3,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "serviceCount": 1,
+      "caseStudyCount": 0,
+      "score": 55,
+      "level": "Weak"
+    },
+    {
+      "topic": "revenue-tracking",
+      "blogCount": 0,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "serviceCount": 1,
+      "caseStudyCount": 3,
+      "score": 55,
+      "level": "Weak"
+    },
+    {
+      "topic": "local-seo",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "serviceCount": 1,
+      "caseStudyCount": 0,
+      "score": 50,
+      "level": "Weak"
+    },
+    {
+      "topic": "service-page-architecture",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "serviceCount": 2,
+      "caseStudyCount": 0,
+      "score": 45,
+      "level": "Weak"
+    },
+    {
+      "topic": "service-reminders",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "industryCount": 1,
+      "serviceCount": 0,
+      "caseStudyCount": 0,
+      "score": 40,
+      "level": "Weak"
+    },
+    {
+      "topic": "conversion-tracking",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "serviceCount": 0,
+      "caseStudyCount": 0,
+      "score": 35,
+      "level": "Gap"
+    },
+    {
+      "topic": "customer-lifetime-value",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "serviceCount": 0,
+      "caseStudyCount": 0,
+      "score": 35,
+      "level": "Gap"
+    },
+    {
+      "topic": "crm-enabled-websites",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "serviceCount": 0,
+      "caseStudyCount": 0,
+      "score": 30,
+      "level": "Gap"
+    },
+    {
+      "topic": "authority-signals",
+      "blogCount": 0,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "serviceCount": 0,
+      "caseStudyCount": 0,
+      "score": 25,
+      "level": "Gap"
+    },
+    {
+      "topic": "customer-feedback",
+      "blogCount": 0,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "serviceCount": 0,
+      "caseStudyCount": 0,
+      "score": 25,
+      "level": "Gap"
+    },
+    {
+      "topic": "lifetime-value",
+      "blogCount": 0,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "serviceCount": 0,
+      "caseStudyCount": 0,
+      "score": 25,
+      "level": "Gap"
+    },
+    {
+      "topic": "negative-reviews",
+      "blogCount": 0,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "serviceCount": 0,
+      "caseStudyCount": 0,
+      "score": 25,
+      "level": "Gap"
+    },
+    {
+      "topic": "pipeline-architecture",
+      "blogCount": 0,
+      "resourceCount": 4,
+      "industryCount": 0,
+      "serviceCount": 0,
+      "caseStudyCount": 0,
+      "score": 25,
+      "level": "Gap"
+    },
+    {
+      "topic": "service-pages",
+      "blogCount": 0,
+      "resourceCount": 1,
+      "industryCount": 0,
+      "serviceCount": 0,
+      "caseStudyCount": 0,
+      "score": 25,
+      "level": "Gap"
+    },
+    {
+      "topic": "local-authority",
+      "blogCount": 3,
+      "resourceCount": 0,
+      "industryCount": 0,
+      "serviceCount": 0,
+      "caseStudyCount": 1,
+      "score": 23,
+      "level": "Gap"
+    },
+    {
+      "topic": "feedback-loops",
+      "blogCount": 2,
+      "resourceCount": 0,
+      "industryCount": 1,
+      "serviceCount": 0,
+      "caseStudyCount": 0,
+      "score": 20,
+      "level": "Gap"
+    },
+    {
+      "topic": "local-service-pages",
+      "blogCount": 2,
+      "resourceCount": 0,
+      "industryCount": 1,
+      "serviceCount": 0,
+      "caseStudyCount": 0,
+      "score": 20,
+      "level": "Gap"
+    },
+    {
+      "topic": "negative-review-response",
+      "blogCount": 2,
+      "resourceCount": 0,
+      "industryCount": 0,
+      "serviceCount": 0,
+      "caseStudyCount": 0,
+      "score": 10,
+      "level": "Gap"
+    },
+    {
+      "topic": "revenue-visibility",
+      "blogCount": 2,
+      "resourceCount": 0,
+      "industryCount": 0,
+      "serviceCount": 0,
+      "caseStudyCount": 0,
+      "score": 10,
+      "level": "Gap"
+    },
+    {
+      "topic": "crm-visibility",
+      "blogCount": 1,
+      "resourceCount": 0,
+      "industryCount": 0,
+      "serviceCount": 0,
+      "caseStudyCount": 0,
+      "score": 5,
+      "level": "Gap"
+    }
+  ]
+}

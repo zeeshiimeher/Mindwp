@@ -1,0 +1,170 @@
+import { Calendar, CheckCircle2 } from 'lucide-react';
+
+import {
+  FeatureBenefitsSection,
+  FeatureCapabilitiesSection,
+  FeatureCTASection,
+  FeatureHeroSection,
+  FeatureProcessStepsSection,
+  FeatureUseCasesSection,
+} from '@/components/reusable/sections/features';
+import { Button } from '@/components/reusable/single/Button';
+import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
+import { FAQSection } from '@/components/reusable/single/FAQSection';
+import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
+import { Card } from '@/components/ui/card';
+import {
+  FeatureImplementationServicesSection,
+  FeatureSupportingFrameworksSection,
+} from '@/domains/features/components/FeatureRelatedSections';
+import { calendarsData } from '@/domains/features/data/calendars';
+
+const BookingVisual = () => (
+  <Card className='p-8 bg-white/80 backdrop-blur shadow-xl'>
+    <div className='l-stack'>
+      <div className='text-center pb-4 border-b'>
+        <h4 className='text-sm mb-2'>Book an Appointment</h4>
+        <div className='l-stack l-stack--tight'>
+          <div
+            className='p-3 bg-blue-50 rounded-lg border-2 border-blue-300 cursor-pointer hover:bg-blue-100 transition-colors'
+            role='button'
+            tabIndex={0}
+            aria-label='Service selection active - Choose staff and service'
+          >
+            <div className='text-sm'>Service Selection</div>
+            <div className='text-xs text-muted-foreground'>Choose staff & service</div>
+          </div>
+          <div
+            className='p-3 bg-slate-50 rounded-lg border cursor-pointer opacity-60 hover:opacity-80 transition-opacity'
+            role='button'
+            tabIndex={0}
+            aria-label='Time selection inactive - Pick available slot'
+          >
+            <div className='text-sm'>Time Selection</div>
+            <div className='text-xs text-muted-foreground'>Pick available slot</div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h4 className='text-sm mb-3'>Available Times</h4>
+        <div className='l-grid l-grid-2 sm:l-grid-3 l-gap-2'>
+          {['Morning', 'Afternoon', 'Evening'].map((time, i) => (
+            <div
+              key={i}
+              className={`p-2 text-center text-xs rounded-lg border-2 cursor-pointer bg-white border-border hover:border-blue-300 transition-colors`}
+              role='button'
+              tabIndex={0}
+              aria-label={`Select ${time.toLowerCase()} time slot`}
+            >
+              {time}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className='pt-4 border-t'>
+        <Button variant='outline' icon={CheckCircle2} showDefaultIcon cssPrefix='btn-block'>
+          Confirm Booking
+        </Button>
+      </div>
+    </div>
+  </Card>
+);
+
+export default function CalendarsRenderer() {
+  const { hero, sections, cta } = calendarsData;
+  const { process, benefits, useCases, capabilities, faq } = sections;
+
+  return (
+    <>
+      <ErrorBoundary fallback={<GenericErrorFallback />}>
+        <main role='main'>
+          <FeatureHeroSection
+            badge={hero.badge}
+            badgeIcon={Calendar}
+            title={hero.title}
+            description={hero.description}
+            stats={hero.stats}
+            primaryAction={hero.primaryAction}
+            visualContent={<BookingVisual />}
+            cssPrefix='calendars-hero'
+            backgroundColor='bg-gradient-to-br from-teal-50 via-white to-blue-50'
+            decorations={[
+              { position: 'top-right', color: 'bg-green-200', size: 'w-72 h-72' },
+              { position: 'bottom-left', color: 'bg-blue-200', size: 'w-72 h-72' },
+            ]}
+          />
+
+          <FeatureProcessStepsSection
+            badge={process.badge}
+            title={process.title}
+            description={process.description}
+            steps={process.steps}
+            backgroundColor='bg-white'
+            cssPrefix='calendars-process'
+          />
+
+          <FeatureBenefitsSection
+            badge={benefits.badge}
+            title={benefits.title}
+            description={benefits.description}
+            benefits={benefits.items}
+            backgroundColor='bg-slate-50'
+            cssPrefix='calendars-benefits'
+          />
+
+          <FeatureUseCasesSection
+            badge={useCases.badge}
+            title={useCases.title}
+            description={useCases.description}
+            useCases={useCases.items}
+            backgroundColor='bg-white'
+            cssPrefix='calendars-use-cases'
+          />
+
+          <FeatureCapabilitiesSection
+            badge={capabilities.badge}
+            title={capabilities.title}
+            featureCategories={capabilities.featureCategories}
+            backgroundColor='bg-slate-50'
+            cssPrefix='calendars-features'
+            columns={capabilities.columns}
+            variant={capabilities.variant}
+          />
+
+          <FAQSection
+            badge={faq.badge}
+            title={faq.title}
+            description={faq.description}
+            faqs={faq.items}
+            backgroundColor='bg-white'
+            cssPrefix='calendars-faq'
+          />
+
+          <FeatureSupportingFrameworksSection
+            featureSlug={calendarsData.slug}
+            cssPrefix='calendars-explore'
+          />
+
+          <FeatureCTASection
+            title={cta.title}
+            description={cta.description}
+            primaryAction={{
+              variant: 'white',
+              label: cta.primaryAction.label,
+              href: cta.primaryAction.href,
+            }}
+            metaItems={cta.metaItems}
+            cssPrefix='calendars-cta'
+          />
+
+          <FeatureImplementationServicesSection
+            featureSlug={calendarsData.slug}
+            cssPrefix='calendars-explore'
+          />
+        </main>
+      </ErrorBoundary>
+    </>
+  );
+}

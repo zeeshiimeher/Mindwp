@@ -1,0 +1,375 @@
+{
+  "generatedAt": "2026-03-27T23:04:26.370Z",
+  "passed": false,
+  "totalScanned": 177,
+  "issueCount": 52,
+  "byDomain": {
+    "resources": 52
+  },
+  "issues": [
+    {
+      "file": "src/domains/resources/content/AuthoritySignalsForLocalSearch.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/AuthoritySignalsForLocalSearch.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/AutoRepairLeadHandlingExample.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/AutoRepairLeadHandlingExample.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/AutoReplyFunnel.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/AutoReplyFunnel.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/AutomotiveCrmPipelineForRepairJobs.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/AutomotiveCrmPipelineForRepairJobs.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/AutomotiveReviewGenerationSystem.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/AutomotiveReviewGenerationSystem.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/AutomotiveServiceReminderAutomation.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/AutomotiveServiceReminderAutomation.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/BookingSystemsInsideWebsiteInfrastructure.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/BookingSystemsInsideWebsiteInfrastructure.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/BuildingRevenueVisibilityThroughCrmTracking.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/BuildingRevenueVisibilityThroughCrmTracking.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/ClientReactivationSystems.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/ClientReactivationSystems.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/ConversionArchitectureForServiceWebsites.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/ConversionArchitectureForServiceWebsites.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/ConversionTrackingForServiceBusinesses.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/ConversionTrackingForServiceBusinesses.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/CrmPipelineArchitecture.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/CrmPipelineArchitecture.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/CrmPipelineAutomation.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/CrmPipelineAutomation.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/CustomerFeedbackLoopFramework.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/CustomerFeedbackLoopFramework.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/DesigningWebsitesThatSupportCrmSystems.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/DesigningWebsitesThatSupportCrmSystems.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/GoogleBusinessProfileSystemArchitecture.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/GoogleBusinessProfileSystemArchitecture.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/HowReviewAutomationImprovesLocalAuthority.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/HowReviewAutomationImprovesLocalAuthority.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/HowSmartWebsiteSystemsWork.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/HowSmartWebsiteSystemsWork.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/HvacCrmPipelineStructure.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/HvacCrmPipelineStructure.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/HvacEmergencyCallHandlingSystem.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/HvacEmergencyCallHandlingSystem.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/HvacLeadHandlingExample.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/HvacLeadHandlingExample.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/HvacReviewGenerationFramework.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/HvacReviewGenerationFramework.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/LeadAutomationFramework.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/LeadAutomationFramework.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/LeadQualificationFramework.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/LeadQualificationFramework.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/LeadResponseTimeFramework.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/LeadResponseTimeFramework.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/LeadRoutingModelsForServiceCompanies.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/LeadRoutingModelsForServiceCompanies.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/LocalSeoVsWebsiteOptimization.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/LocalSeoVsWebsiteOptimization.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/LocalServicePageArchitecture.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/LocalServicePageArchitecture.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/LocalVisibilityFramework.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/LocalVisibilityFramework.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/MissedCallRecoveryForAutoRepair.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/MissedCallRecoveryForAutoRepair.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/MissedCallRecoveryForHvac.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/MissedCallRecoveryForHvac.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/MissedCallRecoveryForRoofing.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/MissedCallRecoveryForRoofing.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/MissedCallRecoveryForSalons.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/MissedCallRecoveryForSalons.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/MissedCallRecoverySystem.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/MissedCallRecoverySystem.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/MultiChannelLeadCaptureSystems.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/MultiChannelLeadCaptureSystems.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/ReducingSalonNoShowsWithAutomation.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/ReducingSalonNoShowsWithAutomation.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/ReputationMonitoringSystems.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/ReputationMonitoringSystems.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/RespondingToNegativeReviewsSystematically.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/RespondingToNegativeReviewsSystematically.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/ReviewGenerationSystem.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/ReviewGenerationSystem.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/RoofingCrmPipelineStructure.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/RoofingCrmPipelineStructure.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/RoofingEstimateFollowUpWorkflow.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/RoofingEstimateFollowUpWorkflow.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/RoofingLeadHandlingExample.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/RoofingLeadHandlingExample.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/RoofingReviewGenerationSystem.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/RoofingReviewGenerationSystem.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/SalesPipelineVisibilityFramework.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/SalesPipelineVisibilityFramework.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/SalonLeadHandlingExample.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/SalonLeadHandlingExample.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/SalonReviewGenerationFramework.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/SalonReviewGenerationFramework.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/ServiceBusinessFollowUpAutomationGuide.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/ServiceBusinessFollowUpAutomationGuide.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/ServicePageArchitectureThatConverts.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/ServicePageArchitectureThatConverts.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/TrackingCustomerLifetimeValueUsingCrm.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/TrackingCustomerLifetimeValueUsingCrm.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/TrackingSalonClientLifetimeValue.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/TrackingSalonClientLifetimeValue.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/WebsiteCrmIntegrationExplained.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/WebsiteCrmIntegrationExplained.tsx: slug not found"
+    },
+    {
+      "file": "src/domains/resources/content/WhatIsASystemsFirstWebsite.tsx",
+      "domain": "resources",
+      "field": "slug",
+      "code": "missing_slug",
+      "message": "resources/WhatIsASystemsFirstWebsite.tsx: slug not found"
+    }
+  ]
+}

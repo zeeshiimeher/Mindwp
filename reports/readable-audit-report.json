@@ -1,0 +1,125 @@
+{
+  "generatedAt": "2026-03-29T22:55:22.529Z",
+  "summary": "Your website is getting traffic but not converting visitors into leads effectively. Around 47% of pages have weak conversion paths. Fixing the highest-impact pages first will improve results.",
+  "issues": [
+    {
+      "title": "Weak connection to services",
+      "description": "104 pages are not directing users toward your services.",
+      "impact": "Visitors cannot easily discover what you offer, reducing conversion chances."
+    },
+    {
+      "title": "No clear user journey",
+      "description": "45 pages are not guiding visitors step-by-step through your content.",
+      "impact": "Users leave without taking action because there is no clear path forward."
+    },
+    {
+      "title": "Pages with poor internal linking",
+      "description": "26 pages have critical link health issues — too few links or missing key connections.",
+      "impact": "Search engines and visitors struggle to navigate your content."
+    }
+  ],
+  "opportunities": [
+    {
+      "title": "High-traffic pages underperforming",
+      "description": "22 important pages receive attention but do not convert visitors. These are your biggest quick wins."
+    },
+    {
+      "title": "Critical pages ready for improvement",
+      "description": "12 pages have been identified as critical priority. Fixing these will have the highest impact on overall performance."
+    },
+    {
+      "title": "Service pages need attention",
+      "description": "1 service and feature pages are not converting well. These are your most important pages for lead generation."
+    }
+  ],
+  "recommendations": [
+    {
+      "action": "Improve internal linking to services",
+      "explanation": "Connect your content pages to relevant service pages so visitors can easily find what you offer."
+    },
+    {
+      "action": "Build clear user journeys",
+      "explanation": "Guide visitors through a logical path: from learning (blog/resource) to understanding (case study) to taking action (service/contact)."
+    },
+    {
+      "action": "Focus on highest-impact pages first",
+      "explanation": "Start with service pages and high-traffic content. Small improvements on important pages deliver the biggest results."
+    }
+  ],
+  "priorityActions": [
+    {
+      "slug": "appointment-business-booking-automation",
+      "issue": "Critical link health",
+      "action": "Add 2-3 internal links to improve connectivity",
+      "expectedImprovement": "High impact expected",
+      "recommendedFixId": "add-links"
+    },
+    {
+      "slug": "auto-repair-missed-call-recovery",
+      "issue": "Critical link health",
+      "action": "Add 2-3 internal links to improve connectivity",
+      "expectedImprovement": "High impact expected",
+      "recommendedFixId": "add-links"
+    },
+    {
+      "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+      "issue": "Critical link health",
+      "action": "Add 2-3 internal links to improve connectivity",
+      "expectedImprovement": "High impact expected",
+      "recommendedFixId": "add-links"
+    },
+    {
+      "slug": "beauty-salon-online-booking-local-seo-manchester-custom",
+      "issue": "Critical link health",
+      "action": "Add 2-3 internal links to improve connectivity",
+      "expectedImprovement": "High impact expected",
+      "recommendedFixId": "add-links"
+    },
+    {
+      "slug": "law-firm-consultation-booking-system",
+      "issue": "Critical link health",
+      "action": "Add 2-3 internal links to improve connectivity",
+      "expectedImprovement": "High impact expected",
+      "recommendedFixId": "add-links"
+    },
+    {
+      "slug": "local-authority-system-impact",
+      "issue": "Critical link health",
+      "action": "Add 2-3 internal links to improve connectivity",
+      "expectedImprovement": "High impact expected",
+      "recommendedFixId": "add-links"
+    },
+    {
+      "slug": "real-estate-inquiry-routing",
+      "issue": "Critical link health",
+      "action": "Add 2-3 internal links to improve connectivity",
+      "expectedImprovement": "High impact expected",
+      "recommendedFixId": "add-links"
+    },
+    {
+      "slug": "roofing-website-rebuild-with-crm",
+      "issue": "Critical link health",
+      "action": "Add 2-3 internal links to improve connectivity",
+      "expectedImprovement": "High impact expected",
+      "recommendedFixId": "add-links"
+    },
+    {
+      "slug": "salon-booking-automation",
+      "issue": "Critical link health",
+      "action": "Add 2-3 internal links to improve connectivity",
+      "expectedImprovement": "High impact expected",
+      "recommendedFixId": "add-links"
+    },
+    {
+      "slug": "salon-no-show-reduction-system",
+      "issue": "Critical link health",
+      "action": "Add 2-3 internal links to improve connectivity",
+      "expectedImprovement": "High impact expected",
+      "recommendedFixId": "add-links"
+    }
+  ],
+  "expectedOutcome": {
+    "improvement": "Significant improvement in lead generation and conversion rates across the website",
+    "notes": "112 pages have been identified for high-impact optimization. Fixing these systematically will strengthen your entire content system."
+  }
+}

@@ -1,0 +1,3255 @@
+{
+  "generatedAt": "2026-03-29T22:55:21.853Z",
+  "summary": {
+    "totalPages": 205,
+    "healthy": 20,
+    "weak": 159,
+    "critical": 26,
+    "avgLinkScore": 340
+  },
+  "weakPages": [
+    {
+      "slug": "local-seo-authority",
+      "path": "/services/local-seo-authority",
+      "type": "service",
+      "status": "critical",
+      "totalLinks": 0,
+      "avgScore": 0,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "automotive-services",
+      "path": "/industries/automotive-services",
+      "type": "industry-category",
+      "status": "critical",
+      "totalLinks": 0,
+      "avgScore": 0,
+      "issues": [
+        "Too few internal links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "home-services",
+      "path": "/industries/home-services",
+      "type": "industry-category",
+      "status": "critical",
+      "totalLinks": 0,
+      "avgScore": 0,
+      "issues": [
+        "Too few internal links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "beauty-personal-care",
+      "path": "/industries/beauty-personal-care",
+      "type": "industry-category",
+      "status": "critical",
+      "totalLinks": 0,
+      "avgScore": 0,
+      "issues": [
+        "Too few internal links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "legal-professional-services",
+      "path": "/industries/legal-professional-services",
+      "type": "industry-category",
+      "status": "critical",
+      "totalLinks": 0,
+      "avgScore": 0,
+      "issues": [
+        "Too few internal links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "local-appointment-businesses",
+      "path": "/industries/local-appointment-businesses",
+      "type": "industry-category",
+      "status": "critical",
+      "totalLinks": 0,
+      "avgScore": 0,
+      "issues": [
+        "Too few internal links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "real-estate-property-services",
+      "path": "/industries/real-estate-property-services",
+      "type": "industry-category",
+      "status": "critical",
+      "totalLinks": 0,
+      "avgScore": 0,
+      "issues": [
+        "Too few internal links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "appointment-reminder-no-show-reduction",
+      "path": "/case-study/appointment-reminder-no-show-reduction",
+      "type": "case-study",
+      "status": "critical",
+      "totalLinks": 2,
+      "avgScore": 240,
+      "issues": [
+        "No high-authority links",
+        "No industry-matched links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add at least 1 high-authority link (service or case study)",
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "automotive-service-reminder-automation",
+      "path": "/case-study/automotive-service-reminder-automation",
+      "type": "case-study",
+      "status": "critical",
+      "totalLinks": 2,
+      "avgScore": 240,
+      "issues": [
+        "No high-authority links",
+        "No industry-matched links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add at least 1 high-authority link (service or case study)",
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "hvac-maintenance-plan-reactivation",
+      "path": "/case-study/hvac-maintenance-plan-reactivation",
+      "type": "case-study",
+      "status": "critical",
+      "totalLinks": 2,
+      "avgScore": 240,
+      "issues": [
+        "No high-authority links",
+        "No industry-matched links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add at least 1 high-authority link (service or case study)",
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "appointment-business-booking-automation",
+      "path": "/case-study/appointment-business-booking-automation",
+      "type": "case-study",
+      "status": "critical",
+      "totalLinks": 2,
+      "avgScore": 255,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "crm-pipeline-visibility-transformation",
+      "path": "/case-study/crm-pipeline-visibility-transformation",
+      "type": "case-study",
+      "status": "critical",
+      "totalLinks": 2,
+      "avgScore": 255,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "law-firm-client-intake-automation",
+      "path": "/case-study/law-firm-client-intake-automation",
+      "type": "case-study",
+      "status": "critical",
+      "totalLinks": 2,
+      "avgScore": 255,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "law-firm-consultation-booking-system",
+      "path": "/case-study/law-firm-consultation-booking-system",
+      "type": "case-study",
+      "status": "critical",
+      "totalLinks": 2,
+      "avgScore": 255,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "local-authority-system-impact",
+      "path": "/case-study/local-authority-system-impact",
+      "type": "case-study",
+      "status": "critical",
+      "totalLinks": 2,
+      "avgScore": 255,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "realtor-lead-follow-up-automation",
+      "path": "/case-study/realtor-lead-follow-up-automation",
+      "type": "case-study",
+      "status": "critical",
+      "totalLinks": 2,
+      "avgScore": 255,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "roofing-estimate-follow-up-automation",
+      "path": "/case-study/roofing-estimate-follow-up-automation",
+      "type": "case-study",
+      "status": "critical",
+      "totalLinks": 2,
+      "avgScore": 255,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "salon-booking-automation",
+      "path": "/case-study/salon-booking-automation",
+      "type": "case-study",
+      "status": "critical",
+      "totalLinks": 2,
+      "avgScore": 255,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "salon-no-show-reduction-system",
+      "path": "/case-study/salon-no-show-reduction-system",
+      "type": "case-study",
+      "status": "critical",
+      "totalLinks": 2,
+      "avgScore": 255,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+      "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+      "type": "case-study",
+      "status": "critical",
+      "totalLinks": 3,
+      "avgScore": 260,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "beauty-salon-online-booking-local-seo-manchester-custom",
+      "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-custom",
+      "type": "case-study",
+      "status": "critical",
+      "totalLinks": 3,
+      "avgScore": 260,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "auto-repair-missed-call-recovery",
+      "path": "/case-study/auto-repair-missed-call-recovery",
+      "type": "case-study",
+      "status": "critical",
+      "totalLinks": 2,
+      "avgScore": 270,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "real-estate-inquiry-routing",
+      "path": "/case-study/real-estate-inquiry-routing",
+      "type": "case-study",
+      "status": "critical",
+      "totalLinks": 2,
+      "avgScore": 270,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "roofing-website-rebuild-with-crm",
+      "path": "/case-study/roofing-website-rebuild-with-crm",
+      "type": "case-study",
+      "status": "critical",
+      "totalLinks": 2,
+      "avgScore": 270,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "salon-review-generation-automation",
+      "path": "/case-study/salon-review-generation-automation",
+      "type": "case-study",
+      "status": "critical",
+      "totalLinks": 2,
+      "avgScore": 270,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "smart-website-infrastructure-implementation",
+      "path": "/case-study/smart-website-infrastructure-implementation",
+      "type": "case-study",
+      "status": "critical",
+      "totalLinks": 2,
+      "avgScore": 270,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "plumbing-companies",
+      "path": "/industries/home-services/plumbing-companies",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 285,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "accounting-firms",
+      "path": "/industries/legal-professional-services/accounting-firms",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 300,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "realtors",
+      "path": "/industries/real-estate-property-services/realtors",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 300,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "hvac-seasonal-lead-surge-handling",
+      "path": "/case-study/hvac-seasonal-lead-surge-handling",
+      "type": "case-study",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 300,
+      "issues": [
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "storm-season-lead-handling-system",
+      "path": "/case-study/storm-season-lead-handling-system",
+      "type": "case-study",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 300,
+      "issues": [
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "body-shops",
+      "path": "/industries/automotive-services/body-shops",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 305,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "mobile-mechanics",
+      "path": "/industries/automotive-services/mobile-mechanics",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 305,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "landscaping-companies",
+      "path": "/industries/home-services/landscaping-companies",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 305,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "small-law-firms",
+      "path": "/industries/legal-professional-services/small-law-firms",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 305,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "mortgage-brokers",
+      "path": "/industries/real-estate-property-services/mortgage-brokers",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 305,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "property-managers",
+      "path": "/industries/real-estate-property-services/property-managers",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 305,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "conversion-tracking-for-service-businesses-explained",
+      "path": "/blog/conversion-tracking-for-service-businesses-explained",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 305,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "how-smart-website-systems-work-for-local-businesses",
+      "path": "/blog/how-smart-website-systems-work-for-local-businesses",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 305,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "lead-qualification-framework-for-service-businesses",
+      "path": "/blog/lead-qualification-framework-for-service-businesses",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 305,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "multi-channel-lead-capture-system-for-service-businesses",
+      "path": "/blog/multi-channel-lead-capture-system-for-service-businesses",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 305,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "service-page-architecture-for-service-businesses",
+      "path": "/blog/service-page-architecture-for-service-businesses",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 305,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "website-crm-integration-for-salons",
+      "path": "/blog/website-crm-integration-for-salons",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 305,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "website-crm-integration-for-service-businesses",
+      "path": "/blog/website-crm-integration-for-service-businesses",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 305,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "website-design-that-supports-crm-systems",
+      "path": "/blog/website-design-that-supports-crm-systems",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 305,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "what-is-a-systems-first-website-for-service-businesses",
+      "path": "/blog/what-is-a-systems-first-website-for-service-businesses",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 305,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "why-booking-systems-need-website-infrastructure",
+      "path": "/blog/why-booking-systems-need-website-infrastructure",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 305,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "why-service-business-websites-fail-to-convert",
+      "path": "/blog/why-service-business-websites-fail-to-convert",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 305,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "nail-salons",
+      "path": "/industries/beauty-personal-care/nail-salons",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 308,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "lash-lift-and-extensions",
+      "path": "/industries/beauty-personal-care/lash-lift-and-extensions",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 308,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "lead-response-time-for-service-businesses",
+      "path": "/blog/lead-response-time-for-service-businesses",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 3,
+      "avgScore": 310,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "service-business-follow-up-automation",
+      "path": "/blog/service-business-follow-up-automation",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 3,
+      "avgScore": 310,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "auto-repair",
+      "path": "/industries/automotive-services/auto-repair",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 313,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "car-detailing",
+      "path": "/industries/automotive-services/car-detailing",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 313,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "electrical-companies",
+      "path": "/industries/home-services/electrical-companies",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 313,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "aesthetic-cosmetic-clinics",
+      "path": "/industries/beauty-personal-care/aesthetic-cosmetic-clinics",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 313,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "small-med-spas",
+      "path": "/industries/beauty-personal-care/small-med-spas",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 313,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "consultants",
+      "path": "/industries/legal-professional-services/consultants",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 313,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "dental-clinics",
+      "path": "/industries/local-appointment-businesses/dental-clinics",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 313,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "driving-schools",
+      "path": "/industries/local-appointment-businesses/driving-schools",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 313,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "repair-shops",
+      "path": "/industries/local-appointment-businesses/repair-shops",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 313,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "small-private-clinics",
+      "path": "/industries/local-appointment-businesses/small-private-clinics",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 313,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "tattoo-studios",
+      "path": "/industries/local-appointment-businesses/tattoo-studios",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 313,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "home-inspectors",
+      "path": "/industries/real-estate-property-services/home-inspectors",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 313,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "lead-automation-framework-for-service-businesses",
+      "path": "/blog/lead-automation-framework-for-service-businesses",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 320,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "missed-call-recovery-for-service-businesses",
+      "path": "/blog/missed-call-recovery-for-service-businesses",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 320,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "hvac-emergency-lead-routing",
+      "path": "/case-study/hvac-emergency-lead-routing",
+      "type": "case-study",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 330,
+      "issues": [
+        "No service link — missing conversion path",
+        "No journey progression link"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path",
+        "Add a journey progression link to guide users forward"
+      ]
+    },
+    {
+      "slug": "ai-reception-for-automotive-shops",
+      "path": "/blog/ai-reception-for-automotive-shops",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 335,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "booking-scheduling-system",
+      "path": "/services/booking-scheduling-system",
+      "type": "service",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 340,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "unified-communication-system",
+      "path": "/services/unified-communication-system",
+      "type": "service",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 340,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "crm-infrastructure-implementation",
+      "path": "/services/crm-infrastructure-implementation",
+      "type": "service",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 340,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "authority-signals-for-local-search",
+      "path": "/resources/authority-signals-for-local-search",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 340,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "google-business-profile-system-architecture",
+      "path": "/resources/google-business-profile-system-architecture",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 340,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "how-review-automation-improves-local-authority",
+      "path": "/resources/how-review-automation-improves-local-authority",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 340,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "lead-routing-models-for-service-companies",
+      "path": "/resources/lead-routing-models-for-service-companies",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 340,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "local-seo-vs-website-optimization",
+      "path": "/resources/local-seo-vs-website-optimization",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 340,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "responding-to-negative-reviews-systematically",
+      "path": "/resources/responding-to-negative-reviews-systematically",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 340,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "automotive-crm-pipeline-for-repair-jobs",
+      "path": "/resources/automotive-crm-pipeline-for-repair-jobs",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 345,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "sales-pipeline-visibility-framework",
+      "path": "/resources/sales-pipeline-visibility-framework",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 345,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "tracking-customer-lifetime-value-using-crm",
+      "path": "/resources/tracking-customer-lifetime-value-using-crm",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 345,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "why-auto-repair-missed-calls-lose-booked-work",
+      "path": "/blog/why-auto-repair-missed-calls-lose-booked-work",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 350,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "why-hvac-missed-calls-lose-after-hours-revenue",
+      "path": "/blog/why-hvac-missed-calls-lose-after-hours-revenue",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 350,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "why-roofing-companies-lose-leads-during-storm-season",
+      "path": "/blog/why-roofing-companies-lose-leads-during-storm-season",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 350,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "why-roofing-missed-calls-cost-emergency-jobs",
+      "path": "/blog/why-roofing-missed-calls-cost-emergency-jobs",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 350,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "why-salons-lose-calls-during-service-hours",
+      "path": "/blog/why-salons-lose-calls-during-service-hours",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 350,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "why-salons-need-lead-handling-systems",
+      "path": "/blog/why-salons-need-lead-handling-systems",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 350,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "hvac-emergency-call-handling-mistakes",
+      "path": "/blog/hvac-emergency-call-handling-mistakes",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 3,
+      "avgScore": 353,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "client-reactivation-systems-for-service-businesses",
+      "path": "/blog/client-reactivation-systems-for-service-businesses",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 355,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "smart-website-systems-for-roofing-companies",
+      "path": "/blog/smart-website-systems-for-roofing-companies",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 355,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "systems-first-website-for-hvac-companies",
+      "path": "/blog/systems-first-website-for-hvac-companies",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 355,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "auto-repair-lead-handling-example",
+      "path": "/resources/auto-repair-lead-handling-example",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 355,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "hvac-lead-handling-example",
+      "path": "/resources/hvac-lead-handling-example",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 355,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "missed-call-recovery-for-auto-repair",
+      "path": "/resources/missed-call-recovery-for-auto-repair",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 355,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "missed-call-recovery-for-hvac",
+      "path": "/resources/missed-call-recovery-for-hvac",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 355,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "missed-call-recovery-for-roofing",
+      "path": "/resources/missed-call-recovery-for-roofing",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 355,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "missed-call-recovery-for-salons",
+      "path": "/resources/missed-call-recovery-for-salons",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 355,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "roofing-lead-handling-example",
+      "path": "/resources/roofing-lead-handling-example",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 355,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "salon-lead-handling-example",
+      "path": "/resources/salon-lead-handling-example",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 355,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "local-service-page-architecture-for-roofing-companies",
+      "path": "/blog/local-service-page-architecture-for-roofing-companies",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 3,
+      "avgScore": 357,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "building-revenue-visibility-through-crm-tracking",
+      "path": "/resources/building-revenue-visibility-through-crm-tracking",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 360,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "local-visibility-framework-for-service-businesses",
+      "path": "/blog/local-visibility-framework-for-service-businesses",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 3,
+      "avgScore": 367,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "smart-website-systems",
+      "path": "/services/smart-website-systems",
+      "type": "service",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 370,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "system-migration-platform-consolidation",
+      "path": "/services/system-migration-platform-consolidation",
+      "type": "service",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 370,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "marketing-automation-setup",
+      "path": "/services/marketing-automation-setup",
+      "type": "service",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 370,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "website-redesign-system-rebuild",
+      "path": "/services/website-redesign-system-rebuild",
+      "type": "service",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 370,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "lead-reactivation-system",
+      "path": "/services/lead-reactivation-system",
+      "type": "service",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 370,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "reputation-review-systems",
+      "path": "/services/reputation-review-systems",
+      "type": "service",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 370,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "review-automation-system",
+      "path": "/services/review-automation-system",
+      "type": "service",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 370,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "wordpress-development",
+      "path": "/services/wordpress-development",
+      "type": "service",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 370,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "automotive-review-generation-system",
+      "path": "/resources/automotive-review-generation-system",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 370,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "future-crm-visibility-for-hvac-companies",
+      "path": "/blog/future-crm-visibility-for-hvac-companies",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 370,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "hvac-crm-pipeline-for-service-companies",
+      "path": "/blog/hvac-crm-pipeline-for-service-companies",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 370,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "hvac-review-generation-framework",
+      "path": "/resources/hvac-review-generation-framework",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 370,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "reducing-salon-no-shows-with-automation",
+      "path": "/resources/reducing-salon-no-shows-with-automation",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 370,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "revenue-visibility-for-roofing-companies",
+      "path": "/blog/revenue-visibility-for-roofing-companies",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 370,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "roofing-crm-pipeline-for-estimates",
+      "path": "/blog/roofing-crm-pipeline-for-estimates",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 370,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "roofing-review-generation-system",
+      "path": "/resources/roofing-review-generation-system",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 370,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "salon-review-generation-framework",
+      "path": "/resources/salon-review-generation-framework",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 370,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "tracking-salon-client-lifetime-value",
+      "path": "/resources/tracking-salon-client-lifetime-value",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 370,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "why-hvac-companies-lose-leads-after-hours",
+      "path": "/blog/why-hvac-companies-lose-leads-after-hours",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 3,
+      "avgScore": 373,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "conversion-tracking-for-hvac-companies",
+      "path": "/blog/conversion-tracking-for-hvac-companies",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 385,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "lead-qualification-for-roofing-companies",
+      "path": "/blog/lead-qualification-for-roofing-companies",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 385,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "lead-routing-for-hvac-companies",
+      "path": "/blog/lead-routing-for-hvac-companies",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 385,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "roofing-estimate-follow-up-delays",
+      "path": "/blog/roofing-estimate-follow-up-delays",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 385,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "sales-pipeline-visibility-for-hvac-companies",
+      "path": "/blog/sales-pipeline-visibility-for-hvac-companies",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 385,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "workflows",
+      "path": "/features/workflows",
+      "type": "feature",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "crm",
+      "path": "/features/crm",
+      "type": "feature",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "crm-pipeline-architecture-for-service-businesses",
+      "path": "/blog/crm-pipeline-architecture-for-service-businesses",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 390,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "customer-feedback-loop-for-plumbing-companies",
+      "path": "/blog/customer-feedback-loop-for-plumbing-companies",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 390,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "customer-feedback-loop-framework-for-service-businesses",
+      "path": "/blog/customer-feedback-loop-framework-for-service-businesses",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 390,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "local-service-page-architecture-for-local-businesses",
+      "path": "/blog/local-service-page-architecture-for-local-businesses",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 390,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "reputation-monitoring-systems-for-service-businesses",
+      "path": "/blog/reputation-monitoring-systems-for-service-businesses",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 390,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "authority-signals-for-local-search",
+      "path": "/resources/authority-signals-for-local-search",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "automotive-crm-pipeline-for-repair-jobs",
+      "path": "/resources/automotive-crm-pipeline-for-repair-jobs",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links",
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage",
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "automotive-service-reminder-automation",
+      "path": "/case-study/automotive-service-reminder-automation",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links",
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage",
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "booking-systems-inside-website-infrastructure",
+      "path": "/resources/booking-systems-inside-website-infrastructure",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "building-revenue-visibility-through-crm-tracking",
+      "path": "/resources/building-revenue-visibility-through-crm-tracking",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "client-reactivation-systems",
+      "path": "/resources/client-reactivation-systems",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "conversion-tracking-for-service-businesses",
+      "path": "/resources/conversion-tracking-for-service-businesses",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "crm-pipeline-architecture",
+      "path": "/resources/crm-pipeline-architecture",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "crm-pipeline-automation",
+      "path": "/resources/crm-pipeline-automation",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "customer-feedback-loop-framework",
+      "path": "/resources/customer-feedback-loop-framework",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "designing-websites-that-support-crm-systems",
+      "path": "/resources/designing-websites-that-support-crm-systems",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "hvac-crm-pipeline-structure",
+      "path": "/resources/hvac-crm-pipeline-structure",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links",
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage",
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "hvac-emergency-call-handling-system",
+      "path": "/resources/hvac-emergency-call-handling-system",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links",
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage",
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "lead-qualification-framework",
+      "path": "/resources/lead-qualification-framework",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "local-service-page-architecture",
+      "path": "/resources/local-service-page-architecture",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "responding-to-negative-reviews-systematically",
+      "path": "/resources/responding-to-negative-reviews-systematically",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "roofing-crm-pipeline-structure",
+      "path": "/resources/roofing-crm-pipeline-structure",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links",
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage",
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "roofing-estimate-follow-up-workflow",
+      "path": "/resources/roofing-estimate-follow-up-workflow",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links",
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage",
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "sales-pipeline-visibility-framework",
+      "path": "/resources/sales-pipeline-visibility-framework",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "service-business-follow-up-automation-guide",
+      "path": "/resources/service-business-follow-up-automation-guide",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "tracking-customer-lifetime-value-using-crm",
+      "path": "/resources/tracking-customer-lifetime-value-using-crm",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "tracking-salon-client-lifetime-value",
+      "path": "/resources/tracking-salon-client-lifetime-value",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links",
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage",
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "website-crm-integration-explained",
+      "path": "/resources/website-crm-integration-explained",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 390,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "autonomous-booking-systems-for-salons",
+      "path": "/blog/autonomous-booking-systems-for-salons",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 3,
+      "avgScore": 397,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "multi-channel-lead-capture-for-salons",
+      "path": "/blog/multi-channel-lead-capture-for-salons",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 400,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "why-auto-repair-shops-lose-phone-leads",
+      "path": "/blog/why-auto-repair-shops-lose-phone-leads",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 400,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "future-local-seo-after-google-business-profile-automation",
+      "path": "/blog/future-local-seo-after-google-business-profile-automation",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 405,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "google-business-profile-for-hvac-companies",
+      "path": "/blog/google-business-profile-for-hvac-companies",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 405,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "how-ai-search-changes-local-business-visibility",
+      "path": "/blog/how-ai-search-changes-local-business-visibility",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 405,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "local-seo-for-roofing-companies-explained",
+      "path": "/blog/local-seo-for-roofing-companies-explained",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 405,
+      "issues": [
+        "No industry-matched links",
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance",
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "reputation",
+      "path": "/features/reputation",
+      "type": "feature",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 420,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "calendars",
+      "path": "/features/calendars",
+      "type": "feature",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 420,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "authority-signals-for-salons",
+      "path": "/blog/authority-signals-for-salons",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 420,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "automotive-service-reminders-explained",
+      "path": "/blog/automotive-service-reminders-explained",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 420,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "negative-reviews-for-auto-repair-shops",
+      "path": "/blog/negative-reviews-for-auto-repair-shops",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 420,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "review-generation-system-for-local-businesses",
+      "path": "/blog/review-generation-system-for-local-businesses",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 420,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "automotive-review-generation-system",
+      "path": "/resources/automotive-review-generation-system",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 420,
+      "issues": [
+        "Too few internal links",
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage",
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "google-business-profile-system-architecture",
+      "path": "/resources/google-business-profile-system-architecture",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 420,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "how-review-automation-improves-local-authority",
+      "path": "/resources/how-review-automation-improves-local-authority",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 420,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "how-smart-website-systems-work",
+      "path": "/resources/how-smart-website-systems-work",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 420,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "hvac-review-generation-framework",
+      "path": "/resources/hvac-review-generation-framework",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 420,
+      "issues": [
+        "Too few internal links",
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage",
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "local-seo-vs-website-optimization",
+      "path": "/resources/local-seo-vs-website-optimization",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 420,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "local-visibility-framework",
+      "path": "/resources/local-visibility-framework",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 420,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "reducing-salon-no-shows-with-automation",
+      "path": "/resources/reducing-salon-no-shows-with-automation",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 420,
+      "issues": [
+        "Too few internal links",
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage",
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "reputation-monitoring-systems",
+      "path": "/resources/reputation-monitoring-systems",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 420,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "review-generation-system",
+      "path": "/resources/review-generation-system",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 420,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "roofing-review-generation-system",
+      "path": "/resources/roofing-review-generation-system",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 420,
+      "issues": [
+        "Too few internal links",
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage",
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "salon-review-generation-framework",
+      "path": "/resources/salon-review-generation-framework",
+      "type": "resource",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 420,
+      "issues": [
+        "Too few internal links",
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage",
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "review-automation-for-hvac-companies",
+      "path": "/blog/review-automation-for-hvac-companies",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 435,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "review-automation-for-roofing-companies",
+      "path": "/blog/review-automation-for-roofing-companies",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 435,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "review-automation-for-salons",
+      "path": "/blog/review-automation-for-salons",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 435,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "booking-systems-for-salons-explained",
+      "path": "/blog/booking-systems-for-salons-explained",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 450,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    },
+    {
+      "slug": "client-reactivation-for-salons",
+      "path": "/blog/client-reactivation-for-salons",
+      "type": "blog",
+      "status": "weak",
+      "totalLinks": 2,
+      "avgScore": 450,
+      "issues": [
+        "No service link — missing conversion path"
+      ],
+      "suggestions": [
+        "Add a service link to create a conversion path"
+      ]
+    }
+  ],
+  "topOpportunities": [
+    {
+      "sourceSlug": "automotive-crm-pipeline-for-repair-jobs",
+      "suggestedTarget": "automotive-service-reminder-automation",
+      "targetPath": "/resources/automotive-service-reminder-automation",
+      "reason": "relatesTo edge, industry match (1), system match (1)",
+      "score": 400
+    },
+    {
+      "sourceSlug": "automotive-service-reminder-automation",
+      "suggestedTarget": "hvac-maintenance-plan-reactivation",
+      "targetPath": "/case-study/hvac-maintenance-plan-reactivation",
+      "reason": "relatesTo edge, topic match (2), system match (1)",
+      "score": 400
+    },
+    {
+      "sourceSlug": "hvac-crm-pipeline-structure",
+      "suggestedTarget": "hvac-emergency-call-handling-system",
+      "targetPath": "/resources/hvac-emergency-call-handling-system",
+      "reason": "relatesTo edge, industry match (1), system match (1)",
+      "score": 400
+    },
+    {
+      "sourceSlug": "hvac-emergency-call-handling-system",
+      "suggestedTarget": "hvac-crm-pipeline-structure",
+      "targetPath": "/resources/hvac-crm-pipeline-structure",
+      "reason": "relatesTo edge, industry match (1), system match (1)",
+      "score": 400
+    },
+    {
+      "sourceSlug": "hvac-emergency-call-handling-system",
+      "suggestedTarget": "hvac-lead-handling-example",
+      "targetPath": "/resources/hvac-lead-handling-example",
+      "reason": "relatesTo edge, industry match (1), system match (1)",
+      "score": 400
+    },
+    {
+      "sourceSlug": "hvac-emergency-call-handling-system",
+      "suggestedTarget": "missed-call-recovery-for-hvac",
+      "targetPath": "/resources/missed-call-recovery-for-hvac",
+      "reason": "relatesTo edge, industry match (1), system match (1)",
+      "score": 400
+    },
+    {
+      "sourceSlug": "reducing-salon-no-shows-with-automation",
+      "suggestedTarget": "tracking-salon-client-lifetime-value",
+      "targetPath": "/blog/tracking-salon-client-lifetime-value",
+      "reason": "relatesTo edge, industry match (1), system match (1)",
+      "score": 400
+    },
+    {
+      "sourceSlug": "reducing-salon-no-shows-with-automation",
+      "suggestedTarget": "missed-call-recovery-for-salons",
+      "targetPath": "/resources/missed-call-recovery-for-salons",
+      "reason": "relatesTo edge, industry match (1), system match (1)",
+      "score": 400
+    },
+    {
+      "sourceSlug": "reducing-salon-no-shows-with-automation",
+      "suggestedTarget": "salon-lead-handling-example",
+      "targetPath": "/resources/salon-lead-handling-example",
+      "reason": "relatesTo edge, industry match (1), system match (1)",
+      "score": 400
+    },
+    {
+      "sourceSlug": "reducing-salon-no-shows-with-automation",
+      "suggestedTarget": "tracking-salon-client-lifetime-value",
+      "targetPath": "/resources/tracking-salon-client-lifetime-value",
+      "reason": "relatesTo edge, industry match (1), system match (1)",
+      "score": 400
+    },
+    {
+      "sourceSlug": "roofing-crm-pipeline-structure",
+      "suggestedTarget": "roofing-estimate-follow-up-workflow",
+      "targetPath": "/resources/roofing-estimate-follow-up-workflow",
+      "reason": "relatesTo edge, industry match (1), system match (1)",
+      "score": 400
+    },
+    {
+      "sourceSlug": "roofing-estimate-follow-up-workflow",
+      "suggestedTarget": "missed-call-recovery-for-roofing",
+      "targetPath": "/resources/missed-call-recovery-for-roofing",
+      "reason": "relatesTo edge, industry match (1), system match (1)",
+      "score": 400
+    },
+    {
+      "sourceSlug": "roofing-estimate-follow-up-workflow",
+      "suggestedTarget": "roofing-crm-pipeline-structure",
+      "targetPath": "/resources/roofing-crm-pipeline-structure",
+      "reason": "relatesTo edge, industry match (1), system match (1)",
+      "score": 400
+    },
+    {
+      "sourceSlug": "roofing-estimate-follow-up-workflow",
+      "suggestedTarget": "roofing-lead-handling-example",
+      "targetPath": "/resources/roofing-lead-handling-example",
+      "reason": "relatesTo edge, industry match (1), system match (1)",
+      "score": 400
+    },
+    {
+      "sourceSlug": "tracking-salon-client-lifetime-value",
+      "suggestedTarget": "reducing-salon-no-shows-with-automation",
+      "targetPath": "/blog/reducing-salon-no-shows-with-automation",
+      "reason": "relatesTo edge, industry match (1), system match (1)",
+      "score": 400
+    },
+    {
+      "sourceSlug": "tracking-salon-client-lifetime-value",
+      "suggestedTarget": "reducing-salon-no-shows-with-automation",
+      "targetPath": "/resources/reducing-salon-no-shows-with-automation",
+      "reason": "relatesTo edge, industry match (1), system match (1)",
+      "score": 400
+    },
+    {
+      "sourceSlug": "hvac-emergency-call-handling-system",
+      "suggestedTarget": "reducing-salon-no-shows-with-automation",
+      "targetPath": "/blog/reducing-salon-no-shows-with-automation",
+      "reason": "relatesTo edge, system match (2)",
+      "score": 380
+    },
+    {
+      "sourceSlug": "hvac-emergency-call-handling-system",
+      "suggestedTarget": "reducing-salon-no-shows-with-automation",
+      "targetPath": "/resources/reducing-salon-no-shows-with-automation",
+      "reason": "relatesTo edge, system match (2)",
+      "score": 380
+    },
+    {
+      "sourceSlug": "local-service-page-architecture",
+      "suggestedTarget": "auto-repair",
+      "targetPath": "/industries/automotive-services/auto-repair",
+      "reason": "relatesTo edge, system match (2)",
+      "score": 380
+    },
+    {
+      "sourceSlug": "reducing-salon-no-shows-with-automation",
+      "suggestedTarget": "hvac-emergency-call-handling-system",
+      "targetPath": "/resources/hvac-emergency-call-handling-system",
+      "reason": "relatesTo edge, system match (2)",
+      "score": 380
+    }
+  ],
+  "revenueOpportunities": [
+    {
+      "slug": "smart-website-systems",
+      "path": "/services/smart-website-systems",
+      "type": "service",
+      "conversionGoal": "consultation",
+      "totalScore": 65,
+      "status": "medium"
+    },
+    {
+      "slug": "booking-scheduling-system",
+      "path": "/services/booking-scheduling-system",
+      "type": "service",
+      "conversionGoal": "consultation",
+      "totalScore": 65,
+      "status": "medium"
+    },
+    {
+      "slug": "system-migration-platform-consolidation",
+      "path": "/services/system-migration-platform-consolidation",
+      "type": "service",
+      "conversionGoal": "consultation",
+      "totalScore": 65,
+      "status": "medium"
+    },
+    {
+      "slug": "marketing-automation-setup",
+      "path": "/services/marketing-automation-setup",
+      "type": "service",
+      "conversionGoal": "consultation",
+      "totalScore": 65,
+      "status": "medium"
+    },
+    {
+      "slug": "website-redesign-system-rebuild",
+      "path": "/services/website-redesign-system-rebuild",
+      "type": "service",
+      "conversionGoal": "consultation",
+      "totalScore": 65,
+      "status": "medium"
+    },
+    {
+      "slug": "lead-reactivation-system",
+      "path": "/services/lead-reactivation-system",
+      "type": "service",
+      "conversionGoal": "consultation",
+      "totalScore": 65,
+      "status": "medium"
+    },
+    {
+      "slug": "unified-communication-system",
+      "path": "/services/unified-communication-system",
+      "type": "service",
+      "conversionGoal": "consultation",
+      "totalScore": 65,
+      "status": "medium"
+    },
+    {
+      "slug": "reputation-review-systems",
+      "path": "/services/reputation-review-systems",
+      "type": "service",
+      "conversionGoal": "consultation",
+      "totalScore": 65,
+      "status": "medium"
+    },
+    {
+      "slug": "review-automation-system",
+      "path": "/services/review-automation-system",
+      "type": "service",
+      "conversionGoal": "consultation",
+      "totalScore": 65,
+      "status": "medium"
+    },
+    {
+      "slug": "crm-infrastructure-implementation",
+      "path": "/services/crm-infrastructure-implementation",
+      "type": "service",
+      "conversionGoal": "consultation",
+      "totalScore": 65,
+      "status": "medium"
+    },
+    {
+      "slug": "wordpress-development",
+      "path": "/services/wordpress-development",
+      "type": "service",
+      "conversionGoal": "consultation",
+      "totalScore": 65,
+      "status": "medium"
+    },
+    {
+      "slug": "local-seo-authority",
+      "path": "/services/local-seo-authority",
+      "type": "service",
+      "conversionGoal": "consultation",
+      "totalScore": 50,
+      "status": "medium"
+    },
+    {
+      "slug": "appointment-business-booking-automation",
+      "path": "/case-study/appointment-business-booking-automation",
+      "type": "case-study",
+      "conversionGoal": "consultation",
+      "totalScore": 33,
+      "status": "low"
+    },
+    {
+      "slug": "appointment-reminder-no-show-reduction",
+      "path": "/case-study/appointment-reminder-no-show-reduction",
+      "type": "case-study",
+      "conversionGoal": "consultation",
+      "totalScore": 33,
+      "status": "low"
+    },
+    {
+      "slug": "auto-repair-missed-call-recovery",
+      "path": "/case-study/auto-repair-missed-call-recovery",
+      "type": "case-study",
+      "conversionGoal": "consultation",
+      "totalScore": 33,
+      "status": "low"
+    },
+    {
+      "slug": "automotive-service-reminder-automation",
+      "path": "/case-study/automotive-service-reminder-automation",
+      "type": "case-study",
+      "conversionGoal": "consultation",
+      "totalScore": 33,
+      "status": "low"
+    },
+    {
+      "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+      "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+      "type": "case-study",
+      "conversionGoal": "consultation",
+      "totalScore": 33,
+      "status": "low"
+    },
+    {
+      "slug": "beauty-salon-online-booking-local-seo-manchester-custom",
+      "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-custom",
+      "type": "case-study",
+      "conversionGoal": "consultation",
+      "totalScore": 33,
+      "status": "low"
+    },
+    {
+      "slug": "crm-pipeline-visibility-transformation",
+      "path": "/case-study/crm-pipeline-visibility-transformation",
+      "type": "case-study",
+      "conversionGoal": "consultation",
+      "totalScore": 33,
+      "status": "low"
+    },
+    {
+      "slug": "hvac-emergency-lead-routing",
+      "path": "/case-study/hvac-emergency-lead-routing",
+      "type": "case-study",
+      "conversionGoal": "consultation",
+      "totalScore": 33,
+      "status": "low"
+    }
+  ],
+  "lowConversionPages": [
+    {
+      "slug": "ai-reception-for-automotive-shops",
+      "path": "/blog/ai-reception-for-automotive-shops",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    },
+    {
+      "slug": "authority-signals-for-local-search",
+      "path": "/resources/authority-signals-for-local-search",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    },
+    {
+      "slug": "authority-signals-for-salons",
+      "path": "/blog/authority-signals-for-salons",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    },
+    {
+      "slug": "automotive-crm-pipeline-for-repair-jobs",
+      "path": "/resources/automotive-crm-pipeline-for-repair-jobs",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    },
+    {
+      "slug": "automotive-review-generation-system",
+      "path": "/resources/automotive-review-generation-system",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    },
+    {
+      "slug": "automotive-service-reminders-explained",
+      "path": "/blog/automotive-service-reminders-explained",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    },
+    {
+      "slug": "booking-systems-for-salons-explained",
+      "path": "/blog/booking-systems-for-salons-explained",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    },
+    {
+      "slug": "building-revenue-visibility-through-crm-tracking",
+      "path": "/resources/building-revenue-visibility-through-crm-tracking",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    },
+    {
+      "slug": "client-reactivation-for-salons",
+      "path": "/blog/client-reactivation-for-salons",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    },
+    {
+      "slug": "client-reactivation-systems-for-service-businesses",
+      "path": "/blog/client-reactivation-systems-for-service-businesses",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    },
+    {
+      "slug": "conversion-tracking-for-hvac-companies",
+      "path": "/blog/conversion-tracking-for-hvac-companies",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    },
+    {
+      "slug": "conversion-tracking-for-service-businesses-explained",
+      "path": "/blog/conversion-tracking-for-service-businesses-explained",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    },
+    {
+      "slug": "crm-pipeline-architecture-for-service-businesses",
+      "path": "/blog/crm-pipeline-architecture-for-service-businesses",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    },
+    {
+      "slug": "customer-feedback-loop-for-plumbing-companies",
+      "path": "/blog/customer-feedback-loop-for-plumbing-companies",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    },
+    {
+      "slug": "customer-feedback-loop-framework-for-service-businesses",
+      "path": "/blog/customer-feedback-loop-framework-for-service-businesses",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    },
+    {
+      "slug": "future-crm-visibility-for-hvac-companies",
+      "path": "/blog/future-crm-visibility-for-hvac-companies",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    },
+    {
+      "slug": "future-local-seo-after-google-business-profile-automation",
+      "path": "/blog/future-local-seo-after-google-business-profile-automation",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    },
+    {
+      "slug": "google-business-profile-for-hvac-companies",
+      "path": "/blog/google-business-profile-for-hvac-companies",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    },
+    {
+      "slug": "google-business-profile-system-architecture",
+      "path": "/resources/google-business-profile-system-architecture",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    },
+    {
+      "slug": "how-ai-search-changes-local-business-visibility",
+      "path": "/blog/how-ai-search-changes-local-business-visibility",
+      "type": "blog",
+      "ctaScore": 5,
+      "serviceLinkScore": 0,
+      "journeyScore": 20,
+      "totalScore": 35
+    }
+  ],
+  "ctaIssues": {
+    "pagesWithoutServiceLink": 104,
+    "pagesWithoutJourneyLink": 45,
+    "avgConversionScore": 50
+  }
+}

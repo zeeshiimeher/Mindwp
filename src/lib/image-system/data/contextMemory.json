@@ -1,0 +1,31 @@
+{
+  "lead-response-time": {
+    "queries": [
+      "lead response time for service businesses",
+      "small business owner answering phone"
+    ],
+    "provider": "pexels",
+    "avgScore": 68,
+    "count": 4
+  },
+  "booking-automation": {
+    "queries": [
+      "booking system screen",
+      "modern dental practice reception area"
+    ],
+    "provider": "unsplash",
+    "avgScore": 58,
+    "count": 3
+  },
+  "authority-signals": {
+    "queries": [
+      "authority signals business",
+      "weak authority dashboards",
+      "authority signals dashboards",
+      "local business storefront on high street"
+    ],
+    "provider": "unsplash",
+    "avgScore": 58,
+    "count": 4
+  }
+}

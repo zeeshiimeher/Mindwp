@@ -1,0 +1,22 @@
+{
+  "blog": {
+    "unsplash": 0.5372925500000001,
+    "pexels": 0.5196205,
+    "pixabay": 0.5
+  },
+  "resources": {
+    "unsplash": 0.5590025500000002,
+    "pexels": 0.3382522980450001,
+    "pixabay": 0.30066352350000014
+  },
+  "industries": {
+    "unsplash": 0.7,
+    "pexels": 0.6,
+    "pixabay": 0.5
+  },
+  "case-studies": {
+    "unsplash": 0.5229755950000001,
+    "pexels": 0.34371024450000015,
+    "pixabay": 0.37963500000000006
+  }
+}
