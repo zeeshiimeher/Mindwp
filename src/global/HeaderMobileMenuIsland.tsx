@@ -18,7 +18,7 @@ export function HeaderMobileMenuIsland({ navLinks }: HeaderMobileMenuIslandProps
         className='header-mobile-toggle md:hidden p-2 rounded-lg transition-colors'
         onClick={() => setMobileMenuOpen(open => !open)}
         aria-label='Toggle menu'
-        style={{ color: 'var(--color-text-muted)' }}
+        style={{ color: 'var(--c-text-muted)' }}
       >
         {mobileMenuOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}
       </button>
@@ -34,7 +34,7 @@ export function HeaderMobileMenuIsland({ navLinks }: HeaderMobileMenuIslandProps
                 key={link.label}
                 href={link.to}
                 className={`header-mobile-link-${index + 1} py-2 transition-colors`}
-                style={{ color: 'var(--color-text-muted)' }}
+                style={{ color: 'var(--c-text-muted)' }}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}
