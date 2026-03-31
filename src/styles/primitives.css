@@ -98,15 +98,15 @@
     line-height: inherit;
       font-size: var(--font-base);
     font-weight: var(--font-weight-normal);
-    color: var(--color-text-body);
+    color: var(--c-text-muted);
     line-height: 1.6;
-    color: var(--brand-text);
+    color: var(--c-text-muted);
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-size: inherit;
     font-weight: inherit;
-    color: var(--brand-headline);
+    color: var(--c-text);
   }
 
   button, input, select, optgroup, textarea {
