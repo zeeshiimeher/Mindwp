@@ -395,9 +395,9 @@
    ---------------------------------------------------------------------- */
 
 .business-use-case-card {
-  background-color: var(--card);
-  color: var(--card-foreground);
-  border: 1px solid var(--border);
+  background-color: var(--c-surface);
+  color: var(--card-foreground); /* V2-SKIP: resolves via --brand-dark */
+  border: 1px solid var(--border); /* V2-SKIP: rgba mechanism */
   border-radius: var(--radius);
   padding: var(--card-padding);
 }
@@ -405,7 +405,7 @@
 .business-use-case-card__icon {
   width: 2.5rem;
   height: 2.5rem;
-  color: var(--color-action-primary);
+  color: var(--c-primary);
   margin-bottom: var(--space-4);
 }
 
@@ -416,10 +416,10 @@
 
 .business-use-case-card__text {
   margin: 0;
-  color: var(--muted-foreground);
+  color: var(--c-text-muted);
 }
 .business-use-case-card__icon--primary {
-  color: var(--color-action-primary);
+  color: var(--c-primary);
 }
 
 .business-use-case-card__icon--secondary {
