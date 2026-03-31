@@ -460,6 +460,33 @@ var(--brand-white)
   /* Focus ring (keyboard accessibility) */
   --focus-ring-color: color-mix(in oklab, var(--ring) 35%, transparent);
   --focus-ring-shadow: 0 0 0 3px var(--focus-ring-color);
+
+  /* =========================================================
+     TOKEN V2 — Flat color system (aliases existing tokens)
+     Migration layer: references old tokens so computed values
+     remain pixel-identical. Once migration is complete, these
+     will be flattened to raw rgb() values.
+     ========================================================= */
+
+  /* Backgrounds */
+  --c-bg:              var(--brand-grey);           /* rgb(248, 250, 252) — page background */
+  --c-bg-alt:          var(--brand-grey-light);     /* rgb(241, 245, 249) — alternating section bg */
+  --c-surface:         var(--brand-white);          /* rgb(255, 255, 255) — cards, elevated */
+
+  /* Text */
+  --c-text:            var(--brand-primary);        /* rgb(10, 22, 40) — headings, primary text */
+  --c-text-muted:      var(--brand-neutral-700);    /* rgb(61, 75, 92) — body text */
+  --c-text-subtle:     var(--brand-neutral-500);    /* rgb(156, 163, 175) — captions */
+  --c-text-inverse:    var(--brand-white);          /* rgb(255, 255, 255) — on dark bg */
+
+  /* Brand */
+  --c-primary:         var(--brand-primary);        /* rgb(10, 22, 40) — primary actions */
+  --c-secondary:       var(--brand-secondary);      /* rgb(46, 92, 138) — secondary blue */
+  --c-accent:          var(--brand-accent);         /* rgb(74, 154, 178) — CTA teal */
+
+  /* Borders */
+  --c-border:          var(--brand-neutral-200);    /* rgb(229, 231, 235) — default borders */
+  --c-divider:         var(--brand-neutral-300);    /* rgb(209, 213, 219) — section dividers */
 }
 
 @media (width >= 992px) and (width <= 1180px) {
