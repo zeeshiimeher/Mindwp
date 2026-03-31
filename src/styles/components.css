@@ -151,8 +151,8 @@
 
 /* Variant: Primary */
 .btn-primary {
-  background-color: var(--brand-accent);
-  color: var(--color-text-inverse);
+  background-color: var(--c-accent);
+  color: var(--c-text-inverse);
   border-color: transparent;
 }
 
@@ -170,8 +170,8 @@
 
 /* Variant: Secondary */
 .btn-secondary {
-  background-color: var(--color-surface-strong);
-  color: var(--color-text-inverse);
+  background-color: var(--color-surface-strong); /* V2-SKIP: resolves to --brand-dark rgb(10,10,10), no exact V2 match */
+  color: var(--c-text-inverse);
   border-color: transparent;
 }
 
@@ -190,8 +190,8 @@
 /* Optional modifier: Outline (used on Homepage) */
 .btn-outline {
   background-color: transparent;
-  color: var(--color-action-primary);
-  border-color: var(--color-action-primary);
+  color: var(--c-primary);
+  border-color: var(--c-primary);
 }
 
 @media (hover: hover) {
@@ -203,8 +203,8 @@
 /* Optional modifier: Outline Light color (used on Homepage) */
 .btn-outline-light {
   background-color: transparent;
-  color: var(--color-text-inverse);
-  border-color: var(--color-text-inverse);
+  color: var(--c-text-inverse);
+  border-color: var(--c-text-inverse);
 }
 
 @media (hover: hover) {
@@ -215,24 +215,24 @@
 
 /* Optional modifier: White (used on dark/gradient backgrounds on Homepage) */
 .btn-white {
-  background-color: var(--color-surface-default);
-  color: var(--color-action-primary);
-  border-color: var(--color-text-inverse);
+  background-color: var(--c-surface);
+  color: var(--c-primary);
+  border-color: var(--c-text-inverse);
 }
 
 @media (hover: hover) {
   .btn-white:hover {
     background-color: transparent;
-    color: var(--color-text-inverse);
-    border-color: var(--color-text-inverse);
+    color: var(--c-text-inverse);
+    border-color: var(--c-text-inverse);
   }
 }
 
 /* White + Outline combo (matches existing `button-outline-white`) */
 .btn-white.btn-outline {
   background-color: transparent;
-  color: var(--color-text-inverse);
-  border-color: var(--color-text-inverse);
+  color: var(--c-text-inverse);
+  border-color: var(--c-text-inverse);
 }
 
 @media (hover: hover) {
@@ -245,7 +245,7 @@
   padding: 0;
   border: 0;
   background: transparent;
-  color: var(--color-action-primary);
+  color: var(--c-primary);
   border-radius: 0;
   justify-content: flex-start;
   gap: var(--space-2);
