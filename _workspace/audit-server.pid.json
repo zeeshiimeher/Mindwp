@@ -1,0 +1,8 @@
+{
+  "pid": 7311,
+  "port": 3009,
+  "host": "127.0.0.1",
+  "distDir": ".next-audit",
+  "startedAt": "2026-03-31T14:54:12.114Z",
+  "logFile": "/Users/zeeshansadiq/Projects/Mindwp/_workspace/audit-server.log"
+}

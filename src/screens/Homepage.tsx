@@ -47,7 +47,7 @@ export default function Homepage() {
             <InfrastructureGapsSection />
           </section>
 
-          <section id='smart-website-framework' className='framework-section l-section'>
+          <section id='smart-website-framework' className='framework-section l-section bg-background'>
             <SmartWebsiteFrameworkSection />
           </section>
           <section id='implementation-principles'>
@@ -80,7 +80,7 @@ export default function Homepage() {
             >
               <VisibilityAlignmentSection />
             </section>
-            <section id='case-studies' className='implementation-results l-section'>
+            <section id='case-studies' className='implementation-results l-section bg-background'>
               <CaseStudiesSection />
             </section>
 
@@ -369,7 +369,7 @@ function TrustFoundationsSection() {
   const trustFoundationsData = infrastructureLayersData.trustFoundations;
 
   return (
-    <section id='trust-foundations' className='trust-section l-section'>
+    <section id='trust-foundations' className='trust-section l-section bg-background'>
       <div className='trust-section__container l-container'>
         <SectionIntro
           title={trustFoundationsData.title}
@@ -454,7 +454,7 @@ function SystemCapabilitiesSection() {
   };
 
   return (
-    <section id='system-capabilities' className={BLOCK}>
+    <section id='system-capabilities' className={BLOCK} bg-background>
       <div className={`${BLOCK}__inner`}>
         <div className={`${BLOCK}__header`}>
           <SectionIntro
@@ -744,7 +744,7 @@ function FooterCTASection() {
         href: ctaData.footer.primaryAction.href,
       }}
       metaItems={ctaData.footer.metaItems}
-      cssPrefix='cta'
+      cssPrefix='bg-background'
       backgroundColor='gradient-cta-1'
     />
   );
