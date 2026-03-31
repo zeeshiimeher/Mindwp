@@ -18,9 +18,9 @@
   flex-direction: column;
   gap: var(--space-6);
   border-radius: var(--radius-xl);
-  border: 1px solid var(--c-border-alpha); /* V2-SKIP: rgba(0,0,0,0.1) mechanism differs from --c-border opaque */
+  border: 1px solid var(--c-border-alpha);
   background-color: var(--c-surface);
-  color: var(--c-dark); /* V2-SKIP: --brand-dark rgb(10,10,10) ≠ --c-text rgb(10,22,40) */
+  color: var(--c-dark);
 }
 
 .reusable-card__header {
@@ -170,7 +170,7 @@
 
 /* Variant: Secondary */
 .btn-secondary {
-  background-color: var(--c-dark); /* V2-SKIP: resolves to --brand-dark rgb(10,10,10), no exact V2 match */
+  background-color: var(--c-dark);
   color: var(--c-text-inverse);
   border-color: transparent;
 }
@@ -331,7 +331,7 @@
 }
 
 .badge-secondary {
-  background-color: var(--c-dark); /* V2-SKIP: resolves via --brand-dark, not --c-primary */
+  background-color: var(--c-dark);
   color: var(--c-text-inverse);
   border-color: transparent;
 }
@@ -339,7 +339,7 @@
 .badge-secondary.badge--section {
   background-color: color-mix(in srgb, var(--c-bg-alt) 78%, white 22%);
   color: var(--c-text-muted);
-  border-color: color-mix(in srgb, var(--c-border-alpha) 72%, transparent 28%); /* V2-SKIP: --color-border in color-mix, mechanism differs */
+  border-color: color-mix(in srgb, var(--c-border-alpha) 72%, transparent 28%);
   box-shadow: none;
 }
 
@@ -350,7 +350,7 @@
 }
 
 .badge-alert {
-  background-color: var(--c-info-bg); /* V2-SKIP: opacity variant, not in V2 core */
+  background-color: var(--c-info-bg);
   color: var(--c-primary);
   border: 2px solid var(--c-primary);
 }
@@ -379,8 +379,8 @@
 .bg-gradient-cta-2 .badge-outline,
 .bg-gradient-cta-3 .badge-outline,
 .bg-foreground .badge-outline {
-  border-color: var(--color-inverse-30); /* V2-SKIP: opacity variant */
-  background-color: var(--color-inverse-10); /* V2-SKIP: opacity variant */
+  border-color: var(--color-inverse-30);
+  background-color: var(--color-inverse-10);
   color: var(--c-text-inverse);
   backdrop-filter: blur(10px);
 }
@@ -396,8 +396,8 @@
 
 .business-use-case-card {
   background-color: var(--c-surface);
-  color: var(--c-dark); /* V2-SKIP: resolves via --brand-dark */
-  border: 1px solid var(--c-border-alpha); /* V2-SKIP: rgba mechanism */
+  color: var(--c-dark);
+  border: 1px solid var(--c-border-alpha);
   border-radius: var(--radius);
   padding: var(--card-padding);
 }
@@ -452,8 +452,8 @@
 
 .feature-list {
   background-color: var(--c-surface);
-  color: var(--c-dark); /* V2-SKIP: resolves via --brand-dark */
-  border: 1px solid var(--c-border-alpha); /* V2-SKIP: rgba mechanism */
+  color: var(--c-dark);
+  border: 1px solid var(--c-border-alpha);
   border-radius: var(--radius);
   padding: var(--card-padding);
   display: flex;
@@ -545,8 +545,8 @@
 
 .workflow {
   background-color: var(--c-surface);
-  color: var(--c-dark); /* V2-SKIP: resolves via --brand-dark */
-  border: 1px solid var(--c-border-alpha); /* V2-SKIP: rgba mechanism */
+  color: var(--c-dark);
+  border: 1px solid var(--c-border-alpha);
   border-radius: var(--radius);
   padding: var(--card-padding);
 }
@@ -1356,7 +1356,7 @@
 
 .benefit-card--centered {
   background-color: var(--c-surface);
-  border: 1px solid var(--c-border-alpha); /* V2-SKIP: --border = rgba(0,0,0,0.1) ≠ --c-border = rgb(229,231,235) */
+  border: 1px solid var(--c-border-alpha);
 }
 
 .benefit-card--left {
