@@ -18,9 +18,9 @@
   flex-direction: column;
   gap: var(--space-6);
   border-radius: var(--radius-xl);
-  border: 1px solid var(--border);
-  background-color: var(--card);
-  color: var(--card-foreground);
+  border: 1px solid var(--border); /* V2-SKIP: rgba(0,0,0,0.1) mechanism differs from --c-border opaque */
+  background-color: var(--c-surface);
+  color: var(--card-foreground); /* V2-SKIP: --brand-dark rgb(10,10,10) ≠ --c-text rgb(10,22,40) */
 }
 
 .reusable-card__header {
@@ -38,7 +38,7 @@
 
 .reusable-card__description {
   margin: 0;
-  color: var(--muted-foreground);
+  color: var(--c-text-muted);
 }
 
 .reusable-card__action {
