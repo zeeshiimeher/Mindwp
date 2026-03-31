@@ -485,8 +485,26 @@ var(--brand-white)
   --c-accent:          var(--brand-accent);         /* rgb(74, 154, 178) — CTA teal */
 
   /* Borders */
-  --c-border:          var(--brand-neutral-200);    /* rgb(229, 231, 235) — default borders */
+  --c-border:          var(--brand-neutral-200);    /* rgb(229, 231, 235) — solid borders */
+  --c-border-alpha:    var(--border-default);       /* rgba(0, 0, 0, 0.1) — transparent borders */
   --c-divider:         var(--brand-neutral-300);    /* rgb(209, 213, 219) — section dividers */
+
+  /* Dark (brand-dark ≠ brand-primary: #0a0a0a vs #0A1628) */
+  --c-dark:            var(--brand-dark);           /* rgb(10, 10, 10) — near-black surfaces/text */
+
+  /* Status */
+  --c-success:         var(--color-green-600);      /* oklch(.627 .194 149.214) — success strong */
+  --c-success-soft:    var(--brand-teal);           /* rgb(74, 154, 178) — success icon/text */
+  --c-success-bg:      var(--brand-teal-10);        /* teal 10% — success background */
+  --c-warning:         var(--brand-amber);          /* #070606 — warning (NOTE: near-black!) */
+  --c-warning-bg:      var(--brand-amber-10);       /* amber 10% — warning background */
+  --c-danger:          var(--color-red-600);        /* oklch(.577 .245 27.325) — danger/error */
+  --c-danger-bg:       var(--color-red-50);         /* oklch(.971 .013 17.38) — danger background */
+  --c-info-bg:         var(--brand-primary-10);     /* primary 10% — info background */
+
+  /* Accent extensions */
+  --c-accent-soft:     var(--brand-primary-light);  /* #60a5fa — soft blue accent */
+  --c-star:            var(--brand-yellow-star);    /* #fbbf24 — star/rating yellow */
 }
 
 @media (width >= 992px) and (width <= 1180px) {
