@@ -296,83 +296,11 @@ var(--brand-white)
   --brand-logo-ring: var(--color-gray-300);
 
   /* ----------------------------------------------------------------------
-     SEMANTIC UI TOKENS (author-facing + framework)
+     SEMANTIC UI TOKENS (ACTIVE — still consumed by components/primitives)
      ---------------------------------------------------------------------- */
-  --background: var(--brand-grey);
-  --foreground: var(--brand-dark);
-  --muted: var(--brand-grey);
-  --muted-foreground: var(--brand-text);
-  --border: var(--border-default);
-  --card: var(--brand-white);
-  --card-foreground: var(--brand-dark);
-  --primary-foreground: var(--brand-white);
-  --secondary: var(--brand-dark);
-  --secondary-foreground: var(--brand-white);
-  --accent: var(--brand-teal);
-  --accent-foreground: var(--brand-white);
-  --destructive: var(--brand-primary);
-  --destructive-foreground: var(--brand-white);
   --input: transparent;
   --input-background: var(--brand-grey-light);
   --ring: var(--brand-primary);
-
-  --color-success: var(--brand-teal);
-  --color-success-bg: var(--brand-teal-10);
-  --color-warning: var(--brand-amber);
-  --color-warning-bg: var(--brand-amber-10);
-  --color-info: var(--brand-primary);
-  --color-info-bg: var(--brand-primary-10);
-
-  --color-primary: var(--color-action-primary);
-  --color-secondary: var(--color-text-secondary);
-  --color-accent: var(--brand-amber);
-
-  --color-text-primary: var(--foreground);
-  --color-text-secondary: var(--brand-text);
-  --color-text-muted: var(--brand-text);
-  --color-text-heading: var(--color-text-primary);
-  --color-text-body: var(--color-text-secondary);
-  --color-text-inverse: var(--color-inverse-100);
-  --color-text-muted-strong: var(--color-text-secondary);
-
-  --color-border: var(--border);
-  --color-action-primary: var(--brand-primary);
-  --color-action-primary-90: var(--brand-primary-90);
-  --color-action-primary-30: var(--brand-primary-30);
-
-  --color-surface-default: var(--card);
-  --color-surface-muted: var(--brand-grey-light);
-  --color-surface-page: var(--background);
-  --color-surface-strong: var(--foreground);
-  --color-surface-strong-90: var(--brand-dark-90);
-  --color-surface-accent-blue: var(--brand-blue-lightest);
-  --color-surface-accent-teal: var(--brand-teal-lightest);
-  --color-surface-accent-teal-strong: var(--brand-teal-lighter);
-
-  --color-danger-50: var(--color-red-50);
-  --color-danger-100: var(--color-red-100);
-  --color-danger-200: var(--color-red-200);
-  --color-danger-500: var(--color-red-500);
-  --color-danger-600: var(--color-red-600);
-  --color-danger-700: var(--color-red-700);
-
-  --color-warning-50: var(--color-yellow-50);
-  --color-warning-200: var(--color-yellow-200);
-  --color-warning-500: var(--color-yellow-500);
-  --color-warning-600: var(--color-yellow-600);
-  --color-warning-90: var(--brand-amber-90);
-
-  --color-success-500: var(--color-green-500);
-  --color-success-600: var(--color-green-600);
-  --color-success-strong: var(--color-success-600);
-
-  --color-accent-primary-soft: var(--brand-primary-light);
-  --color-accent-purple: var(--brand-purple);
-  --color-accent-purple-30: var(--brand-purple-30);
-  --color-accent-teal: var(--brand-teal);
-  --color-accent-warning: var(--color-warning);
-  --color-accent-warning-90: var(--color-warning-90);
-  --color-accent-star: var(--brand-yellow-star);
 
   --color-inverse-100: var(--brand-white);
   --color-inverse-80: var(--brand-white-80);
@@ -381,9 +309,15 @@ var(--brand-white)
   --color-inverse-30: var(--brand-white-30);
   --color-inverse-10: var(--brand-white-10);
 
-  /* UI semantic aliases (used by shared UI primitives) */
-  --popover: var(--card);
-  --popover-foreground: var(--foreground);
+  --color-surface-accent-blue: var(--brand-blue-lightest);
+  --color-surface-accent-teal: var(--brand-teal-lightest);
+  --color-surface-accent-teal-strong: var(--brand-teal-lighter);
+  --color-surface-strong-90: var(--brand-dark-90);
+
+  --color-accent-purple-30: var(--brand-purple-30);
+  --color-accent-warning-90: var(--color-warning-90);
+  --color-action-primary-90: var(--brand-primary-90);
+  --color-action-primary-30: var(--brand-primary-30);
 
   /* Shadcn-style sidebar tokens (used in UI sidebar utility classes) */
   --sidebar-border: 214.3 31.8% 91.4%;
@@ -460,6 +394,69 @@ var(--brand-white)
   /* Focus ring (keyboard accessibility) */
   --focus-ring-color: color-mix(in oklab, var(--ring) 35%, transparent);
   --focus-ring-shadow: 0 0 0 3px var(--focus-ring-color);
+
+  /* ========================================
+     DEAD TOKENS (SAFE TO DELETE LATER)
+     Migrated to Token V2 — no consumers remain.
+     Kept for manual review before final removal.
+     ======================================== */
+  --background: var(--brand-grey);
+  --foreground: var(--brand-dark);
+  --muted: var(--brand-grey);
+  --muted-foreground: var(--brand-text);
+  --border: var(--border-default);
+  --card: var(--brand-white);
+  --card-foreground: var(--brand-dark);
+  --primary-foreground: var(--brand-white);
+  --secondary: var(--brand-dark);
+  --secondary-foreground: var(--brand-white);
+  --accent: var(--brand-teal);
+  --accent-foreground: var(--brand-white);
+  --destructive: var(--brand-primary);
+  --destructive-foreground: var(--brand-white);
+  --popover: var(--card);
+  --popover-foreground: var(--foreground);
+  --color-success: var(--brand-teal);
+  --color-success-bg: var(--brand-teal-10);
+  --color-success-strong: var(--color-success-600);
+  --color-success-500: var(--color-green-500);
+  --color-success-600: var(--color-green-600);
+  --color-warning: var(--brand-amber);
+  --color-warning-bg: var(--brand-amber-10);
+  --color-warning-50: var(--color-yellow-50);
+  --color-warning-200: var(--color-yellow-200);
+  --color-warning-500: var(--color-yellow-500);
+  --color-warning-600: var(--color-yellow-600);
+  --color-warning-90: var(--brand-amber-90);
+  --color-info: var(--brand-primary);
+  --color-info-bg: var(--brand-primary-10);
+  --color-primary: var(--color-action-primary);
+  --color-secondary: var(--color-text-secondary);
+  --color-accent: var(--brand-amber);
+  --color-text-primary: var(--foreground);
+  --color-text-secondary: var(--brand-text);
+  --color-text-muted: var(--brand-text);
+  --color-text-heading: var(--color-text-primary);
+  --color-text-body: var(--color-text-secondary);
+  --color-text-inverse: var(--color-inverse-100);
+  --color-text-muted-strong: var(--color-text-secondary);
+  --color-border: var(--border);
+  --color-action-primary: var(--brand-primary);
+  --color-surface-default: var(--card);
+  --color-surface-muted: var(--brand-grey-light);
+  --color-surface-page: var(--background);
+  --color-surface-strong: var(--foreground);
+  --color-danger-50: var(--color-red-50);
+  --color-danger-100: var(--color-red-100);
+  --color-danger-200: var(--color-red-200);
+  --color-danger-500: var(--color-red-500);
+  --color-danger-600: var(--color-red-600);
+  --color-danger-700: var(--color-red-700);
+  --color-accent-primary-soft: var(--brand-primary-light);
+  --color-accent-purple: var(--brand-purple);
+  --color-accent-teal: var(--brand-teal);
+  --color-accent-warning: var(--color-warning);
+  --color-accent-star: var(--brand-yellow-star);
 
   /* =========================================================
      TOKEN V2 — Flat color system (aliases existing tokens)
