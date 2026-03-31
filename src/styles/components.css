@@ -325,40 +325,40 @@
 
 /* Color variants */
 .badge-primary {
-  background-color: var(--color-action-primary);
-  color: var(--color-text-inverse);
+  background-color: var(--c-primary);
+  color: var(--c-text-inverse);
   border-color: transparent;
 }
 
 .badge-secondary {
-  background-color: var(--color-surface-strong);
-  color: var(--color-text-inverse);
+  background-color: var(--color-surface-strong); /* V2-SKIP: resolves via --brand-dark, not --c-primary */
+  color: var(--c-text-inverse);
   border-color: transparent;
 }
 
 .badge-secondary.badge--section {
-  background-color: color-mix(in srgb, var(--color-surface-muted) 78%, white 22%);
-  color: var(--color-text-muted);
-  border-color: color-mix(in srgb, var(--color-border) 72%, transparent 28%);
+  background-color: color-mix(in srgb, var(--c-bg-alt) 78%, white 22%);
+  color: var(--c-text-muted);
+  border-color: color-mix(in srgb, var(--color-border) 72%, transparent 28%); /* V2-SKIP: --color-border in color-mix, mechanism differs */
   box-shadow: none;
 }
 
 .badge-outline {
   background-color: transparent;
-  color: var(--color-action-primary);
-  border-color: var(--color-action-primary);
+  color: var(--c-primary);
+  border-color: var(--c-primary);
 }
 
 .badge-alert {
-  background-color: var(--color-info-bg);
-  color: var(--color-action-primary);
-  border: 2px solid var(--color-action-primary);
+  background-color: var(--color-info-bg); /* V2-SKIP: opacity variant, not in V2 core */
+  color: var(--c-primary);
+  border: 2px solid var(--c-primary);
 }
 
 .badge-outline-white {
   background-color: transparent;
-  color: var(--color-text-inverse);
-  border-color: var(--color-text-inverse);
+  color: var(--c-text-inverse);
+  border-color: var(--c-text-inverse);
 }
 
 /* Icon handling (for badges) */
@@ -379,9 +379,9 @@
 .bg-gradient-cta-2 .badge-outline,
 .bg-gradient-cta-3 .badge-outline,
 .bg-foreground .badge-outline {
-  border-color: var(--color-inverse-30);
-  background-color: var(--color-inverse-10);
-  color: var(--color-text-inverse);
+  border-color: var(--color-inverse-30); /* V2-SKIP: opacity variant */
+  background-color: var(--color-inverse-10); /* V2-SKIP: opacity variant */
+  color: var(--c-text-inverse);
   backdrop-filter: blur(10px);
 }
 
