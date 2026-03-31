@@ -1355,8 +1355,8 @@
 }
 
 .benefit-card--centered {
-  background-color: var(--card);
-  border: 1px solid var(--border);
+  background-color: var(--c-surface);
+  border: 1px solid var(--border); /* V2-SKIP: --border = rgba(0,0,0,0.1) ≠ --c-border = rgb(229,231,235) */
 }
 
 .benefit-card--left {
@@ -1444,7 +1444,7 @@
 
 .benefit-card__desc {
   margin: 0;
-  color: var(--muted-foreground);
+  color: var(--c-text-muted);
 }
 
 .benefit-card--desc-sm .benefit-card__desc {
@@ -1472,7 +1472,7 @@
 }
 
 .benefit-card__footer-link--primary {
-  color: var(--color-action-primary);
+  color: var(--c-primary);
 }
 
 .benefit-card__footer-link--secondary {
