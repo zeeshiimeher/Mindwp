@@ -125,7 +125,7 @@
   }
 
   * {
-    border-color: var(--border);
+    border-color: var(--c-border-alpha);
     outline-color: var(--ring);
   }
 
@@ -136,7 +136,7 @@
   }
 
   * {
-    border-color: var(--border);
+    border-color: var(--c-border-alpha);
     outline-color: var(--ring);
   }
 
@@ -209,21 +209,21 @@
 
 /* Theme Integration for Tailwind v4 */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-card: var(--card);
-  --color-card-foreground: var(--card-foreground);
-  --color-primary: var(--color-action-primary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-muted: var(--muted);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-accent: var(--accent);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-destructive: var(--destructive);
-  --color-destructive-foreground: var(--destructive-foreground);
-  --color-border: var(--border);
+  --color-background: var(--c-bg);
+  --color-foreground: var(--c-dark);
+  --color-card: var(--c-surface);
+  --color-card-foreground: var(--c-dark);
+  --color-primary: var(--c-primary);
+  --color-primary-foreground: var(--c-text-inverse);
+  --color-secondary: var(--c-dark);
+  --color-secondary-foreground: var(--c-text-inverse);
+  --color-muted: var(--c-bg);
+  --color-muted-foreground: var(--c-text-muted);
+  --color-accent: var(--c-accent);
+  --color-accent-foreground: var(--c-text-inverse);
+  --color-destructive: var(--c-primary);
+  --color-destructive-foreground: var(--c-text-inverse);
+  --color-border: var(--c-border-alpha);
   --color-input: var(--input);
   --color-input-background: var(--input-background);
   --color-ring: var(--ring);
