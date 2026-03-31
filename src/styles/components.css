@@ -2764,7 +2764,7 @@
    ---------------------------------------------------------------------- */
 
 .faq--bg-default {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .faq--bg-white {
@@ -3412,7 +3412,7 @@
 
 .callout {
   --callout-fg: var(--foreground);
-  --callout-bg: var(--background);
+  --callout-bg: var(--c-bg);
   --callout-border: var(--border);
 
   padding: var(--space-4);
@@ -3484,7 +3484,7 @@
    ---------------------------------------------------------------------- */
 
 .case-study-more-section {
-  background-color: var(--background);
+  background-color: var(--c-bg);
   border-top: 1px solid var(--border);
 }
 
@@ -3521,7 +3521,7 @@
 .case-studies-page__stat-card {
   text-align: center;
   padding: var(--space-6);
-  background-color: var(--background);
+  background-color: var(--c-bg);
   border-radius: var(--radius-xl);
   border: 1px solid var(--border);
 }
@@ -3574,7 +3574,7 @@
    ---------------------------------------------------------------------- */
 
 .case-study-detail-solution {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .case-study-detail-solution__grid {
@@ -3593,7 +3593,7 @@
    ---------------------------------------------------------------------- */
 
 .case-study-detail-investment {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .case-study-detail-investment__grid {
@@ -3711,7 +3711,7 @@
    ---------------------------------------------------------------------- */
 
 .case-study-detail-metrics {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .case-study-detail-metrics-grid {
@@ -3767,7 +3767,7 @@
 
 .case-study-detail-testimonial__card {
   padding: var(--space-8);
-  background-color: color-mix(in oklab, var(--background) 95%, transparent);
+  background-color: color-mix(in oklab, var(--c-bg) 95%, transparent);
   backdrop-filter: blur(var(--blur-3xl));
 }
 
@@ -3817,7 +3817,7 @@
   padding: var(--space-3);
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
-  background-color: var(--background);
+  background-color: var(--c-bg);
   color: var(--foreground);
   outline: none;
 }
@@ -3879,7 +3879,7 @@
   padding: var(--space-4);
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  background-color: color-mix(in oklab, var(--background) 50%, transparent);
+  background-color: color-mix(in oklab, var(--c-bg) 50%, transparent);
 }
 
 .component-library__sidebar-dropdown + .component-library__sidebar-dropdown {
@@ -4057,7 +4057,7 @@ summary.component-library__sidebar-link {
 .component-library__variation-card {
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  background-color: color-mix(in oklab, var(--background) 50%, transparent);
+  background-color: color-mix(in oklab, var(--c-bg) 50%, transparent);
   overflow: hidden;
 }
 
@@ -4079,7 +4079,7 @@ summary.component-library__sidebar-link {
 .component-library__mini-card {
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  background-color: var(--background);
+  background-color: var(--c-bg);
   padding: var(--space-4);
 }
 
@@ -4109,7 +4109,7 @@ summary.component-library__sidebar-link {
   margin-top: var(--space-4);
   border-radius: var(--radius);
   border: 1px solid var(--border);
-  background-color: color-mix(in oklab, var(--background) 50%, transparent);
+  background-color: color-mix(in oklab, var(--c-bg) 50%, transparent);
   overflow: hidden;
 }
 
@@ -4153,7 +4153,7 @@ summary.component-library__sidebar-link {
   padding: var(--space-1) var(--space-2);
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
-  background-color: var(--background);
+  background-color: var(--c-bg);
   cursor: pointer;
   outline: none;
   touch-action: manipulation;
@@ -4482,7 +4482,7 @@ summary.component-library__sidebar-link {
   background: linear-gradient(
     135deg,
     color-mix(in oklab, var(--muted) 30%, transparent),
-    var(--background)
+    var(--c-bg)
   );
 }
 
@@ -4535,7 +4535,7 @@ summary.component-library__sidebar-link {
 
 .platform-comparison--bg-default,
 .c-option-comparison-section--bg-default {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .platform-comparison--bg-muted,
@@ -4912,7 +4912,7 @@ summary.component-library__sidebar-link {
 
 .process-step__badge--default {
   background-color: var(--foreground);
-  color: var(--background);
+  color: var(--c-bg);
 }
 
 .process-step__badge--primary {
@@ -4985,7 +4985,7 @@ summary.component-library__sidebar-link {
 
 .comparison--bg-default,
 .c-comparison-section--bg-default {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .comparison--bg-muted,
@@ -6010,7 +6010,7 @@ summary.component-library__sidebar-link {
 }
 
 .resources-hub__guides {
-  background-color: color-mix(in oklab, var(--c-bg-alt) 30%, var(--background));
+  background-color: color-mix(in oklab, var(--c-bg-alt) 30%, var(--c-bg));
 }
 
 .resources-hub__guides-grid {
@@ -6043,7 +6043,7 @@ summary.component-library__sidebar-link {
 }
 
 .resources-hub__faq {
-  background-color: color-mix(in oklab, var(--c-bg-alt) 30%, var(--background));
+  background-color: color-mix(in oklab, var(--c-bg-alt) 30%, var(--c-bg));
 }
 
 .resources-hub__faq-card {
@@ -6089,7 +6089,7 @@ summary.component-library__sidebar-link {
   background: linear-gradient(
     to bottom,
     color-mix(in oklab, var(--c-bg-alt) 60%, transparent),
-    var(--background)
+    var(--c-bg)
   );
 }
 
@@ -6108,7 +6108,7 @@ summary.component-library__sidebar-link {
 }
 
 .resource-category__grid-section {
-  background-color: color-mix(in oklab, var(--c-bg-alt) 30%, var(--background));
+  background-color: color-mix(in oklab, var(--c-bg-alt) 30%, var(--c-bg));
 }
 
 .resource-category__empty {
@@ -6217,7 +6217,7 @@ summary.component-library__sidebar-link {
 
 .pain-point-card {
   padding: var(--space-4);
-  background-color: var(--background);
+  background-color: var(--c-bg);
   border-radius: var(--radius);
   border: 1px solid var(--border);
 }
@@ -6399,7 +6399,7 @@ summary.component-library__sidebar-link {
   background: linear-gradient(
     to bottom,
     color-mix(in oklab, var(--muted) 50%, transparent),
-    var(--background)
+    var(--c-bg)
   );
 }
 
@@ -6417,7 +6417,7 @@ summary.component-library__sidebar-link {
 
 .benefits-section--bg-default,
 .c-icon-benefit-cards-section--bg-default {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .benefits-section--bg-white,
@@ -6474,7 +6474,7 @@ summary.component-library__sidebar-link {
 
 .use-cases-section--bg-default,
 .c-scenario-cards-section--bg-default {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .use-cases-section--bg-white,
@@ -6532,7 +6532,7 @@ summary.component-library__sidebar-link {
 
 .industry-case-studies-section,
 .c-case-study-cards-section {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .industry-case-studies-section__header,
@@ -6584,7 +6584,7 @@ summary.component-library__sidebar-link {
 
 .industry-faq,
 .c-faq-accordion-section {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .industry-faq__header,
@@ -6629,7 +6629,7 @@ summary.component-library__sidebar-link {
 
 .explore-cards-section--bg-default,
 .c-explore-cards-section--bg-default {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .explore-cards-section--bg-white,
@@ -7120,7 +7120,7 @@ summary.component-library__sidebar-link {
 
 .service-checklist-section--bg-default,
 .c-checklist-cards-section--bg-default {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .service-checklist-section--bg-white,
@@ -7181,7 +7181,7 @@ summary.component-library__sidebar-link {
 
 .service-process-steps--bg-default,
 .c-process-steps-section--bg-default {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .service-process-steps--bg-white,
@@ -7235,7 +7235,7 @@ summary.component-library__sidebar-link {
 
 .icon-cards-section--bg-default,
 .c-icon-info-cards-section--bg-default {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .icon-cards-section--bg-white,
@@ -7323,7 +7323,7 @@ summary.component-library__sidebar-link {
 
 .cards-section--bg-default,
 .c-generic-cards-section--bg-default {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .cards-section--bg-white,
@@ -7397,7 +7397,7 @@ summary.component-library__sidebar-link {
 
 .related-cards-section--bg-default,
 .c-related-cards-section--bg-default {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .related-cards-section--bg-white,
@@ -7453,7 +7453,7 @@ summary.component-library__sidebar-link {
 
 .features-section--bg-default,
 .c-feature-checklist-cards-section--bg-default {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .features-section--bg-white,
@@ -7522,7 +7522,7 @@ summary.component-library__sidebar-link {
 
 .pain-points-section--bg-default,
 .c-problem-cards-section--bg-default {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .pain-points-section--bg-white,
@@ -7697,7 +7697,7 @@ summary.component-library__sidebar-link {
   background: linear-gradient(
     to bottom,
     color-mix(in oklab, var(--muted) 55%, transparent),
-    var(--background)
+    var(--c-bg)
   );
 }
 
@@ -9108,7 +9108,7 @@ h3.cta-heading {
   color: var(--color-text-primary);
 }
 .text-secondary {
-  color: var(--color-text-secondary);
+  color: var(--c-text-muted);
 }
 .text-muted {
   color: var(--c-text-muted);
@@ -9571,7 +9571,7 @@ h3.cta-heading {
    ---------------------------------------------------------------------- */
 
 .c-dual-feature-cards-section--bg-default {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .c-dual-feature-cards-section--bg-white {
@@ -9624,7 +9624,7 @@ h3.cta-heading {
    ---------------------------------------------------------------------- */
 
 .c-stacked-feature-list-section--bg-default {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .c-stacked-feature-list-section--bg-white {
@@ -9973,7 +9973,7 @@ h3.cta-heading {
    ---------------------------------------------------------------------- */
 
 .c-narrative-stats-section--bg-default {
-  background-color: var(--background);
+  background-color: var(--c-bg);
 }
 
 .c-narrative-stats-section--bg-white {
@@ -10104,7 +10104,7 @@ h3.cta-heading {
 
 .c-image-stats-services-section__narrative > p {
   margin: 0;
-  color: var(--color-text-secondary);
+  color: var(--c-text-muted);
 }
 
 .c-image-stats-services-section__narrative > :not([hidden]) ~ :not([hidden]) {
@@ -10128,7 +10128,7 @@ h3.cta-heading {
 .c-image-stats-services-section__stat-label,
 .c-image-stats-services-section__stat-description {
   margin: var(--space-2) 0 0;
-  color: var(--color-text-secondary);
+  color: var(--c-text-muted);
 }
 
 .c-image-stats-services-section__services {
@@ -10151,7 +10151,7 @@ h3.cta-heading {
 
 .c-image-stats-services-section__service-description {
   margin: var(--space-2) 0 0;
-  color: var(--color-text-secondary);
+  color: var(--c-text-muted);
 }
 
 /* ----------------------------------------------------------------------
@@ -10209,7 +10209,7 @@ h3.cta-heading {
 
 .c-testimonial-spotlight-split-section__quote {
   margin: var(--space-5) 0 0;
-  color: var(--color-text-secondary);
+  color: var(--c-text-muted);
   line-height: var(--line-height-relaxed);
 }
 
@@ -10227,7 +10227,7 @@ h3.cta-heading {
 
 .c-testimonial-spotlight-split-section__role {
   margin: var(--space-1) 0 0;
-  color: var(--color-text-secondary);
+  color: var(--c-text-muted);
 }
 
 .c-testimonial-spotlight-split-section__narrative-title {
@@ -10242,7 +10242,7 @@ h3.cta-heading {
 
 .c-testimonial-spotlight-split-section__narrative > p {
   margin: 0;
-  color: var(--color-text-secondary);
+  color: var(--c-text-muted);
 }
 
 .c-testimonial-spotlight-split-section__narrative > :not([hidden]) ~ :not([hidden]) {
@@ -10381,7 +10381,7 @@ h3.cta-heading {
 
 .c-tabbed-feature-cards-section__card-description {
   margin: var(--space-2) 0 0;
-  color: var(--color-text-secondary);
+  color: var(--c-text-muted);
 }
 
 /* ----------------------------------------------------------------------
@@ -10440,7 +10440,7 @@ h3.cta-heading {
 
 .c-feature-stats-mockup-section__narrative-description {
   margin: var(--space-3) 0 0;
-  color: var(--color-text-secondary);
+  color: var(--c-text-muted);
 }
 
 .c-feature-stats-mockup-section__checklist {
@@ -10506,7 +10506,7 @@ h3.cta-heading {
 
 .c-feature-stats-mockup-section__metric-label {
   margin: var(--space-1) 0 0;
-  color: var(--color-text-secondary);
+  color: var(--c-text-muted);
 }
 
 .c-feature-stats-mockup-section__bars {
@@ -10554,7 +10554,7 @@ h3.cta-heading {
 
 .c-feature-stats-mockup-section__note-description {
   margin: var(--space-1) 0 0;
-  color: var(--color-text-secondary);
+  color: var(--c-text-muted);
 }
 
 /* ----------------------------------------------------------------------
@@ -10627,7 +10627,7 @@ h3.cta-heading {
 
 .c-step-cards-split-section__step-description {
   margin: var(--space-3) 0 0;
-  color: var(--color-text-secondary);
+  color: var(--c-text-muted);
 }
 
 /* ----------------------------------------------------------------------
@@ -10713,7 +10713,7 @@ h3.cta-heading {
 
 .c-dual-tone-checklist-comparison-section__item-description {
   margin: var(--space-1) 0 0;
-  color: var(--color-text-secondary);
+  color: var(--c-text-muted);
 }
 
 .c-dual-tone-checklist-comparison-section__column--dark
@@ -10869,7 +10869,7 @@ h3.cta-heading {
 
 .c-service-spectrum-cards-section__card-description {
   margin: var(--space-2) 0 0;
-  color: var(--color-text-secondary);
+  color: var(--c-text-muted);
 }
 
 .c-service-spectrum-cards-section__card--featured .c-service-spectrum-cards-section__card-description {
@@ -10879,7 +10879,7 @@ h3.cta-heading {
 .c-service-spectrum-cards-section__points {
   margin: var(--space-4) 0 0;
   padding-left: 1.25rem;
-  color: var(--color-text-secondary);
+  color: var(--c-text-muted);
 }
 
 .c-service-spectrum-cards-section__points > :not([hidden]) ~ :not([hidden]) {
