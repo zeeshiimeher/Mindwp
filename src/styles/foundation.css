@@ -496,10 +496,18 @@ var(--brand-white)
   --c-success:         var(--color-green-600);      /* oklch(.627 .194 149.214) — success strong */
   --c-success-soft:    var(--brand-teal);           /* rgb(74, 154, 178) — success icon/text */
   --c-success-bg:      var(--brand-teal-10);        /* teal 10% — success background */
+  --c-success-500:     var(--color-green-500);      /* oklch(.723 .219 149.579) */
   --c-warning:         var(--brand-amber);          /* #070606 — warning (NOTE: near-black!) */
   --c-warning-bg:      var(--brand-amber-10);       /* amber 10% — warning background */
+  --c-warning-50:      var(--color-yellow-50);      /* oklch(.987 .026 102.212) */
+  --c-warning-200:     var(--color-yellow-200);     /* oklch(.945 .129 101.54) */
+  --c-warning-500:     var(--color-yellow-500);     /* oklch(.795 .184 86.047) */
   --c-danger:          var(--color-red-600);        /* oklch(.577 .245 27.325) — danger/error */
   --c-danger-bg:       var(--color-red-50);         /* oklch(.971 .013 17.38) — danger background */
+  --c-danger-100:      var(--color-red-100);        /* oklch(.936 .032 17.717) */
+  --c-danger-200:      var(--color-red-200);        /* oklch(.885 .062 18.334) */
+  --c-danger-500:      var(--color-red-500);        /* oklch(.637 .237 25.331) */
+  --c-danger-700:      var(--color-red-700);        /* oklch(.505 .213 27.518) */
   --c-info-bg:         var(--brand-primary-10);     /* primary 10% — info background */
 
   /* Accent extensions */
