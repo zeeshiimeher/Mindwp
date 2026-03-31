@@ -544,9 +544,9 @@
    ---------------------------------------------------------------------- */
 
 .workflow {
-  background-color: var(--card);
-  color: var(--card-foreground);
-  border: 1px solid var(--border);
+  background-color: var(--c-surface);
+  color: var(--card-foreground); /* V2-SKIP: resolves via --brand-dark */
+  border: 1px solid var(--border); /* V2-SKIP: rgba mechanism */
   border-radius: var(--radius);
   padding: var(--card-padding);
 }
@@ -572,7 +572,7 @@
 
 .workflow__trigger-label {
   font-size: var(--font-sm);
-  color: var(--muted-foreground);
+  color: var(--c-text-muted);
 }
 
 .workflow__trigger-text {
@@ -589,7 +589,7 @@
 
 .workflow__actions-label {
   font-size: var(--font-sm);
-  color: var(--muted-foreground);
+  color: var(--c-text-muted);
   margin-bottom: var(--space-1);
 }
 
