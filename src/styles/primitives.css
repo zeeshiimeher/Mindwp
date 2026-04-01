@@ -133,19 +133,6 @@
     }
   }
 
-  * {
-    border-color: var(--c-border-alpha);
-    outline-color: var(--ring);
-  }
-
-  @supports (color: color-mix(in lab, red, red)) {
-    * {
-      outline-color: color-mix(in oklab, var(--ring) 50%, transparent);
-    }
-  }
-
- 
-
   html {
     font-size: var(--font-size);
   }
