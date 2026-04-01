@@ -66,7 +66,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: var(--space-2);
   padding: 0.8rem 1.2rem; /* default large size */
   font-size: var(--font-lg);
   font-weight: var(--font-weight-medium);
@@ -278,7 +278,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: var(--space-2);
   flex-shrink: 0;
   border-radius: 9999px;
   font-weight: var(--font-weight-medium);
@@ -8685,7 +8685,7 @@ h3.cta-heading {
 .cta__meta-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-2);
 }
 
 .cta__icon {
@@ -8932,33 +8932,19 @@ h3.cta-heading {
 .card-elevated {
   border-radius: var(--radius);
   background-color: var(--c-surface);
-  --tw-shadow:
-    0 1px 3px 0 var(--tw-shadow-color, var(--c-border-alpha)),
-    0 1px 2px -1px var(--tw-shadow-color, var(--c-border-alpha));
-  box-shadow:
-    var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow),
-    var(--tw-ring-shadow), var(--tw-shadow);
-  transition-property: box-shadow;
-  transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
-  transition-duration: var(--tw-duration, var(--default-transition-duration));
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition-fast);
 }
 
 @media (hover: hover) {
   .card-elevated:hover {
-    --tw-shadow:
-      0 4px 6px -1px var(--tw-shadow-color, var(--c-border-alpha)),
-      0 2px 4px -2px var(--tw-shadow-color, var(--c-border-alpha));
-    box-shadow:
-      var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow),
-      var(--tw-ring-shadow), var(--tw-shadow);
+    box-shadow: var(--shadow-md);
   }
 }
 
 .card-bordered {
   border-radius: var(--radius);
-  border-style: var(--tw-border-style);
-  border-width: 1px;
-  border-color: var(--c-border-alpha);
+  border: 1px solid var(--c-border-alpha);
   background-color: var(--c-surface);
 }
 
