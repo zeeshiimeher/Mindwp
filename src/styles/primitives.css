@@ -95,12 +95,10 @@
   }
 
   body {
-    line-height: inherit;
-      font-size: var(--font-base);
+    font-size: var(--font-base);
     font-weight: var(--font-weight-normal);
     color: var(--c-text-muted);
-    line-height: 1.6;
-    color: var(--c-text-muted);
+    line-height: var(--line-height-prose);
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -175,19 +173,19 @@
   h4{
     font-size: var(--font-xl);
     font-weight: var(--font-weight-normal);
-    line-height: 1.5;
+    line-height: var(--line-height-normal);
   }
 
   h5{
     font-size: var(--font-lg);
     font-weight: var(--font-weight-normal);
-    line-height: 1.5;
+    line-height: var(--line-height-normal);
   }
 
   h6 {
     font-size: var(--font-base);
     font-weight: var(--font-weight-normal);
-    line-height: 1.5;
+    line-height: var(--line-height-normal);
   }
 
  
@@ -195,13 +193,13 @@
   label:not([class*="text-"]), button:not([class*="text-"]) {
     font-size: var(--font-base);
     font-weight: var(--font-weight-medium);
-    line-height: 1.5;
+    line-height: var(--line-height-normal);
   }
 
   input:not([class*="text-"]) {
     font-size: var(--font-base);
     font-weight: var(--font-weight-normal);
-    line-height: 1.5;
+    line-height: var(--line-height-normal);
   }
 }
 
