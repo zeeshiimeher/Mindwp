@@ -306,13 +306,13 @@
 
 .badge--card {
   padding: 0.375rem 0.75rem;
-  font-size: 0.75rem;
+  font-size: var(--font-xs);
   font-weight: var(--font-weight-normal);
 }
 
 .badge--meta {
   padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
+  font-size: var(--font-xs);
   font-weight: var(--font-weight-normal);
 }
 
@@ -8654,7 +8654,7 @@ h3.cta-heading {
 /* Text */
 .cta__text {
   color: var(--brand-white-90);
-  font-size: 1.125rem;
+  font-size: var(--font-lg);
   max-width: 42rem;
   margin: 0 auto;
 }
@@ -8678,7 +8678,7 @@ h3.cta-heading {
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  font-size: 0.875rem;
+  font-size: var(--font-sm);
   color: var(--color-inverse-80);
 }
 
