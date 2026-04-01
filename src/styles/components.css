@@ -70,7 +70,7 @@
   padding: 0.8rem 1.2rem; /* default large size */
   font-size: var(--font-lg);
   font-weight: var(--font-weight-medium);
-  line-height: 1;
+  line-height: var(--line-height-none);
   border-radius: var(--radius);
   cursor: pointer;
   transition:
@@ -3748,7 +3748,7 @@
 
 .case-study-detail-metrics__value {
   font-size: 1.875rem;
-  line-height: 1;
+  line-height: var(--line-height-none);
   margin-bottom: var(--space-2);
 }
 
@@ -6246,7 +6246,7 @@ summary.component-library__sidebar-link {
 .pain-point-card__icon-text {
   color: var(--c-danger);
   font-size: var(--font-sm);
-  line-height: 1;
+  line-height: var(--line-height-none);
 }
 
 .pain-point-card__text {
@@ -10040,7 +10040,7 @@ h3.cta-heading {
   margin: 0;
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: var(--font-weight-bold);
-  line-height: 1;
+  line-height: var(--line-height-none);
   color: var(--c-dark);
 }
 
