@@ -69,7 +69,7 @@
   gap: 0.5rem;
   padding: 0.8rem 1.2rem; /* default large size */
   font-size: var(--font-lg);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   line-height: 1;
   border-radius: var(--radius);
   cursor: pointer;
@@ -281,7 +281,7 @@
   gap: 0.5rem;
   flex-shrink: 0;
   border-radius: 9999px;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   line-height: 1.2;
   white-space: nowrap;
   border: 1px solid transparent;
@@ -307,19 +307,19 @@
 .badge--card {
   padding: 0.375rem 0.75rem;
   font-size: 0.75rem;
-  font-weight: 400;
+  font-weight: var(--font-weight-normal);
 }
 
 .badge--meta {
   padding: 0.25rem 0.5rem;
   font-size: 0.75rem;
-  font-weight: 400;
+  font-weight: var(--font-weight-normal);
 }
 
 .badge--section {
   padding: 0.375rem 0.75rem;
   font-size: 0.7rem;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   letter-spacing: 0.04em;
 }
 
@@ -1159,7 +1159,7 @@
 
 .feature-card--default .feature-card__title-sm {
   font-size: var(--font-base);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-tight);
 }
 
@@ -1217,7 +1217,7 @@
 
 .feature-card__title {
   font-size: var(--font-lg);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   margin: 0 0 var(--space-2);
 }
 
@@ -1242,7 +1242,7 @@
   padding: var(--space-1) var(--space-3);
   border-radius: 9999px;
   font-size: var(--font-xs);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   color: var(--c-accent);
   background-color: var(--brand-accent-20);
   margin-bottom: var(--space-4);
@@ -1317,7 +1317,7 @@
 
 .feature-card__link {
   font-size: var(--font-sm);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
 }
 
 .feature-card__link--primary {
@@ -1467,7 +1467,7 @@
 }
 
 .benefit-card__footer-link {
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   font-size: var(--font-sm);
 }
 
@@ -2342,7 +2342,7 @@
 
 .case-study-card__metric-value {
   color: var(--c-primary);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .case-study-card__metric-label {
@@ -2453,7 +2453,7 @@
 
 .technologies__name,
 .c-technology-cards-section__name {
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   color: var(--c-dark);
 }
 
@@ -2517,7 +2517,7 @@
   margin: 0 0 var(--space-6);
   font-size: var(--font-2xl);
   color: var(--c-dark);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .technology-stack__tips {
@@ -2568,7 +2568,7 @@
 .technology-stack__tip-title {
   margin: 0 0 var(--space-1);
   font-size: var(--font-sm);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   color: var(--c-dark);
 }
 
@@ -3075,7 +3075,7 @@
 .industry-packages__price-value,
 .c-tier-cards-section__price-value {
   font-size: var(--font-xl);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: var(--c-primary);
 }
 
@@ -3211,7 +3211,7 @@
 .error-boundary__title {
   margin: 0 0 var(--space-2);
   font-size: var(--font-lg);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   color: var(--c-danger-700);
 }
 
@@ -4236,13 +4236,13 @@ summary.component-library__sidebar-link {
   margin-bottom: var(--space-6);
   color: var(--c-dark);
   font-size: var(--font-lg);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   line-height: var(--line-height-quote);
 }
 
 .testimonial-card__author {
   color: var(--c-dark);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .testimonial-card__business {
@@ -4323,7 +4323,7 @@ summary.component-library__sidebar-link {
 }
 
 .card-style-link__link {
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
   color: var(--c-primary);
 }
 
@@ -4525,7 +4525,7 @@ summary.component-library__sidebar-link {
 .case-section__stat-text {
   margin: 0;
   font-size: var(--font-2xl);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   color: var(--color-success, var(--c-accent));
 }
 
@@ -4648,7 +4648,7 @@ summary.component-library__sidebar-link {
   justify-content: center;
   color: var(--c-text-inverse);
   background-color: var(--c-primary);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .diy-step-card__title {
@@ -4659,7 +4659,7 @@ summary.component-library__sidebar-link {
 .diy-step-card__label {
   display: inline-block;
   font-size: var(--font-sm);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
 }
 
 .diy-step-card__label--action {
@@ -4738,7 +4738,7 @@ summary.component-library__sidebar-link {
 
 .feature-hero__stat-value {
   color: var(--c-primary);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   font-size: var(--font-lg);
 }
 
@@ -4860,7 +4860,7 @@ summary.component-library__sidebar-link {
 }
 
 .results-comparison-card__metric-value {
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
 }
 
 .results-comparison-card__before-value {
@@ -4874,7 +4874,7 @@ summary.component-library__sidebar-link {
 .results-comparison-card__improvement-value {
   color: var(--c-success);
   font-size: var(--font-xl);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .results-comparison-card__description {
@@ -4904,7 +4904,7 @@ summary.component-library__sidebar-link {
   height: 2.5rem;
   border-radius: 9999px;
   box-shadow: 0 12px 24px var(--shadow-ink-18);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -6891,7 +6891,7 @@ summary.component-library__sidebar-link {
   margin: 0;
   margin-bottom: var(--space-4);
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: var(--c-dark);
 }
 
@@ -7009,7 +7009,7 @@ summary.component-library__sidebar-link {
   margin: 0;
   margin-bottom: var(--space-4);
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   color: var(--c-dark);
 }
 
@@ -7662,7 +7662,7 @@ summary.component-library__sidebar-link {
 }
 
 .investment-comparison-card__value {
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
 }
 
 .investment-comparison-card__summary {
@@ -7686,7 +7686,7 @@ summary.component-library__sidebar-link {
 
 .investment-comparison-card__summary-value {
   margin: 0;
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
 }
 
 /* ----------------------------------------------------------------------
@@ -8290,7 +8290,7 @@ summary.component-library__sidebar-link {
   justify-content: center;
   flex: 0 0 auto;
   font-size: var(--font-sm);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   color: var(--c-primary);
   border: 1px solid color-mix(in oklab, var(--c-primary) 25%, var(--c-border-alpha));
   background: color-mix(in oklab, var(--c-primary) 7%, transparent);
@@ -8298,7 +8298,7 @@ summary.component-library__sidebar-link {
 
 .blog-steps-section__title {
   margin: 0;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .blog-steps-section__desc {
@@ -8630,7 +8630,7 @@ summary.component-library__sidebar-link {
 .cta-heading {
   color: var(--c-text-inverse);
   font-size: 1.875rem;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: 1.2;
 }
 
@@ -9605,7 +9605,7 @@ h3.cta-heading {
   margin: 0;
   color: var(--c-text-muted);
   font-size: var(--font-xs);
-  font-weight: 500;
+  font-weight: var(--font-weight-medium);
 }
 
 .c-dual-feature-cards-section__title {
@@ -10039,7 +10039,7 @@ h3.cta-heading {
 .c-narrative-stats-section__stat-value {
   margin: 0;
   font-size: clamp(2.5rem, 6vw, 4.5rem);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: 1;
   color: var(--c-dark);
 }
@@ -10121,7 +10121,7 @@ h3.cta-heading {
 .c-image-stats-services-section__stat-value {
   margin: 0;
   font-size: clamp(1.75rem, 4vw, 2.25rem);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
   line-height: 1.1;
 }
 
@@ -10222,7 +10222,7 @@ h3.cta-heading {
 .c-testimonial-spotlight-split-section__name {
   margin: var(--space-3) 0 0;
   font-size: var(--font-2xl);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .c-testimonial-spotlight-split-section__role {
@@ -10300,7 +10300,7 @@ h3.cta-heading {
   border-radius: calc(var(--radius) - 0.25rem);
   background: transparent;
   color: var(--c-dark);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
   padding: 0.625rem 1rem;
   cursor: pointer;
 }
@@ -10478,7 +10478,7 @@ h3.cta-heading {
 
 .c-feature-stats-mockup-section__mockup-title {
   margin: 0;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .c-feature-stats-mockup-section__mockup-chip {
@@ -10501,7 +10501,7 @@ h3.cta-heading {
 .c-feature-stats-mockup-section__metric-value {
   margin: 0;
   font-size: var(--font-4xl);
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .c-feature-stats-mockup-section__metric-label {
@@ -10549,7 +10549,7 @@ h3.cta-heading {
 
 .c-feature-stats-mockup-section__note-title {
   margin: 0;
-  font-weight: 700;
+  font-weight: var(--font-weight-bold);
 }
 
 .c-feature-stats-mockup-section__note-description {
@@ -10622,7 +10622,7 @@ h3.cta-heading {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .c-step-cards-split-section__step-description {
@@ -10708,7 +10708,7 @@ h3.cta-heading {
 .c-dual-tone-checklist-comparison-section__item-title {
   margin: 0;
   font-size: var(--font-2xl);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 .c-dual-tone-checklist-comparison-section__item-description {
@@ -10806,7 +10806,7 @@ h3.cta-heading {
   margin: 0;
   color: var(--c-text-inverse);
   font-size: var(--font-2xl);
-  font-weight: 600;
+  font-weight: var(--font-weight-semibold);
 }
 
 /* ----------------------------------------------------------------------
