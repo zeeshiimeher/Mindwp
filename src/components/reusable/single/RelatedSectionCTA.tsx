@@ -21,7 +21,7 @@ export function RelatedSectionCTA({
     <div className='related-section-cta l-container'>
       <div className='related-section-cta__inner'>
         <p className='related-section-cta__text'>{text}</p>
-        <Link href={actionHref} className='related-section-cta__action btn btn--primary'>
+        <Link href={actionHref} className='related-section-cta__action btn btn-primary'>
           {actionLabel}
         </Link>
       </div>
