@@ -498,7 +498,7 @@
 
 .feature-list__list {
   display: grid;
-  gap: 0px;
+  gap: 0;
 }
 
 .feature-list__item {
@@ -8616,13 +8616,13 @@ summary.component-library__sidebar-link {
   display: flex;
   flex-direction: column;
   gap: var(--space-5); /* increased from 1rem to match footer-cta-container */
-  padding: 2rem;
+  padding: var(--space-7);
   box-shadow: 0 25px 50px -12px var(--shadow-ink-25);
 }
 
 @media (min-width: 768px) {
   .cta__panel {
-    padding: 3rem;
+    padding: var(--space-8);
   }
 }
 
@@ -8663,7 +8663,7 @@ h3.cta-heading {
 .cta__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: var(--space-4);
   justify-content: center;
 }
 
@@ -8677,7 +8677,7 @@ h3.cta-heading {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: var(--space-7);
   font-size: var(--font-sm);
   color: var(--color-inverse-80);
 }
@@ -9121,7 +9121,7 @@ h3.cta-heading {
 }
 
 .button-icon {
-  padding: 0.75rem;
+  padding: var(--space-3);
   aspect-ratio: 1;
 }
 
