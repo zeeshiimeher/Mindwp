@@ -5,6 +5,7 @@ build/
 .next/
 .next-audit/
 out/
+reports/
 
 # Tooling caches
 .vite/
