@@ -56,6 +56,10 @@ const validators = [
   { name: 'validate-structure', command: 'node', args: ['scripts/validation/validate-structure.mjs'] },
   { name: 'validate-internal-links', command: 'npx', args: ['tsx', 'scripts/validation/validate-internal-links.ts'] },
 
+  // Token + inline style enforcement (SR1–SR6)
+  { name: 'validate-tokens', command: 'node', args: ['scripts/validation/validate-tokens.mjs'] },
+  { name: 'validate-inline-styles', command: 'node', args: ['scripts/validation/validate-inline-styles.mjs'] },
+
   // Generated file freshness guard
   { name: 'check-generated', command: 'node', args: ['scripts/check-generated.mjs'] },
 

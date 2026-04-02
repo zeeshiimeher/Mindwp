@@ -263,6 +263,147 @@ function scanCtaViolations(fileAbs, text) {
   }
 }
 
+/**
+ * SR3 — Inline style detection.
+ * FAIL if any .tsx file uses style={{ with var(--*) tokens.
+ *
+ * Exemptions (SR2):
+ * - Files in src/components/ui/ (shadcn components)
+ * - SVG <text> or <tspan> elements (fontSize, fontWeight, letterSpacing only)
+ */
+function scanInlineStyleViolations(fileAbs, text) {
+  if (!fileAbs.endsWith('.tsx')) return;
+
+  // SR2 exemption: shadcn/ui components
+  const rel = toRel(fileAbs);
+  if (rel.includes('components/ui/')) return;
+
+  const lines = text.split('\n');
+
+  // Track whether we're inside an SVG text/tspan element context
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i];
+
+    // Detect style={{ containing var(--
+    if (/style\s*=\s*\{\{/.test(line) && /var\(--/.test(line)) {
+      // SR2 exemption: check if this is inside an SVG <text> or <tspan> element
+      if (isSvgTextContext(lines, i)) continue;
+
+      addViolationLine(
+        fileAbs,
+        i + 1,
+        'INLINE_VAR_TOKEN',
+        'SR3 violation: Inline style using var(--*) token. Use a BEM class instead.',
+      );
+      continue;
+    }
+
+    // Also catch multi-line style={{ ... var(-- patterns
+    if (/style\s*=\s*\{\{/.test(line)) {
+      // If style block closes on the same line, it's self-contained — skip lookahead
+      if (/\}\}/.test(line)) continue;
+
+      // Look ahead up to 10 lines for the closing }}
+      let block = line;
+      for (let j = i + 1; j < Math.min(i + 10, lines.length); j++) {
+        block += '\n' + lines[j];
+        if (/\}\}/.test(lines[j])) break;
+      }
+
+      if (/var\(--/.test(block)) {
+        if (isSvgTextContext(lines, i)) continue;
+
+        addViolationLine(
+          fileAbs,
+          i + 1,
+          'INLINE_VAR_TOKEN',
+          'SR3 violation: Inline style using var(--*) token. Use a BEM class instead.',
+        );
+      }
+    }
+  }
+}
+
+/**
+ * Check if the style attribute at lineIndex is on an SVG <text> or <tspan> element.
+ * Looks backward up to 5 lines for an opening <text or <tspan tag.
+ */
+function isSvgTextContext(lines, lineIndex) {
+  // Check current line and up to 5 lines back for <text or <tspan
+  for (let j = lineIndex; j >= Math.max(0, lineIndex - 5); j--) {
+    if (/<text(\s|>|$)/.test(lines[j]) || /<tspan(\s|>|$)/.test(lines[j])) {
+      return true;
+    }
+    // If we hit an opening tag that's NOT text/tspan, stop looking
+    if (/<[a-zA-Z]/.test(lines[j]) && !/<text/.test(lines[j]) && !/<tspan/.test(lines[j]) && j !== lineIndex) {
+      return false;
+    }
+  }
+  return false;
+}
+
+/**
+ * SR4 — Gradient lifecycle validation.
+ * Tokens MUST be defined in foundation.css BEFORE being referenced in components.css.
+ * FAIL if any gradient token is used in components.css but not defined in foundation.css.
+ */
+function scanGradientLifecycle() {
+  const foundationPath = path.join(WORKSPACE_ROOT, 'src', 'styles', 'foundation.css');
+  const componentsPath = path.join(WORKSPACE_ROOT, 'src', 'styles', 'components.css');
+
+  if (!isFile(foundationPath) || !isFile(componentsPath)) return;
+
+  const foundationText = fs.readFileSync(foundationPath, 'utf8');
+  const componentsText = fs.readFileSync(componentsPath, 'utf8');
+
+  // Extract all gradient tokens defined in foundation.css (--gradient-cta-*)
+  const definedTokens = new Set();
+  const defRe = /--(gradient-cta-[a-zA-Z0-9-]+)\s*:/g;
+  let m;
+  while ((m = defRe.exec(foundationText))) {
+    definedTokens.add(m[1]);
+  }
+
+  // Find all gradient tokens referenced in components.css via var(--gradient-cta-*)
+  const refRe = /var\(--(gradient-cta-[a-zA-Z0-9-]+)/g;
+  const componentsLines = componentsText.split('\n');
+
+  for (let i = 0; i < componentsLines.length; i++) {
+    const line = componentsLines[i];
+    let rm;
+    while ((rm = refRe.exec(line))) {
+      const token = rm[1];
+      if (!definedTokens.has(token)) {
+        violations.push({
+          file: 'src/styles/components.css',
+          line: i + 1,
+          rule: 'GRADIENT_LIFECYCLE',
+          message: `SR4 violation: Gradient token "--${token}" used but NOT defined in foundation.css.`,
+        });
+      }
+    }
+  }
+
+  // Also scan for .bg-gradient-cta-* or .gradient-cta-* class definitions
+  // that reference undefined tokens via their class name
+  const classRe = /\.(bg-)?gradient-cta-([a-zA-Z0-9-]+)\s*\{/g;
+  for (let i = 0; i < componentsLines.length; i++) {
+    const line = componentsLines[i];
+    let cm;
+    while ((cm = classRe.exec(line))) {
+      const tokenName = `gradient-cta-${cm[2]}`;
+      if (!definedTokens.has(tokenName)) {
+        violations.push({
+          file: 'src/styles/components.css',
+          line: i + 1,
+          rule: 'GRADIENT_LIFECYCLE',
+          message: `SR4 violation: Class references undefined gradient token "--${tokenName}" (not in foundation.css).`,
+        });
+      }
+    }
+  }
+}
+
 function main() {
   if (!isFile(path.join(WORKSPACE_ROOT, 'package.json'))) {
     console.error('[validate-design-system] package.json not found in current working directory.');
@@ -282,7 +423,11 @@ function main() {
     scanButtonViolations(abs, text);
     scanTailwindButtonViolations(abs, text);
     scanCtaViolations(abs, text);
+    scanInlineStyleViolations(abs, text);
   }
+
+  // SR4 — Gradient lifecycle (foundation.css → components.css)
+  scanGradientLifecycle();
 
   if (violations.length > 0) {
     console.error('[validate-design-system] Validation failed. Fix the following violations:\n');

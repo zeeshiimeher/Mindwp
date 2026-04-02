@@ -15,6 +15,20 @@ import {
 import { overlapCount, scoreRelationship } from '../src/lib/content-graph/scoring';
 import type { ContentGraphNode } from '../src/lib/content-graph/types';
 
+/**
+ * SR5 — ContentNodeType is the ONLY allowed type system.
+ * Every node.type MUST be one of these values. No exceptions.
+ */
+const VALID_CONTENT_NODE_TYPES: ReadonlySet<string> = new Set([
+  'service',
+  'industry-category',
+  'industry-detail',
+  'feature',
+  'blog',
+  'resource',
+  'case-study',
+]);
+
 const args = new Set(process.argv.slice(2));
 const shouldReportJson = args.has('--report-json');
 
@@ -71,6 +85,11 @@ const printMessages = (label: string, items: string[]) => {
 };
 
 for (const node of nodes) {
+  // SR5 — Type integrity: every node.type MUST be in ContentNodeType
+  if (!VALID_CONTENT_NODE_TYPES.has(node.type)) {
+    errors.push(`SR5 violation: ${describeNode(node)} has invalid type "${node.type}" (not in ContentNodeType)`);
+  }
+
   if (node.type === 'blog') {
     if (uniqueValues(node.topics).length === 0) {
       errors.push(`${describeNode(node)} missing topics`);
@@ -252,6 +271,19 @@ const requiredCrossTypePairs = [
 for (const pair of requiredCrossTypePairs) {
   if (!crossTypePairs.has(pair)) {
     errors.push(`missing required cross-type edge coverage: ${pair}`);
+  }
+}
+
+// SR5 — Static check: authority-map.json type integrity
+const authorityMapPath = path.join(process.cwd(), 'reports', 'authority-map.json');
+if (fs.existsSync(authorityMapPath)) {
+  const authorityMap = JSON.parse(fs.readFileSync(authorityMapPath, 'utf8'));
+  if (Array.isArray(authorityMap.nodes)) {
+    for (const mapNode of authorityMap.nodes) {
+      if (mapNode.type && !VALID_CONTENT_NODE_TYPES.has(mapNode.type)) {
+        errors.push(`SR5 violation (authority-map.json): node "${mapNode.id}" has invalid type "${mapNode.type}" (not in ContentNodeType)`);
+      }
+    }
   }
 }
 

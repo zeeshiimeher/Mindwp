@@ -8904,14 +8904,6 @@ h3.cta-heading {
   background: var(--gradient-cta-4);
 }
 
-.bg-gradient-cta-5 {
-  background: var(--gradient-cta-5, var(--gradient-cta-warm));
-}
-
-.bg-gradient-cta-6 {
-  background: var(--gradient-cta-6, var(--gradient-cta-warm));
-}
-
 .bg-gradient-warm {
   background: var(--gradient-cta-warm);
 }
