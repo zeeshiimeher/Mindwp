@@ -171,6 +171,8 @@ function scanFile(filePath, rel, issues, hrefOnly) {
 function scanSystemFile(filePath, rel, issues) {
   // ui-intelligence.ts is the canonical CTA_CONFIG source — skip it
   if (rel.includes('ui-intelligence')) return;
+  // Dev-only tooling files contain instructional hint strings, not production CTAs
+  if (rel.includes('/dev/') || rel.includes('/devtools/')) return;
 
   const text = fs.readFileSync(filePath, 'utf8');
   const lines = text.split('\n');

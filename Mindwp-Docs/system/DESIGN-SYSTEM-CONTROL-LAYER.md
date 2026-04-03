@@ -268,7 +268,38 @@ These are **by design** and should NOT be tokenized or standardized:
 
 ---
 
-## 10. FUTURE OPPORTUNITIES (NOT URGENT)
+## 10. GRADIENT TOKEN LIFECYCLE
+
+**Active gradient tokens:** `--gradient-primary` through `--gradient-cta-10`. Defined in `foundation.css`, applied via BEM classes `.gradient-cta-{1..10}` in `components.css`.
+
+**Rules:**
+- Gradient tokens MUST be defined in `foundation.css` and consumed ONLY via BEM classes in `components.css`.
+- If a gradient token is removed, its corresponding BEM class MUST also be removed.
+- Do NOT add gradient tokens without a consuming BEM class (dead tokens drift).
+- The `validate-design-system.cjs` validator checks gradient class existence against token definitions.
+- **Previously removed:** `--gradient-cta-5` and `--gradient-cta-6` (undefined tokens with fallbacks — removed in Phase 3.1).
+
+---
+
+## 11. HERO SYSTEM ARCHETYPES
+
+Two hero patterns are used across the system:
+
+| Archetype | Component | Layout | Use Case |
+|-----------|-----------|--------|----------|
+| **SimpleHero** | `src/components/reusable/sections/core/SimpleHero.tsx` | Full-width, single column, centered text | Service pages, feature pages, industry pages |
+| **SplitHeroSection** | `src/components/reusable/sections/core/SplitHeroSection.tsx` | Two-column split (text + visual) | Homepage, high-impact landing pages |
+
+**Rules:**
+- All page heroes MUST use one of these two archetypes.
+- SimpleHero uses `l-section--spacious` for extra padding (see §1 Rule S2).
+- Hero headings use `--font-3xl` to `--font-4xl` (see §2).
+- Hero CTAs use `btn--lg` (see §4 Rule B8).
+- Custom hero layouts are NOT allowed without a governing doc amendment.
+
+---
+
+## 12. FUTURE OPPORTUNITIES (NOT URGENT)
 
 | Opportunity | Priority | Effort |
 |------------|----------|--------|

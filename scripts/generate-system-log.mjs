@@ -184,7 +184,7 @@ fs.writeFileSync(statePath, JSON.stringify(systemState, null, 2) + '\n');
 console.log(`✓ Wrote ${path.relative(root, statePath)}`);
 
 // ---------------------------------------------------------------------------
-// TASK 4 — Generate human-readable log (CURRENT STATE ONLY)
+// TASK 4 — Generate human-readable dashboard (CURRENT STATE ONLY)
 // ---------------------------------------------------------------------------
 
 const allPass =
@@ -201,127 +201,134 @@ const totalViolations =
   systemState.tokens.totalViolations +
   systemState.inlineStyles.totalViolations;
 
-// Build violation detail lines for CTA
-const ctaDetails = [];
-if (ctaRogueCount > 0)
-  ctaDetails.push(
-    ...ctaIssues
-      .filter((i) => i.code === 'rogue_cta_label' || i.code === 'banned_cta_label_system')
-      .map((i) => `- \`${i.file}:${i.line}\` — ${i.message}`)
-  );
-if (ctaLabelCount > 0)
-  ctaDetails.push(
-    ...ctaIssues
-      .filter((i) => i.code === 'wrong_primary_cta_label')
-      .map((i) => `- \`${i.file}:${i.line}\` — ${i.message}`)
-  );
-if (ctaHrefCount > 0)
-  ctaDetails.push(
-    ...ctaIssues
-      .filter((i) => i.code === 'wrong_primary_cta_href')
-      .map((i) => `- \`${i.file}:${i.line}\` — ${i.message}`)
-  );
-if (ctaBannedCount > 0)
-  ctaDetails.push(
-    ...ctaIssues
-      .filter((i) => i.code === 'banned_cta_label')
-      .map((i) => `- \`${i.file}:${i.line}\` — ${i.message}`)
-  );
+const statusLabel = allPass ? 'CLEAN' : totalViolations < 20 ? 'WARNING' : 'BROKEN';
+const statusIcon = allPass ? '✅' : totalViolations < 20 ? '⚠️' : '❌';
 
-// Build violation detail lines for Design
-const designDetails = [];
-if (inlineVarCount > 0)
-  designDetails.push(
-    ...designViolations
-      .filter((v) => v.rule === 'INLINE_VAR_TOKEN')
-      .map((v) => `- \`${v.file}:${v.line}\` — ${v.message}`)
-  );
-if (gradientCount > 0)
-  designDetails.push(
-    ...designViolations
-      .filter((v) => v.rule === 'GRADIENT_LIFECYCLE')
-      .map((v) => `- \`${v.file}:${v.line}\` — ${v.message}`)
-  );
+// --- Critical issues (violations > 0 only, max 5) ---
+const criticalItems = [];
+if (systemState.cta.violations > 0)
+  criticalItems.push(`CTA violations (${systemState.cta.violations})`);
+if (systemState.design.totalViolations > 0)
+  criticalItems.push(`Design system violations (${systemState.design.totalViolations})`);
+if (systemState.graph.totalErrors > 0)
+  criticalItems.push(`Graph integrity errors (${systemState.graph.totalErrors})`);
+if (systemState.tokens.totalViolations > 0)
+  criticalItems.push(`Token violations (${systemState.tokens.totalViolations})`);
+if (systemState.inlineStyles.totalViolations > 0)
+  criticalItems.push(`Inline style violations (${systemState.inlineStyles.totalViolations})`);
 
-// Build violation detail lines for Graph (SR5 only — keep concise)
-const graphSR5Details = graphErrors
-  .filter((e) => e.includes('SR5'))
-  .slice(0, 10)
-  .map((e) => `- ${e}`);
-const graphSR5Remaining = invalidTypeCount - graphSR5Details.length;
+// --- Parse project-todo.md for phase progress + next actions ---
+const todoPath = path.join(root, 'Mindwp-Docs', 'project-todo.md');
+const todoContent = fs.existsSync(todoPath) ? fs.readFileSync(todoPath, 'utf8') : '';
 
-// Build violation detail lines for tokens (first 10)
-const tokenDetails = tokenViolations
-  .slice(0, 10)
-  .map((v) => `- \`${v.file}:${v.line}\` — ${v.message}`);
-const tokenRemaining = tokenViolations.length - tokenDetails.length;
+function parsePhaseProgress(todo) {
+  const phases = [];
+  // Match phase headers like "# PHASE 3.1 — CRITICAL CODE FIXES"
+  const phaseRegex = /^#\s+PHASE\s+([\d.]+)\s*[—–-]\s*(.+)$/gm;
+  let match;
+  while ((match = phaseRegex.exec(todo)) !== null) {
+    const phaseNum = match[1];
+    const phaseName = match[2].trim();
+    // Count tasks in this phase section (lines with | T-XXX |)
+    const sectionStart = match.index;
+    const nextPhaseMatch = todo.indexOf('\n# PHASE', sectionStart + 1);
+    const nextSummary = todo.indexOf('\n# TASK SUMMARY', sectionStart + 1);
+    const sectionEnd = Math.min(
+      nextPhaseMatch > -1 ? nextPhaseMatch : todo.length,
+      nextSummary > -1 ? nextSummary : todo.length
+    );
+    const section = todo.slice(sectionStart, sectionEnd);
+    const taskLines = section.match(/\|\s*T-\d+\s*\|/g) || [];
+    const doneLines = section.match(/\|\s*\[x\]\s*(DONE)?\s*\|/gi) || [];
+    if (taskLines.length > 0) {
+      phases.push({
+        id: phaseNum,
+        name: phaseName.replace(/\s*\(.*\)/, ''),
+        total: taskLines.length,
+        done: doneLines.length,
+      });
+    }
+  }
+  return phases;
+}
 
-// Build violation detail lines for inline styles
-const inlineStyleDetails = inlineStyleViolations
-  .map((v) => `- \`${v.file}:${v.line}\` — ${v.message}`);
+function parseNextActions(todo, max = 5) {
+  const actions = [];
+  // Find incomplete tasks: | T-XXX | Title | ... | [ ] | or | TODO |
+  const taskRegex = /\|\s*(T-\d+)\s*\|\s*([^|]+)\|[^|]*\|[^|]*\|[^|]*\|[^|]*\|\s*\[\s*\]\s*\|/g;
+  let match;
+  while ((match = taskRegex.exec(todo)) !== null && actions.length < max) {
+    const id = match[1].trim();
+    const title = match[2].trim().replace(/`/g, '');
+    actions.push({ id, title });
+  }
+  return actions;
+}
 
-const md = `# SYSTEM LOG — CURRENT STATE
+const phases = parsePhaseProgress(todoContent);
+const nextActions = parseNextActions(todoContent);
+
+// --- Build dashboard markdown ---
+const md = `# SYSTEM LOG — Decision Dashboard
+
 > Generated: ${systemState.generatedAt}
-> Status: ${allPass ? '✅ ALL PASS' : `❌ ${totalViolations} violation(s)`}
 
 ---
 
-## CTA SYSTEM
-- **Source:** CTA_CONFIG (ui-intelligence.ts)
-- **Status:** ${systemState.cta.status}
-- **Violations:** ${systemState.cta.violations}
-  - Rogue labels (SR1): ${ctaRogueCount}
-  - Wrong primary labels: ${ctaLabelCount}
-  - Wrong primary hrefs: ${ctaHrefCount}
-  - Banned labels: ${ctaBannedCount}
-- **Files scanned:** ${systemState.cta.scannedFiles}
-${ctaDetails.length > 0 ? '\n### Violations\n' + ctaDetails.join('\n') + '\n' : ''}
+## SYSTEM STATUS
+
+| | |
+|---|---|
+| **State** | ${statusIcon} **${statusLabel}** |
+| **Total Violations** | ${totalViolations} |
+
+**Summary:**
+
+| Validator | Violations | Status |
+|-----------|-----------|--------|
+| CTA | ${systemState.cta.violations} | ${systemState.cta.status === 'PASS' ? '✅' : '❌'} |
+| Design | ${systemState.design.totalViolations} | ${systemState.design.status === 'PASS' ? '✅' : '❌'} |
+| Graph | ${systemState.graph.totalErrors} | ${systemState.graph.status === 'PASS' ? '✅' : '❌'} |
+| Tokens | ${systemState.tokens.totalViolations} | ${systemState.tokens.status === 'PASS' ? '✅' : '❌'} |
+| Inline Styles | ${systemState.inlineStyles.totalViolations} | ${systemState.inlineStyles.status === 'PASS' ? '✅' : '❌'} |
+
 ---
 
-## DESIGN SYSTEM
-- **Status:** ${systemState.design.status}
-- **Total violations:** ${systemState.design.totalViolations}
-  - Inline var(--*) tokens (SR3): ${inlineVarCount}
-  - Gradient lifecycle (SR4): ${gradientCount}
-  - Button violations: ${buttonCount}
-  - Tailwind button violations: ${tailwindButtonCount}
-  - CTA structure violations: ${ctaViolationCount}
-${designDetails.length > 0 ? '\n### Violations\n' + designDetails.join('\n') + '\n' : ''}
+## CRITICAL ISSUES
+
+${criticalItems.length === 0 ? 'None. All validators passing.' : criticalItems.map((item) => `- [ ] ${item}`).join('\n')}
+
 ---
 
-## GRAPH SYSTEM
-- **Status:** ${systemState.graph.status}
-- **Total errors:** ${systemState.graph.totalErrors}
-  - Invalid types (SR5): ${invalidTypeCount}
-  - Other errors: ${otherGraphErrors}
-- **Warnings:** ${systemState.graph.warnings}
-${graphSR5Details.length > 0 ? '\n### SR5 Violations (first 10)\n' + graphSR5Details.join('\n') + (graphSR5Remaining > 0 ? `\n- ... and ${graphSR5Remaining} more` : '') + '\n' : ''}
+## PHASE PROGRESS
+
+${phases.length === 0 ? 'No phase data available.' : phases.map((p) => `- **Phase ${p.id}** ${p.name}: ${p.done}/${p.total} complete`).join('\n')}
+
 ---
 
-## TOKEN SYSTEM
-- **Status:** ${systemState.tokens.status}
-- **Total violations:** ${systemState.tokens.totalViolations}
-  - Hardcoded spacing (--space-*): ${tokenSpacingCount}
-  - Hardcoded font-size (--font-*): ${tokenFontCount}
-${tokenDetails.length > 0 ? '\n### Violations (first 10)\n' + tokenDetails.join('\n') + (tokenRemaining > 0 ? `\n- ... and ${tokenRemaining} more` : '') + '\n' : ''}
----
+## NEXT ACTIONS
 
-## INLINE STYLES
-- **Status:** ${systemState.inlineStyles.status}
-- **Total violations:** ${systemState.inlineStyles.totalViolations}
-  - var(--*) inline styles: ${inlineStyleVarCount}
-  - Other inline styles: ${inlineStylePlainCount}
-${inlineStyleDetails.length > 0 ? '\n### Violations\n' + inlineStyleDetails.join('\n') + '\n' : ''}
+${nextActions.length === 0 ? 'No pending tasks.' : nextActions.map((a, i) => `${i + 1}. **${a.id}** — ${a.title}`).join('\n')}
+
 ---
 
 ## VALIDATORS
-| Validator | Status |
-|-----------|--------|
-| CTA (validate-cta.mjs) | ${systemState.validators.cta} |
-| Design (validate-design-system.cjs) | ${systemState.validators.design} |
-| Graph (validate-graph.ts) | ${systemState.validators.graph} |
-| Tokens (validate-tokens.mjs) | ${systemState.validators.tokens} |
-| Inline Styles (validate-inline-styles.mjs) | ${systemState.validators.inlineStyles} |
+
+| Validator | Count | Detail |
+|-----------|-------|--------|
+| CTA | ${systemState.cta.violations} | Rogue: ${ctaRogueCount}, Labels: ${ctaLabelCount}, Hrefs: ${ctaHrefCount}, Banned: ${ctaBannedCount} |
+| Design | ${systemState.design.totalViolations} | Inline var: ${inlineVarCount}, Gradient: ${gradientCount}, Button: ${buttonCount}, TW Button: ${tailwindButtonCount}, CTA: ${ctaViolationCount} |
+| Graph | ${systemState.graph.totalErrors} | Invalid types: ${invalidTypeCount}, Other: ${otherGraphErrors}, Warnings: ${systemState.graph.warnings} |
+| Tokens | ${systemState.tokens.totalViolations} | Spacing: ${tokenSpacingCount}, Font-size: ${tokenFontCount} |
+| Inline Styles | ${systemState.inlineStyles.totalViolations} | var(--*): ${inlineStyleVarCount}, Other: ${inlineStylePlainCount} |
+
+Files scanned (CTA): ${systemState.cta.scannedFiles}
+
+---
+
+## LAST UPDATED
+
+${systemState.generatedAt}
 `;
 
 const logPath = path.join(root, 'Mindwp-Docs', 'SYSTEM-LOG.md');

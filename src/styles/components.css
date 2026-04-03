@@ -67,7 +67,7 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  padding: 0.8rem 1.2rem; /* default large size */
+  padding: var(--space-3) var(--space-5); /* default large size */
   font-size: var(--font-lg);
   font-weight: var(--font-weight-medium);
   line-height: var(--line-height-none);
@@ -88,17 +88,17 @@
 
 /* Size modifiers (used by `src/components/reusable/single/Button.tsx`) */
 .btn--sm {
-  padding: 0.6rem 1rem;
+  padding: var(--space-3) var(--space-4);
   font-size: var(--font-base);
 }
 
 .btn--md {
-  padding: 0.8rem 1.2rem;
+  padding: var(--space-3) var(--space-5);
   font-size: var(--font-lg);
 }
 
 .btn--lg {
-  padding: 1rem 1.5rem;
+  padding: var(--space-4) var(--space-6);
   font-size: var(--font-xl);
 }
 
@@ -140,7 +140,7 @@
 
 /* Size: smaller (used for header/footer and secondary buttons) */
 .btn-small {
-  padding: 0.6rem 1rem;
+  padding: var(--space-3) var(--space-4);
   font-size: var(--font-base);
 }
 
@@ -305,20 +305,20 @@
 }
 
 .badge--card {
-  padding: 0.375rem 0.75rem;
+  padding: var(--space-1) var(--space-3);
   font-size: var(--font-xs);
   font-weight: var(--font-weight-normal);
 }
 
 .badge--meta {
-  padding: 0.25rem 0.5rem;
+  padding: var(--space-1) var(--space-2);
   font-size: var(--font-xs);
   font-weight: var(--font-weight-normal);
 }
 
 .badge--section {
-  padding: 0.375rem 0.75rem;
-  font-size: 0.7rem;
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-xs);
   font-weight: var(--font-weight-medium);
   letter-spacing: 0.04em;
 }
@@ -521,7 +521,7 @@
   height: 1.25rem;
   color: var(--c-primary);
   flex: 0 0 auto;
-  margin-top: 0.125rem;
+  margin-top: var(--space-half);
 }
 
 .feature-list__content {
@@ -529,7 +529,7 @@
 }
 
 .feature-list__name {
-  margin: 0 0 0.125rem;
+  margin: 0 0 var(--space-half);
   font-size: var(--font-sm);
 }
 
@@ -604,7 +604,7 @@
   width: 1rem;
   height: 1rem;
   color: var(--c-success-soft);
-  margin-top: 0.125rem;
+  margin-top: var(--space-half);
   flex: 0 0 auto;
 }
 
@@ -759,7 +759,7 @@
 .c-system-capabilities__tab-icon {
   width: 2rem;
   height: 2rem;
-  padding: 0.4rem;
+  padding: var(--space-2);
   border-radius: var(--radius-md);
   background-color: color-mix(in oklab, var(--c-primary) 12%, transparent);
 }
@@ -874,7 +874,7 @@
 
 .system-capabilities__benefit-icon,
 .c-system-capabilities__benefit-icon {
-  margin-top: 0.125rem;
+  margin-top: var(--space-half);
   flex: 0 0 auto;
   color: var(--c-primary);
 }
@@ -1276,7 +1276,7 @@
   width: 1rem;
   height: 1rem;
   flex: 0 0 auto;
-  margin-top: 0.125rem;
+  margin-top: var(--space-half);
 }
 
 .feature-card__footer,
@@ -2036,7 +2036,7 @@
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
-  margin-top: 0.125rem;
+  margin-top: var(--space-half);
 }
 
 .problem-solution__bullet-arrow {
@@ -2369,6 +2369,11 @@
   Technologies section (core/TechnologyCardsSection.tsx)
    ---------------------------------------------------------------------- */
 
+.technologies--bg-default,
+.c-technology-cards-section--bg-default {
+  background-color: var(--c-bg);
+}
+
 .technologies--bg-muted,
 .c-technology-cards-section--bg-muted {
   background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
@@ -2556,7 +2561,7 @@
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
-  margin-top: 0.25rem;
+  margin-top: var(--space-1);
 }
 
 .technology-stack__check-icon {
@@ -2993,6 +2998,11 @@
    Packages section (core/TierCardsSection.tsx)
    ---------------------------------------------------------------------- */
 
+.industry-packages--bg-default,
+.c-tier-cards-section--bg-default {
+  background-color: var(--c-bg);
+}
+
 .industry-packages--bg-slate,
 .c-tier-cards-section--bg-slate {
   background-color: color-mix(in oklab, var(--c-bg) 35%, transparent);
@@ -3100,7 +3110,7 @@
   height: 1.25rem;
   color: var(--c-primary);
   flex: 0 0 auto;
-  margin-top: 0.125rem;
+  margin-top: var(--space-half);
 }
 
 .industry-packages__feature-text,
@@ -3111,6 +3121,11 @@
 /* ----------------------------------------------------------------------
   Content grid section (core/ContentCardsGridSection.tsx)
    ---------------------------------------------------------------------- */
+
+.grid-section--bg-default,
+.c-content-cards-grid-section--bg-default {
+  background-color: var(--c-bg);
+}
 
 .grid-section--bg-white,
 .c-content-cards-grid-section--bg-white {
@@ -3747,7 +3762,7 @@
 }
 
 .case-study-detail-metrics__value {
-  font-size: 1.875rem;
+  font-size: var(--font-3xl);
   line-height: var(--line-height-none);
   margin-bottom: var(--space-2);
 }
@@ -4400,7 +4415,7 @@ summary.component-library__sidebar-link {
 .audit-card__item-icon {
   width: 0.75rem;
   height: 0.75rem;
-  margin-top: 0.125rem;
+  margin-top: var(--space-half);
   flex: 0 0 auto;
 }
 
@@ -4540,7 +4555,7 @@ summary.component-library__sidebar-link {
 
 .platform-comparison--bg-muted,
 .c-option-comparison-section--bg-muted {
-  background-color: var(--c-bg);
+  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
 }
 
 .platform-comparison__header,
@@ -4605,7 +4620,7 @@ summary.component-library__sidebar-link {
 .c-option-comparison-section__check {
   width: 1rem;
   height: 1rem;
-  margin-top: 0.125rem;
+  margin-top: var(--space-half);
   flex: 0 0 auto;
   color: var(--c-success);
 }
@@ -4856,7 +4871,7 @@ summary.component-library__sidebar-link {
 .results-comparison-card__improvement-label {
   font-size: var(--font-sm);
   color: var(--c-text-muted);
-  margin-bottom: 0.25rem;
+  margin-bottom: var(--space-1);
 }
 
 .results-comparison-card__metric-value {
@@ -4990,7 +5005,7 @@ summary.component-library__sidebar-link {
 
 .comparison--bg-muted,
 .c-comparison-section--bg-muted {
-  background-color: var(--c-bg);
+  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
 }
 
 .comparison__grid,
@@ -5121,7 +5136,7 @@ summary.component-library__sidebar-link {
 
 .comparison__item-icon,
 .c-comparison-section__item-icon {
-  margin-top: 0.125rem;
+  margin-top: var(--space-half);
   flex: 0 0 auto;
 }
 
@@ -5149,7 +5164,7 @@ summary.component-library__sidebar-link {
 .highlight-card__icon {
   width: 1.5rem;
   height: 1.5rem;
-  margin-top: 0.25rem;
+  margin-top: var(--space-1);
   flex: 0 0 auto;
 }
 
@@ -5207,7 +5222,7 @@ summary.component-library__sidebar-link {
 .issues-card__icon {
   width: 1.25rem;
   height: 1.25rem;
-  margin-top: 0.125rem;
+  margin-top: var(--space-half);
   flex: 0 0 auto;
   color: var(--c-warning-500);
 }
@@ -5215,7 +5230,7 @@ summary.component-library__sidebar-link {
 .issues-card__issue-title {
   font-size: var(--font-sm);
   color: var(--c-dark);
-  margin-bottom: 0.25rem;
+  margin-bottom: var(--space-1);
 }
 
 .issues-card__issue-desc {
@@ -5329,6 +5344,14 @@ summary.component-library__sidebar-link {
 .resource-page__callout-line {
   margin: 0;
   font-size: var(--font-base);
+}
+
+.resource-page__callout-line--error {
+  color: var(--error-60);
+}
+
+.resource-page__callout-line--success {
+  color: var(--success-60);
 }
 
 .resource-page__callout-line + .resource-page__callout-line {
@@ -6226,7 +6249,7 @@ summary.component-library__sidebar-link {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 9999px;
-  margin-top: 0.125rem;
+  margin-top: var(--space-half);
   flex: 0 0 auto;
   background-color: var(--c-danger-100);
 }
@@ -6327,7 +6350,7 @@ summary.component-library__sidebar-link {
 }
 
 .checklist-item__icon-wrap {
-  margin-top: 0.25rem;
+  margin-top: var(--space-1);
   border-radius: 9999px;
   flex: 0 0 auto;
 }
@@ -6365,7 +6388,7 @@ summary.component-library__sidebar-link {
   width: 1.25rem;
   height: 1.25rem;
   flex: 0 0 auto;
-  margin-top: 0.125rem;
+  margin-top: var(--space-half);
 }
 
 .checklist-simple--check .checklist-simple__icon {
@@ -6427,7 +6450,7 @@ summary.component-library__sidebar-link {
 
 .benefits-section--bg-muted,
 .c-icon-benefit-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 50%, transparent);
+  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
 }
 
 .benefits-section__grid,
@@ -6484,7 +6507,7 @@ summary.component-library__sidebar-link {
 
 .use-cases-section--bg-muted,
 .c-scenario-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 50%, transparent);
+  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
 }
 
 .use-cases-section__grid,
@@ -6639,7 +6662,7 @@ summary.component-library__sidebar-link {
 
 .explore-cards-section--bg-muted,
 .c-explore-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 50%, transparent);
+  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
 }
 
 .explore-cards-section__grid,
@@ -6839,7 +6862,7 @@ summary.component-library__sidebar-link {
 .error-card__icon {
   width: 1.25rem;
   height: 1.25rem;
-  margin-top: 0.125rem;
+  margin-top: var(--space-half);
   flex: 0 0 auto;
   color: color-mix(in oklab, var(--c-primary) 70%, var(--c-dark));
 }
@@ -6890,7 +6913,7 @@ summary.component-library__sidebar-link {
 .svc-err__title {
   margin: 0;
   margin-bottom: var(--space-4);
-  font-size: 1.5rem;
+  font-size: var(--font-2xl);
   font-weight: var(--font-weight-bold);
   color: var(--c-dark);
 }
@@ -7008,7 +7031,7 @@ summary.component-library__sidebar-link {
 .feature-err__title {
   margin: 0;
   margin-bottom: var(--space-4);
-  font-size: 1.5rem;
+  font-size: var(--font-2xl);
   font-weight: var(--font-weight-bold);
   color: var(--c-dark);
 }
@@ -7508,7 +7531,7 @@ summary.component-library__sidebar-link {
 }
 
 .warning-list__bullet {
-  margin-top: 0.25rem;
+  margin-top: var(--space-1);
   color: color-mix(in oklab, var(--c-primary) 80%, var(--c-dark));
 }
 
@@ -7532,7 +7555,7 @@ summary.component-library__sidebar-link {
 
 .pain-points-section--bg-muted,
 .c-problem-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 50%, transparent);
+  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
 }
 
 .pain-points-section__card,
@@ -8064,7 +8087,7 @@ summary.component-library__sidebar-link {
 .blog-post__bullet {
   width: 0.375rem;
   height: 0.375rem;
-  margin-top: 0.6rem;
+  margin-top: var(--space-3);
   flex: 0 0 auto;
   border-radius: 9999px;
   background-color: var(--c-primary);
@@ -8563,29 +8586,29 @@ summary.component-library__sidebar-link {
 }
 
 .legal-content h1 {
-  margin: 0 0 1rem 0;
+  margin: 0 0 var(--space-4) 0;
 }
 
 .legal-content h2 {
-  margin: 2rem 0 0.75rem 0;
+  margin: var(--space-7) 0 var(--space-3) 0;
 }
 
 .legal-content h3 {
-  margin: 1.5rem 0 0.5rem 0;
+  margin: var(--space-6) 0 var(--space-2) 0;
 }
 
 .legal-content p {
-  margin: 0 0 1rem 0;
+  margin: 0 0 var(--space-4) 0;
 }
 
 .legal-content ul,
 .legal-content ol {
-  margin: 0 0 1rem 1.25rem;
+  margin: 0 0 var(--space-4) var(--space-5);
   padding: 0;
 }
 
 .legal-content li {
-  margin: 0.5rem 0;
+  margin: var(--space-2) 0;
 }
 
 .legal-content a {
@@ -8629,25 +8652,25 @@ summary.component-library__sidebar-link {
 /* Heading */
 .cta-heading {
   color: var(--c-text-inverse);
-  font-size: 1.875rem;
+  font-size: var(--font-3xl);
   font-weight: var(--font-weight-bold);
   line-height: 1.2;
 }
 
 @media (min-width: 768px) {
   .cta-heading {
-    font-size: 2.25rem;
+    font-size: var(--font-4xl);
   }
 }
 
 /* Smaller heading for h3 CTAs (embedded within sections) */
 h3.cta-heading {
-  font-size: 1.5rem;
+  font-size: var(--font-2xl);
 }
 
 @media (min-width: 768px) {
   h3.cta-heading {
-    font-size: 1.875rem;
+    font-size: var(--font-3xl);
   }
 }
 
@@ -8885,6 +8908,22 @@ h3.cta-heading {
 }
 
 /* =========================================================
+   SECTION BACKGROUND UTILITIES
+   ========================================================= */
+
+.bg-section-base {
+  background-color: var(--section-bg-base);
+}
+
+.bg-section-surface {
+  background-color: var(--section-bg-surface);
+}
+
+.bg-section-muted {
+  background-color: var(--section-bg-muted);
+}
+
+/* =========================================================
    GRADIENT BACKGROUNDS
    ========================================================= */
 
@@ -8952,8 +8991,8 @@ h3.cta-heading {
   height: 1rem;
   top: 50%;
   left: 50%;
-  margin-left: -0.5rem;
-  margin-top: -0.5rem;
+  margin-left: calc(-1 * var(--space-2));
+  margin-top: calc(-1 * var(--space-2));
   border: 2px solid transparent;
   border-top: 2px solid currentColor;
   border-radius: 50%;
@@ -9097,7 +9136,7 @@ h3.cta-heading {
   width: 1px;
   height: 1px;
   padding: 0;
-  margin: -1px;
+  margin: calc(-1px);
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
@@ -9115,26 +9154,6 @@ h3.cta-heading {
 .button-icon {
   padding: var(--space-3);
   aspect-ratio: 1;
-}
-
-.gradient-cta-10 {
-  background: var(--gradient-cta-10) !important;
-}
-
-.gradient-cta-11 {
-  background: var(--gradient-cta-11) !important;
-}
-
-.gradient-cta-12 {
-  background: var(--gradient-cta-12) !important;
-}
-
-.gradient-cta-13 {
-  background: var(--gradient-cta-13) !important;
-}
-
-.gradient-cta-14 {
-  background: var(--gradient-cta-14) !important;
 }
 
 .bg-primary {
@@ -9175,6 +9194,26 @@ h3.cta-heading {
 
 .text-star-yellow {
   color: var(--c-star);
+}
+
+.header {
+  border-color: var(--border-light);
+}
+
+.header-mobile-toggle {
+  color: var(--c-text-muted);
+}
+
+.header-mobile-menu {
+  border-color: var(--border-light);
+}
+
+.header-mobile-link {
+  color: var(--c-text-muted);
+}
+
+.header-mobile-cta {
+  border-color: var(--border-light);
 }
 
 .header-nav-link {
@@ -9557,7 +9596,7 @@ h3.cta-heading {
 }
 
 .c-dual-feature-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 35%, transparent);
+  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
 }
 
 .c-dual-feature-cards-section__grid {
@@ -9610,7 +9649,7 @@ h3.cta-heading {
 }
 
 .c-stacked-feature-list-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 35%, transparent);
+  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
 }
 
 .c-stacked-feature-list-section__layout {
@@ -9794,7 +9833,7 @@ h3.cta-heading {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  padding: 0.4rem 0.7rem;
+  padding: var(--space-2) var(--space-3);
   border-radius: 999px;
   color: var(--c-dark);
   background-color: color-mix(in oklab, var(--c-primary) 8%, white);
@@ -9959,7 +9998,7 @@ h3.cta-heading {
 }
 
 .c-narrative-stats-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 35%, transparent);
+  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
 }
 
 .c-narrative-stats-section__card {
@@ -10035,7 +10074,7 @@ h3.cta-heading {
 }
 
 .c-image-stats-services-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 35%, transparent);
+  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
 }
 
 .c-image-stats-services-section__top {
@@ -10145,7 +10184,7 @@ h3.cta-heading {
 }
 
 .c-testimonial-spotlight-split-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 35%, transparent);
+  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
 }
 
 .c-testimonial-spotlight-split-section__panel {
@@ -10247,7 +10286,7 @@ h3.cta-heading {
 }
 
 .c-tabbed-feature-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 35%, transparent);
+  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
 }
 
 .c-tabbed-feature-cards-section__tabs {
@@ -10279,7 +10318,7 @@ h3.cta-heading {
   background: transparent;
   color: var(--c-dark);
   font-weight: var(--font-weight-semibold);
-  padding: 0.625rem 1rem;
+  padding: var(--space-3) var(--space-4);
   cursor: pointer;
 }
 
@@ -10375,7 +10414,7 @@ h3.cta-heading {
 }
 
 .c-feature-stats-mockup-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 35%, transparent);
+  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
 }
 
 .c-feature-stats-mockup-section__shell {
@@ -10463,7 +10502,7 @@ h3.cta-heading {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.25rem 0.75rem;
+  padding: var(--space-1) var(--space-3);
   border-radius: var(--radius);
   border: 1px solid var(--c-border-alpha);
   font-size: var(--font-sm);
@@ -10496,7 +10535,7 @@ h3.cta-heading {
 
 .c-feature-stats-mockup-section__bars-column {
   display: grid;
-  gap: 0.35rem;
+  gap: var(--space-1);
 }
 
 .c-feature-stats-mockup-section__bars-column > span {
@@ -10548,7 +10587,7 @@ h3.cta-heading {
 }
 
 .c-step-cards-split-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 35%, transparent);
+  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
 }
 
 .c-step-cards-split-section__layout {
@@ -10621,7 +10660,7 @@ h3.cta-heading {
 }
 
 .c-dual-tone-checklist-comparison-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 35%, transparent);
+  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
 }
 
 .c-dual-tone-checklist-comparison-section__panel {
@@ -10679,7 +10718,7 @@ h3.cta-heading {
 .c-dual-tone-checklist-comparison-section__item-icon {
   width: 1.125rem;
   height: 1.125rem;
-  margin-top: 0.125rem;
+  margin-top: var(--space-half);
   flex: 0 0 auto;
 }
 
@@ -10719,7 +10758,7 @@ h3.cta-heading {
 }
 
 .c-image-accordion-strip-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 35%, transparent);
+  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
 }
 
 .c-image-accordion-strip-section__track {
@@ -10800,7 +10839,7 @@ h3.cta-heading {
 }
 
 .c-service-spectrum-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 35%, transparent);
+  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
 }
 
 .c-service-spectrum-cards-section__actions {
@@ -10856,7 +10895,7 @@ h3.cta-heading {
 
 .c-service-spectrum-cards-section__points {
   margin: var(--space-4) 0 0;
-  padding-left: 1.25rem;
+  padding-left: var(--space-5);
   color: var(--c-text-muted);
 }
 

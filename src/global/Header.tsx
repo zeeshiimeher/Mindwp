@@ -30,7 +30,6 @@ export function Header() {
   return (
     <header
       className='header sticky top-0 z-50 bg-white border-b shadow-sm'
-      style={{ borderColor: 'var(--border-light)' }}
     >
       <div className='header-container l-container'>
         <div className='header-content l-row l-items-center l-justify-between h-16'>

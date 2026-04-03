@@ -380,6 +380,11 @@ The system highlights problems. Humans decide when and how to fix them.
 - Integrated into: `scripts/validate-all.mjs` as final validator
 - STRICT_MODE flag: `false` (safe), upgradeable to `true` in future phases
 
+**CTA Scan Scope:**
+- CTA label enforcement (`validate-cta.mjs`) scans `src/lib/`, `src/config/`, and `src/components/system/`.
+- **Excluded from scan:** `src/lib/dev/`, `src/lib/devtools/`, and `src/lib/ui-intelligence.ts` (canonical CTA_CONFIG source).
+- Dev-tool files contain instructional hint strings (e.g. "Add a 'Get a Consultation' button") that are not production CTA definitions and must not trigger violations.
+
 ---
 
 ### 6. Section Heading Standards

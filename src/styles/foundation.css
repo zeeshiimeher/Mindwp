@@ -14,6 +14,7 @@
 :root,
 :host {
   /* SPACING SCALE */
+  --space-half: 2px;
   --space-1: 4px;
   --space-2: 8px;
   --space-3: 12px;
@@ -276,6 +277,11 @@ linear-gradient(135deg,var(--brand-secondary),var(--brand-primary));
   --c-bg:              var(--brand-grey);           /* rgb(248, 250, 252) — page background */
   --c-bg-alt:          var(--brand-grey-light);     /* rgb(241, 245, 249) — alternating section bg */
   --c-surface:         var(--brand-white);          /* rgb(255, 255, 255) — cards, elevated */
+
+  /* Section backgrounds (canonical values — use these in utility classes) */
+  --section-bg-base:   var(--c-bg);                 /* Default page background */
+  --section-bg-surface: var(--c-surface);           /* White — elevated sections */
+  --section-bg-muted:  color-mix(in oklab, var(--c-bg) 30%, transparent); /* Subtle tint */
 
   /* Text */
   --c-text:            var(--brand-primary);        /* rgb(10, 22, 40) — headings, primary text */

@@ -54,6 +54,8 @@ function isExemptValue(value) {
   if (/var\(--/.test(trimmed)) return true;
   // calc() expressions (may compose tokens)
   if (/calc\(/.test(trimmed)) return true;
+  // clamp() expressions (responsive fluid values)
+  if (/clamp\(/.test(trimmed)) return true;
   // inherit / initial / auto / unset
   if (/^(inherit|initial|auto|unset|revert)$/.test(trimmed)) return true;
   return false;
