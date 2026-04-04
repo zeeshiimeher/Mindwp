@@ -51,6 +51,11 @@
 - 7I: CSS purge — bg-gradient-warm, visual--booking dead classes removed
 - 7I: All token chains verified ≤ depth 2
 - 7I: Each variant now has distinct visual identity (warning = amber/orange, no longer ≈ neutral)
+- 7J: Alias token purge — removed 15 pure-alias tokens (brand-teal*, brand-amber*, color-gradient-*-500)
+- 7J: Renamed brand-teal-10/90/lightest/lighter → brand-accent-10/90/lightest/lighter (canonical names)
+- 7J: Renamed color-surface-accent-teal → color-surface-accent, gradient-tint-teal → gradient-tint-accent
+- 7J: Inlined all color-gradient-*-500 → direct color-*-500 references in components.css
+- 7J: Token count: 259 → 243 (-16 net after alias removal)
 
 ---
 

@@ -592,15 +592,15 @@ variant: VariantType  →  getVariantStyles(variant)
 - ✅ All color theming flows through one `variant` prop
 - ✅ `iconStyles.ts` is internal-only (consumed only by `variantStyles.ts`)
 
-### 16.3 Token Summary (7I — Final Hardening)
+### 16.3 Token Summary (7J — Alias Purge)
 
 | Metric | Value |
 |--------|-------|
-| Total foundation tokens | ~231 |
-| Alias tokens (documented) | 8 (success≡accent, info≡secondary × icon/variant/border) |
+| Total foundation tokens | ~243 |
+| Alias tokens removed (7J) | 15 (brand-teal*, brand-amber*, color-gradient-*-500) |
+| Tokens renamed (7J) | 7 (teal derivatives → accent, surface-accent-teal → surface-accent) |
 | Dead tokens removed (cumulative) | 3 (--icon-text-warm, --icon-bg-warm, --gradient-cta-warm) |
-| Chains flattened (cumulative) | 5 (--c-success-soft, --section-bg-base, --brand-teal-10/90, --brand-amber-90/10) |
-| Dead CSS classes removed (cumulative) | 30 (icon-error, process-step BEM, explore-cards BEM, bg-gradient-warm, visual--booking) |
+| Dead CSS classes removed (cumulative) | 30 |
 | Max chain depth | 2 (enforced) |
 
 ### 16.4 Known Aliases (Keep for Semantics)

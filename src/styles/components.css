@@ -2626,48 +2626,48 @@
 }
 
 .portfolio-section__card--purple-pink {
-  --from: var(--color-gradient-purple-500);
-  --to: var(--color-gradient-pink-500);
+  --from: var(--color-purple-500);
+  --to: var(--color-pink-500);
 }
 
 .portfolio-section__card--pink-rose {
-  --from: var(--color-gradient-pink-500);
-  --to: var(--color-gradient-rose-500);
+  --from: var(--color-pink-500);
+  --to: var(--color-rose-500);
 }
 
 .portfolio-section__card--slate-gray {
-  --from: var(--color-gradient-slate-500);
-  --to: var(--color-gradient-gray-500);
+  --from: var(--color-slate-500);
+  --to: var(--color-gray-500);
 }
 
 .portfolio-section__card--blue-cyan {
-  --from: var(--color-gradient-blue-500);
-  --to: var(--color-gradient-cyan-500);
+  --from: var(--color-blue-500);
+  --to: var(--color-cyan-500);
 }
 
 .portfolio-section__card--warning-amber {
   --from: var(--c-warning-500);
-  --to: var(--color-gradient-amber-500);
+  --to: var(--color-amber-500);
 }
 
 .portfolio-section__card--success-emerald {
   --from: var(--c-success-500);
-  --to: var(--color-gradient-emerald-500);
+  --to: var(--color-emerald-500);
 }
 
 .portfolio-section__card--slate-zinc {
-  --from: var(--color-gradient-slate-500);
-  --to: var(--color-gradient-zinc-500);
+  --from: var(--color-slate-500);
+  --to: var(--color-zinc-500);
 }
 
 .portfolio-section__card--indigo-blue {
-  --from: var(--color-gradient-indigo-500);
-  --to: var(--color-gradient-blue-500);
+  --from: var(--color-indigo-500);
+  --to: var(--color-blue-500);
 }
 
 .portfolio-section__card--teal-cyan {
-  --from: var(--color-gradient-teal-500);
-  --to: var(--color-gradient-cyan-500);
+  --from: var(--color-teal-500);
+  --to: var(--color-cyan-500);
 }
 
 .portfolio-section__bg {
@@ -4471,7 +4471,7 @@ summary.component-library__sidebar-link {
   display: inline-block;
   padding: var(--space-3) var(--space-6);
   border-radius: var(--radius-lg);
-  background-color: var(--color-success-bg, var(--color-surface-accent-teal-strong));
+  background-color: var(--color-success-bg, var(--color-surface-accent-strong));
 }
 
 .case-section__stat-text {
@@ -6562,7 +6562,7 @@ summary.component-library__sidebar-link {
 
 .explore-cards-section__card--gradient-teal,
 .c-explore-cards-section__card--gradient-teal {
-  background-image: var(--gradient-tint-teal);
+  background-image: var(--gradient-tint-accent);
 }
 
 .explore-cards-section__card--gradient-purple,
