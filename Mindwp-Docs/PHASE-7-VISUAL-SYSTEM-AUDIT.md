@@ -60,7 +60,7 @@
 
 ### 7B — Hover & Transition Standardization
 
-**Status:** Active
+**Status:** Done
 
 **Fixes to execute**
 - T-110 Add Tier 2 hover to DualToneChecklist, ServiceSpectrum, and ProcessSteps cards
@@ -121,7 +121,7 @@
 | Phase | Status | Check |
 |---|---|---|
 | 7A | Done | Section background cleanup complete |
-| 7B | Active | Hover, focus, and transition fixes in progress |
+| 7B | Done | Hover, focus, and transition standardization implemented |
 | 7C | Queued | Gradient tokenization pending |
 | 7D | Queued | Icon and badge normalization pending |
 | 7E | Queued | Remaining component cleanup pending |
@@ -662,6 +662,14 @@ Current badge system is **mostly clean** — 3 sizes (sm/md/lg), 5 color variant
 | CSS rules deleted | ~350+ |
 | TSX files modified | ~80+ |
 | Net CSS weight change | **-300+ rules** (significant file size reduction) |
+
+## ✅ 7B — INTERACTION SYSTEM IMPLEMENTED
+
+- Standardized hover tiers in the shared CSS so standard cards now rise with Tier 2 motion and featured cards use Tier 3 elevation instead of ad hoc shadow values.
+- Added missing interaction treatment to DualToneChecklist, ServiceSpectrum, and ProcessSteps, including transition tokens and visible focus states via `:focus-visible` and `:focus-within`.
+- Replaced remaining hardcoded `0.2s ease` timing values in Phase 7 interaction scope with `var(--transition-fast)` across shared card and link patterns.
+- Wrapped the remaining touch-problem hover rules in hover-capable media queries, including How It Works, ProblemSolution, link-primary, legal links, and the image accordion expansion behavior.
+- Strengthened weak interaction feedback on `benefit-card--link`, shared card links, resource cards, and related cards so hover behavior now matches the system instead of isolated one-off effects.
 
 ---
 

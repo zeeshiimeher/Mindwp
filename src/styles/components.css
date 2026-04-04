@@ -108,6 +108,8 @@
 .btn-outline:focus-visible,
 .btn-outline-light:focus-visible,
 .btn-white:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
   box-shadow: var(--focus-ring-shadow);
 }
 
@@ -197,6 +199,8 @@
 @media (hover: hover) {
   .btn-outline:hover {
     background-color: var(--c-info-bg);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px color-mix(in oklab, var(--c-primary) 20%, transparent);
   }
 }
 
@@ -210,6 +214,8 @@
 @media (hover: hover) {
   .btn-outline-light:hover {
     background-color: var(--c-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px color-mix(in oklab, var(--c-dark) 22%, transparent);
   }
 }
 
@@ -225,6 +231,8 @@
     background-color: transparent;
     color: var(--c-text-inverse);
     border-color: var(--c-text-inverse);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px color-mix(in oklab, var(--c-text-inverse) 16%, transparent);
   }
 }
 
@@ -238,6 +246,8 @@
 @media (hover: hover) {
   .btn-white.btn-outline:hover {
     background-color: var(--brand-white-10);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px color-mix(in oklab, var(--c-text-inverse) 16%, transparent);
   }
 }
 
@@ -1007,11 +1017,6 @@
     box-shadow var(--transition-fast);
 }
 
-.how-it-works-step:hover .how-it-works-step__card {
-  transform: translateY(-0.5rem);
-  box-shadow: var(--shadow-2xl);
-}
-
 .how-it-works-step__number {
   position: absolute;
   top: calc(var(--space-6) * -1);
@@ -1044,8 +1049,15 @@
   background: linear-gradient(135deg, var(--gradient-accent-from), var(--gradient-accent-to));
 }
 
-.how-it-works-step:hover .how-it-works-step__number {
-  transform: scale(1.1);
+@media (hover: hover) {
+  .how-it-works-step:hover .how-it-works-step__card {
+    transform: translateY(-0.375rem);
+    box-shadow: var(--shadow-xl);
+  }
+
+  .how-it-works-step:hover .how-it-works-step__number {
+    transform: scale(1.05);
+  }
 }
 
 .how-it-works-step__number-text {
@@ -1366,19 +1378,25 @@
 
 @media (hover: hover) {
   .benefit-card--left:hover {
+    transform: translateY(-0.25rem);
     box-shadow: var(--shadow-lg);
   }
 
   .benefit-card--centered:hover {
+    transform: translateY(-0.375rem);
     box-shadow: var(--shadow-xl);
   }
 
   .benefit-card--link:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: var(--shadow-lg);
     border-color: color-mix(in oklab, var(--c-primary) 20%, var(--c-border-alpha));
   }
 }
 
 .benefit-card:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
   box-shadow: var(--focus-ring-shadow);
 }
 
@@ -1997,9 +2015,12 @@
     transform var(--transition-fast);
 }
 
-.problem-solution:hover {
-  border-color: var(--c-primary);
-  box-shadow: var(--shadow-lg);
+@media (hover: hover) {
+  .problem-solution:hover {
+    transform: translateY(-0.25rem);
+    border-color: var(--c-primary);
+    box-shadow: var(--shadow-lg);
+  }
 }
 
 .problem-solution__icon-svg {
@@ -4231,24 +4252,23 @@ summary.component-library__sidebar-link {
 .card-style-link--link {
   cursor: pointer;
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
 }
 
 @media (hover: hover) {
   .card-style-link--link:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 16px 40px var(--shadow-ink-12);
+    transform: translateY(-0.25rem);
+    box-shadow: var(--shadow-lg);
     border-color: color-mix(in oklab, var(--c-primary) 25%, var(--c-border-alpha));
   }
 }
 
 .card-style-link--link:focus-visible {
-  outline: none;
-  box-shadow:
-    var(--focus-ring-shadow),
-    0 16px 40px var(--shadow-ink-12);
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  box-shadow: var(--focus-ring-shadow);
 }
 
 .card-style-link__inner {
@@ -4304,15 +4324,15 @@ summary.component-library__sidebar-link {
 .audit-card {
   padding: var(--card-padding);
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
   gap: var(--space-3);
 }
 
 @media (hover: hover) {
   .audit-card:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 16px 40px var(--shadow-ink-12);
+    transform: translateY(-0.25rem);
+    box-shadow: var(--shadow-lg);
   }
 }
 
@@ -4374,15 +4394,15 @@ summary.component-library__sidebar-link {
 .solution-card {
   padding: var(--card-padding);
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
   gap: var(--space-4);
 }
 
 @media (hover: hover) {
   .solution-card:hover {
     transform: translateY(-0.25rem);
-    box-shadow: 0 14px 32px var(--shadow-ink-12);
+    box-shadow: var(--shadow-lg);
   }
 }
 
@@ -4430,11 +4450,18 @@ summary.component-library__sidebar-link {
 }
 .link-primary {
   color: var(--c-primary);
-  transition: color 0.2s ease;
+  transition: color var(--transition-fast);
 }
 
-.link-primary:hover {
-  color: var(--c-accent-soft);
+.link-primary:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) {
+  .link-primary:hover {
+    color: var(--c-accent-soft);
+  }
 }
 /* ----------------------------------------------------------------------
    CaseSection
@@ -4571,7 +4598,9 @@ summary.component-library__sidebar-link {
 
 .diy-step-card {
   padding: var(--card-padding);
-  transition: box-shadow 0.2s ease;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .diy-step-card__row {
@@ -4589,7 +4618,8 @@ summary.component-library__sidebar-link {
 
 @media (hover: hover) {
   .diy-step-card:hover {
-    box-shadow: 0 14px 32px var(--shadow-ink-12);
+    transform: translateY(-0.25rem);
+    box-shadow: var(--shadow-lg);
   }
 }
 
@@ -4775,12 +4805,15 @@ summary.component-library__sidebar-link {
 
 .results-comparison-card {
   padding: var(--card-padding);
-  transition: box-shadow 0.2s ease;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 @media (hover: hover) {
   .results-comparison-card:hover {
-    box-shadow: 0 14px 32px var(--shadow-ink-12);
+    transform: translateY(-0.25rem);
+    box-shadow: var(--shadow-lg);
   }
 }
 
@@ -4841,6 +4874,24 @@ summary.component-library__sidebar-link {
   position: relative;
   padding: var(--card-padding);
   border: 2px solid var(--c-border-alpha);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+@media (hover: hover) {
+  .process-step:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: var(--shadow-lg);
+    border-color: color-mix(in oklab, var(--c-primary) 16%, var(--c-border-alpha));
+  }
+}
+
+.process-step:focus-visible,
+.process-step:focus-within {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
 }
 
 .process-step__badge {
@@ -5440,12 +5491,15 @@ summary.component-library__sidebar-link {
 
 .resource-page__related-card {
   padding: var(--space-4);
-  transition: box-shadow 0.2s ease;
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 @media (hover: hover) {
   .resource-page__related-card:hover {
-    box-shadow: var(--shadow-md);
+    transform: translateY(-0.25rem);
+    box-shadow: var(--shadow-lg);
   }
 }
 
@@ -5774,14 +5828,14 @@ summary.component-library__sidebar-link {
 
 .resource-card--interactive {
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 @media (hover: hover) {
   .resource-card--interactive:hover {
-    transform: translateY(calc(var(--space-1) * -1));
-    box-shadow: var(--shadow-xl);
+    transform: translateY(-0.25rem);
+    box-shadow: var(--shadow-lg);
   }
 }
 
@@ -5889,14 +5943,14 @@ summary.component-library__sidebar-link {
 .resources-hub__topic-card {
   padding: var(--space-6);
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
   will-change: transform;
 }
 
 @media (hover: hover) {
   .resources-hub__topic-card:hover {
-    transform: translateY(calc(var(--space-1) * -1));
+    transform: translateY(-0.25rem);
     box-shadow: var(--shadow-lg);
   }
 }
@@ -5943,7 +5997,7 @@ summary.component-library__sidebar-link {
 .resources-hub__topic-arrow {
   width: 0.75rem;
   height: 0.75rem;
-  transition: transform 0.2s ease;
+  transition: transform var(--transition-fast);
 }
 
 @media (hover: hover) {
@@ -8409,10 +8463,18 @@ summary.component-library__sidebar-link {
   color: var(--c-primary);
   text-decoration: underline;
   text-underline-offset: 2px;
+  transition: color var(--transition-fast);
 }
 
-.legal-content a:hover {
-  color: var(--color-action-primary-90);
+.legal-content a:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+@media (hover: hover) {
+  .legal-content a:hover {
+    color: var(--color-action-primary-90);
+  }
 }
 
 /* =========================================================
@@ -10400,6 +10462,23 @@ h3.cta-heading {
   padding: var(--space-6);
   border-radius: var(--radius);
   background-color: var(--c-surface);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+@media (hover: hover) {
+  .c-dual-tone-checklist-comparison-section__column:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+.c-dual-tone-checklist-comparison-section__column:focus-visible,
+.c-dual-tone-checklist-comparison-section__column:focus-within {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
 }
 
 .c-dual-tone-checklist-comparison-section__column--dark {
@@ -10496,7 +10575,9 @@ h3.cta-heading {
     flex: 1 1 0%;
     transition: flex-grow var(--duration-normal) var(--ease-standard);
   }
+}
 
+@media (min-width: 1024px) and (hover: hover) {
   .c-image-accordion-strip-section__item:hover {
     flex-grow: 1.25;
   }
@@ -10567,6 +10648,23 @@ h3.cta-heading {
 
 .c-service-spectrum-cards-section__card {
   padding: var(--space-6);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+@media (hover: hover) {
+  .c-service-spectrum-cards-section__card:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+.c-service-spectrum-cards-section__card:focus-visible,
+.c-service-spectrum-cards-section__card:focus-within {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
 }
 
 .c-service-spectrum-cards-section__card--featured {
