@@ -1297,3 +1297,149 @@ What must be tested first
 - one case study page
 - FAQ interaction states
 - CTA section in full-section mode and inline-panel mode
+
+---
+
+## 🚧 PHASE 7 — REDESIGN EXECUTION PLAN
+
+### 1. Redesign Approach
+
+- Hybrid approach.
+- Upgrade stable primitives and shared sections in place where the API is already sound.
+- Use V2 only for overloaded patterns that need structural cleanup without breaking current page usage.
+- Keep compatibility through existing exports so pages continue rendering through the same entry points during the redesign.
+
+---
+
+### 2. Component Strategy
+
+#### Level 1 — Safe (no API change)
+- `Button`
+- `SectionIntro`
+- `CTASection`
+- `Card`
+- `FAQSection`
+- `SimpleHero`
+- `SplitHeroSection`
+- `ProcessStepsSection`
+- `ComparisonSection`
+- `ChecklistCardsSection`
+- `RelatedCardsSection`
+- `SmartRelatedSection`
+- `JourneyNavigator`
+
+- What changes internally
+  - normalize styling contracts, interaction rules, spacing, and shared class behavior
+- Why safe
+  - public APIs stay stable and all propagation happens through existing exports
+
+#### Level 2 — Controlled (small API change)
+- `IconBenefitCard`
+- `IconBenefitCardsSection`
+- `FeatureChecklistCardsSection`
+- `ServiceSpectrumCardsSection`
+- `DualToneChecklistComparisonSection`
+- `ResourceChecklistSection`
+- resource and blog template helpers that still inject local UI patterns
+
+- What changes
+  - reduce styling prop sprawl, tighten presentation modes, and remove local system logic from wrappers
+- How compatibility is handled
+  - keep compatibility paths for one phase, apply targeted mechanical updates, and preserve current exports while internals shift
+
+#### Level 3 — Replace
+- homepage inline custom sections
+- ad hoc section-shell logic
+- ad hoc interaction logic
+- one-off icon mapping inside local page sections
+
+- What gets rebuilt
+  - the implementation layer for homepage and repeated system logic
+- What stays unchanged
+  - content, page flow, routing, data structure, and page architecture
+
+---
+
+### 3. System Layers
+
+#### Section System
+- what changes
+  - one transparent-by-default section contract, external surface control only, one shared section-shell behavior
+- where applied
+  - reusable sections first, homepage custom sections after extraction, then template composition
+
+#### Card System
+- what changes
+  - one card contract for border, radius, padding, shadow, and internal spacing tiers
+- where applied
+  - comparison, checklist, process, spectrum, benefit, testimonial, related, and FAQ card surfaces
+
+#### Interaction System (IMPORTANT — FIRST PRIORITY)
+- define hover tier system
+  - one shared hover tier model for links, standard cards, elevated cards, and buttons
+- define focus-visible rules
+  - one focus-visible rule set for all interactive controls and card-like links
+- define transition token usage
+  - tokenized transition timing only, no local hardcoded timings in shared components
+- clearly state: this is FIRST implementation step
+  - interaction is the first implementation step because it affects the widest surface with the lowest structural risk
+
+#### Icon System
+- container scale
+  - fixed icon container scale including `icon-container-xs`
+- utility usage
+  - semantic icon background and text utilities only
+- removal of local mappings
+  - remove section-level icon-class mapping objects and page-level icon treatment logic
+
+---
+
+### 4. Update Strategy
+
+- global propagation order
+  - primitives first, shared sections second, template wrappers third, homepage last
+- how to avoid breaking layouts
+  - keep existing exports, preserve DOM shape where possible, keep wrapper hooks during transition, and change shared rules before removing compatibility paths
+- compatibility strategy
+  - use current exports as the compatibility layer while internals move to the redesigned system
+- file update strategy (mechanical vs targeted)
+  - use mechanical updates for exact prop/value migrations and targeted edits for overloaded components, wrappers, and template logic
+
+---
+
+### 5. Execution Order (CRITICAL)
+
+1. Interaction system (hover + focus + transitions) ← FIRST
+2. Section system
+3. Card system
+4. Safe components
+5. Controlled components
+6. Template standardization
+7. Homepage rebuild
+8. Cleanup
+
+---
+
+### 6. Risk Control
+
+#### High Risk Areas
+- `IconBenefitCard`
+- homepage custom sections
+- `ServiceSpectrumCardsSection`
+- `DualToneChecklistComparisonSection`
+- `FAQSection`
+- hero primitives if DOM structure shifts
+
+#### Visual Breaking Points
+- section spacing rhythm
+- card density and elevation
+- icon sizing
+- hover emphasis
+- CTA spacing and panel width
+- homepage section stacking
+
+#### Rollback Strategy
+- keep compatibility exports until the redesign is stable
+- land changes layer by layer, not page by page
+- do not remove legacy styling hooks until representative pages are checked
+- if a shared-component redesign causes drift, revert that layer only instead of rolling back the entire phase

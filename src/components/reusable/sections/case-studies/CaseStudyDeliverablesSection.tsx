@@ -24,7 +24,6 @@ export function CaseStudyDeliverablesSection({
       {...(description !== undefined && { description })}
       items={items}
       columns={columns}
-      backgroundColor='bg-section-base'
       cssPrefix='case-study-detail-deliverables'
     />
   );

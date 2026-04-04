@@ -28,7 +28,6 @@ export function CaseStudyProcessSection({
         title: phase.title,
         description: `${phase.phase}: ${phase.description}`,
       }))}
-      backgroundColor='bg-section-muted'
       cssPrefix='case-study-detail-implementation'
     />
   );
