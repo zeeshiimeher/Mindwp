@@ -35,8 +35,10 @@ export interface BadgeProps {
    * - "primary": Blue background (brand color)
    * - "secondary": Gray background (most common)
    * - "outline": Transparent background with border
+   * - "alert": Info background with primary border
+   * - "outline-white": Transparent with white border (dark backgrounds)
    */
-  variant?: 'primary' | 'secondary' | 'outline';
+  variant?: 'primary' | 'secondary' | 'outline' | 'alert' | 'outline-white';
 
   /**
    * Size variant affecting padding and text size
@@ -48,10 +50,21 @@ export interface BadgeProps {
   size?: 'sm' | 'md' | 'lg';
 
   /**
+   * Contextual size/spacing modifier for specific layout positions.
+   * - "meta": Compact meta labels (blog cards, resource cards)
+   * - "hero": Larger hero section badges
+   * - "section": Section header badges with letter-spacing
+   * - "card": Card-level badges
+   */
+  context?: 'meta' | 'hero' | 'section' | 'card';
+
+  /**
    * Additional class(es) for the badge root element.
    *
-   * Note: The component always applies its internal BEM block class (`badge`).
-   * This prop is additive and will not change the BEM base.
+   * RULE: cssPrefix is ONLY for contextual styling (layout/spacing)
+   * and CSS-class composition (e.g. resource-badge classes).
+   * It MUST NOT override color, size, or variant system.
+   * Use `variant` for color and `context` for sizing modifiers.
    */
   cssPrefix?: string;
 }
@@ -60,13 +73,17 @@ export function Badge({
   children,
   variant = 'secondary',
   size = 'md',
+  context,
   cssPrefix = '',
 }: BadgeProps) {
   const sizeModifier = `${BLOCK}--${size}`;
+  const contextModifier = context ? `${BLOCK}--${context}` : '';
 
   return (
     <span
-      className={[BLOCK, sizeModifier, `badge-${variant}`, cssPrefix].filter(Boolean).join(' ')}
+      className={[BLOCK, sizeModifier, contextModifier, `badge-${variant}`, cssPrefix]
+        .filter(Boolean)
+        .join(' ')}
     >
       {children}
     </span>

@@ -194,10 +194,6 @@ function CarouselPrevious({
       type='button'
       className={buttonClassName}
       style={{
-        position: 'absolute',
-        width: '32px',
-        height: '32px',
-        borderRadius: '9999px',
         ...placementStyle,
         ...userStyle,
       }}
@@ -241,10 +237,6 @@ function CarouselNext({
       type='button'
       className={buttonClassName}
       style={{
-        position: 'absolute',
-        width: '32px',
-        height: '32px',
-        borderRadius: '9999px',
         ...placementStyle,
         ...userStyle,
       }}

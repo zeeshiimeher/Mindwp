@@ -128,7 +128,7 @@ export function FAQPage() {
         <section className='l-section bg-gradient-to-b from-muted/50 to-background'>
           <div className='l-container'>
             <div className='text-center faq-page__hero'>
-              <Badge variant='secondary' cssPrefix='badge--hero'>
+              <Badge variant='secondary' context='hero'>
                 Help Center
               </Badge>
               <h1>Frequently Asked Questions</h1>

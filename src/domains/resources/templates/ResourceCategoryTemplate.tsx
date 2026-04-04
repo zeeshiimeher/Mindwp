@@ -68,7 +68,7 @@ export default function ResourceCategoryTemplate({ category }: ResourceCategoryT
         {/* HERO */}
         <section className='resource-category__hero l-section'>
           <div className='l-container resource-category__hero-content'>
-            <Badge cssPrefix={`badge--hero ${colors.badgeClass}`}>{count} guides</Badge>
+            <Badge context='hero' cssPrefix={colors.badgeClass}>{count} guides</Badge>
 
             <h1>{label}</h1>
 
@@ -88,11 +88,11 @@ export default function ResourceCategoryTemplate({ category }: ResourceCategoryT
                     <div className='resource-card__body'>
                       <div className='resource-card__meta'>
                         <div className='resource-card__badges'>
-                          <Badge size='sm' cssPrefix={`badge--meta ${colors.badgeClass}`}>
+                          <Badge size='sm' context='meta' cssPrefix={colors.badgeClass}>
                             {resource.categoryLabel}
                           </Badge>
                           {resource.freshnessBadge && (
-                            <Badge variant='secondary' size='sm' cssPrefix='badge--meta'>
+                            <Badge variant='secondary' size='sm' context='meta'>
                               {resource.freshnessBadge}
                             </Badge>
                           )}

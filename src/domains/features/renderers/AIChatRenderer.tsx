@@ -117,8 +117,8 @@ export default function AIChatRenderer() {
             cssPrefix='ai-chat-hero'
             backgroundColor='bg-gradient-to-br from-blue-50 via-white to-purple-50'
             decorations={[
-              { position: 'top-right', color: 'bg-blue-200', size: 'w-72 h-72' },
-              { position: 'bottom-left', color: 'bg-purple-200', size: 'w-72 h-72' },
+              { position: 'top-right', color: 'bg-blue-200', size: 'lg' },
+              { position: 'bottom-left', color: 'bg-purple-200', size: 'lg' },
             ]}
           />
 

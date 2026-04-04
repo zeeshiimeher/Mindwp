@@ -35,8 +35,8 @@ const WorkflowVisual = () => {
 
         <div className='l-stack'>
           <div className='l-row l-items-center l-gap-3 p-3 bg-blue-50 rounded-lg border-2 border-blue-300'>
-            <div className='w-8 h-8 bg-blue-500 rounded-full l-row l-items-center l-row-center flex-shrink-0'>
-              <TriggerIcon className='w-4 h-4 text-white' />
+            <div className='icon-container-sm bg-blue-500 rounded-full'>
+              <TriggerIcon className='text-white' />
             </div>
             <div className='text-sm'>
               <div className='text-blue-900'>{flow.triggerTitle}</div>
@@ -49,15 +49,15 @@ const WorkflowVisual = () => {
             return (
               <div key={index} className='l-stack l-stack--tight'>
                 <div className='l-row l-row-center'>
-                  <ConnectorIcon className='w-5 h-5 text-muted-foreground rotate-90' />
+                  <ConnectorIcon className='text-muted-foreground rotate-90' />
                 </div>
                 <div
                   className={`l-row l-items-center l-gap-3 p-3 rounded-lg ${actionRowClasses[index]}`}
                 >
                   <div
-                    className={`w-8 h-8 rounded-full l-row l-items-center l-row-center flex-shrink-0 ${actionIconClasses[index]}`}
+                    className={`icon-container-sm rounded-full ${actionIconClasses[index]}`}
                   >
-                    <ActionIcon className='w-4 h-4 text-white' />
+                    <ActionIcon className='text-white' />
                   </div>
                   <div className='text-sm'>
                     <div>{action.title}</div>
@@ -92,8 +92,8 @@ export default function WorkflowsRenderer() {
             cssPrefix='workflows-hero'
             backgroundColor='bg-gradient-to-br from-purple-50 via-white to-blue-50'
             decorations={[
-              { position: 'top-right', color: 'bg-purple-200', size: 'w-72 h-72' },
-              { position: 'bottom-left', color: 'bg-blue-200', size: 'w-72 h-72' },
+              { position: 'top-right', color: 'bg-purple-200', size: 'lg' },
+              { position: 'bottom-left', color: 'bg-blue-200', size: 'lg' },
             ]}
           />
 

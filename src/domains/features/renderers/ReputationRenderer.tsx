@@ -57,7 +57,7 @@ const ReviewsVisual = () => (
               <div className='text-sm'>{review.name}</div>
               <div className='l-row l-gap-2'>
                 {[...Array(review.stars)].map((_, j) => (
-                  <Star key={j} className='w-3 h-3 fill-yellow-400 text-yellow-400' />
+                  <Star key={j} className='icon-text-amber fill-current' />
                 ))}
               </div>
             </div>
@@ -100,8 +100,8 @@ export default function ReputationRenderer() {
             cssPrefix='reputation-hero'
             backgroundColor='bg-gradient-to-br from-yellow-50 via-white to-orange-50'
             decorations={[
-              { position: 'top-right', color: 'bg-yellow-200', size: 'w-72 h-72' },
-              { position: 'bottom-left', color: 'bg-orange-200', size: 'w-72 h-72' },
+              { position: 'top-right', color: 'bg-yellow-200', size: 'lg' },
+              { position: 'bottom-left', color: 'bg-orange-200', size: 'lg' },
             ]}
           />
 

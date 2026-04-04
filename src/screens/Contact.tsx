@@ -223,7 +223,7 @@ export function Contact() {
                         <div
                           className={`contact-page-info-icon-${index + 1} icon-container-sm icon-bg-primary`}
                         >
-                          <Icon className='w-4 h-4 icon-text-primary' />
+                          <Icon className='icon-text-primary' />
                         </div>
                         <div className={`contact-page-info-content-${index + 1}`}>
                           <div

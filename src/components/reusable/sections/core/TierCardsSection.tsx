@@ -56,7 +56,7 @@ export function TierCardsSection({
             >
               {pkg.popular && (
                 <div className={`${BLOCK}__popular-badge`}>
-                  <Badge variant='primary' size='sm' cssPrefix='badge--meta'>
+                  <Badge variant='primary' size='sm' context='meta'>
                     Most Popular
                   </Badge>
                 </div>

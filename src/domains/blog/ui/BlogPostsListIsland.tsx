@@ -28,7 +28,7 @@ export function BlogPostsListIsland({ posts, postsPerPage }: BlogPostsListIsland
         {visiblePosts.map(post => (
           <Card key={post.slug} className='blog-landing__card'>
             <div className='l-stack'>
-              <Badge variant='outline' size='sm' cssPrefix='badge--meta'>
+              <Badge variant='outline' size='sm' context='meta'>
                 {getCategoryMetadata(post.category)?.name ?? post.category}
               </Badge>
 
@@ -37,12 +37,12 @@ export function BlogPostsListIsland({ posts, postsPerPage }: BlogPostsListIsland
               <p className='blog-landing__card-description'>{post.metaDescription}</p>
 
               <div className='blog-landing__card-meta'>
-                <Calendar className='w-3 h-3' aria-hidden='true' />
+                <Calendar aria-hidden='true' />
                 {post.publishDate}
               </div>
 
               <a href={post.url} className='link-primary blog-landing__card-cta'>
-                Read article <ArrowRight className='w-3 h-3' />
+                Read article <ArrowRight aria-hidden='true' />
               </a>
             </div>
           </Card>

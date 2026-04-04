@@ -70,7 +70,7 @@ export function CaseStudyCard({
       <Card className={cn(BLOCK, `${BLOCK}--compact`, className)}>
         <div className={`${BLOCK}__inner`}>
           <div className={`${BLOCK}__header ${BLOCK}__header--compact`}>
-            <Badge variant='outline' size='sm' cssPrefix='badge--meta'>
+            <Badge variant='outline' size='sm' context='meta'>
               {industry}
             </Badge>
             {publishDate && <span className={`${BLOCK}__meta`}>{publishDate}</span>}
@@ -108,7 +108,7 @@ export function CaseStudyCard({
     <Card className={cn(BLOCK, `${BLOCK}--detailed`, className)}>
       <div className={`${BLOCK}__body`}>
         <div className={`${BLOCK}__header ${BLOCK}__header--detailed`}>
-          <Badge variant='outline' size='sm' cssPrefix='badge--meta'>
+          <Badge variant='outline' size='sm' context='meta'>
             {industry}
           </Badge>
 

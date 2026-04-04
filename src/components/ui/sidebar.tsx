@@ -252,12 +252,6 @@ function SidebarTrigger({
       data-slot='sidebar-trigger'
       type='button'
       className='btn btn-outline'
-      style={{
-        width: '28px',
-        height: '28px',
-        padding: '0',
-        ...userStyle,
-      }}
       onClick={event => {
         onClick?.(event);
         toggleSidebar();

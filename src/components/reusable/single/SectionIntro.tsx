@@ -93,7 +93,7 @@ export function SectionIntro({
       {badge && (
         <div className={`${BLOCK}__badge`}>
           {typeof badge === 'string' ? (
-            <Badge variant='secondary' size='sm' cssPrefix='badge--section'>
+            <Badge variant='secondary' size='sm' context='section'>
               {badge}
             </Badge>
           ) : (

@@ -333,6 +333,13 @@
   letter-spacing: 0.04em;
 }
 
+.badge--hero {
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--font-sm);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.02em;
+}
+
 /* Color variants */
 .badge-primary {
   background-color: var(--c-primary);
@@ -373,14 +380,14 @@
 
 /* Icon handling (for badges) */
 .badge__icon {
-  width: 1rem;
-  height: 1rem;
+  width: var(--space-4);
+  height: var(--space-4);
   flex: 0 0 auto;
 }
 
 .badge-alert .badge__icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: var(--space-5);
+  height: var(--space-5);
 }
 
 /* Outline badges on dark / gradient backgrounds (homepage source of truth) */
@@ -413,8 +420,8 @@
 }
 
 .business-use-case-card__icon {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: var(--space-8);
+  height: var(--space-8);
   color: var(--c-primary);
   margin-bottom: var(--space-4);
 }
@@ -527,8 +534,8 @@
 }
 
 .feature-list__item-icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: var(--space-5);
+  height: var(--space-5);
   color: var(--c-primary);
   flex: 0 0 auto;
   margin-top: var(--space-half);
@@ -574,8 +581,8 @@
 }
 
 .workflow__trigger-icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: var(--space-5);
+  height: var(--space-5);
   color: var(--c-warning);
   flex: 0 0 auto;
 }
@@ -611,8 +618,8 @@
 }
 
 .workflow__action-icon {
-  width: 1rem;
-  height: 1rem;
+  width: var(--space-4);
+  height: var(--space-4);
   color: var(--c-success-soft);
   margin-top: var(--space-half);
   flex: 0 0 auto;
@@ -767,8 +774,8 @@
 
 .system-capabilities__tab-icon,
 .c-system-capabilities__tab-icon {
-  width: 2rem;
-  height: 2rem;
+  width: var(--space-7);
+  height: var(--space-7);
   padding: var(--space-2);
   border-radius: var(--radius-md);
   background-color: color-mix(in oklab, var(--c-primary) 12%, transparent);
@@ -850,8 +857,8 @@
 
 .system-capabilities__feature-icon,
 .c-system-capabilities__feature-icon {
-  width: 3.25rem;
-  height: 3.25rem;
+  width: var(--space-8);
+  height: var(--space-8);
   border-radius: var(--radius-xl);
   display: inline-flex;
   align-items: center;
@@ -862,8 +869,8 @@
 
 .system-capabilities__feature-icon-svg,
 .c-system-capabilities__feature-icon-svg {
-  width: 2rem;
-  height: 2rem;
+  width: var(--space-6);
+  height: var(--space-6);
   color: var(--c-primary);
 }
 
@@ -947,8 +954,8 @@
 
 .system-capabilities__visual-icon-wrap,
 .c-system-capabilities__visual-icon-wrap {
-  width: 3rem;
-  height: 3rem;
+  width: var(--space-8);
+  height: var(--space-8);
   border-radius: var(--radius);
   background-color: var(--brand-white-15);
   display: flex;
@@ -958,8 +965,8 @@
 
 .system-capabilities__visual-icon,
 .c-system-capabilities__visual-icon {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: var(--space-6);
+  height: var(--space-6);
   color: var(--c-text-inverse);
 }
 
@@ -1022,8 +1029,8 @@
   top: calc(var(--space-6) * -1);
   right: var(--card-padding);
   left: auto;
-  width: 4rem;
-  height: 4rem;
+  width: var(--space-9);
+  height: var(--space-9);
   border-radius: var(--radius);
   box-shadow: var(--shadow-lg);
   display: flex;
@@ -1074,8 +1081,8 @@
 }
 
 .how-it-works-step__icon {
-  width: 4rem;
-  height: 4rem;
+  width: var(--space-9);
+  height: var(--space-9);
   border-radius: var(--radius);
   display: flex;
   align-items: center;
@@ -1083,8 +1090,8 @@
 }
 
 .how-it-works-step__icon-svg {
-  width: 2rem;
-  height: 2rem;
+  width: var(--space-7);
+  height: var(--space-7);
 }
 
 .how-it-works-step__title {
@@ -1117,8 +1124,8 @@
 }
 
 .how-it-works-step__highlight-icon {
-  width: 1rem;
-  height: 1rem;
+  width: var(--space-4);
+  height: var(--space-4);
 }
 
 .how-it-works-step__highlight-text {
@@ -1130,8 +1137,8 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 5rem;
-  height: 5rem;
+  width: var(--space-10);
+  height: var(--space-10);
   border-bottom-left-radius: 9999px;
   opacity: 0.5;
 }
@@ -1180,8 +1187,8 @@
 }
 
 .feature-card--stacked .feature-card__icon-wrap {
-  width: 4.5rem;
-  height: 4.5rem;
+  width: var(--space-10);
+  height: var(--space-10);
   margin-bottom: var(--space-4);
 }
 
@@ -1190,8 +1197,8 @@
 }
 
 .feature-card__icon-wrap {
-  width: 4rem;
-  height: 4rem;
+  width: var(--space-9);
+  height: var(--space-9);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1200,8 +1207,8 @@
 }
 
 .feature-card__icon-wrap--sm {
-  width: 3rem;
-  height: 3rem;
+  width: var(--space-8);
+  height: var(--space-8);
 }
 
 .feature-card__icon-wrap--square {
@@ -1218,13 +1225,13 @@
 }
 
 .feature-card__icon {
-  width: 2rem;
-  height: 2rem;
+  width: var(--space-7);
+  height: var(--space-7);
 }
 
 .feature-card__icon--sm {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: var(--space-6);
+  height: var(--space-6);
 }
 
 .feature-card__title {
@@ -1285,8 +1292,8 @@
 }
 
 .feature-card__check {
-  width: 1rem;
-  height: 1rem;
+  width: var(--space-4);
+  height: var(--space-4);
   flex: 0 0 auto;
   margin-top: var(--space-half);
 }
@@ -1437,13 +1444,13 @@
 }
 
 .benefit-card__icon-svg--left {
-  width: 1.75rem;
-  height: 1.75rem;
+  width: var(--space-6);
+  height: var(--space-6);
 }
 
 .benefit-card__icon-svg--centered {
-  width: 2rem;
-  height: 2rem;
+  width: var(--space-7);
+  height: var(--space-7);
 }
 
 .benefit-card__title {
@@ -1644,8 +1651,8 @@
 }
 
 .hero-section-value-prop-icon {
-  width: 1rem;
-  height: 1rem;
+  width: var(--space-4);
+  height: var(--space-4);
   flex-shrink: 0;
 }
 
@@ -1714,8 +1721,8 @@
 }
 
 .framework-section-journey-step-index {
-  width: 2rem;
-  height: 2rem;
+  width: var(--space-7);
+  height: var(--space-7);
   border-radius: var(--radius-full);
   border: 1px solid var(--c-border-alpha);
   background-color: var(--c-surface);
@@ -1745,8 +1752,8 @@
 }
 
 .framework-section-journey-step-icon {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: var(--space-7);
+  height: var(--space-7);
   border-radius: var(--radius-lg);
   display: flex;
   align-items: center;
@@ -1754,8 +1761,8 @@
 }
 
 .framework-section-journey-step-icon-svg {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: var(--space-5);
+  height: var(--space-5);
 }
 
 .framework-section-journey-step-title {
@@ -1923,8 +1930,8 @@
 }
 
 .implementation-results-quote-icon {
-  width: 3rem;
-  height: 3rem;
+  width: var(--space-8);
+  height: var(--space-8);
   margin-left: auto;
   margin-right: auto;
   color: var(--c-primary);
@@ -2024,8 +2031,8 @@
 }
 
 .problem-solution__icon-svg {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: var(--space-6);
+  height: var(--space-6);
 }
 
 .problem-solution__content > :not([hidden]) ~ :not([hidden]) {
@@ -3141,22 +3148,13 @@
 
 .grid-section__icon,
 .c-content-cards-grid-section__icon {
-  width: 2.5rem;
-  height: 2.5rem;
   border-radius: 9999px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: var(--space-3);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.grid-section__icon-svg,
-.c-content-cards-grid-section__icon-svg {
-  width: 1.25rem;
-  height: 1.25rem;
-}
+/* SVG size governed by icon-container-sm */
 
 .grid-section__title,
 .c-content-cards-grid-section__title {
@@ -3184,8 +3182,8 @@
 }
 
 .error-boundary__icon {
-  width: 3rem;
-  height: 3rem;
+  width: var(--space-8);
+  height: var(--space-8);
   color: var(--c-danger-500);
   margin-left: auto;
   margin-right: auto;
@@ -3228,8 +3226,8 @@
 }
 
 .use-case-card__icon-wrap {
-  width: 4rem;
-  height: 4rem;
+  width: var(--space-9);
+  height: var(--space-9);
   border-radius: var(--radius);
   display: flex;
   align-items: center;
@@ -3239,8 +3237,8 @@
 }
 
 .use-case-card__icon {
-  width: 2rem;
-  height: 2rem;
+  width: var(--space-7);
+  height: var(--space-7);
   color: var(--c-text-inverse);
 }
 
@@ -3723,8 +3721,8 @@
 }
 
 .case-study-detail-metrics__icon {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: var(--space-7);
+  height: var(--space-7);
   margin-left: auto;
   margin-right: auto;
   margin-bottom: var(--space-4);
@@ -4337,8 +4335,8 @@ summary.component-library__sidebar-link {
 }
 
 .audit-card__icon {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: var(--space-8);
+  height: var(--space-8);
   border-radius: var(--radius);
   display: flex;
   align-items: center;
@@ -4347,8 +4345,8 @@ summary.component-library__sidebar-link {
 }
 
 .audit-card__icon-svg {
-  width: 1.75rem;
-  height: 1.75rem;
+  width: var(--space-6);
+  height: var(--space-6);
 }
 
 .audit-card__title {
@@ -4407,8 +4405,8 @@ summary.component-library__sidebar-link {
 }
 
 .solution-card__icon {
-  width: 3rem;
-  height: 3rem;
+  width: var(--space-8);
+  height: var(--space-8);
   border-radius: var(--radius);
   display: flex;
   align-items: center;
@@ -4417,8 +4415,8 @@ summary.component-library__sidebar-link {
 }
 
 .solution-card__icon-svg {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: var(--space-6);
+  height: var(--space-6);
 }
 
 .solution-card__title {
@@ -4624,8 +4622,8 @@ summary.component-library__sidebar-link {
 }
 
 .diy-step-card__step {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: var(--space-7);
+  height: var(--space-7);
   border-radius: 9999px;
   flex: 0 0 auto;
   display: flex;
@@ -4898,8 +4896,8 @@ summary.component-library__sidebar-link {
   position: absolute;
   top: -1rem;
   right: var(--space-4);
-  width: 2.5rem;
-  height: 2.5rem;
+  width: var(--space-7);
+  height: var(--space-7);
   border-radius: 9999px;
   box-shadow: 0 12px 24px var(--shadow-ink-18);
   font-weight: var(--font-weight-semibold);
@@ -4937,8 +4935,8 @@ summary.component-library__sidebar-link {
 }
 
 .process-step__icon {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: var(--space-8);
+  height: var(--space-8);
   border-radius: var(--radius);
   display: flex;
   align-items: center;
@@ -4962,8 +4960,8 @@ summary.component-library__sidebar-link {
 }
 
 .process-step__icon-svg {
-  width: 1.75rem;
-  height: 1.75rem;
+  width: var(--space-6);
+  height: var(--space-6);
 }
 
 .process-step__title {
@@ -5018,8 +5016,8 @@ summary.component-library__sidebar-link {
 
 .comparison__icon-wrap,
 .c-comparison-section__icon-wrap {
-  width: 3rem;
-  height: 3rem;
+  width: var(--space-8);
+  height: var(--space-8);
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -5229,19 +5227,11 @@ summary.component-library__sidebar-link {
 }
 
 .resource-section-header__icon {
-  width: 3rem;
-  height: 3rem;
   border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   flex: 0 0 auto;
 }
 
-.resource-section-header__icon-svg {
-  width: 1.5rem;
-  height: 1.5rem;
-}
+/* SVG size governed by icon-container-md */
 
 .resource-section-header__title {
   margin: 0;
@@ -6674,8 +6664,8 @@ summary.component-library__sidebar-link {
 
 .explore-cards-section__icon,
 .c-explore-cards-section__icon {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: var(--space-8);
+  height: var(--space-8);
   border-radius: var(--radius);
   display: flex;
   align-items: center;
@@ -6716,8 +6706,8 @@ summary.component-library__sidebar-link {
 
 .explore-cards-section__icon-svg,
 .c-explore-cards-section__icon-svg {
-  width: 1.75rem;
-  height: 1.75rem;
+  width: var(--space-6);
+  height: var(--space-6);
   color: var(--c-text-inverse);
 }
 
@@ -6882,19 +6872,11 @@ summary.component-library__sidebar-link {
 }
 
 .service-lnd__icon {
-  width: 3.5rem;
-  height: 3.5rem;
   border-radius: var(--radius-xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: transform var(--transition-fast);
 }
 
-.service-lnd__iconSvg {
-  width: 1.75rem;
-  height: 1.75rem;
-}
+/* SVG size governed by icon-container-md */
 
 .service-lnd__body {
   flex: 1 1 auto;
@@ -7006,19 +6988,11 @@ summary.component-library__sidebar-link {
 }
 
 .feature-lnd__icon {
-  width: 3.5rem;
-  height: 3.5rem;
   border-radius: var(--radius-xl);
-  display: flex;
-  align-items: center;
-  justify-content: center;
   transition: transform var(--transition-fast);
 }
 
-.feature-lnd__iconSvg {
-  width: 1.75rem;
-  height: 1.75rem;
-}
+/* SVG size governed by icon-container-md */
 
 .feature-lnd__body {
   flex: 1 1 auto;
@@ -7175,8 +7149,8 @@ summary.component-library__sidebar-link {
 
 .icon-cards-section__icon,
 .c-icon-info-cards-section__icon {
-  width: 3rem;
-  height: 3rem;
+  width: var(--space-8);
+  height: var(--space-8);
   margin-bottom: var(--space-4);
   color: var(--c-primary);
 }
@@ -7468,8 +7442,8 @@ summary.component-library__sidebar-link {
 }
 
 .centered-icon-card__icon {
-  width: 4rem;
-  height: 4rem;
+  width: var(--space-9);
+  height: var(--space-9);
 }
 
 .centered-icon-card__title {
@@ -7726,6 +7700,12 @@ summary.component-library__sidebar-link {
   color: var(--c-text-muted);
 }
 
+.blog-landing__card-meta svg {
+  width: var(--space-3);
+  height: var(--space-3);
+  flex-shrink: 0;
+}
+
 .blog-landing__card-cta {
   display: inline-flex;
   align-items: center;
@@ -7733,6 +7713,12 @@ summary.component-library__sidebar-link {
   font-size: var(--font-sm);
   color: var(--c-primary);
   text-decoration: none;
+}
+
+.blog-landing__card-cta svg {
+  width: var(--space-3);
+  height: var(--space-3);
+  flex-shrink: 0;
 }
 
 @media (hover: hover) {
@@ -7806,6 +7792,12 @@ summary.component-library__sidebar-link {
   color: var(--c-text-muted);
 }
 
+.blog-category__card-meta svg {
+  width: var(--space-3);
+  height: var(--space-3);
+  flex-shrink: 0;
+}
+
 /* ------------------------------
    Blog Post Page
 ------------------------------ */
@@ -7836,6 +7828,12 @@ summary.component-library__sidebar-link {
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
+}
+
+.blog-post__meta-item svg {
+  width: var(--space-4);
+  height: var(--space-4);
+  flex-shrink: 0;
 }
 
 .blog-post__layout {
@@ -8140,8 +8138,8 @@ summary.component-library__sidebar-link {
 }
 
 .blog-steps-section__num {
-  width: 2rem;
-  height: 2rem;
+  width: var(--space-7);
+  height: var(--space-7);
   border-radius: 9999px;
   display: inline-flex;
   align-items: center;
@@ -8187,8 +8185,8 @@ summary.component-library__sidebar-link {
 }
 
 .blog-quote-section__icon {
-  width: 2rem;
-  height: 2rem;
+  width: var(--space-7);
+  height: var(--space-7);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -8196,6 +8194,11 @@ summary.component-library__sidebar-link {
   color: var(--c-text-muted);
   background: color-mix(in oklab, var(--c-surface) 65%, transparent);
   border: 1px solid var(--c-border-alpha);
+}
+
+.blog-quote-section__icon svg {
+  width: var(--space-4);
+  height: var(--space-4);
 }
 
 .blog-quote-section__quote {
@@ -8602,6 +8605,29 @@ h3.cta-heading {
    ICON CONTAINER UTILITIES
    ========================================================= */
 
+/* XS ICON CONTAINER — SYSTEM ROLE:
+   Used ONLY for:
+   - badge icons
+   - checklist indicators
+   - inline UI indicators (CRM, contact rows)
+
+   xs MUST NOT be used in cards, hero, or feature sections.
+*/
+.icon-container-xs {
+  height: var(--space-6);
+  width: var(--space-6);
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.icon-container-xs svg {
+  width: var(--space-3);
+  height: var(--space-3);
+}
+
 .icon-container-sm {
   height: var(--space-7);
   width: var(--space-7);
@@ -8610,6 +8636,11 @@ h3.cta-heading {
   justify-content: center;
   align-items: center;
   display: flex;
+}
+
+.icon-container-sm svg {
+  width: var(--space-4);
+  height: var(--space-4);
 }
 
 .icon-container-md {
@@ -8622,6 +8653,11 @@ h3.cta-heading {
   display: flex;
 }
 
+.icon-container-md svg {
+  width: var(--space-5);
+  height: var(--space-5);
+}
+
 .icon-container-lg {
   height: var(--space-9);
   width: var(--space-9);
@@ -8632,6 +8668,11 @@ h3.cta-heading {
   display: flex;
 }
 
+.icon-container-lg svg {
+  width: var(--space-6);
+  height: var(--space-6);
+}
+
 .icon-container-xl {
   height: var(--space-10);
   width: var(--space-10);
@@ -8640,6 +8681,11 @@ h3.cta-heading {
   justify-content: center;
   align-items: center;
   display: flex;
+}
+
+.icon-container-xl svg {
+  width: var(--space-7);
+  height: var(--space-7);
 }
 
 .icon-bg-primary {
@@ -8712,6 +8758,73 @@ h3.cta-heading {
 
 .icon-text-dark {
   color: var(--c-dark);
+}
+
+/* =========================================================
+   GRADIENT ICON RESTRICTION
+   =========================================================
+   RULE:
+   Gradient backgrounds ONLY allowed on:
+   - icon-container-lg
+   - icon-container-xl
+
+   Never use gradients on xs/sm/md — visual noise + hierarchy break.
+   ========================================================= */
+
+/* Hard block: strip gradients from xs/sm/md */
+.icon-container-xs[class*='icon-bg-gradient'],
+.icon-container-sm[class*='icon-bg-gradient'],
+.icon-container-md[class*='icon-bg-gradient'] {
+  background: none !important;
+}
+
+/* Allowed gradient utilities (lg/xl only) */
+.icon-bg-gradient-primary {
+  background: linear-gradient(
+    135deg,
+    var(--gradient-primary-from),
+    var(--gradient-primary-to)
+  );
+}
+
+.icon-bg-gradient-accent {
+  background: linear-gradient(
+    135deg,
+    var(--gradient-accent-from),
+    var(--gradient-accent-to)
+  );
+}
+
+.icon-bg-gradient-secondary {
+  background: linear-gradient(
+    135deg,
+    var(--gradient-secondary-from),
+    var(--gradient-secondary-to)
+  );
+}
+
+/* RULE:
+   icon-text-* MUST NOT be used for layout/structural icon containers.
+   ONLY allowed for:
+   - Inline icons inside text, lists, or metadata
+   - Icons already inside an icon-container-* wrapper
+
+   For all structural icons → use icon-container-{xs|sm|md|lg|xl}.
+*/
+
+/* INLINE ICONS ONLY — NOT FOR STRUCTURAL USAGE */
+.icon-text-primary:is(svg),
+.icon-text-secondary:is(svg),
+.icon-text-accent:is(svg),
+.icon-text-purple:is(svg),
+.icon-text-teal:is(svg),
+.icon-text-amber:is(svg),
+.icon-text-dark:is(svg),
+.icon-text-error:is(svg),
+.icon-text-success:is(svg) {
+  width: var(--space-4);
+  height: var(--space-4);
+  flex-shrink: 0;
 }
 
 /* =========================================================
@@ -9047,6 +9160,11 @@ h3.cta-heading {
   color: var(--c-text-muted);
 }
 
+.header-mobile-toggle svg {
+  width: var(--space-6);
+  height: var(--space-6);
+}
+
 .header-mobile-menu {
   border-color: var(--border-light);
 }
@@ -9267,10 +9385,24 @@ h3.cta-heading {
   gap: var(--space-3);
 }
 
+.conversation-page__contact-item svg {
+  width: var(--space-5);
+  height: var(--space-5);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
 .conversation-page__trust-item {
   display: flex;
   align-items: flex-start;
   gap: var(--space-2);
+}
+
+.conversation-page__trust-item svg {
+  width: var(--space-5);
+  height: var(--space-5);
+  flex-shrink: 0;
+  margin-top: 2px;
 }
 
 .conversation-page__steps-grid {
@@ -9289,6 +9421,10 @@ h3.cta-heading {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: var(--space-8);
+  height: var(--space-8);
+  border-radius: 9999px;
+  flex-shrink: 0;
 }
 
 .faq-page__tabs-list {
@@ -9521,8 +9657,8 @@ h3.cta-heading {
 }
 
 .c-stacked-feature-list-section__feature-icon-wrap {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: var(--space-8);
+  height: var(--space-8);
   display: grid;
   place-items: center;
   border-radius: var(--radius);
@@ -9531,8 +9667,8 @@ h3.cta-heading {
 }
 
 .c-stacked-feature-list-section__feature-icon {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: var(--space-5);
+  height: var(--space-5);
   color: var(--c-primary);
 }
 
@@ -9638,8 +9774,8 @@ h3.cta-heading {
 }
 
 .beauty-personal-care-service-environments .c-stacked-feature-list-section__feature-icon-wrap {
-  width: 4rem;
-  height: 4rem;
+  width: var(--space-9);
+  height: var(--space-9);
   border-radius: 1.25rem;
   background:
     linear-gradient(
@@ -10169,8 +10305,8 @@ h3.cta-heading {
 }
 
 .c-tabbed-feature-cards-section__card-icon-wrap {
-  width: 2rem;
-  height: 2rem;
+  width: var(--space-7);
+  height: var(--space-7);
   margin-bottom: var(--space-3);
   color: var(--c-dark);
 }
@@ -10403,8 +10539,8 @@ h3.cta-heading {
 }
 
 .c-step-cards-split-section__step-number {
-  width: 2.75rem;
-  height: 2.75rem;
+  width: var(--space-7);
+  height: var(--space-7);
   border-radius: var(--radius-full);
   border: 1px solid var(--c-border-alpha);
   display: inline-flex;
@@ -10690,4 +10826,28 @@ h3.cta-heading {
 .c-narrative-stats-section__stat-label {
   margin: var(--space-2) 0 0;
   color: var(--c-text-muted);
+}
+
+/* =========================================================
+   UI PRIMITIVE ICON SIZING (carousel, sidebar, pagination)
+   ========================================================= */
+
+[data-slot='carousel-previous'],
+[data-slot='carousel-next'] {
+  position: absolute;
+  width: var(--space-7);
+  height: var(--space-7);
+  border-radius: 9999px;
+}
+
+[data-slot='sidebar-trigger'] {
+  width: var(--space-7);
+  height: var(--space-7);
+  padding: 0;
+}
+
+[data-slot='pagination-link'][data-size='icon'] {
+  width: var(--space-8);
+  height: var(--space-8);
+  padding: 0;
 }

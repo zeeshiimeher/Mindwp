@@ -19,7 +19,7 @@ export function HeaderMobileMenuIsland({ navLinks }: HeaderMobileMenuIslandProps
         onClick={() => setMobileMenuOpen(open => !open)}
         aria-label='Toggle menu'
       >
-        {mobileMenuOpen ? <X className='w-6 h-6' /> : <Menu className='w-6 h-6' />}
+        {mobileMenuOpen ? <X className='icon-text-primary' /> : <Menu className='icon-text-primary' />}
       </button>
 
       {mobileMenuOpen && (

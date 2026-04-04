@@ -42,11 +42,11 @@ export function ResourcesGuidesIsland({
             <div className='resource-card__body'>
               <div className='resource-card__meta'>
                 <div className='resource-card__badges'>
-                  <Badge variant='outline' size='sm' cssPrefix='badge--meta'>
+                  <Badge variant='outline' size='sm' context='meta'>
                     {resource.categoryLabel}
                   </Badge>
                   {resource.freshnessBadge && (
-                    <Badge variant='secondary' size='sm' cssPrefix='badge--meta'>
+                    <Badge variant='secondary' size='sm' context='meta'>
                       {resource.freshnessBadge}
                     </Badge>
                   )}

@@ -308,3 +308,245 @@ Two hero patterns are used across the system:
 | Consolidate direct button class strings to Button component | Low | Medium |
 | Remove unused `--card-padding-lg` and `--card-padding-tight` tokens | Low | Trivial |
 | Tokenize `.cta-heading` line-height `1.2` → `--line-height-tight` | Low | Trivial |
+
+---
+
+## 13. ICON & BADGE SYSTEM RULES (STRICT — ENFORCED)
+
+> Phase 7D enforcement pass completed. All rules below are MANDATORY.
+
+### 13.1 Icon Container Contract
+
+ALL icon containers MUST use one of the five governed classes:
+
+| Class | Token | Computed | Allowed Context |
+|-------|-------|----------|-----------------|
+| `icon-container-xs` | `--space-6` | 24px | Badge icons, micro indicators |
+| `icon-container-sm` | `--space-7` | 32px | List icons, checklist icons |
+| `icon-container-md` | `--space-8` | 48px | Standard card icons |
+| `icon-container-lg` | `--space-9` | 64px | Feature cards, highlights |
+| `icon-container-xl` | `--space-10` | 80px | Hero icons, centered icons |
+
+**FORBIDDEN:**
+- Custom `width`/`height` on icon containers (Tailwind `w-` / `h-` or inline styles)
+- Arbitrary `rem` / `px` sizing on icon elements
+- Component-level icon sizing logic
+
+**SVG auto-sizing is governed by CSS:**
+
+| Container | Inner SVG Size | Token |
+|-----------|---------------|-------|
+| `icon-container-xs` | 12px | `--space-3` |
+| `icon-container-sm` | 16px | `--space-4` |
+| `icon-container-md` | 20px | `--space-5` |
+| `icon-container-lg` | 24px | `--space-6` |
+| `icon-container-xl` | 32px | `--space-7` |
+
+Icons inside containers MUST NOT have `w-` / `h-` classes. The container governs the SVG size.
+
+### 13.2 Icon Background Contract
+
+ALL icon backgrounds MUST use `icon-bg-*` utilities:
+
+| Class | Usage |
+|-------|-------|
+| `icon-bg-primary` | Default / primary brand |
+| `icon-bg-accent` | Teal / accent |
+| `icon-bg-secondary` | Blue / secondary |
+| `icon-bg-error` | Warm / error |
+| `icon-bg-success` | Accent / success |
+| `icon-bg-purple` | Purple variant |
+| `icon-bg-teal` | Teal variant |
+| `icon-bg-amber` | Amber / warning |
+| `icon-bg-dark` | Dark / inverse |
+
+**FORBIDDEN:**
+- Inline `style={{ background: ... }}`
+- Custom `color-mix()` at component level
+- Tailwind `bg-[...]` on icon containers
+
+Matching text color MUST use corresponding `icon-text-*` class.
+
+### 13.3 Gradient Icon Rule (STRICT)
+
+Gradients on icon containers are allowed ONLY when:
+- Container = `icon-container-lg` or `icon-container-xl`
+- Context = feature highlight, hero section, or step highlight
+
+**FORBIDDEN gradient usage:**
+- `icon-container-xs`, `icon-container-sm`, `icon-container-md`
+- List icons, checklist icons, inline UI
+
+If gradients exist outside allowed scope → replace with solid `icon-bg-*` utility.
+
+### 13.4 Badge System Contract
+
+**Allowed variants (enforced by TypeScript type):**
+
+| Variant | Class | Usage |
+|---------|-------|-------|
+| `primary` | `badge-primary` | Primary brand emphasis |
+| `secondary` | `badge-secondary` | Default / neutral |
+| `outline` | `badge-outline` | Bordered, transparent |
+| `alert` | `badge-alert` | Info / alert callout |
+| `outline-white` | `badge-outline-white` | On dark backgrounds |
+
+**FORBIDDEN:**
+- Creating new badge variants (accent, info, warning, etc.)
+- Duplicating variant semantics
+- Using `cssPrefix` to inject color variants (use `variant` prop)
+
+**Raw `.badge` class usage:** Allowed ONLY for blog category dynamic styling where colors are computed at runtime. Everywhere else → use `<Badge />` component.
+
+**Allowed size modifiers:** `badge--sm`, `badge--md` (default), `badge--lg`
+**Allowed context modifiers:** `badge--card`, `badge--meta`, `badge--section`, `badge--hero`
+
+### 13.5 Badge Token Usage
+
+ALL badge styles MUST use:
+- `--space-*` tokens for padding/gap
+- `--font-*` tokens for font-size
+- `--font-weight-*` tokens for weight
+
+**FORBIDDEN:** Hardcoded `rem`/`px` values in badge CSS.
+
+### 13.6 Inline Icon Sizing (Non-Container)
+
+For inline/meta icons (blog dates, CTA arrows, contact list items), sizing is governed by parent BEM class CSS rules:
+
+| BEM Selector | SVG Size | Token |
+|-------------|----------|-------|
+| `.blog-post__meta-item svg` | 16px | `--space-4` |
+| `.blog-category__card-meta svg` | 12px | `--space-3` |
+| `.blog-landing__card-meta svg` | 12px | `--space-3` |
+| `.blog-landing__card-cta svg` | 12px | `--space-3` |
+| `.conversation-page__contact-item svg` | 20px | `--space-5` |
+| `.conversation-page__trust-item svg` | 20px | `--space-5` |
+| `.header-mobile-toggle svg` | 24px | `--space-6` |
+
+Icons in these contexts MUST NOT have Tailwind `w-` / `h-` classes. Sizing is CSS-only.
+
+Standalone icons using `icon-text-*` classes outside containers get a default 16px (`--space-4`) sizing.
+
+### 13.7 Enforcement Priority
+
+When conflicts occur, resolution order:
+
+1. **System rules** (this document)
+2. **Utility classes** (icon-container-*, icon-bg-*, icon-text-*)
+3. **Component API** (Badge variant prop, icon-container class)
+4. **Visual preference** (lowest priority)
+
+### 13.8 UI Primitives (Carousel, Sidebar, Pagination)
+
+Button sizing in UI primitives is governed by `data-slot` CSS selectors:
+
+| Selector | Size | Token |
+|----------|------|-------|
+| `[data-slot='carousel-previous/next']` | 32px | `--space-7` |
+| `[data-slot='sidebar-trigger']` | 32px | `--space-7` |
+| `[data-slot='pagination-link'][data-size='icon']` | 48px | `--space-8` |
+
+**FORBIDDEN:** Inline `style={{ width: '...px' }}` on UI primitive buttons.
+
+---
+
+## 14. ICON & BADGE HARD ENFORCEMENT RULES (PHASE 8)
+
+> Eliminates remaining escape hatches and ambiguity from Phase 7D.
+
+### 14.1 icon-text-* Usage Restriction
+
+`icon-text-*` classes are for **color only**. They MUST NOT be used as standalone icon containers.
+
+**Allowed:**
+- Inside an `icon-container-*` wrapper → container governs size
+- On inline SVG icons inside text, lists, or metadata → CSS fallback governs size (16px / `--space-4`)
+
+**FORBIDDEN:**
+- Using `icon-text-*` + `icon-bg-*` on a div WITHOUT `icon-container-*`
+- Using `icon-text-*` on a structural layout icon
+
+**Enforcement:** All structural icon wrappers (cards, headers, feature rows) now include `icon-container-{sm|md|lg|xl}`. BEM `__icon` classes no longer define `width`/`height`/`display:flex` — that is governed entirely by `icon-container-*`.
+
+Components migrated: `SolutionDetailCard`, `CenteredFeatureCard`, `ContentCardsGridSection`, `ResourceSectionHeader`, service landing icons, feature landing icons.
+
+### 14.2 Gradient Restriction (Hard Lock)
+
+CSS-level enforcement:
+
+```css
+.icon-container-xs[class*='icon-bg-gradient'],
+.icon-container-sm[class*='icon-bg-gradient'],
+.icon-container-md[class*='icon-bg-gradient'] {
+  background: none !important;
+}
+```
+
+Gradients are **physically blocked** on xs/sm/md containers.
+
+**Allowed gradient utilities:**
+- `icon-bg-gradient-primary`
+- `icon-bg-gradient-accent`
+- `icon-bg-gradient-secondary`
+
+These work ONLY on `icon-container-lg` and `icon-container-xl`.
+
+### 14.3 icon-container-xs Purpose Definition
+
+| Allowed Context | Example |
+|----------------|---------|
+| Badge icons | Icon inside badge component |
+| Checklist indicators | Small check/cross icons in list rows |
+| Inline UI indicators | CRM contact icons, status indicators |
+| Metadata small icons | Date icons in blog cards |
+
+**FORBIDDEN xs contexts:**
+- Card feature icons
+- Hero section icons
+- Section header icons
+
+### 14.4 Badge cssPrefix Limitation
+
+The `<Badge />` component now uses a **`context` prop** for layout modifiers:
+
+```tsx
+<Badge variant='secondary' context='hero'>...</Badge>
+<Badge variant='outline' size='sm' context='meta'>...</Badge>
+```
+
+| Context | CSS Class | Purpose |
+|---------|-----------|---------|
+| `meta` | `badge--meta` | Blog/resource card labels |
+| `hero` | `badge--hero` | Hero section badges |
+| `section` | `badge--section` | Section header badges |
+| `card` | `badge--card` | Card-level badges |
+
+**`cssPrefix` remains** but is restricted to:
+- CSS class composition (e.g. `resource-badge` category classes)
+- BEM component positioning classes (e.g. `feature-hero__badge`)
+- Layout utilities (`mb-4`, `inline-block`)
+
+**FORBIDDEN cssPrefix usage:**
+- Color overrides (`bg-*`, `text-*`)
+- Size overrides
+- Variant overrides
+- Any `badge--` modifier (use `context` prop instead)
+
+### 14.5 NO ESCAPE HATCHES RULE
+
+The icon + badge system has zero uncontrolled entry points:
+
+| Layer | Control |
+|-------|---------|
+| Container sizing | `icon-container-*` CSS classes (5 sizes) |
+| SVG inner sizing | Auto-governed by container CSS |
+| Background color | `icon-bg-*` utilities only |
+| Text color | `icon-text-*` utilities only |
+| Gradients | CSS-blocked on xs/sm/md |
+| Badge variants | TypeScript union: 5 variants |
+| Badge context | TypeScript union: 4 contexts |
+| Badge cssPrefix | Controlled — no color/size overrides |
+| UI primitive sizing | `data-slot` CSS selectors |
+
+**System status: HARDENED.**

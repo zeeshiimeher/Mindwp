@@ -43,16 +43,14 @@ function PaginationLink({
   ...props
 }: PaginationLinkProps) {
   const buttonClassName = isActive ? 'btn btn-primary' : 'btn btn-outline';
-  const sizeStyle: React.CSSProperties | undefined =
-    size === 'icon' ? { width: '36px', height: '36px', padding: '0' } : undefined;
 
   return (
     <a
       aria-current={isActive ? 'page' : undefined}
       data-slot='pagination-link'
       data-active={isActive}
+      data-size={size}
       className={buttonClassName}
-      style={sizeStyle}
       {...props}
     />
   );

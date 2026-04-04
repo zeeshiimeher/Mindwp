@@ -49,7 +49,7 @@ export function CenteredFeatureCard({
   return (
     <Card className={cn(BLOCK, cssPrefix)}>
       <div className={`${BLOCK}__inner`}>
-        <div className={`${BLOCK}__icon-wrap`}>
+        <div className={`${BLOCK}__icon-wrap icon-container-md`}>
           <Icon className={cn(`${BLOCK}__icon`, 'icon-text-primary')} aria-hidden='true' />
         </div>
         <div className={`${BLOCK}__body`}>

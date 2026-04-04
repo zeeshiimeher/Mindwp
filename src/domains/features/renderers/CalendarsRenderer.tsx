@@ -91,8 +91,8 @@ export default function CalendarsRenderer() {
             cssPrefix='calendars-hero'
             backgroundColor='bg-gradient-to-br from-teal-50 via-white to-blue-50'
             decorations={[
-              { position: 'top-right', color: 'bg-green-200', size: 'w-72 h-72' },
-              { position: 'bottom-left', color: 'bg-blue-200', size: 'w-72 h-72' },
+              { position: 'top-right', color: 'bg-green-200', size: 'lg' },
+              { position: 'bottom-left', color: 'bg-blue-200', size: 'lg' },
             ]}
           />
 

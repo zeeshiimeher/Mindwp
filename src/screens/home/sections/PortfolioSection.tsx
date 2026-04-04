@@ -91,7 +91,7 @@ export function PortfolioSection() {
 
               <div className={`${BLOCK}__content ${BLOCK}__content-stack`}>
                 <div className={`${BLOCK}__meta-row`}>
-                  <Badge variant='outline' size='sm' cssPrefix='badge--meta'>
+                  <Badge variant='outline' size='sm' context='meta'>
                     {item.category}
                   </Badge>
                   <ExternalLink className={`${BLOCK}__ext`} />
@@ -104,7 +104,7 @@ export function PortfolioSection() {
 
                 <div className={`${BLOCK}__tags`}>
                   {item.features.map((feature, featureIndex) => (
-                    <Badge key={featureIndex} variant='outline' size='sm' cssPrefix='badge--meta'>
+                    <Badge key={featureIndex} variant='outline' size='sm' context='meta'>
                       {feature}
                     </Badge>
                   ))}

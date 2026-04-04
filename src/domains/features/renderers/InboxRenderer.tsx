@@ -50,7 +50,7 @@ export default function InboxRenderer() {
                       <p className='text-sm'>New email from John Smith</p>
                       <p className='text-xs text-muted-foreground'>2 minutes ago</p>
                     </div>
-                    <Badge variant='outline' size='sm' cssPrefix='badge--meta'>
+                    <Badge variant='outline' size='sm' context='meta'>
                       Email
                     </Badge>
                   </div>
@@ -60,7 +60,7 @@ export default function InboxRenderer() {
                       <p className='text-sm'>SMS from Sarah Johnson</p>
                       <p className='text-xs text-muted-foreground'>5 minutes ago</p>
                     </div>
-                    <Badge variant='outline' size='sm' cssPrefix='badge--meta'>
+                    <Badge variant='outline' size='sm' context='meta'>
                       SMS
                     </Badge>
                   </div>
@@ -75,8 +75,8 @@ export default function InboxRenderer() {
             cssPrefix='inbox-hero'
             backgroundColor='bg-gradient-to-b from-muted/50 to-background'
             decorations={[
-              { position: 'top-right', color: 'bg-blue-200', size: 'w-72 h-72' },
-              { position: 'bottom-left', color: 'bg-purple-200', size: 'w-72 h-72' },
+              { position: 'top-right', color: 'bg-blue-200', size: 'lg' },
+              { position: 'bottom-left', color: 'bg-purple-200', size: 'lg' },
             ]}
           />
 

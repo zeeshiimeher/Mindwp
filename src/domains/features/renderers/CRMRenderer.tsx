@@ -29,22 +29,28 @@ export default function CRMRenderer() {
       <div className='l-stack'>
         <div className='l-row l-items-center l-row-between pb-4 border-b'>
           <h4 className='text-sm'>Contact Details</h4>
-          <Badge variant='outline' size='sm' cssPrefix='badge--meta'>
+          <Badge variant='outline' size='sm' context='meta'>
             Lead
           </Badge>
         </div>
 
         <div className='l-stack'>
           <div className='l-row l-items-center l-gap-3'>
-            <Users className='w-5 h-5 text-blue-500' />
+            <div className='icon-container-xs icon-bg-secondary'>
+              <Users className='icon-text-secondary' />
+            </div>
             <div className='text-sm'>Sarah Johnson</div>
           </div>
           <div className='l-row l-items-center l-gap-3'>
-            <Mail className='w-5 h-5 text-purple-500' />
+            <div className='icon-container-xs icon-bg-purple'>
+              <Mail className='icon-text-purple' />
+            </div>
             <div className='text-sm text-muted-foreground'>sarah@example.com</div>
           </div>
           <div className='l-row l-items-center l-gap-3'>
-            <Phone className='w-5 h-5 text-green-500' />
+            <div className='icon-container-xs icon-bg-teal'>
+              <Phone className='icon-text-teal' />
+            </div>
             <div className='text-sm text-muted-foreground'>(555) 123-4567</div>
           </div>
         </div>
@@ -53,14 +59,14 @@ export default function CRMRenderer() {
           <div className='text-xs text-muted-foreground mb-3'>Recent Activity</div>
           <div className='l-stack l-stack--tight'>
             <div className='l-row l-items-start l-gap-2 text-xs bg-blue-50 p-2 rounded'>
-              <Mail className='w-4 h-4 text-blue-500 flex-shrink-0 mt-0.5' />
+              <Mail className='icon-text-secondary' />
               <div>
                 <div className='text-blue-900'>Email sent: Follow-up #2</div>
                 <div className='text-blue-600'>2 hours ago</div>
               </div>
             </div>
             <div className='l-row l-items-start l-gap-2 text-xs bg-green-50 p-2 rounded'>
-              <MessageSquare className='w-4 h-4 text-green-500 flex-shrink-0 mt-0.5' />
+              <MessageSquare className='icon-text-teal' />
               <div>
                 <div className='text-green-900'>Chat: Asked about pricing</div>
                 <div className='text-green-600'>Yesterday</div>

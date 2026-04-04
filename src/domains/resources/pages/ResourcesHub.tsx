@@ -77,7 +77,7 @@ export function ResourcesHub() {
         <section className='resources-hub__hero l-section bg-gradient-light'>
           <div className='l-container resources-hub__hero-content'>
             <div className='resources-hub__hero-badge'>
-              <Badge variant='secondary' cssPrefix='badge--hero'>
+              <Badge variant='secondary' context='hero'>
                 <BookOpen className='badge__icon' />
                 {hubData.hero.badge}
               </Badge>
@@ -124,7 +124,7 @@ export function ResourcesHub() {
                       <IconComponent className='resources-hub__topic-icon' aria-hidden='true' />
                       <div className='resources-hub__topic-top'>
                         <h3 className='resources-hub__topic-title'>{category.name}</h3>
-                        <Badge variant='outline' size='sm' cssPrefix='badge--meta'>
+                        <Badge variant='outline' size='sm' context='meta'>
                           {category.count} {hubData.topics.countSuffix}
                         </Badge>
                       </div>
@@ -146,7 +146,7 @@ export function ResourcesHub() {
           <div className='l-container'>
             <div className='resources-hub__section-header'>
               <div className='resources-hub__section-badge'>
-                <Badge variant='secondary' cssPrefix='badge--section'>
+                <Badge variant='secondary' context='section'>
                   {hubData.guides.badge}
                 </Badge>
               </div>

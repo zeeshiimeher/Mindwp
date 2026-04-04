@@ -79,11 +79,11 @@ export function CaseStudyHeroSection({
 
         <div className={`${BLOCK}__content`}>
           <div className={cn(`${BLOCK}__badges`, 'case-study-hero__badges')}>
-            <Badge variant='outline' size='sm' cssPrefix='badge--meta'>
+            <Badge variant='outline' size='sm' context='meta'>
               {industry}
             </Badge>
             {scenarioBadge && (
-              <Badge variant='outline' size='sm' cssPrefix='badge--meta'>
+              <Badge variant='outline' size='sm' context='meta'>
                 {scenarioBadge}
               </Badge>
             )}

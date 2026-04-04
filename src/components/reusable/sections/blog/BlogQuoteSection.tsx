@@ -25,7 +25,7 @@ export function BlogQuoteSection({
 
       <Card className={`${BLOCK}__card`}>
         <div className={`${BLOCK}__icon`} aria-hidden='true'>
-          <Quote className='w-4 h-4' />
+          <Quote />
         </div>
         <blockquote className={`${BLOCK}__quote`}>{quote}</blockquote>
         {attribution && <p className={`${BLOCK}__attr`}>— {attribution}</p>}

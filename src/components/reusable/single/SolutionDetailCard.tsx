@@ -20,8 +20,8 @@ export function SolutionDetailCard({
 }: SolutionCardProps) {
   return (
     <Card className={cn(BLOCK, className)}>
-      <div className={cn(`${BLOCK}__icon`, 'icon-bg-primary')}>
-        <Icon className={cn(`${BLOCK}__icon-svg`, 'icon-text-primary')} aria-hidden='true' />
+      <div className={cn(`${BLOCK}__icon`, 'icon-container-md', 'icon-bg-primary')}>
+        <Icon className='icon-text-primary' aria-hidden='true' />
       </div>
       <h3 className={`${BLOCK}__title`}>{title}</h3>
       <p className={`${BLOCK}__desc`}>{description}</p>

@@ -50,7 +50,7 @@ export function BlogLanding() {
         {/* HERO */}
         <section className='l-section blog-hero'>
           <div className='l-container l-stack l-stack--loose blog-landing__hero'>
-            <Badge variant='secondary' cssPrefix='badge--hero'>
+            <Badge variant='secondary' context='hero'>
               {blogPosts.length} articles
             </Badge>
 
@@ -84,7 +84,7 @@ export function BlogLanding() {
                           <div className={`icon-container-md ${colors.bg}`}>
                             <Folder className={`blog-landing__icon ${colors.text}`} />
                           </div>
-                          <Badge variant='outline' size='sm' cssPrefix='badge--meta'>
+                          <Badge variant='outline' size='sm' context='meta'>
                             {count} posts
                           </Badge>
                         </div>
@@ -100,7 +100,7 @@ export function BlogLanding() {
                         </div>
 
                         <span className='blog-landing__card-cta'>
-                          Browse posts <ArrowRight className='w-3 h-3' />
+                          Browse posts <ArrowRight aria-hidden='true' />
                         </span>
                       </a>
                     </Card>

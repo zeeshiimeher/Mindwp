@@ -13,7 +13,7 @@ export function ConversationPage() {
         <section className='l-section bg-gradient-to-b from-muted/50 to-background'>
           <div className='l-container'>
             <div className='text-center conversation-page__hero'>
-              <Badge variant='secondary' cssPrefix='badge--hero'>
+              <Badge variant='secondary' context='hero'>
                 Strategy Conversation
               </Badge>
               <h1>Book a Structured Strategy Call</h1>
@@ -43,7 +43,7 @@ export function ConversationPage() {
                   <h3 className='mb-4'>Get in Touch</h3>
                   <div className='conversation-page__contact-list'>
                     <div className='conversation-page__contact-item'>
-                      <Mail className='w-5 h-5 text-foreground mt-0.5' />
+                      <Mail className='text-foreground' />
                       <div>
                         <div className='font-medium'>Email</div>
                         <a
@@ -55,7 +55,7 @@ export function ConversationPage() {
                       </div>
                     </div>
                     <div className='conversation-page__contact-item'>
-                      <Phone className='w-5 h-5 text-foreground mt-0.5' />
+                      <Phone className='text-foreground' />
                       <div>
                         <div className='font-medium'>Phone</div>
                         <a
@@ -67,7 +67,7 @@ export function ConversationPage() {
                       </div>
                     </div>
                     <div className='conversation-page__contact-item'>
-                      <Clock className='w-5 h-5 text-foreground mt-0.5' />
+                      <Clock className='text-foreground' />
                       <div>
                         <div className='font-medium'>Hours</div>
                         <div className='text-sm text-muted-foreground'>Mon-Fri: 9am-6pm GMT</div>
@@ -88,7 +88,7 @@ export function ConversationPage() {
                       'Clear next steps and investment overview',
                     ].map((item, i) => (
                       <li key={i} className='conversation-page__trust-item'>
-                        <CheckCircle className='w-5 h-5 text-primary mt-0.5 flex-shrink-0' />
+                        <CheckCircle className='text-primary' />
                         <span className='text-sm'>{item}</span>
                       </li>
                     ))}
@@ -138,7 +138,7 @@ export function ConversationPage() {
                 },
               ].map((step, i) => (
                 <Card key={i} className='p-6 relative text-center'>
-                  <div className='absolute -top-4 left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-foreground text-background conversation-page__step-number shadow-lg'>
+                  <div className='absolute -top-4 left-1/2 -translate-x-1/2 bg-foreground text-background conversation-page__step-number shadow-lg'>
                     {step.number}
                   </div>
                   <div className='pt-6 conversation-page__step-content'>

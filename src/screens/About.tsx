@@ -11,7 +11,7 @@ export function About() {
       {/* Hero Section */}
       <section className='about-page-hero bg-gradient-to-b from-blue-50 to-white l-section'>
         <div className='l-container text-center'>
-          <Badge variant='secondary' cssPrefix='badge--hero'>
+          <Badge variant='secondary' context='hero'>
             About MindWP
           </Badge>
           <h1 className='mb-6'>Why MindWP Exists</h1>

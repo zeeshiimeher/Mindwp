@@ -66,7 +66,7 @@ export default function IndustriesLanding() {
         <section className='l-section bg-gradient-to-b from-muted/50 to-background'>
           <div className='l-container'>
             <div className='text-center l-stack l-stack--loose'>
-              <Badge variant='secondary' cssPrefix='badge--section'>
+              <Badge variant='secondary' context='section'>
                 Industry Navigation
               </Badge>
               <h1>Who This System Is Built For</h1>

@@ -93,8 +93,8 @@ export function ResourceSectionHeader({
 
   return (
     <div className={cn(BLOCK, `${BLOCK}__row`, className)}>
-      <div className={cn(`${BLOCK}__icon`, config.bgClass)}>
-        <Icon className={cn(`${BLOCK}__icon-svg`, config.textClass)} aria-hidden='true' />
+      <div className={cn(`${BLOCK}__icon`, 'icon-container-md', config.bgClass)}>
+        <Icon className={cn(config.textClass)} aria-hidden='true' />
       </div>
       <div>
         <h2 className={`${BLOCK}__title`}>{title}</h2>

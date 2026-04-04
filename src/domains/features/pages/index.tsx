@@ -31,7 +31,7 @@ export function FeaturesLanding() {
           <section className='feature-lnd feature-lnd__hero l-section bg-gradient-light'>
             <div className='l-container'>
               <div className='feature-lnd__heroContent l-stack l-stack--loose'>
-                <Badge variant='secondary' cssPrefix='badge--section'>
+                <Badge variant='secondary' context='section'>
                   Features Index
                 </Badge>
                 <h1>Platform Features Overview</h1>
@@ -53,9 +53,9 @@ export function FeaturesLanding() {
                   return (
                     <Card key={feature.slug} className='feature-lnd__card'>
                       <a href={feature.path} className='link-primary feature-lnd__link'>
-                        <div className='feature-lnd__icon icon-bg-primary'>
+                        <div className='feature-lnd__icon icon-container-md icon-bg-primary'>
                           <Icon
-                            className='feature-lnd__iconSvg icon-text-primary'
+                            className='icon-text-primary'
                             aria-hidden='true'
                           />
                         </div>

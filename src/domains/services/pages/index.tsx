@@ -227,8 +227,8 @@ function renderServiceCard(service: ServiceCardData) {
   return (
     <Card key={service.slug} className='service-lnd__card'>
       <a href={service.href} className='link-primary service-lnd__link'>
-        <div className='service-lnd__icon icon-bg-primary'>
-          <Icon className='service-lnd__iconSvg icon-text-primary' aria-hidden='true' />
+        <div className='service-lnd__icon icon-container-md icon-bg-primary'>
+          <Icon className='icon-text-primary' aria-hidden='true' />
         </div>
         <div className='service-lnd__body'>
           <h3 className='service-lnd__cardTitle'>{service.title}</h3>
@@ -332,9 +332,9 @@ export function ServicesLanding() {
                       <div className='p-8 md:p-10 l-grid l-gap-8 lg:l-grid-2 l-items-center'>
                         <div className='l-stack l-stack--loose'>
                           <div className='l-row l-items-center l-gap-3'>
-                            <div className='service-lnd__icon icon-bg-primary'>
+                            <div className='service-lnd__icon icon-container-md icon-bg-primary'>
                               <Sparkles
-                                className='service-lnd__iconSvg icon-text-primary'
+                                className='icon-text-primary'
                                 aria-hidden='true'
                               />
                             </div>

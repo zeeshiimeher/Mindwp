@@ -78,7 +78,7 @@ export default function VoiceCallsRenderer() {
 
                   <div className='text-center pt-4 border-t'>
                     <div className='l-row l-items-center l-row-center l-gap-2 text-sm text-muted-foreground'>
-                      <CheckCircle2 className='w-4 h-4 text-green-500' />
+                      <CheckCircle2 className='icon-text-teal' />
                       Call completed in 45 seconds
                     </div>
                   </div>
@@ -88,8 +88,8 @@ export default function VoiceCallsRenderer() {
             cssPrefix='voice-ai-hero'
             backgroundColor='bg-gradient-to-br from-blue-50 via-white to-purple-50'
             decorations={[
-              { position: 'top-right', color: 'bg-blue-200', size: 'w-72 h-72' },
-              { position: 'bottom-left', color: 'bg-purple-200', size: 'w-72 h-72' },
+              { position: 'top-right', color: 'bg-blue-200', size: 'lg' },
+              { position: 'bottom-left', color: 'bg-purple-200', size: 'lg' },
             ]}
           />
 

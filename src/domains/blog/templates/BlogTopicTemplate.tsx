@@ -64,7 +64,7 @@ export function BlogTopicTemplate({ topic, sections, totalPosts }: BlogTopicTemp
                           <p className='blog-category__card-description'>{post.metaDescription}</p>
 
                           <div className='blog-category__card-meta'>
-                            <Calendar className='w-3 h-3' aria-hidden='true' />
+                            <Calendar aria-hidden='true' />
                             {post.publishDate}
                           </div>
 
@@ -72,7 +72,7 @@ export function BlogTopicTemplate({ topic, sections, totalPosts }: BlogTopicTemp
                             href={`/blog/${post.slug}`}
                             className='link-primary blog-landing__card-cta'
                           >
-                            Read article <ArrowRight className='w-3 h-3' />
+                            Read article <ArrowRight aria-hidden='true' />
                           </a>
                         </div>
                       </Card>

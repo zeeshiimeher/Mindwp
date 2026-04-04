@@ -381,11 +381,11 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
 
             <div className='resource-page__hero-content'>
               <div className='resource-page__badges'>
-                <Badge variant='secondary' cssPrefix='badge--hero'>
+                <Badge variant='secondary' context='hero'>
                   {categoryLabel}
                 </Badge>
                 {freshnessBadge && (
-                  <Badge variant='secondary' size='sm' cssPrefix='badge--meta'>
+                  <Badge variant='secondary' size='sm' context='meta'>
                     {freshnessBadge}
                   </Badge>
                 )}

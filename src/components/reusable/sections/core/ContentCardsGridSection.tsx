@@ -56,8 +56,8 @@ export function ContentCardsGridSection({
               const iconColor = iconType === 'cross' ? 'icon-text-destructive' : 'icon-text-accent';
 
               return (
-                <div className={`${BLOCK}__icon icon-bg-accent`}>
-                  <IconComponent className={cn(`${BLOCK}__icon-svg`, iconColor)} />
+                <div className={`${BLOCK}__icon icon-container-sm icon-bg-accent`}>
+                  <IconComponent className={cn(iconColor)} />
                 </div>
               );
             };

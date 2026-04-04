@@ -126,10 +126,10 @@ export function SplitHeroSection({
   };
 
   const getDecorationSizeClass = (size: string | undefined) => {
-    if (!size || size === 'lg' || size === 'w-72 h-72') return `${BLOCK}__decoration--lg`;
-    if (size === 'md' || size === 'w-56 h-56') return `${BLOCK}__decoration--md`;
-    if (size === 'sm' || size === 'w-40 h-40') return `${BLOCK}__decoration--sm`;
-    return size;
+    if (!size || size === 'lg') return `${BLOCK}__decoration--lg`;
+    if (size === 'md') return `${BLOCK}__decoration--md`;
+    if (size === 'sm') return `${BLOCK}__decoration--sm`;
+    return `${BLOCK}__decoration--lg`;
   };
 
   return (
@@ -154,7 +154,7 @@ export function SplitHeroSection({
           <div className={`${BLOCK}__content`}>
             <SectionIntro
               badge={
-                <Badge variant='outline' cssPrefix='badge--section feature-hero__badge'>
+                <Badge variant='outline' context='section' cssPrefix='feature-hero__badge'>
                   <BadgeIcon className='badge__icon' />
                   {badge}
                 </Badge>

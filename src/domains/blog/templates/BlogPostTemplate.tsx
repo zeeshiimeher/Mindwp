@@ -377,18 +377,18 @@ export function BlogPostTemplate({
 
             <div className='blog-post__meta'>
               <div className='blog-post__meta-item'>
-                <Calendar className='w-4 h-4' aria-hidden='true' />
+                <Calendar aria-hidden='true' />
                 <span>{publishDate}</span>
               </div>
               {effectiveReadTime && (
                 <div className='blog-post__meta-item'>
-                  <Clock className='w-4 h-4' aria-hidden='true' />
+                  <Clock aria-hidden='true' />
                   <span>{effectiveReadTime}</span>
                 </div>
               )}
               {effectiveAuthor && (
                 <div className='blog-post__meta-item'>
-                  <User className='w-4 h-4' aria-hidden='true' />
+                  <User aria-hidden='true' />
                   <span>{effectiveAuthor.name}</span>
                 </div>
               )}
@@ -420,7 +420,7 @@ export function BlogPostTemplate({
                 {tags.length > 0 && (
                   <div className='blog-post__tags'>
                     {tags.map((tag, i) => (
-                      <Badge key={i} variant='outline' size='sm' cssPrefix='badge--meta'>
+                      <Badge key={i} variant='outline' size='sm' context='meta'>
                         {tag}
                       </Badge>
                     ))}
