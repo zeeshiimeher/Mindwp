@@ -6,7 +6,8 @@
 - Phase 8.1 complete (all sections use SectionWrapper)
 - Phase 8.1.1 complete (audit — 0 issues)
 - Phase 8.2 complete (CardGrid v2 mode prop, SplitLayout v2 breakpoint, split sections migrated)
-- Phase 8.3 in progress (parity confirmation)
+- Phase 8.3 complete (parity confirmation — all 17 CardGrid + 5 split sections verified)
+- Phase 8.4 complete (BEM grid removal — 494 CSS lines + 21 JSX classNames removed)
 
 ---
 
