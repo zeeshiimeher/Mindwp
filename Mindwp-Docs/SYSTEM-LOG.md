@@ -20,18 +20,21 @@
 
 | Item | Value |
 |---|---|
-| Active Phase | Phase 7B — Hover & Transition Standardization |
-| Progress | 0 / 6 |
-| Next Task | T-110 — Add Tier 2 hover to DualToneChecklist, ServiceSpectrum, ProcessSteps cards. |
+| Active Phase | Phase 8 — Section System (Structural Refactor) |
+| Progress | 0 / 8 |
+| Next Task | T-130 — Define spacing system (l-gap alignment with Tailwind gap). |
+| Deferred | Phase 7B–7E — Visual polish (deferred until Phase 8 complete) |
 
-### Open Tasks
+### Open Tasks (Phase 8)
 
-- T-110 — Add Tier 2 hover to DualToneChecklist, ServiceSpectrum, ProcessSteps cards (High)
-- T-111 — Add `:focus-visible` ring to DualToneChecklist, ServiceSpectrum, ProcessSteps (High)
-- T-112 — Normalize hover shadows: standard cards → `--shadow-lg`, feature → `--shadow-xl` (Medium)
-- T-113 — Replace hardcoded `0.2s ease` transitions with `var(--transition-fast)` (Medium)
-- T-114 — Wrap 4 unguarded hover states in `@media (hover: hover)` (Medium)
-- T-115 — Strengthen `benefit-card--link` hover with shadow elevation (Low)
+- T-130 — Define spacing system (l-gap alignment with Tailwind gap) (High)
+- T-131 — Build SectionWrapper primitive (High)
+- T-132 — Build CardGrid primitive (High)
+- T-133 — Build SplitLayout primitive (Medium)
+- T-134 — Refactor first 3 core sections to use primitives (Medium)
+- T-135 — Standardize data contracts (shared item/action shapes) (Medium)
+- T-136 — Remove duplicated grid column logic (12+ sections) (Medium)
+- T-137 — Enforce section architecture rules (Low)
 
 ---
 

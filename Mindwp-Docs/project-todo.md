@@ -24,7 +24,7 @@
 | 5 | Vocabulary cleanup | Partial, moved forward as Phase 12 execution |
 | 6 | Content intelligence and governance | Done |
 | 7 | Stabilization and governance alignment | Done |
-| 8 | Post-audit stabilization | Done |
+| 8-LEGACY | Post-audit stabilization | Done |
 | 9 | Internal linking intelligence | Done |
 | 10 | Content intelligence platform | Done |
 | 11 | Conversion intelligence layer | Done |
@@ -34,10 +34,7 @@
 | 3.4 | Cleanup and dead code | Skipped |
 | 3.5 | System hardening | Done |
 | 7A | Section background system | Done |
-| 7B | Hover and transition standardization | Active |
-| 7C | Gradient tokenization | Queued |
-| 7D | Icon and badge normalization | Queued |
-| 7E | Component fixes and legacy cleanup | Queued |
+| 8 | Section system (structural refactor) | Active |
 | 12 | Vocabulary cleanup execution | Ready |
 | 12.5 | Decision system definition | Future |
 | 13–18 | UI polish through deployment | Future |
@@ -46,39 +43,51 @@
 
 ## 2. Active Phase
 
-### Phase 7B — Hover & Transition Standardization
+**Context**
+- Phase 7 complete (visual system locked)
+- Phase 8 in progress (structural system refactor)
+- All remaining Phase 7 work deferred until Phase 8 completion
+
+### Phase 8 — Section System (Structural Refactor)
 
 **Goal**
-- Fix missing hover states, normalize elevation tiers, standardize transitions, and add touch guards.
+- Standardize section architecture using composable primitives.
+- Unify spacing system, remove layout duplication, normalize data contracts.
 
 **Source**
-- `Mindwp-Docs/PHASE-7-VISUAL-SYSTEM-AUDIT.md`
+- `Mindwp-Docs/PHASE-8-SECTION-SYSTEM.md`
 
 **Success checks**
-- comparable cards share comparable hover behavior
-- keyboard focus exists where interaction exists
-- hardcoded transition timing is removed from this phase scope
-- hover styles are guarded for hover-capable devices where needed
+- All sections use SectionWrapper + LayoutPrimitive composition
+- Single spacing system (no l-gap / Tailwind gap mismatch)
+- Grid column logic extracted to shared primitive
+- Blog/resource sections conform to section layout contract
+- Data normalization happens at data boundary, not in components
 
-| ID | Task | File | Priority | Status |
+| ID | Task | File(s) | Priority | Status |
 |---|---|---|---|---|
-| T-110 | Add Tier 2 hover to DualToneChecklist, ServiceSpectrum, ProcessSteps cards | `src/styles/components.css` | High | [ ] |
-| T-111 | Add `:focus-visible` ring to DualToneChecklist, ServiceSpectrum, ProcessSteps | `src/styles/components.css` | High | [ ] |
-| T-112 | Normalize hover shadows: standard cards → `--shadow-lg`, feature → `--shadow-xl` | `src/styles/components.css` | Medium | [ ] |
-| T-113 | Replace hardcoded `0.2s ease` transitions with `var(--transition-fast)` | `src/styles/components.css` | Medium | [ ] |
-| T-114 | Wrap 4 unguarded hover states in `@media (hover: hover)` | `src/styles/components.css` | Medium | [ ] |
-| T-115 | Strengthen `benefit-card--link` hover with shadow elevation | `src/styles/components.css` | Low | [ ] |
+| T-130 | Define spacing system (l-gap alignment with Tailwind gap) | `src/styles/framework.css` | High | [ ] |
+| T-131 | Build SectionWrapper primitive | `src/components/reusable/` | High | [ ] |
+| T-132 | Build CardGrid primitive | `src/components/reusable/` | High | [ ] |
+| T-133 | Build SplitLayout primitive | `src/components/reusable/` | Medium | [ ] |
+| T-134 | Refactor first 3 core sections to use primitives | `src/components/reusable/sections/core/` | Medium | [ ] |
+| T-135 | Standardize data contracts (shared item/action shapes) | `src/domains/` | Medium | [ ] |
+| T-136 | Remove duplicated grid column logic (12+ sections) | `src/components/reusable/sections/core/` | Medium | [ ] |
+| T-137 | Enforce section architecture rules | Validators | Low | [ ] |
 
 **Next task**
-- T-110 — Add Tier 2 hover to DualToneChecklist, ServiceSpectrum, ProcessSteps cards.
+- T-130 — Define spacing system (l-gap alignment with Tailwind gap).
 
-**Queued after active work**
+---
 
-| Phase | Goal | Tasks |
-|---|---|---|
-| 7C | Tokenize repeated gradients | T-116 to T-118 |
-| 7D | Normalize icon and badge implementation | T-119 to T-122 |
-| 7E | Close component defects and legacy cleanup | T-123 to T-129 |
+### Deferred — Visual Polish (Post Phase 8)
+
+| Phase | Goal | Tasks | Status |
+|---|---|---|---|
+| 7B | Hover & transition standardization | T-110 to T-115 | Deferred |
+| 7C | Gradient tokenization | T-116 to T-118 | Deferred |
+| 7D | Icon and badge normalization | T-119 to T-122 | Deferred |
+| 7E | Component fixes and legacy cleanup | T-123 to T-129 | Deferred |
 
 ---
 
@@ -95,6 +104,7 @@
 - **Phase 3.4:** cleanup/dead-code phase skipped by user decision.
 - **Phase 3.5:** hardening rules added across validators, docs, truth checks, and background enforcement.
 - **Phase 7A:** section background system normalized and legacy gradient utility noise removed.
+- **Phase 8 started:** section system structural refactor initiated after full section architecture audit. Focus: layout abstraction, spacing unification, grid logic deduplication, data normalization.
 
 ---
 
