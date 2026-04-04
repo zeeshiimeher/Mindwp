@@ -3003,16 +3003,6 @@
   Content grid section (core/ContentCardsGridSection.tsx)
    ---------------------------------------------------------------------- */
 
-.grid-section__grid,
-
-@media (min-width: 768px) {
-  .grid-section__grid--2,
-
-  .grid-section__grid--3,
-
-  .grid-section__grid--4,
-}
-
 .grid-section__item,
 .c-content-cards-grid-section__item {
   padding: var(--card-padding);
@@ -3635,9 +3625,6 @@
 
 .component-library__header {
   margin-bottom: var(--space-6);
-}
-
-.component-library__container {
 }
 
 .component-library-inner--container {
@@ -4405,12 +4392,6 @@ summary.component-library__sidebar-link {
   margin-bottom: var(--space-7);
 }
 
-.platform-comparison__grid,
-
-@media (min-width: 768px) {
-  .platform-comparison__grid,
-}
-
 .platform-comparison__card,
 .c-option-comparison-section__card {
   padding: var(--card-padding);
@@ -4811,12 +4792,6 @@ summary.component-library__sidebar-link {
   Comparison section (core/ComparisonSection.tsx)
    ---------------------------------------------------------------------- */
 
-.comparison__grid,
-
-@media (min-width: 768px) {
-  .comparison__grid,
-}
-
 .comparison__card,
 .c-comparison-section__card {
   padding: var(--card-padding);
@@ -4871,8 +4846,6 @@ summary.component-library__sidebar-link {
 }
 
 @media (max-width: 767px) {
-  .comparison__grid,
-
   .comparison__content > :not([hidden]) ~ :not([hidden]),
   .c-comparison-section__content > :not([hidden]) ~ :not([hidden]) {
     margin-top: var(--space-5);
@@ -6845,16 +6818,6 @@ summary.component-library__sidebar-link {
   font-size: var(--font-sm);
   color: var(--c-text-muted);
   line-height: var(--line-height-prose);
-}
-
-.cards-section__grid,
-
-@media (min-width: 768px) {
-  .cards-section__grid--cols-2,
-
-  .cards-section__grid--cols-3,
-
-  .cards-section__grid--cols-4,
 }
 
 /* ----------------------------------------------------------------------
