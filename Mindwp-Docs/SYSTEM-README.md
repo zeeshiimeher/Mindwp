@@ -45,6 +45,15 @@
 
 ## 3. Workflows
 
+### Local-first Git workflow
+1. Treat the local working folder as the source of truth.
+2. Use Git to capture and protect the current local state, not to overwrite it.
+3. Commit frequently from VS Code after meaningful changes so the repository stays current as a recovery path.
+4. Before any branch cleanup or merge, commit the current working tree first.
+5. When resolving local branch conflicts, prefer the current local state unless there is an explicit reason not to.
+6. Do not pull, reset, or otherwise sync the working folder from Git unless that decision is made deliberately.
+7. After substantive work, run `node scripts/core/validate-all.mjs` and `node scripts/core/system-sync.mjs`, then commit the updated code and generated docs together.
+
 ### Run a task
 1. Run `node scripts/core/validate-all.mjs`.
 2. Run `node scripts/core/system-sync.mjs`.

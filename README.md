@@ -14,6 +14,13 @@ Runtime is consolidated to the Next.js app in `next-app/`.
 - CI-safe gate (recommended): `npm run validate:ci`
 - Production build: `npm run build`
 
+## Local-first Git policy
+
+- The local working folder is the source of truth.
+- Git is used to record and protect the current local state with frequent commits.
+- Preferred workflow: change files locally, validate, run system sync when needed, then commit the resulting code and docs.
+- Do not use Git to overwrite the working folder unless you explicitly intend to do that.
+
 ## Smoke Tests (Routing)
 
 This repo includes a lightweight Playwright smoke test that loads a small set of critical routes in a real browser and fails if critical routes do not render correctly.
