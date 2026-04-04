@@ -11,9 +11,9 @@
   /* Container padding maps to site tokens (scaled per breakpoint below) */
   --l-container-padding-x: calc(var(--site-padding-x) * 0.5);
 
-  --l-stack-gap-sm: var(--space-3);
-  --l-stack-gap: var(--space-4);
-  --l-stack-gap-lg: var(--space-6);
+  --l-stack-gap-sm: var(--space-3);   /* 12px */
+  --l-stack-gap: var(--space-4);      /* 16px */
+  --l-stack-gap-lg: var(--space-6);   /* 24px */
 
   /* Default section paddings map to the canonical site padding tokens */
   --l-section-padding: calc(var(--site-padding-y) * 0.5);
@@ -167,6 +167,40 @@
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
+.l-grid-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+/* ---------------------------------------------------------
+   Split Layout (2-col ratio variants)
+   --------------------------------------------------------- */
+
+.l-split-60-40 {
+  grid-template-columns: 3fr 2fr;
+}
+
+.l-split-40-60 {
+  grid-template-columns: 2fr 3fr;
+}
+
+.l-split-reverse {
+  direction: rtl;
+}
+
+.l-split-reverse > * {
+  direction: ltr;
+}
+
+/* ---------------------------------------------------------
+   Stack (flex-based vertical rhythm — gap-driven, no owl selector)
+   --------------------------------------------------------- */
+
+.l-stack-flex {
+  display: flex;
+  flex-direction: column;
+  gap: var(--l-gap, var(--l-stack-gap));
+}
+
 /* ---------------------------------------------------------
    Alignment helpers (used for Tailwind layout replacements)
    --------------------------------------------------------- */
@@ -208,8 +242,16 @@
 }
 
 /* ---------------------------------------------------------
-   Gap helpers (token-based; maps from Tailwind gap-* in Phase 2)
+   Gap helpers (Tailwind-aligned: l-gap-N = N × 4px)
    --------------------------------------------------------- */
+
+.l-gap-0 {
+  --l-gap: 0;
+}
+
+.l-gap-1 {
+  --l-gap: var(--space-1);
+}
 
 .l-gap-2 {
   --l-gap: var(--space-2);
@@ -223,12 +265,24 @@
   --l-gap: var(--space-4);
 }
 
-.l-gap-6 {
+.l-gap-5 {
   --l-gap: var(--space-5);
 }
 
-.l-gap-8 {
+.l-gap-6 {
   --l-gap: var(--space-6);
+}
+
+.l-gap-8 {
+  --l-gap: var(--space-7);
+}
+
+.l-gap-10 {
+  --l-gap: 40px;
+}
+
+.l-gap-12 {
+  --l-gap: var(--space-8);
 }
 
 /* ---------------------------------------------------------
@@ -445,6 +499,18 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .md\:l-grid-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .md\:l-split-60-40 {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .md\:l-split-40-60 {
+    grid-template-columns: 2fr 3fr;
+  }
+
   .md\:l-stack {
     display: flex;
     flex-direction: column;
@@ -568,6 +634,10 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
+  .lg\:l-grid-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
   .lg\:l-stack {
     display: flex;
     flex-direction: column;
@@ -636,11 +706,11 @@
   }
 
   .lg\:l-gap-6 {
-    --l-gap: var(--space-5);
+    --l-gap: var(--space-6);
   }
 
   .lg\:l-gap-8 {
-    --l-gap: var(--space-6);
+    --l-gap: var(--space-7);
   }
 
   .lg\:l-max-w-sm {

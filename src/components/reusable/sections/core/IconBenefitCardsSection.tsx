@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 
+import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
 import {
   IconBenefitCard,
   SectionIntro,
@@ -45,26 +46,16 @@ export function IconBenefitCardsSection({
   wrapper = 'section',
   footer,
 }: BenefitsSectionProps) {
-  const Wrapper = wrapper === 'section' ? 'section' : 'div';
-
-  const wrapperClasses = cn(
-    BLOCK,
-    wrapper === 'section' && 'l-section',
-    backgroundColor,
-    className,
-    cssPrefix
-  );
-
-  const gridColumnsClass =
-    columns === 2
-      ? `${BLOCK}__grid ${BLOCK}__grid--cols-2`
-      : columns === 4
-        ? `${BLOCK}__grid ${BLOCK}__grid--cols-4`
-        : `${BLOCK}__grid ${BLOCK}__grid--cols-3`;
-
   return (
-    <Wrapper {...(id !== undefined && { id })} className={wrapperClasses}>
-      <div className={`l-container ${containerClassName}`.trim()}>
+    <SectionWrapper
+      as={wrapper === 'section' ? 'section' : 'div'}
+      id={id}
+      padding={wrapper === 'section' ? 'default' : 'none'}
+      background={backgroundColor}
+      className={cn(BLOCK, className, cssPrefix)}
+      container='none'
+    >
+      <div className={cn('l-container', containerClassName)}>
         <SectionIntro
           {...(badge !== undefined && { badge })}
           title={title}
@@ -72,7 +63,7 @@ export function IconBenefitCardsSection({
           className={`${BLOCK}__header`}
         />
 
-        <div className={gridColumnsClass}>
+        <CardGrid columns={columns} className={`${BLOCK}__grid ${BLOCK}__grid--cols-${columns}`}>
           {benefits.map((benefit, index) => (
             <IconBenefitCard
               key={index}
@@ -85,10 +76,10 @@ export function IconBenefitCardsSection({
               {...(benefit.buttonVariant !== undefined && { buttonVariant: benefit.buttonVariant })}
             />
           ))}
-        </div>
+        </CardGrid>
 
         {footer && <div className={`${BLOCK}__footer`}>{footer}</div>}
       </div>
-    </Wrapper>
+    </SectionWrapper>
   );
 }

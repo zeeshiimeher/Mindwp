@@ -1,6 +1,7 @@
 import { LucideIcon } from 'lucide-react';
 import type { ReactNode } from 'react';
 
+import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
 import { SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
@@ -52,8 +53,13 @@ export function TechnologyCardsSection({
   footer,
 }: TechnologiesSectionProps) {
   return (
-    <section id={id} className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix, className)}>
-      <div className={cn(`${BLOCK}__container`, 'l-container', containerClassName)}>
+    <SectionWrapper
+      id={id}
+      background={backgroundColor}
+      container='none'
+      className={cn(BLOCK, cssPrefix, className)}
+    >
+      <div className={cn('l-container', containerClassName)}>
         {(badge || title || description) && (
           <SectionIntro
             {...(badge !== undefined && { badge })}
@@ -63,7 +69,7 @@ export function TechnologyCardsSection({
           />
         )}
 
-        <div className={cn(`${BLOCK}__grid`, `${BLOCK}__grid--${columns}`)}>
+        <CardGrid columns={columns} gap={4} className={`${BLOCK}__grid ${BLOCK}__grid--${columns}`}>
           {technologies.map((tech, index) => {
             const TechIcon = tech.icon;
 
@@ -77,7 +83,11 @@ export function TechnologyCardsSection({
                   )}
                 >
                   <TechIcon
-                    className={cn(`${BLOCK}__icon`, getVariantStyles('primary').icon.text, tech.iconClassName)}
+                    className={cn(
+                      `${BLOCK}__icon`,
+                      getVariantStyles('primary').icon.text,
+                      tech.iconClassName
+                    )}
                   />
                 </div>
 
@@ -86,10 +96,10 @@ export function TechnologyCardsSection({
               </Card>
             );
           })}
-        </div>
+        </CardGrid>
 
         {footer && <div className={`${BLOCK}__footer`}>{footer}</div>}
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

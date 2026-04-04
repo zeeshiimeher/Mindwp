@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
 import { ScenarioSolutionCard, SectionIntro } from '@/components/reusable/single';
 import { cn } from '@/components/ui/utils';
 
@@ -38,31 +39,29 @@ export function ScenarioCardsSection({
   iconBackground = '',
 }: UseCasesSectionProps) {
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
-      <div className={cn(`${BLOCK}__container`, 'l-container')}>
-        <SectionIntro
-          {...(badge !== undefined && { badge })}
-          title={title}
-          {...(description !== undefined && { description })}
-          className={`${BLOCK}__header`}
-        />
+    <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
+      <SectionIntro
+        {...(badge !== undefined && { badge })}
+        title={title}
+        {...(description !== undefined && { description })}
+        className={`${BLOCK}__header`}
+      />
 
-        <div className={`${BLOCK}__grid`}>
-          {useCases.map((useCase, index) => (
-            <ScenarioSolutionCard
-              key={index}
-              icon={useCase.icon}
-              title={useCase.title}
-              scenario={useCase.scenario}
-              solution={useCase.solution}
-              result={useCase.result}
-              scenarioLabel={scenarioLabel}
-              solutionLabel={solutionLabel}
-              iconBackground={iconBackground}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+      <CardGrid columns={3} className={`${BLOCK}__grid`}>
+        {useCases.map((useCase, index) => (
+          <ScenarioSolutionCard
+            key={index}
+            icon={useCase.icon}
+            title={useCase.title}
+            scenario={useCase.scenario}
+            solution={useCase.solution}
+            result={useCase.result}
+            scenarioLabel={scenarioLabel}
+            solutionLabel={solutionLabel}
+            iconBackground={iconBackground}
+          />
+        ))}
+      </CardGrid>
+    </SectionWrapper>
   );
 }

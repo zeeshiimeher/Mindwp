@@ -4027,6 +4027,8 @@ summary.component-library__sidebar-link {
   border: 1px solid var(--c-border-alpha);
   background-color: var(--c-bg);
   padding: var(--space-4);
+  display:flex;
+  flex-direction: column;
 }
 
 .component-library__muted-label {

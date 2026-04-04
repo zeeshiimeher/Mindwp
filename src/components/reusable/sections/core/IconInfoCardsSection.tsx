@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
 import { SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
@@ -37,33 +38,24 @@ export function IconInfoCardsSection({
   backgroundColor = '',
   cssPrefix = '',
 }: IconCardsSectionProps) {
-  const columnsClass =
-    columns === 2
-      ? `${BLOCK}__grid--cols-2`
-      : columns === 3
-        ? `${BLOCK}__grid--cols-3`
-        : `${BLOCK}__grid--cols-4`;
-
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
-      <div className='l-container'>
-        <SectionIntro
-          {...(badge !== undefined && { badge })}
-          title={title}
-          {...(description !== undefined && { description })}
-          className={`${BLOCK}__header`}
-        />
+    <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
+      <SectionIntro
+        {...(badge !== undefined && { badge })}
+        title={title}
+        {...(description !== undefined && { description })}
+        className={`${BLOCK}__header`}
+      />
 
-        <div className={cn(`${BLOCK}__grid`, columnsClass)}>
-          {items.map((item, index) => (
-            <Card key={index} className={cn(`${BLOCK}__card`, 'card-base')}>
-              <item.icon className={`${BLOCK}__icon`} />
-              <h3 className={`${BLOCK}__title`}>{item.title}</h3>
-              <p className={`${BLOCK}__description`}>{item.description}</p>
-            </Card>
-          ))}
-        </div>
-      </div>
-    </section>
+      <CardGrid columns={columns} className={`${BLOCK}__grid ${BLOCK}__grid--cols-${columns}`}>
+        {items.map((item, index) => (
+          <Card key={index} className={cn(`${BLOCK}__card`, 'card-base')}>
+            <item.icon className={`${BLOCK}__icon`} />
+            <h3 className={`${BLOCK}__title`}>{item.title}</h3>
+            <p className={`${BLOCK}__description`}>{item.description}</p>
+          </Card>
+        ))}
+      </CardGrid>
+    </SectionWrapper>
   );
 }

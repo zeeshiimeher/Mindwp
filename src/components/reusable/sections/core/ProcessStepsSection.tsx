@@ -1,3 +1,4 @@
+import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
 import { type ProcessStep, ProcessStepCard, SectionIntro } from '@/components/reusable/single';
 import { cn } from '@/components/ui/utils';
 
@@ -29,38 +30,29 @@ export function ProcessStepsSection({
   cssPrefix = '',
   backgroundColor = '',
 }: ProcessStepsSectionProps) {
-  const columnsClass =
-    columns === 2
-      ? `${BLOCK}__grid--cols-2`
-      : columns === 3
-        ? `${BLOCK}__grid--cols-3`
-        : `${BLOCK}__grid--cols-4`;
-
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
-      <div className={cn(`${BLOCK}__container`, 'l-container')}>
-        {(badge || title || description) && (
-          <SectionIntro
-            {...(badge !== undefined && { badge })}
-            title={title || ''}
-            {...(description !== undefined && { description })}
-            className={`${BLOCK}__header`}
+    <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
+      {(badge || title || description) && (
+        <SectionIntro
+          {...(badge !== undefined && { badge })}
+          title={title || ''}
+          {...(description !== undefined && { description })}
+          className={`${BLOCK}__header`}
+        />
+      )}
+      <CardGrid columns={columns} className={`${BLOCK}__grid ${BLOCK}__grid--cols-${columns}`}>
+        {steps.map((step, index) => (
+          <ProcessStepCard
+            key={index}
+            number={step.number}
+            title={step.title}
+            description={step.description}
+            {...(step.icon !== undefined && { icon: step.icon })}
+            {...(step.iconType !== undefined && { iconType: step.iconType })}
+            cssPrefix={`${BLOCK}__step`}
           />
-        )}
-        <div className={cn(`${BLOCK}__grid`, columnsClass)}>
-          {steps.map((step, index) => (
-            <ProcessStepCard
-              key={index}
-              number={step.number}
-              title={step.title}
-              description={step.description}
-              {...(step.icon !== undefined && { icon: step.icon })}
-              {...(step.iconType !== undefined && { iconType: step.iconType })}
-              cssPrefix={`${BLOCK}__step`}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+        ))}
+      </CardGrid>
+    </SectionWrapper>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
 import { FeatureChecklistCard, SectionIntro } from '@/components/reusable/single';
 import { cn } from '@/components/ui/utils';
 import type { VariantType } from '@/lib/ui/variantStyles';
@@ -41,38 +42,29 @@ export function FeatureChecklistCardsSection({
   variant = 'default',
   align = 'left',
 }: FeatureCategoriesSectionProps) {
-  const columnsClass =
-    columns === 2
-      ? `${BLOCK}__grid--cols-2`
-      : columns === 3
-        ? `${BLOCK}__grid--cols-3`
-        : `${BLOCK}__grid--cols-4`;
-
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
-      <div className='l-container'>
-        <SectionIntro
-          {...(badge !== undefined && { badge })}
-          title={title}
-          {...(description !== undefined && { description })}
-          className={`${BLOCK}__header`}
-        />
-        <div className={cn(`${BLOCK}__grid`, columnsClass)}>
-          {featureCategories.map((feature, index) => (
-            <FeatureChecklistCard
-              key={`${feature.title}-${index}`}
-              title={feature.title}
-              {...(feature.description !== undefined && { description: feature.description })}
-              {...(feature.icon !== undefined && { icon: feature.icon })}
-              features={feature.features}
-              {...(feature.label !== undefined && { label: feature.label })}
-              {...(feature.iconType !== undefined && { iconType: feature.iconType })}
-              variant={variant}
-              align={align}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+    <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
+      <SectionIntro
+        {...(badge !== undefined && { badge })}
+        title={title}
+        {...(description !== undefined && { description })}
+        className={`${BLOCK}__header`}
+      />
+      <CardGrid columns={columns} className={`${BLOCK}__grid ${BLOCK}__grid--cols-${columns}`}>
+        {featureCategories.map((feature, index) => (
+          <FeatureChecklistCard
+            key={`${feature.title}-${index}`}
+            title={feature.title}
+            {...(feature.description !== undefined && { description: feature.description })}
+            {...(feature.icon !== undefined && { icon: feature.icon })}
+            features={feature.features}
+            {...(feature.label !== undefined && { label: feature.label })}
+            {...(feature.iconType !== undefined && { iconType: feature.iconType })}
+            variant={variant}
+            align={align}
+          />
+        ))}
+      </CardGrid>
+    </SectionWrapper>
   );
 }

@@ -12,7 +12,7 @@ import type {
   MetadataCarrier,
 } from './types';
 
-const BUILDER_SERVICE_SLUGS = new Set(['divi5', 'elementor', 'bricks-builder', 'ecommerce']);
+const BUILDER_SERVICE_SLUGS = new Set(['']);
 
 const canonicalIndustries = new Set<string>(CANONICAL_INDUSTRIES);
 const canonicalSystems = new Set<string>(CANONICAL_SYSTEMS);
