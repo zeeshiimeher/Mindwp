@@ -2484,7 +2484,7 @@
 
 .technologies__card--soft,
 .c-technology-cards-section__card--soft {
-  background: linear-gradient(135deg, var(--c-bg-alt), var(--c-surface));
+  background: var(--gradient-surface-soft);
   border-radius: var(--radius);
   gap: var(--space-2);
 }
@@ -6087,11 +6087,9 @@ summary.component-library__sidebar-link {
 }
 
 .resource-category__hero {
-  background: linear-gradient(
-    to bottom,
-    color-mix(in oklab, var(--c-bg-alt) 60%, transparent),
-    var(--c-bg)
-  );
+  --gradient-hero-fade-start: var(--c-bg-alt);
+  --gradient-hero-fade-strength: 60%;
+  background: var(--gradient-hero-fade);
 }
 
 .resource-category__hero-content {
@@ -6640,20 +6638,12 @@ summary.component-library__sidebar-link {
 
 .explore-cards-section__card--gradient-blue,
 .c-explore-cards-section__card--gradient-blue {
-  background-image: linear-gradient(
-    135deg,
-    var(--color-surface-accent-blue),
-    var(--c-surface)
-  );
+  background-image: var(--gradient-tint-blue);
 }
 
 .explore-cards-section__card--gradient-teal,
 .c-explore-cards-section__card--gradient-teal {
-  background-image: linear-gradient(
-    135deg,
-    var(--color-surface-accent-teal),
-    var(--c-surface)
-  );
+  background-image: var(--gradient-tint-teal);
 }
 
 .explore-cards-section__card--gradient-purple,
@@ -7565,11 +7555,8 @@ summary.component-library__sidebar-link {
    ---------------------------------------------------------------------- */
 
 .blog-hero {
-  background: linear-gradient(
-    to bottom,
-    color-mix(in oklab, var(--c-bg) 55%, transparent),
-    var(--c-bg)
-  );
+  --gradient-hero-fade-strength: 55%;
+  background: var(--gradient-hero-fade);
 }
 
 .blog-surface--muted {

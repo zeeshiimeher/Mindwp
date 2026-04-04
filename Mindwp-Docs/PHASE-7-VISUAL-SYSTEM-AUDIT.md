@@ -75,7 +75,7 @@
 
 ### 7C — Gradient Tokenization
 
-**Status:** Queued
+**Status:** Done
 
 **Fixes to execute**
 - T-116 Add 4 new gradient tokens to `foundation.css`
@@ -122,7 +122,7 @@
 |---|---|---|
 | 7A | Done | Section background cleanup complete |
 | 7B | Done | Hover, focus, and transition standardization implemented |
-| 7C | Queued | Gradient tokenization pending |
+| 7C | Done | Gradient tokenization implemented |
 | 7D | Queued | Icon and badge normalization pending |
 | 7E | Queued | Remaining component cleanup pending |
 
@@ -670,6 +670,13 @@ Current badge system is **mostly clean** — 3 sizes (sm/md/lg), 5 color variant
 - Replaced remaining hardcoded `0.2s ease` timing values in Phase 7 interaction scope with `var(--transition-fast)` across shared card and link patterns.
 - Wrapped the remaining touch-problem hover rules in hover-capable media queries, including How It Works, ProblemSolution, link-primary, legal links, and the image accordion expansion behavior.
 - Strengthened weak interaction feedback on `benefit-card--link`, shared card links, resource cards, and related cards so hover behavior now matches the system instead of isolated one-off effects.
+
+## ✅ 7C — GRADIENT SYSTEM IMPLEMENTED
+
+- Added the missing system tokens in `foundation.css` for surface, blue tint, teal tint, and hero fade gradients so repeated patterns now resolve through named tokens instead of inline gradient strings.
+- Replaced the repeated hardcoded gradients in `components.css` for technology cards and explore-card blue and teal variants without changing class names or component structure.
+- Normalized hero fade usage onto the new token while preserving existing visual output through local token overrides for the current fade source and strength values.
+- Added an explicit compatibility comment on `--gradient-cta-warm` to flag that the token name is misleading and currently renders near-black output.
 
 ---
 
