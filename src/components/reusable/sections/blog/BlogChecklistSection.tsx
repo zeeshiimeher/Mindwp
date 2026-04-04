@@ -41,7 +41,7 @@ export function BlogChecklistSection({
           )}
         >
           {items.map((item, index) => (
-            <ChecklistRow key={index} variant='check' iconSize='w-4 h-4' color='text-primary'>
+            <ChecklistRow key={index} variant='check' color='text-primary'>
               {item}
             </ChecklistRow>
           ))}

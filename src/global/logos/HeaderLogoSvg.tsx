@@ -51,11 +51,11 @@ export function HeaderLogoSvg({ className = '', variant = 'dark' }: HeaderLogoSv
 
         {/* Connection dots */}
         <circle cx='11' cy='10' r='1.5' fill='var(--brand-primary)'></circle>
-        <circle cx='21' cy='10' r='1.5' fill='var(--brand-purple)'></circle>
-        <circle cx='11' cy='16' r='1.5' fill='var(--brand-purple)'></circle>
+        <circle cx='21' cy='10' r='1.5' fill='var(--brand-secondary)'></circle>
+        <circle cx='11' cy='16' r='1.5' fill='var(--brand-secondary)'></circle>
         <circle cx='21' cy='16' r='1.5' fill='var(--brand-primary)'></circle>
         <circle cx='11' cy='22' r='1.5' fill='var(--brand-primary)'></circle>
-        <circle cx='21' cy='22' r='1.5' fill='var(--brand-purple)'></circle>
+        <circle cx='21' cy='22' r='1.5' fill='var(--brand-secondary)'></circle>
 
         {/* Center spark */}
         <circle cx='16' cy='16' r='2' fill='url(#logo-gradient-stroke-header)'></circle>
@@ -87,12 +87,12 @@ export function HeaderLogoSvg({ className = '', variant = 'dark' }: HeaderLogoSv
           />
           <stop
             offset='100%'
-            stopColor={isLight ? 'var(--brand-white-80)' : 'var(--brand-purple)'}
+            stopColor={isLight ? 'var(--brand-white-80)' : 'var(--brand-secondary)'}
           />
         </linearGradient>
         <linearGradient id='logo-gradient-stroke-header' x1='0%' y1='0%' x2='100%' y2='100%'>
           <stop offset='0%' stopColor={isLight ? 'var(--brand-white)' : 'var(--brand-primary)'} />
-          <stop offset='100%' stopColor={isLight ? 'var(--brand-white)' : 'var(--brand-purple)'} />
+          <stop offset='100%' stopColor={isLight ? 'var(--brand-white)' : 'var(--brand-secondary)'} />
         </linearGradient>
       </defs>
     </svg>

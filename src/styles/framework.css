@@ -806,31 +806,3 @@
     max-width: 80rem;
   }
 }
-
-@media (min-width: 640px) {
-  .l-section {
-    padding-top: var(--l-section-padding);
-    padding-bottom: var(--l-section-padding);
-  }
-}
-
-@media (min-width: 768px) {
-  .l-section {
-    padding-top: var(--l-section-padding);
-    padding-bottom: var(--l-section-padding);
-  }
-}
-
-@media (min-width: 1024px) {
-  .l-section {
-    padding-top: var(--l-section-padding);
-    padding-bottom: var(--l-section-padding);
-  }
-}
-
-@media (min-width: 1280px) {
-  .l-section {
-    padding-top: var(--l-section-padding);
-    padding-bottom: var(--l-section-padding);
-  }
-}

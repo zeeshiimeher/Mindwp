@@ -63,8 +63,8 @@ export interface ServiceBenefitItem {
    * Color theme for the icon background and text
    * - "primary": Blue theme (--brand-primary)
    * - "secondary": Light blue theme (--brand-primary-light)
-   * - "accent": Purple theme (--brand-purple)
-   * - "purple": Purple theme (--brand-purple)
+   * - "accent": Secondary blue theme (--brand-secondary)
+   * - "purple": Secondary blue theme (--brand-secondary)
    * - "teal": Teal theme (--brand-teal)
    * - "amber": Amber theme (--brand-amber)
    * - "dark": Dark theme (--brand-dark)

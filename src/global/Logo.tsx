@@ -51,11 +51,11 @@ export function LogoMark({ className = '' }: { className?: string }) {
 
       {/* Connection dots */}
       <circle cx='11' cy='10' r='1.5' fill='var(--brand-primary)' />
-      <circle cx='21' cy='10' r='1.5' fill='var(--brand-purple)' />
-      <circle cx='11' cy='16' r='1.5' fill='var(--brand-purple)' />
+      <circle cx='21' cy='10' r='1.5' fill='var(--brand-secondary)' />
+      <circle cx='11' cy='16' r='1.5' fill='var(--brand-secondary)' />
       <circle cx='21' cy='16' r='1.5' fill='var(--brand-primary)' />
       <circle cx='11' cy='22' r='1.5' fill='var(--brand-primary)' />
-      <circle cx='21' cy='22' r='1.5' fill='var(--brand-purple)' />
+      <circle cx='21' cy='22' r='1.5' fill='var(--brand-secondary)' />
 
       {/* Center spark */}
       <circle cx='16' cy='16' r='2' fill='url(#logo-mark-gradient-stroke)' />
@@ -64,11 +64,11 @@ export function LogoMark({ className = '' }: { className?: string }) {
       <defs>
         <linearGradient id='logo-mark-gradient' x1='0%' y1='0%' x2='100%' y2='100%'>
           <stop offset='0%' stopColor='var(--brand-primary)' />
-          <stop offset='100%' stopColor='var(--brand-purple)' />
+          <stop offset='100%' stopColor='var(--brand-secondary)' />
         </linearGradient>
         <linearGradient id='logo-mark-gradient-stroke' x1='0%' y1='0%' x2='100%' y2='100%'>
           <stop offset='0%' stopColor='var(--brand-primary)' />
-          <stop offset='100%' stopColor='var(--brand-purple)' />
+          <stop offset='100%' stopColor='var(--brand-secondary)' />
         </linearGradient>
       </defs>
     </svg>

@@ -33,7 +33,7 @@ export default function IndustriesLanding() {
         <div className='l-stack l-stack--loose'>
           <div className='l-row l-items-start l-justify-between l-gap-4'>
             <div className='icon-container-lg icon-bg-primary'>
-              <Icon className='w-6 h-6 icon-text-primary' />
+              <Icon className='icon-text-primary' />
             </div>
             {industry.prioritySignal && (
               <Badge variant='secondary'>{industry.prioritySignal}</Badge>

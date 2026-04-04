@@ -68,7 +68,7 @@ const ReviewsVisual = () => (
 
       <div className='pt-4 border-t text-center'>
         <div className='text-xs text-green-600 l-row l-items-center l-row-center l-gap-2'>
-          <TrendingUp className='w-4 h-4' />
+          <TrendingUp className='icon-text-success' />
           +15 new reviews this month
         </div>
       </div>

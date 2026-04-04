@@ -50,7 +50,7 @@ export function ProblemSolutionSplitCard({
         {/* Solution */}
         <div className={`${BLOCK}__divider`}>
           <div className={`${BLOCK}__solution-row`}>
-            <div className={`${BLOCK}__bullet icon-bg-accent`}>
+            <div className={`${BLOCK}__bullet icon-container-xs icon-bg-accent`}>
               <ArrowRight className={`${BLOCK}__bullet-arrow icon-text-accent`} />
             </div>
             <p className={`${BLOCK}__solution`}>{solution}</p>

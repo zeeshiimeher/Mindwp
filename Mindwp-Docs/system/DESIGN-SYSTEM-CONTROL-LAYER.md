@@ -550,3 +550,22 @@ The icon + badge system has zero uncontrolled entry points:
 | UI primitive sizing | `data-slot` CSS selectors |
 
 **System status: HARDENED.**
+
+## 15. FINAL ICON SIZE TOKENIZATION (PHASE 7 CLOSE)
+
+All remaining hardcoded rem icon sizes in components.css have been tokenized:
+
+| Selector | Before | After |
+|----------|--------|-------|
+| `.checklist-simple__icon` | `1.25rem` | `var(--space-5)` |
+| `.c-linked-icon-cards-section__icon-svg` | `1.5rem` | `var(--space-6)` |
+| `.c-technology-cards-section__icon` | `1.25rem` | `var(--space-5)` |
+| `.problem-solution__bullet` | `1.25rem` | `var(--space-5)` |
+| `.problem-solution__bullet-arrow` | `0.75rem` | `var(--space-3)` |
+| `.framework-section-journey-note-icon` | `1rem` | `var(--space-4)` |
+
+**TSX violations closed:**
+- All `w-4 h-4` removed from icon elements (ReputationRenderer, BlogChecklistSection, BlogTakeawaysSection)
+- `ProblemSolutionSplitCard` bullet upgraded to `icon-container-xs`
+
+**Zero hardcoded rem icon sizes remain in the system.**

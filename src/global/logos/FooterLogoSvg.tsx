@@ -48,11 +48,11 @@ export function FooterLogoSvg({ className = '' }: FooterLogoSvgProps) {
 
         {/* Connection dots */}
         <circle cx='11' cy='10' r='1.5' fill='var(--brand-primary)'></circle>
-        <circle cx='21' cy='10' r='1.5' fill='var(--brand-purple)'></circle>
-        <circle cx='11' cy='16' r='1.5' fill='var(--brand-purple)'></circle>
+        <circle cx='21' cy='10' r='1.5' fill='var(--brand-secondary)'></circle>
+        <circle cx='11' cy='16' r='1.5' fill='var(--brand-secondary)'></circle>
         <circle cx='21' cy='16' r='1.5' fill='var(--brand-primary)'></circle>
         <circle cx='11' cy='22' r='1.5' fill='var(--brand-primary)'></circle>
-        <circle cx='21' cy='22' r='1.5' fill='var(--brand-purple)'></circle>
+        <circle cx='21' cy='22' r='1.5' fill='var(--brand-secondary)'></circle>
 
         {/* Center spark */}
         <circle cx='16' cy='16' r='2' fill='url(#logo-gradient-stroke-footer)'></circle>
@@ -79,11 +79,11 @@ export function FooterLogoSvg({ className = '' }: FooterLogoSvgProps) {
       <defs>
         <linearGradient id='logo-gradient-footer' x1='0%' y1='0%' x2='100%' y2='100%'>
           <stop offset='0%' stopColor='var(--brand-primary)' />
-          <stop offset='100%' stopColor='var(--brand-purple)' />
+          <stop offset='100%' stopColor='var(--brand-secondary)' />
         </linearGradient>
         <linearGradient id='logo-gradient-stroke-footer' x1='0%' y1='0%' x2='100%' y2='100%'>
           <stop offset='0%' stopColor='var(--brand-primary)' />
-          <stop offset='100%' stopColor='var(--brand-purple)' />
+          <stop offset='100%' stopColor='var(--brand-secondary)' />
         </linearGradient>
       </defs>
     </svg>
