@@ -28,7 +28,6 @@ export function DualFeatureCardsSection({
   backgroundColor = '',
   cssPrefix = '',
 }: DualFeatureCardsSectionProps) {
-
   return (
     <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className='l-container'>

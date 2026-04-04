@@ -36,7 +36,6 @@ export function TierCardsSection({
   cssPrefix = '',
   backgroundColor = '',
 }: TierCardsSectionProps) {
-
   return (
     <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className='l-container'>

@@ -26,7 +26,6 @@ export function OptionComparisonSection({
   cssPrefix = '',
   backgroundColor = '',
 }: PlatformComparisonSectionProps) {
-
   return (
     <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className={`${BLOCK}__container l-container`}>

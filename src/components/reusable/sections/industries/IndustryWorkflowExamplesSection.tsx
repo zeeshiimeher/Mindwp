@@ -25,7 +25,6 @@ export function IndustryWorkflowExamplesSection({
   backgroundColor = '',
   cssPrefix = '',
 }: IndustryWorkflowExamplesSectionProps) {
-
   return (
     <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className='l-container'>

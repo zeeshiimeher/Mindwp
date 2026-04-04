@@ -40,7 +40,6 @@ export function FeatureChecklistCardsSection({
   variant = 'default',
   align = 'left',
 }: FeatureCategoriesSectionProps) {
-
   const columnsClass =
     columns === 2
       ? `${BLOCK}__grid--cols-2`

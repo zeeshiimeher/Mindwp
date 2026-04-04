@@ -56,6 +56,7 @@ const validators = [
   { name: 'validate-readable-report', command: 'node', args: ['scripts/validators/validate-readable-report.mjs'], blocking: false },
   { name: 'validate-rewrite-engine', command: 'node', args: ['scripts/validators/validate-rewrite-engine.mjs'], blocking: false },
   { name: 'validate-checklist', command: 'node', args: ['scripts/validators/validate-checklist.mjs'], blocking: false },
+  { name: 'validate-fix-log', command: 'node', args: ['scripts/validators/validate-fix-log.mjs'], blocking: false },
   { name: 'validate-session-log', command: 'node', args: ['scripts/validators/validate-session-log.mjs'], blocking: false },
 ];
 

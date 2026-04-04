@@ -43,7 +43,6 @@ export function TabbedFeatureCardsSection({
   backgroundColor = '',
   cssPrefix = '',
 }: TabbedFeatureCardsSectionProps) {
-
   const selectedTab = activeTab ?? tabs[0] ?? '';
   const tabGroupName = `${BLOCK}-tabs-${title.toLowerCase().replace(/\s+/g, '-')}`;
 

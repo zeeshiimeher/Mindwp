@@ -33,7 +33,6 @@ export function ChecklistCardsSection({
   backgroundColor = '',
   cardClassName = '',
 }: ChecklistSectionProps) {
-
   const columnsClass =
     columns === 2
       ? `${BLOCK}__list--cols-2`

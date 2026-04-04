@@ -38,7 +38,6 @@ export function GenericCardsSection({
   cssPrefix = '',
   variant = 'default',
 }: CardsSectionProps) {
-
   const columnsClass =
     columns === 2
       ? `${BLOCK}__grid--cols-2`

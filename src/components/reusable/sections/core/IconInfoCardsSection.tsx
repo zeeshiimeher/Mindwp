@@ -37,7 +37,6 @@ export function IconInfoCardsSection({
   backgroundColor = '',
   cssPrefix = '',
 }: IconCardsSectionProps) {
-
   const columnsClass =
     columns === 2
       ? `${BLOCK}__grid--cols-2`

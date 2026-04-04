@@ -50,7 +50,6 @@ export function TechnologyCardsSection({
   backgroundColor = '',
   footer,
 }: TechnologiesSectionProps) {
-
   return (
     <section id={id} className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix, className)}>
       <div className={cn(`${BLOCK}__container`, 'l-container', containerClassName)}>

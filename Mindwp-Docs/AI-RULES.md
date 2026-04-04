@@ -34,18 +34,26 @@ Governance priority is fixed:
 - `DEV-DASHBOARD.md` = daily summary and links only
 - `project-todo.md` = execution state
 - `PHASE-7-VISUAL-SYSTEM-AUDIT.md` = phase task playbook only
-- `SYSTEM-LOG.md` = generated human-readable status
-- `reports/system-state.json` = generated machine status
-- `reports/system-drift.json` = generated drift only
+- `SYSTEM-LOG.md` = generated human-readable current snapshot
+- `reports/system-state.json` = generated machine current snapshot
+- `reports/system-drift.json` = generated current drift snapshot
+- `reports/fix-log.json` = append-only fix history
+- `reports/session-log.json` = append-only session history
 - `DECISION-STATE.md` = generated active decisions
 
-### R4. Generated files and reports are read-only.
+### R4. Snapshot files are read-only. Histories are append-only.
 Do not manually edit:
 - `reports/system-state.json`
 - `reports/system-drift.json`
 - `Mindwp-Docs/system/DECISION-STATE.md`
 - `Mindwp-Docs/SYSTEM-LOG.md`
 - any report produced by a generator or validator script
+
+Allowed append-only history files:
+- `reports/fix-log.json`
+- `reports/session-log.json`
+
+`SYSTEM-LOG.md` is a snapshot, not a historical log.
 
 ### R5. `SYSTEM-TRUTH.md` is descriptive, not procedural.
 It must not absorb plans, tasks, risks, or temporary audit noise.

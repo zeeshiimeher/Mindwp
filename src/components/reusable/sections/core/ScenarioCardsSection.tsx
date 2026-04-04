@@ -37,7 +37,6 @@ export function ScenarioCardsSection({
   solutionLabel = 'Feature',
   iconBackground = '',
 }: UseCasesSectionProps) {
-
   return (
     <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className={cn(`${BLOCK}__container`, 'l-container')}>

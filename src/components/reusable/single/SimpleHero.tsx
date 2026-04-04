@@ -94,11 +94,8 @@ export function SimpleHero({
   backgroundColor = '',
   list,
 }: SimpleHeroProps) {
-
   return (
-    <section
-      className={cn(BLOCK, 'l-section', 'l-section--spacious', backgroundColor, cssPrefix)}
-    >
+    <section className={cn(BLOCK, 'l-section', 'l-section--spacious', backgroundColor, cssPrefix)}>
       <div className={cn(`${BLOCK}__container`, 'l-container')}>
         <div
           className={cn(

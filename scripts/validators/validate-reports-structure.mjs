@@ -21,7 +21,7 @@ const ignoredDirs = new Set([
   'archive-reference',
 ]);
 
-const disallowedTopLevelFiles = new Set(['.DS_Store', 'visual-audit.json', 'visual-audit.md']);
+const disallowedTopLevelFiles = new Set(['.DS_Store', 'fix-log.md', 'visual-audit.json', 'visual-audit.md']);
 const disallowedReportDirs = new Set(['history', 'phase7-audit copy']);
 const allowedNestedReportDirs = new Set(['phase7', 'phase7-audit']);
 
@@ -37,7 +37,7 @@ const reportLikePatterns = [
   /content-score\.json$/i,
   /page-priorities\.json$/i,
   /topic-authority-scores\.(json|md)$/i,
-  /fix-log\.(json|md)$/i,
+  /fix-log\.json$/i,
   /session-log\.json$/i,
   /token-v2-baseline\.json$/i,
   /visual-audit\.(json|md)$/i,

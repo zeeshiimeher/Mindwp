@@ -31,7 +31,6 @@ export function StepCardsSplitSection({
   backgroundColor = '',
   cssPrefix = '',
 }: StepCardsSplitSectionProps) {
-
   return (
     <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className='l-container'>

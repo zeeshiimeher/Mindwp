@@ -16,7 +16,7 @@
 
 **Content graph:** 211 nodes, 2,742 edges, 7 formal content types (`ContentNodeType` is the only allowed type system — see §2.4).
 
-**Validation:** 28 validators. TypeScript clean. ESLint clean. Build passing.
+**Validation:** 29 validators. TypeScript clean. ESLint clean. Build passing.
 
 **Conversion model:** Conversation-first. Primary CTA: "Start a Conversation" → /contact. No lead magnets. System works without free resources.
 
@@ -109,7 +109,7 @@ Each node declares `industries`, `systems`, `topics` → relationships auto-gene
 | 1 | foundation.css | Design tokens — single source of truth | 366 |
 | 2 | primitives.css | CSS reset, base typography, Tailwind v4 bridge | 248 |
 | 3 | framework.css | Layout primitives (containers, sections, grids) | 836 |
-| 4 | components.css | All BEM component styles | 10,914 |
+| 4 | components.css | All BEM component styles | 10,707 |
 
 Then: `@tailwind base`, `@tailwind components`, `@tailwind utilities`.
 
@@ -434,7 +434,7 @@ Hero → Infrastructure Framing → Smart Website → Supporting Systems → Ind
 |---|---|
 | **Governance is airtight** | 5 locked governing docs. Conflict resolution defined. Rule priority order established. AI execution lock. |
 | **Content graph is live and functional** | 211 nodes, 2,742 edges. Authority scoring, gap detection, conversion intelligence all operational. |
-| **Validation is comprehensive** | 27 validators. TypeScript strict. ESLint clean. Build green. |
+| **Validation is comprehensive** | 29 validators. TypeScript strict. ESLint clean. Build green. |
 | **Token system is well-layered** | 4-tier color system. Responsive typography. Spacing scale. Layout primitives. |
 | **Conversion intelligence is code-complete** | Intent mapping, CTA resolver, journey engine, scoring, priority queue — all built. |
 | **Component architecture is disciplined** | BEM everywhere. Server-first. Domain wrappers. Inline styles only in shadcn/ui and SVG text elements. |
@@ -456,10 +456,10 @@ UI           →  foundation.css (tokens) → primitives.css (reset) → framewo
      ↓
 COMPONENTS   →  single/* → sections/core/* → sections/<domain>/* → system/* (SmartCTA, Journey)
      ↓
-VALIDATION   →  27 validators → TypeScript → ESLint → Build pipeline
+VALIDATION   →  29 validators → TypeScript → ESLint → Build pipeline
 ```
 
-**One sentence:** Governance flows down from locked docs, intelligence flows up from the content graph, the UI renders via token-driven BEM, and 27 validators enforce it all.
+**One sentence:** Governance flows down from locked docs, intelligence flows up from the content graph, the UI renders via token-driven BEM, and 29 validators enforce it all.
 
 ---
 

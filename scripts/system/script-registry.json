@@ -342,6 +342,19 @@
       "runnable": true
     },
     {
+      "id": "validate-fix-log",
+      "name": "Check Fix Log",
+      "category": "validators",
+      "intent": "debug",
+      "group": "advanced",
+      "priority": 9,
+      "estimatedTime": "fast",
+      "path": "scripts/validators/validate-fix-log.mjs",
+      "description": "Check fix log setup.",
+      "type": "validator",
+      "runnable": true
+    },
+    {
       "id": "validate-structure",
       "name": "Check Structure",
       "category": "validators",
@@ -682,6 +695,19 @@
       "estimatedTime": "medium",
       "path": "scripts/runners/run-next-filtered.mjs",
       "description": "Run filtered app mode.",
+      "type": "runner",
+      "runnable": false
+    },
+    {
+      "id": "add-fix-entry",
+      "name": "Add Fix Entry",
+      "category": "runners",
+      "intent": "debug",
+      "group": "advanced",
+      "priority": 10,
+      "estimatedTime": "fast",
+      "path": "scripts/dev/add-fix-entry.mjs",
+      "description": "Add a fix history entry.",
       "type": "runner",
       "runnable": false
     },

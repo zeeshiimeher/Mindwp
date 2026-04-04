@@ -30,8 +30,11 @@
 |---|---|
 | `node scripts/core/validate-all.mjs` | Run the full validator set and write validation-results.json |
 | `node scripts/core/system-sync.mjs` | Generate system state, drift, system log, and decision state from the latest validation snapshot |
+| `node scripts/dev/add-fix-entry.mjs ...` | Append one fix entry to `reports/fix-log.json` |
+| `node scripts/dev/add-session-entry.mjs ...` | Append one session entry to `reports/session-log.json` |
 | `node scripts/validators/validate-cta.mjs` | Validate CTA labels, hrefs, and scan scope |
 | `node scripts/validators/validate-design-system.cjs` | Validate design-system rules and gradient lifecycle |
+| `node scripts/validators/validate-fix-log.mjs` | Validate `reports/fix-log.json` entry shape and lifecycle expectations |
 | `npx tsx scripts/validators/validate-graph.ts` | Validate graph types, edges, and orphan rules |
 | `node scripts/validators/validate-tokens.mjs` | Validate spacing and font token usage |
 | `node scripts/validators/validate-inline-styles.mjs` | Validate production inline-style rules |
@@ -43,7 +46,38 @@
 
 ---
 
-## 3. Workflows
+## 3. System Data Model
+
+### Snapshot Layer
+These files are overwrite-only and always represent current state.
+
+- `Mindwp-Docs/SYSTEM-LOG.md` = human-readable snapshot
+- `reports/system-state.json` = machine-readable snapshot
+- `reports/system-drift.json` = machine-readable drift snapshot
+
+`SYSTEM-LOG.md` is a snapshot, not a historical log.
+
+### Fix History
+This file is append-only and stores one measurable fix per entry.
+
+- `reports/fix-log.json` = source of truth for fix history
+- used by the authority dashboard and fix learning systems
+- written through controlled tooling or deliberate manual maintenance
+
+### Session History
+This file is append-only and stores work sessions, not fix events.
+
+- `reports/session-log.json` = source of truth for session history
+- written via `node scripts/dev/add-session-entry.mjs`
+
+### Lifecycle Rule
+
+- overwrite-only: `SYSTEM-LOG.md`, `system-state.json`, `system-drift.json`
+- append-only: `fix-log.json`, `session-log.json`
+
+---
+
+## 4. Workflows
 
 ### Local-first Git workflow
 1. Treat the local working folder as the source of truth.

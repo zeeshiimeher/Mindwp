@@ -30,11 +30,8 @@ export function OperationalShiftCardsSection({
   currentStateLabel = 'Common starting point',
   structuredStateLabel = 'What the structured version changes',
 }: OperationalShiftCardsSectionProps) {
-
   return (
-    <section
-      className={cn(BLOCK, 'l-section', 'l-section--compact', backgroundColor, cssPrefix)}
-    >
+    <section className={cn(BLOCK, 'l-section', 'l-section--compact', backgroundColor, cssPrefix)}>
       <div className='l-container'>
         <SectionIntro
           {...(badge !== undefined && { badge })}

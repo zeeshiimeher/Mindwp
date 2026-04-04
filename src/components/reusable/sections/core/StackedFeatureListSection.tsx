@@ -42,7 +42,6 @@ export function StackedFeatureListSection({
   backgroundColor = '',
   cssPrefix = '',
 }: StackedFeatureListSectionProps) {
-
   return (
     <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className='l-container'>

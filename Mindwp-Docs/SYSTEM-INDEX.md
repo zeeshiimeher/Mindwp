@@ -40,21 +40,42 @@ These files are overwritten by scripts. Do not edit them manually.
 | `reports/system-drift.json`                | Machine-readable truth drift           |
 | `reports/script-history.json`              | Latest script execution history        |
 | `reports/authority-map.json`               | Graph authority data                   |
+| `reports/fix-log.json`                     | Append-only fix history                |
+| `reports/session-log.json`                 | Append-only session history            |
 | `reports/phase7/visual-audit.json`         | Current Phase 7 visual audit output    |
 | `reports/*.json` validator reports         | Specific validator outputs             |
 | `reports/*.md` generated report companions | Optional human-readable report outputs |
 
-`reports/` is generated only. It is never authoritative. It is never manually edited.
+`reports/` contains both generated snapshots and append-only histories.
+It is operational data, not governance truth.
 
-**State roles are strict:**
+## 4. System Data Model
+
+### Snapshot Layer
+
+These files are overwrite-only. They represent current state, not history.
 
 - `reports/system-state.json` = machine state
 - `Mindwp-Docs/SYSTEM-LOG.md` = human state
 - `reports/system-drift.json` = drift only
 
+`Mindwp-Docs/SYSTEM-LOG.md` is a snapshot, not a historical log.
+
+### Fix History
+
+- `reports/fix-log.json` = append-only fix history
+- source of truth for fix analytics and dashboard insights
+- may be written by controlled tooling or deliberate manual maintenance
+
+### Session History
+
+- `reports/session-log.json` = append-only work session history
+- written via `node scripts/dev/add-session-entry.mjs`
+- not a substitute for fix history
+
 ---
 
-## 4. Governing Docs (`content-architecture/`)
+## 5. Governing Docs (`content-architecture/`)
 
 These files in `Mindwp-Docs/content-architecture/` are the authority stack. All execution docs defer to them. Docs override code.
 
@@ -66,7 +87,7 @@ These files in `Mindwp-Docs/content-architecture/` are the authority stack. All 
 
 ---
 
-## 5. Supporting Docs
+## 6. Supporting Docs
 
 | File                                                       | Role                            |
 | ---------------------------------------------------------- | ------------------------------- |
@@ -77,7 +98,7 @@ Supporting docs help navigation or tooling, but they are not primary execution f
 
 ---
 
-## 6. Working Order
+## 7. Working Order
 
 1. Read `Mindwp-Docs/SYSTEM-INDEX.md`.
 2. Run `node scripts/core/validate-all.mjs`.
@@ -89,7 +110,7 @@ Supporting docs help navigation or tooling, but they are not primary execution f
 
 ---
 
-## 7. Directory Shape
+## 8. Directory Shape
 
 ```
 Mindwp-Docs/

@@ -119,7 +119,6 @@ export function SplitHeroSection({
     { position: 'bottom-left', color: 'purple', size: 'lg' },
   ],
 }: SplitHeroSectionProps) {
-
   const getDecorationColorClass = (color: string) => {
     if (color === 'blue' || color === 'bg-blue-200') return `${BLOCK}__decoration--blue`;
     if (color === 'purple' || color === 'bg-purple-200') return `${BLOCK}__decoration--purple`;

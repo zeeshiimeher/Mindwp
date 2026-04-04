@@ -35,7 +35,6 @@ export function DualToneChecklistComparisonSection({
   backgroundColor = '',
   cssPrefix = '',
 }: DualToneChecklistComparisonSectionProps) {
-
   return (
     <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className='l-container'>

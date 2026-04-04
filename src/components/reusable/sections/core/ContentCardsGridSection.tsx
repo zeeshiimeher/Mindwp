@@ -35,7 +35,6 @@ export function ContentCardsGridSection({
   iconType = 'checkmark',
   cssPrefix = '',
 }: ContentGridSectionProps) {
-
   return (
     <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className='l-container'>

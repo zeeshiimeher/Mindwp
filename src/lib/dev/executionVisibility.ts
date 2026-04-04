@@ -141,7 +141,6 @@ const contentReportNames = new Set([
   'content-intelligence.json',
   'content-score.json',
   'fix-log.json',
-  'fix-log.md',
   'page-priorities.json',
   'topic-authority-scores.json',
   'topic-authority-scores.md',

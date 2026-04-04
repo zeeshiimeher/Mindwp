@@ -29,7 +29,6 @@ export function ProcessStepsSection({
   cssPrefix = '',
   backgroundColor = '',
 }: ProcessStepsSectionProps) {
-
   const columnsClass =
     columns === 2
       ? `${BLOCK}__grid--cols-2`
