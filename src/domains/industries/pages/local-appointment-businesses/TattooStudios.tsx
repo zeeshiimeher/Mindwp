@@ -54,7 +54,7 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing tattoo reviews and credibility',
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'tattoo-studios-image-strip',
   };
 
@@ -248,7 +248,7 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'tattoo-studios-workflow-examples',
   };
 
@@ -299,7 +299,7 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-muted/30',
+    backgroundColor: 'bg-section-muted',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

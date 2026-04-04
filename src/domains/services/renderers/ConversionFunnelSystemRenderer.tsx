@@ -58,7 +58,7 @@ export function ConversionFunnelSystemRenderer({
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='conversion-funnel-foundation'
           />
 
@@ -120,7 +120,7 @@ export function ConversionFunnelSystemRenderer({
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='conversion-funnel-process'
           />
 
@@ -157,7 +157,7 @@ export function ConversionFunnelSystemRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='conversion-funnel-qualification'
           />
 

@@ -28,19 +28,12 @@ export function ComparisonSection({
   description,
   comparisons = [],
   cssPrefix = '',
-  backgroundColor = 'default',
+  backgroundColor = '',
 }: ComparisonSectionProps) {
   const safeComparisons = Array.isArray(comparisons) ? comparisons : [];
 
-  const backgroundClassName =
-    backgroundColor === 'default' || backgroundColor === 'bg-background'
-      ? `${BLOCK}--bg-default`
-      : backgroundColor === 'bg-muted' || backgroundColor === 'bg-muted/30'
-        ? `${BLOCK}--bg-muted`
-        : backgroundColor;
-
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundClassName, cssPrefix)}>
+    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className={`${BLOCK}__container l-container`}>
         {(badge || title || description) && (
           <SectionIntro

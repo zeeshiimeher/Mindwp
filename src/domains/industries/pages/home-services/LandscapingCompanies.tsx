@@ -55,7 +55,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing landscaping reviews and proof of work',
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'landscaping-image-strip',
   };
 
@@ -253,7 +253,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'landscaping-workflow-examples',
   };
 
@@ -296,7 +296,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-muted/30',
+    backgroundColor: 'bg-section-muted',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

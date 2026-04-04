@@ -345,7 +345,7 @@ export const growthRevenueSystemsPage = {
       ],
       columns: 4 as const,
       cssPrefix: 'technical-audit-process',
-      backgroundColor: 'bg-section-light' as const,
+      backgroundColor: 'bg-section-muted' as const,
     },
     bridge: {
       badge: 'Before adding more pressure',

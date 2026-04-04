@@ -102,7 +102,7 @@ export default function WorkflowsRenderer() {
             title={process.title}
             description={process.description}
             steps={process.steps}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='workflows-process'
           />
 
@@ -111,7 +111,7 @@ export default function WorkflowsRenderer() {
             title={benefits.title}
             description={benefits.description}
             benefits={benefits.items}
-            backgroundColor='bg-slate-50'
+            backgroundColor='bg-section-muted'
             cssPrefix='workflows-benefits'
           />
 
@@ -120,7 +120,7 @@ export default function WorkflowsRenderer() {
             title={useCases.title}
             description={useCases.description}
             useCases={useCases.items}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='workflows-use-cases'
           />
 
@@ -128,7 +128,7 @@ export default function WorkflowsRenderer() {
             badge={capabilities.badge}
             title={capabilities.title}
             featureCategories={capabilities.featureCategories}
-            backgroundColor='bg-slate-50'
+            backgroundColor='bg-section-muted'
             cssPrefix='workflows-features'
             columns={capabilities.columns}
             variant={capabilities.variant}
@@ -138,7 +138,7 @@ export default function WorkflowsRenderer() {
             badge={faq.badge}
             title={faq.title}
             faqs={faq.items}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='workflows-faq'
           />
 

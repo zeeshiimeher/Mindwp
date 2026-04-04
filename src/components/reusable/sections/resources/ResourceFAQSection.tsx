@@ -32,7 +32,7 @@ export function ResourceFAQSection({
   subtitle,
   items,
   className = '',
-  backgroundColor = 'bg-background',
+  backgroundColor = '',
   displayMode = 'accordion',
   showIcon = true,
   icon,

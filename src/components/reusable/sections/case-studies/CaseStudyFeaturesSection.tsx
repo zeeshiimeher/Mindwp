@@ -26,7 +26,7 @@ export function CaseStudyFeaturesSection({
         features: category.features,
       }))}
       columns={3}
-      backgroundColor='bg-background'
+      backgroundColor='bg-section-base'
       cssPrefix='case-study-detail-features'
     />
   );

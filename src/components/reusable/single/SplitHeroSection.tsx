@@ -113,17 +113,12 @@ export function SplitHeroSection({
   secondaryAction,
   visualContent,
   cssPrefix = '',
-  backgroundColor = 'default',
+  backgroundColor = '',
   decorations = [
     { position: 'top-right', color: 'blue', size: 'lg' },
     { position: 'bottom-left', color: 'purple', size: 'lg' },
   ],
 }: SplitHeroSectionProps) {
-  const backgroundClassName =
-    backgroundColor === 'default' ||
-    backgroundColor === 'bg-gradient-to-br from-blue-50 via-white to-purple-50'
-      ? `${BLOCK}--bg-default`
-      : backgroundColor;
 
   const getDecorationColorClass = (color: string) => {
     if (color === 'blue' || color === 'bg-blue-200') return `${BLOCK}__decoration--blue`;
@@ -139,7 +134,7 @@ export function SplitHeroSection({
   };
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundClassName, cssPrefix)}>
+    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       {/* Background decorations */}
       {decorations.map((decoration, index) => (
         <div

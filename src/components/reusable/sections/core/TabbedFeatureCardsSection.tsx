@@ -40,21 +40,15 @@ export function TabbedFeatureCardsSection({
   cards,
   imageGrid,
   showImageGrid = false,
-  backgroundColor = 'bg-muted/30',
+  backgroundColor = '',
   cssPrefix = '',
 }: TabbedFeatureCardsSectionProps) {
-  const backgroundClassName =
-    backgroundColor === 'default' || backgroundColor === 'bg-background'
-      ? `${BLOCK}--bg-default`
-      : backgroundColor === 'bg-white'
-        ? `${BLOCK}--bg-white`
-        : `${BLOCK}--bg-muted`;
 
   const selectedTab = activeTab ?? tabs[0] ?? '';
   const tabGroupName = `${BLOCK}-tabs-${title.toLowerCase().replace(/\s+/g, '-')}`;
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundClassName, cssPrefix)}>
+    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className='l-container'>
         <SectionIntro
           {...(badge !== undefined && { badge })}

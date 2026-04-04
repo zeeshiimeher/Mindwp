@@ -113,7 +113,7 @@ export default function CRMRenderer() {
             title={benefits.title}
             description={benefits.description}
             benefits={benefits.items}
-            backgroundColor='bg-slate-50'
+            backgroundColor='bg-section-muted'
             cssPrefix='crm-benefits'
           />
 
@@ -122,7 +122,7 @@ export default function CRMRenderer() {
             title={useCases.title}
             description={useCases.description}
             useCases={useCases.items}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='crm-use-cases'
             solutionLabel={useCases.solutionLabel}
             iconBackground='bg-gradient-to-br from-blue-500 to-purple-500'
@@ -132,7 +132,7 @@ export default function CRMRenderer() {
             badge={capabilities.badge}
             title={capabilities.title}
             featureCategories={capabilities.featureCategories}
-            backgroundColor='bg-slate-50'
+            backgroundColor='bg-section-muted'
             cssPrefix='crm-features'
           />
 
@@ -141,7 +141,7 @@ export default function CRMRenderer() {
             title={faq.title}
             faqs={faq.items}
             cssPrefix='crm-faq'
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
           />
 
           <FeatureSupportingFrameworksSection featureSlug={crmData.slug} cssPrefix='crm-explore' />

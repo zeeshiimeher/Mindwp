@@ -780,3 +780,520 @@ The `backgroundColor` prop logic has a **fallback passthrough** (`: backgroundCo
 - **28 TSX components** — remove the `backgroundClassName` branching logic, change prop to direct passthrough
 - **~50+ caller sites** across pages/renderers — update values from BEM keywords to utility classes
 - **Zero visual change** if utility values map correctly
+
+---
+
+## 🔵 SYSTEM UI AUDIT (CODE-BASED)
+
+This section is a code-driven UI audit of the current reusable system, template layer, and homepage custom layer.
+
+Scope audited:
+- homepage custom sections in `src/screens/Homepage.tsx`
+- reusable components in `src/components/reusable/*`
+- page templates and renderers in `src/domains/*`
+- system surfaces in `src/components/system/*`
+
+### System Structure
+
+#### A. Core Components (high reuse)
+- `Button` — shared action primitive with 6 visual variants and 3 sizes
+- `SectionIntro` — shared section heading wrapper with badge, title, description, and optional actions
+- `CTASection` — shared conversion panel used as full section and inline panel
+- `Card` — shared card shell used by comparison, FAQ, checklist, and multiple domain sections
+- `IconBenefitCard` — most reused feature/benefit card across homepage, services, and shared sections
+- `FAQSection` — shared accordion shell reused across services, blog, resources, industries, and case studies
+
+#### B. Shared Sections
+- `ProcessStepsSection`
+- `ComparisonSection`
+- `ChecklistCardsSection`
+- `IconBenefitCardsSection`
+- `FeatureChecklistCardsSection`
+- `ServiceSpectrumCardsSection`
+- `DualToneChecklistComparisonSection`
+- `SmartRelatedSection`
+- `JourneyNavigator`
+
+#### C. Page Templates
+- services: renderer-driven, mixed reusable sections plus inline custom layout blocks
+- features: mostly consistent renderer order, but allows custom page-level visual content
+- industries: strongest template consistency; order is enforced in template
+- resources: flexible section array with required-section validation but no enforced order
+- blog: flexible section array with no required-order enforcement
+- case studies: strongest ordered content model via explicit `SECTION_ORDER`
+
+#### D. Homepage Custom Sections
+- hero
+- infrastructure gaps
+- smart website framework
+- trust foundations
+- client journey
+- system capabilities
+- infrastructure layers
+- industries
+- visibility alignment
+- case studies
+- footer CTA
+
+### Component: Button
+
+Issues
+- `btn-primary` and `btn-secondary` add lift and shadow on hover, while `btn-outline`, `btn-outline-light`, and `btn-white` only change background and do not share the same elevation behavior.
+- Variant styling is centralized in CSS, but interactive feedback is not normalized across variants.
+
+Impact
+- Shared. Every page inherits different button feel depending on chosen variant.
+
+Fix Direction
+- Normalize hover/focus feedback across button variants inside `components.css`, keeping the current button API unchanged.
+
+Scope
+- shared
+
+### Component: SectionIntro
+
+Issues
+- `SectionIntro` itself is consistent, but system drift comes from bypassing it: resources use `ResourceSectionHeader`, blog content sections sometimes use raw section markup around `SectionIntro`, and homepage custom sections mix `SectionIntro` with bespoke headings.
+- The component has become the de facto section-heading standard, but it is not applied consistently across all section families.
+
+Impact
+- Shared. Heading rhythm is mostly standardized, but not universal.
+
+Fix Direction
+- Use `SectionIntro` as the default header shell for reusable sections and keep exceptions limited to true special cases.
+
+Scope
+- shared
+
+### Component: CTASection
+
+Issues
+- `CTASection` supports `wrapper='none'`, `includeContainer={false}`, additive `cssPrefix`, and freeform `backgroundColor`, which allows the same CTA pattern to render as a full section, inline panel, or embedded block.
+- That flexibility is useful, but it also creates multiple presentation modes with different spacing and container behavior.
+
+Impact
+- Global. CTA placement and panel framing vary between homepage, service pages, and content templates.
+
+Fix Direction
+- Keep the current API, but define which CTA usages are standard: full-width section, inline panel, or footer CTA.
+
+Scope
+- global
+
+### Component: Card
+
+Issues
+- The primitive is clean and stable, but many sections still wrap it with bespoke spacing, header, and icon conventions instead of converging on a narrower shared card contract.
+
+Impact
+- Shared. Card density, padding rhythm, and icon treatment drift across sections built on the same shell.
+
+Fix Direction
+- Tighten card usage rules in shared sections before introducing more one-off card wrappers.
+
+Scope
+- shared
+
+### Component: IconBenefitCard
+
+Issues
+- This component carries multiple layout and behavior modes: `centered`, `left`, CTA button mode, footer-link mode, heading size variants, description size variants, and icon color variants.
+- The API is still workable, but a single card is currently responsible for too many presentation patterns.
+- Homepage custom sections also duplicate icon-color mapping logic instead of letting `IconBenefitCard` own that concern.
+
+Impact
+- Global. It is one of the most reused visual primitives in the codebase.
+
+Fix Direction
+- Normalize how `IconBenefitCard` is used across shared sections and stop duplicating its icon-treatment logic in homepage custom sections.
+
+Scope
+- global
+
+### Component: FAQSection
+
+Issues
+- `FAQSection` mixes interactive behavior (`accordion` vs `expanded`), layout size (`default` vs `compact`), and background mapping logic in one component.
+- It is reused widely, but each domain still presents it with slightly different framing and background inputs.
+
+Impact
+- Shared. FAQ behavior is reusable, but visual framing varies by template.
+
+Fix Direction
+- Keep the current component, but narrow the allowed presentation patterns per page type.
+
+Scope
+- shared
+
+### Section: Shared Section Shells
+
+Issues
+- Background mapping logic is duplicated across many reusable sections through the same `backgroundColor === 'default' || 'bg-background'` style branches.
+- Column-class branching for `2 | 3 | 4` grid variants is also repeated across many section components.
+- The result is a reusable section layer with repeated logic instead of one consistent section shell behavior.
+
+Impact
+- Global. This affects almost every reusable section family.
+
+Fix Direction
+- Standardize accepted section background inputs and grid-column behavior across shared sections without changing page architecture.
+
+Scope
+- global
+
+### Section: ProcessStepsSection
+
+Issues
+- The section follows the shared shell pattern, but still duplicates background and column branching internally.
+- It is used in homepage, services, and features, so any spacing or interaction drift here propagates broadly.
+
+Impact
+- Shared. High-reuse section with broad surface area.
+
+Fix Direction
+- Treat this as a reference section for shared spacing, card rhythm, and interaction normalization.
+
+Scope
+- shared
+
+### Section: ComparisonSection
+
+Issues
+- Uses the shared `Card` primitive cleanly, but still has its own background branching instead of a common section behavior.
+- It is a representative example of card-based section reuse that is visually close to other grid sections while still maintaining its own layout rules.
+
+Impact
+- Shared. Services, industries, and resources all rely on comparison-style content.
+
+Fix Direction
+- Keep the component structure, but align its background and spacing behavior with the other shared card sections.
+
+Scope
+- shared
+
+### Section: ResourceChecklistSection
+
+Issues
+- `ResourceChecklistSection` uses a separate `ResourceSectionHeader` instead of the main `SectionIntro` system.
+- It also wraps checklist content in a local section shell rather than leaning on the core checklist section pattern.
+
+Impact
+- Shared. Resources keep a visibly separate section-header pattern from the rest of the system.
+
+Fix Direction
+- Reduce resource-specific header drift and bring resource section framing closer to the shared section standard.
+
+Scope
+- shared
+
+### Template: Services
+
+Issues
+- Service pages reuse the same section families, but ordering is not fully standardized at renderer level.
+- `SmartWebsiteSystemsRenderer` mixes reusable sections with several inline custom sections, including value blocks, type grids, concerns, and an inline CTA panel.
+- `LocalSeoAuthorityRenderer` stays closer to the reusable-section pattern and shows a different service-page rhythm.
+
+Impact
+- Shared. Services are visually related, but their mid-page section sequencing is not as consistent as the component inventory suggests.
+
+Fix Direction
+- Standardize the canonical service-page sequence without removing renderer flexibility.
+
+Scope
+- shared
+
+### Template: Features
+
+Issues
+- Feature renderers are structurally more consistent than services, but they allow more inline visual composition inside the renderer layer.
+- `AIChatRenderer` embeds a custom `ChatDemo` card and multiple inline fallback sections using utility-heavy markup, which creates page-level exceptions inside an otherwise reusable template flow.
+
+Impact
+- Shared. The overall feature-page order is stable, but custom visual inserts can bypass the standard section language.
+
+Fix Direction
+- Keep feature order stable and limit renderer-level bespoke visual blocks to intentional feature demos only.
+
+Scope
+- shared
+
+### Template: Industries
+
+Issues
+- Industry pages are the cleanest template family: `IndustryDetailPageTemplate` enforces a stable top-to-bottom sequence.
+- The main drift here is not ordering; it is that some industry sections are domain aliases or wrappers around generic sections, which can hide shared behavior behind domain-specific names.
+
+Impact
+- Shared. Good consistency at template level, moderate naming drift at section layer.
+
+Fix Direction
+- Preserve the template order and keep industry-specific naming aligned with the shared section behaviors underneath.
+
+Scope
+- shared
+
+### Template: Resources
+
+Issues
+- `ResourcePageTemplate` validates required sections, but it does not enforce a canonical order beyond the order supplied in content.
+- Resource pages also maintain their own header treatment in some section types, which makes them feel like a parallel UI system rather than a themed use of the shared one.
+
+Impact
+- Shared. Resource pages are structurally valid, but visual hierarchy depends heavily on author-provided sequence.
+
+Fix Direction
+- Define the preferred resource-section order and align resource-specific headers with the main section-heading system.
+
+Scope
+- shared
+
+### Template: Blog
+
+Issues
+- `BlogPostTemplate` is the loosest page model: it renders sections in content order and does not require a stronger structural sequence.
+- FAQ rendering also hardcodes the title `Frequently Asked Questions` rather than using the section heading as the primary UI label.
+
+Impact
+- Shared. Blog has the most editorial freedom and therefore the highest risk of hierarchy drift.
+
+Fix Direction
+- Keep editorial flexibility, but define a minimal structural expectation for blog posts and reuse heading content more directly.
+
+Scope
+- shared
+
+### Template: Case Studies
+
+Issues
+- `CaseStudyTemplate` has the strongest ordering discipline through `SECTION_ORDER`.
+- The main gap is that required-section validation is minimal compared with the amount of order logic already present.
+
+Impact
+- Shared. Case studies are already the most systematized template family.
+
+Fix Direction
+- Use case studies as the benchmark for ordered template composition in the rest of Phase 7.
+
+Scope
+- shared
+
+### Homepage (Custom)
+
+Issues
+- Homepage is the main exception to the reusable system: most sections are declared inline in `Homepage.tsx` instead of living as reusable domain sections.
+- Homepage duplicates several system behaviors locally, including icon-class mapping in `SmartWebsiteFrameworkSection`, custom section shells, and direct composition of cards, tabs, and CTA panels.
+- Reusable sections are also mixed with extra wrapper sections, which changes spacing and section semantics compared with how the same shared components are used elsewhere.
+- Custom sections such as `TrustFoundationsSection`, `SystemCapabilitiesSection`, `InfrastructureLayersSection`, `VisibilityAlignmentSection`, and `FooterCTASection` define homepage-specific visual rules outside the reusable section layer.
+
+Impact
+- Local with high visibility. Homepage is the most important custom surface and the biggest source of system drift.
+
+Fix Direction
+- Audit homepage as its own custom system first, then align its section framing and shared-component usage with the reusable site standard.
+
+Scope
+- local
+
+## 🔥 SYSTEM PRIORITIES
+
+### Critical (global impact)
+- Repeated reusable-section shell logic: duplicated background and grid-column branching across many section components.
+- CTASection presentation drift: same CTA primitive used as section, inline panel, and footer panel without a consistent placement rule.
+- IconBenefitCard variation pressure: too many presentation modes in one global card primitive.
+
+### Medium (shared impact)
+- Service template order drift between renderers.
+- Resource template sequence freedom and resource-specific header split from `SectionIntro`.
+- Feature renderer-level custom demo blocks and inline fallback sections.
+- FAQSection framing differences across page types.
+- Button hover behavior inconsistency across variants.
+
+### Low (page-level)
+- Blog FAQ title hardcoded instead of using supplied section heading.
+- Homepage wrapper differences around reused sections.
+- Industry naming drift where domain wrappers hide shared core behavior.
+
+## Issue Mapping Summary
+
+### Global
+- shared section shell duplication
+- CTA section framing drift
+- IconBenefitCard variation pressure
+
+### Shared
+- button interaction drift
+- section-heading adoption drift
+- service page order drift
+- resource page header and sequence drift
+- feature renderer custom visual inserts
+- FAQ framing inconsistency
+
+### Local
+- homepage custom-section drift
+- blog heading/FAQ label drift
+- industry naming-layer drift
+
+---
+
+## PHASE 7 SYSTEM DECISION ANALYSIS
+
+### System: Background System
+
+Decision:
+- Replace
+
+Reason:
+- This is repeated system logic, not a component bug.
+
+Execution:
+- Replace per-section background branching with one shared section-surface layer.
+- Standardize all section background inputs to a small fixed set.
+- Remove section-local background mapping from reusable sections.
+
+### System: Card System
+
+Decision:
+- Fix
+
+Reason:
+- The base card exists and is usable. Drift is in contract enforcement.
+
+Execution:
+- Keep `Card` as the primitive.
+- Normalize border, radius, padding, and elevation rules across card-based sections.
+- Upgrade `ServiceSpectrumCardsSection`, `DualToneChecklistComparisonSection`, and `ProcessStepsSection` to the same card contract.
+
+### System: Hover System
+
+Decision:
+- Replace
+
+Reason:
+- Per-component hover tuning will keep the system fragmented.
+
+Execution:
+- Introduce one shared interaction layer with fixed hover tiers and one focus-visible rule set.
+- Move card hover behavior to shared tier classes/tokens.
+- Strip one-off hover values from individual section implementations.
+
+### System: Icon System
+
+Decision:
+- Fix
+
+Reason:
+- The utility base already exists. Adoption is the problem.
+
+Execution:
+- Complete the icon-container utility scale.
+- Standardize icon size/background usage on existing utilities.
+- Remove local icon-class mapping from homepage and section-specific wrappers.
+
+### System: CTA System
+
+Decision:
+- Fix
+
+Reason:
+- `CTASection` is already the correct base component.
+
+Execution:
+- Keep `CTASection`.
+- Lock its allowed modes: full section, inline panel, footer CTA.
+- Standardize CTA placement rules at template level instead of adding new CTA components.
+
+### System: Section Structure
+
+Decision:
+- Replace
+
+Reason:
+- The duplication is structural and repeated too widely to clean up piecemeal.
+
+Execution:
+- Add one shared section-shell decision layer for surface class and grid-column mapping.
+- Remove repeated branching from reusable sections.
+- Keep existing section components, but route them through the same structure rules.
+
+## COMPONENT STRATEGY
+
+### A. Keep & Upgrade
+- `Button`
+- `SectionIntro`
+- `CTASection`
+- `Card`
+- `FAQSection`
+- `ProcessStepsSection`
+- `ComparisonSection`
+- `ChecklistCardsSection`
+- `SmartRelatedSection`
+- `JourneyNavigator`
+
+### B. Refactor (medium changes)
+- `IconBenefitCard`
+- `IconBenefitCardsSection`
+- `ServiceSpectrumCardsSection`
+- `DualToneChecklistComparisonSection`
+- `ResourceChecklistSection`
+- service renderers using inline section markup
+- `ResourcePageTemplate`
+- `BlogPostTemplate`
+
+### C. Replace (critical)
+- homepage inline custom sections inside `Homepage.tsx`
+- per-section background branching layer
+- per-section grid-column branching layer
+- ad hoc hover rules as a system
+
+## SYSTEM LAYERS TO CREATE
+
+Create only these:
+
+1. Section surface layer
+- small shared mapping for approved section backgrounds
+
+2. Interaction layer
+- shared hover tiers
+- shared focus-visible rule
+
+3. Section shell helpers
+- one grid-column mapping helper
+- one section-surface helper
+
+4. One missing icon utility
+- `icon-container-xs`
+
+Do not create new page architectures.
+Do not create a new CTA component.
+Do not create a new card primitive.
+
+## EXECUTION ORDER
+
+1. Build the shared section-surface and section-shell layer.
+2. Build the shared interaction layer for hover and focus states.
+3. Normalize the base primitives: `Button`, `CTASection`, `Card`, `SectionIntro`.
+4. Upgrade high-impact shared sections: `ProcessStepsSection`, `ComparisonSection`, `ChecklistCardsSection`, `ServiceSpectrumCardsSection`, `DualToneChecklistComparisonSection`, `FAQSection`.
+5. Refactor `IconBenefitCard` and `IconBenefitCardsSection`, then standardize icon utility usage.
+6. Standardize template rules in services, resources, blog, and CTA placement.
+7. Rebuild homepage custom sections into explicit home-section components using the finalized system rules.
+8. Finish local cleanup only after the homepage matches the shared system.
+
+## RISK CONTROL
+
+What can break UI
+- background-system replacement can change section rhythm fast
+- hover-tier replacement can change perceived density and card emphasis
+- icon utility normalization can shift layout by a few pixels across many sections
+- CTA mode locking can break spacing in inline CTA placements
+- homepage section extraction can break the most visible page if done before primitives settle
+
+What must be tested first
+- homepage
+- one service detail page using `ServiceSpectrumCardsSection` and `DualToneChecklistComparisonSection`
+- one feature detail page with custom visual content
+- one industry detail page
+- one resource page
+- one blog page
+- one case study page
+- FAQ interaction states
+- CTA section in full-section mode and inline-panel mode

@@ -2369,20 +2369,8 @@
   Technologies section (core/TechnologyCardsSection.tsx)
    ---------------------------------------------------------------------- */
 
-.technologies--bg-default,
-.c-technology-cards-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.technologies--bg-muted,
-.c-technology-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
-.technologies--bg-white,
-.c-technology-cards-section--bg-white {
-  background-color: var(--c-surface);
-}
 
 .technologies__grid,
 .c-technology-cards-section__grid {
@@ -2768,17 +2756,8 @@
    FAQ (reusable/single/FAQSection.tsx)
    ---------------------------------------------------------------------- */
 
-.faq--bg-default {
-  background-color: var(--c-bg);
-}
 
-.faq--bg-white {
-  background-color: var(--c-surface);
-}
 
-.faq--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .faq__card {
   border: 2px solid var(--c-border-alpha);
@@ -2913,9 +2892,6 @@
   background-color: var(--c-surface);
 }
 
-.industry-section--bg-transparent {
-  background-color: transparent;
-}
 
 .infrastructure-layers-foundation-header-description {
   color: var(--c-text-muted);
@@ -2998,25 +2974,9 @@
    Packages section (core/TierCardsSection.tsx)
    ---------------------------------------------------------------------- */
 
-.industry-packages--bg-default,
-.c-tier-cards-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.industry-packages--bg-slate,
-.c-tier-cards-section--bg-slate {
-  background-color: color-mix(in oklab, var(--c-bg) 35%, transparent);
-}
 
-.industry-packages--bg-white,
-.c-tier-cards-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.industry-packages--bg-muted,
-.c-tier-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .industry-packages__grid,
 .c-tier-cards-section__grid {
@@ -3122,20 +3082,8 @@
   Content grid section (core/ContentCardsGridSection.tsx)
    ---------------------------------------------------------------------- */
 
-.grid-section--bg-default,
-.c-content-cards-grid-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.grid-section--bg-white,
-.c-content-cards-grid-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.grid-section--bg-muted,
-.c-content-cards-grid-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .grid-section__grid,
 .c-content-cards-grid-section__grid {
@@ -4548,15 +4496,7 @@ summary.component-library__sidebar-link {
   Platform comparison section (core/OptionComparisonSection.tsx)
    ---------------------------------------------------------------------- */
 
-.platform-comparison--bg-default,
-.c-option-comparison-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.platform-comparison--bg-muted,
-.c-option-comparison-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .platform-comparison__header,
 .c-option-comparison-section__header {
@@ -4702,14 +4642,6 @@ summary.component-library__sidebar-link {
   overflow: hidden;
 }
 
-.feature-hero--bg-default {
-  background: linear-gradient(
-    135deg,
-    var(--color-surface-accent-blue),
-    var(--c-surface),
-    color-mix(in oklab, var(--c-secondary) 8%, var(--c-surface))
-  );
-}
 
 .feature-hero__container {
   position: relative;
@@ -4998,15 +4930,7 @@ summary.component-library__sidebar-link {
   Comparison section (core/ComparisonSection.tsx)
    ---------------------------------------------------------------------- */
 
-.comparison--bg-default,
-.c-comparison-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.comparison--bg-muted,
-.c-comparison-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .comparison__grid,
 .c-comparison-section__grid {
@@ -6418,17 +6342,7 @@ summary.component-library__sidebar-link {
    Hero Section (SimpleHero)
    ---------------------------------------------------------------------- */
 
-.hero-section--bg-default {
-  background: linear-gradient(
-    to bottom,
-    color-mix(in oklab, var(--c-bg) 50%, transparent),
-    var(--c-bg)
-  );
-}
 
-.hero-section--bg-white {
-  background-color: var(--c-surface);
-}
 
 .hero-section__content {
   text-align: center;
@@ -6438,20 +6352,8 @@ summary.component-library__sidebar-link {
   Benefits section (core/IconBenefitCardsSection.tsx)
    ---------------------------------------------------------------------- */
 
-.benefits-section--bg-default,
-.c-icon-benefit-cards-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.benefits-section--bg-white,
-.c-icon-benefit-cards-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.benefits-section--bg-muted,
-.c-icon-benefit-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .benefits-section__grid,
 .c-icon-benefit-cards-section__grid {
@@ -6495,20 +6397,8 @@ summary.component-library__sidebar-link {
   Use cases section (core/ScenarioCardsSection.tsx)
    ---------------------------------------------------------------------- */
 
-.use-cases-section--bg-default,
-.c-scenario-cards-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.use-cases-section--bg-white,
-.c-scenario-cards-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.use-cases-section--bg-muted,
-.c-scenario-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .use-cases-section__grid,
 .c-scenario-cards-section__grid {
@@ -6650,20 +6540,8 @@ summary.component-library__sidebar-link {
   Explore cards section (core/ExploreCardsSection.tsx)
    ---------------------------------------------------------------------- */
 
-.explore-cards-section--bg-default,
-.c-explore-cards-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.explore-cards-section--bg-white,
-.c-explore-cards-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.explore-cards-section--bg-muted,
-.c-explore-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .explore-cards-section__grid,
 .c-explore-cards-section__grid {
@@ -7141,20 +7019,8 @@ summary.component-library__sidebar-link {
   Checklist section (core/ChecklistCardsSection.tsx)
    ---------------------------------------------------------------------- */
 
-.service-checklist-section--bg-default,
-.c-checklist-cards-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.service-checklist-section--bg-white,
-.c-checklist-cards-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.service-checklist-section--bg-muted,
-.c-checklist-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .service-checklist-section__card,
 .c-checklist-cards-section__card {
@@ -7202,20 +7068,8 @@ summary.component-library__sidebar-link {
   Process steps section (core/ProcessStepsSection.tsx)
    ---------------------------------------------------------------------- */
 
-.service-process-steps--bg-default,
-.c-process-steps-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.service-process-steps--bg-white,
-.c-process-steps-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.service-process-steps--bg-muted,
-.c-process-steps-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .service-process-steps__grid,
 .c-process-steps-section__grid {
@@ -7256,20 +7110,8 @@ summary.component-library__sidebar-link {
   Icon cards section (core/IconInfoCardsSection.tsx)
    ---------------------------------------------------------------------- */
 
-.icon-cards-section--bg-default,
-.c-icon-info-cards-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.icon-cards-section--bg-white,
-.c-icon-info-cards-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.icon-cards-section--bg-muted,
-.c-icon-info-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .icon-cards-section__card,
 .c-icon-info-cards-section__card {
@@ -7344,20 +7186,8 @@ summary.component-library__sidebar-link {
   Cards section (core/GenericCardsSection.tsx)
    ---------------------------------------------------------------------- */
 
-.cards-section--bg-default,
-.c-generic-cards-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.cards-section--bg-white,
-.c-generic-cards-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.cards-section--bg-muted,
-.c-generic-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .cards-section__card,
 .c-generic-cards-section__card {
@@ -7418,20 +7248,8 @@ summary.component-library__sidebar-link {
    + core/RelatedCardsSection.tsx (c-related-cards-section)
    ---------------------------------------------------------------------- */
 
-.related-cards-section--bg-default,
-.c-related-cards-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.related-cards-section--bg-white,
-.c-related-cards-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.related-cards-section--bg-muted,
-.c-related-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .related-cards-section__grid,
 .c-related-cards-section__grid {
@@ -7474,20 +7292,8 @@ summary.component-library__sidebar-link {
   Feature categories section (core/FeatureChecklistCardsSection.tsx)
    ---------------------------------------------------------------------- */
 
-.features-section--bg-default,
-.c-feature-checklist-cards-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.features-section--bg-white,
-.c-feature-checklist-cards-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.features-section--bg-muted,
-.c-feature-checklist-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .features-section__grid,
 .c-feature-checklist-cards-section__grid {
@@ -7543,20 +7349,8 @@ summary.component-library__sidebar-link {
   Pain points section (core/ProblemCardsSection.tsx)
    ---------------------------------------------------------------------- */
 
-.pain-points-section--bg-default,
-.c-problem-cards-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.pain-points-section--bg-white,
-.c-problem-cards-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.pain-points-section--bg-muted,
-.c-problem-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .pain-points-section__card,
 .c-problem-cards-section__card {
@@ -9587,17 +9381,8 @@ h3.cta-heading {
   Dual feature cards section (core/DualFeatureCardsSection.tsx)
    ---------------------------------------------------------------------- */
 
-.c-dual-feature-cards-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.c-dual-feature-cards-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.c-dual-feature-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .c-dual-feature-cards-section__grid {
   display: grid;
@@ -9640,17 +9425,8 @@ h3.cta-heading {
   Stacked feature list section (core/StackedFeatureListSection.tsx)
    ---------------------------------------------------------------------- */
 
-.c-stacked-feature-list-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.c-stacked-feature-list-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.c-stacked-feature-list-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .c-stacked-feature-list-section__layout {
   display: grid;
@@ -9989,17 +9765,8 @@ h3.cta-heading {
   Narrative stats section (core/NarrativeStatsSection.tsx)
    ---------------------------------------------------------------------- */
 
-.c-narrative-stats-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.c-narrative-stats-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.c-narrative-stats-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .c-narrative-stats-section__card {
   padding: var(--space-8);
@@ -10065,17 +9832,8 @@ h3.cta-heading {
   Image stats services section (core/ImageStatsServicesSection.tsx)
    ---------------------------------------------------------------------- */
 
-.c-image-stats-services-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.c-image-stats-services-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.c-image-stats-services-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .c-image-stats-services-section__top {
   display: grid;
@@ -10175,17 +9933,8 @@ h3.cta-heading {
   Testimonial spotlight split section (core/TestimonialSpotlightSplitSection.tsx)
    ---------------------------------------------------------------------- */
 
-.c-testimonial-spotlight-split-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.c-testimonial-spotlight-split-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.c-testimonial-spotlight-split-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .c-testimonial-spotlight-split-section__panel {
   padding: var(--space-8);
@@ -10277,17 +10026,8 @@ h3.cta-heading {
   Tabbed feature cards section (core/TabbedFeatureCardsSection.tsx)
    ---------------------------------------------------------------------- */
 
-.c-tabbed-feature-cards-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.c-tabbed-feature-cards-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.c-tabbed-feature-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .c-tabbed-feature-cards-section__tabs {
   width: fit-content;
@@ -10405,17 +10145,8 @@ h3.cta-heading {
   Feature stats mockup section (core/FeatureStatsMockupSection.tsx)
    ---------------------------------------------------------------------- */
 
-.c-feature-stats-mockup-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.c-feature-stats-mockup-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.c-feature-stats-mockup-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .c-feature-stats-mockup-section__shell {
   padding: 0;
@@ -10578,17 +10309,8 @@ h3.cta-heading {
   Step cards split section (core/StepCardsSplitSection.tsx)
    ---------------------------------------------------------------------- */
 
-.c-step-cards-split-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.c-step-cards-split-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.c-step-cards-split-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .c-step-cards-split-section__layout {
   display: grid;
@@ -10651,17 +10373,8 @@ h3.cta-heading {
   Dual tone checklist comparison section (core/DualToneChecklistComparisonSection.tsx)
    ---------------------------------------------------------------------- */
 
-.c-dual-tone-checklist-comparison-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.c-dual-tone-checklist-comparison-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.c-dual-tone-checklist-comparison-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .c-dual-tone-checklist-comparison-section__panel {
   padding: var(--space-6);
@@ -10749,17 +10462,8 @@ h3.cta-heading {
   Image accordion strip section (core/ImageAccordionStripSection.tsx)
    ---------------------------------------------------------------------- */
 
-.c-image-accordion-strip-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.c-image-accordion-strip-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.c-image-accordion-strip-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .c-image-accordion-strip-section__track {
   display: grid;
@@ -10830,17 +10534,8 @@ h3.cta-heading {
   Service spectrum cards section (core/ServiceSpectrumCardsSection.tsx)
    ---------------------------------------------------------------------- */
 
-.c-service-spectrum-cards-section--bg-default {
-  background-color: var(--c-bg);
-}
 
-.c-service-spectrum-cards-section--bg-white {
-  background-color: var(--c-surface);
-}
 
-.c-service-spectrum-cards-section--bg-muted {
-  background-color: color-mix(in oklab, var(--c-bg) 30%, transparent);
-}
 
 .c-service-spectrum-cards-section__actions {
   margin: var(--space-5) 0 var(--space-6);

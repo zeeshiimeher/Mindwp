@@ -61,7 +61,7 @@ export function UnifiedCommunicationSystemRenderer({
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='unified-communication-foundation'
           />
 
@@ -161,7 +161,7 @@ export function UnifiedCommunicationSystemRenderer({
               },
             ]}
             columns={4}
-            backgroundColor='bg-background'
+            backgroundColor='bg-section-base'
             cssPrefix='unified-communication-process'
           />
 
@@ -198,7 +198,7 @@ export function UnifiedCommunicationSystemRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-background'
+            backgroundColor='bg-section-base'
             cssPrefix='unified-communication-qualification'
           />
 

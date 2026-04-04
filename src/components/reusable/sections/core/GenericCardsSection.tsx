@@ -34,20 +34,10 @@ export function GenericCardsSection({
   description,
   items,
   columns = 3,
-  backgroundColor = 'white',
+  backgroundColor = '',
   cssPrefix = '',
   variant = 'default',
 }: CardsSectionProps) {
-  const mutedBackgrounds = ['muted', 'bg-muted', 'bg-muted/30', 'bg-muted/50'] as const;
-
-  const backgroundClassName =
-    backgroundColor === 'default' || backgroundColor === 'bg-background'
-      ? `${BLOCK}--bg-default`
-      : backgroundColor === 'white' || backgroundColor === 'bg-white'
-        ? `${BLOCK}--bg-white`
-        : mutedBackgrounds.includes(backgroundColor as (typeof mutedBackgrounds)[number])
-          ? `${BLOCK}--bg-muted`
-          : backgroundColor;
 
   const columnsClass =
     columns === 2
@@ -60,7 +50,7 @@ export function GenericCardsSection({
     variant === 'bordered' ? `${BLOCK}__card--bordered` : `${BLOCK}__card--default`;
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundClassName, cssPrefix)}>
+    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className='l-container'>
         <SectionIntro
           {...(badge !== undefined && { badge })}

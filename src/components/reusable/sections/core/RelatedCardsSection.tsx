@@ -125,7 +125,7 @@ export function RelatedCardsSection({
   primaryAction,
   secondaryAction,
   items,
-  backgroundColor = 'default',
+  backgroundColor = '',
   cssPrefix = '',
   showArrows = true,
   styleVariant = 'default',
@@ -139,17 +139,6 @@ export function RelatedCardsSection({
 
   const isStyle1 = resolvedVariant === 'style1';
   const activeBlock = isStyle1 ? EXPLORE_BLOCK : BLOCK;
-
-  const mutedBackgrounds = ['muted', 'bg-muted', 'bg-muted/30', 'bg-muted/50'] as const;
-
-  const backgroundClassName =
-    backgroundColor === 'default' || backgroundColor === 'bg-background'
-      ? `${activeBlock}--bg-default`
-      : backgroundColor === 'white' || backgroundColor === 'bg-white'
-        ? `${activeBlock}--bg-white`
-        : mutedBackgrounds.includes(backgroundColor as (typeof mutedBackgrounds)[number])
-          ? `${activeBlock}--bg-muted`
-          : backgroundColor;
 
   const columnsClass = `${activeBlock}__grid--cols-3`;
 
@@ -197,7 +186,7 @@ export function RelatedCardsSection({
   };
 
   return (
-    <section className={cn(activeBlock, 'l-section', backgroundClassName, cssPrefix)}>
+    <section className={cn(activeBlock, 'l-section', backgroundColor, cssPrefix)}>
       <div className='l-container'>
         <SectionIntro
           {...(badge !== undefined && { badge })}

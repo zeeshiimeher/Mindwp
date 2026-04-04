@@ -31,19 +31,13 @@ export function ContentCardsGridSection({
   description,
   items,
   columns = 4,
-  backgroundColor = 'bg-white',
+  backgroundColor = '',
   iconType = 'checkmark',
   cssPrefix = '',
 }: ContentGridSectionProps) {
-  const backgroundClassName =
-    backgroundColor === 'bg-white'
-      ? `${BLOCK}--bg-white`
-      : backgroundColor === 'bg-muted/30'
-        ? `${BLOCK}--bg-muted`
-        : backgroundColor;
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundClassName, cssPrefix)}>
+    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className='l-container'>
         {(badge || title) && (
           <SectionIntro

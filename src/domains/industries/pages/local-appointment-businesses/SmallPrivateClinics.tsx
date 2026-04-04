@@ -54,7 +54,7 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing private clinic reviews and trust proof',
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'small-private-clinics-image-strip',
   };
 
@@ -248,7 +248,7 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'small-private-clinics-workflow-examples',
   };
 
@@ -300,7 +300,7 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-muted/30',
+    backgroundColor: 'bg-section-muted',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

@@ -138,7 +138,7 @@ export default function AIChatRenderer() {
               title={process.title}
               description={process.description}
               steps={process.steps}
-              backgroundColor='bg-white'
+              backgroundColor='bg-section-surface'
               cssPrefix='ai-chat-process'
             />
           </ErrorBoundary>
@@ -159,7 +159,7 @@ export default function AIChatRenderer() {
               title={benefits.title}
               description={benefits.description}
               benefits={benefits.items}
-              backgroundColor='bg-slate-50'
+              backgroundColor='bg-section-muted'
               cssPrefix='ai-chat-benefits'
             />
           </ErrorBoundary>
@@ -180,7 +180,7 @@ export default function AIChatRenderer() {
               title={useCases.title}
               description={useCases.description}
               useCases={useCases.items}
-              backgroundColor='bg-white'
+              backgroundColor='bg-section-surface'
               cssPrefix='ai-chat-use-cases'
               scenarioLabel={useCases.scenarioLabel}
               solutionLabel={useCases.solutionLabel}
@@ -203,7 +203,7 @@ export default function AIChatRenderer() {
               title={capabilities.title}
               description={capabilities.description}
               featureCategories={capabilities.featureCategories}
-              backgroundColor='bg-slate-50'
+              backgroundColor='bg-section-muted'
               cssPrefix='ai-chat-features'
             />
           </ErrorBoundary>
@@ -224,7 +224,7 @@ export default function AIChatRenderer() {
               title={faq.title}
               description={faq.description}
               faqs={faq.items}
-              backgroundColor='bg-white'
+              backgroundColor='bg-section-surface'
               cssPrefix='ai-chat-faq'
             />
           </ErrorBoundary>

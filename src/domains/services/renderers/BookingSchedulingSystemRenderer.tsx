@@ -59,7 +59,7 @@ export function BookingSchedulingSystemRenderer({
             painPoints={foundation.painPoints}
             currentStateLabel={foundation.currentStateLabel}
             structuredStateLabel={foundation.structuredStateLabel}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='booking-scheduling-foundation'
           />
 
@@ -68,7 +68,7 @@ export function BookingSchedulingSystemRenderer({
             title={bookingLayer.title}
             description={bookingLayer.description}
             cards={bookingLayer.cards}
-            backgroundColor='bg-muted/30'
+            backgroundColor='bg-section-muted'
             cssPrefix='booking-scheduling-layer'
           />
 
@@ -80,7 +80,7 @@ export function BookingSchedulingSystemRenderer({
             tagline={positioning.tagline}
             narrativeTitle={positioning.narrativeTitle}
             narrativeParagraphs={positioning.narrativeParagraphs}
-            backgroundColor='bg-background'
+            backgroundColor='bg-section-base'
             cssPrefix='booking-scheduling-positioning'
           />
 
@@ -90,7 +90,7 @@ export function BookingSchedulingSystemRenderer({
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='booking-scheduling-process'
           />
 
@@ -104,7 +104,7 @@ export function BookingSchedulingSystemRenderer({
               features: service.items,
             }))}
             columns={3}
-            backgroundColor='bg-background'
+            backgroundColor='bg-section-base'
             cssPrefix='booking-scheduling-capabilities'
           />
 
@@ -119,7 +119,7 @@ export function BookingSchedulingSystemRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='booking-scheduling-qualification'
           />
 

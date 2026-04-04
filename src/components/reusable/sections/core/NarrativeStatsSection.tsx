@@ -33,18 +33,12 @@ export function NarrativeStatsSection({
   primaryAction,
   secondaryAction,
   stats,
-  backgroundColor = 'bg-white',
+  backgroundColor = '',
   cssPrefix = '',
 }: NarrativeStatsSectionProps) {
-  const backgroundClassName =
-    backgroundColor === 'default' || backgroundColor === 'bg-background'
-      ? `${BLOCK}--bg-default`
-      : backgroundColor === 'bg-muted/30'
-        ? `${BLOCK}--bg-muted`
-        : `${BLOCK}--bg-white`;
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundClassName, cssPrefix)}>
+    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className='l-container'>
         <SectionIntro
           {...(badge !== undefined && { badge })}

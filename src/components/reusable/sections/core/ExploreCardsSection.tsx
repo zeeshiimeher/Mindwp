@@ -36,7 +36,7 @@ export function ExploreCardsSection({
   title,
   description,
   cards = [],
-  backgroundColor = 'white',
+  backgroundColor = '',
   cssPrefix = '',
   ctaLabel = 'Learn More',
   columns = 3,
@@ -63,17 +63,6 @@ export function ExploreCardsSection({
     return 'primary';
   };
 
-  const mutedBackgrounds = ['bg-muted', 'bg-muted/30', 'bg-muted/50'] as const;
-
-  const backgroundClassName =
-    backgroundColor === 'default' || backgroundColor === 'bg-background'
-      ? `${BLOCK}--bg-default`
-      : backgroundColor === 'bg-white'
-        ? `${BLOCK}--bg-white`
-        : mutedBackgrounds.includes(backgroundColor as (typeof mutedBackgrounds)[number])
-          ? `${BLOCK}--bg-muted`
-          : backgroundColor;
-
   const columnsClass =
     columns === 1
       ? `${BLOCK}__grid--cols-1`
@@ -82,7 +71,7 @@ export function ExploreCardsSection({
         : `${BLOCK}__grid--cols-3`;
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundClassName, cssPrefix)}>
+    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className='l-container'>
         <SectionIntro
           {...(badge !== undefined && { badge })}

@@ -65,7 +65,7 @@ export const woocommercePage = {
       title: 'The store should match how you sell and fulfil — not the other way around',
       description:
         'This is not plugin-first delivery. Catalog management, checkout, fulfilment, and reporting are implemented as connected commerce layers rather than disconnected add-ons.',
-      backgroundColor: 'bg-white' as const,
+      backgroundColor: 'bg-section-surface' as const,
       cssPrefix: 'woocommerce-benefits',
       items: [
         {
@@ -102,7 +102,7 @@ export const woocommercePage = {
       description:
         'WordPress with WooCommerce supports ownership, adaptability, and integration. It works well for businesses that treat the store as part of their operating system rather than just a sales page.',
       columns: 4 as const,
-      backgroundColor: 'bg-section-light' as const,
+      backgroundColor: 'bg-section-muted' as const,
       cssPrefix: 'woocommerce-why',
       items: [
         {
@@ -130,7 +130,7 @@ export const woocommercePage = {
       badge: 'Implementation Scope',
       title: 'Structural Components of Commerce Infrastructure',
       columns: 3 as const,
-      backgroundColor: 'bg-white' as const,
+      backgroundColor: 'bg-section-surface' as const,
       cssPrefix: 'woocommerce-features',
       categories: [
         {

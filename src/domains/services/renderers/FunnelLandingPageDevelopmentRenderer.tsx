@@ -55,7 +55,7 @@ export function FunnelLandingPageDevelopmentRenderer({
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='funnel-landing-development-foundation'
           />
 
@@ -127,7 +127,7 @@ export function FunnelLandingPageDevelopmentRenderer({
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-background'
+            backgroundColor='bg-section-base'
             cssPrefix='funnel-landing-development-process'
           />
 
@@ -142,7 +142,7 @@ export function FunnelLandingPageDevelopmentRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='funnel-landing-development-qualification'
           />
 

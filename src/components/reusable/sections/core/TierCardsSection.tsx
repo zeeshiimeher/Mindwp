@@ -34,19 +34,11 @@ export function TierCardsSection({
   description,
   packages,
   cssPrefix = '',
-  backgroundColor = 'bg-slate-50',
+  backgroundColor = '',
 }: TierCardsSectionProps) {
-  const backgroundClassName =
-    backgroundColor === 'bg-slate-50'
-      ? `${BLOCK}--bg-slate`
-      : backgroundColor === 'bg-white'
-        ? `${BLOCK}--bg-white`
-        : backgroundColor === 'bg-muted/30'
-          ? `${BLOCK}--bg-muted`
-          : backgroundColor;
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundClassName, cssPrefix)}>
+    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className='l-container'>
         {(badge || title || description) && (
           <SectionIntro

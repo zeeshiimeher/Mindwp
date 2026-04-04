@@ -134,7 +134,6 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               title={data.sections.coreLayer.header.title}
               description={data.sections.coreLayer.header.description}
               cards={data.sections.coreLayer.cards}
-              backgroundColor=''
               cssPrefix='smart-websites-core-layer'
             />
           )}
@@ -151,7 +150,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                 title: item.title,
                 description: item.description,
               }))}
-              backgroundColor='bg-background'
+              backgroundColor='bg-section-base'
               cssPrefix='smart-websites-visibility-foundations'
             />
           )}
@@ -244,7 +243,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                 title: optionalSections.qualification.notForTitle,
                 items: optionalSections.qualification.notFor,
               }}
-              backgroundColor='bg-muted/30'
+              backgroundColor='bg-section-muted'
               cssPrefix='smart-websites-qualification'
             />
           )}

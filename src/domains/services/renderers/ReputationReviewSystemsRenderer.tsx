@@ -57,7 +57,7 @@ export function ReputationReviewSystemsRenderer({
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='reputation-review-foundation'
           />
 
@@ -66,7 +66,7 @@ export function ReputationReviewSystemsRenderer({
             title={reviewSystem.title}
             description={reviewSystem.description}
             cards={reviewSystem.cards}
-            backgroundColor='bg-muted/30'
+            backgroundColor='bg-section-muted'
             cssPrefix='reputation-review-system'
           />
 
@@ -78,7 +78,7 @@ export function ReputationReviewSystemsRenderer({
             tagline={positioning.tagline}
             narrativeTitle={positioning.narrativeTitle}
             narrativeParagraphs={positioning.narrativeParagraphs}
-            backgroundColor='bg-background'
+            backgroundColor='bg-section-base'
             cssPrefix='reputation-review-positioning'
           />
 
@@ -88,7 +88,7 @@ export function ReputationReviewSystemsRenderer({
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='reputation-review-process'
           />
 
@@ -102,7 +102,7 @@ export function ReputationReviewSystemsRenderer({
               features: service.items,
             }))}
             columns={3}
-            backgroundColor='bg-background'
+            backgroundColor='bg-section-base'
             cssPrefix='reputation-review-capabilities'
           />
 
@@ -117,7 +117,7 @@ export function ReputationReviewSystemsRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='reputation-review-qualification'
           />
 

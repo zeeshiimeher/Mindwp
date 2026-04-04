@@ -56,7 +56,7 @@ export function LeadReactivationSystemRenderer({
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='lead-reactivation-foundation'
           />
 
@@ -116,7 +116,7 @@ export function LeadReactivationSystemRenderer({
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='lead-reactivation-process'
           />
 
@@ -153,7 +153,7 @@ export function LeadReactivationSystemRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='lead-reactivation-qualification'
           />
 

@@ -55,7 +55,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing HVAC maintenance follow-up',
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'hvac-image-strip',
   };
 
@@ -257,7 +257,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'hvac-workflow-examples',
   };
 
@@ -300,7 +300,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-muted/30',
+    backgroundColor: 'bg-section-muted',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

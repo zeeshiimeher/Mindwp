@@ -30,19 +30,9 @@ export function ChecklistCardsSection({
   items,
   columns = 2,
   cssPrefix = '',
-  backgroundColor = 'muted',
+  backgroundColor = '',
   cardClassName = '',
 }: ChecklistSectionProps) {
-  const mutedBackgrounds = ['muted', 'bg-muted', 'bg-muted/30', 'bg-muted/50'] as const;
-
-  const backgroundClassName =
-    backgroundColor === 'default' || backgroundColor === 'bg-background'
-      ? `${BLOCK}--bg-default`
-      : backgroundColor === 'white' || backgroundColor === 'bg-white'
-        ? `${BLOCK}--bg-white`
-        : mutedBackgrounds.includes(backgroundColor as (typeof mutedBackgrounds)[number])
-          ? `${BLOCK}--bg-muted`
-          : backgroundColor;
 
   const columnsClass =
     columns === 2
@@ -52,7 +42,7 @@ export function ChecklistCardsSection({
         : `${BLOCK}__list--cols-4`;
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundClassName, cssPrefix)}>
+    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className={cn(`${BLOCK}__container`, 'l-container')}>
         {(badge || title || description) && (
           <SectionIntro

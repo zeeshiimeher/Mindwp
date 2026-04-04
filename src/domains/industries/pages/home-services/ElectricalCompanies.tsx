@@ -54,7 +54,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing electrical reviews and trust signals',
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'electrical-image-strip',
   };
 
@@ -252,7 +252,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'electrical-workflow-examples',
   };
 
@@ -295,7 +295,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-muted/30',
+    backgroundColor: 'bg-section-muted',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

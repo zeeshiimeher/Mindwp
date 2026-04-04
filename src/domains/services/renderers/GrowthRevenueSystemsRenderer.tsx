@@ -58,7 +58,7 @@ export function GrowthRevenueSystemsRenderer({ data, slug }: GrowthRevenueSystem
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='technical-audit-foundation'
           />
 
@@ -156,7 +156,7 @@ export function GrowthRevenueSystemsRenderer({ data, slug }: GrowthRevenueSystem
             narrativeTitle={bridge.narrativeTitle}
             narrativeParagraphs={bridge.narrativeParagraphs}
             features={bridge.features}
-            backgroundColor='bg-section-light'
+            backgroundColor='bg-section-muted'
             cssPrefix='technical-audit-bridge'
           />
 
@@ -171,7 +171,7 @@ export function GrowthRevenueSystemsRenderer({ data, slug }: GrowthRevenueSystem
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='technical-audit-qualification'
           />
 

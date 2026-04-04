@@ -25,25 +25,15 @@ export function OperationalShiftCardsSection({
   title,
   description,
   painPoints,
-  backgroundColor = 'bg-muted/50',
+  backgroundColor = '',
   cssPrefix = '',
   currentStateLabel = 'Common starting point',
   structuredStateLabel = 'What the structured version changes',
 }: OperationalShiftCardsSectionProps) {
-  const mutedBackgrounds = ['bg-muted', 'bg-muted/30', 'bg-muted/50'] as const;
-
-  const backgroundClassName =
-    backgroundColor === 'default' || backgroundColor === 'bg-background'
-      ? `${BLOCK}--bg-default`
-      : backgroundColor === 'bg-white'
-        ? `${BLOCK}--bg-white`
-        : mutedBackgrounds.includes(backgroundColor as (typeof mutedBackgrounds)[number])
-          ? `${BLOCK}--bg-muted`
-          : backgroundColor;
 
   return (
     <section
-      className={cn(BLOCK, 'l-section', 'l-section--compact', backgroundClassName, cssPrefix)}
+      className={cn(BLOCK, 'l-section', 'l-section--compact', backgroundColor, cssPrefix)}
     >
       <div className='l-container'>
         <SectionIntro

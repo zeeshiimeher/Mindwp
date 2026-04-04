@@ -110,7 +110,7 @@ export default function ReputationRenderer() {
             title={process.title}
             description={process.description}
             steps={process.steps}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='reputation-process'
           />
 
@@ -119,7 +119,7 @@ export default function ReputationRenderer() {
             title={benefits.title}
             description={benefits.description}
             benefits={benefits.items}
-            backgroundColor='bg-slate-50'
+            backgroundColor='bg-section-muted'
             cssPrefix='reputation-benefits'
           />
 
@@ -128,7 +128,7 @@ export default function ReputationRenderer() {
             title={useCases.title}
             description={useCases.description}
             useCases={useCases.items}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='reputation-use-cases'
             solutionLabel={useCases.solutionLabel}
             iconBackground='bg-gradient-to-br from-yellow-500 to-orange-500'
@@ -139,7 +139,7 @@ export default function ReputationRenderer() {
             title={capabilities.title}
             description={capabilities.description}
             featureCategories={capabilities.featureCategories}
-            backgroundColor='bg-slate-50'
+            backgroundColor='bg-section-muted'
             cssPrefix='reputation-features'
           />
 
@@ -173,7 +173,7 @@ export default function ReputationRenderer() {
             title={faq.title}
             description={faq.description}
             faqs={faq.items}
-            backgroundColor='bg-slate-50'
+            backgroundColor='bg-section-muted'
             cssPrefix='reputation-faq'
           />
 

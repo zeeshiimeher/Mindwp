@@ -28,18 +28,12 @@ export function StepCardsSplitSection({
   primaryAction,
   secondaryAction,
   steps,
-  backgroundColor = 'bg-muted/30',
+  backgroundColor = '',
   cssPrefix = '',
 }: StepCardsSplitSectionProps) {
-  const backgroundClassName =
-    backgroundColor === 'default' || backgroundColor === 'bg-background'
-      ? `${BLOCK}--bg-default`
-      : backgroundColor === 'bg-white'
-        ? `${BLOCK}--bg-white`
-        : `${BLOCK}--bg-muted`;
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundClassName, cssPrefix)}>
+    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className='l-container'>
         <div className={`${BLOCK}__layout`}>
           <SectionIntro

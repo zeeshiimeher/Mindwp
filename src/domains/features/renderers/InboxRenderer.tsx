@@ -85,7 +85,7 @@ export default function InboxRenderer() {
             title={channels.title}
             description={channels.description}
             items={channels.items}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='channels-section'
           />
 
@@ -95,7 +95,7 @@ export default function InboxRenderer() {
             description={process.description}
             steps={process.steps}
             columns={4}
-            backgroundColor='bg-muted/50'
+            backgroundColor='bg-section-muted'
             cssPrefix='inbox-process'
           />
 
@@ -104,7 +104,7 @@ export default function InboxRenderer() {
             title={benefits.title}
             description={benefits.description}
             benefits={benefits.items}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='inbox-benefits'
           />
 
@@ -112,7 +112,7 @@ export default function InboxRenderer() {
             badge={painPoints.badge}
             title={painPoints.title}
             painPoints={painPoints.items}
-            backgroundColor='bg-muted/50'
+            backgroundColor='bg-section-muted'
             cssPrefix='inbox-pain-points'
           />
 
@@ -120,7 +120,7 @@ export default function InboxRenderer() {
             badge={useCases.badge}
             title={useCases.title}
             useCases={useCases.items}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='inbox-use-cases'
           />
 
@@ -129,7 +129,7 @@ export default function InboxRenderer() {
             title={faq.title}
             description={faq.description}
             faqs={faq.items}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='inbox-faq'
           />
 

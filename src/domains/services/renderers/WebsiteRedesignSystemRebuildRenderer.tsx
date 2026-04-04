@@ -60,7 +60,7 @@ export function WebsiteRedesignSystemRebuildRenderer({
             painPoints={foundation.painPoints}
             currentStateLabel={foundation.currentStateLabel}
             structuredStateLabel={foundation.structuredStateLabel}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='website-redesign-rebuild-foundation'
           />
 
@@ -118,7 +118,7 @@ export function WebsiteRedesignSystemRebuildRenderer({
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='website-redesign-rebuild-process'
           />
 
@@ -155,7 +155,7 @@ export function WebsiteRedesignSystemRebuildRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='website-redesign-rebuild-qualification'
           />
 

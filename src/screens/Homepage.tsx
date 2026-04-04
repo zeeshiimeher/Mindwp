@@ -60,7 +60,7 @@ export default function Homepage() {
               steps={implementationSectionData.steps}
               columns={4}
               cssPrefix='implementation-principles'
-              backgroundColor='white'
+              backgroundColor='bg-section-surface'
             />
           </section>
           <Suspense fallback={<SectionSuspenseFallback />}>
@@ -625,7 +625,6 @@ function IndustriesSection() {
         iconType: 'secondary' as const,
       }))}
       cssPrefix='industry-section'
-      backgroundColor='industry-section--bg-transparent'
       columns={4}
       footer={
         <div className='industry-section-cta'>

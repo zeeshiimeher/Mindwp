@@ -316,7 +316,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               description={faqData.subheading}
               faqs={faqs}
               cssPrefix='resource-faq'
-              backgroundColor='bg-background'
+              backgroundColor='bg-section-base'
               displayMode='accordion'
             />
           </div>

@@ -20,7 +20,7 @@ export function CaseStudyFAQSection({
   title = 'FAQ',
   description,
   items,
-  backgroundColor = 'bg-background',
+  backgroundColor = '',
 }: CaseStudyFAQSectionProps) {
   return (
     <FAQSection

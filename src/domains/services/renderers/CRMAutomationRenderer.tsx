@@ -58,7 +58,7 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
             painPoints={positioning.painPoints}
             currentStateLabel={positioning.currentStateLabel}
             structuredStateLabel={positioning.structuredStateLabel}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='crm-automation-positioning'
           />
           {/* What You Can Do */}

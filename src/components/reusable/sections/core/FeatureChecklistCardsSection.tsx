@@ -34,22 +34,12 @@ export function FeatureChecklistCardsSection({
   title,
   description,
   featureCategories = [],
-  backgroundColor = 'default',
+  backgroundColor = '',
   cssPrefix = '',
   columns = 4,
   variant = 'default',
   align = 'left',
 }: FeatureCategoriesSectionProps) {
-  const mutedBackgrounds = ['muted', 'bg-muted', 'bg-muted/30', 'bg-muted/50'] as const;
-
-  const backgroundClassName =
-    backgroundColor === 'default' || backgroundColor === 'bg-background'
-      ? `${BLOCK}--bg-default`
-      : backgroundColor === 'white' || backgroundColor === 'bg-white'
-        ? `${BLOCK}--bg-white`
-        : mutedBackgrounds.includes(backgroundColor as (typeof mutedBackgrounds)[number])
-          ? `${BLOCK}--bg-muted`
-          : backgroundColor;
 
   const columnsClass =
     columns === 2
@@ -59,7 +49,7 @@ export function FeatureChecklistCardsSection({
         : `${BLOCK}__grid--cols-4`;
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundClassName, cssPrefix)}>
+    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className='l-container'>
         <SectionIntro
           {...(badge !== undefined && { badge })}

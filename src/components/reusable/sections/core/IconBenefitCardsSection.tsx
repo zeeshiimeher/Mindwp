@@ -40,27 +40,17 @@ export function IconBenefitCardsSection({
   description,
   benefits,
   columns = 3,
-  backgroundColor = 'default',
+  backgroundColor = '',
   cssPrefix = '',
   wrapper = 'section',
   footer,
 }: BenefitsSectionProps) {
   const Wrapper = wrapper === 'section' ? 'section' : 'div';
 
-  const mutedBackgrounds = ['bg-muted', 'bg-muted/30', 'bg-muted/50'] as const;
-  const backgroundClassName =
-    backgroundColor === 'default' || backgroundColor === 'bg-background'
-      ? `${BLOCK}--bg-default`
-      : backgroundColor === 'bg-white'
-        ? `${BLOCK}--bg-white`
-        : mutedBackgrounds.includes(backgroundColor as (typeof mutedBackgrounds)[number])
-          ? `${BLOCK}--bg-muted`
-          : backgroundColor;
-
   const wrapperClasses = cn(
     BLOCK,
     wrapper === 'section' && 'l-section',
-    backgroundClassName,
+    backgroundColor,
     className,
     cssPrefix
   );

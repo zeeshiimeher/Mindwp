@@ -53,7 +53,7 @@ export function FAQSection({
   description,
   faqs,
   cssPrefix = '',
-  backgroundColor = 'bg-background',
+  backgroundColor = '',
   displayMode = 'accordion',
   showIcon = true,
   icon: IconComponent = AlertCircle,
@@ -86,17 +86,8 @@ export function FAQSection({
   const containerClasses = variant === 'compact' ? 'l-max-w-3xl' : '';
   const cardSpacing = 'l-stack';
 
-  const backgroundClassName =
-    backgroundColor === 'bg-background'
-      ? `${BLOCK}--bg-default`
-      : backgroundColor === 'bg-white'
-        ? `${BLOCK}--bg-white`
-        : backgroundColor === 'bg-muted/30'
-          ? `${BLOCK}--bg-muted`
-          : backgroundColor;
-
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundClassName, cssPrefix)}>
+    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className={`${BLOCK}-container l-container ${containerClasses}`}>
         {(badge || title || description) && (
           <SectionIntro

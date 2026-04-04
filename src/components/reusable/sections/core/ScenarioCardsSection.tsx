@@ -31,24 +31,15 @@ export function ScenarioCardsSection({
   title,
   description,
   useCases,
-  backgroundColor = 'default',
+  backgroundColor = '',
   cssPrefix = '',
   scenarioLabel = 'Scenario',
   solutionLabel = 'Feature',
   iconBackground = '',
 }: UseCasesSectionProps) {
-  const mutedBackgrounds = ['bg-muted', 'bg-muted/30', 'bg-muted/50'] as const;
-  const backgroundClassName =
-    backgroundColor === 'default' || backgroundColor === 'bg-background'
-      ? `${BLOCK}--bg-default`
-      : backgroundColor === 'bg-white'
-        ? `${BLOCK}--bg-white`
-        : mutedBackgrounds.includes(backgroundColor as (typeof mutedBackgrounds)[number])
-          ? `${BLOCK}--bg-muted`
-          : backgroundColor;
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundClassName, cssPrefix)}>
+    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className={cn(`${BLOCK}__container`, 'l-container')}>
         <SectionIntro
           {...(badge !== undefined && { badge })}

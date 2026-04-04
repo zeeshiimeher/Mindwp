@@ -55,7 +55,7 @@ function buildHomeInspectorsIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing home inspection reviews and trust signals',
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'home-inspectors-image-strip',
   };
 
@@ -251,7 +251,7 @@ function buildHomeInspectorsIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'home-inspectors-workflow-examples',
   };
 
@@ -302,7 +302,7 @@ function buildHomeInspectorsIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-muted/30',
+    backgroundColor: 'bg-section-muted',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

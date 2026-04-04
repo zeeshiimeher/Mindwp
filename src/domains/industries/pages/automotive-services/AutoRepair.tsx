@@ -55,7 +55,7 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing auto repair reviews and return visits',
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'auto-repair-image-strip',
   };
 
@@ -266,7 +266,7 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'auto-repair-workflow-examples',
   };
 
@@ -317,7 +317,7 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-muted/30',
+    backgroundColor: 'bg-section-muted',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

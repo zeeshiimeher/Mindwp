@@ -101,7 +101,7 @@ export default function CalendarsRenderer() {
             title={process.title}
             description={process.description}
             steps={process.steps}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='calendars-process'
           />
 
@@ -110,7 +110,7 @@ export default function CalendarsRenderer() {
             title={benefits.title}
             description={benefits.description}
             benefits={benefits.items}
-            backgroundColor='bg-slate-50'
+            backgroundColor='bg-section-muted'
             cssPrefix='calendars-benefits'
           />
 
@@ -119,7 +119,7 @@ export default function CalendarsRenderer() {
             title={useCases.title}
             description={useCases.description}
             useCases={useCases.items}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='calendars-use-cases'
           />
 
@@ -127,7 +127,7 @@ export default function CalendarsRenderer() {
             badge={capabilities.badge}
             title={capabilities.title}
             featureCategories={capabilities.featureCategories}
-            backgroundColor='bg-slate-50'
+            backgroundColor='bg-section-muted'
             cssPrefix='calendars-features'
             columns={capabilities.columns}
             variant={capabilities.variant}
@@ -138,7 +138,7 @@ export default function CalendarsRenderer() {
             title={faq.title}
             description={faq.description}
             faqs={faq.items}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='calendars-faq'
           />
 

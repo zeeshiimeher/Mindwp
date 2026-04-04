@@ -58,7 +58,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
               painPoints={misconceptions.painPoints}
               currentStateLabel={misconceptions.currentStateLabel}
               structuredStateLabel={misconceptions.structuredStateLabel}
-              backgroundColor='bg-white'
+              backgroundColor='bg-section-surface'
               cssPrefix='website-seo-misconceptions'
             />
           )}
@@ -72,7 +72,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
               tagline={why.tagline}
               narrativeTitle={why.narrativeTitle}
               narrativeParagraphs={why.narrativeParagraphs}
-              backgroundColor='bg-background'
+              backgroundColor='bg-section-base'
               cssPrefix='website-seo-why'
             />
           )}
@@ -83,7 +83,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
               title={integrations.title}
               description={integrations.description}
               cards={integrations.cards}
-              backgroundColor='bg-muted/30'
+              backgroundColor='bg-section-muted'
               cssPrefix='website-seo-integrations'
             />
           )}
@@ -95,7 +95,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
               description={processSection.description}
               steps={processSection.steps}
               columns={4}
-              backgroundColor='bg-white'
+              backgroundColor='bg-section-surface'
               cssPrefix='website-seo-process'
             />
           )}
@@ -111,7 +111,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
                 features: service.items,
               }))}
               columns={3}
-              backgroundColor='bg-background'
+              backgroundColor='bg-section-base'
               cssPrefix='website-seo-services'
             />
           )}
@@ -128,7 +128,7 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
                 title: qualification.notDesignedTitle,
                 items: qualification.notDesignedItems,
               }}
-              backgroundColor='bg-white'
+              backgroundColor='bg-section-surface'
               cssPrefix='website-seo-qualification'
             />
           )}

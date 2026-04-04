@@ -55,7 +55,7 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing aesthetic clinic reviews and trust signals',
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'aesthetic-clinics-image-strip',
   };
 
@@ -256,7 +256,7 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'aesthetic-clinics-workflow-examples',
   };
 
@@ -307,7 +307,7 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-muted/30',
+    backgroundColor: 'bg-section-muted',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

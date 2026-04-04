@@ -56,7 +56,7 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing nail salon repeat visits',
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'nail-salons-image-strip',
   };
 
@@ -260,7 +260,7 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'nail-salons-workflow-examples',
   };
 
@@ -311,7 +311,7 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-muted/30',
+    backgroundColor: 'bg-section-muted',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

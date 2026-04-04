@@ -56,7 +56,7 @@ export function SystemMigrationPlatformConsolidationRenderer({
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='system-migration-foundation'
           />
 
@@ -132,7 +132,7 @@ export function SystemMigrationPlatformConsolidationRenderer({
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-background'
+            backgroundColor='bg-section-base'
             cssPrefix='system-migration-process'
           />
 
@@ -147,7 +147,7 @@ export function SystemMigrationPlatformConsolidationRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='system-migration-qualification'
           />
 

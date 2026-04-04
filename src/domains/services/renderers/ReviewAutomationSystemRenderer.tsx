@@ -57,7 +57,7 @@ export function ReviewAutomationSystemRenderer({
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='review-automation-foundation'
           />
 
@@ -66,7 +66,7 @@ export function ReviewAutomationSystemRenderer({
             title={workflowLayer.title}
             description={workflowLayer.description}
             cards={workflowLayer.cards}
-            backgroundColor='bg-muted/30'
+            backgroundColor='bg-section-muted'
             cssPrefix='review-automation-workflow-layer'
           />
 
@@ -78,7 +78,7 @@ export function ReviewAutomationSystemRenderer({
             tagline={positioning.tagline}
             narrativeTitle={positioning.narrativeTitle}
             narrativeParagraphs={positioning.narrativeParagraphs}
-            backgroundColor='bg-background'
+            backgroundColor='bg-section-base'
             cssPrefix='review-automation-positioning'
           />
 
@@ -88,7 +88,7 @@ export function ReviewAutomationSystemRenderer({
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='review-automation-process'
           />
 
@@ -102,7 +102,7 @@ export function ReviewAutomationSystemRenderer({
               features: service.items,
             }))}
             columns={3}
-            backgroundColor='bg-background'
+            backgroundColor='bg-section-base'
             cssPrefix='review-automation-capabilities'
           />
 
@@ -117,7 +117,7 @@ export function ReviewAutomationSystemRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='review-automation-qualification'
           />
 

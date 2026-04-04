@@ -55,7 +55,7 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing mortgage broker reviews and trust signals',
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'mortgage-brokers-image-strip',
   };
 
@@ -255,7 +255,7 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'mortgage-brokers-workflow-examples',
   };
 
@@ -305,7 +305,7 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-muted/30',
+    backgroundColor: 'bg-section-muted',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

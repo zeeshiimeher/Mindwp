@@ -54,7 +54,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing plumbing reviews and local proof',
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'plumbing-image-strip',
   };
 
@@ -260,7 +260,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-white',
+    backgroundColor: 'bg-section-surface',
     cssPrefix: 'plumbing-workflow-examples',
   };
 
@@ -303,7 +303,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-muted/30',
+    backgroundColor: 'bg-section-muted',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

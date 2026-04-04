@@ -98,7 +98,7 @@ export default function VoiceCallsRenderer() {
             title={process.title}
             description={process.description}
             steps={process.steps}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='voice-ai-process'
           />
 
@@ -107,7 +107,7 @@ export default function VoiceCallsRenderer() {
             title={benefits.title}
             description={benefits.description}
             benefits={benefits.items}
-            backgroundColor='bg-slate-50'
+            backgroundColor='bg-section-muted'
             cssPrefix='voice-ai-benefits'
           />
 
@@ -116,7 +116,7 @@ export default function VoiceCallsRenderer() {
             title={useCases.title}
             description={useCases.description}
             useCases={useCases.items}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='voice-ai-use-cases'
           />
 
@@ -124,7 +124,7 @@ export default function VoiceCallsRenderer() {
             badge={capabilities.badge}
             title={capabilities.title}
             featureCategories={capabilities.featureCategories}
-            backgroundColor='bg-slate-50'
+            backgroundColor='bg-section-muted'
             cssPrefix='voice-ai-features'
             columns={capabilities.columns}
             variant={capabilities.variant}
@@ -135,7 +135,7 @@ export default function VoiceCallsRenderer() {
             title={faq.title}
             description={faq.description}
             faqs={faq.items}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='voice-ai-faq'
           />
 

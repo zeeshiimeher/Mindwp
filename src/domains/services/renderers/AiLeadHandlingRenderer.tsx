@@ -58,7 +58,7 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='ai-response-foundation'
           />
 
@@ -69,7 +69,7 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
             featureCategories={featureCategoriesSection.items}
             columns={featureCategoriesSection.columns}
             variant={featureCategoriesSection.variant}
-            backgroundColor='bg-muted/30'
+            backgroundColor='bg-section-muted'
             cssPrefix='ai-response-features'
           />
 
@@ -79,7 +79,7 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='ai-response-process'
           />
 
@@ -110,7 +110,7 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
             title={useCasesSection.title}
             description={useCasesSection.description}
             cards={useCasesSection.cards}
-            backgroundColor='bg-muted/30'
+            backgroundColor='bg-section-muted'
             cssPrefix='ai-response-use-cases'
           />
 
@@ -122,7 +122,7 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
             narrativeTitle={positioning.narrativeTitle}
             narrativeParagraphs={positioning.narrativeParagraphs}
             features={positioning.features}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='ai-response-positioning'
           />
 
@@ -146,7 +146,7 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='ai-response-qualification'
           />
 

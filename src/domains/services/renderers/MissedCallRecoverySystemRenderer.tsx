@@ -57,7 +57,7 @@ export function MissedCallRecoverySystemRenderer({
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='missed-call-recovery-foundation'
           />
 
@@ -111,7 +111,7 @@ export function MissedCallRecoverySystemRenderer({
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='missed-call-recovery-process'
           />
 
@@ -120,7 +120,7 @@ export function MissedCallRecoverySystemRenderer({
             title={recoveryLayer.title}
             description={recoveryLayer.description}
             cards={recoveryLayer.cards}
-            backgroundColor='bg-background'
+            backgroundColor='bg-section-base'
             cssPrefix='missed-call-recovery-layer'
           />
 
@@ -135,7 +135,7 @@ export function MissedCallRecoverySystemRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-white'
+            backgroundColor='bg-section-surface'
             cssPrefix='missed-call-recovery-qualification'
           />
 

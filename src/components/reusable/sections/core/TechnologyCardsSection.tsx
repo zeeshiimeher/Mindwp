@@ -47,18 +47,12 @@ export function TechnologyCardsSection({
   technologies,
   columns = 3,
   cssPrefix = '',
-  backgroundColor = 'bg-muted/30',
+  backgroundColor = '',
   footer,
 }: TechnologiesSectionProps) {
-  const backgroundClassName =
-    backgroundColor === 'bg-white'
-      ? `${BLOCK}--bg-white`
-      : backgroundColor === 'bg-muted/30'
-        ? `${BLOCK}--bg-muted`
-        : backgroundColor;
 
   return (
-    <section id={id} className={cn(BLOCK, 'l-section', backgroundClassName, cssPrefix, className)}>
+    <section id={id} className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix, className)}>
       <div className={cn(`${BLOCK}__container`, 'l-container', containerClassName)}>
         {(badge || title || description) && (
           <SectionIntro

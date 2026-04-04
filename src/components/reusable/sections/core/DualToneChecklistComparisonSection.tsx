@@ -32,18 +32,12 @@ export function DualToneChecklistComparisonSection({
   description,
   leftColumn,
   rightColumn,
-  backgroundColor = 'bg-muted/30',
+  backgroundColor = '',
   cssPrefix = '',
 }: DualToneChecklistComparisonSectionProps) {
-  const backgroundClassName =
-    backgroundColor === 'default' || backgroundColor === 'bg-background'
-      ? `${BLOCK}--bg-default`
-      : backgroundColor === 'bg-white'
-        ? `${BLOCK}--bg-white`
-        : `${BLOCK}--bg-muted`;
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundClassName, cssPrefix)}>
+    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className='l-container'>
         <SectionIntro
           {...(badge !== undefined && { badge })}

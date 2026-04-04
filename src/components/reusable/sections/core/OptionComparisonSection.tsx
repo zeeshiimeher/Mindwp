@@ -24,17 +24,11 @@ export function OptionComparisonSection({
   title,
   platforms,
   cssPrefix = '',
-  backgroundColor = 'default',
+  backgroundColor = '',
 }: PlatformComparisonSectionProps) {
-  const backgroundClassName =
-    backgroundColor === 'default' || backgroundColor === 'bg-background'
-      ? `${BLOCK}--bg-default`
-      : backgroundColor === 'bg-muted' || backgroundColor === 'bg-muted/30'
-        ? `${BLOCK}--bg-muted`
-        : backgroundColor;
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundClassName, cssPrefix)}>
+    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
       <div className={`${BLOCK}__container l-container`}>
         {title && (
           <div className={`${BLOCK}__header`}>
