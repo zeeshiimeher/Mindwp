@@ -3,7 +3,7 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 import { Button } from '@/components/reusable/single/Button';
 import { cn } from '@/components/ui/utils';
-import { getIconStyles, type IconType } from '@/lib/ui/iconStyles';
+import { getVariantStyles, type VariantType } from '@/lib/ui/variantStyles';
 
 const BLOCK = 'feature-card';
 
@@ -24,7 +24,7 @@ export interface FeatureCategory {
   icon?: React.ComponentType<{ className?: string }>;
   features: string[];
   label?: string;
-  iconType?: IconType;
+  iconType?: VariantType;
 }
 
 interface FeatureCardProps extends FeatureCategory {
@@ -72,7 +72,8 @@ export function FeatureChecklistCard({
   const defaultAlign: 'left' | 'center' = 'left';
   const finalAlign = align || defaultAlign;
 
-  const iconClasses = getIconStyles(iconType);
+  const styles = getVariantStyles(iconType);
+  const iconClasses = styles.icon;
 
   const renderButton = () => {
     if (!href) return null;

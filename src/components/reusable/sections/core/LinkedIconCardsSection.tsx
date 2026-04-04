@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/reusable/single/Button';
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
-import { getIconStyles } from '@/lib/ui/iconStyles';
+import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 const BLOCK = 'c-linked-icon-cards-section';
 
@@ -41,8 +41,8 @@ export function LinkedIconCardsSection({
             <Card key={index} className={`${BLOCK}__card`}>
               <div className={`${BLOCK}__content`}>
                 {item.icon && (
-                  <div className={cn(`${BLOCK}__icon`, 'icon-container-md', getIconStyles('primary').bg)}>
-                    <item.icon className={cn(`${BLOCK}__icon-svg`, getIconStyles('primary').text)} />
+                  <div className={cn(`${BLOCK}__icon`, 'icon-container-md', getVariantStyles('primary').icon.bg)}>
+                    <item.icon className={cn(`${BLOCK}__icon-svg`, getVariantStyles('primary').icon.text)} />
                   </div>
                 )}
                 <h4>{item.title}</h4>

@@ -122,7 +122,7 @@
   --brand-white: #FFFFFF;
 
   --brand-primary-light: #60a5fa;
-  --brand-amber: #070606; /* ⚠️ MISLEADING: near-black, not amber. Used by --c-warning. Do not rename without full migration. */
+  --brand-amber: var(--brand-dark); /* alias: was #070606, now explicit dark alias. Used by --c-warning for text-on-yellow. */
   --brand-dark: #0a0a0a;
   --brand-grey: #f8fafc;
   --brand-grey-light: #f1f5f9;
@@ -142,10 +142,10 @@
   --brand-dark-90: color-mix(in srgb, var(--brand-dark) 90%, transparent);
   --brand-dark-30: color-mix(in srgb, var(--brand-dark) 30%, transparent);
   --brand-dark-10: color-mix(in srgb, var(--brand-dark) 10%, transparent);
-  --brand-teal-10: color-mix(in srgb, var(--brand-teal) 10%, transparent);
-  --brand-teal-90: color-mix(in srgb, var(--brand-teal) 90%, transparent);
-  --brand-amber-90: color-mix(in srgb, var(--brand-amber) 90%, transparent);
-  --brand-amber-10: color-mix(in srgb, var(--brand-amber) 10%, transparent);
+  --brand-teal-10: color-mix(in srgb, var(--brand-accent) 10%, transparent); /* flattened: was brand-teal→brand-accent */
+  --brand-teal-90: color-mix(in srgb, var(--brand-accent) 90%, transparent); /* flattened: was brand-teal→brand-accent */
+  --brand-amber-90: var(--brand-dark-90); /* flattened: amber≡dark */
+  --brand-amber-10: var(--brand-dark-10); /* flattened: amber≡dark */
   --brand-white-90: color-mix(in srgb, var(--brand-white) 90%, transparent);
   --brand-white-80: color-mix(in srgb, var(--brand-white) 80%, transparent);
   --brand-white-70: color-mix(in srgb, var(--brand-white) 70%, transparent);
@@ -169,7 +169,7 @@
   --c-surface:         var(--brand-white);          /* #fff — cards, elevated */
 
   /* Section backgrounds */
-  --section-bg-base:   var(--c-bg);
+  --section-bg-base:   var(--brand-grey);          /* flattened: was c-bg→brand-grey */
   --section-bg-surface: var(--c-surface);
   --section-bg-muted:  color-mix(in oklab, var(--c-bg) 30%, transparent);
 
@@ -192,7 +192,7 @@
 
   /* Status */
   --c-success:         var(--color-green-600);
-  --c-success-soft:    var(--brand-teal);
+  --c-success-soft:    var(--brand-accent);        /* flattened: was brand-teal→brand-accent */
   --c-success-bg:      var(--brand-teal-10);
   --c-success-500:     var(--color-green-500);
   --c-warning:         var(--brand-amber);          /* ⚠️ near-black */
@@ -238,7 +238,7 @@
 
   /* Action / accent shades */
   --color-accent-secondary-30: var(--brand-secondary-30);
-  --color-accent-warning-90: var(--brand-amber-90);
+  --color-accent-warning-90: var(--brand-dark-90); /* flattened: amber≡dark */
   --color-action-primary-90: var(--brand-primary-90);
   --color-action-primary-30: var(--brand-primary-30);
 
@@ -255,16 +255,33 @@
   --icon-bg-secondary: var(--brand-secondary-10);
   --icon-text-accent: var(--brand-accent);
   --icon-bg-accent: var(--brand-teal-10);
-  --icon-text-success: var(--brand-accent);
-  --icon-bg-success: var(--brand-teal-10);
-  --icon-text-warning: var(--brand-amber);
-  --icon-bg-warning: var(--brand-amber-10);
-  --icon-text-info: var(--brand-secondary);
-  --icon-bg-info: var(--brand-secondary-10);
+  --icon-text-success: var(--brand-accent);        /* alias: success ≡ accent (semantic) */
+  --icon-bg-success: var(--brand-teal-10);           /* alias: success ≡ accent (semantic) */
+  --icon-text-warning: var(--color-amber-500);    /* FIXED: real amber, was near-black */
+  --icon-bg-warning: color-mix(in srgb, var(--color-amber-500) 10%, transparent); /* FIXED: real amber tint */
+  --icon-text-info: var(--brand-secondary);         /* alias: info ≡ secondary (semantic) */
+  --icon-bg-info: var(--brand-secondary-10);         /* alias: info ≡ secondary (semantic) */
   --icon-text-neutral: var(--brand-dark);
   --icon-bg-neutral: var(--brand-dark-10);
-  --icon-text-warm: var(--brand-amber);
-  --icon-bg-warm: var(--brand-amber-10);
+
+  /* =====================================================================
+     §8b VARIANT TOKENS (reuse icon tokens for badge/card/text accents)
+     ===================================================================== */
+  --variant-text-primary:    var(--brand-primary);
+  --variant-text-secondary:  var(--brand-secondary);
+  --variant-text-accent:     var(--brand-accent);
+  --variant-text-success:    var(--brand-accent);  /* alias: success ≡ accent (semantic) */
+  --variant-text-warning:    var(--color-amber-500);/* FIXED: real amber, was near-black */
+  --variant-text-info:       var(--brand-secondary);/* alias: info ≡ secondary (semantic) */
+  --variant-text-neutral:    var(--brand-dark);
+
+  --variant-border-primary:    var(--brand-primary-10);
+  --variant-border-secondary:  var(--brand-secondary-10);
+  --variant-border-accent:     var(--brand-teal-10);
+  --variant-border-success:    var(--brand-teal-10);  /* alias: success ≡ accent (semantic) */
+  --variant-border-warning:    color-mix(in srgb, var(--color-amber-500) 30%, transparent); /* FIXED: real amber border */
+  --variant-border-info:       var(--brand-secondary-10);/* alias: info ≡ secondary (semantic) */
+  --variant-border-neutral:    var(--brand-dark-10);
 
   /* =====================================================================
      §9  GRADIENT TOKENS
@@ -288,8 +305,6 @@
   --gradient-cta-3: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-teal) 100%);
   --gradient-cta-4: linear-gradient(135deg, var(--brand-teal) 0%, var(--brand-secondary) 100%);
   --gradient-cta-10: linear-gradient(135deg, var(--color-blue-600) 0%, var(--color-purple-600) 100%);
-  /* ⚠️ Misleading: resolves near-black because --brand-amber is near-black */
-  --gradient-cta-warm: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-amber) 100%);
 
   /* Surface / tint gradients */
   --gradient-surface-soft: linear-gradient(135deg, var(--c-bg-alt) 0%, var(--c-surface) 100%);

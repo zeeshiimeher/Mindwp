@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { cn } from '@/components/ui/utils';
-import { getIconStyles, type IconType } from '@/lib/ui/iconStyles';
+import { getVariantStyles, type VariantType } from '@/lib/ui/variantStyles';
 
 const BLOCK = 'resource-section-header';
 
@@ -40,7 +40,7 @@ export interface ResourceSectionHeaderProps {
   className?: string;
 }
 
-const variantToIconType: Record<string, IconType> = {
+const variantToIconType: Record<string, VariantType> = {
   problem: 'warning',
   solution: 'success',
   case: 'primary',
@@ -61,7 +61,7 @@ export function ResourceSectionHeader({
   className = '',
 }: ResourceSectionHeaderProps) {
   const iconType = variantToIconType[variant] ?? 'primary';
-  const styles = getIconStyles(iconType);
+  const styles = getVariantStyles(iconType).icon;
 
   return (
     <div className={cn(BLOCK, `${BLOCK}__row`, className)}>

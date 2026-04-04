@@ -569,3 +569,65 @@ All remaining hardcoded rem icon sizes in components.css have been tokenized:
 - `ProblemSolutionSplitCard` bullet upgraded to `icon-container-xs`
 
 **Zero hardcoded rem icon sizes remain in the system.**
+
+## 16. VARIANT SYSTEM (7G)
+
+Unified variant resolver: `src/lib/ui/variantStyles.ts`
+
+### 16.1 Architecture
+
+```
+variant: VariantType  →  getVariantStyles(variant)
+                            ├── icon:  { bg, text, combined }
+                            ├── badge: "variant-badge-{type}"
+                            ├── card:  "variant-card-{type}"
+                            └── text:  "variant-text-{type}"
+```
+
+### 16.2 Rules
+
+- ❌ No direct `getIconStyles()` imports — use `getVariantStyles()` exclusively
+- ❌ No component-level color logic — variant system decides colors
+- ❌ No new tokens without audit
+- ✅ All color theming flows through one `variant` prop
+- ✅ `iconStyles.ts` is internal-only (consumed only by `variantStyles.ts`)
+
+### 16.3 Token Summary (7I — Final Hardening)
+
+| Metric | Value |
+|--------|-------|
+| Total foundation tokens | ~231 |
+| Alias tokens (documented) | 8 (success≡accent, info≡secondary × icon/variant/border) |
+| Dead tokens removed (cumulative) | 3 (--icon-text-warm, --icon-bg-warm, --gradient-cta-warm) |
+| Chains flattened (cumulative) | 5 (--c-success-soft, --section-bg-base, --brand-teal-10/90, --brand-amber-90/10) |
+| Dead CSS classes removed (cumulative) | 30 (icon-error, process-step BEM, explore-cards BEM, bg-gradient-warm, visual--booking) |
+| Max chain depth | 2 (enforced) |
+
+### 16.4 Known Aliases (Keep for Semantics)
+
+| Alias Variant | Resolves To | Reason |
+|--------------|------------|--------|
+| success | accent | Green/teal semantic intent vs. accent brand color |
+| info | secondary | Informational intent vs. secondary brand color |
+
+### 16.5 Variant Visual Identity (7I)
+
+| Variant | Color Family | Text Token | Hex/Function |
+|---------|-------------|------------|-------------|
+| primary | Blue | --brand-primary | #2563EB |
+| secondary | Navy | --brand-secondary | #1e293b |
+| accent | Teal | --brand-accent | #4A9AB2 |
+| success | Teal (alias) | --brand-accent | #4A9AB2 |
+| warning | Amber/Orange | --color-amber-500 | oklch(.769 .188 70.08) |
+| info | Navy (alias) | --brand-secondary | #1e293b |
+| neutral | Dark | --brand-dark | #0a0a0a |
+
+### 16.6 Token Chain Rules
+
+| # | Rule | Enforcement |
+|---|------|-------------|
+| TC1 | Max token chain depth = 2 | Audit script / code review |
+| TC2 | Warning MUST use amber/orange tokens — never dark/neutral | foundation.css governance |
+| TC3 | No two semantic variants may resolve to the same visual color | Variant identity table above |
+| TC4 | `--brand-amber` is an explicit alias of `--brand-dark` — do not use for warning | Comment in foundation.css |
+| TC5 | `--c-warning` is intentionally dark (text-on-yellow in callouts) — exception to TC2 | Documented exception |

@@ -6,7 +6,7 @@ import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { Card } from '@/components/ui/card';
 import { FEATURE_REGISTRY } from '@/domains/features/registry';
-import { getIconStyles } from '@/lib/ui/iconStyles';
+import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 // Features overview landing
 export function FeaturesLanding() {
@@ -54,9 +54,9 @@ export function FeaturesLanding() {
                   return (
                     <Card key={feature.slug} className='feature-lnd__card'>
                       <a href={feature.path} className='link-primary feature-lnd__link'>
-                        <div className={`feature-lnd__icon icon-container-md ${getIconStyles('primary').bg}`}>
+                        <div className={`feature-lnd__icon icon-container-md ${getVariantStyles('primary').icon.bg}`}>
                           <Icon
-                            className={getIconStyles('primary').text}
+                            className={getVariantStyles('primary').icon.text}
                             aria-hidden='true'
                           />
                         </div>

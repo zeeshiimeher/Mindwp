@@ -26,7 +26,7 @@ import {
 } from '@/components/reusable/single';
 import { getCaseStudiesTemplateMetadata } from '@/domains/case-studies/data';
 import { homepageData } from '@/domains/home/data/homepage';
-import { getIconStyles } from '@/lib/ui/iconStyles';
+import { getVariantStyles } from '@/lib/ui/variantStyles';
 import { PortfolioSection as ImplementationExamplesSection } from '@/screens/home/sections/PortfolioSection';
 
 export default function Homepage() {
@@ -253,9 +253,9 @@ function SmartWebsiteFrameworkSection() {
                       <div className='framework-section-journey-step-card'>
                         <div className='framework-section-journey-step-content'>
                           <div
-                            className={`framework-section-journey-step-icon ${getIconStyles(
+                            className={`framework-section-journey-step-icon ${getVariantStyles(
                               step.iconType
-                            ).combined}`}
+                            ).icon.combined}`}
                           >
                             <Icon className='framework-section-journey-step-icon-svg' />
                           </div>

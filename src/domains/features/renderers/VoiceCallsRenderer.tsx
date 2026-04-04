@@ -18,7 +18,7 @@ import {
   FeatureSupportingFrameworksSection,
 } from '@/domains/features/components/FeatureRelatedSections';
 import { voicecallsData } from '@/domains/features/data/voicecalls';
-import { getIconStyles } from '@/lib/ui/iconStyles';
+import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 export default function VoiceCallsRenderer() {
   const { hero, sections, cta } = voicecallsData;
@@ -79,7 +79,7 @@ export default function VoiceCallsRenderer() {
 
                   <div className='text-center pt-4 border-t'>
                     <div className='l-row l-items-center l-row-center l-gap-2 text-sm text-muted-foreground'>
-                      <CheckCircle2 className={getIconStyles('success').text} />
+                      <CheckCircle2 className={getVariantStyles('success').icon.text} />
                       Call completed in 45 seconds
                     </div>
                   </div>

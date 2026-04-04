@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
-import { getIconStyles } from '@/lib/ui/iconStyles';
+import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 const BLOCK = 'c-technology-cards-section';
 
@@ -71,13 +71,13 @@ export function TechnologyCardsSection({
               <Card key={index} className={cn(`${BLOCK}__card`, tech.cardClassName)}>
                 <div
                   className={cn(
-                    `${BLOCK}__icon-container icon-container-md ${getIconStyles('primary').bg}`,
+                    `${BLOCK}__icon-container icon-container-md ${getVariantStyles('primary').icon.bg}`,
                     tech.iconFrom && tech.iconTo ? `${BLOCK}__icon-container--grad` : '',
                     tech.iconContainerClassName
                   )}
                 >
                   <TechIcon
-                    className={cn(`${BLOCK}__icon`, getIconStyles('primary').text, tech.iconClassName)}
+                    className={cn(`${BLOCK}__icon`, getVariantStyles('primary').icon.text, tech.iconClassName)}
                   />
                 </div>
 

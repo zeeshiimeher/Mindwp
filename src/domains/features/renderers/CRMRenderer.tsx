@@ -19,7 +19,7 @@ import {
   FeatureSupportingFrameworksSection,
 } from '@/domains/features/components/FeatureRelatedSections';
 import { crmData } from '@/domains/features/data/crm';
-import { getIconStyles } from '@/lib/ui/iconStyles';
+import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 export default function CRMRenderer() {
   const { hero, sections, cta } = crmData;
@@ -37,20 +37,20 @@ export default function CRMRenderer() {
 
         <div className='l-stack'>
           <div className='l-row l-items-center l-gap-3'>
-            <div className={`icon-container-xs ${getIconStyles('secondary').bg}`}>
-              <Users className={getIconStyles('secondary').text} />
+            <div className={`icon-container-xs ${getVariantStyles('secondary').icon.bg}`}>
+              <Users className={getVariantStyles('secondary').icon.text} />
             </div>
             <div className='text-sm'>Sarah Johnson</div>
           </div>
           <div className='l-row l-items-center l-gap-3'>
-            <div className={`icon-container-xs ${getIconStyles('accent').bg}`}>
-              <Mail className={getIconStyles('accent').text} />
+            <div className={`icon-container-xs ${getVariantStyles('accent').icon.bg}`}>
+              <Mail className={getVariantStyles('accent').icon.text} />
             </div>
             <div className='text-sm text-muted-foreground'>sarah@example.com</div>
           </div>
           <div className='l-row l-items-center l-gap-3'>
-            <div className={`icon-container-xs ${getIconStyles('success').bg}`}>
-              <Phone className={getIconStyles('success').text} />
+            <div className={`icon-container-xs ${getVariantStyles('success').icon.bg}`}>
+              <Phone className={getVariantStyles('success').icon.text} />
             </div>
             <div className='text-sm text-muted-foreground'>(555) 123-4567</div>
           </div>
@@ -60,14 +60,14 @@ export default function CRMRenderer() {
           <div className='text-xs text-muted-foreground mb-3'>Recent Activity</div>
           <div className='l-stack l-stack--tight'>
             <div className='l-row l-items-start l-gap-2 text-xs bg-blue-50 p-2 rounded'>
-              <Mail className={getIconStyles('secondary').text} />
+              <Mail className={getVariantStyles('secondary').icon.text} />
               <div>
                 <div className='text-blue-900'>Email sent: Follow-up #2</div>
                 <div className='text-blue-600'>2 hours ago</div>
               </div>
             </div>
             <div className='l-row l-items-start l-gap-2 text-xs bg-green-50 p-2 rounded'>
-              <MessageSquare className={getIconStyles('success').text} />
+              <MessageSquare className={getVariantStyles('success').icon.text} />
               <div>
                 <div className='text-green-900'>Chat: Asked about pricing</div>
                 <div className='text-green-600'>Yesterday</div>

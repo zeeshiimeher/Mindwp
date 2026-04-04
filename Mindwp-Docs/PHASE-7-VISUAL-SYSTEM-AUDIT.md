@@ -31,10 +31,26 @@
 - 7F: Strict IconType union locked (primary/secondary/accent/success/warning/info/neutral)
 - 7F: BEM icon modifiers removed from business-use-case-card (7 rules deleted)
 - 7F: All components migrated to getIconStyles() — zero dual systems
+- 7G: Unified variant system created (variantStyles.ts) — one prop drives icon + badge + card + text
+- 7G: All 17 consumers migrated from getIconStyles() → getVariantStyles()
+- 7G: 21 new CSS utility classes (variant-text/badge/card × 7 types)
+- 7G: 14 new variant tokens (--variant-text-* + --variant-border-*)
+- 7G: iconStyles.ts now internal-only — zero external imports remain
+- 7H: Token cleanup — 2 dead tokens removed (--icon-text-warm, --icon-bg-warm)
+- 7H: Chain optimization — 2 chains flattened from depth 3 → depth 1
+- 7H: CSS purge — 27 dead classes removed (icon-error, process-step BEM, explore-cards BEM)
+- 7H: Alias documentation — 8 semantic aliases annotated with /* alias: ≡ */ comments
 - 7F: New CSS tokens + utility classes for success/warning/info/neutral
 - 7F: ICON_ORDER constant exported for deterministic index-based cycling
 - 7F: resolveIcon() wrappers removed from IconBenefitCard, FeatureChecklistCard, AuditChecklistCard
 - 7F: Legacy icon CSS utility classes removed (icon-bg/text-purple/teal/amber/dark)
+- 7I: FINAL TOKEN HARDENING — teal chain flattened (depth 3→2), amber collapsed to explicit --brand-dark alias
+- 7I: Warning system redesigned — icon/variant warning tokens now use real amber/orange (--color-amber-500)
+- 7I: --c-warning KEPT as dark (used as text-on-yellow in callouts) — intentional dual-purpose
+- 7I: --gradient-cta-warm removed (zero usage), --brand-amber-90/10 flattened to --brand-dark-90/10
+- 7I: CSS purge — bg-gradient-warm, visual--booking dead classes removed
+- 7I: All token chains verified ≤ depth 2
+- 7I: Each variant now has distinct visual identity (warning = amber/orange, no longer ≈ neutral)
 
 ---
 
@@ -67,6 +83,8 @@ All blocking items RESOLVED.
 - [x] 7E: Dead code removed (T-129, 4 l-section media queries)
 - [x] 7E: BEM --bg-* and legacy aliases audited (KEPT — all in active use)
 - [x] 7F: Icon system hard reset complete (zero legacy types, zero BEM icon modifiers)
+- [x] 7G: Variant system complete (variantStyles.ts, 17 files migrated)
+- [x] 7H: Token cleanup + CSS purge complete (zero dead tokens, zero dead BEM)
 
 ---
 
@@ -434,24 +452,54 @@ One shared interaction layer with fixed hover tiers and one focus-visible rule s
 
 ## Decision: Icon System → HARD RESET (7F)
 
-Full icon system hard reset. Legacy color-based types (`purple`, `teal`, `amber`, `dark`) eliminated. Strict semantic type system locked (`primary` / `secondary` / `accent` / `success` / `warning` / `info` / `neutral`). Single source of truth at `src/lib/ui/iconStyles.ts`. All BEM icon modifiers removed from `business-use-case-card`. All components use `getIconStyles()` exclusively. Data files use order-based cycling via `ICON_ORDER`. CSS utility classes aligned 1:1 with type system. Foundation tokens added for all 7 types.
+Full icon system hard reset. Legacy color-based types (`purple`, `teal`, `amber`, `dark`) eliminated. Strict semantic type system locked (`primary` / `secondary` / `accent` / `success` / `warning` / `info` / `neutral`). Single source of truth at `src/lib/ui/iconStyles.ts` (now internal-only). All components use `getVariantStyles()` via `variantStyles.ts`. Data files use order-based cycling via `VARIANT_ORDER`. CSS utility classes aligned 1:1 with type system. Foundation tokens added for all 7 types.
 
-### 7F Files Updated
+## Decision: Variant System → CREATED (7G)
+
+Unified variant resolver at `src/lib/ui/variantStyles.ts`. One `variant: VariantType` prop drives:
+- **Icon**: bg + text + combined classes (via `getIconStyles()` internally)
+- **Badge**: `variant-badge-{type}` class
+- **Card**: `variant-card-{type}` class (left-border accent)
+- **Text**: `variant-text-{type}` class
+
+`VariantType` is 1:1 with `IconType` (7 types). All 17 consumers migrated. `iconStyles.ts` is no longer imported externally.
+
+### Variant Alias Map
+
+| Variant | Resolves To | Alias? |
+|---------|------------|--------|
+| primary | brand-primary | Unique |
+| secondary | brand-secondary | Unique |
+| accent | brand-accent | Unique |
+| success | brand-accent | ⚠️ alias of accent |
+| warning | brand-amber | Unique (⚠️ near-black) |
+| info | brand-secondary | ⚠️ alias of secondary |
+| neutral | brand-dark | Unique |
+
+### 7G + 7H Files Updated
 
 | File | Change |
 |---|---|
-| `src/lib/ui/iconStyles.ts` | Strict `IconType`, `ICON_ORDER`, no legacy |
-| `src/styles/foundation.css` | Added `--icon-{bg,text}-{success,warning,info,neutral}` + `--brand-dark-10` |
-| `src/styles/components.css` | Replaced legacy utilities, added 8 new classes, removed 7 BEM modifiers |
-| `src/components/reusable/single/IconTextCard.tsx` | BEM → `getIconStyles()` |
-| `src/components/reusable/single/IconBenefitCard.tsx` | Strict `IconType`, removed `resolveIcon` |
-| `src/components/reusable/single/FeatureChecklistCard.tsx` | Strict `IconType`, removed `resolveIcon` |
-| `src/components/reusable/single/AuditChecklistCard.tsx` | Strict `IconType`, removed `resolveIcon` |
-| `src/components/reusable/sections/core/FeatureChecklistCardsSection.tsx` | Import `IconType` |
-| `src/components/reusable/sections/resources/ResourceSectionHeader.tsx` | Typed as `Record<string, IconType>` |
-| `src/screens/Homepage.tsx` | Removed `getIconClasses` wrapper |
-| `src/domains/features/renderers/CRMRenderer.tsx` | `purple→accent`, `teal→success` |
-| `src/domains/services/data/crm-automation.ts` | Legacy → semantic order-based cycling |
+| `src/lib/ui/variantStyles.ts` | NEW — unified variant resolver |
+| `src/styles/foundation.css` | +14 variant tokens, -2 dead tokens, 2 chains flattened, 8 alias comments |
+| `src/styles/components.css` | +21 variant classes, -27 dead classes (icon-error, process-step BEM, explore-cards BEM) |
+| `src/components/reusable/single/IconBenefitCard.tsx` | `getIconStyles` → `getVariantStyles` |
+| `src/components/reusable/single/FeatureChecklistCard.tsx` | `getIconStyles` → `getVariantStyles` |
+| `src/components/reusable/single/AuditChecklistCard.tsx` | `getIconStyles` → `getVariantStyles` |
+| `src/components/reusable/single/IconTextCard.tsx` | `getIconStyles` → `getVariantStyles` |
+| `src/components/reusable/sections/resources/ResourceSectionHeader.tsx` | `getIconStyles` → `getVariantStyles` |
+| `src/components/reusable/sections/core/FeatureChecklistCardsSection.tsx` | `IconType` → `VariantType` |
+| `src/components/reusable/sections/core/LinkedIconCardsSection.tsx` | `getIconStyles` → `getVariantStyles` |
+| `src/components/reusable/sections/core/TechnologyCardsSection.tsx` | `getIconStyles` → `getVariantStyles` |
+| `src/domains/features/types.ts` | `IconType` → `VariantType` |
+| `src/domains/features/pages/index.tsx` | `getIconStyles` → `getVariantStyles` |
+| `src/domains/features/renderers/ReputationRenderer.tsx` | `getIconStyles` → `getVariantStyles` |
+| `src/domains/features/renderers/VoiceCallsRenderer.tsx` | `getIconStyles` → `getVariantStyles` |
+| `src/domains/features/renderers/CRMRenderer.tsx` | `getIconStyles` → `getVariantStyles` |
+| `src/domains/services/pages/index.tsx` | `getIconStyles` → `getVariantStyles` |
+| `src/domains/industries/pages/index.tsx` | `getIconStyles` → `getVariantStyles` |
+| `src/screens/Homepage.tsx` | `getIconStyles` → `getVariantStyles` |
+| `src/screens/Contact.tsx` | `getIconStyles` → `getVariantStyles` |
 
 ## Decision: Icon System → FIXED (7D)
 

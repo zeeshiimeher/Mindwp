@@ -5,7 +5,7 @@ import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { Card } from '@/components/ui/card';
 import { getCategoryIndexIndustries } from '@/domains/industries/catalog';
-import { getIconStyles } from '@/lib/ui/iconStyles';
+import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 export default function IndustriesLanding() {
   const categoryPages = getCategoryIndexIndustries();
@@ -33,8 +33,8 @@ export default function IndustriesLanding() {
       >
         <div className='l-stack l-stack--loose'>
           <div className='l-row l-items-start l-justify-between l-gap-4'>
-            <div className={`icon-container-lg ${getIconStyles('primary').bg}`}>
-              <Icon className={getIconStyles('primary').text} />
+            <div className={`icon-container-lg ${getVariantStyles('primary').icon.bg}`}>
+              <Icon className={getVariantStyles('primary').icon.text} />
             </div>
             {industry.prioritySignal && (
               <Badge variant='secondary'>{industry.prioritySignal}</Badge>

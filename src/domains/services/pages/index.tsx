@@ -28,7 +28,7 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { Card } from '@/components/ui/card';
 import { primaryCta } from '@/config/primaryCta';
 import { SERVICE_REGISTRY } from '@/domains/services/registry';
-import { getIconStyles } from '@/lib/ui/iconStyles';
+import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 const FEATURED_SERVICE_SLUG = 'smart-website-systems' as const;
 
@@ -228,8 +228,8 @@ function renderServiceCard(service: ServiceCardData) {
   return (
     <Card key={service.slug} className='service-lnd__card'>
       <a href={service.href} className='link-primary service-lnd__link'>
-        <div className={`service-lnd__icon icon-container-md ${getIconStyles('primary').bg}`}>
-          <Icon className={`${getIconStyles('primary').text}`} aria-hidden='true' />
+        <div className={`service-lnd__icon icon-container-md ${getVariantStyles('primary').icon.bg}`}>
+          <Icon className={`${getVariantStyles('primary').icon.text}`} aria-hidden='true' />
         </div>
         <div className='service-lnd__body'>
           <h3 className='service-lnd__cardTitle'>{service.title}</h3>
@@ -333,9 +333,9 @@ export function ServicesLanding() {
                       <div className='p-8 md:p-10 l-grid l-gap-8 lg:l-grid-2 l-items-center'>
                         <div className='l-stack l-stack--loose'>
                           <div className='l-row l-items-center l-gap-3'>
-                            <div className={`service-lnd__icon icon-container-md ${getIconStyles('primary').bg}`}>
+                            <div className={`service-lnd__icon icon-container-md ${getVariantStyles('primary').icon.bg}`}>
                               <Sparkles
-                                className={getIconStyles('primary').text}
+                                className={getVariantStyles('primary').icon.text}
                                 aria-hidden='true'
                               />
                             </div>

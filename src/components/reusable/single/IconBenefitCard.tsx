@@ -2,7 +2,7 @@ import { ArrowRight, type LucideIcon } from 'lucide-react';
 
 import { Button } from '@/components/reusable/single/Button';
 import { cn } from '@/components/ui/utils';
-import { getIconStyles, type IconType } from '@/lib/ui/iconStyles';
+import { getVariantStyles, type VariantType } from '@/lib/ui/variantStyles';
 
 const BLOCK = 'benefit-card';
 
@@ -61,7 +61,7 @@ export interface ServiceBenefitItem {
   description: string;
 
   /** Color theme for the icon background and text */
-  iconType?: IconType;
+  iconType?: VariantType;
 
   /**
    * Optional keywords or additional information displayed below description
@@ -87,7 +87,7 @@ interface IconBenefitCardProps {
   description: string;
 
   /** Color theme for the icon background and text */
-  iconType?: IconType;
+  iconType?: VariantType;
 
   /** Optional keywords or additional information displayed below description */
   keywords?: string;
@@ -180,7 +180,8 @@ export function IconBenefitCard({
   linkVariant = 'button',
   linkColor = 'primary',
 }: IconBenefitCardProps) {
-  const { bg: iconBg, text: iconText } = getIconStyles(iconType);
+  const styles = getVariantStyles(iconType);
+  const { bg: iconBg, text: iconText } = styles.icon;
 
   const buttonClassName =
     buttonVariant === 'outline'

@@ -13,7 +13,7 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { TestimonialCard } from '@/components/reusable/single/TestimonialCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { getIconStyles } from '@/lib/ui/iconStyles';
+import { getVariantStyles } from '@/lib/ui/variantStyles';
 import { Card } from '@/components/ui/card';
 import {
   FeatureImplementationServicesSection,
@@ -58,7 +58,7 @@ const ReviewsVisual = () => (
               <div className='text-sm'>{review.name}</div>
               <div className='l-row l-gap-2'>
                 {[...Array(review.stars)].map((_, j) => (
-                  <Star key={j} className={`${getIconStyles('warning').text} fill-current`} />
+                  <Star key={j} className={`${getVariantStyles('warning').icon.text} fill-current`} />
                 ))}
               </div>
             </div>
@@ -69,7 +69,7 @@ const ReviewsVisual = () => (
 
       <div className='pt-4 border-t text-center'>
         <div className='text-xs text-green-600 l-row l-items-center l-row-center l-gap-2'>
-          <TrendingUp className={getIconStyles('success').text} />
+          <TrendingUp className={getVariantStyles('success').icon.text} />
           +15 new reviews this month
         </div>
       </div>

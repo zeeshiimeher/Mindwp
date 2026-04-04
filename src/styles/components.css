@@ -907,11 +907,6 @@
   );
 }
 
-.system-capabilities__visual--booking,
-.c-system-capabilities__visual--booking {
-  background: linear-gradient(135deg, var(--c-warning), var(--color-accent-warning-90));
-}
-
 .system-capabilities__visual-head,
 .c-system-capabilities__visual-head {
   display: flex;
@@ -4876,26 +4871,6 @@ summary.component-library__sidebar-link {
   justify-content: center;
 }
 
-.process-step__badge--default {
-  background-color: var(--c-dark);
-  color: var(--c-bg);
-}
-
-.process-step__badge--primary {
-  background-color: var(--c-primary);
-  color: var(--c-text-inverse);
-}
-
-.process-step__badge--secondary {
-  background-color: var(--c-dark);
-  color: var(--c-text-inverse);
-}
-
-.process-step__badge--accent {
-  background-color: var(--c-warning);
-  color: var(--c-dark);
-}
-
 .process-step__content {
   padding-top: var(--space-6);
 }
@@ -4911,22 +4886,6 @@ summary.component-library__sidebar-link {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.process-step__icon--default,
-.process-step__icon--primary {
-  background-color: var(--c-info-bg);
-  color: var(--c-primary);
-}
-
-.process-step__icon--secondary {
-  background-color: color-mix(in oklab, var(--c-dark) 8%, transparent);
-  color: var(--c-dark);
-}
-
-.process-step__icon--accent {
-  background-color: color-mix(in oklab, var(--c-warning) 18%, transparent);
-  color: var(--c-warning);
 }
 
 .process-step__icon-svg {
@@ -6642,31 +6601,6 @@ summary.component-library__sidebar-link {
   justify-content: center;
   transition: transform var(--transition-fast);
   margin-bottom: var(--space-2);
-}
-
-.explore-cards-section__icon--primary,
-.c-explore-cards-section__icon--primary {
-  background-color: var(--c-primary);
-}
-
-.explore-cards-section__icon--blue,
-.c-explore-cards-section__icon--blue {
-  background-color: var(--c-accent-blue);
-}
-
-.explore-cards-section__icon--teal,
-.c-explore-cards-section__icon--teal {
-  background-color: var(--c-accent);
-}
-
-.explore-cards-section__icon--purple,
-.c-explore-cards-section__icon--purple {
-  background-color: var(--c-secondary);
-}
-
-.explore-cards-section__icon--amber,
-.c-explore-cards-section__icon--amber {
-  background-color: var(--c-warning);
 }
 
 .explore-cards-section__card:hover .explore-cards-section__icon,
@@ -8670,10 +8604,6 @@ h3.cta-heading {
   background-color: var(--icon-bg-secondary);
 }
 
-.icon-bg-error {
-  background-color: var(--icon-bg-warm);
-}
-
 .icon-bg-success {
   background-color: var(--icon-bg-success);
 }
@@ -8702,10 +8632,6 @@ h3.cta-heading {
   color: var(--icon-text-secondary);
 }
 
-.icon-text-error {
-  color: var(--icon-text-warm);
-}
-
 .icon-text-success {
   color: var(--icon-text-success);
 }
@@ -8721,6 +8647,38 @@ h3.cta-heading {
 .icon-text-neutral {
   color: var(--icon-text-neutral);
 }
+
+/* =====================================================================
+   VARIANT UTILITY CLASSES
+   One variant prop → icon + badge + card + text styling
+   ===================================================================== */
+
+/* --- variant-text: semantic text color --- */
+.variant-text-primary   { color: var(--variant-text-primary); }
+.variant-text-secondary { color: var(--variant-text-secondary); }
+.variant-text-accent    { color: var(--variant-text-accent); }
+.variant-text-success   { color: var(--variant-text-success); }
+.variant-text-warning   { color: var(--variant-text-warning); }
+.variant-text-info      { color: var(--variant-text-info); }
+.variant-text-neutral   { color: var(--variant-text-neutral); }
+
+/* --- variant-badge: semantic badge pill --- */
+.variant-badge-primary   { background-color: var(--icon-bg-primary);   color: var(--icon-text-primary); }
+.variant-badge-secondary { background-color: var(--icon-bg-secondary); color: var(--icon-text-secondary); }
+.variant-badge-accent    { background-color: var(--icon-bg-accent);    color: var(--icon-text-accent); }
+.variant-badge-success   { background-color: var(--icon-bg-success);   color: var(--icon-text-success); }
+.variant-badge-warning   { background-color: var(--icon-bg-warning);   color: var(--icon-text-warning); }
+.variant-badge-info      { background-color: var(--icon-bg-info);      color: var(--icon-text-info); }
+.variant-badge-neutral   { background-color: var(--icon-bg-neutral);   color: var(--icon-text-neutral); }
+
+/* --- variant-card: subtle left-border accent --- */
+.variant-card-primary   { border-left: 3px solid var(--variant-border-primary); }
+.variant-card-secondary { border-left: 3px solid var(--variant-border-secondary); }
+.variant-card-accent    { border-left: 3px solid var(--variant-border-accent); }
+.variant-card-success   { border-left: 3px solid var(--variant-border-success); }
+.variant-card-warning   { border-left: 3px solid var(--variant-border-warning); }
+.variant-card-info      { border-left: 3px solid var(--variant-border-info); }
+.variant-card-neutral   { border-left: 3px solid var(--variant-border-neutral); }
 
 /* =========================================================
    GRADIENT ICON RESTRICTION
@@ -8781,8 +8739,7 @@ h3.cta-heading {
 .icon-text-success:is(svg),
 .icon-text-warning:is(svg),
 .icon-text-info:is(svg),
-.icon-text-neutral:is(svg),
-.icon-text-error:is(svg) {
+.icon-text-neutral:is(svg) {
   width: var(--space-4);
   height: var(--space-4);
   flex-shrink: 0;
@@ -8858,10 +8815,6 @@ h3.cta-heading {
 
 .bg-gradient-cta-4 {
   background: var(--gradient-cta-4);
-}
-
-.bg-gradient-warm {
-  background: var(--gradient-cta-warm);
 }
 
 .bg-gradient-section {
