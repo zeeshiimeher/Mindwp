@@ -1,6 +1,7 @@
 import React from 'react';
 import { Target } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { HighlightCard } from '@/components/reusable/single/HighlightCard';
 import { SolutionDetailCard } from '@/components/reusable/single/SolutionDetailCard';
 import { cn } from '@/components/ui/utils';
@@ -33,7 +34,7 @@ export function ResourceSolutionsSection({
   const BLOCK = 'framework-section';
 
   return (
-    <section className={cn(BLOCK, className)}>
+    <SectionWrapper padding='none' container='none' className={cn(BLOCK, className)}>
       <ResourceSectionHeader
         icon={Target}
         title={heading}
@@ -55,6 +56,6 @@ export function ResourceSolutionsSection({
       <div className={`${BLOCK}__difference`}>
         <HighlightCard title={differenceHeading || ''} description={differenceContent || ''} />
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

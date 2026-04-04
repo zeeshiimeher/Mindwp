@@ -1,5 +1,6 @@
 import { ArrowLeft, CheckCircle2, Clock, MapPin } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
 import { cn } from '@/components/ui/utils';
 
@@ -70,52 +71,50 @@ export function CaseStudyHeroSection({
     typeof heroIntroHtml === 'string' || typeof heroIntroHtml === 'number' || heroIntroHtml == null;
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
-      <div className='l-container'>
-        <a href={backToCaseStudiesHref} className='link case-study-hero__back-link'>
-          <ArrowLeft className='cta__icon' />
-          {backToCaseStudiesLabel}
-        </a>
+    <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
+      <a href={backToCaseStudiesHref} className='link case-study-hero__back-link'>
+        <ArrowLeft className='cta__icon' />
+        {backToCaseStudiesLabel}
+      </a>
 
-        <div className={`${BLOCK}__content`}>
-          <div className={cn(`${BLOCK}__badges`, 'case-study-hero__badges')}>
+      <div className={`${BLOCK}__content`}>
+        <div className={cn(`${BLOCK}__badges`, 'case-study-hero__badges')}>
+          <Badge variant='outline' size='sm' context='meta'>
+            {industry}
+          </Badge>
+          {scenarioBadge && (
             <Badge variant='outline' size='sm' context='meta'>
-              {industry}
+              {scenarioBadge}
             </Badge>
-            {scenarioBadge && (
-              <Badge variant='outline' size='sm' context='meta'>
-                {scenarioBadge}
-              </Badge>
-            )}
-          </div>
-
-          <Heading className={`${BLOCK}__heading`}>{heroHeadline}</Heading>
-
-          {isPlainTextIntro ? (
-            <p className={`${BLOCK}__intro case-study-hero__intro`}>{heroIntroHtml}</p>
-          ) : (
-            <div className={`${BLOCK}__intro case-study-hero__intro`}>{heroIntroHtml}</div>
           )}
+        </div>
 
-          <div className={cn(`${BLOCK}__meta`, 'case-study-hero__meta')}>
-            <div className={`${BLOCK}__meta-item`}>
-              <strong>Client:</strong> {business}
-            </div>
-            <div className={`${BLOCK}__meta-item`}>
-              <MapPin className='case-study-hero__meta-icon' />
-              {location}
-            </div>
-            <div className={`${BLOCK}__meta-item`}>
-              <Clock className='case-study-hero__meta-icon' />
-              {duration}
-            </div>
-            <div className={`${BLOCK}__meta-item`}>
-              <CheckCircle2 className='case-study-hero__meta-icon' />
-              {completedDate}
-            </div>
+        <Heading className={`${BLOCK}__heading`}>{heroHeadline}</Heading>
+
+        {isPlainTextIntro ? (
+          <p className={`${BLOCK}__intro case-study-hero__intro`}>{heroIntroHtml}</p>
+        ) : (
+          <div className={`${BLOCK}__intro case-study-hero__intro`}>{heroIntroHtml}</div>
+        )}
+
+        <div className={cn(`${BLOCK}__meta`, 'case-study-hero__meta')}>
+          <div className={`${BLOCK}__meta-item`}>
+            <strong>Client:</strong> {business}
+          </div>
+          <div className={`${BLOCK}__meta-item`}>
+            <MapPin className='case-study-hero__meta-icon' />
+            {location}
+          </div>
+          <div className={`${BLOCK}__meta-item`}>
+            <Clock className='case-study-hero__meta-icon' />
+            {duration}
+          </div>
+          <div className={`${BLOCK}__meta-item`}>
+            <CheckCircle2 className='case-study-hero__meta-icon' />
+            {completedDate}
           </div>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

@@ -1,5 +1,6 @@
 import { Repeat } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { Card } from '@/components/reusable/single/Card';
 import { ChecklistRow } from '@/components/reusable/single/ChecklistRow';
 import { cn } from '@/components/ui/utils';
@@ -36,7 +37,7 @@ export function ResourceComparisonSection({
   if (!heading || safeBeforeItems.length === 0 || safeAfterItems.length === 0) return null;
 
   return (
-    <section className={cn(BLOCK, className)}>
+    <SectionWrapper padding='none' container='none' className={cn(BLOCK, className)}>
       <ResourceSectionHeader
         icon={Repeat}
         title={heading}
@@ -81,6 +82,6 @@ export function ResourceComparisonSection({
           </div>
         </Card>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

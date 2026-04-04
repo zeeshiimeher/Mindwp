@@ -1,5 +1,6 @@
 import Image from 'next/image';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { Card } from '@/components/reusable/single/Card';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { cn } from '@/components/ui/utils';
@@ -23,7 +24,11 @@ export function BlogImageSection({
   const isRemoteSrc = /^https?:\/\//i.test(src);
 
   return (
-    <section className={cn('blog-post__section', BLOCK, className)}>
+    <SectionWrapper
+      padding='none'
+      container='none'
+      className={cn('blog-post__section', BLOCK, className)}
+    >
       {heading && <SectionIntro title={heading} cssPrefix='blog-image' alignment='left' />}
 
       <Card className={`${BLOCK}__card`}>
@@ -40,6 +45,6 @@ export function BlogImageSection({
         </div>
         {caption && <p className={`${BLOCK}__caption`}>{caption}</p>}
       </Card>
-    </section>
+    </SectionWrapper>
   );
 }

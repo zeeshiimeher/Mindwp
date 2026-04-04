@@ -1,5 +1,6 @@
 import { Check, X } from 'lucide-react';
 
+import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
 import { ChecklistRow, SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
@@ -33,7 +34,7 @@ export function ComparisonSection({
   const safeComparisons = Array.isArray(comparisons) ? comparisons : [];
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
+    <SectionWrapper container='none' background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
       <div className={`${BLOCK}__container l-container`}>
         {(badge || title || description) && (
           <SectionIntro
@@ -43,7 +44,7 @@ export function ComparisonSection({
             className={`${BLOCK}__header`}
           />
         )}
-        <div className={`${BLOCK}__grid`}>
+        <CardGrid columns={2} gap={8} className={`${BLOCK}__grid`}>
           {safeComparisons.map((comparison, index) => {
             const isBefore = comparison?.type === 'before';
             const comparisonTitle = comparison?.title ?? '';
@@ -105,8 +106,8 @@ export function ComparisonSection({
               </Card>
             );
           })}
-        </div>
+        </CardGrid>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

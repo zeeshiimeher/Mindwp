@@ -1,3 +1,4 @@
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { ChecklistItem, SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
@@ -41,7 +42,7 @@ export function ChecklistCardsSection({
         : `${BLOCK}__list--cols-4`;
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
+    <SectionWrapper container='none' background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
       <div className={cn(`${BLOCK}__container`, 'l-container')}>
         {(badge || title || description) && (
           <SectionIntro
@@ -61,6 +62,6 @@ export function ChecklistCardsSection({
           </ul>
         </Card>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

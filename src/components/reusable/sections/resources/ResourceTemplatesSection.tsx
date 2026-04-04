@@ -1,5 +1,6 @@
 import { Copy } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
 
@@ -30,7 +31,7 @@ export function ResourceTemplatesSection({
   if (!heading || safeItems.length === 0) return null;
 
   return (
-    <section className={cn(BLOCK, className)}>
+    <SectionWrapper padding='none' container='none' className={cn(BLOCK, className)}>
       <ResourceSectionHeader
         icon={Copy}
         title={heading}
@@ -64,6 +65,6 @@ export function ResourceTemplatesSection({
           </Card>
         ))}
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

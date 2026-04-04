@@ -1,6 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
+import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
 import { SectionIntro } from '@/components/reusable/single';
 import { Button } from '@/components/reusable/single/Button';
 import { Card } from '@/components/reusable/single/Card';
@@ -71,49 +72,44 @@ export function ExploreCardsSection({
         : `${BLOCK}__grid--cols-3`;
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
-      <div className='l-container'>
-        <SectionIntro
-          {...(badge !== undefined && { badge })}
-          title={title}
-          {...(description !== undefined && { description })}
-          className={`${BLOCK}__header`}
-        />
+    <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
+      <SectionIntro
+        {...(badge !== undefined && { badge })}
+        title={title}
+        {...(description !== undefined && { description })}
+        className={`${BLOCK}__header`}
+      />
 
-        <div className={cn(`${BLOCK}__grid`, columnsClass)}>
-          {cards.map((card, index) => {
-            const gradientVariant = getGradientVariant(card.gradient);
-            const iconVariant = getIconVariant(card.iconBg);
+      <CardGrid columns={columns} gap={6} className={cn(`${BLOCK}__grid`, columnsClass)}>
+        {cards.map((card, index) => {
+          const gradientVariant = getGradientVariant(card.gradient);
+          const iconVariant = getIconVariant(card.iconBg);
 
-            const cardGradientClass = `${BLOCK}__card--gradient-${gradientVariant}`;
-            const iconToneClass = `${BLOCK}__icon--${iconVariant}`;
+          const cardGradientClass = `${BLOCK}__card--gradient-${gradientVariant}`;
+          const iconToneClass = `${BLOCK}__icon--${iconVariant}`;
 
-            return (
-              <Card
-                key={`${card.href}-${index}`}
-                className={cn(`${BLOCK}__card`, cardGradientClass)}
-              >
-                <div className={cn(`${BLOCK}__icon`, iconToneClass)}>
-                  <card.icon className={`${BLOCK}__icon-svg`} />
-                </div>
+          return (
+            <Card key={`${card.href}-${index}`} className={cn(`${BLOCK}__card`, cardGradientClass)}>
+              <div className={cn(`${BLOCK}__icon`, iconToneClass)}>
+                <card.icon className={`${BLOCK}__icon-svg`} />
+              </div>
 
-                <h4 className={`${BLOCK}__title`}>{card.title}</h4>
+              <h4 className={`${BLOCK}__title`}>{card.title}</h4>
 
-                <p className={`${BLOCK}__description`}>{card.description}</p>
+              <p className={`${BLOCK}__description`}>{card.description}</p>
 
-                <Button
-                  href={card.href}
-                  variant='outline'
-                  label={ctaLabel}
-                  icon={ArrowRight}
-                  cssPrefix={cn(`${BLOCK}__cta`, 'btn-block')}
-                  iconClassName={`${BLOCK}__cta-icon`}
-                />
-              </Card>
-            );
-          })}
-        </div>
-      </div>
-    </section>
+              <Button
+                href={card.href}
+                variant='outline'
+                label={ctaLabel}
+                icon={ArrowRight}
+                cssPrefix={cn(`${BLOCK}__cta`, 'btn-block')}
+                iconClassName={`${BLOCK}__cta-icon`}
+              />
+            </Card>
+          );
+        })}
+      </CardGrid>
+    </SectionWrapper>
   );
 }

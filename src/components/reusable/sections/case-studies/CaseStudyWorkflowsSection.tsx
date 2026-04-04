@@ -1,7 +1,7 @@
 import React from 'react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { SectionIntro, WorkflowStepCard } from '@/components/reusable/single';
-import { cn } from '@/components/ui/utils';
 
 export interface CaseStudyWorkflow {
   trigger: string;
@@ -24,26 +24,24 @@ export function CaseStudyWorkflowsSection({
   const BLOCK = 'case-study-detail-workflows';
 
   return (
-    <section className={cn(BLOCK, 'l-section')}>
-      <div className='l-container'>
-        <SectionIntro
-          {...(badge !== undefined && { badge })}
-          title={title}
-          {...(description !== undefined && { description })}
-          className={`${BLOCK}__header`}
-        />
+    <SectionWrapper className={BLOCK}>
+      <SectionIntro
+        {...(badge !== undefined && { badge })}
+        title={title}
+        {...(description !== undefined && { description })}
+        className={`${BLOCK}__header`}
+      />
 
-        <div className={`${BLOCK}__grid`}>
-          {workflows.map((workflow, index) => (
-            <WorkflowStepCard
-              key={index}
-              trigger={workflow.trigger}
-              actions={workflow.actions}
-              cssPrefix={`${BLOCK}__card`}
-            />
-          ))}
-        </div>
+      <div className={`${BLOCK}__grid`}>
+        {workflows.map((workflow, index) => (
+          <WorkflowStepCard
+            key={index}
+            trigger={workflow.trigger}
+            actions={workflow.actions}
+            cssPrefix={`${BLOCK}__card`}
+          />
+        ))}
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

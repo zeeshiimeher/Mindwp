@@ -1,5 +1,6 @@
 import { Award } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
@@ -36,7 +37,7 @@ export function ResourceCaseSection({
   className = '',
 }: ResourceCaseSectionProps) {
   return (
-    <section className={cn(BLOCK, className)}>
+    <SectionWrapper padding='none' container='none' className={cn(BLOCK, className)}>
       <ResourceSectionHeader
         icon={Award}
         title={heading}
@@ -74,6 +75,6 @@ export function ResourceCaseSection({
           </div>
         </div>
       </Card>
-    </section>
+    </SectionWrapper>
   );
 }

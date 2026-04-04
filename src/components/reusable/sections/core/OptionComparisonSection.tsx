@@ -1,5 +1,6 @@
 import { Check } from 'lucide-react';
 
+import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
 
@@ -27,14 +28,14 @@ export function OptionComparisonSection({
   backgroundColor = '',
 }: PlatformComparisonSectionProps) {
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
+    <SectionWrapper container='none' background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
       <div className={`${BLOCK}__container l-container`}>
         {title && (
           <div className={`${BLOCK}__header`}>
             <h2 className={`${BLOCK}__heading`}>{title}</h2>
           </div>
         )}
-        <div className={`${BLOCK}__grid`}>
+        <CardGrid columns={2} gap={6} className={`${BLOCK}__grid`}>
           {platforms.map((platform, index) => (
             <Card key={index} className={`${BLOCK}__card`}>
               <h3 className={`${BLOCK}__title`}>{platform.title}</h3>
@@ -49,8 +50,8 @@ export function OptionComparisonSection({
               </ul>
             </Card>
           ))}
-        </div>
+        </CardGrid>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

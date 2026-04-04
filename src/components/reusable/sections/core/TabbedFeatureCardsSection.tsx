@@ -1,6 +1,7 @@
 import React from 'react';
 import { FileText } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
@@ -47,60 +48,58 @@ export function TabbedFeatureCardsSection({
   const tabGroupName = `${BLOCK}-tabs-${title.toLowerCase().replace(/\s+/g, '-')}`;
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
-      <div className='l-container'>
-        <SectionIntro
-          {...(badge !== undefined && { badge })}
-          title={title}
-          {...(description !== undefined && { description })}
-          className={`${BLOCK}__header`}
-        />
+    <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
+      <SectionIntro
+        {...(badge !== undefined && { badge })}
+        title={title}
+        {...(description !== undefined && { description })}
+        className={`${BLOCK}__header`}
+      />
 
-        <div className={`${BLOCK}__tabs`} role='tablist' aria-label='Feature groups'>
-          {tabs.map((tab, index) => {
-            const tabId = `${tabGroupName}-${index}`;
+      <div className={`${BLOCK}__tabs`} role='tablist' aria-label='Feature groups'>
+        {tabs.map((tab, index) => {
+          const tabId = `${tabGroupName}-${index}`;
 
-            return (
-              <React.Fragment key={tabId}>
-                <input
-                  id={tabId}
-                  type='radio'
-                  name={tabGroupName}
-                  className={`${BLOCK}__tab-input`}
-                  defaultChecked={selectedTab === tab}
-                />
-                <label htmlFor={tabId} className={`${BLOCK}__tab`}>
-                  {tab}
-                </label>
-              </React.Fragment>
-            );
-          })}
-        </div>
+          return (
+            <React.Fragment key={tabId}>
+              <input
+                id={tabId}
+                type='radio'
+                name={tabGroupName}
+                className={`${BLOCK}__tab-input`}
+                defaultChecked={selectedTab === tab}
+              />
+              <label htmlFor={tabId} className={`${BLOCK}__tab`}>
+                {tab}
+              </label>
+            </React.Fragment>
+          );
+        })}
+      </div>
 
-        {showImageGrid && imageGrid && imageGrid.length > 0 && (
-          <div className={`${BLOCK}__image-grid`}>
-            {imageGrid.map((item, index) => (
-              <Card key={`${item.src}-${index}`} className={`${BLOCK}__image-item`}>
-                <img src={item.src} alt={item.alt} loading='lazy' className={`${BLOCK}__image`} />
-              </Card>
-            ))}
-          </div>
-        )}
-
-        <div className={`${BLOCK}__cards`}>
-          {cards.map((card, index) => (
-            <Card key={`${card.title}-${index}`} className={`${BLOCK}__card`}>
-              <div className={`${BLOCK}__card-icon-wrap`} aria-hidden='true'>
-                {React.createElement(card.icon || FileText, {
-                  className: `${BLOCK}__card-icon`,
-                })}
-              </div>
-              <h3 className={`${BLOCK}__card-title`}>{card.title}</h3>
-              <p className={`${BLOCK}__card-description`}>{card.description}</p>
+      {showImageGrid && imageGrid && imageGrid.length > 0 && (
+        <div className={`${BLOCK}__image-grid`}>
+          {imageGrid.map((item, index) => (
+            <Card key={`${item.src}-${index}`} className={`${BLOCK}__image-item`}>
+              <img src={item.src} alt={item.alt} loading='lazy' className={`${BLOCK}__image`} />
             </Card>
           ))}
         </div>
+      )}
+
+      <div className={`${BLOCK}__cards`}>
+        {cards.map((card, index) => (
+          <Card key={`${card.title}-${index}`} className={`${BLOCK}__card`}>
+            <div className={`${BLOCK}__card-icon-wrap`} aria-hidden='true'>
+              {React.createElement(card.icon || FileText, {
+                className: `${BLOCK}__card-icon`,
+              })}
+            </div>
+            <h3 className={`${BLOCK}__card-title`}>{card.title}</h3>
+            <p className={`${BLOCK}__card-description`}>{card.description}</p>
+          </Card>
+        ))}
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

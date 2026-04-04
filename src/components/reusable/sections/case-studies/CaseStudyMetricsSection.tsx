@@ -1,3 +1,4 @@
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
 
@@ -18,7 +19,7 @@ export function CaseStudyMetricsSection({
   keyMetrics,
 }: CaseStudyMetricsSectionProps) {
   return (
-    <section className='case-study-detail-metrics l-section'>
+    <SectionWrapper container='none' className='case-study-detail-metrics'>
       <div className='case-study-detail-metrics-container-1 l-container'>
         <SectionIntro title={resultsSectionTitle} cssPrefix='case-study-detail-metrics-header' />
 
@@ -40,6 +41,6 @@ export function CaseStudyMetricsSection({
           })}
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

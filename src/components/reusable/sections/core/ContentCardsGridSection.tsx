@@ -1,5 +1,6 @@
 import { CheckCircle2, X } from 'lucide-react';
 
+import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
 import { SectionIntro } from '@/components/reusable/single';
 import { cn } from '@/components/ui/utils';
 
@@ -36,42 +37,44 @@ export function ContentCardsGridSection({
   cssPrefix = '',
 }: ContentGridSectionProps) {
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
-      <div className='l-container'>
-        {(badge || title) && (
-          <SectionIntro
-            {...(badge !== undefined && { badge })}
-            title={title || ''}
-            {...(description !== undefined && { description })}
-            className={`${BLOCK}__header`}
-          />
-        )}
+    <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
+      {(badge || title) && (
+        <SectionIntro
+          {...(badge !== undefined && { badge })}
+          title={title || ''}
+          {...(description !== undefined && { description })}
+          className={`${BLOCK}__header`}
+        />
+      )}
 
-        <div className={cn(`${BLOCK}__grid`, `${BLOCK}__grid--${columns}`)}>
-          {items.map((item, index) => {
-            const renderIcon = () => {
-              if (iconType === 'none') return null;
+      <CardGrid
+        columns={columns}
+        gap={4}
+        className={cn(`${BLOCK}__grid`, `${BLOCK}__grid--${columns}`)}
+      >
+        {items.map((item, index) => {
+          const renderIcon = () => {
+            if (iconType === 'none') return null;
 
-              const IconComponent = iconType === 'cross' ? X : CheckCircle2;
-              const iconColor = iconType === 'cross' ? 'icon-text-destructive' : 'icon-text-accent';
-
-              return (
-                <div className={`${BLOCK}__icon icon-container-sm icon-bg-accent`}>
-                  <IconComponent className={cn(iconColor)} />
-                </div>
-              );
-            };
+            const IconComponent = iconType === 'cross' ? X : CheckCircle2;
+            const iconColor = iconType === 'cross' ? 'icon-text-destructive' : 'icon-text-accent';
 
             return (
-              <div key={index} className={`${BLOCK}__item`}>
-                {renderIcon()}
-                <h4 className={`${BLOCK}__title`}>{item.title}</h4>
-                <p className={`${BLOCK}__desc`}>{item.desc}</p>
+              <div className={`${BLOCK}__icon icon-container-sm icon-bg-accent`}>
+                <IconComponent className={cn(iconColor)} />
               </div>
             );
-          })}
-        </div>
-      </div>
-    </section>
+          };
+
+          return (
+            <div key={index} className={`${BLOCK}__item`}>
+              {renderIcon()}
+              <h4 className={`${BLOCK}__title`}>{item.title}</h4>
+              <p className={`${BLOCK}__desc`}>{item.desc}</p>
+            </div>
+          );
+        })}
+      </CardGrid>
+    </SectionWrapper>
   );
 }

@@ -1,5 +1,6 @@
 import { Lightbulb } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { ActionStepCard } from '@/components/reusable/single/ActionStepCard';
 import { Callout } from '@/components/reusable/single/Callout';
 import { cn } from '@/components/ui/utils';
@@ -32,7 +33,7 @@ export function ResourceDIYSection({
   const BLOCK = 'diy-section';
 
   return (
-    <section className={cn(BLOCK, className)}>
+    <SectionWrapper padding='none' container='none' className={cn(BLOCK, className)}>
       <ResourceSectionHeader
         icon={Lightbulb}
         title={heading}
@@ -59,6 +60,6 @@ export function ResourceDIYSection({
           </Callout>
         </div>
       )}
-    </section>
+    </SectionWrapper>
   );
 }

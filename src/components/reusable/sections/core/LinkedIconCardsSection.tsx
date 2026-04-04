@@ -1,6 +1,7 @@
 import type { LucideIcon } from 'lucide-react';
 import { ArrowRight } from 'lucide-react';
 
+import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
 import { Button } from '@/components/reusable/single/Button';
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
@@ -29,38 +30,44 @@ export function LinkedIconCardsSection({
   cssPrefix = '',
 }: LinkedIconCardsSectionProps) {
   return (
-    <section className={cn(BLOCK, 'l-section', cssPrefix)}>
-      <div className='l-container'>
-        <div className={`${BLOCK}__head`}>
-          <h2>{title}</h2>
-          {description && <p className={`${BLOCK}__desc`}>{description}</p>}
-        </div>
-
-        <div className={`${BLOCK}__grid`}>
-          {items.map((item, index) => (
-            <Card key={index} className={`${BLOCK}__card`}>
-              <div className={`${BLOCK}__content`}>
-                {item.icon && (
-                  <div className={cn(`${BLOCK}__icon`, 'icon-container-md', getVariantStyles('primary').icon.bg)}>
-                    <item.icon className={cn(`${BLOCK}__icon-svg`, getVariantStyles('primary').icon.text)} />
-                  </div>
-                )}
-                <h4>{item.title}</h4>
-                <p className={`${BLOCK}__text`}>{item.description}</p>
-                <Button
-                  href={item.href}
-                  variant='link'
-                  label='Learn more'
-                  icon={ArrowRight}
-                  showDefaultIcon
-                  cssPrefix={`${BLOCK}__link`}
-                  iconClassName={`${BLOCK}__arrow`}
-                />
-              </div>
-            </Card>
-          ))}
-        </div>
+    <SectionWrapper className={cn(BLOCK, cssPrefix)}>
+      <div className={`${BLOCK}__head`}>
+        <h2>{title}</h2>
+        {description && <p className={`${BLOCK}__desc`}>{description}</p>}
       </div>
-    </section>
+
+      <CardGrid columns={3} gap={6} className={`${BLOCK}__grid`}>
+        {items.map((item, index) => (
+          <Card key={index} className={`${BLOCK}__card`}>
+            <div className={`${BLOCK}__content`}>
+              {item.icon && (
+                <div
+                  className={cn(
+                    `${BLOCK}__icon`,
+                    'icon-container-md',
+                    getVariantStyles('primary').icon.bg
+                  )}
+                >
+                  <item.icon
+                    className={cn(`${BLOCK}__icon-svg`, getVariantStyles('primary').icon.text)}
+                  />
+                </div>
+              )}
+              <h4>{item.title}</h4>
+              <p className={`${BLOCK}__text`}>{item.description}</p>
+              <Button
+                href={item.href}
+                variant='link'
+                label='Learn more'
+                icon={ArrowRight}
+                showDefaultIcon
+                cssPrefix={`${BLOCK}__link`}
+                iconClassName={`${BLOCK}__arrow`}
+              />
+            </div>
+          </Card>
+        ))}
+      </CardGrid>
+    </SectionWrapper>
   );
 }

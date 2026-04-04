@@ -1,5 +1,6 @@
 import { AlertCircle } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { AlertList } from '@/components/reusable/single/AlertList';
 import { cn } from '@/components/ui/utils';
 
@@ -23,7 +24,7 @@ export function ResourceProblemSection({
   const BLOCK = 'infrastructure-gaps';
 
   return (
-    <section className={cn(BLOCK, className)}>
+    <SectionWrapper padding='none' container='none' className={cn(BLOCK, className)}>
       <ResourceSectionHeader icon={AlertCircle} title={heading} variant='problem' />
 
       <div className={`${BLOCK}__description`}>
@@ -39,6 +40,6 @@ export function ResourceProblemSection({
           <AlertList title={causesHeading} items={causes} />
         </div>
       )}
-    </section>
+    </SectionWrapper>
   );
 }

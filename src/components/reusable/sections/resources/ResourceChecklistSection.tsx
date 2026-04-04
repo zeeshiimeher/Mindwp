@@ -1,5 +1,6 @@
 import { ClipboardList } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { Card } from '@/components/reusable/single/Card';
 import { ChecklistItem } from '@/components/reusable/single/ChecklistItem';
 import { cn } from '@/components/ui/utils';
@@ -28,7 +29,7 @@ export function ResourceChecklistSection({
   const columnsClass = columns === 2 ? `${BLOCK}__list--cols-2` : `${BLOCK}__list--cols-1`;
 
   return (
-    <section className={cn(BLOCK, className)}>
+    <SectionWrapper padding='none' container='none' className={cn(BLOCK, className)}>
       <ResourceSectionHeader
         icon={ClipboardList}
         title={heading}
@@ -55,6 +56,6 @@ export function ResourceChecklistSection({
           ))}
         </ul>
       </Card>
-    </section>
+    </SectionWrapper>
   );
 }

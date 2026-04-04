@@ -1,3 +1,4 @@
+import { SectionWrapper } from '@/components/reusable/primitives';
 import {
   Accordion,
   AccordionContent,
@@ -27,7 +28,7 @@ export function FaqAccordionSection({
   cssPrefix = '',
 }: FaqAccordionSectionProps) {
   return (
-    <section className={cn(BLOCK, 'l-section', cssPrefix)}>
+    <SectionWrapper container='none' className={cn(BLOCK, cssPrefix)}>
       <div className={cn(`${BLOCK}__container`, 'l-container')}>
         <div className={`${BLOCK}__header`}>
           <h2 className={`${BLOCK}__title`}>{title}</h2>
@@ -44,6 +45,6 @@ export function FaqAccordionSection({
           ))}
         </Accordion>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

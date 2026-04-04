@@ -1,3 +1,4 @@
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { IconBenefitCard, SectionIntro } from '@/components/reusable/single';
 
 /* case study compoenent */
@@ -21,31 +22,29 @@ export function CaseStudySolutionSection({
   whatWeDid,
 }: CaseStudySolutionSectionProps) {
   return (
-    <section className='case-study-detail-solution l-section'>
-      <div className='l-container'>
-        <SectionIntro
-          badge={solutionBadgeLabel}
-          title={solutionHeading}
-          description={solutionDescription}
-          cssPrefix='case-study-detail-solution-header'
-        />
+    <SectionWrapper className='case-study-detail-solution'>
+      <SectionIntro
+        badge={solutionBadgeLabel}
+        title={solutionHeading}
+        description={solutionDescription}
+        cssPrefix='case-study-detail-solution-header'
+      />
 
-        <div className='case-study-detail-solution__grid'>
-          {whatWeDid.map((item, index) => {
-            const Icon = caseStudyIcons[item.icon] ?? caseStudyIcons.HelpCircle;
-            return (
-              <IconBenefitCard
-                key={index}
-                icon={Icon}
-                title={item.title}
-                description={item.description}
-                iconType='primary'
-                variant='left'
-              />
-            );
-          })}
-        </div>
+      <div className='case-study-detail-solution__grid'>
+        {whatWeDid.map((item, index) => {
+          const Icon = caseStudyIcons[item.icon] ?? caseStudyIcons.HelpCircle;
+          return (
+            <IconBenefitCard
+              key={index}
+              icon={Icon}
+              title={item.title}
+              description={item.description}
+              iconType='primary'
+              variant='left'
+            />
+          );
+        })}
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

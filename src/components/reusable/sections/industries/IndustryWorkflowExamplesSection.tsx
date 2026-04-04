@@ -1,3 +1,4 @@
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { SectionIntro, WorkflowStepCard } from '@/components/reusable/single';
 import { cn } from '@/components/ui/utils';
 
@@ -26,26 +27,24 @@ export function IndustryWorkflowExamplesSection({
   cssPrefix = '',
 }: IndustryWorkflowExamplesSectionProps) {
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
-      <div className='l-container'>
-        <SectionIntro
-          {...(badge !== undefined && { badge })}
-          title={title}
-          {...(description !== undefined && { description })}
-          className={`${BLOCK}__header`}
-        />
+    <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
+      <SectionIntro
+        {...(badge !== undefined && { badge })}
+        title={title}
+        {...(description !== undefined && { description })}
+        className={`${BLOCK}__header`}
+      />
 
-        <div className={`${BLOCK}__grid`}>
-          {workflows.map((workflow, index) => (
-            <WorkflowStepCard
-              key={`${workflow.trigger}-${index}`}
-              trigger={workflow.trigger}
-              actions={workflow.actions}
-              cssPrefix={`${BLOCK}__card`}
-            />
-          ))}
-        </div>
+      <div className={`${BLOCK}__grid`}>
+        {workflows.map((workflow, index) => (
+          <WorkflowStepCard
+            key={`${workflow.trigger}-${index}`}
+            trigger={workflow.trigger}
+            actions={workflow.actions}
+            cssPrefix={`${BLOCK}__card`}
+          />
+        ))}
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

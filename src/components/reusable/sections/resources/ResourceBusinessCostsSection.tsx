@@ -1,5 +1,6 @@
 import { AlertCircle } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { AlertCard } from '@/components/reusable/single/AlertCard';
 import { cn } from '@/components/ui/utils';
 
@@ -21,7 +22,7 @@ export function ResourceBusinessCostsSection({
   const BLOCK = 'business-costs-section';
 
   return (
-    <section className={cn(BLOCK, className)}>
+    <SectionWrapper padding='none' container='none' className={cn(BLOCK, className)}>
       <ResourceSectionHeader
         icon={AlertCircle}
         title={heading}
@@ -36,6 +37,6 @@ export function ResourceBusinessCostsSection({
           </AlertCard>
         ))}
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

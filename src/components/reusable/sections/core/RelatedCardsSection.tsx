@@ -13,6 +13,7 @@ import {
 } from 'lucide-react';
 import type { ComponentType } from 'react';
 
+import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
 import { LinkCard, SectionIntro } from '@/components/reusable/single';
 import { Button } from '@/components/reusable/single/Button';
 import { Card } from '@/components/reusable/single/Card';
@@ -186,72 +187,70 @@ export function RelatedCardsSection({
   };
 
   return (
-    <section className={cn(activeBlock, 'l-section', backgroundColor, cssPrefix)}>
-      <div className='l-container'>
-        <SectionIntro
-          {...(badge !== undefined && { badge })}
-          title={title}
-          {...(description !== undefined && { description })}
-          className={`${activeBlock}__header`}
-          {...(primaryAction !== undefined && { primaryAction })}
-          {...(secondaryAction !== undefined && { secondaryAction })}
-        />
-        {isStyle1 ? (
-          <div className={cn(`${activeBlock}__grid`, columnsClass)}>
-            {items.map((item, index) => {
-              const style1GradientClass = getStyle1GradientClass(index);
-              const Icon = item.icon ?? getDefaultIconForItem(item, index);
-              const iconToneClass = getIconToneClass(index);
+    <SectionWrapper background={backgroundColor} className={cn(activeBlock, cssPrefix)}>
+      <SectionIntro
+        {...(badge !== undefined && { badge })}
+        title={title}
+        {...(description !== undefined && { description })}
+        className={`${activeBlock}__header`}
+        {...(primaryAction !== undefined && { primaryAction })}
+        {...(secondaryAction !== undefined && { secondaryAction })}
+      />
+      {isStyle1 ? (
+        <CardGrid columns={3} gap={6} className={cn(`${activeBlock}__grid`, columnsClass)}>
+          {items.map((item, index) => {
+            const style1GradientClass = getStyle1GradientClass(index);
+            const Icon = item.icon ?? getDefaultIconForItem(item, index);
+            const iconToneClass = getIconToneClass(index);
 
-              return (
-                <Card
-                  key={`${item.href ?? item.title}-${index}`}
-                  className={cn('card-style-link', `${activeBlock}__card`, style1GradientClass)}
-                >
-                  <div className='card-style-link__inner'>
-                    <div className='card-style-link__body'>
-                      <div className={cn(`${activeBlock}__icon`, iconToneClass)}>
-                        <Icon className={`${activeBlock}__icon-svg`} />
-                      </div>
-                      <h3 className='card-style-link__title'>{item.title}</h3>
-                      <p className='card-style-link__desc'>{item.description ?? item.desc ?? ''}</p>
+            return (
+              <Card
+                key={`${item.href ?? item.title}-${index}`}
+                className={cn('card-style-link', `${activeBlock}__card`, style1GradientClass)}
+              >
+                <div className='card-style-link__inner'>
+                  <div className='card-style-link__body'>
+                    <div className={cn(`${activeBlock}__icon`, iconToneClass)}>
+                      <Icon className={`${activeBlock}__icon-svg`} />
                     </div>
-
-                    {item.href ? (
-                      <div className='card-style-link__footer'>
-                        <div className='card-style-link__footer-row'>
-                          <Button
-                            href={item.href}
-                            variant='link'
-                            label={ctaLabel}
-                            icon={ArrowRight}
-                            showDefaultIcon
-                            cssPrefix={`${activeBlock}__cta`}
-                            iconClassName={`${activeBlock}__cta-icon`}
-                          />
-                        </div>
-                      </div>
-                    ) : null}
+                    <h3 className='card-style-link__title'>{item.title}</h3>
+                    <p className='card-style-link__desc'>{item.description ?? item.desc ?? ''}</p>
                   </div>
-                </Card>
-              );
-            })}
-          </div>
-        ) : (
-          <div className={cn(`${activeBlock}__grid`, columnsClass)}>
-            {items.map((item, index) => (
-              <LinkCard
-                key={index}
-                title={item.title}
-                desc={item.desc ?? item.description ?? ''}
-                {...(item.href !== undefined && { href: item.href })}
-                showArrow={showArrows}
-                cssPrefix='related-card'
-              />
-            ))}
-          </div>
-        )}
-      </div>
-    </section>
+
+                  {item.href ? (
+                    <div className='card-style-link__footer'>
+                      <div className='card-style-link__footer-row'>
+                        <Button
+                          href={item.href}
+                          variant='link'
+                          label={ctaLabel}
+                          icon={ArrowRight}
+                          showDefaultIcon
+                          cssPrefix={`${activeBlock}__cta`}
+                          iconClassName={`${activeBlock}__cta-icon`}
+                        />
+                      </div>
+                    </div>
+                  ) : null}
+                </div>
+              </Card>
+            );
+          })}
+        </CardGrid>
+      ) : (
+        <CardGrid columns={3} gap={6} className={cn(`${activeBlock}__grid`, columnsClass)}>
+          {items.map((item, index) => (
+            <LinkCard
+              key={index}
+              title={item.title}
+              desc={item.desc ?? item.description ?? ''}
+              {...(item.href !== undefined && { href: item.href })}
+              showArrow={showArrows}
+              cssPrefix='related-card'
+            />
+          ))}
+        </CardGrid>
+      )}
+    </SectionWrapper>
   );
 }

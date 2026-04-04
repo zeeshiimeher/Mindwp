@@ -1,3 +1,4 @@
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { Card } from '@/components/reusable/single/Card';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { cn } from '@/components/ui/utils';
@@ -25,7 +26,11 @@ export function BlogStepsSection({
   const paragraphs = content === undefined ? [] : typeof content === 'string' ? [content] : content;
 
   return (
-    <section className={cn('blog-post__section', BLOCK, className)}>
+    <SectionWrapper
+      padding='none'
+      container='none'
+      className={cn('blog-post__section', BLOCK, className)}
+    >
       {heading && <SectionIntro title={heading} cssPrefix='blog-steps' alignment='left' />}
       {paragraphs.length > 0 && (
         <div className={`${BLOCK}__content`}>
@@ -50,6 +55,6 @@ export function BlogStepsSection({
           ))}
         </ol>
       </Card>
-    </section>
+    </SectionWrapper>
   );
 }

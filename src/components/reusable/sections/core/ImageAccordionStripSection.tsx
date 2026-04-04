@@ -1,3 +1,4 @@
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
@@ -28,25 +29,23 @@ export function ImageAccordionStripSection({
   cssPrefix = '',
 }: ImageAccordionStripSectionProps) {
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
-      <div className='l-container'>
-        <SectionIntro
-          {...(badge !== undefined && { badge })}
-          title={title}
-          {...(description !== undefined && { description })}
-          className={`${BLOCK}__header`}
-        />
+    <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
+      <SectionIntro
+        {...(badge !== undefined && { badge })}
+        title={title}
+        {...(description !== undefined && { description })}
+        className={`${BLOCK}__header`}
+      />
 
-        <div className={`${BLOCK}__track`}>
-          {items.map((item, index) => (
-            <Card key={`${item.title}-${index}`} className={`${BLOCK}__item`}>
-              <img src={item.image} alt={item.alt} loading='lazy' className={`${BLOCK}__image`} />
-              <div className={`${BLOCK}__overlay`} aria-hidden='true' />
-              <p className={`${BLOCK}__label`}>{item.title}</p>
-            </Card>
-          ))}
-        </div>
+      <div className={`${BLOCK}__track`}>
+        {items.map((item, index) => (
+          <Card key={`${item.title}-${index}`} className={`${BLOCK}__item`}>
+            <img src={item.image} alt={item.alt} loading='lazy' className={`${BLOCK}__image`} />
+            <div className={`${BLOCK}__overlay`} aria-hidden='true' />
+            <p className={`${BLOCK}__label`}>{item.title}</p>
+          </Card>
+        ))}
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

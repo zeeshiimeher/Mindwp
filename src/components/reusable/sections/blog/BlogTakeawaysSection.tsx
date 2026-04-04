@@ -1,3 +1,4 @@
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { Card } from '@/components/reusable/single/Card';
 import { ChecklistRow } from '@/components/reusable/single/ChecklistRow';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
@@ -21,7 +22,11 @@ export function BlogTakeawaysSection({
   const paragraphs = content === undefined ? [] : typeof content === 'string' ? [content] : content;
 
   return (
-    <section className={cn('blog-post__section', BLOCK, className)}>
+    <SectionWrapper
+      padding='none'
+      container='none'
+      className={cn('blog-post__section', BLOCK, className)}
+    >
       {heading && <SectionIntro title={heading} cssPrefix='blog-takeaways' alignment='left' />}
       {paragraphs.length > 0 && (
         <div className={`${BLOCK}__content`}>
@@ -40,6 +45,6 @@ export function BlogTakeawaysSection({
           ))}
         </ul>
       </Card>
-    </section>
+    </SectionWrapper>
   );
 }

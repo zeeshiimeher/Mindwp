@@ -1,5 +1,6 @@
 import { ListChecks } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { Card } from '@/components/reusable/single/Card';
 import { ChecklistItem } from '@/components/reusable/single/ChecklistItem';
 import { cn } from '@/components/ui/utils';
@@ -24,7 +25,7 @@ export function ResourceTakeawaysSection({
   if (!heading || items.length === 0) return null;
 
   return (
-    <section className={cn(BLOCK, className)}>
+    <SectionWrapper padding='none' container='none' className={cn(BLOCK, className)}>
       <ResourceSectionHeader
         icon={ListChecks}
         title={heading}
@@ -51,6 +52,6 @@ export function ResourceTakeawaysSection({
           ))}
         </ul>
       </Card>
-    </section>
+    </SectionWrapper>
   );
 }

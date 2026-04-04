@@ -1,3 +1,4 @@
+import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
 import { CaseStudyCard } from '@/components/reusable/single';
 import { cn } from '@/components/ui/utils';
 
@@ -28,14 +29,14 @@ export function CaseStudyCardsSection({
   if (!studies.length) return null;
 
   return (
-    <section className={cn(BLOCK, 'l-section', cssPrefix)}>
+    <SectionWrapper id={undefined} container='none' className={cn(BLOCK, cssPrefix)}>
       <div className={cn(`${BLOCK}__container`, 'l-container')}>
         <div className={`${BLOCK}__header`}>
           <h2 className={`${BLOCK}__title`}>{title}</h2>
           <p className={`${BLOCK}__description`}>{description}</p>
         </div>
 
-        <div className={`${BLOCK}__grid`}>
+        <CardGrid columns={3} gap={8} className={`${BLOCK}__grid`}>
           {studies.map(study => (
             <CaseStudyCard
               key={study.slug}
@@ -50,8 +51,8 @@ export function CaseStudyCardsSection({
               className={`industry-case-studies-card-${study.slug}`}
             />
           ))}
-        </div>
+        </CardGrid>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }
