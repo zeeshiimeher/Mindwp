@@ -3,7 +3,9 @@ import {
   loadScriptHistory,
   loadScriptRegistry,
 } from '@/lib/dev/executionVisibility';
+import { getFixInsights } from '@/lib/dev/fixInsightsAnalyzer';
 
+import { FixInsightsPanel } from './FixInsightsPanel';
 import { ReportViewer } from './ReportViewer';
 import { ScriptExplorer } from './ScriptExplorer';
 
@@ -28,10 +30,19 @@ function formatTimestamp(value: string | null): string {
   return new Date(value).toLocaleString();
 }
 
+function countForImpact(
+  impact: 'high' | 'medium' | 'low',
+  insights: ReturnType<typeof getFixInsights>
+) {
+  return insights.byImpact.find(item => item.impact === impact)?.count ?? 0;
+}
+
 export default function Dashboard() {
   const status = loadExecutionSystemStatus();
   const scripts = loadScriptRegistry();
   const history = loadScriptHistory();
+  const fixInsights = getFixInsights();
+  const mostAffectedComponent = fixInsights.mostAffectedComponents[0] ?? null;
 
   return (
     <div className='mx-auto max-w-7xl px-4 py-10 sm:px-6 lg:px-8'>
@@ -100,10 +111,59 @@ export default function Dashboard() {
             </div>
           </div>
         </div>
+
+        <div className='mt-4 rounded-2xl border border-slate-200 bg-slate-50 p-4'>
+          <div className='flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between'>
+            <div>
+              <h3 className='text-sm font-semibold text-slate-950'>Fix Snapshot</h3>
+              <p className='mt-1 text-sm text-slate-500'>
+                Quick scan of fix volume, severity, and current hotspot.
+              </p>
+            </div>
+
+            <div className='grid gap-3 sm:grid-cols-3 lg:min-w-[34rem]'>
+              <div className='rounded-xl border border-slate-200 bg-white px-4 py-3'>
+                <div className='text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400'>
+                  Total Fixes
+                </div>
+                <div className='mt-2 text-lg font-semibold text-slate-950'>
+                  {fixInsights.totalFixes}
+                </div>
+              </div>
+
+              <div className='rounded-xl border border-rose-200 bg-rose-50 px-4 py-3'>
+                <div className='text-[11px] font-semibold uppercase tracking-[0.16em] text-rose-500'>
+                  High Impact
+                </div>
+                <div className='mt-2 text-lg font-semibold text-rose-700'>
+                  {countForImpact('high', fixInsights)}
+                </div>
+              </div>
+
+              <div className='rounded-xl border border-slate-200 bg-white px-4 py-3'>
+                <div className='text-[11px] font-semibold uppercase tracking-[0.16em] text-slate-400'>
+                  Focus Component
+                </div>
+                <div className='mt-2 truncate text-sm font-semibold text-slate-950'>
+                  {mostAffectedComponent?.component ?? 'None'}
+                </div>
+                <div className='mt-1 text-xs text-slate-400'>
+                  {mostAffectedComponent
+                    ? `${mostAffectedComponent.count} logged fixes`
+                    : 'No hotspot yet'}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section className='mb-8'>
         <ScriptExplorer scripts={scripts} history={history} />
+      </section>
+
+      <section className='mb-8'>
+        <FixInsightsPanel insights={fixInsights} />
       </section>
 
       <section className='mb-8 grid gap-6 xl:grid-cols-[1.5fr_1fr]'>
