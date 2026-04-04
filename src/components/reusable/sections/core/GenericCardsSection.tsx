@@ -44,7 +44,7 @@ export function GenericCardsSection({
         className={`${BLOCK}__header`}
       />
 
-      <CardGrid columns={columns}>
+      <CardGrid columns={columns} mode='controlled'>
         {items.map((item, index) => (
           <Card key={index} className={cn(`${BLOCK}__card`, cardVariantClass)}>
             <h4 className={`${BLOCK}__item-title`}>{item.title}</h4>

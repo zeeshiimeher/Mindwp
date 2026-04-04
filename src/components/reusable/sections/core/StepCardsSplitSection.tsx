@@ -1,4 +1,4 @@
-import { SectionWrapper } from '@/components/reusable/primitives';
+import { SectionWrapper, SplitLayout } from '@/components/reusable/primitives';
 import { type ButtonProps, SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
@@ -34,7 +34,7 @@ export function StepCardsSplitSection({
 }: StepCardsSplitSectionProps) {
   return (
     <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
-      <div className={`${BLOCK}__layout`}>
+      <SplitLayout breakpoint='lg' ratio='50/70' gap={8} className={`${BLOCK}__layout`}>
         <SectionIntro
           {...(badge !== undefined && { badge })}
           title={title}
@@ -55,7 +55,7 @@ export function StepCardsSplitSection({
             </Card>
           ))}
         </div>
-      </div>
+      </SplitLayout>
     </SectionWrapper>
   );
 }

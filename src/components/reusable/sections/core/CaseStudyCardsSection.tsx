@@ -36,7 +36,12 @@ export function CaseStudyCardsSection({
           <p className={`${BLOCK}__description`}>{description}</p>
         </div>
 
-        <CardGrid columns={3} gap={8} className={`${BLOCK}__grid`}>
+        <CardGrid
+          columns={1}
+          gap={8}
+          mode='controlled'
+          className={`${BLOCK}__grid md:l-grid-2 lg:l-grid-3`}
+        >
           {studies.map(study => (
             <CaseStudyCard
               key={study.slug}

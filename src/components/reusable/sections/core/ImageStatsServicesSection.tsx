@@ -1,4 +1,4 @@
-import { SectionWrapper } from '@/components/reusable/primitives';
+import { SectionWrapper, SplitLayout } from '@/components/reusable/primitives';
 import { SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
@@ -48,7 +48,7 @@ export function ImageStatsServicesSection({
 }: ImageStatsServicesSectionProps) {
   return (
     <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
-      <div className={`${BLOCK}__top`}>
+      <SplitLayout breakpoint='lg' gap={8} className={`${BLOCK}__top`}>
         <Card className={`${BLOCK}__image-card`}>
           <img src={image.src} alt={image.alt} className={`${BLOCK}__image`} loading='lazy' />
         </Card>
@@ -78,7 +78,7 @@ export function ImageStatsServicesSection({
             ))}
           </div>
         </div>
-      </div>
+      </SplitLayout>
 
       <div className={`${BLOCK}__services`}>
         {services.map((service, index) => (

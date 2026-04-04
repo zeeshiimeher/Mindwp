@@ -50,6 +50,7 @@ export function ContentCardsGridSection({
       <CardGrid
         columns={columns}
         gap={4}
+        mode='controlled'
         className={cn(`${BLOCK}__grid`, `${BLOCK}__grid--${columns}`)}
       >
         {items.map((item, index) => {

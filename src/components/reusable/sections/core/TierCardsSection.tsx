@@ -48,7 +48,7 @@ export function TierCardsSection({
         />
       )}
 
-      <CardGrid columns={3} gap={8} className={`${BLOCK}__grid`}>
+      <CardGrid columns={3} gap={8} mode='controlled' className={`${BLOCK}__grid`}>
         {packages.map((pkg, index) => (
           <Card
             key={index}

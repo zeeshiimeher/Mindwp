@@ -46,7 +46,7 @@ export function ServiceSpectrumCardsSection({
         </div>
       )}
 
-      <CardGrid columns={4} gap={6} className={`${BLOCK}__grid`}>
+      <CardGrid columns={4} gap={6} mode='controlled' className={`${BLOCK}__grid`}>
         {cards.map((card, index) => (
           <Card
             key={`${card.title}-${index}`}

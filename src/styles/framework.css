@@ -638,6 +638,18 @@
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
+  .lg\:l-split-60-40 {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  }
+
+  .lg\:l-split-40-60 {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  }
+
+  .lg\:l-split-50-70 {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  }
+
   .lg\:l-stack {
     display: flex;
     flex-direction: column;

@@ -50,7 +50,15 @@ export function FeatureChecklistCardsSection({
         {...(description !== undefined && { description })}
         className={`${BLOCK}__header`}
       />
-      <CardGrid columns={columns} className={`${BLOCK}__grid ${BLOCK}__grid--cols-${columns}`}>
+      <CardGrid
+        columns={columns === 3 ? 1 : columns}
+        mode='controlled'
+        className={cn(
+          `${BLOCK}__grid`,
+          `${BLOCK}__grid--cols-${columns}`,
+          columns === 3 && 'md:l-grid-2 lg:l-grid-3'
+        )}
+      >
         {featureCategories.map((feature, index) => (
           <FeatureChecklistCard
             key={`${feature.title}-${index}`}

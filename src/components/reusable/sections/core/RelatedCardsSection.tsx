@@ -197,7 +197,12 @@ export function RelatedCardsSection({
         {...(secondaryAction !== undefined && { secondaryAction })}
       />
       {isStyle1 ? (
-        <CardGrid columns={3} gap={6} className={cn(`${activeBlock}__grid`, columnsClass)}>
+        <CardGrid
+          columns={1}
+          gap={6}
+          mode='controlled'
+          className={cn(`${activeBlock}__grid`, columnsClass, 'lg:l-grid-3')}
+        >
           {items.map((item, index) => {
             const style1GradientClass = getStyle1GradientClass(index);
             const Icon = item.icon ?? getDefaultIconForItem(item, index);
@@ -238,7 +243,12 @@ export function RelatedCardsSection({
           })}
         </CardGrid>
       ) : (
-        <CardGrid columns={3} gap={6} className={cn(`${activeBlock}__grid`, columnsClass)}>
+        <CardGrid
+          columns={1}
+          gap={6}
+          mode='controlled'
+          className={cn(`${activeBlock}__grid`, columnsClass, 'lg:l-grid-3')}
+        >
           {items.map((item, index) => (
             <LinkCard
               key={index}

@@ -35,7 +35,7 @@ export function OptionComparisonSection({
             <h2 className={`${BLOCK}__heading`}>{title}</h2>
           </div>
         )}
-        <CardGrid columns={2} gap={6} className={`${BLOCK}__grid`}>
+        <CardGrid columns={2} gap={6} mode='controlled' className={`${BLOCK}__grid`}>
           {platforms.map((platform, index) => (
             <Card key={index} className={`${BLOCK}__card`}>
               <h3 className={`${BLOCK}__title`}>{platform.title}</h3>

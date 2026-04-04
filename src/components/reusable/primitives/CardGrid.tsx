@@ -29,13 +29,31 @@ export interface CardGridProps {
   columns?: keyof typeof COLUMN_CLASSES;
   /** Gap between grid items. @default 6 */
   gap?: keyof typeof GAP_MAP;
+  /**
+   * Layout control mode.
+   * - `passthrough` — primitives emit layout classes alongside BEM (dual control, BEM wins by cascade).
+   * - `controlled` — primitives are the sole source of layout truth; BEM grid classes should be removed.
+   * @default 'passthrough'
+   */
+  mode?: 'passthrough' | 'controlled';
   /** Additive className */
   className?: string;
   children: ReactNode;
 }
 
-export function CardGrid({ columns = 3, gap = 6, className = '', children }: CardGridProps) {
+export function CardGrid({
+  columns = 3,
+  gap = 6,
+  mode = 'passthrough',
+  className = '',
+  children,
+}: CardGridProps) {
   return (
-    <div className={cn('l-grid', GAP_MAP[gap], COLUMN_CLASSES[columns], className)}>{children}</div>
+    <div
+      className={cn('l-grid', GAP_MAP[gap], COLUMN_CLASSES[columns], className)}
+      data-layout-mode={mode}
+    >
+      {children}
+    </div>
   );
 }

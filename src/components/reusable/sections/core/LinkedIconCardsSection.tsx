@@ -36,7 +36,7 @@ export function LinkedIconCardsSection({
         {description && <p className={`${BLOCK}__desc`}>{description}</p>}
       </div>
 
-      <CardGrid columns={3} gap={6} className={`${BLOCK}__grid`}>
+      <CardGrid columns={3} gap={6} mode='controlled' className={`${BLOCK}__grid`}>
         {items.map((item, index) => (
           <Card key={index} className={`${BLOCK}__card`}>
             <div className={`${BLOCK}__content`}>

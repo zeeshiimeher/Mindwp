@@ -6,9 +6,11 @@ const RATIO_MAP = {
   '50/50': 'l-grid-2',
   '60/40': 'l-split-60-40',
   '40/60': 'l-split-40-60',
+  '50/70': 'l-split-50-70',
 } as const;
 
 const GAP_MAP = {
+  0: '',
   6: 'l-gap-6',
   8: 'l-gap-8',
   12: 'l-gap-12',
@@ -25,6 +27,8 @@ export interface SplitLayoutProps {
   ratio?: keyof typeof RATIO_MAP;
   /** Gap between columns. @default 8 */
   gap?: keyof typeof GAP_MAP;
+  /** Breakpoint at which the split activates. @default 'md' */
+  breakpoint?: 'md' | 'lg';
   /** Vertical alignment. @default 'start' */
   align?: keyof typeof ALIGN_MAP;
   /** Reverse column order on desktop. @default false */
@@ -38,6 +42,7 @@ export interface SplitLayoutProps {
 export function SplitLayout({
   ratio = '50/50',
   gap = 8,
+  breakpoint = 'md',
   align = 'start',
   reverse = false,
   className = '',
@@ -48,7 +53,7 @@ export function SplitLayout({
       className={cn(
         'l-grid',
         GAP_MAP[gap],
-        `md:${RATIO_MAP[ratio]}`,
+        `${breakpoint}:${RATIO_MAP[ratio]}`,
         ALIGN_MAP[align],
         reverse && 'l-split-reverse',
         className

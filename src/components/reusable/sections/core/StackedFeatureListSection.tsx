@@ -1,7 +1,7 @@
 import React from 'react';
 import { ShieldCheck } from 'lucide-react';
 
-import { SectionWrapper } from '@/components/reusable/primitives';
+import { SectionWrapper, SplitLayout } from '@/components/reusable/primitives';
 import { Button, type ButtonProps, SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
@@ -52,7 +52,7 @@ export function StackedFeatureListSection({
         className={`${BLOCK}__header`}
       />
 
-      <div className={`${BLOCK}__layout`}>
+      <SplitLayout breakpoint='lg' gap={8} align='center' className={`${BLOCK}__layout`}>
         <div className={`${BLOCK}__features`}>
           {features.map((feature, index) => (
             <Card
@@ -91,7 +91,7 @@ export function StackedFeatureListSection({
             </div>
           )}
         </div>
-      </div>
+      </SplitLayout>
     </SectionWrapper>
   );
 }

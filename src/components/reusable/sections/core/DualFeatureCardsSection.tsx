@@ -38,7 +38,7 @@ export function DualFeatureCardsSection({
         className={`${BLOCK}__header`}
       />
 
-      <CardGrid columns={2} gap={6} className={`${BLOCK}__grid`}>
+      <CardGrid columns={2} gap={6} mode='controlled' className={`${BLOCK}__grid`}>
         {cards.map((card, index) => (
           <Card key={`${card.title}-${index}`} className={`${BLOCK}__card`}>
             {card.eyebrow && <p className={`${BLOCK}__eyebrow`}>{card.eyebrow}</p>}

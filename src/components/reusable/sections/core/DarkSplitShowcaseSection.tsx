@@ -1,4 +1,4 @@
-import { SectionWrapper } from '@/components/reusable/primitives';
+import { SectionWrapper, SplitLayout } from '@/components/reusable/primitives';
 import { Button, type ButtonProps, ChecklistRow, SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
@@ -65,7 +65,7 @@ export function DarkSplitShowcaseSection({
         )}
       </div>
 
-      <div className={`${BLOCK}__panels`}>
+      <SplitLayout breakpoint='lg' gap={6} className={`${BLOCK}__panels`}>
         {panels.map((panel, index) => (
           <Card
             key={`${panel.title}-${index}`}
@@ -91,7 +91,7 @@ export function DarkSplitShowcaseSection({
             )}
           </Card>
         ))}
-      </div>
+      </SplitLayout>
     </SectionWrapper>
   );
 }

@@ -69,7 +69,19 @@ export function TechnologyCardsSection({
           />
         )}
 
-        <CardGrid columns={columns} gap={4} className={`${BLOCK}__grid ${BLOCK}__grid--${columns}`}>
+        <CardGrid
+          columns={1}
+          gap={4}
+          mode='controlled'
+          className={cn(
+            `${BLOCK}__grid`,
+            `${BLOCK}__grid--${columns}`,
+            'l-grid-2',
+            columns === 3 && 'md:l-grid-3',
+            columns === 4 && 'md:l-grid-4',
+            columns === 6 && 'lg:l-grid-6'
+          )}
+        >
           {technologies.map((tech, index) => {
             const TechIcon = tech.icon;
 
