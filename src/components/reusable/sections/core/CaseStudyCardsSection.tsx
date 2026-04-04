@@ -40,7 +40,7 @@ export function CaseStudyCardsSection({
           columns={1}
           gap={8}
           mode='controlled'
-          className={`${BLOCK}__grid md:l-grid-2 lg:l-grid-3`}
+          className="md:l-grid-2 lg:l-grid-3"
         >
           {studies.map(study => (
             <CaseStudyCard

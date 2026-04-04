@@ -141,8 +141,6 @@ export function RelatedCardsSection({
   const isStyle1 = resolvedVariant === 'style1';
   const activeBlock = isStyle1 ? EXPLORE_BLOCK : BLOCK;
 
-  const columnsClass = `${activeBlock}__grid--cols-3`;
-
   const getGradientVariantByIndex = (index: number) => {
     return STYLE1_GRADIENT_SEQUENCE[index % STYLE1_GRADIENT_SEQUENCE.length];
   };
@@ -201,7 +199,7 @@ export function RelatedCardsSection({
           columns={1}
           gap={6}
           mode='controlled'
-          className={cn(`${activeBlock}__grid`, columnsClass, 'lg:l-grid-3')}
+          className="lg:l-grid-3"
         >
           {items.map((item, index) => {
             const style1GradientClass = getStyle1GradientClass(index);
@@ -247,7 +245,7 @@ export function RelatedCardsSection({
           columns={1}
           gap={6}
           mode='controlled'
-          className={cn(`${activeBlock}__grid`, columnsClass, 'lg:l-grid-3')}
+          className="lg:l-grid-3"
         >
           {items.map((item, index) => (
             <LinkCard

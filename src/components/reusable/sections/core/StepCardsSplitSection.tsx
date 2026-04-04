@@ -34,7 +34,7 @@ export function StepCardsSplitSection({
 }: StepCardsSplitSectionProps) {
   return (
     <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
-      <SplitLayout breakpoint='lg' ratio='50/70' gap={8} className={`${BLOCK}__layout`}>
+      <SplitLayout breakpoint='lg' ratio='50/70' gap={8}>
         <SectionIntro
           {...(badge !== undefined && { badge })}
           title={title}

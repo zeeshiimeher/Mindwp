@@ -43,7 +43,6 @@ export function ProcessStepsSection({
       <CardGrid
         columns={columns}
         mode='controlled'
-        className={`${BLOCK}__grid ${BLOCK}__grid--cols-${columns}`}
       >
         {steps.map((step, index) => (
           <ProcessStepCard

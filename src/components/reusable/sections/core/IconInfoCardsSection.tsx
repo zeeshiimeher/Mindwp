@@ -50,7 +50,6 @@ export function IconInfoCardsSection({
       <CardGrid
         columns={columns}
         mode='controlled'
-        className={`${BLOCK}__grid ${BLOCK}__grid--cols-${columns}`}
       >
         {items.map((item, index) => (
           <Card key={index} className={cn(`${BLOCK}__card`, 'card-base')}>

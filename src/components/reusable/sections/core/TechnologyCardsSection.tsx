@@ -74,8 +74,6 @@ export function TechnologyCardsSection({
           gap={4}
           mode='controlled'
           className={cn(
-            `${BLOCK}__grid`,
-            `${BLOCK}__grid--${columns}`,
             'l-grid-2',
             columns === 3 && 'md:l-grid-3',
             columns === 4 && 'md:l-grid-4',

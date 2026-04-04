@@ -44,7 +44,7 @@ export function ComparisonSection({
             className={`${BLOCK}__header`}
           />
         )}
-        <CardGrid columns={2} gap={8} mode='controlled' className={`${BLOCK}__grid`}>
+        <CardGrid columns={2} gap={8} mode='controlled'>
           {safeComparisons.map((comparison, index) => {
             const isBefore = comparison?.type === 'before';
             const comparisonTitle = comparison?.title ?? '';

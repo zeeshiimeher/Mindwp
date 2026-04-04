@@ -48,7 +48,7 @@ export function ImageStatsServicesSection({
 }: ImageStatsServicesSectionProps) {
   return (
     <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
-      <SplitLayout breakpoint='lg' gap={8} className={`${BLOCK}__top`}>
+      <SplitLayout breakpoint='lg' gap={8}>
         <Card className={`${BLOCK}__image-card`}>
           <img src={image.src} alt={image.alt} className={`${BLOCK}__image`} loading='lazy' />
         </Card>

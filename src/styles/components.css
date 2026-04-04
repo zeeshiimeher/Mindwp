@@ -1510,7 +1510,6 @@
   background-color: var(--color-surface-subtle);
 }
 
-
 .hero-section-bg-pattern {
   position: absolute;
   inset: 0;
@@ -2077,20 +2076,6 @@
   color: var(--c-text-muted);
 }
 
-.industry-features__grid,
-.c-linked-icon-cards-section__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-6);
-}
-
-@media (min-width: 768px) {
-  .industry-features__grid,
-  .c-linked-icon-cards-section__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
 .industry-features__card,
 .c-linked-icon-cards-section__card {
   padding: var(--card-padding);
@@ -2364,35 +2349,6 @@
 /* ----------------------------------------------------------------------
   Technologies section (core/TechnologyCardsSection.tsx)
    ---------------------------------------------------------------------- */
-
-
-
-
-.technologies__grid,
-.c-technology-cards-section__grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-4);
-}
-
-@media (min-width: 768px) {
-  .technologies__grid--3,
-  .c-technology-cards-section__grid--3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .technologies__grid--4,
-  .c-technology-cards-section__grid--4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .technologies__grid--6,
-  .c-technology-cards-section__grid--6 {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-  }
-}
 
 .technologies__card,
 .c-technology-cards-section__card {
@@ -2752,9 +2708,6 @@
    FAQ (reusable/single/FAQSection.tsx)
    ---------------------------------------------------------------------- */
 
-
-
-
 .faq__card {
   border: 2px solid var(--c-border-alpha);
   border-radius: var(--radius-lg);
@@ -2884,11 +2837,9 @@
   background-color: var(--c-surface);
 }
 
-
 .infrastructure-layers-foundation-header-description {
   color: var(--c-text-muted);
 }
-
 
 /* ----------------------------------------------------------------------
    Trust Foundations (reusable/sections/homepage/TrustFoundationsSection.tsx)
@@ -2966,33 +2917,11 @@
    Packages section (core/TierCardsSection.tsx)
    ---------------------------------------------------------------------- */
 
-
-
-
-
-.industry-packages__grid,
-.c-tier-cards-section__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-7);
-}
-
 @media (max-width: 767px) {
-  .industry-packages__grid,
-  .c-tier-cards-section__grid {
-    gap: var(--space-6);
-  }
 
   .industry-packages__card,
   .c-tier-cards-section__card {
     padding: var(--space-4);
-  }
-}
-
-@media (min-width: 768px) {
-  .industry-packages__grid,
-  .c-tier-cards-section__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
@@ -3074,31 +3003,14 @@
   Content grid section (core/ContentCardsGridSection.tsx)
    ---------------------------------------------------------------------- */
 
-
-
-
 .grid-section__grid,
-.c-content-cards-grid-section__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-4);
-}
 
 @media (min-width: 768px) {
   .grid-section__grid--2,
-  .c-content-cards-grid-section__grid--2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 
   .grid-section__grid--3,
-  .c-content-cards-grid-section__grid--3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 
   .grid-section__grid--4,
-  .c-content-cards-grid-section__grid--4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
 }
 
 .grid-section__item,
@@ -4487,8 +4399,6 @@ summary.component-library__sidebar-link {
   Platform comparison section (core/OptionComparisonSection.tsx)
    ---------------------------------------------------------------------- */
 
-
-
 .platform-comparison__header,
 .c-option-comparison-section__header {
   text-align: center;
@@ -4496,17 +4406,9 @@ summary.component-library__sidebar-link {
 }
 
 .platform-comparison__grid,
-.c-option-comparison-section__grid {
-  display: grid;
-  gap: var(--space-6);
-  grid-template-columns: 1fr;
-}
 
 @media (min-width: 768px) {
   .platform-comparison__grid,
-  .c-option-comparison-section__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 .platform-comparison__card,
@@ -4635,7 +4537,6 @@ summary.component-library__sidebar-link {
   position: relative;
   overflow: hidden;
 }
-
 
 .feature-hero__container {
   position: relative;
@@ -4910,20 +4811,10 @@ summary.component-library__sidebar-link {
   Comparison section (core/ComparisonSection.tsx)
    ---------------------------------------------------------------------- */
 
-
-
 .comparison__grid,
-.c-comparison-section__grid {
-  display: grid;
-  gap: var(--space-8);
-  grid-template-columns: 1fr;
-}
 
 @media (min-width: 768px) {
   .comparison__grid,
-  .c-comparison-section__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 }
 
 .comparison__card,
@@ -4981,9 +4872,6 @@ summary.component-library__sidebar-link {
 
 @media (max-width: 767px) {
   .comparison__grid,
-  .c-comparison-section__grid {
-    gap: var(--space-6);
-  }
 
   .comparison__content > :not([hidden]) ~ :not([hidden]),
   .c-comparison-section__content > :not([hidden]) ~ :not([hidden]) {
@@ -6315,8 +6203,6 @@ summary.component-library__sidebar-link {
    Hero Section (SimpleHero)
    ---------------------------------------------------------------------- */
 
-
-
 .hero-section__content {
   text-align: center;
 }
@@ -6324,42 +6210,6 @@ summary.component-library__sidebar-link {
 /* ----------------------------------------------------------------------
   Benefits section (core/IconBenefitCardsSection.tsx)
    ---------------------------------------------------------------------- */
-
-
-
-
-.benefits-section__grid,
-.c-icon-benefit-cards-section__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-6);
-}
-
-@media (min-width: 768px) {
-  .benefits-section__grid--cols-2,
-  .c-icon-benefit-cards-section__grid--cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--space-7);
-  }
-
-  .benefits-section__grid--cols-3,
-  .c-icon-benefit-cards-section__grid--cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: var(--space-7);
-  }
-
-  .benefits-section__grid--cols-4,
-  .c-icon-benefit-cards-section__grid--cols-4 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .benefits-section__grid--cols-4,
-  .c-icon-benefit-cards-section__grid--cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
 
 .benefits-section__footer,
 .c-icon-benefit-cards-section__footer {
@@ -6369,30 +6219,6 @@ summary.component-library__sidebar-link {
 /* ----------------------------------------------------------------------
   Use cases section (core/ScenarioCardsSection.tsx)
    ---------------------------------------------------------------------- */
-
-
-
-
-.use-cases-section__grid,
-.c-scenario-cards-section__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-6);
-}
-
-@media (min-width: 768px) {
-  .use-cases-section__grid,
-  .c-scenario-cards-section__grid {
-    gap: var(--space-7);
-  }
-}
-
-@media (min-width: 768px) {
-  .use-cases-section__grid,
-  .c-scenario-cards-section__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
 
 /* ----------------------------------------------------------------------
    FeatureChecklistCard additions
@@ -6443,27 +6269,6 @@ summary.component-library__sidebar-link {
   line-height: var(--line-height-prose);
 }
 
-.industry-case-studies-section__grid,
-.c-case-study-cards-section__grid {
-  display: grid;
-  gap: var(--space-8);
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 768px) {
-  .industry-case-studies-section__grid,
-  .c-case-study-cards-section__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .industry-case-studies-section__grid,
-  .c-case-study-cards-section__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
 /* ----------------------------------------------------------------------
    Simple FAQ section (core/FaqAccordionSection.tsx)
    ---------------------------------------------------------------------- */
@@ -6512,33 +6317,6 @@ summary.component-library__sidebar-link {
 /* ----------------------------------------------------------------------
   Explore cards section (core/ExploreCardsSection.tsx)
    ---------------------------------------------------------------------- */
-
-
-
-
-.explore-cards-section__grid,
-.c-explore-cards-section__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-6);
-}
-
-@media (min-width: 768px) {
-  .explore-cards-section__grid--cols-1,
-  .c-explore-cards-section__grid--cols-1 {
-    grid-template-columns: 1fr;
-  }
-
-  .explore-cards-section__grid--cols-2,
-  .c-explore-cards-section__grid--cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .explore-cards-section__grid--cols-3,
-  .c-explore-cards-section__grid--cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
 
 .explore-cards-section__card,
 .c-explore-cards-section__card {
@@ -6644,10 +6422,6 @@ summary.component-library__sidebar-link {
 }
 
 @media (max-width: 767px) {
-  .explore-cards-section__grid,
-  .c-explore-cards-section__grid {
-    gap: var(--space-4);
-  }
 
   .explore-cards-section__card,
   .c-explore-cards-section__card {
@@ -6943,9 +6717,6 @@ summary.component-library__sidebar-link {
   Checklist section (core/ChecklistCardsSection.tsx)
    ---------------------------------------------------------------------- */
 
-
-
-
 .service-checklist-section__card,
 .c-checklist-cards-section__card {
   padding: var(--space-7);
@@ -6992,38 +6763,6 @@ summary.component-library__sidebar-link {
   Process steps section (core/ProcessStepsSection.tsx)
    ---------------------------------------------------------------------- */
 
-
-
-
-.service-process-steps__grid,
-.c-process-steps-section__grid {
-  display: grid;
-  gap: var(--space-6);
-}
-
-@media (max-width: 767px) {
-  .service-process-steps__grid,
-  .c-process-steps-section__grid {
-    gap: var(--space-5);
-  }
-}
-
-@media (min-width: 768px) {
-  .service-process-steps__grid--cols-2,
-  .c-process-steps-section__grid--cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .service-process-steps__grid--cols-3,
-  .c-process-steps-section__grid--cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .service-process-steps__grid--cols-4,
-  .c-process-steps-section__grid--cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
 @media (max-width: 767px) {
   .process-step:nth-child(odd) .process-step__badge {
     left: var(--space-4);
@@ -7033,9 +6772,6 @@ summary.component-library__sidebar-link {
 /* ----------------------------------------------------------------------
   Icon cards section (core/IconInfoCardsSection.tsx)
    ---------------------------------------------------------------------- */
-
-
-
 
 .icon-cards-section__card,
 .c-icon-info-cards-section__card {
@@ -7076,42 +6812,9 @@ summary.component-library__sidebar-link {
   line-height: var(--line-height-prose);
 }
 
-.icon-cards-section__grid,
-.c-icon-info-cards-section__grid {
-  display: grid;
-  gap: var(--space-6);
-}
-
-@media (max-width: 767px) {
-  .icon-cards-section__grid,
-  .c-icon-info-cards-section__grid {
-    gap: var(--space-5);
-  }
-}
-
-@media (min-width: 768px) {
-  .icon-cards-section__grid--cols-2,
-  .c-icon-info-cards-section__grid--cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .icon-cards-section__grid--cols-3,
-  .c-icon-info-cards-section__grid--cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .icon-cards-section__grid--cols-4,
-  .c-icon-info-cards-section__grid--cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
 /* ----------------------------------------------------------------------
   Cards section (core/GenericCardsSection.tsx)
    ---------------------------------------------------------------------- */
-
-
-
 
 .cards-section__card,
 .c-generic-cards-section__card {
@@ -7145,26 +6848,13 @@ summary.component-library__sidebar-link {
 }
 
 .cards-section__grid,
-.c-generic-cards-section__grid {
-  display: grid;
-  gap: var(--space-6);
-}
 
 @media (min-width: 768px) {
   .cards-section__grid--cols-2,
-  .c-generic-cards-section__grid--cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 
   .cards-section__grid--cols-3,
-  .c-generic-cards-section__grid--cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
 
   .cards-section__grid--cols-4,
-  .c-generic-cards-section__grid--cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
 }
 
 /* ----------------------------------------------------------------------
@@ -7172,87 +6862,9 @@ summary.component-library__sidebar-link {
    + core/RelatedCardsSection.tsx (c-related-cards-section)
    ---------------------------------------------------------------------- */
 
-
-
-
-.related-cards-section__grid,
-.c-related-cards-section__grid {
-  display: grid;
-  gap: var(--space-6);
-}
-
-@media (min-width: 768px) {
-  .related-cards-section__grid--cols-2,
-  .c-related-cards-section__grid--cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .related-cards-section__grid--cols-3,
-  .c-related-cards-section__grid--cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .related-cards-section__grid--cols-4,
-  .c-related-cards-section__grid--cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 768px) {
-  .related-cards-section__grid--cols-3,
-  .c-related-cards-section__grid--cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .related-cards-section__grid--cols-4,
-  .c-related-cards-section__grid--cols-4 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 /* ----------------------------------------------------------------------
   Feature categories section (core/FeatureChecklistCardsSection.tsx)
    ---------------------------------------------------------------------- */
-
-
-
-
-.features-section__grid,
-.c-feature-checklist-cards-section__grid {
-  display: grid;
-  gap: var(--space-6);
-}
-
-@media (min-width: 768px) {
-  .features-section__grid--cols-2,
-  .c-feature-checklist-cards-section__grid--cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .features-section__grid--cols-3,
-  .c-feature-checklist-cards-section__grid--cols-3 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .features-section__grid--cols-4,
-  .c-feature-checklist-cards-section__grid--cols-4 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (min-width: 1024px) {
-  .features-section__grid--cols-3,
-  .c-feature-checklist-cards-section__grid--cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .features-section__grid--cols-4,
-  .c-feature-checklist-cards-section__grid--cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-}
 
 .warning-list__item {
   display: flex;
@@ -7272,9 +6884,6 @@ summary.component-library__sidebar-link {
 /* ----------------------------------------------------------------------
   Pain points section (core/ProblemCardsSection.tsx)
    ---------------------------------------------------------------------- */
-
-
-
 
 .pain-points-section__card,
 .c-problem-cards-section__card {
@@ -9482,21 +9091,6 @@ h3.cta-heading {
   Dual feature cards section (core/DualFeatureCardsSection.tsx)
    ---------------------------------------------------------------------- */
 
-
-
-
-.c-dual-feature-cards-section__grid {
-  display: grid;
-  gap: var(--space-6);
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 768px) {
-  .c-dual-feature-cards-section__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 .c-dual-feature-cards-section__card {
   padding: var(--card-padding);
   gap: var(--space-4);
@@ -9525,21 +9119,6 @@ h3.cta-heading {
 /* ----------------------------------------------------------------------
   Stacked feature list section (core/StackedFeatureListSection.tsx)
    ---------------------------------------------------------------------- */
-
-
-
-
-.c-stacked-feature-list-section__layout {
-  display: grid;
-  gap: var(--space-8);
-}
-
-@media (min-width: 1024px) {
-  .c-stacked-feature-list-section__layout {
-    grid-template-columns: 1fr 1fr;
-    align-items: center;
-  }
-}
 
 .c-stacked-feature-list-section__features {
   display: grid;
@@ -9798,18 +9377,6 @@ h3.cta-heading {
   gap: var(--space-3);
 }
 
-.c-dark-split-showcase-section__panels {
-  display: grid;
-  gap: var(--space-6);
-  grid-template-columns: 1fr;
-}
-
-@media (min-width: 1024px) {
-  .c-dark-split-showcase-section__panels {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
 .c-dark-split-showcase-section__panel {
   padding: var(--card-padding);
   background: linear-gradient(
@@ -9865,9 +9432,6 @@ h3.cta-heading {
 /* ----------------------------------------------------------------------
   Narrative stats section (core/NarrativeStatsSection.tsx)
    ---------------------------------------------------------------------- */
-
-
-
 
 .c-narrative-stats-section__card {
   padding: var(--space-8);
@@ -9932,21 +9496,6 @@ h3.cta-heading {
 /* ----------------------------------------------------------------------
   Image stats services section (core/ImageStatsServicesSection.tsx)
    ---------------------------------------------------------------------- */
-
-
-
-
-.c-image-stats-services-section__top {
-  display: grid;
-  gap: var(--space-8);
-}
-
-@media (min-width: 1024px) {
-  .c-image-stats-services-section__top {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    align-items: start;
-  }
-}
 
 .c-image-stats-services-section__image-card {
   padding: 0;
@@ -10033,9 +9582,6 @@ h3.cta-heading {
 /* ----------------------------------------------------------------------
   Testimonial spotlight split section (core/TestimonialSpotlightSplitSection.tsx)
    ---------------------------------------------------------------------- */
-
-
-
 
 .c-testimonial-spotlight-split-section__panel {
   padding: var(--space-8);
@@ -10126,9 +9672,6 @@ h3.cta-heading {
 /* ----------------------------------------------------------------------
   Tabbed feature cards section (core/TabbedFeatureCardsSection.tsx)
    ---------------------------------------------------------------------- */
-
-
-
 
 .c-tabbed-feature-cards-section__tabs {
   width: fit-content;
@@ -10246,9 +9789,6 @@ h3.cta-heading {
   Feature stats mockup section (core/FeatureStatsMockupSection.tsx)
    ---------------------------------------------------------------------- */
 
-
-
-
 .c-feature-stats-mockup-section__shell {
   padding: 0;
   overflow: hidden;
@@ -10256,16 +9796,6 @@ h3.cta-heading {
 
 .c-feature-stats-mockup-section__header {
   text-align: center;
-}
-
-.c-feature-stats-mockup-section__layout {
-  display: grid;
-}
-
-@media (min-width: 1024px) {
-  .c-feature-stats-mockup-section__layout {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  }
 }
 
 .c-feature-stats-mockup-section__content,
@@ -10410,23 +9940,8 @@ h3.cta-heading {
   Step cards split section (core/StepCardsSplitSection.tsx)
    ---------------------------------------------------------------------- */
 
-
-
-
-.c-step-cards-split-section__layout {
-  display: grid;
-  gap: var(--space-8);
-}
-
 .c-step-cards-split-section__header {
   text-align: left;
-}
-
-@media (min-width: 1024px) {
-  .c-step-cards-split-section__layout {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
-    align-items: start;
-  }
 }
 
 .c-step-cards-split-section__steps {
@@ -10473,9 +9988,6 @@ h3.cta-heading {
 /* ----------------------------------------------------------------------
   Dual tone checklist comparison section (core/DualToneChecklistComparisonSection.tsx)
    ---------------------------------------------------------------------- */
-
-
-
 
 .c-dual-tone-checklist-comparison-section__panel {
   padding: var(--space-6);
@@ -10583,9 +10095,6 @@ h3.cta-heading {
   Image accordion strip section (core/ImageAccordionStripSection.tsx)
    ---------------------------------------------------------------------- */
 
-
-
-
 .c-image-accordion-strip-section__track {
   display: grid;
   gap: var(--space-4);
@@ -10656,9 +10165,6 @@ h3.cta-heading {
 /* ----------------------------------------------------------------------
   Service spectrum cards section (core/ServiceSpectrumCardsSection.tsx)
    ---------------------------------------------------------------------- */
-
-
-
 
 .c-service-spectrum-cards-section__actions {
   margin: var(--space-5) 0 var(--space-6);

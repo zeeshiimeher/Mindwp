@@ -54,7 +54,7 @@ export function FeatureStatsMockupSection({
       />
 
       <Card className={`${BLOCK}__shell`}>
-        <SplitLayout breakpoint='lg' gap={0} className={`${BLOCK}__layout`}>
+        <SplitLayout breakpoint='lg' gap={0}>
           <div className={`${BLOCK}__content`}>
             <h3 className={`${BLOCK}__narrative-title`}>{narrativeTitle}</h3>
             <p className={`${BLOCK}__narrative-description`}>{narrativeParagraph}</p>

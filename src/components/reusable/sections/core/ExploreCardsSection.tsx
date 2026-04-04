@@ -64,13 +64,6 @@ export function ExploreCardsSection({
     return 'primary';
   };
 
-  const columnsClass =
-    columns === 1
-      ? `${BLOCK}__grid--cols-1`
-      : columns === 2
-        ? `${BLOCK}__grid--cols-2`
-        : `${BLOCK}__grid--cols-3`;
-
   return (
     <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
       <SectionIntro
@@ -84,7 +77,6 @@ export function ExploreCardsSection({
         columns={columns}
         gap={6}
         mode='controlled'
-        className={cn(`${BLOCK}__grid`, columnsClass)}
       >
         {cards.map((card, index) => {
           const gradientVariant = getGradientVariant(card.gradient);

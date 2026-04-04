@@ -47,7 +47,7 @@ export function ScenarioCardsSection({
         className={`${BLOCK}__header`}
       />
 
-      <CardGrid columns={3} mode='controlled' className={`${BLOCK}__grid`}>
+      <CardGrid columns={3} mode='controlled'>
         {useCases.map((useCase, index) => (
           <ScenarioSolutionCard
             key={index}

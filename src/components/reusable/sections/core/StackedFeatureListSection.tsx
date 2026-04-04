@@ -52,7 +52,7 @@ export function StackedFeatureListSection({
         className={`${BLOCK}__header`}
       />
 
-      <SplitLayout breakpoint='lg' gap={8} align='center' className={`${BLOCK}__layout`}>
+      <SplitLayout breakpoint='lg' gap={8} align='center'>
         <div className={`${BLOCK}__features`}>
           {features.map((feature, index) => (
             <Card

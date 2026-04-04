@@ -65,7 +65,7 @@ export function DarkSplitShowcaseSection({
         )}
       </div>
 
-      <SplitLayout breakpoint='lg' gap={6} className={`${BLOCK}__panels`}>
+      <SplitLayout breakpoint='lg' gap={6}>
         {panels.map((panel, index) => (
           <Card
             key={`${panel.title}-${index}`}
