@@ -26,6 +26,7 @@ import {
 } from '@/components/reusable/single';
 import { getCaseStudiesTemplateMetadata } from '@/domains/case-studies/data';
 import { homepageData } from '@/domains/home/data/homepage';
+import { getIconStyles } from '@/lib/ui/iconStyles';
 import { PortfolioSection as ImplementationExamplesSection } from '@/screens/home/sections/PortfolioSection';
 
 export default function Homepage() {
@@ -198,15 +199,6 @@ function InfrastructureGapsSection() {
 function SmartWebsiteFrameworkSection() {
   const smartWebsiteFrameworkData = homepageData.smartWebsiteFramework;
 
-  const getIconClasses = (iconType: string) => {
-    const iconMap: Record<string, string> = {
-      primary: 'icon-bg-primary icon-text-primary',
-      secondary: 'icon-bg-secondary icon-text-secondary',
-      accent: 'icon-bg-accent icon-text-accent',
-    };
-    return iconMap[iconType] || 'icon-bg-primary icon-text-primary';
-  };
-
   return (
     <div className='framework-section-container-1 l-container'>
       <SectionIntro
@@ -261,9 +253,9 @@ function SmartWebsiteFrameworkSection() {
                       <div className='framework-section-journey-step-card'>
                         <div className='framework-section-journey-step-content'>
                           <div
-                            className={`framework-section-journey-step-icon ${getIconClasses(
+                            className={`framework-section-journey-step-icon ${getIconStyles(
                               step.iconType
-                            )}`}
+                            ).combined}`}
                           >
                             <Icon className='framework-section-journey-step-icon-svg' />
                           </div>

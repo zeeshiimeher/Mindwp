@@ -7,6 +7,7 @@ import type {
   ServiceBenefitItem,
 } from '@/components/reusable/single';
 import type { ButtonProps } from '@/components/reusable/single/Button';
+import type { IconType } from '@/lib/ui/iconStyles';
 
 type StatItem = {
   value: string;
@@ -73,7 +74,7 @@ type ExploreSection = {
     href: string;
     gradient?: string;
     iconBg?: string;
-    iconType?: 'primary' | 'secondary' | 'accent' | 'purple' | 'teal' | 'amber' | 'dark';
+    iconType?: IconType;
   }>;
 };
 

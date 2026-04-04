@@ -2,6 +2,7 @@ import { ArrowRight, type LucideIcon } from 'lucide-react';
 
 import { Button } from '@/components/reusable/single/Button';
 import { cn } from '@/components/ui/utils';
+import { getIconStyles, type IconType } from '@/lib/ui/iconStyles';
 
 const BLOCK = 'benefit-card';
 
@@ -59,17 +60,8 @@ export interface ServiceBenefitItem {
   /** Descriptive text explaining the benefit */
   description: string;
 
-  /**
-   * Color theme for the icon background and text
-   * - "primary": Blue theme (--brand-primary)
-   * - "secondary": Light blue theme (--brand-primary-light)
-   * - "accent": Secondary blue theme (--brand-secondary)
-   * - "purple": Secondary blue theme (--brand-secondary)
-   * - "teal": Teal theme (--brand-teal)
-   * - "amber": Amber theme (--brand-amber)
-   * - "dark": Dark theme (--brand-dark)
-   */
-  iconType?: 'primary' | 'secondary' | 'accent' | 'purple' | 'teal' | 'amber' | 'dark';
+  /** Color theme for the icon background and text */
+  iconType?: IconType;
 
   /**
    * Optional keywords or additional information displayed below description
@@ -95,7 +87,7 @@ interface IconBenefitCardProps {
   description: string;
 
   /** Color theme for the icon background and text */
-  iconType?: 'primary' | 'secondary' | 'accent' | 'purple' | 'teal' | 'amber' | 'dark';
+  iconType?: IconType;
 
   /** Optional keywords or additional information displayed below description */
   keywords?: string;
@@ -188,18 +180,7 @@ export function IconBenefitCard({
   linkVariant = 'button',
   linkColor = 'primary',
 }: IconBenefitCardProps) {
-  const getIconClasses = (iconType: NonNullable<IconBenefitCardProps['iconType']>) => {
-    const classes = {
-      primary: { iconBg: 'icon-bg-primary', iconText: 'icon-text-primary' },
-      secondary: { iconBg: 'icon-bg-secondary', iconText: 'icon-text-secondary' },
-      accent: { iconBg: 'icon-bg-accent', iconText: 'icon-text-accent' },
-      purple: { iconBg: 'icon-bg-purple', iconText: 'icon-text-purple' },
-      teal: { iconBg: 'icon-bg-teal', iconText: 'icon-text-teal' },
-      amber: { iconBg: 'icon-bg-amber', iconText: 'icon-text-amber' },
-      dark: { iconBg: 'icon-bg-dark', iconText: 'icon-text-dark' },
-    };
-    return classes[iconType as keyof typeof classes];
-  };
+  const { bg: iconBg, text: iconText } = getIconStyles(iconType);
 
   const buttonClassName =
     buttonVariant === 'outline'
@@ -251,7 +232,7 @@ export function IconBenefitCard({
   };
 
   const HeadingComponent = headingLevel === 'h4' ? 'h4' : 'h3';
-  const iconClasses = Icon ? getIconClasses(iconType) : null;
+  const iconClasses = Icon ? { iconBg, iconText } : null;
 
   const rootClassName = cn(
     BLOCK,

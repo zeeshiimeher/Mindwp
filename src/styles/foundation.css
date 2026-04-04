@@ -1,19 +1,19 @@
 /* ==========================================================================
-  Foundation Tokens (Canonical Runtime Truth)
-  Purpose:
-  - Canonical home for runtime design tokens and aliases
-  - Keep src/index.css focused on global/Tailwind layers
+   Foundation Tokens (Canonical Runtime Truth)
 
-  Token Selection Guide (Style-Guide Contract)
-  1) Use semantic UI tokens in components/pages first.
-  2) Use brand tokens to define semantic tokens, not directly in UI code.
-  3) Keep alias chains shallow (semantic -> brand, or one semantic hop max).
-  4) Add component helper tokens only when reused by multiple components.
-  ========================================================================== */
+   Token Selection Guide (Style-Guide Contract)
+   1) Use semantic --c-* tokens in components/pages first.
+   2) Use --brand-* only to define semantic tokens, never directly in UI.
+   3) Keep alias chains shallow (semantic → brand, one hop max).
+   4) Add component helper tokens only when reused by multiple components.
+   ========================================================================== */
 
 :root,
 :host {
-  /* SPACING SCALE */
+
+  /* =====================================================================
+     §1  SPACING SCALE
+     ===================================================================== */
   --space-half: 2px;
   --space-1: 4px;
   --space-2: 8px;
@@ -26,7 +26,9 @@
   --space-9: 64px;
   --space-10: 80px;
 
-  /* TYPOGRAPHY SCALE PRIMITIVES */
+  /* =====================================================================
+     §2  TYPOGRAPHY SCALE
+     ===================================================================== */
   --font-xs: .75rem;
   --font-sm: .875rem;
   --font-base: 1rem;
@@ -53,8 +55,9 @@
   --line-height-prose-relaxed: 1.7;
   --line-height-quote: 1.625;
 
-
-  /* LAYOUT + FOUNDATION PRIMITIVES */
+  /* =====================================================================
+     §3  LAYOUT / RADIUS / SHADOW
+     ===================================================================== */
   --max-width: 1366px;
   --site-padding-y: var(--space-9);
   --site-padding-x: var(--space-7);
@@ -75,88 +78,9 @@
   --transition-normal: 250ms ease-in-out;
   --blur-3xl: 64px;
 
-/* brand */
---brand-primary:#0A1628;
---brand-secondary:#2E5C8A;
---brand-accent:#4A9AB2;
---brand-primary-mid:#1B2845;
-  --brand-teal: var(--brand-accent);
-
---brand-neutral-700:#3D4B5C;
-
---brand-neutral-200:#E5E7EB;
-
---brand-white:#FFFFFF;
-
-
---brand-secondary-10:color-mix(in srgb, var(--brand-secondary) 10%, transparent);
-
---gradient-hero:
-linear-gradient(135deg,var(--brand-primary),var(--brand-primary-mid),var(--brand-secondary));
-
---gradient-primary:
-linear-gradient(135deg,var(--brand-secondary),var(--brand-primary));
-
---icon-text-primary: var(--brand-primary);
-  --icon-bg-primary: var(--brand-primary-10);
-  --icon-text-accent: var(--brand-accent);
-
-  --gradient-primary-from: var(--brand-primary);
-  --gradient-primary-to: var(--brand-primary-90);
-  --gradient-secondary-from: var(--brand-secondary);
-  --gradient-secondary-to: color-mix(in srgb, var(--brand-secondary) 90%, transparent);
-  --gradient-accent-from: var(--brand-teal);
-  --gradient-accent-to: var(--brand-teal-90);
-
-  --icon-text-secondary: var(--brand-secondary);
-  --icon-bg-secondary: var(--brand-secondary-10);
-
-  --icon-bg-accent: var(--brand-teal-10);
-  --icon-text-warm: var(--brand-amber);
-  --icon-bg-warm: var(--brand-amber-10);
-
-  /* ----------------------------------------------------------------------
-     BRAND PRIMITIVES (SOURCE OF TRUTH)
-     ---------------------------------------------------------------------- */
-
-  --brand-primary-light: #60a5fa;
-
-  --brand-amber: #070606; /* ⚠️ MISLEADING: near-black, not amber. Used by --c-warning (22 consumers). Do not rename without full migration. */
-  --brand-dark: #0a0a0a;
-  --brand-grey: #f8fafc;
-  --brand-grey-light: #f1f5f9;
-  --brand-blue-lightest: #eff6ff;
-  --brand-teal-lightest: #f0fdfa;
-  --brand-teal-lighter: #ccfbf1;
-  --brand-yellow-star: #fbbf24;
-
-  /* ----------------------------------------------------------------------
-     BRAND SHADES (DERIVED FROM BRAND PRIMITIVES)
-     ---------------------------------------------------------------------- */
-  --brand-primary-90: color-mix(in srgb, var(--brand-primary) 90%, transparent);
-  --brand-primary-30: color-mix(in srgb, var(--brand-primary) 30%, transparent);
-  --brand-primary-10: color-mix(in srgb, var(--brand-primary) 10%, transparent);
-  --brand-dark-90: color-mix(in srgb, var(--brand-dark) 90%, transparent);
-  --brand-secondary-30: color-mix(in srgb, var(--brand-secondary) 30%, transparent);
-  --brand-teal-10: color-mix(in srgb, var(--brand-teal) 10%, transparent);
-  --brand-amber-90: color-mix(in srgb, var(--brand-amber) 90%, transparent);
-  --brand-amber-10: color-mix(in srgb, var(--brand-amber) 10%, transparent);
-  --brand-teal-90: color-mix(in srgb, var(--brand-teal) 90%, transparent);
-  --brand-white-80: color-mix(in srgb, var(--brand-white) 80%, transparent);
-  --brand-white-90: color-mix(in srgb, var(--brand-white) 90%, transparent);
-  --brand-white-15: color-mix(in srgb, var(--brand-white) 15%, transparent);
-  --brand-white-70: color-mix(in srgb, var(--brand-white) 70%, transparent);
-  --brand-white-60: color-mix(in srgb, var(--brand-white) 60%, transparent);
-  --brand-white-30: color-mix(in srgb, var(--brand-white) 30%, transparent);
-  --brand-white-10: color-mix(in srgb, var(--brand-white) 10%, transparent);
-  --brand-dark-30: color-mix(in srgb, var(--brand-dark) 30%, transparent);
-  --shadow-ink-25: color-mix(in srgb, var(--brand-dark) 25%, transparent);
-  --border-default: #0000001a;
-  --border-light: #0000000d;
-
-  /* ----------------------------------------------------------------------
-     RAW PALETTE TOKENS 
-     ---------------------------------------------------------------------- */
+  /* =====================================================================
+     §4  RAW PALETTE (oklch base colors — never reference in components)
+     ===================================================================== */
   --color-red-50: oklch(.971 .013 17.38);
   --color-red-100: oklch(.936 .032 17.717);
   --color-red-200: oklch(.885 .062 18.334);
@@ -184,50 +108,195 @@ linear-gradient(135deg,var(--brand-secondary),var(--brand-primary));
   --color-gray-500: oklch(.551 .027 264.364);
   --color-zinc-500: oklch(.552 .016 285.938);
 
+  /* =====================================================================
+     §5  BRAND PRIMITIVES (source hex values)
+     ===================================================================== */
+  --brand-primary: #0A1628;
+  --brand-secondary: #2E5C8A;
+  --brand-accent: #4A9AB2;
+  --brand-primary-mid: #1B2845;
+  --brand-teal: var(--brand-accent); /* alias kept for backward compat */
+
+  --brand-neutral-700: #3D4B5C;
+  --brand-neutral-200: #E5E7EB;
+  --brand-white: #FFFFFF;
+
+  --brand-primary-light: #60a5fa;
+  --brand-amber: #070606; /* ⚠️ MISLEADING: near-black, not amber. Used by --c-warning. Do not rename without full migration. */
+  --brand-dark: #0a0a0a;
+  --brand-grey: #f8fafc;
+  --brand-grey-light: #f1f5f9;
+  --brand-blue-lightest: #eff6ff;
+  --brand-teal-lightest: #f0fdfa;
+  --brand-teal-lighter: #ccfbf1;
+  --brand-yellow-star: #fbbf24;
+
+  /* =====================================================================
+     §6  BRAND SHADES (derived from §5)
+     ===================================================================== */
+  --brand-primary-90: color-mix(in srgb, var(--brand-primary) 90%, transparent);
+  --brand-primary-30: color-mix(in srgb, var(--brand-primary) 30%, transparent);
+  --brand-primary-10: color-mix(in srgb, var(--brand-primary) 10%, transparent);
+  --brand-secondary-10: color-mix(in srgb, var(--brand-secondary) 10%, transparent);
+  --brand-secondary-30: color-mix(in srgb, var(--brand-secondary) 30%, transparent);
+  --brand-dark-90: color-mix(in srgb, var(--brand-dark) 90%, transparent);
+  --brand-dark-30: color-mix(in srgb, var(--brand-dark) 30%, transparent);
+  --brand-dark-10: color-mix(in srgb, var(--brand-dark) 10%, transparent);
+  --brand-teal-10: color-mix(in srgb, var(--brand-teal) 10%, transparent);
+  --brand-teal-90: color-mix(in srgb, var(--brand-teal) 90%, transparent);
+  --brand-amber-90: color-mix(in srgb, var(--brand-amber) 90%, transparent);
+  --brand-amber-10: color-mix(in srgb, var(--brand-amber) 10%, transparent);
+  --brand-white-90: color-mix(in srgb, var(--brand-white) 90%, transparent);
+  --brand-white-80: color-mix(in srgb, var(--brand-white) 80%, transparent);
+  --brand-white-70: color-mix(in srgb, var(--brand-white) 70%, transparent);
+  --brand-white-60: color-mix(in srgb, var(--brand-white) 60%, transparent);
+  --brand-white-30: color-mix(in srgb, var(--brand-white) 30%, transparent);
+  --brand-white-15: color-mix(in srgb, var(--brand-white) 15%, transparent);
+  --brand-white-10: color-mix(in srgb, var(--brand-white) 10%, transparent);
+  --shadow-ink-25: color-mix(in srgb, var(--brand-dark) 25%, transparent);
+  --border-default: #0000001a;
+  --border-light: #0000000d;
+
   --brand-logo-ring: var(--color-gray-300);
 
-  /* ----------------------------------------------------------------------
-     SEMANTIC UI TOKENS (ACTIVE — still consumed by components/primitives)
-     ---------------------------------------------------------------------- */
+  /* =====================================================================
+     §7  SEMANTIC UI TOKENS (main system — use these in components)
+     ===================================================================== */
+
+  /* Backgrounds */
+  --c-bg:              var(--brand-grey);           /* #f8fafc — page background */
+  --c-bg-alt:          var(--brand-grey-light);     /* #f1f5f9 — alternating section bg */
+  --c-surface:         var(--brand-white);          /* #fff — cards, elevated */
+
+  /* Section backgrounds */
+  --section-bg-base:   var(--c-bg);
+  --section-bg-surface: var(--c-surface);
+  --section-bg-muted:  color-mix(in oklab, var(--c-bg) 30%, transparent);
+
+  /* Text */
+  --c-text:            var(--brand-primary);        /* #0A1628 — headings */
+  --c-text-muted:      var(--brand-neutral-700);    /* #3D4B5C — body */
+  --c-text-inverse:    var(--brand-white);          /* #fff — on dark bg */
+
+  /* Brand colors (semantic) */
+  --c-primary:         var(--brand-primary);
+  --c-secondary:       var(--brand-secondary);
+  --c-accent:          var(--brand-accent);
+
+  /* Borders */
+  --c-border:          var(--brand-neutral-200);
+  --c-border-alpha:    var(--border-default);
+
+  /* Dark */
+  --c-dark:            var(--brand-dark);           /* #0a0a0a — near-black */
+
+  /* Status */
+  --c-success:         var(--color-green-600);
+  --c-success-soft:    var(--brand-teal);
+  --c-success-bg:      var(--brand-teal-10);
+  --c-success-500:     var(--color-green-500);
+  --c-warning:         var(--brand-amber);          /* ⚠️ near-black */
+  --c-warning-bg:      var(--brand-amber-10);
+  --c-warning-50:      var(--color-yellow-50);
+  --c-warning-200:     var(--color-yellow-200);
+  --c-warning-500:     var(--color-yellow-500);
+  --c-danger:          var(--color-red-600);
+  --c-danger-bg:       var(--color-red-50);
+  --c-danger-100:      var(--color-red-100);
+  --c-danger-200:      var(--color-red-200);
+  --c-danger-500:      var(--color-red-500);
+  --c-danger-700:      var(--color-red-700);
+  --c-info-bg:         var(--brand-primary-10);
+
+  /* Accent extensions */
+  --c-accent-blue:     var(--brand-primary-light);  /* #60a5fa */
+  --c-star:            var(--brand-yellow-star);    /* #fbbf24 */
+
+  /* Inputs / Focus */
   --input: transparent;
   --input-background: var(--brand-grey-light);
   --ring: var(--brand-primary);
+  --focus-ring-color: color-mix(in oklab, var(--ring) 35%, transparent);
+  --focus-ring-shadow: 0 0 0 3px var(--focus-ring-color);
 
+  /* Inverse (white-alpha scale) */
   --color-inverse-100: var(--brand-white);
+  --color-inverse-90: var(--brand-white-90);
   --color-inverse-80: var(--brand-white-80);
   --color-inverse-70: var(--brand-white-70);
   --color-inverse-60: var(--brand-white-60);
   --color-inverse-30: var(--brand-white-30);
   --color-inverse-15: var(--brand-white-15);
   --color-inverse-10: var(--brand-white-10);
-  --color-inverse-90: var(--brand-white-90);
 
+  /* Surface accents */
   --color-surface-accent-blue: var(--brand-blue-lightest);
   --color-surface-accent-teal: var(--brand-teal-lightest);
   --color-surface-accent-teal-strong: var(--brand-teal-lighter);
   --color-surface-strong-90: var(--brand-dark-90);
   --color-surface-strong-30: var(--brand-dark-30);
 
+  /* Action / accent shades */
   --color-accent-secondary-30: var(--brand-secondary-30);
   --color-accent-warning-90: var(--brand-amber-90);
   --color-action-primary-90: var(--brand-primary-90);
   --color-action-primary-30: var(--brand-primary-30);
 
-  /* Shadcn-style sidebar tokens (used in UI sidebar utility classes) */
+  /* Shadcn-style sidebar tokens */
   --sidebar-border: 214.3 31.8% 91.4%;
   --sidebar-accent: 210 40% 96.1%;
 
-  /* ----------------------------------------------------------------------
-     COMPONENT HELPER TOKENS (gradients/icons/data aliases)
-     ---------------------------------------------------------------------- */
+  /* =====================================================================
+     §8  ICON TOKENS (bg / text per icon type)
+     ===================================================================== */
+  --icon-text-primary: var(--brand-primary);
+  --icon-bg-primary: var(--brand-primary-10);
+  --icon-text-secondary: var(--brand-secondary);
+  --icon-bg-secondary: var(--brand-secondary-10);
+  --icon-text-accent: var(--brand-accent);
+  --icon-bg-accent: var(--brand-teal-10);
+  --icon-text-success: var(--brand-accent);
+  --icon-bg-success: var(--brand-teal-10);
+  --icon-text-warning: var(--brand-amber);
+  --icon-bg-warning: var(--brand-amber-10);
+  --icon-text-info: var(--brand-secondary);
+  --icon-bg-info: var(--brand-secondary-10);
+  --icon-text-neutral: var(--brand-dark);
+  --icon-bg-neutral: var(--brand-dark-10);
+  --icon-text-warm: var(--brand-amber);
+  --icon-bg-warm: var(--brand-amber-10);
+
+  /* =====================================================================
+     §9  GRADIENT TOKENS
+     ===================================================================== */
+
+  /* Directional gradients */
+  --gradient-hero: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-mid), var(--brand-secondary));
+  --gradient-primary: linear-gradient(135deg, var(--brand-secondary), var(--brand-primary));
+
+  /* Gradient endpoint tokens (for gradient icon utilities) */
+  --gradient-primary-from: var(--brand-primary);
+  --gradient-primary-to: var(--brand-primary-90);
+  --gradient-secondary-from: var(--brand-secondary);
+  --gradient-secondary-to: color-mix(in srgb, var(--brand-secondary) 90%, transparent);
+  --gradient-accent-from: var(--brand-teal);
+  --gradient-accent-to: var(--brand-teal-90);
+
+  /* CTA gradients */
   --gradient-cta-1: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
   --gradient-cta-2: linear-gradient(135deg, var(--brand-secondary) 0%, var(--brand-primary) 100%);
   --gradient-cta-3: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-teal) 100%);
   --gradient-cta-4: linear-gradient(135deg, var(--brand-teal) 0%, var(--brand-secondary) 100%);
   --gradient-cta-10: linear-gradient(135deg, var(--color-blue-600) 0%, var(--color-purple-600) 100%);
+  /* ⚠️ Misleading: resolves near-black because --brand-amber is near-black */
+  --gradient-cta-warm: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-amber) 100%);
+
+  /* Surface / tint gradients */
   --gradient-surface-soft: linear-gradient(135deg, var(--c-bg-alt) 0%, var(--c-surface) 100%);
   --gradient-tint-blue: linear-gradient(135deg, var(--color-surface-accent-blue) 0%, var(--c-surface) 100%);
   --gradient-tint-teal: linear-gradient(135deg, var(--color-surface-accent-teal) 0%, var(--c-surface) 100%);
+  --gradient-section: radial-gradient(circle at 100% 110%, var(--brand-secondary) 0%, var(--brand-primary) 20%);
+  --gradient-bg-light: linear-gradient(135deg, var(--brand-grey) 0%, var(--brand-blue-lightest) 100%);
   --gradient-hero-fade: linear-gradient(
     to bottom,
     color-mix(
@@ -237,13 +306,8 @@ linear-gradient(135deg,var(--brand-secondary),var(--brand-primary));
     ),
     var(--c-bg)
   );
-  /* Misleading compatibility token: `--gradient-cta-warm` resolves near-black because `--brand-amber` is near-black. */
-  --gradient-cta-warm: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-amber) 100%);
-  --gradient-section: radial-gradient(circle at 100% 110%, var(--brand-secondary) 0%, var(--brand-primary) 20%);
-  --gradient-bg-light: linear-gradient(135deg, var(--brand-grey) 0%, var(--brand-blue-lightest) 100%);
 
-
-  /* Data-gradient palette aliases (exact wrappers over raw palette tokens) */
+  /* Data-gradient palette aliases (used in components.css gradient utilities) */
   --color-gradient-blue-500: var(--color-blue-500);
   --color-gradient-purple-500: var(--color-purple-500);
   --color-gradient-teal-500: var(--color-teal-500);
@@ -257,67 +321,10 @@ linear-gradient(135deg,var(--brand-secondary),var(--brand-primary));
   --color-gradient-gray-500: var(--color-gray-500);
   --color-gradient-zinc-500: var(--color-zinc-500);
 
-  /* =========================================================
-     COMPONENT RHYTHM (site-wide defaults)
-     ========================================================= */
-  --card-padding: var(--space-5); /* 20px (default card padding) */
-
-  /* Focus ring (keyboard accessibility) */
-  --focus-ring-color: color-mix(in oklab, var(--ring) 35%, transparent);
-  --focus-ring-shadow: 0 0 0 3px var(--focus-ring-color);
-
-  /* =========================================================
-     TOKEN V2 — Flat color system
-     ========================================================= */
-
-  /* Backgrounds */
-  --c-bg:              var(--brand-grey);           /* rgb(248, 250, 252) — page background */
-  --c-bg-alt:          var(--brand-grey-light);     /* rgb(241, 245, 249) — alternating section bg */
-  --c-surface:         var(--brand-white);          /* rgb(255, 255, 255) — cards, elevated */
-
-  /* Section backgrounds (canonical values — use these in utility classes) */
-  --section-bg-base:   var(--c-bg);                 /* Default page background */
-  --section-bg-surface: var(--c-surface);           /* White — elevated sections */
-  --section-bg-muted:  color-mix(in oklab, var(--c-bg) 30%, transparent); /* Subtle tint */
-
-  /* Text */
-  --c-text:            var(--brand-primary);        /* rgb(10, 22, 40) — headings, primary text */
-  --c-text-muted:      var(--brand-neutral-700);    /* rgb(61, 75, 92) — body text */
-  --c-text-inverse:    var(--brand-white);          /* rgb(255, 255, 255) — on dark bg */
-
-  /* Brand */
-  --c-primary:         var(--brand-primary);        /* rgb(10, 22, 40) — primary actions */
-  --c-secondary:       var(--brand-secondary);      /* rgb(46, 92, 138) — secondary blue */
-  --c-accent:          var(--brand-accent);         /* rgb(74, 154, 178) — CTA teal */
-
-  /* Borders */
-  --c-border:          var(--brand-neutral-200);    /* rgb(229, 231, 235) — solid borders */
-  --c-border-alpha:    var(--border-default);       /* rgba(0, 0, 0, 0.1) — transparent borders */
-
-  /* Dark (brand-dark ≠ brand-primary: #0a0a0a vs #0A1628) */
-  --c-dark:            var(--brand-dark);           /* rgb(10, 10, 10) — near-black surfaces/text */
-
-  /* Status */
-  --c-success:         var(--color-green-600);      /* oklch(.627 .194 149.214) — success strong */
-  --c-success-soft:    var(--brand-teal);           /* rgb(74, 154, 178) — success icon/text */
-  --c-success-bg:      var(--brand-teal-10);        /* teal 10% — success background */
-  --c-success-500:     var(--color-green-500);      /* oklch(.723 .219 149.579) */
-  --c-warning:         var(--brand-amber);          /* #070606 — warning (NOTE: near-black!) */
-  --c-warning-bg:      var(--brand-amber-10);       /* amber 10% — warning background */
-  --c-warning-50:      var(--color-yellow-50);      /* oklch(.987 .026 102.212) */
-  --c-warning-200:     var(--color-yellow-200);     /* oklch(.945 .129 101.54) */
-  --c-warning-500:     var(--color-yellow-500);     /* oklch(.795 .184 86.047) */
-  --c-danger:          var(--color-red-600);        /* oklch(.577 .245 27.325) — danger/error */
-  --c-danger-bg:       var(--color-red-50);         /* oklch(.971 .013 17.38) — danger background */
-  --c-danger-100:      var(--color-red-100);        /* oklch(.936 .032 17.717) */
-  --c-danger-200:      var(--color-red-200);        /* oklch(.885 .062 18.334) */
-  --c-danger-500:      var(--color-red-500);        /* oklch(.637 .237 25.331) */
-  --c-danger-700:      var(--color-red-700);        /* oklch(.505 .213 27.518) */
-  --c-info-bg:         var(--brand-primary-10);     /* primary 10% — info background */
-
-  /* Accent extensions */
-  --c-accent-blue:     var(--brand-primary-light);  /* #60a5fa — soft blue accent */
-  --c-star:            var(--brand-yellow-star);    /* #fbbf24 — star/rating yellow */
+  /* =====================================================================
+     §10  COMPONENT RHYTHM
+     ===================================================================== */
+  --card-padding: var(--space-5);
 }
 
 @media (width >= 992px) and (width <= 1180px) {

@@ -13,6 +13,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
+import { getIconStyles } from '@/lib/ui/iconStyles';
 import { primaryCta } from '@/config/primaryCta';
 
 export function Contact() {
@@ -221,9 +222,9 @@ export function Contact() {
                     const content = (
                       <>
                         <div
-                          className={`contact-page-info-icon-${index + 1} icon-container-sm icon-bg-primary`}
+                          className={`contact-page-info-icon-${index + 1} icon-container-sm ${getIconStyles('primary').bg}`}
                         >
-                          <Icon className='icon-text-primary' />
+                          <Icon className={getIconStyles('primary').text} />
                         </div>
                         <div className={`contact-page-info-content-${index + 1}`}>
                           <div

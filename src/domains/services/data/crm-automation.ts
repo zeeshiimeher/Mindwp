@@ -156,42 +156,42 @@ export const crmAutomationPage = {
           title: 'Appointment Booking',
           description:
             'Booking links, confirmations, and reminders — handled automatically so nobody chases appointments manually.',
-          iconType: 'purple' as const,
+          iconType: 'success' as const,
         },
         {
           icon: Repeat,
           title: 'Customer Follow-Ups',
           description:
             'Check-ins, feedback requests, and re-engagement messages go out on a defined schedule — not when someone remembers.',
-          iconType: 'teal' as const,
+          iconType: 'warning' as const,
         },
         {
           icon: Star,
           title: 'Reviews & Feedback',
           description:
             'Review requests go out at the right time. Feedback is tracked. Responses carry the full conversation context.',
-          iconType: 'amber' as const,
+          iconType: 'info' as const,
         },
         {
           icon: FolderKanban,
           title: 'Pipeline Visibility',
           description:
             'Every enquiry is tracked from first contact to outcome. The team always knows what stage things are at and what comes next.',
-          iconType: 'primary' as const,
+          iconType: 'neutral' as const,
         },
         {
           icon: Mail,
           title: 'Updates & Communication',
           description:
             'Send updates to the right people at the right time. See what gets attention and adjust.',
-          iconType: 'secondary' as const,
+          iconType: 'primary' as const,
         },
         {
           icon: CreditCard,
           title: 'Payments & Invoices',
           description:
             'Payments and invoices stay connected to the contact record and workflow stage — no separate tracking spreadsheet.',
-          iconType: 'accent' as const,
+          iconType: 'secondary' as const,
         },
       ],
     },

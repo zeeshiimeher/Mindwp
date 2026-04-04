@@ -27,6 +27,14 @@
 - 7E: Card contracts completed for DualToneChecklist, ServiceSpectrum, ProcessSteps (T-125–T-127)
 - 7E: 8 brand-token leaks sealed with 4 new semantic tokens (T-128)
 - 7E: 4 dead l-section media queries removed (T-129)
+- 7F: Icon system hard reset — legacy types (purple/teal/amber/dark) fully removed
+- 7F: Strict IconType union locked (primary/secondary/accent/success/warning/info/neutral)
+- 7F: BEM icon modifiers removed from business-use-case-card (7 rules deleted)
+- 7F: All components migrated to getIconStyles() — zero dual systems
+- 7F: New CSS tokens + utility classes for success/warning/info/neutral
+- 7F: ICON_ORDER constant exported for deterministic index-based cycling
+- 7F: resolveIcon() wrappers removed from IconBenefitCard, FeatureChecklistCard, AuditChecklistCard
+- 7F: Legacy icon CSS utility classes removed (icon-bg/text-purple/teal/amber/dark)
 
 ---
 
@@ -58,6 +66,7 @@ All blocking items RESOLVED.
 - [x] 7E: Brand token leaks sealed (T-128, 4 new semantic tokens)
 - [x] 7E: Dead code removed (T-129, 4 l-section media queries)
 - [x] 7E: BEM --bg-* and legacy aliases audited (KEPT — all in active use)
+- [x] 7F: Icon system hard reset complete (zero legacy types, zero BEM icon modifiers)
 
 ---
 
@@ -106,8 +115,9 @@ Audit doc = tracking. Control layer = authority.
 | 7C | Done | Gradient tokenization implemented |
 | 7D | Done | Icon and badge normalization implemented |
 | 7E | Done | Component fixes, brand leak cleanup, dead code removal |
+| 7F | Done | Icon system hard reset — semantic types, BEM removal, single source of truth |
 
-**Execution order:** 7A → 7B → 7C → 7D → 7E
+**Execution order:** 7A → 7B → 7C → 7D → 7E → 7F
 
 ---
 
@@ -139,23 +149,31 @@ Audit doc = tracking. Control layer = authority.
 
 ## 2. Icon Background System
 
-✅ Status: DONE
+✅ Status: DONE (RESET IN 7F)
 
 ### 📊 What Exists
 
-- 9 flat color utilities: `icon-bg-primary` / `accent` / `secondary` / `error` / `success` / `purple` / `teal` / `amber` / `dark`
+- 7 semantic icon types: `primary` / `secondary` / `accent` / `success` / `warning` / `info` / `neutral`
+- Matching utility classes: `icon-bg-{type}` + `icon-text-{type}` for all 7 types
+- 2 retained non-variant utilities: `icon-bg-error` / `icon-text-error` (warm tokens)
 - 3 gradient utilities: `icon-bg-gradient-primary` / `icon-bg-gradient-accent` / `icon-bg-gradient-secondary`
-- Matching text color utilities: `icon-text-*` mirrors `icon-bg-*`
 - Pairing contract: every `icon-bg-*` has a matching `icon-text-*` — mandatory
 - Gradient hard-blocked on xs/sm/md via CSS `!important`
+- Single source of truth: `src/lib/ui/iconStyles.ts` — strict `IconType` union
+- `ICON_ORDER` constant for deterministic index-based cycling
+- All legacy types removed: `purple`, `teal`, `amber`, `dark`
+- All BEM icon modifiers removed from `business-use-case-card`
+- All `resolveIcon()` wrappers eliminated
 
-### ⚠️ Issues / Gaps
+### ⚠️ Known Aliases
 
-- None. Gradient enforcement is CSS-level.
+- `success` ≡ `accent` visually (both use `--brand-accent` / `--brand-teal-10`)
+- `info` ≡ `secondary` visually (both use `--brand-secondary` / `--brand-secondary-10`)
+- Kept intentionally for semantic clarity in data/component usage
 
 ### 🔧 Action Required
 
-- None.
+- None. System is locked.
 
 ---
 
@@ -251,12 +269,14 @@ Audit doc = tracking. Control layer = authority.
 
 ## 7. Icon Text Utilities
 
-✅ Status: DONE
+✅ Status: DONE (RESET IN 7F)
 
 ### 📊 What Exists
 
-- 9 text color utilities matching background palette
+- 7 semantic text color utilities matching icon type system
+- 2 additional utilities: `icon-text-error`, `icon-text-destructive`
 - Used for inline icon color treatment paired with `icon-bg-*`
+- SVG auto-sizing enforced via `:is(svg)` selector on all `icon-text-*` classes
 
 ### ⚠️ Issues / Gaps
 
@@ -386,12 +406,12 @@ These are excluded from enforcement scope. If demo renderers are promoted to reu
 | 1 | BEM `--bg-` background system (122 rules, 190 TSX consumers) | 🟡 Debt | ⏸ Deferred — still actively consumed |
 | 2 | Legacy class aliases (e.g. `.btn-small`, ~19 components) | 🟡 Debt | ⏸ Deferred — still actively consumed |
 | 3 | `l-section` scaling is a no-op (4 dead media queries) | 🟢 Dead code | ✅ Removed in 7E |
-| 4 | `--brand-purple: var(--brand-secondary)` is a circular identity (renders blue) | 🟡 Naming | Open |
+| 4 | `--brand-purple: var(--brand-secondary)` is a circular identity (renders blue) | 🟡 Naming | ✅ Resolved in 7F — purple eliminated |
 | 5 | Shadow tokens incomplete (3 one-off shadow patterns bypass system) | 🟡 System gap | Partial — ProcessSteps badge shadow tokenized in T-127 |
 | 6 | Button padding is hardcoded rem (not `--space-*` tokens) | 🟢 Consistency | Open |
 | 7 | `--c-success-soft` ≡ `--c-accent` ≡ `--brand-teal` (3 tokens, 1 color) | 🟡 Architecture | Open |
 | 8 | `!important` in gradient utilities (5 rules) | 🟡 Specificity | Open — by design for enforcement |
-| 9 | `--icon-bg-secondary` vs `--icon-bg-secondary-alpha` (same computed value) | 🟢 Dead token | Open |
+| 9 | `--icon-bg-secondary` vs `--icon-bg-secondary-alpha` (same computed value) | 🟢 Dead token | ✅ Resolved in 7F — alpha removed |
 | 10 | `how-it-works-step:hover` missing hover guard | 🟡 UX | Open |
 
 ---
@@ -411,6 +431,27 @@ Keep `Card` as primitive. Normalize border, radius, padding, and elevation rules
 ## Decision: Hover System → REPLACED (7B)
 
 One shared interaction layer with fixed hover tiers and one focus-visible rule set. Card hover behavior moved to shared tier tokens. One-off hover values stripped.
+
+## Decision: Icon System → HARD RESET (7F)
+
+Full icon system hard reset. Legacy color-based types (`purple`, `teal`, `amber`, `dark`) eliminated. Strict semantic type system locked (`primary` / `secondary` / `accent` / `success` / `warning` / `info` / `neutral`). Single source of truth at `src/lib/ui/iconStyles.ts`. All BEM icon modifiers removed from `business-use-case-card`. All components use `getIconStyles()` exclusively. Data files use order-based cycling via `ICON_ORDER`. CSS utility classes aligned 1:1 with type system. Foundation tokens added for all 7 types.
+
+### 7F Files Updated
+
+| File | Change |
+|---|---|
+| `src/lib/ui/iconStyles.ts` | Strict `IconType`, `ICON_ORDER`, no legacy |
+| `src/styles/foundation.css` | Added `--icon-{bg,text}-{success,warning,info,neutral}` + `--brand-dark-10` |
+| `src/styles/components.css` | Replaced legacy utilities, added 8 new classes, removed 7 BEM modifiers |
+| `src/components/reusable/single/IconTextCard.tsx` | BEM → `getIconStyles()` |
+| `src/components/reusable/single/IconBenefitCard.tsx` | Strict `IconType`, removed `resolveIcon` |
+| `src/components/reusable/single/FeatureChecklistCard.tsx` | Strict `IconType`, removed `resolveIcon` |
+| `src/components/reusable/single/AuditChecklistCard.tsx` | Strict `IconType`, removed `resolveIcon` |
+| `src/components/reusable/sections/core/FeatureChecklistCardsSection.tsx` | Import `IconType` |
+| `src/components/reusable/sections/resources/ResourceSectionHeader.tsx` | Typed as `Record<string, IconType>` |
+| `src/screens/Homepage.tsx` | Removed `getIconClasses` wrapper |
+| `src/domains/features/renderers/CRMRenderer.tsx` | `purple→accent`, `teal→success` |
+| `src/domains/services/data/crm-automation.ts` | Legacy → semantic order-based cycling |
 
 ## Decision: Icon System → FIXED (7D)
 
@@ -464,7 +505,7 @@ Add one shared section-shell decision layer for surface class and grid-column ma
 
 | Area | Score | Notes |
 |---|---|---|
-| Icon system | 9.5/10 | 5-tier scale enforced, 61+ values tokenized, SVG auto-sizing via CSS, zero hardcoded rem |
+| Icon system | 10/10 | Strict semantic types, single source of truth, zero legacy, zero BEM icon modifiers |
 | Badge system | 9.5/10 | Component-driven, TypeScript-controlled, cssPrefix restricted, 48+ usages standardized |
 | Hover system | 9/10 | 4-tier model, all guarded, all tokenized |
 | Gradient system | 9/10 | Tokens created, utilities added, CSS hard-block on xs/sm/md |

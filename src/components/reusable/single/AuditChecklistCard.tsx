@@ -3,6 +3,7 @@ import { CheckCircle2 } from 'lucide-react';
 
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
+import { getIconStyles, type IconType } from '@/lib/ui/iconStyles';
 
 const BLOCK = 'audit-card';
 
@@ -59,7 +60,7 @@ interface AuditChecklistCardProps {
    * - "secondary": Gray theme
    * - "accent": Orange/amber theme
    */
-  iconType: 'primary' | 'secondary' | 'accent';
+  iconType: IconType;
 
   /**
    * Additional class(es) for the root element.
@@ -78,21 +79,12 @@ export function AuditChecklistCard({
   iconType,
   cssPrefix = '',
 }: AuditChecklistCardProps) {
-  const getIconClasses = (iconType: string) => {
-    const classes = {
-      primary: { iconBg: 'icon-bg-primary', iconText: 'icon-text-primary' },
-      secondary: { iconBg: 'icon-bg-secondary', iconText: 'icon-text-secondary' },
-      accent: { iconBg: 'icon-bg-accent', iconText: 'icon-text-accent' },
-    };
-    return classes[iconType as keyof typeof classes];
-  };
-
-  const iconClasses = getIconClasses(iconType);
+  const { bg: iconBg, text: iconText } = getIconStyles(iconType);
 
   return (
     <Card className={cn(BLOCK, cssPrefix)}>
-      <div className={cn(`${BLOCK}__icon`, iconClasses.iconBg)}>
-        <Icon className={cn(`${BLOCK}__icon-svg`, iconClasses.iconText)} />
+      <div className={cn(`${BLOCK}__icon`, iconBg)}>
+        <Icon className={cn(`${BLOCK}__icon-svg`, iconText)} />
       </div>
       <h4 className={`${BLOCK}__title`}>{title}</h4>
       <p className={`${BLOCK}__desc`}>{description}</p>

@@ -1,5 +1,7 @@
 import { LucideIcon } from 'lucide-react';
 
+import { getIconStyles, type IconType } from '@/lib/ui/iconStyles';
+
 const BLOCK = 'business-use-case-card';
 
 /**
@@ -15,7 +17,7 @@ export interface IconTextCardProps {
   /**
    * Icon color variant. @default "primary"
    */
-  iconType?: 'primary' | 'secondary' | 'accent' | 'purple' | 'teal' | 'amber' | 'dark';
+  iconType?: IconType;
   /**
    * Additional class(es) for the root element.
    *
@@ -32,22 +34,11 @@ export function IconTextCard({
   iconType = 'primary',
   cssPrefix = '',
 }: IconTextCardProps) {
-  const getIconClasses = (iconType: string) => {
-    const classes = {
-      primary: 'business-use-case-card__icon--primary',
-      secondary: 'business-use-case-card__icon--secondary',
-      accent: 'business-use-case-card__icon--accent',
-      purple: 'business-use-case-card__icon--purple',
-      teal: 'business-use-case-card__icon--teal',
-      amber: 'business-use-case-card__icon--amber',
-      dark: 'business-use-case-card__icon--dark',
-    };
-    return classes[iconType as keyof typeof classes] || classes.primary;
-  };
+  const iconStyles = getIconStyles(iconType);
 
   return (
     <div className={[BLOCK, cssPrefix].filter(Boolean).join(' ')}>
-      <Icon className={`${BLOCK}__icon ${getIconClasses(iconType)}`} />
+      <Icon className={`${BLOCK}__icon ${iconStyles.text}`} />
       <h3 className={`${BLOCK}__heading`}>{title}</h3>
       <p className={`${BLOCK}__text`}>{description}</p>
     </div>

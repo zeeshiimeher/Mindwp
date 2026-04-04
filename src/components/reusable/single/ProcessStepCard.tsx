@@ -56,11 +56,7 @@ export interface ProcessStep {
 
   /**
    * Optional icon type for different color schemes
-   * @default "default"
-   * - "default": Uses foreground/background colors (current behavior)
-   * - "primary": Uses primary color scheme
-   * - "secondary": Uses secondary color scheme
-   * - "accent": Uses accent color scheme
+   * @default "primary"
    */
   iconType?: 'default' | 'primary' | 'secondary' | 'accent';
 }
@@ -80,7 +76,7 @@ export function ProcessStepCard({
   title,
   description,
   icon,
-  iconType = 'default',
+  iconType = 'primary',
   cssPrefix = '',
 }: StepCardProps) {
   const badgeVariantClassName = `${BLOCK}__badge--${iconType}`;

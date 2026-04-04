@@ -3,6 +3,7 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
 import { Button } from '@/components/reusable/single/Button';
 import { cn } from '@/components/ui/utils';
+import { getIconStyles, type IconType } from '@/lib/ui/iconStyles';
 
 const BLOCK = 'feature-card';
 
@@ -23,7 +24,7 @@ export interface FeatureCategory {
   icon?: React.ComponentType<{ className?: string }>;
   features: string[];
   label?: string;
-  iconType?: 'primary' | 'secondary' | 'accent' | 'purple' | 'teal' | 'amber' | 'dark';
+  iconType?: IconType;
 }
 
 interface FeatureCardProps extends FeatureCategory {
@@ -71,20 +72,7 @@ export function FeatureChecklistCard({
   const defaultAlign: 'left' | 'center' = 'left';
   const finalAlign = align || defaultAlign;
 
-  const getIconClasses = (iconType: string) => {
-    const classes = {
-      primary: { bg: 'icon-bg-primary', text: 'icon-text-primary' },
-      secondary: { bg: 'icon-bg-secondary', text: 'icon-text-secondary' },
-      accent: { bg: 'icon-bg-accent', text: 'icon-text-accent' },
-      purple: { bg: 'icon-bg-purple', text: 'icon-text-purple' },
-      teal: { bg: 'icon-bg-teal', text: 'icon-text-teal' },
-      amber: { bg: 'icon-bg-amber', text: 'icon-text-amber' },
-      dark: { bg: 'icon-bg-dark', text: 'icon-text-dark' },
-    };
-    return classes[iconType as keyof typeof classes] || classes.primary;
-  };
-
-  const iconClasses = getIconClasses(iconType || 'primary');
+  const iconClasses = getIconStyles(iconType);
 
   const renderButton = () => {
     if (!href) return null;
@@ -136,7 +124,6 @@ export function FeatureChecklistCard({
     .join(' ');
 
   if (variant === 'stacked') {
-    const iconClasses = getIconClasses(iconType);
     const card = (
       <div className={[rootClasses, cssPrefix].filter(Boolean).join(' ')}>
         {Icon && (

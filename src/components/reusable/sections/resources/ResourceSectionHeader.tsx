@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { cn } from '@/components/ui/utils';
+import { getIconStyles, type IconType } from '@/lib/ui/iconStyles';
 
 const BLOCK = 'resource-section-header';
 
@@ -39,47 +40,17 @@ export interface ResourceSectionHeaderProps {
   className?: string;
 }
 
-const variantConfig = {
-  problem: {
-    bgClass: 'icon-bg-error',
-    textClass: 'icon-text-error',
-  },
-  solution: {
-    bgClass: 'icon-bg-success',
-    textClass: 'icon-text-success',
-  },
-  case: {
-    bgClass: 'icon-bg-primary',
-    textClass: 'icon-text-primary',
-  },
-  diy: {
-    bgClass: 'icon-bg-accent',
-    textClass: 'icon-text-accent',
-  },
-  'business-costs': {
-    bgClass: 'icon-bg-secondary',
-    textClass: 'icon-text-secondary',
-  },
-  faq: {
-    bgClass: 'icon-bg-primary',
-    textClass: 'icon-text-primary',
-  },
-  takeaways: {
-    bgClass: 'icon-bg-accent',
-    textClass: 'icon-text-accent',
-  },
-  comparison: {
-    bgClass: 'icon-bg-secondary',
-    textClass: 'icon-text-secondary',
-  },
-  templates: {
-    bgClass: 'icon-bg-primary',
-    textClass: 'icon-text-primary',
-  },
-  checklist: {
-    bgClass: 'icon-bg-success',
-    textClass: 'icon-text-success',
-  },
+const variantToIconType: Record<string, IconType> = {
+  problem: 'warning',
+  solution: 'success',
+  case: 'primary',
+  diy: 'accent',
+  'business-costs': 'secondary',
+  faq: 'primary',
+  takeaways: 'accent',
+  comparison: 'secondary',
+  templates: 'primary',
+  checklist: 'success',
 };
 
 export function ResourceSectionHeader({
@@ -89,12 +60,13 @@ export function ResourceSectionHeader({
   variant,
   className = '',
 }: ResourceSectionHeaderProps) {
-  const config = variantConfig[variant];
+  const iconType = variantToIconType[variant] ?? 'primary';
+  const styles = getIconStyles(iconType);
 
   return (
     <div className={cn(BLOCK, `${BLOCK}__row`, className)}>
-      <div className={cn(`${BLOCK}__icon`, 'icon-container-md', config.bgClass)}>
-        <Icon className={cn(config.textClass)} aria-hidden='true' />
+      <div className={cn(`${BLOCK}__icon`, 'icon-container-md', styles.bg)}>
+        <Icon className={cn(styles.text)} aria-hidden='true' />
       </div>
       <div>
         <h2 className={`${BLOCK}__title`}>{title}</h2>

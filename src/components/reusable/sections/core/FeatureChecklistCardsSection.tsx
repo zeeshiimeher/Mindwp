@@ -2,6 +2,7 @@ import React from 'react';
 
 import { FeatureChecklistCard, SectionIntro } from '@/components/reusable/single';
 import { cn } from '@/components/ui/utils';
+import type { IconType } from '@/lib/ui/iconStyles';
 
 const BLOCK = 'c-feature-checklist-cards-section';
 
@@ -13,7 +14,7 @@ type FeatureCategory = {
   icon?: FeatureIcon;
   features: string[];
   label?: string;
-  iconType?: 'primary' | 'secondary' | 'accent' | 'purple' | 'teal' | 'amber' | 'dark';
+  iconType?: IconType;
 };
 
 interface FeatureCategoriesSectionProps {

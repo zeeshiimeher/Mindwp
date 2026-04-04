@@ -435,33 +435,6 @@
   margin: 0;
   color: var(--c-text-muted);
 }
-.business-use-case-card__icon--primary {
-  color: var(--c-primary);
-}
-
-.business-use-case-card__icon--secondary {
-  color: var(--c-accent-blue);
-}
-
-.business-use-case-card__icon--accent {
-  color: var(--c-secondary);
-}
-
-.business-use-case-card__icon--purple {
-  color: var(--c-secondary);
-}
-
-.business-use-case-card__icon--teal {
-  color: var(--c-accent);
-}
-
-.business-use-case-card__icon--amber {
-  color: var(--c-warning);
-}
-
-.business-use-case-card__icon--dark {
-  color: var(--c-dark);
-}
 
 /* ----------------------------------------------------------------------
    Feature List Card (reusable/single/IconListCard.tsx)
@@ -8702,7 +8675,19 @@ h3.cta-heading {
 }
 
 .icon-bg-success {
-  background-color: var(--icon-bg-accent);
+  background-color: var(--icon-bg-success);
+}
+
+.icon-bg-warning {
+  background-color: var(--icon-bg-warning);
+}
+
+.icon-bg-info {
+  background-color: var(--icon-bg-info);
+}
+
+.icon-bg-neutral {
+  background-color: var(--icon-bg-neutral);
 }
 
 .icon-text-primary {
@@ -8722,39 +8707,19 @@ h3.cta-heading {
 }
 
 .icon-text-success {
-  color: var(--icon-text-accent);
+  color: var(--icon-text-success);
 }
 
-.icon-bg-purple {
-  background-color: var(--c-secondary);
+.icon-text-warning {
+  color: var(--icon-text-warning);
 }
 
-.icon-bg-teal {
-  background-color: var(--c-success-bg);
+.icon-text-info {
+  color: var(--icon-text-info);
 }
 
-.icon-bg-amber {
-  background-color: var(--c-warning-bg);
-}
-
-.icon-bg-dark {
-  background-color: var(--c-dark);
-}
-
-.icon-text-purple {
-  color: var(--c-secondary);
-}
-
-.icon-text-teal {
-  color: var(--c-accent);
-}
-
-.icon-text-amber {
-  color: var(--c-warning);
-}
-
-.icon-text-dark {
-  color: var(--c-dark);
+.icon-text-neutral {
+  color: var(--icon-text-neutral);
 }
 
 /* =========================================================
@@ -8813,12 +8778,11 @@ h3.cta-heading {
 .icon-text-primary:is(svg),
 .icon-text-secondary:is(svg),
 .icon-text-accent:is(svg),
-.icon-text-purple:is(svg),
-.icon-text-teal:is(svg),
-.icon-text-amber:is(svg),
-.icon-text-dark:is(svg),
-.icon-text-error:is(svg),
-.icon-text-success:is(svg) {
+.icon-text-success:is(svg),
+.icon-text-warning:is(svg),
+.icon-text-info:is(svg),
+.icon-text-neutral:is(svg),
+.icon-text-error:is(svg) {
   width: var(--space-4);
   height: var(--space-4);
   flex-shrink: 0;
