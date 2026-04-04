@@ -47,7 +47,10 @@ export default function Homepage() {
             <InfrastructureGapsSection />
           </section>
 
-          <section id='smart-website-framework' className='framework-section l-section bg-background'>
+          <section
+            id='smart-website-framework'
+            className='framework-section l-section bg-background'
+          >
             <SmartWebsiteFrameworkSection />
           </section>
           <section id='implementation-principles'>

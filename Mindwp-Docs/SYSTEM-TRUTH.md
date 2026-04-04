@@ -4,6 +4,8 @@
 > Sources: 5 governing docs, reports/, code scan.
 > Updated: 2026-04-02 (decisions applied)
 
+**Boundary:** This file defines current system reality only. It does not hold workflows, phase tasks, raw audit notes, or dashboard summaries.
+
 ---
 
 ## 1. SYSTEM OVERVIEW
@@ -14,7 +16,7 @@
 
 **Content graph:** 211 nodes, 2,742 edges, 7 formal content types (`ContentNodeType` is the only allowed type system — see §2.4).
 
-**Validation:** 27 validators. TypeScript clean. ESLint clean. Build passing.
+**Validation:** 28 validators. TypeScript clean. ESLint clean. Build passing.
 
 **Conversion model:** Conversation-first. Primary CTA: "Start a Conversation" → /contact. No lead magnets. System works without free resources.
 
@@ -475,7 +477,7 @@ Use this when making any system decision.
 | Can I hardcode a color? | foundation.css | No — use `--c-*` semantic tokens. |
 | Can I override section padding? | DESIGN-SYSTEM-CONTROL-LAYER.md | Only for hero, CTA, or footer. |
 | Can I add `use client` to a route file? | Component rules | No — isolate to micro islands. |
-| Can I create a new domain wrapper? | DESIGN-SYSTEM-ARCHITECTURE.md | Yes — but zero logic, thin re-export only. |
+| Can I create a new domain wrapper? | DESIGN-SYSTEM-CONTROL-LAYER.md | Yes — but zero logic, thin re-export only. |
 | Should I change docs or code? | GOVERNANCE | Change code. Docs are always correct. |
 | Can I reopen an architectural decision? | AI Execution Lock | No — execute, don't strategize. |
 | Which page type gets strong CTA? | ui-intelligence.ts | Service and Feature only. |

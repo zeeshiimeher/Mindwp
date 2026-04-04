@@ -31,7 +31,8 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
   const ctaButtonText = data.cta?.buttonText ?? SERVICE_RENDERER_DEFAULTS.ctaButtonText;
   const ctaButtonHref = data.cta?.buttonHref ?? SERVICE_RENDERER_DEFAULTS.ctaButtonHref;
   const inlineCtaTitle = data.inlineCta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
-  const inlineCtaDescription = data.inlineCta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
+  const inlineCtaDescription =
+    data.inlineCta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
   const inlineCtaButtonText = data.inlineCta?.buttonText ?? SERVICE_RENDERER_DEFAULTS.ctaButtonText;
   const inlineCtaButtonHref = data.inlineCta?.buttonHref ?? SERVICE_RENDERER_DEFAULTS.ctaButtonHref;
 
@@ -72,7 +73,8 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                 </div>
               </div>
             </section>
-          )}{/* Before/After Comparison */}
+          )}
+          {/* Before/After Comparison */}
           {data.sections.comparison && (
             <ComparisonSection
               title={data.sections.comparison.header.title}
@@ -81,7 +83,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               cssPrefix='smart-websites-comparison bg-background'
             />
           )}
-           {/* What's Included */}
+          {/* What's Included */}
           {data.sections.included && (
             <ChecklistCardsSection
               title={data.sections.included.header.title}
@@ -120,7 +122,11 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           <CTASection
             title={inlineCtaTitle}
             description={inlineCtaDescription}
-            primaryAction={{ label: inlineCtaButtonText, href: inlineCtaButtonHref, variant: 'white' }}
+            primaryAction={{
+              label: inlineCtaButtonText,
+              href: inlineCtaButtonHref,
+              variant: 'white',
+            }}
             cssPrefix='smart-websites-cta bg-background'
           />
           {data.sections.coreLayer && (

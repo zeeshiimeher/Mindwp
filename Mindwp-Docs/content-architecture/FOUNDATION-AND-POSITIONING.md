@@ -376,8 +376,8 @@ Identify weak pages and guide optimization decisions. This is an audit layer, no
 The system highlights problems. Humans decide when and how to fix them.
 
 **Implementation:**
-- Validator: `scripts/validation/validate-conversion.ts`
-- Integrated into: `scripts/validate-all.mjs` as final validator
+- Validator: `scripts/validators/validate-conversion.ts`
+- Integrated into: `scripts/core/validate-all.mjs` as final validator
 - STRICT_MODE flag: `false` (safe), upgradeable to `true` in future phases
 
 **CTA Scan Scope:**

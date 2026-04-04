@@ -117,9 +117,9 @@ These create data that dashboards and validators use.
 | generate-content-registries | `node scripts/generate-content-registries.mjs` | Creates slug→component lookup maps for blog, resources, and case studies | `src/domains/*/registry.ts` |
 | generate-global-inventory | `node scripts/generate-global-inventory.mjs` | Generates a catalog of all shared components | `Mindwp-Docs/GLOBAL-COMPONENTS-CATALOG.md` |
 | generate-sitemap | `node scripts/generate-sitemap.mjs` | Creates XML sitemap from content registry | `public/sitemap.xml` |
-| generate-component-docs | `node scripts/generate-component-docs.cjs` | Generates component documentation | `Mindwp-Docs/` (doc files) |
+| generate-component-docs | `node scripts/generators/generate-component-docs.cjs` | Generates component documentation | `Mindwp-Docs/` (doc files) |
 | generate-resolver-cache | `npx tsx scripts/generate-resolver-cache.ts` | Pre-computes content graph resolver cache for faster lookups | Cache files |
-| check-generated | `node scripts/check-generated.mjs` | Freshness guard — checks if generated files are up to date | Exit code 1 if stale |
+| check-generated | `node scripts/core/check-generated.mjs` | Freshness guard — checks if generated files are up to date | Exit code 1 if stale |
 
 ### Analysis Scripts
 
@@ -127,14 +127,14 @@ These analyze content quality and produce reports.
 
 | Script | Command | Purpose | Output |
 |--------|---------|---------|--------|
-| generate-content-intelligence | `npx tsx scripts/analyze/generate-content-intelligence.ts` | Detects content gaps, authority weaknesses, and generates suggestions | `reports/content-intelligence.json` |
-| generate-content-gaps | `npx tsx scripts/analyze/generate-content-gaps.ts` | Finds missing content per topic, system, and industry | `reports/content-gaps.json`, `reports/content-gaps.md` |
-| score-content | `node scripts/analyze/score-content.mjs` | Scores each page on hype words, banned phrases, word count, CTA presence | `reports/content-score.json` |
-| detect-page-priorities | `node scripts/analyze/detect-page-priorities.mjs` | Tags each page as high/medium/low priority based on domain type | `reports/page-priorities.json` |
-| audit-content-consistency | `node scripts/analyze/audit-content-consistency.mjs` | Scans for CTA inconsistencies, banned vocabulary, hype density | `reports/content-consistency-audit.json` |
-| export-report | `node scripts/analyze/export-report.mjs` | Generates client-facing intelligence report combining all analysis | client-report.json + client-report.md in /reports/ (on demand, not always present) |
-| export-readable-report | `node scripts/analyze/export-readable-report.mjs` | Generates human-readable audit report | readable-audit-report.json + readable-audit-report.md in /reports/ |
-| test-editing-stability | `node scripts/analyze/test-editing-stability.mjs` | Tests that edit operations are safe and reversible | Console output |
+| generate-content-intelligence | `npx tsx scripts/analyzers/generate-content-intelligence.ts` | Detects content gaps, authority weaknesses, and generates suggestions | `reports/content-intelligence.json` |
+| generate-content-gaps | `npx tsx scripts/analyzers/generate-content-gaps.ts` | Finds missing content per topic, system, and industry | `reports/content-gaps.json`, `reports/content-gaps.md` |
+| score-content | `node scripts/analyzers/score-content.mjs` | Scores each page on hype words, banned phrases, word count, CTA presence | `reports/content-score.json` |
+| detect-page-priorities | `node scripts/analyzers/detect-page-priorities.mjs` | Tags each page as high/medium/low priority based on domain type | `reports/page-priorities.json` |
+| audit-content-consistency | `node scripts/analyzers/audit-content-consistency.mjs` | Scans for CTA inconsistencies, banned vocabulary, hype density | `reports/content-consistency-audit.json` |
+| export-report | `node scripts/analyzers/export-report.mjs` | Generates client-facing intelligence report combining all analysis | client-report.json + client-report.md in /reports/ (on demand, not always present) |
+| export-readable-report | `node scripts/analyzers/export-readable-report.mjs` | Generates human-readable audit report | readable-audit-report.json + readable-audit-report.md in /reports/ |
+| test-editing-stability | `node scripts/analyzers/test-editing-stability.mjs` | Tests that edit operations are safe and reversible | Console output |
 
 ### Validation Scripts
 
@@ -142,41 +142,41 @@ These enforce rules. Run individually or all at once with `validate-all`.
 
 | Script | Command | Checks | Fails Build? |
 |--------|---------|--------|-------------|
-| validate-all | `node scripts/validate-all.mjs` | Runs ALL validators below, aggregates results | Yes (if any fail) |
-| validate-blog | `node scripts/validate-blog.mjs` | Blog domain structure (required fields, section format) | Yes |
-| validate-resources | `node scripts/validate-resources.mjs` | Resource domain structure | Yes |
-| validate-case-study-structure | `node scripts/validate-case-study-structure.mjs` | Case study structure | Yes |
-| validate-service-structure | `node scripts/validate-service-structure.mjs` | Service page structure | Yes |
-| validate-feature-structure | `node scripts/validate-feature-structure.mjs` | Feature page structure | Yes |
-| validate-home-structure | `node scripts/validate-home-structure.mjs` | Homepage structure | Yes |
-| validate-industry-structure | `node scripts/validate-industry-structure.mjs` | Industry page structure | Yes |
-| validate-design-system | `node scripts/validate-design-system.cjs` | Design system tokens and naming | Yes |
-| validate-docs | `node scripts/validate-docs.mjs` | Documentation formatting, required sections | Yes |
-| validate-graph | `npx tsx scripts/validate-graph.ts` | Content graph integrity (edges, orphans) | Yes |
-| validate-metadata | `npx tsx scripts/validation/validate-metadata.mjs` | Rule-based metadata field validation | Yes |
-| validate-metadata-completeness | `node scripts/validation/validate-metadata-completeness.mjs` | Missing or incomplete metadata fields | Yes |
-| validate-cta | `node scripts/validation/validate-cta.mjs` | CTA labels, hrefs, placement rules | Yes |
-| validate-vocabulary | `node scripts/validation/validate-vocabulary.mjs` | Banned phrases and anti-hype vocabulary | Yes |
-| validate-structure | `node scripts/validation/validate-structure.mjs` | Heading structure, tone rules, CTA placement | Yes |
-| validate-internal-links | `npx tsx scripts/validation/validate-internal-links.ts` | Max 5 links/page, no duplicates, no repeated anchors | Yes |
-| validate-conversion | `npx tsx scripts/validation/validate-conversion.ts` | Missing CTA, no service link, no journey step | **No** (warnings only) |
-| validate-system-docs | `node scripts/validation/validate-system-docs.mjs` | Checks this doc stays aligned with actual systems | **No** (warnings only) |
-| validate-readable-report | `node scripts/validation/validate-readable-report.mjs` | Checks readable report system integrity (files, exports, script) | **No** (warnings only) |
-| validate-rewrite-engine | `node scripts/validation/validate-rewrite-engine.mjs` | Checks rewrite engine and dependencies (files, exports) | **No** (warnings only) |
-| validate-checklist | `node scripts/validation/validate-checklist.mjs` | Checks fix checklist engine and integrations | **No** (warnings only) |
-| validate-session-log | `node scripts/validation/validate-session-log.mjs` | Checks session tracker system (log, module, script, panel) | **No** (warnings only) |
+| validate-all | `node scripts/core/validate-all.mjs` | Runs ALL validators below, aggregates results, and writes `reports/validation-results.json` | Yes (if any blocking validator fails) |
+| validate-blog | `node scripts/validators/validate-blog.mjs` | Blog domain structure (required fields, section format) | Yes |
+| validate-resources | `node scripts/validators/validate-resources.mjs` | Resource domain structure | Yes |
+| validate-case-study-structure | `node scripts/validators/validate-case-study-structure.mjs` | Case study structure | Yes |
+| validate-service-structure | `node scripts/validators/validate-service-structure.mjs` | Service page structure | Yes |
+| validate-feature-structure | `node scripts/validators/validate-feature-structure.mjs` | Feature page structure | Yes |
+| validate-home-structure | `node scripts/validators/validate-home-structure.mjs` | Homepage structure | Yes |
+| validate-industry-structure | `node scripts/validators/validate-industry-structure.mjs` | Industry page structure | Yes |
+| validate-design-system | `node scripts/validators/validate-design-system.cjs` | Design system tokens and naming | Yes |
+| validate-docs | `node scripts/validators/validate-docs.mjs` | Documentation formatting, required sections | Yes |
+| validate-graph | `npx tsx scripts/validators/validate-graph.ts` | Content graph integrity (edges, orphans) | Yes |
+| validate-metadata | `node scripts/validators/validate-metadata.mjs` | Rule-based metadata field validation | Yes |
+| validate-metadata-completeness | `node scripts/validators/validate-metadata-completeness.mjs` | Missing or incomplete metadata fields | Yes |
+| validate-cta | `node scripts/validators/validate-cta.mjs` | CTA labels, hrefs, placement rules | Yes |
+| validate-vocabulary | `node scripts/validators/validate-vocabulary.mjs` | Banned phrases and anti-hype vocabulary | Yes |
+| validate-structure | `node scripts/validators/validate-structure.mjs` | Heading structure, tone rules, CTA placement | Yes |
+| validate-internal-links | `npx tsx scripts/validators/validate-internal-links.ts` | Max 5 links/page, no duplicates, no repeated anchors | Yes |
+| validate-conversion | `npx tsx scripts/validators/validate-conversion.ts` | Missing CTA, no service link, no journey step | **No** (warnings only) |
+| validate-system-docs | `node scripts/validators/validate-system-docs.mjs` | Checks this doc stays aligned with actual systems | **No** (warnings only) |
+| validate-readable-report | `node scripts/validators/validate-readable-report.mjs` | Checks readable report system integrity (files, exports, script) | **No** (warnings only) |
+| validate-rewrite-engine | `node scripts/validators/validate-rewrite-engine.mjs` | Checks rewrite engine and dependencies (files, exports) | **No** (warnings only) |
+| validate-checklist | `node scripts/validators/validate-checklist.mjs` | Checks fix checklist engine and integrations | **No** (warnings only) |
+| validate-session-log | `node scripts/validators/validate-session-log.mjs` | Checks session tracker system (log, module, script, panel) | **No** (warnings only) |
 
 ### Utility Scripts
 
 | Script | Command | Purpose |
 |--------|---------|---------|
-| report-content-readiness | `node scripts/report-content-readiness.mjs` | Summarizes content readiness across domains |
-| image-generate | `npx tsx scripts/image-generate.ts` | CLI for generating images (Unsplash, Pexels, Pixabay) |
-| image-inspect | `npx tsx scripts/image-inspect.ts` | Inspects image metadata and generates image reports |
-| inspect-graph | `npx tsx scripts/inspect-graph.ts` | Dev runner for graph structure inspection |
-| run-eslint | `node scripts/run-eslint.mjs` | ESLint runner (used by validate-all) |
-| run-next | `node scripts/run-next.mjs` | Next.js dev runner |
-| run-next-filtered | `node scripts/run-next-filtered.mjs` | Filtered Next.js runner |
+| report-content-readiness | `node scripts/analyzers/report-content-readiness.mjs` | Summarizes content readiness across domains |
+| image-generate | `npx tsx scripts/generators/image-generate.ts` | CLI for generating images (Unsplash, Pexels, Pixabay) |
+| image-inspect | `npx tsx scripts/analyzers/image-inspect.ts` | Inspects image metadata and generates image reports |
+| inspect-graph | `npx tsx scripts/analyzers/inspect-graph.ts` | Dev runner for graph structure inspection |
+| run-eslint | `node scripts/runners/run-eslint.mjs` | ESLint runner (used by validate-all) |
+| run-next | `node scripts/runners/run-next.mjs` | Next.js dev runner |
+| run-next-filtered | `node scripts/runners/run-next-filtered.mjs` | Filtered Next.js runner |
 | add-session-entry | `node scripts/dev/add-session-entry.mjs` | CLI for adding optimization session entries to session-log.json |
 
 ### Shared Libraries
@@ -221,14 +221,14 @@ All reports live in `/reports/`. They are generated by scripts and consumed by d
 
 ### content-intelligence.json
 
-- **Generated by:** `npx tsx scripts/analyze/generate-content-intelligence.ts`
+- **Generated by:** `npx tsx scripts/analyzers/generate-content-intelligence.ts`
 - **Used by:** Analysis and planning
 - **Contains:** Content gaps, authority weaknesses, suggestions, priority scores
 - **Purpose:** High-level intelligence about what to write, what to fix, and what to prioritize.
 
 ### content-gaps.json
 
-- **Generated by:** `npx tsx scripts/analyze/generate-content-gaps.ts`
+- **Generated by:** `npx tsx scripts/analyzers/generate-content-gaps.ts`
 - **Used by:** Content Dashboard
 - **Contains:** Topics with missing content types (blogs, resources, case studies), suggestions for what to create
 - **Purpose:** Identifies exactly where content is missing and what to create.
@@ -242,28 +242,28 @@ All reports live in `/reports/`. They are generated by scripts and consumed by d
 
 ### content-score.json
 
-- **Generated by:** `node scripts/analyze/score-content.mjs`
+- **Generated by:** `node scripts/analyzers/score-content.mjs`
 - **Used by:** Priority engine, analysis
 - **Contains:** Per-page scores — hype word count, banned phrase count, word count, sentence metrics, CTA presence, CTA label approval
 - **Purpose:** Quality scoring for every content page. Feeds into the priority queue.
 
 ### content-consistency-audit.json
 
-- **Generated by:** `node scripts/analyze/audit-content-consistency.mjs`
+- **Generated by:** `node scripts/analyzers/audit-content-consistency.mjs`
 - **Used by:** Analysis
 - **Contains:** CTA label/href consistency, banned vocabulary hits, hype density, missing CTA sections — grouped by domain
 - **Purpose:** Finds inconsistencies across content that need cleanup.
 
 ### page-priorities.json
 
-- **Generated by:** `node scripts/analyze/detect-page-priorities.mjs`
+- **Generated by:** `node scripts/analyzers/detect-page-priorities.mjs`
 - **Used by:** Priority engine, planning
 - **Contains:** Every page tagged with priority level (high/medium/low) based on domain type
 - **Purpose:** Services and features get "high" priority, industries and resources get "medium", blog gets "low".
 
 ### metadata-completeness.json
 
-- **Generated by:** `node scripts/validation/validate-metadata-completeness.mjs`
+- **Generated by:** `node scripts/validators/validate-metadata-completeness.mjs`
 - **Used by:** Analysis
 - **Contains:** Metadata field coverage metrics across all content
 - **Purpose:** Shows which pages are missing metadata fields.
@@ -367,21 +367,21 @@ Step-by-step guide for using the system:
 3. Read the **Guided Flow** suggestions for step-by-step improvement instructions.
 4. Make the content fix.
 5. Log the fix in `reports/fix-log.json`.
-6. Run `node scripts/validate-all.mjs` to verify nothing is broken.
+6. Run `node scripts/core/validate-all.mjs` to verify nothing is broken.
 
 ### Creating New Content
 
 1. Check **Content Gaps** to see what's needed.
 2. Check **Topic Authority Scores** to prioritize high-value topics.
 3. Create the content following the domain structure rules.
-4. Run `npx tsx scripts/generate-authority-map.ts` to regenerate the authority map.
-5. Run `npx tsx scripts/generate-topic-authority-scores.ts` to update scores.
-6. Run `node scripts/validate-all.mjs` to validate.
+4. Run `npx tsx scripts/generators/generate-authority-map.ts` to regenerate the authority map.
+5. Run `npx tsx scripts/generators/generate-topic-authority-scores.ts` to update scores.
+6. Run `node scripts/core/validate-all.mjs` to validate.
 
 ### Running All Validators
 
 ```bash
-node scripts/validate-all.mjs
+node scripts/core/validate-all.mjs
 ```
 
 This runs all 20 validators and shows pass/fail for each. Use `--report-json` for machine-readable output.
@@ -389,13 +389,13 @@ This runs all 20 validators and shows pass/fail for each. Use `--report-json` fo
 ### Regenerating All Reports
 
 ```bash
-npx tsx scripts/generate-authority-map.ts
-npx tsx scripts/generate-topic-authority-scores.ts
-npx tsx scripts/analyze/generate-content-intelligence.ts
-npx tsx scripts/analyze/generate-content-gaps.ts
-node scripts/analyze/score-content.mjs
-node scripts/analyze/detect-page-priorities.mjs
-node scripts/analyze/audit-content-consistency.mjs
+npx tsx scripts/generators/generate-authority-map.ts
+npx tsx scripts/generators/generate-topic-authority-scores.ts
+npx tsx scripts/analyzers/generate-content-intelligence.ts
+npx tsx scripts/analyzers/generate-content-gaps.ts
+node scripts/analyzers/score-content.mjs
+node scripts/analyzers/detect-page-priorities.mjs
+node scripts/analyzers/audit-content-consistency.mjs
 ```
 
 ---

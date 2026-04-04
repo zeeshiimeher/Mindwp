@@ -400,10 +400,14 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
                 {heroData.problem && heroData.promise && (
                   <div className='resource-page__callout'>
                     <p className='resource-page__callout-line'>
-                      <span className='resource-page__callout-line--error'>❌ {heroData.problem}</span>
+                      <span className='resource-page__callout-line--error'>
+                        ❌ {heroData.problem}
+                      </span>
                     </p>
                     <p className='resource-page__callout-line'>
-                      <span className='resource-page__callout-line--success'>✅ {heroData.promise}</span>
+                      <span className='resource-page__callout-line--success'>
+                        ✅ {heroData.promise}
+                      </span>
                     </p>
                   </div>
                 )}

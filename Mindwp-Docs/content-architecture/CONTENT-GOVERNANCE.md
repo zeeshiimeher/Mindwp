@@ -208,7 +208,7 @@ This section defines how those rules are applied during editing.
 
 ### Validation
 
-The vocabulary validator (`scripts/validation/validate-vocabulary.mjs`) scans domain data and content files for banned phrases. It must pass with zero violations before any content batch is considered complete.
+The vocabulary validator (`scripts/validators/validate-vocabulary.mjs`) scans domain data and content files for banned phrases. It must pass with zero violations before any content batch is considered complete.
 
 ---
 

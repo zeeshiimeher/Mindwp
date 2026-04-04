@@ -243,11 +243,7 @@ export const homepageData: HomepageData = {
     title: 'A website that helps your service business bring in and handle enquiries properly',
     description:
       'We build Smart Websites that connect how people find you, how they get in touch, and how enquiries are handled — so your website works as part of the business, not just a page people land on.',
-    valueProps: [
-      'Right Enquiries',
-      'Search Ready',
-      'Built to Grow',
-    ],
+    valueProps: ['Right Enquiries', 'Search Ready', 'Built to Grow'],
     primaryAction: {
       label: 'Start a Conversation',
       href: '/contact',

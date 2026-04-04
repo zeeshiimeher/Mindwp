@@ -1,139 +1,56 @@
-# Phase 7 — Visual System Execution Playbook
+# Phase 7 — Visual Task Playbook
 
-> Scope: visual-system cleanup only.
-> Purpose: execution guide for Phase 7A through 7E.
-> Rule: this file tracks issues, rules, and delivery order. Raw audit exploration stays out.
-
----
-
-## 1. Overview
-
-Phase 7 exists to remove visual-system drift from the token layer through component implementation.
-
-The system is not broadly broken. The problems are concentrated and repeatable:
-- token naming is clearer than usage
-- gradients are partially tokenized and partially ad hoc
-- hover behavior is inconsistent across similar components
-- section backgrounds do not follow a stable rhythm
-- a small number of components carry the majority of the visual debt
-- icons and badges have too many sizing patterns for a controlled system
-
-Contrast warnings from the automated audit are mostly false positives caused by transparent background resolution. There is no confirmed Phase 7 contrast emergency.
+> THIS FILE IS A PHASE TASK PLAYBOOK.
+> It is NOT system truth.
+> It is NOT a rules document.
 
 ---
 
-## 2. System Problems
+## 1. Phase Scope
 
-### P1. Token clarity is stronger than token adoption
-- `components.css` still leaks direct `--brand-*` usage where `--c-*` tokens should be the consumption layer.
-- A few token names remain misleading enough to slow maintenance.
-
-### P2. Gradient usage is not disciplined
-- Foundation tokens exist, but component gradients are still mostly hardcoded.
-- Legacy `.gradient-cta-*` utilities duplicate `.bg-gradient-cta-*` utilities.
-
-### P3. Interaction patterns are uneven
-- Similar cards do not share the same hover, focus, shadow, or transition behavior.
-- Several hover states are not protected by `@media (hover: hover)`.
-
-### P4. Section background rhythm is unstable
-- `--bg-muted` is implemented at multiple opacities.
-- Some sections are missing expected background variants.
-- One muted comparison variant is functionally identical to default.
-
-### P5. Component and icon systems are over-varied
-- The same visual role is implemented with multiple borders, radii, shadows, icon sizes, and naming patterns.
-- Utility classes exist for icons, but component code does not consistently use them.
+- Close visual-system drift through Phase 7 implementation work only.
+- Track open issues, fixes, and execution order for 7A through 7E.
+- Keep shared rules in `SYSTEM-TRUTH.md`, `AI-RULES.md`, and `DESIGN-SYSTEM-CONTROL-LAYER.md`.
 
 ---
 
-## 3. Findings by Category
+## 2. Open Issues
 
-### Colors
+### 7B — Hover and transition drift
+- DualToneChecklist, ServiceSpectrum, and ProcessSteps are missing shared hover treatment.
+- Comparable cards do not use consistent shadow tiers.
+- Some interactive elements are missing `:focus-visible`.
+- Hardcoded `0.2s ease` transitions still exist in Phase 7 scope.
+- Some hover rules still need `@media (hover: hover)` guards.
 
-**Issues**
-- `--brand-amber` resolves to a near-black value and reads as a misleading warning/accent source.
-- `--brand-purple` is a blue alias retained for compatibility, not an accurate semantic name.
-- `components.css` still contains 8 direct `--brand-*` leaks that bypass the V2 consumption layer.
+### 7C — Gradient drift
+- Repeated gradient patterns are still hardcoded in component CSS.
+- Legacy CTA gradient utility naming still creates duplication pressure.
+- `--gradient-cta-warm` remains a broken name and needs explicit handling.
 
-**Rules**
-- Components should consume `--c-*` or approved helper tokens, not raw `--brand-*` tokens.
-- Misleading legacy token names may remain temporarily, but new component work must not expand their surface area.
+### 7D — Icon and badge drift
+- Icon containers still use too many size patterns.
+- Shared icon container utilities are underused.
+- Badge padding and section badge font sizing still need tokenized cleanup.
 
-### Gradients
-
-**Issues**
-- Component gradients are still more hardcoded than tokenized.
-- Repeated patterns exist that should become shared tokens.
-- Legacy `.gradient-cta-*` classes duplicate current `.bg-gradient-cta-*` utilities.
-
-**Rules**
-- New gradients must be defined in `foundation.css` before use.
-- Repeated visual patterns should become named tokens, not copied inline gradients.
-- Only one CTA gradient utility family should survive.
-
-### Hover / Interaction
-
-**Issues**
-- DualToneChecklist, ServiceSpectrum, and ProcessSteps are missing standardized hover behavior.
-- Several components are missing `:focus-visible` treatment.
-- `0.2s ease` still coexists with `var(--transition-fast)`.
-- Hover rules are not consistently wrapped for hover-capable devices.
-
-**Rules**
-- Cards with comparable interaction weight should share the same hover elevation tier.
-- Keyboard focus is required anywhere hover implies interaction.
-- Transition timing should route through shared transition tokens.
-
-### Backgrounds
-
-**Issues**
-- `--bg-muted` appears at 30%, 35%, and 50% intensity.
-- Technologies, industry-packages, grid-section, hero-section, and FAQ variants are incomplete.
-- Comparison muted modifiers are not visually distinct from default.
-
-**Rules**
-- Section backgrounds must use the defined variant system only.
-- Muted surfaces should use one normalized opacity unless a deliberate exception is documented.
-- A background modifier that renders identically to default is a bug, not a variant.
-
-### Components
-
-**Issues**
-- DualToneChecklist lacks hover, focus, border/shadow definition, and description line-height refinement.
-- ServiceSpectrum lacks hover treatment, border structure, and tokenized padding.
-- ProcessSteps lacks hover/focus parity, radius normalization, and tokenized badge shadow.
-- IconBenefit has a radius bug, inconsistent hover tiers, and weak link-card hover behavior.
-- FAQ has duplicate open-state blocks and a brittle max-height rule.
-
-**Rules**
-- Phase 7 component work is for normalization, not redesign.
-- Fixes should remove implementation drift without introducing new variants.
-
-### Icons / Badges
-
-**Issues**
-- Icon containers use too many hardcoded sizes and naming patterns.
-- Existing icon utility classes are underused.
-- Badge spacing and section badge font sizing still use hardcoded values.
-
-**Rules**
-- Icon containers should converge on utility tiers.
-- Icon backgrounds should route through shared icon background tokens/classes.
-- Badge sizing must use tokenized spacing and typography values.
+### 7E — Remaining component defects
+- `benefit-card--r-xl` uses the wrong radius token.
+- FAQ still has duplicate open-state logic and brittle max-height behavior.
+- DualToneChecklist columns need border and shadow normalization.
+- ServiceSpectrum cards need border and border-radius normalization.
+- ProcessSteps cards need radius and badge shadow cleanup.
+- A small set of `--brand-*` leaks still need replacement.
+- Dead `l-section` media-query blocks still need removal from `framework.css`.
 
 ---
 
-## 4. Execution Plan
+## 3. Execution Plan
 
-### Phase 7A — Section Background System
+### 7A — Section Background System
 
 **Status:** Done
 
-**Goal**
-- Normalize section background behavior and remove background-level drift.
-
-**Tasks**
+**Closed work**
 - T-104 Add 3 `--section-bg-*` tokens + 3 `bg-section-*` utility classes
 - T-105 Standardize `--bg-muted` opacity to 30% across 15 sections
 - T-106 Fix comparison section background bug
@@ -141,18 +58,11 @@ Contrast warnings from the automated audit are mostly false positives caused by 
 - T-108 Remove 5 legacy gradient `!important` utilities
 - T-109 Validate section background system consistency
 
-**Expected outcome**
-- One consistent section background rhythm.
-- No dead or duplicate background utilities.
-
-### Phase 7B — Hover & Transition Standardization
+### 7B — Hover & Transition Standardization
 
 **Status:** Active
 
-**Goal**
-- Standardize interaction feedback across comparable cards and links.
-
-**Tasks**
+**Fixes to execute**
 - T-110 Add Tier 2 hover to DualToneChecklist, ServiceSpectrum, and ProcessSteps cards
 - T-111 Add `:focus-visible` ring to DualToneChecklist, ServiceSpectrum, and ProcessSteps
 - T-112 Normalize hover shadows: standard cards use `--shadow-lg`, feature cards use `--shadow-xl`
@@ -160,51 +70,39 @@ Contrast warnings from the automated audit are mostly false positives caused by 
 - T-114 Wrap 4 unguarded hover states in `@media (hover: hover)`
 - T-115 Strengthen `benefit-card--link` hover with shadow elevation
 
-**Expected outcome**
-- One interaction language for card hover, focus, and transition timing.
-- No touch-device sticky hover regressions.
+**Exit condition**
+- Shared interaction behavior is aligned for the scoped cards and links.
 
-### Phase 7C — Gradient Tokenization
+### 7C — Gradient Tokenization
 
-**Status:** Todo
+**Status:** Queued
 
-**Goal**
-- Move recurring gradient patterns into the token layer.
-
-**Tasks**
+**Fixes to execute**
 - T-116 Add 4 new gradient tokens to `foundation.css`
 - T-117 Replace 14 hardcoded gradients in `components.css` with the new tokens
 - T-118 Mark `--gradient-cta-warm` as broken with an explanatory code comment
 
-**Expected outcome**
-- Repeated gradients move to named tokens.
-- Components stop carrying repeated gradient definitions inline.
+**Exit condition**
+- Repeated gradient patterns are named and consumed through tokens.
 
-### Phase 7D — Icon + Badge Normalization
+### 7D — Icon + Badge Normalization
 
-**Status:** Todo
+**Status:** Queued
 
-**Goal**
-- Reduce icon and badge variation to a small reusable scale.
-
-**Tasks**
+**Fixes to execute**
 - T-119 Add `icon-container-xs` utility class
 - T-120 Map hardcoded icon sizes to `icon-container-*` tiers
 - T-121 Replace component icon backgrounds with `icon-bg-*` utility classes
 - T-122 Replace hardcoded badge padding and font-size values with tokens
 
-**Expected outcome**
-- Icons and badges use shared sizing and background utilities.
-- Component-specific icon sizing stops fragmenting the design system.
+**Exit condition**
+- Icon and badge implementation uses a shared size and utility model.
 
-### Phase 7E — Component Fixes + Legacy Cleanup
+### 7E — Component Fixes + Legacy Cleanup
 
-**Status:** Todo
+**Status:** Queued
 
-**Goal**
-- Fix remaining component-level defects after the shared system work lands.
-
-**Tasks**
+**Fixes to execute**
 - T-123 Fix `benefit-card--r-xl` bug (`var(--radius)` → `var(--radius-xl)`)
 - T-124 FAQ: merge duplicate `[data-open='true']` blocks and fix max-height behavior
 - T-125 DualToneChecklist: add border + box-shadow to columns
@@ -213,51 +111,22 @@ Contrast warnings from the automated audit are mostly false positives caused by 
 - T-128 Replace 8 `var(--brand-*)` leaks with `--c-*` equivalents
 - T-129 Remove 4 dead `l-section` media query blocks in `framework.css`
 
-**Expected outcome**
-- Known component defects are closed.
-- Legacy implementation noise is removed after shared standards are in place.
+**Exit condition**
+- Remaining scoped defects are closed without expanding Phase 7 beyond its queue.
 
 ---
 
-## 5. Completion Tracking
+## 4. Completion Tracking
 
-| Phase | Status | Delivery check |
+| Phase | Status | Check |
 |---|---|---|
-| 7A | Done | Section background system normalized |
-| 7B | Active | Hover, focus, and transition rules aligned |
-| 7C | Todo | Repeated gradients tokenized |
-| 7D | Todo | Icon and badge system normalized |
-| 7E | Todo | Remaining component defects closed |
+| 7A | Done | Section background cleanup complete |
+| 7B | Active | Hover, focus, and transition fixes in progress |
+| 7C | Queued | Gradient tokenization pending |
+| 7D | Queued | Icon and badge normalization pending |
+| 7E | Queued | Remaining component cleanup pending |
 
 **Execution order:** 7B → 7C → 7D → 7E
-
-# PHASE 7 — DEEP SYSTEM ANALYSIS & IMPROVED EXECUTION PLAN
-
-> **Generated from:** Code-level analysis of foundation.css (366L), primitives.css (248L), framework.css (836L), components.css (10882L) + validation against the visual audit above  
-> **Purpose:** Improve upon the existing audit — no repetition, only new findings, deeper root-cause analysis, and a production-grade execution plan
-
----
-
-## PART 0 — VISUAL AUDIT VALIDATION
-
-### Confirmed Correct
-
-1. **Muted opacity divergence** (30%/35%/50%) — Verified in CSS. Line-accurate.
-2. **Comparison section bug** — `--bg-muted` and `--bg-default` both set `var(--c-bg)` at lines 4986-4993.
-3. **Brand token leakage** — All 8 instances confirmed at stated lines.
-4. **Misleading tokens** — `--brand-amber: #070606` confirmed. `--c-warning` chains to it (near-black).
-5. **Transition inconsistency** — 9 hardcoded `0.2s ease` found (audit said 16; actual count from code is 9 in components.css: lines 4470, 4619, 4831, 5496, 5999 + 2 additional in adjacent areas). The audit overcounted by including non-component sources.
-6. **Icon container chaos** — 42 icon sizing rules found; audit said 16+ patterns with 9 sizes — actual is worse than reported.
-7. **`@media (hover: hover)` gaps** — ~94% are guarded. Only 3 unguarded: `.problem-solution:hover`, `.link-primary:hover`, `.legal-content a:hover`.
-
-### Corrections to Existing Audit
-
-| # | Audit Claim | Reality |
-|---|---|---|
-| 1 | "16 hardcoded transitions" | **9 hardcoded** in components.css (lines 4470, 4619, 4831, 5496, 5999, 8720, 10762). The 0.6s opacity animation (L8720) and flex-grow transition (L10762) are intentionally different durations — not bugs. Net fix count: **5 real inconsistencies**. |
-| 2 | "80 hover rules" | **53 `:hover` rules** in components.css. Previous count may have included pseudo-states and media-wrapped duplicates. |
-| 3 | "0 hardcoded colors outside :root" | **Correct** — validated. All colors use `var()` or `color-mix()`. Zero hex/rgb leakage in component rules. This is excellent. |
-| 4 | "6 duplicate gradient utility classes" | **5 duplicates**: `.gradient-cta-10` through `.gradient-cta-14` use `!important` and shadow `.bg-gradient-cta-*` equivalents. `.gradient-cta-1` and `.gradient-cta-2` do NOT have `!important` and use different source tokens — not exact duplicates. |
 
 ### Overlooked Issues (Not in Original Audit)
 

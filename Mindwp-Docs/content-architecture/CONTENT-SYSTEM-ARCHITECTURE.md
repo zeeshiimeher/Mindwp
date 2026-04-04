@@ -1661,8 +1661,8 @@ Later phases may:
 
 ### Implementation
 
-- File: `scripts/validation/validate-conversion.ts`
-- Runner: registered in `scripts/validate-all.mjs`
+- File: `scripts/validators/validate-conversion.ts`
+- Runner: registered in `scripts/core/validate-all.mjs`
 - Config: `STRICT_MODE = false` (advisory), switchable to `true`
 
 ---
@@ -1720,7 +1720,7 @@ If content cannot be placed correctly in the ecosystem flow, it should not be pu
 
 ## 🔒 Validation System (LOCKED)
 
-19 validators run via `node scripts/validate-all.mjs`. All must pass before content is considered valid.
+27 validators run via `node scripts/core/validate-all.mjs`. All must pass before content is considered valid.
 
 Categories:
 - **Type & Lint:** TypeScript compilation, ESLint

@@ -5,9 +5,7 @@ import { Nav } from './Nav';
 
 export function Header() {
   return (
-    <header
-      className='header sticky top-0 z-50 bg-white border-b shadow-sm'
-    >
+    <header className='header sticky top-0 z-50 bg-white border-b shadow-sm'>
       <div className='header-container l-container'>
         <div className='header-content l-row l-items-center l-justify-between h-16'>
           <div className='header-logo l-row l-items-center'>
@@ -28,9 +26,7 @@ export function Header() {
           </nav>
         </div>
 
-        <div
-          className='header-mobile-menu md:hidden py-3 border-t'
-        >
+        <div className='header-mobile-menu md:hidden py-3 border-t'>
           <Nav className='header-mobile-nav l-row flex-col' mobile />
         </div>
       </div>

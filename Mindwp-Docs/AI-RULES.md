@@ -9,16 +9,17 @@
 
 Before substantive work:
 1. Read `Mindwp-Docs/SYSTEM-INDEX.md`.
-2. Run `node scripts/system-sync.mjs`.
-3. Check `reports/system-drift.json` if sync is not clean.
-4. Check `Mindwp-Docs/project-todo.md` for the active phase.
+2. Run `node scripts/core/validate-all.mjs`.
+3. Run `node scripts/core/system-sync.mjs`.
+4. Check `reports/system-drift.json` if sync is not clean.
+5. Check `Mindwp-Docs/project-todo.md` for the active phase.
 
 ---
 
 ## 2. Core Rules
 
 ### R1. Fix → sync → verify is mandatory.
-After any real change, run `node scripts/system-sync.mjs` and return to a clean state.
+After any real change, run `node scripts/core/validate-all.mjs`, then `node scripts/core/system-sync.mjs`, and return to a clean state.
 
 ### R2. Docs override code.
 Governance priority is fixed:
@@ -30,13 +31,15 @@ Governance priority is fixed:
 
 ### R3. One file, one job.
 - `SYSTEM-TRUTH.md` = current system reality
+- `DEV-DASHBOARD.md` = daily summary and links only
 - `project-todo.md` = execution state
+- `PHASE-7-VISUAL-SYSTEM-AUDIT.md` = phase task playbook only
 - `SYSTEM-LOG.md` = generated human-readable status
 - `reports/system-state.json` = generated machine status
 - `reports/system-drift.json` = generated drift only
 - `DECISION-STATE.md` = generated active decisions
 
-### R4. Generated files are read-only.
+### R4. Generated files and reports are read-only.
 Do not manually edit:
 - `reports/system-state.json`
 - `reports/system-drift.json`
@@ -125,9 +128,9 @@ Fix the root cause where possible. Do not patch generated outputs to silence sym
 
 | Mistake | Correct action |
 |---|---|
-| Editing `SYSTEM-LOG.md` by hand | Regenerate with `node scripts/system-sync.mjs` |
+| Editing `SYSTEM-LOG.md` by hand | Regenerate with `node scripts/core/system-sync.mjs` after `node scripts/core/validate-all.mjs` |
 | Writing plans into `SYSTEM-TRUTH.md` | Put execution state in `project-todo.md` |
 | Adding `type: 'industry'` to a node | Use `industry-detail` or `industry-category` |
 | Hardcoding spacing/font values in component CSS | Use tokens |
 | Creating a CTA label outside approved config | Route through `CTA_CONFIG` |
-| Skipping sync after a change | Run sync and verify clean state |
+| Skipping validation after a change | Run `validate-all`, then sync, and verify clean state |

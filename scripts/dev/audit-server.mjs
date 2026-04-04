@@ -156,7 +156,7 @@ export async function startAuditServer({ waitForReady = true } = {}) {
   const logFd = fs.openSync(LOG_FILE, 'a');
   const child = spawn(
     process.execPath,
-    ['scripts/run-next-filtered.mjs', 'dev', '--', '--webpack', '-p', String(AUDIT_PORT)],
+    ['scripts/runners/run-next-filtered.mjs', 'dev', '--', '--webpack', '-p', String(AUDIT_PORT)],
     {
       cwd: ROOT,
       detached: true,

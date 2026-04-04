@@ -157,6 +157,90 @@ export const smartWebsiteSystemsPage = {
         },
       ],
     },
+    comparison: {
+      header: {
+        title: 'System implementation vs template website',
+        description:
+          'A comparison between a typical template site and a website built around how the business works.',
+      },
+      items: [
+        {
+          type: 'before' as const,
+          title: 'Typical template website',
+          items: [
+            'Page organisation dictated by the template',
+            'Enquiry handling inconsistent across pages',
+            'Services not clearly organised',
+            'SEO added later as an afterthought',
+            'No clear governance for updates',
+          ],
+        },
+        {
+          type: 'after' as const,
+          title: 'Smart Website implementation',
+          items: [
+            'Pages organised around the real service model',
+            'Clear enquiry paths and ownership',
+            'Stable foundations for SEO and automation',
+            'Governed updates and structured refinement',
+          ],
+        },
+      ],
+    },
+    included: {
+      header: {
+        title: 'Foundations included in every implementation',
+        description: 'Core infrastructure delivered in every Smart Website.',
+      },
+      items: [
+        'Custom WordPress build aligned to how the business actually operates',
+        'Clear enquiry capture and routing',
+        'CRM connection when required',
+        'Analytics and baseline event tracking',
+        'Security configuration and SSL',
+        'Responsive behaviour across devices',
+        'Visibility foundations such as metadata and schema',
+        'Backup and recovery planning',
+        'Handover documentation and training',
+      ],
+    },
+    types: {
+      header: {
+        title: 'Implementations within the Smart Website framework',
+        description:
+          'Different business models require different emphasis — but all follow the same clear framework.',
+      },
+      items: [
+        {
+          icon: Briefcase,
+          title: 'Service business websites',
+          description: 'Structured websites for consultants, trades, and service providers.',
+          keywords: 'Clarity • Credibility • Enquiry handling',
+          iconType: 'primary' as const,
+        },
+        {
+          icon: Store,
+          title: 'eCommerce stores',
+          description: 'WooCommerce implementations with catalogue and operational clarity.',
+          keywords: 'Catalogue • Checkout • Fulfilment flow',
+          iconType: 'primary' as const,
+        },
+        {
+          icon: Calendar,
+          title: 'Booking platforms',
+          description: 'Sites where scheduling and availability are central to the service.',
+          keywords: 'Scheduling • Availability • Routing',
+          iconType: 'primary' as const,
+        },
+        {
+          icon: Building2,
+          title: 'Focused service pages',
+          description: 'Landing environments built around a single offer or service line.',
+          keywords: 'Clarity • Relevance • Conversion path',
+          iconType: 'primary' as const,
+        },
+      ],
+    },
     coreLayer: {
       header: {
         title: 'Your website as the core of your system',
@@ -203,90 +287,6 @@ export const smartWebsiteSystemsPage = {
             'Refinement remains manageable over time',
           ],
         },
-      ],
-    },
-    comparison: {
-      header: {
-        title: 'System implementation vs template website',
-        description:
-          'A comparison between a typical template site and a website built around how the business works.',
-      },
-      items: [
-        {
-          type: 'before' as const,
-          title: 'Typical template website',
-          items: [
-            'Page organisation dictated by the template',
-            'Enquiry handling inconsistent across pages',
-            'Services not clearly organised',
-            'SEO added later as an afterthought',
-            'No clear governance for updates',
-          ],
-        },
-        {
-          type: 'after' as const,
-          title: 'Smart Website implementation',
-          items: [
-            'Pages organised around the real service model',
-            'Clear enquiry paths and ownership',
-            'Stable foundations for SEO and automation',
-            'Governed updates and structured refinement',
-          ],
-        },
-      ],
-    },
-    types: {
-      header: {
-        title: 'Implementations within the Smart Website framework',
-        description:
-          'Different business models require different emphasis — but all follow the same clear framework.',
-      },
-      items: [
-        {
-          icon: Briefcase,
-          title: 'Service business websites',
-          description: 'Structured websites for consultants, trades, and service providers.',
-          keywords: 'Clarity • Credibility • Enquiry handling',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Store,
-          title: 'eCommerce stores',
-          description: 'WooCommerce implementations with catalogue and operational clarity.',
-          keywords: 'Catalogue • Checkout • Fulfilment flow',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Calendar,
-          title: 'Booking platforms',
-          description: 'Sites where scheduling and availability are central to the service.',
-          keywords: 'Scheduling • Availability • Routing',
-          iconType: 'primary' as const,
-        },
-        {
-          icon: Building2,
-          title: 'Focused service pages',
-          description: 'Landing environments built around a single offer or service line.',
-          keywords: 'Clarity • Relevance • Conversion path',
-          iconType: 'primary' as const,
-        },
-      ],
-    },
-    included: {
-      header: {
-        title: 'Foundations included in every implementation',
-        description: 'Core infrastructure delivered in every Smart Website.',
-      },
-      items: [
-        'Custom WordPress build aligned to how the business actually operates',
-        'Clear enquiry capture and routing',
-        'CRM connection when required',
-        'Analytics and baseline event tracking',
-        'Security configuration and SSL',
-        'Responsive behaviour across devices',
-        'Visibility foundations such as metadata and schema',
-        'Backup and recovery planning',
-        'Handover documentation and training',
       ],
     },
     visibilityFoundations: {

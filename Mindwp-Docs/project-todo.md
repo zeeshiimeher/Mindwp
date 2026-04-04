@@ -1,7 +1,13 @@
 # Project Todo — MindWP Execution Ledger
 
 > Single execution file. This replaces the old active todo and the archive todo copies.
-> Rule: keep current work detailed, keep completed work compressed, keep history short.
+> Keep current work detailed, keep completed work compressed, keep history short.
+
+**Rule block**
+- Only the active phase can be detailed.
+- Completed work must be compressed.
+- No duplicate tasks.
+- No raw logs or notes.
 
 **Task ID continuity:** `TASK-001` to `TASK-074` are historical. Current execution tasks use `T-075+`.
 
@@ -63,7 +69,10 @@
 | T-114 | Wrap 4 unguarded hover states in `@media (hover: hover)` | `src/styles/components.css` | Medium | [ ] |
 | T-115 | Strengthen `benefit-card--link` hover with shadow elevation | `src/styles/components.css` | Low | [ ] |
 
-### Next Queue
+**Next task**
+- T-110 — Add Tier 2 hover to DualToneChecklist, ServiceSpectrum, ProcessSteps cards.
+
+**Queued after active work**
 
 | Phase | Goal | Tasks |
 |---|---|---|
@@ -78,6 +87,8 @@
 - **Phases 1 to 4:** build recovery, architecture alignment, validation consolidation, and cleanup completed.
 - **Phase 5:** vocabulary cleanup started; partial completion only. Remaining work moved forward as Phase 12 execution.
 - **Phases 6 to 11:** content governance, content intelligence, stabilization, internal linking, dashboards, and conversion intelligence shipped.
+- **Execution visibility layer:** `/dev-dashboard`, script registry, run-script API, reports-structure validator, Phase 7 report isolation, and dev-tools audit completed.
+- **Execution interface upgrade:** workflow engine, script history, lazy report viewer, structured output UX, and execution intelligence metadata completed.
 - **Phase 3.1:** dead CTA label logic removed, rogue CTA issues closed, invalid gradient references removed.
 - **Phase 3.2:** production inline-style violations removed and spacing/font hardcodes migrated to tokens.
 - **Phase 3.3:** graph type integrity corrected and authority map regenerated cleanly.
@@ -87,7 +98,7 @@
 
 ---
 
-## 4. Historical Log
+## 4. Short History Log
 
 - `TASK-001` to `TASK-006`: TypeScript/build recovery and graph pipeline stabilization completed.
 - `TASK-007` to `TASK-014`: architecture violations fixed across CTA links, metadata, graph slots, and identifiers.
@@ -100,14 +111,7 @@
 - `TASK-INT-001` to `TASK-INT-005`: internal-linking intelligence layer completed.
 - `CIP-001` to `CIP-007`: content intelligence platform and export tooling completed.
 - `CONV-INT-001` to `CONV-INT-011`: conversion intelligence layer completed.
+- `EXEC-VIS-001` to `EXEC-VIS-007`: execution visibility layer, reports enforcement, and Phase 7 report isolation completed.
+- `EXEC-UX-001` to `EXEC-UX-006`: execution workflows, script intelligence, history tracking, and output UX completed.
 - `T-075` to `T-103`: critical fix, compliance, graph-integrity, and hardening batches completed.
 - `T-104` to `T-109`: Phase 7A completed.
-
----
-
-## 5. Operating Rules
-
-- Update this file only for execution state, not for architecture facts.
-- Keep only the active phase detailed.
-- After any completed implementation batch, run `node scripts/system-sync.mjs`.
-- If a task is superseded, remove it instead of duplicating it elsewhere.
