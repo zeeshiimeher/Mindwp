@@ -55,7 +55,7 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing consulting trust and follow-up',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'consultants-image-strip',
   };
 
@@ -256,7 +256,7 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'consultants-workflow-examples',
   };
 
@@ -307,7 +307,7 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

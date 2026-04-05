@@ -69,7 +69,7 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing review and referral follow-up',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'home-services-image-strip',
   };
 
@@ -213,7 +213,7 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     cssPrefix: 'home-services-spectrum',
   };
 
@@ -231,7 +231,7 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
       'Growth is creating admin pressure faster than it is creating operating clarity',
     ],
     columns: 2 as const,
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'home-services-decision-checklist',
   };
 
@@ -266,7 +266,7 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
       'A category page should explain the operating environments inside home services before it narrows into one trade like roofing or HVAC.',
       'Once that context is clear, the single-industry page can go much deeper into estimate handling, service-area coverage, reminders, and review flow for that trade.',
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     cssPrefix: 'home-services-service-environments',
   };
 
@@ -302,7 +302,7 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
       },
     ],
     columns: 4 as const,
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'home-services-process',
   };
 

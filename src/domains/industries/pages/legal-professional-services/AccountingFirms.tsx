@@ -55,7 +55,7 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing accounting trust and reviews',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'accounting-firms-image-strip',
   };
 
@@ -256,7 +256,7 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'accounting-firms-workflow-examples',
   };
 
@@ -307,7 +307,7 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

@@ -55,7 +55,7 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing hair salon reviews and rebooking',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'hair-salons-image-strip',
   };
 
@@ -259,7 +259,7 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'hair-salons-workflow-examples',
   };
 
@@ -310,7 +310,7 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

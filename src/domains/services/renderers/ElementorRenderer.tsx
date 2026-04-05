@@ -39,7 +39,7 @@ export function ElementorRenderer({ data, slug }: ElementorRendererProps) {
           />
 
           {/* Design File Conversion */}
-          <section className='elementor-conversion l-section bg-section-light'>
+          <section className='elementor-conversion l-section'>
             <div className='l-container'>
               <h2 className='mb-4'>{conversionSection.title}</h2>
               <p className='text-muted-foreground'>{conversionSection.description1}</p>
@@ -53,7 +53,7 @@ export function ElementorRenderer({ data, slug }: ElementorRendererProps) {
             title={benefitsSection.title}
             benefits={benefitsSection.benefits}
             cssPrefix={benefitsSection.cssPrefix}
-            backgroundColor={benefitsSection.backgroundColor}
+            backgroundColor='bg-alt'
           />
 
           {/* Why Elementor */}
@@ -67,7 +67,6 @@ export function ElementorRenderer({ data, slug }: ElementorRendererProps) {
             }))}
             columns={whySection.columns}
             cssPrefix={whySection.cssPrefix}
-            backgroundColor={whySection.backgroundColor}
             iconType={whySection.iconType}
           />
 
@@ -79,7 +78,7 @@ export function ElementorRenderer({ data, slug }: ElementorRendererProps) {
             steps={processSection.steps}
             columns={processSection.columns}
             cssPrefix={processSection.cssPrefix}
-            backgroundColor={processSection.backgroundColor}
+            backgroundColor='bg-base'
           />
 
           {/* Features */}

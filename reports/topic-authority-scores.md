@@ -1,6 +1,6 @@
 # Topic Authority Scores
 
-> Generated: 2026-04-04
+> Generated: 2026-04-05
 
 ## Summary
 
@@ -33,7 +33,7 @@
 | 13 | pipeline-visibility | 70 | 🟡 Growing | 2 | 1 | 3 | 1 | 0 |
 | 14 | review-automation | 68 | 🟡 Growing | 4 | 1 | 0 | 2 | 1 |
 | 15 | lead-capture | 65 | 🟡 Growing | 2 | 1 | 0 | 3 | 4 |
-| 16 | website-infrastructure | 65 | 🟡 Growing | 2 | 1 | 0 | 4 | 4 |
+| 16 | website-infrastructure | 65 | 🟡 Growing | 2 | 1 | 0 | 8 | 4 |
 | 17 | systems-first-websites | 65 | 🟡 Growing | 2 | 1 | 0 | 1 | 2 |
 | 18 | booking-systems | 63 | 🟡 Growing | 2 | 1 | 7 | 0 | 1 |
 | 19 | conversion-optimization | 60 | 🟡 Growing | 1 | 1 | 0 | 4 | 2 |
@@ -235,7 +235,7 @@
 | Blogs | 2 | ≥ 5 | 25 | 10 |
 | Resources | 1 | ≥ 1 | 25 | 25 |
 | Industries | 0 | ≥ 2 | 20 | 0 |
-| Services | 4 | ≥ 1 | 15 | 15 |
+| Services | 8 | ≥ 1 | 15 | 15 |
 | Case Studies | 4 | ≥ 2 | 15 | 15 |
 | **Total** | | | **100** | **65** |
 

@@ -89,7 +89,7 @@ export function Contact() {
       </section>
 
       {/* Main Content */}
-      <section className='contact-page-main l-section bg-background'>
+      <section className='contact-page-main l-section'>
         <div className='contact-page-main-container-1 l-container'>
           <div className='contact-page-main-grid'>
             {/* Contact Form */}

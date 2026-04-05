@@ -66,7 +66,7 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing reviews and repeat-visit follow-up',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'local-appointment-businesses-image-strip',
   };
 
@@ -203,7 +203,7 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
         points: ['Service-path complexity', 'Local trust matters', 'Repeat-visit logic differs'],
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     cssPrefix: 'local-appointment-businesses-spectrum',
   };
 
@@ -221,7 +221,7 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
       'Growth is creating admin pressure faster than it is creating operational clarity',
     ],
     columns: 2 as const,
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'local-appointment-businesses-decision-checklist',
   };
 
@@ -256,7 +256,7 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
       'A category page should explain the operating environments inside local appointment businesses before it narrows into one workflow like a tattoo studio or a driving school.',
       'Once that context is clear, the single-industry page can go much deeper into qualification handling, booking flow, trust support, and follow-up for that business type.',
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     cssPrefix: 'local-appointment-businesses-service-environments',
   };
 
@@ -292,7 +292,7 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
       },
     ],
     columns: 4 as const,
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'local-appointment-businesses-process',
   };
 

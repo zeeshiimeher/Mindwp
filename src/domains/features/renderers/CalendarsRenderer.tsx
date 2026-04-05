@@ -89,7 +89,7 @@ export default function CalendarsRenderer() {
             primaryAction={hero.primaryAction}
             visualContent={<BookingVisual />}
             cssPrefix='calendars-hero'
-            backgroundColor='bg-gradient-to-br from-teal-50 via-white to-blue-50'
+            backgroundColor='bg-gradient-surface-soft'
             decorations={[
               { position: 'top-right', color: 'bg-green-200', size: 'lg' },
               { position: 'bottom-left', color: 'bg-blue-200', size: 'lg' },
@@ -101,7 +101,6 @@ export default function CalendarsRenderer() {
             title={process.title}
             description={process.description}
             steps={process.steps}
-            backgroundColor='bg-section-surface'
             cssPrefix='calendars-process'
           />
 
@@ -110,8 +109,8 @@ export default function CalendarsRenderer() {
             title={benefits.title}
             description={benefits.description}
             benefits={benefits.items}
-            backgroundColor='bg-section-muted'
             cssPrefix='calendars-benefits'
+            backgroundColor='bg-base'
           />
 
           <FeatureUseCasesSection
@@ -119,7 +118,6 @@ export default function CalendarsRenderer() {
             title={useCases.title}
             description={useCases.description}
             useCases={useCases.items}
-            backgroundColor='bg-section-surface'
             cssPrefix='calendars-use-cases'
           />
 
@@ -127,10 +125,10 @@ export default function CalendarsRenderer() {
             badge={capabilities.badge}
             title={capabilities.title}
             featureCategories={capabilities.featureCategories}
-            backgroundColor='bg-section-muted'
             cssPrefix='calendars-features'
             columns={capabilities.columns}
             variant={capabilities.variant}
+            backgroundColor='bg-base'
           />
 
           <FAQSection
@@ -138,7 +136,6 @@ export default function CalendarsRenderer() {
             title={faq.title}
             description={faq.description}
             faqs={faq.items}
-            backgroundColor='bg-section-surface'
             cssPrefix='calendars-faq'
           />
 

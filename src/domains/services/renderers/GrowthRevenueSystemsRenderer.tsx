@@ -58,12 +58,11 @@ export function GrowthRevenueSystemsRenderer({ data, slug }: GrowthRevenueSystem
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-section-surface'
             cssPrefix='technical-audit-foundation'
           />
 
           {/* What We Audit */}
-          <section className='technical-audit-areas l-section bg-white'>
+          <section className='technical-audit-areas l-section bg-alt'>
             <div className='l-container'>
               <SectionIntro
                 badge={auditAreas.header.badge}
@@ -87,7 +86,7 @@ export function GrowthRevenueSystemsRenderer({ data, slug }: GrowthRevenueSystem
             </div>
           </section>
 
-          <section className='technical-audit-wordpress l-section bg-section-light'>
+          <section className='technical-audit-wordpress l-section'>
             <div className='l-container'>
               <SectionIntro
                 badge={wordpressContext.header.badge}
@@ -114,7 +113,7 @@ export function GrowthRevenueSystemsRenderer({ data, slug }: GrowthRevenueSystem
           </section>
 
           {/* What You Get */}
-          <section className='technical-audit-deliverables l-section bg-white'>
+          <section className='technical-audit-deliverables l-section bg-base'>
             <div className='l-container'>
               <SectionIntro
                 badge={deliverables.header.badge}
@@ -145,7 +144,6 @@ export function GrowthRevenueSystemsRenderer({ data, slug }: GrowthRevenueSystem
             steps={process.steps}
             columns={process.columns}
             cssPrefix={process.cssPrefix}
-            backgroundColor={process.backgroundColor}
           />
 
           <StackedFeatureListSection
@@ -156,8 +154,8 @@ export function GrowthRevenueSystemsRenderer({ data, slug }: GrowthRevenueSystem
             narrativeTitle={bridge.narrativeTitle}
             narrativeParagraphs={bridge.narrativeParagraphs}
             features={bridge.features}
-            backgroundColor='bg-section-muted'
             cssPrefix='technical-audit-bridge'
+            backgroundColor='bg-base'
           />
 
           <DualToneChecklistComparisonSection
@@ -171,7 +169,6 @@ export function GrowthRevenueSystemsRenderer({ data, slug }: GrowthRevenueSystem
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-section-surface'
             cssPrefix='technical-audit-qualification'
           />
 
@@ -181,6 +178,7 @@ export function GrowthRevenueSystemsRenderer({ data, slug }: GrowthRevenueSystem
             description={faqSection.description}
             faqs={faqSection.faqs}
             cssPrefix='technical-audit-faq'
+            backgroundColor='bg-alt'
           />
 
           <ServiceCTASection

@@ -56,7 +56,7 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing mobile mechanic reviews and repeat visits',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'mobile-mechanics-image-strip',
   };
 
@@ -263,7 +263,7 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'mobile-mechanics-workflow-examples',
   };
 
@@ -314,7 +314,7 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

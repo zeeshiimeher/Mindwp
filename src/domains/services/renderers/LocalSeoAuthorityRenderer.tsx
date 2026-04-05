@@ -58,7 +58,6 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
               painPoints={misconceptions.painPoints}
               currentStateLabel={misconceptions.currentStateLabel}
               structuredStateLabel={misconceptions.structuredStateLabel}
-              backgroundColor='bg-section-surface'
               cssPrefix='website-seo-misconceptions'
             />
           )}
@@ -72,8 +71,8 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
               tagline={why.tagline}
               narrativeTitle={why.narrativeTitle}
               narrativeParagraphs={why.narrativeParagraphs}
-              backgroundColor='bg-section-base'
               cssPrefix='website-seo-why'
+              backgroundColor='bg-base'
             />
           )}
 
@@ -83,7 +82,6 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
               title={integrations.title}
               description={integrations.description}
               cards={integrations.cards}
-              backgroundColor='bg-section-muted'
               cssPrefix='website-seo-integrations'
             />
           )}
@@ -95,8 +93,8 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
               description={processSection.description}
               steps={processSection.steps}
               columns={4}
-              backgroundColor='bg-section-surface'
               cssPrefix='website-seo-process'
+              backgroundColor='bg-base'
             />
           )}
 
@@ -111,7 +109,6 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
                 features: service.items,
               }))}
               columns={3}
-              backgroundColor='bg-section-base'
               cssPrefix='website-seo-services'
             />
           )}
@@ -128,8 +125,8 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
                 title: qualification.notDesignedTitle,
                 items: qualification.notDesignedItems,
               }}
-              backgroundColor='bg-section-surface'
               cssPrefix='website-seo-qualification'
+              backgroundColor='bg-alt'
             />
           )}
 

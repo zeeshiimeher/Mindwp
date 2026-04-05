@@ -115,7 +115,7 @@ export default function AIChatRenderer() {
             primaryAction={hero.primaryAction}
             visualContent={<ChatDemo />}
             cssPrefix='ai-chat-hero'
-            backgroundColor='bg-gradient-to-br from-blue-50 via-white to-purple-50'
+            backgroundColor='bg-gradient-surface-soft'
             decorations={[
               { position: 'top-right', color: 'bg-blue-200', size: 'lg' },
               { position: 'bottom-left', color: 'bg-purple-200', size: 'lg' },
@@ -125,7 +125,7 @@ export default function AIChatRenderer() {
           {/* How It Works */}
           <ErrorBoundary
             fallback={
-              <section className='l-section bg-white'>
+              <section className='l-section'>
                 <div className='l-container text-center'>
                   <h2 className='text-2xl font-bold mb-4'>{process.fallbackTitle}</h2>
                   <p className='text-muted-foreground'>{process.fallbackDescription}</p>
@@ -138,7 +138,6 @@ export default function AIChatRenderer() {
               title={process.title}
               description={process.description}
               steps={process.steps}
-              backgroundColor='bg-section-surface'
               cssPrefix='ai-chat-process'
             />
           </ErrorBoundary>
@@ -146,7 +145,7 @@ export default function AIChatRenderer() {
           {/* Benefits */}
           <ErrorBoundary
             fallback={
-              <section className='l-section bg-slate-50'>
+              <section className='l-section'>
                 <div className='l-container text-center'>
                   <h2 className='text-2xl font-bold mb-4'>{benefits.fallbackTitle}</h2>
                   <p className='text-muted-foreground'>{benefits.fallbackDescription}</p>
@@ -159,15 +158,15 @@ export default function AIChatRenderer() {
               title={benefits.title}
               description={benefits.description}
               benefits={benefits.items}
-              backgroundColor='bg-section-muted'
               cssPrefix='ai-chat-benefits'
+              backgroundColor='bg-base'
             />
           </ErrorBoundary>
 
           {/* Real-World Use Cases */}
           <ErrorBoundary
             fallback={
-              <section className='l-section bg-white'>
+              <section className='l-section'>
                 <div className='l-container text-center'>
                   <h2 className='text-2xl font-bold mb-4'>{useCases.fallbackTitle}</h2>
                   <p className='text-muted-foreground'>{useCases.fallbackDescription}</p>
@@ -180,7 +179,6 @@ export default function AIChatRenderer() {
               title={useCases.title}
               description={useCases.description}
               useCases={useCases.items}
-              backgroundColor='bg-section-surface'
               cssPrefix='ai-chat-use-cases'
               scenarioLabel={useCases.scenarioLabel}
               solutionLabel={useCases.solutionLabel}
@@ -190,7 +188,7 @@ export default function AIChatRenderer() {
           {/* Features Breakdown */}
           <ErrorBoundary
             fallback={
-              <section className='l-section bg-slate-50'>
+              <section className='l-section'>
                 <div className='l-container text-center'>
                   <h2 className='text-2xl font-bold mb-4'>{capabilities.fallbackTitle}</h2>
                   <p className='text-muted-foreground'>{capabilities.fallbackDescription}</p>
@@ -203,15 +201,15 @@ export default function AIChatRenderer() {
               title={capabilities.title}
               description={capabilities.description}
               featureCategories={capabilities.featureCategories}
-              backgroundColor='bg-section-muted'
               cssPrefix='ai-chat-features'
+              backgroundColor='bg-alt'
             />
           </ErrorBoundary>
 
           {/* FAQ */}
           <ErrorBoundary
             fallback={
-              <section className='l-section bg-white'>
+              <section className='l-section'>
                 <div className='l-container text-center'>
                   <h2 className='text-2xl font-bold mb-4'>{faq.fallbackTitle}</h2>
                   <p className='text-muted-foreground'>{faq.fallbackDescription}</p>
@@ -224,7 +222,6 @@ export default function AIChatRenderer() {
               title={faq.title}
               description={faq.description}
               faqs={faq.items}
-              backgroundColor='bg-section-surface'
               cssPrefix='ai-chat-faq'
             />
           </ErrorBoundary>

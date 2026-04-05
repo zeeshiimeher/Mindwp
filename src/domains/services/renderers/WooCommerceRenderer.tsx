@@ -42,11 +42,10 @@ export function WooCommerceRenderer({ data, slug }: WooCommerceRendererProps) {
             title={benefitsSection.title}
             description={benefitsSection.description}
             benefits={benefitsSection.items}
-            backgroundColor={benefitsSection.backgroundColor}
             cssPrefix={benefitsSection.cssPrefix}
           />
 
-          <section className='woocommerce-bridge l-section bg-section-light'>
+          <section className='woocommerce-bridge l-section bg-base'>
             <div className='l-container'>
               <h2 className='mb-4'>{bridge.title}</h2>
               <p className='text-muted-foreground'>{bridge.description}</p>
@@ -63,7 +62,6 @@ export function WooCommerceRenderer({ data, slug }: WooCommerceRendererProps) {
               desc: item.description,
             }))}
             columns={whySection.columns}
-            backgroundColor={whySection.backgroundColor}
             cssPrefix={whySection.cssPrefix}
           />
 
@@ -73,8 +71,8 @@ export function WooCommerceRenderer({ data, slug }: WooCommerceRendererProps) {
             title={featureSection.title}
             featureCategories={featureSection.categories}
             columns={featureSection.columns}
-            backgroundColor={featureSection.backgroundColor}
             cssPrefix={featureSection.cssPrefix}
+            backgroundColor='bg-alt'
           />
 
           <ServiceCTASection

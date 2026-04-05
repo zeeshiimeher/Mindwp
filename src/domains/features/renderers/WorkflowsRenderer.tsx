@@ -90,7 +90,7 @@ export default function WorkflowsRenderer() {
             primaryAction={hero.primaryAction}
             visualContent={<WorkflowVisual />}
             cssPrefix='workflows-hero'
-            backgroundColor='bg-gradient-to-br from-purple-50 via-white to-blue-50'
+            backgroundColor='bg-gradient-surface-soft'
             decorations={[
               { position: 'top-right', color: 'bg-purple-200', size: 'lg' },
               { position: 'bottom-left', color: 'bg-blue-200', size: 'lg' },
@@ -102,7 +102,6 @@ export default function WorkflowsRenderer() {
             title={process.title}
             description={process.description}
             steps={process.steps}
-            backgroundColor='bg-section-surface'
             cssPrefix='workflows-process'
           />
 
@@ -111,8 +110,8 @@ export default function WorkflowsRenderer() {
             title={benefits.title}
             description={benefits.description}
             benefits={benefits.items}
-            backgroundColor='bg-section-muted'
             cssPrefix='workflows-benefits'
+            backgroundColor='bg-base'
           />
 
           <FeatureUseCasesSection
@@ -120,7 +119,6 @@ export default function WorkflowsRenderer() {
             title={useCases.title}
             description={useCases.description}
             useCases={useCases.items}
-            backgroundColor='bg-section-surface'
             cssPrefix='workflows-use-cases'
           />
 
@@ -128,17 +126,16 @@ export default function WorkflowsRenderer() {
             badge={capabilities.badge}
             title={capabilities.title}
             featureCategories={capabilities.featureCategories}
-            backgroundColor='bg-section-muted'
             cssPrefix='workflows-features'
             columns={capabilities.columns}
             variant={capabilities.variant}
+            backgroundColor='bg-alt'
           />
 
           <FAQSection
             badge={faq.badge}
             title={faq.title}
             faqs={faq.items}
-            backgroundColor='bg-section-surface'
             cssPrefix='workflows-faq'
           />
 

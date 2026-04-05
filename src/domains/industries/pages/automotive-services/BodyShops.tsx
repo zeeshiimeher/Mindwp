@@ -55,7 +55,7 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing body shop reviews and handoff follow-up',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'body-shops-image-strip',
   };
 
@@ -265,7 +265,7 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'body-shops-workflow-examples',
   };
 
@@ -316,7 +316,7 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

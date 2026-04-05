@@ -55,7 +55,7 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing realtor reviews and local proof',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'realtors-image-strip',
   };
 
@@ -257,7 +257,7 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'realtors-workflow-examples',
   };
 
@@ -308,7 +308,7 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

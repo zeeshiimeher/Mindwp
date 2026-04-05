@@ -55,7 +55,7 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing med spa reviews and trust signals',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'small-med-spas-image-strip',
   };
 
@@ -257,7 +257,7 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'small-med-spas-workflow-examples',
   };
 
@@ -308,7 +308,7 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

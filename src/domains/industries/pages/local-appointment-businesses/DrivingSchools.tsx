@@ -54,7 +54,7 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing driving school reviews and local proof',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'driving-schools-image-strip',
   };
 
@@ -248,7 +248,7 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'driving-schools-workflow-examples',
   };
 
@@ -299,7 +299,7 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

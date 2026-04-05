@@ -57,7 +57,6 @@ export function ReputationReviewSystemsRenderer({
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-section-surface'
             cssPrefix='reputation-review-foundation'
           />
 
@@ -66,8 +65,8 @@ export function ReputationReviewSystemsRenderer({
             title={reviewSystem.title}
             description={reviewSystem.description}
             cards={reviewSystem.cards}
-            backgroundColor='bg-section-muted'
             cssPrefix='reputation-review-system'
+            backgroundColor='bg-base'
           />
 
           <StackedFeatureListSection
@@ -78,7 +77,6 @@ export function ReputationReviewSystemsRenderer({
             tagline={positioning.tagline}
             narrativeTitle={positioning.narrativeTitle}
             narrativeParagraphs={positioning.narrativeParagraphs}
-            backgroundColor='bg-section-base'
             cssPrefix='reputation-review-positioning'
           />
 
@@ -88,8 +86,8 @@ export function ReputationReviewSystemsRenderer({
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-section-surface'
             cssPrefix='reputation-review-process'
+            backgroundColor='bg-base'
           />
 
           <FeatureChecklistCardsSection
@@ -102,7 +100,6 @@ export function ReputationReviewSystemsRenderer({
               features: service.items,
             }))}
             columns={3}
-            backgroundColor='bg-section-base'
             cssPrefix='reputation-review-capabilities'
           />
 
@@ -117,8 +114,8 @@ export function ReputationReviewSystemsRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-section-surface'
             cssPrefix='reputation-review-qualification'
+            backgroundColor='bg-alt'
           />
 
           <FAQSection

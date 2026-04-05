@@ -54,7 +54,6 @@ export function WordPressDevelopmentRenderer({ data, slug }: WordPressDevelopmen
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-section-surface'
             cssPrefix='wordpress-development-foundation'
           />
 
@@ -63,8 +62,8 @@ export function WordPressDevelopmentRenderer({ data, slug }: WordPressDevelopmen
             title={implementationScope.title}
             description={implementationScope.description}
             cards={implementationScope.cards}
-            backgroundColor='bg-section-muted'
             cssPrefix='wordpress-development-scope'
+            backgroundColor='bg-alt'
           />
 
           <StackedFeatureListSection
@@ -75,7 +74,6 @@ export function WordPressDevelopmentRenderer({ data, slug }: WordPressDevelopmen
             tagline={principles.tagline}
             narrativeTitle={principles.narrativeTitle}
             narrativeParagraphs={principles.narrativeParagraphs}
-            backgroundColor='bg-section-base'
             cssPrefix='wordpress-development-principles'
           />
 
@@ -85,8 +83,8 @@ export function WordPressDevelopmentRenderer({ data, slug }: WordPressDevelopmen
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-section-surface'
             cssPrefix='wordpress-development-process'
+            backgroundColor='bg-base'
           />
 
           <FeatureChecklistCardsSection
@@ -95,7 +93,6 @@ export function WordPressDevelopmentRenderer({ data, slug }: WordPressDevelopmen
             description={capabilitySection.description}
             featureCategories={capabilitySection.categories}
             columns={3}
-            backgroundColor='bg-section-base'
             cssPrefix='wordpress-development-capabilities'
           />
 
@@ -110,8 +107,8 @@ export function WordPressDevelopmentRenderer({ data, slug }: WordPressDevelopmen
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-section-surface'
             cssPrefix='wordpress-development-qualification'
+            backgroundColor='bg-base'
           />
 
           <FAQSection

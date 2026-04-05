@@ -113,7 +113,7 @@ export const elementorPage = {
         },
       ],
       cssPrefix: 'elementor-benefits',
-      backgroundColor: 'bg-section-surface' as const,
+      backgroundColor: 'bg-base' as const,
     },
     whySection: {
       badge: 'Why this approach works',
@@ -192,7 +192,7 @@ export const elementorPage = {
       ],
       columns: 3 as const,
       cssPrefix: 'elementor-process',
-      backgroundColor: 'bg-section-muted' as const,
+      backgroundColor: 'bg-alt' as const,
     },
     featureSection: {
       badge: 'Implementation Capabilities',

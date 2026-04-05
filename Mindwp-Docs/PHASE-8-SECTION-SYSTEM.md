@@ -395,7 +395,7 @@ Uncomment BEM CSS. Switch CardGrid back to passthrough mode.
 
 ---
 
-## Phase 8.4 — BEM Grid Removal ⏳
+## Phase 8.4 — BEM Grid Removal ✅ COMPLETE
 
 **Goal:** Remove all BEM layout CSS. Primitives become the ONLY layout system.
 
@@ -445,9 +445,17 @@ Uncomment BEM CSS. Switch CardGrid back to passthrough mode.
 
 ---
 
-## Phase 8.5 — Visual Pass (System-Wide Refinement) ⏳
+## Phase 8.5 — Visual Pass (System-Wide Refinement) ✅ COMPLETE
 
 **Goal:** Achieve premium visual quality across the entire site. Structure is now stable — this is pure refinement.
+
+**Commits:** `b7770ce`, `ac62679`, `457d6ca`
+
+### Completed Work
+- **System-level tokens:** Spacing, typography, and color tokens finalized
+- **Component audit:** Full pass across all section components
+- **Micro/signature/SaaS patterns:** Refined and standardized
+- **13 tasks executed** across tokens, component audit, and pattern refinement
 
 ### Entry Criteria
 - Phase 8.4 complete
@@ -510,6 +518,96 @@ Per-fix git commits. Revert any individual fix that causes regression.
 
 ---
 
+## Phase 8.6 — Component Intelligence + System Enforcement ✅ COMPLETE
+
+**Goal:** Clean gradients, optimize borders, enforce icon system, verify spacing tokenization.
+
+**Commits:** `0293861` (gradients), `d7b5e0a` (borders), `7b906cc` (icons)
+
+### Task 1–3: Gradient System Overhaul
+- **Removed** 10 legacy gradient tokens from `foundation.css`
+- **Kept** 7 core gradients + endpoint tokens (brand-gradient-start/end, accent-gradient-start/end)
+- **Created** 7 clean `.bg-gradient-*` utility classes in `components.css`
+- **Deleted** 8 legacy gradient classes
+- **Updated** 36 files with JSX gradient class replacements
+
+### Task 4–6: Border + Card Audit
+- **Removed** 6 double-emphasis borders across components
+- **Reduced** 4 borders from 2px → 1px
+- Net result: cleaner card surfaces, no visual regression
+
+### Task 7: Icon System Enforcement
+- **Migrated** 3 remaining components to `getIconStyles()`:
+  - ProcessStepCard
+  - IconTextCard
+  - AuditChecklistCard
+
+### Task 8–11: Verification
+- Spacing: 100% tokenized, 0 violations
+- No additional work needed — system clean
+
+---
+
+## Phase 8.7 — Section Background System (Repo-wide Enforcement) ✅ COMPLETE
+
+**Goal:** Replace all ad-hoc section backgrounds with a two-tone rhythm system using `bg-base` / `bg-alt`.
+
+**Files changed:** 73
+**TypeScript errors:** 0
+
+### Background System
+```css
+.bg-base { background-color: var(--c-bg); }     /* --brand-grey: #f8fafc */
+.bg-alt  { background-color: var(--c-bg-alt); }  /* --brand-grey-light: #f1f5f9 */
+```
+
+### Task 1: Full Repo Scan
+- Scanned entire `src/` — found ~180+ sections across 52 files
+- Catalogued all background sources (props, classNames, CSS)
+
+### Task 2: Define Utilities
+- Created `.bg-base` and `.bg-alt` in `components.css`
+- Single source of truth for section backgrounds
+
+### Task 3: Bulk Strip ALL Legacy Backgrounds
+- Removed `backgroundColor='bg-section-surface/muted/base/light'` from all feature + service renderers
+- Stripped data-driven `backgroundColor` from Divi5, Bricks, Elementor, WooCommerce, GrowthRevenue renderers
+- Cleaned error boundary fallbacks (`bg-white`, `bg-slate-50` → plain `l-section`)
+- Cleaned screen files: About, FAQ, Contact, Conversation, Homepage
+
+### Task 4: Apply Rhythm to Feature Renderers
+- 7 feature renderers updated (15 sections)
+- 67% base / 33% alt ratio
+- Script: `scripts/apply-section-backgrounds.mjs`
+
+### Task 5: Apply Rhythm to Service Renderers
+- 21 service renderer mappings
+- 80 sections updated across 28 files
+- 61% base / 39% alt combined ratio
+
+### Task 6: Apply Rhythm to Screen Files
+- About.tsx: Approach=bg-base, HowWeWork=bg-alt
+- FAQPage.tsx: ContactCard=bg-base
+- Conversation.tsx: WhatHappensNext=bg-base
+- Homepage.tsx: framework=bg-base, trust=bg-alt, system-capabilities=bg-base, industries=bg-base, case-studies=bg-alt, FAQ=bg-base
+
+### Task 7: CSS-Level Cleanup
+- Removed CSS gradient from `.system-capabilities`
+- Removed legacy `--section-bg-base/surface/muted` tokens from `foundation.css`
+- Removed `.bg-section-white` and `.bg-section-light` utility classes
+- Bulk replaced across 32 industry pages, 1 resource template, 5 service data files
+
+### Final Metrics
+| Metric | Value |
+|--------|-------|
+| `bg-base` usages | 114 (63%) |
+| `bg-alt` usages | 67 (37%) |
+| Legacy `bg-section-*` remaining | 0 |
+| Legacy `--section-bg-*` tokens remaining | 0 |
+| TypeScript errors | 0 |
+
+---
+
 # ARCHITECTURE RULES (Enforced)
 
 ### Section Rules
@@ -558,20 +656,25 @@ Any section that cannot use a primitive MUST have:
 | Phase | Name | Status | Depends On | Entry Gate |
 |-------|------|--------|-----------|-----------|
 | 8.0 | Primitives + T-130 Spacing | ✅ Complete | Phase 7 | — |
-| 8.1 | Full Section Refactor | 🔄 In Progress | 8.0 | Primitives tested |
-| 8.2 | System Hardening | ⏳ Blocked | 8.1 | 100% coverage |
-| 8.3 | Parity Confirmation | ⏳ Blocked | 8.2 | v2 primitives shipped |
-| 8.4 | BEM Grid Removal | ⏳ Blocked | 8.3 | 100% parity PASS |
-| 8.5 | Visual Pass | ⏳ Blocked | 8.4 | Single layout system |
+| 8.1 | Full Section Refactor | ✅ Complete | 8.0 | Primitives tested |
+| 8.2 | System Hardening | ✅ Complete | 8.1 | 100% coverage |
+| 8.3 | Parity Confirmation | ✅ Complete | 8.2 | v2 primitives shipped |
+| 8.4 | BEM Grid Removal | ✅ Complete | 8.3 | 100% parity PASS |
+| 8.5 | Visual Pass | ✅ Complete | 8.4 | Single layout system |
+| 8.6 | Component Intelligence | ✅ Complete | 8.5 | Visual pass done |
+| 8.7 | Section Background System | ✅ Complete | 8.6 | Component system enforced |
 
 ---
 
 # SYSTEM GUARANTEES (End of Phase 8)
 
-At completion of Phase 8.5, the system will be:
+At completion of Phase 8.7, the system is:
 
 - ✅ **Primitive-driven** — All sections use SectionWrapper, CardGrid, SplitLayout, or Stack
 - ✅ **Single layout control** — No dual BEM + primitive layout ownership
 - ✅ **No CSS cascade dependency** — Primitives are the sole source of layout truth
 - ✅ **Visually consistent** — Spacing, typography, proportions audited and refined
 - ✅ **Scalable** — New sections built with primitives only, no BEM boilerplate
+- ✅ **Clean gradients** — 7 core utilities, zero legacy gradient tokens
+- ✅ **Enforced icon system** — All icon styling via `getIconStyles()`
+- ✅ **Unified section backgrounds** — Two-tone `bg-base`/`bg-alt` rhythm, zero legacy `bg-section-*` classes or `--section-bg-*` tokens

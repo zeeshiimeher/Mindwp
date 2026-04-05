@@ -53,7 +53,7 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing repair shop reviews and local proof',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'repair-shops-image-strip',
   };
 
@@ -247,7 +247,7 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'repair-shops-workflow-examples',
   };
 
@@ -298,7 +298,7 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

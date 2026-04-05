@@ -56,7 +56,7 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing property management follow-up and trust signals',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'property-managers-image-strip',
   };
 
@@ -257,7 +257,7 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'property-managers-workflow-examples',
   };
 
@@ -309,7 +309,7 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

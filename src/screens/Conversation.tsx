@@ -28,7 +28,7 @@ export function ConversationPage() {
         </section>
 
         {/* Main Content */}
-        <section className='l-section bg-background'>
+        <section className='l-section'>
           <div className='l-container '>
             <div className='conversation-page__main-grid'>
               {/* Form */}
@@ -111,7 +111,7 @@ export function ConversationPage() {
         </section>
 
         {/* What Happens Next */}
-        <section className='l-section bg-muted/30'>
+        <section className='l-section bg-base'>
           <div className='l-container'>
             <div className='text-center mb-12'>
               <h2>After You Submit</h2>

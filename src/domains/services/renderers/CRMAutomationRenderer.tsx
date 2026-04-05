@@ -58,11 +58,10 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
             painPoints={positioning.painPoints}
             currentStateLabel={positioning.currentStateLabel}
             structuredStateLabel={positioning.structuredStateLabel}
-            backgroundColor='bg-section-surface'
             cssPrefix='crm-automation-positioning'
           />
           {/* What You Can Do */}
-          <section className='crm-automation-use-cases l-section'>
+          <section className='crm-automation-use-cases l-section bg-alt'>
             <div className='crm-automation-use-cases-container-1 l-container '>
               <SectionIntro
                 badge={useCasesSection.badge}
@@ -87,7 +86,7 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
           </section>
 
           {/* Complete Feature Categories */}
-          <section className='crm-automation-features l-section bg-muted/50'>
+          <section className='crm-automation-features l-section'>
             <div className='crm-automation-features-container-1 l-container l-max-w-7xl'>
               <SectionIntro
                 badge={featuresSection.badge}
@@ -111,7 +110,7 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
           </section>
 
           {/* Workflow Examples */}
-          <section className='crm-automation-workflows l-section'>
+          <section className='crm-automation-workflows l-section bg-base'>
             <div className='crm-automation-workflows-container-1 l-container '>
               <SectionIntro
                 badge={workflowsSection.badge}
@@ -132,7 +131,7 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
             </div>
           </section>
 
-          <section className='crm-automation-governance l-section bg-white'>
+          <section className='crm-automation-governance l-section'>
             <div className='l-container'>
               <SectionIntro
                 badge={governance.badge}
@@ -144,7 +143,7 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
           </section>
 
           {/* Qualification Section */}
-          <section className='crm-automation-qualification l-section bg-white'>
+          <section className='crm-automation-qualification l-section bg-alt'>
             <div className='l-container'>
               <SectionIntro
                 title={qualification.title}
@@ -173,7 +172,7 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
               </div>
             </div>
           </section>
-          <section className='crm-automation-connection l-section bg-muted/30'>
+          <section className='crm-automation-connection l-section'>
             <div className='l-container'>
               <SectionIntro
                 badge={connection.badge}

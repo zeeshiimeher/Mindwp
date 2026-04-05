@@ -52,7 +52,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
 
           {/* Value Blocks */}
           {data.sections.value && (
-            <section className='smart-websites-value l-section'>
+            <section className='smart-websites-value l-section bg-alt'>
               <div className='l-container'>
                 <SectionIntro
                   title={data.sections.value.header.title}
@@ -80,7 +80,8 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               title={data.sections.comparison.header.title}
               description={data.sections.comparison.header.description}
               comparisons={data.sections.comparison.items}
-              cssPrefix='smart-websites-comparison bg-background'
+              cssPrefix='smart-websites-comparison'
+              backgroundColor='bg-base'
             />
           )}
           {/* What's Included */}
@@ -96,7 +97,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
 
           {/* Implementation Types */}
           {data.sections.types && (
-            <section className='smart-websites-types l-section bg-background '>
+            <section className='smart-websites-types l-section bg-alt'>
               <div className='l-container'>
                 <SectionIntro
                   title={data.sections.types.header.title}
@@ -127,7 +128,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               href: inlineCtaButtonHref,
               variant: 'white',
             }}
-            cssPrefix='smart-websites-cta bg-background'
+            cssPrefix='smart-websites-cta'
           />
           {data.sections.coreLayer && (
             <ServiceSpectrumCardsSection
@@ -150,14 +151,14 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                 title: item.title,
                 description: item.description,
               }))}
-              backgroundColor='bg-section-base'
               cssPrefix='smart-websites-visibility-foundations'
+              backgroundColor='bg-base'
             />
           )}
 
           {/* NEW: Benefits by Business Size */}
           {optionalSections.businessSizes && (
-            <section className='smart-websites-business-size l-section bg-background'>
+            <section className='smart-websites-business-size l-section bg-base'>
               <div className='l-container '>
                 <SectionIntro
                   title={optionalSections.businessSizes.header.title}
@@ -190,12 +191,13 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               steps={data.sections.process.steps}
               columns={4}
               cssPrefix='smart-websites-process'
+              backgroundColor='bg-alt'
             />
           )}
 
           {/* NEW: Common Concerns Addressed */}
           {optionalSections.concerns && (
-            <section className='smart-websites-concerns l-section bg-background'>
+            <section className='smart-websites-concerns l-section bg-alt'>
               <div className='l-container'>
                 <SectionIntro
                   title={optionalSections.concerns.header.title}
@@ -227,6 +229,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               technologies={optionalSections.technologies.items}
               columns={3}
               cssPrefix='smart-websites-tech'
+              backgroundColor='bg-base'
             />
           )}
 
@@ -243,7 +246,6 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                 title: optionalSections.qualification.notForTitle,
                 items: optionalSections.qualification.notFor,
               }}
-              backgroundColor='bg-section-muted'
               cssPrefix='smart-websites-qualification'
             />
           )}
@@ -255,6 +257,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               description={data.sections.faq.header.description}
               faqs={data.sections.faq.items}
               cssPrefix='smart-websites-faq'
+              backgroundColor='bg-base'
             />
           )}
 
@@ -262,7 +265,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             title={ctaTitle}
             description={ctaDescription}
             primaryAction={{ label: ctaButtonText, href: ctaButtonHref, variant: 'white' }}
-            cssPrefix='smart-websites-cta bg-background'
+            cssPrefix='smart-websites-cta'
           />
 
           <ServiceRelatedServicesSection serviceSlug={slug} cssPrefix='bg-white' />

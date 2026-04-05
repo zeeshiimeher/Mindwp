@@ -33,7 +33,7 @@ export function About() {
       </section>
 
       {/* Industry Problem */}
-      <section className='l-section bg-background'>
+      <section className='l-section'>
         <div className='l-container max-w-3xl'>
           <h2 className='mb-6'>The Problem We Saw</h2>
           <p className='text-muted-foreground mb-4'>
@@ -49,7 +49,7 @@ export function About() {
       </section>
 
       {/* Our Approach */}
-      <section className='l-section bg-muted/30'>
+      <section className='l-section bg-base'>
         <div className='l-container max-w-3xl'>
           <h2 className='mb-6'>Our Approach</h2>
           <p className='text-muted-foreground mb-4'>
@@ -66,7 +66,7 @@ export function About() {
       </section>
 
       {/* What We Don’t Do */}
-      <section className='l-section bg-background'>
+      <section className='l-section'>
         <div className='l-container max-w-3xl'>
           <h2 className='mb-6'>What We Don’t Do</h2>
           <Card className='p-8'>
@@ -82,7 +82,7 @@ export function About() {
       </section>
 
       {/* How We Work */}
-      <section className='l-section bg-muted/30'>
+      <section className='l-section bg-alt'>
         <div className='l-container max-w-3xl'>
           <h2 className='mb-6'>How We Work</h2>
           <p className='text-muted-foreground mb-4'>

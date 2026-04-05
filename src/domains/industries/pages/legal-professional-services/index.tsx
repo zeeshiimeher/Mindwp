@@ -65,7 +65,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing professional services trust and follow-up',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'legal-professional-services-image-strip',
   };
 
@@ -205,7 +205,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     cssPrefix: 'legal-professional-services-spectrum',
   };
 
@@ -223,7 +223,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
       'Growth is creating intake pressure faster than it is creating operational clarity',
     ],
     columns: 2 as const,
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'legal-professional-services-decision-checklist',
   };
 
@@ -258,7 +258,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
       'A category page should explain the operating environments inside legal and professional services before it narrows into one workflow like a law firm or an accounting practice.',
       'Once that context is clear, the single-industry page can go much deeper into qualification handling, consultation flow, trust support, and follow-up for that service type.',
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     cssPrefix: 'legal-professional-services-service-environments',
   };
 
@@ -294,7 +294,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
       },
     ],
     columns: 4 as const,
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'legal-professional-services-process',
   };
 

@@ -68,7 +68,7 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing a multi-step client journey',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'beauty-personal-care-image-strip',
   };
 
@@ -198,7 +198,7 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
       'The business needs one system direction that can support multiple treatment or service paths',
     ],
     columns: 2 as const,
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'beauty-personal-care-decision-checklist',
   };
 
@@ -233,7 +233,7 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
       'Understanding which environment the business operates in helps define which system layers matter most. A solo lash artist and a multi-chair salon face different coordination problems.',
       'Once the environment is clear, the system can go deeper into specific workflows — booking, preparation, reminders, reviews, and repeat-visit handling.',
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     cssPrefix: 'beauty-personal-care-service-environments',
   };
 
@@ -271,7 +271,7 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     cssPrefix: 'beauty-personal-care-spectrum',
   };
 
@@ -307,7 +307,7 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
       },
     ],
     columns: 4 as const,
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'beauty-personal-care-process',
   };
 

@@ -55,11 +55,10 @@ export function FunnelLandingPageDevelopmentRenderer({
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-section-surface'
             cssPrefix='funnel-landing-development-foundation'
           />
 
-          <section className='funnel-landing-development-types l-section bg-background'>
+          <section className='funnel-landing-development-types l-section bg-base'>
             <div className='l-container'>
               <SectionIntro
                 badge={pageTypes.badge}
@@ -81,7 +80,7 @@ export function FunnelLandingPageDevelopmentRenderer({
             </div>
           </section>
 
-          <section className='funnel-landing-development-alerts l-section bg-muted/30'>
+          <section className='funnel-landing-development-alerts l-section'>
             <div className='l-container'>
               <SectionIntro
                 badge={implementationAlerts.badge}
@@ -99,7 +98,7 @@ export function FunnelLandingPageDevelopmentRenderer({
             </div>
           </section>
 
-          <section className='funnel-landing-development-paths l-section bg-white'>
+          <section className='funnel-landing-development-paths l-section bg-base'>
             <div className='l-container'>
               <SectionIntro
                 badge={implementationPaths.badge}
@@ -127,7 +126,6 @@ export function FunnelLandingPageDevelopmentRenderer({
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-section-base'
             cssPrefix='funnel-landing-development-process'
           />
 
@@ -142,8 +140,8 @@ export function FunnelLandingPageDevelopmentRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-section-surface'
             cssPrefix='funnel-landing-development-qualification'
+            backgroundColor='bg-alt'
           />
 
           <FAQSection

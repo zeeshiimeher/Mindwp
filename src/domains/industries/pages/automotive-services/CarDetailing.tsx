@@ -55,7 +55,7 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing car detailing reviews and repeat visits',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'car-detailing-image-strip',
   };
 
@@ -266,7 +266,7 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'car-detailing-workflow-examples',
   };
 
@@ -317,7 +317,7 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

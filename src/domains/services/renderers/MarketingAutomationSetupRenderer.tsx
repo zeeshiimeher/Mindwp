@@ -57,11 +57,10 @@ export function MarketingAutomationSetupRenderer({
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-section-surface'
             cssPrefix='marketing-automation-foundation'
           />
 
-          <section className='marketing-automation-examples l-section bg-background'>
+          <section className='marketing-automation-examples l-section bg-alt'>
             <div className='l-container'>
               <SectionIntro
                 badge={automationExamples.badge}
@@ -82,7 +81,7 @@ export function MarketingAutomationSetupRenderer({
             </div>
           </section>
 
-          <section className='marketing-automation-governance l-section bg-muted/30'>
+          <section className='marketing-automation-governance l-section'>
             <div className='l-container'>
               <SectionIntro
                 badge={governanceAreas.badge}
@@ -106,7 +105,7 @@ export function MarketingAutomationSetupRenderer({
             </div>
           </section>
 
-          <section className='marketing-automation-layers l-section bg-white'>
+          <section className='marketing-automation-layers l-section bg-base'>
             <div className='l-container'>
               <SectionIntro
                 badge={automationLayers.badge}
@@ -134,7 +133,6 @@ export function MarketingAutomationSetupRenderer({
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-section-base'
             cssPrefix='marketing-automation-process'
           />
 
@@ -149,8 +147,8 @@ export function MarketingAutomationSetupRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-section-surface'
             cssPrefix='marketing-automation-qualification'
+            backgroundColor='bg-base'
           />
 
           <FAQSection

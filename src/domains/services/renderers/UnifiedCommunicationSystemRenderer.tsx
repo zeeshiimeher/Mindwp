@@ -61,11 +61,10 @@ export function UnifiedCommunicationSystemRenderer({
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-section-surface'
             cssPrefix='unified-communication-foundation'
           />
 
-          <section className='unified-communication-channels l-section bg-background'>
+          <section className='unified-communication-channels l-section bg-alt'>
             <div className='l-container'>
               <SectionIntro
                 badge={channelSignals.badge}
@@ -88,7 +87,7 @@ export function UnifiedCommunicationSystemRenderer({
             </div>
           </section>
 
-          <section className='unified-communication-risks l-section bg-muted/30'>
+          <section className='unified-communication-risks l-section'>
             <div className='l-container'>
               <SectionIntro
                 badge={ownershipRisks.badge}
@@ -109,7 +108,7 @@ export function UnifiedCommunicationSystemRenderer({
             </div>
           </section>
 
-          <section className='unified-communication-workflows l-section bg-white'>
+          <section className='unified-communication-workflows l-section bg-base'>
             <div className='l-container'>
               <SectionIntro
                 badge={workflowExamples.badge}
@@ -161,11 +160,10 @@ export function UnifiedCommunicationSystemRenderer({
               },
             ]}
             columns={4}
-            backgroundColor='bg-section-base'
             cssPrefix='unified-communication-process'
           />
 
-          <section className='unified-communication-layers l-section bg-white'>
+          <section className='unified-communication-layers l-section bg-base'>
             <div className='l-container'>
               <SectionIntro
                 badge={operatingLayers.introBadge}
@@ -198,7 +196,6 @@ export function UnifiedCommunicationSystemRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-section-base'
             cssPrefix='unified-communication-qualification'
           />
 
@@ -208,6 +205,7 @@ export function UnifiedCommunicationSystemRenderer({
             description={faqSection.description}
             faqs={faqSection.faqs}
             cssPrefix={faqSection.cssPrefix}
+            backgroundColor='bg-alt'
           />
 
           <ServiceCTASection

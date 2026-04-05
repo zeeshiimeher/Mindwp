@@ -43,14 +43,14 @@ export default function Homepage() {
 
           <section
             id='infrastructure-gaps'
-            className='infrastructure-gaps infrastructure-gaps--surface-default l-section'
+            className='infrastructure-gaps infrastructure-gaps--surface-default l-section bg-alt'
           >
             <InfrastructureGapsSection />
           </section>
 
           <section
             id='smart-website-framework'
-            className='framework-section l-section bg-background'
+            className='framework-section l-section bg-base'
           >
             <SmartWebsiteFrameworkSection />
           </section>
@@ -61,7 +61,7 @@ export default function Homepage() {
               steps={implementationSectionData.steps}
               columns={4}
               cssPrefix='implementation-principles'
-              backgroundColor='bg-section-surface'
+              backgroundColor='bg-alt'
             />
           </section>
           <Suspense fallback={<SectionSuspenseFallback />}>
@@ -69,28 +69,28 @@ export default function Homepage() {
           </Suspense>
 
           <Suspense fallback={<SectionSuspenseFallback />}>
-            <section id='client-journey' className='how-it-works-section l-section'>
+            <section id='client-journey' className='how-it-works-section l-section bg-alt'>
               <ClientJourneySection />
             </section>
             <SystemCapabilitiesSection />
 
-            <section id='infrastructure-layers' className='infrastructure-layers l-section'>
+            <section id='infrastructure-layers' className='infrastructure-layers l-section bg-alt'>
               <InfrastructureLayersSection />
             </section>
             <IndustriesSection />
             <section
               id='visibility-alignment'
-              className='visibility-alignment-section visibility-alignment-section--surface-default l-section'
+              className='visibility-alignment-section visibility-alignment-section--surface-default l-section bg-base'
             >
               <VisibilityAlignmentSection />
             </section>
-            <section id='case-studies' className='implementation-results l-section bg-background'>
+            <section id='case-studies' className='implementation-results l-section bg-alt'>
               <CaseStudiesSection />
             </section>
 
             <ImplementationExamplesSection />
 
-            <FAQSection title={faqData.title} faqs={faqData.items} cssPrefix='faq-section' />
+            <FAQSection title={faqData.title} faqs={faqData.items} cssPrefix='faq-section' backgroundColor='bg-base' />
           </Suspense>
         </main>
         <FooterCTASection />
@@ -364,7 +364,7 @@ function TrustFoundationsSection() {
   const trustFoundationsData = infrastructureLayersData.trustFoundations;
 
   return (
-    <section id='trust-foundations' className='trust-section l-section bg-background'>
+    <section id='trust-foundations' className='trust-section l-section bg-alt'>
       <div className='trust-section__container l-container'>
         <SectionIntro
           title={trustFoundationsData.title}
@@ -449,7 +449,7 @@ function SystemCapabilitiesSection() {
   };
 
   return (
-    <section id='system-capabilities' className={BLOCK} bg-background>
+    <section id='system-capabilities' className={`${BLOCK} bg-base`}>
       <div className={`${BLOCK}__inner`}>
         <div className={`${BLOCK}__header`}>
           <SectionIntro
@@ -618,6 +618,7 @@ function IndustriesSection() {
       }))}
       cssPrefix='industry-section'
       columns={4}
+      backgroundColor='bg-base'
       footer={
         <div className='industry-section-cta'>
           <Button
@@ -738,7 +739,7 @@ function FooterCTASection() {
         href: ctaData.footer.primaryAction.href,
       }}
       metaItems={ctaData.footer.metaItems}
-      cssPrefix='bg-background'
+      cssPrefix='footer-cta'
       backgroundColor='bg-gradient-primary'
     />
   );

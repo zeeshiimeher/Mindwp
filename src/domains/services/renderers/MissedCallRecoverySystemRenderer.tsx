@@ -57,11 +57,10 @@ export function MissedCallRecoverySystemRenderer({
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-section-surface'
             cssPrefix='missed-call-recovery-foundation'
           />
 
-          <section className='missed-call-recovery-signals l-section bg-background'>
+          <section className='missed-call-recovery-signals l-section bg-base'>
             <div className='l-container'>
               <SectionIntro
                 badge={signalSection.badge}
@@ -84,7 +83,7 @@ export function MissedCallRecoverySystemRenderer({
             </div>
           </section>
 
-          <section className='missed-call-recovery-workflows l-section bg-muted/30'>
+          <section className='missed-call-recovery-workflows l-section'>
             <div className='l-container'>
               <SectionIntro
                 badge={workflowExamples.badge}
@@ -111,8 +110,8 @@ export function MissedCallRecoverySystemRenderer({
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-section-surface'
             cssPrefix='missed-call-recovery-process'
+            backgroundColor='bg-alt'
           />
 
           <ServiceSpectrumCardsSection
@@ -120,7 +119,6 @@ export function MissedCallRecoverySystemRenderer({
             title={recoveryLayer.title}
             description={recoveryLayer.description}
             cards={recoveryLayer.cards}
-            backgroundColor='bg-section-base'
             cssPrefix='missed-call-recovery-layer'
           />
 
@@ -135,8 +133,8 @@ export function MissedCallRecoverySystemRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-section-surface'
             cssPrefix='missed-call-recovery-qualification'
+            backgroundColor='bg-base'
           />
 
           <FAQSection

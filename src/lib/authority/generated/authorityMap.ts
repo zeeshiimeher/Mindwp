@@ -100,6 +100,34 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
     },
+    'bricks-builder': {
+      services: [
+        {
+          title: 'Smart Website Systems',
+          description:
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website Redesign & System Rebuild',
+          description:
+            'Website redesign and system rebuild work for service businesses whose current site no longer matches their services, enquiry flow, integrations, or operational needs.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation',
+          description:
+            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+    },
     'conversion-funnel-system': {
       services: [
         {
@@ -152,6 +180,90 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Funnel and landing page development for service businesses that need focused offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
           slug: 'funnel-landing-page-development',
           path: '/services/funnel-landing-page-development',
+          nodeType: 'service',
+        },
+      ],
+    },
+    divi5: {
+      services: [
+        {
+          title: 'Smart Website Systems',
+          description:
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website Redesign & System Rebuild',
+          description:
+            'Website redesign and system rebuild work for service businesses whose current site no longer matches their services, enquiry flow, integrations, or operational needs.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation',
+          description:
+            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+    },
+    ecommerce: {
+      services: [
+        {
+          title: 'Smart Website Systems',
+          description:
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website Redesign & System Rebuild',
+          description:
+            'Website redesign and system rebuild work for service businesses whose current site no longer matches their services, enquiry flow, integrations, or operational needs.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation',
+          description:
+            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+    },
+    elementor: {
+      services: [
+        {
+          title: 'Smart Website Systems',
+          description:
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website Redesign & System Rebuild',
+          description:
+            'Website redesign and system rebuild work for service businesses whose current site no longer matches their services, enquiry flow, integrations, or operational needs.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation',
+          description:
+            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -666,19 +778,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'accounting-firms': {
       services: [
         {
-          title: 'CRM Infrastructure Implementation',
-          description:
-            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
-          nodeType: 'service',
-        },
-        {
           title: 'Smart Website Systems',
           description:
             'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Infrastructure Implementation',
+          description:
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
         {
@@ -806,19 +918,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
-          description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
-          nodeType: 'resource',
-        },
-        {
           title: 'Booking Systems Inside Website Infrastructure',
           description:
             'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
           slug: 'booking-systems-inside-website-infrastructure',
           path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
           nodeType: 'resource',
         },
       ],
@@ -1056,19 +1168,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
-          description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
-          nodeType: 'resource',
-        },
-        {
           title: 'Booking Systems Inside Website Infrastructure',
           description:
             'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
           slug: 'booking-systems-inside-website-infrastructure',
           path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
           nodeType: 'resource',
         },
       ],
@@ -1084,19 +1196,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'CRM Infrastructure Implementation',
-          description:
-            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
-          nodeType: 'service',
-        },
-        {
           title: 'Smart Website Systems',
           description:
             'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Infrastructure Implementation',
+          description:
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
       ],
@@ -1216,19 +1328,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
-          description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
-          nodeType: 'resource',
-        },
-        {
           title: 'Booking Systems Inside Website Infrastructure',
           description:
             'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
           slug: 'booking-systems-inside-website-infrastructure',
           path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
           nodeType: 'resource',
         },
       ],
@@ -1296,19 +1408,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
-          description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
-          nodeType: 'resource',
-        },
-        {
           title: 'Booking Systems Inside Website Infrastructure',
           description:
             'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
           slug: 'booking-systems-inside-website-infrastructure',
           path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
           nodeType: 'resource',
         },
       ],
@@ -1899,19 +2011,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'CRM Infrastructure Implementation',
-          description:
-            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
-          nodeType: 'service',
-        },
-        {
           title: 'Smart Website Systems',
           description:
             'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Infrastructure Implementation',
+          description:
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
       ],
@@ -2139,19 +2251,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'CRM Infrastructure Implementation',
-          description:
-            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
-          nodeType: 'service',
-        },
-        {
           title: 'Smart Website Systems',
           description:
             'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Infrastructure Implementation',
+          description:
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
       ],
@@ -2216,19 +2328,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     realtors: {
       services: [
         {
-          title: 'CRM Infrastructure Implementation',
-          description:
-            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
-          nodeType: 'service',
-        },
-        {
           title: 'Smart Website Systems',
           description:
             'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Infrastructure Implementation',
+          description:
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
         {
@@ -2596,19 +2708,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
-          description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
-          nodeType: 'resource',
-        },
-        {
           title: 'Booking Systems Inside Website Infrastructure',
           description:
             'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
           slug: 'booking-systems-inside-website-infrastructure',
           path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
           nodeType: 'resource',
         },
       ],
@@ -2676,19 +2788,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
-          description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
-          nodeType: 'resource',
-        },
-        {
           title: 'Booking Systems Inside Website Infrastructure',
           description:
             'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
           slug: 'booking-systems-inside-website-infrastructure',
           path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
           nodeType: 'resource',
         },
       ],
@@ -2756,19 +2868,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
-          description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
-          nodeType: 'resource',
-        },
-        {
           title: 'Booking Systems Inside Website Infrastructure',
           description:
             'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
           slug: 'booking-systems-inside-website-infrastructure',
           path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
           nodeType: 'resource',
         },
       ],
@@ -10306,11 +10418,27 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionGoal: 'consultation',
     conversionPriority: 100,
   },
+  'bricks-builder': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
   'conversion-funnel-system': {
     conversionGoal: 'consultation',
     conversionPriority: 100,
   },
   'crm-infrastructure-implementation': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  divi5: {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  ecommerce: {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  elementor: {
     conversionGoal: 'consultation',
     conversionPriority: 100,
   },

@@ -56,11 +56,10 @@ export function LeadReactivationSystemRenderer({
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-section-surface'
             cssPrefix='lead-reactivation-foundation'
           />
 
-          <section className='lead-reactivation-scenarios l-section bg-background'>
+          <section className='lead-reactivation-scenarios l-section bg-base'>
             <div className='l-container'>
               <SectionIntro
                 badge={reactivationScenarios.badge}
@@ -86,7 +85,7 @@ export function LeadReactivationSystemRenderer({
             </div>
           </section>
 
-          <section className='lead-reactivation-audit l-section bg-muted/30'>
+          <section className='lead-reactivation-audit l-section'>
             <div className='l-container'>
               <SectionIntro
                 badge={auditAreas.badge}
@@ -116,11 +115,11 @@ export function LeadReactivationSystemRenderer({
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-section-surface'
             cssPrefix='lead-reactivation-process'
+            backgroundColor='bg-alt'
           />
 
-          <section className='lead-reactivation-entry-points l-section bg-background'>
+          <section className='lead-reactivation-entry-points l-section'>
             <div className='l-container'>
               <SectionIntro
                 badge={entryPoints.badge}
@@ -153,8 +152,8 @@ export function LeadReactivationSystemRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-section-surface'
             cssPrefix='lead-reactivation-qualification'
+            backgroundColor='bg-base'
           />
 
           <FAQSection

@@ -54,7 +54,7 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing dental reviews and trust proof',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'dental-clinics-image-strip',
   };
 
@@ -248,7 +248,7 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'dental-clinics-workflow-examples',
   };
 
@@ -300,7 +300,7 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

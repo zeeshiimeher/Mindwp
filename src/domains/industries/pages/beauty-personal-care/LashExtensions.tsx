@@ -44,7 +44,7 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing aftercare and rebooking for lash services',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'lash-image-strip',
   };
 
@@ -252,7 +252,7 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'lash-workflow-examples',
   };
 
@@ -301,7 +301,7 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

@@ -39,7 +39,7 @@ export function Divi5Renderer({ data, slug }: Divi5RendererProps) {
           />
 
           {/* Design File Conversion */}
-          <section className='divi5-conversion l-section bg-section-light'>
+          <section className='divi5-conversion l-section'>
             <div className='l-container'>
               <h2 className='mb-4'>{conversionSection.title}</h2>
               <p className='text-muted-foreground'>{conversionSection.description1}</p>
@@ -53,7 +53,7 @@ export function Divi5Renderer({ data, slug }: Divi5RendererProps) {
             title={benefitsSection.title}
             benefits={benefitsSection.items}
             cssPrefix={benefitsSection.cssPrefix}
-            backgroundColor={benefitsSection.backgroundColor}
+            backgroundColor='bg-base'
           />
 
           {/* Features */}
@@ -73,8 +73,8 @@ export function Divi5Renderer({ data, slug }: Divi5RendererProps) {
             items={whySection.items}
             columns={whySection.columns}
             cssPrefix={whySection.cssPrefix}
-            backgroundColor={whySection.backgroundColor}
             variant={whySection.variant}
+            backgroundColor='bg-alt'
           />
 
           {/* Conversion Process */}
@@ -85,7 +85,6 @@ export function Divi5Renderer({ data, slug }: Divi5RendererProps) {
             steps={processSection.steps}
             columns={processSection.columns}
             cssPrefix={processSection.cssPrefix}
-            backgroundColor={processSection.backgroundColor}
           />
 
           <ServiceCTASection

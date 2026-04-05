@@ -66,7 +66,7 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing real estate reviews and nurture follow-up',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'real-estate-services-image-strip',
   };
 
@@ -202,7 +202,7 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     cssPrefix: 'real-estate-services-spectrum',
   };
 
@@ -220,7 +220,7 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
       'Growth is creating admin pressure faster than it is creating operating clarity',
     ],
     columns: 2 as const,
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'real-estate-services-decision-checklist',
   };
 
@@ -255,7 +255,7 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
       'A category page should explain the operating environments inside real estate and property services before it narrows into one workflow like realtors or inspections.',
       'Once that context is clear, the single-industry page can go much deeper into enquiry handling, appointment flow, nurture, and trust support for that service type.',
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     cssPrefix: 'real-estate-services-service-environments',
   };
 
@@ -291,7 +291,7 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
       },
     ],
     columns: 4 as const,
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'real-estate-services-process',
   };
 

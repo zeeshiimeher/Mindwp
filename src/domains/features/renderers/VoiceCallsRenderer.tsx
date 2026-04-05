@@ -87,7 +87,7 @@ export default function VoiceCallsRenderer() {
               </Card>
             }
             cssPrefix='voice-ai-hero'
-            backgroundColor='bg-gradient-to-br from-blue-50 via-white to-purple-50'
+            backgroundColor='bg-gradient-surface-soft'
             decorations={[
               { position: 'top-right', color: 'bg-blue-200', size: 'lg' },
               { position: 'bottom-left', color: 'bg-purple-200', size: 'lg' },
@@ -99,7 +99,6 @@ export default function VoiceCallsRenderer() {
             title={process.title}
             description={process.description}
             steps={process.steps}
-            backgroundColor='bg-section-surface'
             cssPrefix='voice-ai-process'
           />
 
@@ -108,8 +107,8 @@ export default function VoiceCallsRenderer() {
             title={benefits.title}
             description={benefits.description}
             benefits={benefits.items}
-            backgroundColor='bg-section-muted'
             cssPrefix='voice-ai-benefits'
+            backgroundColor='bg-alt'
           />
 
           <FeatureUseCasesSection
@@ -117,7 +116,6 @@ export default function VoiceCallsRenderer() {
             title={useCases.title}
             description={useCases.description}
             useCases={useCases.items}
-            backgroundColor='bg-section-surface'
             cssPrefix='voice-ai-use-cases'
           />
 
@@ -125,10 +123,10 @@ export default function VoiceCallsRenderer() {
             badge={capabilities.badge}
             title={capabilities.title}
             featureCategories={capabilities.featureCategories}
-            backgroundColor='bg-section-muted'
             cssPrefix='voice-ai-features'
             columns={capabilities.columns}
             variant={capabilities.variant}
+            backgroundColor='bg-base'
           />
 
           <FAQSection
@@ -136,11 +134,10 @@ export default function VoiceCallsRenderer() {
             title={faq.title}
             description={faq.description}
             faqs={faq.items}
-            backgroundColor='bg-section-surface'
             cssPrefix='voice-ai-faq'
           />
 
-          <section className='voice-ai-testimonial l-section bg-gradient-to-br from-blue-50 to-purple-50'>
+          <section className='voice-ai-testimonial l-section bg-gradient-surface-muted'>
             <div className='l-container'>
               <TestimonialCard
                 quote={testimonial.quote}

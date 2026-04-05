@@ -167,11 +167,6 @@
   --c-bg-alt:          var(--brand-grey-light);     /* #f1f5f9 — alternating section bg */
   --c-surface:         var(--brand-white);          /* #fff — cards, elevated */
 
-  /* Section backgrounds */
-  --section-bg-base:   var(--brand-grey);          /* flattened: was c-bg→brand-grey */
-  --section-bg-surface: var(--c-surface);
-  --section-bg-muted:  color-mix(in oklab, var(--c-bg) 30%, transparent);
-
   /* Text */
   --c-text:            var(--brand-primary);        /* #0A1628 — headings */
   --c-text-muted:      var(--brand-neutral-700);    /* #3D4B5C — body */

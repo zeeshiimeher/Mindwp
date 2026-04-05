@@ -39,7 +39,7 @@ export function BricksBuilderRenderer({ data, slug }: BricksBuilderRendererProps
           />
 
           {/* Design File Conversion */}
-          <section className='bricks-conversion l-section bg-section-light'>
+          <section className='bricks-conversion l-section'>
             <div className='l-container'>
               <h2 className='mb-4'>{conversionSection.title}</h2>
               <p className='text-muted-foreground'>{conversionSection.description1}</p>
@@ -53,7 +53,7 @@ export function BricksBuilderRenderer({ data, slug }: BricksBuilderRendererProps
             title={benefitsSection.title}
             benefits={benefitsSection.items}
             cssPrefix={benefitsSection.cssPrefix}
-            backgroundColor={benefitsSection.backgroundColor}
+            backgroundColor='bg-base'
           />
 
           {/* Why Bricks */}
@@ -67,7 +67,6 @@ export function BricksBuilderRenderer({ data, slug }: BricksBuilderRendererProps
             }))}
             columns={whySection.columns}
             cssPrefix={whySection.cssPrefix}
-            backgroundColor={whySection.backgroundColor}
             iconType={whySection.iconType}
           />
 
@@ -79,7 +78,7 @@ export function BricksBuilderRenderer({ data, slug }: BricksBuilderRendererProps
             steps={processSection.steps}
             columns={processSection.columns}
             cssPrefix={processSection.cssPrefix}
-            backgroundColor={processSection.backgroundColor}
+            backgroundColor='bg-alt'
           />
 
           {/* Features */}

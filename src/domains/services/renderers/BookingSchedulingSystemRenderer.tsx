@@ -59,7 +59,6 @@ export function BookingSchedulingSystemRenderer({
             painPoints={foundation.painPoints}
             currentStateLabel={foundation.currentStateLabel}
             structuredStateLabel={foundation.structuredStateLabel}
-            backgroundColor='bg-section-surface'
             cssPrefix='booking-scheduling-foundation'
           />
 
@@ -68,8 +67,8 @@ export function BookingSchedulingSystemRenderer({
             title={bookingLayer.title}
             description={bookingLayer.description}
             cards={bookingLayer.cards}
-            backgroundColor='bg-section-muted'
             cssPrefix='booking-scheduling-layer'
+            backgroundColor='bg-alt'
           />
 
           <StackedFeatureListSection
@@ -80,7 +79,6 @@ export function BookingSchedulingSystemRenderer({
             tagline={positioning.tagline}
             narrativeTitle={positioning.narrativeTitle}
             narrativeParagraphs={positioning.narrativeParagraphs}
-            backgroundColor='bg-section-base'
             cssPrefix='booking-scheduling-positioning'
           />
 
@@ -90,8 +88,8 @@ export function BookingSchedulingSystemRenderer({
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-section-surface'
             cssPrefix='booking-scheduling-process'
+            backgroundColor='bg-base'
           />
 
           <FeatureChecklistCardsSection
@@ -104,7 +102,6 @@ export function BookingSchedulingSystemRenderer({
               features: service.items,
             }))}
             columns={3}
-            backgroundColor='bg-section-base'
             cssPrefix='booking-scheduling-capabilities'
           />
 
@@ -119,8 +116,8 @@ export function BookingSchedulingSystemRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-section-surface'
             cssPrefix='booking-scheduling-qualification'
+            backgroundColor='bg-base'
           />
 
           <FAQSection

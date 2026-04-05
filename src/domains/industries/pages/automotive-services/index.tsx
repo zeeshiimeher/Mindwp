@@ -65,7 +65,7 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing automotive review and return-visit follow-up',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'automotive-services-image-strip',
   };
 
@@ -213,7 +213,7 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     cssPrefix: 'automotive-services-spectrum',
   };
 
@@ -231,7 +231,7 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
       'Growth is creating admin pressure faster than it is creating operating clarity',
     ],
     columns: 2 as const,
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'automotive-services-decision-checklist',
   };
 
@@ -266,7 +266,7 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
       'A category page should explain the operating environments inside automotive services before it narrows into one workflow like auto repair or detailing.',
       'Once that context is clear, the single-industry page can go much deeper into inspection handling, appointment flow, estimate follow-up, and review support for that service type.',
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     cssPrefix: 'automotive-services-service-environments',
   };
 
@@ -302,7 +302,7 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
       },
     ],
     columns: 4 as const,
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'automotive-services-process',
   };
 

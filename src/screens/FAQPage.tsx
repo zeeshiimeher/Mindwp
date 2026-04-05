@@ -141,7 +141,7 @@ export function FAQPage() {
         </section>
 
         {/* FAQ Tabs */}
-        <section className='l-section bg-background'>
+        <section className='l-section'>
           <div className='l-container'>
             <Tabs defaultValue='general' className='w-full'>
               <TabsList className='w-full faq-page__tabs-list'>
@@ -221,7 +221,7 @@ export function FAQPage() {
         </section>
 
         {/* Contact Card */}
-        <section className='l-section bg-muted/30'>
+        <section className='l-section bg-base'>
           <div className='l-container'>
             <Card className='p-8 md:p-12 text-center'>
               <h2 className='mb-4'>Still Have Questions?</h2>

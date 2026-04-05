@@ -56,11 +56,10 @@ export function SystemMigrationPlatformConsolidationRenderer({
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-section-surface'
             cssPrefix='system-migration-foundation'
           />
 
-          <section className='system-migration-signals l-section bg-background'>
+          <section className='system-migration-signals l-section bg-base'>
             <div className='l-container'>
               <SectionIntro
                 badge={migrationSignals.badge}
@@ -83,7 +82,7 @@ export function SystemMigrationPlatformConsolidationRenderer({
             </div>
           </section>
 
-          <section className='system-migration-risks l-section bg-muted/30'>
+          <section className='system-migration-risks l-section'>
             <div className='l-container'>
               <SectionIntro
                 badge={riskAreas.badge}
@@ -104,7 +103,7 @@ export function SystemMigrationPlatformConsolidationRenderer({
             </div>
           </section>
 
-          <section className='system-migration-targets l-section bg-white'>
+          <section className='system-migration-targets l-section bg-base'>
             <div className='l-container'>
               <SectionIntro
                 badge={consolidationTargets.badge}
@@ -132,7 +131,6 @@ export function SystemMigrationPlatformConsolidationRenderer({
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-section-base'
             cssPrefix='system-migration-process'
           />
 
@@ -147,8 +145,8 @@ export function SystemMigrationPlatformConsolidationRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-section-surface'
             cssPrefix='system-migration-qualification'
+            backgroundColor='bg-alt'
           />
 
           <FAQSection

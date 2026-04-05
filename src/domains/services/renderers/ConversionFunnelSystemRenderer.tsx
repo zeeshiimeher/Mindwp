@@ -58,11 +58,10 @@ export function ConversionFunnelSystemRenderer({
             title={foundation.title}
             description={foundation.description}
             painPoints={foundation.painPoints}
-            backgroundColor='bg-section-surface'
             cssPrefix='conversion-funnel-foundation'
           />
 
-          <section className='conversion-funnel-breakpoints l-section bg-background'>
+          <section className='conversion-funnel-breakpoints l-section bg-base'>
             <div className='l-container'>
               <SectionIntro
                 badge={funnelBreakpoints.badge}
@@ -86,7 +85,7 @@ export function ConversionFunnelSystemRenderer({
             </div>
           </section>
 
-          <section className='conversion-funnel-metrics l-section bg-muted/30'>
+          <section className='conversion-funnel-metrics l-section'>
             <div className='l-container'>
               <SectionIntro
                 badge={comparisonMetrics.badge}
@@ -120,11 +119,11 @@ export function ConversionFunnelSystemRenderer({
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-section-surface'
             cssPrefix='conversion-funnel-process'
+            backgroundColor='bg-base'
           />
 
-          <section className='conversion-funnel-levers l-section bg-background'>
+          <section className='conversion-funnel-levers l-section'>
             <div className='l-container'>
               <SectionIntro
                 badge={funnelLevers.badge}
@@ -157,8 +156,8 @@ export function ConversionFunnelSystemRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-section-surface'
             cssPrefix='conversion-funnel-qualification'
+            backgroundColor='bg-alt'
           />
 
           <FAQSection

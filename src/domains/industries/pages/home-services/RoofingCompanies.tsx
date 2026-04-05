@@ -54,7 +54,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing roofing reviews and proof collection',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'roofing-image-strip',
   };
 
@@ -264,7 +264,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'roofing-workflow-examples',
   };
 
@@ -307,7 +307,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

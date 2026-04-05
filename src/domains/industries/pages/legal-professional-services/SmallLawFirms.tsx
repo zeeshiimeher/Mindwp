@@ -55,7 +55,7 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing legal trust and credibility',
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'small-law-firms-image-strip',
   };
 
@@ -256,7 +256,7 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
         ],
       },
     ],
-    backgroundColor: 'bg-section-surface',
+    backgroundColor: 'bg-base',
     cssPrefix: 'small-law-firms-workflow-examples',
   };
 
@@ -307,7 +307,7 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
         iconBg: 'amber',
       },
     ],
-    backgroundColor: 'bg-section-muted',
+    backgroundColor: 'bg-alt',
     ctaLabel: 'View Service',
     columns: 2 as const,
   };

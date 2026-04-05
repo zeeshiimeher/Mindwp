@@ -99,7 +99,7 @@ export default function ReputationRenderer() {
             primaryAction={hero.primaryAction}
             visualContent={<ReviewsVisual />}
             cssPrefix='reputation-hero'
-            backgroundColor='bg-gradient-to-br from-yellow-50 via-white to-orange-50'
+            backgroundColor='bg-gradient-surface-muted'
             decorations={[
               { position: 'top-right', color: 'bg-yellow-200', size: 'lg' },
               { position: 'bottom-left', color: 'bg-orange-200', size: 'lg' },
@@ -111,7 +111,6 @@ export default function ReputationRenderer() {
             title={process.title}
             description={process.description}
             steps={process.steps}
-            backgroundColor='bg-section-surface'
             cssPrefix='reputation-process'
           />
 
@@ -120,8 +119,8 @@ export default function ReputationRenderer() {
             title={benefits.title}
             description={benefits.description}
             benefits={benefits.items}
-            backgroundColor='bg-section-muted'
             cssPrefix='reputation-benefits'
+            backgroundColor='bg-base'
           />
 
           <FeatureUseCasesSection
@@ -129,10 +128,9 @@ export default function ReputationRenderer() {
             title={useCases.title}
             description={useCases.description}
             useCases={useCases.items}
-            backgroundColor='bg-section-surface'
             cssPrefix='reputation-use-cases'
             solutionLabel={useCases.solutionLabel}
-            iconBackground='bg-gradient-to-br from-yellow-500 to-orange-500'
+            iconBackground='icon-bg-gradient-accent'
           />
 
           <FeatureCapabilitiesSection
@@ -140,11 +138,11 @@ export default function ReputationRenderer() {
             title={capabilities.title}
             description={capabilities.description}
             featureCategories={capabilities.featureCategories}
-            backgroundColor='bg-section-muted'
             cssPrefix='reputation-features'
+            backgroundColor='bg-base'
           />
 
-          <section className='l-section bg-white'>
+          <section className='l-section'>
             <div className='l-container'>
               <div className='text-center mb-12'>
                 <Badge variant='primary' cssPrefix='mb-4'>
@@ -174,7 +172,6 @@ export default function ReputationRenderer() {
             title={faq.title}
             description={faq.description}
             faqs={faq.items}
-            backgroundColor='bg-section-muted'
             cssPrefix='reputation-faq'
           />
 

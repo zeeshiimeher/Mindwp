@@ -58,7 +58,7 @@ export const divi5Page = {
       badge: 'Implementation Principles',
       title: 'What disciplined Divi implementation protects',
       cssPrefix: 'divi5-benefits',
-      backgroundColor: 'bg-section-surface' as const,
+      backgroundColor: 'bg-base' as const,
       items: [
         {
           icon: Zap,
@@ -198,7 +198,7 @@ export const divi5Page = {
         'Divi gives strong visual control and a flexible editing experience. When the build is governed properly, the site can evolve without losing coherence.',
       columns: 3 as const,
       cssPrefix: 'divi5-why',
-      backgroundColor: 'bg-section-surface' as const,
+      backgroundColor: 'bg-base' as const,
       variant: 'bordered' as const,
       items: [
         {
@@ -237,7 +237,7 @@ export const divi5Page = {
         'A clear process that keeps the build on track from design review through to handover.',
       columns: 3 as const,
       cssPrefix: 'divi5-process',
-      backgroundColor: 'bg-section-muted' as const,
+      backgroundColor: 'bg-alt' as const,
       steps: [
         {
           number: '1',

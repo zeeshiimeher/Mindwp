@@ -60,11 +60,10 @@ export function WebsiteRedesignSystemRebuildRenderer({
             painPoints={foundation.painPoints}
             currentStateLabel={foundation.currentStateLabel}
             structuredStateLabel={foundation.structuredStateLabel}
-            backgroundColor='bg-section-surface'
             cssPrefix='website-redesign-rebuild-foundation'
           />
 
-          <section className='website-redesign-rebuild-signals l-section bg-background'>
+          <section className='website-redesign-rebuild-signals l-section bg-base'>
             <div className='l-container'>
               <SectionIntro
                 badge={structuralSignals.badge}
@@ -86,7 +85,7 @@ export function WebsiteRedesignSystemRebuildRenderer({
             </div>
           </section>
 
-          <section className='website-redesign-rebuild-scenarios l-section bg-muted/30'>
+          <section className='website-redesign-rebuild-scenarios l-section'>
             <div className='l-container'>
               <SectionIntro
                 badge={rebuildScenarios.badge}
@@ -118,11 +117,11 @@ export function WebsiteRedesignSystemRebuildRenderer({
             description={processSection.description}
             steps={processSection.steps}
             columns={4}
-            backgroundColor='bg-section-surface'
             cssPrefix='website-redesign-rebuild-process'
+            backgroundColor='bg-alt'
           />
 
-          <section className='website-redesign-rebuild-layers l-section bg-background'>
+          <section className='website-redesign-rebuild-layers l-section'>
             <div className='l-container'>
               <SectionIntro
                 badge={implementationLayers.badge}
@@ -155,8 +154,8 @@ export function WebsiteRedesignSystemRebuildRenderer({
               title: qualification.notDesignedTitle,
               items: qualification.notDesignedItems,
             }}
-            backgroundColor='bg-section-surface'
             cssPrefix='website-redesign-rebuild-qualification'
+            backgroundColor='bg-base'
           />
 
           <FAQSection

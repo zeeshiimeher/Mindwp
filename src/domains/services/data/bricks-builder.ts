@@ -69,7 +69,7 @@ export const bricksBuilderPage = {
       badge: 'Implementation Principles',
       title: 'What disciplined Bricks implementation protects',
       cssPrefix: 'bricks-benefits',
-      backgroundColor: 'bg-section-surface' as const,
+      backgroundColor: 'bg-base' as const,
       items: [
         {
           icon: Zap,
@@ -196,7 +196,7 @@ export const bricksBuilderPage = {
       ],
       columns: 3 as const,
       cssPrefix: 'bricks-process',
-      backgroundColor: 'bg-section-muted' as const,
+      backgroundColor: 'bg-alt' as const,
     },
     featureSection: {
       badge: 'Implementation Capabilities',
