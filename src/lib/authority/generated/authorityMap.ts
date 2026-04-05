@@ -353,7 +353,32 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
     },
     'local-seo-authority': {
-      services: [],
+      services: [
+        {
+          title: 'Booking & Scheduling System',
+          description:
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems',
+          description:
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation',
+          description:
+            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
     },
     'marketing-automation-setup': {
       services: [
@@ -421,6 +446,22 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/review-automation-system',
           nodeType: 'service',
         },
+        {
+          title: 'Booking & Scheduling System',
+          description:
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems',
+          description:
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
       ],
     },
     'review-automation-system': {
@@ -431,6 +472,22 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Booking & Scheduling System',
+          description:
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems',
+          description:
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
       ],
@@ -778,27 +835,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'accounting-firms': {
       services: [
         {
-          title: 'Smart Website Systems',
-          description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'CRM Infrastructure Implementation',
-          description:
-            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation & Review Systems',
           description:
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Review Automation System',
+          description:
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local Authority & SEO Systems',
+          description:
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -858,14 +915,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'aesthetic-cosmetic-clinics': {
       services: [
         {
-          title: 'Smart Website Systems',
-          description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation & Review Systems',
           description:
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
@@ -879,6 +928,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local Authority & SEO Systems',
+          description:
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -938,27 +995,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'auto-repair': {
       services: [
         {
+          title: 'Reputation & Review Systems',
+          description:
+            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Review Automation System',
+          description:
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
           title: 'Booking & Scheduling System',
           description:
             'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
           slug: 'booking-scheduling-system',
           path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Missed Call Recovery System',
-          description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Unified Communication System',
-          description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
-          slug: 'unified-communication-system',
-          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
@@ -1016,17 +1073,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
     },
     'automotive-services': {
-      services: [],
-      caseStudies: [],
-      resources: [],
-    },
-    'beauty-personal-care': {
-      services: [],
-      caseStudies: [],
-      resources: [],
-    },
-    'body-shops': {
       services: [
+        {
+          title: 'Reputation & Review Systems',
+          description:
+            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Review Automation System',
+          description:
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
         {
           title: 'Booking & Scheduling System',
           description:
@@ -1035,20 +1098,164 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
+      ],
+      caseStudies: [
         {
-          title: 'Missed Call Recovery System',
+          title: 'Beauty Salon Case Study - All Sections Demo',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
-          nodeType: 'service',
+            'Demonstration case study that includes every supported case study section type, including optional sections like workflows, deliverables, business impact, and pinned FAQ.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
         },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system allows complete customization of section labels, badges, and content while maintaining consistent structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Auto Repair Missed Call Recovery',
+          description:
+            'How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.',
+          slug: 'auto-repair-missed-call-recovery',
+          path: '/case-study/auto-repair-missed-call-recovery',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'beauty-personal-care': {
+      services: [
         {
           title: 'Reputation & Review Systems',
           description:
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Review Automation System',
+          description:
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local Authority & SEO Systems',
+          description:
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study that includes every supported case study section type, including optional sections like workflows, deliverables, business impact, and pinned FAQ.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system allows complete customization of section labels, badges, and content while maintaining consistent structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Salon Booking Automation',
+          description:
+            'How a Liverpool hair salon moved from phone-only bookings to 68% online booking adoption in 8 weeks, unlocking after-hours appointments and a 22% increase in weekly volume.',
+          slug: 'salon-booking-automation',
+          path: '/case-study/salon-booking-automation',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'body-shops': {
+      services: [
+        {
+          title: 'Reputation & Review Systems',
+          description:
+            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Review Automation System',
+          description:
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Booking & Scheduling System',
+          description:
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -1108,14 +1315,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'car-detailing': {
       services: [
         {
-          title: 'Smart Website Systems',
-          description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation & Review Systems',
           description:
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
@@ -1129,6 +1328,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local Authority & SEO Systems',
+          description:
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -1188,27 +1395,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     consultants: {
       services: [
         {
-          title: 'Booking & Scheduling System',
+          title: 'Reputation & Review Systems',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems',
+          title: 'Review Automation System',
           description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
           nodeType: 'service',
         },
         {
-          title: 'CRM Infrastructure Implementation',
+          title: 'Local Authority & SEO Systems',
           description:
-            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -1268,14 +1475,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'dental-clinics': {
       services: [
         {
-          title: 'Smart Website Systems',
-          description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation & Review Systems',
           description:
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
@@ -1289,6 +1488,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local Authority & SEO Systems',
+          description:
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -1348,14 +1555,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'driving-schools': {
       services: [
         {
-          title: 'Smart Website Systems',
-          description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation & Review Systems',
           description:
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
@@ -1369,6 +1568,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local Authority & SEO Systems',
+          description:
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -1428,14 +1635,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'electrical-companies': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation & Review Systems',
           description:
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
@@ -1444,11 +1643,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System',
+          title: 'Review Automation System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
-          slug: 'unified-communication-system',
-          path: '/services/unified-communication-system',
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Booking & Scheduling System',
+          description:
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -1508,14 +1715,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'hair-salons': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation & Review Systems',
           description:
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
@@ -1529,6 +1728,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Booking & Scheduling System',
+          description:
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -1588,14 +1795,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'home-inspectors': {
       services: [
         {
-          title: 'Smart Website Systems',
-          description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation & Review Systems',
           description:
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
@@ -1609,6 +1808,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local Authority & SEO Systems',
+          description:
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -1666,12 +1873,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
     },
     'home-services': {
-      services: [],
-      caseStudies: [],
-      resources: [],
-    },
-    'hvac-companies': {
       services: [
+        {
+          title: 'Reputation & Review Systems',
+          description:
+            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Review Automation System',
+          description:
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
         {
           title: 'Booking & Scheduling System',
           description:
@@ -1680,20 +1898,84 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
+      ],
+      caseStudies: [
         {
-          title: 'Missed Call Recovery System',
+          title: 'Beauty Salon Case Study - All Sections Demo',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
-          nodeType: 'service',
+            'Demonstration case study that includes every supported case study section type, including optional sections like workflows, deliverables, business impact, and pinned FAQ.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
         },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system allows complete customization of section labels, badges, and content while maintaining consistent structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'HVAC Emergency Lead Routing',
+          description:
+            'How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage and on-call technician routing.',
+          slug: 'hvac-emergency-lead-routing',
+          path: '/case-study/hvac-emergency-lead-routing',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Lead Handling Example',
+          description:
+            'See how HVAC companies use automated lead handling to respond to every inquiry within minutes, route emergency calls instantly, and capture peak-season revenue that manual processes miss.',
+          slug: 'hvac-lead-handling-example',
+          path: '/resources/hvac-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Review Generation Framework',
+          description:
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'hvac-companies': {
+      services: [
         {
           title: 'Reputation & Review Systems',
           description:
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Review Automation System',
+          description:
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Booking & Scheduling System',
+          description:
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -1753,14 +2035,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'landscaping-companies': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation & Review Systems',
           description:
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
@@ -1774,6 +2048,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Booking & Scheduling System',
+          description:
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -1833,14 +2115,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'lash-lift-and-extensions': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation & Review Systems',
           description:
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
@@ -1854,6 +2128,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Booking & Scheduling System',
+          description:
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -1911,17 +2193,175 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
     },
     'legal-professional-services': {
-      services: [],
-      caseStudies: [],
-      resources: [],
+      services: [
+        {
+          title: 'Reputation & Review Systems',
+          description:
+            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Review Automation System',
+          description:
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local Authority & SEO Systems',
+          description:
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study that includes every supported case study section type, including optional sections like workflows, deliverables, business impact, and pinned FAQ.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system allows complete customization of section labels, badges, and content while maintaining consistent structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Roofing Website Rebuild With CRM',
+          description:
+            'How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service-specific pages, CRM integration, and mobile-first design.',
+          slug: 'roofing-website-rebuild-with-crm',
+          path: '/case-study/roofing-website-rebuild-with-crm',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Reputation Monitoring Systems',
+          description:
+            'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
+          slug: 'reputation-monitoring-systems',
+          path: '/resources/reputation-monitoring-systems',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Sales Pipeline Visibility Framework',
+          description:
+            'Build a pipeline visibility framework that shows real-time deal health, flags stalled deals, and provides accurate revenue forecasting for your service business.',
+          slug: 'sales-pipeline-visibility-framework',
+          path: '/resources/sales-pipeline-visibility-framework',
+          nodeType: 'resource',
+        },
+      ],
     },
     'local-appointment-businesses': {
-      services: [],
-      caseStudies: [],
-      resources: [],
+      services: [
+        {
+          title: 'Reputation & Review Systems',
+          description:
+            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Review Automation System',
+          description:
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local Authority & SEO Systems',
+          description:
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study that includes every supported case study section type, including optional sections like workflows, deliverables, business impact, and pinned FAQ.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system allows complete customization of section labels, badges, and content while maintaining consistent structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Local Authority System Impact',
+          description:
+            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
+          slug: 'local-authority-system-impact',
+          path: '/case-study/local-authority-system-impact',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+      ],
     },
     'mobile-mechanics': {
       services: [
+        {
+          title: 'Reputation & Review Systems',
+          description:
+            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
         {
           title: 'Booking & Scheduling System',
           description:
@@ -1931,19 +2371,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Missed Call Recovery System',
+          title: 'Local Authority & SEO Systems',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
-          slug: 'missed-call-recovery-system',
-          path: '/services/missed-call-recovery-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Unified Communication System',
-          description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
-          slug: 'unified-communication-system',
-          path: '/services/unified-communication-system',
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -2003,27 +2435,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'mortgage-brokers': {
       services: [
         {
-          title: 'Booking & Scheduling System',
+          title: 'Reputation & Review Systems',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems',
+          title: 'Review Automation System',
           description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
           nodeType: 'service',
         },
         {
-          title: 'CRM Infrastructure Implementation',
+          title: 'Local Authority & SEO Systems',
           description:
-            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -2083,14 +2515,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'nail-salons': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation & Review Systems',
           description:
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
@@ -2104,6 +2528,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Booking & Scheduling System',
+          description:
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -2163,6 +2595,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'plumbing-companies': {
       services: [
         {
+          title: 'Reputation & Review Systems',
+          description:
+            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
           title: 'Booking & Scheduling System',
           description:
             'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
@@ -2171,19 +2611,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems',
+          title: 'Local Authority & SEO Systems',
           description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration & Platform Consolidation',
-          description:
-            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -2243,27 +2675,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'property-managers': {
       services: [
         {
-          title: 'Booking & Scheduling System',
+          title: 'Reputation & Review Systems',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems',
+          title: 'Review Automation System',
           description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
           nodeType: 'service',
         },
         {
-          title: 'CRM Infrastructure Implementation',
+          title: 'Local Authority & SEO Systems',
           description:
-            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -2321,26 +2753,101 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
     },
     'real-estate-property-services': {
-      services: [],
-      caseStudies: [],
-      resources: [],
+      services: [
+        {
+          title: 'Reputation & Review Systems',
+          description:
+            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Review Automation System',
+          description:
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local Authority & SEO Systems',
+          description:
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study that includes every supported case study section type, including optional sections like workflows, deliverables, business impact, and pinned FAQ.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system allows complete customization of section labels, badges, and content while maintaining consistent structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Local Authority System Impact',
+          description:
+            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
+          slug: 'local-authority-system-impact',
+          path: '/case-study/local-authority-system-impact',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Review Generation Framework',
+          description:
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+      ],
     },
     realtors: {
       services: [
         {
-          title: 'Smart Website Systems',
+          title: 'Reputation & Review Systems',
           description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
+            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'CRM Infrastructure Implementation',
+          title: 'Review Automation System',
           description:
-            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
           nodeType: 'service',
         },
         {
@@ -2408,14 +2915,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'repair-shops': {
       services: [
         {
-          title: 'Smart Website Systems',
-          description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation & Review Systems',
           description:
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
@@ -2429,6 +2928,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local Authority & SEO Systems',
+          description:
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -2488,14 +2995,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'roofing-companies': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation & Review Systems',
           description:
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
@@ -2504,11 +3003,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Unified Communication System',
+          title: 'Review Automation System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
-          slug: 'unified-communication-system',
-          path: '/services/unified-communication-system',
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Booking & Scheduling System',
+          description:
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -2568,27 +3075,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'small-law-firms': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Smart Website Systems',
-          description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation & Review Systems',
           description:
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Review Automation System',
+          description:
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local Authority & SEO Systems',
+          description:
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -2648,14 +3155,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'small-med-spas': {
       services: [
         {
-          title: 'Smart Website Systems',
-          description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation & Review Systems',
           description:
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
@@ -2669,6 +3168,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local Authority & SEO Systems',
+          description:
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -2728,14 +3235,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'small-private-clinics': {
       services: [
         {
-          title: 'Smart Website Systems',
-          description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation & Review Systems',
           description:
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
@@ -2749,6 +3248,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local Authority & SEO Systems',
+          description:
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -2808,14 +3315,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'tattoo-studios': {
       services: [
         {
-          title: 'Smart Website Systems',
-          description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
           title: 'Reputation & Review Systems',
           description:
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
@@ -2829,6 +3328,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local Authority & SEO Systems',
+          description:
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -3276,19 +3783,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Tracking Salon Client Lifetime Value',
-          description:
-            'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
-          slug: 'tracking-salon-client-lifetime-value',
-          path: '/resources/tracking-salon-client-lifetime-value',
-          nodeType: 'resource',
-        },
-        {
           title: 'Booking Systems Inside Website Infrastructure',
           description:
             'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
           slug: 'booking-systems-inside-website-infrastructure',
           path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Tracking Salon Client Lifetime Value',
+          description:
+            'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
+          slug: 'tracking-salon-client-lifetime-value',
+          path: '/resources/tracking-salon-client-lifetime-value',
           nodeType: 'resource',
         },
       ],
@@ -8207,19 +8714,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
+          title: 'Local Authority & SEO Systems',
+          description:
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
+          nodeType: 'service',
+        },
+        {
           title: 'Smart Website Systems',
           description:
             'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration & Platform Consolidation',
-          description:
-            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
