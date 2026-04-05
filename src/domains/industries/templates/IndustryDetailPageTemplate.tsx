@@ -15,10 +15,12 @@ import {
   IndustryWorkflowExamplesSection,
 } from '@/components/reusable/sections/industries';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 
 import { IndustryExploreSection } from '../components/IndustryExploreSection';
 
 export type IndustryDetailPageTemplateProps = {
+  slug: string;
   hero: React.ComponentProps<typeof IndustryHeroSection>;
   challenges?: React.ComponentProps<typeof IndustryChallengesSection>;
   operatingPatterns?: React.ComponentProps<typeof IndustryOperatingPatternsSection>;
@@ -39,6 +41,7 @@ export type IndustryDetailPageTemplateProps = {
 };
 
 export function IndustryDetailPageTemplate({
+  slug,
   hero,
   challenges,
   operatingPatterns,
@@ -75,6 +78,7 @@ export function IndustryDetailPageTemplate({
           {explore && <IndustryExploreSection title='Relevant Modules' {...explore} />}
           <IndustryFAQSection {...faq} />
           <IndustryCTASection {...cta} />
+          <SmartRelatedSection slug={slug} type='industry-detail' />
         </main>
       </ErrorBoundary>
     </>

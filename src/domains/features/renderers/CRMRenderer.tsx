@@ -14,10 +14,7 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
-import {
-  FeatureImplementationServicesSection,
-  FeatureSupportingFrameworksSection,
-} from '@/domains/features/components/FeatureRelatedSections';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { crmData } from '@/domains/features/data/crm';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
@@ -144,8 +141,6 @@ export default function CRMRenderer() {
 
           <FAQSection badge={faq.badge} title={faq.title} faqs={faq.items} cssPrefix='crm-faq' />
 
-          <FeatureSupportingFrameworksSection featureSlug={crmData.slug} cssPrefix='crm-explore' />
-
           <FeatureCTASection
             title={cta.title}
             description={cta.description}
@@ -156,10 +151,7 @@ export default function CRMRenderer() {
             }}
           />
 
-          <FeatureImplementationServicesSection
-            featureSlug={crmData.slug}
-            cssPrefix='crm-explore'
-          />
+          <SmartRelatedSection slug={crmData.slug} type='feature' />
         </main>
       </ErrorBoundary>
     </>

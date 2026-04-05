@@ -12,10 +12,7 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
-import {
-  FeatureImplementationServicesSection,
-  FeatureSupportingFrameworksSection,
-} from '@/domains/features/components/FeatureRelatedSections';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { workflowsData } from '@/domains/features/data/workflows';
 
 const WorkflowVisual = () => {
@@ -137,11 +134,6 @@ export default function WorkflowsRenderer() {
             cssPrefix='workflows-faq'
           />
 
-          <FeatureSupportingFrameworksSection
-            featureSlug={workflowsData.slug}
-            cssPrefix='workflows-explore'
-          />
-
           <FeatureCTASection
             title={cta.title}
             description={cta.description}
@@ -154,10 +146,7 @@ export default function WorkflowsRenderer() {
             backgroundColor='bg-gradient-secondary'
           />
 
-          <FeatureImplementationServicesSection
-            featureSlug={workflowsData.slug}
-            cssPrefix='workflows-explore'
-          />
+          <SmartRelatedSection slug={workflowsData.slug} type='feature' />
         </main>
       </ErrorBoundary>
     </>

@@ -14,10 +14,7 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
-import {
-  FeatureImplementationServicesSection,
-  FeatureSupportingFrameworksSection,
-} from '@/domains/features/components/FeatureRelatedSections';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { inboxData } from '@/domains/features/data/inbox';
 
 export default function InboxRenderer() {
@@ -130,11 +127,6 @@ export default function InboxRenderer() {
             backgroundColor='bg-base'
           />
 
-          <FeatureSupportingFrameworksSection
-            featureSlug={inboxData.slug}
-            cssPrefix='inbox-explore'
-          />
-
           <FeatureCTASection
             title={cta.title}
             description={cta.description}
@@ -145,10 +137,7 @@ export default function InboxRenderer() {
             }}
           />
 
-          <FeatureImplementationServicesSection
-            featureSlug={inboxData.slug}
-            cssPrefix='inbox-explore'
-          />
+          <SmartRelatedSection slug={inboxData.slug} type='feature' />
         </main>
       </ErrorBoundary>
     </>

@@ -12,10 +12,7 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
-import {
-  FeatureImplementationServicesSection,
-  FeatureSupportingFrameworksSection,
-} from '@/domains/features/components/FeatureRelatedSections';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { aiChatData } from '@/domains/features/data/aichat';
 
 const ChatDemo = () => (
@@ -226,11 +223,6 @@ export default function AIChatRenderer() {
             />
           </ErrorBoundary>
 
-          <FeatureSupportingFrameworksSection
-            featureSlug={aiChatData.slug}
-            cssPrefix='ai-chat-explore'
-          />
-
           <FeatureCTASection
             title={cta.title}
             description={cta.description}
@@ -241,10 +233,7 @@ export default function AIChatRenderer() {
             }}
           />
 
-          <FeatureImplementationServicesSection
-            featureSlug={aiChatData.slug}
-            cssPrefix='ai-chat-explore'
-          />
+          <SmartRelatedSection slug={aiChatData.slug} type='feature' />
         </main>
       </ErrorBoundary>
     </>

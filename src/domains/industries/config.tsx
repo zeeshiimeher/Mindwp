@@ -58,6 +58,7 @@ const renderCategoryWithDefaultTemplate = (data: IndustryCategoryPageData) => (
 
 const renderDetailWithDefaultTemplate = (data: IndustryDetailPageData) => (
   <IndustryDetailPageTemplate
+    slug={data.slug}
     hero={data.hero}
     challenges={data.challenges}
     operatingPatterns={data.operatingPatterns}

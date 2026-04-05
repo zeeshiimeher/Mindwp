@@ -13,10 +13,7 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
-import {
-  FeatureImplementationServicesSection,
-  FeatureSupportingFrameworksSection,
-} from '@/domains/features/components/FeatureRelatedSections';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { calendarsData } from '@/domains/features/data/calendars';
 
 const BookingVisual = () => (
@@ -139,11 +136,6 @@ export default function CalendarsRenderer() {
             cssPrefix='calendars-faq'
           />
 
-          <FeatureSupportingFrameworksSection
-            featureSlug={calendarsData.slug}
-            cssPrefix='calendars-explore'
-          />
-
           <FeatureCTASection
             title={cta.title}
             description={cta.description}
@@ -156,10 +148,7 @@ export default function CalendarsRenderer() {
             cssPrefix='calendars-cta'
           />
 
-          <FeatureImplementationServicesSection
-            featureSlug={calendarsData.slug}
-            cssPrefix='calendars-explore'
-          />
+          <SmartRelatedSection slug={calendarsData.slug} type='feature' />
         </main>
       </ErrorBoundary>
     </>

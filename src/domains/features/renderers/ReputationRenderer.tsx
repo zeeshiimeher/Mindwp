@@ -14,10 +14,7 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { TestimonialCard } from '@/components/reusable/single/TestimonialCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
-import {
-  FeatureImplementationServicesSection,
-  FeatureSupportingFrameworksSection,
-} from '@/domains/features/components/FeatureRelatedSections';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { reputationData } from '@/domains/features/data/reputation';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
@@ -178,11 +175,6 @@ export default function ReputationRenderer() {
             cssPrefix='reputation-faq'
           />
 
-          <FeatureSupportingFrameworksSection
-            featureSlug={reputationData.slug}
-            cssPrefix='reputation-explore'
-          />
-
           <FeatureCTASection
             title={cta.title}
             description={cta.description}
@@ -193,10 +185,7 @@ export default function ReputationRenderer() {
             }}
           />
 
-          <FeatureImplementationServicesSection
-            featureSlug={reputationData.slug}
-            cssPrefix='reputation-explore'
-          />
+          <SmartRelatedSection slug={reputationData.slug} type='feature' />
         </main>
       </ErrorBoundary>
     </>

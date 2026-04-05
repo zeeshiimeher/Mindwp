@@ -13,10 +13,7 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { TestimonialCard } from '@/components/reusable/single/TestimonialCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
-import {
-  FeatureImplementationServicesSection,
-  FeatureSupportingFrameworksSection,
-} from '@/domains/features/components/FeatureRelatedSections';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { voicecallsData } from '@/domains/features/data/voicecalls';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
@@ -149,11 +146,6 @@ export default function VoiceCallsRenderer() {
             </div>
           </section>
 
-          <FeatureSupportingFrameworksSection
-            featureSlug={voicecallsData.slug}
-            cssPrefix='voice-ai-explore'
-          />
-
           <FeatureCTASection
             title={cta.title}
             description={cta.description}
@@ -164,10 +156,7 @@ export default function VoiceCallsRenderer() {
             }}
           />
 
-          <FeatureImplementationServicesSection
-            featureSlug={voicecallsData.slug}
-            cssPrefix='voice-ai-explore'
-          />
+          <SmartRelatedSection slug={voicecallsData.slug} type='feature' />
         </main>
       </ErrorBoundary>
     </>
