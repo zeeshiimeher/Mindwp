@@ -29,7 +29,6 @@ import { Callout } from '@/components/reusable/single/Callout';
 import { CTASection } from '@/components/reusable/single/CTASection';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
-import { JourneyNavigator } from '@/components/system/JourneyNavigator';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
 import { primaryCta } from '@/config/primaryCta';
@@ -504,7 +503,6 @@ export function BlogPostTemplate({
         </section>
 
         <SmartRelatedSection slug={slug} type='blog' />
-        <JourneyNavigator slug={slug} type='blog' />
 
         {ctaSection ? (
           <CTASection

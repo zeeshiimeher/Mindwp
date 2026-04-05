@@ -22,7 +22,7 @@ const BLOCK = 'hero-section';
  *   description="Uncover technical issues affecting your WordPress site's performance"
  *   primaryAction={{
  *     label: "Request Audit",
- *     href: "/conversation"
+ *     href: "/contact"
  *   }}
  *   secondaryAction={{
  *     label: "View Sample Report",

@@ -19,7 +19,6 @@ import {
   CaseStudyWorkflowsSection,
 } from '@/components/reusable/sections/case-studies';
 import { TestimonialCard } from '@/components/reusable/single';
-import { JourneyNavigator } from '@/components/system/JourneyNavigator';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { primaryCta } from '@/config/primaryCta';
 
@@ -491,7 +490,6 @@ export function CaseStudyTemplate({
       {pinnedFaqSections.map((section, index) => renderSection(section, index))}
 
       <SmartRelatedSection slug={metadata.slug} type='case-study' />
-      <JourneyNavigator slug={metadata.slug} type='case-study' />
 
       {ctaSection && (
         <CaseStudyCTASection

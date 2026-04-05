@@ -18,7 +18,7 @@ const BLOCK = 'cta-section';
  *   description="Request a technical and SEO audit for your WordPress site. Gain understanding of technical factors and receive WordPress-specific recommendations."
  *   primaryAction={{
  *     label: "Request Audit Consultation",
- *     href: "/conversation"
+ *     href: "/contact"
  *   }}
  *   metaItems={[
  *     { text: "WordPress specialists" },

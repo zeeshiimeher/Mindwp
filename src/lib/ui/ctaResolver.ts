@@ -2,8 +2,7 @@
  * CTA Resolver
  *
  * Resolves CTA intensity based on page intent.
- * Intent comes from the internal linking system or falls back
- * to page type mapping.
+ * Intent can be provided explicitly or falls back to page type mapping.
  *
  * Intensity levels:
  * - soft: learn intent (exploring, not ready)
@@ -15,7 +14,8 @@
  */
 
 import type { ContentNodeType } from '@/lib/content-graph/types';
-import type { LinkIntent } from '@/lib/internal-linking/types';
+
+export type LinkIntent = 'learn' | 'compare' | 'buy';
 
 export type CTALevel = 'soft' | 'mid' | 'strong';
 

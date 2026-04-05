@@ -29,7 +29,6 @@ import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { CTASection } from '@/components/reusable/single/CTASection';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
-import { JourneyNavigator } from '@/components/system/JourneyNavigator';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import {
   Breadcrumb,
@@ -514,7 +513,6 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
         </div>
 
         <SmartRelatedSection slug={currentSlug} type='resource' />
-        <JourneyNavigator slug={currentSlug} type='resource' />
 
         {/* CTA section - full width outside container */}
         <div className='resource-page__cta'>

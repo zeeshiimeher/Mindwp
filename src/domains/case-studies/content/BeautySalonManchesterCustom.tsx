@@ -177,7 +177,7 @@ function buildBeautySalonManchesterCustom(): CaseStudyData {
 
   const ctaOverrides = {
     primaryButtonLabel: 'Get Your Free Beauty Salon Strategy Call',
-    primaryButtonHref: '/conversation?source=beauty-salon-case-study',
+    primaryButtonHref: '/contact?source=beauty-salon-case-study',
     metaItems: [
       { text: 'Free 20-minute strategy call' },
       { text: 'Custom beauty salon solutions' },

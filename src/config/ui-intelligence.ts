@@ -3,7 +3,7 @@
  *
  * Pure config for graph-powered UI components.
  * No logic — just lookup tables consumed by SmartRelatedSection, SmartCTA,
- * JourneyNavigator, and ClusterPageLayout.
+ * and ClusterPageLayout.
  *
  * Rules:
  * - All data flows from graph query API
@@ -157,52 +157,6 @@ export const CTA_CONFIG: Record<ContentNodeType, CTAConfig> = {
     description: 'Find the specific context that matches your business.',
     actionLabel: 'Start a Conversation',
     actionHref: '/contact',
-  },
-};
-
-// ── Journey Config ───────────────────────────────────────────────────
-
-type SlotKey = 'services' | 'resources' | 'blog' | 'caseStudies' | 'industries';
-
-interface JourneyStep {
-  slotPriority: SlotKey[];
-  label: string;
-}
-
-/**
- * Journey flow: defines the "next step" for each page type.
- * The navigator picks the first non-empty slot from slotPriority.
- *
- * Flow: Blog → Resource → Case Study → Service (destination)
- */
-export const JOURNEY_CONFIG: Record<ContentNodeType, JourneyStep> = {
-  blog: {
-    slotPriority: ['resources'],
-    label: 'Next: Apply What You Read',
-  },
-  resource: {
-    slotPriority: ['services'],
-    label: 'Next: See the Service',
-  },
-  'case-study': {
-    slotPriority: ['resources', 'industries'],
-    label: 'Next: Plan Your Approach',
-  },
-  service: {
-    slotPriority: [],
-    label: '',
-  },
-  feature: {
-    slotPriority: ['services'],
-    label: 'Next: Explore the Service',
-  },
-  'industry-detail': {
-    slotPriority: ['services', 'caseStudies', 'resources'],
-    label: 'Next: Take the First Step',
-  },
-  'industry-category': {
-    slotPriority: ['services'],
-    label: 'Next: See the Services',
   },
 };
 

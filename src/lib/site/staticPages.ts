@@ -20,7 +20,7 @@ export const STATIC_PAGES: StaticPage[] = [
   { name: 'Case Studies', url: '/case-studies' },
   { name: 'FAQ', url: '/faq' },
   { name: 'Blog', url: '/blog' },
-  { name: 'Start a Conversation', url: '/conversation' },
+  { name: 'Start a Conversation', url: '/contact' },
   { name: 'Contact Us', url: '/contact' },
   { name: 'Sitemap (this page)', url: '/sitemap' },
   { name: 'Privacy Policy', url: '/privacy' },

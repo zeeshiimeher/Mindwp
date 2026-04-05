@@ -1,5 +1,5 @@
 /**
- * Conversion Validation (Warning-only)
+ * Conversion Validation (Warning-only) — Phase 10
  *
  * Detects conversion weaknesses WITHOUT breaking the build.
  * This is an audit layer — it highlights problems for humans to fix.
@@ -7,17 +7,14 @@
  * Rules:
  *   1. Missing CTA — page has no CTA section/structure
  *   2. No service link — blog/resource pages have no path to monetization
- *   3. No journey progression — page does not push user forward
+ *   3. No content progression — page has no related content via SmartRelatedSection
  *
  * STRICT_MODE = false → warnings only, never exits non-zero
- * Future: set STRICT_MODE = true to fail build on critical issues
  */
 
 import { AUTHORITY_MAP } from '../../src/lib/authority/generated/authorityMap';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
-import { generateInternalLinks } from '../../src/lib/internal-linking/engine';
-import { isJourneyNextStep } from '../../src/lib/internal-linking/journey';
-import { getNodeBySlug } from '../../src/lib/content-graph/registry';
+import { getRelatedContent } from '../../src/lib/graph/query';
 import type { ContentNodeType } from '../../src/lib/content-graph/types';
 import { ISSUE_TYPES, ISSUE_MESSAGES } from '../../src/lib/dev/conversionIssues';
 
@@ -57,13 +54,13 @@ function detectWarnings(
   type: ContentNodeType
 ): ConversionWarning[] {
   const warnings: ConversionWarning[] = [];
-  const links = generateInternalLinks(slug, type);
+  const related = getRelatedContent(slug, type);
 
   // Rule 1 — Missing CTA
   // Blog and resource pages may lack a structural CTA
   if (!TYPES_WITH_STRUCTURAL_CTA.has(type)) {
-    // Check if any generated link targets a service (acts as soft CTA path)
-    const hasServicePath = links.some(l => l.targetType === 'service');
+    // Check if any related content targets a service (acts as soft CTA path)
+    const hasServicePath = related.services && related.services.length > 0;
     if (!hasServicePath) {
       warnings.push({
         slug,
@@ -77,7 +74,7 @@ function detectWarnings(
 
   // Rule 2 — No service link (for blog/resource)
   if (TYPES_NEEDING_SERVICE_LINK.has(type)) {
-    const hasServiceLink = links.some(l => l.targetType === 'service');
+    const hasServiceLink = related.services && related.services.length > 0;
     if (!hasServiceLink) {
       warnings.push({
         slug,
@@ -89,18 +86,15 @@ function detectWarnings(
     }
   }
 
-  // Rule 3 — No journey progression
-  const hasJourneyNextStep = links.some(l => {
-    const targetNode = getNodeBySlug(l.targetSlug);
-    return targetNode != null && isJourneyNextStep(type, targetNode.type);
-  });
-
-  if (!hasJourneyNextStep) {
+  // Rule 3 — No content progression (no related content from graph)
+  const allSlots = Object.values(related);
+  const hasAnyRelated = allSlots.some(items => items && items.length > 0);
+  if (!hasAnyRelated) {
     warnings.push({
       slug,
       type,
       rule: ISSUE_TYPES.NO_JOURNEY,
-      message: ISSUE_MESSAGES[ISSUE_TYPES.NO_JOURNEY],
+      message: 'Page has no related content via SmartRelatedSection (no intent-based progression)',
       severity: 'warning',
     });
   }

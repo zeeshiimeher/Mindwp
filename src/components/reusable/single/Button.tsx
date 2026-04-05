@@ -27,7 +27,7 @@ const BLOCK = 'btn';
  * </Button>
  *
  * // White button for dark backgrounds
- * <Button variant="white" href="/conversation">
+ * <Button variant="white" href="/contact">
  *   Start a Conversation
  * </Button>
  * ```

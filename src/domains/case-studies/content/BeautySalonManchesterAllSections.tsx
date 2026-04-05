@@ -214,7 +214,7 @@ function buildBeautySalonManchesterAllSections(): CaseStudyData {
       },
       cta: {
         primaryButtonLabel: 'Book a Free Strategy Call',
-        primaryButtonHref: '/conversation?source=all-sections-case-study',
+        primaryButtonHref: '/contact?source=all-sections-case-study',
         metaItems: [
           { text: '20-minute discovery call' },
           { text: 'Actionable system roadmap' },

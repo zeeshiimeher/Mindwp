@@ -261,7 +261,7 @@ const USAGE_SEEDED_PRESETS: Record<string, Record<string, unknown>> = {
   Button: {
     label: 'Start conversation',
     icon: getMockIcon(0),
-    href: '/conversation',
+    href: '/contact',
     variant: 'primary',
   },
   CTASection: {
@@ -317,7 +317,7 @@ const USAGE_SEEDED_PRESETS: Record<string, Record<string, unknown>> = {
         title: 'Medium title placeholder text',
         description:
           'Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim.',
-        primaryAction: { label: 'Call to action', href: '/conversation' },
+        primaryAction: { label: 'Call to action', href: '/contact' },
       },
     ],
   },
@@ -369,7 +369,7 @@ const USAGE_SEEDED_PRESETS: Record<string, Record<string, unknown>> = {
         title: 'Long headline to turn your visitors into customers',
         description: 'Short supporting explanation for panel content.',
         checklist: ['Fast lorem ipsum text', 'Fast lorem ipsum text', 'Fast lorem ipsum text'],
-        primaryAction: { label: 'Call to action', href: '/conversation' },
+        primaryAction: { label: 'Call to action', href: '/contact' },
         secondaryAction: { label: 'Secondary action', href: '/resources' },
       },
       {
@@ -377,7 +377,7 @@ const USAGE_SEEDED_PRESETS: Record<string, Record<string, unknown>> = {
         title: 'Long headline to turn your visitors into customers',
         description: 'Short supporting explanation for panel content.',
         checklist: ['Fast lorem ipsum text', 'Fast lorem ipsum text', 'Fast lorem ipsum text'],
-        primaryAction: { label: 'Call to action', href: '/conversation' },
+        primaryAction: { label: 'Call to action', href: '/contact' },
         secondaryAction: { label: 'Secondary action', href: '/resources' },
       },
     ],
@@ -1005,7 +1005,7 @@ const USAGE_SEEDED_PRESETS: Record<string, Record<string, unknown>> = {
         features: ['Lead qualification', 'Follow-up journeys', 'Attribution reporting'],
         popular: true,
         buttonText: 'Start conversation',
-        buttonHref: '/conversation',
+        buttonHref: '/contact',
       },
     ],
   },

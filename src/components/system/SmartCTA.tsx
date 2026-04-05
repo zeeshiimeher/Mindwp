@@ -15,14 +15,13 @@
 import { CTASection } from '@/components/reusable/single/CTASection';
 import { CTA_CONFIG, type CTAIntensity } from '@/config/ui-intelligence';
 import type { ContentNodeType } from '@/lib/content-graph/types';
-import type { LinkIntent } from '@/lib/internal-linking/types';
-import { resolveCTA } from '@/lib/ui/ctaResolver';
+import { resolveCTA, type LinkIntent } from '@/lib/ui/ctaResolver';
 
 // ── Types ────────────────────────────────────────────────────────────
 
 interface SmartCTAProps {
   pageType: ContentNodeType;
-  /** Intent from internal linking system — overrides default intensity */
+  /** Intent — overrides default intensity */
   intent?: LinkIntent;
   /** Override the background color (Tailwind class) */
   backgroundColor?: string;
