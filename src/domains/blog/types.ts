@@ -5,6 +5,8 @@ export { BLOG_CATEGORY_REGISTRY } from './categoryRegistry';
 
 import type { BlogCategory } from './categoryRegistry';
 
+export type BlogIntent = 'PROBLEM' | 'SYSTEM' | 'FRAMEWORK';
+
 export type BlogPostSection =
   | {
       type: 'introduction';
@@ -71,6 +73,7 @@ export type BlogPostSection =
 export interface BlogPostData {
   slug: string;
   title: string;
+  intent: BlogIntent;
   metaTitle: string;
   metaDescription: string;
   seo: SharedSeoData & {
