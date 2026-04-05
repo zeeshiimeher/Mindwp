@@ -29,7 +29,7 @@ export function FeaturesLanding() {
       >
         <main>
           {/* Hero Section */}
-          <section className='feature-lnd feature-lnd__hero l-section bg-gradient-light'>
+          <section className='feature-lnd feature-lnd__hero l-section bg-gradient-surface-muted'>
             <div className='l-container'>
               <div className='feature-lnd__heroContent l-stack l-stack--loose'>
                 <Badge variant='secondary' context='section'>
@@ -88,7 +88,7 @@ export function FeaturesLanding() {
               icon: ArrowRight,
             }}
             cssPrefix='footer-cta'
-            backgroundColor='gradient-cta-1'
+            backgroundColor='bg-gradient-primary'
           />
         </main>
       </ErrorBoundary>

@@ -50,7 +50,7 @@ export const systemMigrationPlatformConsolidationPage = {
       'A more stable foundation for future website and workflow work',
     ],
     cssPrefix: 'system-migration-hero',
-    backgroundColor: 'bg-gradient-light',
+    backgroundColor: 'bg-gradient-surface-muted',
   },
   sections: {
     foundation: {

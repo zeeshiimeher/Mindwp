@@ -55,7 +55,7 @@ export const bricksBuilderPage = {
       'We build WordPress websites using Bricks Builder where performance and clean output matter. Approved designs are converted precisely, with a build that stays fast, maintainable, and easy to extend.',
     primaryAction: { label: 'Start a Conversation', href: '/contact' },
     cssPrefix: 'bricks-hero',
-    backgroundColor: 'bg-gradient-light relative overflow-hidden',
+    backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },
   sections: {
     conversionSection: {

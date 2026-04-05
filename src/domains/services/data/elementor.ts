@@ -55,7 +55,7 @@ export const elementorPage = {
       'We build WordPress websites using Elementor where the visual output stays faithful to the approved design and the editing experience stays manageable over time. This is disciplined implementation, not a quick drag-and-drop assembly.',
     primaryAction: { label: 'Start a Conversation', href: '/contact' },
     cssPrefix: 'elementor-hero',
-    backgroundColor: 'bg-gradient-light relative overflow-hidden',
+    backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },
   sections: {
     conversionSection: {

@@ -289,7 +289,7 @@ export function ServicesLanding() {
       >
         <main role='main'>
           {/* Hero Section */}
-          <section className='service-lnd service-lnd__hero l-section bg-gradient-light'>
+          <section className='service-lnd service-lnd__hero l-section bg-gradient-surface-muted'>
             <div className='l-container'>
               <div className='service-lnd__heroContent l-mx-auto text-center l-stack l-stack--loose'>
                 <Badge variant='primary'>Services Architecture</Badge>
@@ -329,7 +329,7 @@ export function ServicesLanding() {
                         revenue chain.
                       </p>
                     </div>
-                    <Card className='border-2 shadow-xl bg-gradient-light'>
+                    <Card className='border-2 shadow-xl bg-gradient-surface-muted'>
                       <div className='p-8 md:p-10 l-grid l-gap-8 lg:l-grid-2 l-items-center'>
                         <div className='l-stack l-stack--loose'>
                           <div className='l-row l-items-center l-gap-3'>
@@ -415,7 +415,7 @@ export function ServicesLanding() {
             href: '/contact',
           }}
           cssPrefix='footer-cta'
-          backgroundColor='gradient-cta-1'
+          backgroundColor='bg-gradient-primary'
         />
       </ErrorBoundary>
     </>

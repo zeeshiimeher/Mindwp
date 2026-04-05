@@ -64,7 +64,7 @@ export function CaseStudyHeroSection({
   location,
   completedDate,
   cssPrefix = 'case-study-detail-hero',
-  backgroundColor = 'bg-gradient-light',
+  backgroundColor = 'bg-gradient-surface-muted',
 }: CaseStudyHeroSectionProps) {
   const Heading = headingTag || 'h1';
   const isPlainTextIntro =

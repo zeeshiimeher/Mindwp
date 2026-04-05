@@ -58,7 +58,7 @@ export const conversionFunnelSystemPage = {
       'Less drop-off between traffic and action',
     ],
     cssPrefix: 'conversion-funnel-hero',
-    backgroundColor: 'bg-gradient-light',
+    backgroundColor: 'bg-gradient-surface-muted',
   },
   sections: {
     foundation: {

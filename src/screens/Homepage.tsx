@@ -292,7 +292,7 @@ function SmartWebsiteFrameworkSection() {
             href: smartWebsiteFrameworkData.cta.primaryAction.href,
           }}
           headingLevel='h3'
-          backgroundColor='gradient-cta-1'
+          backgroundColor='bg-gradient-primary'
           wrapper='none'
           includeContainer={false}
         />
@@ -348,7 +348,7 @@ function ClientJourneySection() {
               href: clientJourneyData.cta.primaryAction.href,
             }}
             headingLevel='h3'
-            backgroundColor='cta--primary gradient-cta-1'
+            backgroundColor='cta--primary bg-gradient-primary'
             wrapper='none'
             includeContainer={false}
           />
@@ -739,7 +739,7 @@ function FooterCTASection() {
       }}
       metaItems={ctaData.footer.metaItems}
       cssPrefix='bg-background'
-      backgroundColor='gradient-cta-1'
+      backgroundColor='bg-gradient-primary'
     />
   );
 }

@@ -251,7 +251,7 @@ export function FAQPage() {
         {/* CTA */}
         <section className='footer-cta cta'>
           <div className='l-container'>
-            <div className='cta__panel cta__content gradient-cta-1'>
+            <div className='cta__panel cta__content bg-gradient-primary'>
               <h2 className='cta-heading'>Ready to Get Started?</h2>
               <p className='cta__text'>
                 Book a free demo and we&apos;ll answer all your questions about how MindWP can grow

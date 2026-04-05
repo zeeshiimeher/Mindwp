@@ -49,7 +49,7 @@ export const reputationReviewSystemsPage = {
       'Stronger trust signals that support enquiries and local credibility',
     ],
     cssPrefix: 'reputation-review-hero',
-    backgroundColor: 'bg-gradient-light',
+    backgroundColor: 'bg-gradient-surface-muted',
   },
   sections: {
     foundation: {

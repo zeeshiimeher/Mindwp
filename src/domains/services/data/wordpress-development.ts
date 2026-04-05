@@ -51,7 +51,7 @@ export const wordpressDevelopmentPage = {
       'A build that stays maintainable as things change',
     ],
     cssPrefix: 'wordpress-development-hero',
-    backgroundColor: 'bg-gradient-light',
+    backgroundColor: 'bg-gradient-surface-muted',
   },
   sections: {
     foundation: {

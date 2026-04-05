@@ -12,7 +12,7 @@ export function CaseStudiesPage() {
     <div className='min-h-screen'>
       <main>
         {/* Hero */}
-        <section className='l-section bg-gradient-light'>
+        <section className='l-section bg-gradient-surface-muted'>
           <div className='l-container'>
             <div className='text-center l-stack l-stack--loose'>
               <Badge variant='outline'>Customer Success Stories</Badge>
@@ -124,7 +124,7 @@ export function CaseStudiesPage() {
             { text: 'Built for small businesses' },
           ]}
           cssPrefix='case-studies-cta'
-          backgroundColor='gradient-cta-1'
+          backgroundColor='bg-gradient-primary'
         />
       </main>
     </div>

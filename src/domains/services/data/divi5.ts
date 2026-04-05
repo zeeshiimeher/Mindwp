@@ -44,7 +44,7 @@ export const divi5Page = {
       'We build WordPress websites using Divi where the team needs a flexible editing experience without losing visual or technical control. Approved designs are converted precisely, with a build that stays maintainable over time.',
     primaryAction: { label: 'Start a Conversation', href: '/contact' },
     cssPrefix: 'divi5-hero',
-    backgroundColor: 'bg-gradient-light relative overflow-hidden',
+    backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },
   sections: {
     conversionSection: {

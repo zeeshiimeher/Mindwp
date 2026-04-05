@@ -1,7 +1,7 @@
 export default function CookiePolicy() {
   return (
     <div className='legal-page legal-cookies'>
-      <section className='legal-cookies-hero l-section bg-gradient-light'>
+      <section className='legal-cookies-hero l-section bg-gradient-surface-muted'>
         <div className='legal-cookies-hero-container l-container'>
           <div className='legal-content text-center'>
             <h1>Cookie Policy</h1>

@@ -100,7 +100,7 @@ export function About() {
       {/* Final CTA */}
       <section className='footer-cta cta'>
         <div className='l-container'>
-          <div className='cta__panel cta__content gradient-cta-1'>
+          <div className='cta__panel cta__content bg-gradient-primary'>
             <h2 className='cta-heading'>If this approach resonates, let’s talk.</h2>
             <p className='cta__text'>
               We work best with service businesses that value structure, clarity, and deliberate

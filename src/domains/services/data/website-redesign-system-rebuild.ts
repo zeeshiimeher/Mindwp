@@ -59,7 +59,7 @@ export const websiteRedesignSystemRebuildPage = {
       'Reduced clutter and better future maintainability',
     ],
     cssPrefix: 'website-redesign-rebuild-hero',
-    backgroundColor: 'bg-gradient-light',
+    backgroundColor: 'bg-gradient-surface-muted',
   },
   sections: {
     foundation: {

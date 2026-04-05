@@ -36,8 +36,8 @@ interface SmartCTAProps {
 
 const INTENSITY_STYLES: Record<CTAIntensity, { backgroundColor: string; cssPrefix: string }> = {
   soft: { backgroundColor: 'blog-surface--muted', cssPrefix: 'cta-soft' },
-  mid: { backgroundColor: 'gradient-cta-1', cssPrefix: 'cta-mid' },
-  strong: { backgroundColor: 'gradient-cta-2', cssPrefix: 'cta-strong' },
+  mid: { backgroundColor: 'bg-gradient-primary', cssPrefix: 'cta-mid' },
+  strong: { backgroundColor: 'bg-gradient-secondary', cssPrefix: 'cta-strong' },
 };
 
 // ── Component ────────────────────────────────────────────────────────

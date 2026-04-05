@@ -502,7 +502,7 @@ export function CaseStudyTemplate({
             href: ctaSection.primaryActionHref ?? resolvedCtaPrimaryButtonHref,
           }}
           metaItems={ctaSection.metaItems ?? resolvedCtaMetaItems}
-          backgroundColor='gradient-cta-1'
+          backgroundColor='bg-gradient-primary'
         />
       )}
     </div>

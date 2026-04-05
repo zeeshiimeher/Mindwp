@@ -48,7 +48,7 @@ export const missedCallRecoverySystemPage = {
       'Stronger handoff into follow-up, booking, or team action',
     ],
     cssPrefix: 'missed-call-recovery-hero',
-    backgroundColor: 'bg-gradient-light',
+    backgroundColor: 'bg-gradient-surface-muted',
   },
   sections: {
     foundation: {

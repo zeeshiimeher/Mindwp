@@ -49,7 +49,7 @@ export const reviewAutomationSystemPage = {
       'Stronger review velocity without over-messaging customers',
     ],
     cssPrefix: 'review-automation-hero',
-    backgroundColor: 'bg-gradient-light',
+    backgroundColor: 'bg-gradient-surface-muted',
   },
   sections: {
     foundation: {

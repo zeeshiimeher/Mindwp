@@ -74,7 +74,7 @@ export function ResourcesHub() {
     <div className='resources-hub'>
       <main>
         {/* Hero Section */}
-        <section className='resources-hub__hero l-section bg-gradient-light'>
+        <section className='resources-hub__hero l-section bg-gradient-surface-muted'>
           <div className='l-container resources-hub__hero-content'>
             <div className='resources-hub__hero-badge'>
               <Badge variant='secondary' context='hero'>
@@ -196,7 +196,7 @@ export function ResourcesHub() {
             href: hubData.cta.primaryAction.href,
           }}
           cssPrefix='footer-cta'
-          backgroundColor='gradient-cta-1'
+          backgroundColor='bg-gradient-primary'
         />
         <div className='resources-hub__cta-actions'>
           <Button

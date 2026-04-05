@@ -58,7 +58,7 @@ export const leadReactivationSystemPage = {
       'Less pipeline waste from inconsistent re-engagement',
     ],
     cssPrefix: 'lead-reactivation-hero',
-    backgroundColor: 'bg-gradient-light',
+    backgroundColor: 'bg-gradient-surface-muted',
   },
   sections: {
     foundation: {

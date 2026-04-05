@@ -48,7 +48,7 @@ export function BlogFooterCTA({
   return (
     <section className='footer-cta cta'>
       <div className='l-container'>
-        <div className='cta__panel cta__content gradient-cta-1'>
+        <div className='cta__panel cta__content bg-gradient-primary'>
           <h2 className='cta-heading'>{title}</h2>
 
           <p className='cta__text'>{description}</p>

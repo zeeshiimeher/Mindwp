@@ -50,7 +50,7 @@ export const marketingAutomationSetupPage = {
       'Cleaner handoff between automation and team action',
     ],
     cssPrefix: 'marketing-automation-hero',
-    backgroundColor: 'bg-gradient-light',
+    backgroundColor: 'bg-gradient-surface-muted',
   },
   sections: {
     foundation: {

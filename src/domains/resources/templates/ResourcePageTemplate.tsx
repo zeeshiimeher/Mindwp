@@ -355,7 +355,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
     <div className='resource-page'>
       <main className='resource-page__main'>
         {/* 1. HERO SECTION */}
-        <section className='resource-page__hero l-section bg-gradient-light'>
+        <section className='resource-page__hero l-section bg-gradient-surface-muted'>
           <div className='l-container'>
             <Breadcrumb className='resource-page__breadcrumb'>
               <BreadcrumbList>

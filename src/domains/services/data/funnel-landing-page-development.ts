@@ -49,7 +49,7 @@ export const funnelLandingPageDevelopmentPage = {
       'Better fit between visitor intent and next-step action',
     ],
     cssPrefix: 'funnel-landing-development-hero',
-    backgroundColor: 'bg-gradient-light',
+    backgroundColor: 'bg-gradient-surface-muted',
   },
   sections: {
     foundation: {

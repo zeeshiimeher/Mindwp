@@ -1,7 +1,7 @@
 export default function PrivacyPolicy() {
   return (
     <div className='legal-page legal-privacy'>
-      <section className='legal-privacy-hero l-section bg-gradient-light'>
+      <section className='legal-privacy-hero l-section bg-gradient-surface-muted'>
         <div className='legal-privacy-hero-container l-container'>
           <div className='legal-content text-center'>
             <h1>Privacy Policy</h1>

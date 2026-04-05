@@ -44,7 +44,7 @@ export const localSeoAuthorityPage = {
       'Most SEO work skips the website and jumps straight to tactics. We do it the other way around. Your services need to be clearly presented, your local presence needs to be consistent, and your enquiry paths need to make sense — before optimisation can do its job properly. This is ongoing visibility work built on a sound website foundation.',
     primaryAction: { label: 'Start a Conversation', href: '/contact' },
     cssPrefix: 'website-seo-hero',
-    backgroundColor: 'bg-gradient-light',
+    backgroundColor: 'bg-gradient-surface-muted',
     list: [
       'Website reviewed before optimisation begins',
       'Local presence maintained consistently over time',

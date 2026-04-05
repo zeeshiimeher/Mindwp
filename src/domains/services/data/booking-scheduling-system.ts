@@ -48,7 +48,7 @@ export const bookingSchedulingSystemPage = {
       'Less scheduling friction for staff and customers',
     ],
     cssPrefix: 'booking-scheduling-hero',
-    backgroundColor: 'bg-gradient-light',
+    backgroundColor: 'bg-gradient-surface-muted',
   },
   sections: {
     foundation: {

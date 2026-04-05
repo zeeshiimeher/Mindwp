@@ -1,7 +1,7 @@
 export default function TermsConditions() {
   return (
     <div className='legal-page legal-terms'>
-      <section className='legal-terms-hero l-section bg-gradient-light'>
+      <section className='legal-terms-hero l-section bg-gradient-surface-muted'>
         <div className='legal-terms-hero-container l-container'>
           <div className='legal-content text-center'>
             <h1>Terms &amp; Conditions</h1>

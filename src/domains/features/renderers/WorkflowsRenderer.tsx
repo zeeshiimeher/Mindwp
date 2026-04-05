@@ -156,7 +156,7 @@ export default function WorkflowsRenderer() {
               href: cta.primaryAction.href,
             }}
             cssPrefix='workflows-cta'
-            backgroundColor='gradient-cta-2'
+            backgroundColor='bg-gradient-secondary'
           />
 
           <FeatureImplementationServicesSection

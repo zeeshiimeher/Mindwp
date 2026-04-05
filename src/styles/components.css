@@ -399,9 +399,9 @@
 
 /* Outline badges on dark / gradient backgrounds (homepage source of truth) */
 .bg-hero-dark .badge-outline,
-.bg-gradient-cta-1 .badge-outline,
-.bg-gradient-cta-2 .badge-outline,
-.bg-gradient-cta-3 .badge-outline,
+.bg-gradient-primary .badge-outline,
+.bg-gradient-secondary .badge-outline,
+.bg-gradient-accent .badge-outline,
 .bg-foreground .badge-outline {
   border-color: var(--color-inverse-30);
   background-color: var(--color-inverse-10);
@@ -1684,7 +1684,7 @@
   border: 2px solid var(--c-primary);
   border-radius: var(--radius-xl);
   padding: var(--space-7);
-  background: var(--gradient-bg-light);
+  background: var(--gradient-surface-muted);
 }
 
 .framework-section-journey-title {
@@ -1898,7 +1898,7 @@
 .implementation-results-quote {
   border-radius: var(--radius-lg);
   padding: var(--space-7);
-  background: var(--gradient-bg-light);
+  background: var(--gradient-surface-muted);
 }
 
 @media (min-width: 768px) {
@@ -4945,7 +4945,7 @@ summary.component-library__sidebar-link {
   padding: var(--card-padding);
   border: 0;
   color: var(--c-text-inverse);
-  background: var(--gradient-cta-1);
+  background: var(--gradient-primary);
 }
 
 .highlight-card__icon {
@@ -6332,12 +6332,12 @@ summary.component-library__sidebar-link {
 
 .explore-cards-section__card--gradient-blue,
 .c-explore-cards-section__card--gradient-blue {
-  background-image: var(--gradient-tint-blue);
+  background-image: linear-gradient(135deg, var(--color-surface-accent-blue) 0%, var(--c-surface) 100%);
 }
 
 .explore-cards-section__card--gradient-teal,
 .c-explore-cards-section__card--gradient-teal {
-  background-image: var(--gradient-tint-accent);
+  background-image: linear-gradient(135deg, var(--color-surface-accent) 0%, var(--c-surface) 100%);
 }
 
 .explore-cards-section__card--gradient-purple,
@@ -7979,7 +7979,7 @@ summary.component-library__sidebar-link {
 
 /* CTA panel — consolidated from footer-cta-container */
 .cta__panel {
-  background: var(--gradient-cta-1);
+  background: var(--gradient-primary);
   color: var(--c-text-inverse);
   text-align: center;
   border-radius: var(--radius);
@@ -8398,34 +8398,37 @@ h3.cta-heading {
    GRADIENT BACKGROUNDS
    ========================================================= */
 
-.bg-gradient-cta-1 {
-  background: var(--gradient-cta-1);
+.bg-gradient-primary {
+  background: var(--gradient-primary);
   color: var(--c-text-inverse);
 }
 
-.bg-gradient-cta-2 {
-  background: var(--gradient-cta-2);
+.bg-gradient-secondary {
+  background: var(--gradient-secondary);
   color: var(--c-text-inverse);
 }
 
-.bg-gradient-cta-3 {
-  background: var(--gradient-cta-3);
+.bg-gradient-accent {
+  background: var(--gradient-accent);
   color: var(--c-text-inverse);
 }
 
-.bg-gradient-cta-4 {
-  background: var(--gradient-cta-4);
+.bg-gradient-hero {
+  background: var(--gradient-hero);
   color: var(--c-text-inverse);
 }
 
-.bg-gradient-section {
-  background: var(--gradient-section);
+.bg-gradient-dark {
+  background: var(--gradient-dark);
   color: var(--c-text-inverse);
 }
 
-/* mostly used in inner pages hero section bg */
-.bg-gradient-light {
-  background: var(--gradient-bg-light);
+.bg-gradient-surface-soft {
+  background: var(--gradient-surface-soft);
+}
+
+.bg-gradient-surface-muted {
+  background: var(--gradient-surface-muted);
 }
 
 /* =========================================================
@@ -8613,14 +8616,6 @@ h3.cta-heading {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-}
-
-.gradient-cta-1 {
-  background: var(--gradient-primary);
-}
-
-.gradient-cta-2 {
-  background: var(--gradient-cta-2);
 }
 
 .button-icon {
@@ -9316,7 +9311,7 @@ h3.cta-heading {
       color-mix(in oklab, var(--c-dark) 32%, transparent),
       color-mix(in oklab, var(--c-dark) 18%, transparent)
     ),
-    var(--gradient-cta-1);
+    var(--gradient-primary);
   color: var(--c-text-inverse);
 }
 
@@ -9800,7 +9795,7 @@ h3.cta-heading {
 }
 
 .c-feature-stats-mockup-section__visual {
-  background: var(--gradient-cta-10);
+  background: var(--gradient-primary);
   color: var(--c-text-inverse);
 }
 

@@ -58,7 +58,7 @@ export const unifiedCommunicationSystemPage = {
       'Better ownership from first message to next action',
     ],
     cssPrefix: 'unified-communication-hero',
-    backgroundColor: 'bg-gradient-light',
+    backgroundColor: 'bg-gradient-surface-muted',
   },
   sections: {
     foundation: {

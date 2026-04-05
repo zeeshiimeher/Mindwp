@@ -303,16 +303,6 @@
   --gradient-accent-from:  var(--brand-accent);
   --gradient-accent-to:    var(--brand-secondary);
 
-  /* ---- Backwards-compat aliases (mapped to core — do NOT add new ones) ---- */
-  --gradient-cta-1:  var(--gradient-primary);
-  --gradient-cta-2:  var(--gradient-secondary);
-  --gradient-cta-3:  linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
-  --gradient-cta-4:  var(--gradient-accent);
-  --gradient-cta-10: var(--gradient-primary);  /* was blue→purple, now brand-aligned */
-  --gradient-section: var(--gradient-dark);
-  --gradient-bg-light: var(--gradient-surface-muted);
-  --gradient-tint-blue: linear-gradient(135deg, var(--color-surface-accent-blue) 0%, var(--c-surface) 100%);
-  --gradient-tint-accent: linear-gradient(135deg, var(--color-surface-accent) 0%, var(--c-surface) 100%);
   --gradient-hero-fade: linear-gradient(
     to bottom,
     color-mix(

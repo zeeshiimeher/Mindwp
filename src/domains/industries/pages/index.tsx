@@ -164,7 +164,7 @@ export default function IndustriesLanding() {
             icon: ArrowRight,
           }}
           cssPrefix='footer-cta'
-          backgroundColor='gradient-cta-1'
+          backgroundColor='bg-gradient-primary'
         />
       </main>
     </div>
