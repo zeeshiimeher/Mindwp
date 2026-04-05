@@ -158,6 +158,7 @@ export const customerFeedbackLoopFramework: ResourceData = {
   title: 'Customer Feedback Loop Framework',
   description:
     'Build a structured feedback loop that captures customer sentiment after every job, routes issues to private resolution, and drives continuous service improvement.',
+  intent: 'EDUCATIONAL',
   category: 'reputation-review',
   publishedAt: '2025-12-13',
   systems: ['reputation-review'],
@@ -234,7 +235,7 @@ export const customerFeedbackLoopFramework: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/reputation-review-systems',
       },
     },
     {

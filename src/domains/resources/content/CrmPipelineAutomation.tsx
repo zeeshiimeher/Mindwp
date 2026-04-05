@@ -197,6 +197,7 @@ export const crmPipelineAutomation: ResourceData = {
   title: 'CRM Pipeline Automation: Stop Losing Leads (Stages + Follow-Up Templates)',
   description:
     'A practical CRM pipeline you can set up in under an hour: stages, automation triggers, and follow-up templates so every lead gets a next step.',
+  intent: 'ACTIONABLE',
   category: 'crm-automation',
   publishedAt: '2026-02-05',
   systems: ['revenue-growth'],
@@ -306,7 +307,7 @@ export const crmPipelineAutomation: ResourceData = {
         { text: 'Follow-up templates + automations', icon: 'check' },
         { text: 'Reporting so you can track wins', icon: 'check' },
       ],
-      button: { text: primaryCta.label, url: primaryCta.href },
+      button: { text: primaryCta.label, url: '/services/growth-revenue-systems' },
     },
     {
       type: 'sidebar-cta',

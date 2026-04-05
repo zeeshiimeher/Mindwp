@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const websiteCrmIntegrationForServiceBusinesses: BlogPostData = {
   slug: 'website-crm-integration-for-service-businesses',
   title: 'Website CRM Integration for Service Businesses',
+  intent: 'SYSTEM',
   metaTitle: 'Website CRM Integration for Service Businesses',
   metaDescription:
     'Learn how website CRM integration for service businesses connects lead capture, pipeline management, and follow-up automation into one operational workflow.',
@@ -118,7 +119,7 @@ export const websiteCrmIntegrationForServiceBusinesses: BlogPostData = {
       content:
         'If your website captures leads but your CRM remains disconnected, you are losing data, time, and opportunities with every submission. Explore how website CRM integration creates a seamless lead handling workflow.',
       buttonText: 'Explore Smart Website Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const authoritySignalsForLocalSearch: BlogPostData = {
   slug: 'authority-signals-for-local-search',
   title: 'Authority Signals for Local Search',
+  intent: 'FRAMEWORK',
   metaTitle: 'Authority Signals for Local Search Explained',
   metaDescription:
     'Learn how authority signals for local search build the trust and prominence that determine whether your business appears in competitive local search results.',
@@ -126,7 +127,7 @@ export const authoritySignalsForLocalSearch: BlogPostData = {
       content:
         'If competitors consistently outrank you in local search despite similar service quality, the authority gap needs systematic attention. See how local authority systems build the signals that matter.',
       buttonText: 'Explore Local SEO Services',
-      buttonUrl: '/services',
+      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

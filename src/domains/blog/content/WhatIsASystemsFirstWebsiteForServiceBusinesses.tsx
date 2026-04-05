@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whatIsASystemsFirstWebsiteForServiceBusinesses: BlogPostData = {
   slug: 'what-is-a-systems-first-website-for-service-businesses',
   title: 'What Is a Systems-First Website for Service Businesses',
+  intent: 'FRAMEWORK',
   metaTitle: 'What Is a Systems-First Website for Services',
   metaDescription:
     'Understand what is a systems-first website and how this infrastructure-led approach helps service businesses capture, qualify, and route leads automatically.',
@@ -127,7 +128,7 @@ export const whatIsASystemsFirstWebsiteForServiceBusinesses: BlogPostData = {
       content:
         'If your current website looks good but underperforms on lead generation, the issue may be structural. Learn how a systems-first approach builds conversion into the foundation.',
       buttonText: 'Explore Smart Website Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

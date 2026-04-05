@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const websiteCrmIntegrationForSalons: BlogPostData = {
   slug: 'website-crm-integration-for-salons',
   title: 'Website CRM Integration for Salons',
+  intent: 'SYSTEM',
   metaTitle: 'Website CRM Integration for Salons Explained',
   metaDescription:
     'Explore how website CRM integration for salons connects booking forms and enquiries directly to client records and automated follow-up workflows.',
@@ -103,7 +104,7 @@ export const websiteCrmIntegrationForSalons: BlogPostData = {
       content:
         'If your salon website and client management system operate independently, integration can unify them. See how website systems connect to CRM for service businesses.',
       buttonText: 'Explore Website Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

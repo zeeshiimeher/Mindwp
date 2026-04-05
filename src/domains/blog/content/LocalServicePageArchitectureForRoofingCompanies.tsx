@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const localServicePageArchitectureForRoofingCompanies: BlogPostData = {
   slug: 'local-service-page-architecture-for-roofing-companies',
   title: 'Local Service Page Architecture for Roofing Companies',
+  intent: 'FRAMEWORK',
   metaTitle: 'Local Service Page Architecture for Roofing Companies',
   metaDescription:
     'Discover how local service page architecture for roofing companies creates location-specific landing pages that rank for area-based roofing searches.',
@@ -103,7 +104,7 @@ export const localServicePageArchitectureForRoofingCompanies: BlogPostData = {
       content:
         'If your roofing company serves multiple areas but only has one generic service area page, local service page architecture can expand your reach. See how website systems support local visibility.',
       buttonText: 'Explore Local SEO',
-      buttonUrl: '/services',
+      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

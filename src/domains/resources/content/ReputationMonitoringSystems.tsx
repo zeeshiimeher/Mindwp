@@ -158,6 +158,7 @@ export const reputationMonitoringSystems: ResourceData = {
   title: 'Reputation Monitoring Systems',
   description:
     'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
+  intent: 'ACTIONABLE',
   category: 'reputation-review',
   publishedAt: '2026-01-10',
   systems: ['reputation-review'],
@@ -234,7 +235,7 @@ export const reputationMonitoringSystems: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/reputation-review-systems',
       },
     },
     {

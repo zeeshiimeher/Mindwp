@@ -115,6 +115,7 @@ export const roofingReviewGenerationSystem: ResourceData = {
   title: 'Roofing Review Generation System',
   description:
     'See how roofing companies automate review collection after every job, build photo-rich Google reviews, and create the social proof homeowners need to choose their business.',
+  intent: 'ACTIONABLE',
   category: 'reputation-review',
   publishedAt: '2026-02-04',
   systems: ['reputation-review'],
@@ -178,7 +179,7 @@ export const roofingReviewGenerationSystem: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/reputation-review-systems',
       },
     },
     {

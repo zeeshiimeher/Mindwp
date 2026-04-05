@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const localVisibilityFrameworkForServiceBusinesses: BlogPostData = {
   slug: 'local-visibility-framework-for-service-businesses',
   title: 'Local Visibility Framework for Service Businesses',
+  intent: 'FRAMEWORK',
   metaTitle: 'Local Visibility Framework for Service Businesses',
   metaDescription:
     'Explore the local visibility framework for service businesses that connects search presence, listings, and review signals into one discovery system.',
@@ -121,7 +122,7 @@ export const localVisibilityFrameworkForServiceBusinesses: BlogPostData = {
       content:
         'If your business is visible in some areas but invisible in others, a structured visibility framework can close the gaps. Explore how local authority systems expand your discoverable presence.',
       buttonText: 'Explore Local SEO Services',
-      buttonUrl: '/services',
+      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

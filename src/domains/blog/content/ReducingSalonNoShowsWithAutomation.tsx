@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const reducingSalonNoShowsWithAutomation: BlogPostData = {
   slug: 'reducing-salon-no-shows-with-automation',
   title: 'Reducing Salon No Shows With Automation',
+  intent: 'SYSTEM',
   metaTitle: 'Reducing Salon No Shows With Automation Systems',
   metaDescription:
     'Learn how reducing salon no shows with automation through SMS reminders and confirmation workflows dramatically cuts missed appointments and revenue loss.',
@@ -109,7 +110,7 @@ export const reducingSalonNoShowsWithAutomation: BlogPostData = {
       content:
         'If your salon loses revenue to forgotten appointments every week, automated reminders can bring that number down dramatically. See how CRM automation reduces no-shows.',
       buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services',
+      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

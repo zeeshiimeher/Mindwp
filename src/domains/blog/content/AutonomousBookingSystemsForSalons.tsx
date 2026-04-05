@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const autonomousBookingSystemsForSalons: BlogPostData = {
   slug: 'autonomous-booking-systems-for-salons',
   title: 'Autonomous Booking Systems for Salons',
+  intent: 'SYSTEM',
   metaTitle: 'How Autonomous Booking Systems for Salons Work',
   metaDescription:
     'Explore how autonomous booking systems for salons use AI to handle scheduling, rescheduling, and waitlist management without manual intervention required.',
@@ -104,7 +105,7 @@ export const autonomousBookingSystemsForSalons: BlogPostData = {
       content:
         'If your salon team spends hours managing the diary manually, autonomous booking systems can handle it. See how booking infrastructure is evolving for service businesses.',
       buttonText: 'Explore Booking Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

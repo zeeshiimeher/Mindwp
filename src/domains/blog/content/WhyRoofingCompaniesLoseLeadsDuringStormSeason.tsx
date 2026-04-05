@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyRoofingCompaniesLoseLeadsDuringStormSeason: BlogPostData = {
   slug: 'why-roofing-companies-lose-leads-during-storm-season',
   title: 'Why Roofing Companies Lose Leads During Storm Season',
+  intent: 'PROBLEM',
   metaTitle: 'Why Roofing Companies Lose Leads During Storm Season',
   metaDescription:
     'Learn why roofing companies lose leads during storm season when enquiry volume overwhelms response capacity and how lead handling systems prevent it.',
@@ -102,7 +103,7 @@ export const whyRoofingCompaniesLoseLeadsDuringStormSeason: BlogPostData = {
       content:
         'If your roofing company loses leads during high-volume periods, automated lead handling can close the gap before the next surge. Explore how AI lead systems handle volume spikes.',
       buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services',
+      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

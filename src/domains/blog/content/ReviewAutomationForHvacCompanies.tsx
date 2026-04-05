@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const reviewAutomationForHvacCompanies: BlogPostData = {
   slug: 'review-automation-for-hvac-companies',
   title: 'Review Automation for HVAC Companies',
+  intent: 'SYSTEM',
   metaTitle: 'Review Automation for HVAC Companies Explained',
   metaDescription:
     'Learn how review automation for HVAC companies generates consistent recent reviews from completed service calls to strengthen local search visibility.',
@@ -104,7 +105,7 @@ export const reviewAutomationForHvacCompanies: BlogPostData = {
       content:
         'If your HVAC company misses review opportunities after completed service calls, automation can capture them consistently. See how review systems build local authority.',
       buttonText: 'Explore Review Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

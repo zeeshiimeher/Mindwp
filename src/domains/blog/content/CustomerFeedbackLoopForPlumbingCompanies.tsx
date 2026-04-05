@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const customerFeedbackLoopForPlumbingCompanies: BlogPostData = {
   slug: 'customer-feedback-loop-for-plumbing-companies',
   title: 'Customer Feedback Loop for Plumbing Companies',
+  intent: 'SYSTEM',
   metaTitle: 'Customer Feedback Loop for Plumbing Companies',
   metaDescription:
     'Learn how a customer feedback loop for plumbing companies captures service quality data after every job to improve operations and build local reputation.',
@@ -102,7 +103,7 @@ export const customerFeedbackLoopForPlumbingCompanies: BlogPostData = {
       content:
         'If your plumbing company only hears about problems through public reviews, a feedback loop can change that. See how reputation systems capture and act on customer feedback.',
       buttonText: 'Explore Feedback Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

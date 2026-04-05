@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const bookingSystemsForSalonsExplained: BlogPostData = {
   slug: 'booking-systems-for-salons-explained',
   title: 'Booking Systems for Salons Explained',
+  intent: 'FRAMEWORK',
   metaTitle: 'Booking Systems for Salons Explained in Detail',
   metaDescription:
     'Discover how booking systems for salons explained as integrated infrastructure connect online scheduling to CRM, payments, and automated client workflows.',
@@ -127,7 +128,7 @@ export const bookingSystemsForSalonsExplained: BlogPostData = {
       content:
         'If your salon booking system captures appointments but does not connect to CRM, automation, or follow-up, an integrated approach can transform it. See how booking infrastructure works.',
       buttonText: 'Explore Booking Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

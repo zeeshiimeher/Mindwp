@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const futureLocalSeoAfterGoogleBusinessProfileAutomation: BlogPostData = {
   slug: 'future-local-seo-after-google-business-profile-automation',
   title: 'Future Local SEO After Google Business Profile Automation',
+  intent: 'SYSTEM',
   metaTitle: 'Future Local SEO After Google Business Profile Automation',
   metaDescription:
     'Explore how future local seo after google business profile automation reshapes rankings as AI handles listing updates, reviews, and content automatically.',
@@ -101,7 +102,7 @@ export const futureLocalSeoAfterGoogleBusinessProfileAutomation: BlogPostData = 
       content:
         'If your business relies on manual GBP management for local visibility, automation is coming for everyone. See how local authority systems prepare you for the future.',
       buttonText: 'Explore Local Authority',
-      buttonUrl: '/services',
+      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

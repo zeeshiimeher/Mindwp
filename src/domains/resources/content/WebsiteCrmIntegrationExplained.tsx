@@ -121,6 +121,7 @@ export const websiteCrmIntegrationExplained: ResourceData = {
   title: 'Website + CRM Integration Explained',
   description:
     'Understand how website-CRM integration connects form submissions, booking data, and visitor behaviour directly to your CRM pipeline for faster response and better tracking.',
+  intent: 'EDUCATIONAL',
   category: 'smart-website-systems',
   publishedAt: '2025-11-15',
   systems: ['smart-website-systems'],
@@ -179,7 +180,7 @@ export const websiteCrmIntegrationExplained: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/smart-website-systems',
       },
     },
     {

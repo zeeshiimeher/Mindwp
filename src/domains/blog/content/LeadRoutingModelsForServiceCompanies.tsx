@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const leadRoutingModelsForServiceCompanies: BlogPostData = {
   slug: 'lead-routing-models-for-service-companies',
   title: 'Lead Routing Models for Service Companies',
+  intent: 'SYSTEM',
   metaTitle: 'Lead Routing Models for Service Companies',
   metaDescription:
     'Understand how lead routing models for service companies assign enquiries to the right team member based on service type, location, and urgency automatically.',
@@ -111,7 +112,7 @@ export const leadRoutingModelsForServiceCompanies: BlogPostData = {
       content:
         'If your leads sit in a shared inbox waiting for someone to read and assign them, routing automation can eliminate that delay. See how AI lead handling routes enquiries instantly.',
       buttonText: 'Explore AI Lead Handling',
-      buttonUrl: '/services',
+      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

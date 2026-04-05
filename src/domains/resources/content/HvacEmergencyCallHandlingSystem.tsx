@@ -115,6 +115,7 @@ export const hvacEmergencyCallHandlingSystem: ResourceData = {
   title: 'HVAC Emergency Call Handling System',
   description:
     'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+  intent: 'ACTIONABLE',
   category: 'ai-lead-handling',
   publishedAt: '2026-02-18',
   systems: ['ai-lead-handling', 'crm-automation'],
@@ -178,7 +179,7 @@ export const hvacEmergencyCallHandlingSystem: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/ai-lead-handling',
       },
     },
     {

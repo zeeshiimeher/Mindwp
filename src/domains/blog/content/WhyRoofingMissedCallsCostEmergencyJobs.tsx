@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyRoofingMissedCallsCostEmergencyJobs: BlogPostData = {
   slug: 'why-roofing-missed-calls-cost-emergency-jobs',
   title: 'Why Roofing Missed Calls Cost Emergency Jobs',
+  intent: 'PROBLEM',
   metaTitle: 'Why Roofing Missed Calls Cost Emergency Jobs',
   metaDescription:
     'Discover why roofing missed calls cost emergency jobs during storm events and how automated call recovery systems prevent lost repair revenue.',
@@ -109,7 +110,7 @@ export const whyRoofingMissedCallsCostEmergencyJobs: BlogPostData = {
       content:
         'If your roofing company misses calls during storms, automated recovery ensures every emergency caller gets a response. See how AI lead systems capture high-value roofing leads.',
       buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services',
+      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

@@ -128,6 +128,7 @@ export const reviewGenerationSystem: ResourceData = {
   title: 'Review Generation System',
   description:
     'Learn how to build an automated review generation system that requests reviews from every customer after service completion without relying on team memory.',
+  intent: 'ACTIONABLE',
   category: 'reputation-review',
   publishedAt: '2025-11-24',
   systems: ['reputation-review'],
@@ -189,7 +190,7 @@ export const reviewGenerationSystem: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/reputation-review-systems',
       },
     },
     {

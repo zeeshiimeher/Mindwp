@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const respondingToNegativeReviewsSystematically: BlogPostData = {
   slug: 'responding-to-negative-reviews-systematically',
   title: 'Responding to Negative Reviews Systematically',
+  intent: 'SYSTEM',
   metaTitle: 'Responding to Negative Reviews Systematically',
   metaDescription:
     'Learn how responding to negative reviews systematically protects your reputation with structured workflows that turn complaints into recovery opportunities.',
@@ -121,7 +122,7 @@ export const respondingToNegativeReviewsSystematically: BlogPostData = {
       content:
         'If negative reviews catch your team off guard and responses vary in quality and timing, a structured workflow can protect your reputation. See how review management systems handle responses consistently.',
       buttonText: 'Explore Reputation Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const automotiveServiceRemindersExplained: BlogPostData = {
   slug: 'automotive-service-reminders-explained',
   title: 'Automotive Service Reminders Explained',
+  intent: 'SYSTEM',
   metaTitle: 'Automotive Service Reminders Explained for Shops',
   metaDescription:
     'Learn how automotive service reminders explained through CRM automation help repair shops retain customers and increase repeat bookings reliably.',
@@ -110,7 +111,7 @@ export const automotiveServiceRemindersExplained: BlogPostData = {
       content:
         'If your repair shop relies on customers remembering their own MOT and service dates, CRM-based reminders can bring them back automatically. Explore how CRM automation retains customers.',
       buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services',
+      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

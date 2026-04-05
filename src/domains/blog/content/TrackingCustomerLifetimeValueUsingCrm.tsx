@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const trackingCustomerLifetimeValueUsingCrm: BlogPostData = {
   slug: 'tracking-customer-lifetime-value-using-crm',
   title: 'Tracking Customer Lifetime Value Using CRM',
+  intent: 'SYSTEM',
   metaTitle: 'Tracking Customer Lifetime Value Using CRM',
   metaDescription:
     'Learn how tracking customer lifetime value using CRM reveals which customers generate the most revenue over time and how to focus retention efforts accordingly.',
@@ -109,7 +110,7 @@ export const trackingCustomerLifetimeValueUsingCrm: BlogPostData = {
       content:
         'If you evaluate customers by their first job and nothing more, you are missing the full picture. See how CRM automation tracks the lifetime value that drives your business forward.',
       buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services',
+      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

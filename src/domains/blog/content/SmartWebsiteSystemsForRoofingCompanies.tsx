@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const smartWebsiteSystemsForRoofingCompanies: BlogPostData = {
   slug: 'smart-website-systems-for-roofing-companies',
   title: 'Smart Website Systems for Roofing Companies',
+  intent: 'SYSTEM',
   metaTitle: 'Smart Website Systems for Roofing Companies',
   metaDescription:
     'Discover how smart website systems for roofing companies connect lead capture, booking, and CRM into one infrastructure that drives more jobs.',
@@ -95,7 +96,7 @@ export const smartWebsiteSystemsForRoofingCompanies: BlogPostData = {
       content:
         'If your roofing website looks good but does not actively generate and manage leads, smart systems can change that. See how website infrastructure works for service businesses.',
       buttonText: 'Explore Website Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

@@ -168,6 +168,7 @@ export const whatIsASystemsFirstWebsite: ResourceData = {
   title: 'What Is a Systems-First Website?',
   description:
     'Understand the systems-first website approach — designing around operational workflows instead of templates to build websites that run your business.',
+  intent: 'EDUCATIONAL',
   category: 'smart-website-systems',
   publishedAt: '2025-11-01',
   systems: ['smart-website-systems'],
@@ -246,7 +247,7 @@ export const whatIsASystemsFirstWebsite: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/smart-website-systems',
       },
     },
     {

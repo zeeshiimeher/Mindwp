@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyAutoRepairMissedCallsLoseBookedWork: BlogPostData = {
   slug: 'why-auto-repair-missed-calls-lose-booked-work',
   title: 'Why Auto Repair Missed Calls Lose Booked Work',
+  intent: 'PROBLEM',
   metaTitle: 'Why Auto Repair Missed Calls Lose Booked Work',
   metaDescription:
     'Learn why auto repair missed calls lose booked work when customers cannot reach your shop and how automated call recovery prevents lost revenue.',
@@ -102,7 +103,7 @@ export const whyAutoRepairMissedCallsLoseBookedWork: BlogPostData = {
       content:
         'If your repair shop misses calls when the team is busy, automated recovery can capture those bookings. Explore how AI lead handling prevents lost work.',
       buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services',
+      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const trackingSalonClientLifetimeValue: BlogPostData = {
   slug: 'tracking-salon-client-lifetime-value',
   title: 'Tracking Salon Client Lifetime Value',
+  intent: 'SYSTEM',
   metaTitle: 'Tracking Salon Client Lifetime Value in CRM',
   metaDescription:
     'Learn how tracking salon client lifetime value through CRM data reveals which clients generate the most revenue and where to focus retention efforts.',
@@ -102,7 +103,7 @@ export const trackingSalonClientLifetimeValue: BlogPostData = {
       content:
         'If you treat every salon client the same because you cannot see their lifetime value, CRM tracking can change that. Explore how CRM automation reveals your most valuable client relationships.',
       buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services',
+      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

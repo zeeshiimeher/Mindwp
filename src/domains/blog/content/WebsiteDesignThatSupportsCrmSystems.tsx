@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const websiteDesignThatSupportsCrmSystems: BlogPostData = {
   slug: 'website-design-that-supports-crm-systems',
   title: 'Website Design That Supports CRM Systems',
+  intent: 'SYSTEM',
   metaTitle: 'Website Design That Supports CRM Systems',
   metaDescription:
     'Explore how website design that supports CRM systems is built differently, with structured forms, automation-ready architecture, and pipeline-connected pages.',
@@ -127,7 +128,7 @@ export const websiteDesignThatSupportsCrmSystems: BlogPostData = {
       content:
         'If your website and CRM are not sharing structured data, your lead handling is slower and less reliable than it could be. Explore how CRM-ready website design creates a connected operational workflow.',
       buttonText: 'Explore Smart Website Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

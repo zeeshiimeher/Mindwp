@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const negativeReviewsForAutoRepairShops: BlogPostData = {
   slug: 'negative-reviews-for-auto-repair-shops',
   title: 'Negative Reviews for Auto Repair Shops',
+  intent: 'SYSTEM',
   metaTitle: 'Managing Negative Reviews for Auto Repair Shops',
   metaDescription:
     'Discover how negative reviews for auto repair shops can be managed with systematic response frameworks that protect reputation and rebuild customer trust.',
@@ -110,7 +111,7 @@ export const negativeReviewsForAutoRepairShops: BlogPostData = {
       content:
         'If your auto repair shop receives negative reviews and lacks a response strategy, a systematic framework can protect your reputation. See how review management systems work.',
       buttonText: 'Explore Review Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

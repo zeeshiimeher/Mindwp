@@ -109,6 +109,7 @@ export const serviceBusinessFollowUpAutomationGuide: ResourceData = {
   title: 'Service Business Follow-Up Automation Guide',
   description:
     'Learn how to build automated follow-up sequences triggered by CRM pipeline stages that ensure every lead receives consistent, timely communication.',
+  intent: 'ACTIONABLE',
   category: 'ai-lead-handling',
   publishedAt: '2025-12-27',
   systems: ['ai-lead-handling'],
@@ -164,7 +165,7 @@ export const serviceBusinessFollowUpAutomationGuide: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/ai-lead-handling',
       },
     },
     {

@@ -163,6 +163,7 @@ export const conversionArchitectureForServiceWebsites: ResourceData = {
   title: 'Conversion Architecture for Service Websites',
   description:
     'Learn how conversion architecture structures service business websites to turn visitors into booked customers through decision-path design and system integration.',
+  intent: 'EDUCATIONAL',
   category: 'smart-website-systems',
   publishedAt: '2025-11-05',
   systems: ['smart-website-systems'],
@@ -239,7 +240,7 @@ export const conversionArchitectureForServiceWebsites: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/smart-website-systems',
       },
     },
     {

@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const clientReactivationSystemsForServiceBusinesses: BlogPostData = {
   slug: 'client-reactivation-systems-for-service-businesses',
   title: 'Client Reactivation Systems for Service Businesses',
+  intent: 'SYSTEM',
   metaTitle: 'Client Reactivation Systems for Service Businesses',
   metaDescription:
     'Discover how client reactivation systems for service businesses re-engage lapsed customers through automated campaigns that recover dormant revenue streams.',
@@ -115,7 +116,7 @@ export const clientReactivationSystemsForServiceBusinesses: BlogPostData = {
       content:
         'If your CRM contains hundreds of past customers who never returned, automated reactivation can recover that dormant revenue. See how CRM systems bring customers back.',
       buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services',
+      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

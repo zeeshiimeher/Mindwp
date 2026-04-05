@@ -115,6 +115,7 @@ export const missedCallRecoveryForRoofing: ResourceData = {
   title: 'Missed Call Recovery for Roofing',
   description:
     'See how roofing companies recover missed calls with automated SMS responses that capture lead details and convert unanswered calls into booked appointments.',
+  intent: 'ACTIONABLE',
   category: 'ai-lead-handling',
   publishedAt: '2026-02-14',
   systems: ['ai-lead-handling'],
@@ -178,7 +179,7 @@ export const missedCallRecoveryForRoofing: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/ai-lead-handling',
       },
     },
     {

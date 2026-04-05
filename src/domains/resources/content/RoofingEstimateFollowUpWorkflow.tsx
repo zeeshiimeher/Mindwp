@@ -115,6 +115,7 @@ export const roofingEstimateFollowUpWorkflow: ResourceData = {
   title: 'Roofing Estimate Follow-Up Workflow',
   description:
     'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+  intent: 'ACTIONABLE',
   category: 'ai-lead-handling',
   publishedAt: '2026-02-21',
   systems: ['ai-lead-handling', 'crm-automation'],
@@ -178,7 +179,7 @@ export const roofingEstimateFollowUpWorkflow: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/ai-lead-handling',
       },
     },
     {

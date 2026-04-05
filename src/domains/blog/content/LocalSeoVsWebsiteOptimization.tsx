@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const localSeoVsWebsiteOptimization: BlogPostData = {
   slug: 'local-seo-vs-website-optimization',
   title: 'Local SEO vs Website Optimization',
+  intent: 'FRAMEWORK',
   metaTitle: 'Local SEO vs Website Optimization Explained',
   metaDescription:
     'Understand the difference between local seo vs website optimization and why service businesses need both to capture and convert local traffic.',
@@ -113,7 +114,7 @@ export const localSeoVsWebsiteOptimization: BlogPostData = {
       content:
         'If your local SEO brings traffic but your website does not convert it, the gap between the two needs attention. Explore how local authority systems and website infrastructure work together.',
       buttonText: 'Explore Local SEO Services',
-      buttonUrl: '/services',
+      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

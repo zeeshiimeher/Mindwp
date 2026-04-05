@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const salesPipelineVisibilityFramework: BlogPostData = {
   slug: 'sales-pipeline-visibility-framework',
   title: 'Sales Pipeline Visibility Framework',
+  intent: 'FRAMEWORK',
   metaTitle: 'Sales Pipeline Visibility Framework for Services',
   metaDescription:
     'Explore the sales pipeline visibility framework that gives service businesses real-time insight into deal progression, bottlenecks, and forecasted revenue.',
@@ -121,7 +122,7 @@ export const salesPipelineVisibilityFramework: BlogPostData = {
       content:
         'If you cannot see the current state of every deal in your sales process without asking your team, pipeline visibility can fix that. Explore how CRM automation provides the dashboard view you need.',
       buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services',
+      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

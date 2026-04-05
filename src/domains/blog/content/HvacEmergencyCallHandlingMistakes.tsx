@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const hvacEmergencyCallHandlingMistakes: BlogPostData = {
   slug: 'hvac-emergency-call-handling-mistakes',
   title: 'HVAC Emergency Call Handling Mistakes',
+  intent: 'PROBLEM',
   metaTitle: 'HVAC Emergency Call Handling Mistakes to Avoid',
   metaDescription:
     'Learn about common hvac emergency call handling mistakes that delay response times and how structured triage workflows prevent dispatch errors.',
@@ -111,7 +112,7 @@ export const hvacEmergencyCallHandlingMistakes: BlogPostData = {
       content:
         'If your HVAC company treats every call the same regardless of urgency, structured triage can ensure emergency customers get the fastest response. See how AI lead handling manages emergency workflows.',
       buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services',
+      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

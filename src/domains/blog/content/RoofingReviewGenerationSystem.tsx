@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const roofingReviewGenerationSystem: BlogPostData = {
   slug: 'roofing-review-generation-system',
   title: 'Roofing Review Generation System',
+  intent: 'SYSTEM',
   metaTitle: 'Roofing Review Generation System for Contractors',
   metaDescription:
     'Learn how a roofing review generation system automates post-job review requests to build local authority and attract more customers consistently.',
@@ -113,7 +114,7 @@ export const roofingReviewGenerationSystem: BlogPostData = {
       content:
         'If your roofing company completes great work but has few reviews to show for it, an automated system can fix that. See how reputation systems generate reviews consistently.',
       buttonText: 'Explore Reputation Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

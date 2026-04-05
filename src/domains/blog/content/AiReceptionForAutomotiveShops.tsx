@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const aiReceptionForAutomotiveShops: BlogPostData = {
   slug: 'ai-reception-for-automotive-shops',
   title: 'AI Reception for Automotive Shops',
+  intent: 'SYSTEM',
   metaTitle: 'AI Reception for Automotive Shops Explained',
   metaDescription:
     'Learn how AI reception for automotive shops uses automated answering and triage systems to handle calls, capture leads, and reduce missed booking opportunities.',
@@ -121,7 +122,7 @@ export const aiReceptionForAutomotiveShops: BlogPostData = {
       content:
         'If your auto repair shop misses calls during busy periods or after hours, AI reception can ensure those leads are captured. See how lead handling systems work.',
       buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services',
+      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

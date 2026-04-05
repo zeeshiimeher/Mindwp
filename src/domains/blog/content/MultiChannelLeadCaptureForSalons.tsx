@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const multiChannelLeadCaptureForSalons: BlogPostData = {
   slug: 'multi-channel-lead-capture-for-salons',
   title: 'Multi Channel Lead Capture for Salons',
+  intent: 'SYSTEM',
   metaTitle: 'How Multi Channel Lead Capture for Salons Works',
   metaDescription:
     'Discover how multi channel lead capture for salons unifies Instagram, phone, website, and walk-in enquiries into one system that tracks every prospect.',
@@ -104,7 +105,7 @@ export const multiChannelLeadCaptureForSalons: BlogPostData = {
       content:
         'If your salon loses potential clients because enquiries arrive across too many channels, unified capture can fix that. See how lead handling systems work for service businesses.',
       buttonText: 'Explore Lead Capture',
-      buttonUrl: '/services',
+      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

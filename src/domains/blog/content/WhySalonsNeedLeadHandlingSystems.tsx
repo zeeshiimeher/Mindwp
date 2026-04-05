@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whySalonsNeedLeadHandlingSystems: BlogPostData = {
   slug: 'why-salons-need-lead-handling-systems',
   title: 'Why Salons Need Lead Handling Systems',
+  intent: 'PROBLEM',
   metaTitle: 'Why Salons Need Lead Handling Systems Explained',
   metaDescription:
     'Discover why salons need lead handling systems to capture booking enquiries that arrive when stylists are busy and front desks are unmanned.',
@@ -109,7 +110,7 @@ export const whySalonsNeedLeadHandlingSystems: BlogPostData = {
       content:
         'If your salon loses bookings because enquiries go unanswered during busy hours, a lead handling system can fix that. See how AI lead handling works for salons.',
       buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services',
+      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

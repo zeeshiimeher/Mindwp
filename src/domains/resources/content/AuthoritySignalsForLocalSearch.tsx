@@ -163,6 +163,7 @@ export const authoritySignalsForLocalSearch: ResourceData = {
   title: 'Authority Signals for Local Search',
   description:
     'Understand the five authority pillars Google uses to rank local businesses and learn how to systematically build each one to improve your local search visibility.',
+  intent: 'EDUCATIONAL',
   category: 'local-seo-authority',
   publishedAt: '2026-01-07',
   systems: ['local-seo-authority'],
@@ -239,7 +240,7 @@ export const authoritySignalsForLocalSearch: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/local-seo-authority',
       },
     },
     {

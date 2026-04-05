@@ -168,6 +168,7 @@ export const leadAutomationFramework: ResourceData = {
   title: 'Lead Automation Framework for Service Businesses',
   description:
     'Understand the four-layer lead automation framework — capture, routing, qualification, and follow-up — that handles leads systematically and converts more enquiries into booked jobs.',
+  intent: 'EDUCATIONAL',
   category: 'ai-lead-handling',
   publishedAt: '2025-12-01',
   systems: ['ai-lead-handling'],
@@ -244,7 +245,7 @@ export const leadAutomationFramework: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/ai-lead-handling',
       },
     },
     {

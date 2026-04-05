@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const hvacReviewGenerationFramework: BlogPostData = {
   slug: 'hvac-review-generation-framework',
   title: 'HVAC Review Generation Framework',
+  intent: 'SYSTEM',
   metaTitle: 'HVAC Review Generation Framework for Companies',
   metaDescription:
     'Explore the HVAC review generation framework that automates review requests after service calls to build trust and improve local search visibility.',
@@ -103,7 +104,7 @@ export const hvacReviewGenerationFramework: BlogPostData = {
       content:
         'If your HVAC company completes hundreds of service calls but has few reviews, a review framework can change that. See how reputation systems automate the process.',
       buttonText: 'Explore Reputation Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

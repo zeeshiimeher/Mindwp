@@ -163,6 +163,7 @@ export const servicePageArchitectureThatConverts: ResourceData = {
   title: 'Service Page Architecture That Converts',
   description:
     'Learn how to architect service pages that guide visitors through decision paths with search-intent matching, multi-path CTAs, and CRM-connected forms.',
+  intent: 'EDUCATIONAL',
   category: 'smart-website-systems',
   publishedAt: '2025-11-08',
   systems: ['smart-website-systems'],
@@ -239,7 +240,7 @@ export const servicePageArchitectureThatConverts: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/smart-website-systems',
       },
     },
     {

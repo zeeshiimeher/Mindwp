@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyAutoRepairShopsLosePhoneLeads: BlogPostData = {
   slug: 'why-auto-repair-shops-lose-phone-leads',
   title: 'Why Auto Repair Shops Lose Phone Leads',
+  intent: 'PROBLEM',
   metaTitle: 'Why Auto Repair Shops Lose Phone Leads Explained',
   metaDescription:
     'Explore why auto repair shops lose phone leads when calls go unanswered during busy hours and how structured call handling prevents lost bookings.',
@@ -104,7 +105,7 @@ export const whyAutoRepairShopsLosePhoneLeads: BlogPostData = {
       content:
         'If your repair shop misses calls when the team is busy, automated lead handling can ensure every enquiry gets a response. Explore how AI systems capture phone leads.',
       buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services',
+      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

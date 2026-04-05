@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyHvacMissedCallsLoseAfterHoursRevenue: BlogPostData = {
   slug: 'why-hvac-missed-calls-lose-after-hours-revenue',
   title: 'Why HVAC Missed Calls Lose After Hours Revenue',
+  intent: 'PROBLEM',
   metaTitle: 'Why HVAC Missed Calls Lose After Hours Revenue',
   metaDescription:
     'Learn why HVAC missed calls lose after hours revenue when emergency customers call outside business hours and nobody is available to book the job.',
@@ -109,7 +110,7 @@ export const whyHvacMissedCallsLoseAfterHoursRevenue: BlogPostData = {
       content:
         'If your HVAC company loses emergency calls every evening and weekend, automated systems can capture that revenue. See how AI lead handling responds when your team cannot.',
       buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services',
+      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

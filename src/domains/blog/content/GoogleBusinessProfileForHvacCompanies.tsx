@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const googleBusinessProfileForHvacCompanies: BlogPostData = {
   slug: 'google-business-profile-for-hvac-companies',
   title: 'Google Business Profile for HVAC Companies',
+  intent: 'SYSTEM',
   metaTitle: 'Google Business Profile for HVAC Companies',
   metaDescription:
     'Learn how optimising your google business profile for HVAC companies improves local visibility, map rankings, and emergency service discovery.',
@@ -112,7 +113,7 @@ export const googleBusinessProfileForHvacCompanies: BlogPostData = {
       content:
         'If your Google Business Profile is incomplete or your HVAC company rarely appears in local map results, optimisation can change that. See how local authority systems build your visibility.',
       buttonText: 'Explore Local SEO',
-      buttonUrl: '/services',
+      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

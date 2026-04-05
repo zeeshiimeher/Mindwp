@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const reviewAutomationForRoofingCompanies: BlogPostData = {
   slug: 'review-automation-for-roofing-companies',
   title: 'Review Automation for Roofing Companies',
+  intent: 'SYSTEM',
   metaTitle: 'Review Automation for Roofing Companies Guide',
   metaDescription:
     'Discover how review automation for roofing companies builds a steady flow of recent reviews that strengthen local rankings and attract more customers.',
@@ -113,7 +114,7 @@ export const reviewAutomationForRoofingCompanies: BlogPostData = {
       content:
         'If your roofing company relies on customers remembering to leave reviews, automation can close that gap. See how review systems build your local reputation.',
       buttonText: 'Explore Review Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

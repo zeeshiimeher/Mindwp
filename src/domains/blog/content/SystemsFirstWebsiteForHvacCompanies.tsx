@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const systemsFirstWebsiteForHvacCompanies: BlogPostData = {
   slug: 'systems-first-website-for-hvac-companies',
   title: 'Systems First Website for HVAC Companies',
+  intent: 'SYSTEM',
   metaTitle: 'Systems First Website for HVAC Companies',
   metaDescription:
     'Learn how a systems first website for HVAC companies connects lead capture, automation, and CRM into infrastructure that generates service calls.',
@@ -126,7 +127,7 @@ export const systemsFirstWebsiteForHvacCompanies: BlogPostData = {
       content:
         'If your HVAC website looks professional but does not actively capture and route leads, a systems-first approach can fix that. See how smart website infrastructure works.',
       buttonText: 'Explore Website Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

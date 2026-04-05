@@ -115,6 +115,7 @@ export const roofingCrmPipelineStructure: ResourceData = {
   title: 'Roofing CRM Pipeline Structure',
   description:
     'See how roofing companies structure their CRM pipeline to track every job from inquiry to completion, eliminate missed estimates, and build predictable revenue visibility.',
+  intent: 'ACTIONABLE',
   category: 'crm-automation',
   publishedAt: '2026-01-28',
   systems: ['crm-automation'],
@@ -178,7 +179,7 @@ export const roofingCrmPipelineStructure: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/crm-infrastructure-implementation',
       },
     },
     {

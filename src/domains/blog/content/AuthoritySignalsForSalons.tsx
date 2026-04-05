@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const authoritySignalsForSalons: BlogPostData = {
   slug: 'authority-signals-for-salons',
   title: 'Authority Signals for Salons',
+  intent: 'FRAMEWORK',
   metaTitle: 'How Authority Signals for Salons Build Rankings',
   metaDescription:
     'Explore how authority signals for salons strengthen local search rankings through reviews, citations, and trust factors that build lasting visibility.',
@@ -103,7 +104,7 @@ export const authoritySignalsForSalons: BlogPostData = {
       content:
         'If your salon does not appear in local search results despite great client relationships, authority signals can change that. See how local authority systems build your visibility.',
       buttonText: 'Explore Local Authority',
-      buttonUrl: '/services',
+      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

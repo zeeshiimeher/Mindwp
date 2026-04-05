@@ -132,6 +132,7 @@ export const missedCallRecoverySystem: ResourceData = {
   title: 'Missed Call Recovery System for Service Businesses',
   description:
     'Learn how to build a missed call recovery system that automatically follows up with every unanswered caller via SMS and callback scheduling to recapture lost revenue.',
+  intent: 'ACTIONABLE',
   category: 'ai-lead-handling',
   publishedAt: '2025-11-26',
   systems: ['ai-lead-handling'],
@@ -193,7 +194,7 @@ export const missedCallRecoverySystem: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/ai-lead-handling',
       },
     },
     {

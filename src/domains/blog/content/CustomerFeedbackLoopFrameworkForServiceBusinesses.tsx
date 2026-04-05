@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const customerFeedbackLoopFrameworkForServiceBusinesses: BlogPostData = {
   slug: 'customer-feedback-loop-framework-for-service-businesses',
   title: 'Customer Feedback Loop Framework for Service Businesses',
+  intent: 'FRAMEWORK',
   metaTitle: 'Customer Feedback Loop Framework for Service Businesses',
   metaDescription:
     'Explore the customer feedback loop framework for service businesses that captures post-service insights and routes them into operational improvement workflows.',
@@ -104,7 +105,7 @@ export const customerFeedbackLoopFrameworkForServiceBusinesses: BlogPostData = {
       content:
         'If your post-service feedback process is a verbal thumbs-up and nothing more, structured feedback loops can reveal what your customers actually think. Explore how automated feedback connects to review and improvement systems.',
       buttonText: 'Explore Reputation Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

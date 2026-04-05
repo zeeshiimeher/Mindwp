@@ -114,6 +114,7 @@ export const roofingLeadHandlingExample: ResourceData = {
   title: 'Roofing Lead Handling Example',
   description:
     'See how roofing companies implement AI-assisted lead handling systems that respond instantly, qualify by job type, and route emergency and quote leads to the right team members.',
+  intent: 'EXAMPLE',
   category: 'ai-lead-handling',
   publishedAt: '2026-01-19',
   systems: ['ai-lead-handling'],
@@ -177,7 +178,7 @@ export const roofingLeadHandlingExample: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/ai-lead-handling',
       },
     },
     {

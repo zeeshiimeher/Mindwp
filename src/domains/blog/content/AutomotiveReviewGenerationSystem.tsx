@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const automotiveReviewGenerationSystem: BlogPostData = {
   slug: 'automotive-review-generation-system',
   title: 'Automotive Review Generation System',
+  intent: 'SYSTEM',
   metaTitle: 'Automotive Review Generation System for Shops',
   metaDescription:
     'Learn how an automotive review generation system automates post-service review requests to build workshop reputation and attract new customers.',
@@ -102,7 +103,7 @@ export const automotiveReviewGenerationSystem: BlogPostData = {
       content:
         'If your repair shop does honest work but has few reviews to prove it, an automated system can change that. See how reputation systems generate reviews consistently.',
       buttonText: 'Explore Reputation Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

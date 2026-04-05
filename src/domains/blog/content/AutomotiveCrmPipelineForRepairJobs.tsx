@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const automotiveCrmPipelineForRepairJobs: BlogPostData = {
   slug: 'automotive-crm-pipeline-for-repair-jobs',
   title: 'Automotive CRM Pipeline for Repair Jobs',
+  intent: 'SYSTEM',
   metaTitle: 'Automotive CRM Pipeline for Repair Jobs Explained',
   metaDescription:
     'Explore how an automotive CRM pipeline for repair jobs tracks each vehicle from booking through diagnosis, parts ordering, and job completion.',
@@ -102,7 +103,7 @@ export const automotiveCrmPipelineForRepairJobs: BlogPostData = {
       content:
         'If your repair shop tracks jobs on whiteboards and memory, a CRM pipeline can bring structure and visibility. See how CRM automation organises the repair workflow.',
       buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services',
+      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

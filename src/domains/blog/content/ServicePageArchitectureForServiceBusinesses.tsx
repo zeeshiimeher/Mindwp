@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const servicePageArchitectureForServiceBusinesses: BlogPostData = {
   slug: 'service-page-architecture-for-service-businesses',
   title: 'Service Page Architecture for Service Businesses',
+  intent: 'FRAMEWORK',
   metaTitle: 'Service Page Architecture for Service Businesses',
   metaDescription:
     'Learn how service page architecture for service businesses structures landing pages to capture enquiries, qualify leads, and connect to operational workflows.',
@@ -109,7 +110,7 @@ export const servicePageArchitectureForServiceBusinesses: BlogPostData = {
       content:
         'If your service pages describe what you do but do not generate consistent enquiries, the architecture needs to change. Explore how systems-first service page design turns traffic into pipeline.',
       buttonText: 'Explore Smart Website Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

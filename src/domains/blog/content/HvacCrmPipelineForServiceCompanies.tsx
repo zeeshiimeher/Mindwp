@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const hvacCrmPipelineForServiceCompanies: BlogPostData = {
   slug: 'hvac-crm-pipeline-for-service-companies',
   title: 'HVAC CRM Pipeline for Service Companies',
+  intent: 'SYSTEM',
   metaTitle: 'HVAC CRM Pipeline for Service Companies Explained',
   metaDescription:
     'Discover how an HVAC CRM pipeline for service companies organises lead stages from enquiry through to completed job and automated follow-up.',
@@ -112,7 +113,7 @@ export const hvacCrmPipelineForServiceCompanies: BlogPostData = {
       content:
         'If your HVAC CRM mixes emergencies, maintenance, and quotes in one pipeline, structured design can fix that. See how CRM automation organises HVAC service workflows.',
       buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services',
+      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

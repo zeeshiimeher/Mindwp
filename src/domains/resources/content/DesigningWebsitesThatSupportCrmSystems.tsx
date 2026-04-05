@@ -163,6 +163,7 @@ export const designingWebsitesThatSupportCrmSystems: ResourceData = {
   title: 'Designing Websites That Support CRM Systems',
   description:
     'Learn how to design service business websites that natively support CRM integration with proper form architecture, data mapping, and pipeline-aligned page structure.',
+  intent: 'ACTIONABLE',
   category: 'smart-website-systems',
   publishedAt: '2025-11-12',
   systems: ['smart-website-systems'],
@@ -239,7 +240,7 @@ export const designingWebsitesThatSupportCrmSystems: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/smart-website-systems',
       },
     },
     {

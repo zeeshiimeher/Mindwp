@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const leadAutomationFrameworkForServiceBusinesses: BlogPostData = {
   slug: 'lead-automation-framework-for-service-businesses',
   title: 'Lead Automation Framework for Service Businesses',
+  intent: 'SYSTEM',
   metaTitle: 'Lead Automation Framework for Service Businesses',
   metaDescription:
     'Explore the lead automation framework for service businesses that connects enquiry capture, qualification, and routing into one operational system.',
@@ -106,7 +107,7 @@ export const leadAutomationFrameworkForServiceBusinesses: BlogPostData = {
       content:
         'If enquiries sit in inboxes while potential customers move to competitors, your lead handling needs automation. See how AI-powered lead automation handles the critical window between enquiry and response.',
       buttonText: 'Explore AI Lead Handling',
-      buttonUrl: '/services',
+      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

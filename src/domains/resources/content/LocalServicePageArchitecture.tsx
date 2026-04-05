@@ -158,6 +158,7 @@ export const localServicePageArchitecture: ResourceData = {
   title: 'Local Service Page Architecture',
   description:
     'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+  intent: 'EDUCATIONAL',
   category: 'local-seo-authority',
   publishedAt: '2025-11-10',
   systems: ['local-seo-authority', 'smart-website-systems'],
@@ -236,7 +237,7 @@ export const localServicePageArchitecture: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/local-seo-authority',
       },
     },
     {

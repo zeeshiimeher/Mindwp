@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const crmPipelineArchitectureForServiceBusinesses: BlogPostData = {
   slug: 'crm-pipeline-architecture-for-service-businesses',
   title: 'CRM Pipeline Architecture for Service Businesses',
+  intent: 'FRAMEWORK',
   metaTitle: 'CRM Pipeline Architecture for Service Businesses',
   metaDescription:
     'Explore the CRM pipeline architecture for service businesses that structures lead stages from first enquiry through to completed job and follow-up automation.',
@@ -111,7 +112,7 @@ export const crmPipelineArchitectureForServiceBusinesses: BlogPostData = {
       content:
         'If your CRM has leads in it but you cannot see where they sit in the sales process, pipeline architecture can fix that. Explore how CRM automation structures your lead-to-job workflow.',
       buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services',
+      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

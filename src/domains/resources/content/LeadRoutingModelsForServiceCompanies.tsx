@@ -157,6 +157,7 @@ export const leadRoutingModelsForServiceCompanies: ResourceData = {
   title: 'Lead Routing Models for Service Companies',
   description:
     'Understand the four lead routing models — round-robin, skill-based, territory-based, and priority-based — and how to implement the right model for your service business.',
+  intent: 'ACTIONABLE',
   category: 'ai-lead-handling',
   publishedAt: '2025-12-08',
   systems: ['ai-lead-handling'],
@@ -233,7 +234,7 @@ export const leadRoutingModelsForServiceCompanies: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/ai-lead-handling',
       },
     },
     {

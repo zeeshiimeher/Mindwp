@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const multiChannelLeadCaptureSystemForServiceBusinesses: BlogPostData = {
   slug: 'multi-channel-lead-capture-system-for-service-businesses',
   title: 'Multi Channel Lead Capture System for Service Businesses',
+  intent: 'SYSTEM',
   metaTitle: 'Multi Channel Lead Capture System for Service Businesses',
   metaDescription:
     'Learn how a multi channel lead capture system for service businesses unifies phone, web, and social enquiries into one pipeline for consistent follow-up.',
@@ -132,7 +133,7 @@ export const multiChannelLeadCaptureSystemForServiceBusinesses: BlogPostData = {
       content:
         'If enquiries arrive through multiple channels but your team only monitors some of them consistently, your capture system has gaps. See how AI-powered lead handling unifies every channel.',
       buttonText: 'Explore AI Lead Handling',
-      buttonUrl: '/services',
+      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

@@ -115,6 +115,7 @@ export const missedCallRecoveryForHvac: ResourceData = {
   title: 'Missed Call Recovery for HVAC',
   description:
     'See how HVAC companies recover missed calls with instant text responses, emergency escalation, and automated booking — capturing revenue that would otherwise go to competitors.',
+  intent: 'ACTIONABLE',
   category: 'ai-lead-handling',
   publishedAt: '2026-02-11',
   systems: ['ai-lead-handling'],
@@ -178,7 +179,7 @@ export const missedCallRecoveryForHvac: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/ai-lead-handling',
       },
     },
     {

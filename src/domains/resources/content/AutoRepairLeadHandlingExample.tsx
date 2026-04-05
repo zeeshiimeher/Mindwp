@@ -115,6 +115,7 @@ export const autoRepairLeadHandlingExample: ResourceData = {
   title: 'Auto Repair Lead Handling Example',
   description:
     'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+  intent: 'EXAMPLE',
   category: 'ai-lead-handling',
   publishedAt: '2026-01-14',
   systems: ['ai-lead-handling', 'smart-website-systems'],
@@ -178,7 +179,7 @@ export const autoRepairLeadHandlingExample: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/ai-lead-handling',
       },
     },
     {

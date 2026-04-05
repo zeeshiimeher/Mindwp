@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const conversionTrackingForServiceBusinessesExplained: BlogPostData = {
   slug: 'conversion-tracking-for-service-businesses-explained',
   title: 'Conversion Tracking for Service Businesses Explained',
+  intent: 'SYSTEM',
   metaTitle: 'Conversion Tracking for Service Businesses',
   metaDescription:
     'Learn how conversion tracking for service businesses connects website activity to enquiries and reveals which pages and channels drive revenue.',
@@ -127,7 +128,7 @@ export const conversionTrackingForServiceBusinessesExplained: BlogPostData = {
       content:
         'If you spend on marketing but cannot connect that spending to specific leads and revenue, your tracking infrastructure needs attention. See how conversion tracking fits into a systems-first website.',
       buttonText: 'Explore Smart Website Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

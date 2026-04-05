@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const buildingRevenueVisibilityThroughCrmTracking: BlogPostData = {
   slug: 'building-revenue-visibility-through-crm-tracking',
   title: 'Building Revenue Visibility Through CRM Tracking',
+  intent: 'SYSTEM',
   metaTitle: 'Building Revenue Visibility Through CRM Tracking',
   metaDescription:
     'Learn how building revenue visibility through CRM tracking connects your pipeline data to real financial outcomes so you can see where revenue originates.',
@@ -126,7 +127,7 @@ export const buildingRevenueVisibilityThroughCrmTracking: BlogPostData = {
       content:
         'If you know your total revenue but cannot trace it to specific channels, services, or campaigns, CRM-based tracking can close that gap. Explore how CRM automation builds revenue visibility.',
       buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services',
+      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

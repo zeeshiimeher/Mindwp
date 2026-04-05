@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const howReviewAutomationImprovesLocalAuthority: BlogPostData = {
   slug: 'how-review-automation-improves-local-authority',
   title: 'How Review Automation Improves Local Authority',
+  intent: 'SYSTEM',
   metaTitle: 'How Review Automation Improves Local Authority',
   metaDescription:
     'Understand how review automation improves local authority by building consistent review velocity that strengthens search rankings and customer trust signals.',
@@ -121,7 +122,7 @@ export const howReviewAutomationImprovesLocalAuthority: BlogPostData = {
       content:
         'If your review profile has gaps and your competitors have recent reviews, automation can close that authority gap. See how review systems build local authority consistently.',
       buttonText: 'Explore Reputation Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

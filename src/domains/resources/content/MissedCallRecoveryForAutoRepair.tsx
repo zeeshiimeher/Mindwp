@@ -114,6 +114,7 @@ export const missedCallRecoveryForAutoRepair: ResourceData = {
   title: 'Missed Call Recovery for Auto Repair',
   description:
     'See how auto repair shops recover missed calls with instant text responses and booking links, converting unanswered calls into confirmed MOTs, services, and repair bookings.',
+  intent: 'ACTIONABLE',
   category: 'ai-lead-handling',
   publishedAt: '2026-02-09',
   systems: ['ai-lead-handling'],
@@ -177,7 +178,7 @@ export const missedCallRecoveryForAutoRepair: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/ai-lead-handling',
       },
     },
     {

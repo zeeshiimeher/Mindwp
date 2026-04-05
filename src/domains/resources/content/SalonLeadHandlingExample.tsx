@@ -115,6 +115,7 @@ export const salonLeadHandlingExample: ResourceData = {
   title: 'Salon Lead Handling Example',
   description:
     'See how salons use automated lead handling to respond instantly across Instagram, phone, and web, convert inquiries into self-service bookings, and grow new client acquisition by 50%.',
+  intent: 'EXAMPLE',
   category: 'ai-lead-handling',
   publishedAt: '2026-01-21',
   systems: ['ai-lead-handling'],
@@ -178,7 +179,7 @@ export const salonLeadHandlingExample: ResourceData = {
       content: [finalCta.description],
       button: {
         text: primaryCta.label,
-        url: primaryCta.href,
+        url: '/services/ai-lead-handling',
       },
     },
     {

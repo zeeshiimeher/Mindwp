@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const localServicePageArchitectureForLocalBusinesses: BlogPostData = {
   slug: 'local-service-page-architecture-for-local-businesses',
   title: 'Local Service Page Architecture for Local Businesses',
+  intent: 'FRAMEWORK',
   metaTitle: 'Local Service Page Architecture for Local Businesses',
   metaDescription:
     'Learn how local service page architecture for local businesses creates location-specific landing pages that capture geo-targeted search traffic and convert it.',
@@ -109,7 +110,7 @@ export const localServicePageArchitectureForLocalBusinesses: BlogPostData = {
       content:
         'If your service area spans multiple locations but your website has a single services page, local search traffic is going to competitors with local presence. See how location page architecture captures geo-targeted demand.',
       buttonText: 'Explore Local SEO Services',
-      buttonUrl: '/services',
+      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

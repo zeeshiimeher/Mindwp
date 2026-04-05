@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const localSeoForRoofingCompaniesExplained: BlogPostData = {
   slug: 'local-seo-for-roofing-companies-explained',
   title: 'Local SEO for Roofing Companies Explained',
+  intent: 'FRAMEWORK',
   metaTitle: 'Local SEO for Roofing Companies Explained',
   metaDescription:
     'Learn what local SEO for roofing companies explained in practical terms means for visibility, rankings, and attracting local repair enquiries.',
@@ -109,7 +110,7 @@ export const localSeoForRoofingCompaniesExplained: BlogPostData = {
       content:
         'If your roofing company does not appear in local search results when homeowners need repairs, local SEO can change that. See how local authority systems build your visibility.',
       buttonText: 'Explore Local SEO',
-      buttonUrl: '/services',
+      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

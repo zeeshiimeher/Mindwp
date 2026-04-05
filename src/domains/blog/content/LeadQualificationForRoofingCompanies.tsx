@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const leadQualificationForRoofingCompanies: BlogPostData = {
   slug: 'lead-qualification-for-roofing-companies',
   title: 'Lead Qualification for Roofing Companies',
+  intent: 'SYSTEM',
   metaTitle: 'Lead Qualification for Roofing Companies',
   metaDescription:
     'Learn how lead qualification for roofing companies uses structured screening criteria to prioritise high-value enquiries and filter out poor-fit prospects.',
@@ -104,7 +105,7 @@ export const leadQualificationForRoofingCompanies: BlogPostData = {
       content:
         'If your roofing estimators spend too much time on leads that never convert, qualification systems can fix that. See how lead handling works for service businesses.',
       buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services',
+      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

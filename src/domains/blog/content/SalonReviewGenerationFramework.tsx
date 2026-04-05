@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const salonReviewGenerationFramework: BlogPostData = {
   slug: 'salon-review-generation-framework',
   title: 'Salon Review Generation Framework',
+  intent: 'SYSTEM',
   metaTitle: 'Salon Review Generation Framework for Businesses',
   metaDescription:
     'Discover the salon review generation framework that automates post-appointment review requests to build online reputation and attract new clients.',
@@ -109,7 +110,7 @@ export const salonReviewGenerationFramework: BlogPostData = {
       content:
         'If your salon does great work but has few reviews to show for it, an automated framework can turn satisfied clients into public advocates. See how reputation systems work.',
       buttonText: 'Explore Reputation Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

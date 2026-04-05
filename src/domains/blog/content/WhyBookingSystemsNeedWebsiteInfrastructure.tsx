@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyBookingSystemsNeedWebsiteInfrastructure: BlogPostData = {
   slug: 'why-booking-systems-need-website-infrastructure',
   title: 'Why Booking Systems Need Website Infrastructure',
+  intent: 'PROBLEM',
   metaTitle: 'Why Booking Systems Need Website Infrastructure',
   metaDescription:
     'Discover why booking systems need website infrastructure to function reliably, with connected forms, CRM pipelines, and automated confirmations.',
@@ -110,7 +111,7 @@ export const whyBookingSystemsNeedWebsiteInfrastructure: BlogPostData = {
       content:
         'If your booking widget creates more admin work than it saves, the infrastructure underneath it needs attention. Explore how systems-first websites support booking workflows end to end.',
       buttonText: 'Explore Smart Website Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

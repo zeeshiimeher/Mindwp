@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const reputationMonitoringSystemsForServiceBusinesses: BlogPostData = {
   slug: 'reputation-monitoring-systems-for-service-businesses',
   title: 'Reputation Monitoring Systems for Service Businesses',
+  intent: 'SYSTEM',
   metaTitle: 'Reputation Monitoring Systems for Service Businesses',
   metaDescription:
     'Learn how reputation monitoring systems for service businesses track reviews and sentiment across platforms to protect and improve your profile.',
@@ -131,7 +132,7 @@ export const reputationMonitoringSystemsForServiceBusinesses: BlogPostData = {
       content:
         'If reviews appear on your profiles without your knowledge and responses happen days later, monitoring automation can close that gap. See how reputation systems keep you informed.',
       buttonText: 'Explore Reputation Systems',
-      buttonUrl: '/services',
+      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

@@ -3,6 +3,7 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const roofingEstimateFollowUpDelays: BlogPostData = {
   slug: 'roofing-estimate-follow-up-delays',
   title: 'Roofing Estimate Follow Up Delays',
+  intent: 'PROBLEM',
   metaTitle: 'Roofing Estimate Follow Up Delays and How to Fix Them',
   metaDescription:
     'Explore common roofing estimate follow up delays that cost jobs and learn how automated CRM sequences ensure every quote receives timely follow-up.',
@@ -104,7 +105,7 @@ export const roofingEstimateFollowUpDelays: BlogPostData = {
       content:
         'If your roofing quotes sit unanswered because nobody followed up, automated sequences can close that gap. See how CRM automation ensures every estimate gets attention.',
       buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services',
+      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };
