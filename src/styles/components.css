@@ -21,6 +21,10 @@
   border: 1px solid var(--c-border-alpha);
   background-color: var(--c-surface);
   color: var(--c-dark);
+  box-shadow: var(--shadow-sm);
+  transition:
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
 }
 
 .reusable-card__header {
@@ -270,6 +274,9 @@
 }
 
 .btn-link:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+  box-shadow: var(--focus-ring-shadow);
   border-radius: var(--radius-sm);
 }
 
@@ -740,6 +747,8 @@
 
 .system-capabilities__tab:focus-visible,
 .c-system-capabilities__tab:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
   box-shadow: var(--focus-ring-shadow);
 }
 
@@ -1624,7 +1633,7 @@
   justify-content: center;
   gap: var(--space-2);
   font-size: var(--font-sm);
-  color: color-mix(in oklab, var(--c-text-inverse) 90%, transparent);
+  color: color-mix(in oklab, var(--c-text-inverse) 95%, transparent);
 }
 
 .hero-section-value-prop-icon {
@@ -2287,6 +2296,8 @@
 }
 
 .case-study-card:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
   box-shadow: var(--focus-ring-shadow);
 }
 
@@ -2950,7 +2961,8 @@
 .c-tier-cards-section__card--popular {
   border-color: var(--c-primary);
   border-width: 2px;
-  box-shadow: var(--shadow-xl);
+  background-color: color-mix(in oklab, var(--c-primary) 4%, var(--c-surface));
+  box-shadow: var(--shadow-xl), 0 0 20px color-mix(in oklab, var(--c-primary) 15%, transparent);
 }
 
 .industry-packages__popular-badge,
@@ -6576,7 +6588,7 @@ summary.component-library__sidebar-link {
   }
 
   .service-lnd__card:hover .service-lnd__cta {
-    transform: translateX(0.5rem);
+    transform: translateX(var(--space-2));
   }
 }
 
@@ -6692,7 +6704,7 @@ summary.component-library__sidebar-link {
   }
 
   .feature-lnd__card:hover .feature-lnd__cta {
-    transform: translateX(0.5rem);
+    transform: translateX(var(--space-2));
   }
 }
 
