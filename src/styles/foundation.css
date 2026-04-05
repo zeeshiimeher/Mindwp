@@ -73,6 +73,7 @@
   --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
   --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --shadow-hover: 0 4px 12px rgb(0 0 0 / 0.1);
 
   --transition-fast: 150ms ease-in-out;
   --transition-normal: 250ms ease-in-out;
@@ -285,31 +286,33 @@
      §9  GRADIENT TOKENS
      ===================================================================== */
 
-  /* Directional gradients */
-  --gradient-hero: linear-gradient(135deg, var(--brand-primary), var(--brand-primary-mid), var(--brand-secondary));
-  --gradient-primary: linear-gradient(135deg, var(--brand-secondary), var(--brand-primary));
-
-  /* Gradient endpoint tokens (for gradient icon utilities) */
-  --gradient-primary-from: var(--brand-primary);
-  --gradient-primary-to: var(--brand-primary-90);
-  --gradient-secondary-from: var(--brand-secondary);
-  --gradient-secondary-to: color-mix(in srgb, var(--brand-secondary) 90%, transparent);
-  --gradient-accent-from: var(--brand-accent);
-  --gradient-accent-to: var(--brand-accent-90);
-
-  /* CTA gradients */
-  --gradient-cta-1: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
-  --gradient-cta-2: linear-gradient(135deg, var(--brand-secondary) 0%, var(--brand-primary) 100%);
-  --gradient-cta-3: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
-  --gradient-cta-4: linear-gradient(135deg, var(--brand-accent) 0%, var(--brand-secondary) 100%);
-  --gradient-cta-10: linear-gradient(135deg, var(--color-blue-600) 0%, var(--color-purple-600) 100%);
-
-  /* Surface / tint gradients */
+  /* ---- Core gradients (max 8 — use ONLY these in components) ---- */
+  --gradient-primary:      linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+  --gradient-secondary:    linear-gradient(135deg, var(--brand-secondary) 0%, var(--brand-primary) 100%);
+  --gradient-accent:       linear-gradient(135deg, var(--brand-accent) 0%, var(--brand-secondary) 100%);
+  --gradient-hero:         linear-gradient(135deg, var(--brand-primary), var(--brand-primary-mid), var(--brand-secondary));
+  --gradient-dark:         linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-dark) 100%);
   --gradient-surface-soft: linear-gradient(135deg, var(--c-bg-alt) 0%, var(--c-surface) 100%);
+  --gradient-surface-muted:linear-gradient(135deg, var(--brand-grey) 0%, var(--brand-blue-lightest) 100%);
+
+  /* Gradient endpoint tokens (for gradient icon fills) */
+  --gradient-primary-from: var(--brand-primary);
+  --gradient-primary-to:   var(--brand-secondary);
+  --gradient-secondary-from: var(--brand-secondary);
+  --gradient-secondary-to: var(--brand-primary);
+  --gradient-accent-from:  var(--brand-accent);
+  --gradient-accent-to:    var(--brand-secondary);
+
+  /* ---- Backwards-compat aliases (mapped to core — do NOT add new ones) ---- */
+  --gradient-cta-1:  var(--gradient-primary);
+  --gradient-cta-2:  var(--gradient-secondary);
+  --gradient-cta-3:  linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
+  --gradient-cta-4:  var(--gradient-accent);
+  --gradient-cta-10: var(--gradient-primary);  /* was blue→purple, now brand-aligned */
+  --gradient-section: var(--gradient-dark);
+  --gradient-bg-light: var(--gradient-surface-muted);
   --gradient-tint-blue: linear-gradient(135deg, var(--color-surface-accent-blue) 0%, var(--c-surface) 100%);
   --gradient-tint-accent: linear-gradient(135deg, var(--color-surface-accent) 0%, var(--c-surface) 100%);
-  --gradient-section: radial-gradient(circle at 100% 110%, var(--brand-secondary) 0%, var(--brand-primary) 20%);
-  --gradient-bg-light: linear-gradient(135deg, var(--brand-grey) 0%, var(--brand-blue-lightest) 100%);
   --gradient-hero-fade: linear-gradient(
     to bottom,
     color-mix(
@@ -323,7 +326,7 @@
   /* =====================================================================
      §10  COMPONENT RHYTHM
      ===================================================================== */
-  --card-padding: var(--space-5);
+  --card-padding: var(--space-6);
 }
 
 @media (width >= 992px) and (width <= 1180px) {
