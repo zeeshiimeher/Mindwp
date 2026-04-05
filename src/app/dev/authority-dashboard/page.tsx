@@ -23,7 +23,7 @@ export default async function AuthorityDashboardPage() {
 
   return (
     <div style={{ maxWidth: 1060, margin: '0 auto', padding: '2rem', fontFamily: 'system-ui' }}>
-      <h1 style={{ fontSize: '1.75rem', margin: '0 0 0.25rem' }}>System Monitor</h1>
+      <h1 style={{ fontSize: '1.75rem', margin: '0 0 0.25rem' }}>System Health</h1>
       <p style={{ color: '#666', marginBottom: '2rem', fontSize: '0.85rem' }}>
         Live system health from registries and the content graph.
       </p>

@@ -1,5 +1,5 @@
 /**
- * Related Content Link Validator (Phase 10)
+ * Related Content Link Validator
  *
  * Validates SmartRelatedSection link limits:
  *   - Max 2 sections per page

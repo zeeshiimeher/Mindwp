@@ -160,6 +160,7 @@ export interface ContentHealthData {
   missingSystems: { slug: string; type: string }[];
   missingTopics: { slug: string; type: string }[];
   missingIndustries: { slug: string; type: string }[];
+  industryCoveragePercent: number;
 }
 
 export function getContentHealth(): ContentHealthData {
@@ -206,7 +207,18 @@ export function getContentHealth(): ContentHealthData {
     );
   }
 
-  return { totalContent, missingSystems, missingTopics, missingIndustries };
+  const industryCoveragePercent =
+    totalContent > 0
+      ? Math.round(((totalContent - missingIndustries.length) / totalContent) * 100)
+      : 0;
+
+  return {
+    totalContent,
+    missingSystems,
+    missingTopics,
+    missingIndustries,
+    industryCoveragePercent,
+  };
 }
 
 // ─── Validator Status ────────────────────────────────────────────────────────

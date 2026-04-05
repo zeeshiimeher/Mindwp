@@ -142,8 +142,7 @@ function main() {
   }
 
   // Warn mode: log violations but do NOT fail the build.
-  // Phase 5 vocabulary fixes are tracked and deferred — these are expected violations.
-  console.warn(`⚠ Vocabulary validation: ${issues.length} warning(s) across ${scannedFiles} files (Phase 5 deferred):`);
+  console.warn(`⚠ Vocabulary validation: ${issues.length} warning(s) across ${scannedFiles} files:`);
   for (const issue of issues) {
     console.warn(`  - [${issue.file}] ${issue.message}`);
   }

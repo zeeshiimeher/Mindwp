@@ -1,5 +1,5 @@
 /**
- * Conversion Validation (Warning-only) — Phase 10
+ * Conversion Validation (Warning-only)
  *
  * Detects conversion weaknesses WITHOUT breaking the build.
  * This is an audit layer — it highlights problems for humans to fix.
@@ -16,7 +16,20 @@ import { AUTHORITY_MAP } from '../../src/lib/authority/generated/authorityMap';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 import { getRelatedContent } from '../../src/lib/graph/query';
 import type { ContentNodeType } from '../../src/lib/content-graph/types';
-import { ISSUE_TYPES, ISSUE_MESSAGES } from '../../src/lib/dev/conversionIssues';
+
+// --- Issue constants (inlined) ---
+
+const ISSUE_TYPES = {
+  NO_CTA: 'no_cta',
+  NO_SERVICE_LINK: 'no_service_link',
+  NO_RELATED_CONTENT: 'no_related_content',
+} as const;
+
+const ISSUE_MESSAGES: Record<string, string> = {
+  [ISSUE_TYPES.NO_CTA]: 'Page has no CTA and no service path',
+  [ISSUE_TYPES.NO_SERVICE_LINK]: 'No service link found (weak conversion path)',
+  [ISSUE_TYPES.NO_RELATED_CONTENT]: 'Page has no related content via SmartRelatedSection',
+};
 
 // --- Config ---
 

@@ -1,4 +1,9 @@
-# MindWP Design System — Control Layer (Phase 5)
+# MindWP Design System — Control Layer
+
+<!-- WHERE THIS FITS -->
+<!-- Purpose: Global UI behavior rules — spacing, tokens, gradients, BEM -->
+<!-- Depends on: FOUNDATION-AND-POSITIONING.md (brand identity) -->
+<!-- Used by: validate-design-system.cjs, validate-tokens.mjs, component development -->
 
 > Defines **how the UI should behave globally** — rules, not refactoring.
 

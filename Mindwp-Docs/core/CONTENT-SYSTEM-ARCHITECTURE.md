@@ -19,6 +19,11 @@ Rules:
 
 ---
 
+<!-- WHERE THIS FITS -->
+<!-- Purpose: Content type rules, routing, page composition — #2 in authority stack -->
+<!-- Depends on: FOUNDATION-AND-POSITIONING.md -->
+<!-- Used by: domain registries, page templates, content routing -->
+
 # CONTENT SYSTEM ARCHITECTURE (LOCKED)
 
 Status: Governing Document

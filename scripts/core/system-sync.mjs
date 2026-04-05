@@ -6,8 +6,8 @@
  *   1. Read the latest unified validation report
  *   2. Build reports/system-state.json
  *   3. Detect truth drift against live code and write reports/system-drift.json
- *   4. Overwrite Mindwp-Docs/SYSTEM-LOG.md
- *   5. Overwrite Mindwp-Docs/system/DECISION-STATE.md
+ *   4. Overwrite Mindwp-Docs/logs/SYSTEM-LOG.md
+ *   5. Overwrite Mindwp-Docs/core/DECISION-STATE.md
  *
  * This script does not run validators. Run scripts/core/validate-all.mjs first.
  */
@@ -18,8 +18,8 @@ import { fileURLToPath } from 'node:url';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 
-const truthPath = path.join(root, 'Mindwp-Docs', 'SYSTEM-TRUTH.md');
-const indexPath = path.join(root, 'Mindwp-Docs', 'SYSTEM-INDEX.md');
+const truthPath = path.join(root, 'Mindwp-Docs', 'core', 'SYSTEM-TRUTH.md');
+const indexPath = path.join(root, 'Mindwp-Docs', 'core', 'SYSTEM-INDEX.md');
 const todoPath = path.join(root, 'Mindwp-Docs', 'project-todo.md');
 const statePath = path.join(root, 'reports', 'system-state.json');
 const driftPath = path.join(root, 'reports', 'system-drift.json');
@@ -27,7 +27,7 @@ const validationReportPath = path.join(root, 'reports', 'validation-results.json
 const authorityMapPath = path.join(root, 'reports', 'authority-map.json');
 const typesPath = path.join(root, 'src', 'lib', 'content-graph', 'types.ts');
 const validateAllPath = path.join(root, 'scripts', 'core', 'validate-all.mjs');
-const systemLogPath = path.join(root, 'Mindwp-Docs', 'SYSTEM-LOG.md');
+const systemLogPath = path.join(root, 'Mindwp-Docs', 'logs', 'SYSTEM-LOG.md');
 
 const truthMd = fs.existsSync(truthPath) ? fs.readFileSync(truthPath, 'utf8') : '';
 const indexMd = fs.existsSync(indexPath) ? fs.readFileSync(indexPath, 'utf8') : '';
@@ -130,9 +130,9 @@ function extractLiveSignals() {
 }
 
 function parseExecutionLedger(todoContent) {
-  const activePhaseBlock = todoContent.match(/## 2\. Active Phase\n([\s\S]*?)(?=\n## 3\.)/);
-  const block = activePhaseBlock?.[1] ?? '';
-  const activePhase = block.match(/###\s+([^\n]+)/)?.[1] ?? null;
+  const statusBlock = todoContent.match(/## 2\. Active Tasks\n([\s\S]*?)(?=\n## 3\.)/);
+  const block = statusBlock?.[1] ?? '';
+  const currentFocus = block.match(/###\s+([^\n]+)/)?.[1] ?? null;
   const nextTask = block.match(/\*\*Next task\*\*\n-\s+([^\n]+)/)?.[1] ?? null;
 
   const taskMatches = [
@@ -148,7 +148,7 @@ function parseExecutionLedger(todoContent) {
   }));
 
   return {
-    activePhase,
+    currentFocus,
     nextTask,
     progress: {
       done: tasks.filter(task => task.done).length,
@@ -291,7 +291,7 @@ function renderSystemLog(systemState, drift) {
 
 | Item | Value |
 |---|---|
-| Active Phase | ${systemState.execution.activePhase ?? 'Unknown'} |
+| Current Focus | ${systemState.execution.currentFocus ?? 'None'} |
 | Progress | ${systemState.execution.progress.done} / ${systemState.execution.progress.total} |
 | Next Task | ${systemState.execution.nextTask ?? 'None'} |
 
@@ -396,7 +396,7 @@ const decisionMd = `# DECISION STATE — Active Decisions Only
 ${decisions.map((decision) => `| ${decision.decision} | ${decision.reason} | ${decision.impact} | ${decision.source} |`).join('\n')}
 `;
 
-const decisionPath = path.join(root, 'Mindwp-Docs', 'system', 'DECISION-STATE.md');
+const decisionPath = path.join(root, 'Mindwp-Docs', 'core', 'DECISION-STATE.md');
 fs.mkdirSync(path.dirname(decisionPath), { recursive: true });
 fs.writeFileSync(decisionPath, decisionMd);
 console.log(`✓ Wrote ${path.relative(root, decisionPath)} (${decisions.length} decisions)`);

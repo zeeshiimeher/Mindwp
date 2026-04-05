@@ -1,5 +1,5 @@
 /**
- * Phase 7 — Heading Hierarchy Audit
+ * Heading Hierarchy Audit
  * Captures full heading tree (H1-H6) per section for every audited page.
  * Fixes: SVG className is not a string — use getAttribute('class') fallback.
  *

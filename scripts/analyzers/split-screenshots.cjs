@@ -1,5 +1,5 @@
 /**
- * Phase 7 — Split oversized screenshots into segments for visual analysis.
+ * Split oversized screenshots into segments for visual analysis.
  * Any image taller than MAX_HEIGHT_PX is split into multiple parts.
  * Also fixes the heading audit script for pages that errored.
  *

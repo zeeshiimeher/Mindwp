@@ -25,13 +25,13 @@ export function ContentHealthPanel({ data }: { data: ContentHealthData }) {
             display: 'inline-block',
           }}
         />
-        <h2 style={{ fontSize: '1.25rem', margin: 0 }}>Content Health</h2>
+        <h2 style={{ fontSize: '1.25rem', margin: 0 }}>Content Coverage</h2>
       </div>
 
       <div
         style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
+          gridTemplateColumns: 'repeat(5, 1fr)',
           gap: '1rem',
           marginBottom: '1rem',
         }}
@@ -75,6 +75,23 @@ export function ContentHealthPanel({ data }: { data: ContentHealthData }) {
             {data.missingIndustries.length}
           </div>
           <div style={{ fontSize: '0.75rem', color: '#666' }}>Missing Industries</div>
+        </div>
+        <div>
+          <div
+            style={{
+              fontSize: '1.5rem',
+              fontWeight: 700,
+              color:
+                data.industryCoveragePercent >= 90
+                  ? '#22c55e'
+                  : data.industryCoveragePercent >= 70
+                    ? '#eab308'
+                    : '#ef4444',
+            }}
+          >
+            {data.industryCoveragePercent}%
+          </div>
+          <div style={{ fontSize: '0.75rem', color: '#666' }}>Industry Coverage</div>
         </div>
       </div>
 

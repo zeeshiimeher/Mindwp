@@ -6,7 +6,16 @@
  * Never auto-applies fixes — suggestions only.
  */
 
-import type { FixLogEntry } from './fixInsightsAnalyzer';
+interface FixLogEntry {
+  timestamp: string;
+  date: string;
+  slug: string;
+  fixType: string;
+  scoreBefore: number;
+  scoreAfter: number;
+  title: string;
+  component: string;
+}
 
 // Inline stubs — fixLearningEngine removed during system hardening.
 // These provide equivalent default behavior (no fix-log history).

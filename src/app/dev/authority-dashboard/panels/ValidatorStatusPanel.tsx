@@ -16,7 +16,7 @@ export function ValidatorStatusPanel({ data }: { data: ValidatorStatusData | nul
           marginBottom: '1.5rem',
         }}
       >
-        <h2 style={{ fontSize: '1.25rem', margin: '0 0 0.5rem' }}>Validator Status</h2>
+        <h2 style={{ fontSize: '1.25rem', margin: '0 0 0.5rem' }}>System Integrity</h2>
         <p style={{ fontSize: '0.85rem', color: '#6b7280' }}>
           No validation results found. Run <code>node scripts/core/validate-all.mjs</code> to
           generate.
@@ -46,7 +46,7 @@ export function ValidatorStatusPanel({ data }: { data: ValidatorStatusData | nul
             display: 'inline-block',
           }}
         />
-        <h2 style={{ fontSize: '1.25rem', margin: 0 }}>Validator Status</h2>
+        <h2 style={{ fontSize: '1.25rem', margin: 0 }}>System Integrity</h2>
         <span style={{ fontSize: '0.75rem', color: '#9ca3af', marginLeft: 'auto' }}>
           {new Date(data.generatedAt).toLocaleString()}
         </span>

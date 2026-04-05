@@ -20,7 +20,7 @@ function getSourceBaseDir() {
 
 const DOC_RELATIVE_CANDIDATES = [
   [
-    'Mindwp-Docs/GLOBAL-COMPONENTS-CATALOG.md',
+    'Mindwp-Docs/core/GLOBAL-COMPONENTS-CATALOG.md',
   ],
 ];
 
@@ -207,7 +207,7 @@ async function main() {
 
   if (docFiles.length === 0) {
     throw new Error(
-      'Could not locate documentation file for global inventory at Mindwp-Docs/GLOBAL-COMPONENTS-CATALOG.md. Run the script from the repo root or create the file first.'
+      'Could not locate documentation file for global inventory at Mindwp-Docs/core/GLOBAL-COMPONENTS-CATALOG.md. Run the script from the repo root or create the file first.'
     );
   }
 

@@ -19,6 +19,11 @@ Rules:
 
 ---
 
+<!-- WHERE THIS FITS -->
+<!-- Purpose: Brand identity, positioning, service tiers — #1 in authority stack -->
+<!-- Depends on: nothing (this is the root authority) -->
+<!-- Used by: all content, CTA engine, service architecture -->
+
 # FOUNDATION & POSITIONING — MASTER
 STATUS: CONSOLIDATED
 

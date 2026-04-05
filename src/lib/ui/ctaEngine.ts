@@ -7,7 +7,7 @@
  * Blog intents: PROBLEM, SYSTEM, FRAMEWORK
  * Resource intents: ACTIONABLE, EDUCATIONAL, EXAMPLE
  *
- * Routing rules (LOCKED — Phase 10):
+ * Routing rules (LOCKED):
  *   BLOG PROBLEM    → service (strong)
  *   BLOG SYSTEM     → resource (mid)
  *   BLOG FRAMEWORK  → resource or industry (soft)
@@ -87,7 +87,7 @@ export function getCTAConfig(contentType: ContentNodeType, intent?: ContentInten
 
 /**
  * Resolve the service path for a blog post based on its primary system.
- * Uses systems[0] as primary system per Phase 10 resolution rules.
+ * Uses systems[0] as primary system per intent resolution rules.
  */
 export function resolveServicePath(systems: string[]): string | null {
   if (systems.length === 0) return null;

@@ -19,6 +19,11 @@ Rules:
 
 ---
 
+<!-- WHERE THIS FITS -->
+<!-- Purpose: Blueprint definitions for page types — #4 in authority stack -->
+<!-- Depends on: CONTENT-GRAPH-SYSTEM.md -->
+<!-- Used by: page templates, content validation -->
+
 # CONTENT BLUEPRINT SYSTEM (LOCKED)
 
 Status: Governing Document

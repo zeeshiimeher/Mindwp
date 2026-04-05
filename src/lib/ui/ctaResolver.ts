@@ -44,7 +44,7 @@ export function resolveCTA({
   intent?: LinkIntent;
   contentIntent?: ContentIntent;
 }): ResolvedCTA {
-  // Content-specific intent takes priority (Phase 10 deterministic routing)
+  // Content-specific intent takes priority (deterministic routing)
   if (contentIntent) {
     const routing = getCTAConfig(pageType, contentIntent);
     return { level: routing.intensity };

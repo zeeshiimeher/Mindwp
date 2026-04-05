@@ -1,5 +1,10 @@
 # SYSTEM TRUTH — MindWP
 
+<!-- WHERE THIS FITS -->
+<!-- Purpose: Current system reality — single consolidated snapshot -->
+<!-- Depends on: 5 authority-stack docs, live code scan, reports/ -->
+<!-- Used by: system-sync.mjs (drift detection), all planning decisions -->
+
 > Consolidated source of truth. Validated against live code.
 > Sources: 5 governing docs, reports/, code scan.
 > Updated: 2026-04-06 (Phase 10 sync applied)

@@ -19,6 +19,11 @@ Rules:
 
 ---
 
+<!-- WHERE THIS FITS -->
+<!-- Purpose: Graph structure, edge rules, scoring formula — #3 in authority stack -->
+<!-- Depends on: CONTENT-SYSTEM-ARCHITECTURE.md -->
+<!-- Used by: content-graph types.ts, authority-map generation, related sections -->
+
 # CONTENT GRAPH SYSTEM (LOCKED)
 
 Status: Live System Architecture

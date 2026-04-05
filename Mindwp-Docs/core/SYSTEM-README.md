@@ -12,9 +12,9 @@
 1. Run `node scripts/core/validate-all.mjs`.
 2. Run `node scripts/core/system-sync.mjs`.
 3. If the system is `CLEAN`, continue.
-4. If the system is `WARNING` or `BROKEN`, inspect `Mindwp-Docs/SYSTEM-LOG.md` and `reports/system-drift.json` before changing anything.
-5. Open `Mindwp-Docs/project-todo.md` and work only from the active phase.
-6. If the task touches architecture, content rules, graph rules, or governance, read the relevant doc in `Mindwp-Docs/content-architecture/` before changing code.
+4. If the system is `WARNING` or `BROKEN`, inspect `Mindwp-Docs/logs/SYSTEM-LOG.md` and `reports/system-drift.json` before changing anything.
+5. Open `Mindwp-Docs/project-todo.md` and work from the current focus.
+6. If the task touches architecture, content rules, graph rules, or governance, read the relevant doc in `Mindwp-Docs/core/` before changing code.
 
 ### Finish work
 1. Run the validator relevant to the files you changed.
@@ -51,7 +51,7 @@
 ### Snapshot Layer
 These files are overwrite-only and always represent current state.
 
-- `Mindwp-Docs/SYSTEM-LOG.md` = human-readable snapshot
+- `Mindwp-Docs/logs/SYSTEM-LOG.md` = human-readable snapshot
 - `reports/system-state.json` = machine-readable snapshot
 - `reports/system-drift.json` = machine-readable drift snapshot
 

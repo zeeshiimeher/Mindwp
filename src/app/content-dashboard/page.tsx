@@ -6,8 +6,8 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export const metadata = buildMetadata({
-  title: 'Content Command Center',
-  description: 'Internal content intelligence dashboard.',
+  title: 'Content Intelligence',
+  description: 'Content intelligence dashboard — topic authority and content gaps.',
   path: '/content-dashboard',
   noindex: true,
   nofollow: true,

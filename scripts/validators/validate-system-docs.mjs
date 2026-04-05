@@ -14,7 +14,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const docPath = path.join(root, 'Mindwp-Docs', 'system', 'SYSTEM-INTELLIGENCE-DOC.md');
+const docPath = path.join(root, 'Mindwp-Docs', 'core', 'SYSTEM-INTELLIGENCE-DOC.md');
 
 // ── Helpers ──────────────────────────────────────────────────────────
 
@@ -76,7 +76,7 @@ function validate() {
   if (!doc) {
     warnings.push({
       type: 'missing_doc',
-      message: 'SYSTEM-INTELLIGENCE-DOC.md does not exist. Create it at Mindwp-Docs/system/SYSTEM-INTELLIGENCE-DOC.md',
+      message: 'SYSTEM-INTELLIGENCE-DOC.md does not exist. Create it at Mindwp-Docs/core/SYSTEM-INTELLIGENCE-DOC.md',
     });
     return warnings;
   }

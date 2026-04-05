@@ -115,7 +115,7 @@ These create data that dashboards and validators use.
 | generate-authority-map | `npx tsx scripts/generate-authority-map.ts` | Builds the authority relationship map — how services, resources, industries, case studies, and blogs connect | `src/lib/authority/generated/authorityMap.ts` |
 | generate-topic-authority-scores | `npx tsx scripts/generate-topic-authority-scores.ts` | Scores each topic based on how much content supports it | `reports/topic-authority-scores.json`, `reports/topic-authority-scores.md` |
 | generate-content-registries | `node scripts/generate-content-registries.mjs` | Creates slug→component lookup maps for blog, resources, and case studies | `src/domains/*/registry.ts` |
-| generate-global-inventory | `node scripts/generate-global-inventory.mjs` | Generates a catalog of all shared components | `Mindwp-Docs/GLOBAL-COMPONENTS-CATALOG.md` |
+| generate-global-inventory | `node scripts/generate-global-inventory.mjs` | Generates a catalog of all shared components | `Mindwp-Docs/core/GLOBAL-COMPONENTS-CATALOG.md` |
 | generate-component-docs | `node scripts/generators/generate-component-docs.cjs` | Generates component documentation | `Mindwp-Docs/` (doc files) |
 | generate-resolver-cache | `npx tsx scripts/generate-resolver-cache.ts` | Pre-computes content graph resolver cache for faster lookups | Cache files |
 | check-generated | `node scripts/core/check-generated.mjs` | Freshness guard — checks if generated files are up to date | Exit code 1 if stale |

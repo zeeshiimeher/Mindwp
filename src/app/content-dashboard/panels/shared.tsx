@@ -1,4 +1,4 @@
-import type { GraphDiagnostics, GraphNode, TopicGap, TopicScore } from '../dashboard';
+import type { TopicGap, TopicScore } from '../dashboard';
 
 // ── Shared card wrapper ──────────────────────────────────────────────
 export function Card({
@@ -106,4 +106,4 @@ export function NoData({ report }: { report: string }) {
 }
 
 // Re-export types for convenience
-export type { GraphDiagnostics, GraphNode, TopicGap, TopicScore };
+export type { TopicGap, TopicScore };

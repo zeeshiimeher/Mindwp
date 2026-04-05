@@ -8,7 +8,7 @@
 ## 1. Pre-Flight
 
 Before substantive work:
-1. Read `Mindwp-Docs/SYSTEM-INDEX.md`.
+1. Read `Mindwp-Docs/core/SYSTEM-INDEX.md`.
 2. Run `node scripts/core/validate-all.mjs`.
 3. Run `node scripts/core/system-sync.mjs`.
 4. Check `reports/system-drift.json` if sync is not clean.
@@ -31,10 +31,7 @@ Governance priority is fixed:
 
 ### R3. One file, one job.
 - `SYSTEM-TRUTH.md` = current system reality
-- `DEV-DASHBOARD.md` = daily summary and links only
 - `project-todo.md` = execution state
-- `PHASE-7-VISUAL-SYSTEM-AUDIT.md` = phase task playbook only
-- `PHASE-10-audit-plan.md` = Phase 10 source of truth (8 locked decisions, governance rules)
 - `SYSTEM-LOG.md` = generated human-readable current snapshot
 - `reports/system-state.json` = generated machine current snapshot
 - `reports/system-drift.json` = generated current drift snapshot
@@ -46,8 +43,8 @@ Governance priority is fixed:
 Do not manually edit:
 - `reports/system-state.json`
 - `reports/system-drift.json`
-- `Mindwp-Docs/system/DECISION-STATE.md`
-- `Mindwp-Docs/SYSTEM-LOG.md`
+- `Mindwp-Docs/core/DECISION-STATE.md`
+- `Mindwp-Docs/logs/SYSTEM-LOG.md`
 - any report produced by a generator or validator script
 
 Allowed append-only history files:
