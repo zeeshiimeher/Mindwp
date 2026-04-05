@@ -16,7 +16,6 @@
 
 import type { ContentNodeType } from '@/lib/content-graph/types';
 import { type ContentIntent, getCTAConfig } from '@/lib/ui/ctaEngine';
-import { CONTENT_MAPPING } from '@/system/content/contentMapping';
 
 export type LinkIntent = 'learn' | 'compare' | 'buy';
 
@@ -24,7 +23,6 @@ export type CTALevel = 'soft' | 'mid' | 'strong';
 
 export interface ResolvedCTA {
   level: CTALevel;
-  ctaTarget?: string;
 }
 
 // --- Intent → CTA level ---
@@ -39,27 +37,13 @@ const INTENT_TO_LEVEL: Record<LinkIntent, CTALevel> = {
 
 export function resolveCTA({
   pageType,
-  slug,
   intent,
   contentIntent,
 }: {
   pageType: ContentNodeType;
-  slug?: string;
   intent?: LinkIntent;
   contentIntent?: ContentIntent;
 }): ResolvedCTA {
-  // Phase 10.1: Content mapping lookup takes highest priority
-  if (slug && (pageType === 'blog' || pageType === 'resource')) {
-    const mapping = CONTENT_MAPPING[`${pageType}:${slug}`];
-    if (mapping?.intent) {
-      const routing = getCTAConfig(pageType, mapping.intent as ContentIntent);
-      return {
-        level: routing.intensity,
-        ctaTarget: mapping.ctaTarget,
-      };
-    }
-  }
-
   // Content-specific intent takes priority (Phase 10 deterministic routing)
   if (contentIntent) {
     const routing = getCTAConfig(pageType, contentIntent);
