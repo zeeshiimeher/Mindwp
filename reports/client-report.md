@@ -1,14 +1,14 @@
 # Content Intelligence Report
 
-Generated: 3/30/2026, 3:55:21 AM
+Generated: 4/5/2026, 10:17:16 PM
 
 ## Summary
 
 | Metric | Value |
 |--------|-------|
-| Total Pages | 205 |
+| Total Pages | 209 |
 | Healthy | 20 |
-| Weak | 159 |
+| Weak | 163 |
 | Critical | 26 |
 | Avg Link Score | 340 |
 
@@ -363,24 +363,6 @@ Generated: 3/30/2026, 3:55:21 AM
 - **Suggestions:**
   - Add industry-specific links to improve relevance
 
-### /industries/legal-professional-services/accounting-firms
-
-- **Status:** weak
-- **Links:** 4 | **Avg Score:** 300
-- **Issues:**
-  - No industry-matched links
-- **Suggestions:**
-  - Add industry-specific links to improve relevance
-
-### /industries/real-estate-property-services/realtors
-
-- **Status:** weak
-- **Links:** 4 | **Avg Score:** 300
-- **Issues:**
-  - No industry-matched links
-- **Suggestions:**
-  - Add industry-specific links to improve relevance
-
 ### /case-study/hvac-seasonal-lead-surge-handling
 
 - **Status:** weak
@@ -639,6 +621,15 @@ Generated: 3/30/2026, 3:55:21 AM
 - **Suggestions:**
   - Add industry-specific links to improve relevance
 
+### /industries/legal-professional-services/accounting-firms
+
+- **Status:** weak
+- **Links:** 4 | **Avg Score:** 313
+- **Issues:**
+  - No industry-matched links
+- **Suggestions:**
+  - Add industry-specific links to improve relevance
+
 ### /industries/legal-professional-services/consultants
 
 - **Status:** weak
@@ -694,6 +685,15 @@ Generated: 3/30/2026, 3:55:21 AM
   - Add industry-specific links to improve relevance
 
 ### /industries/real-estate-property-services/home-inspectors
+
+- **Status:** weak
+- **Links:** 4 | **Avg Score:** 313
+- **Issues:**
+  - No industry-matched links
+- **Suggestions:**
+  - Add industry-specific links to improve relevance
+
+### /industries/real-estate-property-services/realtors
 
 - **Status:** weak
 - **Links:** 4 | **Avg Score:** 313
@@ -1109,6 +1109,42 @@ Generated: 3/30/2026, 3:55:21 AM
   - Add 2–3 internal links to improve coverage
 
 ### /services/wordpress-development
+
+- **Status:** weak
+- **Links:** 1 | **Avg Score:** 370
+- **Issues:**
+  - Too few internal links
+- **Suggestions:**
+  - Add 2–3 internal links to improve coverage
+
+### /services/ecommerce
+
+- **Status:** weak
+- **Links:** 1 | **Avg Score:** 370
+- **Issues:**
+  - Too few internal links
+- **Suggestions:**
+  - Add 2–3 internal links to improve coverage
+
+### /services/divi5
+
+- **Status:** weak
+- **Links:** 1 | **Avg Score:** 370
+- **Issues:**
+  - Too few internal links
+- **Suggestions:**
+  - Add 2–3 internal links to improve coverage
+
+### /services/bricks-builder
+
+- **Status:** weak
+- **Links:** 1 | **Avg Score:** 370
+- **Issues:**
+  - Too few internal links
+- **Suggestions:**
+  - Add 2–3 internal links to improve coverage
+
+### /services/elementor
 
 - **Status:** weak
 - **Links:** 1 | **Avg Score:** 370
@@ -1890,15 +1926,15 @@ High-priority pages with below-target conversion scores:
 | /services/review-automation-system | service | consultation | 65 | medium |
 | /services/crm-infrastructure-implementation | service | consultation | 65 | medium |
 | /services/wordpress-development | service | consultation | 65 | medium |
+| /services/ecommerce | service | consultation | 65 | medium |
+| /services/divi5 | service | consultation | 65 | medium |
+| /services/bricks-builder | service | consultation | 65 | medium |
+| /services/elementor | service | consultation | 65 | medium |
 | /services/local-seo-authority | service | consultation | 50 | medium |
 | /case-study/appointment-business-booking-automation | case-study | consultation | 33 | low |
 | /case-study/appointment-reminder-no-show-reduction | case-study | consultation | 33 | low |
 | /case-study/auto-repair-missed-call-recovery | case-study | consultation | 33 | low |
 | /case-study/automotive-service-reminder-automation | case-study | consultation | 33 | low |
-| /case-study/beauty-salon-online-booking-local-seo-manchester-all-sections | case-study | consultation | 33 | low |
-| /case-study/beauty-salon-online-booking-local-seo-manchester-custom | case-study | consultation | 33 | low |
-| /case-study/crm-pipeline-visibility-transformation | case-study | consultation | 33 | low |
-| /case-study/hvac-emergency-lead-routing | case-study | consultation | 33 | low |
 
 ## Low Conversion Pages
 
@@ -1930,5 +1966,5 @@ High-priority pages with below-target conversion scores:
 | Metric | Value |
 |--------|-------|
 | Pages Without Service Link | 104 |
-| Pages Without Journey Link | 45 |
+| Pages Without Journey Link | 49 |
 | Avg Conversion Score | 50 |

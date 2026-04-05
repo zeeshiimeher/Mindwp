@@ -134,85 +134,23 @@ They should not be treated as decorative copy.
 
 ### Problem Analysis
 
-Purpose:
-Explain why a business problem happens and where the operational breakdown starts.
-
-Recommended section structure:
-
-- introduction
-- content for system context
-- content
-- content
-- checklist
-- callout
-- takeaways
-- cta
+Purpose: Explain why a business problem happens and where the operational breakdown starts.
 
 ### Industry Breakdown
 
-Purpose:
-Explain how a specific industry experiences a repeated operational issue.
-
-Recommended section structure:
-
-- introduction
-- content for system context
-- content
-- quote
-- content
-- steps
-- checklist
-- takeaways
-- cta
+Purpose: Explain how a specific industry experiences a repeated operational issue.
 
 ### System Explanation
 
-Purpose:
-Explain how a business system works at a conceptual level without becoming a resource page.
-
-Recommended section structure:
-
-- introduction
-- content for system context
-- content
-- steps
-- checklist
-- quote
-- takeaways
-- cta
+Purpose: Explain how a business system works at a conceptual level without becoming a resource page.
 
 ### Operational Mistake
 
-Purpose:
-Highlight a repeatable mistake, its downstream cost, and the correct system response.
-
-Recommended section structure:
-
-- introduction
-- content for system context
-- content
-- callout
-- content
-- checklist
-- quote
-- takeaways
-- cta
+Purpose: Highlight a repeatable mistake, its downstream cost, and the correct system response.
 
 ### Trend Analysis
 
-Purpose:
-Interpret new market or technology changes and explain practical implications.
-
-Recommended section structure:
-
-- introduction
-- content for system context
-- image
-- content
-- callout
-- quote
-- takeaways
-- cta
+Purpose: Interpret new market or technology changes and explain practical implications.
 
 ---
 
@@ -449,84 +387,29 @@ Table rules:
 
 # 7. Publishing Timeline
 
-Blog publishDate values must be distributed realistically across:
+Blog publishDate values distributed across 2024–2026.
 
-- 2024
-- 2025
-- 2026
+- 2024: foundation topics, repeated business problems, core system explanations.
+- 2025: expansion topics, industry breakdowns, broader operational strategy.
+- 2026: advanced trends, AI shifts, mature cluster depth.
 
-Timeline rules:
-
-- 2024: foundation topics, repeated business problems, and core system explanations.
-- 2025: expansion topics, industry breakdowns, and broader operational strategy coverage.
-- 2026: advanced trends, AI shifts, and more mature cluster depth.
-
-Chronology rules:
-
+Rules:
 - publishDate must not be in the future.
-- Dates should appear naturally distributed rather than bulk-published.
-- Posts within the same cluster should show believable sequencing over time.
-
-Publishing distribution objective:
-
-- 2024 builds the initial authority base.
-- 2025 expands cluster density.
-- 2026 captures higher-level trend and system maturity topics.
+- Dates should appear naturally distributed.
+- Posts within the same cluster should show believable sequencing.
 
 ---
 
 # 8. Topical Authority Linking Architecture
 
-Internal linking loop:
-
-Blog
-↓
-Resource
-↓
-Industry
-↓
-Service
-↓
-Resource
-
-This creates a closed authority loop instead of a one-way publishing path.
+Internal linking loop: Blog → Resource → Industry → Service → Resource
 
 Rules:
-
 - Every blog post must link to at least one primary resource hub.
-- Resource pages should link to the most relevant industry page when contextual application matters.
-- Industry pages should link to the appropriate service page for implementation intent.
-- Service pages may link back to resource hubs when readers need framework depth.
-- Service pages must NOT link to blog posts.
+- Resource pages should link to the most relevant industry page.
+- Industry pages should link to the appropriate service page.
+- Service pages may link back to resource hubs but must NOT link to blog posts.
 - Blog-to-blog links are secondary and must never replace the blog-to-resource path.
-
-Topical authority goal:
-
-- Blog captures problem-aware demand.
-- Resource consolidates the system explanation.
-- Industry localizes the framework.
-- Service converts the commercial intent.
-- Resource receives reinforcing authority from the lower layer without turning service pages into content hubs.
-
-Example loop:
-
-Why Roofing Companies Lose Leads During Storm Season
-→ lead-automation-framework
-→ Roofing Companies
-→ AI Lead Handling Systems
-→ lead-automation-framework
-
-Why Salons Lose Calls During Service Hours
-→ missed-call-recovery-for-salons
-→ Hair Salons
-→ AI Lead Handling Systems
-→ missed-call-recovery-system
-
-Future CRM Visibility for HVAC Companies
-→ building-revenue-visibility-through-crm-tracking
-→ HVAC Companies
-→ CRM Automation Systems
-→ sales-pipeline-visibility-framework
 
 ---
 

@@ -27,13 +27,37 @@ interface IconStyleClasses {
    ICON TYPE MAP — each type has a distinct visual identity
    --------------------------------------------------------------- */
 const ICON_TYPE_MAP: Record<IconType, IconStyleClasses> = {
-  primary:   { bg: 'icon-bg-primary',   text: 'icon-text-primary',   combined: 'icon-bg-primary icon-text-primary' },
-  secondary: { bg: 'icon-bg-secondary', text: 'icon-text-secondary', combined: 'icon-bg-secondary icon-text-secondary' },
-  accent:    { bg: 'icon-bg-accent',    text: 'icon-text-accent',    combined: 'icon-bg-accent icon-text-accent' },
-  success:   { bg: 'icon-bg-success',   text: 'icon-text-success',   combined: 'icon-bg-success icon-text-success' },
-  warning:   { bg: 'icon-bg-warning',   text: 'icon-text-warning',   combined: 'icon-bg-warning icon-text-warning' },
-  info:      { bg: 'icon-bg-info',      text: 'icon-text-info',      combined: 'icon-bg-info icon-text-info' },
-  neutral:   { bg: 'icon-bg-neutral',   text: 'icon-text-neutral',   combined: 'icon-bg-neutral icon-text-neutral' },
+  primary: {
+    bg: 'icon-bg-primary',
+    text: 'icon-text-primary',
+    combined: 'icon-bg-primary icon-text-primary',
+  },
+  secondary: {
+    bg: 'icon-bg-secondary',
+    text: 'icon-text-secondary',
+    combined: 'icon-bg-secondary icon-text-secondary',
+  },
+  accent: {
+    bg: 'icon-bg-accent',
+    text: 'icon-text-accent',
+    combined: 'icon-bg-accent icon-text-accent',
+  },
+  success: {
+    bg: 'icon-bg-success',
+    text: 'icon-text-success',
+    combined: 'icon-bg-success icon-text-success',
+  },
+  warning: {
+    bg: 'icon-bg-warning',
+    text: 'icon-text-warning',
+    combined: 'icon-bg-warning icon-text-warning',
+  },
+  info: { bg: 'icon-bg-info', text: 'icon-text-info', combined: 'icon-bg-info icon-text-info' },
+  neutral: {
+    bg: 'icon-bg-neutral',
+    text: 'icon-text-neutral',
+    combined: 'icon-bg-neutral icon-text-neutral',
+  },
 };
 
 const DEFAULT_TYPE: IconType = 'primary';

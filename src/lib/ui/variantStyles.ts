@@ -38,13 +38,48 @@ interface VariantStyles {
    VARIANT MAP — composes icon + badge + card + text
    --------------------------------------------------------------- */
 const VARIANT_MAP: Record<VariantType, VariantStyles> = {
-  primary:   { icon: getIconStyles('primary'),   badge: 'variant-badge-primary',   card: 'variant-card-primary',   text: 'variant-text-primary' },
-  secondary: { icon: getIconStyles('secondary'), badge: 'variant-badge-secondary', card: 'variant-card-secondary', text: 'variant-text-secondary' },
-  accent:    { icon: getIconStyles('accent'),    badge: 'variant-badge-accent',    card: 'variant-card-accent',    text: 'variant-text-accent' },
-  success:   { icon: getIconStyles('success'),   badge: 'variant-badge-success',   card: 'variant-card-success',   text: 'variant-text-success' },
-  warning:   { icon: getIconStyles('warning'),   badge: 'variant-badge-warning',   card: 'variant-card-warning',   text: 'variant-text-warning' },
-  info:      { icon: getIconStyles('info'),      badge: 'variant-badge-info',      card: 'variant-card-info',      text: 'variant-text-info' },
-  neutral:   { icon: getIconStyles('neutral'),   badge: 'variant-badge-neutral',   card: 'variant-card-neutral',   text: 'variant-text-neutral' },
+  primary: {
+    icon: getIconStyles('primary'),
+    badge: 'variant-badge-primary',
+    card: 'variant-card-primary',
+    text: 'variant-text-primary',
+  },
+  secondary: {
+    icon: getIconStyles('secondary'),
+    badge: 'variant-badge-secondary',
+    card: 'variant-card-secondary',
+    text: 'variant-text-secondary',
+  },
+  accent: {
+    icon: getIconStyles('accent'),
+    badge: 'variant-badge-accent',
+    card: 'variant-card-accent',
+    text: 'variant-text-accent',
+  },
+  success: {
+    icon: getIconStyles('success'),
+    badge: 'variant-badge-success',
+    card: 'variant-card-success',
+    text: 'variant-text-success',
+  },
+  warning: {
+    icon: getIconStyles('warning'),
+    badge: 'variant-badge-warning',
+    card: 'variant-card-warning',
+    text: 'variant-text-warning',
+  },
+  info: {
+    icon: getIconStyles('info'),
+    badge: 'variant-badge-info',
+    card: 'variant-card-info',
+    text: 'variant-text-info',
+  },
+  neutral: {
+    icon: getIconStyles('neutral'),
+    badge: 'variant-badge-neutral',
+    card: 'variant-card-neutral',
+    text: 'variant-text-neutral',
+  },
 };
 
 const DEFAULT_VARIANT: VariantType = 'primary';

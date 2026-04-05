@@ -104,32 +104,6 @@ Everything connects through the **Content Graph** — a map of all 205+ content 
 
 ---
 
-## 2A. System Data Model
-
-### Snapshot Layer
-
-These files are overwrite-only and always represent current state.
-
-- `Mindwp-Docs/SYSTEM-LOG.md` = human-readable current snapshot
-- `reports/system-state.json` = machine-readable current snapshot
-- `reports/system-drift.json` = machine-readable current drift snapshot
-
-`SYSTEM-LOG.md` is a snapshot, not a historical log.
-
-### Fix History
-
-- `reports/fix-log.json` = append-only fix history
-- one entry = one measurable fix event
-- source of truth for fix analytics, dashboard history, and learning systems
-
-### Session History
-
-- `reports/session-log.json` = append-only session history
-- tracks work sessions, not fix events
-- written separately from fix history
-
----
-
 ## 3. Scripts
 
 ### Generation Scripts
@@ -142,7 +116,6 @@ These create data that dashboards and validators use.
 | generate-topic-authority-scores | `npx tsx scripts/generate-topic-authority-scores.ts` | Scores each topic based on how much content supports it | `reports/topic-authority-scores.json`, `reports/topic-authority-scores.md` |
 | generate-content-registries | `node scripts/generate-content-registries.mjs` | Creates slug→component lookup maps for blog, resources, and case studies | `src/domains/*/registry.ts` |
 | generate-global-inventory | `node scripts/generate-global-inventory.mjs` | Generates a catalog of all shared components | `Mindwp-Docs/GLOBAL-COMPONENTS-CATALOG.md` |
-| generate-sitemap | `node scripts/generate-sitemap.mjs` | Creates XML sitemap from content registry | `public/sitemap.xml` |
 | generate-component-docs | `node scripts/generators/generate-component-docs.cjs` | Generates component documentation | `Mindwp-Docs/` (doc files) |
 | generate-resolver-cache | `npx tsx scripts/generate-resolver-cache.ts` | Pre-computes content graph resolver cache for faster lookups | Cache files |
 | check-generated | `node scripts/core/check-generated.mjs` | Freshness guard — checks if generated files are up to date | Exit code 1 if stale |
@@ -158,8 +131,7 @@ These analyze content quality and produce reports.
 | score-content | `node scripts/analyzers/score-content.mjs` | Scores each page on hype words, banned phrases, word count, CTA presence | `reports/content-score.json` |
 | detect-page-priorities | `node scripts/analyzers/detect-page-priorities.mjs` | Tags each page as high/medium/low priority based on domain type | `reports/page-priorities.json` |
 | audit-content-consistency | `node scripts/analyzers/audit-content-consistency.mjs` | Scans for CTA inconsistencies, banned vocabulary, hype density | `reports/content-consistency-audit.json` |
-| export-report | `node scripts/analyzers/export-report.mjs` | Generates client-facing intelligence report combining all analysis | client-report.json + client-report.md in /reports/ (on demand, not always present) |
-| export-readable-report | `node scripts/analyzers/export-readable-report.mjs` | Generates human-readable audit report | readable-audit-report.json + readable-audit-report.md in /reports/ |
+| export-reports | `node scripts/analyzers/export-reports.mjs` | Exports client and readable reports (use --type=client or --type=readable) | client-report.json + readable-audit-report.json in /reports/ |
 | test-editing-stability | `node scripts/analyzers/test-editing-stability.mjs` | Tests that edit operations are safe and reversible | Console output |
 
 ### Validation Scripts
@@ -187,11 +159,10 @@ These enforce rules. Run individually or all at once with `validate-all`.
 | validate-internal-links | `npx tsx scripts/validators/validate-internal-links.ts` | Max 5 links/page, no duplicates, no repeated anchors | Yes |
 | validate-conversion | `npx tsx scripts/validators/validate-conversion.ts` | Missing CTA, no service link, no journey step | **No** (warnings only) |
 | validate-system-docs | `node scripts/validators/validate-system-docs.mjs` | Checks this doc stays aligned with actual systems | **No** (warnings only) |
-| validate-readable-report | `node scripts/validators/validate-readable-report.mjs` | Checks readable report system integrity (files, exports, script) | **No** (warnings only) |
-| validate-rewrite-engine | `node scripts/validators/validate-rewrite-engine.mjs` | Checks rewrite engine and dependencies (files, exports) | **No** (warnings only) |
+
 | validate-checklist | `node scripts/validators/validate-checklist.mjs` | Checks fix checklist engine and integrations | **No** (warnings only) |
 | validate-fix-log | `node scripts/validators/validate-fix-log.mjs` | Checks fix history shape and append-only contract expectations | **No** (warnings only) |
-| validate-session-log | `node scripts/validators/validate-session-log.mjs` | Checks session tracker system (log, module, script, panel) | **No** (warnings only) |
+
 
 ### Utility Scripts
 
@@ -202,8 +173,7 @@ These enforce rules. Run individually or all at once with `validate-all`.
 | image-inspect | `npx tsx scripts/analyzers/image-inspect.ts` | Inspects image metadata and generates image reports |
 | inspect-graph | `npx tsx scripts/analyzers/inspect-graph.ts` | Dev runner for graph structure inspection |
 | run-eslint | `node scripts/runners/run-eslint.mjs` | ESLint runner (used by validate-all) |
-| run-next | `node scripts/runners/run-next.mjs` | Next.js dev runner |
-| run-next-filtered | `node scripts/runners/run-next-filtered.mjs` | Filtered Next.js runner |
+| run-next | `node scripts/runners/run-next.mjs` | Next.js dev runner (use --filter for filtered stderr mode) |
 | add-fix-entry | `node scripts/dev/add-fix-entry.mjs` | CLI for appending fix entries to fix-log.json |
 | add-session-entry | `node scripts/dev/add-session-entry.mjs` | CLI for adding optimization session entries to session-log.json |
 
@@ -219,20 +189,6 @@ These enforce rules. Run individually or all at once with `validate-all`.
 
 All reports live in `/reports/`. This directory contains both generated snapshots and append-only histories.
 
-### authority-map.json
-
-- **Generated by:** `npx tsx scripts/generate-authority-map.ts`
-- **Used by:** Content Dashboard, Authority Dashboard
-- **Contains:** All content nodes with types, all edges (relationships), diagnostics (orphans, weak, strong)
-- **Purpose:** The foundation of the content graph. Defines how every page connects to every other page.
-
-### authority-map.dot
-
-- **Generated by:** `npx tsx scripts/generate-authority-map.ts`
-- **Used by:** Graph visualization tools (Graphviz)
-- **Contains:** DOT format graph for visual rendering
-- **Purpose:** Can be converted to SVG for the Content Dashboard graph panel.
-
 ### topic-authority-scores.json
 
 - **Generated by:** `npx tsx scripts/generate-topic-authority-scores.ts`
@@ -247,13 +203,6 @@ All reports live in `/reports/`. This directory contains both generated snapshot
 - **Contains:** Markdown version of the topic authority scores
 - **Purpose:** Readable summary for documentation or sharing.
 
-### content-intelligence.json
-
-- **Generated by:** `npx tsx scripts/analyzers/generate-content-intelligence.ts`
-- **Used by:** Analysis and planning
-- **Contains:** Content gaps, authority weaknesses, suggestions, priority scores
-- **Purpose:** High-level intelligence about what to write, what to fix, and what to prioritize.
-
 ### content-gaps.json
 
 - **Generated by:** `npx tsx scripts/analyzers/generate-content-gaps.ts`
@@ -267,48 +216,6 @@ All reports live in `/reports/`. This directory contains both generated snapshot
 - **Used by:** Human review
 - **Contains:** Markdown version of content gaps
 - **Purpose:** Readable gap analysis for planning sessions.
-
-### content-score.json
-
-- **Generated by:** `node scripts/analyzers/score-content.mjs`
-- **Used by:** Priority engine, analysis
-- **Contains:** Per-page scores — hype word count, banned phrase count, word count, sentence metrics, CTA presence, CTA label approval
-- **Purpose:** Quality scoring for every content page. Feeds into the priority queue.
-
-### content-consistency-audit.json
-
-- **Generated by:** `node scripts/analyzers/audit-content-consistency.mjs`
-- **Used by:** Analysis
-- **Contains:** CTA label/href consistency, banned vocabulary hits, hype density, missing CTA sections — grouped by domain
-- **Purpose:** Finds inconsistencies across content that need cleanup.
-
-### page-priorities.json
-
-- **Generated by:** `node scripts/analyzers/detect-page-priorities.mjs`
-- **Used by:** Priority engine, planning
-- **Contains:** Every page tagged with priority level (high/medium/low) based on domain type
-- **Purpose:** Services and features get "high" priority, industries and resources get "medium", blog gets "low".
-
-### metadata-completeness.json
-
-- **Generated by:** `node scripts/validators/validate-metadata-completeness.mjs`
-- **Used by:** Analysis
-- **Contains:** Metadata field coverage metrics across all content
-- **Purpose:** Shows which pages are missing metadata fields.
-
-### fix-log.json
-
-- **Generated by:** Controlled append via `node scripts/dev/add-fix-entry.mjs` or equivalent tooling
-- **Used by:** Authority Dashboard (Fix History panel)
-- **Contains:** Array of fix records — id, timestamp, title, component, type, impact, status, slug, fixType, before/after scores
-- **Purpose:** Tracks all content fixes over time. Enables learning which fixes improve scores most.
-
-### session-log.json
-
-- **Generated by:** Append via `node scripts/dev/add-session-entry.mjs`
-- **Used by:** Authority Dashboard (Session Tracker panel)
-- **Contains:** Array of session entries — date, action, slugs affected, before/after scores, notes
-- **Purpose:** Tracks optimization sessions over time. Enables progress visibility on the dashboard.
 
 ### readable-audit-report.json
 
@@ -405,18 +312,14 @@ Step-by-step guide for using the system:
 node scripts/core/validate-all.mjs
 ```
 
-This runs all 29 validators and shows pass/fail for each. Use `--report-json` for machine-readable output.
+This runs all 26 validators and shows pass/fail for each. Use `--report-json` for machine-readable output.
 
 ### Regenerating All Reports
 
 ```bash
 npx tsx scripts/generators/generate-authority-map.ts
 npx tsx scripts/generators/generate-topic-authority-scores.ts
-npx tsx scripts/analyzers/generate-content-intelligence.ts
 npx tsx scripts/analyzers/generate-content-gaps.ts
-node scripts/analyzers/score-content.mjs
-node scripts/analyzers/detect-page-priorities.mjs
-node scripts/analyzers/audit-content-consistency.mjs
 ```
 
 ---
@@ -429,7 +332,7 @@ Every content page has a **slug** — a unique identifier like `/blog/lead-gener
 
 - **Content Graph:** Every slug is a node. Edges connect related slugs.
 - **Authority Map:** Slugs are mapped to authority slots (which services, industries, topics they belong to).
-- **Reports:** `content-score.json`, `page-priorities.json`, and `fix-log.json` all reference pages by slug.
+- **Reports:** Reports reference pages by slug.
 - **Dashboards:** Both dashboards display data organized by slug.
 - **Validators:** Domain validators check that each slug has required structure and metadata.
 
@@ -462,7 +365,7 @@ How everything connects:
      │   GENERATION    │   │   VALIDATION       │
      │   SCRIPTS       │   │   SCRIPTS          │
      │                 │   │                    │
-    │ authority-map   │   │ validate-all (29)  │
+    │ authority-map   │   │ validate-all (26)  │
      │ topic-scores    │   │ domain validators  │
      │ content-gaps    │   │ rule validators    │
      │ score-content   │   │ conversion audit   │
@@ -476,9 +379,7 @@ How everything connects:
      │ authority-map    │
      │ topic-scores     │
      │ content-gaps     │
-     │ content-score    │
-     │ page-priorities  │
-     │ fix-log          │
+     │ validation       │
      └───┬─────────┬────┘
          │         │
    ┌─────▼───┐ ┌──▼──────────────┐
@@ -499,8 +400,6 @@ How everything connects:
 
 - All dashboards are **development-only** — they are not visible in production.
 - Snapshot reports are generated and overwrite-only.
-- `fix-log.json` and `session-log.json` are append-only histories.
-- `fix-log.md` is not part of the active system model.
 - Run `validate-all` after any system change to verify nothing is broken.
 - When you add a new script, report, or dashboard — update this document or the `validate-system-docs` validator will warn you.
 

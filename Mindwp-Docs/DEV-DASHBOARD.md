@@ -21,17 +21,14 @@
 
 | Item | Value |
 |---|---|
-| Active Phase | Phase 7B — Hover & Transition Standardization |
-| Progress | 0 / 6 |
-| Next Task | T-110 — Add Tier 2 hover to DualToneChecklist, ServiceSpectrum, ProcessSteps cards |
+| Active Phase | Phase 9.1 — Script Alignment + Validation Fixes |
+| Progress | See [project-todo.md](project-todo.md) |
+| Next Task | See project-todo.md Phase 9 tasks |
 
-**Tasks**
-- T-110 — Add Tier 2 hover to DualToneChecklist, ServiceSpectrum, ProcessSteps cards
-- T-111 — Add `:focus-visible` ring to DualToneChecklist, ServiceSpectrum, ProcessSteps
-- T-112 — Normalize hover shadows
-- T-113 — Replace hardcoded `0.2s ease` transitions
-- T-114 — Wrap unguarded hover states in `@media (hover: hover)`
-- T-115 — Strengthen `benefit-card--link` hover
+**Completed Phases**
+- Phase 7 — Visual System Audit ✅
+- Phase 8 — Section System ✅
+- Phase 9 — System Cleanup & Alignment ✅
 
 ---
 
@@ -74,7 +71,5 @@ npm run dev
 
 ## 6. CURRENT ISSUES
 
-- No validator failures.
-- Phase 7B interaction cleanup is the active open work.
-- Transition cleanup in `components.css` is still pending.
-- Gradient tokenization is queued for Phase 7C.
+- No validator failures. All 26 validators passing.
+- Phase 9.1 complete — lint fixed, token violations fixed, script registry normalized.

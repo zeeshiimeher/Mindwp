@@ -82,7 +82,10 @@ export function HeaderLogoSvg({ className = '', variant = 'dark' }: HeaderLogoSv
         </linearGradient>
         <linearGradient id='logo-gradient-stroke-header' x1='0%' y1='0%' x2='100%' y2='100%'>
           <stop offset='0%' stopColor={isLight ? 'var(--brand-white)' : 'var(--brand-primary)'} />
-          <stop offset='100%' stopColor={isLight ? 'var(--brand-white)' : 'var(--brand-secondary)'} />
+          <stop
+            offset='100%'
+            stopColor={isLight ? 'var(--brand-white)' : 'var(--brand-secondary)'}
+          />
         </linearGradient>
       </defs>
     </svg>

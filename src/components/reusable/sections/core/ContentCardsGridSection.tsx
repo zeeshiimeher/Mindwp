@@ -47,11 +47,7 @@ export function ContentCardsGridSection({
         />
       )}
 
-      <CardGrid
-        columns={columns}
-        gap={4}
-        mode='controlled'
-      >
+      <CardGrid columns={columns} gap={4} mode='controlled'>
         {items.map((item, index) => {
           const renderIcon = () => {
             if (iconType === 'none') return null;

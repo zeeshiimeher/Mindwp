@@ -54,7 +54,9 @@ export function FeaturesLanding() {
                   return (
                     <Card key={feature.slug} className='feature-lnd__card'>
                       <a href={feature.path} className='link-primary feature-lnd__link'>
-                        <div className={`feature-lnd__icon icon-container-md ${getVariantStyles('primary').icon.bg}`}>
+                        <div
+                          className={`feature-lnd__icon icon-container-md ${getVariantStyles('primary').icon.bg}`}
+                        >
                           <Icon
                             className={getVariantStyles('primary').icon.text}
                             aria-hidden='true'

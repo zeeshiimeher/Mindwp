@@ -34,7 +34,8 @@
 | 3.4 | Cleanup and dead code | Skipped |
 | 3.5 | System hardening | Done |
 | 7A | Section background system | Done |
-| 8 | Section system (structural refactor) | Active |
+| 8 | Section system (structural refactor) | Done |
+| 9 | System cleanup and alignment | Active |
 | 12 | Vocabulary cleanup execution | Ready |
 | 12.5 | Decision system definition | Future |
 | 13–18 | UI polish through deployment | Future |
@@ -45,42 +46,58 @@
 
 **Context**
 - Phase 7 complete (visual system locked)
-- Phase 8 in progress (structural system refactor)
-- All remaining Phase 7 work deferred until Phase 8 completion
+- Phase 8 complete (section system refactored — primitives, layout, backgrounds unified)
+- Phase 9 in progress (system cleanup and alignment)
 
-### Phase 8 — Section System (Structural Refactor)
+### Phase 9 — System Cleanup & Alignment
 
 **Goal**
-- Standardize section architecture using composable primitives.
-- Unify spacing system, remove layout duplication, normalize data contracts.
+- Audit and clean documentation, scripts, and reports.
+- Remove obsolete files, consolidate duplicates, fix doc inconsistencies.
+- Extract final system rules from Phase 7/8 docs into SYSTEM-TRUTH.md.
 
 **Source**
-- `Mindwp-Docs/PHASE-8-SECTION-SYSTEM.md`
+- Phase 9 audit plan (conversation-level)
 
 **Success checks**
-- All sections use SectionWrapper + LayoutPrimitive composition
-- Single spacing system (no l-gap / Tailwind gap mismatch)
-- Grid column logic extracted to shared primitive
-- Blog/resource sections conform to section layout contract
-- Data normalization happens at data boundary, not in components
+- All obsolete scripts and stale reports deleted
+- Duplicate scripts consolidated
+- Doc inconsistencies resolved
+- Phase 7/8 guarantees extracted into SYSTEM-TRUTH.md
+- All validators passing
 
-| ID | Task | File(s) | Priority | Status |
-|---|---|---|---|---|
-| T-130 | Define spacing system (l-gap alignment with Tailwind gap) | `src/styles/framework.css` | High | [ ] |
-| T-131 | Build SectionWrapper primitive | `src/components/reusable/` | High | [ ] |
-| T-132 | Build CardGrid primitive | `src/components/reusable/` | High | [ ] |
-| T-133 | Build SplitLayout primitive | `src/components/reusable/` | Medium | [ ] |
-| T-134 | Refactor first 3 core sections to use primitives | `src/components/reusable/sections/core/` | Medium | [ ] |
-| T-135 | Standardize data contracts (shared item/action shapes) | `src/domains/` | Medium | [ ] |
-| T-136 | Remove duplicated grid column logic (12+ sections) | `src/components/reusable/sections/core/` | Medium | [ ] |
-| T-137 | Enforce section architecture rules | Validators | Low | [ ] |
-
-**Next task**
-- T-130 — Define spacing system (l-gap alignment with Tailwind gap).
+| ID | Task | Priority | Status |
+|---|---|---|---|
+| T-138 | Delete obsolete scripts (10 files) | High | [x] |
+| T-139 | Delete stale reports (9 files) | High | [x] |
+| T-140 | Merge duplicate scripts (2 pairs) | High | [x] |
+| T-141 | Fix doc inconsistencies (project-todo, PHASE-8, DEV-DASHBOARD) | High | [x] |
+| T-142 | Clean docs (SYSTEM-INTELLIGENCE-DOC, IMAGE-SYSTEM-ARCHITECTURE, BLOG-PLANNING-INVENTORY) | Medium | [x] |
+| T-143 | Extract Phase 7/8 rules into SYSTEM-TRUTH.md | Medium | [x] |
+| T-144 | Regenerate system state (system-sync, validate-all) | Medium | [x] |
+| T-145 | Final verification (imports, scripts, dashboards) | Low | [x] |
 
 ---
 
-### Deferred — Visual Polish (Post Phase 8)
+### Phase 9.1 — Script Alignment + Validation Fixes
+
+**Goal**
+- Fix 3 blocking validator failures (lint, validate-tokens, check-generated)
+- Normalize phase7 script naming, clean registry, update dashboard
+
+| ID | Task | Priority | Status |
+|---|---|---|---|
+| T-146 | Fix lint failures (3 prettier errors) | High | [x] |
+| T-147 | Fix token violations (2 hardcoded 2px values) | High | [x] |
+| T-148 | Fix check-generated staleness | High | [x] |
+| T-149 | Normalize phase7 script naming + registry cleanup | Medium | [x] |
+
+**Next task**
+- Phase 9.1 complete — all tasks done
+
+---
+
+### Deferred — Visual Polish (Post Phase 9)
 
 | Phase | Goal | Tasks | Status |
 |---|---|---|---|
@@ -96,6 +113,7 @@
 - **Phases 1 to 4:** build recovery, architecture alignment, validation consolidation, and cleanup completed.
 - **Phase 5:** vocabulary cleanup started; partial completion only. Remaining work moved forward as Phase 12 execution.
 - **Phases 6 to 11:** content governance, content intelligence, stabilization, internal linking, dashboards, and conversion intelligence shipped.
+- **Phase 8:** Section system structural refactor completed — SectionWrapper, CardGrid, SplitLayout, Stack primitives built; BEM grid CSS removed; section backgrounds unified to bg-base/bg-alt.
 - **Execution visibility layer:** `/dev-dashboard`, script registry, run-script API, reports-structure validator, Phase 7 report isolation, and dev-tools audit completed.
 - **Execution interface upgrade:** workflow engine, script history, lazy report viewer, structured output UX, and execution intelligence metadata completed.
 - **Phase 3.1:** dead CTA label logic removed, rogue CTA issues closed, invalid gradient references removed.

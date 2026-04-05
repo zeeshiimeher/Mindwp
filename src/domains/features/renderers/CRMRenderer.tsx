@@ -142,12 +142,7 @@ export default function CRMRenderer() {
             backgroundColor='bg-base'
           />
 
-          <FAQSection
-            badge={faq.badge}
-            title={faq.title}
-            faqs={faq.items}
-            cssPrefix='crm-faq'
-          />
+          <FAQSection badge={faq.badge} title={faq.title} faqs={faq.items} cssPrefix='crm-faq' />
 
           <FeatureSupportingFrameworksSection featureSlug={crmData.slug} cssPrefix='crm-explore' />
 

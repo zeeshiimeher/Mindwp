@@ -47,10 +47,7 @@ export function IconInfoCardsSection({
         className={`${BLOCK}__header`}
       />
 
-      <CardGrid
-        columns={columns}
-        mode='controlled'
-      >
+      <CardGrid columns={columns} mode='controlled'>
         {items.map((item, index) => (
           <Card key={index} className={cn(`${BLOCK}__card`, 'card-base')}>
             <item.icon className={`${BLOCK}__icon`} />

@@ -40,10 +40,7 @@ export function ProcessStepsSection({
           className={`${BLOCK}__header`}
         />
       )}
-      <CardGrid
-        columns={columns}
-        mode='controlled'
-      >
+      <CardGrid columns={columns} mode='controlled'>
         {steps.map((step, index) => (
           <ProcessStepCard
             key={index}

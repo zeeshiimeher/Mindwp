@@ -13,13 +13,13 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { TestimonialCard } from '@/components/reusable/single/TestimonialCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { getVariantStyles } from '@/lib/ui/variantStyles';
 import { Card } from '@/components/ui/card';
 import {
   FeatureImplementationServicesSection,
   FeatureSupportingFrameworksSection,
 } from '@/domains/features/components/FeatureRelatedSections';
 import { reputationData } from '@/domains/features/data/reputation';
+import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 const ReviewsVisual = () => (
   <Card className='p-8 bg-white/80 backdrop-blur shadow-xl'>
@@ -58,7 +58,10 @@ const ReviewsVisual = () => (
               <div className='text-sm'>{review.name}</div>
               <div className='l-row l-gap-2'>
                 {[...Array(review.stars)].map((_, j) => (
-                  <Star key={j} className={`${getVariantStyles('warning').icon.text} fill-current`} />
+                  <Star
+                    key={j}
+                    className={`${getVariantStyles('warning').icon.text} fill-current`}
+                  />
                 ))}
               </div>
             </div>

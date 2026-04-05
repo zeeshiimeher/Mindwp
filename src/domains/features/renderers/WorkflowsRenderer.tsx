@@ -54,9 +54,7 @@ const WorkflowVisual = () => {
                 <div
                   className={`l-row l-items-center l-gap-3 p-3 rounded-lg ${actionRowClasses[index]}`}
                 >
-                  <div
-                    className={`icon-container-sm rounded-full ${actionIconClasses[index]}`}
-                  >
+                  <div className={`icon-container-sm rounded-full ${actionIconClasses[index]}`}>
                     <ActionIcon className='text-white' />
                   </div>
                   <div className='text-sm'>

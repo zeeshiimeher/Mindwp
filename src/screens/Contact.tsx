@@ -13,8 +13,8 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
-import { getVariantStyles } from '@/lib/ui/variantStyles';
 import { primaryCta } from '@/config/primaryCta';
+import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 export function Contact() {
   const endpoint = '/form-handler.php';

@@ -2,7 +2,7 @@
 
 > Consolidated source of truth. Validated against live code.
 > Sources: 5 governing docs, reports/, code scan.
-> Updated: 2026-04-02 (decisions applied)
+> Updated: 2026-04-05 (Phase 9 cleanup applied)
 
 **Boundary:** This file defines current system reality only. It does not hold workflows, phase tasks, raw audit notes, or dashboard summaries.
 
@@ -16,7 +16,7 @@
 
 **Content graph:** 211 nodes, 2,742 edges, 7 formal content types (`ContentNodeType` is the only allowed type system — see §2.4).
 
-**Validation:** 29 validators. TypeScript clean. ESLint clean. Build passing.
+**Validation:** 26 validators. TypeScript clean. ESLint clean. Build passing.
 
 **Conversion model:** Conversation-first. Primary CTA: "Start a Conversation" → /contact. No lead magnets. System works without free resources.
 
@@ -109,7 +109,7 @@ Each node declares `industries`, `systems`, `topics` → relationships auto-gene
 | 1 | foundation.css | Design tokens — single source of truth | 366 |
 | 2 | primitives.css | CSS reset, base typography, Tailwind v4 bridge | 248 |
 | 3 | framework.css | Layout primitives (containers, sections, grids) | 836 |
-| 4 | components.css | All BEM component styles | 10,707 |
+| 4 | components.css | All BEM component styles | 10,355 |
 
 Then: `@tailwind base`, `@tailwind components`, `@tailwind utilities`.
 
@@ -333,6 +333,28 @@ All wrapped in `@media (hover: hover)` for touch-safety.
 
 Hero → Infrastructure Framing → Smart Website → Supporting Systems → Industries → CTA
 
+### 6.6 Section Primitives (Phase 8 — Locked)
+
+All sections use composable layout primitives. BEM grid CSS has been permanently removed.
+
+| Primitive | File | Purpose |
+|---|---|---|
+| SectionWrapper | `primitives/SectionWrapper.tsx` | Outer shell: `<section>` + padding + container + background |
+| SectionHeader | Re-export of SectionIntro | Title/badge/description |
+| CardGrid | `primitives/CardGrid.tsx` | Responsive grid (1–6 cols), `mode="controlled"` |
+| SplitLayout | `primitives/SplitLayout.tsx` | 2-column split, `breakpoint: 'md' | 'lg'` |
+| Stack | `primitives/Stack.tsx` | Vertical rhythm via CSS gap |
+
+**Layout ownership:** Primitives own all layout (grid, flex, columns, gaps, breakpoints). BEM owns all visual (card styles, typography, colors, hover states).
+
+**Section backgrounds:** Two-tone rhythm system: `bg-base` (`--c-bg`) / `bg-alt` (`--c-bg-alt`). Applied via class on SectionWrapper. No ad-hoc section backgrounds.
+
+**Phase 8 guarantees:**
+- Zero `__grid` or `__layout` display:grid CSS remains in components.css
+- All CardGrid sections use `mode="controlled"` (primitives are sole layout source)
+- All split sections use SplitLayout with `breakpoint="lg"` where applicable
+- 88 total sections, 4 utility files excluded. All refactored.
+
 ---
 
 ## 7. SYSTEM RULES
@@ -434,7 +456,7 @@ Hero → Infrastructure Framing → Smart Website → Supporting Systems → Ind
 |---|---|
 | **Governance is airtight** | 5 locked governing docs. Conflict resolution defined. Rule priority order established. AI execution lock. |
 | **Content graph is live and functional** | 211 nodes, 2,742 edges. Authority scoring, gap detection, conversion intelligence all operational. |
-| **Validation is comprehensive** | 29 validators. TypeScript strict. ESLint clean. Build green. |
+| **Validation is comprehensive** | 26 validators. TypeScript strict. ESLint clean. Build green. |
 | **Token system is well-layered** | 4-tier color system. Responsive typography. Spacing scale. Layout primitives. |
 | **Conversion intelligence is code-complete** | Intent mapping, CTA resolver, journey engine, scoring, priority queue — all built. |
 | **Component architecture is disciplined** | BEM everywhere. Server-first. Domain wrappers. Inline styles only in shadcn/ui and SVG text elements. |

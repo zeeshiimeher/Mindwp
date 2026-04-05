@@ -8978,7 +8978,7 @@ h3.cta-heading {
   width: var(--space-5);
   height: var(--space-5);
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: var(--space-half);
 }
 
 .conversation-page__trust-item {
@@ -8991,7 +8991,7 @@ h3.cta-heading {
   width: var(--space-5);
   height: var(--space-5);
   flex-shrink: 0;
-  margin-top: 2px;
+  margin-top: var(--space-half);
 }
 
 .conversation-page__steps-grid {

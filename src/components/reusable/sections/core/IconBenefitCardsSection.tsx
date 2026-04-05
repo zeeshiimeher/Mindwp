@@ -63,10 +63,7 @@ export function IconBenefitCardsSection({
           className={`${BLOCK}__header`}
         />
 
-        <CardGrid
-          columns={columns}
-          mode='controlled'
-        >
+        <CardGrid columns={columns} mode='controlled'>
           {benefits.map((benefit, index) => (
             <IconBenefitCard
               key={index}

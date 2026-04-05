@@ -73,11 +73,7 @@ export function ExploreCardsSection({
         className={`${BLOCK}__header`}
       />
 
-      <CardGrid
-        columns={columns}
-        gap={6}
-        mode='controlled'
-      >
+      <CardGrid columns={columns} gap={6} mode='controlled'>
         {cards.map((card, index) => {
           const gradientVariant = getGradientVariant(card.gradient);
           const iconVariant = getIconVariant(card.iconBg);

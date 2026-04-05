@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-03-29T22:55:21.853Z",
+  "generatedAt": "2026-04-05T17:17:16.813Z",
   "summary": {
-    "totalPages": 205,
+    "totalPages": 209,
     "healthy": 20,
-    "weak": 159,
+    "weak": 163,
     "critical": 26,
     "avgLinkScore": 340
   },
@@ -493,34 +493,6 @@
       ]
     },
     {
-      "slug": "accounting-firms",
-      "path": "/industries/legal-professional-services/accounting-firms",
-      "type": "industry-detail",
-      "status": "weak",
-      "totalLinks": 4,
-      "avgScore": 300,
-      "issues": [
-        "No industry-matched links"
-      ],
-      "suggestions": [
-        "Add industry-specific links to improve relevance"
-      ]
-    },
-    {
-      "slug": "realtors",
-      "path": "/industries/real-estate-property-services/realtors",
-      "type": "industry-detail",
-      "status": "weak",
-      "totalLinks": 4,
-      "avgScore": 300,
-      "issues": [
-        "No industry-matched links"
-      ],
-      "suggestions": [
-        "Add industry-specific links to improve relevance"
-      ]
-    },
-    {
       "slug": "hvac-seasonal-lead-surge-handling",
       "path": "/case-study/hvac-seasonal-lead-surge-handling",
       "type": "case-study",
@@ -919,6 +891,20 @@
       ]
     },
     {
+      "slug": "accounting-firms",
+      "path": "/industries/legal-professional-services/accounting-firms",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 313,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
       "slug": "consultants",
       "path": "/industries/legal-professional-services/consultants",
       "type": "industry-detail",
@@ -1005,6 +991,20 @@
     {
       "slug": "home-inspectors",
       "path": "/industries/real-estate-property-services/home-inspectors",
+      "type": "industry-detail",
+      "status": "weak",
+      "totalLinks": 4,
+      "avgScore": 313,
+      "issues": [
+        "No industry-matched links"
+      ],
+      "suggestions": [
+        "Add industry-specific links to improve relevance"
+      ]
+    },
+    {
+      "slug": "realtors",
+      "path": "/industries/real-estate-property-services/realtors",
       "type": "industry-detail",
       "status": "weak",
       "totalLinks": 4,
@@ -1645,6 +1645,62 @@
     {
       "slug": "wordpress-development",
       "path": "/services/wordpress-development",
+      "type": "service",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 370,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "ecommerce",
+      "path": "/services/ecommerce",
+      "type": "service",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 370,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "divi5",
+      "path": "/services/divi5",
+      "type": "service",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 370,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "bricks-builder",
+      "path": "/services/bricks-builder",
+      "type": "service",
+      "status": "weak",
+      "totalLinks": 1,
+      "avgScore": 370,
+      "issues": [
+        "Too few internal links"
+      ],
+      "suggestions": [
+        "Add 2–3 internal links to improve coverage"
+      ]
+    },
+    {
+      "slug": "elementor",
+      "path": "/services/elementor",
       "type": "service",
       "status": "weak",
       "totalLinks": 1,
@@ -2993,6 +3049,38 @@
       "status": "medium"
     },
     {
+      "slug": "ecommerce",
+      "path": "/services/ecommerce",
+      "type": "service",
+      "conversionGoal": "consultation",
+      "totalScore": 65,
+      "status": "medium"
+    },
+    {
+      "slug": "divi5",
+      "path": "/services/divi5",
+      "type": "service",
+      "conversionGoal": "consultation",
+      "totalScore": 65,
+      "status": "medium"
+    },
+    {
+      "slug": "bricks-builder",
+      "path": "/services/bricks-builder",
+      "type": "service",
+      "conversionGoal": "consultation",
+      "totalScore": 65,
+      "status": "medium"
+    },
+    {
+      "slug": "elementor",
+      "path": "/services/elementor",
+      "type": "service",
+      "conversionGoal": "consultation",
+      "totalScore": 65,
+      "status": "medium"
+    },
+    {
       "slug": "local-seo-authority",
       "path": "/services/local-seo-authority",
       "type": "service",
@@ -3027,38 +3115,6 @@
     {
       "slug": "automotive-service-reminder-automation",
       "path": "/case-study/automotive-service-reminder-automation",
-      "type": "case-study",
-      "conversionGoal": "consultation",
-      "totalScore": 33,
-      "status": "low"
-    },
-    {
-      "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-      "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
-      "type": "case-study",
-      "conversionGoal": "consultation",
-      "totalScore": 33,
-      "status": "low"
-    },
-    {
-      "slug": "beauty-salon-online-booking-local-seo-manchester-custom",
-      "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-custom",
-      "type": "case-study",
-      "conversionGoal": "consultation",
-      "totalScore": 33,
-      "status": "low"
-    },
-    {
-      "slug": "crm-pipeline-visibility-transformation",
-      "path": "/case-study/crm-pipeline-visibility-transformation",
-      "type": "case-study",
-      "conversionGoal": "consultation",
-      "totalScore": 33,
-      "status": "low"
-    },
-    {
-      "slug": "hvac-emergency-lead-routing",
-      "path": "/case-study/hvac-emergency-lead-routing",
       "type": "case-study",
       "conversionGoal": "consultation",
       "totalScore": 33,
@@ -3249,7 +3305,7 @@
   ],
   "ctaIssues": {
     "pagesWithoutServiceLink": 104,
-    "pagesWithoutJourneyLink": 45,
+    "pagesWithoutJourneyLink": 49,
     "avgConversionScore": 50
   }
 }

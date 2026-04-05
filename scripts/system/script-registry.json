@@ -263,19 +263,7 @@
       "type": "validator",
       "runnable": true
     },
-    {
-      "id": "validate-readable-report",
-      "name": "Check Readable Report",
-      "category": "validators",
-      "intent": "debug",
-      "group": "advanced",
-      "priority": 8,
-      "estimatedTime": "fast",
-      "path": "scripts/validators/validate-readable-report.mjs",
-      "description": "Check readable report setup.",
-      "type": "validator",
-      "runnable": true
-    },
+
     {
       "id": "validate-reports-structure",
       "name": "Check Reports",
@@ -302,19 +290,7 @@
       "type": "validator",
       "runnable": true
     },
-    {
-      "id": "validate-rewrite-engine",
-      "name": "Check Rewrite Tool",
-      "category": "validators",
-      "intent": "debug",
-      "group": "advanced",
-      "priority": 8,
-      "estimatedTime": "fast",
-      "path": "scripts/validators/validate-rewrite-engine.mjs",
-      "description": "Check rewrite tool setup.",
-      "type": "validator",
-      "runnable": true
-    },
+
     {
       "id": "validate-service-structure",
       "name": "Check Services",
@@ -325,19 +301,6 @@
       "estimatedTime": "medium",
       "path": "scripts/validators/validate-service-structure.mjs",
       "description": "Check service pages.",
-      "type": "validator",
-      "runnable": true
-    },
-    {
-      "id": "validate-session-log",
-      "name": "Check Session Log",
-      "category": "validators",
-      "intent": "debug",
-      "group": "advanced",
-      "priority": 9,
-      "estimatedTime": "fast",
-      "path": "scripts/validators/validate-session-log.mjs",
-      "description": "Check session log setup.",
       "type": "validator",
       "runnable": true
     },
@@ -354,6 +317,7 @@
       "type": "validator",
       "runnable": true
     },
+
     {
       "id": "validate-structure",
       "name": "Check Structure",
@@ -472,19 +436,7 @@
       "type": "generator",
       "runnable": true
     },
-    {
-      "id": "generate-sitemap",
-      "name": "Build Sitemap",
-      "category": "generators",
-      "intent": "content",
-      "group": "occasional",
-      "priority": 7,
-      "estimatedTime": "fast",
-      "path": "scripts/generators/generate-sitemap.mjs",
-      "description": "Build the sitemap.",
-      "type": "generator",
-      "runnable": true
-    },
+
     {
       "id": "generate-topic-authority-scores",
       "name": "Build Topic Scores",
@@ -539,32 +491,18 @@
       "runnable": true
     },
     {
-      "id": "export-readable-report",
-      "name": "Export Readable Report",
-      "category": "analyzers",
-      "intent": "debug",
-      "group": "occasional",
-      "priority": 7,
-      "estimatedTime": "medium",
-      "path": "scripts/analyzers/export-readable-report.mjs",
-      "description": "Export readable reports.",
-      "type": "analyzer",
-      "runnable": true,
-      "command": "node --import tsx/esm scripts/analyzers/export-readable-report.mjs"
-    },
-    {
-      "id": "export-report",
-      "name": "Export Report",
+      "id": "export-reports",
+      "name": "Export Reports",
       "category": "analyzers",
       "intent": "debug",
       "group": "occasional",
       "priority": 6,
       "estimatedTime": "medium",
-      "path": "scripts/analyzers/export-report.mjs",
-      "description": "Export report files.",
+      "path": "scripts/analyzers/export-reports.mjs",
+      "description": "Export client and readable reports.",
       "type": "analyzer",
       "runnable": true,
-      "command": "node --import tsx/esm scripts/analyzers/export-report.mjs"
+      "command": "node --import tsx/esm scripts/analyzers/export-reports.mjs"
     },
     {
       "id": "generate-content-gaps",
@@ -681,23 +619,11 @@
       "priority": 10,
       "estimatedTime": "medium",
       "path": "scripts/runners/run-next.mjs",
-      "description": "Run the app.",
+      "description": "Run the app. Use --filter for filtered stderr mode.",
       "type": "runner",
       "runnable": false
     },
-    {
-      "id": "run-next-filtered",
-      "name": "Run Filtered App",
-      "category": "runners",
-      "intent": "audit",
-      "group": "advanced",
-      "priority": 10,
-      "estimatedTime": "medium",
-      "path": "scripts/runners/run-next-filtered.mjs",
-      "description": "Run filtered app mode.",
-      "type": "runner",
-      "runnable": false
-    },
+
     {
       "id": "add-fix-entry",
       "name": "Add Fix Entry",
@@ -764,109 +690,75 @@
       "runnable": true
     },
 
+
     {
-      "id": "phase7-analyze-data",
-      "name": "Read Phase 7 Data",
-      "category": "phase7",
-      "intent": "audit",
-      "group": "advanced",
-      "priority": 9,
-      "estimatedTime": "medium",
-      "path": "scripts/phase7/phase7-analyze-data.cjs",
-      "description": "Read Phase 7 data.",
-      "type": "phase-task",
-      "runnable": true
-    },
-    {
-      "id": "phase7-heading-audit",
-      "name": "Check Phase 7 Headings",
-      "category": "phase7",
+      "id": "heading-audit",
+      "name": "Heading Audit",
+      "category": "visual",
       "intent": "audit",
       "group": "advanced",
       "priority": 9,
       "estimatedTime": "medium",
       "path": "scripts/phase7/phase7-heading-audit.cjs",
-      "description": "Check Phase 7 headings.",
-      "type": "phase-task",
-      "runnable": true
+      "description": "Audit heading hierarchy and accessibility.",
+      "type": "audit",
+      "runnable": true,
+      "command": "node scripts/phase7/phase7-heading-audit.cjs"
     },
+
     {
-      "id": "phase7-heading-summary",
-      "name": "Phase 7 Heading Summary",
-      "category": "phase7",
-      "intent": "audit",
-      "group": "advanced",
-      "priority": 9,
-      "estimatedTime": "fast",
-      "path": "scripts/phase7/phase7-heading-summary.cjs",
-      "description": "Show heading summary.",
-      "type": "phase-task",
-      "runnable": true
-    },
-    {
-      "id": "phase7-parse",
-      "name": "Parse Phase 7 Data",
-      "category": "phase7",
-      "intent": "audit",
-      "group": "advanced",
-      "priority": 9,
-      "estimatedTime": "fast",
-      "path": "scripts/phase7/phase7-parse.cjs",
-      "description": "Parse Phase 7 data.",
-      "type": "phase-task",
-      "runnable": true
-    },
-    {
-      "id": "phase7-split-screenshots",
-      "name": "Split Phase 7 Shots",
-      "category": "phase7",
+      "id": "split-screenshots",
+      "name": "Split Screenshots",
+      "category": "visual",
       "intent": "audit",
       "group": "advanced",
       "priority": 10,
       "estimatedTime": "slow",
       "path": "scripts/phase7/phase7-split-screenshots.cjs",
-      "description": "Split Phase 7 shots.",
-      "type": "phase-task",
-      "runnable": true
+      "description": "Split full-page screenshots into component-level segments.",
+      "type": "utility",
+      "runnable": true,
+      "command": "node scripts/phase7/phase7-split-screenshots.cjs"
     },
     {
-      "id": "phase7-visual-audit-engine",
-      "name": "Run Phase 7 Engine",
-      "category": "phase7",
+      "id": "visual-audit-engine",
+      "name": "Visual Audit Engine",
+      "category": "visual",
       "intent": "audit",
       "group": "advanced",
       "priority": 10,
       "estimatedTime": "slow",
       "path": "scripts/phase7/phase7-visual-audit.js",
-      "description": "Run Phase 7 engine.",
-      "type": "phase-task",
-      "runnable": true
+      "description": "Screenshot capture and hover analysis engine.",
+      "type": "audit",
+      "runnable": true,
+      "command": "node scripts/phase7/phase7-visual-audit.js"
     },
     {
-      "id": "phase7-run-visual-audit",
-      "name": "Run Visual Audit",
-      "category": "phase7",
+      "id": "visual-audit",
+      "name": "Visual Audit",
+      "category": "visual",
       "intent": "design",
       "group": "advanced",
       "priority": 8,
       "estimatedTime": "slow",
       "path": "scripts/phase7/run-visual-audit.js",
-      "description": "Run visual audit.",
-      "type": "phase-task",
+      "description": "Full visual audit runner — Playwright screenshots, hover analysis, graph.",
+      "type": "audit",
       "runnable": true,
       "command": "node --import tsx/esm scripts/phase7/run-visual-audit.js"
     },
     {
-      "id": "phase7-visual-audit-runtime",
-      "name": "Phase 7 Runtime",
-      "category": "phase7",
+      "id": "visual-audit-runtime",
+      "name": "Visual Audit Runtime",
+      "category": "visual",
       "intent": "audit",
       "group": "advanced",
       "priority": 10,
       "estimatedTime": "slow",
       "path": "scripts/phase7/visual-audit-v1.js",
-      "description": "Phase 7 runtime file.",
-      "type": "phase-task",
+      "description": "Runtime engine used by visual-audit runner.",
+      "type": "utility",
       "runnable": false
     }
   ]

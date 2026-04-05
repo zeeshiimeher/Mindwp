@@ -68,7 +68,9 @@ export default function ResourceCategoryTemplate({ category }: ResourceCategoryT
         {/* HERO */}
         <section className='resource-category__hero l-section'>
           <div className='l-container resource-category__hero-content'>
-            <Badge context='hero' cssPrefix={colors.badgeClass}>{count} guides</Badge>
+            <Badge context='hero' cssPrefix={colors.badgeClass}>
+              {count} guides
+            </Badge>
 
             <h1>{label}</h1>
 

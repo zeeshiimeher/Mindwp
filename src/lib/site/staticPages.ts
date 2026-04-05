@@ -10,7 +10,6 @@ export type StaticPage = {
  *
  * Used by:
  * - Human sitemap page (src/pages/Sitemap.tsx)
- * - XML sitemap generator (scripts/generate-sitemap.mjs)
  */
 export const STATIC_PAGES: StaticPage[] = [
   { name: 'Homepage', url: '/' },

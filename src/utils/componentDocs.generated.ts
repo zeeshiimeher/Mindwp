@@ -148,7 +148,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "iconType",
-        "type": "\"primary\" | \"secondary\" | \"accent\"",
+        "type": "IconType",
         "optional": false,
         "description": "Color theme for the icon background and text\n- \"primary\": Blue theme (default brand color)\n- \"secondary\": Gray theme\n- \"accent\": Orange/amber theme"
       },
@@ -257,10 +257,16 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": "Badge content - text, icons, or React elements"
       },
       {
+        "name": "context",
+        "type": "\"section\" | \"meta\" | \"hero\" | \"card\" | undefined",
+        "optional": true,
+        "description": "Contextual size/spacing modifier for specific layout positions.\n- \"meta\": Compact meta labels (blog cards, resource cards)\n- \"hero\": Larger hero section badges\n- \"section\": Section header badges with letter-spacing\n- \"card\": Card-level badges"
+      },
+      {
         "name": "cssPrefix",
         "type": "string | undefined",
         "optional": true,
-        "description": "Additional class(es) for the badge root element.\n\nNote: The component always applies its internal BEM block class (`badge`).\nThis prop is additive and will not change the BEM base."
+        "description": "Additional class(es) for the badge root element.\n\nRULE: cssPrefix is ONLY for contextual styling (layout/spacing)\nand CSS-class composition (e.g. resource-badge classes).\nIt MUST NOT override color, size, or variant system.\nUse `variant` for color and `context` for sizing modifiers."
       },
       {
         "name": "size",
@@ -270,7 +276,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "variant",
-        "type": "\"primary\" | \"secondary\" | \"outline\" | undefined",
+        "type": "\"primary\" | \"secondary\" | \"outline\" | \"alert\" | \"outline-white\" | undefined",
         "optional": true,
         "description": "Visual style variant"
       }
@@ -14264,7 +14270,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "iconType",
-        "type": "\"primary\" | \"secondary\" | \"accent\" | \"purple\" | \"teal\" | \"amber\" | \"dark\" | undefined",
+        "type": "import(\"/Users/zeeshansadiq/Projects/Mindwp/src/lib/ui/iconStyles\").IconType | undefined",
         "optional": true,
         "description": ""
       },
@@ -15004,7 +15010,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "iconType",
-        "type": "\"primary\" | \"secondary\" | \"accent\" | \"purple\" | \"teal\" | \"amber\" | \"dark\" | undefined",
+        "type": "import(\"/Users/zeeshansadiq/Projects/Mindwp/src/lib/ui/iconStyles\").IconType | undefined",
         "optional": true,
         "description": "Color theme for the icon background and text"
       },
@@ -15248,7 +15254,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "iconType",
-        "type": "\"primary\" | \"secondary\" | \"accent\" | \"purple\" | \"teal\" | \"amber\" | \"dark\" | undefined",
+        "type": "IconType | undefined",
         "optional": true,
         "description": "Icon color variant."
       }

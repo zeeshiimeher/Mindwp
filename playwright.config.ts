@@ -23,7 +23,7 @@ export default defineConfig({
   ],
   webServer: {
     command:
-      'node scripts/runners/run-next.mjs build && node scripts/runners/run-next-filtered.mjs start -- -p 3001',
+      'node scripts/runners/run-next.mjs build && node scripts/runners/run-next.mjs --filter start -- -p 3001',
     port: 3001,
     reuseExistingServer: false,
     timeout: 120_000,

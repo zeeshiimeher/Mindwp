@@ -38,7 +38,9 @@ export function ProblemSolutionSplitCard({
           <div className={`${BLOCK}__icon icon-container-lg icon-bg-primary`}>
             <Icon className={`${BLOCK}__icon-svg icon-text-primary`} />
           </div>
-          <Badge variant='alert' context='card'>{badge}</Badge>
+          <Badge variant='alert' context='card'>
+            {badge}
+          </Badge>
         </div>
 
         {/* Title */}

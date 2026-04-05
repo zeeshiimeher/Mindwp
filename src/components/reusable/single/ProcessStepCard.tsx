@@ -81,7 +81,9 @@ export function ProcessStepCard({
   cssPrefix = '',
 }: StepCardProps) {
   const badgeVariantClassName = `${BLOCK}__badge--${iconType}`;
-  const { bg: iconBg, text: iconText } = getIconStyles(iconType === 'default' ? 'primary' : iconType);
+  const { bg: iconBg, text: iconText } = getIconStyles(
+    iconType === 'default' ? 'primary' : iconType
+  );
 
   const IconComponent = icon;
 

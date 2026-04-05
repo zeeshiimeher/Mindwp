@@ -48,10 +48,7 @@ export default function Homepage() {
             <InfrastructureGapsSection />
           </section>
 
-          <section
-            id='smart-website-framework'
-            className='framework-section l-section bg-base'
-          >
+          <section id='smart-website-framework' className='framework-section l-section bg-base'>
             <SmartWebsiteFrameworkSection />
           </section>
           <section id='implementation-principles'>
@@ -90,7 +87,12 @@ export default function Homepage() {
 
             <ImplementationExamplesSection />
 
-            <FAQSection title={faqData.title} faqs={faqData.items} cssPrefix='faq-section' backgroundColor='bg-base' />
+            <FAQSection
+              title={faqData.title}
+              faqs={faqData.items}
+              cssPrefix='faq-section'
+              backgroundColor='bg-base'
+            />
           </Suspense>
         </main>
         <FooterCTASection />
@@ -253,9 +255,9 @@ function SmartWebsiteFrameworkSection() {
                       <div className='framework-section-journey-step-card'>
                         <div className='framework-section-journey-step-content'>
                           <div
-                            className={`framework-section-journey-step-icon ${getVariantStyles(
-                              step.iconType
-                            ).icon.combined}`}
+                            className={`framework-section-journey-step-icon ${
+                              getVariantStyles(step.iconType).icon.combined
+                            }`}
                           >
                             <Icon className='framework-section-journey-step-icon-svg' />
                           </div>
