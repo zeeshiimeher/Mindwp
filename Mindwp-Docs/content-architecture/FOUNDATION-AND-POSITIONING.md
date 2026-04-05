@@ -315,7 +315,7 @@ Allowed soft CTA patterns:
 Soft CTA constraints:
 - Must link to deeper content (resource, case study, or service)
 - Must NOT link to /contact
-- Must follow the journey system: Blog → Resource → Case Study → Service
+- Must link to content determined by intent classification — no fixed funnel order
 - No forms, no downloads, no commitment required
 
 Soft CTA placement:

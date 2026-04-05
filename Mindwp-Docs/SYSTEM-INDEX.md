@@ -16,6 +16,8 @@
 | `Mindwp-Docs/AI-RULES.md`                           | Unified rules and guardrails                 | Manual |
 | `Mindwp-Docs/project-todo.md`                       | Active execution ledger                      | Manual |
 | `Mindwp-Docs/PHASE-7-VISUAL-SYSTEM-AUDIT.md`        | Phase-scoped visual task playbook            | Manual |
+| `Mindwp-Docs/PHASE-8-SECTION-SYSTEM.md`              | Section system rules (Phase 8)               | Manual |
+| `Mindwp-Docs/PHASE-10-audit-plan.md`                 | Phase 10 source of truth — architecture + governance | Manual |
 | `Mindwp-Docs/system/DESIGN-SYSTEM-CONTROL-LAYER.md` | Design-system control rules                  | Manual |
 
 ---
@@ -121,6 +123,8 @@ Mindwp-Docs/
 ├── AI-RULES.md
 ├── SYSTEM-LOG.md
 ├── PHASE-7-VISUAL-SYSTEM-AUDIT.md
+├── PHASE-8-SECTION-SYSTEM.md
+├── PHASE-10-audit-plan.md
 ├── project-todo.md
 ├── GLOBAL-COMPONENTS-CATALOG.md
 ├── content-architecture/

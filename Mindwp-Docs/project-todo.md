@@ -35,7 +35,8 @@
 | 3.5 | System hardening | Done |
 | 7A | Section background system | Done |
 | 8 | Section system (structural refactor) | Done |
-| 9 | System cleanup and alignment | Active |
+| 9 | System cleanup and alignment | Done |
+| 10 | Content architecture audit + governance | Active |
 | 12 | Vocabulary cleanup execution | Ready |
 | 12.5 | Decision system definition | Future |
 | 13–18 | UI polish through deployment | Future |
@@ -47,7 +48,8 @@
 **Context**
 - Phase 7 complete (visual system locked)
 - Phase 8 complete (section system refactored — primitives, layout, backgrounds unified)
-- Phase 9 in progress (system cleanup and alignment)
+- Phase 9 complete (system cleanup and alignment)
+- Phase 10 in progress (content architecture audit + governance sync)
 
 ### Phase 9 — System Cleanup & Alignment
 
@@ -97,14 +99,46 @@
 
 ---
 
+### Phase 10 — Content Architecture Audit + Governance
+
+**Goal**
+- Full audit of all 211 content nodes (75 blogs, 52 resources, 22 case studies, 21 services, 26 industry-detail, 7 features, 6 industry-category)
+- 8 locked architecture decisions (D1–D8) governing linking, routing, slots, limits
+- Sync all system docs to Phase 10 source of truth
+- Intent-based routing replaces linear funnel
+
+**Source**
+- `Mindwp-Docs/PHASE-10-audit-plan.md` (1,553 lines, 18 sections)
+
+**Success checks**
+- All system docs aligned to Phase 10 decisions
+- SmartRelatedSection recognized as sole linking mechanism
+- No references to deprecated internal linking engine or JourneyNavigator
+- Intent classification (PROBLEM/SYSTEM/FRAMEWORK, ACTIONABLE/EDUCATIONAL/EXAMPLE) propagated
+
+| ID | Task | Priority | Status |
+|---|---|---|---|
+| T-150 | Sync SYSTEM-TRUTH.md to Phase 10 | Critical | [x] |
+| T-151 | Sync CONTENT-SYSTEM-ARCHITECTURE.md to Phase 10 | Critical | [x] |
+| T-152 | Sync SYSTEM-INDEX.md to Phase 10 | High | [x] |
+| T-153 | Sync AI-RULES.md to Phase 10 | High | [x] |
+| T-154 | Sync DEV-DASHBOARD.md to Phase 10 | High | [x] |
+| T-155 | Sync SYSTEM-INTELLIGENCE-DOC.md to Phase 10 | High | [x] |
+| T-156 | Sync CONTENT-GRAPH-SYSTEM.md to Phase 10 | High | [x] |
+| T-157 | Sync project-todo.md to Phase 10 | High | [x] |
+| T-158 | Sync medium-priority docs (BLUEPRINT, GOVERNANCE, DESIGN-CONTROL, inventories) | Medium | [x] |
+| T-159 | Regenerate DECISION-STATE.md and SYSTEM-LOG.md | Low | [ ] |
+
+---
+
 ### Deferred — Visual Polish (Post Phase 9)
 
 | Phase | Goal | Tasks | Status |
 |---|---|---|---|
-| 7B | Hover & transition standardization | T-110 to T-115 | Deferred |
-| 7C | Gradient tokenization | T-116 to T-118 | Deferred |
-| 7D | Icon and badge normalization | T-119 to T-122 | Deferred |
-| 7E | Component fixes and legacy cleanup | T-123 to T-129 | Deferred |
+| 7B | Hover & transition standardization | T-110 to T-115 | Done |
+| 7C | Gradient tokenization | T-116 to T-118 | Done |
+| 7D | Icon and badge normalization | T-119 to T-122 | done |
+| 7E | Component fixes and legacy cleanup | T-123 to T-129 | done |
 
 ---
 

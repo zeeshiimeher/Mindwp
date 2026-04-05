@@ -21,14 +21,15 @@
 
 | Item | Value |
 |---|---|
-| Active Phase | Phase 9.1 — Script Alignment + Validation Fixes |
+| Active Phase | Phase 10 — Content Architecture Audit + Governance |
 | Progress | See [project-todo.md](project-todo.md) |
-| Next Task | See project-todo.md Phase 9 tasks |
+| Next Task | See project-todo.md Phase 10 tasks |
 
 **Completed Phases**
 - Phase 7 — Visual System Audit ✅
 - Phase 8 — Section System ✅
 - Phase 9 — System Cleanup & Alignment ✅
+- Phase 10 — Content Architecture Audit 🟡 (in progress)
 
 ---
 
@@ -40,6 +41,7 @@
 - [SYSTEM-README.md](SYSTEM-README.md)
 - [AI-RULES.md](AI-RULES.md)
 - [PHASE-7-VISUAL-SYSTEM-AUDIT.md](PHASE-7-VISUAL-SYSTEM-AUDIT.md)
+- [PHASE-10-audit-plan.md](PHASE-10-audit-plan.md)
 - [SYSTEM-LOG.md](SYSTEM-LOG.md)
 - [system/DECISION-STATE.md](system/DECISION-STATE.md)
 
@@ -73,3 +75,4 @@ npm run dev
 
 - No validator failures. All 26 validators passing.
 - Phase 9.1 complete — lint fixed, token violations fixed, script registry normalized.
+- Phase 10 doc sync in progress — all system docs aligning to PHASE-10-audit-plan.md.

@@ -22,8 +22,8 @@ Rules:
 # CONTENT GRAPH SYSTEM (LOCKED)
 
 Status: Live System Architecture
-Version: 2.0
-Last Updated: 2026-03-26
+Version: 2.1
+Last Updated: 2026-04-06
 
 Cleaned from: CONTENT-GRAPH-ARCHITECTURE.md
 
@@ -460,12 +460,17 @@ The authority resolver converts graph relationships into the related content dis
 1. Content nodes declare metadata (systems, topics, industries).
 2. The derived relationship engine generates edges based on metadata overlap.
 3. The authority resolver scores and ranks all edges for a given node.
-4. The UI displays the top-scoring items, capped at 3 per section.
+4. SmartRelatedSection displays the top-scoring items, capped at 3 per section, max 2 sections per page (Phase 10 Decision 4).
 
-### Scoring (Conceptual)
+### Scoring Formula (Locked — Phase 10)
+
+```
+score = (systemOverlap × 3) + (topicOverlap × 2) + (industryOverlap × 1)
+```
 
 - Derived edges with strong metadata overlap score highest.
 - The resolver prioritises relationships by type: direct peer relationships first, then supporting relationships, then validation relationships.
+- SmartRelatedSection is the sole consumer of scored results (Phase 10 Decision 2).
 
 ### Static Authority Map
 

@@ -2,7 +2,7 @@
 
 > Consolidated source of truth. Validated against live code.
 > Sources: 5 governing docs, reports/, code scan.
-> Updated: 2026-04-05 (Phase 9 cleanup applied)
+> Updated: 2026-04-06 (Phase 10 sync applied)
 
 **Boundary:** This file defines current system reality only. It does not hold workflows, phase tasks, raw audit notes, or dashboard summaries.
 
@@ -14,11 +14,11 @@
 
 **Platform:** Next.js + TypeScript (strict). Custom BEM CSS design system. Tailwind v4 bridge. GoHighLevel backend. Target: Vercel.
 
-**Content graph:** 211 nodes, 2,742 edges, 7 formal content types (`ContentNodeType` is the only allowed type system — see §2.4).
+**Content graph:** 211 nodes, 7,065 derived edges, 7 formal content types (`ContentNodeType` is the only allowed type system — see §2.4). Scoring formula: `(systemOverlap × 3) + (topicOverlap × 2) + (industryOverlap × 1)` — LOCKED.
 
-**Validation:** 26 validators. TypeScript clean. ESLint clean. Build passing.
+**Validation:** 26 validators (22 blocking + 4 advisory). TypeScript clean. ESLint clean. Build passing.
 
-**Conversion model:** Conversation-first. Primary CTA: "Start a Conversation" → /contact. No lead magnets. System works without free resources.
+**Conversion model:** Conversation-first. Primary CTA: "Start a Conversation" → /contact. `/conversation` page REMOVED (Phase 10 Decision 6) — permanent redirect to `/contact`. No lead magnets. System works without free resources.
 
 ---
 
@@ -48,12 +48,24 @@
 
 **SEO exception:** Local Authority & SEO is the only Tier 1 system with controlled direct-intent acquisition — may lead when visitor intent is explicitly SEO-led, but must always reinforce website infrastructure context.
 
-### 2.3 Content Flow
+### 2.3 Content Flow (Phase 10 — Intent-Based Routing)
 
+Content flow is governed by **intent-based classification**, not a linear funnel.
+
+**Blog routing (by classification):**
+- PROBLEM blogs (29) → specific SERVICE page (direct pain→fix shortcut)
+- SYSTEM blogs (28) → specific RESOURCE page (trust-building step)
+- FRAMEWORK blogs (18) → specific RESOURCE or INDUSTRY page (deepening step)
+
+**Resource routing (by classification):**
+- ACTIONABLE resources (20) → specific SERVICE page
+- EDUCATIONAL resources (20) → specific SERVICE page
+- EXAMPLE resources (13) → specific CASE STUDY page
+
+**Static paths (unchanged):**
 ```
-Blog → Resource → Case Study → Service
 Industry Category → Industry Detail → Service
-Feature → Service
+Feature → Service (via SmartRelatedSection graph resolution)
 ```
 
 **Roles:**
@@ -72,11 +84,30 @@ Each node declares `industries`, `systems`, `topics` → relationships auto-gene
 
 **Type integrity rule:** `ContentNodeType` is the ONLY allowed type system for content nodes. No layer (analysis, reporting, dev tooling) may create or store types outside this union. If grouping is needed (e.g., combining industry-detail + industry-category), use a display label — not a type override.
 
-**Node breakdown:** blog (77), resource (52), industry-detail (26), case-study (22), service (21), feature (7), industry-category (6).
+**Node breakdown:** blog (75), resource (52), industry-detail (26), case-study (22), service (21), feature (7), industry-category (6).
 
-**Scoring:** Authority per topic. Levels: Dominant / Strong / Growing / Weak / Gap.
+**Scoring:** Authority per topic. Levels: Dominant / Strong / Growing / Weak / Gap. Locked formula: `(systemOverlap × 3) + (topicOverlap × 2) + (industryOverlap × 1)`.
 
-**Linking engine:** Context-aware scoring, link diversity (max 1 per target type per zone), intent layer (learn/compare/buy), cluster depth awareness, threshold-based selection.
+**Linking system:** SmartRelatedSection (`src/components/system/SmartRelatedSection.tsx`) — sole mechanism for surfacing related content on any page. Calls `getRelatedContent(slug, type)` → resolves via Authority Map → renders cards. Graph-driven, deterministic, validated.
+
+**Link slot rules (Phase 10 Decision 3 — LOCKED):**
+
+| Source Type | Allowed Slots |
+|---|---|
+| service | services only |
+| feature | services only |
+| industry | services, caseStudies, resources |
+| blog | resources, industries |
+| resource | services, industries |
+| caseStudy | industries, resources |
+
+**Link limits (Phase 10 Decision 4 — LOCKED):** Max 2 sections per page, max 3 items per section, max 6 total.
+
+**Deprecated systems (Phase 10):**
+- Internal linking engine (`src/lib/internal-linking/`, 10 files) — DEPRECATED. Zero production usage. Dev-tool only.
+- JourneyNavigator (`src/components/system/JourneyNavigator.tsx`) — REMOVED from all templates.
+- GraphAwareSidebar — DEPRECATED. Not imported by any template.
+- `JOURNEY_CONFIG` in `src/config/ui-intelligence.ts` — DEPRECATED.
 
 ### 2.5 Conversion Intelligence
 
@@ -94,7 +125,7 @@ Each node declares `industries`, `systems`, `topics` → relationships auto-gene
 - Feature: strong ("See This in Action")
 - Industry: mid ("Built for Your Industry")
 
-**Journey flow:** Blog→Resource→CaseStudy→Service. Navigator picks first non-empty slot from priority list.
+**Conversion routing:** Intent-based CTA routing per content classification (see §2.3). SmartRelatedSection handles related content via graph resolution. No linear funnel. No JourneyNavigator.
 
 ---
 
@@ -138,7 +169,7 @@ Then: `@tailwind base`, `@tailwind components`, `@tailwind utilities`.
 
 ### 3.3 Gradient System
 
-12 named gradient tokens (hero, primary, cta-1 through cta-4, cta-10 through cta-14, cta-warm, section, bg-light). Key usage:
+7 core gradient utilities (Phase 8.6 cleanup). Key usage:
 
 | Token | Usage |
 |---|---|
@@ -146,7 +177,6 @@ Then: `@tailwind base`, `@tailwind components`, `@tailwind utilities`.
 | `--gradient-cta-1` | Default CTA panel |
 | `--gradient-cta-2` through `--gradient-cta-4` | Additional CTA gradients |
 | `--gradient-cta-10` through `--gradient-cta-14` | Extended CTA palette |
-| `--gradient-cta-warm` | Warm-tone CTA variant |
 | `--gradient-section` | Section background variant |
 | `--gradient-bg-light` | Muted section backgrounds |
 
@@ -228,9 +258,10 @@ Heading weight: `400` (`--font-weight-normal`) across all headings.
 |---|---|
 | Compound components | `Card`, `Card.Header`, `Card.Body` — dot-notation sub-components |
 | Domain wrappers | `ServiceHeroSection` → forwards all props to `SimpleHero` |
-| Section bg pattern | Every section: `--bg-default` / `--bg-white` / `--bg-muted` via CSS modifiers |
+| Section bg pattern | Two-tone rhythm: `bg-base` / `bg-alt` via SectionWrapper class (Phase 8.7) |
 | Prop-driven gradients | `backgroundColor` prop → class name → CSS gradient var |
 | Intelligence bridge | `SmartCTA`: pageType+intent → intensity → visual class. Labels from `CTA_CONFIG` only — ctaResolver handles intensity, not labels |
+| Linking system | `SmartRelatedSection` — sole graph-driven related content mechanism. Max 2 sections × 3 items (Phase 10 Decisions 2+4) |
 
 ### 4.4 Button System
 
@@ -300,17 +331,18 @@ All wrapped in `@media (hover: hover)` for touch-safety.
 
 **Domain wrappers:** ServiceHeroSection, FeatureHeroSection, IndustryHeroSection — all zero-logic re-exports.
 
-### 6.2 Section Background Rhythm
+### 6.2 Section Background Rhythm (Phase 8.7 — Locked)
 
-3-tier system repeated across 10+ section types:
+Two-tone rhythm system replacing legacy 3-tier backgrounds:
 
-| Modifier | Value |
-|---|---|
-| `--bg-default` | `var(--c-bg)` |
-| `--bg-white` | `var(--c-surface)` |
-| `--bg-muted` | `color-mix(in oklch, var(--c-bg), var(--c-surface) 50%)` |
+| Class | Value | Usage |
+|---|---|---|
+| `bg-base` | `var(--c-bg)` (#f8fafc) | 63% of sections |
+| `bg-alt` | `var(--c-bg-alt)` (#f1f5f9) | 37% of sections |
 
-**Goal:** Alternating backgrounds create visual rhythm.
+**Applied via:** class on SectionWrapper. No ad-hoc section backgrounds.
+
+**Legacy tokens removed:** `--section-bg-base`, `--section-bg-surface`, `--section-bg-muted`, `.bg-section-white`, `.bg-section-light` — all deleted in Phase 8.7.
 
 ### 6.3 Section Rhythm Rules
 
@@ -455,7 +487,7 @@ All sections use composable layout primitives. BEM grid CSS has been permanently
 | Strength | Evidence |
 |---|---|
 | **Governance is airtight** | 5 locked governing docs. Conflict resolution defined. Rule priority order established. AI execution lock. |
-| **Content graph is live and functional** | 211 nodes, 2,742 edges. Authority scoring, gap detection, conversion intelligence all operational. |
+| **Content graph is live and functional** | 211 nodes, 7,065 derived edges. Authority scoring, gap detection, conversion intelligence all operational. |
 | **Validation is comprehensive** | 26 validators. TypeScript strict. ESLint clean. Build green. |
 | **Token system is well-layered** | 4-tier color system. Responsive typography. Spacing scale. Layout primitives. |
 | **Conversion intelligence is code-complete** | Intent mapping, CTA resolver, journey engine, scoring, priority queue — all built. |
@@ -472,16 +504,44 @@ GOVERNANCE   →  5 locked docs (Foundation > Architecture > Graph > Blueprint >
      ↓
 CONTENT      →  211 nodes across 7 formal types (ContentNodeType), all flowing toward Service (destination)
      ↓
-INTELLIGENCE →  Authority scoring → Gap detection → Conversion scoring → CTA resolution → Journey engine
+INTELLIGENCE →  Authority scoring → Gap detection → Conversion scoring → CTA resolution → SmartRelatedSection
      ↓
 UI           →  foundation.css (tokens) → primitives.css (reset) → framework.css (layout) → components.css (BEM)
      ↓
-COMPONENTS   →  single/* → sections/core/* → sections/<domain>/* → system/* (SmartCTA, Journey)
+COMPONENTS   →  single/* → sections/core/* → sections/<domain>/* → system/* (SmartCTA, SmartRelatedSection)
      ↓
-VALIDATION   →  29 validators → TypeScript → ESLint → Build pipeline
+VALIDATION   →  26 validators → TypeScript → ESLint → Build pipeline
 ```
 
-**One sentence:** Governance flows down from locked docs, intelligence flows up from the content graph, the UI renders via token-driven BEM, and 29 validators enforce it all.
+**One sentence:** Governance flows down from locked docs, intelligence flows up from the content graph, the UI renders via token-driven BEM, and 26 validators enforce it all.
+
+---
+
+## 8. PHASE 10 DECISIONS (LOCKED)
+
+These 8 decisions govern all Phase 10 execution. Full details in `PHASE-10-audit-plan.md` Section 0.
+
+| # | Decision | Summary |
+|---|----------|---------|
+| D1 | Deprecate internal linking engine | 10 files in `src/lib/internal-linking/` deprecated. Zero production usage. |
+| D2 | SmartRelatedSection is sole linking system | Only mechanism for surfacing related content. Must be on ALL content-type templates. |
+| D3 | Link slot rules LOCKED | service→services; feature→services; industry→services+caseStudies+resources; blog→resources+industries; resource→services+industries; caseStudy→industries+resources |
+| D4 | Link limits LOCKED | Max 2 sections, max 3 items per section, max 6 total |
+| D5 | Remove JourneyNavigator | Removed from all 3 templates. Deprecated. |
+| D6 | Remove `/conversation` | All refs → `/contact`. Page deleted. Redirect added. |
+| D7 | Feature linking via graph only | No hardcoded service links. SmartRelatedSection on feature templates. |
+| D8 | No content expansion | Zero new content in Phase 10. Fix routing + linking + cleanup only. |
+
+### Phase 10 Governance Rules (Section 16)
+
+| Rule | Summary |
+|---|---|
+| G1 — System Assignment | Every node: exactly 1 primary system, max 2 total. Canonical systems only. |
+| G2 — Topic Specificity | Specific + actionable. From canonical registry only. Max 2 per node. |
+| G3 — Industry Assignment | Optional for blog/resource. Required for industry-detail + case-study. |
+| G4 — Feature→Service | Every feature maps to exactly 1 service. No orphan features. |
+| G5 — CTA Routing Integrity | Blog CTA matches classification. No generic `/services`. No resource→resource. No circular paths. |
+| G6 — Content Classification | Every blog: PROBLEM/SYSTEM/FRAMEWORK. Every resource: ACTIONABLE/EDUCATIONAL/EXAMPLE. Stored in metadata. |
 
 ---
 

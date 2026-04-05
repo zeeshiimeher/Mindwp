@@ -13,7 +13,7 @@ MindWP has three layers of internal tooling:
 2. **Scripts** — Command-line tools that generate reports, validate rules, and analyze content.
 3. **Reports** — JSON and Markdown files that store analysis results. Dashboards read from these reports.
 
-Everything connects through the **Content Graph** — a map of all 205+ content pages, their relationships, topics, and authority scores.
+Everything connects through the **Content Graph** — a map of all 211 content pages, their relationships, topics, and authority scores.
 
 **How it works:**
 - Scripts analyze content and write results to `/reports/`.
@@ -156,8 +156,8 @@ These enforce rules. Run individually or all at once with `validate-all`.
 | validate-cta | `node scripts/validators/validate-cta.mjs` | CTA labels, hrefs, placement rules | Yes |
 | validate-vocabulary | `node scripts/validators/validate-vocabulary.mjs` | Banned phrases and anti-hype vocabulary | Yes |
 | validate-structure | `node scripts/validators/validate-structure.mjs` | Heading structure, tone rules, CTA placement | Yes |
-| validate-internal-links | `npx tsx scripts/validators/validate-internal-links.ts` | Max 5 links/page, no duplicates, no repeated anchors | Yes |
-| validate-conversion | `npx tsx scripts/validators/validate-conversion.ts` | Missing CTA, no service link, no journey step | **No** (warnings only) |
+| validate-internal-links | `npx tsx scripts/validators/validate-internal-links.ts` | Max 2 sections × 3 items per page, no duplicates, no repeated anchors | Yes |
+| validate-conversion | `npx tsx scripts/validators/validate-conversion.ts` | Missing CTA, no service link, intent routing check | **No** (warnings only) |
 | validate-system-docs | `node scripts/validators/validate-system-docs.mjs` | Checks this doc stays aligned with actual systems | **No** (warnings only) |
 
 | validate-checklist | `node scripts/validators/validate-checklist.mjs` | Checks fix checklist engine and integrations | **No** (warnings only) |
@@ -357,7 +357,7 @@ How everything connects:
 ```
 ┌─────────────────────────────────────────────────────┐
 │                  CONTENT GRAPH                       │
-│              205 nodes · 7065 edges                  │
+│              211 nodes · 7065 edges                  │
 │                  7 content types                     │
 └──────────────┬──────────────────┬────────────────────┘
                │                  │

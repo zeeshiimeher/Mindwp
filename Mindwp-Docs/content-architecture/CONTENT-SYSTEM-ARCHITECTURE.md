@@ -1178,15 +1178,12 @@ No random internal links. No over-linking. Authority compounds upward. Random cr
 
 ## Content System Integrity Rule (Locked)
 
-MindWP uses a layered content ecosystem.
+MindWP uses an intent-classified content ecosystem. Each content type has a defined role and must not be mixed or flattened. Routing between types is determined by intent classification (Phase 10), not a linear funnel.
 
-Blog → Resource → Industry → Case Study → Feature → Service
-
-Each content type has a defined role and must not be mixed or flattened.
-
-- Blog: Must link upward to Resources or Industry pages. Must NOT appear on Tier 1, Tier 2, or Tier 3 service pages.
-- Resources: Must remain system-focused and must not behave like opinion-style blog posts.
-- Case Studies: May appear on Industry pages as limited references (1–2 only). Must NOT appear on Tier 1, Tier 2, or Tier 3 service pages.
+- Blog: Routes to resources or services based on intent (PROBLEM→service, SYSTEM→resource, FRAMEWORK→resource/industry). Must NOT appear on service pages.
+- Resources: Must remain system-focused. Route to services or case studies based on intent (ACTIONABLE→service, EDUCATIONAL→service, EXAMPLE→case-study).
+- Case Studies: Appear on Industry pages as limited references (1–2 only). Must NOT appear on service pages.
+- Feature: Links to parent service only via SmartRelatedSection graph resolution (Decision 7).
 - Service Pages: Must remain strategic system explanations. Must not act as content hubs for blog posts or case studies.
 
 ---
@@ -1320,16 +1317,27 @@ This section explains how content should move people through the site.
 
 The goal: educate first, build trust with proof, invite implementation only when the reader is ready.
 
-### Core Content Flow
+### Core Content Flow (Intent-Based Routing)
 
-Blog → Resource → Industry → Case Study → Feature → Service
+Content does NOT follow a linear funnel. Phase 10 classifies every node by intent and routes accordingly.
 
-- Blog pages introduce the problem and early learning.
-- Resource pages explain the framework behind the problem.
-- Industry pages make that framework practical for a specific business type.
-- Case studies prove real implementation.
-- Feature pages explain system capabilities.
-- Service pages are where implementation decisions happen.
+**Blog Intent Types:**
+- PROBLEM (29 posts) → route to matching service
+- SYSTEM (28 posts) → route to matching resource
+- FRAMEWORK (18 posts) → route to matching resource or industry
+
+**Resource Intent Types:**
+- ACTIONABLE (20 resources) → route to matching service
+- EDUCATIONAL (20 resources) → route to matching service
+- EXAMPLE (13 resources) → route to matching case study
+
+**Page Roles:**
+- Blog: learning and problem discovery, routed by intent type.
+- Resource: system understanding and framework depth, routed by intent type.
+- Feature: capability explanation, linked via graph to parent service.
+- Industry: real-world application in a specific vertical.
+- Case Study: proof that the system works in real operations.
+- Service: implementation path and delivery scope.
 
 ### Page Roles
 
@@ -1515,7 +1523,7 @@ This section defines the exact slot structure for related content on each page t
 ## RELATED CONTENT DISPLAY RULES (LOCKED)
 
 This section defines how many related-content sections each page type renders.
-Controlled by the UI layer (`src/config/ui-intelligence.ts`), NOT by the internal linking engine.
+Controlled by the UI layer (`src/config/ui-intelligence.ts`) via **SmartRelatedSection** — the sole linking mechanism (Phase 10 Decision 2).
 
 | Page Type         | Related Sections | Notes                              |
 |-------------------|------------------|------------------------------------|
@@ -1524,21 +1532,21 @@ Controlled by the UI layer (`src/config/ui-intelligence.ts`), NOT by the interna
 | Industry Category | 2                | Services + sub-industries          |
 | Case Study        | 1                | Industry + resources               |
 | Resource          | 2                | Services + industry pages          |
-| Blog              | 1                | Resources + industry pages         |
-| Feature           | 1                | Related services (2 if system-level) |
+| Blog              | 2                | Resources + industry pages         |
+| Feature           | 1                | Related services only (Decision 3)   |
 
 ### Display Rules
 
 - Section counts above are maximums. Empty sections are not rendered.
 - Section behavior (allowLinks, allowCTA, allowProof) is governed by `src/config/section-intelligence.ts`.
-- Internal linking engine limits are separate — max 5 internal links per page regardless of section count.
+- SmartRelatedSection enforces link limits — max 2 sections × 3 items = 6 links per page (Phase 10 Decision 4).
 - No new page types may be added without updating both this table and the slot definition above.
 
 ---
 
 ## CONVERSION ARCHITECTURE RULES (LOCKED)
 
-This section defines the structural rules for conversion flow, CTA placement, and journey progression across all page types. Copy standards and CTA language are defined in **FOUNDATION-AND-POSITIONING.md** §5 and §5a.
+This section defines the structural rules for conversion flow, CTA placement, and content progression across all page types. Copy standards and CTA language are defined in **FOUNDATION-AND-POSITIONING.md** §5 and §5a.
 
 ### Page Visual Hierarchy (Mandatory)
 
@@ -1556,7 +1564,7 @@ Three CTA intensity levels exist in the system:
 |-----------|-----------|---------------------------------------|
 | Primary   | Strong    | Direct consultation — one per screen  |
 | Secondary | Medium    | Approach exploration — supporting CTA |
-| Soft      | Low       | Journey progression — no commitment   |
+| Soft      | Low       | Content progression via intent routing — no commitment |
 
 Rules:
 - One primary CTA per screen maximum
@@ -1575,16 +1583,23 @@ Rules:
 | Industry Detail   | Mid             |
 | Industry Category | End             |
 
-### Conversion Journey Flow (Locked)
+### Conversion Routing (Locked — Phase 10)
 
-The internal linking and CTA systems must enforce forward progression through the conversion funnel:
+The system uses intent-based CTA routing, NOT a linear funnel. JourneyNavigator is deprecated.
 
-Blog → Resource → Case Study → Service → Contact
+SmartRelatedSection is the sole linking mechanism. Routing is determined by content intent classification:
+
+- PROBLEM blogs → matching service CTA
+- SYSTEM blogs → matching resource CTA
+- FRAMEWORK blogs → matching resource or industry CTA
+- ACTIONABLE resources → matching service CTA
+- EDUCATIONAL resources → matching service CTA
+- EXAMPLE resources → matching case study CTA
 
 Rules:
-- Internal links must boost targets that represent the next journey step
-- Each page must push the user forward, not sideways or backward
-- Journey progression is enforced in the internal linking engine via `isJourneyNextStep()`
+- No linear journey progression enforced
+- CTA target determined by intent classification, not position in funnel
+- SmartRelatedSection slot rules (Decision 3) and link limits (Decision 4: max 2 sections × 3 items) govern all related content
 
 ### Conversion Section Standardization (Locked)
 
@@ -1634,7 +1649,7 @@ This section defines the rules for the conversion validation system. The validat
 |---------------------|----------------------------------------------|
 | CTA Presence        | Page has at least 1 CTA or service path      |
 | Service Link        | Page connects to a monetization page          |
-| Journey Progression | Page leads to next step in conversion funnel  |
+| Content Progression | Page connects to appropriate next content via intent routing |
 
 ### Severity Model
 
@@ -2041,45 +2056,37 @@ Cross-reference: Content Readiness Order (this document).
 
 ---
 
-## Internal Link Strictness Rule
+## SmartRelatedSection — Linking System (LOCKED)
 
-Every internal link must follow the approved gravity flows. No random, convenience, or reciprocal linking.
+SmartRelatedSection is the sole graph-driven linking mechanism across all page types (Phase 10 Decision 2).
 
-- Links are generated by the internal linking engine (`src/lib/internal-linking/`), not manually placed.
-- The engine uses authority, cluster, and journey rules to select targets.
-- No page type may link to content types outside its graph-derived candidates.
-- Max 3–5 links per page (hard limit: 5).
-- Placement is zone-aware: intro (max 1), body (max 2), conclusion (max 1).
+No other linking system is active. The deprecated internal linking engine (`src/lib/internal-linking/`) has zero production usage.
 
-Violation of these rules weakens authority flow and dilutes SEO signals.
+### Rules
 
-Cross-reference: Internal Linking Gravity Model, Content Relationship & Exposure Rules (this document).
+- All related content is resolved via the content graph authority resolver.
+- Scoring formula: `(systemOverlap × 3) + (topicOverlap × 2) + (industryOverlap × 1)` — LOCKED.
+- No page type may display content types outside its slot definition (see RELATED CONTENT SLOT SYSTEM).
+- Max 2 sections per page, max 3 items per section, max 6 total (Phase 10 Decision 4).
+- Output is deterministic and pre-computed at build time via the static authority map.
 
----
-
-## 🚫 Internal Linking System Constraints — DO NOT MODIFY
-
-The internal linking system is finalized. Do NOT introduce additional complexity.
+### Constraints
 
 ❌ DO NOT:
-- add scoring to fallback logic
-- add multi-layer fallback chains
-- increase maximum link count per page
-- tweak anchor matching logic
-- introduce AI/NLP-based linking
-- override graph-based decisions
+- Reintroduce injection-based linking
+- Override graph-based slot resolution
+- Increase link limits beyond 2 sections × 3 items
+- Add runtime scoring or AI/NLP-based linking
+- Create alternative linking components
 
-✅ SYSTEM GUARANTEES:
-- deterministic output
-- graph-first linking
-- max 3–5 links per page
-- conversion-aware flow (service-first)
-- placement-aware injection (intro/body/conclusion)
+✅ GUARANTEES:
+- Deterministic, pre-computed output
+- Graph-first resolution via authority map
+- Slot rules enforced per page type (Decision 3)
+- Link limits enforced globally (Decision 4)
+- CTA routing determined by intent classification, not funnel position
 
-⚠️ Any change here risks:
-- SEO dilution
-- spam signals
-- system instability
+Cross-reference: RELATED CONTENT SLOT SYSTEM, CONTENT RELATIONSHIP & EXPOSURE RULES (this document).
 
 ---
 

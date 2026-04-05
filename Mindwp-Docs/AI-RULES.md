@@ -34,6 +34,7 @@ Governance priority is fixed:
 - `DEV-DASHBOARD.md` = daily summary and links only
 - `project-todo.md` = execution state
 - `PHASE-7-VISUAL-SYSTEM-AUDIT.md` = phase task playbook only
+- `PHASE-10-audit-plan.md` = Phase 10 source of truth (8 locked decisions, governance rules)
 - `SYSTEM-LOG.md` = generated human-readable current snapshot
 - `reports/system-state.json` = generated machine current snapshot
 - `reports/system-drift.json` = generated current drift snapshot
@@ -97,6 +98,11 @@ Define gradient tokens in `foundation.css` before consuming them in component CS
 
 ### R14. CSS load order is fixed.
 `foundation.css` → `primitives.css` → `framework.css` → `components.css`
+
+### R15. SmartRelatedSection is the sole linking mechanism.
+- No internal linking engine. No JourneyNavigator.
+- Slot rules and link limits are defined in `PHASE-10-audit-plan.md` Decisions 2–4.
+- Max 2 sections × 3 items per page. No exceptions.
 
 ---
 
