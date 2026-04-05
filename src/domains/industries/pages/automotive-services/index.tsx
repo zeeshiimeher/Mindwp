@@ -351,6 +351,14 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
     slug: 'automotive-services',
     type: 'category',
     category: 'automotive-services',
+    systems: [
+      'smart-website-systems',
+      'ai-lead-handling',
+      'local-seo-authority',
+      'reputation-review',
+    ],
+    topics: ['lead-management', 'missed-calls', 'review-generation', 'booking-systems'],
+    industries: ['auto-repair', 'body-shop', 'car-detailing', 'mobile-mechanic'],
     seo: {
       title: 'Automotive Services Systems | MindWP',
       description:

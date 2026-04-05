@@ -42,18 +42,22 @@ const EDGE_RULES: Partial<Record<`${ContentNodeType}→${ContentNodeType}`, Edge
   'service→resource': 'supports',
   'service→feature': 'supports',
   'service→industry-detail': 'supports',
+  'service→industry-category': 'supports',
   'service→case-study': 'validates',
   'service→blog': 'validates',
 
   'resource→resource': 'relatesTo',
   'resource→industry-detail': 'supports',
+  'resource→industry-category': 'supports',
 
   'blog→blog': 'relatesTo',
   'blog→resource': 'supports',
   'blog→industry-detail': 'supports',
+  'blog→industry-category': 'supports',
 
   'case-study→case-study': 'relatesTo',
   'case-study→industry-detail': 'supports',
+  'case-study→industry-category': 'supports',
   'case-study→resource': 'supports',
 
   'feature→service': 'supports',

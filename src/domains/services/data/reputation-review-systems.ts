@@ -4,7 +4,7 @@ import type { ServicePageData } from '../types';
 
 export const reputationReviewSystemsPage = {
   slug: 'reputation-review-systems',
-  systems: ['reputation-review'],
+  systems: ['reputation-review', 'smart-website-systems'],
   topics: ['review-generation', 'review-automation', 'reputation-monitoring'],
   keywords: [
     'reputation management system for service businesses',

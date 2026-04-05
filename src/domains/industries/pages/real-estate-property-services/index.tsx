@@ -340,6 +340,14 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
     slug: 'real-estate-property-services',
     type: 'category',
     category: 'real-estate-property-services',
+    systems: [
+      'smart-website-systems',
+      'crm-automation',
+      'local-seo-authority',
+      'reputation-review',
+    ],
+    topics: ['lead-qualification', 'follow-up', 'review-generation', 'pipeline-visibility'],
+    industries: ['home-inspection', 'mortgage-broker', 'property-management', 'realtor'],
     seo: {
       title: 'Real Estate & Property Services Systems | MindWP',
       description:

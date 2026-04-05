@@ -358,6 +358,14 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
     slug: 'home-services',
     type: 'category',
     category: 'home-services',
+    systems: [
+      'smart-website-systems',
+      'ai-lead-handling',
+      'local-seo-authority',
+      'reputation-review',
+    ],
+    topics: ['lead-management', 'follow-up', 'review-generation', 'missed-calls'],
+    industries: ['roofing', 'hvac', 'plumbing', 'electrical', 'landscaping'],
     seo: {
       title: 'Home Services Systems | MindWP',
       description:

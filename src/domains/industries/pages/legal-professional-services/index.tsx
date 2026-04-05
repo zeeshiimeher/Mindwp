@@ -336,6 +336,19 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
     slug: 'legal-professional-services',
     type: 'category',
     category: 'legal-professional-services',
+    systems: [
+      'smart-website-systems',
+      'crm-automation',
+      'local-seo-authority',
+      'reputation-review',
+    ],
+    topics: [
+      'lead-qualification',
+      'crm-integration',
+      'reputation-monitoring',
+      'pipeline-visibility',
+    ],
+    industries: ['accounting', 'consulting', 'law-firm'],
     seo: {
       title: 'Legal & Professional Services Systems | MindWP',
       description:

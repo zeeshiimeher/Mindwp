@@ -125,6 +125,7 @@ export function buildContentGraph(
         slug: industry.slug,
         type: 'industry-category',
         path: `/industries/${industry.slug}`,
+        ...getNodeMetadata(industry),
       };
       continue;
     }

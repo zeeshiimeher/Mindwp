@@ -348,6 +348,20 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
     slug: 'local-appointment-businesses',
     type: 'category',
     category: 'local-appointment-businesses',
+    systems: [
+      'smart-website-systems',
+      'crm-automation',
+      'local-seo-authority',
+      'reputation-review',
+    ],
+    topics: ['booking-systems', 'follow-up', 'review-generation', 'lead-response-time'],
+    industries: [
+      'dental-clinic',
+      'driving-school',
+      'repair-shop',
+      'private-clinic',
+      'tattoo-studio',
+    ],
     seo: {
       title: 'Local Appointment Business Systems | MindWP',
       description:

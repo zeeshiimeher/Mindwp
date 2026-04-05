@@ -363,6 +363,14 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
     slug: 'beauty-personal-care',
     type: 'category',
     category: 'beauty-personal-care',
+    systems: [
+      'smart-website-systems',
+      'crm-automation',
+      'local-seo-authority',
+      'reputation-review',
+    ],
+    topics: ['booking-systems', 'review-generation', 'booking-automation', 'client-reactivation'],
+    industries: ['aesthetic-clinic', 'hair-salon', 'nail-salon', 'med-spa', 'lash-extensions'],
     seo: {
       title: 'Beauty & Personal Care Operations Systems | MindWP',
       description:
