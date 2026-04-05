@@ -28,7 +28,7 @@ const DEFAULT_FIXES: Record<string, string> = {
   'Weak link health': 'improve-links',
   no_cta: 'add-cta',
   no_service_link: 'add-service-link',
-  no_journey: 'add-journey-link',
+  no_related_content: 'add-related-content',
 };
 
 // ─── Public API ──────────────────────────────────────────────────────────────

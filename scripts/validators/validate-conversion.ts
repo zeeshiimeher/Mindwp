@@ -93,7 +93,7 @@ function detectWarnings(
     warnings.push({
       slug,
       type,
-      rule: ISSUE_TYPES.NO_JOURNEY,
+      rule: ISSUE_TYPES.NO_RELATED_CONTENT,
       message: 'Page has no related content via SmartRelatedSection (no intent-based progression)',
       severity: 'warning',
     });

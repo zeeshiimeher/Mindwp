@@ -44,7 +44,7 @@ export function getConversionWarningsSummary(): ConversionWarningsSummary {
   const issueCounts: Record<IssueType, number> = {
     [ISSUE_TYPES.NO_CTA]: 0,
     [ISSUE_TYPES.NO_SERVICE_LINK]: 0,
-    [ISSUE_TYPES.NO_JOURNEY]: 0,
+    [ISSUE_TYPES.NO_RELATED_CONTENT]: 0,
   };
 
   for (const node of nodes) {
@@ -69,9 +69,9 @@ export function getConversionWarningsSummary(): ConversionWarningsSummary {
 
     if (!signals.hasJourneyNextStep) {
       pagesWithNoJourney++;
-      issueCounts[ISSUE_TYPES.NO_JOURNEY]++;
+      issueCounts[ISSUE_TYPES.NO_RELATED_CONTENT]++;
       issueCount++;
-      firstIssue ??= ISSUE_TYPES.NO_JOURNEY;
+      firstIssue ??= ISSUE_TYPES.NO_RELATED_CONTENT;
     }
 
     if (issueCount >= 2) {

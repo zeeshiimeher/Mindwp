@@ -14,7 +14,7 @@
 export const ISSUE_TYPES = {
   NO_CTA: 'no_cta',
   NO_SERVICE_LINK: 'no_service_link',
-  NO_JOURNEY: 'no_journey',
+  NO_RELATED_CONTENT: 'no_related_content',
 } as const;
 
 export type IssueType = (typeof ISSUE_TYPES)[keyof typeof ISSUE_TYPES];
@@ -24,7 +24,7 @@ export type IssueType = (typeof ISSUE_TYPES)[keyof typeof ISSUE_TYPES];
 export const ISSUE_MESSAGES: Record<IssueType, string> = {
   [ISSUE_TYPES.NO_CTA]: 'Page has no CTA and no service path',
   [ISSUE_TYPES.NO_SERVICE_LINK]: 'No service link found (weak conversion path)',
-  [ISSUE_TYPES.NO_JOURNEY]: 'Page does not lead to next step in conversion journey',
+  [ISSUE_TYPES.NO_RELATED_CONTENT]: 'Page has no related content via SmartRelatedSection',
 };
 
 // --- Default impact per issue type ---
@@ -32,7 +32,7 @@ export const ISSUE_MESSAGES: Record<IssueType, string> = {
 export const ISSUE_IMPACT: Record<IssueType, 'high' | 'medium' | 'low'> = {
   [ISSUE_TYPES.NO_CTA]: 'high',
   [ISSUE_TYPES.NO_SERVICE_LINK]: 'high',
-  [ISSUE_TYPES.NO_JOURNEY]: 'medium',
+  [ISSUE_TYPES.NO_RELATED_CONTENT]: 'medium',
 };
 
 // --- Issue factory ---
