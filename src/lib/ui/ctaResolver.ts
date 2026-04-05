@@ -2,7 +2,8 @@
  * CTA Resolver
  *
  * Resolves CTA intensity based on page intent.
- * Intent can be provided explicitly or falls back to page type mapping.
+ * Delegates to ctaEngine for intent-classified routing.
+ * Falls back to page type mapping when no intent is provided.
  *
  * Intensity levels:
  * - soft: learn intent (exploring, not ready)
@@ -14,6 +15,7 @@
  */
 
 import type { ContentNodeType } from '@/lib/content-graph/types';
+import { getCTAConfig, type ContentIntent } from '@/lib/ui/ctaEngine';
 
 export type LinkIntent = 'learn' | 'compare' | 'buy';
 
@@ -31,29 +33,29 @@ const INTENT_TO_LEVEL: Record<LinkIntent, CTALevel> = {
   buy: 'strong',
 };
 
-// --- Fallback: page type → intent ---
-
-const TYPE_FALLBACK: Partial<Record<ContentNodeType, LinkIntent>> = {
-  blog: 'learn',
-  resource: 'learn',
-  'case-study': 'compare',
-  service: 'buy',
-  feature: 'buy',
-  'industry-detail': 'compare',
-  'industry-category': 'compare',
-};
-
 // --- Resolver ---
 
 export function resolveCTA({
   pageType,
   intent,
+  contentIntent,
 }: {
   pageType: ContentNodeType;
   intent?: LinkIntent;
+  contentIntent?: ContentIntent;
 }): ResolvedCTA {
-  const resolvedIntent = intent ?? TYPE_FALLBACK[pageType] ?? 'learn';
-  const level = INTENT_TO_LEVEL[resolvedIntent];
+  // Content-specific intent takes priority (Phase 10 deterministic routing)
+  if (contentIntent) {
+    const routing = getCTAConfig(pageType, contentIntent);
+    return { level: routing.intensity };
+  }
 
-  return { level };
+  // Legacy LinkIntent path
+  if (intent) {
+    return { level: INTENT_TO_LEVEL[intent] };
+  }
+
+  // Default: use ctaEngine with no intent
+  const routing = getCTAConfig(pageType);
+  return { level: routing.intensity };
 }
