@@ -249,7 +249,7 @@ Heading weight: `400` (`--font-weight-normal`) across all headings.
 | Single components | 37 | `src/components/reusable/single/` |
 | Core sections | 32 | `src/components/reusable/sections/core/` |
 | Domain sections | 8 dirs | `core/`, `service/`, `features/`, `industries/`, `resources/`, `blog/`, `case-studies/`, `homepage/` |
-| System components | 9 | `src/components/system/` |
+| System components | 8 | `src/components/system/` |
 | Site chrome | 4 | `src/global/` (Header, Footer, Logo, HeaderMobileMenuIsland) |
 
 ### 4.3 Key Component Patterns
