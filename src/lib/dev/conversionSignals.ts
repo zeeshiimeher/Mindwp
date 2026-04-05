@@ -10,8 +10,8 @@
  * - hasRelatedContent: page has any related content via SmartRelatedSection
  */
 
-import type { ContentNodeType } from '@/lib/content-graph/types';
 import { CTA_CONFIG } from '@/config/ui-intelligence';
+import type { ContentNodeType } from '@/lib/content-graph/types';
 import { getRelatedContent } from '@/lib/graph/query';
 
 export interface ConversionSignals {
@@ -20,10 +20,7 @@ export interface ConversionSignals {
   hasJourneyNextStep: boolean; // kept for backward compat — now means hasRelatedContent
 }
 
-export function getConversionSignals(
-  slug: string,
-  type: ContentNodeType,
-): ConversionSignals {
+export function getConversionSignals(slug: string, type: ContentNodeType): ConversionSignals {
   const hasCTA = type in CTA_CONFIG;
   const related = getRelatedContent(slug, type);
   const hasServiceLink = related.services.length > 0;

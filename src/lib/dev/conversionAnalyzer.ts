@@ -7,9 +7,9 @@
  * Scoring: presence of CTA, service links, and related content.
  */
 
+import { CTA_CONFIG } from '@/config/ui-intelligence';
 import { getContentGraph } from '@/lib/content-graph/registry';
 import type { ContentNodeType } from '@/lib/content-graph/types';
-import { CTA_CONFIG } from '@/config/ui-intelligence';
 import { getRelatedContent } from '@/lib/graph/query';
 
 export interface ConversionScore {
@@ -36,10 +36,7 @@ export interface ConversionSummary {
   pagesWithoutJourneyLink: number;
 }
 
-export function calculateConversionScore(
-  slug: string,
-  type: ContentNodeType,
-): ConversionScore {
+export function calculateConversionScore(slug: string, type: ContentNodeType): ConversionScore {
   const related = getRelatedContent(slug, type);
   const hasCTA = type in CTA_CONFIG;
   const hasServiceLink = related.services.length > 0;
@@ -86,9 +83,7 @@ export function calculateConversionScore(
 
 export function analyzeAllConversions(): ConversionScore[] {
   const graph = getContentGraph();
-  return Object.values(graph).map(node =>
-    calculateConversionScore(node.slug, node.type),
-  );
+  return Object.values(graph).map(node => calculateConversionScore(node.slug, node.type));
 }
 
 export function getConversionSummary(): ConversionSummary {

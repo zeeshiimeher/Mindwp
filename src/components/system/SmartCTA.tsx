@@ -15,7 +15,7 @@
 import { CTASection } from '@/components/reusable/single/CTASection';
 import { CTA_CONFIG, type CTAIntensity } from '@/config/ui-intelligence';
 import type { ContentNodeType } from '@/lib/content-graph/types';
-import { resolveCTA, type LinkIntent } from '@/lib/ui/ctaResolver';
+import { type LinkIntent, resolveCTA } from '@/lib/ui/ctaResolver';
 
 // ── Types ────────────────────────────────────────────────────────────
 

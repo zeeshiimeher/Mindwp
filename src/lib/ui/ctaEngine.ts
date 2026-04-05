@@ -73,10 +73,7 @@ export const SYSTEM_TO_SERVICE_PATH: Record<string, string> = {
 
 // ── Engine ────────────────────────────────────────────────────────────
 
-export function getCTAConfig(
-  contentType: ContentNodeType,
-  intent?: ContentIntent,
-): CTARouting {
+export function getCTAConfig(contentType: ContentNodeType, intent?: ContentIntent): CTARouting {
   if (contentType === 'blog' && intent) {
     return BLOG_ROUTING[intent as BlogIntent];
   }

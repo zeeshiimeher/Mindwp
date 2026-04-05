@@ -5,8 +5,8 @@
  * Simplified from the deprecated internal-linking-engine version.
  */
 
-import type { ContentNodeType } from '@/lib/content-graph/types';
 import { CTA_CONFIG } from '@/config/ui-intelligence';
+import type { ContentNodeType } from '@/lib/content-graph/types';
 import { getRelatedContent } from '@/lib/graph/query';
 
 export interface SimulatedFix {
@@ -26,10 +26,7 @@ export interface SimulationResult {
   fixes: SimulatedFix[];
 }
 
-export function simulateFixesForPage(
-  slug: string,
-  type: ContentNodeType,
-): SimulationResult {
+export function simulateFixesForPage(slug: string, type: ContentNodeType): SimulationResult {
   const related = getRelatedContent(slug, type);
   const hasCTA = type in CTA_CONFIG;
   const hasServiceLink = related.services.length > 0;

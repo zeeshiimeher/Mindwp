@@ -13,8 +13,8 @@ import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { Card } from '@/components/ui/card';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
+import { Card } from '@/components/ui/card';
 import { crmData } from '@/domains/features/data/crm';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 

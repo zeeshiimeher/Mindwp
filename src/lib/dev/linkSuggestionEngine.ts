@@ -5,9 +5,9 @@
  * Uses SmartRelatedSection slot expectations to identify gaps.
  */
 
+import { RELATED_SECTION_LABELS } from '@/config/ui-intelligence';
 import { getContentGraph } from '@/lib/content-graph/registry';
 import type { ContentNodeType } from '@/lib/content-graph/types';
-import { RELATED_SECTION_LABELS } from '@/config/ui-intelligence';
 import { getRelatedContent } from '@/lib/graph/query';
 
 export interface LinkSuggestion {
@@ -32,10 +32,7 @@ const SLOT_TO_RELATED_KEY: Record<string, keyof ReturnType<typeof getRelatedCont
   industries: 'industries',
 };
 
-export function suggestLinksForPage(
-  slug: string,
-  type: ContentNodeType,
-): PageSuggestions {
+export function suggestLinksForPage(slug: string, type: ContentNodeType): PageSuggestions {
   const related = getRelatedContent(slug, type);
   const labels = RELATED_SECTION_LABELS[type] ?? {};
   const suggestions: LinkSuggestion[] = [];

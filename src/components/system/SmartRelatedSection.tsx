@@ -73,9 +73,12 @@ export function SmartRelatedSection({
 
   if (blocks.length === 0) return null;
 
+  // Decision 4: max 2 sections per page
+  const renderedBlocks = blocks.slice(0, 2);
+
   return (
     <>
-      {blocks.map(block => (
+      {renderedBlocks.map(block => (
         <RelatedCardsSection
           key={block.key}
           title={block.title}

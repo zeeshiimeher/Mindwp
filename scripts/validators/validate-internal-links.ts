@@ -12,6 +12,7 @@
  */
 
 import { AUTHORITY_MAP } from '../../src/lib/authority/generated/authorityMap';
+import { RELATED_SECTION_LABELS } from '../../src/config/ui-intelligence';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 import { getRelatedContent } from '../../src/lib/graph/query';
 import type { ContentNodeType } from '../../src/lib/content-graph/types';
@@ -31,14 +32,27 @@ const violations: Violation[] = [];
 
 function validateRelatedContent(slug: string, type: ContentNodeType) {
   const related = getRelatedContent(slug, type);
-  const slotKeys = Object.keys(related) as (keyof typeof related)[];
+  const labels = RELATED_SECTION_LABELS[type] ?? {};
+  const configuredSlots = Object.keys(labels) as (keyof typeof related)[];
 
-  // Count non-empty sections and total items
+  // Only validate slots that SmartRelatedSection would actually render
+  // SmartRelatedSection enforces max 2 sections (Decision 4)
   let sectionCount = 0;
   let totalItems = 0;
   const seenSlugs = new Set<string>();
+  const renderedSlots: (keyof typeof related)[] = [];
 
-  for (const key of slotKeys) {
+  for (const key of configuredSlots) {
+    const items = related[key];
+    if (items && items.length > 0) {
+      renderedSlots.push(key);
+    }
+  }
+
+  // SmartRelatedSection only renders first 2 non-empty slots
+  const effectiveSlots = renderedSlots.slice(0, MAX_SECTIONS_PER_PAGE);
+
+  for (const key of effectiveSlots) {
     const items = related[key];
     if (items && items.length > 0) {
       sectionCount++;

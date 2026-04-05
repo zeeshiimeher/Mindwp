@@ -11,8 +11,8 @@ import {
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { Card } from '@/components/ui/card';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
+import { Card } from '@/components/ui/card';
 import { aiChatData } from '@/domains/features/data/aichat';
 
 const ChatDemo = () => (

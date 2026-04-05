@@ -15,7 +15,7 @@
  */
 
 import type { ContentNodeType } from '@/lib/content-graph/types';
-import { getCTAConfig, type ContentIntent } from '@/lib/ui/ctaEngine';
+import { type ContentIntent, getCTAConfig } from '@/lib/ui/ctaEngine';
 
 export type LinkIntent = 'learn' | 'compare' | 'buy';
 

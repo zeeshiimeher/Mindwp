@@ -5,9 +5,9 @@
  * Replaces the deprecated internal-linking-engine-based analyzer.
  */
 
+import { RELATED_SECTION_LABELS } from '@/config/ui-intelligence';
 import { getContentGraph } from '@/lib/content-graph/registry';
 import type { ContentNodeType } from '@/lib/content-graph/types';
-import { RELATED_SECTION_LABELS } from '@/config/ui-intelligence';
 import { getRelatedContent } from '@/lib/graph/query';
 
 export interface LinkHealthResult {
@@ -40,10 +40,7 @@ export interface HealthSummary {
   avgScore: number;
 }
 
-export function analyzePageHealth(
-  slug: string,
-  type: ContentNodeType,
-): LinkHealthResult {
+export function analyzePageHealth(slug: string, type: ContentNodeType): LinkHealthResult {
   const related = getRelatedContent(slug, type);
   const labels = RELATED_SECTION_LABELS[type] ?? {};
   const expectedSlots = Object.keys(labels).length;
@@ -112,9 +109,7 @@ export function analyzePageHealth(
 
 export function analyzeAllPages(): LinkHealthResult[] {
   const graph = getContentGraph();
-  return Object.values(graph).map(node =>
-    analyzePageHealth(node.slug, node.type),
-  );
+  return Object.values(graph).map(node => analyzePageHealth(node.slug, node.type));
 }
 
 export function getHealthSummary(): HealthSummary {

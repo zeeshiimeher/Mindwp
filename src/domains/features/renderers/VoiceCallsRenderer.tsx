@@ -12,8 +12,8 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { TestimonialCard } from '@/components/reusable/single/TestimonialCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { Card } from '@/components/ui/card';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
+import { Card } from '@/components/ui/card';
 import { voicecallsData } from '@/domains/features/data/voicecalls';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
