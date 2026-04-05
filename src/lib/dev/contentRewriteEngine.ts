@@ -95,7 +95,7 @@ const SERVICE_LINK_SAMPLES: Record<string, SampleRewrite> = {
   },
 };
 
-const JOURNEY_SAMPLES: Record<string, SampleRewrite> = {
+const RELATED_CONTENT_SAMPLES: Record<string, SampleRewrite> = {
   blog: {
     label: 'Next reading suggestion',
     context: 'Add a "What to Read Next" section at the end',
@@ -140,12 +140,12 @@ function buildIssues(inspection: PageInspection): RewriteIssue[] {
     });
   }
 
-  if (!inspection.signals.hasJourneyNextStep) {
+  if (!inspection.signals.hasRelatedContent) {
     issues.push({
-      element: 'Journey Next Step',
+      element: 'Related Content',
       status: 'missing',
-      impact: weights.JOURNEY >= 25 ? 'high' : 'medium',
-      explanation: `No journey next-step link found. Journey weight for ${inspection.node.type} pages is ${weights.JOURNEY}.`,
+      impact: weights.RELATED >= 25 ? 'high' : 'medium',
+      explanation: `No related content link found. Related content weight for ${inspection.node.type} pages is ${weights.RELATED}.`,
     });
   }
 
@@ -183,11 +183,11 @@ function buildStructureSuggestions(inspection: PageInspection): StructureSuggest
     });
   }
 
-  if (!inspection.signals.hasJourneyNextStep) {
+  if (!inspection.signals.hasRelatedContent) {
     suggestions.push({
       placement: 'End of page',
-      element: 'Journey Next Step',
-      reason: 'No next-step in buyer journey',
+      element: 'Related Content',
+      reason: 'No related content connections',
     });
   }
 
@@ -205,8 +205,12 @@ function buildSampleRewrites(inspection: PageInspection): SampleRewrite[] {
   if (samples.length < 3 && !inspection.signals.hasServiceLink && SERVICE_LINK_SAMPLES[type]) {
     samples.push(SERVICE_LINK_SAMPLES[type]);
   }
-  if (samples.length < 3 && !inspection.signals.hasJourneyNextStep && JOURNEY_SAMPLES[type]) {
-    samples.push(JOURNEY_SAMPLES[type]);
+  if (
+    samples.length < 3 &&
+    !inspection.signals.hasRelatedContent &&
+    RELATED_CONTENT_SAMPLES[type]
+  ) {
+    samples.push(RELATED_CONTENT_SAMPLES[type]);
   }
 
   return samples;

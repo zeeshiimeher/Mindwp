@@ -51,27 +51,7 @@ async function exportClient(reportsDir) {
 }
 
 async function exportReadable(reportsDir) {
-  const { generateReadableReport } = await import(
-    path.join(ROOT, 'src/lib/dev/readableReportGenerator.ts')
-  );
-  const { formatReadableReport } = await import(
-    path.join(ROOT, 'src/lib/dev/readableReportFormatter.ts')
-  );
-
-  console.log('[export-reports] Generating readable audit report...');
-  const report = generateReadableReport();
-
-  const jsonPath = path.join(reportsDir, 'readable-audit-report.json');
-  fs.writeFileSync(jsonPath, JSON.stringify(report, null, 2));
-  console.log(`[export-reports] Written: ${jsonPath}`);
-
-  const mdPath = path.join(reportsDir, 'readable-audit-report.md');
-  fs.writeFileSync(mdPath, formatReadableReport(report));
-  console.log(`[export-reports] Written: ${mdPath}`);
-
-  console.log(
-    `  Summary: ${report.issues.length} issues | ${report.opportunities.length} opportunities | ${report.recommendations.length} recommendations | ${report.priorityActions.length} priority actions`
-  );
+  console.log('[export-reports] Readable report generator has been removed. Skipping.');
 }
 
 async function main() {

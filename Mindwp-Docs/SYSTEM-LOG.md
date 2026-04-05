@@ -1,6 +1,6 @@
 # SYSTEM LOG — Current State
 
-> Generated: 2026-04-05T21:49:25.259Z
+> Generated: 2026-04-05T23:14:26.743Z
 
 ---
 
@@ -26,7 +26,7 @@
 
 ### Open Tasks
 
-- No open active-phase tasks.
+- No open tasks.
 
 ---
 
@@ -34,32 +34,32 @@
 
 | Validator | Type | Status | Duration |
 |---|---|---|---|
-| typecheck | Blocking | PASS | 3592ms |
-| lint | Blocking | PASS | 5404ms |
-| validate-docs | Blocking | PASS | 86ms |
-| validate-blog | Blocking | PASS | 1481ms |
-| validate-resources | Blocking | PASS | 1245ms |
-| validate-case-study-structure | Blocking | PASS | 243ms |
-| validate-service-structure | Blocking | PASS | 1449ms |
-| validate-feature-structure | Blocking | PASS | 1426ms |
-| validate-home-structure | Blocking | PASS | 1128ms |
-| validate-industry-structure | Blocking | PASS | 1166ms |
-| validate-design-system | Blocking | PASS | 115ms |
-| validate-graph | Blocking | PASS | 912ms |
+| typecheck | Blocking | PASS | 2312ms |
+| lint | Blocking | PASS | 5542ms |
+| validate-docs | Blocking | PASS | 81ms |
+| validate-blog | Blocking | PASS | 1567ms |
+| validate-resources | Blocking | PASS | 1259ms |
+| validate-case-study-structure | Blocking | PASS | 248ms |
+| validate-service-structure | Blocking | PASS | 1462ms |
+| validate-feature-structure | Blocking | PASS | 1459ms |
+| validate-home-structure | Blocking | PASS | 1146ms |
+| validate-industry-structure | Blocking | PASS | 1180ms |
+| validate-design-system | Blocking | PASS | 116ms |
+| validate-graph | Blocking | PASS | 934ms |
 | validate-metadata | Blocking | PASS | 698ms |
 | validate-metadata-completeness | Blocking | PASS | 72ms |
-| validate-cta | Blocking | PASS | 73ms |
+| validate-cta | Blocking | PASS | 74ms |
 | validate-vocabulary | Blocking | PASS | 101ms |
-| validate-structure | Blocking | PASS | 73ms |
-| validate-internal-links | Blocking | PASS | 701ms |
+| validate-structure | Blocking | PASS | 78ms |
+| validate-internal-links | Blocking | PASS | 708ms |
 | validate-tokens | Blocking | PASS | 70ms |
-| validate-inline-styles | Blocking | PASS | 80ms |
-| validate-reports-structure | Blocking | PASS | 54ms |
-| check-generated | Blocking | PASS | 5424ms |
-| validate-conversion | Advisory | PASS | 1031ms |
-| validate-system-docs | Advisory | PASS | 74ms |
-| validate-checklist | Advisory | PASS | 65ms |
-| validate-fix-log | Advisory | PASS | 59ms |
+| validate-inline-styles | Blocking | PASS | 79ms |
+| validate-reports-structure | Blocking | PASS | 59ms |
+| check-generated | Blocking | PASS | 3857ms |
+| validate-conversion | Advisory | PASS | 791ms |
+| validate-system-docs | Advisory | PASS | 63ms |
+| validate-checklist | Advisory | PASS | 52ms |
+| validate-fix-log | Advisory | PASS | 52ms |
 
 ---
 

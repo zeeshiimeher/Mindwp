@@ -19,7 +19,7 @@ export interface ConversionScore {
   totalScore: number;
   ctaScore: number;
   serviceLinkScore: number;
-  journeyScore: number;
+  relatedScore: number;
   authorityScore: number;
   conversionPriority: number;
   status: 'high' | 'medium' | 'low';
@@ -33,7 +33,7 @@ export interface ConversionSummary {
   low: number;
   avgScore: number;
   pagesWithoutServiceLink: number;
-  pagesWithoutJourneyLink: number;
+  pagesWithoutRelatedContent: number;
 }
 
 export function calculateConversionScore(slug: string, type: ContentNodeType): ConversionScore {
@@ -49,9 +49,9 @@ export function calculateConversionScore(slug: string, type: ContentNodeType): C
 
   const ctaScore = hasCTA ? 30 : 0;
   const serviceLinkScore = hasServiceLink ? 30 : 0;
-  const journeyScore = totalRelated > 0 ? 20 : 0;
+  const relatedScore = totalRelated > 0 ? 20 : 0;
   const authorityScore = Math.min(totalRelated * 4, 20);
-  const totalScore = ctaScore + serviceLinkScore + journeyScore + authorityScore;
+  const totalScore = ctaScore + serviceLinkScore + relatedScore + authorityScore;
 
   const status: ConversionScore['status'] =
     totalScore >= 70 ? 'high' : totalScore >= 50 ? 'medium' : 'low';
@@ -73,7 +73,7 @@ export function calculateConversionScore(slug: string, type: ContentNodeType): C
     totalScore,
     ctaScore,
     serviceLinkScore,
-    journeyScore,
+    relatedScore,
     authorityScore,
     conversionPriority: 100 - totalScore,
     status,
@@ -94,7 +94,15 @@ export function getConversionSummary(): ConversionSummary {
   const low = scores.filter(s => s.status === 'low').length;
   const avgScore = total > 0 ? scores.reduce((sum, s) => sum + s.totalScore, 0) / total : 0;
   const pagesWithoutServiceLink = scores.filter(s => s.serviceLinkScore === 0).length;
-  const pagesWithoutJourneyLink = scores.filter(s => s.journeyScore === 0).length;
+  const pagesWithoutRelatedContent = scores.filter(s => s.relatedScore === 0).length;
 
-  return { total, high, medium, low, avgScore, pagesWithoutServiceLink, pagesWithoutJourneyLink };
+  return {
+    total,
+    high,
+    medium,
+    low,
+    avgScore,
+    pagesWithoutServiceLink,
+    pagesWithoutRelatedContent,
+  };
 }

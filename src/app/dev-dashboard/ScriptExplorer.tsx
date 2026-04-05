@@ -48,7 +48,7 @@ const categoryOrder: ScriptRegistryEntry['type'][] = [
   'generator',
   'analyzer',
   'runner',
-  'phase-task',
+  'utility',
 ];
 
 const quickActions: QuickAction[] = [
@@ -62,7 +62,7 @@ function formatIntentLabel(intent: ScriptIntent): string {
 }
 
 function formatTypeLabel(type: ScriptRegistryEntry['type']): string {
-  return type === 'phase-task' ? 'Phase Task' : type.charAt(0).toUpperCase() + type.slice(1);
+  return type.charAt(0).toUpperCase() + type.slice(1);
 }
 
 function formatTimeLabel(value: ScriptRegistryEntry['estimatedTime']): string {

@@ -13,18 +13,18 @@ import type { ContentNodeType } from '@/lib/content-graph/types';
 export interface ContextWeights {
   CTA: number;
   SERVICE_LINK: number;
-  JOURNEY: number;
+  RELATED: number;
   PROOF: number;
 }
 
 export const CONTEXT_SCORING: Record<string, ContextWeights> = {
-  blog: { CTA: 20, SERVICE_LINK: 25, JOURNEY: 30, PROOF: 5 },
-  resource: { CTA: 15, SERVICE_LINK: 20, JOURNEY: 35, PROOF: 10 },
-  'case-study': { CTA: 25, SERVICE_LINK: 25, JOURNEY: 20, PROOF: 20 },
-  service: { CTA: 40, SERVICE_LINK: 20, JOURNEY: 10, PROOF: 30 },
-  feature: { CTA: 40, SERVICE_LINK: 20, JOURNEY: 10, PROOF: 30 },
-  'industry-category': { CTA: 25, SERVICE_LINK: 25, JOURNEY: 25, PROOF: 15 },
-  'industry-detail': { CTA: 25, SERVICE_LINK: 25, JOURNEY: 25, PROOF: 15 },
+  blog: { CTA: 20, SERVICE_LINK: 25, RELATED: 30, PROOF: 5 },
+  resource: { CTA: 15, SERVICE_LINK: 20, RELATED: 35, PROOF: 10 },
+  'case-study': { CTA: 25, SERVICE_LINK: 25, RELATED: 20, PROOF: 20 },
+  service: { CTA: 40, SERVICE_LINK: 20, RELATED: 10, PROOF: 30 },
+  feature: { CTA: 40, SERVICE_LINK: 20, RELATED: 10, PROOF: 30 },
+  'industry-category': { CTA: 25, SERVICE_LINK: 25, RELATED: 25, PROOF: 15 },
+  'industry-detail': { CTA: 25, SERVICE_LINK: 25, RELATED: 25, PROOF: 15 },
 };
 
 /**
@@ -57,8 +57,8 @@ export const CONTEXT_PENALTIES: ContextPenalty[] = [
   { type: 'service', condition: 'no proof', severity: 'high' },
   { type: 'feature', condition: 'no CTA', severity: 'critical' },
   { type: 'blog', condition: 'no service link', severity: 'high' },
-  { type: 'blog', condition: 'no journey', severity: 'medium' },
-  { type: 'resource', condition: 'no journey', severity: 'high' },
+  { type: 'blog', condition: 'no related content', severity: 'medium' },
+  { type: 'resource', condition: 'no related content', severity: 'high' },
   { type: 'case-study', condition: 'no CTA', severity: 'high' },
   { type: 'case-study', condition: 'no service link', severity: 'high' },
 ];

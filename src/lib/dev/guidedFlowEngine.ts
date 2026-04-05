@@ -41,8 +41,8 @@ const FIX_INSTRUCTIONS: Record<string, string> = {
     'Add a primary call-to-action section. For service/feature pages, include a "Get Started" or "Book a Consultation" button. For blog/resource pages, add an inline CTA linking to a relevant service.',
   'add-service-link':
     'Add a contextual link to a relevant service page. Place it naturally within the content body or in a "Related Services" sidebar/section.',
-  'add-journey-link':
-    'Add a link to the next logical step in the buyer journey. Examples: blog → resource, resource → service, service → case-study, case-study → consultation.',
+  'add-related-content':
+    'Add a link to the next logical step in the content graph. Examples: blog → resource, resource → service, service → case-study, case-study → consultation.',
 };
 
 // ─── Public API ──────────────────────────────────────────────────────────────

@@ -12,9 +12,9 @@ import { STATIC_PAGES } from '../../src/lib/site/staticPages.ts';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
 const REPORTS_DIR = path.join(ROOT, 'reports');
-const PHASE7_REPORTS_DIR = path.join(REPORTS_DIR, 'phase7');
-const HISTORY_DIR = path.join(PHASE7_REPORTS_DIR, 'history');
-const ENGINE_PATH = path.join(ROOT, 'scripts/phase7/visual-audit-v1.js');
+const VISUAL_REPORTS_DIR = path.join(REPORTS_DIR, 'visual-audit');
+const HISTORY_DIR = path.join(VISUAL_REPORTS_DIR, 'history');
+const ENGINE_PATH = path.join(ROOT, 'scripts/analyzers/visual-audit-runtime.js');
 
 const BASE_URL = 'http://127.0.0.1:3009';
 const DEFAULT_BASE_URL = process.env.VISUAL_AUDIT_BASE_URL || BASE_URL;
@@ -904,16 +904,16 @@ export async function runVisualAudit(options = {}) {
     fs.mkdirSync(REPORTS_DIR, { recursive: true });
   }
 
-  if (!fs.existsSync(PHASE7_REPORTS_DIR)) {
-    fs.mkdirSync(PHASE7_REPORTS_DIR, { recursive: true });
+  if (!fs.existsSync(VISUAL_REPORTS_DIR)) {
+    fs.mkdirSync(VISUAL_REPORTS_DIR, { recursive: true });
   }
 
   if (!fs.existsSync(HISTORY_DIR)) {
     fs.mkdirSync(HISTORY_DIR, { recursive: true });
   }
 
-  const jsonPath = path.join(PHASE7_REPORTS_DIR, 'visual-audit.json');
-  const markdownPath = path.join(PHASE7_REPORTS_DIR, 'visual-audit.md');
+  const jsonPath = path.join(VISUAL_REPORTS_DIR, 'visual-audit.json');
+  const markdownPath = path.join(VISUAL_REPORTS_DIR, 'visual-audit.md');
   const historyBaseName = `visual-audit-${Date.now()}`;
   const historyJsonPath = path.join(HISTORY_DIR, `${historyBaseName}.json`);
   const historyMarkdownPath = path.join(HISTORY_DIR, `${historyBaseName}.md`);

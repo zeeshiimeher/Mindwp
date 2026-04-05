@@ -9,7 +9,6 @@ import {
 } from '@/lib/dev/executionVisibility';
 
 const execAsync = promisify(exec);
-const blockPhase7Scripts = process.env.DEV_DASHBOARD_BLOCK_PHASE7 === '1';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -66,10 +65,6 @@ export async function POST(request: Request) {
       `${script.name} is listed for visibility only and is not runnable from the dashboard.`,
       400
     );
-  }
-
-  if (blockPhase7Scripts && script.category === 'phase7') {
-    return jsonError(scriptId, 'Phase 7 scripts are blocked in the dashboard safety layer.', 403);
   }
 
   const command = buildScriptCommand(script);

@@ -7,7 +7,27 @@
  */
 
 import type { FixLogEntry } from './fixInsightsAnalyzer';
-import { getBestFixForIssue, getFixPerformance } from './fixLearningEngine';
+
+// Inline stubs — fixLearningEngine removed during system hardening.
+// These provide equivalent default behavior (no fix-log history).
+interface FixPerformance {
+  fix: string;
+  count: number;
+  totalImpact: number;
+  avgImpact: number;
+}
+interface BestFix {
+  fix: string;
+  confidence: number;
+  reason: string;
+}
+
+function getFixPerformance(_entries?: FixLogEntry[]): FixPerformance[] {
+  return [];
+}
+function getBestFixForIssue(issue: string, _entries?: FixLogEntry[]): BestFix {
+  return { fix: issue, confidence: 30, reason: 'Default rule-based suggestion' };
+}
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -23,7 +43,7 @@ export interface AutoFixRecommendation {
 const DEFAULT_FIXES: Record<string, string> = {
   'Missing CTA': 'add-cta',
   'Missing service link': 'add-service-link',
-  'Missing journey link': 'add-journey-link',
+  'Missing related content': 'add-related-content',
   'Critical link health': 'add-links',
   'Weak link health': 'improve-links',
   no_cta: 'add-cta',

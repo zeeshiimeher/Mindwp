@@ -3,15 +3,15 @@
  * Captures full heading tree (H1-H6) per section for every audited page.
  * Fixes: SVG className is not a string — use getAttribute('class') fallback.
  *
- * Usage: npx playwright test --config=playwright.config.ts scripts/dev/phase7-heading-audit.cjs
- *   OR:  node --import tsx/esm scripts/dev/phase7-heading-audit.cjs
+ * Usage: npx playwright test --config=playwright.config.ts scripts/analyzers/heading-audit.cjs
+ *   OR:  node --import tsx/esm scripts/analyzers/heading-audit.cjs
  */
 const { chromium } = require('playwright');
 const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '../..');
-const OUT_DIR = path.join(ROOT, 'reports', 'phase7-audit');
+const OUT_DIR = path.join(ROOT, 'reports', 'visual-audit');
 const BASE_URL = process.env.BASE_URL || 'http://127.0.0.1:3009';
 
 const PAGES = [

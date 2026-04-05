@@ -11,9 +11,9 @@ export type ScriptCategory =
   | 'generators'
   | 'analyzers'
   | 'runners'
-  | 'phase7';
+  | 'visual';
 
-export type ScriptType = 'validator' | 'generator' | 'analyzer' | 'runner' | 'phase-task';
+export type ScriptType = 'validator' | 'generator' | 'analyzer' | 'runner' | 'utility';
 
 export interface ScriptRegistryEntry {
   id: string;
@@ -188,7 +188,7 @@ function collectCurrentReportFiles(): DashboardReportFile[] {
       const absolutePath = path.join(dirPath, entry.name);
 
       if (entry.isDirectory()) {
-        if (relativeDir === 'reports' && entry.name === 'phase7') {
+        if (relativeDir === 'reports' && entry.name === 'visual-audit') {
           addFilesFromDir(absolutePath, `${relativeDir}/${entry.name}`);
         }
         continue;
@@ -318,7 +318,7 @@ export function loadExecutionSystemStatus(): ExecutionSystemStatus {
 function classifyReportGroup(reportPath: string): ReportGroup {
   const fileName = path.basename(reportPath);
 
-  if (reportPath.startsWith('reports/phase7/') || fileName.includes('audit')) {
+  if (reportPath.startsWith('reports/visual-audit/') || fileName.includes('audit')) {
     return 'audit';
   }
 

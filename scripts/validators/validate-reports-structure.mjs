@@ -23,7 +23,7 @@ const ignoredDirs = new Set([
 
 const disallowedTopLevelFiles = new Set(['.DS_Store', 'fix-log.md', 'visual-audit.json', 'visual-audit.md']);
 const disallowedReportDirs = new Set(['history', 'phase7-audit copy']);
-const allowedNestedReportDirs = new Set(['phase7', 'phase7-audit']);
+const allowedNestedReportDirs = new Set(['visual-audit']);
 
 const reportLikePatterns = [
   /report/i,

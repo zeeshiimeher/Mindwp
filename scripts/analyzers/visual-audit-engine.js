@@ -9,7 +9,7 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
-const OUT_DIR = path.join(ROOT, 'reports', 'phase7-audit');
+const OUT_DIR = path.join(ROOT, 'reports', 'visual-audit');
 const BASE_URL = process.env.BASE_URL || 'http://127.0.0.1:3009';
 
 const PAGES = [

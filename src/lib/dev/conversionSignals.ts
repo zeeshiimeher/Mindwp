@@ -17,7 +17,7 @@ import { getRelatedContent } from '@/lib/graph/query';
 export interface ConversionSignals {
   hasCTA: boolean;
   hasServiceLink: boolean;
-  hasJourneyNextStep: boolean; // kept for backward compat — now means hasRelatedContent
+  hasRelatedContent: boolean;
 }
 
 export function getConversionSignals(slug: string, type: ContentNodeType): ConversionSignals {
@@ -34,6 +34,6 @@ export function getConversionSignals(slug: string, type: ContentNodeType): Conve
   return {
     hasCTA,
     hasServiceLink,
-    hasJourneyNextStep: totalRelated > 0,
+    hasRelatedContent: totalRelated > 0,
   };
 }

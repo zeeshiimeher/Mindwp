@@ -43,7 +43,7 @@ const CTA_ACTION_BY_TYPE: Partial<Record<ContentNodeType, string>> = {
     'Add a primary CTA in the hero section AND at the end (e.g., "Get a Free Consultation").',
   'case-study':
     'Add a CTA linking to the related service page (e.g., "Get Similar Results for Your Business").',
-  resource: 'Add a journey next-step CTA (e.g., "Ready to implement? See our services").',
+  resource: 'Add a related content CTA (e.g., "Ready to implement? See our services").',
 };
 
 function ruleMissingCTA(
@@ -93,29 +93,29 @@ function ruleNoServiceLink(
   };
 }
 
-const JOURNEY_ACTION_BY_TYPE: Partial<Record<ContentNodeType, string>> = {
+const RELATED_ACTION_BY_TYPE: Partial<Record<ContentNodeType, string>> = {
   blog: 'Add a "What to Read Next" section linking to related blog posts or a relevant service page.',
-  resource: 'Add a journey next-step linking to the service or feature this resource supports.',
+  resource: 'Add a related content linking to the service or feature this resource supports.',
   service: 'Add links to case studies or feature pages that show results or deeper capabilities.',
   'case-study':
     'Add a next-step linking to a related service or another case study in the same industry.',
 };
 
-function ruleNoJourney(
+function ruleNoRelatedContent(
   signals: ConversionSignals,
   score: ConversionScore,
   _health: LinkHealthResult
 ): UISuggestion | null {
-  if (signals.hasJourneyNextStep) return null;
+  if (signals.hasRelatedContent) return null;
   return {
-    id: 'no-journey',
-    rule: 'no-journey',
+    id: 'no-related-content',
+    rule: 'no-related-content',
     severity: 'warning',
-    title: 'No journey next step',
+    title: 'No related content',
     description:
-      'This page does not link to a logical next step in the buyer journey (e.g., blog → service, service → case study).',
+      'This page does not link to a logical next step in the content graph (e.g., blog → service, service → case study).',
     action:
-      JOURNEY_ACTION_BY_TYPE[score.type] ??
+      RELATED_ACTION_BY_TYPE[score.type] ??
       'Add a "What to Do Next" or "Learn More" section linking to the next stage content type.',
   };
 }
@@ -134,7 +134,7 @@ function ruleWeakConversion(
     description:
       'This page has a low overall conversion score. Multiple conversion elements are missing or insufficient.',
     action:
-      'Review the score breakdown above and address the lowest-scoring components: CTA, service links, journey links, or authority connections.',
+      'Review the score breakdown above and address the lowest-scoring components: CTA, service links, related content links, or authority connections.',
   };
 }
 
@@ -161,7 +161,13 @@ function ruleNoProof(
 
 // ─── Engine ──────────────────────────────────────────────────────────────────
 
-const RULES = [ruleMissingCTA, ruleNoServiceLink, ruleNoJourney, ruleWeakConversion, ruleNoProof];
+const RULES = [
+  ruleMissingCTA,
+  ruleNoServiceLink,
+  ruleNoRelatedContent,
+  ruleWeakConversion,
+  ruleNoProof,
+];
 
 export function generateUISuggestions(
   signals: ConversionSignals,

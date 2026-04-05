@@ -699,11 +699,11 @@
       "group": "advanced",
       "priority": 9,
       "estimatedTime": "medium",
-      "path": "scripts/phase7/phase7-heading-audit.cjs",
+      "path": "scripts/analyzers/heading-audit.cjs",
       "description": "Audit heading hierarchy and accessibility.",
       "type": "audit",
       "runnable": true,
-      "command": "node scripts/phase7/phase7-heading-audit.cjs"
+      "command": "node scripts/analyzers/heading-audit.cjs"
     },
 
     {
@@ -714,11 +714,11 @@
       "group": "advanced",
       "priority": 10,
       "estimatedTime": "slow",
-      "path": "scripts/phase7/phase7-split-screenshots.cjs",
+      "path": "scripts/analyzers/split-screenshots.cjs",
       "description": "Split full-page screenshots into component-level segments.",
       "type": "utility",
       "runnable": true,
-      "command": "node scripts/phase7/phase7-split-screenshots.cjs"
+      "command": "node scripts/analyzers/split-screenshots.cjs"
     },
     {
       "id": "visual-audit-engine",
@@ -728,11 +728,11 @@
       "group": "advanced",
       "priority": 10,
       "estimatedTime": "slow",
-      "path": "scripts/phase7/phase7-visual-audit.js",
+      "path": "scripts/analyzers/visual-audit-engine.js",
       "description": "Screenshot capture and hover analysis engine.",
       "type": "audit",
       "runnable": true,
-      "command": "node scripts/phase7/phase7-visual-audit.js"
+      "command": "node scripts/analyzers/visual-audit-engine.js"
     },
     {
       "id": "visual-audit",
@@ -742,11 +742,11 @@
       "group": "advanced",
       "priority": 8,
       "estimatedTime": "slow",
-      "path": "scripts/phase7/run-visual-audit.js",
+      "path": "scripts/analyzers/run-visual-audit.js",
       "description": "Full visual audit runner — Playwright screenshots, hover analysis, graph.",
       "type": "audit",
       "runnable": true,
-      "command": "node --import tsx/esm scripts/phase7/run-visual-audit.js"
+      "command": "node --import tsx/esm scripts/analyzers/run-visual-audit.js"
     },
     {
       "id": "visual-audit-runtime",
@@ -756,7 +756,7 @@
       "group": "advanced",
       "priority": 10,
       "estimatedTime": "slow",
-      "path": "scripts/phase7/visual-audit-v1.js",
+      "path": "scripts/analyzers/visual-audit-runtime.js",
       "description": "Runtime engine used by visual-audit runner.",
       "type": "utility",
       "runnable": false

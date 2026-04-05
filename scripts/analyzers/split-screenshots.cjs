@@ -3,13 +3,13 @@
  * Any image taller than MAX_HEIGHT_PX is split into multiple parts.
  * Also fixes the heading audit script for pages that errored.
  *
- * Usage: node scripts/dev/phase7-split-screenshots.cjs
+ * Usage: node scripts/analyzers/split-screenshots.cjs
  */
 const { execSync } = require('child_process');
 const fs = require('fs');
 const path = require('path');
 
-const AUDIT_DIR = path.resolve(__dirname, '../../reports/phase7-audit');
+const AUDIT_DIR = path.resolve(__dirname, '../../reports/visual-audit');
 const SPLIT_DIR = path.join(AUDIT_DIR, 'split');
 const MAX_HEIGHT_PX = 4000;
 
