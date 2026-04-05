@@ -2,6 +2,7 @@ import type { LucideIcon } from 'lucide-react';
 
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
+import { getIconStyles } from '@/lib/ui/iconStyles';
 
 const BLOCK = 'process-step';
 
@@ -80,7 +81,7 @@ export function ProcessStepCard({
   cssPrefix = '',
 }: StepCardProps) {
   const badgeVariantClassName = `${BLOCK}__badge--${iconType}`;
-  const iconVariantClassName = `${BLOCK}__icon--${iconType}`;
+  const { bg: iconBg, text: iconText } = getIconStyles(iconType === 'default' ? 'primary' : iconType);
 
   const IconComponent = icon;
 
@@ -91,8 +92,8 @@ export function ProcessStepCard({
       </div>
       <div className={`${BLOCK}__content`}>
         {IconComponent && (
-          <div className={cn(`${BLOCK}__icon`, iconVariantClassName)}>
-            <IconComponent className={`${BLOCK}__icon-svg`} aria-hidden='true' />
+          <div className={cn(`${BLOCK}__icon`, 'icon-container-md', iconBg)}>
+            <IconComponent className={cn(`${BLOCK}__icon-svg`, iconText)} aria-hidden='true' />
           </div>
         )}
         <h4 className={`${BLOCK}__title`}>{title}</h4>

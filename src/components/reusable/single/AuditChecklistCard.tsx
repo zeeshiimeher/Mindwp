@@ -3,7 +3,7 @@ import { CheckCircle2 } from 'lucide-react';
 
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
-import { getVariantStyles, type VariantType } from '@/lib/ui/variantStyles';
+import { getIconStyles, type IconType } from '@/lib/ui/iconStyles';
 
 const BLOCK = 'audit-card';
 
@@ -60,7 +60,7 @@ interface AuditChecklistCardProps {
    * - "secondary": Gray theme
    * - "accent": Orange/amber theme
    */
-  iconType: VariantType;
+  iconType: IconType;
 
   /**
    * Additional class(es) for the root element.
@@ -79,12 +79,11 @@ export function AuditChecklistCard({
   iconType,
   cssPrefix = '',
 }: AuditChecklistCardProps) {
-  const styles = getVariantStyles(iconType);
-  const { bg: iconBg, text: iconText } = styles.icon;
+  const { bg: iconBg, text: iconText } = getIconStyles(iconType);
 
   return (
     <Card className={cn(BLOCK, cssPrefix)}>
-      <div className={cn(`${BLOCK}__icon`, iconBg)}>
+      <div className={cn(`${BLOCK}__icon`, 'icon-container-md', iconBg)}>
         <Icon className={cn(`${BLOCK}__icon-svg`, iconText)} />
       </div>
       <h4 className={`${BLOCK}__title`}>{title}</h4>

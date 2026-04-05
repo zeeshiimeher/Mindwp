@@ -1,6 +1,7 @@
 import { LucideIcon } from 'lucide-react';
 
-import { getVariantStyles, type VariantType } from '@/lib/ui/variantStyles';
+import { cn } from '@/components/ui/utils';
+import { getIconStyles, type IconType } from '@/lib/ui/iconStyles';
 
 const BLOCK = 'business-use-case-card';
 
@@ -17,7 +18,7 @@ export interface IconTextCardProps {
   /**
    * Icon color variant. @default "primary"
    */
-  iconType?: VariantType;
+  iconType?: IconType;
   /**
    * Additional class(es) for the root element.
    *
@@ -34,11 +35,13 @@ export function IconTextCard({
   iconType = 'primary',
   cssPrefix = '',
 }: IconTextCardProps) {
-  const iconStyles = getVariantStyles(iconType).icon;
+  const { bg, text } = getIconStyles(iconType);
 
   return (
-    <div className={[BLOCK, cssPrefix].filter(Boolean).join(' ')}>
-      <Icon className={`${BLOCK}__icon ${iconStyles.text}`} />
+    <div className={cn(BLOCK, cssPrefix)}>
+      <div className={cn(`${BLOCK}__icon`, 'icon-container-md', bg)}>
+        <Icon className={cn(`${BLOCK}__icon-svg`, text)} aria-hidden='true' />
+      </div>
       <h3 className={`${BLOCK}__heading`}>{title}</h3>
       <p className={`${BLOCK}__text`}>{description}</p>
     </div>
