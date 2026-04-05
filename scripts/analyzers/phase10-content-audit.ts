@@ -94,7 +94,7 @@ for (const [slug, post] of Object.entries(BLOG_POSTS)) {
   allContent.push({
     slug,
     contentType: 'blog',
-    intent: undefined, // Not yet classified
+    intent: (post as any).intent ?? undefined,
     systems: post.systems ?? [],
     industries: post.industries ?? [],
     currentCTAUrl: extractBlogCTAUrl(post.sections ?? []),
@@ -106,7 +106,7 @@ for (const resource of resources) {
   allContent.push({
     slug: resource.slug,
     contentType: 'resource',
-    intent: undefined,
+    intent: (resource as any).intent ?? undefined,
     systems: resource.systems ?? [],
     industries: resource.industries ?? [],
     currentCTAUrl: extractResourceCTAUrl(resource.sections ?? []),

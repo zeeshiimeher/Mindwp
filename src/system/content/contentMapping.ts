@@ -24,7 +24,10 @@ export type ContentMapping = {
 };
 
 /** Lookup helper: returns mapping for a given contentType + slug */
-export function getContentMapping(contentType: 'blog' | 'resource', slug: string): ContentMapping | undefined {
+export function getContentMapping(
+  contentType: 'blog' | 'resource',
+  slug: string
+): ContentMapping | undefined {
   return CONTENT_MAPPING[contentType + ':' + slug];
 }
 
@@ -35,7 +38,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'ai-lead-handling',
     ctaTarget: '/services/ai-lead-handling',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'blog:authority-signals-for-local-search': {
     slug: 'authority-signals-for-local-search',
@@ -50,7 +53,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'FRAMEWORK',
     primarySystem: 'local-seo-authority',
     ctaTarget: '/services/local-seo-authority',
-    notes: 'multi-system: [local-seo-authority, reputation-review] → using \'local-seo-authority\'' ,
+    notes: "multi-system: [local-seo-authority, reputation-review] → using 'local-seo-authority'",
   },
   'blog:automotive-crm-pipeline-for-repair-jobs': {
     slug: 'automotive-crm-pipeline-for-repair-jobs',
@@ -58,7 +61,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'crm-automation',
     ctaTarget: '/services/crm-infrastructure-implementation',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'blog:automotive-review-generation-system': {
     slug: 'automotive-review-generation-system',
@@ -80,7 +83,8 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'smart-website-systems',
     ctaTarget: '/services/smart-website-systems',
-    notes: 'low-confidence: fallback rule (default-fallback); multi-system: [smart-website-systems, crm-automation] → using \'smart-website-systems\'' ,
+    notes:
+      "low-confidence: fallback rule (default-fallback); multi-system: [smart-website-systems, crm-automation] → using 'smart-website-systems'",
   },
   'blog:booking-systems-for-salons-explained': {
     slug: 'booking-systems-for-salons-explained',
@@ -88,7 +92,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'FRAMEWORK',
     primarySystem: 'smart-website-systems',
     ctaTarget: '/services/smart-website-systems',
-    notes: 'multi-system: [smart-website-systems, crm-automation] → using \'smart-website-systems\'' ,
+    notes: "multi-system: [smart-website-systems, crm-automation] → using 'smart-website-systems'",
   },
   'blog:building-revenue-visibility-through-crm-tracking': {
     slug: 'building-revenue-visibility-through-crm-tracking',
@@ -103,7 +107,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'crm-automation',
     ctaTarget: '/services/crm-infrastructure-implementation',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'blog:client-reactivation-systems-for-service-businesses': {
     slug: 'client-reactivation-systems-for-service-businesses',
@@ -111,7 +115,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'crm-automation',
     ctaTarget: '/services/crm-infrastructure-implementation',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'blog:conversion-tracking-for-hvac-companies': {
     slug: 'conversion-tracking-for-hvac-companies',
@@ -119,7 +123,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'smart-website-systems',
     ctaTarget: '/services/smart-website-systems',
-    notes: 'multi-system: [smart-website-systems, crm-automation] → using \'smart-website-systems\'' ,
+    notes: "multi-system: [smart-website-systems, crm-automation] → using 'smart-website-systems'",
   },
   'blog:conversion-tracking-for-service-businesses-explained': {
     slug: 'conversion-tracking-for-service-businesses-explained',
@@ -141,7 +145,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'reputation-review',
     ctaTarget: '/services/reputation-review-systems',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'blog:customer-feedback-loop-framework-for-service-businesses': {
     slug: 'customer-feedback-loop-framework-for-service-businesses',
@@ -170,7 +174,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'local-seo-authority',
     ctaTarget: '/services/local-seo-authority',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'blog:google-business-profile-system-architecture': {
     slug: 'google-business-profile-system-architecture',
@@ -206,7 +210,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'crm-automation',
     ctaTarget: '/services/crm-infrastructure-implementation',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'blog:hvac-emergency-call-handling-mistakes': {
     slug: 'hvac-emergency-call-handling-mistakes',
@@ -214,7 +218,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'PROBLEM',
     primarySystem: 'ai-lead-handling',
     ctaTarget: '/services/ai-lead-handling',
-    notes: 'multi-system: [ai-lead-handling, crm-automation] → using \'ai-lead-handling\'' ,
+    notes: "multi-system: [ai-lead-handling, crm-automation] → using 'ai-lead-handling'",
   },
   'blog:hvac-review-generation-framework': {
     slug: 'hvac-review-generation-framework',
@@ -236,7 +240,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'ai-lead-handling',
     ctaTarget: '/services/ai-lead-handling',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'blog:lead-qualification-framework-for-service-businesses': {
     slug: 'lead-qualification-framework-for-service-businesses',
@@ -293,7 +297,8 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'FRAMEWORK',
     primarySystem: 'local-seo-authority',
     ctaTarget: '/services/local-seo-authority',
-    notes: 'multi-system: [local-seo-authority, smart-website-systems] → using \'local-seo-authority\'' ,
+    notes:
+      "multi-system: [local-seo-authority, smart-website-systems] → using 'local-seo-authority'",
   },
   'blog:local-visibility-framework-for-service-businesses': {
     slug: 'local-visibility-framework-for-service-businesses',
@@ -329,7 +334,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'reputation-review',
     ctaTarget: '/services/reputation-review-systems',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'blog:reducing-salon-no-shows-with-automation': {
     slug: 'reducing-salon-no-shows-with-automation',
@@ -337,7 +342,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'crm-automation',
     ctaTarget: '/services/crm-infrastructure-implementation',
-    notes: 'multi-system: [crm-automation, ai-lead-handling] → using \'crm-automation\'' ,
+    notes: "multi-system: [crm-automation, ai-lead-handling] → using 'crm-automation'",
   },
   'blog:reputation-monitoring-systems-for-service-businesses': {
     slug: 'reputation-monitoring-systems-for-service-businesses',
@@ -345,7 +350,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'reputation-review',
     ctaTarget: '/services/reputation-review-systems',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'blog:responding-to-negative-reviews-systematically': {
     slug: 'responding-to-negative-reviews-systematically',
@@ -353,7 +358,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'reputation-review',
     ctaTarget: '/services/reputation-review-systems',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'blog:revenue-visibility-for-roofing-companies': {
     slug: 'revenue-visibility-for-roofing-companies',
@@ -396,7 +401,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'crm-automation',
     ctaTarget: '/services/crm-infrastructure-implementation',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'blog:roofing-estimate-follow-up-delays': {
     slug: 'roofing-estimate-follow-up-delays',
@@ -404,7 +409,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'PROBLEM',
     primarySystem: 'ai-lead-handling',
     ctaTarget: '/services/ai-lead-handling',
-    notes: 'multi-system: [ai-lead-handling, crm-automation] → using \'ai-lead-handling\'' ,
+    notes: "multi-system: [ai-lead-handling, crm-automation] → using 'ai-lead-handling'",
   },
   'blog:roofing-review-generation-system': {
     slug: 'roofing-review-generation-system',
@@ -454,7 +459,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'smart-website-systems',
     ctaTarget: '/services/smart-website-systems',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'blog:systems-first-website-for-hvac-companies': {
     slug: 'systems-first-website-for-hvac-companies',
@@ -462,7 +467,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'smart-website-systems',
     ctaTarget: '/services/smart-website-systems',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'blog:tracking-customer-lifetime-value-using-crm': {
     slug: 'tracking-customer-lifetime-value-using-crm',
@@ -484,7 +489,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'smart-website-systems',
     ctaTarget: '/services/smart-website-systems',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'blog:website-crm-integration-for-service-businesses': {
     slug: 'website-crm-integration-for-service-businesses',
@@ -492,7 +497,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'smart-website-systems',
     ctaTarget: '/services/smart-website-systems',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'blog:website-design-that-supports-crm-systems': {
     slug: 'website-design-that-supports-crm-systems',
@@ -500,7 +505,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'SYSTEM',
     primarySystem: 'smart-website-systems',
     ctaTarget: '/services/smart-website-systems',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'blog:what-is-a-systems-first-website-for-service-businesses': {
     slug: 'what-is-a-systems-first-website-for-service-businesses',
@@ -592,7 +597,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'EXAMPLE',
     primarySystem: 'ai-lead-handling',
     ctaTarget: '/services/ai-lead-handling',
-    notes: 'multi-system: [ai-lead-handling, smart-website-systems] → using \'ai-lead-handling\'' ,
+    notes: "multi-system: [ai-lead-handling, smart-website-systems] → using 'ai-lead-handling'",
   },
   'resource:auto-reply-funnel': {
     slug: 'auto-reply-funnel',
@@ -628,7 +633,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'ACTIONABLE',
     primarySystem: 'smart-website-systems',
     ctaTarget: '/services/smart-website-systems',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'resource:building-revenue-visibility-through-crm-tracking': {
     slug: 'building-revenue-visibility-through-crm-tracking',
@@ -643,7 +648,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'ACTIONABLE',
     primarySystem: 'crm-automation',
     ctaTarget: '/services/crm-infrastructure-implementation',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'resource:conversion-architecture-for-service-websites': {
     slug: 'conversion-architecture-for-service-websites',
@@ -686,7 +691,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'ACTIONABLE',
     primarySystem: 'smart-website-systems',
     ctaTarget: '/services/smart-website-systems',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'resource:google-business-profile-system-architecture': {
     slug: 'google-business-profile-system-architecture',
@@ -722,7 +727,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'ACTIONABLE',
     primarySystem: 'ai-lead-handling',
     ctaTarget: '/services/ai-lead-handling',
-    notes: 'multi-system: [ai-lead-handling, crm-automation] → using \'ai-lead-handling\'' ,
+    notes: "multi-system: [ai-lead-handling, crm-automation] → using 'ai-lead-handling'",
   },
   'resource:hvac-lead-handling-example': {
     slug: 'hvac-lead-handling-example',
@@ -779,7 +784,8 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'EDUCATIONAL',
     primarySystem: 'local-seo-authority',
     ctaTarget: '/services/local-seo-authority',
-    notes: 'multi-system: [local-seo-authority, smart-website-systems] → using \'local-seo-authority\'' ,
+    notes:
+      "multi-system: [local-seo-authority, smart-website-systems] → using 'local-seo-authority'",
   },
   'resource:local-visibility-framework': {
     slug: 'local-visibility-framework',
@@ -836,7 +842,8 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'ACTIONABLE',
     primarySystem: 'crm-automation',
     ctaTarget: '/services/crm-infrastructure-implementation',
-    notes: 'low-confidence: fallback rule (default-fallback); multi-system: [crm-automation, ai-lead-handling] → using \'crm-automation\'' ,
+    notes:
+      "low-confidence: fallback rule (default-fallback); multi-system: [crm-automation, ai-lead-handling] → using 'crm-automation'",
   },
   'resource:reputation-monitoring-systems': {
     slug: 'reputation-monitoring-systems',
@@ -844,7 +851,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'ACTIONABLE',
     primarySystem: 'reputation-review',
     ctaTarget: '/services/reputation-review-systems',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'resource:responding-to-negative-reviews-systematically': {
     slug: 'responding-to-negative-reviews-systematically',
@@ -852,7 +859,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'ACTIONABLE',
     primarySystem: 'reputation-review',
     ctaTarget: '/services/reputation-review-systems',
-    notes: 'low-confidence: fallback rule (default-fallback)' ,
+    notes: 'low-confidence: fallback rule (default-fallback)',
   },
   'resource:review-generation-system': {
     slug: 'review-generation-system',
@@ -874,7 +881,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'ACTIONABLE',
     primarySystem: 'ai-lead-handling',
     ctaTarget: '/services/ai-lead-handling',
-    notes: 'multi-system: [ai-lead-handling, crm-automation] → using \'ai-lead-handling\'' ,
+    notes: "multi-system: [ai-lead-handling, crm-automation] → using 'ai-lead-handling'",
   },
   'resource:roofing-lead-handling-example': {
     slug: 'roofing-lead-handling-example',
@@ -938,7 +945,7 @@ export const CONTENT_MAPPING: Record<string, ContentMapping> = {
     intent: 'ACTIONABLE',
     primarySystem: 'crm-automation',
     ctaTarget: '/services/crm-infrastructure-implementation',
-    notes: 'multi-system: [crm-automation, revenue-growth] → using \'crm-automation\'' ,
+    notes: "multi-system: [crm-automation, revenue-growth] → using 'crm-automation'",
   },
   'resource:website-crm-integration-explained': {
     slug: 'website-crm-integration-explained',
