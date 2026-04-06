@@ -40,6 +40,7 @@
 | 10.5 | Content clusters 1-4 + graph amplification | Done |
 | 12 | Vocabulary cleanup execution | Post-launch |
 | 13–18 | UI polish through deployment | Post-launch |
+| 14 | Automated image generation system | Done |
 
 ---
 
@@ -48,6 +49,22 @@
 **System state: LAUNCH-READY**
 
 All phases complete. System verified clean. No active execution phase.
+
+### Phase 14 — Automated Image Generation System — COMPLETE
+
+13 development iterations shipped. System is fully operational.
+
+| ID | Task | Priority | Status |
+|---|---|---|---|
+| T-164 | Image pipeline architecture (providers, intelligence, scoring, dedup) | Critical | [x] |
+| T-165 | Cinematic SVG overlay system (8-layer composite) | Critical | [x] |
+| T-166 | 3 layout variants (Editorial, Focused, Impact) | Critical | [x] |
+| T-167 | CTR psychology layer (focal zones, micro-hierarchy, edge control) | High | [x] |
+| T-168 | Composition intelligence (attention-aware crop, text block centering) | High | [x] |
+| T-169 | Micro-contrast sharpening + depth blur + film grain | High | [x] |
+| T-170 | Zone-aware scoring (left/right density, subject position) | High | [x] |
+| T-171 | Sharp pipeline (adaptive blur, brightness, saturation) | High | [x] |
+| T-172 | WCAG AA contrast verification (all domains passing) | Critical | [x] |
 
 ### Phase 10 — Content Architecture Audit + Governance — COMPLETE
 
@@ -88,6 +105,8 @@ Committed as `16f3164` on `phase-10-dashboard`.
 | T-161 | Strengthen Weak authority topics (8 topics, score 40-58) | Medium | Post-launch |
 | T-162 | Fill Gap authority topics (15 topics, score 5-35) | Low | Post-launch |
 | T-163 | Phases 13-18: UI polish through deployment | Low | Post-launch |
+| T-173 | Bulk image generation for all domains (blog, resources, case-studies) | High | Post-launch |
+| T-174 | Industry image generation (bulk) | Medium | Post-launch |
 
 ---
 
@@ -108,6 +127,7 @@ Committed as `16f3164` on `phase-10-dashboard`.
 - **Phase 9 + 9.1:** System cleanup, script alignment, validation fixes completed.
 - **Phase 10:** Content architecture audit — all 8 decisions locked, all docs synced, intent-based routing propagated.
 - **Phase 10.5:** Content clusters 1-4 executed (20 new files), graph amplification applied (RESOURCE_INDEX 2→59, 5 CTA fixes, 1 system correction). Committed `16f3164`.
+- **Phase 14:** Automated image generation system — 13 development iterations. Pipeline: multi-provider search (Unsplash/Pexels/Pixabay), intelligence analysis, relevance scoring, attention-aware cropping, cinematic SVG overlays (8 layers), 3 layout variants (Editorial/Focused/Impact), CTR psychology layer, composition intelligence, WCAG AA verified. Fully operational.
 - **Visual Polish (7B-7E):** Hover/transition, gradient tokenization, icon/badge normalization, and component fixes completed.
 
 ---

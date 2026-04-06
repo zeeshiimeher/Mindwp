@@ -1,10 +1,9 @@
 # MindWP Image System Architecture
 
-STATUS: DRAFT
+STATUS: ACTIVE
+Last Updated: 2026-04-06
 
-This document defines the automated image pipeline used across the MindWP content system.
-
-The goal is to automatically discover, download, optimize, and place images for content domains while preventing duplicates and maintaining visual consistency.
+This document defines the automated image pipeline used across the MindWP content system. The system is fully operational with 13 phases of development complete.
 
 Domains supported:
 
@@ -15,626 +14,424 @@ Domains supported:
 
 ---
 
-# 1. Image Providers
+# 1. System Overview
 
-The system uses multiple royalty‑free image providers to ensure good coverage and reliability.
+The image system is a composition-aware visual engine that automatically discovers, downloads, analyzes, scores, crops, and generates cinematic featured images with SVG overlays for all content domains.
 
-Priority order:
+Pipeline flow:
+
+```
+content metadata
+↓
+semantic query generation (industry + topic mapping)
+↓
+multi-provider search (Unsplash → Pexels → Pixabay)
+↓
+download with rate limiting (50/hr)
+↓
+intelligence analysis (brightness, contrast, orientation, subject position, text detection)
+↓
+perceptual hash dedup (dHash, Hamming distance ≤ 5)
+↓
+multi-factor relevance scoring (5 weighted factors)
+↓
+attention-aware crop (sharp.strategy.attention)
+↓
+micro-contrast sharpening (sigma 0.5)
+↓
+background depth layer (adaptive blur + dim + desaturate)
+↓
+cinematic SVG overlay generation (gradients, typography, focal zones)
+↓
+Sharp composite → WebP export (quality 90)
+↓
+WCAG AA contrast verification (≥ 4.5:1)
+↓
+save + register in dedup index + update learning systems
+```
+
+---
+
+# 2. Image Providers
+
+The system uses multiple royalty-free image providers with learned priority ordering.
+
+Providers:
 
 1. Unsplash
 2. Pexels
 3. Pixabay
 
-The pipeline attempts sources in this order and falls back if no relevant images are found.
+Provider selection is adaptive — an EMA-based learning system tracks quality per domain and adjusts query order automatically.
 
-IMPORTANT:
+Each provider applies page rotation for result variety.
 
-API keys must NOT be stored in documentation or committed to the repository.
+API keys are stored in environment variables only:
 
-They should be stored in environment variables:
-
+```
 UNSPLASH_ACCESS_KEY
 PEXELS_API_KEY
 PIXABAY_API_KEY
-
-
-
----
-
-# 2. Global Rate Limits
-
-To prevent API throttling the system must enforce a global download limit.
-
-Current rule:
-
-Maximum downloads: 50 images per hour
-
-Execution pattern:
-
-batch generation
-↓
-wait for next hour window
-↓
-continue generation
-
-Later in production this limit will naturally be sufficient because only a small number of new posts will require images.
+```
 
 ---
 
-# 3. Image Rules Per Content Domain
+# 3. Global Rate Limits
+
+Maximum downloads: 50 images per hour.
+
+Download timeout: 15 seconds per image.
+
+Fetch directive: `cache: 'no-store'` (prevents stale results).
+
+---
+
+# 4. Image Rules Per Content Domain
 
 ## Blog
 
-Featured Image
-- Required
-
-Content Images
-- Optional
-- Maximum: 1
-
-Placement logic:
-
-- After section 2
-- Or after first long section (>350 words)
-
-If the article is short, skip the content image.
-
----
+- Featured Image: Required (clean + overlay variants)
+- Content Images: Optional (max 1)
+- Placement: After section 2 or after first long section (>350 words)
 
 ## Resources
 
-Featured Image
-- Required
-
-Content Images
-- Optional
-- Preferred: 1
-- Maximum: 2
-
-Placement logic:
-
-- After architecture section
-- After workflow section
-
-If both appear, prefer a single image to maintain clean layout.
-
----
+- Featured Image: Required (clean + overlay variants)
+- Content Images: Optional (max 2)
+- Placement: After architecture or workflow sections
 
 ## Industries
 
-Featured Image
-- Required
-
-Content Images
-- Not allowed
-
-Industry pages are visual landing pages and should avoid inline imagery.
-
----
+- Featured Image: Required (clean + overlay variants)
+- Content Images: Not allowed
 
 ## Case Studies
 
-Featured Image
-- Required
-
-Content Images
-- Optional
-- Maximum: 1
-
-Used primarily for:
-
-- workflow diagrams
-- automation flows
+- Featured Image: Required (clean + overlay variants)
+- Content Images: Optional (max 1)
+- Used for: workflow diagrams, automation flows
 
 ---
 
-# 4. Image Query Generation
+# 5. Semantic Query Generation
 
-The system should generate search queries based on content metadata.
+The system generates contextual search queries from content metadata rather than relying on basic keyword searches.
 
-Sources used to build queries:
-
-- title
-- primary keyword
-- topics[]
-- systems[]
-
-Example:
-
-Title:
-
-"Why Slow Lead Response Loses Customers"
-
-Possible queries:
-
-- customer service call center
-- business phone answering
-- customer support team
-
----
-
-# 5. Image Deduplication
-
-To prevent duplicate usage across posts the system maintains an index.
-
-Index file:
-
-src/lib/image-system/imageIndex.json
-
-Example structure:
-
-{
-  "lead-response-mistakes": {
-    "featured": "unsplash_abc123.jpg",
-    "content": "pexels_def456.jpg"
-  }
-}
-
-Before downloading an image the system must:
-
-1. Check the index
-2. Skip if already used
-3. Only download if unique
-
----
-
-# 6. Featured Image Generation
-
-Featured images follow a standardized design.
-
-Pipeline:
-
-1. Download image
-2. Detect brightness
-3. Apply smart overlay
-4. Render title text
-5. Export optimized image
-
-Brightness rules:
-
-Dark image → light gradient overlay
-Bright image → dark gradient overlay
-
-Example overlays:
-
-rgba(0,0,0,0.45)
-rgba(255,255,255,0.35)
-
----
-
-# 7. Title Layout Rules
-
-The featured image title must always fit within two lines.
-
-Algorithm:
-
-measure text width
-↓
-reduce font size
-↓
-break into maximum two lines
-
-Rules:
-
-max lines: 2
-max font size: 64px
-min font size: 28px
-text width: 70% of image width
-alignment: center
-
----
-
-# 8. Image Storage
-
-Images should be organized by domain and post slug.
-
-public/images/blog/
-public/images/resources/
-public/images/industries/
-public/images/case-studies/
-
-Example:
-
-blog/lead-response-mistakes/featured.webp
-blog/lead-response-mistakes/content.webp
-
----
-
-# 9. Image Optimization
-
-All images should be processed using the Sharp library.
-
-Output format:
-
-webp
-
-Recommended sizes:
-
-Featured images → 1600×900
-Content images → 1200×700
-
----
-
-# 10. Automation Workflow
-
-Full automation pipeline:
-
-scan content
-↓
-detect missing images
-↓
-build search queries
-↓
-download images
-↓
-apply overlays
-↓
-optimize images
-↓
-store images
-↓
-update index
-
----
-
-# 11. CLI Commands
-
-Bulk generation commands:
-
-npm run images:blog
-npm run images:resources
-npm run images:industries
-npm run images:case-studies
-
-Single post generation:
-
-npm run image:generate --slug <post-slug>
-
-This command should regenerate images for a single post.
-
----
-
----
-
-# 12. Semantic Image Search System
-
-Basic keyword searches often return generic stock photos. To improve relevance the image system should use a semantic query generation layer.
-
-The system should not rely only on the title or primary keyword. Instead it should analyze the article content and generate contextual search queries.
-
-### Semantic Query Pipeline
-
-content
-↓
-extract key phrases
-↓
-map phrases to visual concepts
-↓
-build search queries
-↓
-fetch candidate images
-↓
-rank results
-
-### Content Signals Used
-
-The query generator should analyze:
+Sources analyzed:
 
 - title
 - primaryKeyword
-- section headings
-- repeated nouns
 - topics[]
 - systems[]
+- tags[]
+- sectionHeadings[]
 
-### Phrase Extraction Example
+Pipeline:
 
-Article title:
-
-"Why Slow Lead Response Loses Customers"
-
-Detected concepts:
-
-- customer support
-- business phone calls
-- call center
-- missed calls
-
-Generated search queries:
-
-- business call center support
-- customer service phone team
-- answering business calls
-
-### Query Ranking Rules
-
-Each candidate query should be scored based on relevance to the article metadata.
-
-Score inputs:
-
-- keyword overlap with title
-- keyword overlap with topics[]
-- keyword overlap with systems[]
-
-Queries with the highest score should be used first when calling the image APIs.
-
-### Image Result Filtering
-
-After fetching results the system should filter images using basic heuristics:
-
-Reject images that are:
-
-- abstract graphics
-- illustrations
-- text-based posters
-- extremely dark or extremely bright
-
-Prefer images that contain:
-
-- people performing business actions
-- real environments
-- neutral backgrounds suitable for overlays
-
-### Result Ranking
-
-When multiple images are returned the system should rank them using:
-
-1. resolution
-2. orientation (prefer landscape)
-3. visual clarity
-4. subject relevance
-
-The highest ranked image becomes the featured image candidate.
-
-### Provider Query Strategy
-
-Each provider should be queried with the same semantic query list.
-
-Provider order:
-
-1. Unsplash
-2. Pexels
-3. Pixabay
-
-If Unsplash fails to return good matches the system should automatically fall back to the next provider.
-
-### Duplicate Prevention
-
-Before downloading any image the system must check the global image index to ensure the same image is not reused for multiple posts.
-
-### Example End‑to‑End Flow
-
-scan article
+```
+content metadata
 ↓
-extract phrases
+industry detection
 ↓
-generate semantic queries
+topic-to-scene mapping
 ↓
-search Unsplash
+domain style scenes
 ↓
-filter + rank results
+query ranking (keyword overlap scoring)
 ↓
-check imageIndex
-↓
-download image
-↓
-generate featured image
+same-score tier shuffling (time-based seed for variety)
+```
 
 ---
 
-# 13. Image Intelligence Layer
+# 6. Image Intelligence Layer
 
-The Image Intelligence Layer ensures that downloaded images are visually suitable before being used in the system.
+Every downloaded image passes through 5 parallel analysis checks before scoring.
 
-This step runs after an image is downloaded but before it is accepted and processed for featured image generation.
+### 6.1 Brightness Detection
 
-Purpose:
+- Resizes to 100×100, computes ITU-R BT.601 luminance per pixel
+- Returns: average luminance, isDark (<70), isBright (>160)
+- Drives overlay gradient strength (bright → strong overlay, dark → light overlay)
 
-• prevent poor quality images  
-• avoid images with text  
-• avoid images where title overlays block important subjects  
+### 6.2 Contrast Validation
+
+- Standard deviation of luminance values
+- Rejects images with low contrast (flat, washed out)
+
+### 6.3 Orientation Check
+
+- Rejects non-landscape images (portrait, square)
+
+### 6.4 Subject Position Detection
+
+- Sobel edge detection split into thirds (left, center, right)
+- Returns: region, edgeDensityCenter, edgeDensityLeft, edgeDensityRight
+- Rejects images where subject is centered (>50% center energy)
+- Prefers right-side subjects (left zone stays clean for text overlay)
+
+### 6.5 Text Detection
+
+- High-frequency edge density analysis at 200×200
+- Rejects images containing text (stock overlays, watermarks)
 
 ---
 
-### Image Intelligence Pipeline
+# 7. Relevance Scoring Engine
 
-candidate image
-↓
-brightness analysis
-↓
-contrast analysis
-↓
-text detection
-↓
-subject position detection
-↓
-orientation validation
-↓
-approve or reject
+Each candidate image is scored across 5 weighted factors:
+
+| Factor | Weight | What it measures |
+|---|---|---|
+| Subject Relevance | 0.40 | Keyword matching: image tags/description vs content metadata |
+| Visual Clarity | 0.20 | Resolution, contrast, brightness range |
+| Composition Quality | 0.15 | Subject not centered, right-side subject preferred, landscape, no text |
+| Overlay Compatibility | 0.15 | Clean left zone, low center edge density, good contrast |
+| Resolution Quality | 0.10 | Pixel dimensions (best: ≥2400×1350) |
+
+Images are ranked descending by total weighted score. Top candidate is selected.
 
 ---
 
-### Brightness Detection
+# 8. Image Deduplication
 
-The system must detect whether the image is dark or bright.
+Perceptual hashing (8×8 dHash) generates a visual fingerprint for every image.
 
-This allows the overlay system to automatically choose the correct gradient.
+- Hamming distance ≤ 5 = too similar, rejected
+- Index stored in `src/lib/image-system/data/imageIndex.json`
+- Checked before scoring, prevents visual repetition across all posts
+
+---
+
+# 9. Featured Image Generation
+
+Each featured image produces TWO output files:
+
+1. `featured-clean.webp` — resized photo with micro-contrast sharpening
+2. `featured-overlay.webp` — cinematic SVG overlay composited onto blurred+dimmed base
+
+### 9.1 Cropping Strategy
+
+- `sharp.strategy.attention` — saliency + skin-tone aware cropping
+- Keeps subjects in frame automatically
+
+### 9.2 Background Depth Layer
+
+- Adaptive Gaussian blur: sigma 5–8 (brightness-responsive)
+- Brightness reduction: 0.78
+- Saturation reduction: 0.9
+- Creates clear text/background separation
+
+### 9.3 SVG Overlay System (multi-layer composite)
+
+Layer order (bottom to top):
+
+1. Hard gradient — left-to-right darkness (brightness-adaptive stops at 0/25/50/100%)
+2. Right-side gradient — balances empty space on right
+3. Vignette — edge darkening for attention containment (transparent center → dark edges)
+4. Light beam — diagonal signature highlight
+5. Focal light zone — radial glow behind text block
+6. Focal dark zone — +12% darkness behind text for eye anchor
+7. Film grain — feTurbulence at 3% opacity (premium texture)
+8. Variant shape — content-type visual (grid lines, bars, circles)
+9. Accent bar — vertical gradient bar with glow
+10. Badge — category pill (e.g., "CASE STUDY")
+11. Icon — domain icon before label
+12. Label — keyword-derived uppercase text
+13. Title — dominant headline (1-2 lines, weight 900)
+
+### 9.4 Layout Variants
+
+3 composition profiles, selected deterministically via `hash(slug) % 3`:
+
+| Variant | Name | Purpose | Text Width | Font Scale | Position |
+|---|---|---|---|---|---|
+| L1 | Editorial | Clean, balanced (resources) | 720px | 1.38× | 38% × 52% |
+| L2 | Focused | Primary CTR (blog) | 820px | 1.56× | 42% × 55% |
+| L3 | Impact | Bold, aggressive (case studies) | 860px | 1.68× | 35% × 58% |
+
+### 9.5 Text Block Positioning
+
+The text block is center-balanced using actual rendered width:
+
+```
+TEXT_BLOCK_X = width × textBlockXPercent
+textX = TEXT_BLOCK_X - (textBlockWidth / 2)
+if (textX < 80) textX = 80   // safety clamp
+```
+
+All elements anchor to textX: accent bar, badge, label, icon, title lines.
+
+### 9.6 Brightness-Adaptive Overlay
+
+| Image Type | Overlay Start | Overlay End | Gradient |
+|---|---|---|---|
+| Bright (>160) | 88% | 20% | Strong darkening |
+| Mid-range | Linear interpolation | | Proportional |
+| Dark (<70) | 55% | 5% | Light touch |
+
+### 9.7 CTR Psychology Layer
+
+- Focal dark zone: +12% opacity eye anchor behind text block
+- Edge vignette: reversed (transparent center → dark edges) for attention containment
+- Micro-hierarchy: title (full opacity) > label (0.50-0.65) > icon (label × 0.8) > badge (0.80)
+- Text dominance: font scale 1.38–1.68×, tight line-height (1.0–1.05), max 2 lines
+- Gradient contrast zones: sharp 3-zone separation (dark → mid → light)
+
+---
+
+# 10. Title Layout Engine
+
+Dynamically fits article titles into 1-2 lines.
+
+Algorithm:
+
+```
+calculate maxTextWidth (per-variant override or config default)
+↓
+try single line at max font size (52px)
+↓
+reduce font size by 2px until fits
+↓
+if min font reached → try two-line break
+↓
+find natural break point (balanced line lengths)
+```
 
 Rules:
 
-dark image → light gradient overlay  
-bright image → dark gradient overlay
-
-Brightness can be estimated using average pixel luminance.
-
----
-
-### Contrast Validation
-
-Images with very low contrast should be rejected.
-
-Low contrast images make title overlays difficult to read.
-
-Example problems:
-
-• foggy images  
-• overexposed backgrounds  
-• extremely flat lighting
+- Max lines: 2
+- Max font size: 52px
+- Min font size: 24px
+- Default max text width: 860px (overridden per layout variant)
+- Font family: Inter, Arial, sans-serif
+- Weight: 900
+- Letter-spacing: -0.6 to -0.8 (per variant)
 
 ---
 
-### Text Detection
+# 11. Design System Integration
 
-Images that already contain visible text must be rejected.
+### Overlay Design Resolution
 
-Reasons:
+Content metadata drives visual decisions:
 
-• title overlay becomes unreadable  
-• visual clutter increases  
+- Variant: editorial / system / analytical / results / local (mapped from content topics)
+- Layout: L1 / L2 / L3 (deterministic per slug)
+- Icon: domain-specific SVG path (16×16)
+- Badge: category label (e.g., "CASE STUDY") or null
+- Palette: brightness-adaptive with accent, accentLight, accentDark, text, overlayStart, overlayEnd
 
-Detection methods may include:
+Color depth:
 
-• OCR scanning  
-• high edge-density detection  
-
----
-
-### Subject Position Detection
-
-The system should avoid images where the main subject is located exactly in the center.
-
-Reason:
-
-The featured image title is placed in the center of the image.
-
-If a face or object sits directly behind the title the layout becomes unusable.
-
-Preferred subject placement:
-
-• left third  
-• right third
+- accentLight = lighten(accent, +35%)
+- accentDark = darken(accent, ×0.6)
+- Used for accent bar gradient (top: accentLight → bottom: accentDark)
 
 ---
 
-### Orientation Validation
+# 12. Image Storage
 
-Preferred image orientation:
+Output structure:
 
-landscape
+```
+public/images/blog/<slug>/featured-clean.webp
+public/images/blog/<slug>/featured-overlay.webp
+public/images/resources/<slug>/featured-clean.webp
+public/images/resources/<slug>/featured-overlay.webp
+public/images/case-studies/<slug>/featured-clean.webp
+public/images/case-studies/<slug>/featured-overlay.webp
+public/images/industries/<slug>/featured-clean.webp
+public/images/industries/<slug>/featured-overlay.webp
+```
 
-Reject images that are:
+Image sizes:
 
-• vertical  
-• square
+- Featured: 1600×900
+- Content: 1200×700
 
-These formats do not work well with the featured image layout.
-
----
-
-### Final Acceptance Criteria
-
-An image is accepted only if it passes all checks:
-
-• brightness detected  
-• sufficient contrast  
-• no text detected  
-• subject not centered  
-• landscape orientation  
-
-If any rule fails, the system must fetch the next candidate image.
+Format: WebP (quality 90)
 
 ---
 
-# 14. Image Style Consistency Engine
+# 13. Learning Systems
 
-To maintain visual consistency across the website, the image system should apply domain‑specific style rules.
+### Provider Learning
 
-Different content domains require different visual styles.
+EMA-based quality tracking per domain. Providers that consistently return higher-scoring images are queried first.
 
----
+Stored in: `src/lib/image-system/data/providerScores.json`
 
-### Blog Image Style
+### Context Memory
 
-Blog images should represent real business activity.
+Remembers successful query/provider/score per topic for future selection.
 
-Preferred scenes:
-
-• customer service teams
-• business phone conversations
-• small business environments
-• office collaboration
-
-Avoid:
-
-• abstract tech graphics
-• generic handshake stock photos
-• unrealistic corporate imagery
-
-Blog images should feel **operational and real**.
+Stored in: `src/lib/image-system/data/contextMemory.json`
 
 ---
 
-### Resource Image Style
+# 14. CLI Commands
 
-Resource content usually explains frameworks, systems, and processes.
+```bash
+# Test single domain (uses hardcoded default slugs)
+npx tsx scripts/generators/image-generate.ts --mode test --domain blog
+npx tsx scripts/generators/image-generate.ts --mode test --domain case-studies
+npx tsx scripts/generators/image-generate.ts --mode test --domain resources
 
-Preferred imagery:
+# Force regeneration (bypasses cache)
+npx tsx scripts/generators/image-generate.ts --mode test --domain blog --force
 
-• dashboards
-• workflow diagrams
-• analytics screens
-• structured work environments
+# Regenerate (clears index, re-runs pipeline)
+npx tsx scripts/generators/image-generate.ts --mode test --regenerate
 
-Avoid:
+# Fresh (clears index AND blocks previous image)
+npx tsx scripts/generators/image-generate.ts --mode test --fresh
 
-• lifestyle imagery
-• random office photos
+# Bulk generation
+npx tsx scripts/generators/image-generate.ts --mode bulk --domain blog
 
-Resource visuals should feel **educational and structured**.
-
----
-
-### Industry Image Style
-
-Industry pages should visually represent real service environments.
-
-Preferred imagery:
-
-• technicians working
-• real workspaces
-• equipment and tools
-• storefront environments
-
-Avoid:
-
-• corporate office scenes
-• abstract graphics
-
-Industry images should feel **grounded and authentic**.
+# Inspect generated images
+npx tsx scripts/analyzers/image-inspect.ts
+```
 
 ---
 
-### Case Study Image Style
+# 15. Validation
 
-Case studies should emphasize real operations and results.
+### WCAG AA Contrast Check
 
-Preferred imagery:
+After overlay generation, the pipeline samples the center region and verifies white text contrast:
 
-• teams working together
-• operations workflows
-• real business environments
-• before/after operational situations
+- Minimum ratio: 4.5:1
+- Sample region: 10-90% width × 30-70% height
+- Logged for every generated image
 
-Case study visuals should communicate **real outcomes and operational change**.
+### Safety Checks
+
+- License validation (editorial flags)
+- Brand/logo keyword detection
+- Unsafe content filtering
 
 ---
 
-Potential upgrades for later phases:
+# 16. Key File Paths
 
-- AI generated diagrams
-- automated chart creation for resources
-- semantic image search
-- image caching layer
-
-These improvements can further enhance automation and visual consistency.
-
+| Area | Location |
+|---|---|
+| Pipeline orchestrator | `src/lib/image-system/pipeline/processor.ts` |
+| Featured image generator | `src/lib/image-system/pipeline/featuredImage.ts` |
+| SVG overlay design | `src/lib/image-system/pipeline/overlayDesign.ts` |
+| Title layout engine | `src/lib/image-system/pipeline/titleLayout.ts` |
+| Image analysis | `src/lib/image-system/intelligence/imageAnalysis.ts` |
+| Relevance scoring | `src/lib/image-system/intelligence/scoring.ts` |
+| Perceptual hashing | `src/lib/image-system/intelligence/similarity.ts` |
+| Safety checks | `src/lib/image-system/intelligence/safety.ts` |
+| Semantic query engine | `src/lib/image-system/semantic/queryGenerator.ts` |
+| Content analyzer | `src/lib/image-system/semantic/contentAnalyzer.ts` |
+| Provider manager | `src/lib/image-system/providers/index.ts` |
+| Config + thresholds | `src/lib/image-system/config.ts` |
+| Type definitions | `src/lib/image-system/types.ts` |
+| CLI entry point | `scripts/generators/image-generate.ts` |
+| Dedup index data | `src/lib/image-system/data/imageIndex.json` |
+| Provider scores data | `src/lib/image-system/data/providerScores.json` |
+| Context memory data | `src/lib/image-system/data/contextMemory.json` |

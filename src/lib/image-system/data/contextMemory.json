@@ -2,30 +2,33 @@
   "lead-response-time": {
     "queries": [
       "lead response time for service businesses",
-      "small business owner answering phone"
+      "small business owner answering phone",
+      "service business receptionist taking phone call"
     ],
     "provider": "pexels",
-    "avgScore": 67,
-    "count": 6
+    "avgScore": 66,
+    "count": 14
   },
   "booking-automation": {
     "queries": [
       "booking system screen",
-      "modern dental practice reception area"
+      "modern dental practice reception area",
+      "dental office patient consultation"
     ],
     "provider": "unsplash",
-    "avgScore": 58,
-    "count": 4
+    "avgScore": 59,
+    "count": 12
   },
   "authority-signals": {
     "queries": [
       "authority signals business",
       "weak authority dashboards",
       "authority signals dashboards",
-      "local business storefront on high street"
+      "local business storefront on high street",
+      "small business appearing in local search on phone"
     ],
     "provider": "unsplash",
     "avgScore": 58,
-    "count": 5
+    "count": 13
   }
 }

@@ -6,6 +6,10 @@ import path from 'path';
 import sharp from 'sharp';
 
 import { DOMAIN_IMAGE_RULES, getImageOutputPath, IMAGE_SIZES } from '../config';
+import { applyFixes, clampOverrides } from '../debug/autoTune';
+import { debugImage } from '../debug/debugImage';
+import { loadLearnedOverrides, saveWinningConfig } from '../debug/learningMemory';
+import { appendImageLog } from '../debug/logger';
 import { hasImage, isHashTooSimilar, isImageUsed, registerImage } from '../dedup/imageIndex';
 import { analyzeImage, detectBrightness } from '../intelligence/imageAnalysis';
 import { checkImageSafety } from '../intelligence/safety';
@@ -18,15 +22,18 @@ import { generateSemanticQueries } from '../semantic/queryGenerator';
 import type {
   ContentDomain,
   ContentMetadata,
+  DebugFixAction,
   ImageType,
   PipelineResult,
   ProviderImage,
   ScoredImage,
+  TuneOverrides,
 } from '../types';
 
 import { downloadImage } from './downloader';
 import { generateStandardFeaturedImage } from './featuredImage';
 import { optimizeImage, saveImage } from './optimizer';
+import { buildDesignContext } from './overlayDesign';
 
 /** Verify white text contrast on the generated image (WCAG AA = 4.5:1) */
 async function verifyContrast(imageBuffer: Buffer): Promise<{ ratio: number; pass: boolean }> {
@@ -195,27 +202,112 @@ export async function processImage(
     if (isFeatured) {
       // Generate both clean and overlay variants from one download
       const brightness = best.intelligence.brightness;
-      const { clean, overlay } = await generateStandardFeaturedImage(
-        bestBuffer,
-        metadata.title,
-        brightness,
-        metadata.primaryKeyword
+      const design = buildDesignContext(metadata, domain, brightness);
+      console.log(
+        `[design] Variant: ${design.variant} | Layout: L${design.layout} | Icon: ${design.icon ? 'yes' : 'none'} | Badge: ${design.badge ?? 'none'} | Accent: ${design.palette.accent}`
       );
 
-      // Verify contrast only on overlay variant (has text)
-      const contrastCheck = await verifyContrast(overlay);
-      console.log(
-        `[pipeline] Contrast check: ${contrastCheck.ratio.toFixed(2)}:1 ${contrastCheck.pass ? '✅' : '⚠️'}`
-      );
+      // ── Auto-tune loop (max 2 iterations) ──
+      let tuneOverrides: TuneOverrides = loadLearnedOverrides(domain, metadata.title) ?? {};
+      let bestClean: Buffer | null = null;
+      let bestOverlay: Buffer | null = null;
+      let bestDebugScore = 0;
+      let allFixesApplied: DebugFixAction[] = [];
+      let finalIteration = 0;
+
+      const MAX_TUNE_ITERATIONS = 2;
+
+      for (let iteration = 0; iteration <= MAX_TUNE_ITERATIONS; iteration++) {
+        const result = await generateStandardFeaturedImage(
+          bestBuffer,
+          metadata.title,
+          brightness,
+          design,
+          metadata.primaryKeyword,
+          Object.keys(tuneOverrides).length > 0 ? tuneOverrides : undefined
+        );
+
+        // Verify contrast
+        const contrastCheck = await verifyContrast(result.overlay);
+        console.log(
+          `[pipeline] Contrast check: ${contrastCheck.ratio.toFixed(2)}:1 ${contrastCheck.pass ? '✅' : '⚠️'}`
+        );
+
+        // Fill in debug input fields from intelligence + contrast
+        result.debugInput.contrast = contrastCheck.ratio;
+        result.debugInput.edgeDensityLeft = best.intelligence.subjectPosition.edgeDensityLeft;
+        result.debugInput.subjectRegion = best.intelligence.subjectPosition.region;
+
+        // Run visual debug analysis
+        const debug = debugImage(result.debugInput);
+        console.log(
+          `[debug] Score: ${debug.score}/10 | Confidence: ${debug.confidence} | Issues: ${debug.issues.length > 0 ? debug.issues.join(', ') : 'none'}`
+        );
+
+        // Track best result
+        if (debug.score > bestDebugScore || !bestClean) {
+          bestClean = result.clean;
+          bestOverlay = result.overlay;
+          bestDebugScore = debug.score;
+          finalIteration = iteration;
+        }
+
+        // Good enough — stop tuning
+        if (debug.score >= 8) {
+          console.log(`[tune] Score ${debug.score} ≥ 8 — accepting result`);
+          break;
+        }
+
+        // Last iteration — nothing more to try
+        if (iteration >= MAX_TUNE_ITERATIONS) {
+          console.log(`[tune] Max iterations reached — using best (score: ${bestDebugScore})`);
+          break;
+        }
+
+        // Apply fixes for next iteration
+        console.log(`[tune] Applying fixes: ${debug.fixes.join(', ')}`);
+        tuneOverrides = clampOverrides(applyFixes(tuneOverrides, debug.fixes));
+        allFixesApplied.push(...debug.fixes);
+      }
+
+      // ── Log generation result ──
+      const lp = design.layout;
+      appendImageLog({
+        slug,
+        domain,
+        score: bestDebugScore,
+        layout: lp,
+        titleScale: tuneOverrides.titleScale ?? 1.0,
+        maxTextWidth: tuneOverrides.maxTextWidth ?? 780,
+        gradientStrength: tuneOverrides.gradientStrength ?? 1.0,
+        vignetteStrength: tuneOverrides.vignetteStrength ?? 1.0,
+        contrast: 0, // Already logged above
+        issues: [],
+        fixesApplied: allFixesApplied,
+        iteration: finalIteration,
+        timestamp: new Date().toISOString(),
+      });
+
+      // ── Save winning config to learning memory ──
+      if (bestDebugScore >= 8) {
+        saveWinningConfig(domain, metadata.title, {
+          titleScale: tuneOverrides.titleScale ?? 1.0,
+          maxTextWidth: tuneOverrides.maxTextWidth ?? 780,
+          gradientStrength: tuneOverrides.gradientStrength ?? 1.0,
+          layout: design.layout,
+          vignetteStrength: tuneOverrides.vignetteStrength ?? 1.0,
+          score: bestDebugScore,
+        });
+      }
 
       // Save both variants
       const cleanPath = getImageOutputPath(domain, slug, 'featured-clean');
       const overlayPath = getImageOutputPath(domain, slug, 'featured-overlay');
 
-      await saveImage(clean, cleanPath);
+      await saveImage(bestClean!, cleanPath);
       console.log(`[pipeline] Saved: ${cleanPath}`);
 
-      await saveImage(overlay, overlayPath);
+      await saveImage(bestOverlay!, overlayPath);
       console.log(`[pipeline] Saved: ${overlayPath}`);
 
       // Register both in index

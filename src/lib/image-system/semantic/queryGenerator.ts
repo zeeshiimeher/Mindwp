@@ -318,5 +318,23 @@ export function generateSemanticQueries(
     return true;
   });
 
-  return unique.sort((a, b) => b.score - a.score).slice(0, maxQueries);
+  // Sort by score, then shuffle within same-score tiers for variety across runs
+  const sorted = unique.sort((a, b) => b.score - a.score);
+  const seed = Date.now();
+  const shuffled: SemanticQuery[] = [];
+  let i = 0;
+  while (i < sorted.length) {
+    let j = i;
+    while (j < sorted.length && sorted[j].score === sorted[i].score) j++;
+    const tier = sorted.slice(i, j);
+    // Fisher-Yates with deterministic-per-run seed
+    for (let k = tier.length - 1; k > 0; k--) {
+      const r = ((seed + k * 2654435761) >>> 0) % (k + 1);
+      [tier[k], tier[r]] = [tier[r], tier[k]];
+    }
+    shuffled.push(...tier);
+    i = j;
+  }
+
+  return shuffled.slice(0, maxQueries);
 }

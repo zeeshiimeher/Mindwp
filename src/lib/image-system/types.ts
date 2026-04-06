@@ -54,6 +54,10 @@ export interface SubjectPositionResult {
   isCentered: boolean;
   region: 'left' | 'center' | 'right';
   edgeDensityCenter: number;
+  /** Edge density in left third (low = clean zone for text) */
+  edgeDensityLeft: number;
+  /** Edge density in right third (high = subject present) */
+  edgeDensityRight: number;
 }
 
 export interface TextDetectionResult {
@@ -126,12 +130,41 @@ export interface TitleLayoutResult {
   totalHeight: number;
 }
 
+// ─── Overlay Design Types ───────────────────────────────────────────
+
+export type OverlayVariant = 'editorial' | 'system' | 'analytical' | 'results' | 'local';
+
+/** Visual layout variant — deterministic per slug, prevents template repetition */
+export type LayoutVariant = 1 | 2 | 3;
+
+export interface ColorPalette {
+  accent: string;
+  /** Lighter tint of accent — highlights, badge glows */
+  accentLight: string;
+  /** Darker shade of accent — gradient endpoints, depth */
+  accentDark: string;
+  text: string;
+  overlayStart: number;
+  overlayEnd: number;
+}
+
+export interface OverlayDesignContext {
+  variant: OverlayVariant;
+  layout: LayoutVariant;
+  icon: string | null;
+  badge: string | null;
+  palette: ColorPalette;
+}
+
+// ─── Featured Image Options ─────────────────────────────────────────
+
 export interface FeaturedImageOptions {
   title: string;
   brightness: BrightnessResult;
   outputWidth: number;
   outputHeight: number;
   label?: string;
+  design: OverlayDesignContext;
 }
 
 export interface FeaturedImageResult {
@@ -260,4 +293,84 @@ export interface PipelineResult {
   imageId: string;
   relevanceScore: number;
   hash: string;
+}
+
+// ─── Debug + Auto-Tune Types ────────────────────────────────────────
+
+export type DebugConfidence = 'high' | 'medium' | 'low';
+
+export type DebugFixAction =
+  | 'increaseText'
+  | 'decreaseText'
+  | 'increaseContrast'
+  | 'increaseWidth'
+  | 'decreaseWidth'
+  | 'shiftRight'
+  | 'shiftLeft'
+  | 'increaseBlur'
+  | 'retryImage';
+
+export interface DebugResult {
+  score: number;
+  issues: string[];
+  fixes: DebugFixAction[];
+  confidence: DebugConfidence;
+  details: Record<string, number | string>;
+}
+
+export interface DebugInput {
+  layout: LayoutVariant;
+  textBlockWidth: number;
+  textX: number;
+  imageWidth: number;
+  imageHeight: number;
+  contrast: number;
+  brightness: number;
+  titleLines: number;
+  fontSize: number;
+  edgeDensityLeft: number;
+  subjectRegion: 'left' | 'center' | 'right';
+  gradientStrength: number;
+  vignetteStrength: number;
+  maxTextWidth: number;
+  textBlockXPercent: number;
+}
+
+export interface TuneOverrides {
+  titleScale?: number;
+  maxTextWidth?: number;
+  gradientStrength?: number;
+  vignetteStrength?: number;
+  textBlockXPercent?: number;
+  blurSigma?: number;
+}
+
+export type TitleBucket = 'short' | 'medium' | 'long';
+
+export interface LearnedConfig {
+  titleScale: number;
+  maxTextWidth: number;
+  gradientStrength: number;
+  layout: LayoutVariant;
+  vignetteStrength: number;
+  count: number;
+  avgScore: number;
+}
+
+export type LearningMemory = Record<string, LearnedConfig>;
+
+export interface ImageLogEntry {
+  slug: string;
+  domain: ContentDomain;
+  score: number;
+  layout: LayoutVariant;
+  titleScale: number;
+  maxTextWidth: number;
+  gradientStrength: number;
+  vignetteStrength: number;
+  contrast: number;
+  issues: string[];
+  fixesApplied: DebugFixAction[];
+  iteration: number;
+  timestamp: string;
 }

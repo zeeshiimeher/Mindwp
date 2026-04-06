@@ -142,6 +142,8 @@ Within each domain, different sections have different jobs. The section determin
 Job: Establish what the page is about and why it matters.
 Rule: Must answer "what is in it for me" in the first sentence. No abstract framing. No banned vocabulary.
 
+**Featured image:** Every content page hero has an automatically generated featured image (`featured-overlay.webp`) with cinematic SVG overlay. These are pipeline outputs, not manually created assets. To regenerate, use `npx tsx scripts/generators/image-generate.ts --mode test --domain <domain> --force`. Image system architecture: `Automatic-Image-Generation-System/IMAGE-SYSTEM-ARCHITECTURE.md`.
+
 ### Problem
 
 Job: Describe the operational issue the reader recognises.
@@ -313,6 +315,7 @@ Some content must never be changed without explicit approval.
 - Structural architecture decisions — tier structure, service hierarchy, Smart Website gravity
 - CTA contracts — approved labels and hrefs must not be changed
 - Metadata contracts — slug, systems[], industries[], topics[] values defined by the content graph
+- Generated image assets — featured-clean.webp, featured-overlay.webp, and all files in `public/images/` are pipeline outputs. Do not manually edit, crop, or replace. Regenerate via the image pipeline CLI.
 
 ### Conditionally protected
 
@@ -417,6 +420,7 @@ No step may be skipped. AI must not combine steps 2 and 4.
 - Protected content — quotes, metrics, architecture decisions (see §8)
 - System architecture — graph, authority engine, internal linking, validation pipeline
 - Component hierarchy — UI components, renderers, templates
+- Generated image assets — all files in `public/images/` (regenerate via pipeline CLI, do not edit manually)
 
 ### Scope Limits
 

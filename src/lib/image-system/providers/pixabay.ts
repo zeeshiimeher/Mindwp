@@ -16,6 +16,8 @@ export async function searchPixabay(
   url.searchParams.set('image_type', 'photo');
   url.searchParams.set('safesearch', 'true');
   url.searchParams.set('min_width', '1600');
+  // Vary page across runs for image variety
+  url.searchParams.set('page', String(1 + (Date.now() % 3)));
 
   const response = await fetch(url.toString());
 

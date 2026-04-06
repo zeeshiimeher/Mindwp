@@ -129,6 +129,8 @@ export async function detectSubjectPosition(imageBuffer: Buffer): Promise<Subjec
     isCentered: centerRatio > 0.5, // Only flag if center has dominant activity >50%
     region,
     edgeDensityCenter: centerRatio,
+    edgeDensityLeft: leftEnergy / total,
+    edgeDensityRight: rightEnergy / total,
   };
 }
 

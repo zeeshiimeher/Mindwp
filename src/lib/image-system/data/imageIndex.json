@@ -2,49 +2,49 @@
   "lead-response-time-for-service-businesses": {
     "featured-clean": {
       "file": "public/images/blog/lead-response-time-for-service-businesses/featured-clean.webp",
-      "hash": "accc8ccee6ced000",
-      "provider": "pexels",
-      "imageId": "8475194",
-      "generatedAt": "2026-04-06T03:19:39.051Z"
+      "hash": "6ee3b6b27a48b800",
+      "provider": "unsplash",
+      "imageId": "UPPJYvky81I",
+      "generatedAt": "2026-04-06T04:54:02.020Z"
     },
     "featured-overlay": {
       "file": "public/images/blog/lead-response-time-for-service-businesses/featured-overlay.webp",
-      "hash": "accc8ccee6ced000",
-      "provider": "pexels",
-      "imageId": "8475194",
-      "generatedAt": "2026-04-06T03:19:39.052Z"
+      "hash": "6ee3b6b27a48b800",
+      "provider": "unsplash",
+      "imageId": "UPPJYvky81I",
+      "generatedAt": "2026-04-06T04:54:02.024Z"
     }
   },
   "appointment-business-booking-automation": {
     "featured-clean": {
       "file": "public/images/case-studies/appointment-business-booking-automation/featured-clean.webp",
-      "hash": "42ddc1d9cc0d6800",
+      "hash": "7070a467276c3000",
       "provider": "unsplash",
-      "imageId": "cFJcDGUWnes",
-      "generatedAt": "2026-04-06T03:20:21.894Z"
+      "imageId": "9F83toLNfkA",
+      "generatedAt": "2026-04-06T04:54:15.930Z"
     },
     "featured-overlay": {
       "file": "public/images/case-studies/appointment-business-booking-automation/featured-overlay.webp",
-      "hash": "42ddc1d9cc0d6800",
+      "hash": "7070a467276c3000",
       "provider": "unsplash",
-      "imageId": "cFJcDGUWnes",
-      "generatedAt": "2026-04-06T03:20:21.898Z"
+      "imageId": "9F83toLNfkA",
+      "generatedAt": "2026-04-06T04:54:15.932Z"
     }
   },
   "authority-signals-for-local-search": {
     "featured-clean": {
       "file": "public/images/resources/authority-signals-for-local-search/featured-clean.webp",
-      "hash": "f8d8f47636366800",
+      "hash": "50602252d3d34400",
       "provider": "unsplash",
-      "imageId": "Gahjl0ygpww",
-      "generatedAt": "2026-04-06T03:21:20.026Z"
+      "imageId": "HNUWwuE50Bo",
+      "generatedAt": "2026-04-06T04:54:28.067Z"
     },
     "featured-overlay": {
       "file": "public/images/resources/authority-signals-for-local-search/featured-overlay.webp",
-      "hash": "f8d8f47636366800",
+      "hash": "50602252d3d34400",
       "provider": "unsplash",
-      "imageId": "Gahjl0ygpww",
-      "generatedAt": "2026-04-06T03:21:20.029Z"
+      "imageId": "HNUWwuE50Bo",
+      "generatedAt": "2026-04-06T04:54:28.068Z"
     }
   }
 }

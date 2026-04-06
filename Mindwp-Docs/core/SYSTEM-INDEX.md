@@ -45,6 +45,15 @@
 
 ---
 
+## 3.5 Image System (`Automatic-Image-Generation-System/`)
+
+| File                                                              | Role                                        | Type   |
+| ----------------------------------------------------------------- | ------------------------------------------- | ------ |
+| `Automatic-Image-Generation-System/IMAGE-SYSTEM-ARCHITECTURE.md`  | Image pipeline architecture and design      | Manual |
+| `Automatic-Image-Generation-System/IMAGE-TESTING-GUIDE.md`        | Testing commands and visual QA guide        | Manual |
+
+---
+
 ## 4. Generated Docs
 
 | File                                       | Role                                         | Type      |
@@ -149,6 +158,8 @@ Mindwp-Docs/
 ├── logs/
 │   └── SYSTEM-LOG.md
 └── Automatic-Image-Generation-System/
+    ├── IMAGE-SYSTEM-ARCHITECTURE.md
+    └── IMAGE-TESTING-GUIDE.md
 
 reports/
 ├── system-state.json

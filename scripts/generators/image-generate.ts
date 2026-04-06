@@ -77,6 +77,7 @@ function parseArgs(): CliArgs {
         parsed.dryRun = true;
         break;
       case '--regenerate':
+      case '--force':
         parsed.regenerate = true;
         break;
       case '--fresh':

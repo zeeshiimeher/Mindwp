@@ -12,6 +12,8 @@ export async function searchPexels(
   url.searchParams.set('query', query);
   url.searchParams.set('per_page', String(perPage));
   url.searchParams.set('orientation', 'landscape');
+  // Vary page across runs for image variety
+  url.searchParams.set('page', String(1 + (Date.now() % 3)));
 
   const response = await fetch(url.toString(), {
     headers: { Authorization: apiKey },

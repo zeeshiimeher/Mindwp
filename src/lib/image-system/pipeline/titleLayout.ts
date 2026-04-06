@@ -39,11 +39,11 @@ function findBreakPoint(title: string, maxWidthPx: number, fontSize: number): nu
 }
 
 /** Calculate the title layout: font size, lines, and positioning */
-export function calculateTitleLayout(title: string, imageWidth: number): TitleLayoutResult {
-  // Respect both percentage and absolute padding (use the stricter one)
+export function calculateTitleLayout(title: string, imageWidth: number, maxTextWidthOverride?: number): TitleLayoutResult {
+  // Use override if provided, otherwise derive from config
   const percentWidth = imageWidth * TITLE_LAYOUT.textWidthPercent;
   const paddedWidth = imageWidth - TITLE_LAYOUT.horizontalPaddingPx * 2;
-  const maxTextWidth = Math.min(percentWidth, paddedWidth);
+  const maxTextWidth = maxTextWidthOverride ?? Math.min(percentWidth, paddedWidth, TITLE_LAYOUT.maxTextWidthPx);
 
   let fontSize = TITLE_LAYOUT.maxFontSize;
 
@@ -51,12 +51,13 @@ export function calculateTitleLayout(title: string, imageWidth: number): TitleLa
   while (fontSize >= TITLE_LAYOUT.minFontSize) {
     const w = estimateTextWidth(title, fontSize);
     if (w <= maxTextWidth) {
+      const lineHeight = fontSize * 1.1;
       return {
         lines: [title],
         lineWidths: [w],
         fontSize,
-        lineHeight: fontSize * 1.3,
-        totalHeight: fontSize * 1.3,
+        lineHeight,
+        totalHeight: lineHeight,
       };
     }
     fontSize -= 2;
@@ -70,7 +71,7 @@ export function calculateTitleLayout(title: string, imageWidth: number): TitleLa
     if (breakPoint > 0) {
       const line1 = title.slice(0, breakPoint).trim();
       const line2 = title.slice(breakPoint + 1).trim();
-      const lineHeight = fontSize * 1.3;
+      const lineHeight = fontSize * 1.1;
       return {
         lines: [line1, line2],
         lineWidths: [estimateTextWidth(line1, fontSize), estimateTextWidth(line2, fontSize)],
@@ -89,12 +90,13 @@ export function calculateTitleLayout(title: string, imageWidth: number): TitleLa
   const line1 = title.slice(0, splitAt).trim();
   const line2 = title.slice(splitAt).trim();
   const minFs = TITLE_LAYOUT.minFontSize;
+  const lineHeight = minFs * 1.1;
 
   return {
     lines: [line1, line2],
     lineWidths: [estimateTextWidth(line1, minFs), estimateTextWidth(line2, minFs)],
     fontSize: minFs,
-    lineHeight: minFs * 1.3,
-    totalHeight: minFs * 1.3 * 2,
+    lineHeight,
+    totalHeight: lineHeight * 2,
   };
 }

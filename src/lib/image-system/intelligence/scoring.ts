@@ -61,6 +61,9 @@ function scoreComposition(intelligence: ImageIntelligenceResult): number {
   // Subject not centered is better for overlays
   if (!intelligence.subjectPosition.isCentered) score += 25;
 
+  // Subject on right is ideal — keeps left zone clean for text overlay
+  if (intelligence.subjectPosition.region === 'right') score += 10;
+
   // Landscape orientation preferred
   if (intelligence.orientation.isLandscape) score += 15;
 
@@ -78,6 +81,11 @@ function scoreOverlayCompatibility(intelligence: ImageIntelligenceResult): numbe
   const centerDensity = intelligence.subjectPosition.edgeDensityCenter;
   if (centerDensity < 0.3) score += 25;
   else if (centerDensity < 0.4) score += 10;
+
+  // Clean left zone = ideal for text overlay (text renders left-of-center)
+  const leftDensity = intelligence.subjectPosition.edgeDensityLeft;
+  if (leftDensity < 0.25) score += 15;
+  else if (leftDensity < 0.35) score += 5;
 
   // Good contrast makes overlays work better
   if (!intelligence.contrast.isLowContrast) score += 15;

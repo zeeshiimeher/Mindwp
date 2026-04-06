@@ -3,22 +3,49 @@
 
 // Types
 export type {
+  ColorPalette,
   ContentDomain,
   ContentMetadata,
+  DebugConfidence,
+  DebugFixAction,
+  DebugInput,
+  DebugResult,
   FeaturedImageResult,
+  ImageLogEntry,
   ImageType,
+  LayoutVariant,
+  LearnedConfig,
+  LearningMemory,
+  OverlayDesignContext,
+  OverlayVariant,
   PipelineMode,
   PipelineOptions,
   PipelineResult,
   ProviderName,
+  TitleBucket,
+  TuneOverrides,
 } from './types';
 
 // Pipeline
 export { downloadImage, getRateLimitStatus } from './pipeline/downloader';
 export { generateStandardFeaturedImage } from './pipeline/featuredImage';
 export { optimizeImage, saveImage } from './pipeline/optimizer';
+export {
+  buildDesignContext,
+  extractBadgeText,
+  resolveColorPalette,
+  resolveIcon,
+  resolveLayoutVariant,
+  resolveOverlayVariant,
+} from './pipeline/overlayDesign';
 export { processImage, processPost } from './pipeline/processor';
 export { calculateTitleLayout } from './pipeline/titleLayout';
+
+// Debug + Auto-Tune
+export { applyFixes, clampOverrides } from './debug/autoTune';
+export { debugImage } from './debug/debugImage';
+export { loadLearnedOverrides, loadLearningMemory, saveWinningConfig, titleBucket } from './debug/learningMemory';
+export { appendImageLog, loadImageLog } from './debug/logger';
 
 // Providers
 export { searchAllProviders, searchWithFallback } from './providers';

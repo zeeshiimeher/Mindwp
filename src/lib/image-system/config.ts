@@ -149,9 +149,13 @@ export const TITLE_LAYOUT = {
   maxLines: 2,
   maxFontSize: 52,
   minFontSize: 24,
+  /** Default pixel cap — overridden per layout variant */
+  maxTextWidthPx: 860,
   textWidthPercent: 0.65,
-  horizontalPaddingPx: 80,
+  horizontalPaddingPx: 100,
   safePaddingPercent: 0.15,
+  /** Top/bottom safe margin in px */
+  safeMarginY: 120,
   fontFamily: 'Inter, Arial, sans-serif',
 } as const;
 

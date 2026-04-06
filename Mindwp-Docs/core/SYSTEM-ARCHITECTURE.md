@@ -25,6 +25,13 @@
 │  Next.js pages · BEM components · CTA engine        │
 │  src/app/ · src/components/ · src/lib/ui/            │
 └──────────────────────┬──────────────────────────────┘
+                       │ images from
+┌──────────────────────▼──────────────────────────────┐
+│  IMAGE GENERATION                                   │
+│  Sharp pipeline · SVG overlays · 3 layout variants  │
+│  src/lib/image-system/ · scripts/generators/         │
+│  Providers: Unsplash · Pexels · Pixabay             │
+└──────────────────────┬──────────────────────────────┘
                        │ validated by
 ┌──────────────────────▼──────────────────────────────┐
 │  VALIDATION                                         │
@@ -81,6 +88,10 @@ Primary CTA everywhere: **"Start a Conversation" → /contact**
 | System sync | `scripts/core/system-sync.mjs` |
 | System Health dashboard | `src/app/dev/authority-dashboard/` |
 | Content Intelligence | `src/app/content-dashboard/` |
+| Image system pipeline | `src/lib/image-system/` |
+| Image CLI generator | `scripts/generators/image-generate.ts` |
+| Image config + thresholds | `src/lib/image-system/config.ts` |
+| Generated images | `public/images/<domain>/<slug>/` |
 
 ---
 
@@ -92,5 +103,6 @@ Primary CTA everywhere: **"Start a Conversation" → /contact**
 | `governance/` | AI rules, content governance hierarchy |
 | `planning/` | Content inventory and planning docs |
 | `logs/` | Generated system log (snapshot) |
+| `Automatic-Image-Generation-System/` | Image pipeline architecture and testing guide |
 
 Full index: `core/SYSTEM-INDEX.md`
