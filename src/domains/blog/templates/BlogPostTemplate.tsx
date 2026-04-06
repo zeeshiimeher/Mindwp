@@ -220,7 +220,7 @@ export function BlogPostTemplate({
         return section.content && section.content.length > 0 ? (
           <div key={`introduction-${index}`} className='blog-post__intro'>
             {section.content.map((para, i) => (
-              <p key={i}>{para}</p>
+              <p key={`intro-${i}-${para.slice(0, 20)}`}>{para}</p>
             ))}
           </div>
         ) : null;
@@ -244,13 +244,18 @@ export function BlogPostTemplate({
               (typeof section.content === 'string' ? (
                 <p>{section.content}</p>
               ) : (
-                section.content.map((p, j) => <p key={j}>{p}</p>)
+                section.content.map((p, j) => (
+                  <p key={`content-${index}-${j}-${p.slice(0, 20)}`}>{p}</p>
+                ))
               ))}
 
             {section.list && section.list.length > 0 && (
               <ul className='blog-post__list'>
                 {section.list.map((item, k) => (
-                  <li key={k} className='blog-post__list-item'>
+                  <li
+                    key={`list-${index}-${k}-${item.slice(0, 20)}`}
+                    className='blog-post__list-item'
+                  >
                     <span className='blog-post__bullet' aria-hidden='true' />
                     <span>{item}</span>
                   </li>

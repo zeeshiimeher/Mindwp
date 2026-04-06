@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { SectionWrapper, SplitLayout } from '@/components/reusable/primitives';
 import { SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
@@ -50,7 +52,13 @@ export function ImageStatsServicesSection({
     <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
       <SplitLayout breakpoint='lg' gap={8}>
         <Card className={`${BLOCK}__image-card`}>
-          <img src={image.src} alt={image.alt} className={`${BLOCK}__image`} loading='lazy' />
+          <Image
+            src={image.src}
+            alt={image.alt}
+            width={800}
+            height={600}
+            className={`${BLOCK}__image`}
+          />
         </Card>
 
         <div className={`${BLOCK}__content`}>

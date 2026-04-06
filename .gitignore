@@ -35,6 +35,7 @@ pnpm-debug.log*
 test-results/
 playwright-report/
 __workspace/
+_workspace/
 
 # Coverage
 coverage/

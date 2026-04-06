@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Button, type ButtonProps, SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
@@ -51,12 +53,13 @@ export function TestimonialSpotlightSplitSection({
             {testimonial.avatars && testimonial.avatars.length > 0 && (
               <div className={`${BLOCK}__avatars`}>
                 {testimonial.avatars.map((avatar, index) => (
-                  <img
+                  <Image
                     key={`${avatar.src}-${index}`}
                     src={avatar.src}
                     alt={avatar.alt}
+                    width={52}
+                    height={52}
                     className={`${BLOCK}__avatar`}
-                    loading='lazy'
                   />
                 ))}
               </div>

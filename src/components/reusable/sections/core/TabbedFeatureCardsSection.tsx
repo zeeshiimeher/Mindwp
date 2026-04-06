@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import { FileText } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives';
@@ -81,7 +82,13 @@ export function TabbedFeatureCardsSection({
         <div className={`${BLOCK}__image-grid`}>
           {imageGrid.map((item, index) => (
             <Card key={`${item.src}-${index}`} className={`${BLOCK}__image-item`}>
-              <img src={item.src} alt={item.alt} loading='lazy' className={`${BLOCK}__image`} />
+              <Image
+                src={item.src}
+                alt={item.alt}
+                width={400}
+                height={176}
+                className={`${BLOCK}__image`}
+              />
             </Card>
           ))}
         </div>

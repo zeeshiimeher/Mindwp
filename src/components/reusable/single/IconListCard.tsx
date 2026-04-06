@@ -60,10 +60,10 @@ export function IconListCard({
       </div>
 
       <div className={`${BLOCK}__list`}>
-        {features.map((feature, index) => {
+        {features.map(feature => {
           const FeatureIcon = feature.icon;
           return (
-            <div key={index} className={`${BLOCK}__item`}>
+            <div key={feature.name} className={`${BLOCK}__item`}>
               <FeatureIcon className={`${BLOCK}__item-icon`} />
               <div className={`${BLOCK}__content`}>
                 <p className={`${BLOCK}__name`}>{feature.name}</p>

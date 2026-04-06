@@ -1,5 +1,3 @@
-import { notFound } from 'next/navigation';
-
 import { buildMetadata } from '@/lib/seo/metadata';
 
 export const dynamic = 'force-static';
@@ -14,10 +12,6 @@ export const metadata = buildMetadata({
 });
 
 export default async function Page() {
-  if (process.env.NODE_ENV !== 'development') {
-    notFound();
-  }
-
   const { default: Dashboard } = await import('./dashboard');
   return <Dashboard />;
 }

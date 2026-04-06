@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
@@ -40,7 +42,13 @@ export function ImageAccordionStripSection({
       <div className={`${BLOCK}__track`}>
         {items.map((item, index) => (
           <Card key={`${item.title}-${index}`} className={`${BLOCK}__item`}>
-            <img src={item.image} alt={item.alt} loading='lazy' className={`${BLOCK}__image`} />
+            <Image
+              src={item.image}
+              alt={item.alt}
+              width={800}
+              height={600}
+              className={`${BLOCK}__image`}
+            />
             <div className={`${BLOCK}__overlay`} aria-hidden='true' />
             <p className={`${BLOCK}__label`}>{item.title}</p>
           </Card>
