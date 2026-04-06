@@ -12,6 +12,8 @@ import { conversionArchitectureForServiceWebsites } from '@/domains/resources/co
 import { conversionTrackingForServiceBusinesses } from '@/domains/resources/content/ConversionTrackingForServiceBusinesses';
 import { crmPipelineArchitecture } from '@/domains/resources/content/CrmPipelineArchitecture';
 import { crmPipelineAutomation } from '@/domains/resources/content/CrmPipelineAutomation';
+import { crmPipelineSetupGuideForPlumbingBusinesses } from '@/domains/resources/content/CrmPipelineSetupGuideForPlumbingBusinesses';
+import { crmPipelineSetupGuideForSalons } from '@/domains/resources/content/CrmPipelineSetupGuideForSalons';
 import { customerFeedbackLoopFramework } from '@/domains/resources/content/CustomerFeedbackLoopFramework';
 import { designingWebsitesThatSupportCrmSystems } from '@/domains/resources/content/DesigningWebsitesThatSupportCrmSystems';
 import { googleBusinessProfileSystemArchitecture } from '@/domains/resources/content/GoogleBusinessProfileSystemArchitecture';
@@ -23,11 +25,14 @@ import { hvacLeadHandlingExample } from '@/domains/resources/content/HvacLeadHan
 import { hvacReviewGenerationFramework } from '@/domains/resources/content/HvacReviewGenerationFramework';
 import { leadAutomationFramework } from '@/domains/resources/content/LeadAutomationFramework';
 import { leadQualificationFramework } from '@/domains/resources/content/LeadQualificationFramework';
+import { leadResponseOptimizationChecklistForHvacBusinesses } from '@/domains/resources/content/LeadResponseOptimizationChecklistForHvacBusinesses';
 import { leadResponseTimeFramework } from '@/domains/resources/content/LeadResponseTimeFramework';
 import { leadRoutingModelsForServiceCompanies } from '@/domains/resources/content/LeadRoutingModelsForServiceCompanies';
 import { localSeoVsWebsiteOptimization } from '@/domains/resources/content/LocalSeoVsWebsiteOptimization';
 import { localServicePageArchitecture } from '@/domains/resources/content/LocalServicePageArchitecture';
 import { localVisibilityFramework } from '@/domains/resources/content/LocalVisibilityFramework';
+import { localVisibilityOptimizationGuideForHvacCompanies } from '@/domains/resources/content/LocalVisibilityOptimizationGuideForHvacCompanies';
+import { localVisibilityOptimizationGuideForRealtors } from '@/domains/resources/content/LocalVisibilityOptimizationGuideForRealtors';
 import { missedCallRecoveryForAutoRepair } from '@/domains/resources/content/MissedCallRecoveryForAutoRepair';
 import { missedCallRecoveryForHvac } from '@/domains/resources/content/MissedCallRecoveryForHvac';
 import { missedCallRecoveryForRoofing } from '@/domains/resources/content/MissedCallRecoveryForRoofing';
@@ -37,6 +42,8 @@ import { multiChannelLeadCaptureSystems } from '@/domains/resources/content/Mult
 import { reducingSalonNoShowsWithAutomation } from '@/domains/resources/content/ReducingSalonNoShowsWithAutomation';
 import { reputationMonitoringSystems } from '@/domains/resources/content/ReputationMonitoringSystems';
 import { respondingToNegativeReviewsSystematically } from '@/domains/resources/content/RespondingToNegativeReviewsSystematically';
+import { reviewAutomationSetupGuideForRoofingCompanies } from '@/domains/resources/content/ReviewAutomationSetupGuideForRoofingCompanies';
+import { reviewAutomationSetupGuideForSalons } from '@/domains/resources/content/ReviewAutomationSetupGuideForSalons';
 import { reviewGenerationSystem } from '@/domains/resources/content/ReviewGenerationSystem';
 import { roofingCrmPipelineStructure } from '@/domains/resources/content/RoofingCrmPipelineStructure';
 import { roofingEstimateFollowUpWorkflow } from '@/domains/resources/content/RoofingEstimateFollowUpWorkflow';
@@ -67,6 +74,8 @@ export const RESOURCE_REGISTRY: Record<string, ResourceData> = {
   'conversion-tracking-for-service-businesses': conversionTrackingForServiceBusinesses,
   'crm-pipeline-architecture': crmPipelineArchitecture,
   'crm-pipeline-automation': crmPipelineAutomation,
+  'crm-pipeline-setup-guide-for-plumbing-businesses': crmPipelineSetupGuideForPlumbingBusinesses,
+  'crm-pipeline-setup-guide-for-salons': crmPipelineSetupGuideForSalons,
   'customer-feedback-loop-framework': customerFeedbackLoopFramework,
   'designing-websites-that-support-crm-systems': designingWebsitesThatSupportCrmSystems,
   'google-business-profile-system-architecture': googleBusinessProfileSystemArchitecture,
@@ -78,11 +87,14 @@ export const RESOURCE_REGISTRY: Record<string, ResourceData> = {
   'hvac-review-generation-framework': hvacReviewGenerationFramework,
   'lead-automation-framework': leadAutomationFramework,
   'lead-qualification-framework': leadQualificationFramework,
+  'lead-response-optimization-checklist-for-hvac-businesses': leadResponseOptimizationChecklistForHvacBusinesses,
   'lead-response-time-framework': leadResponseTimeFramework,
   'lead-routing-models-for-service-companies': leadRoutingModelsForServiceCompanies,
   'local-seo-vs-website-optimization': localSeoVsWebsiteOptimization,
   'local-service-page-architecture': localServicePageArchitecture,
   'local-visibility-framework': localVisibilityFramework,
+  'local-visibility-optimization-guide-for-hvac-companies': localVisibilityOptimizationGuideForHvacCompanies,
+  'local-visibility-optimization-guide-for-realtors': localVisibilityOptimizationGuideForRealtors,
   'missed-call-recovery-for-auto-repair': missedCallRecoveryForAutoRepair,
   'missed-call-recovery-for-hvac': missedCallRecoveryForHvac,
   'missed-call-recovery-for-roofing': missedCallRecoveryForRoofing,
@@ -92,6 +104,8 @@ export const RESOURCE_REGISTRY: Record<string, ResourceData> = {
   'reducing-salon-no-shows-with-automation': reducingSalonNoShowsWithAutomation,
   'reputation-monitoring-systems': reputationMonitoringSystems,
   'responding-to-negative-reviews-systematically': respondingToNegativeReviewsSystematically,
+  'review-automation-setup-guide-for-roofing-companies': reviewAutomationSetupGuideForRoofingCompanies,
+  'review-automation-setup-guide-for-salons': reviewAutomationSetupGuideForSalons,
   'review-generation-system': reviewGenerationSystem,
   'roofing-crm-pipeline-structure': roofingCrmPipelineStructure,
   'roofing-estimate-follow-up-workflow': roofingEstimateFollowUpWorkflow,

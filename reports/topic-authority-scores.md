@@ -7,10 +7,10 @@
 | Metric | Value |
 |--------|-------|
 | Topics analyzed | 42 |
-| Average score | 53 |
-| Dominant (≥90) | 3 |
-| Strong (75–89) | 7 |
-| Growing (60–74) | 9 |
+| Average score | 54 |
+| Dominant (≥90) | 5 |
+| Strong (75–89) | 6 |
+| Growing (60–74) | 8 |
 | Weak (40–59) | 8 |
 | Gap (<40) | 15 |
 
@@ -20,16 +20,16 @@
 |---|-------|-------|-------|-------|-----------|------------|----------|--------------|
 | 1 | lead-management | 100 | 🟢 Dominant | 5 | 6 | 6 | 1 | 4 |
 | 2 | missed-calls | 100 | 🟢 Dominant | 5 | 5 | 4 | 2 | 4 |
-| 3 | review-generation | 100 | 🟢 Dominant | 5 | 5 | 23 | 2 | 4 |
-| 4 | lead-response-time | 85 | 🔵 Strong | 2 | 2 | 5 | 2 | 4 |
-| 5 | follow-up | 85 | 🔵 Strong | 2 | 2 | 13 | 2 | 4 |
-| 6 | lead-routing | 85 | 🔵 Strong | 2 | 1 | 2 | 1 | 2 |
-| 7 | client-reactivation | 85 | 🔵 Strong | 2 | 1 | 3 | 2 | 2 |
-| 8 | no-show-reduction | 80 | 🔵 Strong | 1 | 1 | 3 | 1 | 2 |
-| 9 | crm-integration | 78 | 🔵 Strong | 2 | 1 | 3 | 1 | 1 |
-| 10 | local-visibility | 78 | 🔵 Strong | 2 | 1 | 2 | 1 | 1 |
-| 11 | reputation-monitoring | 73 | 🟡 Growing | 1 | 1 | 3 | 1 | 1 |
-| 12 | crm-pipeline | 70 | 🟡 Growing | 4 | 0 | 3 | 1 | 5 |
+| 3 | lead-response-time | 100 | 🟢 Dominant | 5 | 3 | 5 | 2 | 4 |
+| 4 | review-generation | 100 | 🟢 Dominant | 5 | 5 | 23 | 2 | 4 |
+| 5 | crm-pipeline | 100 | 🟢 Dominant | 8 | 2 | 3 | 1 | 5 |
+| 6 | follow-up | 85 | 🔵 Strong | 2 | 2 | 13 | 2 | 4 |
+| 7 | lead-routing | 85 | 🔵 Strong | 2 | 1 | 2 | 1 | 2 |
+| 8 | client-reactivation | 85 | 🔵 Strong | 2 | 1 | 3 | 2 | 2 |
+| 9 | no-show-reduction | 80 | 🔵 Strong | 1 | 1 | 3 | 1 | 2 |
+| 10 | crm-integration | 78 | 🔵 Strong | 2 | 1 | 3 | 1 | 1 |
+| 11 | local-visibility | 78 | 🔵 Strong | 2 | 1 | 2 | 1 | 1 |
+| 12 | reputation-monitoring | 73 | 🟡 Growing | 1 | 1 | 3 | 1 | 1 |
 | 13 | pipeline-visibility | 70 | 🟡 Growing | 2 | 1 | 5 | 1 | 0 |
 | 14 | review-automation | 68 | 🟡 Growing | 4 | 1 | 0 | 2 | 1 |
 | 15 | lead-capture | 65 | 🟡 Growing | 2 | 1 | 0 | 3 | 4 |
@@ -85,6 +85,17 @@
 | Case Studies | 4 | ≥ 2 | 15 | 15 |
 | **Total** | | | **100** | **100** |
 
+### 🟢 lead-response-time
+
+| Metric | Count | Threshold | Weight | Earned |
+|--------|-------|-----------|--------|--------|
+| Blogs | 5 | ≥ 5 | 25 | 25 |
+| Resources | 3 | ≥ 1 | 25 | 25 |
+| Industries | 5 | ≥ 2 | 20 | 20 |
+| Services | 2 | ≥ 1 | 15 | 15 |
+| Case Studies | 4 | ≥ 2 | 15 | 15 |
+| **Total** | | | **100** | **100** |
+
 ### 🟢 review-generation
 
 | Metric | Count | Threshold | Weight | Earned |
@@ -96,16 +107,16 @@
 | Case Studies | 4 | ≥ 2 | 15 | 15 |
 | **Total** | | | **100** | **100** |
 
-### 🔵 lead-response-time
+### 🟢 crm-pipeline
 
 | Metric | Count | Threshold | Weight | Earned |
 |--------|-------|-----------|--------|--------|
-| Blogs | 2 | ≥ 5 | 25 | 10 |
+| Blogs | 8 | ≥ 5 | 25 | 25 |
 | Resources | 2 | ≥ 1 | 25 | 25 |
-| Industries | 5 | ≥ 2 | 20 | 20 |
-| Services | 2 | ≥ 1 | 15 | 15 |
-| Case Studies | 4 | ≥ 2 | 15 | 15 |
-| **Total** | | | **100** | **85** |
+| Industries | 3 | ≥ 2 | 20 | 20 |
+| Services | 1 | ≥ 1 | 15 | 15 |
+| Case Studies | 5 | ≥ 2 | 15 | 15 |
+| **Total** | | | **100** | **100** |
 
 ### 🔵 follow-up
 
@@ -183,17 +194,6 @@
 | Services | 1 | ≥ 1 | 15 | 15 |
 | Case Studies | 1 | ≥ 2 | 15 | 8 |
 | **Total** | | | **100** | **73** |
-
-### 🟡 crm-pipeline
-
-| Metric | Count | Threshold | Weight | Earned |
-|--------|-------|-----------|--------|--------|
-| Blogs | 4 | ≥ 5 | 25 | 20 |
-| Resources | 0 | ≥ 1 | 25 | 0 |
-| Industries | 3 | ≥ 2 | 20 | 20 |
-| Services | 1 | ≥ 1 | 15 | 15 |
-| Case Studies | 5 | ≥ 2 | 15 | 15 |
-| **Total** | | | **100** | **70** |
 
 ### 🟡 pipeline-visibility
 

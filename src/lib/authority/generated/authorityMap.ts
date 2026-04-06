@@ -975,19 +975,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
-          nodeType: 'resource',
-        },
-        {
           title: 'Automotive Review Generation System',
           description:
             'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
           slug: 'automotive-review-generation-system',
           path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
           nodeType: 'resource',
         },
       ],
@@ -1215,19 +1215,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
-          nodeType: 'resource',
-        },
-        {
           title: 'Automotive Review Generation System',
           description:
             'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
           slug: 'automotive-review-generation-system',
           path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
           nodeType: 'resource',
         },
       ],
@@ -1375,19 +1375,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
-          nodeType: 'resource',
-        },
-        {
           title: 'Automotive Review Generation System',
           description:
             'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
           slug: 'automotive-review-generation-system',
           path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
           nodeType: 'resource',
         },
       ],
@@ -1535,19 +1535,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
-          nodeType: 'resource',
-        },
-        {
           title: 'Automotive Review Generation System',
           description:
             'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
           slug: 'automotive-review-generation-system',
           path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
           nodeType: 'resource',
         },
       ],
@@ -1615,19 +1615,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
-          nodeType: 'resource',
-        },
-        {
           title: 'Automotive Review Generation System',
           description:
             'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
           slug: 'automotive-review-generation-system',
           path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
           nodeType: 'resource',
         },
       ],
@@ -1935,19 +1935,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'HVAC Lead Handling Example',
-          description:
-            'See how HVAC companies use automated lead handling to respond to every inquiry within minutes, route emergency calls instantly, and capture peak-season revenue that manual processes miss.',
-          slug: 'hvac-lead-handling-example',
-          path: '/resources/hvac-lead-handling-example',
-          nodeType: 'resource',
-        },
-        {
           title: 'HVAC Review Generation Framework',
           description:
             'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
           slug: 'hvac-review-generation-framework',
           path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Lead Handling Example',
+          description:
+            'See how HVAC companies use automated lead handling to respond to every inquiry within minutes, route emergency calls instantly, and capture peak-season revenue that manual processes miss.',
+          slug: 'hvac-lead-handling-example',
+          path: '/resources/hvac-lead-handling-example',
           nodeType: 'resource',
         },
       ],
@@ -2255,19 +2255,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Reputation Monitoring Systems',
-          description:
-            'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
-          slug: 'reputation-monitoring-systems',
-          path: '/resources/reputation-monitoring-systems',
-          nodeType: 'resource',
-        },
-        {
           title: 'Sales Pipeline Visibility Framework',
           description:
             'Build a pipeline visibility framework that shows real-time deal health, flags stalled deals, and provides accurate revenue forecasting for your service business.',
           slug: 'sales-pipeline-visibility-framework',
           path: '/resources/sales-pipeline-visibility-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Reputation Monitoring Systems',
+          description:
+            'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
+          slug: 'reputation-monitoring-systems',
+          path: '/resources/reputation-monitoring-systems',
           nodeType: 'resource',
         },
       ],
@@ -2335,19 +2335,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
-          nodeType: 'resource',
-        },
-        {
           title: 'Automotive Review Generation System',
           description:
             'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
           slug: 'automotive-review-generation-system',
           path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
           nodeType: 'resource',
         },
       ],
@@ -2495,19 +2495,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Sales Pipeline Visibility Framework',
+          title: 'CRM Pipeline Setup Guide for Salons',
           description:
-            'Build a pipeline visibility framework that shows real-time deal health, flags stalled deals, and provides accurate revenue forecasting for your service business.',
-          slug: 'sales-pipeline-visibility-framework',
-          path: '/resources/sales-pipeline-visibility-framework',
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
           nodeType: 'resource',
         },
         {
-          title: 'Authority Signals for Local Search',
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
           description:
-            'Understand the five authority pillars Google uses to rank local businesses and learn how to systematically build each one to improve your local search visibility.',
-          slug: 'authority-signals-for-local-search',
-          path: '/resources/authority-signals-for-local-search',
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
           nodeType: 'resource',
         },
       ],
@@ -2735,19 +2735,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Sales Pipeline Visibility Framework',
+          title: 'CRM Pipeline Setup Guide for Salons',
           description:
-            'Build a pipeline visibility framework that shows real-time deal health, flags stalled deals, and provides accurate revenue forecasting for your service business.',
-          slug: 'sales-pipeline-visibility-framework',
-          path: '/resources/sales-pipeline-visibility-framework',
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
           nodeType: 'resource',
         },
         {
-          title: 'Authority Signals for Local Search',
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
           description:
-            'Understand the five authority pillars Google uses to rank local businesses and learn how to systematically build each one to improve your local search visibility.',
-          slug: 'authority-signals-for-local-search',
-          path: '/resources/authority-signals-for-local-search',
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
           nodeType: 'resource',
         },
       ],
@@ -2903,11 +2903,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Local Visibility Framework',
+          title: 'Local Visibility Optimization Guide for Realtors',
           description:
-            'Build a local visibility framework that coordinates search, directories, reviews, and content into a unified strategy that maximises how often customers find your business.',
-          slug: 'local-visibility-framework',
-          path: '/resources/local-visibility-framework',
+            'A step-by-step guide to improving realtor local visibility — covering post-transaction review automation, citation management, and competitive ranking tracking.',
+          slug: 'local-visibility-optimization-guide-for-realtors',
+          path: '/resources/local-visibility-optimization-guide-for-realtors',
           nodeType: 'resource',
         },
       ],
@@ -3047,19 +3047,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       resources: [
         {
-          title: 'Auto Repair Lead Handling Example',
-          description:
-            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
-          slug: 'auto-repair-lead-handling-example',
-          path: '/resources/auto-repair-lead-handling-example',
-          nodeType: 'resource',
-        },
-        {
           title: 'Roofing Estimate Follow-Up Workflow',
           description:
             'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
           slug: 'roofing-estimate-follow-up-workflow',
           path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
         {
@@ -3135,19 +3135,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
+          title: 'Lead Response Optimization Checklist for HVAC Businesses',
+          description:
+            'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
+          slug: 'lead-response-optimization-checklist-for-hvac-businesses',
+          path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
+          nodeType: 'resource',
+        },
+        {
           title: 'Reputation Monitoring Systems',
           description:
             'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
           slug: 'reputation-monitoring-systems',
           path: '/resources/reputation-monitoring-systems',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Authority Signals for Local Search',
-          description:
-            'Understand the five authority pillars Google uses to rank local businesses and learn how to systematically build each one to improve your local search visibility.',
-          slug: 'authority-signals-for-local-search',
-          path: '/resources/authority-signals-for-local-search',
           nodeType: 'resource',
         },
       ],
@@ -3215,19 +3215,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
-          nodeType: 'resource',
-        },
-        {
           title: 'Automotive Review Generation System',
           description:
             'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
           slug: 'automotive-review-generation-system',
           path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
           nodeType: 'resource',
         },
       ],
@@ -3295,19 +3295,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
-          nodeType: 'resource',
-        },
-        {
           title: 'Automotive Review Generation System',
           description:
             'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
           slug: 'automotive-review-generation-system',
           path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
           nodeType: 'resource',
         },
       ],
@@ -3375,19 +3375,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
-          nodeType: 'resource',
-        },
-        {
           title: 'Automotive Review Generation System',
           description:
             'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
           slug: 'automotive-review-generation-system',
           path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
           nodeType: 'resource',
         },
       ],
@@ -3513,11 +3513,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'Review Automation Setup Guide for Salons',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'A step-by-step guide to building review automation for salons — covering post-appointment triggers, personalised SMS requests, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-salons',
+          path: '/resources/review-automation-setup-guide-for-salons',
           nodeType: 'resource',
         },
         {
@@ -3559,19 +3559,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'automotive-crm-pipeline-for-repair-jobs': {
       resources: [
         {
-          title: 'Client Reactivation Systems',
+          title: 'CRM Pipeline Setup Guide for Salons',
           description:
-            'Build an automated reactivation system that identifies lapsed customers, sends targeted re-engagement campaigns, and recovers revenue from your existing customer base.',
-          slug: 'client-reactivation-systems',
-          path: '/resources/client-reactivation-systems',
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
           nodeType: 'resource',
         },
         {
-          title: 'Building Revenue Visibility Through CRM Tracking',
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
           description:
-            'Learn how to build CRM-based revenue tracking that shows exactly where your revenue comes from, where it leaks, and where the biggest growth opportunities exist.',
-          slug: 'building-revenue-visibility-through-crm-tracking',
-          path: '/resources/building-revenue-visibility-through-crm-tracking',
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
           nodeType: 'resource',
         },
         {
@@ -3613,19 +3613,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'automotive-review-generation-system': {
       resources: [
         {
-          title: 'Review Generation System',
-          description:
-            'Learn how to build an automated review generation system that requests reviews from every customer after service completion without relying on team memory.',
-          slug: 'review-generation-system',
-          path: '/resources/review-generation-system',
-          nodeType: 'resource',
-        },
-        {
           title: 'HVAC Review Generation Framework',
           description:
             'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
           slug: 'hvac-review-generation-framework',
           path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Review Generation System',
+          description:
+            'Learn how to build an automated review generation system that requests reviews from every customer after service completion without relying on team memory.',
+          slug: 'review-generation-system',
+          path: '/resources/review-generation-system',
           nodeType: 'resource',
         },
         {
@@ -3721,14 +3721,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'autonomous-booking-systems-for-salons': {
       resources: [
         {
-          title: 'Auto Repair Lead Handling Example',
-          description:
-            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
-          slug: 'auto-repair-lead-handling-example',
-          path: '/resources/auto-repair-lead-handling-example',
-          nodeType: 'resource',
-        },
-        {
           title: 'Reducing Salon No-Shows with Automation',
           description:
             'See how salons use automated reminders, waitlist management, and smart deposit policies to cut no-show rates by 60-80% and recover thousands in monthly lost revenue.',
@@ -3742,6 +3734,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
           slug: 'tracking-salon-client-lifetime-value',
           path: '/resources/tracking-salon-client-lifetime-value',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
           nodeType: 'resource',
         },
       ],
@@ -3783,19 +3783,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
           title: 'Booking Systems Inside Website Infrastructure',
           description:
             'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
           slug: 'booking-systems-inside-website-infrastructure',
           path: '/resources/booking-systems-inside-website-infrastructure',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Tracking Salon Client Lifetime Value',
-          description:
-            'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
-          slug: 'tracking-salon-client-lifetime-value',
-          path: '/resources/tracking-salon-client-lifetime-value',
           nodeType: 'resource',
         },
       ],
@@ -3891,11 +3891,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Tracking Salon Client Lifetime Value',
+          title: 'CRM Pipeline Setup Guide for Salons',
           description:
-            'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
-          slug: 'tracking-salon-client-lifetime-value',
-          path: '/resources/tracking-salon-client-lifetime-value',
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
           nodeType: 'resource',
         },
         {
@@ -3999,19 +3999,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Conversion Tracking for Service Businesses',
-          description:
-            'Learn how to set up conversion tracking that connects website activity to CRM pipeline outcomes and measures which pages and channels produce paying customers.',
-          slug: 'conversion-tracking-for-service-businesses',
-          path: '/resources/conversion-tracking-for-service-businesses',
-          nodeType: 'resource',
-        },
-        {
           title: 'HVAC CRM Pipeline Structure',
           description:
             'See how HVAC companies structure multi-track CRM pipelines for emergency, installation, and maintenance work — with automations that protect recurring revenue and enable capacity planning.',
           slug: 'hvac-crm-pipeline-structure',
           path: '/resources/hvac-crm-pipeline-structure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Conversion Tracking for Service Businesses',
+          description:
+            'Learn how to set up conversion tracking that connects website activity to CRM pipeline outcomes and measures which pages and channels produce paying customers.',
+          slug: 'conversion-tracking-for-service-businesses',
+          path: '/resources/conversion-tracking-for-service-businesses',
           nodeType: 'resource',
         },
       ],
@@ -4099,27 +4099,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'crm-pipeline-architecture-for-service-businesses': {
       resources: [
         {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+          description:
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
+          nodeType: 'resource',
+        },
+        {
           title: 'Automotive CRM Pipeline for Repair Jobs',
           description:
             'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
           slug: 'automotive-crm-pipeline-for-repair-jobs',
           path: '/resources/automotive-crm-pipeline-for-repair-jobs',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Building Revenue Visibility Through CRM Tracking',
-          description:
-            'Learn how to build CRM-based revenue tracking that shows exactly where your revenue comes from, where it leaks, and where the biggest growth opportunities exist.',
-          slug: 'building-revenue-visibility-through-crm-tracking',
-          path: '/resources/building-revenue-visibility-through-crm-tracking',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Automotive Service Reminder Automation',
-          description:
-            'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
-          slug: 'automotive-service-reminder-automation',
-          path: '/resources/automotive-service-reminder-automation',
           nodeType: 'resource',
         },
       ],
@@ -4277,11 +4277,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Automotive CRM Pipeline for Repair Jobs',
+          title: 'Lead Response Optimization Checklist for HVAC Businesses',
           description:
-            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
-          slug: 'automotive-crm-pipeline-for-repair-jobs',
-          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+            'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
+          slug: 'lead-response-optimization-checklist-for-hvac-businesses',
+          path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
           nodeType: 'resource',
         },
       ],
@@ -4395,19 +4395,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
-          description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for HVAC',
           description:
             'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
@@ -4531,14 +4531,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'how-review-automation-improves-local-authority': {
       resources: [
         {
-          title: 'HVAC Review Generation Framework',
-          description:
-            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
-          slug: 'hvac-review-generation-framework',
-          path: '/resources/hvac-review-generation-framework',
-          nodeType: 'resource',
-        },
-        {
           title: 'Automotive Review Generation System',
           description:
             'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
@@ -4547,11 +4539,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Customer Feedback Loop Framework',
+          title: 'Review Automation Setup Guide for Roofing Companies',
           description:
-            'Build a structured feedback loop that captures customer sentiment after every job, routes issues to private resolution, and drives continuous service improvement.',
-          slug: 'customer-feedback-loop-framework',
-          path: '/resources/customer-feedback-loop-framework',
+            'A step-by-step guide to building review automation for roofing companies — covering post-job triggers, direct review links, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-roofing-companies',
+          path: '/resources/review-automation-setup-guide-for-roofing-companies',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Review Automation Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building review automation for salons — covering post-appointment triggers, personalised SMS requests, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-salons',
+          path: '/resources/review-automation-setup-guide-for-salons',
           nodeType: 'resource',
         },
       ],
@@ -4636,22 +4636,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
     },
-    'hvac-crm-pipeline-for-service-companies': {
+    'how-to-fix-lead-response-time-in-automotive-businesses-using-crm-automation': {
       resources: [
         {
-          title: 'HVAC Emergency Call Handling System',
+          title: 'Lead Response Optimization Checklist for HVAC Businesses',
           description:
-            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
-          slug: 'hvac-emergency-call-handling-system',
-          path: '/resources/hvac-emergency-call-handling-system',
-          nodeType: 'resource',
-        },
-        {
-          title: 'HVAC CRM Pipeline Structure',
-          description:
-            'See how HVAC companies structure multi-track CRM pipelines for emergency, installation, and maintenance work — with automations that protect recurring revenue and enable capacity planning.',
-          slug: 'hvac-crm-pipeline-structure',
-          path: '/resources/hvac-crm-pipeline-structure',
+            'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
+          slug: 'lead-response-optimization-checklist-for-hvac-businesses',
+          path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
           nodeType: 'resource',
         },
         {
@@ -4660,6 +4652,68 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
           slug: 'automotive-crm-pipeline-for-repair-jobs',
           path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Service Reminder Automation',
+          description:
+            'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
+          slug: 'automotive-service-reminder-automation',
+          path: '/resources/automotive-service-reminder-automation',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Smart Website Systems for Car Detailing Businesses',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Repair Shops',
+          description:
+            'Smart Website systems for repair shops that need clearer booking flow, service qualification, and stronger local trust support.',
+          slug: 'repair-shops',
+          path: '/industries/local-appointment-businesses/repair-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Small Law Firms',
+          description:
+            'Smart Website systems for small law firms that need clearer qualification, consultation flow, and stronger trust support.',
+          slug: 'small-law-firms',
+          path: '/industries/legal-professional-services/small-law-firms',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'hvac-crm-pipeline-for-service-companies': {
+      resources: [
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+          description:
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC CRM Pipeline Structure',
+          description:
+            'See how HVAC companies structure multi-track CRM pipelines for emergency, installation, and maintenance work — with automations that protect recurring revenue and enable capacity planning.',
+          slug: 'hvac-crm-pipeline-structure',
+          path: '/resources/hvac-crm-pipeline-structure',
           nodeType: 'resource',
         },
       ],
@@ -4719,6 +4773,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
+          title: 'Smart Website Systems for HVAC',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
           title: 'Smart Website Systems for Auto Repair Shops',
           description:
             'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
@@ -4726,6 +4788,44 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
+        {
+          title: 'Smart Website Systems for Plumbing',
+          description:
+            'Smart Website systems for plumbing companies that need clearer emergency routing, booking support, and stronger follow-up.',
+          slug: 'plumbing-companies',
+          path: '/industries/home-services/plumbing-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'hvac-local-visibility-system-for-service-areas': {
+      resources: [
+        {
+          title: 'HVAC Review Generation Framework',
+          description:
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Visibility Optimization Guide for HVAC Companies',
+          description:
+            'A step-by-step guide to improving HVAC local visibility — covering Google Business Profile optimisation, citation audit, review automation, and ranking tracking.',
+          slug: 'local-visibility-optimization-guide-for-hvac-companies',
+          path: '/resources/local-visibility-optimization-guide-for-hvac-companies',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Visibility Optimization Guide for Realtors',
+          description:
+            'A step-by-step guide to improving realtor local visibility — covering post-transaction review automation, citation management, and competitive ranking tracking.',
+          slug: 'local-visibility-optimization-guide-for-realtors',
+          path: '/resources/local-visibility-optimization-guide-for-realtors',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
         {
           title: 'Smart Website Systems for HVAC',
           description:
@@ -4735,11 +4835,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Smart Website Systems for Plumbing',
+          title: 'Smart Website Systems for Mobile Mechanics',
           description:
-            'Smart Website systems for plumbing companies that need clearer emergency routing, booking support, and stronger follow-up.',
-          slug: 'plumbing-companies',
-          path: '/industries/home-services/plumbing-companies',
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Realtors',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
       ],
@@ -4773,19 +4881,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
-          description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for HVAC',
           description:
             'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
@@ -5043,19 +5151,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
-          description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for HVAC',
           description:
             'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
@@ -5421,19 +5529,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
-          description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for HVAC',
           description:
             'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
@@ -5608,6 +5716,114 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
     },
+    'plumbing-crm-pipeline-for-job-management': {
+      resources: [
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+          description:
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive CRM Pipeline for Repair Jobs',
+          description:
+            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
+          slug: 'automotive-crm-pipeline-for-repair-jobs',
+          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Smart Website Systems for Realtors',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Mortgage Brokers',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Property Managers',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'realtor-local-visibility-system-for-lead-generation': {
+      resources: [
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Visibility Optimization Guide for HVAC Companies',
+          description:
+            'A step-by-step guide to improving HVAC local visibility — covering Google Business Profile optimisation, citation audit, review automation, and ranking tracking.',
+          slug: 'local-visibility-optimization-guide-for-hvac-companies',
+          path: '/resources/local-visibility-optimization-guide-for-hvac-companies',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Visibility Optimization Guide for Realtors',
+          description:
+            'A step-by-step guide to improving realtor local visibility — covering post-transaction review automation, citation management, and competitive ranking tracking.',
+          slug: 'local-visibility-optimization-guide-for-realtors',
+          path: '/resources/local-visibility-optimization-guide-for-realtors',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Mobile Mechanics',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Realtors',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
     'reducing-salon-no-shows-with-automation': {
       resources: [
         {
@@ -5627,11 +5843,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Missed Call Recovery for Salons',
+          title: 'CRM Pipeline Setup Guide for Salons',
           description:
-            'See how salons recover missed calls with instant booking link texts, converting unanswered phone calls into confirmed appointments even during the busiest service hours.',
-          slug: 'missed-call-recovery-for-salons',
-          path: '/resources/missed-call-recovery-for-salons',
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
           nodeType: 'resource',
         },
       ],
@@ -5827,19 +6043,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'review-automation-for-hvac-companies': {
       resources: [
         {
-          title: 'HVAC Review Generation Framework',
+          title: 'Review Automation Setup Guide for Roofing Companies',
           description:
-            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
-          slug: 'hvac-review-generation-framework',
-          path: '/resources/hvac-review-generation-framework',
+            'A step-by-step guide to building review automation for roofing companies — covering post-job triggers, direct review links, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-roofing-companies',
+          path: '/resources/review-automation-setup-guide-for-roofing-companies',
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'Review Automation Setup Guide for Salons',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'A step-by-step guide to building review automation for salons — covering post-appointment triggers, personalised SMS requests, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-salons',
+          path: '/resources/review-automation-setup-guide-for-salons',
           nodeType: 'resource',
         },
         {
@@ -5853,19 +6069,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
-          description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for HVAC',
           description:
             'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
@@ -5881,19 +6097,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'review-automation-for-roofing-companies': {
       resources: [
         {
-          title: 'Roofing Review Generation System',
+          title: 'Review Automation Setup Guide for Roofing Companies',
           description:
-            'See how roofing companies automate review collection after every job, build photo-rich Google reviews, and create the social proof homeowners need to choose their business.',
-          slug: 'roofing-review-generation-system',
-          path: '/resources/roofing-review-generation-system',
+            'A step-by-step guide to building review automation for roofing companies — covering post-job triggers, direct review links, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-roofing-companies',
+          path: '/resources/review-automation-setup-guide-for-roofing-companies',
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'Review Automation Setup Guide for Salons',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'A step-by-step guide to building review automation for salons — covering post-appointment triggers, personalised SMS requests, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-salons',
+          path: '/resources/review-automation-setup-guide-for-salons',
           nodeType: 'resource',
         },
         {
@@ -5935,19 +6151,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'review-automation-for-salons': {
       resources: [
         {
-          title: 'Salon Review Generation Framework',
+          title: 'Review Automation Setup Guide for Roofing Companies',
           description:
-            'See how salons automate review collection with photo prompts, stylist-specific personalisation, and post-appointment timing to build the Google review profile that drives booking decisions.',
-          slug: 'salon-review-generation-framework',
-          path: '/resources/salon-review-generation-framework',
+            'A step-by-step guide to building review automation for roofing companies — covering post-job triggers, direct review links, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-roofing-companies',
+          path: '/resources/review-automation-setup-guide-for-roofing-companies',
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Review Generation System',
+          title: 'Review Automation Setup Guide for Salons',
           description:
-            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-          slug: 'automotive-review-generation-system',
-          path: '/resources/automotive-review-generation-system',
+            'A step-by-step guide to building review automation for salons — covering post-appointment triggers, personalised SMS requests, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-salons',
+          path: '/resources/review-automation-setup-guide-for-salons',
           nodeType: 'resource',
         },
         {
@@ -5989,19 +6205,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'review-generation-system-for-local-businesses': {
       resources: [
         {
-          title: 'Review Generation System',
-          description:
-            'Learn how to build an automated review generation system that requests reviews from every customer after service completion without relying on team memory.',
-          slug: 'review-generation-system',
-          path: '/resources/review-generation-system',
-          nodeType: 'resource',
-        },
-        {
           title: 'HVAC Review Generation Framework',
           description:
             'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
           slug: 'hvac-review-generation-framework',
           path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Review Generation System',
+          description:
+            'Learn how to build an automated review generation system that requests reviews from every customer after service completion without relying on team memory.',
+          slug: 'review-generation-system',
+          path: '/resources/review-generation-system',
           nodeType: 'resource',
         },
         {
@@ -6043,11 +6259,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'roofing-crm-pipeline-for-estimates': {
       resources: [
         {
-          title: 'Roofing Estimate Follow-Up Workflow',
+          title: 'CRM Pipeline Setup Guide for Salons',
           description:
-            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
-          slug: 'roofing-estimate-follow-up-workflow',
-          path: '/resources/roofing-estimate-follow-up-workflow',
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+          description:
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
           nodeType: 'resource',
         },
         {
@@ -6056,14 +6280,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'See how roofing companies structure their CRM pipeline to track every job from inquiry to completion, eliminate missed estimates, and build predictable revenue visibility.',
           slug: 'roofing-crm-pipeline-structure',
           path: '/resources/roofing-crm-pipeline-structure',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Automotive CRM Pipeline for Repair Jobs',
-          description:
-            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
-          slug: 'automotive-crm-pipeline-for-repair-jobs',
-          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
           nodeType: 'resource',
         },
       ],
@@ -6151,19 +6367,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'roofing-review-generation-system': {
       resources: [
         {
-          title: 'Review Generation System',
-          description:
-            'Learn how to build an automated review generation system that requests reviews from every customer after service completion without relying on team memory.',
-          slug: 'review-generation-system',
-          path: '/resources/review-generation-system',
-          nodeType: 'resource',
-        },
-        {
           title: 'HVAC Review Generation Framework',
           description:
             'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
           slug: 'hvac-review-generation-framework',
           path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Review Generation System',
+          description:
+            'Learn how to build an automated review generation system that requests reviews from every customer after service completion without relying on team memory.',
+          slug: 'review-generation-system',
+          path: '/resources/review-generation-system',
           nodeType: 'resource',
         },
         {
@@ -6231,14 +6447,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Consultants',
-          description:
-            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
-          slug: 'consultants',
-          path: '/industries/legal-professional-services/consultants',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for Mortgage Brokers',
           description:
             'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
@@ -6252,6 +6460,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
           slug: 'property-managers',
           path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Consultants',
+          description:
+            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
+          slug: 'consultants',
+          path: '/industries/legal-professional-services/consultants',
           nodeType: 'industry-detail',
         },
       ],
@@ -6285,11 +6501,65 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
+          title: 'Smart Website Systems for Mortgage Brokers',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Property Managers',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+        {
           title: 'Smart Website Systems for Consultants',
           description:
             'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
           slug: 'consultants',
           path: '/industries/legal-professional-services/consultants',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'salon-crm-pipeline-for-client-retention': {
+      resources: [
+        {
+          title: 'Reducing Salon No-Shows with Automation',
+          description:
+            'See how salons use automated reminders, waitlist management, and smart deposit policies to cut no-show rates by 60-80% and recover thousands in monthly lost revenue.',
+          slug: 'reducing-salon-no-shows-with-automation',
+          path: '/resources/reducing-salon-no-shows-with-automation',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+          description:
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Smart Website Systems for Realtors',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
@@ -6313,19 +6583,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'salon-review-generation-framework': {
       resources: [
         {
-          title: 'Review Generation System',
-          description:
-            'Learn how to build an automated review generation system that requests reviews from every customer after service completion without relying on team memory.',
-          slug: 'review-generation-system',
-          path: '/resources/review-generation-system',
-          nodeType: 'resource',
-        },
-        {
           title: 'HVAC Review Generation Framework',
           description:
             'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
           slug: 'hvac-review-generation-framework',
           path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Review Generation System',
+          description:
+            'Learn how to build an automated review generation system that requests reviews from every customer after service completion without relying on team memory.',
+          slug: 'review-generation-system',
+          path: '/resources/review-generation-system',
           nodeType: 'resource',
         },
         {
@@ -6367,19 +6637,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'service-business-follow-up-automation': {
       resources: [
         {
-          title: 'Auto Repair Lead Handling Example',
-          description:
-            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
-          slug: 'auto-repair-lead-handling-example',
-          path: '/resources/auto-repair-lead-handling-example',
-          nodeType: 'resource',
-        },
-        {
           title: 'Roofing Estimate Follow-Up Workflow',
           description:
             'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
           slug: 'roofing-estimate-follow-up-workflow',
           path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
         {
@@ -6555,19 +6825,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
-          description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for HVAC',
           description:
             'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
@@ -6645,11 +6915,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Automotive CRM Pipeline for Repair Jobs',
+          title: 'CRM Pipeline Setup Guide for Salons',
           description:
-            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
-          slug: 'automotive-crm-pipeline-for-repair-jobs',
-          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
           nodeType: 'resource',
         },
         {
@@ -6933,19 +7203,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
-          description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for HVAC',
           description:
             'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
@@ -7066,6 +7336,60 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
     },
+    'why-hvac-companies-disappear-from-local-search': {
+      resources: [
+        {
+          title: 'HVAC Review Generation Framework',
+          description:
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Visibility Optimization Guide for HVAC Companies',
+          description:
+            'A step-by-step guide to improving HVAC local visibility — covering Google Business Profile optimisation, citation audit, review automation, and ranking tracking.',
+          slug: 'local-visibility-optimization-guide-for-hvac-companies',
+          path: '/resources/local-visibility-optimization-guide-for-hvac-companies',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Visibility Optimization Guide for Realtors',
+          description:
+            'A step-by-step guide to improving realtor local visibility — covering post-transaction review automation, citation management, and competitive ranking tracking.',
+          slug: 'local-visibility-optimization-guide-for-realtors',
+          path: '/resources/local-visibility-optimization-guide-for-realtors',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Smart Website Systems for HVAC',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Mobile Mechanics',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Realtors',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
     'why-hvac-companies-lose-leads-after-hours': {
       resources: [
         {
@@ -7149,6 +7473,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
+          title: 'Smart Website Systems for HVAC',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
           title: 'Smart Website Systems for Auto Repair Shops',
           description:
             'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
@@ -7157,11 +7489,165 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Smart Website Systems for HVAC',
+          title: 'Smart Website Systems for Body Shops',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-plumbing-companies-lose-jobs-without-crm-pipeline': {
+      resources: [
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+          description:
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive CRM Pipeline for Repair Jobs',
+          description:
+            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
+          slug: 'automotive-crm-pipeline-for-repair-jobs',
+          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Smart Website Systems for Realtors',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Mortgage Brokers',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Property Managers',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-realtors-lose-leads-without-local-visibility': {
+      resources: [
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Visibility Optimization Guide for HVAC Companies',
+          description:
+            'A step-by-step guide to improving HVAC local visibility — covering Google Business Profile optimisation, citation audit, review automation, and ranking tracking.',
+          slug: 'local-visibility-optimization-guide-for-hvac-companies',
+          path: '/resources/local-visibility-optimization-guide-for-hvac-companies',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Visibility Optimization Guide for Realtors',
+          description:
+            'A step-by-step guide to improving realtor local visibility — covering post-transaction review automation, citation management, and competitive ranking tracking.',
+          slug: 'local-visibility-optimization-guide-for-realtors',
+          path: '/resources/local-visibility-optimization-guide-for-realtors',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Mobile Mechanics',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Realtors',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-roofing-companies-lose-jobs-without-review-automation': {
+      resources: [
+        {
+          title: 'Review Automation Setup Guide for Roofing Companies',
+          description:
+            'A step-by-step guide to building review automation for roofing companies — covering post-job triggers, direct review links, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-roofing-companies',
+          path: '/resources/review-automation-setup-guide-for-roofing-companies',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Review Automation Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building review automation for salons — covering post-appointment triggers, personalised SMS requests, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-salons',
+          path: '/resources/review-automation-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'How Review Automation Improves Local Authority',
+          description:
+            'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
+          slug: 'how-review-automation-improves-local-authority',
+          path: '/resources/how-review-automation-improves-local-authority',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Roofing',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
@@ -7257,19 +7743,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
-          description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for HVAC',
           description:
             'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
@@ -7311,14 +7797,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
-          description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for HVAC',
           description:
             'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
@@ -7327,11 +7805,127 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
           title: 'Smart Website Systems for Body Shops',
           description:
             'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-salons-lose-clients-without-crm-pipeline': {
+      resources: [
+        {
+          title: 'Reducing Salon No-Shows with Automation',
+          description:
+            'See how salons use automated reminders, waitlist management, and smart deposit policies to cut no-show rates by 60-80% and recover thousands in monthly lost revenue.',
+          slug: 'reducing-salon-no-shows-with-automation',
+          path: '/resources/reducing-salon-no-shows-with-automation',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+          description:
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Smart Website Systems for Realtors',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Mortgage Brokers',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Property Managers',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-salons-lose-clients-without-review-automation': {
+      resources: [
+        {
+          title: 'Review Automation Setup Guide for Roofing Companies',
+          description:
+            'A step-by-step guide to building review automation for roofing companies — covering post-job triggers, direct review links, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-roofing-companies',
+          path: '/resources/review-automation-setup-guide-for-roofing-companies',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Review Automation Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building review automation for salons — covering post-appointment triggers, personalised SMS requests, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-salons',
+          path: '/resources/review-automation-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'How Review Automation Improves Local Authority',
+          description:
+            'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
+          slug: 'how-review-automation-improves-local-authority',
+          path: '/resources/how-review-automation-improves-local-authority',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Body Shops',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Car Detailing Businesses',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
       ],
@@ -7440,6 +8034,114 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-slow-lead-response-is-killing-automotive-businesses': {
+      resources: [
+        {
+          title: 'Lead Response Optimization Checklist for HVAC Businesses',
+          description:
+            'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
+          slug: 'lead-response-optimization-checklist-for-hvac-businesses',
+          path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive CRM Pipeline for Repair Jobs',
+          description:
+            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
+          slug: 'automotive-crm-pipeline-for-repair-jobs',
+          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Service Reminder Automation',
+          description:
+            'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
+          slug: 'automotive-service-reminder-automation',
+          path: '/resources/automotive-service-reminder-automation',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Smart Website Systems for Car Detailing Businesses',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Repair Shops',
+          description:
+            'Smart Website systems for repair shops that need clearer booking flow, service qualification, and stronger local trust support.',
+          slug: 'repair-shops',
+          path: '/industries/local-appointment-businesses/repair-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Small Law Firms',
+          description:
+            'Smart Website systems for small law firms that need clearer qualification, consultation flow, and stronger trust support.',
+          slug: 'small-law-firms',
+          path: '/industries/legal-professional-services/small-law-firms',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-slow-lead-response-is-killing-hvac-businesses': {
+      resources: [
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Response Optimization Checklist for HVAC Businesses',
+          description:
+            'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
+          slug: 'lead-response-optimization-checklist-for-hvac-businesses',
+          path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC CRM Pipeline Structure',
+          description:
+            'See how HVAC companies structure multi-track CRM pipelines for emergency, installation, and maintenance work — with automations that protect recurring revenue and enable capacity planning.',
+          slug: 'hvac-crm-pipeline-structure',
+          path: '/resources/hvac-crm-pipeline-structure',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Smart Website Systems for Car Detailing Businesses',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Repair Shops',
+          description:
+            'Smart Website systems for repair shops that need clearer booking flow, service qualification, and stronger local trust support.',
+          slug: 'repair-shops',
+          path: '/industries/local-appointment-businesses/repair-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Small Law Firms',
+          description:
+            'Smart Website systems for small law firms that need clearer qualification, consultation flow, and stronger trust support.',
+          slug: 'small-law-firms',
+          path: '/industries/legal-professional-services/small-law-firms',
           nodeType: 'industry-detail',
         },
       ],
@@ -7993,31 +8695,116 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'crm-pipeline-automation': {
       services: [
         {
-          title: 'Marketing Automation Setup',
+          title: 'CRM Infrastructure Implementation',
           description:
-            'Marketing automation setup for service businesses that need structured follow-up, reminders, reactivation, and lifecycle messaging without relying on manual chasing.',
-          slug: 'marketing-automation-setup',
-          path: '/services/marketing-automation-setup',
-          nodeType: 'service',
-        },
-        {
-          title: 'Conversion Funnel System',
-          description:
-            'Conversion funnel systems for service businesses that need clearer page-to-enquiry journeys, fewer drop-offs, better offer structure, and more measurable funnel stages.',
-          slug: 'conversion-funnel-system',
-          path: '/services/conversion-funnel-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Funnel & Landing Page Development',
-          description:
-            'Funnel and landing page development for service businesses that need focused offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
-          slug: 'funnel-landing-page-development',
-          path: '/services/funnel-landing-page-development',
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
       ],
-      industries: [],
+      industries: [
+        {
+          title: 'Smart Website Systems for Realtors',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Car Detailing Businesses',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Aesthetic & Cosmetic Clinics',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'crm-pipeline-setup-guide-for-plumbing-businesses': {
+      services: [
+        {
+          title: 'CRM Infrastructure Implementation',
+          description:
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Smart Website Systems for Realtors',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Mortgage Brokers',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Property Managers',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'crm-pipeline-setup-guide-for-salons': {
+      services: [
+        {
+          title: 'CRM Infrastructure Implementation',
+          description:
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Smart Website Systems for Realtors',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Mortgage Brokers',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Property Managers',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+      ],
     },
     'customer-feedback-loop-framework': {
       services: [
@@ -8324,19 +9111,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
-          description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for HVAC',
           description:
             'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
@@ -8424,19 +9211,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
-          description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for HVAC',
           description:
             'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
@@ -8553,6 +9340,44 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'lead-response-optimization-checklist-for-hvac-businesses': {
+      services: [
+        {
+          title: 'CRM Infrastructure Implementation',
+          description:
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Smart Website Systems for Car Detailing Businesses',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Repair Shops',
+          description:
+            'Smart Website systems for repair shops that need clearer booking flow, service qualification, and stronger local trust support.',
+          slug: 'repair-shops',
+          path: '/industries/local-appointment-businesses/repair-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Small Law Firms',
+          description:
+            'Smart Website systems for small law firms that need clearer qualification, consultation flow, and stronger trust support.',
+          slug: 'small-law-firms',
+          path: '/industries/legal-professional-services/small-law-firms',
           nodeType: 'industry-detail',
         },
       ],
@@ -8795,6 +9620,98 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
     },
+    'local-visibility-optimization-guide-for-hvac-companies': {
+      services: [
+        {
+          title: 'Reputation & Review Systems',
+          description:
+            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Review Automation System',
+          description:
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Smart Website Systems for HVAC',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Mobile Mechanics',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Realtors',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'local-visibility-optimization-guide-for-realtors': {
+      services: [
+        {
+          title: 'Reputation & Review Systems',
+          description:
+            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Review Automation System',
+          description:
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Mobile Mechanics',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Realtors',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
     'missed-call-recovery-for-auto-repair': {
       services: [
         {
@@ -8824,19 +9741,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
-          description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for HVAC',
           description:
             'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
@@ -8878,19 +9795,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
-          description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for HVAC',
           description:
             'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
@@ -8932,19 +9849,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
-          description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for HVAC',
           description:
             'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
@@ -8986,19 +9903,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
-          description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for HVAC',
           description:
             'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
@@ -9040,19 +9957,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
-          description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for HVAC',
           description:
             'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
@@ -9220,6 +10137,98 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
     },
     'responding-to-negative-reviews-systematically': {
+      services: [
+        {
+          title: 'Reputation & Review Systems',
+          description:
+            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Review Automation System',
+          description:
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Body Shops',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Car Detailing Businesses',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'review-automation-setup-guide-for-roofing-companies': {
+      services: [
+        {
+          title: 'Reputation & Review Systems',
+          description:
+            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Review Automation System',
+          description:
+            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
+          slug: 'review-automation-system',
+          path: '/services/review-automation-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Roofing',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Body Shops',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'review-automation-setup-guide-for-salons': {
       services: [
         {
           title: 'Reputation & Review Systems',
@@ -9516,14 +10525,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Consultants',
-          description:
-            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
-          slug: 'consultants',
-          path: '/industries/legal-professional-services/consultants',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for Mortgage Brokers',
           description:
             'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
@@ -9537,6 +10538,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
           slug: 'property-managers',
           path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Consultants',
+          description:
+            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
+          slug: 'consultants',
+          path: '/industries/legal-professional-services/consultants',
           nodeType: 'industry-detail',
         },
       ],
@@ -10016,14 +11025,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/tracking-salon-client-lifetime-value',
           nodeType: 'resource',
         },
-        {
-          title: 'CRM Pipeline Automation: Stop Losing Leads (Stages + Follow-Up Templates)',
-          description:
-            'A practical CRM pipeline you can set up in under an hour: stages, automation triggers, and follow-up templates so every lead gets a next step.',
-          slug: 'crm-pipeline-automation',
-          path: '/resources/crm-pipeline-automation',
-          nodeType: 'resource',
-        },
       ],
     },
     'auto-repair-missed-call-recovery': {
@@ -10089,14 +11090,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
           slug: 'tracking-salon-client-lifetime-value',
           path: '/resources/tracking-salon-client-lifetime-value',
-          nodeType: 'resource',
-        },
-        {
-          title: 'CRM Pipeline Automation: Stop Losing Leads (Stages + Follow-Up Templates)',
-          description:
-            'A practical CRM pipeline you can set up in under an hour: stages, automation triggers, and follow-up templates so every lead gets a next step.',
-          slug: 'crm-pipeline-automation',
-          path: '/resources/crm-pipeline-automation',
           nodeType: 'resource',
         },
       ],
@@ -10220,32 +11213,24 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/tracking-salon-client-lifetime-value',
           nodeType: 'resource',
         },
-        {
-          title: 'CRM Pipeline Automation: Stop Losing Leads (Stages + Follow-Up Templates)',
-          description:
-            'A practical CRM pipeline you can set up in under an hour: stages, automation triggers, and follow-up templates so every lead gets a next step.',
-          slug: 'crm-pipeline-automation',
-          path: '/resources/crm-pipeline-automation',
-          nodeType: 'resource',
-        },
       ],
     },
     'hvac-emergency-lead-routing': {
       industries: [
-        {
-          title: 'Smart Website Systems for Auto Repair Shops',
-          description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
         {
           title: 'Smart Website Systems for HVAC',
           description:
             'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
@@ -10295,32 +11280,24 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/tracking-salon-client-lifetime-value',
           nodeType: 'resource',
         },
-        {
-          title: 'CRM Pipeline Automation: Stop Losing Leads (Stages + Follow-Up Templates)',
-          description:
-            'A practical CRM pipeline you can set up in under an hour: stages, automation triggers, and follow-up templates so every lead gets a next step.',
-          slug: 'crm-pipeline-automation',
-          path: '/resources/crm-pipeline-automation',
-          nodeType: 'resource',
-        },
       ],
     },
     'hvac-seasonal-lead-surge-handling': {
       industries: [
-        {
-          title: 'Smart Website Systems for Auto Repair Shops',
-          description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
         {
           title: 'Smart Website Systems for HVAC',
           description:
             'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
@@ -10368,14 +11345,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
           slug: 'tracking-salon-client-lifetime-value',
           path: '/resources/tracking-salon-client-lifetime-value',
-          nodeType: 'resource',
-        },
-        {
-          title: 'CRM Pipeline Automation: Stop Losing Leads (Stages + Follow-Up Templates)',
-          description:
-            'A practical CRM pipeline you can set up in under an hour: stages, automation triggers, and follow-up templates so every lead gets a next step.',
-          slug: 'crm-pipeline-automation',
-          path: '/resources/crm-pipeline-automation',
           nodeType: 'resource',
         },
       ],
@@ -10553,14 +11522,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/tracking-salon-client-lifetime-value',
           nodeType: 'resource',
         },
-        {
-          title: 'CRM Pipeline Automation: Stop Losing Leads (Stages + Follow-Up Templates)',
-          description:
-            'A practical CRM pipeline you can set up in under an hour: stages, automation triggers, and follow-up templates so every lead gets a next step.',
-          slug: 'crm-pipeline-automation',
-          path: '/resources/crm-pipeline-automation',
-          nodeType: 'resource',
-        },
       ],
     },
     'roofing-estimate-follow-up-automation': {
@@ -10572,14 +11533,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
           slug: 'tracking-salon-client-lifetime-value',
           path: '/resources/tracking-salon-client-lifetime-value',
-          nodeType: 'resource',
-        },
-        {
-          title: 'CRM Pipeline Automation: Stop Losing Leads (Stages + Follow-Up Templates)',
-          description:
-            'A practical CRM pipeline you can set up in under an hour: stages, automation triggers, and follow-up templates so every lead gets a next step.',
-          slug: 'crm-pipeline-automation',
-          path: '/resources/crm-pipeline-automation',
           nodeType: 'resource',
         },
       ],
@@ -10803,19 +11756,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'smart-website-infrastructure-implementation': {
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
-          description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for HVAC',
           description:
             'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Auto Repair Shops',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
@@ -11249,11 +12202,19 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionGoal: 'email-capture',
     conversionPriority: 40,
   },
+  'how-to-fix-lead-response-time-in-automotive-businesses-using-crm-automation': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
   'hvac-crm-pipeline-for-service-companies': {
     conversionGoal: 'email-capture',
     conversionPriority: 40,
   },
   'hvac-emergency-call-handling-mistakes': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'hvac-local-visibility-system-for-service-areas': {
     conversionGoal: 'email-capture',
     conversionPriority: 40,
   },
@@ -11321,6 +12282,14 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionGoal: 'email-capture',
     conversionPriority: 40,
   },
+  'plumbing-crm-pipeline-for-job-management': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'realtor-local-visibility-system-for-lead-generation': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
   'reducing-salon-no-shows-with-automation': {
     conversionGoal: 'email-capture',
     conversionPriority: 50,
@@ -11372,6 +12341,10 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
   'sales-pipeline-visibility-framework': {
     conversionGoal: 'email-capture',
     conversionPriority: 50,
+  },
+  'salon-crm-pipeline-for-client-retention': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
   },
   'salon-review-generation-framework': {
     conversionGoal: 'email-capture',
@@ -11429,11 +12402,27 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionGoal: 'email-capture',
     conversionPriority: 40,
   },
+  'why-hvac-companies-disappear-from-local-search': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
   'why-hvac-companies-lose-leads-after-hours': {
     conversionGoal: 'email-capture',
     conversionPriority: 40,
   },
   'why-hvac-missed-calls-lose-after-hours-revenue': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-plumbing-companies-lose-jobs-without-crm-pipeline': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-realtors-lose-leads-without-local-visibility': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-roofing-companies-lose-jobs-without-review-automation': {
     conversionGoal: 'email-capture',
     conversionPriority: 40,
   },
@@ -11449,11 +12438,27 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionGoal: 'email-capture',
     conversionPriority: 40,
   },
+  'why-salons-lose-clients-without-crm-pipeline': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-salons-lose-clients-without-review-automation': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
   'why-salons-need-lead-handling-systems': {
     conversionGoal: 'email-capture',
     conversionPriority: 40,
   },
   'why-service-business-websites-fail-to-convert': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-slow-lead-response-is-killing-automotive-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-slow-lead-response-is-killing-hvac-businesses': {
     conversionGoal: 'email-capture',
     conversionPriority: 40,
   },
@@ -11493,6 +12498,14 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionGoal: 'email-capture',
     conversionPriority: 50,
   },
+  'crm-pipeline-setup-guide-for-plumbing-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'crm-pipeline-setup-guide-for-salons': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
   'customer-feedback-loop-framework': {
     conversionGoal: 'email-capture',
     conversionPriority: 50,
@@ -11525,6 +12538,10 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionGoal: 'email-capture',
     conversionPriority: 50,
   },
+  'lead-response-optimization-checklist-for-hvac-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
   'lead-response-time-framework': {
     conversionGoal: 'email-capture',
     conversionPriority: 50,
@@ -11534,6 +12551,14 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionPriority: 50,
   },
   'local-visibility-framework': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'local-visibility-optimization-guide-for-hvac-companies': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'local-visibility-optimization-guide-for-realtors': {
     conversionGoal: 'email-capture',
     conversionPriority: 50,
   },
@@ -11558,6 +12583,14 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionPriority: 50,
   },
   'reputation-monitoring-systems': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'review-automation-setup-guide-for-roofing-companies': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'review-automation-setup-guide-for-salons': {
     conversionGoal: 'email-capture',
     conversionPriority: 50,
   },

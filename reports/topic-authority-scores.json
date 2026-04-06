@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-04-06T00:16:31.458Z",
+  "generatedAt": "2026-04-06T01:02:38.584Z",
   "topicsAnalyzed": 42,
-  "averageScore": 53,
+  "averageScore": 54,
   "scores": [
     {
       "topic": "lead-management",
@@ -24,6 +24,16 @@
       "level": "Dominant"
     },
     {
+      "topic": "lead-response-time",
+      "blogCount": 5,
+      "resourceCount": 3,
+      "industryCount": 5,
+      "serviceCount": 2,
+      "caseStudyCount": 4,
+      "score": 100,
+      "level": "Dominant"
+    },
+    {
       "topic": "review-generation",
       "blogCount": 5,
       "resourceCount": 5,
@@ -34,14 +44,14 @@
       "level": "Dominant"
     },
     {
-      "topic": "lead-response-time",
-      "blogCount": 2,
+      "topic": "crm-pipeline",
+      "blogCount": 8,
       "resourceCount": 2,
-      "industryCount": 5,
-      "serviceCount": 2,
-      "caseStudyCount": 4,
-      "score": 85,
-      "level": "Strong"
+      "industryCount": 3,
+      "serviceCount": 1,
+      "caseStudyCount": 5,
+      "score": 100,
+      "level": "Dominant"
     },
     {
       "topic": "follow-up",
@@ -111,16 +121,6 @@
       "serviceCount": 1,
       "caseStudyCount": 1,
       "score": 73,
-      "level": "Growing"
-    },
-    {
-      "topic": "crm-pipeline",
-      "blogCount": 4,
-      "resourceCount": 0,
-      "industryCount": 3,
-      "serviceCount": 1,
-      "caseStudyCount": 5,
-      "score": 70,
       "level": "Growing"
     },
     {

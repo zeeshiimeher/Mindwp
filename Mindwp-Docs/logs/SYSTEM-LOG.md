@@ -1,6 +1,6 @@
 # SYSTEM LOG — Current State
 
-> Generated: 2026-04-06T00:16:22.942Z
+> Generated: 2026-04-06T01:45:28.870Z
 
 ---
 
@@ -34,32 +34,32 @@
 
 | Validator | Type | Status | Duration |
 |---|---|---|---|
-| typecheck | Blocking | PASS | 2069ms |
-| lint | Blocking | PASS | 5136ms |
+| typecheck | Blocking | PASS | 1980ms |
+| lint | Blocking | PASS | 5506ms |
 | validate-docs | Blocking | PASS | 78ms |
-| validate-blog | Blocking | PASS | 1257ms |
-| validate-resources | Blocking | PASS | 1082ms |
-| validate-case-study-structure | Blocking | PASS | 244ms |
-| validate-service-structure | Blocking | PASS | 1321ms |
-| validate-feature-structure | Blocking | PASS | 1286ms |
-| validate-home-structure | Blocking | PASS | 1026ms |
-| validate-industry-structure | Blocking | PASS | 1067ms |
-| validate-design-system | Blocking | PASS | 123ms |
-| validate-graph | Blocking | PASS | 928ms |
-| validate-metadata | Blocking | PASS | 704ms |
-| validate-metadata-completeness | Blocking | PASS | 79ms |
-| validate-cta | Blocking | PASS | 74ms |
-| validate-vocabulary | Blocking | PASS | 102ms |
-| validate-structure | Blocking | PASS | 80ms |
-| validate-internal-links | Blocking | PASS | 705ms |
-| validate-tokens | Blocking | PASS | 80ms |
-| validate-inline-styles | Blocking | PASS | 83ms |
-| validate-reports-structure | Blocking | PASS | 60ms |
-| check-generated | Blocking | PASS | 3175ms |
-| validate-conversion | Advisory | PASS | 810ms |
-| validate-system-docs | Advisory | PASS | 75ms |
-| validate-checklist | Advisory | PASS | 57ms |
-| validate-fix-log | Advisory | PASS | 57ms |
+| validate-blog | Blocking | PASS | 1350ms |
+| validate-resources | Blocking | PASS | 1099ms |
+| validate-case-study-structure | Blocking | PASS | 242ms |
+| validate-service-structure | Blocking | PASS | 1570ms |
+| validate-feature-structure | Blocking | PASS | 1384ms |
+| validate-home-structure | Blocking | PASS | 1062ms |
+| validate-industry-structure | Blocking | PASS | 1084ms |
+| validate-design-system | Blocking | PASS | 125ms |
+| validate-graph | Blocking | PASS | 1073ms |
+| validate-metadata | Blocking | PASS | 756ms |
+| validate-metadata-completeness | Blocking | PASS | 87ms |
+| validate-cta | Blocking | PASS | 79ms |
+| validate-vocabulary | Blocking | PASS | 108ms |
+| validate-structure | Blocking | PASS | 81ms |
+| validate-internal-links | Blocking | PASS | 746ms |
+| validate-tokens | Blocking | PASS | 81ms |
+| validate-inline-styles | Blocking | PASS | 89ms |
+| validate-reports-structure | Blocking | PASS | 55ms |
+| check-generated | Blocking | PASS | 3266ms |
+| validate-conversion | Advisory | PASS | 745ms |
+| validate-system-docs | Advisory | PASS | 70ms |
+| validate-checklist | Advisory | PASS | 59ms |
+| validate-fix-log | Advisory | PASS | 54ms |
 
 ---
 

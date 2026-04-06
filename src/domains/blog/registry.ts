@@ -22,8 +22,10 @@ import { googleBusinessProfileSystemArchitecture } from '@/domains/blog/content/
 import { howAiSearchChangesLocalBusinessVisibility } from '@/domains/blog/content/HowAiSearchChangesLocalBusinessVisibility';
 import { howReviewAutomationImprovesLocalAuthority } from '@/domains/blog/content/HowReviewAutomationImprovesLocalAuthority';
 import { howSmartWebsiteSystemsWorkForLocalBusinesses } from '@/domains/blog/content/HowSmartWebsiteSystemsWorkForLocalBusinesses';
+import { howToFixLeadResponseTimeInAutomotiveBusinessesUsingCrmAutomation } from '@/domains/blog/content/HowToFixLeadResponseTimeInAutomotiveBusinessesUsingCrmAutomation';
 import { hvacCrmPipelineForServiceCompanies } from '@/domains/blog/content/HvacCrmPipelineForServiceCompanies';
 import { hvacEmergencyCallHandlingMistakes } from '@/domains/blog/content/HvacEmergencyCallHandlingMistakes';
+import { hvacLocalVisibilitySystemForServiceAreas } from '@/domains/blog/content/HvacLocalVisibilitySystemForServiceAreas';
 import { hvacReviewGenerationFramework } from '@/domains/blog/content/HvacReviewGenerationFramework';
 import { leadAutomationFrameworkForServiceBusinesses } from '@/domains/blog/content/LeadAutomationFrameworkForServiceBusinesses';
 import { leadQualificationForRoofingCompanies } from '@/domains/blog/content/LeadQualificationForRoofingCompanies';
@@ -40,6 +42,8 @@ import { missedCallRecoveryForServiceBusinesses } from '@/domains/blog/content/M
 import { multiChannelLeadCaptureForSalons } from '@/domains/blog/content/MultiChannelLeadCaptureForSalons';
 import { multiChannelLeadCaptureSystemForServiceBusinesses } from '@/domains/blog/content/MultiChannelLeadCaptureSystemForServiceBusinesses';
 import { negativeReviewsForAutoRepairShops } from '@/domains/blog/content/NegativeReviewsForAutoRepairShops';
+import { plumbingCrmPipelineForJobManagement } from '@/domains/blog/content/PlumbingCrmPipelineForJobManagement';
+import { realtorLocalVisibilitySystemForLeadGeneration } from '@/domains/blog/content/RealtorLocalVisibilitySystemForLeadGeneration';
 import { reducingSalonNoShowsWithAutomation } from '@/domains/blog/content/ReducingSalonNoShowsWithAutomation';
 import { reputationMonitoringSystemsForServiceBusinesses } from '@/domains/blog/content/ReputationMonitoringSystemsForServiceBusinesses';
 import { respondingToNegativeReviewsSystematically } from '@/domains/blog/content/RespondingToNegativeReviewsSystematically';
@@ -53,6 +57,7 @@ import { roofingEstimateFollowUpDelays } from '@/domains/blog/content/RoofingEst
 import { roofingReviewGenerationSystem } from '@/domains/blog/content/RoofingReviewGenerationSystem';
 import { salesPipelineVisibilityForHvacCompanies } from '@/domains/blog/content/SalesPipelineVisibilityForHvacCompanies';
 import { salesPipelineVisibilityFramework } from '@/domains/blog/content/SalesPipelineVisibilityFramework';
+import { salonCrmPipelineForClientRetention } from '@/domains/blog/content/SalonCrmPipelineForClientRetention';
 import { salonReviewGenerationFramework } from '@/domains/blog/content/SalonReviewGenerationFramework';
 import { serviceBusinessFollowUpAutomation } from '@/domains/blog/content/ServiceBusinessFollowUpAutomation';
 import { servicePageArchitectureForServiceBusinesses } from '@/domains/blog/content/ServicePageArchitectureForServiceBusinesses';
@@ -67,13 +72,21 @@ import { whatIsASystemsFirstWebsiteForServiceBusinesses } from '@/domains/blog/c
 import { whyAutoRepairMissedCallsLoseBookedWork } from '@/domains/blog/content/WhyAutoRepairMissedCallsLoseBookedWork';
 import { whyAutoRepairShopsLosePhoneLeads } from '@/domains/blog/content/WhyAutoRepairShopsLosePhoneLeads';
 import { whyBookingSystemsNeedWebsiteInfrastructure } from '@/domains/blog/content/WhyBookingSystemsNeedWebsiteInfrastructure';
+import { whyHvacCompaniesDisappearFromLocalSearch } from '@/domains/blog/content/WhyHvacCompaniesDisappearFromLocalSearch';
 import { whyHvacCompaniesLoseLeadsAfterHours } from '@/domains/blog/content/WhyHvacCompaniesLoseLeadsAfterHours';
 import { whyHvacMissedCallsLoseAfterHoursRevenue } from '@/domains/blog/content/WhyHvacMissedCallsLoseAfterHoursRevenue';
+import { whyPlumbingCompaniesLoseJobsWithoutCrmPipeline } from '@/domains/blog/content/WhyPlumbingCompaniesLoseJobsWithoutCrmPipeline';
+import { whyRealtorsLoseLeadsWithoutLocalVisibility } from '@/domains/blog/content/WhyRealtorsLoseLeadsWithoutLocalVisibility';
+import { whyRoofingCompaniesLoseJobsWithoutReviewAutomation } from '@/domains/blog/content/WhyRoofingCompaniesLoseJobsWithoutReviewAutomation';
 import { whyRoofingCompaniesLoseLeadsDuringStormSeason } from '@/domains/blog/content/WhyRoofingCompaniesLoseLeadsDuringStormSeason';
 import { whyRoofingMissedCallsCostEmergencyJobs } from '@/domains/blog/content/WhyRoofingMissedCallsCostEmergencyJobs';
 import { whySalonsLoseCallsDuringServiceHours } from '@/domains/blog/content/WhySalonsLoseCallsDuringServiceHours';
+import { whySalonsLoseClientsWithoutCrmPipeline } from '@/domains/blog/content/WhySalonsLoseClientsWithoutCrmPipeline';
+import { whySalonsLoseClientsWithoutReviewAutomation } from '@/domains/blog/content/WhySalonsLoseClientsWithoutReviewAutomation';
 import { whySalonsNeedLeadHandlingSystems } from '@/domains/blog/content/WhySalonsNeedLeadHandlingSystems';
 import { whyServiceBusinessWebsitesFailToConvert } from '@/domains/blog/content/WhyServiceBusinessWebsitesFailToConvert';
+import { whySlowLeadResponseIsKillingAutomotiveBusinesses } from '@/domains/blog/content/WhySlowLeadResponseIsKillingAutomotiveBusinesses';
+import { whySlowLeadResponseIsKillingHvacBusinesses } from '@/domains/blog/content/WhySlowLeadResponseIsKillingHvacBusinesses';
 import type { BlogPostData } from '@/domains/blog/types';
 
 export const BLOG_POSTS: Record<string, BlogPostData> = {
@@ -100,8 +113,10 @@ export const BLOG_POSTS: Record<string, BlogPostData> = {
   'how-ai-search-changes-local-business-visibility': howAiSearchChangesLocalBusinessVisibility,
   'how-review-automation-improves-local-authority': howReviewAutomationImprovesLocalAuthority,
   'how-smart-website-systems-work-for-local-businesses': howSmartWebsiteSystemsWorkForLocalBusinesses,
+  'how-to-fix-lead-response-time-in-automotive-businesses-using-crm-automation': howToFixLeadResponseTimeInAutomotiveBusinessesUsingCrmAutomation,
   'hvac-crm-pipeline-for-service-companies': hvacCrmPipelineForServiceCompanies,
   'hvac-emergency-call-handling-mistakes': hvacEmergencyCallHandlingMistakes,
+  'hvac-local-visibility-system-for-service-areas': hvacLocalVisibilitySystemForServiceAreas,
   'hvac-review-generation-framework': hvacReviewGenerationFramework,
   'lead-automation-framework-for-service-businesses': leadAutomationFrameworkForServiceBusinesses,
   'lead-qualification-for-roofing-companies': leadQualificationForRoofingCompanies,
@@ -118,6 +133,8 @@ export const BLOG_POSTS: Record<string, BlogPostData> = {
   'multi-channel-lead-capture-for-salons': multiChannelLeadCaptureForSalons,
   'multi-channel-lead-capture-system-for-service-businesses': multiChannelLeadCaptureSystemForServiceBusinesses,
   'negative-reviews-for-auto-repair-shops': negativeReviewsForAutoRepairShops,
+  'plumbing-crm-pipeline-for-job-management': plumbingCrmPipelineForJobManagement,
+  'realtor-local-visibility-system-for-lead-generation': realtorLocalVisibilitySystemForLeadGeneration,
   'reducing-salon-no-shows-with-automation': reducingSalonNoShowsWithAutomation,
   'reputation-monitoring-systems-for-service-businesses': reputationMonitoringSystemsForServiceBusinesses,
   'responding-to-negative-reviews-systematically': respondingToNegativeReviewsSystematically,
@@ -131,6 +148,7 @@ export const BLOG_POSTS: Record<string, BlogPostData> = {
   'roofing-review-generation-system': roofingReviewGenerationSystem,
   'sales-pipeline-visibility-for-hvac-companies': salesPipelineVisibilityForHvacCompanies,
   'sales-pipeline-visibility-framework': salesPipelineVisibilityFramework,
+  'salon-crm-pipeline-for-client-retention': salonCrmPipelineForClientRetention,
   'salon-review-generation-framework': salonReviewGenerationFramework,
   'service-business-follow-up-automation': serviceBusinessFollowUpAutomation,
   'service-page-architecture-for-service-businesses': servicePageArchitectureForServiceBusinesses,
@@ -145,13 +163,21 @@ export const BLOG_POSTS: Record<string, BlogPostData> = {
   'why-auto-repair-missed-calls-lose-booked-work': whyAutoRepairMissedCallsLoseBookedWork,
   'why-auto-repair-shops-lose-phone-leads': whyAutoRepairShopsLosePhoneLeads,
   'why-booking-systems-need-website-infrastructure': whyBookingSystemsNeedWebsiteInfrastructure,
+  'why-hvac-companies-disappear-from-local-search': whyHvacCompaniesDisappearFromLocalSearch,
   'why-hvac-companies-lose-leads-after-hours': whyHvacCompaniesLoseLeadsAfterHours,
   'why-hvac-missed-calls-lose-after-hours-revenue': whyHvacMissedCallsLoseAfterHoursRevenue,
+  'why-plumbing-companies-lose-jobs-without-crm-pipeline': whyPlumbingCompaniesLoseJobsWithoutCrmPipeline,
+  'why-realtors-lose-leads-without-local-visibility': whyRealtorsLoseLeadsWithoutLocalVisibility,
+  'why-roofing-companies-lose-jobs-without-review-automation': whyRoofingCompaniesLoseJobsWithoutReviewAutomation,
   'why-roofing-companies-lose-leads-during-storm-season': whyRoofingCompaniesLoseLeadsDuringStormSeason,
   'why-roofing-missed-calls-cost-emergency-jobs': whyRoofingMissedCallsCostEmergencyJobs,
   'why-salons-lose-calls-during-service-hours': whySalonsLoseCallsDuringServiceHours,
+  'why-salons-lose-clients-without-crm-pipeline': whySalonsLoseClientsWithoutCrmPipeline,
+  'why-salons-lose-clients-without-review-automation': whySalonsLoseClientsWithoutReviewAutomation,
   'why-salons-need-lead-handling-systems': whySalonsNeedLeadHandlingSystems,
   'why-service-business-websites-fail-to-convert': whyServiceBusinessWebsitesFailToConvert,
+  'why-slow-lead-response-is-killing-automotive-businesses': whySlowLeadResponseIsKillingAutomotiveBusinesses,
+  'why-slow-lead-response-is-killing-hvac-businesses': whySlowLeadResponseIsKillingHvacBusinesses,
 };
 
 export const blogPosts = Object.values(BLOG_POSTS);
