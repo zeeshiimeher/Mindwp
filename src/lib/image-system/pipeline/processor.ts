@@ -34,6 +34,7 @@ import { downloadImage } from './downloader';
 import { generateStandardFeaturedImage } from './featuredImage';
 import { optimizeImage, saveImage } from './optimizer';
 import { buildDesignContext } from './overlayDesign';
+import { buildExifMetadata, generateImageSeo } from '../seo/imageMetadata';
 
 /** Verify white text contrast on the generated image (WCAG AA = 4.5:1) */
 async function verifyContrast(imageBuffer: Buffer): Promise<{ ratio: number; pass: boolean }> {
@@ -94,6 +95,12 @@ export async function processImage(
   // Generate semantic search queries
   const queries = generateSemanticQueries(metadata, domain);
   console.log(`[pipeline] Generated ${queries.length} search queries`);
+  if (queries.length > 0) {
+    console.log(`[pipeline] Top query: "${queries[0].query}" (source: ${queries[0].source})`);
+  }
+
+  // Negative filter — reject images with these terms in tags/description
+  const NEGATIVE_TERMS = ['illustration', '3d render', 'cartoon', 'icon', 'vector', 'clipart', 'flat design', 'infographic'];
 
   // Try each query until we find a good image
   for (const semanticQuery of queries) {
@@ -143,6 +150,13 @@ export async function processImage(
       const safety = checkImageSafety(image);
       if (!safety.passed) {
         console.log(`[pipeline] Safety rejected: ${safety.reasons.join(', ')}`);
+        continue;
+      }
+
+      // Negative filter — reject illustrations, cartoons, vectors
+      const imageText = [image.description, ...image.tags].join(' ').toLowerCase();
+      if (NEGATIVE_TERMS.some(term => imageText.includes(term))) {
+        console.log(`[pipeline]   ↳ skipped: matched negative filter`);
         continue;
       }
 
@@ -209,11 +223,28 @@ export async function processImage(
 
       // ── Auto-tune loop (max 2 iterations) ──
       let tuneOverrides: TuneOverrides = loadLearnedOverrides(domain, metadata.title) ?? {};
+
+      // ── Domain-specific layout overrides ──
+      if (domain === 'features') {
+        // Feature pages: clean, readable in cards (300–500px)
+        tuneOverrides.titleScale = (tuneOverrides.titleScale ?? 1.0) * 0.95;
+        tuneOverrides.maxTextWidth = (tuneOverrides.maxTextWidth ?? 780) - 80;
+      } else if (domain === 'services') {
+        // Service pages: bold hero presence, strong contrast
+        tuneOverrides.titleScale = (tuneOverrides.titleScale ?? 1.0) * 1.15;
+        tuneOverrides.gradientStrength = (tuneOverrides.gradientStrength ?? 1.0) + 0.1;
+        tuneOverrides.vignetteStrength = (tuneOverrides.vignetteStrength ?? 1.0) + 0.1;
+      }
+
       let bestClean: Buffer | null = null;
       let bestOverlay: Buffer | null = null;
       let bestDebugScore = 0;
+      let bestDebugIssues: string[] = [];
+      let bestDebugContrast = 0;
       let allFixesApplied: DebugFixAction[] = [];
       let finalIteration = 0;
+      const appliedFixSet = new Set<DebugFixAction>();
+      let previousScore = 0;
 
       const MAX_TUNE_ITERATIONS = 2;
 
@@ -243,18 +274,35 @@ export async function processImage(
         console.log(
           `[debug] Score: ${debug.score}/10 | Confidence: ${debug.confidence} | Issues: ${debug.issues.length > 0 ? debug.issues.join(', ') : 'none'}`
         );
+        console.log(
+          `[debug] Sub-scores: CTR=${debug.ctrScore} | Synergy=${debug.synergyScore} | Conversion=${debug.conversionScore}`
+        );
+        console.log(
+          `[debug] Details: textBlockWidth=${result.debugInput.textBlockWidth.toFixed(0)} textX=${result.debugInput.textX} fontSize=${result.debugInput.fontSize} contrast=${result.debugInput.contrast.toFixed(2)} edgeDensityLeft=${result.debugInput.edgeDensityLeft.toFixed(3)} subject=${result.debugInput.subjectRegion}`
+        );
+        if (debug.fixes.length > 0) {
+          console.log(`[debug] Recommended fixes: ${debug.fixes.join(', ')}`);
+        }
 
         // Track best result
         if (debug.score > bestDebugScore || !bestClean) {
           bestClean = result.clean;
           bestOverlay = result.overlay;
           bestDebugScore = debug.score;
+          bestDebugIssues = debug.issues;
+          bestDebugContrast = result.debugInput.contrast;
           finalIteration = iteration;
         }
 
-        // Good enough — stop tuning
-        if (debug.score >= 8) {
-          console.log(`[tune] Score ${debug.score} ≥ 8 — accepting result`);
+        // ── Accept / Tune decision ──
+        // Score ≥ 9 → always accept (strong output)
+        // Score ≥ 7.5 with zero issues → accept (clean output)
+        // Otherwise → trigger auto-tune with fix application
+        const shouldAccept =
+          debug.score >= 9 || (debug.score >= 7.5 && debug.issues.length === 0);
+
+        if (shouldAccept) {
+          console.log(`[tune] Score ${debug.score} — accepting result`);
           break;
         }
 
@@ -264,11 +312,41 @@ export async function processImage(
           break;
         }
 
-        // Apply fixes for next iteration
-        console.log(`[tune] Applying fixes: ${debug.fixes.join(', ')}`);
-        tuneOverrides = clampOverrides(applyFixes(tuneOverrides, debug.fixes));
-        allFixesApplied.push(...debug.fixes);
+        // Early exit — score plateau means fixes aren't helping
+        if (previousScore > 0 && Math.abs(debug.score - previousScore) < 0.2) {
+          console.log(`[tune] Score plateau (${previousScore} → ${debug.score}) — stopping`);
+          break;
+        }
+        previousScore = debug.score;
+
+        // Apply fixes for next iteration — skip already-applied fixes
+        const fixesToApply = debug.fixes.filter(f => !appliedFixSet.has(f)).slice(0, 2);
+        if (fixesToApply.length === 0) {
+          console.log(`[tune] No new fixes available — stopping`);
+          break;
+        }
+        console.log(`[tune] Score ${debug.score} with issues [${debug.issues.join(', ')}] — applying fixes: ${fixesToApply.join(', ')}`);
+        for (const f of fixesToApply) appliedFixSet.add(f);
+        tuneOverrides = clampOverrides(applyFixes(tuneOverrides, fixesToApply));
+        allFixesApplied.push(...fixesToApply);
+
+        // FIX 7 — Weak text dominance emergency boost
+        const textAreaRatio = (debug.details.textBlockWidth as number) / (1600);
+        if (textAreaRatio < 0.35) {
+          tuneOverrides.titleScale = (tuneOverrides.titleScale ?? 1.0) + 0.2;
+          tuneOverrides = clampOverrides(tuneOverrides);
+        }
       }
+
+      // Save both variants
+      const cleanPath = getImageOutputPath(domain, slug, 'featured-clean');
+      const overlayPath = getImageOutputPath(domain, slug, 'featured-overlay');
+
+      // Generate SEO metadata
+      const seo = generateImageSeo(metadata.title, metadata.primaryKeyword, domain);
+      const exifMeta = buildExifMetadata(seo);
+      console.log(`[seo] Alt: "${seo.alt}"`);
+      console.log(`[seo] File: ${overlayPath}`);
 
       // ── Log generation result ──
       const lp = design.layout;
@@ -281,15 +359,17 @@ export async function processImage(
         maxTextWidth: tuneOverrides.maxTextWidth ?? 780,
         gradientStrength: tuneOverrides.gradientStrength ?? 1.0,
         vignetteStrength: tuneOverrides.vignetteStrength ?? 1.0,
-        contrast: 0, // Already logged above
-        issues: [],
+        contrast: bestDebugContrast,
+        issues: bestDebugIssues,
         fixesApplied: allFixesApplied,
         iteration: finalIteration,
         timestamp: new Date().toISOString(),
+        alt: seo.alt,
+        filename: overlayPath.split('/').pop(),
       });
 
       // ── Save winning config to learning memory ──
-      if (bestDebugScore >= 8) {
+      if (bestDebugScore >= 9.5) {
         saveWinningConfig(domain, metadata.title, {
           titleScale: tuneOverrides.titleScale ?? 1.0,
           maxTextWidth: tuneOverrides.maxTextWidth ?? 780,
@@ -300,14 +380,15 @@ export async function processImage(
         });
       }
 
-      // Save both variants
-      const cleanPath = getImageOutputPath(domain, slug, 'featured-clean');
-      const overlayPath = getImageOutputPath(domain, slug, 'featured-overlay');
-
       await saveImage(bestClean!, cleanPath);
       console.log(`[pipeline] Saved: ${cleanPath}`);
 
-      await saveImage(bestOverlay!, overlayPath);
+      // Embed EXIF metadata into overlay image
+      const overlayWithExif = await sharp(bestOverlay!)
+        .withMetadata(exifMeta)
+        .webp({ quality: 90 })
+        .toBuffer();
+      await saveImage(overlayWithExif, overlayPath);
       console.log(`[pipeline] Saved: ${overlayPath}`);
 
       // Register both in index

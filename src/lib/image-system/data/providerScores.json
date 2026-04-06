@@ -1,22 +1,27 @@
 {
+  "case-studies": {
+    "unsplash": 0.5954550000000001,
+    "pexels": 0.5838430332001052,
+    "pixabay": 0.5
+  },
   "blog": {
-    "unsplash": 0.5214362689500001,
-    "pexels": 0.5086486637199821,
+    "unsplash": 0.4483322508110002,
+    "pexels": 0.5088891263193777,
     "pixabay": 0.5
   },
   "resources": {
-    "unsplash": 0.5136520657773301,
-    "pexels": 0.3382522980450001,
-    "pixabay": 0.30066352350000014
-  },
-  "industries": {
-    "unsplash": 0.7,
-    "pexels": 0.6,
+    "unsplash": 0.5588687458627144,
+    "pexels": 0.595439069,
     "pixabay": 0.5
   },
-  "case-studies": {
-    "unsplash": 0.5687675771299663,
-    "pexels": 0.34371024450000015,
-    "pixabay": 0.37963500000000006
+  "features": {
+    "unsplash": 0.5850879000000002,
+    "pexels": 0.5948039764084916,
+    "pixabay": 0.5
+  },
+  "services": {
+    "unsplash": 0.5039664989000001,
+    "pexels": 0.5344975187378896,
+    "pixabay": 0.5
   }
 }

@@ -1,34 +1,77 @@
 {
-  "lead-response-time": {
+  "lead-capture": {
     "queries": [
-      "lead response time for service businesses",
-      "small business owner answering phone",
-      "service business receptionist taking phone call"
+      "plumbing plumber at work answering phone multi channel person natural lighting",
+      "plumbing plumber workshop answering phone multi channel person natural lighting business service customer interaction real professional working environment"
+    ],
+    "provider": "unsplash",
+    "avgScore": 60,
+    "count": 9
+  },
+  "review-automation": {
+    "queries": [
+      "roofing roofer on job site laptop review automation person natural lighting",
+      "roofing construction worker rooftop laptop review automation natural lighting business service customer interaction real professional working environment"
     ],
     "provider": "pexels",
-    "avgScore": 66,
-    "count": 14
+    "avgScore": 59,
+    "count": 8
   },
-  "booking-automation": {
+  "customer-feedback": {
     "queries": [
-      "booking system screen",
-      "modern dental practice reception area",
-      "dental office patient consultation"
+      "business professional office natural lighting",
+      "business professional office natural lighting analysis strategy planning real working environment"
     ],
     "provider": "unsplash",
     "avgScore": 59,
-    "count": 12
+    "count": 9
   },
-  "authority-signals": {
+  "pipeline-visibility": {
     "queries": [
-      "authority signals business",
-      "weak authority dashboards",
-      "authority signals dashboards",
-      "local business storefront on high street",
-      "small business appearing in local search on phone"
+      "plumbing plumber at work computer screen person natural lighting",
+      "plumbing plumber workshop computer screen person natural lighting office analysis strategy planning real business professional working environment"
+    ],
+    "provider": "pexels",
+    "avgScore": 59,
+    "count": 10
+  },
+  "follow-up": {
+    "queries": [
+      "plumbing plumber at work laptop person natural lighting",
+      "plumbing plumber workshop laptop person natural lighting real business client interaction service delivery professional working environment"
     ],
     "provider": "unsplash",
-    "avgScore": 58,
-    "count": 13
+    "avgScore": 60,
+    "count": 8
+  },
+  "booking-automation": {
+    "queries": [
+      "dental dental receptionist laptop person natural lighting",
+      "automotive mechanic at service desk calendar person natural lighting",
+      "dental receptionist laptop person natural lighting real business client interaction service delivery professional working environment",
+      "automotive mechanic at service desk calendar person natural lighting software usage dashboard workflow real business professional working environment",
+      "automotive mechanic at service desk calendar person natural lighting consultation teamwork business discussion real professional working environment"
+    ],
+    "provider": "pexels",
+    "avgScore": 62,
+    "count": 29
+  },
+  "lead-management": {
+    "queries": [
+      "automotive mechanic at service desk office person natural lighting",
+      "automotive mechanic at service desk office person natural lighting software usage dashboard workflow real business professional working environment"
+    ],
+    "provider": "pexels",
+    "avgScore": 60,
+    "count": 10
+  },
+  "conversion-optimization": {
+    "queries": [
+      "plumbing plumber at work answering phone person natural lighting",
+      "plumbing plumber workshop answering phone person natural lighting consultation teamwork business discussion real professional working environment"
+    ],
+    "provider": "unsplash",
+    "avgScore": 60,
+    "count": 10
   }
 }

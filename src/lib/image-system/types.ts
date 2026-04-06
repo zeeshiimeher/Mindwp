@@ -1,7 +1,7 @@
 // ─── Image System Types ─────────────────────────────────────────────
 // Central type definitions for the MindWP automated image pipeline
 
-export type ContentDomain = 'blog' | 'resources' | 'industries' | 'case-studies';
+export type ContentDomain = 'blog' | 'resources' | 'industries' | 'case-studies' | 'features' | 'services';
 
 export type ImageType = 'featured-clean' | 'featured-overlay' | 'content';
 
@@ -134,6 +134,12 @@ export interface TitleLayoutResult {
 
 export type OverlayVariant = 'editorial' | 'system' | 'analytical' | 'results' | 'local';
 
+export type VisualMode = 'real' | 'illustration';
+
+export type TextStyle = 'saas' | 'hook';
+
+export type VisualTreatment = 'clean' | 'highlight' | 'frame' | 'depth';
+
 /** Visual layout variant — deterministic per slug, prevents template repetition */
 export type LayoutVariant = 1 | 2 | 3;
 
@@ -149,8 +155,13 @@ export interface ColorPalette {
 }
 
 export interface OverlayDesignContext {
+  slug: string;
+  domain: ContentDomain;
   variant: OverlayVariant;
   layout: LayoutVariant;
+  visualMode: VisualMode;
+  textStyle: TextStyle;
+  treatment: VisualTreatment;
   icon: string | null;
   badge: string | null;
   palette: ColorPalette;
@@ -316,6 +327,10 @@ export interface DebugResult {
   fixes: DebugFixAction[];
   confidence: DebugConfidence;
   details: Record<string, number | string>;
+  /** Sub-scores for CTR, synergy, and conversion quality */
+  ctrScore: number;
+  synergyScore: number;
+  conversionScore: number;
 }
 
 export interface DebugInput {
@@ -343,6 +358,7 @@ export interface TuneOverrides {
   vignetteStrength?: number;
   textBlockXPercent?: number;
   blurSigma?: number;
+  brightnessMultiplier?: number;
 }
 
 export type TitleBucket = 'short' | 'medium' | 'long';
@@ -373,4 +389,8 @@ export interface ImageLogEntry {
   fixesApplied: DebugFixAction[];
   iteration: number;
   timestamp: string;
+  /** SEO alt text for the generated image */
+  alt?: string;
+  /** SEO-optimized filename (e.g. slug-featured.webp) */
+  filename?: string;
 }

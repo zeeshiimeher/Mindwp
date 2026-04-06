@@ -69,6 +69,16 @@ export const DOMAIN_IMAGE_RULES: Record<
     contentAllowed: true,
     maxContentImages: 1,
   },
+  features: {
+    featuredRequired: true,
+    contentAllowed: false,
+    maxContentImages: 0,
+  },
+  services: {
+    featuredRequired: true,
+    contentAllowed: false,
+    maxContentImages: 0,
+  },
 };
 
 // ─── Domain Style Rules ─────────────────────────────────────────────
@@ -141,6 +151,47 @@ export const DOMAIN_STYLES: Record<ContentDomain, DomainStyleRule> = {
     ],
     description: 'real results and operational transformation for service businesses',
   },
+  features: {
+    preferredScenes: [
+      'professional using business software on laptop',
+      'clean modern workspace with technology',
+      'business person reviewing dashboard on screen',
+      'organized desk with laptop and notebook',
+      'professional focused on computer screen',
+    ],
+    avoidScenes: [
+      'abstract illustrations',
+      'generic stock photos',
+      'cartoon or flat design',
+      'crowded group photos',
+    ],
+    description: 'clean professional technology in real workspace environments',
+  },
+  services: {
+    preferredScenes: [
+      'service professional helping customer in person',
+      'business consultant working with client',
+      'professional team collaborating on project',
+      'service expert explaining solution to client',
+      'business professional in action at workplace',
+    ],
+    avoidScenes: [
+      'abstract imagery',
+      'illustrations',
+      'empty offices',
+      'generic corporate settings',
+    ],
+    description: 'human-centric service delivery and professional consultation',
+  },
+};
+
+export const DOMAIN_CATEGORIES: Record<ContentDomain, string[]> = {
+  blog: ['business', 'service', 'customer interaction'],
+  resources: ['office', 'analysis', 'strategy', 'planning'],
+  'case-studies': ['real business', 'client interaction', 'service delivery'],
+  industries: ['field service', 'technician', 'customer location'],
+  features: ['software usage', 'dashboard', 'workflow'],
+  services: ['consultation', 'teamwork', 'business discussion'],
 };
 
 // ─── Title Layout Configuration ─────────────────────────────────────
@@ -209,7 +260,13 @@ export function getImageOutputPath(
   imageType: string,
   ext = 'webp'
 ) {
-  return `${IMAGE_OUTPUT_DIR}/${domain}/${slug}/${imageType}.${ext}`;
+  // Flat domain folder: {slug}.webp (overlay), {slug}-raw.webp (clean)
+  const seoName = imageType === 'featured-overlay'
+    ? slug
+    : imageType === 'featured-clean'
+      ? `${slug}-raw`
+      : `${slug}-content`;
+  return `${IMAGE_OUTPUT_DIR}/${domain}/${seoName}.${ext}`;
 }
 
 // ─── Placement Configuration ────────────────────────────────────────

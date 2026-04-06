@@ -13,7 +13,13 @@ type ImageType = 'featured-clean' | 'featured-overlay' | 'inline-1';
  *  - inline-1          → in-content image (blogs/resources only)
  */
 export function getImage(slug: string, domain: string, type: ImageType): string | null {
-  const webPath = `/images/${domain}/${slug}/${type}.webp`;
+  // Flat domain folder: {slug}.webp (overlay), {slug}-raw.webp (clean)
+  const fileName = type === 'featured-overlay'
+    ? `${slug}.webp`
+    : type === 'featured-clean'
+      ? `${slug}-raw.webp`
+      : `${slug}-content.webp`;
+  const webPath = `/images/${domain}/${fileName}`;
   const diskPath = join(process.cwd(), 'public', webPath);
 
   if (existsSync(diskPath)) {

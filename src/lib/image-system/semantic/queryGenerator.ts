@@ -6,7 +6,7 @@
 // Images should show REAL service professionals, workplaces, and operations —
 // not abstract dashboards, generic tech screens, or corporate stock photos.
 
-import { DOMAIN_STYLES } from '../config';
+import { DOMAIN_CATEGORIES, DOMAIN_STYLES } from '../config';
 import type { ContentDomain, ContentMetadata, SemanticQuery } from '../types';
 
 // ─── Industry Detection ─────────────────────────────────────────────
@@ -25,6 +25,27 @@ const INDUSTRY_KEYWORDS: Record<string, string[]> = {
   'real-estate': ['real estate', 'realtor', 'property', 'mortgage', 'home inspector'],
   legal: ['law', 'legal', 'attorney', 'solicitor', 'lawyer'],
   healthcare: ['health', 'medical', 'clinic', 'patient', 'doctor'],
+};
+
+const SLUG_INDUSTRY_HINTS: Record<string, string> = {
+  plumbing: 'plumbing',
+  plumber: 'plumbing',
+  dental: 'dental',
+  dentist: 'dental',
+  salon: 'salon',
+  spa: 'salon',
+  roofing: 'roofing',
+  roofer: 'roofing',
+  hvac: 'hvac',
+  electrical: 'electrical',
+  electrician: 'electrical',
+  landscaping: 'landscaping',
+  mechanic: 'automotive',
+  automotive: 'automotive',
+  realtor: 'real-estate',
+  'real-estate': 'real-estate',
+  legal: 'legal',
+  lawyer: 'legal',
 };
 
 // Visual search terms for each detected industry — these produce RELEVANT stock photos
@@ -255,57 +276,267 @@ function findTopicVisuals(metadata: ContentMetadata): string[] {
   return [...new Set(matched)];
 }
 
+// ─── Intent Extraction ──────────────────────────────────────────────
+// Extract structured intent from title for smarter query building
+
+interface ContentIntent {
+  industry: string | null;
+  intent: string;
+  emotion: string;
+  subject: string;
+}
+
+const INTENT_KEYWORDS: Record<string, string> = {
+  pipeline: 'workflow',
+  automation: 'efficiency',
+  crm: 'customer management',
+  booking: 'scheduling',
+  scheduling: 'scheduling',
+  review: 'reputation',
+  reputation: 'trust',
+  seo: 'visibility',
+  'local search': 'visibility',
+  authority: 'credibility',
+  lead: 'engagement',
+  'follow up': 'outreach',
+  conversion: 'results',
+  website: 'digital presence',
+  reactivation: 'growth',
+};
+
+const EMOTION_MAP: Record<string, string> = {
+  workflow: 'efficiency',
+  efficiency: 'productivity',
+  scheduling: 'organization',
+  trust: 'confidence',
+  visibility: 'growth',
+  engagement: 'connection',
+  results: 'success',
+  growth: 'momentum',
+};
+
+const SUBJECT_MAP: Record<string, string> = {
+  automotive: 'mechanic at service desk',
+  dental: 'dental receptionist',
+  salon: 'stylist with client',
+  plumbing: 'plumber workshop',
+  hvac: 'hvac technician',
+  roofing: 'construction worker rooftop',
+  electrical: 'electrician at control panel',
+  'real-estate': 'real estate agent with client',
+  legal: 'lawyer at desk',
+  healthcare: 'medical professional',
+};
+
+/** Human-priority keywords to boost people-focused results */
+const HUMAN_PRIORITY = ['person', 'professional', 'team', 'customer', 'worker'];
+
+/** Negative filter terms to avoid in results (appended as context, not literal filter) */
+const NEGATIVE_TERMS = [
+  'illustration',
+  'vector',
+  'cartoon',
+  'clipart',
+  '3d render',
+  'cgi',
+  'abstract',
+  'mockup',
+  'template',
+];
+
+const QUERY_CONTEXT_SUFFIX = 'real business professional natural lighting working environment';
+
+function detectIndustryFromSlug(slug: string): string | null {
+  const normalized = slug.toLowerCase();
+  for (const [hint, industry] of Object.entries(SLUG_INDUSTRY_HINTS)) {
+    if (normalized.includes(hint)) {
+      return industry;
+    }
+  }
+  return null;
+}
+
+function enrichQuery(query: string, domain: ContentDomain): string {
+  const categories = DOMAIN_CATEGORIES[domain] ?? [];
+  const combined = [query, ...categories, QUERY_CONTEXT_SUFFIX]
+    .join(' ')
+    .toLowerCase()
+    .split(/\s+/)
+    .filter(Boolean);
+
+  const deduped: string[] = [];
+  const seen = new Set<string>();
+  for (const token of combined) {
+    if (seen.has(token)) continue;
+    seen.add(token);
+    deduped.push(token);
+  }
+
+  return deduped.join(' ');
+}
+
+function extractIntent(metadata: ContentMetadata, industry: string | null): ContentIntent {
+  const titleLower = metadata.title.toLowerCase();
+
+  // Detect intent from title
+  let intent = 'professional workplace';
+  for (const [keyword, intentValue] of Object.entries(INTENT_KEYWORDS)) {
+    if (titleLower.includes(keyword)) {
+      intent = intentValue;
+      break;
+    }
+  }
+
+  // Map intent to emotion
+  const emotion = EMOTION_MAP[intent] ?? 'professionalism';
+
+  // Map industry to subject
+  const subject = industry ? (SUBJECT_MAP[industry] ?? 'service professional') : 'business professional';
+
+  return { industry, intent, emotion, subject };
+}
+
+// ─── Context Enrichment Map ─────────────────────────────────────────
+// Maps abstract topic intents to concrete visual scene words
+
+const CONTEXT_MAP: Record<string, string[]> = {
+  'customer management': ['computer', 'office desk', 'customer service'],
+  workflow: ['computer screen', 'office', 'organized workspace'],
+  efficiency: ['laptop', 'workflow', 'modern office'],
+  scheduling: ['calendar', 'appointment book', 'reception desk'],
+  reputation: ['happy customer', 'handshake', 'storefront'],
+  visibility: ['storefront', 'signage', 'street'],
+  engagement: ['answering phone', 'customer service', 'office desk'],
+  outreach: ['phone call', 'email', 'office'],
+  results: ['celebrating', 'success', 'team meeting'],
+  'digital presence': ['laptop', 'website', 'modern office'],
+  growth: ['graph', 'meeting', 'planning board'],
+  credibility: ['professional office', 'awards', 'established business'],
+  'professional workplace': ['office', 'desk', 'workspace'],
+};
+
+/** Build an intent-driven search query from extracted content signals */
+function buildIntentQuery(intent: ContentIntent, metadata: ContentMetadata): string {
+  const parts: string[] = [];
+
+  // Industry keyword
+  if (intent.industry) {
+    parts.push(intent.industry.replace(/-/g, ' '));
+  }
+
+  // Subject keyword (person-focused)
+  parts.push(intent.subject);
+
+  // Context enrichment — add scene/environment words from intent
+  const contextWords = CONTEXT_MAP[intent.intent] ?? CONTEXT_MAP['professional workplace']!;
+  parts.push(contextWords[0]);
+
+  // Context from primary keyword
+  const kwWords = metadata.primaryKeyword
+    .replace(/-/g, ' ')
+    .split(/\s+/)
+    .filter(w => w.length > 3)
+    .slice(0, 2);
+  if (kwWords.length > 0) parts.push(kwWords.join(' '));
+
+  // Enforce human/person presence (FIX 4 — faces = CTR boost)
+  const queryText = parts.join(' ').toLowerCase();
+  const hasHuman = HUMAN_PRIORITY.some(h => queryText.includes(h));
+  if (!hasHuman) {
+    parts.push('person');
+  }
+
+  // Brand consistency — enforce real-world professional aesthetic
+  parts.push('natural lighting');
+
+  return parts.join(' ');
+}
+
 /** Generate ranked semantic queries for image search */
 export function generateSemanticQueries(
   metadata: ContentMetadata,
   domain: ContentDomain,
   maxQueries = 6
 ): SemanticQuery[] {
-  const industry = detectIndustry(metadata);
+  const industry = detectIndustry(metadata) ?? detectIndustryFromSlug(metadata.slug);
   const topicVisuals = findTopicVisuals(metadata);
   const style = DOMAIN_STYLES[domain];
+  const intent = extractIntent(metadata, industry);
   const candidates: SemanticQuery[] = [];
 
-  // ── Priority 1: Industry-specific visuals (score 5) ───────────────
-  // If the content mentions a specific industry, those images are the most relevant
+  // ── Strategy 1: Intent-driven primary query (score 6) ─────────────
+  // Real scene, story-aligned — the best possible query
+  const intentQuery = buildIntentQuery(intent, metadata);
+  candidates.push({ query: enrichQuery(intentQuery, domain), score: 6, source: 'intent' });
+
+  // ── Service page boost: enforce person + action in queries ──
+  if (domain === 'services') {
+    candidates.push({
+      query: enrichQuery(`professional person helping customer ${intent.subject}`, domain),
+      score: 5.5,
+      source: 'serviceAction',
+    });
+  }
+
+  // ── Strategy 2: Industry-specific visuals (score 5) ───────────────
   if (industry && INDUSTRY_VISUALS[industry]) {
     const visuals = INDUSTRY_VISUALS[industry];
-    // Pick top 2 industry visuals
     for (const visual of visuals.slice(0, 2)) {
-      candidates.push({ query: visual, score: 5, source: 'industry' });
+      candidates.push({ query: enrichQuery(visual, domain), score: 5, source: 'industry' });
     }
   }
 
-  // ── Priority 2: Topic-mapped visuals (score 4) ────────────────────
-  // Abstract topics mapped to real-world visual scenes
+  // ── Strategy 3: Topic-mapped visuals (score 4) ─────────────────────
   for (const visual of topicVisuals.slice(0, 2)) {
-    candidates.push({ query: visual, score: 4, source: 'topicVisual' });
+    candidates.push({ query: enrichQuery(visual, domain), score: 4, source: 'topicVisual' });
   }
 
-  // ── Priority 3: Domain style scenes (score 3) ─────────────────────
-  // Generic per-domain imagery (e.g. "service professional at work" for blog)
+  // ── Strategy 4: Alternative angle — industry + different context (score 3.5)
+  if (industry) {
+    const industryLabel = industry.replace(/-/g, ' ');
+    candidates.push({
+      query: enrichQuery(`${industryLabel} business office workspace professional`, domain),
+      score: 3.5,
+      source: 'alternative',
+    });
+  }
+
+  // ── Strategy 5: Domain style scenes (score 3) ─────────────────────
   for (const scene of style.preferredScenes.slice(0, 2)) {
-    candidates.push({ query: scene, score: 3, source: 'domainStyle' });
+    candidates.push({ query: enrichQuery(scene, domain), score: 3, source: 'domainStyle' });
   }
 
-  // ── Priority 4: Industry + topic combination (score 3) ────────────
+  // ── Strategy 6: Industry + topic combination (score 3) ────────────
   if (industry) {
     const topicWords = metadata.topics[0]?.replace(/-/g, ' ') ?? '';
     if (topicWords) {
       const industryLabel = industry.replace(/-/g, ' ');
       candidates.push({
-        query: `${industryLabel} business ${topicWords}`,
+        query: enrichQuery(`${industryLabel} business ${topicWords}`, domain),
         score: 3,
         source: 'industryTopic',
       });
     }
   }
 
-  // ── Priority 5: Fallback — general service business imagery (score 2)
+  // ── Strategy 7: Fallback — workspace/abstract (score 2) ───────────
   if (candidates.length < 3) {
     candidates.push(
-      { query: 'local service business professional at work', score: 2, source: 'fallback' },
-      { query: 'small business owner helping customer', score: 2, source: 'fallback' }
+      {
+        query: enrichQuery('local service business professional at work', domain),
+        score: 2,
+        source: 'fallback',
+      },
+      {
+        query: enrichQuery('small business owner helping customer', domain),
+        score: 2,
+        source: 'fallback',
+      },
+      {
+        query: enrichQuery('professional workspace organized office', domain),
+        score: 1.5,
+        source: 'fallback',
+      }
     );
   }
 
@@ -314,6 +545,7 @@ export function generateSemanticQueries(
   const unique = candidates.filter(c => {
     const key = c.query.toLowerCase().trim();
     if (!key || seen.has(key)) return false;
+    if (NEGATIVE_TERMS.some(term => key.includes(term))) return false;
     seen.add(key);
     return true;
   });

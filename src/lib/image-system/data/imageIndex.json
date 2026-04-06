@@ -1,50 +1,162 @@
 {
-  "lead-response-time-for-service-businesses": {
+  "calendars": {
     "featured-clean": {
-      "file": "public/images/blog/lead-response-time-for-service-businesses/featured-clean.webp",
-      "hash": "6ee3b6b27a48b800",
-      "provider": "unsplash",
-      "imageId": "UPPJYvky81I",
-      "generatedAt": "2026-04-06T04:54:02.020Z"
+      "file": "public/images/features/calendars-raw.webp",
+      "hash": "1899ddd7a3cb8e00",
+      "provider": "pexels",
+      "imageId": "6870317",
+      "generatedAt": "2026-04-06T21:19:02.760Z"
     },
     "featured-overlay": {
-      "file": "public/images/blog/lead-response-time-for-service-businesses/featured-overlay.webp",
-      "hash": "6ee3b6b27a48b800",
-      "provider": "unsplash",
-      "imageId": "UPPJYvky81I",
-      "generatedAt": "2026-04-06T04:54:02.024Z"
+      "file": "public/images/features/calendars.webp",
+      "hash": "1899ddd7a3cb8e00",
+      "provider": "pexels",
+      "imageId": "6870317",
+      "generatedAt": "2026-04-06T21:19:02.761Z"
+    }
+  },
+  "workflows": {
+    "featured-clean": {
+      "file": "public/images/features/workflows-raw.webp",
+      "hash": "3c3a7e6666737c00",
+      "provider": "pexels",
+      "imageId": "19125851",
+      "generatedAt": "2026-04-06T21:19:09.293Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/features/workflows.webp",
+      "hash": "3c3a7e6666737c00",
+      "provider": "pexels",
+      "imageId": "19125851",
+      "generatedAt": "2026-04-06T21:19:09.294Z"
+    }
+  },
+  "growth-revenue-systems": {
+    "featured-clean": {
+      "file": "public/images/services/growth-revenue-systems-raw.webp",
+      "hash": "a4e0d99b1e0c3000",
+      "provider": "pexels",
+      "imageId": "5833349",
+      "generatedAt": "2026-04-06T21:19:17.802Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/services/growth-revenue-systems.webp",
+      "hash": "a4e0d99b1e0c3000",
+      "provider": "pexels",
+      "imageId": "5833349",
+      "generatedAt": "2026-04-06T21:19:17.803Z"
+    }
+  },
+  "smart-website-systems": {
+    "featured-clean": {
+      "file": "public/images/services/smart-website-systems-raw.webp",
+      "hash": "a4a4918da9f87000",
+      "provider": "pexels",
+      "imageId": "4895437",
+      "generatedAt": "2026-04-06T21:19:25.398Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/services/smart-website-systems.webp",
+      "hash": "a4a4918da9f87000",
+      "provider": "pexels",
+      "imageId": "4895437",
+      "generatedAt": "2026-04-06T21:19:25.399Z"
+    }
+  },
+  "multi-channel-lead-capture-for-salons": {
+    "featured-clean": {
+      "file": "public/images/blog/multi-channel-lead-capture-for-salons-raw.webp",
+      "hash": "3363f3fbb3fbfc00",
+      "provider": "pexels",
+      "imageId": "6870321",
+      "generatedAt": "2026-04-06T22:10:00.580Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/blog/multi-channel-lead-capture-for-salons.webp",
+      "hash": "3363f3fbb3fbfc00",
+      "provider": "pexels",
+      "imageId": "6870321",
+      "generatedAt": "2026-04-06T22:10:00.581Z"
+    }
+  },
+  "review-automation-for-roofing-companies": {
+    "featured-clean": {
+      "file": "public/images/blog/review-automation-for-roofing-companies-raw.webp",
+      "hash": "4d305085e1393400",
+      "provider": "pexels",
+      "imageId": "32050399",
+      "generatedAt": "2026-04-06T22:10:09.269Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/blog/review-automation-for-roofing-companies.webp",
+      "hash": "4d305085e1393400",
+      "provider": "pexels",
+      "imageId": "32050399",
+      "generatedAt": "2026-04-06T22:10:09.269Z"
+    }
+  },
+  "customer-feedback-loop-framework": {
+    "featured-clean": {
+      "file": "public/images/resources/customer-feedback-loop-framework-raw.webp",
+      "hash": "783ababca666f000",
+      "provider": "pexels",
+      "imageId": "8353819",
+      "generatedAt": "2026-04-06T22:19:27.994Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/resources/customer-feedback-loop-framework.webp",
+      "hash": "783ababca666f000",
+      "provider": "pexels",
+      "imageId": "8353819",
+      "generatedAt": "2026-04-06T22:19:27.994Z"
+    }
+  },
+  "sales-pipeline-visibility-framework": {
+    "featured-clean": {
+      "file": "public/images/resources/sales-pipeline-visibility-framework-raw.webp",
+      "hash": "e0d2921a1a126000",
+      "provider": "pexels",
+      "imageId": "5831337",
+      "generatedAt": "2026-04-06T22:19:38.309Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/resources/sales-pipeline-visibility-framework.webp",
+      "hash": "e0d2921a1a126000",
+      "provider": "pexels",
+      "imageId": "5831337",
+      "generatedAt": "2026-04-06T22:19:38.310Z"
+    }
+  },
+  "realtor-lead-follow-up-automation": {
+    "featured-clean": {
+      "file": "public/images/case-studies/realtor-lead-follow-up-automation-raw.webp",
+      "hash": "4141c182af2e1c00",
+      "provider": "pexels",
+      "imageId": "3846638",
+      "generatedAt": "2026-04-06T22:19:47.384Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/case-studies/realtor-lead-follow-up-automation.webp",
+      "hash": "4141c182af2e1c00",
+      "provider": "pexels",
+      "imageId": "3846638",
+      "generatedAt": "2026-04-06T22:19:47.384Z"
     }
   },
   "appointment-business-booking-automation": {
     "featured-clean": {
-      "file": "public/images/case-studies/appointment-business-booking-automation/featured-clean.webp",
-      "hash": "7070a467276c3000",
+      "file": "public/images/case-studies/appointment-business-booking-automation-raw.webp",
+      "hash": "47876343135b8000",
       "provider": "unsplash",
-      "imageId": "9F83toLNfkA",
-      "generatedAt": "2026-04-06T04:54:15.930Z"
+      "imageId": "_j3j817vaOU",
+      "generatedAt": "2026-04-06T22:20:01.102Z"
     },
     "featured-overlay": {
-      "file": "public/images/case-studies/appointment-business-booking-automation/featured-overlay.webp",
-      "hash": "7070a467276c3000",
+      "file": "public/images/case-studies/appointment-business-booking-automation.webp",
+      "hash": "47876343135b8000",
       "provider": "unsplash",
-      "imageId": "9F83toLNfkA",
-      "generatedAt": "2026-04-06T04:54:15.932Z"
-    }
-  },
-  "authority-signals-for-local-search": {
-    "featured-clean": {
-      "file": "public/images/resources/authority-signals-for-local-search/featured-clean.webp",
-      "hash": "50602252d3d34400",
-      "provider": "unsplash",
-      "imageId": "HNUWwuE50Bo",
-      "generatedAt": "2026-04-06T04:54:28.067Z"
-    },
-    "featured-overlay": {
-      "file": "public/images/resources/authority-signals-for-local-search/featured-overlay.webp",
-      "hash": "50602252d3d34400",
-      "provider": "unsplash",
-      "imageId": "HNUWwuE50Bo",
-      "generatedAt": "2026-04-06T04:54:28.068Z"
+      "imageId": "_j3j817vaOU",
+      "generatedAt": "2026-04-06T22:20:01.102Z"
     }
   }
 }

@@ -19,8 +19,9 @@ export function applyFixes(current: TuneOverrides, fixes: DebugFixAction[]): Tun
         next.titleScale = (next.titleScale ?? 1.0) - 0.1;
         break;
       case 'increaseContrast':
-        next.gradientStrength = (next.gradientStrength ?? 1.0) + 0.1;
-        next.vignetteStrength = (next.vignetteStrength ?? 1.0) + 0.1;
+        next.gradientStrength = (next.gradientStrength ?? 1.0) + 0.15;
+        next.vignetteStrength = (next.vignetteStrength ?? 1.0) + 0.15;
+        next.brightnessMultiplier = (next.brightnessMultiplier ?? 1.0) * 0.92;
         break;
       case 'increaseWidth':
         next.maxTextWidth = (next.maxTextWidth ?? 780) + 80;
@@ -66,6 +67,9 @@ export function clampOverrides(overrides: TuneOverrides): TuneOverrides {
       : undefined,
     blurSigma: overrides.blurSigma
       ? Math.max(3, Math.min(14, overrides.blurSigma))
+      : undefined,
+    brightnessMultiplier: overrides.brightnessMultiplier
+      ? Math.max(0.65, Math.min(1.0, overrides.brightnessMultiplier))
       : undefined,
   };
 }

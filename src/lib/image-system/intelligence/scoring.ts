@@ -10,8 +10,52 @@ import type {
   ScoredImage,
 } from '../types';
 
+const NEGATIVE_TERMS = [
+  'illustration',
+  'vector',
+  'cartoon',
+  'clipart',
+  '3d render',
+  'cgi',
+  'abstract',
+  'mockup',
+  'template',
+];
+
+function extractIntentTerms(metadata: ContentMetadata): string[] {
+  return [
+    metadata.primaryKeyword,
+    metadata.title,
+    ...metadata.topics,
+    ...metadata.systems,
+    ...metadata.tags,
+    ...metadata.sectionHeadings,
+  ]
+    .join(' ')
+    .toLowerCase()
+    .split(/\s+/)
+    .map(term => term.replace(/[^a-z0-9-]/g, ''))
+    .filter(term => term.length > 3);
+}
+
+function imageMatchesIntent(image: ProviderImage, metadata: ContentMetadata): boolean {
+  const imageTerms = [image.description, ...image.tags].join(' ').toLowerCase();
+  if (NEGATIVE_TERMS.some(term => imageTerms.includes(term))) return false;
+
+  const intentTerms = extractIntentTerms(metadata);
+  const directMatches = intentTerms.filter(term => imageTerms.includes(term)).length;
+  if (directMatches > 0) return true;
+
+  const businessContext = ['business', 'service', 'customer', 'client', 'office', 'professional'];
+  return businessContext.some(term => imageTerms.includes(term));
+}
+
 /** Calculate how relevant an image is to the article topic */
 function scoreSubjectRelevance(image: ProviderImage, metadata: ContentMetadata): number {
+  if (!imageMatchesIntent(image, metadata)) {
+    return 0;
+  }
+
   const searchTerms = [
     metadata.primaryKeyword,
     ...metadata.topics,

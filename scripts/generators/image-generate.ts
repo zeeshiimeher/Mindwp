@@ -95,7 +95,7 @@ function parseArgs(): CliArgs {
 // ─── Content Loaders ────────────────────────────────────────────────
 // Dynamic imports to load content registries
 
-type ContentDomain = 'blog' | 'resources' | 'industries' | 'case-studies';
+type ContentDomain = 'blog' | 'resources' | 'industries' | 'case-studies' | 'features' | 'services';
 type ContentMetadata = {
   title: string;
   primaryKeyword: string;
@@ -194,10 +194,14 @@ async function loadAllResourceSlugs(): Promise<string[]> {
 }
 
 async function loadContentMetadata(slug: string, domain: ContentDomain): Promise<ContentMetadata | null> {
-  const contentDir = path.resolve(`src/domains/${domain === 'case-studies' ? 'case-studies' : domain}/content`);
+  // Features + services use /data/ directory with .ts files instead of /content/ with .tsx
+  const isDataDomain = domain === 'features' || domain === 'services';
+  const subDir = isDataDomain ? 'data' : 'content';
+  const ext = isDataDomain ? '.ts' : '.tsx';
+  const contentDir = path.resolve(`src/domains/${domain}/${subDir}`);
   if (!fs.existsSync(contentDir)) return null;
 
-  const files = fs.readdirSync(contentDir).filter((f) => f.endsWith('.tsx'));
+  const files = fs.readdirSync(contentDir).filter((f) => f.endsWith(ext));
 
   for (const file of files) {
     const filePath = path.join(contentDir, file);
@@ -208,8 +212,10 @@ async function loadContentMetadata(slug: string, domain: ContentDomain): Promise
     // Find the export-level title: appears right after slug in the export block
     // Handles both `slug,\n  title:` (variable ref) and `slug: '...',\n  title:` (inline)
     const exportTitleMatch = content.match(/slug(?:,|:\s*['"][^'"]+['"]\s*,)\s*\n\s+title:\s*['"]([^'"]{5,80})['"]/);
+    // Features/services: hero title is the display title
+    const heroTitleMatch = content.match(/hero:\s*\{[\s\S]*?title:\s*['"]([^'"]{5,120})['"]/);
     const headingsMatches = [...content.matchAll(/heading:\s*['"]([^'"]+)['"]/g)];
-    const title = exportTitleMatch?.[1] ?? headingsMatches[0]?.[1] ?? slug;
+    const title = exportTitleMatch?.[1] ?? heroTitleMatch?.[1] ?? headingsMatches[0]?.[1] ?? slug;
 
     const keywordMatch = content.match(/primaryKeyword:\s*['"]([^'"]+)['"]/);
     const topicsMatch = content.match(/topics:\s*\[([\s\S]*?)\]/);
@@ -237,6 +243,8 @@ const DEFAULT_TEST_SLUGS: Record<ContentDomain, string> = {
   'case-studies': 'appointment-business-booking-automation',
   resources: 'authority-signals-for-local-search',
   industries: 'plumbing', // update when industry content is available
+  features: 'crm',
+  services: 'crm-infrastructure-implementation',
 };
 
 // ─── Pipeline Import ────────────────────────────────────────────────
@@ -317,17 +325,21 @@ async function runTestMode(slug: string, domain: ContentDomain = 'blog', regener
         dedup.removeImage(slug, variant);
         console.log(`🗑️  Cleared previous index entry: ${variant}`);
       }
-      const variantPath = `public/images/${domain}/${slug}/${variant}.webp`;
-      if (fs.existsSync(variantPath)) {
-        fs.unlinkSync(variantPath);
-        console.log(`🗑️  Deleted existing: ${variantPath}`);
+    }
+    // Clean up new flat naming
+    const overlayPath = `public/images/${domain}/${slug}.webp`;
+    const rawPath = `public/images/${domain}/${slug}-raw.webp`;
+    for (const p of [overlayPath, rawPath]) {
+      if (fs.existsSync(p)) {
+        fs.unlinkSync(p);
+        console.log(`🗑️  Deleted existing: ${p}`);
       }
     }
-    // Also clean up legacy featured.webp if present
-    const legacyPath = `public/images/${domain}/${slug}/featured.webp`;
-    if (fs.existsSync(legacyPath)) {
-      fs.unlinkSync(legacyPath);
-      console.log(`🗑️  Deleted legacy: ${legacyPath}`);
+    // Also clean up legacy per-slug folder if present
+    const legacyDir = `public/images/${domain}/${slug}`;
+    if (fs.existsSync(legacyDir) && fs.statSync(legacyDir).isDirectory()) {
+      fs.rmSync(legacyDir, { recursive: true });
+      console.log(`🗑️  Deleted legacy folder: ${legacyDir}`);
     }
     if (dedup.hasImage(slug, 'featured' as any)) {
       dedup.removeImage(slug, 'featured' as any);
@@ -351,8 +363,8 @@ async function runTestMode(slug: string, domain: ContentDomain = 'blog', regener
   if (result) {
     console.log('');
     console.log('✅ Image generated successfully!');
-    console.log(`   📁 Clean:   public/images/${domain}/${slug}/featured-clean.webp`);
-    console.log(`   📁 Overlay: public/images/${domain}/${slug}/featured-overlay.webp`);
+    console.log(`   📁 Clean:   public/images/${domain}/${slug}-raw.webp`);
+    console.log(`   📁 Overlay: public/images/${domain}/${slug}.webp`);
     console.log(`   🏢 Provider: ${result.provider}`);
     console.log(`   🆔 Image ID: ${result.imageId}`);
     console.log(`   📊 Score: ${result.relevanceScore}`);
@@ -387,9 +399,13 @@ async function runBulkMode(domain: ContentDomain) {
       slugs = await loadAllResourceSlugs();
       break;
     default: {
-      const contentDir = path.resolve(`src/domains/${domain}/content`);
+      // Features + services use /data/ directory with .ts files
+      const isDataDomain = domain === 'features' || domain === 'services';
+      const subDir = isDataDomain ? 'data' : 'content';
+      const ext = isDataDomain ? '.ts' : '.tsx';
+      const contentDir = path.resolve(`src/domains/${domain}/${subDir}`);
       if (fs.existsSync(contentDir)) {
-        const files = fs.readdirSync(contentDir).filter((f) => f.endsWith('.tsx'));
+        const files = fs.readdirSync(contentDir).filter((f) => f.endsWith(ext));
         for (const file of files) {
           const content = fs.readFileSync(path.join(contentDir, file), 'utf-8');
           const slugMatch = content.match(/slug:\s*['"]([^'"]+)['"]/);
@@ -452,7 +468,7 @@ async function runSinglePost(slug: string) {
   console.log(`\n🔄 Generating image for: ${slug}\n`);
 
   // Try blog first, then other domains
-  const domains: ContentDomain[] = ['blog', 'resources', 'case-studies', 'industries'];
+  const domains: ContentDomain[] = ['blog', 'resources', 'case-studies', 'industries', 'features', 'services'];
   const pipeline = await importPipeline();
 
   for (const domain of domains) {

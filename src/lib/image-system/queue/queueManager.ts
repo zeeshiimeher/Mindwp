@@ -132,7 +132,7 @@ export function createDomainJobs(
 ): number {
   let added = 0;
   for (const post of posts) {
-    addJob(domain, post.slug, 'featured', post.queries);
+    addJob(domain, post.slug, 'featured-clean', post.queries);
     added++;
   }
   return added;

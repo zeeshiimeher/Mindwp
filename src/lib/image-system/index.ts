@@ -64,6 +64,9 @@ export {
 } from './semantic/contentAnalyzer';
 export { generateSemanticQueries } from './semantic/queryGenerator';
 
+// SEO
+export { buildExifMetadata, generateImageSeo } from './seo/imageMetadata';
+
 // Dedup
 export {
   getImageEntry,

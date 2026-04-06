@@ -11,6 +11,9 @@ import type {
   LayoutVariant,
   OverlayDesignContext,
   OverlayVariant,
+  TextStyle,
+  VisualMode,
+  VisualTreatment,
 } from '../types';
 
 // ─── Variant Resolution ─────────────────────────────────────────────
@@ -151,6 +154,8 @@ const DOMAIN_ACCENTS: Record<ContentDomain, string> = {
   resources: '#3b82f6',
   'case-studies': '#22c55e',
   industries: '#f59e0b',
+  features: '#8b5cf6',
+  services: '#06b6d4',
 };
 
 const INDUSTRY_PALETTES: Array<{ keywords: string[]; accent: string }> = [
@@ -230,6 +235,49 @@ export function resolveLayoutVariant(slug: string): LayoutVariant {
   return ((Math.abs(h) % 3) + 1) as LayoutVariant;
 }
 
+function hashSlug(slug: string): number {
+  let hash = 0;
+  for (let i = 0; i < slug.length; i++) {
+    hash = ((hash << 5) - hash + slug.charCodeAt(i)) | 0;
+  }
+  return Math.abs(hash);
+}
+
+export function resolveVisualMode(
+  metadata: ContentMetadata,
+  domain: ContentDomain,
+  variant: OverlayVariant
+): VisualMode {
+  if (domain === 'features') return 'illustration';
+  if (domain === 'services') return 'illustration';
+  if (domain === 'case-studies') return 'real';
+
+  if (variant === 'system' || variant === 'analytical') {
+    return hashSlug(metadata.slug) % 2 === 0 ? 'illustration' : 'real';
+  }
+
+  return 'real';
+}
+
+export function resolveTextStyle(metadata: ContentMetadata, domain: ContentDomain): TextStyle {
+  if (domain === 'services' || domain === 'features') return 'saas';
+
+  if (domain === 'blog') {
+    const title = metadata.title.toLowerCase();
+    const isProblemTitle = ['problem', 'mistake', 'slow', 'stuck', 'broken', 'leak', 'missed'].some(
+      keyword => title.includes(keyword)
+    );
+    return isProblemTitle ? 'hook' : 'saas';
+  }
+
+  return 'saas';
+}
+
+export function resolveVisualTreatment(slug: string): VisualTreatment {
+  const treatments: VisualTreatment[] = ['clean', 'highlight', 'frame', 'depth'];
+  return treatments[hashSlug(slug) % treatments.length] ?? 'clean';
+}
+
 // ─── Design Context Builder ─────────────────────────────────────────
 
 /** Build the complete overlay design context from content, domain, and brightness */
@@ -239,10 +287,20 @@ export function buildDesignContext(
   brightness: BrightnessResult
 ): OverlayDesignContext {
   const variant = resolveOverlayVariant(metadata, domain);
-  const layout = resolveLayoutVariant(metadata.slug);
+  let layout = resolveLayoutVariant(metadata.slug);
+  const visualMode = resolveVisualMode(metadata, domain, variant);
+  const textStyle = resolveTextStyle(metadata, domain);
+  const treatment = resolveVisualTreatment(metadata.slug);
   const icon = resolveIcon(metadata);
   const badge = extractBadgeText(metadata, domain);
   const palette = resolveColorPalette(metadata, domain, brightness);
+
+  // Domain-specific layout enforcement
+  if (domain === 'features') {
+    layout = 2; // Always L2 Focused for feature cards
+  } else if (domain === 'services') {
+    layout = 2; // Service pages use a structured left-copy / right-visual composition
+  }
 
   // Variant-specific palette adjustments
   if (variant === 'local') {
@@ -254,5 +312,16 @@ export function buildDesignContext(
     palette.overlayStart = Math.min(palette.overlayStart * 1.08, 0.92);
   }
 
-  return { variant, layout, icon, badge, palette };
+  return {
+    slug: metadata.slug,
+    domain,
+    variant,
+    layout,
+    visualMode,
+    textStyle,
+    treatment,
+    icon,
+    badge,
+    palette,
+  };
 }

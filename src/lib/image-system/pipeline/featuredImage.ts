@@ -16,6 +16,8 @@ import type {
 } from '../types';
 
 import { calculateTitleLayout } from './titleLayout';
+import { renderImage } from '../render/renderer';
+import { resolveRenderCopy } from '../render/renderCopy';
 
 /** Calculate adaptive overlay opacity based on image brightness (legacy helper) */
 export function calculateOverlayOpacity(brightness: BrightnessResult): number {
@@ -207,8 +209,17 @@ function generateOverlaySvg(
   if (tuneOverrides?.vignetteStrength) lp.vignetteStrength = tuneOverrides.vignetteStrength;
   if (tuneOverrides?.textBlockXPercent) lp.textBlockXPercent = tuneOverrides.textBlockXPercent;
 
-  // Layout engine — use per-variant maxTextWidth for wrapping
-  const rawLayout = calculateTitleLayout(title, width, lp.maxTextWidth);
+  // L1 boost — Editorial layout is visually weak at default scale
+  if (layout === 1) {
+    lp.fontScale *= 1.15;
+    lp.maxTextWidth += 80;
+  }
+
+  // Layout engine — pass maxTextWidth DIVIDED by fontScale so that after
+  // fontScale multiplication the rendered width stays within bounds.
+  // calculateTitleLayout finds fontSize at pre-scale width, then we scale up.
+  const preScaleMaxWidth = Math.round(lp.maxTextWidth / lp.fontScale);
+  const rawLayout = calculateTitleLayout(title, width, preScaleMaxWidth);
   const fontSize = Math.round(rawLayout.fontSize * lp.fontScale);
   const lineHeight = Math.round(fontSize * lp.lineHeight);
   const titleLines = rawLayout.lines;
@@ -483,25 +494,61 @@ export async function generateFeaturedImage(
   // ── Step 2: Background depth layer (adaptive blur + dim + desaturate) ──
   const blurSigma = tuneOverrides?.blurSigma
     ?? Math.max(5, Math.min(8, 6 + (brightness.average - 100) * 0.02));
+
+  // Brightness normalization — ensure consistent visual depth across images
+  let brightnessMult = tuneOverrides?.brightnessMultiplier ?? 1.0;
+  if (brightness.average > 150) brightnessMult *= 0.9;
+  else if (brightness.average < 70) brightnessMult *= 1.05;
+
+  const bgBrightness = 0.78 * brightnessMult;
   const depthBase = await sharp(resized)
     .blur(blurSigma)
-    .modulate({ brightness: 0.78, saturation: 0.9 })
+    .modulate({ brightness: bgBrightness, saturation: 0.9 })
     .toBuffer();
 
-  // ── Step 3: Generate cinematic SVG overlay ──
-  const { svg: overlaySvg, debugInput } = generateOverlaySvg(
-    title, outputWidth, outputHeight, design, label, tuneOverrides
+  let effectiveTuneOverrides = tuneOverrides;
+  const renderCopy = resolveRenderCopy(title, design);
+
+  // ── Step 3: Keep current title geometry as the debug contract source ──
+  let { debugInput } = generateOverlaySvg(
+    renderCopy.title, outputWidth, outputHeight, design, label, effectiveTuneOverrides
   );
-  const overlayBuffer = Buffer.from(overlaySvg);
+
+  const weakCtrSignal =
+    debugInput.fontSize < 48 && debugInput.textBlockWidth / outputWidth < 0.35;
+
+  if (weakCtrSignal) {
+    effectiveTuneOverrides = {
+      ...effectiveTuneOverrides,
+      titleScale: (effectiveTuneOverrides?.titleScale ?? 1.0) + 0.15,
+      gradientStrength: (effectiveTuneOverrides?.gradientStrength ?? 1.0) + 0.1,
+      brightnessMultiplier: (effectiveTuneOverrides?.brightnessMultiplier ?? 1.0) * 0.92,
+    };
+
+    ({ debugInput } = generateOverlaySvg(
+      renderCopy.title,
+      outputWidth,
+      outputHeight,
+      design,
+      label,
+      effectiveTuneOverrides
+    ));
+  }
 
   // Fill in brightness from the actual source
   debugInput.brightness = brightness.average;
 
-  // ── Step 4: Composite → final overlay image ──
-  const overlay = await sharp(depthBase)
-    .composite([{ input: overlayBuffer, top: 0, left: 0 }])
-    .webp({ quality: 90 })
-    .toBuffer();
+  // ── Step 4: Render → SVG → PNG → WebP ──
+  const { overlay } = await renderImage({
+    imageBuffer: depthBase,
+    title,
+    label,
+    brightness,
+    design,
+    outputWidth,
+    outputHeight,
+    tuneOverrides: effectiveTuneOverrides,
+  });
 
   return { clean, overlay, debugInput };
 }

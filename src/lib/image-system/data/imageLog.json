@@ -1,0 +1,1800 @@
+[
+  {
+    "slug": "multi-channel-lead-capture-for-salons",
+    "domain": "blog",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 8.82906111150648,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T18:37:29.984Z",
+    "alt": "Multi Channel Lead Capture for Salons — multi channel lead capture for salons",
+    "filename": "multi-channel-lead-capture-for-salons.webp"
+  },
+  {
+    "slug": "review-automation-for-roofing-companies",
+    "domain": "blog",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 7.420932949996959,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T18:39:25.979Z",
+    "alt": "Review Automation for Roofing Companies — review automation for roofing companies",
+    "filename": "review-automation-for-roofing-companies.webp"
+  },
+  {
+    "slug": "customer-feedback-loop-framework",
+    "domain": "resources",
+    "score": 8,
+    "layout": 1,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.15,
+    "vignetteStrength": 1.15,
+    "contrast": 8.629705970172918,
+    "issues": [
+      "subject competing with text"
+    ],
+    "fixesApplied": [
+      "retryImage",
+      "increaseContrast"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T18:40:36.493Z",
+    "alt": "Customer Feedback Loop Framework illustration",
+    "filename": "customer-feedback-loop-framework.webp"
+  },
+  {
+    "slug": "sales-pipeline-visibility-framework",
+    "domain": "resources",
+    "score": 9.9,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 7.651145749692735,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T18:41:32.420Z",
+    "alt": "Sales Pipeline Visibility Framework illustration",
+    "filename": "sales-pipeline-visibility-framework.webp"
+  },
+  {
+    "slug": "realtor-lead-follow-up-automation",
+    "domain": "case-studies",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 9.608857971028245,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T18:42:40.392Z",
+    "alt": "Realtor Lead Follow-Up Automation illustration",
+    "filename": "realtor-lead-follow-up-automation.webp"
+  },
+  {
+    "slug": "appointment-business-booking-automation",
+    "domain": "case-studies",
+    "score": 7.9,
+    "layout": 2,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.15,
+    "vignetteStrength": 1.15,
+    "contrast": 10.82229683192314,
+    "issues": [
+      "subject competing with text"
+    ],
+    "fixesApplied": [
+      "retryImage",
+      "increaseContrast"
+    ],
+    "iteration": 0,
+    "timestamp": "2026-04-06T18:43:22.182Z",
+    "alt": "Dental Practice Booking Automation illustration",
+    "filename": "appointment-business-booking-automation.webp"
+  },
+  {
+    "slug": "calendars",
+    "domain": "features",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 1.0999999999999999,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 9.041223712465488,
+    "issues": [],
+    "fixesApplied": [
+      "increaseText",
+      "increaseWidth"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T18:44:30.220Z",
+    "alt": "Structured Online Booking Integrated into Your System illustration",
+    "filename": "calendars.webp"
+  },
+  {
+    "slug": "workflows",
+    "domain": "features",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 0.95,
+    "maxTextWidth": 700,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 10.02375860543468,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T18:45:12.605Z",
+    "alt": "Automate Follow-Ups Without Losing Control illustration",
+    "filename": "workflows.webp"
+  },
+  {
+    "slug": "growth-revenue-systems",
+    "domain": "services",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1.2999999999999998,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.1,
+    "vignetteStrength": 1.1,
+    "contrast": 7.736334166883347,
+    "issues": [],
+    "fixesApplied": [
+      "increaseText"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T18:46:15.858Z",
+    "alt": "Growth slows when leads come in but nothing moves them forward reliably illustration",
+    "filename": "growth-revenue-systems.webp"
+  },
+  {
+    "slug": "smart-website-systems",
+    "domain": "services",
+    "score": 9.7,
+    "layout": 3,
+    "titleScale": 1.2999999999999998,
+    "maxTextWidth": 720,
+    "gradientStrength": 1.25,
+    "vignetteStrength": 1.25,
+    "contrast": 7.4526383452014,
+    "issues": [
+      "text too wide"
+    ],
+    "fixesApplied": [
+      "increaseText",
+      "increaseContrast",
+      "decreaseWidth"
+    ],
+    "iteration": 2,
+    "timestamp": "2026-04-06T18:47:34.792Z",
+    "alt": "A booking system should make the next step easier, not add more admin around it illustration",
+    "filename": "smart-website-systems.webp"
+  },
+  {
+    "slug": "multi-channel-lead-capture-for-salons",
+    "domain": "blog",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 19.177895960888225,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:07:00.416Z",
+    "alt": "Multi Channel Lead Capture for Salons — multi channel lead capture for salons",
+    "filename": "multi-channel-lead-capture-for-salons.webp"
+  },
+  {
+    "slug": "review-automation-for-roofing-companies",
+    "domain": "blog",
+    "score": 7.8,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.15,
+    "vignetteStrength": 1.15,
+    "contrast": 5.1090564892530015,
+    "issues": [
+      "low contrast"
+    ],
+    "fixesApplied": [
+      "increaseContrast"
+    ],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:09:31.799Z",
+    "alt": "Review Automation for Roofing Companies — review automation for roofing companies",
+    "filename": "review-automation-for-roofing-companies.webp"
+  },
+  {
+    "slug": "multi-channel-lead-capture-for-salons",
+    "domain": "blog",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 18.07134217579959,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:13:40.282Z",
+    "alt": "Multi Channel Lead Capture for Salons — multi channel lead capture for salons",
+    "filename": "multi-channel-lead-capture-for-salons.webp"
+  },
+  {
+    "slug": "review-automation-for-roofing-companies",
+    "domain": "blog",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 9.438750028068137,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:13:48.344Z",
+    "alt": "Review Automation for Roofing Companies — review automation for roofing companies",
+    "filename": "review-automation-for-roofing-companies.webp"
+  },
+  {
+    "slug": "multi-channel-lead-capture-for-salons",
+    "domain": "blog",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 18.07134217579959,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:15:08.064Z",
+    "alt": "Multi Channel Lead Capture for Salons — multi channel lead capture for salons",
+    "filename": "multi-channel-lead-capture-for-salons.webp"
+  },
+  {
+    "slug": "customer-feedback-loop-framework",
+    "domain": "resources",
+    "score": 10,
+    "layout": 1,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 11.512374980486486,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:15:49.639Z",
+    "alt": "Customer Feedback Loop Framework illustration",
+    "filename": "customer-feedback-loop-framework.webp"
+  },
+  {
+    "slug": "sales-pipeline-visibility-framework",
+    "domain": "resources",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 13.11115661213599,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:16:02.095Z",
+    "alt": "Sales Pipeline Visibility Framework illustration",
+    "filename": "sales-pipeline-visibility-framework.webp"
+  },
+  {
+    "slug": "customer-feedback-loop-framework",
+    "domain": "resources",
+    "score": 10,
+    "layout": 1,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 11.519643738252807,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:17:09.556Z",
+    "alt": "Customer Feedback Loop Framework illustration",
+    "filename": "customer-feedback-loop-framework.webp"
+  },
+  {
+    "slug": "sales-pipeline-visibility-framework",
+    "domain": "resources",
+    "score": 7.9,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.15,
+    "vignetteStrength": 1.15,
+    "contrast": 5.156290422960768,
+    "issues": [
+      "low contrast"
+    ],
+    "fixesApplied": [
+      "increaseContrast"
+    ],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:17:25.279Z",
+    "alt": "Sales Pipeline Visibility Framework illustration",
+    "filename": "sales-pipeline-visibility-framework.webp"
+  },
+  {
+    "slug": "sales-pipeline-visibility-framework",
+    "domain": "resources",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 13.108912026874544,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:20:14.324Z",
+    "alt": "Sales Pipeline Visibility Framework illustration",
+    "filename": "sales-pipeline-visibility-framework.webp"
+  },
+  {
+    "slug": "realtor-lead-follow-up-automation",
+    "domain": "case-studies",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 7.865846528486268,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:20:45.617Z",
+    "alt": "Realtor Lead Follow-Up Automation illustration",
+    "filename": "realtor-lead-follow-up-automation.webp"
+  },
+  {
+    "slug": "appointment-business-booking-automation",
+    "domain": "case-studies",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 9.947286819518695,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:20:55.113Z",
+    "alt": "Dental Practice Booking Automation illustration",
+    "filename": "appointment-business-booking-automation.webp"
+  },
+  {
+    "slug": "calendars",
+    "domain": "features",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 1.1237499999999998,
+    "maxTextWidth": 740,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 17.7602888971605,
+    "issues": [],
+    "fixesApplied": [
+      "increaseText",
+      "increaseWidth"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T20:21:34.621Z",
+    "alt": "Structured Online Booking Integrated into Your System illustration",
+    "filename": "calendars.webp"
+  },
+  {
+    "slug": "workflows",
+    "domain": "features",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 1.0050208333333333,
+    "maxTextWidth": 660,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 17.7724375531066,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:21:50.215Z",
+    "alt": "Automate Follow-Ups Without Losing Control illustration",
+    "filename": "workflows.webp"
+  },
+  {
+    "slug": "calendars",
+    "domain": "features",
+    "score": 8.4,
+    "layout": 2,
+    "titleScale": 1.1424580729166665,
+    "maxTextWidth": 720,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 17.83659536976719,
+    "issues": [
+      "text too small"
+    ],
+    "fixesApplied": [
+      "increaseText",
+      "increaseWidth"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T20:22:58.575Z",
+    "alt": "Structured Online Booking Integrated into Your System illustration",
+    "filename": "calendars.webp"
+  },
+  {
+    "slug": "workflows",
+    "domain": "features",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 0.9924580729166665,
+    "maxTextWidth": 640,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 17.815122656276653,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:23:08.470Z",
+    "alt": "Automate Follow-Ups Without Losing Control illustration",
+    "filename": "workflows.webp"
+  },
+  {
+    "slug": "calendars",
+    "domain": "features",
+    "score": 7.9,
+    "layout": 2,
+    "titleScale": 1.1325334921874999,
+    "maxTextWidth": 704,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 17.84417869182869,
+    "issues": [
+      "text too small"
+    ],
+    "fixesApplied": [
+      "increaseText",
+      "increaseWidth"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T20:24:12.824Z",
+    "alt": "Structured Online Booking Integrated into Your System illustration",
+    "filename": "calendars.webp"
+  },
+  {
+    "slug": "workflows",
+    "domain": "features",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 0.9825334921874999,
+    "maxTextWidth": 624,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 17.876936819848428,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:24:21.581Z",
+    "alt": "Automate Follow-Ups Without Losing Control illustration",
+    "filename": "workflows.webp"
+  },
+  {
+    "slug": "calendars",
+    "domain": "features",
+    "score": 8.4,
+    "layout": 2,
+    "titleScale": 1.1243457130859373,
+    "maxTextWidth": 691,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 17.83299188530302,
+    "issues": [
+      "text too small"
+    ],
+    "fixesApplied": [
+      "increaseText",
+      "increaseWidth"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T20:26:03.668Z",
+    "alt": "Structured Online Booking Integrated into Your System illustration",
+    "filename": "calendars.webp"
+  },
+  {
+    "slug": "workflows",
+    "domain": "features",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 0.9743457130859373,
+    "maxTextWidth": 611,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 18.007194324872845,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:26:10.562Z",
+    "alt": "Automate Follow-Ups Without Losing Control illustration",
+    "filename": "workflows.webp"
+  },
+  {
+    "slug": "calendars",
+    "domain": "features",
+    "score": 8.3,
+    "layout": 2,
+    "titleScale": 1.1173861008496093,
+    "maxTextWidth": 680,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 17.8251549517069,
+    "issues": [
+      "text too small"
+    ],
+    "fixesApplied": [
+      "increaseText",
+      "increaseWidth"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T20:27:46.909Z",
+    "alt": "Structured Online Booking Integrated into Your System illustration",
+    "filename": "calendars.webp"
+  },
+  {
+    "slug": "workflows",
+    "domain": "features",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 0.9673861008496093,
+    "maxTextWidth": 600,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 18.007115474450536,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:28:06.291Z",
+    "alt": "Automate Follow-Ups Without Losing Control illustration",
+    "filename": "workflows.webp"
+  },
+  {
+    "slug": "calendars",
+    "domain": "features",
+    "score": 8.1,
+    "layout": 2,
+    "titleScale": 1.1113399377192992,
+    "maxTextWidth": 670,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 17.62700000025748,
+    "issues": [
+      "text too small",
+      "weak visual weight"
+    ],
+    "fixesApplied": [
+      "increaseText",
+      "increaseWidth"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T20:33:30.666Z",
+    "alt": "Structured Online Booking Integrated into Your System illustration",
+    "filename": "calendars.webp"
+  },
+  {
+    "slug": "workflows",
+    "domain": "features",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 0.9613399377192992,
+    "maxTextWidth": 590,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 18.066246408663027,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:33:44.351Z",
+    "alt": "Automate Follow-Ups Without Losing Control illustration",
+    "filename": "workflows.webp"
+  },
+  {
+    "slug": "growth-revenue-systems",
+    "domain": "services",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1.4949999999999997,
+    "maxTextWidth": 750,
+    "gradientStrength": 1.2750000000000001,
+    "vignetteStrength": 1.2750000000000001,
+    "contrast": 9.367284468019678,
+    "issues": [
+      "text too wide"
+    ],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:34:48.854Z",
+    "alt": "Growth slows when leads come in but nothing moves them forward reliably illustration",
+    "filename": "growth-revenue-systems.webp"
+  },
+  {
+    "slug": "smart-website-systems",
+    "domain": "services",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1.5697499999999993,
+    "maxTextWidth": 750,
+    "gradientStrength": 1.3083333333333333,
+    "vignetteStrength": 1.3083333333333333,
+    "contrast": 15.386452800695569,
+    "issues": [
+      "text too wide"
+    ],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:35:07.083Z",
+    "alt": "A booking system should make the next step easier, not add more admin around it illustration",
+    "filename": "smart-website-systems.webp"
+  },
+  {
+    "slug": "growth-revenue-systems",
+    "domain": "services",
+    "score": 8.6,
+    "layout": 3,
+    "titleScale": 1.6286156249999992,
+    "maxTextWidth": 690,
+    "gradientStrength": 1.4833333333333334,
+    "vignetteStrength": 1.4833333333333334,
+    "contrast": 6.485402295637092,
+    "issues": [
+      "low contrast",
+      "text too wide"
+    ],
+    "fixesApplied": [
+      "increaseContrast",
+      "decreaseWidth"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T20:36:14.075Z",
+    "alt": "Growth slows when leads come in but nothing moves them forward reliably illustration",
+    "filename": "growth-revenue-systems.webp"
+  },
+  {
+    "slug": "smart-website-systems",
+    "domain": "services",
+    "score": 7.5,
+    "layout": 3,
+    "titleScale": 1.6286156249999992,
+    "maxTextWidth": 690,
+    "gradientStrength": 1.4833333333333334,
+    "vignetteStrength": 1.4833333333333334,
+    "contrast": 6.292010021353911,
+    "issues": [
+      "low contrast",
+      "text too wide",
+      "text overflow"
+    ],
+    "fixesApplied": [
+      "increaseContrast",
+      "decreaseWidth"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T20:36:30.184Z",
+    "alt": "A booking system should make the next step easier, not add more admin around it illustration",
+    "filename": "smart-website-systems.webp"
+  },
+  {
+    "slug": "growth-revenue-systems",
+    "domain": "services",
+    "score": 8.6,
+    "layout": 3,
+    "titleScale": 1.6286156249999992,
+    "maxTextWidth": 690,
+    "gradientStrength": 1.4833333333333334,
+    "vignetteStrength": 1.4833333333333334,
+    "contrast": 6.289411838210556,
+    "issues": [
+      "low contrast",
+      "text too wide"
+    ],
+    "fixesApplied": [
+      "increaseContrast",
+      "decreaseWidth"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T20:37:35.272Z",
+    "alt": "Growth slows when leads come in but nothing moves them forward reliably illustration",
+    "filename": "growth-revenue-systems.webp"
+  },
+  {
+    "slug": "smart-website-systems",
+    "domain": "services",
+    "score": 4.5,
+    "layout": 3,
+    "titleScale": 1.6286156249999992,
+    "maxTextWidth": 750,
+    "gradientStrength": 1.4833333333333334,
+    "vignetteStrength": 1.4833333333333334,
+    "contrast": 4.516788015501712,
+    "issues": [
+      "low contrast",
+      "subject competing with text",
+      "text too wide",
+      "text overflow"
+    ],
+    "fixesApplied": [
+      "increaseContrast",
+      "retryImage"
+    ],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:37:46.681Z",
+    "alt": "A booking system should make the next step easier, not add more admin around it illustration",
+    "filename": "smart-website-systems.webp"
+  },
+  {
+    "slug": "growth-revenue-systems",
+    "domain": "services",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1.6286156249999992,
+    "maxTextWidth": 690,
+    "gradientStrength": 1.4833333333333334,
+    "vignetteStrength": 1.4833333333333334,
+    "contrast": 7.097345219976921,
+    "issues": [
+      "text too wide"
+    ],
+    "fixesApplied": [
+      "increaseContrast",
+      "decreaseWidth"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T20:38:38.946Z",
+    "alt": "Growth slows when leads come in but nothing moves them forward reliably illustration",
+    "filename": "growth-revenue-systems.webp"
+  },
+  {
+    "slug": "smart-website-systems",
+    "domain": "services",
+    "score": 4.5,
+    "layout": 3,
+    "titleScale": 1.6774740937499992,
+    "maxTextWidth": 738,
+    "gradientStrength": 1.5333333333333334,
+    "vignetteStrength": 1.5333333333333334,
+    "contrast": 4.592447204283328,
+    "issues": [
+      "low contrast",
+      "subject competing with text",
+      "text too wide",
+      "text overflow"
+    ],
+    "fixesApplied": [
+      "increaseContrast",
+      "retryImage"
+    ],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:41:28.532Z",
+    "alt": "A booking system should make the next step easier, not add more admin around it illustration",
+    "filename": "smart-website-systems.webp"
+  },
+  {
+    "slug": "growth-revenue-systems",
+    "domain": "services",
+    "score": 9.5,
+    "layout": 3,
+    "titleScale": 1.6774740937499992,
+    "maxTextWidth": 738,
+    "gradientStrength": 1.3833333333333335,
+    "vignetteStrength": 1.3833333333333335,
+    "contrast": 7.092270357175968,
+    "issues": [
+      "text too wide"
+    ],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:44:22.478Z",
+    "alt": "Growth slows when leads come in but nothing moves them forward reliably illustration",
+    "filename": "growth-revenue-systems.webp"
+  },
+  {
+    "slug": "smart-website-systems",
+    "domain": "services",
+    "score": 7.1,
+    "layout": 3,
+    "titleScale": 1.7194109460937492,
+    "maxTextWidth": 738,
+    "gradientStrength": 1.55,
+    "vignetteStrength": 1.55,
+    "contrast": 12.12509080312329,
+    "issues": [
+      "subject competing with text",
+      "text too wide",
+      "text overflow"
+    ],
+    "fixesApplied": [
+      "retryImage",
+      "increaseContrast"
+    ],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:44:35.693Z",
+    "alt": "A booking system should make the next step easier, not add more admin around it illustration",
+    "filename": "smart-website-systems.webp"
+  },
+  {
+    "slug": "growth-revenue-systems",
+    "domain": "services",
+    "score": 8.6,
+    "layout": 3,
+    "titleScale": 1.7194109460937492,
+    "maxTextWidth": 678,
+    "gradientStrength": 1.55,
+    "vignetteStrength": 1.55,
+    "contrast": 6.400257572159366,
+    "issues": [
+      "low contrast",
+      "text too wide"
+    ],
+    "fixesApplied": [
+      "increaseContrast",
+      "decreaseWidth"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T20:46:05.575Z",
+    "alt": "Growth slows when leads come in but nothing moves them forward reliably illustration",
+    "filename": "growth-revenue-systems.webp"
+  },
+  {
+    "slug": "smart-website-systems",
+    "domain": "services",
+    "score": 4.5,
+    "layout": 3,
+    "titleScale": 1.7194109460937492,
+    "maxTextWidth": 738,
+    "gradientStrength": 1.55,
+    "vignetteStrength": 1.55,
+    "contrast": 4.564227295107554,
+    "issues": [
+      "low contrast",
+      "subject competing with text",
+      "text too wide",
+      "text overflow"
+    ],
+    "fixesApplied": [
+      "increaseContrast",
+      "retryImage"
+    ],
+    "iteration": 0,
+    "timestamp": "2026-04-06T20:46:16.924Z",
+    "alt": "A booking system should make the next step easier, not add more admin around it illustration",
+    "filename": "smart-website-systems.webp"
+  },
+  {
+    "slug": "calendars",
+    "domain": "features",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 0.9559991602875252,
+    "maxTextWidth": 581,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 18.781734311215185,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T21:13:24.814Z",
+    "alt": "Structured Online Booking Integrated into Your System illustration",
+    "filename": "calendars.webp"
+  },
+  {
+    "slug": "workflows",
+    "domain": "features",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 1.3012191644860875,
+    "maxTextWidth": 653,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 18.801990336361268,
+    "issues": [],
+    "fixesApplied": [
+      "increaseText",
+      "increaseWidth"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T21:13:35.661Z",
+    "alt": "Automate Follow-Ups Without Losing Control illustration",
+    "filename": "workflows.webp"
+  },
+  {
+    "slug": "growth-revenue-systems",
+    "domain": "services",
+    "score": 8.3,
+    "layout": 2,
+    "titleScale": 1.7194109460937492,
+    "maxTextWidth": 738,
+    "gradientStrength": 1.55,
+    "vignetteStrength": 1.55,
+    "contrast": 19.168092514588604,
+    "issues": [
+      "subject competing with text"
+    ],
+    "fixesApplied": [
+      "retryImage",
+      "increaseContrast"
+    ],
+    "iteration": 0,
+    "timestamp": "2026-04-06T21:14:04.250Z",
+    "alt": "Growth slows when leads come in but nothing moves them forward reliably illustration",
+    "filename": "growth-revenue-systems.webp"
+  },
+  {
+    "slug": "smart-website-systems",
+    "domain": "services",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 1.7194109460937492,
+    "maxTextWidth": 738,
+    "gradientStrength": 1.4000000000000001,
+    "vignetteStrength": 1.4000000000000001,
+    "contrast": 19.168092514588604,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T21:14:15.580Z",
+    "alt": "A booking system should make the next step easier, not add more admin around it illustration",
+    "filename": "smart-website-systems.webp"
+  },
+  {
+    "slug": "calendars",
+    "domain": "features",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 1.3271227137384234,
+    "maxTextWidth": 653,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 13.02023641831141,
+    "issues": [],
+    "fixesApplied": [
+      "increaseWidth",
+      "increaseText"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T21:16:46.148Z",
+    "alt": "Structured Online Booking Integrated into Your System illustration",
+    "filename": "calendars.webp"
+  },
+  {
+    "slug": "workflows",
+    "domain": "features",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 1.15075970243118,
+    "maxTextWidth": 653,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 13.338511359657886,
+    "issues": [],
+    "fixesApplied": [
+      "increaseText",
+      "increaseWidth"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T21:16:55.501Z",
+    "alt": "Automate Follow-Ups Without Losing Control illustration",
+    "filename": "workflows.webp"
+  },
+  {
+    "slug": "growth-revenue-systems",
+    "domain": "services",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 1.7562554663671865,
+    "maxTextWidth": 738,
+    "gradientStrength": 1.4142857142857146,
+    "vignetteStrength": 1.4142857142857146,
+    "contrast": 13.320534838041128,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T21:17:04.114Z",
+    "alt": "Growth slows when leads come in but nothing moves them forward reliably illustration",
+    "filename": "growth-revenue-systems.webp"
+  },
+  {
+    "slug": "smart-website-systems",
+    "domain": "services",
+    "score": 8.3,
+    "layout": 2,
+    "titleScale": 1.7891852563615713,
+    "maxTextWidth": 738,
+    "gradientStrength": 1.5767857142857145,
+    "vignetteStrength": 1.5767857142857145,
+    "contrast": 13.319894812487322,
+    "issues": [
+      "subject competing with text"
+    ],
+    "fixesApplied": [
+      "retryImage",
+      "increaseContrast"
+    ],
+    "iteration": 0,
+    "timestamp": "2026-04-06T21:17:13.720Z",
+    "alt": "A booking system should make the next step easier, not add more admin around it illustration",
+    "filename": "smart-website-systems.webp"
+  },
+  {
+    "slug": "calendars",
+    "domain": "features",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 1.357872165114137,
+    "maxTextWidth": 653,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 13.512605784881835,
+    "issues": [],
+    "fixesApplied": [
+      "increaseText",
+      "increaseWidth"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T21:19:02.692Z",
+    "alt": "Structured Online Booking Integrated into Your System illustration",
+    "filename": "calendars.webp"
+  },
+  {
+    "slug": "workflows",
+    "domain": "features",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 1.0280226216673007,
+    "maxTextWidth": 573,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 13.515309072838146,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T21:19:09.224Z",
+    "alt": "Automate Follow-Ups Without Losing Control illustration",
+    "filename": "workflows.webp"
+  },
+  {
+    "slug": "growth-revenue-systems",
+    "domain": "services",
+    "score": 8.3,
+    "layout": 2,
+    "titleScale": 1.7891852563615713,
+    "maxTextWidth": 738,
+    "gradientStrength": 1.5767857142857145,
+    "vignetteStrength": 1.5767857142857145,
+    "contrast": 13.319089636738745,
+    "issues": [
+      "subject competing with text"
+    ],
+    "fixesApplied": [
+      "retryImage",
+      "increaseContrast"
+    ],
+    "iteration": 0,
+    "timestamp": "2026-04-06T21:19:17.731Z",
+    "alt": "Growth slows when leads come in but nothing moves them forward reliably illustration",
+    "filename": "growth-revenue-systems.webp"
+  },
+  {
+    "slug": "smart-website-systems",
+    "domain": "services",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 1.7891852563615713,
+    "maxTextWidth": 738,
+    "gradientStrength": 1.4267857142857145,
+    "vignetteStrength": 1.4267857142857145,
+    "contrast": 13.306994190799298,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T21:19:25.319Z",
+    "alt": "A booking system should make the next step easier, not add more admin around it illustration",
+    "filename": "smart-website-systems.webp"
+  },
+  {
+    "slug": "multi-channel-lead-capture-for-salons",
+    "domain": "blog",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 17.246008707310562,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T21:55:31.773Z",
+    "alt": "Multi Channel Lead Capture for Salons — multi channel lead capture for salons",
+    "filename": "multi-channel-lead-capture-for-salons.webp"
+  },
+  {
+    "slug": "review-automation-for-roofing-companies",
+    "domain": "blog",
+    "score": 8.3,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.15,
+    "vignetteStrength": 1.15,
+    "contrast": 4.694776850997905,
+    "issues": [
+      "low contrast"
+    ],
+    "fixesApplied": [
+      "increaseContrast"
+    ],
+    "iteration": 0,
+    "timestamp": "2026-04-06T21:55:49.470Z",
+    "alt": "Review Automation for Roofing Companies — review automation for roofing companies",
+    "filename": "review-automation-for-roofing-companies.webp"
+  },
+  {
+    "slug": "multi-channel-lead-capture-for-salons",
+    "domain": "blog",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 17.246008707310562,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T21:57:41.807Z",
+    "alt": "Multi Channel Lead Capture for Salons — multi channel lead capture for salons",
+    "filename": "multi-channel-lead-capture-for-salons.webp"
+  },
+  {
+    "slug": "review-automation-for-roofing-companies",
+    "domain": "blog",
+    "score": 8.3,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.15,
+    "vignetteStrength": 1.15,
+    "contrast": 4.694776850997905,
+    "issues": [
+      "low contrast"
+    ],
+    "fixesApplied": [
+      "increaseContrast"
+    ],
+    "iteration": 0,
+    "timestamp": "2026-04-06T21:57:52.817Z",
+    "alt": "Review Automation for Roofing Companies — review automation for roofing companies",
+    "filename": "review-automation-for-roofing-companies.webp"
+  },
+  {
+    "slug": "multi-channel-lead-capture-for-salons",
+    "domain": "blog",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 17.246008707310562,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T21:59:14.735Z",
+    "alt": "Multi Channel Lead Capture for Salons — multi channel lead capture for salons",
+    "filename": "multi-channel-lead-capture-for-salons.webp"
+  },
+  {
+    "slug": "review-automation-for-roofing-companies",
+    "domain": "blog",
+    "score": 7.8,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.15,
+    "vignetteStrength": 1.15,
+    "contrast": 5.011749088481073,
+    "issues": [
+      "low contrast"
+    ],
+    "fixesApplied": [
+      "increaseContrast"
+    ],
+    "iteration": 0,
+    "timestamp": "2026-04-06T21:59:26.872Z",
+    "alt": "Review Automation for Roofing Companies — review automation for roofing companies",
+    "filename": "review-automation-for-roofing-companies.webp"
+  },
+  {
+    "slug": "multi-channel-lead-capture-for-salons",
+    "domain": "blog",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 17.992375789812076,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:01:39.444Z",
+    "alt": "Multi Channel Lead Capture for Salons — multi channel lead capture for salons",
+    "filename": "multi-channel-lead-capture-for-salons.webp"
+  },
+  {
+    "slug": "review-automation-for-roofing-companies",
+    "domain": "blog",
+    "score": 9.2,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 6.827657619774377,
+    "issues": [
+      "low contrast"
+    ],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:01:49.854Z",
+    "alt": "Review Automation for Roofing Companies — review automation for roofing companies",
+    "filename": "review-automation-for-roofing-companies.webp"
+  },
+  {
+    "slug": "customer-feedback-loop-framework",
+    "domain": "resources",
+    "score": 10,
+    "layout": 1,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 7.498169385464609,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:04:24.473Z",
+    "alt": "Customer Feedback Loop Framework illustration",
+    "filename": "customer-feedback-loop-framework.webp"
+  },
+  {
+    "slug": "sales-pipeline-visibility-framework",
+    "domain": "resources",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 13.108912026874544,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:04:33.910Z",
+    "alt": "Sales Pipeline Visibility Framework illustration",
+    "filename": "sales-pipeline-visibility-framework.webp"
+  },
+  {
+    "slug": "realtor-lead-follow-up-automation",
+    "domain": "case-studies",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 8.598817742920625,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:04:45.976Z",
+    "alt": "Realtor Lead Follow-Up Automation illustration",
+    "filename": "realtor-lead-follow-up-automation.webp"
+  },
+  {
+    "slug": "appointment-business-booking-automation",
+    "domain": "case-studies",
+    "score": 8.3,
+    "layout": 2,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.15,
+    "vignetteStrength": 1.15,
+    "contrast": 4.642959035095733,
+    "issues": [
+      "low contrast"
+    ],
+    "fixesApplied": [
+      "increaseContrast"
+    ],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:04:58.820Z",
+    "alt": "Dental Practice Booking Automation illustration",
+    "filename": "appointment-business-booking-automation.webp"
+  },
+  {
+    "slug": "customer-feedback-loop-framework",
+    "domain": "resources",
+    "score": 10,
+    "layout": 1,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 7.498169385464609,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:06:17.218Z",
+    "alt": "Customer Feedback Loop Framework illustration",
+    "filename": "customer-feedback-loop-framework.webp"
+  },
+  {
+    "slug": "sales-pipeline-visibility-framework",
+    "domain": "resources",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 13.286689725596112,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:06:25.942Z",
+    "alt": "Sales Pipeline Visibility Framework illustration",
+    "filename": "sales-pipeline-visibility-framework.webp"
+  },
+  {
+    "slug": "realtor-lead-follow-up-automation",
+    "domain": "case-studies",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 8.716021194106835,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:06:31.976Z",
+    "alt": "Realtor Lead Follow-Up Automation illustration",
+    "filename": "realtor-lead-follow-up-automation.webp"
+  },
+  {
+    "slug": "appointment-business-booking-automation",
+    "domain": "case-studies",
+    "score": 8.3,
+    "layout": 2,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.15,
+    "vignetteStrength": 1.15,
+    "contrast": 5.095882212641549,
+    "issues": [
+      "low contrast"
+    ],
+    "fixesApplied": [
+      "increaseContrast"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T22:06:40.735Z",
+    "alt": "Dental Practice Booking Automation illustration",
+    "filename": "appointment-business-booking-automation.webp"
+  },
+  {
+    "slug": "customer-feedback-loop-framework",
+    "domain": "resources",
+    "score": 10,
+    "layout": 1,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.15,
+    "vignetteStrength": 1.15,
+    "contrast": 7.092119548028092,
+    "issues": [],
+    "fixesApplied": [
+      "increaseContrast"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T22:08:16.559Z",
+    "alt": "Customer Feedback Loop Framework illustration",
+    "filename": "customer-feedback-loop-framework.webp"
+  },
+  {
+    "slug": "sales-pipeline-visibility-framework",
+    "domain": "resources",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.0150000000000001,
+    "vignetteStrength": 1.0150000000000001,
+    "contrast": 7.609828591262626,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:08:26.487Z",
+    "alt": "Sales Pipeline Visibility Framework illustration",
+    "filename": "sales-pipeline-visibility-framework.webp"
+  },
+  {
+    "slug": "realtor-lead-follow-up-automation",
+    "domain": "case-studies",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 9.008048152065353,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:08:33.175Z",
+    "alt": "Realtor Lead Follow-Up Automation illustration",
+    "filename": "realtor-lead-follow-up-automation.webp"
+  },
+  {
+    "slug": "appointment-business-booking-automation",
+    "domain": "case-studies",
+    "score": 8.3,
+    "layout": 2,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.15,
+    "vignetteStrength": 1.15,
+    "contrast": 4.547478276945752,
+    "issues": [
+      "low contrast"
+    ],
+    "fixesApplied": [
+      "increaseContrast"
+    ],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:08:43.160Z",
+    "alt": "Dental Practice Booking Automation illustration",
+    "filename": "appointment-business-booking-automation.webp"
+  },
+  {
+    "slug": "multi-channel-lead-capture-for-salons",
+    "domain": "blog",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 18.410580578377544,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:10:00.518Z",
+    "alt": "Multi Channel Lead Capture for Salons — multi channel lead capture for salons",
+    "filename": "multi-channel-lead-capture-for-salons.webp"
+  },
+  {
+    "slug": "review-automation-for-roofing-companies",
+    "domain": "blog",
+    "score": 8.3,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.15,
+    "vignetteStrength": 1.15,
+    "contrast": 4.588510258804636,
+    "issues": [
+      "low contrast"
+    ],
+    "fixesApplied": [
+      "increaseContrast"
+    ],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:10:09.189Z",
+    "alt": "Review Automation for Roofing Companies — review automation for roofing companies",
+    "filename": "review-automation-for-roofing-companies.webp"
+  },
+  {
+    "slug": "customer-feedback-loop-framework",
+    "domain": "resources",
+    "score": 8.7,
+    "layout": 1,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.1650000000000003,
+    "vignetteStrength": 1.1650000000000003,
+    "contrast": 6.489994213077995,
+    "issues": [
+      "low contrast"
+    ],
+    "fixesApplied": [
+      "increaseContrast"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T22:10:22.325Z",
+    "alt": "Customer Feedback Loop Framework illustration",
+    "filename": "customer-feedback-loop-framework.webp"
+  },
+  {
+    "slug": "sales-pipeline-visibility-framework",
+    "domain": "resources",
+    "score": 8.3,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.1650000000000003,
+    "vignetteStrength": 1.1650000000000003,
+    "contrast": 5.094588401848493,
+    "issues": [
+      "low contrast"
+    ],
+    "fixesApplied": [
+      "increaseContrast"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T22:10:34.908Z",
+    "alt": "Sales Pipeline Visibility Framework illustration",
+    "filename": "sales-pipeline-visibility-framework.webp"
+  },
+  {
+    "slug": "realtor-lead-follow-up-automation",
+    "domain": "case-studies",
+    "score": 9.1,
+    "layout": 2,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.15,
+    "vignetteStrength": 1.15,
+    "contrast": 6.022043026413687,
+    "issues": [
+      "low contrast"
+    ],
+    "fixesApplied": [
+      "increaseContrast"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T22:10:50.668Z",
+    "alt": "Realtor Lead Follow-Up Automation illustration",
+    "filename": "realtor-lead-follow-up-automation.webp"
+  },
+  {
+    "slug": "appointment-business-booking-automation",
+    "domain": "case-studies",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 11.394794982216728,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:10:59.046Z",
+    "alt": "Dental Practice Booking Automation illustration",
+    "filename": "appointment-business-booking-automation.webp"
+  },
+  {
+    "slug": "customer-feedback-loop-framework",
+    "domain": "resources",
+    "score": 9.2,
+    "layout": 1,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.0150000000000003,
+    "vignetteStrength": 1.0150000000000003,
+    "contrast": 6.375836174035244,
+    "issues": [
+      "low contrast"
+    ],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:13:51.519Z",
+    "alt": "Customer Feedback Loop Framework illustration",
+    "filename": "customer-feedback-loop-framework.webp"
+  },
+  {
+    "slug": "sales-pipeline-visibility-framework",
+    "domain": "resources",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.0150000000000003,
+    "vignetteStrength": 1.0150000000000003,
+    "contrast": 7.638430166672683,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:14:01.958Z",
+    "alt": "Sales Pipeline Visibility Framework illustration",
+    "filename": "sales-pipeline-visibility-framework.webp"
+  },
+  {
+    "slug": "realtor-lead-follow-up-automation",
+    "domain": "case-studies",
+    "score": 8.3,
+    "layout": 2,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.15,
+    "vignetteStrength": 1.15,
+    "contrast": 5.0870836969371895,
+    "issues": [
+      "low contrast"
+    ],
+    "fixesApplied": [
+      "increaseContrast"
+    ],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:14:11.952Z",
+    "alt": "Realtor Lead Follow-Up Automation illustration",
+    "filename": "realtor-lead-follow-up-automation.webp"
+  },
+  {
+    "slug": "appointment-business-booking-automation",
+    "domain": "case-studies",
+    "score": 8.1,
+    "layout": 2,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.15,
+    "vignetteStrength": 1.15,
+    "contrast": 7.212231573873754,
+    "issues": [
+      "subject competing with text"
+    ],
+    "fixesApplied": [
+      "retryImage",
+      "increaseContrast"
+    ],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:14:25.924Z",
+    "alt": "Dental Practice Booking Automation illustration",
+    "filename": "appointment-business-booking-automation.webp"
+  },
+  {
+    "slug": "appointment-business-booking-automation",
+    "domain": "case-studies",
+    "score": 8.3,
+    "layout": 2,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.15,
+    "vignetteStrength": 1.15,
+    "contrast": 5.048025357989798,
+    "issues": [
+      "low contrast"
+    ],
+    "fixesApplied": [
+      "increaseContrast"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T22:18:32.082Z",
+    "alt": "Dental Practice Booking Automation illustration",
+    "filename": "appointment-business-booking-automation.webp"
+  },
+  {
+    "slug": "customer-feedback-loop-framework",
+    "domain": "resources",
+    "score": 9.2,
+    "layout": 1,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.0150000000000003,
+    "vignetteStrength": 1.0150000000000003,
+    "contrast": 6.594411813782079,
+    "issues": [
+      "low contrast"
+    ],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:19:27.904Z",
+    "alt": "Customer Feedback Loop Framework illustration",
+    "filename": "customer-feedback-loop-framework.webp"
+  },
+  {
+    "slug": "sales-pipeline-visibility-framework",
+    "domain": "resources",
+    "score": 10,
+    "layout": 3,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.0150000000000003,
+    "vignetteStrength": 1.0150000000000003,
+    "contrast": 7.6366795387010376,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:19:38.214Z",
+    "alt": "Sales Pipeline Visibility Framework illustration",
+    "filename": "sales-pipeline-visibility-framework.webp"
+  },
+  {
+    "slug": "realtor-lead-follow-up-automation",
+    "domain": "case-studies",
+    "score": 10,
+    "layout": 2,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "vignetteStrength": 1,
+    "contrast": 9.122852886331586,
+    "issues": [],
+    "fixesApplied": [],
+    "iteration": 0,
+    "timestamp": "2026-04-06T22:19:47.291Z",
+    "alt": "Realtor Lead Follow-Up Automation illustration",
+    "filename": "realtor-lead-follow-up-automation.webp"
+  },
+  {
+    "slug": "appointment-business-booking-automation",
+    "domain": "case-studies",
+    "score": 9.2,
+    "layout": 2,
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.15,
+    "vignetteStrength": 1.15,
+    "contrast": 6.499609646227026,
+    "issues": [
+      "low contrast"
+    ],
+    "fixesApplied": [
+      "increaseContrast"
+    ],
+    "iteration": 1,
+    "timestamp": "2026-04-06T22:20:01.020Z",
+    "alt": "Dental Practice Booking Automation illustration",
+    "filename": "appointment-business-booking-automation.webp"
+  }
+]

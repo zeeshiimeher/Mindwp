@@ -8,9 +8,13 @@ import sharp from 'sharp';
 import { IMAGE_SIZES } from '../config';
 import type { ImageType } from '../types';
 
+function getSizeKey(imageType: ImageType): keyof typeof IMAGE_SIZES {
+  return imageType === 'content' ? 'content' : 'featured';
+}
+
 /** Optimize an image buffer to WebP at the correct dimensions */
 export async function optimizeImage(imageBuffer: Buffer, imageType: ImageType): Promise<Buffer> {
-  const size = IMAGE_SIZES[imageType];
+  const size = IMAGE_SIZES[getSizeKey(imageType)];
 
   return sharp(imageBuffer)
     .resize(size.width, size.height, {

@@ -20,6 +20,8 @@ function createDefaultScores(): ProviderScores {
     resources: { ...defaults },
     industries: { ...defaults },
     'case-studies': { ...defaults },
+    features: { ...defaults },
+    services: { ...defaults },
   };
 }
 
