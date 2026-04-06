@@ -18,28 +18,28 @@
 
 | # | Topic | Score | Level | Blogs | Resources | Industries | Services | Case Studies |
 |---|-------|-------|-------|-------|-----------|------------|----------|--------------|
-| 1 | lead-management | 100 | 🟢 Dominant | 5 | 6 | 4 | 1 | 4 |
-| 2 | missed-calls | 100 | 🟢 Dominant | 5 | 5 | 2 | 2 | 4 |
-| 3 | review-generation | 100 | 🟢 Dominant | 5 | 5 | 18 | 2 | 4 |
-| 4 | lead-response-time | 85 | 🔵 Strong | 2 | 2 | 4 | 2 | 4 |
-| 5 | follow-up | 85 | 🔵 Strong | 2 | 2 | 10 | 2 | 4 |
+| 1 | lead-management | 100 | 🟢 Dominant | 5 | 6 | 6 | 1 | 4 |
+| 2 | missed-calls | 100 | 🟢 Dominant | 5 | 5 | 4 | 2 | 4 |
+| 3 | review-generation | 100 | 🟢 Dominant | 5 | 5 | 23 | 2 | 4 |
+| 4 | lead-response-time | 85 | 🔵 Strong | 2 | 2 | 5 | 2 | 4 |
+| 5 | follow-up | 85 | 🔵 Strong | 2 | 2 | 13 | 2 | 4 |
 | 6 | lead-routing | 85 | 🔵 Strong | 2 | 1 | 2 | 1 | 2 |
-| 7 | client-reactivation | 85 | 🔵 Strong | 2 | 1 | 2 | 2 | 2 |
+| 7 | client-reactivation | 85 | 🔵 Strong | 2 | 1 | 3 | 2 | 2 |
 | 8 | no-show-reduction | 80 | 🔵 Strong | 1 | 1 | 3 | 1 | 2 |
-| 9 | crm-integration | 78 | 🔵 Strong | 2 | 1 | 2 | 1 | 1 |
+| 9 | crm-integration | 78 | 🔵 Strong | 2 | 1 | 3 | 1 | 1 |
 | 10 | local-visibility | 78 | 🔵 Strong | 2 | 1 | 2 | 1 | 1 |
-| 11 | reputation-monitoring | 73 | 🟡 Growing | 1 | 1 | 2 | 1 | 1 |
+| 11 | reputation-monitoring | 73 | 🟡 Growing | 1 | 1 | 3 | 1 | 1 |
 | 12 | crm-pipeline | 70 | 🟡 Growing | 4 | 0 | 3 | 1 | 5 |
-| 13 | pipeline-visibility | 70 | 🟡 Growing | 2 | 1 | 3 | 1 | 0 |
+| 13 | pipeline-visibility | 70 | 🟡 Growing | 2 | 1 | 5 | 1 | 0 |
 | 14 | review-automation | 68 | 🟡 Growing | 4 | 1 | 0 | 2 | 1 |
 | 15 | lead-capture | 65 | 🟡 Growing | 2 | 1 | 0 | 3 | 4 |
 | 16 | website-infrastructure | 65 | 🟡 Growing | 2 | 1 | 0 | 8 | 4 |
 | 17 | systems-first-websites | 65 | 🟡 Growing | 2 | 1 | 0 | 1 | 2 |
-| 18 | booking-systems | 63 | 🟡 Growing | 2 | 1 | 7 | 0 | 1 |
+| 18 | booking-systems | 63 | 🟡 Growing | 2 | 1 | 10 | 0 | 1 |
 | 19 | conversion-optimization | 60 | 🟡 Growing | 1 | 1 | 0 | 4 | 2 |
 | 20 | emergency-handling | 58 | 🟠 Weak | 1 | 1 | 2 | 0 | 1 |
-| 21 | booking-automation | 55 | 🟠 Weak | 1 | 0 | 3 | 1 | 7 |
-| 22 | lead-qualification | 55 | 🟠 Weak | 2 | 1 | 6 | 0 | 0 |
+| 21 | booking-automation | 55 | 🟠 Weak | 1 | 0 | 4 | 1 | 7 |
+| 22 | lead-qualification | 55 | 🟠 Weak | 2 | 1 | 8 | 0 | 0 |
 | 23 | google-business-profile | 55 | 🟠 Weak | 3 | 1 | 0 | 1 | 0 |
 | 24 | revenue-tracking | 55 | 🟠 Weak | 0 | 1 | 0 | 1 | 3 |
 | 25 | local-seo | 50 | 🟠 Weak | 2 | 1 | 0 | 1 | 0 |
@@ -69,7 +69,7 @@
 |--------|-------|-----------|--------|--------|
 | Blogs | 5 | ≥ 5 | 25 | 25 |
 | Resources | 6 | ≥ 1 | 25 | 25 |
-| Industries | 4 | ≥ 2 | 20 | 20 |
+| Industries | 6 | ≥ 2 | 20 | 20 |
 | Services | 1 | ≥ 1 | 15 | 15 |
 | Case Studies | 4 | ≥ 2 | 15 | 15 |
 | **Total** | | | **100** | **100** |
@@ -80,7 +80,7 @@
 |--------|-------|-----------|--------|--------|
 | Blogs | 5 | ≥ 5 | 25 | 25 |
 | Resources | 5 | ≥ 1 | 25 | 25 |
-| Industries | 2 | ≥ 2 | 20 | 20 |
+| Industries | 4 | ≥ 2 | 20 | 20 |
 | Services | 2 | ≥ 1 | 15 | 15 |
 | Case Studies | 4 | ≥ 2 | 15 | 15 |
 | **Total** | | | **100** | **100** |
@@ -91,7 +91,7 @@
 |--------|-------|-----------|--------|--------|
 | Blogs | 5 | ≥ 5 | 25 | 25 |
 | Resources | 5 | ≥ 1 | 25 | 25 |
-| Industries | 18 | ≥ 2 | 20 | 20 |
+| Industries | 23 | ≥ 2 | 20 | 20 |
 | Services | 2 | ≥ 1 | 15 | 15 |
 | Case Studies | 4 | ≥ 2 | 15 | 15 |
 | **Total** | | | **100** | **100** |
@@ -102,7 +102,7 @@
 |--------|-------|-----------|--------|--------|
 | Blogs | 2 | ≥ 5 | 25 | 10 |
 | Resources | 2 | ≥ 1 | 25 | 25 |
-| Industries | 4 | ≥ 2 | 20 | 20 |
+| Industries | 5 | ≥ 2 | 20 | 20 |
 | Services | 2 | ≥ 1 | 15 | 15 |
 | Case Studies | 4 | ≥ 2 | 15 | 15 |
 | **Total** | | | **100** | **85** |
@@ -113,7 +113,7 @@
 |--------|-------|-----------|--------|--------|
 | Blogs | 2 | ≥ 5 | 25 | 10 |
 | Resources | 2 | ≥ 1 | 25 | 25 |
-| Industries | 10 | ≥ 2 | 20 | 20 |
+| Industries | 13 | ≥ 2 | 20 | 20 |
 | Services | 2 | ≥ 1 | 15 | 15 |
 | Case Studies | 4 | ≥ 2 | 15 | 15 |
 | **Total** | | | **100** | **85** |
@@ -135,7 +135,7 @@
 |--------|-------|-----------|--------|--------|
 | Blogs | 2 | ≥ 5 | 25 | 10 |
 | Resources | 1 | ≥ 1 | 25 | 25 |
-| Industries | 2 | ≥ 2 | 20 | 20 |
+| Industries | 3 | ≥ 2 | 20 | 20 |
 | Services | 2 | ≥ 1 | 15 | 15 |
 | Case Studies | 2 | ≥ 2 | 15 | 15 |
 | **Total** | | | **100** | **85** |
@@ -157,7 +157,7 @@
 |--------|-------|-----------|--------|--------|
 | Blogs | 2 | ≥ 5 | 25 | 10 |
 | Resources | 1 | ≥ 1 | 25 | 25 |
-| Industries | 2 | ≥ 2 | 20 | 20 |
+| Industries | 3 | ≥ 2 | 20 | 20 |
 | Services | 1 | ≥ 1 | 15 | 15 |
 | Case Studies | 1 | ≥ 2 | 15 | 8 |
 | **Total** | | | **100** | **78** |
@@ -179,7 +179,7 @@
 |--------|-------|-----------|--------|--------|
 | Blogs | 1 | ≥ 5 | 25 | 5 |
 | Resources | 1 | ≥ 1 | 25 | 25 |
-| Industries | 2 | ≥ 2 | 20 | 20 |
+| Industries | 3 | ≥ 2 | 20 | 20 |
 | Services | 1 | ≥ 1 | 15 | 15 |
 | Case Studies | 1 | ≥ 2 | 15 | 8 |
 | **Total** | | | **100** | **73** |
@@ -201,7 +201,7 @@
 |--------|-------|-----------|--------|--------|
 | Blogs | 2 | ≥ 5 | 25 | 10 |
 | Resources | 1 | ≥ 1 | 25 | 25 |
-| Industries | 3 | ≥ 2 | 20 | 20 |
+| Industries | 5 | ≥ 2 | 20 | 20 |
 | Services | 1 | ≥ 1 | 15 | 15 |
 | Case Studies | 0 | ≥ 2 | 15 | 0 |
 | **Total** | | | **100** | **70** |
@@ -256,7 +256,7 @@
 |--------|-------|-----------|--------|--------|
 | Blogs | 2 | ≥ 5 | 25 | 10 |
 | Resources | 1 | ≥ 1 | 25 | 25 |
-| Industries | 7 | ≥ 2 | 20 | 20 |
+| Industries | 10 | ≥ 2 | 20 | 20 |
 | Services | 0 | ≥ 1 | 15 | 0 |
 | Case Studies | 1 | ≥ 2 | 15 | 8 |
 | **Total** | | | **100** | **63** |
@@ -289,7 +289,7 @@
 |--------|-------|-----------|--------|--------|
 | Blogs | 1 | ≥ 5 | 25 | 5 |
 | Resources | 0 | ≥ 1 | 25 | 0 |
-| Industries | 3 | ≥ 2 | 20 | 20 |
+| Industries | 4 | ≥ 2 | 20 | 20 |
 | Services | 1 | ≥ 1 | 15 | 15 |
 | Case Studies | 7 | ≥ 2 | 15 | 15 |
 | **Total** | | | **100** | **55** |
@@ -300,7 +300,7 @@
 |--------|-------|-----------|--------|--------|
 | Blogs | 2 | ≥ 5 | 25 | 10 |
 | Resources | 1 | ≥ 1 | 25 | 25 |
-| Industries | 6 | ≥ 2 | 20 | 20 |
+| Industries | 8 | ≥ 2 | 20 | 20 |
 | Services | 0 | ≥ 1 | 15 | 0 |
 | Case Studies | 0 | ≥ 2 | 15 | 0 |
 | **Total** | | | **100** | **55** |
