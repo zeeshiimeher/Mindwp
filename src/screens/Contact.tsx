@@ -1,5 +1,7 @@
-import React from 'react';
-import { Clock, Mail, MapPin, Phone, Send } from 'lucide-react';
+'use client';
+
+import React, { useEffect, useState } from 'react';
+import { CheckCircle2, Clock, Loader2, Mail, MapPin, Phone, Send } from 'lucide-react';
 
 import { Button } from '@/components/reusable/single/Button';
 import { Card } from '@/components/ui/card';
@@ -18,25 +20,49 @@ import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 export function Contact() {
   const endpoint = '/form-handler.php';
+  const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
+  const [systemParam, setSystemParam] = useState('');
+  const [sourceParam, setSourceParam] = useState('');
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const system = params.get('system') ?? '';
+    const source = params.get('source') ?? '';
+    setSystemParam(system);
+    setSourceParam(source);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const formData = new FormData(e.currentTarget);
+    setIsSubmitting(true);
+    setErrorMessage('');
 
-    await fetch(endpoint, {
-      method: 'POST',
-      body: formData,
-    });
-
-    alert('Submission received.');
+    try {
+      const formData = new FormData(e.currentTarget);
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        body: formData,
+      });
+      if (!response.ok) throw new Error('Request failed');
+      e.currentTarget.reset();
+      setSubmitted(true);
+    } catch {
+      setErrorMessage(
+        'Something went wrong. Please try again or email us directly at hello@mindwp.com.'
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
     {
       icon: Mail,
       label: 'Email',
-      value: 'hello@mindwp.comm',
-      link: 'mailto:hello@mindwp.comm',
+      value: 'hello@mindwp.com',
+      link: 'mailto:hello@mindwp.com',
     },
     {
       icon: Phone,
@@ -95,119 +121,195 @@ export function Contact() {
             {/* Contact Form */}
             <div className='contact-page-form-wrapper lg:col-span-2'>
               <Card className='contact-page-form-card-1 p-8'>
-                <h2 className='contact-page-form-heading-1 mb-6'>Send Us a Message</h2>
-
-                <form onSubmit={handleSubmit} className='contact-page-form'>
-                  {/* Name */}
-                  <div className='contact-page-form-field-1'>
-                    <Label htmlFor='name' className='contact-page-form-label-1'>
-                      Full Name *
-                    </Label>
-                    <Input
-                      id='name'
-                      name='name'
-                      type='text'
-                      placeholder='John Smith'
-                      required
-                      className='contact-page-form-input-1'
-                    />
-                  </div>
-
-                  {/* Email & Phone */}
-                  <div className='contact-page-form-row-1'>
-                    <div className='contact-page-form-field-2'>
-                      <Label htmlFor='email' className='contact-page-form-label-2'>
-                        Email Address *
-                      </Label>
-                      <Input
-                        id='email'
-                        name='email'
-                        type='email'
-                        placeholder='john@company.com'
-                        required
-                        className='contact-page-form-input-2'
-                      />
+                {submitted ? (
+                  <div className='contact-page-success l-stack'>
+                    <div className='contact-page-success-icon'>
+                      <CheckCircle2 className='text-green-600' size={48} />
                     </div>
-                    <div className='contact-page-form-field-3'>
-                      <Label htmlFor='phone' className='contact-page-form-label-3'>
-                        Phone Number
-                      </Label>
-                      <Input
-                        id='phone'
-                        name='phone'
-                        type='tel'
-                        placeholder='+44 7123 456789'
-                        className='contact-page-form-input-3'
+                    <h2 className='contact-page-success-heading'>
+                      Thanks — we&apos;ll respond within 24 hours
+                    </h2>
+                    <p className='contact-page-success-text text-muted-foreground'>
+                      We&apos;ve received your message and will get back to you on the next business
+                      day.
+                    </p>
+                    <div className='contact-page-success-actions'>
+                      <Button
+                        href='/resources'
+                        variant='outline'
+                        label='Explore Resources While You Wait'
+                      />
+                      <Button
+                        variant='outline'
+                        label='Send Another Message'
+                        onClick={() => setSubmitted(false)}
                       />
                     </div>
                   </div>
+                ) : (
+                  <>
+                    <h2 className='contact-page-form-heading-1 mb-6'>Send Us a Message</h2>
 
-                  {/* Company & Service */}
-                  <div className='contact-page-form-row-2'>
-                    <div className='contact-page-form-field-4'>
-                      <Label htmlFor='company' className='contact-page-form-label-4'>
-                        Company Name
-                      </Label>
-                      <Input
-                        id='company'
-                        name='company'
-                        type='text'
-                        placeholder='Your Company Ltd'
-                        className='contact-page-form-input-4'
-                      />
-                    </div>
-                    <div className='contact-page-form-field-5'>
-                      <Label htmlFor='service' className='contact-page-form-label-5'>
-                        Service Interested In
-                      </Label>
-                      <Select>
-                        <SelectTrigger
-                          id='service'
-                          name='service'
-                          className='contact-page-form-select-1'
-                        >
-                          <SelectValue placeholder='Select a service' />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value='smart-website-systems'>Smart Websites</SelectItem>
-                          <SelectItem value='ai-lead-handling'>AI Chatbots</SelectItem>
-                          <SelectItem value='crm-infrastructure-implementation'>
-                            CRM Infrastructure Implementation
-                          </SelectItem>
-                          <SelectItem value='seo-content'>SEO & Content</SelectItem>
-                          <SelectItem value='paid-ads'>Paid Advertising</SelectItem>
-                          <SelectItem value='not-sure'>Not Sure / General Enquiry</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-                  </div>
+                    <form onSubmit={handleSubmit} className='contact-page-form'>
+                      {/* Hidden context fields */}
+                      <input type='hidden' name='system' value={systemParam} />
+                      <input type='hidden' name='source' value={sourceParam} />
+                      {/* Name */}
+                      <div className='contact-page-form-field-1'>
+                        <Label htmlFor='name' className='contact-page-form-label-1'>
+                          Full Name *
+                        </Label>
+                        <Input
+                          id='name'
+                          name='name'
+                          type='text'
+                          placeholder='John Smith'
+                          required
+                          className='contact-page-form-input-1'
+                        />
+                      </div>
 
-                  {/* Message */}
-                  <div className='contact-page-form-field-6'>
-                    <Label htmlFor='message' className='contact-page-form-label-6'>
-                      Your Message *
-                    </Label>
-                    <Textarea
-                      id='message'
-                      name='message'
-                      placeholder="Tell us about your project and what you're looking to achieve..."
-                      rows={6}
-                      required
-                      className='contact-page-form-textarea-1'
-                    />
-                  </div>
+                      {/* Email & Phone */}
+                      <div className='contact-page-form-row-1'>
+                        <div className='contact-page-form-field-2'>
+                          <Label htmlFor='email' className='contact-page-form-label-2'>
+                            Email Address *
+                          </Label>
+                          <Input
+                            id='email'
+                            name='email'
+                            type='email'
+                            placeholder='john@company.com'
+                            required
+                            className='contact-page-form-input-2'
+                          />
+                        </div>
+                        <div className='contact-page-form-field-3'>
+                          <Label htmlFor='phone' className='contact-page-form-label-3'>
+                            Phone Number
+                          </Label>
+                          <Input
+                            id='phone'
+                            name='phone'
+                            type='tel'
+                            placeholder='+44 7123 456789'
+                            className='contact-page-form-input-3'
+                          />
+                        </div>
+                      </div>
 
-                  {/* Submit Button */}
-                  <button type='submit' className='btn btn-primary btn-block'>
-                    <Send className='btn__icon' />
-                    Send Message
-                  </button>
+                      {/* Business Type & Website */}
+                      <div className='contact-page-form-row-2'>
+                        <div className='contact-page-form-field-4'>
+                          <Label htmlFor='business-type' className='contact-page-form-label-4'>
+                            Business Type *
+                          </Label>
+                          <Select name='businessType'>
+                            <SelectTrigger
+                              id='business-type'
+                              name='businessType'
+                              className='contact-page-form-select-1'
+                            >
+                              <SelectValue placeholder='Select your industry' />
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value='home-services'>
+                                Home Services (HVAC, Plumbing, Roofing)
+                              </SelectItem>
+                              <SelectItem value='beauty'>Beauty &amp; Personal Care</SelectItem>
+                              <SelectItem value='healthcare'>Healthcare &amp; Clinics</SelectItem>
+                              <SelectItem value='professional-services'>
+                                Professional Services
+                              </SelectItem>
+                              <SelectItem value='other'>Other</SelectItem>
+                            </SelectContent>
+                          </Select>
+                        </div>
+                        <div className='contact-page-form-field-5'>
+                          <Label htmlFor='website' className='contact-page-form-label-5'>
+                            Current Website
+                          </Label>
+                          <Input
+                            id='website'
+                            name='website'
+                            type='url'
+                            placeholder='https://yourwebsite.com'
+                            className='contact-page-form-input-4'
+                          />
+                        </div>
+                      </div>
 
-                  <p className='contact-page-form-text-1 text-sm text-muted-foreground'>
-                    We&apos;ll respond within 24 hours on business days. For urgent matters, please
-                    call us directly.
-                  </p>
-                </form>
+                      {/* Goals */}
+                      <div className='contact-page-form-field-6'>
+                        <Label htmlFor='goals' className='contact-page-form-label-6'>
+                          What are your main goals? *
+                        </Label>
+                        <Textarea
+                          id='goals'
+                          name='goals'
+                          placeholder='e.g., Get more bookings, improve local SEO, automate follow-ups, reduce no-shows...'
+                          rows={4}
+                          required
+                          className='contact-page-form-textarea-1'
+                        />
+                      </div>
+
+                      {/* Monthly Budget */}
+                      <div className='contact-page-form-field-7'>
+                        <Label htmlFor='monthly-budget' className='contact-page-form-label-7'>
+                          Approximate Monthly Budget
+                        </Label>
+                        <Select name='monthlyBudget'>
+                          <SelectTrigger
+                            id='monthly-budget'
+                            name='monthlyBudget'
+                            className='contact-page-form-select-2'
+                          >
+                            <SelectValue placeholder='Select budget range' />
+                          </SelectTrigger>
+                          <SelectContent>
+                            <SelectItem value='under-1k'>Under £1,000</SelectItem>
+                            <SelectItem value='1k-3k'>£1,000 - £3,000</SelectItem>
+                            <SelectItem value='3k-5k'>£3,000 - £5,000</SelectItem>
+                            <SelectItem value='5k-10k'>£5,000 - £10,000</SelectItem>
+                            <SelectItem value='10k-plus'>£10,000+</SelectItem>
+                          </SelectContent>
+                        </Select>
+                      </div>
+
+                      {/* Error message */}
+                      {errorMessage && (
+                        <p className='contact-page-form-error text-sm text-destructive'>
+                          {errorMessage}
+                        </p>
+                      )}
+
+                      {/* Submit Button */}
+                      <button
+                        type='submit'
+                        className='btn btn-primary btn-block'
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 className='btn__icon animate-spin' />
+                            Sending…
+                          </>
+                        ) : (
+                          <>
+                            <Send className='btn__icon' />
+                            Send Message
+                          </>
+                        )}
+                      </button>
+
+                      <p className='contact-page-form-text-1 text-sm text-muted-foreground'>
+                        We&apos;ll respond within 24 hours on business days. For urgent matters,
+                        please call us directly.
+                      </p>
+                    </form>
+                  </>
+                )}
               </Card>
             </div>
 

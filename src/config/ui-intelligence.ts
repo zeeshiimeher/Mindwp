@@ -131,9 +131,8 @@ export const CTA_CONFIG: Record<ContentNodeType, CTAConfig> = {
   },
   service: {
     intensity: 'strong',
-    title: 'Get Started With This Service',
-    description:
-      'See how this service fits your business. We start with understanding, not selling.',
+    title: 'See How This Fits Your Business',
+    description: 'Every engagement starts with understanding your situation — not a sales pitch.',
     actionLabel: 'Start a Conversation',
     actionHref: '/contact',
   },
@@ -157,6 +156,48 @@ export const CTA_CONFIG: Record<ContentNodeType, CTAConfig> = {
     description: 'Find the specific context that matches your business.',
     actionLabel: 'Start a Conversation',
     actionHref: '/contact',
+  },
+};
+
+// ── Intent-Based CTA Overrides ───────────────────────────────────────
+
+/**
+ * Intent-specific overrides for CTA title and description.
+ * Keyed by `{pageType}:{contentIntent}` (e.g. "blog:PROBLEM").
+ * Labels stay governed by CTA_CONFIG — only title/description vary.
+ */
+export const CTA_INTENT_OVERRIDES: Record<string, { title: string; description: string }> = {
+  // Blog intents
+  'blog:PROBLEM': {
+    title: 'Ready to Fix This?',
+    description:
+      'You\u2019ve seen the problem. We build the system that solves it \u2014 no guesswork, no generic fixes.',
+  },
+  'blog:SYSTEM': {
+    title: 'See How This Works for Your Business',
+    description:
+      'This system is built for businesses like yours. A conversation helps us map it to your exact situation.',
+  },
+  'blog:FRAMEWORK': {
+    title: 'Explore the Full Approach',
+    description:
+      'Frameworks only work when applied. We can help you see where this fits into your business.',
+  },
+  // Resource intents
+  'resource:ACTIONABLE': {
+    title: 'Ready to Implement This?',
+    description:
+      'You\u2019ve got the blueprint. We handle the implementation so it actually gets done right.',
+  },
+  'resource:EDUCATIONAL': {
+    title: 'Want Help Applying This?',
+    description:
+      'Understanding is the first step. We can help you turn this knowledge into a working system.',
+  },
+  'resource:EXAMPLE': {
+    title: 'Want Results Like These?',
+    description:
+      'Every example started with a conversation about where things stood. Yours can too.',
   },
 };
 

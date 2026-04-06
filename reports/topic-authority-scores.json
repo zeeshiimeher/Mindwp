@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-04-06T01:02:38.584Z",
+  "generatedAt": "2026-04-06T02:22:48.220Z",
   "topicsAnalyzed": 42,
-  "averageScore": 54,
+  "averageScore": 55,
   "scores": [
     {
       "topic": "lead-management",
@@ -51,6 +51,16 @@
       "serviceCount": 1,
       "caseStudyCount": 5,
       "score": 100,
+      "level": "Dominant"
+    },
+    {
+      "topic": "local-visibility",
+      "blogCount": 6,
+      "resourceCount": 3,
+      "industryCount": 2,
+      "serviceCount": 1,
+      "caseStudyCount": 1,
+      "score": 93,
       "level": "Dominant"
     },
     {
@@ -104,14 +114,14 @@
       "level": "Strong"
     },
     {
-      "topic": "local-visibility",
-      "blogCount": 2,
-      "resourceCount": 1,
-      "industryCount": 2,
-      "serviceCount": 1,
+      "topic": "review-automation",
+      "blogCount": 6,
+      "resourceCount": 3,
+      "industryCount": 0,
+      "serviceCount": 2,
       "caseStudyCount": 1,
-      "score": 78,
-      "level": "Strong"
+      "score": 73,
+      "level": "Growing"
     },
     {
       "topic": "reputation-monitoring",
@@ -131,16 +141,6 @@
       "serviceCount": 1,
       "caseStudyCount": 0,
       "score": 70,
-      "level": "Growing"
-    },
-    {
-      "topic": "review-automation",
-      "blogCount": 4,
-      "resourceCount": 1,
-      "industryCount": 0,
-      "serviceCount": 2,
-      "caseStudyCount": 1,
-      "score": 68,
       "level": "Growing"
     },
     {

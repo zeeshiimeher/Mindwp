@@ -3,7 +3,7 @@
 
 export type ContentDomain = 'blog' | 'resources' | 'industries' | 'case-studies';
 
-export type ImageType = 'featured' | 'content';
+export type ImageType = 'featured-clean' | 'featured-overlay' | 'content';
 
 // ─── Provider Types ─────────────────────────────────────────────────
 
@@ -131,25 +131,29 @@ export interface FeaturedImageOptions {
   brightness: BrightnessResult;
   outputWidth: number;
   outputHeight: number;
+  label?: string;
+}
+
+export interface FeaturedImageResult {
+  clean: Buffer;
+  overlay: Buffer;
 }
 
 // ─── Image Index Types ──────────────────────────────────────────────
 
+export interface ImageIndexEntryData {
+  file: string;
+  hash: string;
+  provider: ProviderName;
+  imageId: string;
+  generatedAt: string;
+}
+
 export interface ImageIndexEntry {
-  featured?: {
-    file: string;
-    hash: string;
-    provider: ProviderName;
-    imageId: string;
-    generatedAt: string;
-  };
-  content?: {
-    file: string;
-    hash: string;
-    provider: ProviderName;
-    imageId: string;
-    generatedAt: string;
-  };
+  featured?: ImageIndexEntryData;
+  'featured-clean'?: ImageIndexEntryData;
+  'featured-overlay'?: ImageIndexEntryData;
+  content?: ImageIndexEntryData;
 }
 
 export type ImageIndex = Record<string, ImageIndexEntry>;

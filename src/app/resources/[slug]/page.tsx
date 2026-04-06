@@ -8,6 +8,7 @@ import ResourcePageTemplate from '@/domains/resources/templates/ResourcePageTemp
 import type { ResourceFAQItem } from '@/domains/resources/templates/types';
 import type { ResourceSection } from '@/domains/resources/types';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
+import { getImage } from '@/lib/image-system/resolver';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
 
@@ -76,6 +77,7 @@ export async function generateMetadata({
     type: 'article',
     noindex: false,
     nofollow: false,
+    image: getImage(slug, 'resources', 'featured-overlay') ?? undefined,
   });
 
   const openGraph = resource.seo.openGraph;
@@ -136,6 +138,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         updatedAt={resource.updatedAt}
         seo={resource.seo}
         sections={resource.sections}
+        intent={resource.intent}
+        systems={resource.systems}
       />
     </>
   );

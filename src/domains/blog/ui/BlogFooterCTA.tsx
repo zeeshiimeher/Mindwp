@@ -3,6 +3,8 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/reusable/single/Button';
 import { primaryCta } from '@/config/primaryCta';
 
+const GOVERNED_LABEL = primaryCta.label;
+
 interface BlogFooterCTAProps {
   title?: string;
   description?: string;
@@ -39,7 +41,7 @@ export function BlogFooterCTA({
       <Button
         href={buttonUrl}
         variant='white'
-        label={buttonText}
+        label={GOVERNED_LABEL}
         icon={ArrowRight}
         showDefaultIcon
       />

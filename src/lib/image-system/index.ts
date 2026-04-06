@@ -5,6 +5,7 @@
 export type {
   ContentDomain,
   ContentMetadata,
+  FeaturedImageResult,
   ImageType,
   PipelineMode,
   PipelineOptions,

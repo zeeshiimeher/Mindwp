@@ -303,7 +303,7 @@ async function runTestMode(slug: string, domain: ContentDomain = 'blog', regener
 
   if (fresh) {
     // Get the previous image ID BEFORE clearing the entry
-    const existingEntry = dedup.getImageEntry(slug, 'featured');
+    const existingEntry = dedup.getImageEntry(slug, 'featured-clean');
     if (existingEntry) {
       blockedImageId = existingEntry.imageId;
       console.log(`🚫 Will skip previous image: ${existingEntry.provider}/${existingEntry.imageId}`);
@@ -311,15 +311,26 @@ async function runTestMode(slug: string, domain: ContentDomain = 'blog', regener
   }
 
   if (regenerate || fresh) {
-    if (dedup.hasImage(slug, 'featured')) {
-      dedup.removeImage(slug, 'featured');
-      console.log('🗑️  Cleared previous index entry');
+    for (const variant of ['featured-clean', 'featured-overlay'] as const) {
+      if (dedup.hasImage(slug, variant)) {
+        dedup.removeImage(slug, variant);
+        console.log(`🗑️  Cleared previous index entry: ${variant}`);
+      }
+      const variantPath = `public/images/${domain}/${slug}/${variant}.webp`;
+      if (fs.existsSync(variantPath)) {
+        fs.unlinkSync(variantPath);
+        console.log(`🗑️  Deleted existing: ${variantPath}`);
+      }
     }
-    // Delete existing output file
-    const outputPath = `public/images/${domain}/${slug}/featured.webp`;
-    if (fs.existsSync(outputPath)) {
-      fs.unlinkSync(outputPath);
-      console.log(`🗑️  Deleted existing: ${outputPath}`);
+    // Also clean up legacy featured.webp if present
+    const legacyPath = `public/images/${domain}/${slug}/featured.webp`;
+    if (fs.existsSync(legacyPath)) {
+      fs.unlinkSync(legacyPath);
+      console.log(`🗑️  Deleted legacy: ${legacyPath}`);
+    }
+    if (dedup.hasImage(slug, 'featured' as any)) {
+      dedup.removeImage(slug, 'featured' as any);
+      console.log('🗑️  Cleared legacy index entry: featured');
     }
   }
 
@@ -334,12 +345,13 @@ async function runTestMode(slug: string, domain: ContentDomain = 'blog', regener
   console.log('🚀 Starting image pipeline...');
   console.log('');
 
-  const result = await pipeline.processImage(metadata, domain, 'featured', blockedImageId);
+  const result = await pipeline.processImage(metadata, domain, 'featured-clean', blockedImageId);
 
   if (result) {
     console.log('');
     console.log('✅ Image generated successfully!');
-    console.log(`   📁 Output: ${result.outputPath}`);
+    console.log(`   📁 Clean:   public/images/${domain}/${slug}/featured-clean.webp`);
+    console.log(`   📁 Overlay: public/images/${domain}/${slug}/featured-overlay.webp`);
     console.log(`   🏢 Provider: ${result.provider}`);
     console.log(`   🆔 Image ID: ${result.imageId}`);
     console.log(`   📊 Score: ${result.relevanceScore}`);
@@ -393,7 +405,7 @@ async function runBulkMode(domain: ContentDomain) {
   const queue = await importQueue();
 
   // Filter out posts that already have images
-  const needed = slugs.filter((s) => !dedup.hasImage(s, 'featured'));
+  const needed = slugs.filter((s) => !dedup.hasImage(s, 'featured-clean'));
   console.log(`🔍 ${needed.length} posts need featured images`);
   console.log('');
 
@@ -413,7 +425,7 @@ async function runBulkMode(domain: ContentDomain) {
     }
 
     try {
-      const result = await pipeline.processImage(metadata, domain, 'featured');
+      const result = await pipeline.processImage(metadata, domain, 'featured-clean');
       if (result) {
         console.log(`   ✅ ${result.provider}/${result.imageId} (score: ${result.relevanceScore})`);
         succeeded++;
@@ -447,7 +459,7 @@ async function runSinglePost(slug: string) {
     if (!metadata) continue;
 
     console.log(`Found in domain: ${domain}`);
-    const result = await pipeline.processImage(metadata, domain, 'featured');
+    const result = await pipeline.processImage(metadata, domain, 'featured-clean');
 
     if (result) {
       console.log(`\n✅ Output: ${result.outputPath} (${result.provider}, score: ${result.relevanceScore})`);

@@ -66,10 +66,13 @@ export async function processImage(
 ): Promise<PipelineResult | null> {
   const slug = metadata.slug;
   const rules = DOMAIN_IMAGE_RULES[domain];
+  const isFeatured = imageType === 'featured-clean' || imageType === 'featured-overlay';
 
   // Check if already generated
-  if (hasImage(slug, imageType)) {
-    console.log(`[pipeline] ${domain}/${slug} already has ${imageType} image, skipping`);
+  // For featured images, check for featured-clean as the canonical marker
+  const guardType = isFeatured ? 'featured-clean' : imageType;
+  if (hasImage(slug, guardType)) {
+    console.log(`[pipeline] ${domain}/${slug} already has ${guardType} image, skipping`);
     return null;
   }
 
@@ -189,55 +192,98 @@ export async function processImage(
     );
 
     // Generate output
-    let outputBuffer: Buffer;
-    const outputPath = getImageOutputPath(domain, slug, imageType);
-
-    if (imageType === 'featured') {
-      // Generate featured image with overlay + title
+    if (isFeatured) {
+      // Generate both clean and overlay variants from one download
       const brightness = best.intelligence.brightness;
-      outputBuffer = await generateStandardFeaturedImage(bestBuffer, metadata.title, brightness);
+      const { clean, overlay } = await generateStandardFeaturedImage(
+        bestBuffer,
+        metadata.title,
+        brightness,
+        metadata.primaryKeyword
+      );
 
-      // Verify contrast passes WCAG AA (4.5:1)
-      const contrastCheck = await verifyContrast(outputBuffer);
+      // Verify contrast only on overlay variant (has text)
+      const contrastCheck = await verifyContrast(overlay);
       console.log(
         `[pipeline] Contrast check: ${contrastCheck.ratio.toFixed(2)}:1 ${contrastCheck.pass ? '✅' : '⚠️'}`
       );
+
+      // Save both variants
+      const cleanPath = getImageOutputPath(domain, slug, 'featured-clean');
+      const overlayPath = getImageOutputPath(domain, slug, 'featured-overlay');
+
+      await saveImage(clean, cleanPath);
+      console.log(`[pipeline] Saved: ${cleanPath}`);
+
+      await saveImage(overlay, overlayPath);
+      console.log(`[pipeline] Saved: ${overlayPath}`);
+
+      // Register both in index
+      const registrationData = {
+        hash: bestHash,
+        provider: best.image.provider,
+        imageId: best.image.id,
+      };
+
+      registerImage(slug, 'featured-clean', { file: cleanPath, ...registrationData });
+      registerImage(slug, 'featured-overlay', { file: overlayPath, ...registrationData });
+
+      // Update learning systems
+      updateContextMemory(
+        metadata.topics[0] ?? metadata.primaryKeyword,
+        semanticQuery.query,
+        best.image.provider,
+        best.relevanceScore
+      );
+      updateProviderScore(domain, best.image.provider, true, best.relevanceScore);
+
+      return {
+        domain,
+        slug,
+        imageType: 'featured-clean',
+        outputPath: cleanPath,
+        provider: best.image.provider,
+        imageId: best.image.id,
+        relevanceScore: best.relevanceScore,
+        hash: bestHash,
+      };
     } else {
       // Optimize content image
-      outputBuffer = await optimizeImage(bestBuffer, 'content');
+      const outputBuffer = await optimizeImage(bestBuffer, 'content');
+      const outputPath = getImageOutputPath(domain, slug, imageType);
+
+      // Save to disk
+      await saveImage(outputBuffer, outputPath);
+      console.log(`[pipeline] Saved: ${outputPath}`);
+
+      // Register in index
+      registerImage(slug, imageType, {
+        file: outputPath,
+        hash: bestHash,
+        provider: best.image.provider,
+        imageId: best.image.id,
+      });
+
+      // Update learning systems
+      updateContextMemory(
+        metadata.topics[0] ?? metadata.primaryKeyword,
+        semanticQuery.query,
+        best.image.provider,
+        best.relevanceScore
+      );
+      updateProviderScore(domain, best.image.provider, true, best.relevanceScore);
+
+      return {
+        domain,
+        slug,
+        imageType,
+        outputPath,
+        provider: best.image.provider,
+        imageId: best.image.id,
+        relevanceScore: best.relevanceScore,
+        hash: bestHash,
+      };
     }
-
-    // Save to disk
-    await saveImage(outputBuffer, outputPath);
-    console.log(`[pipeline] Saved: ${outputPath}`);
-
-    // Register in index
-    registerImage(slug, imageType, {
-      file: outputPath,
-      hash: bestHash,
-      provider: best.image.provider,
-      imageId: best.image.id,
-    });
-
-    // Update learning systems
-    updateContextMemory(
-      metadata.topics[0] ?? metadata.primaryKeyword,
-      semanticQuery.query,
-      best.image.provider,
-      best.relevanceScore
-    );
-    updateProviderScore(domain, best.image.provider, true, best.relevanceScore);
-
-    return {
-      domain,
-      slug,
-      imageType,
-      outputPath,
-      provider: best.image.provider,
-      imageId: best.image.id,
-      relevanceScore: best.relevanceScore,
-      hash: bestHash,
-    };
   }
 
   console.log(`[pipeline] Failed to find suitable image for ${domain}/${slug}`);
@@ -252,9 +298,9 @@ export async function processPost(
   const results: PipelineResult[] = [];
   const rules = DOMAIN_IMAGE_RULES[domain];
 
-  // Always try featured image
+  // Always try featured image (produces both clean + overlay)
   if (rules.featuredRequired) {
-    const featured = await processImage(metadata, domain, 'featured');
+    const featured = await processImage(metadata, domain, 'featured-clean');
     if (featured) results.push(featured);
   }
 

@@ -41,7 +41,7 @@ import {
 import { Card } from '@/components/ui/card';
 import { primaryCta } from '@/config/primaryCta';
 import { categories } from '@/domains/resources/api';
-import type { ResourceCategory } from '@/domains/resources/types';
+import type { ResourceCategory, ResourceIntent } from '@/domains/resources/types';
 import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates';
 
 import type { ResourcePageTemplateSection } from './types';
@@ -93,6 +93,10 @@ export type ResourcePageTemplateProps = {
     description?: string;
   };
   sections: ResourcePageTemplateSection[];
+  /** Resource intent classification */
+  intent?: ResourceIntent;
+  /** System keys for CTA routing context */
+  systems?: string[];
 };
 
 // Validation function for required sections
@@ -127,6 +131,16 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   const freshnessBadge = isRecentIsoDate(lastChanged, 60) ? (isUpdated ? 'Updated' : 'New') : null;
   const dateLabel = isUpdated ? 'Updated' : 'Published';
   const currentSlug = props.url.split('/').filter(Boolean).at(-1) ?? '';
+
+  // Build contact href with context params
+  const primarySystem = props.systems?.[0] ?? '';
+  function decorateContactHref(href: string): string {
+    if (!href.startsWith('/contact')) return href;
+    const url = new URL(href, 'https://placeholder.local');
+    if (primarySystem) url.searchParams.set('system', primarySystem);
+    url.searchParams.set('source', `resource/${currentSlug}`);
+    return `${url.pathname}?${url.searchParams.toString()}`;
+  }
 
   // Extract content from sections for rendering using organized utilities
   const heroData = extractHeroContent(props.sections, props.title, props.description);
@@ -331,7 +345,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               description={ctaData.content}
               primaryAction={{
                 label: ctaData.finalButtonText,
-                href: ctaData.finalButtonUrl,
+                href: decorateContactHref(ctaData.finalButtonUrl),
               }}
               metaItems={ctaData.features?.map(f => ({ text: f.text }))}
             />
@@ -447,18 +461,14 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
 
                 <div className='resource-page__sidebar-actions'>
                   <Button
-                    {...(primaryCta.type !== 'chat' ? { href: primaryCta.href } : {})}
+                    href={decorateContactHref(primaryCta.href)}
                     size='sm'
                     label={primaryCta.label}
                     showDefaultIcon
                     cssPrefix='btn-block'
-                    {...(primaryCta.type === 'external'
-                      ? { target: '_blank', rel: 'noopener noreferrer' }
-                      : {})}
-                    {...(primaryCta.type === 'chat' ? { onClick: () => {} } : {})}
                   />
                   <Button
-                    href='/contact'
+                    href={decorateContactHref('/contact')}
                     variant='outline'
                     size='sm'
                     label={sidebarCTAData.secondaryAction}
@@ -527,7 +537,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
                   description={ctaData.content}
                   primaryAction={{
                     label: ctaData.finalButtonText,
-                    href: ctaData.finalButtonUrl,
+                    href: decorateContactHref(ctaData.finalButtonUrl),
                   }}
                   metaItems={ctaData.features?.map(f => ({ text: f.text }))}
                 />

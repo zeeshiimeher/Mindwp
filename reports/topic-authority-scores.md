@@ -7,9 +7,9 @@
 | Metric | Value |
 |--------|-------|
 | Topics analyzed | 42 |
-| Average score | 54 |
-| Dominant (≥90) | 5 |
-| Strong (75–89) | 6 |
+| Average score | 55 |
+| Dominant (≥90) | 6 |
+| Strong (75–89) | 5 |
 | Growing (60–74) | 8 |
 | Weak (40–59) | 8 |
 | Gap (<40) | 15 |
@@ -23,15 +23,15 @@
 | 3 | lead-response-time | 100 | 🟢 Dominant | 5 | 3 | 5 | 2 | 4 |
 | 4 | review-generation | 100 | 🟢 Dominant | 5 | 5 | 23 | 2 | 4 |
 | 5 | crm-pipeline | 100 | 🟢 Dominant | 8 | 2 | 3 | 1 | 5 |
-| 6 | follow-up | 85 | 🔵 Strong | 2 | 2 | 13 | 2 | 4 |
-| 7 | lead-routing | 85 | 🔵 Strong | 2 | 1 | 2 | 1 | 2 |
-| 8 | client-reactivation | 85 | 🔵 Strong | 2 | 1 | 3 | 2 | 2 |
-| 9 | no-show-reduction | 80 | 🔵 Strong | 1 | 1 | 3 | 1 | 2 |
-| 10 | crm-integration | 78 | 🔵 Strong | 2 | 1 | 3 | 1 | 1 |
-| 11 | local-visibility | 78 | 🔵 Strong | 2 | 1 | 2 | 1 | 1 |
-| 12 | reputation-monitoring | 73 | 🟡 Growing | 1 | 1 | 3 | 1 | 1 |
-| 13 | pipeline-visibility | 70 | 🟡 Growing | 2 | 1 | 5 | 1 | 0 |
-| 14 | review-automation | 68 | 🟡 Growing | 4 | 1 | 0 | 2 | 1 |
+| 6 | local-visibility | 93 | 🟢 Dominant | 6 | 3 | 2 | 1 | 1 |
+| 7 | follow-up | 85 | 🔵 Strong | 2 | 2 | 13 | 2 | 4 |
+| 8 | lead-routing | 85 | 🔵 Strong | 2 | 1 | 2 | 1 | 2 |
+| 9 | client-reactivation | 85 | 🔵 Strong | 2 | 1 | 3 | 2 | 2 |
+| 10 | no-show-reduction | 80 | 🔵 Strong | 1 | 1 | 3 | 1 | 2 |
+| 11 | crm-integration | 78 | 🔵 Strong | 2 | 1 | 3 | 1 | 1 |
+| 12 | review-automation | 73 | 🟡 Growing | 6 | 3 | 0 | 2 | 1 |
+| 13 | reputation-monitoring | 73 | 🟡 Growing | 1 | 1 | 3 | 1 | 1 |
+| 14 | pipeline-visibility | 70 | 🟡 Growing | 2 | 1 | 5 | 1 | 0 |
 | 15 | lead-capture | 65 | 🟡 Growing | 2 | 1 | 0 | 3 | 4 |
 | 16 | website-infrastructure | 65 | 🟡 Growing | 2 | 1 | 0 | 8 | 4 |
 | 17 | systems-first-websites | 65 | 🟡 Growing | 2 | 1 | 0 | 1 | 2 |
@@ -118,6 +118,17 @@
 | Case Studies | 5 | ≥ 2 | 15 | 15 |
 | **Total** | | | **100** | **100** |
 
+### 🟢 local-visibility
+
+| Metric | Count | Threshold | Weight | Earned |
+|--------|-------|-----------|--------|--------|
+| Blogs | 6 | ≥ 5 | 25 | 25 |
+| Resources | 3 | ≥ 1 | 25 | 25 |
+| Industries | 2 | ≥ 2 | 20 | 20 |
+| Services | 1 | ≥ 1 | 15 | 15 |
+| Case Studies | 1 | ≥ 2 | 15 | 8 |
+| **Total** | | | **100** | **93** |
+
 ### 🔵 follow-up
 
 | Metric | Count | Threshold | Weight | Earned |
@@ -173,16 +184,16 @@
 | Case Studies | 1 | ≥ 2 | 15 | 8 |
 | **Total** | | | **100** | **78** |
 
-### 🔵 local-visibility
+### 🟡 review-automation
 
 | Metric | Count | Threshold | Weight | Earned |
 |--------|-------|-----------|--------|--------|
-| Blogs | 2 | ≥ 5 | 25 | 10 |
-| Resources | 1 | ≥ 1 | 25 | 25 |
-| Industries | 2 | ≥ 2 | 20 | 20 |
-| Services | 1 | ≥ 1 | 15 | 15 |
+| Blogs | 6 | ≥ 5 | 25 | 25 |
+| Resources | 3 | ≥ 1 | 25 | 25 |
+| Industries | 0 | ≥ 2 | 20 | 0 |
+| Services | 2 | ≥ 1 | 15 | 15 |
 | Case Studies | 1 | ≥ 2 | 15 | 8 |
-| **Total** | | | **100** | **78** |
+| **Total** | | | **100** | **73** |
 
 ### 🟡 reputation-monitoring
 
@@ -205,17 +216,6 @@
 | Services | 1 | ≥ 1 | 15 | 15 |
 | Case Studies | 0 | ≥ 2 | 15 | 0 |
 | **Total** | | | **100** | **70** |
-
-### 🟡 review-automation
-
-| Metric | Count | Threshold | Weight | Earned |
-|--------|-------|-----------|--------|--------|
-| Blogs | 4 | ≥ 5 | 25 | 20 |
-| Resources | 1 | ≥ 1 | 25 | 25 |
-| Industries | 0 | ≥ 2 | 20 | 0 |
-| Services | 2 | ≥ 1 | 15 | 15 |
-| Case Studies | 1 | ≥ 2 | 15 | 8 |
-| **Total** | | | **100** | **68** |
 
 ### 🟡 lead-capture
 

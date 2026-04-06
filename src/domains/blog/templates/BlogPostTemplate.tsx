@@ -32,13 +32,14 @@ import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
 import { primaryCta } from '@/config/primaryCta';
+import { CTA_INTENT_OVERRIDES } from '@/config/ui-intelligence';
 import {
   type Author,
   BLOG_AUTHORS,
   getCategoryColors,
   getCategoryMetadata,
 } from '@/domains/blog/api';
-import type { BlogCategory, BlogPostSection } from '@/domains/blog/types';
+import type { BlogCategory, BlogIntent, BlogPostSection } from '@/domains/blog/types';
 import { BlogFooterCTA } from '@/domains/blog/ui/BlogFooterCTA';
 import { BlogPostShareIsland } from '@/domains/blog/ui/BlogPostShareIsland';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
@@ -62,6 +63,12 @@ export interface BlogPostTemplateProps {
   // Content - Flexible sections array
   sections: BlogPostSection[];
   tags?: string[];
+  /** Blog intent classification */
+  intent?: BlogIntent;
+  /** System keys for CTA routing context */
+  systems?: string[];
+  /** Resolved featured image path from image system */
+  featuredImage?: string | null;
 }
 
 type AuthorInfo = NonNullable<BlogPostTemplateProps['author']>;
@@ -187,6 +194,9 @@ export function BlogPostTemplate({
   author,
   sections,
   tags = [],
+  intent,
+  systems = [],
+  featuredImage,
 }: BlogPostTemplateProps) {
   // Calculate read time from content
   const effectiveReadTime = readTime || estimateReadTimeFromContent(sections);
@@ -201,10 +211,14 @@ export function BlogPostTemplate({
     .flatMap(section => section.items);
   const faqSchema = buildFaqSchema(faqItems);
 
-  // Sidebar CTA content (mirrors ResourcePageTemplate defaults)
+  // Resolve intent-aware sidebar CTA
+  const intentKey = intent ? `blog:${intent}` : undefined;
+  const intentOverride = intentKey ? CTA_INTENT_OVERRIDES[intentKey] : undefined;
+
   const sidebarCTAData = {
-    heading: 'See How This System Works',
-    content: 'Understand how this fits into a complete website system.',
+    heading: intentOverride?.title ?? 'See How This System Works',
+    content:
+      intentOverride?.description ?? 'Understand how this fits into a complete website system.',
     secondaryAction: 'Contact Us',
     features: [
       { text: 'System-level integration', icon: 'check' as const },
@@ -212,6 +226,13 @@ export function BlogPostTemplate({
       { text: 'Built for real businesses', icon: 'award' as const },
     ],
   };
+
+  // Build contact href with context
+  const primarySystem = systems[0] ?? '';
+  const contactParams = new URLSearchParams();
+  if (primarySystem) contactParams.set('system', primarySystem);
+  contactParams.set('source', `blog/${slug}`);
+  const contactHref = `/contact?${contactParams.toString()}`;
 
   // Function to render a section based on its type
   function renderSection(section: BlogPostSection, index: number) {
@@ -365,7 +386,18 @@ export function BlogPostTemplate({
     <div className='min-h-screen'>
       <main>
         {/* HERO */}
-        <section className='l-section blog-hero'>
+        <section
+          className='l-section blog-hero'
+          {...(featuredImage
+            ? {
+                style: {
+                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                },
+              }
+            : {})}
+        >
           <div className='l-container l-stack l-stack--loose blog-post__hero'>
             <span className={`badge badge--hero ${categoryColors.bg} ${categoryColors.text}`}>
               {categoryLabel}
@@ -442,19 +474,15 @@ export function BlogPostTemplate({
 
                   <div className='blog-post__sidebar-actions'>
                     <Button
-                      {...(primaryCta.type !== 'chat' ? { href: primaryCta.href } : {})}
+                      href={contactHref}
                       size='sm'
                       label={primaryCta.label}
                       icon={ArrowRight}
                       showDefaultIcon
                       cssPrefix='btn-block'
-                      {...(primaryCta.type === 'external'
-                        ? { target: '_blank', rel: 'noopener noreferrer' }
-                        : {})}
-                      {...(primaryCta.type === 'chat' ? { onClick: () => {} } : {})}
                     />
                     <Button
-                      href='/contact'
+                      href={contactHref}
                       variant='outline'
                       size='sm'
                       label={sidebarCTAData.secondaryAction}
@@ -521,7 +549,11 @@ export function BlogPostTemplate({
             backgroundColor='blog-surface--muted'
           />
         ) : (
-          <BlogFooterCTA />
+          <BlogFooterCTA
+            title={intentOverride?.title}
+            description={intentOverride?.description}
+            buttonUrl={contactHref}
+          />
         )}
 
         {faqSchema && (

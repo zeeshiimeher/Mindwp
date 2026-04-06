@@ -29,8 +29,10 @@ export function saveImageIndex(index: ImageIndex): void {
 export function isImageUsed(imageId: string, provider: ProviderName): boolean {
   const index = loadImageIndex();
   for (const entry of Object.values(index)) {
-    if (entry.featured?.imageId === imageId && entry.featured?.provider === provider) return true;
-    if (entry.content?.imageId === imageId && entry.content?.provider === provider) return true;
+    for (const key of ['featured', 'featured-clean', 'featured-overlay', 'content'] as const) {
+      const data = entry[key];
+      if (data?.imageId === imageId && data?.provider === provider) return true;
+    }
   }
   return false;
 }
@@ -41,8 +43,9 @@ export function isHashTooSimilar(hash: string): boolean {
   const existingHashes: string[] = [];
 
   for (const entry of Object.values(index)) {
-    if (entry.featured?.hash) existingHashes.push(entry.featured.hash);
-    if (entry.content?.hash) existingHashes.push(entry.content.hash);
+    for (const key of ['featured', 'featured-clean', 'featured-overlay', 'content'] as const) {
+      if (entry[key]?.hash) existingHashes.push(entry[key]!.hash);
+    }
   }
 
   return isTooSimilar(hash, existingHashes);
@@ -112,8 +115,9 @@ export function getAllHashes(): string[] {
   const hashes: string[] = [];
 
   for (const entry of Object.values(index)) {
-    if (entry.featured?.hash) hashes.push(entry.featured.hash);
-    if (entry.content?.hash) hashes.push(entry.content.hash);
+    for (const key of ['featured', 'featured-clean', 'featured-overlay', 'content'] as const) {
+      if (entry[key]?.hash) hashes.push(entry[key]!.hash);
+    }
   }
 
   return hashes;

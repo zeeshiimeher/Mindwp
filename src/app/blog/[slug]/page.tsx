@@ -6,6 +6,7 @@ import { BLOG_AUTHORS } from '@/domains/blog/api';
 import { BLOG_POSTS } from '@/domains/blog/registry';
 import { BlogPostTemplate } from '@/domains/blog/templates/BlogPostTemplate';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
+import { getImage } from '@/lib/image-system/resolver';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
 
@@ -62,6 +63,7 @@ export async function generateMetadata({
     keywords: post.seo.keywords,
     path: canonicalPath,
     type: 'article',
+    image: getImage(slug, 'blog', 'featured-overlay') ?? undefined,
   });
 }
 
@@ -113,6 +115,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         publishDate={post.publishDate}
         tags={post.tags}
         sections={post.sections}
+        intent={post.intent}
+        systems={post.systems}
+        featuredImage={getImage(slug, 'blog', 'featured-clean')}
       />
     </>
   );

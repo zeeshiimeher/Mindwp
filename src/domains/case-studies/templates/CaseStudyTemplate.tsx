@@ -149,6 +149,7 @@ export function CaseStudyTemplate({
   heroIntroHtml,
   ctaHeading,
   ctaBody,
+  featuredImage,
   hero,
   metrics,
   problem,
@@ -166,6 +167,7 @@ export function CaseStudyTemplate({
   heroIntroHtml?: React.ReactNode;
   ctaHeading?: string;
   ctaBody?: string;
+  featuredImage?: string | null;
   hero?: {
     scenarioBadgeLabel?: string;
   };
@@ -473,17 +475,40 @@ export function CaseStudyTemplate({
 
   return (
     <div className='case-study-detail'>
-      <CaseStudyHeroSection
-        backToCaseStudiesLabel={backToCaseStudiesLabel}
-        industry={metadata.industryLabel}
-        duration={metadata.duration}
-        heroHeadline={metadata.heroHeadline}
-        scenarioBadge={resolvedScenarioBadgeLabel}
-        heroIntroHtml={heroSection?.introHtml}
-        business={metadata.business}
-        location={metadata.location}
-        completedDate={metadata.completedDate}
-      />
+      {featuredImage ? (
+        <div
+          style={{
+            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        >
+          <CaseStudyHeroSection
+            backToCaseStudiesLabel={backToCaseStudiesLabel}
+            industry={metadata.industryLabel}
+            duration={metadata.duration}
+            heroHeadline={metadata.heroHeadline}
+            scenarioBadge={resolvedScenarioBadgeLabel}
+            heroIntroHtml={heroSection?.introHtml}
+            business={metadata.business}
+            location={metadata.location}
+            completedDate={metadata.completedDate}
+            backgroundColor=''
+          />
+        </div>
+      ) : (
+        <CaseStudyHeroSection
+          backToCaseStudiesLabel={backToCaseStudiesLabel}
+          industry={metadata.industryLabel}
+          duration={metadata.duration}
+          heroHeadline={metadata.heroHeadline}
+          scenarioBadge={resolvedScenarioBadgeLabel}
+          heroIntroHtml={heroSection?.introHtml}
+          business={metadata.business}
+          location={metadata.location}
+          completedDate={metadata.completedDate}
+        />
+      )}
 
       {inFlowSections.map((section, index) => renderSection(section, index))}
 

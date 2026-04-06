@@ -7,6 +7,7 @@ import type { CaseStudyTemplateSection } from '@/domains/case-studies/templates'
 import { CaseStudyTemplate } from '@/domains/case-studies/templates';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
+import { getImage } from '@/lib/image-system/resolver';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
 
@@ -71,6 +72,7 @@ export async function generateMetadata({
     description,
     path: canonicalPath,
     type: 'article',
+    image: getImage(slug, 'case-studies', 'featured-overlay') ?? undefined,
   });
 }
 
@@ -113,6 +115,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <CaseStudyTemplate
         metadata={caseStudy}
         sections={caseStudy.sections}
+        featuredImage={getImage(slug, 'case-studies', 'featured-clean')}
         {...(caseStudy.templateOverrides ?? {})}
       />
     </>

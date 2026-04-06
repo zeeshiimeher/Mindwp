@@ -12,6 +12,7 @@ type BuildMetadataInput = {
   type?: MetadataType;
   noindex?: boolean;
   nofollow?: boolean;
+  image?: string;
 };
 
 export function buildMetadata({
@@ -22,6 +23,7 @@ export function buildMetadata({
   type = 'website',
   noindex = false,
   nofollow = false,
+  image,
 }: BuildMetadataInput): Metadata {
   const normalizedPath = normalizePath(path);
   const normalizedTitle =
@@ -41,11 +43,13 @@ export function buildMetadata({
       url: toAbsoluteUrl(normalizedPath),
       type,
       siteName: SITE_NAME,
+      ...(image ? { images: [toAbsoluteUrl(image)] } : {}),
     },
     twitter: {
       card: 'summary_large_image',
       title: normalizedTitle,
       description,
+      ...(image ? { images: [toAbsoluteUrl(image)] } : {}),
     },
     ...(noindex || nofollow
       ? {
