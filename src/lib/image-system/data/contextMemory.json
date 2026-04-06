@@ -6,7 +6,7 @@
     ],
     "provider": "pexels",
     "avgScore": 67,
-    "count": 5
+    "count": 6
   },
   "booking-automation": {
     "queries": [
@@ -15,7 +15,7 @@
     ],
     "provider": "unsplash",
     "avgScore": 58,
-    "count": 3
+    "count": 4
   },
   "authority-signals": {
     "queries": [
@@ -26,6 +26,6 @@
     ],
     "provider": "unsplash",
     "avgScore": 58,
-    "count": 4
+    "count": 5
   }
 }
