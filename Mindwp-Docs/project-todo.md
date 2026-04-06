@@ -36,85 +36,20 @@
 | 7A | Section background system | Done |
 | 8 | Section system (structural refactor) | Done |
 | 9 | System cleanup and alignment | Done |
-| 10 | Content architecture audit + governance | Active |
-| 12 | Vocabulary cleanup execution | Ready |
-| 12.5 | Decision system definition | Future |
-| 13–18 | UI polish through deployment | Future |
+| 10 | Content architecture audit + governance | Done |
+| 10.5 | Content clusters 1-4 + graph amplification | Done |
+| 12 | Vocabulary cleanup execution | Post-launch |
+| 13–18 | UI polish through deployment | Post-launch |
 
 ---
 
 ## 2. Active Phase
 
-**Context**
-- Phase 7 complete (visual system locked)
-- Phase 8 complete (section system refactored — primitives, layout, backgrounds unified)
-- Phase 9 complete (system cleanup and alignment)
-- Phase 10 in progress (content architecture audit + governance sync)
+**System state: LAUNCH-READY**
 
-### Phase 9 — System Cleanup & Alignment
+All phases complete. System verified clean. No active execution phase.
 
-**Goal**
-- Audit and clean documentation, scripts, and reports.
-- Remove obsolete files, consolidate duplicates, fix doc inconsistencies.
-- Extract final system rules from Phase 7/8 docs into SYSTEM-TRUTH.md.
-
-**Source**
-- Phase 9 audit plan (conversation-level)
-
-**Success checks**
-- All obsolete scripts and stale reports deleted
-- Duplicate scripts consolidated
-- Doc inconsistencies resolved
-- Phase 7/8 guarantees extracted into SYSTEM-TRUTH.md
-- All validators passing
-
-| ID | Task | Priority | Status |
-|---|---|---|---|
-| T-138 | Delete obsolete scripts (10 files) | High | [x] |
-| T-139 | Delete stale reports (9 files) | High | [x] |
-| T-140 | Merge duplicate scripts (2 pairs) | High | [x] |
-| T-141 | Fix doc inconsistencies (project-todo, PHASE-8, DEV-DASHBOARD) | High | [x] |
-| T-142 | Clean docs (SYSTEM-INTELLIGENCE-DOC, IMAGE-SYSTEM-ARCHITECTURE, BLOG-PLANNING-INVENTORY) | Medium | [x] |
-| T-143 | Extract Phase 7/8 rules into SYSTEM-TRUTH.md | Medium | [x] |
-| T-144 | Regenerate system state (system-sync, validate-all) | Medium | [x] |
-| T-145 | Final verification (imports, scripts, dashboards) | Low | [x] |
-
----
-
-### Phase 9.1 — Script Alignment + Validation Fixes
-
-**Goal**
-- Fix 3 blocking validator failures (lint, validate-tokens, check-generated)
-- Normalize phase7 script naming, clean registry, update dashboard
-
-| ID | Task | Priority | Status |
-|---|---|---|---|
-| T-146 | Fix lint failures (3 prettier errors) | High | [x] |
-| T-147 | Fix token violations (2 hardcoded 2px values) | High | [x] |
-| T-148 | Fix check-generated staleness | High | [x] |
-| T-149 | Normalize phase7 script naming + registry cleanup | Medium | [x] |
-
-**Next task**
-- Phase 9.1 complete — all tasks done
-
----
-
-### Phase 10 — Content Architecture Audit + Governance
-
-**Goal**
-- Full audit of all 211 content nodes (75 blogs, 52 resources, 22 case studies, 21 services, 26 industry-detail, 7 features, 6 industry-category)
-- 8 locked architecture decisions (D1–D8) governing linking, routing, slots, limits
-- Sync all system docs to Phase 10 source of truth
-- Intent-based routing replaces linear funnel
-
-**Source**
-- `Mindwp-Docs/PHASE-10-audit-plan.md` (1,553 lines, 18 sections)
-
-**Success checks**
-- All system docs aligned to Phase 10 decisions
-- SmartRelatedSection recognized as sole linking mechanism
-- No references to deprecated internal linking engine or JourneyNavigator
-- Intent classification (PROBLEM/SYSTEM/FRAMEWORK, ACTIONABLE/EDUCATIONAL/EXAMPLE) propagated
+### Phase 10 — Content Architecture Audit + Governance — COMPLETE
 
 | ID | Task | Priority | Status |
 |---|---|---|---|
@@ -127,18 +62,32 @@
 | T-156 | Sync CONTENT-GRAPH-SYSTEM.md to Phase 10 | High | [x] |
 | T-157 | Sync project-todo.md to Phase 10 | High | [x] |
 | T-158 | Sync medium-priority docs (BLUEPRINT, GOVERNANCE, DESIGN-CONTROL, inventories) | Medium | [x] |
-| T-159 | Regenerate DECISION-STATE.md and SYSTEM-LOG.md | Low | [ ] |
+| T-159 | Regenerate DECISION-STATE.md and SYSTEM-LOG.md | Low | [x] |
+
+### Phase 10.5 — Content Clusters + Graph Amplification — COMPLETE
+
+Committed as `16f3164` on `phase-10-dashboard`.
+
+- Cluster 1: lead-response-time x automotive/hvac (4 files)
+- Cluster 2: crm-pipeline x plumbing/salon (6 files)
+- Cluster 3: review-automation x roofing/salon (4 new + 2 existing)
+- Cluster 4: local-visibility x hvac/realtor (6 files)
+- RESOURCE_INDEX expanded (2 → 59 entries)
+- CTA routing fixes (4 reputation resources)
+- System correction (CrmPipelineAutomation)
+- Generated registries + authority map updated
+- SYSTEM-RULES.md added
 
 ---
 
-### Deferred — Visual Polish (Post Phase 9)
+### Post-Launch Backlog
 
-| Phase | Goal | Tasks | Status |
+| ID | Task | Priority | Phase |
 |---|---|---|---|
-| 7B | Hover & transition standardization | T-110 to T-115 | Done |
-| 7C | Gradient tokenization | T-116 to T-118 | Done |
-| 7D | Icon and badge normalization | T-119 to T-122 | done |
-| 7E | Component fixes and legacy cleanup | T-123 to T-129 | done |
+| T-160 | Phase 12: Vocabulary cleanup execution | Medium | Post-launch |
+| T-161 | Strengthen Weak authority topics (8 topics, score 40-58) | Medium | Post-launch |
+| T-162 | Fill Gap authority topics (15 topics, score 5-35) | Low | Post-launch |
+| T-163 | Phases 13-18: UI polish through deployment | Low | Post-launch |
 
 ---
 
@@ -156,7 +105,10 @@
 - **Phase 3.4:** cleanup/dead-code phase skipped by user decision.
 - **Phase 3.5:** hardening rules added across validators, docs, truth checks, and background enforcement.
 - **Phase 7A:** section background system normalized and legacy gradient utility noise removed.
-- **Phase 8 started:** section system structural refactor initiated after full section architecture audit. Focus: layout abstraction, spacing unification, grid logic deduplication, data normalization.
+- **Phase 9 + 9.1:** System cleanup, script alignment, validation fixes completed.
+- **Phase 10:** Content architecture audit — all 8 decisions locked, all docs synced, intent-based routing propagated.
+- **Phase 10.5:** Content clusters 1-4 executed (20 new files), graph amplification applied (RESOURCE_INDEX 2→59, 5 CTA fixes, 1 system correction). Committed `16f3164`.
+- **Visual Polish (7B-7E):** Hover/transition, gradient tokenization, icon/badge normalization, and component fixes completed.
 
 ---
 
