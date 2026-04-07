@@ -344,7 +344,17 @@ const NEGATIVE_TERMS = [
   'template',
 ];
 
-const QUERY_CONTEXT_SUFFIX = 'real business professional natural lighting working environment';
+function getQueryContextSuffix(domain: ContentDomain): string {
+  if (domain === 'industries') {
+    return 'real service professional job site tools equipment customer location natural lighting';
+  }
+
+  if (domain === 'resources') {
+    return 'real service business operations planning desk phone paperwork natural lighting';
+  }
+
+  return 'real business professional natural lighting working environment';
+}
 
 function detectIndustryFromSlug(slug: string): string | null {
   const normalized = slug.toLowerCase();
@@ -358,7 +368,7 @@ function detectIndustryFromSlug(slug: string): string | null {
 
 function enrichQuery(query: string, domain: ContentDomain): string {
   const categories = DOMAIN_CATEGORIES[domain] ?? [];
-  const combined = [query, ...categories, QUERY_CONTEXT_SUFFIX]
+  const combined = [query, ...categories, getQueryContextSuffix(domain)]
     .join(' ')
     .toLowerCase()
     .split(/\s+/)
@@ -400,23 +410,23 @@ function extractIntent(metadata: ContentMetadata, industry: string | null): Cont
 // Maps abstract topic intents to concrete visual scene words
 
 const CONTEXT_MAP: Record<string, string[]> = {
-  'customer management': ['computer', 'office desk', 'customer service'],
-  workflow: ['computer screen', 'office', 'organized workspace'],
-  efficiency: ['laptop', 'workflow', 'modern office'],
+  'customer management': ['customer messages', 'dispatch desk', 'customer service'],
+  workflow: ['schedule board', 'organized workflow', 'service operations'],
+  efficiency: ['laptop', 'organized workflow', 'service workspace'],
   scheduling: ['calendar', 'appointment book', 'reception desk'],
   reputation: ['happy customer', 'handshake', 'storefront'],
   visibility: ['storefront', 'signage', 'street'],
-  engagement: ['answering phone', 'customer service', 'office desk'],
-  outreach: ['phone call', 'email', 'office'],
+  engagement: ['answering phone', 'customer service', 'front desk'],
+  outreach: ['phone call', 'email', 'customer follow up'],
   results: ['celebrating', 'success', 'team meeting'],
-  'digital presence': ['laptop', 'website', 'modern office'],
-  growth: ['graph', 'meeting', 'planning board'],
-  credibility: ['professional office', 'awards', 'established business'],
-  'professional workplace': ['office', 'desk', 'workspace'],
+  'digital presence': ['laptop', 'website', 'business workspace'],
+  growth: ['graph', 'planning board', 'service operations'],
+  credibility: ['established business', 'awards', 'professional environment'],
+  'professional workplace': ['service workspace', 'desk', 'real business'],
 };
 
 /** Build an intent-driven search query from extracted content signals */
-function buildIntentQuery(intent: ContentIntent, metadata: ContentMetadata): string {
+function buildIntentQuery(intent: ContentIntent, metadata: ContentMetadata, domain: ContentDomain): string {
   const parts: string[] = [];
 
   // Industry keyword
@@ -449,6 +459,16 @@ function buildIntentQuery(intent: ContentIntent, metadata: ContentMetadata): str
   // Brand consistency — enforce real-world professional aesthetic
   parts.push('natural lighting');
 
+  if (domain === 'industries') {
+    parts.push('on site');
+    parts.push('tools');
+  }
+
+  if (domain === 'resources') {
+    parts.push('service business');
+    parts.push('planning');
+  }
+
   return parts.join(' ');
 }
 
@@ -466,7 +486,7 @@ export function generateSemanticQueries(
 
   // ── Strategy 1: Intent-driven primary query (score 6) ─────────────
   // Real scene, story-aligned — the best possible query
-  const intentQuery = buildIntentQuery(intent, metadata);
+  const intentQuery = buildIntentQuery(intent, metadata, domain);
   candidates.push({ query: enrichQuery(intentQuery, domain), score: 6, source: 'intent' });
 
   // ── Service page boost: enforce person + action in queries ──
@@ -476,6 +496,33 @@ export function generateSemanticQueries(
       score: 5.5,
       source: 'serviceAction',
     });
+  }
+
+  if (domain === 'resources') {
+    const industryLabel = industry ? industry.replace(/-/g, ' ') : 'service business';
+    const resourceText = [metadata.title, metadata.primaryKeyword, ...metadata.topics, ...metadata.tags]
+      .join(' ')
+      .toLowerCase();
+    candidates.push(
+      {
+        query: enrichQuery(`${industryLabel} owner reviewing customer reviews on phone`, domain),
+        score: 5.7,
+        source: 'resourceOps',
+      },
+      {
+        query: enrichQuery(`${industryLabel} manager planning appointments and follow up`, domain),
+        score: 5.4,
+        source: 'resourceOps',
+      }
+    );
+
+    if (resourceText.includes('review')) {
+      candidates.push({
+        query: enrichQuery(`${industryLabel} customer leaving five star review for service business`, domain),
+        score: 5.8,
+        source: 'resourceReview',
+      });
+    }
   }
 
   // ── Strategy 2: Industry-specific visuals (score 5) ───────────────
@@ -495,7 +542,7 @@ export function generateSemanticQueries(
   if (industry) {
     const industryLabel = industry.replace(/-/g, ' ');
     candidates.push({
-      query: enrichQuery(`${industryLabel} business office workspace professional`, domain),
+      query: enrichQuery(`${industryLabel} professional at work customer location real business`, domain),
       score: 3.5,
       source: 'alternative',
     });
@@ -533,7 +580,7 @@ export function generateSemanticQueries(
         source: 'fallback',
       },
       {
-        query: enrichQuery('professional workspace organized office', domain),
+        query: enrichQuery('service professional practical business environment', domain),
         score: 1.5,
         source: 'fallback',
       }

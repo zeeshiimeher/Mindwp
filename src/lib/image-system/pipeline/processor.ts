@@ -191,7 +191,7 @@ export async function processImage(
       }
 
       // Score the candidate
-      const scored = scoreImage(image, intelligence, metadata);
+      const scored = scoreImage(image, intelligence, metadata, domain);
       console.log(`[pipeline]   ↳ scored: ${scored.relevanceScore.toFixed(2)}`);
       scoredCandidates.push(scored);
 

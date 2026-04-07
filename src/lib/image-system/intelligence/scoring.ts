@@ -3,6 +3,7 @@
 
 import { SCORING_WEIGHTS } from '../config';
 import type {
+  ContentDomain,
   ContentMetadata,
   ImageIntelligenceResult,
   ProviderImage,
@@ -22,6 +23,51 @@ const NEGATIVE_TERMS = [
   'template',
 ];
 
+const GENERIC_OFFICE_TERMS = [
+  'office',
+  'meeting',
+  'conference',
+  'coworking',
+  'boardroom',
+  'corporate',
+  'headset',
+  'call center',
+  'desk job',
+];
+
+const FIELD_SERVICE_TERMS = [
+  'technician',
+  'repair',
+  'service van',
+  'job site',
+  'uniform',
+  'equipment',
+  'tools',
+  'customer home',
+  'air conditioning',
+  'hvac',
+  'salon',
+  'stylist',
+  'barber',
+  'plumber',
+  'electrician',
+  'roof',
+];
+
+const RESOURCE_OPERATION_TERMS = [
+  'schedule',
+  'calendar',
+  'dispatch',
+  'review',
+  'customer',
+  'phone',
+  'appointment',
+  'notebook',
+  'planning',
+  'workflow',
+  'service business',
+];
+
 function extractIntentTerms(metadata: ContentMetadata): string[] {
   return [
     metadata.primaryKeyword,
@@ -38,7 +84,7 @@ function extractIntentTerms(metadata: ContentMetadata): string[] {
     .filter(term => term.length > 3);
 }
 
-function imageMatchesIntent(image: ProviderImage, metadata: ContentMetadata): boolean {
+function imageMatchesIntent(image: ProviderImage, metadata: ContentMetadata, domain: ContentDomain): boolean {
   const imageTerms = [image.description, ...image.tags].join(' ').toLowerCase();
   if (NEGATIVE_TERMS.some(term => imageTerms.includes(term))) return false;
 
@@ -46,13 +92,38 @@ function imageMatchesIntent(image: ProviderImage, metadata: ContentMetadata): bo
   const directMatches = intentTerms.filter(term => imageTerms.includes(term)).length;
   if (directMatches > 0) return true;
 
+  if (domain === 'resources' || domain === 'industries') {
+    return false;
+  }
+
   const businessContext = ['business', 'service', 'customer', 'client', 'office', 'professional'];
   return businessContext.some(term => imageTerms.includes(term));
 }
 
+function scoreDomainFit(image: ProviderImage, domain: ContentDomain): number {
+  const imageTerms = [image.description, ...image.tags].join(' ').toLowerCase();
+  const genericOfficeHits = GENERIC_OFFICE_TERMS.filter(term => imageTerms.includes(term)).length;
+
+  if (domain === 'industries') {
+    const fieldHits = FIELD_SERVICE_TERMS.filter(term => imageTerms.includes(term)).length;
+    let score = 50 + fieldHits * 12 - genericOfficeHits * 18;
+    if (fieldHits === 0) score -= 20;
+    return Math.max(0, Math.min(100, score));
+  }
+
+  if (domain === 'resources') {
+    const operationHits = RESOURCE_OPERATION_TERMS.filter(term => imageTerms.includes(term)).length;
+    let score = 50 + operationHits * 10 - genericOfficeHits * 16;
+    if (operationHits === 0 && genericOfficeHits > 0) score -= 14;
+    return Math.max(0, Math.min(100, score));
+  }
+
+  return 50;
+}
+
 /** Calculate how relevant an image is to the article topic */
-function scoreSubjectRelevance(image: ProviderImage, metadata: ContentMetadata): number {
-  if (!imageMatchesIntent(image, metadata)) {
+function scoreSubjectRelevance(image: ProviderImage, metadata: ContentMetadata, domain: ContentDomain): number {
+  if (!imageMatchesIntent(image, metadata, domain)) {
     return 0;
   }
 
@@ -152,10 +223,15 @@ function scoreResolution(image: ProviderImage): number {
 export function scoreImage(
   image: ProviderImage,
   intelligence: ImageIntelligenceResult,
-  metadata: ContentMetadata
+  metadata: ContentMetadata,
+  domain: ContentDomain
 ): ScoredImage {
   const factors: RelevanceScoreFactors = {
-    subjectRelevance: scoreSubjectRelevance(image, metadata),
+    subjectRelevance: Math.round(
+      domain === 'resources'
+        ? (scoreSubjectRelevance(image, metadata, domain) * 0.55) + (scoreDomainFit(image, domain) * 0.45)
+        : (scoreSubjectRelevance(image, metadata, domain) * 0.7) + (scoreDomainFit(image, domain) * 0.3)
+    ),
     visualClarity: scoreVisualClarity(image, intelligence),
     compositionQuality: scoreComposition(intelligence),
     overlayCompatibility: scoreOverlayCompatibility(intelligence),

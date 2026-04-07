@@ -8,120 +8,91 @@ export interface RenderCopy {
 const SERVICE_COPY_BY_SLUG: Record<string, RenderCopy> = {
   'growth-revenue-systems': {
     title: 'Revenue Growth Systems',
-    subtitle: 'Find where leads and follow-up lose momentum.',
+    subtitle: 'Find and fix the points where leads and conversion slow down.',
   },
   'smart-website-systems': {
     title: 'Smart Website Systems',
-    subtitle: 'Structured websites built for enquiries, workflows, and SEO.',
+    subtitle: 'Structured websites built for enquiries, automation, and SEO.',
   },
 };
 
 const FEATURE_COPY_BY_SLUG: Record<string, RenderCopy> = {
   calendars: {
-    title: 'Online Booking Layer',
-    subtitle: 'Structured booking integrated into your system.',
+    title: 'Online Booking',
+    subtitle: 'Structured booking flows connected to your operating system.',
   },
   workflows: {
     title: 'Workflow Automation',
-    subtitle: 'Automate follow-ups without losing control.',
+    subtitle: 'Automated follow-up and task movement without losing control.',
   },
 };
 
-function compactSentence(text: string): string {
-  const trimmed = text.replace(/\s+/g, ' ').trim();
-  if (trimmed.length <= 64) return trimmed;
-
-  const shortened = trimmed
-    .replace(/^a\s+/i, '')
-    .replace(/^the\s+/i, '')
-    .replace(/\s+that\s+.*$/i, '')
-    .replace(/\s+when\s+.*$/i, '')
-    .trim();
-
-  return shortened.length > 0 && shortened.length <= 48
-    ? shortened
-    : `${trimmed.slice(0, 61).trimEnd()}...`;
+function normalize(text: string): string {
+  return text.replace(/\s+/g, ' ').trim();
 }
 
-function fallbackServiceCopy(title: string): RenderCopy {
-  const lower = title.toLowerCase();
-
-  if (lower.includes('website')) {
-    return {
-      title: 'Smart Website Systems',
-      subtitle: 'Structured websites that support enquiries and operations.',
-    };
-  }
-
-  if (
-    ['growth', 'revenue', 'lead', 'follow-up', 'pipeline', 'conversion'].some(keyword =>
-      lower.includes(keyword)
-    )
-  ) {
-    return {
-      title: 'Revenue Growth Systems',
-      subtitle: 'Fix the points where leads, follow-up, and conversion slow down.',
-    };
-  }
+function splitForQualifier(title: string): RenderCopy | null {
+  const match = normalize(title).match(/^(.+?)\s+for\s+(.+)$/i);
+  if (!match) return null;
 
   return {
-    title: compactSentence(title),
-    subtitle: null,
+    title: match[1].trim(),
+    subtitle: `For ${match[2].trim()}`,
   };
 }
 
-function fallbackBlogCopy(title: string): RenderCopy {
-  const match = title.match(/^(.+?)\s+for\s+(.+)$/i);
-  if (match && title.length > 28) {
-    const mainTitle = match[1].trim();
-    const qualifier = match[2].trim();
+function splitLeadingWords(title: string, wordCount: number): RenderCopy {
+  const words = normalize(title).split(' ');
 
-    return {
-      title: mainTitle,
-      subtitle: `For ${qualifier}`,
-    };
+  if (words.length <= wordCount) {
+    return { title: normalize(title), subtitle: null };
   }
 
   return {
-    title,
-    subtitle: null,
+    title: words.slice(0, wordCount).join(' '),
+    subtitle: words.slice(wordCount).join(' '),
   };
 }
 
-function fallbackResourceCopy(title: string): RenderCopy {
-  return { title, subtitle: null };
+function resolveServiceCopy(title: string, slug: string): RenderCopy {
+  if (SERVICE_COPY_BY_SLUG[slug]) return SERVICE_COPY_BY_SLUG[slug];
+
+  const words = normalize(title).split(' ');
+  const titleWordCount = Math.min(Math.max(2, Math.min(words.length, 4)), 4);
+  return splitLeadingWords(title, titleWordCount);
 }
 
-function fallbackCaseStudyCopy(title: string): RenderCopy {
-  return { title, subtitle: null };
+function resolveFeatureCopy(title: string, slug: string): RenderCopy {
+  if (FEATURE_COPY_BY_SLUG[slug]) return FEATURE_COPY_BY_SLUG[slug];
+
+  return splitLeadingWords(title, Math.min(3, normalize(title).split(' ').length));
+}
+
+function resolveBlogCopy(title: string): RenderCopy {
+  return splitForQualifier(title) ?? { title: normalize(title), subtitle: null };
+}
+
+function resolveCaseStudyCopy(title: string): RenderCopy {
+  return splitLeadingWords(title, 2);
+}
+
+function resolveResourceCopy(title: string): RenderCopy {
+  return { title: normalize(title), subtitle: null };
 }
 
 export function resolveRenderCopy(title: string, design: OverlayDesignContext): RenderCopy {
-  if (design.domain === 'services') {
-    return SERVICE_COPY_BY_SLUG[design.slug] ?? fallbackServiceCopy(title);
+  switch (design.domain) {
+    case 'services':
+      return resolveServiceCopy(title, design.slug);
+    case 'features':
+      return resolveFeatureCopy(title, design.slug);
+    case 'blog':
+      return resolveBlogCopy(title);
+    case 'case-studies':
+      return resolveCaseStudyCopy(title);
+    case 'resources':
+      return resolveResourceCopy(title);
+    default:
+      return { title: normalize(title), subtitle: null };
   }
-
-  if (design.domain === 'features') {
-    return FEATURE_COPY_BY_SLUG[design.slug] ?? {
-      title: compactSentence(title),
-      subtitle: null,
-    };
-  }
-
-  if (design.domain === 'blog') {
-    return fallbackBlogCopy(title);
-  }
-
-  if (design.domain === 'resources') {
-    return fallbackResourceCopy(title);
-  }
-
-  if (design.domain === 'case-studies') {
-    return fallbackCaseStudyCopy(title);
-  }
-
-  return {
-    title,
-    subtitle: null,
-  };
 }

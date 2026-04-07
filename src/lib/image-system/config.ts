@@ -23,7 +23,7 @@ export const RATE_LIMIT = {
 // ─── Image Dimensions ───────────────────────────────────────────────
 
 export const IMAGE_SIZES = {
-  featured: { width: 1600, height: 900 },
+  featured: { width: 1200, height: 630 },
   content: { width: 1200, height: 700 },
 } as const;
 
@@ -105,19 +105,22 @@ export const DOMAIN_STYLES: Record<ContentDomain, DomainStyleRule> = {
   },
   resources: {
     preferredScenes: [
-      'business owner at desk with laptop and notebook',
-      'professional workspace organized and productive',
-      'service business owner reviewing strategy',
-      'team planning session around table',
-      'structured office environment with professionals',
+      'service business owner reviewing jobs and customer messages',
+      'dispatch desk with schedule board and laptop',
+      'business owner planning field operations with notes and phone',
+      'service manager reviewing customer reviews and appointments',
+      'operator workspace with calendar phone and paperwork',
     ],
     avoidScenes: [
       'abstract art',
       'random lifestyle photos',
       'generic tech screens with no context',
       'neon or Silicon Valley startup imagery',
+      'generic office meeting',
+      'coworking space team photo',
+      'boardroom presentation',
     ],
-    description: 'professional and structured business environments',
+    description: 'practical service-business planning, scheduling, and customer-management environments',
   },
   industries: {
     preferredScenes: [
@@ -132,6 +135,9 @@ export const DOMAIN_STYLES: Record<ContentDomain, DomainStyleRule> = {
       'abstract graphics',
       'generic stock photos',
       'Silicon Valley tech imagery',
+      'coworking office',
+      'call center headsets',
+      'conference room',
     ],
     description: 'authentic tradespeople and service professionals in their environment',
   },
@@ -187,9 +193,9 @@ export const DOMAIN_STYLES: Record<ContentDomain, DomainStyleRule> = {
 
 export const DOMAIN_CATEGORIES: Record<ContentDomain, string[]> = {
   blog: ['business', 'service', 'customer interaction'],
-  resources: ['office', 'analysis', 'strategy', 'planning'],
+  resources: ['service operations', 'dispatch', 'reviews', 'appointments', 'customer communication'],
   'case-studies': ['real business', 'client interaction', 'service delivery'],
-  industries: ['field service', 'technician', 'customer location'],
+  industries: ['field service', 'technician', 'tools', 'equipment', 'customer location'],
   features: ['software usage', 'dashboard', 'workflow'],
   services: ['consultation', 'teamwork', 'business discussion'],
 };

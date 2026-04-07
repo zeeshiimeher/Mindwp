@@ -1,4 +1,5 @@
 import type { BrightnessResult, OverlayDesignContext } from '../../types';
+import { gradients } from '../design-system/gradients';
 
 export function Background({
   width,
@@ -11,86 +12,55 @@ export function Background({
   design: OverlayDesignContext;
   brightness: BrightnessResult;
 }) {
-  const isIllustration = design.visualMode === 'illustration';
-  const accentOpacity = isIllustration ? 0.28 : 0.14;
-  const startOpacity = isIllustration
-    ? Math.min(design.palette.overlayStart * 0.78, 0.72)
-    : Math.min(design.palette.overlayStart * 1.1, 0.94);
-  const endOpacity = isIllustration
-    ? Math.min(design.palette.overlayEnd * 0.72, 0.18)
-    : Math.min(design.palette.overlayEnd * 1.2, 0.32);
+  void width;
+  void height;
+  void brightness;
+  const showImageOverlay = design.visualMode === 'real';
 
   return (
     <>
       <div
         style={{
-          display: 'flex',
           position: 'absolute',
           inset: 0,
-          background: `linear-gradient(135deg, rgba(10, 12, 18, ${startOpacity}) 0%, rgba(10, 12, 18, ${endOpacity}) 52%, rgba(10, 12, 18, 0.06) 100%)`,
+          background: gradients.base,
         }}
       />
       <div
         style={{
-          display: 'flex',
           position: 'absolute',
           inset: 0,
-          background: `radial-gradient(circle at 22% 28%, ${design.palette.accent}${Math.round(accentOpacity * 255)
-            .toString(16)
-            .padStart(2, '0')} 0%, transparent 42%)`,
-        }}
-      />
-      {isIllustration ? (
-        <div
-          style={{
-            display: 'flex',
-            position: 'absolute',
-            inset: 0,
-            background: 'radial-gradient(circle at 78% 42%, rgba(255, 255, 255, 0.14) 0%, rgba(255, 255, 255, 0.05) 24%, rgba(255, 255, 255, 0.01) 52%, transparent 74%)',
-          }}
-        />
-      ) : null}
-      <div
-        style={{
-          display: 'flex',
-          position: 'absolute',
-          inset: 0,
-          background: 'linear-gradient(180deg, rgba(255, 255, 255, 0.02) 0%, rgba(0, 0, 0, 0.22) 100%)',
+          background: gradients.glowPrimary,
         }}
       />
       <div
         style={{
-          display: 'flex',
           position: 'absolute',
           inset: 0,
-          border: brightness.average > 150 ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid rgba(255, 255, 255, 0.04)',
+          background: gradients.glowSecondary,
         }}
       />
-      {design.treatment === 'frame' ? (
-        <div
-          style={{
-            display: 'flex',
-            position: 'absolute',
-            inset: 24,
-            borderRadius: 24,
-            border: '1px solid rgba(255, 255, 255, 0.14)',
-          }}
-        />
-      ) : null}
-      {design.treatment === 'depth' ? (
-        <div
-          style={{
-            display: 'flex',
-            position: 'absolute',
-            right: width * 0.08,
-            top: height * 0.12,
-            width: width * 0.26,
-            height: width * 0.26,
-            borderRadius: width * 0.13,
-            background: 'radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 68%, transparent 100%)',
-          }}
-        />
-      ) : null}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background: showImageOverlay
+            ? 'linear-gradient(90deg, rgba(2,6,23,0.86) 0%, rgba(2,6,23,0.66) 42%, rgba(2,6,23,0.38) 100%)'
+            : 'linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0.18) 100%)',
+        }}
+      />
+      <div
+        style={{
+          position: 'absolute',
+          right: 84,
+          top: 54,
+          width: 340,
+          height: 340,
+          borderRadius: 999,
+          background: 'radial-gradient(circle, rgba(139,92,246,0.18) 0%, rgba(59,130,246,0.08) 42%, transparent 72%)',
+          transform: 'translateY(-10px)',
+        }}
+      />
     </>
   );
 }

@@ -193,7 +193,41 @@ async function loadAllResourceSlugs(): Promise<string[]> {
   return slugs;
 }
 
+async function loadAllIndustrySlugs(): Promise<string[]> {
+  const registryPath = path.resolve('src/domains/industries/registry.ts');
+  if (!fs.existsSync(registryPath)) return [];
+
+  const { getIndustryDetailSlugs } = await import('../../src/domains/industries/registry.ts');
+  return getIndustryDetailSlugs();
+}
+
+async function loadIndustryMetadata(slug: string): Promise<ContentMetadata | null> {
+  const registryPath = path.resolve('src/domains/industries/registry.ts');
+  if (!fs.existsSync(registryPath)) return null;
+
+  const { getIndustryBySlug } = await import('../../src/domains/industries/registry.ts');
+  const industry = getIndustryBySlug(slug);
+
+  if (!industry) return null;
+
+  return {
+    title: industry.hero.title,
+    primaryKeyword: industry.seo.keywords[0] ?? industry.hero.title,
+    topics: industry.topics ?? [],
+    systems: industry.systems ?? [],
+    tags: industry.industries ?? [],
+    sectionHeadings: (industry.sections ?? [])
+      .map((section: { title?: string }) => section.title)
+      .filter((title: string | undefined): title is string => Boolean(title)),
+    slug,
+  };
+}
+
 async function loadContentMetadata(slug: string, domain: ContentDomain): Promise<ContentMetadata | null> {
+  if (domain === 'industries') {
+    return loadIndustryMetadata(slug);
+  }
+
   // Features + services use /data/ directory with .ts files instead of /content/ with .tsx
   const isDataDomain = domain === 'features' || domain === 'services';
   const subDir = isDataDomain ? 'data' : 'content';
@@ -397,6 +431,9 @@ async function runBulkMode(domain: ContentDomain) {
       break;
     case 'resources':
       slugs = await loadAllResourceSlugs();
+      break;
+    case 'industries':
+      slugs = await loadAllIndustrySlugs();
       break;
     default: {
       // Features + services use /data/ directory with .ts files

@@ -2,12 +2,13 @@
 // Intelligent, content-aware design system for featured image overlays
 // Resolves visual variant, icon, badge, and color palette from metadata
 
-import { OVERLAY_CONFIG } from '../config';
+import { tokens } from '../render/design-system/tokens';
 import type {
   BrightnessResult,
   ColorPalette,
   ContentDomain,
   ContentMetadata,
+  IllustrationVariant,
   LayoutVariant,
   OverlayDesignContext,
   OverlayVariant,
@@ -172,56 +173,18 @@ export function resolveColorPalette(
   domain: ContentDomain,
   brightness: BrightnessResult
 ): ColorPalette {
-  let accent = DOMAIN_ACCENTS[domain];
+  void metadata;
+  void domain;
+  void brightness;
 
-  const allText = [metadata.title, metadata.primaryKeyword, ...metadata.topics, ...metadata.tags]
-    .join(' ')
-    .toLowerCase();
-
-  for (const ip of INDUSTRY_PALETTES) {
-    if (ip.keywords.some(k => allText.includes(k))) {
-      accent = ip.accent;
-      break;
-    }
-  }
-
-  // Brightness-aware overlay gradient
-  const avg = brightness.average;
-  let overlayStart: number;
-  let overlayEnd: number;
-
-  if (avg >= OVERLAY_CONFIG.brightThreshold) {
-    // Bright image: strong dark overlay for text contrast
-    overlayStart = 0.88;
-    overlayEnd = 0.2;
-  } else if (avg <= OVERLAY_CONFIG.darkThreshold) {
-    // Dark image: light overlay to avoid crushing the photo
-    overlayStart = 0.55;
-    overlayEnd = 0.05;
-  } else {
-    // Mid-range: linear interpolation
-    const t =
-      (avg - OVERLAY_CONFIG.darkThreshold) /
-      (OVERLAY_CONFIG.brightThreshold - OVERLAY_CONFIG.darkThreshold);
-    overlayStart = 0.55 + t * (0.88 - 0.55);
-    overlayEnd = 0.05 + t * (0.2 - 0.05);
-  }
-
-  // Compute depth variants from accent
-  const ar = parseInt(accent.slice(1, 3), 16);
-  const ag = parseInt(accent.slice(3, 5), 16);
-  const ab = parseInt(accent.slice(5, 7), 16);
-
-  const lighten = (c: number) => Math.min(255, Math.round(c + (255 - c) * 0.35));
-  const darken = (c: number) => Math.round(c * 0.6);
-
-  const toHex = (r: number, g: number, b: number) =>
-    `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`;
-
-  const accentLight = toHex(lighten(ar), lighten(ag), lighten(ab));
-  const accentDark = toHex(darken(ar), darken(ag), darken(ab));
-
-  return { accent, accentLight, accentDark, text: '#ffffff', overlayStart, overlayEnd };
+  return {
+    accent: tokens.colors.accent,
+    accentLight: '#A78BFA',
+    accentDark: '#6D28D9',
+    text: tokens.colors.lightText,
+    overlayStart: 0.84,
+    overlayEnd: 0.22,
+  };
 }
 
 // ─── Layout Variant ─────────────────────────────────────────────────
@@ -248,15 +211,36 @@ export function resolveVisualMode(
   domain: ContentDomain,
   variant: OverlayVariant
 ): VisualMode {
-  if (domain === 'features') return 'illustration';
-  if (domain === 'services') return 'illustration';
-  if (domain === 'case-studies') return 'real';
+  void metadata;
+  void variant;
 
-  if (variant === 'system' || variant === 'analytical') {
-    return hashSlug(metadata.slug) % 2 === 0 ? 'illustration' : 'real';
+  if (domain === 'case-studies') return 'illustration';
+  if (domain === 'features' || domain === 'services') return 'illustration';
+  return 'real';
+}
+
+export function resolveIllustrationVariant(metadata: ContentMetadata): IllustrationVariant {
+  const text = [metadata.title, metadata.primaryKeyword, ...metadata.topics, ...metadata.tags, ...metadata.systems]
+    .join(' ')
+    .toLowerCase();
+
+  if (['calendar', 'booking', 'appointment', 'schedule'].some((keyword) => text.includes(keyword))) {
+    return 'calendar';
   }
 
-  return 'real';
+  if (['pipeline', 'routing', 'crm'].some((keyword) => text.includes(keyword))) {
+    return 'pipeline';
+  }
+
+  if (['automation', 'workflow', 'sequence', 'process', 'trigger', 'action'].some((keyword) => text.includes(keyword))) {
+    return 'flow';
+  }
+
+  if (['review', 'message', 'messaging', 'chat', 'conversation', 'inbox', 'follow-up', 'follow up', 'reminder', 'missed call'].some((keyword) => text.includes(keyword))) {
+    return 'chat';
+  }
+
+  return 'dashboard';
 }
 
 export function resolveTextStyle(metadata: ContentMetadata, domain: ContentDomain): TextStyle {
@@ -287,30 +271,22 @@ export function buildDesignContext(
   brightness: BrightnessResult
 ): OverlayDesignContext {
   const variant = resolveOverlayVariant(metadata, domain);
-  let layout = resolveLayoutVariant(metadata.slug);
+  const layoutByDomain: Record<ContentDomain, LayoutVariant> = {
+    blog: 1,
+    resources: 1,
+    industries: 1,
+    'case-studies': 1,
+    features: 2,
+    services: 2,
+  };
+  const layout = layoutByDomain[domain];
   const visualMode = resolveVisualMode(metadata, domain, variant);
+  const illustration = resolveIllustrationVariant(metadata);
   const textStyle = resolveTextStyle(metadata, domain);
-  const treatment = resolveVisualTreatment(metadata.slug);
+  const treatment: VisualTreatment = 'depth';
   const icon = resolveIcon(metadata);
   const badge = extractBadgeText(metadata, domain);
   const palette = resolveColorPalette(metadata, domain, brightness);
-
-  // Domain-specific layout enforcement
-  if (domain === 'features') {
-    layout = 2; // Always L2 Focused for feature cards
-  } else if (domain === 'services') {
-    layout = 2; // Service pages use a structured left-copy / right-visual composition
-  }
-
-  // Variant-specific palette adjustments
-  if (variant === 'local') {
-    // Softer gradient for local/industry content
-    palette.overlayStart *= 0.9;
-    palette.overlayEnd *= 0.8;
-  } else if (variant === 'results') {
-    // Stronger contrast for case study results
-    palette.overlayStart = Math.min(palette.overlayStart * 1.08, 0.92);
-  }
 
   return {
     slug: metadata.slug,
@@ -318,6 +294,7 @@ export function buildDesignContext(
     variant,
     layout,
     visualMode,
+    illustration,
     textStyle,
     treatment,
     icon,

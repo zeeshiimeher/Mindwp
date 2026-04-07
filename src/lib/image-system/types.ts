@@ -138,6 +138,13 @@ export type VisualMode = 'real' | 'illustration';
 
 export type TextStyle = 'saas' | 'hook';
 
+export type IllustrationVariant =
+  | 'dashboard'
+  | 'pipeline'
+  | 'calendar'
+  | 'chat'
+  | 'flow';
+
 export type VisualTreatment = 'clean' | 'highlight' | 'frame' | 'depth';
 
 /** Visual layout variant — deterministic per slug, prevents template repetition */
@@ -160,6 +167,7 @@ export interface OverlayDesignContext {
   variant: OverlayVariant;
   layout: LayoutVariant;
   visualMode: VisualMode;
+  illustration: IllustrationVariant;
   textStyle: TextStyle;
   treatment: VisualTreatment;
   icon: string | null;
