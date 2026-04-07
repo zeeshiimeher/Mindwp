@@ -41,9 +41,9 @@ export const localSeoAuthorityPage = {
     badge: 'Local Authority & SEO Systems',
     title: 'Local SEO that starts with your website, not around it',
     description:
-      'Most SEO work skips the website and jumps straight to tactics. We do it the other way around. Your services need to be clearly presented, your local presence needs to be consistent, and your enquiry paths need to make sense — before optimisation can do its job properly. This is ongoing visibility work built on a sound website foundation.',
+      'Most SEO work jumps straight to tactics. We start with the website, local presence, and enquiry path so visibility grows on a structure that already makes sense.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Strengthen Your Local Authority',
       href: '/contact?system=local-seo-authority&source=service/local-seo-authority',
     },
     cssPrefix: 'website-seo-hero',
@@ -373,8 +373,8 @@ export const localSeoAuthorityPage = {
   cta: {
     title: 'Discuss your local visibility',
     description:
-      'If your website foundations are already in good shape, we can outline steady ongoing SEO and local visibility work. If the website needs attention first, we will tell you that and help you decide the right next step.',
-    buttonText: 'Start a Conversation',
+      'Tell us which services and locations matter most. We will show you what is weakening visibility and what needs fixing first.',
+    buttonText: 'Strengthen Your Local Authority',
     buttonHref: '/contact?system=local-seo-authority&source=service/local-seo-authority',
   },
 } satisfies ServicePageData;

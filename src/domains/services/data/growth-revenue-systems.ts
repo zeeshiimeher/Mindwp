@@ -62,9 +62,9 @@ export const growthRevenueSystemsPage = {
     badge: 'Revenue Growth Systems',
     title: 'Growth slows when leads come in but nothing moves them forward reliably',
     description:
-      'Most revenue problems are not demand problems. They are structure problems — follow-up breaks, routing is unclear, or the website generates interest without a clear next step. This service finds where the system is losing momentum and helps fix it in the right order.',
+      'Most revenue problems are not demand problems. They come from weak follow-up, unclear routing, or a website that generates interest without a clear next step. This service finds where momentum is being lost and helps fix it in the right order.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Find Your Revenue Leaks',
       href: '/contact?system=revenue-growth&source=service/growth-revenue-systems',
     },
     cssPrefix: 'technical-audit-hero',
@@ -475,8 +475,8 @@ export const growthRevenueSystemsPage = {
   cta: {
     title: 'Find out what is slowing growth down',
     description:
-      'If leads are coming in but revenue still feels inconsistent, start by finding the weak points. We will review the current system and help you decide the right next step.',
-    buttonText: 'Start a Conversation',
+      'Tell us how leads move from first contact to follow-up. We will show you where momentum drops and what needs fixing first.',
+    buttonText: 'Find Your Revenue Leaks',
     buttonHref: '/contact?system=revenue-growth&source=service/growth-revenue-systems',
   },
 } satisfies ServicePageData;

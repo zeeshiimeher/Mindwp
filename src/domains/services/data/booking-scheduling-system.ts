@@ -40,9 +40,9 @@ export const bookingSchedulingSystemPage = {
     badge: 'Appointment Flow Infrastructure',
     title: 'A booking system should make the next step easier, not add more admin around it',
     description:
-      'This service focuses on how enquiries flow through booking and scheduling — from consultation requests and confirmations to reminders and staff handoff. When that path works cleanly, more interest turns into booked and fulfilled appointments.',
+      'This service fixes the path from enquiry to confirmed appointment. Consultation requests, confirmations, reminders, and staff handoff all work together so more interest turns into booked appointments.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Automate Your Booking System',
       href: '/contact?system=smart-website-systems&source=service/booking-scheduling-system',
     },
     list: [
@@ -293,8 +293,8 @@ export const bookingSchedulingSystemPage = {
   cta: {
     title: 'Make the booking step work properly',
     description:
-      'If appointments are being slowed by unclear flow, reminder gaps, or admin confusion, we can help structure a cleaner booking system.',
-    buttonText: 'Start a Conversation',
+      'Tell us how appointments are booked now. We will show you where friction, reminder gaps, and admin confusion are slowing conversion.',
+    buttonText: 'Automate Your Booking System',
     buttonHref: '/contact?system=smart-website-systems&source=service/booking-scheduling-system',
   },
 } satisfies ServicePageData;

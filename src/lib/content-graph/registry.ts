@@ -49,6 +49,7 @@ const getNodeMetadata = (carrier: MetadataCarrier) => ({
   ...(carrier.industries ? { industries: carrier.industries } : {}),
   ...(carrier.systems ? { systems: carrier.systems } : {}),
   ...(carrier.topics ? { topics: carrier.topics } : {}),
+  ...(carrier.intent ? { intent: carrier.intent } : {}),
 });
 
 const appendToIndex = (

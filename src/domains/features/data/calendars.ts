@@ -80,9 +80,9 @@ export const calendarsData: FeaturePageData = {
     badge: 'Booking Layer',
     title: 'Structured Online Booking Integrated into Your System',
     description:
-      'This booking layer is implemented inside your Smart Website system — allowing clients to schedule appointments through a clear, structured flow. Booking, confirmations, and calendar management connect directly to your enquiry handling and internal operations.',
+      'This booking layer lets clients schedule appointments through a clear flow. Booking, confirmations, and calendar management connect directly to your enquiry handling and internal operations.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Add Booking to Your System',
       href: '/contact?system=smart-website-systems&source=feature/calendars',
     },
     stats: [
@@ -276,9 +276,9 @@ export const calendarsData: FeaturePageData = {
   cta: {
     title: 'Review Your Booking Structure',
     description:
-      'If booking currently creates friction or manual coordination, we can review your current setup and outline a clearer, more structured approach.',
+      'Tell us how booking is handled now. We will show you where scheduling friction and manual coordination are slowing the next step.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Add Booking to Your System',
       href: '/contact?system=smart-website-systems&source=feature/calendars',
     },
     metaItems: [

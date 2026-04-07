@@ -93,9 +93,9 @@ export const aiChatData: FeaturePageData = {
     badge: 'Conversation Layer',
     title: 'Structured Website Chat Integrated into Your System',
     description:
-      'This conversation layer is implemented inside your Smart Website system — helping visitors ask questions, request services, and book appointments through a clear, structured flow. AI assists with routing and response suggestions, while human oversight remains in place.',
+      'This conversation layer helps visitors ask questions, request services, and book appointments through a clear flow. AI supports routing and first response while your team stays in control of the important conversations.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Add AI Chat to Your System',
       href: '/contact?system=ai-lead-handling&source=feature/aichat',
     },
     stats: [
@@ -295,9 +295,9 @@ export const aiChatData: FeaturePageData = {
   cta: {
     title: 'Review Your Communication Structure',
     description:
-      'If communication or enquiry capture feels inconsistent, we can review your current setup and outline a clearer, more structured approach.',
+      'Tell us how website conversations are handled now. We will show you where chat can remove delays and improve handoff.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Add AI Chat to Your System',
       href: '/contact?system=ai-lead-handling&source=feature/aichat',
     },
   },

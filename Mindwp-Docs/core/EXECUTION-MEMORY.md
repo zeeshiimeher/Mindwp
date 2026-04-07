@@ -20,13 +20,12 @@
 - **Master artifact:** `reports/system-report.json`
 - **Current status:** `warning`
 - **Blocking issues:** `0`
-- **Advisory issues:** `3`
+- **Advisory issues:** `2`
 
 ### Live advisory state
 
-1. Recommended content metadata missing in `506` places
-2. Missing recommended intent metadata on `147` nodes
-3. Advisory lint drift remains in a small number of files
+1. Recommended content metadata missing in `359` places
+2. Advisory lint drift remains in a small number of files
 
 ### System health snapshot
 
@@ -42,8 +41,8 @@
 
 1. Keep `system-report.json` as the single inspectable control-layer output
 2. Keep CTA contract drift at zero across conversion paths
-3. Reduce advisory metadata drift without introducing parallel validation logic
-4. Add missing intent only on high-value pages
+3. Improve CTA clarity on high-value pages without changing structure
+4. Reduce advisory metadata drift without introducing parallel validation logic
 5. Preserve architecture, validators, and image-system behavior unchanged
 
 ---
@@ -236,6 +235,61 @@
 
 ---
 
+### E-008 — Intent Coverage Audit Revealed Report Mismatch
+**Date:** 2026-04-08
+
+**Completed:**
+- Audited editable blog content under `src/domains/blog/content/*.tsx`
+- Audited editable resource content under `src/domains/resources/content/*.tsx`
+- Confirmed all scanned blog and resource source files already declare an `intent` field
+- Cross-checked live source state against `reports/content-contract-report.json` and `reports/system-report.json`
+
+**Result:**
+- Blog content files missing `intent`: `0`
+- Resource content files missing `intent`: `0`
+- Current reports still claim `147` missing intent values (`88` blog, `59` resource)
+- This is not currently fixable through content-only edits and indicates report/parsing inconsistency outside the editable content layer
+
+---
+
+### E-009 — Intent Detection Fixed At Graph Layer
+**Date:** 2026-04-08
+
+**Root cause:**
+- Content files exported `intent` correctly
+- Blog and resource registries imported those files correctly
+- The graph builder dropped `intent` because `src/lib/content-graph/registry.ts` only copied `industries`, `systems`, and `topics` into graph nodes
+- `validate-content-contract.mjs` reads from structured graph nodes, so it reported intent as missing even when source content was valid
+
+**Files updated:**
+- `src/lib/content-graph/types.ts`
+- `src/lib/content-graph/registry.ts`
+
+**Result:**
+- `content.missing_intent`: `0`
+- Missing-intent warnings are resolved without modifying content files
+- Remaining blog/resource intent warnings are now correctly classified as legacy-intent normalization warnings, not missing-intent warnings
+
+---
+
+### E-010 — Conversion Clarity Pass Applied To Core Entry Pages
+**Date:** 2026-04-08
+
+**Completed:**
+- Updated primary CTA labels on high-impact service and feature pages to be system-specific and outcome-focused
+- Tightened CTA supporting text to explain what the user gets next with less friction
+- Simplified above-the-fold messaging on edited pages without changing structure, routing, or field shapes
+- Re-ran `npm run system:report` after the pass
+
+**Result:**
+- `blocking.count`: `0`
+- `conversion.cta_missing_system`: `0`
+- `conversion.cta_missing_source`: `0`
+- `conversion.invalid_contact_links`: `0`
+- No new warnings or errors were introduced by the edited conversion pages
+
+---
+
 ## CURRENT TASKS
 
 ### T-001 — Reduce advisory metadata drift
@@ -246,19 +300,24 @@
 ### T-002 — Normalize intent coverage
 **Status:** Active
 **Priority:** High
-**Description:** Add explicit intent metadata where missing on service-adjacent and high-value conversion-support pages so advisory intent count can trend downward.
+**Description:** Reduce remaining legacy-intent normalization warnings in content over time without reopening structure or validator design.
 
 ### T-003 — Preserve CTA contract integrity
 **Status:** Active
 **Priority:** High
 **Description:** Keep all content CTAs that route to `/contact` aligned to the explicit `system` + `source` contract.
 
-### T-004 — Clear residual advisory lint noise
+### T-004 — Extend CTA clarity pass selectively
+**Status:** Active
+**Priority:** Medium
+**Description:** Continue replacing weak generic primary CTAs only on the next highest-value conversion pages while keeping labels consistent per page.
+
+### T-005 — Clear residual advisory lint noise
 **Status:** Active
 **Priority:** Medium
 **Description:** Remove remaining non-blocking lint warnings to move system status from `warning` to `clean`.
 
-### T-005 — Preserve report-only dashboard boundary
+### T-006 — Preserve report-only dashboard boundary
 **Status:** Continuous
 **Priority:** High
 **Description:** Do not reintroduce frontend recomputation or live health logic into dashboards.
@@ -296,6 +355,10 @@ These constraints are active and must not change without architectural review:
 ### R-004 — Broad advisory cleanup can dilute impact if done indiscriminately
 **Impact:** Medium
 **Current state:** the remaining advisory backlog is large enough that future passes must stay priority-driven rather than attempting full cleanup.
+
+### R-005 — Intent report does not currently match editable content
+**Impact:** High
+**Current state:** resolved as a graph-layer metadata pass-through bug. Report now detects existing intent correctly; remaining intent-related warnings are legacy-value normalization warnings, not missing fields.
 
 ---
 

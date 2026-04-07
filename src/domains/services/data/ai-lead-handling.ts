@@ -40,9 +40,9 @@ export const aiLeadHandlingPage = {
     badge: 'AI Lead Handling',
     title: 'AI can support first response without replacing the judgement that matters',
     description:
-      'This service helps businesses respond faster across website chat, phone, and booking flows. AI handles common questions, captures details, and passes the conversation on when a human should step in. It works best when the website, routing, and follow-up are already clear.',
+      'This service helps businesses respond faster across website chat, phone, and booking flows. AI handles the repeatable first step, captures the right details, and hands off cleanly when a person should step in.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Automate Your Lead Handling',
       href: '/contact?system=ai-lead-handling&source=service/ai-lead-handling',
     },
     list: [
@@ -387,8 +387,8 @@ export const aiLeadHandlingPage = {
   cta: {
     title: 'See where AI response would actually help',
     description:
-      'If you are thinking about website chat, missed-call support, or AI response workflows, we can review your current enquiry flow and show where this system fits — and where it does not.',
-    buttonText: 'Start a Conversation',
+      'Tell us how calls, chat, and bookings are handled now. We will show you where response speed and handoff are breaking down.',
+    buttonText: 'Automate Your Lead Handling',
     buttonHref: '/contact?system=ai-lead-handling&source=service/ai-lead-handling',
   },
 } satisfies ServicePageData;

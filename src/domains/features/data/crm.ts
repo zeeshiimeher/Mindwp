@@ -93,9 +93,9 @@ export const crmData: FeaturePageData = {
     badge: 'CRM Layer',
     title: 'Structured CRM Integrated into Your System',
     description:
-      'This CRM layer is implemented inside your Smart Website system — organizing contacts, conversations, and activity into one structured view. It connects directly to enquiry capture, booking, and follow-up so your team works from a single, governed system.',
+      'This CRM layer organizes contacts, conversations, and activity into one structured view. It connects directly to enquiry capture, booking, and follow-up so your team can work from one governed system.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Add CRM to Your System',
       href: '/contact?system=revenue-growth&source=feature/crm',
     },
     stats: [
@@ -292,9 +292,9 @@ export const crmData: FeaturePageData = {
   cta: {
     title: 'Review Your Contact and Follow-Up Structure',
     description:
-      'If contact management or follow-up feels unclear, we can review your current setup and outline a clearer, more structured approach.',
+      'Tell us how leads and follow-up are handled now. We will show you where a clearer CRM layer will remove guesswork.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Add CRM to Your System',
       href: '/contact?system=revenue-growth&source=feature/crm',
     },
   },

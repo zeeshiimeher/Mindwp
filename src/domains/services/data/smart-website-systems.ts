@@ -99,9 +99,9 @@ export const smartWebsiteSystemsPage = {
     badge: 'Smart Website Systems',
     title: 'A website that works as part of your business',
     description:
-      'A Smart Website is business infrastructure — not a brochure. Visitors understand your services quickly, enquiries follow clear paths, and the site connects directly with your workflow.',
+      'A Smart Website gives visitors a clear path from service to enquiry. Your services are easy to understand, the next step is obvious, and the site connects directly to your workflow.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Build Your Smart Website',
       href: '/contact?system=smart-website-systems&source=service/smart-website-systems',
     },
     list: [
@@ -371,17 +371,17 @@ export const smartWebsiteSystemsPage = {
     },
   },
   cta: {
-    title: 'Start with a conversation',
+    title: 'Build your smart website system',
     description:
-      'If you want a website that supports how your business actually works, we can review your current setup and explain what a Smart Website implementation would look like.',
-    buttonText: 'Start a Conversation',
+      'Tell us how your website handles services and enquiries today. We will show you what needs fixing first and where the system should be clearer.',
+    buttonText: 'Build Your Smart Website',
     buttonHref: '/contact?system=smart-website-systems&source=service/smart-website-systems',
   },
   inlineCta: {
     title: 'Not sure how this would fit your business?',
     description:
-      'We can walk through how your current website handles enquiries and show you where a more structured setup could make things easier.',
-    buttonText: 'Start a Conversation',
+      'No commitment. We will walk through your current setup and show where structure is slowing enquiries down.',
+    buttonText: 'Build Your Smart Website',
     buttonHref: '/contact?system=smart-website-systems&source=service/smart-website-systems',
   },
 } satisfies ServicePageData;

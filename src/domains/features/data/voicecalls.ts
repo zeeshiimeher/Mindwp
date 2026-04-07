@@ -97,9 +97,9 @@ export const voicecallsData: FeaturePageData = {
     badge: 'AI-Powered Phone Assistant',
     title: 'AI phone assistant for consistent call handling',
     description:
-      'An AI-powered phone assistant that answers calls, books appointments, takes messages, and routes enquiries clearly — during business hours or after hours.',
+      'An AI phone assistant that answers calls, books appointments, takes messages, and routes enquiries clearly during business hours or after hours.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Add Voice AI to Your System',
       href: '/contact?system=ai-lead-handling&source=feature/voicecalls',
     },
     stats: [
@@ -305,9 +305,9 @@ export const voicecallsData: FeaturePageData = {
   cta: {
     title: 'Discuss AI voice call handling',
     description:
-      'We will review how calls are currently handled and outline a simple AI voice setup that supports consistent enquiry capture.',
+      'Tell us how calls are handled now. We will show you where voice AI can reduce missed enquiries and clean up routing.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Add Voice AI to Your System',
       href: '/contact?system=ai-lead-handling&source=feature/voicecalls',
     },
   },

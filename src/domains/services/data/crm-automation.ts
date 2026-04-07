@@ -820,10 +820,10 @@ export const crmAutomationPage = {
     },
   },
   cta: {
-    title: 'Make your enquiry handling visible and repeatable',
+    title: 'Set up your CRM pipeline',
     description:
-      'We map how enquiries are currently routed, who owns each stage, how follow-up works, and where things break down. Then we outline how a CRM layer would bring that under control.',
-    buttonText: 'Start a Conversation',
+      'Tell us how leads are routed today. We will show you where ownership, stages, and follow-up are breaking down.',
+    buttonText: 'Set Up Your CRM Pipeline',
     buttonHref: '/contact?system=crm-automation&source=service/crm-infrastructure-implementation',
   },
 } satisfies ServicePageData;

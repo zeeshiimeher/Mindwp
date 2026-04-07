@@ -41,9 +41,9 @@ export const reputationReviewSystemsPage = {
     title:
       'Reviews help more when they are part of a system, not something that happens by accident',
     description:
-      'This service helps businesses build a clear reputation system around review timing, feedback routing, response ownership, and trust signals. It is most useful when the problem is not visibility alone, but whether people trust what they see once they find you.',
+      'This service helps businesses build a clear review system around timing, feedback routing, response ownership, and trust signals. It works best when people are already finding the business but still hesitate to trust it.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Fix Your Review System',
       href: '/contact?system=reputation-review&source=service/reputation-review-systems',
     },
     list: [
@@ -301,8 +301,8 @@ export const reputationReviewSystemsPage = {
   cta: {
     title: 'Make trust part of the system',
     description:
-      'If reviews, trust, or public perception are holding back enquiries, we can review the situation and help structure a clearer reputation system.',
-    buttonText: 'Start a Conversation',
+      'Tell us how reviews and feedback are handled now. We will show you where trust is leaking and what needs tightening first.',
+    buttonText: 'Fix Your Review System',
     buttonHref: '/contact?system=reputation-review&source=service/reputation-review-systems',
   },
 } satisfies ServicePageData;
