@@ -197,7 +197,7 @@ function buildAutomotiveServiceReminderAutomation(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Client Retention',
       },
       cta: {
-        primaryButtonLabel: 'Start a Conversation',
+        primaryButtonLabel: 'Automate Service Reminders',
         primaryButtonHref: '/contact',
         metaItems: [
           { text: 'Free 20-minute call' },

@@ -387,7 +387,7 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Start a Conversation', href: '/contact' },
+      primaryAction: { label: 'Recover Missed Repair Calls', href: '/contact' },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -406,7 +406,7 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
       title: 'Build a steadier auto repair diagnostic and estimate system',
       description:
         'If your repair business is dealing with missed enquiries, loose booking, or inconsistent estimate follow-up — we can map a practical system around how the workshop actually runs.',
-      primaryAction: { variant: 'white', label: 'Start a Conversation', href: '/contact' },
+      primaryAction: { variant: 'white', label: 'Recover Missed Repair Calls', href: '/contact' },
       secondaryAction: {
         label: 'See Automotive Services',
         href: '/industries/automotive-services',

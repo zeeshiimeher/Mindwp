@@ -204,7 +204,7 @@ function buildHvacMaintenancePlanReactivation(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Maintenance Revenue Performance',
       },
       cta: {
-        primaryButtonLabel: 'Start a Conversation',
+        primaryButtonLabel: 'Reactivate More Service Plans',
         primaryButtonHref: '/contact',
         metaItems: [
           { text: 'Free 20-minute call' },

@@ -207,7 +207,7 @@ function buildSmartWebsiteInfrastructureImplementation(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Website Performance',
       },
       cta: {
-        primaryButtonLabel: 'Start a Conversation',
+        primaryButtonLabel: 'Turn Website Traffic Into Leads',
         primaryButtonHref: '/contact',
         metaItems: [
           { text: 'Free 20-minute call' },

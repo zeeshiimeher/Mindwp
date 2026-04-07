@@ -1,3 +1,5 @@
+import type { IndustryPageData } from '@/domains/industries/types';
+
 import {
   Bell,
   Calendar,
@@ -10,8 +12,6 @@ import {
   Star,
   Workflow,
 } from 'lucide-react';
-
-import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -376,7 +376,7 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Start a Conversation', href: '/contact' },
+      primaryAction: { label: 'Book More Consultations', href: '/contact' },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -395,7 +395,7 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier clinic system',
       description:
         'If unclear consultation routing, booking friction, inconsistent aftercare, or weak trust signals are slowing things down, we can map a practical system around the real patient journey.',
-      primaryAction: { variant: 'white', label: 'Start a Conversation', href: '/contact' },
+      primaryAction: { variant: 'white', label: 'Book More Consultations', href: '/contact' },
       secondaryAction: {
         label: 'See the Category Approach',
         href: '/industries/beauty-personal-care',

@@ -231,7 +231,7 @@ function buildStormSeasonLeadHandlingSystem(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Storm Season Performance',
       },
       cta: {
-        primaryButtonLabel: 'Start a Conversation',
+        primaryButtonLabel: 'Handle Storm Leads Faster',
         primaryButtonHref: '/contact',
         metaItems: [
           { text: 'Free 20-minute call' },

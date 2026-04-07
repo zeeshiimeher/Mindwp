@@ -351,9 +351,9 @@ export const inboxData: FeaturePageData = {
   cta: {
     title: 'Ready to Bring All Conversations into One Inbox?',
     description:
-      'Connect your email, SMS, and social channels to one inbox and give your team a clear, simple communication system.',
+        'Connect your email, SMS, and social channels into one response system so your team can reply faster and stop losing conversations across channels.',
     primaryAction: {
-      label: 'Start a Conversation',
+        label: 'Unify Your Inbox System',
       href: '/contact?system=ai-lead-handling&source=feature/inbox',
     },
   },

@@ -231,7 +231,7 @@ function buildHvacEmergencyLeadRouting(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: After-Hours Emergency Performance',
       },
       cta: {
-        primaryButtonLabel: 'Start a Conversation',
+        primaryButtonLabel: 'Route Emergency Leads Faster',
         primaryButtonHref: '/contact',
         metaItems: [
           { text: 'Free 20-minute call' },

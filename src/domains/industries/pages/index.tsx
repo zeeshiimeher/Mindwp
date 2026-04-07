@@ -156,10 +156,10 @@ export default function IndustriesLanding() {
         {/* CTA */}
         <CTASection
           title='Not sure where your business fits?'
-          description='If you want to discuss your industry needs or understand which lane applies, we can help clarify the right approach.'
+          description='If growth feels inconsistent, we can show you which part of your lead flow needs attention first.'
           primaryAction={{
             variant: 'white',
-            label: 'Start a Conversation',
+            label: 'Get More Qualified Leads',
             href: '/contact',
             icon: ArrowRight,
           }}

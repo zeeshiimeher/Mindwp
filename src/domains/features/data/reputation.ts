@@ -98,7 +98,7 @@ export const reputationData: FeaturePageData = {
     description:
       'Systematically request reviews after completed services and manage feedback across key platforms. Designed to support visibility, credibility, and consistent follow-up.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Get More Reviews Consistently',
       href: '/contact?system=reputation-review&source=feature/reputation',
     },
     stats: [
@@ -323,9 +323,9 @@ export const reputationData: FeaturePageData = {
   cta: {
     title: 'Discuss structured review management',
     description:
-      'We will review your current feedback process and outline a simple, structured system for consistent review collection and response.',
+      'We will review how reviews are requested, routed, and answered, then show you how to collect more proof with less manual chasing.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Get More Reviews Consistently',
       href: '/contact?system=reputation-review&source=feature/reputation',
     },
   },

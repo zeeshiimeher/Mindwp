@@ -369,7 +369,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Start a Conversation', href: '/contact' },
+      primaryAction: { label: 'Capture More HVAC Leads', href: '/contact' },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -387,7 +387,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       title: 'Build a steadier HVAC system',
       description:
         'If seasonal response pressure, scheduling friction, weak maintenance follow-up, or scattered local trust signals are slowing things down, we can map a practical system around how the work actually runs.',
-      primaryAction: { variant: 'white', label: 'Start a Conversation', href: '/contact' },
+      primaryAction: { variant: 'white', label: 'Capture More HVAC Leads', href: '/contact' },
       secondaryAction: {
         label: 'See Home Services',
         href: '/industries/home-services',

@@ -82,7 +82,7 @@ export const calendarsData: FeaturePageData = {
     description:
       'This booking layer lets clients schedule appointments through a clear flow. Booking, confirmations, and calendar management connect directly to your enquiry handling and internal operations.',
     primaryAction: {
-      label: 'Add Booking to Your System',
+      label: 'Automate Your Booking Flow',
       href: '/contact?system=smart-website-systems&source=feature/calendars',
     },
     stats: [
@@ -276,9 +276,9 @@ export const calendarsData: FeaturePageData = {
   cta: {
     title: 'Review Your Booking Structure',
     description:
-      'Tell us how booking is handled now. We will show you where scheduling friction and manual coordination are slowing the next step.',
+      'Tell us how booking is handled now. We will show you where scheduling friction and manual handoffs are slowing appointments down.',
     primaryAction: {
-      label: 'Add Booking to Your System',
+      label: 'Automate Your Booking Flow',
       href: '/contact?system=smart-website-systems&source=feature/calendars',
     },
     metaItems: [

@@ -379,7 +379,7 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Start a Conversation', href: '/contact' },
+      primaryAction: { label: 'Book More Hair Appointments', href: '/contact' },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -398,7 +398,7 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier salon workflow',
       description:
         'If booking confusion, reminder gaps, inconsistent reviews, or weak repeat-visit follow-up are slowing things down, we can map a practical system around the real client journey.',
-      primaryAction: { variant: 'white', label: 'Start a Conversation', href: '/contact' },
+      primaryAction: { variant: 'white', label: 'Book More Hair Appointments', href: '/contact' },
       secondaryAction: {
         label: 'See the Category Approach',
         href: '/industries/beauty-personal-care',

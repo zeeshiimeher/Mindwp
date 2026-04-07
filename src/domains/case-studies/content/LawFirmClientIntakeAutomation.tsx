@@ -234,7 +234,7 @@ function buildLawFirmClientIntakeAutomation(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Intake Performance',
       },
       cta: {
-        primaryButtonLabel: 'Start a Conversation',
+        primaryButtonLabel: 'Book More Client Consultations',
         primaryButtonHref: '/contact',
         metaItems: [
           { text: 'Free 20-minute call' },

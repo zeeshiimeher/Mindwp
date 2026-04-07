@@ -100,7 +100,7 @@ export const workflowsData: FeaturePageData = {
     description:
       'Workflows connect your forms, bookings, and pipeline stages to automatic actions. Send confirmations, reminders, and task notifications—while keeping full visibility and control.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Automate Your Follow-Up System',
       href: '/contact?system=revenue-growth&source=feature/workflows',
     },
     stats: [
@@ -324,9 +324,9 @@ export const workflowsData: FeaturePageData = {
   cta: {
     title: 'Ready to Automate Your Follow-Ups?',
     description:
-      'Book a consultation and we will map a simple workflow around your real process—so your leads, bookings, and tasks move automatically.',
+      'We will map the triggers, rules, and follow-up steps that fit your real operation so leads, bookings, and internal tasks keep moving without manual chasing.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Automate Your Follow-Up System',
       href: '/contact?system=revenue-growth&source=feature/workflows',
     },
   },

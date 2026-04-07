@@ -191,7 +191,7 @@ function buildAutoRepairMissedCallRecovery(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Call Recovery Performance',
       },
       cta: {
-        primaryButtonLabel: 'Start a Conversation',
+        primaryButtonLabel: 'Recover Missed Repair Calls',
         primaryButtonHref: '/contact',
         metaItems: [
           { text: 'Free 20-minute call' },

@@ -2,15 +2,15 @@
 
 > This document tracks current execution state, architectural decisions, and immediate system priorities.
 > It is the active operational memory for the deterministic control layer.
-> Updated: 2026-04-08 (Phase 2.8 stabilization pass applied)
+> Updated: 2026-04-08 (CTA clarity rollout extended)
 
 ---
 
 ## CURRENT PHASE
 
-- **Phase:** Phase 2.8 — Content Stabilization + CTA Contract Completion
+- **Phase:** Phase 2.8 — Content Stabilization + CTA Clarity Rollout
 - **Status:** Warning-only, non-blocking
-- **Objective:** Keep the system production-ready by fixing high-impact conversion-path content without changing architecture or scripts
+- **Objective:** Keep the system production-ready by improving conversion-path CTA clarity without changing architecture, routing, or scripts
 
 ---
 
@@ -41,7 +41,7 @@
 
 1. Keep `system-report.json` as the single inspectable control-layer output
 2. Keep CTA contract drift at zero across conversion paths
-3. Improve CTA clarity on high-value pages without changing structure
+3. Extend CTA clarity upgrades across remaining structured conversion pages without changing structure
 4. Reduce advisory metadata drift without introducing parallel validation logic
 5. Preserve architecture, validators, and image-system behavior unchanged
 
@@ -290,6 +290,27 @@
 
 ---
 
+### E-011 — CTA Clarity Rollout Extended Across Secondary Conversion Pages
+**Date:** 2026-04-08
+
+**Completed:**
+- Replaced remaining generic primary CTAs on untouched feature pages with outcome-driven, system-aware labels
+- Rolled CTA label upgrades across industry detail pages and industry category pages while keeping each page internally consistent
+- Replaced generic case-study CTA labels with result-specific actions aligned to the system shown in each case study
+- Upgraded the resource hub CTA title, supporting text, and primary action to match the systems-first positioning
+- Spot-checked high-value blog posts and confirmed their existing CTA buttons were already system-specific, so no blog CTA rewrite was required in this pass
+- Re-ran `npm run system:report` after the rollout
+
+**Result:**
+- `blocking.count`: `0`
+- `advisory.count`: `2`
+- `conversion.cta_missing_system`: `0`
+- `conversion.cta_missing_source`: `0`
+- `conversion.invalid_contact_links`: `0`
+- CTA copy improvements did not reopen contract drift
+
+---
+
 ## CURRENT TASKS
 
 ### T-001 — Reduce advisory metadata drift
@@ -310,7 +331,7 @@
 ### T-004 — Extend CTA clarity pass selectively
 **Status:** Active
 **Priority:** Medium
-**Description:** Continue replacing weak generic primary CTAs only on the next highest-value conversion pages while keeping labels consistent per page.
+**Description:** Continue replacing weak generic primary CTAs only where they still appear, with remaining focus limited to any future high-value additions or regressions.
 
 ### T-005 — Clear residual advisory lint noise
 **Status:** Active
@@ -342,7 +363,7 @@ These constraints are active and must not change without architectural review:
 
 ### R-001 — Advisory metadata counts remain high
 **Impact:** Medium
-**Current state:** `506` recommended metadata gaps, `147` missing intent values.
+**Current state:** `359` recommended metadata gaps remain and are still the largest advisory bucket.
 
 ### R-002 — Advisory lint still prevents clean status
 **Impact:** Low
@@ -358,6 +379,7 @@ These constraints are active and must not change without architectural review:
 
 ### R-005 — Intent report does not currently match editable content
 **Impact:** High
+**Current state:** Resolved. Missing-intent false positives were fixed at the graph layer; remaining intent drift is legacy-intent normalization only.
 **Current state:** resolved as a graph-layer metadata pass-through bug. Report now detects existing intent correctly; remaining intent-related warnings are legacy-value normalization warnings, not missing fields.
 
 ---

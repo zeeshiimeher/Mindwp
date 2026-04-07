@@ -25,7 +25,7 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
     description:
       'Beauty and personal care runs on timing, trust, and repeat visits. The system holds booking together first, then layers reminders, follow-up, visibility, and client records around it.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Book More Client Appointments',
       href: '/contact',
     },
     secondaryAction: {
@@ -404,8 +404,8 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
     cta: {
       title: 'Map the system around how your business runs',
       description:
-        'If booking gaps, communication interruptions, weak follow-up, or scattered visibility are slowing the business down, we can map a practical operating structure around it.',
-      primaryAction: { label: 'Start a Conversation', href: '/contact' },
+        'If booking and follow-up feel inconsistent, we can show you how to turn more enquiries into repeat appointments.',
+      primaryAction: { label: 'Book More Client Appointments', href: '/contact' },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',

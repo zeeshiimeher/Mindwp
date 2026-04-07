@@ -95,7 +95,7 @@ export const crmData: FeaturePageData = {
     description:
       'This CRM layer organizes contacts, conversations, and activity into one structured view. It connects directly to enquiry capture, booking, and follow-up so your team can work from one governed system.',
     primaryAction: {
-      label: 'Add CRM to Your System',
+      label: 'Keep Every Lead Moving',
       href: '/contact?system=revenue-growth&source=feature/crm',
     },
     stats: [
@@ -292,9 +292,9 @@ export const crmData: FeaturePageData = {
   cta: {
     title: 'Review Your Contact and Follow-Up Structure',
     description:
-      'Tell us how leads and follow-up are handled now. We will show you where a clearer CRM layer will remove guesswork.',
+      'Tell us how leads and follow-up are handled now. We will show you where pipeline gaps are slowing replies and conversions.',
     primaryAction: {
-      label: 'Add CRM to Your System',
+      label: 'Keep Every Lead Moving',
       href: '/contact?system=revenue-growth&source=feature/crm',
     },
   },

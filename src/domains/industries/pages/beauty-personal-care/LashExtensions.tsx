@@ -393,7 +393,7 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Start a Conversation', href: '/contact' },
+      primaryAction: { label: 'Fill More Lash Appointments', href: '/contact' },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -412,7 +412,7 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
       title: 'Build a calmer lash booking system',
       description:
         'If enquiry gaps, booking friction, inconsistent reminders, or weak follow-up are slowing things down, we can map a practical setup around how the service runs.',
-      primaryAction: { variant: 'white', label: 'Start a Conversation', href: '/contact' },
+      primaryAction: { variant: 'white', label: 'Fill More Lash Appointments', href: '/contact' },
       secondaryAction: {
         label: 'See the Category Approach',
         href: '/industries/beauty-personal-care',

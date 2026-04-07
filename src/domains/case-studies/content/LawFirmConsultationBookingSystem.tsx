@@ -199,7 +199,7 @@ function buildLawFirmConsultationBookingSystem(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Consultation Booking',
       },
       cta: {
-        primaryButtonLabel: 'Start a Conversation',
+        primaryButtonLabel: 'Book More Consultations',
         primaryButtonHref: '/contact',
         metaItems: [
           { text: 'Free 20-minute call' },

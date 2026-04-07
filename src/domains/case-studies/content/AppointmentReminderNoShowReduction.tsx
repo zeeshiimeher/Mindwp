@@ -225,7 +225,7 @@ function buildAppointmentReminderNoShowReduction(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: No-Show Performance',
       },
       cta: {
-        primaryButtonLabel: 'Start a Conversation',
+        primaryButtonLabel: 'Reduce More No-Shows',
         primaryButtonHref: '/contact',
         metaItems: [
           { text: 'Free 20-minute call' },

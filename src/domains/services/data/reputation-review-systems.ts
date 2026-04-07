@@ -43,7 +43,7 @@ export const reputationReviewSystemsPage = {
     description:
       'This service helps businesses build a clear review system around timing, feedback routing, response ownership, and trust signals. It works best when people are already finding the business but still hesitate to trust it.',
     primaryAction: {
-      label: 'Fix Your Review System',
+      label: 'Get More Reviews Consistently',
       href: '/contact?system=reputation-review&source=service/reputation-review-systems',
     },
     list: [
@@ -301,8 +301,8 @@ export const reputationReviewSystemsPage = {
   cta: {
     title: 'Make trust part of the system',
     description:
-      'Tell us how reviews and feedback are handled now. We will show you where trust is leaking and what needs tightening first.',
-    buttonText: 'Fix Your Review System',
+      'Tell us how reviews and feedback are handled now. We will show you how to collect more proof without extra manual chasing.',
+    buttonText: 'Get More Reviews Consistently',
     buttonHref: '/contact?system=reputation-review&source=service/reputation-review-systems',
   },
 } satisfies ServicePageData;

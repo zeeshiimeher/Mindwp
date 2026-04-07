@@ -204,7 +204,7 @@ function buildSalonBookingAutomation(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Booking Performance',
       },
       cta: {
-        primaryButtonLabel: 'Start a Conversation',
+        primaryButtonLabel: 'Automate Your Booking Flow',
         primaryButtonHref: '/contact',
         metaItems: [
           { text: 'Free 20-minute call' },

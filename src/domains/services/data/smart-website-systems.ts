@@ -101,7 +101,7 @@ export const smartWebsiteSystemsPage = {
     description:
       'A Smart Website gives visitors a clear path from service to enquiry. Your services are easy to understand, the next step is obvious, and the site connects directly to your workflow.',
     primaryAction: {
-      label: 'Build Your Smart Website',
+      label: 'Turn Website Traffic Into Leads',
       href: '/contact?system=smart-website-systems&source=service/smart-website-systems',
     },
     list: [
@@ -373,15 +373,15 @@ export const smartWebsiteSystemsPage = {
   cta: {
     title: 'Build your smart website system',
     description:
-      'Tell us how your website handles services and enquiries today. We will show you what needs fixing first and where the system should be clearer.',
-    buttonText: 'Build Your Smart Website',
+      'Tell us how your website handles enquiries now. We will show you where visitors drop off before they contact you.',
+    buttonText: 'Turn Website Traffic Into Leads',
     buttonHref: '/contact?system=smart-website-systems&source=service/smart-website-systems',
   },
   inlineCta: {
     title: 'Not sure how this would fit your business?',
     description:
-      'No commitment. We will walk through your current setup and show where structure is slowing enquiries down.',
-    buttonText: 'Build Your Smart Website',
+      'No commitment. We will walk through your setup and show where enquiries are being lost.',
+    buttonText: 'Turn Website Traffic Into Leads',
     buttonHref: '/contact?system=smart-website-systems&source=service/smart-website-systems',
   },
 } satisfies ServicePageData;

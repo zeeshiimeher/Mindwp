@@ -203,7 +203,7 @@ function buildRoofingEstimateFollowUpAutomation(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Estimate Pipeline Performance',
       },
       cta: {
-        primaryButtonLabel: 'Start a Conversation',
+        primaryButtonLabel: 'Close More Roofing Estimates',
         primaryButtonHref: '/contact',
         metaItems: [
           { text: 'Free 20-minute call' },

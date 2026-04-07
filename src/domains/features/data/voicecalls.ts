@@ -99,7 +99,7 @@ export const voicecallsData: FeaturePageData = {
     description:
       'An AI phone assistant that answers calls, books appointments, takes messages, and routes enquiries clearly during business hours or after hours.',
     primaryAction: {
-      label: 'Add Voice AI to Your System',
+      label: 'Stop Missing Calls with AI',
       href: '/contact?system=ai-lead-handling&source=feature/voicecalls',
     },
     stats: [
@@ -305,9 +305,9 @@ export const voicecallsData: FeaturePageData = {
   cta: {
     title: 'Discuss AI voice call handling',
     description:
-      'Tell us how calls are handled now. We will show you where voice AI can reduce missed enquiries and clean up routing.',
+      'Tell us how calls are handled now. We will show you where voice AI can stop missed enquiries and tighten call routing.',
     primaryAction: {
-      label: 'Add Voice AI to Your System',
+      label: 'Stop Missing Calls with AI',
       href: '/contact?system=ai-lead-handling&source=feature/voicecalls',
     },
   },

@@ -216,7 +216,7 @@ function buildRealEstateInquiryRouting(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Enquiry Handling',
       },
       cta: {
-        primaryButtonLabel: 'Start a Conversation',
+        primaryButtonLabel: 'Route Property Leads Faster',
         primaryButtonHref: '/contact',
         metaItems: [
           { text: 'Free 20-minute call' },

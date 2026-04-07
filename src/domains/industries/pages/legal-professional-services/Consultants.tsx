@@ -377,7 +377,7 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Start a Conversation', href: '/contact' },
+      primaryAction: { label: 'Book More Discovery Calls', href: '/contact' },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -395,8 +395,8 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
     cta: {
       title: 'Build a steadier consulting discovery and follow-up system',
       description:
-        'If your consulting business is dealing with unclear enquiry quality, loose discovery flow, or inconsistent follow-up — we can map a practical system around how the pipeline actually runs.',
-      primaryAction: { variant: 'white', label: 'Start a Conversation', href: '/contact' },
+        'If discovery calls are slipping, we can show you how to turn more enquiries into booked conversations.',
+      primaryAction: { variant: 'white', label: 'Book More Discovery Calls', href: '/contact' },
       secondaryAction: {
         label: 'See Legal & Professional Services',
         href: '/industries/legal-professional-services',

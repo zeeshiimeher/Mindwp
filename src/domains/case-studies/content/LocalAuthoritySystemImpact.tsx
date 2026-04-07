@@ -217,7 +217,7 @@ function buildLocalAuthoritySystemImpact(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Local Visibility',
       },
       cta: {
-        primaryButtonLabel: 'Start a Conversation',
+        primaryButtonLabel: 'Strengthen Local Authority',
         primaryButtonHref: '/contact',
         metaItems: [
           { text: 'Free 20-minute call' },

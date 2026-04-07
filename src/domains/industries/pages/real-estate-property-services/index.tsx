@@ -22,7 +22,7 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
     description:
       'A real estate or property service website should support enquiry qualification, appointment or valuation booking, trust-building, and follow-up — without making the team manage every handoff manually.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Capture More Qualified Enquiries',
       href: '/contact',
     },
     secondaryAction: {
@@ -381,8 +381,8 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
     cta: {
       title: 'Map the property category around how your business actually works',
       description:
-        'If your property business is dealing with loose enquiry handling, inconsistent appointment follow-up, or scattered local trust signals — we can help map the right system around it.',
-      primaryAction: { label: 'Start a Conversation', href: '/contact' },
+        'If property enquiries feel inconsistent, we can show you how to turn more of them into qualified conversations.',
+      primaryAction: { label: 'Capture More Qualified Enquiries', href: '/contact' },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',

@@ -202,7 +202,7 @@ function buildSalonReviewGenerationAutomation(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Review Profile Performance',
       },
       cta: {
-        primaryButtonLabel: 'Start a Conversation',
+        primaryButtonLabel: 'Automate Review Requests',
         primaryButtonHref: '/contact',
         metaItems: [
           { text: 'Free 20-minute call' },

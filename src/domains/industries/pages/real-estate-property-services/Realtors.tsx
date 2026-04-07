@@ -377,7 +377,7 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Start a Conversation', href: '/contact' },
+      primaryAction: { label: 'Convert More Property Leads', href: '/contact' },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -396,7 +396,7 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier realtor appointment and follow-up system',
       description:
         'If your real estate business is dealing with missed enquiries, loose appointment flow, or inconsistent nurture follow-up — we can map a practical system around how the pipeline actually runs.',
-      primaryAction: { variant: 'white', label: 'Start a Conversation', href: '/contact' },
+      primaryAction: { variant: 'white', label: 'Convert More Property Leads', href: '/contact' },
       secondaryAction: {
         label: 'See Real Estate & Property Services',
         href: '/industries/real-estate-property-services',

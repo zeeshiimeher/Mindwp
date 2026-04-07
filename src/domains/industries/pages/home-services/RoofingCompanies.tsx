@@ -376,7 +376,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Start a Conversation', href: '/contact' },
+      primaryAction: { label: 'Book More Roofing Estimates', href: '/contact' },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -394,7 +394,7 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
       title: 'Build a steadier roofing system',
       description:
         'If missed calls, loose inspection booking, inconsistent quote follow-up, or weak local proof are slowing things down, we can map a practical system around how the work actually runs.',
-      primaryAction: { variant: 'white', label: 'Start a Conversation', href: '/contact' },
+      primaryAction: { variant: 'white', label: 'Book More Roofing Estimates', href: '/contact' },
       secondaryAction: {
         label: 'See Home Services',
         href: '/industries/home-services',

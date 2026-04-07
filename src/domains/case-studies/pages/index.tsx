@@ -114,7 +114,7 @@ export function CaseStudiesPage() {
           description="Book a free 20-minute call and we'll walk you through what would actually move the needle for your business—no pressure, no sales scripts."
           primaryAction={{
             variant: 'white',
-            label: 'Start a Conversation',
+            label: 'Find Your Best System',
             href: '/contact',
             icon: ArrowRight,
           }}

@@ -192,7 +192,7 @@ function buildRealtorLeadFollowUpAutomation(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Follow-Up Performance',
       },
       cta: {
-        primaryButtonLabel: 'Start a Conversation',
+        primaryButtonLabel: 'Fix Realtor Follow-Up',
         primaryButtonHref: '/contact',
         metaItems: [
           { text: 'Free 20-minute call' },

@@ -380,7 +380,7 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Start a Conversation', href: '/contact' },
+      primaryAction: { label: 'Fill More Nail Appointments', href: '/contact' },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -399,7 +399,7 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier nail salon system',
       description:
         'If unclear service selection, reminder gaps, inconsistent reviews, or weak repeat follow-up are slowing things down, we can map a practical system around the real appointment journey.',
-      primaryAction: { variant: 'white', label: 'Start a Conversation', href: '/contact' },
+      primaryAction: { variant: 'white', label: 'Fill More Nail Appointments', href: '/contact' },
       secondaryAction: {
         label: 'See the Category Approach',
         href: '/industries/beauty-personal-care',

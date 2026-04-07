@@ -199,7 +199,7 @@ function buildCrmPipelineVisibilityTransformation(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Pipeline Performance',
       },
       cta: {
-        primaryButtonLabel: 'Start a Conversation',
+        primaryButtonLabel: 'Track Every Lead Clearly',
         primaryButtonHref: '/contact',
         metaItems: [
           { text: 'Free 20-minute call' },

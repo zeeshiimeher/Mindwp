@@ -368,7 +368,7 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Start a Conversation', href: '/contact' },
+      primaryAction: { label: 'Capture More Repair Jobs', href: '/contact' },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -387,7 +387,7 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier repair booking and follow-up system',
       description:
         'If your shop is dealing with unclear enquiry quality, loose booking flow, or inconsistent follow-up — we can map a practical system around how the pipeline actually runs.',
-      primaryAction: { variant: 'white', label: 'Start a Conversation', href: '/contact' },
+      primaryAction: { variant: 'white', label: 'Capture More Repair Jobs', href: '/contact' },
       secondaryAction: {
         label: 'See Local Appointment Businesses',
         href: '/industries/local-appointment-businesses',

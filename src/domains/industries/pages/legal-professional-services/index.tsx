@@ -21,7 +21,7 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
     description:
       'A legal or professional service website should support qualification, consultation booking, document-readiness, and follow-up — without making every new matter depend on manual chasing.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: 'Book More Qualified Consultations',
       href: '/contact',
     },
     secondaryAction: {
@@ -382,8 +382,8 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
     cta: {
       title: 'Map the legal or professional category around how your business actually works',
       description:
-        'If your business is dealing with loose qualification, inconsistent consultation flow, or follow-up friction — we can help map the right system around it.',
-      primaryAction: { label: 'Start a Conversation', href: '/contact' },
+        'If consultations feel inconsistent, we can show you how to turn more qualified enquiries into booked calls.',
+      primaryAction: { label: 'Book More Qualified Consultations', href: '/contact' },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
