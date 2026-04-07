@@ -4,6 +4,12 @@ import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { Card } from '@/components/ui/card';
 import { primaryCta } from '@/config/primaryCta';
+import { buildContactHref } from '@/lib/contact/contactHref';
+
+const aboutContactHref = buildContactHref('/contact', {
+  system: 'smart-website-systems',
+  source: 'page/about',
+});
 
 export function About() {
   return (
@@ -20,7 +26,7 @@ export function About() {
             that look modern but fail to support how the business actually operates.
           </p>
           <Button
-            {...(primaryCta.type !== 'chat' ? { href: primaryCta.href } : {})}
+            {...(primaryCta.type !== 'chat' ? { href: aboutContactHref } : {})}
             size='sm'
             label={primaryCta.label}
             showDefaultIcon={false}
@@ -108,7 +114,7 @@ export function About() {
             </p>
             <div className='cta__actions'>
               <Button
-                {...(primaryCta.type !== 'chat' ? { href: primaryCta.href } : {})}
+                {...(primaryCta.type !== 'chat' ? { href: aboutContactHref } : {})}
                 variant='white'
                 label={primaryCta.label}
                 icon={ArrowRight}

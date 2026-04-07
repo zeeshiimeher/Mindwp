@@ -1,6 +1,7 @@
 import type { AnchorHTMLAttributes, ReactNode } from 'react';
 
 import { PrimaryCta } from '@/components/PrimaryCta';
+import { buildGlobalContactHref } from '@/lib/contact/contactHref';
 
 import { HeaderMobileMenuIsland } from './HeaderMobileMenuIsland';
 import { Logo } from './Logo';
@@ -19,6 +20,8 @@ function InternalLink({ href, children, ...props }: InternalLinkProps) {
 }
 
 export function Header() {
+  const globalContactHref = buildGlobalContactHref();
+
   const navLinks = [
     { label: 'Services', to: '/services' },
     { label: 'Features', to: '/features' },
@@ -53,10 +56,16 @@ export function Header() {
 
           {/* CTA Buttons */}
           <nav className='header-nav md:l-row hidden l-items-center l-gap-6'>
-            <InternalLink href='/contact' className='btn btn-outline btn-small header-button-1'>
+            <InternalLink
+              href={globalContactHref}
+              className='btn btn-outline btn-small header-button-1'
+            >
               Contact Us
             </InternalLink>
-            <PrimaryCta className='btn btn-primary btn-small header-button-2' />
+            <PrimaryCta
+              className='btn btn-primary btn-small header-button-2'
+              hrefOverride={globalContactHref}
+            />
           </nav>
 
           <HeaderMobileMenuIsland navLinks={navLinks} />

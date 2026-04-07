@@ -4,6 +4,12 @@ import { SectionIntro } from '@/components/reusable/single';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { primaryCta } from '@/config/primaryCta';
+import { buildContactHref } from '@/lib/contact/contactHref';
+
+const portfolioContactHref = buildContactHref('/contact', {
+  system: 'smart-website-systems',
+  source: 'page/home',
+});
 
 export function PortfolioSection() {
   const BLOCK = 'portfolio-section';
@@ -117,7 +123,7 @@ export function PortfolioSection() {
         <div className={`${BLOCK}__bottom`}>
           <p className={`${BLOCK}__prompt`}>Want to see your business here?</p>
           <Button
-            {...(primaryCta.type !== 'chat' ? { href: primaryCta.href } : {})}
+            {...(primaryCta.type !== 'chat' ? { href: portfolioContactHref } : {})}
             label={primaryCta.label}
             {...(primaryCta.type === 'external'
               ? { target: '_blank', rel: 'noopener noreferrer' }

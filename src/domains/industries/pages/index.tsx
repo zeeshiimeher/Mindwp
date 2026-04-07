@@ -5,7 +5,13 @@ import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { Card } from '@/components/ui/card';
 import { getCategoryIndexIndustries } from '@/domains/industries/catalog';
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
+
+const industriesLandingContactHref = buildContactHref('/contact', {
+  system: 'smart-website-systems',
+  source: 'page/industries',
+});
 
 export default function IndustriesLanding() {
   const categoryPages = getCategoryIndexIndustries();
@@ -160,7 +166,7 @@ export default function IndustriesLanding() {
           primaryAction={{
             variant: 'white',
             label: 'Get More Qualified Leads',
-            href: '/contact',
+            href: industriesLandingContactHref,
             icon: ArrowRight,
           }}
           cssPrefix='footer-cta'

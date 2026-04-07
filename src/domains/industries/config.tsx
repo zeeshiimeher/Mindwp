@@ -35,6 +35,8 @@ const DETAIL_RENDERER_OVERRIDES_BY_PATH = new Map<string, DetailRenderer>();
 
 const renderCategoryWithDefaultTemplate = (data: IndustryCategoryPageData) => (
   <IndustryCategoryPageTemplate
+    slug={data.slug}
+    system={data.systems?.[0] ?? 'smart-website-systems'}
     category={data.category}
     hero={data.hero}
     challenges={data.challenges}
@@ -59,6 +61,7 @@ const renderCategoryWithDefaultTemplate = (data: IndustryCategoryPageData) => (
 const renderDetailWithDefaultTemplate = (data: IndustryDetailPageData) => (
   <IndustryDetailPageTemplate
     slug={data.slug}
+    system={data.systems?.[0] ?? 'smart-website-systems'}
     hero={data.hero}
     challenges={data.challenges}
     operatingPatterns={data.operatingPatterns}

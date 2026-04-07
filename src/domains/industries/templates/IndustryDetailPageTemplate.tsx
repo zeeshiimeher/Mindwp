@@ -16,11 +16,13 @@ import {
 } from '@/components/reusable/sections/industries';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import { IndustryExploreSection } from '../components/IndustryExploreSection';
 
 export type IndustryDetailPageTemplateProps = {
   slug: string;
+  system: string;
   hero: React.ComponentProps<typeof IndustryHeroSection>;
   challenges?: React.ComponentProps<typeof IndustryChallengesSection>;
   operatingPatterns?: React.ComponentProps<typeof IndustryOperatingPatternsSection>;
@@ -42,6 +44,7 @@ export type IndustryDetailPageTemplateProps = {
 
 export function IndustryDetailPageTemplate({
   slug,
+  system,
   hero,
   challenges,
   operatingPatterns,
@@ -60,6 +63,18 @@ export function IndustryDetailPageTemplate({
   const challengeSection = operatingPatterns ?? challenges;
   const solutionSection = systemLayers ?? solutions;
   const pathwaySection = pathways ?? packages;
+  const resolvedCta = cta.primaryAction?.href
+    ? {
+        ...cta,
+        primaryAction: {
+          ...cta.primaryAction,
+          href: buildContactHref(cta.primaryAction.href, {
+            system,
+            source: `industry/${slug}`,
+          }),
+        },
+      }
+    : cta;
 
   return (
     <>
@@ -77,7 +92,7 @@ export function IndustryDetailPageTemplate({
           {solutionSection && <IndustrySolutionsSection {...solutionSection} />}
           {explore && <IndustryExploreSection title='Relevant Modules' {...explore} />}
           <IndustryFAQSection {...faq} />
-          <IndustryCTASection {...cta} />
+          <IndustryCTASection {...resolvedCta} />
           <SmartRelatedSection slug={slug} type='industry-detail' />
         </main>
       </ErrorBoundary>

@@ -16,11 +16,24 @@ import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
 import { crmData } from '@/domains/features/data/crm';
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 export default function CRMRenderer() {
   const { hero, sections, cta } = crmData;
   const { process, benefits, useCases, capabilities, faq } = sections;
+  const primarySystem = crmData.systems[0] ?? 'smart-website-systems';
+  const source = `feature/${crmData.slug}`;
+  const heroPrimaryAction = hero.primaryAction
+    ? {
+        ...hero.primaryAction,
+        href: buildContactHref(hero.primaryAction.href, { system: primarySystem, source }),
+      }
+    : undefined;
+  const ctaPrimaryAction = {
+    ...cta.primaryAction,
+    href: buildContactHref(cta.primaryAction.href, { system: primarySystem, source }),
+  };
 
   const heroVisual = (
     <Card className='p-8 bg-white/80 backdrop-blur shadow-xl'>
@@ -99,7 +112,7 @@ export default function CRMRenderer() {
             title={hero.title}
             description={hero.description}
             stats={hero.stats}
-            primaryAction={hero.primaryAction}
+            primaryAction={heroPrimaryAction}
             visualContent={heroVisual}
             cssPrefix='crm-hero'
           />
@@ -146,8 +159,8 @@ export default function CRMRenderer() {
             description={cta.description}
             primaryAction={{
               variant: 'white',
-              label: cta.primaryAction.label,
-              href: cta.primaryAction.href,
+              label: ctaPrimaryAction.label,
+              href: ctaPrimaryAction.href,
             }}
           />
 

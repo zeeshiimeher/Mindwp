@@ -43,6 +43,7 @@ import { primaryCta } from '@/config/primaryCta';
 import { categories } from '@/domains/resources/api';
 import type { ResourceCategory, ResourceIntent } from '@/domains/resources/types';
 import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { ResourcePageTemplateSection } from './types';
 export type { ResourcePageTemplateSection } from './types';
@@ -133,13 +134,12 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   const currentSlug = props.url.split('/').filter(Boolean).at(-1) ?? '';
 
   // Build contact href with context params
-  const primarySystem = props.systems?.[0] ?? '';
+  const primarySystem = props.systems?.[0] ?? 'smart-website-systems';
   function decorateContactHref(href: string): string {
-    if (!href.startsWith('/contact')) return href;
-    const url = new URL(href, 'https://placeholder.local');
-    if (primarySystem) url.searchParams.set('system', primarySystem);
-    url.searchParams.set('source', `resource/${currentSlug}`);
-    return `${url.pathname}?${url.searchParams.toString()}`;
+    return buildContactHref(href, {
+      system: primarySystem,
+      source: `resource/${currentSlug}`,
+    });
   }
 
   // Extract content from sections for rendering using organized utilities

@@ -14,6 +14,7 @@
 
 import { CTASection } from '@/components/reusable/single/CTASection';
 import { CTA_CONFIG, CTA_INTENT_OVERRIDES, type CTAIntensity } from '@/config/ui-intelligence';
+import { buildContactHref } from '@/lib/contact/contactHref';
 import type { ContentNodeType } from '@/lib/content-graph/types';
 import type { ContentIntent } from '@/lib/ui/ctaEngine';
 import { type LinkIntent, resolveCTA } from '@/lib/ui/ctaResolver';
@@ -46,22 +47,6 @@ const INTENSITY_STYLES: Record<CTAIntensity, { backgroundColor: string; cssPrefi
   strong: { backgroundColor: 'bg-gradient-secondary', cssPrefix: 'cta-strong' },
 };
 
-// ── Helpers ──────────────────────────────────────────────────────────
-
-function buildContactHref(
-  baseHref: string,
-  pageType: ContentNodeType,
-  system?: string,
-  slug?: string
-): string {
-  if (baseHref !== '/contact') return baseHref;
-  const params = new URLSearchParams();
-  if (system) params.set('system', system);
-  params.set('source', slug ? `${pageType}/${slug}` : pageType);
-  const qs = params.toString();
-  return qs ? `${baseHref}?${qs}` : baseHref;
-}
-
 // ── Component ────────────────────────────────────────────────────────
 
 export function SmartCTA({
@@ -91,7 +76,10 @@ export function SmartCTA({
       description={descOverride ?? intentOverride?.description ?? config.description}
       primaryAction={{
         label: config.actionLabel,
-        href: buildContactHref(config.actionHref, pageType, system, slug),
+        href: buildContactHref(config.actionHref, {
+          system: system ?? 'smart-website-systems',
+          source: slug ? `${pageType}/${slug}` : `${pageType}/index`,
+        }),
       }}
       backgroundColor={bgOverride ?? style.backgroundColor}
       cssPrefix={style.cssPrefix}

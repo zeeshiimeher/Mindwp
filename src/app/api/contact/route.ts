@@ -1,6 +1,8 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
+import { isValidContactContext } from '@/lib/contact/contactHref';
+
 export const runtime = 'nodejs';
 
 const resendApiKey = process.env.RESEND_API_KEY;
@@ -28,6 +30,20 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: 'Missing fields' }, { status: 400 });
   }
 
+  if (!system || !source) {
+    return NextResponse.json(
+      { error: 'Missing contact context. Please start from a valid page CTA.' },
+      { status: 400 }
+    );
+  }
+
+  if (!isValidContactContext(system, source)) {
+    return NextResponse.json(
+      { error: 'Invalid contact context. Please use a valid page CTA and try again.' },
+      { status: 400 }
+    );
+  }
+
   if (!resend || !contactEmail) {
     return NextResponse.json({ error: 'Email service is not configured.' }, { status: 500 });
   }
@@ -41,8 +57,8 @@ export async function POST(request: Request) {
       text: `Name: ${name}
 Email: ${email}
 
-System: ${system || 'N/A'}
-Source: ${source || 'N/A'}
+    System: ${system}
+    Source: ${source}
 
 Message:
 ${message}`,

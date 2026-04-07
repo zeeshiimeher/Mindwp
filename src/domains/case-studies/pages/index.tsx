@@ -4,6 +4,12 @@ import { CTASection } from '@/components/reusable/single';
 import { CaseStudyCard } from '@/components/reusable/single';
 import { Badge } from '@/components/reusable/single/Badge';
 import { getCaseStudiesTemplateMetadata } from '@/domains/case-studies/data';
+import { buildContactHref } from '@/lib/contact/contactHref';
+
+const caseStudiesLandingContactHref = buildContactHref('/contact', {
+  system: 'smart-website-systems',
+  source: 'page/case-studies',
+});
 
 export function CaseStudiesPage() {
   const studies = getCaseStudiesTemplateMetadata();
@@ -115,7 +121,7 @@ export function CaseStudiesPage() {
           primaryAction={{
             variant: 'white',
             label: 'Find Your Best System',
-            href: '/contact',
+            href: caseStudiesLandingContactHref,
             icon: ArrowRight,
           }}
           metaItems={[

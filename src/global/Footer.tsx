@@ -2,6 +2,7 @@ import { Facebook, Linkedin, Mail, Youtube } from 'lucide-react';
 import type { AnchorHTMLAttributes, ReactNode } from 'react';
 
 import { PrimaryCta } from '@/components/PrimaryCta';
+import { buildGlobalContactHref } from '@/lib/contact/contactHref';
 
 import { Logo } from './Logo';
 
@@ -20,6 +21,7 @@ function InternalLink({ href, children, ...props }: InternalLinkProps) {
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
+  const globalContactHref = buildGlobalContactHref();
 
   const utilityLinks = [
     { label: 'Privacy Policy', href: '/privacy' },
@@ -92,7 +94,7 @@ export function Footer() {
                 </InternalLink>
               </li>
               <li className='footer__item'>
-                <InternalLink href='/contact' className='footer__link'>
+                <InternalLink href={globalContactHref} className='footer__link'>
                   Contact
                 </InternalLink>
               </li>
@@ -119,7 +121,7 @@ export function Footer() {
                 </InternalLink>
               </li>
               <li className='footer__item'>
-                <PrimaryCta className='footer__cta' />
+                <PrimaryCta className='footer__cta' hrefOverride={globalContactHref} />
               </li>
             </ul>
           </div>

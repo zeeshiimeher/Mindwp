@@ -6,7 +6,13 @@ import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { Card } from '@/components/ui/card';
 import { FEATURE_REGISTRY } from '@/domains/features/registry';
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
+
+const featuresLandingContactHref = buildContactHref('/contact', {
+  system: 'smart-website-systems',
+  source: 'page/features',
+});
 
 // Features overview landing
 export function FeaturesLanding() {
@@ -86,7 +92,7 @@ export function FeaturesLanding() {
             description='For details or clarification about any feature, contact support or review the documentation. Navigation is provided for reference only.'
             primaryAction={{
               label: 'Contact Support',
-              href: '/contact',
+              href: featuresLandingContactHref,
               icon: ArrowRight,
             }}
             cssPrefix='footer-cta'

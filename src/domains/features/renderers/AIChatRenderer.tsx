@@ -14,6 +14,7 @@ import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
 import { aiChatData } from '@/domains/features/data/aichat';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 const ChatDemo = () => (
   <Card
@@ -98,6 +99,18 @@ const ChatDemo = () => (
 export default function AIChatRenderer() {
   const { hero, sections, cta } = aiChatData;
   const { process, benefits, useCases, capabilities, faq } = sections;
+  const primarySystem = aiChatData.systems[0] ?? 'smart-website-systems';
+  const source = `feature/${aiChatData.slug}`;
+  const heroPrimaryAction = hero.primaryAction
+    ? {
+        ...hero.primaryAction,
+        href: buildContactHref(hero.primaryAction.href, { system: primarySystem, source }),
+      }
+    : undefined;
+  const ctaPrimaryAction = {
+    ...cta.primaryAction,
+    href: buildContactHref(cta.primaryAction.href, { system: primarySystem, source }),
+  };
 
   return (
     <>
@@ -109,7 +122,7 @@ export default function AIChatRenderer() {
             title={hero.title}
             description={hero.description}
             stats={hero.stats}
-            primaryAction={hero.primaryAction}
+            primaryAction={heroPrimaryAction}
             visualContent={<ChatDemo />}
             cssPrefix='ai-chat-hero'
             backgroundColor='bg-gradient-surface-soft'
@@ -228,8 +241,8 @@ export default function AIChatRenderer() {
             description={cta.description}
             primaryAction={{
               variant: 'white',
-              label: cta.primaryAction.label,
-              href: cta.primaryAction.href,
+              label: ctaPrimaryAction.label,
+              href: ctaPrimaryAction.href,
             }}
           />
 

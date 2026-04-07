@@ -21,8 +21,11 @@ import {
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import type { IndustryCategory } from '@/domains/industries/catalog';
 import { IndustrySubIndustriesSection } from '@/domains/industries/components';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 export type IndustryCategoryPageTemplateProps = {
+  slug: string;
+  system: string;
   category: IndustryCategory;
   hero: React.ComponentProps<typeof IndustryHeroSection>;
   challenges?: React.ComponentProps<typeof IndustryChallengesSection>;
@@ -53,6 +56,8 @@ export type IndustryCategoryPageTemplateProps = {
 };
 
 export function IndustryCategoryPageTemplate({
+  slug,
+  system,
   category,
   hero,
   challenges,
@@ -76,6 +81,18 @@ export function IndustryCategoryPageTemplate({
   const pathwaySection = pathways ?? packages;
   const showSubIndustries = sectionControls?.subIndustries?.enabled !== false && !detailRoutes;
   const showCaseStudies = sectionControls?.caseStudies?.enabled === true;
+  const resolvedCta = cta.primaryAction?.href
+    ? {
+        ...cta,
+        primaryAction: {
+          ...cta.primaryAction,
+          href: buildContactHref(cta.primaryAction.href, {
+            system,
+            source: `industry/${slug}`,
+          }),
+        },
+      }
+    : cta;
 
   return (
     <>
@@ -113,7 +130,7 @@ export function IndustryCategoryPageTemplate({
 
           {showCaseStudies && <IndustryCaseStudiesSection category={category} />}
 
-          <IndustryCTASection {...cta} />
+          <IndustryCTASection {...resolvedCta} />
         </main>
       </ErrorBoundary>
     </>

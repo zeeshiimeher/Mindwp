@@ -8,6 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { primaryCta } from '@/config/primaryCta';
+import { isValidContactContext } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 import { Button } from '@/components/reusable/single/Button';
 
@@ -23,17 +24,21 @@ export function Contact() {
   const [errorMessage, setErrorMessage] = useState('');
   const [systemParam, setSystemParam] = useState('');
   const [sourceParam, setSourceParam] = useState('');
+  const [intentParam, setIntentParam] = useState('');
   const [formState, setFormState] = useState(INITIAL_FORM_STATE);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const system = params.get('system') ?? '';
     const source = params.get('source') ?? '';
+    const intent = params.get('intent') ?? '';
     setSystemParam(system);
     setSourceParam(source);
+    setIntentParam(intent);
   }, []);
 
-  const hasContext = Boolean(systemParam || sourceParam);
+  const hasContext = Boolean(systemParam && sourceParam);
+  const hasValidContext = isValidContactContext(systemParam, sourceParam);
 
   const handleInputChange = (field: keyof typeof INITIAL_FORM_STATE, value: string) => {
     setFormState((current) => ({
@@ -44,6 +49,11 @@ export function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!hasValidContext) {
+      setErrorMessage('Missing or invalid page context. Please start from a page CTA and try again.');
+      return;
+    }
+
     setIsSubmitting(true);
     setErrorMessage('');
 
@@ -57,6 +67,7 @@ export function Contact() {
           ...formState,
           system: systemParam,
           source: sourceParam,
+          intent: intentParam,
         }),
       });
 
@@ -175,11 +186,19 @@ export function Contact() {
                     <form onSubmit={handleSubmit} className='contact-page-form'>
                       <input type='hidden' name='system' value={systemParam} />
                       <input type='hidden' name='source' value={sourceParam} />
+                      <input type='hidden' name='intent' value={intentParam} />
 
-                      {hasContext && (
+                      {hasContext && hasValidContext && (
                         <p className='contact-page-form-text-1 text-sm text-muted-foreground'>
                           We&apos;ll include your page context with this message so we know what
                           you were looking at.
+                        </p>
+                      )}
+
+                      {!hasValidContext && (
+                        <p className='contact-page-form-error text-sm text-destructive'>
+                          This form requires a valid system and source context. Please reopen it
+                          from a page CTA.
                         </p>
                       )}
 
@@ -242,7 +261,7 @@ export function Contact() {
                       <button
                         type='submit'
                         className='btn btn-primary btn-block'
-                        disabled={isSubmitting}
+                        disabled={isSubmitting || !hasValidContext}
                       >
                         {isSubmitting ? (
                           <>

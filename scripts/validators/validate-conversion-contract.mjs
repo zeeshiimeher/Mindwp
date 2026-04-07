@@ -19,19 +19,22 @@ const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'conversion-contract-report.json');
 
 const DATA_DIRS = [
-  'src/domains/services/data',
-  'src/domains/features/data',
-  'src/domains/resources/data',
-  'src/domains/industries/data',
-  'src/domains/case-studies/data',
-  'src/domains/blog/data',
-  'src/domains/blog/content',
-  'src/domains/resources/content',
-  'src/domains/case-studies/content',
   'src/domains/blog/templates',
+  'src/domains/case-studies/templates',
+  'src/domains/features/pages',
+  'src/domains/features/renderers',
+  'src/domains/industries/templates',
+  'src/domains/resources/pages',
   'src/domains/resources/templates',
+  'src/global',
   'src/screens',
 ];
+
+const SOURCE_PATTERN = /^[a-z-]+\/[a-z0-9-]+$/;
+
+function isAllowedGlobalNavigationContext(system, source) {
+  return system === 'unknown' && source === 'global/navigation';
+}
 
 function findFiles() {
   return DATA_DIRS.flatMap(relDir =>
@@ -67,13 +70,13 @@ function validateHrefLiteral(href, context, canonicalSystems, slugIndex, issues,
   const source = url.searchParams.get('source');
 
   if (!system) {
-    warnings.push({
-      severity: 'warning',
+    issues.push({
+      severity: 'error',
       code: 'missing_system_param',
       ...context,
-      message: 'CTA is missing the system query param; fallback behavior is allowed but should be explicit.',
+      message: 'CTA is missing the required system query param.',
     });
-  } else if (!canonicalSystems.has(system)) {
+  } else if (!canonicalSystems.has(system) && !isAllowedGlobalNavigationContext(system, source ?? '')) {
     issues.push({
       severity: 'error',
       code: 'invalid_system_param',
@@ -83,16 +86,16 @@ function validateHrefLiteral(href, context, canonicalSystems, slugIndex, issues,
   }
 
   if (!source) {
-    warnings.push({
-      severity: 'warning',
+    issues.push({
+      severity: 'error',
       code: 'missing_source_param',
       ...context,
-      message: 'CTA is missing the source query param; fallback behavior is allowed but should be explicit.',
+      message: 'CTA is missing the required source query param.',
     });
     return;
   }
 
-  if (!/^[a-z-]+\/[a-z0-9-]+$/.test(source)) {
+  if (!SOURCE_PATTERN.test(source)) {
     issues.push({
       severity: 'error',
       code: 'invalid_source_format',
@@ -102,7 +105,7 @@ function validateHrefLiteral(href, context, canonicalSystems, slugIndex, issues,
     return;
   }
 
-  if (!slugIndex.has(source)) {
+  if (!slugIndex.has(source) && !source.startsWith('page/') && !source.startsWith('global/')) {
     warnings.push({
       severity: 'warning',
       code: 'unknown_source_slug',

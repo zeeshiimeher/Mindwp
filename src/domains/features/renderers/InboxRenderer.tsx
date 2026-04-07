@@ -16,12 +16,25 @@ import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
 import { inboxData } from '@/domains/features/data/inbox';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 export default function InboxRenderer() {
   const { hero, sections, cta } = inboxData;
   const { process, benefits, useCases, faq } = sections;
   const channels = sections.channels;
   const painPoints = sections.painPoints;
+  const primarySystem = inboxData.systems[0] ?? 'smart-website-systems';
+  const source = `feature/${inboxData.slug}`;
+  const heroPrimaryAction = hero.primaryAction
+    ? {
+        ...hero.primaryAction,
+        href: buildContactHref(hero.primaryAction.href, { system: primarySystem, source }),
+      }
+    : undefined;
+  const ctaPrimaryAction = {
+    ...cta.primaryAction,
+    href: buildContactHref(cta.primaryAction.href, { system: primarySystem, source }),
+  };
 
   if (!channels || !painPoints) {
     return null;
@@ -37,7 +50,7 @@ export default function InboxRenderer() {
             title={hero.title}
             description={hero.description}
             stats={hero.stats}
-            primaryAction={hero.primaryAction}
+            primaryAction={heroPrimaryAction}
             visualContent={
               <Card className='p-8 bg-gradient-surface-muted'>
                 <div className='l-stack'>
@@ -132,8 +145,8 @@ export default function InboxRenderer() {
             description={cta.description}
             primaryAction={{
               variant: 'white',
-              label: cta.primaryAction.label,
-              href: cta.primaryAction.href,
+              label: ctaPrimaryAction.label,
+              href: ctaPrimaryAction.href,
             }}
           />
 

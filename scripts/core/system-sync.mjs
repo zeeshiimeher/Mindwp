@@ -8,6 +8,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..')
 
 const statePath = path.join(root, 'reports', 'system-state.json');
 const driftPath = path.join(root, 'reports', 'system-drift.json');
+const sessionLogPath = path.join(root, 'reports', 'session-log.json');
 const validationReportPath = path.join(root, 'reports', 'validation-results.json');
 const authorityMapPath = path.join(root, 'reports', 'authority-map.json');
 
@@ -120,6 +121,21 @@ function buildSystemState(validation, authorityMap, driftReport) {
   };
 }
 
+function appendSessionLogEntry() {
+  const existing = readJson(sessionLogPath);
+  const sessionLog = Array.isArray(existing) ? existing : [];
+
+  sessionLog.push({
+    timestamp: new Date().toISOString(),
+    action: 'system-sync',
+    status: 'success',
+  });
+
+  fs.mkdirSync(path.dirname(sessionLogPath), { recursive: true });
+  fs.writeFileSync(sessionLogPath, JSON.stringify(sessionLog, null, 2) + '\n');
+  console.log(`✓ Updated ${path.relative(root, sessionLogPath)}`);
+}
+
 function main() {
   const validation = readJson(validationReportPath);
   const authorityMap = readJson(authorityMapPath);
@@ -133,6 +149,8 @@ function main() {
   fs.mkdirSync(path.dirname(driftPath), { recursive: true });
   fs.writeFileSync(driftPath, JSON.stringify(driftReport, null, 2) + '\n');
   console.log(`✓ Wrote ${path.relative(root, driftPath)} (${driftReport.driftCount} drift items)`);
+
+  appendSessionLogEntry();
 
   console.log('\n═══════════════════════════════════════');
   console.log(

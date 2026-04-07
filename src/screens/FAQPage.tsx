@@ -11,6 +11,12 @@ import {
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { primaryCta } from '@/config/primaryCta';
+import { buildContactHref } from '@/lib/contact/contactHref';
+
+const faqContactHref = buildContactHref('/contact', {
+  system: 'smart-website-systems',
+  source: 'page/faq',
+});
 
 export function FAQPage() {
   const faqCategories = {
@@ -259,7 +265,7 @@ export function FAQPage() {
               </p>
               <div className='cta__actions'>
                 <Button
-                  {...(primaryCta.type !== 'chat' ? { href: primaryCta.href } : {})}
+                  {...(primaryCta.type !== 'chat' ? { href: faqContactHref } : {})}
                   variant='white'
                   label={primaryCta.label}
                   icon={ArrowRight}

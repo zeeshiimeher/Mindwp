@@ -21,6 +21,7 @@ import {
 import { TestimonialCard } from '@/components/reusable/single';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { primaryCta } from '@/config/primaryCta';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { CaseStudyContent, CaseStudyMetadata } from './types';
 
@@ -240,7 +241,10 @@ export function CaseStudyTemplate({
     </>
   );
   const resolvedCtaPrimaryButtonLabel = cta?.primaryButtonLabel ?? primaryCta.label;
-  const resolvedCtaPrimaryButtonHref = cta?.primaryButtonHref ?? primaryCta.href;
+  const resolvedCtaPrimaryButtonHref = buildContactHref(cta?.primaryButtonHref ?? primaryCta.href, {
+    system: metadata.systems[0] ?? 'smart-website-systems',
+    source: `case-study/${metadata.slug}`,
+  });
   const resolvedCtaMetaItems = cta?.metaItems ?? [
     { text: 'Real implementation details' },
     { text: 'System-level results' },

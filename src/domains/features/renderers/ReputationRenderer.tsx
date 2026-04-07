@@ -16,6 +16,7 @@ import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
 import { reputationData } from '@/domains/features/data/reputation';
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 const ReviewsVisual = () => (
@@ -80,6 +81,18 @@ const ReviewsVisual = () => (
 export default function ReputationRenderer() {
   const { hero, sections, cta } = reputationData;
   const { process, benefits, useCases, capabilities, faq } = sections;
+  const primarySystem = reputationData.systems[0] ?? 'smart-website-systems';
+  const source = `feature/${reputationData.slug}`;
+  const heroPrimaryAction = hero.primaryAction
+    ? {
+        ...hero.primaryAction,
+        href: buildContactHref(hero.primaryAction.href, { system: primarySystem, source }),
+      }
+    : undefined;
+  const ctaPrimaryAction = {
+    ...cta.primaryAction,
+    href: buildContactHref(cta.primaryAction.href, { system: primarySystem, source }),
+  };
   const testimonials = sections.testimonials;
 
   if (!testimonials) {
@@ -96,7 +109,7 @@ export default function ReputationRenderer() {
             title={hero.title}
             description={hero.description}
             stats={hero.stats}
-            primaryAction={hero.primaryAction}
+            primaryAction={heroPrimaryAction}
             visualContent={<ReviewsVisual />}
             cssPrefix='reputation-hero'
             backgroundColor='bg-gradient-surface-muted'
@@ -180,8 +193,8 @@ export default function ReputationRenderer() {
             description={cta.description}
             primaryAction={{
               variant: 'white',
-              label: cta.primaryAction.label,
-              href: cta.primaryAction.href,
+              label: ctaPrimaryAction.label,
+              href: ctaPrimaryAction.href,
             }}
           />
 

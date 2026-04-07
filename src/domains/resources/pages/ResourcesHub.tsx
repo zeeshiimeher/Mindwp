@@ -7,6 +7,7 @@ import { Button } from '@/components/reusable/single/Button';
 import { Card } from '@/components/ui/card';
 import { categories, RESOURCE_HUB_DATA, resources } from '@/domains/resources/api';
 import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import { ResourcesGuidesIsland } from './ResourcesGuidesIsland';
 
@@ -25,6 +26,11 @@ function InternalLink({ href, children, ...props }: InternalLinkProps) {
 
 export function ResourcesHub() {
   const hubData = RESOURCE_HUB_DATA;
+  const resourcesHubContactHref = (href: string) =>
+    buildContactHref(href, {
+      system: 'smart-website-systems',
+      source: 'page/resources',
+    });
 
   const categoryItems = categories.map(category => {
     const count = resources.filter(resource => resource.category === category.id).length;
@@ -89,7 +95,7 @@ export function ResourcesHub() {
 
             <div className='resources-hub__hero-actions'>
               <Button
-                href={hubData.hero.primaryAction.href}
+                href={resourcesHubContactHref(hubData.hero.primaryAction.href)}
                 variant='secondary'
                 label={hubData.hero.primaryAction.label}
                 icon={ArrowRight}
@@ -193,7 +199,7 @@ export function ResourcesHub() {
           primaryAction={{
             variant: 'white',
             label: hubData.cta.primaryAction.label,
-            href: hubData.cta.primaryAction.href,
+            href: resourcesHubContactHref(hubData.cta.primaryAction.href),
           }}
           cssPrefix='footer-cta'
           backgroundColor='bg-gradient-primary'

@@ -2,9 +2,11 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
 import { primaryCta } from '@/config/primaryCta';
+import { buildGlobalContactHref } from '@/lib/contact/contactHref';
 
 export interface PrimaryCtaProps {
   className?: string;
+  hrefOverride?: string;
   linkProps?: Omit<
     React.AnchorHTMLAttributes<HTMLAnchorElement>,
     'href' | 'className' | 'children'
@@ -21,6 +23,7 @@ export interface PrimaryCtaProps {
 
 export function PrimaryCta({
   className,
+  hrefOverride,
   linkProps,
   buttonProps,
   onChatTrigger,
@@ -28,6 +31,11 @@ export function PrimaryCta({
   showDefaultEndIcon = false,
 }: PrimaryCtaProps) {
   const resolvedClassName = className ?? 'btn btn-primary';
+  const resolvedHref =
+    hrefOverride ??
+    (primaryCta.type === 'internal' && primaryCta.href === '/contact'
+      ? buildGlobalContactHref(primaryCta.href)
+      : primaryCta.href);
   const resolvedEndIcon =
     endIcon ??
     (showDefaultEndIcon ? <ArrowRight className='btn__icon' aria-hidden='true' /> : undefined);
@@ -35,7 +43,7 @@ export function PrimaryCta({
   if (primaryCta.type === 'external') {
     return (
       <a
-        href={primaryCta.href}
+        href={resolvedHref}
         className={resolvedClassName}
         target='_blank'
         rel='noopener noreferrer'
@@ -62,7 +70,7 @@ export function PrimaryCta({
   }
 
   return (
-    <a href={primaryCta.href} className={resolvedClassName} {...linkProps}>
+    <a href={resolvedHref} className={resolvedClassName} {...linkProps}>
       {primaryCta.label}
       {resolvedEndIcon}
     </a>

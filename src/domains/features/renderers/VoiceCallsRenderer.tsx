@@ -15,12 +15,25 @@ import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
 import { voicecallsData } from '@/domains/features/data/voicecalls';
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 export default function VoiceCallsRenderer() {
   const { hero, sections, cta } = voicecallsData;
   const { process, benefits, useCases, capabilities, faq } = sections;
   const testimonial = sections.testimonial;
+  const primarySystem = voicecallsData.systems[0] ?? 'smart-website-systems';
+  const source = `feature/${voicecallsData.slug}`;
+  const heroPrimaryAction = hero.primaryAction
+    ? {
+        ...hero.primaryAction,
+        href: buildContactHref(hero.primaryAction.href, { system: primarySystem, source }),
+      }
+    : undefined;
+  const ctaPrimaryAction = {
+    ...cta.primaryAction,
+    href: buildContactHref(cta.primaryAction.href, { system: primarySystem, source }),
+  };
 
   if (!testimonial) {
     return null;
@@ -36,7 +49,7 @@ export default function VoiceCallsRenderer() {
             title={hero.title}
             description={hero.description}
             stats={hero.stats}
-            primaryAction={hero.primaryAction}
+            primaryAction={heroPrimaryAction}
             visualContent={
               <Card className='p-8 bg-white/80 backdrop-blur shadow-xl'>
                 <div className='l-stack l-stack--loose'>
@@ -151,8 +164,8 @@ export default function VoiceCallsRenderer() {
             description={cta.description}
             primaryAction={{
               variant: 'white',
-              label: cta.primaryAction.label,
-              href: cta.primaryAction.href,
+              label: ctaPrimaryAction.label,
+              href: ctaPrimaryAction.href,
             }}
           />
 

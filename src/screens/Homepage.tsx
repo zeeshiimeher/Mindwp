@@ -26,8 +26,16 @@ import {
 } from '@/components/reusable/single';
 import { getCaseStudiesTemplateMetadata } from '@/domains/case-studies/data';
 import { homepageData } from '@/domains/home/data/homepage';
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 import { PortfolioSection as ImplementationExamplesSection } from '@/screens/home/sections/PortfolioSection';
+
+function buildHomepageContactHref(href: string) {
+  return buildContactHref(href, {
+    system: 'smart-website-systems',
+    source: 'page/home',
+  });
+}
 
 export default function Homepage() {
   const implementationSectionData = homepageData.implementationSection;
@@ -130,7 +138,7 @@ function HeroSection() {
           <div className='hero-section-cta'>
             <Button
               {...(heroData.primaryAction.type !== 'chat'
-                ? { href: heroData.primaryAction.href }
+                ? { href: buildHomepageContactHref(heroData.primaryAction.href) }
                 : {})}
               variant='white'
               label={heroData.primaryAction.label}
@@ -291,7 +299,7 @@ function SmartWebsiteFrameworkSection() {
           description={smartWebsiteFrameworkData.cta.description}
           primaryAction={{
             label: smartWebsiteFrameworkData.cta.primaryAction.label,
-            href: smartWebsiteFrameworkData.cta.primaryAction.href,
+            href: buildHomepageContactHref(smartWebsiteFrameworkData.cta.primaryAction.href),
           }}
           headingLevel='h3'
           backgroundColor='bg-gradient-primary'
@@ -347,7 +355,7 @@ function ClientJourneySection() {
             description={clientJourneyData.cta.description}
             primaryAction={{
               label: clientJourneyData.cta.primaryAction.label,
-              href: clientJourneyData.cta.primaryAction.href,
+              href: buildHomepageContactHref(clientJourneyData.cta.primaryAction.href),
             }}
             headingLevel='h3'
             backgroundColor='cta--primary bg-gradient-primary'
@@ -577,7 +585,7 @@ function InfrastructureLayersSection() {
           </ul>
 
           <Button
-            href={infrastructureLayersData.foundation.buttonHref}
+            href={buildHomepageContactHref(infrastructureLayersData.foundation.buttonHref)}
             variant='primary'
             label={infrastructureLayersData.foundation.buttonLabel}
           />
@@ -624,7 +632,7 @@ function IndustriesSection() {
       footer={
         <div className='industry-section-cta'>
           <Button
-            href={industriesData.cta.href}
+            href={buildHomepageContactHref(industriesData.cta.href)}
             variant='primary'
             label={industriesData.cta.label}
           />
@@ -683,7 +691,7 @@ function CaseStudiesSection() {
 
       <div className='implementation-results-cta'>
         <Button
-          href={caseStudiesData.ctaHref}
+          href={buildHomepageContactHref(caseStudiesData.ctaHref)}
           variant='primary'
           label={caseStudiesData.ctaLabel}
           icon={ArrowRight}
@@ -738,7 +746,7 @@ function FooterCTASection() {
       description={ctaData.footer.description}
       primaryAction={{
         label: ctaData.footer.primaryAction.label,
-        href: ctaData.footer.primaryAction.href,
+        href: buildHomepageContactHref(ctaData.footer.primaryAction.href),
       }}
       metaItems={ctaData.footer.metaItems}
       cssPrefix='footer-cta'

@@ -14,6 +14,7 @@ import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
 import { workflowsData } from '@/domains/features/data/workflows';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 const WorkflowVisual = () => {
   const flow = workflowsData.sections.visualFlow;
@@ -71,6 +72,18 @@ const WorkflowVisual = () => {
 export default function WorkflowsRenderer() {
   const { hero, sections, cta } = workflowsData;
   const { process, benefits, useCases, capabilities, faq } = sections;
+  const primarySystem = workflowsData.systems[0] ?? 'smart-website-systems';
+  const source = `feature/${workflowsData.slug}`;
+  const heroPrimaryAction = hero.primaryAction
+    ? {
+        ...hero.primaryAction,
+        href: buildContactHref(hero.primaryAction.href, { system: primarySystem, source }),
+      }
+    : undefined;
+  const ctaPrimaryAction = {
+    ...cta.primaryAction,
+    href: buildContactHref(cta.primaryAction.href, { system: primarySystem, source }),
+  };
 
   return (
     <>
@@ -82,7 +95,7 @@ export default function WorkflowsRenderer() {
             title={hero.title}
             description={hero.description}
             stats={hero.stats}
-            primaryAction={hero.primaryAction}
+            primaryAction={heroPrimaryAction}
             visualContent={<WorkflowVisual />}
             cssPrefix='workflows-hero'
             backgroundColor='bg-gradient-surface-soft'
@@ -139,8 +152,8 @@ export default function WorkflowsRenderer() {
             description={cta.description}
             primaryAction={{
               variant: 'white',
-              label: cta.primaryAction.label,
-              href: cta.primaryAction.href,
+              label: ctaPrimaryAction.label,
+              href: ctaPrimaryAction.href,
             }}
             cssPrefix='workflows-cta'
             backgroundColor='bg-gradient-secondary'

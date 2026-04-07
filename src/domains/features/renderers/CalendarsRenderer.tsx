@@ -15,6 +15,7 @@ import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
 import { calendarsData } from '@/domains/features/data/calendars';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 const BookingVisual = () => (
   <Card className='p-8 bg-white/80 backdrop-blur shadow-xl'>
@@ -72,6 +73,18 @@ const BookingVisual = () => (
 export default function CalendarsRenderer() {
   const { hero, sections, cta } = calendarsData;
   const { process, benefits, useCases, capabilities, faq } = sections;
+  const primarySystem = calendarsData.systems[0] ?? 'smart-website-systems';
+  const source = `feature/${calendarsData.slug}`;
+  const heroPrimaryAction = hero.primaryAction
+    ? {
+        ...hero.primaryAction,
+        href: buildContactHref(hero.primaryAction.href, { system: primarySystem, source }),
+      }
+    : undefined;
+  const ctaPrimaryAction = {
+    ...cta.primaryAction,
+    href: buildContactHref(cta.primaryAction.href, { system: primarySystem, source }),
+  };
 
   return (
     <>
@@ -83,7 +96,7 @@ export default function CalendarsRenderer() {
             title={hero.title}
             description={hero.description}
             stats={hero.stats}
-            primaryAction={hero.primaryAction}
+            primaryAction={heroPrimaryAction}
             visualContent={<BookingVisual />}
             cssPrefix='calendars-hero'
             backgroundColor='bg-gradient-surface-soft'
@@ -141,8 +154,8 @@ export default function CalendarsRenderer() {
             description={cta.description}
             primaryAction={{
               variant: 'white',
-              label: cta.primaryAction.label,
-              href: cta.primaryAction.href,
+              label: ctaPrimaryAction.label,
+              href: ctaPrimaryAction.href,
             }}
             metaItems={cta.metaItems}
             cssPrefix='calendars-cta'
