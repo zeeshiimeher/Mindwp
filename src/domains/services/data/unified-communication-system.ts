@@ -51,7 +51,10 @@ export const unifiedCommunicationSystemPage = {
     title: 'When enquiries arrive from everywhere, the real problem is usually routing, not volume',
     description:
       'This service focuses on the communication layer between incoming messages and the right next action. It helps businesses handle calls, forms, chat, and inbox messages with less confusion, fewer missed conversations, and clearer ownership.',
-    primaryAction: { label: 'Start a Conversation', href: '/contact' },
+    primaryAction: {
+      label: 'Start a Conversation',
+      href: '/contact?system=ai-lead-handling&source=service/unified-communication-system',
+    },
     list: [
       'Clearer routing across calls, forms, chat, and inboxes',
       'Fewer missed conversations and less duplicate handling',
@@ -362,6 +365,6 @@ export const unifiedCommunicationSystemPage = {
     description:
       'If calls, forms, chat, and inbox messages are creating confusion, we can help define a clearer routing and ownership model.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact',
+    buttonHref: '/contact?system=ai-lead-handling&source=service/unified-communication-system',
   },
 } satisfies ServicePageData;

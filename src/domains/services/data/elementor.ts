@@ -53,7 +53,10 @@ export const elementorPage = {
       'WordPress implementation with Elementor — built for editing flexibility and long-term clarity',
     description:
       'We build WordPress websites using Elementor where the visual output stays faithful to the approved design and the editing experience stays manageable over time. This is disciplined implementation, not a quick drag-and-drop assembly.',
-    primaryAction: { label: 'Start a Conversation', href: '/contact' },
+    primaryAction: {
+      label: 'Start a Conversation',
+      href: '/contact?system=smart-website-systems&source=service/elementor',
+    },
     cssPrefix: 'elementor-hero',
     backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },
@@ -259,6 +262,6 @@ export const elementorPage = {
     description:
       'If your team needs a clean Elementor build with editing flexibility and long-term clarity, we can review scope and outline the right approach.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact',
+    buttonHref: '/contact?system=smart-website-systems&source=service/elementor',
   },
 } satisfies ServicePageData;

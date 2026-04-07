@@ -51,7 +51,10 @@ export const conversionFunnelSystemPage = {
       'Most conversion problems are not traffic problems. They are clarity problems between the page and the next step.',
     description:
       'This service focuses on the conversion path itself — page flow, offer structure, and the handoff between attention, enquiry, and action. When those are clearer, fewer good prospects disappear in the middle.',
-    primaryAction: { label: 'Start a Conversation', href: '/contact' },
+    primaryAction: {
+      label: 'Start a Conversation',
+      href: '/contact?system=revenue-growth&source=service/conversion-funnel-system',
+    },
     list: [
       'Clearer page-to-enquiry journeys',
       'Stronger offer structure and decision flow',
@@ -310,6 +313,6 @@ export const conversionFunnelSystemPage = {
     description:
       'If traffic is arriving but the page journey still weakens conversion, we can help define a stronger funnel path.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact',
+    buttonHref: '/contact?system=revenue-growth&source=service/conversion-funnel-system',
   },
 } satisfies ServicePageData;

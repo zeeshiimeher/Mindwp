@@ -52,7 +52,10 @@ export const websiteRedesignSystemRebuildPage = {
     title: 'When the website no longer matches the business, a visual refresh is not enough',
     description:
       'This service is for businesses whose current site has drifted too far from their services, enquiry flow, integrations, or operating reality. The work is structural correction and rebuild logic, not cosmetic redesign for its own sake.',
-    primaryAction: { label: 'Start a Conversation', href: '/contact' },
+    primaryAction: {
+      label: 'Start a Conversation',
+      href: '/contact?system=smart-website-systems&source=service/website-redesign-system-rebuild',
+    },
     list: [
       'Clearer structure and service architecture',
       'Stronger message-to-enquiry flow',
@@ -303,6 +306,6 @@ export const websiteRedesignSystemRebuildPage = {
     description:
       'If the current site no longer supports your services, enquiry flow, or maintainability, we can help define a clearer rebuild pathway.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact',
+    buttonHref: '/contact?system=smart-website-systems&source=service/website-redesign-system-rebuild',
   },
 } satisfies ServicePageData;

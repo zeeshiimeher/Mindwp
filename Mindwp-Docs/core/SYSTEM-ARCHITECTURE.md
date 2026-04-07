@@ -35,13 +35,13 @@
                        │ validated by
 ┌──────────────────────▼──────────────────────────────┐
 │  VALIDATION                                         │
-│  26 validators (22 blocking + 4 advisory)           │
+│  17 validators (blocking + advisory control layer)  │
 │  scripts/validators/ · scripts/core/validate-all.mjs │
 └──────────────────────┬──────────────────────────────┘
                        │ reported to
 ┌──────────────────────▼──────────────────────────────┐
 │  OBSERVABILITY                                      │
-│  System Health dashboard · system-sync · drift       │
+│  system-report · system-sync · drift                 │
 │  /dev/authority-dashboard · reports/ · logs/          │
 └─────────────────────────────────────────────────────┘
 ```

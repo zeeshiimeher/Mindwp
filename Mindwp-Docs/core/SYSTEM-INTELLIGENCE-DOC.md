@@ -59,50 +59,36 @@ Everything connects through the **Content Graph** — a map of all 211 content p
 - **URL:** `/dev/authority-dashboard`
 - **File:** `src/app/dev/authority-dashboard/page.tsx`
 - **Access:** Development only (force-dynamic)
-- **Purpose:** Deep optimization dashboard. Shows conversion scores, link health, priority queue for fixes, bridge insights (content vs. conversion), and page inspector.
+- **Purpose:** Report-driven system control dashboard. It visualizes current system status only. It does not recompute health from registries at render time.
 
 **What it shows:**
-- Authority summary (node counts, average scores, top/bottom performers)
-- Topic clusters with authority levels
-- Orphan nodes (pages with no inbound links)
-- Link health analysis (issues per page, fix suggestions)
-- Conversion intelligence (per-page conversion scores, CTA coverage, revenue opportunities)
-- Conversion warnings (pages missing CTAs, service links, or journey steps)
-- Priority queue (ranked list of pages to fix, ordered by impact)
-- Bridge insights (cross-dashboard analysis: high authority + low conversion, weak topics + high conversion)
-- Fix history (logged fixes with score deltas)
-- Page inspector (deep-dive into any single page)
-
-**Panels:**
-| Panel | File | Purpose |
-|-------|------|---------|
-| AuthoritySummaryPanel | `panels/AuthoritySummaryPanel.tsx` | Overview stats |
-| TopicClustersPanel | `panels/TopicClustersPanel.tsx` | Topics grouped by authority level |
-| OrphanNodesPanel | `panels/OrphanNodesPanel.tsx` | Unlinked pages |
-| AuthorityNodesPanel | `panels/AuthorityNodesPanel.tsx` | All nodes ranked |
-| LinkHealthPanel | `panels/LinkHealthPanel.tsx` | Link quality issues |
-| ConversionIntelligencePanel | `panels/ConversionIntelligencePanel.tsx` | Conversion scores |
-| ConversionWarningsPanel | `panels/ConversionWarningsPanel.tsx` | Missing conversion elements |
-| PriorityQueuePanel | `panels/PriorityQueuePanel.tsx` | Fix priority ranking |
-| BridgeInsightsPanel | `panels/BridgeInsightsPanel.tsx` | Content ↔ Conversion bridge |
-| FixHistoryPanel | `panels/FixHistoryPanel.tsx` | Logged fix history |
-| PageInspector | `panels/PageInspector.tsx` | Single-page deep inspection |
+- System status (`clean` / `warning` / `broken`)
+- Blocking issues
+- Advisory issues
+- Content health summary
+- Conversion health summary
+- Graph health summary
+- Priority actions
+- Summary lines from the master system report
 
 **Data sources:**
-- `src/lib/dev/authorityAnalyzer.ts` → reads `reports/topic-authority-scores.json`, `reports/content-gaps.json`
-- `src/lib/dev/conversionAnalyzer.ts` → reads content graph + authority map
-- `src/lib/dev/linkHealthAnalyzer.ts` → reads content graph
-- `src/lib/dev/conversionPriorityEngine.ts` → combines conversion + link health
-- `src/lib/dev/dashboardBridge.ts` → bridges content + conversion data
-- `src/lib/dev/fixInsightsAnalyzer.ts` → reads `reports/fix-log.json`
+- `reports/system-report.json`
+- `reports/system-state.json`
+- `reports/system-drift.json`
+- `reports/topic-authority-scores.json`
+- `reports/content-gaps.json`
+
+**Reader:**
+- `src/lib/dev/system-report.ts`
 
 **How to use:**
-1. Run `npm run dev` to start the dev server.
-2. Go to `http://localhost:3000/dev/authority-dashboard`.
-3. Start at the priority queue — it tells you which pages to fix first.
-4. Use "Bridge Insights" to find pages with high authority but low conversion (quick wins).
-5. Use the page inspector to drill into any specific page.
-6. After making fixes, append them to `reports/fix-log.json`.
+1. Run `npm run system:report`.
+2. Run `npm run dev` to start the dev server.
+3. Go to `http://localhost:3000/dev/authority-dashboard`.
+4. Start with blocking issues and priority actions.
+5. Use advisory issues and content health to plan cleanup work.
+
+The dashboard is intentionally a visualization layer only. If a metric is missing, fix the report pipeline, not the frontend.
 
 ---
 
@@ -114,7 +100,7 @@ These create data that dashboards and validators use.
 
 | Script | Command | Purpose | Output |
 |--------|---------|---------|--------|
-| generate-authority-map | `npx tsx scripts/generators/generate-authority-map.ts` | Builds the authority relationship map — how services, resources, industries, case studies, and blogs connect | `src/lib/authority/generated/authorityMap.ts` |
+| generate-authority-map | `npx tsx scripts/generators/generate-authority-map.ts` | Builds the authority relationship map and report snapshot | `src/lib/authority/generated/authorityMap.ts`, `reports/authority-map.json` |
 | generate-topic-authority-scores | `npx tsx scripts/generators/generate-topic-authority-scores.ts` | Scores each topic based on how much content supports it | `reports/topic-authority-scores.json`, `reports/topic-authority-scores.md` |
 | generate-content-registries | `node scripts/generators/generate-content-registries.mjs` | Creates slug→component lookup maps for blog, resources, and case studies | `src/domains/*/registry.ts` |
 | generate-global-inventory | `node scripts/generators/generate-global-inventory.mjs` | Generates a catalog of all shared components | `Mindwp-Docs/core/GLOBAL-COMPONENTS-CATALOG.md` |
@@ -283,30 +269,26 @@ Step-by-step guide for using the system:
 
 ### Daily Check
 
-1. Run `npm run dev` and open the **Content Dashboard** (`/content-dashboard`).
-2. Check topic authority scores — look for "Weak" or "Gap" topics.
-3. Review content gaps — note which topics need new blog posts, resources, or case studies.
+1. Run `npm run system:report`.
+2. Run `npm run dev` and open the **Content Dashboard** (`/content-dashboard`).
+3. Review topic authority scores and content gaps.
 4. Switch to the **Authority Dashboard** (`/dev/authority-dashboard`).
-5. Check the **Priority Queue** — it tells you which pages to fix first based on impact.
-6. Review **Bridge Insights** — find pages with high authority but low conversion (quick wins).
+5. Start with **System Status**, **Blocking Issues**, and **Priority Actions**.
 
 ### Fixing a Page
 
-1. Find the page in the Priority Queue or Bridge Insights.
-2. Use the **Page Inspector** to see exactly what's wrong (missing CTA, no service link, etc.).
-3. Read the **Guided Flow** suggestions for step-by-step improvement instructions.
-4. Make the content fix.
-5. Log the fix with `node scripts/dev/add-fix-entry.mjs`.
-6. Run `node scripts/core/validate-all.mjs` to verify nothing is broken.
+1. Start from `reports/system-report.json` or the Authority Dashboard priority actions.
+2. Make the content or system fix.
+3. Log the fix with `node scripts/dev/add-fix-entry.mjs` if relevant.
+4. Run `npm run system:report`.
+5. Confirm the issue count moved in the report outputs.
 
 ### Creating New Content
 
 1. Check **Content Gaps** to see what's needed.
 2. Check **Topic Authority Scores** to prioritize high-value topics.
 3. Create the content following the domain structure rules.
-4. Run `npx tsx scripts/generators/generate-authority-map.ts` to regenerate the authority map.
-5. Run `npx tsx scripts/generators/generate-topic-authority-scores.ts` to update scores.
-6. Run `node scripts/core/validate-all.mjs` to validate.
+4. Run `npm run system:report` to refresh authority map, scores, validation, and state.
 
 ### Running All Validators
 
@@ -314,15 +296,21 @@ Step-by-step guide for using the system:
 node scripts/core/validate-all.mjs
 ```
 
-This runs all 26 validators and shows pass/fail for each. Use `--report-json` for machine-readable output.
+This runs the current 17-validator control layer and writes `reports/validation-results.json`.
 
-### Regenerating All Reports
+### Regenerating Report Artifacts
 
 ```bash
-npx tsx scripts/generators/generate-authority-map.ts
-npx tsx scripts/generators/generate-topic-authority-scores.ts
-npx tsx scripts/analyzers/generate-content-gaps.ts
+npm run system:report
 ```
+
+This refreshes:
+- `reports/system-report.json`
+- `reports/system-state.json`
+- `reports/system-drift.json`
+- `reports/topic-authority-scores.json`
+- `reports/content-gaps.json`
+- `reports/authority-map.json`
 
 ---
 
@@ -357,42 +345,34 @@ How everything connects:
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│                  CONTENT GRAPH                       │
-│              211 nodes · 7065 edges                  │
-│                  7 content types                     │
-└──────────────┬──────────────────┬────────────────────┘
+│                  CONTENT GRAPH                      │
+│              229 nodes · 9893 edges                 │
+│                  7 content types                    │
+└──────────────┬──────────────────┬───────────────────┘
                │                  │
      ┌─────────▼──────┐   ┌──────▼────────────┐
-     │   GENERATION    │   │   VALIDATION       │
-     │   SCRIPTS       │   │   SCRIPTS          │
-     │                 │   │                    │
-    │ authority-map   │   │ validate-all (26)  │
-     │ topic-scores    │   │ domain validators  │
-     │ content-gaps    │   │ rule validators    │
-     │ score-content   │   │ conversion audit   │
-     │ page-priorities │   │ system-docs check  │
-     └────────┬────────┘   └────────────────────┘
-              │
-     ┌────────▼────────┐
-     │     REPORTS      │
-     │   /reports/      │
-     │                  │
-     │ authority-map    │
-     │ topic-scores     │
-     │ content-gaps     │
-     │ validation       │
-     └───┬─────────┬────┘
-         │         │
-   ┌─────▼───┐ ┌──▼──────────────┐
-   │ CONTENT  │ │ AUTHORITY        │
-   │ DASHBOARD│ │ DASHBOARD        │
-   │          │ │                  │
-   │ Topics   │ │ Priority Queue   │
-   │ Gaps     │ │ Bridge Insights  │
-   │ Graph    │ │ Conversion       │
-   │ Health   │ │ Link Health      │
-   └──────────┘ │ Page Inspector   │
-                └──────────────────┘
+     │   GENERATION    │   │   VALIDATION      │
+     │   SCRIPTS       │   │   CONTROL LAYER   │
+     │                 │   │                   │
+     │ authority-map   │   │ validate-all (17)│
+     │ topic-scores    │   │ check-generated   │
+     │ content-gaps    │   │ contract validators│
+     └────────┬────────┘   │ design + links    │
+              │            └─────────┬─────────┘
+              └──────────────┬───────┘
+                             │
+                    ┌────────▼────────┐
+                    │   SYSTEM REPORT  │
+                    │ system-report    │
+                    │ system-state     │
+                    │ system-drift     │
+                    └───────┬──────────┘
+                            │
+                  ┌─────────▼─────────┐
+                  │    DASHBOARDS      │
+                  │ Content + Authority│
+                  │ visualization only │
+                  └────────────────────┘
 ```
 
 ---

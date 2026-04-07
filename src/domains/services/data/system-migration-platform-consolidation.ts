@@ -43,7 +43,10 @@ export const systemMigrationPlatformConsolidationPage = {
       'When the business is held together by too many disconnected tools, migration is really about simplification',
     description:
       'This service is for businesses moving away from fragmented tools, outdated platforms, or disconnected systems. The goal is a cleaner platform structure, less tool sprawl, and a more stable operating foundation that is easier to maintain and extend.',
-    primaryAction: { label: 'Start a Conversation', href: '/contact' },
+    primaryAction: {
+      label: 'Start a Conversation',
+      href: '/contact?system=smart-website-systems&source=service/system-migration-platform-consolidation',
+    },
     list: [
       'Cleaner platform structure and fewer disconnected tools',
       'Less maintenance friction and technical sprawl',
@@ -298,6 +301,6 @@ export const systemMigrationPlatformConsolidationPage = {
     description:
       'If the business is being slowed by fragmented tools or an outdated platform, we can help define a cleaner migration and consolidation path.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact',
+    buttonHref: '/contact?system=smart-website-systems&source=service/system-migration-platform-consolidation',
   },
 } satisfies ServicePageData;

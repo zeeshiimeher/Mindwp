@@ -41,7 +41,10 @@ export const aiLeadHandlingPage = {
     title: 'AI can support first response without replacing the judgement that matters',
     description:
       'This service helps businesses respond faster across website chat, phone, and booking flows. AI handles common questions, captures details, and passes the conversation on when a human should step in. It works best when the website, routing, and follow-up are already clear.',
-    primaryAction: { label: 'Start a Conversation', href: '/contact' },
+    primaryAction: {
+      label: 'Start a Conversation',
+      href: '/contact?system=ai-lead-handling&source=service/ai-lead-handling',
+    },
     list: [
       'Faster first response across chat and calls',
       'Clear handoff into CRM, booking, or team workflows',
@@ -386,6 +389,6 @@ export const aiLeadHandlingPage = {
     description:
       'If you are thinking about website chat, missed-call support, or AI response workflows, we can review your current enquiry flow and show where this system fits — and where it does not.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact',
+    buttonHref: '/contact?system=ai-lead-handling&source=service/ai-lead-handling',
   },
 } satisfies ServicePageData;

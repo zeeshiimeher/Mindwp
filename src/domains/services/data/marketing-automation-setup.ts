@@ -43,7 +43,10 @@ export const marketingAutomationSetupPage = {
       'Automation helps when the business knows what should happen next but still relies on memory to make it happen',
     description:
       'This service implements structured automation around follow-up, reminders, reactivation, and lifecycle messaging. The goal is to reduce manual chasing while keeping the workflow clear, controlled, and commercially useful.',
-    primaryAction: { label: 'Start a Conversation', href: '/contact' },
+    primaryAction: {
+      label: 'Start a Conversation',
+      href: '/contact?system=revenue-growth&source=service/marketing-automation-setup',
+    },
     list: [
       'Less manual follow-up and reminder work',
       'More reliable lifecycle messaging',
@@ -301,6 +304,6 @@ export const marketingAutomationSetupPage = {
     description:
       'If follow-up, reminders, or lifecycle messaging still depend on manual effort, we can help build a cleaner automation setup.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact',
+    buttonHref: '/contact?system=revenue-growth&source=service/marketing-automation-setup',
   },
 } satisfies ServicePageData;

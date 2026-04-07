@@ -53,7 +53,10 @@ export const bricksBuilderPage = {
       'WordPress implementation with Bricks — built for performance, precision, and long-term clarity',
     description:
       'We build WordPress websites using Bricks Builder where performance and clean output matter. Approved designs are converted precisely, with a build that stays fast, maintainable, and easy to extend.',
-    primaryAction: { label: 'Start a Conversation', href: '/contact' },
+    primaryAction: {
+      label: 'Start a Conversation',
+      href: '/contact?system=smart-website-systems&source=service/bricks-builder',
+    },
     cssPrefix: 'bricks-hero',
     backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },
@@ -263,6 +266,6 @@ export const bricksBuilderPage = {
     description:
       'If your team needs a performance-focused Bricks build with clean output and long-term clarity, we can review scope and outline the right approach.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact',
+    buttonHref: '/contact?system=smart-website-systems&source=service/bricks-builder',
   },
 } satisfies ServicePageData;

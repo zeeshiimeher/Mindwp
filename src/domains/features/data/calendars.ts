@@ -83,7 +83,7 @@ export const calendarsData: FeaturePageData = {
       'This booking layer is implemented inside your Smart Website system — allowing clients to schedule appointments through a clear, structured flow. Booking, confirmations, and calendar management connect directly to your enquiry handling and internal operations.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact',
+      href: '/contact?system=smart-website-systems&source=feature/calendars',
     },
     stats: [
       { value: 'Online', label: 'Booking' },
@@ -279,7 +279,7 @@ export const calendarsData: FeaturePageData = {
       'If booking currently creates friction or manual coordination, we can review your current setup and outline a clearer, more structured approach.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact',
+      href: '/contact?system=smart-website-systems&source=feature/calendars',
     },
     metaItems: [
       { text: 'Automated booking system' },

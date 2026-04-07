@@ -354,7 +354,7 @@ export const inboxData: FeaturePageData = {
       'Connect your email, SMS, and social channels to one inbox and give your team a clear, simple communication system.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact',
+      href: '/contact?system=ai-lead-handling&source=feature/inbox',
     },
   },
 };

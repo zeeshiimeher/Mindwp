@@ -96,7 +96,7 @@ export const aiChatData: FeaturePageData = {
       'This conversation layer is implemented inside your Smart Website system — helping visitors ask questions, request services, and book appointments through a clear, structured flow. AI assists with routing and response suggestions, while human oversight remains in place.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact',
+      href: '/contact?system=ai-lead-handling&source=feature/aichat',
     },
     stats: [
       { value: '24/7', label: 'Available' },
@@ -298,7 +298,7 @@ export const aiChatData: FeaturePageData = {
       'If communication or enquiry capture feels inconsistent, we can review your current setup and outline a clearer, more structured approach.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact',
+      href: '/contact?system=ai-lead-handling&source=feature/aichat',
     },
   },
 };

@@ -41,7 +41,10 @@ export const bookingSchedulingSystemPage = {
     title: 'A booking system should make the next step easier, not add more admin around it',
     description:
       'This service focuses on how enquiries flow through booking and scheduling — from consultation requests and confirmations to reminders and staff handoff. When that path works cleanly, more interest turns into booked and fulfilled appointments.',
-    primaryAction: { label: 'Start a Conversation', href: '/contact' },
+    primaryAction: {
+      label: 'Start a Conversation',
+      href: '/contact?system=smart-website-systems&source=service/booking-scheduling-system',
+    },
     list: [
       'Cleaner flow from website to confirmed appointment',
       'Structured reminder and follow-up logic',
@@ -292,6 +295,6 @@ export const bookingSchedulingSystemPage = {
     description:
       'If appointments are being slowed by unclear flow, reminder gaps, or admin confusion, we can help structure a cleaner booking system.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact',
+    buttonHref: '/contact?system=smart-website-systems&source=service/booking-scheduling-system',
   },
 } satisfies ServicePageData;

@@ -101,7 +101,7 @@ export const workflowsData: FeaturePageData = {
       'Workflows connect your forms, bookings, and pipeline stages to automatic actions. Send confirmations, reminders, and task notifications—while keeping full visibility and control.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact',
+      href: '/contact?system=revenue-growth&source=feature/workflows',
     },
     stats: [
       { value: 'Auto', label: 'Follow-Ups' },
@@ -327,7 +327,7 @@ export const workflowsData: FeaturePageData = {
       'Book a consultation and we will map a simple workflow around your real process—so your leads, bookings, and tasks move automatically.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact',
+      href: '/contact?system=revenue-growth&source=feature/workflows',
     },
   },
 };

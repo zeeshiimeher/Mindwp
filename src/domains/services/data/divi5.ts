@@ -42,7 +42,10 @@ export const divi5Page = {
     title: 'WordPress implementation with Divi — built for flexible editing and long-term clarity',
     description:
       'We build WordPress websites using Divi where the team needs a flexible editing experience without losing visual or technical control. Approved designs are converted precisely, with a build that stays maintainable over time.',
-    primaryAction: { label: 'Start a Conversation', href: '/contact' },
+    primaryAction: {
+      label: 'Start a Conversation',
+      href: '/contact?system=smart-website-systems&source=service/divi5',
+    },
     cssPrefix: 'divi5-hero',
     backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },
@@ -285,6 +288,6 @@ export const divi5Page = {
     description:
       'If your team needs a clean Divi build with flexible editing and long-term clarity, we can review scope and outline the right approach.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact',
+    buttonHref: '/contact?system=smart-website-systems&source=service/divi5',
   },
 } satisfies ServicePageData;

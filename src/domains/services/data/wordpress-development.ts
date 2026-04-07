@@ -43,7 +43,10 @@ export const wordpressDevelopmentPage = {
       'A WordPress website should be built around how the business works — not just how it looks',
     description:
       'This is for service businesses that need a proper WordPress foundation. Not pages thrown together quickly, but a site where services are clearly presented, enquiry paths make sense, and the whole thing stays manageable after launch.',
-    primaryAction: { label: 'Start a Conversation', href: '/contact' },
+    primaryAction: {
+      label: 'Start a Conversation',
+      href: '/contact?system=smart-website-systems&source=service/wordpress-development',
+    },
     list: [
       'Services and pages organised around how the business operates',
       'Enquiry pathways that guide visitors toward the right next step',
@@ -311,6 +314,6 @@ export const wordpressDevelopmentPage = {
     description:
       'If you need a clearer WordPress foundation for a service business, we can review the current situation and outline the best implementation path forward.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact',
+    buttonHref: '/contact?system=smart-website-systems&source=service/wordpress-development',
   },
 } satisfies ServicePageData;

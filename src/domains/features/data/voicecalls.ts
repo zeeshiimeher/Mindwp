@@ -100,7 +100,7 @@ export const voicecallsData: FeaturePageData = {
       'An AI-powered phone assistant that answers calls, books appointments, takes messages, and routes enquiries clearly — during business hours or after hours.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact',
+      href: '/contact?system=ai-lead-handling&source=feature/voicecalls',
     },
     stats: [
       { value: '100%', label: 'Call Answer Rate' },
@@ -308,7 +308,7 @@ export const voicecallsData: FeaturePageData = {
       'We will review how calls are currently handled and outline a simple AI voice setup that supports consistent enquiry capture.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact',
+      href: '/contact?system=ai-lead-handling&source=feature/voicecalls',
     },
   },
 };

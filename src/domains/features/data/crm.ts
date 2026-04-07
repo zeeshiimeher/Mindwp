@@ -96,7 +96,7 @@ export const crmData: FeaturePageData = {
       'This CRM layer is implemented inside your Smart Website system — organizing contacts, conversations, and activity into one structured view. It connects directly to enquiry capture, booking, and follow-up so your team works from a single, governed system.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact',
+      href: '/contact?system=revenue-growth&source=feature/crm',
     },
     stats: [
       { value: 'Unified', label: 'Inbox' },
@@ -295,7 +295,7 @@ export const crmData: FeaturePageData = {
       'If contact management or follow-up feels unclear, we can review your current setup and outline a clearer, more structured approach.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact',
+      href: '/contact?system=revenue-growth&source=feature/crm',
     },
   },
 };

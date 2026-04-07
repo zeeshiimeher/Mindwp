@@ -42,7 +42,10 @@ export const funnelLandingPageDevelopmentPage = {
       'Sometimes the business does not need a full site rebuild. It needs the right page built for a specific conversion job.',
     description:
       'This service implements focused landing pages and funnel pages for specific offers, campaigns, booking paths, or quote journeys. The goal is tighter page flow, clearer next-step design, and stronger fit between intent and action.',
-    primaryAction: { label: 'Start a Conversation', href: '/contact' },
+    primaryAction: {
+      label: 'Start a Conversation',
+      href: '/contact?system=revenue-growth&source=service/funnel-landing-page-development',
+    },
     list: [
       'More focused conversion journeys',
       'Cleaner offer-page and landing-page structure',
@@ -255,6 +258,6 @@ export const funnelLandingPageDevelopmentPage = {
     description:
       'If a specific offer, campaign, or booking path needs a more focused landing page, we can help implement it properly.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact',
+    buttonHref: '/contact?system=revenue-growth&source=service/funnel-landing-page-development',
   },
 } satisfies ServicePageData;

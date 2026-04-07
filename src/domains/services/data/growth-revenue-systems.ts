@@ -63,7 +63,10 @@ export const growthRevenueSystemsPage = {
     title: 'Growth slows when leads come in but nothing moves them forward reliably',
     description:
       'Most revenue problems are not demand problems. They are structure problems — follow-up breaks, routing is unclear, or the website generates interest without a clear next step. This service finds where the system is losing momentum and helps fix it in the right order.',
-    primaryAction: { label: 'Start a Conversation', href: '/contact' },
+    primaryAction: {
+      label: 'Start a Conversation',
+      href: '/contact?system=revenue-growth&source=service/growth-revenue-systems',
+    },
     cssPrefix: 'technical-audit-hero',
     list: [
       'Find where enquiries leak or stall after first contact',
@@ -474,6 +477,6 @@ export const growthRevenueSystemsPage = {
     description:
       'If leads are coming in but revenue still feels inconsistent, start by finding the weak points. We will review the current system and help you decide the right next step.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact',
+    buttonHref: '/contact?system=revenue-growth&source=service/growth-revenue-systems',
   },
 } satisfies ServicePageData;

@@ -51,7 +51,10 @@ export const woocommercePage = {
     title: 'E-commerce implementation built around how you sell, ship, and operate',
     description:
       'We implement e-commerce systems on WordPress with WooCommerce where it fits. Catalog logic, checkout flow, fulfilment rules, and reporting are set up around your actual operating model — not just assembled to get a store online.',
-    primaryAction: { label: 'Start a Conversation', href: '/contact' },
+    primaryAction: {
+      label: 'Start a Conversation',
+      href: '/contact?system=smart-website-systems&source=service/ecommerce',
+    },
     list: [
       'Catalog and product logic that matches the business',
       'Checkout and fulfilment aligned to real workflows',
@@ -225,6 +228,6 @@ export const woocommercePage = {
     description:
       'If you are evaluating a WordPress-based e-commerce or web shop build, we can review your catalog needs, checkout requirements, fulfilment model, and integrations — then outline a clear implementation plan.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact',
+    buttonHref: '/contact?system=smart-website-systems&source=service/ecommerce',
   },
 } satisfies ServicePageData;

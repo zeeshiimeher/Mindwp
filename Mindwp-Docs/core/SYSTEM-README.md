@@ -114,22 +114,23 @@ Documentation defines system behavior. Code must follow docs.
 # WORKING ORDER
 
 ### Start work
-1. Run `node scripts/core/validate-all.mjs`
-2. Run `node scripts/core/system-sync.mjs`
+1. Run `npm run system:report`
+2. Inspect `reports/system-report.json`
 3. If CLEAN → continue. If WARNING/BROKEN → inspect `reports/system-drift.json`
 4. Read `core/EXECUTION-MEMORY.md` for current priorities
 
 ### Finish work
 1. Run targeted validator for changed files
-2. Run `node scripts/core/validate-all.mjs`
-3. Run `node scripts/core/system-sync.mjs`
+2. Run `npm run system:report`
+3. Confirm `reports/system-report.json`, `reports/system-state.json`, and `reports/system-drift.json` updated
 4. Do NOT leave repo in drift or failure state
 
 ### Core commands
 | Command | Purpose |
 |---|---|
+| `npm run system:report` | Full system snapshot: validate, sync, analyze, normalize |
 | `node scripts/core/validate-all.mjs` | Full validator set |
-| `node scripts/core/system-sync.mjs` | Generate state, drift, decisions |
+| `node scripts/core/system-sync.mjs` | Generate state and drift snapshots |
 | `npm run dev` | Local development |
 | `npm run build` | Production build |
 
@@ -137,6 +138,6 @@ Documentation defines system behavior. Code must follow docs.
 
 # DATA MODEL
 
-- **Overwrite-only:** `reports/system-state.json`, `reports/system-drift.json`
+- **Overwrite-only:** `reports/system-report.json`, `reports/system-state.json`, `reports/system-drift.json`
 - **Append-only:** `reports/fix-log.json`, `reports/session-log.json`
-- **Generated (do not edit):** `core/DECISION-STATE.md`, `core/GLOBAL-COMPONENTS-CATALOG.md`
+- **Generated (do not edit):** `core/GLOBAL-COMPONENTS-CATALOG.md`

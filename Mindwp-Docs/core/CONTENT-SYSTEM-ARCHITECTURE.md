@@ -1726,15 +1726,19 @@ If content cannot be placed correctly in the ecosystem flow, it should not be pu
 
 ## 🔒 Validation System (LOCKED)
 
-26 validators run via `node scripts/core/validate-all.mjs`. All must pass before content is considered valid.
+The control layer runs through `node scripts/core/validate-all.mjs` and is surfaced through `npm run system:report`.
 
-Categories:
-- **Type & Lint:** TypeScript compilation, ESLint
-- **Domain Structure:** Blog, Resources, Case Studies, Services, Features, Homepage, Industries
-- **Design:** Design system tokens
-- **Graph:** Content graph integrity, metadata completeness, metadata field presence
-- **Rules:** CTA standards, vocabulary enforcement, structure + heading checks, internal link anti-spam
-- **Quality:** Generated file freshness
+Current structure:
+- **Blocking:** check-generated, typecheck, validate-content-contract, validate-domain-structure, validate-conversion-contract, validate-design-system, validate-graph, validate-internal-links, validate-tokens, validate-inline-styles
+- **Advisory:** lint, validate-docs, validate-vocabulary, validate-system-docs, validate-checklist, validate-fix-log, validate-reports-structure
+
+Phase 2 enforcement rules:
+- Lint is advisory in system integrity flow
+- Intent is advisory in content contract mode
+- Missing required system metadata is blocking
+- CTA contract violations are blocking when invalid, not when merely incomplete for future enhancement
+- Vocabulary is sourced from FOUNDATION and is advisory only
+- Inline style enforcement applies only to production UI paths, excluding dashboards, dev tools, and debug files
 
 Key enforcement rules:
 - CTA label must be "Start a Conversation", href must be "/contact"

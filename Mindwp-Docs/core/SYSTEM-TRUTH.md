@@ -6,8 +6,8 @@
 <!-- Used by: system-sync.mjs (drift detection), all planning decisions -->
 
 > Consolidated source of truth. Validated against live code.
-> Sources: 5 governing docs, reports/, code scan.
-> Updated: 2026-04-07 (conversion contract alignment applied)
+> Sources: governing docs, reports/, code scan.
+> Updated: 2026-04-08 (system report engine and dashboard alignment applied)
 
 **Boundary:** This file defines current system reality only. It does not hold workflows, phase tasks, raw audit notes, or dashboard summaries.
 
@@ -19,9 +19,9 @@
 
 **Platform:** Next.js + TypeScript (strict). Custom BEM CSS design system. Tailwind v4 bridge. GoHighLevel backend. Automated image generation pipeline (Sharp + SVG overlays). Target: Vercel.
 
-**Content graph:** 211 nodes, 7,065 derived edges, 7 formal content types (`ContentNodeType` is the only allowed type system — see §2.4). Scoring formula: `(systemOverlap × 3) + (topicOverlap × 2) + (industryOverlap × 1)` — LOCKED.
+**Content graph:** 229 nodes, 9,893 edges, 7 formal content types (`ContentNodeType` is the only allowed type system — see §2.4). Scoring formula: `(systemOverlap × 3) + (topicOverlap × 2) + (industryOverlap × 1)` — LOCKED.
 
-**Validation:** 26 validators (22 blocking + 4 advisory). LOCKED. TypeScript clean. ESLint clean. Build passing.
+**Validation:** 17 validators in the aggregate control layer. Blocking failures are `0`; lint is advisory. Current system status is `WARNING`, not `CLEAN`.
 
 **Conversion model:** Deterministic single-entry conversion path. All CTAs route to `/contact` with `system` and `source` query params. No inline forms. `/conversation` page REMOVED (Phase 10 Decision 6) — permanent redirect to `/contact`. No lead magnets. System works without free resources.
 
@@ -474,12 +474,12 @@ Key constraints:
 | Strength | Evidence |
 |---|---|
 | **Governance is airtight** | 5 locked governing docs. Conflict resolution defined. Rule priority order established. AI execution lock. |
-| **Content graph is live and functional** | 211 nodes, 7,065 derived edges. Authority scoring, gap detection, conversion intelligence all operational. |
-| **Validation is comprehensive** | 26 validators. TypeScript strict. ESLint clean. Build green. |
+| **Content graph is live and functional** | 229 nodes, 9,893 edges. Authority scoring, gap detection, validation, and dashboard reporting are operational. |
+| **Validation is comprehensive** | 17-validator control layer. Blocking integrity checks pass. Advisory drift is visible in system-report.json. |
 | **Token system is well-layered** | 4-tier color system. Responsive typography. Spacing scale. Layout primitives. |
 | **Conversion intelligence is code-complete** | Intent mapping, CTA resolver, journey engine, scoring, priority queue — all built. |
 | **Component architecture is disciplined** | BEM everywhere. Server-first. Domain wrappers. Inline styles only in shadcn/ui and SVG text elements. |
-| **Dev tooling is rich** | Content dashboard, authority dashboard, 8 dashboard panels, fix simulation, guided flow engine. |
+| **Dev tooling is inspectable** | Content dashboard plus report-driven authority dashboard. Master command emits one normalized system report. |
 | **Image generation is operational** | 13-phase pipeline. Multi-provider search, intelligence analysis, relevance scoring, composition-aware cropping, cinematic SVG overlays, CTR psychology layer. WCAG AA verified across all domains. |
 | **Documentation is extensive** | Blueprint system covers all archetypes. Writing playbook locked. Vocabulary governance active. |
 
@@ -490,7 +490,7 @@ Key constraints:
 ```
 GOVERNANCE   →  5 locked docs (Foundation > Architecture > Graph > Blueprint > Governance)
      ↓
-CONTENT      →  211 nodes across 7 formal types (ContentNodeType), all flowing toward Service (destination)
+CONTENT      →  229 nodes across 7 formal types (ContentNodeType), all flowing toward Service (destination)
      ↓
 INTELLIGENCE →  Authority scoring → Gap detection → Conversion scoring → CTA resolution → SmartRelatedSection
      ↓
@@ -498,10 +498,10 @@ UI           →  foundation.css (tokens) → primitives.css (reset) → framewo
      ↓
 COMPONENTS   →  single/* → sections/core/* → sections/<domain>/* → system/* (SmartCTA, SmartRelatedSection)
      ↓
-VALIDATION   →  26 validators → TypeScript → ESLint → Build pipeline
+CONTROL      →  system-report → validate-all → system-sync → report-driven dashboards
 ```
 
-**One sentence:** Governance flows down from locked docs, intelligence flows up from the content graph, the UI renders via token-driven BEM, and 26 validators enforce it all.
+**One sentence:** Governance flows down from locked docs, intelligence flows up from the content graph, the control layer normalizes state into reports, and dashboards render those reports without recomputation.
 
 ---
 

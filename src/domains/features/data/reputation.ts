@@ -99,7 +99,7 @@ export const reputationData: FeaturePageData = {
       'Systematically request reviews after completed services and manage feedback across key platforms. Designed to support visibility, credibility, and consistent follow-up.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact',
+      href: '/contact?system=reputation-review&source=feature/reputation',
     },
     stats: [
       { value: '10x', label: 'More Reviews' },
@@ -326,7 +326,7 @@ export const reputationData: FeaturePageData = {
       'We will review your current feedback process and outline a simple, structured system for consistent review collection and response.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact',
+      href: '/contact?system=reputation-review&source=feature/reputation',
     },
   },
 };

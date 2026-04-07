@@ -51,7 +51,10 @@ export const leadReactivationSystemPage = {
     title: 'Old leads rarely come back because someone remembers to chase them at the right time',
     description:
       'This service helps service businesses re-engage old enquiries, stalled quotes, and dormant pipeline value through structured follow-up. The goal is a clearer system so good opportunities are not left sitting unused.',
-    primaryAction: { label: 'Start a Conversation', href: '/contact' },
+    primaryAction: {
+      label: 'Start a Conversation',
+      href: '/contact?system=revenue-growth&source=service/lead-reactivation-system',
+    },
     list: [
       'Recover value from old enquiries and dormant opportunities',
       'Clearer follow-up timing and ownership',
@@ -357,6 +360,6 @@ export const leadReactivationSystemPage = {
     description:
       'If old enquiries, stalled quotes, or past customers are sitting untouched, we can help structure a clearer reactivation workflow.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact',
+    buttonHref: '/contact?system=revenue-growth&source=service/lead-reactivation-system',
   },
 } satisfies ServicePageData;

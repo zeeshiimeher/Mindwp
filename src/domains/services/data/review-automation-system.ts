@@ -42,7 +42,10 @@ export const reviewAutomationSystemPage = {
       'Review automation works when timing and routing are part of the process, not an afterthought',
     description:
       'This service focuses on the review-request workflow itself. It helps service businesses ask more consistently, route unhappy feedback more intelligently, and improve review velocity without depending on manual chasing.',
-    primaryAction: { label: 'Start a Conversation', href: '/contact' },
+    primaryAction: {
+      label: 'Start a Conversation',
+      href: '/contact?system=reputation-review&source=service/review-automation-system',
+    },
     list: [
       'Consistent review requests at the right time',
       'Cleaner handling of negative feedback before it goes public',
@@ -291,6 +294,6 @@ export const reviewAutomationSystemPage = {
     description:
       'If reviews are being left to memory and manual follow-up, we can help structure a cleaner review automation workflow.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact',
+    buttonHref: '/contact?system=reputation-review&source=service/review-automation-system',
   },
 } satisfies ServicePageData;

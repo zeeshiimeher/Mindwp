@@ -824,6 +824,6 @@ export const crmAutomationPage = {
     description:
       'We map how enquiries are currently routed, who owns each stage, how follow-up works, and where things break down. Then we outline how a CRM layer would bring that under control.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact',
+    buttonHref: '/contact?system=crm-automation&source=service/crm-infrastructure-implementation',
   },
 } satisfies ServicePageData;

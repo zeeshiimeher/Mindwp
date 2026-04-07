@@ -1,214 +1,316 @@
 # EXECUTION MEMORY — MindWP
 
-> This document tracks system-level execution state, decisions, and priorities.
-> It replaces the project-todo model with a structured, audit-ready format.
-> Updated: 2026-04-07 (final cleanup phase applied)
+> This document tracks current execution state, architectural decisions, and immediate system priorities.
+> It is the active operational memory for the deterministic control layer.
+> Updated: 2026-04-08 (Phase 2.8 stabilization pass applied)
 
 ---
 
 ## CURRENT PHASE
 
-- **Phase:** Documentation Consolidation
-- **Status:** Complete
-- **Objective:** Eliminate duplication, merge behavioral docs, reduce noise
+- **Phase:** Phase 2.8 — Content Stabilization + CTA Contract Completion
+- **Status:** Warning-only, non-blocking
+- **Objective:** Keep the system production-ready by fixing high-impact conversion-path content without changing architecture or scripts
+
+---
+
+## CURRENT SYSTEM STATUS
+
+- **Master command:** `npm run system:report`
+- **Master artifact:** `reports/system-report.json`
+- **Current status:** `warning`
+- **Blocking issues:** `0`
+- **Advisory issues:** `3`
+
+### Live advisory state
+
+1. Recommended content metadata missing in `506` places
+2. Missing recommended intent metadata on `147` nodes
+3. Advisory lint drift remains in a small number of files
+
+### System health snapshot
+
+- `validate-all`: `17` validators total, `0` blocking failed, `1` advisory failed
+- `system-state.json`: `WARNING`
+- `system-drift.json`: `1` drift item
+- Graph availability: `true`
+- Graph size: `229` nodes, `9,893` edges
 
 ---
 
 ## ACTIVE PRIORITIES
 
-1. SYSTEM-CONTRACT.md as ONLY behavioral authority (DONE)
-2. Zero behavioral duplication across docs (DONE)
-3. Noise reduction — shorter references, no verbose re-explanations (DONE)
-4. Validation preparation — TODO comments in validators (DONE)
-5. File count reduction — 22 → 14 files (DONE)
+1. Keep `system-report.json` as the single inspectable control-layer output
+2. Keep CTA contract drift at zero across conversion paths
+3. Reduce advisory metadata drift without introducing parallel validation logic
+4. Add missing intent only on high-value pages
+5. Preserve architecture, validators, and image-system behavior unchanged
 
 ---
 
 ## DECISION LOG
 
-### D-001 — Central Contract Introduced
+### D-001 — SYSTEM-CONTRACT.md Is the Only Behavioral Authority
 
-**Problem:**
-Conversion behavior, CTA rules, intent mapping, and data contracts were scattered across CONTENT-SYSTEM-ARCHITECTURE.md, SYSTEM-TRUTH.md, CONTENT-GRAPH-SYSTEM.md, and CONVERSION-SYSTEM.md. Multiple definitions created drift risk.
+**Status:** Locked
 
-**Decision:**
-Create SYSTEM-CONTRACT.md as the single execution authority for all conversion behavior.
-
-**Why:**
-Eliminate drift. Ensure one source defines behavior. Other docs reference — not redefine.
+**Decision:** Conversion behavior, CTA rules, intent model, and contact contract live only in `SYSTEM-CONTRACT.md`.
 
 **Impact:**
-- SYSTEM-CONTRACT.md → execution authority (behavior)
-- CONTENT-SYSTEM-ARCHITECTURE.md → structural rules only (CTA placement, page hierarchy)
-- All other docs → reference contract for CTA/conversion behavior
+- Other docs may reference behavior
+- Other docs may not redefine behavior
+- Code changes must align to contract, not vice versa
 
 ---
 
-### D-002 — CONVERSION-SYSTEM.md Merged and Deleted (SUPERSEDED)
+### D-002 — Validators Consolidated Into Three Core Contract Surfaces
 
-**Problem:**
-CONVERSION-SYSTEM.md had 100% content overlap with SYSTEM-CONTRACT.md.
+**Status:** Implemented
 
-**Decision:**
-Merge unique content (CTA examples, slug registry validation) into SYSTEM-CONTRACT.md. Delete CONVERSION-SYSTEM.md.
+**Decision:** Replace fragmented metadata, structure, CTA, and conversion validation with:
+- `scripts/validators/validate-content-contract.mjs`
+- `scripts/validators/validate-domain-structure.mjs`
+- `scripts/validators/validate-conversion-contract.mjs`
 
-**Why:**
-Two files defining the same behavior = guaranteed drift.
+**Why:** Eliminate duplicate rule systems and reduce drift.
 
 **Impact:**
-- CONVERSION-SYSTEM.md deleted
-- SYSTEM-CONTRACT.md is now the only behavioral document
-- All references updated
+- Old blog/resources/CTA/conversion split validators are removed
+- Contract enforcement is centralized
+- Structure enforcement is centralized
 
 ---
 
-### D-003 — Execution Memory Replaces Project-Todo
+### D-003 — Lint Is Advisory In System Integrity Flow
 
-**Problem:**
-project-todo.md mixed phase tracking, task lists, and historical records without decision traceability.
+**Status:** Implemented
 
-**Decision:**
-Create EXECUTION-MEMORY.md with structured decision log, execution log, and task tracking.
+**Decision:** `lint` no longer blocks the system report or aggregate validation flow.
 
-**Why:**
-Enable audit-ready execution tracking with clear decision provenance.
+**Why:** Phase 2 requires blocking only on critical integrity failures, not formatting or non-runtime lint drift.
 
 **Impact:**
-- project-todo.md deleted (historical data preserved in this file)
-- EXECUTION-MEMORY.md becomes active execution tracker
+- `validate-all` can pass blocking integrity checks while still surfacing lint noise
+- `system-state.json` and `system-report.json` still expose advisory lint issues
 
 ---
 
-### D-004 — Final Documentation Cleanup
+### D-004 — Generated Drift Is Blocking
 
-**Problem:**
-Too many files, noise, and duplication across the documentation system. 22 files before cleanup.
+**Status:** Implemented
 
-**Decision:**
-Delete unused files, extract useful rules before deletion, merge inventory files, consolidate entry point.
+**Decision:** `check-generated` is part of the blocking validation layer.
+
+**Why:** Generated artifacts out of sync break determinism and invalidate the control layer.
 
 **Impact:**
-- Reduced from 22 to 14 files
-- Faster navigation, lower cognitive load
-- Single entry point (SYSTEM-README.md)
-- Single planning file (CONTENT-INVENTORY.md)
+- Generated files are now integrity-critical
+- Freshness is enforced before the system can be considered clean
+
+---
+
+### D-005 — Authority Map Must Exist As a Report Artifact
+
+**Status:** Implemented
+
+**Decision:** `scripts/generators/generate-authority-map.ts` writes both:
+- `src/lib/authority/generated/authorityMap.ts`
+- `reports/authority-map.json`
+
+**Why:** Sync, dashboards, and system report need a machine-readable authority snapshot from the real generator.
+
+**Impact:**
+- `system-sync` no longer depends on an implicit or missing report
+- `system-report` can consume authority state without re-deriving it
+
+---
+
+### D-006 — Authority Dashboard Is Visualization Only
+
+**Status:** Implemented
+
+**Decision:** `src/app/dev/authority-dashboard/page.tsx` reads only report files through `src/lib/dev/system-report.ts`.
+
+**Allowed inputs:**
+- `reports/system-report.json`
+- `reports/system-state.json`
+- `reports/system-drift.json`
+- `reports/topic-authority-scores.json`
+- `reports/content-gaps.json`
+
+**Impact:**
+- Old live monitor path removed
+- Old dashboard actions removed
+- Dashboard no longer computes health from registries at render time
 
 ---
 
 ## EXECUTION LOG
 
-### E-001 — Created SYSTEM-CONTRACT.md
+### E-001 — Validator Surface Simplified
 **Date:** 2026-04-07
-**Files created:**
-- `core/SYSTEM-CONTRACT.md`
 
-**Summary:** Central behavioral contract covering conversion system, CTA system, contact system, data contract, intent model, routing, and guarantees.
+**Completed:**
+- Added merged contract validators
+- Removed duplicate validator files
+- Reclassified docs, vocabulary, checklist, fix-log, and reports-structure as advisory
 
 ---
 
-### E-002 — Refactored Existing Docs for Contract Alignment
+### E-002 — Image Scripts Relocated Without Behavior Change
 **Date:** 2026-04-07
-**Files updated:**
-- `core/CONTENT-SYSTEM-ARCHITECTURE.md` — removed detailed CTA logic (variants, placement table, routing rules), replaced with contract reference. Retained page hierarchy and structural rules.
-- `core/CONTENT-GRAPH-SYSTEM.md` — added cross-reference to SYSTEM-CONTRACT.md §2 for CTA input model.
-- `core/SYSTEM-TRUTH.md` — updated conversion contract section to reference SYSTEM-CONTRACT.md as execution authority.
-- `core/SYSTEM-RULES.md` — added behavioral authority notice referencing contract. Updated execution boundaries.
-- `core/SYSTEM-INTELLIGENCE-DOC.md` — fixed stale date (2025 → 2026-04-07), added conversion contract reference.
-- `core/SYSTEM-README.md` — added SYSTEM-CONTRACT.md and EXECUTION-MEMORY.md to entry point.
+
+**Completed:**
+- Moved image tooling into `scripts/image-system/`
+- Updated package scripts, docs, registry entries, and dashboard hints
+- Preserved image generation logic exactly
 
 ---
 
-### E-003 — Created EXECUTION-MEMORY.md
+### E-003 — System Sync Simplified
 **Date:** 2026-04-07
-**Files created:**
-- `core/EXECUTION-MEMORY.md`
+
+**Completed:**
+- `scripts/core/system-sync.mjs` reduced to state + drift generation only
+- Current outputs:
+	- `reports/system-state.json`
+	- `reports/system-drift.json`
+
+**Removed from sync responsibility:**
+- decision logs
+- system log reconstruction
+- doc-derived execution state
 
 ---
 
-### E-004 — Documentation Consolidation
-**Date:** 2026-04-07
-**Files deleted:**
-- `core/CONVERSION-SYSTEM.md` (merged into SYSTEM-CONTRACT.md)
+### E-004 — Master Report Engine Added
+**Date:** 2026-04-08
 
-**Files updated:**
-- `core/SYSTEM-CONTRACT.md` — merged CTA examples, slug validation, removed CONVERSION-SYSTEM.md references
-- `core/SYSTEM-TRUTH.md` — condensed §2.3 routing, §2.5 conversion, §7.3 CTA to contract references
-- `core/CONTENT-SYSTEM-ARCHITECTURE.md` — removed routing duplication, deduplicated page roles, condensed Content System Integrity Rule
-- `core/CONTENT-GOVERNANCE.md` — condensed CTA section to contract reference, fixed /conversation legacy note
-- `core/SYSTEM-README.md` — removed CONVERSION-SYSTEM.md from entry point
-- All docs — removed CONVERSION-SYSTEM.md references
+**Completed:**
+- Added `scripts/core/system-report.mjs`
+- Added `npm run system:report`
+- Normalized blocking, advisory, content, conversion, graph, design, summary, and priority output into `reports/system-report.json`
 
 ---
 
-### E-005 — Final Documentation Cleanup
-**Date:** 2026-04-07
+### E-005 — Dashboard Alignment Completed
+**Date:** 2026-04-08
 
-**Files deleted:**
-- `project-todo.md` (replaced by EXECUTION-MEMORY.md)
-- `logs/SYSTEM-LOG.md` (generated snapshot, redundant — system-sync recreates on demand)
-- `governance/AI-RULES.md` (useful rules extracted to SYSTEM-RULES.md §7-§8)
-- `core/SYSTEM-INDEX.md` (merged into SYSTEM-README.md)
-- `planning/BLOG-PLANNING-INVENTORY.md` (merged into CONTENT-INVENTORY.md)
-- `planning/RESOURCE-PLANNING-INVENTORY.md` (merged into CONTENT-INVENTORY.md)
-- `planning/CASE-STUDY-INVENTORY.md` (merged into CONTENT-INVENTORY.md)
-
-**Files created:**
-- `planning/CONTENT-INVENTORY.md` — unified planning inventory
-
-**Files updated:**
-- `core/SYSTEM-README.md` — rewritten as unified entry point (absorbed SYSTEM-INDEX.md)
-- `core/SYSTEM-RULES.md` — added §7 Permission Boundaries, §8 Common Failure Patterns (from AI-RULES.md)
-- `core/SYSTEM-ARCHITECTURE.md` — fixed stale AI-RULES.md and SYSTEM-INDEX.md references
-- `core/CONTENT-BLUEPRINT-SYSTEM.md` — updated planning file references
-- `core/CONTENT-SYSTEM-ARCHITECTURE.md` — updated planning file references
-- `governance/CONTENT-GOVERNANCE.md` — updated planning file and project-todo references
-- `scripts/core/system-sync.mjs` — updated paths to SYSTEM-README.md and EXECUTION-MEMORY.md
+**Completed:**
+- Authority dashboard switched to report-only mode
+- `src/lib/dev/systemMonitor.ts` removed
+- obsolete dashboard panels removed
+- obsolete authority dashboard server actions removed
 
 ---
 
-## TASKS
+### E-006 — Final Verification Passed
+**Date:** 2026-04-08
 
-### T-001 — Validate contract alignment across all docs
-**Status:** Complete
+**Commands executed successfully:**
+- `npm run system:report`
+- `node scripts/core/validate-all.mjs`
+- `node scripts/core/system-sync.mjs`
+
+**Result:**
+- no blocking failures
+- report pipeline stable
+- system remains in `warning` due to advisory issues only
+
+---
+
+### E-007 — CTA Contract Stabilization Pass Completed
+**Date:** 2026-04-08
+
+**Completed:**
+- Ran `npm run system:report` as the source-of-truth pass
+- Converted report output into a launch-priority fix list
+- Updated high-impact service, feature, and resource CTA links to use explicit `/contact?system=...&source=...` contract parameters
+- Re-ran report until CTA contract drift returned to zero
+
+**Result:**
+- `conversion.cta_missing_system`: `0`
+- `conversion.cta_missing_source`: `0`
+- `conversion.invalid_contact_links`: `0`
+- System remains `warning` only because of advisory metadata, advisory intent, and advisory lint drift
+
+---
+
+## CURRENT TASKS
+
+### T-001 — Reduce advisory metadata drift
+**Status:** Active
 **Priority:** High
-**Description:** Full document review confirmed zero contradictions between SYSTEM-CONTRACT.md and all other docs.
+**Description:** Reduce missing recommended metadata counts on high-impact pages without changing the blocking contract surface.
 
-### T-002 — Update validators to enforce contract rules
-**Status:** Pending
+### T-002 — Normalize intent coverage
+**Status:** Active
 **Priority:** High
-**Description:** Consolidate contract enforcement into validate-content-contract.mjs and validate-conversion-contract.mjs, with structure checks moved into validate-domain-structure.mjs.
+**Description:** Add explicit intent metadata where missing on service-adjacent and high-value conversion-support pages so advisory intent count can trend downward.
 
-### T-003 — Align CONVERSION-SYSTEM.md with SYSTEM-CONTRACT.md
-**Status:** Resolved (file deleted — merged into contract)
+### T-003 — Preserve CTA contract integrity
+**Status:** Active
+**Priority:** High
+**Description:** Keep all content CTAs that route to `/contact` aligned to the explicit `system` + `source` contract.
 
-### T-004 — Review intent model consistency
-**Status:** Pending
+### T-004 — Clear residual advisory lint noise
+**Status:** Active
 **Priority:** Medium
-**Description:** Verify that intent values used across all content data files match the four locked intents in SYSTEM-CONTRACT.md §5.
+**Description:** Remove remaining non-blocking lint warnings to move system status from `warning` to `clean`.
+
+### T-005 — Preserve report-only dashboard boundary
+**Status:** Continuous
+**Priority:** High
+**Description:** Do not reintroduce frontend recomputation or live health logic into dashboards.
 
 ---
 
 ## LOCKED CONSTRAINTS
 
-These constraints are permanent and must not be changed without explicit architectural review:
+These constraints are active and must not change without architectural review:
 
 - **Single CTA entry:** `/contact` is the only conversion endpoint
-- **No inline forms:** Forms prohibited on all content pages
-- **SmartRelatedSection only:** No alternate linking systems permitted
-- **Conversation-first model:** No booking-first, no urgency
-- **Deterministic routing:** Intent-based, pre-computed, no runtime variability
-- **Docs override code:** If conflict exists, change the code
+- **No inline forms:** forms are prohibited on content pages
+- **Deterministic routing:** no runtime CTA variability outside contract-defined fallback behavior
+- **One source of truth per concern:** no duplicate validators, no duplicate report engines, no dashboard-side recomputation
+- **Validators block only on critical integrity:** graph, contract, generated drift, design token violations, inline styles in production UI, internal link integrity
+- **Analyzers are advisory:** report only, never block
+- **Image system preserved:** path and organization changes allowed, logic changes not allowed in this phase
 
 ---
 
-## AMBIGUITIES (FLAGGED)
+## KNOWN RISKS
 
-### A-001 — fix-log.json and session-log.json do not exist
-**Impact:** Low — dashboards reference these files but they are not yet created.
-**Action required:** Create empty initial files when first fix/session is logged, or document that they are created on-demand.
+### R-001 — Advisory metadata counts remain high
+**Impact:** Medium
+**Current state:** `506` recommended metadata gaps, `147` missing intent values.
 
-### A-002 — RESOLVED
-CONVERSION-SYSTEM.md deleted. No dual-source risk remains.
+### R-002 — Advisory lint still prevents clean status
+**Impact:** Low
+**Current state:** non-blocking lint failures still appear in report output, including prettier drift in a small number of service files.
+
+### R-003 — Report-driven dashboard boundary must stay enforced
+**Impact:** High
+**Current state:** page layer is aligned; future dashboard work must not reintroduce live computation.
+
+### R-004 — Broad advisory cleanup can dilute impact if done indiscriminately
+**Impact:** Medium
+**Current state:** the remaining advisory backlog is large enough that future passes must stay priority-driven rather than attempting full cleanup.
+
+---
+
+## OPERATIONAL WORKING ORDER
+
+### Start work
+1. Run `npm run system:report`
+2. Read `reports/system-report.json`
+3. Read this file for active priorities and locked constraints
+
+### Finish work
+1. Run targeted validators if needed
+2. Run `npm run system:report`
+3. Confirm `reports/system-report.json`, `reports/system-state.json`, and `reports/system-drift.json` updated cleanly
+4. Do not leave blocking failures behind
 
 ---
 

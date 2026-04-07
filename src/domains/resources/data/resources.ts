@@ -89,7 +89,10 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
     title: 'Ready to Automate Your Business?',
     description:
       "These guides show you what's possible. Our Smart Website platform makes it automatic.",
-    primaryAction: { label: 'Start a Conversation', href: '/contact' },
+    primaryAction: {
+      label: 'Start a Conversation',
+      href: '/contact?system=smart-website-systems&source=resource/resources',
+    },
     secondaryAction: { label: 'View All Services', href: '/services' },
   },
 };
