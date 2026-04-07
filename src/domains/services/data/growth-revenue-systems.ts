@@ -64,7 +64,7 @@ export const growthRevenueSystemsPage = {
     description:
       'Most revenue problems are not demand problems. They come from weak follow-up, unclear routing, or a website that generates interest without a clear next step. This service finds where momentum is being lost and helps fix it in the right order.',
     primaryAction: {
-      label: 'Find Your Revenue Leaks',
+      label: 'Check Where Revenue Slows Down',
       href: '/contact?system=revenue-growth&source=service/growth-revenue-systems',
     },
     cssPrefix: 'technical-audit-hero',

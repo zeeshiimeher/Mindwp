@@ -72,5 +72,5 @@ Resolver guarantees:
 
 ## Forms
 
-Client submissions post directly to `/form-handler.php` via browser `FormData` from the contact and conversation pages.
+The contact page posts JSON to `/api/contact`, which sends a plain email through Resend. Configure `RESEND_API_KEY` and `CONTACT_EMAIL` in `.env.local` before testing submissions.
 

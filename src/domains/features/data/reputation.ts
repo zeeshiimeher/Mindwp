@@ -98,7 +98,7 @@ export const reputationData: FeaturePageData = {
     description:
       'Systematically request reviews after completed services and manage feedback across key platforms. Designed to support visibility, credibility, and consistent follow-up.',
     primaryAction: {
-      label: 'Get More Reviews Consistently',
+      label: 'Understand How Review Automation Works',
       href: '/contact?system=reputation-review&source=feature/reputation',
     },
     stats: [

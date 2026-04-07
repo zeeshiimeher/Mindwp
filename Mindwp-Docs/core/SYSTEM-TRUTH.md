@@ -23,14 +23,14 @@
 
 **Validation:** 17 validators in the aggregate control layer. Blocking failures are `0`; lint is advisory. Current system status is `WARNING`, not `CLEAN`.
 
-**Conversion model:** Deterministic single-entry conversion path. All CTAs route to `/contact` with `system` and `source` query params. No inline forms. `/conversation` page REMOVED (Phase 10 Decision 6) — permanent redirect to `/contact`. No lead magnets. System works without free resources.
+**Conversion model:** Deterministic single-entry conversion path. Primary CTA label is locked to "Start a Conversation". All contextual CTAs route to `/contact?system={system}&source={type}/{slug}`. No inline forms. `/conversation` page REMOVED (Phase 10 Decision 6) — permanent redirect to `/contact`. No fallback conversion path is allowed.
 
 ## Conversion Contract
 
-Conversion behavior is governed by **SYSTEM-CONTRACT.md** (single execution authority).
+Conversion behavior is governed by **CONVERSION-SYSTEM.md** (single execution authority).
 
-SYSTEM-CONTRACT.md is the single source of truth for:
-- CTA system, contact system, data contract, intent model, conversion routing, system guarantees
+CONVERSION-SYSTEM.md is the single source of truth for:
+- CTA system, contact system, intent model, URL contract, validation rules, and presentation-layer constraints
 
 ---
 
@@ -62,10 +62,9 @@ SYSTEM-CONTRACT.md is the single source of truth for:
 
 ### 2.3 Content Flow (Phase 10 — Intent-Based Routing)
 
-Content flow is governed by **intent-based classification**, not a linear funnel. Routing rules → **SYSTEM-CONTRACT.md** §6.
+Content flow is governed by the locked CTA intent model, not a linear funnel. Routing rules → **CONVERSION-SYSTEM.md**.
 
-**Blog routing:** PROBLEM → service, SYSTEM → resource, FRAMEWORK → resource/industry.
-**Resource routing:** ACTIONABLE/EDUCATIONAL → service, EXAMPLE → case study.
+**Default page-type mapping:** Blog → `problem-aware`, Resource → `system-aware`, Industry/Case Study → `solution-aware`, Service/Feature → `decision-ready`.
 **Static paths:** Industry Category → Industry Detail → Service. Feature → Service (via SmartRelatedSection).
 
 **Page roles:** Blog (discovery), Resource (education), Case Study (trust), Service (destination), Industry (context), Feature (detail).
@@ -105,9 +104,9 @@ Each node declares `industries`, `systems`, `topics` → relationships auto-gene
 
 ### 2.5 Conversion Intelligence
 
-Conversion behavior → **SYSTEM-CONTRACT.md** (single authority).
+Conversion behavior → **CONVERSION-SYSTEM.md** (single authority).
 
-Implementation: `SmartCTA` bridges content graph to CTA via `ctaResolver.ts` (intensity) + `CTA_CONFIG` (labels). All CTAs route to `/contact?system={system}&source={type}/{slug}`. No inline forms. No linear funnel. No JourneyNavigator.
+Implementation: `SmartCTA` bridges content graph to CTA via `ctaResolver.ts` (intensity and presentation) + `CTA_CONFIG` (labels). All CTAs route to `/contact?system={system}&source={type}/{slug}`. `/contact` ingests and persists `system` and `source` through submission. No inline forms. No linear funnel. No JourneyNavigator.
 
 ---
 
@@ -397,10 +396,12 @@ All sections use composable layout primitives. BEM grid CSS has been permanently
 
 ### 7.3 CTA
 
-CTA behavior → **SYSTEM-CONTRACT.md**.
+CTA behavior → **CONVERSION-SYSTEM.md**.
 
 Key constraints:
 - Primary: "Start a Conversation" → /contact (LOCKED)
+- Every contextual CTA must include `system` and `source` query params
+- No alternate conversion routes
 - No urgency, no pressure, no hype
 - Labels ONLY from `CTA_CONFIG` or page data files
 - `ctaResolver.ts` resolves intensity ONLY — does NOT produce labels
@@ -528,8 +529,8 @@ These 8 decisions govern all Phase 10 execution. Full details in `PHASE-10-audit
 | G2 — Topic Specificity | Specific + actionable. From canonical registry only. Max 2 per node. |
 | G3 — Industry Assignment | Optional for blog/resource. Required for industry-detail + case-study. |
 | G4 — Feature→Service | Every feature maps to exactly 1 service. No orphan features. |
-| G5 — CTA Routing Integrity | Blog CTA matches classification. No generic `/services`. No resource→resource. No circular paths. |
-| G6 — Content Classification | Every blog: PROBLEM/SYSTEM/FRAMEWORK. Every resource: ACTIONABLE/EDUCATIONAL/EXAMPLE. Stored in metadata. |
+| G5 — CTA Routing Integrity | Every CTA uses the `/contact?system={system}&source={type}/{slug}` contract. No generic `/services`. No alternate conversion routes. No circular CTA logic. |
+| G6 — Intent Contract | Every routed page defines `system` (primary), `intent`, and `slug`. Intent uses only `problem-aware`, `system-aware`, `solution-aware`, or `decision-ready`. |
 
 ---
 

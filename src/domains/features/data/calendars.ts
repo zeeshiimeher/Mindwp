@@ -82,7 +82,7 @@ export const calendarsData: FeaturePageData = {
     description:
       'This booking layer lets clients schedule appointments through a clear flow. Booking, confirmations, and calendar management connect directly to your enquiry handling and internal operations.',
     primaryAction: {
-      label: 'Automate Your Booking Flow',
+      label: 'Review How Booking Flow Works',
       href: '/contact?system=smart-website-systems&source=feature/calendars',
     },
     stats: [

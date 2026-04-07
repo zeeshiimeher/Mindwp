@@ -101,7 +101,7 @@ export const smartWebsiteSystemsPage = {
     description:
       'A Smart Website gives visitors a clear path from service to enquiry. Your services are easy to understand, the next step is obvious, and the site connects directly to your workflow.',
     primaryAction: {
-      label: 'Turn Website Traffic Into Leads',
+      label: 'Understand What Makes Websites Convert',
       href: '/contact?system=smart-website-systems&source=service/smart-website-systems',
     },
     list: [
@@ -381,7 +381,7 @@ export const smartWebsiteSystemsPage = {
     title: 'Not sure how this would fit your business?',
     description:
       'No commitment. We will walk through your setup and show where enquiries are being lost.',
-    buttonText: 'Turn Website Traffic Into Leads',
+    buttonText: 'See Where Leads Drop Off',
     buttonHref: '/contact?system=smart-website-systems&source=service/smart-website-systems',
   },
 } satisfies ServicePageData;

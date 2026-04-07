@@ -2,7 +2,7 @@
 
 > This document tracks current execution state, architectural decisions, and immediate system priorities.
 > It is the active operational memory for the deterministic control layer.
-> Updated: 2026-04-08 (CTA clarity rollout extended)
+> Updated: 2026-04-08 (contact flow simplified to direct email delivery)
 
 ---
 
@@ -41,7 +41,7 @@
 
 1. Keep `system-report.json` as the single inspectable control-layer output
 2. Keep CTA contract drift at zero across conversion paths
-3. Extend CTA clarity upgrades across remaining structured conversion pages without changing structure
+3. Keep the contact path minimal: `/contact` -> `/api/contact` -> Resend -> inbox email
 4. Reduce advisory metadata drift without introducing parallel validation logic
 5. Preserve architecture, validators, and image-system behavior unchanged
 
@@ -311,6 +311,34 @@
 
 ---
 
+### E-012 — Contact Flow Simplified To Direct Email Delivery
+**Date:** 2026-04-08
+
+**Completed:**
+- Replaced the legacy contact page browser post to `/form-handler.php` with a minimal JSON post to `/api/contact`
+- Simplified the contact form UI to collect only `name`, `email`, and `message`
+- Preserved hidden `system` and `source` context on the `/contact` page for attribution
+- Added Resend-backed email delivery to `CONTACT_EMAIL`
+- Added `.env.example` entries for `RESEND_API_KEY` and `CONTACT_EMAIL`
+
+**Deliberately not added:**
+- CRM writes
+- automation workflows
+- dashboards for leads
+- webhooks
+- extra validation layers
+- complex success/error UX states
+
+**Operational requirement:**
+- Live submissions require `RESEND_API_KEY` and `CONTACT_EMAIL` in `.env.local`
+
+**Result:**
+- Contact flow is now a direct email notification path only
+- Submission context is limited to `system` + `source`
+- Typecheck passed after the change
+
+---
+
 ## CURRENT TASKS
 
 ### T-001 — Reduce advisory metadata drift
@@ -342,6 +370,11 @@
 **Status:** Continuous
 **Priority:** High
 **Description:** Do not reintroduce frontend recomputation or live health logic into dashboards.
+
+### T-007 — Keep contact submissions minimal
+**Status:** Active
+**Priority:** High
+**Description:** Preserve the current direct-email contact path without reintroducing CRM, webhook, automation, or dashboard coupling into the submission flow.
 
 ---
 
@@ -381,6 +414,10 @@ These constraints are active and must not change without architectural review:
 **Impact:** High
 **Current state:** Resolved. Missing-intent false positives were fixed at the graph layer; remaining intent drift is legacy-intent normalization only.
 **Current state:** resolved as a graph-layer metadata pass-through bug. Report now detects existing intent correctly; remaining intent-related warnings are legacy-value normalization warnings, not missing fields.
+
+### R-006 — Contact delivery depends on local email configuration
+**Impact:** Medium
+**Current state:** The contact form is functional only when `RESEND_API_KEY` and `CONTACT_EMAIL` are present. Without them, `/api/contact` returns a configuration error instead of sending mail.
 
 ---
 

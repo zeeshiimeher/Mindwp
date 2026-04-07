@@ -100,7 +100,7 @@ export const workflowsData: FeaturePageData = {
     description:
       'Workflows connect your forms, bookings, and pipeline stages to automatic actions. Send confirmations, reminders, and task notifications—while keeping full visibility and control.',
     primaryAction: {
-      label: 'Automate Your Follow-Up System',
+      label: 'Check How Follow-Up Automation Works',
       href: '/contact?system=revenue-growth&source=feature/workflows',
     },
     stats: [

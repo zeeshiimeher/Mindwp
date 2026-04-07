@@ -42,7 +42,7 @@ export const aiLeadHandlingPage = {
     description:
       'This service helps businesses respond faster across website chat, phone, and booking flows. AI handles the repeatable first step, captures the right details, and hands off cleanly when a person should step in.',
     primaryAction: {
-      label: 'Automate Your Lead Handling',
+      label: 'Find Out How AI Lead Handling Works',
       href: '/contact?system=ai-lead-handling&source=service/ai-lead-handling',
     },
     list: [

@@ -99,7 +99,7 @@ export const voicecallsData: FeaturePageData = {
     description:
       'An AI phone assistant that answers calls, books appointments, takes messages, and routes enquiries clearly during business hours or after hours.',
     primaryAction: {
-      label: 'Stop Missing Calls with AI',
+      label: 'Understand How AI Answers Calls',
       href: '/contact?system=ai-lead-handling&source=feature/voicecalls',
     },
     stats: [

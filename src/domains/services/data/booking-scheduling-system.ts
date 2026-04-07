@@ -42,7 +42,7 @@ export const bookingSchedulingSystemPage = {
     description:
       'This service fixes the path from enquiry to confirmed appointment. Consultation requests, confirmations, reminders, and staff handoff all work together so more interest turns into booked appointments.',
     primaryAction: {
-      label: 'Automate Your Booking System',
+      label: 'Review How Booking Automation Works',
       href: '/contact?system=smart-website-systems&source=service/booking-scheduling-system',
     },
     list: [

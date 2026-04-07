@@ -45,6 +45,8 @@ Positioning, copy voice, CTA standards, banned vocabulary, AI execution lock, an
 
 Content graph ontology, metadata rules, and relationship resolution engineering are defined in **CONTENT-GRAPH-SYSTEM.md**.
 
+Conversion behavior, CTA contracts, contact rules, and validation requirements are defined in **CONVERSION-SYSTEM.md**.
+
 Content archetypes, template section mappings, and writing blueprints are defined in **CONTENT-BLUEPRINT-SYSTEM.md**.
 
 ---
@@ -1183,7 +1185,7 @@ No random internal links. No over-linking. Authority compounds upward. Random cr
 
 ## Content System Integrity Rule (Locked)
 
-MindWP uses an intent-classified content ecosystem. Each content type has a defined role and must not be mixed or flattened. Routing → **SYSTEM-CONTRACT.md** §6.
+MindWP uses a locked intent-classified content ecosystem. Each content type has a defined role and must not be mixed or flattened. Routing → **CONVERSION-SYSTEM.md**.
 
 - Blog: Must NOT appear on service pages.
 - Resources: Must remain system-focused.
@@ -1324,21 +1326,20 @@ The goal: educate first, build trust with proof, invite implementation only when
 
 ### Core Content Flow (Intent-Based Routing)
 
-Content does NOT follow a linear funnel. Phase 10 classifies every node by intent and routes accordingly.
+Content does NOT follow a linear funnel. Conversion uses the locked CTA intent contract defined in **CONVERSION-SYSTEM.md**.
 
-**Blog Intent Types:**
-- PROBLEM (29 posts) → route to matching service
-- SYSTEM (28 posts) → route to matching resource
-- FRAMEWORK (18 posts) → route to matching resource or industry
+Default page-type intent mapping:
 
-**Resource Intent Types:**
-- ACTIONABLE (20 resources) → route to matching service
-- EDUCATIONAL (20 resources) → route to matching service
-- EXAMPLE (13 resources) → route to matching case study
+- Blog → `problem-aware`
+- Resource → `system-aware`
+- Industry → `solution-aware`
+- Case Study → `solution-aware`
+- Service → `decision-ready`
+- Feature → `decision-ready`
 
 ## INTENT MODEL (LOCKED)
 
-Intent model, metadata contract, and source generation rules are defined in **SYSTEM-CONTRACT.md** §5.
+Intent model, CTA input contract, and source generation rules are defined in **CONVERSION-SYSTEM.md**.
 
 MindWP uses four locked content intents:
 
@@ -1347,7 +1348,13 @@ MindWP uses four locked content intents:
 - system-aware
 - decision-ready
 
-Default mapping, CTA input requirements, and source format are governed by SYSTEM-CONTRACT.md.
+Every page MUST define:
+
+- `system` (primary)
+- `intent`
+- `slug`
+
+`source` is generated from normalized `{type}/{slug}`. It must not be manually written.
 
 **Page Roles:**
 - Blog: learning and problem discovery, routed by intent type.
@@ -1564,7 +1571,7 @@ Controlled by the UI layer (`src/config/ui-intelligence.ts`) via **SmartRelatedS
 
 ## CONVERSION ARCHITECTURE RULES (LOCKED)
 
-Conversion behavior, CTA system, routing, intensity mapping, placement rules, and data contracts are defined in **SYSTEM-CONTRACT.md** — the single execution authority for all conversion behavior.
+Conversion behavior, CTA system, routing, intensity mapping, placement rules, and data contracts are defined in **CONVERSION-SYSTEM.md** — the single execution authority for all conversion behavior.
 
 Copy standards and CTA language are defined in **FOUNDATION-AND-POSITIONING.md** §5 and §5a.
 

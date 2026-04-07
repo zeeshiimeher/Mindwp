@@ -3,28 +3,27 @@
 import React, { useEffect, useState } from 'react';
 import { CheckCircle2, Clock, Loader2, Mail, MapPin, Phone, Send } from 'lucide-react';
 
-import { Button } from '@/components/reusable/single/Button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from '@/components/ui/select';
 import { Textarea } from '@/components/ui/textarea';
 import { primaryCta } from '@/config/primaryCta';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
+import { Button } from '@/components/reusable/single/Button';
+
+const INITIAL_FORM_STATE = {
+  name: '',
+  email: '',
+  message: '',
+};
 
 export function Contact() {
-  const endpoint = '/form-handler.php';
   const [submitted, setSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [systemParam, setSystemParam] = useState('');
   const [sourceParam, setSourceParam] = useState('');
+  const [formState, setFormState] = useState(INITIAL_FORM_STATE);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -34,23 +33,46 @@ export function Contact() {
     setSourceParam(source);
   }, []);
 
+  const hasContext = Boolean(systemParam || sourceParam);
+
+  const handleInputChange = (field: keyof typeof INITIAL_FORM_STATE, value: string) => {
+    setFormState((current) => ({
+      ...current,
+      [field]: value,
+    }));
+  };
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     setErrorMessage('');
 
     try {
-      const formData = new FormData(e.currentTarget);
-      const response = await fetch(endpoint, {
+      const response = await fetch('/api/contact', {
         method: 'POST',
-        body: formData,
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formState,
+          system: systemParam,
+          source: sourceParam,
+        }),
       });
-      if (!response.ok) throw new Error('Request failed');
-      e.currentTarget.reset();
+
+      const payload = (await response.json().catch(() => null)) as { error?: string } | null;
+
+      if (!response.ok) {
+        throw new Error(payload?.error || 'Request failed');
+      }
+
+      setFormState(INITIAL_FORM_STATE);
       setSubmitted(true);
-    } catch {
+    } catch (error) {
       setErrorMessage(
-        'Something went wrong. Please try again or email us directly at hello@mindwp.com.'
+        error instanceof Error && error.message
+          ? error.message
+          : 'Something went wrong. Please try again or email us directly at hello@mindwp.com.'
       );
     } finally {
       setIsSubmitting(false);
@@ -151,10 +173,16 @@ export function Contact() {
                     <h2 className='contact-page-form-heading-1 mb-6'>Send Us a Message</h2>
 
                     <form onSubmit={handleSubmit} className='contact-page-form'>
-                      {/* Hidden context fields */}
                       <input type='hidden' name='system' value={systemParam} />
                       <input type='hidden' name='source' value={sourceParam} />
-                      {/* Name */}
+
+                      {hasContext && (
+                        <p className='contact-page-form-text-1 text-sm text-muted-foreground'>
+                          We&apos;ll include your page context with this message so we know what
+                          you were looking at.
+                        </p>
+                      )}
+
                       <div className='contact-page-form-field-1'>
                         <Label htmlFor='name' className='contact-page-form-label-1'>
                           Full Name *
@@ -165,126 +193,52 @@ export function Contact() {
                           type='text'
                           placeholder='John Smith'
                           required
+                          autoComplete='name'
+                          value={formState.name}
+                          onChange={(event) => handleInputChange('name', event.target.value)}
                           className='contact-page-form-input-1'
                         />
                       </div>
 
-                      {/* Email & Phone */}
-                      <div className='contact-page-form-row-1'>
-                        <div className='contact-page-form-field-2'>
-                          <Label htmlFor='email' className='contact-page-form-label-2'>
-                            Email Address *
-                          </Label>
-                          <Input
-                            id='email'
-                            name='email'
-                            type='email'
-                            placeholder='john@company.com'
-                            required
-                            className='contact-page-form-input-2'
-                          />
-                        </div>
-                        <div className='contact-page-form-field-3'>
-                          <Label htmlFor='phone' className='contact-page-form-label-3'>
-                            Phone Number
-                          </Label>
-                          <Input
-                            id='phone'
-                            name='phone'
-                            type='tel'
-                            placeholder='+44 7123 456789'
-                            className='contact-page-form-input-3'
-                          />
-                        </div>
+                      <div className='contact-page-form-field-2'>
+                        <Label htmlFor='email' className='contact-page-form-label-2'>
+                          Email Address *
+                        </Label>
+                        <Input
+                          id='email'
+                          name='email'
+                          type='email'
+                          placeholder='john@company.com'
+                          required
+                          autoComplete='email'
+                          value={formState.email}
+                          onChange={(event) => handleInputChange('email', event.target.value)}
+                          className='contact-page-form-input-2'
+                        />
                       </div>
 
-                      {/* Business Type & Website */}
-                      <div className='contact-page-form-row-2'>
-                        <div className='contact-page-form-field-4'>
-                          <Label htmlFor='business-type' className='contact-page-form-label-4'>
-                            Business Type *
-                          </Label>
-                          <Select name='businessType'>
-                            <SelectTrigger
-                              id='business-type'
-                              name='businessType'
-                              className='contact-page-form-select-1'
-                            >
-                              <SelectValue placeholder='Select your industry' />
-                            </SelectTrigger>
-                            <SelectContent>
-                              <SelectItem value='home-services'>
-                                Home Services (HVAC, Plumbing, Roofing)
-                              </SelectItem>
-                              <SelectItem value='beauty'>Beauty &amp; Personal Care</SelectItem>
-                              <SelectItem value='healthcare'>Healthcare &amp; Clinics</SelectItem>
-                              <SelectItem value='professional-services'>
-                                Professional Services
-                              </SelectItem>
-                              <SelectItem value='other'>Other</SelectItem>
-                            </SelectContent>
-                          </Select>
-                        </div>
-                        <div className='contact-page-form-field-5'>
-                          <Label htmlFor='website' className='contact-page-form-label-5'>
-                            Current Website
-                          </Label>
-                          <Input
-                            id='website'
-                            name='website'
-                            type='url'
-                            placeholder='https://yourwebsite.com'
-                            className='contact-page-form-input-4'
-                          />
-                        </div>
-                      </div>
-
-                      {/* Goals */}
                       <div className='contact-page-form-field-6'>
-                        <Label htmlFor='goals' className='contact-page-form-label-6'>
-                          What are your main goals? *
+                        <Label htmlFor='message' className='contact-page-form-label-6'>
+                          Message *
                         </Label>
                         <Textarea
-                          id='goals'
-                          name='goals'
-                          placeholder='e.g., Get more bookings, improve local SEO, automate follow-ups, reduce no-shows...'
-                          rows={4}
+                          id='message'
+                          name='message'
+                          placeholder='Tell us what you need, what page brought you here, or what you want to discuss.'
+                          rows={6}
                           required
+                          value={formState.message}
+                          onChange={(event) => handleInputChange('message', event.target.value)}
                           className='contact-page-form-textarea-1'
                         />
                       </div>
 
-                      {/* Monthly Budget */}
-                      <div className='contact-page-form-field-7'>
-                        <Label htmlFor='monthly-budget' className='contact-page-form-label-7'>
-                          Approximate Monthly Budget
-                        </Label>
-                        <Select name='monthlyBudget'>
-                          <SelectTrigger
-                            id='monthly-budget'
-                            name='monthlyBudget'
-                            className='contact-page-form-select-2'
-                          >
-                            <SelectValue placeholder='Select budget range' />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value='under-1k'>Under £1,000</SelectItem>
-                            <SelectItem value='1k-3k'>£1,000 - £3,000</SelectItem>
-                            <SelectItem value='3k-5k'>£3,000 - £5,000</SelectItem>
-                            <SelectItem value='5k-10k'>£5,000 - £10,000</SelectItem>
-                            <SelectItem value='10k-plus'>£10,000+</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-
-                      {/* Error message */}
                       {errorMessage && (
                         <p className='contact-page-form-error text-sm text-destructive'>
                           {errorMessage}
                         </p>
                       )}
 
-                      {/* Submit Button */}
                       <button
                         type='submit'
                         className='btn btn-primary btn-block'
@@ -304,8 +258,8 @@ export function Contact() {
                       </button>
 
                       <p className='contact-page-form-text-1 text-sm text-muted-foreground'>
-                        We&apos;ll respond within 24 hours on business days. For urgent matters,
-                        please call us directly.
+                        We&apos;ll reply to the email you provide. For urgent matters, email
+                        hello@mindwp.com directly.
                       </p>
                     </form>
                   </>

@@ -43,7 +43,7 @@ export const reputationReviewSystemsPage = {
     description:
       'This service helps businesses build a clear review system around timing, feedback routing, response ownership, and trust signals. It works best when people are already finding the business but still hesitate to trust it.',
     primaryAction: {
-      label: 'Get More Reviews Consistently',
+      label: 'Review How Review Systems Work',
       href: '/contact?system=reputation-review&source=service/reputation-review-systems',
     },
     list: [

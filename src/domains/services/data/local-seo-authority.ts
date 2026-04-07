@@ -43,7 +43,7 @@ export const localSeoAuthorityPage = {
     description:
       'Most SEO work jumps straight to tactics. We start with the website, local presence, and enquiry path so visibility grows on a structure that already makes sense.',
     primaryAction: {
-      label: 'Strengthen Your Local Authority',
+      label: 'Understand What Builds Local Authority',
       href: '/contact?system=local-seo-authority&source=service/local-seo-authority',
     },
     cssPrefix: 'website-seo-hero',

@@ -201,10 +201,17 @@ topics: string[]
 
 These fields must always use plural arrays, even if only one value exists.
 
+Every routed page must also expose:
+
+- `slug`
+- `intent`
+- one canonical primary system for conversion use
+
 ## METADATA ENFORCEMENT
 
 Each node MUST define:
 
+- slug (REQUIRED)
 - systems[] (primary required)
 - topics[]
 - industries[] (optional depending type)
@@ -215,8 +222,9 @@ The graph layer may store multiple systems in `systems[]`, but every node must s
 ## SOURCE FIELD
 
 - source is NOT stored manually
-- generated from type + slug
+- generated from normalized `{type}/{slug}`
 - used by conversion system only
+- `industry-detail` and `industry-category` normalize to `industry` for conversion source generation
 
 ## PRIMARY SYSTEM RULE
 
@@ -224,7 +232,7 @@ The graph layer may store multiple systems in `systems[]`, but every node must s
 - secondary systems allowed for graph
 - CTA uses ONLY primary system
 
-Cross-reference: CTA input model and routing defined in **SYSTEM-CONTRACT.md** §2.
+Cross-reference: CTA input model, URL contract, and routing are defined in **CONVERSION-SYSTEM.md**.
 
 ---
 
@@ -262,21 +270,22 @@ Cross-reference: Enforcement Rules section in CONTENT-SYSTEM-ARCHITECTURE.md.
 
 | Node Type        | industries | systems | topics |
 |------------------|-----------|--------|--------|
-| Blog             | optional  | optional | **required** |
+| Blog             | optional  | **required** | **required** |
 | Resource         | optional  | **required** | **required** |
 | Case Study       | **required** | **required** | optional |
 | Feature          | — | **required** | optional |
-| Industry Detail  | **required** | optional | optional |
-| System (Service) | — | optional | optional |
+| Industry Detail  | **required** | **required** | optional |
+| Industry Category | optional | **required** | optional |
+| System (Service) | — | **required** | optional |
 
 Explanation:
 
-- Blog posts primarily represent topics, and may optionally reference systems or industries.
+- Blog posts primarily represent topics, and must still define a primary system for conversion use.
 - Resources explain systems and operational frameworks, and therefore must declare both systems and topics.
 - Case studies demonstrate system implementation in a real vertical, so they must declare industries and systems.
 - Feature pages represent system components, so they declare systems and optionally topics but not industries.
-- Industry detail pages represent vertical entities and declare industries. They may also declare systems and topics when there is clear operational alignment.
-- System (Service) pages may declare systems and topics to enable derived relationship matching.
+- Industry detail and industry category pages represent vertical entry points and must declare a primary system for CTA resolution.
+- System (Service) pages must declare their canonical system and may declare topics to enable derived relationship matching.
 
 ---
 

@@ -95,7 +95,7 @@ export const aiChatData: FeaturePageData = {
     description:
       'This conversation layer helps visitors ask questions, request services, and book appointments through a clear flow. AI supports routing and first response while your team stays in control of the important conversations.',
     primaryAction: {
-      label: 'Capture Leads with AI Chat',
+      label: 'Find Out How AI Chat Works',
       href: '/contact?system=ai-lead-handling&source=feature/aichat',
     },
     stats: [
