@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-03-26T10:30:38.538Z",
+  "generatedAt": "2026-04-07T20:17:24.938Z",
   "stats": {
-    "totalNodes": 207,
-    "blogs": 77,
-    "resources": 52,
+    "totalNodes": 229,
+    "blogs": 88,
+    "resources": 59,
     "industries": 32,
     "caseStudies": 22,
-    "topics": 41
+    "topics": 42
   },
   "topicGaps": [
     {
@@ -27,10 +27,38 @@
       ]
     },
     {
+      "topic": "booking-automation",
+      "blogCount": 1,
+      "resourceCount": 0,
+      "industryCount": 4,
+      "caseStudyCount": 7,
+      "missing": [
+        "blog",
+        "resource"
+      ],
+      "suggestions": [
+        "2 more blog posts covering \"booking automation\"",
+        "resource framework for \"booking automation\""
+      ]
+    },
+    {
+      "topic": "booking-systems",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "industryCount": 10,
+      "caseStudyCount": 1,
+      "missing": [
+        "blog"
+      ],
+      "suggestions": [
+        "1 more blog post covering \"booking systems\""
+      ]
+    },
+    {
       "topic": "client-reactivation",
       "blogCount": 2,
       "resourceCount": 1,
-      "industryCount": 2,
+      "industryCount": 3,
       "caseStudyCount": 2,
       "missing": [
         "blog"
@@ -41,7 +69,7 @@
     },
     {
       "topic": "conversion-optimization",
-      "blogCount": 2,
+      "blogCount": 1,
       "resourceCount": 1,
       "industryCount": 0,
       "caseStudyCount": 2,
@@ -50,7 +78,7 @@
         "industry"
       ],
       "suggestions": [
-        "1 more blog post covering \"conversion optimization\"",
+        "2 more blog posts covering \"conversion optimization\"",
         "automotive services — conversion optimization implementation",
         "auto repair — conversion optimization implementation",
         "body shops — conversion optimization implementation"
@@ -94,26 +122,13 @@
       "topic": "crm-integration",
       "blogCount": 2,
       "resourceCount": 1,
-      "industryCount": 2,
+      "industryCount": 3,
       "caseStudyCount": 1,
       "missing": [
         "blog"
       ],
       "suggestions": [
         "1 more blog post covering \"crm integration\""
-      ]
-    },
-    {
-      "topic": "crm-pipeline",
-      "blogCount": 4,
-      "resourceCount": 0,
-      "industryCount": 3,
-      "caseStudyCount": 5,
-      "missing": [
-        "resource"
-      ],
-      "suggestions": [
-        "resource framework for \"crm pipeline\""
       ]
     },
     {
@@ -199,7 +214,7 @@
       "topic": "follow-up",
       "blogCount": 2,
       "resourceCount": 2,
-      "industryCount": 10,
+      "industryCount": 13,
       "caseStudyCount": 4,
       "missing": [
         "blog"
@@ -244,7 +259,7 @@
       "topic": "lead-qualification",
       "blogCount": 2,
       "resourceCount": 1,
-      "industryCount": 6,
+      "industryCount": 8,
       "caseStudyCount": 0,
       "missing": [
         "blog",
@@ -253,21 +268,8 @@
       "suggestions": [
         "1 more blog post covering \"lead qualification\"",
         "aesthetic cosmetic clinics — lead qualification case study",
-        "accounting firms — lead qualification case study",
-        "consultants — lead qualification case study"
-      ]
-    },
-    {
-      "topic": "lead-response-time",
-      "blogCount": 2,
-      "resourceCount": 2,
-      "industryCount": 4,
-      "caseStudyCount": 4,
-      "missing": [
-        "blog"
-      ],
-      "suggestions": [
-        "1 more blog post covering \"lead response time\""
+        "legal professional services — lead qualification case study",
+        "accounting firms — lead qualification case study"
       ]
     },
     {
@@ -348,19 +350,6 @@
       ]
     },
     {
-      "topic": "local-visibility",
-      "blogCount": 2,
-      "resourceCount": 1,
-      "industryCount": 2,
-      "caseStudyCount": 1,
-      "missing": [
-        "blog"
-      ],
-      "suggestions": [
-        "1 more blog post covering \"local visibility\""
-      ]
-    },
-    {
       "topic": "negative-review-response",
       "blogCount": 2,
       "resourceCount": 0,
@@ -426,7 +415,7 @@
       "topic": "pipeline-visibility",
       "blogCount": 2,
       "resourceCount": 1,
-      "industryCount": 3,
+      "industryCount": 5,
       "caseStudyCount": 0,
       "missing": [
         "blog",
@@ -434,16 +423,16 @@
       ],
       "suggestions": [
         "1 more blog post covering \"pipeline visibility\"",
+        "legal professional services — pipeline visibility case study",
         "consultants — pipeline visibility case study",
-        "mortgage brokers — pipeline visibility case study",
-        "property managers — pipeline visibility case study"
+        "real estate property services — pipeline visibility case study"
       ]
     },
     {
       "topic": "reputation-monitoring",
       "blogCount": 1,
       "resourceCount": 1,
-      "industryCount": 2,
+      "industryCount": 3,
       "caseStudyCount": 1,
       "missing": [
         "blog"
@@ -486,8 +475,8 @@
     },
     {
       "topic": "review-automation",
-      "blogCount": 4,
-      "resourceCount": 1,
+      "blogCount": 6,
+      "resourceCount": 3,
       "industryCount": 0,
       "caseStudyCount": 1,
       "missing": [
@@ -742,6 +731,24 @@
       ]
     },
     {
+      "slug": "review-automation-setup-guide-for-roofing-companies",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — review automation setup guide for roofing companies adaptation",
+        "auto repair — review automation setup guide for roofing companies adaptation",
+        "body shops — review automation setup guide for roofing companies adaptation"
+      ]
+    },
+    {
+      "slug": "review-automation-setup-guide-for-salons",
+      "industryCount": 0,
+      "suggestions": [
+        "automotive services — review automation setup guide for salons adaptation",
+        "auto repair — review automation setup guide for salons adaptation",
+        "body shops — review automation setup guide for salons adaptation"
+      ]
+    },
+    {
       "slug": "roofing-crm-pipeline-structure",
       "industryCount": 0,
       "suggestions": [
@@ -787,48 +794,5 @@
       ]
     }
   ],
-  "industryCaseStudyGaps": [
-    {
-      "slug": "automotive-services",
-      "caseStudyCount": 0,
-      "suggestions": [
-        "automotive services proof-of-results case study"
-      ]
-    },
-    {
-      "slug": "home-services",
-      "caseStudyCount": 0,
-      "suggestions": [
-        "home services proof-of-results case study"
-      ]
-    },
-    {
-      "slug": "beauty-personal-care",
-      "caseStudyCount": 0,
-      "suggestions": [
-        "beauty personal care proof-of-results case study"
-      ]
-    },
-    {
-      "slug": "legal-professional-services",
-      "caseStudyCount": 0,
-      "suggestions": [
-        "legal professional services proof-of-results case study"
-      ]
-    },
-    {
-      "slug": "local-appointment-businesses",
-      "caseStudyCount": 0,
-      "suggestions": [
-        "local appointment businesses proof-of-results case study"
-      ]
-    },
-    {
-      "slug": "real-estate-property-services",
-      "caseStudyCount": 0,
-      "suggestions": [
-        "real estate property services proof-of-results case study"
-      ]
-    }
-  ]
+  "industryCaseStudyGaps": []
 }

@@ -65,9 +65,7 @@ export function clampOverrides(overrides: TuneOverrides): TuneOverrides {
     textBlockXPercent: overrides.textBlockXPercent
       ? Math.max(0.28, Math.min(0.52, overrides.textBlockXPercent))
       : undefined,
-    blurSigma: overrides.blurSigma
-      ? Math.max(3, Math.min(14, overrides.blurSigma))
-      : undefined,
+    blurSigma: overrides.blurSigma ? Math.max(3, Math.min(14, overrides.blurSigma)) : undefined,
     brightnessMultiplier: overrides.brightnessMultiplier
       ? Math.max(0.65, Math.min(1.0, overrides.brightnessMultiplier))
       : undefined,

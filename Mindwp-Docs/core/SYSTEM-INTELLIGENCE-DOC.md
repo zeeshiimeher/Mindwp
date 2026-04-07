@@ -114,12 +114,11 @@ These create data that dashboards and validators use.
 
 | Script | Command | Purpose | Output |
 |--------|---------|---------|--------|
-| generate-authority-map | `npx tsx scripts/generate-authority-map.ts` | Builds the authority relationship map — how services, resources, industries, case studies, and blogs connect | `src/lib/authority/generated/authorityMap.ts` |
-| generate-topic-authority-scores | `npx tsx scripts/generate-topic-authority-scores.ts` | Scores each topic based on how much content supports it | `reports/topic-authority-scores.json`, `reports/topic-authority-scores.md` |
-| generate-content-registries | `node scripts/generate-content-registries.mjs` | Creates slug→component lookup maps for blog, resources, and case studies | `src/domains/*/registry.ts` |
-| generate-global-inventory | `node scripts/generate-global-inventory.mjs` | Generates a catalog of all shared components | `Mindwp-Docs/core/GLOBAL-COMPONENTS-CATALOG.md` |
+| generate-authority-map | `npx tsx scripts/generators/generate-authority-map.ts` | Builds the authority relationship map — how services, resources, industries, case studies, and blogs connect | `src/lib/authority/generated/authorityMap.ts` |
+| generate-topic-authority-scores | `npx tsx scripts/generators/generate-topic-authority-scores.ts` | Scores each topic based on how much content supports it | `reports/topic-authority-scores.json`, `reports/topic-authority-scores.md` |
+| generate-content-registries | `node scripts/generators/generate-content-registries.mjs` | Creates slug→component lookup maps for blog, resources, and case studies | `src/domains/*/registry.ts` |
+| generate-global-inventory | `node scripts/generators/generate-global-inventory.mjs` | Generates a catalog of all shared components | `Mindwp-Docs/core/GLOBAL-COMPONENTS-CATALOG.md` |
 | generate-component-docs | `node scripts/generators/generate-component-docs.cjs` | Generates component documentation | `Mindwp-Docs/` (doc files) |
-| generate-resolver-cache | `npx tsx scripts/generate-resolver-cache.ts` | Pre-computes content graph resolver cache for faster lookups | Cache files |
 | check-generated | `node scripts/core/check-generated.mjs` | Freshness guard — checks if generated files are up to date | Exit code 1 if stale |
 
 ### Analysis Scripts
@@ -143,36 +142,30 @@ These enforce rules. Run individually or all at once with `validate-all`.
 | Script | Command | Checks | Fails Build? |
 |--------|---------|--------|-------------|
 | validate-all | `node scripts/core/validate-all.mjs` | Runs ALL validators below, aggregates results, and writes `reports/validation-results.json` | Yes (if any blocking validator fails) |
-| validate-blog | `node scripts/validators/validate-blog.mjs` | Blog domain structure (required fields, section format) | Yes |
-| validate-resources | `node scripts/validators/validate-resources.mjs` | Resource domain structure | Yes |
-| validate-case-study-structure | `node scripts/validators/validate-case-study-structure.mjs` | Case study structure | Yes |
-| validate-service-structure | `node scripts/validators/validate-service-structure.mjs` | Service page structure | Yes |
-| validate-feature-structure | `node scripts/validators/validate-feature-structure.mjs` | Feature page structure | Yes |
-| validate-home-structure | `node scripts/validators/validate-home-structure.mjs` | Homepage structure | Yes |
-| validate-industry-structure | `node scripts/validators/validate-industry-structure.mjs` | Industry page structure | Yes |
+| validate-content-contract | `npx tsx scripts/validators/validate-content-contract.mjs` | Required metadata, canonical values, and contract intent mapping | Yes |
+| validate-domain-structure | `npx tsx scripts/validators/validate-domain-structure.mjs` | Required fields and section structure for service, feature, home, industry, and case-study domains | Yes |
+| validate-conversion-contract | `npx tsx scripts/validators/validate-conversion-contract.mjs` | CTA routing to `/contact`, system/source validation, and fallback readiness | Yes |
 | validate-design-system | `node scripts/validators/validate-design-system.cjs` | Design system tokens and naming | Yes |
-| validate-docs | `node scripts/validators/validate-docs.mjs` | Documentation formatting, required sections | Yes |
+| check-generated | `node scripts/core/check-generated.mjs` | Generated files are current and in sync with source inputs | Yes |
+| validate-docs | `node scripts/validators/validate-docs.mjs` | Documentation formatting and broken links | **No** (warnings only) |
 | validate-graph | `npx tsx scripts/validators/validate-graph.ts` | Content graph integrity (edges, orphans) | Yes |
-| validate-metadata | `node scripts/validators/validate-metadata.mjs` | Rule-based metadata field validation | Yes |
-| validate-metadata-completeness | `node scripts/validators/validate-metadata-completeness.mjs` | Missing or incomplete metadata fields | Yes |
-| validate-cta | `node scripts/validators/validate-cta.mjs` | CTA labels, hrefs, placement rules | Yes |
-| validate-vocabulary | `node scripts/validators/validate-vocabulary.mjs` | Banned phrases and anti-hype vocabulary | Yes |
-| validate-structure | `node scripts/validators/validate-structure.mjs` | Heading structure, tone rules, CTA placement | Yes |
+| validate-vocabulary | `node scripts/validators/validate-vocabulary.mjs` | Banned phrases and anti-hype vocabulary sourced from FOUNDATION-AND-POSITIONING.md | **No** (warnings only) |
 | validate-internal-links | `npx tsx scripts/validators/validate-internal-links.ts` | Max 2 sections × 3 items per page, no duplicates, no repeated anchors | Yes |
-| validate-conversion | `npx tsx scripts/validators/validate-conversion.ts` | Missing CTA, no service link, intent routing check | **No** (warnings only) |
 | validate-system-docs | `node scripts/validators/validate-system-docs.mjs` | Checks this doc stays aligned with actual systems | **No** (warnings only) |
+| lint | `node scripts/runners/run-eslint.mjs` | Lint and formatting drift | **No** (warnings only in system integrity flow) |
 
 | validate-checklist | `node scripts/validators/validate-checklist.mjs` | Checks fix checklist engine and integrations | **No** (warnings only) |
 | validate-fix-log | `node scripts/validators/validate-fix-log.mjs` | Checks fix history shape and append-only contract expectations | **No** (warnings only) |
+| validate-reports-structure | `node scripts/validators/validate-reports-structure.mjs` | Checks report file placement and naming drift | **No** (warnings only) |
 
 
 ### Utility Scripts
 
 | Script | Command | Purpose |
 |--------|---------|---------|
-| report-content-readiness | `node scripts/analyzers/report-content-readiness.mjs` | Summarizes content readiness across domains |
-| image-generate | `npx tsx scripts/generators/image-generate.ts` | CLI for generating images (Unsplash, Pexels, Pixabay) |
-| image-inspect | `npx tsx scripts/analyzers/image-inspect.ts` | Inspects image metadata and generates image reports |
+| system-report | `node scripts/core/system-report.mjs` | Runs validate-all, system-sync, key analyzers, and writes `reports/system-report.json` |
+| image-generate | `npx tsx scripts/image-system/image-generate.ts` | CLI for generating images (Unsplash, Pexels, Pixabay) |
+| image-inspect | `npx tsx scripts/image-system/image-inspect.ts` | Inspects image metadata and generates image reports |
 | inspect-graph | `npx tsx scripts/analyzers/inspect-graph.ts` | Dev runner for graph structure inspection |
 | run-eslint | `node scripts/runners/run-eslint.mjs` | ESLint runner (used by validate-all) |
 | run-next | `node scripts/runners/run-next.mjs` | Next.js dev runner (use --filter for filtered stderr mode) |
@@ -190,6 +183,13 @@ These enforce rules. Run individually or all at once with `validate-all`.
 ## 4. Reports
 
 All reports live in `/reports/`. This directory contains both generated snapshots and append-only histories.
+
+### system-report.json
+
+- **Generated by:** `node scripts/core/system-report.mjs`
+- **Used by:** Authority Dashboard
+- **Contains:** One normalized system snapshot with status, blocking issues, advisory issues, content/conversion/graph/design counts, summary, and priority actions
+- **Purpose:** Single control-layer output for inspectable system state.
 
 ### topic-authority-scores.json
 

@@ -13,39 +13,39 @@ All commands use **hardcoded default slugs** so you can run them immediately. To
 
 ```bash
 # Blog (default: lead-response-time-for-service-businesses)
-npx tsx scripts/generators/image-generate.ts --mode test --domain blog
+npx tsx scripts/image-system/image-generate.ts --mode test --domain blog
 
 # Case Study (default: appointment-business-booking-automation)
-npx tsx scripts/generators/image-generate.ts --mode test --domain case-studies
+npx tsx scripts/image-system/image-generate.ts --mode test --domain case-studies
 
 # Resource (default: authority-signals-for-local-search)
-npx tsx scripts/generators/image-generate.ts --mode test --domain resources
+npx tsx scripts/image-system/image-generate.ts --mode test --domain resources
 ```
 
 ### Force Regeneration
 
 ```bash
 # Force: bypasses cache, re-downloads and re-generates
-npx tsx scripts/generators/image-generate.ts --mode test --domain blog --force
+npx tsx scripts/image-system/image-generate.ts --mode test --domain blog --force
 
 # Regenerate: clears index, re-runs pipeline (may pick same image from search)
-npx tsx scripts/generators/image-generate.ts --mode test --regenerate
+npx tsx scripts/image-system/image-generate.ts --mode test --regenerate
 
 # Fresh: clears index AND blocks the previously used image (forces a different image)
-npx tsx scripts/generators/image-generate.ts --mode test --fresh
+npx tsx scripts/image-system/image-generate.ts --mode test --fresh
 
 # Works with any domain:
-npx tsx scripts/generators/image-generate.ts --mode test --domain case-studies --regenerate
-npx tsx scripts/generators/image-generate.ts --mode test --domain resources --fresh
+npx tsx scripts/image-system/image-generate.ts --mode test --domain case-studies --regenerate
+npx tsx scripts/image-system/image-generate.ts --mode test --domain resources --fresh
 ```
 
 ### Bulk Generation
 
 ```bash
 # Generate all missing images for a domain
-npx tsx scripts/generators/image-generate.ts --mode bulk --domain blog
-npx tsx scripts/generators/image-generate.ts --mode bulk --domain case-studies
-npx tsx scripts/generators/image-generate.ts --mode bulk --domain resources
+npx tsx scripts/image-system/image-generate.ts --mode bulk --domain blog
+npx tsx scripts/image-system/image-generate.ts --mode bulk --domain case-studies
+npx tsx scripts/image-system/image-generate.ts --mode bulk --domain resources
 ```
 
 ### Inspect Generated Images
@@ -53,7 +53,7 @@ npx tsx scripts/generators/image-generate.ts --mode bulk --domain resources
 Runs a visual QA check on all generated images — reports brightness, overlay strength, WCAG AA contrast ratio.
 
 ```bash
-npx tsx scripts/analyzers/image-inspect.ts
+npx tsx scripts/image-system/image-inspect.ts
 ```
 
 ---
@@ -92,7 +92,7 @@ After generating an image, open both files from `public/images/<domain>/<slug>/`
 
 ### 5. Contrast
 
-- Run `npx tsx scripts/analyzers/image-inspect.ts` to check WCAG AA compliance
+- Run `npx tsx scripts/image-system/image-inspect.ts` to check WCAG AA compliance
 - **Pass** = contrast ratio ≥ 4.5:1 (white text on overlay background)
 - Pipeline logs contrast ratio for every generated image
 - If any image fails, regenerate it with `--force`
@@ -128,7 +128,7 @@ After generating an image, open both files from `public/images/<domain>/<slug>/`
 
 ## Default Test Slugs
 
-These are hardcoded in `scripts/generators/image-generate.ts` under `DEFAULT_TEST_SLUGS`:
+These are hardcoded in `scripts/image-system/image-generate.ts` under `DEFAULT_TEST_SLUGS`:
 
 | Domain | Slug |
 |--------|------|
@@ -143,12 +143,12 @@ These are hardcoded in `scripts/generators/image-generate.ts` under `DEFAULT_TES
 
 ```bash
 # 1. Generate all 3 featured images
-npx tsx scripts/generators/image-generate.ts --mode test --domain blog --force
-npx tsx scripts/generators/image-generate.ts --mode test --domain case-studies --force
-npx tsx scripts/generators/image-generate.ts --mode test --domain resources --force
+npx tsx scripts/image-system/image-generate.ts --mode test --domain blog --force
+npx tsx scripts/image-system/image-generate.ts --mode test --domain case-studies --force
+npx tsx scripts/image-system/image-generate.ts --mode test --domain resources --force
 
 # 2. Inspect all images for contrast/quality
-npx tsx scripts/analyzers/image-inspect.ts
+npx tsx scripts/image-system/image-inspect.ts
 
 # 3. Open images in Finder to visually review
 open public/images/blog/lead-response-time-for-service-businesses/featured-overlay.webp
@@ -156,10 +156,10 @@ open public/images/case-studies/appointment-business-booking-automation/featured
 open public/images/resources/authority-signals-for-local-search/featured-overlay.webp
 
 # 4. If overlay/title needs fix, regenerate:
-npx tsx scripts/generators/image-generate.ts --mode test --domain blog --force
+npx tsx scripts/image-system/image-generate.ts --mode test --domain blog --force
 
 # 5. If you want a completely different image:
-npx tsx scripts/generators/image-generate.ts --mode test --domain blog --fresh
+npx tsx scripts/image-system/image-generate.ts --mode test --domain blog --fresh
 ```
 
 ---

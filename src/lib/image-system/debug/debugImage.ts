@@ -21,11 +21,11 @@ const THRESHOLDS = {
 // ─── Scoring Weights (normalized to 1.0) ────────────────────────────
 
 const SCORE_WEIGHTS = {
-  textDominance: 0.30,
+  textDominance: 0.3,
   contrast: 0.25,
-  composition: 0.20,
+  composition: 0.2,
   ctrImpact: 0.15,
-  intentMatch: 0.10,
+  intentMatch: 0.1,
 } as const;
 
 // ─── Issue Detection (priority ordered) ─────────────────────────────
@@ -48,7 +48,7 @@ function detectIssues(input: DebugInput): { issues: string[]; fixes: DebugFixAct
   }
 
   // Visual dominance score — soft penalty for genuinely weak text
-  const visualDominanceScore = (input.fontSize / 100) + (visualWidthRatio * 2);
+  const visualDominanceScore = input.fontSize / 100 + visualWidthRatio * 2;
   if (visualDominanceScore < 1.2) {
     issues.push('weak visual weight');
     fixes.push('increaseText');

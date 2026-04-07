@@ -90,7 +90,7 @@ Primary CTA everywhere: **"Start a Conversation" → /contact**
 | System Health dashboard | `src/app/dev/authority-dashboard/` |
 | Content Intelligence | `src/app/content-dashboard/` |
 | Image system pipeline | `src/lib/image-system/` |
-| Image CLI generator | `scripts/generators/image-generate.ts` |
+| Image CLI generator | `scripts/image-system/image-generate.ts` |
 | Image config + thresholds | `src/lib/image-system/config.ts` |
 | Generated images | `public/images/<domain>/<slug>/` |
 

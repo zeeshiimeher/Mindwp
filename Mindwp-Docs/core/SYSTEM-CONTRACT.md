@@ -101,7 +101,7 @@ No custom labels allowed. Labels come ONLY from `CTA_CONFIG` (ui-intelligence.ts
 - One primary CTA per screen maximum
 - No competing CTAs at same intensity level
 - `ctaResolver.ts` resolves intensity level ONLY — does NOT produce labels
-- `validate-cta.mjs` must scan all CTA label sources: `data/`, `lib/`, `config/`, `components/system/`
+- `validate-conversion-contract.mjs` must validate CTA routing, system/source context, and fallback behavior across data and UI sources
 
 ### Fallback (NON-BLOCKING)
 
@@ -311,10 +311,9 @@ This contract guarantees:
 
 | Validator | Enforces |
 |-----------|----------|
-| `validate-cta.mjs` | CTA labels, hrefs, placement rules |
-| `validate-conversion.ts` | CTA presence, service links, intent routing |
-| `validate-metadata.mjs` | System + intent field presence |
-| `validate-metadata-completeness.mjs` | Required metadata completeness |
+| `validate-conversion-contract.mjs` | CTA routing, `/contact` contract, system/source validation, fallback warnings |
+| `validate-content-contract.mjs` | Canonical system/topic/industry values and intent contract mapping |
+| `validate-domain-structure.mjs` | Required domain fields and section structure for service, feature, home, industry, and case-study pages |
 
 ### Implementation Files
 

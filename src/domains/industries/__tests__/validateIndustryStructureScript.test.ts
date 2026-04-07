@@ -4,7 +4,10 @@ import os from 'node:os';
 import path from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
 
-const validatorScriptPath = path.resolve(process.cwd(), 'scripts/validate-industry-structure.mjs');
+const validatorScriptPath = path.resolve(
+  process.cwd(),
+  'scripts/validators/validate-domain-structure.mjs'
+);
 
 const tempDirs: string[] = [];
 
@@ -59,7 +62,7 @@ const createTempWorkspace = (industryDataContent: string) => {
     [
       "import { testIndustryPageData } from '@/domains/industries/pages/test';",
       '',
-      'export const INDUSTRY_REGISTRY = {',
+      'export const INDUSTRY_PAGES = {',
       '  test: testIndustryPageData,',
       '};',
       '',
@@ -70,7 +73,7 @@ const createTempWorkspace = (industryDataContent: string) => {
 };
 
 const runValidator = (workspaceRoot: string) => {
-  return spawnSync('node', [validatorScriptPath], {
+  return spawnSync('npx', ['tsx', validatorScriptPath, '--type', 'industry'], {
     cwd: workspaceRoot,
     encoding: 'utf8',
   });
@@ -106,7 +109,7 @@ export const testIndustryPageData: IndustryPageData = {
 
     expect(result.status).toBe(1);
     expect(`${result.stdout}\n${result.stderr}`).toContain(
-      'does not match expected "/industries/test"'
+      'seo.canonical must be /industries/test'
     );
   });
 

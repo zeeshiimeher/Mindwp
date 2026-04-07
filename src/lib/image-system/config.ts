@@ -120,7 +120,8 @@ export const DOMAIN_STYLES: Record<ContentDomain, DomainStyleRule> = {
       'coworking space team photo',
       'boardroom presentation',
     ],
-    description: 'practical service-business planning, scheduling, and customer-management environments',
+    description:
+      'practical service-business planning, scheduling, and customer-management environments',
   },
   industries: {
     preferredScenes: [
@@ -193,7 +194,13 @@ export const DOMAIN_STYLES: Record<ContentDomain, DomainStyleRule> = {
 
 export const DOMAIN_CATEGORIES: Record<ContentDomain, string[]> = {
   blog: ['business', 'service', 'customer interaction'],
-  resources: ['service operations', 'dispatch', 'reviews', 'appointments', 'customer communication'],
+  resources: [
+    'service operations',
+    'dispatch',
+    'reviews',
+    'appointments',
+    'customer communication',
+  ],
   'case-studies': ['real business', 'client interaction', 'service delivery'],
   industries: ['field service', 'technician', 'tools', 'equipment', 'customer location'],
   features: ['software usage', 'dashboard', 'workflow'],
@@ -267,11 +274,12 @@ export function getImageOutputPath(
   ext = 'webp'
 ) {
   // Flat domain folder: {slug}.webp (overlay), {slug}-raw.webp (clean)
-  const seoName = imageType === 'featured-overlay'
-    ? slug
-    : imageType === 'featured-clean'
-      ? `${slug}-raw`
-      : `${slug}-content`;
+  const seoName =
+    imageType === 'featured-overlay'
+      ? slug
+      : imageType === 'featured-clean'
+        ? `${slug}-raw`
+        : `${slug}-content`;
   return `${IMAGE_OUTPUT_DIR}/${domain}/${seoName}.${ext}`;
 }
 

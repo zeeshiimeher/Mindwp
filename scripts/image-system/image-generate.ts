@@ -3,15 +3,15 @@
 // Main entry point for image generation commands
 //
 // Usage:
-//   npx tsx scripts/image-generate.ts --mode test --slug <post-slug>
-//   npx tsx scripts/image-generate.ts --domain blog
-//   npx tsx scripts/image-generate.ts --domain resources
-//   npx tsx scripts/image-generate.ts --domain industries
-//   npx tsx scripts/image-generate.ts --domain case-studies
-//   npx tsx scripts/image-generate.ts --slug <post-slug>
-//   npx tsx scripts/image-generate.ts --queue start
-//   npx tsx scripts/image-generate.ts --queue status
-//   npx tsx scripts/image-generate.ts --queue resume
+//   npx tsx scripts/image-system/image-generate.ts --mode test --slug <post-slug>
+//   npx tsx scripts/image-system/image-generate.ts --domain blog
+//   npx tsx scripts/image-system/image-generate.ts --domain resources
+//   npx tsx scripts/image-system/image-generate.ts --domain industries
+//   npx tsx scripts/image-system/image-generate.ts --domain case-studies
+//   npx tsx scripts/image-system/image-generate.ts --slug <post-slug>
+//   npx tsx scripts/image-system/image-generate.ts --queue start
+//   npx tsx scripts/image-system/image-generate.ts --queue status
+//   npx tsx scripts/image-system/image-generate.ts --queue resume
 
 import fs from 'fs';
 import path from 'path';
@@ -786,27 +786,27 @@ async function main() {
   console.log('═══════════════════');
   console.log('');
   console.log('Quick Test Commands (hardcoded default slugs):');
-  console.log('  npx tsx scripts/image-generate.ts --mode test                          # blog default');
-  console.log('  npx tsx scripts/image-generate.ts --mode test --domain case-studies    # case-study default');
-  console.log('  npx tsx scripts/image-generate.ts --mode test --domain resources       # resource default');
-  console.log('  npx tsx scripts/image-generate.ts --diagram                            # resource diagram');
+  console.log('  npx tsx scripts/image-system/image-generate.ts --mode test                          # blog default');
+  console.log('  npx tsx scripts/image-system/image-generate.ts --mode test --domain case-studies    # case-study default');
+  console.log('  npx tsx scripts/image-system/image-generate.ts --mode test --domain resources       # resource default');
+  console.log('  npx tsx scripts/image-system/image-generate.ts --diagram                            # resource diagram');
   console.log('');
   console.log('Test with custom slug:');
-  console.log('  npx tsx scripts/image-generate.ts --mode test --slug <slug>');
-  console.log('  npx tsx scripts/image-generate.ts --mode test --domain case-studies --slug <slug>');
+  console.log('  npx tsx scripts/image-system/image-generate.ts --mode test --slug <slug>');
+  console.log('  npx tsx scripts/image-system/image-generate.ts --mode test --domain case-studies --slug <slug>');
   console.log('');
   console.log('Regenerate / Fresh:');
-  console.log('  npx tsx scripts/image-generate.ts --mode test --regenerate             # re-overlay same image');
-  console.log('  npx tsx scripts/image-generate.ts --mode test --fresh                  # find new image');
+  console.log('  npx tsx scripts/image-system/image-generate.ts --mode test --regenerate             # re-overlay same image');
+  console.log('  npx tsx scripts/image-system/image-generate.ts --mode test --fresh                  # find new image');
   console.log('');
   console.log('Inspect generated images:');
-  console.log('  npx tsx scripts/image-inspect.ts');
+  console.log('  npx tsx scripts/image-system/image-inspect.ts');
   console.log('');
   console.log('Bulk mode:');
-  console.log('  npx tsx scripts/image-generate.ts --domain blog');
-  console.log('  npx tsx scripts/image-generate.ts --domain resources');
-  console.log('  npx tsx scripts/image-generate.ts --domain case-studies');
-  console.log('  npx tsx scripts/image-generate.ts --domain industries');
+  console.log('  npx tsx scripts/image-system/image-generate.ts --domain blog');
+  console.log('  npx tsx scripts/image-system/image-generate.ts --domain resources');
+  console.log('  npx tsx scripts/image-system/image-generate.ts --domain case-studies');
+  console.log('  npx tsx scripts/image-system/image-generate.ts --domain industries');
   console.log('');
 }
 

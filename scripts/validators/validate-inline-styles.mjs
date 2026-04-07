@@ -16,25 +16,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { listProductionUiFiles } from '../lib/contract-validator-helpers.mjs';
+
 const root = process.cwd();
 const args = new Set(process.argv.slice(2));
 const shouldReportJson = args.has('--report-json');
 
-const SRC_ROOT = path.join(root, 'src');
-
 /** @type {Array<{file:string,line:number,rule:string,message:string}>} */
 const violations = [];
-
-function walkFiles(dir) {
-  if (!fs.existsSync(dir)) return [];
-  const out = [];
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
-    const full = path.join(dir, entry.name);
-    if (entry.isDirectory()) out.push(...walkFiles(full));
-    else if (entry.isFile() && full.endsWith('.tsx')) out.push(full);
-  }
-  return out;
-}
 
 function toRel(absPath) {
   return path.relative(root, absPath).replaceAll(path.sep, '/');
@@ -62,9 +51,6 @@ function scanFile(fileAbs) {
   // Exemption: shadcn/ui components
   if (rel.includes('components/ui/')) return;
 
-  // Exemption: dev-only dashboards and tooling (not shipped to production)
-  if (rel.includes('app/dev/') || rel.includes('app/content-dashboard/')) return;
-
   const text = fs.readFileSync(fileAbs, 'utf8');
   const lines = text.split('\n');
 
@@ -91,13 +77,7 @@ function scanFile(fileAbs) {
 }
 
 function main() {
-  if (!fs.existsSync(SRC_ROOT)) {
-    console.error('⚠ src/ directory not found');
-    process.exitCode = 1;
-    return;
-  }
-
-  const files = walkFiles(SRC_ROOT);
+  const files = listProductionUiFiles(root);
   for (const f of files) {
     scanFile(f);
   }

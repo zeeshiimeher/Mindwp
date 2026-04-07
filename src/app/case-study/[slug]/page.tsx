@@ -6,8 +6,8 @@ import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
 import type { CaseStudyTemplateSection } from '@/domains/case-studies/templates';
 import { CaseStudyTemplate } from '@/domains/case-studies/templates';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
-import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 import { getImage } from '@/lib/image-system/resolver';
+import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
 

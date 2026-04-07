@@ -1653,7 +1653,7 @@ Later phases may:
 
 ### Implementation
 
-- File: `scripts/validators/validate-conversion.ts`
+- File: `scripts/validators/validate-conversion-contract.mjs`
 - Runner: registered in `scripts/core/validate-all.mjs`
 - Config: `STRICT_MODE = false` (advisory), switchable to `true`
 

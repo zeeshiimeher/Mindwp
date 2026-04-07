@@ -11,66 +11,16 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { loadVocabularyRules } from '../lib/contract-validator-helpers.mjs';
+
 const args = new Set(process.argv.slice(2));
 const shouldReportJson = args.has('--report-json');
 
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'vocabulary-report.json');
 
-/**
- * Banned phrases mapped to their approved replacement.
- * Source: FOUNDATION-AND-POSITIONING.md §2 Banned Vocabulary
- * Enforcement rules: CONTENT-GOVERNANCE.md §5 Vocabulary Rules
- */
-const BANNED_VOCABULARY = [
-  { banned: 'enquiry routing', replacement: 'sent to the right person' },
-  { banned: 'operational flow', replacement: 'how enquiries flow' },
-  { banned: 'operational integration', replacement: 'fits your process' },
-  { banned: 'infrastructure layer', replacement: 'foundation' },
-  { banned: 'entry points', replacement: 'clear ways to get in touch' },
-  { banned: 'intentional entry points', replacement: 'clear ways to get in touch' },
-  { banned: 'refinement capability', replacement: 'easy to improve over time' },
-  { banned: 'deliberate implementation', replacement: 'calm, careful delivery' },
-  { banned: 'structural visibility', replacement: 'pages search engines can understand' },
-  { banned: 'visibility alignment', replacement: 'search and discovery' },
-  { banned: 'connected architecture', replacement: 'clear structure' },
-  { banned: 'core operational components', replacement: 'what is inside a Smart Website' },
-  { banned: 'operational cadence', replacement: 'day to day' },
-  { banned: 'service hierarchy', replacement: 'how your services are organised' },
-  { banned: 'system chain', replacement: 'how everything connects' },
-  { banned: 'routing', replacement: 'sent to the right person' },
-  { banned: 'configured', replacement: 'set up' },
-  { banned: 'enables', replacement: 'supports' },
-  { banned: 'facilitates', replacement: 'handles' },
-];
-
-/**
- * Anti-hype words banned across all content.
- * Source: FOUNDATION-AND-POSITIONING.md §Anti-hype language discipline
- * Enforcement rules: CONTENT-GOVERNANCE.md §5 Vocabulary Rules
- */
-const ANTI_HYPE_VOCABULARY = [
-  { banned: 'dominate', replacement: 'leads' },
-  { banned: 'dominates', replacement: 'leads' },
-  { banned: 'explode', replacement: 'grow' },
-  { banned: 'explosive', replacement: 'significant' },
-  { banned: 'disrupt', replacement: 'change' },
-  { banned: 'disruptive', replacement: 'new' },
-  { banned: 'revolutionary', replacement: 'effective' },
-  { banned: 'guaranteed', replacement: 'expected' },
-  { banned: 'guarantees', replacement: 'supports' },
-  { banned: 'hyper-growth', replacement: 'steady growth' },
-  { banned: 'skyrocket', replacement: 'increase' },
-  { banned: 'proven', replacement: 'tested' },
-  { banned: 'transform', replacement: 'improve' },
-  { banned: 'transformed', replacement: 'improved' },
-  { banned: 'game-changer', replacement: 'effective approach' },
-  { banned: 'at scale', replacement: 'as the business grows' },
-  { banned: 'unlock', replacement: 'open' },
-  { banned: 'unlocked', replacement: 'opened' },
-];
-
-const ALL_BANNED = [...BANNED_VOCABULARY, ...ANTI_HYPE_VOCABULARY];
+const vocabularyRules = loadVocabularyRules(root);
+const ALL_BANNED = [...vocabularyRules.bannedVocabulary, ...vocabularyRules.antiHypeVocabulary];
 
 const BANNED_PATTERNS = ALL_BANNED.map(({ banned, replacement }) => ({
   pattern: new RegExp(`\\b${banned.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi'),
@@ -121,7 +71,9 @@ function main() {
           issues.push({
             file: rel,
             code: 'banned_vocabulary',
-            message: `Banned phrase "${banned}" found. Replace with: "${replacement}"`,
+            message: replacement
+              ? `Banned phrase "${banned}" found. Replace with: "${replacement}"`
+              : `Banned phrase "${banned}" found. Rewrite in calmer language.`,
           });
         }
       }

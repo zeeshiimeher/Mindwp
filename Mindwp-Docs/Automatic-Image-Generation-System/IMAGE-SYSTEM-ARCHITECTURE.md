@@ -374,24 +374,24 @@ Stored in: `src/lib/image-system/data/contextMemory.json`
 
 ```bash
 # Test single domain (uses hardcoded default slugs)
-npx tsx scripts/generators/image-generate.ts --mode test --domain blog
-npx tsx scripts/generators/image-generate.ts --mode test --domain case-studies
-npx tsx scripts/generators/image-generate.ts --mode test --domain resources
+npx tsx scripts/image-system/image-generate.ts --mode test --domain blog
+npx tsx scripts/image-system/image-generate.ts --mode test --domain case-studies
+npx tsx scripts/image-system/image-generate.ts --mode test --domain resources
 
 # Force regeneration (bypasses cache)
-npx tsx scripts/generators/image-generate.ts --mode test --domain blog --force
+npx tsx scripts/image-system/image-generate.ts --mode test --domain blog --force
 
 # Regenerate (clears index, re-runs pipeline)
-npx tsx scripts/generators/image-generate.ts --mode test --regenerate
+npx tsx scripts/image-system/image-generate.ts --mode test --regenerate
 
 # Fresh (clears index AND blocks previous image)
-npx tsx scripts/generators/image-generate.ts --mode test --fresh
+npx tsx scripts/image-system/image-generate.ts --mode test --fresh
 
 # Bulk generation
-npx tsx scripts/generators/image-generate.ts --mode bulk --domain blog
+npx tsx scripts/image-system/image-generate.ts --mode bulk --domain blog
 
 # Inspect generated images
-npx tsx scripts/analyzers/image-inspect.ts
+npx tsx scripts/image-system/image-inspect.ts
 ```
 
 ---
@@ -431,7 +431,7 @@ After overlay generation, the pipeline samples the center region and verifies wh
 | Provider manager | `src/lib/image-system/providers/index.ts` |
 | Config + thresholds | `src/lib/image-system/config.ts` |
 | Type definitions | `src/lib/image-system/types.ts` |
-| CLI entry point | `scripts/generators/image-generate.ts` |
+| CLI entry point | `scripts/image-system/image-generate.ts` |
 | Dedup index data | `src/lib/image-system/data/imageIndex.json` |
 | Provider scores data | `src/lib/image-system/data/providerScores.json` |
 | Context memory data | `src/lib/image-system/data/contextMemory.json` |

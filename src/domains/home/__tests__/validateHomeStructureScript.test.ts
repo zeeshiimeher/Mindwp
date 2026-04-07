@@ -4,7 +4,10 @@ import os from 'node:os';
 import path from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
 
-const validatorScriptPath = path.resolve(process.cwd(), 'scripts/validate-home-structure.mjs');
+const validatorScriptPath = path.resolve(
+  process.cwd(),
+  'scripts/validators/validate-domain-structure.mjs'
+);
 
 const tempDirs: string[] = [];
 
@@ -41,7 +44,7 @@ const createTempWorkspace = (homepageDataContent: string) => {
 };
 
 const runValidator = (workspaceRoot: string) => {
-  return spawnSync('node', [validatorScriptPath], {
+  return spawnSync('npx', ['tsx', validatorScriptPath, '--type', 'home'], {
     cwd: workspaceRoot,
     encoding: 'utf8',
   });

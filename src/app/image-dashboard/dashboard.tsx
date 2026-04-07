@@ -1,13 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import type {
-  ContentDomain,
-  ImageLogEntry,
-  LayoutVariant,
-  LearnedConfig,
-  LearningMemory,
-} from '@/lib/image-system/types';
+import type { ImageLogEntry, LearningMemory } from '@/lib/image-system/types';
 
 // ─── Data Loaders ───────────────────────────────────────────────────
 
@@ -74,8 +68,7 @@ function domainPerformance(log: ImageLogEntry[]) {
 
 // ─── Styles ─────────────────────────────────────────────────────────
 
-const card =
-  'rounded-lg border border-zinc-800 bg-zinc-900/60 p-5';
+const card = 'rounded-lg border border-zinc-800 bg-zinc-900/60 p-5';
 const heading2 = 'text-lg font-semibold text-white mb-3';
 const statLabel = 'text-xs font-medium text-zinc-400 uppercase tracking-wider';
 const statValue = 'text-2xl font-bold text-white mt-1';
@@ -83,26 +76,30 @@ const statValue = 'text-2xl font-bold text-white mt-1';
 // ─── Components ─────────────────────────────────────────────────────
 
 function ScoreBar({ label, value, max }: { label: string; value: number; max: number }) {
-  const pct = max > 0 ? Math.round((value / max) * 100) : 0;
+  const filledSegments = max > 0 ? Math.round((value / max) * 20) : 0;
   return (
-    <div className="flex items-center gap-3">
-      <span className="w-12 text-xs text-zinc-400 text-right">{label}</span>
-      <div className="flex-1 h-2 bg-zinc-800 rounded-full overflow-hidden">
-        <div
-          className="h-full rounded-full bg-blue-500"
-          style={{ width: `${pct}%` }}
-        />
+    <div className='flex items-center gap-3'>
+      <span className='w-12 text-xs text-zinc-400 text-right'>{label}</span>
+      <div className='flex flex-1 gap-0.5'>
+        {Array.from({ length: 20 }, (_, index) => (
+          <span
+            key={`${label}-${index}`}
+            className={
+              index < filledSegments
+                ? 'h-2 flex-1 rounded-full bg-blue-500'
+                : 'h-2 flex-1 rounded-full bg-zinc-800'
+            }
+          />
+        ))}
       </div>
-      <span className="w-8 text-xs text-zinc-300 text-right">{value}</span>
+      <span className='w-8 text-xs text-zinc-300 text-right'>{value}</span>
     </div>
   );
 }
 
 function Badge({ children, color }: { children: React.ReactNode; color: string }) {
   return (
-    <span
-      className={`inline-block rounded-full px-2 py-0.5 text-[10px] font-semibold ${color}`}
-    >
+    <span className={`inline-block rounded-full px-2 py-0.5 text-[10px] font-semibold ${color}`}>
       {children}
     </span>
   );
@@ -128,30 +125,28 @@ export default function ImageDashboard() {
   const maxDist = Math.max(...Object.values(dist), 1);
 
   return (
-    <main className="min-h-screen bg-zinc-950 text-zinc-100 p-6 md:p-10">
-      <header className="mb-8">
-        <h1 className="text-2xl font-bold text-white tracking-tight">
-          Image System Dashboard
-        </h1>
-        <p className="text-sm text-zinc-400 mt-1">
+    <main className='min-h-screen bg-zinc-950 text-zinc-100 p-6 md:p-10'>
+      <header className='mb-8'>
+        <h1 className='text-2xl font-bold text-white tracking-tight'>Image System Dashboard</h1>
+        <p className='text-sm text-zinc-400 mt-1'>
           Visual debug scores, auto-tune history, and learning memory
         </p>
       </header>
 
       {log.length === 0 ? (
         <div className={card}>
-          <p className="text-zinc-400 text-sm">
+          <p className='text-zinc-400 text-sm'>
             No image generation data yet. Run{' '}
-            <code className="text-zinc-200 bg-zinc-800 px-1.5 py-0.5 rounded text-xs">
-              npx tsx scripts/generators/image-generate.ts --mode test --domain blog --force
+            <code className='text-zinc-200 bg-zinc-800 px-1.5 py-0.5 rounded text-xs'>
+              npx tsx scripts/image-system/image-generate.ts --mode test --domain blog --force
             </code>{' '}
             to generate your first images.
           </p>
         </div>
       ) : (
-        <div className="space-y-6">
+        <div className='space-y-6'>
           {/* ── Overview Stats ── */}
-          <section className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <section className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
             <div className={card}>
               <p className={statLabel}>Total Generated</p>
               <p className={statValue}>{overview.total}</p>
@@ -167,10 +162,10 @@ export default function ImageDashboard() {
           </section>
 
           {/* ── Score Distribution + Domain Performance ── */}
-          <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <section className='grid grid-cols-1 md:grid-cols-2 gap-4'>
             <div className={card}>
               <h2 className={heading2}>Score Distribution</h2>
-              <div className="space-y-2">
+              <div className='space-y-2'>
                 {Object.entries(dist).map(([label, value]) => (
                   <ScoreBar key={label} label={label} value={value} max={maxDist} />
                 ))}
@@ -179,16 +174,16 @@ export default function ImageDashboard() {
             <div className={card}>
               <h2 className={heading2}>Domain Performance</h2>
               {Object.keys(domPerf).length > 0 ? (
-                <div className="space-y-3">
+                <div className='space-y-3'>
                   {Object.entries(domPerf).map(([domain, avg]) => (
-                    <div key={domain} className="flex items-center justify-between">
-                      <span className="text-sm text-zinc-300">{domain}</span>
+                    <div key={domain} className='flex items-center justify-between'>
+                      <span className='text-sm text-zinc-300'>{domain}</span>
                       <Badge color={scoreBadgeColor(avg)}>{avg}</Badge>
                     </div>
                   ))}
                 </div>
               ) : (
-                <p className="text-sm text-zinc-500">No domain data yet</p>
+                <p className='text-sm text-zinc-500'>No domain data yet</p>
               )}
             </div>
           </section>
@@ -197,11 +192,14 @@ export default function ImageDashboard() {
           {issues.length > 0 && (
             <section className={card}>
               <h2 className={heading2}>Common Issues</h2>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+              <div className='grid grid-cols-2 sm:grid-cols-4 gap-3'>
                 {issues.map(([issue, count]) => (
-                  <div key={issue} className="flex items-center justify-between bg-zinc-800/50 rounded-md px-3 py-2">
-                    <span className="text-xs text-zinc-300 truncate">{issue}</span>
-                    <span className="text-xs font-semibold text-zinc-400 ml-2">{count}</span>
+                  <div
+                    key={issue}
+                    className='flex items-center justify-between bg-zinc-800/50 rounded-md px-3 py-2'
+                  >
+                    <span className='text-xs text-zinc-300 truncate'>{issue}</span>
+                    <span className='text-xs font-semibold text-zinc-400 ml-2'>{count}</span>
                   </div>
                 ))}
               </div>
@@ -211,34 +209,32 @@ export default function ImageDashboard() {
           {/* ── Recent Images ── */}
           <section className={card}>
             <h2 className={heading2}>Recent Generations</h2>
-            <div className="overflow-x-auto">
-              <table className="w-full text-sm">
+            <div className='overflow-x-auto'>
+              <table className='w-full text-sm'>
                 <thead>
-                  <tr className="text-zinc-400 text-xs uppercase tracking-wider border-b border-zinc-800">
-                    <th className="text-left py-2 pr-4">Slug</th>
-                    <th className="text-left py-2 pr-4">Domain</th>
-                    <th className="text-center py-2 pr-4">Layout</th>
-                    <th className="text-center py-2 pr-4">Score</th>
-                    <th className="text-center py-2 pr-4">Iter</th>
-                    <th className="text-left py-2">Fixes</th>
+                  <tr className='text-zinc-400 text-xs uppercase tracking-wider border-b border-zinc-800'>
+                    <th className='text-left py-2 pr-4'>Slug</th>
+                    <th className='text-left py-2 pr-4'>Domain</th>
+                    <th className='text-center py-2 pr-4'>Layout</th>
+                    <th className='text-center py-2 pr-4'>Score</th>
+                    <th className='text-center py-2 pr-4'>Iter</th>
+                    <th className='text-left py-2'>Fixes</th>
                   </tr>
                 </thead>
                 <tbody>
                   {recent.map((entry, i) => (
-                    <tr key={i} className="border-b border-zinc-800/50 hover:bg-zinc-800/30">
-                      <td className="py-2 pr-4 text-zinc-200 max-w-[200px] truncate">
+                    <tr key={i} className='border-b border-zinc-800/50 hover:bg-zinc-800/30'>
+                      <td className='py-2 pr-4 text-zinc-200 max-w-[200px] truncate'>
                         {entry.slug}
                       </td>
-                      <td className="py-2 pr-4 text-zinc-400">{entry.domain}</td>
-                      <td className="py-2 pr-4 text-center text-zinc-300">L{entry.layout}</td>
-                      <td className="py-2 pr-4 text-center">
+                      <td className='py-2 pr-4 text-zinc-400'>{entry.domain}</td>
+                      <td className='py-2 pr-4 text-center text-zinc-300'>L{entry.layout}</td>
+                      <td className='py-2 pr-4 text-center'>
                         <Badge color={scoreBadgeColor(entry.score)}>{entry.score}</Badge>
                       </td>
-                      <td className="py-2 pr-4 text-center text-zinc-400">{entry.iteration}</td>
-                      <td className="py-2 text-zinc-500 text-xs">
-                        {entry.fixesApplied.length > 0
-                          ? entry.fixesApplied.join(', ')
-                          : '—'}
+                      <td className='py-2 pr-4 text-center text-zinc-400'>{entry.iteration}</td>
+                      <td className='py-2 text-zinc-500 text-xs'>
+                        {entry.fixesApplied.length > 0 ? entry.fixesApplied.join(', ') : '—'}
                       </td>
                     </tr>
                   ))}
@@ -251,15 +247,16 @@ export default function ImageDashboard() {
           {Object.keys(memory).length > 0 && (
             <section className={card}>
               <h2 className={heading2}>Best Configs (Learning Memory)</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+              <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3'>
                 {Object.entries(memory).map(([key, config]) => (
-                  <div key={key} className="bg-zinc-800/50 rounded-md p-3 space-y-1">
-                    <p className="text-xs font-semibold text-zinc-200">{key}</p>
-                    <div className="text-[11px] text-zinc-400 space-y-0.5">
-                      <p>layout: L{config.layout} · count: {config.count}</p>
+                  <div key={key} className='bg-zinc-800/50 rounded-md p-3 space-y-1'>
+                    <p className='text-xs font-semibold text-zinc-200'>{key}</p>
+                    <div className='text-[11px] text-zinc-400 space-y-0.5'>
                       <p>
-                        titleScale: {config.titleScale.toFixed(2)} · maxWidth:{' '}
-                        {config.maxTextWidth}
+                        layout: L{config.layout} · count: {config.count}
+                      </p>
+                      <p>
+                        titleScale: {config.titleScale.toFixed(2)} · maxWidth: {config.maxTextWidth}
                       </p>
                       <p>
                         gradient: {config.gradientStrength.toFixed(2)} · vignette:{' '}
@@ -267,7 +264,9 @@ export default function ImageDashboard() {
                       </p>
                       <p>
                         avgScore:{' '}
-                        <span className={config.avgScore >= 8 ? 'text-emerald-400' : 'text-amber-400'}>
+                        <span
+                          className={config.avgScore >= 8 ? 'text-emerald-400' : 'text-amber-400'}
+                        >
                           {config.avgScore.toFixed(1)}
                         </span>
                       </p>

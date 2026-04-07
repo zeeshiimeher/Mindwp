@@ -22,7 +22,20 @@
       "priority": 2,
       "estimatedTime": "fast",
       "path": "scripts/core/system-sync.mjs",
-      "description": "Update system state and logs.",
+      "description": "Update system state and drift snapshots.",
+      "type": "runner",
+      "runnable": true
+    },
+    {
+      "id": "system-report",
+      "name": "System Report",
+      "category": "core",
+      "intent": "system",
+      "group": "daily",
+      "priority": 1,
+      "estimatedTime": "medium",
+      "path": "scripts/core/system-report.mjs",
+      "description": "Run validation, sync, key analyzers, and write reports/system-report.json.",
       "type": "runner",
       "runnable": true
     },
@@ -69,28 +82,15 @@
     },
 
     {
-      "id": "validate-blog",
-      "name": "Validate Blog",
+      "id": "validate-content-contract",
+      "name": "Validate Content Contract",
       "category": "validators",
       "intent": "content",
-      "group": "occasional",
+      "group": "daily",
       "priority": 4,
       "estimatedTime": "medium",
-      "path": "scripts/validators/validate-blog.mjs",
-      "description": "Checks blog registry, metadata, and content references.",
-      "type": "validator",
-      "runnable": true
-    },
-    {
-      "id": "validate-case-study-structure",
-      "name": "Validate Case Studies",
-      "category": "validators",
-      "intent": "content",
-      "group": "occasional",
-      "priority": 6,
-      "estimatedTime": "medium",
-      "path": "scripts/validators/validate-case-study-structure.mjs",
-      "description": "Checks case study structure and SEO fields.",
+      "path": "scripts/validators/validate-content-contract.mjs",
+      "description": "Check required metadata, canonical values, and contract intent mapping.",
       "type": "validator",
       "runnable": true
     },
@@ -108,28 +108,15 @@
       "runnable": true
     },
     {
-      "id": "validate-conversion",
-      "name": "Check Conversion",
-      "category": "validators",
-      "intent": "content",
-      "group": "advanced",
-      "priority": 7,
-      "estimatedTime": "medium",
-      "path": "scripts/validators/validate-conversion.ts",
-      "description": "Check conversion weak spots.",
-      "type": "validator",
-      "runnable": true
-    },
-    {
-      "id": "validate-cta",
-      "name": "Validate CTA",
+      "id": "validate-conversion-contract",
+      "name": "Validate Conversion Contract",
       "category": "validators",
       "intent": "system",
-      "group": "advanced",
-      "priority": 8,
-      "estimatedTime": "fast",
-      "path": "scripts/validators/validate-cta.mjs",
-      "description": "Enforces CTA labels, targets, and scope rules.",
+      "group": "daily",
+      "priority": 5,
+      "estimatedTime": "medium",
+      "path": "scripts/validators/validate-conversion-contract.mjs",
+      "description": "Check CTA routing, source formatting, and conversion contract fallbacks.",
       "type": "validator",
       "runnable": true
     },
@@ -160,15 +147,15 @@
       "runnable": true
     },
     {
-      "id": "validate-feature-structure",
-      "name": "Check Features",
+      "id": "validate-domain-structure",
+      "name": "Validate Domain Structure",
       "category": "validators",
       "intent": "content",
-      "group": "occasional",
+      "group": "daily",
       "priority": 5,
       "estimatedTime": "medium",
-      "path": "scripts/validators/validate-feature-structure.mjs",
-      "description": "Check feature structure.",
+      "path": "scripts/validators/validate-domain-structure.mjs",
+      "description": "Check required fields and section structure across service, feature, home, industry, and case-study domains.",
       "type": "validator",
       "runnable": true
     },
@@ -182,32 +169,6 @@
       "estimatedTime": "fast",
       "path": "scripts/validators/validate-graph.ts",
       "description": "Check graph links and data.",
-      "type": "validator",
-      "runnable": true
-    },
-    {
-      "id": "validate-home-structure",
-      "name": "Check Homepage",
-      "category": "validators",
-      "intent": "content",
-      "group": "occasional",
-      "priority": 5,
-      "estimatedTime": "fast",
-      "path": "scripts/validators/validate-home-structure.mjs",
-      "description": "Check homepage structure.",
-      "type": "validator",
-      "runnable": true
-    },
-    {
-      "id": "validate-industry-structure",
-      "name": "Check Industries",
-      "category": "validators",
-      "intent": "content",
-      "group": "occasional",
-      "priority": 5,
-      "estimatedTime": "medium",
-      "path": "scripts/validators/validate-industry-structure.mjs",
-      "description": "Check industry pages.",
       "type": "validator",
       "runnable": true
     },
@@ -238,33 +199,6 @@
       "runnable": true
     },
     {
-      "id": "validate-metadata",
-      "name": "Check Metadata",
-      "category": "validators",
-      "intent": "content",
-      "group": "occasional",
-      "priority": 5,
-      "estimatedTime": "fast",
-      "path": "scripts/validators/validate-metadata.mjs",
-      "description": "Check page metadata.",
-      "type": "validator",
-      "runnable": true
-    },
-    {
-      "id": "validate-metadata-completeness",
-      "name": "Check Metadata Fields",
-      "category": "validators",
-      "intent": "content",
-      "group": "advanced",
-      "priority": 6,
-      "estimatedTime": "fast",
-      "path": "scripts/validators/validate-metadata-completeness.mjs",
-      "description": "Check required metadata fields.",
-      "type": "validator",
-      "runnable": true
-    },
-
-    {
       "id": "validate-reports-structure",
       "name": "Check Reports",
       "category": "validators",
@@ -274,33 +208,6 @@
       "estimatedTime": "fast",
       "path": "scripts/validators/validate-reports-structure.mjs",
       "description": "Check report files.",
-      "type": "validator",
-      "runnable": true
-    },
-    {
-      "id": "validate-resources",
-      "name": "Check Resources",
-      "category": "validators",
-      "intent": "content",
-      "group": "occasional",
-      "priority": 5,
-      "estimatedTime": "medium",
-      "path": "scripts/validators/validate-resources.mjs",
-      "description": "Check resource pages.",
-      "type": "validator",
-      "runnable": true
-    },
-
-    {
-      "id": "validate-service-structure",
-      "name": "Check Services",
-      "category": "validators",
-      "intent": "content",
-      "group": "occasional",
-      "priority": 5,
-      "estimatedTime": "medium",
-      "path": "scripts/validators/validate-service-structure.mjs",
-      "description": "Check service pages.",
       "type": "validator",
       "runnable": true
     },
@@ -318,19 +225,6 @@
       "runnable": true
     },
 
-    {
-      "id": "validate-structure",
-      "name": "Check Structure",
-      "category": "validators",
-      "intent": "system",
-      "group": "daily",
-      "priority": 5,
-      "estimatedTime": "fast",
-      "path": "scripts/validators/validate-structure.mjs",
-      "description": "Check page structure.",
-      "type": "validator",
-      "runnable": true
-    },
     {
       "id": "validate-system-docs",
       "name": "Check System Docs",
@@ -371,19 +265,6 @@
       "runnable": true
     },
 
-    {
-      "id": "generate-resolver-cache",
-      "name": "Build Resolver Cache",
-      "category": "generators",
-      "intent": "debug",
-      "group": "advanced",
-      "priority": 8,
-      "estimatedTime": "medium",
-      "path": "scripts/generate-resolver-cache.ts",
-      "description": "Build the resolver cache.",
-      "type": "generator",
-      "runnable": true
-    },
     {
       "id": "generate-authority-map",
       "name": "Build Authority Map",
@@ -458,7 +339,7 @@
       "group": "advanced",
       "priority": 10,
       "estimatedTime": "slow",
-      "path": "scripts/generators/image-generate.ts",
+      "path": "scripts/image-system/image-generate.ts",
       "description": "Build image files.",
       "type": "generator",
       "runnable": false
@@ -538,7 +419,7 @@
       "group": "advanced",
       "priority": 9,
       "estimatedTime": "slow",
-      "path": "scripts/analyzers/image-inspect.ts",
+      "path": "scripts/image-system/image-inspect.ts",
       "description": "Check image files.",
       "type": "analyzer",
       "runnable": true
@@ -556,19 +437,6 @@
       "type": "analyzer",
       "runnable": true,
       "command": "NODE_ENV=development npx tsx scripts/analyzers/inspect-graph.ts"
-    },
-    {
-      "id": "report-content-readiness",
-      "name": "Content Readiness",
-      "category": "analyzers",
-      "intent": "content",
-      "group": "daily",
-      "priority": 4,
-      "estimatedTime": "medium",
-      "path": "scripts/analyzers/report-content-readiness.mjs",
-      "description": "Build readiness report.",
-      "type": "analyzer",
-      "runnable": true
     },
     {
       "id": "score-content",

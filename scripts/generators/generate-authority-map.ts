@@ -9,11 +9,14 @@ import { ensureGraphInitialized, getResolver } from '../../src/domains/init/ensu
 import { sortByAuthority } from '../../src/lib/authority/authorityScore';
 import type { AuthorityItem } from '../../src/lib/authority/resolver';
 import { resolveConversionGoal } from '../../src/lib/content-graph/conversionGoals';
+import { getStructuredContentGraph } from '../../src/lib/content-graph/registry';
 import type { ContentNodeType } from '../../src/lib/content-graph/types';
 
 const root = process.cwd();
 const OUTPUT_DIR = path.join(root, 'src', 'lib', 'authority', 'generated');
 const OUTPUT_FILE = path.join(OUTPUT_DIR, 'authorityMap.ts');
+const REPORTS_DIR = path.join(root, 'reports');
+const REPORT_FILE = path.join(REPORTS_DIR, 'authority-map.json');
 
 type SlotMap<T> = Record<string, T>;
 
@@ -43,6 +46,8 @@ interface CaseStudySlots {
 
 async function main() {
   await ensureGraphInitialized();
+
+  const structuredGraph = getStructuredContentGraph();
 
   const resolver = getResolver();
   const {
@@ -164,6 +169,27 @@ async function main() {
   const formatted = await prettier.format(content, { ...prettierConfig, filepath: OUTPUT_FILE });
   fs.writeFileSync(OUTPUT_FILE, formatted, 'utf8');
 
+  const authorityReport = {
+    generatedAt: new Date().toISOString(),
+    nodes: structuredGraph.nodes.map(node => ({
+      id: node.id,
+      slug: node.slug,
+      type: node.type,
+      path: node.path,
+      systems: node.systems ?? [],
+      topics: node.topics ?? [],
+      industries: node.industries ?? [],
+    })),
+    edges: structuredGraph.nodes.flatMap(node => [
+      ...(node.relatesTo ?? []).map(edge => ({ source: node.id, target: edge.id, type: 'relatesTo', sourceType: edge.source })),
+      ...(node.supports ?? []).map(edge => ({ source: node.id, target: edge.id, type: 'supports', sourceType: edge.source })),
+      ...(node.validates ?? []).map(edge => ({ source: node.id, target: edge.id, type: 'validates', sourceType: edge.source })),
+    ]),
+  };
+
+  fs.mkdirSync(REPORTS_DIR, { recursive: true });
+  fs.writeFileSync(REPORT_FILE, JSON.stringify(authorityReport, null, 2) + '\n', 'utf8');
+
   const stats = {
     services: slugs.services.length,
     features: slugs.features.length,
@@ -177,6 +203,7 @@ async function main() {
   console.log(
     `[authority-map] Generated map for ${total} nodes → ${path.relative(root, OUTPUT_FILE)}`
   );
+  console.log(`  report: ${path.relative(root, REPORT_FILE)}`);
   console.log(`  services: ${stats.services}, features: ${stats.features}, industries: ${stats.industries}`);
   console.log(`  blog: ${stats.blogPosts}, resources: ${stats.resources}, caseStudies: ${stats.caseStudies}`);
 }

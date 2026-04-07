@@ -140,7 +140,7 @@ Within each domain, different sections have different jobs. The section determin
 Job: Establish what the page is about and why it matters.
 Rule: Must answer "what is in it for me" in the first sentence. No abstract framing. No banned vocabulary.
 
-**Featured image:** Every content page hero has an automatically generated featured image (`featured-overlay.webp`) with cinematic SVG overlay. These are pipeline outputs, not manually created assets. To regenerate, use `npx tsx scripts/generators/image-generate.ts --mode test --domain <domain> --force`. Image system architecture: `Automatic-Image-Generation-System/IMAGE-SYSTEM-ARCHITECTURE.md`.
+**Featured image:** Every content page hero has an automatically generated featured image (`featured-overlay.webp`) with cinematic SVG overlay. These are pipeline outputs, not manually created assets. To regenerate, use `npx tsx scripts/image-system/image-generate.ts --mode test --domain <domain> --force`. Image system architecture: `Automatic-Image-Generation-System/IMAGE-SYSTEM-ARCHITECTURE.md`.
 
 ### Problem
 
@@ -329,14 +329,14 @@ Content governance is enforced through the validation pipeline. Validators and g
 | Validator | What it checks | Governance section |
 |---|---|---|
 | validate-vocabulary | Banned phrases in domain data/content files | §5 Vocabulary Rules |
-| validate-cta | CTA label and href consistency | §4 Section Behavior Rules (CTA) |
-| validate-structure | Page structure compliance | §4 Section Behavior Rules |
+| validate-conversion-contract | CTA routing, `/contact` contract, and fallback behavior | §4 Section Behavior Rules (CTA) |
+| validate-domain-structure | Page structure compliance across core page types | §4 Section Behavior Rules |
 | validate-blog | Blog metadata and section rules | §3 Domain Behavior Rules (Blog) |
 | validate-resources | Resource metadata and structure | §3 Domain Behavior Rules (Resources) |
-| validate-service-structure | Service page compliance | §3 Domain Behavior Rules (Services) |
-| validate-feature-structure | Feature page compliance | §3 Domain Behavior Rules (Features) |
-| validate-industry-structure | Industry page compliance | Content architecture |
-| validate-case-study-structure | Case study compliance | §3 Domain Behavior Rules (Case Studies) |
+| validate-domain-structure | Service page compliance | §3 Domain Behavior Rules (Services) |
+| validate-domain-structure | Feature page compliance | §3 Domain Behavior Rules (Features) |
+| validate-domain-structure | Industry page compliance | Content architecture |
+| validate-domain-structure | Case study compliance | §3 Domain Behavior Rules (Case Studies) |
 
 ### Governance → Validator gap
 
@@ -346,9 +346,9 @@ The following governance rules are not yet enforced by automated validators:
 
 Previously identified gaps now resolved:
 
-- ✅ Section-level tone validation → `validate-structure.mjs` TONE_RESTRICTED_DIRS (case studies)
-- ✅ Banned vocabulary in headings → `validate-structure.mjs` HEADING_BANNED_WORDS
-- ✅ CTA placement rules → `validate-structure.mjs` CTA_PLACEMENT_RULES
+- ✅ CTA routing and fallback validation → `validate-conversion-contract.mjs`
+- ✅ Required domain field and section validation → `validate-domain-structure.mjs`
+- ✅ Banned vocabulary detection → `validate-vocabulary.mjs`
 
 These gaps were tracked under Phase 8 tasks (TASK-071, TASK-072) — now resolved.
 

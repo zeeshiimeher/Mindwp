@@ -1,0 +1,546 @@
+#!/usr/bin/env node
+
+import fs from 'node:fs';
+import path from 'node:path';
+
+import { Project, SyntaxKind } from 'ts-morph';
+
+import {
+  extractSectionsOrderFromRenderer,
+  getPropertyAssignment,
+  getSectionsObjectLiteral,
+  getSectionsOrder,
+  getStringLiteralValue,
+  hasProperty,
+  importPathToFile,
+  toObjectLiteral,
+} from '../lib/validator-helpers.mjs';
+
+const args = process.argv.slice(2);
+const argsSet = new Set(args);
+const shouldReportJson = argsSet.has('--report-json');
+const requestedTypeIndex = args.indexOf('--type');
+const requestedType = requestedTypeIndex >= 0 ? args[requestedTypeIndex + 1] : null;
+
+if (argsSet.has('--fix')) {
+  console.warn('[validate-domain-structure] --fix is not supported in the merged validator. Running in read-only mode.');
+}
+
+const root = process.cwd();
+const reportPath = path.join(root, 'reports', 'domain-structure-report.json');
+const project = new Project({ tsConfigFilePath: path.join(root, 'tsconfig.json') });
+
+function normalizeRequestedType(value) {
+  if (!value) return null;
+
+  const normalized = value.trim().toLowerCase();
+  if (normalized === 'services') return 'service';
+  if (normalized === 'features') return 'feature';
+  if (normalized === 'industries') return 'industry';
+  if (normalized === 'case-studies') return 'case-study';
+  return normalized;
+}
+
+function getExportedObjectLiteral(sourceFile) {
+  const declaration = sourceFile
+    .getVariableDeclarations()
+    .find(item => item.getVariableStatement()?.isExported());
+
+  if (!declaration) return null;
+
+  return {
+    declaration,
+    objectLiteral: toObjectLiteral(declaration.getInitializer()),
+  };
+}
+
+function pushIssue(issues, type, file, code, message) {
+  issues.push({ type, file, code, message });
+}
+
+function buildServiceRendererOrder() {
+  const configPath = path.join(root, 'src', 'domains', 'services', 'config.tsx');
+  const sourceFile = project.addSourceFileAtPathIfExists(configPath);
+  if (!sourceFile) return { orderBySlug: {}, slugByFile: new Map() };
+
+  const importMap = new Map();
+  for (const declaration of sourceFile.getImportDeclarations()) {
+    const moduleSpecifier = declaration.getModuleSpecifierValue();
+    const defaultImport = declaration.getDefaultImport();
+    if (defaultImport) importMap.set(defaultImport.getText(), moduleSpecifier);
+    for (const namedImport of declaration.getNamedImports()) {
+      importMap.set(namedImport.getName(), moduleSpecifier);
+    }
+  }
+
+  const declaration = sourceFile.getVariableDeclaration('SERVICE_ENTRY_BY_SLUG');
+  const initializer = declaration?.getInitializer();
+  const objectLiteral = initializer?.getKind() === SyntaxKind.ObjectLiteralExpression
+    ? initializer
+    : initializer?.getKind() === SyntaxKind.AsExpression
+      ? initializer.getExpression().asKind(SyntaxKind.ObjectLiteralExpression)
+      : initializer?.getKind() === SyntaxKind.SatisfiesExpression
+        ? initializer.getExpression().asKind(SyntaxKind.ObjectLiteralExpression)
+        : null;
+
+  if (!objectLiteral) return { orderBySlug: {}, slugByFile: new Map() };
+
+  const orderBySlug = {};
+  const slugByFile = new Map();
+  const configDir = path.dirname(configPath);
+
+  for (const property of objectLiteral.getProperties()) {
+    if (property.getKind() !== SyntaxKind.PropertyAssignment) continue;
+    const slug = property.getName().replace(/^['"]|['"]$/g, '');
+    const callExpression = property.getInitializerIfKind(SyntaxKind.CallExpression);
+    if (!callExpression) continue;
+
+    const dataArg = callExpression.getArguments()[0];
+    if (dataArg?.getKind() === SyntaxKind.Identifier) {
+      const dataPath = importPathToFile(importMap.get(dataArg.getText()), configDir);
+      if (dataPath) slugByFile.set(path.normalize(dataPath), slug);
+    }
+
+    const renderArg = callExpression.getArguments()[1];
+    const jsxSelfClosing = renderArg?.getFirstDescendantByKind(SyntaxKind.JsxSelfClosingElement);
+    const jsxOpening = renderArg?.getFirstDescendantByKind(SyntaxKind.JsxOpeningElement);
+    const rendererName = jsxSelfClosing?.getTagNameNode().getText() ?? jsxOpening?.getTagNameNode().getText();
+    if (!rendererName) continue;
+
+    const rendererPath = importPathToFile(importMap.get(rendererName), configDir);
+    if (!rendererPath) continue;
+    orderBySlug[slug] = extractSectionsOrderFromRenderer(rendererPath);
+  }
+
+  return { orderBySlug, slugByFile };
+}
+
+function validateServiceStructure(issues) {
+  const requiredKeys = ['keywords', 'badge', 'category', 'seo', 'hero', 'sections'];
+  const sourceFiles = project.getSourceFiles('src/domains/services/data/*.ts');
+  const { orderBySlug, slugByFile } = buildServiceRendererOrder();
+
+  for (const sourceFile of sourceFiles) {
+    const rel = path.relative(root, sourceFile.getFilePath());
+    const exported = getExportedObjectLiteral(sourceFile);
+    if (!exported?.objectLiteral) {
+      pushIssue(issues, 'service', rel, 'missing_export', 'Missing exported service data object literal.');
+      continue;
+    }
+
+    const expectedSlug = slugByFile.get(path.normalize(sourceFile.getFilePath())) ?? path.basename(sourceFile.getFilePath(), '.ts');
+    for (const key of requiredKeys) {
+      if (!hasProperty(exported.objectLiteral, key)) {
+        pushIssue(issues, 'service', rel, 'missing_required_key', `Missing required key "${key}".`);
+      }
+    }
+
+    const seoObject = getPropertyAssignment(exported.objectLiteral, 'seo')?.getInitializerIfKind(SyntaxKind.ObjectLiteralExpression);
+    const canonical = seoObject ? getStringLiteralValue(getPropertyAssignment(seoObject, 'canonical')?.getInitializer()) : null;
+    if (canonical !== `/services/${expectedSlug}`) {
+      pushIssue(issues, 'service', rel, 'canonical_mismatch', `seo.canonical must be /services/${expectedSlug}.`);
+    }
+
+    const sectionsObject = getSectionsObjectLiteral(exported.objectLiteral);
+    const expectedOrder = orderBySlug[expectedSlug] ?? [];
+    if (!sectionsObject) {
+      pushIssue(issues, 'service', rel, 'invalid_sections', 'sections must be an object literal.');
+      continue;
+    }
+
+    if (expectedOrder.length > 0) {
+      const currentOrder = getSectionsOrder(sectionsObject);
+      const filteredCurrent = currentOrder.filter(key => expectedOrder.includes(key));
+      const filteredExpected = expectedOrder.filter(key => currentOrder.includes(key));
+      const matches = filteredCurrent.length === filteredExpected.length && filteredCurrent.every((key, index) => key === filteredExpected[index]);
+      if (!matches) {
+        pushIssue(issues, 'service', rel, 'section_order_mismatch', `sections order does not match renderer order for ${expectedSlug}.`);
+      }
+    }
+  }
+
+  return sourceFiles.length;
+}
+
+function buildFeatureRendererOrder() {
+  const configPath = path.join(root, 'src', 'domains', 'features', 'config.tsx');
+  const sourceFile = project.addSourceFileAtPathIfExists(configPath);
+  if (!sourceFile) return {};
+
+  const importMap = new Map();
+  for (const declaration of sourceFile.getImportDeclarations()) {
+    const moduleSpecifier = declaration.getModuleSpecifierValue();
+    const defaultImport = declaration.getDefaultImport();
+    if (defaultImport) importMap.set(defaultImport.getText(), moduleSpecifier);
+    for (const namedImport of declaration.getNamedImports()) {
+      importMap.set(namedImport.getName(), moduleSpecifier);
+    }
+  }
+
+  const declaration = sourceFile.getVariableDeclaration('FEATURE_ENTRY_BY_SLUG');
+  const objectLiteral = declaration?.getInitializerIfKind(SyntaxKind.ObjectLiteralExpression);
+  if (!objectLiteral) return {};
+
+  const orderBySlug = {};
+  const configDir = path.dirname(configPath);
+
+  for (const property of objectLiteral.getProperties()) {
+    if (property.getKind() !== SyntaxKind.PropertyAssignment) continue;
+    const slug = property.getName().replace(/^['"]|['"]$/g, '');
+    const callExpression = property.getInitializerIfKind(SyntaxKind.CallExpression);
+    const pageIdentifier = callExpression?.getArguments()[1];
+    if (!pageIdentifier || pageIdentifier.getKind() !== SyntaxKind.Identifier) continue;
+
+    const pagePath = importPathToFile(importMap.get(pageIdentifier.getText()), configDir);
+    if (!pagePath || !fs.existsSync(pagePath)) continue;
+
+    const pageText = fs.readFileSync(pagePath, 'utf8');
+    const rendererMatch = pageText.match(/import\s+\w+\s+from\s+['"](@\/domains\/features\/renderers\/[^'"]+)['"]/m);
+    const rendererPath = rendererMatch ? importPathToFile(rendererMatch[1], path.dirname(pagePath)) : null;
+    if (!rendererPath) continue;
+    orderBySlug[slug] = extractSectionsOrderFromRenderer(rendererPath);
+  }
+
+  return orderBySlug;
+}
+
+function validateFeatureStructure(issues) {
+  const requiredKeys = ['slug', 'seo', 'hero', 'sections', 'cta'];
+  const sourceFiles = project.getSourceFiles('src/domains/features/data/*.ts');
+  const orderBySlug = buildFeatureRendererOrder();
+
+  for (const sourceFile of sourceFiles) {
+    const rel = path.relative(root, sourceFile.getFilePath());
+    const exported = getExportedObjectLiteral(sourceFile);
+    if (!exported?.objectLiteral) {
+      pushIssue(issues, 'feature', rel, 'missing_export', 'Missing exported feature data object literal.');
+      continue;
+    }
+
+    const expectedSlug = path.basename(sourceFile.getFilePath(), '.ts');
+    for (const key of requiredKeys) {
+      if (!hasProperty(exported.objectLiteral, key)) {
+        pushIssue(issues, 'feature', rel, 'missing_required_key', `Missing required key "${key}".`);
+      }
+    }
+
+    const slug = getStringLiteralValue(getPropertyAssignment(exported.objectLiteral, 'slug')?.getInitializer());
+    if (slug !== expectedSlug) {
+      pushIssue(issues, 'feature', rel, 'slug_mismatch', `slug must match file name ${expectedSlug}.`);
+    }
+
+    const seoObject = getPropertyAssignment(exported.objectLiteral, 'seo')?.getInitializerIfKind(SyntaxKind.ObjectLiteralExpression);
+    const canonical = seoObject ? getStringLiteralValue(getPropertyAssignment(seoObject, 'canonical')?.getInitializer()) : null;
+    if (!canonical || !canonical.endsWith(`/features/${expectedSlug}`)) {
+      pushIssue(issues, 'feature', rel, 'canonical_mismatch', `seo.canonical must end with /features/${expectedSlug}.`);
+    }
+
+    const sectionsObject = getSectionsObjectLiteral(exported.objectLiteral);
+    const expectedOrder = orderBySlug[expectedSlug] ?? [];
+    if (!sectionsObject) {
+      pushIssue(issues, 'feature', rel, 'invalid_sections', 'sections must be an object literal.');
+      continue;
+    }
+
+    if (expectedOrder.length > 0) {
+      const currentOrder = getSectionsOrder(sectionsObject);
+      const filteredCurrent = currentOrder.filter(key => expectedOrder.includes(key));
+      const filteredExpected = expectedOrder.filter(key => currentOrder.includes(key));
+      const matches = filteredCurrent.length === filteredExpected.length && filteredCurrent.every((key, index) => key === filteredExpected[index]);
+      if (!matches) {
+        pushIssue(issues, 'feature', rel, 'section_order_mismatch', `sections order does not match renderer order for ${expectedSlug}.`);
+      }
+    }
+  }
+
+  return sourceFiles.length;
+}
+
+function validateHomeStructure(issues) {
+  const filePath = path.join(root, 'src', 'domains', 'home', 'data', 'homepage.ts');
+  const sourceFile = project.addSourceFileAtPathIfExists(filePath);
+  const rel = path.relative(root, filePath);
+  const requiredKeys = [
+    'seo',
+    'hero',
+    'infrastructureGaps',
+    'smartWebsiteFramework',
+    'implementationSection',
+    'clientJourney',
+    'systemCapabilities',
+    'infrastructureLayers',
+    'industries',
+    'visibilityTimeline',
+    'caseStudies',
+    'faq',
+    'cta',
+  ];
+
+  if (!sourceFile) {
+    pushIssue(issues, 'home', rel, 'missing_file', 'Missing homepage data file.');
+    return 0;
+  }
+
+  const declaration = sourceFile.getVariableDeclaration('homepageData');
+  const objectLiteral = declaration ? toObjectLiteral(declaration.getInitializer()) : null;
+  if (!objectLiteral) {
+    pushIssue(issues, 'home', rel, 'missing_export', 'Expected homepageData object literal export.');
+    return 1;
+  }
+
+  for (const key of requiredKeys) {
+    if (!hasProperty(objectLiteral, key)) {
+      pushIssue(issues, 'home', rel, 'missing_required_key', `Missing required key "${key}".`);
+    }
+  }
+
+  const seoObject = getPropertyAssignment(objectLiteral, 'seo')?.getInitializerIfKind(SyntaxKind.ObjectLiteralExpression);
+  const canonical = seoObject ? getStringLiteralValue(getPropertyAssignment(seoObject, 'canonical')?.getInitializer()) : null;
+  if (canonical !== '/') {
+    pushIssue(issues, 'home', rel, 'canonical_mismatch', 'homepageData.seo.canonical must be /.');
+  }
+
+  const heroObject = getPropertyAssignment(objectLiteral, 'hero')?.getInitializerIfKind(SyntaxKind.ObjectLiteralExpression);
+  if (!heroObject || !hasProperty(heroObject, 'primaryAction')) {
+    pushIssue(issues, 'home', rel, 'missing_primary_action', 'homepageData.hero.primaryAction is required.');
+  }
+
+  return 1;
+}
+
+function getIndustryObjectLiteral(variableDeclaration) {
+  const initializer = variableDeclaration?.getInitializer();
+  if (!initializer) return null;
+  if (initializer.getKind() === SyntaxKind.ObjectLiteralExpression) return initializer;
+  if (initializer.getKind() === SyntaxKind.SatisfiesExpression) {
+    return initializer.getExpression().asKind(SyntaxKind.ObjectLiteralExpression);
+  }
+  if (initializer.getKind() !== SyntaxKind.CallExpression) return null;
+
+  const builderName = initializer.getExpression().getText();
+  const builder = variableDeclaration.getSourceFile().getFunction(builderName);
+  const returns = builder?.getDescendantsOfKind(SyntaxKind.ReturnStatement) ?? [];
+  for (const statement of returns) {
+    const expression = statement.getExpression();
+    if (expression?.getKind() === SyntaxKind.ObjectLiteralExpression) {
+      return expression;
+    }
+  }
+
+  return null;
+}
+
+function validateIndustryStructure(issues) {
+  const registryPath = path.join(root, 'src', 'domains', 'industries', 'registry.ts');
+  const registrySource = project.addSourceFileAtPathIfExists(registryPath);
+  if (!registrySource) {
+    pushIssue(issues, 'industry', path.relative(root, registryPath), 'missing_registry', 'Missing industry registry.');
+    return 0;
+  }
+
+  const importMap = new Map();
+  for (const declaration of registrySource.getImportDeclarations()) {
+    const moduleSpecifier = declaration.getModuleSpecifierValue();
+    const defaultImport = declaration.getDefaultImport();
+    if (defaultImport) importMap.set(defaultImport.getText(), moduleSpecifier);
+    for (const namedImport of declaration.getNamedImports()) {
+      importMap.set(namedImport.getName(), moduleSpecifier);
+    }
+  }
+
+  const declaration =
+    registrySource.getVariableDeclaration('INDUSTRY_PAGES') ??
+    registrySource.getVariableDeclaration('INDUSTRY_REGISTRY');
+  const initializer = declaration?.getInitializer();
+  const objectLiteral = toObjectLiteral(initializer);
+  if (!objectLiteral) {
+    pushIssue(issues, 'industry', path.relative(root, registryPath), 'invalid_registry', 'Industry registry export must be an object literal.');
+    return 0;
+  }
+
+  let scanned = 0;
+  for (const property of objectLiteral.getProperties()) {
+    if (property.getKind() !== SyntaxKind.PropertyAssignment) continue;
+    scanned++;
+    const slug = property.getName().replace(/^['"]|['"]$/g, '');
+    const identifier = property.getInitializerIfKind(SyntaxKind.Identifier);
+    const importPath = identifier ? importMap.get(identifier.getText()) : null;
+    const filePath = importPath ? importPathToFile(importPath, path.dirname(registryPath)) : null;
+    const rel = filePath ? path.relative(root, filePath) : path.relative(root, registryPath);
+    const sourceFile = filePath ? project.addSourceFileAtPathIfExists(filePath) : null;
+    const variableDeclaration = sourceFile && identifier ? sourceFile.getVariableDeclaration(identifier.getText()) : null;
+    const pageObject = variableDeclaration ? getIndustryObjectLiteral(variableDeclaration) : null;
+
+    if (!pageObject) {
+      pushIssue(issues, 'industry', rel, 'missing_export', `Unable to resolve industry page data for ${slug}.`);
+      continue;
+    }
+
+    for (const key of ['slug', 'type', 'seo', 'hero', 'cta']) {
+      if (!hasProperty(pageObject, key)) {
+        pushIssue(issues, 'industry', rel, 'missing_required_key', `Missing required key "${key}".`);
+      }
+    }
+
+    const type = getStringLiteralValue(getPropertyAssignment(pageObject, 'type')?.getInitializer());
+    if (type !== 'category' && type !== 'detail') {
+      pushIssue(issues, 'industry', rel, 'invalid_type', 'type must be "category" or "detail".');
+    }
+
+    if (type === 'category' && !hasProperty(pageObject, 'category')) {
+      pushIssue(issues, 'industry', rel, 'missing_category_key', 'Category pages require a category key.');
+    }
+
+    if (type === 'detail') {
+      for (const key of ['parentSlug', 'faq']) {
+        if (!hasProperty(pageObject, key)) {
+          pushIssue(issues, 'industry', rel, 'missing_detail_key', `Detail pages require "${key}".`);
+        }
+      }
+    }
+
+    const seoObject = getPropertyAssignment(pageObject, 'seo')?.getInitializerIfKind(SyntaxKind.ObjectLiteralExpression);
+    const canonical = seoObject ? getStringLiteralValue(getPropertyAssignment(seoObject, 'canonical')?.getInitializer()) : null;
+    if (canonical !== `/industries/${slug}`) {
+      pushIssue(issues, 'industry', rel, 'canonical_mismatch', `seo.canonical must be /industries/${slug}.`);
+    }
+  }
+
+  return scanned;
+}
+
+function getCaseStudySections(buildFn) {
+  const declaration = buildFn
+    .getBodyOrThrow()
+    .getDescendantsOfKind(SyntaxKind.VariableDeclaration)
+    .find(item => item.getName() === 'sections');
+
+  const arrayLiteral = declaration?.getInitializerIfKind(SyntaxKind.ArrayLiteralExpression);
+  if (!arrayLiteral) return null;
+
+  const identifierMap = {
+    problemSection: 'problem',
+    solutionSection: 'solution',
+    processSection: 'process',
+    featuresSection: 'features',
+    resultsSection: 'results',
+    testimonialSection: 'testimonial',
+    investmentSection: 'investment',
+    businessImpactSection: 'business-impact',
+    deliverablesSection: 'deliverables',
+    workflowsSection: 'workflows',
+    faqSection: 'faq',
+    ctaSection: 'cta',
+  };
+
+  return arrayLiteral.getElements().map(element => {
+    if (element.isKind(SyntaxKind.ObjectLiteralExpression)) {
+      return getStringLiteralValue(getPropertyAssignment(element, 'type')?.getInitializer());
+    }
+    if (element.isKind(SyntaxKind.Identifier)) {
+      return identifierMap[element.getText()] ?? null;
+    }
+    return null;
+  }).filter(Boolean);
+}
+
+function validateCaseStudyStructure(issues) {
+  const contentDir = path.join(root, 'src', 'domains', 'case-studies', 'content');
+  const files = fs.existsSync(contentDir)
+    ? fs.readdirSync(contentDir, { withFileTypes: true }).filter(item => item.isFile() && item.name.endsWith('.tsx')).map(item => path.join(contentDir, item.name))
+    : [];
+
+  for (const filePath of files) {
+    const sourceFile = project.addSourceFileAtPathIfExists(filePath);
+    const rel = path.relative(root, filePath);
+    const buildFn = sourceFile?.getFunctions().find(fn => fn.getName()?.startsWith('build') && fn.getBody());
+
+    if (!buildFn) {
+      pushIssue(issues, 'case-study', rel, 'missing_builder', 'Missing build* case-study function.');
+      continue;
+    }
+
+    const sections = getCaseStudySections(buildFn);
+    if (!sections) {
+      pushIssue(issues, 'case-study', rel, 'invalid_sections', 'Unable to parse sections array.');
+      continue;
+    }
+
+    if (!sections.includes('hero')) {
+      pushIssue(issues, 'case-study', rel, 'missing_hero', 'Case study sections must include hero.');
+    }
+    if (!sections.includes('cta')) {
+      pushIssue(issues, 'case-study', rel, 'missing_cta', 'Case study sections must include cta.');
+    }
+    if (sections.at(-1) !== 'cta') {
+      pushIssue(issues, 'case-study', rel, 'cta_not_terminal', 'cta must be the final section.');
+    }
+
+    const returnStatement = buildFn.getDescendantsOfKind(SyntaxKind.ReturnStatement).find(statement => statement.getExpression()?.isKind(SyntaxKind.ObjectLiteralExpression));
+    const returnObject = returnStatement?.getExpression()?.asKind(SyntaxKind.ObjectLiteralExpression);
+    const slug = getStringLiteralValue(getPropertyAssignment(returnObject, 'slug')?.getInitializer());
+    const seoObject = getPropertyAssignment(returnObject, 'seo')?.getInitializerIfKind(SyntaxKind.ObjectLiteralExpression);
+    const canonical = seoObject ? getStringLiteralValue(getPropertyAssignment(seoObject, 'canonical')?.getInitializer()) : null;
+
+    if (!slug) {
+      pushIssue(issues, 'case-study', rel, 'missing_slug', 'Case study return object requires slug.');
+    }
+
+    if (slug && canonical !== `/case-study/${slug}`) {
+      pushIssue(issues, 'case-study', rel, 'canonical_mismatch', `seo.canonical must be /case-study/${slug}.`);
+    }
+  }
+
+  return files.length;
+}
+
+const validators = {
+  service: validateServiceStructure,
+  feature: validateFeatureStructure,
+  home: validateHomeStructure,
+  industry: validateIndustryStructure,
+  'case-study': validateCaseStudyStructure,
+};
+
+function main() {
+  const issues = [];
+  const scannedByType = {};
+  const selectedType = normalizeRequestedType(requestedType);
+
+  if (selectedType && !validators[selectedType]) {
+    console.error(`[validate-domain-structure] Unknown type "${requestedType}".`);
+    process.exitCode = 1;
+    return;
+  }
+
+  const activeTypes = selectedType ? [selectedType] : Object.keys(validators);
+  for (const type of activeTypes) {
+    scannedByType[type] = validators[type](issues);
+  }
+
+  const report = {
+    generatedAt: new Date().toISOString(),
+    passed: issues.length === 0,
+    scannedByType,
+    issueCount: issues.length,
+    issues,
+  };
+
+  if (shouldReportJson) {
+    fs.mkdirSync(path.dirname(reportPath), { recursive: true });
+    fs.writeFileSync(reportPath, JSON.stringify(report, null, 2) + '\n');
+  }
+
+  if (issues.length === 0) {
+    console.log(`✓ Domain structure validation passed (${activeTypes.join(', ')}).`);
+    return;
+  }
+
+  console.error(`✗ Domain structure validation found ${issues.length} issue(s):`);
+  for (const issue of issues) {
+    console.error(`  - [${issue.type}] ${issue.file}: ${issue.message}`);
+  }
+  process.exitCode = 1;
+}
+
+main();

@@ -1,20 +1,20 @@
 # Content Gap Report
 
-> Generated: 2026-03-26
+> Generated: 2026-04-07
 
 ## Overview
 
 | Metric | Count |
 |--------|-------|
-| Total nodes | 207 |
-| Blogs | 77 |
-| Resources | 52 |
+| Total nodes | 229 |
+| Blogs | 88 |
+| Resources | 59 |
 | Industries | 32 |
 | Case studies | 22 |
-| Topics analyzed | 41 |
-| **Topic gaps detected** | **37** |
-| Resource → industry gaps | 22 |
-| Industry → case-study gaps | 6 |
+| Topics analyzed | 42 |
+| **Topic gaps detected** | **36** |
+| Resource → industry gaps | 24 |
+| Industry → case-study gaps | 0 |
 
 ## Topic Coverage Gaps
 
@@ -34,13 +34,40 @@
 - auto repair — authority signals implementation
 - body shops — authority signals implementation
 
+### Topic: `booking-automation`
+
+| Content type | Count | Threshold | Status |
+|-------------|-------|-----------|--------|
+| Blogs | 1 | ≥ 3 | ❌ Gap |
+| Resources | 0 | ≥ 1 | ❌ Gap |
+| Industries | 4 | ≥ 2 | ✅ |
+| Case studies | 7 | ≥ 1 | ✅ |
+
+**Suggested content:**
+
+- 2 more blog posts covering "booking automation"
+- resource framework for "booking automation"
+
+### Topic: `booking-systems`
+
+| Content type | Count | Threshold | Status |
+|-------------|-------|-----------|--------|
+| Blogs | 2 | ≥ 3 | ❌ Gap |
+| Resources | 1 | ≥ 1 | ✅ |
+| Industries | 10 | ≥ 2 | ✅ |
+| Case studies | 1 | ≥ 1 | ✅ |
+
+**Suggested content:**
+
+- 1 more blog post covering "booking systems"
+
 ### Topic: `client-reactivation`
 
 | Content type | Count | Threshold | Status |
 |-------------|-------|-----------|--------|
 | Blogs | 2 | ≥ 3 | ❌ Gap |
 | Resources | 1 | ≥ 1 | ✅ |
-| Industries | 2 | ≥ 2 | ✅ |
+| Industries | 3 | ≥ 2 | ✅ |
 | Case studies | 2 | ≥ 1 | ✅ |
 
 **Suggested content:**
@@ -51,14 +78,14 @@
 
 | Content type | Count | Threshold | Status |
 |-------------|-------|-----------|--------|
-| Blogs | 2 | ≥ 3 | ❌ Gap |
+| Blogs | 1 | ≥ 3 | ❌ Gap |
 | Resources | 1 | ≥ 1 | ✅ |
 | Industries | 0 | ≥ 2 | ❌ Gap |
 | Case studies | 2 | ≥ 1 | ✅ |
 
 **Suggested content:**
 
-- 1 more blog post covering "conversion optimization"
+- 2 more blog posts covering "conversion optimization"
 - automotive services — conversion optimization implementation
 - auto repair — conversion optimization implementation
 - body shops — conversion optimization implementation
@@ -101,25 +128,12 @@
 |-------------|-------|-----------|--------|
 | Blogs | 2 | ≥ 3 | ❌ Gap |
 | Resources | 1 | ≥ 1 | ✅ |
-| Industries | 2 | ≥ 2 | ✅ |
+| Industries | 3 | ≥ 2 | ✅ |
 | Case studies | 1 | ≥ 1 | ✅ |
 
 **Suggested content:**
 
 - 1 more blog post covering "crm integration"
-
-### Topic: `crm-pipeline`
-
-| Content type | Count | Threshold | Status |
-|-------------|-------|-----------|--------|
-| Blogs | 4 | ≥ 3 | ✅ |
-| Resources | 0 | ≥ 1 | ❌ Gap |
-| Industries | 3 | ≥ 2 | ✅ |
-| Case studies | 5 | ≥ 1 | ✅ |
-
-**Suggested content:**
-
-- resource framework for "crm pipeline"
 
 ### Topic: `crm-visibility`
 
@@ -201,7 +215,7 @@
 |-------------|-------|-----------|--------|
 | Blogs | 2 | ≥ 3 | ❌ Gap |
 | Resources | 2 | ≥ 1 | ✅ |
-| Industries | 10 | ≥ 2 | ✅ |
+| Industries | 13 | ≥ 2 | ✅ |
 | Case studies | 4 | ≥ 1 | ✅ |
 
 **Suggested content:**
@@ -245,28 +259,15 @@
 |-------------|-------|-----------|--------|
 | Blogs | 2 | ≥ 3 | ❌ Gap |
 | Resources | 1 | ≥ 1 | ✅ |
-| Industries | 6 | ≥ 2 | ✅ |
+| Industries | 8 | ≥ 2 | ✅ |
 | Case studies | 0 | ≥ 1 | ❌ Gap |
 
 **Suggested content:**
 
 - 1 more blog post covering "lead qualification"
 - aesthetic cosmetic clinics — lead qualification case study
+- legal professional services — lead qualification case study
 - accounting firms — lead qualification case study
-- consultants — lead qualification case study
-
-### Topic: `lead-response-time`
-
-| Content type | Count | Threshold | Status |
-|-------------|-------|-----------|--------|
-| Blogs | 2 | ≥ 3 | ❌ Gap |
-| Resources | 2 | ≥ 1 | ✅ |
-| Industries | 4 | ≥ 2 | ✅ |
-| Case studies | 4 | ≥ 1 | ✅ |
-
-**Suggested content:**
-
-- 1 more blog post covering "lead response time"
 
 ### Topic: `lead-routing`
 
@@ -341,19 +342,6 @@
 - resource framework for "local service pages"
 - landscaping companies — local service pages case study
 
-### Topic: `local-visibility`
-
-| Content type | Count | Threshold | Status |
-|-------------|-------|-----------|--------|
-| Blogs | 2 | ≥ 3 | ❌ Gap |
-| Resources | 1 | ≥ 1 | ✅ |
-| Industries | 2 | ≥ 2 | ✅ |
-| Case studies | 1 | ≥ 1 | ✅ |
-
-**Suggested content:**
-
-- 1 more blog post covering "local visibility"
-
 ### Topic: `negative-review-response`
 
 | Content type | Count | Threshold | Status |
@@ -419,15 +407,15 @@
 |-------------|-------|-----------|--------|
 | Blogs | 2 | ≥ 3 | ❌ Gap |
 | Resources | 1 | ≥ 1 | ✅ |
-| Industries | 3 | ≥ 2 | ✅ |
+| Industries | 5 | ≥ 2 | ✅ |
 | Case studies | 0 | ≥ 1 | ❌ Gap |
 
 **Suggested content:**
 
 - 1 more blog post covering "pipeline visibility"
+- legal professional services — pipeline visibility case study
 - consultants — pipeline visibility case study
-- mortgage brokers — pipeline visibility case study
-- property managers — pipeline visibility case study
+- real estate property services — pipeline visibility case study
 
 ### Topic: `reputation-monitoring`
 
@@ -435,7 +423,7 @@
 |-------------|-------|-----------|--------|
 | Blogs | 1 | ≥ 3 | ❌ Gap |
 | Resources | 1 | ≥ 1 | ✅ |
-| Industries | 2 | ≥ 2 | ✅ |
+| Industries | 3 | ≥ 2 | ✅ |
 | Case studies | 1 | ≥ 1 | ✅ |
 
 **Suggested content:**
@@ -476,8 +464,8 @@
 
 | Content type | Count | Threshold | Status |
 |-------------|-------|-----------|--------|
-| Blogs | 4 | ≥ 3 | ✅ |
-| Resources | 1 | ≥ 1 | ✅ |
+| Blogs | 6 | ≥ 3 | ✅ |
+| Resources | 3 | ≥ 1 | ✅ |
 | Industries | 0 | ≥ 2 | ❌ Gap |
 | Case studies | 1 | ≥ 1 | ✅ |
 
@@ -640,6 +628,14 @@ Resources with fewer than 2 industry implementations:
   - automotive services — responding to negative reviews systematically adaptation
   - auto repair — responding to negative reviews systematically adaptation
   - body shops — responding to negative reviews systematically adaptation
+- **review-automation-setup-guide-for-roofing-companies** — 0 industries
+  - automotive services — review automation setup guide for roofing companies adaptation
+  - auto repair — review automation setup guide for roofing companies adaptation
+  - body shops — review automation setup guide for roofing companies adaptation
+- **review-automation-setup-guide-for-salons** — 0 industries
+  - automotive services — review automation setup guide for salons adaptation
+  - auto repair — review automation setup guide for salons adaptation
+  - body shops — review automation setup guide for salons adaptation
 - **roofing-crm-pipeline-structure** — 0 industries
   - automotive services — roofing crm pipeline structure adaptation
   - auto repair — roofing crm pipeline structure adaptation
@@ -660,20 +656,3 @@ Resources with fewer than 2 industry implementations:
   - automotive services — what is a systems first website adaptation
   - auto repair — what is a systems first website adaptation
   - body shops — what is a systems first website adaptation
-
-## Industry → Case Study Coverage Gaps
-
-Industries with no case study proof:
-
-- **automotive-services** — 0 case studies
-  - automotive services proof-of-results case study
-- **home-services** — 0 case studies
-  - home services proof-of-results case study
-- **beauty-personal-care** — 0 case studies
-  - beauty personal care proof-of-results case study
-- **legal-professional-services** — 0 case studies
-  - legal professional services proof-of-results case study
-- **local-appointment-businesses** — 0 case studies
-  - local appointment businesses proof-of-results case study
-- **real-estate-property-services** — 0 case studies
-  - real estate property services proof-of-results case study

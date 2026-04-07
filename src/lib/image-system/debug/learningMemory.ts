@@ -69,13 +69,9 @@ export function saveWinningConfig(
     // Rolling average — blend new config with existing
     const n = existing.count;
     existing.titleScale = (existing.titleScale * n + config.titleScale) / (n + 1);
-    existing.maxTextWidth = Math.round(
-      (existing.maxTextWidth * n + config.maxTextWidth) / (n + 1)
-    );
-    existing.gradientStrength =
-      (existing.gradientStrength * n + config.gradientStrength) / (n + 1);
-    existing.vignetteStrength =
-      (existing.vignetteStrength * n + config.vignetteStrength) / (n + 1);
+    existing.maxTextWidth = Math.round((existing.maxTextWidth * n + config.maxTextWidth) / (n + 1));
+    existing.gradientStrength = (existing.gradientStrength * n + config.gradientStrength) / (n + 1);
+    existing.vignetteStrength = (existing.vignetteStrength * n + config.vignetteStrength) / (n + 1);
     existing.avgScore = (existing.avgScore * n + config.score) / (n + 1);
     existing.count = n + 1;
     // Keep the layout of the highest-scoring config
@@ -99,10 +95,7 @@ export function saveWinningConfig(
 
 // ─── Load Learned Overrides ─────────────────────────────────────────
 
-export function loadLearnedOverrides(
-  domain: ContentDomain,
-  title: string
-): TuneOverrides | null {
+export function loadLearnedOverrides(domain: ContentDomain, title: string): TuneOverrides | null {
   const memory = loadLearningMemory();
   const key = memoryKey(domain, titleBucket(title.length));
   const learned = memory[key];

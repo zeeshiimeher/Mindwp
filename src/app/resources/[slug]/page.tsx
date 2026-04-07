@@ -7,8 +7,8 @@ import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
 import ResourcePageTemplate from '@/domains/resources/templates/ResourcePageTemplate';
 import type { ResourceFAQItem } from '@/domains/resources/templates/types';
 import type { ResourceSection } from '@/domains/resources/types';
-import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 import { getImage } from '@/lib/image-system/resolver';
+import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
 

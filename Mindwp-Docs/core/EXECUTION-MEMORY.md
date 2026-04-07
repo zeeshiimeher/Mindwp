@@ -176,7 +176,7 @@ Delete unused files, extract useful rules before deletion, merge inventory files
 ### T-002 — Update validators to enforce contract rules
 **Status:** Pending
 **Priority:** High
-**Description:** Add contract enforcement to validate-cta.mjs, validate-metadata.mjs, validate-conversion.ts. Phase 2 work — TODO comments placed.
+**Description:** Consolidate contract enforcement into validate-content-contract.mjs and validate-conversion-contract.mjs, with structure checks moved into validate-domain-structure.mjs.
 
 ### T-003 — Align CONVERSION-SYSTEM.md with SYSTEM-CONTRACT.md
 **Status:** Resolved (file deleted — merged into contract)

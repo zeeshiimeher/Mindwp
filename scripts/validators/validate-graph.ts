@@ -49,6 +49,8 @@ const uniqueValues = (values: string[] | undefined) =>
 
 const describeNode = (node: ContentGraphNode) => `${node.type}: ${node.slug}`;
 
+const orphanNodeSet = new Set<string>();
+
 const countOverlap = (left: string[] | undefined, right: string[] | undefined) => {
   const leftSet = new Set(uniqueValues(left));
   const rightSet = new Set(uniqueValues(right));
@@ -154,6 +156,7 @@ const serviceNodes = nodes.filter(node => node.type === 'service');
 
 for (const node of blogNodes) {
   if (!hasOverlapWithAny(node, resourceNodes)) {
+    orphanNodeSet.add(`${node.type}/${node.slug}`);
     warnings.push(`${describeNode(node)} has no matching resource`);
   }
 }
@@ -163,12 +166,14 @@ for (const node of resourceNodes) {
   const hasSystem = uniqueValues(node.systems).some(system => canonicalSystemSet.has(system));
 
   if (!hasIndustry && !hasSystem) {
+    orphanNodeSet.add(`${node.type}/${node.slug}`);
     warnings.push(`${describeNode(node)} has no matching system or industry`);
   }
 }
 
 for (const node of caseStudyNodes) {
   if (!hasOverlapWithAny(node, serviceNodes)) {
+    orphanNodeSet.add(`${node.type}/${node.slug}`);
     warnings.push(`${describeNode(node)} has no matching system`);
   }
 }
@@ -322,6 +327,10 @@ if (shouldReportJson) {
         passed: errors.length === 0,
         errorCount: errors.length,
         warningCount: warnings.length,
+        summary: {
+          invalidEdges: errors.filter(error => error.startsWith('edge ') || error.startsWith('duplicate edge:') || error.startsWith('missing required cross-type edge coverage:')).length,
+          orphanNodes: orphanNodeSet.size,
+        },
         errors,
         warnings,
         derivedEdgeCount: allEdges.length,

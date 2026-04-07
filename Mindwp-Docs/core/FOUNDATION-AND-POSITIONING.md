@@ -381,12 +381,12 @@ Identify weak pages and guide optimization decisions. This is an audit layer, no
 The system highlights problems. Humans decide when and how to fix them.
 
 **Implementation:**
-- Validator: `scripts/validators/validate-conversion.ts`
+- Validator: `scripts/validators/validate-conversion-contract.mjs`
 - Integrated into: `scripts/core/validate-all.mjs` as final validator
 - STRICT_MODE flag: `false` (safe), upgradeable to `true` in future phases
 
 **CTA Scan Scope:**
-- CTA label enforcement (`validate-cta.mjs`) scans `src/lib/`, `src/config/`, and `src/components/system/`.
+- Conversion contract validation (`validate-conversion-contract.mjs`) scans CTA routing and context in `src/domains/`, `src/screens/`, and contact form handling.
 - **Excluded from scan:** `src/lib/dev/`, `src/lib/devtools/`, and `src/lib/ui-intelligence.ts` (canonical CTA_CONFIG source).
 - Dev-tool files contain instructional hint strings (e.g. "Add a 'Get a Consultation' button") that are not production CTA definitions and must not trigger violations.
 

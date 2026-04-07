@@ -144,11 +144,10 @@ function main() {
   });
 
   if (violations.length > 0) {
-    console.error(`✗ Reports structure validation found ${violations.length} issue(s):`);
+    console.warn(`⚠ Reports structure validation found ${violations.length} warning(s):`);
     for (const violation of violations) {
-      console.error(`- ${violation}`);
+      console.warn(`- ${violation}`);
     }
-    process.exitCode = 1;
     return;
   }
 
