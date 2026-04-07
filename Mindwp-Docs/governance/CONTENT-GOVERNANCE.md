@@ -56,9 +56,7 @@ Each governing concern has exactly one authoritative source. This document refer
 | Content archetypes, section structures, template mappings | CONTENT-BLUEPRINT-SYSTEM.md |
 | Content graph ontology, metadata, relationship rules | CONTENT-GRAPH-SYSTEM.md |
 | Service architecture, production rules, exposure rules | CONTENT-SYSTEM-ARCHITECTURE.md |
-| Resource categories, archetype structures, metadata | RESOURCE-PLANNING-INVENTORY.md |
-| Blog categories, archetype structures, metadata | BLOG-PLANNING-INVENTORY.md |
-| Case study archetypes, metadata, cluster rules | CASE-STUDY-INVENTORY.md |
+| Content planning (blogs, resources, case studies) | CONTENT-INVENTORY.md |
 
 **Conflict resolution:** If this document conflicts with any source listed above, the source document wins.
 
@@ -157,20 +155,11 @@ Rule: Outcome-focused. Describe what changes. Avoid feature lists — describe o
 ### CTA
 
 Job: Invite the next step without pressure.
-Rule: Must use approved CTA language. Must explain what happens next, not why they should act now.
+Rule: CTA behavior → **SYSTEM-CONTRACT.md**. Editors must not modify CTA labels, hrefs, or structure.
 
-Primary CTA: label = "Start a Conversation", href = "/contact"
-Secondary CTA: label = "Explore the Approach", href = relevant service page
+Primary CTA: "Start a Conversation" → /contact (LOCKED). Any deviation is a validation failure.
 
-CTA contracts are system-level rules.
-
-Primary CTA:
-- label must be exactly "Start a Conversation"
-- href must be exactly "/contact"
-
-Any deviation is a validation failure.
-
-> **CTA DESTINATION LOCK (27 March 2026):** CTA destination is currently locked to `/contact`. Any future change (e.g. `/conversation`) requires a full system update including validators, docs, and routing.
+> **CTA DESTINATION LOCK (27 March 2026):** CTA destination is locked to `/contact`. The `/conversation` page has been REMOVED (Phase 10 Decision 6). Any change to CTA destination requires a full system update including validators, docs, and routing.
 
 ### FAQ
 
@@ -361,7 +350,7 @@ Previously identified gaps now resolved:
 - ✅ Banned vocabulary in headings → `validate-structure.mjs` HEADING_BANNED_WORDS
 - ✅ CTA placement rules → `validate-structure.mjs` CTA_PLACEMENT_RULES
 
-These gaps are tracked in project-todo.md under Phase 8 tasks (TASK-071, TASK-072).
+These gaps were tracked under Phase 8 tasks (TASK-071, TASK-072) — now resolved.
 
 ### Future Validation Tasks
 
@@ -375,7 +364,7 @@ Previously listed as future — now implemented:
 - ✅ Heading-level vocabulary validation → TASK-072
 - ✅ Section-level tone validation (no hype in restricted domains) → TASK-072
 
-These are tracked in project-todo.md and must be implemented before large-scale content rewriting.
+These have been implemented. See validation layer for enforcement.
 
 ---
 

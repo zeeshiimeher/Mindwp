@@ -28,7 +28,7 @@ Rules:
 
 Status: Live System Architecture
 Version: 2.1
-Last Updated: 2026-04-06
+Last Updated: 2026-04-07
 
 Cleaned from: CONTENT-GRAPH-ARCHITECTURE.md
 
@@ -200,6 +200,31 @@ systems: string[]
 topics: string[]
 
 These fields must always use plural arrays, even if only one value exists.
+
+## METADATA ENFORCEMENT
+
+Each node MUST define:
+
+- systems[] (primary required)
+- topics[]
+- industries[] (optional depending type)
+- intent (REQUIRED)
+
+The graph layer may store multiple systems in `systems[]`, but every node must still have exactly one primary system for conversion use.
+
+## SOURCE FIELD
+
+- source is NOT stored manually
+- generated from type + slug
+- used by conversion system only
+
+## PRIMARY SYSTEM RULE
+
+- exactly 1 primary system required
+- secondary systems allowed for graph
+- CTA uses ONLY primary system
+
+Cross-reference: CTA input model and routing defined in **SYSTEM-CONTRACT.md** §2.
 
 ---
 
@@ -449,6 +474,7 @@ The content graph and the display layer operate under different rules.
 - Only high-relevance items appear
 - Context-specific — different page types show different related content
 - Service pages show only related services
+- SmartRelatedSection governs related-content slots; editorial inline links do not alter graph resolution
 
 The graph provides the data. The UI decides what to show.
 

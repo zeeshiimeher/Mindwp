@@ -19,8 +19,8 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 
 const truthPath = path.join(root, 'Mindwp-Docs', 'core', 'SYSTEM-TRUTH.md');
-const indexPath = path.join(root, 'Mindwp-Docs', 'core', 'SYSTEM-INDEX.md');
-const todoPath = path.join(root, 'Mindwp-Docs', 'project-todo.md');
+const indexPath = path.join(root, 'Mindwp-Docs', 'core', 'SYSTEM-README.md');
+const todoPath = path.join(root, 'Mindwp-Docs', 'core', 'EXECUTION-MEMORY.md');
 const statePath = path.join(root, 'reports', 'system-state.json');
 const driftPath = path.join(root, 'reports', 'system-drift.json');
 const validationReportPath = path.join(root, 'reports', 'validation-results.json');

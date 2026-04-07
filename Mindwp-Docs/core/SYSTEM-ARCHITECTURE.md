@@ -9,7 +9,7 @@
 ```
 ┌─────────────────────────────────────────────────────┐
 │  GOVERNANCE                                         │
-│  governance/AI-RULES.md · governance/CONTENT-GOVERNANCE.md │
+│  governance/CONTENT-GOVERNANCE.md · core/SYSTEM-RULES.md    │
 │  Authority stack: FOUNDATION → ARCHITECTURE → GRAPH │
 │                   → BLUEPRINT → GOVERNANCE          │
 └──────────────────────┬──────────────────────────────┘
@@ -73,6 +73,7 @@ Primary CTA everywhere: **"Start a Conversation" → /contact**
 4. **Snapshots are read-only.** Generated files are never manually edited.
 5. **ContentNodeType is the only type system.** No derived runtime content types.
 6. **BEM everywhere.** Inline styles only for approved shadcn/ui and SVG exceptions.
+7. **SYSTEM-CONTRACT.md governs behavior.** All conversion, CTA, and routing behavior defined there.
 
 ---
 
@@ -100,9 +101,8 @@ Primary CTA everywhere: **"Start a Conversation" → /contact**
 | Folder | Contains |
 |---|---|
 | `core/` | System truth, architecture, graph rules, component catalog |
-| `governance/` | AI rules, content governance hierarchy |
+| `governance/` | Content governance hierarchy |
 | `planning/` | Content inventory and planning docs |
-| `logs/` | Generated system log (snapshot) |
 | `Automatic-Image-Generation-System/` | Image pipeline architecture and testing guide |
 
-Full index: `core/SYSTEM-INDEX.md`
+Entry point: `core/SYSTEM-README.md`

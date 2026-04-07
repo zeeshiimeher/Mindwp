@@ -7,7 +7,7 @@
 
 > Consolidated source of truth. Validated against live code.
 > Sources: 5 governing docs, reports/, code scan.
-> Updated: 2026-04-06 (Phase 10 sync applied)
+> Updated: 2026-04-07 (conversion contract alignment applied)
 
 **Boundary:** This file defines current system reality only. It does not hold workflows, phase tasks, raw audit notes, or dashboard summaries.
 
@@ -21,9 +21,16 @@
 
 **Content graph:** 211 nodes, 7,065 derived edges, 7 formal content types (`ContentNodeType` is the only allowed type system — see §2.4). Scoring formula: `(systemOverlap × 3) + (topicOverlap × 2) + (industryOverlap × 1)` — LOCKED.
 
-**Validation:** 26 validators (22 blocking + 4 advisory). TypeScript clean. ESLint clean. Build passing.
+**Validation:** 26 validators (22 blocking + 4 advisory). LOCKED. TypeScript clean. ESLint clean. Build passing.
 
-**Conversion model:** Conversation-first. Primary CTA: "Start a Conversation" → /contact. `/conversation` page REMOVED (Phase 10 Decision 6) — permanent redirect to `/contact`. No lead magnets. System works without free resources.
+**Conversion model:** Deterministic single-entry conversion path. All CTAs route to `/contact` with `system` and `source` query params. No inline forms. `/conversation` page REMOVED (Phase 10 Decision 6) — permanent redirect to `/contact`. No lead magnets. System works without free resources.
+
+## Conversion Contract
+
+Conversion behavior is governed by **SYSTEM-CONTRACT.md** (single execution authority).
+
+SYSTEM-CONTRACT.md is the single source of truth for:
+- CTA system, contact system, data contract, intent model, conversion routing, system guarantees
 
 ---
 
@@ -55,31 +62,13 @@
 
 ### 2.3 Content Flow (Phase 10 — Intent-Based Routing)
 
-Content flow is governed by **intent-based classification**, not a linear funnel.
+Content flow is governed by **intent-based classification**, not a linear funnel. Routing rules → **SYSTEM-CONTRACT.md** §6.
 
-**Blog routing (by classification):**
-- PROBLEM blogs (29) → specific SERVICE page (direct pain→fix shortcut)
-- SYSTEM blogs (28) → specific RESOURCE page (trust-building step)
-- FRAMEWORK blogs (18) → specific RESOURCE or INDUSTRY page (deepening step)
+**Blog routing:** PROBLEM → service, SYSTEM → resource, FRAMEWORK → resource/industry.
+**Resource routing:** ACTIONABLE/EDUCATIONAL → service, EXAMPLE → case study.
+**Static paths:** Industry Category → Industry Detail → Service. Feature → Service (via SmartRelatedSection).
 
-**Resource routing (by classification):**
-- ACTIONABLE resources (20) → specific SERVICE page
-- EDUCATIONAL resources (20) → specific SERVICE page
-- EXAMPLE resources (13) → specific CASE STUDY page
-
-**Static paths (unchanged):**
-```
-Industry Category → Industry Detail → Service
-Feature → Service (via SmartRelatedSection graph resolution)
-```
-
-**Roles:**
-- Blog: search demand capture, problem exploration (discovery layer)
-- Resource: evergreen frameworks, system explanation (education layer)
-- Case Study: implementation proof (trust layer)
-- Service: conversion-focused system explanation (destination layer)
-- Industry: vertical-specific system application (context layer)
-- Feature: system component capability (detail layer)
+**Page roles:** Blog (discovery), Resource (education), Case Study (trust), Service (destination), Industry (context), Feature (detail).
 
 ### 2.4 Content Graph
 
@@ -93,7 +82,7 @@ Each node declares `industries`, `systems`, `topics` → relationships auto-gene
 
 **Scoring:** Authority per topic. Levels: Dominant / Strong / Growing / Weak / Gap. Locked formula: `(systemOverlap × 3) + (topicOverlap × 2) + (industryOverlap × 1)`.
 
-**Linking system:** SmartRelatedSection (`src/components/system/SmartRelatedSection.tsx`) — sole mechanism for surfacing related content on any page. Calls `getRelatedContent(slug, type)` → resolves via Authority Map → renders cards. Graph-driven, deterministic, validated.
+**Linking system:** SmartRelatedSection (`src/components/system/SmartRelatedSection.tsx`) — sole mechanism for surfacing related content on any page. Calls `getRelatedContent(slug, type)` → resolves via Authority Map → renders cards. Graph-driven, deterministic, validated. Editorial inline links are content-level references only and do not replace graph-driven related-content slots.
 
 **Link slot rules (Phase 10 Decision 3 — LOCKED):**
 
@@ -116,21 +105,9 @@ Each node declares `industries`, `systems`, `topics` → relationships auto-gene
 
 ### 2.5 Conversion Intelligence
 
-| Intent | Level | Visual |
-|---|---|---|
-| learn | soft | muted surface |
-| compare | mid | gradient-cta-1 |
-| buy | strong | gradient-cta-2 |
+Conversion behavior → **SYSTEM-CONTRACT.md** (single authority).
 
-**CTA config per page type:**
-- Blog: soft ("Want to Explore This Further?")
-- Resource: mid ("Ready to Apply This?")
-- Case Study: mid ("Want Results Like These?")
-- Service: strong ("Get Started With This Service")
-- Feature: strong ("See This in Action")
-- Industry: mid ("Built for Your Industry")
-
-**Conversion routing:** Intent-based CTA routing per content classification (see §2.3). SmartRelatedSection handles related content via graph resolution. No linear funnel. No JourneyNavigator.
+Implementation: `SmartCTA` bridges content graph to CTA via `ctaResolver.ts` (intensity) + `CTA_CONFIG` (labels). All CTAs route to `/contact?system={system}&source={type}/{slug}`. No inline forms. No linear funnel. No JourneyNavigator.
 
 ---
 
@@ -420,14 +397,13 @@ All sections use composable layout primitives. BEM grid CSS has been permanently
 
 ### 7.3 CTA
 
+CTA behavior → **SYSTEM-CONTRACT.md**.
+
+Key constraints:
 - Primary: "Start a Conversation" → /contact (LOCKED)
-- Secondary: "Explore the Approach" → relevant service
 - No urgency, no pressure, no hype
-- System works without free resources
-- CTA intensity matches page type (soft/mid/strong)
-- CTA labels ONLY from `CTA_CONFIG` (ui-intelligence.ts) or page data files
-- `ctaResolver.ts` resolves intensity level ONLY — does NOT produce labels
-- `validate-cta.mjs` must scan all CTA label sources: `data/`, `lib/`, `config/`, `components/system/`
+- Labels ONLY from `CTA_CONFIG` or page data files
+- `ctaResolver.ts` resolves intensity ONLY — does NOT produce labels
 
 ### 7.4 Design System
 
@@ -539,7 +515,7 @@ These 8 decisions govern all Phase 10 execution. Full details in `PHASE-10-audit
 | D2 | SmartRelatedSection is sole linking system | Only mechanism for surfacing related content. Must be on ALL content-type templates. |
 | D3 | Link slot rules LOCKED | service→services; feature→services; industry→services+caseStudies+resources; blog→resources+industries; resource→services+industries; caseStudy→industries+resources |
 | D4 | Link limits LOCKED | Max 2 sections, max 3 items per section, max 6 total |
-| D5 | Remove JourneyNavigator | Removed from all 3 templates. Deprecated. |
+| D5 | Remove JourneyNavigator | Removed from all 3 templates. Must not be treated as active. |
 | D6 | Remove `/conversation` | All refs → `/contact`. Page deleted. Redirect added. |
 | D7 | Feature linking via graph only | No hardcoded service links. SmartRelatedSection on feature templates. |
 | D8 | No content expansion | Zero new content in Phase 10. Fix routing + linking + cleanup only. |
@@ -548,7 +524,7 @@ These 8 decisions govern all Phase 10 execution. Full details in `PHASE-10-audit
 
 | Rule | Summary |
 |---|---|
-| G1 — System Assignment | Every node: exactly 1 primary system, max 2 total. Canonical systems only. |
+| G1 — System Assignment | Every node: exactly 1 primary system. Optional secondary systems are graph-only. Canonical systems only. |
 | G2 — Topic Specificity | Specific + actionable. From canonical registry only. Max 2 per node. |
 | G3 — Industry Assignment | Optional for blog/resource. Required for industry-detail + case-study. |
 | G4 — Feature→Service | Every feature maps to exactly 1 service. No orphan features. |

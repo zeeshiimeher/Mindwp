@@ -10,7 +10,19 @@
  *   3. No content progression — page has no related content via SmartRelatedSection
  *
  * STRICT_MODE = false → warnings only, never exits non-zero
+ *
+ * Contract: SYSTEM-CONTRACT.md (execution authority for all conversion behavior)
  */
+
+// TODO (Phase 2 — SYSTEM-CONTRACT enforcement):
+// Enforce SYSTEM-CONTRACT.md rules:
+// - Verify CTA URLs include system + source query parameters
+// - Validate source format: must match {type}/{slug}
+// - Validate system param matches canonical system identifiers
+// - Verify intent field presence in page metadata
+// - Check CTA labels against approved list from contract §2
+// - Verify no inline forms exist on any content page
+// - Validate fallback behavior: missing params produce "unknown" values, not errors
 
 import { AUTHORITY_MAP } from '../../src/lib/authority/generated/authorityMap';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';

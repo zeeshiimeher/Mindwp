@@ -1,280 +1,71 @@
-# BLOG PLANNING INVENTORY
+# CONTENT INVENTORY
+
+> Unified planning inventory for blog, resource, and case study content.
+> Architecture rules live in CONTENT-SYSTEM-ARCHITECTURE.md and CONTENT-BLUEPRINT-SYSTEM.md.
+> This file defines planning tables, archetypes, and metadata models only.
+
 STATUS: ARCHITECTURE LOCKED
-LAST UPDATED: 2026-03-11
-
-This document defines the finalized blog architecture used by the MindWP content system.
-
-Blogs exist to capture problem-aware demand, explain operational mistakes, and route readers into the evergreen authority layer.
-
-Blog posts do not replace resource hubs.
-They strengthen them.
+LAST UPDATED: 2026-04-07
 
 ---
 
-# 1. Blog Architecture
+## Content Flow
 
-The blog layer sits at the top of the editorial discovery system.
-
-Content flow:
-
-Blog
-↓
-Resource
-↓
-Industry
-↓
-Service
-
-Role of each layer:
-
-- Blog: captures search demand around problems, trends, breakdowns, and mistakes.
-- Resource: explains the evergreen framework or system behind the problem.
-- Industry: contextualizes the framework for a specific market.
-- Service: stays conversion-focused and explains implementation.
-
-Architectural rule:
-
-Blogs feed authority into resource hubs.
-They are not standalone authority targets.
-
-Every blog post must support a deeper content node in the architecture.
+Blog (problem discovery) → Resource (system frameworks) → Industry (contextual application) → Service (implementation)
 
 ---
 
-# 2. Blog Categories
-
-Final category list:
-
-- smart-website-systems
-- ai-lead-handling
-- local-authority-seo
-- crm-automation
-- reputation-review
-- home-services-industry
-- beauty-personal-care-industry
-- future-local-business-tech
-
-Category definitions:
-
-- smart-website-systems: website infrastructure, conversion systems, and systems-first architecture.
-- ai-lead-handling: response speed, missed calls, AI messaging, routing, and qualification workflows.
-- local-authority-seo: authority signals, local visibility, search behavior, and local search structure.
-- crm-automation: CRM workflows, operational automation, pipeline visibility, and follow-up systems.
-- reputation-review: review generation, monitoring, trust systems, and reputation workflows.
-- home-services-industry: industry-specific blog content for roofing, HVAC, plumbing, and adjacent operators.
-- beauty-personal-care-industry: industry-specific blog content for salons, clinics, med spas, and appointment-led beauty businesses.
-- future-local-business-tech: emerging technology shifts affecting local business operations and customer handling.
-
-Rule:
-
-Categories are organizational only.
-SEO targeting happens through metadata fields such as primaryKeyword, supportingKeywords, systems[], industries[], topics[], and search intent.
-
----
-
-# 3. Blog Archetypes
-
-The blog archetype system defines the editorial shape of a post before writing begins.
-
-All blog archetypes must be built from supported template sections only:
-
-- introduction
-- content
-- takeaways
-- quote
-- steps
-- checklist
-- image
-- callout
-- faq
-- cta
-
-FAQ rule:
-
-FAQ should be rare.
-Use it only when search intent clearly suggests clarification is necessary or when a post covers a system that creates repeatable reader questions.
-If FAQ is used, it must appear before `cta`.
-`cta` must always be the final section.
-
-System context rule:
-
-Every article must establish system context using this placement logic:
-
-- introduction
-- system context
-- main sections
-- takeaways
-- cta
-
-System context is not a separate template type.
-It is usually implemented as the first `content` section after the introduction.
-
-The system context block must explain:
-
-- what system layer the problem belongs to
-- why the issue is operational rather than purely promotional
-- which deeper resource or framework the post should naturally lead into
-
-Section diversity rule:
-
-- Do not repeat the exact same section sequence across multiple posts.
-- Posts inside the same archetype must vary at least one structural component such as `quote`, `checklist`, `steps`, `image`, `callout`, or `faq`.
-- Two posts may share the same archetype, but they must not feel templated in identical order and cadence.
-- Diversity should come from structure and emphasis, not random section insertion.
-
-Blog insight writing rule:
-
-Every article must contain two explicit insight statements:
-
-- Observation: what is happening in the business, market, or workflow.
-- Implication: why that observation changes the decision, risk, or system requirement.
-
-These insight statements should appear inside the main body, usually in `content` or `callout` sections.
-They should not be treated as decorative copy.
-
-### Problem Analysis
-
-Purpose: Explain why a business problem happens and where the operational breakdown starts.
-
-### Industry Breakdown
-
-Purpose: Explain how a specific industry experiences a repeated operational issue.
-
-### System Explanation
-
-Purpose: Explain how a business system works at a conceptual level without becoming a resource page.
-
-### Operational Mistake
-
-Purpose: Highlight a repeatable mistake, its downstream cost, and the correct system response.
-
-### Trend Analysis
-
-Purpose: Interpret new market or technology changes and explain practical implications.
-
----
-
-# 4. Blog Metadata Model
-
-Every blog post must define the following fields:
-
-- slug
-- title
-- primaryKeyword
-- supportingKeywords
-- category
-- publishDate
-- systems[]
-- industries[]
-- topics[]
-- tags[]
-- seo
-- sections[]
-
-Metadata rules:
-
-- slug: kebab-case URL identifier.
-- title: editorial headline containing the primary keyword naturally.
-- primaryKeyword: primary search target.
-- supportingKeywords: secondary semantic variations and adjacent phrases.
-- category: one of the locked organizational categories above.
-- publishDate: realistic ISO date aligned to the publishing timeline.
-- systems[]: canonical system mappings.
-- industries[]: canonical industry mappings.
-- topics[]: canonical topic mappings.
-- tags[]: editorial labels for browsing and filtering.
-- seo: title, description, canonical, keywords, and open graph metadata.
-- sections[]: only supported template section types.
-
-FAQ rule:
-
-FAQ schema is generated only from explicit faq sections.
-Checklist and steps content must never be treated as FAQ content.
-
----
-
-# Canonical Industry Registry
-
-The blog system uses a locked industry taxonomy.
-
-Allowed industries:
-
-- roofing
-- hvac
-- plumbing
-- automotive
-- salon
-
-Rules:
-
-- industries[] must match this registry.
-- Generic blogs may use industries: [] when the article is not tied to a specific industry.
-- Industry-focused blogs must use exactly one industry.
-
----
-
-# 5. Unique Topic Cluster Rule
-
-To prevent keyword cannibalization, the combination of:
-
-topic + industry
-
-must be unique across the blog system.
-
-Example:
-
-- topics[]: ["missed-calls"]
-- industries[]: ["roofing"]
-
-That combination may appear in one blog post only.
-
-Implications:
-
-- If a topic already exists for an industry, new content must target a different problem angle.
-- Supporting keywords may vary, but the primary topic + industry pairing cannot repeat.
-- Generic posts with industries[] = [] must still avoid duplicating an existing global topic target.
-
-This rule defines the keyword and cluster architecture for blog planning.
-
-Primary keyword rule:
-
-- Each post owns one primary keyword.
-- Supporting keywords expand semantic coverage for the same search intent.
-- Cluster ID groups multiple blogs that strengthen the same resource hub without targeting the same topic + industry pairing.
-
----
-
-# 6. Blog Specification Table
-
-Before writing any blog post, define it in the planning table below.
-
-Allowed Search Intent values:
-
-- problem
-- analysis
-- mistake
-- strategy
-- industry
-- trend
-
-Column definitions:
-
-- Title: working editorial headline.
-- Category: organizational category only.
-- Primary Keyword: exact search target for the post.
-- Search Intent: one of the allowed planning intents above.
-- Supporting Keywords: secondary phrases that support the same topic.
-- systems[]: canonical system mappings.
-- industries[]: canonical industry mappings.
-- topics[]: canonical topic mappings.
-- Resource Cluster: the resource hub the post should strengthen.
-- Cluster ID: normalized cluster grouping for related blog posts.
-
-Cluster ID examples:
-
-- lead-response-cluster
-- missed-calls-cluster
-- review-generation-cluster
+# Blog Planning
+
+## Categories
+
+| Category | Scope |
+|---|---|
+| smart-website-systems | Website infrastructure, conversion systems |
+| ai-lead-handling | Response speed, AI messaging, routing, qualification |
+| local-authority-seo | Authority signals, local visibility, search structure |
+| crm-automation | CRM workflows, pipeline visibility, follow-up |
+| reputation-review | Review generation, monitoring, trust systems |
+| home-services-industry | Roofing, HVAC, plumbing industry content |
+| beauty-personal-care-industry | Salons, clinics, med spas industry content |
+| future-local-business-tech | Emerging technology shifts for local business |
+
+Categories are organizational only. SEO targeting happens through metadata fields.
+
+## Blog Archetypes
+
+| Archetype | Purpose |
+|---|---|
+| Problem Analysis | Why a business problem happens, where the breakdown starts |
+| Industry Breakdown | How a specific industry experiences a repeated operational issue |
+| System Explanation | How a business system works at a conceptual level |
+| Operational Mistake | A repeatable mistake, its downstream cost, the correct response |
+| Trend Analysis | New market/technology changes and practical implications |
+
+### Section Rules
+- Allowed sections: introduction, content, takeaways, quote, steps, checklist, image, callout, faq, cta
+- FAQ must be rare. If used, it appears before `cta`.
+- `cta` is always the final section.
+- Every article must establish system context after introduction.
+- Posts inside the same archetype must vary at least one structural component.
+- Every article must contain an Observation + Implication insight pair.
+
+## Blog Metadata Model
+
+Required fields: slug, title, primaryKeyword, supportingKeywords, category, publishDate, systems[], industries[], topics[], tags[], seo, sections[]
+
+### Constraints
+- primaryKeyword must be substring of title, metaTitle, metaDescription (case-insensitive)
+- metaTitle: 40–60 chars, metaDescription: 140–160 chars
+- topic + industry combination must be unique across the blog system
+- Allowed industries: roofing, hvac, plumbing, automotive, salon
+- Allowed search intents: problem, analysis, mistake, strategy, industry, trend
+
+### Linking Rules
+- Every blog links to at least one primary resource hub
+- Blog → Resource → Industry → Service → Resource (linking loop)
+- Blog-to-blog links are secondary, never replace blog-to-resource path
+- Service pages must NOT link to blog posts
 
 ## Blog Specification Table
 
@@ -356,65 +147,223 @@ Cluster ID examples:
 | Future Local SEO After Google Business Profile Automation | future-local-business-tech | future local seo after google business profile automation | trend | automated gbp workflows, ai local search changes, future of google business profile | local-seo-authority | plumbing | google-business-profile | google-business-profile-system-architecture | google-business-profile-cluster |
 | Future CRM Visibility for HVAC Companies | future-local-business-tech | future crm visibility for hvac companies | trend | predictive hvac crm, ai crm forecasting for hvac, future pipeline visibility | crm-automation | hvac | crm-visibility | building-revenue-visibility-through-crm-tracking | crm-visibility-cluster |
 
-Planning note:
-
-Resource Cluster values should map to real runtime resource slugs already present in RESOURCE_REGISTRY.
-
-Resource Cluster Rule:
-
-The value in the "Resource Cluster" column must match a real resource slug from RESOURCE_REGISTRY.
-
-Resource titles should never be used in this column.
-
-Topic Registry Note:
-
-If a topic used in the blog planning table does not exist in CANONICAL_TOPICS (defined in src/lib/content-graph/canonical.ts), it must be added to the canonical registry before blog generation begins.
-
-Topics referenced by this planning table that may require canonical registration include:
-
-- emergency-handling
-- service-reminders
-- no-show-reduction
-
-Table rules:
-
-- Primary Keyword values must remain unique across the full blog inventory.
-- The combination of topics[] + industries[] must remain unique across the full table.
-- Resource Cluster identifies the primary hub each blog must strengthen.
-- Cluster ID groups multiple blog posts that reinforce the same resource without duplicating the same topic + industry target.
+### Blog Table Rules
+- Primary Keyword must be unique across the full inventory
+- topic + industry combination must be unique
+- Resource Cluster must match a real resource slug from RESOURCE_REGISTRY
+- publishDate: distributed 2024–2026, must not be in future
 
 ---
 
-# 7. Publishing Timeline
+# Resource Planning
 
-Blog publishDate values distributed across 2024–2026.
+## Resource Categories
 
-- 2024: foundation topics, repeated business problems, core system explanations.
-- 2025: expansion topics, industry breakdowns, broader operational strategy.
-- 2026: advanced trends, AI shifts, mature cluster depth.
+Five categories aligned to core system pillars:
 
-Rules:
-- publishDate must not be in the future.
-- Dates should appear naturally distributed.
-- Posts within the same cluster should show believable sequencing.
+| Category | System Pillar |
+|---|---|
+| smart-website-systems | Smart Website Systems |
+| ai-lead-handling | AI Lead Handling Systems |
+| local-seo-authority | Local Authority & SEO Systems |
+| reputation-review | Reputation & Review Systems |
+| revenue-growth | Revenue Growth Systems |
+
+## Resource Archetypes
+
+| Archetype | Purpose | Key Sections |
+|---|---|---|
+| Framework | Explains system structure | hero, takeaways, problem, comparison, solution-cards, diy, case |
+| Workflow | Step-by-step operational workflow | hero, takeaways, problem, business-costs, diy, checklist |
+| Diagnostic | Root causes behind operational problems | hero, takeaways, problem, comparison, case, solution-cards |
+| Industry Example | System applied to a real industry | hero, takeaways, problem, case, diy, solution-cards |
+| Implementation Guide | Practical system implementation | hero, takeaways, problem, case, diy, templates |
+
+All archetypes end with: faq (optional), cta, related-resources
+
+### Allowed Template Section Types
+hero, takeaways, problem, business-costs, diy, solution-cards, case, comparison, templates, checklist, faq, cta, related-resources, sidebar-cta
+
+## Resource Metadata Model
+
+Required: Title, industries[], systems[], topics[], Primary Keyword, Intent Type
+
+Allowed intent types: pain-based, framework, comparison, implementation, workflow, diagnostic
+
+## Global System Resources (~30)
+
+### Smart Website Systems
+1. How Smart Website Systems Work
+2. What Is a Systems-First Website?
+3. Conversion Architecture for Service Websites
+4. Website + CRM Integration Explained
+5. Designing Websites That Support CRM Systems
+6. Service Page Architecture That Converts
+7. Conversion Tracking for Service Businesses
+8. Booking Systems Inside Website Infrastructure
+
+### AI Lead Handling Systems
+1. Lead Automation Framework for Service Businesses
+2. Service Business Follow-Up Automation Guide
+3. Lead Response Time Framework
+4. Multi-Channel Lead Capture Systems
+5. Lead Routing Models for Service Companies
+6. Missed Call Recovery System for Service Businesses
+7. Lead Qualification Framework
+
+### Reputation & Review Systems
+1. Review Generation System for Local Businesses
+2. How Review Automation Improves Local Authority
+3. Customer Feedback Loop Framework
+4. Responding to Negative Reviews Systematically
+5. Reputation Monitoring Systems for Service Businesses
+
+### Local Authority & SEO Systems
+1. Local SEO vs Website Optimization
+2. Local Visibility Framework for Service Businesses
+3. Google Business Profile System Architecture
+4. Local Service Page Architecture
+5. Authority Signals for Local Search
+
+### Revenue Growth Systems
+1. Building Revenue Visibility Through CRM Tracking
+2. CRM Pipeline Architecture for Service Businesses
+3. Client Reactivation Systems for Service Businesses
+4. Tracking Customer Lifetime Value Using CRM
+5. Sales Pipeline Visibility Framework
+
+## Industry Context Resources (~35)
+
+Each industry cluster: ~5 contextual resources showing systems applied to real verticals.
+
+| Industry | Resources |
+|---|---|
+| Roofing | Lead Handling, Missed Call Recovery, Review Generation, Estimate Follow-Up, CRM Pipeline |
+| HVAC | Lead Handling, Missed Call Recovery, Emergency Call Handling, Review Generation, CRM Pipeline |
+| Salon | Lead Handling, Missed Call Recovery, Review Generation, No-Show Reduction, Client Lifetime Value |
+| Automotive | Lead Handling, Missed Call Recovery, Review Generation, Service Reminders, CRM Pipeline |
+| Real Estate | Lead Handling, Missed Call Recovery, Inquiry Follow-Up, Review Generation, CRM Pipeline |
+| Legal | Lead Handling, Missed Call Recovery, Consultation Booking, Review Generation, Client Intake CRM |
+| Local Appointment | Lead Handling, Missed Call Recovery, Booking Optimization, Review Generation, CRM Pipeline |
+
+### Linking Rules
+- Global system resources → industry example resources
+- Industry resources → relevant industry page
+- Industry pages → service system pages
+- Service pages → back to global system resources
+
+### Publishing Order
+1. Global system resources → 2. Roofing → 3. HVAC → 4. Salon → 5. Remaining
+
+## Resource Specification Table
+
+| Title | Archetype | Sections | systems[] | industries[] | topics[] |
+|------|------|------|------|------|------|
+| Lead Automation Framework for Service Businesses | Framework | hero, takeaways, problem, comparison, solution-cards, diy | ai-lead-handling | [] | lead-management |
+| Service Business Follow-Up Automation Guide | Workflow | hero, takeaways, problem, business-costs, diy, checklist | ai-lead-handling | [] | follow-up |
+| Lead Response Time Framework | Framework | hero, takeaways, problem, comparison, solution-cards | ai-lead-handling | [] | lead-response-time |
+| Multi-Channel Lead Capture Systems | Framework | hero, takeaways, problem, comparison, solution-cards | ai-lead-handling | [] | lead-capture |
+| Lead Routing Models for Service Companies | Framework | hero, takeaways, problem, comparison, solution-cards | ai-lead-handling | [] | lead-routing |
+| Missed Call Recovery System for Service Businesses | Workflow | hero, takeaways, problem, business-costs, diy, checklist | ai-lead-handling | [] | missed-calls |
+| Lead Qualification Framework | Framework | hero, takeaways, problem, comparison, solution-cards | ai-lead-handling | [] | lead-qualification |
+| How Smart Website Systems Work | Framework | hero, takeaways, problem, comparison, solution-cards, diy | smart-website-systems | [] | website-infrastructure |
+| What Is a Systems-First Website? | Framework | hero, takeaways, problem, comparison, solution-cards | smart-website-systems | [] | systems-first-websites |
+| Conversion Architecture for Service Websites | Framework | hero, takeaways, problem, comparison, solution-cards | smart-website-systems | [] | conversion-optimization |
+| Website + CRM Integration Explained | Implementation Guide | hero, takeaways, problem, case, diy, templates | smart-website-systems | [] | crm-integration |
+| Designing Websites That Support CRM Systems | Framework | hero, takeaways, problem, comparison, solution-cards | smart-website-systems | [] | crm-enabled-websites |
+| Service Page Architecture That Converts | Framework | hero, takeaways, problem, comparison, solution-cards | smart-website-systems | [] | service-page-architecture |
+| Conversion Tracking for Service Businesses | Implementation Guide | hero, takeaways, problem, case, diy, templates | smart-website-systems | [] | conversion-tracking |
+| Booking Systems Inside Website Infrastructure | Framework | hero, takeaways, problem, comparison, solution-cards | smart-website-systems | [] | booking-systems |
+| Review Generation System for Local Businesses | Framework | hero, takeaways, problem, comparison, solution-cards | reputation-review | [] | review-generation |
+| How Review Automation Improves Local Authority | Framework | hero, takeaways, problem, comparison, solution-cards | reputation-review | [] | review-automation |
+| Customer Feedback Loop Framework | Framework | hero, takeaways, problem, comparison, solution-cards | reputation-review | [] | feedback-loops |
+| Responding to Negative Reviews Systematically | Workflow | hero, takeaways, problem, business-costs, diy, checklist | reputation-review | [] | negative-review-response |
+| Reputation Monitoring Systems for Service Businesses | Framework | hero, takeaways, problem, comparison, solution-cards | reputation-review | [] | reputation-monitoring |
+| Local SEO vs Website Optimization | Framework | hero, takeaways, problem, comparison, solution-cards | local-seo-authority | [] | local-seo |
+| Local Visibility Framework for Service Businesses | Framework | hero, takeaways, problem, comparison, solution-cards | local-seo-authority | [] | local-visibility |
+| Google Business Profile System Architecture | Framework | hero, takeaways, problem, comparison, solution-cards | local-seo-authority | [] | google-business-profile |
+| Local Service Page Architecture | Framework | hero, takeaways, problem, comparison, solution-cards | local-seo-authority | [] | local-service-pages |
+| Authority Signals for Local Search | Framework | hero, takeaways, problem, comparison, solution-cards | local-seo-authority | [] | local-authority |
+| Building Revenue Visibility Through CRM Tracking | Framework | hero, takeaways, problem, comparison, solution-cards | revenue-growth | [] | revenue-visibility |
+| CRM Pipeline Architecture for Service Businesses | Framework | hero, takeaways, problem, comparison, solution-cards | revenue-growth | [] | crm-pipeline |
+| Client Reactivation Systems for Service Businesses | Workflow | hero, takeaways, problem, diy, checklist | revenue-growth | [] | client-reactivation |
+| Tracking Customer Lifetime Value Using CRM | Framework | hero, takeaways, problem, comparison, solution-cards | revenue-growth | [] | customer-lifetime-value |
+| Sales Pipeline Visibility Framework | Framework | hero, takeaways, problem, comparison, solution-cards | revenue-growth | [] | pipeline-visibility |
 
 ---
 
-# 8. Topical Authority Linking Architecture
+# Case Study Planning
 
-Internal linking loop: Blog → Resource → Industry → Service → Resource
+## Case Study Role
+Case studies = proof layer. They validate system implementation inside industry contexts.
 
-Rules:
-- Every blog post must link to at least one primary resource hub.
-- Resource pages should link to the most relevant industry page.
-- Industry pages should link to the appropriate service page.
-- Service pages may link back to resource hubs but must NOT link to blog posts.
-- Blog-to-blog links are secondary and must never replace the blog-to-resource path.
+Authority flow: Blog/Resource → Industry Page → Case Study → Service Implementation (reference only)
 
----
+**Rules:**
+- Case studies support industries, not services
+- Must NOT appear on service pages
+- Appear on industry pages and case study hub only
 
-# Working Rule
+## Case Study Archetypes
 
-This file is the planning inventory for blog normalization.
+| Archetype | Focus |
+|---|---|
+| System Implementation | Architecture, technical workflow, system design decisions |
+| Operational Problem | Problem identification, root cause, system response |
+| Revenue Recovery | Revenue impact, reactivation workflows, measurable outcomes |
 
-If categories, clusters, or metadata requirements change, update this file first so implementation, validation, and future content generation stay aligned.
+## Case Study Metadata
+
+Required: UI Label, SEO Title, Slug, industries[], systems[], resources[], Archetype, Operational Problem, Implementation Summary, Outcome
+
+## Page Structure
+Required sections: Hero, Operational Problem, System Implementation, Consultation CTA
+Optional sections: Workflow Breakdown, Results, Metrics, Frameworks Used, Lessons (4–9 sections total)
+
+## Cluster Rules
+Each case study unique across: industry + operational problem + system
+
+## Planned Scenarios (~16–20)
+
+### Lead Handling Failures
+- Storm Season Lead Handling System (Roofing)
+- HVAC Emergency Lead Routing (HVAC)
+- HVAC Seasonal Lead Surge Handling (HVAC)
+- Auto Repair Missed Call Recovery (Automotive)
+- Real Estate Inquiry Routing (Real Estate)
+
+### Follow-Up Failures
+- Roofing Estimate Follow-Up Automation (Roofing)
+- Realtor Lead Follow-Up Automation (Real Estate)
+- Automotive Service Reminder Automation (Automotive)
+- HVAC Maintenance Plan Reactivation (HVAC)
+
+### Booking System Breakdowns
+- Salon Booking Automation (Salon)
+- Law Firm Consultation Booking System (Legal)
+- Appointment Business Booking Automation (Local Appointment)
+- Law Firm Client Intake Automation (Legal)
+
+### No-Show & Reminder Failures
+- Salon No-Show Reduction System (Salon)
+- Appointment Reminder No-Show Reduction (Local Appointment)
+
+### Review / Revenue / Infrastructure
+- Salon Review Generation Automation (Salon)
+- CRM Pipeline Visibility Transformation (System-Level)
+- Roofing Website Rebuild With CRM (Roofing)
+- Smart Website Infrastructure Implementation (System-Level)
+- Local Authority System Impact (System-Level)
+
+## Case Study Hub
+Primary grouping: by industry. NOT by service.
+
+### Publishing Order
+1. Smart Website infrastructure → 2. Roofing → 3. HVAC → 4. Salon → 5. Remaining
+
+## Writing Rules
+- Describe real operational environment before solution
+- Explain system components and why chosen
+- Show workflow change after implementation
+- Use operational language, not marketing language
+- No "digital transformation" narratives

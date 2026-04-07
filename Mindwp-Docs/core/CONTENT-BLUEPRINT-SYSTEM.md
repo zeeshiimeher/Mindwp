@@ -30,7 +30,7 @@ Status: Governing Document
 Version: 1.0
 Last Updated: 2026-03-26
 
-Extracted from: BLOG-PLANNING-INVENTORY.md, Resources-PLANNING-INVENTORY.md, CaseStudies-PLANNING-INVENTORY.md
+Extracted from: CONTENT-INVENTORY.md (planning/)
 
 ---
 
@@ -46,11 +46,9 @@ Graph ontology, metadata standards, and relationship resolution are defined in *
 
 Positioning, copy voice, and CTA standards are defined in **FOUNDATION-AND-POSITIONING.md**.
 
-Content inventories and planning tables remain in their respective planning files:
+Content inventories and planning tables remain in:
 
-- BLOG-PLANNING-INVENTORY.md
-- Resources-PLANNING-INVENTORY.md
-- CaseStudies-PLANNING-INVENTORY.md
+- planning/CONTENT-INVENTORY.md
 
 ---
 

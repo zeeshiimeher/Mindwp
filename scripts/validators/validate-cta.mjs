@@ -13,7 +13,17 @@
  * Source: FOUNDATION-AND-POSITIONING.md §5 CTA Language Standards
  * Governance: CONTENT-GOVERNANCE.md §4 Section Behavior Rules (CTA contracts)
  * System rules: SR1 (CTA label source), SR6 (CTA validator scope)
+ * Contract: SYSTEM-CONTRACT.md (execution authority for all CTA behavior)
  */
+
+// TODO (Phase 2 — SYSTEM-CONTRACT enforcement):
+// Enforce SYSTEM-CONTRACT.md rules:
+// - CTA must include system + source query parameters
+// - source format validation: must match {type}/{slug}
+// - system must match canonical system identifiers
+// - intent enforcement: must match locked intent enum
+// - Fallback values must be explicit (system="unknown", source="direct/unknown")
+// - No CTA without system + source (warn, non-blocking)
 
 import fs from 'node:fs';
 import path from 'node:path';

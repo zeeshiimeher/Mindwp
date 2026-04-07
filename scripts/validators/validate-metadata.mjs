@@ -10,7 +10,17 @@
  * - feature: systems required
  * - industry-detail: industries required
  * - service: must NOT have industries
+ *
+ * Contract: SYSTEM-CONTRACT.md §4 (data contract, validation rules)
  */
+
+// TODO (Phase 2 — SYSTEM-CONTRACT enforcement):
+// Enforce SYSTEM-CONTRACT.md §4 data contract rules:
+// - system field must match canonical systems from canonical.ts
+// - intent field must match locked intent enum (problem-aware, solution-aware, system-aware, decision-ready)
+// - source field must follow {type}/{slug} format
+// - Each node must have exactly 1 primary system for CTA use
+// - Validate intent default mapping matches content type
 
 import fs from 'node:fs';
 import path from 'node:path';

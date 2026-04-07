@@ -2,6 +2,8 @@
 
 Rules derived from execution decisions. Enforced by validators.
 
+**Behavioral authority:** SYSTEM-CONTRACT.md governs all conversion behavior, CTA routing, intent mapping, and data contracts. Rules in this document must not contradict the contract.
+
 ---
 
 ## 1. Canonical Value Enforcement
@@ -108,7 +110,7 @@ This system follows STRICT execution boundaries.
 Do NOT:
 - Redesign content structure
 - Modify blueprint formats
-- Change CTA logic
+- Change CTA logic (governed by SYSTEM-CONTRACT.md)
 - Alter content graph logic
 - Introduce new abstractions
 - Rename canonical values
@@ -119,3 +121,36 @@ Do ONLY:
 - Run validators after every batch
 
 If any task requires structural change → STOP and escalate instead of implementing.
+
+---
+
+## 7. Permission Boundaries
+
+### Allowed without asking
+- Run sync and validators
+- Read any repo file for context
+- Implement tasks from EXECUTION-MEMORY.md
+- Fix validator failures and code defects inside active task scope
+- Run image generation scripts in test mode
+
+### Requires user confirmation
+- Update SYSTEM-TRUTH.md
+- Modify governing docs in Mindwp-Docs/core/
+- Add or remove validators
+- Change CTA governance or conversion model
+- Add new content types
+- Make structural CSS architecture changes outside requested scope
+- Run image generation in bulk mode
+
+---
+
+## 8. Common Failure Patterns
+
+| Mistake | Correct action |
+|---|---|
+| Writing plans into SYSTEM-TRUTH.md | Put execution state in EXECUTION-MEMORY.md |
+| Adding `type: 'industry'` to a node | Use `industry-detail` or `industry-category` |
+| Hardcoding spacing/font values | Use design tokens |
+| Creating CTA label outside approved config | Route through `CTA_CONFIG` |
+| Skipping validation after a change | Run validate-all → sync → verify clean |
+| Manually editing generated images | Regenerate with `--force` flag |

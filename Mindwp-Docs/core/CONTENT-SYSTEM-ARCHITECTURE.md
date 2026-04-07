@@ -29,7 +29,7 @@ Rules:
 Status: Governing Document
 Version: 1.0
 Authority Level: Governing Document
-Last Updated: 2026-03-26
+Last Updated: 2026-04-07
 
 Consolidated from: BUSINESS-ARCHITECTURE.md, CONTENT-ARCHITECTURE.md, CONTENT-ECOSYSTEM-ARCHITECTURE.md
 
@@ -1183,13 +1183,13 @@ No random internal links. No over-linking. Authority compounds upward. Random cr
 
 ## Content System Integrity Rule (Locked)
 
-MindWP uses an intent-classified content ecosystem. Each content type has a defined role and must not be mixed or flattened. Routing between types is determined by intent classification (Phase 10), not a linear funnel.
+MindWP uses an intent-classified content ecosystem. Each content type has a defined role and must not be mixed or flattened. Routing → **SYSTEM-CONTRACT.md** §6.
 
-- Blog: Routes to resources or services based on intent (PROBLEM→service, SYSTEM→resource, FRAMEWORK→resource/industry). Must NOT appear on service pages.
-- Resources: Must remain system-focused. Route to services or case studies based on intent (ACTIONABLE→service, EDUCATIONAL→service, EXAMPLE→case-study).
+- Blog: Must NOT appear on service pages.
+- Resources: Must remain system-focused.
 - Case Studies: Appear on Industry pages as limited references (1–2 only). Must NOT appear on service pages.
 - Feature: Links to parent service only via SmartRelatedSection graph resolution (Decision 7).
-- Service Pages: Must remain strategic system explanations. Must not act as content hubs for blog posts or case studies.
+- Service Pages: Must remain strategic system explanations. Must not act as content hubs.
 
 ---
 
@@ -1335,6 +1335,19 @@ Content does NOT follow a linear funnel. Phase 10 classifies every node by inten
 - ACTIONABLE (20 resources) → route to matching service
 - EDUCATIONAL (20 resources) → route to matching service
 - EXAMPLE (13 resources) → route to matching case study
+
+## INTENT MODEL (LOCKED)
+
+Intent model, metadata contract, and source generation rules are defined in **SYSTEM-CONTRACT.md** §5.
+
+MindWP uses four locked content intents:
+
+- problem-aware
+- solution-aware
+- system-aware
+- decision-ready
+
+Default mapping, CTA input requirements, and source format are governed by SYSTEM-CONTRACT.md.
 
 **Page Roles:**
 - Blog: learning and problem discovery, routed by intent type.
@@ -1551,7 +1564,11 @@ Controlled by the UI layer (`src/config/ui-intelligence.ts`) via **SmartRelatedS
 
 ## CONVERSION ARCHITECTURE RULES (LOCKED)
 
-This section defines the structural rules for conversion flow, CTA placement, and content progression across all page types. Copy standards and CTA language are defined in **FOUNDATION-AND-POSITIONING.md** §5 and §5a.
+Conversion behavior, CTA system, routing, intensity mapping, placement rules, and data contracts are defined in **SYSTEM-CONTRACT.md** — the single execution authority for all conversion behavior.
+
+Copy standards and CTA language are defined in **FOUNDATION-AND-POSITIONING.md** §5 and §5a.
+
+This section retains only structural rules that govern page composition.
 
 ### Page Visual Hierarchy (Mandatory)
 
@@ -1560,51 +1577,6 @@ All domain templates must follow a clear scanning and decision-making flow:
 Hero → Problem → Solution → Proof → CTA
 
 This is structural enforcement, not design preference. Section spacing and grouping must support this hierarchy.
-
-### CTA Design Variants (Locked)
-
-Three CTA intensity levels exist in the system:
-
-| Variant   | Intensity | Use Case                              |
-|-----------|-----------|---------------------------------------|
-| Primary   | Strong    | Direct consultation — one per screen  |
-| Secondary | Medium    | Approach exploration — supporting CTA |
-| Soft      | Low       | Content progression via intent routing — no commitment |
-
-Rules:
-- One primary CTA per screen maximum
-- No competing CTAs at the same intensity level
-- CTA variant must match page type and priority lane
-
-### CTA Placement Rules (Locked)
-
-| Page Type         | CTA Placement   |
-|-------------------|-----------------|
-| Blog              | End             |
-| Resource          | Mid + End       |
-| Case Study        | End             |
-| Service           | Hero + End      |
-| Feature           | Hero + End      |
-| Industry Detail   | Mid             |
-| Industry Category | End             |
-
-### Conversion Routing (Locked — Phase 10)
-
-The system uses intent-based CTA routing, NOT a linear funnel. JourneyNavigator is deprecated.
-
-SmartRelatedSection is the sole linking mechanism. Routing is determined by content intent classification:
-
-- PROBLEM blogs → matching service CTA
-- SYSTEM blogs → matching resource CTA
-- FRAMEWORK blogs → matching resource or industry CTA
-- ACTIONABLE resources → matching service CTA
-- EDUCATIONAL resources → matching service CTA
-- EXAMPLE resources → matching case study CTA
-
-Rules:
-- No linear journey progression enforced
-- CTA target determined by intent classification, not position in funnel
-- SmartRelatedSection slot rules (Decision 3) and link limits (Decision 4: max 2 sections × 3 items) govern all related content
 
 ### Conversion Section Standardization (Locked)
 
@@ -1702,8 +1674,16 @@ Every content piece must declare:
 - systems[] — which Tier 1 systems it relates to
 - topics[] — which topics it covers
 - industries[] — which industries it applies to (if applicable)
+- system — the single primary system
+- intent — required content intent
 
 Content without metadata is invalid content.
+
+Rules:
+
+- Only one primary system may be declared for CTA use
+- Secondary systems are allowed only for graph relationships
+- source = {type}/{slug} must be auto-generated, not manually defined
 
 ### Step 2 — Follow Content Type Role
 
@@ -1720,6 +1700,12 @@ Content must stay within its assigned role.
 ### Step 3 — Add Required Internal Links
 
 Every content piece must include internal links that follow the ecosystem flow defined in the content relationship and exposure rules. Links must NOT violate the exposure rules locked in this document.
+
+Clarification:
+
+- SmartRelatedSection is the only system-level related-content mechanism
+- Editorial inline links inside body content may be used when contextually justified
+- Inline links must not replace graph-driven related-content slots or create alternate linking systems
 
 ### Step 4 — Pass Pre-Publish Validation
 
@@ -1740,7 +1726,7 @@ If content cannot be placed correctly in the ecosystem flow, it should not be pu
 
 ## 🔒 Validation System (LOCKED)
 
-27 validators run via `node scripts/core/validate-all.mjs`. All must pass before content is considered valid.
+26 validators run via `node scripts/core/validate-all.mjs`. All must pass before content is considered valid.
 
 Categories:
 - **Type & Lint:** TypeScript compilation, ESLint
@@ -1916,13 +1902,11 @@ If the case is a demonstration scenario, it must clearly state that it is a typi
 
 Detailed keyword maps, title queues, and publishing calendars do not belong in this governing document. Those working materials may exist in inventories or editorial planning files.
 
-Planning inventory files:
+Planning inventory:
 
-- BLOG-PLANNING-INVENTORY.md — Blog topic inventory and publishing roadmap
-- Resources-PLANNING-INVENTORY.md — Resource framework and industry-support knowledge assets
-- CaseStudies-PLANNING-INVENTORY.md — Case study scenarios and proof-layer planning
+- planning/CONTENT-INVENTORY.md — Unified content planning (blogs, resources, case studies)
 
-These documents supply the operational content lists that feed the ecosystem. They should not redefine architecture rules.
+Planning docs supply operational content lists. They do not redefine architecture rules.
 
 ---
 
@@ -2107,12 +2091,15 @@ All data flows through the Query API (`src/lib/graph/query.ts`):
 
 UI components (`src/components/system/`) consume the Query API and render data using configuration from `src/config/ui-intelligence.ts`.
 
-System components:
+Active system components:
 - SmartRelatedSection — renders related content per slot, driven by RELATED_SECTION_LABELS config
-- JourneyNavigator — renders next-step navigation, driven by JOURNEY_CONFIG
 - SmartCTA — renders page-type-aware CTA, driven by CTA_CONFIG (intensity: soft/mid/strong)
-- GraphAwareSidebar — renders sidebar with related items + journey card
 - ClusterPageLayout — renders topic/system/industry cluster pages
+
+Removed or deprecated system components:
+
+- JourneyNavigator — REMOVED and must not be treated as active UI architecture
+- GraphAwareSidebar — DEPRECATED and not part of the active template system
 
 No UI component contains hardcoded slugs, scores, or relationship logic.
 

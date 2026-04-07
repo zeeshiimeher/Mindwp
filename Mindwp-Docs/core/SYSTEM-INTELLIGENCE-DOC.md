@@ -1,7 +1,9 @@
 # System Intelligence Manual
 
 > Single source of truth for all MindWP internal systems.
-> Updated: 2025-07-24
+> Updated: 2026-04-07
+>
+> Conversion behavior is governed by **SYSTEM-CONTRACT.md**. This document covers tooling, dashboards, scripts, and reports only.
 
 ---
 
@@ -326,7 +328,7 @@ npx tsx scripts/analyzers/generate-content-gaps.ts
 
 ## 8. Page Tracking
 
-Every content page has a **slug** — a unique identifier like `/blog/lead-generation` or `/services/wordpress-development`.
+Every content page has a **slug** — a unique identifier like `/blog/lead-generation` or `/services/local-seo-authority`.
 
 **How slugs connect to systems:**
 
@@ -342,11 +344,10 @@ Every content page has a **slug** — a unique identifier like `/blog/lead-gener
 |--------|---------|---------|
 | Blog | `/blog/{slug}` | `/blog/lead-generation` |
 | Case Study | `/case-study/{slug}` | `/case-study/flavor-first` |
-| Service | `/services/{category}/{slug}` | `/services/wordpress-development` |
+| Service | `/services/{category}/{slug}` | `/services/local-seo-authority` |
 | Feature | `/features/{category}/{slug}` | `/features/performance/caching` |
-| Industry | `/industries/{category}/{slug}` | `/industries/ecommerce` |
-| Resource | `/resources/{slug}` | `/resources/wordpress-security-checklist` |
-| Topic | `/topics/{slug}` | `/topics/performance` |
+| Industry | `/industries/{category}/{slug}` | `/industries/roofing` |
+| Resource | `/resources/{slug}` | `/resources/lead-handling` |
 
 ---
 
