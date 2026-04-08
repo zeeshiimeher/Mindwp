@@ -1,6 +1,8 @@
 // ─── Image Downloader ───────────────────────────────────────────────
 // Downloads images with rate limiting and retry logic
 
+/* eslint-disable no-console */
+
 import { RATE_LIMIT } from '../config';
 
 let downloadCount = 0;

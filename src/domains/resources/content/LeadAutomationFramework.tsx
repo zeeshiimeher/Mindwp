@@ -165,7 +165,7 @@ const finalCta = {
 
 export const leadAutomationFramework: ResourceData = {
   slug,
-  title: 'Lead Automation Framework for Service Businesses',
+  title: 'Lead Automation Framework Guide',
   description:
     'Understand the four-layer lead automation framework — capture, routing, qualification, and follow-up — that handles leads systematically and converts more enquiries into booked jobs.',
   category: 'ai-lead-handling',
@@ -175,7 +175,7 @@ export const leadAutomationFramework: ResourceData = {
   topics: ['lead-management'],
   primaryService: 'ai-lead-handling',
   seo: {
-    title: 'Lead Automation Framework for Service Businesses',
+    title: 'Lead Automation Framework Guide',
     description:
       'Understand the four-layer lead automation framework — capture, routing, qualification, and follow-up — that handles leads systematically and converts more enquiries into booked jobs.',
     canonical,

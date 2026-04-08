@@ -1,3 +1,6 @@
+import { normalizePath } from '../seo/config';
+import { DEFAULT_OG_IMAGE_PATH } from '../seo/metadata';
+
 import { CANONICAL_INDUSTRIES, CANONICAL_SYSTEMS, CANONICAL_TOPICS } from './canonical';
 import {
   applyDerivedRelationships,
@@ -17,6 +20,62 @@ const BUILDER_SERVICE_SLUGS = new Set(['']);
 const canonicalIndustries = new Set<string>(CANONICAL_INDUSTRIES);
 const canonicalSystems = new Set<string>(CANONICAL_SYSTEMS);
 const canonicalTopics = new Set<string>(CANONICAL_TOPICS);
+
+function asRecord(value: unknown): Record<string, unknown> | null {
+  return value && typeof value === 'object' ? (value as Record<string, unknown>) : null;
+}
+
+function readString(value: unknown): string | undefined {
+  return typeof value === 'string' && value.trim().length > 0 ? value.trim() : undefined;
+}
+
+function getSeoSnapshot(source: Record<string, unknown>, path: string) {
+  const seo = asRecord(source.seo);
+  const hero = asRecord(source.hero);
+  const cta = asRecord(source.cta) ?? asRecord(asRecord(source.templateOverrides)?.cta);
+  const title =
+    readString(seo?.title) ??
+    readString(source.title) ??
+    readString(source.metaTitle) ??
+    readString(hero?.title);
+  const description =
+    readString(seo?.description) ??
+    readString(source.description) ??
+    readString(source.metaDescription) ??
+    readString(hero?.description);
+  const canonical = normalizePath(readString(seo?.canonical) ?? path);
+  const openGraph = asRecord(seo?.openGraph);
+  const robots = asRecord(source.robots);
+
+  return {
+    title,
+    description,
+    canonical,
+    openGraph: {
+      title: readString(openGraph?.title) ?? title,
+      description: readString(openGraph?.description) ?? description,
+      url: normalizePath(readString(openGraph?.url) ?? canonical),
+      images: [DEFAULT_OG_IMAGE_PATH],
+    },
+    robots: {
+      index:
+        typeof robots?.index === 'boolean'
+          ? robots.index
+          : typeof robots?.noindex === 'boolean'
+            ? !robots.noindex
+            : true,
+      follow:
+        typeof robots?.follow === 'boolean'
+          ? robots.follow
+          : typeof robots?.nofollow === 'boolean'
+            ? !robots.nofollow
+            : true,
+    },
+    ...(seo ? { seo } : {}),
+    ...(hero ? { hero } : {}),
+    ...(cta ? { cta } : {}),
+  };
+}
 
 function validateIdentifiers(nodeId: string, carrier: MetadataCarrier): void {
   for (const industry of carrier.industries ?? []) {
@@ -107,11 +166,13 @@ export function buildContentGraph(
     }
 
     const id = `service:${service.slug}`;
+    const seoSnapshot = getSeoSnapshot(service as unknown as Record<string, unknown>, service.path);
     graph[id] = {
       id,
       slug: service.slug,
       type: 'service',
       path: service.path,
+      ...seoSnapshot,
       systems: [service.slug],
       ...getNodeMetadata({ systems: service.systems, topics: service.topics }),
     };
@@ -120,22 +181,26 @@ export function buildContentGraph(
   for (const industry of Object.values(registries.industries)) {
     if (industry.type === 'category') {
       const id = `industry-category:${industry.slug}`;
+      const path = `/industries/${industry.slug}`;
       graph[id] = {
         id,
         slug: industry.slug,
         type: 'industry-category',
-        path: `/industries/${industry.slug}`,
+        path,
+        ...getSeoSnapshot(industry as unknown as Record<string, unknown>, path),
         ...getNodeMetadata(industry),
       };
       continue;
     }
 
     const id = `industry-detail:${industry.slug}`;
+    const path = `/industries/${industry.parentSlug}/${industry.slug}`;
     graph[id] = {
       id,
       slug: industry.slug,
       type: 'industry-detail',
-      path: `/industries/${industry.parentSlug}/${industry.slug}`,
+      path,
+      ...getSeoSnapshot(industry as unknown as Record<string, unknown>, path),
       parent: industry.parentSlug,
       ...getNodeMetadata(industry),
     };
@@ -143,44 +208,52 @@ export function buildContentGraph(
 
   for (const feature of registries.features) {
     const id = `feature:${feature.slug}`;
+    const path = `/features/${feature.slug}`;
     graph[id] = {
       id,
       slug: feature.slug,
       type: 'feature',
-      path: `/features/${feature.slug}`,
+      path,
+      ...getSeoSnapshot(feature as unknown as Record<string, unknown>, path),
       ...getNodeMetadata(feature),
     };
   }
 
   for (const post of Object.values(registries.blogPosts)) {
     const id = `blog:${post.slug}`;
+    const path = `/blog/${post.slug}`;
     graph[id] = {
       id,
       slug: post.slug,
       type: 'blog',
-      path: `/blog/${post.slug}`,
+      path,
+      ...getSeoSnapshot(post as unknown as Record<string, unknown>, path),
       ...getNodeMetadata(post),
     };
   }
 
   for (const resource of Object.values(registries.resources)) {
     const id = `resource:${resource.slug}`;
+    const path = `/resources/${resource.slug}`;
     graph[id] = {
       id,
       slug: resource.slug,
       type: 'resource',
-      path: `/resources/${resource.slug}`,
+      path,
+      ...getSeoSnapshot(resource as unknown as Record<string, unknown>, path),
       ...getNodeMetadata(resource as MetadataCarrier),
     };
   }
 
   for (const caseStudy of Object.values(registries.caseStudies)) {
     const id = `case-study:${caseStudy.slug}`;
+    const path = `/case-study/${caseStudy.slug}`;
     graph[id] = {
       id,
       slug: caseStudy.slug,
       type: 'case-study',
-      path: `/case-study/${caseStudy.slug}`,
+      path,
+      ...getSeoSnapshot(caseStudy as unknown as Record<string, unknown>, path),
       ...getNodeMetadata(caseStudy),
     };
   }

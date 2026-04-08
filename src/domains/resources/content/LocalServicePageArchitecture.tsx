@@ -162,7 +162,7 @@ export const localServicePageArchitecture: ResourceData = {
   publishedAt: '2025-11-10',
   systems: ['local-seo-authority', 'smart-website-systems'],
   industries: [],
-  topics: ['service-pages'],
+  topics: ['service-pages', 'local-service-pages'],
   primaryService: 'local-seo-authority',
   seo: {
     title: 'Local Service Page Architecture',

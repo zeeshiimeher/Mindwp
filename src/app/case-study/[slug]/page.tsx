@@ -72,7 +72,6 @@ export async function generateMetadata({
     description,
     path: canonicalPath,
     type: 'article',
-    image: getImage(slug, 'case-studies', 'featured-overlay') ?? undefined,
   });
 }
 

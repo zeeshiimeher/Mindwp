@@ -5,7 +5,8 @@ export const revalidate = false;
 
 export const metadata = buildMetadata({
   title: 'Image System Dashboard',
-  description: 'Visual debug dashboard — image generation scores, issues, and learning memory.',
+  description:
+    'Internal image-system dashboard for generation scores, operational issues, and image learning memory.',
   path: '/image-dashboard',
   noindex: true,
   nofollow: true,

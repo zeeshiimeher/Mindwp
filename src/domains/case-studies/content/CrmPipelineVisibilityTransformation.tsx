@@ -160,7 +160,7 @@ function buildCrmPipelineVisibilityTransformation(): CaseStudyData {
     industryLabel: 'Home Services',
     industries: ['roofing'],
     systems: ['revenue-growth'],
-    topics: ['crm-pipeline', 'lead-management', 'revenue-tracking'],
+    topics: ['crm-pipeline', 'lead-management', 'revenue-tracking', 'crm-visibility'],
     publishDate: '2026-06-01',
     client: 'Greenway Property Maintenance',
     location: 'Southampton, UK',

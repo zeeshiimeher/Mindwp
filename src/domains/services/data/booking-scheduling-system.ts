@@ -6,8 +6,8 @@ import type { ServicePageData } from '../types';
 
 export const bookingSchedulingSystemPage = {
   slug: 'booking-scheduling-system',
-  systems: ['smart-website-systems', 'ai-lead-handling'],
-  topics: ['booking-automation', 'no-show-reduction'],
+  systems: ['smart-website-systems'],
+  topics: ['booking-automation', 'no-show-reduction', 'service-reminders'],
   keywords: [
     'booking automation system for service business',
     'appointment scheduling system',

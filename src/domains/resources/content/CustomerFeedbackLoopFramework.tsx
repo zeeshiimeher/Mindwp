@@ -162,7 +162,7 @@ export const customerFeedbackLoopFramework: ResourceData = {
   publishedAt: '2025-12-13',
   systems: ['reputation-review'],
   industries: [],
-  topics: ['customer-feedback'],
+  topics: ['customer-feedback', 'feedback-loops'],
   primaryService: 'reputation-review',
   seo: {
     title: 'Customer Feedback Loop Framework',

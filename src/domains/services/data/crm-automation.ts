@@ -55,8 +55,8 @@ import type { ServicePageData } from '../types';
 
 export const crmAutomationPage = {
   slug: 'crm-infrastructure-implementation',
-  systems: ['crm-automation', 'revenue-growth'],
-  topics: ['crm-pipeline', 'crm-integration'],
+  systems: ['crm-automation'],
+  topics: ['crm-pipeline', 'crm-integration', 'lead-qualification', 'pipeline-architecture'],
   keywords: [
     'crm infrastructure implementation',
     'crm setup for service business',

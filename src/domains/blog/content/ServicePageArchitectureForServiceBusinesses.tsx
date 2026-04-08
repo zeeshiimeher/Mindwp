@@ -28,7 +28,7 @@ export const servicePageArchitectureForServiceBusinesses: BlogPostData = {
   category: 'smart-website-systems',
   industries: [],
   systems: ['smart-website-systems'],
-  topics: ['service-page-architecture'],
+  topics: ['service-page-architecture', 'service-pages'],
   primaryKeyword: 'service page architecture for service businesses',
   supportingKeywords: [
     'service page structure',

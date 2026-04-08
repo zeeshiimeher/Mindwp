@@ -28,7 +28,7 @@ export const negativeReviewsForAutoRepairShops: BlogPostData = {
   category: 'reputation-review',
   industries: ['automotive'],
   systems: ['reputation-review'],
-  topics: ['negative-review-response'],
+  topics: ['negative-review-response', 'negative-reviews'],
   primaryKeyword: 'negative reviews for auto repair shops',
   supportingKeywords: [
     'auto repair bad reviews',

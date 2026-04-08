@@ -1,17 +1,17 @@
 // ─── Main Pipeline Orchestrator ─────────────────────────────────────
 // Coordinates the full image generation pipeline from content to output
 
-import fs from 'fs';
-import path from 'path';
+/* eslint-disable no-console */
+
 import sharp from 'sharp';
 
-import { DOMAIN_IMAGE_RULES, getImageOutputPath, IMAGE_SIZES } from '../config';
+import { DOMAIN_IMAGE_RULES, getImageOutputPath } from '../config';
 import { applyFixes, clampOverrides } from '../debug/autoTune';
 import { debugImage } from '../debug/debugImage';
 import { loadLearnedOverrides, saveWinningConfig } from '../debug/learningMemory';
 import { appendImageLog } from '../debug/logger';
 import { hasImage, isHashTooSimilar, isImageUsed, registerImage } from '../dedup/imageIndex';
-import { analyzeImage, detectBrightness } from '../intelligence/imageAnalysis';
+import { analyzeImage } from '../intelligence/imageAnalysis';
 import { checkImageSafety } from '../intelligence/safety';
 import { rankImages, scoreImage } from '../intelligence/scoring';
 import { generatePerceptualHash } from '../intelligence/similarity';
@@ -390,11 +390,18 @@ export async function processImage(
         });
       }
 
-      await saveImage(bestClean!, cleanPath);
+      if (!bestClean || !bestOverlay) {
+        console.warn(
+          `[pipeline] Featured generation produced no final output for ${domain}/${slug}`
+        );
+        continue;
+      }
+
+      await saveImage(bestClean, cleanPath);
       console.log(`[pipeline] Saved: ${cleanPath}`);
 
       // Embed EXIF metadata into overlay image
-      const overlayWithExif = await sharp(bestOverlay!)
+      const overlayWithExif = await sharp(bestOverlay)
         .withMetadata(exifMeta)
         .webp({ quality: 90 })
         .toBuffer();

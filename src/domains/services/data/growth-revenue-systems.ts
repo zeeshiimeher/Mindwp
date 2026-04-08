@@ -29,7 +29,15 @@ interface AuditArea {
 export const growthRevenueSystemsPage = {
   slug: 'growth-revenue-systems',
   systems: ['revenue-growth'],
-  topics: ['conversion-optimization', 'pipeline-visibility', 'revenue-tracking'],
+  topics: [
+    'conversion-optimization',
+    'pipeline-visibility',
+    'conversion-tracking',
+    'customer-lifetime-value',
+    'lifetime-value',
+    'revenue-tracking',
+    'revenue-visibility',
+  ],
   keywords: [
     'revenue growth system for service business',
     'lead to revenue optimization system',

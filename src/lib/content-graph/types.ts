@@ -1,3 +1,5 @@
+import type { OpenGraphData } from '@/domains/shared/seo';
+
 export type ContentNodeType =
   | 'service'
   | 'industry-category'
@@ -23,6 +25,17 @@ export interface ContentGraphNode {
   slug: string;
   type: ContentNodeType;
   path: string;
+  title?: string;
+  description?: string;
+  canonical?: string;
+  openGraph?: Partial<OpenGraphData> & { images?: string[]; url?: string };
+  robots?: {
+    index: boolean;
+    follow: boolean;
+  };
+  seo?: Record<string, unknown>;
+  hero?: Record<string, unknown>;
+  cta?: Record<string, unknown>;
   parent?: string;
   vertical?: Vertical;
   coreFramework?: boolean;

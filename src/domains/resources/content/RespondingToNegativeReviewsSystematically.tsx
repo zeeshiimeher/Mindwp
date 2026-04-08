@@ -115,17 +115,17 @@ const finalCta = {
 
 export const respondingToNegativeReviewsSystematically: ResourceData = {
   slug,
-  title: 'Responding to Negative Reviews Systematically',
+  title: 'Responding to Negative Reviews Systematically Guide',
   description:
     'Build a systematic process for handling negative reviews with professional templates, fast response times, and resolution follow-up that protects your reputation.',
   category: 'reputation-review',
   publishedAt: '2026-01-05',
   systems: ['reputation-review'],
   industries: [],
-  topics: ['negative-reviews'],
+  topics: ['negative-reviews', 'negative-review-response'],
   primaryService: 'reputation-review',
   seo: {
-    title: 'Responding to Negative Reviews Systematically',
+    title: 'Responding to Negative Reviews Systematically Guide',
     description:
       'Build a systematic process for handling negative reviews with professional templates, fast response times, and resolution follow-up that protects your reputation.',
     canonical,

@@ -28,7 +28,7 @@ export const authoritySignalsForLocalSearch: BlogPostData = {
   category: 'local-authority-seo',
   industries: [],
   systems: ['local-seo-authority'],
-  topics: ['local-authority'],
+  topics: ['local-authority', 'authority-signals'],
   primaryKeyword: 'authority signals for local search',
   supportingKeywords: [
     'local authority signals',

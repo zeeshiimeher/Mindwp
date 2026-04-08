@@ -6,8 +6,15 @@ import type { ServicePageData } from '../types';
 
 export const localSeoAuthorityPage = {
   slug: 'local-seo-authority',
-  systems: ['local-seo-authority', 'smart-website-systems'],
-  topics: ['local-seo', 'local-visibility', 'google-business-profile'],
+  systems: ['local-seo-authority'],
+  topics: [
+    'local-seo',
+    'local-visibility',
+    'google-business-profile',
+    'local-authority',
+    'authority-signals',
+    'local-service-pages',
+  ],
   keywords: [
     'local seo for service businesses',
     'local seo system for contractors',

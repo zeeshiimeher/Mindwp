@@ -6,7 +6,7 @@ import path from 'path';
 
 import { DATA_FILES } from '../config';
 import { isTooSimilar } from '../intelligence/similarity';
-import type { ImageIndex, ImageIndexEntry, ImageType, ProviderName } from '../types';
+import type { ImageIndex, ImageType, ProviderName } from '../types';
 
 /** Load image index from disk */
 export function loadImageIndex(): ImageIndex {
@@ -44,7 +44,8 @@ export function isHashTooSimilar(hash: string): boolean {
 
   for (const entry of Object.values(index)) {
     for (const key of ['featured', 'featured-clean', 'featured-overlay', 'content'] as const) {
-      if (entry[key]?.hash) existingHashes.push(entry[key]!.hash);
+      const data = entry[key];
+      if (data?.hash) existingHashes.push(data.hash);
     }
   }
 
@@ -116,7 +117,8 @@ export function getAllHashes(): string[] {
 
   for (const entry of Object.values(index)) {
     for (const key of ['featured', 'featured-clean', 'featured-overlay', 'content'] as const) {
-      if (entry[key]?.hash) hashes.push(entry[key]!.hash);
+      const data = entry[key];
+      if (data?.hash) hashes.push(data.hash);
     }
   }
 

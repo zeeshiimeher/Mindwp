@@ -50,6 +50,7 @@ These catch incomplete template payloads and weak section-cardinality data befor
 - Git is used to record and protect the current local state with frequent commits.
 - Preferred workflow: change files locally, validate, run system sync when needed, then commit the resulting code and docs.
 - Do not use Git to overwrite the working folder unless you explicitly intend to do that.
+- Keep the repo root clean: runtime logs, pid files, and temporary command output belong under `_workspace/`, not at the top level.
 
 ## Smoke Tests (Routing)
 

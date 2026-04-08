@@ -137,7 +137,7 @@ const finalCta = {
 
 export const trackingCustomerLifetimeValueUsingCrm: ResourceData = {
   slug,
-  title: 'Tracking Customer Lifetime Value Using CRM',
+  title: 'Tracking Customer Lifetime Value Using CRM Guide',
   description:
     'Learn how to calculate and track Customer Lifetime Value using CRM data to make better acquisition, retention, and pricing decisions for your service business.',
   category: 'revenue-growth',
@@ -147,7 +147,7 @@ export const trackingCustomerLifetimeValueUsingCrm: ResourceData = {
   topics: ['customer-lifetime-value'],
   primaryService: 'crm-automation',
   seo: {
-    title: 'Tracking Customer Lifetime Value Using CRM',
+    title: 'Tracking Customer Lifetime Value Using CRM Guide',
     description:
       'Learn how to calculate and track Customer Lifetime Value using CRM data to make better acquisition, retention, and pricing decisions for your service business.',
     canonical,

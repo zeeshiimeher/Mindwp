@@ -16,13 +16,13 @@ const BLOCKING_METADATA_KEYS = {
 };
 
 const ADVISORY_METADATA_KEYS = {
-  blog: ['title'],
-  resource: ['title', 'description'],
-  service: ['title'],
-  feature: ['hero', 'cta'],
-  'industry-detail': ['seo', 'hero', 'cta'],
-  'industry-category': ['seo', 'hero', 'cta'],
-  'case-study': ['seo'],
+  blog: ['title', 'description', 'canonical', 'openGraph', 'robots'],
+  resource: ['title', 'description', 'canonical', 'openGraph', 'robots'],
+  service: ['title', 'description', 'canonical', 'openGraph', 'robots'],
+  feature: ['title', 'description', 'canonical', 'openGraph', 'robots'],
+  'industry-detail': ['title', 'description', 'canonical', 'openGraph', 'robots'],
+  'industry-category': ['title', 'description', 'canonical', 'openGraph', 'robots'],
+  'case-study': ['title', 'description', 'canonical', 'openGraph', 'robots'],
 };
 
 function uniqueNormalized(values) {

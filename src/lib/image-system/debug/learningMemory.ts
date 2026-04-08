@@ -10,7 +10,6 @@ import { DATA_DIR } from '../config';
 import type {
   ContentDomain,
   LayoutVariant,
-  LearnedConfig,
   LearningMemory,
   TitleBucket,
   TuneOverrides,

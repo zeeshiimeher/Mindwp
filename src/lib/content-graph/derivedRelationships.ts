@@ -6,6 +6,8 @@
  * No limits at the graph layer — limits exist only at the resolver layer.
  */
 
+/* eslint-disable no-console */
+
 import { hasOverlap, scoreRelationship } from './scoring';
 import type { AttributedEdge, ContentGraphNode, ContentNodeType } from './types';
 

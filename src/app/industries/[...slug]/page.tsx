@@ -110,7 +110,8 @@ export async function generateMetadata({
   if (industry.seo.openGraph) {
     metadata.openGraph = {
       ...metadata.openGraph,
-      ...industry.seo.openGraph,
+      title: industry.seo.openGraph.title ?? metadata.openGraph?.title,
+      description: industry.seo.openGraph.description ?? metadata.openGraph?.description,
     };
   }
 

@@ -109,7 +109,7 @@ function detectIssues(input: DebugInput): { issues: string[]; fixes: DebugFixAct
 
 // ─── Scoring ────────────────────────────────────────────────────────
 
-function calculateScore(input: DebugInput, issues: string[]): number {
+function calculateScore(input: DebugInput): number {
   const textAreaRatio = input.textBlockWidth / input.imageWidth;
 
   // ── Factor scores (each 0–10) ──
@@ -240,7 +240,7 @@ function calculateConversionScore(input: DebugInput): number {
 
 export function debugImage(input: DebugInput): DebugResult {
   const { issues, fixes } = detectIssues(input);
-  const baseScore = calculateScore(input, issues);
+  const baseScore = calculateScore(input);
   const ctrScore = calculateCtrScore(input);
   const synergyScore = calculateSynergyScore(input);
   const conversionScore = calculateConversionScore(input);

@@ -63,7 +63,6 @@ export async function generateMetadata({
     keywords: post.seo.keywords,
     path: canonicalPath,
     type: 'article',
-    image: getImage(slug, 'blog', 'featured-overlay') ?? undefined,
   });
 }
 

@@ -47,14 +47,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'ai-lead-handling': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
@@ -157,32 +149,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
     },
     'crm-infrastructure-implementation': {
-      services: [
-        {
-          title: 'Marketing Automation Setup',
-          description:
-            'Marketing automation setup for service businesses that need structured follow-up, reminders, reactivation, and lifecycle messaging without relying on manual chasing.',
-          slug: 'marketing-automation-setup',
-          path: '/services/marketing-automation-setup',
-          nodeType: 'service',
-        },
-        {
-          title: 'Conversion Funnel System',
-          description:
-            'Conversion funnel systems for service businesses that need clearer page-to-enquiry journeys, fewer drop-offs, better offer structure, and more measurable funnel stages.',
-          slug: 'conversion-funnel-system',
-          path: '/services/conversion-funnel-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Funnel & Landing Page Development',
-          description:
-            'Funnel and landing page development for service businesses that need focused offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
-          slug: 'funnel-landing-page-development',
-          path: '/services/funnel-landing-page-development',
-          nodeType: 'service',
-        },
-      ],
+      services: [],
     },
     divi5: {
       services: [
@@ -353,32 +320,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
     },
     'local-seo-authority': {
-      services: [
-        {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Smart Website Systems',
-          description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration & Platform Consolidation',
-          description:
-            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
-          nodeType: 'service',
-        },
-      ],
+      services: [],
     },
     'marketing-automation-setup': {
       services: [
@@ -411,14 +353,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'missed-call-recovery-system': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'AI Lead Handling Systems',
           description:
             'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
@@ -446,22 +380,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/review-automation-system',
           nodeType: 'service',
         },
-        {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Smart Website Systems',
-          description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
       ],
     },
     'review-automation-system': {
@@ -472,22 +390,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Smart Website Systems',
-          description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
       ],
@@ -523,19 +425,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'system-migration-platform-consolidation': {
       services: [
         {
-          title: 'WordPress Website Development',
-          description:
-            'Structured WordPress website development for service businesses that need clear site architecture, better enquiry flow, cleaner implementation, and long-term maintainability.',
-          slug: 'wordpress-development',
-          path: '/services/wordpress-development',
-          nodeType: 'service',
-        },
-        {
           title: 'Smart Website Systems',
           description:
             'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'WordPress Website Development',
+          description:
+            'Structured WordPress website development for service businesses that need clear site architecture, better enquiry flow, cleaner implementation, and long-term maintainability.',
+          slug: 'wordpress-development',
+          path: '/services/wordpress-development',
           nodeType: 'service',
         },
         {
@@ -550,14 +452,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     },
     'unified-communication-system': {
       services: [
-        {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
         {
           title: 'Missed Call Recovery System',
           description:
@@ -579,19 +473,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'website-redesign-system-rebuild': {
       services: [
         {
-          title: 'WordPress Website Development',
-          description:
-            'Structured WordPress website development for service businesses that need clear site architecture, better enquiry flow, cleaner implementation, and long-term maintainability.',
-          slug: 'wordpress-development',
-          path: '/services/wordpress-development',
-          nodeType: 'service',
-        },
-        {
           title: 'Smart Website Systems',
           description:
             'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'WordPress Website Development',
+          description:
+            'Structured WordPress website development for service businesses that need clear site architecture, better enquiry flow, cleaner implementation, and long-term maintainability.',
+          slug: 'wordpress-development',
+          path: '/services/wordpress-development',
           nodeType: 'service',
         },
         {
@@ -637,14 +531,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     aichat: {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
@@ -660,24 +546,32 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
+        {
+          title: 'Unified Communication System',
+          description:
+            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
       ],
     },
     calendars: {
       services: [
-        {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
         {
           title: 'Smart Website Systems',
           description:
             'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Booking & Scheduling System',
+          description:
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
         {
@@ -721,14 +615,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     inbox: {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
@@ -742,6 +628,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System',
+          description:
+            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
@@ -777,14 +671,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     voicecalls: {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
@@ -798,6 +684,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System',
+          description:
+            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
@@ -843,19 +737,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'Smart Website Systems',
           description:
-            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Local Authority & SEO Systems',
+          title: 'CRM Infrastructure Implementation',
           description:
-            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
       ],
@@ -895,19 +789,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Website + CRM Integration Explained',
-          description:
-            'Understand how website-CRM integration connects form submissions, booking data, and visitor behaviour directly to your CRM pipeline for faster response and better tracking.',
-          slug: 'website-crm-integration-explained',
-          path: '/resources/website-crm-integration-explained',
-          nodeType: 'resource',
-        },
-        {
           title: 'Reputation Monitoring Systems',
           description:
             'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
           slug: 'reputation-monitoring-systems',
           path: '/resources/reputation-monitoring-systems',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Website + CRM Integration Explained',
+          description:
+            'Understand how website-CRM integration connects form submissions, booking data, and visitor behaviour directly to your CRM pipeline for faster response and better tracking.',
+          slug: 'website-crm-integration-explained',
+          path: '/resources/website-crm-integration-explained',
           nodeType: 'resource',
         },
       ],
@@ -931,11 +825,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Local Authority & SEO Systems',
+          title: 'CRM Infrastructure Implementation',
           description:
-            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
       ],
@@ -1003,19 +897,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'Missed Call Recovery System',
           description:
-            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'Unified Communication System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
@@ -1083,19 +977,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'Missed Call Recovery System',
           description:
-            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'Unified Communication System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
@@ -1171,11 +1065,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Local Authority & SEO Systems',
+          title: 'Booking & Scheduling System',
           description:
-            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -1251,11 +1145,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'Missed Call Recovery System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
       ],
@@ -1323,19 +1217,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
+          title: 'Smart Website Systems',
+          description:
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
           title: 'Review Automation System',
           description:
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Local Authority & SEO Systems',
-          description:
-            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -1395,27 +1289,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     consultants: {
       services: [
         {
-          title: 'Reputation & Review Systems',
+          title: 'Smart Website Systems',
           description:
-            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'Booking & Scheduling System',
           description:
-            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
         {
-          title: 'Local Authority & SEO Systems',
+          title: 'CRM Infrastructure Implementation',
           description:
-            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
       ],
@@ -1455,19 +1349,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Website + CRM Integration Explained',
-          description:
-            'Understand how website-CRM integration connects form submissions, booking data, and visitor behaviour directly to your CRM pipeline for faster response and better tracking.',
-          slug: 'website-crm-integration-explained',
-          path: '/resources/website-crm-integration-explained',
-          nodeType: 'resource',
-        },
-        {
           title: 'Sales Pipeline Visibility Framework',
           description:
             'Build a pipeline visibility framework that shows real-time deal health, flags stalled deals, and provides accurate revenue forecasting for your service business.',
           slug: 'sales-pipeline-visibility-framework',
           path: '/resources/sales-pipeline-visibility-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Website + CRM Integration Explained',
+          description:
+            'Understand how website-CRM integration connects form submissions, booking data, and visitor behaviour directly to your CRM pipeline for faster response and better tracking.',
+          slug: 'website-crm-integration-explained',
+          path: '/resources/website-crm-integration-explained',
           nodeType: 'resource',
         },
       ],
@@ -1483,19 +1377,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
+          title: 'Smart Website Systems',
+          description:
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
           title: 'Review Automation System',
           description:
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Local Authority & SEO Systems',
-          description:
-            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -1563,19 +1457,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
+          title: 'Smart Website Systems',
+          description:
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
           title: 'Review Automation System',
           description:
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Local Authority & SEO Systems',
-          description:
-            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -1651,11 +1545,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'Unified Communication System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
@@ -1811,11 +1705,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Local Authority & SEO Systems',
+          title: 'CRM Infrastructure Implementation',
           description:
-            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
       ],
@@ -1883,19 +1777,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'Missed Call Recovery System',
           description:
-            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'Unified Communication System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
@@ -1971,11 +1865,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'Missed Call Recovery System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
       ],
@@ -2051,11 +1945,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'Local Authority & SEO Systems',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -2203,19 +2097,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'Smart Website Systems',
           description:
-            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Local Authority & SEO Systems',
+          title: 'CRM Infrastructure Implementation',
           description:
-            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
       ],
@@ -2283,19 +2177,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
+          title: 'Smart Website Systems',
+          description:
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
           title: 'Review Automation System',
           description:
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Local Authority & SEO Systems',
-          description:
-            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -2355,19 +2249,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'mobile-mechanics': {
       services: [
         {
-          title: 'Reputation & Review Systems',
+          title: 'Missed Call Recovery System',
           description:
-            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
+            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'Unified Communication System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
         {
@@ -2435,27 +2329,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'mortgage-brokers': {
       services: [
         {
-          title: 'Reputation & Review Systems',
+          title: 'Smart Website Systems',
           description:
-            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'Booking & Scheduling System',
           description:
-            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
         {
-          title: 'Local Authority & SEO Systems',
+          title: 'CRM Infrastructure Implementation',
           description:
-            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
       ],
@@ -2603,19 +2497,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
+          title: 'Smart Website Systems',
+          description:
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
           title: 'Booking & Scheduling System',
           description:
             'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
           slug: 'booking-scheduling-system',
           path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Local Authority & SEO Systems',
-          description:
-            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -2655,14 +2549,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'HVAC Emergency Call Handling System',
-          description:
-            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
-          slug: 'hvac-emergency-call-handling-system',
-          path: '/resources/hvac-emergency-call-handling-system',
-          nodeType: 'resource',
-        },
-        {
           title: 'Local Service Page Architecture',
           description:
             'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
@@ -2670,32 +2556,40 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/local-service-page-architecture',
           nodeType: 'resource',
         },
+        {
+          title: 'Customer Feedback Loop Framework',
+          description:
+            'Build a structured feedback loop that captures customer sentiment after every job, routes issues to private resolution, and drives continuous service improvement.',
+          slug: 'customer-feedback-loop-framework',
+          path: '/resources/customer-feedback-loop-framework',
+          nodeType: 'resource',
+        },
       ],
     },
     'property-managers': {
       services: [
         {
-          title: 'Reputation & Review Systems',
+          title: 'Smart Website Systems',
           description:
-            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'Booking & Scheduling System',
           description:
-            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
         {
-          title: 'Local Authority & SEO Systems',
+          title: 'CRM Infrastructure Implementation',
           description:
-            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
       ],
@@ -2771,11 +2665,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Local Authority & SEO Systems',
+          title: 'CRM Infrastructure Implementation',
           description:
-            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
       ],
@@ -2835,19 +2729,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     realtors: {
       services: [
         {
-          title: 'Reputation & Review Systems',
+          title: 'Smart Website Systems',
           description:
-            'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'CRM Infrastructure Implementation',
           description:
-            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
         {
@@ -2923,19 +2817,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
+          title: 'Smart Website Systems',
+          description:
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
           title: 'Review Automation System',
           description:
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Local Authority & SEO Systems',
-          description:
-            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -3011,11 +2905,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'Unified Communication System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
@@ -3083,19 +2977,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'Smart Website Systems',
           description:
-            'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Local Authority & SEO Systems',
+          title: 'CRM Infrastructure Implementation',
           description:
-            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
       ],
@@ -3163,19 +3057,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
+          title: 'Smart Website Systems',
+          description:
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
           title: 'Review Automation System',
           description:
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Local Authority & SEO Systems',
-          description:
-            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -3243,19 +3137,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
+          title: 'Smart Website Systems',
+          description:
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
           title: 'Review Automation System',
           description:
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Local Authority & SEO Systems',
-          description:
-            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -3323,19 +3217,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
+          title: 'Smart Website Systems',
+          description:
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
           title: 'Review Automation System',
           description:
             'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Local Authority & SEO Systems',
-          description:
-            'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
       ],
@@ -3459,7 +3353,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Google Business Profile System Architecture',
+          title: 'Google Business Profile System Architecture Guide',
           description:
             'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
           slug: 'google-business-profile-system-architecture',
@@ -3575,7 +3469,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Service Reminder Automation',
+          title: 'Automotive Service Reminder Automation Framework',
           description:
             'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
           slug: 'automotive-service-reminder-automation',
@@ -3675,7 +3569,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Building Revenue Visibility Through CRM Tracking',
+          title: 'Building Revenue Visibility Through CRM Tracking Guide',
           description:
             'Learn how to build CRM-based revenue tracking that shows exactly where your revenue comes from, where it leaks, and where the biggest growth opportunities exist.',
           slug: 'building-revenue-visibility-through-crm-tracking',
@@ -3683,7 +3577,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Service Reminder Automation',
+          title: 'Automotive Service Reminder Automation Framework',
           description:
             'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
           slug: 'automotive-service-reminder-automation',
@@ -3845,7 +3739,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Service Reminder Automation',
+          title: 'Automotive Service Reminder Automation Framework',
           description:
             'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
           slug: 'automotive-service-reminder-automation',
@@ -3953,7 +3847,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Service Reminder Automation',
+          title: 'Automotive Service Reminder Automation Framework',
           description:
             'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
           slug: 'automotive-service-reminder-automation',
@@ -4007,7 +3901,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Conversion Tracking for Service Businesses',
+          title: 'Conversion Tracking for Service Businesses Guide',
           description:
             'Learn how to set up conversion tracking that connects website activity to CRM pipeline outcomes and measures which pages and channels produce paying customers.',
           slug: 'conversion-tracking-for-service-businesses',
@@ -4061,7 +3955,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Conversion Tracking for Service Businesses',
+          title: 'Conversion Tracking for Service Businesses Guide',
           description:
             'Learn how to set up conversion tracking that connects website activity to CRM pipeline outcomes and measures which pages and channels produce paying customers.',
           slug: 'conversion-tracking-for-service-businesses',
@@ -4099,14 +3993,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'crm-pipeline-architecture-for-service-businesses': {
       resources: [
         {
-          title: 'CRM Pipeline Setup Guide for Salons',
-          description:
-            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
-          slug: 'crm-pipeline-setup-guide-for-salons',
-          path: '/resources/crm-pipeline-setup-guide-for-salons',
-          nodeType: 'resource',
-        },
-        {
           title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
           description:
             'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
@@ -4120,6 +4006,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
           slug: 'automotive-crm-pipeline-for-repair-jobs',
           path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Architecture',
+          description:
+            'Learn how to architect a CRM pipeline with custom stages, automated follow-up, and accurate forecasting that mirrors your actual sales process.',
+          slug: 'crm-pipeline-architecture',
+          path: '/resources/crm-pipeline-architecture',
           nodeType: 'resource',
         },
       ],
@@ -4161,7 +4055,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'How Review Automation Improves Local Authority',
+          title: 'How Review Automation Improves Local Authority Guide',
           description:
             'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
           slug: 'how-review-automation-improves-local-authority',
@@ -4215,7 +4109,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'How Review Automation Improves Local Authority',
+          title: 'How Review Automation Improves Local Authority Guide',
           description:
             'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
           slug: 'how-review-automation-improves-local-authority',
@@ -4315,7 +4209,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'future-local-seo-after-google-business-profile-automation': {
       resources: [
         {
-          title: 'Google Business Profile System Architecture',
+          title: 'Google Business Profile System Architecture Guide',
           description:
             'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
           slug: 'google-business-profile-system-architecture',
@@ -4369,7 +4263,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'google-business-profile-for-hvac-companies': {
       resources: [
         {
-          title: 'Google Business Profile System Architecture',
+          title: 'Google Business Profile System Architecture Guide',
           description:
             'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
           slug: 'google-business-profile-system-architecture',
@@ -4485,7 +4379,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Google Business Profile System Architecture',
+          title: 'Google Business Profile System Architecture Guide',
           description:
             'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
           slug: 'google-business-profile-system-architecture',
@@ -4655,7 +4549,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Service Reminder Automation',
+          title: 'Automotive Service Reminder Automation Framework',
           description:
             'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
           slug: 'automotive-service-reminder-automation',
@@ -4925,7 +4819,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Lead Automation Framework for Service Businesses',
+          title: 'Lead Automation Framework Guide',
           description:
             'Understand the four-layer lead automation framework — capture, routing, qualification, and follow-up — that handles leads systematically and converts more enquiries into booked jobs.',
           slug: 'lead-automation-framework',
@@ -5141,7 +5035,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Lead Routing Models for Service Companies',
+          title: 'Lead Routing Models for Service Companies Guide',
           description:
             'Understand the four lead routing models — round-robin, skill-based, territory-based, and priority-based — and how to implement the right model for your service business.',
           slug: 'lead-routing-models-for-service-companies',
@@ -5233,7 +5127,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'local-seo-for-roofing-companies-explained': {
       resources: [
         {
-          title: 'Google Business Profile System Architecture',
+          title: 'Google Business Profile System Architecture Guide',
           description:
             'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
           slug: 'google-business-profile-system-architecture',
@@ -5295,7 +5189,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Google Business Profile System Architecture',
+          title: 'Google Business Profile System Architecture Guide',
           description:
             'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
           slug: 'google-business-profile-system-architecture',
@@ -5341,19 +5235,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'local-service-page-architecture-for-local-businesses': {
       resources: [
         {
-          title: 'Google Business Profile System Architecture',
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Google Business Profile System Architecture Guide',
           description:
             'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
           slug: 'google-business-profile-system-architecture',
           path: '/resources/google-business-profile-system-architecture',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Local SEO vs Website Optimisation',
-          description:
-            'Understand the difference between local SEO and website optimisation, learn where each applies, and know which investments drive the most visibility for service businesses.',
-          slug: 'local-seo-vs-website-optimization',
-          path: '/resources/local-seo-vs-website-optimization',
           nodeType: 'resource',
         },
         {
@@ -5457,7 +5351,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Google Business Profile System Architecture',
+          title: 'Google Business Profile System Architecture Guide',
           description:
             'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
           slug: 'google-business-profile-system-architecture',
@@ -5673,19 +5567,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'How Review Automation Improves Local Authority',
-          description:
-            'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
-          slug: 'how-review-automation-improves-local-authority',
-          path: '/resources/how-review-automation-improves-local-authority',
-          nodeType: 'resource',
-        },
-        {
           title: 'Customer Feedback Loop Framework',
           description:
             'Build a structured feedback loop that captures customer sentiment after every job, routes issues to private resolution, and drives continuous service improvement.',
           slug: 'customer-feedback-loop-framework',
           path: '/resources/customer-feedback-loop-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Responding to Negative Reviews Systematically Guide',
+          description:
+            'Build a systematic process for handling negative reviews with professional templates, fast response times, and resolution follow-up that protects your reputation.',
+          slug: 'responding-to-negative-reviews-systematically',
+          path: '/resources/responding-to-negative-reviews-systematically',
           nodeType: 'resource',
         },
       ],
@@ -5889,19 +5783,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Reputation Monitoring Systems',
-          description:
-            'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
-          slug: 'reputation-monitoring-systems',
-          path: '/resources/reputation-monitoring-systems',
-          nodeType: 'resource',
-        },
-        {
           title: 'Customer Feedback Loop Framework',
           description:
             'Build a structured feedback loop that captures customer sentiment after every job, routes issues to private resolution, and drives continuous service improvement.',
           slug: 'customer-feedback-loop-framework',
           path: '/resources/customer-feedback-loop-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Reputation Monitoring Systems',
+          description:
+            'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
+          slug: 'reputation-monitoring-systems',
+          path: '/resources/reputation-monitoring-systems',
           nodeType: 'resource',
         },
       ],
@@ -5943,7 +5837,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'How Review Automation Improves Local Authority',
+          title: 'How Review Automation Improves Local Authority Guide',
           description:
             'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
           slug: 'how-review-automation-improves-local-authority',
@@ -6005,11 +5899,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Automotive CRM Pipeline for Repair Jobs',
+          title: 'Building Revenue Visibility Through CRM Tracking Guide',
           description:
-            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
-          slug: 'automotive-crm-pipeline-for-repair-jobs',
-          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+            'Learn how to build CRM-based revenue tracking that shows exactly where your revenue comes from, where it leaks, and where the biggest growth opportunities exist.',
+          slug: 'building-revenue-visibility-through-crm-tracking',
+          path: '/resources/building-revenue-visibility-through-crm-tracking',
           nodeType: 'resource',
         },
       ],
@@ -6059,7 +5953,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'How Review Automation Improves Local Authority',
+          title: 'How Review Automation Improves Local Authority Guide',
           description:
             'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
           slug: 'how-review-automation-improves-local-authority',
@@ -6113,7 +6007,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'How Review Automation Improves Local Authority',
+          title: 'How Review Automation Improves Local Authority Guide',
           description:
             'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
           slug: 'how-review-automation-improves-local-authority',
@@ -6167,7 +6061,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'How Review Automation Improves Local Authority',
+          title: 'How Review Automation Improves Local Authority Guide',
           description:
             'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
           slug: 'how-review-automation-improves-local-authority',
@@ -6483,7 +6377,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Building Revenue Visibility Through CRM Tracking',
+          title: 'Building Revenue Visibility Through CRM Tracking Guide',
           description:
             'Learn how to build CRM-based revenue tracking that shows exactly where your revenue comes from, where it leaks, and where the biggest growth opportunities exist.',
           slug: 'building-revenue-visibility-through-crm-tracking',
@@ -6491,7 +6385,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Service Reminder Automation',
+          title: 'Automotive Service Reminder Automation Framework',
           description:
             'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
           slug: 'automotive-service-reminder-automation',
@@ -6699,11 +6593,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
+          title: 'Local Service Page Architecture',
           description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
           nodeType: 'resource',
         },
         {
@@ -6853,6 +6747,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'tracking-customer-lifetime-value-using-crm': {
       resources: [
         {
+          title: 'Tracking Salon Client Lifetime Value',
+          description:
+            'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
+          slug: 'tracking-salon-client-lifetime-value',
+          path: '/resources/tracking-salon-client-lifetime-value',
+          nodeType: 'resource',
+        },
+        {
           title: 'Automotive CRM Pipeline for Repair Jobs',
           description:
             'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
@@ -6861,15 +6763,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Building Revenue Visibility Through CRM Tracking',
-          description:
-            'Learn how to build CRM-based revenue tracking that shows exactly where your revenue comes from, where it leaks, and where the biggest growth opportunities exist.',
-          slug: 'building-revenue-visibility-through-crm-tracking',
-          path: '/resources/building-revenue-visibility-through-crm-tracking',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Automotive Service Reminder Automation',
+          title: 'Automotive Service Reminder Automation Framework',
           description:
             'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
           slug: 'automotive-service-reminder-automation',
@@ -6923,7 +6817,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Tracking Customer Lifetime Value Using CRM',
+          title: 'Tracking Customer Lifetime Value Using CRM Guide',
           description:
             'Learn how to calculate and track Customer Lifetime Value using CRM data to make better acquisition, retention, and pricing decisions for your service business.',
           slug: 'tracking-customer-lifetime-value-using-crm',
@@ -7247,7 +7141,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Lead Automation Framework for Service Businesses',
+          title: 'Lead Automation Framework Guide',
           description:
             'Understand the four-layer lead automation framework — capture, routing, qualification, and follow-up — that handles leads systematically and converts more enquiries into booked jobs.',
           slug: 'lead-automation-framework',
@@ -7409,7 +7303,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Lead Automation Framework for Service Businesses',
+          title: 'Lead Automation Framework Guide',
           description:
             'Understand the four-layer lead automation framework — capture, routing, qualification, and follow-up — that handles leads systematically and converts more enquiries into booked jobs.',
           slug: 'lead-automation-framework',
@@ -7625,7 +7519,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'How Review Automation Improves Local Authority',
+          title: 'How Review Automation Improves Local Authority Guide',
           description:
             'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
           slug: 'how-review-automation-improves-local-authority',
@@ -7895,7 +7789,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'How Review Automation Improves Local Authority',
+          title: 'How Review Automation Improves Local Authority Guide',
           description:
             'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
           slug: 'how-review-automation-improves-local-authority',
@@ -8057,7 +7951,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Automotive Service Reminder Automation',
+          title: 'Automotive Service Reminder Automation Framework',
           description:
             'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
           slug: 'automotive-service-reminder-automation',
@@ -8103,19 +7997,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Lead Response Optimization Checklist for HVAC Businesses',
-          description:
-            'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
-          slug: 'lead-response-optimization-checklist-for-hvac-businesses',
-          path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
-          nodeType: 'resource',
-        },
-        {
           title: 'HVAC CRM Pipeline Structure',
           description:
             'See how HVAC companies structure multi-track CRM pipelines for emergency, installation, and maintenance work — with automations that protect recurring revenue and enable capacity planning.',
           slug: 'hvac-crm-pipeline-structure',
           path: '/resources/hvac-crm-pipeline-structure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Response Optimization Checklist for HVAC Businesses',
+          description:
+            'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
+          slug: 'lead-response-optimization-checklist-for-hvac-businesses',
+          path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
           nodeType: 'resource',
         },
       ],
@@ -8189,19 +8083,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'auto-repair-lead-handling-example': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Smart Website Systems',
           description:
             'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Booking & Scheduling System',
+          description:
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
         {
@@ -8243,14 +8137,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'auto-reply-funnel': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
@@ -8264,6 +8150,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System',
+          description:
+            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
@@ -8419,14 +8313,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'booking-systems-inside-website-infrastructure': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Smart Website Systems',
           description:
             'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
@@ -8440,6 +8326,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Booking & Scheduling System',
+          description:
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -8549,14 +8443,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'conversion-architecture-for-service-websites': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Smart Website Systems',
           description:
             'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
@@ -8570,6 +8456,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Booking & Scheduling System',
+          description:
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -8603,14 +8497,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'conversion-tracking-for-service-businesses': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Smart Website Systems',
           description:
             'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
@@ -8624,6 +8510,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Booking & Scheduling System',
+          description:
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -8843,25 +8737,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Smart Website Systems for Car Detailing Businesses',
+          title: 'Smart Website Systems for Plumbing',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'Smart Website systems for plumbing companies that need clearer emergency routing, booking support, and stronger follow-up.',
+          slug: 'plumbing-companies',
+          path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
         },
       ],
     },
     'designing-websites-that-support-crm-systems': {
       services: [
-        {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
         {
           title: 'Smart Website Systems',
           description:
@@ -8876,6 +8762,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Booking & Scheduling System',
+          description:
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -9085,19 +8979,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'hvac-emergency-call-handling-system': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Infrastructure Implementation',
+          description:
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
         {
@@ -9139,19 +9033,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'hvac-lead-handling-example': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'AI Lead Handling Systems',
+          description:
+            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
@@ -9239,19 +9133,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'lead-automation-framework': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'AI Lead Handling Systems',
+          description:
+            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
@@ -9293,19 +9187,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'lead-qualification-framework': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'AI Lead Handling Systems',
+          description:
+            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
@@ -9385,14 +9279,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'lead-response-time-framework': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
@@ -9406,6 +9292,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System',
+          description:
+            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
@@ -9439,19 +9333,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'lead-routing-models-for-service-companies': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'AI Lead Handling Systems',
+          description:
+            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
@@ -9531,6 +9425,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'local-service-page-architecture': {
       services: [
         {
+          title: 'Smart Website Systems',
+          description:
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
           title: 'Booking & Scheduling System',
           description:
             'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
@@ -9544,14 +9446,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
           slug: 'local-seo-authority',
           path: '/services/local-seo-authority',
-          nodeType: 'service',
-        },
-        {
-          title: 'Smart Website Systems',
-          description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
       ],
@@ -9573,11 +9467,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Smart Website Systems for Car Detailing Businesses',
+          title: 'Smart Website Systems for Landscaping',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
-          slug: 'car-detailing',
-          path: '/industries/automotive-services/car-detailing',
+            'Smart Website systems for landscaping companies that need clearer service routing, estimate booking, and stronger seasonal follow-up.',
+          slug: 'landscaping-companies',
+          path: '/industries/home-services/landscaping-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -9715,14 +9609,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'missed-call-recovery-for-auto-repair': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
@@ -9736,6 +9622,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System',
+          description:
+            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
@@ -9769,14 +9663,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'missed-call-recovery-for-hvac': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
@@ -9790,6 +9676,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System',
+          description:
+            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
@@ -9823,14 +9717,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'missed-call-recovery-for-roofing': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
@@ -9844,6 +9730,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System',
+          description:
+            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
@@ -9877,14 +9771,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'missed-call-recovery-for-salons': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
@@ -9898,6 +9784,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System',
+          description:
+            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
@@ -9930,14 +9824,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     },
     'missed-call-recovery-system': {
       services: [
-        {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
         {
           title: 'AI Lead Handling Systems',
           description:
@@ -9985,14 +9871,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'multi-channel-lead-capture-systems': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
@@ -10006,6 +9884,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System',
+          description:
+            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
@@ -10039,19 +9925,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'reducing-salon-no-shows-with-automation': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Infrastructure Implementation',
+          description:
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
         {
@@ -10361,19 +10247,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'roofing-estimate-follow-up-workflow': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Infrastructure Implementation',
+          description:
+            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
         {
@@ -10415,19 +10301,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'roofing-lead-handling-example': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'AI Lead Handling Systems',
+          description:
+            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
@@ -10553,19 +10439,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'salon-lead-handling-example': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'AI Lead Handling Systems',
+          description:
+            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
@@ -10653,19 +10539,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'service-business-follow-up-automation-guide': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Missed Call Recovery System',
           description:
             'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'AI Lead Handling Systems',
+          description:
+            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
@@ -10707,14 +10593,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'service-page-architecture-that-converts': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Smart Website Systems',
           description:
             'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
@@ -10728,6 +10606,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Website redesign and system rebuild work for service businesses whose current site no longer matches their services, enquiry flow, integrations, or operational needs.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
+          title: 'Booking & Scheduling System',
+          description:
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -10799,11 +10685,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'tracking-salon-client-lifetime-value': {
       services: [
         {
-          title: 'CRM Infrastructure Implementation',
+          title: 'Revenue Growth Systems',
           description:
-            'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
+            'Revenue Growth Systems help service businesses identify where leads stall, follow-up breaks down, and conversion leaks happen across the website, CRM, and workflow.',
+          slug: 'growth-revenue-systems',
+          path: '/services/growth-revenue-systems',
           nodeType: 'service',
         },
         {
@@ -10853,14 +10739,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'website-crm-integration-explained': {
       services: [
         {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
-          nodeType: 'service',
-        },
-        {
           title: 'Smart Website Systems',
           description:
             'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
@@ -10874,6 +10752,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Booking & Scheduling System',
+          description:
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -10907,11 +10793,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'what-is-a-systems-first-website': {
       services: [
         {
-          title: 'Booking & Scheduling System',
+          title: 'Smart Website Systems',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
@@ -10923,11 +10809,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems',
+          title: 'Booking & Scheduling System',
           description:
-            'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
+            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -11260,7 +11146,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Lead Routing Models for Service Companies',
+          title: 'Lead Routing Models for Service Companies Guide',
           description:
             'Understand the four lead routing models — round-robin, skill-based, territory-based, and priority-based — and how to implement the right model for your service business.',
           slug: 'lead-routing-models-for-service-companies',
@@ -11440,7 +11326,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Google Business Profile System Architecture',
+          title: 'Google Business Profile System Architecture Guide',
           description:
             'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
           slug: 'google-business-profile-system-architecture',
@@ -11502,7 +11388,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Lead Routing Models for Service Companies',
+          title: 'Lead Routing Models for Service Companies Guide',
           description:
             'Understand the four lead routing models — round-robin, skill-based, territory-based, and priority-based — and how to implement the right model for your service business.',
           slug: 'lead-routing-models-for-service-companies',
@@ -11744,7 +11630,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'How Review Automation Improves Local Authority',
+          title: 'How Review Automation Improves Local Authority Guide',
           description:
             'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
           slug: 'how-review-automation-improves-local-authority',

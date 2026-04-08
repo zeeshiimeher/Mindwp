@@ -1,5 +1,7 @@
 // ─── Pexels Provider ────────────────────────────────────────────────
 
+/* eslint-disable no-console */
+
 import { PROVIDER_ENDPOINTS } from '../config';
 import type { ProviderImage, ProviderSearchResult } from '../types';
 

@@ -7,7 +7,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/docs/', '/archive/'],
+      disallow: ['/archive/', '/components', '/dev/', '/docs/', '/image-dashboard'],
     },
     sitemap: toAbsoluteUrl('/sitemap.xml'),
   };

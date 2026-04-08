@@ -1,6 +1,8 @@
 // ─── Featured Image Generator ───────────────────────────────────────
 // Cinematic featured image system — depth, composition, contrast, variation
 
+/* eslint-disable no-console */
+
 import sharp from 'sharp';
 
 import { IMAGE_SIZES, OVERLAY_CONFIG, TITLE_LAYOUT } from '../config';
@@ -252,11 +254,12 @@ function generateOverlaySvg(
 
   // ── Badge metrics ──
   const hasBadge = badge !== null;
+  const resolvedBadge = badge ?? '';
   const badgeFontSize = 11;
   const badgeHeight = 28;
   const badgePadH = 16;
   const badgeGap = 16;
-  const badgeTextWidth = hasBadge ? badge!.length * badgeFontSize * 0.62 : 0;
+  const badgeTextWidth = hasBadge ? resolvedBadge.length * badgeFontSize * 0.62 : 0;
   const badgePillWidth = badgeTextWidth + badgePadH * 2;
   const badgeRx = badgeHeight / 2;
 
@@ -402,7 +405,7 @@ function generateOverlaySvg(
     );
     const badgeCenterX = textX + badgePillWidth / 2;
     parts.push(
-      `<text x="${badgeCenterX.toFixed(0)}" y="${badgeTextBaselineY.toFixed(0)}" fill="${badgeTxtColor}" font-size="${badgeFontSize}" font-weight="700" font-family="${font}" letter-spacing="1" text-anchor="middle">${escapeSvg(badge!)}</text>`
+      `<text x="${badgeCenterX.toFixed(0)}" y="${badgeTextBaselineY.toFixed(0)}" fill="${badgeTxtColor}" font-size="${badgeFontSize}" font-weight="700" font-family="${font}" letter-spacing="1" text-anchor="middle">${escapeSvg(resolvedBadge)}</text>`
     );
   }
 

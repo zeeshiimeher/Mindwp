@@ -2,15 +2,15 @@
 
 > This document tracks current execution state, architectural decisions, and immediate system priorities.
 > It is the active operational memory for the deterministic control layer.
-> Updated: 2026-04-08 (production test system centralized and report-linked)
+> Updated: 2026-04-08 (launch-ready authority and static OG fallback verified)
 
 ---
 
 ## CURRENT PHASE
 
-- **Phase:** Phase 2.9 — Production Test System Centralization
-- **Status:** Warning-only, non-blocking
-- **Objective:** Keep the system production-ready by centralizing runtime tests, validators, reports, and dashboard visibility without changing locked architecture
+- **Phase:** Phase 3.0 — System Quality, Content Completeness, and SEO Authority Stabilized
+- **Status:** Clean
+- **Objective:** Preserve the centralized, report-linked clean state across validation, metadata, crawl alignment, topic authority, dashboard visibility, and the static OG fallback without changing locked architecture
 
 ---
 
@@ -18,24 +18,23 @@
 
 - **Master command:** `npm run system:report`
 - **Master artifact:** `reports/system-report.json`
-- **Current status:** `warning`
+- **Current status:** `clean`
 - **Blocking issues:** `0`
-- **Advisory issues:** `2`
+- **Advisory issues:** `0`
 
 ### Live advisory state
 
-1. Recommended content metadata missing in `359` places
-2. Advisory lint drift remains concentrated in the image-system and debug surfaces
+- No live advisory items. Current validator, SEO, authority, and lint surfaces are clean.
 
 ### System health snapshot
 
-- `validate-all`: `20` validators total, `0` blocking failed, `1` advisory failed
+- `validate-all`: `21` validators total, `0` blocking failed, `0` advisory failed
 - `test-results.json`: `49` passed, `0` failed, `0` skipped
 - Runtime test layers: `unit 7`, `system 21`, `integration 11`, `e2e 10`
-- `system-state.json`: `WARNING`
-- `system-drift.json`: `1` drift item
-- Graph availability: `true`
-- Graph size: `229` nodes, `9,893` edges
+- `system-state.json`: `CLEAN`
+- `system-drift.json`: `0` drift items
+- SEO coverage: `349` routes analyzed, `0` missing metadata, `100%` canonical alignment, `100%` sitemap alignment, `100%` OG coverage
+- Authority coverage: `42` topics analyzed, `42` complete coverage topics, `0` orphan topics, average score `68`
 
 ---
 
@@ -44,8 +43,9 @@
 1. Keep `system-report.json` and `test-results.json` as linked inspectable control-layer outputs
 2. Keep all blocking validators and runtime test layers green
 3. Keep the contact path minimal: `/contact` -> `/api/contact` -> Resend -> inbox email
-4. Reduce advisory metadata drift and advisory lint drift without introducing parallel validation logic
-5. Preserve architecture, validators, dashboard report-loading, and image-system behavior unchanged
+4. Preserve zero-gap SEO state: no missing metadata, no duplicate titles/descriptions, no canonical or sitemap misalignment, and no OG gaps
+5. Preserve complete canonical-topic coverage with `0` orphan topics and shared inventory-driven crawl logic
+6. Preserve architecture, validators, dashboard report-loading, and the single static OG fallback at `/og-default.png`
 
 ---
 
@@ -143,6 +143,58 @@
 - Old live monitor path removed
 - Old dashboard actions removed
 - Dashboard no longer computes health from registries at render time
+
+---
+
+### D-007 — Shared Route Inventory Governs SEO Consistency
+
+**Status:** Implemented
+
+**Decision:** Route-level SEO completeness, sitemap inclusion, canonical alignment, and crawl eligibility are governed from a shared inventory and graph SEO snapshot rather than page-by-page ad hoc checks.
+
+**Impact:**
+- `src/lib/content-quality/inventory.ts` is the route-level source of truth for crawl visibility checks
+- `validate-content-quality` and `sitemap.ts` now measure against the same inventory
+- Metadata fixes are applied through shared control points instead of mass manual route edits
+
+---
+
+### D-008 — Topic Authority Uses Coverage Guarantees
+
+**Status:** Implemented
+
+**Decision:** Canonical topic authority is measured by deterministic coverage guarantees: each topic needs at least one supporting blog path and at least one internal support path.
+
+**Impact:**
+- `reports/content-gaps.json` now tracks true coverage gaps and orphan topics
+- `reports/topic-authority-scores.json` is aligned to the same coverage model
+- Topic authority health is stable and report-driven rather than editorial-threshold driven
+
+---
+
+### D-009 — Split Dashboards Removed In Favor Of One Control Plane
+
+**Status:** Implemented
+
+**Decision:** The old `/content-dashboard` route is removed entirely. The operational dashboard surface now lives only at `/dev/system-dashboard`.
+
+**Impact:**
+- No redirect or legacy content-dashboard route remains in the app tree
+- Dashboard documentation now points to the unified control plane only
+- Middleware, crawl policy, and inventory no longer treat `/content-dashboard` as a live surface
+
+---
+
+### D-010 — Launch Metadata Uses One Static OG Fallback
+
+**Status:** Implemented
+
+**Decision:** Launch metadata no longer uses dynamic per-page OG image selection. All route metadata, inventory snapshots, and graph SEO snapshots now resolve to the single fallback image at `/og-default.png` with the standard `1200x630` dimensions.
+
+**Impact:**
+- Social preview coverage remains deterministic across the whole site
+- Dashboard and report surfaces no longer drift from runtime metadata on OG images
+- Launch SEO behavior is simpler to validate and maintain
 
 ---
 
@@ -382,32 +434,89 @@
 
 ---
 
+### E-014 — System Quality And SEO Authority Completion Pass Finalized
+**Date:** 2026-04-08
+
+**Completed:**
+- Added shared topic coverage and route inventory helpers to centralize SEO and authority measurement
+- Enriched content graph nodes with route-level SEO snapshots used by validators, reports, and dashboard surfaces
+- Added `validate-content-quality.mjs` and integrated its SEO, content, and authority outputs into validation and system reporting
+- Moved sitemap generation onto the shared inventory and made robots/canonical/OG behavior consistent through shared metadata defaults
+- Repaired duplicate titles, weak descriptions, topic coverage gaps, and residual lint drift without changing locked architecture
+- Re-ran `npm run validate:all`, `npm run system:sync`, and `npm run system:report`
+
+**Result:**
+- `validate-all`: `21/21` passed, `0` blocking failed, `0` advisory failed
+- `system-report.json`: `clean`
+- `system-state.json`: `CLEAN`
+- `system-drift.json`: `0` drift items
+- SEO completeness: `0` missing metadata, `0` duplicate titles, `0` duplicate descriptions
+- Crawl alignment: `100%` canonical alignment, `100%` sitemap alignment, `100%` OG coverage
+- Authority coverage: `42` topics analyzed, `42` complete coverage topics, `0` orphan topics
+- Lint status: clean
+
+---
+
+### E-015 — Content Dashboard Removal Finalized
+**Date:** 2026-04-08
+
+**Completed:**
+- Deleted the last remaining `src/app/content-dashboard` route file
+- Removed `/content-dashboard` from middleware and robots policy
+- Updated system docs to reference only `/dev/system-dashboard`
+
+**Result:**
+- No content-dashboard route remains in the application
+- Unified dashboard documentation and runtime surface are aligned
+
+---
+
+### E-016 — Launch Readiness Pass Completed
+**Date:** 2026-04-08
+
+**Completed:**
+- Replaced dynamic OG metadata usage with the static fallback image at `/og-default.png`
+- Normalized route inventory and graph SEO snapshots to the same OG fallback
+- Strengthened existing service and resource topic anchors until all weak canonical topics were cleared
+- Reduced multi-system service declarations to one primary system on the previously warned launch pages
+- Updated dashboard fix suggestions to render action, target, impact, and time in one deterministic line
+
+**Result:**
+- `npm run typecheck`: passed
+- `npm run system:report`: passed
+- `reports/system-report.json`: `clean`
+- `blocking.count`: `0`
+- `advisory.count`: `0`
+- `reports/topic-authority-scores.json`: `0` weak topics remaining
+
+---
+
 ## CURRENT TASKS
 
-### T-001 — Reduce advisory metadata drift
-**Status:** Active
+### T-001 — Preserve Clean Report State
+**Status:** Continuous
 **Priority:** High
-**Description:** Reduce missing recommended metadata counts on high-impact pages without changing the blocking contract surface.
+**Description:** Keep `validate-all`, `system-report`, `system-state`, and `system-drift` aligned at clean status after changes.
 
-### T-002 — Normalize intent coverage
-**Status:** Active
+### T-002 — Preserve SEO Coverage Guarantees
+**Status:** Continuous
 **Priority:** High
-**Description:** Reduce remaining legacy-intent normalization warnings in content over time without reopening structure or validator design.
+**Description:** Keep metadata completeness, canonical alignment, sitemap alignment, robots output, and OG coverage at their current zero-gap state.
 
-### T-003 — Preserve CTA contract integrity
-**Status:** Active
+### T-003 — Preserve Topic Authority Coverage
+**Status:** Continuous
 **Priority:** High
+**Description:** Keep every canonical topic backed by at least one blog path and one internal support path, with `0` orphan topics.
+
+### T-004 — Preserve CTA Contract Integrity
+**Status:** Active
+**Priority:** Medium
 **Description:** Keep all content CTAs that route to `/contact` aligned to the explicit `system` + `source` contract.
 
-### T-004 — Preserve unified test health snapshot
+### T-005 — Preserve Unified Test Health Snapshot
 **Status:** Active
 **Priority:** Medium
 **Description:** Keep `reports/test-results.json` current and keep the authority dashboard aligned to the shared report contract.
-
-### T-005 — Clear residual advisory lint noise
-**Status:** Active
-**Priority:** Medium
-**Description:** Remove remaining non-blocking lint issues, now concentrated mostly in the image-system and debug surfaces, to move system status from `warning` to `clean`.
 
 ### T-006 — Preserve report-only dashboard boundary
 **Status:** Continuous
@@ -442,30 +551,25 @@ These constraints are active and must not change without architectural review:
 
 ## KNOWN RISKS
 
-### R-001 — Advisory metadata counts remain high
-**Impact:** Medium
-**Current state:** `359` recommended metadata gaps remain and are still the largest advisory bucket.
-
-### R-002 — Advisory lint still prevents clean status
-**Impact:** Low
-**Current state:** non-blocking lint failures still appear in report output, including prettier drift in a small number of service files.
-
-### R-003 — Report-driven dashboard boundary must stay enforced
+### R-001 — Clean status depends on shared control points staying authoritative
 **Impact:** High
-**Current state:** page layer is aligned; future dashboard work must not reintroduce live computation.
+**Current state:** Resolved for now. Future route-level metadata changes must continue to flow through shared inventory, metadata, and graph snapshot logic.
 
-### R-004 — Broad advisory cleanup can dilute impact if done indiscriminately
-**Impact:** Medium
-**Current state:** the remaining advisory backlog is large enough that future passes must stay priority-driven rather than attempting full cleanup.
-
-### R-005 — Intent report does not currently match editable content
+### R-002 — Dashboard/report drift can return if live computation is reintroduced
 **Impact:** High
-**Current state:** Resolved. Missing-intent false positives were fixed at the graph layer; remaining intent drift is legacy-intent normalization only.
-**Current state:** resolved as a graph-layer metadata pass-through bug. Report now detects existing intent correctly; remaining intent-related warnings are legacy-value normalization warnings, not missing fields.
+**Current state:** Report-only dashboard boundary is currently enforced and must remain so.
 
-### R-006 — Contact delivery depends on local email configuration
+### R-003 — Topic authority can regress through taxonomy edits
+**Impact:** Medium
+**Current state:** Resolved for now. Adding or renaming canonical topics without corresponding support-path coverage can reintroduce orphan topics or authority gaps.
+
+### R-004 — Contact delivery depends on local email configuration
 **Impact:** Medium
 **Current state:** The contact form is functional only when `RESEND_API_KEY` and `CONTACT_EMAIL` are present. Without them, `/api/contact` returns a configuration error instead of sending mail.
+
+### R-005 — Test snapshot staleness can hide regressions between runtime passes
+**Impact:** Medium
+**Current state:** Last aggregated runtime snapshot is still green (`49` passed, `0` failed), but it only stays meaningful if rerun after behavior changes.
 
 ---
 

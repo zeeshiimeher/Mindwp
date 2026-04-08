@@ -112,7 +112,7 @@ const finalCta = {
 
 export const automotiveServiceReminderAutomation: ResourceData = {
   slug,
-  title: 'Automotive Service Reminder Automation',
+  title: 'Automotive Service Reminder Automation Framework',
   description:
     'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
   category: 'crm-automation',
@@ -122,7 +122,7 @@ export const automotiveServiceReminderAutomation: ResourceData = {
   topics: ['service-reminders'],
   primaryService: 'crm-automation',
   seo: {
-    title: 'Automotive Service Reminder Automation',
+    title: 'Automotive Service Reminder Automation Framework',
     description:
       'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
     canonical,

@@ -137,17 +137,17 @@ const finalCta = {
 
 export const buildingRevenueVisibilityThroughCrmTracking: ResourceData = {
   slug,
-  title: 'Building Revenue Visibility Through CRM Tracking',
+  title: 'Building Revenue Visibility Through CRM Tracking Guide',
   description:
     'Learn how to build CRM-based revenue tracking that shows exactly where your revenue comes from, where it leaks, and where the biggest growth opportunities exist.',
   category: 'revenue-growth',
   publishedAt: '2025-12-31',
   systems: ['crm-automation'],
   industries: [],
-  topics: ['revenue-tracking'],
+  topics: ['revenue-tracking', 'revenue-visibility'],
   primaryService: 'crm-automation',
   seo: {
-    title: 'Building Revenue Visibility Through CRM Tracking',
+    title: 'Building Revenue Visibility Through CRM Tracking Guide',
     description:
       'Learn how to build CRM-based revenue tracking that shows exactly where your revenue comes from, where it leaks, and where the biggest growth opportunities exist.',
     canonical,

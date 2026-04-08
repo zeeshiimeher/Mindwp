@@ -164,6 +164,9 @@ const INDUSTRY_PALETTES: Array<{ keywords: string[]; accent: string }> = [
   { keywords: ['cleaning', 'landscaping', 'pest'], accent: '#22c55e' },
 ];
 
+void DOMAIN_ACCENTS;
+void INDUSTRY_PALETTES;
+
 /** Resolve a brightness-aware color palette from metadata and domain */
 export function resolveColorPalette(
   metadata: ContentMetadata,

@@ -28,7 +28,7 @@ export const trackingCustomerLifetimeValueUsingCrm: BlogPostData = {
   category: 'crm-automation',
   industries: [],
   systems: ['crm-automation'],
-  topics: ['customer-lifetime-value'],
+  topics: ['customer-lifetime-value', 'lifetime-value'],
   primaryKeyword: 'tracking customer lifetime value using crm',
   supportingKeywords: [
     'crm lifetime value tracking',

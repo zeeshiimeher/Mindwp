@@ -1864,7 +1864,7 @@ Depth rules:
 - Industry context clear where required
 - Internal links implemented correctly
 - Metadata written properly
-- OG image generated
+- Static OG fallback present at `/og-default.png`
 - No hype language present
 - Page remains static-first compliant
 - No unnecessary client components
@@ -1882,7 +1882,7 @@ Visual system rules across content types:
 - Maintain the calm, structured, architectural visual language.
 
 Image standards:
-- Use the OG image system at 1200x630.
+- Use the static OG fallback image at `/og-default.png` sized to 1200x630.
 - Maintain a safe-zone layout.
 - Use a consistent card preview ratio of 16:9.
 

@@ -2,6 +2,13 @@ import type { Metadata } from 'next';
 
 import { getMetadataBase, normalizePath, SITE_NAME, toAbsoluteUrl } from '@/lib/seo/config';
 
+export const DEFAULT_OG_IMAGE_PATH = '/og-default.png';
+export const DEFAULT_OG_IMAGE = {
+  url: DEFAULT_OG_IMAGE_PATH,
+  width: 1200,
+  height: 630,
+} as const;
+
 type MetadataType = 'website' | 'article';
 
 type BuildMetadataInput = {
@@ -12,7 +19,6 @@ type BuildMetadataInput = {
   type?: MetadataType;
   noindex?: boolean;
   nofollow?: boolean;
-  image?: string;
 };
 
 export function buildMetadata({
@@ -23,7 +29,6 @@ export function buildMetadata({
   type = 'website',
   noindex = false,
   nofollow = false,
-  image,
 }: BuildMetadataInput): Metadata {
   const normalizedPath = normalizePath(path);
   const normalizedTitle =
@@ -43,21 +48,17 @@ export function buildMetadata({
       url: toAbsoluteUrl(normalizedPath),
       type,
       siteName: SITE_NAME,
-      ...(image ? { images: [toAbsoluteUrl(image)] } : {}),
+      images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',
       title: normalizedTitle,
       description,
-      ...(image ? { images: [toAbsoluteUrl(image)] } : {}),
+      images: [DEFAULT_OG_IMAGE_PATH],
     },
-    ...(noindex || nofollow
-      ? {
-          robots: {
-            index: !noindex,
-            follow: !nofollow,
-          },
-        }
-      : {}),
+    robots: {
+      index: !noindex,
+      follow: !nofollow,
+    },
   };
 }

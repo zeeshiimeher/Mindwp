@@ -1,6 +1,8 @@
 // ─── Provider Manager ───────────────────────────────────────────────
 // Manages provider priority, fallback, and dynamic ordering based on learning
 
+/* eslint-disable no-console */
+
 import { DEFAULT_PROVIDER_ORDER, getProviderKeys } from '../config';
 import { loadProviderScores } from '../learning/providerLearning';
 import type { ContentDomain, ProviderName, ProviderScores, ProviderSearchResult } from '../types';

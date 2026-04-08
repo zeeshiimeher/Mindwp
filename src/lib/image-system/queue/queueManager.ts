@@ -4,7 +4,7 @@
 import fs from 'fs';
 import path from 'path';
 
-import { DATA_FILES, RATE_LIMIT } from '../config';
+import { DATA_FILES } from '../config';
 import type { ContentDomain, ImageType, QueueJob, QueueJobStatus } from '../types';
 
 /** Load queue from disk */

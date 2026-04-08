@@ -87,8 +87,7 @@ Primary CTA everywhere: **"Start a Conversation" → /contact**
 | Domain registries | `src/domains/*/registry.ts` |
 | Validator framework | `scripts/core/validate-all.mjs` |
 | System sync | `scripts/core/system-sync.mjs` |
-| System Health dashboard | `src/app/dev/authority-dashboard/` |
-| Content Intelligence | `src/app/content-dashboard/` |
+| System Health dashboard | `src/app/dev/system-dashboard/` |
 | Image system pipeline | `src/lib/image-system/` |
 | Image CLI generator | `scripts/image-system/image-generate.ts` |
 | Image config + thresholds | `src/lib/image-system/config.ts` |

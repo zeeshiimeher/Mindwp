@@ -444,7 +444,8 @@ function buildIntentQuery(
   parts.push(intent.subject);
 
   // Context enrichment — add scene/environment words from intent
-  const contextWords = CONTEXT_MAP[intent.intent] ?? CONTEXT_MAP['professional workplace']!;
+  const contextWords = CONTEXT_MAP[intent.intent] ??
+    CONTEXT_MAP['professional workplace'] ?? ['service workspace'];
   parts.push(contextWords[0]);
 
   // Context from primary keyword

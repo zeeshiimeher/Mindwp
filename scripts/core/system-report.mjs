@@ -4,12 +4,19 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 
+import {
+  flattenSystemIssueGroups,
+  groupSystemIssues,
+  sortSystemIssues,
+} from '../lib/system-issues.mjs';
+
 const root = process.cwd();
 const reportsDir = path.join(root, 'reports');
 const reportPath = path.join(reportsDir, 'system-report.json');
 
 const detailedValidatorSources = new Set([
   'validate-content-contract',
+  'validate-content-quality',
   'validate-conversion-contract',
   'validate-graph',
   'validate-tokens',
@@ -105,10 +112,61 @@ function getValidationFailure(validation, name) {
   return validation?.errors?.find(error => error.validator === name) ?? null;
 }
 
-function collectBlockingItems(validation, contentReport, conversionReport, graphReport, tokenReport, inlineStyleReport) {
+function collectStructuredIssues(...reportBuckets) {
+  const seen = new Set();
+  const issues = [];
+
+  for (const bucket of reportBuckets) {
+    for (const issue of [
+      ...(bucket?.issues ?? []),
+      ...(bucket?.warnings ?? []),
+      ...(bucket?.advisory ?? []),
+    ]) {
+      if (!issue?.id || seen.has(issue.id)) {
+        continue;
+      }
+
+      seen.add(issue.id);
+      issues.push(issue);
+    }
+  }
+
+  return sortSystemIssues(issues);
+}
+
+function buildGroupedIssueCounts(groupedIssues) {
+  return {
+    seo: {
+      total: groupedIssues.seo.length,
+      critical: groupedIssues.seo.filter(issue => issue.severity === 'critical').length,
+      warning: groupedIssues.seo.filter(issue => issue.severity === 'warning').length,
+    },
+    content: {
+      total: groupedIssues.content.length,
+      critical: groupedIssues.content.filter(issue => issue.severity === 'critical').length,
+      warning: groupedIssues.content.filter(issue => issue.severity === 'warning').length,
+    },
+    authority: {
+      total: groupedIssues.authority.length,
+      critical: groupedIssues.authority.filter(issue => issue.severity === 'critical').length,
+      warning: groupedIssues.authority.filter(issue => issue.severity === 'warning').length,
+    },
+  };
+}
+
+function collectBlockingItems(
+  validation,
+  contentReport,
+  contentQualityReport,
+  conversionReport,
+  graphReport,
+  tokenReport,
+  inlineStyleReport
+) {
   const items = [];
   const explicitlyHandledValidators = new Set([
     'validate-content-contract',
+    'validate-content-quality',
     'validate-conversion-contract',
     'validate-graph',
     'validate-tokens',
@@ -131,6 +189,65 @@ function collectBlockingItems(validation, contentReport, conversionReport, graph
       code: 'missing_required_metadata',
       count: missingRequiredMetadata.length,
       message: `Missing blocking content metadata on ${missingRequiredMetadata.length} node(s).`,
+    });
+  }
+
+  if ((contentQualityReport?.summary?.seo?.missingMetadata ?? 0) > 0) {
+    pushItem(items, {
+      source: 'validate-content-quality',
+      code: 'seo_missing_metadata',
+      count: contentQualityReport.summary.seo.missingMetadata,
+      message: `SEO metadata is incomplete on ${contentQualityReport.summary.seo.missingMetadata} route(s).`,
+    });
+  }
+
+  const duplicateTitles = contentQualityReport?.summary?.seo?.duplicateTitles ?? 0;
+  if (duplicateTitles > 0) {
+    pushItem(items, {
+      source: 'validate-content-quality',
+      code: 'duplicate_titles',
+      count: duplicateTitles,
+      message: `Duplicate SEO titles detected on ${duplicateTitles} route group(s).`,
+    });
+  }
+
+  const duplicateDescriptions = contentQualityReport?.summary?.seo?.duplicateDescriptions ?? 0;
+  if (duplicateDescriptions > 0) {
+    pushItem(items, {
+      source: 'validate-content-quality',
+      code: 'duplicate_descriptions',
+      count: duplicateDescriptions,
+      message: `Duplicate SEO descriptions detected on ${duplicateDescriptions} route group(s).`,
+    });
+  }
+
+  const canonicalMisalignment = contentQualityReport?.summary?.seo?.canonicalMisalignment ?? 0;
+  if (canonicalMisalignment > 0) {
+    pushItem(items, {
+      source: 'validate-content-quality',
+      code: 'canonical_misalignment',
+      count: canonicalMisalignment,
+      message: `Canonical alignment failed on ${canonicalMisalignment} route(s).`,
+    });
+  }
+
+  const sitemapMisalignment = contentQualityReport?.summary?.seo?.sitemapMisalignment ?? 0;
+  if (sitemapMisalignment > 0) {
+    pushItem(items, {
+      source: 'validate-content-quality',
+      code: 'sitemap_misalignment',
+      count: sitemapMisalignment,
+      message: `Sitemap alignment failed on ${sitemapMisalignment} route(s).`,
+    });
+  }
+
+  const orphanTopics = contentQualityReport?.summary?.authority?.orphanTopics ?? 0;
+  if (orphanTopics > 0) {
+    pushItem(items, {
+      source: 'validate-content-quality',
+      code: 'orphan_topics',
+      count: orphanTopics,
+      message: `Canonical topic coverage is broken for ${orphanTopics} topic(s).`,
     });
   }
 
@@ -188,7 +305,7 @@ function collectBlockingItems(validation, contentReport, conversionReport, graph
   return items;
 }
 
-function collectAdvisoryItems(validation, contentReport, conversionReport, graphReport) {
+function collectAdvisoryItems(validation, contentReport, contentQualityReport, conversionReport, graphReport) {
   const items = [];
 
   const advisoryMetadataCount = Math.max(
@@ -230,6 +347,16 @@ function collectAdvisoryItems(validation, contentReport, conversionReport, graph
       code: 'orphan_nodes',
       count: graphReport.summary.orphanNodes,
       message: `Graph orphan nodes detected: ${graphReport.summary.orphanNodes}.`,
+    });
+  }
+
+  const weakDescriptions = contentQualityReport?.summary?.content?.weakDescriptions ?? 0;
+  if (weakDescriptions > 0) {
+    pushItem(items, {
+      source: 'validate-content-quality',
+      code: 'weak_descriptions',
+      count: weakDescriptions,
+      message: `Descriptions are weak on ${weakDescriptions} route(s).`,
     });
   }
 
@@ -275,6 +402,18 @@ function buildPriority(blockingItems, advisoryItems) {
       count: item.count,
       text: item.code === 'missing_system'
         ? `Add required system metadata (${item.count} node${item.count === 1 ? '' : 's'})`
+        : item.code === 'seo_missing_metadata'
+          ? `Complete SEO metadata coverage (${item.count} route${item.count === 1 ? '' : 's'})`
+          : item.code === 'duplicate_titles'
+            ? `Resolve duplicate SEO titles (${item.count})`
+            : item.code === 'duplicate_descriptions'
+              ? `Resolve duplicate SEO descriptions (${item.count})`
+              : item.code === 'canonical_misalignment'
+                ? `Fix canonical alignment (${item.count} route${item.count === 1 ? '' : 's'})`
+                : item.code === 'sitemap_misalignment'
+                  ? `Fix sitemap alignment (${item.count} route${item.count === 1 ? '' : 's'})`
+                  : item.code === 'orphan_topics'
+                    ? `Repair orphan canonical topics (${item.count})`
         : item.code === 'invalid_contact_links'
           ? `Fix CTA contact contract issues (${item.count} location${item.count === 1 ? '' : 's'})`
           : item.code === 'invalid_edges'
@@ -293,6 +432,8 @@ function buildPriority(blockingItems, advisoryItems) {
         ? `Fix CTA system param (${item.count} page${item.count === 1 ? '' : 's'})`
         : item.code === 'cta_missing_source'
           ? `Fix CTA source param (${item.count} page${item.count === 1 ? '' : 's'})`
+          : item.code === 'weak_descriptions'
+            ? `Strengthen weak descriptions (${item.count} route${item.count === 1 ? '' : 's'})`
           : item.code === 'orphan_nodes'
               ? `Resolve orphan nodes (${item.count})`
               : item.message,
@@ -311,20 +452,32 @@ function main() {
   const stepResults = pipeline.map(runStep);
   const validation = readJson('validation-results.json');
   const contentReport = readJson('content-contract-report.json');
+  const contentQualityReport = readJson('content-quality-report.json');
   const conversionReport = readJson('conversion-contract-report.json');
   const graphReport = readJson('graph-report.json');
+  const topicAuthorityReport = readJson('topic-authority-scores.json');
   const tokenReport = readJson('token-report.json');
   const inlineStyleReport = readJson('inline-style-report.json');
+  const structuredIssues = collectStructuredIssues(contentReport, contentQualityReport, graphReport);
+  const groupedIssues = groupSystemIssues(structuredIssues);
+  const groupedIssueCounts = buildGroupedIssueCounts(groupedIssues);
 
   const blockingItems = collectBlockingItems(
     validation,
     contentReport,
+    contentQualityReport,
     conversionReport,
     graphReport,
     tokenReport,
     inlineStyleReport
   );
-  const advisoryItems = collectAdvisoryItems(validation, contentReport, conversionReport, graphReport);
+  const advisoryItems = collectAdvisoryItems(
+    validation,
+    contentReport,
+    contentQualityReport,
+    conversionReport,
+    graphReport
+  );
 
   for (const step of pipeline) {
     const result = stepResults.find(item => item.name === step.name);
@@ -353,9 +506,36 @@ function main() {
       count: advisoryItems.length,
       items: advisoryItems,
     },
+    issues: groupedIssues,
+    issue_counts: groupedIssueCounts,
     content: {
       missing_system: contentReport?.summary?.missingSystem ?? 0,
-      missing_metadata: contentReport?.summary?.missingMetadata ?? 0,
+      missing_metadata: contentQualityReport?.summary?.seo?.missingMetadata ?? contentReport?.summary?.missingMetadata ?? 0,
+    },
+    seo: {
+      missing_metadata: contentQualityReport?.summary?.seo?.missingMetadata ?? 0,
+      duplicate_titles: contentQualityReport?.summary?.seo?.duplicateTitles ?? 0,
+      duplicate_descriptions: contentQualityReport?.summary?.seo?.duplicateDescriptions ?? 0,
+      canonical_misalignment: contentQualityReport?.summary?.seo?.canonicalMisalignment ?? 0,
+      sitemap_misalignment: contentQualityReport?.summary?.seo?.sitemapMisalignment ?? 0,
+      open_graph_gaps: contentQualityReport?.summary?.seo?.openGraphGaps ?? 0,
+      missing_robots: contentQualityReport?.summary?.seo?.missingRobots ?? 0,
+    },
+    content_quality: {
+      weak_descriptions: contentQualityReport?.summary?.content?.weakDescriptions ?? 0,
+      empty_headings: contentQualityReport?.summary?.content?.emptyHeadings ?? 0,
+    },
+    authority: {
+      topics_without_blog: contentQualityReport?.summary?.authority?.topicsWithoutBlog ?? 0,
+      topics_without_internal_path: contentQualityReport?.summary?.authority?.topicsWithoutInternalPath ?? 0,
+      orphan_topics: contentQualityReport?.summary?.authority?.orphanTopics ?? 0,
+      average_score: topicAuthorityReport?.averageScore ?? 0,
+    },
+    topicAuthority: {
+      averageScore: topicAuthorityReport?.averageScore ?? 0,
+      topicsAnalyzed: topicAuthorityReport?.topicsAnalyzed ?? 0,
+      completeCoverageTopics: topicAuthorityReport?.completeCoverageTopics ?? 0,
+      scores: topicAuthorityReport?.scores ?? [],
     },
     conversion: {
       cta_missing_system: conversionReport?.warnings?.filter(warning => warning.code === 'missing_system_param').length ?? 0,
@@ -372,6 +552,7 @@ function main() {
     },
     summary: buildSummary(blockingItems, advisoryItems),
     priority: buildPriority(blockingItems, advisoryItems),
+    criticalIssues: flattenSystemIssueGroups(groupedIssues).filter(issue => issue.severity === 'critical').slice(0, 12),
   };
 
   fs.writeFileSync(reportPath, JSON.stringify(report, null, 2) + '\n');

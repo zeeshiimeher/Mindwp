@@ -7,7 +7,7 @@
 
 > Consolidated source of truth. Validated against live code.
 > Sources: governing docs, reports/, code scan.
-> Updated: 2026-04-08 (system report engine and dashboard alignment applied)
+> Updated: 2026-04-08 (clean system state, SEO authority, and validator surface aligned)
 
 **Boundary:** This file defines current system reality only. It does not hold workflows, phase tasks, raw audit notes, or dashboard summaries.
 
@@ -21,7 +21,7 @@
 
 **Content graph:** 229 nodes, 9,893 edges, 7 formal content types (`ContentNodeType` is the only allowed type system — see §2.4). Scoring formula: `(systemOverlap × 3) + (topicOverlap × 2) + (industryOverlap × 1)` — LOCKED.
 
-**Validation:** 17 validators in the aggregate control layer. Blocking failures are `0`; lint is advisory. Current system status is `WARNING`, not `CLEAN`.
+**Validation:** 21 validators in the aggregate control layer. Blocking failures are `0`; advisory failures are `0`; lint remains advisory in the integrity flow. Current system status is `CLEAN`.
 
 **Conversion model:** Deterministic single-entry conversion path. Primary CTA label is locked to "Start a Conversation". All contextual CTAs route to `/contact?system={system}&source={type}/{slug}`. No inline forms. `/conversation` page REMOVED (Phase 10 Decision 6) — permanent redirect to `/contact`. No fallback conversion path is allowed.
 
@@ -77,7 +77,7 @@ Each node declares `industries`, `systems`, `topics` → relationships auto-gene
 
 **Type integrity rule:** `ContentNodeType` is the ONLY allowed type system for content nodes. No layer (analysis, reporting, dev tooling) may create or store types outside this union. If grouping is needed (e.g., combining industry-detail + industry-category), use a display label — not a type override.
 
-**Node breakdown:** blog (75), resource (52), industry-detail (26), case-study (22), service (21), feature (7), industry-category (6).
+**Node breakdown:** blog (88), resource (59), industry-detail (26), case-study (22), service (21), feature (7), industry-category (6).
 
 **Scoring:** Authority per topic. Levels: Dominant / Strong / Growing / Weak / Gap. Locked formula: `(systemOverlap × 3) + (topicOverlap × 2) + (industryOverlap × 1)`.
 

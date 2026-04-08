@@ -28,7 +28,7 @@ export const crmPipelineArchitectureForServiceBusinesses: BlogPostData = {
   category: 'crm-automation',
   industries: [],
   systems: ['crm-automation'],
-  topics: ['crm-pipeline'],
+  topics: ['crm-pipeline', 'pipeline-architecture'],
   primaryKeyword: 'crm pipeline architecture for service businesses',
   supportingKeywords: [
     'service business crm stages',

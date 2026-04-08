@@ -134,7 +134,7 @@ const finalCta = {
 
 export const googleBusinessProfileSystemArchitecture: ResourceData = {
   slug,
-  title: 'Google Business Profile System Architecture',
+  title: 'Google Business Profile System Architecture Guide',
   description:
     'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
   category: 'local-seo-authority',
@@ -144,7 +144,7 @@ export const googleBusinessProfileSystemArchitecture: ResourceData = {
   topics: ['google-business-profile'],
   primaryService: 'local-seo-authority',
   seo: {
-    title: 'Google Business Profile System Architecture',
+    title: 'Google Business Profile System Architecture Guide',
     description:
       'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
     canonical,

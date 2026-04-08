@@ -28,7 +28,7 @@ export const customerFeedbackLoopFrameworkForServiceBusinesses: BlogPostData = {
   category: 'reputation-review',
   industries: [],
   systems: ['reputation-review'],
-  topics: ['feedback-loops'],
+  topics: ['feedback-loops', 'customer-feedback'],
   primaryKeyword: 'customer feedback loop framework for service businesses',
   supportingKeywords: [
     'customer feedback system',

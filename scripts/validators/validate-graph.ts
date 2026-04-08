@@ -14,6 +14,7 @@ import {
 } from '../../src/lib/content-graph/registry';
 import { overlapCount, scoreRelationship } from '../../src/lib/content-graph/scoring';
 import type { ContentGraphNode } from '../../src/lib/content-graph/types';
+import { createSystemIssue } from '../lib/system-issues.mjs';
 
 /**
  * SR5 — ContentNodeType is the ONLY allowed type system.
@@ -50,6 +51,119 @@ const uniqueValues = (values: string[] | undefined) =>
 const describeNode = (node: ContentGraphNode) => `${node.type}: ${node.slug}`;
 
 const orphanNodeSet = new Set<string>();
+
+function buildGraphIssueFromMessage(message: string, severity: 'critical' | 'warning') {
+  const normalizedMessage = message.trim();
+  const nodePrefixMatch = normalizedMessage.match(/^([a-z-]+):\s([^\s]+)\s(.+)$/i);
+
+  if (nodePrefixMatch) {
+    const [, entityType, slug, remainder] = nodePrefixMatch;
+    const isOrphan = remainder.startsWith('has no matching');
+    const code = isOrphan
+      ? 'orphan_node'
+      : remainder.startsWith('missing ')
+        ? `graph_${remainder.replace(/\s+/g, '_')}`
+        : remainder.startsWith('invalid ')
+          ? `graph_${remainder.replace(/\s+/g, '_').replace(/:/g, '')}`
+          : 'graph_node_issue';
+
+    return createSystemIssue({
+      source: 'validate-graph',
+      code,
+      severity,
+      category: 'authority',
+      entityType,
+      slug,
+      title: isOrphan ? 'Orphan graph node' : 'Graph node integrity issue',
+      description: normalizedMessage,
+      impact: isOrphan
+        ? 'The node is disconnected from the authority layer and loses meaningful support relationships.'
+        : 'The node drifts from the deterministic graph contract and weakens report reliability.',
+      fix: isOrphan
+        ? `Retag or connect ${entityType}/${slug} so it overlaps with the required canonical metadata.`
+        : `Correct the graph metadata on ${entityType}/${slug} so it satisfies the canonical graph contract.`,
+      autoFixable: false,
+    });
+  }
+
+  if (normalizedMessage.startsWith('edge ')) {
+    return createSystemIssue({
+      source: 'validate-graph',
+      code: 'invalid_edge',
+      severity,
+      category: 'authority',
+      entityType: 'graph-edge',
+      slug: normalizedMessage.replace(/\s+/g, '-').toLowerCase(),
+      title: 'Invalid graph edge',
+      description: normalizedMessage,
+      impact: 'Derived relationships no longer explain authority transfer correctly.',
+      fix: 'Repair the source or target metadata so the derived edge satisfies graph overlap rules.',
+      autoFixable: false,
+    });
+  }
+
+  if (normalizedMessage.startsWith('duplicate edge:')) {
+    return createSystemIssue({
+      source: 'validate-graph',
+      code: 'duplicate_edge',
+      severity,
+      category: 'authority',
+      entityType: 'graph-edge',
+      slug: normalizedMessage.replace(/\s+/g, '-').toLowerCase(),
+      title: 'Duplicate graph edge',
+      description: normalizedMessage,
+      impact: 'Relationship output becomes noisy and less deterministic.',
+      fix: 'Remove the duplicate derived edge source or reconcile duplicate metadata overlap.',
+      autoFixable: false,
+    });
+  }
+
+  if (normalizedMessage.startsWith('missing required cross-type edge coverage:')) {
+    return createSystemIssue({
+      source: 'validate-graph',
+      code: 'missing_cross_type_coverage',
+      severity,
+      category: 'authority',
+      entityType: 'graph-coverage',
+      slug: normalizedMessage.split(':').slice(1).join(':').trim().replace(/\s+/g, '-').toLowerCase(),
+      title: 'Missing cross-type coverage',
+      description: normalizedMessage,
+      impact: 'The graph stops proving the required relationship coverage across content layers.',
+      fix: 'Ensure the required cross-type pair shares canonical metadata so derived edges are created.',
+      autoFixable: false,
+    });
+  }
+
+  if (normalizedMessage.startsWith('SR5 violation')) {
+    return createSystemIssue({
+      source: 'validate-graph',
+      code: 'invalid_node_type',
+      severity,
+      category: 'authority',
+      entityType: 'graph-node',
+      slug: 'content-graph',
+      title: 'Invalid graph node type',
+      description: normalizedMessage,
+      impact: 'The graph leaves the locked content node type system and report integrity degrades.',
+      fix: 'Restore the node to one of the canonical ContentNodeType values.',
+      autoFixable: false,
+    });
+  }
+
+  return createSystemIssue({
+    source: 'validate-graph',
+    code: 'graph_issue',
+    severity,
+    category: 'authority',
+    entityType: 'graph',
+    slug: 'content-graph',
+    title: 'Graph validation issue',
+    description: normalizedMessage,
+    impact: 'Authority graph integrity is reduced.',
+    fix: 'Review the graph validation output and correct the referenced metadata or derived relationship rule.',
+    autoFixable: false,
+  });
+}
 
 const countOverlap = (left: string[] | undefined, right: string[] | undefined) => {
   const leftSet = new Set(uniqueValues(left));
@@ -317,6 +431,8 @@ if (errors.length === 0 && warnings.length === 0) {
 }
 
 if (shouldReportJson) {
+  const issueObjects = errors.map(error => buildGraphIssueFromMessage(error, 'critical'));
+  const warningObjects = warnings.map(warning => buildGraphIssueFromMessage(warning, 'warning'));
   const reportPath = path.join(process.cwd(), 'reports', 'graph-report.json');
   fs.mkdirSync(path.dirname(reportPath), { recursive: true });
   fs.writeFileSync(
@@ -333,6 +449,8 @@ if (shouldReportJson) {
         },
         errors,
         warnings,
+        issues: issueObjects,
+        advisory: warningObjects,
         derivedEdgeCount: allEdges.length,
       },
       null,

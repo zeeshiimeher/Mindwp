@@ -154,7 +154,7 @@ const finalCta = {
 
 export const leadRoutingModelsForServiceCompanies: ResourceData = {
   slug,
-  title: 'Lead Routing Models for Service Companies',
+  title: 'Lead Routing Models for Service Companies Guide',
   description:
     'Understand the four lead routing models — round-robin, skill-based, territory-based, and priority-based — and how to implement the right model for your service business.',
   category: 'ai-lead-handling',
@@ -164,7 +164,7 @@ export const leadRoutingModelsForServiceCompanies: ResourceData = {
   topics: ['lead-routing'],
   primaryService: 'ai-lead-handling',
   seo: {
-    title: 'Lead Routing Models for Service Companies',
+    title: 'Lead Routing Models for Service Companies Guide',
     description:
       'Understand the four lead routing models — round-robin, skill-based, territory-based, and priority-based — and how to implement the right model for your service business.',
     canonical,

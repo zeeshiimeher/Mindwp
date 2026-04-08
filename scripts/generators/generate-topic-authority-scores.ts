@@ -2,33 +2,33 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
-
 import { CANONICAL_TOPICS } from '../../src/lib/content-graph/canonical';
+import { getContentGraph } from '../../src/lib/content-graph/registry';
 import {
-  getContentGraph,
-  buildGraphIndexes,
-} from '../../src/lib/content-graph/registry';
-import type { ContentGraphNode } from '../../src/lib/content-graph/types';
+  buildTopicCoverageSnapshots,
+} from '../../src/lib/content-quality/topicCoverage';
 
-// ── Score weights & thresholds ───────────────────────────────────────
 const WEIGHTS = {
-  blog: 25,
-  resource: 25,
-  industry: 20,
+  blog: 30,
+  resource: 15,
   service: 15,
-  caseStudy: 15,
+  feature: 10,
+  industry: 10,
+  caseStudy: 20,
 } as const;
 
 const FULL_THRESHOLDS = {
-  blog: 5,
+  blog: 1,
   resource: 1,
-  industry: 2,
   service: 1,
-  caseStudy: 2,
+  feature: 1,
+  industry: 1,
+  caseStudy: 1,
 } as const;
 
-// ── Authority levels ─────────────────────────────────────────────────
 type AuthorityLevel = 'Dominant' | 'Strong' | 'Growing' | 'Weak' | 'Gap';
+type CoverageStatus = 'complete' | 'gap';
+type AuthorityStatus = 'dominant' | 'strong' | 'growing' | 'weak' | 'gap';
 
 function classifyLevel(score: number): AuthorityLevel {
   if (score >= 90) return 'Dominant';
@@ -46,120 +46,135 @@ const LEVEL_EMOJI: Record<AuthorityLevel, string> = {
   Gap: '🔴',
 };
 
-// ── Types ────────────────────────────────────────────────────────────
 interface TopicScore {
   topic: string;
   blogCount: number;
   resourceCount: number;
-  industryCount: number;
   serviceCount: number;
+  featureCount: number;
+  industryCount: number;
   caseStudyCount: number;
+  supportCount: number;
   score: number;
   level: AuthorityLevel;
+  status: AuthorityStatus;
+  coverageStatus: CoverageStatus;
+  reasons: string[];
 }
 
-// ── Scoring ──────────────────────────────────────────────────────────
+interface TopicScoreSeed {
+  topic: string;
+  blogCount: number;
+  resourceCount: number;
+  serviceCount: number;
+  featureCount: number;
+  industryCount: number;
+  caseStudyCount: number;
+  supportCount: number;
+  score: number;
+  level: AuthorityLevel;
+  status: AuthorityStatus;
+  coverageStatus: CoverageStatus;
+  reasons: string[];
+}
+
 function partialScore(count: number, threshold: number, weight: number): number {
   return Math.min(count / threshold, 1) * weight;
 }
 
-function scoreTopic(nodes: ContentGraphNode[]): Omit<TopicScore, 'topic'> {
-  const blogCount = nodes.filter(n => n.type === 'blog').length;
-  const resourceCount = nodes.filter(n => n.type === 'resource').length;
-  const industryCount = nodes.filter(
-    n => n.type === 'industry-category' || n.type === 'industry-detail',
-  ).length;
-  const serviceCount = nodes.filter(n => n.type === 'service').length;
-  const caseStudyCount = nodes.filter(n => n.type === 'case-study').length;
-
-  const score = Math.round(
-    partialScore(blogCount, FULL_THRESHOLDS.blog, WEIGHTS.blog) +
-      partialScore(resourceCount, FULL_THRESHOLDS.resource, WEIGHTS.resource) +
-      partialScore(industryCount, FULL_THRESHOLDS.industry, WEIGHTS.industry) +
-      partialScore(serviceCount, FULL_THRESHOLDS.service, WEIGHTS.service) +
-      partialScore(caseStudyCount, FULL_THRESHOLDS.caseStudy, WEIGHTS.caseStudy),
+function scoreTopic(topic: TopicScore): number {
+  return Math.round(
+    partialScore(topic.blogCount, FULL_THRESHOLDS.blog, WEIGHTS.blog) +
+      partialScore(topic.resourceCount, FULL_THRESHOLDS.resource, WEIGHTS.resource) +
+      partialScore(topic.serviceCount, FULL_THRESHOLDS.service, WEIGHTS.service) +
+      partialScore(topic.featureCount, FULL_THRESHOLDS.feature, WEIGHTS.feature) +
+      partialScore(topic.industryCount, FULL_THRESHOLDS.industry, WEIGHTS.industry) +
+      partialScore(topic.caseStudyCount, FULL_THRESHOLDS.caseStudy, WEIGHTS.caseStudy),
   );
-
-  return {
-    blogCount,
-    resourceCount,
-    industryCount,
-    serviceCount,
-    caseStudyCount,
-    score,
-    level: classifyLevel(score),
-  };
 }
 
-// ── Markdown report ──────────────────────────────────────────────────
+function toStatus(level: AuthorityLevel, coverageStatus: CoverageStatus): AuthorityStatus {
+  if (coverageStatus === 'gap') {
+    return 'gap';
+  }
+
+  return level.toLowerCase() as AuthorityStatus;
+}
+
+function buildReasons(topic: {
+  blogCount: number;
+  resourceCount: number;
+  serviceCount: number;
+  featureCount: number;
+  industryCount: number;
+  caseStudyCount: number;
+  supportCount: number;
+  coverageStatus: CoverageStatus;
+  score: number;
+}): string[] {
+  const reasons = [
+    topic.blogCount > 0
+      ? `${topic.blogCount} supporting blog ${topic.blogCount === 1 ? 'post is' : 'posts are'} attached to this topic.`
+      : 'No supporting blog posts are attached to this topic.',
+    topic.supportCount > 0
+      ? `${topic.supportCount} internal support ${topic.supportCount === 1 ? 'path is' : 'paths are'} attached across resources, services, features, industries, and case studies.`
+      : 'No internal support paths are attached across resources, services, features, industries, or case studies.',
+    `Coverage status is ${topic.coverageStatus}; weighted authority score is ${topic.score}/100.`,
+  ];
+
+  if (topic.caseStudyCount > 0) {
+    reasons.push(
+      `${topic.caseStudyCount} case ${topic.caseStudyCount === 1 ? 'study reinforces' : 'studies reinforce'} proof for this topic.`
+    );
+  } else {
+    reasons.push('No case studies currently reinforce proof for this topic.');
+  }
+
+  return reasons;
+}
+
 function generateMarkdown(scores: TopicScore[]): string {
   const lines: string[] = [];
-  const sorted = [...scores].sort((a, b) => b.score - a.score);
-  const avg = Math.round(sorted.reduce((s, t) => s + t.score, 0) / sorted.length);
+  const sorted = [...scores].sort((left, right) => right.score - left.score);
+  const avg = Math.round(sorted.reduce((sum, topic) => sum + topic.score, 0) / sorted.length);
 
   lines.push('# Topic Authority Scores');
   lines.push('');
   lines.push(`> Generated: ${new Date().toISOString().split('T')[0]}`);
   lines.push('');
-
-  // Summary table
   lines.push('## Summary');
   lines.push('');
-  lines.push(`| Metric | Value |`);
-  lines.push(`|--------|-------|`);
+  lines.push('| Metric | Value |');
+  lines.push('|--------|-------|');
   lines.push(`| Topics analyzed | ${sorted.length} |`);
   lines.push(`| Average score | ${avg} |`);
-  lines.push(`| Dominant (≥90) | ${sorted.filter(t => t.level === 'Dominant').length} |`);
-  lines.push(`| Strong (75–89) | ${sorted.filter(t => t.level === 'Strong').length} |`);
-  lines.push(`| Growing (60–74) | ${sorted.filter(t => t.level === 'Growing').length} |`);
-  lines.push(`| Weak (40–59) | ${sorted.filter(t => t.level === 'Weak').length} |`);
-  lines.push(`| Gap (<40) | ${sorted.filter(t => t.level === 'Gap').length} |`);
+  lines.push(`| Complete coverage | ${sorted.filter(topic => topic.coverageStatus === 'complete').length} |`);
+  lines.push(`| Coverage gaps | ${sorted.filter(topic => topic.coverageStatus === 'gap').length} |`);
+  lines.push(`| Dominant (≥90) | ${sorted.filter(topic => topic.level === 'Dominant').length} |`);
+  lines.push(`| Strong (75–89) | ${sorted.filter(topic => topic.level === 'Strong').length} |`);
+  lines.push(`| Growing (60–74) | ${sorted.filter(topic => topic.level === 'Growing').length} |`);
+  lines.push(`| Weak (40–59) | ${sorted.filter(topic => topic.level === 'Weak').length} |`);
+  lines.push(`| Gap (<40) | ${sorted.filter(topic => topic.level === 'Gap').length} |`);
   lines.push('');
-
-  // Leaderboard
   lines.push('## Leaderboard');
   lines.push('');
-  lines.push('| # | Topic | Score | Level | Blogs | Resources | Industries | Services | Case Studies |');
-  lines.push('|---|-------|-------|-------|-------|-----------|------------|----------|--------------|');
-  for (let i = 0; i < sorted.length; i++) {
-    const t = sorted[i];
+  lines.push(
+    '| # | Topic | Score | Level | Coverage | Blogs | Resources | Services | Features | Industries | Case Studies |'
+  );
+  lines.push(
+    '|---|-------|-------|-------|----------|-------|-----------|----------|----------|------------|--------------|'
+  );
+  for (let index = 0; index < sorted.length; index += 1) {
+    const topic = sorted[index];
     lines.push(
-      `| ${i + 1} | ${t.topic} | ${t.score} | ${LEVEL_EMOJI[t.level]} ${t.level} | ${t.blogCount} | ${t.resourceCount} | ${t.industryCount} | ${t.serviceCount} | ${t.caseStudyCount} |`,
+      `| ${index + 1} | ${topic.topic} | ${topic.score} | ${LEVEL_EMOJI[topic.level]} ${topic.level} | ${topic.coverageStatus} | ${topic.blogCount} | ${topic.resourceCount} | ${topic.serviceCount} | ${topic.featureCount} | ${topic.industryCount} | ${topic.caseStudyCount} |`,
     );
   }
   lines.push('');
-
-  // Detailed per-topic
-  lines.push('## Detailed Breakdown');
-  lines.push('');
-  for (const t of sorted) {
-    lines.push(`### ${LEVEL_EMOJI[t.level]} ${t.topic}`);
-    lines.push('');
-    lines.push(`| Metric | Count | Threshold | Weight | Earned |`);
-    lines.push(`|--------|-------|-----------|--------|--------|`);
-    lines.push(
-      `| Blogs | ${t.blogCount} | ≥ ${FULL_THRESHOLDS.blog} | ${WEIGHTS.blog} | ${Math.round(partialScore(t.blogCount, FULL_THRESHOLDS.blog, WEIGHTS.blog))} |`,
-    );
-    lines.push(
-      `| Resources | ${t.resourceCount} | ≥ ${FULL_THRESHOLDS.resource} | ${WEIGHTS.resource} | ${Math.round(partialScore(t.resourceCount, FULL_THRESHOLDS.resource, WEIGHTS.resource))} |`,
-    );
-    lines.push(
-      `| Industries | ${t.industryCount} | ≥ ${FULL_THRESHOLDS.industry} | ${WEIGHTS.industry} | ${Math.round(partialScore(t.industryCount, FULL_THRESHOLDS.industry, WEIGHTS.industry))} |`,
-    );
-    lines.push(
-      `| Services | ${t.serviceCount} | ≥ ${FULL_THRESHOLDS.service} | ${WEIGHTS.service} | ${Math.round(partialScore(t.serviceCount, FULL_THRESHOLDS.service, WEIGHTS.service))} |`,
-    );
-    lines.push(
-      `| Case Studies | ${t.caseStudyCount} | ≥ ${FULL_THRESHOLDS.caseStudy} | ${WEIGHTS.caseStudy} | ${Math.round(partialScore(t.caseStudyCount, FULL_THRESHOLDS.caseStudy, WEIGHTS.caseStudy))} |`,
-    );
-    lines.push(`| **Total** | | | **100** | **${t.score}** |`);
-    lines.push('');
-  }
 
   return lines.join('\n');
 }
 
-// ── Main ─────────────────────────────────────────────────────────────
 async function main() {
   await ensureGraphInitialized();
 
@@ -167,33 +182,57 @@ async function main() {
   const reportsDir = path.join(root, 'reports');
   fs.mkdirSync(reportsDir, { recursive: true });
 
-  const graphRecord = getContentGraph();
-  const allNodes = Object.values(graphRecord);
-  const indexes = buildGraphIndexes(allNodes);
+  const allNodes = Object.values(getContentGraph());
+  const coverage = buildTopicCoverageSnapshots(allNodes, CANONICAL_TOPICS);
 
-  const scores: TopicScore[] = [];
+  const scores: TopicScore[] = coverage.map(snapshot => {
+    const base: TopicScoreSeed = {
+      topic: snapshot.topic,
+      blogCount: snapshot.blogCount,
+      resourceCount: snapshot.resourceCount,
+      serviceCount: snapshot.serviceCount,
+      featureCount: snapshot.featureCount,
+      industryCount: snapshot.industryCount,
+      caseStudyCount: snapshot.caseStudyCount,
+      supportCount: snapshot.supportCount,
+      score: 0,
+      level: 'Gap',
+      status: 'gap',
+      coverageStatus: snapshot.hasSupportingPost && snapshot.hasInternalLinkPath ? 'complete' : 'gap',
+      reasons: [],
+    };
 
-  for (const topic of CANONICAL_TOPICS) {
-    const nodes = indexes.topics.get(topic) ?? [];
-    scores.push({ topic, ...scoreTopic(nodes) });
-  }
+    const score = scoreTopic(base);
+    const level = classifyLevel(score);
+    return {
+      ...base,
+      score,
+      level,
+      status: toStatus(level, base.coverageStatus),
+      reasons: buildReasons({
+        ...base,
+        score,
+      }),
+    };
+  });
 
-  const sorted = [...scores].sort((a, b) => b.score - a.score);
-  const avg = Math.round(sorted.reduce((s, t) => s + t.score, 0) / (sorted.length || 1));
+  const sorted = [...scores].sort((left, right) => right.score - left.score);
+  const avg = Math.round(sorted.reduce((sum, topic) => sum + topic.score, 0) / (sorted.length || 1));
 
-  // 1. Markdown
-  const mdPath = path.join(reportsDir, 'topic-authority-scores.md');
-  fs.writeFileSync(mdPath, generateMarkdown(scores), 'utf-8');
-
-  // 2. JSON
-  const jsonPath = path.join(reportsDir, 'topic-authority-scores.json');
   fs.writeFileSync(
-    jsonPath,
+    path.join(reportsDir, 'topic-authority-scores.md'),
+    generateMarkdown(scores),
+    'utf-8',
+  );
+
+  fs.writeFileSync(
+    path.join(reportsDir, 'topic-authority-scores.json'),
     JSON.stringify(
       {
         generatedAt: new Date().toISOString(),
         topicsAnalyzed: scores.length,
         averageScore: avg,
+        completeCoverageTopics: scores.filter(topic => topic.coverageStatus === 'complete').length,
         scores: sorted,
       },
       null,
@@ -202,10 +241,8 @@ async function main() {
     'utf-8',
   );
 
-  // ── Console summary ────────────────────────────────────────────
   const strongest = sorted.slice(0, 5);
   const weakest = sorted.slice(-5).reverse();
-
   const levelCounts: Record<AuthorityLevel, number> = {
     Dominant: 0,
     Strong: 0,
@@ -213,7 +250,10 @@ async function main() {
     Weak: 0,
     Gap: 0,
   };
-  for (const s of scores) levelCounts[s.level]++;
+
+  for (const score of scores) {
+    levelCounts[score.level] += 1;
+  }
 
   const W = 51;
   const line = (text: string) => `║  ${text.padEnd(W - 4)}║`;
@@ -224,6 +264,9 @@ async function main() {
   console.log('╠' + '═'.repeat(W - 2) + '╣');
   console.log(line(`Topics analyzed:       ${scores.length}`));
   console.log(line(`Average authority:     ${avg}/100`));
+  console.log(
+    line(`Complete coverage:     ${scores.filter(topic => topic.coverageStatus === 'complete').length}`)
+  );
   console.log('╠' + '═'.repeat(W - 2) + '╣');
   console.log(line('Distribution:'));
   console.log(line(`  🟢 Dominant (≥90):   ${levelCounts.Dominant}`));
@@ -233,13 +276,13 @@ async function main() {
   console.log(line(`  🔴 Gap     (<40):    ${levelCounts.Gap}`));
   console.log('╠' + '═'.repeat(W - 2) + '╣');
   console.log(line('Strongest topics:'));
-  for (const t of strongest) {
-    console.log(line(`  ${String(t.score).padStart(3)}/100  ${t.topic}`));
+  for (const topic of strongest) {
+    console.log(line(`  ${String(topic.score).padStart(3)}/100  ${topic.topic}`));
   }
   console.log('╠' + '═'.repeat(W - 2) + '╣');
   console.log(line('Weakest topics:'));
-  for (const t of weakest) {
-    console.log(line(`  ${String(t.score).padStart(3)}/100  ${t.topic}`));
+  for (const topic of weakest) {
+    console.log(line(`  ${String(topic.score).padStart(3)}/100  ${topic.topic}`));
   }
   console.log('╠' + '═'.repeat(W - 2) + '╣');
   console.log(line('OUTPUT'));

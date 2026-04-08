@@ -28,7 +28,7 @@ export const buildingRevenueVisibilityThroughCrmTracking: BlogPostData = {
   category: 'crm-automation',
   industries: [],
   systems: ['crm-automation'],
-  topics: ['revenue-visibility'],
+  topics: ['revenue-visibility', 'revenue-tracking'],
   primaryKeyword: 'building revenue visibility through crm tracking',
   supportingKeywords: [
     'crm revenue tracking',

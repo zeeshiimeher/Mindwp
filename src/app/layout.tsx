@@ -6,6 +6,7 @@ import Script from 'next/script';
 import { Footer } from '@/global/Footer';
 import { Header } from '@/global/Header';
 import { getMetadataBase, SITE_NAME, TITLE_TEMPLATE } from '@/lib/seo/config';
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_PATH } from '@/lib/seo/metadata';
 
 import '@/index.css';
 
@@ -30,9 +31,11 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: SITE_NAME,
     type: 'website',
+    images: [DEFAULT_OG_IMAGE],
   },
   twitter: {
     card: 'summary_large_image',
+    images: [DEFAULT_OG_IMAGE_PATH],
   },
 };
 

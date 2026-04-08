@@ -44,6 +44,12 @@ const validators = [
     blocking: true,
   },
   {
+    name: 'validate-content-quality',
+    command: 'npx',
+    args: ['tsx', 'scripts/validators/validate-content-quality.mjs', '--report-json'],
+    blocking: true,
+  },
+  {
     name: 'validate-domain-structure',
     command: 'npx',
     args: ['tsx', 'scripts/validators/validate-domain-structure.mjs', '--report-json'],
@@ -183,6 +189,8 @@ function buildReport(results) {
     result => validators.find(validator => validator.name === result.name)?.blocking === false
   );
 
+  const contentQualityReport = readJson('content-quality-report.json');
+
   return {
     generatedAt: new Date().toISOString(),
     total: {
@@ -209,7 +217,20 @@ function buildReport(results) {
         output: result.output,
       };
     }),
+    seo: contentQualityReport?.summary?.seo ?? null,
+    content: contentQualityReport?.summary?.content ?? null,
+    authority: contentQualityReport?.summary?.authority ?? null,
   };
+}
+
+function readJson(fileName) {
+  const filePath = path.join(root, 'reports', fileName);
+
+  try {
+    return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  } catch {
+    return null;
+  }
 }
 
 function main() {

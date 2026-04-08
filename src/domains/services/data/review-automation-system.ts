@@ -6,8 +6,8 @@ import type { ServicePageData } from '../types';
 
 export const reviewAutomationSystemPage = {
   slug: 'review-automation-system',
-  systems: ['reputation-review', 'smart-website-systems'],
-  topics: ['review-automation', 'review-generation'],
+  systems: ['reputation-review'],
+  topics: ['review-automation', 'review-generation', 'negative-review-response'],
   keywords: [
     'review automation system',
     'google review request automation',

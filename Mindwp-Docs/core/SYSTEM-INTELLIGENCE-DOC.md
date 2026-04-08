@@ -1,7 +1,7 @@
 # System Intelligence Manual
 
 > Single source of truth for all MindWP internal systems.
-> Updated: 2026-04-07
+> Updated: 2026-04-08
 >
 > Conversion behavior is governed by **SYSTEM-CONTRACT.md**. This document covers tooling, dashboards, scripts, and reports only.
 
@@ -15,7 +15,7 @@ MindWP has three layers of internal tooling:
 2. **Scripts** — Command-line tools that generate reports, validate rules, and analyze content.
 3. **Reports** — JSON and Markdown files that store analysis results. Dashboards read from these reports.
 
-Everything connects through the **Content Graph** — a map of all 211 content pages, their relationships, topics, and authority scores.
+Everything connects through the **Content Graph** — a map of 229 content nodes and the 349 analyzed routes they support through shared metadata, authority, and reporting layers.
 
 **How it works:**
 - Scripts analyze content and write results to `/reports/`.
@@ -26,57 +26,25 @@ Everything connects through the **Content Graph** — a map of all 211 content p
 
 ## 2. Dashboards
 
-### Content Dashboard
+### System Dashboard
 
-- **URL:** `/content-dashboard`
-- **File:** `src/app/content-dashboard/page.tsx`
-- **Access:** Development only (`NODE_ENV=development`)
-- **Purpose:** Shows the big picture of your content system — topic authority scores, content gaps, graph health, and where to create new content.
-
-**What it shows:**
-- Overview panel (total nodes, topics, average authority score)
-- Topic authority distribution (Dominant / Strong / Growing / Weak / Gap)
-- Content gaps by topic, resource-industry, and industry-case-study
-- Graph health summary (orphans, weak nodes, strong nodes)
-- Authority graph visualization (SVG if generated)
-
-**Data sources:**
-- `reports/topic-authority-scores.json`
-- `reports/content-gaps.json`
-- `reports/authority-map.json`
-
-**How to use:**
-1. Run `npm run dev` to start the dev server.
-2. Go to `http://localhost:3000/content-dashboard`.
-3. Review topic scores — anything below "Growing" needs more content.
-4. Check content gaps — these are topics missing blog posts, resources, or case studies.
-5. Review graph health — orphan nodes need linking.
-
----
-
-### Authority Dashboard
-
-- **URL:** `/dev/authority-dashboard`
-- **File:** `src/app/dev/authority-dashboard/page.tsx`
+- **URL:** `/dev/system-dashboard`
+- **File:** `src/app/dev/system-dashboard/page.tsx`
 - **Access:** Development only (force-dynamic)
-- **Purpose:** Report-driven system control dashboard. It visualizes current system status only. It does not recompute health from registries at render time.
+- **Purpose:** Unified report-driven control dashboard. It replaces the split content and authority dashboards and does not recompute health from registries at render time.
 
 **What it shows:**
 - System status (`clean` / `warning` / `broken`)
-- Blocking issues
-- Advisory issues
-- Content health summary
-- Conversion health summary
-- Graph health summary
-- Priority actions
-- Summary lines from the master system report
+- System health summary
+- Grouped issues (`seo`, `content`, `authority`)
+- Critical issues with impact and fix guidance
+- Topic authority with deterministic reasons
+- Content inventory table joined to issue counts
+- Fix suggestions derived from grouped issue output in the format: action -> target -> impact -> time
 
 **Data sources:**
 - `reports/system-report.json`
-- `reports/system-state.json`
-- `reports/system-drift.json`
-- `reports/topic-authority-scores.json`
-- `reports/content-gaps.json`
+- `src/lib/content-quality/inventory.ts`
 
 **Reader:**
 - `src/lib/dev/system-report.ts`
@@ -84,9 +52,15 @@ Everything connects through the **Content Graph** — a map of all 211 content p
 **How to use:**
 1. Run `npm run system:report`.
 2. Run `npm run dev` to start the dev server.
-3. Go to `http://localhost:3000/dev/authority-dashboard`.
-4. Start with blocking issues and priority actions.
-5. Use advisory issues and content health to plan cleanup work.
+3. Go to `http://localhost:3000/dev/system-dashboard`.
+4. Start with grouped issues and critical issues.
+5. Use topic authority reasons and the inventory table to trace exactly what changed and what to fix.
+
+**Launch-ready target:**
+- `system-report.json` is `clean`
+- `blocking.count = 0`
+- `advisory.count = 0`
+- `reports/topic-authority-scores.json` contains `0` weak topics
 
 The dashboard is intentionally a visualization layer only. If a metric is missing, fix the report pipeline, not the frontend.
 
@@ -129,7 +103,9 @@ These enforce rules. Run individually or all at once with `validate-all`.
 |--------|---------|--------|-------------|
 | validate-all | `node scripts/core/validate-all.mjs` | Runs ALL validators below, aggregates results, and writes `reports/validation-results.json` | Yes (if any blocking validator fails) |
 | validate-content-contract | `npx tsx scripts/validators/validate-content-contract.mjs` | Required metadata, canonical values, and contract intent mapping | Yes |
+| validate-content-quality | `npx tsx scripts/validators/validate-content-quality.mjs` | SEO completeness, duplicate titles/descriptions, canonical/sitemap alignment, OG coverage, weak descriptions, and topic coverage | Yes |
 | validate-domain-structure | `npx tsx scripts/validators/validate-domain-structure.mjs` | Required fields and section structure for service, feature, home, industry, and case-study domains | Yes |
+| validate-cta-label-contract | `npx tsx scripts/validators/validate-cta-label-contract.mjs` | CTA label contract consistency across routed conversion surfaces | Yes |
 | validate-conversion-contract | `npx tsx scripts/validators/validate-conversion-contract.mjs` | CTA routing to `/contact`, system/source validation, and fallback readiness | Yes |
 | validate-template-payload-sufficiency | `npx tsx scripts/validators/validate-template-payload-sufficiency.mjs` | Required template payload completeness across service, feature, resource, case-study, and industry pages | Yes |
 | validate-section-structure | `npx tsx scripts/validators/validate-section-structure.mjs` | Section cardinality and multi-item payload sufficiency for grid- and card-driven sections | Yes |
@@ -139,6 +115,8 @@ These enforce rules. Run individually or all at once with `validate-all`.
 | validate-graph | `npx tsx scripts/validators/validate-graph.ts` | Content graph integrity (edges, orphans) | Yes |
 | validate-vocabulary | `node scripts/validators/validate-vocabulary.mjs` | Banned phrases and anti-hype vocabulary sourced from FOUNDATION-AND-POSITIONING.md | **No** (warnings only) |
 | validate-internal-links | `npx tsx scripts/validators/validate-internal-links.ts` | Max 2 sections × 3 items per page, no duplicates, no repeated anchors | Yes |
+| validate-tokens | `node scripts/validators/validate-tokens.mjs` | CSS token usage and token-contract compliance in production UI | Yes |
+| validate-inline-styles | `node scripts/validators/validate-inline-styles.mjs` | Inline-style policy enforcement outside allowed exceptions | Yes |
 | validate-system-docs | `node scripts/validators/validate-system-docs.mjs` | Checks this doc stays aligned with actual systems | **No** (warnings only) |
 | lint | `node scripts/runners/run-eslint.mjs` | Lint and formatting drift | **No** (warnings only in system integrity flow) |
 
@@ -178,14 +156,15 @@ All reports live in `/reports/`. This directory contains both generated snapshot
 - **Generated by:** `node scripts/core/system-report.mjs`
 - **Used by:** Authority Dashboard
 - **Contains:** One normalized system snapshot with status, blocking issues, advisory issues, content/conversion/graph/design counts, summary, and priority actions
+- **Current scope:** Also includes centralized `seo`, `content_quality`, and `authority` summaries used by the authority dashboard
 - **Purpose:** Single control-layer output for inspectable system state.
 
 ### topic-authority-scores.json
 
 - **Generated by:** `npx tsx scripts/generate-topic-authority-scores.ts`
 - **Used by:** Content Dashboard, Authority Dashboard
-- **Contains:** Per-topic scores with blog/resource/industry/service/case-study counts, authority level (Dominant/Strong/Growing/Weak/Gap)
-- **Purpose:** Shows which topics have deep content coverage and which need more.
+- **Contains:** Per-topic scores with blog/resource/service/feature/industry/case-study support, `coverageStatus`, and complete-coverage totals
+- **Purpose:** Shows whether each canonical topic has complete support coverage and how strong that coverage is.
 
 ### topic-authority-scores.md
 
@@ -198,8 +177,8 @@ All reports live in `/reports/`. This directory contains both generated snapshot
 
 - **Generated by:** `npx tsx scripts/analyzers/generate-content-gaps.ts`
 - **Used by:** Content Dashboard
-- **Contains:** Topics with missing content types (blogs, resources, case studies), suggestions for what to create
-- **Purpose:** Identifies exactly where content is missing and what to create.
+- **Contains:** Topic coverage snapshots, orphan-topic detection, and coverage-gap output aligned to the canonical topic model
+- **Purpose:** Identifies where topic support is missing or at risk of drifting out of complete coverage.
 
 ### content-gaps.md
 
@@ -273,7 +252,7 @@ Step-by-step guide for using the system:
 ### Daily Check
 
 1. Run `npm run system:report`.
-2. Run `npm run dev` and open the **Content Dashboard** (`/content-dashboard`).
+2. Run `npm run dev` and open the **System Dashboard** (`/dev/system-dashboard`).
 3. Review topic authority scores and content gaps.
 4. Switch to the **Authority Dashboard** (`/dev/authority-dashboard`).
 5. Start with **System Status**, **Blocking Issues**, and **Priority Actions**.

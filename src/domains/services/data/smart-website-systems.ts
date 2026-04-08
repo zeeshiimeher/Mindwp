@@ -66,7 +66,13 @@ const smartWebsitesFaqItems = [
 export const smartWebsiteSystemsPage = {
   slug: 'smart-website-systems',
   systems: ['smart-website-systems'],
-  topics: ['website-infrastructure', 'lead-capture', 'conversion-optimization'],
+  topics: [
+    'website-infrastructure',
+    'lead-capture',
+    'conversion-optimization',
+    'crm-enabled-websites',
+    'service-pages',
+  ],
   keywords: [
     'smart website systems',
     'wordpress business website',

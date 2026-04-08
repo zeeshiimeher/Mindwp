@@ -7,7 +7,6 @@ import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
 import ResourcePageTemplate from '@/domains/resources/templates/ResourcePageTemplate';
 import type { ResourceFAQItem } from '@/domains/resources/templates/types';
 import type { ResourceSection } from '@/domains/resources/types';
-import { getImage } from '@/lib/image-system/resolver';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 import { buildMetadata } from '@/lib/seo/metadata';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
@@ -77,7 +76,6 @@ export async function generateMetadata({
     type: 'article',
     noindex: false,
     nofollow: false,
-    image: getImage(slug, 'resources', 'featured-overlay') ?? undefined,
   });
 
   const openGraph = resource.seo.openGraph;
@@ -88,7 +86,6 @@ export async function generateMetadata({
       ...metadata.openGraph,
       title: openGraph?.title ?? title,
       description: openGraph?.description ?? description,
-      ...(openGraph?.image && { images: [openGraph.image] }),
     },
   };
 }

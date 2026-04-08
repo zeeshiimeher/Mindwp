@@ -70,7 +70,7 @@ const reputationFaqItems = [
 export const reputationData: FeaturePageData = {
   slug: 'reputation',
   systems: ['reputation-review', 'local-seo-authority'],
-  topics: ['review-generation'],
+  topics: ['review-generation', 'negative-review-response'],
   seo: {
     title: 'Reputation | Structured Review Management Layer',
     description:

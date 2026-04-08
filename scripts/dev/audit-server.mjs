@@ -7,8 +7,10 @@ import { spawn, spawnSync } from 'node:child_process';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
 const WORK_DIR = path.join(ROOT, '_workspace');
-const PID_FILE = path.join(WORK_DIR, 'audit-server.pid.json');
-const LOG_FILE = path.join(WORK_DIR, 'audit-server.log');
+const LOG_DIR = path.join(WORK_DIR, 'logs');
+const PID_DIR = path.join(WORK_DIR, 'pids');
+const PID_FILE = path.join(PID_DIR, 'audit-server.pid.json');
+const LOG_FILE = path.join(LOG_DIR, 'audit-server.log');
 const AUDIT_PORT = Number.parseInt(process.env.VISUAL_AUDIT_PORT || '3009', 10);
 const AUDIT_HOST = process.env.VISUAL_AUDIT_HOST || '127.0.0.1';
 const AUDIT_DIST_DIR = process.env.VISUAL_AUDIT_DIST_DIR || '.next-audit';
@@ -21,6 +23,14 @@ function getNpmBin() {
 function ensureWorkspaceDir() {
   if (!fs.existsSync(WORK_DIR)) {
     fs.mkdirSync(WORK_DIR, { recursive: true });
+  }
+
+  if (!fs.existsSync(LOG_DIR)) {
+    fs.mkdirSync(LOG_DIR, { recursive: true });
+  }
+
+  if (!fs.existsSync(PID_DIR)) {
+    fs.mkdirSync(PID_DIR, { recursive: true });
   }
 }
 

@@ -155,7 +155,7 @@ const finalCta = {
 
 export const howReviewAutomationImprovesLocalAuthority: ResourceData = {
   slug,
-  title: 'How Review Automation Improves Local Authority',
+  title: 'How Review Automation Improves Local Authority Guide',
   description:
     'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
   category: 'reputation-review',
@@ -165,7 +165,7 @@ export const howReviewAutomationImprovesLocalAuthority: ResourceData = {
   topics: ['review-automation'],
   primaryService: 'reputation-review',
   seo: {
-    title: 'How Review Automation Improves Local Authority',
+    title: 'How Review Automation Improves Local Authority Guide',
     description:
       'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
     canonical,

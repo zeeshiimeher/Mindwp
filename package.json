@@ -103,6 +103,7 @@
     "validate": "npm run typecheck && npm run lint",
     "validate:docs": "npm run -s generate:global-inventory && node scripts/validators/validate-docs.mjs",
     "validate:content-contract": "tsx scripts/validators/validate-content-contract.mjs",
+    "validate:content-quality": "tsx scripts/validators/validate-content-quality.mjs",
     "validate:domain-structure": "tsx scripts/validators/validate-domain-structure.mjs",
     "validate:cta-label-contract": "tsx scripts/validators/validate-cta-label-contract.mjs",
     "validate:conversion-contract": "tsx scripts/validators/validate-conversion-contract.mjs",
