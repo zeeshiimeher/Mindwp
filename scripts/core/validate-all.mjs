@@ -29,23 +29,116 @@ const reportPath = path.join(root, 'reports', 'validation-results.json');
 
 /** @type {Validator[]} */
 const validators = [
-  { name: 'check-generated', command: 'node', args: ['scripts/core/check-generated.mjs'], blocking: true },
+  {
+    name: 'check-generated',
+    command: 'node',
+    args: ['scripts/core/check-generated.mjs'],
+    blocking: true,
+  },
   { name: 'typecheck', command: 'npx', args: ['tsc', '--noEmit'], blocking: true },
   { name: 'lint', command: 'node', args: ['scripts/runners/run-eslint.mjs'], blocking: false },
-  { name: 'validate-content-contract', command: 'npx', args: ['tsx', 'scripts/validators/validate-content-contract.mjs', '--report-json'], blocking: true },
-  { name: 'validate-domain-structure', command: 'npx', args: ['tsx', 'scripts/validators/validate-domain-structure.mjs', '--report-json'], blocking: true },
-  { name: 'validate-conversion-contract', command: 'npx', args: ['tsx', 'scripts/validators/validate-conversion-contract.mjs', '--report-json'], blocking: true },
-  { name: 'validate-design-system', command: 'node', args: ['scripts/validators/validate-design-system.cjs', '--report-json'], blocking: true },
-  { name: 'validate-graph', command: 'npx', args: ['tsx', 'scripts/validators/validate-graph.ts', '--report-json'], blocking: true },
-  { name: 'validate-internal-links', command: 'npx', args: ['tsx', 'scripts/validators/validate-internal-links.ts'], blocking: true },
-  { name: 'validate-tokens', command: 'node', args: ['scripts/validators/validate-tokens.mjs', '--report-json'], blocking: true },
-  { name: 'validate-inline-styles', command: 'node', args: ['scripts/validators/validate-inline-styles.mjs', '--report-json'], blocking: true },
-  { name: 'validate-docs', command: 'node', args: ['scripts/validators/validate-docs.mjs', '--report-json'], blocking: false },
-  { name: 'validate-vocabulary', command: 'node', args: ['scripts/validators/validate-vocabulary.mjs', '--report-json'], blocking: false },
-  { name: 'validate-system-docs', command: 'node', args: ['scripts/validators/validate-system-docs.mjs'], blocking: false },
-  { name: 'validate-checklist', command: 'node', args: ['scripts/validators/validate-checklist.mjs'], blocking: false },
-  { name: 'validate-fix-log', command: 'node', args: ['scripts/validators/validate-fix-log.mjs'], blocking: false },
-  { name: 'validate-reports-structure', command: 'node', args: ['scripts/validators/validate-reports-structure.mjs'], blocking: false },
+  {
+    name: 'validate-content-contract',
+    command: 'npx',
+    args: ['tsx', 'scripts/validators/validate-content-contract.mjs', '--report-json'],
+    blocking: true,
+  },
+  {
+    name: 'validate-domain-structure',
+    command: 'npx',
+    args: ['tsx', 'scripts/validators/validate-domain-structure.mjs', '--report-json'],
+    blocking: true,
+  },
+  {
+    name: 'validate-cta-label-contract',
+    command: 'npx',
+    args: ['tsx', 'scripts/validators/validate-cta-label-contract.mjs', '--report-json'],
+    blocking: true,
+  },
+  {
+    name: 'validate-conversion-contract',
+    command: 'npx',
+    args: ['tsx', 'scripts/validators/validate-conversion-contract.mjs', '--report-json'],
+    blocking: true,
+  },
+  {
+    name: 'validate-template-payload-sufficiency',
+    command: 'npx',
+    args: ['tsx', 'scripts/validators/validate-template-payload-sufficiency.mjs', '--report-json'],
+    blocking: true,
+  },
+  {
+    name: 'validate-section-structure',
+    command: 'npx',
+    args: ['tsx', 'scripts/validators/validate-section-structure.mjs', '--report-json'],
+    blocking: true,
+  },
+  {
+    name: 'validate-design-system',
+    command: 'node',
+    args: ['scripts/validators/validate-design-system.cjs', '--report-json'],
+    blocking: true,
+  },
+  {
+    name: 'validate-graph',
+    command: 'npx',
+    args: ['tsx', 'scripts/validators/validate-graph.ts', '--report-json'],
+    blocking: true,
+  },
+  {
+    name: 'validate-internal-links',
+    command: 'npx',
+    args: ['tsx', 'scripts/validators/validate-internal-links.ts'],
+    blocking: true,
+  },
+  {
+    name: 'validate-tokens',
+    command: 'node',
+    args: ['scripts/validators/validate-tokens.mjs', '--report-json'],
+    blocking: true,
+  },
+  {
+    name: 'validate-inline-styles',
+    command: 'node',
+    args: ['scripts/validators/validate-inline-styles.mjs', '--report-json'],
+    blocking: true,
+  },
+  {
+    name: 'validate-docs',
+    command: 'node',
+    args: ['scripts/validators/validate-docs.mjs', '--report-json'],
+    blocking: false,
+  },
+  {
+    name: 'validate-vocabulary',
+    command: 'node',
+    args: ['scripts/validators/validate-vocabulary.mjs', '--report-json'],
+    blocking: false,
+  },
+  {
+    name: 'validate-system-docs',
+    command: 'node',
+    args: ['scripts/validators/validate-system-docs.mjs'],
+    blocking: false,
+  },
+  {
+    name: 'validate-checklist',
+    command: 'node',
+    args: ['scripts/validators/validate-checklist.mjs'],
+    blocking: false,
+  },
+  {
+    name: 'validate-fix-log',
+    command: 'node',
+    args: ['scripts/validators/validate-fix-log.mjs'],
+    blocking: false,
+  },
+  {
+    name: 'validate-reports-structure',
+    command: 'node',
+    args: ['scripts/validators/validate-reports-structure.mjs'],
+    blocking: false,
+  },
 ];
 
 /**
@@ -83,11 +176,11 @@ function runValidator(validator) {
 function buildReport(results) {
   const passed = results.filter(result => result.status === 'pass');
   const failed = results.filter(result => result.status === 'fail');
-  const blockingFailed = failed.filter(result =>
-    validators.find(validator => validator.name === result.name)?.blocking !== false
+  const blockingFailed = failed.filter(
+    result => validators.find(validator => validator.name === result.name)?.blocking !== false
   );
-  const advisoryFailed = failed.filter(result =>
-    validators.find(validator => validator.name === result.name)?.blocking === false
+  const advisoryFailed = failed.filter(
+    result => validators.find(validator => validator.name === result.name)?.blocking === false
   );
 
   return {

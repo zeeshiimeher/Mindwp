@@ -123,6 +123,7 @@ const systemReportNames = new Set([
   'resources-report.json',
   'service-structure-report.json',
   'structure-report.json',
+  'test-results.json',
   'validation-results.json',
   'system-state.json',
   'system-drift.json',

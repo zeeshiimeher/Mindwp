@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { Children, type ReactNode } from 'react';
 
 import { cn } from '@/components/ui/utils';
 
@@ -48,6 +48,10 @@ export function SplitLayout({
   className = '',
   children,
 }: SplitLayoutProps) {
+  if (Children.count(children) !== 2) {
+    throw new Error('SplitLayout requires exactly 2 children.');
+  }
+
   return (
     <div
       className={cn(

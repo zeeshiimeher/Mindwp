@@ -19,6 +19,7 @@ import { updateContextMemory } from '../learning/contextMemory';
 import { updateProviderScore } from '../learning/providerLearning';
 import { searchAllProviders } from '../providers';
 import { generateSemanticQueries } from '../semantic/queryGenerator';
+import { buildExifMetadata, generateImageSeo } from '../seo/imageMetadata';
 import type {
   ContentDomain,
   ContentMetadata,
@@ -34,7 +35,6 @@ import { downloadImage } from './downloader';
 import { generateStandardFeaturedImage } from './featuredImage';
 import { optimizeImage, saveImage } from './optimizer';
 import { buildDesignContext } from './overlayDesign';
-import { buildExifMetadata, generateImageSeo } from '../seo/imageMetadata';
 
 /** Verify white text contrast on the generated image (WCAG AA = 4.5:1) */
 async function verifyContrast(imageBuffer: Buffer): Promise<{ ratio: number; pass: boolean }> {
@@ -100,7 +100,16 @@ export async function processImage(
   }
 
   // Negative filter — reject images with these terms in tags/description
-  const NEGATIVE_TERMS = ['illustration', '3d render', 'cartoon', 'icon', 'vector', 'clipart', 'flat design', 'infographic'];
+  const NEGATIVE_TERMS = [
+    'illustration',
+    '3d render',
+    'cartoon',
+    'icon',
+    'vector',
+    'clipart',
+    'flat design',
+    'infographic',
+  ];
 
   // Try each query until we find a good image
   for (const semanticQuery of queries) {
@@ -298,8 +307,7 @@ export async function processImage(
         // Score ≥ 9 → always accept (strong output)
         // Score ≥ 7.5 with zero issues → accept (clean output)
         // Otherwise → trigger auto-tune with fix application
-        const shouldAccept =
-          debug.score >= 9 || (debug.score >= 7.5 && debug.issues.length === 0);
+        const shouldAccept = debug.score >= 9 || (debug.score >= 7.5 && debug.issues.length === 0);
 
         if (shouldAccept) {
           console.log(`[tune] Score ${debug.score} — accepting result`);
@@ -325,13 +333,15 @@ export async function processImage(
           console.log(`[tune] No new fixes available — stopping`);
           break;
         }
-        console.log(`[tune] Score ${debug.score} with issues [${debug.issues.join(', ')}] — applying fixes: ${fixesToApply.join(', ')}`);
+        console.log(
+          `[tune] Score ${debug.score} with issues [${debug.issues.join(', ')}] — applying fixes: ${fixesToApply.join(', ')}`
+        );
         for (const f of fixesToApply) appliedFixSet.add(f);
         tuneOverrides = clampOverrides(applyFixes(tuneOverrides, fixesToApply));
         allFixesApplied.push(...fixesToApply);
 
         // FIX 7 — Weak text dominance emergency boost
-        const textAreaRatio = (debug.details.textBlockWidth as number) / (1600);
+        const textAreaRatio = (debug.details.textBlockWidth as number) / 1600;
         if (textAreaRatio < 0.35) {
           tuneOverrides.titleScale = (tuneOverrides.titleScale ?? 1.0) + 0.2;
           tuneOverrides = clampOverrides(tuneOverrides);

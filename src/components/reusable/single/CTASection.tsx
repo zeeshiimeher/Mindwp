@@ -5,6 +5,35 @@ import { Button, type ButtonProps } from './Button';
 
 const BLOCK = 'cta-section';
 
+function hasRenderableText(value: ReactNode | undefined): boolean {
+  if (value === null || value === undefined || typeof value === 'boolean') {
+    return false;
+  }
+
+  if (typeof value === 'string') {
+    return value.trim().length > 0;
+  }
+
+  if (Array.isArray(value)) {
+    return value.some(item => hasRenderableText(item));
+  }
+
+  return true;
+}
+
+function isActionableButton(action?: ButtonProps): boolean {
+  if (!action) {
+    return false;
+  }
+
+  return (
+    Boolean(action.href || action.onClick) &&
+    (hasRenderableText(action.children) ||
+      hasRenderableText(action.label) ||
+      hasRenderableText(action.text))
+  );
+}
+
 /**
  * CTASection - Conversion-focused call-to-action section
  *
@@ -106,6 +135,16 @@ export function CTASection({
   wrapper = 'section',
   includeContainer = true,
 }: CTASectionProps) {
+  if (title.trim().length === 0) {
+    throw new Error('CTASection requires a non-empty title.');
+  }
+
+  if (!isActionableButton(primaryAction) && !isActionableButton(secondaryAction)) {
+    throw new Error(
+      'CTASection requires at least one actionable primaryAction or secondaryAction.'
+    );
+  }
+
   const HeadingTag = headingLevel;
 
   const rootClassName = [BLOCK, 'cta', cssPrefix].filter(Boolean).join(' ');

@@ -27,7 +27,7 @@ export function Footer() {
     { label: 'Privacy Policy', href: '/privacy' },
     { label: 'Terms & Conditions', href: '/terms' },
     { label: 'Cookie Policy', href: '/cookies' },
-    { label: 'Sitemap', href: '/sitemap' },
+    { label: 'Sitemap', href: '/sitemap.xml' },
   ];
 
   return (

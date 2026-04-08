@@ -125,10 +125,7 @@ const METRIC_KEYWORDS = [
 ];
 
 /** Extract a badge string from content metadata (e.g. "+32% BOOKINGS"), or null */
-export function extractBadgeText(
-  metadata: ContentMetadata,
-  domain: ContentDomain
-): string | null {
+export function extractBadgeText(metadata: ContentMetadata, domain: ContentDomain): string | null {
   const allText = [metadata.title, ...metadata.topics, ...metadata.tags].join(' ');
 
   // Detect percentage patterns: +32%, 45%, etc.
@@ -220,23 +217,46 @@ export function resolveVisualMode(
 }
 
 export function resolveIllustrationVariant(metadata: ContentMetadata): IllustrationVariant {
-  const text = [metadata.title, metadata.primaryKeyword, ...metadata.topics, ...metadata.tags, ...metadata.systems]
+  const text = [
+    metadata.title,
+    metadata.primaryKeyword,
+    ...metadata.topics,
+    ...metadata.tags,
+    ...metadata.systems,
+  ]
     .join(' ')
     .toLowerCase();
 
-  if (['calendar', 'booking', 'appointment', 'schedule'].some((keyword) => text.includes(keyword))) {
+  if (['calendar', 'booking', 'appointment', 'schedule'].some(keyword => text.includes(keyword))) {
     return 'calendar';
   }
 
-  if (['pipeline', 'routing', 'crm'].some((keyword) => text.includes(keyword))) {
+  if (['pipeline', 'routing', 'crm'].some(keyword => text.includes(keyword))) {
     return 'pipeline';
   }
 
-  if (['automation', 'workflow', 'sequence', 'process', 'trigger', 'action'].some((keyword) => text.includes(keyword))) {
+  if (
+    ['automation', 'workflow', 'sequence', 'process', 'trigger', 'action'].some(keyword =>
+      text.includes(keyword)
+    )
+  ) {
     return 'flow';
   }
 
-  if (['review', 'message', 'messaging', 'chat', 'conversation', 'inbox', 'follow-up', 'follow up', 'reminder', 'missed call'].some((keyword) => text.includes(keyword))) {
+  if (
+    [
+      'review',
+      'message',
+      'messaging',
+      'chat',
+      'conversation',
+      'inbox',
+      'follow-up',
+      'follow up',
+      'reminder',
+      'missed call',
+    ].some(keyword => text.includes(keyword))
+  ) {
     return 'chat';
   }
 

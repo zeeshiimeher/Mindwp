@@ -1,15 +1,19 @@
-import { readFile } from 'node:fs/promises';
-
-import { Resvg } from '@resvg/resvg-js';
 import { createElement } from 'react';
-import sharp from 'sharp';
+import { Resvg } from '@resvg/resvg-js';
+import { readFile } from 'node:fs/promises';
 import satori from 'satori';
+import sharp from 'sharp';
 
-import type { BrightnessResult, ContentDomain, OverlayDesignContext, TuneOverrides } from '../types';
+import type {
+  BrightnessResult,
+  ContentDomain,
+  OverlayDesignContext,
+  TuneOverrides,
+} from '../types';
 
-import { getBrightness, getOverlayStrength, getTextColor, wrapTitle } from './contentAware';
 import { CenterLayout } from './layouts/CenterLayout';
 import { SplitLayout } from './layouts/SplitLayout';
+import { getBrightness, getOverlayStrength, getTextColor, wrapTitle } from './contentAware';
 import { resolveRenderCopy } from './renderCopy';
 
 type LayoutType = 'split' | 'center';
@@ -72,7 +76,9 @@ export interface RenderImageResult {
   metrics: RenderMetrics;
 }
 
-let fontCache: Promise<Array<{ name: string; data: Buffer; weight: 400 | 600; style: 'normal' }>> | null = null;
+let fontCache: Promise<
+  Array<{ name: string; data: Buffer; weight: 400 | 600; style: 'normal' }>
+> | null = null;
 
 function dataUri(buffer: Buffer, mimeType: string): string {
   return `data:${mimeType};base64,${buffer.toString('base64')}`;
@@ -93,24 +99,30 @@ function resolveLayout(domain: ContentDomain): LayoutType {
   }
 }
 
-function buildMetrics(title: string, domain: ContentDomain, brightness: BrightnessResult): RenderMetrics {
+function buildMetrics(
+  title: string,
+  domain: ContentDomain,
+  brightness: BrightnessResult
+): RenderMetrics {
   const layoutType = resolveLayout(domain);
   const tone = getBrightness(brightness);
   const textColors = getTextColor(layoutType);
-  const fontSize = layoutType === 'split'
-    ? 58
-    : domain === 'case-studies'
-      ? 56
-      : domain === 'resources' || domain === 'industries'
+  const fontSize =
+    layoutType === 'split'
+      ? 58
+      : domain === 'case-studies'
+        ? 56
+        : domain === 'resources' || domain === 'industries'
+          ? 60
+          : CANVAS.titleFontSize;
+  const lineHeight =
+    layoutType === 'split'
+      ? 62
+      : domain === 'case-studies'
         ? 60
-        : CANVAS.titleFontSize;
-  const lineHeight = layoutType === 'split'
-    ? 62
-    : domain === 'case-studies'
-      ? 60
-      : domain === 'resources' || domain === 'industries'
-        ? 64
-        : CANVAS.lineHeight;
+        : domain === 'resources' || domain === 'industries'
+          ? 64
+          : CANVAS.lineHeight;
 
   return {
     titleLines: wrapTitle(title, domain),
@@ -151,7 +163,9 @@ async function prepareImageSource(buffer: Buffer): Promise<string> {
 }
 
 function renderLayout(layoutType: LayoutType, props: LayoutRenderProps) {
-  return layoutType === 'split' ? createElement(SplitLayout, props) : createElement(CenterLayout, props);
+  return layoutType === 'split'
+    ? createElement(SplitLayout, props)
+    : createElement(CenterLayout, props);
 }
 
 export async function renderImage(options: RenderImageOptions): Promise<RenderImageResult> {
@@ -162,15 +176,20 @@ export async function renderImage(options: RenderImageOptions): Promise<RenderIm
   const safeSubtitle = renderCopy.subtitle?.replace(/\s+/g, ' ').trim() || null;
   const layoutType = resolveLayout(options.design.domain);
 
-  if (layoutType === 'center' && options.design.visualMode === 'real' && options.imageBuffer.length === 0) {
+  if (
+    layoutType === 'center' &&
+    options.design.visualMode === 'real' &&
+    options.imageBuffer.length === 0
+  ) {
     throw new Error(`Missing image for center layout domain: ${options.design.domain}`);
   }
 
   const metrics = buildMetrics(safeTitle, options.design.domain, options.brightness);
   const fonts = await loadFonts();
-  const imageSrc = layoutType === 'center' && options.design.visualMode === 'real'
-    ? await prepareImageSource(options.imageBuffer)
-    : null;
+  const imageSrc =
+    layoutType === 'center' && options.design.visualMode === 'real'
+      ? await prepareImageSource(options.imageBuffer)
+      : null;
 
   const svg = await satori(
     renderLayout(layoutType, {
@@ -194,7 +213,9 @@ export async function renderImage(options: RenderImageOptions): Promise<RenderIm
 
   const pngBuffer = new Resvg(svg, {
     fitTo: { mode: 'width', value: CANVAS.width },
-  }).render().asPng();
+  })
+    .render()
+    .asPng();
 
   const overlay = await sharp(pngBuffer)
     .resize(options.outputWidth, options.outputHeight)

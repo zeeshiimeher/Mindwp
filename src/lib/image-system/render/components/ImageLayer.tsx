@@ -1,5 +1,4 @@
 import type { OverlayDesignContext } from '../../types';
-
 import { getIllustration } from '../illustrations/getIllustration';
 
 export function ImageLayer({
@@ -34,7 +33,7 @@ export function ImageLayer({
   return (
     <img
       src={imageSrc}
-      alt=""
+      alt=''
       width={1200}
       height={630}
       style={{

@@ -129,9 +129,9 @@ If any task requires structural change → STOP and escalate instead of implemen
 ### Allowed without asking
 - Run sync and validators
 - Read any repo file for context
-- Implement tasks from EXECUTION-MEMORY.md
+- Implement tasks from EXECUTION-MEMORY.md (On demand Only )
 - Fix validator failures and code defects inside active task scope
-- Run image generation scripts in test mode
+- Keep Update EXECUTION-MEMORY.md
 
 ### Requires user confirmation
 - Update SYSTEM-TRUTH.md

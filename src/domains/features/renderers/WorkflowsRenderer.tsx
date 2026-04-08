@@ -74,16 +74,17 @@ export default function WorkflowsRenderer() {
   const { process, benefits, useCases, capabilities, faq } = sections;
   const primarySystem = workflowsData.systems[0] ?? 'smart-website-systems';
   const heroPrimaryHref = hero.primaryAction?.href;
-  const heroPrimaryAction = hero.primaryAction && heroPrimaryHref
-    ? {
-        ...hero.primaryAction,
-        href: buildContactHref(heroPrimaryHref, {
-          system: primarySystem,
-          sourceType: 'feature',
-          slug: workflowsData.slug,
-        }),
-      }
-    : undefined;
+  const heroPrimaryAction =
+    hero.primaryAction && heroPrimaryHref
+      ? {
+          ...hero.primaryAction,
+          href: buildContactHref(heroPrimaryHref, {
+            system: primarySystem,
+            sourceType: 'feature',
+            slug: workflowsData.slug,
+          }),
+        }
+      : undefined;
   const ctaPrimaryAction = cta.primaryAction.href
     ? {
         ...cta.primaryAction,

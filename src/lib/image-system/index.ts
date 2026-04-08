@@ -44,7 +44,12 @@ export { calculateTitleLayout } from './pipeline/titleLayout';
 // Debug + Auto-Tune
 export { applyFixes, clampOverrides } from './debug/autoTune';
 export { debugImage } from './debug/debugImage';
-export { loadLearnedOverrides, loadLearningMemory, saveWinningConfig, titleBucket } from './debug/learningMemory';
+export {
+  loadLearnedOverrides,
+  loadLearningMemory,
+  saveWinningConfig,
+  titleBucket,
+} from './debug/learningMemory';
 export { appendImageLog, loadImageLog } from './debug/logger';
 
 // Providers

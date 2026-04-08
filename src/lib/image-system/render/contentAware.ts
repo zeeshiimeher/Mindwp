@@ -74,7 +74,8 @@ export function wrapTitle(title: string, domain: ContentDomain): string[] {
   for (let index = 0; index < words.length; index += 1) {
     const word = words[index];
     const nextWordWidth = estimateWordWidth(word);
-    const nextWidth = currentWords.length === 0 ? nextWordWidth : currentWidth + FONT_SIZE * 0.28 + nextWordWidth;
+    const nextWidth =
+      currentWords.length === 0 ? nextWordWidth : currentWidth + FONT_SIZE * 0.28 + nextWordWidth;
 
     if (nextWidth <= maxWidth || currentWords.length === 0) {
       currentWords.push(word);

@@ -401,7 +401,9 @@ function extractIntent(metadata: ContentMetadata, industry: string | null): Cont
   const emotion = EMOTION_MAP[intent] ?? 'professionalism';
 
   // Map industry to subject
-  const subject = industry ? (SUBJECT_MAP[industry] ?? 'service professional') : 'business professional';
+  const subject = industry
+    ? (SUBJECT_MAP[industry] ?? 'service professional')
+    : 'business professional';
 
   return { industry, intent, emotion, subject };
 }
@@ -426,7 +428,11 @@ const CONTEXT_MAP: Record<string, string[]> = {
 };
 
 /** Build an intent-driven search query from extracted content signals */
-function buildIntentQuery(intent: ContentIntent, metadata: ContentMetadata, domain: ContentDomain): string {
+function buildIntentQuery(
+  intent: ContentIntent,
+  metadata: ContentMetadata,
+  domain: ContentDomain
+): string {
   const parts: string[] = [];
 
   // Industry keyword
@@ -500,7 +506,12 @@ export function generateSemanticQueries(
 
   if (domain === 'resources') {
     const industryLabel = industry ? industry.replace(/-/g, ' ') : 'service business';
-    const resourceText = [metadata.title, metadata.primaryKeyword, ...metadata.topics, ...metadata.tags]
+    const resourceText = [
+      metadata.title,
+      metadata.primaryKeyword,
+      ...metadata.topics,
+      ...metadata.tags,
+    ]
       .join(' ')
       .toLowerCase();
     candidates.push(
@@ -518,7 +529,10 @@ export function generateSemanticQueries(
 
     if (resourceText.includes('review')) {
       candidates.push({
-        query: enrichQuery(`${industryLabel} customer leaving five star review for service business`, domain),
+        query: enrichQuery(
+          `${industryLabel} customer leaving five star review for service business`,
+          domain
+        ),
         score: 5.8,
         source: 'resourceReview',
       });
@@ -542,7 +556,10 @@ export function generateSemanticQueries(
   if (industry) {
     const industryLabel = industry.replace(/-/g, ' ');
     candidates.push({
-      query: enrichQuery(`${industryLabel} professional at work customer location real business`, domain),
+      query: enrichQuery(
+        `${industryLabel} professional at work customer location real business`,
+        domain
+      ),
       score: 3.5,
       source: 'alternative',
     });

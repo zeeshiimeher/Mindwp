@@ -26,7 +26,7 @@ export const STATIC_PAGES: StaticPage[] = [
   { name: 'Blog', url: '/blog' },
   { name: 'Start a Conversation', url: globalContactHref },
   { name: 'Contact Us', url: globalContactHref },
-  { name: 'Sitemap (this page)', url: '/sitemap' },
+  { name: 'Sitemap XML', url: '/sitemap.xml' },
   { name: 'Privacy Policy', url: '/privacy' },
 
   // Still included in sitemap.xml, but kept out of the human sitemap page (existing UI behavior).

@@ -131,6 +131,8 @@ These enforce rules. Run individually or all at once with `validate-all`.
 | validate-content-contract | `npx tsx scripts/validators/validate-content-contract.mjs` | Required metadata, canonical values, and contract intent mapping | Yes |
 | validate-domain-structure | `npx tsx scripts/validators/validate-domain-structure.mjs` | Required fields and section structure for service, feature, home, industry, and case-study domains | Yes |
 | validate-conversion-contract | `npx tsx scripts/validators/validate-conversion-contract.mjs` | CTA routing to `/contact`, system/source validation, and fallback readiness | Yes |
+| validate-template-payload-sufficiency | `npx tsx scripts/validators/validate-template-payload-sufficiency.mjs` | Required template payload completeness across service, feature, resource, case-study, and industry pages | Yes |
+| validate-section-structure | `npx tsx scripts/validators/validate-section-structure.mjs` | Section cardinality and multi-item payload sufficiency for grid- and card-driven sections | Yes |
 | validate-design-system | `node scripts/validators/validate-design-system.cjs` | Design system tokens and naming | Yes |
 | check-generated | `node scripts/core/check-generated.mjs` | Generated files are current and in sync with source inputs | Yes |
 | validate-docs | `node scripts/validators/validate-docs.mjs` | Documentation formatting and broken links | **No** (warnings only) |
@@ -150,6 +152,7 @@ These enforce rules. Run individually or all at once with `validate-all`.
 | Script | Command | Purpose |
 |--------|---------|---------|
 | system-report | `node scripts/core/system-report.mjs` | Runs validate-all, system-sync, key analyzers, and writes `reports/system-report.json` |
+| run-tests | `node scripts/run-tests.mjs` | Runs validators, Vitest layers, and Playwright E2E, then writes `reports/test-results.json` |
 | image-generate | `npx tsx scripts/image-system/image-generate.ts` | CLI for generating images (Unsplash, Pexels, Pixabay) |
 | image-inspect | `npx tsx scripts/image-system/image-inspect.ts` | Inspects image metadata and generates image reports |
 | inspect-graph | `npx tsx scripts/analyzers/inspect-graph.ts` | Dev runner for graph structure inspection |

@@ -15,6 +15,31 @@ const gridStyle = {
   gap: '1rem',
 };
 
+function formatDuration(duration: number | undefined) {
+  if (!duration || Number.isNaN(duration)) {
+    return 'n/a';
+  }
+
+  if (duration < 1000) {
+    return `${Math.round(duration)}ms`;
+  }
+
+  return `${(duration / 1000).toFixed(1)}s`;
+}
+
+function formatTimestamp(value: string | undefined) {
+  if (!value) {
+    return 'n/a';
+  }
+
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) {
+    return 'n/a';
+  }
+
+  return date.toLocaleString();
+}
+
 function StatusChip({ status }: { status: 'clean' | 'warning' | 'broken' }) {
   const palette =
     status === 'clean'
@@ -87,7 +112,7 @@ function IssueList({
 }
 
 export default async function AuthorityDashboardPage() {
-  const { systemReport, systemState, systemDrift, topicAuthority, contentGaps } =
+  const { systemReport, systemState, systemDrift, topicAuthority, contentGaps, testResults } =
     readSystemDashboardData();
 
   if (!systemReport) {
@@ -137,6 +162,81 @@ export default async function AuthorityDashboardPage() {
             <div style={{ fontSize: '0.78rem', color: '#6b7280' }}>Drift Items</div>
           </div>
         </div>
+      </section>
+
+      <section style={cardStyle}>
+        <h2 style={{ fontSize: '1.1rem', margin: '0 0 0.9rem' }}>Test Health</h2>
+        {!testResults ? (
+          <p style={{ margin: 0, color: '#6b7280', fontSize: '0.9rem' }}>
+            Run <code>npm run test:all</code> to generate the test health snapshot.
+          </p>
+        ) : (
+          <>
+            <div style={gridStyle}>
+              <div>
+                <div style={{ fontSize: '1.6rem', fontWeight: 700 }}>{testResults.passed}</div>
+                <div style={{ fontSize: '0.78rem', color: '#6b7280' }}>Passed Tests</div>
+              </div>
+              <div>
+                <div style={{ fontSize: '1.6rem', fontWeight: 700 }}>{testResults.failed}</div>
+                <div style={{ fontSize: '0.78rem', color: '#6b7280' }}>Failed Tests</div>
+              </div>
+              <div>
+                <div style={{ fontSize: '1.6rem', fontWeight: 700 }}>{testResults.skipped}</div>
+                <div style={{ fontSize: '0.78rem', color: '#6b7280' }}>Skipped Tests</div>
+              </div>
+              <div>
+                <div style={{ fontSize: '1.6rem', fontWeight: 700 }}>
+                  {testResults.validators?.blockingFailed ?? 0}
+                </div>
+                <div style={{ fontSize: '0.78rem', color: '#6b7280' }}>
+                  Blocking Validator Failures
+                </div>
+              </div>
+              <div>
+                <div style={{ fontSize: '1.6rem', fontWeight: 700 }}>
+                  {formatDuration(testResults.duration)}
+                </div>
+                <div style={{ fontSize: '0.78rem', color: '#6b7280' }}>Last Run Duration</div>
+              </div>
+            </div>
+
+            <div style={{ marginTop: '1rem', display: 'grid', gap: '0.75rem' }}>
+              {Object.entries(testResults.categories).map(([layer, summary]) => (
+                <div
+                  key={layer}
+                  style={{
+                    border: '1px solid #f3f4f6',
+                    borderRadius: 6,
+                    padding: '0.85rem',
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    gap: '1rem',
+                    alignItems: 'center',
+                  }}
+                >
+                  <div>
+                    <div
+                      style={{ fontWeight: 700, fontSize: '0.92rem', textTransform: 'capitalize' }}
+                    >
+                      {layer}
+                    </div>
+                    <div style={{ color: '#6b7280', fontSize: '0.8rem' }}>
+                      {summary.failed} failed, {summary.passed} passed, {summary.skipped} skipped
+                    </div>
+                  </div>
+                  <div style={{ color: '#6b7280', fontSize: '0.8rem', whiteSpace: 'nowrap' }}>
+                    {formatDuration(summary.duration)}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <p style={{ margin: '1rem 0 0', color: '#6b7280', fontSize: '0.85rem' }}>
+              Last run: {formatTimestamp(testResults.lastRunTimestamp)}
+            </p>
+          </>
+        )}
       </section>
 
       <IssueList

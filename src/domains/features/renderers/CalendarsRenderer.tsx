@@ -75,16 +75,17 @@ export default function CalendarsRenderer() {
   const { process, benefits, useCases, capabilities, faq } = sections;
   const primarySystem = calendarsData.systems[0] ?? 'smart-website-systems';
   const heroPrimaryHref = hero.primaryAction?.href;
-  const heroPrimaryAction = hero.primaryAction && heroPrimaryHref
-    ? {
-        ...hero.primaryAction,
-        href: buildContactHref(heroPrimaryHref, {
-          system: primarySystem,
-          sourceType: 'feature',
-          slug: calendarsData.slug,
-        }),
-      }
-    : undefined;
+  const heroPrimaryAction =
+    hero.primaryAction && heroPrimaryHref
+      ? {
+          ...hero.primaryAction,
+          href: buildContactHref(heroPrimaryHref, {
+            system: primarySystem,
+            sourceType: 'feature',
+            slug: calendarsData.slug,
+          }),
+        }
+      : undefined;
   const ctaPrimaryAction = cta.primaryAction.href
     ? {
         ...cta.primaryAction,

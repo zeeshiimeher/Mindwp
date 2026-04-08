@@ -84,7 +84,11 @@ function extractIntentTerms(metadata: ContentMetadata): string[] {
     .filter(term => term.length > 3);
 }
 
-function imageMatchesIntent(image: ProviderImage, metadata: ContentMetadata, domain: ContentDomain): boolean {
+function imageMatchesIntent(
+  image: ProviderImage,
+  metadata: ContentMetadata,
+  domain: ContentDomain
+): boolean {
   const imageTerms = [image.description, ...image.tags].join(' ').toLowerCase();
   if (NEGATIVE_TERMS.some(term => imageTerms.includes(term))) return false;
 
@@ -122,7 +126,11 @@ function scoreDomainFit(image: ProviderImage, domain: ContentDomain): number {
 }
 
 /** Calculate how relevant an image is to the article topic */
-function scoreSubjectRelevance(image: ProviderImage, metadata: ContentMetadata, domain: ContentDomain): number {
+function scoreSubjectRelevance(
+  image: ProviderImage,
+  metadata: ContentMetadata,
+  domain: ContentDomain
+): number {
   if (!imageMatchesIntent(image, metadata, domain)) {
     return 0;
   }
@@ -229,8 +237,9 @@ export function scoreImage(
   const factors: RelevanceScoreFactors = {
     subjectRelevance: Math.round(
       domain === 'resources'
-        ? (scoreSubjectRelevance(image, metadata, domain) * 0.55) + (scoreDomainFit(image, domain) * 0.45)
-        : (scoreSubjectRelevance(image, metadata, domain) * 0.7) + (scoreDomainFit(image, domain) * 0.3)
+        ? scoreSubjectRelevance(image, metadata, domain) * 0.55 +
+            scoreDomainFit(image, domain) * 0.45
+        : scoreSubjectRelevance(image, metadata, domain) * 0.7 + scoreDomainFit(image, domain) * 0.3
     ),
     visualClarity: scoreVisualClarity(image, intelligence),
     compositionQuality: scoreComposition(intelligence),

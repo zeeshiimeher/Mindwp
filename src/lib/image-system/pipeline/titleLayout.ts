@@ -55,8 +55,8 @@ function findThreeLineBreaks(
       const line2 = words.slice(firstBreak, secondBreak).join(' ');
       const line3 = words.slice(secondBreak).join(' ');
 
-      const widths = [line1, line2, line3].map((line) => estimateTextWidth(line, fontSize));
-      if (widths.some((width) => width > maxWidthPx)) continue;
+      const widths = [line1, line2, line3].map(line => estimateTextWidth(line, fontSize));
+      if (widths.some(width => width > maxWidthPx)) continue;
 
       const lengths = [line1.length, line2.length, line3.length];
       const balancePenalty = Math.max(...widths) - Math.min(...widths);
@@ -74,11 +74,16 @@ function findThreeLineBreaks(
 }
 
 /** Calculate the title layout: font size, lines, and positioning */
-export function calculateTitleLayout(title: string, imageWidth: number, maxTextWidthOverride?: number): TitleLayoutResult {
+export function calculateTitleLayout(
+  title: string,
+  imageWidth: number,
+  maxTextWidthOverride?: number
+): TitleLayoutResult {
   // Use override if provided, otherwise derive from config
   const percentWidth = imageWidth * TITLE_LAYOUT.textWidthPercent;
   const paddedWidth = imageWidth - TITLE_LAYOUT.horizontalPaddingPx * 2;
-  const maxTextWidth = maxTextWidthOverride ?? Math.min(percentWidth, paddedWidth, TITLE_LAYOUT.maxTextWidthPx);
+  const maxTextWidth =
+    maxTextWidthOverride ?? Math.min(percentWidth, paddedWidth, TITLE_LAYOUT.maxTextWidthPx);
 
   let fontSize = TITLE_LAYOUT.maxFontSize;
   const wordCount = title.split(' ').length;
@@ -112,7 +117,7 @@ export function calculateTitleLayout(title: string, imageWidth: number, maxTextW
         const lineHeight = fontSize * 1.08;
         return {
           lines,
-          lineWidths: lines.map((line) => estimateTextWidth(line, fontSize)),
+          lineWidths: lines.map(line => estimateTextWidth(line, fontSize)),
           fontSize,
           lineHeight,
           totalHeight: lineHeight * lines.length,
@@ -161,7 +166,7 @@ export function calculateTitleLayout(title: string, imageWidth: number, maxTextW
   if (fallbackThree) {
     return {
       lines: fallbackThree,
-      lineWidths: fallbackThree.map((line) => estimateTextWidth(line, minFs)),
+      lineWidths: fallbackThree.map(line => estimateTextWidth(line, minFs)),
       fontSize: minFs,
       lineHeight,
       totalHeight: lineHeight * fallbackThree.length,

@@ -2,15 +2,15 @@
 
 > This document tracks current execution state, architectural decisions, and immediate system priorities.
 > It is the active operational memory for the deterministic control layer.
-> Updated: 2026-04-08 (conversion contract hardened and CTA intent removed)
+> Updated: 2026-04-08 (production test system centralized and report-linked)
 
 ---
 
 ## CURRENT PHASE
 
-- **Phase:** Phase 2.8 — Content Stabilization + CTA Clarity Rollout
+- **Phase:** Phase 2.9 — Production Test System Centralization
 - **Status:** Warning-only, non-blocking
-- **Objective:** Keep the system production-ready by improving conversion-path CTA clarity without changing architecture, routing, or scripts
+- **Objective:** Keep the system production-ready by centralizing runtime tests, validators, reports, and dashboard visibility without changing locked architecture
 
 ---
 
@@ -25,11 +25,13 @@
 ### Live advisory state
 
 1. Recommended content metadata missing in `359` places
-2. Advisory lint drift remains in a small number of files
+2. Advisory lint drift remains concentrated in the image-system and debug surfaces
 
 ### System health snapshot
 
-- `validate-all`: `17` validators total, `0` blocking failed, `1` advisory failed
+- `validate-all`: `20` validators total, `0` blocking failed, `1` advisory failed
+- `test-results.json`: `49` passed, `0` failed, `0` skipped
+- Runtime test layers: `unit 7`, `system 21`, `integration 11`, `e2e 10`
 - `system-state.json`: `WARNING`
 - `system-drift.json`: `1` drift item
 - Graph availability: `true`
@@ -39,11 +41,11 @@
 
 ## ACTIVE PRIORITIES
 
-1. Keep `system-report.json` as the single inspectable control-layer output
-2. Keep CTA contract drift at zero across conversion paths
+1. Keep `system-report.json` and `test-results.json` as linked inspectable control-layer outputs
+2. Keep all blocking validators and runtime test layers green
 3. Keep the contact path minimal: `/contact` -> `/api/contact` -> Resend -> inbox email
-4. Reduce advisory metadata drift without introducing parallel validation logic
-5. Preserve architecture, validators, and image-system behavior unchanged
+4. Reduce advisory metadata drift and advisory lint drift without introducing parallel validation logic
+5. Preserve architecture, validators, dashboard report-loading, and image-system behavior unchanged
 
 ---
 
@@ -357,6 +359,29 @@
 
 ---
 
+### E-013 — Production Test System Centralized And Report-Linked
+**Date:** 2026-04-08
+
+**Completed:**
+- Added explicit runtime layers under `tests/unit`, `tests/system`, `tests/integration`, and `tests/e2e`
+- Added contract tests for reusable components and layout primitives
+- Added runtime/system guarantees for graph alignment, route coverage, metadata consistency, taxonomy alignment, CTA/contact compatibility, related content validity, route protection, and graph cold-start budget
+- Added integration coverage for contact API, representative route rendering, all-template rendering, sitemap/robots consistency, validator fixtures, and basic render budgets
+- Added Playwright coverage for conversion flows, CTA query params, major route crawl, and rendered internal-link reachability
+- Added blocking validators for `validate-template-payload-sufficiency` and `validate-section-structure`
+- Added `scripts/run-tests.mjs` and `npm run test:all` to aggregate validators + Vitest layers + Playwright into `reports/test-results.json`
+- Wired `test-results.json` into the authority dashboard through the shared report loader
+- Normalized stale sitemap navigation from `/sitemap` to `/sitemap.xml`
+
+**Result:**
+- Blocking validator failures: `0`
+- Runtime blocking layer failures: `0`
+- Aggregated test snapshot: `49` passed, `0` failed, `0` skipped
+- Dashboard test health is now report-driven rather than computed ad hoc
+- Internal-link crawl now catches stale navigation/document endpoint drift at runtime
+
+---
+
 ## CURRENT TASKS
 
 ### T-001 — Reduce advisory metadata drift
@@ -374,15 +399,15 @@
 **Priority:** High
 **Description:** Keep all content CTAs that route to `/contact` aligned to the explicit `system` + `source` contract.
 
-### T-004 — Extend CTA clarity pass selectively
+### T-004 — Preserve unified test health snapshot
 **Status:** Active
 **Priority:** Medium
-**Description:** Continue replacing weak generic primary CTAs only where they still appear, with remaining focus limited to any future high-value additions or regressions.
+**Description:** Keep `reports/test-results.json` current and keep the authority dashboard aligned to the shared report contract.
 
 ### T-005 — Clear residual advisory lint noise
 **Status:** Active
 **Priority:** Medium
-**Description:** Remove remaining non-blocking lint warnings to move system status from `warning` to `clean`.
+**Description:** Remove remaining non-blocking lint issues, now concentrated mostly in the image-system and debug surfaces, to move system status from `warning` to `clean`.
 
 ### T-006 — Preserve report-only dashboard boundary
 **Status:** Continuous
@@ -393,6 +418,11 @@
 **Status:** Active
 **Priority:** High
 **Description:** Preserve the current direct-email contact path without reintroducing CRM, webhook, automation, or dashboard coupling into the submission flow.
+
+### T-008 — Keep structural validators authoritative
+**Status:** Active
+**Priority:** High
+**Description:** Preserve the new template-payload and section-structure validators as the blocking source of truth for weak page payloads.
 
 ---
 

@@ -14,11 +14,12 @@ type ImageType = 'featured-clean' | 'featured-overlay' | 'inline-1';
  */
 export function getImage(slug: string, domain: string, type: ImageType): string | null {
   // Flat domain folder: {slug}.webp (overlay), {slug}-raw.webp (clean)
-  const fileName = type === 'featured-overlay'
-    ? `${slug}.webp`
-    : type === 'featured-clean'
-      ? `${slug}-raw.webp`
-      : `${slug}-content.webp`;
+  const fileName =
+    type === 'featured-overlay'
+      ? `${slug}.webp`
+      : type === 'featured-clean'
+        ? `${slug}-raw.webp`
+        : `${slug}-content.webp`;
   const webPath = `/images/${domain}/${fileName}`;
   const diskPath = join(process.cwd(), 'public', webPath);
 

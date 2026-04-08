@@ -107,6 +107,13 @@ function getValidationFailure(validation, name) {
 
 function collectBlockingItems(validation, contentReport, conversionReport, graphReport, tokenReport, inlineStyleReport) {
   const items = [];
+  const explicitlyHandledValidators = new Set([
+    'validate-content-contract',
+    'validate-conversion-contract',
+    'validate-graph',
+    'validate-tokens',
+    'validate-inline-styles',
+  ]);
 
   if ((contentReport?.summary?.missingSystem ?? 0) > 0) {
     pushItem(items, {
@@ -164,15 +171,16 @@ function collectBlockingItems(validation, contentReport, conversionReport, graph
     });
   }
 
-  for (const validatorName of ['check-generated', 'typecheck', 'validate-internal-links']) {
-    const failure = getValidationFailure(validation, validatorName);
-    if (!failure) continue;
+  for (const failure of validation?.errors ?? []) {
+    if (!failure.blocking || explicitlyHandledValidators.has(failure.validator)) {
+      continue;
+    }
 
     pushItem(items, {
-      source: validatorName,
+      source: failure.validator,
       code: 'validator_failed',
       count: 1,
-      message: `${validatorName} failed.`,
+      message: `${failure.validator} failed.`,
       details: excerptOutput(failure.output),
     });
   }

@@ -76,6 +76,10 @@ export function SectionIntro({
   marginBottom = true,
   className = '',
 }: SectionIntroProps) {
+  if (title.trim().length === 0) {
+    throw new Error('SectionIntro requires a non-empty title.');
+  }
+
   const HeadingTag = headingLevel;
 
   const rootClassName = [

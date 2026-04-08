@@ -11,8 +11,38 @@ Runtime is consolidated to the Next.js app in `next-app/`.
 - Typecheck: `npm run typecheck`
 - Lint: `npm run lint`
 - Full validation: `npm run validate:all`
+- Full test + validator aggregation: `npm run test:all`
 - CI-safe gate (recommended): `npm run validate:ci`
 - Production build: `npm run build`
+
+## Test Architecture
+
+This repo now separates runtime test coverage into four layers:
+
+- `tests/unit` — high-value helper contracts
+- `tests/integration` — route modules, API handlers, validator contract fixtures, and runtime budgets
+- `tests/system` — cross-layer invariants across graph, routing, metadata, CTA/contact, taxonomy, and protection rules
+- `tests/e2e` — Playwright revenue-path flows and route crawling
+
+Run the layers with:
+
+- `npm run test:unit`
+- `npm run test:integration`
+- `npm run test:system`
+- `npm run test:runtime`
+- `npm run test:e2e`
+- `npm run test:all`
+
+`npm run test:all` runs the validator layer, Vitest unit/system/integration layers, and Playwright E2E, then writes the aggregated machine-readable report to `reports/test-results.json` for dashboard and CI visibility.
+
+## Validator Extensions
+
+The production control layer now includes these additional blocking validators:
+
+- `npm run validate:template-payload-sufficiency`
+- `npm run validate:section-structure`
+
+These catch incomplete template payloads and weak section-cardinality data before they reach runtime.
 
 ## Local-first Git policy
 

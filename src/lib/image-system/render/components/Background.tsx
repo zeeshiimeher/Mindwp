@@ -57,7 +57,8 @@ export function Background({
           width: 340,
           height: 340,
           borderRadius: 999,
-          background: 'radial-gradient(circle, rgba(139,92,246,0.18) 0%, rgba(59,130,246,0.08) 42%, transparent 72%)',
+          background:
+            'radial-gradient(circle, rgba(139,92,246,0.18) 0%, rgba(59,130,246,0.08) 42%, transparent 72%)',
           transform: 'translateY(-10px)',
         }}
       />

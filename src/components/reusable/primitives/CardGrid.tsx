@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import { Children, type ReactNode } from 'react';
 
 import { cn } from '@/components/ui/utils';
 
@@ -48,6 +48,10 @@ export function CardGrid({
   className = '',
   children,
 }: CardGridProps) {
+  if (Children.count(children) === 0) {
+    throw new Error('CardGrid requires at least one child.');
+  }
+
   return (
     <div
       className={cn('l-grid', GAP_MAP[gap], COLUMN_CLASSES[columns], className)}

@@ -1,7 +1,13 @@
 // ─── Image System Types ─────────────────────────────────────────────
 // Central type definitions for the MindWP automated image pipeline
 
-export type ContentDomain = 'blog' | 'resources' | 'industries' | 'case-studies' | 'features' | 'services';
+export type ContentDomain =
+  | 'blog'
+  | 'resources'
+  | 'industries'
+  | 'case-studies'
+  | 'features'
+  | 'services';
 
 export type ImageType = 'featured-clean' | 'featured-overlay' | 'content';
 
@@ -138,12 +144,7 @@ export type VisualMode = 'real' | 'illustration';
 
 export type TextStyle = 'saas' | 'hook';
 
-export type IllustrationVariant =
-  | 'dashboard'
-  | 'pipeline'
-  | 'calendar'
-  | 'chat'
-  | 'flow';
+export type IllustrationVariant = 'dashboard' | 'pipeline' | 'calendar' | 'chat' | 'flow';
 
 export type VisualTreatment = 'clean' | 'highlight' | 'frame' | 'depth';
 

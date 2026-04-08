@@ -3,6 +3,22 @@ import { ArrowRight, type LucideIcon } from 'lucide-react';
 
 const BLOCK = 'btn';
 
+function hasRenderableContent(value: ReactNode | undefined): boolean {
+  if (value === null || value === undefined || typeof value === 'boolean') {
+    return false;
+  }
+
+  if (typeof value === 'string') {
+    return value.trim().length > 0;
+  }
+
+  if (Array.isArray(value)) {
+    return value.some(item => hasRenderableContent(item));
+  }
+
+  return true;
+}
+
 /**
  * Button - Versatile button component with multiple variants and behaviors
  *
@@ -125,6 +141,32 @@ export function Button({
   ariaLabel,
   as = 'auto',
 }: ButtonProps) {
+  const providedContentSources = [
+    ['children', children],
+    ['label', label],
+    ['text', text],
+  ].filter(([, value]) => hasRenderableContent(value));
+
+  if (providedContentSources.length === 0) {
+    throw new Error('Button requires non-empty content via children, label, or text.');
+  }
+
+  if (providedContentSources.length > 1) {
+    throw new Error('Button accepts only one content source: children, label, or text.');
+  }
+
+  if (href && onClick) {
+    throw new Error('Button cannot receive both href and onClick. Use one interaction model.');
+  }
+
+  if ((target || rel) && !href) {
+    throw new Error('Button target and rel require href.');
+  }
+
+  if (as === 'span' && (href || onClick)) {
+    throw new Error('Button rendered as span cannot receive interactive href or onClick props.');
+  }
+
   const defaultIcon =
     showDefaultIcon && (variant === 'primary' || variant === 'secondary' || variant === 'white')
       ? ArrowRight

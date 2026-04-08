@@ -1,5 +1,5 @@
-import type { RenderMetrics } from '../renderer';
 import { tokens } from '../design-system/tokens';
+import type { RenderMetrics } from '../renderer';
 
 export function Title({ title, metrics }: { title: string; metrics: RenderMetrics }) {
   void title;
@@ -22,7 +22,7 @@ export function Title({ title, metrics }: { title: string; metrics: RenderMetric
         textAlign: metrics.textAlign,
       }}
     >
-      {metrics.titleLines.map((line, index) => (
+      {metrics.titleLines.map((line, index) =>
         isCenterAligned ? (
           <div
             key={`${line}-${index}`}
@@ -59,7 +59,7 @@ export function Title({ title, metrics }: { title: string; metrics: RenderMetric
             {line}
           </div>
         )
-      ))}
+      )}
     </div>
   );
 }

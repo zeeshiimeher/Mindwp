@@ -55,6 +55,7 @@ You are executing inside an existing system.
 - All behavior is already defined. Do not assume behavior.
 - All architecture is locked. Do not modify architecture.
 - All content types are locked. Do not create new types.
+- Keep Update EXECUTION-MEMORY.md once you finish task.
 
 **DO NOT:**
 - Create new systems or abstractions
@@ -121,6 +122,7 @@ Documentation defines system behavior. Code must follow docs.
 
 ### Finish work
 1. Run targeted validator for changed files
+2. Run the matching test layer when runtime behavior changed (`npm run test:unit`, `npm run test:integration`, `npm run test:system`, `npm run test:e2e`)
 2. Run `npm run system:report`
 3. Confirm `reports/system-report.json`, `reports/system-state.json`, and `reports/system-drift.json` updated
 4. Do NOT leave repo in drift or failure state
@@ -131,6 +133,9 @@ Documentation defines system behavior. Code must follow docs.
 | `npm run system:report` | Full system snapshot: validate, sync, analyze, normalize |
 | `node scripts/core/validate-all.mjs` | Full validator set |
 | `node scripts/core/system-sync.mjs` | Generate state and drift snapshots |
+| `npm run test:runtime` | Vitest runtime layers: unit, system, and integration |
+| `npm run test:e2e` | Playwright end-to-end runtime flows |
+| `npm run test:all` | Validators + unit/system/integration/E2E aggregation with `reports/test-results.json` output |
 | `npm run dev` | Local development |
 | `npm run build` | Production build |
 

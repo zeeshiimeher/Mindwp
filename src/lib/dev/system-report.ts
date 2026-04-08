@@ -83,6 +83,54 @@ export interface ContentGapsSnapshot {
   industryCaseStudyGaps?: Array<{ slug: string }>;
 }
 
+export interface TestResultsSnapshot {
+  generatedAt: string;
+  lastRunTimestamp: string;
+  passed: number;
+  failed: number;
+  skipped: number;
+  duration: number;
+  categories: {
+    unit: {
+      passed: number;
+      failed: number;
+      skipped: number;
+      duration: number;
+      status: 'passed' | 'failed';
+    };
+    system: {
+      passed: number;
+      failed: number;
+      skipped: number;
+      duration: number;
+      status: 'passed' | 'failed';
+    };
+    integration: {
+      passed: number;
+      failed: number;
+      skipped: number;
+      duration: number;
+      status: 'passed' | 'failed';
+    };
+    e2e: {
+      passed: number;
+      failed: number;
+      skipped: number;
+      duration: number;
+      status: 'passed' | 'failed';
+    };
+  };
+  validators?: {
+    passed: number;
+    failed: number;
+    blockingFailed: number;
+    advisoryFailed: number;
+    total: number;
+    duration: number;
+    status: 'passed' | 'failed';
+  };
+}
+
 function readJson<T>(fileName: string): T | null {
   const filePath = path.join(process.cwd(), 'reports', fileName);
 
@@ -100,5 +148,6 @@ export function readSystemDashboardData() {
     systemDrift: readJson<DriftSnapshot>('system-drift.json'),
     topicAuthority: readJson<TopicAuthoritySnapshot>('topic-authority-scores.json'),
     contentGaps: readJson<ContentGapsSnapshot>('content-gaps.json'),
+    testResults: readJson<TestResultsSnapshot>('test-results.json'),
   };
 }

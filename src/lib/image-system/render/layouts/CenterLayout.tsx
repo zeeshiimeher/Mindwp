@@ -20,10 +20,10 @@ export function CenterLayout(props: LayoutRenderProps) {
     const leftOffsets = [0, 48, 14] as const;
     const rowTops = [18, 248, 470] as const;
     const rowOpacity = [0.24, 0.18, 0.22] as const;
-    const left = 74 + (column * 115) + leftOffsets[row];
-    const top = rowTops[row] + ((column % 3) * (row === 1 ? 10 : 12));
-    const height = row === 1 ? 62 + ((column % 4) * 14) : 74 + ((column % 4) * 18);
-    const opacity = rowOpacity[row] + ((column % 3) * 0.06);
+    const left = 74 + column * 115 + leftOffsets[row];
+    const top = rowTops[row] + (column % 3) * (row === 1 ? 10 : 12);
+    const height = row === 1 ? 62 + (column % 4) * 14 : 74 + (column % 4) * 18;
+    const opacity = rowOpacity[row] + (column % 3) * 0.06;
 
     return {
       left,
@@ -52,7 +52,8 @@ export function CenterLayout(props: LayoutRenderProps) {
             position: 'absolute',
             inset: 0,
             display: 'flex',
-            background: 'radial-gradient(circle at 30% 40%, rgba(37,99,235,0.14) 0%, rgba(37,99,235,0) 32%), linear-gradient(135deg, #040816 0%, #07111f 52%, #020617 100%)',
+            background:
+              'radial-gradient(circle at 30% 40%, rgba(37,99,235,0.14) 0%, rgba(37,99,235,0) 32%), linear-gradient(135deg, #040816 0%, #07111f 52%, #020617 100%)',
           }}
         >
           {caseStudyPatternLines.map((line, index) => (
@@ -72,10 +73,20 @@ export function CenterLayout(props: LayoutRenderProps) {
             style={{
               position: 'absolute',
               inset: 0,
-              background: 'linear-gradient(180deg, rgba(2,6,23,0.8) 0%, rgba(2,6,23,0.12) 18%, rgba(2,6,23,0.12) 82%, rgba(2,6,23,0.78) 100%)',
+              background:
+                'linear-gradient(180deg, rgba(2,6,23,0.8) 0%, rgba(2,6,23,0.12) 18%, rgba(2,6,23,0.12) 82%, rgba(2,6,23,0.78) 100%)',
             }}
           />
-          <div style={{ position: 'absolute', left: 0, right: 0, bottom: 0, height: 160, background: 'linear-gradient(180deg, rgba(2,6,23,0) 0%, rgba(2,6,23,0.74) 100%)' }} />
+          <div
+            style={{
+              position: 'absolute',
+              left: 0,
+              right: 0,
+              bottom: 0,
+              height: 160,
+              background: 'linear-gradient(180deg, rgba(2,6,23,0) 0%, rgba(2,6,23,0.74) 100%)',
+            }}
+          />
         </div>
       ) : null}
       <div
@@ -94,7 +105,8 @@ export function CenterLayout(props: LayoutRenderProps) {
             position: 'absolute',
             inset: 0,
             display: 'flex',
-            background: 'radial-gradient(circle at 50% 50%, rgba(15,23,42,0.12) 0%, rgba(2,6,23,0.28) 48%, rgba(2,6,23,0.56) 100%)',
+            background:
+              'radial-gradient(circle at 50% 50%, rgba(15,23,42,0.12) 0%, rgba(2,6,23,0.28) 48%, rgba(2,6,23,0.56) 100%)',
           }}
         />
       ) : null}
@@ -114,7 +126,8 @@ export function CenterLayout(props: LayoutRenderProps) {
               width: 280,
               height: 280,
               borderRadius: 999,
-              background: 'radial-gradient(circle, rgba(139,92,246,0.34) 0%, rgba(139,92,246,0.16) 44%, rgba(139,92,246,0) 74%)',
+              background:
+                'radial-gradient(circle, rgba(139,92,246,0.34) 0%, rgba(139,92,246,0.16) 44%, rgba(139,92,246,0) 74%)',
             }}
           />
           <div
@@ -125,7 +138,8 @@ export function CenterLayout(props: LayoutRenderProps) {
               width: 220,
               height: 220,
               borderRadius: 999,
-              background: 'radial-gradient(circle, rgba(56,189,248,0.28) 0%, rgba(56,189,248,0.1) 48%, rgba(56,189,248,0) 74%)',
+              background:
+                'radial-gradient(circle, rgba(56,189,248,0.28) 0%, rgba(56,189,248,0.1) 48%, rgba(56,189,248,0) 74%)',
             }}
           />
           <div
@@ -136,7 +150,8 @@ export function CenterLayout(props: LayoutRenderProps) {
               width: 360,
               height: 120,
               borderRadius: 999,
-              background: 'radial-gradient(circle, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.05) 45%, rgba(255,255,255,0) 74%)',
+              background:
+                'radial-gradient(circle, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.05) 45%, rgba(255,255,255,0) 74%)',
             }}
           />
           <div
@@ -148,7 +163,8 @@ export function CenterLayout(props: LayoutRenderProps) {
               height: 78,
               borderRadius: 24,
               border: '1px solid rgba(255,255,255,0.14)',
-              background: 'linear-gradient(135deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.05) 100%)',
+              background:
+                'linear-gradient(135deg, rgba(255,255,255,0.16) 0%, rgba(255,255,255,0.05) 100%)',
             }}
           />
           <div
@@ -215,7 +231,9 @@ export function CenterLayout(props: LayoutRenderProps) {
                   : isIndustry
                     ? 'linear-gradient(135deg, rgba(15,23,42,0.34) 0%, rgba(15,23,42,0.22) 100%)'
                     : 'linear-gradient(135deg, rgba(15,23,42,0.28) 0%, rgba(15,23,42,0.18) 100%)',
-              border: isCaseStudy ? '1px solid rgba(255,255,255,0.12)' : '1px solid rgba(255,255,255,0.18)',
+              border: isCaseStudy
+                ? '1px solid rgba(255,255,255,0.12)'
+                : '1px solid rgba(255,255,255,0.18)',
               boxShadow: isCaseStudy ? 'none' : '0 18px 42px rgba(2,6,23,0.22)',
               backdropFilter: isCaseStudy ? 'none' : 'blur(8px)',
               padding: isResource ? '52px 64px' : isCaseStudy ? '44px 60px' : '44px 60px',

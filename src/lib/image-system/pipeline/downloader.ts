@@ -42,7 +42,10 @@ export async function downloadImage(url: string): Promise<Buffer> {
   const timeoutId = setTimeout(() => controller.abort(), 15000);
 
   try {
-    const response = await fetch(url, { signal: controller.signal, cache: 'no-store' as RequestCache });
+    const response = await fetch(url, {
+      signal: controller.signal,
+      cache: 'no-store' as RequestCache,
+    });
 
     if (!response.ok) {
       throw new Error(`Download failed (${response.status}): ${url}`);

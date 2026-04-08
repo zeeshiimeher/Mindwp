@@ -45,6 +45,22 @@ export function TabbedFeatureCardsSection({
   backgroundColor = '',
   cssPrefix = '',
 }: TabbedFeatureCardsSectionProps) {
+  if (tabs.length === 0) {
+    throw new Error('TabbedFeatureCardsSection requires at least one tab.');
+  }
+
+  if (tabs.some(tab => tab.trim().length === 0)) {
+    throw new Error('TabbedFeatureCardsSection tabs must be non-empty strings.');
+  }
+
+  if (cards.length === 0) {
+    throw new Error('TabbedFeatureCardsSection requires at least one card.');
+  }
+
+  if (activeTab && !tabs.includes(activeTab)) {
+    throw new Error('TabbedFeatureCardsSection activeTab must match one of the provided tabs.');
+  }
+
   const selectedTab = activeTab ?? tabs[0] ?? '';
   const tabGroupName = `${BLOCK}-tabs-${title.toLowerCase().replace(/\s+/g, '-')}`;
 

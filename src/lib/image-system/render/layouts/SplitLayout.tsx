@@ -62,8 +62,20 @@ export function SplitLayout(props: LayoutRenderProps) {
             }}
           >
             <AccentBar accent={tokens.colors.accent} />
-            <div style={{ display: 'flex', flexDirection: 'column', gap: 18, width: '100%', maxWidth: 500, minWidth: 0 }}>
-              <Badge badge={props.badge ?? (props.design.domain === 'services' ? 'Service' : 'Feature')} accent={tokens.colors.accent} />
+            <div
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 18,
+                width: '100%',
+                maxWidth: 500,
+                minWidth: 0,
+              }}
+            >
+              <Badge
+                badge={props.badge ?? (props.design.domain === 'services' ? 'Service' : 'Feature')}
+                accent={tokens.colors.accent}
+              />
               <Title title={props.title} metrics={props.metrics} />
               {props.subtitle ? (
                 <div
@@ -101,7 +113,8 @@ export function SplitLayout(props: LayoutRenderProps) {
                 height: 356,
                 borderRadius: 30,
                 border: '1px solid rgba(255,255,255,0.12)',
-                background: 'linear-gradient(180deg, rgba(15,23,42,0.88) 0%, rgba(8,15,32,0.92) 100%)',
+                background:
+                  'linear-gradient(180deg, rgba(15,23,42,0.88) 0%, rgba(8,15,32,0.92) 100%)',
               }}
             >
               <div
@@ -109,7 +122,8 @@ export function SplitLayout(props: LayoutRenderProps) {
                   position: 'absolute',
                   inset: 0,
                   borderRadius: 30,
-                  background: 'linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 100%)',
+                  background:
+                    'linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0) 100%)',
                 }}
               />
               <div
@@ -117,7 +131,8 @@ export function SplitLayout(props: LayoutRenderProps) {
                   position: 'absolute',
                   inset: '-34px -28px -34px -28px',
                   borderRadius: 40,
-                  background: 'radial-gradient(circle at center, rgba(139,92,246,0.18) 0%, rgba(59,130,246,0.1) 40%, rgba(2,6,23,0) 72%)',
+                  background:
+                    'radial-gradient(circle at center, rgba(139,92,246,0.18) 0%, rgba(59,130,246,0.1) 40%, rgba(2,6,23,0) 72%)',
                 }}
               />
               <div

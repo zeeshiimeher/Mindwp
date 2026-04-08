@@ -4,6 +4,8 @@
 import sharp from 'sharp';
 
 import { IMAGE_SIZES, OVERLAY_CONFIG, TITLE_LAYOUT } from '../config';
+import { resolveRenderCopy } from '../render/renderCopy';
+import { renderImage } from '../render/renderer';
 import type {
   BrightnessResult,
   DebugInput,
@@ -16,8 +18,6 @@ import type {
 } from '../types';
 
 import { calculateTitleLayout } from './titleLayout';
-import { renderImage } from '../render/renderer';
-import { resolveRenderCopy } from '../render/renderCopy';
 
 /** Calculate adaptive overlay opacity based on image brightness (legacy helper) */
 export function calculateOverlayOpacity(brightness: BrightnessResult): number {
@@ -176,7 +176,7 @@ function renderVariantShape(variant: OverlayVariant, width: number, height: numb
       return `<g opacity="0.06" fill="white">
         <rect x="${(width * 0.68).toFixed(0)}" y="${(height * 0.55).toFixed(0)}" width="${(width * 0.04).toFixed(0)}" height="${(height * 0.25).toFixed(0)}" rx="2" />
         <rect x="${(width * 0.74).toFixed(0)}" y="${(height * 0.42).toFixed(0)}" width="${(width * 0.04).toFixed(0)}" height="${(height * 0.38).toFixed(0)}" rx="2" />
-        <rect x="${(width * 0.80).toFixed(0)}" y="${(height * 0.35).toFixed(0)}" width="${(width * 0.04).toFixed(0)}" height="${(height * 0.45).toFixed(0)}" rx="2" />
+        <rect x="${(width * 0.8).toFixed(0)}" y="${(height * 0.35).toFixed(0)}" width="${(width * 0.04).toFixed(0)}" height="${(height * 0.45).toFixed(0)}" rx="2" />
         <rect x="${(width * 0.86).toFixed(0)}" y="${(height * 0.48).toFixed(0)}" width="${(width * 0.04).toFixed(0)}" height="${(height * 0.32).toFixed(0)}" rx="2" />
       </g>`;
     case 'results':
@@ -293,7 +293,7 @@ function generateOverlaySvg(
 
   // Vignette (edge darkening — attention containment)
   const vigBase = lp.vignetteStrength;
-  const vigStrength = (vigBase * (0.10 + palette.overlayStart * 0.08)).toFixed(3);
+  const vigStrength = (vigBase * (0.1 + palette.overlayStart * 0.08)).toFixed(3);
   const vigMid = (vigBase * (0.05 + palette.overlayStart * 0.04)).toFixed(3);
 
   // Focal dark zone (eye anchor — +10% darkness behind text block)
@@ -479,7 +479,8 @@ export async function generateFeaturedImage(
     const parts: string[] = [];
     if (tuneOverrides.titleScale) parts.push(`titleScale=${tuneOverrides.titleScale.toFixed(2)}`);
     if (tuneOverrides.maxTextWidth) parts.push(`maxTextWidth=${tuneOverrides.maxTextWidth}`);
-    if (tuneOverrides.gradientStrength) parts.push(`gradient=${tuneOverrides.gradientStrength.toFixed(2)}`);
+    if (tuneOverrides.gradientStrength)
+      parts.push(`gradient=${tuneOverrides.gradientStrength.toFixed(2)}`);
     if (parts.length) console.log(`[tune] Overrides: ${parts.join(', ')}`);
   }
 
@@ -492,8 +493,8 @@ export async function generateFeaturedImage(
   const clean = await sharp(resized).sharpen({ sigma: 0.5 }).webp({ quality: 90 }).toBuffer();
 
   // ── Step 2: Background depth layer (adaptive blur + dim + desaturate) ──
-  const blurSigma = tuneOverrides?.blurSigma
-    ?? Math.max(5, Math.min(8, 6 + (brightness.average - 100) * 0.02));
+  const blurSigma =
+    tuneOverrides?.blurSigma ?? Math.max(5, Math.min(8, 6 + (brightness.average - 100) * 0.02));
 
   // Brightness normalization — ensure consistent visual depth across images
   let brightnessMult = tuneOverrides?.brightnessMultiplier ?? 1.0;
@@ -511,11 +512,15 @@ export async function generateFeaturedImage(
 
   // ── Step 3: Keep current title geometry as the debug contract source ──
   let { debugInput } = generateOverlaySvg(
-    renderCopy.title, outputWidth, outputHeight, design, label, effectiveTuneOverrides
+    renderCopy.title,
+    outputWidth,
+    outputHeight,
+    design,
+    label,
+    effectiveTuneOverrides
   );
 
-  const weakCtrSignal =
-    debugInput.fontSize < 48 && debugInput.textBlockWidth / outputWidth < 0.35;
+  const weakCtrSignal = debugInput.fontSize < 48 && debugInput.textBlockWidth / outputWidth < 0.35;
 
   if (weakCtrSignal) {
     effectiveTuneOverrides = {
@@ -562,12 +567,16 @@ export async function generateStandardFeaturedImage(
   label?: string,
   tuneOverrides?: TuneOverrides
 ): Promise<FeaturedImageWithDebug> {
-  return generateFeaturedImage(imageBuffer, {
-    title,
-    brightness,
-    outputWidth: IMAGE_SIZES.featured.width,
-    outputHeight: IMAGE_SIZES.featured.height,
-    label,
-    design,
-  }, tuneOverrides);
+  return generateFeaturedImage(
+    imageBuffer,
+    {
+      title,
+      brightness,
+      outputWidth: IMAGE_SIZES.featured.width,
+      outputHeight: IMAGE_SIZES.featured.height,
+      label,
+      design,
+    },
+    tuneOverrides
+  );
 }
