@@ -9,9 +9,10 @@ import { FEATURE_REGISTRY } from '@/domains/features/registry';
 import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
-const featuresLandingContactHref = buildContactHref('/contact', {
+const featuresLandingContactHref = buildContactHref({
   system: 'smart-website-systems',
-  source: 'page/features',
+  sourceType: 'page',
+  slug: 'features',
 });
 
 // Features overview landing

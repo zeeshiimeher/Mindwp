@@ -163,7 +163,6 @@ export const leadResponseTimeFramework: ResourceData = {
   title: 'Lead Response Time Framework',
   description:
     'Understand why lead response time determines conversion rates and how to build systems that respond in seconds instead of hours using automation and priority routing.',
-  intent: 'EDUCATIONAL',
   category: 'ai-lead-handling',
   publishedAt: '2025-12-06',
   systems: ['ai-lead-handling'],

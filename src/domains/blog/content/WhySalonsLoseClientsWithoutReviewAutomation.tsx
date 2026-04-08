@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whySalonsLoseClientsWithoutReviewAutomation: BlogPostData = {
   slug: 'why-salons-lose-clients-without-review-automation',
   title: 'Why Salons Lose Clients Without Review Automation',
-  intent: 'PROBLEM',
   metaTitle: 'Why Salons Lose Clients Without Review Automation',
   metaDescription:
     'Salons lose clients without review automation because happy visitors rarely post reviews unprompted, leaving the salon invisible to new customers online.',

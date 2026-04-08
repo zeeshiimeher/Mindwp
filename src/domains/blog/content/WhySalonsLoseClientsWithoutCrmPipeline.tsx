@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whySalonsLoseClientsWithoutCrmPipeline: BlogPostData = {
   slug: 'why-salons-lose-clients-without-crm-pipeline',
   title: 'Why Salons Lose Clients Without a CRM Pipeline',
-  intent: 'PROBLEM',
   metaTitle: 'Why Salons Lose Clients Without a CRM Pipeline',
   metaDescription:
     'Salons lose clients without a CRM pipeline because enquiries go untracked, follow-ups are missed, and rebooking depends on the client remembering to call back.',

@@ -1,5 +1,7 @@
 import { Clock, GitBranch, MessageSquare, Search, ShieldCheck, Star } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { ServicePageData } from '../types';
 
 export const reviewAutomationSystemPage = {
@@ -44,7 +46,11 @@ export const reviewAutomationSystemPage = {
       'This service focuses on the review-request workflow itself. It helps service businesses ask more consistently, route unhappy feedback more intelligently, and improve review velocity without depending on manual chasing.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact?system=reputation-review&source=service/review-automation-system',
+      href: buildContactHref({
+        system: 'reputation-review',
+        sourceType: 'service',
+        slug: 'review-automation-system',
+      }),
     },
     list: [
       'Consistent review requests at the right time',
@@ -294,6 +300,10 @@ export const reviewAutomationSystemPage = {
     description:
       'If reviews are being left to memory and manual follow-up, we can help structure a cleaner review automation workflow.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact?system=reputation-review&source=service/review-automation-system',
+    buttonHref: buildContactHref({
+      system: 'reputation-review',
+      sourceType: 'service',
+      slug: 'review-automation-system',
+    }),
   },
 } satisfies ServicePageData;

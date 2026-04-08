@@ -163,7 +163,6 @@ export const leadQualificationFramework: ResourceData = {
   title: 'Lead Qualification Framework',
   description:
     'Learn how to build a lead qualification framework that scores and prioritises leads automatically so your team focuses on the highest-value opportunities.',
-  intent: 'EDUCATIONAL',
   category: 'ai-lead-handling',
   publishedAt: '2025-12-03',
   systems: ['ai-lead-handling'],

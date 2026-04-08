@@ -97,6 +97,7 @@ export type CaseStudyTemplateMetadata = Pick<
   | 'metaDescription'
   | 'industryCategory'
   | 'industryLabel'
+  | 'systems'
   | 'publishDate'
   | 'client'
   | 'location'

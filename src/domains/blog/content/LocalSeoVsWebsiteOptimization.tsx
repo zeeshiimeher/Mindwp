@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const localSeoVsWebsiteOptimization: BlogPostData = {
   slug: 'local-seo-vs-website-optimization',
   title: 'Local SEO vs Website Optimization',
-  intent: 'FRAMEWORK',
   metaTitle: 'Local SEO vs Website Optimization Explained',
   metaDescription:
     'Understand the difference between local seo vs website optimization and why service businesses need both to capture and convert local traffic.',

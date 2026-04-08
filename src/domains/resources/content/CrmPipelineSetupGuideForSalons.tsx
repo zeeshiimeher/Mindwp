@@ -174,7 +174,6 @@ export const crmPipelineSetupGuideForSalons: ResourceData = {
   title: 'CRM Pipeline Setup Guide for Salons',
   description:
     'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
-  intent: 'ACTIONABLE',
   category: 'crm-automation',
   publishedAt: '2026-04-06',
   systems: ['crm-automation'],

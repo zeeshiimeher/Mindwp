@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyRealtorsLoseLeadsWithoutLocalVisibility: BlogPostData = {
   slug: 'why-realtors-lose-leads-without-local-visibility',
   title: 'Why Realtors Lose Leads Without Local Visibility',
-  intent: 'PROBLEM',
   metaTitle: 'Why Realtors Lose Leads Without Local Visibility',
   metaDescription:
     'Realtors lose leads without local visibility because weak review profiles and inconsistent listings push them below competitors in local search results.',

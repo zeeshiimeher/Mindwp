@@ -1,4 +1,5 @@
 import type { CaseStudyContent, CaseStudyTemplateSection } from '@/domains/case-studies/templates';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { CaseStudyData } from '../types';
 
@@ -217,7 +218,11 @@ function buildRealEstateInquiryRouting(): CaseStudyData {
       },
       cta: {
         primaryButtonLabel: 'Route Property Leads Faster',
-        primaryButtonHref: '/contact',
+        primaryButtonHref: buildContactHref({
+          system: 'ai-lead-handling',
+          sourceType: 'case-study',
+          slug: 'real-estate-inquiry-routing',
+        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

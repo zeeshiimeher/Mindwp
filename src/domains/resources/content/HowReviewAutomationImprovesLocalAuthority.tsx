@@ -158,7 +158,6 @@ export const howReviewAutomationImprovesLocalAuthority: ResourceData = {
   title: 'How Review Automation Improves Local Authority',
   description:
     'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
-  intent: 'ACTIONABLE',
   category: 'reputation-review',
   publishedAt: '2025-12-17',
   systems: ['reputation-review'],

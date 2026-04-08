@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const realtorLocalVisibilitySystemForLeadGeneration: BlogPostData = {
   slug: 'realtor-local-visibility-system-for-lead-generation',
   title: 'Realtor Local Visibility System for Lead Generation',
-  intent: 'SYSTEM',
   metaTitle: 'Realtor Local Visibility System for Lead Generation',
   metaDescription:
     'Learn how a realtor local visibility system for lead generation builds review authority, citation consistency, and local signals that drive map pack rankings.',

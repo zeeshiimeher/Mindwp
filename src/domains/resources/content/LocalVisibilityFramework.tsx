@@ -158,7 +158,6 @@ export const localVisibilityFramework: ResourceData = {
   title: 'Local Visibility Framework',
   description:
     'Build a local visibility framework that coordinates search, directories, reviews, and content into a unified strategy that maximises how often customers find your business.',
-  intent: 'EDUCATIONAL',
   category: 'local-seo-authority',
   publishedAt: '2025-12-15',
   systems: ['local-seo-authority'],

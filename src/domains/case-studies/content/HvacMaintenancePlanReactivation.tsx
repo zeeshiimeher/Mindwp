@@ -1,4 +1,5 @@
 import type { CaseStudyContent, CaseStudyTemplateSection } from '@/domains/case-studies/templates';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { CaseStudyData } from '../types';
 
@@ -205,7 +206,11 @@ function buildHvacMaintenancePlanReactivation(): CaseStudyData {
       },
       cta: {
         primaryButtonLabel: 'Reactivate More Service Plans',
-        primaryButtonHref: '/contact',
+        primaryButtonHref: buildContactHref({
+          system: 'revenue-growth',
+          sourceType: 'case-study',
+          slug: 'hvac-maintenance-plan-reactivation',
+        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

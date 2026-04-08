@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildRepairShopsIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -187,7 +188,11 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
           'Service and timing context',
         ],
         buttonText: 'Talk Through Scope',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'repair-shops',
+        }),
       },
       {
         name: 'Booking and expectation flow',
@@ -198,7 +203,11 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
         features: ['Visit scheduling support', 'Reminder structure', 'Expectation guidance'],
         popular: true,
         buttonText: 'See the Setup',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'repair-shops',
+        }),
       },
       {
         name: 'Follow-up and trust reinforcement',
@@ -208,7 +217,11 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
         features: ['Nurture workflows', 'Review request support', 'Trust reinforcement'],
         buttonText: 'Request Details',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'repair-shops',
+        }),
       },
     ],
   };
@@ -368,7 +381,14 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Capture More Repair Jobs', href: '/contact' },
+      primaryAction: {
+        label: 'Capture More Repair Jobs',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'repair-shops',
+        }),
+      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -387,7 +407,15 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier repair booking and follow-up system',
       description:
         'If your shop is dealing with unclear enquiry quality, loose booking flow, or inconsistent follow-up — we can map a practical system around how the pipeline actually runs.',
-      primaryAction: { variant: 'white', label: 'Capture More Repair Jobs', href: '/contact' },
+      primaryAction: {
+        variant: 'white',
+        label: 'Capture More Repair Jobs',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'repair-shops',
+        }),
+      },
       secondaryAction: {
         label: 'See Local Appointment Businesses',
         href: '/industries/local-appointment-businesses',

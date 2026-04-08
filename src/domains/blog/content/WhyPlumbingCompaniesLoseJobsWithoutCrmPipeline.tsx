@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyPlumbingCompaniesLoseJobsWithoutCrmPipeline: BlogPostData = {
   slug: 'why-plumbing-companies-lose-jobs-without-crm-pipeline',
   title: 'Why Plumbing Companies Lose Jobs Without a CRM Pipeline',
-  intent: 'PROBLEM',
   metaTitle: 'Why Plumbing Companies Lose Jobs Without a CRM Pipeline',
   metaDescription:
     'Discover why plumbing companies lose jobs without a CRM pipeline and how untracked leads, missed follow-ups, and poor visibility cost revenue every week.',

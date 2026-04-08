@@ -28,6 +28,7 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { Card } from '@/components/ui/card';
 import { primaryCta } from '@/config/primaryCta';
 import { SERVICE_REGISTRY } from '@/domains/services/registry';
+import { buildGlobalContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 const FEATURED_SERVICE_SLUG = 'smart-website-systems' as const;
@@ -416,7 +417,7 @@ export function ServicesLanding() {
           description='Discover how our integrated systems can streamline your operations and boost your growth.'
           primaryAction={{
             label: 'Start a Conversation',
-            href: '/contact',
+            href: buildGlobalContactHref(),
           }}
           cssPrefix='footer-cta'
           backgroundColor='bg-gradient-primary'

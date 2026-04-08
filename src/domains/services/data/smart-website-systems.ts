@@ -11,6 +11,8 @@ import {
   Zap,
 } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { ServicePageData } from '../types';
 
 const smartWebsitesFaqItems = [
@@ -102,7 +104,11 @@ export const smartWebsiteSystemsPage = {
       'A Smart Website gives visitors a clear path from service to enquiry. Your services are easy to understand, the next step is obvious, and the site connects directly to your workflow.',
     primaryAction: {
       label: 'Understand What Makes Websites Convert',
-      href: '/contact?system=smart-website-systems&source=service/smart-website-systems',
+      href: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'service',
+        slug: 'smart-website-systems',
+      }),
     },
     list: [
       'Services organised clearly',
@@ -375,13 +381,21 @@ export const smartWebsiteSystemsPage = {
     description:
       'Tell us how your website handles enquiries now. We will show you where visitors drop off before they contact you.',
     buttonText: 'Turn Website Traffic Into Leads',
-    buttonHref: '/contact?system=smart-website-systems&source=service/smart-website-systems',
+    buttonHref: buildContactHref({
+      system: 'smart-website-systems',
+      sourceType: 'service',
+      slug: 'smart-website-systems',
+    }),
   },
   inlineCta: {
     title: 'Not sure how this would fit your business?',
     description:
       'No commitment. We will walk through your setup and show where enquiries are being lost.',
     buttonText: 'See Where Leads Drop Off',
-    buttonHref: '/contact?system=smart-website-systems&source=service/smart-website-systems',
+    buttonHref: buildContactHref({
+      system: 'smart-website-systems',
+      sourceType: 'service',
+      slug: 'smart-website-systems',
+    }),
   },
 } satisfies ServicePageData;

@@ -115,7 +115,6 @@ export const automotiveServiceReminderAutomation: ResourceData = {
   title: 'Automotive Service Reminder Automation',
   description:
     'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
-  intent: 'ACTIONABLE',
   category: 'crm-automation',
   publishedAt: '2026-02-23',
   systems: ['crm-automation'],

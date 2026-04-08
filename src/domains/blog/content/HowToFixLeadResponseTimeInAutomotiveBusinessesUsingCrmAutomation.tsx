@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const howToFixLeadResponseTimeInAutomotiveBusinessesUsingCrmAutomation: BlogPostData = {
   slug: 'how-to-fix-lead-response-time-in-automotive-businesses-using-crm-automation',
   title: 'How to Fix Lead Response Time in Automotive Businesses Using CRM Automation',
-  intent: 'SYSTEM',
   metaTitle: 'Fix Lead Response Time in Automotive Using CRM',
   metaDescription:
     'Learn how to fix lead response time in automotive businesses using CRM automation to centralise enquiries and intelligently route every lead.',

@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whySalonsNeedLeadHandlingSystems: BlogPostData = {
   slug: 'why-salons-need-lead-handling-systems',
   title: 'Why Salons Need Lead Handling Systems',
-  intent: 'PROBLEM',
   metaTitle: 'Why Salons Need Lead Handling Systems Explained',
   metaDescription:
     'Discover why salons need lead handling systems to capture booking enquiries that arrive when stylists are busy and front desks are unmanned.',

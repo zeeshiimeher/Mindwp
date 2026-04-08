@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyHvacCompaniesLoseLeadsAfterHours: BlogPostData = {
   slug: 'why-hvac-companies-lose-leads-after-hours',
   title: 'Why HVAC Companies Lose Leads After Hours',
-  intent: 'PROBLEM',
   metaTitle: 'Why HVAC Companies Lose Leads After Hours',
   metaDescription:
     'Discover why HVAC companies lose leads after hours when emergency enquiries go unanswered and how automated response systems recover missed revenue.',

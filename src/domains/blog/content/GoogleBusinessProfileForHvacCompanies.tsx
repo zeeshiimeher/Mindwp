@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const googleBusinessProfileForHvacCompanies: BlogPostData = {
   slug: 'google-business-profile-for-hvac-companies',
   title: 'Google Business Profile for HVAC Companies',
-  intent: 'SYSTEM',
   metaTitle: 'Google Business Profile for HVAC Companies',
   metaDescription:
     'Learn how optimising your google business profile for HVAC companies improves local visibility, map rankings, and emergency service discovery.',

@@ -4,13 +4,6 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import { listFilesRecursive } from '../lib/validator-helpers.mjs';
-import {
-  buildSlugIndex,
-  buildTsProject,
-  loadCanonicalSets,
-  loadStructuredGraphNodes,
-  normalizeIntent,
-} from '../lib/contract-validator-helpers.mjs';
 
 const args = new Set(process.argv.slice(2));
 const shouldReportJson = args.has('--report-json');
@@ -19,22 +12,25 @@ const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'conversion-contract-report.json');
 
 const DATA_DIRS = [
+  'src/components',
+  'src/config',
   'src/domains/blog/templates',
+  'src/domains/case-studies/content',
   'src/domains/case-studies/templates',
+  'src/domains/features/data',
   'src/domains/features/pages',
   'src/domains/features/renderers',
+  'src/domains/home/data',
+  'src/domains/industries/pages',
   'src/domains/industries/templates',
+  'src/domains/resources/data',
   'src/domains/resources/pages',
   'src/domains/resources/templates',
+  'src/domains/services/data',
+  'src/domains/services/pages',
   'src/global',
   'src/screens',
 ];
-
-const SOURCE_PATTERN = /^[a-z-]+\/[a-z0-9-]+$/;
-
-function isAllowedGlobalNavigationContext(system, source) {
-  return system === 'unknown' && source === 'global/navigation';
-}
 
 function findFiles() {
   return DATA_DIRS.flatMap(relDir =>
@@ -53,84 +49,58 @@ function lineOfIndex(text, index) {
   return line;
 }
 
-function validateHrefLiteral(href, context, canonicalSystems, slugIndex, issues, warnings) {
-  if (!href.startsWith('/contact')) return;
-
-  const url = new URL(href, 'https://mindwp.local');
-  if (url.pathname !== '/contact') {
+function pushMatches(pattern, text, rel, issues, code, messageFactory) {
+  let match;
+  while ((match = pattern.exec(text)) !== null) {
     issues.push({
       severity: 'error',
-      code: 'invalid_cta_path',
-      ...context,
-      message: `CTA must point to /contact (found ${url.pathname})`,
-    });
-  }
-
-  const system = url.searchParams.get('system');
-  const source = url.searchParams.get('source');
-
-  if (!system) {
-    issues.push({
-      severity: 'error',
-      code: 'missing_system_param',
-      ...context,
-      message: 'CTA is missing the required system query param.',
-    });
-  } else if (!canonicalSystems.has(system) && !isAllowedGlobalNavigationContext(system, source ?? '')) {
-    issues.push({
-      severity: 'error',
-      code: 'invalid_system_param',
-      ...context,
-      message: `CTA system param "${system}" is not canonical.`,
-    });
-  }
-
-  if (!source) {
-    issues.push({
-      severity: 'error',
-      code: 'missing_source_param',
-      ...context,
-      message: 'CTA is missing the required source query param.',
-    });
-    return;
-  }
-
-  if (!SOURCE_PATTERN.test(source)) {
-    issues.push({
-      severity: 'error',
-      code: 'invalid_source_format',
-      ...context,
-      message: `CTA source param must match {type}/{slug} (found ${source}).`,
-    });
-    return;
-  }
-
-  if (!slugIndex.has(source) && !source.startsWith('page/') && !source.startsWith('global/')) {
-    warnings.push({
-      severity: 'warning',
-      code: 'unknown_source_slug',
-      ...context,
-      message: `CTA source "${source}" does not currently map to a structured content node.`,
+      file: rel,
+      line: lineOfIndex(text, match.index),
+      code,
+      message: messageFactory(match),
     });
   }
 }
 
-function scanFile(filePath, canonicalSystems, slugIndex, issues, warnings) {
+function scanFile(filePath, issues, warnings) {
   const rel = path.relative(root, filePath);
   const text = fs.readFileSync(filePath, 'utf8');
 
-  const hrefPatterns = [
-    /(buttonHref|buttonUrl|href)\s*:\s*['"]([^'"]+)['"]/g,
-    /href=['"]([^'"]+)['"]/g,
-  ];
+  pushMatches(
+    /['"]\/contact(?:\?[^'"]*)?['"]/g,
+    text,
+    rel,
+    issues,
+    'hardcoded_contact_href',
+    () => 'Contact URLs must be generated via buildContactHref(), not hardcoded as string literals.'
+  );
 
-  for (const pattern of hrefPatterns) {
-    let match;
-    while ((match = pattern.exec(text)) !== null) {
-      const href = match[2] ?? match[1];
-      validateHrefLiteral(href, { file: rel, line: lineOfIndex(text, match.index) }, canonicalSystems, slugIndex, issues, warnings);
-    }
-  }
+  pushMatches(
+    /buildContactHref\(\s*['"]\/contact['"]/g,
+    text,
+    rel,
+    issues,
+    'hardcoded_contact_base',
+    () => 'buildContactHref() must be called with canonical options only, not a raw /contact base string.'
+  );
+
+  pushMatches(
+    /\bsource\s*:\s*[`'"]/g,
+    text,
+    rel,
+    issues,
+    'manual_source_string',
+    () => 'Manual source strings are not allowed. Use buildContactHref({ system, sourceType, slug }).'
+  );
+
+  pushMatches(
+    /source=[a-z-]+\/[a-z0-9-]+/g,
+    text,
+    rel,
+    issues,
+    'manual_source_query',
+    match => `Manual source query detected (${match[0]}). Use buildContactHref() instead.`
+  );
 
   if (rel === 'src/screens/Contact.tsx') {
     if (!text.includes("name='system'") && !text.includes('name="system"')) {
@@ -153,51 +123,24 @@ function scanFile(filePath, canonicalSystems, slugIndex, issues, warnings) {
       });
     }
 
-    if (!text.includes("name='intent'") && !text.includes('name="intent"')) {
-      warnings.push({
-        severity: 'warning',
+    if (text.includes("name='intent'") || text.includes('name="intent"')) {
+      issues.push({
+        severity: 'error',
         file: rel,
         line: 1,
-        code: 'missing_contact_intent_field',
-        message: 'Contact form does not yet include a hidden intent field; keep this ready for future payload validation.',
+        code: 'legacy_contact_intent_field',
+        message: 'Contact form must not include a hidden intent field.',
       });
     }
   }
 }
 
 async function main() {
-  const project = buildTsProject(root);
-  const canonical = loadCanonicalSets(project, root);
-  const nodes = await loadStructuredGraphNodes();
-  const slugIndex = buildSlugIndex(nodes);
   const issues = [];
   const warnings = [];
 
-  for (const node of nodes) {
-    const intent = normalizeIntent(node.intent, node.type);
-    if (intent.kind === 'invalid') {
-      issues.push({
-        severity: 'error',
-        file: `${node.type}/${node.slug}`,
-        line: 0,
-        code: 'invalid_intent',
-        message: `${node.type}/${node.slug} has unmapped intent "${node.intent}".`,
-      });
-    }
-
-    if (intent.kind === 'legacy') {
-      warnings.push({
-        severity: 'warning',
-        file: `${node.type}/${node.slug}`,
-        line: 0,
-        code: 'legacy_intent',
-        message: `${node.type}/${node.slug} uses legacy intent "${node.intent}"; normalized to "${intent.normalized}" for conversion checks.`,
-      });
-    }
-  }
-
   for (const filePath of findFiles()) {
-    scanFile(filePath, canonical.systems, slugIndex, issues, warnings);
+    scanFile(filePath, issues, warnings);
   }
 
   const report = {

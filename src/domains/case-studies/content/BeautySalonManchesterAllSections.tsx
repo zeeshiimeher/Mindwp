@@ -1,4 +1,5 @@
 import type { CaseStudyContent, CaseStudyTemplateSection } from '@/domains/case-studies/templates';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { CaseStudyData } from '../types';
 
@@ -214,7 +215,11 @@ function buildBeautySalonManchesterAllSections(): CaseStudyData {
       },
       cta: {
         primaryButtonLabel: 'Book a Free Strategy Call',
-        primaryButtonHref: '/contact?source=all-sections-case-study',
+        primaryButtonHref: buildContactHref({
+          system: 'local-seo-authority',
+          sourceType: 'case-study',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+        }),
         metaItems: [
           { text: '20-minute discovery call' },
           { text: 'Actionable system roadmap' },

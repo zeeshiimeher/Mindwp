@@ -1,5 +1,7 @@
 import { Calendar, Clock, Inbox, MessageSquare, Settings, Users } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { FeaturePageData } from '../types';
 
 const calendarsFaqItems = [
@@ -83,7 +85,11 @@ export const calendarsData: FeaturePageData = {
       'This booking layer lets clients schedule appointments through a clear flow. Booking, confirmations, and calendar management connect directly to your enquiry handling and internal operations.',
     primaryAction: {
       label: 'Review How Booking Flow Works',
-      href: '/contact?system=smart-website-systems&source=feature/calendars',
+      href: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'feature',
+        slug: 'calendars',
+      }),
     },
     stats: [
       { value: 'Online', label: 'Booking' },
@@ -279,7 +285,11 @@ export const calendarsData: FeaturePageData = {
       'Tell us how booking is handled now. We will show you where scheduling friction and manual handoffs are slowing appointments down.',
     primaryAction: {
       label: 'Automate Your Booking Flow',
-      href: '/contact?system=smart-website-systems&source=feature/calendars',
+      href: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'feature',
+        slug: 'calendars',
+      }),
     },
     metaItems: [
       { text: 'Automated booking system' },

@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildAutoRepairIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -198,7 +199,11 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
           'Vehicle and symptom context',
         ],
         buttonText: 'Talk Through Scope',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'auto-repair',
+        }),
       },
       {
         name: 'Diagnostic booking and estimate flow',
@@ -213,7 +218,11 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
         ],
         popular: true,
         buttonText: 'See the Setup',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'auto-repair',
+        }),
       },
       {
         name: 'Follow-up and trust reinforcement',
@@ -227,7 +236,11 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
           'Local proof reinforcement',
         ],
         buttonText: 'Request Details',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'auto-repair',
+        }),
       },
     ],
   };
@@ -387,7 +400,14 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Recover Missed Repair Calls', href: '/contact' },
+      primaryAction: {
+        label: 'Recover Missed Repair Calls',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'auto-repair',
+        }),
+      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -406,7 +426,15 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
       title: 'Build a steadier auto repair diagnostic and estimate system',
       description:
         'If your repair business is dealing with missed enquiries, loose booking, or inconsistent estimate follow-up — we can map a practical system around how the workshop actually runs.',
-      primaryAction: { variant: 'white', label: 'Recover Missed Repair Calls', href: '/contact' },
+      primaryAction: {
+        variant: 'white',
+        label: 'Recover Missed Repair Calls',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'auto-repair',
+        }),
+      },
       secondaryAction: {
         label: 'See Automotive Services',
         href: '/industries/automotive-services',

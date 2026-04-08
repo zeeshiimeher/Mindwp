@@ -174,7 +174,6 @@ export const localVisibilityOptimizationGuideForHvacCompanies: ResourceData = {
   title: 'Local Visibility Optimization Guide for HVAC Companies',
   description:
     'A step-by-step guide to improving HVAC local visibility — covering Google Business Profile optimisation, citation audit, review automation, and ranking tracking.',
-  intent: 'ACTIONABLE',
   category: 'reputation-review',
   publishedAt: '2026-04-06',
   systems: ['reputation-review'],

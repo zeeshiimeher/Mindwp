@@ -117,7 +117,6 @@ export const clientReactivationSystems: ResourceData = {
   title: 'Client Reactivation Systems',
   description:
     'Build an automated reactivation system that identifies lapsed customers, sends targeted re-engagement campaigns, and recovers revenue from your existing customer base.',
-  intent: 'ACTIONABLE',
   category: 'revenue-growth',
   publishedAt: '2025-11-29',
   systems: ['crm-automation'],

@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const futureCrmVisibilityForHvacCompanies: BlogPostData = {
   slug: 'future-crm-visibility-for-hvac-companies',
   title: 'Future CRM Visibility for HVAC Companies',
-  intent: 'FRAMEWORK',
   metaTitle: 'Future CRM Visibility for HVAC Companies',
   metaDescription:
     'Learn how future crm visibility for HVAC companies will use predictive analytics and AI forecasting to anticipate demand and optimise pipeline management.',

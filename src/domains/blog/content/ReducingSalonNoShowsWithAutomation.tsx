@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const reducingSalonNoShowsWithAutomation: BlogPostData = {
   slug: 'reducing-salon-no-shows-with-automation',
   title: 'Reducing Salon No Shows With Automation',
-  intent: 'SYSTEM',
   metaTitle: 'Reducing Salon No Shows With Automation Systems',
   metaDescription:
     'Learn how reducing salon no shows with automation through SMS reminders and confirmation workflows dramatically cuts missed appointments and revenue loss.',

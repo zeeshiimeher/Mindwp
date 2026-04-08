@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildMortgageBrokersIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -195,7 +196,11 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
           'Readiness and timing context',
         ],
         buttonText: 'Talk Through Scope',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'mortgage-brokers',
+        }),
       },
       {
         name: 'Consultation and reminder flow',
@@ -206,7 +211,11 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
         features: ['Consultation scheduling support', 'Reminder structure', 'Next-step clarity'],
         popular: true,
         buttonText: 'See the Setup',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'mortgage-brokers',
+        }),
       },
       {
         name: 'Nurture and trust reinforcement',
@@ -216,7 +225,11 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
         features: ['Nurture workflows', 'Review request support', 'Local proof reinforcement'],
         buttonText: 'Request Details',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'mortgage-brokers',
+        }),
       },
     ],
   };
@@ -375,7 +388,14 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Capture More Qualified Leads', href: '/contact' },
+      primaryAction: {
+        label: 'Capture More Qualified Leads',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'mortgage-brokers',
+        }),
+      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -394,7 +414,15 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
       title: 'Build a steadier mortgage consultation and follow-up system',
       description:
         'If your mortgage business is dealing with unclear enquiry quality, loose consultation flow, or inconsistent nurture follow-up — we can map a practical system around how the pipeline actually runs.',
-      primaryAction: { variant: 'white', label: 'Capture More Qualified Leads', href: '/contact' },
+      primaryAction: {
+        variant: 'white',
+        label: 'Capture More Qualified Leads',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'mortgage-brokers',
+        }),
+      },
       secondaryAction: {
         label: 'See Real Estate & Property Services',
         href: '/industries/real-estate-property-services',

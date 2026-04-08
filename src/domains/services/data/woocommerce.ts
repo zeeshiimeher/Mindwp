@@ -9,6 +9,8 @@ import {
   Truck,
 } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { ServicePageData } from '../types';
 
 export const woocommercePage = {
@@ -53,7 +55,11 @@ export const woocommercePage = {
       'We implement e-commerce systems on WordPress with WooCommerce where it fits. Catalog logic, checkout flow, fulfilment rules, and reporting are set up around your actual operating model — not just assembled to get a store online.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact?system=smart-website-systems&source=service/ecommerce',
+      href: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'service',
+        slug: 'ecommerce',
+      }),
     },
     list: [
       'Catalog and product logic that matches the business',
@@ -228,6 +234,10 @@ export const woocommercePage = {
     description:
       'If you are evaluating a WordPress-based e-commerce or web shop build, we can review your catalog needs, checkout requirements, fulfilment model, and integrations — then outline a clear implementation plan.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact?system=smart-website-systems&source=service/ecommerce',
+    buttonHref: buildContactHref({
+      system: 'smart-website-systems',
+      sourceType: 'service',
+      slug: 'ecommerce',
+    }),
   },
 } satisfies ServicePageData;

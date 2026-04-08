@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import { buildGlobalContactHref } from '@/lib/contact/contactHref';
+
 interface RelatedSectionCTAProps {
   text?: string;
   actionLabel?: string;
@@ -9,7 +11,7 @@ interface RelatedSectionCTAProps {
 const DEFAULTS = {
   text: 'See how this connects with other systems and use cases.',
   actionLabel: 'Explore Related Solutions',
-  actionHref: '/contact',
+  actionHref: buildGlobalContactHref(),
 } as const;
 
 export function RelatedSectionCTA({

@@ -1,5 +1,7 @@
 import { FileText } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import { RESOURCE_REGISTRY } from '../generatedRegistry';
 import type { ResourceCategory, ResourceCategoryMetadata } from '../types';
 
@@ -91,7 +93,11 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
       'These guides show how the pieces fit together. We will show you how to turn website traffic into clearer, more consistent enquiries.',
     primaryAction: {
       label: 'Turn Website Traffic Into Leads',
-      href: '/contact?system=smart-website-systems&source=resource/resources',
+      href: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'resource',
+        slug: 'resources',
+      }),
     },
     secondaryAction: { label: 'View All Services', href: '/services' },
   },

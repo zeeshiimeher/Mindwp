@@ -1,4 +1,5 @@
 import type { CaseStudyContent, CaseStudyTemplateSection } from '@/domains/case-studies/templates';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { CaseStudyData } from '../types';
 
@@ -198,7 +199,11 @@ function buildAutomotiveServiceReminderAutomation(): CaseStudyData {
       },
       cta: {
         primaryButtonLabel: 'Automate Service Reminders',
-        primaryButtonHref: '/contact',
+        primaryButtonHref: buildContactHref({
+          system: 'revenue-growth',
+          sourceType: 'case-study',
+          slug: 'automotive-service-reminder-automation',
+        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

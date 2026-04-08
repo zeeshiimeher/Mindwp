@@ -1,5 +1,6 @@
 import { primaryCta } from '@/config/primaryCta';
 import type { ResourcePageTemplateSection } from '@/domains/resources/templates/types';
+import { buildGlobalContactHref } from '@/lib/contact/contactHref';
 
 type ProblemSection = Extract<ResourcePageTemplateSection, { type: 'problem' }>;
 type TakeawaysSection = Extract<ResourcePageTemplateSection, { type: 'takeaways' }>;
@@ -159,7 +160,7 @@ const DEFAULTS = {
   CASE_SOLUTION_HEADING: 'The Solution',
   CASE_RESULT_HEADING: 'The Result',
   CTA_BUTTON_URL: primaryCta.href,
-  CTA_SECONDARY_BUTTON_URL: '/contact',
+  CTA_SECONDARY_BUTTON_URL: buildGlobalContactHref(),
 } as const;
 
 // Helpers

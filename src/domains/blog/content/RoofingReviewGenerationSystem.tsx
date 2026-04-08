@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const roofingReviewGenerationSystem: BlogPostData = {
   slug: 'roofing-review-generation-system',
   title: 'Roofing Review Generation System',
-  intent: 'SYSTEM',
   metaTitle: 'Roofing Review Generation System for Contractors',
   metaDescription:
     'Learn how a roofing review generation system automates post-job review requests to build local authority and attract more customers consistently.',

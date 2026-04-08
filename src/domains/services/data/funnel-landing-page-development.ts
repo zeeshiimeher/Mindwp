@@ -1,5 +1,7 @@
 import { Calendar, ShoppingBag, Target, Workflow } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { ServicePageData } from '../types';
 
 export const funnelLandingPageDevelopmentPage = {
@@ -44,7 +46,11 @@ export const funnelLandingPageDevelopmentPage = {
       'This service implements focused landing pages and funnel pages for specific offers, campaigns, booking paths, or quote journeys. The goal is tighter page flow, clearer next-step design, and stronger fit between intent and action.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact?system=revenue-growth&source=service/funnel-landing-page-development',
+      href: buildContactHref({
+        system: 'revenue-growth',
+        sourceType: 'service',
+        slug: 'funnel-landing-page-development',
+      }),
     },
     list: [
       'More focused conversion journeys',
@@ -258,6 +264,10 @@ export const funnelLandingPageDevelopmentPage = {
     description:
       'If a specific offer, campaign, or booking path needs a more focused landing page, we can help implement it properly.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact?system=revenue-growth&source=service/funnel-landing-page-development',
+    buttonHref: buildContactHref({
+      system: 'revenue-growth',
+      sourceType: 'service',
+      slug: 'funnel-landing-page-development',
+    }),
   },
 } satisfies ServicePageData;

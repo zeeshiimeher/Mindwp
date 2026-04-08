@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildHvacCompaniesIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -193,7 +194,11 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
           'Better first-response clarity',
         ],
         buttonText: 'Talk Through Scope',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'hvac-companies',
+        }),
       },
       {
         name: 'Scheduling and appointment protection',
@@ -204,7 +209,11 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
         features: ['Service scheduling support', 'Reminder structure', 'Cleaner appointment flow'],
         popular: true,
         buttonText: 'See the Setup',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'hvac-companies',
+        }),
       },
       {
         name: 'Maintenance and follow-up support',
@@ -218,7 +227,11 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
           'Install and service follow-up',
         ],
         buttonText: 'Request Details',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'hvac-companies',
+        }),
       },
     ],
   };
@@ -369,7 +382,14 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Capture More HVAC Leads', href: '/contact' },
+      primaryAction: {
+        label: 'Capture More HVAC Leads',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'hvac-companies',
+        }),
+      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -387,7 +407,15 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       title: 'Build a steadier HVAC system',
       description:
         'If seasonal response pressure, scheduling friction, weak maintenance follow-up, or scattered local trust signals are slowing things down, we can map a practical system around how the work actually runs.',
-      primaryAction: { variant: 'white', label: 'Capture More HVAC Leads', href: '/contact' },
+      primaryAction: {
+        variant: 'white',
+        label: 'Capture More HVAC Leads',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'hvac-companies',
+        }),
+      },
       secondaryAction: {
         label: 'See Home Services',
         href: '/industries/home-services',

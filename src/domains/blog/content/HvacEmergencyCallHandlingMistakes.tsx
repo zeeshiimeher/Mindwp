@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const hvacEmergencyCallHandlingMistakes: BlogPostData = {
   slug: 'hvac-emergency-call-handling-mistakes',
   title: 'HVAC Emergency Call Handling Mistakes',
-  intent: 'PROBLEM',
   metaTitle: 'HVAC Emergency Call Handling Mistakes to Avoid',
   metaDescription:
     'Learn about common hvac emergency call handling mistakes that delay response times and how structured triage workflows prevent dispatch errors.',

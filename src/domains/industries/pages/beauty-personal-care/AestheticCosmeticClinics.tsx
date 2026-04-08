@@ -1,5 +1,3 @@
-import type { IndustryPageData } from '@/domains/industries/types';
-
 import {
   Bell,
   Calendar,
@@ -12,6 +10,9 @@ import {
   Star,
   Workflow,
 } from 'lucide-react';
+
+import type { IndustryPageData } from '@/domains/industries/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -197,7 +198,11 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
           'Better first-response clarity',
         ],
         buttonText: 'Talk Through Scope',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'aesthetic-cosmetic-clinics',
+        }),
       },
       {
         name: 'Booking and patient preparation',
@@ -208,7 +213,11 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
         features: ['Consultation scheduling support', 'Reminder structure', 'Preparation guidance'],
         popular: true,
         buttonText: 'See the Setup',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'aesthetic-cosmetic-clinics',
+        }),
       },
       {
         name: 'Aftercare and trust reinforcement',
@@ -218,7 +227,11 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when follow-up consistency and proof-building need improvement',
         features: ['Aftercare follow-up', 'Review request support', 'Trust reinforcement'],
         buttonText: 'Request Details',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'aesthetic-cosmetic-clinics',
+        }),
       },
     ],
   };
@@ -376,7 +389,14 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Book More Consultations', href: '/contact' },
+      primaryAction: {
+        label: 'Book More Consultations',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'aesthetic-cosmetic-clinics',
+        }),
+      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -395,7 +415,15 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier clinic system',
       description:
         'If unclear consultation routing, booking friction, inconsistent aftercare, or weak trust signals are slowing things down, we can map a practical system around the real patient journey.',
-      primaryAction: { variant: 'white', label: 'Book More Consultations', href: '/contact' },
+      primaryAction: {
+        variant: 'white',
+        label: 'Book More Consultations',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'aesthetic-cosmetic-clinics',
+        }),
+      },
       secondaryAction: {
         label: 'See the Category Approach',
         href: '/industries/beauty-personal-care',

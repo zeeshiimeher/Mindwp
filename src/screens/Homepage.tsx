@@ -33,7 +33,8 @@ import { PortfolioSection as ImplementationExamplesSection } from '@/screens/hom
 function buildHomepageContactHref(href: string) {
   return buildContactHref(href, {
     system: 'smart-website-systems',
-    source: 'page/home',
+    sourceType: 'page',
+    slug: 'home',
   });
 }
 

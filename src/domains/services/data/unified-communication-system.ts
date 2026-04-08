@@ -10,6 +10,8 @@ import {
   Workflow,
 } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { ServicePageData } from '../types';
 
 export const unifiedCommunicationSystemPage = {
@@ -53,7 +55,11 @@ export const unifiedCommunicationSystemPage = {
       'This service focuses on the communication layer between incoming messages and the right next action. It helps businesses handle calls, forms, chat, and inbox messages with less confusion, fewer missed conversations, and clearer ownership.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact?system=ai-lead-handling&source=service/unified-communication-system',
+      href: buildContactHref({
+        system: 'ai-lead-handling',
+        sourceType: 'service',
+        slug: 'unified-communication-system',
+      }),
     },
     list: [
       'Clearer routing across calls, forms, chat, and inboxes',
@@ -365,6 +371,10 @@ export const unifiedCommunicationSystemPage = {
     description:
       'If calls, forms, chat, and inbox messages are creating confusion, we can help define a clearer routing and ownership model.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact?system=ai-lead-handling&source=service/unified-communication-system',
+    buttonHref: buildContactHref({
+      system: 'ai-lead-handling',
+      sourceType: 'service',
+      slug: 'unified-communication-system',
+    }),
   },
 } satisfies ServicePageData;

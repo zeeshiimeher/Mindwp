@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const localVisibilityFrameworkForServiceBusinesses: BlogPostData = {
   slug: 'local-visibility-framework-for-service-businesses',
   title: 'Local Visibility Framework for Service Businesses',
-  intent: 'FRAMEWORK',
   metaTitle: 'Local Visibility Framework for Service Businesses',
   metaDescription:
     'Explore the local visibility framework for service businesses that connects search presence, listings, and review signals into one discovery system.',

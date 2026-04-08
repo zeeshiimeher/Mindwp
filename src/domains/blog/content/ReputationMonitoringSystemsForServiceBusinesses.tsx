@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const reputationMonitoringSystemsForServiceBusinesses: BlogPostData = {
   slug: 'reputation-monitoring-systems-for-service-businesses',
   title: 'Reputation Monitoring Systems for Service Businesses',
-  intent: 'SYSTEM',
   metaTitle: 'Reputation Monitoring Systems for Service Businesses',
   metaDescription:
     'Learn how reputation monitoring systems for service businesses track reviews and sentiment across platforms to protect and improve your profile.',

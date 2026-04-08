@@ -128,7 +128,6 @@ export const reviewGenerationSystem: ResourceData = {
   title: 'Review Generation System',
   description:
     'Learn how to build an automated review generation system that requests reviews from every customer after service completion without relying on team memory.',
-  intent: 'ACTIONABLE',
   category: 'reputation-review',
   publishedAt: '2025-11-24',
   systems: ['reputation-review'],

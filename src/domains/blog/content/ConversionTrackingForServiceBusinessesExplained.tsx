@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const conversionTrackingForServiceBusinessesExplained: BlogPostData = {
   slug: 'conversion-tracking-for-service-businesses-explained',
   title: 'Conversion Tracking for Service Businesses Explained',
-  intent: 'SYSTEM',
   metaTitle: 'Conversion Tracking for Service Businesses',
   metaDescription:
     'Learn how conversion tracking for service businesses connects website activity to enquiries and reveals which pages and channels drive revenue.',

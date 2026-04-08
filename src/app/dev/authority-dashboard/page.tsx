@@ -162,15 +162,15 @@ export default async function AuthorityDashboardPage() {
           </div>
           <div>
             <div style={{ fontSize: '1.6rem', fontWeight: 700 }}>
-              {systemReport.content.missing_intent}
-            </div>
-            <div style={{ fontSize: '0.78rem', color: '#6b7280' }}>Missing Intent</div>
-          </div>
-          <div>
-            <div style={{ fontSize: '1.6rem', fontWeight: 700 }}>
               {systemReport.content.missing_metadata}
             </div>
             <div style={{ fontSize: '0.78rem', color: '#6b7280' }}>Missing Metadata</div>
+          </div>
+          <div>
+            <div style={{ fontSize: '1.6rem', fontWeight: 700 }}>
+              {systemReport.conversion.invalid_contact_links}
+            </div>
+            <div style={{ fontSize: '0.78rem', color: '#6b7280' }}>CTA Issues</div>
           </div>
           <div>
             <div style={{ fontSize: '1.6rem', fontWeight: 700 }}>

@@ -32,16 +32,16 @@ import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
 import { primaryCta } from '@/config/primaryCta';
-import { CTA_INTENT_OVERRIDES } from '@/config/ui-intelligence';
 import {
   type Author,
   BLOG_AUTHORS,
   getCategoryColors,
   getCategoryMetadata,
 } from '@/domains/blog/api';
-import type { BlogCategory, BlogIntent, BlogPostSection } from '@/domains/blog/types';
+import type { BlogCategory, BlogPostSection } from '@/domains/blog/types';
 import { BlogFooterCTA } from '@/domains/blog/ui/BlogFooterCTA';
 import { BlogPostShareIsland } from '@/domains/blog/ui/BlogPostShareIsland';
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 
 export interface BlogPostTemplateProps {
@@ -63,8 +63,6 @@ export interface BlogPostTemplateProps {
   // Content - Flexible sections array
   sections: BlogPostSection[];
   tags?: string[];
-  /** Blog intent classification */
-  intent?: BlogIntent;
   /** System keys for CTA routing context */
   systems?: string[];
   /** Resolved featured image path from image system */
@@ -194,7 +192,6 @@ export function BlogPostTemplate({
   author,
   sections,
   tags = [],
-  intent,
   systems = [],
   featuredImage,
 }: BlogPostTemplateProps) {
@@ -211,14 +208,9 @@ export function BlogPostTemplate({
     .flatMap(section => section.items);
   const faqSchema = buildFaqSchema(faqItems);
 
-  // Resolve intent-aware sidebar CTA
-  const intentKey = intent ? `blog:${intent}` : undefined;
-  const intentOverride = intentKey ? CTA_INTENT_OVERRIDES[intentKey] : undefined;
-
   const sidebarCTAData = {
-    heading: intentOverride?.title ?? 'See How This System Works',
-    content:
-      intentOverride?.description ?? 'Understand how this fits into a complete website system.',
+    heading: 'See How This System Works',
+    content: 'Understand how this fits into a complete website system.',
     secondaryAction: 'Contact Us',
     features: [
       { text: 'System-level integration', icon: 'check' as const },
@@ -228,11 +220,12 @@ export function BlogPostTemplate({
   };
 
   // Build contact href with context
-  const primarySystem = systems[0] ?? '';
-  const contactParams = new URLSearchParams();
-  if (primarySystem) contactParams.set('system', primarySystem);
-  contactParams.set('source', `blog/${slug}`);
-  const contactHref = `/contact?${contactParams.toString()}`;
+  const primarySystem = systems[0] ?? 'smart-website-systems';
+  const contactHref = buildContactHref({
+    system: primarySystem,
+    sourceType: 'blog',
+    slug,
+  });
 
   // Function to render a section based on its type
   function renderSection(section: BlogPostSection, index: number) {
@@ -549,11 +542,7 @@ export function BlogPostTemplate({
             backgroundColor='blog-surface--muted'
           />
         ) : (
-          <BlogFooterCTA
-            title={intentOverride?.title}
-            description={intentOverride?.description}
-            buttonUrl={contactHref}
-          />
+          <BlogFooterCTA buttonUrl={contactHref} />
         )}
 
         {faqSchema && (

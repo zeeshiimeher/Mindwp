@@ -1,5 +1,7 @@
 import { Code, FileText, Globe, Layers, LineChart, Link2, Settings, Workflow } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { ServicePageData } from '../types';
 
 export const localSeoAuthorityPage = {
@@ -44,7 +46,11 @@ export const localSeoAuthorityPage = {
       'Most SEO work jumps straight to tactics. We start with the website, local presence, and enquiry path so visibility grows on a structure that already makes sense.',
     primaryAction: {
       label: 'Understand What Builds Local Authority',
-      href: '/contact?system=local-seo-authority&source=service/local-seo-authority',
+      href: buildContactHref({
+        system: 'local-seo-authority',
+        sourceType: 'service',
+        slug: 'local-seo-authority',
+      }),
     },
     cssPrefix: 'website-seo-hero',
     backgroundColor: 'bg-gradient-surface-muted',
@@ -375,6 +381,10 @@ export const localSeoAuthorityPage = {
     description:
       'Tell us which services and locations matter most. We will show you what is weakening visibility and what needs fixing first.',
     buttonText: 'Strengthen Your Local Authority',
-    buttonHref: '/contact?system=local-seo-authority&source=service/local-seo-authority',
+    buttonHref: buildContactHref({
+      system: 'local-seo-authority',
+      sourceType: 'service',
+      slug: 'local-seo-authority',
+    }),
   },
 } satisfies ServicePageData;

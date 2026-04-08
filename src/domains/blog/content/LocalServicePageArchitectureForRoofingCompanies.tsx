@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const localServicePageArchitectureForRoofingCompanies: BlogPostData = {
   slug: 'local-service-page-architecture-for-roofing-companies',
   title: 'Local Service Page Architecture for Roofing Companies',
-  intent: 'FRAMEWORK',
   metaTitle: 'Local Service Page Architecture for Roofing Companies',
   metaDescription:
     'Discover how local service page architecture for roofing companies creates location-specific landing pages that rank for area-based roofing searches.',

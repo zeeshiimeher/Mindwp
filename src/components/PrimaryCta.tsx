@@ -2,7 +2,6 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
 import { primaryCta } from '@/config/primaryCta';
-import { buildGlobalContactHref } from '@/lib/contact/contactHref';
 
 export interface PrimaryCtaProps {
   className?: string;
@@ -31,11 +30,7 @@ export function PrimaryCta({
   showDefaultEndIcon = false,
 }: PrimaryCtaProps) {
   const resolvedClassName = className ?? 'btn btn-primary';
-  const resolvedHref =
-    hrefOverride ??
-    (primaryCta.type === 'internal' && primaryCta.href === '/contact'
-      ? buildGlobalContactHref(primaryCta.href)
-      : primaryCta.href);
+  const resolvedHref = hrefOverride ?? primaryCta.href;
   const resolvedEndIcon =
     endIcon ??
     (showDefaultEndIcon ? <ArrowRight className='btn__icon' aria-hidden='true' /> : undefined);

@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const automotiveServiceRemindersExplained: BlogPostData = {
   slug: 'automotive-service-reminders-explained',
   title: 'Automotive Service Reminders Explained',
-  intent: 'SYSTEM',
   metaTitle: 'Automotive Service Reminders Explained for Shops',
   metaDescription:
     'Learn how automotive service reminders explained through CRM automation help repair shops retain customers and increase repeat bookings reliably.',

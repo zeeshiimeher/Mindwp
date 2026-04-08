@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyRoofingCompaniesLoseJobsWithoutReviewAutomation: BlogPostData = {
   slug: 'why-roofing-companies-lose-jobs-without-review-automation',
   title: 'Why Roofing Companies Lose Jobs Without Review Automation',
-  intent: 'PROBLEM',
   metaTitle: 'Why Roofing Companies Lose Jobs Without Review Automation',
   metaDescription:
     'Roofing companies lose jobs without review automation because satisfied customers forget to post reviews, leaving competitors with more social proof to win.',

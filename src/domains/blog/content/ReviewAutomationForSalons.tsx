@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const reviewAutomationForSalons: BlogPostData = {
   slug: 'review-automation-for-salons',
   title: 'Review Automation for Salons',
-  intent: 'SYSTEM',
   metaTitle: 'How Review Automation for Salons Builds Loyalty',
   metaDescription:
     'Explore how review automation for salons turns every completed appointment into a review opportunity that strengthens local visibility and client trust.',

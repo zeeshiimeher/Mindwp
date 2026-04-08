@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const reviewAutomationForRoofingCompanies: BlogPostData = {
   slug: 'review-automation-for-roofing-companies',
   title: 'Review Automation for Roofing Companies',
-  intent: 'SYSTEM',
   metaTitle: 'Review Automation for Roofing Companies Guide',
   metaDescription:
     'Discover how review automation for roofing companies builds a steady flow of recent reviews that strengthen local rankings and attract more customers.',

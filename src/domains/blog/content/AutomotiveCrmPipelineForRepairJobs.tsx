@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const automotiveCrmPipelineForRepairJobs: BlogPostData = {
   slug: 'automotive-crm-pipeline-for-repair-jobs',
   title: 'Automotive CRM Pipeline for Repair Jobs',
-  intent: 'SYSTEM',
   metaTitle: 'Automotive CRM Pipeline for Repair Jobs Explained',
   metaDescription:
     'Explore how an automotive CRM pipeline for repair jobs tracks each vehicle from booking through diagnosis, parts ordering, and job completion.',

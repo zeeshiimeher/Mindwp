@@ -21,7 +21,6 @@ export interface SystemReportSnapshot {
   };
   content: {
     missing_system: number;
-    missing_intent: number;
     missing_metadata: number;
   };
   conversion: {

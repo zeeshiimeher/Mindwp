@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const revenueVisibilityForRoofingCompanies: BlogPostData = {
   slug: 'revenue-visibility-for-roofing-companies',
   title: 'Revenue Visibility for Roofing Companies',
-  intent: 'FRAMEWORK',
   metaTitle: 'Revenue Visibility for Roofing Companies',
   metaDescription:
     'Discover how revenue visibility for roofing companies uses CRM pipeline tracking to connect every enquiry to completed jobs and measurable revenue outcomes.',

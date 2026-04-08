@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const futureLocalSeoAfterGoogleBusinessProfileAutomation: BlogPostData = {
   slug: 'future-local-seo-after-google-business-profile-automation',
   title: 'Future Local SEO After Google Business Profile Automation',
-  intent: 'SYSTEM',
   metaTitle: 'Future Local SEO After Google Business Profile Automation',
   metaDescription:
     'Explore how future local seo after google business profile automation reshapes rankings as AI handles listing updates, reviews, and content automatically.',

@@ -1,4 +1,5 @@
 import type { CaseStudyContent, CaseStudyTemplateSection } from '@/domains/case-studies/templates';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { CaseStudyData } from '../types';
 
@@ -200,7 +201,11 @@ function buildLawFirmConsultationBookingSystem(): CaseStudyData {
       },
       cta: {
         primaryButtonLabel: 'Book More Consultations',
-        primaryButtonHref: '/contact',
+        primaryButtonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'case-study',
+          slug: 'law-firm-consultation-booking-system',
+        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

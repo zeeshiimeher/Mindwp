@@ -1,4 +1,5 @@
 import type { CaseStudyContent, CaseStudyTemplateSection } from '@/domains/case-studies/templates';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { CaseStudyData } from '../types';
 
@@ -192,7 +193,11 @@ function buildAutoRepairMissedCallRecovery(): CaseStudyData {
       },
       cta: {
         primaryButtonLabel: 'Recover Missed Repair Calls',
-        primaryButtonHref: '/contact',
+        primaryButtonHref: buildContactHref({
+          system: 'ai-lead-handling',
+          sourceType: 'case-study',
+          slug: 'auto-repair-missed-call-recovery',
+        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const crmPipelineArchitectureForServiceBusinesses: BlogPostData = {
   slug: 'crm-pipeline-architecture-for-service-businesses',
   title: 'CRM Pipeline Architecture for Service Businesses',
-  intent: 'FRAMEWORK',
   metaTitle: 'CRM Pipeline Architecture for Service Businesses',
   metaDescription:
     'Explore the CRM pipeline architecture for service businesses that structures lead stages from first enquiry through to completed job and follow-up automation.',

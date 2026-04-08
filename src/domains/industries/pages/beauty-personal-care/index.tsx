@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -26,7 +27,11 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
       'Beauty and personal care runs on timing, trust, and repeat visits. The system holds booking together first, then layers reminders, follow-up, visibility, and client records around it.',
     primaryAction: {
       label: 'Book More Client Appointments',
-      href: '/contact',
+      href: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'industry',
+        slug: 'beauty-personal-care',
+      }),
     },
     secondaryAction: {
       label: 'See Smart Website Systems',
@@ -405,7 +410,14 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
       title: 'Map the system around how your business runs',
       description:
         'If booking and follow-up feel inconsistent, we can show you how to turn more enquiries into repeat appointments.',
-      primaryAction: { label: 'Book More Client Appointments', href: '/contact' },
+      primaryAction: {
+        label: 'Book More Client Appointments',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'beauty-personal-care',
+        }),
+      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',

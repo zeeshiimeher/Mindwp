@@ -10,6 +10,8 @@ import {
   Users,
 } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { FeaturePageData } from '../types';
 
 const reputationFaqItems = [
@@ -99,7 +101,11 @@ export const reputationData: FeaturePageData = {
       'Systematically request reviews after completed services and manage feedback across key platforms. Designed to support visibility, credibility, and consistent follow-up.',
     primaryAction: {
       label: 'Understand How Review Automation Works',
-      href: '/contact?system=reputation-review&source=feature/reputation',
+      href: buildContactHref({
+        system: 'reputation-review',
+        sourceType: 'feature',
+        slug: 'reputation',
+      }),
     },
     stats: [
       { value: '10x', label: 'More Reviews' },
@@ -326,7 +332,11 @@ export const reputationData: FeaturePageData = {
       'We will review how reviews are requested, routed, and answered, then show you how to collect more proof with less manual chasing.',
     primaryAction: {
       label: 'Get More Reviews Consistently',
-      href: '/contact?system=reputation-review&source=feature/reputation',
+      href: buildContactHref({
+        system: 'reputation-review',
+        sourceType: 'feature',
+        slug: 'reputation',
+      }),
     },
   },
 };

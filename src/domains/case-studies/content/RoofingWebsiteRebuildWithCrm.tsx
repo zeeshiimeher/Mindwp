@@ -1,4 +1,5 @@
 import type { CaseStudyContent, CaseStudyTemplateSection } from '@/domains/case-studies/templates';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { CaseStudyData } from '../types';
 
@@ -236,7 +237,11 @@ function buildRoofingWebsiteRebuildWithCrm(): CaseStudyData {
       },
       cta: {
         primaryButtonLabel: 'Book More Roofing Estimates',
-        primaryButtonHref: '/contact',
+        primaryButtonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'case-study',
+          slug: 'roofing-website-rebuild-with-crm',
+        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

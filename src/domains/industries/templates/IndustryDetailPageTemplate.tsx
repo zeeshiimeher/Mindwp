@@ -70,7 +70,8 @@ export function IndustryDetailPageTemplate({
           ...cta.primaryAction,
           href: buildContactHref(cta.primaryAction.href, {
             system,
-            source: `industry/${slug}`,
+            sourceType: 'industry',
+            slug,
           }),
         },
       }

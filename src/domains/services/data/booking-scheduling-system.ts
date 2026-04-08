@@ -1,5 +1,7 @@
 import { Bell, Calendar, Clock, MessageSquare, MousePointerClick, Workflow } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { ServicePageData } from '../types';
 
 export const bookingSchedulingSystemPage = {
@@ -43,7 +45,11 @@ export const bookingSchedulingSystemPage = {
       'This service fixes the path from enquiry to confirmed appointment. Consultation requests, confirmations, reminders, and staff handoff all work together so more interest turns into booked appointments.',
     primaryAction: {
       label: 'Review How Booking Automation Works',
-      href: '/contact?system=smart-website-systems&source=service/booking-scheduling-system',
+      href: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'service',
+        slug: 'booking-scheduling-system',
+      }),
     },
     list: [
       'Cleaner flow from website to confirmed appointment',
@@ -295,6 +301,10 @@ export const bookingSchedulingSystemPage = {
     description:
       'Tell us how appointments are booked now. We will show you where friction, reminder gaps, and admin confusion are slowing conversion.',
     buttonText: 'Automate Your Booking System',
-    buttonHref: '/contact?system=smart-website-systems&source=service/booking-scheduling-system',
+    buttonHref: buildContactHref({
+      system: 'smart-website-systems',
+      sourceType: 'service',
+      slug: 'booking-scheduling-system',
+    }),
   },
 } satisfies ServicePageData;

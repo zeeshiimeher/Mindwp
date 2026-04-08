@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const hvacLocalVisibilitySystemForServiceAreas: BlogPostData = {
   slug: 'hvac-local-visibility-system-for-service-areas',
   title: 'HVAC Local Visibility System for Service Areas',
-  intent: 'SYSTEM',
   metaTitle: 'HVAC Local Visibility System for Service Areas',
   metaDescription:
     'Learn how an HVAC local visibility system for service areas builds consistent review flow, citation accuracy, and local content that drives map pack rankings.',

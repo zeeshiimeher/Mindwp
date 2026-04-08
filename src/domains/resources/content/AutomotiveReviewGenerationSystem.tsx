@@ -115,7 +115,6 @@ export const automotiveReviewGenerationSystem: ResourceData = {
   title: 'Automotive Review Generation System',
   description:
     'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
-  intent: 'ACTIONABLE',
   category: 'reputation-review',
   publishedAt: '2026-01-31',
   systems: ['reputation-review'],

@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildSmallMedSpasIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -197,7 +198,11 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
           'Better first-response clarity',
         ],
         buttonText: 'Talk Through Scope',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'small-med-spas',
+        }),
       },
       {
         name: 'Booking and treatment preparation',
@@ -208,7 +213,11 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
         features: ['Consultation scheduling support', 'Reminder structure', 'Preparation guidance'],
         popular: true,
         buttonText: 'See the Setup',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'small-med-spas',
+        }),
       },
       {
         name: 'Aftercare and trust reinforcement',
@@ -218,7 +227,11 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when follow-up consistency and proof-building need improvement',
         features: ['Aftercare follow-up', 'Review request support', 'Trust reinforcement'],
         buttonText: 'Request Details',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'small-med-spas',
+        }),
       },
     ],
   };
@@ -377,7 +390,14 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Book More Med Spa Visits', href: '/contact' },
+      primaryAction: {
+        label: 'Book More Med Spa Visits',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'small-med-spas',
+        }),
+      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -396,7 +416,15 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
       title: 'Build a steadier med spa system',
       description:
         'If unclear consultation routing, booking friction, inconsistent aftercare, or weak trust signals are slowing things down, we can map a practical system around the real client journey.',
-      primaryAction: { variant: 'white', label: 'Book More Med Spa Visits', href: '/contact' },
+      primaryAction: {
+        variant: 'white',
+        label: 'Book More Med Spa Visits',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'small-med-spas',
+        }),
+      },
       secondaryAction: {
         label: 'See the Category Approach',
         href: '/industries/beauty-personal-care',

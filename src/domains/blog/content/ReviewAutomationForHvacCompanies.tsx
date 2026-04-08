@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const reviewAutomationForHvacCompanies: BlogPostData = {
   slug: 'review-automation-for-hvac-companies',
   title: 'Review Automation for HVAC Companies',
-  intent: 'SYSTEM',
   metaTitle: 'Review Automation for HVAC Companies Explained',
   metaDescription:
     'Learn how review automation for HVAC companies generates consistent recent reviews from completed service calls to strengthen local search visibility.',

@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const howReviewAutomationImprovesLocalAuthority: BlogPostData = {
   slug: 'how-review-automation-improves-local-authority',
   title: 'How Review Automation Improves Local Authority',
-  intent: 'SYSTEM',
   metaTitle: 'How Review Automation Improves Local Authority',
   metaDescription:
     'Understand how review automation improves local authority by building consistent review velocity that strengthens search rankings and customer trust signals.',

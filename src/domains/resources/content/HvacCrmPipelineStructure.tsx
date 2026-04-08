@@ -115,7 +115,6 @@ export const hvacCrmPipelineStructure: ResourceData = {
   title: 'HVAC CRM Pipeline Structure',
   description:
     'See how HVAC companies structure multi-track CRM pipelines for emergency, installation, and maintenance work — with automations that protect recurring revenue and enable capacity planning.',
-  intent: 'ACTIONABLE',
   category: 'crm-automation',
   publishedAt: '2026-01-26',
   systems: ['crm-automation'],

@@ -1,3 +1,5 @@
+import { buildGlobalContactHref } from '@/lib/contact/contactHref';
+
 export type StaticPage = {
   name: string;
   url: string;
@@ -11,6 +13,8 @@ export type StaticPage = {
  * Used by:
  * - Human sitemap page (src/pages/Sitemap.tsx)
  */
+const globalContactHref = buildGlobalContactHref();
+
 export const STATIC_PAGES: StaticPage[] = [
   { name: 'Homepage', url: '/' },
   { name: 'About Us', url: '/about' },
@@ -20,8 +24,8 @@ export const STATIC_PAGES: StaticPage[] = [
   { name: 'Case Studies', url: '/case-studies' },
   { name: 'FAQ', url: '/faq' },
   { name: 'Blog', url: '/blog' },
-  { name: 'Start a Conversation', url: '/contact' },
-  { name: 'Contact Us', url: '/contact' },
+  { name: 'Start a Conversation', url: globalContactHref },
+  { name: 'Contact Us', url: globalContactHref },
   { name: 'Sitemap (this page)', url: '/sitemap' },
   { name: 'Privacy Policy', url: '/privacy' },
 

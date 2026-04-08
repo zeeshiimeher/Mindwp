@@ -115,7 +115,6 @@ export const missedCallRecoveryForSalons: ResourceData = {
   title: 'Missed Call Recovery for Salons',
   description:
     'See how salons recover missed calls with instant booking link texts, converting unanswered phone calls into confirmed appointments even during the busiest service hours.',
-  intent: 'ACTIONABLE',
   category: 'ai-lead-handling',
   publishedAt: '2026-02-16',
   systems: ['ai-lead-handling'],

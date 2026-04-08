@@ -163,7 +163,6 @@ export const multiChannelLeadCaptureSystems: ResourceData = {
   title: 'Multi-Channel Lead Capture Systems',
   description:
     'Learn how to build a multi-channel lead capture system that routes phone, web, chat, and social leads to one CRM pipeline with consistent tracking and follow-up.',
-  intent: 'ACTIONABLE',
   category: 'ai-lead-handling',
   publishedAt: '2025-12-20',
   systems: ['ai-lead-handling'],

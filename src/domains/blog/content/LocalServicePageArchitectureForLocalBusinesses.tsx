@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const localServicePageArchitectureForLocalBusinesses: BlogPostData = {
   slug: 'local-service-page-architecture-for-local-businesses',
   title: 'Local Service Page Architecture for Local Businesses',
-  intent: 'FRAMEWORK',
   metaTitle: 'Local Service Page Architecture for Local Businesses',
   metaDescription:
     'Learn how local service page architecture for local businesses creates location-specific landing pages that capture geo-targeted search traffic and convert it.',

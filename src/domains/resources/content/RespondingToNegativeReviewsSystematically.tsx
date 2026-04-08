@@ -118,7 +118,6 @@ export const respondingToNegativeReviewsSystematically: ResourceData = {
   title: 'Responding to Negative Reviews Systematically',
   description:
     'Build a systematic process for handling negative reviews with professional templates, fast response times, and resolution follow-up that protects your reputation.',
-  intent: 'ACTIONABLE',
   category: 'reputation-review',
   publishedAt: '2026-01-05',
   systems: ['reputation-review'],

@@ -10,6 +10,8 @@ import {
   Zap,
 } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { ServicePageData } from '../types';
 
 export const elementorPage = {
@@ -55,7 +57,11 @@ export const elementorPage = {
       'We build WordPress websites using Elementor where the visual output stays faithful to the approved design and the editing experience stays manageable over time. This is disciplined implementation, not a quick drag-and-drop assembly.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact?system=smart-website-systems&source=service/elementor',
+      href: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'service',
+        slug: 'elementor',
+      }),
     },
     cssPrefix: 'elementor-hero',
     backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
@@ -262,6 +268,10 @@ export const elementorPage = {
     description:
       'If your team needs a clean Elementor build with editing flexibility and long-term clarity, we can review scope and outline the right approach.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact?system=smart-website-systems&source=service/elementor',
+    buttonHref: buildContactHref({
+      system: 'smart-website-systems',
+      sourceType: 'service',
+      slug: 'elementor',
+    }),
   },
 } satisfies ServicePageData;

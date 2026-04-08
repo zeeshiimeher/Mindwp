@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const reviewGenerationSystemForLocalBusinesses: BlogPostData = {
   slug: 'review-generation-system-for-local-businesses',
   title: 'Review Generation System for Local Businesses',
-  intent: 'SYSTEM',
   metaTitle: 'Review Generation System for Local Businesses',
   metaDescription:
     'Learn how a review generation system for local businesses automates post-service review requests to build reputation and strengthen local search authority.',

@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyBookingSystemsNeedWebsiteInfrastructure: BlogPostData = {
   slug: 'why-booking-systems-need-website-infrastructure',
   title: 'Why Booking Systems Need Website Infrastructure',
-  intent: 'PROBLEM',
   metaTitle: 'Why Booking Systems Need Website Infrastructure',
   metaDescription:
     'Discover why booking systems need website infrastructure to function reliably, with connected forms, CRM pipelines, and automated confirmations.',

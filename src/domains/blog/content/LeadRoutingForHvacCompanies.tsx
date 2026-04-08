@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const leadRoutingForHvacCompanies: BlogPostData = {
   slug: 'lead-routing-for-hvac-companies',
   title: 'Lead Routing for HVAC Companies',
-  intent: 'SYSTEM',
   metaTitle: 'How Lead Routing for HVAC Companies Improves Response',
   metaDescription:
     'Explore how lead routing for HVAC companies ensures every enquiry reaches the right technician or team based on service type, location, and urgency level.',

@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const leadAutomationFrameworkForServiceBusinesses: BlogPostData = {
   slug: 'lead-automation-framework-for-service-businesses',
   title: 'Lead Automation Framework for Service Businesses',
-  intent: 'SYSTEM',
   metaTitle: 'Lead Automation Framework for Service Businesses',
   metaDescription:
     'Explore the lead automation framework for service businesses that connects enquiry capture, qualification, and routing into one operational system.',

@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const websiteCrmIntegrationForServiceBusinesses: BlogPostData = {
   slug: 'website-crm-integration-for-service-businesses',
   title: 'Website CRM Integration for Service Businesses',
-  intent: 'SYSTEM',
   metaTitle: 'Website CRM Integration for Service Businesses',
   metaDescription:
     'Learn how website CRM integration for service businesses connects lead capture, pipeline management, and follow-up automation into one operational workflow.',

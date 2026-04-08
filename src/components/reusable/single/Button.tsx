@@ -14,7 +14,7 @@ const BLOCK = 'btn';
  * @example
  * ```tsx
  * // Primary button (default)
- * <Button href="/contact">Get Started</Button>
+ * <Button href="/services">Get Started</Button>
  *
  * // Outline variant with custom icon
  * <Button variant="outline" icon={Mail} href="/newsletter">
@@ -27,7 +27,7 @@ const BLOCK = 'btn';
  * </Button>
  *
  * // White button for dark backgrounds
- * <Button variant="white" href="/contact">
+ * <Button variant="white" href="/services">
  *   Start a Conversation
  * </Button>
  * ```

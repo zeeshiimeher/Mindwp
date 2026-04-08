@@ -140,7 +140,6 @@ export const trackingCustomerLifetimeValueUsingCrm: ResourceData = {
   title: 'Tracking Customer Lifetime Value Using CRM',
   description:
     'Learn how to calculate and track Customer Lifetime Value using CRM data to make better acquisition, retention, and pricing decisions for your service business.',
-  intent: 'ACTIONABLE',
   category: 'revenue-growth',
   publishedAt: '2026-01-03',
   systems: ['crm-automation'],

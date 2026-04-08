@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const leadRoutingModelsForServiceCompanies: BlogPostData = {
   slug: 'lead-routing-models-for-service-companies',
   title: 'Lead Routing Models for Service Companies',
-  intent: 'SYSTEM',
   metaTitle: 'Lead Routing Models for Service Companies',
   metaDescription:
     'Understand how lead routing models for service companies assign enquiries to the right team member based on service type, location, and urgency automatically.',

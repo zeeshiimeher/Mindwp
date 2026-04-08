@@ -174,7 +174,6 @@ export const localVisibilityOptimizationGuideForRealtors: ResourceData = {
   title: 'Local Visibility Optimization Guide for Realtors',
   description:
     'A step-by-step guide to improving realtor local visibility — covering post-transaction review automation, citation management, and competitive ranking tracking.',
-  intent: 'ACTIONABLE',
   category: 'reputation-review',
   publishedAt: '2026-04-06',
   systems: ['reputation-review'],

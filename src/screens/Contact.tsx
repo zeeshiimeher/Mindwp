@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { CheckCircle2, Clock, Loader2, Mail, MapPin, Phone, Send } from 'lucide-react';
 
+import { Button } from '@/components/reusable/single/Button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -10,7 +11,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { primaryCta } from '@/config/primaryCta';
 import { isValidContactContext } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
-import { Button } from '@/components/reusable/single/Button';
 
 const INITIAL_FORM_STATE = {
   name: '',
@@ -24,24 +24,21 @@ export function Contact() {
   const [errorMessage, setErrorMessage] = useState('');
   const [systemParam, setSystemParam] = useState('');
   const [sourceParam, setSourceParam] = useState('');
-  const [intentParam, setIntentParam] = useState('');
   const [formState, setFormState] = useState(INITIAL_FORM_STATE);
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const system = params.get('system') ?? '';
     const source = params.get('source') ?? '';
-    const intent = params.get('intent') ?? '';
     setSystemParam(system);
     setSourceParam(source);
-    setIntentParam(intent);
   }, []);
 
   const hasContext = Boolean(systemParam && sourceParam);
   const hasValidContext = isValidContactContext(systemParam, sourceParam);
 
   const handleInputChange = (field: keyof typeof INITIAL_FORM_STATE, value: string) => {
-    setFormState((current) => ({
+    setFormState(current => ({
       ...current,
       [field]: value,
     }));
@@ -50,7 +47,9 @@ export function Contact() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!hasValidContext) {
-      setErrorMessage('Missing or invalid page context. Please start from a page CTA and try again.');
+      setErrorMessage(
+        'Missing or invalid page context. Please start from a page CTA and try again.'
+      );
       return;
     }
 
@@ -67,7 +66,6 @@ export function Contact() {
           ...formState,
           system: systemParam,
           source: sourceParam,
-          intent: intentParam,
         }),
       });
 
@@ -186,12 +184,11 @@ export function Contact() {
                     <form onSubmit={handleSubmit} className='contact-page-form'>
                       <input type='hidden' name='system' value={systemParam} />
                       <input type='hidden' name='source' value={sourceParam} />
-                      <input type='hidden' name='intent' value={intentParam} />
 
                       {hasContext && hasValidContext && (
                         <p className='contact-page-form-text-1 text-sm text-muted-foreground'>
-                          We&apos;ll include your page context with this message so we know what
-                          you were looking at.
+                          We&apos;ll include your page context with this message so we know what you
+                          were looking at.
                         </p>
                       )}
 
@@ -214,7 +211,7 @@ export function Contact() {
                           required
                           autoComplete='name'
                           value={formState.name}
-                          onChange={(event) => handleInputChange('name', event.target.value)}
+                          onChange={event => handleInputChange('name', event.target.value)}
                           className='contact-page-form-input-1'
                         />
                       </div>
@@ -231,7 +228,7 @@ export function Contact() {
                           required
                           autoComplete='email'
                           value={formState.email}
-                          onChange={(event) => handleInputChange('email', event.target.value)}
+                          onChange={event => handleInputChange('email', event.target.value)}
                           className='contact-page-form-input-2'
                         />
                       </div>
@@ -247,7 +244,7 @@ export function Contact() {
                           rows={6}
                           required
                           value={formState.message}
-                          onChange={(event) => handleInputChange('message', event.target.value)}
+                          onChange={event => handleInputChange('message', event.target.value)}
                           className='contact-page-form-textarea-1'
                         />
                       </div>

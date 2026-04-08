@@ -137,7 +137,6 @@ export const googleBusinessProfileSystemArchitecture: ResourceData = {
   title: 'Google Business Profile System Architecture',
   description:
     'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
-  intent: 'EDUCATIONAL',
   category: 'local-seo-authority',
   publishedAt: '2025-11-19',
   systems: ['local-seo-authority'],

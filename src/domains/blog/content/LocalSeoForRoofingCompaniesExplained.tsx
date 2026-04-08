@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const localSeoForRoofingCompaniesExplained: BlogPostData = {
   slug: 'local-seo-for-roofing-companies-explained',
   title: 'Local SEO for Roofing Companies Explained',
-  intent: 'FRAMEWORK',
   metaTitle: 'Local SEO for Roofing Companies Explained',
   metaDescription:
     'Learn what local SEO for roofing companies explained in practical terms means for visibility, rankings, and attracting local repair enquiries.',

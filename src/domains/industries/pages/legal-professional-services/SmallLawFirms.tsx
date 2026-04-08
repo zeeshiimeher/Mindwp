@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -196,7 +197,11 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
           'Matter and timing context',
         ],
         buttonText: 'Talk Through Scope',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'small-law-firms',
+        }),
       },
       {
         name: 'Consultation and readiness flow',
@@ -207,7 +212,11 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
         features: ['Consultation scheduling support', 'Reminder structure', 'Readiness guidance'],
         popular: true,
         buttonText: 'See the Setup',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'small-law-firms',
+        }),
       },
       {
         name: 'Follow-up and trust reinforcement',
@@ -217,7 +226,11 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
         features: ['Nurture workflows', 'Review request support', 'Trust reinforcement'],
         buttonText: 'Request Details',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'small-law-firms',
+        }),
       },
     ],
   };
@@ -377,7 +390,14 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Book More Consultations', href: '/contact' },
+      primaryAction: {
+        label: 'Book More Consultations',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'small-law-firms',
+        }),
+      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -396,7 +416,15 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier legal intake and follow-up system',
       description:
         'If your firm is dealing with unclear enquiry quality, loose consultation flow, or inconsistent follow-up — we can map a practical system around how the pipeline actually runs.',
-      primaryAction: { variant: 'white', label: 'Book More Consultations', href: '/contact' },
+      primaryAction: {
+        variant: 'white',
+        label: 'Book More Consultations',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'small-law-firms',
+        }),
+      },
       secondaryAction: {
         label: 'See Legal & Professional Services',
         href: '/industries/legal-professional-services',

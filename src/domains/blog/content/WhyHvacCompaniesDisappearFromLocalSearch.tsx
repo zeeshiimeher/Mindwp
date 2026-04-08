@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyHvacCompaniesDisappearFromLocalSearch: BlogPostData = {
   slug: 'why-hvac-companies-disappear-from-local-search',
   title: 'Why HVAC Companies Disappear From Local Search Without Local Visibility',
-  intent: 'PROBLEM',
   metaTitle: 'Why HVAC Companies Disappear From Local Search',
   metaDescription:
     'HVAC companies disappear from local search without local visibility because inconsistent profiles, few reviews, and weak signals push them below competitors.',

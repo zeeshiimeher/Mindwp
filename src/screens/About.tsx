@@ -6,9 +6,10 @@ import { Card } from '@/components/ui/card';
 import { primaryCta } from '@/config/primaryCta';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
-const aboutContactHref = buildContactHref('/contact', {
+const aboutContactHref = buildContactHref({
   system: 'smart-website-systems',
-  source: 'page/about',
+  sourceType: 'page',
+  slug: 'about',
 });
 
 export function About() {

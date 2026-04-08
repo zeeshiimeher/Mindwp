@@ -1,5 +1,7 @@
 import Link from 'next/link';
 
+import { buildGlobalContactHref } from '@/lib/contact/contactHref';
+
 import { Logo } from './Logo';
 
 const utilityLinks = [
@@ -8,6 +10,8 @@ const utilityLinks = [
   { label: 'Cookie Policy', href: '/cookies' },
   { label: 'Sitemap', href: '/sitemap' },
 ];
+
+const globalContactHref = buildGlobalContactHref();
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -69,7 +73,7 @@ export function Footer() {
                 </Link>
               </li>
               <li className='footer__item'>
-                <Link className='footer__link' href='/contact'>
+                <Link className='footer__link' href={globalContactHref}>
                   Contact
                 </Link>
               </li>
@@ -95,7 +99,7 @@ export function Footer() {
                 </Link>
               </li>
               <li className='footer__item'>
-                <Link className='footer__link' href='/contact'>
+                <Link className='footer__link' href={globalContactHref}>
                   Start a Conversation
                 </Link>
               </li>

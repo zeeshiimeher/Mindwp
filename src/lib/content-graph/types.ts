@@ -23,7 +23,6 @@ export interface ContentGraphNode {
   slug: string;
   type: ContentNodeType;
   path: string;
-  intent?: string;
   parent?: string;
   vertical?: Vertical;
   coreFramework?: boolean;
@@ -56,7 +55,6 @@ export type MetadataCarrier = {
   industries?: string[];
   systems?: string[];
   topics?: string[];
-  intent?: string;
 };
 
 export interface GraphRegistryInput {

@@ -26,7 +26,7 @@ const BLOCK = 'feature-hero';
  *     { value: "Online", label: "Booking" },
  *     { value: "Automated", label: "Reminders" }
  *   ]}
- *   primaryAction={{ label: "Start a Conversation", href: "/contact" }}
+ *   primaryAction={{ label: "Start a Conversation", href: "/services" }}
  *   visualContent={<BookingInterface />}
  *   cssPrefix="calendars-hero"
  * />

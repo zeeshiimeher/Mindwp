@@ -138,7 +138,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         updatedAt={resource.updatedAt}
         seo={resource.seo}
         sections={resource.sections}
-        intent={resource.intent}
         systems={resource.systems}
       />
     </>

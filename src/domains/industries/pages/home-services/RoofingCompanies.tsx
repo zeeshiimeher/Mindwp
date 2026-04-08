@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -196,7 +197,11 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
           'Urgency and property context',
         ],
         buttonText: 'Talk Through Scope',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'roofing-companies',
+        }),
       },
       {
         name: 'Inspection and estimate booking',
@@ -211,7 +216,11 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
         ],
         popular: true,
         buttonText: 'See the Setup',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'roofing-companies',
+        }),
       },
       {
         name: 'Follow-up and trust reinforcement',
@@ -225,7 +234,11 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
           'Local proof reinforcement',
         ],
         buttonText: 'Request Details',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'roofing-companies',
+        }),
       },
     ],
   };
@@ -376,7 +389,14 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Book More Roofing Estimates', href: '/contact' },
+      primaryAction: {
+        label: 'Book More Roofing Estimates',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'roofing-companies',
+        }),
+      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -394,7 +414,15 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
       title: 'Build a steadier roofing system',
       description:
         'If missed calls, loose inspection booking, inconsistent quote follow-up, or weak local proof are slowing things down, we can map a practical system around how the work actually runs.',
-      primaryAction: { variant: 'white', label: 'Book More Roofing Estimates', href: '/contact' },
+      primaryAction: {
+        variant: 'white',
+        label: 'Book More Roofing Estimates',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'roofing-companies',
+        }),
+      },
       secondaryAction: {
         label: 'See Home Services',
         href: '/industries/home-services',

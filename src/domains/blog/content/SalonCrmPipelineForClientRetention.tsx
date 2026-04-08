@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const salonCrmPipelineForClientRetention: BlogPostData = {
   slug: 'salon-crm-pipeline-for-client-retention',
   title: 'Salon CRM Pipeline for Client Retention',
-  intent: 'SYSTEM',
   metaTitle: 'Salon CRM Pipeline for Client Retention Guide',
   metaDescription:
     'Learn how a salon CRM pipeline for client retention tracks every client from first enquiry through booking, rebooking, and lapse prevention.',

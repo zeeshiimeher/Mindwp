@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const autonomousBookingSystemsForSalons: BlogPostData = {
   slug: 'autonomous-booking-systems-for-salons',
   title: 'Autonomous Booking Systems for Salons',
-  intent: 'SYSTEM',
   metaTitle: 'How Autonomous Booking Systems for Salons Work',
   metaDescription:
     'Explore how autonomous booking systems for salons use AI to handle scheduling, rescheduling, and waitlist management without manual intervention required.',

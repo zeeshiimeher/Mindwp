@@ -1,5 +1,7 @@
 import { LayoutTemplate, Puzzle, ShieldCheck, Wrench } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { ServicePageData } from '../types';
 
 export const systemMigrationPlatformConsolidationPage = {
@@ -45,7 +47,11 @@ export const systemMigrationPlatformConsolidationPage = {
       'This service is for businesses moving away from fragmented tools, outdated platforms, or disconnected systems. The goal is a cleaner platform structure, less tool sprawl, and a more stable operating foundation that is easier to maintain and extend.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact?system=smart-website-systems&source=service/system-migration-platform-consolidation',
+      href: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'service',
+        slug: 'system-migration-platform-consolidation',
+      }),
     },
     list: [
       'Cleaner platform structure and fewer disconnected tools',
@@ -301,6 +307,10 @@ export const systemMigrationPlatformConsolidationPage = {
     description:
       'If the business is being slowed by fragmented tools or an outdated platform, we can help define a cleaner migration and consolidation path.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact?system=smart-website-systems&source=service/system-migration-platform-consolidation',
+    buttonHref: buildContactHref({
+      system: 'smart-website-systems',
+      sourceType: 'service',
+      slug: 'system-migration-platform-consolidation',
+    }),
   },
 } satisfies ServicePageData;

@@ -173,7 +173,6 @@ export const reviewAutomationSetupGuideForSalons: ResourceData = {
   title: 'Review Automation Setup Guide for Salons',
   description:
     'A step-by-step guide to building review automation for salons — covering post-appointment triggers, personalised SMS requests, and review velocity tracking.',
-  intent: 'ACTIONABLE',
   category: 'reputation-review',
   publishedAt: '2026-04-06',
   systems: ['reputation-review'],

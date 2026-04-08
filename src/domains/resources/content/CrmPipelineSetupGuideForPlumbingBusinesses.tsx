@@ -174,7 +174,6 @@ export const crmPipelineSetupGuideForPlumbingBusinesses: ResourceData = {
   title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
   description:
     'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
-  intent: 'ACTIONABLE',
   category: 'crm-automation',
   publishedAt: '2026-04-06',
   systems: ['crm-automation'],

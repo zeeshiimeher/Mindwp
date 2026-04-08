@@ -10,7 +10,6 @@ import {
   getPrimarySystem,
   loadCanonicalSets,
   loadStructuredGraphNodes,
-  normalizeIntent,
   validateCanonicalValues,
 } from '../lib/contract-validator-helpers.mjs';
 
@@ -138,24 +137,6 @@ async function main() {
       });
     }
 
-    const intent = normalizeIntent(node.intent, node.type);
-    if (intent.kind === 'invalid') {
-      issues.push({
-        node: label,
-        severity: 'error',
-        code: 'invalid_intent',
-        message: `${label} has unmapped intent "${node.intent}"`,
-      });
-    }
-
-    if (intent.kind === 'legacy') {
-      warnings.push({
-        node: label,
-        severity: 'warning',
-        code: 'legacy_intent',
-        message: `${label} uses legacy intent "${node.intent}"; normalized to "${intent.normalized}" for contract checks`,
-      });
-    }
   }
 
   const report = {
@@ -166,7 +147,6 @@ async function main() {
     warningCount: warnings.length,
     summary: {
       missingSystem: issues.filter(issue => issue.code === 'missing_required_metadata' && issue.metadataKey === 'systems').length,
-      missingIntent: warnings.filter(warning => warning.code === 'missing_advisory_metadata' && warning.metadataKey === 'intent').length,
       missingMetadata: [...issues, ...warnings].filter(item => item.code === 'missing_required_metadata' || item.code === 'missing_advisory_metadata').length,
     },
     issues,

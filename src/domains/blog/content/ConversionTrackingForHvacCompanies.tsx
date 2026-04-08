@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const conversionTrackingForHvacCompanies: BlogPostData = {
   slug: 'conversion-tracking-for-hvac-companies',
   title: 'Conversion Tracking for HVAC Companies',
-  intent: 'SYSTEM',
   metaTitle: 'Conversion Tracking for HVAC Companies Explained',
   metaDescription:
     'Learn how conversion tracking for HVAC companies connects website visits and marketing campaigns to booked service calls and measurable revenue outcomes.',

@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildHairSalonsIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -197,7 +198,11 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
           'Cleaner service guidance',
         ],
         buttonText: 'Talk Through Scope',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'hair-salons',
+        }),
       },
       {
         name: 'Diary protection and reminders',
@@ -212,7 +217,11 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
         ],
         popular: true,
         buttonText: 'See the Setup',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'hair-salons',
+        }),
       },
       {
         name: 'Rebooking and review reinforcement',
@@ -222,7 +231,11 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when follow-up consistency and repeat demand need improvement',
         features: ['Rebooking prompts', 'Review request support', 'Retention reinforcement'],
         buttonText: 'Request Details',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'hair-salons',
+        }),
       },
     ],
   };
@@ -379,7 +392,14 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Book More Hair Appointments', href: '/contact' },
+      primaryAction: {
+        label: 'Book More Hair Appointments',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'hair-salons',
+        }),
+      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -398,7 +418,15 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier salon workflow',
       description:
         'If booking confusion, reminder gaps, inconsistent reviews, or weak repeat-visit follow-up are slowing things down, we can map a practical system around the real client journey.',
-      primaryAction: { variant: 'white', label: 'Book More Hair Appointments', href: '/contact' },
+      primaryAction: {
+        variant: 'white',
+        label: 'Book More Hair Appointments',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'hair-salons',
+        }),
+      },
       secondaryAction: {
         label: 'See the Category Approach',
         href: '/industries/beauty-personal-care',

@@ -115,7 +115,6 @@ export const conversionTrackingForServiceBusinesses: ResourceData = {
   title: 'Conversion Tracking for Service Businesses',
   description:
     'Learn how to set up conversion tracking that connects website activity to CRM pipeline outcomes and measures which pages and channels produce paying customers.',
-  intent: 'ACTIONABLE',
   category: 'smart-website-systems',
   publishedAt: '2025-12-29',
   systems: ['smart-website-systems'],

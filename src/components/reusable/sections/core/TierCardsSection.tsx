@@ -6,6 +6,7 @@ import { Button } from '@/components/reusable/single/Button';
 import { Card } from '@/components/reusable/single/Card';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { cn } from '@/components/ui/utils';
+import { buildGlobalContactHref } from '@/lib/contact/contactHref';
 
 const BLOCK = 'c-tier-cards-section';
 
@@ -85,7 +86,7 @@ export function TierCardsSection({
               </ul>
 
               <Button
-                href={pkg.buttonHref || '/contact'}
+                href={pkg.buttonHref || buildGlobalContactHref()}
                 variant={pkg.popular ? 'primary' : 'outline'}
                 label={pkg.buttonText || 'Request Details'}
                 showDefaultIcon={pkg.popular}

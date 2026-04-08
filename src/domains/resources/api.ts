@@ -2,6 +2,7 @@ import { FileText } from 'lucide-react';
 
 import { RESOURCE_REGISTRY } from '@/domains/resources/generatedRegistry';
 import type { ResourceCategory, ResourceCategoryMetadata } from '@/domains/resources/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 type ResourcesHubData = {
   seo: {
@@ -89,7 +90,14 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
     title: 'Ready to Apply the Right System?',
     description:
       'These guides show how the pieces fit together. We will show you how to turn website traffic into clearer, more consistent enquiries.',
-    primaryAction: { label: 'Turn Website Traffic Into Leads', href: '/contact' },
+    primaryAction: {
+      label: 'Turn Website Traffic Into Leads',
+      href: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'resource',
+        slug: 'resources',
+      }),
+    },
     secondaryAction: { label: 'View All Services', href: '/services' },
   },
 };

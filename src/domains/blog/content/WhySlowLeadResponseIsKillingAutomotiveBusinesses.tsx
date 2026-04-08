@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whySlowLeadResponseIsKillingAutomotiveBusinesses: BlogPostData = {
   slug: 'why-slow-lead-response-is-killing-automotive-businesses',
   title: 'Why Slow Lead Response Is Killing Automotive Businesses',
-  intent: 'PROBLEM',
   metaTitle: 'Why Slow Lead Response Is Killing Automotive Businesses',
   metaDescription:
     'Discover why slow lead response is killing automotive businesses and how delayed follow-up costs repair shops and garages their most valuable customer leads.',

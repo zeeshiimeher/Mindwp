@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const trackingCustomerLifetimeValueUsingCrm: BlogPostData = {
   slug: 'tracking-customer-lifetime-value-using-crm',
   title: 'Tracking Customer Lifetime Value Using CRM',
-  intent: 'SYSTEM',
   metaTitle: 'Tracking Customer Lifetime Value Using CRM',
   metaDescription:
     'Learn how tracking customer lifetime value using CRM reveals which customers generate the most revenue over time and how to focus retention efforts accordingly.',

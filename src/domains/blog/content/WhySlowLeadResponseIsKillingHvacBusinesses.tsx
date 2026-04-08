@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whySlowLeadResponseIsKillingHvacBusinesses: BlogPostData = {
   slug: 'why-slow-lead-response-is-killing-hvac-businesses',
   title: 'Why Slow Lead Response Is Killing HVAC Businesses',
-  intent: 'PROBLEM',
   metaTitle: 'Why Slow Lead Response Is Killing HVAC Businesses',
   metaDescription:
     'Learn why slow lead response is killing HVAC businesses and how delayed follow-up on heating and cooling enquiries sends urgent customers to competitors.',

@@ -82,17 +82,27 @@ export default function ReputationRenderer() {
   const { hero, sections, cta } = reputationData;
   const { process, benefits, useCases, capabilities, faq } = sections;
   const primarySystem = reputationData.systems[0] ?? 'smart-website-systems';
-  const source = `feature/${reputationData.slug}`;
-  const heroPrimaryAction = hero.primaryAction
+  const heroPrimaryHref = hero.primaryAction?.href;
+  const heroPrimaryAction = hero.primaryAction && heroPrimaryHref
     ? {
         ...hero.primaryAction,
-        href: buildContactHref(hero.primaryAction.href, { system: primarySystem, source }),
+        href: buildContactHref(heroPrimaryHref, {
+          system: primarySystem,
+          sourceType: 'feature',
+          slug: reputationData.slug,
+        }),
       }
     : undefined;
-  const ctaPrimaryAction = {
-    ...cta.primaryAction,
-    href: buildContactHref(cta.primaryAction.href, { system: primarySystem, source }),
-  };
+  const ctaPrimaryAction = cta.primaryAction.href
+    ? {
+        ...cta.primaryAction,
+        href: buildContactHref(cta.primaryAction.href, {
+          system: primarySystem,
+          sourceType: 'feature',
+          slug: reputationData.slug,
+        }),
+      }
+    : cta.primaryAction;
   const testimonials = sections.testimonials;
 
   if (!testimonials) {

@@ -29,7 +29,8 @@ export function ResourcesHub() {
   const resourcesHubContactHref = (href: string) =>
     buildContactHref(href, {
       system: 'smart-website-systems',
-      source: 'page/resources',
+      sourceType: 'page',
+      slug: 'resources',
     });
 
   const categoryItems = categories.map(category => {

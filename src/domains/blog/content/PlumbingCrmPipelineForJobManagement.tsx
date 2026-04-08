@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const plumbingCrmPipelineForJobManagement: BlogPostData = {
   slug: 'plumbing-crm-pipeline-for-job-management',
   title: 'Plumbing CRM Pipeline for Job Management',
-  intent: 'SYSTEM',
   metaTitle: 'Plumbing CRM Pipeline for Job Management Guide',
   metaDescription:
     'Learn how a plumbing CRM pipeline for job management tracks every lead from first enquiry through quoting, scheduling, completion, and follow-up.',

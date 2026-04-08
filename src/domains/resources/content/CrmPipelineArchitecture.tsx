@@ -168,7 +168,6 @@ export const crmPipelineArchitecture: ResourceData = {
   title: 'CRM Pipeline Architecture',
   description:
     'Learn how to architect a CRM pipeline with custom stages, automated follow-up, and accurate forecasting that mirrors your actual sales process.',
-  intent: 'EDUCATIONAL',
   category: 'revenue-growth',
   publishedAt: '2025-11-22',
   systems: ['crm-automation'],

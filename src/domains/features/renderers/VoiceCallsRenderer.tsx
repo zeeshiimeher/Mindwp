@@ -23,17 +23,27 @@ export default function VoiceCallsRenderer() {
   const { process, benefits, useCases, capabilities, faq } = sections;
   const testimonial = sections.testimonial;
   const primarySystem = voicecallsData.systems[0] ?? 'smart-website-systems';
-  const source = `feature/${voicecallsData.slug}`;
-  const heroPrimaryAction = hero.primaryAction
+  const heroPrimaryHref = hero.primaryAction?.href;
+  const heroPrimaryAction = hero.primaryAction && heroPrimaryHref
     ? {
         ...hero.primaryAction,
-        href: buildContactHref(hero.primaryAction.href, { system: primarySystem, source }),
+        href: buildContactHref(heroPrimaryHref, {
+          system: primarySystem,
+          sourceType: 'feature',
+          slug: voicecallsData.slug,
+        }),
       }
     : undefined;
-  const ctaPrimaryAction = {
-    ...cta.primaryAction,
-    href: buildContactHref(cta.primaryAction.href, { system: primarySystem, source }),
-  };
+  const ctaPrimaryAction = cta.primaryAction.href
+    ? {
+        ...cta.primaryAction,
+        href: buildContactHref(cta.primaryAction.href, {
+          system: primarySystem,
+          sourceType: 'feature',
+          slug: voicecallsData.slug,
+        }),
+      }
+    : cta.primaryAction;
 
   if (!testimonial) {
     return null;

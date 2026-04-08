@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const negativeReviewsForAutoRepairShops: BlogPostData = {
   slug: 'negative-reviews-for-auto-repair-shops',
   title: 'Negative Reviews for Auto Repair Shops',
-  intent: 'SYSTEM',
   metaTitle: 'Managing Negative Reviews for Auto Repair Shops',
   metaDescription:
     'Discover how negative reviews for auto repair shops can be managed with systematic response frameworks that protect reputation and rebuild customer trust.',

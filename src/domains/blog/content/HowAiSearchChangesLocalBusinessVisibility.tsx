@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const howAiSearchChangesLocalBusinessVisibility: BlogPostData = {
   slug: 'how-ai-search-changes-local-business-visibility',
   title: 'How AI Search Changes Local Business Visibility',
-  intent: 'SYSTEM',
   metaTitle: 'How AI Search Changes Local Business Visibility',
   metaDescription:
     'Explore how AI search changes local business visibility through generative results, conversational queries, and new discovery patterns for local services.',

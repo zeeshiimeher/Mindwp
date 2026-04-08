@@ -10,6 +10,8 @@ import {
   Zap,
 } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { FeaturePageData } from '../types';
 
 const inboxFaqItems = [
@@ -351,10 +353,10 @@ export const inboxData: FeaturePageData = {
   cta: {
     title: 'Ready to Bring All Conversations into One Inbox?',
     description:
-        'Connect your email, SMS, and social channels into one response system so your team can reply faster and stop losing conversations across channels.',
+      'Connect your email, SMS, and social channels into one response system so your team can reply faster and stop losing conversations across channels.',
     primaryAction: {
-        label: 'Unify Your Inbox System',
-      href: '/contact?system=ai-lead-handling&source=feature/inbox',
+      label: 'Unify Your Inbox System',
+      href: buildContactHref({ system: 'ai-lead-handling', sourceType: 'feature', slug: 'inbox' }),
     },
   },
 };

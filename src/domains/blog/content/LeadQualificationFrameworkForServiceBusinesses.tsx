@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const leadQualificationFrameworkForServiceBusinesses: BlogPostData = {
   slug: 'lead-qualification-framework-for-service-businesses',
   title: 'Lead Qualification Framework for Service Businesses',
-  intent: 'FRAMEWORK',
   metaTitle: 'Lead Qualification Framework for Service Businesses',
   metaDescription:
     'Explore the lead qualification framework for service businesses that scores and categorises enquiries so high-value leads receive priority response.',

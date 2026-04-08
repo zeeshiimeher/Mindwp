@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const salesPipelineVisibilityFramework: BlogPostData = {
   slug: 'sales-pipeline-visibility-framework',
   title: 'Sales Pipeline Visibility Framework',
-  intent: 'FRAMEWORK',
   metaTitle: 'Sales Pipeline Visibility Framework for Services',
   metaDescription:
     'Explore the sales pipeline visibility framework that gives service businesses real-time insight into deal progression, bottlenecks, and forecasted revenue.',

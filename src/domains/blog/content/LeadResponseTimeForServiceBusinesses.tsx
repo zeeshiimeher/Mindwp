@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const leadResponseTimeForServiceBusinesses: BlogPostData = {
   slug: 'lead-response-time-for-service-businesses',
   title: 'Lead Response Time for Service Businesses',
-  intent: 'SYSTEM',
   metaTitle: 'Lead Response Time for Service Businesses',
   metaDescription:
     'Discover why lead response time for service businesses determines conversion rates and how automated systems close the gap between enquiry and first contact.',

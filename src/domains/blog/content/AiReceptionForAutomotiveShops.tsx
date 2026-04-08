@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const aiReceptionForAutomotiveShops: BlogPostData = {
   slug: 'ai-reception-for-automotive-shops',
   title: 'AI Reception for Automotive Shops',
-  intent: 'SYSTEM',
   metaTitle: 'AI Reception for Automotive Shops Explained',
   metaDescription:
     'Learn how AI reception for automotive shops uses automated answering and triage systems to handle calls, capture leads, and reduce missed booking opportunities.',

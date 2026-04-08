@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const roofingCrmPipelineForEstimates: BlogPostData = {
   slug: 'roofing-crm-pipeline-for-estimates',
   title: 'Roofing CRM Pipeline for Estimates',
-  intent: 'SYSTEM',
   metaTitle: 'Roofing CRM Pipeline for Estimates Explained',
   metaDescription:
     'Learn how a roofing CRM pipeline for estimates structures the quoting process from site visit to accepted job so no estimate falls through the cracks.',

@@ -9,6 +9,8 @@ import {
   Workflow,
 } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { ServicePageData } from '../types';
 
 export const conversionFunnelSystemPage = {
@@ -53,7 +55,11 @@ export const conversionFunnelSystemPage = {
       'This service focuses on the conversion path itself — page flow, offer structure, and the handoff between attention, enquiry, and action. When those are clearer, fewer good prospects disappear in the middle.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact?system=revenue-growth&source=service/conversion-funnel-system',
+      href: buildContactHref({
+        system: 'revenue-growth',
+        sourceType: 'service',
+        slug: 'conversion-funnel-system',
+      }),
     },
     list: [
       'Clearer page-to-enquiry journeys',
@@ -313,6 +319,10 @@ export const conversionFunnelSystemPage = {
     description:
       'If traffic is arriving but the page journey still weakens conversion, we can help define a stronger funnel path.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact?system=revenue-growth&source=service/conversion-funnel-system',
+    buttonHref: buildContactHref({
+      system: 'revenue-growth',
+      sourceType: 'service',
+      slug: 'conversion-funnel-system',
+    }),
   },
 } satisfies ServicePageData;

@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildHomeInspectorsIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -191,7 +192,11 @@ function buildHomeInspectorsIndustryPageData(): IndustryPageData {
           'Property and timing context',
         ],
         buttonText: 'Talk Through Scope',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'home-inspectors',
+        }),
       },
       {
         name: 'Scheduling and preparation flow',
@@ -202,7 +207,11 @@ function buildHomeInspectorsIndustryPageData(): IndustryPageData {
         features: ['Inspection scheduling support', 'Reminder structure', 'Preparation guidance'],
         popular: true,
         buttonText: 'See the Setup',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'home-inspectors',
+        }),
       },
       {
         name: 'Report and trust reinforcement',
@@ -212,7 +221,11 @@ function buildHomeInspectorsIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
         features: ['Follow-up workflows', 'Review request support', 'Local proof reinforcement'],
         buttonText: 'Request Details',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'home-inspectors',
+        }),
       },
     ],
   };
@@ -373,7 +386,14 @@ function buildHomeInspectorsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Book More Inspection Requests', href: '/contact' },
+      primaryAction: {
+        label: 'Book More Inspection Requests',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'home-inspectors',
+        }),
+      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -392,7 +412,15 @@ function buildHomeInspectorsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier home inspection booking and follow-up system',
       description:
         'If your inspection business is dealing with unclear booking requests, preparation friction, or inconsistent follow-up — we can map a practical system around how the workflow actually runs.',
-      primaryAction: { variant: 'white', label: 'Book More Inspection Requests', href: '/contact' },
+      primaryAction: {
+        variant: 'white',
+        label: 'Book More Inspection Requests',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'home-inspectors',
+        }),
+      },
       secondaryAction: {
         label: 'See Real Estate & Property Services',
         href: '/industries/real-estate-property-services',

@@ -14,7 +14,14 @@ import {
   Wrench,
 } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { SITE_NAME, SITE_ORIGIN, toAbsoluteUrl } from '@/lib/seo/config';
+
+const homepageContactHref = buildContactHref({
+  system: 'smart-website-systems',
+  sourceType: 'page',
+  slug: 'home',
+});
 
 type IconTone = 'primary' | 'secondary' | 'accent';
 
@@ -36,11 +43,16 @@ type SectionCta = {
   primaryAction: { label: string; href: string };
 };
 
-type HeroPrimaryAction = {
-  label: string;
-  type: 'internal' | 'external' | 'chat';
-  href?: string;
-};
+type HeroPrimaryAction =
+  | {
+      label: string;
+      type: 'internal' | 'external';
+      href: string;
+    }
+  | {
+      label: string;
+      type: 'chat';
+    };
 
 type VisualStat = {
   label: string;
@@ -246,7 +258,7 @@ export const homepageData: HomepageData = {
     valueProps: ['Right Enquiries', 'Search Ready', 'Built to Grow'],
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact',
+      href: homepageContactHref,
       type: 'internal',
     },
     secondaryAction: {
@@ -342,7 +354,7 @@ export const homepageData: HomepageData = {
         'We can walk through how your website currently handles enquiries and where a more structured setup could make things easier.',
       primaryAction: {
         label: 'See How It Works',
-        href: '/contact',
+        href: homepageContactHref,
       },
     },
   },
@@ -432,7 +444,7 @@ export const homepageData: HomepageData = {
         'We will look at how enquiries come in, how your team handles them, and where things could be made more consistent and easier to manage.',
       primaryAction: {
         label: 'Start a Conversation',
-        href: '/contact',
+        href: homepageContactHref,
       },
     },
   },
@@ -699,7 +711,7 @@ export const homepageData: HomepageData = {
     ],
     cta: {
       label: 'Start a Conversation',
-      href: '/contact',
+      href: homepageContactHref,
     },
   },
   visibilityTimeline: {
@@ -822,7 +834,7 @@ export const homepageData: HomepageData = {
         'We can look at how your website is currently set up, how enquiries are handled, and what could be improved to make enquiry handling more reliable.',
       primaryAction: {
         label: 'Start a Conversation',
-        href: '/contact',
+        href: homepageContactHref,
       },
       metaItems: [
         { text: 'Calm, consultative approach' },

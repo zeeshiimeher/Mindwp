@@ -1,4 +1,5 @@
 import type { CaseStudyContent, CaseStudyTemplateSection } from '@/domains/case-studies/templates';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { CaseStudyData } from '../types';
 
@@ -235,7 +236,11 @@ function buildLawFirmClientIntakeAutomation(): CaseStudyData {
       },
       cta: {
         primaryButtonLabel: 'Book More Client Consultations',
-        primaryButtonHref: '/contact',
+        primaryButtonHref: buildContactHref({
+          system: 'revenue-growth',
+          sourceType: 'case-study',
+          slug: 'law-firm-client-intake-automation',
+        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

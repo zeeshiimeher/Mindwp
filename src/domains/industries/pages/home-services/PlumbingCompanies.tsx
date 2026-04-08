@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -196,7 +197,11 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
           'Cleaner lead qualification',
         ],
         buttonText: 'Talk Through Scope',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'plumbing-companies',
+        }),
       },
       {
         name: 'Booking and visit protection',
@@ -207,7 +212,11 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
         features: ['Visit scheduling support', 'Reminder structure', 'Appointment-path clarity'],
         popular: true,
         buttonText: 'See the Setup',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'plumbing-companies',
+        }),
       },
       {
         name: 'Quote and review follow-up',
@@ -221,7 +230,11 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
           'Post-job trust reinforcement',
         ],
         buttonText: 'Request Details',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'plumbing-companies',
+        }),
       },
     ],
   };
@@ -372,7 +385,14 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Capture More Plumbing Jobs', href: '/contact' },
+      primaryAction: {
+        label: 'Capture More Plumbing Jobs',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'plumbing-companies',
+        }),
+      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -390,7 +410,15 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
       title: 'Build a steadier plumbing system',
       description:
         'If loose emergency routing, booking friction, inconsistent quote follow-up, or weak local proof are slowing things down, we can map a practical system around how the work actually runs.',
-      primaryAction: { variant: 'white', label: 'Capture More Plumbing Jobs', href: '/contact' },
+      primaryAction: {
+        variant: 'white',
+        label: 'Capture More Plumbing Jobs',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'plumbing-companies',
+        }),
+      },
       secondaryAction: {
         label: 'See Home Services',
         href: '/industries/home-services',

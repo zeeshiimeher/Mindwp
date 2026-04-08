@@ -10,6 +10,8 @@ import {
   Zap,
 } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { ServicePageData } from '../types';
 
 export const bricksBuilderPage = {
@@ -55,7 +57,11 @@ export const bricksBuilderPage = {
       'We build WordPress websites using Bricks Builder where performance and clean output matter. Approved designs are converted precisely, with a build that stays fast, maintainable, and easy to extend.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact?system=smart-website-systems&source=service/bricks-builder',
+      href: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'service',
+        slug: 'bricks-builder',
+      }),
     },
     cssPrefix: 'bricks-hero',
     backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
@@ -266,6 +272,10 @@ export const bricksBuilderPage = {
     description:
       'If your team needs a performance-focused Bricks build with clean output and long-term clarity, we can review scope and outline the right approach.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact?system=smart-website-systems&source=service/bricks-builder',
+    buttonHref: buildContactHref({
+      system: 'smart-website-systems',
+      sourceType: 'service',
+      slug: 'bricks-builder',
+    }),
   },
 } satisfies ServicePageData;

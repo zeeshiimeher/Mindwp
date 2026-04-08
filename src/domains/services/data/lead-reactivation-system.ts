@@ -10,6 +10,8 @@ import {
   Workflow,
 } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { ServicePageData } from '../types';
 
 export const leadReactivationSystemPage = {
@@ -53,7 +55,11 @@ export const leadReactivationSystemPage = {
       'This service helps service businesses re-engage old enquiries, stalled quotes, and dormant pipeline value through structured follow-up. The goal is a clearer system so good opportunities are not left sitting unused.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact?system=revenue-growth&source=service/lead-reactivation-system',
+      href: buildContactHref({
+        system: 'revenue-growth',
+        sourceType: 'service',
+        slug: 'lead-reactivation-system',
+      }),
     },
     list: [
       'Recover value from old enquiries and dormant opportunities',
@@ -360,6 +366,10 @@ export const leadReactivationSystemPage = {
     description:
       'If old enquiries, stalled quotes, or past customers are sitting untouched, we can help structure a clearer reactivation workflow.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact?system=revenue-growth&source=service/lead-reactivation-system',
+    buttonHref: buildContactHref({
+      system: 'revenue-growth',
+      sourceType: 'service',
+      slug: 'lead-reactivation-system',
+    }),
   },
 } satisfies ServicePageData;

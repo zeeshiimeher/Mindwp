@@ -12,6 +12,8 @@ import {
   Zap,
 } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { FeaturePageData } from '../types';
 
 const workflowsFaqItems = [
@@ -101,7 +103,11 @@ export const workflowsData: FeaturePageData = {
       'Workflows connect your forms, bookings, and pipeline stages to automatic actions. Send confirmations, reminders, and task notifications—while keeping full visibility and control.',
     primaryAction: {
       label: 'Check How Follow-Up Automation Works',
-      href: '/contact?system=revenue-growth&source=feature/workflows',
+      href: buildContactHref({
+        system: 'revenue-growth',
+        sourceType: 'feature',
+        slug: 'workflows',
+      }),
     },
     stats: [
       { value: 'Auto', label: 'Follow-Ups' },
@@ -327,7 +333,11 @@ export const workflowsData: FeaturePageData = {
       'We will map the triggers, rules, and follow-up steps that fit your real operation so leads, bookings, and internal tasks keep moving without manual chasing.',
     primaryAction: {
       label: 'Automate Your Follow-Up System',
-      href: '/contact?system=revenue-growth&source=feature/workflows',
+      href: buildContactHref({
+        system: 'revenue-growth',
+        sourceType: 'feature',
+        slug: 'workflows',
+      }),
     },
   },
 };

@@ -115,7 +115,6 @@ export const reducingSalonNoShowsWithAutomation: ResourceData = {
   title: 'Reducing Salon No-Shows with Automation',
   description:
     'See how salons use automated reminders, waitlist management, and smart deposit policies to cut no-show rates by 60-80% and recover thousands in monthly lost revenue.',
-  intent: 'ACTIONABLE',
   category: 'crm-automation',
   publishedAt: '2026-02-25',
   systems: ['crm-automation', 'ai-lead-handling'],

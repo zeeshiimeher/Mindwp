@@ -10,6 +10,8 @@ import {
   Wrench,
 } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { ServicePageData } from '../types';
 
 export const websiteRedesignSystemRebuildPage = {
@@ -54,7 +56,11 @@ export const websiteRedesignSystemRebuildPage = {
       'This service is for businesses whose current site has drifted too far from their services, enquiry flow, integrations, or operating reality. The work is structural correction and rebuild logic, not cosmetic redesign for its own sake.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact?system=smart-website-systems&source=service/website-redesign-system-rebuild',
+      href: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'service',
+        slug: 'website-redesign-system-rebuild',
+      }),
     },
     list: [
       'Clearer structure and service architecture',
@@ -306,6 +312,10 @@ export const websiteRedesignSystemRebuildPage = {
     description:
       'If the current site no longer supports your services, enquiry flow, or maintainability, we can help define a clearer rebuild pathway.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact?system=smart-website-systems&source=service/website-redesign-system-rebuild',
+    buttonHref: buildContactHref({
+      system: 'smart-website-systems',
+      sourceType: 'service',
+      slug: 'website-redesign-system-rebuild',
+    }),
   },
 } satisfies ServicePageData;

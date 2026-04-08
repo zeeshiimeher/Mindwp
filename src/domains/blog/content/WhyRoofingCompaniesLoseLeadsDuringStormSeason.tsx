@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyRoofingCompaniesLoseLeadsDuringStormSeason: BlogPostData = {
   slug: 'why-roofing-companies-lose-leads-during-storm-season',
   title: 'Why Roofing Companies Lose Leads During Storm Season',
-  intent: 'PROBLEM',
   metaTitle: 'Why Roofing Companies Lose Leads During Storm Season',
   metaDescription:
     'Learn why roofing companies lose leads during storm season when enquiry volume overwhelms response capacity and how lead handling systems prevent it.',

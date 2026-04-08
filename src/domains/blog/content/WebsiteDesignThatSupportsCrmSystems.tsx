@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const websiteDesignThatSupportsCrmSystems: BlogPostData = {
   slug: 'website-design-that-supports-crm-systems',
   title: 'Website Design That Supports CRM Systems',
-  intent: 'SYSTEM',
   metaTitle: 'Website Design That Supports CRM Systems',
   metaDescription:
     'Explore how website design that supports CRM systems is built differently, with structured forms, automation-ready architecture, and pipeline-connected pages.',

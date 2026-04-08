@@ -1,4 +1,5 @@
 import type { CaseStudyContent, CaseStudyTemplateSection } from '@/domains/case-studies/templates';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { CaseStudyData } from '../types';
 
@@ -193,7 +194,11 @@ function buildRealtorLeadFollowUpAutomation(): CaseStudyData {
       },
       cta: {
         primaryButtonLabel: 'Fix Realtor Follow-Up',
-        primaryButtonHref: '/contact',
+        primaryButtonHref: buildContactHref({
+          system: 'revenue-growth',
+          sourceType: 'case-study',
+          slug: 'realtor-lead-follow-up-automation',
+        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

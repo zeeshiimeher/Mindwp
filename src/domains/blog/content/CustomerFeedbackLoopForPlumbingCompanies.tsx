@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const customerFeedbackLoopForPlumbingCompanies: BlogPostData = {
   slug: 'customer-feedback-loop-for-plumbing-companies',
   title: 'Customer Feedback Loop for Plumbing Companies',
-  intent: 'SYSTEM',
   metaTitle: 'Customer Feedback Loop for Plumbing Companies',
   metaDescription:
     'Learn how a customer feedback loop for plumbing companies captures service quality data after every job to improve operations and build local reputation.',

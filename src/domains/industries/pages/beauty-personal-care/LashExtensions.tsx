@@ -1,6 +1,7 @@
 import { Bell, Calendar, Clock3, MapPinned, Search, Sparkles, Star, Workflow } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildLashExtensionsIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -186,7 +187,11 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
           'Basic enquiry capture and direction',
         ],
         buttonText: 'Talk Through Scope',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'lash-lift-and-extensions',
+        }),
       },
       {
         name: 'Booking protection setup',
@@ -201,7 +206,11 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
         ],
         popular: true,
         buttonText: 'See the Setup',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'lash-lift-and-extensions',
+        }),
       },
       {
         name: 'Follow-up and retention setup',
@@ -215,7 +224,11 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
           'Operational touchpoints for better predictability',
         ],
         buttonText: 'Request Details',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'lash-lift-and-extensions',
+        }),
       },
     ],
   };
@@ -393,7 +406,14 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Fill More Lash Appointments', href: '/contact' },
+      primaryAction: {
+        label: 'Fill More Lash Appointments',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'lash-lift-and-extensions',
+        }),
+      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -412,7 +432,15 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
       title: 'Build a calmer lash booking system',
       description:
         'If enquiry gaps, booking friction, inconsistent reminders, or weak follow-up are slowing things down, we can map a practical setup around how the service runs.',
-      primaryAction: { variant: 'white', label: 'Fill More Lash Appointments', href: '/contact' },
+      primaryAction: {
+        variant: 'white',
+        label: 'Fill More Lash Appointments',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'lash-lift-and-extensions',
+        }),
+      },
       secondaryAction: {
         label: 'See the Category Approach',
         href: '/industries/beauty-personal-care',

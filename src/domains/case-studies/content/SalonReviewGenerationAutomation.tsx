@@ -1,4 +1,5 @@
 import type { CaseStudyContent, CaseStudyTemplateSection } from '@/domains/case-studies/templates';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { CaseStudyData } from '../types';
 
@@ -203,7 +204,11 @@ function buildSalonReviewGenerationAutomation(): CaseStudyData {
       },
       cta: {
         primaryButtonLabel: 'Automate Review Requests',
-        primaryButtonHref: '/contact',
+        primaryButtonHref: buildContactHref({
+          system: 'reputation-review',
+          sourceType: 'case-study',
+          slug: 'salon-review-generation-automation',
+        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

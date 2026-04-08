@@ -115,7 +115,6 @@ export const hvacLeadHandlingExample: ResourceData = {
   title: 'HVAC Lead Handling Example',
   description:
     'See how HVAC companies use automated lead handling to respond to every inquiry within minutes, route emergency calls instantly, and capture peak-season revenue that manual processes miss.',
-  intent: 'EXAMPLE',
   category: 'ai-lead-handling',
   publishedAt: '2026-01-17',
   systems: ['ai-lead-handling'],

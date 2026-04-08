@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const customerFeedbackLoopFrameworkForServiceBusinesses: BlogPostData = {
   slug: 'customer-feedback-loop-framework-for-service-businesses',
   title: 'Customer Feedback Loop Framework for Service Businesses',
-  intent: 'FRAMEWORK',
   metaTitle: 'Customer Feedback Loop Framework for Service Businesses',
   metaDescription:
     'Explore the customer feedback loop framework for service businesses that captures post-service insights and routes them into operational improvement workflows.',

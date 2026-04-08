@@ -115,7 +115,6 @@ export const automotiveCrmPipelineForRepairJobs: ResourceData = {
   title: 'Automotive CRM Pipeline for Repair Jobs',
   description:
     'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
-  intent: 'ACTIONABLE',
   category: 'crm-automation',
   publishedAt: '2026-01-24',
   systems: ['crm-automation'],

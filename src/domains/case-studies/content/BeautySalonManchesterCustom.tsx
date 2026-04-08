@@ -2,6 +2,7 @@ import {
   type CaseStudyContent,
   type CaseStudyTemplateSection,
 } from '@/domains/case-studies/templates';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { CaseStudyData } from '../types';
 
@@ -177,7 +178,11 @@ function buildBeautySalonManchesterCustom(): CaseStudyData {
 
   const ctaOverrides = {
     primaryButtonLabel: 'Get Your Free Beauty Salon Strategy Call',
-    primaryButtonHref: '/contact?source=beauty-salon-case-study',
+    primaryButtonHref: buildContactHref({
+      system: 'local-seo-authority',
+      sourceType: 'case-study',
+      slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+    }),
     metaItems: [
       { text: 'Free 20-minute strategy call' },
       { text: 'Custom beauty salon solutions' },

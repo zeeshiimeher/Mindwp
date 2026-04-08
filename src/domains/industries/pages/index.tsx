@@ -8,9 +8,10 @@ import { getCategoryIndexIndustries } from '@/domains/industries/catalog';
 import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
-const industriesLandingContactHref = buildContactHref('/contact', {
+const industriesLandingContactHref = buildContactHref({
   system: 'smart-website-systems',
-  source: 'page/industries',
+  sourceType: 'page',
+  slug: 'industries',
 });
 
 export default function IndustriesLanding() {

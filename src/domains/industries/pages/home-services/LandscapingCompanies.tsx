@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -189,7 +190,11 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
           'Better job-fit clarity',
         ],
         buttonText: 'Talk Through Scope',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'landscaping-companies',
+        }),
       },
       {
         name: 'Estimate and visit protection',
@@ -200,7 +205,11 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
         features: ['Estimate scheduling support', 'Reminder structure', 'Visit-path clarity'],
         popular: true,
         buttonText: 'See the Setup',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'landscaping-companies',
+        }),
       },
       {
         name: 'Seasonal and repeat follow-up',
@@ -214,7 +223,11 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
           'Review and referral reinforcement',
         ],
         buttonText: 'Request Details',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'landscaping-companies',
+        }),
       },
     ],
   };
@@ -365,7 +378,14 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Book More Quote Requests', href: '/contact' },
+      primaryAction: {
+        label: 'Book More Quote Requests',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'landscaping-companies',
+        }),
+      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -383,7 +403,15 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       title: 'Build a steadier landscaping system',
       description:
         'If loose service routing, estimate friction, inconsistent seasonal follow-up, or weak local proof are slowing things down, we can map a practical system around how the work actually runs.',
-      primaryAction: { variant: 'white', label: 'Book More Quote Requests', href: '/contact' },
+      primaryAction: {
+        variant: 'white',
+        label: 'Book More Quote Requests',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'landscaping-companies',
+        }),
+      },
       secondaryAction: {
         label: 'See Home Services',
         href: '/industries/home-services',

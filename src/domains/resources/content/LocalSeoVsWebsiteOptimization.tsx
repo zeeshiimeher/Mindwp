@@ -158,7 +158,6 @@ export const localSeoVsWebsiteOptimization: ResourceData = {
   title: 'Local SEO vs Website Optimisation',
   description:
     'Understand the difference between local SEO and website optimisation, learn where each applies, and know which investments drive the most visibility for service businesses.',
-  intent: 'EDUCATIONAL',
   category: 'local-seo-authority',
   publishedAt: '2026-01-12',
   systems: ['local-seo-authority'],

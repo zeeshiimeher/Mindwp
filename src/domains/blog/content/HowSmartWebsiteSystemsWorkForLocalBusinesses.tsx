@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const howSmartWebsiteSystemsWorkForLocalBusinesses: BlogPostData = {
   slug: 'how-smart-website-systems-work-for-local-businesses',
   title: 'How Smart Website Systems Work for Local Businesses',
-  intent: 'SYSTEM',
   metaTitle: 'How Smart Website Systems Work for Businesses',
   metaDescription:
     'Learn how smart website systems work to automate lead capture, routing, and response for local service businesses using connected infrastructure.',

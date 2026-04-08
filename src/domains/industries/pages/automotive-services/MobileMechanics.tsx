@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildMobileMechanicsIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -195,7 +196,11 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when lead quality and first-contact clarity are the main issue',
         features: ['Mobile-service pages', 'Better enquiry capture', 'Area and vehicle context'],
         buttonText: 'Talk Through Scope',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'mobile-mechanics',
+        }),
       },
       {
         name: 'Area qualification and booking flow',
@@ -210,7 +215,11 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
         ],
         popular: true,
         buttonText: 'See the Setup',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'mobile-mechanics',
+        }),
       },
       {
         name: 'Follow-up and trust reinforcement',
@@ -224,7 +233,11 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
           'Local proof reinforcement',
         ],
         buttonText: 'Request Details',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'mobile-mechanics',
+        }),
       },
     ],
   };
@@ -383,7 +396,14 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Capture More Service Calls', href: '/contact' },
+      primaryAction: {
+        label: 'Capture More Service Calls',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'mobile-mechanics',
+        }),
+      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -402,7 +422,15 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier mobile mechanic callout and follow-up system',
       description:
         'If your mobile service business is dealing with unclear area fit, loose booking, or inconsistent arrival communication — we can map a practical system around how the work actually runs.',
-      primaryAction: { variant: 'white', label: 'Capture More Service Calls', href: '/contact' },
+      primaryAction: {
+        variant: 'white',
+        label: 'Capture More Service Calls',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'mobile-mechanics',
+        }),
+      },
       secondaryAction: {
         label: 'See Automotive Services',
         href: '/industries/automotive-services',

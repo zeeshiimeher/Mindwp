@@ -1,5 +1,7 @@
 import { Clock, Phone, Search } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { ServicePageData } from '../types';
 
 export const missedCallRecoverySystemPage = {
@@ -43,7 +45,11 @@ export const missedCallRecoverySystemPage = {
       'This service focuses on what happens after a call is missed. It helps service businesses respond faster, capture the enquiry more cleanly, and move the conversation into the right next step before the lead disappears.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact?system=ai-lead-handling&source=service/missed-call-recovery-system',
+      href: buildContactHref({
+        system: 'ai-lead-handling',
+        sourceType: 'service',
+        slug: 'missed-call-recovery-system',
+      }),
     },
     list: [
       'Immediate response after a missed call',
@@ -286,6 +292,10 @@ export const missedCallRecoverySystemPage = {
     description:
       'If missed calls are creating avoidable lead leakage, we can help structure a clearer recovery workflow.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact?system=ai-lead-handling&source=service/missed-call-recovery-system',
+    buttonHref: buildContactHref({
+      system: 'ai-lead-handling',
+      sourceType: 'service',
+      slug: 'missed-call-recovery-system',
+    }),
   },
 } satisfies ServicePageData;

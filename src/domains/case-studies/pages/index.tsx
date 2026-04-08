@@ -6,9 +6,10 @@ import { Badge } from '@/components/reusable/single/Badge';
 import { getCaseStudiesTemplateMetadata } from '@/domains/case-studies/data';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
-const caseStudiesLandingContactHref = buildContactHref('/contact', {
+const caseStudiesLandingContactHref = buildContactHref({
   system: 'smart-website-systems',
-  source: 'page/case-studies',
+  sourceType: 'page',
+  slug: 'case-studies',
 });
 
 export function CaseStudiesPage() {

@@ -8,6 +8,7 @@
  */
 
 import { CTA_CONFIG } from '@/config/ui-intelligence';
+import { buildGlobalContactHref } from '@/lib/contact/contactHref';
 import { getContentGraph } from '@/lib/content-graph/registry';
 import type { ContentNodeType } from '@/lib/content-graph/types';
 import { getRelatedContent } from '@/lib/graph/query';
@@ -77,7 +78,7 @@ export function calculateConversionScore(slug: string, type: ContentNodeType): C
     authorityScore,
     conversionPriority: 100 - totalScore,
     status,
-    conversionGoal: CTA_CONFIG[type]?.actionHref ?? '/contact',
+    conversionGoal: buildGlobalContactHref(),
   };
 }
 

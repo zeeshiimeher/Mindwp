@@ -1,5 +1,7 @@
 import { Bell, CheckCircle2, Mail, RefreshCcw, Settings, Workflow } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { ServicePageData } from '../types';
 
 export const marketingAutomationSetupPage = {
@@ -45,7 +47,11 @@ export const marketingAutomationSetupPage = {
       'This service implements structured automation around follow-up, reminders, reactivation, and lifecycle messaging. The goal is to reduce manual chasing while keeping the workflow clear, controlled, and commercially useful.',
     primaryAction: {
       label: 'Start a Conversation',
-      href: '/contact?system=revenue-growth&source=service/marketing-automation-setup',
+      href: buildContactHref({
+        system: 'revenue-growth',
+        sourceType: 'service',
+        slug: 'marketing-automation-setup',
+      }),
     },
     list: [
       'Less manual follow-up and reminder work',
@@ -304,6 +310,10 @@ export const marketingAutomationSetupPage = {
     description:
       'If follow-up, reminders, or lifecycle messaging still depend on manual effort, we can help build a cleaner automation setup.',
     buttonText: 'Start a Conversation',
-    buttonHref: '/contact?system=revenue-growth&source=service/marketing-automation-setup',
+    buttonHref: buildContactHref({
+      system: 'revenue-growth',
+      sourceType: 'service',
+      slug: 'marketing-automation-setup',
+    }),
   },
 } satisfies ServicePageData;

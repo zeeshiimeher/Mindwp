@@ -23,17 +23,28 @@ export default function CRMRenderer() {
   const { hero, sections, cta } = crmData;
   const { process, benefits, useCases, capabilities, faq } = sections;
   const primarySystem = crmData.systems[0] ?? 'smart-website-systems';
-  const source = `feature/${crmData.slug}`;
-  const heroPrimaryAction = hero.primaryAction
+  const heroPrimaryHref = hero.primaryAction?.href;
+  const heroPrimaryAction =
+    hero.primaryAction && heroPrimaryHref
+      ? {
+          ...hero.primaryAction,
+          href: buildContactHref(heroPrimaryHref, {
+            system: primarySystem,
+            sourceType: 'feature',
+            slug: crmData.slug,
+          }),
+        }
+      : undefined;
+  const ctaPrimaryAction = cta.primaryAction.href
     ? {
-        ...hero.primaryAction,
-        href: buildContactHref(hero.primaryAction.href, { system: primarySystem, source }),
+        ...cta.primaryAction,
+        href: buildContactHref(cta.primaryAction.href, {
+          system: primarySystem,
+          sourceType: 'feature',
+          slug: crmData.slug,
+        }),
       }
-    : undefined;
-  const ctaPrimaryAction = {
-    ...cta.primaryAction,
-    href: buildContactHref(cta.primaryAction.href, { system: primarySystem, source }),
-  };
+    : cta.primaryAction;
 
   const heroVisual = (
     <Card className='p-8 bg-white/80 backdrop-blur shadow-xl'>

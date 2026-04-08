@@ -1,32 +1,20 @@
 /**
  * SmartCTA
  *
- * Graph-aware CTA that adjusts intensity based on page type and intent.
- * Primary config from CTA_CONFIG. Intent-based override from ctaResolver.
- *
- * Intensity levels:
- * - soft: learn intent (exploring, not ready to commit)
- * - mid: compare intent (planning, evaluating)
- * - strong: buy intent (ready to act)
- *
- * Data flow: pageType + intent → CTA_CONFIG (base) → ctaResolver (label override) → CTASection
+ * Graph-aware CTA that adjusts CTA intensity by page type only.
+ * Primary config comes from CTA_CONFIG and contact routing comes only from buildContactHref.
  */
 
 import { CTASection } from '@/components/reusable/single/CTASection';
-import { CTA_CONFIG, CTA_INTENT_OVERRIDES, type CTAIntensity } from '@/config/ui-intelligence';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { resolveCtaLabel } from '@/config/cta-labels';
+import { CTA_CONFIG, type CTAIntensity } from '@/config/ui-intelligence';
+import { buildContactHref, type ContactSourceType } from '@/lib/contact/contactHref';
 import type { ContentNodeType } from '@/lib/content-graph/types';
-import type { ContentIntent } from '@/lib/ui/ctaEngine';
-import { type LinkIntent, resolveCTA } from '@/lib/ui/ctaResolver';
 
 // ── Types ────────────────────────────────────────────────────────────
 
 interface SmartCTAProps {
   pageType: ContentNodeType;
-  /** Intent — overrides default intensity */
-  intent?: LinkIntent;
-  /** Content-level intent (PROBLEM, SYSTEM, ACTIONABLE, etc.) for title/description override */
-  contentIntent?: ContentIntent;
   /** Primary system key — appended to /contact as ?system= */
   system?: string;
   /** Content slug — used for full source path (e.g. blog/my-post) */
@@ -47,12 +35,18 @@ const INTENSITY_STYLES: Record<CTAIntensity, { backgroundColor: string; cssPrefi
   strong: { backgroundColor: 'bg-gradient-secondary', cssPrefix: 'cta-strong' },
 };
 
+function getContactSourceType(pageType: ContentNodeType): ContactSourceType {
+  if (pageType === 'industry-detail' || pageType === 'industry-category') {
+    return 'industry';
+  }
+
+  return pageType;
+}
+
 // ── Component ────────────────────────────────────────────────────────
 
 export function SmartCTA({
   pageType,
-  intent,
-  contentIntent,
   system,
   slug,
   backgroundColor: bgOverride,
@@ -60,25 +54,19 @@ export function SmartCTA({
   description: descOverride,
 }: SmartCTAProps) {
   const config = CTA_CONFIG[pageType];
-  const resolved = resolveCTA({ pageType, intent });
-
-  // Use intent-resolved intensity when intent is provided, otherwise use config default
-  const intensity = intent ? resolved.level : config.intensity;
-  const style = INTENSITY_STYLES[intensity];
-
-  // Resolve intent-based title/description overrides
-  const intentKey = contentIntent ? `${pageType}:${contentIntent}` : undefined;
-  const intentOverride = intentKey ? CTA_INTENT_OVERRIDES[intentKey] : undefined;
+  const style = INTENSITY_STYLES[config.intensity];
+  const resolvedSystem = system ?? 'smart-website-systems';
 
   return (
     <CTASection
-      title={titleOverride ?? intentOverride?.title ?? config.title}
-      description={descOverride ?? intentOverride?.description ?? config.description}
+      title={titleOverride ?? config.title}
+      description={descOverride ?? config.description}
       primaryAction={{
-        label: config.actionLabel,
-        href: buildContactHref(config.actionHref, {
-          system: system ?? 'smart-website-systems',
-          source: slug ? `${pageType}/${slug}` : `${pageType}/index`,
+        label: resolveCtaLabel(resolvedSystem),
+        href: buildContactHref({
+          system: resolvedSystem,
+          sourceType: getContactSourceType(pageType),
+          slug: slug ?? 'index',
         }),
       }}
       backgroundColor={bgOverride ?? style.backgroundColor}

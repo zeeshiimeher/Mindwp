@@ -13,9 +13,10 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { primaryCta } from '@/config/primaryCta';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
-const faqContactHref = buildContactHref('/contact', {
+const faqContactHref = buildContactHref({
   system: 'smart-website-systems',
-  source: 'page/faq',
+  sourceType: 'page',
+  slug: 'faq',
 });
 
 export function FAQPage() {

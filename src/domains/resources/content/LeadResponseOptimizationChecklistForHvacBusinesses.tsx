@@ -174,7 +174,6 @@ export const leadResponseOptimizationChecklistForHvacBusinesses: ResourceData = 
   title: 'Lead Response Optimization Checklist for HVAC Businesses',
   description:
     'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
-  intent: 'ACTIONABLE',
   category: 'crm-automation',
   publishedAt: '2026-04-06',
   systems: ['crm-automation'],

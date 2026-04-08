@@ -2,7 +2,7 @@
 
 > This document tracks current execution state, architectural decisions, and immediate system priorities.
 > It is the active operational memory for the deterministic control layer.
-> Updated: 2026-04-08 (contact flow simplified to direct email delivery)
+> Updated: 2026-04-08 (conversion contract hardened and CTA intent removed)
 
 ---
 
@@ -53,7 +53,7 @@
 
 **Status:** Locked
 
-**Decision:** Conversion behavior, CTA rules, intent model, and contact contract live only in `SYSTEM-CONTRACT.md`.
+**Decision:** Conversion behavior, CTA rules, and contact contract live only in `SYSTEM-CONTRACT.md`.
 
 **Impact:**
 - Other docs may reference behavior
@@ -231,7 +231,7 @@
 - `conversion.cta_missing_system`: `0`
 - `conversion.cta_missing_source`: `0`
 - `conversion.invalid_contact_links`: `0`
-- System remains `warning` only because of advisory metadata, advisory intent, and advisory lint drift
+- System remains `warning` only because of advisory metadata and advisory lint drift
 
 ---
 
@@ -287,6 +287,24 @@
 - `conversion.cta_missing_source`: `0`
 - `conversion.invalid_contact_links`: `0`
 - No new warnings or errors were introduced by the edited conversion pages
+
+---
+
+### E-011 — Conversion Contract Hardening Completed
+**Date:** 2026-04-08
+
+**Completed:**
+- Removed the CTA/contact intent path from runtime CTA rendering, contact form submission, and conversion validation
+- Standardized contact URL generation through `buildContactHref()` using canonical `system + sourceType + slug`
+- Replaced hardcoded `/contact` and manual `source` construction across services, features, home, case studies, industries, and shared CTA defaults
+- Added `tests/e2e/conversion.spec.ts` to verify CTA navigation, contact context propagation, API payload context, and invalid direct `/contact` access
+- Added `reports/execution-log.json` as an explicit hardening artifact
+
+**Result:**
+- Global CTA routing no longer permits `system=unknown`
+- Conversion validator now blocks raw contact literals and manual source assembly in scanned conversion surfaces
+- Contact submissions require only canonical `system` and `source` context
+- CTA intensity is page-type driven only; no intent override layer remains in conversion runtime
 
 ---
 

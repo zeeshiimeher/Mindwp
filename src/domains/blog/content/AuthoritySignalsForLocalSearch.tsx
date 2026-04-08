@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const authoritySignalsForLocalSearch: BlogPostData = {
   slug: 'authority-signals-for-local-search',
   title: 'Authority Signals for Local Search',
-  intent: 'FRAMEWORK',
   metaTitle: 'Authority Signals for Local Search Explained',
   metaDescription:
     'Learn how authority signals for local search build the trust and prominence that determine whether your business appears in competitive local search results.',

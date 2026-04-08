@@ -8,7 +8,6 @@ const GOVERNED_LABEL = primaryCta.label;
 interface BlogFooterCTAProps {
   title?: string;
   description?: string;
-  buttonText?: string;
   buttonUrl?: string;
   features?: string[];
 }
@@ -16,7 +15,6 @@ interface BlogFooterCTAProps {
 export function BlogFooterCTA({
   title = 'Explore the Full System',
   description = 'See how MindWP connects website, automation, and local visibility into one integrated system.',
-  buttonText = 'Learn More',
   buttonUrl,
   features = [
     'End-to-end system overview',

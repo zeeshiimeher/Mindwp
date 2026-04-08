@@ -243,7 +243,8 @@ export function CaseStudyTemplate({
   const resolvedCtaPrimaryButtonLabel = cta?.primaryButtonLabel ?? primaryCta.label;
   const resolvedCtaPrimaryButtonHref = buildContactHref(cta?.primaryButtonHref ?? primaryCta.href, {
     system: metadata.systems[0] ?? 'smart-website-systems',
-    source: `case-study/${metadata.slug}`,
+    sourceType: 'case-study',
+    slug: metadata.slug,
   });
   const resolvedCtaMetaItems = cta?.metaItems ?? [
     { text: 'Real implementation details' },

@@ -5,32 +5,6 @@ import { Project } from 'ts-morph';
 
 import { assert, getStringArrayDeclarationValues, listFilesRecursive } from './validator-helpers.mjs';
 
-export const CONTRACT_INTENTS = new Set([
-  'problem-aware',
-  'solution-aware',
-  'system-aware',
-  'decision-ready',
-]);
-
-const LEGACY_INTENT_TO_CONTRACT = {
-  PROBLEM: 'problem-aware',
-  SYSTEM: 'system-aware',
-  FRAMEWORK: 'system-aware',
-  ACTIONABLE: 'system-aware',
-  EDUCATIONAL: 'system-aware',
-  EXAMPLE: 'solution-aware',
-};
-
-const DEFAULT_INTENT_BY_TYPE = {
-  blog: 'problem-aware',
-  resource: 'system-aware',
-  'industry-detail': 'solution-aware',
-  'industry-category': 'solution-aware',
-  'case-study': 'solution-aware',
-  service: 'decision-ready',
-  feature: 'decision-ready',
-};
-
 const BLOCKING_METADATA_KEYS = {
   blog: ['slug', 'systems'],
   resource: ['slug', 'systems'],
@@ -42,8 +16,8 @@ const BLOCKING_METADATA_KEYS = {
 };
 
 const ADVISORY_METADATA_KEYS = {
-  blog: ['title', 'intent'],
-  resource: ['title', 'description', 'intent'],
+  blog: ['title'],
+  resource: ['title', 'description'],
   service: ['title'],
   feature: ['hero', 'cta'],
   'industry-detail': ['seo', 'hero', 'cta'],
@@ -69,36 +43,6 @@ export function loadCanonicalSets(project, root = process.cwd()) {
     systems: new Set(getStringArrayDeclarationValues(canonicalSource, 'CANONICAL_SYSTEMS')),
     industries: new Set(getStringArrayDeclarationValues(canonicalSource, 'CANONICAL_INDUSTRIES')),
     topics: new Set(getStringArrayDeclarationValues(canonicalSource, 'CANONICAL_TOPICS')),
-  };
-}
-
-export function normalizeIntent(rawIntent, nodeType) {
-  const value = typeof rawIntent === 'string' ? rawIntent.trim() : '';
-
-  if (!value) {
-    return {
-      raw: value,
-      normalized: DEFAULT_INTENT_BY_TYPE[nodeType] ?? 'system-aware',
-      kind: 'missing',
-    };
-  }
-
-  if (CONTRACT_INTENTS.has(value)) {
-    return { raw: value, normalized: value, kind: 'contract' };
-  }
-
-  if (LEGACY_INTENT_TO_CONTRACT[value]) {
-    return {
-      raw: value,
-      normalized: LEGACY_INTENT_TO_CONTRACT[value],
-      kind: 'legacy',
-    };
-  }
-
-  return {
-    raw: value,
-    normalized: null,
-    kind: 'invalid',
   };
 }
 

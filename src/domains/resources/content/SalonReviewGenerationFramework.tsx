@@ -115,7 +115,6 @@ export const salonReviewGenerationFramework: ResourceData = {
   title: 'Salon Review Generation Framework',
   description:
     'See how salons automate review collection with photo prompts, stylist-specific personalisation, and post-appointment timing to build the Google review profile that drives booking decisions.',
-  intent: 'EDUCATIONAL',
   category: 'reputation-review',
   publishedAt: '2026-02-07',
   systems: ['reputation-review'],

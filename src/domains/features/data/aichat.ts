@@ -1,5 +1,7 @@
 import { Calendar, Clock, Globe, Inbox, MessageSquare, Settings, Users } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { FeaturePageData } from '../types';
 
 const aiChatFaqItems = [
@@ -96,7 +98,7 @@ export const aiChatData: FeaturePageData = {
       'This conversation layer helps visitors ask questions, request services, and book appointments through a clear flow. AI supports routing and first response while your team stays in control of the important conversations.',
     primaryAction: {
       label: 'Find Out How AI Chat Works',
-      href: '/contact?system=ai-lead-handling&source=feature/aichat',
+      href: buildContactHref({ system: 'ai-lead-handling', sourceType: 'feature', slug: 'aichat' }),
     },
     stats: [
       { value: '24/7', label: 'Available' },
@@ -298,7 +300,7 @@ export const aiChatData: FeaturePageData = {
       'Tell us how website conversations are handled now. We will show you where chat can remove delays and stop leads from stalling.',
     primaryAction: {
       label: 'Capture Leads with AI Chat',
-      href: '/contact?system=ai-lead-handling&source=feature/aichat',
+      href: buildContactHref({ system: 'ai-lead-handling', sourceType: 'feature', slug: 'aichat' }),
     },
   },
 };

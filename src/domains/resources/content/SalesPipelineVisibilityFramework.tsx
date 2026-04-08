@@ -158,7 +158,6 @@ export const salesPipelineVisibilityFramework: ResourceData = {
   title: 'Sales Pipeline Visibility Framework',
   description:
     'Build a pipeline visibility framework that shows real-time deal health, flags stalled deals, and provides accurate revenue forecasting for your service business.',
-  intent: 'EDUCATIONAL',
   category: 'revenue-growth',
   publishedAt: '2025-12-10',
   systems: ['crm-automation'],

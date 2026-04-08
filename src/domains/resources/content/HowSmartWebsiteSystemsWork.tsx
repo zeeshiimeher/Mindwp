@@ -163,7 +163,6 @@ export const howSmartWebsiteSystemsWork: ResourceData = {
   title: 'How Smart Website Systems Work',
   description:
     'Learn how smart website systems connect lead capture, CRM, booking, and follow-up into one operational infrastructure for service businesses.',
-  intent: 'ACTIONABLE',
   category: 'smart-website-systems',
   publishedAt: '2025-11-03',
   systems: ['smart-website-systems'],

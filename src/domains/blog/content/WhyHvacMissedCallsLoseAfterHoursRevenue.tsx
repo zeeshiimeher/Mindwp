@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyHvacMissedCallsLoseAfterHoursRevenue: BlogPostData = {
   slug: 'why-hvac-missed-calls-lose-after-hours-revenue',
   title: 'Why HVAC Missed Calls Lose After Hours Revenue',
-  intent: 'PROBLEM',
   metaTitle: 'Why HVAC Missed Calls Lose After Hours Revenue',
   metaDescription:
     'Learn why HVAC missed calls lose after hours revenue when emergency customers call outside business hours and nobody is available to book the job.',

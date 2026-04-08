@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const clientReactivationForSalons: BlogPostData = {
   slug: 'client-reactivation-for-salons',
   title: 'Client Reactivation for Salons',
-  intent: 'SYSTEM',
   metaTitle: 'How Client Reactivation for Salons Recovers Revenue',
   metaDescription:
     'Explore how client reactivation for salons uses CRM automation to identify lapsed clients and win them back with personalised re-engagement campaigns.',

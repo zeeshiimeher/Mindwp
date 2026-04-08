@@ -100,17 +100,28 @@ export default function AIChatRenderer() {
   const { hero, sections, cta } = aiChatData;
   const { process, benefits, useCases, capabilities, faq } = sections;
   const primarySystem = aiChatData.systems[0] ?? 'smart-website-systems';
-  const source = `feature/${aiChatData.slug}`;
-  const heroPrimaryAction = hero.primaryAction
+  const heroPrimaryHref = hero.primaryAction?.href;
+  const heroPrimaryAction =
+    hero.primaryAction && heroPrimaryHref
+      ? {
+          ...hero.primaryAction,
+          href: buildContactHref(heroPrimaryHref, {
+            system: primarySystem,
+            sourceType: 'feature',
+            slug: aiChatData.slug,
+          }),
+        }
+      : undefined;
+  const ctaPrimaryAction = cta.primaryAction.href
     ? {
-        ...hero.primaryAction,
-        href: buildContactHref(hero.primaryAction.href, { system: primarySystem, source }),
+        ...cta.primaryAction,
+        href: buildContactHref(cta.primaryAction.href, {
+          system: primarySystem,
+          sourceType: 'feature',
+          slug: aiChatData.slug,
+        }),
       }
-    : undefined;
-  const ctaPrimaryAction = {
-    ...cta.primaryAction,
-    href: buildContactHref(cta.primaryAction.href, { system: primarySystem, source }),
-  };
+    : cta.primaryAction;
 
   return (
     <>

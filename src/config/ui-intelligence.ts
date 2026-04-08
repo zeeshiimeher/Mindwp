@@ -95,109 +95,53 @@ interface CTAConfig {
   intensity: CTAIntensity;
   title: string;
   description: string;
-  actionLabel: string;
-  actionHref: string;
 }
 
 /**
  * CTA configuration per page type.
- * Intensity determines visual weight and copy urgency.
- * - soft: light suggestion (blog readers exploring)
- * - mid: moderate prompt (resource readers planning)
- * - strong: clear conversion (service page visitors ready to act)
+ * Intensity determines visual weight by page type only.
  */
 export const CTA_CONFIG: Record<ContentNodeType, CTAConfig> = {
   blog: {
     intensity: 'soft',
     title: 'Want to Explore This Further?',
     description: 'If this resonated, a conversation is the next step — no pressure, no pitch.',
-    actionLabel: 'Start a Conversation',
-    actionHref: '/contact',
   },
   resource: {
     intensity: 'mid',
     title: 'Ready to Apply This?',
     description:
       'This resource gives you the framework. We can help you apply it to your specific situation.',
-    actionLabel: 'Start a Conversation',
-    actionHref: '/contact',
   },
   'case-study': {
-    intensity: 'mid',
-    title: 'Want Results Like These?',
-    description: 'Every case study starts with a conversation about where you are now.',
-    actionLabel: 'Start a Conversation',
-    actionHref: '/contact',
+    intensity: 'strong',
+    title: 'Want a System Like This?',
+    description:
+      'We can map the same operating principles to your business and show what implementation would look like.',
   },
   service: {
     intensity: 'strong',
-    title: 'See How This Fits Your Business',
-    description: 'Every engagement starts with understanding your situation — not a sales pitch.',
-    actionLabel: 'Start a Conversation',
-    actionHref: '/contact',
+    title: 'Ready to Put This in Place?',
+    description:
+      'We can scope the right system, the implementation path, and what it should support in your business.',
   },
   feature: {
-    intensity: 'strong',
-    title: 'See This in Action',
-    description: 'Understand how this capability works for your business.',
-    actionLabel: 'Explore the Approach',
-    actionHref: '/contact',
+    intensity: 'mid',
+    title: 'Want to See This in Your Workflow?',
+    description:
+      'We can show how this capability fits into the wider system and whether it belongs in your stack.',
   },
   'industry-detail': {
-    intensity: 'mid',
-    title: 'Built for Your Industry',
-    description: 'See how these systems apply to your specific industry context.',
-    actionLabel: 'Start a Conversation',
-    actionHref: '/contact',
+    intensity: 'strong',
+    title: 'Need This Built for Your Industry?',
+    description:
+      'We adapt the system to your service model, lead flow, and operational constraints.',
   },
   'industry-category': {
     intensity: 'mid',
-    title: 'Explore Your Industry',
-    description: 'Find the specific context that matches your business.',
-    actionLabel: 'Start a Conversation',
-    actionHref: '/contact',
-  },
-};
-
-// ── Intent-Based CTA Overrides ───────────────────────────────────────
-
-/**
- * Intent-specific overrides for CTA title and description.
- * Keyed by `{pageType}:{contentIntent}` (e.g. "blog:PROBLEM").
- * Labels stay governed by CTA_CONFIG — only title/description vary.
- */
-export const CTA_INTENT_OVERRIDES: Record<string, { title: string; description: string }> = {
-  // Blog intents
-  'blog:PROBLEM': {
-    title: 'Ready to Fix This?',
+    title: 'Exploring the Right Fit?',
     description:
-      'You\u2019ve seen the problem. We build the system that solves it \u2014 no guesswork, no generic fixes.',
-  },
-  'blog:SYSTEM': {
-    title: 'See How This Works for Your Business',
-    description:
-      'This system is built for businesses like yours. A conversation helps us map it to your exact situation.',
-  },
-  'blog:FRAMEWORK': {
-    title: 'Explore the Full Approach',
-    description:
-      'Frameworks only work when applied. We can help you see where this fits into your business.',
-  },
-  // Resource intents
-  'resource:ACTIONABLE': {
-    title: 'Ready to Implement This?',
-    description:
-      'You\u2019ve got the blueprint. We handle the implementation so it actually gets done right.',
-  },
-  'resource:EDUCATIONAL': {
-    title: 'Want Help Applying This?',
-    description:
-      'Understanding is the first step. We can help you turn this knowledge into a working system.',
-  },
-  'resource:EXAMPLE': {
-    title: 'Want Results Like These?',
-    description:
-      'Every example started with a conversation about where things stood. Yours can too.',
+      'We can help you decide which system and rollout path make sense for your business category.',
   },
 };
 

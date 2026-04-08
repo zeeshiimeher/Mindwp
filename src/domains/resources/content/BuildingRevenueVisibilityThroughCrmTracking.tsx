@@ -140,7 +140,6 @@ export const buildingRevenueVisibilityThroughCrmTracking: ResourceData = {
   title: 'Building Revenue Visibility Through CRM Tracking',
   description:
     'Learn how to build CRM-based revenue tracking that shows exactly where your revenue comes from, where it leaks, and where the biggest growth opportunities exist.',
-  intent: 'EDUCATIONAL',
   category: 'revenue-growth',
   publishedAt: '2025-12-31',
   systems: ['crm-automation'],

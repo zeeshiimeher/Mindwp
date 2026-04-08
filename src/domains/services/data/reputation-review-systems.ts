@@ -1,5 +1,7 @@
 import { AlertTriangle, Bell, GitBranch, MessageSquare, Search, Star } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { ServicePageData } from '../types';
 
 export const reputationReviewSystemsPage = {
@@ -44,7 +46,11 @@ export const reputationReviewSystemsPage = {
       'This service helps businesses build a clear review system around timing, feedback routing, response ownership, and trust signals. It works best when people are already finding the business but still hesitate to trust it.',
     primaryAction: {
       label: 'Review How Review Systems Work',
-      href: '/contact?system=reputation-review&source=service/reputation-review-systems',
+      href: buildContactHref({
+        system: 'reputation-review',
+        sourceType: 'service',
+        slug: 'reputation-review-systems',
+      }),
     },
     list: [
       'Consistent review requests without manual chasing',
@@ -303,6 +309,10 @@ export const reputationReviewSystemsPage = {
     description:
       'Tell us how reviews and feedback are handled now. We will show you how to collect more proof without extra manual chasing.',
     buttonText: 'Get More Reviews Consistently',
-    buttonHref: '/contact?system=reputation-review&source=service/reputation-review-systems',
+    buttonHref: buildContactHref({
+      system: 'reputation-review',
+      sourceType: 'service',
+      slug: 'reputation-review-systems',
+    }),
   },
 } satisfies ServicePageData;

@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildNailSalonsIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -198,7 +199,11 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
           'Better appointment clarity',
         ],
         buttonText: 'Talk Through Scope',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'nail-salons',
+        }),
       },
       {
         name: 'Diary protection and reminders',
@@ -213,7 +218,11 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
         ],
         popular: true,
         buttonText: 'See the Setup',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'nail-salons',
+        }),
       },
       {
         name: 'Repeat visits and review reinforcement',
@@ -223,7 +232,11 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when repeat demand and follow-up consistency need improvement',
         features: ['Review request support', 'Rebooking prompts', 'Retention reinforcement'],
         buttonText: 'Request Details',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'nail-salons',
+        }),
       },
     ],
   };
@@ -380,7 +393,14 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Fill More Nail Appointments', href: '/contact' },
+      primaryAction: {
+        label: 'Fill More Nail Appointments',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'nail-salons',
+        }),
+      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -399,7 +419,15 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier nail salon system',
       description:
         'If unclear service selection, reminder gaps, inconsistent reviews, or weak repeat follow-up are slowing things down, we can map a practical system around the real appointment journey.',
-      primaryAction: { variant: 'white', label: 'Fill More Nail Appointments', href: '/contact' },
+      primaryAction: {
+        variant: 'white',
+        label: 'Fill More Nail Appointments',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'nail-salons',
+        }),
+      },
       secondaryAction: {
         label: 'See the Category Approach',
         href: '/industries/beauty-personal-care',

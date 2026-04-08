@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const websiteCrmIntegrationForSalons: BlogPostData = {
   slug: 'website-crm-integration-for-salons',
   title: 'Website CRM Integration for Salons',
-  intent: 'SYSTEM',
   metaTitle: 'Website CRM Integration for Salons Explained',
   metaDescription:
     'Explore how website CRM integration for salons connects booking forms and enquiries directly to client records and automated follow-up workflows.',

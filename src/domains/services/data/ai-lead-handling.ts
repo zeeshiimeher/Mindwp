@@ -1,5 +1,7 @@
 import { MessageSquare, Phone, Users } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { ServicePageData } from '../types';
 
 export const aiLeadHandlingPage = {
@@ -43,7 +45,11 @@ export const aiLeadHandlingPage = {
       'This service helps businesses respond faster across website chat, phone, and booking flows. AI handles the repeatable first step, captures the right details, and hands off cleanly when a person should step in.',
     primaryAction: {
       label: 'Find Out How AI Lead Handling Works',
-      href: '/contact?system=ai-lead-handling&source=service/ai-lead-handling',
+      href: buildContactHref({
+        system: 'ai-lead-handling',
+        sourceType: 'service',
+        slug: 'ai-lead-handling',
+      }),
     },
     list: [
       'Faster first response across chat and calls',
@@ -389,6 +395,10 @@ export const aiLeadHandlingPage = {
     description:
       'Tell us how calls, chat, and bookings are handled now. We will show you where response speed and handoff are breaking down.',
     buttonText: 'Automate Your Lead Handling',
-    buttonHref: '/contact?system=ai-lead-handling&source=service/ai-lead-handling',
+    buttonHref: buildContactHref({
+      system: 'ai-lead-handling',
+      sourceType: 'service',
+      slug: 'ai-lead-handling',
+    }),
   },
 } satisfies ServicePageData;

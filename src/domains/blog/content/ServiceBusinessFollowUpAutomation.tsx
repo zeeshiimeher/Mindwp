@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const serviceBusinessFollowUpAutomation: BlogPostData = {
   slug: 'service-business-follow-up-automation',
   title: 'Service Business Follow Up Automation',
-  intent: 'SYSTEM',
   metaTitle: 'Service Business Follow Up Automation Guide',
   metaDescription:
     'Discover how service business follow up automation ensures no lead goes cold with timely sequences that nurture enquiries through to booked jobs automatically.',

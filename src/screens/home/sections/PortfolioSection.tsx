@@ -6,9 +6,10 @@ import { Button } from '@/components/reusable/single/Button';
 import { primaryCta } from '@/config/primaryCta';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
-const portfolioContactHref = buildContactHref('/contact', {
+const portfolioContactHref = buildContactHref({
   system: 'smart-website-systems',
-  source: 'page/home',
+  sourceType: 'page',
+  slug: 'home',
 });
 
 export function PortfolioSection() {

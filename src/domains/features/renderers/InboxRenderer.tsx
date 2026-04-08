@@ -24,17 +24,27 @@ export default function InboxRenderer() {
   const channels = sections.channels;
   const painPoints = sections.painPoints;
   const primarySystem = inboxData.systems[0] ?? 'smart-website-systems';
-  const source = `feature/${inboxData.slug}`;
-  const heroPrimaryAction = hero.primaryAction
+  const heroPrimaryHref = hero.primaryAction?.href;
+  const heroPrimaryAction = hero.primaryAction && heroPrimaryHref
     ? {
         ...hero.primaryAction,
-        href: buildContactHref(hero.primaryAction.href, { system: primarySystem, source }),
+        href: buildContactHref(heroPrimaryHref, {
+          system: primarySystem,
+          sourceType: 'feature',
+          slug: inboxData.slug,
+        }),
       }
     : undefined;
-  const ctaPrimaryAction = {
-    ...cta.primaryAction,
-    href: buildContactHref(cta.primaryAction.href, { system: primarySystem, source }),
-  };
+  const ctaPrimaryAction = cta.primaryAction.href
+    ? {
+        ...cta.primaryAction,
+        href: buildContactHref(cta.primaryAction.href, {
+          system: primarySystem,
+          sourceType: 'feature',
+          slug: inboxData.slug,
+        }),
+      }
+    : cta.primaryAction;
 
   if (!channels || !painPoints) {
     return null;

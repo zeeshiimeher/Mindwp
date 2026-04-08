@@ -14,6 +14,8 @@ import {
   Workflow,
 } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { FeaturePageData } from '../types';
 
 const crmFaqItems = [
@@ -96,7 +98,7 @@ export const crmData: FeaturePageData = {
       'This CRM layer organizes contacts, conversations, and activity into one structured view. It connects directly to enquiry capture, booking, and follow-up so your team can work from one governed system.',
     primaryAction: {
       label: 'Review How CRM Follow-Up Works',
-      href: '/contact?system=revenue-growth&source=feature/crm',
+      href: buildContactHref({ system: 'revenue-growth', sourceType: 'feature', slug: 'crm' }),
     },
     stats: [
       { value: 'Unified', label: 'Inbox' },
@@ -295,7 +297,7 @@ export const crmData: FeaturePageData = {
       'Tell us how leads and follow-up are handled now. We will show you where pipeline gaps are slowing replies and conversions.',
     primaryAction: {
       label: 'Keep Every Lead Moving',
-      href: '/contact?system=revenue-growth&source=feature/crm',
+      href: buildContactHref({ system: 'revenue-growth', sourceType: 'feature', slug: 'crm' }),
     },
   },
 };

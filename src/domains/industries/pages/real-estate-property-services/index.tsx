@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -23,7 +24,11 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
       'A real estate or property service website should support enquiry qualification, appointment or valuation booking, trust-building, and follow-up — without making the team manage every handoff manually.',
     primaryAction: {
       label: 'Capture More Qualified Enquiries',
-      href: '/contact',
+      href: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'industry',
+        slug: 'real-estate-property-services',
+      }),
     },
     secondaryAction: {
       label: 'See Smart Website Systems',
@@ -382,7 +387,14 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
       title: 'Map the property category around how your business actually works',
       description:
         'If property enquiries feel inconsistent, we can show you how to turn more of them into qualified conversations.',
-      primaryAction: { label: 'Capture More Qualified Enquiries', href: '/contact' },
+      primaryAction: {
+        label: 'Capture More Qualified Enquiries',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'real-estate-property-services',
+        }),
+      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',

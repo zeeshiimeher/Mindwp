@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const roofingEstimateFollowUpDelays: BlogPostData = {
   slug: 'roofing-estimate-follow-up-delays',
   title: 'Roofing Estimate Follow Up Delays',
-  intent: 'PROBLEM',
   metaTitle: 'Roofing Estimate Follow Up Delays and How to Fix Them',
   metaDescription:
     'Explore common roofing estimate follow up delays that cost jobs and learn how automated CRM sequences ensure every quote receives timely follow-up.',

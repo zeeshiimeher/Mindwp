@@ -49,6 +49,8 @@ import {
   Zap,
 } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
+
 import type { ServicePageData } from '../types';
 
 export const crmAutomationPage = {
@@ -824,6 +826,10 @@ export const crmAutomationPage = {
     description:
       'Tell us how leads are routed today. We will show you where ownership, stages, and follow-up are breaking down.',
     buttonText: 'Set Up Your CRM Pipeline',
-    buttonHref: '/contact?system=crm-automation&source=service/crm-infrastructure-implementation',
+    buttonHref: buildContactHref({
+      system: 'crm-automation',
+      sourceType: 'service',
+      slug: 'crm-infrastructure-implementation',
+    }),
   },
 } satisfies ServicePageData;

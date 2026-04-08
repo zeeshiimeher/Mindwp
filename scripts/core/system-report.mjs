@@ -183,15 +183,6 @@ function collectBlockingItems(validation, contentReport, conversionReport, graph
 function collectAdvisoryItems(validation, contentReport, conversionReport, graphReport) {
   const items = [];
 
-  if ((contentReport?.summary?.missingIntent ?? 0) > 0) {
-    pushItem(items, {
-      source: 'validate-content-contract',
-      code: 'missing_intent',
-      count: contentReport.summary.missingIntent,
-      message: `Missing recommended intent metadata on ${contentReport.summary.missingIntent} content node(s).`,
-    });
-  }
-
   const advisoryMetadataCount = Math.max(
     0,
     (contentReport?.summary?.missingMetadata ?? 0) - (contentReport?.summary?.missingSystem ?? 0)
@@ -294,9 +285,7 @@ function buildPriority(blockingItems, advisoryItems) {
         ? `Fix CTA system param (${item.count} page${item.count === 1 ? '' : 's'})`
         : item.code === 'cta_missing_source'
           ? `Fix CTA source param (${item.count} page${item.count === 1 ? '' : 's'})`
-          : item.code === 'missing_intent'
-            ? `Add missing intent (${item.count} node${item.count === 1 ? '' : 's'})`
-            : item.code === 'orphan_nodes'
+          : item.code === 'orphan_nodes'
               ? `Resolve orphan nodes (${item.count})`
               : item.message,
     })),
@@ -358,7 +347,6 @@ function main() {
     },
     content: {
       missing_system: contentReport?.summary?.missingSystem ?? 0,
-      missing_intent: contentReport?.summary?.missingIntent ?? 0,
       missing_metadata: contentReport?.summary?.missingMetadata ?? 0,
     },
     conversion: {

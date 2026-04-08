@@ -115,7 +115,6 @@ export const trackingSalonClientLifetimeValue: ResourceData = {
   title: 'Tracking Salon Client Lifetime Value',
   description:
     'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
-  intent: 'ACTIONABLE',
   category: 'revenue-growth',
   publishedAt: '2026-02-28',
   systems: ['crm-automation', 'revenue-growth'],

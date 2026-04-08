@@ -41,7 +41,7 @@ import {
 import { Card } from '@/components/ui/card';
 import { primaryCta } from '@/config/primaryCta';
 import { categories } from '@/domains/resources/api';
-import type { ResourceCategory, ResourceIntent } from '@/domains/resources/types';
+import type { ResourceCategory } from '@/domains/resources/types';
 import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
@@ -94,8 +94,6 @@ export type ResourcePageTemplateProps = {
     description?: string;
   };
   sections: ResourcePageTemplateSection[];
-  /** Resource intent classification */
-  intent?: ResourceIntent;
   /** System keys for CTA routing context */
   systems?: string[];
 };
@@ -138,7 +136,8 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   function decorateContactHref(href: string): string {
     return buildContactHref(href, {
       system: primarySystem,
-      source: `resource/${currentSlug}`,
+      sourceType: 'resource',
+      slug: currentSlug,
     });
   }
 
@@ -468,7 +467,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
                     cssPrefix='btn-block'
                   />
                   <Button
-                    href={decorateContactHref('/contact')}
+                    href={decorateContactHref(primaryCta.href)}
                     variant='outline'
                     size='sm'
                     label={sidebarCTAData.secondaryAction}

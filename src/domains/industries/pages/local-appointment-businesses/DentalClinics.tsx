@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildDentalClinicsIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -188,7 +189,11 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
           'Treatment and timing context',
         ],
         buttonText: 'Talk Through Scope',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'dental-clinics',
+        }),
       },
       {
         name: 'Booking and readiness flow',
@@ -199,7 +204,11 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
         features: ['Appointment scheduling support', 'Reminder structure', 'Preparation guidance'],
         popular: true,
         buttonText: 'See the Setup',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'dental-clinics',
+        }),
       },
       {
         name: 'Follow-up and trust reinforcement',
@@ -209,7 +218,11 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
         features: ['Nurture workflows', 'Review request support', 'Trust reinforcement'],
         buttonText: 'Request Details',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'dental-clinics',
+        }),
       },
     ],
   };
@@ -369,7 +382,14 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Reduce Missed Appointments', href: '/contact' },
+      primaryAction: {
+        label: 'Reduce Missed Appointments',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'dental-clinics',
+        }),
+      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -388,7 +408,15 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier dental booking system',
       description:
         'If unclear enquiry quality, loose booking flow, inconsistent follow-up, or weak trust proof are slowing things down, we can map a practical system around how the patient pipeline actually runs.',
-      primaryAction: { variant: 'white', label: 'Reduce Missed Appointments', href: '/contact' },
+      primaryAction: {
+        variant: 'white',
+        label: 'Reduce Missed Appointments',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'dental-clinics',
+        }),
+      },
       secondaryAction: {
         label: 'See Local Appointment Businesses',
         href: '/industries/local-appointment-businesses',

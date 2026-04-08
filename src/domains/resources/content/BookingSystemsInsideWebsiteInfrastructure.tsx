@@ -168,7 +168,6 @@ export const bookingSystemsInsideWebsiteInfrastructure: ResourceData = {
   title: 'Booking Systems Inside Website Infrastructure',
   description:
     'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-  intent: 'ACTIONABLE',
   category: 'smart-website-systems',
   publishedAt: '2025-11-17',
   systems: ['smart-website-systems'],

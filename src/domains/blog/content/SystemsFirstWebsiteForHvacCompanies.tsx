@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const systemsFirstWebsiteForHvacCompanies: BlogPostData = {
   slug: 'systems-first-website-for-hvac-companies',
   title: 'Systems First Website for HVAC Companies',
-  intent: 'SYSTEM',
   metaTitle: 'Systems First Website for HVAC Companies',
   metaDescription:
     'Learn how a systems first website for HVAC companies connects lead capture, automation, and CRM into infrastructure that generates service calls.',

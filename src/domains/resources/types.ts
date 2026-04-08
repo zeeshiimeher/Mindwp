@@ -7,8 +7,6 @@ export { RESOURCE_CATEGORY_REGISTRY } from './categoryRegistry';
 
 import type { ResourceCategory } from './categoryRegistry';
 
-export type ResourceIntent = 'ACTIONABLE' | 'EDUCATIONAL' | 'EXAMPLE';
-
 export type ResourceCategoryMetadata = {
   id: ResourceCategory;
   label: string;
@@ -26,7 +24,6 @@ export interface ResourceData {
   slug: string;
   title: string;
   description: string;
-  intent: ResourceIntent;
   category: ResourceCategory;
   publishedAt: string;
   updatedAt?: string;

@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const automotiveReviewGenerationSystem: BlogPostData = {
   slug: 'automotive-review-generation-system',
   title: 'Automotive Review Generation System',
-  intent: 'SYSTEM',
   metaTitle: 'Automotive Review Generation System for Shops',
   metaDescription:
     'Learn how an automotive review generation system automates post-service review requests to build workshop reputation and attract new customers.',

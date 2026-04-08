@@ -1,4 +1,5 @@
 import type { CaseStudyContent, CaseStudyTemplateSection } from '@/domains/case-studies/templates';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { CaseStudyData } from '../types';
 
@@ -232,7 +233,11 @@ function buildStormSeasonLeadHandlingSystem(): CaseStudyData {
       },
       cta: {
         primaryButtonLabel: 'Handle Storm Leads Faster',
-        primaryButtonHref: '/contact',
+        primaryButtonHref: buildContactHref({
+          system: 'ai-lead-handling',
+          sourceType: 'case-study',
+          slug: 'storm-season-lead-handling-system',
+        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

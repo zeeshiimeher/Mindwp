@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const missedCallRecoveryForServiceBusinesses: BlogPostData = {
   slug: 'missed-call-recovery-for-service-businesses',
   title: 'Missed Call Recovery for Service Businesses',
-  intent: 'PROBLEM',
   metaTitle: 'Missed Call Recovery for Service Businesses',
   metaDescription:
     'Learn how missed call recovery for service businesses uses automated follow-up to recapture lost enquiries and prevent revenue leaking through unanswered calls.',

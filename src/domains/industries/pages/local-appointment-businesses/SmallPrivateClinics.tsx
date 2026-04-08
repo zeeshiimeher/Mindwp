@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -188,7 +189,11 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
           'Treatment and timing context',
         ],
         buttonText: 'Talk Through Scope',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'small-private-clinics',
+        }),
       },
       {
         name: 'Booking and readiness flow',
@@ -199,7 +204,11 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
         features: ['Appointment scheduling support', 'Reminder structure', 'Preparation guidance'],
         popular: true,
         buttonText: 'See the Setup',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'small-private-clinics',
+        }),
       },
       {
         name: 'Follow-up and trust reinforcement',
@@ -209,7 +218,11 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
         features: ['Nurture workflows', 'Review request support', 'Trust reinforcement'],
         buttonText: 'Request Details',
-        buttonHref: '/contact',
+        buttonHref: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'small-private-clinics',
+        }),
       },
     ],
   };
@@ -369,7 +382,14 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: { label: 'Book More Patient Visits', href: '/contact' },
+      primaryAction: {
+        label: 'Book More Patient Visits',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'small-private-clinics',
+        }),
+      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -388,7 +408,15 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier clinic booking and follow-up system',
       description:
         'If your clinic is dealing with unclear enquiry quality, loose booking flow, or inconsistent follow-up — we can map a practical system around how the pipeline actually runs.',
-      primaryAction: { variant: 'white', label: 'Book More Patient Visits', href: '/contact' },
+      primaryAction: {
+        variant: 'white',
+        label: 'Book More Patient Visits',
+        href: buildContactHref({
+          system: 'smart-website-systems',
+          sourceType: 'industry',
+          slug: 'small-private-clinics',
+        }),
+      },
       secondaryAction: {
         label: 'See Local Appointment Businesses',
         href: '/industries/local-appointment-businesses',

@@ -3,7 +3,6 @@ import type { BlogPostData } from '@/domains/blog/types';
 export const whyServiceBusinessWebsitesFailToConvert: BlogPostData = {
   slug: 'why-service-business-websites-fail-to-convert',
   title: 'Why Service Business Websites Fail to Convert',
-  intent: 'PROBLEM',
   metaTitle: 'Why Service Business Websites Fail to Convert',
   metaDescription:
     'Discover why service business websites fail to convert and learn how systems-first infrastructure fixes the operational gaps behind poor lead capture.',
