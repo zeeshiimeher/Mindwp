@@ -1565,6 +1565,7 @@ Controlled by the UI layer (`src/config/ui-intelligence.ts`) via **SmartRelatedS
 - Section counts above are maximums. Empty sections are not rendered.
 - Section behavior (allowLinks, allowCTA, allowProof) is governed by `src/config/section-intelligence.ts`.
 - SmartRelatedSection enforces link limits — max 2 sections × 3 items = 6 links per page (Phase 10 Decision 4).
+- Service and feature domain payloads must not define page-local related slot configuration. Related output is resolved from graph rules only.
 - No new page types may be added without updating both this table and the slot definition above.
 
 ---
@@ -2065,6 +2066,7 @@ No other linking system is active. The deprecated internal linking engine (`src/
 ### Rules
 
 - All related content is resolved via the content graph authority resolver.
+- Service- and feature-level `related` config is not a live contract and must not be reintroduced.
 - Scoring formula: `(systemOverlap × 3) + (topicOverlap × 2) + (industryOverlap × 1)` — LOCKED.
 - No page type may display content types outside its slot definition (see RELATED CONTENT SLOT SYSTEM).
 - Max 2 sections per page, max 3 items per section, max 6 total (Phase 10 Decision 4).

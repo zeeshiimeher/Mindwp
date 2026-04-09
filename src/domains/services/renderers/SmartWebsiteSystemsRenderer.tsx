@@ -1,3 +1,4 @@
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   ChecklistCardsSection,
   ComparisonSection,
@@ -7,7 +8,6 @@ import {
   StackedFeatureListSection,
   TechnologyCardsSection,
 } from '@/components/reusable/sections';
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
@@ -18,7 +18,7 @@ import { SmartCTA } from '@/components/system/SmartCTA';
 import { smartWebsiteSystemsPage } from '@/domains/services/data/smart-website-systems';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 import type { ServicePageSections } from '@/domains/services/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface Props {
   data: typeof smartWebsiteSystemsPage;
@@ -50,23 +50,23 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           {/* Value Blocks */}
           {data.sections.value && (
             <SectionWrapper className='smart-websites-value' background='bg-alt'>
-                <SectionIntro
-                  title={data.sections.value.header.title}
-                  description={data.sections.value.header.description}
-                  cssPrefix='smart-websites-value-header'
-                />
-                <div className='l-grid l-gap-6 md:l-grid-2 lg:l-grid-3'>
-                  {data.sections.value.items.map((block, index) => (
-                    <IconBenefitCard
-                      key={index}
-                      icon={block.icon}
-                      title={block.title}
-                      description={block.description}
-                      iconType={block.iconType}
-                      cssPrefix='smart-websites-value-card'
-                    />
-                  ))}
-                </div>
+              <SectionIntro
+                title={data.sections.value.header.title}
+                description={data.sections.value.header.description}
+                cssPrefix='smart-websites-value-header'
+              />
+              <div className='l-grid l-gap-6 md:l-grid-2 lg:l-grid-3'>
+                {data.sections.value.items.map((block, index) => (
+                  <IconBenefitCard
+                    key={index}
+                    icon={block.icon}
+                    title={block.title}
+                    description={block.description}
+                    iconType={block.iconType}
+                    cssPrefix='smart-websites-value-card'
+                  />
+                ))}
+              </div>
             </SectionWrapper>
           )}
           {/* Before/After Comparison */}
@@ -93,24 +93,24 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           {/* Implementation Types */}
           {data.sections.types && (
             <SectionWrapper className='smart-websites-types' background='bg-alt'>
-                <SectionIntro
-                  title={data.sections.types.header.title}
-                  description={data.sections.types.header.description}
-                  cssPrefix='smart-websites-types-header'
-                />
-                <div className='l-grid l-gap-6 md:l-grid-2 lg:l-grid-4'>
-                  {data.sections.types.items.map((type, index) => (
-                    <IconBenefitCard
-                      key={index}
-                      icon={type.icon}
-                      title={type.title}
-                      description={type.description}
-                      keywords={type.keywords}
-                      iconType={type.iconType}
-                      cssPrefix='smart-websites-type-card'
-                    />
-                  ))}
-                </div>
+              <SectionIntro
+                title={data.sections.types.header.title}
+                description={data.sections.types.header.description}
+                cssPrefix='smart-websites-types-header'
+              />
+              <div className='l-grid l-gap-6 md:l-grid-2 lg:l-grid-4'>
+                {data.sections.types.items.map((type, index) => (
+                  <IconBenefitCard
+                    key={index}
+                    icon={type.icon}
+                    title={type.title}
+                    description={type.description}
+                    keywords={type.keywords}
+                    iconType={type.iconType}
+                    cssPrefix='smart-websites-type-card'
+                  />
+                ))}
+              </div>
             </SectionWrapper>
           )}
           <SmartCTA
@@ -151,24 +151,24 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           {/* NEW: Benefits by Business Size */}
           {optionalSections.businessSizes && (
             <SectionWrapper className='smart-websites-business-size' background='bg-base'>
-                <SectionIntro
-                  title={optionalSections.businessSizes.header.title}
-                  description={optionalSections.businessSizes.header.description}
-                  cssPrefix='smart-websites-business-size-header'
-                />
-                <div className='l-grid l-gap-6 md:l-grid-3'>
-                  {optionalSections.businessSizes.items.map((size, index) => (
-                    <IconBenefitCard
-                      key={index}
-                      icon={size.icon}
-                      title={size.title}
-                      benefit={size.benefit}
-                      description={size.description}
-                      iconType={size.iconType}
-                      cssPrefix='smart-websites-size-card'
-                    />
-                  ))}
-                </div>
+              <SectionIntro
+                title={optionalSections.businessSizes.header.title}
+                description={optionalSections.businessSizes.header.description}
+                cssPrefix='smart-websites-business-size-header'
+              />
+              <div className='l-grid l-gap-6 md:l-grid-3'>
+                {optionalSections.businessSizes.items.map((size, index) => (
+                  <IconBenefitCard
+                    key={index}
+                    icon={size.icon}
+                    title={size.title}
+                    benefit={size.benefit}
+                    description={size.description}
+                    iconType={size.iconType}
+                    cssPrefix='smart-websites-size-card'
+                  />
+                ))}
+              </div>
             </SectionWrapper>
           )}
 
@@ -188,24 +188,24 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           {/* NEW: Common Concerns Addressed */}
           {optionalSections.concerns && (
             <SectionWrapper className='smart-websites-concerns' background='bg-alt'>
-                <SectionIntro
-                  title={optionalSections.concerns.header.title}
-                  description={optionalSections.concerns.header.description}
-                  cssPrefix='smart-websites-concerns-header'
-                />
-                <div className='l-grid l-gap-6'>
-                  {optionalSections.concerns.items.map((item, index) => (
-                    <IconBenefitCard
-                      key={index}
-                      icon={item.icon}
-                      title={item.title}
-                      description={item.description}
-                      iconType={item.iconType}
-                      variant='left'
-                      cssPrefix='smart-websites-concern-card'
-                    />
-                  ))}
-                </div>
+              <SectionIntro
+                title={optionalSections.concerns.header.title}
+                description={optionalSections.concerns.header.description}
+                cssPrefix='smart-websites-concerns-header'
+              />
+              <div className='l-grid l-gap-6'>
+                {optionalSections.concerns.items.map((item, index) => (
+                  <IconBenefitCard
+                    key={index}
+                    icon={item.icon}
+                    title={item.title}
+                    description={item.description}
+                    iconType={item.iconType}
+                    variant='left'
+                    cssPrefix='smart-websites-concern-card'
+                  />
+                ))}
+              </div>
             </SectionWrapper>
           )}
 
@@ -253,9 +253,8 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             title={ctaTitle}
             description={ctaDescription}
             primaryAction={{
-              href: buildContactHref({
+              href: buildServiceContactHref({
                 system: data.systems?.[0] ?? 'smart-website-systems',
-                sourceType: 'service',
                 slug,
               }),
               variant: 'white',

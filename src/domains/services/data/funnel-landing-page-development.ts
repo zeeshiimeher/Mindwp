@@ -1,12 +1,15 @@
 import { Calendar, ShoppingBag, Target, Workflow } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+const slug = 'funnel-landing-page-development';
+
 export const funnelLandingPageDevelopmentPage = {
-  slug: 'funnel-landing-page-development',
+  slug,
   systems: ['revenue-growth'],
   topics: ['conversion-optimization', 'service-page-architecture'],
   keywords: [
@@ -18,27 +21,15 @@ export const funnelLandingPageDevelopmentPage = {
   ],
   badge: 'Funnel & Landing Page Development',
   category: 'Implementation Pathway Services',
-  seo: {
+  seo: buildServiceSeo({
+    slug,
     title: 'Funnel & Landing Page Development | Focused offer and campaign page implementation',
     description:
       'Funnel and landing page development for service businesses that need focused offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
-    canonical: '/services/funnel-landing-page-development',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Funnel and landing page development for service businesses',
-        description:
-          'A focused implementation pathway for landing pages, offer pages, and conversion journeys that need tighter page flow, clearer next-step design, and measurable actions.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/funnel-landing-page-development',
-      },
-    },
-  },
+    schemaName: 'Funnel and landing page development for service businesses',
+    schemaDescription:
+      'A focused implementation pathway for landing pages, offer pages, and conversion journeys that need tighter page flow, clearer next-step design, and measurable actions.',
+  }),
   hero: {
     badge: 'Offer-Page Implementation Pathway',
     title:
@@ -47,9 +38,8 @@ export const funnelLandingPageDevelopmentPage = {
       'This service implements focused landing pages and funnel pages for specific offers, campaigns, booking paths, or quote journeys. The goal is tighter page flow, clearer next-step design, and stronger fit between intent and action.',
     primaryAction: {
       label: CTA_LABELS.PRIMARY,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'revenue-growth',
-        sourceType: 'service',
         slug: 'funnel-landing-page-development',
       }),
     },
@@ -78,12 +68,6 @@ export const funnelLandingPageDevelopmentPage = {
         {
           before:
             'A general service page carries too many competing messages for a fast decision path.',
-          after:
-            'The funnel page can reduce noise so the visitor sees a tighter message and action sequence.',
-        },
-        {
-          before:
-            'The page gets attention, but booking, quote request, or conversion handling still feels loosely implemented.',
           after:
             'The page can connect more deliberately into the form, booking, or follow-up path it is meant to support.',
         },
@@ -254,20 +238,13 @@ export const funnelLandingPageDevelopmentPage = {
       cssPrefix: 'funnel-landing-development-faq',
     },
   },
-  related: {
-    variant: 'domain-only',
-    title: 'Related conversion and implementation pages',
-    description:
-      'Funnel and landing page development often connects with conversion strategy, Smart Website structure, and booking or CRM handoff paths.',
-  },
   cta: {
     title: 'Build the right page for the job',
     description:
       'If a specific offer, campaign, or booking path needs a more focused landing page, we can help implement it properly.',
     buttonText: CTA_LABELS.PRIMARY,
-    buttonHref: buildContactHref({
+    buttonHref: buildServiceContactHref({
       system: 'revenue-growth',
-      sourceType: 'service',
       slug: 'funnel-landing-page-development',
     }),
   },

@@ -1,12 +1,15 @@
 import { Clock, Phone, Search } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+const slug = 'missed-call-recovery-system';
+
 export const missedCallRecoverySystemPage = {
-  slug: 'missed-call-recovery-system',
+  slug,
   systems: ['ai-lead-handling'],
   topics: ['missed-calls', 'lead-response-time'],
   keywords: [
@@ -18,27 +21,15 @@ export const missedCallRecoverySystemPage = {
   ],
   badge: 'Missed Call Recovery System',
   category: 'Lead Protection Systems',
-  seo: {
+  seo: buildServiceSeo({
+    slug,
     title: 'Missed Call Recovery System | Lead protection for service businesses',
     description:
       'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
-    canonical: '/services/missed-call-recovery-system',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Missed call recovery system for service businesses',
-        description:
-          'A structured missed call recovery system covering immediate response, text-back workflows, enquiry capture, and follow-up handoff for service businesses.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/missed-call-recovery-system',
-      },
-    },
-  },
+    schemaName: 'Missed call recovery system for service businesses',
+    schemaDescription:
+      'A structured missed call recovery system covering immediate response, text-back workflows, enquiry capture, and follow-up handoff for service businesses.',
+  }),
   hero: {
     badge: 'Lead-Protection Workflow',
     title: 'Missing the call is one problem. Losing the enquiry afterwards is the bigger one.',
@@ -46,9 +37,8 @@ export const missedCallRecoverySystemPage = {
       'This service focuses on what happens after a call is missed. It helps service businesses respond faster, capture the enquiry more cleanly, and move the conversation into the right next step before the lead disappears.',
     primaryAction: {
       label: CTA_LABELS.PRIMARY,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'ai-lead-handling',
-        sourceType: 'service',
         slug: 'missed-call-recovery-system',
       }),
     },
@@ -282,21 +272,14 @@ export const missedCallRecoverySystemPage = {
       cssPrefix: 'missed-call-recovery-faq',
     },
   },
-  related: {
-    variant: 'domain-only',
-    title: 'Related lead-protection and response pages',
-    description:
-      'Missed call recovery usually connects closely with AI lead handling, booking flow, and wider growth systems.',
-  },
   cta: {
     title: 'Stop losing leads after missed calls',
     description:
       'If missed calls are creating avoidable lead leakage, we can help structure a clearer recovery workflow.',
-      buttonText: CTA_LABELS.PRIMARY,
-      buttonHref: buildContactHref({
-        system: 'ai-lead-handling',
-        sourceType: 'service',
-        slug: 'missed-call-recovery-system',
-      }),
+    buttonText: CTA_LABELS.PRIMARY,
+    buttonHref: buildServiceContactHref({
+      system: 'ai-lead-handling',
+      slug: 'missed-call-recovery-system',
+    }),
   },
 } satisfies ServicePageData;

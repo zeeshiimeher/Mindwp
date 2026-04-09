@@ -14,7 +14,7 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
 import { calendarsData } from '@/domains/features/data/calendars';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 
 const BookingVisual = () => (
   <Card className='p-8 bg-white/80 backdrop-blur shadow-xl'>
@@ -78,9 +78,9 @@ export default function CalendarsRenderer() {
     hero.primaryAction && heroPrimaryHref
       ? {
           ...hero.primaryAction,
-          href: buildContactHref(heroPrimaryHref, {
+          href: buildFeatureContactHref({
+            baseHref: heroPrimaryHref,
             system: primarySystem,
-            sourceType: 'feature',
             slug: calendarsData.slug,
           }),
         }
@@ -88,9 +88,9 @@ export default function CalendarsRenderer() {
   const ctaPrimaryAction = cta.primaryAction.href
     ? {
         ...cta.primaryAction,
-        href: buildContactHref(cta.primaryAction.href, {
+        href: buildFeatureContactHref({
+          baseHref: cta.primaryAction.href,
           system: primarySystem,
-          sourceType: 'feature',
           slug: calendarsData.slug,
         }),
       }

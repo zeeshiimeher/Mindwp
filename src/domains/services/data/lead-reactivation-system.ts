@@ -11,12 +11,15 @@ import {
 } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+const slug = 'lead-reactivation-system';
+
 export const leadReactivationSystemPage = {
-  slug: 'lead-reactivation-system',
+  slug,
   systems: ['revenue-growth'],
   topics: ['client-reactivation', 'follow-up'],
   keywords: [
@@ -28,27 +31,15 @@ export const leadReactivationSystemPage = {
   ],
   badge: 'Lead Reactivation System',
   category: 'Lifecycle Recovery Systems',
-  seo: {
+  seo: buildServiceSeo({
+    slug,
     title: 'Lead Reactivation System | Recover value from old enquiries and dormant pipeline',
     description:
       'Lead reactivation systems for service businesses that need a cleaner way to re-engage old enquiries, dormant quotes, and cold opportunities without random follow-up.',
-    canonical: '/services/lead-reactivation-system',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Lead reactivation system for service businesses',
-        description:
-          'A structured lead reactivation system covering old enquiry segmentation, follow-up timing, re-engagement messaging, and clearer ownership for dormant opportunities.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/lead-reactivation-system',
-      },
-    },
-  },
+    schemaName: 'Lead reactivation system for service businesses',
+    schemaDescription:
+      'A structured lead reactivation system covering old enquiry segmentation, follow-up timing, re-engagement messaging, and clearer ownership for dormant opportunities.',
+  }),
   hero: {
     badge: 'Recovery & Follow-Up Layer',
     title: 'Old leads rarely come back because someone remembers to chase them at the right time',
@@ -56,9 +47,8 @@ export const leadReactivationSystemPage = {
       'This service helps service businesses re-engage old enquiries, stalled quotes, and dormant pipeline value through structured follow-up. The goal is a clearer system so good opportunities are not left sitting unused.',
     primaryAction: {
       label: CTA_LABELS.PRIMARY,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'revenue-growth',
-        sourceType: 'service',
         slug: 'lead-reactivation-system',
       }),
     },
@@ -356,21 +346,14 @@ export const leadReactivationSystemPage = {
       cssPrefix: 'lead-reactivation-faq',
     },
   },
-  related: {
-    variant: 'domain-only',
-    title: 'Related follow-up and recovery pages',
-    description:
-      'Lead reactivation often connects with CRM structure, AI handling, and wider revenue-system work.',
-  },
   cta: {
     title: 'Bring dormant opportunities back to life',
     description:
       'If old enquiries, stalled quotes, or past customers are sitting untouched, we can help structure a clearer reactivation workflow.',
-      buttonText: CTA_LABELS.PRIMARY,
-      buttonHref: buildContactHref({
-        system: 'revenue-growth',
-        sourceType: 'service',
-        slug: 'lead-reactivation-system',
-      }),
+    buttonText: CTA_LABELS.PRIMARY,
+    buttonHref: buildServiceContactHref({
+      system: 'revenue-growth',
+      slug: 'lead-reactivation-system',
+    }),
   },
 } satisfies ServicePageData;

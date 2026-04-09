@@ -11,8 +11,9 @@ import {
   Users,
 } from 'lucide-react';
 
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 
+import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
 
 const voicecallsFaqItems = [
@@ -68,33 +69,21 @@ const voicecallsFaqItems = [
   },
 ];
 
+const slug = 'voicecalls';
+
 export const voicecallsData: FeaturePageData = {
-  slug: 'voicecalls',
+  slug,
   systems: ['ai-lead-handling'],
   topics: ['missed-calls', 'lead-response-time'],
-  seo: {
+  seo: buildFeatureSeo({
+    slug,
     title: 'Voice Calls | AI-Powered Call Handling Layer',
     description:
       'AI-powered voice call handling for booking, message capture, and call routing with consistent 24/7 support.',
-    canonical: '/features/voicecalls',
-    schema: {
-      primary: {
-        '@context': 'https://schema.org',
-        '@type': 'SoftwareApplication',
-        name: 'Voice Calls',
-        description:
-          'AI-powered voice call handling for booking, message capture, and call routing with consistent 24/7 support.',
-        url: '/features/voicecalls',
-        applicationCategory: 'BusinessApplication',
-        operatingSystem: 'Web Browser',
-        publisher: {
-          '@type': 'Organization',
-          name: 'MindWP',
-          url: 'https://mindwp.com',
-        },
-      },
-    },
-  },
+    schemaName: 'Voice Calls',
+    schemaDescription:
+      'AI-powered voice call handling for booking, message capture, and call routing with consistent 24/7 support.',
+  }),
   hero: {
     badge: 'AI-Powered Phone Assistant',
     title: 'AI phone assistant for consistent call handling',
@@ -102,10 +91,9 @@ export const voicecallsData: FeaturePageData = {
       'An AI phone assistant that answers calls, books appointments, takes messages, and routes enquiries clearly during business hours or after hours.',
     primaryAction: {
       label: 'Understand How AI Answers Calls',
-      href: buildContactHref({
+      href: buildFeatureContactHref({
         system: 'ai-lead-handling',
-        sourceType: 'feature',
-        slug: 'voicecalls',
+        slug,
       }),
     },
     stats: [
@@ -314,10 +302,9 @@ export const voicecallsData: FeaturePageData = {
       'Tell us how calls are handled now. We will show you where voice AI can stop missed enquiries and tighten call routing.',
     primaryAction: {
       label: 'Stop Missing Calls with AI',
-      href: buildContactHref({
+      href: buildFeatureContactHref({
         system: 'ai-lead-handling',
-        sourceType: 'feature',
-        slug: 'voicecalls',
+        slug,
       }),
     },
   },

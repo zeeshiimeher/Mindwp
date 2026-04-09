@@ -1,5 +1,5 @@
-import { OperationalShiftCardsSection } from '@/components/reusable/sections/core/OperationalShiftCardsSection';
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
+import { OperationalShiftCardsSection } from '@/components/reusable/sections/core/OperationalShiftCardsSection';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import {
   IconListCard,
@@ -12,7 +12,7 @@ import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { resolveCtaLabel } from '@/config/cta-labels';
 import { crmAutomationPage } from '@/domains/services/data/crm-automation';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface CRMAutomationRendererProps {
   data: typeof crmAutomationPage;
@@ -34,13 +34,12 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
   const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
   const heroPrimaryAction = (hero as { primaryAction?: { label: string; href: string } })
     .primaryAction ?? {
-      label: resolveCtaLabel(data.systems?.[0] ?? 'crm-automation'),
-      href: buildContactHref({
-        system: data.systems?.[0] ?? 'crm-automation',
-        sourceType: 'service',
-        slug,
-      }),
-    };
+    label: resolveCtaLabel(data.systems?.[0] ?? 'crm-automation'),
+    href: buildServiceContactHref({
+      system: data.systems?.[0] ?? 'crm-automation',
+      slug,
+    }),
+  };
 
   return (
     <>
@@ -136,55 +135,61 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
           </SectionWrapper>
 
           <SectionWrapper className='crm-automation-governance'>
-              <SectionIntro
-                badge={governance.badge}
-                title={governance.title}
-                description={governance.description}
-                cssPrefix={governance.cssPrefix}
-              />
+            <SectionIntro
+              badge={governance.badge}
+              title={governance.title}
+              description={governance.description}
+              cssPrefix={governance.cssPrefix}
+            />
           </SectionWrapper>
 
           {/* Qualification Section */}
           <SectionWrapper className='crm-automation-qualification' background='bg-alt'>
-              <SectionIntro
-                title={qualification.title}
-                description={qualification.description}
-                cssPrefix={qualification.cssPrefix}
-              />
+            <SectionIntro
+              title={qualification.title}
+              description={qualification.description}
+              cssPrefix={qualification.cssPrefix}
+            />
 
-              <div className='l-grid l-gap-8 md:l-grid-2'>
-                <div>
-                  <h3 className='mb-4'>{qualification.strongFitTitle}</h3>
-                  <ul className='l-stack'>
-                    {qualification.strongFitItems.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className='mb-4'>{qualification.notDesignedTitle}</h3>
-                  <ul className='l-stack'>
-                    {qualification.notDesignedItems.map((item, index) => (
-                      <li key={index}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
+            <div className='l-grid l-gap-8 md:l-grid-2'>
+              <div>
+                <h3 className='mb-4'>{qualification.strongFitTitle}</h3>
+                <ul className='l-stack'>
+                  {qualification.strongFitItems.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
               </div>
+
+              <div>
+                <h3 className='mb-4'>{qualification.notDesignedTitle}</h3>
+                <ul className='l-stack'>
+                  {qualification.notDesignedItems.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </SectionWrapper>
           <SectionWrapper className='crm-automation-connection'>
-              <SectionIntro
-                badge={connection.badge}
-                title={connection.title}
-                description={connection.description}
-                cssPrefix={connection.cssPrefix}
-              />
+            <SectionIntro
+              badge={connection.badge}
+              title={connection.title}
+              description={connection.description}
+              cssPrefix={connection.cssPrefix}
+            />
           </SectionWrapper>
 
           <ServiceCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
+            primaryAction={{
+              href: buildServiceContactHref({
+                system: data.systems?.[0] ?? 'smart-website-systems',
+                slug,
+              }),
+              variant: 'white',
+            }}
           />
         </main>
       </ErrorBoundary>

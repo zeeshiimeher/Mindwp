@@ -5,7 +5,7 @@ import JsonLd from '@/components/system/JsonLd';
 import { categories, getCategoryColors, resources } from '@/domains/resources/api';
 import ResourceCategoryTemplate from '@/domains/resources/templates/ResourceCategoryTemplate';
 import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates';
-import { getInventoryMetadata } from '@/lib/content-quality/inventory';
+import { getResourceCategoryMetadata } from '@/lib/seo/pageMetadata';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 export const dynamicParams = false;
@@ -32,7 +32,7 @@ export async function generateMetadata({
     return {};
   }
 
-  return getInventoryMetadata(`/resources/category/${category.slug}`);
+  return getResourceCategoryMetadata(`/resources/category/${category.slug}`);
 }
 
 export default async function Page({ params }: { params: Promise<{ categorySlug: string }> }) {

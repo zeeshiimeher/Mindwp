@@ -14,8 +14,9 @@ import {
   Workflow,
 } from 'lucide-react';
 
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 
+import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
 
 const crmFaqItems = [
@@ -64,33 +65,21 @@ const crmFaqItems = [
   },
 ];
 
+const slug = 'crm';
+
 export const crmData: FeaturePageData = {
-  slug: 'crm',
+  slug,
   systems: ['revenue-growth'],
   topics: ['lead-management', 'crm-visibility'],
-  seo: {
+  seo: buildFeatureSeo({
+    slug,
     title: 'CRM | Structured Contact and Follow-Up Layer',
     description:
       'Structured CRM integrated into your website system for contact management, unified communications, and reliable follow-up workflows.',
-    canonical: '/features/crm',
-    schema: {
-      primary: {
-        '@context': 'https://schema.org',
-        '@type': 'SoftwareApplication',
-        name: 'CRM',
-        description:
-          'Structured CRM integrated into your website system for contact management, unified communications, and reliable follow-up workflows.',
-        url: '/features/crm',
-        applicationCategory: 'BusinessApplication',
-        operatingSystem: 'Web Browser',
-        publisher: {
-          '@type': 'Organization',
-          name: 'MindWP',
-          url: 'https://mindwp.com',
-        },
-      },
-    },
-  },
+    schemaName: 'CRM',
+    schemaDescription:
+      'Structured CRM integrated into your website system for contact management, unified communications, and reliable follow-up workflows.',
+  }),
   hero: {
     badge: 'CRM Layer',
     title: 'Structured CRM Integrated into Your System',
@@ -98,7 +87,7 @@ export const crmData: FeaturePageData = {
       'This CRM layer organizes contacts, conversations, and activity into one structured view. It connects directly to enquiry capture, booking, and follow-up so your team can work from one governed system.',
     primaryAction: {
       label: 'Review How CRM Follow-Up Works',
-      href: buildContactHref({ system: 'revenue-growth', sourceType: 'feature', slug: 'crm' }),
+      href: buildFeatureContactHref({ system: 'revenue-growth', slug }),
     },
     stats: [
       { value: 'Unified', label: 'Inbox' },
@@ -297,7 +286,7 @@ export const crmData: FeaturePageData = {
       'Tell us how leads and follow-up are handled now. We will show you where pipeline gaps are slowing replies and conversions.',
     primaryAction: {
       label: 'Keep Every Lead Moving',
-      href: buildContactHref({ system: 'revenue-growth', sourceType: 'feature', slug: 'crm' }),
+      href: buildFeatureContactHref({ system: 'revenue-growth', slug }),
     },
   },
 };

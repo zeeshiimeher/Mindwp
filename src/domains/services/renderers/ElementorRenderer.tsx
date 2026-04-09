@@ -1,16 +1,16 @@
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   ContentCardsGridSection,
   FeatureChecklistCardsSection,
   IconBenefitCardsSection,
   ProcessStepsSection,
 } from '@/components/reusable/sections';
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { elementorPage } from '@/domains/services/data/elementor';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface ElementorRendererProps {
   data: typeof elementorPage;
@@ -39,9 +39,9 @@ export function ElementorRenderer({ data, slug }: ElementorRendererProps) {
 
           {/* Design File Conversion */}
           <SectionWrapper className='elementor-conversion'>
-              <h2 className='mb-4'>{conversionSection.title}</h2>
-              <p className='text-muted-foreground'>{conversionSection.description1}</p>
-              <p className='text-muted-foreground mt-4'>{conversionSection.description2}</p>
+            <h2 className='mb-4'>{conversionSection.title}</h2>
+            <p className='text-muted-foreground'>{conversionSection.description1}</p>
+            <p className='text-muted-foreground mt-4'>{conversionSection.description2}</p>
           </SectionWrapper>
 
           {/* Benefits */}
@@ -89,7 +89,13 @@ export function ElementorRenderer({ data, slug }: ElementorRendererProps) {
           <ServiceCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
+            primaryAction={{
+              href: buildServiceContactHref({
+                system: data.systems?.[0] ?? 'smart-website-systems',
+                slug,
+              }),
+              variant: 'white',
+            }}
           />
         </main>
       </ErrorBoundary>

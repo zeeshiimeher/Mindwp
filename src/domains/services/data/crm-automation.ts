@@ -50,12 +50,15 @@ import {
 } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+const slug = 'crm-infrastructure-implementation';
+
 export const crmAutomationPage = {
-  slug: 'crm-infrastructure-implementation',
+  slug,
   systems: ['crm-automation'],
   topics: ['crm-pipeline', 'crm-integration', 'lead-qualification', 'pipeline-architecture'],
   keywords: [
@@ -67,27 +70,15 @@ export const crmAutomationPage = {
   ],
   badge: 'CRM Infrastructure Implementation',
   category: 'Implementation Services',
-  seo: {
+  seo: buildServiceSeo({
+    slug,
     title: 'CRM Infrastructure Implementation | Structured CRM Setup for Service Businesses',
     description:
       'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
-    canonical: '/services/crm-infrastructure-implementation',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'CRM Infrastructure Implementation for Service Businesses',
-        description:
-          'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/crm-infrastructure-implementation',
-      },
-    },
-  },
+    schemaName: 'CRM Infrastructure Implementation for Service Businesses',
+    schemaDescription:
+      'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+  }),
   hero: {
     badge: 'Enquiry & Follow-Up Infrastructure',
     title: 'A CRM works when routing, ownership, and follow-up are defined — not assumed',
@@ -827,10 +818,9 @@ export const crmAutomationPage = {
     description:
       'Tell us how leads are routed today. We will show you where ownership, stages, and follow-up are breaking down.',
     buttonText: CTA_LABELS.PRIMARY,
-      buttonHref: buildContactHref({
-        system: 'crm-automation',
-        sourceType: 'service',
-        slug: 'crm-infrastructure-implementation',
-      }),
+    buttonHref: buildServiceContactHref({
+      system: 'crm-automation',
+      slug: 'crm-infrastructure-implementation',
+    }),
   },
 } satisfies ServicePageData;

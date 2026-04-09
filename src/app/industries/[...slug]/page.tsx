@@ -7,8 +7,8 @@ import RelatedContentSection from '@/components/system/RelatedContentSection';
 import { getCaseStudiesTemplateMetadataByIndustryCategory } from '@/domains/case-studies/data';
 import { getIndustryDataByPath, renderIndustryPageByPath } from '@/domains/industries/config';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
-import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { getRelatedContent } from '@/lib/graph/query';
+import { getIndustryMetadata } from '@/lib/seo/pageMetadata';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
@@ -102,7 +102,7 @@ export async function generateMetadata({
   if (!resolved) return {};
   const { node } = resolved;
 
-  return getInventoryMetadata(node.path);
+  return getIndustryMetadata(node.path);
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string[] }> }) {

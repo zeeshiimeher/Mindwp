@@ -1,10 +1,10 @@
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   DualToneChecklistComparisonSection,
   ProblemCardsSection,
   ProcessStepsSection,
   StackedFeatureListSection,
 } from '@/components/reusable/sections';
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { AuditChecklistCard } from '@/components/reusable/single/AuditChecklistCard';
 import { ChecklistRow } from '@/components/reusable/single/ChecklistRow';
@@ -16,7 +16,7 @@ import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { growthRevenueSystemsPage } from '@/domains/services/data/growth-revenue-systems';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface GrowthRevenueSystemsRendererProps {
   data: typeof growthRevenueSystemsPage;
@@ -62,71 +62,68 @@ export function GrowthRevenueSystemsRenderer({ data, slug }: GrowthRevenueSystem
 
           {/* What We Audit */}
           <SectionWrapper className='technical-audit-areas' background='bg-alt'>
-              <SectionIntro
-                badge={auditAreas.header.badge}
-                title={auditAreas.header.title}
-                description={auditAreas.header.description}
-                cssPrefix={auditAreas.header.cssPrefix}
-              />
+            <SectionIntro
+              badge={auditAreas.header.badge}
+              title={auditAreas.header.title}
+              description={auditAreas.header.description}
+              cssPrefix={auditAreas.header.cssPrefix}
+            />
 
-              <div className='l-grid l-gap-6 md:l-grid-2 lg:l-grid-4'>
-                {auditAreas.items.map((area, index) => (
-                  <AuditChecklistCard
-                    key={index}
-                    icon={area.icon}
-                    title={area.title}
-                    description={area.description}
-                    checks={area.checks}
-                    iconType={area.iconType}
-                  />
-                ))}
-              </div>
+            <div className='l-grid l-gap-6 md:l-grid-2 lg:l-grid-4'>
+              {auditAreas.items.map((area, index) => (
+                <AuditChecklistCard
+                  key={index}
+                  icon={area.icon}
+                  title={area.title}
+                  description={area.description}
+                  checks={area.checks}
+                  iconType={area.iconType}
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <SectionWrapper className='technical-audit-wordpress'>
-              <SectionIntro
-                badge={wordpressContext.header.badge}
-                title={wordpressContext.header.title}
-                description={wordpressContext.header.description}
-                cssPrefix={wordpressContext.header.cssPrefix}
-                alignment={wordpressContext.header.alignment}
-              />
+            <SectionIntro
+              badge={wordpressContext.header.badge}
+              title={wordpressContext.header.title}
+              description={wordpressContext.header.description}
+              cssPrefix={wordpressContext.header.cssPrefix}
+              alignment={wordpressContext.header.alignment}
+            />
 
-              <div className='l-grid l-gap-8 l-items-start lg:l-grid-2'>
-                <ul className='l-stack'>
-                  {wordpressContext.listItems.map((item: string, index: number) => (
-                    <ChecklistRow key={index} color='icon-text-accent'>
-                      {item}
-                    </ChecklistRow>
-                  ))}
-                </ul>
-                <RiskListCard
-                  title={wordpressContext.issuesTitle}
-                  issues={wordpressContext.issues}
-                />
-              </div>
+            <div className='l-grid l-gap-8 l-items-start lg:l-grid-2'>
+              <ul className='l-stack'>
+                {wordpressContext.listItems.map((item: string, index: number) => (
+                  <ChecklistRow key={index} color='icon-text-accent'>
+                    {item}
+                  </ChecklistRow>
+                ))}
+              </ul>
+              <RiskListCard title={wordpressContext.issuesTitle} issues={wordpressContext.issues} />
+            </div>
           </SectionWrapper>
 
           {/* What You Get */}
           <SectionWrapper className='technical-audit-deliverables' background='bg-base'>
-              <SectionIntro
-                badge={deliverables.header.badge}
-                title={deliverables.header.title}
-                description={deliverables.header.description}
-                cssPrefix={deliverables.header.cssPrefix}
-              />
+            <SectionIntro
+              badge={deliverables.header.badge}
+              title={deliverables.header.title}
+              description={deliverables.header.description}
+              cssPrefix={deliverables.header.cssPrefix}
+            />
 
-              <div className='l-grid l-gap-6 l-mx-auto md:l-grid-2 lg:l-grid-3'>
-                {deliverables.items.map((deliverable, index) => (
-                  <IconBenefitCard
-                    key={index}
-                    icon={deliverable.icon}
-                    title={deliverable.title}
-                    description={deliverable.description}
-                    iconType={deliverable.iconType}
-                  />
-                ))}
-              </div>
+            <div className='l-grid l-gap-6 l-mx-auto md:l-grid-2 lg:l-grid-3'>
+              {deliverables.items.map((deliverable, index) => (
+                <IconBenefitCard
+                  key={index}
+                  icon={deliverable.icon}
+                  title={deliverable.title}
+                  description={deliverable.description}
+                  iconType={deliverable.iconType}
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           {/* Process */}
@@ -177,7 +174,13 @@ export function GrowthRevenueSystemsRenderer({ data, slug }: GrowthRevenueSystem
           <ServiceCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
+            primaryAction={{
+              href: buildServiceContactHref({
+                system: data.systems?.[0] ?? 'smart-website-systems',
+                slug,
+              }),
+              variant: 'white',
+            }}
           />
         </main>
       </ErrorBoundary>

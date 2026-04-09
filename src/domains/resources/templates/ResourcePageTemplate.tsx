@@ -1,6 +1,7 @@
 import { type AnchorHTMLAttributes, type ReactNode } from 'react';
 import { Award, CheckCircle2, Heart, Mail, Phone, Shield, Star } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   extractAutomationContent,
   extractBusinessCostsContent,
@@ -25,7 +26,6 @@ import { ResourceProblemSection } from '@/components/reusable/sections/resources
 import { ResourceSolutionsSection } from '@/components/reusable/sections/resources/ResourceSolutionsSection';
 import { ResourceTakeawaysSection } from '@/components/reusable/sections/resources/ResourceTakeawaysSection';
 import { ResourceTemplatesSection } from '@/components/reusable/sections/resources/ResourceTemplatesSection';
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
@@ -404,75 +404,75 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
       <main className='resource-page__main'>
         {/* 1. HERO SECTION */}
         <SectionWrapper className='resource-page__hero' background='bg-gradient-surface-muted'>
-            <Breadcrumb className='resource-page__breadcrumb'>
-              <BreadcrumbList>
-                <BreadcrumbItem>
-                  <BreadcrumbLink asChild>
-                    <InternalLink href='/resources'>Resources</InternalLink>
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                  <BreadcrumbLink asChild>
-                    <InternalLink href={`/resources/category/${categorySlug}`}>
-                      {categoryLabel}
-                    </InternalLink>
-                  </BreadcrumbLink>
-                </BreadcrumbItem>
-                <BreadcrumbSeparator />
-                <BreadcrumbItem>
-                  <BreadcrumbPage>{props.title}</BreadcrumbPage>
-                </BreadcrumbItem>
-              </BreadcrumbList>
-            </Breadcrumb>
+          <Breadcrumb className='resource-page__breadcrumb'>
+            <BreadcrumbList>
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <InternalLink href='/resources'>Resources</InternalLink>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbLink asChild>
+                  <InternalLink href={`/resources/category/${categorySlug}`}>
+                    {categoryLabel}
+                  </InternalLink>
+                </BreadcrumbLink>
+              </BreadcrumbItem>
+              <BreadcrumbSeparator />
+              <BreadcrumbItem>
+                <BreadcrumbPage>{props.title}</BreadcrumbPage>
+              </BreadcrumbItem>
+            </BreadcrumbList>
+          </Breadcrumb>
 
-            <div className='resource-page__hero-content'>
-              <div className='resource-page__badges'>
-                <Badge variant='secondary' context='hero'>
-                  {categoryLabel}
+          <div className='resource-page__hero-content'>
+            <div className='resource-page__badges'>
+              <Badge variant='secondary' context='hero'>
+                {categoryLabel}
+              </Badge>
+              {freshnessBadge && (
+                <Badge variant='secondary' size='sm' context='meta'>
+                  {freshnessBadge}
                 </Badge>
-                {freshnessBadge && (
-                  <Badge variant='secondary' size='sm' context='meta'>
-                    {freshnessBadge}
-                  </Badge>
-                )}
-              </div>
-              <p className='resource-page__date'>
-                {dateLabel}: {formatIsoDate(lastChanged)}
-              </p>
-              <h1 className='resource-page__title'>{heroData.heading}</h1>
-
-              <div className='resource-page__intro'>
-                <p className='resource-page__subtitle'>{heroData.subtitle}</p>
-                {heroData.problem && heroData.promise && (
-                  <div className='resource-page__callout'>
-                    <p className='resource-page__callout-line'>
-                      <span className='resource-page__callout-line--error'>
-                        ❌ {heroData.problem}
-                      </span>
-                    </p>
-                    <p className='resource-page__callout-line'>
-                      <span className='resource-page__callout-line--success'>
-                        ✅ {heroData.promise}
-                      </span>
-                    </p>
-                  </div>
-                )}
-              </div>
-
-              <div className='resource-page__hero-cta'>
-                <Button
-                  {...(primaryCta.type !== 'chat' ? { href: primaryCta.href } : {})}
-                  size='sm'
-                  label={primaryCta.label}
-                  showDefaultIcon
-                  {...(primaryCta.type === 'external'
-                    ? { target: '_blank', rel: 'noopener noreferrer' }
-                    : {})}
-                  {...(primaryCta.type === 'chat' ? { onClick: () => {} } : {})}
-                />
-              </div>
+              )}
             </div>
+            <p className='resource-page__date'>
+              {dateLabel}: {formatIsoDate(lastChanged)}
+            </p>
+            <h1 className='resource-page__title'>{heroData.heading}</h1>
+
+            <div className='resource-page__intro'>
+              <p className='resource-page__subtitle'>{heroData.subtitle}</p>
+              {heroData.problem && heroData.promise && (
+                <div className='resource-page__callout'>
+                  <p className='resource-page__callout-line'>
+                    <span className='resource-page__callout-line--error'>
+                      ❌ {heroData.problem}
+                    </span>
+                  </p>
+                  <p className='resource-page__callout-line'>
+                    <span className='resource-page__callout-line--success'>
+                      ✅ {heroData.promise}
+                    </span>
+                  </p>
+                </div>
+              )}
+            </div>
+
+            <div className='resource-page__hero-cta'>
+              <Button
+                {...(primaryCta.type !== 'chat' ? { href: primaryCta.href } : {})}
+                size='sm'
+                label={primaryCta.label}
+                showDefaultIcon
+                {...(primaryCta.type === 'external'
+                  ? { target: '_blank', rel: 'noopener noreferrer' }
+                  : {})}
+                {...(primaryCta.type === 'chat' ? { onClick: () => {} } : {})}
+              />
+            </div>
+          </div>
         </SectionWrapper>
 
         {/* Main Content with Optional Sidebar */}
@@ -555,19 +555,19 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
         {/* CTA section - full width outside container */}
         <div className='resource-page__cta'>
           {ctaSections.map((section, index) => {
-              const ctaData = extractCTAContent(section);
-              return ctaData.heading ? (
-                <SmartCTA
-                  key={`cta-${index}`}
-                  system={primarySystem}
-                  sourceType='resource'
-                  slug={currentSlug}
-                  title={ctaData.heading}
-                  description={ctaData.content}
-                  metaItems={ctaData.features?.map(f => ({ text: f.text }))}
-                />
-              ) : null;
-            })}
+            const ctaData = extractCTAContent(section);
+            return ctaData.heading ? (
+              <SmartCTA
+                key={`cta-${index}`}
+                system={primarySystem}
+                sourceType='resource'
+                slug={currentSlug}
+                title={ctaData.heading}
+                description={ctaData.content}
+                metaItems={ctaData.features?.map(f => ({ text: f.text }))}
+              />
+            ) : null;
+          })}
         </div>
       </main>
     </div>

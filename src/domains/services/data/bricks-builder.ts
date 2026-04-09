@@ -11,12 +11,15 @@ import {
 } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+const slug = 'bricks-builder';
+
 export const bricksBuilderPage = {
-  slug: 'bricks-builder',
+  slug,
   systems: ['smart-website-systems'],
   topics: ['website-infrastructure'],
   keywords: [
@@ -29,27 +32,15 @@ export const bricksBuilderPage = {
   ],
   badge: 'Bricks Implementation',
   category: 'Implementation Services',
-  seo: {
+  seo: buildServiceSeo({
+    slug,
     title: 'Bricks Implementation | Structured WordPress Delivery with Bricks Builder',
     description:
       'Structured WordPress implementation with Bricks Builder for teams that need performance-conscious delivery, clean architecture, and disciplined conversion of approved designs.',
-    canonical: '/services/bricks-builder',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Structured WordPress Implementation with Bricks Builder',
-        description:
-          'Structured WordPress implementation with Bricks Builder for teams that need performance-conscious delivery, clean architecture, and disciplined conversion of approved designs.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/bricks-builder',
-      },
-    },
-  },
+    schemaName: 'Structured WordPress Implementation with Bricks Builder',
+    schemaDescription:
+      'Structured WordPress implementation with Bricks Builder for teams that need performance-conscious delivery, clean architecture, and disciplined conversion of approved designs.',
+  }),
   hero: {
     badge: 'Bricks Builder Implementation',
     title:
@@ -58,9 +49,8 @@ export const bricksBuilderPage = {
       'We build WordPress websites using Bricks Builder where performance and clean output matter. Approved designs are converted precisely, with a build that stays fast, maintainable, and easy to extend.',
     primaryAction: {
       label: CTA_LABELS.PRIMARY,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'smart-website-systems',
-        sourceType: 'service',
         slug: 'bricks-builder',
       }),
     },
@@ -273,9 +263,8 @@ export const bricksBuilderPage = {
     description:
       'If your team needs a performance-focused Bricks build with clean output and long-term clarity, we can review scope and outline the right approach.',
     buttonText: CTA_LABELS.PRIMARY,
-    buttonHref: buildContactHref({
+    buttonHref: buildServiceContactHref({
       system: 'smart-website-systems',
-      sourceType: 'service',
       slug: 'bricks-builder',
     }),
   },

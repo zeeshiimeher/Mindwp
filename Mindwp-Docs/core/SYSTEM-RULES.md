@@ -129,7 +129,9 @@ Do ONLY:
 
 Rules:
 
-- Every `page.tsx` resolves its metadata from inventory via `buildMetadata(routePath)`.
+- Every `page.tsx` resolves its metadata from inventory.
+- Static routes call `getInventoryMetadata(routePath)` directly.
+- Parameterized routes resolve inventory-backed metadata through `src/lib/seo/pageMetadata.ts` helpers.
 - `STATIC_ROUTE_SEEDS` in inventory defines metadata for static pages.
 - Domain registries feed into inventory via the content graph. Domain data does NOT feed directly into page metadata.
 - No page may define its own `title`, `description`, or `openGraph` values outside inventory.
@@ -169,22 +171,23 @@ Forbidden:
 
 ## 9. SmartCTA Mandate
 
-`SmartCTA` is the only CTA rendering component in the system (governed by CONVERSION-SYSTEM.md).
+`SmartCTA` is the system CTA component for primary page-level CTA panels. Deterministic contact routing is governed by `CONVERSION-SYSTEM.md` and enforced through `src/lib/contact/contactHref.ts`.
 
 Rules:
 
-- All CTAs render through `SmartCTA`.
-- `SmartCTA` receives `pageType`, `system`, and `slug` as props.
-- Labels come from `CTA_LABEL_MAP` only.
-- Intensity comes from `CTA_CONFIG` only.
-- Contact href is built internally by `SmartCTA`.
+- Primary page CTA panels should render through `SmartCTA`.
+- `SmartCTA` resolves its primary label through `resolveCtaLabel(system)`.
+- `SmartCTA` builds its primary href through `buildContactHref({ system, sourceType, slug })`.
+- Contextual CTA hrefs outside `SmartCTA` must be generated through `buildContactHref()` or a typed scoped helper such as `buildServiceContactHref()`.
+- Domain payloads may carry `buttonText` and `buttonHref` fields where template contracts require explicit CTA actions.
+- Any CTA that routes to contact must preserve canonical `system` plus normalized `source` context.
 
 Forbidden:
 
-- Domain data files containing `buttonText`, `buttonHref`, or `ctaLabel`.
-- Components constructing `<CTASection>` directly.
-- Components calling `buildContactHref()` directly.
-- Hardcoded CTA labels in templates, domain data, or components.
+- Hardcoded `'/contact'` or `'/contact?...'` string literals in content, templates, or components.
+- Manual `source: 'type/slug'` strings or inline `source=type/slug` query literals.
+- Literal metadata or page-local metadata objects that bypass inventory.
+- Contact routes that bypass `/contact` or drop `system` / `source` context.
 
 ---
 

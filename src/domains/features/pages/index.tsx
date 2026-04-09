@@ -1,9 +1,9 @@
 import { ArrowRight } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
-import { SectionWrapper } from '@/components/reusable/primitives';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
 import { FEATURE_REGISTRY } from '@/domains/features/registry';
@@ -36,7 +36,10 @@ export function FeaturesLanding() {
       >
         <main>
           {/* Hero Section */}
-          <SectionWrapper className='feature-lnd feature-lnd__hero' background='bg-gradient-surface-muted'>
+          <SectionWrapper
+            className='feature-lnd feature-lnd__hero'
+            background='bg-gradient-surface-muted'
+          >
             <div className='feature-lnd__heroContent l-stack l-stack--loose'>
               <Badge variant='secondary' context='section'>
                 Features Index

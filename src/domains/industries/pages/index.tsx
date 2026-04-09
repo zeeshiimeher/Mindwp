@@ -76,7 +76,9 @@ export default function IndustriesLanding() {
         {/* Hero */}
         <SectionWrapper background='bg-gradient-to-b from-muted/50 to-background'>
           <div className='text-center l-stack l-stack--loose'>
-            <Badge variant='secondary' context='section'>Industry Navigation</Badge>
+            <Badge variant='secondary' context='section'>
+              Industry Navigation
+            </Badge>
             <h1>Who This System Is Built For</h1>
             <p className='text-muted-foreground text-lg l-max-w-3xl l-mx-auto'>
               Home Services is the primary front-door lane, Beauty & Personal Care is the active
@@ -94,8 +96,8 @@ export default function IndustriesLanding() {
                 <Badge variant='secondary'>Primary Lane</Badge>
                 <h2 id='industry-primary'>Primary Front-Door Categories</h2>
                 <p className='text-muted-foreground'>
-                  These categories carry the deepest current buildout and the strongest
-                  promotional emphasis.
+                  These categories carry the deepest current buildout and the strongest promotional
+                  emphasis.
                 </p>
                 <p className='text-sm text-muted-foreground'>
                   The main lane where Smart Website Systems are most actively demonstrated.

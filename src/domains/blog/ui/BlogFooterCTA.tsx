@@ -48,22 +48,22 @@ export function BlogFooterCTA({
 
   return (
     <SectionWrapper className='footer-cta cta' padding='none'>
-        <div className='cta__panel cta__content bg-gradient-primary'>
-          <h2 className='cta-heading'>{title}</h2>
+      <div className='cta__panel cta__content bg-gradient-primary'>
+        <h2 className='cta-heading'>{title}</h2>
 
-          <p className='cta__text'>{description}</p>
+        <p className='cta__text'>{description}</p>
 
-          <div className='cta__actions'>{primaryAction}</div>
+        <div className='cta__actions'>{primaryAction}</div>
 
-          <div className='cta__meta'>
-            {features.map((feature, index) => (
-              <div key={index} className='cta__meta-item'>
-                <CheckCircle2 className='cta__icon' />
-                <span>{feature}</span>
-              </div>
-            ))}
-          </div>
+        <div className='cta__meta'>
+          {features.map((feature, index) => (
+            <div key={index} className='cta__meta-item'>
+              <CheckCircle2 className='cta__icon' />
+              <span>{feature}</span>
+            </div>
+          ))}
         </div>
+      </div>
     </SectionWrapper>
   );
 }

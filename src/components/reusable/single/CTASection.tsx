@@ -2,8 +2,9 @@ import { type ReactNode } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
-import { Button, type ButtonProps } from './Button';
 import { cn } from '@/components/ui/utils';
+
+import { Button, type ButtonProps } from './Button';
 
 const BLOCK = 'cta-section';
 

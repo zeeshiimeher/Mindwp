@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import JsonLd from '@/components/system/JsonLd';
 import { blogPosts, getAllCategorySlugs, getCategoryBySlug } from '@/domains/blog/api';
 import { BlogCategoryTemplate } from '@/domains/blog/templates/BlogCategoryTemplate';
-import { getInventoryMetadata } from '@/lib/content-quality/inventory';
+import { getBlogCategoryMetadata } from '@/lib/seo/pageMetadata';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 export const dynamicParams = false;
@@ -31,7 +31,7 @@ export async function generateMetadata({
     return {};
   }
 
-  return getInventoryMetadata(`/blog/category/${category.slug}`);
+  return getBlogCategoryMetadata(`/blog/category/${category.slug}`);
 }
 
 export default async function Page({ params }: { params: Promise<{ categorySlug: string }> }) {

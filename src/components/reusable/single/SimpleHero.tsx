@@ -1,5 +1,5 @@
-import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
+import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { cn } from '@/components/ui/utils';
 
 import { BulletList } from './BulletList';
@@ -96,10 +96,7 @@ export function SimpleHero({
   list,
 }: SimpleHeroProps) {
   return (
-    <SectionWrapper
-      padding='spacious'
-      className={cn(BLOCK, backgroundColor, cssPrefix)}
-    >
+    <SectionWrapper padding='spacious' className={cn(BLOCK, backgroundColor, cssPrefix)}>
       <div
         className={cn(
           `${BLOCK}__container`,

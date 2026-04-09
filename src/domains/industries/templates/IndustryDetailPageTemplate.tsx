@@ -15,11 +15,11 @@ import {
   IndustryWorkflowExamplesSection,
 } from '@/components/reusable/sections/industries';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
+import { buildContactHref } from '@/lib/contact/contactHref';
 import {
   resolveIndustryDetailExplore,
   resolveIndustryPathwaySection,
 } from '@/lib/cta/industryPresentation';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 import { IndustryExploreSection } from '../components/IndustryExploreSection';
 
@@ -96,7 +96,9 @@ export function IndustryDetailPageTemplate({
           {resolvedPathwaySection && <IndustryPathwaysSection {...resolvedPathwaySection} />}
           {workflowExamples && <IndustryWorkflowExamplesSection {...workflowExamples} />}
           {solutionSection && <IndustrySolutionsSection {...solutionSection} />}
-          {resolvedExplore && <IndustryExploreSection title='Relevant Modules' {...resolvedExplore} />}
+          {resolvedExplore && (
+            <IndustryExploreSection title='Relevant Modules' {...resolvedExplore} />
+          )}
           <IndustryFAQSection {...faq} />
           <IndustryCTASection {...resolvedCta} />
         </main>

@@ -1,7 +1,8 @@
 import { Calendar, Clock, Inbox, MessageSquare, Settings, Users } from 'lucide-react';
 
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 
+import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
 
 const calendarsFaqItems = [
@@ -51,33 +52,21 @@ const calendarsFaqItems = [
   },
 ];
 
+const slug = 'calendars';
+
 export const calendarsData: FeaturePageData = {
-  slug: 'calendars',
+  slug,
   systems: ['smart-website-systems', 'revenue-growth'],
   topics: ['booking-automation'],
-  seo: {
+  seo: buildFeatureSeo({
+    slug,
     title: 'Calendars | Structured Online Booking Layer',
     description:
       'Structured online booking integrated into your website system with confirmations, reminders, staff scheduling, and calendar management.',
-    canonical: '/features/calendars',
-    schema: {
-      primary: {
-        '@context': 'https://schema.org',
-        '@type': 'SoftwareApplication',
-        name: 'Calendars',
-        description:
-          'Structured online booking integrated into your website system with confirmations, reminders, staff scheduling, and calendar management.',
-        url: '/features/calendars',
-        applicationCategory: 'BusinessApplication',
-        operatingSystem: 'Web Browser',
-        publisher: {
-          '@type': 'Organization',
-          name: 'MindWP',
-          url: 'https://mindwp.com',
-        },
-      },
-    },
-  },
+    schemaName: 'Calendars',
+    schemaDescription:
+      'Structured online booking integrated into your website system with confirmations, reminders, staff scheduling, and calendar management.',
+  }),
   hero: {
     badge: 'Booking Layer',
     title: 'Structured Online Booking Integrated into Your System',
@@ -85,10 +74,9 @@ export const calendarsData: FeaturePageData = {
       'This booking layer lets clients schedule appointments through a clear flow. Booking, confirmations, and calendar management connect directly to your enquiry handling and internal operations.',
     primaryAction: {
       label: 'Review How Booking Flow Works',
-      href: buildContactHref({
+      href: buildFeatureContactHref({
         system: 'smart-website-systems',
-        sourceType: 'feature',
-        slug: 'calendars',
+        slug,
       }),
     },
     stats: [
@@ -285,10 +273,9 @@ export const calendarsData: FeaturePageData = {
       'Tell us how booking is handled now. We will show you where scheduling friction and manual handoffs are slowing appointments down.',
     primaryAction: {
       label: 'Automate Your Booking Flow',
-      href: buildContactHref({
+      href: buildFeatureContactHref({
         system: 'smart-website-systems',
-        sourceType: 'feature',
-        slug: 'calendars',
+        slug,
       }),
     },
     metaItems: [

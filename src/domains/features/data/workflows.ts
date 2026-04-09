@@ -12,8 +12,9 @@ import {
   Zap,
 } from 'lucide-react';
 
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 
+import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
 
 const workflowsFaqItems = [
@@ -69,31 +70,19 @@ const workflowsFaqItems = [
   },
 ];
 
+const slug = 'workflows';
+
 export const workflowsData: FeaturePageData = {
-  slug: 'workflows',
-  seo: {
+  slug,
+  seo: buildFeatureSeo({
+    slug,
     title: 'Workflows | Structured Automation Layer',
     description:
       'Structured workflow automation for follow-ups, reminders, and task routing with clear rules and full team visibility.',
-    canonical: '/features/workflows',
-    schema: {
-      primary: {
-        '@context': 'https://schema.org',
-        '@type': 'SoftwareApplication',
-        name: 'Workflows',
-        description:
-          'Structured workflow automation for follow-ups, reminders, and task routing with clear rules and full team visibility.',
-        url: '/features/workflows',
-        applicationCategory: 'BusinessApplication',
-        operatingSystem: 'Web Browser',
-        publisher: {
-          '@type': 'Organization',
-          name: 'MindWP',
-          url: 'https://mindwp.com',
-        },
-      },
-    },
-  },
+    schemaName: 'Workflows',
+    schemaDescription:
+      'Structured workflow automation for follow-ups, reminders, and task routing with clear rules and full team visibility.',
+  }),
   systems: ['revenue-growth'],
   topics: ['lead-management'],
   hero: {
@@ -103,10 +92,9 @@ export const workflowsData: FeaturePageData = {
       'Workflows connect your forms, bookings, and pipeline stages to automatic actions. Send confirmations, reminders, and task notifications—while keeping full visibility and control.',
     primaryAction: {
       label: 'Check How Follow-Up Automation Works',
-      href: buildContactHref({
+      href: buildFeatureContactHref({
         system: 'revenue-growth',
-        sourceType: 'feature',
-        slug: 'workflows',
+        slug,
       }),
     },
     stats: [
@@ -333,10 +321,9 @@ export const workflowsData: FeaturePageData = {
       'We will map the triggers, rules, and follow-up steps that fit your real operation so leads, bookings, and internal tasks keep moving without manual chasing.',
     primaryAction: {
       label: 'Automate Your Follow-Up System',
-      href: buildContactHref({
+      href: buildFeatureContactHref({
         system: 'revenue-growth',
-        sourceType: 'feature',
-        slug: 'workflows',
+        slug,
       }),
     },
   },

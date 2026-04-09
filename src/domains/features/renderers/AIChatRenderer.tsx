@@ -1,5 +1,6 @@
 import { CheckCircle2, MessageSquare, Users } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   FeatureBenefitsSection,
   FeatureCapabilitiesSection,
@@ -8,13 +9,12 @@ import {
   FeatureProcessStepsSection,
   FeatureUseCasesSection,
 } from '@/components/reusable/sections/features';
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
 import { aiChatData } from '@/domains/features/data/aichat';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 
 const ChatDemo = () => (
   <Card
@@ -105,9 +105,9 @@ export default function AIChatRenderer() {
     hero.primaryAction && heroPrimaryHref
       ? {
           ...hero.primaryAction,
-          href: buildContactHref(heroPrimaryHref, {
+          href: buildFeatureContactHref({
+            baseHref: heroPrimaryHref,
             system: primarySystem,
-            sourceType: 'feature',
             slug: aiChatData.slug,
           }),
         }
@@ -115,9 +115,9 @@ export default function AIChatRenderer() {
   const ctaPrimaryAction = cta.primaryAction.href
     ? {
         ...cta.primaryAction,
-        href: buildContactHref(cta.primaryAction.href, {
+        href: buildFeatureContactHref({
+          baseHref: cta.primaryAction.href,
           system: primarySystem,
-          sourceType: 'feature',
           slug: aiChatData.slug,
         }),
       }

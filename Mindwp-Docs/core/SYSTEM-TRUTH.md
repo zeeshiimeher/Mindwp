@@ -7,7 +7,7 @@
 
 > Consolidated source of truth. Validated against live code.
 > Sources: governing docs, reports/, code scan.
-> Updated: 2026-04-08 (clean system state, SEO authority, and validator surface aligned)
+> Updated: 2026-04-10 (builder-based SEO authority, metadata helpers, and validator surface fully clean)
 
 **Boundary:** This file defines current system reality only. It does not hold workflows, phase tasks, raw audit notes, or dashboard summaries.
 
@@ -23,7 +23,7 @@
 
 **Validation:** 21 validators in the aggregate control layer. Blocking failures are `0`; advisory failures are `0`; lint remains advisory in the integrity flow. Current system status is `CLEAN`.
 
-**Conversion model:** Deterministic single-entry conversion path. Primary CTA label is locked to "Start a Conversation". All contextual CTAs route to `/contact?system={system}&source={type}/{slug}`. No inline forms. `/conversation` page REMOVED (Phase 10 Decision 6) — permanent redirect to `/contact`. No fallback conversion path is allowed.
+**Conversion model:** Deterministic single-entry conversion path. Default CTA label fallback is locked to "Start a Conversation". System-specific labels resolve through `CTA_LABEL_MAP`. All contextual conversion CTAs route to `/contact?system={system}&source={type}/{slug}`. No inline forms. `/conversation` page REMOVED (Phase 10 Decision 6) — permanent redirect to `/contact`. No fallback conversion path is allowed.
 
 ## Conversion Contract
 
@@ -81,7 +81,7 @@ Each node declares `industries`, `systems`, `topics` → relationships auto-gene
 
 **Scoring:** Authority per topic. Levels: Dominant / Strong / Growing / Weak / Gap. Locked formula: `(systemOverlap × 3) + (topicOverlap × 2) + (industryOverlap × 1)`.
 
-**Linking system:** SmartRelatedSection (`src/components/system/SmartRelatedSection.tsx`) — sole mechanism for surfacing related content on any page. Calls `getRelatedContent(slug, type)` → resolves via Authority Map → renders cards. Graph-driven, deterministic, validated. Editorial inline links are content-level references only and do not replace graph-driven related-content slots.
+**Linking system:** SmartRelatedSection (`src/components/system/SmartRelatedSection.tsx`) — sole mechanism for surfacing related content on any page. Calls `getRelatedContent(slug, type)` → resolves via Authority Map → renders cards. Graph-driven, deterministic, validated. Editorial inline links are content-level references only and do not replace graph-driven related-content slots. Page-local service/feature `related` config is not part of the live system.
 
 **Link slot rules (Phase 10 Decision 3 — LOCKED):**
 
@@ -106,7 +106,11 @@ Each node declares `industries`, `systems`, `topics` → relationships auto-gene
 
 Conversion behavior → **CONVERSION-SYSTEM.md** (single authority).
 
-Implementation: `SmartCTA` bridges content graph to CTA via `ctaResolver.ts` (intensity and presentation) + `CTA_CONFIG` (labels). All CTAs route to `/contact?system={system}&source={type}/{slug}`. `/contact` ingests and persists `system` and `source` through submission. No inline forms. No linear funnel. No JourneyNavigator.
+Implementation: `SmartCTA` resolves primary CTA labels through `resolveCtaLabel()` and builds contextual contact URLs through `buildContactHref()`. Source-specific helpers in `src/lib/contact/contactHref.ts` provide deterministic `system` + `source` construction for domain data and renderers. `/contact` ingests and persists `system` and `source` through submission. No inline forms. No linear funnel. No JourneyNavigator.
+
+### 2.6 Metadata Access Layer
+
+Route metadata remains inventory-backed. Static routes call `getInventoryMetadata()` directly; parameterized routes resolve metadata through `src/lib/seo/pageMetadata.ts`. Service and feature SEO structures are centralized through `src/domains/services/seo.ts` and `src/domains/features/seo.ts`, with validators enforcing canonical path consistency.
 
 ---
 

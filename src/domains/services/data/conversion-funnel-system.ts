@@ -10,12 +10,15 @@ import {
 } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+const slug = 'conversion-funnel-system';
+
 export const conversionFunnelSystemPage = {
-  slug: 'conversion-funnel-system',
+  slug,
   systems: ['revenue-growth'],
   topics: ['conversion-optimization', 'lead-capture'],
   keywords: [
@@ -27,27 +30,15 @@ export const conversionFunnelSystemPage = {
   ],
   badge: 'Conversion Funnel System',
   category: 'Conversion Clarity Systems',
-  seo: {
+  seo: buildServiceSeo({
+    slug,
     title: 'Conversion Funnel System | Clearer page flow, offer structure, and enquiry handoff',
     description:
       'Conversion funnel systems for service businesses that need clearer page-to-enquiry journeys, fewer drop-offs, better offer structure, and more measurable funnel stages.',
-    canonical: '/services/conversion-funnel-system',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Conversion funnel system for service businesses',
-        description:
-          'A structured conversion funnel system covering page flow, offer clarity, call-to-action logic, and handoff between traffic, enquiry, and sales action.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/conversion-funnel-system',
-      },
-    },
-  },
+    schemaName: 'Conversion funnel system for service businesses',
+    schemaDescription:
+      'A structured conversion funnel system covering page flow, offer clarity, call-to-action logic, and handoff between traffic, enquiry, and sales action.',
+  }),
   hero: {
     badge: 'Page-Flow & Offer Layer',
     title:
@@ -56,9 +47,8 @@ export const conversionFunnelSystemPage = {
       'This service focuses on the conversion path itself — page flow, offer structure, and the handoff between attention, enquiry, and action. When those are clearer, fewer good prospects disappear in the middle.',
     primaryAction: {
       label: CTA_LABELS.PRIMARY,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'revenue-growth',
-        sourceType: 'service',
         slug: 'conversion-funnel-system',
       }),
     },
@@ -309,21 +299,14 @@ export const conversionFunnelSystemPage = {
       cssPrefix: 'conversion-funnel-faq',
     },
   },
-  related: {
-    variant: 'domain-only',
-    title: 'Related page-flow and growth pages',
-    description:
-      'Conversion funnel work usually connects with Smart Website structure, growth diagnosis, and booking or follow-up continuity.',
-  },
   cta: {
     title: 'Turn more attention into clearer next steps',
     description:
       'If traffic is arriving but the page journey still weakens conversion, we can help define a stronger funnel path.',
-      buttonText: CTA_LABELS.PRIMARY,
-      buttonHref: buildContactHref({
-        system: 'revenue-growth',
-        sourceType: 'service',
-        slug: 'conversion-funnel-system',
-      }),
+    buttonText: CTA_LABELS.PRIMARY,
+    buttonHref: buildServiceContactHref({
+      system: 'revenue-growth',
+      slug: 'conversion-funnel-system',
+    }),
   },
 } satisfies ServicePageData;

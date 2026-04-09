@@ -24,7 +24,7 @@
 | CTA tone, banned language, positioning | `FOUNDATION-AND-POSITIONING.md` |
 | Page structure and CTA placement within page composition | `CONTENT-SYSTEM-ARCHITECTURE.md` |
 | Content graph ontology, metadata, slug, source generation | `CONTENT-GRAPH-SYSTEM.md` |
-| Route metadata, SEO, indexability (single source of truth) | `inventory.ts` via `SYSTEM-RULES.md` |
+| Route metadata, SEO, indexability (single source of truth) | `inventory.ts` via `SYSTEM-RULES.md` and `src/lib/seo/pageMetadata.ts` |
 | UI purity, component rendering rules | `SYSTEM-RULES.md` |
 
 ---
@@ -33,7 +33,7 @@
 
 | Data | Canonical Source | Consumers |
 |---|---|---|
-| Route metadata (title, description, OG, robots) | `inventory.ts` | All `page.tsx` files via `buildMetadata()` |
+| Route metadata (title, description, OG, robots) | `inventory.ts` | Static routes via `getInventoryMetadata()`, parameterized routes via `src/lib/seo/pageMetadata.ts` helpers |
 | CTA labels | `CTA_LABEL_MAP` in `src/config/cta-labels.ts` | `SmartCTA` only |
 | CTA intensity + copy | `CTA_CONFIG` in `src/config/ui-intelligence.ts` | `SmartCTA` only |
 | Canonical values (systems, topics, industries) | `src/lib/content-graph/canonical.ts` | Graph, inventory, validators |

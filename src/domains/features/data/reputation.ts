@@ -10,8 +10,9 @@ import {
   Users,
 } from 'lucide-react';
 
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 
+import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
 
 const reputationFaqItems = [
@@ -67,33 +68,21 @@ const reputationFaqItems = [
   },
 ];
 
+const slug = 'reputation';
+
 export const reputationData: FeaturePageData = {
-  slug: 'reputation',
+  slug,
   systems: ['reputation-review', 'local-seo-authority'],
   topics: ['review-generation', 'negative-review-response'],
-  seo: {
+  seo: buildFeatureSeo({
+    slug,
     title: 'Reputation | Structured Review Management Layer',
     description:
       'Structured review management for requesting, tracking, and responding to customer feedback across key platforms.',
-    canonical: '/features/reputation',
-    schema: {
-      primary: {
-        '@context': 'https://schema.org',
-        '@type': 'SoftwareApplication',
-        name: 'Reputation',
-        description:
-          'Structured review management for requesting, tracking, and responding to customer feedback across key platforms.',
-        url: '/features/reputation',
-        applicationCategory: 'BusinessApplication',
-        operatingSystem: 'Web Browser',
-        publisher: {
-          '@type': 'Organization',
-          name: 'MindWP',
-          url: 'https://mindwp.com',
-        },
-      },
-    },
-  },
+    schemaName: 'Reputation',
+    schemaDescription:
+      'Structured review management for requesting, tracking, and responding to customer feedback across key platforms.',
+  }),
   hero: {
     badge: 'Reputation Management',
     title: 'Structured review management for consistent trust',
@@ -101,10 +90,9 @@ export const reputationData: FeaturePageData = {
       'Systematically request reviews after completed services and manage feedback across key platforms. Designed to support visibility, credibility, and consistent follow-up.',
     primaryAction: {
       label: 'Understand How Review Automation Works',
-      href: buildContactHref({
+      href: buildFeatureContactHref({
         system: 'reputation-review',
-        sourceType: 'feature',
-        slug: 'reputation',
+        slug,
       }),
     },
     stats: [
@@ -332,10 +320,9 @@ export const reputationData: FeaturePageData = {
       'We will review how reviews are requested, routed, and answered, then show you how to collect more proof with less manual chasing.',
     primaryAction: {
       label: 'Get More Reviews Consistently',
-      href: buildContactHref({
+      href: buildFeatureContactHref({
         system: 'reputation-review',
-        sourceType: 'feature',
-        slug: 'reputation',
+        slug,
       }),
     },
   },

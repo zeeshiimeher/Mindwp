@@ -1,12 +1,15 @@
 import { LayoutTemplate, Puzzle, ShieldCheck, Wrench } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+const slug = 'system-migration-platform-consolidation';
+
 export const systemMigrationPlatformConsolidationPage = {
-  slug: 'system-migration-platform-consolidation',
+  slug,
   systems: ['smart-website-systems'],
   topics: ['website-infrastructure'],
   keywords: [
@@ -18,28 +21,16 @@ export const systemMigrationPlatformConsolidationPage = {
   ],
   badge: 'System Migration & Platform Consolidation',
   category: 'Migration Pathway Services',
-  seo: {
+  seo: buildServiceSeo({
+    slug,
     title:
       'System Migration & Platform Consolidation | Move away from fragmented tools and outdated platforms',
     description:
       'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
-    canonical: '/services/system-migration-platform-consolidation',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'System migration and platform consolidation for service businesses',
-        description:
-          'A migration pathway for service businesses that need cleaner platform structure, reduced tool sprawl, better maintainability, and a more stable operating foundation.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/system-migration-platform-consolidation',
-      },
-    },
-  },
+    schemaName: 'System migration and platform consolidation for service businesses',
+    schemaDescription:
+      'A migration pathway for service businesses that need cleaner platform structure, reduced tool sprawl, better maintainability, and a more stable operating foundation.',
+  }),
   hero: {
     badge: 'Migration & Consolidation Pathway',
     title:
@@ -48,9 +39,8 @@ export const systemMigrationPlatformConsolidationPage = {
       'This service is for businesses moving away from fragmented tools, outdated platforms, or disconnected systems. The goal is a cleaner platform structure, less tool sprawl, and a more stable operating foundation that is easier to maintain and extend.',
     primaryAction: {
       label: CTA_LABELS.PRIMARY,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'smart-website-systems',
-        sourceType: 'service',
         slug: 'system-migration-platform-consolidation',
       }),
     },
@@ -297,21 +287,14 @@ export const systemMigrationPlatformConsolidationPage = {
       cssPrefix: 'system-migration-faq',
     },
   },
-  related: {
-    variant: 'domain-only',
-    title: 'Related rebuild and migration pages',
-    description:
-      'Migration and consolidation work often connects with WordPress implementation, website rebuild decisions, and Smart Website structure.',
-  },
   cta: {
     title: 'Simplify the platform foundation',
     description:
       'If the business is being slowed by fragmented tools or an outdated platform, we can help define a cleaner migration and consolidation path.',
-      buttonText: CTA_LABELS.PRIMARY,
-      buttonHref: buildContactHref({
-        system: 'smart-website-systems',
-        sourceType: 'service',
-        slug: 'system-migration-platform-consolidation',
-      }),
+    buttonText: CTA_LABELS.PRIMARY,
+    buttonHref: buildServiceContactHref({
+      system: 'smart-website-systems',
+      slug: 'system-migration-platform-consolidation',
+    }),
   },
 } satisfies ServicePageData;

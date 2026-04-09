@@ -11,11 +11,7 @@ interface GraphAwareSidebarProps {
   sectionType?: string;
 }
 
-export function GraphAwareSidebar({
-  title,
-  items,
-  sectionType,
-}: GraphAwareSidebarProps) {
+export function GraphAwareSidebar({ title, items, sectionType }: GraphAwareSidebarProps) {
   const behavior = sectionType ? SECTION_BEHAVIOR[sectionType] : undefined;
   if (behavior && !behavior.allowLinks) return null;
 

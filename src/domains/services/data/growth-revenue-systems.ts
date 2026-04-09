@@ -15,8 +15,9 @@ import {
 } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
 interface AuditArea {
@@ -48,27 +49,15 @@ export const growthRevenueSystemsPage = {
   ],
   badge: 'Revenue Growth Systems',
   category: 'Growth Systems',
-  seo: {
+  seo: buildServiceSeo({
+    slug: 'growth-revenue-systems',
     title: 'Revenue Growth Systems | Find and fix the places where leads and follow-up break down',
     description:
       'Revenue Growth Systems help service businesses identify where leads stall, follow-up breaks down, and conversion leaks happen across the website, CRM, and workflow.',
-    canonical: '/services/growth-revenue-systems',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Revenue Growth Systems for service businesses',
-        description:
-          'A structured growth-system review for service businesses that need clearer lead handling, follow-up, conversion flow, and operational visibility.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/growth-revenue-systems',
-      },
-    },
-  },
+    schemaName: 'Revenue Growth Systems for service businesses',
+    schemaDescription:
+      'A structured growth-system review for service businesses that need clearer lead handling, follow-up, conversion flow, and operational visibility.',
+  }),
   hero: {
     badge: 'Revenue Growth Systems',
     title: 'Growth slows when leads come in but nothing moves them forward reliably',
@@ -76,9 +65,8 @@ export const growthRevenueSystemsPage = {
       'Most revenue problems are not demand problems. They come from weak follow-up, unclear routing, or a website that generates interest without a clear next step. This service finds where momentum is being lost and helps fix it in the right order.',
     primaryAction: {
       label: CTA_LABELS.REVENUE_AUDIT,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'revenue-growth',
-        sourceType: 'service',
         slug: 'growth-revenue-systems',
       }),
     },
@@ -491,11 +479,10 @@ export const growthRevenueSystemsPage = {
     title: 'Find out what is slowing growth down',
     description:
       'Tell us how leads move from first contact to follow-up. We will show you where momentum drops and what needs fixing first.',
-      buttonText: CTA_LABELS.REVENUE_AUDIT,
-      buttonHref: buildContactHref({
-        system: 'revenue-growth',
-        sourceType: 'service',
-        slug: 'growth-revenue-systems',
-      }),
+    buttonText: CTA_LABELS.REVENUE_AUDIT,
+    buttonHref: buildServiceContactHref({
+      system: 'revenue-growth',
+      slug: 'growth-revenue-systems',
+    }),
   },
 } satisfies ServicePageData;

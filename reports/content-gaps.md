@@ -1,6 +1,6 @@
 # Content Gap Report
 
-> Generated: 2026-04-08
+> Generated: 2026-04-09
 
 ## Coverage Objective
 

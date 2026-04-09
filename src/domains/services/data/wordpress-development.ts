@@ -1,12 +1,15 @@
 import { Blocks, Cog, LayoutTemplate, Link2, Search, Workflow } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+const slug = 'wordpress-development';
+
 export const wordpressDevelopmentPage = {
-  slug: 'wordpress-development',
+  slug,
   systems: ['smart-website-systems'],
   topics: ['website-infrastructure', 'systems-first-websites'],
   keywords: [
@@ -18,28 +21,16 @@ export const wordpressDevelopmentPage = {
   ],
   badge: 'WordPress Website Development',
   category: 'Implementation Services',
-  seo: {
+  seo: buildServiceSeo({
+    slug,
     title:
       'WordPress Website Development | Structured Website Implementation for Service Businesses',
     description:
       'Structured WordPress website development for service businesses that need clear site architecture, better enquiry flow, cleaner implementation, and long-term maintainability.',
-    canonical: '/services/wordpress-development',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'WordPress website development for service businesses',
-        description:
-          'Structured WordPress implementation focused on clear service architecture, enquiry handling, maintainability, and future-ready foundations.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/wordpress-development',
-      },
-    },
-  },
+    schemaName: 'WordPress website development for service businesses',
+    schemaDescription:
+      'Structured WordPress implementation focused on clear service architecture, enquiry handling, maintainability, and future-ready foundations.',
+  }),
   hero: {
     badge: 'Implementation Pathway',
     title:
@@ -48,9 +39,8 @@ export const wordpressDevelopmentPage = {
       'This is for service businesses that need a proper WordPress foundation. Not pages thrown together quickly, but a site where services are clearly presented, enquiry paths make sense, and the whole thing stays manageable after launch.',
     primaryAction: {
       label: CTA_LABELS.PRIMARY,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'smart-website-systems',
-        sourceType: 'service',
         slug: 'wordpress-development',
       }),
     },
@@ -310,21 +300,14 @@ export const wordpressDevelopmentPage = {
       cssPrefix: 'wordpress-development-faq',
     },
   },
-  related: {
-    variant: 'domain-only',
-    title: 'Related implementation and system paths',
-    description:
-      'If WordPress Website Development is part of a wider growth or operational project, these adjacent pages help explain what connects next.',
-  },
   cta: {
     title: 'Discuss your WordPress website project',
     description:
       'If you need a clearer WordPress foundation for a service business, we can review the current situation and outline the best implementation path forward.',
-      buttonText: CTA_LABELS.PRIMARY,
-      buttonHref: buildContactHref({
-        system: 'smart-website-systems',
-        sourceType: 'service',
-        slug: 'wordpress-development',
-      }),
+    buttonText: CTA_LABELS.PRIMARY,
+    buttonHref: buildServiceContactHref({
+      system: 'smart-website-systems',
+      slug: 'wordpress-development',
+    }),
   },
 } satisfies ServicePageData;

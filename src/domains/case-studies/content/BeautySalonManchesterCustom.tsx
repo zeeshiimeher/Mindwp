@@ -2,7 +2,6 @@ import {
   type CaseStudyContent,
   type CaseStudyTemplateSection,
 } from '@/domains/case-studies/templates';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { CaseStudyData } from '../types';
 

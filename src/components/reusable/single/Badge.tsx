@@ -82,9 +82,7 @@ export function Badge({
   const contextModifier = context ? `${BLOCK}--${context}` : '';
 
   return (
-    <span
-      className={cn(BLOCK, sizeModifier, contextModifier, `badge-${variant}`, cssPrefix)}
-    >
+    <span className={cn(BLOCK, sizeModifier, contextModifier, `badge-${variant}`, cssPrefix)}>
       {children}
     </span>
   );

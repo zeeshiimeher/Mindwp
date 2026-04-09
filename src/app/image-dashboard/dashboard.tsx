@@ -147,7 +147,11 @@ export default function ImageDashboard() {
       ) : (
         <div className='space-y-6'>
           {/* ── Overview Stats ── */}
-          <SectionWrapper padding='none' container='none' className='grid grid-cols-1 sm:grid-cols-3 gap-4'>
+          <SectionWrapper
+            padding='none'
+            container='none'
+            className='grid grid-cols-1 sm:grid-cols-3 gap-4'
+          >
             <div className={card}>
               <p className={statLabel}>Total Generated</p>
               <p className={statValue}>{overview.total}</p>
@@ -163,7 +167,11 @@ export default function ImageDashboard() {
           </SectionWrapper>
 
           {/* ── Score Distribution + Domain Performance ── */}
-          <SectionWrapper padding='none' container='none' className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+          <SectionWrapper
+            padding='none'
+            container='none'
+            className='grid grid-cols-1 md:grid-cols-2 gap-4'
+          >
             <div className={card}>
               <h2 className={heading2}>Score Distribution</h2>
               <div className='space-y-2'>

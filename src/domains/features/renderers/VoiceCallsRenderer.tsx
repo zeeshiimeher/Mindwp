@@ -1,5 +1,6 @@
 import { BrainCircuit, CheckCircle2, Phone, PhoneCall } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   FeatureBenefitsSection,
   FeatureCapabilitiesSection,
@@ -8,14 +9,13 @@ import {
   FeatureProcessStepsSection,
   FeatureUseCasesSection,
 } from '@/components/reusable/sections/features';
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { TestimonialCard } from '@/components/reusable/single/TestimonialCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
 import { voicecallsData } from '@/domains/features/data/voicecalls';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 export default function VoiceCallsRenderer() {
@@ -28,9 +28,9 @@ export default function VoiceCallsRenderer() {
     hero.primaryAction && heroPrimaryHref
       ? {
           ...hero.primaryAction,
-          href: buildContactHref(heroPrimaryHref, {
+          href: buildFeatureContactHref({
+            baseHref: heroPrimaryHref,
             system: primarySystem,
-            sourceType: 'feature',
             slug: voicecallsData.slug,
           }),
         }
@@ -38,9 +38,9 @@ export default function VoiceCallsRenderer() {
   const ctaPrimaryAction = cta.primaryAction.href
     ? {
         ...cta.primaryAction,
-        href: buildContactHref(cta.primaryAction.href, {
+        href: buildFeatureContactHref({
+          baseHref: cta.primaryAction.href,
           system: primarySystem,
-          sourceType: 'feature',
           slug: voicecallsData.slug,
         }),
       }
@@ -158,17 +158,14 @@ export default function VoiceCallsRenderer() {
             cssPrefix='voice-ai-faq'
           />
 
-          <SectionWrapper
-            className='voice-ai-testimonial'
-            background='bg-gradient-surface-muted'
-          >
-              <TestimonialCard
-                quote={testimonial.quote}
-                author={testimonial.author}
-                business={testimonial.business}
-                rating={testimonial.rating}
-                className='bg-white/80 backdrop-blur shadow-xl'
-              />
+          <SectionWrapper className='voice-ai-testimonial' background='bg-gradient-surface-muted'>
+            <TestimonialCard
+              quote={testimonial.quote}
+              author={testimonial.author}
+              business={testimonial.business}
+              rating={testimonial.rating}
+              className='bg-white/80 backdrop-blur shadow-xl'
+            />
           </SectionWrapper>
 
           <FeatureCTASection
@@ -180,7 +177,6 @@ export default function VoiceCallsRenderer() {
               href: ctaPrimaryAction.href,
             }}
           />
-
         </main>
       </ErrorBoundary>
     </>

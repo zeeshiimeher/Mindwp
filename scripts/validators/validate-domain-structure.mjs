@@ -7,9 +7,11 @@ import { Project, SyntaxKind } from 'ts-morph';
 
 import {
   extractSectionsOrderFromRenderer,
+  getPropertyInitializer,
   getPropertyAssignment,
   getSectionsObjectLiteral,
   getSectionsOrder,
+  resolveStringValue,
   getStringLiteralValue,
   hasProperty,
   importPathToFile,
@@ -56,6 +58,29 @@ function getExportedObjectLiteral(sourceFile) {
 
 function pushIssue(issues, type, file, code, message) {
   issues.push({ type, file, code, message });
+}
+
+function getSeoCanonicalValue(initializer, sourceFile) {
+  const seoObject = initializer?.asKind(SyntaxKind.ObjectLiteralExpression);
+  if (seoObject) {
+    return resolveStringValue(getPropertyAssignment(seoObject, 'canonical')?.getInitializer(), sourceFile);
+  }
+
+  const seoBuilderCall = initializer?.asKind(SyntaxKind.CallExpression);
+  if (!seoBuilderCall) return null;
+
+  const builderName = seoBuilderCall.getExpression().getText();
+  if (builderName !== 'buildServiceSeo' && builderName !== 'buildFeatureSeo') {
+    return null;
+  }
+
+  const config = seoBuilderCall.getArguments()[0]?.asKind(SyntaxKind.ObjectLiteralExpression);
+  if (!config) return null;
+
+  const slug = resolveStringValue(getPropertyInitializer(config, 'slug'), sourceFile);
+  if (!slug) return null;
+
+  return builderName === 'buildServiceSeo' ? `/services/${slug}` : `/features/${slug}`;
 }
 
 function buildServiceRendererOrder() {
@@ -135,8 +160,10 @@ function validateServiceStructure(issues) {
       }
     }
 
-    const seoObject = getPropertyAssignment(exported.objectLiteral, 'seo')?.getInitializerIfKind(SyntaxKind.ObjectLiteralExpression);
-    const canonical = seoObject ? getStringLiteralValue(getPropertyAssignment(seoObject, 'canonical')?.getInitializer()) : null;
+    const canonical = getSeoCanonicalValue(
+      getPropertyInitializer(exported.objectLiteral, 'seo'),
+      sourceFile
+    );
     if (canonical !== `/services/${expectedSlug}`) {
       pushIssue(issues, 'service', rel, 'canonical_mismatch', `seo.canonical must be /services/${expectedSlug}.`);
     }
@@ -224,15 +251,17 @@ function validateFeatureStructure(issues) {
       }
     }
 
-    const slug = getStringLiteralValue(getPropertyAssignment(exported.objectLiteral, 'slug')?.getInitializer());
+    const slug = resolveStringValue(getPropertyInitializer(exported.objectLiteral, 'slug'), sourceFile);
     if (slug !== expectedSlug) {
       pushIssue(issues, 'feature', rel, 'slug_mismatch', `slug must match file name ${expectedSlug}.`);
     }
 
-    const seoObject = getPropertyAssignment(exported.objectLiteral, 'seo')?.getInitializerIfKind(SyntaxKind.ObjectLiteralExpression);
-    const canonical = seoObject ? getStringLiteralValue(getPropertyAssignment(seoObject, 'canonical')?.getInitializer()) : null;
-    if (!canonical || !canonical.endsWith(`/features/${expectedSlug}`)) {
-      pushIssue(issues, 'feature', rel, 'canonical_mismatch', `seo.canonical must end with /features/${expectedSlug}.`);
+    const canonical = getSeoCanonicalValue(
+      getPropertyInitializer(exported.objectLiteral, 'seo'),
+      sourceFile
+    );
+    if (canonical !== `/features/${expectedSlug}`) {
+      pushIssue(issues, 'feature', rel, 'canonical_mismatch', `seo.canonical must be /features/${expectedSlug}.`);
     }
 
     const sectionsObject = getSectionsObjectLiteral(exported.objectLiteral);

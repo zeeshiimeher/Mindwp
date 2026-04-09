@@ -21,10 +21,10 @@ import {
   Workflow,
 } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
-import { SectionWrapper } from '@/components/reusable/primitives';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
 import { primaryCta } from '@/config/primaryCta';
@@ -298,14 +298,16 @@ export function ServicesLanding() {
       >
         <main role='main'>
           {/* Hero Section */}
-          <SectionWrapper className='service-lnd service-lnd__hero' background='bg-gradient-surface-muted'>
+          <SectionWrapper
+            className='service-lnd service-lnd__hero'
+            background='bg-gradient-surface-muted'
+          >
             <div className='service-lnd__heroContent l-mx-auto text-center l-stack l-stack--loose'>
               <Badge variant='primary'>Services Architecture</Badge>
               <h1 className='service-lnd__title'>System Services for WordPress Businesses</h1>
               <p className='service-lnd__subtitle text-muted-foreground text-lg'>
-                Smart Website Systems leads the structure. Supporting systems, operational
-                modules, and implementation support pages sit beneath it in a controlled
-                hierarchy.
+                Smart Website Systems leads the structure. Supporting systems, operational modules,
+                and implementation support pages sit beneath it in a controlled hierarchy.
               </p>
               <div className='service-lnd__actions l-row l-row-wrap l-gap-4 l-row-center'>
                 <Button
@@ -324,92 +326,92 @@ export function ServicesLanding() {
 
           {/* Structured Services Sections */}
           <SectionWrapper className='service-lnd service-lnd__gridSec' background='bg-white'>
-              <div className='l-stack l-stack--loose'>
-                {featuredService && (
-                  <section className='l-stack l-stack--loose'>
-                    <div className='l-stack'>
-                      <h2>Smart Website Systems</h2>
-                      <p className='text-muted-foreground'>
-                        The structural flagship of the services architecture. This is the featured
-                        front-door system that frames the broader website, enquiry, follow-up, and
-                        revenue chain.
-                      </p>
-                    </div>
-                    <Card className='border-2 shadow-xl bg-gradient-surface-muted'>
-                      <div className='p-8 md:p-10 l-grid l-gap-8 lg:l-grid-2 l-items-center'>
-                        <div className='l-stack l-stack--loose'>
-                          <div className='l-row l-items-center l-gap-3'>
-                            <div
-                              className={`service-lnd__icon icon-container-md ${getVariantStyles('primary').icon.bg}`}
-                            >
-                              <Sparkles
-                                className={getVariantStyles('primary').icon.text}
-                                aria-hidden='true'
-                              />
-                            </div>
-                            <Badge variant='secondary'>Featured Framework</Badge>
-                          </div>
-                          <div className='l-stack'>
-                            <h3 className='service-lnd__cardTitle'>{featuredService.title}</h3>
-                            <p className='text-muted-foreground text-lg'>
-                              {featuredService.description}
-                            </p>
-                          </div>
-                          <p className='text-sm text-muted-foreground'>
-                            Start here when the website itself needs to operate as the core layer
-                            that supports visibility, lead handling, booking, follow-up, and revenue
-                            growth.
-                          </p>
-                          <div>
-                            <Button
-                              href={featuredService.href}
-                              label='Explore Smart Website Systems'
-                              icon={ArrowRight}
-                              showDefaultIcon
+            <div className='l-stack l-stack--loose'>
+              {featuredService && (
+                <section className='l-stack l-stack--loose'>
+                  <div className='l-stack'>
+                    <h2>Smart Website Systems</h2>
+                    <p className='text-muted-foreground'>
+                      The structural flagship of the services architecture. This is the featured
+                      front-door system that frames the broader website, enquiry, follow-up, and
+                      revenue chain.
+                    </p>
+                  </div>
+                  <Card className='border-2 shadow-xl bg-gradient-surface-muted'>
+                    <div className='p-8 md:p-10 l-grid l-gap-8 lg:l-grid-2 l-items-center'>
+                      <div className='l-stack l-stack--loose'>
+                        <div className='l-row l-items-center l-gap-3'>
+                          <div
+                            className={`service-lnd__icon icon-container-md ${getVariantStyles('primary').icon.bg}`}
+                          >
+                            <Sparkles
+                              className={getVariantStyles('primary').icon.text}
+                              aria-hidden='true'
                             />
                           </div>
+                          <Badge variant='secondary'>Featured Framework</Badge>
                         </div>
-                        <div className='l-stack l-gap-4'>
-                          <Card className='p-5'>
-                            <h4 className='mb-2'>Why it leads</h4>
-                            <p className='text-sm text-muted-foreground'>
-                              Supporting systems perform better when the website layer already has
-                              clearer service structure, enquiry capture, routing, and conversion
-                              readiness.
-                            </p>
-                          </Card>
-                          <Card className='p-5'>
-                            <h4 className='mb-2'>What sits beneath it</h4>
-                            <p className='text-sm text-muted-foreground'>
-                              Supporting systems address visibility, AI lead handling, reputation,
-                              and revenue improvement. Modules and implementation pages support
-                              narrower workflow or delivery needs within that same structure.
-                            </p>
-                          </Card>
+                        <div className='l-stack'>
+                          <h3 className='service-lnd__cardTitle'>{featuredService.title}</h3>
+                          <p className='text-muted-foreground text-lg'>
+                            {featuredService.description}
+                          </p>
+                        </div>
+                        <p className='text-sm text-muted-foreground'>
+                          Start here when the website itself needs to operate as the core layer that
+                          supports visibility, lead handling, booking, follow-up, and revenue
+                          growth.
+                        </p>
+                        <div>
+                          <Button
+                            href={featuredService.href}
+                            label='Explore Smart Website Systems'
+                            icon={ArrowRight}
+                            showDefaultIcon
+                          />
                         </div>
                       </div>
-                    </Card>
-                  </section>
-                )}
+                      <div className='l-stack l-gap-4'>
+                        <Card className='p-5'>
+                          <h4 className='mb-2'>Why it leads</h4>
+                          <p className='text-sm text-muted-foreground'>
+                            Supporting systems perform better when the website layer already has
+                            clearer service structure, enquiry capture, routing, and conversion
+                            readiness.
+                          </p>
+                        </Card>
+                        <Card className='p-5'>
+                          <h4 className='mb-2'>What sits beneath it</h4>
+                          <p className='text-sm text-muted-foreground'>
+                            Supporting systems address visibility, AI lead handling, reputation, and
+                            revenue improvement. Modules and implementation pages support narrower
+                            workflow or delivery needs within that same structure.
+                          </p>
+                        </Card>
+                      </div>
+                    </div>
+                  </Card>
+                </section>
+              )}
 
-                {renderServiceSection(
-                  'Supporting Systems',
-                  'These Tier 1 systems support the flagship Smart Website framework without competing with it as parallel pillars.',
-                  SUPPORTING_SYSTEM_SLUGS
-                )}
+              {renderServiceSection(
+                'Supporting Systems',
+                'These Tier 1 systems support the flagship Smart Website framework without competing with it as parallel pillars.',
+                SUPPORTING_SYSTEM_SLUGS
+              )}
 
-                {renderServiceSection(
-                  'Operational Modules',
-                  'These Tier 2 pages focus on narrower operating problems and connect upward into the broader system architecture.',
-                  OPERATIONAL_MODULE_SLUGS
-                )}
+              {renderServiceSection(
+                'Operational Modules',
+                'These Tier 2 pages focus on narrower operating problems and connect upward into the broader system architecture.',
+                OPERATIONAL_MODULE_SLUGS
+              )}
 
-                {renderServiceSection(
-                  'Implementation & Platform Support',
-                  'These Tier 3 implementation pathways and builder support pages help deliver or extend the system without being positioned as strategic services.',
-                  IMPLEMENTATION_SUPPORT_SLUGS
-                )}
-              </div>
+              {renderServiceSection(
+                'Implementation & Platform Support',
+                'These Tier 3 implementation pathways and builder support pages help deliver or extend the system without being positioned as strategic services.',
+                IMPLEMENTATION_SUPPORT_SLUGS
+              )}
+            </div>
           </SectionWrapper>
         </main>
 

@@ -1,9 +1,9 @@
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   DualToneChecklistComparisonSection,
   ProblemCardsSection,
   ProcessStepsSection,
 } from '@/components/reusable/sections';
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { SectionIntro, WorkflowStepCard } from '@/components/reusable/single';
 import { AuditChecklistCard } from '@/components/reusable/single/AuditChecklistCard';
@@ -13,7 +13,7 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { marketingAutomationSetupPage } from '@/domains/services/data/marketing-automation-setup';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface MarketingAutomationSetupRendererProps {
   data: typeof marketingAutomationSetupPage;
@@ -60,64 +60,64 @@ export function MarketingAutomationSetupRenderer({
           />
 
           <SectionWrapper className='marketing-automation-examples' background='bg-alt'>
-              <SectionIntro
-                badge={automationExamples.badge}
-                title={automationExamples.title}
-                description={automationExamples.description}
-                cssPrefix='marketing-automation-examples-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-3'>
-                {automationExamples.items.map((workflow, index) => (
-                  <WorkflowStepCard
-                    key={index}
-                    trigger={workflow.trigger}
-                    actions={workflow.actions}
-                    cssPrefix='marketing-automation-example'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={automationExamples.badge}
+              title={automationExamples.title}
+              description={automationExamples.description}
+              cssPrefix='marketing-automation-examples-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-3'>
+              {automationExamples.items.map((workflow, index) => (
+                <WorkflowStepCard
+                  key={index}
+                  trigger={workflow.trigger}
+                  actions={workflow.actions}
+                  cssPrefix='marketing-automation-example'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <SectionWrapper className='marketing-automation-governance'>
-              <SectionIntro
-                badge={governanceAreas.badge}
-                title={governanceAreas.title}
-                description={governanceAreas.description}
-                cssPrefix='marketing-automation-governance-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-3'>
-                {governanceAreas.items.map((item, index) => (
-                  <AuditChecklistCard
-                    key={index}
-                    icon={item.icon}
-                    title={item.title}
-                    description={item.description}
-                    checks={item.checks}
-                    iconType={item.iconType}
-                    cssPrefix='marketing-automation-governance-card'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={governanceAreas.badge}
+              title={governanceAreas.title}
+              description={governanceAreas.description}
+              cssPrefix='marketing-automation-governance-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-3'>
+              {governanceAreas.items.map((item, index) => (
+                <AuditChecklistCard
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  checks={item.checks}
+                  iconType={item.iconType}
+                  cssPrefix='marketing-automation-governance-card'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <SectionWrapper className='marketing-automation-layers' background='bg-base'>
-              <SectionIntro
-                badge={automationLayers.badge}
-                title={automationLayers.title}
-                description={automationLayers.description}
-                cssPrefix='marketing-automation-layers-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-2 xl:l-grid-4'>
-                {automationLayers.items.map((item, index) => (
-                  <CenteredFeatureCard
-                    key={index}
-                    icon={item.icon}
-                    title={item.title}
-                    description={item.description}
-                    cssPrefix='marketing-automation-layer'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={automationLayers.badge}
+              title={automationLayers.title}
+              description={automationLayers.description}
+              cssPrefix='marketing-automation-layers-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-2 xl:l-grid-4'>
+              {automationLayers.items.map((item, index) => (
+                <CenteredFeatureCard
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  cssPrefix='marketing-automation-layer'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <ProcessStepsSection
@@ -155,7 +155,13 @@ export function MarketingAutomationSetupRenderer({
           <ServiceCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
+            primaryAction={{
+              href: buildServiceContactHref({
+                system: data.systems?.[0] ?? 'smart-website-systems',
+                slug,
+              }),
+              variant: 'white',
+            }}
           />
         </main>
       </ErrorBoundary>

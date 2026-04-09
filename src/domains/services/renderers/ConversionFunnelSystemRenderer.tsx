@@ -1,9 +1,9 @@
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   DualToneChecklistComparisonSection,
   ProblemCardsSection,
   ProcessStepsSection,
 } from '@/components/reusable/sections';
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { BeforeAfterMetricCard } from '@/components/reusable/single/BeforeAfterMetricCard';
 import { CenteredFeatureCard } from '@/components/reusable/single/CenteredFeatureCard';
@@ -14,7 +14,7 @@ import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { conversionFunnelSystemPage } from '@/domains/services/data/conversion-funnel-system';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface ConversionFunnelSystemRendererProps {
   data: typeof conversionFunnelSystemPage;
@@ -61,51 +61,51 @@ export function ConversionFunnelSystemRenderer({
           />
 
           <SectionWrapper className='conversion-funnel-breakpoints' background='bg-base'>
-              <SectionIntro
-                badge={funnelBreakpoints.badge}
-                title={funnelBreakpoints.title}
-                description={funnelBreakpoints.description}
-                cssPrefix='conversion-funnel-breakpoints-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-3'>
-                {funnelBreakpoints.items.map((item, index) => (
-                  <ProblemSolutionSplitCard
-                    key={index}
-                    icon={item.icon}
-                    badge={item.badge}
-                    title={item.title}
-                    description={item.description}
-                    solution={item.solution}
-                    cssPrefix='conversion-funnel-breakpoint'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={funnelBreakpoints.badge}
+              title={funnelBreakpoints.title}
+              description={funnelBreakpoints.description}
+              cssPrefix='conversion-funnel-breakpoints-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-3'>
+              {funnelBreakpoints.items.map((item, index) => (
+                <ProblemSolutionSplitCard
+                  key={index}
+                  icon={item.icon}
+                  badge={item.badge}
+                  title={item.title}
+                  description={item.description}
+                  solution={item.solution}
+                  cssPrefix='conversion-funnel-breakpoint'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <SectionWrapper className='conversion-funnel-metrics'>
-              <SectionIntro
-                badge={comparisonMetrics.badge}
-                title={comparisonMetrics.title}
-                description={comparisonMetrics.description}
-                cssPrefix='conversion-funnel-metrics-header'
-              />
-              <div className='l-grid l-gap-6'>
-                {comparisonMetrics.items.map((item, index) => (
-                  <BeforeAfterMetricCard
-                    key={index}
-                    metric={item.metric}
-                    before={item.before}
-                    after={item.after}
-                    improvement={item.improvement}
-                    description={item.description}
-                    metricLabel={comparisonMetrics.metricLabel}
-                    beforeLabel={comparisonMetrics.beforeLabel}
-                    afterLabel={comparisonMetrics.afterLabel}
-                    improvementLabel={comparisonMetrics.improvementLabel}
-                    cssPrefix='conversion-funnel-metric'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={comparisonMetrics.badge}
+              title={comparisonMetrics.title}
+              description={comparisonMetrics.description}
+              cssPrefix='conversion-funnel-metrics-header'
+            />
+            <div className='l-grid l-gap-6'>
+              {comparisonMetrics.items.map((item, index) => (
+                <BeforeAfterMetricCard
+                  key={index}
+                  metric={item.metric}
+                  before={item.before}
+                  after={item.after}
+                  improvement={item.improvement}
+                  description={item.description}
+                  metricLabel={comparisonMetrics.metricLabel}
+                  beforeLabel={comparisonMetrics.beforeLabel}
+                  afterLabel={comparisonMetrics.afterLabel}
+                  improvementLabel={comparisonMetrics.improvementLabel}
+                  cssPrefix='conversion-funnel-metric'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <ProcessStepsSection
@@ -119,23 +119,23 @@ export function ConversionFunnelSystemRenderer({
           />
 
           <SectionWrapper className='conversion-funnel-levers'>
-              <SectionIntro
-                badge={funnelLevers.badge}
-                title={funnelLevers.title}
-                description={funnelLevers.description}
-                cssPrefix='conversion-funnel-levers-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-2 xl:l-grid-3'>
-                {funnelLevers.items.map((item, index) => (
-                  <CenteredFeatureCard
-                    key={index}
-                    icon={item.icon}
-                    title={item.title}
-                    description={item.description}
-                    cssPrefix='conversion-funnel-lever'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={funnelLevers.badge}
+              title={funnelLevers.title}
+              description={funnelLevers.description}
+              cssPrefix='conversion-funnel-levers-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-2 xl:l-grid-3'>
+              {funnelLevers.items.map((item, index) => (
+                <CenteredFeatureCard
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  cssPrefix='conversion-funnel-lever'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <DualToneChecklistComparisonSection
@@ -164,7 +164,13 @@ export function ConversionFunnelSystemRenderer({
           <ServiceCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
+            primaryAction={{
+              href: buildServiceContactHref({
+                system: data.systems?.[0] ?? 'smart-website-systems',
+                slug,
+              }),
+              variant: 'white',
+            }}
           />
         </main>
       </ErrorBoundary>

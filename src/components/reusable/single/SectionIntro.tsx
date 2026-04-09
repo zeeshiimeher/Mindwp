@@ -1,8 +1,9 @@
 import React from 'react';
 
+import { cn } from '@/components/ui/utils';
+
 import { Badge } from './Badge';
 import { Button, type ButtonProps } from './Button';
-import { cn } from '@/components/ui/utils';
 
 const BLOCK = 'section-header';
 

@@ -32,6 +32,12 @@ export type BuildContactHrefOptions = {
   slug?: string;
 };
 
+type BuildScopedContactHrefOptions = {
+  baseHref?: string;
+  system: string;
+  slug: string;
+};
+
 type NormalizedContactOptions = {
   baseHref: string;
   system: string;
@@ -58,9 +64,9 @@ export function isValidContactSource(source: string) {
   return sourcePattern.test(source);
 }
 
-export function parseContactSource(source: string):
-  | { sourceType: ContactSourceType; slug: string }
-  | null {
+export function parseContactSource(
+  source: string
+): { sourceType: ContactSourceType; slug: string } | null {
   if (!isValidContactSource(source)) {
     return null;
   }
@@ -132,6 +138,42 @@ export function buildContactHref(
 
   const search = url.searchParams.toString();
   return search ? `${url.pathname}?${search}` : url.pathname;
+}
+
+function buildScopedContactHref(
+  sourceType: ContactSourceType,
+  { baseHref, system, slug }: BuildScopedContactHrefOptions
+) {
+  return buildContactHref({
+    baseHref,
+    system,
+    sourceType,
+    slug,
+  });
+}
+
+export function buildServiceContactHref(options: BuildScopedContactHrefOptions) {
+  return buildScopedContactHref('service', options);
+}
+
+export function buildFeatureContactHref(options: BuildScopedContactHrefOptions) {
+  return buildScopedContactHref('feature', options);
+}
+
+export function buildIndustryContactHref(options: BuildScopedContactHrefOptions) {
+  return buildScopedContactHref('industry', options);
+}
+
+export function buildBlogContactHref(options: BuildScopedContactHrefOptions) {
+  return buildScopedContactHref('blog', options);
+}
+
+export function buildResourceContactHref(options: BuildScopedContactHrefOptions) {
+  return buildScopedContactHref('resource', options);
+}
+
+export function buildCaseStudyContactHref(options: BuildScopedContactHrefOptions) {
+  return buildScopedContactHref('case-study', options);
 }
 
 export function buildGlobalContactHref(baseHref = CONTACT_PATH) {

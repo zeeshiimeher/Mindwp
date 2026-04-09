@@ -1,12 +1,15 @@
 import { Code, FileText, Globe, Layers, LineChart, Link2, Settings, Workflow } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+const slug = 'local-seo-authority';
+
 export const localSeoAuthorityPage = {
-  slug: 'local-seo-authority',
+  slug,
   systems: ['local-seo-authority'],
   topics: [
     'local-seo',
@@ -25,28 +28,15 @@ export const localSeoAuthorityPage = {
   ],
   badge: 'Local Authority & SEO Systems',
   category: 'Visibility Systems',
-  seo: {
+  seo: buildServiceSeo({
+    slug,
     title: 'Local Authority & SEO Systems | Visibility and local SEO for service businesses',
     description:
       'Ongoing local SEO and visibility work for service businesses. Built on clear website foundations, consistent local presence, and steady refinement over time.',
-    canonical: '/services/local-seo-authority',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Local Authority & SEO Systems for service businesses',
-        description:
-          'Ongoing visibility work for service businesses, covering website foundations, local presence, and disciplined refinement over time.',
-
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/local-seo-authority',
-      },
-    },
-  },
+    schemaName: 'Local Authority & SEO Systems for service businesses',
+    schemaDescription:
+      'Ongoing visibility work for service businesses, covering website foundations, local presence, and disciplined refinement over time.',
+  }),
   hero: {
     badge: 'Local Authority & SEO Systems',
     title: 'Local SEO that starts with your website, not around it',
@@ -54,9 +44,8 @@ export const localSeoAuthorityPage = {
       'Most SEO work jumps straight to tactics. We start with the website, local presence, and enquiry path so visibility grows on a structure that already makes sense.',
     primaryAction: {
       label: CTA_LABELS.LOCAL_AUTHORITY,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'local-seo-authority',
-        sourceType: 'service',
         slug: 'local-seo-authority',
       }),
     },
@@ -388,11 +377,10 @@ export const localSeoAuthorityPage = {
     title: 'Discuss your local visibility',
     description:
       'Tell us which services and locations matter most. We will show you what is weakening visibility and what needs fixing first.',
-      buttonText: CTA_LABELS.LOCAL_AUTHORITY,
-      buttonHref: buildContactHref({
-        system: 'local-seo-authority',
-        sourceType: 'service',
-        slug: 'local-seo-authority',
-      }),
+    buttonText: CTA_LABELS.LOCAL_AUTHORITY,
+    buttonHref: buildServiceContactHref({
+      system: 'local-seo-authority',
+      slug: 'local-seo-authority',
+    }),
   },
 } satisfies ServicePageData;

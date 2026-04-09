@@ -1,7 +1,8 @@
 import { Calendar, Clock, Globe, Inbox, MessageSquare, Settings, Users } from 'lucide-react';
 
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 
+import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
 
 const aiChatFaqItems = [
@@ -57,8 +58,10 @@ const aiChatFaqItems = [
   },
 ];
 
+const slug = 'aichat';
+
 export const aiChatData: FeaturePageData = {
-  slug: 'aichat',
+  slug,
   systems: ['ai-lead-handling'],
   topics: ['lead-response-time'],
   keywords: [
@@ -68,29 +71,15 @@ export const aiChatData: FeaturePageData = {
     'structured website conversation',
   ],
   category: 'Communication',
-  seo: {
+  seo: buildFeatureSeo({
+    slug,
     title: 'AI Chat | Structured Website Conversation Layer',
     description:
       'Structured AI chat integrated into your website system for visitor support, routing, and appointment booking with human oversight.',
-    canonical: 'https://mindwp.com/features/aichat',
-    schema: {
-      primary: {
-        '@context': 'https://schema.org',
-        '@type': 'SoftwareApplication',
-        name: 'AI Chat',
-        description:
-          'Structured AI chat integrated into your website system for visitor support, routing, and appointment booking with human oversight.',
-        url: 'https://mindwp.com/features/aichat',
-        applicationCategory: 'BusinessApplication',
-        operatingSystem: 'Web Browser',
-        publisher: {
-          '@type': 'Organization',
-          name: 'MindWP',
-          url: 'https://mindwp.com',
-        },
-      },
-    },
-  },
+    schemaName: 'AI Chat',
+    schemaDescription:
+      'Structured AI chat integrated into your website system for visitor support, routing, and appointment booking with human oversight.',
+  }),
   hero: {
     badge: 'Conversation Layer',
     title: 'Structured Website Chat Integrated into Your System',
@@ -98,7 +87,7 @@ export const aiChatData: FeaturePageData = {
       'This conversation layer helps visitors ask questions, request services, and book appointments through a clear flow. AI supports routing and first response while your team stays in control of the important conversations.',
     primaryAction: {
       label: 'Find Out How AI Chat Works',
-      href: buildContactHref({ system: 'ai-lead-handling', sourceType: 'feature', slug: 'aichat' }),
+      href: buildFeatureContactHref({ system: 'ai-lead-handling', slug }),
     },
     stats: [
       { value: '24/7', label: 'Available' },
@@ -300,7 +289,7 @@ export const aiChatData: FeaturePageData = {
       'Tell us how website conversations are handled now. We will show you where chat can remove delays and stop leads from stalling.',
     primaryAction: {
       label: 'Capture Leads with AI Chat',
-      href: buildContactHref({ system: 'ai-lead-handling', sourceType: 'feature', slug: 'aichat' }),
+      href: buildFeatureContactHref({ system: 'ai-lead-handling', slug }),
     },
   },
 };

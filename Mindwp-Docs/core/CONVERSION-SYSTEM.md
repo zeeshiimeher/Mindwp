@@ -17,14 +17,14 @@
 
 ## 1. SYSTEM LOCK
 
-- Primary CTA label is locked: "Start a Conversation"
+- Default CTA label fallback is locked: "Start a Conversation"
 - Conversion model is conversation-first
-- All CTAs route to `/contact`
+- All conversion CTAs route to `/contact`
 - All contextual CTA href values MUST resolve to `/contact?system={system}&source={type}/{slug}`
 - No inline forms anywhere in the system
 - `/contact` is the only form entry point
-- `SmartCTA` is the only CTA rendering component in the system
-- No component may construct its own CTA section, resolve its own label, or build its own contact href
+- `SmartCTA` is the primary system CTA component for page-level CTA panels
+- Contact context must be generated through `src/lib/contact/contactHref.ts`; no hardcoded contact query strings are allowed
 
 ---
 
@@ -41,30 +41,32 @@ CTA construction is invalid if either required input is missing or malformed.
 
 ### SmartCTA Contract (Locked)
 
-`SmartCTA` is the ONLY component that renders CTAs. It accepts:
+`SmartCTA` renders the primary system CTA panel. It accepts:
 
 | Prop | Required | Rule |
 |---|---|---|
-| `pageType` | YES | `ContentNodeType` — determines intensity and presentation copy |
-| `system` | YES | Canonical primary system — resolves label and contact href |
-| `slug` | YES | Content slug — used for source path generation |
+| `system` | Recommended | Canonical primary system — resolves label and contact href |
+| `sourceType` | Recommended | Normalized conversion source type |
+| `slug` | Recommended | Content slug — used for source path generation |
 
 Internally, `SmartCTA`:
 
-1. Calls `resolveCtaLabel(system)` from `src/config/cta-labels.ts` to get the label.
-2. Calls `buildContactHref(system, type, slug)` to construct the href.
-3. Reads `CTA_CONFIG[pageType]` from `src/config/ui-intelligence.ts` to resolve intensity, title, and description.
+1. Resolves `system` through a single normalized `resolvedSystem` value.
+2. Calls `resolveCtaLabel(resolvedSystem)` from `src/config/ctaLabels.ts` to get the primary label.
+3. Calls `buildContactHref({ system: resolvedSystem, sourceType, slug })` to construct the href.
+4. Falls back to the global contact context when explicit CTA context is omitted.
 
 ### CTA Label Resolution (Locked)
 
 - `CTA_LABEL_MAP` in `src/config/cta-labels.ts` is the only source of system-specific labels.
-- Default label is `"Start a Conversation"`.
+- Default fallback label is `"Start a Conversation"`.
 - Labels are per-system only. No per-page custom labels.
 
-### CTA Intensity Resolution (Locked)
+### Contact URL Generation (Locked)
 
-- `CTA_CONFIG` in `src/config/ui-intelligence.ts` maps each `ContentNodeType` to `CTAIntensity` (`soft`, `mid`, `strong`) and presentation copy.
-- Intensity is determined by page type, not by page-specific overrides.
+- `buildContactHref()` is the canonical low-level builder for contextual `/contact` URLs.
+- Typed wrappers such as `buildServiceContactHref()` and `buildFeatureContactHref()` are the preferred source-specific helpers where available.
+- Manual `source` strings are not allowed in production content or templates.
 
 ### URL Contract (Strict)
 
@@ -137,13 +139,12 @@ The form MUST capture:
 
 ### CTA Validation Rules
 
-- Every CTA must use `SmartCTA` — no other CTA rendering path is allowed
-- Every CTA must include `system` and `source` query params
-- No CTA may exist without query params
+- Every CTA that routes to `/contact` must carry `system` and `source` query params
+- No conversion CTA may exist without query params
 - No alternate conversion routes are allowed
 - No CTA may bypass `/contact`
-- No domain data file may contain `buttonText`, `buttonHref`, or `ctaLabel` fields
-- No component may call `buildContactHref()` directly — that is SmartCTA's responsibility
+- Contact URLs must be generated via `buildContactHref()` or a typed scoped helper
+- Domain payloads may include `buttonText` and `buttonHref` where template contracts require explicit CTA actions
 
 ### Metadata Requirement
 
@@ -183,11 +184,11 @@ On pages with multiple CTAs:
 
 ## 6. FORBIDDEN
 
-- Domain data files containing `buttonText`, `buttonHref`, or `ctaLabel` fields
-- Service renderers, templates, or sections constructing `<CTASection>` directly
-- Any component calling `buildContactHref()` directly
-- Hardcoded CTA labels anywhere in templates, domain data, or components
-- `RelatedSectionCTA` or any wrapper that bypasses `SmartCTA`
+- Hardcoded `'/contact'` or `'/contact?...'` string literals in templates, data files, or components
+- Manual `source: 'type/slug'` strings or inline `source=type/slug` query fragments
+- Contact routes that bypass `/contact`
+- Contact actions that drop canonical `system` or normalized `source` context
+- Per-page custom label logic that bypasses `resolveCtaLabel()` for `SmartCTA`
 - Custom CTA labels per-page (labels are per-system only, from `CTA_LABEL_MAP`)
 
 ---

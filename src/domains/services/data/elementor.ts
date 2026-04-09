@@ -11,12 +11,15 @@ import {
 } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+const slug = 'elementor';
+
 export const elementorPage = {
-  slug: 'elementor',
+  slug,
   systems: ['smart-website-systems'],
   topics: ['website-infrastructure'],
   keywords: [
@@ -29,27 +32,15 @@ export const elementorPage = {
   ],
   badge: 'Elementor Implementation',
   category: 'Implementation Services',
-  seo: {
+  seo: buildServiceSeo({
+    slug,
     title: 'Elementor Implementation | Structured WordPress Delivery with Elementor',
     description:
       'Structured WordPress implementation with Elementor for teams that need maintainable delivery, clean editing paths, and approved designs translated into a governed website build.',
-    canonical: '/services/elementor',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Structured WordPress Implementation with Elementor',
-        description:
-          'Structured WordPress implementation with Elementor for teams that need maintainable delivery, clean editing paths, and approved designs translated into a governed website build.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/elementor',
-      },
-    },
-  },
+    schemaName: 'Structured WordPress Implementation with Elementor',
+    schemaDescription:
+      'Structured WordPress implementation with Elementor for teams that need maintainable delivery, clean editing paths, and approved designs translated into a governed website build.',
+  }),
   hero: {
     badge: 'Elementor Implementation',
     title:
@@ -58,9 +49,8 @@ export const elementorPage = {
       'We build WordPress websites using Elementor where the visual output stays faithful to the approved design and the editing experience stays manageable over time. This is disciplined implementation, not a quick drag-and-drop assembly.',
     primaryAction: {
       label: CTA_LABELS.PRIMARY,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'smart-website-systems',
-        sourceType: 'service',
         slug: 'elementor',
       }),
     },
@@ -269,9 +259,8 @@ export const elementorPage = {
     description:
       'If your team needs a clean Elementor build with editing flexibility and long-term clarity, we can review scope and outline the right approach.',
     buttonText: CTA_LABELS.PRIMARY,
-    buttonHref: buildContactHref({
+    buttonHref: buildServiceContactHref({
       system: 'smart-website-systems',
-      sourceType: 'service',
       slug: 'elementor',
     }),
   },

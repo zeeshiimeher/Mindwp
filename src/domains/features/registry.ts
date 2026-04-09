@@ -57,7 +57,7 @@ const FEATURE_ICON_BY_SLUG: Record<FeatureSlug, LucideIcon> = {
 
 export const FEATURE_REGISTRY: FeatureMetadata[] = FEATURE_DATA.map(data => ({
   slug: data.slug,
-  path: data.seo.canonical.startsWith('/features/') ? data.seo.canonical : `/features/${data.slug}`,
+  path: data.seo.canonical,
   title: data.seo.schema?.primary?.name?.toString() ?? data.hero.badge,
   description: data.seo.description,
   icon: FEATURE_ICON_BY_SLUG[data.slug as FeatureSlug],

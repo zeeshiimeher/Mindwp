@@ -1,10 +1,10 @@
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   DualToneChecklistComparisonSection,
   ProblemCardsSection,
   ProcessStepsSection,
   ServiceSpectrumCardsSection,
 } from '@/components/reusable/sections';
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { IconTextCard, SectionIntro, WorkflowStepCard } from '@/components/reusable/single';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
@@ -12,7 +12,7 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { missedCallRecoverySystemPage } from '@/domains/services/data/missed-call-recovery-system';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface MissedCallRecoverySystemRendererProps {
   data: typeof missedCallRecoverySystemPage;
@@ -60,43 +60,43 @@ export function MissedCallRecoverySystemRenderer({
           />
 
           <SectionWrapper className='missed-call-recovery-signals' background='bg-base'>
-              <SectionIntro
-                badge={signalSection.badge}
-                title={signalSection.title}
-                description={signalSection.description}
-                cssPrefix='missed-call-recovery-signals-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-3'>
-                {signalCards.map((card, index) => (
-                  <IconTextCard
-                    key={index}
-                    icon={card.icon}
-                    title={card.title}
-                    description={card.description}
-                    iconType={card.iconType}
-                    cssPrefix='missed-call-recovery-signal'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={signalSection.badge}
+              title={signalSection.title}
+              description={signalSection.description}
+              cssPrefix='missed-call-recovery-signals-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-3'>
+              {signalCards.map((card, index) => (
+                <IconTextCard
+                  key={index}
+                  icon={card.icon}
+                  title={card.title}
+                  description={card.description}
+                  iconType={card.iconType}
+                  cssPrefix='missed-call-recovery-signal'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <SectionWrapper className='missed-call-recovery-workflows'>
-              <SectionIntro
-                badge={workflowExamples.badge}
-                title={workflowExamples.title}
-                description={workflowExamples.description}
-                cssPrefix='missed-call-recovery-workflows-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-3'>
-                {workflowExamples.items.map((workflow, index) => (
-                  <WorkflowStepCard
-                    key={index}
-                    trigger={workflow.trigger}
-                    actions={workflow.actions}
-                    cssPrefix='missed-call-recovery-workflow'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={workflowExamples.badge}
+              title={workflowExamples.title}
+              description={workflowExamples.description}
+              cssPrefix='missed-call-recovery-workflows-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-3'>
+              {workflowExamples.items.map((workflow, index) => (
+                <WorkflowStepCard
+                  key={index}
+                  trigger={workflow.trigger}
+                  actions={workflow.actions}
+                  cssPrefix='missed-call-recovery-workflow'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <ProcessStepsSection
@@ -143,7 +143,13 @@ export function MissedCallRecoverySystemRenderer({
           <ServiceCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
+            primaryAction={{
+              href: buildServiceContactHref({
+                system: data.systems?.[0] ?? 'smart-website-systems',
+                slug,
+              }),
+              variant: 'white',
+            }}
           />
         </main>
       </ErrorBoundary>

@@ -2,19 +2,6 @@ import type { LucideIcon } from 'lucide-react';
 
 import type { ButtonProps } from '@/components/reusable/single/Button';
 
-export type RelatedCardsVariant =
-  | 'domain-only'
-  | 'mix-ranked'
-  | 'one-each-sic'
-  | 'domain-resource-blog';
-
-export interface RelatedCardsConfig {
-  variant?: RelatedCardsVariant;
-  title?: string;
-  description?: string;
-  enabled?: boolean;
-}
-
 export interface SectionIntro {
   title: string;
   description?: string;
@@ -192,6 +179,4 @@ export interface ServicePageData<
     buttonText: string;
     buttonHref: string;
   };
-
-  related?: RelatedCardsConfig;
 }

@@ -38,45 +38,45 @@ export function BlogTopicTemplate({ topic, sections, totalPosts }: BlogTopicTemp
         {/* SECTIONS */}
         {sections.length === 0 ? (
           <SectionWrapper className='blog-surface--muted'>
-              <p className='text-center text-muted-foreground'>
-                No articles published for this topic yet.
-              </p>
+            <p className='text-center text-muted-foreground'>
+              No articles published for this topic yet.
+            </p>
           </SectionWrapper>
         ) : (
           sections.map(section => (
             <SectionWrapper key={section.key} className='blog-surface--muted'>
-                <h2 className='blog-section__title'>{section.label}</h2>
-                <div className='blog-category__grid'>
-                  {section.posts.map(post => {
-                    const colors = getCategoryColors(post.category);
-                    const catMeta = getCategoryMetadata(post.category);
-                    return (
-                      <Card key={post.slug} className='blog-category__card'>
-                        <div className='l-stack'>
-                          <span className={`badge badge--meta ${colors.bg} ${colors.text}`}>
-                            {catMeta?.name ?? post.category}
-                          </span>
+              <h2 className='blog-section__title'>{section.label}</h2>
+              <div className='blog-category__grid'>
+                {section.posts.map(post => {
+                  const colors = getCategoryColors(post.category);
+                  const catMeta = getCategoryMetadata(post.category);
+                  return (
+                    <Card key={post.slug} className='blog-category__card'>
+                      <div className='l-stack'>
+                        <span className={`badge badge--meta ${colors.bg} ${colors.text}`}>
+                          {catMeta?.name ?? post.category}
+                        </span>
 
-                          <h3 className='blog-category__card-title'>{post.title}</h3>
+                        <h3 className='blog-category__card-title'>{post.title}</h3>
 
-                          <p className='blog-category__card-description'>{post.metaDescription}</p>
+                        <p className='blog-category__card-description'>{post.metaDescription}</p>
 
-                          <div className='blog-category__card-meta'>
-                            <Calendar aria-hidden='true' />
-                            {post.publishDate}
-                          </div>
-
-                          <a
-                            href={`/blog/${post.slug}`}
-                            className='link-primary blog-landing__card-cta'
-                          >
-                            Read article <ArrowRight aria-hidden='true' />
-                          </a>
+                        <div className='blog-category__card-meta'>
+                          <Calendar aria-hidden='true' />
+                          {post.publishDate}
                         </div>
-                      </Card>
-                    );
-                  })}
-                </div>
+
+                        <a
+                          href={`/blog/${post.slug}`}
+                          className='link-primary blog-landing__card-cta'
+                        >
+                          Read article <ArrowRight aria-hidden='true' />
+                        </a>
+                      </div>
+                    </Card>
+                  );
+                })}
+              </div>
             </SectionWrapper>
           ))
         )}

@@ -8,8 +8,8 @@ import { DEFAULT_CTA_LABEL, resolveCtaLabel } from '@/config/ctaLabels';
 import {
   buildContactHref,
   buildGlobalContactHref,
-  parseContactSource,
   type ContactSourceType,
+  parseContactSource,
 } from '@/lib/contact/contactHref';
 
 const BLOCK = 'cta-section';

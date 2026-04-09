@@ -1,9 +1,9 @@
 import { type AnchorHTMLAttributes, type ReactNode } from 'react';
 import { ArrowRight, BookOpen, MessageSquare } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
-import { SectionWrapper } from '@/components/reusable/primitives';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
 import { RESOURCE_HUB_DATA } from '@/domains/resources/api';
@@ -112,7 +112,10 @@ export function ResourcesHub({
               const IconComponent = category.icon;
               return (
                 <Card key={category.id} className='resources-hub__topic-card'>
-                  <InternalLink href={category.href} className='link-primary resources-hub__topic-link'>
+                  <InternalLink
+                    href={category.href}
+                    className='link-primary resources-hub__topic-link'
+                  >
                     <IconComponent className='resources-hub__topic-icon' aria-hidden='true' />
                     <div className='resources-hub__topic-top'>
                       <h3 className='resources-hub__topic-title'>{category.name}</h3>

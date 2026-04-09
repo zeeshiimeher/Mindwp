@@ -10,12 +10,15 @@ import {
 } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+const slug = 'ecommerce';
+
 export const woocommercePage = {
-  slug: 'ecommerce',
+  slug,
   systems: ['smart-website-systems'],
   topics: ['website-infrastructure'],
   keywords: [
@@ -28,27 +31,15 @@ export const woocommercePage = {
   ],
   badge: 'E-commerce Implementation',
   category: 'Implementation Services',
-  seo: {
+  seo: buildServiceSeo({
+    slug,
     title: 'E-commerce Implementation | Structured Commerce on WordPress',
     description:
       'Structured e-commerce and web shop implementation on WordPress, using WooCommerce where appropriate for catalog logic, checkout flow, fulfilment, and reporting.',
-    canonical: '/services/ecommerce',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'E-commerce implementation on WordPress',
-        description:
-          'Structured e-commerce and web shop implementation on WordPress, using WooCommerce where appropriate for catalog logic, checkout flow, fulfilment, and reporting.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/ecommerce',
-      },
-    },
-  },
+    schemaName: 'E-commerce implementation on WordPress',
+    schemaDescription:
+      'Structured e-commerce and web shop implementation on WordPress, using WooCommerce where appropriate for catalog logic, checkout flow, fulfilment, and reporting.',
+  }),
   hero: {
     badge: 'E-commerce Infrastructure on WordPress',
     title: 'E-commerce implementation built around how you sell, ship, and operate',
@@ -56,9 +47,8 @@ export const woocommercePage = {
       'We implement e-commerce systems on WordPress with WooCommerce where it fits. Catalog logic, checkout flow, fulfilment rules, and reporting are set up around your actual operating model — not just assembled to get a store online.',
     primaryAction: {
       label: CTA_LABELS.PRIMARY,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'smart-website-systems',
-        sourceType: 'service',
         slug: 'ecommerce',
       }),
     },
@@ -234,11 +224,10 @@ export const woocommercePage = {
     title: 'Discuss your e-commerce implementation',
     description:
       'If you are evaluating a WordPress-based e-commerce or web shop build, we can review your catalog needs, checkout requirements, fulfilment model, and integrations — then outline a clear implementation plan.',
-      buttonText: CTA_LABELS.PRIMARY,
-      buttonHref: buildContactHref({
-        system: 'smart-website-systems',
-        sourceType: 'service',
-        slug: 'ecommerce',
-      }),
+    buttonText: CTA_LABELS.PRIMARY,
+    buttonHref: buildServiceContactHref({
+      system: 'smart-website-systems',
+      slug: 'ecommerce',
+    }),
   },
 } satisfies ServicePageData;

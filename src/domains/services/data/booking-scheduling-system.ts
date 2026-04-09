@@ -1,12 +1,15 @@
 import { Bell, Calendar, Clock, MessageSquare, MousePointerClick, Workflow } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+const slug = 'booking-scheduling-system';
+
 export const bookingSchedulingSystemPage = {
-  slug: 'booking-scheduling-system',
+  slug,
   systems: ['smart-website-systems'],
   topics: ['booking-automation', 'no-show-reduction', 'service-reminders'],
   keywords: [
@@ -18,27 +21,15 @@ export const bookingSchedulingSystemPage = {
   ],
   badge: 'Booking & Scheduling System',
   category: 'Operational Systems',
-  seo: {
+  seo: buildServiceSeo({
+    slug,
     title: 'Booking & Scheduling System | Clearer appointment flow for service businesses',
     description:
       'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-    canonical: '/services/booking-scheduling-system',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Booking and scheduling system for service businesses',
-        description:
-          'A structured booking and scheduling system for service businesses, covering appointment flow, confirmations, reminders, admin handoff, and reduced scheduling friction.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/booking-scheduling-system',
-      },
-    },
-  },
+    schemaName: 'Booking and scheduling system for service businesses',
+    schemaDescription:
+      'A structured booking and scheduling system for service businesses, covering appointment flow, confirmations, reminders, admin handoff, and reduced scheduling friction.',
+  }),
   hero: {
     badge: 'Appointment Flow Infrastructure',
     title: 'A booking system should make the next step easier, not add more admin around it',
@@ -46,10 +37,9 @@ export const bookingSchedulingSystemPage = {
       'This service fixes the path from enquiry to confirmed appointment. Consultation requests, confirmations, reminders, and staff handoff all work together so more interest turns into booked appointments.',
     primaryAction: {
       label: CTA_LABELS.REVIEW_BOOKING,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'smart-website-systems',
-        sourceType: 'service',
-        slug: 'booking-scheduling-system',
+        slug,
       }),
     },
     list: [
@@ -291,21 +281,14 @@ export const bookingSchedulingSystemPage = {
       cssPrefix: 'booking-scheduling-faq',
     },
   },
-  related: {
-    variant: 'domain-only',
-    title: 'Related booking, response, and growth pages',
-    description:
-      'Booking flow often connects closely with lead handling, website structure, and later-stage revenue systems.',
-  },
   cta: {
     title: 'Make the booking step work properly',
     description:
       'Tell us how appointments are booked now. We will show you where friction, reminder gaps, and admin confusion are slowing conversion.',
-      buttonText: CTA_LABELS.REVIEW_BOOKING,
-      buttonHref: buildContactHref({
-        system: 'smart-website-systems',
-        sourceType: 'service',
-        slug: 'booking-scheduling-system',
-      }),
+    buttonText: CTA_LABELS.REVIEW_BOOKING,
+    buttonHref: buildServiceContactHref({
+      system: 'smart-website-systems',
+      slug,
+    }),
   },
 } satisfies ServicePageData;

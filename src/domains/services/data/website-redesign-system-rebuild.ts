@@ -11,12 +11,15 @@ import {
 } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+const slug = 'website-redesign-system-rebuild';
+
 export const websiteRedesignSystemRebuildPage = {
-  slug: 'website-redesign-system-rebuild',
+  slug,
   systems: ['smart-website-systems'],
   topics: ['website-infrastructure', 'service-page-architecture'],
   keywords: [
@@ -28,28 +31,16 @@ export const websiteRedesignSystemRebuildPage = {
   ],
   badge: 'Website Redesign & System Rebuild',
   category: 'Structural Rebuild Services',
-  seo: {
+  seo: buildServiceSeo({
+    slug,
     title:
       'Website Redesign & System Rebuild | Structural realignment for service business websites',
     description:
       'Website redesign and system rebuild work for service businesses whose current site no longer matches their services, enquiry flow, integrations, or operational needs.',
-    canonical: '/services/website-redesign-system-rebuild',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Website redesign and system rebuild for service businesses',
-        description:
-          'A structural website redesign and rebuild pathway for service businesses needing clearer architecture, better enquiry flow, reduced technical clutter, and stronger long-term maintainability.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/website-redesign-system-rebuild',
-      },
-    },
-  },
+    schemaName: 'Website redesign and system rebuild for service businesses',
+    schemaDescription:
+      'A structural website redesign and rebuild pathway for service businesses needing clearer architecture, better enquiry flow, reduced technical clutter, and stronger long-term maintainability.',
+  }),
   hero: {
     badge: 'Structural Realignment Pathway',
     title: 'When the website no longer matches the business, a visual refresh is not enough',
@@ -57,9 +48,8 @@ export const websiteRedesignSystemRebuildPage = {
       'This service is for businesses whose current site has drifted too far from their services, enquiry flow, integrations, or operating reality. The work is structural correction and rebuild logic, not cosmetic redesign for its own sake.',
     primaryAction: {
       label: CTA_LABELS.PRIMARY,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'smart-website-systems',
-        sourceType: 'service',
         slug: 'website-redesign-system-rebuild',
       }),
     },
@@ -302,21 +292,14 @@ export const websiteRedesignSystemRebuildPage = {
       cssPrefix: 'website-redesign-rebuild-faq',
     },
   },
-  related: {
-    variant: 'domain-only',
-    title: 'Related rebuild and implementation pages',
-    description:
-      'Website redesign and rebuild work often connects with WordPress implementation, Smart Website structure, and growth-system diagnosis.',
-  },
   cta: {
     title: 'Rebuild the website around how the business actually works',
     description:
       'If the current site no longer supports your services, enquiry flow, or maintainability, we can help define a clearer rebuild pathway.',
-      buttonText: CTA_LABELS.PRIMARY,
-      buttonHref: buildContactHref({
-        system: 'smart-website-systems',
-        sourceType: 'service',
-        slug: 'website-redesign-system-rebuild',
-      }),
+    buttonText: CTA_LABELS.PRIMARY,
+    buttonHref: buildServiceContactHref({
+      system: 'smart-website-systems',
+      slug: 'website-redesign-system-rebuild',
+    }),
   },
 } satisfies ServicePageData;

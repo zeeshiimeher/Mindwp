@@ -12,8 +12,9 @@ import {
 } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
 const smartWebsitesFaqItems = [
@@ -83,27 +84,15 @@ export const smartWebsiteSystemsPage = {
   ],
   badge: 'Smart Website Systems',
   category: 'Digital Infrastructure',
-  seo: {
+  seo: buildServiceSeo({
+    slug: 'smart-website-systems',
     title: 'Smart Website Systems for service businesses',
     description:
       'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-    canonical: '/services/smart-website-systems',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Smart Website Systems',
-        description:
-          'Smart Website Systems create business websites where visitors quickly understand what you offer, enquiries reach the right place, and integrations can be added smoothly.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/smart-website-systems',
-      },
-    },
-  },
+    schemaName: 'Smart Website Systems',
+    schemaDescription:
+      'Smart Website Systems create business websites where visitors quickly understand what you offer, enquiries reach the right place, and integrations can be added smoothly.',
+  }),
   hero: {
     badge: 'Smart Website Systems',
     title: 'A website that works as part of your business',
@@ -111,9 +100,8 @@ export const smartWebsiteSystemsPage = {
       'A Smart Website gives visitors a clear path from service to enquiry. Your services are easy to understand, the next step is obvious, and the site connects directly to your workflow.',
     primaryAction: {
       label: CTA_LABELS.SMART_WEBSITE_CONVERSION,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'smart-website-systems',
-        sourceType: 'service',
         slug: 'smart-website-systems',
       }),
     },
@@ -387,22 +375,20 @@ export const smartWebsiteSystemsPage = {
     title: 'Build your smart website system',
     description:
       'Tell us how your website handles enquiries now. We will show you where visitors drop off before they contact you.',
-      buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
-      buttonHref: buildContactHref({
-        system: 'smart-website-systems',
-        sourceType: 'service',
-        slug: 'smart-website-systems',
-      }),
+    buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
+    buttonHref: buildServiceContactHref({
+      system: 'smart-website-systems',
+      slug: 'smart-website-systems',
+    }),
   },
   inlineCta: {
     title: 'Not sure how this would fit your business?',
     description:
       'No commitment. We will walk through your setup and show where enquiries are being lost.',
-      buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
-      buttonHref: buildContactHref({
-        system: 'smart-website-systems',
-        sourceType: 'service',
-        slug: 'smart-website-systems',
-      }),
+    buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
+    buttonHref: buildServiceContactHref({
+      system: 'smart-website-systems',
+      slug: 'smart-website-systems',
+    }),
   },
 } satisfies ServicePageData;

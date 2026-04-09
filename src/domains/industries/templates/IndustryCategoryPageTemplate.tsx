@@ -20,11 +20,11 @@ import {
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import type { IndustryCategory } from '@/domains/industries/catalog';
 import { IndustrySubIndustriesSection } from '@/domains/industries/components';
+import { buildContactHref } from '@/lib/contact/contactHref';
 import {
   resolveIndustryCategoryDetailRoutes,
   resolveIndustryPathwaySection,
 } from '@/lib/cta/industryPresentation';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 export type IndustryCategoryPageTemplateProps = {
   slug: string;
@@ -84,7 +84,6 @@ export function IndustryCategoryPageTemplate({
   const pathwaySection = pathways ?? packages;
   const resolvedPathwaySection = resolveIndustryPathwaySection(pathwaySection, system, slug);
   const showSubIndustries = sectionControls?.subIndustries?.enabled !== false && !detailRoutes;
-  const showCaseStudies = sectionControls?.caseStudies?.enabled === true;
   const resolvedDetailRoutes = resolveIndustryCategoryDetailRoutes(detailRoutes, category);
   const resolvedCta = cta.primaryAction?.href
     ? {

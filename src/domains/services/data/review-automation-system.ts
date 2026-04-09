@@ -1,12 +1,15 @@
 import { Clock, GitBranch, MessageSquare, Search, ShieldCheck, Star } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+const slug = 'review-automation-system';
+
 export const reviewAutomationSystemPage = {
-  slug: 'review-automation-system',
+  slug,
   systems: ['reputation-review'],
   topics: ['review-automation', 'review-generation', 'negative-review-response'],
   keywords: [
@@ -18,27 +21,15 @@ export const reviewAutomationSystemPage = {
   ],
   badge: 'Review Automation System',
   category: 'Trust Systems',
-  seo: {
+  seo: buildServiceSeo({
+    slug,
     title: 'Review Automation System | Consistent review requests for service businesses',
     description:
       'Review automation for service businesses that need more consistent review requests, clearer feedback routing, and better trust signals without relying on manual follow-up.',
-    canonical: '/services/review-automation-system',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Review automation system for service businesses',
-        description:
-          'A structured review automation system covering request timing, customer feedback flows, negative feedback routing, and consistent review generation.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/review-automation-system',
-      },
-    },
-  },
+    schemaName: 'Review automation system for service businesses',
+    schemaDescription:
+      'A structured review automation system covering request timing, customer feedback flows, negative feedback routing, and consistent review generation.',
+  }),
   hero: {
     badge: 'Trust Workflow Layer',
     title:
@@ -47,9 +38,8 @@ export const reviewAutomationSystemPage = {
       'This service focuses on the review-request workflow itself. It helps service businesses ask more consistently, route unhappy feedback more intelligently, and improve review velocity without depending on manual chasing.',
     primaryAction: {
       label: CTA_LABELS.PRIMARY,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'reputation-review',
-        sourceType: 'service',
         slug: 'review-automation-system',
       }),
     },
@@ -290,21 +280,14 @@ export const reviewAutomationSystemPage = {
       cssPrefix: 'review-automation-faq',
     },
   },
-  related: {
-    variant: 'domain-only',
-    title: 'Related trust and visibility pages',
-    description:
-      'Review automation usually supports wider reputation, local trust, and conversion systems.',
-  },
   cta: {
     title: 'Make review requests part of the process',
     description:
       'If reviews are being left to memory and manual follow-up, we can help structure a cleaner review automation workflow.',
-      buttonText: CTA_LABELS.PRIMARY,
-      buttonHref: buildContactHref({
-        system: 'reputation-review',
-        sourceType: 'service',
-        slug: 'review-automation-system',
-      }),
+    buttonText: CTA_LABELS.PRIMARY,
+    buttonHref: buildServiceContactHref({
+      system: 'reputation-review',
+      slug: 'review-automation-system',
+    }),
   },
 } satisfies ServicePageData;

@@ -1,4 +1,6 @@
-import RelatedContentSection, { type RelatedContentBlock } from '@/components/system/RelatedContentSection';
+import RelatedContentSection, {
+  type RelatedContentBlock,
+} from '@/components/system/RelatedContentSection';
 import { SECTION_BEHAVIOR } from '@/config/section-intelligence';
 
 interface SmartRelatedSectionProps {
@@ -19,5 +21,7 @@ export function SmartRelatedSection({
 
   if (blocks.length === 0) return null;
 
-  return <RelatedContentSection blocks={blocks} showCTA={showCTA && behavior?.allowCTA !== false} />;
+  return (
+    <RelatedContentSection blocks={blocks} showCTA={showCTA && behavior?.allowCTA !== false} />
+  );
 }

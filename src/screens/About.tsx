@@ -17,7 +17,10 @@ export function About() {
   return (
     <div className='about-page'>
       {/* Hero Section */}
-      <SectionWrapper className='about-page-hero' background='bg-gradient-to-b from-blue-50 to-white'>
+      <SectionWrapper
+        className='about-page-hero'
+        background='bg-gradient-to-b from-blue-50 to-white'
+      >
         <div className='text-center'>
           <Badge variant='secondary' context='hero'>
             About MindWP

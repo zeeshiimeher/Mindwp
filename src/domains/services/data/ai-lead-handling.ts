@@ -1,12 +1,15 @@
 import { MessageSquare, Phone, Users } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+const slug = 'ai-lead-handling';
+
 export const aiLeadHandlingPage = {
-  slug: 'ai-lead-handling',
+  slug,
   systems: ['ai-lead-handling'],
   topics: ['lead-response-time', 'missed-calls', 'lead-capture'],
   keywords: [
@@ -18,27 +21,15 @@ export const aiLeadHandlingPage = {
   ],
   badge: 'AI Lead Handling Systems',
   category: 'AI Response Systems',
-  seo: {
+  seo: buildServiceSeo({
+    slug,
     title: 'AI Lead Handling Systems | Structured first-response systems for service businesses',
     description:
       'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
-    canonical: '/services/ai-lead-handling',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'AI Lead Handling integrated into a structured service-business system',
-        description:
-          'AI lead handling systems for service businesses, including chat, call support, booking assistance, and structured handoff into CRM and follow-up workflows.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/ai-lead-handling',
-      },
-    },
-  },
+    schemaName: 'AI Lead Handling integrated into a structured service-business system',
+    schemaDescription:
+      'AI lead handling systems for service businesses, including chat, call support, booking assistance, and structured handoff into CRM and follow-up workflows.',
+  }),
   hero: {
     badge: 'AI Lead Handling',
     title: 'AI can support first response without replacing the judgement that matters',
@@ -46,10 +37,9 @@ export const aiLeadHandlingPage = {
       'This service helps businesses respond faster across website chat, phone, and booking flows. AI handles the repeatable first step, captures the right details, and hands off cleanly when a person should step in.',
     primaryAction: {
       label: CTA_LABELS.AI_LEAD_HANDLING,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'ai-lead-handling',
-        sourceType: 'service',
-        slug: 'ai-lead-handling',
+        slug,
       }),
     },
     list: [
@@ -395,11 +385,10 @@ export const aiLeadHandlingPage = {
     title: 'See where AI response would actually help',
     description:
       'Tell us how calls, chat, and bookings are handled now. We will show you where response speed and handoff are breaking down.',
-      buttonText: CTA_LABELS.AI_LEAD_HANDLING,
-      buttonHref: buildContactHref({
-        system: 'ai-lead-handling',
-        sourceType: 'service',
-        slug: 'ai-lead-handling',
-      }),
+    buttonText: CTA_LABELS.AI_LEAD_HANDLING,
+    buttonHref: buildServiceContactHref({
+      system: 'ai-lead-handling',
+      slug,
+    }),
   },
 } satisfies ServicePageData;

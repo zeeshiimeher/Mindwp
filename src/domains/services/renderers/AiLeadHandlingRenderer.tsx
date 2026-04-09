@@ -1,3 +1,4 @@
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   ChecklistCardsSection,
   DualToneChecklistComparisonSection,
@@ -7,7 +8,6 @@ import {
   ServiceSpectrumCardsSection,
   StackedFeatureListSection,
 } from '@/components/reusable/sections';
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { SectionIntro, WorkflowStepCard } from '@/components/reusable/single';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
@@ -15,7 +15,7 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { aiLeadHandlingPage } from '@/domains/services/data/ai-lead-handling';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface AiLeadHandlingRendererProps {
   data: typeof aiLeadHandlingPage;
@@ -81,23 +81,23 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
           />
 
           <SectionWrapper className='ai-response-workflows' background='bg-alt'>
-              <SectionIntro
-                badge={workflowExamples.badge}
-                title={workflowExamples.title}
-                description={workflowExamples.description}
-                cssPrefix='ai-response-workflows-header'
-              />
+            <SectionIntro
+              badge={workflowExamples.badge}
+              title={workflowExamples.title}
+              description={workflowExamples.description}
+              cssPrefix='ai-response-workflows-header'
+            />
 
-              <div className='l-grid l-gap-6 md:l-grid-2'>
-                {workflowExamples.items.map((workflow, index) => (
-                  <WorkflowStepCard
-                    key={index}
-                    trigger={workflow.trigger}
-                    actions={workflow.actions}
-                    cssPrefix='ai-response-workflow'
-                  />
-                ))}
-              </div>
+            <div className='l-grid l-gap-6 md:l-grid-2'>
+              {workflowExamples.items.map((workflow, index) => (
+                <WorkflowStepCard
+                  key={index}
+                  trigger={workflow.trigger}
+                  actions={workflow.actions}
+                  cssPrefix='ai-response-workflow'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <ServiceSpectrumCardsSection
@@ -154,7 +154,13 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
           <ServiceCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
+            primaryAction={{
+              href: buildServiceContactHref({
+                system: data.systems?.[0] ?? 'smart-website-systems',
+                slug,
+              }),
+              variant: 'white',
+            }}
           />
         </main>
       </ErrorBoundary>

@@ -1,9 +1,9 @@
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   DualToneChecklistComparisonSection,
   ProblemCardsSection,
   ProcessStepsSection,
 } from '@/components/reusable/sections';
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { IconListCard, ScenarioSolutionCard, SectionIntro } from '@/components/reusable/single';
 import { AuditChecklistCard } from '@/components/reusable/single/AuditChecklistCard';
@@ -12,7 +12,7 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { leadReactivationSystemPage } from '@/domains/services/data/lead-reactivation-system';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface LeadReactivationSystemRendererProps {
   data: typeof leadReactivationSystemPage;
@@ -59,49 +59,49 @@ export function LeadReactivationSystemRenderer({
           />
 
           <SectionWrapper className='lead-reactivation-scenarios' background='bg-base'>
-              <SectionIntro
-                badge={reactivationScenarios.badge}
-                title={reactivationScenarios.title}
-                description={reactivationScenarios.description}
-                cssPrefix='lead-reactivation-scenarios-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-3'>
-                {reactivationScenarios.items.map((item, index) => (
-                  <ScenarioSolutionCard
-                    key={index}
-                    icon={item.icon}
-                    title={item.title}
-                    scenario={item.scenario}
-                    solution={item.solution}
-                    result={item.result}
-                    scenarioLabel={reactivationScenarios.scenarioLabel}
-                    solutionLabel={reactivationScenarios.solutionLabel}
-                    cssPrefix='lead-reactivation-scenario'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={reactivationScenarios.badge}
+              title={reactivationScenarios.title}
+              description={reactivationScenarios.description}
+              cssPrefix='lead-reactivation-scenarios-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-3'>
+              {reactivationScenarios.items.map((item, index) => (
+                <ScenarioSolutionCard
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  scenario={item.scenario}
+                  solution={item.solution}
+                  result={item.result}
+                  scenarioLabel={reactivationScenarios.scenarioLabel}
+                  solutionLabel={reactivationScenarios.solutionLabel}
+                  cssPrefix='lead-reactivation-scenario'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <SectionWrapper className='lead-reactivation-audit'>
-              <SectionIntro
-                badge={auditAreas.badge}
-                title={auditAreas.title}
-                description={auditAreas.description}
-                cssPrefix='lead-reactivation-audit-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-3'>
-                {auditAreas.items.map((item, index) => (
-                  <AuditChecklistCard
-                    key={index}
-                    icon={item.icon}
-                    title={item.title}
-                    description={item.description}
-                    checks={item.checks}
-                    iconType={item.iconType}
-                    cssPrefix='lead-reactivation-audit-card'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={auditAreas.badge}
+              title={auditAreas.title}
+              description={auditAreas.description}
+              cssPrefix='lead-reactivation-audit-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-3'>
+              {auditAreas.items.map((item, index) => (
+                <AuditChecklistCard
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  checks={item.checks}
+                  iconType={item.iconType}
+                  cssPrefix='lead-reactivation-audit-card'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <ProcessStepsSection
@@ -115,23 +115,23 @@ export function LeadReactivationSystemRenderer({
           />
 
           <SectionWrapper className='lead-reactivation-entry-points'>
-              <SectionIntro
-                badge={entryPoints.badge}
-                title={entryPoints.title}
-                description={entryPoints.description}
-                cssPrefix='lead-reactivation-entry-points-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-3'>
-                {entryPoints.columns.map((column, index) => (
-                  <IconListCard
-                    key={index}
-                    title={column.title}
-                    icon={column.icon}
-                    features={column.features}
-                    cssPrefix='lead-reactivation-entry-point'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={entryPoints.badge}
+              title={entryPoints.title}
+              description={entryPoints.description}
+              cssPrefix='lead-reactivation-entry-points-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-3'>
+              {entryPoints.columns.map((column, index) => (
+                <IconListCard
+                  key={index}
+                  title={column.title}
+                  icon={column.icon}
+                  features={column.features}
+                  cssPrefix='lead-reactivation-entry-point'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <DualToneChecklistComparisonSection
@@ -160,7 +160,13 @@ export function LeadReactivationSystemRenderer({
           <ServiceCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
+            primaryAction={{
+              href: buildServiceContactHref({
+                system: data.systems?.[0] ?? 'smart-website-systems',
+                slug,
+              }),
+              variant: 'white',
+            }}
           />
         </main>
       </ErrorBoundary>

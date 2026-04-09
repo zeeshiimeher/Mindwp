@@ -1,9 +1,9 @@
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   DualToneChecklistComparisonSection,
   ProblemCardsSection,
   ProcessStepsSection,
 } from '@/components/reusable/sections';
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import {
   IconListCard,
@@ -17,7 +17,7 @@ import { RiskListCard } from '@/components/reusable/single/RiskListCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { unifiedCommunicationSystemPage } from '@/domains/services/data/unified-communication-system';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface UnifiedCommunicationSystemRendererProps {
   data: typeof unifiedCommunicationSystemPage;
@@ -64,62 +64,62 @@ export function UnifiedCommunicationSystemRenderer({
           />
 
           <SectionWrapper className='unified-communication-channels' background='bg-alt'>
-              <SectionIntro
-                badge={channelSignals.badge}
-                title={channelSignals.title}
-                description={channelSignals.description}
-                cssPrefix='unified-communication-channels-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-2 xl:l-grid-4'>
-                {channelSignals.items.map((item, index) => (
-                  <IconTextCard
-                    key={index}
-                    icon={item.icon}
-                    title={item.title}
-                    description={item.description}
-                    iconType={item.iconType}
-                    cssPrefix='unified-communication-channel'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={channelSignals.badge}
+              title={channelSignals.title}
+              description={channelSignals.description}
+              cssPrefix='unified-communication-channels-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-2 xl:l-grid-4'>
+              {channelSignals.items.map((item, index) => (
+                <IconTextCard
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  iconType={item.iconType}
+                  cssPrefix='unified-communication-channel'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <SectionWrapper className='unified-communication-risks'>
-              <SectionIntro
-                badge={ownershipRisks.badge}
-                title={ownershipRisks.title}
-                description={ownershipRisks.description}
-                cssPrefix='unified-communication-risks-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-2'>
-                {ownershipRisks.lists.map((list, index) => (
-                  <RiskListCard
-                    key={index}
-                    title={list.title}
-                    issues={list.issues}
-                    cssPrefix='unified-communication-risk-card'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={ownershipRisks.badge}
+              title={ownershipRisks.title}
+              description={ownershipRisks.description}
+              cssPrefix='unified-communication-risks-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-2'>
+              {ownershipRisks.lists.map((list, index) => (
+                <RiskListCard
+                  key={index}
+                  title={list.title}
+                  issues={list.issues}
+                  cssPrefix='unified-communication-risk-card'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <SectionWrapper className='unified-communication-workflows' background='bg-base'>
-              <SectionIntro
-                badge={workflowExamples.badge}
-                title={workflowExamples.title}
-                description={workflowExamples.description}
-                cssPrefix='unified-communication-workflows-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-3'>
-                {workflowExamples.items.map((workflow, index) => (
-                  <WorkflowStepCard
-                    key={index}
-                    trigger={workflow.trigger}
-                    actions={workflow.actions}
-                    cssPrefix='unified-communication-workflow'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={workflowExamples.badge}
+              title={workflowExamples.title}
+              description={workflowExamples.description}
+              cssPrefix='unified-communication-workflows-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-3'>
+              {workflowExamples.items.map((workflow, index) => (
+                <WorkflowStepCard
+                  key={index}
+                  trigger={workflow.trigger}
+                  actions={workflow.actions}
+                  cssPrefix='unified-communication-workflow'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <ProcessStepsSection
@@ -157,23 +157,23 @@ export function UnifiedCommunicationSystemRenderer({
           />
 
           <SectionWrapper className='unified-communication-layers' background='bg-base'>
-              <SectionIntro
-                badge={operatingLayers.introBadge}
-                title={operatingLayers.introTitle}
-                description={operatingLayers.introDescription}
-                cssPrefix='unified-communication-layers-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-3'>
-                {operatingLayers.columns.map((column, index) => (
-                  <IconListCard
-                    key={index}
-                    title={column.title}
-                    icon={column.icon}
-                    features={column.features}
-                    cssPrefix='unified-communication-layer'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={operatingLayers.introBadge}
+              title={operatingLayers.introTitle}
+              description={operatingLayers.introDescription}
+              cssPrefix='unified-communication-layers-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-3'>
+              {operatingLayers.columns.map((column, index) => (
+                <IconListCard
+                  key={index}
+                  title={column.title}
+                  icon={column.icon}
+                  features={column.features}
+                  cssPrefix='unified-communication-layer'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <DualToneChecklistComparisonSection
@@ -202,7 +202,13 @@ export function UnifiedCommunicationSystemRenderer({
           <ServiceCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
+            primaryAction={{
+              href: buildServiceContactHref({
+                system: data.systems?.[0] ?? 'smart-website-systems',
+                slug,
+              }),
+              variant: 'white',
+            }}
           />
         </main>
       </ErrorBoundary>

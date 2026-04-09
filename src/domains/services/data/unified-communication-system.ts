@@ -11,12 +11,15 @@ import {
 } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+const slug = 'unified-communication-system';
+
 export const unifiedCommunicationSystemPage = {
-  slug: 'unified-communication-system',
+  slug,
   systems: ['ai-lead-handling'],
   topics: ['lead-routing', 'lead-management'],
   keywords: [
@@ -28,27 +31,15 @@ export const unifiedCommunicationSystemPage = {
   ],
   badge: 'Unified Communication System',
   category: 'Communication Routing Systems',
-  seo: {
+  seo: buildServiceSeo({
+    slug,
     title: 'Unified Communication System | Clearer routing across calls, forms, chat, and inboxes',
     description:
       'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
-    canonical: '/services/unified-communication-system',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Unified communication system for service businesses',
-        description:
-          'A structured communication-routing system covering calls, forms, chat, email, and message handoff so service businesses can reduce missed conversations and improve ownership.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/unified-communication-system',
-      },
-    },
-  },
+    schemaName: 'Unified communication system for service businesses',
+    schemaDescription:
+      'A structured communication-routing system covering calls, forms, chat, email, and message handoff so service businesses can reduce missed conversations and improve ownership.',
+  }),
   hero: {
     badge: 'Routing & Ownership Layer',
     title: 'When enquiries arrive from everywhere, the real problem is usually routing, not volume',
@@ -56,9 +47,8 @@ export const unifiedCommunicationSystemPage = {
       'This service focuses on the communication layer between incoming messages and the right next action. It helps businesses handle calls, forms, chat, and inbox messages with less confusion, fewer missed conversations, and clearer ownership.',
     primaryAction: {
       label: CTA_LABELS.PRIMARY,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'ai-lead-handling',
-        sourceType: 'service',
         slug: 'unified-communication-system',
       }),
     },
@@ -361,21 +351,14 @@ export const unifiedCommunicationSystemPage = {
       cssPrefix: 'unified-communication-faq',
     },
   },
-  related: {
-    variant: 'domain-only',
-    title: 'Related routing and response pages',
-    description:
-      'Unified communication usually connects with AI lead handling, CRM structure, and missed-call recovery.',
-  },
   cta: {
     title: 'Make communication routing clearer',
     description:
       'If calls, forms, chat, and inbox messages are creating confusion, we can help define a clearer routing and ownership model.',
-      buttonText: CTA_LABELS.PRIMARY,
-      buttonHref: buildContactHref({
-        system: 'ai-lead-handling',
-        sourceType: 'service',
-        slug: 'unified-communication-system',
-      }),
+    buttonText: CTA_LABELS.PRIMARY,
+    buttonHref: buildServiceContactHref({
+      system: 'ai-lead-handling',
+      slug: 'unified-communication-system',
+    }),
   },
 } satisfies ServicePageData;

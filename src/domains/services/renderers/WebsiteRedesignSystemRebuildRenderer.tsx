@@ -1,9 +1,9 @@
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   DualToneChecklistComparisonSection,
   ProblemCardsSection,
   ProcessStepsSection,
 } from '@/components/reusable/sections';
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { CenteredFeatureCard } from '@/components/reusable/single/CenteredFeatureCard';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
@@ -14,7 +14,7 @@ import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { websiteRedesignSystemRebuildPage } from '@/domains/services/data/website-redesign-system-rebuild';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface WebsiteRedesignSystemRebuildRendererProps {
   data: typeof websiteRedesignSystemRebuildPage;
@@ -63,47 +63,47 @@ export function WebsiteRedesignSystemRebuildRenderer({
           />
 
           <SectionWrapper className='website-redesign-rebuild-signals' background='bg-base'>
-              <SectionIntro
-                badge={structuralSignals.badge}
-                title={structuralSignals.title}
-                description={structuralSignals.description}
-                cssPrefix='website-redesign-rebuild-signals-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-2'>
-                {structuralSignals.items.map((item, index) => (
-                  <HighlightCard
-                    key={index}
-                    icon={item.icon}
-                    title={item.title}
-                    description={item.description}
-                    className='website-redesign-rebuild-signal'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={structuralSignals.badge}
+              title={structuralSignals.title}
+              description={structuralSignals.description}
+              cssPrefix='website-redesign-rebuild-signals-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-2'>
+              {structuralSignals.items.map((item, index) => (
+                <HighlightCard
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  className='website-redesign-rebuild-signal'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <SectionWrapper className='website-redesign-rebuild-scenarios'>
-              <SectionIntro
-                badge={rebuildScenarios.badge}
-                title={rebuildScenarios.title}
-                description={rebuildScenarios.description}
-                cssPrefix='website-redesign-rebuild-scenarios-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-3'>
-                {rebuildScenarios.items.map((item, index) => (
-                  <ScenarioSolutionCard
-                    key={index}
-                    icon={item.icon}
-                    title={item.title}
-                    scenario={item.scenario}
-                    solution={item.solution}
-                    result={item.result}
-                    scenarioLabel={rebuildScenarios.scenarioLabel}
-                    solutionLabel={rebuildScenarios.solutionLabel}
-                    cssPrefix='website-redesign-rebuild-scenario'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={rebuildScenarios.badge}
+              title={rebuildScenarios.title}
+              description={rebuildScenarios.description}
+              cssPrefix='website-redesign-rebuild-scenarios-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-3'>
+              {rebuildScenarios.items.map((item, index) => (
+                <ScenarioSolutionCard
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  scenario={item.scenario}
+                  solution={item.solution}
+                  result={item.result}
+                  scenarioLabel={rebuildScenarios.scenarioLabel}
+                  solutionLabel={rebuildScenarios.solutionLabel}
+                  cssPrefix='website-redesign-rebuild-scenario'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <ProcessStepsSection
@@ -117,23 +117,23 @@ export function WebsiteRedesignSystemRebuildRenderer({
           />
 
           <SectionWrapper className='website-redesign-rebuild-layers'>
-              <SectionIntro
-                badge={implementationLayers.badge}
-                title={implementationLayers.title}
-                description={implementationLayers.description}
-                cssPrefix='website-redesign-rebuild-layers-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-2 xl:l-grid-4'>
-                {implementationLayers.items.map((item, index) => (
-                  <CenteredFeatureCard
-                    key={index}
-                    icon={item.icon}
-                    title={item.title}
-                    description={item.description}
-                    cssPrefix='website-redesign-rebuild-layer'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={implementationLayers.badge}
+              title={implementationLayers.title}
+              description={implementationLayers.description}
+              cssPrefix='website-redesign-rebuild-layers-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-2 xl:l-grid-4'>
+              {implementationLayers.items.map((item, index) => (
+                <CenteredFeatureCard
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  cssPrefix='website-redesign-rebuild-layer'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <DualToneChecklistComparisonSection
@@ -162,7 +162,13 @@ export function WebsiteRedesignSystemRebuildRenderer({
           <ServiceCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
+            primaryAction={{
+              href: buildServiceContactHref({
+                system: data.systems?.[0] ?? 'smart-website-systems',
+                slug,
+              }),
+              variant: 'white',
+            }}
           />
         </main>
       </ErrorBoundary>

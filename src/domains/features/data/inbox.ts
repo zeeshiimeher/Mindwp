@@ -10,8 +10,9 @@ import {
   Zap,
 } from 'lucide-react';
 
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 
+import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
 
 const inboxFaqItems = [
@@ -67,33 +68,21 @@ const inboxFaqItems = [
   },
 ];
 
+const slug = 'inbox';
+
 export const inboxData: FeaturePageData = {
-  slug: 'inbox',
+  slug,
   systems: ['ai-lead-handling'],
   topics: ['lead-response-time'],
-  seo: {
+  seo: buildFeatureSeo({
+    slug,
     title: 'Inbox | Unified Customer Communication Layer',
     description:
       'Unified inbox layer for email, SMS, social messages, and calls in one organized system for faster response and better team coordination.',
-    canonical: '/features/inbox',
-    schema: {
-      primary: {
-        '@context': 'https://schema.org',
-        '@type': 'SoftwareApplication',
-        name: 'Inbox',
-        description:
-          'Unified inbox layer for email, SMS, social messages, and calls in one organized system for faster response and better team coordination.',
-        url: '/features/inbox',
-        applicationCategory: 'BusinessApplication',
-        operatingSystem: 'Web Browser',
-        publisher: {
-          '@type': 'Organization',
-          name: 'MindWP',
-          url: 'https://mindwp.com',
-        },
-      },
-    },
-  },
+    schemaName: 'Inbox',
+    schemaDescription:
+      'Unified inbox layer for email, SMS, social messages, and calls in one organized system for faster response and better team coordination.',
+  }),
   hero: {
     badge: 'Feature Spotlight',
     title: 'One Inbox for Every Customer Conversation',
@@ -356,7 +345,7 @@ export const inboxData: FeaturePageData = {
       'Connect your email, SMS, and social channels into one response system so your team can reply faster and stop losing conversations across channels.',
     primaryAction: {
       label: 'Unify Your Inbox System',
-      href: buildContactHref({ system: 'ai-lead-handling', sourceType: 'feature', slug: 'inbox' }),
+      href: buildFeatureContactHref({ system: 'ai-lead-handling', slug }),
     },
   },
 };

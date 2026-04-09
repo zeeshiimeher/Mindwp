@@ -134,7 +134,10 @@ export function Contact() {
   return (
     <div className='contact-page'>
       {/* Hero Section */}
-      <SectionWrapper className='contact-page-hero' background='bg-gradient-to-b from-blue-50 to-white'>
+      <SectionWrapper
+        className='contact-page-hero'
+        background='bg-gradient-to-b from-blue-50 to-white'
+      >
         <div className='contact-page-hero-container-1'>
           <div className='contact-page-hero-content text-center'>
             <h1 className='contact-page-hero-heading-1'>Get in Touch</h1>

@@ -1,15 +1,15 @@
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   ContentCardsGridSection,
   FeatureChecklistCardsSection,
   IconBenefitCardsSection,
 } from '@/components/reusable/sections';
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { woocommercePage } from '@/domains/services/data/woocommerce';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface WooCommerceRendererProps {
   data: typeof woocommercePage;
@@ -45,8 +45,8 @@ export function WooCommerceRenderer({ data, slug }: WooCommerceRendererProps) {
           />
 
           <SectionWrapper className='woocommerce-bridge' background='bg-base'>
-              <h2 className='mb-4'>{bridge.title}</h2>
-              <p className='text-muted-foreground'>{bridge.description}</p>
+            <h2 className='mb-4'>{bridge.title}</h2>
+            <p className='text-muted-foreground'>{bridge.description}</p>
           </SectionWrapper>
 
           {/* Why structured WordPress commerce fits here */}
@@ -75,9 +75,14 @@ export function WooCommerceRenderer({ data, slug }: WooCommerceRendererProps) {
           <ServiceCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
+            primaryAction={{
+              href: buildServiceContactHref({
+                system: data.systems?.[0] ?? 'smart-website-systems',
+                slug,
+              }),
+              variant: 'white',
+            }}
           />
-
         </main>
       </ErrorBoundary>
     </>

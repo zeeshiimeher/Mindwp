@@ -15,7 +15,7 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
 import { inboxData } from '@/domains/features/data/inbox';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 
 export default function InboxRenderer() {
   const { hero, sections, cta } = inboxData;
@@ -28,9 +28,9 @@ export default function InboxRenderer() {
     hero.primaryAction && heroPrimaryHref
       ? {
           ...hero.primaryAction,
-          href: buildContactHref(heroPrimaryHref, {
+          href: buildFeatureContactHref({
+            baseHref: heroPrimaryHref,
             system: primarySystem,
-            sourceType: 'feature',
             slug: inboxData.slug,
           }),
         }
@@ -38,9 +38,9 @@ export default function InboxRenderer() {
   const ctaPrimaryAction = cta.primaryAction.href
     ? {
         ...cta.primaryAction,
-        href: buildContactHref(cta.primaryAction.href, {
+        href: buildFeatureContactHref({
+          baseHref: cta.primaryAction.href,
           system: primarySystem,
-          sourceType: 'feature',
           slug: inboxData.slug,
         }),
       }

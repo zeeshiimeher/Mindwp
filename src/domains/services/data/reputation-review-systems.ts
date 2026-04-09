@@ -1,12 +1,15 @@
 import { AlertTriangle, Bell, GitBranch, MessageSquare, Search, Star } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+const slug = 'reputation-review-systems';
+
 export const reputationReviewSystemsPage = {
-  slug: 'reputation-review-systems',
+  slug,
   systems: ['reputation-review'],
   topics: [
     'review-generation',
@@ -25,27 +28,15 @@ export const reputationReviewSystemsPage = {
   ],
   badge: 'Reputation & Review Systems',
   category: 'Trust Systems',
-  seo: {
+  seo: buildServiceSeo({
+    slug,
     title: 'Reputation & Review Systems | Structured trust-building for service businesses',
     description:
       'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
-    canonical: '/services/reputation-review-systems',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Reputation and review systems for service businesses',
-        description:
-          'Structured review-generation and reputation-management systems for service businesses, including request timing, negative feedback routing, monitoring logic, and trust-building workflows.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/reputation-review-systems',
-      },
-    },
-  },
+    schemaName: 'Reputation and review systems for service businesses',
+    schemaDescription:
+      'Structured review-generation and reputation-management systems for service businesses, including request timing, negative feedback routing, monitoring logic, and trust-building workflows.',
+  }),
   hero: {
     badge: 'Trust-Building Infrastructure',
     title:
@@ -54,9 +45,8 @@ export const reputationReviewSystemsPage = {
       'This service helps businesses build a clear review system around timing, feedback routing, response ownership, and trust signals. It works best when people are already finding the business but still hesitate to trust it.',
     primaryAction: {
       label: CTA_LABELS.REVIEW_SYSTEMS,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'reputation-review',
-        sourceType: 'service',
         slug: 'reputation-review-systems',
       }),
     },
@@ -306,21 +296,14 @@ export const reputationReviewSystemsPage = {
       cssPrefix: 'reputation-review-faq',
     },
   },
-  related: {
-    variant: 'domain-only',
-    title: 'Related trust, visibility, and growth pages',
-    description:
-      'Reputation systems often connect closely with visibility, website clarity, and follow-up systems.',
-  },
   cta: {
     title: 'Make trust part of the system',
     description:
       'Tell us how reviews and feedback are handled now. We will show you how to collect more proof without extra manual chasing.',
-      buttonText: CTA_LABELS.REVIEW_SYSTEMS,
-      buttonHref: buildContactHref({
-        system: 'reputation-review',
-        sourceType: 'service',
-        slug: 'reputation-review-systems',
-      }),
+    buttonText: CTA_LABELS.REVIEW_SYSTEMS,
+    buttonHref: buildServiceContactHref({
+      system: 'reputation-review',
+      slug: 'reputation-review-systems',
+    }),
   },
 } satisfies ServicePageData;

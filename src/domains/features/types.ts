@@ -178,11 +178,4 @@ export type FeaturePageData = {
     secondaryAction?: ButtonProps;
     metaItems?: Array<{ text: string; icon?: unknown; label?: string }>;
   };
-
-  related?: {
-    variant?: 'domain-only' | 'mix-ranked' | 'one-each-sic' | 'domain-resource-blog';
-    title?: string;
-    description?: string;
-    enabled?: boolean;
-  };
 };

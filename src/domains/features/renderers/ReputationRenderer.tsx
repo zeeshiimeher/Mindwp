@@ -1,5 +1,6 @@
 import { Star, TrendingUp } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   FeatureBenefitsSection,
   FeatureCapabilitiesSection,
@@ -8,7 +9,6 @@ import {
   FeatureProcessStepsSection,
   FeatureUseCasesSection,
 } from '@/components/reusable/sections/features';
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { Badge } from '@/components/reusable/single/Badge';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
@@ -16,7 +16,7 @@ import { TestimonialCard } from '@/components/reusable/single/TestimonialCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { Card } from '@/components/ui/card';
 import { reputationData } from '@/domains/features/data/reputation';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 const ReviewsVisual = () => (
@@ -87,9 +87,9 @@ export default function ReputationRenderer() {
     hero.primaryAction && heroPrimaryHref
       ? {
           ...hero.primaryAction,
-          href: buildContactHref(heroPrimaryHref, {
+          href: buildFeatureContactHref({
+            baseHref: heroPrimaryHref,
             system: primarySystem,
-            sourceType: 'feature',
             slug: reputationData.slug,
           }),
         }
@@ -97,9 +97,9 @@ export default function ReputationRenderer() {
   const ctaPrimaryAction = cta.primaryAction.href
     ? {
         ...cta.primaryAction,
-        href: buildContactHref(cta.primaryAction.href, {
+        href: buildFeatureContactHref({
+          baseHref: cta.primaryAction.href,
           system: primarySystem,
-          sourceType: 'feature',
           slug: reputationData.slug,
         }),
       }
@@ -166,26 +166,26 @@ export default function ReputationRenderer() {
           />
 
           <SectionWrapper>
-              <div className='text-center mb-12'>
-                <Badge variant='primary' cssPrefix='mb-4'>
-                  {testimonials.badge}
-                </Badge>
-                <h2 className='text-3xl font-bold mb-4'>{testimonials.title}</h2>
-                <p className='text-muted-foreground l-max-w-2xl l-mx-auto'>
-                  {testimonials.description}
-                </p>
-              </div>
-              <div className='l-grid l-gap-8 md:l-grid-2 lg:l-grid-3'>
-                {testimonials.items.map((testimonial, index) => (
-                  <TestimonialCard
-                    key={index}
-                    quote={testimonial.quote}
-                    author={testimonial.author}
-                    business={testimonial.business}
-                    rating={testimonial.rating}
-                  />
-                ))}
-              </div>
+            <div className='text-center mb-12'>
+              <Badge variant='primary' cssPrefix='mb-4'>
+                {testimonials.badge}
+              </Badge>
+              <h2 className='text-3xl font-bold mb-4'>{testimonials.title}</h2>
+              <p className='text-muted-foreground l-max-w-2xl l-mx-auto'>
+                {testimonials.description}
+              </p>
+            </div>
+            <div className='l-grid l-gap-8 md:l-grid-2 lg:l-grid-3'>
+              {testimonials.items.map((testimonial, index) => (
+                <TestimonialCard
+                  key={index}
+                  quote={testimonial.quote}
+                  author={testimonial.author}
+                  business={testimonial.business}
+                  rating={testimonial.rating}
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <FAQSection

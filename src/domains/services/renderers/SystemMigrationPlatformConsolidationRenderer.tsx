@@ -1,9 +1,9 @@
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   DualToneChecklistComparisonSection,
   ProblemCardsSection,
   ProcessStepsSection,
 } from '@/components/reusable/sections';
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { IconTextCard, LinkCard, SectionIntro } from '@/components/reusable/single';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
@@ -12,7 +12,7 @@ import { RiskListCard } from '@/components/reusable/single/RiskListCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { systemMigrationPlatformConsolidationPage } from '@/domains/services/data/system-migration-platform-consolidation';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface SystemMigrationPlatformConsolidationRendererProps {
   data: typeof systemMigrationPlatformConsolidationPage;
@@ -59,63 +59,63 @@ export function SystemMigrationPlatformConsolidationRenderer({
           />
 
           <SectionWrapper className='system-migration-signals' background='bg-base'>
-              <SectionIntro
-                badge={migrationSignals.badge}
-                title={migrationSignals.title}
-                description={migrationSignals.description}
-                cssPrefix='system-migration-signals-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-2 xl:l-grid-4'>
-                {migrationSignals.items.map((item, index) => (
-                  <IconTextCard
-                    key={index}
-                    icon={item.icon}
-                    title={item.title}
-                    description={item.description}
-                    iconType={item.iconType}
-                    cssPrefix='system-migration-signal'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={migrationSignals.badge}
+              title={migrationSignals.title}
+              description={migrationSignals.description}
+              cssPrefix='system-migration-signals-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-2 xl:l-grid-4'>
+              {migrationSignals.items.map((item, index) => (
+                <IconTextCard
+                  key={index}
+                  icon={item.icon}
+                  title={item.title}
+                  description={item.description}
+                  iconType={item.iconType}
+                  cssPrefix='system-migration-signal'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <SectionWrapper className='system-migration-risks'>
-              <SectionIntro
-                badge={riskAreas.badge}
-                title={riskAreas.title}
-                description={riskAreas.description}
-                cssPrefix='system-migration-risks-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-2'>
-                {riskAreas.lists.map((list, index) => (
-                  <RiskListCard
-                    key={index}
-                    title={list.title}
-                    issues={list.issues}
-                    cssPrefix='system-migration-risk-card'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={riskAreas.badge}
+              title={riskAreas.title}
+              description={riskAreas.description}
+              cssPrefix='system-migration-risks-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-2'>
+              {riskAreas.lists.map((list, index) => (
+                <RiskListCard
+                  key={index}
+                  title={list.title}
+                  issues={list.issues}
+                  cssPrefix='system-migration-risk-card'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <SectionWrapper className='system-migration-targets' background='bg-base'>
-              <SectionIntro
-                badge={consolidationTargets.badge}
-                title={consolidationTargets.title}
-                description={consolidationTargets.description}
-                cssPrefix='system-migration-targets-header'
-              />
-              <div className='l-grid l-gap-6 md:l-grid-2'>
-                {consolidationTargets.items.map((item, index) => (
-                  <LinkCard
-                    key={index}
-                    title={item.title}
-                    desc={item.desc}
-                    showArrow={false}
-                    cssPrefix='system-migration-target'
-                  />
-                ))}
-              </div>
+            <SectionIntro
+              badge={consolidationTargets.badge}
+              title={consolidationTargets.title}
+              description={consolidationTargets.description}
+              cssPrefix='system-migration-targets-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-2'>
+              {consolidationTargets.items.map((item, index) => (
+                <LinkCard
+                  key={index}
+                  title={item.title}
+                  desc={item.desc}
+                  showArrow={false}
+                  cssPrefix='system-migration-target'
+                />
+              ))}
+            </div>
           </SectionWrapper>
 
           <ProcessStepsSection
@@ -153,7 +153,13 @@ export function SystemMigrationPlatformConsolidationRenderer({
           <ServiceCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
+            primaryAction={{
+              href: buildServiceContactHref({
+                system: data.systems?.[0] ?? 'smart-website-systems',
+                slug,
+              }),
+              variant: 'white',
+            }}
           />
         </main>
       </ErrorBoundary>

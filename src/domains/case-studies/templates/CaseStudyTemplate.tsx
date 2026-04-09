@@ -3,6 +3,7 @@
 
 import React from 'react';
 
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   CaseStudyBusinessImpactSection,
   CaseStudyDeliverablesSection,
@@ -17,7 +18,6 @@ import {
   CaseStudySolutionSection,
   CaseStudyWorkflowsSection,
 } from '@/components/reusable/sections/case-studies';
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { TestimonialCard } from '@/components/reusable/single';
 import { SmartCTA } from '@/components/system/SmartCTA';
 

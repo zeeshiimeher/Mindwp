@@ -16,6 +16,7 @@ import {
   User,
 } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   BlogChecklistSection,
   BlogImageSection,
@@ -23,7 +24,6 @@ import {
   BlogStepsSection,
   BlogTakeawaysSection,
 } from '@/components/reusable/sections/blog';
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { Callout } from '@/components/reusable/single/Callout';
@@ -274,9 +274,7 @@ export function BlogPostTemplate({
               (typeof section.content === 'string' ? (
                 <p>{section.content}</p>
               ) : (
-                section.content.map((p, j) => (
-                  <p key={`content-${index}-${j}`}>{p}</p>
-                ))
+                section.content.map((p, j) => <p key={`content-${index}-${j}`}>{p}</p>)
               ))}
 
             {section.list && section.list.length > 0 && (
@@ -447,91 +445,91 @@ export function BlogPostTemplate({
 
         {/* CONTENT WITH SIDEBAR */}
         <SectionWrapper background='bg-background'>
-            <div className='blog-post__layout'>
-              {/* Main Content Column */}
-              <div className='blog-post__stack'>
-                {/* Render sections dynamically */}
-                {articleSections.map((section, index) => renderSection(section, index))}
+          <div className='blog-post__layout'>
+            {/* Main Content Column */}
+            <div className='blog-post__stack'>
+              {/* Render sections dynamically */}
+              {articleSections.map((section, index) => renderSection(section, index))}
 
-                {tags.length > 0 && (
-                  <div className='blog-post__tags'>
-                    {tags.map((tag, i) => (
-                      <Badge key={i} variant='outline' size='sm' context='meta'>
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                )}
+              {tags.length > 0 && (
+                <div className='blog-post__tags'>
+                  {tags.map((tag, i) => (
+                    <Badge key={i} variant='outline' size='sm' context='meta'>
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+              )}
 
-                <BlogPostShareIsland title={title} />
-              </div>
-
-              {/* Sidebar */}
-              <aside>
-                <Card className='blog-post__sidebar-card'>
-                  <h3 className='blog-post__sidebar-title'>{sidebarCTAData.heading}</h3>
-                  <p className='blog-post__sidebar-text'>{sidebarCTAData.content}</p>
-
-                  <div className='blog-post__sidebar-actions'>
-                    <Button
-                      href={contactHref}
-                      size='sm'
-                      label={primaryCta.label}
-                      icon={ArrowRight}
-                      showDefaultIcon
-                      cssPrefix='btn-block'
-                    />
-                    <Button
-                      href={contactHref}
-                      variant='outline'
-                      size='sm'
-                      label={sidebarCTAData.secondaryAction}
-                      icon={Mail}
-                      showDefaultIcon
-                      cssPrefix='btn-block'
-                    />
-                  </div>
-
-                  <div className='blog-post__sidebar-features'>
-                    {sidebarCTAData.features.map(
-                      (
-                        feature: {
-                          text: string;
-                          icon?: 'phone' | 'shield' | 'award' | 'star' | 'check' | 'heart';
-                        },
-                        index: number
-                      ) => {
-                        const getIcon = (iconType?: string) => {
-                          switch (iconType) {
-                            case 'phone':
-                              return <Phone className='blog-post__sidebar-feature-icon' />;
-                            case 'shield':
-                              return <Shield className='blog-post__sidebar-feature-icon' />;
-                            case 'award':
-                              return <Award className='blog-post__sidebar-feature-icon' />;
-                            case 'star':
-                              return <Star className='blog-post__sidebar-feature-icon' />;
-                            case 'check':
-                              return <CheckCircle2 className='blog-post__sidebar-feature-icon' />;
-                            case 'heart':
-                              return <Heart className='blog-post__sidebar-feature-icon' />;
-                            default:
-                              return <CheckCircle2 className='blog-post__sidebar-feature-icon' />;
-                          }
-                        };
-
-                        return (
-                          <div key={index} className='blog-post__sidebar-feature'>
-                            {getIcon(feature.icon)}
-                            <span className='blog-post__sidebar-feature-text'>{feature.text}</span>
-                          </div>
-                        );
-                      }
-                    )}
-                  </div>
-                </Card>
-              </aside>
+              <BlogPostShareIsland title={title} />
             </div>
+
+            {/* Sidebar */}
+            <aside>
+              <Card className='blog-post__sidebar-card'>
+                <h3 className='blog-post__sidebar-title'>{sidebarCTAData.heading}</h3>
+                <p className='blog-post__sidebar-text'>{sidebarCTAData.content}</p>
+
+                <div className='blog-post__sidebar-actions'>
+                  <Button
+                    href={contactHref}
+                    size='sm'
+                    label={primaryCta.label}
+                    icon={ArrowRight}
+                    showDefaultIcon
+                    cssPrefix='btn-block'
+                  />
+                  <Button
+                    href={contactHref}
+                    variant='outline'
+                    size='sm'
+                    label={sidebarCTAData.secondaryAction}
+                    icon={Mail}
+                    showDefaultIcon
+                    cssPrefix='btn-block'
+                  />
+                </div>
+
+                <div className='blog-post__sidebar-features'>
+                  {sidebarCTAData.features.map(
+                    (
+                      feature: {
+                        text: string;
+                        icon?: 'phone' | 'shield' | 'award' | 'star' | 'check' | 'heart';
+                      },
+                      index: number
+                    ) => {
+                      const getIcon = (iconType?: string) => {
+                        switch (iconType) {
+                          case 'phone':
+                            return <Phone className='blog-post__sidebar-feature-icon' />;
+                          case 'shield':
+                            return <Shield className='blog-post__sidebar-feature-icon' />;
+                          case 'award':
+                            return <Award className='blog-post__sidebar-feature-icon' />;
+                          case 'star':
+                            return <Star className='blog-post__sidebar-feature-icon' />;
+                          case 'check':
+                            return <CheckCircle2 className='blog-post__sidebar-feature-icon' />;
+                          case 'heart':
+                            return <Heart className='blog-post__sidebar-feature-icon' />;
+                          default:
+                            return <CheckCircle2 className='blog-post__sidebar-feature-icon' />;
+                        }
+                      };
+
+                      return (
+                        <div key={index} className='blog-post__sidebar-feature'>
+                          {getIcon(feature.icon)}
+                          <span className='blog-post__sidebar-feature-text'>{feature.text}</span>
+                        </div>
+                      );
+                    }
+                  )}
+                </div>
+              </Card>
+            </aside>
+          </div>
         </SectionWrapper>
         {ctaSection ? (
           <SmartCTA

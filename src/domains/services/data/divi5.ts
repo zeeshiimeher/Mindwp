@@ -1,12 +1,15 @@
 import { Code, Eye, Layers, Search, Settings, Smartphone, Sparkles, Zap } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+const slug = 'divi5';
+
 export const divi5Page = {
-  slug: 'divi5',
+  slug,
   systems: ['smart-website-systems'],
   topics: ['website-infrastructure'],
   keywords: [
@@ -19,27 +22,15 @@ export const divi5Page = {
   ],
   badge: 'Divi Implementation',
   category: 'Implementation Services',
-  seo: {
+  seo: buildServiceSeo({
+    slug,
     title: 'Divi Implementation | Structured WordPress Delivery with Divi',
     description:
       'Structured WordPress implementation with Divi for teams that need flexible editing, disciplined build standards, and approved designs translated into a maintainable website.',
-    canonical: '/services/divi5',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Structured WordPress Implementation with Divi Builder',
-        description:
-          'Structured WordPress implementation with Divi for teams that need flexible editing, disciplined build standards, and approved designs translated into a maintainable website.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/divi5',
-      },
-    },
-  },
+    schemaName: 'Structured WordPress Implementation with Divi Builder',
+    schemaDescription:
+      'Structured WordPress implementation with Divi for teams that need flexible editing, disciplined build standards, and approved designs translated into a maintainable website.',
+  }),
   hero: {
     badge: 'Divi Builder Implementation',
     title: 'WordPress implementation with Divi — built for flexible editing and long-term clarity',
@@ -47,9 +38,8 @@ export const divi5Page = {
       'We build WordPress websites using Divi where the team needs a flexible editing experience without losing visual or technical control. Approved designs are converted precisely, with a build that stays maintainable over time.',
     primaryAction: {
       label: CTA_LABELS.PRIMARY,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'smart-website-systems',
-        sourceType: 'service',
         slug: 'divi5',
       }),
     },
@@ -295,9 +285,8 @@ export const divi5Page = {
     description:
       'If your team needs a clean Divi build with flexible editing and long-term clarity, we can review scope and outline the right approach.',
     buttonText: CTA_LABELS.PRIMARY,
-    buttonHref: buildContactHref({
+    buttonHref: buildServiceContactHref({
       system: 'smart-website-systems',
-      sourceType: 'service',
       slug: 'divi5',
     }),
   },

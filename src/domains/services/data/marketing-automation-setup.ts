@@ -1,12 +1,15 @@
 import { Bell, CheckCircle2, Mail, RefreshCcw, Settings, Workflow } from 'lucide-react';
 
 import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
+import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+const slug = 'marketing-automation-setup';
+
 export const marketingAutomationSetupPage = {
-  slug: 'marketing-automation-setup',
+  slug,
   systems: ['revenue-growth'],
   topics: ['follow-up', 'client-reactivation'],
   keywords: [
@@ -18,28 +21,16 @@ export const marketingAutomationSetupPage = {
   ],
   badge: 'Marketing Automation Setup',
   category: 'Automation Implementation Services',
-  seo: {
+  seo: buildServiceSeo({
+    slug,
     title:
       'Marketing Automation Setup | Follow-up, reminders, and lifecycle messaging implemented properly',
     description:
       'Marketing automation setup for service businesses that need structured follow-up, reminders, reactivation, and lifecycle messaging without relying on manual chasing.',
-    canonical: '/services/marketing-automation-setup',
-    schema: {
-      service: {
-        '@context': 'https://schema.org',
-        '@type': 'Service',
-        name: 'Marketing automation setup for service businesses',
-        description:
-          'A structured marketing automation setup covering follow-up logic, reminders, reactivation flows, lifecycle messaging, and cleaner workflow handoff for service businesses.',
-        provider: {
-          '@type': 'Organization',
-          name: 'MindWP',
-        },
-        areaServed: 'UK',
-        url: '/services/marketing-automation-setup',
-      },
-    },
-  },
+    schemaName: 'Marketing automation setup for service businesses',
+    schemaDescription:
+      'A structured marketing automation setup covering follow-up logic, reminders, reactivation flows, lifecycle messaging, and cleaner workflow handoff for service businesses.',
+  }),
   hero: {
     badge: 'Lifecycle Messaging Pathway',
     title:
@@ -48,9 +39,8 @@ export const marketingAutomationSetupPage = {
       'This service implements structured automation around follow-up, reminders, reactivation, and lifecycle messaging. The goal is to reduce manual chasing while keeping the workflow clear, controlled, and commercially useful.',
     primaryAction: {
       label: CTA_LABELS.PRIMARY,
-      href: buildContactHref({
+      href: buildServiceContactHref({
         system: 'revenue-growth',
-        sourceType: 'service',
         slug: 'marketing-automation-setup',
       }),
     },
@@ -300,21 +290,14 @@ export const marketingAutomationSetupPage = {
       cssPrefix: 'marketing-automation-faq',
     },
   },
-  related: {
-    variant: 'domain-only',
-    title: 'Related automation and follow-up pages',
-    description:
-      'Marketing automation setup often connects with CRM structure, lead reactivation, review automation, and wider revenue-system work.',
-  },
   cta: {
     title: 'Set up automation that actually supports the business',
     description:
       'If follow-up, reminders, or lifecycle messaging still depend on manual effort, we can help build a cleaner automation setup.',
-      buttonText: CTA_LABELS.PRIMARY,
-      buttonHref: buildContactHref({
-        system: 'revenue-growth',
-        sourceType: 'service',
-        slug: 'marketing-automation-setup',
-      }),
+    buttonText: CTA_LABELS.PRIMARY,
+    buttonHref: buildServiceContactHref({
+      system: 'revenue-growth',
+      slug: 'marketing-automation-setup',
+    }),
   },
 } satisfies ServicePageData;

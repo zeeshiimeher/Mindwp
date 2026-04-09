@@ -9,7 +9,7 @@ import {
   getTopicHubSections,
 } from '@/domains/blog/api';
 import { BlogTopicTemplate } from '@/domains/blog/templates/BlogTopicTemplate';
-import { getInventoryMetadata } from '@/lib/content-quality/inventory';
+import { getBlogTopicMetadata } from '@/lib/seo/pageMetadata';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 export const dynamicParams = false;
@@ -32,7 +32,7 @@ export async function generateMetadata({
     return {};
   }
 
-  return getInventoryMetadata(`/blog/topic/${meta.slug}`);
+  return getBlogTopicMetadata(`/blog/topic/${meta.slug}`);
 }
 
 export default async function Page({ params }: { params: Promise<{ topic: string }> }) {
