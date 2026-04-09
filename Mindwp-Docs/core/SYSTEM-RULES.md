@@ -219,7 +219,7 @@ Content lives in exactly one place per type.
 |---|---|
 | Service/Industry/CaseStudy/Blog/Resource/Feature data | `src/domains/*/data/{slug}.ts` |
 | Route metadata (title, description, OG, robots) | `inventory.ts` |
-| CTA labels | `src/config/cta-labels.ts` |
+| CTA labels | `src/config/ctaLabels.ts` |
 | CTA intensity + copy | `src/config/ui-intelligence.ts` |
 | Navigation links | Derived from inventory |
 | Canonical values | `src/lib/content-graph/canonical.ts` |

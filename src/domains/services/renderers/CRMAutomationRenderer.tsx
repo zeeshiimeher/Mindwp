@@ -9,7 +9,7 @@ import {
 } from '@/components/reusable/single';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { resolveCtaLabel } from '@/config/cta-labels';
+import { resolveCtaLabel } from '@/config/ctaLabels';
 import { crmAutomationPage } from '@/domains/services/data/crm-automation';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 import { buildServiceContactHref } from '@/lib/contact/contactHref';

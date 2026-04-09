@@ -34,7 +34,7 @@
 | Data | Canonical Source | Consumers |
 |---|---|---|
 | Route metadata (title, description, OG, robots) | `inventory.ts` | Static routes via `getInventoryMetadata()`, parameterized routes via `src/lib/seo/pageMetadata.ts` helpers |
-| CTA labels | `CTA_LABEL_MAP` in `src/config/cta-labels.ts` | `SmartCTA` only |
+| CTA labels | `CTA_LABEL_MAP` in `src/config/ctaLabels.ts` | `SmartCTA` only |
 | CTA intensity + copy | `CTA_CONFIG` in `src/config/ui-intelligence.ts` | `SmartCTA` only |
 | Canonical values (systems, topics, industries) | `src/lib/content-graph/canonical.ts` | Graph, inventory, validators |
 | Domain content (sections, features, copy) | `src/domains/*/data/{slug}.ts` | Page data layer → template props |

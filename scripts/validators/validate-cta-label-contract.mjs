@@ -3,7 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { CTA_LABEL_MAP, DEFAULT_CTA_LABEL, resolveCtaLabel } from '../../src/config/cta-labels.ts';
+import { CTA_LABEL_MAP, DEFAULT_CTA_LABEL, resolveCtaLabel } from '../../src/config/ctaLabels.ts';
 import { CANONICAL_SYSTEMS } from '../../src/lib/content-graph/canonical.ts';
 import { listFilesRecursive } from '../lib/validator-helpers.mjs';
 

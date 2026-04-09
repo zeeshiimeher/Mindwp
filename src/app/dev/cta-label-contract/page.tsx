@@ -1,5 +1,5 @@
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { resolveCtaLabel } from '@/config/cta-labels';
+import { resolveCtaLabel } from '@/config/ctaLabels';
 
 const SMART_CTA_CASES = [
   {

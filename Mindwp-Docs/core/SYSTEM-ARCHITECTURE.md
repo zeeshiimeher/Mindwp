@@ -86,7 +86,7 @@ Primary CTA everywhere: **"Start a Conversation" → /contact**
 | Content graph types | `src/lib/content-graph/types.ts` |
 | Route metadata (single source) | `src/lib/content-quality/inventory.ts` |
 | SmartCTA (only CTA component) | `src/components/system/SmartCTA.tsx` |
-| CTA labels (per-system) | `src/config/cta-labels.ts` |
+| CTA labels (per-system) | `src/config/ctaLabels.ts` |
 | CTA intensity + copy (per-pageType) | `src/config/ui-intelligence.ts` |
 | Contact href builder | `src/lib/contact/contactHref.ts` |
 | Domain registries | `src/domains/*/registry.ts` |

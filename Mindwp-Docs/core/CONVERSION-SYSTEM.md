@@ -58,7 +58,7 @@ Internally, `SmartCTA`:
 
 ### CTA Label Resolution (Locked)
 
-- `CTA_LABEL_MAP` in `src/config/cta-labels.ts` is the only source of system-specific labels.
+- `CTA_LABEL_MAP` in `src/config/ctaLabels.ts` is the only source of system-specific labels.
 - Default fallback label is `"Start a Conversation"`.
 - Labels are per-system only. No per-page custom labels.
 
