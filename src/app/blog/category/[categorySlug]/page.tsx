@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import JsonLd from '@/components/system/JsonLd';
-import { getAllCategorySlugs, getCategoryBySlug } from '@/domains/blog/api';
+import { blogPosts, getAllCategorySlugs, getCategoryBySlug } from '@/domains/blog/api';
 import { BlogCategoryTemplate } from '@/domains/blog/templates/BlogCategoryTemplate';
 import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
@@ -51,7 +51,13 @@ export default async function Page({ params }: { params: Promise<{ categorySlug:
   return (
     <>
       <JsonLd id='blog-category-breadcrumb-jsonld' schema={breadcrumbSchema} />
-      <BlogCategoryTemplate category={category.category} />
+      <BlogCategoryTemplate
+        title={category.name}
+        description={category.description || 'Articles in this category.'}
+        badgeClassName={`${category.colors.bg} ${category.colors.text}`}
+        articleCount={blogPosts.filter(post => post.category === category.category).length}
+        posts={blogPosts.filter(post => post.category === category.category)}
+      />
     </>
   );
 }

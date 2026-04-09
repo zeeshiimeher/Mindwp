@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Badge } from './Badge';
 import { Button, type ButtonProps } from './Button';
+import { cn } from '@/components/ui/utils';
 
 const BLOCK = 'section-header';
 
@@ -88,12 +89,10 @@ export function SectionIntro({
     !marginBottom ? `${BLOCK}--no-margin` : '',
     cssPrefix,
     className,
-  ]
-    .filter(Boolean)
-    .join(' ');
+  ];
 
   return (
-    <div className={rootClassName}>
+    <div className={cn(...rootClassName)}>
       {badge && (
         <div className={`${BLOCK}__badge`}>
           {typeof badge === 'string' ? (
@@ -110,13 +109,11 @@ export function SectionIntro({
 
       {description && (
         <p
-          className={[
+          className={cn(
             `${BLOCK}__description`,
             description.includes('\n') ? `${BLOCK}__description--preline` : '',
-            descriptionClassName,
-          ]
-            .filter(Boolean)
-            .join(' ')}
+            descriptionClassName
+          )}
         >
           {description}
         </p>

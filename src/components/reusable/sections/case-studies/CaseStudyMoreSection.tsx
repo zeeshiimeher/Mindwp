@@ -1,7 +1,7 @@
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { SectionIntro } from '@/components/reusable/single';
 import { CaseStudyCard } from '@/components/reusable/single';
-import { getCaseStudiesTemplateMetadata } from '@/domains/case-studies/data';
+import type { CaseStudyTemplateMetadata } from '@/domains/case-studies/types';
 
 const DEFAULT_CONTENT = {
   title: 'Related Case Studies',
@@ -9,12 +9,12 @@ const DEFAULT_CONTENT = {
   buttonHref: '/case-studies',
 } as const;
 
-export interface CaseStudyMoreSectionProps {}
+export interface CaseStudyMoreSectionProps {
+  studies: CaseStudyTemplateMetadata[];
+}
 
-export function CaseStudyMoreSection({ excludeSlug }: { excludeSlug?: string } = {}) {
-  const studies = getCaseStudiesTemplateMetadata()
-    .filter(s => (excludeSlug ? s.slug !== excludeSlug : true))
-    .slice(0, 3);
+export function CaseStudyMoreSection({ studies }: CaseStudyMoreSectionProps) {
+  if (studies.length === 0) return null;
 
   return (
     <SectionWrapper className='case-study-more-section'>

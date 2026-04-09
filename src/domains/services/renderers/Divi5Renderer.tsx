@@ -7,7 +7,6 @@ import {
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { ServiceRelatedServicesSection } from '@/domains/services/components/ServiceRelatedServicesSection';
 import { divi5Page } from '@/domains/services/data/divi5';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -91,8 +90,6 @@ export function Divi5Renderer({ data, slug }: Divi5RendererProps) {
             description={ctaDescription}
             primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
           />
-
-          <ServiceRelatedServicesSection serviceSlug={slug} />
         </main>
       </ErrorBoundary>
     </>

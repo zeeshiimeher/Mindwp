@@ -29,7 +29,6 @@ import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -55,7 +54,7 @@ type InternalLinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> &
 
 function InternalLink({ href, children, className, ...props }: InternalLinkProps) {
   return (
-    <a href={href} className={['link-primary', className].filter(Boolean).join(' ')} {...props}>
+    <a href={href} className={className ? `link-primary ${className}` : 'link-primary'} {...props}>
       {children}
     </a>
   );
@@ -96,12 +95,27 @@ export type ResourcePageTemplateProps = {
   sections: ResourcePageTemplateSection[];
   /** System keys for CTA routing context */
   systems?: string[];
+  currentSlug: string;
 };
 
 // Validation function for required sections
 function validateRequiredSections(sections: ResourcePageTemplateSection[]) {
   const requiredTypes = ['hero', 'problem', 'diy', 'cta', 'related-resources'];
-  const missingSections = requiredTypes.filter(type => !sections.find(s => s.type === type));
+  const missingSections: string[] = [];
+
+  for (const type of requiredTypes) {
+    let found = false;
+    for (const section of sections) {
+      if (section.type === type) {
+        found = true;
+        break;
+      }
+    }
+
+    if (!found) {
+      missingSections.push(type);
+    }
+  }
 
   if (missingSections.length > 0) {
     if (process.env.NODE_ENV === 'development') {
@@ -129,7 +143,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   const isUpdated = Boolean(props.updatedAt);
   const freshnessBadge = isRecentIsoDate(lastChanged, 60) ? (isUpdated ? 'Updated' : 'New') : null;
   const dateLabel = isUpdated ? 'Updated' : 'Published';
-  const currentSlug = props.url.split('/').filter(Boolean).at(-1) ?? '';
+  const currentSlug = props.currentSlug;
 
   // Build contact href with context params
   const primarySystem = props.systems?.[0] ?? 'smart-website-systems';
@@ -311,16 +325,20 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
 
       case 'faq': {
         const faqData = extractFAQContent(section);
-        // Convert items format to rich component format
-        const faqs = faqData.items
-          .filter(
-            (item): item is { question: string; answer: string } =>
-              typeof item === 'object' &&
-              item !== null &&
-              typeof (item as { question?: unknown }).question === 'string' &&
-              typeof (item as { answer?: unknown }).answer === 'string'
-          )
-          .map(item => ({ question: item.question, answer: item.answer }));
+        const faqs: Array<{ question: string; answer: string }> = [];
+        for (const item of faqData.items) {
+          if (
+            typeof item === 'object' &&
+            item !== null &&
+            typeof (item as { question?: unknown }).question === 'string' &&
+            typeof (item as { answer?: unknown }).answer === 'string'
+          ) {
+            faqs.push({
+              question: (item as { question: string }).question,
+              answer: (item as { answer: string }).answer,
+            });
+          }
+        }
         return faqData.heading && faqs.length > 0 ? (
           <div key={`faq-${index}`} id='resource-faq'>
             <FAQSection
@@ -358,8 +376,26 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
     }
   }
 
-  // Filter out hero section for dynamic rendering
-  const contentSections = props.sections.filter(section => section.type !== 'hero');
+  const contentSections: ResourcePageTemplateSection[] = [];
+  const mainSections: ResourcePageTemplateSection[] = [];
+  const ctaSections: Extract<ResourcePageTemplateSection, { type: 'cta' }>[] = [];
+
+  for (const section of props.sections) {
+    if (section.type === 'hero') {
+      continue;
+    }
+
+    contentSections.push(section);
+
+    if (section.type === 'cta') {
+      ctaSections.push(section);
+      continue;
+    }
+
+    if (section.type !== 'related-resources') {
+      mainSections.push(section);
+    }
+  }
 
   return (
     <div className='resource-page'>
@@ -445,9 +481,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
             {/* Main Content Column */}
             <div className='resource-page__stack'>
               {/* Render sections dynamically in the order they appear, excluding full-width sections */}
-              {contentSections
-                .filter(section => section.type !== 'cta' && section.type !== 'related-resources')
-                .map((section, index) => renderSection(section, index))}
+              {mainSections.map((section, index) => renderSection(section, index))}
             </div>
 
             {/* Sidebar (always on for canonical template to match the standard layout) */}
@@ -518,14 +552,9 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
             </aside>
           </div>
         </div>
-
-        <SmartRelatedSection slug={currentSlug} type='resource' />
-
         {/* CTA section - full width outside container */}
         <div className='resource-page__cta'>
-          {contentSections
-            .filter(section => section.type === 'cta')
-            .map((section, index) => {
+          {ctaSections.map((section, index) => {
               const ctaData = extractCTAContent(section);
               return ctaData.heading ? (
                 <SmartCTA

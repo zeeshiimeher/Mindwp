@@ -1,6 +1,8 @@
 import React, { type ReactNode } from 'react';
 import { ArrowRight, type LucideIcon } from 'lucide-react';
 
+import { cn } from '@/components/ui/utils';
+
 const BLOCK = 'btn';
 
 function hasRenderableContent(value: ReactNode | undefined): boolean {
@@ -145,13 +147,19 @@ export function Button({
     ['children', children],
     ['label', label],
     ['text', text],
-  ].filter(([, value]) => hasRenderableContent(value));
+  ];
+  const renderableContentSources: Array<[string, ReactNode | undefined]> = [];
+  for (const source of providedContentSources as Array<[string, ReactNode | undefined]>) {
+    if (hasRenderableContent(source[1])) {
+      renderableContentSources.push(source);
+    }
+  }
 
-  if (providedContentSources.length === 0) {
+  if (renderableContentSources.length === 0) {
     throw new Error('Button requires non-empty content via children, label, or text.');
   }
 
-  if (providedContentSources.length > 1) {
+  if (renderableContentSources.length > 1) {
     throw new Error('Button accepts only one content source: children, label, or text.');
   }
 
@@ -182,22 +190,20 @@ export function Button({
       {finalIcon &&
         iconPosition === 'left' &&
         React.createElement(finalIcon, {
-          className: [`${BLOCK}__icon`, iconClassName].filter(Boolean).join(' '),
+          className: cn(`${BLOCK}__icon`, iconClassName),
           'aria-hidden': 'true',
         })}
       {resolvedContent}
       {finalIcon &&
         iconPosition === 'right' &&
         React.createElement(finalIcon, {
-          className: [`${BLOCK}__icon`, iconClassName].filter(Boolean).join(' '),
+          className: cn(`${BLOCK}__icon`, iconClassName),
           'aria-hidden': 'true',
         })}
     </>
   );
 
-  const className = [BLOCK, sizeModifier, `${BLOCK}-${variant}`, cssPrefix]
-    .filter(Boolean)
-    .join(' ');
+  const className = cn(BLOCK, sizeModifier, `${BLOCK}-${variant}`, cssPrefix);
   const resolvedAriaLabel =
     ariaLabel ??
     (typeof resolvedContent === 'string'

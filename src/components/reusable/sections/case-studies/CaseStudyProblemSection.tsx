@@ -27,9 +27,13 @@ function normalizePainPoint(
 ): string {
   if (typeof painPoint === 'string') return painPoint;
 
-  const parts = [painPoint.title, painPoint.before, painPoint.after, painPoint.description].filter(
-    (value): value is string => typeof value === 'string' && value.trim().length > 0
-  );
+  const parts: string[] = [];
+
+  for (const value of [painPoint.title, painPoint.before, painPoint.after, painPoint.description]) {
+    if (typeof value === 'string' && value.trim().length > 0) {
+      parts.push(value);
+    }
+  }
 
   return parts.join(' — ');
 }

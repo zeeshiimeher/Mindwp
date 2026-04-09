@@ -13,7 +13,6 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { TestimonialCard } from '@/components/reusable/single/TestimonialCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
 import { reputationData } from '@/domains/features/data/reputation';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -123,7 +122,6 @@ export default function ReputationRenderer() {
             primaryAction={heroPrimaryAction}
             visualContent={<ReviewsVisual />}
             cssPrefix='reputation-hero'
-            backgroundColor='bg-gradient-surface-muted'
             decorations={[
               { position: 'top-right', color: 'bg-yellow-200', size: 'lg' },
               { position: 'bottom-left', color: 'bg-orange-200', size: 'lg' },
@@ -208,8 +206,6 @@ export default function ReputationRenderer() {
               href: ctaPrimaryAction.href,
             }}
           />
-
-          <SmartRelatedSection slug={reputationData.slug} type='feature' />
         </main>
       </ErrorBoundary>
     </>

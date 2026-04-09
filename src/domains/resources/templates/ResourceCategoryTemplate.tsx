@@ -1,66 +1,34 @@
-import { useMemo } from 'react';
 import { ArrowRight } from 'lucide-react';
 
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { Card } from '@/components/ui/card';
-import { categories, getCategoryColors, resources } from '@/domains/resources/api';
 import type { ResourceCategory } from '@/domains/resources/types';
-import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates';
 
 export type ResourceCategoryTemplateProps = {
   category: ResourceCategory;
+  label: string;
+  description?: string;
+  badgeClassName: string;
+  count: number;
+  resources: Array<{
+    title: string;
+    url: string;
+    categoryLabel: string;
+    excerpt: string;
+    freshnessBadge?: string;
+    dateLabel: string;
+    dateText: string;
+  }>;
 };
 
-export default function ResourceCategoryTemplate({ category }: ResourceCategoryTemplateProps) {
-  const categoryMeta = categories.find(c => c.id === category);
-
-  const label = categoryMeta?.label;
-  const description = categoryMeta?.description;
-  const colors = getCategoryColors(category);
-
-  const resourcesInCategory = useMemo(() => {
-    return resources.filter(resource => resource.category === category);
-  }, [category]);
-
-  const viewResources = useMemo(() => {
-    if (!categoryMeta) return [];
-    return resourcesInCategory
-      .slice()
-      .sort((a, b) => {
-        const aDate = Date.parse(`${a.updatedAt ?? a.publishedAt}T00:00:00Z`);
-        const bDate = Date.parse(`${b.updatedAt ?? b.publishedAt}T00:00:00Z`);
-        return bDate - aDate;
-      })
-      .map(resource => {
-        const lastChanged = resource.updatedAt ?? resource.publishedAt;
-        const isUpdated = Boolean(resource.updatedAt);
-        const freshnessBadge = isRecentIsoDate(lastChanged, 60)
-          ? isUpdated
-            ? 'Updated'
-            : 'New'
-          : undefined;
-
-        return {
-          title: resource.title,
-          url: resource.seo.canonical,
-          categoryLabel: categoryMeta.label,
-          excerpt: resource.description,
-          freshnessBadge,
-          dateLabel: isUpdated ? 'Updated' : 'Published',
-          dateText: formatIsoDate(lastChanged),
-        };
-      });
-  }, [resourcesInCategory, categoryMeta]);
-
-  const count = resourcesInCategory.length;
-
-  if (!categoryMeta) {
-    if (process.env.NODE_ENV === 'development') {
-      throw new Error('Invalid ResourceCategory passed to ResourceCategoryTemplate');
-    }
-    return null;
-  }
+export default function ResourceCategoryTemplate({
+  label,
+  description,
+  badgeClassName,
+  count,
+  resources,
+}: ResourceCategoryTemplateProps) {
 
   return (
     <div className='resource-category'>
@@ -68,7 +36,7 @@ export default function ResourceCategoryTemplate({ category }: ResourceCategoryT
         {/* HERO */}
         <section className='resource-category__hero l-section'>
           <div className='l-container resource-category__hero-content'>
-            <Badge context='hero' cssPrefix={colors.badgeClass}>
+            <Badge context='hero' cssPrefix={badgeClassName}>
               {count} guides
             </Badge>
 
@@ -81,16 +49,16 @@ export default function ResourceCategoryTemplate({ category }: ResourceCategoryT
         {/* GRID */}
         <section className='resource-category__grid-section l-section'>
           <div className='l-container'>
-            {viewResources.length === 0 ? (
+            {resources.length === 0 ? (
               <p className='resource-category__empty'>No guides published yet.</p>
             ) : (
               <div className='resource-category__grid'>
-                {viewResources.map(resource => (
+                {resources.map(resource => (
                   <Card key={resource.url} className='resource-card resource-card--interactive'>
                     <div className='resource-card__body'>
                       <div className='resource-card__meta'>
                         <div className='resource-card__badges'>
-                          <Badge size='sm' context='meta' cssPrefix={colors.badgeClass}>
+                          <Badge size='sm' context='meta' cssPrefix={badgeClassName}>
                             {resource.categoryLabel}
                           </Badge>
                           {resource.freshnessBadge && (

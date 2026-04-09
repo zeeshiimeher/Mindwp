@@ -12,7 +12,6 @@ import { SectionIntro, WorkflowStepCard } from '@/components/reusable/single';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { ServiceRelatedServicesSection } from '@/domains/services/components/ServiceRelatedServicesSection';
 import { aiLeadHandlingPage } from '@/domains/services/data/ai-lead-handling';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -158,7 +157,6 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
             description={ctaDescription}
             primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
           />
-          <ServiceRelatedServicesSection serviceSlug={slug} />
         </main>
       </ErrorBoundary>
     </>

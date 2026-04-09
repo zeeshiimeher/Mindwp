@@ -2,11 +2,15 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import JsonLd from '@/components/system/JsonLd';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
+import type { RelatedContentBlock } from '@/components/system/RelatedContentSection';
+import { RELATED_SECTION_LABELS } from '@/config/ui-intelligence';
 import { BLOG_AUTHORS } from '@/domains/blog/api';
 import { BLOG_POSTS } from '@/domains/blog/registry';
 import { BlogPostTemplate } from '@/domains/blog/templates/BlogPostTemplate';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { getInventoryMetadata } from '@/lib/content-quality/inventory';
+import { getRelatedContent, type RelatedContent } from '@/lib/graph/query';
 import { getImage } from '@/lib/image-system/resolver';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
 
@@ -31,6 +35,37 @@ const getBlogNodeBySlug = async (slug: string): Promise<ContentGraphNode | null>
   const nodes = await getBlogGraphNodes();
   return nodes.find(node => node.slug === slug) ?? null;
 };
+
+function buildRelatedBlocks(slug: string): RelatedContentBlock[] {
+  const related = getRelatedContent(slug, 'blog');
+  const labels = RELATED_SECTION_LABELS.blog ?? {};
+  const slotKeys = Object.keys(labels) as Array<keyof RelatedContent>;
+  const blocks: RelatedContentBlock[] = [];
+
+  for (const key of slotKeys) {
+    const items = related[key];
+    const label = labels[key];
+    if (!label || !items || items.length === 0) {
+      continue;
+    }
+
+    blocks.push({
+      title: label.title,
+      description: label.description,
+      items: items.slice(0, 3).map(item => ({
+        title: item.title,
+        desc: item.description,
+        href: item.path,
+      })),
+    });
+
+    if (blocks.length === 2) {
+      break;
+    }
+  }
+
+  return blocks;
+}
 
 export async function generateStaticParams() {
   const blogNodes = await getBlogGraphNodes();
@@ -85,6 +120,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     { name: post.title, path: canonicalPath },
   ]);
 
+  const relatedBlocks = buildRelatedBlocks(slug);
+
   return (
     <>
       <script
@@ -107,6 +144,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         systems={post.systems}
         featuredImage={getImage(slug, 'blog', 'featured-clean')}
       />
+      {relatedBlocks.length > 0 ? <SmartRelatedSection blocks={relatedBlocks} /> : null}
     </>
   );
 }

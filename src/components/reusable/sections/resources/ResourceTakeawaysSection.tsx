@@ -35,11 +35,14 @@ export function ResourceTakeawaysSection({
 
       {content && content.length > 1 && (
         <div className={`${BLOCK}__description`}>
-          {content.slice(1).map((paragraph, index) => (
-            <p key={index} className={`${BLOCK}__paragraph`}>
-              {paragraph}
-            </p>
-          ))}
+          {content.map((paragraph, index) => {
+            if (index === 0) return null;
+            return (
+              <p key={index} className={`${BLOCK}__paragraph`}>
+                {paragraph}
+              </p>
+            );
+          })}
         </div>
       )}
 

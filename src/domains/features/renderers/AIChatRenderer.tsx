@@ -11,7 +11,6 @@ import {
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
 import { aiChatData } from '@/domains/features/data/aichat';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -256,8 +255,6 @@ export default function AIChatRenderer() {
               href: ctaPrimaryAction.href,
             }}
           />
-
-          <SmartRelatedSection slug={aiChatData.slug} type='feature' />
         </main>
       </ErrorBoundary>
     </>

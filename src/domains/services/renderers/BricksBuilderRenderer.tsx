@@ -7,7 +7,6 @@ import {
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { ServiceRelatedServicesSection } from '@/domains/services/components/ServiceRelatedServicesSection';
 import { bricksBuilderPage } from '@/domains/services/data/bricks-builder';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -93,8 +92,6 @@ export function BricksBuilderRenderer({ data, slug }: BricksBuilderRendererProps
             description={ctaDescription}
             primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
           />
-
-          <ServiceRelatedServicesSection serviceSlug={slug} />
         </main>
       </ErrorBoundary>
     </>

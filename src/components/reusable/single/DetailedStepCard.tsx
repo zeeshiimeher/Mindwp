@@ -2,6 +2,7 @@ import type { LucideIcon } from 'lucide-react';
 import { CheckCircle2 } from 'lucide-react';
 
 import { Card } from '@/components/reusable/single/Card';
+import { cn } from '@/components/ui/utils';
 
 const BLOCK = 'how-it-works-step';
 
@@ -61,7 +62,7 @@ export function DetailedStepCard({
     `${BLOCK}__number--${iconType === 'primary' ? 'primary' : iconType === 'secondary' ? 'secondary' : 'accent'}`;
 
   return (
-    <div className={[BLOCK, cssPrefix].filter(Boolean).join(' ')}>
+    <div className={cn(BLOCK, cssPrefix)}>
       <Card className={`${BLOCK}__card`}>
         <div className={`${BLOCK}__number ${numberToneClass}`}>
           <span className={`${BLOCK}__number-text`}>{number}</span>

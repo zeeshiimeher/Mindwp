@@ -10,7 +10,6 @@ import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sec
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { ServiceRelatedServicesSection } from '@/domains/services/components/ServiceRelatedServicesSection';
 import { localSeoAuthorityPage } from '@/domains/services/data/local-seo-authority';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -143,8 +142,6 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
             description={ctaDescription}
             primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
           />
-
-          <ServiceRelatedServicesSection serviceSlug={slug} />
         </main>
       </ErrorBoundary>
     </>

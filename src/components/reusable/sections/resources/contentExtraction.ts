@@ -359,19 +359,21 @@ export function extractTemplatesContent(
   const templatesSection = findSection(sections, 'templates') as TemplatesSection | null;
   const content = extractContent(templatesSection);
 
-  const safeItems = (templatesSection?.items ?? [])
-    .filter(
-      (item): item is { title: string; description?: string; template: string } =>
-        Boolean(item) &&
-        typeof item === 'object' &&
-        typeof (item as { title?: unknown }).title === 'string' &&
-        typeof (item as { template?: unknown }).template === 'string'
-    )
-    .map(item => ({
-      title: item.title,
-      ...(item.description !== undefined && { description: item.description }),
-      template: item.template,
-    }));
+  const safeItems: Array<{ title: string; description?: string; template: string }> = [];
+  for (const item of templatesSection?.items ?? []) {
+    if (
+      Boolean(item) &&
+      typeof item === 'object' &&
+      typeof (item as { title?: unknown }).title === 'string' &&
+      typeof (item as { template?: unknown }).template === 'string'
+    ) {
+      safeItems.push({
+        title: item.title,
+        ...(item.description !== undefined && { description: item.description }),
+        template: item.template,
+      });
+    }
+  }
 
   return {
     heading: templatesSection?.heading || DEFAULTS.TEMPLATES_HEADING,

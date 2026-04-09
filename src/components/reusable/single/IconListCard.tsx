@@ -1,5 +1,7 @@
 import { LucideIcon } from 'lucide-react';
 
+import { cn } from '@/components/ui/utils';
+
 const BLOCK = 'feature-list';
 
 /**
@@ -49,7 +51,7 @@ export function IconListCard({
   cssPrefix = '',
 }: IconListCardProps) {
   return (
-    <div className={[BLOCK, cssPrefix].filter(Boolean).join(' ')}>
+    <div className={cn(BLOCK, cssPrefix)}>
       <div className={`${BLOCK}__header`}>
         <div className={`${BLOCK}__icon-wrap`}>
           <Icon className={`${BLOCK}__icon`} />

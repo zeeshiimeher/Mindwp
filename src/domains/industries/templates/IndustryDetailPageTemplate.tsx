@@ -15,7 +15,6 @@ import {
   IndustryWorkflowExamplesSection,
 } from '@/components/reusable/sections/industries';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import {
   resolveIndustryDetailExplore,
   resolveIndustryPathwaySection,
@@ -100,7 +99,6 @@ export function IndustryDetailPageTemplate({
           {resolvedExplore && <IndustryExploreSection title='Relevant Modules' {...resolvedExplore} />}
           <IndustryFAQSection {...faq} />
           <IndustryCTASection {...resolvedCta} />
-          <SmartRelatedSection slug={slug} type='industry-detail' />
         </main>
       </ErrorBoundary>
     </>

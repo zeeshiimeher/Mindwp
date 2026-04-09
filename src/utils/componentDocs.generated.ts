@@ -790,7 +790,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-current",
-        "type": "boolean | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"location\" | \"date\" | undefined",
+        "type": "boolean | \"location\" | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"date\" | undefined",
         "optional": true,
         "description": "Indicates the element that represents the current item within a container or set of related elements."
       },
@@ -2486,7 +2486,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-current",
-        "type": "boolean | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"location\" | \"date\" | undefined",
+        "type": "boolean | \"location\" | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"date\" | undefined",
         "optional": true,
         "description": "Indicates the element that represents the current item within a container or set of related elements."
       },
@@ -4182,7 +4182,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-current",
-        "type": "boolean | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"location\" | \"date\" | undefined",
+        "type": "boolean | \"location\" | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"date\" | undefined",
         "optional": true,
         "description": "Indicates the element that represents the current item within a container or set of related elements."
       },
@@ -5878,7 +5878,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-current",
-        "type": "boolean | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"location\" | \"date\" | undefined",
+        "type": "boolean | \"location\" | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"date\" | undefined",
         "optional": true,
         "description": "Indicates the element that represents the current item within a container or set of related elements."
       },
@@ -7574,7 +7574,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-current",
-        "type": "boolean | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"location\" | \"date\" | undefined",
+        "type": "boolean | \"location\" | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"date\" | undefined",
         "optional": true,
         "description": "Indicates the element that represents the current item within a container or set of related elements."
       },
@@ -9270,7 +9270,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-current",
-        "type": "boolean | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"location\" | \"date\" | undefined",
+        "type": "boolean | \"location\" | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"date\" | undefined",
         "optional": true,
         "description": "Indicates the element that represents the current item within a container or set of related elements."
       },
@@ -10966,7 +10966,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-current",
-        "type": "boolean | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"location\" | \"date\" | undefined",
+        "type": "boolean | \"location\" | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"date\" | undefined",
         "optional": true,
         "description": "Indicates the element that represents the current item within a container or set of related elements."
       },
@@ -13073,9 +13073,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "representativePageUrl": "/",
     "props": [
       {
-        "name": "excludeSlug",
-        "type": "string | undefined",
-        "optional": true,
+        "name": "studies",
+        "type": "CaseStudyTemplateMetadata[]",
+        "optional": false,
         "description": ""
       }
     ]
@@ -15381,13 +15381,13 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/sections/industries/IndustryCaseStudiesSection.tsx",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "",
-    "representativePageUrl": "/",
+    "representativeUsageFilePath": "src/app/industries/[...slug]/page.tsx",
+    "representativePageUrl": "/industries/[...slug]",
     "props": [
       {
         "name": "category",
-        "type": "IndustryCategory",
-        "optional": false,
+        "type": "IndustryCategory | undefined",
+        "optional": true,
         "description": ""
       },
       {
@@ -15399,6 +15399,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
       {
         "name": "limit",
         "type": "number | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "studies",
+        "type": "CaseStudyCardsSectionItem[] | undefined",
         "optional": true,
         "description": ""
       },

@@ -31,6 +31,8 @@
  * />
  * ```
  */
+import { cn } from '@/components/ui/utils';
+
 export interface BulletListProps {
   /** Array of text items to display */
   items: string[];
@@ -59,7 +61,7 @@ export function BulletList({ items, separator = ' • ', cssPrefix = '' }: Bulle
   }
 
   return (
-    <p className={[BLOCK, cssPrefix].filter(Boolean).join(' ')}>
+    <p className={cn(BLOCK, cssPrefix)}>
       {items.map((item, index) => (
         <span key={index}>
           {item}

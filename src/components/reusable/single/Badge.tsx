@@ -1,5 +1,7 @@
 import { ReactNode } from 'react';
 
+import { cn } from '@/components/ui/utils';
+
 const BLOCK = 'badge';
 
 /**
@@ -81,9 +83,7 @@ export function Badge({
 
   return (
     <span
-      className={[BLOCK, sizeModifier, contextModifier, `badge-${variant}`, cssPrefix]
-        .filter(Boolean)
-        .join(' ')}
+      className={cn(BLOCK, sizeModifier, contextModifier, `badge-${variant}`, cssPrefix)}
     >
       {children}
     </span>

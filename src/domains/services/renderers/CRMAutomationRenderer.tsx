@@ -9,7 +9,6 @@ import {
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { resolveCtaLabel } from '@/config/cta-labels';
-import { ServiceRelatedServicesSection } from '@/domains/services/components/ServiceRelatedServicesSection';
 import { crmAutomationPage } from '@/domains/services/data/crm-automation';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -192,7 +191,6 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
             description={ctaDescription}
             primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
           />
-          <ServiceRelatedServicesSection serviceSlug={slug} />
         </main>
       </ErrorBoundary>
     </>

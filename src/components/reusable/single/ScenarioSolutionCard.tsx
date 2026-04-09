@@ -2,6 +2,7 @@ import React from 'react';
 import { CheckCircle2, Inbox } from 'lucide-react';
 
 import { Card } from '@/components/reusable/single/Card';
+import { cn } from '@/components/ui/utils';
 
 const BLOCK = 'use-case-card';
 
@@ -83,9 +84,9 @@ export function ScenarioSolutionCard({
   iconBackground = '',
 }: ScenarioSolutionCardProps) {
   return (
-    <Card className={[BLOCK, cssPrefix].filter(Boolean).join(' ')}>
+    <Card className={cn(BLOCK, cssPrefix)}>
       <div className={`${BLOCK}__stack`}>
-        <div className={[`${BLOCK}__icon-wrap`, iconBackground].filter(Boolean).join(' ')}>
+        <div className={cn(`${BLOCK}__icon-wrap`, iconBackground)}>
           <Icon className={`${BLOCK}__icon`} />
         </div>
         <h4 className={`${BLOCK}__title`}>{title}</h4>

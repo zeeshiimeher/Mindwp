@@ -12,7 +12,6 @@ import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
 import { calendarsData } from '@/domains/features/data/calendars';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -171,8 +170,6 @@ export default function CalendarsRenderer() {
             metaItems={cta.metaItems}
             cssPrefix='calendars-cta'
           />
-
-          <SmartRelatedSection slug={calendarsData.slug} type='feature' />
         </main>
       </ErrorBoundary>
     </>

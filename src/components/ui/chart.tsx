@@ -66,7 +66,13 @@ function ChartContainer({
 }
 
 const ChartStyle = ({ id, config }: { id: string; config: ChartConfig }) => {
-  const colorConfig = Object.entries(config).filter(([, config]) => config.theme || config.color);
+  const colorConfig: Array<[string, ChartConfig[string]]> = [];
+  for (const entry of Object.entries(config)) {
+    const [, itemConfig] = entry;
+    if (itemConfig.theme || itemConfig.color) {
+      colorConfig.push(entry as [string, ChartConfig[string]]);
+    }
+  }
 
   if (!colorConfig.length) {
     return null;

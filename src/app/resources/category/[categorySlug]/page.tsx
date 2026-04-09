@@ -2,8 +2,9 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import JsonLd from '@/components/system/JsonLd';
-import { categories } from '@/domains/resources/api';
+import { categories, getCategoryColors, resources } from '@/domains/resources/api';
 import ResourceCategoryTemplate from '@/domains/resources/templates/ResourceCategoryTemplate';
+import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates';
 import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
 
@@ -51,7 +52,40 @@ export default async function Page({ params }: { params: Promise<{ categorySlug:
   return (
     <>
       <JsonLd id='resource-category-breadcrumb-jsonld' schema={breadcrumbSchema} />
-      <ResourceCategoryTemplate category={category.id} />
+      <ResourceCategoryTemplate
+        category={category.id}
+        label={category.label}
+        description={category.description}
+        badgeClassName={getCategoryColors(category.id).badgeClass}
+        count={resources.filter(resource => resource.category === category.id).length}
+        resources={resources
+          .filter(resource => resource.category === category.id)
+          .slice()
+          .sort((left, right) => {
+            const leftDate = Date.parse(`${left.updatedAt ?? left.publishedAt}T00:00:00Z`);
+            const rightDate = Date.parse(`${right.updatedAt ?? right.publishedAt}T00:00:00Z`);
+            return rightDate - leftDate;
+          })
+          .map(resource => {
+            const lastChanged = resource.updatedAt ?? resource.publishedAt;
+            const isUpdated = Boolean(resource.updatedAt);
+            const freshnessBadge = isRecentIsoDate(lastChanged, 60)
+              ? isUpdated
+                ? 'Updated'
+                : 'New'
+              : undefined;
+
+            return {
+              title: resource.title,
+              url: resource.seo.canonical,
+              categoryLabel: category.label,
+              excerpt: resource.description,
+              freshnessBadge,
+              dateLabel: isUpdated ? 'Updated' : 'Published',
+              dateText: formatIsoDate(lastChanged),
+            };
+          })}
+      />
     </>
   );
 }

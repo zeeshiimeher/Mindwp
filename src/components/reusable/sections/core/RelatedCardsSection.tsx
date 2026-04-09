@@ -163,16 +163,24 @@ export function RelatedCardsSection({
   const getDefaultIconForItem = (item: RelatedCardItem, index: number) => {
     const searchableText = `${item.title} ${item.description ?? item.desc ?? ''}`.toLowerCase();
 
-    const ranked = ICON_RULES.map(rule => {
-      const score = rule.keywords.reduce((sum, keyword) => {
-        return searchableText.includes(keyword) ? sum + keyword.length : sum;
-      }, 0);
-      return { icon: rule.icon, score };
-    })
-      .filter(entry => entry.score > 0)
-      .sort((left, right) => right.score - left.score);
+    let bestIcon: ComponentType<{ className?: string }> | null = null;
+    let bestScore = 0;
 
-    if (ranked.length > 0) return ranked[0].icon;
+    for (const rule of ICON_RULES) {
+      let score = 0;
+      for (const keyword of rule.keywords) {
+        if (searchableText.includes(keyword)) {
+          score += keyword.length;
+        }
+      }
+
+      if (score > bestScore) {
+        bestScore = score;
+        bestIcon = rule.icon;
+      }
+    }
+
+    if (bestIcon) return bestIcon;
 
     const fallbackKey = `${item.title}:${index}`;
     const fallbackIndex = hashString(fallbackKey) % FALLBACK_ICON_SEQUENCE.length;

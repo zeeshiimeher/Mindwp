@@ -11,7 +11,6 @@ import {
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
 import { workflowsData } from '@/domains/features/data/workflows';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -169,8 +168,6 @@ export default function WorkflowsRenderer() {
             cssPrefix='workflows-cta'
             backgroundColor='bg-gradient-secondary'
           />
-
-          <SmartRelatedSection slug={workflowsData.slug} type='feature' />
         </main>
       </ErrorBoundary>
     </>

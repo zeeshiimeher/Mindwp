@@ -2,41 +2,28 @@ import {
   CaseStudyCardsSection,
   type CaseStudyCardsSectionItem,
 } from '@/components/reusable/sections/core/CaseStudyCardsSection';
-import { getCaseStudiesTemplateMetadataByIndustryCategory } from '@/domains/case-studies/data';
 import type { IndustryCategory } from '@/domains/industries/catalog';
 
-/**
- * Renders related case studies for an industry category.
- * Resolves metadata by category and passes it to `CaseStudyCardsSection`.
- */
 export interface IndustryCaseStudiesSectionProps {
-  category: IndustryCategory;
+  studies?: CaseStudyCardsSectionItem[];
+  category?: IndustryCategory;
   title?: string;
   description?: string;
   limit?: number;
 }
 
 export function IndustryCaseStudiesSection({
-  category,
+  studies = [],
   title = 'Related Case Studies',
   description = 'Examples of how the system supports businesses in this industry.',
-  limit,
 }: IndustryCaseStudiesSectionProps) {
-  const studies = getCaseStudiesTemplateMetadataByIndustryCategory(category);
-  const cardStudies: CaseStudyCardsSectionItem[] = studies.slice(0, limit).map(study => ({
-    slug: study.slug,
-    industry: study.industryLabel,
-    client: study.client,
-    location: study.location,
-    metaDescription: study.metaDescription,
-    publishDate: study.publishDate,
-  }));
+  if (studies.length === 0) return null;
 
   return (
     <CaseStudyCardsSection
       title={title}
       description={description}
-      studies={cardStudies}
+      studies={studies}
       cssPrefix='industry-case-studies-section'
     />
   );

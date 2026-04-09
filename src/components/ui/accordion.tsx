@@ -45,7 +45,17 @@ function Accordion({
         if (type === 'single') {
           return prev.includes(value) ? [] : [value];
         } else {
-          return prev.includes(value) ? prev.filter(item => item !== value) : [...prev, value];
+          if (!prev.includes(value)) {
+            return [...prev, value];
+          }
+
+          const nextItems: string[] = [];
+          for (const item of prev) {
+            if (item !== value) {
+              nextItems.push(item);
+            }
+          }
+          return nextItems;
         }
       });
     },

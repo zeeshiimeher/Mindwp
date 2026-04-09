@@ -1,29 +1,23 @@
-/* Shared blog-category layout.
-  Filters canonical post metadata by category; no routing or content resolution here. */
-
-import { useMemo } from 'react';
 import { ArrowRight, Calendar } from 'lucide-react';
 
 import { Card } from '@/components/ui/card';
-import { blogPosts, getCategoryColors, getCategoryMetadata } from '@/domains/blog/api';
-import { BlogCategory } from '@/domains/blog/types';
+import type { BlogPostListItem } from '@/domains/blog/api';
 
 export type BlogCategoryTemplateProps = {
-  category: BlogCategory;
+  title: string;
+  description: string;
+  badgeClassName: string;
+  articleCount: number;
+  posts: BlogPostListItem[];
 };
-function getCategoryDescription(_category: BlogCategory): string {
-  // Prefer a single centralized description source if/when introduced.
-  // For now we intentionally mirror the existing blog category description behavior.
-  return 'Articles in this category.';
-}
-export function BlogCategoryTemplate({ category }: BlogCategoryTemplateProps) {
-  const postsInCategory = useMemo(
-    () => blogPosts.filter(post => post.category === category),
-    [category]
-  );
-  const meta = getCategoryMetadata(category);
-  const title = meta?.name ?? category;
-  const description = meta?.description ?? getCategoryDescription(category);
+
+export function BlogCategoryTemplate({
+  title,
+  description,
+  badgeClassName,
+  articleCount,
+  posts,
+}: BlogCategoryTemplateProps) {
   return (
     <div className='min-h-screen'>
       <main>
@@ -31,9 +25,9 @@ export function BlogCategoryTemplate({ category }: BlogCategoryTemplateProps) {
         <section className='l-section blog-hero'>
           <div className='l-container l-stack l-stack--loose blog-category__hero'>
             <span
-              className={`badge badge--hero ${getCategoryColors(category).bg} ${getCategoryColors(category).text}`}
+              className={`badge badge--hero ${badgeClassName}`}
             >
-              {postsInCategory.length} articles
+              {articleCount} articles
             </span>
 
             <h1>{title}</h1>
@@ -45,16 +39,14 @@ export function BlogCategoryTemplate({ category }: BlogCategoryTemplateProps) {
         <section className='l-section blog-surface--muted'>
           <div className='l-container'>
             <h2 className='blog-section__title'>Latest Articles</h2>
-            {postsInCategory.length === 0 ? (
+            {posts.length === 0 ? (
               <p className='text-center text-muted-foreground'>No articles published yet.</p>
             ) : (
               <div className='blog-category__grid'>
-                {postsInCategory.map(post => (
+                {posts.map(post => (
                   <Card key={post.slug} className='blog-category__card'>
                     <div className='l-stack'>
-                      <span
-                        className={`badge badge--meta ${getCategoryColors(post.category).bg} ${getCategoryColors(post.category).text}`}
-                      >
+                      <span className={`badge badge--meta ${badgeClassName}`}>
                         {post.category}
                       </span>
 

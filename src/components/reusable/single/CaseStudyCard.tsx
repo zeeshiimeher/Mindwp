@@ -132,23 +132,29 @@ export function CaseStudyCard({
 
         {Array.isArray(keyMetrics) && keyMetrics.length > 0 && (
           <div className={`${BLOCK}__metrics`}>
-            {keyMetrics.slice(0, 2).map((metric, i) => (
-              <div key={i} className={`${BLOCK}__metric`}>
-                <div className={cn(`${BLOCK}__metric-value`, metric.color)}>{metric.value}</div>
-                <div className={`${BLOCK}__metric-label`}>{metric.label}</div>
-              </div>
-            ))}
+            {keyMetrics.map((metric, index) => {
+              if (index >= 2) return null;
+              return (
+                <div key={index} className={`${BLOCK}__metric`}>
+                  <div className={cn(`${BLOCK}__metric-value`, metric.color)}>{metric.value}</div>
+                  <div className={`${BLOCK}__metric-label`}>{metric.label}</div>
+                </div>
+              );
+            })}
           </div>
         )}
 
         {Array.isArray(tags) && tags.length > 0 && (
           <div className={`${BLOCK}__tags`}>
-            {tags.slice(0, 3).map((tag, i) => (
-              <span key={i} className={`${BLOCK}__tag`}>
-                <Tag className={`${BLOCK}__meta-icon`} />
-                {tag}
-              </span>
-            ))}
+            {tags.map((tag, index) => {
+              if (index >= 3) return null;
+              return (
+                <span key={index} className={`${BLOCK}__tag`}>
+                  <Tag className={`${BLOCK}__meta-icon`} />
+                  {tag}
+                </span>
+              );
+            })}
           </div>
         )}
       </div>

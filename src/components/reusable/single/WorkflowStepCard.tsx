@@ -1,5 +1,7 @@
 import { ArrowRight, Zap } from 'lucide-react';
 
+import { cn } from '@/components/ui/utils';
+
 const BLOCK = 'workflow';
 
 /**
@@ -30,7 +32,7 @@ export function WorkflowStepCard({
   cssPrefix = '',
 }: WorkflowStepCardProps) {
   return (
-    <div className={[BLOCK, cssPrefix].filter(Boolean).join(' ')}>
+    <div className={cn(BLOCK, cssPrefix)}>
       <div className={`${BLOCK}__content`}>
         <div className={`${BLOCK}__trigger`}>
           <Zap className={`${BLOCK}__trigger-icon`} />

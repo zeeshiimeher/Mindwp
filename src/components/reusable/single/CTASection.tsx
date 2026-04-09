@@ -2,6 +2,7 @@ import { type ReactNode } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 
 import { Button, type ButtonProps } from './Button';
+import { cn } from '@/components/ui/utils';
 
 const BLOCK = 'cta-section';
 
@@ -147,16 +148,14 @@ export function CTASection({
 
   const HeadingTag = headingLevel;
 
-  const rootClassName = [BLOCK, 'cta', cssPrefix].filter(Boolean).join(' ');
+  const rootClassName = cn(BLOCK, 'cta', cssPrefix);
 
-  const panelClassName = [
+  const panelClassName = cn(
     'cta__panel',
     'cta__content',
     backgroundColor,
-    wrapper === 'none' && !includeContainer ? rootClassName : '',
-  ]
-    .filter(Boolean)
-    .join(' ');
+    wrapper === 'none' && !includeContainer ? rootClassName : ''
+  );
 
   const panel = (
     <div className={panelClassName}>

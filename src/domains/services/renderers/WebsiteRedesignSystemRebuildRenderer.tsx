@@ -11,7 +11,6 @@ import { HighlightCard } from '@/components/reusable/single/HighlightCard';
 import { ScenarioSolutionCard } from '@/components/reusable/single/ScenarioSolutionCard';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { ServiceRelatedServicesSection } from '@/domains/services/components/ServiceRelatedServicesSection';
 import { websiteRedesignSystemRebuildPage } from '@/domains/services/data/website-redesign-system-rebuild';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -170,7 +169,6 @@ export function WebsiteRedesignSystemRebuildRenderer({
             description={ctaDescription}
             primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
           />
-          <ServiceRelatedServicesSection serviceSlug={slug} />
         </main>
       </ErrorBoundary>
     </>

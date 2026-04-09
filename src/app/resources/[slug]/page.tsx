@@ -2,12 +2,16 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import JsonLd from '@/components/system/JsonLd';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
+import type { RelatedContentBlock } from '@/components/system/RelatedContentSection';
+import { RELATED_SECTION_LABELS } from '@/config/ui-intelligence';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
 import ResourcePageTemplate from '@/domains/resources/templates/ResourcePageTemplate';
 import type { ResourceFAQItem } from '@/domains/resources/templates/types';
 import type { ResourceSection } from '@/domains/resources/types';
 import { getInventoryMetadata } from '@/lib/content-quality/inventory';
+import { getRelatedContent, type RelatedContent } from '@/lib/graph/query';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
 
@@ -45,6 +49,37 @@ async function resolveResource(slug: string) {
   if (!resource) return null;
 
   return { node, resource };
+}
+
+function buildRelatedBlocks(slug: string): RelatedContentBlock[] {
+  const related = getRelatedContent(slug, 'resource');
+  const labels = RELATED_SECTION_LABELS.resource ?? {};
+  const slotKeys = Object.keys(labels) as Array<keyof RelatedContent>;
+  const blocks: RelatedContentBlock[] = [];
+
+  for (const key of slotKeys) {
+    const items = related[key];
+    const label = labels[key];
+    if (!label || !items || items.length === 0) {
+      continue;
+    }
+
+    blocks.push({
+      title: label.title,
+      description: label.description,
+      items: items.slice(0, 3).map(item => ({
+        title: item.title,
+        desc: item.description,
+        href: item.path,
+      })),
+    });
+
+    if (blocks.length === 2) {
+      break;
+    }
+  }
+
+  return blocks;
 }
 
 export async function generateStaticParams() {
@@ -97,6 +132,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     { id: 'resource-breadcrumb-jsonld', schema: breadcrumbSchema },
   ];
 
+  const relatedBlocks = buildRelatedBlocks(slug);
+
   return (
     <>
       {schemaEntries.map(entry => (
@@ -104,6 +141,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       ))}
       <ResourcePageTemplate
         url={canonicalPath}
+        currentSlug={slug}
         title={resource.title}
         description={resource.description}
         category={resource.category}
@@ -113,6 +151,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         sections={resource.sections}
         systems={resource.systems}
       />
+      {relatedBlocks.length > 0 ? <SmartRelatedSection blocks={relatedBlocks} /> : null}
     </>
   );
 }

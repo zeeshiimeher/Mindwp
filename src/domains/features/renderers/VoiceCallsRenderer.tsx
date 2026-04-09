@@ -12,7 +12,6 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { TestimonialCard } from '@/components/reusable/single/TestimonialCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
 import { voicecallsData } from '@/domains/features/data/voicecalls';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -180,7 +179,6 @@ export default function VoiceCallsRenderer() {
             }}
           />
 
-          <SmartRelatedSection slug={voicecallsData.slug} type='feature' />
         </main>
       </ErrorBoundary>
     </>

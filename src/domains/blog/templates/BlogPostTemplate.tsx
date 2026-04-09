@@ -29,7 +29,6 @@ import { Callout } from '@/components/reusable/single/Callout';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
 import { primaryCta } from '@/config/primaryCta';
 import {
@@ -201,11 +200,25 @@ export function BlogPostTemplate({
   // Get author info
   const effectiveAuthor = author || getAuthorForCategory(category);
 
-  const faqItems = sections
-    .filter(
-      (section): section is Extract<BlogPostSection, { type: 'faq' }> => section.type === 'faq'
-    )
-    .flatMap(section => section.items);
+  const faqItems: Array<{ question: string; answer: string }> = [];
+  let ctaSection: Extract<BlogPostSection, { type: 'cta' }> | undefined;
+  const articleSections: BlogPostSection[] = [];
+
+  for (const section of sections) {
+    if (section.type === 'faq') {
+      faqItems.push(...section.items);
+      articleSections.push(section);
+      continue;
+    }
+
+    if (section.type === 'cta') {
+      ctaSection = section;
+      continue;
+    }
+
+    articleSections.push(section);
+  }
+
   const faqSchema = buildFaqSchema(faqItems);
 
   const sidebarCTAData = {
@@ -234,7 +247,7 @@ export function BlogPostTemplate({
         return section.content && section.content.length > 0 ? (
           <div key={`introduction-${index}`} className='blog-post__intro'>
             {section.content.map((para, i) => (
-              <p key={`intro-${i}-${para.slice(0, 20)}`}>{para}</p>
+              <p key={`intro-${i}`}>{para}</p>
             ))}
           </div>
         ) : null;
@@ -259,17 +272,14 @@ export function BlogPostTemplate({
                 <p>{section.content}</p>
               ) : (
                 section.content.map((p, j) => (
-                  <p key={`content-${index}-${j}-${p.slice(0, 20)}`}>{p}</p>
+                  <p key={`content-${index}-${j}`}>{p}</p>
                 ))
               ))}
 
             {section.list && section.list.length > 0 && (
               <ul className='blog-post__list'>
                 {section.list.map((item, k) => (
-                  <li
-                    key={`list-${index}-${k}-${item.slice(0, 20)}`}
-                    className='blog-post__list-item'
-                  >
+                  <li key={`list-${index}-${k}`} className='blog-post__list-item'>
                     <span className='blog-post__bullet' aria-hidden='true' />
                     <span>{item}</span>
                   </li>
@@ -366,11 +376,6 @@ export function BlogPostTemplate({
         return null;
     }
   }
-  const ctaSection = sections.find(
-    (section): section is Extract<BlogPostSection, { type: 'cta' }> => section.type === 'cta'
-  );
-  const articleSections = sections.filter(section => section.type !== 'cta');
-
   const categoryMeta = getCategoryMetadata(category);
   const categoryColors = getCategoryColors(category);
   const categoryLabel = categoryMeta?.name ?? category;
@@ -527,9 +532,6 @@ export function BlogPostTemplate({
             </div>
           </div>
         </section>
-
-        <SmartRelatedSection slug={slug} type='blog' />
-
         {ctaSection ? (
           <SmartCTA
             system={systems?.[0] ?? 'smart-website-systems'}

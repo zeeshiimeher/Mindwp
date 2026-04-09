@@ -2,6 +2,9 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import JsonLd from '@/components/system/JsonLd';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
+import type { RelatedContentBlock } from '@/components/system/RelatedContentSection';
+import { RELATED_SECTION_LABELS } from '@/config/ui-intelligence';
 import {
   getFeatureDataBySlug,
   isFeatureSlug,
@@ -9,6 +12,7 @@ import {
 } from '@/domains/features/config';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { getInventoryMetadata } from '@/lib/content-quality/inventory';
+import { getRelatedContent, type RelatedContent } from '@/lib/graph/query';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 import { buildBreadcrumbSchema, buildSoftwareApplicationSchema } from '@/lib/seo/schema';
 
@@ -71,6 +75,37 @@ const formatFeatureTitle = (slug: string) =>
     .trim()
     .replace(/\b\w/g, char => char.toUpperCase());
 
+function buildRelatedBlocks(slug: string): RelatedContentBlock[] {
+  const related = getRelatedContent(slug, 'feature');
+  const labels = RELATED_SECTION_LABELS.feature ?? {};
+  const slotKeys = Object.keys(labels) as Array<keyof RelatedContent>;
+  const blocks: RelatedContentBlock[] = [];
+
+  for (const key of slotKeys) {
+    const items = related[key];
+    const label = labels[key];
+    if (!label || !items || items.length === 0) {
+      continue;
+    }
+
+    blocks.push({
+      title: label.title,
+      description: label.description,
+      items: items.slice(0, 3).map(item => ({
+        title: item.title,
+        desc: item.description,
+        href: item.path,
+      })),
+    });
+
+    if (blocks.length === 2) {
+      break;
+    }
+  }
+
+  return blocks;
+}
+
 export default async function Page({ params }: { params: Promise<{ slug: string[] }> }) {
   const { slug } = await params;
   const resolved = await resolveFeature(slug);
@@ -102,12 +137,15 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
     { id: 'feature-breadcrumb-jsonld', schema: breadcrumbSchema },
   ];
 
+  const relatedBlocks = buildRelatedBlocks(resolved.slug);
+
   return (
     <>
       {schemaEntries.map(entry => (
         <JsonLd key={entry.id} id={entry.id} schema={entry.schema} />
       ))}
       {renderFeaturePageBySlug(resolved.slug)}
+      {relatedBlocks.length > 0 ? <SmartRelatedSection blocks={relatedBlocks} /> : null}
     </>
   );
 }

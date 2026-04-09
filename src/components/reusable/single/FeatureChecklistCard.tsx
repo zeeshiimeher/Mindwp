@@ -43,10 +43,9 @@ interface FeatureCardProps extends FeatureCategory {
    * This prop is additive and will not change the BEM base.
    */
   cssPrefix?: string;
-
+  iconClassName?: string;
   iconContainerShape?: 'square' | 'circle';
   iconContainerClassName?: string;
-  iconClassName?: string;
 }
 
 export function FeatureChecklistCard({
@@ -120,13 +119,11 @@ export function FeatureChecklistCard({
     BLOCK,
     variant === 'stacked' ? `${BLOCK}--stacked` : `${BLOCK}--default`,
     finalAlign === 'center' ? `${BLOCK}--center` : `${BLOCK}--left`,
-  ]
-    .filter(Boolean)
-    .join(' ');
+  ].join(' ');
 
   if (variant === 'stacked') {
     const card = (
-      <div className={[rootClasses, cssPrefix].filter(Boolean).join(' ')}>
+      <div className={cn(rootClasses, cssPrefix)}>
         {Icon && (
           <div
             className={cn(
@@ -160,7 +157,7 @@ export function FeatureChecklistCard({
       return (
         <a
           href={href}
-          className={[`${BLOCK}__linkwrap`, cssPrefix].filter(Boolean).join(' ')}
+          className={cn(`${BLOCK}__linkwrap`, cssPrefix)}
           aria-label={`Learn more about ${title}`}
         >
           {card}
@@ -172,7 +169,7 @@ export function FeatureChecklistCard({
   }
 
   const card = (
-    <div className={[rootClasses, cssPrefix].filter(Boolean).join(' ')}>
+    <div className={cn(rootClasses, cssPrefix)}>
       <div
         className={`${BLOCK}__head ${finalAlign === 'center' ? `${BLOCK}__head--center` : `${BLOCK}__head--left`}`}
       >
@@ -211,7 +208,7 @@ export function FeatureChecklistCard({
     return (
       <a
         href={href}
-        className={[`${BLOCK}__linkwrap`, cssPrefix].filter(Boolean).join(' ')}
+        className={cn(`${BLOCK}__linkwrap`, cssPrefix)}
         aria-label={`Learn more about ${title}`}
       >
         {card}

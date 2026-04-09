@@ -19,7 +19,6 @@ import {
 } from '@/components/reusable/sections/case-studies';
 import { TestimonialCard } from '@/components/reusable/single';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 
 import type { CaseStudyContent, CaseStudyMetadata } from './types';
 
@@ -122,8 +121,22 @@ type SectionOfType<T extends CaseStudyTemplateSection['type']> =
 
 function validateRequiredSections(sections: CaseStudyTemplateSection[]) {
   const requiredTypes: CaseStudyTemplateSection['type'][] = ['hero', 'cta'];
+  const missing: CaseStudyTemplateSection['type'][] = [];
 
-  const missing = requiredTypes.filter(type => !sections.some(s => s.type === type));
+  for (const type of requiredTypes) {
+    let found = false;
+    for (const section of sections) {
+      if (section.type === type) {
+        found = true;
+        break;
+      }
+    }
+
+    if (!found) {
+      missing.push(type);
+    }
+  }
+
   if (missing.length > 0 && process.env.NODE_ENV === 'development') {
     // eslint-disable-next-line no-console
     console.warn(`CaseStudyTemplate: Missing required sections: ${missing.join(', ')}`);
@@ -452,19 +465,30 @@ export function CaseStudyTemplate({
     }
   }
 
-  const inFlowSections = resolvedSections
-    .filter(
-      section =>
-        section.type !== 'hero' &&
-        section.type !== 'cta' &&
-        section.type !== 'more' &&
-        section.type !== 'faq'
-    )
-    .sort((a, b) => (SECTION_ORDER[a.type] ?? 99) - (SECTION_ORDER[b.type] ?? 99));
+  const inFlowSections: CaseStudyTemplateSection[] = [];
+  const pinnedFaqSections: Array<SectionOfType<'faq'>> = [];
 
-  const pinnedFaqSections = resolvedSections.filter(
-    (section): section is SectionOfType<'faq'> => section.type === 'faq'
-  );
+  for (const section of resolvedSections) {
+    if (section.type === 'faq') {
+      pinnedFaqSections.push(section);
+      continue;
+    }
+
+    if (section.type === 'hero' || section.type === 'cta' || section.type === 'more') {
+      continue;
+    }
+
+    const targetOrder = SECTION_ORDER[section.type] ?? 99;
+    let insertAt = inFlowSections.length;
+    for (let index = 0; index < inFlowSections.length; index += 1) {
+      const existingOrder = SECTION_ORDER[inFlowSections[index].type] ?? 99;
+      if (targetOrder < existingOrder) {
+        insertAt = index;
+        break;
+      }
+    }
+    inFlowSections.splice(insertAt, 0, section);
+  }
 
   return (
     <div className='case-study-detail'>
@@ -506,9 +530,6 @@ export function CaseStudyTemplate({
       {inFlowSections.map((section, index) => renderSection(section, index))}
 
       {pinnedFaqSections.map((section, index) => renderSection(section, index))}
-
-      <SmartRelatedSection slug={metadata.slug} type='case-study' />
-
       {ctaSection && (
         <SmartCTA
           system={metadata.systems[0] ?? 'smart-website-systems'}

@@ -3,7 +3,6 @@ import React from 'react';
 import { ImageAccordionStripSection } from '@/components/reusable/sections/core/ImageAccordionStripSection';
 import { RelatedCardsSection } from '@/components/reusable/sections/core/RelatedCardsSection';
 import {
-  IndustryCaseStudiesSection,
   IndustryChallengesSection,
   IndustryChecklistSection,
   IndustryComparisonSection,
@@ -134,9 +133,6 @@ export function IndustryCategoryPageTemplate({
           {comparison && <IndustryComparisonSection {...comparison} />}
 
           {resolvedPathwaySection && <IndustryPathwaysSection {...resolvedPathwaySection} />}
-
-          {showCaseStudies && <IndustryCaseStudiesSection category={category} />}
-
           <IndustryCTASection {...resolvedCta} />
         </main>
       </ErrorBoundary>

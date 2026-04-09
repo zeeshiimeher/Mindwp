@@ -1,9 +1,11 @@
 import { CheckCircle2 } from 'lucide-react';
 import type { ReactNode } from 'react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { Button, type ButtonProps } from '@/components/reusable/single/Button';
+import { cn } from '@/components/ui/utils';
 import { resolveCtaLabel } from '@/config/cta-labels';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { buildContactHref, buildGlobalContactHref } from '@/lib/contact/contactHref';
 
 const BLOCK = 'cta-section';
 
@@ -56,25 +58,31 @@ export interface SmartCTAProps {
   includeContainer?: boolean;
 }
 
+function getDefaultSmartCtaContext() {
+  const url = new URL(buildGlobalContactHref(), 'https://mindwp.local');
+  const system = url.searchParams.get('system');
+  const source = url.searchParams.get('source');
+
+  if (!system || !source) {
+    throw new Error('Global contact href must include system and source context.');
+  }
+
+  return { system, source };
+}
+
 export function deriveSmartCtaContextFromHref(href?: string) {
   if (!href) {
-    return {
-      system: 'smart-website-systems',
-      source: 'global/navigation',
-    };
+    return getDefaultSmartCtaContext();
   }
 
   try {
     const url = new URL(href, 'https://mindwp.local');
     const system = url.searchParams.get('system') ?? 'smart-website-systems';
-    const source = url.searchParams.get('source') ?? 'global/navigation';
+    const source = url.searchParams.get('source') ?? getDefaultSmartCtaContext().source;
 
     return { system, source };
   } catch {
-    return {
-      system: 'smart-website-systems',
-      source: 'global/navigation',
-    };
+    return getDefaultSmartCtaContext();
   }
 }
 
@@ -113,15 +121,13 @@ export function SmartCTA({
   }
 
   const HeadingTag = headingLevel;
-  const rootClassName = [BLOCK, 'cta', cssPrefix].filter(Boolean).join(' ');
-  const panelClassName = [
+  const rootClassName = cn(BLOCK, 'cta', cssPrefix);
+  const panelClassName = cn(
     'cta__panel',
     'cta__content',
     backgroundColor,
-    wrapper === 'none' && !includeContainer ? rootClassName : '',
-  ]
-    .filter(Boolean)
-    .join(' ');
+    wrapper === 'none' && !includeContainer ? rootClassName : ''
+  );
 
   const panel = (
     <div className={panelClassName}>
@@ -170,5 +176,9 @@ export function SmartCTA({
     return content;
   }
 
-  return <section className={rootClassName}>{content}</section>;
+  return (
+    <SectionWrapper padding='none' container='none' className={rootClassName}>
+      {content}
+    </SectionWrapper>
+  );
 }

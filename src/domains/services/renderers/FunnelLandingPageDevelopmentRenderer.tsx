@@ -8,7 +8,6 @@ import { AlertCard, FAQSection, LinkCard, SectionIntro } from '@/components/reus
 import { CenteredFeatureCard } from '@/components/reusable/single/CenteredFeatureCard';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { ServiceRelatedServicesSection } from '@/domains/services/components/ServiceRelatedServicesSection';
 import { funnelLandingPageDevelopmentPage } from '@/domains/services/data/funnel-landing-page-development';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -156,7 +155,6 @@ export function FunnelLandingPageDevelopmentRenderer({
             description={ctaDescription}
             primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
           />
-          <ServiceRelatedServicesSection serviceSlug={slug} />
         </main>
       </ErrorBoundary>
     </>

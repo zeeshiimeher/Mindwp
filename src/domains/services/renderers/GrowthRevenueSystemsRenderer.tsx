@@ -13,7 +13,6 @@ import { IconBenefitCard } from '@/components/reusable/single/IconBenefitCard';
 import { RiskListCard } from '@/components/reusable/single/RiskListCard';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { ServiceRelatedServicesSection } from '@/domains/services/components/ServiceRelatedServicesSection';
 import { growthRevenueSystemsPage } from '@/domains/services/data/growth-revenue-systems';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -185,7 +184,6 @@ export function GrowthRevenueSystemsRenderer({ data, slug }: GrowthRevenueSystem
             description={ctaDescription}
             primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
           />
-          <ServiceRelatedServicesSection serviceSlug={slug} />
         </main>
       </ErrorBoundary>
     </>

@@ -5,8 +5,18 @@ import { ExploreCardsSection } from '@/components/reusable/sections/core/Explore
 export type IndustryExploreSectionProps = ComponentProps<typeof ExploreCardsSection>;
 
 export function IndustryExploreSection(props: IndustryExploreSectionProps) {
-  const desktopCards = props.cards.slice(0, 4);
-  const mobileCards = desktopCards.slice(0, 2);
+  const desktopCards: typeof props.cards = [];
+  const mobileCards: typeof props.cards = [];
+
+  for (let index = 0; index < props.cards.length; index += 1) {
+    const card = props.cards[index];
+    if (index < 4) {
+      desktopCards.push(card);
+    }
+    if (index < 2) {
+      mobileCards.push(card);
+    }
+  }
 
   return (
     <>

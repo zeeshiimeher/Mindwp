@@ -89,15 +89,18 @@ export function AuditChecklistCard({
       <h4 className={`${BLOCK}__title`}>{title}</h4>
       <p className={`${BLOCK}__desc`}>{description}</p>
       <ul className={`${BLOCK}__list`}>
-        {checks.slice(0, 4).map((check, checkIndex) => (
-          <li key={checkIndex} className={`${BLOCK}__item`}>
-            <CheckCircle2
-              className={cn(`${BLOCK}__item-icon`, 'icon-text-accent')}
-              aria-hidden='true'
-            />
-            {check}
-          </li>
-        ))}
+        {checks.map((check, checkIndex) => {
+          if (checkIndex >= 4) return null;
+          return (
+            <li key={checkIndex} className={`${BLOCK}__item`}>
+              <CheckCircle2
+                className={cn(`${BLOCK}__item-icon`, 'icon-text-accent')}
+                aria-hidden='true'
+              />
+              {check}
+            </li>
+          );
+        })}
       </ul>
     </Card>
   );

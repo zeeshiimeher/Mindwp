@@ -11,7 +11,6 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { ProblemSolutionSplitCard } from '@/components/reusable/single/ProblemSolutionSplitCard';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { ServiceRelatedServicesSection } from '@/domains/services/components/ServiceRelatedServicesSection';
 import { conversionFunnelSystemPage } from '@/domains/services/data/conversion-funnel-system';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -172,7 +171,6 @@ export function ConversionFunnelSystemRenderer({
             description={ctaDescription}
             primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
           />
-          <ServiceRelatedServicesSection serviceSlug={slug} />
         </main>
       </ErrorBoundary>
     </>

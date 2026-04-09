@@ -14,7 +14,6 @@ import { IconBenefitCard } from '@/components/reusable/single/IconBenefitCard';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { ServiceRelatedServicesSection } from '@/domains/services/components/ServiceRelatedServicesSection';
 import { smartWebsiteSystemsPage } from '@/domains/services/data/smart-website-systems';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 import type { ServicePageSections } from '@/domains/services/types';
@@ -269,8 +268,6 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             }}
             cssPrefix='smart-websites-cta'
           />
-
-          <ServiceRelatedServicesSection serviceSlug={slug} cssPrefix='bg-white' />
         </main>
       </ErrorBoundary>
     </>

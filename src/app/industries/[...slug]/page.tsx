@@ -1,8 +1,10 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+import { IndustryCaseStudiesSection } from '@/components/reusable/sections/industries/IndustryCaseStudiesSection';
 import JsonLd from '@/components/system/JsonLd';
 import RelatedContentSection from '@/components/system/RelatedContentSection';
+import { getCaseStudiesTemplateMetadataByIndustryCategory } from '@/domains/case-studies/data';
 import { getIndustryDataByPath, renderIndustryPageByPath } from '@/domains/industries/config';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { getInventoryMetadata } from '@/lib/content-quality/inventory';
@@ -143,20 +145,62 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
       industry.slug,
       industry.type === 'detail' ? 'industry-detail' : 'industry-category'
     );
-    const blocks: { title: string; items: typeof slots.services }[] = [];
-    if (slots.services.length > 0)
-      blocks.push({ title: 'Services That Solve This Problem', items: slots.services });
-    if (slots.caseStudies.length > 0)
-      blocks.push({ title: 'Real Results in This Industry', items: slots.caseStudies });
-    if (slots.resources.length > 0)
-      blocks.push({ title: 'What You Need Next', items: slots.resources });
+    const blocks: Array<{
+      title: string;
+      items: Array<{ title: string; desc: string; href: string }>;
+    }> = [];
+    if (slots.services.length > 0) {
+      blocks.push({
+        title: 'Services That Solve This Problem',
+        items: slots.services.slice(0, 3).map(item => ({
+          title: item.title,
+          desc: 'Explore this related page',
+          href: item.path,
+        })),
+      });
+    }
+    if (slots.caseStudies.length > 0) {
+      blocks.push({
+        title: 'Real Results in This Industry',
+        items: slots.caseStudies.slice(0, 3).map(item => ({
+          title: item.title,
+          desc: 'Explore this related page',
+          href: item.path,
+        })),
+      });
+    }
+    if (slots.resources.length > 0) {
+      blocks.push({
+        title: 'What You Need Next',
+        items: slots.resources.slice(0, 3).map(item => ({
+          title: item.title,
+          desc: 'Explore this related page',
+          href: item.path,
+        })),
+      });
+    }
     return blocks;
   })();
+
+  const categoryCaseStudies =
+    industry.type === 'category' && industry.sectionControls?.caseStudies?.enabled === true
+      ? getCaseStudiesTemplateMetadataByIndustryCategory(industry.category).map(study => ({
+          slug: study.slug,
+          industry: study.industryLabel,
+          client: study.client,
+          location: study.location,
+          metaDescription: study.metaDescription,
+          publishDate: study.publishDate,
+        }))
+      : [];
 
   return (
     <>
       <JsonLd id='industries-breadcrumb-jsonld' schema={breadcrumbSchema} />
       {renderIndustryPageByPath(node.path)}
+      {categoryCaseStudies.length > 0 ? (
+        <IndustryCaseStudiesSection studies={categoryCaseStudies} />
+      ) : null}
       {relatedBlocks.length > 0 && <RelatedContentSection blocks={relatedBlocks} />}
     </>
   );
