@@ -1,8 +1,10 @@
+import { SectionWrapper } from '@/components/reusable/primitives';
+
 export default function CookiePolicy() {
   return (
     <div className='legal-page legal-cookies'>
-      <section className='legal-cookies-hero l-section bg-gradient-surface-muted'>
-        <div className='legal-cookies-hero-container l-container'>
+      <SectionWrapper className='legal-cookies-hero' background='bg-gradient-surface-muted'>
+        <div className='legal-cookies-hero-container'>
           <div className='legal-content text-center'>
             <h1>Cookie Policy</h1>
             <p>
@@ -12,10 +14,10 @@ export default function CookiePolicy() {
             </p>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
-      <section className='legal-cookies-content l-section'>
-        <div className='legal-cookies-content-container l-container'>
+      <SectionWrapper className='legal-cookies-content'>
+        <div className='legal-cookies-content-container'>
           <div className='legal-content'>
             <h2>What cookies are</h2>
             <p>
@@ -86,7 +88,7 @@ export default function CookiePolicy() {
             </p>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
     </div>
   );
 }

@@ -1,4 +1,3 @@
-import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { resolveCtaLabel } from '@/config/cta-labels';
 
@@ -6,17 +5,20 @@ const SMART_CTA_CASES = [
   {
     testId: 'smart-website-cta',
     system: 'smart-website-systems',
-    source: 'service/cta-label-contract-smart-website',
+    sourceType: 'service',
+    slug: 'cta-label-contract-smart-website',
   },
   {
     testId: 'ai-lead-handling-cta',
     system: 'ai-lead-handling',
-    source: 'service/cta-label-contract-ai-lead-handling',
+    sourceType: 'service',
+    slug: 'cta-label-contract-ai-lead-handling',
   },
   {
     testId: 'revenue-growth-cta',
     system: 'revenue-growth',
-    source: 'service/cta-label-contract-revenue-growth',
+    sourceType: 'service',
+    slug: 'cta-label-contract-revenue-growth',
   },
 ] as const;
 
@@ -28,25 +30,21 @@ export default function CtaLabelContractPage() {
 
       <div style={{ display: 'grid', gap: '2rem' }}>
         {SMART_CTA_CASES.map(testCase => (
-          <SectionWrapper
-            key={testCase.testId}
-            padding='none'
-            container='none'
-            data-testid={testCase.testId}
-          >
+          <div key={testCase.testId} data-testid={testCase.testId}>
             <SmartCTA
               system={testCase.system}
-              source={testCase.source}
+              sourceType={testCase.sourceType}
+              slug={testCase.slug}
               title={`Contract case: ${testCase.system}`}
               description='Deterministic SmartCTA contract validation.'
             />
-          </SectionWrapper>
+          </div>
         ))}
 
-        <SectionWrapper padding='none' container='none' data-testid='fallback-labels'>
+        <div data-testid='fallback-labels'>
           <p data-testid='fallback-unknown'>{resolveCtaLabel('unknown-system')}</p>
           <p data-testid='fallback-empty'>{resolveCtaLabel('')}</p>
-        </SectionWrapper>
+        </div>
       </div>
     </main>
   );

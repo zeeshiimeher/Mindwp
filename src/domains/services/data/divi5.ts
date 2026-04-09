@@ -1,5 +1,6 @@
 import { Code, Eye, Layers, Search, Settings, Smartphone, Sparkles, Zap } from 'lucide-react';
 
+import { CTA_LABELS } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { ServicePageData } from '../types';
@@ -45,7 +46,7 @@ export const divi5Page = {
     description:
       'We build WordPress websites using Divi where the team needs a flexible editing experience without losing visual or technical control. Approved designs are converted precisely, with a build that stays maintainable over time.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: CTA_LABELS.PRIMARY,
       href: buildContactHref({
         system: 'smart-website-systems',
         sourceType: 'service',
@@ -293,11 +294,11 @@ export const divi5Page = {
     title: 'Discuss your Divi implementation',
     description:
       'If your team needs a clean Divi build with flexible editing and long-term clarity, we can review scope and outline the right approach.',
-      buttonText: 'Start a Conversation',
-      buttonHref: buildContactHref({
-        system: 'smart-website-systems',
-        sourceType: 'service',
-        slug: 'divi5',
-      }),
+    buttonText: CTA_LABELS.PRIMARY,
+    buttonHref: buildContactHref({
+      system: 'smart-website-systems',
+      sourceType: 'service',
+      slug: 'divi5',
+    }),
   },
 } satisfies ServicePageData;

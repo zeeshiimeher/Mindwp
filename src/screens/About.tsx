@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { Card } from '@/components/ui/card';
@@ -16,8 +17,8 @@ export function About() {
   return (
     <div className='about-page'>
       {/* Hero Section */}
-      <section className='about-page-hero bg-gradient-to-b from-blue-50 to-white l-section'>
-        <div className='l-container text-center'>
+      <SectionWrapper className='about-page-hero' background='bg-gradient-to-b from-blue-50 to-white'>
+        <div className='text-center'>
           <Badge variant='secondary' context='hero'>
             About MindWP
           </Badge>
@@ -37,11 +38,11 @@ export function About() {
             {...(primaryCta.type === 'chat' ? { onClick: () => {} } : {})}
           />
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Industry Problem */}
-      <section className='l-section'>
-        <div className='l-container max-w-3xl'>
+      <SectionWrapper>
+        <div className='max-w-3xl'>
           <h2 className='mb-6'>The Problem We Saw</h2>
           <p className='text-muted-foreground mb-4'>
             Too often, websites are treated as visual projects rather than operational tools.
@@ -53,11 +54,11 @@ export function About() {
             require constant patching instead of deliberate design.
           </p>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Our Approach */}
-      <section className='l-section bg-base'>
-        <div className='l-container max-w-3xl'>
+      <SectionWrapper background='bg-base'>
+        <div className='max-w-3xl'>
           <h2 className='mb-6'>Our Approach</h2>
           <p className='text-muted-foreground mb-4'>
             We approach websites as digital infrastructure. A Smart Website is not a collection of
@@ -70,11 +71,11 @@ export function About() {
             reliability.
           </p>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* What We Don’t Do */}
-      <section className='l-section'>
-        <div className='l-container max-w-3xl'>
+      <SectionWrapper>
+        <div className='max-w-3xl'>
           <h2 className='mb-6'>What We Don’t Do</h2>
           <Card className='p-8'>
             <ul className='about-page__dont-list text-foreground'>
@@ -86,11 +87,11 @@ export function About() {
             </ul>
           </Card>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* How We Work */}
-      <section className='l-section bg-alt'>
-        <div className='l-container max-w-3xl'>
+      <SectionWrapper background='bg-alt'>
+        <div className='max-w-3xl'>
           <h2 className='mb-6'>How We Work</h2>
           <p className='text-muted-foreground mb-4'>
             Every engagement begins with review and alignment. We look at how your website supports
@@ -102,11 +103,11 @@ export function About() {
             and supporting system layers. The objective is clarity — not complexity.
           </p>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Final CTA */}
-      <section className='footer-cta cta'>
-        <div className='l-container'>
+      <SectionWrapper className='footer-cta cta' padding='none'>
+        <div>
           <div className='cta__panel cta__content bg-gradient-primary'>
             <h2 className='cta-heading'>If this approach resonates, let’s talk.</h2>
             <p className='cta__text'>
@@ -128,7 +129,7 @@ export function About() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
     </div>
   );
 }

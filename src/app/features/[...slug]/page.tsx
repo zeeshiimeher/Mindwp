@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import JsonLd from '@/components/system/JsonLd';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import type { RelatedContentBlock } from '@/components/system/RelatedContentSection';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { RELATED_SECTION_LABELS } from '@/config/ui-intelligence';
 import {
   getFeatureDataBySlug,
@@ -11,9 +11,9 @@ import {
   renderFeaturePageBySlug,
 } from '@/domains/features/config';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
-import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { getRelatedContent, type RelatedContent } from '@/lib/graph/query';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
+import { getFeatureMetadata } from '@/lib/seo/pageMetadata';
 import { buildBreadcrumbSchema, buildSoftwareApplicationSchema } from '@/lib/seo/schema';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
@@ -66,7 +66,7 @@ export async function generateMetadata({
   const resolved = await resolveFeature(slug);
   if (!resolved) return {};
 
-  return getInventoryMetadata(resolved.featureNode.path);
+  return getFeatureMetadata(resolved.featureNode.path);
 }
 
 const formatFeatureTitle = (slug: string) =>

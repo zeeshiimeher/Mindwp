@@ -1,5 +1,6 @@
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { Button } from '@/components/reusable/single/Button';
 import { primaryCta } from '@/config/primaryCta';
 
@@ -46,8 +47,7 @@ export function BlogFooterCTA({
     );
 
   return (
-    <section className='footer-cta cta'>
-      <div className='l-container'>
+    <SectionWrapper className='footer-cta cta' padding='none'>
         <div className='cta__panel cta__content bg-gradient-primary'>
           <h2 className='cta-heading'>{title}</h2>
 
@@ -64,7 +64,6 @@ export function BlogFooterCTA({
             ))}
           </div>
         </div>
-      </div>
-    </section>
+    </SectionWrapper>
   );
 }

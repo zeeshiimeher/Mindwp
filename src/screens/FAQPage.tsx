@@ -1,5 +1,6 @@
 import { ArrowRight, Mail, Phone } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import {
@@ -132,8 +133,8 @@ export function FAQPage() {
     <div className='min-h-screen faq-page'>
       <main>
         {/* Hero */}
-        <section className='l-section bg-gradient-to-b from-muted/50 to-background'>
-          <div className='l-container'>
+        <SectionWrapper background='bg-gradient-to-b from-muted/50 to-background'>
+          <div>
             <div className='text-center faq-page__hero'>
               <Badge variant='secondary' context='hero'>
                 Help Center
@@ -145,11 +146,11 @@ export function FAQPage() {
               </p>
             </div>
           </div>
-        </section>
+        </SectionWrapper>
 
         {/* FAQ Tabs */}
-        <section className='l-section'>
-          <div className='l-container'>
+        <SectionWrapper>
+          <div>
             <Tabs defaultValue='general' className='w-full'>
               <TabsList className='w-full faq-page__tabs-list'>
                 <TabsTrigger value='general'>General</TabsTrigger>
@@ -225,11 +226,11 @@ export function FAQPage() {
               </TabsContent>
             </Tabs>
           </div>
-        </section>
+        </SectionWrapper>
 
         {/* Contact Card */}
-        <section className='l-section bg-base'>
-          <div className='l-container'>
+        <SectionWrapper background='bg-base'>
+          <div>
             <Card className='p-8 md:p-12 text-center'>
               <h2 className='mb-4'>Still Have Questions?</h2>
               <p className='text-muted-foreground mb-8'>
@@ -253,11 +254,11 @@ export function FAQPage() {
               </div>
             </Card>
           </div>
-        </section>
+        </SectionWrapper>
 
         {/* CTA */}
-        <section className='footer-cta cta'>
-          <div className='l-container'>
+        <SectionWrapper className='footer-cta cta' padding='none'>
+          <div>
             <div className='cta__panel cta__content bg-gradient-primary'>
               <h2 className='cta-heading'>Ready to Get Started?</h2>
               <p className='cta__text'>
@@ -279,7 +280,7 @@ export function FAQPage() {
               </div>
             </div>
           </div>
-        </section>
+        </SectionWrapper>
       </main>
     </div>
   );

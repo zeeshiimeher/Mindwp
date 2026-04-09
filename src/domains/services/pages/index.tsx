@@ -24,6 +24,7 @@ import {
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
 import { primaryCta } from '@/config/primaryCta';
@@ -60,6 +61,12 @@ const IMPLEMENTATION_SUPPORT_SLUGS = [
   'bricks-builder',
   'divi5',
 ] as const;
+
+const SERVICES_PAGE_SMART_CTA_CONTEXT = {
+  system: 'smart-website-systems',
+  sourceType: 'page' as const,
+  slug: 'services',
+};
 
 type VisibleServiceSlug =
   | typeof FEATURED_SERVICE_SLUG
@@ -291,35 +298,32 @@ export function ServicesLanding() {
       >
         <main role='main'>
           {/* Hero Section */}
-          <section className='service-lnd service-lnd__hero l-section bg-gradient-surface-muted'>
-            <div className='l-container'>
-              <div className='service-lnd__heroContent l-mx-auto text-center l-stack l-stack--loose'>
-                <Badge variant='primary'>Services Architecture</Badge>
-                <h1 className='service-lnd__title'>System Services for WordPress Businesses</h1>
-                <p className='service-lnd__subtitle text-muted-foreground text-lg'>
-                  Smart Website Systems leads the structure. Supporting systems, operational
-                  modules, and implementation support pages sit beneath it in a controlled
-                  hierarchy.
-                </p>
-                <div className='service-lnd__actions l-row l-row-wrap l-gap-4 l-row-center'>
-                  <Button
-                    {...(primaryCta.type !== 'chat' ? { href: primaryCta.href } : {})}
-                    label={primaryCta.label}
-                    icon={ArrowRight}
-                    showDefaultIcon
-                    {...(primaryCta.type === 'external'
-                      ? { target: '_blank', rel: 'noopener noreferrer' }
-                      : {})}
-                    {...(primaryCta.type === 'chat' ? { onClick: () => {} } : {})}
-                  />
-                </div>
+          <SectionWrapper className='service-lnd service-lnd__hero' background='bg-gradient-surface-muted'>
+            <div className='service-lnd__heroContent l-mx-auto text-center l-stack l-stack--loose'>
+              <Badge variant='primary'>Services Architecture</Badge>
+              <h1 className='service-lnd__title'>System Services for WordPress Businesses</h1>
+              <p className='service-lnd__subtitle text-muted-foreground text-lg'>
+                Smart Website Systems leads the structure. Supporting systems, operational
+                modules, and implementation support pages sit beneath it in a controlled
+                hierarchy.
+              </p>
+              <div className='service-lnd__actions l-row l-row-wrap l-gap-4 l-row-center'>
+                <Button
+                  {...(primaryCta.type !== 'chat' ? { href: primaryCta.href } : {})}
+                  label={primaryCta.label}
+                  icon={ArrowRight}
+                  showDefaultIcon
+                  {...(primaryCta.type === 'external'
+                    ? { target: '_blank', rel: 'noopener noreferrer' }
+                    : {})}
+                  {...(primaryCta.type === 'chat' ? { onClick: () => {} } : {})}
+                />
               </div>
             </div>
-          </section>
+          </SectionWrapper>
 
           {/* Structured Services Sections */}
-          <section className='service-lnd service-lnd__gridSec l-section bg-white'>
-            <div className='l-container l-max-w-7xl'>
+          <SectionWrapper className='service-lnd service-lnd__gridSec' background='bg-white'>
               <div className='l-stack l-stack--loose'>
                 {featuredService && (
                   <section className='l-stack l-stack--loose'>
@@ -406,14 +410,12 @@ export function ServicesLanding() {
                   IMPLEMENTATION_SUPPORT_SLUGS
                 )}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
         </main>
 
         {/* Footer CTA Section */}
         <SmartCTA
-          system='smart-website-systems'
-          source='page/services'
+          {...SERVICES_PAGE_SMART_CTA_CONTEXT}
           title='Ready to transform your WordPress business?'
           description='Discover how our integrated systems can streamline your operations and boost your growth.'
           primaryActionVariant='white'

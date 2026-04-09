@@ -10,6 +10,7 @@ import {
   Workflow,
 } from 'lucide-react';
 
+import { CTA_LABELS } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { ServicePageData } from '../types';
@@ -54,7 +55,7 @@ export const leadReactivationSystemPage = {
     description:
       'This service helps service businesses re-engage old enquiries, stalled quotes, and dormant pipeline value through structured follow-up. The goal is a clearer system so good opportunities are not left sitting unused.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: CTA_LABELS.PRIMARY,
       href: buildContactHref({
         system: 'revenue-growth',
         sourceType: 'service',
@@ -365,7 +366,7 @@ export const leadReactivationSystemPage = {
     title: 'Bring dormant opportunities back to life',
     description:
       'If old enquiries, stalled quotes, or past customers are sitting untouched, we can help structure a clearer reactivation workflow.',
-      buttonText: 'Start a Conversation',
+      buttonText: CTA_LABELS.PRIMARY,
       buttonHref: buildContactHref({
         system: 'revenue-growth',
         sourceType: 'service',

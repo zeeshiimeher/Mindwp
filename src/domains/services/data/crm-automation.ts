@@ -49,6 +49,7 @@ import {
   Zap,
 } from 'lucide-react';
 
+import { CTA_LABELS } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { ServicePageData } from '../types';
@@ -825,7 +826,7 @@ export const crmAutomationPage = {
     title: 'Set up your CRM pipeline',
     description:
       'Tell us how leads are routed today. We will show you where ownership, stages, and follow-up are breaking down.',
-      buttonText: 'Start a Conversation',
+    buttonText: CTA_LABELS.PRIMARY,
       buttonHref: buildContactHref({
         system: 'crm-automation',
         sourceType: 'service',

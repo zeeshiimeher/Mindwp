@@ -9,6 +9,7 @@ import {
   Workflow,
 } from 'lucide-react';
 
+import { CTA_LABELS } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { ServicePageData } from '../types';
@@ -54,7 +55,7 @@ export const conversionFunnelSystemPage = {
     description:
       'This service focuses on the conversion path itself — page flow, offer structure, and the handoff between attention, enquiry, and action. When those are clearer, fewer good prospects disappear in the middle.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: CTA_LABELS.PRIMARY,
       href: buildContactHref({
         system: 'revenue-growth',
         sourceType: 'service',
@@ -318,7 +319,7 @@ export const conversionFunnelSystemPage = {
     title: 'Turn more attention into clearer next steps',
     description:
       'If traffic is arriving but the page journey still weakens conversion, we can help define a stronger funnel path.',
-      buttonText: 'Start a Conversation',
+      buttonText: CTA_LABELS.PRIMARY,
       buttonHref: buildContactHref({
         system: 'revenue-growth',
         sourceType: 'service',

@@ -2,17 +2,17 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import JsonLd from '@/components/system/JsonLd';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import type { RelatedContentBlock } from '@/components/system/RelatedContentSection';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { RELATED_SECTION_LABELS } from '@/config/ui-intelligence';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
 import ResourcePageTemplate from '@/domains/resources/templates/ResourcePageTemplate';
 import type { ResourceFAQItem } from '@/domains/resources/templates/types';
 import type { ResourceSection } from '@/domains/resources/types';
-import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { getRelatedContent, type RelatedContent } from '@/lib/graph/query';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
+import { getResourceMetadata } from '@/lib/seo/pageMetadata';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
@@ -98,7 +98,7 @@ export async function generateMetadata({
     return {};
   }
 
-  return getInventoryMetadata(resolved.node.path);
+  return getResourceMetadata(resolved.node.path);
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

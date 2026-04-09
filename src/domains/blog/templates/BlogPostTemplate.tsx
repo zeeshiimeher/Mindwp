@@ -536,7 +536,8 @@ export function BlogPostTemplate({
         {ctaSection ? (
           <SmartCTA
             system={systems?.[0] ?? 'smart-website-systems'}
-            source={`blog/${slug}`}
+            sourceType='blog'
+            slug={slug}
             title={ctaSection.heading}
             description={ctaSection.content}
             cssPrefix='blog-cta'

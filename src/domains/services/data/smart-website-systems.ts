@@ -11,6 +11,7 @@ import {
   Zap,
 } from 'lucide-react';
 
+import { CTA_LABELS } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { ServicePageData } from '../types';
@@ -109,7 +110,7 @@ export const smartWebsiteSystemsPage = {
     description:
       'A Smart Website gives visitors a clear path from service to enquiry. Your services are easy to understand, the next step is obvious, and the site connects directly to your workflow.',
     primaryAction: {
-      label: 'Understand What Makes Websites Convert',
+      label: CTA_LABELS.SMART_WEBSITE_CONVERSION,
       href: buildContactHref({
         system: 'smart-website-systems',
         sourceType: 'service',
@@ -386,7 +387,7 @@ export const smartWebsiteSystemsPage = {
     title: 'Build your smart website system',
     description:
       'Tell us how your website handles enquiries now. We will show you where visitors drop off before they contact you.',
-      buttonText: 'Understand What Makes Websites Convert',
+      buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
       buttonHref: buildContactHref({
         system: 'smart-website-systems',
         sourceType: 'service',
@@ -397,7 +398,7 @@ export const smartWebsiteSystemsPage = {
     title: 'Not sure how this would fit your business?',
     description:
       'No commitment. We will walk through your setup and show where enquiries are being lost.',
-      buttonText: 'Understand What Makes Websites Convert',
+      buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
       buttonHref: buildContactHref({
         system: 'smart-website-systems',
         sourceType: 'service',

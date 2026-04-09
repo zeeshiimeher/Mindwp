@@ -1,8 +1,10 @@
+import { SectionWrapper } from '@/components/reusable/primitives';
+
 export default function TermsConditions() {
   return (
     <div className='legal-page legal-terms'>
-      <section className='legal-terms-hero l-section bg-gradient-surface-muted'>
-        <div className='legal-terms-hero-container l-container'>
+      <SectionWrapper className='legal-terms-hero' background='bg-gradient-surface-muted'>
+        <div className='legal-terms-hero-container'>
           <div className='legal-content text-center'>
             <h1>Terms &amp; Conditions</h1>
             <p>
@@ -12,10 +14,10 @@ export default function TermsConditions() {
             </p>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
-      <section className='legal-terms-content l-section'>
-        <div className='legal-terms-content-container l-container'>
+      <SectionWrapper className='legal-terms-content'>
+        <div className='legal-terms-content-container'>
           <div className='legal-content'>
             <h2>Services</h2>
             <p>
@@ -84,7 +86,7 @@ export default function TermsConditions() {
             </p>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
     </div>
   );
 }

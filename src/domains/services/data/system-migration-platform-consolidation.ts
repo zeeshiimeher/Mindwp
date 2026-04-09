@@ -1,5 +1,6 @@
 import { LayoutTemplate, Puzzle, ShieldCheck, Wrench } from 'lucide-react';
 
+import { CTA_LABELS } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { ServicePageData } from '../types';
@@ -46,7 +47,7 @@ export const systemMigrationPlatformConsolidationPage = {
     description:
       'This service is for businesses moving away from fragmented tools, outdated platforms, or disconnected systems. The goal is a cleaner platform structure, less tool sprawl, and a more stable operating foundation that is easier to maintain and extend.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: CTA_LABELS.PRIMARY,
       href: buildContactHref({
         system: 'smart-website-systems',
         sourceType: 'service',
@@ -306,7 +307,7 @@ export const systemMigrationPlatformConsolidationPage = {
     title: 'Simplify the platform foundation',
     description:
       'If the business is being slowed by fragmented tools or an outdated platform, we can help define a cleaner migration and consolidation path.',
-      buttonText: 'Start a Conversation',
+      buttonText: CTA_LABELS.PRIMARY,
       buttonHref: buildContactHref({
         system: 'smart-website-systems',
         sourceType: 'service',

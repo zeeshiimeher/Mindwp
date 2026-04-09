@@ -3,17 +3,21 @@ import { CANONICAL_SYSTEMS } from '@/lib/content-graph/canonical';
 export const CONTACT_PATH = '/contact';
 
 const canonicalSystemSet = new Set<string>(CANONICAL_SYSTEMS);
+const CONTACT_SOURCE_TYPES = [
+  'blog',
+  'case-study',
+  'feature',
+  'global',
+  'industry',
+  'page',
+  'resource',
+  'service',
+] as const;
 const sourcePattern = /^[a-z-]+\/[a-z0-9-]+$/;
 
-export type ContactSourceType =
-  | 'blog'
-  | 'case-study'
-  | 'feature'
-  | 'global'
-  | 'industry'
-  | 'page'
-  | 'resource'
-  | 'service';
+const contactSourceTypeSet = new Set<string>(CONTACT_SOURCE_TYPES);
+
+export type ContactSourceType = (typeof CONTACT_SOURCE_TYPES)[number];
 
 export type ContactContext = {
   system: string;
@@ -52,6 +56,25 @@ export function isCanonicalContactSystem(system: string) {
 
 export function isValidContactSource(source: string) {
   return sourcePattern.test(source);
+}
+
+export function parseContactSource(source: string):
+  | { sourceType: ContactSourceType; slug: string }
+  | null {
+  if (!isValidContactSource(source)) {
+    return null;
+  }
+
+  const [sourceType, slug] = source.split('/');
+
+  if (!sourceType || !slug || !contactSourceTypeSet.has(sourceType)) {
+    return null;
+  }
+
+  return {
+    sourceType: sourceType as ContactSourceType,
+    slug,
+  };
 }
 
 function normalizeOptions(

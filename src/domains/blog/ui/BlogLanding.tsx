@@ -3,6 +3,7 @@
 
 import { ArrowRight, Folder } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Card } from '@/components/ui/card';
 import {
@@ -48,8 +49,8 @@ export function BlogLanding() {
     <div className='min-h-screen'>
       <main>
         {/* HERO */}
-        <section className='l-section blog-hero'>
-          <div className='l-container l-stack l-stack--loose blog-landing__hero'>
+        <SectionWrapper className='blog-hero'>
+          <div className='l-stack l-stack--loose blog-landing__hero'>
             <Badge variant='secondary' context='hero'>
               {blogPosts.length} articles
             </Badge>
@@ -61,12 +62,12 @@ export function BlogLanding() {
               businesses.
             </p>
           </div>
-        </section>
+        </SectionWrapper>
 
         {/* CATEGORIES */}
         {categories.length > 0 && (
-          <section className='l-section'>
-            <div className='l-container'>
+          <SectionWrapper>
+            <div>
               <h2 className='blog-section__title blog-section__title--center'>
                 Browse by Category
               </h2>
@@ -108,16 +109,16 @@ export function BlogLanding() {
                 })}
               </div>
             </div>
-          </section>
+          </SectionWrapper>
         )}
 
         {/* POSTS */}
-        <section className='l-section blog-surface--muted'>
-          <div className='l-container'>
+        <SectionWrapper className='blog-surface--muted'>
+          <div>
             <h2 className='blog-section__title'>Latest Articles</h2>
             <BlogPostsListIsland posts={sortedPosts} postsPerPage={POSTS_PER_PAGE} />
           </div>
-        </section>
+        </SectionWrapper>
       </main>
     </div>
   );

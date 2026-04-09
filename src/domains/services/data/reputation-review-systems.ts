@@ -1,5 +1,6 @@
 import { AlertTriangle, Bell, GitBranch, MessageSquare, Search, Star } from 'lucide-react';
 
+import { CTA_LABELS } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { ServicePageData } from '../types';
@@ -52,7 +53,7 @@ export const reputationReviewSystemsPage = {
     description:
       'This service helps businesses build a clear review system around timing, feedback routing, response ownership, and trust signals. It works best when people are already finding the business but still hesitate to trust it.',
     primaryAction: {
-      label: 'Review How Review Systems Work',
+      label: CTA_LABELS.REVIEW_SYSTEMS,
       href: buildContactHref({
         system: 'reputation-review',
         sourceType: 'service',
@@ -315,7 +316,7 @@ export const reputationReviewSystemsPage = {
     title: 'Make trust part of the system',
     description:
       'Tell us how reviews and feedback are handled now. We will show you how to collect more proof without extra manual chasing.',
-      buttonText: 'Review How Review Systems Work',
+      buttonText: CTA_LABELS.REVIEW_SYSTEMS,
       buttonHref: buildContactHref({
         system: 'reputation-review',
         sourceType: 'service',

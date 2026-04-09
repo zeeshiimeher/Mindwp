@@ -2,17 +2,17 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import JsonLd from '@/components/system/JsonLd';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import type { RelatedContentBlock } from '@/components/system/RelatedContentSection';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { RELATED_SECTION_LABELS } from '@/config/ui-intelligence';
 import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
 import type { CaseStudyTemplateSection } from '@/domains/case-studies/templates';
 import { CaseStudyTemplate } from '@/domains/case-studies/templates';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
-import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { getRelatedContent, type RelatedContent } from '@/lib/graph/query';
 import { getImage } from '@/lib/image-system/resolver';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
+import { getCaseStudyMetadata } from '@/lib/seo/pageMetadata';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
@@ -96,7 +96,7 @@ export async function generateMetadata({
   const resolved = await resolveCaseStudy(slug);
   if (!resolved) return {};
 
-  return getInventoryMetadata(resolved.node.path);
+  return getCaseStudyMetadata(resolved.node.path);
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

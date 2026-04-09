@@ -115,7 +115,8 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           )}
           <SmartCTA
             system={data.systems?.[0] ?? 'smart-website-systems'}
-            source={`service/${slug}`}
+            sourceType='service'
+            slug={slug}
             title={inlineCtaTitle}
             description={inlineCtaDescription}
             cssPrefix='smart-websites-cta'

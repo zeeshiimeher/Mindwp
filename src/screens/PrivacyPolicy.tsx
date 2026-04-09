@@ -1,8 +1,10 @@
+import { SectionWrapper } from '@/components/reusable/primitives';
+
 export default function PrivacyPolicy() {
   return (
     <div className='legal-page legal-privacy'>
-      <section className='legal-privacy-hero l-section bg-gradient-surface-muted'>
-        <div className='legal-privacy-hero-container l-container'>
+      <SectionWrapper className='legal-privacy-hero' background='bg-gradient-surface-muted'>
+        <div className='legal-privacy-hero-container'>
           <div className='legal-content text-center'>
             <h1>Privacy Policy</h1>
             <p>
@@ -12,10 +14,10 @@ export default function PrivacyPolicy() {
             </p>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
-      <section className='legal-privacy-content l-section'>
-        <div className='legal-privacy-content-container l-container'>
+      <SectionWrapper className='legal-privacy-content'>
+        <div className='legal-privacy-content-container'>
           <div className='legal-content'>
             <h2>Information we collect</h2>
             <p>We may collect the following types of information:</p>
@@ -114,7 +116,7 @@ export default function PrivacyPolicy() {
             </p>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
     </div>
   );
 }

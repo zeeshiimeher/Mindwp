@@ -10,6 +10,7 @@ import {
   Zap,
 } from 'lucide-react';
 
+import { CTA_LABELS } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { ServicePageData } from '../types';
@@ -56,7 +57,7 @@ export const bricksBuilderPage = {
     description:
       'We build WordPress websites using Bricks Builder where performance and clean output matter. Approved designs are converted precisely, with a build that stays fast, maintainable, and easy to extend.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: CTA_LABELS.PRIMARY,
       href: buildContactHref({
         system: 'smart-website-systems',
         sourceType: 'service',
@@ -271,11 +272,11 @@ export const bricksBuilderPage = {
     title: 'Discuss your Bricks implementation',
     description:
       'If your team needs a performance-focused Bricks build with clean output and long-term clarity, we can review scope and outline the right approach.',
-      buttonText: 'Start a Conversation',
-      buttonHref: buildContactHref({
-        system: 'smart-website-systems',
-        sourceType: 'service',
-        slug: 'bricks-builder',
-      }),
+    buttonText: CTA_LABELS.PRIMARY,
+    buttonHref: buildContactHref({
+      system: 'smart-website-systems',
+      sourceType: 'service',
+      slug: 'bricks-builder',
+    }),
   },
 } satisfies ServicePageData;

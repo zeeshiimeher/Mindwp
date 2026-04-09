@@ -1,5 +1,6 @@
 import { ExternalLink } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { SectionIntro } from '@/components/reusable/single';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
@@ -82,8 +83,8 @@ export function PortfolioSection() {
   ];
 
   return (
-    <section id='portfolio' className={`${BLOCK} l-section`}>
-      <div className={`${BLOCK}__container l-container`}>
+    <SectionWrapper id='portfolio' className={BLOCK}>
+      <div className={`${BLOCK}__container`}>
         <SectionIntro
           badge='Our Work'
           title='Smart Website Implementations'
@@ -133,6 +134,6 @@ export function PortfolioSection() {
           />
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

@@ -1,5 +1,6 @@
 import { MessageSquare, Phone, Users } from 'lucide-react';
 
+import { CTA_LABELS } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { ServicePageData } from '../types';
@@ -44,7 +45,7 @@ export const aiLeadHandlingPage = {
     description:
       'This service helps businesses respond faster across website chat, phone, and booking flows. AI handles the repeatable first step, captures the right details, and hands off cleanly when a person should step in.',
     primaryAction: {
-      label: 'Find Out How AI Lead Handling Works',
+      label: CTA_LABELS.AI_LEAD_HANDLING,
       href: buildContactHref({
         system: 'ai-lead-handling',
         sourceType: 'service',
@@ -394,7 +395,7 @@ export const aiLeadHandlingPage = {
     title: 'See where AI response would actually help',
     description:
       'Tell us how calls, chat, and bookings are handled now. We will show you where response speed and handoff are breaking down.',
-      buttonText: 'Find Out How AI Lead Handling Works',
+      buttonText: CTA_LABELS.AI_LEAD_HANDLING,
       buttonHref: buildContactHref({
         system: 'ai-lead-handling',
         sourceType: 'service',

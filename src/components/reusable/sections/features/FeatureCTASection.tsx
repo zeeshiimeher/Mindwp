@@ -24,7 +24,8 @@ export function FeatureCTASection({
   return (
     <SmartCTA
       system={context.system}
-      source={context.source}
+      sourceType={context.sourceType}
+      slug={context.slug}
       title={title}
       description={description}
       secondaryAction={secondaryAction}

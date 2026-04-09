@@ -3,6 +3,7 @@ import { ArrowRight, BookOpen, MessageSquare } from 'lucide-react';
 
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
 import { RESOURCE_HUB_DATA } from '@/domains/resources/api';
@@ -36,6 +37,11 @@ type ResourceItem = {
 
 const TOPIC_CARD_CTA_LABEL = 'View Resources';
 const GUIDE_CARD_CTA_LABEL = 'Read Guide';
+const RESOURCES_PAGE_SMART_CTA_CONTEXT = {
+  system: 'smart-website-systems',
+  sourceType: 'page' as const,
+  slug: 'resources',
+};
 
 function InternalLink({ href, children, ...props }: InternalLinkProps) {
   return (
@@ -64,8 +70,8 @@ export function ResourcesHub({
     <div className='resources-hub'>
       <main>
         {/* Hero Section */}
-        <section className='resources-hub__hero l-section bg-gradient-surface-muted'>
-          <div className='l-container resources-hub__hero-content'>
+        <SectionWrapper className='resources-hub__hero' background='bg-gradient-surface-muted'>
+          <div className='resources-hub__hero-content'>
             <div className='resources-hub__hero-badge'>
               <Badge variant='secondary' context='hero'>
                 <BookOpen className='badge__icon' />
@@ -92,94 +98,84 @@ export function ResourcesHub({
               />
             </div>
           </div>
-        </section>
+        </SectionWrapper>
 
         {/* Categories */}
-        <section className='resources-hub__topics l-section'>
-          <div className='l-container'>
-            <div className='resources-hub__section-header'>
-              <h2 className='resources-hub__section-title'>{hubData.topics.title}</h2>
-              <p className='resources-hub__section-subtitle'>{hubData.topics.description}</p>
-            </div>
-
-            <div className='resources-hub__topics-grid'>
-              {categoryItems.map(category => {
-                const IconComponent = category.icon;
-                return (
-                  <Card key={category.id} className='resources-hub__topic-card'>
-                    <InternalLink
-                      href={category.href}
-                      className='link-primary resources-hub__topic-link'
-                    >
-                      <IconComponent className='resources-hub__topic-icon' aria-hidden='true' />
-                      <div className='resources-hub__topic-top'>
-                        <h3 className='resources-hub__topic-title'>{category.name}</h3>
-                        <Badge variant='outline' size='sm' context='meta'>
-                          {category.count} {hubData.topics.countSuffix}
-                        </Badge>
-                      </div>
-                      <p className='resources-hub__topic-desc'>{category.description}</p>
-                      <div className='resources-hub__topic-cta'>
-                        {TOPIC_CARD_CTA_LABEL}
-                        <ArrowRight className='resources-hub__topic-arrow' aria-hidden='true' />
-                      </div>
-                    </InternalLink>
-                  </Card>
-                );
-              })}
-            </div>
+        <SectionWrapper className='resources-hub__topics'>
+          <div className='resources-hub__section-header'>
+            <h2 className='resources-hub__section-title'>{hubData.topics.title}</h2>
+            <p className='resources-hub__section-subtitle'>{hubData.topics.description}</p>
           </div>
-        </section>
+
+          <div className='resources-hub__topics-grid'>
+            {categoryItems.map(category => {
+              const IconComponent = category.icon;
+              return (
+                <Card key={category.id} className='resources-hub__topic-card'>
+                  <InternalLink href={category.href} className='link-primary resources-hub__topic-link'>
+                    <IconComponent className='resources-hub__topic-icon' aria-hidden='true' />
+                    <div className='resources-hub__topic-top'>
+                      <h3 className='resources-hub__topic-title'>{category.name}</h3>
+                      <Badge variant='outline' size='sm' context='meta'>
+                        {category.count} {hubData.topics.countSuffix}
+                      </Badge>
+                    </div>
+                    <p className='resources-hub__topic-desc'>{category.description}</p>
+                    <div className='resources-hub__topic-cta'>
+                      {TOPIC_CARD_CTA_LABEL}
+                      <ArrowRight className='resources-hub__topic-arrow' aria-hidden='true' />
+                    </div>
+                  </InternalLink>
+                </Card>
+              );
+            })}
+          </div>
+        </SectionWrapper>
 
         {/* Featured Resources */}
-        <section id='guides' className='resources-hub__guides l-section'>
-          <div className='l-container'>
-            <div className='resources-hub__section-header'>
-              <div className='resources-hub__section-badge'>
-                <Badge variant='secondary' context='section'>
-                  {hubData.guides.badge}
-                </Badge>
-              </div>
-              <h2 className='resources-hub__section-title'>{hubData.guides.title}</h2>
-              <p className='resources-hub__section-subtitle'>{hubData.guides.description}</p>
+        <SectionWrapper id='guides' className='resources-hub__guides'>
+          <div className='resources-hub__section-header'>
+            <div className='resources-hub__section-badge'>
+              <Badge variant='secondary' context='section'>
+                {hubData.guides.badge}
+              </Badge>
             </div>
-
-            <ResourcesGuidesIsland
-              resources={resourceItems}
-              initialVisibleCount={hubData.guides.initialVisibleCount}
-              readGuideLabel={GUIDE_CARD_CTA_LABEL}
-              loadMoreLabel={hubData.guides.loadMoreLabel}
-            />
-
-            {/* Coming Soon Cards */}
-            <div className='resources-hub__coming-soon'>
-              <p className='resources-hub__coming-soon-text'>{hubData.guides.comingSoonText}</p>
-            </div>
+            <h2 className='resources-hub__section-title'>{hubData.guides.title}</h2>
+            <p className='resources-hub__section-subtitle'>{hubData.guides.description}</p>
           </div>
-        </section>
+
+          <ResourcesGuidesIsland
+            resources={resourceItems}
+            initialVisibleCount={hubData.guides.initialVisibleCount}
+            readGuideLabel={GUIDE_CARD_CTA_LABEL}
+            loadMoreLabel={hubData.guides.loadMoreLabel}
+          />
+
+          {/* Coming Soon Cards */}
+          <div className='resources-hub__coming-soon'>
+            <p className='resources-hub__coming-soon-text'>{hubData.guides.comingSoonText}</p>
+          </div>
+        </SectionWrapper>
 
         {/* FAQ Preview */}
-        <section className='resources-hub__faq l-section'>
-          <div className='l-container'>
-            <Card className='resources-hub__faq-card'>
-              <MessageSquare className='resources-hub__faq-icon' aria-hidden='true' />
-              <h2 className='resources-hub__faq-title'>{hubData.faqPreview.title}</h2>
-              <p className='resources-hub__faq-text'>{hubData.faqPreview.description}</p>
-              <Button
-                href={hubData.faqPreview.action.href}
-                variant='outline'
-                label={hubData.faqPreview.action.label}
-                icon={ArrowRight}
-                showDefaultIcon
-              />
-            </Card>
-          </div>
-        </section>
+        <SectionWrapper className='resources-hub__faq'>
+          <Card className='resources-hub__faq-card'>
+            <MessageSquare className='resources-hub__faq-icon' aria-hidden='true' />
+            <h2 className='resources-hub__faq-title'>{hubData.faqPreview.title}</h2>
+            <p className='resources-hub__faq-text'>{hubData.faqPreview.description}</p>
+            <Button
+              href={hubData.faqPreview.action.href}
+              variant='outline'
+              label={hubData.faqPreview.action.label}
+              icon={ArrowRight}
+              showDefaultIcon
+            />
+          </Card>
+        </SectionWrapper>
 
         {/* CTA Section */}
         <SmartCTA
-          system='smart-website-systems'
-          source='page/resources'
+          {...RESOURCES_PAGE_SMART_CTA_CONTEXT}
           title={hubData.cta.title}
           description={hubData.cta.description}
           primaryActionVariant='white'

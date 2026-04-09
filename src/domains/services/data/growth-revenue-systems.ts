@@ -14,6 +14,7 @@ import {
   Smartphone,
 } from 'lucide-react';
 
+import { CTA_LABELS } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { ServicePageData } from '../types';
@@ -74,7 +75,7 @@ export const growthRevenueSystemsPage = {
     description:
       'Most revenue problems are not demand problems. They come from weak follow-up, unclear routing, or a website that generates interest without a clear next step. This service finds where momentum is being lost and helps fix it in the right order.',
     primaryAction: {
-      label: 'Check Where Revenue Slows Down',
+      label: CTA_LABELS.REVENUE_AUDIT,
       href: buildContactHref({
         system: 'revenue-growth',
         sourceType: 'service',
@@ -490,7 +491,7 @@ export const growthRevenueSystemsPage = {
     title: 'Find out what is slowing growth down',
     description:
       'Tell us how leads move from first contact to follow-up. We will show you where momentum drops and what needs fixing first.',
-      buttonText: 'Check Where Revenue Slows Down',
+      buttonText: CTA_LABELS.REVENUE_AUDIT,
       buttonHref: buildContactHref({
         system: 'revenue-growth',
         sourceType: 'service',

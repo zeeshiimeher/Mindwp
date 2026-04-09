@@ -11,9 +11,9 @@ import {
   isServiceSlug,
   renderServicePageBySlug,
 } from '@/domains/services/config';
-import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { getRelatedContent, type RelatedContent } from '@/lib/graph/query';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
+import { getServiceMetadata } from '@/lib/seo/pageMetadata';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 import { getContentGraph } from '../../../lib/content-graph/registry';
@@ -108,7 +108,7 @@ export async function generateMetadata({
   const resolved = resolveService(slug);
   if (!resolved) return {};
 
-  return getInventoryMetadata(resolved.serviceNode.path);
+  return getServiceMetadata(resolved.serviceNode.path);
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string[] }> }) {

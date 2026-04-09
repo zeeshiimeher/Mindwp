@@ -360,7 +360,8 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
           <div key={`cta-${index}`} id='resource-cta'>
             <SmartCTA
               system={primarySystem}
-              source={`resource/${currentSlug}`}
+              sourceType='resource'
+              slug={currentSlug}
               title={ctaData.heading}
               description={ctaData.content}
               metaItems={ctaData.features?.map(f => ({ text: f.text }))}
@@ -559,7 +560,8 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
                 <SmartCTA
                   key={`cta-${index}`}
                   system={primarySystem}
-                  source={`resource/${currentSlug}`}
+                  sourceType='resource'
+                  slug={currentSlug}
                   title={ctaData.heading}
                   description={ctaData.content}
                   metaItems={ctaData.features?.map(f => ({ text: f.text }))}

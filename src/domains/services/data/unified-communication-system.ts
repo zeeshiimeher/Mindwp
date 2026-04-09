@@ -10,6 +10,7 @@ import {
   Workflow,
 } from 'lucide-react';
 
+import { CTA_LABELS } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { ServicePageData } from '../types';
@@ -54,7 +55,7 @@ export const unifiedCommunicationSystemPage = {
     description:
       'This service focuses on the communication layer between incoming messages and the right next action. It helps businesses handle calls, forms, chat, and inbox messages with less confusion, fewer missed conversations, and clearer ownership.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: CTA_LABELS.PRIMARY,
       href: buildContactHref({
         system: 'ai-lead-handling',
         sourceType: 'service',
@@ -370,7 +371,7 @@ export const unifiedCommunicationSystemPage = {
     title: 'Make communication routing clearer',
     description:
       'If calls, forms, chat, and inbox messages are creating confusion, we can help define a clearer routing and ownership model.',
-      buttonText: 'Start a Conversation',
+      buttonText: CTA_LABELS.PRIMARY,
       buttonHref: buildContactHref({
         system: 'ai-lead-handling',
         sourceType: 'service',

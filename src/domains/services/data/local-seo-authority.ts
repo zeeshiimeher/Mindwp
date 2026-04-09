@@ -1,5 +1,6 @@
 import { Code, FileText, Globe, Layers, LineChart, Link2, Settings, Workflow } from 'lucide-react';
 
+import { CTA_LABELS } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { ServicePageData } from '../types';
@@ -52,7 +53,7 @@ export const localSeoAuthorityPage = {
     description:
       'Most SEO work jumps straight to tactics. We start with the website, local presence, and enquiry path so visibility grows on a structure that already makes sense.',
     primaryAction: {
-      label: 'Understand What Builds Local Authority',
+      label: CTA_LABELS.LOCAL_AUTHORITY,
       href: buildContactHref({
         system: 'local-seo-authority',
         sourceType: 'service',
@@ -387,7 +388,7 @@ export const localSeoAuthorityPage = {
     title: 'Discuss your local visibility',
     description:
       'Tell us which services and locations matter most. We will show you what is weakening visibility and what needs fixing first.',
-      buttonText: 'Understand What Builds Local Authority',
+      buttonText: CTA_LABELS.LOCAL_AUTHORITY,
       buttonHref: buildContactHref({
         system: 'local-seo-authority',
         sourceType: 'service',

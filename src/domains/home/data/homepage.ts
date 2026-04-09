@@ -14,6 +14,7 @@ import {
   Wrench,
 } from 'lucide-react';
 
+import { CTA_LABELS } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
 import { SITE_NAME, SITE_ORIGIN, toAbsoluteUrl } from '@/lib/seo/config';
 
@@ -253,7 +254,7 @@ export const homepageData: HomepageData = {
       'We build Smart Websites that connect how people find you, how they get in touch, and how enquiries are handled — so your website works as part of the business, not just a page people land on.',
     valueProps: ['Right Enquiries', 'Search Ready', 'Built to Grow'],
     primaryAction: {
-      label: 'Start a Conversation',
+      label: CTA_LABELS.PRIMARY,
       href: homepageContactHref,
       type: 'internal',
     },
@@ -349,7 +350,7 @@ export const homepageData: HomepageData = {
       description:
         'We can walk through how your website currently handles enquiries and where a more structured setup could make things easier.',
       primaryAction: {
-        label: 'See How It Works',
+        label: CTA_LABELS.DEMO,
         href: homepageContactHref,
       },
     },
@@ -439,7 +440,7 @@ export const homepageData: HomepageData = {
       description:
         'We will look at how enquiries come in, how your team handles them, and where things could be made more consistent and easier to manage.',
       primaryAction: {
-        label: 'Start a Conversation',
+        label: CTA_LABELS.PRIMARY,
         href: homepageContactHref,
       },
     },
@@ -704,7 +705,7 @@ export const homepageData: HomepageData = {
       },
     ],
     cta: {
-      label: 'Start a Conversation',
+      label: CTA_LABELS.PRIMARY,
       href: homepageContactHref,
     },
   },
@@ -825,7 +826,7 @@ export const homepageData: HomepageData = {
       description:
         'We can look at how your website is currently set up, how enquiries are handled, and what could be improved to make enquiry handling more reliable.',
       primaryAction: {
-        label: 'Start a Conversation',
+        label: CTA_LABELS.PRIMARY,
         href: homepageContactHref,
       },
       metaItems: [

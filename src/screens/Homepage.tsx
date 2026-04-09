@@ -47,6 +47,12 @@ const HOMEPAGE_CASE_STUDIES_BUTTON = {
   href: '/case-studies',
 } as const;
 
+const HOMEPAGE_SMART_CTA_CONTEXT = {
+  system: 'smart-website-systems',
+  sourceType: 'page' as const,
+  slug: 'home',
+};
+
 type HomepageCaseStudy = {
   slug: string;
   industryLabel: string;
@@ -318,8 +324,7 @@ function SmartWebsiteFrameworkSection() {
 
       <div className='cta-container'>
         <SmartCTA
-          system='smart-website-systems'
-          source='page/home'
+          {...HOMEPAGE_SMART_CTA_CONTEXT}
           title={smartWebsiteFrameworkData.cta.title}
           description={smartWebsiteFrameworkData.cta.description}
           headingLevel='h3'
@@ -373,8 +378,7 @@ function ClientJourneySection() {
 
         <div className='cta-container'>
           <SmartCTA
-            system='smart-website-systems'
-            source='page/home'
+            {...HOMEPAGE_SMART_CTA_CONTEXT}
             title={clientJourneyData.cta.title}
             description={clientJourneyData.cta.description}
             headingLevel='h3'
@@ -761,8 +765,7 @@ function FooterCTASection() {
 
   return (
     <SmartCTA
-      system='smart-website-systems'
-      source='page/home'
+      {...HOMEPAGE_SMART_CTA_CONTEXT}
       title={ctaData.footer.title}
       description={ctaData.footer.description}
       primaryActionVariant='white'

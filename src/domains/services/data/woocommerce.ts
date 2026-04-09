@@ -9,6 +9,7 @@ import {
   Truck,
 } from 'lucide-react';
 
+import { CTA_LABELS } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { ServicePageData } from '../types';
@@ -54,7 +55,7 @@ export const woocommercePage = {
     description:
       'We implement e-commerce systems on WordPress with WooCommerce where it fits. Catalog logic, checkout flow, fulfilment rules, and reporting are set up around your actual operating model — not just assembled to get a store online.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: CTA_LABELS.PRIMARY,
       href: buildContactHref({
         system: 'smart-website-systems',
         sourceType: 'service',
@@ -233,7 +234,7 @@ export const woocommercePage = {
     title: 'Discuss your e-commerce implementation',
     description:
       'If you are evaluating a WordPress-based e-commerce or web shop build, we can review your catalog needs, checkout requirements, fulfilment model, and integrations — then outline a clear implementation plan.',
-      buttonText: 'Start a Conversation',
+      buttonText: CTA_LABELS.PRIMARY,
       buttonHref: buildContactHref({
         system: 'smart-website-systems',
         sourceType: 'service',

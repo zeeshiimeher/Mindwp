@@ -1,5 +1,6 @@
 import { Clock, Phone, Search } from 'lucide-react';
 
+import { CTA_LABELS } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { ServicePageData } from '../types';
@@ -44,7 +45,7 @@ export const missedCallRecoverySystemPage = {
     description:
       'This service focuses on what happens after a call is missed. It helps service businesses respond faster, capture the enquiry more cleanly, and move the conversation into the right next step before the lead disappears.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: CTA_LABELS.PRIMARY,
       href: buildContactHref({
         system: 'ai-lead-handling',
         sourceType: 'service',
@@ -291,7 +292,7 @@ export const missedCallRecoverySystemPage = {
     title: 'Stop losing leads after missed calls',
     description:
       'If missed calls are creating avoidable lead leakage, we can help structure a clearer recovery workflow.',
-      buttonText: 'Start a Conversation',
+      buttonText: CTA_LABELS.PRIMARY,
       buttonHref: buildContactHref({
         system: 'ai-lead-handling',
         sourceType: 'service',

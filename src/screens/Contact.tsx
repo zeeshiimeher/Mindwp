@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { CheckCircle2, Clock, Loader2, Mail, MapPin, Phone, Send } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives';
 import { Button } from '@/components/reusable/single/Button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -133,8 +134,8 @@ export function Contact() {
   return (
     <div className='contact-page'>
       {/* Hero Section */}
-      <section className='contact-page-hero bg-gradient-to-b from-blue-50 to-white l-section'>
-        <div className='contact-page-hero-container-1 l-container'>
+      <SectionWrapper className='contact-page-hero' background='bg-gradient-to-b from-blue-50 to-white'>
+        <div className='contact-page-hero-container-1'>
           <div className='contact-page-hero-content text-center'>
             <h1 className='contact-page-hero-heading-1'>Get in Touch</h1>
             <p className='contact-page-hero-text-1 text-xl text-muted-foreground l-container l-container--narrow'>
@@ -143,11 +144,11 @@ export function Contact() {
             </p>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Main Content */}
-      <section className='contact-page-main l-section'>
-        <div className='contact-page-main-container-1 l-container'>
+      <SectionWrapper className='contact-page-main'>
+        <div className='contact-page-main-container-1'>
           <div className='contact-page-main-grid'>
             {/* Contact Form */}
             <div className='contact-page-form-wrapper lg:col-span-2'>
@@ -362,11 +363,11 @@ export function Contact() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
 
       {/* Alternative CTA */}
-      <section className='cta footer-cta'>
-        <div className='l-container'>
+      <SectionWrapper className='cta footer-cta' padding='none'>
+        <div>
           <div className='cta__panel'>
             <h2 className='cta-heading'>Prefer to Book a Demo Call?</h2>
             <p className='cta__text'>
@@ -386,7 +387,7 @@ export function Contact() {
             </div>
           </div>
         </div>
-      </section>
+      </SectionWrapper>
     </div>
   );
 }

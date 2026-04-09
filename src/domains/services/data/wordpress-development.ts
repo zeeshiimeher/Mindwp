@@ -1,5 +1,6 @@
 import { Blocks, Cog, LayoutTemplate, Link2, Search, Workflow } from 'lucide-react';
 
+import { CTA_LABELS } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { ServicePageData } from '../types';
@@ -46,7 +47,7 @@ export const wordpressDevelopmentPage = {
     description:
       'This is for service businesses that need a proper WordPress foundation. Not pages thrown together quickly, but a site where services are clearly presented, enquiry paths make sense, and the whole thing stays manageable after launch.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: CTA_LABELS.PRIMARY,
       href: buildContactHref({
         system: 'smart-website-systems',
         sourceType: 'service',
@@ -319,7 +320,7 @@ export const wordpressDevelopmentPage = {
     title: 'Discuss your WordPress website project',
     description:
       'If you need a clearer WordPress foundation for a service business, we can review the current situation and outline the best implementation path forward.',
-      buttonText: 'Start a Conversation',
+      buttonText: CTA_LABELS.PRIMARY,
       buttonHref: buildContactHref({
         system: 'smart-website-systems',
         sourceType: 'service',

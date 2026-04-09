@@ -533,7 +533,8 @@ export function CaseStudyTemplate({
       {ctaSection && (
         <SmartCTA
           system={metadata.systems[0] ?? 'smart-website-systems'}
-          source={`case-study/${metadata.slug}`}
+          sourceType='case-study'
+          slug={metadata.slug}
           title={ctaSection.heading}
           description={ctaSection.body}
           metaItems={ctaSection.metaItems ?? resolvedCtaMetaItems}

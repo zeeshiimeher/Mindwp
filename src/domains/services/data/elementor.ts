@@ -10,6 +10,7 @@ import {
   Zap,
 } from 'lucide-react';
 
+import { CTA_LABELS } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { ServicePageData } from '../types';
@@ -56,7 +57,7 @@ export const elementorPage = {
     description:
       'We build WordPress websites using Elementor where the visual output stays faithful to the approved design and the editing experience stays manageable over time. This is disciplined implementation, not a quick drag-and-drop assembly.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: CTA_LABELS.PRIMARY,
       href: buildContactHref({
         system: 'smart-website-systems',
         sourceType: 'service',
@@ -267,11 +268,11 @@ export const elementorPage = {
     title: 'Discuss your Elementor implementation',
     description:
       'If your team needs a clean Elementor build with editing flexibility and long-term clarity, we can review scope and outline the right approach.',
-      buttonText: 'Start a Conversation',
-      buttonHref: buildContactHref({
-        system: 'smart-website-systems',
-        sourceType: 'service',
-        slug: 'elementor',
-      }),
+    buttonText: CTA_LABELS.PRIMARY,
+    buttonHref: buildContactHref({
+      system: 'smart-website-systems',
+      sourceType: 'service',
+      slug: 'elementor',
+    }),
   },
 } satisfies ServicePageData;

@@ -10,6 +10,7 @@ import {
   Wrench,
 } from 'lucide-react';
 
+import { CTA_LABELS } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { ServicePageData } from '../types';
@@ -55,7 +56,7 @@ export const websiteRedesignSystemRebuildPage = {
     description:
       'This service is for businesses whose current site has drifted too far from their services, enquiry flow, integrations, or operating reality. The work is structural correction and rebuild logic, not cosmetic redesign for its own sake.',
     primaryAction: {
-      label: 'Start a Conversation',
+      label: CTA_LABELS.PRIMARY,
       href: buildContactHref({
         system: 'smart-website-systems',
         sourceType: 'service',
@@ -311,7 +312,7 @@ export const websiteRedesignSystemRebuildPage = {
     title: 'Rebuild the website around how the business actually works',
     description:
       'If the current site no longer supports your services, enquiry flow, or maintainability, we can help define a clearer rebuild pathway.',
-      buttonText: 'Start a Conversation',
+      buttonText: CTA_LABELS.PRIMARY,
       buttonHref: buildContactHref({
         system: 'smart-website-systems',
         sourceType: 'service',
