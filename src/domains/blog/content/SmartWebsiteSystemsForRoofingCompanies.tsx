@@ -94,8 +94,6 @@ export const smartWebsiteSystemsForRoofingCompanies: BlogPostData = {
       heading: 'Upgrade Your Roofing Website',
       content:
         'If your roofing website looks good but does not actively generate and manage leads, smart systems can change that. See how website infrastructure works for service businesses.',
-      buttonText: 'Explore Website Systems',
-      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

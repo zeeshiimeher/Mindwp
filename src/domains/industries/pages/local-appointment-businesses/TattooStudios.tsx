@@ -188,12 +188,6 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
           'Better enquiry capture',
           'Style and timing context',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'tattoo-studios',
-        }),
       },
       {
         name: 'Booking and readiness flow',
@@ -203,12 +197,6 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when booking and preparation handling create friction',
         features: ['Session scheduling support', 'Reminder structure', 'Preparation guidance'],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'tattoo-studios',
-        }),
       },
       {
         name: 'Follow-up and trust reinforcement',
@@ -217,12 +205,6 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
         price: 'Flow stage 3',
         priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
         features: ['Nurture workflows', 'Review request support', 'Trust reinforcement'],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'tattoo-studios',
-        }),
       },
     ],
   };
@@ -313,7 +295,6 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

@@ -233,11 +233,5 @@ export const woocommercePage = {
     title: 'Discuss your e-commerce implementation',
     description:
       'If you are evaluating a WordPress-based e-commerce or web shop build, we can review your catalog needs, checkout requirements, fulfilment model, and integrations — then outline a clear implementation plan.',
-    buttonText: 'Start a Conversation',
-    buttonHref: buildContactHref({
-      system: 'smart-website-systems',
-      sourceType: 'service',
-      slug: 'ecommerce',
-    }),
   },
 } satisfies ServicePageData;

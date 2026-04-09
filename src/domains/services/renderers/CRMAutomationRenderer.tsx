@@ -8,9 +8,11 @@ import {
 } from '@/components/reusable/single';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
+import { resolveCtaLabel } from '@/config/cta-labels';
 import { ServiceRelatedServicesSection } from '@/domains/services/components/ServiceRelatedServicesSection';
 import { crmAutomationPage } from '@/domains/services/data/crm-automation';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 interface CRMAutomationRendererProps {
   data: typeof crmAutomationPage;
@@ -30,13 +32,15 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
   } = sections;
   const ctaTitle = cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
   const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
-  const ctaButtonText = cta?.buttonText ?? SERVICE_RENDERER_DEFAULTS.ctaButtonText;
-  const ctaButtonHref = cta?.buttonHref ?? SERVICE_RENDERER_DEFAULTS.ctaButtonHref;
   const heroPrimaryAction = (hero as { primaryAction?: { label: string; href: string } })
     .primaryAction ?? {
-    label: SERVICE_RENDERER_DEFAULTS.ctaButtonText,
-    href: SERVICE_RENDERER_DEFAULTS.ctaButtonHref,
-  };
+      label: resolveCtaLabel(data.systems?.[0] ?? 'crm-automation'),
+      href: buildContactHref({
+        system: data.systems?.[0] ?? 'crm-automation',
+        sourceType: 'service',
+        slug,
+      }),
+    };
 
   return (
     <>
@@ -186,7 +190,7 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
           <ServiceCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{ variant: 'white', label: ctaButtonText, href: ctaButtonHref }}
+            primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
           />
           <ServiceRelatedServicesSection serviceSlug={slug} />
         </main>

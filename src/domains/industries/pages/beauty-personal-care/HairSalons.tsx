@@ -197,12 +197,6 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
           'Better first-response clarity',
           'Cleaner service guidance',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'hair-salons',
-        }),
       },
       {
         name: 'Diary protection and reminders',
@@ -216,12 +210,6 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
           'Better arrival guidance',
         ],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'hair-salons',
-        }),
       },
       {
         name: 'Rebooking and review reinforcement',
@@ -230,12 +218,6 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
         price: 'Flow stage 3',
         priceDetail: 'Best when follow-up consistency and repeat demand need improvement',
         features: ['Rebooking prompts', 'Review request support', 'Retention reinforcement'],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'hair-salons',
-        }),
       },
     ],
   };
@@ -324,7 +306,6 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

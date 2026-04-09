@@ -108,8 +108,6 @@ export const trackingCustomerLifetimeValueUsingCrm: BlogPostData = {
       heading: 'Start Tracking Customer Lifetime Value',
       content:
         'If you evaluate customers by their first job and nothing more, you are missing the full picture. See how CRM automation tracks the lifetime value that drives your business forward.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

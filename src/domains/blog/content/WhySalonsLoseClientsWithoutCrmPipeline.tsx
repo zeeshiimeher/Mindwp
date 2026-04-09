@@ -91,8 +91,6 @@ export const whySalonsLoseClientsWithoutCrmPipeline: BlogPostData = {
       heading: 'Stop Losing Salon Clients to Invisible Attrition',
       content:
         'If your salon relies on clients remembering to rebook, you are losing revenue every week. See how CRM automation tracks every client relationship.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

@@ -101,8 +101,6 @@ export const customerFeedbackLoopForPlumbingCompanies: BlogPostData = {
       heading: 'Build Your Plumbing Feedback System',
       content:
         'If your plumbing company only hears about problems through public reviews, a feedback loop can change that. See how reputation systems capture and act on customer feedback.',
-      buttonText: 'Explore Feedback Systems',
-      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

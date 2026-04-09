@@ -120,8 +120,6 @@ export const salesPipelineVisibilityFramework: BlogPostData = {
       heading: 'See Your Pipeline Clearly',
       content:
         'If you cannot see the current state of every deal in your sales process without asking your team, pipeline visibility can fix that. Explore how CRM automation provides the dashboard view you need.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

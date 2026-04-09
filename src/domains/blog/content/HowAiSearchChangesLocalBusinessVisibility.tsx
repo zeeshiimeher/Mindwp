@@ -101,8 +101,6 @@ export const howAiSearchChangesLocalBusinessVisibility: BlogPostData = {
       heading: 'Prepare for AI Search',
       content:
         'If your local business relies on traditional search rankings alone, AI-driven discovery will change the game. See how local authority systems build visibility for the future.',
-      buttonText: 'Explore Local Authority',
-      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

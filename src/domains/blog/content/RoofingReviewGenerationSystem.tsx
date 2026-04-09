@@ -112,8 +112,6 @@ export const roofingReviewGenerationSystem: BlogPostData = {
       heading: 'Build Your Review Pipeline',
       content:
         'If your roofing company completes great work but has few reviews to show for it, an automated system can fix that. See how reputation systems generate reviews consistently.',
-      buttonText: 'Explore Reputation Systems',
-      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

@@ -101,8 +101,6 @@ export const whySlowLeadResponseIsKillingHvacBusinesses: BlogPostData = {
       heading: 'Stop Losing HVAC Leads to Slow Response',
       content:
         'If your HVAC business loses enquiries because the team cannot respond fast enough during busy periods, CRM automation can close the gap. See how automated response and routing capture leads that would otherwise go to competitors.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

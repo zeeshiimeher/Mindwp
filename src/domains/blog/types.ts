@@ -21,8 +21,6 @@ export type BlogPostSection =
       type: 'cta';
       heading: string;
       content: string;
-      buttonText: string;
-      buttonUrl: string;
     }
   | {
       type: 'callout';

@@ -125,8 +125,6 @@ export const systemsFirstWebsiteForHvacCompanies: BlogPostData = {
       heading: 'Build a Systems-First HVAC Website',
       content:
         'If your HVAC website looks professional but does not actively capture and route leads, a systems-first approach can fix that. See how smart website infrastructure works.',
-      buttonText: 'Explore Website Systems',
-      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

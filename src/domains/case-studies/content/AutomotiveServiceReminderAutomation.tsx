@@ -198,12 +198,6 @@ function buildAutomotiveServiceReminderAutomation(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Client Retention',
       },
       cta: {
-        primaryButtonLabel: 'Automate Service Reminders',
-        primaryButtonHref: buildContactHref({
-          system: 'revenue-growth',
-          sourceType: 'case-study',
-          slug: 'automotive-service-reminder-automation',
-        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

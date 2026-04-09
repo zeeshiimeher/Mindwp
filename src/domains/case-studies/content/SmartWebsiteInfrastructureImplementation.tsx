@@ -208,12 +208,6 @@ function buildSmartWebsiteInfrastructureImplementation(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Website Performance',
       },
       cta: {
-        primaryButtonLabel: 'Turn Website Traffic Into Leads',
-        primaryButtonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'case-study',
-          slug: 'smart-website-infrastructure-implementation',
-        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

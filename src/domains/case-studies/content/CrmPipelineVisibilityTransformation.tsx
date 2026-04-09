@@ -200,12 +200,6 @@ function buildCrmPipelineVisibilityTransformation(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Pipeline Performance',
       },
       cta: {
-        primaryButtonLabel: 'Track Every Lead Clearly',
-        primaryButtonHref: buildContactHref({
-          system: 'revenue-growth',
-          sourceType: 'case-study',
-          slug: 'crm-pipeline-visibility-transformation',
-        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

@@ -202,12 +202,6 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
           'Better first-response clarity',
           'Cleaner service guidance',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'car-detailing',
-        }),
       },
       {
         name: 'Appointment planning and preparation',
@@ -221,12 +215,6 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
           'Better handoff guidance',
         ],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'car-detailing',
-        }),
       },
       {
         name: 'Review and repeat-visit reinforcement',
@@ -235,12 +223,6 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
         price: 'Flow stage 3',
         priceDetail: 'Best when follow-up consistency and repeat demand need improvement',
         features: ['Maintenance prompts', 'Review request support', 'Retention reinforcement'],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'car-detailing',
-        }),
       },
     ],
   };
@@ -331,7 +313,6 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

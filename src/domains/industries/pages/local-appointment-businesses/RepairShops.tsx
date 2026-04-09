@@ -187,12 +187,6 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
           'Better enquiry capture',
           'Service and timing context',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'repair-shops',
-        }),
       },
       {
         name: 'Booking and expectation flow',
@@ -202,12 +196,6 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when booking and expectation handling create friction',
         features: ['Visit scheduling support', 'Reminder structure', 'Expectation guidance'],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'repair-shops',
-        }),
       },
       {
         name: 'Follow-up and trust reinforcement',
@@ -216,12 +204,6 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
         price: 'Flow stage 3',
         priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
         features: ['Nurture workflows', 'Review request support', 'Trust reinforcement'],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'repair-shops',
-        }),
       },
     ],
   };
@@ -312,7 +294,6 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

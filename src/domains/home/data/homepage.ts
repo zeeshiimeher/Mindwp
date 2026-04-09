@@ -177,8 +177,6 @@ export type HomepageData = {
       title: string;
       description: string;
       checklist: string[];
-      buttonLabel: string;
-      buttonHref: string;
     };
     layers: Array<{ title: string; description: string }>;
   };
@@ -208,8 +206,6 @@ export type HomepageData = {
     description: string;
     quote: string;
     quoteAuthor: string;
-    ctaLabel: string;
-    ctaHref: string;
   };
 
   faq: {
@@ -599,8 +595,6 @@ export const homepageData: HomepageData = {
         'Set up to match how your team actually works',
         'Fewer missed enquiries and manual mistakes',
       ],
-      buttonLabel: 'See how Smart Websites work',
-      buttonHref: '/services/smart-website-systems',
     },
     layers: [
       {
@@ -774,8 +768,6 @@ export const homepageData: HomepageData = {
     quote:
       'We moved from a basic website to a connected system. Enquiries now land in the right place, follow-up is clearer, and the business feels easier and more organised day to day.',
     quoteAuthor: '— Lisa Chen, Pawfect Mobile Grooming, Birmingham',
-    ctaLabel: 'View All Case Studies',
-    ctaHref: '/case-studies',
   },
   faq: {
     title: 'Common Questions',

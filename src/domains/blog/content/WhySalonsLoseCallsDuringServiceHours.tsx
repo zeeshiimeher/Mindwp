@@ -120,8 +120,6 @@ export const whySalonsLoseCallsDuringServiceHours: BlogPostData = {
       heading: 'Capture Every Booking Call',
       content:
         'If your salon misses calls when the team is busy with clients, automated systems can ensure every caller gets a response. See how AI lead handling works for salons.',
-      buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

@@ -125,8 +125,6 @@ export const buildingRevenueVisibilityThroughCrmTracking: BlogPostData = {
       heading: 'See Where Your Revenue Comes From',
       content:
         'If you know your total revenue but cannot trace it to specific channels, services, or campaigns, CRM-based tracking can close that gap. Explore how CRM automation builds revenue visibility.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

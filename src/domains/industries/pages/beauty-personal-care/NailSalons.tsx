@@ -198,12 +198,6 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
           'Cleaner first-response guidance',
           'Better appointment clarity',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'nail-salons',
-        }),
       },
       {
         name: 'Diary protection and reminders',
@@ -217,12 +211,6 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
           'Cleaner arrival guidance',
         ],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'nail-salons',
-        }),
       },
       {
         name: 'Repeat visits and review reinforcement',
@@ -231,12 +219,6 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
         price: 'Flow stage 3',
         priceDetail: 'Best when repeat demand and follow-up consistency need improvement',
         features: ['Review request support', 'Rebooking prompts', 'Retention reinforcement'],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'nail-salons',
-        }),
       },
     ],
   };
@@ -325,7 +307,6 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

@@ -195,12 +195,6 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
         price: 'Flow stage 1',
         priceDetail: 'Best when lead quality and first-contact clarity are the main issue',
         features: ['Mobile-service pages', 'Better enquiry capture', 'Area and vehicle context'],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'mobile-mechanics',
-        }),
       },
       {
         name: 'Area qualification and booking flow',
@@ -214,12 +208,6 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
           'Visit path clarity',
         ],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'mobile-mechanics',
-        }),
       },
       {
         name: 'Follow-up and trust reinforcement',
@@ -232,12 +220,6 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
           'Repeat-service prompts',
           'Local proof reinforcement',
         ],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'mobile-mechanics',
-        }),
       },
     ],
   };
@@ -328,7 +310,6 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

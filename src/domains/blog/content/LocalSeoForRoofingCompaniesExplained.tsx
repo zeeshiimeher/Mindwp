@@ -108,8 +108,6 @@ export const localSeoForRoofingCompaniesExplained: BlogPostData = {
       heading: 'Improve Your Roofing Visibility',
       content:
         'If your roofing company does not appear in local search results when homeowners need repairs, local SEO can change that. See how local authority systems build your visibility.',
-      buttonText: 'Explore Local SEO',
-      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

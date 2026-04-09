@@ -218,12 +218,6 @@ function buildLocalAuthoritySystemImpact(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Local Visibility',
       },
       cta: {
-        primaryButtonLabel: 'Strengthen Local Authority',
-        primaryButtonHref: buildContactHref({
-          system: 'local-seo-authority',
-          sourceType: 'case-study',
-          slug: 'local-authority-system-impact',
-        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

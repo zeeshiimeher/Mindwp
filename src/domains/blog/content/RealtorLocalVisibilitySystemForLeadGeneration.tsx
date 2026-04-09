@@ -110,8 +110,6 @@ export const realtorLocalVisibilitySystemForLeadGeneration: BlogPostData = {
       heading: 'Build Your Realtor Visibility System',
       content:
         'If your real estate business depends entirely on referrals for growth, a local visibility system can open a second acquisition channel. See how reputation automation builds the signals that put realtors in front of searching buyers and sellers.',
-      buttonText: 'Explore Reputation Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

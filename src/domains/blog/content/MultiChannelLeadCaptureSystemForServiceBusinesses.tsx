@@ -131,8 +131,6 @@ export const multiChannelLeadCaptureSystemForServiceBusinesses: BlogPostData = {
       heading: 'Unify Your Lead Capture',
       content:
         'If enquiries arrive through multiple channels but your team only monitors some of them consistently, your capture system has gaps. See how AI-powered lead handling unifies every channel.',
-      buttonText: 'Explore AI Lead Handling',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

@@ -103,8 +103,6 @@ export const autonomousBookingSystemsForSalons: BlogPostData = {
       heading: 'Explore Autonomous Booking',
       content:
         'If your salon team spends hours managing the diary manually, autonomous booking systems can handle it. See how booking infrastructure is evolving for service businesses.',
-      buttonText: 'Explore Booking Systems',
-      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

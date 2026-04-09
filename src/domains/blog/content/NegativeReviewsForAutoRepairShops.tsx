@@ -109,8 +109,6 @@ export const negativeReviewsForAutoRepairShops: BlogPostData = {
       heading: 'Protect Your Shop Reputation',
       content:
         'If your auto repair shop receives negative reviews and lacks a response strategy, a systematic framework can protect your reputation. See how review management systems work.',
-      buttonText: 'Explore Review Systems',
-      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

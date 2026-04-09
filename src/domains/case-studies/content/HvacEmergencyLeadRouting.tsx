@@ -232,12 +232,6 @@ function buildHvacEmergencyLeadRouting(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: After-Hours Emergency Performance',
       },
       cta: {
-        primaryButtonLabel: 'Route Emergency Leads Faster',
-        primaryButtonHref: buildContactHref({
-          system: 'ai-lead-handling',
-          sourceType: 'case-study',
-          slug: 'hvac-emergency-lead-routing',
-        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

@@ -126,8 +126,6 @@ export const conversionTrackingForServiceBusinessesExplained: BlogPostData = {
       heading: 'Start Measuring What Matters',
       content:
         'If you spend on marketing but cannot connect that spending to specific leads and revenue, your tracking infrastructure needs attention. See how conversion tracking fits into a systems-first website.',
-      buttonText: 'Explore Smart Website Systems',
-      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

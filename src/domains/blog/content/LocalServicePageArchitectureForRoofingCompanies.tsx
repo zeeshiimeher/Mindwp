@@ -102,8 +102,6 @@ export const localServicePageArchitectureForRoofingCompanies: BlogPostData = {
       heading: 'Build Your Location Page Network',
       content:
         'If your roofing company serves multiple areas but only has one generic service area page, local service page architecture can expand your reach. See how website systems support local visibility.',
-      buttonText: 'Explore Local SEO',
-      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

@@ -236,12 +236,6 @@ function buildRoofingWebsiteRebuildWithCrm(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Website Conversion Performance',
       },
       cta: {
-        primaryButtonLabel: 'Book More Roofing Estimates',
-        primaryButtonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'case-study',
-          slug: 'roofing-website-rebuild-with-crm',
-        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

@@ -16,6 +16,10 @@ import {
 } from '@/components/reusable/sections/industries';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
+import {
+  resolveIndustryDetailExplore,
+  resolveIndustryPathwaySection,
+} from '@/lib/cta/industryPresentation';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import { IndustryExploreSection } from '../components/IndustryExploreSection';
@@ -63,6 +67,8 @@ export function IndustryDetailPageTemplate({
   const challengeSection = operatingPatterns ?? challenges;
   const solutionSection = systemLayers ?? solutions;
   const pathwaySection = pathways ?? packages;
+  const resolvedPathwaySection = resolveIndustryPathwaySection(pathwaySection, system, slug);
+  const resolvedExplore = resolveIndustryDetailExplore(explore);
   const resolvedCta = cta.primaryAction?.href
     ? {
         ...cta,
@@ -88,10 +94,10 @@ export function IndustryDetailPageTemplate({
           {challengeSection && <IndustryOperatingPatternsSection {...challengeSection} />}
 
           {comparison && <IndustryComparisonSection {...comparison} />}
-          {pathwaySection && <IndustryPathwaysSection {...pathwaySection} />}
+          {resolvedPathwaySection && <IndustryPathwaysSection {...resolvedPathwaySection} />}
           {workflowExamples && <IndustryWorkflowExamplesSection {...workflowExamples} />}
           {solutionSection && <IndustrySolutionsSection {...solutionSection} />}
-          {explore && <IndustryExploreSection title='Relevant Modules' {...explore} />}
+          {resolvedExplore && <IndustryExploreSection title='Relevant Modules' {...resolvedExplore} />}
           <IndustryFAQSection {...faq} />
           <IndustryCTASection {...resolvedCta} />
           <SmartRelatedSection slug={slug} type='industry-detail' />

@@ -217,12 +217,6 @@ function buildRealEstateInquiryRouting(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Enquiry Handling',
       },
       cta: {
-        primaryButtonLabel: 'Route Property Leads Faster',
-        primaryButtonHref: buildContactHref({
-          system: 'ai-lead-handling',
-          sourceType: 'case-study',
-          slug: 'real-estate-inquiry-routing',
-        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

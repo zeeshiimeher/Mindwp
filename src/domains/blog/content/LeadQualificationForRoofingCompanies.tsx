@@ -103,8 +103,6 @@ export const leadQualificationForRoofingCompanies: BlogPostData = {
       heading: 'Qualify Your Roofing Leads',
       content:
         'If your roofing estimators spend too much time on leads that never convert, qualification systems can fix that. See how lead handling works for service businesses.',
-      buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

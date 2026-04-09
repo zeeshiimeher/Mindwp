@@ -101,8 +101,6 @@ export const whyRoofingCompaniesLoseLeadsDuringStormSeason: BlogPostData = {
       heading: 'Prepare for Storm Season',
       content:
         'If your roofing company loses leads during high-volume periods, automated lead handling can close the gap before the next surge. Explore how AI lead systems handle volume spikes.',
-      buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

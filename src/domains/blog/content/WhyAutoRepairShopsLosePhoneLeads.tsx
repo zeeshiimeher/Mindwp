@@ -103,8 +103,6 @@ export const whyAutoRepairShopsLosePhoneLeads: BlogPostData = {
       heading: 'Stop Losing Phone Leads',
       content:
         'If your repair shop misses calls when the team is busy, automated lead handling can ensure every enquiry gets a response. Explore how AI systems capture phone leads.',
-      buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

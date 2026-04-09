@@ -108,8 +108,6 @@ export const reducingSalonNoShowsWithAutomation: BlogPostData = {
       heading: 'Reduce No-Shows Automatically',
       content:
         'If your salon loses revenue to forgotten appointments every week, automated reminders can bring that number down dramatically. See how CRM automation reduces no-shows.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

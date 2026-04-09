@@ -109,8 +109,6 @@ export const whyBookingSystemsNeedWebsiteInfrastructure: BlogPostData = {
       heading: 'Connect Your Booking System to Real Infrastructure',
       content:
         'If your booking widget creates more admin work than it saves, the infrastructure underneath it needs attention. Explore how systems-first websites support booking workflows end to end.',
-      buttonText: 'Explore Smart Website Systems',
-      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

@@ -309,11 +309,5 @@ export const marketingAutomationSetupPage = {
     title: 'Set up automation that actually supports the business',
     description:
       'If follow-up, reminders, or lifecycle messaging still depend on manual effort, we can help build a cleaner automation setup.',
-    buttonText: 'Start a Conversation',
-    buttonHref: buildContactHref({
-      system: 'revenue-growth',
-      sourceType: 'service',
-      slug: 'marketing-automation-setup',
-    }),
   },
 } satisfies ServicePageData;

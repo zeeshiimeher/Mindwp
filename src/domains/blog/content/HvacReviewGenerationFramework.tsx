@@ -102,8 +102,6 @@ export const hvacReviewGenerationFramework: BlogPostData = {
       heading: 'Build Your HVAC Review Pipeline',
       content:
         'If your HVAC company completes hundreds of service calls but has few reviews, a review framework can change that. See how reputation systems automate the process.',
-      buttonText: 'Explore Reputation Systems',
-      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

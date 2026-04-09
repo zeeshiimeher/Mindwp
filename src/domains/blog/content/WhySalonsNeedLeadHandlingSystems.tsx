@@ -108,8 +108,6 @@ export const whySalonsNeedLeadHandlingSystems: BlogPostData = {
       heading: 'Capture Every Salon Enquiry',
       content:
         'If your salon loses bookings because enquiries go unanswered during busy hours, a lead handling system can fix that. See how AI lead handling works for salons.',
-      buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

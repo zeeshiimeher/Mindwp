@@ -825,11 +825,5 @@ export const crmAutomationPage = {
     title: 'Set up your CRM pipeline',
     description:
       'Tell us how leads are routed today. We will show you where ownership, stages, and follow-up are breaking down.',
-    buttonText: 'Set Up Your CRM Pipeline',
-    buttonHref: buildContactHref({
-      system: 'crm-automation',
-      sourceType: 'service',
-      slug: 'crm-infrastructure-implementation',
-    }),
   },
 } satisfies ServicePageData;

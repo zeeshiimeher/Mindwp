@@ -188,12 +188,6 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
           'Better enquiry capture',
           'Treatment and timing context',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'small-private-clinics',
-        }),
       },
       {
         name: 'Booking and readiness flow',
@@ -203,12 +197,6 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when booking and preparation handling create friction',
         features: ['Appointment scheduling support', 'Reminder structure', 'Preparation guidance'],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'small-private-clinics',
-        }),
       },
       {
         name: 'Follow-up and trust reinforcement',
@@ -217,12 +205,6 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
         price: 'Flow stage 3',
         priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
         features: ['Nurture workflows', 'Review request support', 'Trust reinforcement'],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'small-private-clinics',
-        }),
       },
     ],
   };
@@ -314,7 +296,6 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

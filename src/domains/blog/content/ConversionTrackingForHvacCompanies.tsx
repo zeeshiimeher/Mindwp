@@ -101,8 +101,6 @@ export const conversionTrackingForHvacCompanies: BlogPostData = {
       heading: 'Track Your HVAC Conversions',
       content:
         'If your HVAC company cannot trace leads to their marketing source or measure channel ROI, conversion tracking can fix that. See how website and CRM systems connect.',
-      buttonText: 'Explore Tracking Systems',
-      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

@@ -112,8 +112,6 @@ export const revenueVisibilityForRoofingCompanies: BlogPostData = {
       heading: 'See Your Roofing Revenue Clearly',
       content:
         "If your roofing company cannot trace revenue to its source or forecast next month's pipeline, CRM systems can fix that. See how revenue visibility works for service businesses.",
-      buttonText: 'Explore CRM Systems',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

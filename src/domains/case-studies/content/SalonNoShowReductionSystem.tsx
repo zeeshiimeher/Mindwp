@@ -227,12 +227,6 @@ function buildSalonNoShowReductionSystem(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: No-Show Performance',
       },
       cta: {
-        primaryButtonLabel: 'Reduce More No-Shows',
-        primaryButtonHref: buildContactHref({
-          system: 'crm-automation',
-          sourceType: 'case-study',
-          slug: 'salon-no-show-reduction-system',
-        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

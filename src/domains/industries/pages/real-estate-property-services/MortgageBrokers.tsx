@@ -195,12 +195,6 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
           'Better enquiry capture',
           'Readiness and timing context',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'mortgage-brokers',
-        }),
       },
       {
         name: 'Consultation and reminder flow',
@@ -210,12 +204,6 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when booking and appointment handling create friction',
         features: ['Consultation scheduling support', 'Reminder structure', 'Next-step clarity'],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'mortgage-brokers',
-        }),
       },
       {
         name: 'Nurture and trust reinforcement',
@@ -224,12 +212,6 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
         price: 'Flow stage 3',
         priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
         features: ['Nurture workflows', 'Review request support', 'Local proof reinforcement'],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'mortgage-brokers',
-        }),
       },
     ],
   };
@@ -319,7 +301,6 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

@@ -348,7 +348,6 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
     ],
     backgroundColor: 'bg-muted/20',
     cssPrefix: 'automotive-services-detail-routes',
-    ctaLabel: 'Discuss Workflow',
     styleVariant: 'style1' as const,
   };
 

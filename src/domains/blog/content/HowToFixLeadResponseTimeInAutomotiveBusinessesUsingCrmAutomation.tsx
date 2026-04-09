@@ -121,8 +121,6 @@ export const howToFixLeadResponseTimeInAutomotiveBusinessesUsingCrmAutomation: B
       heading: 'Build Your Lead Response System',
       content:
         'If your automotive business loses leads to slow response, CRM automation can close the gap. See how centralised intake and instant acknowledgement transform response time.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

@@ -101,8 +101,6 @@ export const whyAutoRepairMissedCallsLoseBookedWork: BlogPostData = {
       heading: 'Recover Missed Repair Bookings',
       content:
         'If your repair shop misses calls when the team is busy, automated recovery can capture those bookings. Explore how AI lead handling prevents lost work.',
-      buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

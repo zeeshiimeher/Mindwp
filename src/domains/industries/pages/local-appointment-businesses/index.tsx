@@ -345,7 +345,6 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
     ],
     backgroundColor: 'bg-muted/20',
     cssPrefix: 'local-appointment-businesses-detail-routes',
-    ctaLabel: 'View Workflow',
     styleVariant: 'style1' as const,
   };
 

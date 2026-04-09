@@ -200,12 +200,6 @@ function buildLawFirmConsultationBookingSystem(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Consultation Booking',
       },
       cta: {
-        primaryButtonLabel: 'Book More Consultations',
-        primaryButtonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'case-study',
-          slug: 'law-firm-consultation-booking-system',
-        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

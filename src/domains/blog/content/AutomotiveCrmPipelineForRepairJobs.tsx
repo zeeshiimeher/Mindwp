@@ -101,8 +101,6 @@ export const automotiveCrmPipelineForRepairJobs: BlogPostData = {
       heading: 'Organise Your Workshop Pipeline',
       content:
         'If your repair shop tracks jobs on whiteboards and memory, a CRM pipeline can bring structure and visibility. See how CRM automation organises the repair workflow.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

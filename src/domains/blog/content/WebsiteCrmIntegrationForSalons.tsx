@@ -102,8 +102,6 @@ export const websiteCrmIntegrationForSalons: BlogPostData = {
       heading: 'Connect Your Salon Website to CRM',
       content:
         'If your salon website and client management system operate independently, integration can unify them. See how website systems connect to CRM for service businesses.',
-      buttonText: 'Explore Website Systems',
-      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

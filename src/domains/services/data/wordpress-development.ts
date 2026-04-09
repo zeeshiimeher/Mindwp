@@ -319,11 +319,5 @@ export const wordpressDevelopmentPage = {
     title: 'Discuss your WordPress website project',
     description:
       'If you need a clearer WordPress foundation for a service business, we can review the current situation and outline the best implementation path forward.',
-    buttonText: 'Start a Conversation',
-    buttonHref: buildContactHref({
-      system: 'smart-website-systems',
-      sourceType: 'service',
-      slug: 'wordpress-development',
-    }),
   },
 } satisfies ServicePageData;

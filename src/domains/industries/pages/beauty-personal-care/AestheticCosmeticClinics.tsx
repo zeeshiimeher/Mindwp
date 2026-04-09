@@ -197,12 +197,6 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
           'Consultation qualification',
           'Better first-response clarity',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'aesthetic-cosmetic-clinics',
-        }),
       },
       {
         name: 'Booking and patient preparation',
@@ -212,12 +206,6 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when booking friction and preparation gaps are the pressure points',
         features: ['Consultation scheduling support', 'Reminder structure', 'Preparation guidance'],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'aesthetic-cosmetic-clinics',
-        }),
       },
       {
         name: 'Aftercare and trust reinforcement',
@@ -226,12 +214,6 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
         price: 'Flow stage 3',
         priceDetail: 'Best when follow-up consistency and proof-building need improvement',
         features: ['Aftercare follow-up', 'Review request support', 'Trust reinforcement'],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'aesthetic-cosmetic-clinics',
-        }),
       },
     ],
   };
@@ -321,7 +303,6 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

@@ -109,8 +109,6 @@ export const googleBusinessProfileSystemArchitecture: BlogPostData = {
       heading: 'Turn Your Profile Into a System',
       content:
         'If your Google Business Profile was set up once and never maintained, it is underperforming. See how systematic profile management builds sustained local visibility.',
-      buttonText: 'Explore Local SEO Services',
-      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

@@ -111,8 +111,6 @@ export const howSmartWebsiteSystemsWorkForLocalBusinesses: BlogPostData = {
       heading: 'See How Smart Website Systems Connect',
       content:
         'If your website captures leads but the follow-up process is manual and inconsistent, your infrastructure has gaps. Explore how smart website systems create connected operational workflows.',
-      buttonText: 'Explore Smart Website Systems',
-      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

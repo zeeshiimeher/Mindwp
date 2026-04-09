@@ -103,8 +103,6 @@ export const customerFeedbackLoopFrameworkForServiceBusinesses: BlogPostData = {
       heading: 'Build Your Feedback Loop',
       content:
         'If your post-service feedback process is a verbal thumbs-up and nothing more, structured feedback loops can reveal what your customers actually think. Explore how automated feedback connects to review and improvement systems.',
-      buttonText: 'Explore Reputation Systems',
-      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

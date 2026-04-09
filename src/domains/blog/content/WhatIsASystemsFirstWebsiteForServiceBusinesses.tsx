@@ -126,8 +126,6 @@ export const whatIsASystemsFirstWebsiteForServiceBusinesses: BlogPostData = {
       heading: 'Explore Systems-First Website Architecture',
       content:
         'If your current website looks good but underperforms on lead generation, the issue may be structural. Learn how a systems-first approach builds conversion into the foundation.',
-      buttonText: 'Explore Smart Website Systems',
-      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

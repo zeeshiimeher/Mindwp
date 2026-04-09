@@ -99,8 +99,6 @@ export const salesPipelineVisibilityForHvacCompanies: BlogPostData = {
       heading: 'See Your HVAC Pipeline Clearly',
       content:
         "If your HVAC company cannot see where deals are stalled or forecast next month's revenue, pipeline visibility can change that. See how CRM systems work for service businesses.",
-      buttonText: 'Explore CRM Systems',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

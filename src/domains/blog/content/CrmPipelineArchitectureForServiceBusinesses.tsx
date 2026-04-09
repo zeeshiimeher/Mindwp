@@ -110,8 +110,6 @@ export const crmPipelineArchitectureForServiceBusinesses: BlogPostData = {
       heading: 'Structure Your Sales Pipeline',
       content:
         'If your CRM has leads in it but you cannot see where they sit in the sales process, pipeline architecture can fix that. Explore how CRM automation structures your lead-to-job workflow.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

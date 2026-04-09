@@ -108,8 +108,6 @@ export const whyHvacMissedCallsLoseAfterHoursRevenue: BlogPostData = {
       heading: 'Capture After-Hours HVAC Revenue',
       content:
         'If your HVAC company loses emergency calls every evening and weekend, automated systems can capture that revenue. See how AI lead handling responds when your team cannot.',
-      buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

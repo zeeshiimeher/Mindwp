@@ -203,12 +203,6 @@ function buildSalonReviewGenerationAutomation(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Review Profile Performance',
       },
       cta: {
-        primaryButtonLabel: 'Automate Review Requests',
-        primaryButtonHref: buildContactHref({
-          system: 'reputation-review',
-          sourceType: 'case-study',
-          slug: 'salon-review-generation-automation',
-        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

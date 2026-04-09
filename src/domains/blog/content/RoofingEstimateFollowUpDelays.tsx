@@ -103,8 +103,6 @@ export const roofingEstimateFollowUpDelays: BlogPostData = {
       heading: 'Fix Your Estimate Follow-Up',
       content:
         'If your roofing quotes sit unanswered because nobody followed up, automated sequences can close that gap. See how CRM automation ensures every estimate gets attention.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

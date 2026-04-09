@@ -199,12 +199,6 @@ function buildAppointmentBusinessBookingAutomation(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Booking Performance',
       },
       cta: {
-        primaryButtonLabel: 'Automate Your Booking Flow',
-        primaryButtonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'case-study',
-          slug: 'appointment-business-booking-automation',
-        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

@@ -102,8 +102,6 @@ export const authoritySignalsForSalons: BlogPostData = {
       heading: 'Build Your Salon Authority',
       content:
         'If your salon does not appear in local search results despite great client relationships, authority signals can change that. See how local authority systems build your visibility.',
-      buttonText: 'Explore Local Authority',
-      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

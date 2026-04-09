@@ -226,12 +226,6 @@ function buildAppointmentReminderNoShowReduction(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: No-Show Performance',
       },
       cta: {
-        primaryButtonLabel: 'Reduce More No-Shows',
-        primaryButtonHref: buildContactHref({
-          system: 'revenue-growth',
-          sourceType: 'case-study',
-          slug: 'appointment-reminder-no-show-reduction',
-        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

@@ -114,8 +114,6 @@ export const clientReactivationSystemsForServiceBusinesses: BlogPostData = {
       heading: 'Reactivate Your Lapsed Customers',
       content:
         'If your CRM contains hundreds of past customers who never returned, automated reactivation can recover that dormant revenue. See how CRM systems bring customers back.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

@@ -293,11 +293,5 @@ export const divi5Page = {
     title: 'Discuss your Divi implementation',
     description:
       'If your team needs a clean Divi build with flexible editing and long-term clarity, we can review scope and outline the right approach.',
-    buttonText: 'Start a Conversation',
-    buttonHref: buildContactHref({
-      system: 'smart-website-systems',
-      sourceType: 'service',
-      slug: 'divi5',
-    }),
   },
 } satisfies ServicePageData;

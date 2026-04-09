@@ -124,8 +124,6 @@ export const serviceBusinessFollowUpAutomation: BlogPostData = {
       heading: 'Automate Your Follow-Up Process',
       content:
         'If leads go quiet after receiving a quote and nobody follows up consistently, automation can close that gap. See how CRM-connected follow-up keeps your pipeline moving.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

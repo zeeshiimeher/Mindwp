@@ -196,12 +196,6 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
           'Urgency capture',
           'Cleaner lead qualification',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'plumbing-companies',
-        }),
       },
       {
         name: 'Booking and visit protection',
@@ -211,12 +205,6 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when booking friction and loose handoffs are the pressure points',
         features: ['Visit scheduling support', 'Reminder structure', 'Appointment-path clarity'],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'plumbing-companies',
-        }),
       },
       {
         name: 'Quote and review follow-up',
@@ -229,12 +217,6 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
           'Review request support',
           'Post-job trust reinforcement',
         ],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'plumbing-companies',
-        }),
       },
     ],
   };
@@ -317,7 +299,6 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

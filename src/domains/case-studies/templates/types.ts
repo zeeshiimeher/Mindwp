@@ -85,7 +85,5 @@ export type CaseStudyTemplateCopy = {
 
   ctaHeading: string;
   ctaBody: string;
-  ctaPrimaryButtonLabel: string;
-  ctaPrimaryButtonHref: string;
   ctaMetaItems: string[];
 };

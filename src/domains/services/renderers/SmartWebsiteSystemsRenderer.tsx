@@ -8,16 +8,17 @@ import {
   TechnologyCardsSection,
 } from '@/components/reusable/sections';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
-import { CTASection } from '@/components/reusable/single/CTASection';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { IconBenefitCard } from '@/components/reusable/single/IconBenefitCard';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { ServiceRelatedServicesSection } from '@/domains/services/components/ServiceRelatedServicesSection';
 import { smartWebsiteSystemsPage } from '@/domains/services/data/smart-website-systems';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 import type { ServicePageSections } from '@/domains/services/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 interface Props {
   data: typeof smartWebsiteSystemsPage;
@@ -28,13 +29,9 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
   const optionalSections = data.sections as ServicePageSections;
   const ctaTitle = data.cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
   const ctaDescription = data.cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
-  const ctaButtonText = data.cta?.buttonText ?? SERVICE_RENDERER_DEFAULTS.ctaButtonText;
-  const ctaButtonHref = data.cta?.buttonHref ?? SERVICE_RENDERER_DEFAULTS.ctaButtonHref;
   const inlineCtaTitle = data.inlineCta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
   const inlineCtaDescription =
     data.inlineCta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
-  const inlineCtaButtonText = data.inlineCta?.buttonText ?? SERVICE_RENDERER_DEFAULTS.ctaButtonText;
-  const inlineCtaButtonHref = data.inlineCta?.buttonHref ?? SERVICE_RENDERER_DEFAULTS.ctaButtonHref;
 
   return (
     <>
@@ -120,15 +117,13 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               </div>
             </section>
           )}
-          <CTASection
+          <SmartCTA
+            system={data.systems?.[0] ?? 'smart-website-systems'}
+            source={`service/${slug}`}
             title={inlineCtaTitle}
             description={inlineCtaDescription}
-            primaryAction={{
-              label: inlineCtaButtonText,
-              href: inlineCtaButtonHref,
-              variant: 'white',
-            }}
             cssPrefix='smart-websites-cta'
+            primaryActionVariant='white'
           />
           {data.sections.coreLayer && (
             <ServiceSpectrumCardsSection
@@ -264,7 +259,14 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           <ServiceCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{ label: ctaButtonText, href: ctaButtonHref, variant: 'white' }}
+            primaryAction={{
+              href: buildContactHref({
+                system: data.systems?.[0] ?? 'smart-website-systems',
+                sourceType: 'service',
+                slug,
+              }),
+              variant: 'white',
+            }}
             cssPrefix='smart-websites-cta'
           />
 

@@ -196,12 +196,6 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
           'Better enquiry capture',
           'Business and timing context',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'accounting-firms',
-        }),
       },
       {
         name: 'Consultation and readiness flow',
@@ -211,12 +205,6 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when booking and information-readiness handling create friction',
         features: ['Consultation scheduling support', 'Reminder structure', 'Readiness guidance'],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'accounting-firms',
-        }),
       },
       {
         name: 'Follow-up and trust reinforcement',
@@ -225,12 +213,6 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
         price: 'Flow stage 3',
         priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
         features: ['Nurture workflows', 'Review request support', 'Trust reinforcement'],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'accounting-firms',
-        }),
       },
     ],
   };
@@ -321,7 +303,6 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

@@ -20,8 +20,6 @@ import {
 import { TestimonialCard } from '@/components/reusable/single';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
-import { primaryCta } from '@/config/primaryCta';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { CaseStudyContent, CaseStudyMetadata } from './types';
 
@@ -116,8 +114,6 @@ export type CaseStudyTemplateSection =
       type: 'cta';
       heading: string;
       body: string;
-      primaryActionLabel?: string;
-      primaryActionHref?: string;
       metaItems?: { text: string }[];
     };
 
@@ -240,12 +236,6 @@ export function CaseStudyTemplate({
       current pricing and available packages.
     </>
   );
-  const resolvedCtaPrimaryButtonLabel = cta?.primaryButtonLabel ?? primaryCta.label;
-  const resolvedCtaPrimaryButtonHref = buildContactHref(cta?.primaryButtonHref ?? primaryCta.href, {
-    system: metadata.systems[0] ?? 'smart-website-systems',
-    sourceType: 'case-study',
-    slug: metadata.slug,
-  });
   const resolvedCtaMetaItems = cta?.metaItems ?? [
     { text: 'Real implementation details' },
     { text: 'System-level results' },
@@ -281,8 +271,6 @@ export function CaseStudyTemplate({
             type: 'cta',
             heading: ctaHeading,
             body: ctaBody,
-            primaryActionLabel: resolvedCtaPrimaryButtonLabel,
-            primaryActionHref: resolvedCtaPrimaryButtonHref,
             metaItems: resolvedCtaMetaItems,
           },
         ];

@@ -120,8 +120,6 @@ export const localVisibilityFrameworkForServiceBusinesses: BlogPostData = {
       heading: 'Build Your Local Visibility System',
       content:
         'If your business is visible in some areas but invisible in others, a structured visibility framework can close the gaps. Explore how local authority systems expand your discoverable presence.',
-      buttonText: 'Explore Local SEO Services',
-      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

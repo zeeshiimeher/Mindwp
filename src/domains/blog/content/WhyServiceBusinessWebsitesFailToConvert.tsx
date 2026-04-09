@@ -125,8 +125,6 @@ export const whyServiceBusinessWebsitesFailToConvert: BlogPostData = {
       heading: 'Fix Your Website Conversion Infrastructure',
       content:
         'If your website receives traffic but does not generate consistent enquiries, the problem is likely operational. Explore how systems-first website architecture builds conversion into the infrastructure.',
-      buttonText: 'Explore Smart Website Systems',
-      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

@@ -355,7 +355,6 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
     ],
     backgroundColor: 'bg-muted/20',
     cssPrefix: 'home-services-detail-routes',
-    ctaLabel: 'View Page',
     styleVariant: 'style1' as const,
   };
 

@@ -192,12 +192,6 @@ function buildAutoRepairMissedCallRecovery(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Call Recovery Performance',
       },
       cta: {
-        primaryButtonLabel: 'Recover Missed Repair Calls',
-        primaryButtonHref: buildContactHref({
-          system: 'ai-lead-handling',
-          sourceType: 'case-study',
-          slug: 'auto-repair-missed-call-recovery',
-        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

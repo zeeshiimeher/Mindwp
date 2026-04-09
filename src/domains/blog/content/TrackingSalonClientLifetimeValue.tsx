@@ -101,8 +101,6 @@ export const trackingSalonClientLifetimeValue: BlogPostData = {
       heading: 'Track Your Client Lifetime Value',
       content:
         'If you treat every salon client the same because you cannot see their lifetime value, CRM tracking can change that. Explore how CRM automation reveals your most valuable client relationships.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

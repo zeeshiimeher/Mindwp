@@ -120,8 +120,6 @@ export const aiReceptionForAutomotiveShops: BlogPostData = {
       heading: 'Capture Every Shop Enquiry',
       content:
         'If your auto repair shop misses calls during busy periods or after hours, AI reception can ensure those leads are captured. See how lead handling systems work.',
-      buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

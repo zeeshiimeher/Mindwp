@@ -128,8 +128,6 @@ export const salonCrmPipelineForClientRetention: BlogPostData = {
       heading: 'Build Your Salon Retention Pipeline',
       content:
         'If your salon measures success by new bookings rather than client retention, a CRM pipeline can shift the focus to long-term value. See how CRM automation structures the salon client lifecycle.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

@@ -204,12 +204,6 @@ function buildRoofingEstimateFollowUpAutomation(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Estimate Pipeline Performance',
       },
       cta: {
-        primaryButtonLabel: 'Close More Roofing Estimates',
-        primaryButtonHref: buildContactHref({
-          system: 'revenue-growth',
-          sourceType: 'case-study',
-          slug: 'roofing-estimate-follow-up-automation',
-        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

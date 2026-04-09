@@ -193,12 +193,6 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
           'Request qualification',
           'Better first-response clarity',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'hvac-companies',
-        }),
       },
       {
         name: 'Scheduling and appointment protection',
@@ -208,12 +202,6 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when scheduling friction and missed handoffs are the pressure points',
         features: ['Service scheduling support', 'Reminder structure', 'Cleaner appointment flow'],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'hvac-companies',
-        }),
       },
       {
         name: 'Maintenance and follow-up support',
@@ -226,12 +214,6 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
           'Review request support',
           'Install and service follow-up',
         ],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'hvac-companies',
-        }),
       },
     ],
   };
@@ -314,7 +296,6 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

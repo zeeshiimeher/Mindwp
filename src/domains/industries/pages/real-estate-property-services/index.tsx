@@ -337,7 +337,6 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
     ],
     backgroundColor: 'bg-muted/20',
     cssPrefix: 'real-estate-services-detail-routes',
-    ctaLabel: 'View Workflow',
     styleVariant: 'style1' as const,
   };
 

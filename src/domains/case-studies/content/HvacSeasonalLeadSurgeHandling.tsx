@@ -232,12 +232,6 @@ function buildHvacSeasonalLeadSurgeHandling(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Seasonal Surge Performance',
       },
       cta: {
-        primaryButtonLabel: 'Stop Losing Surge Leads',
-        primaryButtonHref: buildContactHref({
-          system: 'ai-lead-handling',
-          sourceType: 'case-study',
-          slug: 'hvac-seasonal-lead-surge-handling',
-        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

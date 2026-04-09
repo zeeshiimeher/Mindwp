@@ -205,12 +205,6 @@ function buildHvacMaintenancePlanReactivation(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Maintenance Revenue Performance',
       },
       cta: {
-        primaryButtonLabel: 'Reactivate More Service Plans',
-        primaryButtonHref: buildContactHref({
-          system: 'revenue-growth',
-          sourceType: 'case-study',
-          slug: 'hvac-maintenance-plan-reactivation',
-        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

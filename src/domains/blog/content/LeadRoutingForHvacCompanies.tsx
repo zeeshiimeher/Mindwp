@@ -97,8 +97,6 @@ export const leadRoutingForHvacCompanies: BlogPostData = {
       heading: 'Route Your HVAC Leads Properly',
       content:
         'If your HVAC enquiries go to a generic inbox or voicemail instead of the right team member, lead routing can fix that. See how lead handling systems work.',
-      buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

@@ -111,8 +111,6 @@ export const hvacCrmPipelineForServiceCompanies: BlogPostData = {
       heading: 'Structure Your HVAC Pipeline',
       content:
         'If your HVAC CRM mixes emergencies, maintenance, and quotes in one pipeline, structured design can fix that. See how CRM automation organises HVAC service workflows.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

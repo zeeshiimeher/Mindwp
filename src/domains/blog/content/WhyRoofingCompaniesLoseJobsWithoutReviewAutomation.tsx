@@ -95,8 +95,6 @@ export const whyRoofingCompaniesLoseJobsWithoutReviewAutomation: BlogPostData = 
       heading: 'Stop Losing Roofing Jobs to Missing Reviews',
       content:
         'If your roofing company relies on customers remembering to leave reviews, you are losing enquiries to competitors with better social proof. See how reputation automation fixes the review gap.',
-      buttonText: 'Explore Reputation Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

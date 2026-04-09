@@ -196,12 +196,6 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
           'Better enquiry capture',
           'Urgency and property context',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'roofing-companies',
-        }),
       },
       {
         name: 'Inspection and estimate booking',
@@ -215,12 +209,6 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
           'Estimate path clarity',
         ],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'roofing-companies',
-        }),
       },
       {
         name: 'Follow-up and trust reinforcement',
@@ -233,12 +221,6 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
           'Review request support',
           'Local proof reinforcement',
         ],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'roofing-companies',
-        }),
       },
     ],
   };
@@ -321,7 +303,6 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

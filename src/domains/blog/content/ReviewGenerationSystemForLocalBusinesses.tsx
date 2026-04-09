@@ -107,8 +107,6 @@ export const reviewGenerationSystemForLocalBusinesses: BlogPostData = {
       heading: 'Build Your Review Generation System',
       content:
         'If your business delivers great work but your review profile does not reflect it, a systematic approach to generation can close the gap. Explore how automated review workflows turn completed jobs into public proof.',
-      buttonText: 'Explore Reputation Systems',
-      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

@@ -38,7 +38,6 @@ export interface IndustryCatalogEntry {
   component?: string;
   priority?: IndustryPriority;
   prioritySignal?: string;
-  ctaLabel?: string;
   isLive?: boolean;
 }
 
@@ -53,7 +52,6 @@ export const INDUSTRY_CATALOG: IndustryCatalogEntry[] = [
     category: 'home-services',
     priority: 'primary',
     prioritySignal: 'Primary Lane',
-    ctaLabel: 'Explore Category',
     isLive: true,
   },
   {
@@ -117,7 +115,6 @@ export const INDUSTRY_CATALOG: IndustryCatalogEntry[] = [
     category: 'automotive-services',
     priority: 'coverage',
     prioritySignal: 'Coverage Lane',
-    ctaLabel: 'Explore Category',
     isLive: true,
   },
   {
@@ -173,7 +170,6 @@ export const INDUSTRY_CATALOG: IndustryCatalogEntry[] = [
     category: 'beauty-personal-care',
     priority: 'expansion',
     prioritySignal: 'Expansion Lane',
-    ctaLabel: 'Explore Category',
     isLive: true,
   },
   {
@@ -239,7 +235,6 @@ export const INDUSTRY_CATALOG: IndustryCatalogEntry[] = [
     category: 'real-estate-property-services',
     priority: 'coverage',
     prioritySignal: 'Coverage Lane',
-    ctaLabel: 'Explore Category',
     isLive: true,
   },
   {
@@ -296,7 +291,6 @@ export const INDUSTRY_CATALOG: IndustryCatalogEntry[] = [
     category: 'legal-professional-services',
     priority: 'coverage',
     prioritySignal: 'Coverage Lane',
-    ctaLabel: 'Explore Category',
     isLive: true,
   },
   {
@@ -342,7 +336,6 @@ export const INDUSTRY_CATALOG: IndustryCatalogEntry[] = [
     category: 'local-appointment-businesses',
     priority: 'coverage',
     prioritySignal: 'Coverage Lane',
-    ctaLabel: 'Explore Category',
     isLive: true,
   },
   {

@@ -103,8 +103,6 @@ export const reviewAutomationForHvacCompanies: BlogPostData = {
       heading: 'Automate Your HVAC Reviews',
       content:
         'If your HVAC company misses review opportunities after completed service calls, automation can capture them consistently. See how review systems build local authority.',
-      buttonText: 'Explore Review Systems',
-      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

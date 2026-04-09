@@ -112,8 +112,6 @@ export const localSeoVsWebsiteOptimization: BlogPostData = {
       heading: 'Connect Visibility to Conversion',
       content:
         'If your local SEO brings traffic but your website does not convert it, the gap between the two needs attention. Explore how local authority systems and website infrastructure work together.',
-      buttonText: 'Explore Local SEO Services',
-      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

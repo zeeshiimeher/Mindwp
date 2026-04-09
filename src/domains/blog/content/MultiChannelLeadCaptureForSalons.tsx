@@ -103,8 +103,6 @@ export const multiChannelLeadCaptureForSalons: BlogPostData = {
       heading: 'Capture Every Salon Enquiry',
       content:
         'If your salon loses potential clients because enquiries arrive across too many channels, unified capture can fix that. See how lead handling systems work for service businesses.',
-      buttonText: 'Explore Lead Capture',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

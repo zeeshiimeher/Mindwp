@@ -12,6 +12,7 @@ import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { ServiceRelatedServicesSection } from '@/domains/services/components/ServiceRelatedServicesSection';
 import { leadReactivationSystemPage } from '@/domains/services/data/lead-reactivation-system';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 interface LeadReactivationSystemRendererProps {
   data: typeof leadReactivationSystemPage;
@@ -34,8 +35,6 @@ export function LeadReactivationSystemRenderer({
   } = sections;
   const ctaTitle = cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
   const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
-  const ctaButtonText = cta?.buttonText ?? SERVICE_RENDERER_DEFAULTS.ctaButtonText;
-  const ctaButtonHref = cta?.buttonHref ?? SERVICE_RENDERER_DEFAULTS.ctaButtonHref;
 
   return (
     <>
@@ -167,7 +166,7 @@ export function LeadReactivationSystemRenderer({
           <ServiceCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{ label: ctaButtonText, href: ctaButtonHref, variant: 'white' }}
+            primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
           />
           <ServiceRelatedServicesSection serviceSlug={slug} />
         </main>

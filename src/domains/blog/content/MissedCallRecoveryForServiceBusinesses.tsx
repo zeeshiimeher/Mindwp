@@ -109,8 +109,6 @@ export const missedCallRecoveryForServiceBusinesses: BlogPostData = {
       heading: 'Stop Losing Calls You Never Knew You Missed',
       content:
         'If you suspect your business misses calls during busy periods or after hours, automated recovery can turn those invisible losses into real opportunities. See how AI lead handling recovers missed calls.',
-      buttonText: 'Explore AI Lead Handling',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

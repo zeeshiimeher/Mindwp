@@ -108,8 +108,6 @@ export const localServicePageArchitectureForLocalBusinesses: BlogPostData = {
       heading: 'Build Location Pages That Work',
       content:
         'If your service area spans multiple locations but your website has a single services page, local search traffic is going to competitors with local presence. See how location page architecture captures geo-targeted demand.',
-      buttonText: 'Explore Local SEO Services',
-      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

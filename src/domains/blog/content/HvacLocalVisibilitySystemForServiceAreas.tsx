@@ -110,8 +110,6 @@ export const hvacLocalVisibilitySystemForServiceAreas: BlogPostData = {
       heading: 'Build Your HVAC Local Visibility System',
       content:
         'If your HVAC company relies on word of mouth for local discovery, a visibility system can put your business in front of every homeowner searching for heating and cooling services in your area.',
-      buttonText: 'Explore Reputation Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

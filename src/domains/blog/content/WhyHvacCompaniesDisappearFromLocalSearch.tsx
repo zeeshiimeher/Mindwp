@@ -91,8 +91,6 @@ export const whyHvacCompaniesDisappearFromLocalSearch: BlogPostData = {
       heading: 'Fix Your HVAC Local Visibility',
       content:
         'If your HVAC company does great work but does not appear in local search results, the problem is visibility — not reputation. See how reputation automation strengthens the signals that drive local rankings.',
-      buttonText: 'Explore Reputation Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

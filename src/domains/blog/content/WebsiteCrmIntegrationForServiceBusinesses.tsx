@@ -117,8 +117,6 @@ export const websiteCrmIntegrationForServiceBusinesses: BlogPostData = {
       heading: 'Connect Your Website to Your CRM',
       content:
         'If your website captures leads but your CRM remains disconnected, you are losing data, time, and opportunities with every submission. Explore how website CRM integration creates a seamless lead handling workflow.',
-      buttonText: 'Explore Smart Website Systems',
-      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

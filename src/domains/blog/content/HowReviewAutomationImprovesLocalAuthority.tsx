@@ -120,8 +120,6 @@ export const howReviewAutomationImprovesLocalAuthority: BlogPostData = {
       heading: 'Automate Your Review Authority',
       content:
         'If your review profile has gaps and your competitors have recent reviews, automation can close that authority gap. See how review systems build local authority consistently.',
-      buttonText: 'Explore Reputation Systems',
-      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

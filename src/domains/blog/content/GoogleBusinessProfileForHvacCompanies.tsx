@@ -111,8 +111,6 @@ export const googleBusinessProfileForHvacCompanies: BlogPostData = {
       heading: 'Optimise Your HVAC Profile',
       content:
         'If your Google Business Profile is incomplete or your HVAC company rarely appears in local map results, optimisation can change that. See how local authority systems build your visibility.',
-      buttonText: 'Explore Local SEO',
-      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

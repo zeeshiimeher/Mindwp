@@ -100,8 +100,6 @@ export const futureLocalSeoAfterGoogleBusinessProfileAutomation: BlogPostData = 
       heading: 'Prepare Your Local SEO',
       content:
         'If your business relies on manual GBP management for local visibility, automation is coming for everyone. See how local authority systems prepare you for the future.',
-      buttonText: 'Explore Local Authority',
-      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

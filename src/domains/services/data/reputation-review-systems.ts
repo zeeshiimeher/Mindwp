@@ -315,11 +315,5 @@ export const reputationReviewSystemsPage = {
     title: 'Make trust part of the system',
     description:
       'Tell us how reviews and feedback are handled now. We will show you how to collect more proof without extra manual chasing.',
-    buttonText: 'Get More Reviews Consistently',
-    buttonHref: buildContactHref({
-      system: 'reputation-review',
-      sourceType: 'service',
-      slug: 'reputation-review-systems',
-    }),
   },
 } satisfies ServicePageData;

@@ -197,12 +197,6 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
           'Better enquiry capture',
           'Vehicle and damage context',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'body-shops',
-        }),
       },
       {
         name: 'Assessment booking and estimate flow',
@@ -216,12 +210,6 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
           'Estimate path clarity',
         ],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'body-shops',
-        }),
       },
       {
         name: 'Follow-up and trust reinforcement',
@@ -234,12 +222,6 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
           'Review request support',
           'Repair proof reinforcement',
         ],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'body-shops',
-        }),
       },
     ],
   };
@@ -330,7 +312,6 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

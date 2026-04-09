@@ -188,12 +188,6 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
           'Better enquiry capture',
           'Learner and timing context',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'driving-schools',
-        }),
       },
       {
         name: 'Booking and cadence flow',
@@ -203,12 +197,6 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when booking and lesson cadence handling create friction',
         features: ['Lesson scheduling support', 'Reminder structure', 'Cadence guidance'],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'driving-schools',
-        }),
       },
       {
         name: 'Follow-up and trust reinforcement',
@@ -217,12 +205,6 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
         price: 'Flow stage 3',
         priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
         features: ['Nurture workflows', 'Review request support', 'Trust reinforcement'],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'driving-schools',
-        }),
       },
     ],
   };
@@ -313,7 +295,6 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

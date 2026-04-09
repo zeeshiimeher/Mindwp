@@ -120,8 +120,6 @@ export const whyHvacCompaniesLoseLeadsAfterHours: BlogPostData = {
       heading: 'Capture After-Hours Leads',
       content:
         'If your HVAC company misses calls every evening and weekend, automated lead handling can ensure those enquiries are captured and responded to. See how AI systems handle after-hours leads.',
-      buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

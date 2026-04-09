@@ -101,8 +101,6 @@ export const whyPlumbingCompaniesLoseJobsWithoutCrmPipeline: BlogPostData = {
       heading: 'Stop Losing Plumbing Jobs to Poor Tracking',
       content:
         'If your plumbing business sends quotes that never get followed up, a CRM pipeline can fix the leak. See how structured lead management captures revenue that currently disappears.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

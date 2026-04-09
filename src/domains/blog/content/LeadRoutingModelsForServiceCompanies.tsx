@@ -110,8 +110,6 @@ export const leadRoutingModelsForServiceCompanies: BlogPostData = {
       heading: 'Route Leads to the Right Person Automatically',
       content:
         'If your leads sit in a shared inbox waiting for someone to read and assign them, routing automation can eliminate that delay. See how AI lead handling routes enquiries instantly.',
-      buttonText: 'Explore AI Lead Handling',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

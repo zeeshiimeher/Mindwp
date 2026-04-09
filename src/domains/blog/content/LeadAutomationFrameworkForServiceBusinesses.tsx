@@ -105,8 +105,6 @@ export const leadAutomationFrameworkForServiceBusinesses: BlogPostData = {
       heading: 'Automate Your Lead Handling',
       content:
         'If enquiries sit in inboxes while potential customers move to competitors, your lead handling needs automation. See how AI-powered lead automation handles the critical window between enquiry and response.',
-      buttonText: 'Explore AI Lead Handling',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

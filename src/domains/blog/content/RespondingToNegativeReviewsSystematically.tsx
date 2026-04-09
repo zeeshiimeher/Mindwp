@@ -120,8 +120,6 @@ export const respondingToNegativeReviewsSystematically: BlogPostData = {
       heading: 'Systematise Your Review Responses',
       content:
         'If negative reviews catch your team off guard and responses vary in quality and timing, a structured workflow can protect your reputation. See how review management systems handle responses consistently.',
-      buttonText: 'Explore Reputation Systems',
-      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

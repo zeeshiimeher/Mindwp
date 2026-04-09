@@ -99,8 +99,6 @@ export const reviewAutomationForSalons: BlogPostData = {
       heading: 'Automate Your Salon Reviews',
       content:
         'If your salon has happy clients but not enough Google reviews, automation can bridge the gap. See how review systems build lasting local visibility.',
-      buttonText: 'Explore Review Systems',
-      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

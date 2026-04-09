@@ -21,7 +21,6 @@ type ResourcesHubData = {
   topics: {
     title: string;
     description: string;
-    cardCtaLabel: string;
     countSuffix: string;
   };
   guides: {
@@ -30,7 +29,6 @@ type ResourcesHubData = {
     description: string;
     initialVisibleCount: number;
     loadMoreLabel: string;
-    cardCtaLabel: string;
     comingSoonText: string;
   };
   faqPreview: {
@@ -68,7 +66,6 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
   topics: {
     title: 'Browse by Topic',
     description: 'Find solutions to the most common challenges service businesses face',
-    cardCtaLabel: 'View Resources',
     countSuffix: 'guides',
   },
   guides: {
@@ -78,7 +75,6 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
       'Deep-dive guides that identify common problems and provide both DIY fixes and automated solutions',
     initialVisibleCount: 9,
     loadMoreLabel: 'Load more resources',
-    cardCtaLabel: 'Read Guide',
     comingSoonText: 'More guides coming soon on automation, reviews, and website performance',
   },
   faqPreview: {

@@ -193,12 +193,6 @@ function buildRealtorLeadFollowUpAutomation(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Follow-Up Performance',
       },
       cta: {
-        primaryButtonLabel: 'Fix Realtor Follow-Up',
-        primaryButtonHref: buildContactHref({
-          system: 'revenue-growth',
-          sourceType: 'case-study',
-          slug: 'realtor-lead-follow-up-automation',
-        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

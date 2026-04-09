@@ -235,12 +235,6 @@ function buildLawFirmClientIntakeAutomation(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After: Intake Performance',
       },
       cta: {
-        primaryButtonLabel: 'Book More Client Consultations',
-        primaryButtonHref: buildContactHref({
-          system: 'revenue-growth',
-          sourceType: 'case-study',
-          slug: 'law-firm-client-intake-automation',
-        }),
         metaItems: [
           { text: 'Free 20-minute call' },
           { text: 'No contracts' },

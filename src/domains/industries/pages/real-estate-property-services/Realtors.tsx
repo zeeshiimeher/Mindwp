@@ -193,12 +193,6 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
           'Better enquiry capture',
           'Location and property context',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'realtors',
-        }),
       },
       {
         name: 'Appointment and reminder flow',
@@ -212,12 +206,6 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
           'Next-step clarity',
         ],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'realtors',
-        }),
       },
       {
         name: 'Nurture and trust reinforcement',
@@ -226,12 +214,6 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
         price: 'Flow stage 3',
         priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
         features: ['Nurture workflows', 'Review request support', 'Local proof reinforcement'],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'realtors',
-        }),
       },
     ],
   };
@@ -322,7 +304,6 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

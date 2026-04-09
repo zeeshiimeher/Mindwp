@@ -112,8 +112,6 @@ export const reviewAutomationForRoofingCompanies: BlogPostData = {
       heading: 'Automate Your Roofing Reviews',
       content:
         'If your roofing company relies on customers remembering to leave reviews, automation can close that gap. See how review systems build your local reputation.',
-      buttonText: 'Explore Review Systems',
-      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

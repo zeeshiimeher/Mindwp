@@ -110,8 +110,6 @@ export const hvacEmergencyCallHandlingMistakes: BlogPostData = {
       heading: 'Fix Your Emergency Call Handling',
       content:
         'If your HVAC company treats every call the same regardless of urgency, structured triage can ensure emergency customers get the fastest response. See how AI lead handling manages emergency workflows.',
-      buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

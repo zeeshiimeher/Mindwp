@@ -196,12 +196,6 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
           'Better request capture',
           'Urgency and context signals',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'property-managers',
-        }),
       },
       {
         name: 'Coordination and update flow',
@@ -212,12 +206,6 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
           'Best when maintenance, inspection, or communication handling creates friction',
         features: ['Scheduling support', 'Reminder structure', 'Status visibility'],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'property-managers',
-        }),
       },
       {
         name: 'Follow-up and trust reinforcement',
@@ -226,12 +214,6 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
         price: 'Flow stage 3',
         priceDetail: 'Best when service confidence and long-tail follow-up are the pressure points',
         features: ['Communication workflows', 'Review request support', 'Trust reinforcement'],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'property-managers',
-        }),
       },
     ],
   };
@@ -323,7 +305,6 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

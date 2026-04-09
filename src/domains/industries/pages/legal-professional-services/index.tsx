@@ -333,7 +333,6 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
     ],
     backgroundColor: 'bg-muted/20',
     cssPrefix: 'legal-professional-services-detail-routes',
-    ctaLabel: 'View Workflow',
     styleVariant: 'style1' as const,
   };
 

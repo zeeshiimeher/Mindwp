@@ -84,8 +84,6 @@ export interface CaseStudyData {
       investmentFooterNoteHtml?: ReactNode;
     };
     cta?: {
-      primaryButtonLabel?: string;
-      primaryButtonHref?: string;
       metaItems?: { text: string }[];
     };
   };

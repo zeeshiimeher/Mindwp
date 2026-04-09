@@ -34,6 +34,9 @@ type ResourceItem = {
   dateText: string;
 };
 
+const TOPIC_CARD_CTA_LABEL = 'View Resources';
+const GUIDE_CARD_CTA_LABEL = 'Read Guide';
+
 function InternalLink({ href, children, ...props }: InternalLinkProps) {
   return (
     <a href={href} {...props}>
@@ -117,7 +120,7 @@ export function ResourcesHub({
                       </div>
                       <p className='resources-hub__topic-desc'>{category.description}</p>
                       <div className='resources-hub__topic-cta'>
-                        {hubData.topics.cardCtaLabel}
+                        {TOPIC_CARD_CTA_LABEL}
                         <ArrowRight className='resources-hub__topic-arrow' aria-hidden='true' />
                       </div>
                     </InternalLink>
@@ -144,7 +147,7 @@ export function ResourcesHub({
             <ResourcesGuidesIsland
               resources={resourceItems}
               initialVisibleCount={hubData.guides.initialVisibleCount}
-              readGuideLabel={hubData.guides.cardCtaLabel}
+              readGuideLabel={GUIDE_CARD_CTA_LABEL}
               loadMoreLabel={hubData.guides.loadMoreLabel}
             />
 

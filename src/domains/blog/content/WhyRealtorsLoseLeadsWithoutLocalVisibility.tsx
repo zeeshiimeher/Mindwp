@@ -95,8 +95,6 @@ export const whyRealtorsLoseLeadsWithoutLocalVisibility: BlogPostData = {
       heading: 'Fix Your Realtor Local Visibility',
       content:
         'If you are a successful realtor who does not appear in local search, the problem is not your reputation — it is your visibility system. See how reputation automation builds the signals that drive local rankings.',
-      buttonText: 'Explore Reputation Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

@@ -101,8 +101,6 @@ export const whySlowLeadResponseIsKillingAutomotiveBusinesses: BlogPostData = {
       heading: 'Fix Your Lead Response Gap',
       content:
         'If your garage loses enquiries because the team is too busy to reply fast enough, CRM automation can close the gap. See how automated response systems capture leads that would otherwise disappear.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

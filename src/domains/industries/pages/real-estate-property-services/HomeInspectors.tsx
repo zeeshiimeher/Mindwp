@@ -191,12 +191,6 @@ function buildHomeInspectorsIndustryPageData(): IndustryPageData {
           'Better enquiry capture',
           'Property and timing context',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'home-inspectors',
-        }),
       },
       {
         name: 'Scheduling and preparation flow',
@@ -206,12 +200,6 @@ function buildHomeInspectorsIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when appointment handling and prep communication create friction',
         features: ['Inspection scheduling support', 'Reminder structure', 'Preparation guidance'],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'home-inspectors',
-        }),
       },
       {
         name: 'Report and trust reinforcement',
@@ -220,12 +208,6 @@ function buildHomeInspectorsIndustryPageData(): IndustryPageData {
         price: 'Flow stage 3',
         priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
         features: ['Follow-up workflows', 'Review request support', 'Local proof reinforcement'],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'home-inspectors',
-        }),
       },
     ],
   };
@@ -316,7 +298,6 @@ function buildHomeInspectorsIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

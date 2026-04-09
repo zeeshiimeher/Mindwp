@@ -103,8 +103,6 @@ export const roofingCrmPipelineForEstimates: BlogPostData = {
       heading: 'Structure Your Estimate Pipeline',
       content:
         'If your roofing estimates sit in spreadsheets without structured follow-up, a CRM pipeline can change that. Explore how CRM automation manages the estimate-to-job workflow.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

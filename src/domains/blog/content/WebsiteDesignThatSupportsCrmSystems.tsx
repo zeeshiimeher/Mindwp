@@ -126,8 +126,6 @@ export const websiteDesignThatSupportsCrmSystems: BlogPostData = {
       heading: 'Design a Website That Supports Your CRM',
       content:
         'If your website and CRM are not sharing structured data, your lead handling is slower and less reliable than it could be. Explore how CRM-ready website design creates a connected operational workflow.',
-      buttonText: 'Explore Smart Website Systems',
-      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

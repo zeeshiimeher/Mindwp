@@ -108,8 +108,6 @@ export const servicePageArchitectureForServiceBusinesses: BlogPostData = {
       heading: 'Build Service Pages That Convert',
       content:
         'If your service pages describe what you do but do not generate consistent enquiries, the architecture needs to change. Explore how systems-first service page design turns traffic into pipeline.',
-      buttonText: 'Explore Smart Website Systems',
-      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

@@ -125,8 +125,6 @@ export const authoritySignalsForLocalSearch: BlogPostData = {
       heading: 'Build Your Local Authority',
       content:
         'If competitors consistently outrank you in local search despite similar service quality, the authority gap needs systematic attention. See how local authority systems build the signals that matter.',
-      buttonText: 'Explore Local SEO Services',
-      buttonUrl: '/services/local-seo-authority',
     },
   ],
 };

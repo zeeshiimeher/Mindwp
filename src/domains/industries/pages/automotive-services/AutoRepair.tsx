@@ -198,12 +198,6 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
           'Better enquiry capture',
           'Vehicle and symptom context',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'auto-repair',
-        }),
       },
       {
         name: 'Diagnostic booking and estimate flow',
@@ -217,12 +211,6 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
           'Estimate path clarity',
         ],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'auto-repair',
-        }),
       },
       {
         name: 'Follow-up and trust reinforcement',
@@ -235,12 +223,6 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
           'Review request support',
           'Local proof reinforcement',
         ],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'auto-repair',
-        }),
       },
     ],
   };
@@ -331,7 +313,6 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

@@ -21,6 +21,10 @@ import {
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import type { IndustryCategory } from '@/domains/industries/catalog';
 import { IndustrySubIndustriesSection } from '@/domains/industries/components';
+import {
+  resolveIndustryCategoryDetailRoutes,
+  resolveIndustryPathwaySection,
+} from '@/lib/cta/industryPresentation';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 export type IndustryCategoryPageTemplateProps = {
@@ -79,8 +83,10 @@ export function IndustryCategoryPageTemplate({
   const challengeSection = operatingPatterns ?? challenges;
   const solutionSection = systemLayers ?? solutions;
   const pathwaySection = pathways ?? packages;
+  const resolvedPathwaySection = resolveIndustryPathwaySection(pathwaySection, system, slug);
   const showSubIndustries = sectionControls?.subIndustries?.enabled !== false && !detailRoutes;
   const showCaseStudies = sectionControls?.caseStudies?.enabled === true;
+  const resolvedDetailRoutes = resolveIndustryCategoryDetailRoutes(detailRoutes, category);
   const resolvedCta = cta.primaryAction?.href
     ? {
         ...cta,
@@ -113,8 +119,8 @@ export function IndustryCategoryPageTemplate({
 
           {solutionSection && <IndustrySolutionsSection {...solutionSection} />}
 
-          {detailRoutes ? (
-            <RelatedCardsSection {...detailRoutes} />
+          {resolvedDetailRoutes ? (
+            <RelatedCardsSection {...resolvedDetailRoutes} />
           ) : showSubIndustries ? (
             <IndustrySubIndustriesSection
               category={category}
@@ -127,7 +133,7 @@ export function IndustryCategoryPageTemplate({
 
           {comparison && <IndustryComparisonSection {...comparison} />}
 
-          {pathwaySection && <IndustryPathwaysSection {...pathwaySection} />}
+          {resolvedPathwaySection && <IndustryPathwaysSection {...resolvedPathwaySection} />}
 
           {showCaseStudies && <IndustryCaseStudiesSection category={category} />}
 

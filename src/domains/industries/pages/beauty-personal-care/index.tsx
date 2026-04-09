@@ -360,7 +360,6 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
     ],
     backgroundColor: 'bg-muted/20',
     cssPrefix: 'beauty-detail-routes',
-    ctaLabel: 'View Page',
     styleVariant: 'style1' as const,
   };
 

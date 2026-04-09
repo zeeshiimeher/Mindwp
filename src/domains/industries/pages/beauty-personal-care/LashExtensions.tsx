@@ -186,12 +186,6 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
           'Pricing, FAQ, and policy clarity',
           'Basic enquiry capture and direction',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'lash-lift-and-extensions',
-        }),
       },
       {
         name: 'Booking protection setup',
@@ -205,12 +199,6 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
           'Review and rebooking prompts',
         ],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'lash-lift-and-extensions',
-        }),
       },
       {
         name: 'Follow-up and retention setup',
@@ -223,12 +211,6 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
           'Automations across prep, reminders, and follow-up',
           'Operational touchpoints for better predictability',
         ],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'lash-lift-and-extensions',
-        }),
       },
     ],
   };
@@ -315,7 +297,6 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

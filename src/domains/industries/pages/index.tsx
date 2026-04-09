@@ -30,7 +30,9 @@ export default function IndustriesLanding() {
           ? 'See Expansion Category'
           : industry.priority === 'coverage'
             ? 'View Coverage Category'
-            : (industry.ctaLabel ?? (industry.isLive ? `Explore ${industry.name}` : 'Discuss Fit'));
+            : industry.isLive
+              ? `Explore ${industry.name}`
+              : 'Discuss Fit';
 
     return (
       <Card

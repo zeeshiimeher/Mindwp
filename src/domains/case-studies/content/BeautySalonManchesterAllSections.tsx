@@ -214,12 +214,6 @@ function buildBeautySalonManchesterAllSections(): CaseStudyData {
         detailedResultsSectionTitle: 'Before & After Performance',
       },
       cta: {
-        primaryButtonLabel: 'Book a Free Strategy Call',
-        primaryButtonHref: buildContactHref({
-          system: 'local-seo-authority',
-          sourceType: 'case-study',
-          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-        }),
         metaItems: [
           { text: '20-minute discovery call' },
           { text: 'Actionable system roadmap' },

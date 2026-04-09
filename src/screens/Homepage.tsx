@@ -37,6 +37,16 @@ function buildHomepageContactHref(href: string) {
   });
 }
 
+const HOMEPAGE_FOUNDATION_BUTTON = {
+  label: 'See how Smart Websites work',
+  href: '/services/smart-website-systems',
+} as const;
+
+const HOMEPAGE_CASE_STUDIES_BUTTON = {
+  label: 'View All Case Studies',
+  href: '/case-studies',
+} as const;
+
 type HomepageCaseStudy = {
   slug: string;
   industryLabel: string;
@@ -596,9 +606,9 @@ function InfrastructureLayersSection() {
           </ul>
 
           <Button
-            href={buildHomepageContactHref(infrastructureLayersData.foundation.buttonHref)}
+            href={buildHomepageContactHref(HOMEPAGE_FOUNDATION_BUTTON.href)}
             variant='primary'
-            label={infrastructureLayersData.foundation.buttonLabel}
+            label={HOMEPAGE_FOUNDATION_BUTTON.label}
           />
         </div>
 
@@ -700,9 +710,9 @@ function CaseStudiesSection({ featuredCaseStudies }: { featuredCaseStudies: Home
 
       <div className='implementation-results-cta'>
         <Button
-          href={buildHomepageContactHref(caseStudiesData.ctaHref)}
+          href={buildHomepageContactHref(HOMEPAGE_CASE_STUDIES_BUTTON.href)}
           variant='primary'
-          label={caseStudiesData.ctaLabel}
+          label={HOMEPAGE_CASE_STUDIES_BUTTON.label}
           icon={ArrowRight}
           showDefaultIcon
         />

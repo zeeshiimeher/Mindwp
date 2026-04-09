@@ -98,8 +98,6 @@ export const clientReactivationForSalons: BlogPostData = {
       heading: 'Reactivate Your Salon Clients',
       content:
         'If your salon has hundreds of lapsed clients sitting untouched in your booking system, reactivation campaigns can recover them. See how CRM automation works for service businesses.',
-      buttonText: 'Explore CRM Systems',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

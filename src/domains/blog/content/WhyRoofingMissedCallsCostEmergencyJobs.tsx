@@ -108,8 +108,6 @@ export const whyRoofingMissedCallsCostEmergencyJobs: BlogPostData = {
       heading: 'Recover Emergency Roofing Leads',
       content:
         'If your roofing company misses calls during storms, automated recovery ensures every emergency caller gets a response. See how AI lead systems capture high-value roofing leads.',
-      buttonText: 'Explore Lead Handling',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

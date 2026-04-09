@@ -123,8 +123,6 @@ export const plumbingCrmPipelineForJobManagement: BlogPostData = {
       heading: 'Structure Your Plumbing Pipeline',
       content:
         'If your plumbing business tracks jobs on notepads and memory, a CRM pipeline can bring structure and visibility. See how CRM automation organises the plumbing workflow.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

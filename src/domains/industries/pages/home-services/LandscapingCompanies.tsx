@@ -189,12 +189,6 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
           'Cleaner lead qualification',
           'Better job-fit clarity',
         ],
-        buttonText: 'Talk Through Scope',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'landscaping-companies',
-        }),
       },
       {
         name: 'Estimate and visit protection',
@@ -204,12 +198,6 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
         priceDetail: 'Best when estimate friction and loose handoffs are the pressure points',
         features: ['Estimate scheduling support', 'Reminder structure', 'Visit-path clarity'],
         popular: true,
-        buttonText: 'See the Setup',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'landscaping-companies',
-        }),
       },
       {
         name: 'Seasonal and repeat follow-up',
@@ -222,12 +210,6 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
           'Seasonal reminder support',
           'Review and referral reinforcement',
         ],
-        buttonText: 'Request Details',
-        buttonHref: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'landscaping-companies',
-        }),
       },
     ],
   };
@@ -310,7 +292,6 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       },
     ],
     backgroundColor: 'bg-alt',
-    ctaLabel: 'View Service',
     columns: 2 as const,
   };
 

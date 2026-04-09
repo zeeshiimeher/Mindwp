@@ -115,8 +115,6 @@ export const leadQualificationFrameworkForServiceBusinesses: BlogPostData = {
       heading: 'Prioritise Your Best Leads Automatically',
       content:
         'If your team responds to every enquiry in the order it arrived regardless of value, qualification automation can help. See how AI lead handling scores and routes leads by priority.',
-      buttonText: 'Explore AI Lead Handling',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

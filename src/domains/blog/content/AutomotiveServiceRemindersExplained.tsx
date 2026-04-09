@@ -109,8 +109,6 @@ export const automotiveServiceRemindersExplained: BlogPostData = {
       heading: 'Automate Your Service Reminders',
       content:
         'If your repair shop relies on customers remembering their own MOT and service dates, CRM-based reminders can bring them back automatically. Explore how CRM automation retains customers.',
-      buttonText: 'Explore CRM Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

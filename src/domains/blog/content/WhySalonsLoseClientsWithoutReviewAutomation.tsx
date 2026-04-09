@@ -91,8 +91,6 @@ export const whySalonsLoseClientsWithoutReviewAutomation: BlogPostData = {
       heading: 'Stop Losing Salon Clients to Invisible Reputation',
       content:
         'If your salon depends on clients voluntarily leaving reviews, your reputation does not reflect the quality of your work. See how reputation automation closes the review gap.',
-      buttonText: 'Explore Reputation Automation',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

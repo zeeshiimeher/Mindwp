@@ -177,12 +177,6 @@ function buildBeautySalonManchesterCustom(): CaseStudyData {
     "Book a free 20-minute strategy call and we'll show you exactly how we can help your beauty & personal care business get more leads, save time, and grow revenue—with WordPress, GoHighLevel automation, and smart local SEO.";
 
   const ctaOverrides = {
-    primaryButtonLabel: 'Get Your Free Beauty Salon Strategy Call',
-    primaryButtonHref: buildContactHref({
-      system: 'local-seo-authority',
-      sourceType: 'case-study',
-      slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-    }),
     metaItems: [
       { text: 'Free 20-minute strategy call' },
       { text: 'Custom beauty salon solutions' },

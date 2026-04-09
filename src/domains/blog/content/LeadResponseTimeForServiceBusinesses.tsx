@@ -130,8 +130,6 @@ export const leadResponseTimeForServiceBusinesses: BlogPostData = {
       heading: 'Close the Response Gap',
       content:
         'If your leads wait hours for a response while competitors reply in minutes, the gap is costing you revenue. See how AI-powered lead handling reduces response time to seconds.',
-      buttonText: 'Explore AI Lead Handling',
-      buttonUrl: '/services/ai-lead-handling',
     },
   ],
 };

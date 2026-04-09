@@ -126,8 +126,6 @@ export const bookingSystemsForSalonsExplained: BlogPostData = {
       heading: 'Upgrade Your Salon Booking',
       content:
         'If your salon booking system captures appointments but does not connect to CRM, automation, or follow-up, an integrated approach can transform it. See how booking infrastructure works.',
-      buttonText: 'Explore Booking Systems',
-      buttonUrl: '/services/smart-website-systems',
     },
   ],
 };

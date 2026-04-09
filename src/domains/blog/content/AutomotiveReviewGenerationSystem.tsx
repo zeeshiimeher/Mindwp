@@ -101,8 +101,6 @@ export const automotiveReviewGenerationSystem: BlogPostData = {
       heading: 'Build Your Workshop Reviews',
       content:
         'If your repair shop does honest work but has few reviews to prove it, an automated system can change that. See how reputation systems generate reviews consistently.',
-      buttonText: 'Explore Reputation Systems',
-      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };

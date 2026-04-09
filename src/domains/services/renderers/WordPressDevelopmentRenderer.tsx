@@ -13,6 +13,7 @@ import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { ServiceRelatedServicesSection } from '@/domains/services/components/ServiceRelatedServicesSection';
 import { wordpressDevelopmentPage } from '@/domains/services/data/wordpress-development';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
 interface WordPressDevelopmentRendererProps {
   data: typeof wordpressDevelopmentPage;
@@ -32,8 +33,6 @@ export function WordPressDevelopmentRenderer({ data, slug }: WordPressDevelopmen
   } = sections;
   const ctaTitle = cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
   const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
-  const ctaButtonText = cta?.buttonText ?? SERVICE_RENDERER_DEFAULTS.ctaButtonText;
-  const ctaButtonHref = cta?.buttonHref ?? SERVICE_RENDERER_DEFAULTS.ctaButtonHref;
 
   return (
     <>
@@ -122,7 +121,7 @@ export function WordPressDevelopmentRenderer({ data, slug }: WordPressDevelopmen
           <ServiceCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{ label: ctaButtonText, href: ctaButtonHref, variant: 'white' }}
+            primaryAction={{ href: buildContactHref({ system: data.systems?.[0] ?? 'smart-website-systems', sourceType: 'service', slug }), variant: 'white' }}
           />
 
           <ServiceRelatedServicesSection serviceSlug={slug} />

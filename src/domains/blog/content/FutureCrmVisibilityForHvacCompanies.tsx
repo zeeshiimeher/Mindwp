@@ -109,8 +109,6 @@ export const futureCrmVisibilityForHvacCompanies: BlogPostData = {
       heading: 'Explore Predictive CRM',
       content:
         "If your HVAC company's CRM only shows what happened yesterday, predictive visibility can show what is coming tomorrow. See how CRM systems are evolving for service businesses.",
-      buttonText: 'Explore CRM Systems',
-      buttonUrl: '/services/crm-infrastructure-implementation',
     },
   ],
 };

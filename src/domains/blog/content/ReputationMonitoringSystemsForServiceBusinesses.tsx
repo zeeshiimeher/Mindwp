@@ -130,8 +130,6 @@ export const reputationMonitoringSystemsForServiceBusinesses: BlogPostData = {
       heading: 'Monitor Your Reputation in Real Time',
       content:
         'If reviews appear on your profiles without your knowledge and responses happen days later, monitoring automation can close that gap. See how reputation systems keep you informed.',
-      buttonText: 'Explore Reputation Systems',
-      buttonUrl: '/services/reputation-review-systems',
     },
   ],
 };
