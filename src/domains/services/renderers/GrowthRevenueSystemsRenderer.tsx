@@ -4,6 +4,7 @@ import {
   ProcessStepsSection,
   StackedFeatureListSection,
 } from '@/components/reusable/sections';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { AuditChecklistCard } from '@/components/reusable/single/AuditChecklistCard';
 import { ChecklistRow } from '@/components/reusable/single/ChecklistRow';
@@ -60,8 +61,7 @@ export function GrowthRevenueSystemsRenderer({ data, slug }: GrowthRevenueSystem
           />
 
           {/* What We Audit */}
-          <section className='technical-audit-areas l-section bg-alt'>
-            <div className='l-container'>
+          <SectionWrapper className='technical-audit-areas' background='bg-alt'>
               <SectionIntro
                 badge={auditAreas.header.badge}
                 title={auditAreas.header.title}
@@ -81,11 +81,9 @@ export function GrowthRevenueSystemsRenderer({ data, slug }: GrowthRevenueSystem
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
-          <section className='technical-audit-wordpress l-section'>
-            <div className='l-container'>
+          <SectionWrapper className='technical-audit-wordpress'>
               <SectionIntro
                 badge={wordpressContext.header.badge}
                 title={wordpressContext.header.title}
@@ -107,12 +105,10 @@ export function GrowthRevenueSystemsRenderer({ data, slug }: GrowthRevenueSystem
                   issues={wordpressContext.issues}
                 />
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
           {/* What You Get */}
-          <section className='technical-audit-deliverables l-section bg-base'>
-            <div className='l-container'>
+          <SectionWrapper className='technical-audit-deliverables' background='bg-base'>
               <SectionIntro
                 badge={deliverables.header.badge}
                 title={deliverables.header.title}
@@ -131,8 +127,7 @@ export function GrowthRevenueSystemsRenderer({ data, slug }: GrowthRevenueSystem
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
           {/* Process */}
           <ProcessStepsSection

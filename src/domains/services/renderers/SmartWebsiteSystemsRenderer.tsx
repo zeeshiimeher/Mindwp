@@ -7,6 +7,7 @@ import {
   StackedFeatureListSection,
   TechnologyCardsSection,
 } from '@/components/reusable/sections';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
@@ -48,8 +49,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
 
           {/* Value Blocks */}
           {data.sections.value && (
-            <section className='smart-websites-value l-section bg-alt'>
-              <div className='l-container'>
+            <SectionWrapper className='smart-websites-value' background='bg-alt'>
                 <SectionIntro
                   title={data.sections.value.header.title}
                   description={data.sections.value.header.description}
@@ -67,8 +67,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                     />
                   ))}
                 </div>
-              </div>
-            </section>
+            </SectionWrapper>
           )}
           {/* Before/After Comparison */}
           {data.sections.comparison && (
@@ -93,8 +92,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
 
           {/* Implementation Types */}
           {data.sections.types && (
-            <section className='smart-websites-types l-section bg-alt'>
-              <div className='l-container'>
+            <SectionWrapper className='smart-websites-types' background='bg-alt'>
                 <SectionIntro
                   title={data.sections.types.header.title}
                   description={data.sections.types.header.description}
@@ -113,8 +111,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                     />
                   ))}
                 </div>
-              </div>
-            </section>
+            </SectionWrapper>
           )}
           <SmartCTA
             system={data.systems?.[0] ?? 'smart-website-systems'}
@@ -152,8 +149,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
 
           {/* NEW: Benefits by Business Size */}
           {optionalSections.businessSizes && (
-            <section className='smart-websites-business-size l-section bg-base'>
-              <div className='l-container '>
+            <SectionWrapper className='smart-websites-business-size' background='bg-base'>
                 <SectionIntro
                   title={optionalSections.businessSizes.header.title}
                   description={optionalSections.businessSizes.header.description}
@@ -172,8 +168,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                     />
                   ))}
                 </div>
-              </div>
-            </section>
+            </SectionWrapper>
           )}
 
           {/* How It Works */}
@@ -191,8 +186,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
 
           {/* NEW: Common Concerns Addressed */}
           {optionalSections.concerns && (
-            <section className='smart-websites-concerns l-section bg-alt'>
-              <div className='l-container'>
+            <SectionWrapper className='smart-websites-concerns' background='bg-alt'>
                 <SectionIntro
                   title={optionalSections.concerns.header.title}
                   description={optionalSections.concerns.header.description}
@@ -211,8 +205,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                     />
                   ))}
                 </div>
-              </div>
-            </section>
+            </SectionWrapper>
           )}
 
           {/* Technologies Used */}

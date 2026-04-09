@@ -3,6 +3,7 @@ import {
   ProblemCardsSection,
   ProcessStepsSection,
 } from '@/components/reusable/sections';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { CenteredFeatureCard } from '@/components/reusable/single/CenteredFeatureCard';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
@@ -61,8 +62,7 @@ export function WebsiteRedesignSystemRebuildRenderer({
             cssPrefix='website-redesign-rebuild-foundation'
           />
 
-          <section className='website-redesign-rebuild-signals l-section bg-base'>
-            <div className='l-container'>
+          <SectionWrapper className='website-redesign-rebuild-signals' background='bg-base'>
               <SectionIntro
                 badge={structuralSignals.badge}
                 title={structuralSignals.title}
@@ -80,11 +80,9 @@ export function WebsiteRedesignSystemRebuildRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
-          <section className='website-redesign-rebuild-scenarios l-section'>
-            <div className='l-container'>
+          <SectionWrapper className='website-redesign-rebuild-scenarios'>
               <SectionIntro
                 badge={rebuildScenarios.badge}
                 title={rebuildScenarios.title}
@@ -106,8 +104,7 @@ export function WebsiteRedesignSystemRebuildRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
           <ProcessStepsSection
             badge={processSection.badge}
@@ -119,8 +116,7 @@ export function WebsiteRedesignSystemRebuildRenderer({
             backgroundColor='bg-alt'
           />
 
-          <section className='website-redesign-rebuild-layers l-section'>
-            <div className='l-container'>
+          <SectionWrapper className='website-redesign-rebuild-layers'>
               <SectionIntro
                 badge={implementationLayers.badge}
                 title={implementationLayers.title}
@@ -138,8 +134,7 @@ export function WebsiteRedesignSystemRebuildRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
           <DualToneChecklistComparisonSection
             title={qualification.title}

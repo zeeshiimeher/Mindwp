@@ -386,10 +386,22 @@ export const smartWebsiteSystemsPage = {
     title: 'Build your smart website system',
     description:
       'Tell us how your website handles enquiries now. We will show you where visitors drop off before they contact you.',
+      buttonText: 'Understand What Makes Websites Convert',
+      buttonHref: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'service',
+        slug: 'smart-website-systems',
+      }),
   },
   inlineCta: {
     title: 'Not sure how this would fit your business?',
     description:
       'No commitment. We will walk through your setup and show where enquiries are being lost.',
+      buttonText: 'Understand What Makes Websites Convert',
+      buttonHref: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'service',
+        slug: 'smart-website-systems',
+      }),
   },
 } satisfies ServicePageData;

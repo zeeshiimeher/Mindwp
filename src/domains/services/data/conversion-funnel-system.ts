@@ -318,5 +318,11 @@ export const conversionFunnelSystemPage = {
     title: 'Turn more attention into clearer next steps',
     description:
       'If traffic is arriving but the page journey still weakens conversion, we can help define a stronger funnel path.',
+      buttonText: 'Start a Conversation',
+      buttonHref: buildContactHref({
+        system: 'revenue-growth',
+        sourceType: 'service',
+        slug: 'conversion-funnel-system',
+      }),
   },
 } satisfies ServicePageData;

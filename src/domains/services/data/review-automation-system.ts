@@ -299,5 +299,11 @@ export const reviewAutomationSystemPage = {
     title: 'Make review requests part of the process',
     description:
       'If reviews are being left to memory and manual follow-up, we can help structure a cleaner review automation workflow.',
+      buttonText: 'Start a Conversation',
+      buttonHref: buildContactHref({
+        system: 'reputation-review',
+        sourceType: 'service',
+        slug: 'review-automation-system',
+      }),
   },
 } satisfies ServicePageData;

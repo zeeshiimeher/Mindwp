@@ -25,6 +25,7 @@ import { ResourceProblemSection } from '@/components/reusable/sections/resources
 import { ResourceSolutionsSection } from '@/components/reusable/sections/resources/ResourceSolutionsSection';
 import { ResourceTakeawaysSection } from '@/components/reusable/sections/resources/ResourceTakeawaysSection';
 import { ResourceTemplatesSection } from '@/components/reusable/sections/resources/ResourceTemplatesSection';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
@@ -401,8 +402,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
     <div className='resource-page'>
       <main className='resource-page__main'>
         {/* 1. HERO SECTION */}
-        <section className='resource-page__hero l-section bg-gradient-surface-muted'>
-          <div className='l-container'>
+        <SectionWrapper className='resource-page__hero' background='bg-gradient-surface-muted'>
             <Breadcrumb className='resource-page__breadcrumb'>
               <BreadcrumbList>
                 <BreadcrumbItem>
@@ -472,8 +472,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
                 />
               </div>
             </div>
-          </div>
-        </section>
+        </SectionWrapper>
 
         {/* Main Content with Optional Sidebar */}
         <div className='l-container l-section resource-page__body'>

@@ -7,6 +7,7 @@ import {
   ServiceSpectrumCardsSection,
   StackedFeatureListSection,
 } from '@/components/reusable/sections';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { SectionIntro, WorkflowStepCard } from '@/components/reusable/single';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
@@ -79,8 +80,7 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
             cssPrefix='ai-response-process'
           />
 
-          <section className='ai-response-workflows l-section bg-alt'>
-            <div className='l-container'>
+          <SectionWrapper className='ai-response-workflows' background='bg-alt'>
               <SectionIntro
                 badge={workflowExamples.badge}
                 title={workflowExamples.title}
@@ -98,8 +98,7 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
           <ServiceSpectrumCardsSection
             badge={useCasesSection.badge}

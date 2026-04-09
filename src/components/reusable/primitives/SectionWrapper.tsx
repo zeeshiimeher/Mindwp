@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 import { cn } from '@/components/ui/utils';
 
@@ -16,7 +16,7 @@ const CONTAINER_MAP = {
   none: '',
 } as const;
 
-export interface SectionWrapperProps {
+export interface SectionWrapperProps extends Omit<HTMLAttributes<HTMLElement>, 'children'> {
   /** HTML element tag. @default 'section' */
   as?: 'section' | 'div';
   /** Anchor id for navigation */
@@ -40,11 +40,13 @@ export function SectionWrapper({
   background = '',
   className = '',
   children,
+  ...rest
 }: SectionWrapperProps) {
   const containerClass = CONTAINER_MAP[container];
 
   return (
     <Tag
+      {...rest}
       {...(id !== undefined && { id })}
       className={cn(PADDING_MAP[padding], background, className)}
     >

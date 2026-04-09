@@ -300,5 +300,11 @@ export const bookingSchedulingSystemPage = {
     title: 'Make the booking step work properly',
     description:
       'Tell us how appointments are booked now. We will show you where friction, reminder gaps, and admin confusion are slowing conversion.',
+      buttonText: 'Review How Booking Automation Works',
+      buttonHref: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'service',
+        slug: 'booking-scheduling-system',
+      }),
   },
 } satisfies ServicePageData;

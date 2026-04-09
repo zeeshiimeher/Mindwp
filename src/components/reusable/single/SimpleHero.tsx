@@ -1,4 +1,5 @@
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { cn } from '@/components/ui/utils';
 
 import { BulletList } from './BulletList';
@@ -95,29 +96,31 @@ export function SimpleHero({
   list,
 }: SimpleHeroProps) {
   return (
-    <section className={cn(BLOCK, 'l-section', 'l-section--spacious', backgroundColor, cssPrefix)}>
-      <div className={cn(`${BLOCK}__container`, 'l-container')}>
-        <div
-          className={cn(
-            `${BLOCK}__content`,
-            'l-container l-container--narrow',
-            'l-stack l-stack--loose'
-          )}
-        >
-          <SectionIntro
-            {...(badge !== undefined && { badge })}
-            title={title}
-            headingLevel={headingTag}
-            description={description}
-            className={`${BLOCK}__header`}
-            {...(primaryAction !== undefined && { primaryAction })}
-            {...(secondaryAction !== undefined && { secondaryAction })}
-            marginBottom={false}
-          />
+    <SectionWrapper
+      padding='spacious'
+      className={cn(BLOCK, backgroundColor, cssPrefix)}
+    >
+      <div
+        className={cn(
+          `${BLOCK}__container`,
+          `${BLOCK}__content`,
+          'l-container l-container--narrow',
+          'l-stack l-stack--loose'
+        )}
+      >
+        <SectionIntro
+          {...(badge !== undefined && { badge })}
+          title={title}
+          headingLevel={headingTag}
+          description={description}
+          className={`${BLOCK}__header`}
+          {...(primaryAction !== undefined && { primaryAction })}
+          {...(secondaryAction !== undefined && { secondaryAction })}
+          marginBottom={false}
+        />
 
-          {list && list.length > 0 && <BulletList items={list} cssPrefix={`${BLOCK}__list`} />}
-        </div>
+        {list && list.length > 0 && <BulletList items={list} cssPrefix={`${BLOCK}__list`} />}
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

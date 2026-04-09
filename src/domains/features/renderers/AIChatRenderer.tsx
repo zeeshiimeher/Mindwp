@@ -8,6 +8,7 @@ import {
   FeatureProcessStepsSection,
   FeatureUseCasesSection,
 } from '@/components/reusable/sections/features';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
@@ -145,12 +146,12 @@ export default function AIChatRenderer() {
           {/* How It Works */}
           <ErrorBoundary
             fallback={
-              <section className='l-section'>
-                <div className='l-container text-center'>
+              <SectionWrapper>
+                <div className='text-center'>
                   <h2 className='text-2xl font-bold mb-4'>{process.fallbackTitle}</h2>
                   <p className='text-muted-foreground'>{process.fallbackDescription}</p>
                 </div>
-              </section>
+              </SectionWrapper>
             }
           >
             <FeatureProcessStepsSection
@@ -165,12 +166,12 @@ export default function AIChatRenderer() {
           {/* Benefits */}
           <ErrorBoundary
             fallback={
-              <section className='l-section'>
-                <div className='l-container text-center'>
+              <SectionWrapper>
+                <div className='text-center'>
                   <h2 className='text-2xl font-bold mb-4'>{benefits.fallbackTitle}</h2>
                   <p className='text-muted-foreground'>{benefits.fallbackDescription}</p>
                 </div>
-              </section>
+              </SectionWrapper>
             }
           >
             <FeatureBenefitsSection
@@ -186,12 +187,12 @@ export default function AIChatRenderer() {
           {/* Real-World Use Cases */}
           <ErrorBoundary
             fallback={
-              <section className='l-section'>
-                <div className='l-container text-center'>
+              <SectionWrapper>
+                <div className='text-center'>
                   <h2 className='text-2xl font-bold mb-4'>{useCases.fallbackTitle}</h2>
                   <p className='text-muted-foreground'>{useCases.fallbackDescription}</p>
                 </div>
-              </section>
+              </SectionWrapper>
             }
           >
             <FeatureUseCasesSection
@@ -208,12 +209,12 @@ export default function AIChatRenderer() {
           {/* Features Breakdown */}
           <ErrorBoundary
             fallback={
-              <section className='l-section'>
-                <div className='l-container text-center'>
+              <SectionWrapper>
+                <div className='text-center'>
                   <h2 className='text-2xl font-bold mb-4'>{capabilities.fallbackTitle}</h2>
                   <p className='text-muted-foreground'>{capabilities.fallbackDescription}</p>
                 </div>
-              </section>
+              </SectionWrapper>
             }
           >
             <FeatureCapabilitiesSection
@@ -229,12 +230,12 @@ export default function AIChatRenderer() {
           {/* FAQ */}
           <ErrorBoundary
             fallback={
-              <section className='l-section'>
-                <div className='l-container text-center'>
+              <SectionWrapper>
+                <div className='text-center'>
                   <h2 className='text-2xl font-bold mb-4'>{faq.fallbackTitle}</h2>
                   <p className='text-muted-foreground'>{faq.fallbackDescription}</p>
                 </div>
-              </section>
+              </SectionWrapper>
             }
           >
             <FAQSection

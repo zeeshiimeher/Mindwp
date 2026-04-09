@@ -4,6 +4,7 @@ import {
   ProcessStepsSection,
   ServiceSpectrumCardsSection,
 } from '@/components/reusable/sections';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { IconTextCard, SectionIntro, WorkflowStepCard } from '@/components/reusable/single';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
@@ -58,8 +59,7 @@ export function MissedCallRecoverySystemRenderer({
             cssPrefix='missed-call-recovery-foundation'
           />
 
-          <section className='missed-call-recovery-signals l-section bg-base'>
-            <div className='l-container'>
+          <SectionWrapper className='missed-call-recovery-signals' background='bg-base'>
               <SectionIntro
                 badge={signalSection.badge}
                 title={signalSection.title}
@@ -78,11 +78,9 @@ export function MissedCallRecoverySystemRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
-          <section className='missed-call-recovery-workflows l-section'>
-            <div className='l-container'>
+          <SectionWrapper className='missed-call-recovery-workflows'>
               <SectionIntro
                 badge={workflowExamples.badge}
                 title={workflowExamples.title}
@@ -99,8 +97,7 @@ export function MissedCallRecoverySystemRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
           <ProcessStepsSection
             badge={processSection.badge}

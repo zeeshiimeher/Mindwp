@@ -3,6 +3,7 @@ import {
   ProblemCardsSection,
   ProcessStepsSection,
 } from '@/components/reusable/sections';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { BeforeAfterMetricCard } from '@/components/reusable/single/BeforeAfterMetricCard';
 import { CenteredFeatureCard } from '@/components/reusable/single/CenteredFeatureCard';
@@ -59,8 +60,7 @@ export function ConversionFunnelSystemRenderer({
             cssPrefix='conversion-funnel-foundation'
           />
 
-          <section className='conversion-funnel-breakpoints l-section bg-base'>
-            <div className='l-container'>
+          <SectionWrapper className='conversion-funnel-breakpoints' background='bg-base'>
               <SectionIntro
                 badge={funnelBreakpoints.badge}
                 title={funnelBreakpoints.title}
@@ -80,11 +80,9 @@ export function ConversionFunnelSystemRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
-          <section className='conversion-funnel-metrics l-section'>
-            <div className='l-container'>
+          <SectionWrapper className='conversion-funnel-metrics'>
               <SectionIntro
                 badge={comparisonMetrics.badge}
                 title={comparisonMetrics.title}
@@ -108,8 +106,7 @@ export function ConversionFunnelSystemRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
           <ProcessStepsSection
             badge={processSection.badge}
@@ -121,8 +118,7 @@ export function ConversionFunnelSystemRenderer({
             backgroundColor='bg-base'
           />
 
-          <section className='conversion-funnel-levers l-section'>
-            <div className='l-container'>
+          <SectionWrapper className='conversion-funnel-levers'>
               <SectionIntro
                 badge={funnelLevers.badge}
                 title={funnelLevers.title}
@@ -140,8 +136,7 @@ export function ConversionFunnelSystemRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
           <DualToneChecklistComparisonSection
             title={qualification.title}

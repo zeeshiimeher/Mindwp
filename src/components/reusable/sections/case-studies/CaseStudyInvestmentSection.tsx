@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { CostRoiCard, SectionIntro } from '@/components/reusable/single';
 
 const DEFAULT_LABELS = {
@@ -48,49 +49,47 @@ export function CaseStudyInvestmentSection({
     setupValue !== null && monthlyValue !== null ? setupValue + monthlyValue * 12 : null;
 
   return (
-    <section className='case-study-detail-investment'>
-      <div className='l-container'>
-        <SectionIntro
-          badge={investmentBadgeLabel}
-          title={investmentSectionTitle}
-          cssPrefix='case-study-detail-investment-header'
+    <SectionWrapper padding='none' className='case-study-detail-investment'>
+      <SectionIntro
+        badge={investmentBadgeLabel}
+        title={investmentSectionTitle}
+        cssPrefix='case-study-detail-investment-header'
+      />
+
+      <div className='case-study-detail-investment__grid'>
+        <CostRoiCard
+          variant='cost'
+          title={DEFAULT_LABELS.investmentCardTitle}
+          items={[
+            {
+              label: DEFAULT_LABELS.setupFeeLabel,
+              value: setupFee,
+            },
+            {
+              label: DEFAULT_LABELS.monthlyLabel,
+              value: monthlyFee,
+            },
+            {
+              label: DEFAULT_LABELS.totalFirstYearLabel,
+              value:
+                totalFirstYearValue !== null
+                  ? `£${totalFirstYearValue.toLocaleString()}`
+                  : DEFAULT_LABELS.totalFirstYearUnavailableLabel,
+            },
+          ]}
         />
 
-        <div className='case-study-detail-investment__grid'>
-          <CostRoiCard
-            variant='cost'
-            title={DEFAULT_LABELS.investmentCardTitle}
-            items={[
-              {
-                label: DEFAULT_LABELS.setupFeeLabel,
-                value: setupFee,
-              },
-              {
-                label: DEFAULT_LABELS.monthlyLabel,
-                value: monthlyFee,
-              },
-              {
-                label: DEFAULT_LABELS.totalFirstYearLabel,
-                value:
-                  totalFirstYearValue !== null
-                    ? `£${totalFirstYearValue.toLocaleString()}`
-                    : DEFAULT_LABELS.totalFirstYearUnavailableLabel,
-              },
-            ]}
-          />
-
-          <CostRoiCard
-            variant='roi'
-            title={DEFAULT_LABELS.returnCardTitle}
-            summary={roi}
-            summaryLabel={DEFAULT_LABELS.roiSummaryLabel}
-          />
-        </div>
-
-        <div className='case-study-detail-investment__footer'>
-          <p className='case-study-detail-investment__footer-text'>{investmentFooterNoteHtml}</p>
-        </div>
+        <CostRoiCard
+          variant='roi'
+          title={DEFAULT_LABELS.returnCardTitle}
+          summary={roi}
+          summaryLabel={DEFAULT_LABELS.roiSummaryLabel}
+        />
       </div>
-    </section>
+
+      <div className='case-study-detail-investment__footer'>
+        <p className='case-study-detail-investment__footer-text'>{investmentFooterNoteHtml}</p>
+      </div>
+    </SectionWrapper>
   );
 }

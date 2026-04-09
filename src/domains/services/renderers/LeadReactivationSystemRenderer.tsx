@@ -3,6 +3,7 @@ import {
   ProblemCardsSection,
   ProcessStepsSection,
 } from '@/components/reusable/sections';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { IconListCard, ScenarioSolutionCard, SectionIntro } from '@/components/reusable/single';
 import { AuditChecklistCard } from '@/components/reusable/single/AuditChecklistCard';
@@ -57,8 +58,7 @@ export function LeadReactivationSystemRenderer({
             cssPrefix='lead-reactivation-foundation'
           />
 
-          <section className='lead-reactivation-scenarios l-section bg-base'>
-            <div className='l-container'>
+          <SectionWrapper className='lead-reactivation-scenarios' background='bg-base'>
               <SectionIntro
                 badge={reactivationScenarios.badge}
                 title={reactivationScenarios.title}
@@ -80,11 +80,9 @@ export function LeadReactivationSystemRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
-          <section className='lead-reactivation-audit l-section'>
-            <div className='l-container'>
+          <SectionWrapper className='lead-reactivation-audit'>
               <SectionIntro
                 badge={auditAreas.badge}
                 title={auditAreas.title}
@@ -104,8 +102,7 @@ export function LeadReactivationSystemRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
           <ProcessStepsSection
             badge={processSection.badge}
@@ -117,8 +114,7 @@ export function LeadReactivationSystemRenderer({
             backgroundColor='bg-alt'
           />
 
-          <section className='lead-reactivation-entry-points l-section'>
-            <div className='l-container'>
+          <SectionWrapper className='lead-reactivation-entry-points'>
               <SectionIntro
                 badge={entryPoints.badge}
                 title={entryPoints.title}
@@ -136,8 +132,7 @@ export function LeadReactivationSystemRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
           <DualToneChecklistComparisonSection
             title={qualification.title}

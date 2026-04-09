@@ -23,6 +23,7 @@ import {
   BlogStepsSection,
   BlogTakeawaysSection,
 } from '@/components/reusable/sections/blog';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { Callout } from '@/components/reusable/single/Callout';
@@ -254,8 +255,10 @@ export function BlogPostTemplate({
 
       case 'content':
         return (
-          <section
+          <SectionWrapper
             key={`content-${index}`}
+            padding='none'
+            container='none'
             className='blog-post__section l-stack'
             id={`section-${index}`}
           >
@@ -294,7 +297,7 @@ export function BlogPostTemplate({
                 </p>
               </Callout>
             )}
-          </section>
+          </SectionWrapper>
         );
 
       case 'callout':
@@ -384,8 +387,8 @@ export function BlogPostTemplate({
     <div className='min-h-screen'>
       <main>
         {/* HERO */}
-        <section
-          className='l-section blog-hero'
+        <SectionWrapper
+          className='blog-hero'
           {...(featuredImage
             ? {
                 style: {
@@ -396,7 +399,7 @@ export function BlogPostTemplate({
               }
             : {})}
         >
-          <div className='l-container l-stack l-stack--loose blog-post__hero'>
+          <div className='l-stack l-stack--loose blog-post__hero'>
             <span className={`badge badge--hero ${categoryColors.bg} ${categoryColors.text}`}>
               {categoryLabel}
             </span>
@@ -440,11 +443,10 @@ export function BlogPostTemplate({
               />
             </div>
           </div>
-        </section>
+        </SectionWrapper>
 
         {/* CONTENT WITH SIDEBAR */}
-        <section className='l-section bg-background'>
-          <div className='l-container'>
+        <SectionWrapper background='bg-background'>
             <div className='blog-post__layout'>
               {/* Main Content Column */}
               <div className='blog-post__stack'>
@@ -530,8 +532,7 @@ export function BlogPostTemplate({
                 </Card>
               </aside>
             </div>
-          </div>
-        </section>
+        </SectionWrapper>
         {ctaSection ? (
           <SmartCTA
             system={systems?.[0] ?? 'smart-website-systems'}

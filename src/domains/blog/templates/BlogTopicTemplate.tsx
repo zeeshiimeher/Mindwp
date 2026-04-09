@@ -3,6 +3,7 @@
 
 import { ArrowRight, Calendar } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { Card } from '@/components/ui/card';
 import {
   getCategoryColors,
@@ -22,8 +23,8 @@ export function BlogTopicTemplate({ topic, sections, totalPosts }: BlogTopicTemp
     <div className='min-h-screen'>
       <main>
         {/* HERO */}
-        <section className='l-section blog-hero'>
-          <div className='l-container l-stack l-stack--loose blog-category__hero'>
+        <SectionWrapper className='blog-hero'>
+          <div className='l-stack l-stack--loose blog-category__hero'>
             <span className='badge badge--hero blog-category-bg--seo blog-category-text--seo'>
               {totalPosts} {totalPosts === 1 ? 'article' : 'articles'}
             </span>
@@ -32,21 +33,18 @@ export function BlogTopicTemplate({ topic, sections, totalPosts }: BlogTopicTemp
 
             <p className='blog-category__lead'>{topic.description}</p>
           </div>
-        </section>
+        </SectionWrapper>
 
         {/* SECTIONS */}
         {sections.length === 0 ? (
-          <section className='l-section blog-surface--muted'>
-            <div className='l-container'>
+          <SectionWrapper className='blog-surface--muted'>
               <p className='text-center text-muted-foreground'>
                 No articles published for this topic yet.
               </p>
-            </div>
-          </section>
+          </SectionWrapper>
         ) : (
           sections.map(section => (
-            <section key={section.key} className='l-section blog-surface--muted'>
-              <div className='l-container'>
+            <SectionWrapper key={section.key} className='blog-surface--muted'>
                 <h2 className='blog-section__title'>{section.label}</h2>
                 <div className='blog-category__grid'>
                   {section.posts.map(post => {
@@ -79,8 +77,7 @@ export function BlogTopicTemplate({ topic, sections, totalPosts }: BlogTopicTemp
                     );
                   })}
                 </div>
-              </div>
-            </section>
+            </SectionWrapper>
           ))
         )}
       </main>

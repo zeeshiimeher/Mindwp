@@ -387,5 +387,11 @@ export const localSeoAuthorityPage = {
     title: 'Discuss your local visibility',
     description:
       'Tell us which services and locations matter most. We will show you what is weakening visibility and what needs fixing first.',
+      buttonText: 'Understand What Builds Local Authority',
+      buttonHref: buildContactHref({
+        system: 'local-seo-authority',
+        sourceType: 'service',
+        slug: 'local-seo-authority',
+      }),
   },
 } satisfies ServicePageData;

@@ -4,6 +4,7 @@ import {
   IconBenefitCardsSection,
   ProcessStepsSection,
 } from '@/components/reusable/sections';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
@@ -37,13 +38,11 @@ export function BricksBuilderRenderer({ data, slug }: BricksBuilderRendererProps
           />
 
           {/* Design File Conversion */}
-          <section className='bricks-conversion l-section'>
-            <div className='l-container'>
+          <SectionWrapper className='bricks-conversion'>
               <h2 className='mb-4'>{conversionSection.title}</h2>
               <p className='text-muted-foreground'>{conversionSection.description1}</p>
               <p className='text-muted-foreground mt-4'>{conversionSection.description2}</p>
-            </div>
-          </section>
+          </SectionWrapper>
 
           {/* Benefits */}
           <IconBenefitCardsSection

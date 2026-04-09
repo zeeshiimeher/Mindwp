@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { AlertCircle, ChevronDown, ChevronUp } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
 
@@ -87,8 +88,8 @@ export function FAQSection({
   const cardSpacing = 'l-stack';
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
-      <div className={`${BLOCK}-container l-container ${containerClasses}`}>
+    <SectionWrapper className={cn(BLOCK, backgroundColor, cssPrefix)}>
+      <div className={`${BLOCK}-container ${containerClasses}`}>
         {(badge || title || description) && (
           <SectionIntro
             {...(badge !== undefined && { badge })}
@@ -144,6 +145,6 @@ export function FAQSection({
           })}
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

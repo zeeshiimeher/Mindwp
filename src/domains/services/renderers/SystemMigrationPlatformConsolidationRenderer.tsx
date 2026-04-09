@@ -3,6 +3,7 @@ import {
   ProblemCardsSection,
   ProcessStepsSection,
 } from '@/components/reusable/sections';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { IconTextCard, LinkCard, SectionIntro } from '@/components/reusable/single';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
@@ -57,8 +58,7 @@ export function SystemMigrationPlatformConsolidationRenderer({
             cssPrefix='system-migration-foundation'
           />
 
-          <section className='system-migration-signals l-section bg-base'>
-            <div className='l-container'>
+          <SectionWrapper className='system-migration-signals' background='bg-base'>
               <SectionIntro
                 badge={migrationSignals.badge}
                 title={migrationSignals.title}
@@ -77,11 +77,9 @@ export function SystemMigrationPlatformConsolidationRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
-          <section className='system-migration-risks l-section'>
-            <div className='l-container'>
+          <SectionWrapper className='system-migration-risks'>
               <SectionIntro
                 badge={riskAreas.badge}
                 title={riskAreas.title}
@@ -98,11 +96,9 @@ export function SystemMigrationPlatformConsolidationRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
-          <section className='system-migration-targets l-section bg-base'>
-            <div className='l-container'>
+          <SectionWrapper className='system-migration-targets' background='bg-base'>
               <SectionIntro
                 badge={consolidationTargets.badge}
                 title={consolidationTargets.title}
@@ -120,8 +116,7 @@ export function SystemMigrationPlatformConsolidationRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
           <ProcessStepsSection
             badge={processSection.badge}

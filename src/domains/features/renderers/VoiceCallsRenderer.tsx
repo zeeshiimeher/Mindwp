@@ -8,6 +8,7 @@ import {
   FeatureProcessStepsSection,
   FeatureUseCasesSection,
 } from '@/components/reusable/sections/features';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { TestimonialCard } from '@/components/reusable/single/TestimonialCard';
@@ -157,8 +158,10 @@ export default function VoiceCallsRenderer() {
             cssPrefix='voice-ai-faq'
           />
 
-          <section className='voice-ai-testimonial l-section bg-gradient-surface-muted'>
-            <div className='l-container'>
+          <SectionWrapper
+            className='voice-ai-testimonial'
+            background='bg-gradient-surface-muted'
+          >
               <TestimonialCard
                 quote={testimonial.quote}
                 author={testimonial.author}
@@ -166,8 +169,7 @@ export default function VoiceCallsRenderer() {
                 rating={testimonial.rating}
                 className='bg-white/80 backdrop-blur shadow-xl'
               />
-            </div>
-          </section>
+          </SectionWrapper>
 
           <FeatureCTASection
             title={cta.title}

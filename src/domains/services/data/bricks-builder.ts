@@ -271,5 +271,11 @@ export const bricksBuilderPage = {
     title: 'Discuss your Bricks implementation',
     description:
       'If your team needs a performance-focused Bricks build with clean output and long-term clarity, we can review scope and outline the right approach.',
+      buttonText: 'Start a Conversation',
+      buttonHref: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'service',
+        slug: 'bricks-builder',
+      }),
   },
 } satisfies ServicePageData;

@@ -3,6 +3,7 @@ import {
   ProblemCardsSection,
   ProcessStepsSection,
 } from '@/components/reusable/sections';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { SectionIntro, WorkflowStepCard } from '@/components/reusable/single';
 import { AuditChecklistCard } from '@/components/reusable/single/AuditChecklistCard';
@@ -58,8 +59,7 @@ export function MarketingAutomationSetupRenderer({
             cssPrefix='marketing-automation-foundation'
           />
 
-          <section className='marketing-automation-examples l-section bg-alt'>
-            <div className='l-container'>
+          <SectionWrapper className='marketing-automation-examples' background='bg-alt'>
               <SectionIntro
                 badge={automationExamples.badge}
                 title={automationExamples.title}
@@ -76,11 +76,9 @@ export function MarketingAutomationSetupRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
-          <section className='marketing-automation-governance l-section'>
-            <div className='l-container'>
+          <SectionWrapper className='marketing-automation-governance'>
               <SectionIntro
                 badge={governanceAreas.badge}
                 title={governanceAreas.title}
@@ -100,11 +98,9 @@ export function MarketingAutomationSetupRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
-          <section className='marketing-automation-layers l-section bg-base'>
-            <div className='l-container'>
+          <SectionWrapper className='marketing-automation-layers' background='bg-base'>
               <SectionIntro
                 badge={automationLayers.badge}
                 title={automationLayers.title}
@@ -122,8 +118,7 @@ export function MarketingAutomationSetupRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
           <ProcessStepsSection
             badge={processSection.badge}

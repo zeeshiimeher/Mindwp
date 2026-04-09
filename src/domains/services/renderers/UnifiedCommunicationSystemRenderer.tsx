@@ -3,6 +3,7 @@ import {
   ProblemCardsSection,
   ProcessStepsSection,
 } from '@/components/reusable/sections';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import {
   IconListCard,
@@ -62,8 +63,7 @@ export function UnifiedCommunicationSystemRenderer({
             cssPrefix='unified-communication-foundation'
           />
 
-          <section className='unified-communication-channels l-section bg-alt'>
-            <div className='l-container'>
+          <SectionWrapper className='unified-communication-channels' background='bg-alt'>
               <SectionIntro
                 badge={channelSignals.badge}
                 title={channelSignals.title}
@@ -82,11 +82,9 @@ export function UnifiedCommunicationSystemRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
-          <section className='unified-communication-risks l-section'>
-            <div className='l-container'>
+          <SectionWrapper className='unified-communication-risks'>
               <SectionIntro
                 badge={ownershipRisks.badge}
                 title={ownershipRisks.title}
@@ -103,11 +101,9 @@ export function UnifiedCommunicationSystemRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
-          <section className='unified-communication-workflows l-section bg-base'>
-            <div className='l-container'>
+          <SectionWrapper className='unified-communication-workflows' background='bg-base'>
               <SectionIntro
                 badge={workflowExamples.badge}
                 title={workflowExamples.title}
@@ -124,8 +120,7 @@ export function UnifiedCommunicationSystemRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
           <ProcessStepsSection
             badge={operatingLayers.badge}
@@ -161,8 +156,7 @@ export function UnifiedCommunicationSystemRenderer({
             cssPrefix='unified-communication-process'
           />
 
-          <section className='unified-communication-layers l-section bg-base'>
-            <div className='l-container'>
+          <SectionWrapper className='unified-communication-layers' background='bg-base'>
               <SectionIntro
                 badge={operatingLayers.introBadge}
                 title={operatingLayers.introTitle}
@@ -180,8 +174,7 @@ export function UnifiedCommunicationSystemRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
           <DualToneChecklistComparisonSection
             title={qualification.title}

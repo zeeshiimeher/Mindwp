@@ -263,5 +263,11 @@ export const funnelLandingPageDevelopmentPage = {
     title: 'Build the right page for the job',
     description:
       'If a specific offer, campaign, or booking path needs a more focused landing page, we can help implement it properly.',
+      buttonText: 'Start a Conversation',
+      buttonHref: buildContactHref({
+        system: 'revenue-growth',
+        sourceType: 'service',
+        slug: 'funnel-landing-page-development',
+      }),
   },
 } satisfies ServicePageData;

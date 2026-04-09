@@ -17,6 +17,7 @@ import {
   CaseStudySolutionSection,
   CaseStudyWorkflowsSection,
 } from '@/components/reusable/sections/case-studies';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { TestimonialCard } from '@/components/reusable/single';
 import { SmartCTA } from '@/components/system/SmartCTA';
 
@@ -387,21 +388,20 @@ export function CaseStudyTemplate({
       case 'testimonial':
         if (!section.testimonial) return null;
         return (
-          <section
+          <SectionWrapper
             key={`testimonial-${index}`}
-            className='case-study-detail-testimonial l-section bg-gradient-dark text-background'
+            className='case-study-detail-testimonial text-background'
+            background='bg-gradient-dark'
             aria-label={resolvedTestimonialSectionAriaLabel}
           >
-            <div className='l-container'>
-              <TestimonialCard
-                quote={section.testimonial.quote}
-                author={section.testimonial.author}
-                business={section.testimonial.role}
-                rating={5}
-                className='case-study-detail-testimonial__card'
-              />
-            </div>
-          </section>
+            <TestimonialCard
+              quote={section.testimonial.quote}
+              author={section.testimonial.author}
+              business={section.testimonial.role}
+              rating={5}
+              className='case-study-detail-testimonial__card'
+            />
+          </SectionWrapper>
         );
 
       case 'investment':

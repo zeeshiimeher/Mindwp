@@ -490,5 +490,11 @@ export const growthRevenueSystemsPage = {
     title: 'Find out what is slowing growth down',
     description:
       'Tell us how leads move from first contact to follow-up. We will show you where momentum drops and what needs fixing first.',
+      buttonText: 'Check Where Revenue Slows Down',
+      buttonHref: buildContactHref({
+        system: 'revenue-growth',
+        sourceType: 'service',
+        slug: 'growth-revenue-systems',
+      }),
   },
 } satisfies ServicePageData;

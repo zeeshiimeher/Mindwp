@@ -3,6 +3,7 @@ import {
   FeatureChecklistCardsSection,
   IconBenefitCardsSection,
 } from '@/components/reusable/sections';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
@@ -43,12 +44,10 @@ export function WooCommerceRenderer({ data, slug }: WooCommerceRendererProps) {
             cssPrefix={benefitsSection.cssPrefix}
           />
 
-          <section className='woocommerce-bridge l-section bg-base'>
-            <div className='l-container'>
+          <SectionWrapper className='woocommerce-bridge' background='bg-base'>
               <h2 className='mb-4'>{bridge.title}</h2>
               <p className='text-muted-foreground'>{bridge.description}</p>
-            </div>
-          </section>
+          </SectionWrapper>
 
           {/* Why structured WordPress commerce fits here */}
           <ContentCardsGridSection

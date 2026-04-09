@@ -1,5 +1,6 @@
 import { ArrowRight, Calendar } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { Card } from '@/components/ui/card';
 import type { BlogPostListItem } from '@/domains/blog/api';
 
@@ -22,8 +23,8 @@ export function BlogCategoryTemplate({
     <div className='min-h-screen'>
       <main>
         {/* HERO */}
-        <section className='l-section blog-hero'>
-          <div className='l-container l-stack l-stack--loose blog-category__hero'>
+        <SectionWrapper className='blog-hero'>
+          <div className='l-stack l-stack--loose blog-category__hero'>
             <span
               className={`badge badge--hero ${badgeClassName}`}
             >
@@ -34,10 +35,9 @@ export function BlogCategoryTemplate({
 
             <p className='blog-category__lead'>{description}</p>
           </div>
-        </section>
+        </SectionWrapper>
         {/* POSTS */}
-        <section className='l-section blog-surface--muted'>
-          <div className='l-container'>
+        <SectionWrapper className='blog-surface--muted'>
             <h2 className='blog-section__title'>Latest Articles</h2>
             {posts.length === 0 ? (
               <p className='text-center text-muted-foreground'>No articles published yet.</p>
@@ -70,8 +70,7 @@ export function BlogCategoryTemplate({
                 ))}
               </div>
             )}
-          </div>
-        </section>
+        </SectionWrapper>
       </main>
     </div>
   );

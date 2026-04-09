@@ -1,3 +1,4 @@
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ProblemCard, SectionIntro } from '@/components/reusable/single';
 
 export interface CaseStudyProblemSectionProps {
@@ -45,24 +46,22 @@ export function CaseStudyProblemSection({
   painPoints,
 }: CaseStudyProblemSectionProps) {
   return (
-    <section className='case-study-detail-problem'>
-      <div className='l-container'>
-        <SectionIntro
-          badge={challengeBadgeLabel}
-          title={problemHeading}
-          description={problemDescription.join('\n\n')}
-          cssPrefix='case-study-detail-problem-header'
-        />
+    <SectionWrapper padding='none' className='case-study-detail-problem'>
+      <SectionIntro
+        badge={challengeBadgeLabel}
+        title={problemHeading}
+        description={problemDescription.join('\n\n')}
+        cssPrefix='case-study-detail-problem-header'
+      />
 
-        <div className='case-study-detail-problem__content'>
-          <h3 className='case-study-detail-problem__heading'>Key Pain Points:</h3>
-          <div className='case-study-detail-problem__grid'>
-            {painPoints.map((point, index) => (
-              <ProblemCard key={index}>{normalizePainPoint(point)}</ProblemCard>
-            ))}
-          </div>
+      <div className='case-study-detail-problem__content'>
+        <h3 className='case-study-detail-problem__heading'>Key Pain Points:</h3>
+        <div className='case-study-detail-problem__grid'>
+          {painPoints.map((point, index) => (
+            <ProblemCard key={index}>{normalizePainPoint(point)}</ProblemCard>
+          ))}
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

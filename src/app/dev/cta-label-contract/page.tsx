@@ -1,3 +1,4 @@
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { resolveCtaLabel } from '@/config/cta-labels';
 
@@ -27,20 +28,25 @@ export default function CtaLabelContractPage() {
 
       <div style={{ display: 'grid', gap: '2rem' }}>
         {SMART_CTA_CASES.map(testCase => (
-          <section key={testCase.testId} data-testid={testCase.testId}>
+          <SectionWrapper
+            key={testCase.testId}
+            padding='none'
+            container='none'
+            data-testid={testCase.testId}
+          >
             <SmartCTA
               system={testCase.system}
               source={testCase.source}
               title={`Contract case: ${testCase.system}`}
               description='Deterministic SmartCTA contract validation.'
             />
-          </section>
+          </SectionWrapper>
         ))}
 
-        <section data-testid='fallback-labels'>
+        <SectionWrapper padding='none' container='none' data-testid='fallback-labels'>
           <p data-testid='fallback-unknown'>{resolveCtaLabel('unknown-system')}</p>
           <p data-testid='fallback-empty'>{resolveCtaLabel('')}</p>
-        </section>
+        </SectionWrapper>
       </div>
     </main>
   );

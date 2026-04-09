@@ -1,6 +1,7 @@
 import { type ReactNode } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { Button, type ButtonProps } from './Button';
 import { cn } from '@/components/ui/utils';
 
@@ -202,5 +203,9 @@ export function CTASection({
 
   if (wrapper === 'none') return content;
 
-  return <section className={rootClassName}>{content}</section>;
+  return (
+    <SectionWrapper padding='none' container='none' className={rootClassName}>
+      {content}
+    </SectionWrapper>
+  );
 }

@@ -311,5 +311,11 @@ export const websiteRedesignSystemRebuildPage = {
     title: 'Rebuild the website around how the business actually works',
     description:
       'If the current site no longer supports your services, enquiry flow, or maintainability, we can help define a clearer rebuild pathway.',
+      buttonText: 'Start a Conversation',
+      buttonHref: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'service',
+        slug: 'website-redesign-system-rebuild',
+      }),
   },
 } satisfies ServicePageData;

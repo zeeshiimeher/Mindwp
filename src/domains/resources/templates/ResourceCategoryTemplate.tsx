@@ -1,5 +1,6 @@
 import { ArrowRight } from 'lucide-react';
 
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { Card } from '@/components/ui/card';
@@ -34,8 +35,8 @@ export default function ResourceCategoryTemplate({
     <div className='resource-category'>
       <main>
         {/* HERO */}
-        <section className='resource-category__hero l-section'>
-          <div className='l-container resource-category__hero-content'>
+        <SectionWrapper className='resource-category__hero'>
+          <div className='resource-category__hero-content'>
             <Badge context='hero' cssPrefix={badgeClassName}>
               {count} guides
             </Badge>
@@ -44,11 +45,10 @@ export default function ResourceCategoryTemplate({
 
             <p className='resource-category__description'>{description}</p>
           </div>
-        </section>
+        </SectionWrapper>
 
         {/* GRID */}
-        <section className='resource-category__grid-section l-section'>
-          <div className='l-container'>
+        <SectionWrapper className='resource-category__grid-section'>
             {resources.length === 0 ? (
               <p className='resource-category__empty'>No guides published yet.</p>
             ) : (
@@ -88,8 +88,7 @@ export default function ResourceCategoryTemplate({
                 ))}
               </div>
             )}
-          </div>
-        </section>
+        </SectionWrapper>
       </main>
     </div>
   );

@@ -306,5 +306,11 @@ export const systemMigrationPlatformConsolidationPage = {
     title: 'Simplify the platform foundation',
     description:
       'If the business is being slowed by fragmented tools or an outdated platform, we can help define a cleaner migration and consolidation path.',
+      buttonText: 'Start a Conversation',
+      buttonHref: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'service',
+        slug: 'system-migration-platform-consolidation',
+      }),
   },
 } satisfies ServicePageData;

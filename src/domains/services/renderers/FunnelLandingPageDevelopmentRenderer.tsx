@@ -3,6 +3,7 @@ import {
   ProblemCardsSection,
   ProcessStepsSection,
 } from '@/components/reusable/sections';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import { AlertCard, FAQSection, LinkCard, SectionIntro } from '@/components/reusable/single';
 import { CenteredFeatureCard } from '@/components/reusable/single/CenteredFeatureCard';
@@ -56,8 +57,7 @@ export function FunnelLandingPageDevelopmentRenderer({
             cssPrefix='funnel-landing-development-foundation'
           />
 
-          <section className='funnel-landing-development-types l-section bg-base'>
-            <div className='l-container'>
+          <SectionWrapper className='funnel-landing-development-types' background='bg-base'>
               <SectionIntro
                 badge={pageTypes.badge}
                 title={pageTypes.title}
@@ -75,11 +75,9 @@ export function FunnelLandingPageDevelopmentRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
-          <section className='funnel-landing-development-alerts l-section'>
-            <div className='l-container'>
+          <SectionWrapper className='funnel-landing-development-alerts'>
               <SectionIntro
                 badge={implementationAlerts.badge}
                 title={implementationAlerts.title}
@@ -93,11 +91,9 @@ export function FunnelLandingPageDevelopmentRenderer({
                   </AlertCard>
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
-          <section className='funnel-landing-development-paths l-section bg-base'>
-            <div className='l-container'>
+          <SectionWrapper className='funnel-landing-development-paths' background='bg-base'>
               <SectionIntro
                 badge={implementationPaths.badge}
                 title={implementationPaths.title}
@@ -115,8 +111,7 @@ export function FunnelLandingPageDevelopmentRenderer({
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
           <ProcessStepsSection
             badge={processSection.badge}

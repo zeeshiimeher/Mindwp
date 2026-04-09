@@ -1,4 +1,5 @@
 import { OperationalShiftCardsSection } from '@/components/reusable/sections/core/OperationalShiftCardsSection';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
 import {
   IconListCard,
@@ -64,8 +65,8 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
             cssPrefix='crm-automation-positioning'
           />
           {/* What You Can Do */}
-          <section className='crm-automation-use-cases l-section bg-alt'>
-            <div className='crm-automation-use-cases-container-1 l-container '>
+          <SectionWrapper className='crm-automation-use-cases' background='bg-alt'>
+            <div className='crm-automation-use-cases-container-1'>
               <SectionIntro
                 badge={useCasesSection.badge}
                 title={useCasesSection.title}
@@ -86,11 +87,11 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
                 ))}
               </div>
             </div>
-          </section>
+          </SectionWrapper>
 
           {/* Complete Feature Categories */}
-          <section className='crm-automation-features l-section'>
-            <div className='crm-automation-features-container-1 l-container l-max-w-7xl'>
+          <SectionWrapper className='crm-automation-features'>
+            <div className='crm-automation-features-container-1 l-max-w-7xl'>
               <SectionIntro
                 badge={featuresSection.badge}
                 title={featuresSection.title}
@@ -110,11 +111,11 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
                 ))}
               </div>
             </div>
-          </section>
+          </SectionWrapper>
 
           {/* Workflow Examples */}
-          <section className='crm-automation-workflows l-section bg-base'>
-            <div className='crm-automation-workflows-container-1 l-container '>
+          <SectionWrapper className='crm-automation-workflows' background='bg-base'>
+            <div className='crm-automation-workflows-container-1'>
               <SectionIntro
                 badge={workflowsSection.badge}
                 title={workflowsSection.title}
@@ -132,22 +133,19 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
                 ))}
               </div>
             </div>
-          </section>
+          </SectionWrapper>
 
-          <section className='crm-automation-governance l-section'>
-            <div className='l-container'>
+          <SectionWrapper className='crm-automation-governance'>
               <SectionIntro
                 badge={governance.badge}
                 title={governance.title}
                 description={governance.description}
                 cssPrefix={governance.cssPrefix}
               />
-            </div>
-          </section>
+          </SectionWrapper>
 
           {/* Qualification Section */}
-          <section className='crm-automation-qualification l-section bg-alt'>
-            <div className='l-container'>
+          <SectionWrapper className='crm-automation-qualification' background='bg-alt'>
               <SectionIntro
                 title={qualification.title}
                 description={qualification.description}
@@ -173,18 +171,15 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
                   </ul>
                 </div>
               </div>
-            </div>
-          </section>
-          <section className='crm-automation-connection l-section'>
-            <div className='l-container'>
+          </SectionWrapper>
+          <SectionWrapper className='crm-automation-connection'>
               <SectionIntro
                 badge={connection.badge}
                 title={connection.title}
                 description={connection.description}
                 cssPrefix={connection.cssPrefix}
               />
-            </div>
-          </section>
+          </SectionWrapper>
 
           <ServiceCTASection
             title={ctaTitle}

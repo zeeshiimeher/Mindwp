@@ -394,5 +394,11 @@ export const aiLeadHandlingPage = {
     title: 'See where AI response would actually help',
     description:
       'Tell us how calls, chat, and bookings are handled now. We will show you where response speed and handoff are breaking down.',
+      buttonText: 'Find Out How AI Lead Handling Works',
+      buttonHref: buildContactHref({
+        system: 'ai-lead-handling',
+        sourceType: 'service',
+        slug: 'ai-lead-handling',
+      }),
   },
 } satisfies ServicePageData;

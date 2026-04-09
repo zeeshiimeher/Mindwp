@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   buildRouteInventory,
   getInventoryMetadata,
@@ -202,7 +203,9 @@ function Section({
   children: ReactNode;
 }) {
   return (
-    <section
+    <SectionWrapper
+      padding='none'
+      container='none'
       style={{
         border: '1px solid #d6d3d1',
         borderRadius: 20,
@@ -222,7 +225,7 @@ function Section({
         ) : null}
       </div>
       {children}
-    </section>
+    </SectionWrapper>
   );
 }
 

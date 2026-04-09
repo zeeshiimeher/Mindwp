@@ -365,5 +365,11 @@ export const leadReactivationSystemPage = {
     title: 'Bring dormant opportunities back to life',
     description:
       'If old enquiries, stalled quotes, or past customers are sitting untouched, we can help structure a clearer reactivation workflow.',
+      buttonText: 'Start a Conversation',
+      buttonHref: buildContactHref({
+        system: 'revenue-growth',
+        sourceType: 'service',
+        slug: 'lead-reactivation-system',
+      }),
   },
 } satisfies ServicePageData;

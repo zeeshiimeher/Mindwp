@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button, type ButtonProps } from '@/components/reusable/single/Button';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
@@ -133,7 +134,7 @@ export function SplitHeroSection({
   };
 
   return (
-    <section className={cn(BLOCK, 'l-section', backgroundColor, cssPrefix)}>
+    <SectionWrapper className={cn(BLOCK, backgroundColor, cssPrefix)}>
       {/* Background decorations */}
       {decorations.map((decoration, index) => (
         <div
@@ -148,7 +149,7 @@ export function SplitHeroSection({
         />
       ))}
 
-      <div className={`${BLOCK}__container l-container`}>
+      <div className={`${BLOCK}__container`}>
         <div className={`${BLOCK}__grid`}>
           {/* Left: Content */}
           <div className={`${BLOCK}__content`}>
@@ -209,6 +210,6 @@ export function SplitHeroSection({
           <div className={`${BLOCK}__visual`}>{visualContent}</div>
         </div>
       </div>
-    </section>
+    </SectionWrapper>
   );
 }

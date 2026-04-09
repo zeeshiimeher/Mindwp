@@ -8,6 +8,7 @@ import {
   FeatureProcessStepsSection,
   FeatureUseCasesSection,
 } from '@/components/reusable/sections/features';
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { Badge } from '@/components/reusable/single/Badge';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
@@ -164,8 +165,7 @@ export default function ReputationRenderer() {
             backgroundColor='bg-base'
           />
 
-          <section className='l-section'>
-            <div className='l-container'>
+          <SectionWrapper>
               <div className='text-center mb-12'>
                 <Badge variant='primary' cssPrefix='mb-4'>
                   {testimonials.badge}
@@ -186,8 +186,7 @@ export default function ReputationRenderer() {
                   />
                 ))}
               </div>
-            </div>
-          </section>
+          </SectionWrapper>
 
           <FAQSection
             badge={faq.badge}
