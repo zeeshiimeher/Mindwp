@@ -1,76 +1,174 @@
-/**
- * SmartCTA
- *
- * Graph-aware CTA that adjusts CTA intensity by page type only.
- * Primary config comes from CTA_CONFIG and contact routing comes only from buildContactHref.
- */
+import { CheckCircle2 } from 'lucide-react';
+import type { ReactNode } from 'react';
 
-import { CTASection } from '@/components/reusable/single/CTASection';
+import { Button, type ButtonProps } from '@/components/reusable/single/Button';
 import { resolveCtaLabel } from '@/config/cta-labels';
-import { CTA_CONFIG, type CTAIntensity } from '@/config/ui-intelligence';
-import { buildContactHref, type ContactSourceType } from '@/lib/contact/contactHref';
-import type { ContentNodeType } from '@/lib/content-graph/types';
+import { buildContactHref } from '@/lib/contact/contactHref';
 
-// ── Types ────────────────────────────────────────────────────────────
+const BLOCK = 'cta-section';
 
-interface SmartCTAProps {
-  pageType: ContentNodeType;
-  /** Primary system key — appended to /contact as ?system= */
-  system?: string;
-  /** Content slug — used for full source path (e.g. blog/my-post) */
-  slug?: string;
-  /** Override the background color (Tailwind class) */
-  backgroundColor?: string;
-  /** Override the CTA title */
-  title?: string;
-  /** Override the CTA description */
-  description?: string;
-}
-
-// ── Intensity → Visual Mapping ───────────────────────────────────────
-
-const INTENSITY_STYLES: Record<CTAIntensity, { backgroundColor: string; cssPrefix: string }> = {
-  soft: { backgroundColor: 'blog-surface--muted', cssPrefix: 'cta-soft' },
-  mid: { backgroundColor: 'bg-gradient-primary', cssPrefix: 'cta-mid' },
-  strong: { backgroundColor: 'bg-gradient-secondary', cssPrefix: 'cta-strong' },
-};
-
-function getContactSourceType(pageType: ContentNodeType): ContactSourceType {
-  if (pageType === 'industry-detail' || pageType === 'industry-category') {
-    return 'industry';
+function hasRenderableText(value: ReactNode | undefined): boolean {
+  if (value === null || value === undefined || typeof value === 'boolean') {
+    return false;
   }
 
-  return pageType;
+  if (typeof value === 'string') {
+    return value.trim().length > 0;
+  }
+
+  if (Array.isArray(value)) {
+    return value.some(item => hasRenderableText(item));
+  }
+
+  return true;
 }
 
-// ── Component ────────────────────────────────────────────────────────
-
-export function SmartCTA({
-  pageType,
-  system,
-  slug,
-  backgroundColor: bgOverride,
-  title: titleOverride,
-  description: descOverride,
-}: SmartCTAProps) {
-  const config = CTA_CONFIG[pageType];
-  const style = INTENSITY_STYLES[config.intensity];
-  const resolvedSystem = system ?? 'smart-website-systems';
+function isActionableButton(action?: ButtonProps): boolean {
+  if (!action) {
+    return false;
+  }
 
   return (
-    <CTASection
-      title={titleOverride ?? config.title}
-      description={descOverride ?? config.description}
-      primaryAction={{
-        label: resolveCtaLabel(resolvedSystem),
-        href: buildContactHref({
-          system: resolvedSystem,
-          sourceType: getContactSourceType(pageType),
-          slug: slug ?? 'index',
-        }),
-      }}
-      backgroundColor={bgOverride ?? style.backgroundColor}
-      cssPrefix={style.cssPrefix}
-    />
+    Boolean(action.href || action.onClick) &&
+    (hasRenderableText(action.children) ||
+      hasRenderableText(action.label) ||
+      hasRenderableText(action.text))
   );
+}
+
+export interface SmartCTAProps {
+  system?: string;
+  source: string;
+  backgroundColor?: string;
+  cssPrefix?: string;
+  title?: string;
+  description?: string;
+  badge?: {
+    text: string;
+    icon?: ReactNode;
+    className?: string;
+  };
+  headingLevel?: 'h2' | 'h3';
+  primaryActionVariant?: ButtonProps['variant'];
+  secondaryAction?: ButtonProps;
+  metaItems?: Array<{ text: string }>;
+  wrapper?: 'section' | 'none';
+  includeContainer?: boolean;
+}
+
+export function deriveSmartCtaContextFromHref(href?: string) {
+  if (!href) {
+    return {
+      system: 'smart-website-systems',
+      source: 'global/navigation',
+    };
+  }
+
+  try {
+    const url = new URL(href, 'https://mindwp.local');
+    const system = url.searchParams.get('system') ?? 'smart-website-systems';
+    const source = url.searchParams.get('source') ?? 'global/navigation';
+
+    return { system, source };
+  } catch {
+    return {
+      system: 'smart-website-systems',
+      source: 'global/navigation',
+    };
+  }
+}
+
+export function SmartCTA({
+  system,
+  source,
+  backgroundColor = '',
+  cssPrefix = '',
+  title,
+  description,
+  badge,
+  headingLevel = 'h2',
+  primaryActionVariant = 'white',
+  secondaryAction,
+  metaItems = [],
+  wrapper = 'section',
+  includeContainer = true,
+}: SmartCTAProps) {
+  const resolvedSystem = system ?? 'smart-website-systems';
+  const resolvedTitle = title ?? 'Start a Conversation';
+  const primaryAction: ButtonProps = {
+    variant: primaryActionVariant,
+    label: resolveCtaLabel(resolvedSystem),
+    href: buildContactHref({
+      system: resolvedSystem,
+      source,
+    }),
+  };
+
+  if (resolvedTitle.trim().length === 0) {
+    throw new Error('SmartCTA requires a non-empty title.');
+  }
+
+  if (!isActionableButton(primaryAction) && !isActionableButton(secondaryAction)) {
+    throw new Error('SmartCTA requires at least one actionable primary or secondary action.');
+  }
+
+  const HeadingTag = headingLevel;
+  const rootClassName = [BLOCK, 'cta', cssPrefix].filter(Boolean).join(' ');
+  const panelClassName = [
+    'cta__panel',
+    'cta__content',
+    backgroundColor,
+    wrapper === 'none' && !includeContainer ? rootClassName : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  const panel = (
+    <div className={panelClassName}>
+      {badge && (
+        <div className='cta__animate-in'>
+          <span className={badge.className ?? 'badge badge-outline-white cta__badge'}>
+            {badge.icon}
+            <span>{badge.text}</span>
+          </span>
+        </div>
+      )}
+
+      <div className='cta__animate-in'>
+        <HeadingTag className='cta-heading'>{resolvedTitle}</HeadingTag>
+      </div>
+
+      {description && <p className='cta__text'>{description}</p>}
+
+      <div className='cta__actions'>
+        <Button {...primaryAction} />
+        {secondaryAction && <Button {...{ variant: 'outline-light', ...secondaryAction }} />}
+      </div>
+
+      {metaItems.length > 0 && (
+        <div className='cta__meta'>
+          {metaItems.map((item, index) => (
+            <div key={index} className='cta__meta-item'>
+              <CheckCircle2 className='cta__icon' />
+              <span>{item.text}</span>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+
+  const content = includeContainer ? (
+    <div className={wrapper === 'none' ? ['l-container', rootClassName].join(' ') : 'l-container'}>
+      {panel}
+    </div>
+  ) : (
+    panel
+  );
+
+  if (wrapper === 'none') {
+    return content;
+  }
+
+  return <section className={rootClassName}>{content}</section>;
 }

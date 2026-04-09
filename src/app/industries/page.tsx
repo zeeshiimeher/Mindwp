@@ -1,6 +1,6 @@
 import IndustriesLanding from '@/domains/industries/pages';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
-import { buildMetadata } from '@/lib/seo/metadata';
+import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
@@ -20,11 +20,7 @@ export async function generateMetadata() {
     throw new Error('[industries-index] invalid industry category path in contentGraph');
   }
 
-  return buildMetadata({
-    title: 'Industries',
-    description: `Browse ${categoryNodes.length} industry-specific pages and system setups.`,
-    path: '/industries',
-  });
+  return getInventoryMetadata('/industries');
 }
 
 export default function IndustriesPage() {

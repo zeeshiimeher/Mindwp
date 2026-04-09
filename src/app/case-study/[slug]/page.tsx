@@ -6,9 +6,9 @@ import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
 import type { CaseStudyTemplateSection } from '@/domains/case-studies/templates';
 import { CaseStudyTemplate } from '@/domains/case-studies/templates';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
+import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { getImage } from '@/lib/image-system/resolver';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
-import { buildMetadata } from '@/lib/seo/metadata';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
@@ -61,18 +61,7 @@ export async function generateMetadata({
   const resolved = await resolveCaseStudy(slug);
   if (!resolved) return {};
 
-  const { node, caseStudy } = resolved;
-
-  const title = caseStudy.metaTitle;
-  const description = caseStudy.metaDescription;
-  const canonicalPath = node.path;
-
-  return buildMetadata({
-    title,
-    description,
-    path: canonicalPath,
-    type: 'article',
-  });
+  return getInventoryMetadata(resolved.node.path);
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

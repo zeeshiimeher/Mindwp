@@ -9,7 +9,7 @@ import {
   getTopicHubSections,
 } from '@/domains/blog/api';
 import { BlogTopicTemplate } from '@/domains/blog/templates/BlogTopicTemplate';
-import { buildMetadata } from '@/lib/seo/metadata';
+import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 export const dynamicParams = false;
@@ -29,20 +29,10 @@ export async function generateMetadata({
   const meta = getTopicBySlug(topic);
 
   if (!meta) {
-    return buildMetadata({
-      title: 'Topic Not Found',
-      description: "The blog topic you're looking for doesn't exist.",
-      path: '/blog',
-      noindex: true,
-      nofollow: true,
-    });
+    return {};
   }
 
-  return buildMetadata({
-    title: `${meta.name} – Expert Insights & Resources`,
-    description: meta.description,
-    path: `/blog/topic/${meta.slug}`,
-  });
+  return getInventoryMetadata(`/blog/topic/${meta.slug}`);
 }
 
 export default async function Page({ params }: { params: Promise<{ topic: string }> }) {

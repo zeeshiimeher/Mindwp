@@ -23,8 +23,15 @@ export type ContactContext = {
 export type BuildContactHrefOptions = {
   baseHref?: string;
   system: string;
-  sourceType: ContactSourceType;
-  slug: string;
+  source?: string;
+  sourceType?: ContactSourceType;
+  slug?: string;
+};
+
+type NormalizedContactOptions = {
+  baseHref: string;
+  system: string;
+  source: string;
 };
 
 export function isGlobalNavigationContactContext(system: string, source: string) {
@@ -50,25 +57,35 @@ export function isValidContactSource(source: string) {
 function normalizeOptions(
   baseHrefOrOptions: string | BuildContactHrefOptions,
   maybeOptions?: BuildContactHrefOptions
-) {
+): NormalizedContactOptions {
   if (typeof baseHrefOrOptions === 'string') {
     if (!maybeOptions) {
       throw new Error('buildContactHref requires contact options when a baseHref is provided.');
     }
+    if (!maybeOptions.source && (!maybeOptions.sourceType || !maybeOptions.slug)) {
+      throw new Error('buildContactHref requires either source or sourceType plus slug.');
+    }
+
+    const source = maybeOptions.source ?? `${maybeOptions.sourceType}/${maybeOptions.slug}`;
 
     return {
       baseHref: baseHrefOrOptions,
       system: maybeOptions.system,
-      sourceType: maybeOptions.sourceType,
-      slug: maybeOptions.slug,
+      source,
     };
   }
+
+  if (!baseHrefOrOptions.source && (!baseHrefOrOptions.sourceType || !baseHrefOrOptions.slug)) {
+    throw new Error('buildContactHref requires either source or sourceType plus slug.');
+  }
+
+  const source =
+    baseHrefOrOptions.source ?? `${baseHrefOrOptions.sourceType}/${baseHrefOrOptions.slug}`;
 
   return {
     baseHref: baseHrefOrOptions.baseHref ?? CONTACT_PATH,
     system: baseHrefOrOptions.system,
-    sourceType: baseHrefOrOptions.sourceType,
-    slug: baseHrefOrOptions.slug,
+    source,
   };
 }
 
@@ -76,13 +93,11 @@ export function buildContactHref(
   baseHrefOrOptions: string | BuildContactHrefOptions,
   maybeOptions?: BuildContactHrefOptions
 ) {
-  const { baseHref, system, sourceType, slug } = normalizeOptions(baseHrefOrOptions, maybeOptions);
+  const { baseHref, system, source } = normalizeOptions(baseHrefOrOptions, maybeOptions);
 
   if (!baseHref.startsWith(CONTACT_PATH)) {
     return baseHref;
   }
-
-  const source = `${sourceType}/${slug}`;
 
   if (!isValidContactContext(system, source)) {
     throw new Error(`Invalid contact context: system="${system}" source="${source}"`);

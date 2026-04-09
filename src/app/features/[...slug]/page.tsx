@@ -8,8 +8,8 @@ import {
   renderFeaturePageBySlug,
 } from '@/domains/features/config';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
+import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
-import { buildMetadata } from '@/lib/seo/metadata';
 import { buildBreadcrumbSchema, buildSoftwareApplicationSchema } from '@/lib/seo/schema';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
@@ -62,16 +62,7 @@ export async function generateMetadata({
   const resolved = await resolveFeature(slug);
   if (!resolved) return {};
 
-  const featureSeo = getFeatureDataBySlug(resolved.slug).seo;
-  const metadataTitle = featureSeo?.title ?? resolved.featureNode.slug;
-  const metadataDescription = featureSeo?.description ?? '';
-  const metadataPath = resolved.featureNode.path;
-
-  return buildMetadata({
-    title: metadataTitle,
-    description: metadataDescription,
-    path: metadataPath,
-  });
+  return getInventoryMetadata(resolved.featureNode.path);
 }
 
 const formatFeatureTitle = (slug: string) =>

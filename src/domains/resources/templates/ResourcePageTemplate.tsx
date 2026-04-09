@@ -27,8 +27,8 @@ import { ResourceTakeawaysSection } from '@/components/reusable/sections/resourc
 import { ResourceTemplatesSection } from '@/components/reusable/sections/resources/ResourceTemplatesSection';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
-import { CTASection } from '@/components/reusable/single/CTASection';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import {
   Breadcrumb,
@@ -339,13 +339,11 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
         const ctaData = extractCTAContent(section);
         return ctaData.heading ? (
           <div key={`cta-${index}`} id='resource-cta'>
-            <CTASection
+            <SmartCTA
+              system={primarySystem}
+              source={`resource/${currentSlug}`}
               title={ctaData.heading}
               description={ctaData.content}
-              primaryAction={{
-                label: ctaData.finalButtonText,
-                href: decorateContactHref(ctaData.finalButtonUrl),
-              }}
               metaItems={ctaData.features?.map(f => ({ text: f.text }))}
             />
           </div>
@@ -530,14 +528,12 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
             .map((section, index) => {
               const ctaData = extractCTAContent(section);
               return ctaData.heading ? (
-                <CTASection
+                <SmartCTA
                   key={`cta-${index}`}
+                  system={primarySystem}
+                  source={`resource/${currentSlug}`}
                   title={ctaData.heading}
                   description={ctaData.content}
-                  primaryAction={{
-                    label: ctaData.finalButtonText,
-                    href: decorateContactHref(ctaData.finalButtonUrl),
-                  }}
                   metaItems={ctaData.features?.map(f => ({ text: f.text }))}
                 />
               ) : null;

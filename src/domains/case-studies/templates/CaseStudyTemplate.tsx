@@ -5,7 +5,6 @@ import React from 'react';
 
 import {
   CaseStudyBusinessImpactSection,
-  CaseStudyCTASection,
   CaseStudyDeliverablesSection,
   CaseStudyFAQSection,
   CaseStudyFeaturesSection,
@@ -19,6 +18,7 @@ import {
   CaseStudyWorkflowsSection,
 } from '@/components/reusable/sections/case-studies';
 import { TestimonialCard } from '@/components/reusable/single';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { primaryCta } from '@/config/primaryCta';
 import { buildContactHref } from '@/lib/contact/contactHref';
@@ -522,13 +522,11 @@ export function CaseStudyTemplate({
       <SmartRelatedSection slug={metadata.slug} type='case-study' />
 
       {ctaSection && (
-        <CaseStudyCTASection
+        <SmartCTA
+          system={metadata.systems[0] ?? 'smart-website-systems'}
+          source={`case-study/${metadata.slug}`}
           title={ctaSection.heading}
           description={ctaSection.body}
-          primaryAction={{
-            label: ctaSection.primaryActionLabel ?? resolvedCtaPrimaryButtonLabel,
-            href: ctaSection.primaryActionHref ?? resolvedCtaPrimaryButtonHref,
-          }}
           metaItems={ctaSection.metaItems ?? resolvedCtaMetaItems}
           backgroundColor='bg-gradient-primary'
         />

@@ -5,17 +5,17 @@ const SMART_CTA_CASES = [
   {
     testId: 'smart-website-cta',
     system: 'smart-website-systems',
-    slug: 'cta-label-contract-smart-website',
+    source: 'service/cta-label-contract-smart-website',
   },
   {
     testId: 'ai-lead-handling-cta',
     system: 'ai-lead-handling',
-    slug: 'cta-label-contract-ai-lead-handling',
+    source: 'service/cta-label-contract-ai-lead-handling',
   },
   {
     testId: 'revenue-growth-cta',
     system: 'revenue-growth',
-    slug: 'cta-label-contract-revenue-growth',
+    source: 'service/cta-label-contract-revenue-growth',
   },
 ] as const;
 
@@ -29,9 +29,8 @@ export default function CtaLabelContractPage() {
         {SMART_CTA_CASES.map(testCase => (
           <section key={testCase.testId} data-testid={testCase.testId}>
             <SmartCTA
-              pageType='service'
               system={testCase.system}
-              slug={testCase.slug}
+              source={testCase.source}
               title={`Contract case: ${testCase.system}`}
               description='Deterministic SmartCTA contract validation.'
             />

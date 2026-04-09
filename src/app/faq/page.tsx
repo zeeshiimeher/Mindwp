@@ -1,16 +1,14 @@
 import JsonLd from '@/components/system/JsonLd';
-import { buildMetadata } from '@/lib/seo/metadata';
+import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { buildFAQSchema } from '@/lib/seo/schema';
 import { FAQPage } from '@/screens/FAQPage';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-export const metadata = buildMetadata({
-  title: 'FAQ',
-  description: 'Answers to common questions about Smart Websites and implementation.',
-  path: '/faq',
-});
+export async function generateMetadata() {
+  return getInventoryMetadata('/faq');
+}
 
 const faqSchema = buildFAQSchema({
   questions: [

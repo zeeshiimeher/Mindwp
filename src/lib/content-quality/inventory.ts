@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+
 import { getallTopicSlugs, getTopicBySlug } from '@/domains/blog/api';
 import { BLOG_CATEGORY_REGISTRY } from '@/domains/blog/categoryRegistry';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
@@ -6,7 +8,8 @@ import { CANONICAL_SYSTEMS, CANONICAL_TOPICS } from '@/lib/content-graph/canonic
 import { getStructuredContentGraph } from '@/lib/content-graph/registry';
 import type { ContentGraphNode, ContentNodeType } from '@/lib/content-graph/types';
 import { normalizePath } from '@/lib/seo/config';
-import { DEFAULT_OG_IMAGE_PATH } from '@/lib/seo/metadata';
+import { getMetadataBase, SITE_NAME, toAbsoluteUrl } from '@/lib/seo/config';
+import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_PATH } from '@/lib/seo/metadata';
 
 type InventoryKind =
   | ContentNodeType
@@ -39,6 +42,8 @@ export interface RouteInventoryEntry {
   systems: string[];
   industries: string[];
 }
+
+const routeInventoryPromise = new Map<string, Promise<RouteInventoryEntry[]>>();
 
 type StaticRouteSeed = {
   key: string;
@@ -351,6 +356,65 @@ export async function buildRouteInventory(): Promise<RouteInventoryEntry[]> {
   }
 
   return Array.from(deduped.values()).sort((left, right) => left.path.localeCompare(right.path));
+}
+
+async function getRouteInventory() {
+  const cacheKey = 'default';
+  const cached = routeInventoryPromise.get(cacheKey);
+
+  if (cached) {
+    return cached;
+  }
+
+  const next = buildRouteInventory();
+  routeInventoryPromise.set(cacheKey, next);
+  return next;
+}
+
+export async function getInventoryEntry(path: string) {
+  const normalizedPath = normalizePath(path);
+  const entries = await getRouteInventory();
+  return entries.find(entry => entry.path === normalizedPath) ?? null;
+}
+
+export function inventoryEntryToMetadata(entry: RouteInventoryEntry): Metadata {
+  const title = entry.path === '/' ? { absolute: entry.title } : entry.title;
+
+  return {
+    metadataBase: getMetadataBase(),
+    title,
+    description: entry.description,
+    alternates: {
+      canonical: entry.canonical,
+    },
+    openGraph: {
+      title: entry.openGraph.title,
+      description: entry.openGraph.description,
+      url: toAbsoluteUrl(entry.openGraph.url),
+      siteName: SITE_NAME,
+      images: [DEFAULT_OG_IMAGE],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: entry.openGraph.title,
+      description: entry.openGraph.description,
+      images: [DEFAULT_OG_IMAGE_PATH],
+    },
+    robots: {
+      index: entry.robots.index,
+      follow: entry.robots.follow,
+    },
+  };
+}
+
+export async function getInventoryMetadata(path: string): Promise<Metadata> {
+  const entry = await getInventoryEntry(path);
+  return entry ? inventoryEntryToMetadata(entry) : {};
+}
+
+export async function getPrimaryNavigationEntries(paths: readonly string[]) {
+  const entries = await Promise.all(paths.map(path => getInventoryEntry(path)));
+  return entries.filter((entry): entry is RouteInventoryEntry => entry != null);
 }
 
 export async function buildSitemapRoutePaths(): Promise<string[]> {

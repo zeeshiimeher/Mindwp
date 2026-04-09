@@ -3,9 +3,8 @@ import { notFound } from 'next/navigation';
 
 import JsonLd from '@/components/system/JsonLd';
 import { getAllCategorySlugs, getCategoryBySlug } from '@/domains/blog/api';
-import { BLOG_CATEGORY_NOT_FOUND_SEO } from '@/domains/blog/config';
 import { BlogCategoryTemplate } from '@/domains/blog/templates/BlogCategoryTemplate';
-import { buildMetadata } from '@/lib/seo/metadata';
+import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 export const dynamicParams = false;
@@ -29,18 +28,10 @@ export async function generateMetadata({
   const category = resolveCategory(categorySlug);
 
   if (!category) {
-    return buildMetadata(BLOG_CATEGORY_NOT_FOUND_SEO);
+    return {};
   }
 
-  const title = `${category.name} Articles`;
-  const description = category.description;
-  const canonicalPath = `/blog/category/${category.slug}`;
-
-  return buildMetadata({
-    title,
-    description,
-    path: canonicalPath,
-  });
+  return getInventoryMetadata(`/blog/category/${category.slug}`);
 }
 
 export default async function Page({ params }: { params: Promise<{ categorySlug: string }> }) {

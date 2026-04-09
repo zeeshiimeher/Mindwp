@@ -1,16 +1,9 @@
-import { ArrowRight, Clock, TrendingUp } from 'lucide-react';
+import { Clock, TrendingUp } from 'lucide-react';
 
-import { CTASection } from '@/components/reusable/single';
 import { CaseStudyCard } from '@/components/reusable/single';
 import { Badge } from '@/components/reusable/single/Badge';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { getCaseStudiesTemplateMetadata } from '@/domains/case-studies/data';
-import { buildContactHref } from '@/lib/contact/contactHref';
-
-const caseStudiesLandingContactHref = buildContactHref({
-  system: 'smart-website-systems',
-  sourceType: 'page',
-  slug: 'case-studies',
-});
 
 export function CaseStudiesPage() {
   const studies = getCaseStudiesTemplateMetadata();
@@ -116,15 +109,12 @@ export function CaseStudiesPage() {
         </section>
 
         {/* CTA */}
-        <CTASection
+        <SmartCTA
+          system='smart-website-systems'
+          source='page/case-studies'
           title='Want Results Like This for Your Business?'
           description="Book a free 20-minute call and we'll walk you through what would actually move the needle for your business—no pressure, no sales scripts."
-          primaryAction={{
-            variant: 'white',
-            label: 'Find Your Best System',
-            href: caseStudiesLandingContactHref,
-            icon: ArrowRight,
-          }}
+          primaryActionVariant='white'
           metaItems={[
             { text: 'Honest advice' },
             { text: 'No long-term contracts' },

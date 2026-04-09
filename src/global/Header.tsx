@@ -2,6 +2,7 @@ import type { AnchorHTMLAttributes, ReactNode } from 'react';
 
 import { PrimaryCta } from '@/components/PrimaryCta';
 import { buildGlobalContactHref } from '@/lib/contact/contactHref';
+import { getPrimaryNavigationEntries } from '@/lib/content-quality/inventory';
 
 import { HeaderMobileMenuIsland } from './HeaderMobileMenuIsland';
 import { Logo } from './Logo';
@@ -19,16 +20,21 @@ function InternalLink({ href, children, ...props }: InternalLinkProps) {
   );
 }
 
-export function Header() {
-  const globalContactHref = buildGlobalContactHref();
+const PRIMARY_NAV_PATHS = [
+  '/services',
+  '/features',
+  '/industries',
+  '/case-studies',
+  '/blog',
+] as const;
 
-  const navLinks = [
-    { label: 'Services', to: '/services' },
-    { label: 'Features', to: '/features' },
-    { label: 'Industries', to: '/industries' },
-    { label: 'Case Studies', to: '/case-studies' },
-    { label: 'Blog', to: '/blog' },
-  ];
+export async function Header() {
+  const globalContactHref = buildGlobalContactHref();
+  const inventoryEntries = await getPrimaryNavigationEntries(PRIMARY_NAV_PATHS);
+  const navLinks = inventoryEntries.map(entry => ({
+    label: entry.title.replace(/^MindWP\s+/i, ''),
+    to: entry.path,
+  }));
 
   return (
     <header className='header sticky top-0 z-50 bg-white border-b shadow-sm'>

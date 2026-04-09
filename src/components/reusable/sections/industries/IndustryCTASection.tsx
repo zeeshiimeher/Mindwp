@@ -1,13 +1,42 @@
 import React from 'react';
 
-import { CTASection } from '@/components/reusable/single/CTASection';
+import type { CTASectionProps } from '@/components/reusable/single/CTASection';
+import { deriveSmartCtaContextFromHref, SmartCTA } from '@/components/system/SmartCTA';
 
 /**
  * Domain wrapper for `CTASection` with unchanged props.
  * Keeps industry page composition naming consistent.
  */
-export type IndustryCTASectionProps = React.ComponentProps<typeof CTASection>;
+export type IndustryCTASectionProps = CTASectionProps;
 
-export function IndustryCTASection(props: IndustryCTASectionProps) {
-  return <CTASection {...props} />;
+export function IndustryCTASection({
+  title,
+  description,
+  primaryAction,
+  secondaryAction,
+  metaItems,
+  cssPrefix,
+  backgroundColor,
+  headingLevel,
+  wrapper,
+  includeContainer,
+}: IndustryCTASectionProps) {
+  const context = deriveSmartCtaContextFromHref(primaryAction?.href);
+
+  return (
+    <SmartCTA
+      system={context.system}
+      source={context.source}
+      title={title}
+      description={description}
+      secondaryAction={secondaryAction}
+      metaItems={metaItems}
+      cssPrefix={cssPrefix}
+      backgroundColor={backgroundColor}
+      headingLevel={headingLevel}
+      wrapper={wrapper}
+      includeContainer={includeContainer}
+      primaryActionVariant={primaryAction?.variant}
+    />
+  );
 }

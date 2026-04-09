@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import JsonLd from '@/components/system/JsonLd';
 import { categories } from '@/domains/resources/api';
 import ResourceCategoryTemplate from '@/domains/resources/templates/ResourceCategoryTemplate';
-import { buildMetadata } from '@/lib/seo/metadata';
+import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 export const dynamicParams = false;
@@ -28,24 +28,10 @@ export async function generateMetadata({
   const category = resolveCategory(categorySlug);
 
   if (!category) {
-    return buildMetadata({
-      title: 'Category Not Found',
-      description: "The resource category you're looking for doesn't exist.",
-      path: '/resources',
-      noindex: true,
-      nofollow: true,
-    });
+    return {};
   }
 
-  const title = `${category.label} Resources`;
-  const description = category.description;
-  const canonicalPath = `/resources/category/${category.slug}`;
-
-  return buildMetadata({
-    title,
-    description,
-    path: canonicalPath,
-  });
+  return getInventoryMetadata(`/resources/category/${category.slug}`);
 }
 
 export default async function Page({ params }: { params: Promise<{ categorySlug: string }> }) {

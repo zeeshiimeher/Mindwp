@@ -6,8 +6,8 @@ import { BLOG_AUTHORS } from '@/domains/blog/api';
 import { BLOG_POSTS } from '@/domains/blog/registry';
 import { BlogPostTemplate } from '@/domains/blog/templates/BlogPostTemplate';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
+import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { getImage } from '@/lib/image-system/resolver';
-import { buildMetadata } from '@/lib/seo/metadata';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
@@ -53,17 +53,7 @@ export async function generateMetadata({
     return {};
   }
 
-  const title = post.seo.title;
-  const description = post.seo.description;
-  const canonicalPath = post.seo.canonical || blogNode.path;
-
-  return buildMetadata({
-    title,
-    description,
-    keywords: post.seo.keywords,
-    path: canonicalPath,
-    type: 'article',
-  });
+  return getInventoryMetadata(post.seo.canonical || blogNode.path);
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

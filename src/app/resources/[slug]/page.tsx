@@ -7,8 +7,8 @@ import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
 import ResourcePageTemplate from '@/domains/resources/templates/ResourcePageTemplate';
 import type { ResourceFAQItem } from '@/domains/resources/templates/types';
 import type { ResourceSection } from '@/domains/resources/types';
+import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
-import { buildMetadata } from '@/lib/seo/metadata';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
@@ -63,31 +63,7 @@ export async function generateMetadata({
     return {};
   }
 
-  const { node, resource } = resolved;
-
-  const title = resource.seo.title;
-  const description = resource.seo.description;
-  const canonicalPath = node.path;
-
-  const metadata = buildMetadata({
-    title,
-    description,
-    path: canonicalPath,
-    type: 'article',
-    noindex: false,
-    nofollow: false,
-  });
-
-  const openGraph = resource.seo.openGraph;
-
-  return {
-    ...metadata,
-    openGraph: {
-      ...metadata.openGraph,
-      title: openGraph?.title ?? title,
-      description: openGraph?.description ?? description,
-    },
-  };
+  return getInventoryMetadata(resolved.node.path);
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

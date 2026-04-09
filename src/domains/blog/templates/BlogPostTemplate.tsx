@@ -26,9 +26,9 @@ import {
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { Callout } from '@/components/reusable/single/Callout';
-import { CTASection } from '@/components/reusable/single/CTASection';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
 import { primaryCta } from '@/config/primaryCta';
@@ -531,13 +531,11 @@ export function BlogPostTemplate({
         <SmartRelatedSection slug={slug} type='blog' />
 
         {ctaSection ? (
-          <CTASection
+          <SmartCTA
+            system={systems?.[0] ?? 'smart-website-systems'}
+            source={`blog/${slug}`}
             title={ctaSection.heading}
             description={ctaSection.content}
-            primaryAction={{
-              label: ctaSection.buttonText,
-              href: ctaSection.buttonUrl,
-            }}
             cssPrefix='blog-cta'
             backgroundColor='blog-surface--muted'
           />

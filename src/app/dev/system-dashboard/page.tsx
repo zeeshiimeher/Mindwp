@@ -1,23 +1,21 @@
 import type { ReactNode } from 'react';
 
-import { buildRouteInventory, type RouteInventoryEntry } from '@/lib/content-quality/inventory';
+import {
+  buildRouteInventory,
+  getInventoryMetadata,
+  type RouteInventoryEntry,
+} from '@/lib/content-quality/inventory';
 import {
   getSystemIssues,
   readSystemDashboardData,
   type SystemIssue,
 } from '@/lib/dev/system-report';
-import { buildMetadata } from '@/lib/seo/metadata';
 
 export const dynamic = 'force-dynamic';
 
-export const metadata = buildMetadata({
-  title: 'System Dashboard',
-  description:
-    'Unified internal control plane for system health, issue diagnostics, topic authority, and inventory visibility.',
-  path: '/dev/system-dashboard',
-  noindex: true,
-  nofollow: true,
-});
+export async function generateMetadata() {
+  return getInventoryMetadata('/dev/system-dashboard');
+}
 
 const CONTENT_KINDS = new Set([
   'service',

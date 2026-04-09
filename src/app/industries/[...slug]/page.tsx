@@ -5,8 +5,8 @@ import JsonLd from '@/components/system/JsonLd';
 import RelatedContentSection from '@/components/system/RelatedContentSection';
 import { getIndustryDataByPath, renderIndustryPageByPath } from '@/domains/industries/config';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
+import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { getRelatedContent } from '@/lib/graph/query';
-import { buildMetadata } from '@/lib/seo/metadata';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
@@ -98,24 +98,9 @@ export async function generateMetadata({
   const { slug } = await params;
   const resolved = await resolveIndustry(slug);
   if (!resolved) return {};
-  const { industry, node } = resolved;
+  const { node } = resolved;
 
-  const metadata = buildMetadata({
-    title: industry.seo.title,
-    description: industry.seo.description,
-    keywords: industry.seo.keywords,
-    path: node.path,
-  });
-
-  if (industry.seo.openGraph) {
-    metadata.openGraph = {
-      ...metadata.openGraph,
-      title: industry.seo.openGraph.title ?? metadata.openGraph?.title,
-      description: industry.seo.openGraph.description ?? metadata.openGraph?.description,
-    };
-  }
-
-  return metadata;
+  return getInventoryMetadata(node.path);
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string[] }> }) {

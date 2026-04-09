@@ -8,8 +8,8 @@ import {
   isServiceSlug,
   renderServicePageBySlug,
 } from '@/domains/services/config';
+import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
-import { buildMetadata } from '@/lib/seo/metadata';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 import { getContentGraph } from '../../../lib/content-graph/registry';
@@ -72,15 +72,8 @@ export async function generateMetadata({
   const { slug } = await params;
   const resolved = resolveService(slug);
   if (!resolved) return {};
-  const seo = resolved.serviceData.seo;
-  const canonicalPath = seo.canonical;
 
-  return buildMetadata({
-    title: seo.title,
-    description: seo.description,
-    path: canonicalPath,
-    type: 'website',
-  });
+  return getInventoryMetadata(resolved.serviceNode.path);
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string[] }> }) {

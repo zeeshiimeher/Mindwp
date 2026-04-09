@@ -15,7 +15,6 @@ import {
   Button,
   CaseStudyCard,
   ChecklistRow,
-  CTASection,
   DetailedStepCard,
   ErrorBoundary,
   FAQSection,
@@ -24,7 +23,7 @@ import {
   ProblemSolutionSplitCard,
   SectionIntro,
 } from '@/components/reusable/single';
-import { getCaseStudiesTemplateMetadata } from '@/domains/case-studies/data';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { homepageData } from '@/domains/home/data/homepage';
 import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
@@ -38,7 +37,20 @@ function buildHomepageContactHref(href: string) {
   });
 }
 
-export default function Homepage() {
+type HomepageCaseStudy = {
+  slug: string;
+  industryLabel: string;
+  client: string;
+  location: string;
+  metaDescription: string;
+  publishDate: string;
+};
+
+export default function Homepage({
+  featuredCaseStudies,
+}: {
+  featuredCaseStudies: HomepageCaseStudy[];
+}) {
   const implementationSectionData = homepageData.implementationSection;
   const faqData = homepageData.faq;
 
@@ -91,7 +103,7 @@ export default function Homepage() {
               <VisibilityAlignmentSection />
             </section>
             <section id='case-studies' className='implementation-results l-section bg-alt'>
-              <CaseStudiesSection />
+              <CaseStudiesSection featuredCaseStudies={featuredCaseStudies} />
             </section>
 
             <ImplementationExamplesSection />
@@ -295,14 +307,13 @@ function SmartWebsiteFrameworkSection() {
       </div>
 
       <div className='cta-container'>
-        <CTASection
+        <SmartCTA
+          system='smart-website-systems'
+          source='page/home'
           title={smartWebsiteFrameworkData.cta.title}
           description={smartWebsiteFrameworkData.cta.description}
-          primaryAction={{
-            label: smartWebsiteFrameworkData.cta.primaryAction.label,
-            href: buildHomepageContactHref(smartWebsiteFrameworkData.cta.primaryAction.href),
-          }}
           headingLevel='h3'
+          primaryActionVariant='white'
           backgroundColor='bg-gradient-primary'
           wrapper='none'
           includeContainer={false}
@@ -351,14 +362,13 @@ function ClientJourneySection() {
         </div>
 
         <div className='cta-container'>
-          <CTASection
+          <SmartCTA
+            system='smart-website-systems'
+            source='page/home'
             title={clientJourneyData.cta.title}
             description={clientJourneyData.cta.description}
-            primaryAction={{
-              label: clientJourneyData.cta.primaryAction.label,
-              href: buildHomepageContactHref(clientJourneyData.cta.primaryAction.href),
-            }}
             headingLevel='h3'
+            primaryActionVariant='white'
             backgroundColor='cta--primary bg-gradient-primary'
             wrapper='none'
             includeContainer={false}
@@ -643,10 +653,8 @@ function IndustriesSection() {
   );
 }
 
-function CaseStudiesSection() {
+function CaseStudiesSection({ featuredCaseStudies }: { featuredCaseStudies: HomepageCaseStudy[] }) {
   const caseStudiesData = homepageData.caseStudies;
-
-  const featuredCaseStudies = getCaseStudiesTemplateMetadata().slice(0, 3);
 
   return (
     <div className='implementation-results-container-1 l-container'>
@@ -742,13 +750,12 @@ function FooterCTASection() {
   const ctaData = homepageData.cta;
 
   return (
-    <CTASection
+    <SmartCTA
+      system='smart-website-systems'
+      source='page/home'
       title={ctaData.footer.title}
       description={ctaData.footer.description}
-      primaryAction={{
-        label: ctaData.footer.primaryAction.label,
-        href: buildHomepageContactHref(ctaData.footer.primaryAction.href),
-      }}
+      primaryActionVariant='white'
       metaItems={ctaData.footer.metaItems}
       cssPrefix='footer-cta'
       backgroundColor='bg-gradient-primary'

@@ -1,12 +1,11 @@
 import { type AnchorHTMLAttributes, type ReactNode } from 'react';
 import { ArrowRight, BookOpen, MessageSquare } from 'lucide-react';
 
-import { CTASection } from '@/components/reusable/single';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
-import { categories, RESOURCE_HUB_DATA, resources } from '@/domains/resources/api';
-import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates';
+import { RESOURCE_HUB_DATA } from '@/domains/resources/api';
 import { buildContactHref } from '@/lib/contact/contactHref';
 
 import { ResourcesGuidesIsland } from './ResourcesGuidesIsland';
@@ -14,6 +13,25 @@ import { ResourcesGuidesIsland } from './ResourcesGuidesIsland';
 type InternalLinkProps = Omit<AnchorHTMLAttributes<HTMLAnchorElement>, 'href'> & {
   href: string;
   children: ReactNode;
+};
+
+type ResourceCategoryItem = {
+  id: string;
+  name: string;
+  description: string;
+  icon: React.ComponentType<{ className?: string; 'aria-hidden'?: 'true' | boolean }>;
+  count: number;
+  href: string;
+};
+
+type ResourceItem = {
+  title: string;
+  url: string;
+  categoryLabel: string;
+  excerpt: string;
+  freshnessBadge?: string;
+  dateLabel: string;
+  dateText: string;
 };
 
 function InternalLink({ href, children, ...props }: InternalLinkProps) {
@@ -24,57 +42,19 @@ function InternalLink({ href, children, ...props }: InternalLinkProps) {
   );
 }
 
-export function ResourcesHub() {
+export function ResourcesHub({
+  categoryItems,
+  resourceItems,
+}: {
+  categoryItems: ResourceCategoryItem[];
+  resourceItems: ResourceItem[];
+}) {
   const hubData = RESOURCE_HUB_DATA;
   const resourcesHubContactHref = (href: string) =>
     buildContactHref(href, {
       system: 'smart-website-systems',
       sourceType: 'page',
       slug: 'resources',
-    });
-
-  const categoryItems = categories.map(category => {
-    const count = resources.filter(resource => resource.category === category.id).length;
-
-    return {
-      id: category.slug,
-      name: category.label,
-      description: category.description,
-      icon: category.iconComponent,
-      count,
-      href: `/resources/category/${category.slug}`,
-    };
-  });
-
-  const resourceItems = resources
-    .slice()
-    .sort((a, b) => {
-      const aDate = Date.parse(`${a.updatedAt ?? a.publishedAt}T00:00:00Z`);
-      const bDate = Date.parse(`${b.updatedAt ?? b.publishedAt}T00:00:00Z`);
-      return bDate - aDate;
-    })
-    .map(resource => {
-      const categoryLabel =
-        categories.find(c => c.id === resource.category)?.label ?? String(resource.category);
-
-      const lastChanged = resource.updatedAt ?? resource.publishedAt;
-      const isUpdated = Boolean(resource.updatedAt);
-      const freshnessBadge = isRecentIsoDate(lastChanged, 60)
-        ? isUpdated
-          ? 'Updated'
-          : 'New'
-        : undefined;
-      const dateLabel = isUpdated ? 'Updated' : 'Published';
-
-      return {
-        title: resource.title,
-        url: resource.seo.canonical,
-        categoryLabel,
-        excerpt: resource.description,
-        freshnessBadge,
-        dateLabel,
-        dateText: formatIsoDate(lastChanged),
-      };
     });
 
   return (
@@ -194,14 +174,12 @@ export function ResourcesHub() {
         </section>
 
         {/* CTA Section */}
-        <CTASection
+        <SmartCTA
+          system='smart-website-systems'
+          source='page/resources'
           title={hubData.cta.title}
           description={hubData.cta.description}
-          primaryAction={{
-            variant: 'white',
-            label: hubData.cta.primaryAction.label,
-            href: resourcesHubContactHref(hubData.cta.primaryAction.href),
-          }}
+          primaryActionVariant='white'
           cssPrefix='footer-cta'
           backgroundColor='bg-gradient-primary'
         />

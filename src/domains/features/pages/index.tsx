@@ -1,19 +1,12 @@
 import { ArrowRight } from 'lucide-react';
 
-import { CTASection } from '@/components/reusable/single';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
 import { FEATURE_REGISTRY } from '@/domains/features/registry';
-import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
-
-const featuresLandingContactHref = buildContactHref({
-  system: 'smart-website-systems',
-  sourceType: 'page',
-  slug: 'features',
-});
 
 // Features overview landing
 export function FeaturesLanding() {
@@ -88,14 +81,12 @@ export function FeaturesLanding() {
           </section>
 
           {/* CTA Section */}
-          <CTASection
+          <SmartCTA
+            system='smart-website-systems'
+            source='page/features'
             title='Need More Information?'
             description='For details or clarification about any feature, contact support or review the documentation. Navigation is provided for reference only.'
-            primaryAction={{
-              label: 'Contact Support',
-              href: featuresLandingContactHref,
-              icon: ArrowRight,
-            }}
+            primaryActionVariant='white'
             cssPrefix='footer-cta'
             backgroundColor='bg-gradient-primary'
           />

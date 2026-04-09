@@ -1,14 +1,12 @@
-import { buildMetadata } from '@/lib/seo/metadata';
+import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import TermsConditions from '@/screens/TermsConditions';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-export const metadata = buildMetadata({
-  title: 'Terms & Conditions',
-  description: 'Terms and conditions for using MindWP website and services.',
-  path: '/terms',
-});
+export async function generateMetadata() {
+  return getInventoryMetadata('/terms');
+}
 
 export default function Page() {
   return <TermsConditions />;

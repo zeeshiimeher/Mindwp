@@ -1,14 +1,12 @@
-import { buildMetadata } from '@/lib/seo/metadata';
+import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import CookiePolicy from '@/screens/CookiePolicy';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-export const metadata = buildMetadata({
-  title: 'Cookie Policy',
-  description: 'How MindWP uses cookies and similar technologies across this website.',
-  path: '/cookies',
-});
+export async function generateMetadata() {
+  return getInventoryMetadata('/cookies');
+}
 
 export default function Page() {
   return <CookiePolicy />;

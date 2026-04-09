@@ -1,19 +1,18 @@
+import { getCaseStudiesTemplateMetadata } from '@/domains/case-studies/data';
 import { homepageData } from '@/domains/home/data/homepage';
-import { buildMetadata } from '@/lib/seo/metadata';
+import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import Homepage from '@/screens/Homepage';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
 
-export const metadata = buildMetadata({
-  title: homepageData.seo.title,
-  description: homepageData.seo.description,
-  keywords: homepageData.seo.keywords,
-  path: '/',
-});
+export async function generateMetadata() {
+  return getInventoryMetadata('/');
+}
 
 export default function Home() {
   const { schema } = homepageData.seo;
+  const featuredCaseStudies = getCaseStudiesTemplateMetadata().slice(0, 3);
 
   return (
     <>
@@ -33,7 +32,7 @@ export default function Home() {
           }}
         />
       ) : null}
-      <Homepage />
+      <Homepage featuredCaseStudies={featuredCaseStudies} />
     </>
   );
 }

@@ -13565,7 +13565,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/single/index.ts",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/screens/Homepage.tsx",
+    "representativeUsageFilePath": "",
     "representativePageUrl": "/",
     "props": [
       {
@@ -14392,7 +14392,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "badge",
-        "type": "{ text: string; icon?: ReactNode; className?: string; } | undefined",
+        "type": "{ text: string; icon?: import(\"/Users/zeeshansadiq/Projects/Mindwp/node_modules/@types/react/index\").ReactNode; className?: string; } | undefined",
         "optional": true,
         "description": "Optional badge displayed above the heading"
       },
@@ -14428,13 +14428,13 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "primaryAction",
-        "type": "ButtonProps | undefined",
+        "type": "import(\"/Users/zeeshansadiq/Projects/Mindwp/src/components/reusable/single/Button\").ButtonProps | undefined",
         "optional": true,
         "description": "Primary call-to-action button configuration"
       },
       {
         "name": "secondaryAction",
-        "type": "ButtonProps | undefined",
+        "type": "import(\"/Users/zeeshansadiq/Projects/Mindwp/src/components/reusable/single/Button\").ButtonProps | undefined",
         "optional": true,
         "description": "Optional secondary call-to-action button configuration"
       },
