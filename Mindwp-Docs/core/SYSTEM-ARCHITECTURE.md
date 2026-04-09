@@ -16,14 +16,14 @@
                        │ rules flow down
 ┌──────────────────────▼──────────────────────────────┐
 │  CONTENT GRAPH                                      │
-│  211 nodes · 7 types · intent-based routing         │
+│  211 nodes · 7 types · metadata-driven relationships │
 │  src/lib/content-graph/ · authority-map.json         │
 └──────────────────────┬──────────────────────────────┘
                        │ edges resolve to
 ┌──────────────────────▼──────────────────────────────┐
 │  PRESENTATION                                       │
-│  Next.js pages · BEM components · CTA engine        │
-│  src/app/ · src/components/ · src/lib/ui/            │
+│  Next.js pages · BEM components · SmartCTA           │
+│  src/app/ · src/components/ · src/config/            │
 └──────────────────────┬──────────────────────────────┘
                        │ images from
 ┌──────────────────────▼──────────────────────────────┐
@@ -73,7 +73,9 @@ Primary CTA everywhere: **"Start a Conversation" → /contact**
 4. **Snapshots are read-only.** Generated files are never manually edited.
 5. **ContentNodeType is the only type system.** No derived runtime content types.
 6. **BEM everywhere.** Inline styles only for approved shadcn/ui and SVG exceptions.
-7. **SYSTEM-CONTRACT.md governs behavior.** All conversion, CTA, and routing behavior defined there.
+7. **CONVERSION-SYSTEM.md governs CTA behavior.** SmartCTA is the only CTA rendering path.
+8. **inventory.ts is the single source of truth for route metadata.** All page metadata resolves from inventory.
+9. **Components are pure renderers.** No data fetching, filtering, slicing, or graph queries inside components.
 
 ---
 
@@ -82,8 +84,11 @@ Primary CTA everywhere: **"Start a Conversation" → /contact**
 | Area | Location |
 |---|---|
 | Content graph types | `src/lib/content-graph/types.ts` |
-| CTA engine | `src/lib/ui/ctaEngine.ts` |
-| CTA resolver | `src/lib/ui/ctaResolver.ts` |
+| Route metadata (single source) | `src/lib/content-quality/inventory.ts` |
+| SmartCTA (only CTA component) | `src/components/system/SmartCTA.tsx` |
+| CTA labels (per-system) | `src/config/cta-labels.ts` |
+| CTA intensity + copy (per-pageType) | `src/config/ui-intelligence.ts` |
+| Contact href builder | `src/lib/contact/contactHref.ts` |
 | Domain registries | `src/domains/*/registry.ts` |
 | Validator framework | `scripts/core/validate-all.mjs` |
 | System sync | `scripts/core/system-sync.mjs` |

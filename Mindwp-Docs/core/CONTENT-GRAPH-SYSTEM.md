@@ -214,25 +214,24 @@ Each node MUST define:
 - slug (REQUIRED)
 - systems[] (primary required)
 - topics[]
-- industries[] (optional depending type)
-- intent (REQUIRED)
+- industries[] (optional depending on type)
 
-The graph layer may store multiple systems in `systems[]`, but every node must still have exactly one primary system for conversion use.
+The graph layer may store multiple systems in `systems[]`, but every node must still have exactly one primary system for CTA resolution via `SmartCTA`.
 
 ## SOURCE FIELD
 
 - source is NOT stored manually
 - generated from normalized `{type}/{slug}`
-- used by conversion system only
-- `industry-detail` and `industry-category` normalize to `industry` for conversion source generation
+- used by CTA system (`SmartCTA` → `buildContactHref`) only
+- `industry-detail` and `industry-category` normalize to `industry` for source generation
 
 ## PRIMARY SYSTEM RULE
 
 - exactly 1 primary system required
-- secondary systems allowed for graph
-- CTA uses ONLY primary system
+- secondary systems allowed for graph relationship resolution
+- CTA uses ONLY primary system (passed to `SmartCTA` as `system` prop)
 
-Cross-reference: CTA input model, URL contract, and routing are defined in **CONVERSION-SYSTEM.md**.
+Cross-reference: CTA rendering, URL contract, and SmartCTA spec are defined in **CONVERSION-SYSTEM.md**.
 
 ---
 

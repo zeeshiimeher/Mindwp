@@ -11,6 +11,7 @@
 **Status:** Governing Document
 **Authority Level:** Execution Authority (Behavior Layer)
 **Created:** 2026-04-08
+**Updated:** 2026-04-09
 
 ---
 
@@ -22,7 +23,8 @@
 - All contextual CTA href values MUST resolve to `/contact?system={system}&source={type}/{slug}`
 - No inline forms anywhere in the system
 - `/contact` is the only form entry point
-- SmartRelatedSection remains the only graph-driven linking system
+- `SmartCTA` is the only CTA rendering component in the system
+- No component may construct its own CTA section, resolve its own label, or build its own contact href
 
 ---
 
@@ -32,50 +34,37 @@
 
 | Field | Required | Rule |
 |---|---|---|
-| `system` | YES | Canonical primary system value |
+| `system` | YES | Canonical primary system value from `canonical.ts` |
 | `source` | YES | Generated from normalized source type + slug: `{type}/{slug}` |
-| `intent` | YES | Must match the locked intent enum |
-| `pageType` | YES | Runtime page classification used for validation and presentation resolution |
 
-CTA construction is invalid if any required input is missing or malformed.
+CTA construction is invalid if either required input is missing or malformed.
 
-### Intent Enum (Locked)
+### SmartCTA Contract (Locked)
 
-- `problem-aware`
-- `system-aware`
-- `solution-aware`
-- `decision-ready`
+`SmartCTA` is the ONLY component that renders CTAs. It accepts:
 
-### CTA Resolution Logic
-
-CTA resolution is deterministic and runs in this order:
-
-1. Read the canonical primary `system` from page metadata.
-2. Read the page `slug` and normalized source `type`.
-3. Generate `source` from `{type}/{slug}`.
-4. Validate `intent` against the locked enum.
-5. Validate `pageType` against the runtime page classification.
-6. Resolve CTA `intensity` from `intent`.
-7. Resolve CTA presentation from `intent` and `pageType`.
-8. Read CTA label from `CTA_CONFIG`.
-9. Construct the final href as `/contact?system={system}&source={type}/{slug}`.
-
-Resolver constraints:
-
-- `ctaResolver` resolves intensity and presentation only
-- `ctaResolver` does NOT generate labels
-- Labels come only from `CTA_CONFIG`
-- Intent affects intensity and presentation only
-- Intent does NOT override label selection
-
-### Intent To Intensity Mapping (Locked)
-
-| Intent | Intensity | Presentation Effect |
+| Prop | Required | Rule |
 |---|---|---|
-| `problem-aware` | `soft` | Context-building, lower visual pressure |
-| `system-aware` | `mid` | System-explaining, clearer solution framing |
-| `solution-aware` | `mid` | Proof-oriented, stronger implementation framing |
-| `decision-ready` | `strong` | Direct action emphasis |
+| `pageType` | YES | `ContentNodeType` — determines intensity and presentation copy |
+| `system` | YES | Canonical primary system — resolves label and contact href |
+| `slug` | YES | Content slug — used for source path generation |
+
+Internally, `SmartCTA`:
+
+1. Calls `resolveCtaLabel(system)` from `src/config/cta-labels.ts` to get the label.
+2. Calls `buildContactHref(system, type, slug)` to construct the href.
+3. Reads `CTA_CONFIG[pageType]` from `src/config/ui-intelligence.ts` to resolve intensity, title, and description.
+
+### CTA Label Resolution (Locked)
+
+- `CTA_LABEL_MAP` in `src/config/cta-labels.ts` is the only source of system-specific labels.
+- Default label is `"Start a Conversation"`.
+- Labels are per-system only. No per-page custom labels.
+
+### CTA Intensity Resolution (Locked)
+
+- `CTA_CONFIG` in `src/config/ui-intelligence.ts` maps each `ContentNodeType` to `CTAIntensity` (`soft`, `mid`, `strong`) and presentation copy.
+- Intensity is determined by page type, not by page-specific overrides.
 
 ### URL Contract (Strict)
 
@@ -102,8 +91,6 @@ Rules:
 
 - Missing `system` -> FAIL (invalid CTA)
 - Missing `source` -> FAIL (invalid CTA)
-- Missing `intent` -> FAIL (invalid CTA)
-- Missing `pageType` -> FAIL (invalid CTA)
 - Invalid source `type` -> FAIL
 - Invalid canonical `system` -> FAIL
 - Fallback is NOT allowed
@@ -150,17 +137,19 @@ The form MUST capture:
 
 ### CTA Validation Rules
 
-- Every CTA must include `system` and `source`
+- Every CTA must use `SmartCTA` — no other CTA rendering path is allowed
+- Every CTA must include `system` and `source` query params
 - No CTA may exist without query params
 - No alternate conversion routes are allowed
 - No CTA may bypass `/contact`
+- No domain data file may contain `buttonText`, `buttonHref`, or `ctaLabel` fields
+- No component may call `buildContactHref()` directly — that is SmartCTA's responsibility
 
 ### Metadata Requirement
 
 Every page MUST define:
 
-- `system` (primary)
-- `intent`
+- `system` (primary canonical value)
 - `slug`
 
 ### Source Generation Rule
@@ -192,12 +181,24 @@ On pages with multiple CTAs:
 
 ---
 
-## 6. ENFORCEMENT
+## 6. FORBIDDEN
+
+- Domain data files containing `buttonText`, `buttonHref`, or `ctaLabel` fields
+- Service renderers, templates, or sections constructing `<CTASection>` directly
+- Any component calling `buildContactHref()` directly
+- Hardcoded CTA labels anywhere in templates, domain data, or components
+- `RelatedSectionCTA` or any wrapper that bypasses `SmartCTA`
+- Custom CTA labels per-page (labels are per-system only, from `CTA_LABEL_MAP`)
+
+---
+
+## 7. ENFORCEMENT
 
 - Conversion behavior must be documented only here
 - Structural CTA placement rules belong to CONTENT-SYSTEM-ARCHITECTURE.md
 - Metadata and source-generation requirements belong to CONTENT-GRAPH-SYSTEM.md
-- Current system reality is reported in SYSTEM-TRUTH.md
+- `validate-cta-label-contract` enforces label alignment
+- `validate-conversion-contract` enforces URL contract compliance
 
 ---
 

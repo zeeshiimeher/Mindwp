@@ -2,7 +2,9 @@
 
 Rules derived from execution decisions. Enforced by validators.
 
-**Behavioral authority:** SYSTEM-CONTRACT.md governs all conversion behavior, CTA routing, intent mapping, and data contracts. Rules in this document must not contradict the contract.
+**Behavioral authority:** CONVERSION-SYSTEM.md governs all conversion behavior, CTA routing, and data contracts. Rules in this document must not contradict the contract.
+
+**Updated:** 2026-04-09
 
 ---
 
@@ -110,7 +112,7 @@ This system follows STRICT execution boundaries.
 Do NOT:
 - Redesign content structure
 - Modify blueprint formats
-- Change CTA logic (governed by SYSTEM-CONTRACT.md)
+- Change CTA logic (governed by CONVERSION-SYSTEM.md)
 - Alter content graph logic
 - Introduce new abstractions
 - Rename canonical values
@@ -118,6 +120,113 @@ Do NOT:
 Do ONLY:
 - Create content using existing patterns
 - Follow metadata rules strictly
+
+---
+
+## 7. Inventory as Single Source of Truth
+
+`src/lib/content-quality/inventory.ts` is the single source of truth for all route metadata.
+
+Rules:
+
+- Every `page.tsx` resolves its metadata from inventory via `buildMetadata(routePath)`.
+- `STATIC_ROUTE_SEEDS` in inventory defines metadata for static pages.
+- Domain registries feed into inventory via the content graph. Domain data does NOT feed directly into page metadata.
+- No page may define its own `title`, `description`, or `openGraph` values outside inventory.
+- No parallel route registries (e.g., `staticPages.ts`). One registry: inventory.
+- Templates receive content, not metadata. Metadata is resolved before template rendering.
+- Navigation links are derived from inventory (indexable routes). No hardcoded nav arrays.
+
+Forbidden:
+
+- Pages importing metadata from domain data files, hardcoded objects, or local constants.
+- Any `generateMetadata()` or `export const metadata` containing literal strings.
+- Duplicate metadata definitions across domain config and inventory.
+
+---
+
+## 8. UI Purity
+
+Components are pure renderers. They accept props and return JSX.
+
+Rules:
+
+- All data fetching happens in `page.tsx` or a dedicated server-side data layer function called by `page.tsx`.
+- All filtering, sorting, slicing, and grouping happens in the data layer before props reach a component.
+- Components receive final, ready-to-render arrays.
+- Components receive explicit visual directives (icon name, color token, gradient class). No inference from string content.
+
+Forbidden:
+
+- Components calling graph query functions (`getRelatedContent()`, `getServicesBySystem()`, etc.).
+- Components calling domain data functions (`getCaseStudiesByIndustry()`, etc.).
+- `Math.random()`, `sessionStorage`, `localStorage`, or any non-deterministic logic in components.
+- Icon/color/gradient resolution from content strings.
+- `Array.filter()`, `Array.sort()`, `Array.slice()` inside component render paths.
+- Components importing from `src/domains/*/data/` or `src/lib/content-graph/`.
+
+---
+
+## 9. SmartCTA Mandate
+
+`SmartCTA` is the only CTA rendering component in the system (governed by CONVERSION-SYSTEM.md).
+
+Rules:
+
+- All CTAs render through `SmartCTA`.
+- `SmartCTA` receives `pageType`, `system`, and `slug` as props.
+- Labels come from `CTA_LABEL_MAP` only.
+- Intensity comes from `CTA_CONFIG` only.
+- Contact href is built internally by `SmartCTA`.
+
+Forbidden:
+
+- Domain data files containing `buttonText`, `buttonHref`, or `ctaLabel`.
+- Components constructing `<CTASection>` directly.
+- Components calling `buildContactHref()` directly.
+- Hardcoded CTA labels in templates, domain data, or components.
+
+---
+
+## 10. Graph Execution
+
+The content graph resolves relationships at build time via singleton initialization.
+
+Rules:
+
+- Graph query functions are called in `page.tsx` server-side data preparation or generator scripts. Never in components.
+- Related content arrays are fully resolved, sorted, and sliced before passing as props.
+- `ensureGraphInitialized()` runs once per build via singleton cache. Runtime singleton initialization is allowed.
+- Graph edges come from `canonical.ts` registries and domain registries.
+
+Forbidden:
+
+- Components calling graph query functions.
+- Runtime relationship inference (e.g., keyword matching to derive links).
+- Dynamic graph mutation or edge creation outside the canonical registry system.
+- `Math.random()` or non-deterministic behavior in graph resolution.
+
+---
+
+## 11. Content Ownership
+
+Content lives in exactly one place per type.
+
+| Content Type | Canonical Location |
+|---|---|
+| Service/Industry/CaseStudy/Blog/Resource/Feature data | `src/domains/*/data/{slug}.ts` |
+| Route metadata (title, description, OG, robots) | `inventory.ts` |
+| CTA labels | `src/config/cta-labels.ts` |
+| CTA intensity + copy | `src/config/ui-intelligence.ts` |
+| Navigation links | Derived from inventory |
+| Canonical values | `src/lib/content-graph/canonical.ts` |
+
+Forbidden:
+
+- Duplicate content definitions across layers.
+- Homepage data in screen-level files. Homepage sections use domain data files.
+- FAQ content hardcoded in `page.tsx` or component files. FAQ data lives in domain data.
+- Navigation links hardcoded in Nav or Footer components.
 - Run validators after every batch
 
 If any task requires structural change → STOP and escalate instead of implementing.
