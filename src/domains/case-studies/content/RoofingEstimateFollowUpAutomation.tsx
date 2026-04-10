@@ -163,7 +163,7 @@ function buildRoofingEstimateFollowUpAutomation(): CaseStudyData {
   return {
     slug: 'roofing-estimate-follow-up-automation',
     title: 'Roofing Estimate Follow-Up Automation',
-    metaTitle: 'Why Roofing Estimates Go Unanswered (And the Follow-Up System That Fixed It)',
+    metaTitle: 'Roofing Estimate Follow-Up | 18% to 35% Close Rate',
     metaDescription:
       'How a Leeds roofing company increased their estimate close rate from 18% to 35% using automated CRM follow-up sequences and pipeline visibility.',
     industryCategory: 'home-services',

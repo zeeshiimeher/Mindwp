@@ -2,6 +2,24 @@
 
 This document is part of the MindWP Core Architecture System.
 
+## REQUIRED READING ORDER
+
+1. **SYSTEM-CORE.md** (mandatory — read first)
+2. **This document** (FOUNDATION-AND-POSITIONING.md)
+
+## AUTHORITY NOTICE
+
+This document does NOT override SYSTEM-CORE.md.
+
+This document governs **brand identity, positioning, and CTA tone**. It does not define:
+- Service map or service roles → see SYSTEM-CORE.md §2
+- Page boundaries → see SYSTEM-CORE.md §4
+- Terminology per service → see SYSTEM-CORE.md §5
+- System flow → see SYSTEM-CORE.md §3
+- Tool positioning → see SYSTEM-CORE.md §7
+
+If this document conflicts with SYSTEM-CORE.md → SYSTEM-CORE.md wins.
+
 Authoritative Sources:
 
 - FOUNDATION-AND-POSITIONING.md
@@ -20,8 +38,8 @@ Rules:
 ---
 
 <!-- WHERE THIS FITS -->
-<!-- Purpose: Brand identity, positioning, service tiers — #1 in authority stack -->
-<!-- Depends on: nothing (this is the root authority) -->
+<!-- Purpose: Brand identity, positioning, CTA tone — #1 in authority stack -->
+<!-- Depends on: SYSTEM-CORE.md (root authority) -->
 <!-- Used by: all content, CTA engine, service architecture -->
 
 # FOUNDATION & POSITIONING — MASTER
@@ -45,23 +63,7 @@ Do not modify architecture based on runtime placeholders.
 
 ## 1. Core Identity
 
-MindWP is a systems-first digital infrastructure consultancy
-for established service businesses.
-
-We do not sell pages.
-We do not sell tools.
-We do not sell traffic.
-We do not sell hype.
-
-We design and implement connected digital systems that improve:
-- Enquiry handling
-- Follow-up reliability
-- Operational clarity
-- Conversion efficiency
-- Internal visibility
-
-We prepare businesses for scale.
-We do not sell scale.
+> Full identity definition → see SYSTEM-CORE.md §1.1
 
 Tone principles:
 - Calm
@@ -167,337 +169,24 @@ Clarity always takes priority over conceptual terminology.
 
 If anything conflicts with this document — this document wins.
 
-## CONTENT WRITING PLAYBOOK (LOCKED ADDENDUM)
-
-This playbook governs how all public-facing website copy is written, rewritten, and maintained across the full MindWP site.
-
-It was established during the homepage copy rewrite and the 32-page industry content rewrite.
-
-All future content creation, updates, and rewrites must follow these rules. AI agents must read and apply this section before writing or editing any page content.
-
----
-
-### 1. Voice & Tone
-
-Write as if explaining something useful to a service business owner in a normal conversation.
-
-Rules:
-
-- Calm, clear, confident — never excited, never salesy
-- Sound like a person, not a brand
-- No consultant jargon, no agency hype, no AI-sounding polish
-- No filler phrases, no padding, no throat-clearing
-- If a sentence needs rereading, it is too complicated — rewrite it
-- Do not try to sound clever or impressive — just explain the idea clearly
-
-The test:
-Would a capable business owner understand this sentence quickly on first read without pausing?
-
-If not, rewrite it.
-
----
-
-### 2. Banned Vocabulary
-
-These words and phrases were actively removed during the homepage rewrite and must not be reintroduced.
-
-| Removed | Replace With | Reason |
-|---|---|---|
-| routing / enquiry routing | sent to the right person | too technical |
-| operational flow | how enquiries flow | abstract |
-| operational integration | fits your process | abstract |
-| infrastructure / infrastructure layer | foundation / what sits inside | jargon |
-| entry points / intentional entry points | clear ways to get in touch | vague |
-| refinement capability | easy to improve over time | consultant-speak |
-| deliberate implementation | calm, careful delivery | pretentious |
-| structural visibility | pages search engines can understand | abstract |
-| alignment / visibility alignment | search and discovery / search and local discovery | vague |
-| connected architecture | clear structure | too technical |
-| core operational components | what is inside a Smart Website | insider language |
-| operational cadence | day to day | jargon |
-| service hierarchy | how your services are organised | abstract |
-| system chain | how everything connects | insider language |
-
-Rule:
-If a word appears in the Removed column, the sentence must be rewritten using plain language. Do not mechanically swap one word for another — rewrite the full sentence naturally.
-
----
-
-### 3. Approved Vocabulary Patterns
-
-These are the preferred word choices established during the rewrites.
-
-- "enquiries" — not "leads" in public copy unless contextually natural
-- "follow-up" — not "workflows" or "sequences"
-- "the right person" — not "routing" or "assignment logic"
-- "your team" — not "operators" or "staff"
-- "get in touch" — not "entry points" or "submission pathways"
-- "search and maps" — not "visibility alignment"
-- "day to day" — not "operational cadence"
-- "how your business actually works" — not "operational model"
-- "set up" — not "configured" or "provisioned"
-- "connected" — not "integrated" (unless describing a genuine technical integration)
-- "improve" — not "optimise" (unless SEO-specific)
-- "clear" — not "structured" (unless referring to concrete page or site structure)
-- "handles" or "supports" — not "facilitates" or "enables"
-
-These patterns must be applied consistently across homepage, service pages, industry pages, feature pages, resource pages, blog posts, case studies, and CTAs.
-
----
-
-### 4. Sentence Construction Rules
-
-- Prefer short sentences: 8 to 18 words average
-- One idea per sentence
-- Active voice by default
-- Subject-verb-object order
-- No curly or smart apostrophes — use straight ASCII apostrophes only (U+0027)
-- Contractions are allowed but not overused — prefer "do not" over "don't" when space permits
-- No em-dashes without surrounding spaces
-- Avoid starting consecutive sentences with the same word
-- Do not stack abstract nouns ("structural operational alignment visibility")
-- Do not use semicolons in public-facing copy — use two sentences instead
-
----
-
-### 5. CTA Language Standards
-
-These CTA patterns are locked across the site.
-
-Primary CTA: "Start a Conversation" pointing to /contact
-Secondary CTA: "Explore the Approach" pointing to the relevant service page
-
-Banned CTA language:
-- "Book a Call"
-- "Get Started Now"
-- "Claim Your Free Audit"
-- "Schedule a Demo"
-- "Unlock Your Growth"
-- Any CTA that creates urgency or pressure
-
-CTA supporting text rule:
-Explain what happens next, not why they should act now.
-
-Example:
-"We will look at how your website handles search and enquiries today, and show you what could work better."
-
-CTA intensity must match page priority:
-- Primary Lane pages: direct consultation CTA
-- Expansion Lane pages: consultation plus approach exploration
-- Coverage Lane pages: exploration-style CTA (learn more / explore systems / review approach)
-
----
-
-### 5a. Conversion Funnel Architecture (LOCKED)
-
-MindWP uses a conversation-first conversion model. The system must work fully without free resources or lead magnets.
-
-**Primary funnel (ACTIVE):**
-Content → Understanding → Pre-CTA → CTA → Conversation
-
-**Optional funnel (FUTURE / DISABLED BY DEFAULT):**
-Content → Free Resource → Email → Nurture → CTA → Conversation
-
-**Conversion priority order:**
-1. Conversation (PRIMARY) — direct consultation path
-2. Pre-CTA (SUPPORT) — exploration-stage guidance
-3. Free Resource (OPTIONAL) — only if resource exists, never required
-
-**CTA hierarchy:**
-1. Soft CTA (exploration — no commitment, no forms, no downloads)
-2. Primary CTA (conversation — consultation/walkthrough/discussion)
-3. Optional resource CTA (only if resource exists — never on its own)
-
-### Soft CTA Rules
-
-Soft CTAs guide users forward without commitment.
-
-Allowed soft CTA patterns:
-- "See How This System Works"
-- "Understand Your Setup"
-- "Explore Your Options"
-
-Soft CTA constraints:
-- Must link to deeper content (resource, case study, or service)
-- Must NOT link to /contact
-- Must link to content determined by intent classification — no fixed funnel order
-- No forms, no downloads, no commitment required
-
-Soft CTA placement:
-
-| Page Type    | Placement             |
-|-------------|----------------------|
-| Blog         | mid + before end      |
-| Resource     | mid                   |
-| Case Study   | before final CTA      |
-| Service      | before main CTA       |
-
-### Primary CTA Friction Rules
-
-Primary CTA copy must:
-- Include a headline, supporting line, and expectation of what happens next
-- Remove urgency and hype
-- Add clarity about the conversation
-
-Example:
-"Tell us about your setup. We'll show you how this system can work for you."
-
-### Conversion System Strict Rules
-
-- System MUST work without free resources
-- No fake lead magnets
-- No forced downloads
-- No UX clutter
-- Free resource layer (if enabled) must NOT affect core funnel
-- This is NOT a lead magnet site — this is a system-driven conversion engine
-
----
-
-### 5b. Conversion Validation System (LOCKED)
-
-The conversion validation system ensures every page supports the conversion flow WITHOUT forcing UI changes or breaking the build.
-
-**Purpose:**
-Identify weak pages and guide optimization decisions. This is an audit layer, not an enforcement layer.
-
-**Core Signals:**
-
-| Signal              | What it detects                               |
-|---------------------|-----------------------------------------------|
-| hasCTA              | Page has at least one CTA or service path     |
-| hasServiceLink      | Page connects to a monetization page          |
-| hasJourneyNextStep  | Page leads to the next step in the funnel     |
-
-**Validation Rules:**
-1. Validation is non-blocking — warnings only, never fails the build
-2. Used for: identifying weak pages, guiding optimization priorities
-3. NOT used to: force CTA injection, modify UI, break builds
-
-**Severity Model:**
-- `warning` — needs improvement (current: all rules)
-- Future phases may upgrade critical warnings to errors via STRICT_MODE
-
-**Principle:**
-The system highlights problems. Humans decide when and how to fix them.
-
-**Implementation:**
-- Validator: `scripts/validators/validate-conversion-contract.mjs`
-- Integrated into: `scripts/core/validate-all.mjs` as final validator
-- STRICT_MODE flag: `false` (safe), upgradeable to `true` in future phases
-
-**CTA Scan Scope:**
-- Conversion contract validation (`validate-conversion-contract.mjs`) scans CTA routing and context in `src/domains/`, `src/screens/`, and contact form handling.
-- **Excluded from scan:** `src/lib/dev/`, `src/lib/devtools/`, and `src/lib/ui-intelligence.ts` (canonical CTA_CONFIG source).
-- Dev-tool files contain instructional hint strings (e.g. "Add a 'Get a Consultation' button") that are not production CTA definitions and must not trigger violations.
-
----
-
-### 6. Section Heading Standards
-
-Headings must be plain English that a business owner understands immediately.
-
-Preferred patterns:
-- "What makes a Smart Website different" — not "The Smart Website Difference Framework"
-- "Common Questions" — not "Frequently Asked Questions"
-- "Who we work best with" — not "Industry Vertical Overview"
-- "What is inside a Smart Website" — not "Core Operational Components"
-- "How your search visibility grows over time" — not "Visibility Alignment Timeline"
-- "From first enquiry to reliable follow-up" — not "Client Journey Operational Flow"
-
-Rule:
-If a heading contains a word from the Banned Vocabulary table, rewrite it.
-
----
-
-### 7. Industry Page Content Rules
-
-These rules were established during the rewrite of all 32 industry pages.
-
-Opening pattern:
-- Open every section with a real operational problem the business owner recognises
-- Use specific daily situations: missed calls, booking confusion, seasonal demand, review gaps
-
-Content structure:
-- Describe the workflow before describing the solution
-- Use specific job types, pain points, and situations — not abstract concepts
-- Before-and-after comparisons show operational shift, not feature lists
-- System layers describe what happens, not what the technology is called
-
-FAQ rules:
-- Every FAQ answer must be grounded in real daily operations
-- Answers must be short and practical — not paragraph-length marketing copy
-- Questions must be things a business owner would actually ask
-
-Industry page tone:
-- Calm and consultative
-- Problem-first, solution-second
-- Sound like someone who understands the industry, not someone selling to it
-
----
-
-### 8. Homepage Section Content Rules
-
-These rules were established during the homepage copy rewrite.
-
-- Hero must answer "what is in it for me" in the first sentence
-- Every section must earn its place by saying something the previous section did not
-- Value props must be outcome-focused ("Built to bring in the right enquiries") not feature-focused ("Advanced enquiry routing system")
-- FAQ answers must be concise and conversational
-- Footer CTA: low-pressure, consultative tone
-- All supporting text must explain what happens, not why the reader should care
-
----
-
-### 9. Encoding and Technical Rules for Content Edits
-
-When editing content in TypeScript data files:
-
-- Use straight apostrophes (U+0027) only — never curly or smart quotes (U+2018, U+2019, U+201C, U+201D)
-- Only text values may be modified — TypeScript object structure must remain unchanged
-- Keys, data contracts, render logic, and component structure must not be touched
-- Sections must not be added or removed unless explicitly instructed
-- Icons and imports must not be changed during a content-only edit unless specifically requested
-
-Validation after every content edit batch:
-- Run: npx tsc --noEmit
-- Run: npm run graph:validate
-- Both must pass before the batch is considered complete
-
----
-
-### 10. Content Quality Self-Check
-
-Before finalising any page rewrite or new page, apply these checks:
-
-1. Would a real business owner understand every sentence without rereading?
-2. Does it sound like a calm human explaining something useful?
-3. Does it avoid sounding like AI-generated sales copy?
-4. Does it explain the idea clearly without trying to sound clever?
-5. Are there any words from the Banned Vocabulary table?
-6. Are CTAs using the approved language?
-7. Are headings in plain English?
-8. Has the Approved Vocabulary Patterns list been followed?
-
-If any check fails, rewrite before publishing.
-
-## Clarity-First Rule
-
-### Core Principle
-
-Clarity must come before persuasion, curiosity, or explanation.
-
-### Rules
-
-- User must understand WHAT this is early
-- Avoid delayed definitions
-- Avoid layered abstraction before clarity
-- Reduce cognitive effort
-
-### Anti-Patterns
-
-- Explaining before defining
-- Using internal/system language early
-- Forcing users to "figure it out"
+## CONTENT WRITING PLAYBOOK (REFERENCE)
+
+> **The Content Writing Playbook has been extracted to its own standalone document.**
+> See: **CONTENT-WRITING-PLAYBOOK.md** for the full writing system including:
+> - Voice & tone rules
+> - Banned vocabulary & approved patterns
+> - Sentence construction rules
+> - CTA language standards
+> - Section heading standards
+> - Industry page content rules
+> - Homepage section content rules
+> - Encoding & technical rules
+> - Content quality self-check
+> - Clarity-first rule
+>
+> This document (FOUNDATION-AND-POSITIONING.md) retains authority over **brand identity, positioning, and CTA tone**.
+> Writing execution rules are governed by CONTENT-WRITING-PLAYBOOK.md.
+> Service map, boundaries, and terminology are governed by SYSTEM-CORE.md.
 
 ---
 
@@ -515,21 +204,7 @@ We ensure businesses can handle traffic properly.
 
 Infrastructure before growth.
 
-## CATEGORY COMMUNICATION LAW (LOCKED ADDENDUM)
-
-MindWP uses a hybrid positioning model in public-facing messaging.
-
-Layer 1 — Company Category:
-- Systems-first digital infrastructure consultancy for service businesses
-
-Layer 2 — Flagship Framework:
-- Smart Website Systems
-
-Rule:
-The category explains what MindWP is.
-The flagship framework explains how MindWP is most clearly understood and sold.
-
-Application law:
+## CATEGORY COMMUNICATION LAW (LOCKED ADDENDUM)\n\n> Category and flagship framework definitions → see SYSTEM-CORE.md §1.2\n\nApplication law (tone and messaging guidance, retained here):
 - Homepage and positioning copy may define the company with infrastructure language.
 - Smart Website Systems remains the named flagship framework and primary strategic gravity.
 - Supporting systems must not replace the company category or compete with Smart Website gravity.
@@ -544,59 +219,25 @@ We do NOT:
 - Offer random digital services
 
 
-Service hierarchy (non-negotiable — Gravity Model):
+> Service hierarchy, tiers, and gravity model → see SYSTEM-CORE.md §2.2
 
-- Smart Website Systems → Primary Category Anchor
-- Supporting Revenue Systems → Secondary Layer (SEO, AI, CRM, Reputation, Growth)
-- Industry Pages → Context Layer (must reinforce Smart Website first)
-- Case Studies → Proof Layer
-- Tier 2 Modules → Specialized System Layer
-- Tier 3 Implementation Pages → Execution Layer (WordPress, Rebuilds, Automation Setup)
-- Resources → Authority Layer
-- Blog → Entry Layer
-
-Content ecosystem flow, case study placement rules, and content relationship & exposure rules are defined in **CONTENT-SYSTEM-ARCHITECTURE.md**. Do not duplicate them here.
-
-No horizontal equal-weight presentation of systems is permitted.
-Smart Website must retain structural dominance across navigation, homepage, and services architecture.
-
-If any content type starts replacing another,
-correct immediately.
+Content ecosystem flow, case study placement rules, and content relationship & exposure rules are defined in **CONTENT-SYSTEM-ARCHITECTURE.md**.
 
 ## SEO CONTROLLED EXCEPTION LAW (LOCKED)
 
-Smart Website Systems remains the primary strategic framework and conceptual gravity of the platform.
+> Full SEO exception rule → see SYSTEM-CORE.md §2.2 (SEO exception)
 
-However, Local SEO is permitted as a controlled acquisition exception.
+Messaging rule (tone guidance, retained here as CTA tone authority):
 
-Reason:
-Direct search demand for SEO services is real. Preventing SEO-led pages would unnecessarily block high‑intent discovery. At the same time, allowing multiple services to lead equally would flatten the positioning model.
-
-Therefore the following rule applies:
-
-Acquisition hierarchy:
-
-Smart Website Systems → Primary framework and category anchor  
-Local SEO Systems → Controlled search-entry service  
-Other systems → Supporting operational layers
-
-Application rules:
-
-- Smart Website must remain the dominant framework across homepage, navigation, and core positioning.
-- Local SEO pages may lead when capturing direct-intent search queries.
-- Local SEO must never be presented as an equal pillar to Smart Website.
-- Every SEO page must explicitly teach that SEO performs best when the website foundation already makes sense.
-- SEO must be framed as a refinement layer built on top of a Smart Website foundation.
-- Supporting systems must never appear horizontally equal to Smart Website.
-
-Messaging rule:
-
-SEO amplifies clarity.  
+SEO amplifies clarity.
 SEO cannot fix confusion.
 
 If any SEO page begins positioning SEO as a standalone growth solution detached from website infrastructure, positioning drift has occurred and must be corrected immediately.
 
 ## 3. Smart Website Infrastructure Definition
+
+> Full service definitions, roles, and boundaries → see SYSTEM-CORE.md §2
+> System flow → see SYSTEM-CORE.md §3
 
 Smart Website Infrastructure is the primary framework.
 
@@ -606,20 +247,6 @@ It is NOT:
 - A campaign
 - A SaaS tool
 
-It IS:
-A connected website foundation aligning:
-
-Traffic
-→ Website
-→ Enquiry Capture
-→ Qualification
-→ Follow-Up
-→ Tracking
-→ Ongoing Refinement
-
-Smart Website is the gravitational center.
-All other implementations relate to it.
-
 Smart Website must:
 - Appear first in navigation
 - Anchor homepage
@@ -627,25 +254,7 @@ Smart Website must:
 - Feel foundational
 - Feel strategic
 
-
-Standalone system implementations are allowed when they improve infrastructure.
-
-Supporting Revenue Systems (SEO, AI Lead Handling, Reputation Systems, Revenue Growth Systems) are permitted as standalone implementations.
-
-However, they must always:
-- Be positioned as extensions of Smart Website Infrastructure
-- Avoid equal-weight visual presentation
-- Reinforce Smart Website gravity when referenced
-
-Approved standalone systems:
-- CRM & Follow-Up Systems
-- Reputation & Review Systems
-- Voice AI Reception
-- AI Website Chat
-- Workflow & Automation Systems
-- Booking & Scheduling Systems
-
-Each must improve:
+Approved standalone systems must improve:
 - Enquiry handling
 - Follow-up reliability
 - Operational clarity

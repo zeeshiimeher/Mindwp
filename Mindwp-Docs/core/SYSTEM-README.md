@@ -12,20 +12,22 @@
 
 Before ANY work, AI MUST read ALL of the following files in order:
 
-1. `core/SYSTEM-CONTRACT.md` — Behavioral authority (CTA, conversion, routing)
-2. `core/SYSTEM-RULES.md` — Execution rules, permissions, failure patterns
-3. `core/FOUNDATION-AND-POSITIONING.md` — Brand positioning and identity
-4. `core/SYSTEM-ARCHITECTURE.md` — System layers and structure
-5. `core/CONTENT-SYSTEM-ARCHITECTURE.md` — Content system rules
-6. `core/CONTENT-GRAPH-SYSTEM.md` — Graph structure and edge rules
-7. `core/CONTENT-BLUEPRINT-SYSTEM.md` — Content blueprint definitions
-8. `governance/CONTENT-GOVERNANCE.md` — Content governance hierarchy
-9. `core/SYSTEM-TRUTH.md` — Current system reality
-10. `core/EXECUTION-MEMORY.md` — Decisions and execution state
+1. `core/SYSTEM-CORE.md` — Root authority: service map, boundaries, terminology, system flow, drift prevention
+2. `core/SYSTEM-CONTRACT.md` — Behavioral authority (CTA, conversion, routing)
+3. `core/SYSTEM-RULES.md` — Execution rules, permissions, failure patterns
+4. `core/FOUNDATION-AND-POSITIONING.md` — Brand positioning and identity
+5. `core/SYSTEM-ARCHITECTURE.md` — System layers and structure
+6. `core/CONTENT-WRITING-PLAYBOOK.md` — Writing execution rules
+7. `core/CONTENT-SYSTEM-ARCHITECTURE.md` — Content system rules
+8. `core/CONTENT-GRAPH-SYSTEM.md` — Graph structure and edge rules
+9. `core/CONTENT-BLUEPRINT-SYSTEM.md` — Content blueprint definitions
+10. `governance/CONTENT-GOVERNANCE.md` — Content governance hierarchy
+11. `core/SYSTEM-TRUTH.md` — Current system reality
+12. `core/EXECUTION-MEMORY.md` — Decisions and execution state
 
 **Rules:**
 - Partial reading is NOT allowed
-- Do NOT proceed without reading all 8 files
+- Do NOT proceed without reading all listed files
 - Do NOT skip files based on perceived relevance
 - Re-read if context window resets
 
@@ -37,9 +39,10 @@ Before ANY work, AI MUST read ALL of the following files in order:
 
 When system stabilizes post-launch, mandatory read reduces to:
 
-1. `core/SYSTEM-CONTRACT.md`
-2. `core/SYSTEM-README.md`
-3. `core/SYSTEM-TRUTH.md`
+1. `core/SYSTEM-CORE.md`
+2. `core/SYSTEM-CONTRACT.md`
+3. `core/SYSTEM-README.md`
+4. `core/SYSTEM-TRUTH.md`
 
 All other files become read-on-demand.
 
@@ -83,11 +86,12 @@ You are executing inside an existing system.
 Documentation defines system behavior. Code must follow docs.
 
 **Authority stack (priority order):**
-1. `core/FOUNDATION-AND-POSITIONING.md`
-2. `core/CONTENT-SYSTEM-ARCHITECTURE.md`
-3. `core/CONTENT-GRAPH-SYSTEM.md`
-4. `core/CONTENT-BLUEPRINT-SYSTEM.md`
-5. `governance/CONTENT-GOVERNANCE.md`
+1. `core/SYSTEM-CORE.md`
+2. `core/FOUNDATION-AND-POSITIONING.md`
+3. `core/CONTENT-SYSTEM-ARCHITECTURE.md`
+4. `core/CONTENT-GRAPH-SYSTEM.md`
+5. `core/CONTENT-BLUEPRINT-SYSTEM.md`
+6. `governance/CONTENT-GOVERNANCE.md`
 
 **If docs and code conflict → docs are correct → fix the code**
 
@@ -97,8 +101,11 @@ Documentation defines system behavior. Code must follow docs.
 
 | Need | File |
 |---|---|
+| **Service map, boundaries, terminology, system flow, drift rules** | `core/SYSTEM-CORE.md` |
 | Behavior (CTA, conversion, routing) | `core/SYSTEM-CONTRACT.md` |
 | Architecture layers | `core/SYSTEM-ARCHITECTURE.md` |
+| Writing execution (voice, rewrite method, quality) | `core/CONTENT-WRITING-PLAYBOOK.md` |
+| Brand identity and CTA tone | `core/FOUNDATION-AND-POSITIONING.md` |
 | Content rules | `core/CONTENT-SYSTEM-ARCHITECTURE.md` |
 | Graph + relationships | `core/CONTENT-GRAPH-SYSTEM.md` |
 | Content blueprints | `core/CONTENT-BLUEPRINT-SYSTEM.md` |

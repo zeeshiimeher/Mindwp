@@ -176,7 +176,7 @@ function buildBeautySalonManchesterAllSections(): CaseStudyData {
     title: 'Beauty Salon Case Study - All Sections Demo',
     metaTitle: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
     metaDescription:
-      'Demonstration case study that includes every supported case study section type, including optional sections like workflows, deliverables, business impact, and pinned FAQ.',
+      'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
     industryCategory: 'beauty-personal-care',
     industryLabel: 'Beauty & Personal Care',
     industries: ['hair-salon'],

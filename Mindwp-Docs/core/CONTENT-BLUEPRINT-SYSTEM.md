@@ -2,6 +2,19 @@
 
 This document is part of the MindWP Core Architecture System.
 
+## REQUIRED READING ORDER
+
+1. **SYSTEM-CORE.md** (mandatory — read first)
+2. **CONTENT-GRAPH-SYSTEM.md**
+3. **This document** (CONTENT-BLUEPRINT-SYSTEM.md)
+
+## AUTHORITY NOTICE
+
+This document does NOT override SYSTEM-CORE.md.
+
+This document governs **content archetypes, template section mappings, and writing blueprints**.
+If this document conflicts with SYSTEM-CORE.md → SYSTEM-CORE.md wins.
+
 Authoritative Sources:
 
 - FOUNDATION-AND-POSITIONING.md
@@ -21,7 +34,7 @@ Rules:
 
 <!-- WHERE THIS FITS -->
 <!-- Purpose: Blueprint definitions for page types — #4 in authority stack -->
-<!-- Depends on: CONTENT-GRAPH-SYSTEM.md -->
+<!-- Depends on: SYSTEM-CORE.md, CONTENT-GRAPH-SYSTEM.md -->
 <!-- Used by: page templates, content validation -->
 
 # CONTENT BLUEPRINT SYSTEM (LOCKED)

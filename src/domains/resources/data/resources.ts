@@ -50,9 +50,9 @@ type ResourceCategoryPresentation = ResourceCategoryMetadata & {
 
 export const RESOURCE_HUB_DATA: ResourcesHubData = {
   seo: {
-    title: 'Resources — Automation & CRM Guides for Local Businesses',
+    title: 'Resources | CRM & Automation Guides for Businesses',
     description:
-      'Free resources, guides, and automation templates for local businesses. CRM automation, workflow setup, and business growth strategies.',
+      'Free resources, guides, and automation templates for service businesses. CRM setup, workflow automation, and growth strategies explained.',
     canonical: '/resources',
   },
   hero: {

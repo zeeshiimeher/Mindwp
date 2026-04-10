@@ -201,9 +201,9 @@ function buildBeautySalonManchesterCustom(): CaseStudyData {
   return {
     slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
     title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
-    metaTitle: 'Custom Beauty Salon Case Study with Flexible Labels | Manchester',
+    metaTitle: 'Custom Beauty Salon Case Study | Manchester',
     metaDescription:
-      'Demonstration case study showing how the template system allows complete customization of section labels, badges, and content while maintaining consistent structure.',
+      'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
     industryCategory: 'beauty-personal-care',
     industryLabel: 'Beauty & Personal Care',
     industries: ['hair-salon'],

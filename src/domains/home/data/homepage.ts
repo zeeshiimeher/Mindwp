@@ -230,7 +230,7 @@ export const homepageData: HomepageData = {
     description:
       'MindWP builds Smart Websites for established service businesses — designed to support search visibility, reliable enquiry handling, and long-term business growth.',
     keywords: [
-      'smart website systems',
+      'Smart Website Systems',
       'website consultancy for service businesses',
       'enquiry handling website architecture',
       'systems-first website strategy',

@@ -178,9 +178,9 @@ function buildRoofingWebsiteRebuildWithCrm(): CaseStudyData {
     slug: 'roofing-website-rebuild-with-crm',
     title: 'Roofing Website Rebuild With CRM',
     metaTitle:
-      'Why Roofing Websites Fail to Convert Leads (And the Smart Website System That Fixed It)',
+      'Roofing Website Rebuild | 6 to 22 Weekly Leads',
     metaDescription:
-      'How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service-specific pages, CRM integration, and mobile-first design.',
+      'How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service pages, CRM integration, and mobile-first design.',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],

@@ -30,9 +30,9 @@ export const reputationReviewSystemsPage = {
   category: 'Trust Systems',
   seo: buildServiceSeo({
     slug,
-    title: 'Reputation & Review Systems | Structured trust-building for service businesses',
+    title: 'Reputation & Reviews | Trust Systems for Businesses',
     description:
-      'Structured reputation and review systems for service businesses that need consistent review requests, negative feedback routing, stronger trust signals, and clearer local credibility over time.',
+      'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
     schemaName: 'Reputation and review systems for service businesses',
     schemaDescription:
       'Structured review-generation and reputation-management systems for service businesses, including request timing, negative feedback routing, monitoring logic, and trust-building workflows.',
@@ -42,7 +42,7 @@ export const reputationReviewSystemsPage = {
     title:
       'Reviews help more when they are part of a system, not something that happens by accident',
     description:
-      'This service helps businesses build a clear review system around timing, feedback routing, response ownership, and trust signals. It works best when people are already finding the business but still hesitate to trust it.',
+      'This service covers the full reputation layer — review generation, monitoring, feedback routing, response ownership, and trust signals across platforms. It works best when the business needs a structured approach to credibility, not just more review requests.',
     primaryAction: {
       label: CTA_LABELS.REVIEW_SYSTEMS,
       href: buildServiceContactHref({

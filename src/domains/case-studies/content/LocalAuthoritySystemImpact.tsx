@@ -172,7 +172,7 @@ function buildLocalAuthoritySystemImpact(): CaseStudyData {
     slug: 'local-authority-system-impact',
     title: 'Local Authority System Impact',
     metaTitle:
-      'Why Service Businesses Stay Invisible in Local Search (And the System That Changes It)',
+      'Local SEO System | Page 2 to Top 3 in Google Maps',
     metaDescription:
       'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
     industryCategory: 'home-services',

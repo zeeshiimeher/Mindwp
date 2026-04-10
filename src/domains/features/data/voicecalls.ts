@@ -75,6 +75,12 @@ export const voicecallsData: FeaturePageData = {
   slug,
   systems: ['ai-lead-handling'],
   topics: ['missed-calls', 'lead-response-time'],
+  keywords: [
+    'ai phone assistant',
+    'automated call handling',
+    'missed call response',
+    'voice call routing',
+  ],
   seo: buildFeatureSeo({
     slug,
     title: 'Voice Calls | AI-Powered Call Handling Layer',
@@ -82,7 +88,7 @@ export const voicecallsData: FeaturePageData = {
       'AI-powered voice call handling for booking, message capture, and call routing with consistent 24/7 support.',
     schemaName: 'Voice Calls',
     schemaDescription:
-      'AI-powered voice call handling for booking, message capture, and call routing with consistent 24/7 support.',
+      'AI phone assistant for inbound call answering, appointment booking, message capture, and enquiry routing during and after business hours.',
   }),
   hero: {
     badge: 'AI-Powered Phone Assistant',

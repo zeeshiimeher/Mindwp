@@ -1,10 +1,20 @@
 # SYSTEM CONTRACT — MindWP
 
-# SYSTEM CONTRACT — MindWP
+## REQUIRED READING ORDER
+
+1. **SYSTEM-CORE.md** (mandatory — read first)
+2. **This document** (SYSTEM-CONTRACT.md)
+
+## AUTHORITY NOTICE
+
+This document does NOT override SYSTEM-CORE.md.
+
+This document is the **behavioral authority index** mapping ownership across core docs.
+If this document conflicts with SYSTEM-CORE.md → SYSTEM-CORE.md wins.
 
 <!-- WHERE THIS FITS -->
 <!-- Purpose: Contract index for behavioral ownership across core docs -->
-<!-- Depends on: CONVERSION-SYSTEM.md, FOUNDATION-AND-POSITIONING.md, CONTENT-SYSTEM-ARCHITECTURE.md, CONTENT-GRAPH-SYSTEM.md -->
+<!-- Depends on: SYSTEM-CORE.md, CONVERSION-SYSTEM.md, FOUNDATION-AND-POSITIONING.md, CONTENT-SYSTEM-ARCHITECTURE.md, CONTENT-GRAPH-SYSTEM.md -->
 <!-- Used by: Core documentation readers who need the ownership map -->
 
 > This document does NOT define conversion behavior directly.

@@ -24,7 +24,7 @@ export const marketingAutomationSetupPage = {
   seo: buildServiceSeo({
     slug,
     title:
-      'Marketing Automation Setup | Follow-up, reminders, and lifecycle messaging implemented properly',
+      'Marketing Automation Setup | Structured Follow-Up Systems',
     description:
       'Marketing automation setup for service businesses that need structured follow-up, reminders, reactivation, and lifecycle messaging without relying on manual chasing.',
     schemaName: 'Marketing automation setup for service businesses',
@@ -38,7 +38,7 @@ export const marketingAutomationSetupPage = {
     description:
       'This service implements structured automation around follow-up, reminders, reactivation, and lifecycle messaging. The goal is to reduce manual chasing while keeping the workflow clear, controlled, and commercially useful.',
     primaryAction: {
-      label: CTA_LABELS.PRIMARY,
+      label: CTA_LABELS.REVENUE_AUDIT,
       href: buildServiceContactHref({
         system: 'revenue-growth',
         slug: 'marketing-automation-setup',
@@ -294,7 +294,7 @@ export const marketingAutomationSetupPage = {
     title: 'Set up automation that actually supports the business',
     description:
       'If follow-up, reminders, or lifecycle messaging still depend on manual effort, we can help build a cleaner automation setup.',
-    buttonText: CTA_LABELS.PRIMARY,
+    buttonText: CTA_LABELS.REVENUE_AUDIT,
     buttonHref: buildServiceContactHref({
       system: 'revenue-growth',
       slug: 'marketing-automation-setup',

@@ -22,6 +22,6 @@
 
 ## Canonical Docs
 
-- See `Mindwp-Docs/core/SYSTEM-README.md` for the system overview.
-- See `Mindwp-Docs/core/SYSTEM-INTELLIGENCE-DOC.md` for dashboards, scripts, and reports.
-- See `Mindwp-Docs/core/EXECUTION-MEMORY.md` for current execution-state constraints.
+- See `Mindwp-Docs/core/SYSTEM.md` for the system overview.
+- See `Mindwp-Docs/core/TOOLS.md` for dashboards, scripts, and reports.
+- See `Mindwp-Docs/core/SYSTEM-STATE.md` for current execution-state constraints.

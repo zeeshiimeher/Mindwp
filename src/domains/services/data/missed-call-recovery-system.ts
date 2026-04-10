@@ -23,7 +23,7 @@ export const missedCallRecoverySystemPage = {
   category: 'Lead Protection Systems',
   seo: buildServiceSeo({
     slug,
-    title: 'Missed Call Recovery System | Lead protection for service businesses',
+    title: 'Missed Call Recovery | Lead Protection for Businesses',
     description:
       'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
     schemaName: 'Missed call recovery system for service businesses',
@@ -36,7 +36,7 @@ export const missedCallRecoverySystemPage = {
     description:
       'This service focuses on what happens after a call is missed. It helps service businesses respond faster, capture the enquiry more cleanly, and move the conversation into the right next step before the lead disappears.',
     primaryAction: {
-      label: CTA_LABELS.PRIMARY,
+      label: CTA_LABELS.AI_LEAD_HANDLING,
       href: buildServiceContactHref({
         system: 'ai-lead-handling',
         slug: 'missed-call-recovery-system',
@@ -276,7 +276,7 @@ export const missedCallRecoverySystemPage = {
     title: 'Stop losing leads after missed calls',
     description:
       'If missed calls are creating avoidable lead leakage, we can help structure a clearer recovery workflow.',
-    buttonText: CTA_LABELS.PRIMARY,
+    buttonText: CTA_LABELS.AI_LEAD_HANDLING,
     buttonHref: buildServiceContactHref({
       system: 'ai-lead-handling',
       slug: 'missed-call-recovery-system',

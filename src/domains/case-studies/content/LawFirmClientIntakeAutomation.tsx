@@ -193,7 +193,7 @@ function buildLawFirmClientIntakeAutomation(): CaseStudyData {
     slug: 'law-firm-client-intake-automation',
     title: 'Law Firm Client Intake Automation',
     metaTitle:
-      'Why Law Firms Lose Enquiries During Intake (And the Automation That Cuts It to Hours)',
+      'Law Firm Intake Automation | 4 Days to 6 Hours',
     metaDescription:
       'How a Plymouth law firm reduced client intake time from 4 days to 6 hours, improved completion from 58% to 87%, and freed 18 admin hours per week.',
     industryCategory: 'professional-services',

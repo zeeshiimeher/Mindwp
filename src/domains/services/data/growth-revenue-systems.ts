@@ -51,7 +51,7 @@ export const growthRevenueSystemsPage = {
   category: 'Growth Systems',
   seo: buildServiceSeo({
     slug: 'growth-revenue-systems',
-    title: 'Revenue Growth Systems | Find and fix the places where leads and follow-up break down',
+    title: 'Revenue Growth Systems | Fix Lead & Follow-Up Gaps',
     description:
       'Revenue Growth Systems help service businesses identify where leads stall, follow-up breaks down, and conversion leaks happen across the website, CRM, and workflow.',
     schemaName: 'Revenue Growth Systems for service businesses',

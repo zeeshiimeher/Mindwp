@@ -171,7 +171,7 @@ function buildRealEstateInquiryRouting(): CaseStudyData {
     slug: 'real-estate-inquiry-routing',
     title: 'Real Estate Inquiry Routing',
     metaTitle:
-      'Why Estate Agents Lose Property Enquiries (And the Routing System That Captures Them)',
+      'Estate Agent Lead Routing | 8 Hours to 11 Minutes',
     metaDescription:
       'How a Brighton estate agency reduced response time from 8 hours to 11 minutes and increased viewings by 38% using automated multi-channel lead routing.',
     industryCategory: 'real-estate',

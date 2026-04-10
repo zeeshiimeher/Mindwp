@@ -23,12 +23,12 @@ export const aiLeadHandlingPage = {
   category: 'AI Response Systems',
   seo: buildServiceSeo({
     slug,
-    title: 'AI Lead Handling Systems | Structured first-response systems for service businesses',
+    title: 'AI Lead Handling Systems | Automated First Response',
     description:
       'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
-    schemaName: 'AI Lead Handling integrated into a structured service-business system',
+    schemaName: 'AI Lead Handling for Service Businesses',
     schemaDescription:
-      'AI lead handling systems for service businesses, including chat, call support, booking assistance, and structured handoff into CRM and follow-up workflows.',
+      'First-response automation covering website chat, call handling, booking support, and structured CRM handoff for service businesses.',
   }),
   hero: {
     badge: 'AI Lead Handling',

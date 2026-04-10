@@ -33,7 +33,7 @@ export const unifiedCommunicationSystemPage = {
   category: 'Communication Routing Systems',
   seo: buildServiceSeo({
     slug,
-    title: 'Unified Communication System | Clearer routing across calls, forms, chat, and inboxes',
+    title: 'Unified Communication System | Multi-Channel Routing',
     description:
       'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
     schemaName: 'Unified communication system for service businesses',
@@ -46,7 +46,7 @@ export const unifiedCommunicationSystemPage = {
     description:
       'This service focuses on the communication layer between incoming messages and the right next action. It helps businesses handle calls, forms, chat, and inbox messages with less confusion, fewer missed conversations, and clearer ownership.',
     primaryAction: {
-      label: CTA_LABELS.PRIMARY,
+      label: CTA_LABELS.AI_LEAD_HANDLING,
       href: buildServiceContactHref({
         system: 'ai-lead-handling',
         slug: 'unified-communication-system',
@@ -355,7 +355,7 @@ export const unifiedCommunicationSystemPage = {
     title: 'Make communication routing clearer',
     description:
       'If calls, forms, chat, and inbox messages are creating confusion, we can help define a clearer routing and ownership model.',
-    buttonText: CTA_LABELS.PRIMARY,
+    buttonText: CTA_LABELS.AI_LEAD_HANDLING,
     buttonHref: buildServiceContactHref({
       system: 'ai-lead-handling',
       slug: 'unified-communication-system',

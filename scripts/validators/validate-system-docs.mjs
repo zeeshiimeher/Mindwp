@@ -2,19 +2,19 @@
 /**
  * System documentation validator.
  *
- * Ensures SYSTEM-INTELLIGENCE-DOC.md stays aligned with actual project
+ * Ensures TOOLS.md stays aligned with actual project
  * systems — dashboards, scripts, and reports.
  *
  * WARNING-ONLY: never fails the build. Prints warnings for drift.
  *
- * Source: SYSTEM-INTELLIGENCE-DOC.md §11 Auto-Update Rule
+ * Source: TOOLS.md §11 Auto-Update Rule
  */
 
 import fs from 'node:fs';
 import path from 'node:path';
 
 const root = process.cwd();
-const docPath = path.join(root, 'Mindwp-Docs', 'core', 'SYSTEM-INTELLIGENCE-DOC.md');
+const docPath = path.join(root, 'Mindwp-Docs', 'core', 'TOOLS.md');
 
 // ── Helpers ──────────────────────────────────────────────────────────
 
@@ -76,7 +76,7 @@ function validate() {
   if (!doc) {
     warnings.push({
       type: 'missing_doc',
-      message: 'SYSTEM-INTELLIGENCE-DOC.md does not exist. Create it at Mindwp-Docs/core/SYSTEM-INTELLIGENCE-DOC.md',
+      message: 'TOOLS.md does not exist. Create it at Mindwp-Docs/core/TOOLS.md',
     });
     return warnings;
   }
@@ -87,7 +87,7 @@ function validate() {
     if (!doc.includes(dash.route)) {
       warnings.push({
         type: 'missing_dashboard_doc',
-        message: `Dashboard ${dash.route} (${dash.file}) exists but is not documented in SYSTEM-INTELLIGENCE-DOC.md`,
+        message: `Dashboard ${dash.route} (${dash.file}) exists but is not documented in TOOLS.md`,
       });
     }
   }
@@ -98,7 +98,7 @@ function validate() {
     if (!doc.includes(report)) {
       warnings.push({
         type: 'missing_report_doc',
-        message: `Report ${report} exists in /reports/ but is not documented in SYSTEM-INTELLIGENCE-DOC.md`,
+        message: `Report ${report} exists in /reports/ but is not documented in TOOLS.md`,
       });
     }
   }
@@ -112,7 +112,7 @@ function validate() {
     if (!doc.includes(basename)) {
       warnings.push({
         type: 'missing_script_doc',
-        message: `Script ${script} exists but is not documented in SYSTEM-INTELLIGENCE-DOC.md`,
+        message: `Script ${script} exists but is not documented in TOOLS.md`,
       });
     }
   }
@@ -127,7 +127,7 @@ function validate() {
     if (!fileExists(ref)) {
       warnings.push({
         type: 'broken_reference',
-        message: `SYSTEM-INTELLIGENCE-DOC.md references ${ref} but file does not exist`,
+        message: `TOOLS.md references ${ref} but file does not exist`,
       });
     }
   }

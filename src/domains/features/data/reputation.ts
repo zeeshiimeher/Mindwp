@@ -74,6 +74,12 @@ export const reputationData: FeaturePageData = {
   slug,
   systems: ['reputation-review', 'local-seo-authority'],
   topics: ['review-generation', 'negative-review-response'],
+  keywords: [
+    'review management system',
+    'automated review requests',
+    'reputation monitoring',
+    'google review management',
+  ],
   seo: buildFeatureSeo({
     slug,
     title: 'Reputation | Structured Review Management Layer',
@@ -81,7 +87,7 @@ export const reputationData: FeaturePageData = {
       'Structured review management for requesting, tracking, and responding to customer feedback across key platforms.',
     schemaName: 'Reputation',
     schemaDescription:
-      'Structured review management for requesting, tracking, and responding to customer feedback across key platforms.',
+      'Review management feature for automated review requests, feedback tracking, and response workflows across Google and key platforms.',
   }),
   hero: {
     badge: 'Reputation Management',

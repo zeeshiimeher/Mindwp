@@ -68,136 +68,136 @@ export const crmAutomationPage = {
     'service business crm workflow',
     'enquiry handling in crm',
   ],
-  badge: 'CRM Infrastructure Implementation',
-  category: 'Implementation Services',
+  badge: 'CRM Setup for Service Businesses',
+  category: 'Lead & Follow-Up',
   seo: buildServiceSeo({
     slug,
-    title: 'CRM Infrastructure Implementation | Structured CRM Setup for Service Businesses',
+    title: 'CRM Setup | Track Every Lead and Never Miss a Follow-Up',
     description:
-      'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
-    schemaName: 'CRM Infrastructure Implementation for Service Businesses',
+      'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+    schemaName: 'CRM setup and lead tracking for service businesses',
     schemaDescription:
-      'Structured CRM implementation for service businesses that need better lead routing, clearer ownership, cleaner pipeline stages, and more reliable follow-up.',
+      'Done-for-you CRM setup that tracks every lead, sends follow-ups on time, and lets your team see exactly where every enquiry stands.',
   }),
   hero: {
-    badge: 'Enquiry & Follow-Up Infrastructure',
-    title: 'A CRM works when routing, ownership, and follow-up are defined — not assumed',
+    badge: 'Never Lose a Lead Again',
+    title: 'Know where every lead is, who\'s handling it, and what happens next',
     description:
-      'This is the implementation layer for making sure enquiries reach the right person, follow-up happens on time, booking flow is clear, and team ownership is defined. When it sits on top of a clear website foundation, the whole path from first enquiry to outcome becomes visible and repeatable — instead of depending on memory.',
+      'Right now, leads come in through calls, emails, and forms — and some just disappear. We set up your CRM so every single one is captured, the right person is told about it, and follow-up happens even when nobody remembers. Open your CRM and you can see every lead, who\'s handling it, and what\'s happening next.',
     list: [
-      'Clear routing and ownership from the first enquiry',
-      'Follow-up timing that does not rely on spare time',
-      'Pipeline visibility across the whole team',
-      'Booking and reminders handled properly',
+      'Every lead lands in one place — nothing gets lost',
+      'Follow-ups happen automatically, even when the team is busy',
+      'You can see exactly where every opportunity stands',
+      'Bookings and reminders run on their own',
     ],
     cssPrefix: 'crm-automation-hero',
   },
   sections: {
     positioning: {
-      badge: 'What the CRM layer changes',
-      title: 'Most businesses handle the first enquiry well enough. The problem starts after that.',
+      badge: 'The real problem',
+      title: 'The first conversation usually goes fine. It\'s everything after that falls apart.',
       description:
-        'Messages scatter across inboxes. Follow-ups depend on who has time. Nobody owns the next step. A CRM layer fixes this by giving enquiry handling a proper operating model — routing, ownership, stages, and follow-up timing that the whole team can work from.',
-      currentStateLabel: 'Without CRM structure',
-      structuredStateLabel: 'With CRM structure',
+        'Leads come in from calls, emails, and your website. Someone responds. But then what? Messages pile up in different inboxes. Nobody is sure who\'s handling what. Follow-ups get forgotten when the day gets busy. A proper CRM setup puts every lead in one place, assigns it to someone specific, and makes sure the next step actually happens — even when your team is flat out.',
+      currentStateLabel: 'What\'s happening now',
+      structuredStateLabel: 'What changes with a CRM',
       painPoints: [
         {
-          before: 'Messages sit across inboxes and channels with no clear ownership.',
-          after: 'Every enquiry is routed to a named owner with clear responsibility.',
+          before: 'Leads sit in email inboxes, voicemails, and DMs — and some just get missed.',
+          after: 'Every lead lands in one dashboard, assigned to a specific person who owns the next step.',
         },
         {
-          before: 'Follow-up depends on memory, availability, and ad-hoc reminders.',
-          after: 'Follow-up runs on defined timing rules and stage-based triggers.',
+          before: 'Follow-up only happens when someone has a spare moment to remember.',
+          after: 'Follow-ups are scheduled automatically so every lead gets a response on time.',
         },
         {
-          before: 'Pipeline stages are unclear, so teams guess what happens next.',
-          after: 'Stage tracking creates visibility so next actions are explicit and consistent.',
+          before: 'Nobody knows how many leads came in this week or where they stand.',
+          after: 'You can see every active lead, which stage it\'s at, and who\'s responsible — all in one view.',
         },
       ],
       cssPrefix: 'crm-automation-positioning-header',
       marginBottom: false,
     },
     useCasesSection: {
-      badge: 'Operational Scenarios',
-      title: 'Where CRM implementation changes day-to-day enquiry handling',
+      badge: 'Day-to-day impact',
+      title: 'Here\'s what changes when your CRM is actually set up properly',
       description:
-        'These are the everyday scenarios where proper routing, follow-up timing, and visibility make the biggest difference.',
+        'These are everyday situations your team deals with. Right now they probably rely on memory and scattered tools. After setup, each one just works — without anyone chasing or remembering.',
       cssPrefix: 'crm-automation-use-cases-header',
       items: [
         {
           icon: Phone,
-          title: 'Call Handling & Routing',
+          title: 'A customer calls while you\'re busy',
           description:
-            'Calls come in. Details get captured, routed, and logged — so follow-up happens even when the team is flat out.',
+            'Their details are captured and the right person gets notified. Follow-up happens even if nobody picked up.',
           iconType: 'primary' as const,
         },
         {
           icon: Brain,
-          title: 'Messaging Support',
+          title: 'Messages come through chat, text, and email',
           description:
-            'Chat, SMS, and email all funnel somewhere. The CRM keeps replies consistent and makes sure handover actually happens.',
+            'Chat messages, texts, and emails all show up in one inbox. Your team replies from one place and nobody\'s message gets stuck in someone\'s personal account.',
           iconType: 'secondary' as const,
         },
         {
           icon: UserPlus,
-          title: 'Enquiry Capture & Follow-Up',
+          title: 'A new lead fills out your website form',
           description:
-            'Enquiries arrive from the website and other channels. The CRM captures them and starts a defined follow-up process.',
+            'They\'re added to your CRM instantly. A follow-up email goes out. Your team gets a task to take the next step.',
           iconType: 'accent' as const,
         },
         {
           icon: Calendar,
-          title: 'Appointment Booking',
+          title: 'Someone needs to book an appointment',
           description:
-            'Booking links, confirmations, and reminders — handled automatically so nobody chases appointments manually.',
+            'They book online. Confirmation and reminders go out automatically. No back-and-forth texts needed.',
           iconType: 'success' as const,
         },
         {
           icon: Repeat,
-          title: 'Customer Follow-Ups',
+          title: 'It\'s time to check in with past customers',
           description:
-            'Check-ins, feedback requests, and re-engagement messages go out on a defined schedule — not when someone remembers.',
+            'Follow-up messages go out on schedule — whether it\'s a satisfaction check, a reminder, or a re-engagement offer.',
           iconType: 'warning' as const,
         },
         {
           icon: Star,
-          title: 'Reviews & Feedback',
+          title: 'You want more reviews from happy customers',
           description:
-            'Review requests go out at the right time. Feedback is tracked. Responses carry the full conversation context.',
+            'Review requests are sent at the right moment. You see the feedback come in and can respond with full context.',
           iconType: 'info' as const,
         },
         {
           icon: FolderKanban,
-          title: 'Pipeline Visibility',
+          title: 'You want to see all active leads at a glance',
           description:
-            'Every enquiry is tracked from first contact to outcome. The team always knows what stage things are at and what comes next.',
+            'Every lead is visible — from first contact to outcome. You always know what stage things are at and who\'s handling it.',
           iconType: 'neutral' as const,
         },
         {
           icon: Mail,
-          title: 'Updates & Communication',
+          title: 'You need to send updates to customers',
           description:
-            'Send updates to the right people at the right time. See what gets attention and adjust.',
+            'Updates go to the right people at the right time. You can see who opened them and who needs a nudge.',
           iconType: 'primary' as const,
         },
         {
           icon: CreditCard,
-          title: 'Payments & Invoices',
+          title: 'Payments and invoices need tracking',
           description:
-            'Payments and invoices stay connected to the contact record and workflow stage — no separate tracking spreadsheet.',
+            'Payments stay linked to the customer record. No separate spreadsheet. No guessing who paid what.',
           iconType: 'secondary' as const,
         },
       ],
     },
     featuresSection: {
-      badge: 'Operational Capabilities',
-      title: 'Capabilities implemented within your workflow',
+      badge: 'What you get',
+      title: 'Everything we set up inside your CRM',
       description:
-        'These are configured around how your team actually handles enquiries, bookings, and follow-ups. We implement what the operating model needs — not a feature bundle for the sake of it.',
+        'We don\'t give you a tool and walk away. We configure everything around how your team actually works — your services, your customers, your daily routine.',
       cssPrefix: 'crm-automation-features-header',
       categories: [
         {
-          title: 'Call Handling & Routing',
+          title: 'Phone Calls & Routing',
           icon: Phone,
           color: 'violet',
           features: [
@@ -245,7 +245,7 @@ export const crmAutomationPage = {
           ],
         },
         {
-          title: 'Messaging Support',
+          title: 'Chat, Text & Email Replies',
           icon: Brain,
           color: 'purple',
           features: [
@@ -292,7 +292,7 @@ export const crmAutomationPage = {
           ],
         },
         {
-          title: 'Contact & Enquiry Management',
+          title: 'Your Customer Database',
           icon: Database,
           color: 'blue',
           features: [
@@ -331,7 +331,7 @@ export const crmAutomationPage = {
           ],
         },
         {
-          title: 'Inbox & Communications',
+          title: 'One Inbox for Everything',
           icon: Inbox,
           color: 'green',
           features: [
@@ -409,7 +409,7 @@ export const crmAutomationPage = {
           ],
         },
         {
-          title: 'SMS Follow-Ups',
+          title: 'Text Message Follow-Ups',
           icon: MessageSquare,
           color: 'orange',
           features: [
@@ -448,7 +448,7 @@ export const crmAutomationPage = {
           ],
         },
         {
-          title: 'Automation & Workflows',
+          title: 'Automated Actions',
           icon: Zap,
           color: 'yellow',
           features: [
@@ -479,7 +479,7 @@ export const crmAutomationPage = {
           ],
         },
         {
-          title: 'Pipeline & Stage Tracking',
+          title: 'See Where Every Lead Stands',
           icon: FolderKanban,
           color: 'red',
           features: [
@@ -565,7 +565,7 @@ export const crmAutomationPage = {
           ],
         },
         {
-          title: 'Forms & Intake',
+          title: 'Forms & Lead Capture',
           icon: ClipboardList,
           color: 'pink',
           features: [
@@ -604,7 +604,7 @@ export const crmAutomationPage = {
           ],
         },
         {
-          title: 'Reviews & Feedback',
+          title: 'Reviews & Customer Feedback',
           icon: Star,
           color: 'amber',
           features: [
@@ -635,7 +635,7 @@ export const crmAutomationPage = {
           ],
         },
         {
-          title: 'Reporting & Visibility',
+          title: 'Reports & Dashboards',
           icon: BarChart3,
           color: 'teal',
           features: [
@@ -674,7 +674,7 @@ export const crmAutomationPage = {
           ],
         },
         {
-          title: 'Integrations & API',
+          title: 'Connect Your Other Tools',
           icon: Link2,
           color: 'gray',
           features: [
@@ -730,94 +730,94 @@ export const crmAutomationPage = {
       ],
     },
     workflowsSection: {
-      badge: 'Workflow Examples',
-      title: 'Defined handovers mean less internal chasing',
+      badge: 'What happens automatically',
+      title: 'Once it\'s set up, your CRM handles the busywork for you',
       description:
-        'After a form submission, booking, or signal of interest, something should happen next. Workflows make sure it does — consistently, without anyone needing to remember.',
+        'When a lead comes in, books an appointment, or finishes a job — the next steps just happen. No one needs to remember. Here are some real examples.',
       cssPrefix: 'crm-automation-workflows-header',
       items: [
         {
-          trigger: 'New enquiry submits a form',
+          trigger: 'Someone fills out your contact form',
           actions: [
-            'Add to CRM with source tag',
-            'Send an acknowledgement email',
-            'Notify the team',
-            'Add to a follow-up sequence',
-            'Create a task for the next step',
+            'They\'re added to your CRM with where they came from',
+            'They get a friendly confirmation email right away',
+            'Your team gets a notification',
+            'A series of follow-up emails starts going out on its own',
+            'A task is created so someone takes the next step',
           ],
         },
         {
-          trigger: 'Customer books appointment',
+          trigger: 'A customer books an appointment',
           actions: [
-            'Send confirmation email',
-            'Add to calendar',
-            'Send SMS reminder at set times',
-            'Send a final reminder if needed',
-            'Follow up after appointment',
+            'They get a confirmation email instantly',
+            'It\'s added to your team\'s calendar',
+            'They get a text reminder the day before',
+            'A final reminder goes out the morning of',
+            'After the appointment, a follow-up is sent automatically',
           ],
         },
         {
-          trigger: 'Contact engages with email',
+          trigger: 'A lead opens and clicks your email',
           actions: [
-            "Tag as 'engaged'",
-            'Set follow-up priority',
-            'Notify the owner',
-            'Send booking options if relevant',
-            "Move to an 'Active follow-up' stage",
+            'They\'re tagged as interested',
+            'Their follow-up priority goes up',
+            'The person handling them gets a heads-up',
+            'If it makes sense, a booking link is sent',
+            'They move to an active follow-up stage',
           ],
         },
         {
-          trigger: 'Appointment completed',
+          trigger: 'A job or appointment is completed',
           actions: [
-            'Send thank you email',
-            'Request feedback or review',
-            'Add to customer list',
-            'Schedule a check-in',
-            'Update contact status',
+            'A thank-you message goes out',
+            'A review request is sent at the right time',
+            'They\'re added to your customer list',
+            'A future check-in is scheduled',
+            'Their record is updated so you have full history',
           ],
         },
       ],
     },
     governance: {
-      badge: 'Governance',
-      title: 'Automation without rules just creates noise faster',
+      badge: 'Built on clear rules',
+      title: 'We make sure the basics are sorted before turning anything on',
       description:
-        'Before workflows get layered in, we make sure the basics are clear: who owns each stage, how enquiries are routed, and what happens next at each point. That way automation supports the team instead of adding confusion.',
+        'Before anything runs on its own, we define who handles what, how a lead moves from first contact to outcome, and what happens at each stage. That way the CRM helps your team instead of creating more confusion.',
       cssPrefix: 'crm-automation-governance-header',
     },
     qualification: {
-      title: 'Who this is for — and who it is not for',
+      title: 'Is this the right fit for your business?',
       description:
-        'CRM implementation works best for businesses that want their enquiry handling to be visible, consistent, and properly owned.',
+        'This works for businesses that get regular leads and want to stop losing them to disorganisation. Here\'s how to tell if it\'s right for you.',
       cssPrefix: 'crm-automation-qualification-header',
-      strongFitTitle: 'Strong fit',
+      strongFitTitle: 'Great fit if',
       strongFitItems: [
-        'You receive regular enquiries and nobody is sure they are all being handled.',
-        'Follow-ups happen across email, SMS, and calls — and some slip through.',
-        'You want to see where every enquiry is and who owns the next step.',
-        'You would rather have a defined process than rely on people remembering.',
+        'Leads come in regularly but you\'re not confident every one gets handled.',
+        'Your team juggles follow-ups across email, text, and calls — and some slip through.',
+        'You want to open your CRM and see every active lead, who owns it, and what\'s next.',
+        'You\'d rather have things happen automatically than rely on someone remembering.',
       ],
-      notDesignedTitle: 'Not designed for',
+      notDesignedTitle: 'Probably not the right fit if',
       notDesignedItems: [
-        'Very low enquiry volume where tracking adds no real value.',
-        'Teams that genuinely prefer fully manual handling.',
-        'Short-term campaign tools with no long-term need.',
-        'Automation layered on without anyone agreeing how things should work.',
+        'You only get a handful of leads per month and can easily track them yourself.',
+        'Your team genuinely prefers doing everything manually and has no interest in changing.',
+        'You need a short-term campaign tool, not a long-term setup.',
+        'Nobody on the team has agreed on how leads should be handled in the first place.',
       ],
     },
     connection: {
-      badge: 'Works With Smart Website Infrastructure',
-      title: 'CRM works best when the website already makes sense',
+      badge: 'Works best with a clear website',
+      title: 'Your CRM does more when your website already makes sense',
       description:
-        'When the website has clear services, clear pages, and clear enquiry paths, the CRM becomes a proper operating layer on top of it. If the website foundations are weak, we sort those out first — before adding automation.',
+        'When your website clearly explains your services and makes it easy for people to get in touch, the CRM picks it up from there — capturing the enquiry, notifying your team, and kicking off the follow-up. If your website needs work first, we can help with that too.',
       cssPrefix: 'crm-automation-connection-header',
     },
   },
   cta: {
-    title: 'Set up your CRM pipeline',
+    title: 'Tired of leads slipping through the cracks?',
     description:
-      'Tell us how leads are routed today. We will show you where ownership, stages, and follow-up are breaking down.',
-    buttonText: CTA_LABELS.PRIMARY,
+      'Tell us how your team handles enquiries today. We\'ll show you exactly where things are falling through and set up a CRM that makes sure every lead is tracked, followed up, and accounted for.',
+    buttonText: CTA_LABELS.CRM_ENQUIRY_REVIEW,
     buttonHref: buildServiceContactHref({
       system: 'crm-automation',
       slug: 'crm-infrastructure-implementation',

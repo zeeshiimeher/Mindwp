@@ -34,12 +34,12 @@ export const bricksBuilderPage = {
   category: 'Implementation Services',
   seo: buildServiceSeo({
     slug,
-    title: 'Bricks Implementation | Structured WordPress Delivery with Bricks Builder',
+    title: 'Bricks Builder | Structured WordPress Implementation',
     description:
       'Structured WordPress implementation with Bricks Builder for teams that need performance-conscious delivery, clean architecture, and disciplined conversion of approved designs.',
     schemaName: 'Structured WordPress Implementation with Bricks Builder',
     schemaDescription:
-      'Structured WordPress implementation with Bricks Builder for teams that need performance-conscious delivery, clean architecture, and disciplined conversion of approved designs.',
+      'WordPress development using Bricks Builder with performance-first architecture, clean markup output, and structured build standards.',
   }),
   hero: {
     badge: 'Bricks Builder Implementation',
@@ -48,7 +48,7 @@ export const bricksBuilderPage = {
     description:
       'We build WordPress websites using Bricks Builder where performance and clean output matter. Approved designs are converted precisely, with a build that stays fast, maintainable, and easy to extend.',
     primaryAction: {
-      label: CTA_LABELS.PRIMARY,
+      label: CTA_LABELS.SMART_WEBSITE_CONVERSION,
       href: buildServiceContactHref({
         system: 'smart-website-systems',
         slug: 'bricks-builder',
@@ -259,10 +259,10 @@ export const bricksBuilderPage = {
     },
   },
   cta: {
-    title: 'Discuss your Bricks implementation',
+    title: 'Want cleaner code without losing flexibility?',
     description:
-      'If your team needs a performance-focused Bricks build with clean output and long-term clarity, we can review scope and outline the right approach.',
-    buttonText: CTA_LABELS.PRIMARY,
+      'Tell us what your current site struggles with. We\'ll review whether a Bricks build solves it and what the project would look like.',
+    buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
     buttonHref: buildServiceContactHref({
       system: 'smart-website-systems',
       slug: 'bricks-builder',

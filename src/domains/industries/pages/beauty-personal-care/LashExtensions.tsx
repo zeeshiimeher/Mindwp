@@ -373,9 +373,9 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
       enabled: false,
     },
     seo: {
-      title: 'Lash Lift & Extensions — Calm Booking & Visibility | MindWP',
+      title: 'Lash Lift & Extensions — Smart Website Systems | MindWP',
       description:
-        'Support lash studios with calm booking flows, clear information, and trust-led reviews.',
+        'Smart Website systems for lash studios that need clearer booking flow, no-show reduction, review automation, and stronger local visibility to fill more appointments.',
       keywords: [
         'lash extension booking system',
         'lash salon crm automation',

@@ -24,7 +24,7 @@ export const systemMigrationPlatformConsolidationPage = {
   seo: buildServiceSeo({
     slug,
     title:
-      'System Migration & Platform Consolidation | Move away from fragmented tools and outdated platforms',
+      'System Migration | Platform Consolidation for Businesses',
     description:
       'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
     schemaName: 'System migration and platform consolidation for service businesses',
@@ -38,7 +38,7 @@ export const systemMigrationPlatformConsolidationPage = {
     description:
       'This service is for businesses moving away from fragmented tools, outdated platforms, or disconnected systems. The goal is a cleaner platform structure, less tool sprawl, and a more stable operating foundation that is easier to maintain and extend.',
     primaryAction: {
-      label: CTA_LABELS.PRIMARY,
+      label: CTA_LABELS.SMART_WEBSITE_CONVERSION,
       href: buildServiceContactHref({
         system: 'smart-website-systems',
         slug: 'system-migration-platform-consolidation',
@@ -291,7 +291,7 @@ export const systemMigrationPlatformConsolidationPage = {
     title: 'Simplify the platform foundation',
     description:
       'If the business is being slowed by fragmented tools or an outdated platform, we can help define a cleaner migration and consolidation path.',
-    buttonText: CTA_LABELS.PRIMARY,
+    buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
     buttonHref: buildServiceContactHref({
       system: 'smart-website-systems',
       slug: 'system-migration-platform-consolidation',

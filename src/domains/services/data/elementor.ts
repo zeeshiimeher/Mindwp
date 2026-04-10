@@ -34,12 +34,12 @@ export const elementorPage = {
   category: 'Implementation Services',
   seo: buildServiceSeo({
     slug,
-    title: 'Elementor Implementation | Structured WordPress Delivery with Elementor',
+    title: 'Elementor | Structured WordPress Implementation',
     description:
       'Structured WordPress implementation with Elementor for teams that need maintainable delivery, clean editing paths, and approved designs translated into a governed website build.',
     schemaName: 'Structured WordPress Implementation with Elementor',
     schemaDescription:
-      'Structured WordPress implementation with Elementor for teams that need maintainable delivery, clean editing paths, and approved designs translated into a governed website build.',
+      'WordPress development using Elementor with structured editing paths, design governance, and long-term build maintainability.',
   }),
   hero: {
     badge: 'Elementor Implementation',
@@ -48,7 +48,7 @@ export const elementorPage = {
     description:
       'We build WordPress websites using Elementor where the visual output stays faithful to the approved design and the editing experience stays manageable over time. This is disciplined implementation, not a quick drag-and-drop assembly.',
     primaryAction: {
-      label: CTA_LABELS.PRIMARY,
+      label: CTA_LABELS.SMART_WEBSITE_CONVERSION,
       href: buildServiceContactHref({
         system: 'smart-website-systems',
         slug: 'elementor',
@@ -255,10 +255,10 @@ export const elementorPage = {
     },
   },
   cta: {
-    title: 'Discuss your Elementor implementation',
+    title: 'Not sure if Elementor is the right fit?',
     description:
-      'If your team needs a clean Elementor build with editing flexibility and long-term clarity, we can review scope and outline the right approach.',
-    buttonText: CTA_LABELS.PRIMARY,
+      'Tell us about your site, your team\'s editing needs, and what matters most. We\'ll review whether Elementor is the right foundation and outline the build.',
+    buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
     buttonHref: buildServiceContactHref({
       system: 'smart-website-systems',
       slug: 'elementor',

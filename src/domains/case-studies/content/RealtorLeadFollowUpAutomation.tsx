@@ -151,7 +151,7 @@ function buildRealtorLeadFollowUpAutomation(): CaseStudyData {
     slug: 'realtor-lead-follow-up-automation',
     title: 'Realtor Lead Follow-Up Automation',
     metaTitle:
-      'Why Estate Agents Lose Buyers After the First Response (And the Follow-Up System That Converts Them)',
+      'Estate Agent Follow-Up | 22% to 41% Conversion',
     metaDescription:
       'How a Bath estate agency increased enquiry-to-viewing conversion from 22% to 41% and recovered £14,000 per quarter using automated CRM follow-up sequences.',
     industryCategory: 'real-estate',

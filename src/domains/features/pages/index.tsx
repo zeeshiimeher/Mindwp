@@ -89,8 +89,8 @@ export function FeaturesLanding() {
           {/* CTA Section */}
           <SmartCTA
             {...FEATURES_PAGE_SMART_CTA_CONTEXT}
-            title='Need More Information?'
-            description='For details or clarification about any feature, contact support or review the documentation. Navigation is provided for reference only.'
+            title='Not sure which part of the system you need?'
+            description='Tell us what is not working. We will point you to the right service and explain what it covers.'
             primaryActionVariant='white'
             cssPrefix='footer-cta'
             backgroundColor='bg-gradient-primary'

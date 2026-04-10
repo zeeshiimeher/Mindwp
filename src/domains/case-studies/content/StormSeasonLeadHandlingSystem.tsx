@@ -190,9 +190,9 @@ function buildStormSeasonLeadHandlingSystem(): CaseStudyData {
     slug: 'storm-season-lead-handling-system',
     title: 'Storm Season Lead Handling System',
     metaTitle:
-      'Why Roofing Companies Lose Leads During Storm Season (And the Lead Handling System That Captured Them)',
+      'Storm Season Lead Handling | 89% Missed Call Recovery',
     metaDescription:
-      'How a Birmingham roofing contractor recovered 89% of missed calls during storm season using automated SMS response and CRM lead routing.',
+      'How a Birmingham roofing contractor recovered 89% of missed calls during storm season using automated SMS response, CRM lead routing, and priority triage.',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],

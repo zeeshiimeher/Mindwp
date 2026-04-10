@@ -78,7 +78,7 @@ export const aiChatData: FeaturePageData = {
       'Structured AI chat integrated into your website system for visitor support, routing, and appointment booking with human oversight.',
     schemaName: 'AI Chat',
     schemaDescription:
-      'Structured AI chat integrated into your website system for visitor support, routing, and appointment booking with human oversight.',
+      'Website conversation layer with AI-powered visitor routing, appointment booking, and structured handoff to human agents.',
   }),
   hero: {
     badge: 'Conversation Layer',

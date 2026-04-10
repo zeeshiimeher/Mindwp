@@ -33,12 +33,12 @@ export const woocommercePage = {
   category: 'Implementation Services',
   seo: buildServiceSeo({
     slug,
-    title: 'E-commerce Implementation | Structured Commerce on WordPress',
+    title: 'E-commerce Implementation | WordPress & WooCommerce',
     description:
       'Structured e-commerce and web shop implementation on WordPress, using WooCommerce where appropriate for catalog logic, checkout flow, fulfilment, and reporting.',
     schemaName: 'E-commerce implementation on WordPress',
     schemaDescription:
-      'Structured e-commerce and web shop implementation on WordPress, using WooCommerce where appropriate for catalog logic, checkout flow, fulfilment, and reporting.',
+      'E-commerce system built on WordPress with WooCommerce for product catalog management, checkout optimization, order fulfilment, and sales reporting.',
   }),
   hero: {
     badge: 'E-commerce Infrastructure on WordPress',
@@ -46,7 +46,7 @@ export const woocommercePage = {
     description:
       'We implement e-commerce systems on WordPress with WooCommerce where it fits. Catalog logic, checkout flow, fulfilment rules, and reporting are set up around your actual operating model — not just assembled to get a store online.',
     primaryAction: {
-      label: CTA_LABELS.PRIMARY,
+      label: CTA_LABELS.SMART_WEBSITE_CONVERSION,
       href: buildServiceContactHref({
         system: 'smart-website-systems',
         slug: 'ecommerce',
@@ -221,10 +221,10 @@ export const woocommercePage = {
     },
   },
   cta: {
-    title: 'Discuss your e-commerce implementation',
+    title: 'Planning to sell online through WordPress?',
     description:
-      'If you are evaluating a WordPress-based e-commerce or web shop build, we can review your catalog needs, checkout requirements, fulfilment model, and integrations — then outline a clear implementation plan.',
-    buttonText: CTA_LABELS.PRIMARY,
+      'Tell us what you\'re selling, how orders are handled, and what integrations matter. We\'ll outline what the e-commerce build actually needs.',
+    buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
     buttonHref: buildServiceContactHref({
       system: 'smart-website-systems',
       slug: 'ecommerce',

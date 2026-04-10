@@ -152,9 +152,9 @@ function buildCrmPipelineVisibilityTransformation(): CaseStudyData {
     slug: 'crm-pipeline-visibility-transformation',
     title: 'CRM Pipeline Visibility Transformation',
     metaTitle:
-      'Why Service Businesses Can\u2019t See Their Own Pipeline (And the CRM System That Fixes It)',
+      'CRM Pipeline Visibility | 21% to 34% Close Rate',
     metaDescription:
-      'How a Southampton property maintenance company went from zero pipeline visibility to tracking every lead and quote, increasing close rate from 21% to 34% and identifying £18,000/month in recoverable revenue.',
+      'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],

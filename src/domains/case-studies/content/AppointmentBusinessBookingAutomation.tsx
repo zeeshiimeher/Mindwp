@@ -152,9 +152,9 @@ function buildAppointmentBusinessBookingAutomation(): CaseStudyData {
     slug: 'appointment-business-booking-automation',
     title: 'Dental Practice Booking Automation',
     metaTitle:
-      'Why Dental Practices Lose Patients to Engaged Phone Lines (And the Booking System That Fixes It)',
+      'Dental Booking Automation | 52% Online Booking Adoption',
     metaDescription:
-      'How a Swindon dental practice moved to 52% online booking, increased appointments by 28%, and freed 14 receptionist hours per week.',
+      'How a Swindon dental practice moved to 52% online booking, increased appointments by 28%, and freed 14 receptionist hours per week with automated scheduling.',
     industryCategory: 'healthcare',
     industryLabel: 'Healthcare',
     industries: ['dental-clinic'],

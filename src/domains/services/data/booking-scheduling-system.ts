@@ -23,7 +23,7 @@ export const bookingSchedulingSystemPage = {
   category: 'Operational Systems',
   seo: buildServiceSeo({
     slug,
-    title: 'Booking & Scheduling System | Clearer appointment flow for service businesses',
+    title: 'Booking & Scheduling System | Cleaner Appointment Flow',
     description:
       'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
     schemaName: 'Booking and scheduling system for service businesses',

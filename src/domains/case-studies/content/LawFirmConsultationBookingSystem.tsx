@@ -153,9 +153,9 @@ function buildLawFirmConsultationBookingSystem(): CaseStudyData {
     slug: 'law-firm-consultation-booking-system',
     title: 'Law Firm Consultation Booking System',
     metaTitle:
-      'Why Law Firms Lose Clients Before the First Meeting (And the Booking System That Fixes It)',
+      'Law Firm Booking System | 34% More Consultations',
     metaDescription:
-      'How a Norwich law firm increased consultation bookings by 34% and freed 12 hours per week by replacing phone-only booking with an online system integrated with CRM.',
+      'How a Norwich law firm increased consultation bookings by 34% and freed 12 hours per week by replacing phone-only booking with CRM-integrated scheduling.',
     industryCategory: 'professional-services',
     industryLabel: 'Professional Services',
     industries: ['law-firm'],

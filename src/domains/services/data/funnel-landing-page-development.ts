@@ -23,7 +23,7 @@ export const funnelLandingPageDevelopmentPage = {
   category: 'Implementation Pathway Services',
   seo: buildServiceSeo({
     slug,
-    title: 'Funnel & Landing Page Development | Focused offer and campaign page implementation',
+    title: 'Landing Page Development | Focused Offer Pages',
     description:
       'Funnel and landing page development for service businesses that need focused offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
     schemaName: 'Funnel and landing page development for service businesses',
@@ -37,7 +37,7 @@ export const funnelLandingPageDevelopmentPage = {
     description:
       'This service implements focused landing pages and funnel pages for specific offers, campaigns, booking paths, or quote journeys. The goal is tighter page flow, clearer next-step design, and stronger fit between intent and action.',
     primaryAction: {
-      label: CTA_LABELS.PRIMARY,
+      label: CTA_LABELS.REVENUE_AUDIT,
       href: buildServiceContactHref({
         system: 'revenue-growth',
         slug: 'funnel-landing-page-development',
@@ -242,7 +242,7 @@ export const funnelLandingPageDevelopmentPage = {
     title: 'Build the right page for the job',
     description:
       'If a specific offer, campaign, or booking path needs a more focused landing page, we can help implement it properly.',
-    buttonText: CTA_LABELS.PRIMARY,
+    buttonText: CTA_LABELS.REVENUE_AUDIT,
     buttonHref: buildServiceContactHref({
       system: 'revenue-growth',
       slug: 'funnel-landing-page-development',

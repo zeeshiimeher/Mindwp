@@ -33,7 +33,7 @@ export const leadReactivationSystemPage = {
   category: 'Lifecycle Recovery Systems',
   seo: buildServiceSeo({
     slug,
-    title: 'Lead Reactivation System | Recover value from old enquiries and dormant pipeline',
+    title: 'Lead Reactivation System | Re-Engage Dormant Leads',
     description:
       'Lead reactivation systems for service businesses that need a cleaner way to re-engage old enquiries, dormant quotes, and cold opportunities without random follow-up.',
     schemaName: 'Lead reactivation system for service businesses',
@@ -46,7 +46,7 @@ export const leadReactivationSystemPage = {
     description:
       'This service helps service businesses re-engage old enquiries, stalled quotes, and dormant pipeline value through structured follow-up. The goal is a clearer system so good opportunities are not left sitting unused.',
     primaryAction: {
-      label: CTA_LABELS.PRIMARY,
+      label: CTA_LABELS.REVENUE_AUDIT,
       href: buildServiceContactHref({
         system: 'revenue-growth',
         slug: 'lead-reactivation-system',
@@ -350,7 +350,7 @@ export const leadReactivationSystemPage = {
     title: 'Bring dormant opportunities back to life',
     description:
       'If old enquiries, stalled quotes, or past customers are sitting untouched, we can help structure a clearer reactivation workflow.',
-    buttonText: CTA_LABELS.PRIMARY,
+    buttonText: CTA_LABELS.REVENUE_AUDIT,
     buttonHref: buildServiceContactHref({
       system: 'revenue-growth',
       slug: 'lead-reactivation-system',

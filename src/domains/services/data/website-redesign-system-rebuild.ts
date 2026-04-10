@@ -34,7 +34,7 @@ export const websiteRedesignSystemRebuildPage = {
   seo: buildServiceSeo({
     slug,
     title:
-      'Website Redesign & System Rebuild | Structural realignment for service business websites',
+      'Website Redesign & System Rebuild | For Service Businesses',
     description:
       'Website redesign and system rebuild work for service businesses whose current site no longer matches their services, enquiry flow, integrations, or operational needs.',
     schemaName: 'Website redesign and system rebuild for service businesses',
@@ -47,7 +47,7 @@ export const websiteRedesignSystemRebuildPage = {
     description:
       'This service is for businesses whose current site has drifted too far from their services, enquiry flow, integrations, or operating reality. The work is structural correction and rebuild logic, not cosmetic redesign for its own sake.',
     primaryAction: {
-      label: CTA_LABELS.PRIMARY,
+      label: CTA_LABELS.SMART_WEBSITE_CONVERSION,
       href: buildServiceContactHref({
         system: 'smart-website-systems',
         slug: 'website-redesign-system-rebuild',
@@ -296,7 +296,7 @@ export const websiteRedesignSystemRebuildPage = {
     title: 'Rebuild the website around how the business actually works',
     description:
       'If the current site no longer supports your services, enquiry flow, or maintainability, we can help define a clearer rebuild pathway.',
-    buttonText: CTA_LABELS.PRIMARY,
+    buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
     buttonHref: buildServiceContactHref({
       system: 'smart-website-systems',
       slug: 'website-redesign-system-rebuild',

@@ -2,6 +2,19 @@
 
 This document is part of the MindWP Core Architecture System.
 
+## REQUIRED READING ORDER
+
+1. **SYSTEM-CORE.md** (mandatory — read first)
+2. **CONTENT-WRITING-PLAYBOOK.md**
+3. **This document** (CONTENT-GOVERNANCE.md)
+
+## AUTHORITY NOTICE
+
+This document does NOT override SYSTEM-CORE.md.
+
+This document governs **edit governance, domain behavior rules, and edit intensity**.
+If this document conflicts with SYSTEM-CORE.md → SYSTEM-CORE.md wins.
+
 Authoritative Sources:
 
 - FOUNDATION-AND-POSITIONING.md

@@ -2,15 +2,15 @@
 
 ## REQUIRED READING ORDER
 
-1. **SYSTEM-CORE.md** (mandatory — read first)
-2. **This document** (CONVERSION-SYSTEM.md)
+1. **SYSTEM.md** (mandatory — read first)
+2. **This document** (CONVERSION.md)
 
 ## AUTHORITY NOTICE
 
-This document does NOT override SYSTEM-CORE.md.
+This document does NOT override SYSTEM.md.
 
 This document is the **single execution authority for CTA, contact, and conversion contracts**.
-If this document conflicts with SYSTEM-CORE.md → SYSTEM-CORE.md wins.
+If this document conflicts with SYSTEM.md → SYSTEM.md wins.
 
 ## WHEN TO USE THIS DOC
 
@@ -19,7 +19,7 @@ It covers SmartCTA contracts, contact URL generation, form data flow, and valida
 
 ---
 <!-- Purpose: Single execution authority for CTA, contact, and conversion contracts -->
-<!-- Depends on: SYSTEM-CORE.md, FOUNDATION-AND-POSITIONING.md (tone), CONTENT-SYSTEM-ARCHITECTURE.md (structure), CONTENT-GRAPH-SYSTEM.md (metadata) -->
+<!-- Depends on: SYSTEM.md, SYSTEM.md (tone), CONTENT.md (structure), GRAPH.md (metadata) -->
 <!-- Used by: CTA components, /contact page, validators, system docs -->
 
 > This document is the SINGLE SOURCE OF TRUTH for conversion behavior.
@@ -282,8 +282,8 @@ Every CTA panel (SmartCTA or service CTA section) MUST follow this structure:
 ## 7. ENFORCEMENT
 
 - Conversion behavior must be documented only here
-- Structural CTA placement rules belong to CONTENT-SYSTEM-ARCHITECTURE.md
-- Metadata and source-generation requirements belong to CONTENT-GRAPH-SYSTEM.md
+- Structural CTA placement rules belong to CONTENT.md
+- Metadata and source-generation requirements belong to GRAPH.md
 - `validate-cta-label-contract` enforces label alignment
 - `validate-conversion-contract` enforces URL contract compliance
 

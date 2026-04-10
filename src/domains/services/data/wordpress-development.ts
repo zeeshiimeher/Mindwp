@@ -24,7 +24,7 @@ export const wordpressDevelopmentPage = {
   seo: buildServiceSeo({
     slug,
     title:
-      'WordPress Website Development | Structured Website Implementation for Service Businesses',
+      'WordPress Development | Structured Implementation for Businesses',
     description:
       'Structured WordPress website development for service businesses that need clear site architecture, better enquiry flow, cleaner implementation, and long-term maintainability.',
     schemaName: 'WordPress website development for service businesses',
@@ -38,7 +38,7 @@ export const wordpressDevelopmentPage = {
     description:
       'This is for service businesses that need a proper WordPress foundation. Not pages thrown together quickly, but a site where services are clearly presented, enquiry paths make sense, and the whole thing stays manageable after launch.',
     primaryAction: {
-      label: CTA_LABELS.PRIMARY,
+      label: CTA_LABELS.SMART_WEBSITE_CONVERSION,
       href: buildServiceContactHref({
         system: 'smart-website-systems',
         slug: 'wordpress-development',
@@ -301,10 +301,10 @@ export const wordpressDevelopmentPage = {
     },
   },
   cta: {
-    title: 'Discuss your WordPress website project',
+    title: 'Need a WordPress site built around how the business works?',
     description:
-      'If you need a clearer WordPress foundation for a service business, we can review the current situation and outline the best implementation path forward.',
-    buttonText: CTA_LABELS.PRIMARY,
+      'Tell us about your services and how enquiries come in now. We\'ll outline what the build should cover and the best implementation path forward.',
+    buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
     buttonHref: buildServiceContactHref({
       system: 'smart-website-systems',
       slug: 'wordpress-development',

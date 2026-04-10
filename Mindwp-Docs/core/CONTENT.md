@@ -1,68 +1,49 @@
-# SYSTEM GOVERNANCE NOTICE (LOCKED)
+# CONTENT SYSTEM
 
-This document is part of the MindWP Core Architecture System.
+Status: Governing Document
+Version: 2.0 — Consolidated
+Last Updated: 2026-04-10
+
+---
 
 ## REQUIRED READING ORDER
 
-1. **SYSTEM-CORE.md** (mandatory — read first)
-2. **FOUNDATION-AND-POSITIONING.md**
-3. **This document** (CONTENT-SYSTEM-ARCHITECTURE.md)
+1. **SYSTEM.md** (mandatory — read first)
+2. **This document** (CONTENT.md)
 
 ## AUTHORITY NOTICE
 
-This document does NOT override SYSTEM-CORE.md.
+This document does NOT override SYSTEM.md.
 
-This document governs **content type definitions, service page architecture, tier page matrices, and exposure rules**.
-Service roles, boundaries, terminology, and system flow are governed by SYSTEM-CORE.md.
+This document governs **content type definitions, service page architecture, tier page matrices, exposure rules, content archetypes, blueprints, template section mappings, edit governance, domain behavior rules, and edit intensity**.
 
-If this document conflicts with SYSTEM-CORE.md → SYSTEM-CORE.md wins.
+If this document conflicts with SYSTEM.md → SYSTEM.md wins.
 
-Authoritative Sources:
+## WHEN TO USE THIS DOC
 
-- FOUNDATION-AND-POSITIONING.md
-- CONTENT-SYSTEM-ARCHITECTURE.md
-- CONTENT-GRAPH-SYSTEM.md
-- CONTENT-BLUEPRINT-SYSTEM.md
-- CONTENT-GOVERNANCE.md
+Use this document when working on:
+- Content type definitions and roles
+- Service page architecture and tier structure
+- Industry architecture and page composition
+- Content hierarchy, exposure rules, and relationship model
+- Blog, resource, and case study archetypes and section structures
+- Template section mappings and writing blueprints
+- Content editing governance and AI editing rules
+- Edit intensity levels and protected content rules
 
-Rules:
-
-- No other documents may define architecture rules
-- Archived documents must not be used as reference
-- Planning files must not override system rules
-- If conflict exists → core documents always win
+Positioning, copy voice, CTA standards, and tone rules → see SYSTEM.md.
+Graph ontology, metadata, and relationship resolution → see GRAPH.md.
+Conversion behavior, CTA contracts, and routing → see CONVERSION.md.
+Writing method, rewrite process, and language rules → see WRITING.md.
+Design tokens, spacing, and UI rules → see DESIGN.md.
 
 ---
 
 <!-- WHERE THIS FITS -->
-<!-- Purpose: Content type rules, routing, page composition — #2 in authority stack -->
-<!-- Depends on: SYSTEM-CORE.md, FOUNDATION-AND-POSITIONING.md -->
-<!-- Used by: domain registries, page templates, content routing -->
-
-# CONTENT SYSTEM ARCHITECTURE (LOCKED)
-
-Status: Governing Document
-Version: 1.0
-Authority Level: Governing Document
-Last Updated: 2026-04-07
-
-Consolidated from: BUSINESS-ARCHITECTURE.md, CONTENT-ARCHITECTURE.md, CONTENT-ECOSYSTEM-ARCHITECTURE.md
-
----
-
-## Purpose
-
-This document defines the permanent service structure, industry architecture, content hierarchy, content production rules, SEO governance, and content relationship model for MindWP.
-
-No new services, renaming, restructuring, or content expansion should occur without consulting this document first.
-
-Positioning, copy voice, CTA standards, banned vocabulary, AI execution lock, and tone rules are defined in **FOUNDATION-AND-POSITIONING.md**.
-
-Content graph ontology, metadata rules, and relationship resolution engineering are defined in **CONTENT-GRAPH-SYSTEM.md**.
-
-Conversion behavior, CTA contracts, contact rules, and validation requirements are defined in **CONVERSION-SYSTEM.md**.
-
-Content archetypes, template section mappings, and writing blueprints are defined in **CONTENT-BLUEPRINT-SYSTEM.md**.
+<!-- Purpose: Content type rules, routing, page composition, archetypes, blueprints, edit governance -->
+<!-- Depends on: SYSTEM.md -->
+<!-- Used by: domain registries, page templates, content routing, content validation -->
+<!-- Consolidated from: CONTENT.md, CONTENT.md, CONTENT.md -->
 
 ---
 
@@ -90,7 +71,7 @@ Downstream content should extend the completed architecture rather than reopen c
 
 ## AI Execution Discipline
 
-This document is governed by the AI Execution Lock defined in **FOUNDATION-AND-POSITIONING.md**.
+This document is governed by the AI Execution Lock defined in **SYSTEM.md**.
 
 AI systems must operate in execution mode, not strategy mode. AI may implement, improve clarity, and extend content. AI must not reopen architectural debates, propose alternative service models, or present structural alternatives.
 
@@ -102,7 +83,7 @@ AI systems must operate in execution mode, not strategy mode. AI may implement, 
 
 # TIER 1 — CORE REVENUE SYSTEMS (GRAVITY MODEL)
 
-> Service roles, tier definitions, and gravity model → see SYSTEM-CORE.md §2.
+> Service roles, tier definitions, and gravity model → see SYSTEM.md §2.
 > This section defines **page composition and implementation structure** for each tier.
 
 ---
@@ -296,7 +277,7 @@ Operational problem
 → Supporting modules
 → Outcome
 
-Tier 1 pages must always reinforce the system chain (see SYSTEM-CORE.md §3 for the canonical flow):
+Tier 1 pages must always reinforce the system chain (see SYSTEM.md §3 for the canonical flow):
 
 Website
 → Enquiry capture
@@ -310,8 +291,8 @@ Individual systems must be explained as layers inside the broader system, not in
 
 ## Service Page Copywriting Tone (Locked)
 
-> Voice, tone, banned vocabulary, sentence construction, and language rules → see CONTENT-WRITING-PLAYBOOK.md.
-> Per-service terminology and banned words → see SYSTEM-CORE.md §5.
+> Voice, tone, banned vocabulary, sentence construction, and language rules → see WRITING.md.
+> Per-service terminology and banned words → see SYSTEM.md §5.
 
 Summary (reference only — not the authoritative source):
 - Calm and consultative
@@ -323,7 +304,7 @@ Summary (reference only — not the authoritative source):
 
 ## Language Repetition Safeguard (Locked)
 
-> Detailed rewrite method and language system → see CONTENT-WRITING-PLAYBOOK.md §3–4.
+> Detailed rewrite method and language system → see WRITING.md §3–4.
 
 The goal is clarity of meaning, not vocabulary substitution.
 
@@ -1164,7 +1145,7 @@ No random internal links. No over-linking. Authority compounds upward. Random cr
 
 ## Content System Integrity Rule (Locked)
 
-MindWP uses a locked intent-classified content ecosystem. Each content type has a defined role and must not be mixed or flattened. Routing → **CONVERSION-SYSTEM.md**.
+MindWP uses a locked intent-classified content ecosystem. Each content type has a defined role and must not be mixed or flattened. Routing → **CONVERSION.md**.
 
 - Blog: Must NOT appear on service pages.
 - Resources: Must remain system-focused.
@@ -1305,7 +1286,7 @@ The goal: educate first, build trust with proof, invite implementation only when
 
 ### Core Content Flow (Intent-Based Routing)
 
-Content does NOT follow a linear funnel. Conversion uses the locked CTA intent contract defined in **CONVERSION-SYSTEM.md**.
+Content does NOT follow a linear funnel. Conversion uses the locked CTA intent contract defined in **CONVERSION.md**.
 
 Default page-type intent mapping:
 
@@ -1318,7 +1299,7 @@ Default page-type intent mapping:
 
 ## INTENT MODEL (LOCKED)
 
-Intent model, CTA input contract, and source generation rules are defined in **CONVERSION-SYSTEM.md**.
+Intent model, CTA input contract, and source generation rules are defined in **CONVERSION.md**.
 
 MindWP uses four locked content intents:
 
@@ -1551,9 +1532,9 @@ Controlled by the UI layer (`src/config/ui-intelligence.ts`) via **SmartRelatedS
 
 ## CONVERSION ARCHITECTURE RULES (LOCKED)
 
-Conversion behavior, CTA system, routing, intensity mapping, placement rules, and data contracts are defined in **CONVERSION-SYSTEM.md** — the single execution authority for all conversion behavior.
+Conversion behavior, CTA system, routing, intensity mapping, placement rules, and data contracts are defined in **CONVERSION.md** — the single execution authority for all conversion behavior.
 
-Copy standards and CTA language are defined in **FOUNDATION-AND-POSITIONING.md** §5 and §5a.
+Copy standards and CTA language are defined in **SYSTEM.md** §5 and §5a.
 
 This section retains only structural rules that govern page composition.
 
@@ -1586,7 +1567,7 @@ Trust elements must be placed near CTAs to support conversion:
 - System clarity explanations
 
 Rules:
-- No fabricated testimonials (governed by Interim Proof Law in FOUNDATION-AND-POSITIONING.md)
+- No fabricated testimonials (governed by Interim Proof Law in SYSTEM.md)
 - Trust signals must be contextually relevant — not generic
 - Proof placement above CTA = understanding; below CTA = decision support
 
@@ -1760,7 +1741,7 @@ Resources must feel like operational playbooks, not marketing articles.
 **System Explanation Layer Rule:**
 Global resources explain a system once at the framework level. Industry resources demonstrate how that system appears in operational scenarios. Industry resources must reference system frameworks rather than re-teaching the full system theory.
 
-Resource section structure flows and archetype definitions are maintained in **CONTENT-BLUEPRINT-SYSTEM.md**.
+Resource section structure flows and archetype definitions are maintained in **CONTENT.md**.
 
 ---
 
@@ -1780,7 +1761,7 @@ Blog content should:
 
 Blog articles should rarely contain FAQ sections. FAQ blocks should only be used when the article addresses multiple operational questions with clear answers.
 
-Blog archetypes, section structures, and writing rules are maintained in **CONTENT-BLUEPRINT-SYSTEM.md**.
+Blog archetypes, section structures, and writing rules are maintained in **CONTENT.md**.
 
 ---
 
@@ -2175,7 +2156,7 @@ All content nodes must declare valid metadata that matches the canonical identif
 - New identifiers must be added to the canonical registry before use.
 - Content without required metadata fields must fail validation.
 
-Cross-reference: System Gate Rule (this document), Canonical Identifier Registry (CONTENT-GRAPH-SYSTEM.md).
+Cross-reference: System Gate Rule (this document), Canonical Identifier Registry (GRAPH.md).
 
 ---
 
@@ -2297,6 +2278,1199 @@ Analyze -> Insight -> Decision -> Update -> Re-validate
 ### Important Rule
 
 System MUST NOT auto-fix content or UI.
+
+---
+
+END OF DOCUMENT.
+
+---
+
+# ===== CONTENT BLUEPRINTS & ARCHETYPES =====
+
+> Consolidated from: CONTENT.md
+
+# ===== PART 1: BLOG ARCHETYPES =====
+
+---
+
+## Blog Architecture Role
+
+The blog layer sits at the top of the editorial discovery system.
+
+Content flow:
+
+Blog → Resource → Industry → Service
+
+Role of each layer:
+
+- Blog: captures search demand around problems, trends, breakdowns, and mistakes.
+- Resource: explains the evergreen framework or system behind the problem.
+- Industry: contextualizes the framework for a specific market.
+- Service: stays conversion-focused and explains implementation.
+
+Architectural rule:
+
+Blogs feed authority into resource hubs. They are not standalone authority targets. Every blog post must support a deeper content node in the architecture.
+
+---
+
+## Allowed Template Sections
+
+All blog archetypes should be built from supported template sections only:
+
+- introduction
+- content
+- takeaways
+- quote
+- steps
+- checklist
+- image
+- callout
+- faq
+- cta
+
+### FAQ Rule
+
+FAQ should be rare. Use it only when search intent clearly suggests clarification is necessary or when a post covers a system that creates repeatable reader questions. If FAQ is used, it must appear before `cta`. `cta` must always be the final section.
+
+---
+
+## System Context Rule
+
+Every article must establish system context using this placement logic:
+
+- introduction
+- system context
+- main sections
+- takeaways
+- cta
+
+System context is not a separate template type. It is usually implemented as the first `content` section after the introduction.
+
+The system context block must explain:
+
+- what system layer the problem belongs to
+- why the issue is operational rather than purely promotional
+- which deeper resource or framework the post should naturally lead into
+
+---
+
+## Section Diversity Rule
+
+- Do not repeat the exact same section sequence across multiple posts.
+- Posts inside the same archetype must vary at least one structural component such as `quote`, `checklist`, `steps`, `image`, `callout`, or `faq`.
+- Two posts may share the same archetype, but they must not feel templated in identical order and cadence.
+- Diversity should come from structure and emphasis, not random section insertion.
+
+---
+
+## Blog Insight Writing Rule
+
+Every article must contain two explicit insight statements:
+
+- **Observation**: what is happening in the business, market, or workflow.
+- **Implication**: why that observation changes the decision, risk, or system requirement.
+
+These insight statements should appear inside the main body, usually in `content` or `callout` sections. They should not be treated as decorative copy.
+
+---
+
+## Blog Archetypes
+
+### Problem Analysis
+
+Purpose: Explain why a business problem happens and where the operational breakdown starts.
+
+Recommended section structure:
+
+- introduction
+- content (system context)
+- content
+- content
+- checklist
+- callout
+- takeaways
+- cta
+
+### Industry Breakdown
+
+Purpose: Explain how a specific industry experiences a repeated operational issue.
+
+Recommended section structure:
+
+- introduction
+- content (system context)
+- content
+- quote
+- content
+- steps
+- checklist
+- takeaways
+- cta
+
+### System Explanation
+
+Purpose: Explain how a business system works at a conceptual level without becoming a resource page.
+
+Recommended section structure:
+
+- introduction
+- content (system context)
+- content
+- steps
+- checklist
+- quote
+- takeaways
+- cta
+
+### Operational Mistake
+
+Purpose: Highlight a repeatable mistake, its downstream cost, and the correct system response.
+
+Recommended section structure:
+
+- introduction
+- content (system context)
+- content
+- callout
+- content
+- checklist
+- quote
+- takeaways
+- cta
+
+### Trend Analysis
+
+Purpose: Interpret new market or technology changes and explain practical implications.
+
+Recommended section structure:
+
+- introduction
+- content (system context)
+- image
+- content
+- callout
+- quote
+- takeaways
+- cta
+
+---
+
+## Blog Metadata Model
+
+Every blog post must define the following fields:
+
+- slug
+- title
+- primaryKeyword
+- supportingKeywords
+- category
+- publishDate
+- systems[]
+- industries[]
+- topics[]
+- tags[]
+- seo
+- sections[]
+
+Metadata rules:
+
+- slug: kebab-case URL identifier.
+- title: editorial headline containing the primary keyword naturally.
+- primaryKeyword: primary search target.
+- supportingKeywords: secondary semantic variations and adjacent phrases.
+- category: one of the locked organizational categories.
+- publishDate: realistic ISO date aligned to the publishing timeline.
+- systems[]: canonical system mappings.
+- industries[]: canonical industry mappings.
+- topics[]: canonical topic mappings.
+- tags[]: editorial labels for browsing and filtering.
+- seo: title, description, canonical, keywords, and open graph metadata.
+- sections[]: only supported template section types.
+
+FAQ schema rule: FAQ schema is generated only from explicit faq sections. Checklist and steps content must never be treated as FAQ content.
+
+---
+
+## Blog Categories
+
+Final locked category list:
+
+- smart-website-systems
+- ai-lead-handling
+- local-authority-seo
+- crm-automation
+- reputation-review
+- home-services-industry
+- beauty-personal-care-industry
+- future-local-business-tech
+
+Rule: Categories are organizational only. SEO targeting happens through metadata fields such as primaryKeyword, supportingKeywords, systems[], industries[], topics[], and search intent.
+
+---
+
+# ===== PART 2: RESOURCE ARCHETYPES =====
+
+---
+
+## Resource Architecture Role
+
+Resources explain systems, frameworks, and operational structures used by service businesses.
+
+Resource layers:
+
+- **Global System Resources** — explain a system framework once at the system level.
+- **Industry Context Resources** — demonstrate how the system works inside real verticals.
+
+Industry resources must reference system frameworks rather than re-teaching the full system theory.
+
+---
+
+## Resource Archetypes (Locked)
+
+Resources should follow defined structural archetypes. This prevents every resource from looking identical while maintaining architectural consistency.
+
+### Framework Resource
+
+Explains the structure of a system.
+
+Conceptual sections:
+
+hero, takeaways, problem, comparison, solution-cards, implementation-considerations, common-mistakes, cta, related
+
+Example topics: Lead Automation Framework, CRM Pipeline Architecture, Review Generation Systems.
+
+### Workflow Resource
+
+Explains a step-by-step operational workflow.
+
+Conceptual sections:
+
+hero, problem, business-costs, step-framework, checklist, implementation-considerations, cta, related
+
+Sections may be reduced for simpler workflow resources if the topic does not require full operational depth.
+
+Example topics: Follow-Up Automation, Missed Call Recovery, Booking Workflows.
+
+### Diagnostic Resource
+
+Explains the root causes behind operational problems before introducing the system solution. Targets problem-aware search intent.
+
+Conceptual sections:
+
+hero, problem, root-causes, industry-data, system-fix, solution-cards, optional-faq, cta, related
+
+Purpose: Bridge between blog insights and system frameworks.
+
+Rule: Diagnostic resources should be limited to high-value operational problems. Avoid creating diagnostic content for every industry unless the problem represents a major operational pattern.
+
+Example topics: Why Service Businesses Lose Leads, Why HVAC Companies Miss Emergency Calls.
+
+### Industry Example Resource
+
+Shows a system applied to a real industry.
+
+Conceptual sections:
+
+hero, problem, industry-context, workflow, solution-cards, implementation-notes, optional-faq, cta, related
+
+Example topics: Roofing Lead Handling Example, Salon Review Generation.
+
+### Implementation Guide Resource
+
+Explains practical system implementation details.
+
+Conceptual sections:
+
+hero, problem, technical-context, step-framework, implementation-notes, common-mistakes, cta, related
+
+Example topics: CRM Pipeline Setup, Website + CRM Integration.
+
+---
+
+## Archetype → Template Section Mapping (Locked)
+
+The archetypes above define conceptual structure. However, the runtime resource template system only supports a fixed set of section types.
+
+### Allowed Template Section Types
+
+Only the following section types are allowed in resource files:
+
+hero, takeaways, problem, business-costs, diy, solution-cards, case, comparison, templates, checklist, faq, cta, related-resources, sidebar-cta
+
+### Framework Resource Mapping
+
+| Conceptual Section | Template Section Type |
+|--------------------|-----------------------|
+| hero | hero |
+| system context | takeaways |
+| problem | problem |
+| comparison | comparison |
+| solution cards | solution-cards |
+| implementation considerations | diy |
+| common mistakes | case |
+| faq | faq |
+| call to action | cta |
+| related resources | related-resources |
+
+Example section order:
+
+hero, takeaways, problem, comparison, solution-cards, diy, case, faq, cta, related-resources
+
+### Workflow Resource Mapping
+
+| Conceptual Section | Template Section Type |
+|--------------------|-----------------------|
+| hero | hero |
+| system context | takeaways |
+| problem | problem |
+| business costs | business-costs |
+| step framework | diy |
+| checklist | checklist |
+| faq | faq |
+| call to action | cta |
+| related resources | related-resources |
+
+Example section order:
+
+hero, takeaways, problem, business-costs, diy, checklist, faq, cta, related-resources
+
+### Diagnostic Resource Mapping
+
+| Conceptual Section | Template Section Type |
+|--------------------|-----------------------|
+| hero | hero |
+| system context | takeaways |
+| problem | problem |
+| root causes | comparison |
+| industry data | case |
+| system fix | solution-cards |
+| faq | faq |
+| call to action | cta |
+| related resources | related-resources |
+
+Example section order:
+
+hero, takeaways, problem, comparison, case, solution-cards, faq, cta, related-resources
+
+### Industry Example Resource Mapping
+
+| Conceptual Section | Template Section Type |
+|--------------------|-----------------------|
+| hero | hero |
+| system context | takeaways |
+| problem | problem |
+| industry context | case |
+| workflow | diy |
+| solution cards | solution-cards |
+| faq | faq |
+| call to action | cta |
+| related resources | related-resources |
+
+Example section order:
+
+hero, takeaways, problem, case, diy, solution-cards, faq, cta, related-resources
+
+### Implementation Guide Resource Mapping
+
+| Conceptual Section | Template Section Type |
+|--------------------|-----------------------|
+| hero | hero |
+| system context | takeaways |
+| problem | problem |
+| technical context | case |
+| step framework | diy |
+| implementation notes | templates |
+| common mistakes | case |
+| faq | faq |
+| call to action | cta |
+| related resources | related-resources |
+
+Example section order:
+
+hero, takeaways, problem, case, diy, templates, faq, cta, related-resources
+
+---
+
+## Resource Template Rules
+
+Template behavior:
+
+- Hero section — required
+- CTA section — always included via template
+- Related section — always included via template
+
+FAQ section:
+
+Optional. FAQ should only appear when: search intent indicates questions, or the topic benefits from clarification. Resources should not force FAQ blocks unnecessarily.
+
+---
+
+## Resource Metadata Model
+
+Every resource must define the following metadata:
+
+- Title
+- industries[]
+- systems[]
+- topics[]
+- Primary Keyword
+- Intent Type
+
+Allowed intent types: pain-based, framework, comparison, implementation, workflow, diagnostic.
+
+---
+
+## Resource Structure Standard
+
+Each resource should follow this flow:
+
+1. Problem Explanation
+2. Why It Happens
+3. System-Based Fix
+4. Step-by-Step Framework
+5. Implementation Considerations
+6. Common Mistakes
+7. Light CTA
+
+---
+
+# ===== PART 3: CASE STUDY ARCHETYPES =====
+
+---
+
+## Case Study Architecture Role
+
+Case studies function as the proof layer of the system-first content architecture.
+
+Authority flow:
+
+Blog / Resource → Industry Page → Case Study → Service Implementation (reference only)
+
+Case studies validate how a system was implemented inside a real industry environment. They should always sit beneath an industry page and never be positioned as standalone marketing pages.
+
+Case studies support industries, not services. They must never be displayed or listed on service pages.
+
+---
+
+## Case Study Archetypes
+
+Case studies follow one of three archetypes depending on the scenario.
+
+### System Implementation Case
+
+Use when the case study demonstrates how a specific system was built and deployed.
+Focus: architecture, technical workflow, system design decisions.
+Example: Smart Website Infrastructure Implementation.
+
+### Operational Problem Case
+
+Use when the case study focuses on a recurring operational failure and the system that resolved it.
+Focus: problem identification, root cause, system response.
+Example: Storm Season Lead Handling System.
+
+### Revenue Recovery Case
+
+Use when the case study demonstrates how lost or missed revenue was recovered through automation.
+Focus: revenue impact, reactivation workflows, measurable business outcomes.
+Example: HVAC Maintenance Plan Reactivation.
+
+---
+
+## Case Study Page Structure
+
+Case studies may contain 4–9 sections depending on complexity.
+
+### Required Sections
+
+1. Hero
+2. Operational Problem
+3. System Implementation
+4. Consultation CTA
+
+### Optional Sections
+
+5. Workflow Breakdown
+6. Results
+7. Metrics
+8. Frameworks Used
+9. Lessons
+
+Every case study must include the four required sections. Optional sections should be added when the scenario has enough depth to justify them.
+
+---
+
+## Section Flexibility Rule
+
+Case studies should not follow identical section layouts. Depending on the complexity of the scenario, different section combinations may be used.
+
+### Structure A — Operational Case
+
+Hero → Operational Problem → System Implementation → Workflow Breakdown → Results → Consultation CTA
+
+### Structure B — Revenue Recovery Case
+
+Hero → Operational Problem → System Implementation → Results → Metrics → Consultation CTA
+
+### Structure C — System Architecture Case
+
+Hero → Operational Problem → System Implementation → Workflow Breakdown → Frameworks Used → Lessons → Consultation CTA
+
+Guidelines:
+
+- Do not force every case study to include all optional sections.
+- Use metrics only when meaningful data exists.
+- Simpler cases may use only 4–5 sections.
+- Complex cases may expand to 7–9 sections.
+
+---
+
+## Case Study Cluster Rules
+
+Case studies should follow cluster rules similar to the blog and resource systems.
+
+Each case study should be unique across the following combination:
+
+industry + operational problem + system
+
+Clusters should represent distinct operational scenarios rather than repeating the same problem narrative.
+
+---
+
+## Case Study Metadata Structure
+
+Each case study should track:
+
+Required:
+- UI Label (Short Title)
+- SEO Title (Problem-First Title)
+- Slug
+- industries[]
+- systems[]
+- resources[]
+- Archetype
+- Operational Problem
+- Implementation Summary
+- Outcome
+
+Optional:
+- topics[]
+- industrySlug
+- primarySystemLayer
+- Scenario Type
+- resultType
+
+The resources[] field defines the frameworks used in the case study, connecting it to the specific resource frameworks that explain the methodology behind the implementation.
+
+---
+
+## Case Study Writing Rules
+
+Case studies must read like operational documentation rather than marketing stories.
+
+Writing guidelines:
+
+- Describe the real operational environment before introducing the solution.
+- Explain what system components were implemented and why they were chosen.
+- Show how the workflow changed after implementation.
+- Use clear operational language instead of promotional language.
+
+Avoid writing patterns such as:
+
+- generic marketing storytelling
+- vague success claims
+- "digital transformation" style narratives
+
+Prefer concrete operational explanations such as:
+
+- what problem existed
+- what workflow was implemented
+- what systems were connected
+- what business outcome occurred
+
+Example contrast:
+
+Weak: "The company improved their digital presence and saw great results."
+
+Correct: "The business previously missed 6–10 calls per week during peak hours. A missed-call recovery system was implemented to automatically respond by SMS, log the lead in the CRM pipeline, and trigger follow-up tasks for the service team."
+
+---
+
+## Case Study Hub Architecture
+
+The Case Study Hub is the central listing page that organizes all case studies across industries.
+
+Purpose: Provide a single location to explore implementation proof, support internal linking to industry pages, surface system implementation examples.
+
+Primary grouping: Industries (not services).
+
+### Category Rule
+
+Case studies do NOT use independent content categories. Industry pages act as the natural grouping system.
+
+The system must NOT introduce fields such as: caseStudyCategory, caseStudyGroup, caseStudyTopic.
+
+Case studies inherit organization from the industries[] metadata field instead.
+
+---
+
+## System → Case Study Support Map
+
+This map ensures every core system has proof scenarios:
+
+- **Smart Website Systems**: Roofing Website Rebuild With CRM, Smart Website Infrastructure Implementation
+- **AI Lead Handling Systems**: Storm Season Lead Handling System, HVAC Emergency Lead Routing, Auto Repair Missed Call Recovery
+- **Reputation & Review Systems**: Salon Review Generation Automation
+- **Local Authority & SEO Systems**: Local Authority System Impact
+- **Revenue Growth Systems**: Roofing Estimate Follow-Up Automation, HVAC Maintenance Plan Reactivation, Appointment Reminder No-Show Reduction
+
+---
+
+END OF DOCUMENT.
+
+---
+
+# ===== CONTENT GOVERNANCE =====
+
+> Consolidated from: CONTENT.md
+
+# CONTENT GOVERNANCE
+
+Status: Active Control Layer
+Version: 1.0
+Last Updated: 2026-03-27
+
+---
+
+## 1. Purpose
+
+This document is a control layer. It does not replace or duplicate existing architecture documents.
+
+It exists to answer one question:
+
+**When editing content, what rules apply and in what order?**
+
+Architecture documents define what the system is. This document defines how content is written, edited, and validated within that system.
+
+It governs:
+- How AI and human editors approach content changes
+- What is allowed in each domain and section
+- What intensity level is appropriate for each edit type
+- What content must never be touched without explicit approval
+
+---
+
+## 2. Source of Truth Mapping
+
+Each governing concern has exactly one authoritative source. This document references them — it does not redefine them.
+
+| Concern | Source Document |
+|---|---|
+| Service hierarchy, tier structure, positioning | SYSTEM.md |
+| Voice, tone, banned vocabulary, CTA standards | SYSTEM.md §Content Writing Playbook |
+| Content archetypes, section structures, template mappings | CONTENT.md |
+| Content graph ontology, metadata, relationship rules | GRAPH.md |
+| Service architecture, production rules, exposure rules | CONTENT.md |
+| Content planning (blogs, resources, case studies) | CONTENT-INVENTORY.md |
+
+**Conflict resolution:** If this document conflicts with any source listed above, the source document wins.
+
+---
+
+## Rule Priority Order
+
+When editing content, rules must be applied in this order:
+
+1. Architecture constraints (structure, metadata, system rules)
+2. Domain behavior rules
+3. Section behavior rules
+4. Vocabulary rules
+5. Edit intensity rules
+
+If a conflict occurs, the higher priority rule wins.
+
+---
+
+## 3. Domain Behavior Rules
+
+Each content domain has a different purpose and a different writing expectation. Editors must identify the domain before making any change.
+
+### Services
+
+Purpose: Explain what MindWP builds, how it works, and why it matters to a business owner.
+
+Writing expectation:
+- Clear positioning — not sales copy
+- Outcome-focused — describe what changes for the business
+- Calm confidence — no hype, no urgency
+- Smart Website gravity must be maintained across all service pages
+
+### Blog
+
+Purpose: Capture search demand around problems, trends, and mistakes. Feed authority into resources and service pages.
+
+Writing expectation:
+- Educational and practical
+- Problem-first — open with the operational problem
+- System context early — connect the problem to the relevant system layer
+- Plain English — explain things a business owner would recognise
+
+### Resources
+
+Purpose: Explain systems, frameworks, and operational structures. Evergreen operational knowledge.
+
+Writing expectation:
+- Framework-focused — explain how something works
+- No trend commentary or opinion
+- Structured and thorough
+- Should feel like reference material, not marketing
+
+### Case Studies
+
+Purpose: Prove that a system was implemented in a real industry environment.
+
+Writing expectation:
+- Operational documentation, not marketing stories
+- Describe what existed before, what was implemented, and what changed
+- Concrete and specific — avoid vague claims
+- No hype language — results should speak for themselves
+
+### Features
+
+Purpose: Explain specific capabilities within the system architecture.
+
+Writing expectation:
+- Clear and functional
+- Describe what it does and why it matters
+- Stay within the system framing — features support systems, they are not standalone products
+
+---
+
+## 4. Section Behavior Rules
+
+Within each domain, different sections have different jobs. The section determines the writing approach.
+
+### Hero
+
+Job: Establish what the page is about and why it matters.
+Rule: Must answer "what is in it for me" in the first sentence. No abstract framing. No banned vocabulary.
+
+**Featured image:** Every content page hero has an automatically generated featured image (`featured-overlay.webp`) with cinematic SVG overlay. These are pipeline outputs, not manually created assets. To regenerate, use `npx tsx scripts/image-system/image-generate.ts --mode test --domain <domain> --force`. Image system architecture: `Automatic-Image-Generation-System/IMAGE-SYSTEM.md`.
+
+### Problem
+
+Job: Describe the operational issue the reader recognises.
+Rule: Open with a specific daily situation. Use concrete examples. No solutions in this section.
+
+### Solution / System Implementation
+
+Job: Explain what system addresses the problem and how it works.
+Rule: Outcome-focused. Describe what changes. Avoid feature lists — describe operational shifts.
+
+### CTA
+
+Job: Invite the next step without pressure.
+Rule: CTA behavior → **SYSTEM.md**. Editors must not modify CTA labels, hrefs, or structure.
+
+Primary CTA: "Start a Conversation" → /contact (LOCKED). Any deviation is a validation failure.
+
+> **CTA DESTINATION LOCK (27 March 2026):** CTA destination is locked to `/contact`. The `/conversation` page has been REMOVED (Phase 10 Decision 6). Any change to CTA destination requires a full system update including validators, docs, and routing.
+
+### FAQ
+
+Job: Answer real questions a business owner would ask.
+Rule: Answers must be short and practical. No paragraph-length marketing. Questions must sound natural.
+
+### Takeaways
+
+Job: Summarise the key points.
+Rule: Each point must be a clear, standalone statement. No filler.
+
+### Checklist / Steps
+
+Job: Provide actionable structure.
+Rule: Each item must be specific and useful. No padding or abstract items.
+
+### Quote / Testimonial
+
+Job: Provide social proof or human perspective.
+Rule: Must never be edited without explicit approval. Quotes are protected content.
+
+---
+
+## 5. Vocabulary Rules
+
+Vocabulary governance is defined in SYSTEM.md §2 Banned Vocabulary and §3 Approved Vocabulary Patterns.
+
+This section defines how those rules are applied during editing.
+
+### Application rules
+
+1. If a banned phrase appears in user-visible content, the sentence must be rewritten — not just the phrase.
+2. Mechanical find-and-replace is not allowed. Each replacement must consider the domain, section, and surrounding context.
+3. Banned phrases in headings must be rewritten to plain English alternatives.
+4. Banned phrases in keyword metadata fields are subject to the same rules.
+5. Banned phrases in code comments, JSDoc, or non-rendered infrastructure are excluded from vocabulary governance.
+
+### Validation
+
+The vocabulary validator (`scripts/validators/validate-vocabulary.mjs`) scans domain data and content files for banned phrases. It must pass with zero violations before any content batch is considered complete.
+
+---
+
+## 6. AI Editing Rules
+
+AI systems editing MindWP content must follow this execution model. No exceptions.
+
+### Before editing
+
+AI must:
+1. Read the full file
+2. Identify the domain (blog, service, resource, case study, feature)
+3. Identify the section being edited (hero, problem, solution, CTA, FAQ, etc.)
+4. Understand the intent of the section within the page
+5. Check for banned vocabulary
+6. Then — and only then — make the edit
+
+### During editing
+
+AI must:
+- Preserve the existing TypeScript object structure — keys, imports, icons, and data contracts must not change
+- Edit only text values unless explicitly instructed otherwise
+- Keep edits proportional to the problem — do not rewrite a paragraph to fix one word
+- Maintain the tone appropriate to the domain and section
+- Use approved vocabulary patterns
+
+### AI must NOT
+
+- Replace blindly — no global find-and-replace across files
+- Rewrite aggressively — fixing a banned phrase does not justify restructuring a paragraph
+- Change structure — sections must not be added, removed, or reordered unless explicitly instructed
+- Reopen architecture — AI operates in execution mode, not strategy mode
+- Introduce new terminology — if a phrase does not exist in the approved vocabulary, do not invent it
+
+### After editing
+
+AI must:
+1. Run `npx tsc --noEmit` to verify TypeScript validity
+2. Run `npm run validate-all` to verify all validators pass
+3. Confirm CTA consistency (label + href) has not been broken
+
+### Partial Editing Principle
+
+Edits must be minimal and proportional.
+
+- Fix the smallest possible unit (word → sentence → paragraph)
+- Do not expand scope unnecessarily
+- Do not improve unrelated content
+
+Goal: improve accuracy, not rewrite content.
+
+### Context Boundary Rule
+
+Edits must stay within the current section.
+
+- Do not introduce ideas from other sections
+- Do not shift content between sections
+- Do not merge or split sections
+
+Each section has a defined role and must remain intact.
+
+---
+
+## 7. Edit Intensity Levels
+
+Not every edit needs the same depth. Use the appropriate level.
+
+### Level 1 — Vocabulary Fix
+
+Scope: Replace a banned phrase with an approved alternative.
+Approach: Read context. Rewrite the sentence naturally. Do not touch surrounding content.
+Example: "operational flow around booking" → "how enquiries flow through booking"
+
+### Level 2 — Tone Correction
+
+Scope: Fix a sentence or paragraph that sounds like hype, AI marketing copy, or consultant jargon.
+Approach: Rewrite to sound like a calm human explaining something useful. Keep the same information.
+Example: "Our revolutionary system unlocks explosive growth" → "The system connects your website to your CRM so enquiries are handled automatically"
+
+### Level 3 — Section Rewrite
+
+Scope: Rewrite a full section to improve clarity, structure, or positioning.
+Approach: Understand the section's job (see §4). Rewrite to fulfil that job better. Keep the same section type and position in the page.
+Requires: Explicit instruction. AI must not escalate to Level 3 unprompted.
+
+### Level 4 — Page Rewrite
+
+Scope: Rewrite all content on a page.
+Approach: Follow domain rules, section rules, vocabulary rules, and CTA standards. Maintain existing section structure unless restructuring is explicitly approved.
+Requires: Explicit instruction and governance review.
+
+---
+
+## 8. Protected Content Rules
+
+Some content must never be changed without explicit approval.
+
+### Always protected
+
+- Client quotes and testimonials — exact wording must be preserved
+- Metric claims and statistics — numbers must not be invented, rounded differently, or rephrased
+- Structural architecture decisions — tier structure, service hierarchy, Smart Website gravity
+- CTA contracts — approved labels and hrefs must not be changed
+- Metadata contracts — slug, systems[], industries[], topics[] values defined by the content graph
+- Generated image assets — featured-clean.webp, featured-overlay.webp, and all files in `public/images/` are pipeline outputs. Do not manually edit, crop, or replace. Regenerate via the image pipeline CLI.
+
+### Conditionally protected
+
+- Section headings — may be rewritten for vocabulary compliance, but intent must be preserved
+- Keywords metadata — may be updated for vocabulary compliance, but targeting intent must be preserved
+- FAQ questions — may be rewritten for tone, but the underlying question must remain the same
+
+### Never protected
+
+- Filler copy, padding, or throat-clearing sentences
+- Banned vocabulary in any context
+- Hype language in any context
+
+---
+
+## 9. Validation Alignment
+
+Content governance is enforced through the validation pipeline. Validators and governance rules must stay aligned.
+
+### Current validators
+
+| Validator | What it checks | Governance section |
+|---|---|---|
+| validate-vocabulary | Banned phrases in domain data/content files | §5 Vocabulary Rules |
+| validate-conversion-contract | CTA routing, `/contact` contract, and fallback behavior | §4 Section Behavior Rules (CTA) |
+| validate-domain-structure | Page structure compliance across core page types | §4 Section Behavior Rules |
+| validate-blog | Blog metadata and section rules | §3 Domain Behavior Rules (Blog) |
+| validate-resources | Resource metadata and structure | §3 Domain Behavior Rules (Resources) |
+| validate-domain-structure | Service page compliance | §3 Domain Behavior Rules (Services) |
+| validate-domain-structure | Feature page compliance | §3 Domain Behavior Rules (Features) |
+| validate-domain-structure | Industry page compliance | Content architecture |
+| validate-domain-structure | Case study compliance | §3 Domain Behavior Rules (Case Studies) |
+
+### Governance → Validator gap
+
+The following governance rules are not yet enforced by automated validators:
+
+- Edit intensity tracking
+
+Previously identified gaps now resolved:
+
+- ✅ CTA routing and fallback validation → `validate-conversion-contract.mjs`
+- ✅ Required domain field and section validation → `validate-domain-structure.mjs`
+- ✅ Banned vocabulary detection → `validate-vocabulary.mjs`
+
+These gaps were tracked under Phase 8 tasks (TASK-071, TASK-072) — now resolved.
+
+### Future Validation Tasks
+
+The following governance rules should be implemented as validators:
+
+- Edit intensity tracking (optional advanced)
+
+Previously listed as future — now implemented:
+
+- ✅ CTA placement (CTA must be the final section) → TASK-071
+- ✅ Heading-level vocabulary validation → TASK-072
+- ✅ Section-level tone validation (no hype in restricted domains) → TASK-072
+
+These have been implemented. See validation layer for enforcement.
+
+---
+
+## 10. Controlled Rewrite System
+
+Content rewriting is governed by this section. No automatic rewriting is permitted. All rewrites require manual approval.
+
+### Rewrite Eligibility
+
+A page is eligible for rewriting only when ALL conditions are met:
+
+1. The validation system is fully stable (all 19 validators pass)
+2. The page has at least one identified issue (vocabulary violation, tone problem, or structural gap)
+3. The rewrite has been explicitly requested — AI must never initiate rewrites unprompted
+
+### Approval Flow
+
+Rewrites follow a strict manual approval process:
+
+1. **Identify** — Flag specific pages and specific issues (vocabulary, tone, clarity)
+2. **Scope** — Define the edit intensity level (§7) for each flagged issue
+3. **Approve** — Human must explicitly approve the scope before any edit begins
+4. **Execute** — Apply edits within the approved scope only
+5. **Validate** — Run `npx tsc --noEmit` and `npm run validate-all` after every edit batch
+6. **Review** — Human reviews the output before the batch is considered complete
+
+No step may be skipped. AI must not combine steps 2 and 4.
+
+### What CAN Be Changed
+
+- Banned vocabulary → approved alternatives (Level 1)
+- Hype language → calm, factual copy (Level 2)
+- Unclear sentences → clearer versions preserving the same information (Level 2)
+- Section content that fails to fulfil its defined job per §4 (Level 3, requires approval)
+
+### What CANNOT Be Changed
+
+- Page structure — sections must not be added, removed, or reordered
+- TypeScript object structure — keys, imports, types, data contracts
+- Metadata — slug, systems[], industries[], topics[], keywords[]
+- CTA contracts — label and href values
+- Protected content — quotes, metrics, architecture decisions (see §8)
+- System architecture — graph, authority engine, internal linking, validation pipeline
+- Component hierarchy — UI components, renderers, templates
+- Generated image assets — all files in `public/images/` (regenerate via pipeline CLI, do not edit manually)
+
+### Scope Limits
+
+- Maximum 5 pages per rewrite batch
+- Each batch must be validated before starting the next
+- Cross-domain rewrites (e.g. blog + services in one batch) are not allowed
+- Full-site rewrites are prohibited — always work in small, validated batches
+
+### Validation Requirements
+
+Before a rewrite batch is considered complete:
+
+1. `npx tsc --noEmit` = 0 errors
+2. `npm run validate-all` = all validators pass
+3. CTA label and href unchanged across all modified files
+4. No new banned vocabulary introduced
+5. No structural changes detected (section count and order unchanged)
+
+### Rewrite Priority Order
+
+When multiple pages need rewriting, prioritise in this order:
+
+1. Service pages — highest business impact
+2. Industry pages — local authority and targeting
+3. Resource pages — evergreen authority content
+4. Case study pages — proof content
+5. Blog posts — search capture content
+6. Feature pages — supporting content
+
+Within each domain, prioritise pages with the most vocabulary violations first.
+
+---
+
+## Decision Framework (Mandatory)
+
+### Purpose
+
+Define how content guides user decisions instead of only presenting information.
+
+### Core Rule
+
+Every page must follow a Decision Progression Model.
+
+### Decision Stages
+
+1. Awareness — "Do I have this problem?"
+2. Understanding — "What is this about?"
+3. Trust — "Can I trust this?"
+4. Evaluation — "Is this right for me?"
+5. Decision — "Should I take action?"
+
+### Section-Level Requirement
+
+For every section:
+
+- Define its Decision Stage
+- Define User State
+- Define Intended Outcome
+
+### Enforcement Rules
+
+- No section exists without a decision role
+- Sections must follow logical progression
+- Skipping stages must be intentional and documented
+
+## Homepage Decision Flow Model (Critical)
+
+### Objective
+
+Ensure homepage guides users from clarity to decision without confusion.
+
+### Required Flow Order
+
+1. Clear Positioning (Hero)
+2. Problem Recognition
+3. Simple Definition (Core Concept)
+4. Authority / Differentiation
+5. System Understanding (How it works)
+6. Trust / Proof
+7. Decision Readiness
+8. Primary CTA
+
+### Critical Rules
+
+- Core concept MUST be introduced early (within first 3 sections)
+- Do NOT delay definition for curiosity
+- Do NOT place primary CTA before understanding
+
+## CTA Placement Logic
+
+### Core Principle
+
+CTA placement is based on user readiness, not layout or design.
+
+### CTA Types
+
+1. Early CTA (Low Pressure)
+   - Optional
+   - Exploration-focused
+   - No decision expectation
+
+2. Mid CTA (Contextual)
+   - Reinforces understanding
+   - Light intent
+
+3. Primary CTA (Decision)
+   - Only after trust + clarity
+   - Direct action (Start Conversation)
+
+### Forbidden Patterns
+
+- CTA based on section count
+- CTA placed before concept clarity
+- CTA used only for visual balance
+
+---
+
+## 11. Code Comment System (LOCKED)
+
+**Purpose:** Ensure all code comments describe system behavior, not development history.
+
+### Rules
+
+1. Comments MUST describe:
+   - Purpose — why this code exists
+   - Rules — what it enforces
+   - Constraints — what must not change
+
+2. Comments MUST NOT include:
+   - TASK references (e.g. `TASK-051`, `TASK-112`)
+   - Fix history (e.g. "fixed in v2", "was broken before")
+   - Debug notes (e.g. `TODO`, `FIXME`, `HACK`)
+   - Temporary notes (e.g. `TEMP:`, "remove after launch")
+
+3. Use standard format:
+   ```
+   // PURPOSE: ...
+   // RULE: ...
+   // NOTE: ...
+   ```
+
+4. Code must remain understandable without git history.
+
+5. Any PR adding historical comments should be rejected.
+
+**Status: LOCKED — do not weaken or remove these rules.**
 
 ---
 

@@ -150,7 +150,7 @@ function buildAutomotiveServiceReminderAutomation(): CaseStudyData {
   return {
     slug: 'automotive-service-reminder-automation',
     title: 'Automotive Service Reminder Automation',
-    metaTitle: 'Why Garages Lose Repeat Customers (And the Reminder System That Brings Them Back)',
+    metaTitle: 'Garage Retention System | 48% to 72% With Reminders',
     metaDescription:
       'How a Coventry garage increased client retention from 48% to 72% and recovered £5,100 per month using automated service reminders and lapsed client reactivation.',
     industryCategory: 'automotive',

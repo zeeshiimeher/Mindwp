@@ -4,24 +4,24 @@ This document is part of the MindWP Core Architecture System.
 
 ## REQUIRED READING ORDER
 
-1. **SYSTEM-CORE.md** (mandatory — read first)
-2. **CONTENT-SYSTEM-ARCHITECTURE.md**
-3. **This document** (CONTENT-GRAPH-SYSTEM.md)
+1. **SYSTEM.md** (mandatory — read first)
+2. **CONTENT.md**
+3. **This document** (GRAPH.md)
 
 ## AUTHORITY NOTICE
 
-This document does NOT override SYSTEM-CORE.md.
+This document does NOT override SYSTEM.md.
 
 This document governs **graph ontology, metadata, relationship resolution, and scoring**.
-If this document conflicts with SYSTEM-CORE.md → SYSTEM-CORE.md wins.
+If this document conflicts with SYSTEM.md → SYSTEM.md wins.
 
 Authoritative Sources:
 
-- FOUNDATION-AND-POSITIONING.md
-- CONTENT-SYSTEM-ARCHITECTURE.md
-- CONTENT-GRAPH-SYSTEM.md
-- CONTENT-BLUEPRINT-SYSTEM.md
-- CONTENT-GOVERNANCE.md
+- SYSTEM.md
+- CONTENT.md
+- GRAPH.md
+- CONTENT.md
+- CONTENT.md
 
 Rules:
 
@@ -34,7 +34,7 @@ Rules:
 
 <!-- WHERE THIS FITS -->
 <!-- Purpose: Graph structure, edge rules, scoring formula — #3 in authority stack -->
-<!-- Depends on: SYSTEM-CORE.md, CONTENT-SYSTEM-ARCHITECTURE.md -->
+<!-- Depends on: SYSTEM.md, CONTENT.md -->
 <!-- Used by: content-graph types.ts, authority-map generation, related sections -->
 
 # CONTENT GRAPH SYSTEM (LOCKED)
@@ -55,9 +55,9 @@ The content graph is a live, implemented system. It governs how content entities
 
 This document is the engineering source of truth for the graph layer.
 
-The content hierarchy, content type roles, exposure rules, and per-page-type slot structure are defined in **CONTENT-SYSTEM-ARCHITECTURE.md**.
+The content hierarchy, content type roles, exposure rules, and per-page-type slot structure are defined in **CONTENT.md**.
 
-Positioning, copy voice, and AI execution lock are defined in **FOUNDATION-AND-POSITIONING.md**.
+Positioning, copy voice, and AI execution lock are defined in **SYSTEM.md**.
 
 ---
 
@@ -196,7 +196,7 @@ Rules:
 
 This rule ensures that future content expands topical authority instead of competing with existing content.
 
-The Primary Topic Authority Rule and Unique Topic Cluster Rule are defined in **CONTENT-SYSTEM-ARCHITECTURE.md**.
+The Primary Topic Authority Rule and Unique Topic Cluster Rule are defined in **CONTENT.md**.
 
 ---
 
@@ -244,7 +244,7 @@ The graph layer may store multiple systems in `systems[]`, but every node must s
 - secondary systems allowed for graph relationship resolution
 - CTA uses ONLY primary system (passed to `SmartCTA` as `system` prop)
 
-Cross-reference: CTA rendering, URL contract, and SmartCTA spec are defined in **CONVERSION-SYSTEM.md**.
+Cross-reference: CTA rendering, URL contract, and SmartCTA spec are defined in **CONVERSION.md**.
 
 ---
 
@@ -274,7 +274,7 @@ All content nodes must declare valid metadata that matches the canonical identif
 - New identifiers must be added to the canonical registry before use.
 - Content without required metadata fields must fail validation.
 
-Cross-reference: Enforcement Rules section in CONTENT-SYSTEM-ARCHITECTURE.md.
+Cross-reference: Enforcement Rules section in CONTENT.md.
 
 ---
 
@@ -530,13 +530,13 @@ The resolver output is pre-computed into a static authority map at build time. T
 
 The authority map must be regenerated when content is added, removed, or when relationship rules change.
 
-The ranking factor definitions (metadata overlap, relationship type priority, derived vs manual behaviour, resolution principle) are locked in **CONTENT-SYSTEM-ARCHITECTURE.md** under **"AUTHORITY RESOLUTION SYSTEM (LOCKED)"**.
+The ranking factor definitions (metadata overlap, relationship type priority, derived vs manual behaviour, resolution principle) are locked in **CONTENT.md** under **"AUTHORITY RESOLUTION SYSTEM (LOCKED)"**.
 
 ---
 
 ## Content Relationship & Exposure Rules — Reference
 
-The master definition for all per-page-type content exposure rules is maintained in **CONTENT-SYSTEM-ARCHITECTURE.md** under **"CONTENT RELATIONSHIP & EXPOSURE RULES (LOCKED)"**.
+The master definition for all per-page-type content exposure rules is maintained in **CONTENT.md** under **"CONTENT RELATIONSHIP & EXPOSURE RULES (LOCKED)"**.
 
 That section defines:
 - What related content appears on each page type (Industry, Resource, Service, Case Study, Blog, Feature)

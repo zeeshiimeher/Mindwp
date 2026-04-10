@@ -1,8 +1,20 @@
 # SYSTEM TRUTH — MindWP
 
+## REQUIRED READING ORDER
+
+1. **SYSTEM-CORE.md** (mandatory — read first)
+2. **This document** (SYSTEM-TRUTH.md)
+
+## AUTHORITY NOTICE
+
+This document does NOT override SYSTEM-CORE.md.
+
+This document is a **snapshot of current system reality**. It does not define rules — it reflects them.
+If this document conflicts with SYSTEM-CORE.md → SYSTEM-CORE.md wins.
+
 <!-- WHERE THIS FITS -->
 <!-- Purpose: Current system reality — single consolidated snapshot -->
-<!-- Depends on: 5 authority-stack docs, live code scan, reports/ -->
+<!-- Depends on: SYSTEM-CORE.md, 5 authority-stack docs, live code scan, reports/ -->
 <!-- Used by: system-sync.mjs (drift detection), all planning decisions -->
 
 > Consolidated source of truth. Validated against live code.
@@ -40,6 +52,7 @@ CONVERSION-SYSTEM.md is the single source of truth for:
 
 | Priority | Source |
 |---|---|
+| 0 (ROOT) | SYSTEM-CORE.md |
 | 1 | FOUNDATION-AND-POSITIONING.md |
 | 2 | CONTENT-SYSTEM-ARCHITECTURE.md |
 | 3 | CONTENT-GRAPH-SYSTEM.md |
@@ -56,9 +69,9 @@ CONVERSION-SYSTEM.md is the single source of truth for:
 | Tier 2 | Modular add-ons | Solve specific operational pains, map upward to Tier 1 |
 | Tier 3 | Implementation | Entry pathways, visually subordinate, never strategic |
 
-**Gravity rule:** Smart Website Systems is the conceptual framework. All other Tier 1 systems integrate into it. They must never override its dominance in hierarchy, navigation, or homepage composition.
+**Gravity rule:** See SYSTEM-CORE.md §2.2 for full gravity model and tier definitions.
 
-**SEO exception:** Local Authority & SEO is the only Tier 1 system with controlled direct-intent acquisition — may lead when visitor intent is explicitly SEO-led, but must always reinforce website infrastructure context.
+**SEO exception:** See SYSTEM-CORE.md §2.2 for the controlled acquisition exception.
 
 ### 2.3 Content Flow (Phase 10 — Intent-Based Routing)
 

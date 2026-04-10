@@ -32,7 +32,7 @@ export const conversionFunnelSystemPage = {
   category: 'Conversion Clarity Systems',
   seo: buildServiceSeo({
     slug,
-    title: 'Conversion Funnel System | Clearer page flow, offer structure, and enquiry handoff',
+    title: 'Conversion Funnel System | Page Flow & Enquiry Handoff',
     description:
       'Conversion funnel systems for service businesses that need clearer page-to-enquiry journeys, fewer drop-offs, better offer structure, and more measurable funnel stages.',
     schemaName: 'Conversion funnel system for service businesses',
@@ -46,7 +46,7 @@ export const conversionFunnelSystemPage = {
     description:
       'This service focuses on the conversion path itself — page flow, offer structure, and the handoff between attention, enquiry, and action. When those are clearer, fewer good prospects disappear in the middle.',
     primaryAction: {
-      label: CTA_LABELS.PRIMARY,
+      label: CTA_LABELS.REVENUE_AUDIT,
       href: buildServiceContactHref({
         system: 'revenue-growth',
         slug: 'conversion-funnel-system',
@@ -303,7 +303,7 @@ export const conversionFunnelSystemPage = {
     title: 'Turn more attention into clearer next steps',
     description:
       'If traffic is arriving but the page journey still weakens conversion, we can help define a stronger funnel path.',
-    buttonText: CTA_LABELS.PRIMARY,
+    buttonText: CTA_LABELS.REVENUE_AUDIT,
     buttonHref: buildServiceContactHref({
       system: 'revenue-growth',
       slug: 'conversion-funnel-system',

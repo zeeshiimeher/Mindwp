@@ -123,7 +123,7 @@ function parseAntiHypeWords(docText) {
 }
 
 export function loadVocabularyRules(root = process.cwd()) {
-  const foundationPath = path.join(root, 'Mindwp-Docs', 'core', 'FOUNDATION-AND-POSITIONING.md');
+  const foundationPath = path.join(root, 'Mindwp-Docs', 'core', 'SYSTEM.md');
   const text = fs.readFileSync(foundationPath, 'utf8');
 
   return {

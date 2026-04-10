@@ -19,49 +19,44 @@ import type { ServicePageData } from '../types';
 
 const smartWebsitesFaqItems = [
   {
-    question: 'What exactly is a Smart Website?',
+    question: 'What makes this different from a regular website?',
     answer:
-      'A Smart Website is built as business infrastructure rather than a visual deliverable. Services are structured clearly, enquiry paths are defined, and requests move into the right workflow instead of being lost across pages, forms, and inboxes.',
+      'A regular website shows what you do. This goes further — it makes sure visitors actually get in touch, their details are saved somewhere useful, and someone follows up. Think of it as the difference between a shop window and a shop with a counter, a till, and staff who greet you.',
   },
   {
-    question: 'How is this different from a normal website project?',
+    question: 'We already have a website. Can you just improve it?',
     answer:
-      'Most websites are designed around layout. A Smart Website is designed around how the business actually operates — how services are presented, how enquiries arrive, and how requests are handled after they come in.',
+      'Often, yes. If the bones are decent, we can rework it so it does a better job of turning visitors into enquiries. If the site is causing more problems than it solves, we\'ll be upfront and suggest starting fresh. We\'ll always tell you which makes more sense.',
   },
   {
-    question: 'Is SEO included in the implementation?',
+    question: 'Do we need to use a specific CRM?',
     answer:
-      'Every Smart Website includes the basics that help search engines understand your services. This includes clear service pages, clean metadata, and internal linking between related pages. Ongoing SEO work can then be added once these foundations are in place.',
+      'No. We connect the website to whatever you already use — or help you pick something simple if you don\'t have anything yet. The point is that when someone gets in touch, their details land somewhere you can actually act on them.',
   },
   {
-    question: 'Can you work only on SEO if we already have a website?',
+    question: 'Will this help us show up on Google?',
     answer:
-      'Yes, although SEO tends to perform better when the underlying structure is clear. If the current website does not show how your services are organised or how visitors should get in touch, we may recommend strengthening the foundation first.',
+      'Yes. Each of your services gets its own page, titles and descriptions are written to match what people actually search for, and the whole site is built so Google can read and index it properly. That means Google can start showing your services to people nearby. If you want ongoing SEO work after that, the website is ready for it.',
   },
   {
-    question: 'Do I need to understand WordPress or technical tools?',
+    question: 'Do I need to know anything technical?',
     answer:
-      'No technical knowledge is required. We handle the implementation and provide a clean handover so routine updates remain simple for your team.',
+      'No. We deal with all of that. Once the site is live, things like changing a photo or updating text will be simple. We show your team how everything works before we hand it over.',
   },
   {
-    question: 'Can my current website be improved instead of rebuilt?',
+    question: 'What happens after launch?',
     answer:
-      'Sometimes. If the structure is salvageable we refactor it. If the foundation creates ongoing confusion, rebuilding often leads to a clearer and more maintainable system.',
+      'You get documentation, a walkthrough, and training so your team knows how to update pages, check enquiries, and manage the site day to day. Some businesses take it from there. Others prefer us to handle updates, monitoring, and changes on an ongoing basis. Either way works.',
   },
   {
-    question: 'What happens after the website launches?',
+    question: 'How long does it take to build?',
     answer:
-      'After launch you receive documentation and handover. Some businesses manage updates internally, while others retain ongoing governance so the system continues evolving in a structured way.',
+      'Usually four to six weeks. If your business has a lot of services, multiple locations, or needs extra connections (like booking or payment), it can stretch to eight or twelve weeks. We\'ll give you a realistic timeline upfront.',
   },
   {
-    question: 'How long does implementation take?',
+    question: 'How much does it cost?',
     answer:
-      'Smaller implementations typically take around four to six weeks. More complex structures with integrations or automation layers may take eight to twelve weeks.',
-  },
-  {
-    question: 'How is pricing determined?',
-    answer:
-      'Smart Websites are scoped based on structural complexity, integrations, and the operating model of the business. Instead of fixed packages, we define the implementation scope clearly before starting.',
+      'It depends on your situation — how many services you have, what connections you need, and how much of the content we\'re writing. We don\'t do mystery pricing. You\'ll get a clear number before anything starts.',
   },
 ];
 
@@ -82,22 +77,22 @@ export const smartWebsiteSystemsPage = {
     'service business website',
     'website with crm integration',
   ],
-  badge: 'Smart Website Systems',
-  category: 'Digital Infrastructure',
+  badge: 'Smart Websites',
+  category: 'Website That Works',
   seo: buildServiceSeo({
     slug: 'smart-website-systems',
-    title: 'Smart Website Systems for service businesses',
+    title: 'A Website That Actually Brings In Enquiries',
     description:
-      'Smart Website Systems help visitors understand your services, make sure enquiries reach the right place, and provide a reliable base for CRM, automation, and SEO.',
-    schemaName: 'Smart Website Systems',
+      'Most business websites look fine but don\'t bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.',
+    schemaName: 'Smart website builds for service businesses',
     schemaDescription:
-      'Smart Website Systems create business websites where visitors quickly understand what you offer, enquiries reach the right place, and integrations can be added smoothly.',
+      'Business websites that turn visitors into enquiries — with clear service pages, enquiry forms that land in the right place, and nothing falling through the cracks.',
   }),
   hero: {
-    badge: 'Smart Website Systems',
-    title: 'A website that works as part of your business',
+    badge: 'Is Your Website Actually Working?',
+    title: 'Your website probably looks fine. The problem is what happens after someone visits.',
     description:
-      'A Smart Website gives visitors a clear path from service to enquiry. Your services are easy to understand, the next step is obvious, and the site connects directly to your workflow.',
+      'People land on your site. They look around. And then they leave — without calling, without emailing, without filling in a form. It\'s not because the design is bad. It\'s because the site doesn\'t tell them what to do next, and if they do get in touch, nobody gets notified.',
     primaryAction: {
       label: CTA_LABELS.SMART_WEBSITE_CONVERSION,
       href: buildServiceContactHref({
@@ -106,275 +101,277 @@ export const smartWebsiteSystemsPage = {
       }),
     },
     list: [
-      'Services organised clearly',
-      'Defined enquiry pathways',
-      'Foundations ready for CRM, automation, and SEO',
+      'Every page tells visitors exactly what to do next',
+      'When someone fills in a form, you see it straight away — name, number, what they need',
+      'Follow-up emails go out even if your team is busy or forgets',
     ],
   },
   sections: {
     value: {
       header: {
-        title: 'What makes a Smart Website different',
+        title: 'What\'s actually missing from most business websites',
         description:
-          'Most websites focus on visual design. A Smart Website focuses on how the site supports the business — how services are explained, how visitors move through pages, and how enquiries are handled.',
+          'It\'s usually not the design. It\'s that the website was never set up to do anything beyond sit there. Here\'s what\'s different when your website is built to bring in enquiries and help you act on them.',
       },
       items: [
         {
           icon: Globe,
-          title: 'Stable WordPress foundation',
+          title: 'Built on WordPress — you own it',
           description:
-            'Built on WordPress with a setup designed for long-term clarity and maintainability.',
+            'You\'re not locked into our tools or anyone else\'s platform. It\'s WordPress, it\'s yours, and your team can update it without calling us every time.',
           iconType: 'primary' as const,
         },
         {
           icon: Zap,
-          title: 'Integration ready',
+          title: 'Forms, CRM, and booking — all joined up',
           description:
-            'CRM, booking, and automation tools connect more easily when the website already supports how the business operates.',
+            'When someone fills in a form, their name, number, and message go straight into your CRM or booking tool. No more copying details out of emails into spreadsheets.',
           iconType: 'primary' as const,
         },
         {
           icon: Smartphone,
-          title: 'Accessible everywhere',
+          title: 'Looks right on every screen',
           description:
-            'Responsive behaviour and accessibility are treated as baseline requirements.',
+            'Half your visitors are on their phone. The site works properly on mobile, tablet, and desktop — not just "sort of works."',
           iconType: 'primary' as const,
         },
         {
           icon: Search,
-          title: 'Visibility foundations',
+          title: 'Google can actually understand it',
           description:
-            'Clean page organisation and clear services support discoverability from the start.',
+            'Each service has its own page. Titles make sense. The whole thing is set up so that when someone searches for what you do nearby, Google has a reason to show you.',
           iconType: 'primary' as const,
         },
         {
           icon: Shield,
-          title: 'Security and reliability',
-          description: 'Updates, backups, and security hygiene handled with consistent governance.',
+          title: 'Security, backups, and updates — sorted',
+          description:
+            'SSL is on. Backups run every day. Updates don\'t break anything. If something goes wrong, we can roll it back in minutes.',
           iconType: 'primary' as const,
         },
         {
           icon: MessageSquare,
-          title: 'Enquiries sent to the right person',
-          description: 'Visitors know where to go and requests reach the right person or workflow.',
+          title: 'Enquiries reach the right person',
+          description:
+            'When someone contacts you, it doesn\'t vanish into a shared inbox nobody checks. It goes to the person who can actually deal with it.',
           iconType: 'primary' as const,
         },
       ],
     },
     comparison: {
       header: {
-        title: 'System implementation vs template website',
+        title: 'What\'s different about how we build websites',
         description:
-          'A comparison between a typical template site and a website built around how the business works.',
+          'Most websites are built around a template and some nice photos. That\'s fine for looking good — but it doesn\'t help you win business. Here\'s how the two compare.',
       },
       items: [
         {
           type: 'before' as const,
-          title: 'Typical template website',
+          title: 'A typical business website',
           items: [
-            'Page organisation dictated by the template',
-            'Enquiry handling inconsistent across pages',
-            'Services not clearly organised',
-            'SEO added later as an afterthought',
-            'No clear governance for updates',
+            'Pages are arranged by the template — not by what you actually offer',
+            'There\'s a contact form, but nobody\'s sure where the emails end up',
+            'You have no idea how many people visit or what they do on the site',
+            'Someone mentioned SEO once, but nothing was really done about it',
+            'It\'s been the same since it was built and nobody\'s touched it',
           ],
         },
         {
           type: 'after' as const,
-          title: 'Smart Website implementation',
+          title: 'A website built to bring in enquiries',
           items: [
-            'Pages organised around the real service model',
-            'Clear enquiry paths and ownership',
-            'Stable foundations for SEO and automation',
-            'Governed updates and structured refinement',
+            'Pages match your real services — visitors find what they\'re looking for',
+            'When someone gets in touch, you know about it and can follow up properly',
+            'You can see where visitors come from and what they\'re interested in',
+            'Google can find your services because the site is set up properly',
           ],
         },
       ],
     },
     included: {
       header: {
-        title: 'Foundations included in every implementation',
-        description: 'Core infrastructure delivered in every Smart Website.',
+        title: 'What you get with every website we build',
+        description: 'These things come as standard. They\'re not add-ons and they\'re not optional — they\'re the whole point.',
       },
       items: [
-        'Custom WordPress build aligned to how the business actually operates',
-        'Clear enquiry capture and routing',
-        'CRM connection when required',
-        'Analytics and baseline event tracking',
-        'Security configuration and SSL',
-        'Responsive behaviour across devices',
-        'Visibility foundations such as metadata and schema',
-        'Backup and recovery planning',
-        'Handover documentation and training',
+        'A WordPress website built around your actual services — not a template',
+        'Enquiry forms that send details to the right person, not a black hole',
+        'Connected to your CRM or booking tool so nothing gets lost',
+        'Basic tracking so you know what visitors are doing on your site',
+        'Security, SSL, and backups handled properly from day one',
+        'Works on phones, tablets, and desktops without breaking',
+        'Set up so Google can read and show your services',
+        'A proper backup plan so nothing is ever truly lost',
+        'Documentation and training so your team can manage it day to day',
       ],
     },
     types: {
       header: {
-        title: 'Implementations within the Smart Website framework',
+        title: 'This works for all kinds of businesses',
         description:
-          'Different business models require different emphasis — but all follow the same clear framework.',
+          'Whether you sell your time, your products, or appointments — your website should show visitors exactly what you offer and give them a simple way to get in touch.',
       },
       items: [
         {
           icon: Briefcase,
-          title: 'Service business websites',
-          description: 'Structured websites for consultants, trades, and service providers.',
-          keywords: 'Clarity • Credibility • Enquiry handling',
+          title: 'Service businesses',
+          description: 'Plumbers, accountants, agencies, consultants — if people hire you for what you know, your website needs to make that obvious.',
+          keywords: 'Services listed clearly • Easy to contact • Enquiries saved',
           iconType: 'primary' as const,
         },
         {
           icon: Store,
-          title: 'eCommerce stores',
-          description: 'WooCommerce implementations with catalogue and operational clarity.',
-          keywords: 'Catalogue • Checkout • Fulfilment flow',
+          title: 'Online shops',
+          description: 'We build your shop on WooCommerce so customers can browse, buy, and check out — all in one place.',
+          keywords: 'Products • Checkout • Orders',
           iconType: 'primary' as const,
         },
         {
           icon: Calendar,
-          title: 'Booking platforms',
-          description: 'Sites where scheduling and availability are central to the service.',
-          keywords: 'Scheduling • Availability • Routing',
+          title: 'Appointment-based businesses',
+          description: 'Salons, clinics, personal trainers — if your diary runs your business, we build booking right into the site.',
+          keywords: 'Booking • Availability • Reminders',
           iconType: 'primary' as const,
         },
         {
           icon: Building2,
-          title: 'Focused service pages',
-          description: 'Landing environments built around a single offer or service line.',
-          keywords: 'Clarity • Relevance • Conversion path',
+          title: 'Focused landing pages',
+          description: 'Sometimes you just need one page that does one job: explain what you offer and get someone to take the next step.',
+          keywords: 'One offer • Clear message • Simple next step',
           iconType: 'primary' as const,
         },
       ],
     },
     coreLayer: {
       header: {
-        title: 'Your website as the core of your system',
+        title: 'One website. Everything runs through it.',
         description:
-          'The website is the starting point of the digital setup. SEO, CRM connections, and automation all work better when the website itself already makes sense.',
+          'Your CRM or booking tool, your email, your calendar — they all plug into one place. When someone fills in a form on your site, their details show up where your team already works. No copying, no re-typing, no missed messages.',
       },
       cards: [
         {
-          title: 'Website foundation',
-          description: 'Visitors quickly understand what the business offers and where to go next.',
+          title: 'Visitors see what you do and how to reach you — instantly',
+          description: 'Someone lands on your site for the first time. Within five seconds they can see what services you offer, where you\'re based, and how to get in touch.',
           points: [
-            'How your services are organised',
-            'Clear ways to get in touch',
-            'Navigation aligned to the operating model',
+            'Your services are listed plainly — no guessing what you actually do',
+            'Every page has a button, a form, or a phone number',
+            'The menu is written for your customers, not your team',
           ],
           featured: true,
         },
         {
-          title: 'Visibility layer',
+          title: 'When someone searches for what you do, Google shows you',
           description:
-            'Search visibility becomes easier when services are clearly organised and stable.',
+            'Each service has its own page with a clear title and description. Google reads that and knows exactly what to show when someone nearby searches for it.',
           points: [
-            'Pages aligned to real services',
-            'Internal linking that supports discovery',
-            'Structured metadata reinforcing context',
+            'Each service has its own dedicated page — not buried in a dropdown',
+            'Pages link to each other so Google sees the full range of what you offer',
+            'Titles and descriptions match the words your customers actually type into Google',
           ],
         },
         {
-          title: 'Workflow integration',
-          description: 'Lead capture and communication systems connect to real business workflows.',
+          title: 'Enquiries go straight into your CRM or booking tool',
+          description: 'Someone fills in a form, books a call, or sends an enquiry — and it lands in your CRM or booking tool without anyone having to type it in again.',
           points: [
-            'Forms connect to the right owner',
-            'CRM and scheduling integrate where required',
-            'Notifications and follow‑up are structured',
+            'Forms send details to the right person automatically',
+            'Your booking calendar shows availability without you updating it manually',
+            'Follow-up emails and reminders go out without anyone pressing send',
           ],
         },
         {
-          title: 'Automation and AI',
+          title: 'Confirmations, reminders, and follow-ups — handled',
           description:
-            'Automation becomes useful when it supports a clear workflow — not when it tries to fix confusion.',
+            'Someone books a call? They get a confirmation email. Haven\'t heard back in two days? A reminder goes out. Your team doesn\'t touch any of it.',
           points: [
-            'Automation supports consistent follow‑up',
-            'AI tools rely on clean service signals',
-            'Refinement remains manageable over time',
+            'New enquiries get a reply within minutes — even outside office hours',
+            'Appointment reminders go out the day before, every time',
+            'Your team spends their day on the actual work, not chasing replies',
           ],
         },
       ],
     },
     visibilityFoundations: {
       header: {
-        title: 'A foundation designed for refinement',
+        title: 'Sort your website out first — then everything else starts working',
         description:
-          'Once the base layer is clear, SEO, automation, and analytics improvements become easier to apply and easier to measure.',
+          'Ads, SEO, social media — none of it works properly if people land on your site and don\'t know what to do. Get the website right and every pound you spend on marketing goes further.',
       },
-      tagline: 'Structure first, optimisation second',
-      narrativeTitle: 'Refinement works best when the base layer is clear',
+      tagline: 'A clear website first — then ads, SEO, and the rest',
+      narrativeTitle: 'Why nothing else works until your website does',
       narrativeParagraphs: [
-        'Many websites try to fix visibility problems with more tools or campaigns. When the site itself is unclear, those efforts are difficult to sustain.',
-        'By building the website as a stable system first, later improvements become simpler, clearer, and easier to measure.',
+        'You\'re paying for Google ads. You\'re posting on social media. You\'re listed on directories. But the phone isn\'t ringing. Usually it\'s not because nobody\'s clicking — it\'s because they land on your site and don\'t know what to do when they get there.',
+        'When your website shows your services clearly, puts a form or phone number on every page, and sends enquiry details straight to your team — those same ads and posts suddenly start bringing in real business.',
       ],
       items: [
         {
           icon: Briefcase,
-          title: 'Clearly organised services',
+          title: 'Services people can actually find',
           description:
-            'Services presented clearly so visitors and search engines understand what you offer.',
-          keywords: 'Service structure • Page organisation • Clarity',
+            'Each service gets its own page, written in plain English. Visitors know what you do in seconds — and so does Google.',
+          keywords: 'One page per service • Easy to read • Easy to find',
           iconType: 'primary' as const,
         },
         {
           icon: MessageSquare,
-          title: 'Defined enquiry pathways',
-          description: 'Visitors always know the next step and requests reach the right workflow.',
-          keywords: 'Forms • Routing • Ownership',
+          title: 'A clear way to get in touch on every page',
+          description: 'No matter where someone is on your site, they always know what to do next — fill in a form, pick up the phone, or book a time.',
+          keywords: 'Always a next step • No dead ends • Simple to act',
           iconType: 'primary' as const,
         },
         {
           icon: Search,
-          title: 'Visibility structure',
-          description: 'A clean architecture that allows SEO efforts to connect to real services.',
-          keywords: 'Internal linking • Metadata • Schema',
+          title: 'Set up so Google can show your business',
+          description: 'Your pages, titles, and service descriptions are written so Google knows what you do and where you do it — and shows your business when people search nearby.',
+          keywords: 'Google-ready • Local search • Service pages',
           iconType: 'primary' as const,
         },
       ],
     },
     process: {
       header: {
-        badge: 'Implementation',
-        title: 'How Smart Websites are implemented',
-        description: 'Implementation focuses on clarity and stability — not speed.',
+        badge: 'How it works',
+        title: 'From a conversation to a website that actually does something',
+        description: 'We don\'t jump straight into design. We learn how your business works first — what you offer, who your customers are, and how enquiries reach you today.',
       },
       steps: [
         {
           number: '1',
-          title: 'Discovery',
+          title: 'We talk about your business',
           description:
-            'We review the service model, enquiry flow, and how the business currently operates.',
+            'We ask about your services, how people find you today, and where things fall apart. What you tell us decides which pages we build, what they say, and how your forms, CRM, and booking tools fit together.',
         },
         {
           number: '2',
-          title: 'Architecture',
+          title: 'We plan what the site needs',
           description:
-            'Page organisation, messaging, and navigation are defined before development begins.',
+            'Before anyone starts designing, we figure out which pages you need, what each one should say, and how a visitor goes from landing on your site to getting in touch.',
         },
         {
           number: '3',
-          title: 'Implementation',
+          title: 'We build it and connect everything up',
           description:
-            'The system is built on WordPress and integrations are added where they support the workflow.',
+            'Your site goes live on WordPress. Forms send enquiries to the right person, your CRM or booking tool gets updated automatically, and you can see who\'s visiting and what they\'re looking at.',
         },
         {
           number: '4',
-          title: 'Launch and handover',
+          title: 'We hand it over and make sure you\'re sorted',
           description:
-            'After testing, the website is launched and the team receives documentation for future updates.',
+            'Once everything is tested and live, we walk your team through it. You get clear documentation and training so you can manage it yourselves going forward.',
         },
       ],
     },
     faq: {
       header: {
-        title: 'Common questions about Smart Website Systems',
-        description: 'Questions that come up when exploring this service.',
+        title: 'Things people ask before we start',
+        description: 'Straight answers to the questions that come up most often.',
       },
       items: smartWebsitesFaqItems,
     },
   },
   cta: {
-    title: 'Build your smart website system',
+    title: 'Want to know what your website is actually missing?',
     description:
-      'Tell us how your website handles enquiries now. We will show you where visitors drop off before they contact you.',
+      'Send us your website link and tell us a bit about your business. We\'ll look through it and come back with an honest breakdown — what\'s working, what\'s not, and what you could do about it.',
     buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
     buttonHref: buildServiceContactHref({
       system: 'smart-website-systems',
@@ -382,9 +379,9 @@ export const smartWebsiteSystemsPage = {
     }),
   },
   inlineCta: {
-    title: 'Not sure how this would fit your business?',
+    title: 'Not sure if your website is holding you back?',
     description:
-      'No commitment. We will walk through your setup and show where enquiries are being lost.',
+      'No pressure, no commitment. We\'ll take a quick look at your site and give you an honest opinion on what\'s working and what isn\'t.',
     buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
     buttonHref: buildServiceContactHref({
       system: 'smart-website-systems',

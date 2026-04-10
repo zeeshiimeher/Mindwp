@@ -190,9 +190,9 @@ function buildHvacEmergencyLeadRouting(): CaseStudyData {
   return {
     slug: 'hvac-emergency-lead-routing',
     title: 'HVAC Emergency Lead Routing',
-    metaTitle: 'Why HVAC Emergency Calls Get Missed (And the Routing System That Solved It)',
+    metaTitle: 'HVAC Emergency Call Routing | 91% After-Hours Capture',
     metaDescription:
-      'How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage and on-call technician routing.',
+      'How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage, on-call technician routing, and CRM lead tracking.',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['hvac'],

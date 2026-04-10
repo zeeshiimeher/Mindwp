@@ -179,9 +179,9 @@ function buildAppointmentReminderNoShowReduction(): CaseStudyData {
     slug: 'appointment-reminder-no-show-reduction',
     title: 'Dental Appointment Reminder & No-Show Reduction',
     metaTitle:
-      'Why Dental Practices Lose Revenue to No-Shows (And the 3-Step Reminder System That Stops It)',
+      'Dental No-Show Reduction | 16% to 5% With Reminders',
     metaDescription:
-      'How a Northampton dental practice cut no-shows from 16% to 5% and recovered £1,400 per week using automated reminders and cancellation-triggered waitlist recovery.',
+      'How a Northampton dental practice cut no-shows from 16% to 5% and recovered £1,400 per week using automated reminders and waitlist recovery.',
     industryCategory: 'healthcare',
     industryLabel: 'Healthcare',
     industries: ['dental-clinic'],

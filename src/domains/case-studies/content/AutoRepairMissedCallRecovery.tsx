@@ -150,7 +150,7 @@ function buildAutoRepairMissedCallRecovery(): CaseStudyData {
   return {
     slug: 'auto-repair-missed-call-recovery',
     title: 'Auto Repair Missed Call Recovery',
-    metaTitle: 'Why Auto Repair Shops Lose Leads During Peak Hours (And How to Recover Them)',
+    metaTitle: 'Auto Repair Missed Call Recovery | 9 Leads Per Week',
     metaDescription:
       'How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.',
     industryCategory: 'automotive',

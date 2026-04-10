@@ -158,9 +158,9 @@ function buildSalonBookingAutomation(): CaseStudyData {
   return {
     slug: 'salon-booking-automation',
     title: 'Salon Booking Automation',
-    metaTitle: 'Why Salon Booking Systems Break Down (And the Automation That Fixed It)',
+    metaTitle: 'Salon Booking Automation | 68% Online Booking Adoption',
     metaDescription:
-      'How a Liverpool hair salon moved from phone-only bookings to 68% online booking adoption in 8 weeks, unlocking after-hours appointments and a 22% increase in weekly volume.',
+      'How a Liverpool salon moved from phone-only bookings to 68% online adoption in 8 weeks, unlocking after-hours appointments and 22% more volume.',
     industryCategory: 'beauty-personal-care',
     industryLabel: 'Beauty & Personal Care',
     industries: ['hair-salon'],
