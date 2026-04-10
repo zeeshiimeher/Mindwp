@@ -172,7 +172,7 @@ export const bookingSystemsInsideWebsiteInfrastructure: ResourceData = {
   publishedAt: '2025-11-17',
   systems: ['smart-website-systems'],
   industries: [],
-  topics: ['booking-systems'],
+  topics: ['booking-systems', 'booking-automation'],
   primaryService: 'smart-website-systems',
   seo: {
     title: 'Booking Systems Inside Website Infrastructure',

@@ -1,11 +1,13 @@
 {
-  "generatedAt": "2026-04-09T20:19:18.466Z",
+  "generatedAt": "2026-04-10T01:04:58.873Z",
   "topicsAnalyzed": 42,
-  "averageScore": 75,
+  "averageScore": 84,
   "completeCoverageTopics": 42,
+  "validatedCoreTopics": 37,
   "scores": [
     {
       "topic": "lead-management",
+      "classification": "core",
       "blogCount": 5,
       "resourceCount": 6,
       "serviceCount": 1,
@@ -13,6 +15,16 @@
       "industryCount": 6,
       "caseStudyCount": 4,
       "supportCount": 19,
+      "validatingCaseStudyCount": 4,
+      "validatingResourceCount": 6,
+      "validatesCount": 10,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
       "score": 100,
       "level": "Dominant",
       "status": "dominant",
@@ -21,11 +33,13 @@
         "5 supporting blog posts are attached to this topic.",
         "19 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 100/100.",
-        "4 case studies reinforce proof for this topic."
+        "4 case studies reinforce proof for this topic.",
+        "Validation coverage: 4 case studies and 6 resource counts toward required proof."
       ]
     },
     {
       "topic": "missed-calls",
+      "classification": "core",
       "blogCount": 5,
       "resourceCount": 5,
       "serviceCount": 2,
@@ -33,6 +47,16 @@
       "industryCount": 4,
       "caseStudyCount": 4,
       "supportCount": 16,
+      "validatingCaseStudyCount": 4,
+      "validatingResourceCount": 5,
+      "validatesCount": 9,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
       "score": 100,
       "level": "Dominant",
       "status": "dominant",
@@ -41,11 +65,13 @@
         "5 supporting blog posts are attached to this topic.",
         "16 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 100/100.",
-        "4 case studies reinforce proof for this topic."
+        "4 case studies reinforce proof for this topic.",
+        "Validation coverage: 4 case studies and 5 resource counts toward required proof."
       ]
     },
     {
       "topic": "lead-response-time",
+      "classification": "core",
       "blogCount": 5,
       "resourceCount": 3,
       "serviceCount": 2,
@@ -53,6 +79,16 @@
       "industryCount": 5,
       "caseStudyCount": 4,
       "supportCount": 17,
+      "validatingCaseStudyCount": 4,
+      "validatingResourceCount": 3,
+      "validatesCount": 7,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
       "score": 100,
       "level": "Dominant",
       "status": "dominant",
@@ -61,11 +97,13 @@
         "5 supporting blog posts are attached to this topic.",
         "17 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 100/100.",
-        "4 case studies reinforce proof for this topic."
+        "4 case studies reinforce proof for this topic.",
+        "Validation coverage: 4 case studies and 3 resource counts toward required proof."
       ]
     },
     {
       "topic": "review-generation",
+      "classification": "core",
       "blogCount": 5,
       "resourceCount": 5,
       "serviceCount": 2,
@@ -73,6 +111,16 @@
       "industryCount": 23,
       "caseStudyCount": 4,
       "supportCount": 35,
+      "validatingCaseStudyCount": 4,
+      "validatingResourceCount": 5,
+      "validatesCount": 9,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
       "score": 100,
       "level": "Dominant",
       "status": "dominant",
@@ -81,11 +129,45 @@
         "5 supporting blog posts are attached to this topic.",
         "35 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 100/100.",
-        "4 case studies reinforce proof for this topic."
+        "4 case studies reinforce proof for this topic.",
+        "Validation coverage: 4 case studies and 5 resource counts toward required proof."
+      ]
+    },
+    {
+      "topic": "booking-automation",
+      "classification": "core",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "serviceCount": 1,
+      "featureCount": 1,
+      "industryCount": 4,
+      "caseStudyCount": 7,
+      "supportCount": 14,
+      "validatingCaseStudyCount": 7,
+      "validatingResourceCount": 1,
+      "validatesCount": 8,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
+      "score": 100,
+      "level": "Dominant",
+      "status": "dominant",
+      "coverageStatus": "complete",
+      "reasons": [
+        "1 supporting blog post is attached to this topic.",
+        "14 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "Coverage status is complete; weighted authority score is 100/100.",
+        "7 case studies reinforce proof for this topic.",
+        "Validation coverage: 7 case studies and 1 resource count toward required proof."
       ]
     },
     {
       "topic": "follow-up",
+      "classification": "core",
       "blogCount": 2,
       "resourceCount": 2,
       "serviceCount": 2,
@@ -93,6 +175,16 @@
       "industryCount": 13,
       "caseStudyCount": 4,
       "supportCount": 21,
+      "validatingCaseStudyCount": 4,
+      "validatingResourceCount": 2,
+      "validatesCount": 6,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
       "score": 90,
       "level": "Dominant",
       "status": "dominant",
@@ -101,11 +193,13 @@
         "2 supporting blog posts are attached to this topic.",
         "21 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 90/100.",
-        "4 case studies reinforce proof for this topic."
+        "4 case studies reinforce proof for this topic.",
+        "Validation coverage: 4 case studies and 2 resource counts toward required proof."
       ]
     },
     {
       "topic": "lead-routing",
+      "classification": "core",
       "blogCount": 2,
       "resourceCount": 1,
       "serviceCount": 1,
@@ -113,6 +207,16 @@
       "industryCount": 2,
       "caseStudyCount": 2,
       "supportCount": 6,
+      "validatingCaseStudyCount": 2,
+      "validatingResourceCount": 1,
+      "validatesCount": 3,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
       "score": 90,
       "level": "Dominant",
       "status": "dominant",
@@ -121,11 +225,45 @@
         "2 supporting blog posts are attached to this topic.",
         "6 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 90/100.",
-        "2 case studies reinforce proof for this topic."
+        "2 case studies reinforce proof for this topic.",
+        "Validation coverage: 2 case studies and 1 resource count toward required proof."
+      ]
+    },
+    {
+      "topic": "lead-qualification",
+      "classification": "core",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "serviceCount": 1,
+      "featureCount": 0,
+      "industryCount": 8,
+      "caseStudyCount": 1,
+      "supportCount": 11,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
+      "score": 90,
+      "level": "Dominant",
+      "status": "dominant",
+      "coverageStatus": "complete",
+      "reasons": [
+        "2 supporting blog posts are attached to this topic.",
+        "11 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "Coverage status is complete; weighted authority score is 90/100.",
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
       ]
     },
     {
       "topic": "crm-integration",
+      "classification": "core",
       "blogCount": 2,
       "resourceCount": 1,
       "serviceCount": 1,
@@ -133,6 +271,16 @@
       "industryCount": 3,
       "caseStudyCount": 1,
       "supportCount": 6,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
       "score": 90,
       "level": "Dominant",
       "status": "dominant",
@@ -141,11 +289,77 @@
         "2 supporting blog posts are attached to this topic.",
         "6 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 90/100.",
-        "1 case study reinforces proof for this topic."
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
+      ]
+    },
+    {
+      "topic": "feedback-loops",
+      "classification": "core",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "serviceCount": 1,
+      "featureCount": 0,
+      "industryCount": 1,
+      "caseStudyCount": 1,
+      "supportCount": 4,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
+      "score": 90,
+      "level": "Dominant",
+      "status": "dominant",
+      "coverageStatus": "complete",
+      "reasons": [
+        "2 supporting blog posts are attached to this topic.",
+        "4 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "Coverage status is complete; weighted authority score is 90/100.",
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
+      ]
+    },
+    {
+      "topic": "negative-review-response",
+      "classification": "core",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "serviceCount": 1,
+      "featureCount": 1,
+      "industryCount": 0,
+      "caseStudyCount": 1,
+      "supportCount": 4,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
+      "score": 90,
+      "level": "Dominant",
+      "status": "dominant",
+      "coverageStatus": "complete",
+      "reasons": [
+        "2 supporting blog posts are attached to this topic.",
+        "4 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "Coverage status is complete; weighted authority score is 90/100.",
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
       ]
     },
     {
       "topic": "reputation-monitoring",
+      "classification": "core",
       "blogCount": 1,
       "resourceCount": 1,
       "serviceCount": 1,
@@ -153,6 +367,16 @@
       "industryCount": 3,
       "caseStudyCount": 1,
       "supportCount": 6,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
       "score": 90,
       "level": "Dominant",
       "status": "dominant",
@@ -161,11 +385,13 @@
         "1 supporting blog post is attached to this topic.",
         "6 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 90/100.",
-        "1 case study reinforces proof for this topic."
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
       ]
     },
     {
       "topic": "local-visibility",
+      "classification": "core",
       "blogCount": 6,
       "resourceCount": 3,
       "serviceCount": 1,
@@ -173,6 +399,16 @@
       "industryCount": 2,
       "caseStudyCount": 1,
       "supportCount": 7,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 3,
+      "validatesCount": 4,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
       "score": 90,
       "level": "Dominant",
       "status": "dominant",
@@ -181,11 +417,45 @@
         "6 supporting blog posts are attached to this topic.",
         "7 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 90/100.",
-        "1 case study reinforces proof for this topic."
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 3 resource counts toward required proof."
+      ]
+    },
+    {
+      "topic": "local-service-pages",
+      "classification": "core",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "serviceCount": 1,
+      "featureCount": 0,
+      "industryCount": 1,
+      "caseStudyCount": 1,
+      "supportCount": 4,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
+      "score": 90,
+      "level": "Dominant",
+      "status": "dominant",
+      "coverageStatus": "complete",
+      "reasons": [
+        "2 supporting blog posts are attached to this topic.",
+        "4 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "Coverage status is complete; weighted authority score is 90/100.",
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
       ]
     },
     {
       "topic": "crm-pipeline",
+      "classification": "core",
       "blogCount": 8,
       "resourceCount": 2,
       "serviceCount": 1,
@@ -193,6 +463,16 @@
       "industryCount": 3,
       "caseStudyCount": 5,
       "supportCount": 11,
+      "validatingCaseStudyCount": 5,
+      "validatingResourceCount": 2,
+      "validatesCount": 7,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
       "score": 90,
       "level": "Dominant",
       "status": "dominant",
@@ -201,11 +481,13 @@
         "8 supporting blog posts are attached to this topic.",
         "11 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 90/100.",
-        "5 case studies reinforce proof for this topic."
+        "5 case studies reinforce proof for this topic.",
+        "Validation coverage: 5 case studies and 2 resource counts toward required proof."
       ]
     },
     {
       "topic": "client-reactivation",
+      "classification": "core",
       "blogCount": 2,
       "resourceCount": 1,
       "serviceCount": 2,
@@ -213,6 +495,16 @@
       "industryCount": 3,
       "caseStudyCount": 2,
       "supportCount": 8,
+      "validatingCaseStudyCount": 2,
+      "validatingResourceCount": 1,
+      "validatesCount": 3,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
       "score": 90,
       "level": "Dominant",
       "status": "dominant",
@@ -221,11 +513,13 @@
         "2 supporting blog posts are attached to this topic.",
         "8 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 90/100.",
-        "2 case studies reinforce proof for this topic."
+        "2 case studies reinforce proof for this topic.",
+        "Validation coverage: 2 case studies and 1 resource count toward required proof."
       ]
     },
     {
       "topic": "no-show-reduction",
+      "classification": "core",
       "blogCount": 1,
       "resourceCount": 1,
       "serviceCount": 1,
@@ -233,6 +527,16 @@
       "industryCount": 3,
       "caseStudyCount": 2,
       "supportCount": 7,
+      "validatingCaseStudyCount": 2,
+      "validatingResourceCount": 1,
+      "validatesCount": 3,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
       "score": 90,
       "level": "Dominant",
       "status": "dominant",
@@ -241,31 +545,77 @@
         "1 supporting blog post is attached to this topic.",
         "7 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 90/100.",
-        "2 case studies reinforce proof for this topic."
+        "2 case studies reinforce proof for this topic.",
+        "Validation coverage: 2 case studies and 1 resource count toward required proof."
       ]
     },
     {
-      "topic": "booking-automation",
-      "blogCount": 1,
-      "resourceCount": 0,
+      "topic": "pipeline-visibility",
+      "classification": "core",
+      "blogCount": 2,
+      "resourceCount": 1,
       "serviceCount": 1,
-      "featureCount": 1,
-      "industryCount": 4,
-      "caseStudyCount": 7,
-      "supportCount": 13,
-      "score": 85,
-      "level": "Strong",
-      "status": "strong",
+      "featureCount": 0,
+      "industryCount": 5,
+      "caseStudyCount": 1,
+      "supportCount": 8,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
+      "score": 90,
+      "level": "Dominant",
+      "status": "dominant",
+      "coverageStatus": "complete",
+      "reasons": [
+        "2 supporting blog posts are attached to this topic.",
+        "8 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "Coverage status is complete; weighted authority score is 90/100.",
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
+      ]
+    },
+    {
+      "topic": "service-reminders",
+      "classification": "core",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "serviceCount": 1,
+      "featureCount": 0,
+      "industryCount": 1,
+      "caseStudyCount": 1,
+      "supportCount": 4,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
+      "score": 90,
+      "level": "Dominant",
+      "status": "dominant",
       "coverageStatus": "complete",
       "reasons": [
         "1 supporting blog post is attached to this topic.",
-        "13 internal support paths are attached across resources, services, features, industries, and case studies.",
-        "Coverage status is complete; weighted authority score is 85/100.",
-        "7 case studies reinforce proof for this topic."
+        "4 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "Coverage status is complete; weighted authority score is 90/100.",
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
       ]
     },
     {
       "topic": "conversion-optimization",
+      "classification": "core",
       "blogCount": 1,
       "resourceCount": 1,
       "serviceCount": 4,
@@ -273,6 +623,16 @@
       "industryCount": 0,
       "caseStudyCount": 2,
       "supportCount": 7,
+      "validatingCaseStudyCount": 2,
+      "validatingResourceCount": 1,
+      "validatesCount": 3,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
       "score": 80,
       "level": "Strong",
       "status": "strong",
@@ -281,11 +641,13 @@
         "1 supporting blog post is attached to this topic.",
         "7 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 80/100.",
-        "2 case studies reinforce proof for this topic."
+        "2 case studies reinforce proof for this topic.",
+        "Validation coverage: 2 case studies and 1 resource count toward required proof."
       ]
     },
     {
       "topic": "lead-capture",
+      "classification": "core",
       "blogCount": 2,
       "resourceCount": 1,
       "serviceCount": 3,
@@ -293,6 +655,16 @@
       "industryCount": 0,
       "caseStudyCount": 4,
       "supportCount": 8,
+      "validatingCaseStudyCount": 4,
+      "validatingResourceCount": 1,
+      "validatesCount": 5,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
       "score": 80,
       "level": "Strong",
       "status": "strong",
@@ -301,11 +673,13 @@
         "2 supporting blog posts are attached to this topic.",
         "8 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 80/100.",
-        "4 case studies reinforce proof for this topic."
+        "4 case studies reinforce proof for this topic.",
+        "Validation coverage: 4 case studies and 1 resource count toward required proof."
       ]
     },
     {
       "topic": "website-infrastructure",
+      "classification": "conceptual",
       "blogCount": 2,
       "resourceCount": 1,
       "serviceCount": 8,
@@ -313,6 +687,13 @@
       "industryCount": 0,
       "caseStudyCount": 4,
       "supportCount": 13,
+      "validatingCaseStudyCount": 4,
+      "validatingResourceCount": 1,
+      "validatesCount": 5,
+      "requiredValidation": [],
+      "missingValidation": [],
+      "validationStatus": "not-required",
+      "suggestedFixes": [],
       "score": 80,
       "level": "Strong",
       "status": "strong",
@@ -326,6 +707,7 @@
     },
     {
       "topic": "systems-first-websites",
+      "classification": "conceptual",
       "blogCount": 2,
       "resourceCount": 1,
       "serviceCount": 1,
@@ -333,6 +715,13 @@
       "industryCount": 0,
       "caseStudyCount": 2,
       "supportCount": 4,
+      "validatingCaseStudyCount": 2,
+      "validatingResourceCount": 1,
+      "validatesCount": 3,
+      "requiredValidation": [],
+      "missingValidation": [],
+      "validationStatus": "not-required",
+      "suggestedFixes": [],
       "score": 80,
       "level": "Strong",
       "status": "strong",
@@ -345,7 +734,40 @@
       ]
     },
     {
+      "topic": "conversion-tracking",
+      "classification": "core",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "serviceCount": 1,
+      "featureCount": 0,
+      "industryCount": 0,
+      "caseStudyCount": 2,
+      "supportCount": 4,
+      "validatingCaseStudyCount": 2,
+      "validatingResourceCount": 1,
+      "validatesCount": 3,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
+      "score": 80,
+      "level": "Strong",
+      "status": "strong",
+      "coverageStatus": "complete",
+      "reasons": [
+        "2 supporting blog posts are attached to this topic.",
+        "4 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "Coverage status is complete; weighted authority score is 80/100.",
+        "2 case studies reinforce proof for this topic.",
+        "Validation coverage: 2 case studies and 1 resource count toward required proof."
+      ]
+    },
+    {
       "topic": "review-automation",
+      "classification": "core",
       "blogCount": 6,
       "resourceCount": 3,
       "serviceCount": 2,
@@ -353,6 +775,16 @@
       "industryCount": 0,
       "caseStudyCount": 1,
       "supportCount": 6,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 3,
+      "validatesCount": 4,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
       "score": 80,
       "level": "Strong",
       "status": "strong",
@@ -361,11 +793,301 @@
         "6 supporting blog posts are attached to this topic.",
         "6 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 80/100.",
-        "1 case study reinforces proof for this topic."
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 3 resource counts toward required proof."
+      ]
+    },
+    {
+      "topic": "local-seo",
+      "classification": "core",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "serviceCount": 1,
+      "featureCount": 0,
+      "industryCount": 0,
+      "caseStudyCount": 1,
+      "supportCount": 3,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
+      "score": 80,
+      "level": "Strong",
+      "status": "strong",
+      "coverageStatus": "complete",
+      "reasons": [
+        "2 supporting blog posts are attached to this topic.",
+        "3 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "Coverage status is complete; weighted authority score is 80/100.",
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
+      ]
+    },
+    {
+      "topic": "google-business-profile",
+      "classification": "core",
+      "blogCount": 3,
+      "resourceCount": 1,
+      "serviceCount": 1,
+      "featureCount": 0,
+      "industryCount": 0,
+      "caseStudyCount": 1,
+      "supportCount": 3,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
+      "score": 80,
+      "level": "Strong",
+      "status": "strong",
+      "coverageStatus": "complete",
+      "reasons": [
+        "3 supporting blog posts are attached to this topic.",
+        "3 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "Coverage status is complete; weighted authority score is 80/100.",
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
+      ]
+    },
+    {
+      "topic": "local-authority",
+      "classification": "core",
+      "blogCount": 3,
+      "resourceCount": 1,
+      "serviceCount": 1,
+      "featureCount": 0,
+      "industryCount": 0,
+      "caseStudyCount": 1,
+      "supportCount": 3,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
+      "score": 80,
+      "level": "Strong",
+      "status": "strong",
+      "coverageStatus": "complete",
+      "reasons": [
+        "3 supporting blog posts are attached to this topic.",
+        "3 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "Coverage status is complete; weighted authority score is 80/100.",
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
+      ]
+    },
+    {
+      "topic": "revenue-visibility",
+      "classification": "core",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "serviceCount": 1,
+      "featureCount": 0,
+      "industryCount": 0,
+      "caseStudyCount": 1,
+      "supportCount": 3,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
+      "score": 80,
+      "level": "Strong",
+      "status": "strong",
+      "coverageStatus": "complete",
+      "reasons": [
+        "2 supporting blog posts are attached to this topic.",
+        "3 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "Coverage status is complete; weighted authority score is 80/100.",
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
+      ]
+    },
+    {
+      "topic": "customer-feedback",
+      "classification": "core",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "serviceCount": 1,
+      "featureCount": 0,
+      "industryCount": 0,
+      "caseStudyCount": 1,
+      "supportCount": 3,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
+      "score": 80,
+      "level": "Strong",
+      "status": "strong",
+      "coverageStatus": "complete",
+      "reasons": [
+        "1 supporting blog post is attached to this topic.",
+        "3 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "Coverage status is complete; weighted authority score is 80/100.",
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
+      ]
+    },
+    {
+      "topic": "customer-lifetime-value",
+      "classification": "core",
+      "blogCount": 2,
+      "resourceCount": 1,
+      "serviceCount": 1,
+      "featureCount": 0,
+      "industryCount": 0,
+      "caseStudyCount": 1,
+      "supportCount": 3,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
+      "score": 80,
+      "level": "Strong",
+      "status": "strong",
+      "coverageStatus": "complete",
+      "reasons": [
+        "2 supporting blog posts are attached to this topic.",
+        "3 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "Coverage status is complete; weighted authority score is 80/100.",
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
+      ]
+    },
+    {
+      "topic": "lifetime-value",
+      "classification": "core",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "serviceCount": 1,
+      "featureCount": 0,
+      "industryCount": 0,
+      "caseStudyCount": 1,
+      "supportCount": 3,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
+      "score": 80,
+      "level": "Strong",
+      "status": "strong",
+      "coverageStatus": "complete",
+      "reasons": [
+        "1 supporting blog post is attached to this topic.",
+        "3 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "Coverage status is complete; weighted authority score is 80/100.",
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
+      ]
+    },
+    {
+      "topic": "negative-reviews",
+      "classification": "core",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "serviceCount": 1,
+      "featureCount": 0,
+      "industryCount": 0,
+      "caseStudyCount": 1,
+      "supportCount": 3,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
+      "score": 80,
+      "level": "Strong",
+      "status": "strong",
+      "coverageStatus": "complete",
+      "reasons": [
+        "1 supporting blog post is attached to this topic.",
+        "3 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "Coverage status is complete; weighted authority score is 80/100.",
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
+      ]
+    },
+    {
+      "topic": "pipeline-architecture",
+      "classification": "core",
+      "blogCount": 1,
+      "resourceCount": 4,
+      "serviceCount": 1,
+      "featureCount": 0,
+      "industryCount": 0,
+      "caseStudyCount": 1,
+      "supportCount": 6,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 4,
+      "validatesCount": 5,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
+      "score": 80,
+      "level": "Strong",
+      "status": "strong",
+      "coverageStatus": "complete",
+      "reasons": [
+        "1 supporting blog post is attached to this topic.",
+        "6 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "Coverage status is complete; weighted authority score is 80/100.",
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 4 resource counts toward required proof."
       ]
     },
     {
       "topic": "revenue-tracking",
+      "classification": "core",
       "blogCount": 1,
       "resourceCount": 1,
       "serviceCount": 1,
@@ -373,6 +1095,16 @@
       "industryCount": 0,
       "caseStudyCount": 3,
       "supportCount": 5,
+      "validatingCaseStudyCount": 3,
+      "validatingResourceCount": 1,
+      "validatesCount": 4,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
       "score": 80,
       "level": "Strong",
       "status": "strong",
@@ -381,11 +1113,77 @@
         "1 supporting blog post is attached to this topic.",
         "5 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 80/100.",
-        "3 case studies reinforce proof for this topic."
+        "3 case studies reinforce proof for this topic.",
+        "Validation coverage: 3 case studies and 1 resource count toward required proof."
+      ]
+    },
+    {
+      "topic": "service-pages",
+      "classification": "core",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "serviceCount": 1,
+      "featureCount": 0,
+      "industryCount": 0,
+      "caseStudyCount": 1,
+      "supportCount": 3,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
+      "score": 80,
+      "level": "Strong",
+      "status": "strong",
+      "coverageStatus": "complete",
+      "reasons": [
+        "1 supporting blog post is attached to this topic.",
+        "3 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "Coverage status is complete; weighted authority score is 80/100.",
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
+      ]
+    },
+    {
+      "topic": "crm-visibility",
+      "classification": "core",
+      "blogCount": 1,
+      "resourceCount": 1,
+      "serviceCount": 0,
+      "featureCount": 1,
+      "industryCount": 0,
+      "caseStudyCount": 1,
+      "supportCount": 3,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
+      "score": 75,
+      "level": "Strong",
+      "status": "strong",
+      "coverageStatus": "complete",
+      "reasons": [
+        "1 supporting blog post is attached to this topic.",
+        "3 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "Coverage status is complete; weighted authority score is 75/100.",
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
       ]
     },
     {
       "topic": "booking-systems",
+      "classification": "core",
       "blogCount": 2,
       "resourceCount": 1,
       "serviceCount": 0,
@@ -393,6 +1191,16 @@
       "industryCount": 10,
       "caseStudyCount": 1,
       "supportCount": 12,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
       "score": 75,
       "level": "Strong",
       "status": "strong",
@@ -401,11 +1209,13 @@
         "2 supporting blog posts are attached to this topic.",
         "12 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 75/100.",
-        "1 case study reinforces proof for this topic."
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
       ]
     },
     {
       "topic": "emergency-handling",
+      "classification": "core",
       "blogCount": 1,
       "resourceCount": 1,
       "serviceCount": 0,
@@ -413,6 +1223,16 @@
       "industryCount": 2,
       "caseStudyCount": 1,
       "supportCount": 4,
+      "validatingCaseStudyCount": 1,
+      "validatingResourceCount": 1,
+      "validatesCount": 2,
+      "requiredValidation": [
+        "case-study",
+        "resource"
+      ],
+      "missingValidation": [],
+      "validationStatus": "validated",
+      "suggestedFixes": [],
       "score": 75,
       "level": "Strong",
       "status": "strong",
@@ -421,151 +1241,13 @@
         "1 supporting blog post is attached to this topic.",
         "4 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 75/100.",
-        "1 case study reinforces proof for this topic."
-      ]
-    },
-    {
-      "topic": "lead-qualification",
-      "blogCount": 2,
-      "resourceCount": 1,
-      "serviceCount": 1,
-      "featureCount": 0,
-      "industryCount": 8,
-      "caseStudyCount": 0,
-      "supportCount": 10,
-      "score": 70,
-      "level": "Growing",
-      "status": "growing",
-      "coverageStatus": "complete",
-      "reasons": [
-        "2 supporting blog posts are attached to this topic.",
-        "10 internal support paths are attached across resources, services, features, industries, and case studies.",
-        "Coverage status is complete; weighted authority score is 70/100.",
-        "No case studies currently reinforce proof for this topic."
-      ]
-    },
-    {
-      "topic": "feedback-loops",
-      "blogCount": 2,
-      "resourceCount": 1,
-      "serviceCount": 1,
-      "featureCount": 0,
-      "industryCount": 1,
-      "caseStudyCount": 0,
-      "supportCount": 3,
-      "score": 70,
-      "level": "Growing",
-      "status": "growing",
-      "coverageStatus": "complete",
-      "reasons": [
-        "2 supporting blog posts are attached to this topic.",
-        "3 internal support paths are attached across resources, services, features, industries, and case studies.",
-        "Coverage status is complete; weighted authority score is 70/100.",
-        "No case studies currently reinforce proof for this topic."
-      ]
-    },
-    {
-      "topic": "negative-review-response",
-      "blogCount": 2,
-      "resourceCount": 1,
-      "serviceCount": 1,
-      "featureCount": 1,
-      "industryCount": 0,
-      "caseStudyCount": 0,
-      "supportCount": 3,
-      "score": 70,
-      "level": "Growing",
-      "status": "growing",
-      "coverageStatus": "complete",
-      "reasons": [
-        "2 supporting blog posts are attached to this topic.",
-        "3 internal support paths are attached across resources, services, features, industries, and case studies.",
-        "Coverage status is complete; weighted authority score is 70/100.",
-        "No case studies currently reinforce proof for this topic."
-      ]
-    },
-    {
-      "topic": "local-service-pages",
-      "blogCount": 2,
-      "resourceCount": 1,
-      "serviceCount": 1,
-      "featureCount": 0,
-      "industryCount": 1,
-      "caseStudyCount": 0,
-      "supportCount": 3,
-      "score": 70,
-      "level": "Growing",
-      "status": "growing",
-      "coverageStatus": "complete",
-      "reasons": [
-        "2 supporting blog posts are attached to this topic.",
-        "3 internal support paths are attached across resources, services, features, industries, and case studies.",
-        "Coverage status is complete; weighted authority score is 70/100.",
-        "No case studies currently reinforce proof for this topic."
-      ]
-    },
-    {
-      "topic": "pipeline-visibility",
-      "blogCount": 2,
-      "resourceCount": 1,
-      "serviceCount": 1,
-      "featureCount": 0,
-      "industryCount": 5,
-      "caseStudyCount": 0,
-      "supportCount": 7,
-      "score": 70,
-      "level": "Growing",
-      "status": "growing",
-      "coverageStatus": "complete",
-      "reasons": [
-        "2 supporting blog posts are attached to this topic.",
-        "7 internal support paths are attached across resources, services, features, industries, and case studies.",
-        "Coverage status is complete; weighted authority score is 70/100.",
-        "No case studies currently reinforce proof for this topic."
-      ]
-    },
-    {
-      "topic": "service-reminders",
-      "blogCount": 1,
-      "resourceCount": 1,
-      "serviceCount": 1,
-      "featureCount": 0,
-      "industryCount": 1,
-      "caseStudyCount": 0,
-      "supportCount": 3,
-      "score": 70,
-      "level": "Growing",
-      "status": "growing",
-      "coverageStatus": "complete",
-      "reasons": [
-        "1 supporting blog post is attached to this topic.",
-        "3 internal support paths are attached across resources, services, features, industries, and case studies.",
-        "Coverage status is complete; weighted authority score is 70/100.",
-        "No case studies currently reinforce proof for this topic."
-      ]
-    },
-    {
-      "topic": "local-authority",
-      "blogCount": 3,
-      "resourceCount": 0,
-      "serviceCount": 1,
-      "featureCount": 0,
-      "industryCount": 0,
-      "caseStudyCount": 1,
-      "supportCount": 2,
-      "score": 65,
-      "level": "Growing",
-      "status": "growing",
-      "coverageStatus": "complete",
-      "reasons": [
-        "3 supporting blog posts are attached to this topic.",
-        "2 internal support paths are attached across resources, services, features, industries, and case studies.",
-        "Coverage status is complete; weighted authority score is 65/100.",
-        "1 case study reinforces proof for this topic."
+        "1 case study reinforces proof for this topic.",
+        "Validation coverage: 1 case study and 1 resource count toward required proof."
       ]
     },
     {
       "topic": "authority-signals",
+      "classification": "conceptual",
       "blogCount": 1,
       "resourceCount": 1,
       "serviceCount": 1,
@@ -573,6 +1255,13 @@
       "industryCount": 0,
       "caseStudyCount": 0,
       "supportCount": 2,
+      "validatingCaseStudyCount": 0,
+      "validatingResourceCount": 1,
+      "validatesCount": 1,
+      "requiredValidation": [],
+      "missingValidation": [],
+      "validationStatus": "not-required",
+      "suggestedFixes": [],
       "score": 60,
       "level": "Growing",
       "status": "growing",
@@ -585,27 +1274,8 @@
       ]
     },
     {
-      "topic": "crm-visibility",
-      "blogCount": 1,
-      "resourceCount": 0,
-      "serviceCount": 0,
-      "featureCount": 1,
-      "industryCount": 0,
-      "caseStudyCount": 1,
-      "supportCount": 2,
-      "score": 60,
-      "level": "Growing",
-      "status": "growing",
-      "coverageStatus": "complete",
-      "reasons": [
-        "1 supporting blog post is attached to this topic.",
-        "2 internal support paths are attached across resources, services, features, industries, and case studies.",
-        "Coverage status is complete; weighted authority score is 60/100.",
-        "1 case study reinforces proof for this topic."
-      ]
-    },
-    {
       "topic": "crm-enabled-websites",
+      "classification": "conceptual",
       "blogCount": 1,
       "resourceCount": 1,
       "serviceCount": 1,
@@ -613,6 +1283,13 @@
       "industryCount": 0,
       "caseStudyCount": 0,
       "supportCount": 2,
+      "validatingCaseStudyCount": 0,
+      "validatingResourceCount": 1,
+      "validatesCount": 1,
+      "requiredValidation": [],
+      "missingValidation": [],
+      "validationStatus": "not-required",
+      "suggestedFixes": [],
       "score": 60,
       "level": "Growing",
       "status": "growing",
@@ -626,6 +1303,7 @@
     },
     {
       "topic": "service-page-architecture",
+      "classification": "conceptual",
       "blogCount": 1,
       "resourceCount": 1,
       "serviceCount": 2,
@@ -633,6 +1311,13 @@
       "industryCount": 0,
       "caseStudyCount": 0,
       "supportCount": 3,
+      "validatingCaseStudyCount": 0,
+      "validatingResourceCount": 1,
+      "validatesCount": 1,
+      "requiredValidation": [],
+      "missingValidation": [],
+      "validationStatus": "not-required",
+      "suggestedFixes": [],
       "score": 60,
       "level": "Growing",
       "status": "growing",
@@ -640,206 +1325,6 @@
       "reasons": [
         "1 supporting blog post is attached to this topic.",
         "3 internal support paths are attached across resources, services, features, industries, and case studies.",
-        "Coverage status is complete; weighted authority score is 60/100.",
-        "No case studies currently reinforce proof for this topic."
-      ]
-    },
-    {
-      "topic": "conversion-tracking",
-      "blogCount": 2,
-      "resourceCount": 1,
-      "serviceCount": 1,
-      "featureCount": 0,
-      "industryCount": 0,
-      "caseStudyCount": 0,
-      "supportCount": 2,
-      "score": 60,
-      "level": "Growing",
-      "status": "growing",
-      "coverageStatus": "complete",
-      "reasons": [
-        "2 supporting blog posts are attached to this topic.",
-        "2 internal support paths are attached across resources, services, features, industries, and case studies.",
-        "Coverage status is complete; weighted authority score is 60/100.",
-        "No case studies currently reinforce proof for this topic."
-      ]
-    },
-    {
-      "topic": "local-seo",
-      "blogCount": 2,
-      "resourceCount": 1,
-      "serviceCount": 1,
-      "featureCount": 0,
-      "industryCount": 0,
-      "caseStudyCount": 0,
-      "supportCount": 2,
-      "score": 60,
-      "level": "Growing",
-      "status": "growing",
-      "coverageStatus": "complete",
-      "reasons": [
-        "2 supporting blog posts are attached to this topic.",
-        "2 internal support paths are attached across resources, services, features, industries, and case studies.",
-        "Coverage status is complete; weighted authority score is 60/100.",
-        "No case studies currently reinforce proof for this topic."
-      ]
-    },
-    {
-      "topic": "google-business-profile",
-      "blogCount": 3,
-      "resourceCount": 1,
-      "serviceCount": 1,
-      "featureCount": 0,
-      "industryCount": 0,
-      "caseStudyCount": 0,
-      "supportCount": 2,
-      "score": 60,
-      "level": "Growing",
-      "status": "growing",
-      "coverageStatus": "complete",
-      "reasons": [
-        "3 supporting blog posts are attached to this topic.",
-        "2 internal support paths are attached across resources, services, features, industries, and case studies.",
-        "Coverage status is complete; weighted authority score is 60/100.",
-        "No case studies currently reinforce proof for this topic."
-      ]
-    },
-    {
-      "topic": "revenue-visibility",
-      "blogCount": 2,
-      "resourceCount": 1,
-      "serviceCount": 1,
-      "featureCount": 0,
-      "industryCount": 0,
-      "caseStudyCount": 0,
-      "supportCount": 2,
-      "score": 60,
-      "level": "Growing",
-      "status": "growing",
-      "coverageStatus": "complete",
-      "reasons": [
-        "2 supporting blog posts are attached to this topic.",
-        "2 internal support paths are attached across resources, services, features, industries, and case studies.",
-        "Coverage status is complete; weighted authority score is 60/100.",
-        "No case studies currently reinforce proof for this topic."
-      ]
-    },
-    {
-      "topic": "customer-feedback",
-      "blogCount": 1,
-      "resourceCount": 1,
-      "serviceCount": 1,
-      "featureCount": 0,
-      "industryCount": 0,
-      "caseStudyCount": 0,
-      "supportCount": 2,
-      "score": 60,
-      "level": "Growing",
-      "status": "growing",
-      "coverageStatus": "complete",
-      "reasons": [
-        "1 supporting blog post is attached to this topic.",
-        "2 internal support paths are attached across resources, services, features, industries, and case studies.",
-        "Coverage status is complete; weighted authority score is 60/100.",
-        "No case studies currently reinforce proof for this topic."
-      ]
-    },
-    {
-      "topic": "customer-lifetime-value",
-      "blogCount": 2,
-      "resourceCount": 1,
-      "serviceCount": 1,
-      "featureCount": 0,
-      "industryCount": 0,
-      "caseStudyCount": 0,
-      "supportCount": 2,
-      "score": 60,
-      "level": "Growing",
-      "status": "growing",
-      "coverageStatus": "complete",
-      "reasons": [
-        "2 supporting blog posts are attached to this topic.",
-        "2 internal support paths are attached across resources, services, features, industries, and case studies.",
-        "Coverage status is complete; weighted authority score is 60/100.",
-        "No case studies currently reinforce proof for this topic."
-      ]
-    },
-    {
-      "topic": "lifetime-value",
-      "blogCount": 1,
-      "resourceCount": 1,
-      "serviceCount": 1,
-      "featureCount": 0,
-      "industryCount": 0,
-      "caseStudyCount": 0,
-      "supportCount": 2,
-      "score": 60,
-      "level": "Growing",
-      "status": "growing",
-      "coverageStatus": "complete",
-      "reasons": [
-        "1 supporting blog post is attached to this topic.",
-        "2 internal support paths are attached across resources, services, features, industries, and case studies.",
-        "Coverage status is complete; weighted authority score is 60/100.",
-        "No case studies currently reinforce proof for this topic."
-      ]
-    },
-    {
-      "topic": "negative-reviews",
-      "blogCount": 1,
-      "resourceCount": 1,
-      "serviceCount": 1,
-      "featureCount": 0,
-      "industryCount": 0,
-      "caseStudyCount": 0,
-      "supportCount": 2,
-      "score": 60,
-      "level": "Growing",
-      "status": "growing",
-      "coverageStatus": "complete",
-      "reasons": [
-        "1 supporting blog post is attached to this topic.",
-        "2 internal support paths are attached across resources, services, features, industries, and case studies.",
-        "Coverage status is complete; weighted authority score is 60/100.",
-        "No case studies currently reinforce proof for this topic."
-      ]
-    },
-    {
-      "topic": "pipeline-architecture",
-      "blogCount": 1,
-      "resourceCount": 4,
-      "serviceCount": 1,
-      "featureCount": 0,
-      "industryCount": 0,
-      "caseStudyCount": 0,
-      "supportCount": 5,
-      "score": 60,
-      "level": "Growing",
-      "status": "growing",
-      "coverageStatus": "complete",
-      "reasons": [
-        "1 supporting blog post is attached to this topic.",
-        "5 internal support paths are attached across resources, services, features, industries, and case studies.",
-        "Coverage status is complete; weighted authority score is 60/100.",
-        "No case studies currently reinforce proof for this topic."
-      ]
-    },
-    {
-      "topic": "service-pages",
-      "blogCount": 1,
-      "resourceCount": 1,
-      "serviceCount": 1,
-      "featureCount": 0,
-      "industryCount": 0,
-      "caseStudyCount": 0,
-      "supportCount": 2,
-      "score": 60,
-      "level": "Growing",
-      "status": "growing",
-      "coverageStatus": "complete",
-      "reasons": [
-        "1 supporting blog post is attached to this topic.",
-        "2 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 60/100.",
         "No case studies currently reinforce proof for this topic."
       ]

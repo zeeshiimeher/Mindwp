@@ -3,8 +3,8 @@
  * Rule-based vocabulary validator.
  *
  * Scans domain data files and content for banned vocabulary defined in
- * FOUNDATION-AND-POSITIONING.md. These terms must be replaced with
- * approved alternatives per CONTENT-GOVERNANCE.md §5 (context-aware,
+ * SYSTEM.md. These terms must be replaced with
+ * approved alternatives per CONTENT.md (context-aware,
  * no mechanical find-and-replace).
  */
 

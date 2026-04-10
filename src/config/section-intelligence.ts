@@ -8,8 +8,8 @@
  *
  * Used by validators and content-aware tools. Pure config — no logic.
  *
- * Source: FOUNDATION-AND-POSITIONING.md + CONTENT-BLUEPRINT-SYSTEM.md
- * Governance: CONTENT-GOVERNANCE.md §3 Domain Behavior Rules + §4 Section Behavior Rules
+ * Source: SYSTEM.md + CONTENT.md
+ * Governance: CONTENT.md (Domain Behavior Rules + Section Behavior Rules)
  */
 
 // ---------------------------------------------------------------------------

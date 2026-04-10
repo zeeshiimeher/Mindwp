@@ -1,4 +1,5 @@
 import fs from 'node:fs';
+import net from 'node:net';
 import path from 'node:path';
 import { spawnSync, spawn } from 'node:child_process';
 
@@ -46,6 +47,92 @@ function writeFilteredStderr(chunk) {
   }
 }
 
+function getRequestedPort(args) {
+  for (let index = 0; index < args.length; index += 1) {
+    const arg = args[index];
+
+    if ((arg === '-p' || arg === '--port') && index + 1 < args.length) {
+      const port = Number.parseInt(args[index + 1], 10);
+      if (Number.isInteger(port) && port > 0) return port;
+    }
+
+    if (arg.startsWith('-p=')) {
+      const port = Number.parseInt(arg.slice(3), 10);
+      if (Number.isInteger(port) && port > 0) return port;
+    }
+
+    if (arg.startsWith('--port=')) {
+      const port = Number.parseInt(arg.slice(7), 10);
+      if (Number.isInteger(port) && port > 0) return port;
+    }
+  }
+
+  return 3000;
+}
+
+function replacePortArg(args, port) {
+  const nextArgs = [...args];
+
+  for (let index = 0; index < nextArgs.length; index += 1) {
+    const arg = nextArgs[index];
+
+    if ((arg === '-p' || arg === '--port') && index + 1 < nextArgs.length) {
+      nextArgs[index + 1] = String(port);
+      return nextArgs;
+    }
+
+    if (arg.startsWith('-p=')) {
+      nextArgs[index] = `-p=${port}`;
+      return nextArgs;
+    }
+
+    if (arg.startsWith('--port=')) {
+      nextArgs[index] = `--port=${port}`;
+      return nextArgs;
+    }
+  }
+
+  nextArgs.push('-p', String(port));
+  return nextArgs;
+}
+
+function canListenOnPort(port) {
+  return new Promise(resolve => {
+    const server = net.createServer();
+
+    server.unref();
+    server.once('error', () => {
+      resolve(false);
+    });
+
+    server.listen(port, () => {
+      server.close(() => resolve(true));
+    });
+  });
+}
+
+async function resolveDevArgs(args) {
+  const requestedPort = getRequestedPort(args);
+  const requestedPortAvailable = await canListenOnPort(requestedPort);
+
+  if (requestedPortAvailable) {
+    return args;
+  }
+
+  for (let candidatePort = requestedPort + 1; candidatePort <= requestedPort + 10; candidatePort += 1) {
+    if (await canListenOnPort(candidatePort)) {
+      console.log(
+        `[run-next] Port ${requestedPort} is in use. Starting Next dev server on port ${candidatePort}.`
+      );
+      return replacePortArg(args, candidatePort);
+    }
+  }
+
+  throw new Error(
+    `Port ${requestedPort} is in use and no free fallback port was found in the ${requestedPort + 1}-${requestedPort + 10} range.`
+  );
+}
+
 const appRoot = resolveAppRoot();
 const nextBin = path.join(
   appRoot,
@@ -54,7 +141,7 @@ const nextBin = path.join(
   process.platform === 'win32' ? 'next.cmd' : 'next'
 );
 
-try {
+async function main() {
   if (!fs.existsSync(nextBin)) {
     throw new Error(`Next binary not found at ${nextBin}. Run npm install in the runtime root.`);
   }
@@ -70,9 +157,10 @@ try {
   }
 
   const forwardedArgs = rest[0] === '--' ? rest.slice(1) : rest;
+  const resolvedArgs = command === 'dev' ? await resolveDevArgs(forwardedArgs) : forwardedArgs;
 
   if (useFilter) {
-    const child = spawn(nextBin, [command, ...forwardedArgs], {
+    const child = spawn(nextBin, [command, ...resolvedArgs], {
       cwd: appRoot,
       env: process.env,
       stdio: ['inherit', 'pipe', 'pipe'],
@@ -95,13 +183,17 @@ try {
       process.exitCode = 1;
     });
   } else {
-    const result = spawnSync(nextBin, [command, ...forwardedArgs], {
+    const result = spawnSync(nextBin, [command, ...resolvedArgs], {
       cwd: appRoot,
       stdio: 'inherit',
     });
 
     process.exitCode = typeof result.status === 'number' ? result.status : 1;
   }
+}
+
+try {
+  await main();
 } catch (err) {
   // eslint-disable-next-line no-console
   console.error(`[run-next] ${err instanceof Error ? err.message : String(err)}`);

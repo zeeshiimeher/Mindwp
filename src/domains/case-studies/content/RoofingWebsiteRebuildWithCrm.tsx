@@ -188,6 +188,8 @@ function buildRoofingWebsiteRebuildWithCrm(): CaseStudyData {
     topics: [
       'website-infrastructure',
       'systems-first-websites',
+      'service-pages',
+      'local-service-pages',
       'crm-integration',
       'conversion-optimization',
     ],

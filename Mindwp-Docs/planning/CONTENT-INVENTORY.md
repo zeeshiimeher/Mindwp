@@ -1,7 +1,7 @@
 # CONTENT INVENTORY
 
 > Unified planning inventory for blog, resource, and case study content.
-> Architecture rules live in CONTENT-SYSTEM-ARCHITECTURE.md and CONTENT-BLUEPRINT-SYSTEM.md.
+> Architecture rules live in CONTENT.md.
 > This file defines planning tables, archetypes, and metadata models only.
 
 STATUS: ARCHITECTURE LOCKED

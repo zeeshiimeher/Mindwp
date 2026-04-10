@@ -21,9 +21,9 @@ const reportPath = path.join(root, 'reports', 'page-priorities.json');
 
 /**
  * Priority rules per domain.
- * Source: FOUNDATION-AND-POSITIONING.md — Smart Website is the core framework,
+ * Source: SYSTEM.md — Smart Website is the core framework,
  * services are the primary revenue pages, features and industries support them.
- * Governance: CONTENT-GOVERNANCE.md §10 Controlled Rewrite System (priority ordering)
+ * Governance: CONTENT.md (Controlled Rewrite System, priority ordering)
  */
 const PRIORITY_RULES = [
   { label: 'services', dir: 'src/domains/services/data', ext: '.ts', priority: 'high' },

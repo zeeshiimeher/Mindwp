@@ -8,7 +8,7 @@
  *
  * WARNING-ONLY: never fails the build. Prints warnings for drift.
  *
- * Source: CONTENT-GOVERNANCE.md (Conversion Intelligence System)
+ * Source: CONTENT.md (Conversion Intelligence System)
  */
 /* eslint-disable no-console */
 

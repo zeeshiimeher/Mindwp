@@ -16,7 +16,7 @@
  *   - Media query definitions
  *   - !important declarations on token-using rules
  *
- * Source: SYSTEM-TRUTH.md §8.4 Design System Rules
+ * Source: DESIGN.md (Design System Rules)
  */
 
 import fs from 'node:fs';

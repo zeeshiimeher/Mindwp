@@ -1,10 +1,10 @@
 # Content Gap Report
 
-> Generated: 2026-04-09
+> Generated: 2026-04-10
 
 ## Coverage Objective
 
-Each canonical topic must have at least one supporting blog post and at least one internal support path from a resource, service, feature, industry page, or case study.
+Each core topic must have at least one validating case study and at least one validating resource. Core topics under 70 authority are treated as weak even when they are present.
 
 ## Overview
 
@@ -19,4 +19,4 @@ Each canonical topic must have at least one supporting blog post and at least on
 | Case studies | 22 |
 | Topics analyzed | 42 |
 | Orphan topics | 0 |
-| Topic gaps detected | 0 |
+| Validation gaps detected | 0 |

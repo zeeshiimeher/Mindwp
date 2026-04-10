@@ -151,15 +151,24 @@ function buildCrmPipelineVisibilityTransformation(): CaseStudyData {
   return {
     slug: 'crm-pipeline-visibility-transformation',
     title: 'CRM Pipeline Visibility Transformation',
-    metaTitle:
-      'CRM Pipeline Visibility | 21% to 34% Close Rate',
+    metaTitle: 'CRM Pipeline Visibility | 21% to 34% Close Rate',
     metaDescription:
       'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
     industryCategory: 'home-services',
     industryLabel: 'Home Services',
     industries: ['roofing'],
-    systems: ['revenue-growth'],
-    topics: ['crm-pipeline', 'lead-management', 'revenue-tracking', 'crm-visibility'],
+    systems: ['crm-automation', 'revenue-growth'],
+    topics: [
+      'crm-pipeline',
+      'pipeline-architecture',
+      'lead-management',
+      'lead-qualification',
+      'pipeline-visibility',
+      'conversion-tracking',
+      'revenue-visibility',
+      'revenue-tracking',
+      'crm-visibility',
+    ],
     publishDate: '2026-06-01',
     client: 'Greenway Property Maintenance',
     location: 'Southampton, UK',

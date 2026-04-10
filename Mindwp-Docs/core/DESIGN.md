@@ -1,11 +1,13 @@
-# MindWP Design System — Control Layer
+# DESIGN — MindWP
 
-<!-- WHERE THIS FITS -->
-<!-- Purpose: Global UI behavior rules — spacing, tokens, gradients, BEM -->
-<!-- Depends on: SYSTEM.md (brand identity) -->
-<!-- Used by: validate-design-system.cjs, validate-tokens.mjs, component development -->
+> Design tokens, CSS architecture, component patterns, and UI rules.
+> If this document conflicts with SYSTEM.md → SYSTEM.md wins.
 
-> Defines **how the UI should behave globally** — rules, not refactoring.
+---
+
+## WHEN TO USE THIS DOC
+
+Use this when working on CSS tokens, spacing, gradients, components, or UI behavior rules.
 
 ---
 

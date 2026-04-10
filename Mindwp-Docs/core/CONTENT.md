@@ -1,49 +1,13 @@
-# CONTENT SYSTEM
+# CONTENT SYSTEM — MindWP
 
-Status: Governing Document
-Version: 2.0 — Consolidated
-Last Updated: 2026-04-10
+> Content types, archetypes, blueprints, page composition, and governance.
+> If this document conflicts with SYSTEM.md → SYSTEM.md wins.
 
 ---
-
-## REQUIRED READING ORDER
-
-1. **SYSTEM.md** (mandatory — read first)
-2. **This document** (CONTENT.md)
-
-## AUTHORITY NOTICE
-
-This document does NOT override SYSTEM.md.
-
-This document governs **content type definitions, service page architecture, tier page matrices, exposure rules, content archetypes, blueprints, template section mappings, edit governance, domain behavior rules, and edit intensity**.
-
-If this document conflicts with SYSTEM.md → SYSTEM.md wins.
 
 ## WHEN TO USE THIS DOC
 
-Use this document when working on:
-- Content type definitions and roles
-- Service page architecture and tier structure
-- Industry architecture and page composition
-- Content hierarchy, exposure rules, and relationship model
-- Blog, resource, and case study archetypes and section structures
-- Template section mappings and writing blueprints
-- Content editing governance and AI editing rules
-- Edit intensity levels and protected content rules
-
-Positioning, copy voice, CTA standards, and tone rules → see SYSTEM.md.
-Graph ontology, metadata, and relationship resolution → see GRAPH.md.
-Conversion behavior, CTA contracts, and routing → see CONVERSION.md.
-Writing method, rewrite process, and language rules → see WRITING.md.
-Design tokens, spacing, and UI rules → see DESIGN.md.
-
----
-
-<!-- WHERE THIS FITS -->
-<!-- Purpose: Content type rules, routing, page composition, archetypes, blueprints, edit governance -->
-<!-- Depends on: SYSTEM.md -->
-<!-- Used by: domain registries, page templates, content routing, content validation -->
-<!-- Consolidated from: CONTENT.md, CONTENT.md, CONTENT.md -->
+Use this when working on content type definitions, page composition, archetypes, blueprints, or edit governance.
 
 ---
 
@@ -2285,11 +2249,9 @@ END OF DOCUMENT.
 
 ---
 
-# ===== CONTENT BLUEPRINTS & ARCHETYPES =====
+# CONTENT BLUEPRINTS & ARCHETYPES
 
-> Consolidated from: CONTENT.md
-
-# ===== PART 1: BLOG ARCHETYPES =====
+# BLOG ARCHETYPES
 
 ---
 
@@ -2930,15 +2892,7 @@ END OF DOCUMENT.
 
 ---
 
-# ===== CONTENT GOVERNANCE =====
-
-> Consolidated from: CONTENT.md
-
 # CONTENT GOVERNANCE
-
-Status: Active Control Layer
-Version: 1.0
-Last Updated: 2026-03-27
 
 ---
 

@@ -7,6 +7,12 @@ import { getContentGraph } from '../../src/lib/content-graph/registry';
 import {
   buildTopicCoverageSnapshots,
 } from '../../src/lib/content-quality/topicCoverage';
+import {
+  buildTopicValidationSnapshots,
+  type TopicClassification,
+  type ValidationRequirement,
+  type ValidationStatus,
+} from '../../src/lib/content-quality/topicAuthority';
 
 const WEIGHTS = {
   blog: 30,
@@ -48,6 +54,7 @@ const LEVEL_EMOJI: Record<AuthorityLevel, string> = {
 
 interface TopicScore {
   topic: string;
+  classification: TopicClassification;
   blogCount: number;
   resourceCount: number;
   serviceCount: number;
@@ -55,6 +62,13 @@ interface TopicScore {
   industryCount: number;
   caseStudyCount: number;
   supportCount: number;
+  validatingCaseStudyCount: number;
+  validatingResourceCount: number;
+  validatesCount: number;
+  requiredValidation: ValidationRequirement[];
+  missingValidation: ValidationRequirement[];
+  validationStatus: ValidationStatus;
+  suggestedFixes: string[];
   score: number;
   level: AuthorityLevel;
   status: AuthorityStatus;
@@ -64,6 +78,7 @@ interface TopicScore {
 
 interface TopicScoreSeed {
   topic: string;
+  classification: TopicClassification;
   blogCount: number;
   resourceCount: number;
   serviceCount: number;
@@ -71,6 +86,13 @@ interface TopicScoreSeed {
   industryCount: number;
   caseStudyCount: number;
   supportCount: number;
+  validatingCaseStudyCount: number;
+  validatingResourceCount: number;
+  validatesCount: number;
+  requiredValidation: ValidationRequirement[];
+  missingValidation: ValidationRequirement[];
+  validationStatus: ValidationStatus;
+  suggestedFixes: string[];
   score: number;
   level: AuthorityLevel;
   status: AuthorityStatus;
@@ -102,6 +124,7 @@ function toStatus(level: AuthorityLevel, coverageStatus: CoverageStatus): Author
 }
 
 function buildReasons(topic: {
+  classification: TopicClassification;
   blogCount: number;
   resourceCount: number;
   serviceCount: number;
@@ -109,6 +132,10 @@ function buildReasons(topic: {
   industryCount: number;
   caseStudyCount: number;
   supportCount: number;
+  validatingCaseStudyCount: number;
+  validatingResourceCount: number;
+  missingValidation: ValidationRequirement[];
+  validationStatus: ValidationStatus;
   coverageStatus: CoverageStatus;
   score: number;
 }): string[] {
@@ -128,6 +155,16 @@ function buildReasons(topic: {
     );
   } else {
     reasons.push('No case studies currently reinforce proof for this topic.');
+  }
+
+  if (topic.classification === 'core') {
+    reasons.push(
+      `Validation coverage: ${topic.validatingCaseStudyCount} case ${topic.validatingCaseStudyCount === 1 ? 'study' : 'studies'} and ${topic.validatingResourceCount} resource ${topic.validatingResourceCount === 1 ? 'count' : 'counts'} toward required proof.`
+    );
+
+    if (topic.missingValidation.length > 0) {
+      reasons.push(`Missing required validation: ${topic.missingValidation.join(', ')}.`);
+    }
   }
 
   return reasons;
@@ -159,15 +196,15 @@ function generateMarkdown(scores: TopicScore[]): string {
   lines.push('## Leaderboard');
   lines.push('');
   lines.push(
-    '| # | Topic | Score | Level | Coverage | Blogs | Resources | Services | Features | Industries | Case Studies |'
+    '| # | Topic | Class | Score | Level | Coverage | Validation | Blogs | Resources | Services | Features | Industries | Case Studies |'
   );
   lines.push(
-    '|---|-------|-------|-------|----------|-------|-----------|----------|----------|------------|--------------|'
+    '|---|-------|-------|-------|-------|----------|------------|-------|-----------|----------|----------|------------|--------------|'
   );
   for (let index = 0; index < sorted.length; index += 1) {
     const topic = sorted[index];
     lines.push(
-      `| ${index + 1} | ${topic.topic} | ${topic.score} | ${LEVEL_EMOJI[topic.level]} ${topic.level} | ${topic.coverageStatus} | ${topic.blogCount} | ${topic.resourceCount} | ${topic.serviceCount} | ${topic.featureCount} | ${topic.industryCount} | ${topic.caseStudyCount} |`,
+      `| ${index + 1} | ${topic.topic} | ${topic.classification} | ${topic.score} | ${LEVEL_EMOJI[topic.level]} ${topic.level} | ${topic.coverageStatus} | ${topic.validationStatus} | ${topic.blogCount} | ${topic.resourceCount} | ${topic.serviceCount} | ${topic.featureCount} | ${topic.industryCount} | ${topic.caseStudyCount} |`,
     );
   }
   lines.push('');
@@ -184,10 +221,19 @@ async function main() {
 
   const allNodes = Object.values(getContentGraph());
   const coverage = buildTopicCoverageSnapshots(allNodes, CANONICAL_TOPICS);
+  const validationCoverage = new Map(
+    buildTopicValidationSnapshots(allNodes, CANONICAL_TOPICS).map(snapshot => [snapshot.topic, snapshot])
+  );
 
   const scores: TopicScore[] = coverage.map(snapshot => {
+    const validation = validationCoverage.get(snapshot.topic);
+    if (!validation) {
+      throw new Error(`Missing validation snapshot for topic ${snapshot.topic}`);
+    }
+
     const base: TopicScoreSeed = {
       topic: snapshot.topic,
+      classification: validation.classification,
       blogCount: snapshot.blogCount,
       resourceCount: snapshot.resourceCount,
       serviceCount: snapshot.serviceCount,
@@ -195,6 +241,13 @@ async function main() {
       industryCount: snapshot.industryCount,
       caseStudyCount: snapshot.caseStudyCount,
       supportCount: snapshot.supportCount,
+      validatingCaseStudyCount: validation.validatingCaseStudyCount,
+      validatingResourceCount: validation.validatingResourceCount,
+      validatesCount: validation.validatesCount,
+      requiredValidation: validation.requiredValidation,
+      missingValidation: validation.missingValidation,
+      validationStatus: validation.validationStatus,
+      suggestedFixes: validation.suggestedFixes,
       score: 0,
       level: 'Gap',
       status: 'gap',
@@ -233,6 +286,9 @@ async function main() {
         topicsAnalyzed: scores.length,
         averageScore: avg,
         completeCoverageTopics: scores.filter(topic => topic.coverageStatus === 'complete').length,
+        validatedCoreTopics: scores.filter(
+          topic => topic.classification === 'core' && topic.validationStatus === 'validated'
+        ).length,
         scores: sorted,
       },
       null,

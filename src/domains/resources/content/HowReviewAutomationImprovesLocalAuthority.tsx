@@ -162,7 +162,7 @@ export const howReviewAutomationImprovesLocalAuthority: ResourceData = {
   publishedAt: '2025-12-17',
   systems: ['reputation-review'],
   industries: [],
-  topics: ['review-automation'],
+  topics: ['review-automation', 'local-authority'],
   primaryService: 'reputation-review',
   seo: {
     title: 'How Review Automation Improves Local Authority Guide',

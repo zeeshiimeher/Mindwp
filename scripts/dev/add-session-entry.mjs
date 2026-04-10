@@ -4,7 +4,7 @@
  * CLI script to add a session entry to reports/session-log.json.
  * Usage: node scripts/dev/add-session-entry.mjs --action "Fixed CTAs" --slugs "slug1,slug2" --before "slug1:30,slug2:40" --after "slug1:60,slug2:70" --notes "Optional notes"
  *
- * Source: CONTENT-GOVERNANCE.md (Session Tracker System)
+ * Source: CONTENT.md (Session Tracker System)
  */
 
 import { readFileSync, writeFileSync } from 'fs';

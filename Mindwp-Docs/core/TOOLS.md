@@ -1,9 +1,13 @@
-# System Intelligence Manual
+# TOOLS — MindWP
 
-> Single source of truth for all MindWP internal systems.
-> Updated: 2026-04-08
->
-> Conversion behavior is governed by **SYSTEM.md**. This document covers tooling, dashboards, scripts, and reports only.
+> Scripts, dashboards, reports, and commands.
+> If this document conflicts with SYSTEM.md → SYSTEM.md wins.
+
+---
+
+## WHEN TO USE THIS DOC
+
+Use this when working with validators, generators, analyzers, reports, or the system dashboard.
 
 ---
 
@@ -381,3 +385,39 @@ The `validate-system-docs` validator checks this document against actual files a
 - Reports that exist but are not documented
 - Scripts that exist but are not documented
 - References in this doc to files that no longer exist
+
+---
+
+## 12. Core Commands
+
+| Command | Purpose |
+|---|---|
+| `npm run system:report` | Full system snapshot: validate, sync, analyze, normalize |
+| `node scripts/core/validate-all.mjs` | Full validator set |
+| `node scripts/core/system-sync.mjs` | Generate state and drift snapshots |
+| `npm run test:runtime` | Vitest runtime layers: unit, system, integration |
+| `npm run test:e2e` | Playwright end-to-end flows |
+| `npm run test:all` | Validators + all test layers with `reports/test-results.json` output |
+| `npm run dev` | Local development |
+| `npm run build` | Production build |
+
+## 13. Working Order
+
+### Start work
+1. Run `npm run system:report`
+2. Inspect `reports/system-report.json`
+3. If CLEAN → continue. If WARNING/BROKEN → inspect `reports/system-drift.json`
+4. Read `core/SYSTEM-STATE.md` for current priorities
+
+### Finish work
+1. Run targeted validator for changed files
+2. Run matching test layer if runtime behavior changed
+3. Run `npm run system:report`
+4. Confirm reports updated cleanly
+5. Do NOT leave repo in drift or failure state
+
+## 14. Data Model
+
+- **Overwrite-only:** `reports/system-report.json`, `reports/system-state.json`, `reports/system-drift.json`
+- **Append-only:** `reports/fix-log.json`, `reports/session-log.json`
+- **Generated (do not edit):** `core/GLOBAL-COMPONENTS-CATALOG.md`

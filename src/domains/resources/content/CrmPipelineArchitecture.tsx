@@ -172,7 +172,7 @@ export const crmPipelineArchitecture: ResourceData = {
   publishedAt: '2025-11-22',
   systems: ['crm-automation'],
   industries: [],
-  topics: ['pipeline-architecture'],
+  topics: ['pipeline-architecture', 'crm-visibility'],
   primaryService: 'crm-automation',
   seo: {
     title: 'CRM Pipeline Architecture',

@@ -11,6 +11,10 @@ import type { AuthorityItem } from '../../src/lib/authority/resolver';
 import { resolveConversionGoal } from '../../src/lib/content-graph/conversionGoals';
 import { getStructuredContentGraph } from '../../src/lib/content-graph/registry';
 import type { ContentNodeType } from '../../src/lib/content-graph/types';
+import {
+  buildServiceValidationSnapshots,
+  buildTopicValidationSnapshots,
+} from '../../src/lib/content-quality/topicAuthority';
 
 const root = process.cwd();
 const OUTPUT_DIR = path.join(root, 'src', 'lib', 'authority', 'generated');
@@ -185,6 +189,8 @@ async function main() {
       ...(node.supports ?? []).map(edge => ({ source: node.id, target: edge.id, type: 'supports', sourceType: edge.source })),
       ...(node.validates ?? []).map(edge => ({ source: node.id, target: edge.id, type: 'validates', sourceType: edge.source })),
     ]),
+    topicValidation: buildTopicValidationSnapshots(structuredGraph.nodes),
+    serviceValidation: buildServiceValidationSnapshots(structuredGraph.nodes),
   };
 
   fs.mkdirSync(REPORTS_DIR, { recursive: true });

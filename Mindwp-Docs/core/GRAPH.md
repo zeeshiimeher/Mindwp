@@ -1,41 +1,15 @@
-# SYSTEM GOVERNANCE NOTICE (LOCKED)
+# GRAPH — MindWP
 
-This document is part of the MindWP Core Architecture System.
-
-## REQUIRED READING ORDER
-
-1. **SYSTEM.md** (mandatory — read first)
-2. **CONTENT.md**
-3. **This document** (GRAPH.md)
-
-## AUTHORITY NOTICE
-
-This document does NOT override SYSTEM.md.
-
-This document governs **graph ontology, metadata, relationship resolution, and scoring**.
-If this document conflicts with SYSTEM.md → SYSTEM.md wins.
-
-Authoritative Sources:
-
-- SYSTEM.md
-- CONTENT.md
-- GRAPH.md
-- CONTENT.md
-- CONTENT.md
-
-Rules:
-
-- No other documents may define architecture rules
-- Archived documents must not be used as reference
-- Planning files must not override system rules
-- If conflict exists → core documents always win
+> Graph ontology, metadata, relationship resolution, and scoring.
+> If this document conflicts with SYSTEM.md → SYSTEM.md wins.
 
 ---
 
-<!-- WHERE THIS FITS -->
-<!-- Purpose: Graph structure, edge rules, scoring formula — #3 in authority stack -->
-<!-- Depends on: SYSTEM.md, CONTENT.md -->
-<!-- Used by: content-graph types.ts, authority-map generation, related sections -->
+## WHEN TO USE THIS DOC
+
+Use this when working on content graph structure, metadata, relationships, or authority scoring.
+
+---
 
 # CONTENT GRAPH SYSTEM (LOCKED)
 

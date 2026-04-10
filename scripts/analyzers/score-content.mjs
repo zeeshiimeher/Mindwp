@@ -15,7 +15,7 @@
  *
  * Constraint: deterministic only. No subjective scoring or NLP.
  *
- * Source: CONTENT-GOVERNANCE.md §7 Edit Intensity Levels (scoring feeds priority)
+ * Source: CONTENT.md (Edit Intensity Levels, scoring feeds priority)
  */
 
 import fs from 'node:fs';

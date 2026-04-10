@@ -1,34 +1,13 @@
 # CONVERSION SYSTEM — MindWP
 
-## REQUIRED READING ORDER
+> Single source of truth for CTA, contact, and conversion contracts.
+> If this document conflicts with SYSTEM.md → SYSTEM.md wins.
 
-1. **SYSTEM.md** (mandatory — read first)
-2. **This document** (CONVERSION.md)
-
-## AUTHORITY NOTICE
-
-This document does NOT override SYSTEM.md.
-
-This document is the **single execution authority for CTA, contact, and conversion contracts**.
-If this document conflicts with SYSTEM.md → SYSTEM.md wins.
+---
 
 ## WHEN TO USE THIS DOC
 
-Use this document when you are working on **CTA components, contact forms, URL routing, or conversion validation**.
-It covers SmartCTA contracts, contact URL generation, form data flow, and validation rules.
-
----
-<!-- Purpose: Single execution authority for CTA, contact, and conversion contracts -->
-<!-- Depends on: SYSTEM.md, SYSTEM.md (tone), CONTENT.md (structure), GRAPH.md (metadata) -->
-<!-- Used by: CTA components, /contact page, validators, system docs -->
-
-> This document is the SINGLE SOURCE OF TRUTH for conversion behavior.
-> All CTA, contact, routing, and validation rules must resolve to this contract.
-
-**Status:** Governing Document
-**Authority Level:** Execution Authority (Behavior Layer)
-**Created:** 2026-04-08
-**Updated:** 2026-04-10
+Use this when working on CTA components, contact forms, URL routing, or conversion validation.
 
 ---
 

@@ -1,38 +1,42 @@
-# CONTENT WRITING PLAYBOOK
+# WRITING — MindWP
 
-Status: Active
-Version: 3.0
-Last Updated: 2026-04-10
-Layer: 2 — Execution Playbook
-
-Extracted from: Level 5 rewrites of Smart Website, CRM, Local SEO, and Review Reputation pages.
+> Writing rules, voice, rewrite method, and quality checks for all public-facing content.
+> If this document conflicts with SYSTEM.md → SYSTEM.md wins.
 
 ---
 
-## REQUIRED READING ORDER
-
-1. **SYSTEM.md** (mandatory — read first)
-2. **This document** (WRITING.md)
-
-## AUTHORITY NOTICE
-
-This document does NOT override SYSTEM.md.
-
-This document governs **how to write**. It does not define:
-- Service roles → see SYSTEM.md §2
-- Page boundaries → see SYSTEM.md §4
-- Terminology per service → see SYSTEM.md §5
-- Connection/bridge rules → see SYSTEM.md §6
-- Tool positioning → see SYSTEM.md §7
-- System flow → see SYSTEM.md §3
-
-If this document conflicts with SYSTEM.md → SYSTEM.md wins.
-
 ## WHEN TO USE THIS DOC
 
-Use this document when you are **writing, rewriting, or reviewing** any public-facing content.
-It covers voice, rewrite method, language rules, quality checks, page structure, and AI detection.
-Do NOT use this document for service definitions, boundaries, or terminology — those are in SYSTEM.md.
+Use this when writing, rewriting, or reviewing any public-facing content.
+Service definitions, boundaries, and terminology are in SYSTEM.md.
+
+---
+
+## COPY LANGUAGE LAW (LOCKED)
+
+MindWP website copy must read like plain English written by a clear human operator.
+
+- Use simple, direct words before advanced or abstract wording
+- Prefer short to medium sentences. Keep paragraphs easy to scan.
+- Sound calm and structured, not polished to the point of sounding artificial
+- Explain operational ideas in normal business language
+
+MindWP copy must NOT sound: robotic, overly academic, over-optimized for SEO, corporate for the sake of sounding important, or like generic AI marketing copy.
+
+**Practical test:** If a capable business owner can understand the sentence quickly on first read, it is probably acceptable.
+
+### Copywriting Vocabulary Rule
+
+Internal concepts like "structure", "infrastructure", and "architecture" must not be overused in public-facing copy. Most business owners do not think in technical terminology.
+
+Avoid repeating: structure, infrastructure, architecture, structural visibility, operational structure, infrastructure layer.
+
+Prefer wording that describes the outcome:
+- "structure" → organised clearly
+- "visibility structure" → pages search engines can understand
+- "enquiry routing structure" → how enquiries reach the right person
+
+**Rule:** If a sentence still makes perfect sense after removing the word "structure", rewrite it without that word.
 
 ---
 

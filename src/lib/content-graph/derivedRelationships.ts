@@ -45,19 +45,23 @@ const EDGE_RULES: Partial<Record<`${ContentNodeType}→${ContentNodeType}`, Edge
   'service→feature': 'supports',
   'service→industry-detail': 'supports',
   'service→industry-category': 'supports',
-  'service→case-study': 'validates',
-  'service→blog': 'validates',
 
   'resource→resource': 'relatesTo',
+  'resource→service': 'validates',
+  'resource→feature': 'validates',
   'resource→industry-detail': 'supports',
   'resource→industry-category': 'supports',
 
   'blog→blog': 'relatesTo',
+  'blog→service': 'validates',
+  'blog→feature': 'validates',
   'blog→resource': 'supports',
   'blog→industry-detail': 'supports',
   'blog→industry-category': 'supports',
 
   'case-study→case-study': 'relatesTo',
+  'case-study→service': 'validates',
+  'case-study→feature': 'validates',
   'case-study→industry-detail': 'supports',
   'case-study→industry-category': 'supports',
   'case-study→resource': 'supports',
@@ -94,6 +98,10 @@ export function deriveRelationships(
 
     const edgeType = getEdgeType(sourceNode.type, targetNode.type);
     if (!edgeType) continue;
+
+    // Validation edges are proof links. Same-system overlap is not enough;
+    // the source content must also validate the target through a shared topic.
+    if (edgeType === 'validates' && !hasOverlap(sourceNode.topics, targetNode.topics)) continue;
 
     const score = scoreRelationship(sourceNode, targetNode);
     if (score === 0) continue;
