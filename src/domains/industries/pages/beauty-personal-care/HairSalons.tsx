@@ -372,10 +372,6 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
     imageStrip: imageStripData,
     operatingPatterns: operatingPatternsData,
@@ -390,10 +386,6 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier salon workflow',
       description:
         'If booking confusion, reminder gaps, inconsistent reviews, or weak repeat-visit follow-up are slowing things down, we can map a practical system around the real client journey.',
-      secondaryAction: {
-        label: 'See the Category Approach',
-        href: '/industries/beauty-personal-care',
-      },
     },
   };
 }

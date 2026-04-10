@@ -366,10 +366,6 @@ function buildHomeInspectorsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
     imageStrip: imageStripData,
     operatingPatterns: operatingPatternsData,
@@ -384,10 +380,6 @@ function buildHomeInspectorsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier home inspection booking and follow-up system',
       description:
         'If your inspection business is dealing with unclear booking requests, preparation friction, or inconsistent follow-up — we can map a practical system around how the workflow actually runs.',
-      secondaryAction: {
-        label: 'See Real Estate & Property Services',
-        href: '/industries/real-estate-property-services',
-      },
     },
   };
 }

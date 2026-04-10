@@ -379,10 +379,6 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
     imageStrip: imageStripData,
     operatingPatterns: operatingPatternsData,
@@ -397,10 +393,6 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
       title: 'Build a steadier detailing booking and repeat-visit system',
       description:
         'If your detailing business is dealing with package confusion, reminder gaps, or inconsistent review flow — we can map a practical system around how the appointment journey actually runs.',
-      secondaryAction: {
-        label: 'See Automotive Services',
-        href: '/industries/automotive-services',
-      },
     },
   };
 }

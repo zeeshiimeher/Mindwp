@@ -6,12 +6,6 @@ import { Badge } from '@/components/reusable/single/Badge';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { getCaseStudiesTemplateMetadata } from '@/domains/case-studies/data';
 
-const CASE_STUDIES_PAGE_SMART_CTA_CONTEXT = {
-  system: 'smart-website-systems',
-  pageType: 'page' as const,
-  slug: 'case-studies',
-};
-
 export function CaseStudiesPage() {
   const studies = getCaseStudiesTemplateMetadata();
 
@@ -111,7 +105,9 @@ export function CaseStudiesPage() {
 
         {/* CTA */}
         <SmartCTA
-          {...CASE_STUDIES_PAGE_SMART_CTA_CONTEXT}
+          system='smart-website-systems'
+          pageType='page'
+          slug='case-studies'
           title='Want Results Like This for Your Business?'
           description="Book a free 20-minute call and we'll walk you through what would actually move the needle for your business—no pressure, no sales scripts."
           primaryActionVariant='white'

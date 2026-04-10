@@ -61,12 +61,6 @@ const IMPLEMENTATION_SUPPORT_SLUGS = [
   'divi5',
 ] as const;
 
-const SERVICES_PAGE_SMART_CTA_CONTEXT = {
-  system: 'smart-website-systems',
-  pageType: 'page' as const,
-  slug: 'services',
-};
-
 type VisibleServiceSlug =
   | typeof FEATURED_SERVICE_SLUG
   | (typeof SUPPORTING_SYSTEM_SLUGS)[number]
@@ -310,7 +304,9 @@ export function ServicesLanding() {
               </p>
               <div className='service-lnd__actions l-row l-row-wrap l-gap-4 l-row-center'>
                 <SmartCTA
-                  {...SERVICES_PAGE_SMART_CTA_CONTEXT}
+                  system='smart-website-systems'
+                  pageType='page'
+                  slug='services'
                   mode='actions-only'
                 />
               </div>
@@ -410,7 +406,9 @@ export function ServicesLanding() {
 
         {/* Footer CTA Section */}
         <SmartCTA
-          {...SERVICES_PAGE_SMART_CTA_CONTEXT}
+          system='smart-website-systems'
+          pageType='page'
+          slug='services'
           title='Ready to transform your WordPress business?'
           description='Discover how our integrated systems can streamline your operations and boost your growth.'
           primaryActionVariant='white'

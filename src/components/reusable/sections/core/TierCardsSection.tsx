@@ -1,13 +1,11 @@
-import { ArrowRight, Check } from 'lucide-react';
+import { Check } from 'lucide-react';
 
 import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
-import { Button } from '@/components/reusable/single/Button';
 import { Card } from '@/components/reusable/single/Card';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
 import { cn } from '@/components/ui/utils';
-import { buildGlobalContactHref } from '@/lib/contact/contactHref';
 
 const BLOCK = 'c-tier-cards-section';
 
@@ -20,7 +18,7 @@ export interface PackageItem {
   popular?: boolean;
   buttonText?: string;
   buttonHref?: string;
-  ctaVariant?: SmartCTAProps['primaryActionVariant'];
+  ctaVariant?: string;
 }
 
 export interface TierCardsSectionProps {
@@ -28,9 +26,27 @@ export interface TierCardsSectionProps {
   title?: string;
   description?: string;
   packages: PackageItem[];
-  smartCta?: Pick<SmartCTAProps, 'system' | 'pageType' | 'slug'>;
+  smartCta: Pick<SmartCTAProps, 'system' | 'pageType' | 'slug'>;
   cssPrefix?: string;
   backgroundColor?: string;
+}
+
+function resolvePrimaryActionVariant(
+  variant: string | undefined,
+  popular: boolean | undefined
+): SmartCTAProps['primaryActionVariant'] {
+  if (
+    variant === 'primary' ||
+    variant === 'outline' ||
+    variant === 'outline-light' ||
+    variant === 'secondary' ||
+    variant === 'white' ||
+    variant === 'link'
+  ) {
+    return variant;
+  }
+
+  return popular ? 'primary' : 'outline';
 }
 
 export function TierCardsSection({
@@ -42,6 +58,10 @@ export function TierCardsSection({
   cssPrefix = '',
   backgroundColor = '',
 }: TierCardsSectionProps) {
+  if (!smartCta) {
+    throw new Error('TierCardsSection requires smartCta for CTA rendering.');
+  }
+
   return (
     <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
       {(badge || title || description) && (
@@ -89,25 +109,14 @@ export function TierCardsSection({
                 ))}
               </ul>
 
-              {smartCta ? (
-                <SmartCTA
-                  system={smartCta.system}
-                  pageType={smartCta.pageType}
-                  slug={smartCta.slug}
-                  mode='actions-only'
-                  primaryActionVariant={pkg.ctaVariant ?? (pkg.popular ? 'primary' : 'outline')}
-                  primaryButtonCssPrefix='btn-block'
-                />
-              ) : (
-                <Button
-                  href={pkg.buttonHref || buildGlobalContactHref()}
-                  variant={pkg.popular ? 'primary' : 'outline'}
-                  label={pkg.buttonText || 'Request Details'}
-                  showDefaultIcon={pkg.popular}
-                  {...(pkg.popular && { icon: ArrowRight })}
-                  cssPrefix='btn-block'
-                />
-              )}
+              <SmartCTA
+                system={smartCta.system}
+                pageType={smartCta.pageType}
+                slug={smartCta.slug}
+                mode='actions-only'
+                primaryActionVariant={resolvePrimaryActionVariant(pkg.ctaVariant, pkg.popular)}
+                primaryButtonCssPrefix='btn-block'
+              />
             </div>
           </Card>
         ))}

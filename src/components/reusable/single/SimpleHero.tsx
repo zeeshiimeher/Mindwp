@@ -4,7 +4,6 @@ import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
 import { cn } from '@/components/ui/utils';
 
 import { BulletList } from './BulletList';
-import type { ButtonProps } from './Button';
 
 const BLOCK = 'hero-section';
 
@@ -25,10 +24,6 @@ const BLOCK = 'hero-section';
  *   primaryAction={{
  *     label: "Request Audit",
  *     href: "/services"
- *   }}
- *   secondaryAction={{
- *     label: "View Sample Report",
- *     href: "/sample-report"
  *   }}
  *   list={[
  *     "WordPress specialists",
@@ -56,17 +51,16 @@ export interface SimpleHeroProps {
   /** Descriptive text explaining the service value proposition */
   description: string;
 
-  /** Primary call-to-action button configuration */
-  primaryAction?: ButtonProps;
-
   /** SmartCTA ownership context for page hero CTAs */
-  smartCta?: Pick<
+  smartCta: Pick<
     SmartCTAProps,
-    'system' | 'pageType' | 'slug' | 'primaryActionVariant' | 'primaryButtonCssPrefix'
+    | 'system'
+    | 'pageType'
+    | 'slug'
+    | 'primaryActionVariant'
+    | 'primaryButtonCssPrefix'
+    | 'secondaryButtonCssPrefix'
   >;
-
-  /** Optional secondary call-to-action button configuration */
-  secondaryAction?: ButtonProps;
 
   /**
    * Additional class(es) for the root element.
@@ -96,13 +90,15 @@ export function SimpleHero({
   title,
   headingTag = 'h1',
   description,
-  primaryAction,
   smartCta,
-  secondaryAction,
   cssPrefix = '',
   backgroundColor = '',
   list,
 }: SimpleHeroProps) {
+  if (!smartCta) {
+    throw new Error('SimpleHero requires smartCta for CTA rendering.');
+  }
+
   return (
     <SectionWrapper padding='spacious' className={cn(BLOCK, backgroundColor, cssPrefix)}>
       <div
@@ -119,21 +115,18 @@ export function SimpleHero({
           headingLevel={headingTag}
           description={description}
           className={`${BLOCK}__header`}
-          {...(smartCta === undefined && primaryAction !== undefined && { primaryAction })}
-          {...(smartCta === undefined && secondaryAction !== undefined && { secondaryAction })}
           marginBottom={false}
         />
 
-        {smartCta && (
-          <SmartCTA
-            system={smartCta.system}
-            pageType={smartCta.pageType}
-            slug={smartCta.slug}
-            primaryActionVariant={smartCta.primaryActionVariant}
-            primaryButtonCssPrefix={smartCta.primaryButtonCssPrefix}
-            mode='actions-only'
-          />
-        )}
+        <SmartCTA
+          system={smartCta.system}
+          pageType={smartCta.pageType}
+          slug={smartCta.slug}
+          primaryActionVariant={smartCta.primaryActionVariant}
+          primaryButtonCssPrefix={smartCta.primaryButtonCssPrefix}
+          secondaryButtonCssPrefix={smartCta.secondaryButtonCssPrefix}
+          mode='actions-only'
+        />
 
         {list && list.length > 0 && <BulletList items={list} cssPrefix={`${BLOCK}__list`} />}
       </div>

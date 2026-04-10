@@ -38,12 +38,6 @@ const HOMEPAGE_CASE_STUDIES_BUTTON = {
   href: '/case-studies',
 } as const;
 
-const HOMEPAGE_SMART_CTA_CONTEXT = {
-  system: 'smart-website-systems',
-  pageType: 'page' as const,
-  slug: 'home',
-};
-
 type HomepageCaseStudy = {
   slug: string;
   industryLabel: string;
@@ -157,14 +151,12 @@ function HeroSection() {
 
           <div className='hero-section-cta'>
             <SmartCTA
-              {...HOMEPAGE_SMART_CTA_CONTEXT}
+              system='smart-website-systems'
+              pageType='page'
+              slug='home'
               mode='actions-only'
               primaryActionVariant='white'
-            />
-            <Button
-              href={heroData.secondaryAction.href}
-              variant='outline-light'
-              label={heroData.secondaryAction.label}
+              tone='short'
             />
           </div>
 
@@ -218,7 +210,9 @@ function InfrastructureGapsSection() {
       </div>
     </div>
                   <SmartCTA
-                    {...HOMEPAGE_SMART_CTA_CONTEXT}
+                    system='smart-website-systems'
+                    pageType='page'
+                    slug='home'
                     mode='actions-only'
                     primaryActionVariant='primary'
   const smartWebsiteFrameworkData = homepageData.smartWebsiteFramework;
@@ -309,7 +303,9 @@ function InfrastructureGapsSection() {
 
       <div className='cta-container'>
         <SmartCTA
-          {...HOMEPAGE_SMART_CTA_CONTEXT}
+          system='smart-website-systems'
+          pageType='page'
+          slug='home'
           title={smartWebsiteFrameworkData.cta.title}
           description={smartWebsiteFrameworkData.cta.description}
           headingLevel='h3'
@@ -363,7 +359,9 @@ function ClientJourneySection() {
 
         <div className='cta-container'>
           <SmartCTA
-            {...HOMEPAGE_SMART_CTA_CONTEXT}
+            system='smart-website-systems'
+            pageType='page'
+            slug='home'
             title={clientJourneyData.cta.title}
             description={clientJourneyData.cta.description}
             headingLevel='h3'
@@ -642,7 +640,9 @@ function IndustriesSection() {
       footer={
         <div className='industry-section-cta'>
           <SmartCTA
-            {...HOMEPAGE_SMART_CTA_CONTEXT}
+            system='smart-website-systems'
+            pageType='page'
+            slug='home'
             mode='actions-only'
             primaryActionVariant='primary'
           />
@@ -750,7 +750,9 @@ function FooterCTASection() {
 
   return (
     <SmartCTA
-      {...HOMEPAGE_SMART_CTA_CONTEXT}
+      system='smart-website-systems'
+      pageType='page'
+      slug='home'
       title={ctaData.footer.title}
       description={ctaData.footer.description}
       primaryActionVariant='white'

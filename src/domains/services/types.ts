@@ -1,7 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
 
-import type { ButtonProps } from '@/components/reusable/single/Button';
-
 export interface SectionIntro {
   title: string;
   description?: string;
@@ -62,7 +60,6 @@ export interface ServicePageSections {
       points: string[];
       featured?: boolean;
     }[];
-    primaryAction?: ButtonProps;
   };
 
   types?: {
@@ -157,8 +154,6 @@ export interface ServicePageData<
     badge?: string;
     title: string;
     description: string;
-    primaryAction?: ButtonProps;
-    secondaryAction?: ButtonProps;
     list?: string[];
     cssPrefix?: string;
     backgroundColor?: string;

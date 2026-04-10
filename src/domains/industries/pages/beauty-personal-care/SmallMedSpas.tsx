@@ -370,10 +370,6 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
     imageStrip: imageStripData,
     operatingPatterns: operatingPatternsData,
@@ -388,10 +384,6 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
       title: 'Build a steadier med spa system',
       description:
         'If unclear consultation routing, booking friction, inconsistent aftercare, or weak trust signals are slowing things down, we can map a practical system around the real client journey.',
-      secondaryAction: {
-        label: 'See the Category Approach',
-        href: '/industries/beauty-personal-care',
-      },
     },
   };
 }

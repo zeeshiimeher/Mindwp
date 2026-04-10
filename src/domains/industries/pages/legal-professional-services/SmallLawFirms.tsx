@@ -370,10 +370,6 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
     imageStrip: imageStripData,
     operatingPatterns: operatingPatternsData,
@@ -388,10 +384,6 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier legal intake and follow-up system',
       description:
         'If your firm is dealing with unclear enquiry quality, loose consultation flow, or inconsistent follow-up — we can map a practical system around how the pipeline actually runs.',
-      secondaryAction: {
-        label: 'See Legal & Professional Services',
-        href: '/industries/legal-professional-services',
-      },
     },
   };
 }

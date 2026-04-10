@@ -386,10 +386,6 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
     imageStrip: imageStripData,
     operatingPatterns: operatingPatternsData,
@@ -404,10 +400,6 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
       title: 'Build a calmer lash booking system',
       description:
         'If enquiry gaps, booking friction, inconsistent reminders, or weak follow-up are slowing things down, we can map a practical setup around how the service runs.',
-      secondaryAction: {
-        label: 'See the Category Approach',
-        href: '/industries/beauty-personal-care',
-      },
     },
   };
 }

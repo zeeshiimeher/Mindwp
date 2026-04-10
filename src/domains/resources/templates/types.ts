@@ -96,10 +96,6 @@ export type ResourcePageTemplateSection =
         text: string;
         url: string;
       };
-      secondaryAction?: {
-        text: string;
-        url: string;
-      };
     }
   | {
       type: 'related-resources';

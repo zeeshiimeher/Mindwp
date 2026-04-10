@@ -1,11 +1,13 @@
 import type { ContactSourceType } from '@/lib/contact/contactHref';
 
 export type CtaIntent = 'explore' | 'consider' | 'ready';
+export type CtaTone = 'short' | 'descriptive';
 
 type ResolveCtaLabelOptions = {
   system: string;
   pageType: ContactSourceType;
   intent?: CtaIntent;
+  tone?: CtaTone;
 };
 
 const CTA_LABEL_RULES: Record<ContactSourceType, readonly string[]> = {
@@ -17,6 +19,17 @@ const CTA_LABEL_RULES: Record<ContactSourceType, readonly string[]> = {
   page: ['See How It Works', 'Understand the System'],
   resource: ['See How It Works', 'Understand the System'],
   service: ['Start a Conversation', 'Get Your System Built'],
+};
+
+const SHORT_CTA_LABEL_RULES: Record<ContactSourceType, readonly string[]> = {
+  blog: ['Learn More'],
+  'case-study': ['See Results'],
+  feature: ['See How', 'Explore'],
+  global: ['Learn More'],
+  industry: ['See Solution'],
+  page: ['Learn More'],
+  resource: ['Learn More'],
+  service: ['Get Started', 'Start Now'],
 };
 
 const INTENT_DEFAULTS: Partial<Record<ContactSourceType, CtaIntent>> = {
@@ -50,9 +63,15 @@ export function inferIntent(pageType: ContactSourceType): CtaIntent {
   }
 }
 
-export function resolveCtaLabel({ system: _system, pageType, intent }: ResolveCtaLabelOptions) {
+export function resolveCtaLabel({
+  system: _system,
+  pageType,
+  intent,
+  tone = 'descriptive',
+}: ResolveCtaLabelOptions) {
   const resolvedIntent = intent ?? inferIntent(pageType);
-  const labels = CTA_LABEL_RULES[pageType] ?? CTA_LABEL_RULES.service;
+  const labelRules = tone === 'short' ? SHORT_CTA_LABEL_RULES : CTA_LABEL_RULES;
+  const labels = labelRules[pageType] ?? labelRules.service;
   const index = Math.min(INTENT_INDEX[resolvedIntent] ?? 0, labels.length - 1);
 
   return labels[index] ?? DEFAULT_CTA_LABEL;

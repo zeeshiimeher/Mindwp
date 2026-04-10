@@ -13,7 +13,6 @@ type ResourcesHubData = {
     badge: string;
     title: string;
     description: string;
-    secondaryAction: { label: string; href: string };
   };
   topics: {
     title: string;
@@ -36,7 +35,6 @@ type ResourcesHubData = {
   cta: {
     title: string;
     description: string;
-    secondaryAction: { label: string; href: string };
   };
 };
 
@@ -56,7 +54,6 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
     title: 'Resources to Grow Your Service Business',
     description:
       'Practical guides, step-by-step tutorials, and proven strategies to help you get more customers, automate your business, and lead in local search.',
-    secondaryAction: { label: 'View Blog', href: '/blog' },
   },
   topics: {
     title: 'Browse by Topic',
@@ -82,7 +79,6 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
     title: 'Ready to Apply the Right System?',
     description:
       'These guides show how the pieces fit together. We will show you how to turn website traffic into clearer, more consistent enquiries.',
-    secondaryAction: { label: 'View All Services', href: '/services' },
   },
 };
 

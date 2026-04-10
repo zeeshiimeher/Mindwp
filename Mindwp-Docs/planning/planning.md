@@ -1,19 +1,236 @@
+# 🚦 EXECUTION STATUS DASHBOARD
+
+## ✅ COMPLETED
+
+- System Architecture (deterministic, validated)
+- Graph System (fully deterministic, no duplication)
+- Phase 0 (Partial → CTA structure enforced)
+- Phase 1 (SmartCTA ownership migration)
+   - Services → complete
+   - Features → complete
+   - Blogs → complete
+   - Resources → complete
+   - Industries → complete
+   - Homepage → complete
+- Phase 2 → CTA System Hardening + Intelligence Layer
+- Phase 2.5 → CTA Tone System (initial implementation)
+- CTA Data Cleanup (buttonText / buttonHref removed)
+
+-------------------------------------
+
+## 🟡 IN PROGRESS
+
+- Phase 3 → Revenue Activation
+   - CRM integration patch
+   - Service-page improvement
+   - BOFU decision pages
+   - Proof integration
+   - Validation fixes
+
+    TASK: CTA LABEL OPTIMIZATION (SHORT VS DESCRIPTIVE)
+    STATUS: NEEDS PLANNING
+
+    Context:
+    - Current CTA labels are descriptive and long
+    - Examples:
+       → "See How This Applies to Your Business"
+       → "Get Your Smart Website System Built"
+    - These are:
+       → clear ✅
+       → but too long for UI and conversion ❌
+
+    Problem:
+    - CTA labels lack visual sharpness
+    - Not optimized for quick scanning
+    - Weak "punch" for high-conversion contexts
+
+    Proposed Solution:
+    - Introduce a CTA LABEL STRATEGY SYSTEM
+    - type CtaTone = 'short' | 'descriptive'
+    - SmartCTA will support both:
+       → short = high-impact, conversion-focused
+       → descriptive = clarity-focused
+
+    Examples:
+    - SERVICE:
+       → short = "Get Started"
+       → descriptive = "Get Your System Built"
+    - FEATURE:
+       → short = "See Demo"
+       → descriptive = "See How This Works"
+    - INDUSTRY:
+       → short = "See Solution"
+       → descriptive = "See How This Applies to Your Business"
+
+    Future Implementation:
+    - Add ctaTone config inside SmartCTA
+    - Default = descriptive (current behavior)
+    - Allow global switch to short
+    - Optional: pageType-based tone mapping
+
+    Why Not Implement Now:
+    - CTA system was just stabilized
+    - Avoid introducing instability during Phase 2
+    - Requires controlled rollout
+
+    Next Step:
+    - Plan CTA tone system
+    - Then implement as Phase 2.5 or Phase 3 task
+
+      TASK: PHASE 2 FINAL VALIDATION
+      STATUS: COMPLETED
+
+      Audit Result:
+      - PASS
+
+      Verified:
+      - Zero SmartCTA spread props
+      - Zero primaryButtonHref
+      - Zero wrapper-based CTA control in CTA section wrappers
+      - SmartCTA explicit context enforced: system / pageType / slug
+
+      TASK: PHASE 2.5 — CTA TONE SYSTEM (SHORT LABELS)
+      STATUS: COMPLETED (INITIAL IMPLEMENTATION)
+
+      Execution Started:
+      - SmartCTA tone system implementation initiated
+      - Backward compatibility must be preserved
+
+      Context:
+      - Phase 2 is completed
+      - SmartCTA is now:
+         → deterministic
+         → single source of truth
+         → fully enforced
+      - This enables safe introduction of CTA tone system
+
+      Problem:
+      - Current CTA labels are:
+         → descriptive
+         → long
+         → not visually sharp
+      - Example:
+         → "See How This Applies to Your Business"
+      - Issues:
+         → poor scanability
+         → weak visual impact
+         → not ideal for compact UI
+
+      Goal:
+      - Introduce CTA tone system
+      - type CtaTone = 'short' | 'descriptive'
+
+      System Design (Planning Only):
+      - SmartCTA will support:
+         → ctaTone?: 'short' | 'descriptive'
+      - Default:
+         → descriptive (current behavior)
+
+      Label Examples:
+      - SERVICE:
+         → short = "Get Started"
+         → descriptive = "Get Your System Built"
+      - FEATURE:
+         → short = "See How"
+         → descriptive = "See How This Works"
+      - INDUSTRY:
+         → short = "See Solution"
+         → descriptive = "See How This Applies to Your Business"
+
+      Tone Rules:
+      - Short CTA labels must be max 2-3 words
+      - Short CTA labels must be action-oriented
+      - Short CTA labels must be system-aligned, not product-toned
+      - No SaaS or product language
+      - No vague labels
+
+      Approved Label Patterns:
+      - "Start Now"
+      - "Get Started"
+      - "See How"
+      - "Explore"
+      - "See Solution"
+      - "Learn More"
+      - "See Results"
+
+      Restricted Language:
+      - Demo
+      - Try
+      - Free
+      - Sign up
+      - Subscribe
+      - Buy
+      - Download
+
+      Rules:
+      - No label defined in pages
+      - No manual overrides
+      - SmartCTA decides everything
+
+      Future Extension (Do Not Implement):
+      - global tone switch
+      - pageType-based tone mapping
+      - A/B testing support
+
+      Result:
+      - tone system added to SmartCTA
+      - backward compatibility preserved
+      - no regression in existing CTAs
+
+      Next Step:
+      - Controlled rollout of short tone (future phase)
+
+-------------------------------------
+
+## 🔵 READY FOR EXECUTION
+
+- Phase 4 → Service Alignment
+- Phase 4.1 → Service Pages Level 5 Upgrade
+- Phase 4.2 → Global Metadata & Graph Alignment
+- Phase 4.3 → CTA Standardization (all domains)
+- Phase 4.4 → Domain Landing Pages (step-by-step)
+- Phase 4.5 → Industry Pages Rewrite
+- Phase 4.6 → Case Studies Rewrite
+- Phase 4.7 → Writing System Upgrade
+- Phase 4.8 → Blog & Resource Alignment
+
+-------------------------------------
+
+## 🔴 REQUIRES AUDIT / PLANNING
+
+- BOFU Page System (Comparison + Decision layer)
+- Conversion Strategy per cluster
+- Offer positioning per service
+- Pricing / packaging strategy (if applicable)
+
+-------------------------------------
+
 # EXECUTION PLAN — REVENUE ACTIVATION LAYER
 
 Status: ACTIVE  
 Last Updated: [date]
 
 -------------------------------------
-EXECUTION PRIORITY (STRICT ORDER)
+EXECUTION MODEL — PHASES AS EXECUTION LAYERS
 -------------------------------------
 
-1. CRM-INTEGRATION PATCH (BLOCKING)
-2. SERVICE-PAGES IMPROVEMENT
-3. BOFU PAGE #1 (CRM DECISION)
-4. BOFU PAGE #2 (SERVICE PAGE DECISION)
-5. BOFU PAGE #3 (CONVERSION DECISION)
-6. PROOF INTEGRATION
-7. VALIDATION FIXES
+Principle:
+- Phases are the execution order.
+- No separate execution priority list exists outside the phases.
+- Complete one phase or subphase before moving to the next layer.
+
+Active Execution Layers:
+1. Phase 0 — System Stabilization
+2. Phase 3 — Revenue Activation
+3. Phase 4 — Service Alignment
+4. Phase 4.1 — Service Pages Level 5 Upgrade
+5. Phase 4.2 — Global Metadata & Graph Alignment
+6. Phase 4.3 — CTA Standardization
+7. Phase 4.4 — Domain Landing Pages
+8. Phase 4.5 — Industry Pages Rewrite
+9. Phase 4.6 — Case Studies Rewrite
+10. Phase 4.7 — Writing System Upgrade
+11. Phase 4.8 — Blog & Resource Alignment
 
 -------------------------------------
 SYSTEM STATE (LOCKED)
@@ -85,6 +302,14 @@ CORE FOCUS TOPICS
 -------------------------------------
 PHASE 0 — SYSTEM STABILIZATION (PRE-EXECUTION)
 -------------------------------------
+
+Priority: 🔴 CRITICAL
+
+Execution Order:
+1. CTA System Hardening
+2. SEO System Centralization
+3. Related System Validation
+4. Location System Planning
 
 ## 🔴 CTA SYSTEM HARDENING
 
@@ -174,8 +399,33 @@ Success Criteria:
 - ZERO implementation now
 
 -------------------------------------
-PHASE 1 — PATCH EXISTING CONTENT (HIGH PRIORITY)
+PHASE 3 — REVENUE ACTIVATION
 -------------------------------------
+
+Priority: 🔴 CRITICAL
+
+Goal:
+Convert existing content and decision assets into a strict revenue activation layer.
+
+Strict Execution Order:
+1. CRM-INTEGRATION PATCH (BLOCKING)
+2. SERVICE-PAGES IMPROVEMENT
+3. BOFU PAGE #1 (CRM DECISION)
+4. BOFU PAGE #2 (SERVICE PAGE DECISION)
+5. BOFU PAGE #3 (CONVERSION DECISION)
+6. PROOF INTEGRATION
+7. VALIDATION FIXES
+
+Rules:
+- No jumping between subphases
+- Complete each subphase before moving forward
+- Keep all execution revenue-first and conversion-focused
+
+---
+
+### PHASE 3.1 — CRM-INTEGRATION PATCH (BLOCKING)
+
+Priority: 🔴 CRITICAL
 
 ## 🔴 CRM-INTEGRATION (CRITICAL GAP)
 
@@ -212,6 +462,10 @@ Copilot (code + content patch)
 
 ---
 
+### PHASE 3.2 — SERVICE-PAGES IMPROVEMENT
+
+Priority: 🟡 HIGH
+
 ## 🟡 SERVICE-PAGES (IMPROVEMENT)
 
 ### Page:
@@ -235,9 +489,9 @@ Copilot (code + content patch)
 
 ---
 
--------------------------------------
-PHASE 2 — HIGH-IMPACT BOFU PAGES
--------------------------------------
+### PHASE 3.3 — BOFU PAGE #1 (CRM DECISION)
+
+Priority: 🔴 CRITICAL
 
 ⚠️ Limit: ONLY 3 pages (no overproduction)
 
@@ -265,7 +519,9 @@ Status:
 
 ---
 
-### 2. SERVICE PAGE DECISION
+### PHASE 3.4 — BOFU PAGE #2 (SERVICE PAGE DECISION)
+
+Priority: 🔴 CRITICAL
 
 Title:
 Service Pages vs One Generic Services Page
@@ -281,7 +537,9 @@ Status:
 
 ---
 
-### 3. CONVERSION DECISION
+### PHASE 3.5 — BOFU PAGE #3 (CONVERSION DECISION)
+
+Priority: 🔴 CRITICAL
 
 Title:
 Conversion Funnel System vs Landing Page Development
@@ -298,8 +556,10 @@ Status:
 ---
 
 -------------------------------------
-PHASE 3 — PROOF INTEGRATION
+PHASE 3.6 — PROOF INTEGRATION
 -------------------------------------
+
+Priority: 🔴 CRITICAL
 
 ## Primary Case Study:
 - RoofingWebsiteRebuildWithCrm
@@ -324,8 +584,32 @@ Tasks:
 ---
 
 -------------------------------------
+PHASE 3.7 — VALIDATION FIXES
+-------------------------------------
+
+Priority: 🔴 CRITICAL
+
+Target:
+
+- validates ≥ 1 (minimum)
+- validates ≥ 2 (ideal for core pages)
+
+Tasks:
+
+- [ ] CRM cluster → connect to service
+- [ ] Inject proof where missing
+- [ ] Re-run authority generation
+
+---
+
+-------------------------------------
 PHASE 4 — SERVICE ALIGNMENT
 -------------------------------------
+
+Priority: 🟡 HIGH
+
+Goal:
+Ensure the revenue activation layer aligns every topic, service, CTA, and domain path into one controlled service architecture.
 
 Ensure:
 
@@ -343,6 +627,8 @@ Mapping:
 -------------------------------------
 PHASE 4.1 — SERVICE PAGES LEVEL 5 UPGRADE
 -------------------------------------
+
+Priority: 🟡 HIGH
 
 Goal:
 Upgrade ALL service pages to Level 5 (conversion-ready, proof-backed, system-aligned)
@@ -368,6 +654,8 @@ Success Criteria:
 PHASE 4.2 — GLOBAL METADATA & GRAPH ALIGNMENT
 -------------------------------------
 
+Priority: 🟡 HIGH
+
 Goal:
 Ensure all domains are fully aligned at metadata + graph level
 
@@ -386,6 +674,8 @@ Success Criteria:
 -------------------------------------
 PHASE 4.3 — CTA STANDARDIZATION (ALL DOMAINS)
 -------------------------------------
+
+Priority: 🟡 HIGH
 
 Goal:
 Make ALL CTAs conversion-focused and consistent across system
@@ -412,6 +702,8 @@ Success Criteria:
 -------------------------------------
 PHASE 4.4 — DOMAIN LANDING PAGES (STEP-BY-STEP)
 -------------------------------------
+
+Priority: 🟡 HIGH
 
 Goal:
 Upgrade ALL domain landing pages (services, features, etc.) from demo/catalog → conversion-driven navigation layers
@@ -467,6 +759,8 @@ Success Criteria:
 PHASE 4.5 — INDUSTRY PAGES REWRITE
 -------------------------------------
 
+Priority: 🟡 HIGH
+
 Goal:
 Upgrade ALL industry pages to conversion + positioning level
 
@@ -490,6 +784,8 @@ Success Criteria:
 -------------------------------------
 PHASE 4.6 — CASE STUDIES REWRITE (HIGH IMPACT)
 -------------------------------------
+
+Priority: 🟡 HIGH
 
 Goal:
 Turn case studies into PROOF ASSETS (trust + authority drivers)
@@ -526,6 +822,8 @@ Success Criteria:
 PHASE 4.7 — WRITING SYSTEM UPGRADE
 -------------------------------------
 
+Priority: 🟠 MEDIUM
+
 Goal:
 Upgrade writing guidelines (especially for case studies)
 
@@ -549,6 +847,8 @@ Success Criteria:
 -------------------------------------
 PHASE 4.8 — BLOG & RESOURCE ALIGNMENT
 -------------------------------------
+
+Priority: 🟡 HIGH
 
 ## Goal:
 Align blogs and resources at the metadata and conversion-routing layer so existing authority content supports revenue execution without triggering broad rewrites.
@@ -654,45 +954,21 @@ Then content upgrade for:
 👉 That’s time waste
 
 -------------------------------------
-PHASE 5 — VALIDATION FIXES
--------------------------------------
-
-Target:
-
-- validates ≥ 1 (minimum)
-- validates ≥ 2 (ideal for core pages)
-
-Tasks:
-
-- [ ] CRM cluster → connect to service
-- [ ] Inject proof where missing
-- [ ] Re-run authority generation
-
----
-
--------------------------------------
-GLOBAL EXECUTION ORDER (STRICT)
--------------------------------------
-
-Execute domains in this exact order:
-
-1. System Stabilization (NEW)
-2. Service Pages (Level 5 upgrade)
-3. CTA Standardization (all domains)
-4. Service Landing Page (ONLY first)
-5. CRM Blog Fixes (zero-validate cluster)
-6. Blog & Resource Alignment (metadata only)
-7. Case Studies Rewrite
-8. Industry Pages Rewrite
-9. Remaining Landing Pages
-
-Rule:
-- No jumping between steps
-- Complete one layer before moving forward
-
--------------------------------------
 PHASE COMPLETION RULES
 -------------------------------------
+
+System Stabilization complete when:
+- CTA system is centralized
+- SEO builders are planned and implemented where required
+- Related system dead fields are removed
+- Location system remains blocked but future-ready
+
+Revenue Activation complete when:
+- CRM patch is complete
+- Service-page improvement is complete
+- All 3 BOFU pages are built in order
+- Proof integration is complete
+- Validation fixes are complete
 
 Service Pages complete when:
 - All pages meet Level 5 standard
@@ -737,7 +1013,7 @@ Industry Pages complete when:
 - No industry page reads like a generic template
 
 Remaining Landing Pages complete when:
-- The execution list is finished in order
+- The remaining landing-page sequence is finished in order
 - No generic title, description, or CTA remains
 - Every landing page functions as a conversion layer, not a catalog layer
 
@@ -778,6 +1054,33 @@ Focus ONLY on:
 - Do NOT jump to BOFU pages early
 - Do NOT touch new content before fixing existing
 - Do NOT over-optimize graph early
+
+Component Integrity Rule (Critical):
+- When adding new content or sections, do NOT modify existing reusable components
+- Do NOT inject new logic into existing component props
+- Do NOT extend existing data structures for new behavior
+- Create a new dedicated component or section instead
+- Add it explicitly at the page level
+- Keep existing components unchanged
+
+Principle:
+- Components = stable building blocks
+- Pages = composition layer
+
+Reason:
+- Prevents component bloat
+- Maintains deterministic system behavior
+- Avoids hidden logic and conditional complexity
+
+Violation Example (Forbidden):
+- Adding new conditions inside existing CTASection / Hero / Feature components
+
+Correct Approach:
+- Create a new section such as DecisionSection or ComparisonBlock
+- Insert it in the page layout explicitly
+
+Scope:
+- This rule is strict and applies across all phases
 
 -------------------------------------
 EXECUTION LOG
@@ -873,21 +1176,44 @@ Claude: NOT USED
 
 ---
 
-PHASE 1 — PATCH EXISTING CONTENT  
+PHASE 3.1 — CRM-INTEGRATION PATCH  
 Owner: Copilot + Claude  
 GPT: Validation
 
 ---
 
-PHASE 2 — BOFU PAGES  
+PHASE 3.2 — SERVICE-PAGES IMPROVEMENT  
+Owner: Copilot + Claude  
+GPT: Validation
+
+---
+
+PHASE 3.3 — BOFU PAGE #1 (CRM DECISION)  
 Owner: Claude + GPT  
 Copilot: Implementation
 
 ---
 
-PHASE 3 — PROOF INTEGRATION  
+PHASE 3.4 — BOFU PAGE #2 (SERVICE PAGE DECISION)  
+Owner: Claude + GPT  
+Copilot: Implementation
+
+---
+
+PHASE 3.5 — BOFU PAGE #3 (CONVERSION DECISION)  
+Owner: Claude + GPT  
+Copilot: Implementation
+
+---
+
+PHASE 3.6 — PROOF INTEGRATION  
 Owner: Copilot + Claude  
 GPT: Validation
+
+---
+
+PHASE 3.7 — VALIDATION FIXES  
+Owner: GPT + Copilot
 
 ---
 
@@ -938,11 +1264,6 @@ Owner: GPT
 PHASE 4.8 — BLOG & RESOURCE ALIGNMENT  
 Owner: Copilot + GPT  
 Claude: LIMITED
-
----
-
-PHASE 5 — VALIDATION  
-Owner: GPT + Copilot
 
 -------------------------------------
 STRICT RULES

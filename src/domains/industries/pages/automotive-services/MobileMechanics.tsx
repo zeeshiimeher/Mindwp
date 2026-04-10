@@ -376,10 +376,6 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
     imageStrip: imageStripData,
     operatingPatterns: operatingPatternsData,
@@ -394,10 +390,6 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier mobile mechanic callout and follow-up system',
       description:
         'If your mobile service business is dealing with unclear area fit, loose booking, or inconsistent arrival communication — we can map a practical system around how the work actually runs.',
-      secondaryAction: {
-        label: 'See Automotive Services',
-        href: '/industries/automotive-services',
-      },
     },
   };
 }

@@ -25,10 +25,6 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
     title: 'Smart Website Systems for Home Service Teams',
     description:
       'Home service businesses run on fast response, clear estimate handling, and local trust — but most of those steps break before the job even starts. A Smart Website system holds the whole path together.',
-    secondaryAction: {
-      label: 'See Smart Website Systems',
-      href: '/services/smart-website-systems',
-    },
     list: [
       'Clearer enquiry capture',
       'Faster estimate booking',
@@ -395,10 +391,6 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
       title: 'Map the system around how your team actually works',
       description:
         'If jobs are slipping between first contact and follow-up, we can show you how to turn more enquiries into booked work.',
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
   };
 }

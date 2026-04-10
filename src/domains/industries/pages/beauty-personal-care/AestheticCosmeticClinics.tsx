@@ -369,10 +369,6 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
     imageStrip: imageStripData,
     operatingPatterns: operatingPatternsData,
@@ -387,10 +383,6 @@ function buildAestheticCosmeticClinicsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier clinic system',
       description:
         'If unclear consultation routing, booking friction, inconsistent aftercare, or weak trust signals are slowing things down, we can map a practical system around the real patient journey.',
-      secondaryAction: {
-        label: 'See the Category Approach',
-        href: '/industries/beauty-personal-care',
-      },
     },
   };
 }

@@ -380,10 +380,6 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
     imageStrip: imageStripData,
     operatingPatterns: operatingPatternsData,
@@ -398,10 +394,6 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
       title: 'Build a steadier auto repair diagnostic and estimate system',
       description:
         'If your repair business is dealing with missed enquiries, loose booking, or inconsistent estimate follow-up — we can map a practical system around how the workshop actually runs.',
-      secondaryAction: {
-        label: 'See Automotive Services',
-        href: '/industries/automotive-services',
-      },
     },
   };
 }

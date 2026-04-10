@@ -362,10 +362,6 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
     imageStrip: imageStripData,
     operatingPatterns: operatingPatternsData,
@@ -380,10 +376,6 @@ function buildDentalClinicsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier dental booking system',
       description:
         'If unclear enquiry quality, loose booking flow, inconsistent follow-up, or weak trust proof are slowing things down, we can map a practical system around how the patient pipeline actually runs.',
-      secondaryAction: {
-        label: 'See Local Appointment Businesses',
-        href: '/industries/local-appointment-businesses',
-      },
     },
   };
 }

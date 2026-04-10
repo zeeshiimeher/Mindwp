@@ -370,10 +370,6 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
     imageStrip: imageStripData,
     operatingPatterns: operatingPatternsData,
@@ -388,10 +384,6 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier consulting discovery and follow-up system',
       description:
         'If discovery calls are slipping, we can show you how to turn more enquiries into booked conversations.',
-      secondaryAction: {
-        label: 'See Legal & Professional Services',
-        href: '/industries/legal-professional-services',
-      },
     },
   };
 }

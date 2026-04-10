@@ -362,10 +362,6 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
     imageStrip: imageStripData,
     operatingPatterns: operatingPatternsData,
@@ -380,10 +376,6 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
       title: 'Build a steadier tattoo consultation and booking system',
       description:
         'If your studio is dealing with unclear enquiry quality, loose booking flow, or inconsistent follow-up — we can map a practical system around how the pipeline actually runs.',
-      secondaryAction: {
-        label: 'See Local Appointment Businesses',
-        href: '/industries/local-appointment-businesses',
-      },
     },
   };
 }

@@ -21,10 +21,6 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
     title: 'Smart Website Systems for Automotive Service Businesses',
     description:
       'An automotive service website should support service clarity, estimate handling, appointment booking, trust signals, and follow-up — without making the front desk carry every gap manually.',
-    secondaryAction: {
-      label: 'See Smart Website Systems',
-      href: '/services/smart-website-systems',
-    },
     list: [
       'Clearer service routing',
       'Better estimate and booking flow',
@@ -388,10 +384,6 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
       title: 'Map the automotive category around how your business actually works',
       description:
         'If your automotive business is dealing with loose enquiry handling, inconsistent estimate follow-up, or booking friction — we can help map the right system around it.',
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
   };
 }

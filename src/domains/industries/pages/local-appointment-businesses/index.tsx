@@ -21,10 +21,6 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
     title: 'Smart Website Systems for Local Appointment Businesses',
     description:
       'Local appointment businesses run on qualification, scheduling, and trust — but those steps break when staff have to hold every handoff together manually. A Smart Website system structures the whole path from enquiry to follow-up.',
-    secondaryAction: {
-      label: 'See Smart Website Systems',
-      href: '/services/smart-website-systems',
-    },
     list: [
       'Clearer appointment qualification',
       'Better booking flow',
@@ -391,10 +387,6 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
       title: 'Map the system around how your appointment business actually works',
       description:
         'If your business is dealing with loose qualification, inconsistent booking flow, follow-up friction, or scattered trust signals, we can help structure the right system around it.',
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
   };
 }

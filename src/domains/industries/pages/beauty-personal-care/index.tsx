@@ -24,10 +24,6 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
     title: 'Smart Website Systems for Beauty & Personal Care',
     description:
       'Beauty and personal care runs on timing, trust, and repeat visits. The system holds booking together first, then layers reminders, follow-up, visibility, and client records around it.',
-    secondaryAction: {
-      label: 'See Smart Website Systems',
-      href: '/services/smart-website-systems',
-    },
     list: [
       'Booking flow clarity',
       'Fewer interruption points',
@@ -400,10 +396,6 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
       title: 'Map the system around how your business runs',
       description:
         'If booking and follow-up feel inconsistent, we can show you how to turn more enquiries into repeat appointments.',
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
   };
 }

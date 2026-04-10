@@ -4,10 +4,31 @@ import type { ReactNode } from 'react';
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Button, type ButtonProps } from '@/components/reusable/single/Button';
 import { cn } from '@/components/ui/utils';
-import { DEFAULT_CTA_LABEL, inferIntent, resolveCtaLabel } from '@/config/ctaLabels';
+import { DEFAULT_CTA_LABEL, inferIntent, resolveCtaLabel, type CtaTone } from '@/config/ctaLabels';
 import { buildContactHref, type ContactSourceType } from '@/lib/contact/contactHref';
 
 const BLOCK = 'cta-section';
+const ALLOW_SECONDARY_BY_PAGE_TYPE: Record<ContactSourceType, boolean> = {
+  blog: false,
+  'case-study': false,
+  feature: true,
+  global: false,
+  industry: true,
+  page: false,
+  resource: false,
+  service: false,
+};
+
+const SECONDARY_CTA_MAP: Partial<Record<ContactSourceType, { label: string; href: (slug: string) => string }>> = {
+  feature: {
+    label: 'See How It Works',
+    href: slug => `/features/${slug}`,
+  },
+  industry: {
+    label: 'See How This Applies to Your Business',
+    href: slug => `/industries/${slug}`,
+  },
+};
 
 function hasRenderableText(value: ReactNode | undefined): boolean {
   if (value === null || value === undefined || typeof value === 'boolean') {
@@ -56,7 +77,8 @@ export interface SmartCTAProps {
   };
   headingLevel?: 'h2' | 'h3';
   primaryActionVariant?: ButtonProps['variant'];
-  secondaryAction?: ButtonProps;
+  tone?: CtaTone;
+  secondaryButtonCssPrefix?: string;
   metaItems?: Array<{ text: string }>;
   wrapper?: 'section' | 'none';
   includeContainer?: boolean;
@@ -76,7 +98,8 @@ export function SmartCTA({
   badge,
   headingLevel = 'h2',
   primaryActionVariant = 'white',
-  secondaryAction,
+  tone = 'descriptive',
+  secondaryButtonCssPrefix,
   metaItems = [],
   wrapper = 'section',
   includeContainer = true,
@@ -91,7 +114,10 @@ export function SmartCTA({
     system,
     pageType,
     intent: inferIntent(pageType),
+    tone,
   });
+  const allowSecondary = ALLOW_SECONDARY_BY_PAGE_TYPE[pageType];
+  const secondaryConfig = allowSecondary ? SECONDARY_CTA_MAP[pageType] : undefined;
 
   const primaryAction: ButtonProps = {
     variant: primaryActionVariant,
@@ -102,6 +128,14 @@ export function SmartCTA({
       source: `${pageType}/${slug}`,
     }),
   };
+  const secondaryAction: ButtonProps | undefined = secondaryConfig
+    ? {
+        variant: 'outline-light',
+        label: secondaryConfig.label,
+        ...(secondaryButtonCssPrefix ? { cssPrefix: secondaryButtonCssPrefix } : {}),
+        href: secondaryConfig.href(slug),
+      }
+    : undefined;
 
   if (mode === 'full' && resolvedTitle.trim().length === 0) {
     throw new Error('SmartCTA requires a non-empty title.');

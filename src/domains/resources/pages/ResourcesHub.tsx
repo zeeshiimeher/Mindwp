@@ -36,11 +36,6 @@ type ResourceItem = {
 
 const TOPIC_CARD_CTA_LABEL = 'View Resources';
 const GUIDE_CARD_CTA_LABEL = 'Read Guide';
-const RESOURCES_PAGE_SMART_CTA_CONTEXT = {
-  system: 'smart-website-systems',
-  pageType: 'page' as const,
-  slug: 'resources',
-};
 
 function InternalLink({ href, children, ...props }: InternalLinkProps) {
   return (
@@ -78,14 +73,11 @@ export function ResourcesHub({
 
             <div className='resources-hub__hero-actions'>
               <SmartCTA
-                {...RESOURCES_PAGE_SMART_CTA_CONTEXT}
+                system='smart-website-systems'
+                pageType='page'
+                slug='resources'
                 mode='actions-only'
                 primaryActionVariant='secondary'
-              />
-              <Button
-                href={hubData.hero.secondaryAction.href}
-                variant='outline'
-                label={hubData.hero.secondaryAction.label}
               />
             </div>
           </div>
@@ -169,20 +161,15 @@ export function ResourcesHub({
 
         {/* CTA Section */}
         <SmartCTA
-          {...RESOURCES_PAGE_SMART_CTA_CONTEXT}
+          system='smart-website-systems'
+          pageType='page'
+          slug='resources'
           title={hubData.cta.title}
           description={hubData.cta.description}
           primaryActionVariant='white'
           cssPrefix='footer-cta'
           backgroundColor='bg-gradient-primary'
         />
-        <div className='resources-hub__cta-actions'>
-          <Button
-            href={hubData.cta.secondaryAction.href}
-            variant='outline-light'
-            label={hubData.cta.secondaryAction.label}
-          />
-        </div>
       </main>
     </div>
   );

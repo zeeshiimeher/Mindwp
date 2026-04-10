@@ -369,10 +369,6 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
     imageStrip: imageStripData,
     operatingPatterns: operatingPatternsData,
@@ -386,10 +382,6 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
       title: 'Build a steadier roofing system',
       description:
         'If missed calls, loose inspection booking, inconsistent quote follow-up, or weak local proof are slowing things down, we can map a practical system around how the work actually runs.',
-      secondaryAction: {
-        label: 'See Home Services',
-        href: '/industries/home-services',
-      },
     },
   };
 }

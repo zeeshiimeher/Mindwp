@@ -42,7 +42,6 @@ type IndustryCtaProps = Pick<
   SmartCTAProps,
   | 'title'
   | 'description'
-  | 'secondaryAction'
   | 'metaItems'
   | 'cssPrefix'
   | 'backgroundColor'

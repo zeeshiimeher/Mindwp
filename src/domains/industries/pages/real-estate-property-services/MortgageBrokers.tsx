@@ -368,10 +368,6 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
     imageStrip: imageStripData,
     operatingPatterns: operatingPatternsData,
@@ -386,10 +382,6 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
       title: 'Build a steadier mortgage consultation and follow-up system',
       description:
         'If your mortgage business is dealing with unclear enquiry quality, loose consultation flow, or inconsistent nurture follow-up — we can map a practical system around how the pipeline actually runs.',
-      secondaryAction: {
-        label: 'See Real Estate & Property Services',
-        href: '/industries/real-estate-property-services',
-      },
     },
   };
 }

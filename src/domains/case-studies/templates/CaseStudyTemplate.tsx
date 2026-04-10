@@ -215,7 +215,6 @@ export function CaseStudyTemplate({
   };
   cta?: {
     primaryButtonLabel?: string;
-    primaryButtonHref?: string;
     metaItems?: { text: string }[];
   };
 }) {

@@ -1,6 +1,5 @@
 import React from 'react';
 
-import type { ButtonProps } from '@/components/reusable/single/Button';
 import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
 
 /**
@@ -14,16 +13,13 @@ export type CaseStudyCTASectionProps = Pick<
   | 'slug'
   | 'title'
   | 'description'
-  | 'secondaryAction'
   | 'metaItems'
   | 'cssPrefix'
   | 'backgroundColor'
   | 'headingLevel'
   | 'wrapper'
   | 'includeContainer'
-> & {
-  primaryAction?: Pick<ButtonProps, 'variant'>;
-};
+>;
 
 export function CaseStudyCTASection({
   system,
@@ -31,8 +27,6 @@ export function CaseStudyCTASection({
   slug,
   title,
   description,
-  primaryAction,
-  secondaryAction,
   metaItems,
   cssPrefix,
   backgroundColor,
@@ -47,14 +41,12 @@ export function CaseStudyCTASection({
       slug={slug}
       title={title}
       description={description}
-      secondaryAction={secondaryAction}
       metaItems={metaItems}
       cssPrefix={cssPrefix}
       backgroundColor={backgroundColor}
       headingLevel={headingLevel}
       wrapper={wrapper}
       includeContainer={includeContainer}
-      primaryActionVariant={primaryAction?.variant}
     />
   );
 }

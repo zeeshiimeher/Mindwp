@@ -58,7 +58,6 @@ export type IndustryCategoryPageTemplateProps = {
     SmartCTAProps,
     | 'title'
     | 'description'
-    | 'secondaryAction'
     | 'metaItems'
     | 'cssPrefix'
     | 'backgroundColor'
@@ -145,7 +144,6 @@ export function IndustryCategoryPageTemplate({
             slug={slug}
             title={cta.title}
             description={cta.description}
-            secondaryAction={cta.secondaryAction}
             metaItems={cta.metaItems}
             cssPrefix={cta.cssPrefix}
             backgroundColor={cta.backgroundColor}

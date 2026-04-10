@@ -373,10 +373,6 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
     imageStrip: imageStripData,
     operatingPatterns: operatingPatternsData,
@@ -391,10 +387,6 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier nail salon system',
       description:
         'If unclear service selection, reminder gaps, inconsistent reviews, or weak repeat follow-up are slowing things down, we can map a practical system around the real appointment journey.',
-      secondaryAction: {
-        label: 'See the Category Approach',
-        href: '/industries/beauty-personal-care',
-      },
     },
   };
 }

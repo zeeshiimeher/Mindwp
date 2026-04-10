@@ -2,7 +2,6 @@ import React from 'react';
 
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { Badge } from '@/components/reusable/single/Badge';
-import { Button, type ButtonProps } from '@/components/reusable/single/Button';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
 import { cn } from '@/components/ui/utils';
@@ -65,17 +64,16 @@ export interface SplitHeroSectionProps {
     label: string;
   }>;
 
-  /** Primary call-to-action button configuration */
-  primaryAction?: ButtonProps;
-
   /** SmartCTA ownership context for page hero CTAs */
-  smartCta?: Pick<
+  smartCta: Pick<
     SmartCTAProps,
-    'system' | 'pageType' | 'slug' | 'primaryActionVariant' | 'primaryButtonCssPrefix'
+    | 'system'
+    | 'pageType'
+    | 'slug'
+    | 'primaryActionVariant'
+    | 'primaryButtonCssPrefix'
+    | 'secondaryButtonCssPrefix'
   >;
-
-  /** Optional secondary call-to-action button configuration */
-  secondaryAction?: ButtonProps;
 
   /**
    * Custom visual content for the right column
@@ -117,9 +115,7 @@ export function SplitHeroSection({
   headingTag = 'h1',
   description,
   stats,
-  primaryAction,
   smartCta,
-  secondaryAction,
   visualContent,
   cssPrefix = '',
   backgroundColor = '',
@@ -140,6 +136,10 @@ export function SplitHeroSection({
     if (size === 'sm') return `${BLOCK}__decoration--sm`;
     return `${BLOCK}__decoration--lg`;
   };
+
+  if (!smartCta) {
+    throw new Error('SplitHeroSection requires smartCta for CTA rendering.');
+  }
 
   return (
     <SectionWrapper className={cn(BLOCK, backgroundColor, cssPrefix)}>
@@ -188,42 +188,21 @@ export function SplitHeroSection({
               </div>
             )}
 
-            {/* Primary Button */}
-            {(smartCta || primaryAction || secondaryAction) && (
-              <div className={`${BLOCK}__buttons`}>
-                {smartCta ? (
-                  <SmartCTA
-                    system={smartCta.system}
-                    pageType={smartCta.pageType}
-                    slug={smartCta.slug}
-                    primaryActionVariant={smartCta.primaryActionVariant}
-                    primaryButtonCssPrefix={cn(`${BLOCK}__primary-cta`, smartCta.primaryButtonCssPrefix)}
-                    mode='actions-only'
-                    actionClassName='feature-hero__buttons-smart'
-                  />
-                ) : null}
-
-                {!smartCta && primaryAction && (
-                  <Button
-                    {...{
-                      variant: 'primary',
-                      cssPrefix: `${BLOCK}__primary-cta`,
-                      ...primaryAction,
-                    }}
-                  />
+            <div className={`${BLOCK}__buttons`}>
+              <SmartCTA
+                system={smartCta.system}
+                pageType={smartCta.pageType}
+                slug={smartCta.slug}
+                primaryActionVariant={smartCta.primaryActionVariant}
+                primaryButtonCssPrefix={cn(`${BLOCK}__primary-cta`, smartCta.primaryButtonCssPrefix)}
+                secondaryButtonCssPrefix={cn(
+                  `${BLOCK}__secondary-cta`,
+                  smartCta.secondaryButtonCssPrefix
                 )}
-
-                {!smartCta && secondaryAction && (
-                  <Button
-                    {...{
-                      variant: 'outline',
-                      cssPrefix: `${BLOCK}__secondary-cta`,
-                      ...secondaryAction,
-                    }}
-                  />
-                )}
-              </div>
-            )}
+                mode='actions-only'
+                actionClassName='feature-hero__buttons-smart'
+              />
+            </div>
           </div>
 
           {/* Right: Visual Content */}

@@ -21,10 +21,6 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
     title: 'Smart Website Systems for Real Estate & Property Services',
     description:
       'A real estate or property service website should support enquiry qualification, appointment or valuation booking, trust-building, and follow-up — without making the team manage every handoff manually.',
-    secondaryAction: {
-      label: 'See Smart Website Systems',
-      href: '/services/smart-website-systems',
-    },
     list: [
       'Clearer enquiry routing',
       'Better valuation and viewing flow',
@@ -377,10 +373,6 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
       title: 'Map the property category around how your business actually works',
       description:
         'If property enquiries feel inconsistent, we can show you how to turn more of them into qualified conversations.',
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
   };
 }

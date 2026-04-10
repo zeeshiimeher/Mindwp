@@ -358,10 +358,6 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
     imageStrip: imageStripData,
     operatingPatterns: operatingPatternsData,
@@ -375,10 +371,6 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       title: 'Build a steadier landscaping system',
       description:
         'If loose service routing, estimate friction, inconsistent seasonal follow-up, or weak local proof are slowing things down, we can map a practical system around how the work actually runs.',
-      secondaryAction: {
-        label: 'See Home Services',
-        href: '/industries/home-services',
-      },
     },
   };
 }

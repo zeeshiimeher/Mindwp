@@ -13,14 +13,12 @@ export type ServiceCTASectionProps = Pick<
   | 'slug'
   | 'title'
   | 'description'
-  | 'secondaryAction'
   | 'metaItems'
   | 'cssPrefix'
   | 'backgroundColor'
   | 'headingLevel'
   | 'wrapper'
   | 'includeContainer'
-  | 'primaryActionVariant'
 > & {
   system: string;
   slug: string;
@@ -32,8 +30,6 @@ export function ServiceCTASection({
   slug,
   title,
   description,
-  primaryActionVariant,
-  secondaryAction,
   metaItems,
   cssPrefix,
   backgroundColor,
@@ -48,14 +44,12 @@ export function ServiceCTASection({
       slug={slug}
       title={title}
       description={description}
-      secondaryAction={secondaryAction}
       metaItems={metaItems}
       cssPrefix={cssPrefix}
       backgroundColor={backgroundColor}
       headingLevel={headingLevel}
       wrapper={wrapper}
       includeContainer={includeContainer}
-      primaryActionVariant={primaryActionVariant}
     />
   );
 }

@@ -9,12 +9,6 @@ import { Card } from '@/components/ui/card';
 import { FEATURE_REGISTRY } from '@/domains/features/registry';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
-const FEATURES_PAGE_SMART_CTA_CONTEXT = {
-  system: 'smart-website-systems',
-  pageType: 'page' as const,
-  slug: 'features',
-};
-
 // Features overview landing
 export function FeaturesLanding() {
   const features = FEATURE_REGISTRY;
@@ -88,7 +82,9 @@ export function FeaturesLanding() {
 
           {/* CTA Section */}
           <SmartCTA
-            {...FEATURES_PAGE_SMART_CTA_CONTEXT}
+            system='smart-website-systems'
+            pageType='page'
+            slug='features'
             title='Not sure which part of the system you need?'
             description='Tell us what is not working. We will point you to the right service and explain what it covers.'
             primaryActionVariant='white'

@@ -361,10 +361,6 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      secondaryAction: {
-        label: 'See Smart Website Systems',
-        href: '/services/smart-website-systems',
-      },
     },
     imageStrip: imageStripData,
     operatingPatterns: operatingPatternsData,
@@ -379,10 +375,6 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier repair booking and follow-up system',
       description:
         'If your shop is dealing with unclear enquiry quality, loose booking flow, or inconsistent follow-up — we can map a practical system around how the pipeline actually runs.',
-      secondaryAction: {
-        label: 'See Local Appointment Businesses',
-        href: '/industries/local-appointment-businesses',
-      },
     },
   };
 }

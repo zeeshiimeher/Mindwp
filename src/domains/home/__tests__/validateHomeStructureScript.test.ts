@@ -81,10 +81,6 @@ export const homepageData: HomepageData = {
       href: '/contact',
       type: 'internal',
     },
-    secondaryAction: {
-      label: 'Explore',
-      href: '/services/smart-website-systems',
-    },
   },
   infrastructureGaps: {},
   smartWebsiteFramework: {},
