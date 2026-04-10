@@ -1,7 +1,5 @@
 import { Bell, Calendar, Clock, MessageSquare, MousePointerClick, Workflow } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -35,13 +33,6 @@ export const bookingSchedulingSystemPage = {
     title: 'A booking system should make the next step easier, not add more admin around it',
     description:
       'This service fixes the path from enquiry to confirmed appointment. Consultation requests, confirmations, reminders, and staff handoff all work together so more interest turns into booked appointments.',
-    primaryAction: {
-      label: CTA_LABELS.REVIEW_BOOKING,
-      href: buildServiceContactHref({
-        system: 'smart-website-systems',
-        slug,
-      }),
-    },
     list: [
       'Cleaner flow from website to confirmed appointment',
       'Structured reminder and follow-up logic',

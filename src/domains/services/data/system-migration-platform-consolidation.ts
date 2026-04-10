@@ -1,7 +1,5 @@
 import { LayoutTemplate, Puzzle, ShieldCheck, Wrench } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -37,13 +35,6 @@ export const systemMigrationPlatformConsolidationPage = {
       'When the business is held together by too many disconnected tools, migration is really about simplification',
     description:
       'This service is for businesses moving away from fragmented tools, outdated platforms, or disconnected systems. The goal is a cleaner platform structure, less tool sprawl, and a more stable operating foundation that is easier to maintain and extend.',
-    primaryAction: {
-      label: CTA_LABELS.SMART_WEBSITE_CONVERSION,
-      href: buildServiceContactHref({
-        system: 'smart-website-systems',
-        slug: 'system-migration-platform-consolidation',
-      }),
-    },
     list: [
       'Cleaner platform structure and fewer disconnected tools',
       'Less maintenance friction and technical sprawl',

@@ -4,11 +4,12 @@ import {
   ProblemCardsSection,
   ProcessStepsSection,
 } from '@/components/reusable/sections';
-import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
+import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { AlertCard, FAQSection, LinkCard, SectionIntro } from '@/components/reusable/single';
 import { CenteredFeatureCard } from '@/components/reusable/single/CenteredFeatureCard';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { funnelLandingPageDevelopmentPage } from '@/domains/services/data/funnel-landing-page-development';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
@@ -42,7 +43,12 @@ export function FunnelLandingPageDevelopmentRenderer({
             badge={hero.badge}
             title={hero.title}
             description={hero.description}
-            primaryAction={hero.primaryAction}
+            smartCta={{
+              system: data.systems?.[0] ?? 'smart-website-systems',
+              pageType: 'service',
+              slug,
+              primaryActionVariant: 'primary',
+            }}
             list={hero.list}
             cssPrefix={hero.cssPrefix}
             backgroundColor={hero.backgroundColor}
@@ -144,9 +150,10 @@ export function FunnelLandingPageDevelopmentRenderer({
             cssPrefix={faqSection.cssPrefix}
           />
 
-          <ServiceCTASection
+          <SmartCTA
             system={data.systems?.[0] ?? 'smart-website-systems'}
             slug={slug}
+            pageType='service'
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

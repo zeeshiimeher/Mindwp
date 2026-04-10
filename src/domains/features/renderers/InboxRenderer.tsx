@@ -2,7 +2,6 @@ import { Inbox as InboxIcon, Mail, MessageSquare } from 'lucide-react';
 
 import {
   FeatureBenefitsSection,
-  FeatureCTASection,
   FeatureHeroSection,
   FeatureIconCardsSection,
   FeaturePainPointsSection,
@@ -13,9 +12,9 @@ import { Badge } from '@/components/reusable/single/Badge';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
 import { inboxData } from '@/domains/features/data/inbox';
-import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 
 export default function InboxRenderer() {
   const { hero, sections, cta } = inboxData;
@@ -23,28 +22,6 @@ export default function InboxRenderer() {
   const channels = sections.channels;
   const painPoints = sections.painPoints;
   const primarySystem = inboxData.systems[0] ?? 'smart-website-systems';
-  const heroPrimaryHref = hero.primaryAction?.href;
-  const heroPrimaryAction =
-    hero.primaryAction && heroPrimaryHref
-      ? {
-          ...hero.primaryAction,
-          href: buildFeatureContactHref({
-            baseHref: heroPrimaryHref,
-            system: primarySystem,
-            slug: inboxData.slug,
-          }),
-        }
-      : undefined;
-  const ctaPrimaryAction = cta.primaryAction.href
-    ? {
-        ...cta.primaryAction,
-        href: buildFeatureContactHref({
-          baseHref: cta.primaryAction.href,
-          system: primarySystem,
-          slug: inboxData.slug,
-        }),
-      }
-    : cta.primaryAction;
 
   if (!channels || !painPoints) {
     return null;
@@ -60,7 +37,13 @@ export default function InboxRenderer() {
             title={hero.title}
             description={hero.description}
             stats={hero.stats}
-            primaryAction={heroPrimaryAction}
+            smartCta={{
+              system: primarySystem,
+              pageType: 'feature',
+              slug: inboxData.slug,
+              primaryActionVariant: 'primary',
+              primaryButtonCssPrefix: 'feature-hero__primary-cta',
+            }}
             visualContent={
               <Card className='p-8 bg-gradient-surface-muted'>
                 <div className='l-stack'>
@@ -150,14 +133,13 @@ export default function InboxRenderer() {
             backgroundColor='bg-base'
           />
 
-          <FeatureCTASection
+          <SmartCTA
+            system={primarySystem}
+            pageType='feature'
+            slug={inboxData.slug}
             title={cta.title}
             description={cta.description}
-            primaryAction={{
-              variant: 'white',
-              label: ctaPrimaryAction.label,
-              href: ctaPrimaryAction.href,
-            }}
+            primaryActionVariant='white'
           />
         </main>
       </ErrorBoundary>

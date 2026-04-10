@@ -10,8 +10,6 @@ import {
   Zap,
 } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -47,13 +45,6 @@ export const elementorPage = {
       'WordPress implementation with Elementor — built for editing flexibility and long-term clarity',
     description:
       'We build WordPress websites using Elementor where the visual output stays faithful to the approved design and the editing experience stays manageable over time. This is disciplined implementation, not a quick drag-and-drop assembly.',
-    primaryAction: {
-      label: CTA_LABELS.SMART_WEBSITE_CONVERSION,
-      href: buildServiceContactHref({
-        system: 'smart-website-systems',
-        slug: 'elementor',
-      }),
-    },
     cssPrefix: 'elementor-hero',
     backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },

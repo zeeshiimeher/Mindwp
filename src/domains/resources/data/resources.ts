@@ -1,7 +1,5 @@
 import { FileText } from 'lucide-react';
 
-import { buildContactHref } from '@/lib/contact/contactHref';
-
 import { RESOURCE_REGISTRY } from '../generatedRegistry';
 import type { ResourceCategory, ResourceCategoryMetadata } from '../types';
 
@@ -15,7 +13,6 @@ type ResourcesHubData = {
     badge: string;
     title: string;
     description: string;
-    primaryAction: { label: string; href: string };
     secondaryAction: { label: string; href: string };
   };
   topics: {
@@ -39,7 +36,6 @@ type ResourcesHubData = {
   cta: {
     title: string;
     description: string;
-    primaryAction: { label: string; href: string };
     secondaryAction: { label: string; href: string };
   };
 };
@@ -60,7 +56,6 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
     title: 'Resources to Grow Your Service Business',
     description:
       'Practical guides, step-by-step tutorials, and proven strategies to help you get more customers, automate your business, and lead in local search.',
-    primaryAction: { label: 'Browse Guides', href: '#guides' },
     secondaryAction: { label: 'View Blog', href: '/blog' },
   },
   topics: {
@@ -87,14 +82,6 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
     title: 'Ready to Apply the Right System?',
     description:
       'These guides show how the pieces fit together. We will show you how to turn website traffic into clearer, more consistent enquiries.',
-    primaryAction: {
-      label: 'Turn Website Traffic Into Leads',
-      href: buildContactHref({
-        system: 'smart-website-systems',
-        sourceType: 'resource',
-        slug: 'resources',
-      }),
-    },
     secondaryAction: { label: 'View All Services', href: '/services' },
   },
 };

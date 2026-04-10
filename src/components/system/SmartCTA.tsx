@@ -45,10 +45,14 @@ function isActionableButton(action?: ButtonProps): boolean {
 
 export interface SmartCTAProps {
   system?: string;
+  pageType?: ContactSourceType;
   sourceType?: ContactSourceType;
   slug?: string;
+  mode?: 'full' | 'actions-only';
   backgroundColor?: string;
   cssPrefix?: string;
+  actionClassName?: string;
+  primaryButtonCssPrefix?: string;
   title?: string;
   description?: string;
   badge?: {
@@ -106,10 +110,14 @@ export function deriveSmartCtaContextFromHref(href?: string) {
 
 export function SmartCTA({
   system,
+  pageType,
   sourceType,
   slug,
+  mode = 'full',
   backgroundColor = '',
   cssPrefix = '',
+  actionClassName = '',
+  primaryButtonCssPrefix,
   title,
   description,
   badge,
@@ -123,11 +131,12 @@ export function SmartCTA({
   const resolvedSystem = system ?? 'smart-website-systems';
   const fallbackContext = getDefaultSmartCtaContext();
   const resolvedTitle = title ?? DEFAULT_CTA_LABEL;
-  const resolvedSourceType = sourceType ?? fallbackContext.sourceType;
+  const resolvedSourceType = pageType ?? sourceType ?? fallbackContext.sourceType;
   const resolvedSlug = slug ?? fallbackContext.slug;
   const primaryAction: ButtonProps = {
     variant: primaryActionVariant,
     label: resolveCtaLabel(resolvedSystem),
+    ...(primaryButtonCssPrefix ? { cssPrefix: primaryButtonCssPrefix } : {}),
     href: buildContactHref({
       system: resolvedSystem,
       sourceType: resolvedSourceType,
@@ -135,12 +144,20 @@ export function SmartCTA({
     }),
   };
 
-  if (resolvedTitle.trim().length === 0) {
+  if (mode === 'full' && resolvedTitle.trim().length === 0) {
     throw new Error('SmartCTA requires a non-empty title.');
   }
 
   if (!isActionableButton(primaryAction) && !isActionableButton(secondaryAction)) {
     throw new Error('SmartCTA requires at least one actionable primary or secondary action.');
+  }
+
+  if (mode === 'actions-only') {
+    return (
+      <div className={cn('cta__actions', actionClassName)}>
+        <Button {...primaryAction} />
+      </div>
+    );
   }
 
   const HeadingTag = headingLevel;

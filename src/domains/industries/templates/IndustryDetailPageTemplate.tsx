@@ -5,7 +5,6 @@ import {
   IndustryCaseStudiesSection,
   IndustryChallengesSection,
   IndustryComparisonSection,
-  IndustryCTASection,
   IndustryFAQSection,
   IndustryHeroSection,
   IndustryOperatingPatternsSection,
@@ -15,7 +14,7 @@ import {
   IndustryWorkflowExamplesSection,
 } from '@/components/reusable/sections/industries';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
-import { buildContactHref } from '@/lib/contact/contactHref';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import {
   resolveIndustryDetailExplore,
   resolveIndustryPathwaySection,
@@ -68,19 +67,6 @@ export function IndustryDetailPageTemplate({
   const pathwaySection = pathways ?? packages;
   const resolvedPathwaySection = resolveIndustryPathwaySection(pathwaySection, system, slug);
   const resolvedExplore = resolveIndustryDetailExplore(explore);
-  const resolvedCta = cta.primaryAction?.href
-    ? {
-        ...cta,
-        primaryAction: {
-          ...cta.primaryAction,
-          href: buildContactHref(cta.primaryAction.href, {
-            system,
-            sourceType: 'industry',
-            slug,
-          }),
-        },
-      }
-    : cta;
 
   return (
     <>
@@ -100,7 +86,21 @@ export function IndustryDetailPageTemplate({
             <IndustryExploreSection title='Relevant Modules' {...resolvedExplore} />
           )}
           <IndustryFAQSection {...faq} />
-          <IndustryCTASection {...resolvedCta} />
+          <SmartCTA
+            system={system}
+            pageType='industry'
+            slug={slug}
+            title={cta.title}
+            description={cta.description}
+            secondaryAction={cta.secondaryAction}
+            metaItems={cta.metaItems}
+            cssPrefix={cta.cssPrefix}
+            backgroundColor={cta.backgroundColor}
+            headingLevel={cta.headingLevel}
+            wrapper={cta.wrapper}
+            includeContainer={cta.includeContainer}
+            primaryActionVariant={cta.primaryAction?.variant}
+          />
         </main>
       </ErrorBoundary>
     </>

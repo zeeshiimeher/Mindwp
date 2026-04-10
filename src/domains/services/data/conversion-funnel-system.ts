@@ -9,8 +9,6 @@ import {
   Workflow,
 } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -45,13 +43,6 @@ export const conversionFunnelSystemPage = {
       'Most conversion problems are not traffic problems. They are clarity problems between the page and the next step.',
     description:
       'This service focuses on the conversion path itself — page flow, offer structure, and the handoff between attention, enquiry, and action. When those are clearer, fewer good prospects disappear in the middle.',
-    primaryAction: {
-      label: CTA_LABELS.REVENUE_AUDIT,
-      href: buildServiceContactHref({
-        system: 'revenue-growth',
-        slug: 'conversion-funnel-system',
-      }),
-    },
     list: [
       'Clearer page-to-enquiry journeys',
       'Stronger offer structure and decision flow',

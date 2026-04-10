@@ -3,13 +3,11 @@
 
 import {
   ArrowLeft,
-  ArrowRight,
   Award,
   Calendar,
   CheckCircle2,
   Clock,
   Heart,
-  Mail,
   Phone,
   Shield,
   Star,
@@ -31,7 +29,6 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
-import { primaryCta } from '@/config/primaryCta';
 import {
   type Author,
   BLOG_AUTHORS,
@@ -41,7 +38,6 @@ import {
 import type { BlogCategory, BlogPostSection } from '@/domains/blog/types';
 import { BlogFooterCTA } from '@/domains/blog/ui/BlogFooterCTA';
 import { BlogPostShareIsland } from '@/domains/blog/ui/BlogPostShareIsland';
-import { buildContactHref } from '@/lib/contact/contactHref';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 
 export interface BlogPostTemplateProps {
@@ -225,7 +221,6 @@ export function BlogPostTemplate({
   const sidebarCTAData = {
     heading: 'See How This System Works',
     content: 'Understand how this fits into a complete website system.',
-    secondaryAction: 'Contact Us',
     features: [
       { text: 'System-level integration', icon: 'check' as const },
       { text: 'Transparent process', icon: 'shield' as const },
@@ -233,13 +228,7 @@ export function BlogPostTemplate({
     ],
   };
 
-  // Build contact href with context
   const primarySystem = systems[0] ?? 'smart-website-systems';
-  const contactHref = buildContactHref({
-    system: primarySystem,
-    sourceType: 'blog',
-    slug,
-  });
 
   // Function to render a section based on its type
   function renderSection(section: BlogPostSection, index: number) {
@@ -470,25 +459,14 @@ export function BlogPostTemplate({
                 <h3 className='blog-post__sidebar-title'>{sidebarCTAData.heading}</h3>
                 <p className='blog-post__sidebar-text'>{sidebarCTAData.content}</p>
 
-                <div className='blog-post__sidebar-actions'>
-                  <Button
-                    href={contactHref}
-                    size='sm'
-                    label={primaryCta.label}
-                    icon={ArrowRight}
-                    showDefaultIcon
-                    cssPrefix='btn-block'
-                  />
-                  <Button
-                    href={contactHref}
-                    variant='outline'
-                    size='sm'
-                    label={sidebarCTAData.secondaryAction}
-                    icon={Mail}
-                    showDefaultIcon
-                    cssPrefix='btn-block'
-                  />
-                </div>
+                <SmartCTA
+                  system={primarySystem}
+                  pageType='blog'
+                  slug={slug}
+                  mode='actions-only'
+                  primaryButtonCssPrefix='btn-block'
+                  actionClassName='blog-post__sidebar-actions'
+                />
 
                 <div className='blog-post__sidebar-features'>
                   {sidebarCTAData.features.map(
@@ -542,7 +520,7 @@ export function BlogPostTemplate({
             backgroundColor='blog-surface--muted'
           />
         ) : (
-          <BlogFooterCTA buttonUrl={contactHref} />
+          <BlogFooterCTA system={primarySystem} slug={slug} />
         )}
 
         {faqSchema && (

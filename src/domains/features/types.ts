@@ -6,7 +6,6 @@ import type {
   ScenarioSolutionCardProps,
   ServiceBenefitItem,
 } from '@/components/reusable/single';
-import type { ButtonProps } from '@/components/reusable/single/Button';
 import type { VariantType } from '@/lib/ui/variantStyles';
 
 type StatItem = {
@@ -152,8 +151,6 @@ export type FeaturePageData = {
     badge: string;
     title: string;
     description: string;
-    primaryAction?: ButtonProps;
-    secondaryAction?: ButtonProps;
     stats?: StatItem[];
   };
 
@@ -174,8 +171,6 @@ export type FeaturePageData = {
   cta: {
     title: string;
     description: string;
-    primaryAction: ButtonProps;
-    secondaryAction?: ButtonProps;
     metaItems?: Array<{ text: string; icon?: unknown; label?: string }>;
   };
 };

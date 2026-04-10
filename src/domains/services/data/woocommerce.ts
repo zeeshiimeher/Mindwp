@@ -9,8 +9,6 @@ import {
   Truck,
 } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -45,13 +43,6 @@ export const woocommercePage = {
     title: 'E-commerce implementation built around how you sell, ship, and operate',
     description:
       'We implement e-commerce systems on WordPress with WooCommerce where it fits. Catalog logic, checkout flow, fulfilment rules, and reporting are set up around your actual operating model — not just assembled to get a store online.',
-    primaryAction: {
-      label: CTA_LABELS.SMART_WEBSITE_CONVERSION,
-      href: buildServiceContactHref({
-        system: 'smart-website-systems',
-        slug: 'ecommerce',
-      }),
-    },
     list: [
       'Catalog and product logic that matches the business',
       'Checkout and fulfilment aligned to real workflows',

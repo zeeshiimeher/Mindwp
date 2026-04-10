@@ -4,7 +4,6 @@ import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper'
 import {
   FeatureBenefitsSection,
   FeatureCapabilitiesSection,
-  FeatureCTASection,
   FeatureHeroSection,
   FeatureProcessStepsSection,
   FeatureUseCasesSection,
@@ -14,9 +13,9 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { TestimonialCard } from '@/components/reusable/single/TestimonialCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
 import { reputationData } from '@/domains/features/data/reputation';
-import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 const ReviewsVisual = () => (
@@ -82,28 +81,6 @@ export default function ReputationRenderer() {
   const { hero, sections, cta } = reputationData;
   const { process, benefits, useCases, capabilities, faq } = sections;
   const primarySystem = reputationData.systems[0] ?? 'smart-website-systems';
-  const heroPrimaryHref = hero.primaryAction?.href;
-  const heroPrimaryAction =
-    hero.primaryAction && heroPrimaryHref
-      ? {
-          ...hero.primaryAction,
-          href: buildFeatureContactHref({
-            baseHref: heroPrimaryHref,
-            system: primarySystem,
-            slug: reputationData.slug,
-          }),
-        }
-      : undefined;
-  const ctaPrimaryAction = cta.primaryAction.href
-    ? {
-        ...cta.primaryAction,
-        href: buildFeatureContactHref({
-          baseHref: cta.primaryAction.href,
-          system: primarySystem,
-          slug: reputationData.slug,
-        }),
-      }
-    : cta.primaryAction;
   const testimonials = sections.testimonials;
 
   if (!testimonials) {
@@ -120,7 +97,13 @@ export default function ReputationRenderer() {
             title={hero.title}
             description={hero.description}
             stats={hero.stats}
-            primaryAction={heroPrimaryAction}
+            smartCta={{
+              system: primarySystem,
+              pageType: 'feature',
+              slug: reputationData.slug,
+              primaryActionVariant: 'primary',
+              primaryButtonCssPrefix: 'feature-hero__primary-cta',
+            }}
             visualContent={<ReviewsVisual />}
             cssPrefix='reputation-hero'
             decorations={[
@@ -196,14 +179,13 @@ export default function ReputationRenderer() {
             cssPrefix='reputation-faq'
           />
 
-          <FeatureCTASection
+          <SmartCTA
+            system={primarySystem}
+            pageType='feature'
+            slug={reputationData.slug}
             title={cta.title}
             description={cta.description}
-            primaryAction={{
-              variant: 'white',
-              label: ctaPrimaryAction.label,
-              href: ctaPrimaryAction.href,
-            }}
+            primaryActionVariant='white'
           />
         </main>
       </ErrorBoundary>

@@ -1,7 +1,5 @@
 import { Clock, GitBranch, MessageSquare, Search, ShieldCheck, Star } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -36,13 +34,6 @@ export const reviewAutomationSystemPage = {
       'Get more 5-star reviews without asking every customer yourself',
     description:
       'Your team does great work — but happy customers walk away without leaving a review. We set things up so they get asked right after a good experience, when they\'re most likely to say yes.',
-    primaryAction: {
-      label: CTA_LABELS.REVIEW_SYSTEMS,
-      href: buildServiceContactHref({
-        system: 'reputation-review',
-        slug: 'review-automation-system',
-      }),
-    },
     list: [
       'Happy customers get a friendly ask right after the job is done',
       'If someone\'s unhappy, they tell you privately — not Google',

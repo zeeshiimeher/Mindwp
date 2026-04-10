@@ -3,7 +3,6 @@ import { Calendar, CheckCircle2 } from 'lucide-react';
 import {
   FeatureBenefitsSection,
   FeatureCapabilitiesSection,
-  FeatureCTASection,
   FeatureHeroSection,
   FeatureProcessStepsSection,
   FeatureUseCasesSection,
@@ -12,9 +11,9 @@ import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
 import { calendarsData } from '@/domains/features/data/calendars';
-import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 
 const BookingVisual = () => (
   <Card className='p-8 bg-white/80 backdrop-blur shadow-xl'>
@@ -73,28 +72,6 @@ export default function CalendarsRenderer() {
   const { hero, sections, cta } = calendarsData;
   const { process, benefits, useCases, capabilities, faq } = sections;
   const primarySystem = calendarsData.systems[0] ?? 'smart-website-systems';
-  const heroPrimaryHref = hero.primaryAction?.href;
-  const heroPrimaryAction =
-    hero.primaryAction && heroPrimaryHref
-      ? {
-          ...hero.primaryAction,
-          href: buildFeatureContactHref({
-            baseHref: heroPrimaryHref,
-            system: primarySystem,
-            slug: calendarsData.slug,
-          }),
-        }
-      : undefined;
-  const ctaPrimaryAction = cta.primaryAction.href
-    ? {
-        ...cta.primaryAction,
-        href: buildFeatureContactHref({
-          baseHref: cta.primaryAction.href,
-          system: primarySystem,
-          slug: calendarsData.slug,
-        }),
-      }
-    : cta.primaryAction;
 
   return (
     <>
@@ -106,7 +83,13 @@ export default function CalendarsRenderer() {
             title={hero.title}
             description={hero.description}
             stats={hero.stats}
-            primaryAction={heroPrimaryAction}
+            smartCta={{
+              system: primarySystem,
+              pageType: 'feature',
+              slug: calendarsData.slug,
+              primaryActionVariant: 'primary',
+              primaryButtonCssPrefix: 'feature-hero__primary-cta',
+            }}
             visualContent={<BookingVisual />}
             cssPrefix='calendars-hero'
             backgroundColor='bg-gradient-surface-soft'
@@ -159,14 +142,13 @@ export default function CalendarsRenderer() {
             cssPrefix='calendars-faq'
           />
 
-          <FeatureCTASection
+          <SmartCTA
+            system={primarySystem}
+            pageType='feature'
+            slug={calendarsData.slug}
             title={cta.title}
             description={cta.description}
-            primaryAction={{
-              variant: 'white',
-              label: ctaPrimaryAction.label,
-              href: ctaPrimaryAction.href,
-            }}
+            primaryActionVariant='white'
             metaItems={cta.metaItems}
             cssPrefix='calendars-cta'
           />

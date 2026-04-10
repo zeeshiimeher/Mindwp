@@ -43,7 +43,6 @@ import { primaryCta } from '@/config/primaryCta';
 import { categories } from '@/domains/resources/api';
 import type { ResourceCategory } from '@/domains/resources/types';
 import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 import type { ResourcePageTemplateSection } from './types';
 export type { ResourcePageTemplateSection } from './types';
@@ -146,15 +145,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   const dateLabel = isUpdated ? 'Updated' : 'Published';
   const currentSlug = props.currentSlug;
 
-  // Build contact href with context params
   const primarySystem = props.systems?.[0] ?? 'smart-website-systems';
-  function decorateContactHref(href: string): string {
-    return buildContactHref(href, {
-      system: primarySystem,
-      sourceType: 'resource',
-      slug: currentSlug,
-    });
-  }
 
   // Extract content from sections for rendering using organized utilities
   const heroData = extractHeroContent(props.sections, props.title, props.description);
@@ -461,15 +452,11 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
             </div>
 
             <div className='resource-page__hero-cta'>
-              <Button
-                {...(primaryCta.type !== 'chat' ? { href: primaryCta.href } : {})}
-                size='sm'
-                label={primaryCta.label}
-                showDefaultIcon
-                {...(primaryCta.type === 'external'
-                  ? { target: '_blank', rel: 'noopener noreferrer' }
-                  : {})}
-                {...(primaryCta.type === 'chat' ? { onClick: () => {} } : {})}
+              <SmartCTA
+                system={primarySystem}
+                pageType='resource'
+                slug={currentSlug}
+                mode='actions-only'
               />
             </div>
           </div>
@@ -491,21 +478,13 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
                 <p className='resource-page__sidebar-text'>{sidebarCTAData.content}</p>
 
                 <div className='resource-page__sidebar-actions'>
-                  <Button
-                    href={decorateContactHref(primaryCta.href)}
-                    size='sm'
-                    label={primaryCta.label}
-                    showDefaultIcon
-                    cssPrefix='btn-block'
-                  />
-                  <Button
-                    href={decorateContactHref(primaryCta.href)}
-                    variant='outline'
-                    size='sm'
-                    label={sidebarCTAData.secondaryAction}
-                    icon={Mail}
-                    showDefaultIcon
-                    cssPrefix='btn-block'
+                  <SmartCTA
+                    system={primarySystem}
+                    pageType='resource'
+                    slug={currentSlug}
+                    mode='actions-only'
+                    primaryButtonCssPrefix='btn-block'
+                    actionClassName='resource-page__sidebar-actions'
                   />
                 </div>
 

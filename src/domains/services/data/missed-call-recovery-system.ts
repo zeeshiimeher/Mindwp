@@ -1,7 +1,5 @@
 import { Clock, Phone, Search } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -35,13 +33,6 @@ export const missedCallRecoverySystemPage = {
     title: 'Missing the call is one problem. Losing the enquiry afterwards is the bigger one.',
     description:
       'This service focuses on what happens after a call is missed. It helps service businesses respond faster, capture the enquiry more cleanly, and move the conversation into the right next step before the lead disappears.',
-    primaryAction: {
-      label: CTA_LABELS.AI_LEAD_HANDLING,
-      href: buildServiceContactHref({
-        system: 'ai-lead-handling',
-        slug: 'missed-call-recovery-system',
-      }),
-    },
     list: [
       'Immediate response after a missed call',
       'Cleaner capture of caller intent and details',

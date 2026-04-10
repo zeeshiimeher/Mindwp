@@ -3,7 +3,6 @@ import { Inbox, Mail, MessageSquare, Phone, Users } from 'lucide-react';
 import {
   FeatureBenefitsSection,
   FeatureCapabilitiesSection,
-  FeatureCTASection,
   FeatureHeroSection,
   FeatureProcessStepsSection,
   FeatureUseCasesSection,
@@ -13,37 +12,15 @@ import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
 import { crmData } from '@/domains/features/data/crm';
-import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 export default function CRMRenderer() {
   const { hero, sections, cta } = crmData;
   const { process, benefits, useCases, capabilities, faq } = sections;
   const primarySystem = crmData.systems[0] ?? 'smart-website-systems';
-  const heroPrimaryHref = hero.primaryAction?.href;
-  const heroPrimaryAction =
-    hero.primaryAction && heroPrimaryHref
-      ? {
-          ...hero.primaryAction,
-          href: buildFeatureContactHref({
-            baseHref: heroPrimaryHref,
-            system: primarySystem,
-            slug: crmData.slug,
-          }),
-        }
-      : undefined;
-  const ctaPrimaryAction = cta.primaryAction.href
-    ? {
-        ...cta.primaryAction,
-        href: buildFeatureContactHref({
-          baseHref: cta.primaryAction.href,
-          system: primarySystem,
-          slug: crmData.slug,
-        }),
-      }
-    : cta.primaryAction;
 
   const heroVisual = (
     <Card className='p-8 bg-white/80 backdrop-blur shadow-xl'>
@@ -122,7 +99,13 @@ export default function CRMRenderer() {
             title={hero.title}
             description={hero.description}
             stats={hero.stats}
-            primaryAction={heroPrimaryAction}
+            smartCta={{
+              system: primarySystem,
+              pageType: 'feature',
+              slug: crmData.slug,
+              primaryActionVariant: 'primary',
+              primaryButtonCssPrefix: 'feature-hero__primary-cta',
+            }}
             visualContent={heroVisual}
             cssPrefix='crm-hero'
           />
@@ -164,14 +147,13 @@ export default function CRMRenderer() {
 
           <FAQSection badge={faq.badge} title={faq.title} faqs={faq.items} cssPrefix='crm-faq' />
 
-          <FeatureCTASection
+          <SmartCTA
+            system={primarySystem}
+            pageType='feature'
+            slug={crmData.slug}
             title={cta.title}
             description={cta.description}
-            primaryAction={{
-              variant: 'white',
-              label: ctaPrimaryAction.label,
-              href: ctaPrimaryAction.href,
-            }}
+            primaryActionVariant='white'
           />
         </main>
       </ErrorBoundary>

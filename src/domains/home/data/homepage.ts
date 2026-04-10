@@ -14,15 +14,7 @@ import {
   Wrench,
 } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildContactHref } from '@/lib/contact/contactHref';
 import { SITE_NAME, SITE_ORIGIN, toAbsoluteUrl } from '@/lib/seo/config';
-
-const homepageContactHref = buildContactHref({
-  system: 'smart-website-systems',
-  sourceType: 'page',
-  slug: 'home',
-});
 
 type IconTone = 'primary' | 'secondary' | 'accent';
 
@@ -41,19 +33,7 @@ type TitleDescriptionItem = {
 type SectionCta = {
   title: string;
   description: string;
-  primaryAction: { label: string; href: string };
 };
-
-type HeroPrimaryAction =
-  | {
-      label: string;
-      type: 'internal' | 'external';
-      href: string;
-    }
-  | {
-      label: string;
-      type: 'chat';
-    };
 
 type VisualStat = {
   label: string;
@@ -107,7 +87,6 @@ export type HomepageData = {
     title: string;
     description: string;
     valueProps: [string, string, string];
-    primaryAction: HeroPrimaryAction;
     secondaryAction: { label: string; href: string };
   };
 
@@ -186,7 +165,6 @@ export type HomepageData = {
     title: string;
     description: string;
     items: Array<{ icon: LucideIcon; title: string; description: string }>;
-    cta: { label: string; href: string };
   };
 
   visibilityTimeline: {
@@ -218,7 +196,6 @@ export type HomepageData = {
     footer: {
       title: string;
       description: string;
-      primaryAction: { label: string; href: string };
       metaItems: Array<{ text: string }>;
     };
   };
@@ -253,11 +230,6 @@ export const homepageData: HomepageData = {
     description:
       'We build Smart Websites that connect how people find you, how they get in touch, and how enquiries are handled — so your website works as part of the business, not just a page people land on.',
     valueProps: ['Right Enquiries', 'Search Ready', 'Built to Grow'],
-    primaryAction: {
-      label: CTA_LABELS.PRIMARY,
-      href: homepageContactHref,
-      type: 'internal',
-    },
     secondaryAction: {
       label: 'Explore the Approach',
       href: '/services/smart-website-systems',
@@ -349,10 +321,6 @@ export const homepageData: HomepageData = {
       title: 'See how this could work for your business',
       description:
         'We can walk through how your website currently handles enquiries and where a more structured setup could make things easier.',
-      primaryAction: {
-        label: CTA_LABELS.DEMO,
-        href: homepageContactHref,
-      },
     },
   },
   implementationSection: {
@@ -439,10 +407,6 @@ export const homepageData: HomepageData = {
       title: 'Let’s review how your enquiries and follow-up are currently handled',
       description:
         'We will look at how enquiries come in, how your team handles them, and where things could be made more consistent and easier to manage.',
-      primaryAction: {
-        label: CTA_LABELS.PRIMARY,
-        href: homepageContactHref,
-      },
     },
   },
   systemCapabilities: {
@@ -704,10 +668,6 @@ export const homepageData: HomepageData = {
           'Auto repair shops, dental clinics, and other local businesses that depend on steady bookings and strong local search presence.',
       },
     ],
-    cta: {
-      label: CTA_LABELS.PRIMARY,
-      href: homepageContactHref,
-    },
   },
   visibilityTimeline: {
     badge: 'Search Visibility Over Time',
@@ -825,10 +785,6 @@ export const homepageData: HomepageData = {
       title: 'If your website is not supporting enquiries properly, it is worth fixing',
       description:
         'We can look at how your website is currently set up, how enquiries are handled, and what could be improved to make enquiry handling more reliable.',
-      primaryAction: {
-        label: CTA_LABELS.PRIMARY,
-        href: homepageContactHref,
-      },
       metaItems: [
         { text: 'Calm, consultative approach' },
         { text: 'Clarity before complexity' },

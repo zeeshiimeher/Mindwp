@@ -7,7 +7,6 @@ import { Button } from '@/components/reusable/single/Button';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
 import { RESOURCE_HUB_DATA } from '@/domains/resources/api';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 import { ResourcesGuidesIsland } from './ResourcesGuidesIsland';
 
@@ -39,7 +38,7 @@ const TOPIC_CARD_CTA_LABEL = 'View Resources';
 const GUIDE_CARD_CTA_LABEL = 'Read Guide';
 const RESOURCES_PAGE_SMART_CTA_CONTEXT = {
   system: 'smart-website-systems',
-  sourceType: 'page' as const,
+  pageType: 'page' as const,
   slug: 'resources',
 };
 
@@ -59,12 +58,6 @@ export function ResourcesHub({
   resourceItems: ResourceItem[];
 }) {
   const hubData = RESOURCE_HUB_DATA;
-  const resourcesHubContactHref = (href: string) =>
-    buildContactHref(href, {
-      system: 'smart-website-systems',
-      sourceType: 'page',
-      slug: 'resources',
-    });
 
   return (
     <div className='resources-hub'>
@@ -84,12 +77,10 @@ export function ResourcesHub({
             <p className='resources-hub__subtitle'>{hubData.hero.description}</p>
 
             <div className='resources-hub__hero-actions'>
-              <Button
-                href={resourcesHubContactHref(hubData.hero.primaryAction.href)}
-                variant='secondary'
-                label={hubData.hero.primaryAction.label}
-                icon={ArrowRight}
-                showDefaultIcon
+              <SmartCTA
+                {...RESOURCES_PAGE_SMART_CTA_CONTEXT}
+                mode='actions-only'
+                primaryActionVariant='secondary'
               />
               <Button
                 href={hubData.hero.secondaryAction.href}

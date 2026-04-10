@@ -3,7 +3,6 @@ import { Workflow } from 'lucide-react';
 import {
   FeatureBenefitsSection,
   FeatureCapabilitiesSection,
-  FeatureCTASection,
   FeatureHeroSection,
   FeatureProcessStepsSection,
   FeatureUseCasesSection,
@@ -11,9 +10,9 @@ import {
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
 import { workflowsData } from '@/domains/features/data/workflows';
-import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 
 const WorkflowVisual = () => {
   const flow = workflowsData.sections.visualFlow;
@@ -72,28 +71,6 @@ export default function WorkflowsRenderer() {
   const { hero, sections, cta } = workflowsData;
   const { process, benefits, useCases, capabilities, faq } = sections;
   const primarySystem = workflowsData.systems[0] ?? 'smart-website-systems';
-  const heroPrimaryHref = hero.primaryAction?.href;
-  const heroPrimaryAction =
-    hero.primaryAction && heroPrimaryHref
-      ? {
-          ...hero.primaryAction,
-          href: buildFeatureContactHref({
-            baseHref: heroPrimaryHref,
-            system: primarySystem,
-            slug: workflowsData.slug,
-          }),
-        }
-      : undefined;
-  const ctaPrimaryAction = cta.primaryAction.href
-    ? {
-        ...cta.primaryAction,
-        href: buildFeatureContactHref({
-          baseHref: cta.primaryAction.href,
-          system: primarySystem,
-          slug: workflowsData.slug,
-        }),
-      }
-    : cta.primaryAction;
 
   return (
     <>
@@ -105,7 +82,13 @@ export default function WorkflowsRenderer() {
             title={hero.title}
             description={hero.description}
             stats={hero.stats}
-            primaryAction={heroPrimaryAction}
+            smartCta={{
+              system: primarySystem,
+              pageType: 'feature',
+              slug: workflowsData.slug,
+              primaryActionVariant: 'primary',
+              primaryButtonCssPrefix: 'feature-hero__primary-cta',
+            }}
             visualContent={<WorkflowVisual />}
             cssPrefix='workflows-hero'
             backgroundColor='bg-gradient-surface-soft'
@@ -157,14 +140,13 @@ export default function WorkflowsRenderer() {
             cssPrefix='workflows-faq'
           />
 
-          <FeatureCTASection
+          <SmartCTA
+            system={primarySystem}
+            pageType='feature'
+            slug={workflowsData.slug}
             title={cta.title}
             description={cta.description}
-            primaryAction={{
-              variant: 'white',
-              label: ctaPrimaryAction.label,
-              href: ctaPrimaryAction.href,
-            }}
+            primaryActionVariant='white'
             cssPrefix='workflows-cta'
             backgroundColor='bg-gradient-secondary'
           />

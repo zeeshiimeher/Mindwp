@@ -10,8 +10,6 @@ import {
   Zap,
 } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -47,13 +45,6 @@ export const bricksBuilderPage = {
       'WordPress implementation with Bricks — built for performance, precision, and long-term clarity',
     description:
       'We build WordPress websites using Bricks Builder where performance and clean output matter. Approved designs are converted precisely, with a build that stays fast, maintainable, and easy to extend.',
-    primaryAction: {
-      label: CTA_LABELS.SMART_WEBSITE_CONVERSION,
-      href: buildServiceContactHref({
-        system: 'smart-website-systems',
-        slug: 'bricks-builder',
-      }),
-    },
     cssPrefix: 'bricks-hero',
     backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },

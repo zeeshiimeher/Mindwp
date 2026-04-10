@@ -1,31 +1,31 @@
-import Link from 'next/link';
-
-import { buildGlobalContactHref } from '@/lib/contact/contactHref';
+import { SmartCTA } from '@/components/system/SmartCTA';
 
 interface RelatedSectionCTAProps {
+  system?: string;
+  slug?: string;
   text?: string;
-  actionLabel?: string;
-  actionHref?: string;
 }
 
 const DEFAULTS = {
   text: 'See how this connects with other systems and use cases.',
-  actionLabel: 'Explore Related Solutions',
-  actionHref: buildGlobalContactHref(),
 } as const;
 
 export function RelatedSectionCTA({
+  system = 'smart-website-systems',
+  slug = 'related-content',
   text = DEFAULTS.text,
-  actionLabel = DEFAULTS.actionLabel,
-  actionHref = DEFAULTS.actionHref,
 }: RelatedSectionCTAProps) {
   return (
     <div className='related-section-cta l-container'>
       <div className='related-section-cta__inner'>
         <p className='related-section-cta__text'>{text}</p>
-        <Link href={actionHref} className='related-section-cta__action btn btn-primary'>
-          {actionLabel}
-        </Link>
+        <SmartCTA
+          system={system}
+          pageType='page'
+          slug={slug}
+          mode='actions-only'
+          primaryButtonCssPrefix='related-section-cta__action'
+        />
       </div>
     </div>
   );

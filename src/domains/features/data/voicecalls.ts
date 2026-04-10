@@ -11,7 +11,6 @@ import {
   Users,
 } from 'lucide-react';
 
-import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 
 import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
@@ -95,13 +94,6 @@ export const voicecallsData: FeaturePageData = {
     title: 'AI phone assistant for consistent call handling',
     description:
       'An AI phone assistant that answers calls, books appointments, takes messages, and routes enquiries clearly during business hours or after hours.',
-    primaryAction: {
-      label: 'Understand How AI Answers Calls',
-      href: buildFeatureContactHref({
-        system: 'ai-lead-handling',
-        slug,
-      }),
-    },
     stats: [
       { value: '100%', label: 'Call Answer Rate' },
       { value: '24/7', label: 'Availability' },
@@ -306,12 +298,5 @@ export const voicecallsData: FeaturePageData = {
     title: 'Discuss AI voice call handling',
     description:
       'Tell us how calls are handled now. We will show you where voice AI can stop missed enquiries and tighten call routing.',
-    primaryAction: {
-      label: 'Stop Missing Calls with AI',
-      href: buildFeatureContactHref({
-        system: 'ai-lead-handling',
-        slug,
-      }),
-    },
   },
 };

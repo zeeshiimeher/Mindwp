@@ -11,8 +11,6 @@ import {
   Zap,
 } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -93,13 +91,6 @@ export const smartWebsiteSystemsPage = {
     title: 'Your website probably looks fine. The problem is what happens after someone visits.',
     description:
       'People land on your site. They look around. And then they leave — without calling, without emailing, without filling in a form. It\'s not because the design is bad. It\'s because the site doesn\'t tell them what to do next, and if they do get in touch, nobody gets notified.',
-    primaryAction: {
-      label: CTA_LABELS.SMART_WEBSITE_CONVERSION,
-      href: buildServiceContactHref({
-        system: 'smart-website-systems',
-        slug: 'smart-website-systems',
-      }),
-    },
     list: [
       'Every page tells visitors exactly what to do next',
       'When someone fills in a form, you see it straight away — name, number, what they need',

@@ -1,7 +1,5 @@
 import { Calendar, ShoppingBag, Target, Workflow } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -36,13 +34,6 @@ export const funnelLandingPageDevelopmentPage = {
       'Sometimes the business does not need a full site rebuild. It needs the right page built for a specific conversion job.',
     description:
       'This service implements focused landing pages and funnel pages for specific offers, campaigns, booking paths, or quote journeys. The goal is tighter page flow, clearer next-step design, and stronger fit between intent and action.',
-    primaryAction: {
-      label: CTA_LABELS.REVENUE_AUDIT,
-      href: buildServiceContactHref({
-        system: 'revenue-growth',
-        slug: 'funnel-landing-page-development',
-      }),
-    },
     list: [
       'More focused conversion journeys',
       'Cleaner offer-page and landing-page structure',

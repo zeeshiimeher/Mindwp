@@ -10,7 +10,6 @@ import {
   Zap,
 } from 'lucide-react';
 
-import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 
 import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
@@ -94,10 +93,6 @@ export const inboxData: FeaturePageData = {
     title: 'One Inbox for Every Customer Conversation',
     description:
       'Email, SMS, Facebook, Instagram, and chat — all in one place. Respond faster, stay organized, and never miss a customer message again.',
-    primaryAction: {
-      label: 'See the Unified Inbox in Action',
-      href: '#how-it-works',
-    },
     stats: [
       { value: 'All', label: 'Channels' },
       { value: 'One', label: 'Inbox' },
@@ -349,9 +344,5 @@ export const inboxData: FeaturePageData = {
     title: 'Ready to Bring All Conversations into One Inbox?',
     description:
       'Connect your email, SMS, and social channels into one response system so your team can reply faster and stop losing conversations across channels.',
-    primaryAction: {
-      label: 'Unify Your Inbox System',
-      href: buildFeatureContactHref({ system: 'ai-lead-handling', slug }),
-    },
   },
 };

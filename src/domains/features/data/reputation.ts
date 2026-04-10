@@ -10,7 +10,6 @@ import {
   Users,
 } from 'lucide-react';
 
-import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 
 import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
@@ -94,13 +93,6 @@ export const reputationData: FeaturePageData = {
     title: 'Structured review management for consistent trust',
     description:
       'Systematically request reviews after completed services and manage feedback across key platforms. Designed to support visibility, credibility, and consistent follow-up.',
-    primaryAction: {
-      label: 'Understand How Review Automation Works',
-      href: buildFeatureContactHref({
-        system: 'reputation-review',
-        slug,
-      }),
-    },
     stats: [
       { value: '10x', label: 'More Reviews' },
       { value: '4.8+', label: 'Avg. Star Rating' },
@@ -324,12 +316,5 @@ export const reputationData: FeaturePageData = {
     title: 'Discuss structured review management',
     description:
       'We will review how reviews are requested, routed, and answered, then show you how to collect more proof with less manual chasing.',
-    primaryAction: {
-      label: 'Get More Reviews Consistently',
-      href: buildFeatureContactHref({
-        system: 'reputation-review',
-        slug,
-      }),
-    },
   },
 };

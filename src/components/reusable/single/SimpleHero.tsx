@@ -1,5 +1,6 @@
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
+import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
 import { cn } from '@/components/ui/utils';
 
 import { BulletList } from './BulletList';
@@ -58,6 +59,12 @@ export interface SimpleHeroProps {
   /** Primary call-to-action button configuration */
   primaryAction?: ButtonProps;
 
+  /** SmartCTA ownership context for page hero CTAs */
+  smartCta?: Pick<
+    SmartCTAProps,
+    'system' | 'pageType' | 'slug' | 'primaryActionVariant' | 'primaryButtonCssPrefix'
+  >;
+
   /** Optional secondary call-to-action button configuration */
   secondaryAction?: ButtonProps;
 
@@ -90,6 +97,7 @@ export function SimpleHero({
   headingTag = 'h1',
   description,
   primaryAction,
+  smartCta,
   secondaryAction,
   cssPrefix = '',
   backgroundColor = '',
@@ -111,10 +119,21 @@ export function SimpleHero({
           headingLevel={headingTag}
           description={description}
           className={`${BLOCK}__header`}
-          {...(primaryAction !== undefined && { primaryAction })}
-          {...(secondaryAction !== undefined && { secondaryAction })}
+          {...(smartCta === undefined && primaryAction !== undefined && { primaryAction })}
+          {...(smartCta === undefined && secondaryAction !== undefined && { secondaryAction })}
           marginBottom={false}
         />
+
+        {smartCta && (
+          <SmartCTA
+            system={smartCta.system}
+            pageType={smartCta.pageType}
+            slug={smartCta.slug}
+            primaryActionVariant={smartCta.primaryActionVariant}
+            primaryButtonCssPrefix={smartCta.primaryButtonCssPrefix}
+            mode='actions-only'
+          />
+        )}
 
         {list && list.length > 0 && <BulletList items={list} cssPrefix={`${BLOCK}__list`} />}
       </div>

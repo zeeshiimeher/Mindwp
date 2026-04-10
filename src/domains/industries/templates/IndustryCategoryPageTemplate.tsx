@@ -6,7 +6,6 @@ import {
   IndustryChallengesSection,
   IndustryChecklistSection,
   IndustryComparisonSection,
-  IndustryCTASection,
   IndustryExploreSection,
   IndustryHeroSection,
   IndustryOperatingPatternsSection,
@@ -18,9 +17,9 @@ import {
   IndustrySpectrumSection,
 } from '@/components/reusable/sections/industries';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import type { IndustryCategory } from '@/domains/industries/catalog';
 import { IndustrySubIndustriesSection } from '@/domains/industries/components';
-import { buildContactHref } from '@/lib/contact/contactHref';
 import {
   resolveIndustryCategoryDetailRoutes,
   resolveIndustryPathwaySection,
@@ -85,19 +84,6 @@ export function IndustryCategoryPageTemplate({
   const resolvedPathwaySection = resolveIndustryPathwaySection(pathwaySection, system, slug);
   const showSubIndustries = sectionControls?.subIndustries?.enabled !== false && !detailRoutes;
   const resolvedDetailRoutes = resolveIndustryCategoryDetailRoutes(detailRoutes, category);
-  const resolvedCta = cta.primaryAction?.href
-    ? {
-        ...cta,
-        primaryAction: {
-          ...cta.primaryAction,
-          href: buildContactHref(cta.primaryAction.href, {
-            system,
-            sourceType: 'industry',
-            slug,
-          }),
-        },
-      }
-    : cta;
 
   return (
     <>
@@ -132,7 +118,21 @@ export function IndustryCategoryPageTemplate({
           {comparison && <IndustryComparisonSection {...comparison} />}
 
           {resolvedPathwaySection && <IndustryPathwaysSection {...resolvedPathwaySection} />}
-          <IndustryCTASection {...resolvedCta} />
+          <SmartCTA
+            system={system}
+            pageType='industry'
+            slug={slug}
+            title={cta.title}
+            description={cta.description}
+            secondaryAction={cta.secondaryAction}
+            metaItems={cta.metaItems}
+            cssPrefix={cta.cssPrefix}
+            backgroundColor={cta.backgroundColor}
+            headingLevel={cta.headingLevel}
+            wrapper={cta.wrapper}
+            includeContainer={cta.includeContainer}
+            primaryActionVariant={cta.primaryAction?.variant}
+          />
         </main>
       </ErrorBoundary>
     </>

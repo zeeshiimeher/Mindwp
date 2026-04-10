@@ -6,10 +6,11 @@ import {
   ServiceSpectrumCardsSection,
   StackedFeatureListSection,
 } from '@/components/reusable/sections';
-import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
+import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { bookingSchedulingSystemPage } from '@/domains/services/data/booking-scheduling-system';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
@@ -43,7 +44,12 @@ export function BookingSchedulingSystemRenderer({
             badge={hero.badge}
             title={hero.title}
             description={hero.description}
-            primaryAction={hero.primaryAction}
+            smartCta={{
+              system: data.systems?.[0] ?? 'smart-website-systems',
+              pageType: 'service',
+              slug,
+              primaryActionVariant: 'primary',
+            }}
             list={hero.list}
             cssPrefix={hero.cssPrefix}
             backgroundColor={hero.backgroundColor}
@@ -125,9 +131,10 @@ export function BookingSchedulingSystemRenderer({
             cssPrefix={faqSection.cssPrefix}
           />
 
-          <ServiceCTASection
+          <SmartCTA
             system={data.systems?.[0] ?? 'smart-website-systems'}
             slug={slug}
+            pageType='service'
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

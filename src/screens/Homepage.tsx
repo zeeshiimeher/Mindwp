@@ -25,17 +25,8 @@ import {
 } from '@/components/reusable/single';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { homepageData } from '@/domains/home/data/homepage';
-import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 import { PortfolioSection as ImplementationExamplesSection } from '@/screens/home/sections/PortfolioSection';
-
-function buildHomepageContactHref(href: string) {
-  return buildContactHref(href, {
-    system: 'smart-website-systems',
-    sourceType: 'page',
-    slug: 'home',
-  });
-}
 
 const HOMEPAGE_FOUNDATION_BUTTON = {
   label: 'See how Smart Websites work',
@@ -165,16 +156,10 @@ function HeroSection() {
           </div>
 
           <div className='hero-section-cta'>
-            <Button
-              {...(heroData.primaryAction.type !== 'chat'
-                ? { href: buildHomepageContactHref(heroData.primaryAction.href) }
-                : {})}
-              variant='white'
-              label={heroData.primaryAction.label}
-              {...(heroData.primaryAction.type === 'external'
-                ? { target: '_blank', rel: 'noopener noreferrer' }
-                : {})}
-              {...(heroData.primaryAction.type === 'chat' ? { onClick: () => {} } : {})}
+            <SmartCTA
+              {...HOMEPAGE_SMART_CTA_CONTEXT}
+              mode='actions-only'
+              primaryActionVariant='white'
             />
             <Button
               href={heroData.secondaryAction.href}
@@ -232,10 +217,10 @@ function InfrastructureGapsSection() {
         ))}
       </div>
     </div>
-  );
-}
-
-function SmartWebsiteFrameworkSection() {
+                  <SmartCTA
+                    {...HOMEPAGE_SMART_CTA_CONTEXT}
+                    mode='actions-only'
+                    primaryActionVariant='primary'
   const smartWebsiteFrameworkData = homepageData.smartWebsiteFramework;
 
   return (
@@ -610,7 +595,7 @@ function InfrastructureLayersSection() {
           </ul>
 
           <Button
-            href={buildHomepageContactHref(HOMEPAGE_FOUNDATION_BUTTON.href)}
+            href={HOMEPAGE_FOUNDATION_BUTTON.href}
             variant='primary'
             label={HOMEPAGE_FOUNDATION_BUTTON.label}
           />
@@ -656,10 +641,10 @@ function IndustriesSection() {
       backgroundColor='bg-base'
       footer={
         <div className='industry-section-cta'>
-          <Button
-            href={buildHomepageContactHref(industriesData.cta.href)}
-            variant='primary'
-            label={industriesData.cta.label}
+          <SmartCTA
+            {...HOMEPAGE_SMART_CTA_CONTEXT}
+            mode='actions-only'
+            primaryActionVariant='primary'
           />
         </div>
       }
@@ -714,7 +699,7 @@ function CaseStudiesSection({ featuredCaseStudies }: { featuredCaseStudies: Home
 
       <div className='implementation-results-cta'>
         <Button
-          href={buildHomepageContactHref(HOMEPAGE_CASE_STUDIES_BUTTON.href)}
+          href={HOMEPAGE_CASE_STUDIES_BUTTON.href}
           variant='primary'
           label={HOMEPAGE_CASE_STUDIES_BUTTON.label}
           icon={ArrowRight}

@@ -4,7 +4,7 @@ import {
   ProblemCardsSection,
   ProcessStepsSection,
 } from '@/components/reusable/sections';
-import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
+import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import {
   IconListCard,
   IconTextCard,
@@ -15,6 +15,7 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { RiskListCard } from '@/components/reusable/single/RiskListCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { unifiedCommunicationSystemPage } from '@/domains/services/data/unified-communication-system';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
@@ -48,7 +49,12 @@ export function UnifiedCommunicationSystemRenderer({
             badge={hero.badge}
             title={hero.title}
             description={hero.description}
-            primaryAction={hero.primaryAction}
+            smartCta={{
+              system: data.systems?.[0] ?? 'smart-website-systems',
+              pageType: 'service',
+              slug,
+              primaryActionVariant: 'primary',
+            }}
             list={hero.list}
             cssPrefix={hero.cssPrefix}
             backgroundColor={hero.backgroundColor}
@@ -198,9 +204,10 @@ export function UnifiedCommunicationSystemRenderer({
             backgroundColor='bg-alt'
           />
 
-            <ServiceCTASection
+            <SmartCTA
               system={data.systems?.[0] ?? 'smart-website-systems'}
               slug={slug}
+            pageType='service'
               title={ctaTitle}
               description={ctaDescription}
               primaryActionVariant='white'

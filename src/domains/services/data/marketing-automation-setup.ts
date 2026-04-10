@@ -1,7 +1,5 @@
 import { Bell, CheckCircle2, Mail, RefreshCcw, Settings, Workflow } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -37,13 +35,6 @@ export const marketingAutomationSetupPage = {
       'Automation helps when the business knows what should happen next but still relies on memory to make it happen',
     description:
       'This service implements structured automation around follow-up, reminders, reactivation, and lifecycle messaging. The goal is to reduce manual chasing while keeping the workflow clear, controlled, and commercially useful.',
-    primaryAction: {
-      label: CTA_LABELS.REVENUE_AUDIT,
-      href: buildServiceContactHref({
-        system: 'revenue-growth',
-        slug: 'marketing-automation-setup',
-      }),
-    },
     list: [
       'Less manual follow-up and reminder work',
       'More reliable lifecycle messaging',

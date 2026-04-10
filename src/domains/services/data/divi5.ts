@@ -1,7 +1,5 @@
 import { Code, Eye, Layers, Search, Settings, Smartphone, Sparkles, Zap } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -36,13 +34,6 @@ export const divi5Page = {
     title: 'WordPress implementation with Divi — built for flexible editing and long-term clarity',
     description:
       'We build WordPress websites using Divi where the team needs a flexible editing experience without losing visual or technical control. Approved designs are converted precisely, with a build that stays maintainable over time.',
-    primaryAction: {
-      label: CTA_LABELS.SMART_WEBSITE_CONVERSION,
-      href: buildServiceContactHref({
-        system: 'smart-website-systems',
-        slug: 'divi5',
-      }),
-    },
     cssPrefix: 'divi5-hero',
     backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },

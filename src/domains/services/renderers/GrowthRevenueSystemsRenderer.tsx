@@ -5,7 +5,7 @@ import {
   ProcessStepsSection,
   StackedFeatureListSection,
 } from '@/components/reusable/sections';
-import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
+import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { AuditChecklistCard } from '@/components/reusable/single/AuditChecklistCard';
 import { ChecklistRow } from '@/components/reusable/single/ChecklistRow';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
@@ -14,6 +14,7 @@ import { IconBenefitCard } from '@/components/reusable/single/IconBenefitCard';
 import { RiskListCard } from '@/components/reusable/single/RiskListCard';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { growthRevenueSystemsPage } from '@/domains/services/data/growth-revenue-systems';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
@@ -46,7 +47,12 @@ export function GrowthRevenueSystemsRenderer({ data, slug }: GrowthRevenueSystem
             badge={hero.badge}
             title={hero.title}
             description={hero.description}
-            primaryAction={hero.primaryAction}
+            smartCta={{
+              system: data.systems?.[0] ?? 'smart-website-systems',
+              pageType: 'service',
+              slug,
+              primaryActionVariant: 'primary',
+            }}
             cssPrefix={hero.cssPrefix}
             list={hero.list}
           />
@@ -170,9 +176,10 @@ export function GrowthRevenueSystemsRenderer({ data, slug }: GrowthRevenueSystem
             backgroundColor='bg-alt'
           />
 
-          <ServiceCTASection
+          <SmartCTA
               system={data.systems?.[0] ?? 'smart-website-systems'}
               slug={slug}
+            pageType='service'
             title={ctaTitle}
             description={ctaDescription}
               primaryActionVariant='white'

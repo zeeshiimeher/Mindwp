@@ -1,6 +1,5 @@
 import { Calendar, Clock, Globe, Inbox, MessageSquare, Settings, Users } from 'lucide-react';
 
-import { buildFeatureContactHref } from '@/lib/contact/contactHref';
 
 import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
@@ -45,10 +44,6 @@ const aiChatFaqItems = [
     question: 'What analytics are available?',
     answer:
       'View detailed analytics on chat conversations, conversion rates, popular questions, and team performance.',
-  },
-  {
-    question: 'Is it mobile-friendly?',
-    answer:
       'Yes, the chat widget is fully responsive and works perfectly on all devices including mobile phones and tablets.',
   },
   {
@@ -85,10 +80,6 @@ export const aiChatData: FeaturePageData = {
     title: 'Structured Website Chat Integrated into Your System',
     description:
       'This conversation layer helps visitors ask questions, request services, and book appointments through a clear flow. AI supports routing and first response while your team stays in control of the important conversations.',
-    primaryAction: {
-      label: 'Find Out How AI Chat Works',
-      href: buildFeatureContactHref({ system: 'ai-lead-handling', slug }),
-    },
     stats: [
       { value: '24/7', label: 'Available' },
       { value: 'Instant', label: 'Responses' },
@@ -247,10 +238,6 @@ export const aiChatData: FeaturePageData = {
           iconType: 'primary' as const,
         },
       ],
-    },
-    faq: {
-      fallbackTitle: 'Chat Feature FAQ',
-      fallbackDescription: 'Common questions about chat functionality',
       badge: 'Common Questions',
       title: 'Structured Chat FAQ',
       description:
@@ -287,9 +274,5 @@ export const aiChatData: FeaturePageData = {
     title: 'Review Your Communication Structure',
     description:
       'Tell us how website conversations are handled now. We will show you where chat can remove delays and stop leads from stalling.',
-    primaryAction: {
-      label: 'Capture Leads with AI Chat',
-      href: buildFeatureContactHref({ system: 'ai-lead-handling', slug }),
-    },
   },
 };

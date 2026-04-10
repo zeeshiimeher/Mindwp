@@ -10,8 +10,6 @@ import {
   Workflow,
 } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -45,13 +43,6 @@ export const leadReactivationSystemPage = {
     title: 'Old leads rarely come back because someone remembers to chase them at the right time',
     description:
       'This service helps service businesses re-engage old enquiries, stalled quotes, and dormant pipeline value through structured follow-up. The goal is a clearer system so good opportunities are not left sitting unused.',
-    primaryAction: {
-      label: CTA_LABELS.REVENUE_AUDIT,
-      href: buildServiceContactHref({
-        system: 'revenue-growth',
-        slug: 'lead-reactivation-system',
-      }),
-    },
     list: [
       'Recover value from old enquiries and dormant opportunities',
       'Clearer follow-up timing and ownership',

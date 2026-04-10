@@ -10,8 +10,6 @@ import {
   Workflow,
 } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -45,13 +43,6 @@ export const unifiedCommunicationSystemPage = {
     title: 'When enquiries arrive from everywhere, the real problem is usually routing, not volume',
     description:
       'This service focuses on the communication layer between incoming messages and the right next action. It helps businesses handle calls, forms, chat, and inbox messages with less confusion, fewer missed conversations, and clearer ownership.',
-    primaryAction: {
-      label: CTA_LABELS.AI_LEAD_HANDLING,
-      href: buildServiceContactHref({
-        system: 'ai-lead-handling',
-        slug: 'unified-communication-system',
-      }),
-    },
     list: [
       'Clearer routing across calls, forms, chat, and inboxes',
       'Fewer missed conversations and less duplicate handling',

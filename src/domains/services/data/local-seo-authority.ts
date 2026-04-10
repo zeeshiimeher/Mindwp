@@ -1,7 +1,5 @@
 import { Code, FileText, Globe, Layers, LineChart, Link2, Settings, Workflow } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -42,13 +40,6 @@ export const localSeoAuthorityPage = {
     title: 'Show up on Google when nearby customers search for what you do',
     description:
       'People in your area are searching for your services right now. If they\'re finding your competitors instead of you, that\'s business you\'re losing every single day. We make sure your website is clear, your Google profile is accurate, and your business details match everywhere — so when someone nearby searches, you\'re the one who shows up.',
-    primaryAction: {
-      label: CTA_LABELS.LOCAL_AUTHORITY,
-      href: buildServiceContactHref({
-        system: 'local-seo-authority',
-        slug: 'local-seo-authority',
-      }),
-    },
     cssPrefix: 'website-seo-hero',
     backgroundColor: 'bg-gradient-surface-muted',
     list: [

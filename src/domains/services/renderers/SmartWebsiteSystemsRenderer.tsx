@@ -8,12 +8,13 @@ import {
   StackedFeatureListSection,
   TechnologyCardsSection,
 } from '@/components/reusable/sections';
-import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
+import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { IconBenefitCard } from '@/components/reusable/single/IconBenefitCard';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { smartWebsiteSystemsPage } from '@/domains/services/data/smart-website-systems';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
@@ -41,7 +42,12 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             badge={data.hero.badge}
             title={data.hero.title}
             description={data.hero.description}
-            primaryAction={data.hero.primaryAction}
+            smartCta={{
+              system: data.systems?.[0] ?? 'smart-website-systems',
+              pageType: 'service',
+              slug,
+              primaryActionVariant: 'primary',
+            }}
             list={data.hero.list}
             cssPrefix='smart-websites-hero'
           />
@@ -116,6 +122,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             system={data.systems?.[0] ?? 'smart-website-systems'}
             sourceType='service'
             slug={slug}
+            pageType='service'
             title={inlineCtaTitle}
             description={inlineCtaDescription}
             cssPrefix='smart-websites-cta'
@@ -248,9 +255,10 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             />
           )}
 
-          <ServiceCTASection
+          <SmartCTA
             system={data.systems?.[0] ?? 'smart-website-systems'}
             slug={slug}
+            pageType='service'
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

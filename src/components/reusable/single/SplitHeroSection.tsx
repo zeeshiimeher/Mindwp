@@ -4,6 +4,7 @@ import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper'
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button, type ButtonProps } from '@/components/reusable/single/Button';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
+import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
 import { cn } from '@/components/ui/utils';
 
 const BLOCK = 'feature-hero';
@@ -67,6 +68,12 @@ export interface SplitHeroSectionProps {
   /** Primary call-to-action button configuration */
   primaryAction?: ButtonProps;
 
+  /** SmartCTA ownership context for page hero CTAs */
+  smartCta?: Pick<
+    SmartCTAProps,
+    'system' | 'pageType' | 'slug' | 'primaryActionVariant' | 'primaryButtonCssPrefix'
+  >;
+
   /** Optional secondary call-to-action button configuration */
   secondaryAction?: ButtonProps;
 
@@ -111,6 +118,7 @@ export function SplitHeroSection({
   description,
   stats,
   primaryAction,
+  smartCta,
   secondaryAction,
   visualContent,
   cssPrefix = '',
@@ -181,9 +189,21 @@ export function SplitHeroSection({
             )}
 
             {/* Primary Button */}
-            {(primaryAction || secondaryAction) && (
+            {(smartCta || primaryAction || secondaryAction) && (
               <div className={`${BLOCK}__buttons`}>
-                {primaryAction && (
+                {smartCta ? (
+                  <SmartCTA
+                    system={smartCta.system}
+                    pageType={smartCta.pageType}
+                    slug={smartCta.slug}
+                    primaryActionVariant={smartCta.primaryActionVariant}
+                    primaryButtonCssPrefix={cn(`${BLOCK}__primary-cta`, smartCta.primaryButtonCssPrefix)}
+                    mode='actions-only'
+                    actionClassName='feature-hero__buttons-smart'
+                  />
+                ) : null}
+
+                {!smartCta && primaryAction && (
                   <Button
                     {...{
                       variant: 'primary',
@@ -193,7 +213,7 @@ export function SplitHeroSection({
                   />
                 )}
 
-                {secondaryAction && (
+                {!smartCta && secondaryAction && (
                   <Button
                     {...{
                       variant: 'outline',

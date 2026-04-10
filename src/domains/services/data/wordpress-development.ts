@@ -1,7 +1,5 @@
 import { Blocks, Cog, LayoutTemplate, Link2, Search, Workflow } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -37,13 +35,6 @@ export const wordpressDevelopmentPage = {
       'A WordPress website should be built around how the business works — not just how it looks',
     description:
       'This is for service businesses that need a proper WordPress foundation. Not pages thrown together quickly, but a site where services are clearly presented, enquiry paths make sense, and the whole thing stays manageable after launch.',
-    primaryAction: {
-      label: CTA_LABELS.SMART_WEBSITE_CONVERSION,
-      href: buildServiceContactHref({
-        system: 'smart-website-systems',
-        slug: 'wordpress-development',
-      }),
-    },
     list: [
       'Services and pages organised around how the business operates',
       'Enquiry pathways that guide visitors toward the right next step',

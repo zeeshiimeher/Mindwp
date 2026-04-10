@@ -1,6 +1,6 @@
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { OperationalShiftCardsSection } from '@/components/reusable/sections/core/OperationalShiftCardsSection';
-import { ServiceCTASection, ServiceHeroSection } from '@/components/reusable/sections/service';
+import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import {
   IconListCard,
   IconTextCard,
@@ -9,10 +9,9 @@ import {
 } from '@/components/reusable/single';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
-import { resolveCtaLabel } from '@/config/ctaLabels';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { crmAutomationPage } from '@/domains/services/data/crm-automation';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface CRMAutomationRendererProps {
   data: typeof crmAutomationPage;
@@ -32,14 +31,6 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
   } = sections;
   const ctaTitle = cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
   const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
-  const heroPrimaryAction = (hero as { primaryAction?: { label: string; href: string } })
-    .primaryAction ?? {
-    label: resolveCtaLabel(data.systems?.[0] ?? 'crm-automation'),
-    href: buildServiceContactHref({
-      system: data.systems?.[0] ?? 'crm-automation',
-      slug,
-    }),
-  };
 
   return (
     <>
@@ -50,7 +41,12 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
             badge={hero.badge}
             title={hero.title}
             description={hero.description}
-            primaryAction={heroPrimaryAction}
+            smartCta={{
+              system: data.systems?.[0] ?? 'smart-website-systems',
+              pageType: 'service',
+              slug,
+              primaryActionVariant: 'primary',
+            }}
             list={hero.list}
             cssPrefix={hero.cssPrefix}
           />
@@ -180,9 +176,10 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
             />
           </SectionWrapper>
 
-          <ServiceCTASection
+          <SmartCTA
             system={data.systems?.[0] ?? 'smart-website-systems'}
             slug={slug}
+            pageType='service'
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

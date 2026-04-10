@@ -1,7 +1,5 @@
 import { MessageSquare, Phone, Users } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -35,13 +33,6 @@ export const aiLeadHandlingPage = {
     title: 'AI can support first response without replacing the judgement that matters',
     description:
       'This service helps businesses respond faster across website chat, phone, and booking flows. AI handles the repeatable first step, captures the right details, and hands off cleanly when a person should step in.',
-    primaryAction: {
-      label: CTA_LABELS.AI_LEAD_HANDLING,
-      href: buildServiceContactHref({
-        system: 'ai-lead-handling',
-        slug,
-      }),
-    },
     list: [
       'Faster first response across chat and calls',
       'Clear handoff into CRM, booking, or team workflows',

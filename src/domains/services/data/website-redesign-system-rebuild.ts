@@ -10,8 +10,6 @@ import {
   Wrench,
 } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -46,13 +44,6 @@ export const websiteRedesignSystemRebuildPage = {
     title: 'When the website no longer matches the business, a visual refresh is not enough',
     description:
       'This service is for businesses whose current site has drifted too far from their services, enquiry flow, integrations, or operating reality. The work is structural correction and rebuild logic, not cosmetic redesign for its own sake.',
-    primaryAction: {
-      label: CTA_LABELS.SMART_WEBSITE_CONVERSION,
-      href: buildServiceContactHref({
-        system: 'smart-website-systems',
-        slug: 'website-redesign-system-rebuild',
-      }),
-    },
     list: [
       'Clearer structure and service architecture',
       'Stronger message-to-enquiry flow',

@@ -14,8 +14,6 @@ import {
   Smartphone,
 } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -63,13 +61,6 @@ export const growthRevenueSystemsPage = {
     title: 'Growth slows when leads come in but nothing moves them forward reliably',
     description:
       'Most revenue problems are not demand problems. They come from weak follow-up, unclear routing, or a website that generates interest without a clear next step. This service finds where momentum is being lost and helps fix it in the right order.',
-    primaryAction: {
-      label: CTA_LABELS.REVENUE_AUDIT,
-      href: buildServiceContactHref({
-        system: 'revenue-growth',
-        slug: 'growth-revenue-systems',
-      }),
-    },
     cssPrefix: 'technical-audit-hero',
     list: [
       'Find where enquiries leak or stall after first contact',

@@ -1,7 +1,5 @@
 import { AlertTriangle, Bell, GitBranch, MessageSquare, Search, Star } from 'lucide-react';
 
-import { CTA_LABELS } from '@/config/ctaLabels';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -43,13 +41,6 @@ export const reputationReviewSystemsPage = {
       'Reviews help more when they are part of a system, not something that happens by accident',
     description:
       'This service covers the full reputation layer — review generation, monitoring, feedback routing, response ownership, and trust signals across platforms. It works best when the business needs a structured approach to credibility, not just more review requests.',
-    primaryAction: {
-      label: CTA_LABELS.REVIEW_SYSTEMS,
-      href: buildServiceContactHref({
-        system: 'reputation-review',
-        slug: 'reputation-review-systems',
-      }),
-    },
     list: [
       'Consistent review requests without manual chasing',
       'Clear handling of negative feedback before it spreads',
