@@ -14,7 +14,6 @@ import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { websiteRedesignSystemRebuildPage } from '@/domains/services/data/website-redesign-system-rebuild';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface WebsiteRedesignSystemRebuildRendererProps {
   data: typeof websiteRedesignSystemRebuildPage;
@@ -160,15 +159,11 @@ export function WebsiteRedesignSystemRebuildRenderer({
           />
 
           <ServiceCTASection
+            system={data.systems?.[0] ?? 'smart-website-systems'}
+            slug={slug}
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{
-              href: buildServiceContactHref({
-                system: data.systems?.[0] ?? 'smart-website-systems',
-                slug,
-              }),
-              variant: 'white',
-            }}
+            primaryActionVariant='white'
           />
         </main>
       </ErrorBoundary>

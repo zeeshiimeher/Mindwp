@@ -296,10 +296,5 @@ export const websiteRedesignSystemRebuildPage = {
     title: 'Rebuild the website around how the business actually works',
     description:
       'If the current site no longer supports your services, enquiry flow, or maintainability, we can help define a clearer rebuild pathway.',
-    buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
-    buttonHref: buildServiceContactHref({
-      system: 'smart-website-systems',
-      slug: 'website-redesign-system-rebuild',
-    }),
   },
 } satisfies ServicePageData;

@@ -1,11 +1,28 @@
-import type { CTASectionProps } from '@/components/reusable/single/CTASection';
-import { deriveSmartCtaContextFromHref, SmartCTA } from '@/components/system/SmartCTA';
+import type { ButtonProps } from '@/components/reusable/single/Button';
+import {
+  deriveSmartCtaContextFromHref,
+  SmartCTA,
+  type SmartCTAProps,
+} from '@/components/system/SmartCTA';
 
 /**
  * Domain wrapper that preserves the existing feature CTA prop shape while routing
  * rendering through SmartCTA.
  */
-export type FeatureCTASectionProps = CTASectionProps;
+export type FeatureCTASectionProps = Pick<
+  SmartCTAProps,
+  | 'title'
+  | 'description'
+  | 'secondaryAction'
+  | 'metaItems'
+  | 'cssPrefix'
+  | 'backgroundColor'
+  | 'headingLevel'
+  | 'wrapper'
+  | 'includeContainer'
+> & {
+  primaryAction?: Pick<ButtonProps, 'href' | 'variant'>;
+};
 
 export function FeatureCTASection({
   title,

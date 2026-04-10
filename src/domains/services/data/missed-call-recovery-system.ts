@@ -276,10 +276,5 @@ export const missedCallRecoverySystemPage = {
     title: 'Stop losing leads after missed calls',
     description:
       'If missed calls are creating avoidable lead leakage, we can help structure a clearer recovery workflow.',
-    buttonText: CTA_LABELS.AI_LEAD_HANDLING,
-    buttonHref: buildServiceContactHref({
-      system: 'ai-lead-handling',
-      slug: 'missed-call-recovery-system',
-    }),
   },
 } satisfies ServicePageData;

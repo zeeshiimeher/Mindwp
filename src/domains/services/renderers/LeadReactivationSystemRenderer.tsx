@@ -12,7 +12,6 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { leadReactivationSystemPage } from '@/domains/services/data/lead-reactivation-system';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface LeadReactivationSystemRendererProps {
   data: typeof leadReactivationSystemPage;
@@ -158,15 +157,11 @@ export function LeadReactivationSystemRenderer({
           />
 
           <ServiceCTASection
+            system={data.systems?.[0] ?? 'smart-website-systems'}
+            slug={slug}
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{
-              href: buildServiceContactHref({
-                system: data.systems?.[0] ?? 'smart-website-systems',
-                slug,
-              }),
-              variant: 'white',
-            }}
+            primaryActionVariant='white'
           />
         </main>
       </ErrorBoundary>

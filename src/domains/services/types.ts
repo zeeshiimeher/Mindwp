@@ -170,13 +170,9 @@ export interface ServicePageData<
   cta?: {
     title: string;
     description: string;
-    buttonText: string;
-    buttonHref: string;
   };
   inlineCta?: {
     title: string;
     description: string;
-    buttonText: string;
-    buttonHref: string;
   };
 }

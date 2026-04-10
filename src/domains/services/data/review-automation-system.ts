@@ -284,10 +284,5 @@ export const reviewAutomationSystemPage = {
     title: 'Want more reviews without the chasing?',
     description:
       'If your customers are happy but your Google reviews don\'t show it, let\'s sort that out. We\'ll set things up so the asks go out on their own and the reviews start rolling in.',
-    buttonText: CTA_LABELS.REVIEW_SYSTEMS,
-    buttonHref: buildServiceContactHref({
-      system: 'reputation-review',
-      slug: 'review-automation-system',
-    }),
   },
 } satisfies ServicePageData;

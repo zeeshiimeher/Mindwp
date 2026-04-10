@@ -385,10 +385,5 @@ export const aiLeadHandlingPage = {
     title: 'See where AI response would actually help',
     description:
       'Tell us how calls, chat, and bookings are handled now. We will show you where response speed and handoff are breaking down.',
-    buttonText: CTA_LABELS.AI_LEAD_HANDLING,
-    buttonHref: buildServiceContactHref({
-      system: 'ai-lead-handling',
-      slug,
-    }),
   },
 } satisfies ServicePageData;

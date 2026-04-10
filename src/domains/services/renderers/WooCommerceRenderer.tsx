@@ -9,7 +9,6 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { woocommercePage } from '@/domains/services/data/woocommerce';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface WooCommerceRendererProps {
   data: typeof woocommercePage;
@@ -73,15 +72,11 @@ export function WooCommerceRenderer({ data, slug }: WooCommerceRendererProps) {
           />
 
           <ServiceCTASection
+            system={data.systems?.[0] ?? 'smart-website-systems'}
+            slug={slug}
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{
-              href: buildServiceContactHref({
-                system: data.systems?.[0] ?? 'smart-website-systems',
-                slug,
-              }),
-              variant: 'white',
-            }}
+            primaryActionVariant='white'
           />
         </main>
       </ErrorBoundary>

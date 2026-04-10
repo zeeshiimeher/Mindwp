@@ -224,10 +224,5 @@ export const woocommercePage = {
     title: 'Planning to sell online through WordPress?',
     description:
       'Tell us what you\'re selling, how orders are handled, and what integrations matter. We\'ll outline what the e-commerce build actually needs.',
-    buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
-    buttonHref: buildServiceContactHref({
-      system: 'smart-website-systems',
-      slug: 'ecommerce',
-    }),
   },
 } satisfies ServicePageData;

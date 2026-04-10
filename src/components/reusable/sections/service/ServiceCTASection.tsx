@@ -1,18 +1,33 @@
 import React from 'react';
 
-import type { CTASectionProps } from '@/components/reusable/single/CTASection';
-import { deriveSmartCtaContextFromHref, SmartCTA } from '@/components/system/SmartCTA';
+import type { SmartCTAProps } from '@/components/system/SmartCTA';
+import { SmartCTA } from '@/components/system/SmartCTA';
 
 /**
- * Domain wrapper for `CTASection` with unchanged props.
- * Keeps service page composition naming consistent.
+ * Domain wrapper for SmartCTA that keeps service page composition naming consistent.
  */
-export type ServiceCTASectionProps = CTASectionProps;
+export type ServiceCTASectionProps = Pick<
+  SmartCTAProps,
+  | 'title'
+  | 'description'
+  | 'secondaryAction'
+  | 'metaItems'
+  | 'cssPrefix'
+  | 'backgroundColor'
+  | 'headingLevel'
+  | 'wrapper'
+  | 'includeContainer'
+  | 'primaryActionVariant'
+> & {
+  system: string;
+  slug: string;
+};
 
 export function ServiceCTASection({
+  system,
+  slug,
   title,
   description,
-  primaryAction,
   secondaryAction,
   metaItems,
   cssPrefix,
@@ -21,13 +36,11 @@ export function ServiceCTASection({
   wrapper,
   includeContainer,
 }: ServiceCTASectionProps) {
-  const context = deriveSmartCtaContextFromHref(primaryAction?.href);
-
   return (
     <SmartCTA
-      system={context.system}
-      sourceType={context.sourceType}
-      slug={context.slug}
+      system={system}
+      sourceType='service'
+      slug={slug}
       title={title}
       description={description}
       secondaryAction={secondaryAction}
@@ -37,7 +50,7 @@ export function ServiceCTASection({
       headingLevel={headingLevel}
       wrapper={wrapper}
       includeContainer={includeContainer}
-      primaryActionVariant={primaryAction?.variant}
+      primaryActionVariant={primaryActionVariant}
     />
   );
 }

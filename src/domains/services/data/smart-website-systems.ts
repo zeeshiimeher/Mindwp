@@ -372,20 +372,10 @@ export const smartWebsiteSystemsPage = {
     title: 'Want to know what your website is actually missing?',
     description:
       'Send us your website link and tell us a bit about your business. We\'ll look through it and come back with an honest breakdown — what\'s working, what\'s not, and what you could do about it.',
-    buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
-    buttonHref: buildServiceContactHref({
-      system: 'smart-website-systems',
-      slug: 'smart-website-systems',
-    }),
   },
   inlineCta: {
     title: 'Not sure if your website is holding you back?',
     description:
       'No pressure, no commitment. We\'ll take a quick look at your site and give you an honest opinion on what\'s working and what isn\'t.',
-    buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
-    buttonHref: buildServiceContactHref({
-      system: 'smart-website-systems',
-      slug: 'smart-website-systems',
-    }),
   },
 } satisfies ServicePageData;

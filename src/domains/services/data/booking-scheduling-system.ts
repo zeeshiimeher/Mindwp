@@ -285,10 +285,5 @@ export const bookingSchedulingSystemPage = {
     title: 'Make the booking step work properly',
     description:
       'Tell us how appointments are booked now. We will show you where friction, reminder gaps, and admin confusion are slowing conversion.',
-    buttonText: CTA_LABELS.REVIEW_BOOKING,
-    buttonHref: buildServiceContactHref({
-      system: 'smart-website-systems',
-      slug,
-    }),
   },
 } satisfies ServicePageData;

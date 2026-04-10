@@ -258,10 +258,5 @@ export const elementorPage = {
     title: 'Not sure if Elementor is the right fit?',
     description:
       'Tell us about your site, your team\'s editing needs, and what matters most. We\'ll review whether Elementor is the right foundation and outline the build.',
-    buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
-    buttonHref: buildServiceContactHref({
-      system: 'smart-website-systems',
-      slug: 'elementor',
-    }),
   },
 } satisfies ServicePageData;

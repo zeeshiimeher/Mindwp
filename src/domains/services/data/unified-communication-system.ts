@@ -355,10 +355,5 @@ export const unifiedCommunicationSystemPage = {
     title: 'Make communication routing clearer',
     description:
       'If calls, forms, chat, and inbox messages are creating confusion, we can help define a clearer routing and ownership model.',
-    buttonText: CTA_LABELS.AI_LEAD_HANDLING,
-    buttonHref: buildServiceContactHref({
-      system: 'ai-lead-handling',
-      slug: 'unified-communication-system',
-    }),
   },
 } satisfies ServicePageData;

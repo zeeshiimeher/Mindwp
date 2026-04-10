@@ -12,7 +12,6 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { reviewAutomationSystemPage } from '@/domains/services/data/review-automation-system';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface ReviewAutomationSystemRendererProps {
   data: typeof reviewAutomationSystemPage;
@@ -125,15 +124,11 @@ export function ReviewAutomationSystemRenderer({
           />
 
           <ServiceCTASection
+            system={data.systems?.[0] ?? 'smart-website-systems'}
+            slug={slug}
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{
-              href: buildServiceContactHref({
-                system: data.systems?.[0] ?? 'smart-website-systems',
-                slug,
-              }),
-              variant: 'white',
-            }}
+            primaryActionVariant='white'
           />
         </main>
       </ErrorBoundary>

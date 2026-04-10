@@ -303,10 +303,5 @@ export const conversionFunnelSystemPage = {
     title: 'Turn more attention into clearer next steps',
     description:
       'If traffic is arriving but the page journey still weakens conversion, we can help define a stronger funnel path.',
-    buttonText: CTA_LABELS.REVENUE_AUDIT,
-    buttonHref: buildServiceContactHref({
-      system: 'revenue-growth',
-      slug: 'conversion-funnel-system',
-    }),
   },
 } satisfies ServicePageData;

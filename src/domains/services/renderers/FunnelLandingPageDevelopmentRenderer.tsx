@@ -11,7 +11,6 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { funnelLandingPageDevelopmentPage } from '@/domains/services/data/funnel-landing-page-development';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface FunnelLandingPageDevelopmentRendererProps {
   data: typeof funnelLandingPageDevelopmentPage;
@@ -146,15 +145,11 @@ export function FunnelLandingPageDevelopmentRenderer({
           />
 
           <ServiceCTASection
+            system={data.systems?.[0] ?? 'smart-website-systems'}
+            slug={slug}
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{
-              href: buildServiceContactHref({
-                system: data.systems?.[0] ?? 'smart-website-systems',
-                slug,
-              }),
-              variant: 'white',
-            }}
+            primaryActionVariant='white'
           />
         </main>
       </ErrorBoundary>

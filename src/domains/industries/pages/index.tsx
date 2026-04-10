@@ -1,19 +1,12 @@
 import { ArrowRight } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives';
-import { CTASection } from '@/components/reusable/single';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
 import { getCategoryIndexIndustries } from '@/domains/industries/catalog';
-import { buildContactHref } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
-
-const industriesLandingContactHref = buildContactHref({
-  system: 'smart-website-systems',
-  sourceType: 'page',
-  slug: 'industries',
-});
 
 export default function IndustriesLanding() {
   const categoryPages = getCategoryIndexIndustries();
@@ -158,15 +151,13 @@ export default function IndustriesLanding() {
         </SectionWrapper>
 
         {/* CTA */}
-        <CTASection
+        <SmartCTA
+          system='smart-website-systems'
+          sourceType='page'
+          slug='industries'
           title='Not sure where your business fits?'
           description='If growth feels inconsistent, we can show you which part of your lead flow needs attention first.'
-          primaryAction={{
-            variant: 'white',
-            label: 'Get More Qualified Leads',
-            href: industriesLandingContactHref,
-            icon: ArrowRight,
-          }}
+          primaryActionVariant='white'
           cssPrefix='footer-cta'
           backgroundColor='bg-gradient-primary'
         />

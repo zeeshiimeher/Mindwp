@@ -284,10 +284,5 @@ export const divi5Page = {
     title: 'Need something your team can update without breaking it?',
     description:
       'Tell us who edits the site and what keeps going wrong. We\'ll review whether Divi is the right approach and outline the build.',
-    buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
-    buttonHref: buildServiceContactHref({
-      system: 'smart-website-systems',
-      slug: 'divi5',
-    }),
   },
 } satisfies ServicePageData;

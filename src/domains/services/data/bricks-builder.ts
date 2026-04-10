@@ -262,10 +262,5 @@ export const bricksBuilderPage = {
     title: 'Want cleaner code without losing flexibility?',
     description:
       'Tell us what your current site struggles with. We\'ll review whether a Bricks build solves it and what the project would look like.',
-    buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
-    buttonHref: buildServiceContactHref({
-      system: 'smart-website-systems',
-      slug: 'bricks-builder',
-    }),
   },
 } satisfies ServicePageData;

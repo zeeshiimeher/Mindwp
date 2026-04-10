@@ -817,10 +817,5 @@ export const crmAutomationPage = {
     title: 'Tired of leads slipping through the cracks?',
     description:
       'Tell us how your team handles enquiries today. We\'ll show you exactly where things are falling through and set up a CRM that makes sure every lead is tracked, followed up, and accounted for.',
-    buttonText: CTA_LABELS.CRM_ENQUIRY_REVIEW,
-    buttonHref: buildServiceContactHref({
-      system: 'crm-automation',
-      slug: 'crm-infrastructure-implementation',
-    }),
   },
 } satisfies ServicePageData;

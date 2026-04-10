@@ -1,13 +1,30 @@
 import React from 'react';
 
-import type { CTASectionProps } from '@/components/reusable/single/CTASection';
-import { deriveSmartCtaContextFromHref, SmartCTA } from '@/components/system/SmartCTA';
+import type { ButtonProps } from '@/components/reusable/single/Button';
+import {
+  deriveSmartCtaContextFromHref,
+  SmartCTA,
+  type SmartCTAProps,
+} from '@/components/system/SmartCTA';
 
 /**
- * Domain wrapper for `CTASection` with unchanged props.
+ * Domain wrapper for SmartCTA with the existing industry CTA prop shape.
  * Keeps industry page composition naming consistent.
  */
-export type IndustryCTASectionProps = CTASectionProps;
+export type IndustryCTASectionProps = Pick<
+  SmartCTAProps,
+  | 'title'
+  | 'description'
+  | 'secondaryAction'
+  | 'metaItems'
+  | 'cssPrefix'
+  | 'backgroundColor'
+  | 'headingLevel'
+  | 'wrapper'
+  | 'includeContainer'
+> & {
+  primaryAction?: Pick<ButtonProps, 'href' | 'variant'>;
+};
 
 export function IndustryCTASection({
   title,

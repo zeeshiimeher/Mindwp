@@ -294,10 +294,5 @@ export const marketingAutomationSetupPage = {
     title: 'Set up automation that actually supports the business',
     description:
       'If follow-up, reminders, or lifecycle messaging still depend on manual effort, we can help build a cleaner automation setup.',
-    buttonText: CTA_LABELS.REVENUE_AUDIT,
-    buttonHref: buildServiceContactHref({
-      system: 'revenue-growth',
-      slug: 'marketing-automation-setup',
-    }),
   },
 } satisfies ServicePageData;

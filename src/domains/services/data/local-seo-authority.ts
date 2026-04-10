@@ -378,10 +378,5 @@ export const localSeoAuthorityPage = {
     title: 'Want to know why your competitors are showing up and you\'re not?',
     description:
       'Tell us what you do and where you work. We\'ll take a look at how your business appears on Google right now and tell you what\'s missing.',
-    buttonText: CTA_LABELS.LOCAL_AUTHORITY,
-    buttonHref: buildServiceContactHref({
-      system: 'local-seo-authority',
-      slug: 'local-seo-authority',
-    }),
   },
 } satisfies ServicePageData;

@@ -55,8 +55,8 @@ export const wordpressDevelopmentPage = {
   },
   sections: {
     foundation: {
-      badge: 'Why projects drift',
-      title: 'Most WordPress projects go wrong before the first page is even built',
+      badge: 'Why this matters',
+      title: 'Most WordPress problems start before the build even begins',
       description:
         "The problem is rarely WordPress itself. It is what happens when page-building starts before anyone has agreed on the site's purpose, service presentation, or enquiry flow.",
       painPoints: [
@@ -304,10 +304,5 @@ export const wordpressDevelopmentPage = {
     title: 'Need a WordPress site built around how the business works?',
     description:
       'Tell us about your services and how enquiries come in now. We\'ll outline what the build should cover and the best implementation path forward.',
-    buttonText: CTA_LABELS.SMART_WEBSITE_CONVERSION,
-    buttonHref: buildServiceContactHref({
-      system: 'smart-website-systems',
-      slug: 'wordpress-development',
-    }),
   },
 } satisfies ServicePageData;

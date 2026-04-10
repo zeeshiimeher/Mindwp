@@ -18,7 +18,6 @@ import { SmartCTA } from '@/components/system/SmartCTA';
 import { smartWebsiteSystemsPage } from '@/domains/services/data/smart-website-systems';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 import type { ServicePageSections } from '@/domains/services/types';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface Props {
   data: typeof smartWebsiteSystemsPage;
@@ -250,15 +249,11 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           )}
 
           <ServiceCTASection
+            system={data.systems?.[0] ?? 'smart-website-systems'}
+            slug={slug}
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{
-              href: buildServiceContactHref({
-                system: data.systems?.[0] ?? 'smart-website-systems',
-                slug,
-              }),
-              variant: 'white',
-            }}
+            primaryActionVariant='white'
             cssPrefix='smart-websites-cta'
           />
         </main>

@@ -17,7 +17,6 @@ import { RiskListCard } from '@/components/reusable/single/RiskListCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { unifiedCommunicationSystemPage } from '@/domains/services/data/unified-communication-system';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface UnifiedCommunicationSystemRendererProps {
   data: typeof unifiedCommunicationSystemPage;
@@ -199,17 +198,13 @@ export function UnifiedCommunicationSystemRenderer({
             backgroundColor='bg-alt'
           />
 
-          <ServiceCTASection
-            title={ctaTitle}
-            description={ctaDescription}
-            primaryAction={{
-              href: buildServiceContactHref({
-                system: data.systems?.[0] ?? 'smart-website-systems',
-                slug,
-              }),
-              variant: 'white',
-            }}
-          />
+            <ServiceCTASection
+              system={data.systems?.[0] ?? 'smart-website-systems'}
+              slug={slug}
+              title={ctaTitle}
+              description={ctaDescription}
+              primaryActionVariant='white'
+            />
         </main>
       </ErrorBoundary>
     </>

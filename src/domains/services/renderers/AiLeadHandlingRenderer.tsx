@@ -15,7 +15,6 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { aiLeadHandlingPage } from '@/domains/services/data/ai-lead-handling';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface AiLeadHandlingRendererProps {
   data: typeof aiLeadHandlingPage;
@@ -152,16 +151,11 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
             cssPrefix='ai-response-faq'
           />
           <ServiceCTASection
+            system={data.systems?.[0] ?? 'smart-website-systems'}
+            slug={slug}
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{
-              href: buildServiceContactHref({
-                system: data.systems?.[0] ?? 'smart-website-systems',
-                slug,
-              }),
-              variant: 'white',
-            }}
-          />
+            primaryActionVariant='white'
         </main>
       </ErrorBoundary>
     </>

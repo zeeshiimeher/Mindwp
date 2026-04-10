@@ -13,7 +13,6 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { marketingAutomationSetupPage } from '@/domains/services/data/marketing-automation-setup';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
-import { buildServiceContactHref } from '@/lib/contact/contactHref';
 
 interface MarketingAutomationSetupRendererProps {
   data: typeof marketingAutomationSetupPage;
@@ -155,13 +154,9 @@ export function MarketingAutomationSetupRenderer({
           <ServiceCTASection
             title={ctaTitle}
             description={ctaDescription}
-            primaryAction={{
-              href: buildServiceContactHref({
-                system: data.systems?.[0] ?? 'smart-website-systems',
-                slug,
-              }),
-              variant: 'white',
-            }}
+              system={data.systems?.[0] ?? 'smart-website-systems'}
+              slug={slug}
+              primaryActionVariant='white'
           />
         </main>
       </ErrorBoundary>
