@@ -5,19 +5,19 @@ const SMART_CTA_CASES = [
   {
     testId: 'smart-website-cta',
     system: 'smart-website-systems',
-    sourceType: 'service',
+    pageType: 'service',
     slug: 'cta-label-contract-smart-website',
   },
   {
     testId: 'ai-lead-handling-cta',
     system: 'ai-lead-handling',
-    sourceType: 'service',
+    pageType: 'service',
     slug: 'cta-label-contract-ai-lead-handling',
   },
   {
     testId: 'revenue-growth-cta',
     system: 'revenue-growth',
-    sourceType: 'service',
+    pageType: 'service',
     slug: 'cta-label-contract-revenue-growth',
   },
 ] as const;
@@ -33,7 +33,7 @@ export default function CtaLabelContractPage() {
           <div key={testCase.testId} data-testid={testCase.testId}>
             <SmartCTA
               system={testCase.system}
-              sourceType={testCase.sourceType}
+              pageType={testCase.pageType}
               slug={testCase.slug}
               title={`Contract case: ${testCase.system}`}
               description='Deterministic SmartCTA contract validation.'
@@ -42,8 +42,12 @@ export default function CtaLabelContractPage() {
         ))}
 
         <div data-testid='fallback-labels'>
-          <p data-testid='fallback-unknown'>{resolveCtaLabel('unknown-system')}</p>
-          <p data-testid='fallback-empty'>{resolveCtaLabel('')}</p>
+          <p data-testid='fallback-unknown'>
+            {resolveCtaLabel({ system: 'unknown-system', pageType: 'service' })}
+          </p>
+          <p data-testid='fallback-empty'>
+            {resolveCtaLabel({ system: '', pageType: 'resource' })}
+          </p>
         </div>
       </div>
     </main>

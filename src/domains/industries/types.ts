@@ -7,7 +7,6 @@ import {
   IndustryChallengesSection,
   IndustryChecklistSection,
   IndustryComparisonSection,
-  IndustryCTASection,
   IndustryFAQSection,
   IndustryHeroSection,
   IndustryOperatingPatternsSection,
@@ -19,6 +18,7 @@ import {
   IndustrySpectrumSection,
   IndustryWorkflowExamplesSection,
 } from '@/components/reusable/sections/industries';
+import type { SmartCTAProps } from '@/components/system/SmartCTA';
 import type { IndustryCategory } from '@/domains/industries/catalog';
 import type { IndustryExploreSection } from '@/domains/industries/components/IndustryExploreSection';
 
@@ -38,7 +38,20 @@ type IndustryDetailRoutesProps = ComponentProps<typeof RelatedCardsSection>;
 type IndustryExploreProps = Omit<ComponentProps<typeof IndustryExploreSection>, 'title'>;
 type IndustryCaseStudiesProps = ComponentProps<typeof IndustryCaseStudiesSection>;
 type IndustryFaqProps = ComponentProps<typeof IndustryFAQSection>;
-type IndustryCtaProps = ComponentProps<typeof IndustryCTASection>;
+type IndustryCtaProps = Pick<
+  SmartCTAProps,
+  | 'title'
+  | 'description'
+  | 'secondaryAction'
+  | 'metaItems'
+  | 'cssPrefix'
+  | 'backgroundColor'
+  | 'headingLevel'
+  | 'wrapper'
+  | 'includeContainer'
+> & {
+  primaryAction?: { variant?: SmartCTAProps['primaryActionVariant'] };
+};
 type IndustryWorkflowExamplesProps = ComponentProps<typeof IndustryWorkflowExamplesSection>;
 
 type IndustryCategorySectionControls = {

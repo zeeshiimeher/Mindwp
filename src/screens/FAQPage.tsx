@@ -3,6 +3,7 @@ import { ArrowRight, Mail, Phone } from 'lucide-react';
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import {
   Accordion,
   AccordionContent,
@@ -11,14 +12,6 @@ import {
 } from '@/components/ui/accordion';
 import { Card } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { primaryCta } from '@/config/primaryCta';
-import { buildContactHref } from '@/lib/contact/contactHref';
-
-const faqContactHref = buildContactHref({
-  system: 'smart-website-systems',
-  sourceType: 'page',
-  slug: 'faq',
-});
 
 export function FAQPage() {
   const faqCategories = {
@@ -266,16 +259,12 @@ export function FAQPage() {
                 your business.
               </p>
               <div className='cta__actions'>
-                <Button
-                  {...(primaryCta.type !== 'chat' ? { href: faqContactHref } : {})}
-                  variant='white'
-                  label={primaryCta.label}
-                  icon={ArrowRight}
-                  showDefaultIcon
-                  {...(primaryCta.type === 'external'
-                    ? { target: '_blank', rel: 'noopener noreferrer' }
-                    : {})}
-                  {...(primaryCta.type === 'chat' ? { onClick: () => {} } : {})}
+                <SmartCTA
+                  system='smart-website-systems'
+                  pageType='page'
+                  slug='faq'
+                  mode='actions-only'
+                  primaryActionVariant='white'
                 />
               </div>
             </div>

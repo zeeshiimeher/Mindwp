@@ -11,7 +11,6 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildRealtorsIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -371,14 +370,6 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: {
-        label: 'Convert More Property Leads',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'realtors',
-        }),
-      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -397,15 +388,6 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier realtor appointment and follow-up system',
       description:
         'If your real estate business is dealing with missed enquiries, loose appointment flow, or inconsistent nurture follow-up — we can map a practical system around how the pipeline actually runs.',
-      primaryAction: {
-        variant: 'white',
-        label: 'Convert More Property Leads',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'realtors',
-        }),
-      },
       secondaryAction: {
         label: 'See Real Estate & Property Services',
         href: '/industries/real-estate-property-services',

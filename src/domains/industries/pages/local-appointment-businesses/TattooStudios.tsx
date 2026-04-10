@@ -10,7 +10,6 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildTattooStudiosIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -363,14 +362,6 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: {
-        label: 'Book More Tattoo Sessions',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'tattoo-studios',
-        }),
-      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -389,15 +380,6 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
       title: 'Build a steadier tattoo consultation and booking system',
       description:
         'If your studio is dealing with unclear enquiry quality, loose booking flow, or inconsistent follow-up — we can map a practical system around how the pipeline actually runs.',
-      primaryAction: {
-        variant: 'white',
-        label: 'Book More Tattoo Sessions',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'tattoo-studios',
-        }),
-      },
       secondaryAction: {
         label: 'See Local Appointment Businesses',
         href: '/industries/local-appointment-businesses',

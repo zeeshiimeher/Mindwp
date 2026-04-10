@@ -12,7 +12,6 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -359,14 +358,6 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: {
-        label: 'Book More Quote Requests',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'landscaping-companies',
-        }),
-      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -384,15 +375,6 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       title: 'Build a steadier landscaping system',
       description:
         'If loose service routing, estimate friction, inconsistent seasonal follow-up, or weak local proof are slowing things down, we can map a practical system around how the work actually runs.',
-      primaryAction: {
-        variant: 'white',
-        label: 'Book More Quote Requests',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'landscaping-companies',
-        }),
-      },
       secondaryAction: {
         label: 'See Home Services',
         href: '/industries/home-services',

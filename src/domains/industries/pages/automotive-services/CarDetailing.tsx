@@ -12,7 +12,6 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildCarDetailingIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -380,14 +379,6 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: {
-        label: 'Book More Detailing Jobs',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'car-detailing',
-        }),
-      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -406,15 +397,6 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
       title: 'Build a steadier detailing booking and repeat-visit system',
       description:
         'If your detailing business is dealing with package confusion, reminder gaps, or inconsistent review flow — we can map a practical system around how the appointment journey actually runs.',
-      primaryAction: {
-        variant: 'white',
-        label: 'Book More Detailing Jobs',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'car-detailing',
-        }),
-      },
       secondaryAction: {
         label: 'See Automotive Services',
         href: '/industries/automotive-services',

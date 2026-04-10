@@ -52,7 +52,7 @@ const isFullWidthPreview = (componentName: string, category: string) => {
   if (componentName.endsWith('Section')) return true;
   if (componentName.endsWith('Hero')) return true;
   if (componentName.endsWith('Header')) return true;
-  return ['CTASection', 'FAQSection', 'SimpleHero', 'SplitHeroSection'].includes(componentName);
+  return ['FAQSection', 'SimpleHero', 'SplitHeroSection'].includes(componentName);
 };
 
 const isSingleCategory = (category: string) => category === 'components';
@@ -63,7 +63,6 @@ const REPRESENTATIVE_SECTION_ID_BY_COMPONENT: Record<string, string> = {
   Badge: 'hero',
   IconBenefitCardsSection: 'industries',
   Button: 'hero',
-  CTASection: 'client-journey',
   FeatureChecklistCard: 'visibility-alignment',
   DetailedStepCard: 'client-journey',
   IconBenefitCard: 'smart-website-framework',

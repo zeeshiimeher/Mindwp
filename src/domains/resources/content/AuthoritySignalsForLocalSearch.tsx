@@ -1,6 +1,5 @@
 import { Award, ExternalLink, FileCheck } from 'lucide-react';
 
-import { primaryCta } from '@/config/primaryCta';
 
 import type { ResourceData } from '../types';
 import {
@@ -237,10 +236,6 @@ export const authoritySignalsForLocalSearch: ResourceData = {
       type: 'cta',
       heading: finalCta.title,
       content: [finalCta.description],
-      button: {
-        text: primaryCta.label,
-        url: '/services/local-seo-authority',
-      },
     },
     {
       type: 'related-resources',

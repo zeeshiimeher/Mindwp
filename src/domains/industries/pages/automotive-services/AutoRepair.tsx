@@ -11,7 +11,6 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildAutoRepairIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -381,14 +380,6 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: {
-        label: 'Recover Missed Repair Calls',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'auto-repair',
-        }),
-      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -407,15 +398,6 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
       title: 'Build a steadier auto repair diagnostic and estimate system',
       description:
         'If your repair business is dealing with missed enquiries, loose booking, or inconsistent estimate follow-up — we can map a practical system around how the workshop actually runs.',
-      primaryAction: {
-        variant: 'white',
-        label: 'Recover Missed Repair Calls',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'auto-repair',
-        }),
-      },
       secondaryAction: {
         label: 'See Automotive Services',
         href: '/industries/automotive-services',

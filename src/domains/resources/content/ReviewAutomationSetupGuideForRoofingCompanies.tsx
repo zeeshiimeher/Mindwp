@@ -1,6 +1,5 @@
 import { CheckSquare, Star, TrendingUp } from 'lucide-react';
 
-import { primaryCta } from '@/config/primaryCta';
 
 import type { ResourceData } from '../types';
 import {
@@ -250,10 +249,6 @@ export const reviewAutomationSetupGuideForRoofingCompanies: ResourceData = {
       type: 'cta',
       heading: finalCta.title,
       content: [finalCta.description],
-      button: {
-        text: primaryCta.label,
-        url: '/services/reputation-review-systems',
-      },
     },
     {
       type: 'related-resources',

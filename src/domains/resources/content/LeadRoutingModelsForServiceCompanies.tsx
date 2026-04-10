@@ -1,6 +1,5 @@
 import { GitBranch, MapPin, Users } from 'lucide-react';
 
-import { primaryCta } from '@/config/primaryCta';
 
 import type { ResourceData } from '../types';
 import {
@@ -231,10 +230,6 @@ export const leadRoutingModelsForServiceCompanies: ResourceData = {
       type: 'cta',
       heading: finalCta.title,
       content: [finalCta.description],
-      button: {
-        text: primaryCta.label,
-        url: '/services/ai-lead-handling',
-      },
     },
     {
       type: 'related-resources',

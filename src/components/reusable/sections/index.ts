@@ -24,7 +24,6 @@ export * from './homepage';
 
 // Shared single components
 export { Callout, type CalloutProps } from '../single/Callout';
-export { CTASection } from '../single/CTASection';
 
 // Utility functions
 export * from './resources/contentExtraction';

@@ -264,18 +264,6 @@ const USAGE_SEEDED_PRESETS: Record<string, Record<string, unknown>> = {
     href: '/contact',
     variant: 'primary',
   },
-  CTASection: {
-    badge: {
-      text: 'Systems-first approach',
-      icon: React.createElement(getMockIcon(0), {}),
-      className: 'badge badge-outline-white cta__badge',
-    },
-    title: 'Get clarity on your growth system',
-    description: 'Review your current setup and map practical next steps.',
-    primaryAction: { ...MOCK_ACTION },
-    secondaryAction: { label: 'See case studies', href: '/case-studies', icon: getMockIcon(1) },
-    metaItems: [{ text: 'WordPress specialists' }, { text: 'Action-first recommendations' }],
-  },
   ServiceCTASection: {
     badge: {
       text: 'Implementation-ready',

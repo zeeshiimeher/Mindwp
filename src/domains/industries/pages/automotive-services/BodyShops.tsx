@@ -11,7 +11,6 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildBodyShopsIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -379,14 +378,6 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: {
-        label: 'Capture More Repair Leads',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'body-shops',
-        }),
-      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -405,15 +396,6 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier body shop assessment and estimate system',
       description:
         'If your repair business is dealing with missed enquiries, loose booking, or inconsistent estimate follow-up — we can map a practical system around how the workshop actually runs.',
-      primaryAction: {
-        variant: 'white',
-        label: 'Capture More Repair Leads',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'body-shops',
-        }),
-      },
       secondaryAction: {
         label: 'See Automotive Services',
         href: '/industries/automotive-services',

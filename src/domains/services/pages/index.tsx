@@ -27,7 +27,6 @@ import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
-import { primaryCta } from '@/config/primaryCta';
 import { SERVICE_REGISTRY } from '@/domains/services/registry';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
@@ -64,7 +63,7 @@ const IMPLEMENTATION_SUPPORT_SLUGS = [
 
 const SERVICES_PAGE_SMART_CTA_CONTEXT = {
   system: 'smart-website-systems',
-  sourceType: 'page' as const,
+  pageType: 'page' as const,
   slug: 'services',
 };
 
@@ -310,15 +309,9 @@ export function ServicesLanding() {
                 and implementation support pages sit beneath it in a controlled hierarchy.
               </p>
               <div className='service-lnd__actions l-row l-row-wrap l-gap-4 l-row-center'>
-                <Button
-                  {...(primaryCta.type !== 'chat' ? { href: primaryCta.href } : {})}
-                  label={primaryCta.label}
-                  icon={ArrowRight}
-                  showDefaultIcon
-                  {...(primaryCta.type === 'external'
-                    ? { target: '_blank', rel: 'noopener noreferrer' }
-                    : {})}
-                  {...(primaryCta.type === 'chat' ? { onClick: () => {} } : {})}
+                <SmartCTA
+                  {...SERVICES_PAGE_SMART_CTA_CONTEXT}
+                  mode='actions-only'
                 />
               </div>
             </div>

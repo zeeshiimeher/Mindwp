@@ -5,11 +5,11 @@ import { CheckCircle2, Clock, Loader2, Mail, MapPin, Phone, Send } from 'lucide-
 
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Button } from '@/components/reusable/single/Button';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
-import { primaryCta } from '@/config/primaryCta';
 import { isValidContactContext } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
@@ -378,14 +378,11 @@ export function Contact() {
               action.
             </p>
             <div className='cta__actions'>
-              <Button
-                {...(primaryCta.type !== 'chat' ? { href: primaryCta.href } : {})}
-                label={primaryCta.label}
-                showDefaultIcon
-                {...(primaryCta.type === 'external'
-                  ? { target: '_blank', rel: 'noopener noreferrer' }
-                  : {})}
-                {...(primaryCta.type === 'chat' ? { onClick: () => {} } : {})}
+              <SmartCTA
+                system='smart-website-systems'
+                pageType='page'
+                slug='contact'
+                mode='actions-only'
               />
             </div>
           </div>

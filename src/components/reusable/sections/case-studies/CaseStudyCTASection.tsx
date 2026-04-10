@@ -1,11 +1,7 @@
 import React from 'react';
 
 import type { ButtonProps } from '@/components/reusable/single/Button';
-import {
-  deriveSmartCtaContextFromHref,
-  SmartCTA,
-  type SmartCTAProps,
-} from '@/components/system/SmartCTA';
+import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
 
 /**
  * Domain wrapper for SmartCTA with the existing case-study CTA prop shape.
@@ -13,6 +9,9 @@ import {
  */
 export type CaseStudyCTASectionProps = Pick<
   SmartCTAProps,
+  | 'system'
+  | 'pageType'
+  | 'slug'
   | 'title'
   | 'description'
   | 'secondaryAction'
@@ -23,10 +22,13 @@ export type CaseStudyCTASectionProps = Pick<
   | 'wrapper'
   | 'includeContainer'
 > & {
-  primaryAction?: Pick<ButtonProps, 'href' | 'variant'>;
+  primaryAction?: Pick<ButtonProps, 'variant'>;
 };
 
 export function CaseStudyCTASection({
+  system,
+  pageType,
+  slug,
   title,
   description,
   primaryAction,
@@ -38,13 +40,11 @@ export function CaseStudyCTASection({
   wrapper,
   includeContainer,
 }: CaseStudyCTASectionProps) {
-  const context = deriveSmartCtaContextFromHref(primaryAction?.href);
-
   return (
     <SmartCTA
-      system={context.system}
-      sourceType={context.sourceType}
-      slug={context.slug}
+      system={system}
+      pageType={pageType}
+      slug={slug}
       title={title}
       description={description}
       secondaryAction={secondaryAction}

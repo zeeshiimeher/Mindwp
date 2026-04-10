@@ -11,7 +11,6 @@ export { CenteredFeatureCard } from './CenteredFeatureCard';
 export { ChecklistItem, type ChecklistItemProps } from './ChecklistItem';
 export { ChecklistRow, type ChecklistRowProps } from './ChecklistRow';
 export { CostRoiCard, type CostRoiCardProps, type InvestmentItem } from './CostRoiCard';
-export { CTASection, type CTASectionProps } from './CTASection';
 export { DetailedStepCard, type DetailedStepCardProps } from './DetailedStepCard';
 export { ErrorBoundary } from './ErrorBoundary';
 export { type FAQItem, FAQSection, type FAQSectionProps } from './FAQSection';

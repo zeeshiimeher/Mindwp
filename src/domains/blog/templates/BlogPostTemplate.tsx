@@ -512,7 +512,7 @@ export function BlogPostTemplate({
         {ctaSection ? (
           <SmartCTA
             system={systems?.[0] ?? 'smart-website-systems'}
-            sourceType='blog'
+            pageType='blog'
             slug={slug}
             title={ctaSection.heading}
             description={ctaSection.content}

@@ -39,7 +39,6 @@ import {
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import { Card } from '@/components/ui/card';
-import { primaryCta } from '@/config/primaryCta';
 import { categories } from '@/domains/resources/api';
 import type { ResourceCategory } from '@/domains/resources/types';
 import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates';
@@ -351,7 +350,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
           <div key={`cta-${index}`} id='resource-cta'>
             <SmartCTA
               system={primarySystem}
-              sourceType='resource'
+              pageType='resource'
               slug={currentSlug}
               title={ctaData.heading}
               description={ctaData.content}
@@ -539,7 +538,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               <SmartCTA
                 key={`cta-${index}`}
                 system={primarySystem}
-                sourceType='resource'
+                pageType='resource'
                 slug={currentSlug}
                 title={ctaData.heading}
                 description={ctaData.content}

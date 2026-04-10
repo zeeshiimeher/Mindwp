@@ -1,6 +1,5 @@
 import { Clock, Layers, Zap } from 'lucide-react';
 
-import { primaryCta } from '@/config/primaryCta';
 
 import type { ResourceData } from '../types';
 import {
@@ -306,7 +305,6 @@ export const crmPipelineAutomation: ResourceData = {
         { text: 'Follow-up templates + automations', icon: 'check' },
         { text: 'Reporting so you can track wins', icon: 'check' },
       ],
-      button: { text: primaryCta.label, url: '/services/crm-infrastructure-implementation' },
     },
     {
       type: 'sidebar-cta',

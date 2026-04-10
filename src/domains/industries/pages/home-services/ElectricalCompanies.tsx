@@ -11,7 +11,6 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -358,14 +357,6 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: {
-        label: 'Capture More Service Calls',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'electrical-companies',
-        }),
-      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -383,15 +374,6 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
       title: 'Build a steadier electrical system',
       description:
         'If loose service routing, booking friction, inconsistent quote follow-up, or weak local proof are slowing things down, we can map a practical system around how the work actually runs.',
-      primaryAction: {
-        variant: 'white',
-        label: 'Capture More Service Calls',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'electrical-companies',
-        }),
-      },
       secondaryAction: {
         label: 'See Home Services',
         href: '/industries/home-services',

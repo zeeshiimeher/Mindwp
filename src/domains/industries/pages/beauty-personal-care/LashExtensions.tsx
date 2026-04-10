@@ -1,7 +1,6 @@
 import { Bell, Calendar, Clock3, MapPinned, Search, Sparkles, Star, Workflow } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildLashExtensionsIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -387,14 +386,6 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: {
-        label: 'Fill More Lash Appointments',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'lash-lift-and-extensions',
-        }),
-      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -413,15 +404,6 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
       title: 'Build a calmer lash booking system',
       description:
         'If enquiry gaps, booking friction, inconsistent reminders, or weak follow-up are slowing things down, we can map a practical setup around how the service runs.',
-      primaryAction: {
-        variant: 'white',
-        label: 'Fill More Lash Appointments',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'lash-lift-and-extensions',
-        }),
-      },
       secondaryAction: {
         label: 'See the Category Approach',
         href: '/industries/beauty-personal-care',

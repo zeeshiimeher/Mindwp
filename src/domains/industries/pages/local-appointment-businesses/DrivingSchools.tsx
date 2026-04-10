@@ -10,7 +10,6 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -363,14 +362,6 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: {
-        label: 'Book More Lessons',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'driving-schools',
-        }),
-      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -389,15 +380,6 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier driving school booking system',
       description:
         'If unclear enquiry quality, loose booking flow, inconsistent follow-up, or weak trust proof are slowing things down, we can map a practical system around how the pipeline actually runs.',
-      primaryAction: {
-        variant: 'white',
-        label: 'Book More Lessons',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'driving-schools',
-        }),
-      },
       secondaryAction: {
         label: 'See Local Appointment Businesses',
         href: '/industries/local-appointment-businesses',

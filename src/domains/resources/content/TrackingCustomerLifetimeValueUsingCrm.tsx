@@ -1,6 +1,5 @@
 import { Calculator, Database, TrendingUp } from 'lucide-react';
 
-import { primaryCta } from '@/config/primaryCta';
 
 import type { ResourceData } from '../types';
 import {
@@ -208,10 +207,6 @@ export const trackingCustomerLifetimeValueUsingCrm: ResourceData = {
       type: 'cta',
       heading: finalCta.title,
       content: [finalCta.description],
-      button: {
-        text: primaryCta.label,
-        url: '/services/crm-infrastructure-implementation',
-      },
     },
     {
       type: 'related-resources',

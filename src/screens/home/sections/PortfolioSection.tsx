@@ -3,15 +3,7 @@ import { ExternalLink } from 'lucide-react';
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { SectionIntro } from '@/components/reusable/single';
 import { Badge } from '@/components/reusable/single/Badge';
-import { Button } from '@/components/reusable/single/Button';
-import { primaryCta } from '@/config/primaryCta';
-import { buildContactHref } from '@/lib/contact/contactHref';
-
-const portfolioContactHref = buildContactHref({
-  system: 'smart-website-systems',
-  sourceType: 'page',
-  slug: 'home',
-});
+import { SmartCTA } from '@/components/system/SmartCTA';
 
 export function PortfolioSection() {
   const BLOCK = 'portfolio-section';
@@ -124,13 +116,11 @@ export function PortfolioSection() {
 
         <div className={`${BLOCK}__bottom`}>
           <p className={`${BLOCK}__prompt`}>Want to see your business here?</p>
-          <Button
-            {...(primaryCta.type !== 'chat' ? { href: portfolioContactHref } : {})}
-            label={primaryCta.label}
-            {...(primaryCta.type === 'external'
-              ? { target: '_blank', rel: 'noopener noreferrer' }
-              : {})}
-            {...(primaryCta.type === 'chat' ? { onClick: () => {} } : {})}
+          <SmartCTA
+            system='smart-website-systems'
+            pageType='page'
+            slug='home'
+            mode='actions-only'
           />
         </div>
       </div>

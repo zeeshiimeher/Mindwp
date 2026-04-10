@@ -40,7 +40,7 @@ const HOMEPAGE_CASE_STUDIES_BUTTON = {
 
 const HOMEPAGE_SMART_CTA_CONTEXT = {
   system: 'smart-website-systems',
-  sourceType: 'page' as const,
+  pageType: 'page' as const,
   slug: 'home',
 };
 

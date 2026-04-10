@@ -1,4 +1,3 @@
-import { primaryCta } from '@/config/primaryCta';
 
 import type { ResourceData } from '../types';
 import {
@@ -177,10 +176,6 @@ export const respondingToNegativeReviewsSystematically: ResourceData = {
       type: 'cta',
       heading: finalCta.title,
       content: [finalCta.description],
-      button: {
-        text: primaryCta.label,
-        url: '/services/reputation-review-systems',
-      },
     },
     {
       type: 'related-resources',

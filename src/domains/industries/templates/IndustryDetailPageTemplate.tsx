@@ -14,7 +14,7 @@ import {
   IndustryWorkflowExamplesSection,
 } from '@/components/reusable/sections/industries';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
 import {
   resolveIndustryDetailExplore,
   resolveIndustryPathwaySection,
@@ -41,7 +41,20 @@ export type IndustryDetailPageTemplateProps = {
   explore?: Omit<React.ComponentProps<typeof IndustryExploreSection>, 'title'>;
 
   faq: React.ComponentProps<typeof IndustryFAQSection>;
-  cta: React.ComponentProps<typeof IndustryCTASection>;
+  cta: Pick<
+    SmartCTAProps,
+    | 'title'
+    | 'description'
+    | 'secondaryAction'
+    | 'metaItems'
+    | 'cssPrefix'
+    | 'backgroundColor'
+    | 'headingLevel'
+    | 'wrapper'
+    | 'includeContainer'
+  > & {
+    primaryAction?: { variant?: SmartCTAProps['primaryActionVariant'] };
+  };
 };
 
 export function IndustryDetailPageTemplate({
@@ -72,7 +85,15 @@ export function IndustryDetailPageTemplate({
     <>
       <ErrorBoundary fallback={<div>Something went wrong</div>}>
         <main role='main'>
-          <IndustryHeroSection {...hero} />
+          <IndustryHeroSection
+            {...hero}
+            smartCta={{
+              system,
+              pageType: 'industry',
+              slug,
+              primaryActionVariant: 'primary',
+            }}
+          />
 
           {imageStrip && <ImageAccordionStripSection {...imageStrip} />}
 

@@ -13,7 +13,6 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -21,14 +20,6 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
     title: 'Smart Website Systems for Legal & Professional Services',
     description:
       'A legal or professional service website should support qualification, consultation booking, document-readiness, and follow-up — without making every new matter depend on manual chasing.',
-    primaryAction: {
-      label: 'Book More Qualified Consultations',
-      href: buildContactHref({
-        system: 'smart-website-systems',
-        sourceType: 'industry',
-        slug: 'legal-professional-services',
-      }),
-    },
     secondaryAction: {
       label: 'See Smart Website Systems',
       href: '/services/smart-website-systems',
@@ -387,14 +378,6 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
       title: 'Map the legal or professional category around how your business actually works',
       description:
         'If consultations feel inconsistent, we can show you how to turn more qualified enquiries into booked calls.',
-      primaryAction: {
-        label: 'Book More Qualified Consultations',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'legal-professional-services',
-        }),
-      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',

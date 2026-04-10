@@ -1,17 +1,8 @@
-import { ArrowRight } from 'lucide-react';
-
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
+import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
-import { primaryCta } from '@/config/primaryCta';
-import { buildContactHref } from '@/lib/contact/contactHref';
-
-const aboutContactHref = buildContactHref({
-  system: 'smart-website-systems',
-  sourceType: 'page',
-  slug: 'about',
-});
 
 export function About() {
   return (
@@ -30,15 +21,11 @@ export function About() {
             MindWP was built on a simple observation: many service businesses invest in websites
             that look modern but fail to support how the business actually operates.
           </p>
-          <Button
-            {...(primaryCta.type !== 'chat' ? { href: aboutContactHref } : {})}
-            size='sm'
-            label={primaryCta.label}
-            showDefaultIcon={false}
-            {...(primaryCta.type === 'external'
-              ? { target: '_blank', rel: 'noopener noreferrer' }
-              : {})}
-            {...(primaryCta.type === 'chat' ? { onClick: () => {} } : {})}
+          <SmartCTA
+            system='smart-website-systems'
+            pageType='page'
+            slug='about'
+            mode='actions-only'
           />
         </div>
       </SectionWrapper>
@@ -118,16 +105,12 @@ export function About() {
               implementation.
             </p>
             <div className='cta__actions'>
-              <Button
-                {...(primaryCta.type !== 'chat' ? { href: aboutContactHref } : {})}
-                variant='white'
-                label={primaryCta.label}
-                icon={ArrowRight}
-                showDefaultIcon
-                {...(primaryCta.type === 'external'
-                  ? { target: '_blank', rel: 'noopener noreferrer' }
-                  : {})}
-                {...(primaryCta.type === 'chat' ? { onClick: () => {} } : {})}
+              <SmartCTA
+                system='smart-website-systems'
+                pageType='page'
+                slug='about'
+                mode='actions-only'
+                primaryActionVariant='white'
               />
             </div>
           </div>

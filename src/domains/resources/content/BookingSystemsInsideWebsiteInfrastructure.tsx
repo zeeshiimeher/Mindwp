@@ -1,6 +1,5 @@
 import { Calendar, Clock, Settings } from 'lucide-react';
 
-import { primaryCta } from '@/config/primaryCta';
 
 import type { ResourceData } from '../types';
 import {
@@ -242,10 +241,6 @@ export const bookingSystemsInsideWebsiteInfrastructure: ResourceData = {
       type: 'cta',
       heading: finalCta.title,
       content: [finalCta.description],
-      button: {
-        text: primaryCta.label,
-        url: '/services/smart-website-systems',
-      },
     },
     {
       type: 'related-resources',

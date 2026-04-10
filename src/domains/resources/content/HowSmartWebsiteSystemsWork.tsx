@@ -1,6 +1,5 @@
 import { Globe, Layers, Settings } from 'lucide-react';
 
-import { primaryCta } from '@/config/primaryCta';
 
 import type { ResourceData } from '../types';
 import {
@@ -239,10 +238,6 @@ export const howSmartWebsiteSystemsWork: ResourceData = {
       type: 'cta',
       heading: finalCta.title,
       content: [finalCta.description],
-      button: {
-        text: primaryCta.label,
-        url: '/services/smart-website-systems',
-      },
     },
     {
       type: 'related-resources',

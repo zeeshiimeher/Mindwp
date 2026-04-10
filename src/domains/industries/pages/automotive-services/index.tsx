@@ -14,7 +14,6 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -22,14 +21,6 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
     title: 'Smart Website Systems for Automotive Service Businesses',
     description:
       'An automotive service website should support service clarity, estimate handling, appointment booking, trust signals, and follow-up — without making the front desk carry every gap manually.',
-    primaryAction: {
-      label: 'Capture More Service Calls',
-      href: buildContactHref({
-        system: 'smart-website-systems',
-        sourceType: 'industry',
-        slug: 'automotive-services',
-      }),
-    },
     secondaryAction: {
       label: 'See Smart Website Systems',
       href: '/services/smart-website-systems',
@@ -397,14 +388,6 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
       title: 'Map the automotive category around how your business actually works',
       description:
         'If your automotive business is dealing with loose enquiry handling, inconsistent estimate follow-up, or booking friction — we can help map the right system around it.',
-      primaryAction: {
-        label: 'Capture More Service Calls',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'automotive-services',
-        }),
-      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',

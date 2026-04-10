@@ -4,13 +4,8 @@ import type { ReactNode } from 'react';
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Button, type ButtonProps } from '@/components/reusable/single/Button';
 import { cn } from '@/components/ui/utils';
-import { DEFAULT_CTA_LABEL, resolveCtaLabel } from '@/config/ctaLabels';
-import {
-  buildContactHref,
-  buildGlobalContactHref,
-  type ContactSourceType,
-  parseContactSource,
-} from '@/lib/contact/contactHref';
+import { DEFAULT_CTA_LABEL, inferIntent, resolveCtaLabel } from '@/config/ctaLabels';
+import { buildContactHref, type ContactSourceType } from '@/lib/contact/contactHref';
 
 const BLOCK = 'cta-section';
 
@@ -44,10 +39,9 @@ function isActionableButton(action?: ButtonProps): boolean {
 }
 
 export interface SmartCTAProps {
-  system?: string;
-  pageType?: ContactSourceType;
-  sourceType?: ContactSourceType;
-  slug?: string;
+  system: string;
+  pageType: ContactSourceType;
+  slug: string;
   mode?: 'full' | 'actions-only';
   backgroundColor?: string;
   cssPrefix?: string;
@@ -68,50 +62,9 @@ export interface SmartCTAProps {
   includeContainer?: boolean;
 }
 
-function getDefaultSmartCtaContext() {
-  const url = new URL(buildGlobalContactHref(), 'https://mindwp.local');
-  const system = url.searchParams.get('system');
-  const source = url.searchParams.get('source');
-  const sourceParts = source ? parseContactSource(source) : null;
-
-  if (!system || !source || !sourceParts) {
-    throw new Error('Global contact href must include system and source context.');
-  }
-
-  return {
-    system,
-    sourceType: sourceParts.sourceType,
-    slug: sourceParts.slug,
-  };
-}
-
-export function deriveSmartCtaContextFromHref(href?: string) {
-  const fallbackContext = getDefaultSmartCtaContext();
-
-  if (!href) {
-    return fallbackContext;
-  }
-
-  try {
-    const url = new URL(href, 'https://mindwp.local');
-    const system = url.searchParams.get('system') ?? 'smart-website-systems';
-    const source = url.searchParams.get('source');
-    const sourceParts = source ? parseContactSource(source) : null;
-
-    return {
-      system,
-      sourceType: sourceParts?.sourceType ?? fallbackContext.sourceType,
-      slug: sourceParts?.slug ?? fallbackContext.slug,
-    };
-  } catch {
-    return fallbackContext;
-  }
-}
-
 export function SmartCTA({
   system,
   pageType,
-  sourceType,
   slug,
   mode = 'full',
   backgroundColor = '',
@@ -128,19 +81,25 @@ export function SmartCTA({
   wrapper = 'section',
   includeContainer = true,
 }: SmartCTAProps) {
-  const resolvedSystem = system ?? 'smart-website-systems';
-  const fallbackContext = getDefaultSmartCtaContext();
   const resolvedTitle = title ?? DEFAULT_CTA_LABEL;
-  const resolvedSourceType = pageType ?? sourceType ?? fallbackContext.sourceType;
-  const resolvedSlug = slug ?? fallbackContext.slug;
+
+  if (!system || !pageType || !slug) {
+    throw new Error('SmartCTA requires system, pageType, and slug');
+  }
+
+  const label = resolveCtaLabel({
+    system,
+    pageType,
+    intent: inferIntent(pageType),
+  });
+
   const primaryAction: ButtonProps = {
     variant: primaryActionVariant,
-    label: resolveCtaLabel(resolvedSystem),
+    label,
     ...(primaryButtonCssPrefix ? { cssPrefix: primaryButtonCssPrefix } : {}),
     href: buildContactHref({
-      system: resolvedSystem,
-      sourceType: resolvedSourceType,
-      slug: resolvedSlug,
+      system,
+      source: `${pageType}/${slug}`,
     }),
   };
 

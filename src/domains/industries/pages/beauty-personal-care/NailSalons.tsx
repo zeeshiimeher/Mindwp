@@ -12,7 +12,6 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildNailSalonsIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -374,14 +373,6 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: {
-        label: 'Fill More Nail Appointments',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'nail-salons',
-        }),
-      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -400,15 +391,6 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier nail salon system',
       description:
         'If unclear service selection, reminder gaps, inconsistent reviews, or weak repeat follow-up are slowing things down, we can map a practical system around the real appointment journey.',
-      primaryAction: {
-        variant: 'white',
-        label: 'Fill More Nail Appointments',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'nail-salons',
-        }),
-      },
       secondaryAction: {
         label: 'See the Category Approach',
         href: '/industries/beauty-personal-care',

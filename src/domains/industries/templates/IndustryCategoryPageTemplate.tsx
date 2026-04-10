@@ -17,7 +17,7 @@ import {
   IndustrySpectrumSection,
 } from '@/components/reusable/sections/industries';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
-import { SmartCTA } from '@/components/system/SmartCTA';
+import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
 import type { IndustryCategory } from '@/domains/industries/catalog';
 import { IndustrySubIndustriesSection } from '@/domains/industries/components';
 import {
@@ -54,7 +54,20 @@ export type IndustryCategoryPageTemplateProps = {
       enabled?: boolean;
     };
   };
-  cta: React.ComponentProps<typeof IndustryCTASection>;
+  cta: Pick<
+    SmartCTAProps,
+    | 'title'
+    | 'description'
+    | 'secondaryAction'
+    | 'metaItems'
+    | 'cssPrefix'
+    | 'backgroundColor'
+    | 'headingLevel'
+    | 'wrapper'
+    | 'includeContainer'
+  > & {
+    primaryAction?: { variant?: SmartCTAProps['primaryActionVariant'] };
+  };
 };
 
 export function IndustryCategoryPageTemplate({
@@ -89,7 +102,15 @@ export function IndustryCategoryPageTemplate({
     <>
       <ErrorBoundary fallback={<div>Something went wrong</div>}>
         <main role='main'>
-          <IndustryHeroSection {...hero} />
+          <IndustryHeroSection
+            {...hero}
+            smartCta={{
+              system,
+              pageType: 'industry',
+              slug,
+              primaryActionVariant: 'primary',
+            }}
+          />
 
           {imageStrip && <ImageAccordionStripSection {...imageStrip} />}
 

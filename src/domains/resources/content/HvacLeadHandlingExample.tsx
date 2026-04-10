@@ -1,6 +1,5 @@
 import { Clock, PhoneIncoming, Zap } from 'lucide-react';
 
-import { primaryCta } from '@/config/primaryCta';
 
 import type { ResourceData } from '../types';
 import {
@@ -176,10 +175,6 @@ export const hvacLeadHandlingExample: ResourceData = {
       type: 'cta',
       heading: finalCta.title,
       content: [finalCta.description],
-      button: {
-        text: primaryCta.label,
-        url: '/services/ai-lead-handling',
-      },
     },
     {
       type: 'related-resources',

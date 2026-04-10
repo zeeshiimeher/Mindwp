@@ -11,7 +11,7 @@ import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 const FEATURES_PAGE_SMART_CTA_CONTEXT = {
   system: 'smart-website-systems',
-  sourceType: 'page' as const,
+  pageType: 'page' as const,
   slug: 'features',
 };
 

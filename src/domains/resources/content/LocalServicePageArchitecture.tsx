@@ -1,6 +1,5 @@
 import { FileText, Link, MapPin } from 'lucide-react';
 
-import { primaryCta } from '@/config/primaryCta';
 
 import type { ResourceData } from '../types';
 import {
@@ -234,10 +233,6 @@ export const localServicePageArchitecture: ResourceData = {
       type: 'cta',
       heading: finalCta.title,
       content: [finalCta.description],
-      button: {
-        text: primaryCta.label,
-        url: '/services/local-seo-authority',
-      },
     },
     {
       type: 'related-resources',

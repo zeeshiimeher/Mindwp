@@ -18,7 +18,6 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildHomeServicesIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -26,14 +25,6 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
     title: 'Smart Website Systems for Home Service Teams',
     description:
       'Home service businesses run on fast response, clear estimate handling, and local trust — but most of those steps break before the job even starts. A Smart Website system holds the whole path together.',
-    primaryAction: {
-      label: 'Book More Qualified Jobs',
-      href: buildContactHref({
-        system: 'smart-website-systems',
-        sourceType: 'industry',
-        slug: 'home-services',
-      }),
-    },
     secondaryAction: {
       label: 'See Smart Website Systems',
       href: '/services/smart-website-systems',
@@ -404,14 +395,6 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
       title: 'Map the system around how your team actually works',
       description:
         'If jobs are slipping between first contact and follow-up, we can show you how to turn more enquiries into booked work.',
-      primaryAction: {
-        label: 'Book More Qualified Jobs',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'home-services',
-        }),
-      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',

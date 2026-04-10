@@ -5,6 +5,7 @@ import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { Card } from '@/components/reusable/single/Card';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
+import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
 import { cn } from '@/components/ui/utils';
 import { buildGlobalContactHref } from '@/lib/contact/contactHref';
 
@@ -19,6 +20,7 @@ export interface PackageItem {
   popular?: boolean;
   buttonText?: string;
   buttonHref?: string;
+  ctaVariant?: SmartCTAProps['primaryActionVariant'];
 }
 
 export interface TierCardsSectionProps {
@@ -26,6 +28,7 @@ export interface TierCardsSectionProps {
   title?: string;
   description?: string;
   packages: PackageItem[];
+  smartCta?: Pick<SmartCTAProps, 'system' | 'pageType' | 'slug'>;
   cssPrefix?: string;
   backgroundColor?: string;
 }
@@ -35,6 +38,7 @@ export function TierCardsSection({
   title,
   description,
   packages,
+  smartCta,
   cssPrefix = '',
   backgroundColor = '',
 }: TierCardsSectionProps) {
@@ -85,14 +89,25 @@ export function TierCardsSection({
                 ))}
               </ul>
 
-              <Button
-                href={pkg.buttonHref || buildGlobalContactHref()}
-                variant={pkg.popular ? 'primary' : 'outline'}
-                label={pkg.buttonText || 'Request Details'}
-                showDefaultIcon={pkg.popular}
-                {...(pkg.popular && { icon: ArrowRight })}
-                cssPrefix='btn-block'
-              />
+              {smartCta ? (
+                <SmartCTA
+                  system={smartCta.system}
+                  pageType={smartCta.pageType}
+                  slug={smartCta.slug}
+                  mode='actions-only'
+                  primaryActionVariant={pkg.ctaVariant ?? (pkg.popular ? 'primary' : 'outline')}
+                  primaryButtonCssPrefix='btn-block'
+                />
+              ) : (
+                <Button
+                  href={pkg.buttonHref || buildGlobalContactHref()}
+                  variant={pkg.popular ? 'primary' : 'outline'}
+                  label={pkg.buttonText || 'Request Details'}
+                  showDefaultIcon={pkg.popular}
+                  {...(pkg.popular && { icon: ArrowRight })}
+                  cssPrefix='btn-block'
+                />
+              )}
             </div>
           </Card>
         ))}

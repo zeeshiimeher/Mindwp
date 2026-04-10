@@ -120,7 +120,6 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
           )}
           <SmartCTA
             system={data.systems?.[0] ?? 'smart-website-systems'}
-            sourceType='service'
             slug={slug}
             pageType='service'
             title={inlineCtaTitle}

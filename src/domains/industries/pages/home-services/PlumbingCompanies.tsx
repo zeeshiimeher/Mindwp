@@ -11,7 +11,6 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -366,14 +365,6 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: {
-        label: 'Capture More Plumbing Jobs',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'plumbing-companies',
-        }),
-      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -391,15 +382,6 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
       title: 'Build a steadier plumbing system',
       description:
         'If loose emergency routing, booking friction, inconsistent quote follow-up, or weak local proof are slowing things down, we can map a practical system around how the work actually runs.',
-      primaryAction: {
-        variant: 'white',
-        label: 'Capture More Plumbing Jobs',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'plumbing-companies',
-        }),
-      },
       secondaryAction: {
         label: 'See Home Services',
         href: '/industries/home-services',

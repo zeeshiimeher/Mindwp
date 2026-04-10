@@ -1,30 +1,59 @@
-export const CTA_LABELS = {
-  PRIMARY: 'Start a Conversation',
-  BOOK_CALL: 'Book a Call',
-  DEMO: 'See How It Works',
-  REVIEW_BOOKING: 'Review How Booking Automation Works',
-  SMART_WEBSITE_CONVERSION: 'Understand What Makes Websites Convert',
-  AI_LEAD_HANDLING: 'Find Out How AI Lead Handling Works',
-  REVENUE_AUDIT: 'Check Where Revenue Slows Down',
-  REVIEW_SYSTEMS: 'Review How Review Systems Work',
-  LOCAL_AUTHORITY: 'Understand What Builds Local Authority',
-  CRM_ENQUIRY_REVIEW: 'See Where Enquiries Get Lost',
-  LEAD_CAPTURE: 'See Where Leads Drop Off',
-} as const;
+import type { ContactSourceType } from '@/lib/contact/contactHref';
 
-export const DEFAULT_CTA_LABEL = CTA_LABELS.PRIMARY;
+export type CtaIntent = 'explore' | 'consider' | 'ready';
 
-export const CTA_LABEL_MAP = {
-  'smart-website-systems': CTA_LABELS.SMART_WEBSITE_CONVERSION,
-  'crm-automation': CTA_LABELS.CRM_ENQUIRY_REVIEW,
-  'local-seo-authority': CTA_LABELS.LOCAL_AUTHORITY,
-  'lead-capture': CTA_LABELS.LEAD_CAPTURE,
-  'reputation-management': CTA_LABELS.REVIEW_SYSTEMS,
-  'ai-lead-handling': CTA_LABELS.AI_LEAD_HANDLING,
-  'reputation-review': CTA_LABELS.REVIEW_SYSTEMS,
-  'revenue-growth': CTA_LABELS.REVENUE_AUDIT,
-} as const;
+type ResolveCtaLabelOptions = {
+  system: string;
+  pageType: ContactSourceType;
+  intent?: CtaIntent;
+};
 
-export function resolveCtaLabel(system: string): string {
-  return CTA_LABEL_MAP[system as keyof typeof CTA_LABEL_MAP] ?? DEFAULT_CTA_LABEL;
+const CTA_LABEL_RULES: Record<ContactSourceType, readonly string[]> = {
+  blog: ['See How It Works', 'Understand the System'],
+  'case-study': ['See How It Works', 'Understand the System'],
+  feature: ['See How This Works', 'Explore the System'],
+  global: ['See How It Works', 'Understand the System'],
+  industry: ['See How This Applies to Your Business'],
+  page: ['See How It Works', 'Understand the System'],
+  resource: ['See How It Works', 'Understand the System'],
+  service: ['Start a Conversation', 'Get Your System Built'],
+};
+
+const INTENT_DEFAULTS: Partial<Record<ContactSourceType, CtaIntent>> = {
+  blog: 'explore',
+  feature: 'consider',
+  industry: 'consider',
+  resource: 'explore',
+  service: 'ready',
+};
+
+const INTENT_INDEX: Record<CtaIntent, number> = {
+  explore: 0,
+  consider: 0,
+  ready: 0,
+};
+
+export const DEFAULT_CTA_LABEL = CTA_LABEL_RULES.service[0];
+
+export function inferIntent(pageType: ContactSourceType): CtaIntent {
+  switch (pageType) {
+    case 'blog':
+    case 'resource':
+      return 'explore';
+    case 'feature':
+    case 'industry':
+      return 'consider';
+    case 'service':
+      return 'ready';
+    default:
+      return INTENT_DEFAULTS[pageType] ?? 'explore';
+  }
+}
+
+export function resolveCtaLabel({ system: _system, pageType, intent }: ResolveCtaLabelOptions) {
+  const resolvedIntent = intent ?? inferIntent(pageType);
+  const labels = CTA_LABEL_RULES[pageType] ?? CTA_LABEL_RULES.service;
+  const index = Math.min(INTENT_INDEX[resolvedIntent] ?? 0, labels.length - 1);
+
+  return labels[index] ?? DEFAULT_CTA_LABEL;
 }

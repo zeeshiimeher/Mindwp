@@ -12,7 +12,6 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildPropertyManagersIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -374,14 +373,6 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: {
-        label: 'Capture More Property Enquiries',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'property-managers',
-        }),
-      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -400,15 +391,6 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
       title: 'Build a steadier property management request and follow-up system',
       description:
         'If your property management business is dealing with unclear request routing, maintenance coordination friction, or inconsistent communication updates — we can map a practical system around how the operation actually runs.',
-      primaryAction: {
-        variant: 'white',
-        label: 'Capture More Property Enquiries',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'property-managers',
-        }),
-      },
       secondaryAction: {
         label: 'See Real Estate & Property Services',
         href: '/industries/real-estate-property-services',

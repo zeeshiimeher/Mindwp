@@ -10,7 +10,6 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -363,14 +362,6 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: {
-        label: 'Book More Patient Visits',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'small-private-clinics',
-        }),
-      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -389,15 +380,6 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier clinic booking and follow-up system',
       description:
         'If your clinic is dealing with unclear enquiry quality, loose booking flow, or inconsistent follow-up — we can map a practical system around how the pipeline actually runs.',
-      primaryAction: {
-        variant: 'white',
-        label: 'Book More Patient Visits',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'small-private-clinics',
-        }),
-      },
       secondaryAction: {
         label: 'See Local Appointment Businesses',
         href: '/industries/local-appointment-businesses',

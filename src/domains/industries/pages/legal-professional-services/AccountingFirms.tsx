@@ -11,7 +11,6 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildAccountingFirmsIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -371,14 +370,6 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: {
-        label: 'Book More Client Consultations',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'accounting-firms',
-        }),
-      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -397,15 +388,6 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
       title: 'Build a steadier accounting intake and follow-up system',
       description:
         'If your firm is dealing with unclear enquiry quality, loose consultation flow, or inconsistent follow-up — we can map a practical system around how the pipeline actually runs.',
-      primaryAction: {
-        variant: 'white',
-        label: 'Book More Client Consultations',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'accounting-firms',
-        }),
-      },
       secondaryAction: {
         label: 'See Legal & Professional Services',
         href: '/industries/legal-professional-services',

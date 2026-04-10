@@ -153,7 +153,7 @@ export default function IndustriesLanding() {
         {/* CTA */}
         <SmartCTA
           system='smart-website-systems'
-          sourceType='page'
+          pageType='page'
           slug='industries'
           title='Not sure where your business fits?'
           description='If growth feels inconsistent, we can show you which part of your lead flow needs attention first.'

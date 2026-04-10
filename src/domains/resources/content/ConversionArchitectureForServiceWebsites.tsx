@@ -1,6 +1,5 @@
 import { BarChart3, MousePointerClick, Target } from 'lucide-react';
 
-import { primaryCta } from '@/config/primaryCta';
 
 import type { ResourceData } from '../types';
 import {
@@ -237,10 +236,6 @@ export const conversionArchitectureForServiceWebsites: ResourceData = {
       type: 'cta',
       heading: finalCta.title,
       content: [finalCta.description],
-      button: {
-        text: primaryCta.label,
-        url: '/services/smart-website-systems',
-      },
     },
     {
       type: 'related-resources',

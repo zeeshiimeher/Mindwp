@@ -11,7 +11,6 @@ import {
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
-import { buildContactHref } from '@/lib/contact/contactHref';
 
 function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
   const heroData = {
@@ -370,14 +369,6 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
     },
     hero: {
       ...heroData,
-      primaryAction: {
-        label: 'Book More Roofing Estimates',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'roofing-companies',
-        }),
-      },
       secondaryAction: {
         label: 'See Smart Website Systems',
         href: '/services/smart-website-systems',
@@ -395,15 +386,6 @@ function buildRoofingCompaniesIndustryPageData(): IndustryPageData {
       title: 'Build a steadier roofing system',
       description:
         'If missed calls, loose inspection booking, inconsistent quote follow-up, or weak local proof are slowing things down, we can map a practical system around how the work actually runs.',
-      primaryAction: {
-        variant: 'white',
-        label: 'Book More Roofing Estimates',
-        href: buildContactHref({
-          system: 'smart-website-systems',
-          sourceType: 'industry',
-          slug: 'roofing-companies',
-        }),
-      },
       secondaryAction: {
         label: 'See Home Services',
         href: '/industries/home-services',

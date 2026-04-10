@@ -8,6 +8,9 @@ import { SmartCTA } from '@/components/system/SmartCTA';
  */
 export type ServiceCTASectionProps = Pick<
   SmartCTAProps,
+  | 'system'
+  | 'pageType'
+  | 'slug'
   | 'title'
   | 'description'
   | 'secondaryAction'
@@ -25,9 +28,11 @@ export type ServiceCTASectionProps = Pick<
 
 export function ServiceCTASection({
   system,
+  pageType,
   slug,
   title,
   description,
+  primaryActionVariant,
   secondaryAction,
   metaItems,
   cssPrefix,
@@ -39,7 +44,7 @@ export function ServiceCTASection({
   return (
     <SmartCTA
       system={system}
-      sourceType='service'
+      pageType={pageType}
       slug={slug}
       title={title}
       description={description}
