@@ -44,7 +44,6 @@ const aiChatFaqItems = [
     question: 'What analytics are available?',
     answer:
       'View detailed analytics on chat conversations, conversion rates, popular questions, and team performance.',
-      'Yes, the chat widget is fully responsive and works perfectly on all devices including mobile phones and tablets.',
   },
   {
     question: 'How secure is the chat data?',
@@ -237,7 +236,8 @@ export const aiChatData: FeaturePageData = {
           ],
           iconType: 'primary' as const,
         },
-      ],
+      ],},
+       faq: {
       badge: 'Common Questions',
       title: 'Structured Chat FAQ',
       description:

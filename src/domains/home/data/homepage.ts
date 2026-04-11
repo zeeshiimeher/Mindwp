@@ -87,6 +87,10 @@ export type HomepageData = {
     title: string;
     description: string;
     valueProps: [string, string, string];
+    primaryAction: {
+      label: string;
+      href: string;
+    };
   };
 
   infrastructureGaps: {
@@ -229,6 +233,10 @@ export const homepageData: HomepageData = {
     description:
       'We build Smart Websites that connect how people find you, how they get in touch, and how enquiries are handled — so your website works as part of the business, not just a page people land on.',
     valueProps: ['Right Enquiries', 'Search Ready', 'Built to Grow'],
+    primaryAction: {
+      label: 'See how Smart Websites work',
+      href: '/services/smart-website-systems',
+    },
   },
   infrastructureGaps: {
     badge: 'Where Websites Fall Short',

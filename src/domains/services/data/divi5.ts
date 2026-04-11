@@ -31,9 +31,10 @@ export const divi5Page = {
   }),
   hero: {
     badge: 'Divi Builder Implementation',
-    title: 'WordPress implementation with Divi — built for flexible editing and long-term clarity',
+      title: 'Divi Websites Built for Flexible Editing and Control',
     description:
       'We build WordPress websites using Divi where the team needs a flexible editing experience without losing visual or technical control. Approved designs are converted precisely, with a build that stays maintainable over time.',
+      list: ['Flexible Editing', 'Governed Build', 'Clear Structure'],
     cssPrefix: 'divi5-hero',
     backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },

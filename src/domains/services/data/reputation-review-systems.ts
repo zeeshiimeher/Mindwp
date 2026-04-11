@@ -28,23 +28,22 @@ export const reputationReviewSystemsPage = {
   category: 'Trust Systems',
   seo: buildServiceSeo({
     slug,
-    title: 'Reputation & Reviews | Trust Systems for Businesses',
+    title: 'Reputation & Review Systems for Service Businesses | MindWP',
     description:
-      'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+      'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
     schemaName: 'Reputation and review systems for service businesses',
     schemaDescription:
-      'Structured review-generation and reputation-management systems for service businesses, including request timing, negative feedback routing, monitoring logic, and trust-building workflows.',
+      'Review-generation and reputation-management systems for service businesses, including request timing, feedback routing, monitoring, and trust-building workflows.',
   }),
   hero: {
-    badge: 'Trust-Building Infrastructure',
-    title:
-      'Reviews help more when they are part of a system, not something that happens by accident',
+    badge: 'Reputation & Review Systems',
+      title: 'Build Local Trust Before One Bad Review Wins',
     description:
-      'This service covers the full reputation layer — review generation, monitoring, feedback routing, response ownership, and trust signals across platforms. It works best when the business needs a structured approach to credibility, not just more review requests.',
+      'Most service businesses do good work but have weak reviews. Happy customers forget to leave feedback. Unhappy ones post publicly before you know there is a problem. A structured reputation system fixes both.',
     list: [
-      'Consistent review requests without manual chasing',
-      'Clear handling of negative feedback before it spreads',
-      'Stronger trust signals that support enquiries and local credibility',
+        'Review Requests',
+        'Feedback Routing',
+        'Trust Signals',
     ],
     cssPrefix: 'reputation-review-hero',
     backgroundColor: 'bg-gradient-surface-muted',
@@ -52,90 +51,90 @@ export const reputationReviewSystemsPage = {
   sections: {
     foundation: {
       badge: 'Why review efforts stall',
-      title: 'Most businesses do not have a review problem. They have a review-system problem.',
+      title: 'The real reason your reviews are not growing',
       description:
-        'The issue is rarely just asking more often. It is usually about timing, ownership, and having a clearer path for both good feedback and unhappy responses.',
+        'The issue is rarely about asking more often. It is about timing, ownership, and having a clear path for both good feedback and complaints.',
       painPoints: [
         {
           before:
             'Reviews are requested only when someone remembers, so results stay inconsistent.',
           after:
-            'Requests happen at the right moments with clearer timing, ownership, and follow-through.',
+            'Requests go out at the right moment with clear timing and follow-through.',
         },
         {
-          before: 'Negative feedback appears too late because there is no internal routing path.',
+          before: 'Negative feedback appears publicly because there is no internal routing.',
           after:
-            'Feedback can be captured, routed, and handled earlier — before it becomes a public trust problem.',
+            'Feedback is captured and routed internally before it becomes a public trust problem.',
         },
         {
           before:
-            'The business wants more trust online, but there is no logic behind the requests or responses.',
+            'The business wants more trust online but there is no logic behind requests or responses.',
           after:
-            'Reviews, responses, and monitoring work together as a system that supports credibility over time.',
+            'Reviews, responses, and monitoring work together as a system that builds credibility over time.',
         },
       ],
     },
     reviewSystem: {
       badge: 'Core system layers',
-      title: 'The main parts of a reputation and review system',
+      title: 'How the reputation system works',
       description:
-        'The right setup depends on how customers interact with the business, when trust is earned, and how feedback should be handled internally before it becomes a public problem.',
+        'The right setup depends on how customers interact with the business, when trust is earned, and how feedback should be handled before it becomes a public problem.',
       cards: [
         {
-          title: 'Review request workflow',
+          title: 'Automated review request workflow',
           description:
-            'A structured sequence for when and how customers are asked for feedback after the right stage of delivery.',
+            'Customers are asked for feedback at the right stage after service delivery — automatically, without your team remembering to send it.',
           points: [
             'Timing rules based on service completion',
             'Channel choice based on customer behaviour',
-            'Follow-up logic without over-chasing',
+            'Follow-up logic without over-messaging',
           ],
           featured: true,
         },
         {
           title: 'Negative feedback routing',
           description:
-            'A path for handling unhappy responses internally before they become unmanaged public trust issues.',
+            'Unhappy responses are caught and routed to the right person internally before they become unmanaged public reviews.',
           points: [
-            'Internal escalation paths',
+            'Internal escalation paths for complaints',
             'Clear response ownership',
-            'Consistency in how issues are handled',
+            'Consistent handling of issues',
           ],
         },
         {
           title: 'Monitoring and trust upkeep',
           description:
-            'A regular process for watching review signals, spotting patterns, and maintaining credibility over time.',
+            'A regular process for tracking review signals, spotting patterns, and maintaining credibility across platforms.',
           points: [
-            'Review visibility tracking',
-            'Response discipline',
-            'Trust signals connected to wider marketing and local presence',
+            'Review visibility tracking across platforms',
+            'Response discipline and consistency',
+            'Trust signals connected to local presence and conversions',
           ],
         },
       ],
     },
     positioning: {
-      badge: 'Positioning',
-      title: 'Reputation management works best as an operating layer, not a marketing tactic',
+      badge: 'What changes',
+      title: 'What changes when trust is managed deliberately',
       description:
-        'This is not only about increasing star ratings. It is about making trust more consistent through better timing, better routing, and better response discipline.',
+        'This is not about increasing star ratings. It is about making trust more consistent through better timing, better routing, and better response discipline.',
       tagline: 'Trust should be managed deliberately, not left to chance.',
       narrativeTitle: 'For many businesses, trust is the real conversion bottleneck',
       narrativeParagraphs: [
-        'Some businesses mainly need a clear website and a reliable trust layer. If people already find the business but hesitate because reviews are weak, inconsistent, or unmanaged, reputation work can have immediate commercial value.',
-        'It still works best inside a wider system. Review strength can support local SEO, conversion confidence, and repeat business — but only when it is tied to real operational moments and real customer journeys.',
+        'Some businesses mainly need a clear website and reliable trust signals. If people already find the business but hesitate because reviews are weak, inconsistent, or unmanaged, reputation work has immediate commercial value.',
+        'Review strength supports local SEO, conversion confidence, and repeat business — but only when it is tied to real operational moments and real customer journeys.',
       ],
       features: [
         {
           title: 'Better review velocity',
           description:
-            'More good-fit customers are asked at the right time instead of relying on manual memory.',
+            'More customers asked at the right time instead of relying on manual memory. Reviews grow consistently.',
           icon: Star,
         },
         {
           title: 'Cleaner issue handling',
           description:
-            'Negative experiences are routed properly so the team can act before trust damage grows.',
+            'Negative experiences routed properly so the team can act before trust damage spreads.',
           icon: AlertTriangle,
         },
         {
@@ -148,112 +147,180 @@ export const reputationReviewSystemsPage = {
     },
     processSection: {
       badge: 'How it works',
-      title: 'How the reputation system is structured',
+      title: 'How a reputation system gets built',
       description:
-        'The workflow varies by business, but a useful reputation system follows a clear sequence so reviews and feedback do not feel random.',
+        'Every business has different trust gaps. The process below adapts to your situation, but the structure stays consistent.',
       steps: [
         {
           number: '1',
-          title: 'Identify the trust moments',
+          title: 'Map the trust moments',
           description:
-            'We define the right moments after service delivery, booking, purchase, or support where a request makes sense.',
+            'We identify the exact points after service where a request makes sense — before the customer forgets or moves on.',
         },
         {
           number: '2',
-          title: 'Set request and routing logic',
+          title: 'Build request and routing logic',
           description:
-            'The system decides what gets requested, what gets routed internally, and who needs to act next.',
+            'Positive experiences get directed toward reviews. Negative feedback gets routed to your team before it goes public.',
         },
         {
           number: '3',
-          title: 'Monitor and respond with ownership',
+          title: 'Set monitoring and response ownership',
           description:
-            'Review and feedback handling becomes clearer because responsibility is visible instead of scattered.',
+            'Someone is responsible for what shows up publicly. Review responses happen consistently instead of when someone remembers.',
         },
         {
           number: '4',
-          title: 'Refine over time',
+          title: 'Review and tighten over time',
           description:
-            'Patterns, response quality, and trust signals are reviewed so the process improves instead of staying static.',
+            'We look at what is working, what is being ignored, and where trust signals are weakening — then adjust.',
         },
       ],
     },
     capabilitySection: {
-      badge: 'What can be included',
-      title: 'Typical reputation-system components',
+      badge: 'What is included',
+      title: 'What a reputation system typically covers',
       description:
-        'Not every business needs every component, but these are the main layers that usually matter when trust needs to be managed more deliberately.',
+        'Not every business needs every piece, but these are the layers that matter when trust is directly affecting whether people enquire.',
       services: [
         {
           title: 'Request and follow-up workflows',
           icon: Bell,
           items: [
-            'Review request timing logic',
-            'Channel-specific request flows',
-            'Follow-up without over-messaging',
-            'Segmentation by customer or service type',
+            'Automated review request timing after service delivery',
+            'Channel-specific request flows (SMS, email, in-person prompts)',
+            'Follow-up sequences that do not over-message',
+            'Segmentation by customer type or service category',
           ],
         },
         {
-          title: 'Feedback and escalation handling',
+          title: 'Feedback routing and escalation',
           icon: GitBranch,
           items: [
-            'Negative feedback routing',
-            'Escalation ownership',
-            'Issue-handling steps before public fallout',
-            'Internal visibility on trust risks',
+            'Negative feedback caught and routed before public posting',
+            'Clear escalation ownership so nothing gets ignored',
+            'Issue-handling steps that protect reputation proactively',
+            'Internal visibility on trust risks across the team',
           ],
         },
         {
-          title: 'Reputation and response discipline',
+          title: 'Monitoring and response discipline',
           icon: MessageSquare,
           items: [
-            'Review monitoring cadence',
-            'Response-process standards',
-            'Trust-signal upkeep',
-            'Connection to wider local and conversion goals',
+            'Regular monitoring across Google, directories, and platforms',
+            'Response standards so public replies are consistent and professional',
+            'Trust-signal maintenance as part of ongoing operations',
+            'Connection to local SEO and conversion goals where relevant',
           ],
         },
       ],
     },
     qualification: {
-      title: 'Who this is designed for',
+      title: 'Is this the right fit for your business?',
       description:
-        'This works well for businesses where trust, reviews, and customer perception are materially affecting enquiries.',
-      strongFitTitle: 'Strong fit',
-      notDesignedTitle: 'Not designed for',
+        'This works well for businesses where trust, reviews, and customer perception are directly affecting enquiries and conversions.',
+      strongFitTitle: 'Strong fit if',
+      notDesignedTitle: 'Not the right fit if',
       strongFitItems: [
         {
-          title: 'Service businesses with weak or inconsistent reviews',
+          title: 'Your reviews are weak or inconsistent despite good work',
           description:
-            'A good fit when the quality or frequency of reviews is clearly below the level the business should be generating.',
+            'You do good work but your review profile does not reflect that. Customers leave happy but rarely leave feedback.',
         },
         {
-          title: 'Businesses where trust is the main blocker',
+          title: 'Trust is the main reason prospects hesitate',
           description:
-            'Useful when people are already finding the business but hesitating because social proof is thin, outdated, or unmanaged.',
+            'People find your business but choose competitors with more reviews or better ratings.',
         },
         {
-          title: 'Owners who want a simpler first system',
+          title: 'You want a system, not just more review requests',
           description:
-            'A valid entry path when a business needs a clearer website and a reputation process before investing in broader system work.',
+            'You want timing, routing, and monitoring handled together — not just another email asking for a review.',
         },
       ],
       notDesignedItems: [
         {
-          title: 'Businesses looking for fake or manipulative review tactics',
+          title: 'You want fake or manipulative review tactics',
           description:
             'This is about structured trust-building, not shortcuts or artificial reputation inflation.',
         },
         {
-          title: 'Teams unwilling to own customer experience issues',
+          title: 'Your team is not willing to address customer experience issues',
           description:
-            'A system can route and surface feedback, but it cannot replace operational accountability.',
+            'The system can route and surface feedback, but it cannot replace operational accountability.',
         },
         {
-          title: 'Cases where visibility is the bigger missing layer',
+          title: 'Visibility is the bigger problem',
           description:
-            'If the business is not being found in the first place, local visibility and website structure may need attention alongside or before reputation work.',
+            'If the business is not being found in the first place, local visibility and website work may need attention first.',
+        },
+      ],
+    },
+    comparison: {
+      header: {
+        title: 'Manual review management vs a structured reputation system',
+        description:
+          'Most businesses rely on memory and good intentions to manage their reputation. Here is what that costs compared to a structured approach.',
+      },
+      items: [
+        {
+          type: 'before' as const,
+          title: 'Manual review management',
+          items: [
+            'Review requests sent only when someone remembers — weeks after service',
+            'Negative feedback appears publicly with no warning or internal routing',
+            'No consistent monitoring of review platforms or trust signals',
+            'Responses to reviews are sporadic or non-existent',
+            'Team has no visibility into overall reputation health',
+          ],
+        },
+        {
+          type: 'after' as const,
+          title: 'Structured reputation system',
+          items: [
+            'Automated requests sent at the right moment after service completion',
+            'Negative feedback caught and routed internally before it becomes public',
+            'Regular monitoring across Google, directories, and review platforms',
+            'Response discipline maintained with clear ownership and consistency',
+            'Team can see review trends, response rates, and trust signal health',
+          ],
+        },
+      ],
+    },
+    proof: {
+      header: {
+        title: 'What this looks like when it is running',
+        description:
+          'A home services business had strong customer satisfaction but a weak review profile. Competitors with worse service ranked higher because they had more reviews.',
+      },
+      cards: [
+        {
+          title: 'Before: happy customers, almost no reviews',
+          description: 'The business completed hundreds of jobs per year with high satisfaction. But review requests were manual and inconsistent. Their Google profile had a handful of reviews while competitors had hundreds.',
+          points: [
+            'Fewer than 20 Google reviews after years in business',
+            'No structured process for requesting feedback',
+            'Negative experiences occasionally appeared publicly without warning',
+          ],
+        },
+        {
+          title: 'What we built: automated review requests with feedback routing',
+          description: 'We set up automated review requests triggered after job completion, negative feedback routing to the team before it went public, and monitoring across review platforms.',
+          points: [
+            'Review requests sent automatically after service delivery',
+            'Negative feedback routed internally before public posting',
+            'Review monitoring configured across Google and directories',
+          ],
+          featured: true,
+        },
+        {
+          title: 'After: consistent review growth and earlier issue resolution',
+          description: 'Within three months, review volume grew significantly. The team caught and resolved complaints before they became public problems. The business started appearing more prominently in local searches.',
+          points: [
+            'Review count grew consistently month over month',
+            'Negative feedback caught earlier — fewer public complaints',
+            'Improved local search visibility as review signals strengthened',
+          ],
         },
       ],
     },
@@ -266,30 +333,35 @@ export const reputationReviewSystemsPage = {
         {
           question: 'Can this work without changing our whole website?',
           answer:
-            'Yes, in some cases. A business can improve trust with a clearer reputation system even before larger website work happens, though the best results come when website clarity and reputation signals support each other.',
+            'Yes. A business can improve trust with a reputation system even before larger website work happens. The best results come when website clarity and reputation signals support each other.',
         },
         {
           question: 'Will this help us get more Google reviews?',
           answer:
-            'Yes, that is often one outcome. But the better goal is a repeatable system that improves review consistency, issue handling, and public trust over time.',
+            'Yes, that is a typical outcome. But the real goal is a repeatable system that improves review consistency, issue handling, and public trust over time.',
         },
         {
-          question: 'Do you also help with responses to reviews?',
+          question: 'Do you help with responding to reviews?',
           answer:
             'Yes. Response discipline is part of reputation management because public replies shape trust just as much as the rating itself.',
         },
         {
           question: 'Is this a standalone service or part of a wider system?',
           answer:
-            'It can be either. Some businesses need this as a focused trust layer first, while others use it as part of a wider system that also includes local SEO, website improvements, or CRM follow-up.',
+            'It can be either. Some businesses need this as a focused trust layer first. Others use it alongside local SEO, website improvements, or CRM follow-up.',
         },
       ],
       cssPrefix: 'reputation-review-faq',
     },
   },
-  cta: {
-    title: 'Make trust part of the system',
+  inlineCta: {
+    title: 'Not sure if weak reviews are costing you business?',
     description:
-      'Tell us how reviews and feedback are handled now. We will show you how to collect more proof without extra manual chasing.',
+      'Tell us about your current review situation. We will show you where trust gaps are affecting your enquiries and what a structured reputation system would change.',
+  },
+  cta: {
+    title: 'Make trust part of the system instead of leaving it to chance',
+    description:
+      'Tell us how reviews and feedback are handled now. We will show you how to collect more proof, catch issues earlier, and build credibility that converts.',
   },
 } satisfies ServicePageData;

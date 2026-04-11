@@ -52,7 +52,7 @@ export interface SimpleHeroProps {
   description: string;
 
   /** SmartCTA ownership context for page hero CTAs */
-  smartCta: Pick<
+  smartCta?: Pick<
     SmartCTAProps,
     | 'system'
     | 'pageType'
@@ -95,10 +95,6 @@ export function SimpleHero({
   backgroundColor = '',
   list,
 }: SimpleHeroProps) {
-  if (!smartCta) {
-    throw new Error('SimpleHero requires smartCta for CTA rendering.');
-  }
-
   return (
     <SectionWrapper padding='spacious' className={cn(BLOCK, backgroundColor, cssPrefix)}>
       <div
@@ -118,15 +114,17 @@ export function SimpleHero({
           marginBottom={false}
         />
 
-        <SmartCTA
-          system={smartCta.system}
-          pageType={smartCta.pageType}
-          slug={smartCta.slug}
-          primaryActionVariant={smartCta.primaryActionVariant}
-          primaryButtonCssPrefix={smartCta.primaryButtonCssPrefix}
-          secondaryButtonCssPrefix={smartCta.secondaryButtonCssPrefix}
-          mode='actions-only'
-        />
+        {smartCta ? (
+          <SmartCTA
+            system={smartCta.system}
+            pageType={smartCta.pageType}
+            slug={smartCta.slug}
+            primaryActionVariant={smartCta.primaryActionVariant}
+            primaryButtonCssPrefix={smartCta.primaryButtonCssPrefix}
+            secondaryButtonCssPrefix={smartCta.secondaryButtonCssPrefix}
+            mode='actions-only'
+          />
+        ) : null}
 
         {list && list.length > 0 && <BulletList items={list} cssPrefix={`${BLOCK}__list`} />}
       </div>

@@ -31,23 +31,22 @@ export const websiteRedesignSystemRebuildPage = {
   category: 'Structural Rebuild Services',
   seo: buildServiceSeo({
     slug,
-    title:
-      'Website Redesign & System Rebuild | For Service Businesses',
+    title: 'Website Redesign & System Rebuild for Service Businesses | MindWP',
     description:
-      'Website redesign and system rebuild work for service businesses whose current site no longer matches their services, enquiry flow, integrations, or operational needs.',
+      'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
     schemaName: 'Website redesign and system rebuild for service businesses',
     schemaDescription:
       'A structural website redesign and rebuild pathway for service businesses needing clearer architecture, better enquiry flow, reduced technical clutter, and stronger long-term maintainability.',
   }),
   hero: {
-    badge: 'Structural Realignment Pathway',
-    title: 'When the website no longer matches the business, a visual refresh is not enough',
+    badge: 'Website Redesign & System Rebuild',
+      title: 'Rebuild Your Website Around The Business You Run',
     description:
-      'This service is for businesses whose current site has drifted too far from their services, enquiry flow, integrations, or operating reality. The work is structural correction and rebuild logic, not cosmetic redesign for its own sake.',
+      'Your site has drifted too far from your services, enquiry flow, and operating reality. The fix is structural correction and rebuild logic, not cosmetic redesign.',
     list: [
-      'Clearer structure and service architecture',
-      'Stronger message-to-enquiry flow',
-      'Reduced clutter and better future maintainability',
+        'Structural Clarity',
+        'Better Flow',
+        'Cleaner Stack',
     ],
     cssPrefix: 'website-redesign-rebuild-hero',
     backgroundColor: 'bg-gradient-surface-muted',
@@ -56,9 +55,9 @@ export const websiteRedesignSystemRebuildPage = {
     foundation: {
       badge: 'Why rebuild work becomes necessary',
       title:
-        'A rebuild becomes necessary when the website is carrying structural decisions that no longer fit the business',
+        'A rebuild is necessary when the website carries structural decisions that no longer fit the business',
       description:
-        'The signal for rebuild work is usually operational, not cosmetic. The site may still function, but the structure underneath no longer supports the current business properly.',
+        'The signal is usually operational, not cosmetic. The site may still function, but the structure underneath no longer supports the current business.',
       currentStateLabel: 'What the current site is carrying',
       structuredStateLabel: 'What the rebuild corrects',
       painPoints: [
@@ -84,7 +83,7 @@ export const websiteRedesignSystemRebuildPage = {
     },
     structuralSignals: {
       badge: 'Strong signals for rebuild work',
-      title: 'These patterns point to structural realignment rather than small-page tweaking',
+      title: 'These patterns point to structural realignment, not small-page tweaking',
       description:
         'The issue is not always that the site looks old. More often, the website no longer behaves like a clear operating layer for the business.',
       items: [
@@ -118,7 +117,7 @@ export const websiteRedesignSystemRebuildPage = {
       badge: 'Common rebuild scenarios',
       title: 'A rebuild should solve the structural problem behind the redesign request',
       description:
-        'These are common situations where the right answer is not just a visual redesign but a more deliberate rebuild pathway.',
+        'These are common situations where the right answer is not a visual redesign but a more deliberate rebuild.',
       scenarioLabel: 'Current problem',
       solutionLabel: 'Rebuild logic',
       items: [
@@ -155,9 +154,9 @@ export const websiteRedesignSystemRebuildPage = {
     },
     processSection: {
       badge: 'Rebuild sequence',
-      title: 'How the redesign and rebuild is approached',
+      title: 'How the redesign and rebuild works',
       description:
-        'The work moves through structural clarification first so the redesign decisions support the system instead of hiding old problems under new visuals.',
+        'Structural clarification comes first so redesign decisions support the system instead of hiding old problems under new visuals.',
       steps: [
         {
           number: '1',
@@ -187,9 +186,9 @@ export const websiteRedesignSystemRebuildPage = {
     },
     implementationLayers: {
       badge: 'What the rebuild usually needs',
-      title: 'Rebuild work usually touches several connected layers, not one design file alone',
+      title: 'Rebuild work touches several connected layers, not one design file',
       description:
-        'The exact scope varies, but these are the structural areas that usually matter most when the website needs realignment rather than surface polish.',
+        'The exact scope varies, but these are the structural areas that matter most when the website needs realignment.',
       items: [
         {
           icon: Search,
@@ -218,43 +217,43 @@ export const websiteRedesignSystemRebuildPage = {
       ],
     },
     qualification: {
-      title: 'Who this is designed for',
+      title: 'Is this the right fit for your business?',
       description:
-        'This works best where the current website no longer supports the business model cleanly and the next step needs to be structural realignment, not surface-level design effort.',
-      strongFitTitle: 'Strong fit',
-      notDesignedTitle: 'Not designed for',
+        'This works best where the current website no longer supports the business model and the next step needs to be structural realignment.',
+      strongFitTitle: 'Strong fit if',
+      notDesignedTitle: 'Not the right fit if',
       strongFitItems: [
         {
-          title: 'Businesses whose site has drifted from reality',
+          title: 'Your site has drifted from how the business actually works',
           description:
-            'A strong fit when the website reflects old services, weak page flow, or outdated assumptions about how enquiries should happen.',
+            'The website reflects old services, weak page flow, or outdated assumptions about how enquiries should happen.',
         },
         {
-          title: 'Teams carrying technical clutter and fragile updates',
+          title: 'Technical clutter makes routine changes slow or risky',
           description:
-            'Useful when routine change is slow or risky because the build underneath is too messy, layered, or poorly governed.',
+            'Builder layers, plugins, and manual fixes have piled up to the point where improvement is fragile.',
         },
         {
-          title: 'Businesses needing structural correction before further growth work',
+          title: 'You need structural correction before further growth work',
           description:
-            'Especially useful when SEO, automation, or follow-up improvements will keep underperforming until the website itself is rebuilt on better foundations.',
+            'SEO, automation, or follow-up improvements will keep underperforming until the website itself is rebuilt on better foundations.',
         },
       ],
       notDesignedItems: [
         {
-          title: 'Businesses that only want a cosmetic refresh',
+          title: 'You only want a cosmetic refresh',
           description:
-            'If the structure is already sound and only surface styling needs attention, a system rebuild may be more than is necessary.',
+            'If the structure is already sound and only surface styling needs attention, a system rebuild may be more than necessary.',
         },
         {
-          title: 'Sites with only one isolated page problem',
+          title: 'The issue is one isolated page',
           description:
-            'If the issue is limited to one campaign page or one service page, targeted refinement may be better than a broader rebuild.',
+            'If the problem is limited to one campaign page or service page, targeted refinement may be better than a broader rebuild.',
         },
         {
-          title: 'Cases where the traffic problem is still primary',
+          title: 'Your main problem is traffic, not structure',
           description:
-            'If the site is not being found at all, visibility and demand work may need to lead before a full rebuild is the best first investment.',
+            'If the site is not being found at all, visibility work may need to lead before a full rebuild.',
         },
       ],
     },
@@ -262,7 +261,7 @@ export const websiteRedesignSystemRebuildPage = {
       badge: 'FAQ',
       title: 'Common questions about website rebuild work',
       description:
-        'Questions that come up when a business senses the website problem is structural, not purely visual.',
+        'Practical questions from businesses that sense the website problem is structural, not purely visual.',
       faqs: [
         {
           question: 'Does a rebuild always mean starting from zero?',
@@ -270,22 +269,100 @@ export const websiteRedesignSystemRebuildPage = {
             'No. Some content, assets, and structural decisions can often be retained. The key question is whether the underlying architecture is worth preserving or whether it is slowing the business down.',
         },
         {
-          question: 'Can this sit alongside WordPress Website Development?',
+          question: 'How does this relate to WordPress Development?',
           answer:
-            'Yes. WordPress Website Development is the broader implementation pathway. This page focuses more specifically on the redesign and rebuild decision when structural realignment is needed first.',
+            'WordPress Development is the broader implementation pathway. This page focuses more specifically on the redesign and rebuild decision when structural realignment is needed first.',
         },
         {
           question: 'Can you rebuild around existing SEO or content priorities?',
           answer:
-            'Yes. Where useful, the rebuild can preserve and improve important content, SEO structure, and operational pathways rather than discarding them blindly.',
+            'Yes. The rebuild can preserve and improve important content, SEO structure, and operational pathways rather than discarding them blindly.',
+        },
+        {
+          question: 'How long does a rebuild take?',
+          answer:
+            'It depends on scope. Some rebuilds take weeks, some take longer. The structural clarification phase upfront is what keeps the build controlled and the outcome useful.',
         },
       ],
       cssPrefix: 'website-redesign-rebuild-faq',
     },
+    comparison: {
+      header: {
+        title: 'Cosmetic redesign vs structural rebuild',
+        description:
+          'Most businesses treat a website refresh as a visual exercise. Here is what that looks like compared to fixing the underlying structure first.',
+      },
+      items: [
+        {
+          type: 'before' as const,
+          title: 'Cosmetic redesign',
+          items: [
+            'New theme applied over the same broken page structure',
+            'Old service pages kept even though the business has changed',
+            'Enquiry flow still depends on a single generic contact form',
+            'Plugin and builder clutter carried forward into the new design',
+            'Same maintenance problems resurface within months of launch',
+          ],
+        },
+        {
+          type: 'after' as const,
+          title: 'Structural rebuild',
+          items: [
+            'Pages restructured around current services and enquiry priorities',
+            'Service architecture reflects how the business actually operates',
+            'Enquiry paths designed into the site with clear next steps',
+            'Technical clutter removed so the build stays maintainable',
+            'Foundation supports SEO, CRM, and automation from day one',
+          ],
+        },
+      ],
+    },
+    proof: {
+      header: {
+        title: 'What a structural rebuild looks like in practice',
+        description:
+          'A roofing company had a website that looked presentable but no longer matched how the business worked. The structure underneath was holding everything back.',
+      },
+      cards: [
+        {
+          title: 'Before: a site that looked fine but worked against the business',
+          description: 'The website had been patched together over several years. Pages reflected old services, the enquiry form went to a shared inbox, and routine updates were risky because the build was so fragile.',
+          points: [
+            'Pages reflected an older version of the business',
+            'Enquiry form went to a shared inbox with no routing',
+            'Builder and plugin clutter made every change slow and risky',
+          ],
+        },
+        {
+          title: 'What we built: structural realignment with future-ready foundations',
+          description: 'We rebuilt the site around the current business model — clear service pages, defined enquiry paths, CRM-ready forms, and a content structure that could grow without breaking.',
+          points: [
+            'Service pages rebuilt around current priorities and enquiry flow',
+            'Enquiry paths connected to CRM and follow-up workflows',
+            'Build organised for maintainability and future system expansion',
+          ],
+          featured: true,
+        },
+        {
+          title: 'After: a website that actually supports the business',
+          description: 'The rebuilt site became the foundation for local SEO, review management, and lead handling. Each system connected cleanly because the structural problems were fixed first.',
+          points: [
+            'SEO, reviews, and CRM all built on the new foundation',
+            'Enquiry volume improved because paths were clearer',
+            'Routine updates became simple instead of risky',
+          ],
+        },
+      ],
+    },
+  },
+  inlineCta: {
+    title: 'Is your website holding the business back?',
+    description:
+      'Tell us what is not working. We will show you whether the fix is structural and what a rebuild pathway looks like for your situation.',
   },
   cta: {
     title: 'Rebuild the website around how the business actually works',
     description:
-      'If the current site no longer supports your services, enquiry flow, or maintainability, we can help define a clearer rebuild pathway.',
+      'Tell us what has drifted. We will show you what needs structural correction and define a clear rebuild path.',
   },
 } satisfies ServicePageData;

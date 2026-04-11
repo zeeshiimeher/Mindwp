@@ -26,7 +26,7 @@ export interface TierCardsSectionProps {
   title?: string;
   description?: string;
   packages: PackageItem[];
-  smartCta: Pick<SmartCTAProps, 'system' | 'pageType' | 'slug'>;
+  smartCta?: Pick<SmartCTAProps, 'system' | 'pageType' | 'slug'>;
   cssPrefix?: string;
   backgroundColor?: string;
 }
@@ -58,10 +58,6 @@ export function TierCardsSection({
   cssPrefix = '',
   backgroundColor = '',
 }: TierCardsSectionProps) {
-  if (!smartCta) {
-    throw new Error('TierCardsSection requires smartCta for CTA rendering.');
-  }
-
   return (
     <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
       {(badge || title || description) && (
@@ -109,14 +105,16 @@ export function TierCardsSection({
                 ))}
               </ul>
 
-              <SmartCTA
-                system={smartCta.system}
-                pageType={smartCta.pageType}
-                slug={smartCta.slug}
-                mode='actions-only'
-                primaryActionVariant={resolvePrimaryActionVariant(pkg.ctaVariant, pkg.popular)}
-                primaryButtonCssPrefix='btn-block'
-              />
+              {smartCta ? (
+                <SmartCTA
+                  system={smartCta.system}
+                  pageType={smartCta.pageType}
+                  slug={smartCta.slug}
+                  mode='actions-only'
+                  primaryActionVariant={resolvePrimaryActionVariant(pkg.ctaVariant, pkg.popular)}
+                  primaryButtonCssPrefix='btn-block'
+                />
+              ) : null}
             </div>
           </Card>
         ))}

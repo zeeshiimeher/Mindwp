@@ -31,22 +31,22 @@ export const unifiedCommunicationSystemPage = {
   category: 'Communication Routing Systems',
   seo: buildServiceSeo({
     slug,
-    title: 'Unified Communication System | Multi-Channel Routing',
+    title: 'Unified Communication System for Service Businesses | MindWP',
     description:
-      'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+      'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
     schemaName: 'Unified communication system for service businesses',
     schemaDescription:
       'A structured communication-routing system covering calls, forms, chat, email, and message handoff so service businesses can reduce missed conversations and improve ownership.',
   }),
   hero: {
-    badge: 'Routing & Ownership Layer',
-    title: 'When enquiries arrive from everywhere, the real problem is usually routing, not volume',
+    badge: 'Unified Communication System',
+      title: 'Route Every Enquiry Through One Clear Communication System',
     description:
-      'This service focuses on the communication layer between incoming messages and the right next action. It helps businesses handle calls, forms, chat, and inbox messages with less confusion, fewer missed conversations, and clearer ownership.',
+      'Calls, forms, chat, and inbox messages all need a clear path to the right person and the right next step. Without that, good conversations disappear in the noise.',
     list: [
-      'Clearer routing across calls, forms, chat, and inboxes',
-      'Fewer missed conversations and less duplicate handling',
-      'Better ownership from first message to next action',
+        'Channel Routing',
+        'Clear Ownership',
+        'Faster Response',
     ],
     cssPrefix: 'unified-communication-hero',
     backgroundColor: 'bg-gradient-surface-muted',
@@ -54,31 +54,31 @@ export const unifiedCommunicationSystemPage = {
   sections: {
     foundation: {
       badge: 'Where communication breaks down',
-      title: 'Messages get missed when the business uses many channels but no clear routing model',
+      title: 'Messages get missed when there are many channels but no clear routing model',
       description:
-        'The issue is not always channel volume. More often, calls, forms, chat, and inbox replies arrive without one shared handling model behind them.',
+        'The issue is not channel volume. It is that calls, forms, chat, and inbox replies arrive without one shared handling model behind them.',
       painPoints: [
         {
           before:
-            'Calls, forms, chat, and inbox messages all arrive in different places with no shared view.',
+            'Calls, forms, chat, and inbox messages arrive in different places with no shared view.',
           after:
-            'Incoming conversations are easier to route because the business has a clearer communication structure.',
+            'Incoming conversations are routed through a clearer communication structure.',
         },
         {
           before: 'Several people reply, nobody replies, or the handoff happens too late.',
-          after: 'Ownership becomes explicit so each conversation has a clearer path to action.',
+          after: 'Ownership is explicit — each conversation has a clear path to action.',
         },
         {
           before: 'The same enquiry gets repeated across channels with no context carried forward.',
-          after: 'Conversation history and routing logic reduce duplicated effort and confusion.',
+          after: 'Routing logic reduces duplicated effort and confusion.',
         },
       ],
     },
     channelSignals: {
       badge: 'Where the traffic comes from',
-      title: 'The system matters most when enquiries arrive across multiple front doors',
+      title: 'The system matters most when enquiries come through multiple front doors',
       description:
-        'The stronger the channel mix becomes, the more valuable it is to have one clear routing model behind it.',
+        'The stronger the channel mix, the more valuable it is to have one clear routing model behind it.',
       items: [
         {
           icon: Phone,
@@ -113,9 +113,9 @@ export const unifiedCommunicationSystemPage = {
     ownershipRisks: {
       badge: 'What usually goes wrong',
       title:
-        'Communication issues normally show up as routing problems, not technology problems first',
+        'Communication issues show up as routing problems, not technology problems',
       description:
-        'These are common signs that the business needs a clearer communication-routing layer before it adds more channels or automation.',
+        'These are signs the business needs a clearer routing layer before adding more channels or automation.',
       lists: [
         {
           title: 'Ownership risks',
@@ -197,9 +197,9 @@ export const unifiedCommunicationSystemPage = {
     },
     operatingLayers: {
       badge: 'How the layer is usually structured',
-      title: 'A unified communication setup depends on three practical operating layers',
+      title: 'Three operating layers behind the communication flow',
       description:
-        'This is about the routing model behind the communication flow, not just one inbox screen or response tool.',
+        'This is about the routing model, not just one inbox screen or response tool.',
       introBadge: 'Operating layers',
       introTitle: 'What usually sits inside the communication-routing layer',
       introDescription:
@@ -277,43 +277,43 @@ export const unifiedCommunicationSystemPage = {
       ],
     },
     qualification: {
-      title: 'Who this is designed for',
+      title: 'Is this the right fit for your business?',
       description:
-        'This works best where enquiry handling is spread across several channels and the business needs a clearer routing and ownership model, not just more notifications.',
-      strongFitTitle: 'Strong fit',
-      notDesignedTitle: 'Not designed for',
+        'This works best where enquiry handling is spread across several channels and the business needs clearer routing and ownership, not just more notifications.',
+      strongFitTitle: 'Strong fit if',
+      notDesignedTitle: 'Not the right fit if',
       strongFitItems: [
         {
-          title: 'Businesses with multi-channel enquiry flow',
+          title: 'You handle enquiries across multiple channels',
           description:
-            'A strong fit when calls, forms, chat, email, or SMS all matter commercially and the team struggles to keep them aligned.',
+            'Calls, forms, chat, email, or SMS all matter commercially and the team struggles to keep them aligned.',
         },
         {
-          title: 'Teams with ownership confusion',
+          title: 'Nobody clearly owns the next step',
           description:
-            'Useful when several people touch incoming messages but nobody has a clean system for who handles what next.',
+            'Several people touch incoming messages but there is no clean system for who handles what.',
         },
         {
-          title: 'Businesses that need cleaner communication continuity',
+          title: 'Conversations shift channels and lose context',
           description:
-            'Especially useful when conversations shift across channels and the context keeps getting lost or repeated.',
+            'Someone calls, then fills a form, then sends a message — and the team treats each one like a new case.',
         },
       ],
       notDesignedItems: [
         {
-          title: 'Businesses with only one simple enquiry channel',
+          title: 'You only have one simple enquiry channel',
           description:
-            'If nearly all new business arrives through one clear path already, another system may be more useful than a dedicated communication-routing layer.',
+            'If nearly all business arrives through one clear path already, a communication-routing layer may not be the priority.',
         },
         {
-          title: 'Teams expecting automation to fix unclear ownership',
+          title: 'You expect automation to fix unclear ownership',
           description:
-            'Tools can help, but the real improvement comes from defining routing rules and responsibility first.',
+            'Tools help, but the real improvement comes from defining routing rules and responsibility first.',
         },
         {
-          title: 'Cases where traffic or trust is the larger problem',
+          title: 'Traffic or trust is the larger problem',
           description:
-            'If not enough good enquiries are arriving in the first place, Smart Website, Local SEO, or Reputation work may need to lead instead.',
+            'If not enough good enquiries are arriving at all, visibility or reputation work may need to lead.',
         },
       ],
     },
@@ -321,30 +321,108 @@ export const unifiedCommunicationSystemPage = {
       badge: 'FAQ',
       title: 'Common questions about unified communication',
       description:
-        'Questions that come up when a business realises the communication problem is really a routing problem.',
+        'Practical questions from businesses that realise the communication problem is really a routing problem.',
       faqs: [
         {
-          question: 'Can this connect with missed call recovery and booking later?',
+          question: 'Can this connect with missed call recovery and booking?',
           answer:
-            'Yes. It often works best when it connects to missed call recovery, booking, CRM visibility, or AI lead handling. The routing layer helps those systems work together more cleanly.',
+            'Yes. It often works best when connected to missed call recovery, booking, CRM, or AI lead handling. The routing layer helps those systems work together more cleanly.',
         },
         {
           question: 'Do all channels need to be handled the same way?',
           answer:
-            'No. The point is not to force every message into an identical script. The point is to give each channel a clear route, owner, and next action.',
+            'No. The point is not to force every message into an identical script. It is to give each channel a clear route, owner, and next action.',
         },
         {
-          question: 'Is this useful for smaller teams too?',
+          question: 'Is this useful for smaller teams?',
           answer:
-            'Yes. Smaller teams often feel communication chaos more sharply because one missed or delayed response has a bigger impact. A simpler routing model can still make a meaningful difference.',
+            'Yes. Smaller teams feel communication chaos more sharply because one missed or delayed response has a bigger impact. A simpler routing model still makes a meaningful difference.',
+        },
+        {
+          question: 'How is this different from just using a shared inbox?',
+          answer:
+            'A shared inbox is one tool. This is a routing model — it defines who owns each conversation, what the next step is, and how context carries across channels.',
         },
       ],
       cssPrefix: 'unified-communication-faq',
     },
+    comparison: {
+      header: {
+        title: 'Inbox chaos vs structured communication routing',
+        description:
+          'Most businesses add more channels without fixing the routing behind them. Here is what that costs compared to a structured communication layer.',
+      },
+      items: [
+        {
+          type: 'before' as const,
+          title: 'Inbox chaos',
+          items: [
+            'Calls, forms, chat, and emails land in different places with no shared view',
+            'Nobody knows who is supposed to reply to what',
+            'Same enquiry gets answered twice or not at all',
+            'Context lost every time the conversation moves to a different channel',
+            'Follow-up depends on who happens to see the message first',
+          ],
+        },
+        {
+          type: 'after' as const,
+          title: 'Structured communication routing',
+          items: [
+            'All channels route into a shared view with clear ownership',
+            'Each conversation has a named owner and defined next step',
+            'Duplicate handling is reduced by matching contacts across channels',
+            'Context carries forward so the customer does not repeat themselves',
+            'Follow-up runs on routing rules, not personal inbox habits',
+          ],
+        },
+      ],
+    },
+    proof: {
+      header: {
+        title: 'What this looks like when routing is fixed',
+        description:
+          'A service business was losing conversations across calls, forms, and chat because nobody owned the routing between them.',
+      },
+      cards: [
+        {
+          title: 'Before: every channel was its own silo',
+          description: 'The team handled calls in one place, forms in another, and chat was checked whenever someone remembered. Enquiries slipped through the gaps daily.',
+          points: [
+            'Calls, forms, and chat handled in three separate places',
+            'No shared view of who was talking to whom',
+            'Enquiries regularly fell through the cracks',
+          ],
+        },
+        {
+          title: 'What we built: unified routing with ownership rules',
+          description: 'We built a routing layer that brought all channels into one view with clear ownership rules, priority logic, and defined next steps for each conversation type.',
+          points: [
+            'All channels routed into a shared view',
+            'Each conversation assigned to a named owner',
+            'Next-step rules defined by conversation type and urgency',
+          ],
+          featured: true,
+        },
+        {
+          title: 'After: fewer missed conversations, faster follow-up',
+          description: 'Missed conversations dropped significantly. The team responded faster because routing was automatic and ownership was clear from the first message.',
+          points: [
+            'Missed conversations dropped within the first month',
+            'Response times improved without adding staff',
+            'Team stopped duplicating effort across channels',
+          ],
+        },
+      ],
+    },
+  },
+  inlineCta: {
+    title: 'How many conversations are you losing across channels?',
+    description:
+      'Tell us how your enquiries arrive and where they get lost. We will show you what a clearer routing model looks like for your setup.',
   },
   cta: {
-    title: 'Make communication routing clearer',
+    title: 'Stop losing conversations between channels',
     description:
-      'If calls, forms, chat, and inbox messages are creating confusion, we can help define a clearer routing and ownership model.',
+      'Tell us about your enquiry flow. We will show you where the routing breaks and build a clearer communication layer.',
   },
 } satisfies ServicePageData;

@@ -32,7 +32,6 @@ Run: `npm run -s generate:global-inventory`
 | `ChecklistItem` | `src/components/reusable/single/ChecklistItem.tsx` |
 | `ChecklistRow` | `src/components/reusable/single/ChecklistRow.tsx` |
 | `CostRoiCard` | `src/components/reusable/single/CostRoiCard.tsx` |
-| `CTASection` | `src/components/reusable/single/CTASection.tsx` |
 | `DetailedStepCard` | `src/components/reusable/single/DetailedStepCard.tsx` |
 | `ErrorBoundary` | `src/components/reusable/single/ErrorBoundary.tsx` |
 | `FAQSection` | `src/components/reusable/single/FAQSection.tsx` |
@@ -64,7 +63,6 @@ Run: `npm run -s generate:global-inventory`
 | `*` | `src/components/reusable/sections/homepage` |
 | `*` | `src/components/reusable/sections/resources/contentExtraction.ts` |
 | `Callout` | `src/components/reusable/single/Callout.tsx` |
-| `CTASection` | `src/components/reusable/single/CTASection.tsx` |
 
 ### Sections domain: `blog` (from `src/components/reusable/sections/blog/index.ts`)
 | Export | Source |

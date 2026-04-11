@@ -27,7 +27,7 @@ export const websiteCrmIntegrationForSalons: BlogPostData = {
   authorKey: 'EDITORIAL',
   category: 'beauty-personal-care-industry',
   industries: ['salon'],
-  systems: ['smart-website-systems'],
+  systems: ['crm-automation'],
   topics: ['crm-integration'],
   primaryKeyword: 'website crm integration for salons',
   supportingKeywords: [
@@ -86,6 +86,39 @@ export const websiteCrmIntegrationForSalons: BlogPostData = {
         'A salon website without CRM integration is a booking tool. With integration, it becomes the front door of the client relationship — capturing data that powers personalisation, retention, and growth.',
     },
     {
+      type: 'content',
+      heading: 'Decision Section',
+      content: [
+        'Manual lead handling breaks at scale for salons because bookings, pricing questions, and follow-up requests arrive through different channels but still rely on people to piece the record together afterward.',
+        'That creates slow response, missed context, and revenue leakage through inconsistent follow-up. Once a salon depends on repeat bookings, staff coordination, and client retention, CRM infrastructure is not optional. It is the control layer that keeps demand, communication, and rebooking connected.',
+      ],
+      callout:
+        'If bookings enter one tool, enquiries sit in another, and follow-up depends on memory, the salon is losing revenue through disconnected operations rather than weak demand.',
+    },
+    {
+      type: 'content',
+      heading: 'Proof Block: RoofingWebsiteRebuildWithCrm',
+      content: [
+        'RoofingWebsiteRebuildWithCrm shows the same operational principle in a different service environment. Before the CRM system was connected properly, lead capture and follow-up depended on manual handling between website enquiries and the team workflow.',
+        'After the CRM system was integrated into the website process, the business moved from fragmented follow-up to one visible pipeline with structured routing and measurable improvement in response handling. The lesson for salons is direct: once website activity enters the CRM immediately, retention and rebooking workflows become reliable instead of manual.',
+      ],
+      list: [
+        'Before: disconnected website activity and manual handoff',
+        'After: integrated CRM workflow with structured routing',
+        'Measured improvement: faster handling and less revenue leakage between first contact and booked work',
+      ],
+    },
+    {
+      type: 'checklist',
+      heading: 'What Happens If You Do Not Fix This',
+      content: ['Disconnected salon systems create compounding losses even when bookings keep coming in.'],
+      items: [
+        'Missed leads sit across forms, booking tools, and inboxes without one accountable system',
+        'Follow-ups become inconsistent because reminders and next actions are not triggered centrally',
+        'Revenue falls through the gap when enquiries, consultations, and rebooking opportunities are not tracked properly',
+      ],
+    },
+    {
       type: 'takeaways',
       heading: 'Key Takeaways',
       items: [
@@ -99,9 +132,9 @@ export const websiteCrmIntegrationForSalons: BlogPostData = {
     },
     {
       type: 'cta',
-      heading: 'Connect Your Salon Website to CRM',
+      heading: 'Put Salon Enquiries and Bookings Into One CRM System',
       content:
-        'If your salon website and client management system operate independently, integration can unify them. See how website systems connect to CRM for service businesses.',
+        'If your salon website, bookings, and follow-up still operate as separate systems, crm-infrastructure-implementation gives you one structured workflow for capture, client history, reminders, and reactivation.',
     },
   ],
 };

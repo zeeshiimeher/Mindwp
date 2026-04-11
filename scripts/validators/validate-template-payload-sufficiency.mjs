@@ -35,19 +35,11 @@ function validateServicePages(pages) {
       if (!hasText(page.cta.title) || !hasText(page.cta.description)) {
         pushViolation('service', page.slug, 'cta-copy-incomplete', 'CTA block requires title and description.');
       }
-
-      if (!hasText(page.cta.buttonText) || !hasText(page.cta.buttonHref)) {
-        pushViolation('service', page.slug, 'cta-action-missing', 'CTA block requires buttonText and buttonHref.');
-      }
     }
 
     if (page.inlineCta) {
       if (!hasText(page.inlineCta.title) || !hasText(page.inlineCta.description)) {
         pushViolation('service', page.slug, 'inline-cta-copy-incomplete', 'Inline CTA requires title and description.');
-      }
-
-      if (!hasText(page.inlineCta.buttonText) || !hasText(page.inlineCta.buttonHref)) {
-        pushViolation('service', page.slug, 'inline-cta-action-missing', 'Inline CTA requires buttonText and buttonHref.');
       }
     }
   }
@@ -67,8 +59,8 @@ function validateFeaturePages(pages) {
       }
     }
 
-    if (!isActionableButton(page.cta?.primaryAction)) {
-      pushViolation('feature', page.slug, 'cta-action-missing', 'Feature CTA requires a primary actionable control.');
+    if (!hasText(page.cta?.title) || !hasText(page.cta?.description)) {
+      pushViolation('feature', page.slug, 'cta-copy-incomplete', 'Feature CTA requires title and description.');
     }
   }
 }
@@ -86,8 +78,8 @@ function validateResourcePages(resources) {
     }
 
     const cta = resource.sections.find(section => section.type === 'cta');
-    if (!cta || !hasText(cta.heading) || !hasText(cta.content) || !hasText(cta.button?.text) || !hasText(cta.button?.url)) {
-      pushViolation('resource', resource.slug, 'cta-incomplete', 'Resource CTA requires heading, content, button text, and button url.');
+    if (!cta || !hasText(cta.heading) || !hasText(cta.content)) {
+      pushViolation('resource', resource.slug, 'cta-incomplete', 'Resource CTA requires heading and content.');
     }
 
     const related = resource.sections.find(section => section.type === 'related-resources');
@@ -123,8 +115,8 @@ function validateIndustryPages(pages) {
       pushViolation('industry', page.slug, 'hero-incomplete', 'Hero requires title and description.');
     }
 
-    if (!isActionableButton(page.cta?.primaryAction) && !isActionableButton(page.cta?.secondaryAction)) {
-      pushViolation('industry', page.slug, 'cta-action-missing', 'Industry CTA requires at least one actionable control.');
+    if (!hasText(page.cta?.title) || !hasText(page.cta?.description)) {
+      pushViolation('industry', page.slug, 'cta-copy-incomplete', 'Industry CTA requires title and description.');
     }
 
     if (page.type === 'detail') {

@@ -30,23 +30,22 @@ export const conversionFunnelSystemPage = {
   category: 'Conversion Clarity Systems',
   seo: buildServiceSeo({
     slug,
-    title: 'Conversion Funnel System | Page Flow & Enquiry Handoff',
+    title: 'Conversion Funnel System for Service Businesses | MindWP',
     description:
-      'Conversion funnel systems for service businesses that need clearer page-to-enquiry journeys, fewer drop-offs, better offer structure, and more measurable funnel stages.',
+      'Stop losing visitors between the page and the enquiry. Structured conversion funnel systems that fix page flow, offer clarity, CTA logic, and enquiry handoff.',
     schemaName: 'Conversion funnel system for service businesses',
     schemaDescription:
       'A structured conversion funnel system covering page flow, offer clarity, call-to-action logic, and handoff between traffic, enquiry, and sales action.',
   }),
   hero: {
-    badge: 'Page-Flow & Offer Layer',
-    title:
-      'Most conversion problems are not traffic problems. They are clarity problems between the page and the next step.',
+    badge: 'Conversion Funnel System',
+      title: 'Conversion Funnels That Turn Traffic Into Enquiries',
     description:
-      'This service focuses on the conversion path itself — page flow, offer structure, and the handoff between attention, enquiry, and action. When those are clearer, fewer good prospects disappear in the middle.',
+      'Most conversion problems are not traffic problems. They are clarity problems — between the page, the offer, and the next step. This system fixes the funnel so fewer good prospects disappear in the middle.',
     list: [
-      'Clearer page-to-enquiry journeys',
-      'Stronger offer structure and decision flow',
-      'Less drop-off between traffic and action',
+        'Offer Clarity',
+        'Better Flow',
+        'Higher Intent',
     ],
     cssPrefix: 'conversion-funnel-hero',
     backgroundColor: 'bg-gradient-surface-muted',
@@ -80,34 +79,34 @@ export const conversionFunnelSystemPage = {
     },
     funnelBreakpoints: {
       badge: 'Typical conversion weak points',
-      title: 'Most funnel problems appear at a few predictable places',
+      title: 'Most funnel problems appear at three predictable places',
       description:
-        'The goal is not to make the funnel complicated. It is to remove the parts that make a good prospect hesitate, drift, or lose confidence.',
+        'The goal is not to make the funnel complicated. It is to remove the parts that make a good prospect hesitate or drift.',
       items: [
         {
           icon: LayoutTemplate,
           badge: 'Page clarity',
           title: 'The page says too much before it says the right thing',
           description:
-            'The visitor arrives, but the offer, relevance, and next step are buried under noise or weak structure.',
+            'The visitor arrives but the offer, relevance, and next step are buried under noise.',
           solution:
-            'Rebuild the page flow so the offer, context, proof, and action sequence are easier to follow.',
+            'Rebuild the page flow so the offer, proof, and action sequence are easier to follow.',
         },
         {
           icon: MousePointerClick,
           badge: 'CTA friction',
-          title: 'The next step feels vague or not worth taking yet',
+          title: 'The next step feels vague or not worth taking',
           description:
-            'The page may hold attention, but the CTA does not match the buyer stage so interest stops short of action.',
+            'The page holds attention, but the CTA does not match the buyer stage so interest stops short of action.',
           solution:
-            'Reshape the CTA so the action feels more natural, lower-friction, and tied to what the page actually promised.',
+            'Reshape the CTA so the action feels natural, low-friction, and tied to what the page promised.',
         },
         {
           icon: Workflow,
           badge: 'Handoff gap',
           title: 'The funnel ends at the form instead of continuing into a clear next step',
           description:
-            'Even when someone enquires, the path after submission may feel unclear, delayed, or disconnected.',
+            'Even when someone enquires, the path after submission is unclear, delayed, or disconnected.',
           solution:
             'Define what happens after conversion so the page, form, follow-up, and booking step behave like one system.',
         },
@@ -150,9 +149,9 @@ export const conversionFunnelSystemPage = {
     },
     processSection: {
       badge: 'Funnel review sequence',
-      title: 'How the conversion work usually moves forward',
+      title: 'How the conversion work moves forward',
       description:
-        'The details depend on the business, but the work follows a clear sequence so the page journey improves deliberately rather than by guesswork.',
+        'The details depend on the business, but the work follows a clear sequence so improvements are deliberate, not guesswork.',
       steps: [
         {
           number: '1',
@@ -182,7 +181,7 @@ export const conversionFunnelSystemPage = {
     },
     funnelLevers: {
       badge: 'What the work usually touches',
-      title: 'Conversion work improves several connected parts at once',
+      title: 'Conversion work touches several connected layers',
       description:
         'This is not only about page design. It is about the structure of the decision path and how the next step carries through.',
       items: [
@@ -225,43 +224,43 @@ export const conversionFunnelSystemPage = {
       ],
     },
     qualification: {
-      title: 'Who this is designed for',
+      title: 'Is this the right fit for your business?',
       description:
-        'This works best where traffic exists or is building, but the page journey between attention, understanding, enquiry, and action still feels weak or inconsistent.',
-      strongFitTitle: 'Strong fit',
-      notDesignedTitle: 'Not designed for',
+        'This works best where traffic exists but the page journey between attention, understanding, and action still loses too many people.',
+      strongFitTitle: 'Strong fit if',
+      notDesignedTitle: 'Not the right fit if',
       strongFitItems: [
         {
-          title: 'Businesses with traffic but weak page conversion',
+          title: 'You have traffic but weak page conversion',
           description:
-            'A strong fit when people are arriving but too many of them fail to move into a meaningful next step.',
+            'People are arriving but too many of them leave without moving into a meaningful next step.',
         },
         {
-          title: 'Teams with unclear offer or CTA structure',
+          title: 'Your offer or CTA structure is unclear',
           description:
-            'Useful when the service is real, but the page path still makes prospects work too hard to understand or act.',
+            'The service is real, but the page makes prospects work too hard to understand or act.',
         },
         {
-          title: 'Businesses needing better enquiry continuity',
+          title: 'Your enquiry handoff loses momentum',
           description:
-            'Especially useful when the conversion point exists, but the handoff into follow-up, booking, or sales action still leaks momentum.',
+            'The conversion point exists, but the handoff into follow-up, booking, or sales action still leaks.',
         },
       ],
       notDesignedItems: [
         {
-          title: 'Businesses with almost no relevant traffic or demand',
+          title: 'Your main problem is being found at all',
           description:
-            'If the main issue is being found at all, Local SEO or broader visibility work may need to lead before funnel refinement matters.',
+            'If the issue is no traffic or no demand, Local SEO or broader visibility work may need to lead first.',
         },
         {
-          title: 'Teams looking for cosmetic page tweaks only',
+          title: 'You want cosmetic page tweaks only',
           description:
-            'This page is about conversion structure, not surface edits with no change to the actual decision flow.',
+            'This is about conversion structure, not surface edits with no change to the decision flow.',
         },
         {
-          title: 'Cases where response handling is the bigger problem',
+          title: 'Response handling is the bigger leak',
           description:
-            'If the real leak happens after contact through missed calls, slow replies, or weak routing, another Tier 2 page may be the better entry point.',
+            'If the real loss happens after contact through missed calls, slow replies, or weak routing, that may need fixing first.',
         },
       ],
     },
@@ -269,30 +268,108 @@ export const conversionFunnelSystemPage = {
       badge: 'FAQ',
       title: 'Common questions about conversion funnel work',
       description:
-        'Questions that usually come up when a business realises traffic and page performance are not the same thing.',
+        'Practical questions from businesses that realise traffic and page performance are not the same thing.',
       faqs: [
         {
           question: 'Does this include landing page work?',
           answer:
-            'It can. Landing pages are often part of the funnel path. The broader point is making sure the message, CTA, and next-step structure work properly together.',
+            'It can. Landing pages are often part of the funnel path. The broader point is making sure the message, CTA, and next-step structure work together.',
         },
         {
-          question: 'Can this connect to CRM or booking later?',
+          question: 'Can this connect to CRM or booking systems?',
           answer:
-            'Yes. Funnel work often becomes more valuable when the enquiry handoff connects into CRM, booking, or structured follow-up rather than stopping at the form submission.',
+            'Yes. Funnel work becomes more valuable when the enquiry handoff connects into CRM, booking, or structured follow-up rather than stopping at the form.',
         },
         {
           question: 'Is this mainly for paid traffic?',
           answer:
-            'No. It can help paid traffic, organic traffic, local landing pages, and service pages. The key issue is the quality of the decision path after someone arrives.',
+            'No. It helps paid traffic, organic traffic, local landing pages, and service pages. The issue is the quality of the decision path after someone arrives.',
+        },
+        {
+          question: 'How is this different from a website redesign?',
+          answer:
+            'A redesign changes the whole site. Conversion funnel work focuses specifically on the path from attention to enquiry to action — the journey that turns visitors into leads.',
         },
       ],
       cssPrefix: 'conversion-funnel-faq',
     },
+    comparison: {
+      header: {
+        title: 'Scattered page tweaks vs structured conversion system',
+        description:
+          'Most businesses try to fix conversion by changing buttons or headlines in isolation. Here is what that looks like compared to fixing the actual funnel structure.',
+      },
+      items: [
+        {
+          type: 'before' as const,
+          title: 'Scattered page tweaks',
+          items: [
+            'Headlines and CTAs changed based on gut feeling',
+            'Multiple services crammed onto one page with no decision flow',
+            'Form submissions land in an inbox with no structured follow-up',
+            'No visibility into where visitors drop off or why',
+            'Each page redesign starts from scratch with no conversion framework',
+          ],
+        },
+        {
+          type: 'after' as const,
+          title: 'Structured conversion system',
+          items: [
+            'Page flow follows a clear sequence: relevance, proof, action',
+            'Each page has one focused offer with a deliberate CTA path',
+            'Enquiry handoff connects into booking, CRM, or follow-up workflow',
+            'Drop-off points visible and measured at each funnel stage',
+            'Conversion framework improves over time with real data',
+          ],
+        },
+      ],
+    },
+    proof: {
+      header: {
+        title: 'What this looks like when the funnel is fixed',
+        description:
+          'A service business had strong traffic but weak conversion. Visitors were reading the pages, but the offer, CTA, and follow-up path were too unclear to drive action.',
+      },
+      cards: [
+        {
+          title: 'Before: traffic arriving, nobody converting',
+          description: 'The business had good search rankings and decent traffic, but the pages mixed too many services, the CTAs were generic, and the enquiry handoff was vague.',
+          points: [
+            'Service pages tried to cover too much at once',
+            'CTAs were generic across every page',
+            'Enquiry form led to a slow, unstructured follow-up process',
+          ],
+        },
+        {
+          title: 'What we built: focused funnel with clear handoff',
+          description: 'We restructured the page flow so each service page had one focused offer, proof that matched the buyer stage, and a CTA connected to a real follow-up step.',
+          points: [
+            'Each service page focused on one clear offer',
+            'CTAs matched the buyer stage and page intent',
+            'Enquiry handoff connected into booking and CRM workflow',
+          ],
+          featured: true,
+        },
+        {
+          title: 'After: same traffic, more enquiries moving forward',
+          description: 'Without increasing traffic, the business saw more visitors completing the enquiry step and more of those enquiries turning into real conversations.',
+          points: [
+            'Enquiry rate improved with no change in traffic volume',
+            'Follow-up happened faster because handoff was structured',
+            'Drop-off points became visible and fixable over time',
+          ],
+        },
+      ],
+    },
+  },
+  inlineCta: {
+    title: 'Where is your funnel losing people?',
+    description:
+      'Tell us about your traffic, pages, and conversion path. We will show you where the funnel is leaking and what to fix first.',
   },
   cta: {
-    title: 'Turn more attention into clearer next steps',
+    title: 'Turn more attention into real next steps',
     description:
-      'If traffic is arriving but the page journey still weakens conversion, we can help define a stronger funnel path.',
+      'Tell us about your traffic and page performance. We will show you where the conversion path is breaking and how to fix it.',
   },
 } satisfies ServicePageData;

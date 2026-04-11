@@ -21,23 +21,22 @@ export const reviewAutomationSystemPage = {
   category: 'Trust Systems',
   seo: buildServiceSeo({
     slug,
-    title: 'Get More Google Reviews on Autopilot | For Service Businesses',
+    title: 'Review Automation System for Service Businesses | MindWP',
     description:
-      'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+      'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
     schemaName: 'Automated review collection for service businesses',
     schemaDescription:
-      'A done-for-you setup that sends review requests after every job, catches unhappy customers before they post publicly, and keeps fresh Google reviews coming in without anyone chasing.',
+      'Done-for-you review automation that sends requests after every job, catches complaints before they go public, and keeps fresh Google reviews coming in consistently.',
   }),
   hero: {
-    badge: 'Reviews on Autopilot',
-    title:
-      'Get more 5-star reviews without asking every customer yourself',
+    badge: 'Review Automation System',
+      title: 'Get More Reviews Without Chasing Customers Manually',
     description:
-      'Your team does great work — but happy customers walk away without leaving a review. We set things up so they get asked right after a good experience, when they\'re most likely to say yes.',
+      'Your team does great work but happy customers walk away without leaving proof. We set things up so they get asked right after a good experience, when they are most likely to say yes. Complaints get caught before they hit Google.',
     list: [
-      'Happy customers get a friendly ask right after the job is done',
-      'If someone\'s unhappy, they tell you privately — not Google',
-      'Your review count goes up every month without your team lifting a finger',
+        'Timed Requests',
+        'Complaint Routing',
+        'Review Growth',
     ],
     cssPrefix: 'review-automation-hero',
     backgroundColor: 'bg-gradient-surface-muted',
@@ -45,14 +44,14 @@ export const reviewAutomationSystemPage = {
   sections: {
     foundation: {
       badge: 'The real problem',
-      title: 'You do great work — but your reviews don\'t show it',
+      title: 'You do great work. Your Google reviews do not show it.',
       description:
-        'Most businesses lose reviews because nobody remembers to ask. Here\'s what actually happens — and what changes when you stop relying on memory.',
+        'Reviews do not happen because nobody remembers to ask. Here is what that actually costs and what changes when the asking is automatic.',
       painPoints: [
         {
-          before: 'Your team finishes a job, the customer says thanks, and everyone moves on. A week later, nobody\'s asked for a review and the moment\'s gone.',
+          before: 'The job finishes, the customer says thanks, and everyone moves on. A week later, nobody has asked for a review and the moment is gone.',
           after:
-            'The customer gets a short, friendly message the same day — while they still remember how good the job was.',
+            'The customer gets a short, friendly message the same day while they still remember how good the job was.',
         },
         {
           before:
@@ -63,7 +62,7 @@ export const reviewAutomationSystemPage = {
         {
           before: 'A frustrated customer posts a one-star review on Google before you even know there was an issue.',
           after:
-            'If someone\'s unhappy, they\'re asked to share their feedback with you directly — giving you a chance to fix it before it goes public.',
+            'Unhappy customers are asked to share feedback with you directly, giving you a chance to fix it before it goes public.',
         },
       ],
     },
@@ -208,19 +207,19 @@ export const reviewAutomationSystemPage = {
     qualification: {
       title: 'Is this right for your business?',
       description:
-        'This is for businesses that want more Google reviews coming in without chasing every customer yourself. If you need a bigger reputation overhaul — monitoring, responding to reviews, managing your online image across multiple platforms — our full Reputation & Review service might be a better starting point.',
-      strongFitTitle: 'Great fit if',
-      notDesignedTitle: 'Probably not the right fit if',
+        'This is for businesses that want more Google reviews coming in without chasing every customer. If you need broader reputation management across platforms, our full Reputation & Review service covers that.',
+      strongFitTitle: 'Strong fit if',
+      notDesignedTitle: 'Not the right fit if',
       strongFitItems: [
         {
-          title: 'You do solid work but Google doesn\'t show it',
+          title: 'You do solid work but Google does not show it',
           description:
-            'Customers tell you how great the job was — then walk away without leaving a review. Your Google profile doesn\'t reflect the work you actually do.',
+            'Customers tell you how great the job was then walk away without leaving a review. Your profile does not reflect the work you do.',
         },
         {
-          title: 'You want reviews to come in on their own',
+          title: 'You want reviews coming in without manual effort',
           description:
-            'You don\'t want a massive reputation project. You just want happy customers to actually leave reviews without you having to chase every one.',
+            'You do not want a big reputation project. You want happy customers to leave reviews without anyone remembering to ask.',
         },
         {
           title: 'People check your reviews before they call',
@@ -230,50 +229,128 @@ export const reviewAutomationSystemPage = {
       ],
       notDesignedItems: [
         {
-          title: 'Your main problem is that people can\'t find you',
+          title: 'Your main problem is that people cannot find you',
           description:
-            'If the issue is visibility — not enough people landing on your site — then Local SEO or improving your website will help more than review collection.',
+            'If the issue is visibility rather than trust, Local SEO or website improvements will help more than review collection.',
         },
         {
           title: 'Your customer experience has gaps',
           description:
-            'Asking for reviews only works when the work is already good. If customers regularly have problems, fixing the experience comes first.',
+            'Asking for reviews only works when the work is already good. If customers regularly have problems, the experience needs fixing first.',
         },
         {
           title: 'You need full reputation management across platforms',
           description:
-            'If you also need help monitoring what people say about you online, responding to reviews publicly, and managing your image across multiple sites — our broader reputation service covers that.',
+            'If you also need monitoring, public response management, and cross-platform image control, the broader reputation service covers that.',
+        },
+      ],
+    },
+    comparison: {
+      header: {
+        title: 'Manual review requests vs automated review collection',
+        description:
+          'Most businesses rely on memory and occasional asks. Here is what that costs compared to automated review collection.',
+      },
+      items: [
+        {
+          type: 'before' as const,
+          title: 'Manual review requests',
+          items: [
+            'Reviews only happen when someone remembers to ask',
+            'The timing is wrong \u2014 asks go out days or weeks after service',
+            'No way to separate happy customers from unhappy ones',
+            'Complaints appear on Google before you know there is a problem',
+            'Review count stays flat while competitors grow theirs',
+          ],
+        },
+        {
+          type: 'after' as const,
+          title: 'Automated review collection',
+          items: [
+            'Every completed job triggers a review request automatically',
+            'Requests go out the same day while the experience is fresh',
+            'Happy customers get directed to Google, unhappy ones reach you privately',
+            'Complaints caught and routed internally before they go public',
+            'Review count grows consistently month after month',
+          ],
+        },
+      ],
+    },
+    proof: {
+      header: {
+        title: 'What this looks like when it is running',
+        description:
+          'A local service business had high customer satisfaction but only a handful of Google reviews. Competitors with worse service ranked higher because they had more.',
+      },
+      cards: [
+        {
+          title: 'Before: happy customers, almost no reviews',
+          description: 'The business completed hundreds of jobs per year with strong satisfaction. But nobody asked for reviews consistently. Their Google profile had fewer than 20 reviews while competitors had hundreds.',
+          points: [
+            'Fewer than 20 Google reviews after years in business',
+            'No structured process for requesting feedback after jobs',
+            'Competitors with worse service ranked higher due to review volume',
+          ],
+        },
+        {
+          title: 'What we built: automated requests with complaint routing',
+          description: 'We set up automated review requests triggered after every completed job, routed unhappy customers to private feedback, and sent friendly reminders to those who did not respond the first time.',
+          points: [
+            'Review requests sent automatically after service completion',
+            'Unhappy customers routed to internal feedback channel',
+            'Follow-up reminders for non-responders with automatic stop',
+          ],
+          featured: true,
+        },
+        {
+          title: 'After: consistent review growth and fewer public complaints',
+          description: 'Within three months, review volume grew significantly. The business started appearing higher in local search as review signals strengthened. Complaints were caught earlier and resolved privately.',
+          points: [
+            'Review count grew consistently month over month',
+            'Local search visibility improved as review signals strengthened',
+            'Complaints caught earlier \u2014 fewer one-star public reviews',
+          ],
         },
       ],
     },
     faqSection: {
       badge: 'FAQ',
-      title: 'Common questions about getting more reviews',
+      title: 'Common questions about review automation',
       description:
-        'Straight answers to what people want to know before we start.',
+        'Straight answers to what people want to know before getting started.',
       faqs: [
         {
           question: 'Do I need to change anything about how I run my business?',
           answer:
-            'No. Everything runs around how you already work. Your team finishes a job the same way they always do — the review request goes out on its own after that.',
+            'No. Everything runs around how you already work. Your team finishes a job the same way they always do and the review request goes out automatically after that.',
         },
         {
           question: 'Will this actually help me get more Google reviews?',
           answer:
-            'Yes. Most businesses see a noticeable jump because customers are being asked right after a good experience — when they\'re happy and it only takes a minute to respond.',
+            'Yes. Most businesses see a noticeable jump because customers are asked right after a good experience when they are happy and it only takes a minute.',
         },
         {
-          question: 'How is this different from your full reputation service?',
+          question: 'How is this different from the full reputation service?',
           answer:
-            'This focuses purely on getting more reviews coming in. If you also need help with monitoring what people say about you, responding to reviews, and managing your overall online reputation, our broader service covers all of that.',
+            'This focuses purely on getting more reviews coming in. If you also need monitoring, public response management, and cross-platform reputation control, the broader service covers all of that.',
+        },
+        {
+          question: 'What if a customer has a complaint?',
+          answer:
+            'They are routed to a private feedback channel so you can address the issue before it becomes a public review. You see the complaint, you act on it, and it stays between you.',
         },
       ],
       cssPrefix: 'review-automation-faq',
     },
   },
-  cta: {
-    title: 'Want more reviews without the chasing?',
+  inlineCta: {
+    title: 'How many reviews are you missing every month?',
     description:
-      'If your customers are happy but your Google reviews don\'t show it, let\'s sort that out. We\'ll set things up so the asks go out on their own and the reviews start rolling in.',
+      'Tell us how review requests work today. We will show you what is being left on the table and what automated collection would change.',
+  },
+  cta: {
+    title: 'Get more reviews without the chasing',
+    description:
+      'Tell us about your current review situation. We will set things up so the asks go out after every job and the reviews start growing on their own.',
   },
 } satisfies ServicePageData;

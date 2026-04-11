@@ -21,25 +21,22 @@ export const wordpressDevelopmentPage = {
   category: 'Implementation Services',
   seo: buildServiceSeo({
     slug,
-    title:
-      'WordPress Development | Structured Implementation for Businesses',
+    title: 'WordPress Development for Service Businesses | MindWP',
     description:
-      'Structured WordPress website development for service businesses that need clear site architecture, better enquiry flow, cleaner implementation, and long-term maintainability.',
+      'WordPress website development built around how the business works. Clear service architecture, proper enquiry flow, and a foundation that stays manageable after launch.',
     schemaName: 'WordPress website development for service businesses',
     schemaDescription:
       'Structured WordPress implementation focused on clear service architecture, enquiry handling, maintainability, and future-ready foundations.',
   }),
   hero: {
-    badge: 'Implementation Pathway',
-    title:
-      'A WordPress website should be built around how the business works — not just how it looks',
+    badge: 'WordPress Website Development',
+      title: 'WordPress Builds That Support Services Enquiries and Growth',
     description:
       'This is for service businesses that need a proper WordPress foundation. Not pages thrown together quickly, but a site where services are clearly presented, enquiry paths make sense, and the whole thing stays manageable after launch.',
     list: [
-      'Services and pages organised around how the business operates',
-      'Enquiry pathways that guide visitors toward the right next step',
-      'CRM-ready foundations for future systems',
-      'A build that stays maintainable as things change',
+        'Service Architecture',
+        'Enquiry Paths',
+        'CRM Ready',
     ],
     cssPrefix: 'wordpress-development-hero',
     backgroundColor: 'bg-gradient-surface-muted',
@@ -49,7 +46,7 @@ export const wordpressDevelopmentPage = {
       badge: 'Why this matters',
       title: 'Most WordPress problems start before the build even begins',
       description:
-        "The problem is rarely WordPress itself. It is what happens when page-building starts before anyone has agreed on the site's purpose, service presentation, or enquiry flow.",
+        'The problem is rarely WordPress itself. It is what happens when building starts before anyone has agreed on the site purpose, service presentation, or enquiry flow.',
       painPoints: [
         {
           before: 'Pages are planned one by one with no overall logic holding them together.',
@@ -65,7 +62,7 @@ export const wordpressDevelopmentPage = {
           before:
             'The site launches looking fine but quickly becomes hard to update, inconsistent, or fragile.',
           after:
-            'The build is organised so the site can keep improving without creating internal mess.',
+            'The build is organised so the site keeps improving without creating internal mess.',
         },
       ],
     },
@@ -150,7 +147,7 @@ export const wordpressDevelopmentPage = {
       badge: 'Implementation process',
       title: 'How WordPress projects move from brief to handover',
       description:
-        'The exact path depends on the project, but the process usually follows a clear sequence so the build stays controlled and the outcome stays useful.',
+        'The exact path depends on the project, but the process follows a clear sequence so the build stays controlled.',
       steps: [
         {
           number: '1',
@@ -224,63 +221,63 @@ export const wordpressDevelopmentPage = {
       ],
     },
     qualification: {
-      title: 'Who this pathway fits best',
+      title: 'Is this the right fit for your business?',
       description:
-        'This works well for businesses that want a proper WordPress foundation — not just a quick launch.',
-      strongFitTitle: 'Strong fit',
-      notDesignedTitle: 'Not designed for',
+        'This works best for businesses that want a proper WordPress foundation — not just a quick launch.',
+      strongFitTitle: 'Strong fit if',
+      notDesignedTitle: 'Not the right fit if',
       strongFitItems: [
         {
-          title: 'Service businesses that need a clearer foundation',
+          title: 'Your website should reflect how the business actually works',
           description:
-            'Best when the website should reflect how the business actually works today, not just look presentable.',
+            'The site needs to present services clearly, handle enquiries properly, and make sense operationally.',
         },
         {
-          title: 'Teams planning for future systems',
+          title: 'You are planning for future systems',
           description:
-            'A good fit when CRM, SEO, reviews, automation, or commerce may follow and the site needs to be ready for them.',
+            'CRM, SEO, reviews, automation, or commerce may follow and the site needs to be ready for them.',
         },
         {
-          title: 'Owners who value maintainability',
-          description: 'Useful when long-term clarity matters more than launch-day speed alone.',
+          title: 'You value maintainability over launch-day speed',
+          description: 'Long-term clarity matters more than getting something live as fast as possible.',
         },
       ],
       notDesignedItems: [
         {
-          title: 'Quick template swaps with no planning behind them',
+          title: 'You want a quick template swap with no planning',
           description:
             'If the goal is only to launch something fast with no care for what happens afterwards, this is not the right approach.',
         },
         {
-          title: 'Tool-led projects that start with a plugin list',
-          description: 'The project should start from business needs, not the other way around.',
+          title: 'Your project starts with a plugin list',
+          description: 'The build should start from business needs, not the other way around.',
         },
         {
-          title: 'Large software-product builds',
+          title: 'You need a large software product built',
           description:
-            'This pathway is for service-business website implementation, not SaaS product engineering.',
+            'This is for service-business website implementation, not SaaS product engineering.',
         },
       ],
     },
     faqSection: {
       badge: 'FAQ',
       title: 'Common questions about WordPress development',
-      description: 'Practical questions that usually come up before a WordPress project begins.',
+      description: 'Practical questions that come up before a WordPress project begins.',
       faqs: [
         {
           question: 'Can this include a redesign as well as a rebuild?',
           answer:
-            'Yes. Some projects include a redesign or restructuring phase before implementation. The work is still framed around clarity and usefulness rather than visual change for its own sake.',
+            'Yes. Some projects include a redesign or restructuring phase before implementation. The work is framed around clarity and usefulness rather than visual change for its own sake.',
         },
         {
           question: 'Do you work with one specific builder or theme?',
           answer:
-            'No. The builder or theme approach depends on what best supports the project. Those choices stay secondary to the business needs and long-term maintainability.',
+            'No. The builder or theme approach depends on what best supports the project. Those choices stay secondary to business needs and long-term maintainability.',
         },
         {
           question: 'Can you migrate an existing website into WordPress?',
           answer:
-            'Yes, when that is the right move. Migration can be part of this pathway, or it can lead into a dedicated migration and consolidation scope if the project is more involved.',
+            'Yes, when that is the right move. Migration can be part of this pathway, or it can lead into a dedicated migration scope.',
         },
         {
           question: 'Will the website support SEO and CRM later?',
@@ -290,10 +287,83 @@ export const wordpressDevelopmentPage = {
       ],
       cssPrefix: 'wordpress-development-faq',
     },
+    comparison: {
+      header: {
+        title: 'Template-first build vs structured WordPress development',
+        description:
+          'Most WordPress projects start from a template or plugin list. Here is what that looks like compared to building around how the business actually works.',
+      },
+      items: [
+        {
+          type: 'before' as const,
+          title: 'Template-first build',
+          items: [
+            'Pages built one by one with no overall content logic',
+            'Theme and plugins chosen first, business needs fitted around them',
+            'Enquiry flow depends on whichever form plugin was installed',
+            'No plan for how the site will evolve after launch',
+            'Editing becomes fragile because the build was not structured for change',
+          ],
+        },
+        {
+          type: 'after' as const,
+          title: 'Structured WordPress development',
+          items: [
+            'Pages organised around service priorities and visitor intent',
+            'Technology choices support the business outcome, not the other way around',
+            'Enquiry flow designed into the site architecture from the start',
+            'CRM, SEO, and automation foundations built in from day one',
+            'Editing model stays clean because the structure was planned for it',
+          ],
+        },
+      ],
+    },
+    proof: {
+      header: {
+        title: 'What this looks like when it is done properly',
+        description:
+          'A roofing company needed a WordPress website that reflected how the business actually worked — not just a brochure with a contact form.',
+      },
+      cards: [
+        {
+          title: 'Before: a template site that did not match the business',
+          description: 'The existing website was built from a generic template. Services were listed but not properly structured. The enquiry form went to a shared inbox with no routing or follow-up.',
+          points: [
+            'Generic template with no service-specific page logic',
+            'Enquiry form went to a shared inbox with no workflow',
+            'No foundation for SEO, CRM, or future systems',
+          ],
+        },
+        {
+          title: 'What we built: structured WordPress foundation',
+          description: 'We rebuilt the site around the business structure — clear service pages, defined enquiry paths, CRM-ready forms, and a content model that could grow with the business.',
+          points: [
+            'Service pages structured around how the business operates',
+            'Enquiry paths connected to CRM and routing logic',
+            'Content model built for future SEO and system expansion',
+          ],
+          featured: true,
+        },
+        {
+          title: 'After: a website that works as a business tool',
+          description: 'The site became the foundation for everything that followed — local SEO, review management, lead handling, and CRM. Each system connected cleanly because the WordPress build was structured for it.',
+          points: [
+            'SEO, reviews, and CRM all connected to the site foundation',
+            'Enquiry volume increased because the paths were clearer',
+            'Site stayed maintainable as the business added more services',
+          ],
+        },
+      ],
+    },
+  },
+  inlineCta: {
+    title: 'Need a WordPress site that actually works for the business?',
+    description:
+      'Tell us about your services and how enquiries come in. We will outline what the build should cover and the best path forward.',
   },
   cta: {
-    title: 'Need a WordPress site built around how the business works?',
+    title: 'Build a WordPress site around how your business works',
     description:
-      'Tell us about your services and how enquiries come in now. We\'ll outline what the build should cover and the best implementation path forward.',
+      'Tell us about your services and how enquiries come in now. We will outline what the build should cover and the best implementation path forward.',
   },
 } satisfies ServicePageData;

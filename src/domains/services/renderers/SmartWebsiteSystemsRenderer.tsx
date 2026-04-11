@@ -15,7 +15,6 @@ import { IconBenefitCard } from '@/components/reusable/single/IconBenefitCard';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { SmartCTA } from '@/components/system/SmartCTA';
 import { smartWebsiteSystemsPage } from '@/domains/services/data/smart-website-systems';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 import type { ServicePageSections } from '@/domains/services/types';
@@ -118,15 +117,6 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               </div>
             </SectionWrapper>
           )}
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
-            title={inlineCtaTitle}
-            description={inlineCtaDescription}
-            cssPrefix='smart-websites-cta'
-            primaryActionVariant='white'
-          />
           {data.sections.coreLayer && (
             <ServiceSpectrumCardsSection
               title={data.sections.coreLayer.header.title}
@@ -176,6 +166,16 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               </div>
             </SectionWrapper>
           )}
+
+          <SmartCTA
+            system={data.systems?.[0] ?? 'smart-website-systems'}
+            slug={slug}
+            pageType='service'
+            title={inlineCtaTitle}
+            description={inlineCtaDescription}
+            cssPrefix='smart-websites-cta'
+            primaryActionVariant='white'
+          />
 
           {/* How It Works */}
           {data.sections.process && (

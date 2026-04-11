@@ -76,18 +76,18 @@ function main() {
     });
   }
 
-  if (!smartCtaSource.includes('label: resolveCtaLabel(resolvedSystem)')) {
+  if (!smartCtaSource.includes('resolveCtaLabel({') || !smartCtaSource.includes('system: resolvedSystem')) {
     issues.push({
       code: 'missing_resolver_label_usage',
-      message: 'SmartCTA must resolve CTA labels from resolvedSystem.',
+      message: 'SmartCTA must resolve CTA labels from the normalized resolvedSystem value.',
     });
   }
 
-  if (!smartCtaSource.includes('system: resolvedSystem')) {
+  if (!smartCtaSource.includes('system: resolvedSystem') || !smartCtaSource.includes('sourceType: pageType')) {
     issues.push({
       code: 'missing_resolved_system_href_usage',
       message:
-        'SmartCTA href generation must use the same resolvedSystem value as label resolution.',
+        'SmartCTA href generation must use resolvedSystem with sourceType and slug when building contact hrefs.',
     });
   }
 

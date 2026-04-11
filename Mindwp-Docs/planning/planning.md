@@ -1,1284 +1,1260 @@
-# 🚦 EXECUTION STATUS DASHBOARD
+# EXECUTION PLANNING SYSTEM
 
-## ✅ COMPLETED
-
-- System Architecture (deterministic, validated)
-- Graph System (fully deterministic, no duplication)
-- Phase 0 (Partial → CTA structure enforced)
-- Phase 1 (SmartCTA ownership migration)
-   - Services → complete
-   - Features → complete
-   - Blogs → complete
-   - Resources → complete
-   - Industries → complete
-   - Homepage → complete
-- Phase 2 → CTA System Hardening + Intelligence Layer
-- Phase 2.5 → CTA Tone System (initial implementation)
-- CTA Data Cleanup (buttonText / buttonHref removed)
-
--------------------------------------
-
-## 🟡 IN PROGRESS
-
-- Phase 3 → Revenue Activation
-   - CRM integration patch
-   - Service-page improvement
-   - BOFU decision pages
-   - Proof integration
-   - Validation fixes
-
-    TASK: CTA LABEL OPTIMIZATION (SHORT VS DESCRIPTIVE)
-    STATUS: NEEDS PLANNING
-
-    Context:
-    - Current CTA labels are descriptive and long
-    - Examples:
-       → "See How This Applies to Your Business"
-       → "Get Your Smart Website System Built"
-    - These are:
-       → clear ✅
-       → but too long for UI and conversion ❌
-
-    Problem:
-    - CTA labels lack visual sharpness
-    - Not optimized for quick scanning
-    - Weak "punch" for high-conversion contexts
-
-    Proposed Solution:
-    - Introduce a CTA LABEL STRATEGY SYSTEM
-    - type CtaTone = 'short' | 'descriptive'
-    - SmartCTA will support both:
-       → short = high-impact, conversion-focused
-       → descriptive = clarity-focused
-
-    Examples:
-    - SERVICE:
-       → short = "Get Started"
-       → descriptive = "Get Your System Built"
-    - FEATURE:
-       → short = "See Demo"
-       → descriptive = "See How This Works"
-    - INDUSTRY:
-       → short = "See Solution"
-       → descriptive = "See How This Applies to Your Business"
-
-    Future Implementation:
-    - Add ctaTone config inside SmartCTA
-    - Default = descriptive (current behavior)
-    - Allow global switch to short
-    - Optional: pageType-based tone mapping
-
-    Why Not Implement Now:
-    - CTA system was just stabilized
-    - Avoid introducing instability during Phase 2
-    - Requires controlled rollout
-
-    Next Step:
-    - Plan CTA tone system
-    - Then implement as Phase 2.5 or Phase 3 task
-
-      TASK: PHASE 2 FINAL VALIDATION
-      STATUS: COMPLETED
-
-      Audit Result:
-      - PASS
-
-      Verified:
-      - Zero SmartCTA spread props
-      - Zero primaryButtonHref
-      - Zero wrapper-based CTA control in CTA section wrappers
-      - SmartCTA explicit context enforced: system / pageType / slug
-
-      TASK: PHASE 2.5 — CTA TONE SYSTEM (SHORT LABELS)
-      STATUS: COMPLETED (INITIAL IMPLEMENTATION)
-
-      Execution Started:
-      - SmartCTA tone system implementation initiated
-      - Backward compatibility must be preserved
-
-      Context:
-      - Phase 2 is completed
-      - SmartCTA is now:
-         → deterministic
-         → single source of truth
-         → fully enforced
-      - This enables safe introduction of CTA tone system
-
-      Problem:
-      - Current CTA labels are:
-         → descriptive
-         → long
-         → not visually sharp
-      - Example:
-         → "See How This Applies to Your Business"
-      - Issues:
-         → poor scanability
-         → weak visual impact
-         → not ideal for compact UI
-
-      Goal:
-      - Introduce CTA tone system
-      - type CtaTone = 'short' | 'descriptive'
-
-      System Design (Planning Only):
-      - SmartCTA will support:
-         → ctaTone?: 'short' | 'descriptive'
-      - Default:
-         → descriptive (current behavior)
-
-      Label Examples:
-      - SERVICE:
-         → short = "Get Started"
-         → descriptive = "Get Your System Built"
-      - FEATURE:
-         → short = "See How"
-         → descriptive = "See How This Works"
-      - INDUSTRY:
-         → short = "See Solution"
-         → descriptive = "See How This Applies to Your Business"
-
-      Tone Rules:
-      - Short CTA labels must be max 2-3 words
-      - Short CTA labels must be action-oriented
-      - Short CTA labels must be system-aligned, not product-toned
-      - No SaaS or product language
-      - No vague labels
-
-      Approved Label Patterns:
-      - "Start Now"
-      - "Get Started"
-      - "See How"
-      - "Explore"
-      - "See Solution"
-      - "Learn More"
-      - "See Results"
-
-      Restricted Language:
-      - Demo
-      - Try
-      - Free
-      - Sign up
-      - Subscribe
-      - Buy
-      - Download
-
-      Rules:
-      - No label defined in pages
-      - No manual overrides
-      - SmartCTA decides everything
-
-      Future Extension (Do Not Implement):
-      - global tone switch
-      - pageType-based tone mapping
-      - A/B testing support
-
-      Result:
-      - tone system added to SmartCTA
-      - backward compatibility preserved
-      - no regression in existing CTAs
-
-      Next Step:
-      - Controlled rollout of short tone (future phase)
-
--------------------------------------
-
-## 🔵 READY FOR EXECUTION
-
-- Phase 4 → Service Alignment
-- Phase 4.1 → Service Pages Level 5 Upgrade
-- Phase 4.2 → Global Metadata & Graph Alignment
-- Phase 4.3 → CTA Standardization (all domains)
-- Phase 4.4 → Domain Landing Pages (step-by-step)
-- Phase 4.5 → Industry Pages Rewrite
-- Phase 4.6 → Case Studies Rewrite
-- Phase 4.7 → Writing System Upgrade
-- Phase 4.8 → Blog & Resource Alignment
-
--------------------------------------
-
-## 🔴 REQUIRES AUDIT / PLANNING
-
-- BOFU Page System (Comparison + Decision layer)
-- Conversion Strategy per cluster
-- Offer positioning per service
-- Pricing / packaging strategy (if applicable)
-
--------------------------------------
-
-# EXECUTION PLAN — REVENUE ACTIVATION LAYER
-
-Status: ACTIVE  
-Last Updated: [date]
-
--------------------------------------
-EXECUTION MODEL — PHASES AS EXECUTION LAYERS
--------------------------------------
-
-Principle:
-- Phases are the execution order.
-- No separate execution priority list exists outside the phases.
-- Complete one phase or subphase before moving to the next layer.
-
-Active Execution Layers:
-1. Phase 0 — System Stabilization
-2. Phase 3 — Revenue Activation
-3. Phase 4 — Service Alignment
-4. Phase 4.1 — Service Pages Level 5 Upgrade
-5. Phase 4.2 — Global Metadata & Graph Alignment
-6. Phase 4.3 — CTA Standardization
-7. Phase 4.4 — Domain Landing Pages
-8. Phase 4.5 — Industry Pages Rewrite
-9. Phase 4.6 — Case Studies Rewrite
-10. Phase 4.7 — Writing System Upgrade
-11. Phase 4.8 — Blog & Resource Alignment
-
--------------------------------------
-SYSTEM STATE (LOCKED)
--------------------------------------
-
-- Authority Layer: COMPLETE ✅
-- Validation Layer: COMPLETE ✅
-- Topics: LOCKED (no new topics)
-- Services: DEFINED
-
-We are NOT:
-- adding new topics
-- redesigning architecture
-
-We are:
-- improving conversion
-- activating revenue layer
-
--------------------------------------
-DOMAIN PRIORITY CONTEXT
--------------------------------------
-
-Priority Order:
-
-1. Services (core revenue layer)
-2. Service Landing Page
-3. CRM Integration Content
-4. Blogs & Resources
-5. Case Studies
-6. Industry Pages
+Model: GPT-5.4
 
 Purpose:
-Ensure revenue-first execution
+This document is the execution control layer for revenue activation, service-page upgrades, and alignment work across the live MindWP system.
 
--------------------------------------
-GLOBAL AUDIT & ITERATION LAYER
--------------------------------------
+This is a preservation-first planning document.
 
-Goal:
-Continuously audit → plan → execute → update (loop-based system)
+It must:
+- preserve architecture decisions
+- preserve phase logic
+- preserve constraints and guardrails
+- remove duplication and confusion
+- make execution order obvious
 
-Approach:
-- Audit real repo state (NOT assumptions)
-- Convert findings → actionable tasks
-- Execute in phases (no jumping)
-- Update this doc after each execution cycle
+---
+
+# 1. EXECUTION OVERVIEW
+
+## System We Are Building
+
+MindWP is building a controlled revenue activation layer on top of an already-defined systems-first architecture.
+
+The active objective is:
+- strengthen service pages
+- align conversion paths
+- protect content-role integrity
+- route authority content upward into one service architecture
+
+This is not a redesign cycle.
+This is not topic expansion.
+This is not broad content production.
+
+This is an execution and alignment cycle.
+
+---
+
+## Current System State (Locked)
+
+Completed foundation:
+- System Architecture = complete
+- Graph System = deterministic and complete
+- Authority Layer = complete
+- Validation Layer = complete
+- Services = defined
+- Topics = locked
+- Phase 1 CTA ownership migration = complete
+- Phase 2 CTA hardening + intelligence layer = complete
+- Phase 2.5 CTA tone system = initial implementation complete
+- CTA data cleanup = complete
+
+In progress:
+- Phase 3 Revenue Activation
+
+Ready after active work:
+- Phase 4 Service Alignment
+
+---
+
+## What Is Locked
+
+- Core architecture decisions are locked
+- Topics are locked
+- Services are defined
+- Smart Website Systems remains the strategic gravity layer
+- BOFU is isolated to service pages
+- Components remain stable building blocks
+- Pages are the composition layer
+
+---
+
+## What Is Not Allowed
+
+- no new topics
+- no architectural redesign
+- no random new pages
+- no broad content expansion before alignment work is complete
+- no BOFU escalation inside blog or resource pages
+- no component mutation to introduce new page behavior
+- no bulk execution across multiple page families without a clear phase owner
+
+---
+
+## Domain Priority Context
+
+Execution priority order:
+1. Services
+2. Service landing page
+3. CRM integration content
+4. Blogs and resources
+5. Case studies
+6. Industry pages
+
+Rule:
+Revenue-first execution outranks breadth.
+
+---
+
+# 2. EXECUTION MODEL (SIMPLIFIED)
+
+## PHASE: SERVICE SYSTEM UPGRADE (CORE)
+
+Important:
+- This is not a new phase
+- This is the operating execution model inside existing phases
+- It organizes how Phase 3 and Phase 4 work should be executed
+
+Purpose:
+Remove overlap between scattered service-page work, revenue activation work, proof work, CTA work, and validation work.
+
+Execution Groups:
+
+### Group A — Content Alignment (MOFU vs BOFU)
+
+Purpose:
+Protect content-role integrity before commercial escalation.
+
+Includes:
+- blog and resource role correction
+- MOFU vs BOFU separation
+- service-routing alignment for authority content
+- removal of BOFU leakage from non-service content
+
+Primary linked phases:
+- Phase 3.1
+- Phase 4.8
+
+Core rule:
+Blog and resource pages may educate, validate, and route upward, but may not own decision-ready BOFU structure.
+
+---
+
+### Group B — Structure System (Level 5)
+
+Purpose:
+Create one universal service-page standard.
+
+Includes:
+- Level 5 page structure
+- section definitions
+- proof rules
+- CTA rules
+- page classification logic
+
+Primary linked phases:
+- Phase 3.2
+- Phase 4.1
+- Phase 3.6
+
+Core rule:
+Service pages move upward by adopting one locked structure, not by improvising page-specific layouts.
+
+---
+
+### Group C — Full Rewrite (Content + Metadata)
+
+Purpose:
+Rewrite pages only after structure and role are clear.
+
+Includes:
+- service page content rewrites
+- metadata and graph alignment
+- full page-level commercial upgrades
+- domain landing, industry, and case-study rewrite passes
+
+Primary linked phases:
+- Phase 4.1
+- Phase 4.2
+- Phase 4.4
+- Phase 4.5
+- Phase 4.6
+
+Core rule:
+Preserve meaning, rewrite structure where needed, and keep service ownership explicit.
+
+---
+
+### Group D — UI Integrity (Component Rule)
+
+Purpose:
+Prevent new behavior from being hidden inside shared components.
+
+Includes:
+- page-level composition only
+- new sections rather than prop creep
+- no logic injection into existing reusable components
+
+Primary linked phases:
+- all active phases
+
+Core rule:
+Components remain stable. New behavior enters at the page section layer.
+
+---
+
+### Group E — Validation
+
+Purpose:
+Keep execution measurable and deterministic.
+
+Includes:
+- validation checks
+- success criteria checks
+- graph and metadata verification
+- repo-state audit loop
+
+Primary linked phases:
+- Phase 3.7
+- Phase 4.2
+- final checks after all rewrite groups
+
+Core rule:
+No phase advances on assumption. Validation closes the loop.
+
+---
+
+# 3. ORIGINAL PHASES (PRESERVED BUT CLEANED)
+
+## Phase 0 — System Stabilization
+
+Priority: Critical
+
+Purpose:
+Stabilize core systems before revenue-layer execution expands.
+
+Execution order:
+1. CTA system hardening
+2. SEO system centralization
+3. Related system validation
+4. Location system planning
+
+Status summary:
+- CTA system hardening = complete
+- CTA tone system = initial implementation complete
+- SEO centralization = still a preserved stabilization concern
+- Related system validation = deterministic, cleanup only
+- Location system = blocked, planning only
+
+Preserved requirements:
+
+CTA system hardening success meant:
+- all primary CTAs route through SmartCTA
+- no inline primary CTA ownership remains
+- CTA labels are centrally controlled
+
+SEO centralization remains responsible for:
+- builders for non-service domains
+- canonical consistency
+- schema consistency
+- removal of duplicated manual SEO objects
+
+Related system validation remains responsible for:
+- removing dead related fields
+- documenting deterministic related-content behavior
+- preventing future manual related arrays
+
+Location system remains blocked:
+- no location page implementation now
+- planning only
+
+Execution-group mapping:
+- Group D UI Integrity
+- Group E Validation
+
+---
+
+## Phase 3 — Revenue Activation
+
+Priority: Critical
+
+Purpose:
+Convert existing content and decision assets into a controlled revenue activation layer without breaking content-role integrity.
+
+Strict execution order:
+1. CRM integration patch
+2. Service-pages improvement
+3. BOFU page 1
+4. BOFU page 2
+5. BOFU page 3
+6. Proof integration
+7. Validation fixes
 
 Rules:
-- No bulk random changes
-- No parallel execution chaos
-- Always follow priority order
-
-Cycle:
-1. Audit (Copilot)
-2. Plan (GPT)
-3. Execute (Copilot)
-4. Update doc (YOU)
-
--------------------------------------
-CORE FOCUS TOPICS
--------------------------------------
-
-1. service-pages
-2. crm-integration
-3. conversion-optimization
-4. website-infrastructure
-5. systems-first-websites (supporting)
-
--------------------------------------
-PHASE 0 — SYSTEM STABILIZATION (PRE-EXECUTION)
--------------------------------------
-
-Priority: 🔴 CRITICAL
-
-Execution Order:
-1. CTA System Hardening
-2. SEO System Centralization
-3. Related System Validation
-4. Location System Planning
-
-## 🔴 CTA SYSTEM HARDENING
-
-Problems:
-- 'Learn More' hardcoded in multiple components
-- CTA not fully centralized
-- Some CTAs bypass SmartCTA
-
-Tasks:
-- [ ] Find ALL hardcoded CTA labels (e.g. "Learn More")
-- [ ] Move them into ctaLabels.ts
-- [ ] Replace inline CTAs with SmartCTA where applicable
-- [ ] Standardize CTA usage across:
-   → blog
-   → resources
-   → case studies
-   → landing pages
-
-Success Criteria:
-- 100% CTAs come from central config
-- No inline CTA strings remain
-- SmartCTA used everywhere for primary actions
+- no jumping between subphases
+- complete each subphase before moving forward
+- keep all execution revenue-first and conversion-focused
 
 ---
 
-## 🔴 SEO SYSTEM CENTRALIZATION
+### Phase 3.1 — CRM Integration Patch (Blocking)
 
-Problems:
-- 100+ manual SEO objects across:
-  → blog
-  → resources
-  → case studies
-  → industries
-- Canonical duplication risk
-- No builder pattern outside services/features
+Priority: Critical
+Status: In progress
 
-Tasks:
-- [ ] Create SEO builders for:
-   → blog
-   → resources
-   → case studies
-   → industries
-- [ ] Remove manual SEO duplication
-- [ ] Standardize canonical generation
-- [ ] Ensure schema consistency
-
-Success Criteria:
-- No manual SEO objects in content files
-- All domains use builder pattern
-- Canonical logic centralized
-
----
-
-## 🟡 RELATED SYSTEM VALIDATION
-
-Status:
-- Deterministic (NO change required)
-
-Tasks:
-- [ ] Remove dead fields:
-   → relatedServices (unused)
-- [ ] Document resource-specific related system (category-based)
-- [ ] Ensure no future manual related arrays are introduced
-
-Success Criteria:
-- No dead fields
-- No manual related logic introduced later
-
----
-
-## 🔴 LOCATION SYSTEM (BLOCKED)
-
-Status:
-- NOT READY
-
-Rules:
-- DO NOT create location pages yet
-
-Tasks (Preparation ONLY):
-- [ ] Design location data structure (future)
-- [ ] Plan SEO template for location pages
-- [ ] Plan CTA location context support
-- [ ] Plan authority-map scaling strategy
-
-Success Criteria:
-- Clear future-ready plan
-- ZERO implementation now
-
--------------------------------------
-PHASE 3 — REVENUE ACTIVATION
--------------------------------------
-
-Priority: 🔴 CRITICAL
-
-Goal:
-Convert existing content and decision assets into a strict revenue activation layer.
-
-Strict Execution Order:
-1. CRM-INTEGRATION PATCH (BLOCKING)
-2. SERVICE-PAGES IMPROVEMENT
-3. BOFU PAGE #1 (CRM DECISION)
-4. BOFU PAGE #2 (SERVICE PAGE DECISION)
-5. BOFU PAGE #3 (CONVERSION DECISION)
-6. PROOF INTEGRATION
-7. VALIDATION FIXES
-
-Rules:
-- No jumping between subphases
-- Complete each subphase before moving forward
-- Keep all execution revenue-first and conversion-focused
-
----
-
-### PHASE 3.1 — CRM-INTEGRATION PATCH (BLOCKING)
-
-Priority: 🔴 CRITICAL
-
-## 🔴 CRM-INTEGRATION (CRITICAL GAP)
-
-### Pages:
+Target pages:
 - WebsiteCrmIntegrationForServiceBusinesses.tsx
 - WebsiteCrmIntegrationForSalons.tsx
 - WebsiteCrmIntegrationExplained.tsx
 
-### Problems:
+Original problem set:
 - validates = 0
 - no service push
-- weak CTA (educational, not commercial)
+- weak CTA
 
-### Tasks:
-- [ ] Add direct service mapping → crm-infrastructure-implementation
-- [ ] Replace CTA with decision-based CTA
-- [ ] Inject case study:
-      → RoofingWebsiteRebuildWithCrm
-- [ ] Add section:
-      "What happens if you don’t fix this"
+Locked correction:
+These pages are MOFU authority + transition assets, not BOFU pages.
 
-### Expected Outcome:
-- These pages must behave as BOFU, not educational
-- User should clearly move toward CRM implementation decision
+Phase 3.1 finding:
+BOFU leakage was previously introduced into blog and resource pages.
 
-### Success Criteria:
+Required correction:
+- keep direct service mapping to crm-infrastructure-implementation
+- keep one service-routing CTA
+- keep one proof reference
+- remove decision sections
+- remove failure sections
+- remove aggressive BOFU framing
+
+Success criteria:
 - validates > 0
-- 1 direct service CTA
-- 1 case study integrated
-- 1 decision-driving section added
+- one direct service CTA
+- one proof reference
+- one service mapping
+- no BOFU leakage remains
 
-### Owner:
-Copilot (code + content patch)
+Execution-group mapping:
+- Group A Content Alignment
+- Group E Validation
 
 ---
 
-### PHASE 3.2 — SERVICE-PAGES IMPROVEMENT
+### Phase 3.2 — Service-Pages Improvement
 
-Priority: 🟡 HIGH
+Priority: High
 
-## 🟡 SERVICE-PAGES (IMPROVEMENT)
+Purpose:
+Use service-page audits to define and apply the global Level 5 standard.
 
-### Page:
-- LocalServicePageArchitecture.tsx
+Preserved anchor:
+- LocalServicePageArchitecture.tsx was the original immediate audit target
 
-### Problems:
-- explanatory
-- not pushing decision
+Expanded operational meaning:
+This phase now acts as the bridge between one-page service improvement work and the full Level 5 service-page system.
 
-### Tasks:
-- [ ] Add comparison section:
-      "Generic vs System-Based Service Pages"
-- [ ] Add proof block
-- [ ] Strengthen CTA → Smart Website Systems
+Required outcomes:
+- identify explanatory service-adjacent pages
+- define what Level 5 requires
+- use comparison, proof, and CTA strengthening only where role allows
+- keep BOFU behavior restricted to actual service pages
 
-### Success Criteria:
-- validates > 0
-- 1 comparison section added
-- 1 proof block added
-- CTA clearly pushes Smart Website Systems
+Execution-group mapping:
+- Group B Structure System
+- Group D UI Integrity
 
 ---
 
-### PHASE 3.3 — BOFU PAGE #1 (CRM DECISION)
+### Phase 3.3 — BOFU Page #1
 
-Priority: 🔴 CRITICAL
-
-⚠️ Limit: ONLY 3 pages (no overproduction)
-
-### Page Structure (MANDATORY):
-
-- Problem (pain)
-- Comparison (this vs that)
-- Proof (case study)
-- Decision section
-- Single CTA
-
-### 1. CRM DECISION PAGE
+Priority: Critical
 
 Title:
 Website CRM Integration vs Manual Lead Handling
 
 Goal:
-Force decision to implement CRM
+Force decision to implement CRM infrastructure.
 
 Service:
 crm-infrastructure-implementation
 
-Status:
-[ ] Not started
+Mandatory page structure:
+- problem
+- comparison
+- proof
+- decision section
+- single CTA
+
+Execution-group mapping:
+- Group B Structure System
+- Group C Full Rewrite
 
 ---
 
-### PHASE 3.4 — BOFU PAGE #2 (SERVICE PAGE DECISION)
+### Phase 3.4 — BOFU Page #2
 
-Priority: 🔴 CRITICAL
+Priority: Critical
 
 Title:
 Service Pages vs One Generic Services Page
 
 Goal:
-Force rebuild decision
+Force rebuild decision.
 
 Service:
 smart-website-systems
 
-Status:
-[ ] Not started
+Execution-group mapping:
+- Group B Structure System
+- Group C Full Rewrite
 
 ---
 
-### PHASE 3.5 — BOFU PAGE #3 (CONVERSION DECISION)
+### Phase 3.5 — BOFU Page #3
 
-Priority: 🔴 CRITICAL
+Priority: Critical
 
 Title:
 Conversion Funnel System vs Landing Page Development
 
 Goal:
-Choose correct service
+Force correct service choice.
 
 Service:
 conversion-funnel-system
 
-Status:
-[ ] Not started
+Execution-group mapping:
+- Group B Structure System
+- Group C Full Rewrite
 
 ---
 
--------------------------------------
-PHASE 3.6 — PROOF INTEGRATION
--------------------------------------
+### Phase 3.6 — Proof Integration
 
-Priority: 🔴 CRITICAL
+Priority: Critical
 
-## Primary Case Study:
+Primary proof asset:
 - RoofingWebsiteRebuildWithCrm
 
 Usage:
 - CRM pages
-- Service page content
-- Conversion pages
+- service pages
+- conversion pages
 
-Tasks:
-- [ ] Add inline proof (not footer link)
-- [ ] Add metrics-based statements
-- [ ] Connect outcome → service
+Preserved requirements:
+- add inline proof, not footer-only proof
+- add metrics-based statements where available
+- connect outcome to the service being pushed
 
-### Rules:
-- Proof must appear mid-content (not bottom)
-- Must include:
-  → before vs after
-  → measurable outcome
-- Must directly support the service being pushed
+Locked proof rules:
+- proof must appear mid-content
+- proof must show before vs after
+- proof must include measurable outcome where possible
+- proof must directly support the service being pushed
 
----
-
--------------------------------------
-PHASE 3.7 — VALIDATION FIXES
--------------------------------------
-
-Priority: 🔴 CRITICAL
-
-Target:
-
-- validates ≥ 1 (minimum)
-- validates ≥ 2 (ideal for core pages)
-
-Tasks:
-
-- [ ] CRM cluster → connect to service
-- [ ] Inject proof where missing
-- [ ] Re-run authority generation
+Execution-group mapping:
+- Group B Structure System
+- Group E Validation
 
 ---
 
--------------------------------------
-PHASE 4 — SERVICE ALIGNMENT
--------------------------------------
+### Phase 3.7 — Validation Fixes
 
-Priority: 🟡 HIGH
+Priority: Critical
 
-Goal:
-Ensure the revenue activation layer aligns every topic, service, CTA, and domain path into one controlled service architecture.
+Targets:
+- validates >= 1 minimum
+- validates >= 2 ideal for core pages
 
-Ensure:
+Preserved tasks:
+- fix CRM cluster service connection
+- inject proof where missing
+- re-run authority or validation generation as needed
 
-- [ ] Every core topic → 1 service
-- [ ] Every BOFU page → 1 CTA
-- [ ] No generic CTA ("learn more")
+Execution-group mapping:
+- Group E Validation
 
-Mapping:
+---
 
-- service-pages → smart-website-systems
-- crm-integration → crm-infrastructure-implementation
-- conversion → conversion-funnel-system
-- infrastructure → smart-website-systems
+## Phase 4 — Service Alignment
 
--------------------------------------
-PHASE 4.1 — SERVICE PAGES LEVEL 5 UPGRADE
--------------------------------------
+Priority: High
 
-Priority: 🟡 HIGH
+Purpose:
+Align every topic, service, CTA, page structure, metadata layer, and domain pathway into one controlled service architecture.
 
-Goal:
-Upgrade ALL service pages to Level 5 (conversion-ready, proof-backed, system-aligned)
+Core mapping:
+- service-pages -> smart-website-systems
+- crm-integration -> crm-infrastructure-implementation
+- conversion -> conversion-funnel-system
+- infrastructure -> smart-website-systems
 
-Context:
-- 4 service pages already updated
-- Remaining service pages are below Level 5
+Alignment rules:
+- every core topic maps upward into one service
+- every BOFU page owns one CTA
+- generic primary CTA language is not allowed
 
-Tasks:
-- [ ] Audit all remaining service pages
-- [ ] Upgrade content to Level 5 standard
-- [ ] Add comparison sections (where missing)
-- [ ] Add proof blocks (case studies)
-- [ ] Ensure single clear CTA per page
-- [ ] Align each page with correct system + service intent
+---
 
-Success Criteria:
-- All services = Level 5 quality
-- No weak/explanatory service pages
-- Every page pushes a clear decision
+### Phase 4.1 — Service Pages Level 5 Upgrade
 
--------------------------------------
-PHASE 4.2 — GLOBAL METADATA & GRAPH ALIGNMENT
--------------------------------------
+Purpose:
+Upgrade all service pages to the locked Level 5 standard.
 
-Priority: 🟡 HIGH
+Preserved tasks:
+- audit remaining service pages
+- add comparison where missing
+- add proof where missing
+- ensure one clear CTA per page
+- align every page to the correct service intent
 
-Goal:
-Ensure all domains are fully aligned at metadata + graph level
+Execution-group mapping:
+- Group B Structure System
+- Group C Full Rewrite
 
-Tasks:
-- [ ] Fix topics for all domains (blog, resource, case-study, services)
-- [ ] Fix systems mapping across all domains
-- [ ] Remove incorrect/duplicate topic associations
-- [ ] Ensure every node has valid service alignment
-- [ ] Rebuild authority map after fixes
+---
 
-Success Criteria:
-- No broken topic mappings
-- No invalid system associations
-- Clean authority graph
+### Phase 4.2 — Global Metadata and Graph Alignment
 
--------------------------------------
-PHASE 4.3 — CTA STANDARDIZATION (ALL DOMAINS)
--------------------------------------
+Purpose:
+Clean systems, topics, and authority relationships across all domains.
 
-Priority: 🟡 HIGH
+Preserved tasks:
+- fix topic mappings
+- fix systems mappings
+- remove duplicate or incorrect associations
+- ensure every node has valid service alignment
+- rebuild authority map after fixes
 
-Goal:
-Make ALL CTAs conversion-focused and consistent across system
+Execution-group mapping:
+- Group C Full Rewrite
+- Group E Validation
 
-Tasks:
-- [ ] Audit CTAs in all domains (services, blogs, resources, case studies)
-- [ ] Replace generic CTAs (e.g., "learn more")
-- [ ] Ensure each page has ONE primary CTA
-- [ ] Align CTA with service intent (BOFU focus)
-- [ ] Match CTA language with conversion stage
+---
 
-CTA Rules:
-- Must be action-driven
-- Must point to ONE service
-- Must match user intent (BOFU preferred)
-- Must appear at least 2 times on page (mid + end)
-- Must avoid generic phrasing
-- Must NOT be educational
+### Phase 4.3 — CTA Standardization
 
-Success Criteria:
-- No weak CTAs across site
-- Every page drives a clear next step
+Purpose:
+Standardize CTA intent, service mapping, and placement across domains.
 
--------------------------------------
-PHASE 4.4 — DOMAIN LANDING PAGES (STEP-BY-STEP)
--------------------------------------
+Preserved tasks:
+- audit CTAs in all domains
+- replace generic CTA language
+- ensure one primary CTA per page
+- align CTA with one service
+- match CTA language to conversion stage
 
-Priority: 🟡 HIGH
+Locked clarification:
+The service page standard in Section 4 is now the single source of truth for CTA behavior. This phase executes that standard across domains.
 
-Goal:
-Upgrade ALL domain landing pages (services, features, etc.) from demo/catalog → conversion-driven navigation layers
+Execution-group mapping:
+- Group B Structure System
+- Group E Validation
 
-Principle:
-Landing pages = PRE-SELL the click (not explain everything)
+---
 
-Execution Strategy (MANDATORY):
-⚠️ Work ONE landing page at a time (no bulk edits)
+### Phase 4.4 — Domain Landing Pages
 
-Per-Page Workflow:
-1. Audit page (Copilot)
-   - titles
-   - descriptions
-   - CTAs
-   - sections
+Purpose:
+Turn landing pages into conversion-driven navigation layers.
 
-2. Identify gaps
-   - generic wording
-   - weak CTA
-   - no positioning
-   - no clear outcome
+Preserved execution law:
+Work one landing page at a time.
 
-3. Patch (Copilot)
-   - Rewrite titles → outcome/problem focused
-   - Rewrite descriptions → transformation (before → after)
-   - Replace CTA → action-driven (no "learn more")
-   - Add/adjust sections if needed (top positioning + mid clarity)
+Per-page workflow remains:
+1. audit
+2. identify gaps
+3. patch
+4. validate
+5. update this document
 
-4. Validate
-   - Does each card push a click?
-   - Is there a clear outcome?
-   - Is CTA aligned with ONE service?
+Execution-group mapping:
+- Group C Full Rewrite
+- Group E Validation
 
-5. Update this doc (execution log)
+---
 
-Content Rules:
-- Titles = outcome or problem (NOT system name only)
-- Descriptions = what changes after using this
-- CTA = action + intent (BOFU aligned)
+### Phase 4.5 — Industry Pages Rewrite
 
-Tasks:
-- [ ] Identify all landing pages (services, features, etc.)
-- [ ] Create execution list (order)
-- [ ] Update each page step-by-step
+Purpose:
+Upgrade industry pages to stronger positioning and service-routing quality.
 
-Success Criteria:
-- No generic titles/descriptions
-- No "Learn More" CTAs
-- Every card pushes a clear decision/action
+Preserved tasks:
+- audit all industry pages
+- rewrite for specificity and positioning
+- add system explanation per industry
+- add proof mapping
+- align CTA to relevant service
 
--------------------------------------
-PHASE 4.5 — INDUSTRY PAGES REWRITE
--------------------------------------
+Execution-group mapping:
+- Group C Full Rewrite
 
-Priority: 🟡 HIGH
+---
 
-Goal:
-Upgrade ALL industry pages to conversion + positioning level
+### Phase 4.6 — Case Studies Rewrite
 
-Problems:
-- Likely generic
-- Weak differentiation
-- Not pushing system-based approach strongly
+Purpose:
+Convert case studies into reusable proof assets.
 
-Tasks:
-- [ ] Audit all industry pages
-- [ ] Rewrite content (positioning + specificity)
-- [ ] Add system explanation per industry
-- [ ] Add proof (case study mapping)
-- [ ] Align CTA with relevant service
+Preserved mandatory structure:
+- problem
+- system implemented
+- what changed
+- results
+- business impact
 
-Success Criteria:
-- Each industry page feels specialized
-- Strong positioning (not generic templates)
-- Clear path to service
+Preserved tasks:
+- audit all case studies
+- rewrite using proof-first structure
+- add before vs after
+- add measurable outcomes
+- connect explicitly to a service
+- make proof reusable across pages
 
--------------------------------------
-PHASE 4.6 — CASE STUDIES REWRITE (HIGH IMPACT)
--------------------------------------
+Execution-group mapping:
+- Group C Full Rewrite
+- Group B Structure System
 
-Priority: 🟡 HIGH
+---
 
-Goal:
-Turn case studies into PROOF ASSETS (trust + authority drivers)
+### Phase 4.7 — Writing System Upgrade
 
-Context:
-- Not traffic-focused
-- HIGH impact on conversion + trust
+Purpose:
+Tighten writing guidance by content role.
 
-Problems:
-- Likely descriptive
-- Not structured for persuasion
+Preserved tasks:
+- update writing instructions
+- define case study writing framework
+- define BOFU vs MOFU vs TOFU tone
+- define CTA writing rules
+- define proof integration rules
 
-Tasks:
-- [ ] Audit all case studies
-- [ ] Rewrite using proof-first structure
-- [ ] Add before vs after clearly
-- [ ] Add measurable outcomes
-- [ ] Connect case study → service explicitly
-- [ ] Add inline usage for other pages
+Execution-group mapping:
+- Group A Content Alignment
+- Group B Structure System
 
-Structure (MANDATORY):
-- Problem (real situation)
-- System implemented
-- What changed
-- Results (metrics)
-- Business impact
+---
 
-Success Criteria:
-- Strong proof narrative
-- Easy to reuse across pages
-- Supports BOFU decisions
+### Phase 4.8 — Blog and Resource Alignment
 
--------------------------------------
-PHASE 4.7 — WRITING SYSTEM UPGRADE
--------------------------------------
+Purpose:
+Align blogs and resources at the metadata and conversion-routing layer without turning this into a broad content-production pass.
 
-Priority: 🟠 MEDIUM
-
-Goal:
-Upgrade writing guidelines (especially for case studies)
-
-Tasks:
-- [ ] Update writing-instructions doc
-- [ ] Add case study writing framework
-- [ ] Define BOFU vs MOFU vs TOFU tone
-- [ ] Define CTA writing rules
-- [ ] Define proof integration rules
-
-Focus:
-- Case studies = proof, not storytelling only
-- Blogs = authority + transition
-- Services = decision + conversion
-
-Success Criteria:
-- Consistent writing across domains
-- No weak/soft content
-- Clear conversion intent everywhere
-
--------------------------------------
-PHASE 4.8 — BLOG & RESOURCE ALIGNMENT
--------------------------------------
-
-Priority: 🟡 HIGH
-
-## Goal:
-Align blogs and resources at the metadata and conversion-routing layer so existing authority content supports revenue execution without triggering broad rewrites.
-
-## Scope:
 Included:
 - metadata
 - topics
 - systems
 - service mapping
-- targeted CTA and proof alignment for weak pages
+- targeted CTA alignment
+- targeted proof reference alignment
 
 Excluded:
 - full content rewrites
 - broad writing improvements
-- mass blog optimization
-- non-targeted topic expansion
+- mass optimization
+- topic expansion
 
-## Tasks:
-- [ ] Audit blogs with validates = 0
-- [ ] Audit resources with weak service linkage
-- [ ] Patch only the affected pages
-- [ ] Add 1 strong CTA per affected page
-- [ ] Add 1 proof reference per affected page
-- [ ] Add 1 service connection per affected page
-- [ ] Revalidate metadata and graph output after patches
+Preserved tasks:
+- audit blogs with validates = 0
+- audit resources with weak service linkage
+- patch only affected pages
+- add one CTA
+- add one proof reference
+- add one service connection
+- revalidate graph output after patches
 
-## Execution Steps:
-1. Audit
-   - identify blogs with validates = 0
-   - identify resources with weak service linkage
-   - confirm whether the issue is metadata, service mapping, CTA weakness, or missing proof reference
-
-2. Patch
-   - patch ONLY the affected pages
-   - add 1 strong CTA
-   - add 1 proof reference
-   - add 1 service connection
-   - keep changes targeted to alignment work, not full rewrites
-
-3. Validate
-   - regenerate or inspect graph outputs as needed
-   - confirm targeted pages no longer sit in the zero-validate cluster
-   - confirm each patched page routes to one clear service
-
-4. Later, not now
-   - then content upgrade for CRM blogs
-   - then content upgrade for conversion blogs
-   - then content upgrade for service-page related blogs
-
-## Success Criteria:
-- No targeted blog or resource remains with validates = 0
-- Each patched page has 1 CTA
-- Each patched page has 1 service mapping
-- Each patched page has 1 proof reference
-- No unnecessary rewrites were introduced
-
-## Rules:
-- Do not rewrite 75 blogs
-- Do not improve writing randomly
-- Do not chase perfection
-- Do not turn this phase into a content-production pass
-- Focus on metadata and conversion alignment first
-
-## Preserved Working Notes:
-
-Focus ONLY on:
-- metadata
-- topics
-- systems
-- service mapping
-
-Step 2
-
-Identify:
-- blogs with validates = 0
-- resources with weak service linkage
-
-Step 3
-
-Patch ONLY those:
-
-Add:
-- 1 strong CTA
-- 1 proof reference
-- 1 service connection
-
-Not full rewrite
-
-Step 4 (later, not now)
-
-Then content upgrade for:
-- CRM blogs (you already identified)
-- Conversion blogs
-- Service-page related blogs
-
-⚠️ What NOT to do
-
-❌ Don’t rewrite 75 blogs
-❌ Don’t “improve writing” randomly
-❌ Don’t chase perfection
-
-👉 That’s time waste
-
--------------------------------------
-PHASE COMPLETION RULES
--------------------------------------
-
-System Stabilization complete when:
-- CTA system is centralized
-- SEO builders are planned and implemented where required
-- Related system dead fields are removed
-- Location system remains blocked but future-ready
-
-Revenue Activation complete when:
-- CRM patch is complete
-- Service-page improvement is complete
-- All 3 BOFU pages are built in order
-- Proof integration is complete
-- Validation fixes are complete
-
-Service Pages complete when:
-- All pages meet Level 5 standard
-- Each page has 1 clear CTA
-- Each page has 1 proof block
-- Each page has 1 comparison or decision section
-
-CTA Standardization complete when:
-- No "learn more" CTA remains as the primary action
-- One primary CTA exists per page
-- Every primary CTA maps to one service
-- Every primary CTA appears at least 2 times on page when applicable (mid + end)
-- Primary CTA language matches conversion intent
-
-Service Landing Page complete when:
-- The first landing page is fully upgraded before any remaining landing pages start
-- Titles, descriptions, and CTA blocks are conversion-driven
-- Every card or section pushes one clear next action
-
-CRM Blog Fixes complete when:
-- The zero-validate CRM cluster is fully patched
-- Each CRM page has 1 CTA
-- Each CRM page maps to 1 service
-- Each CRM page includes 1 proof reference
-
-Blog & Resource Alignment complete when:
-- No node in the targeted scope has validates = 0
-- Each page has 1 CTA
-- Each page has 1 service mapping
-- Each page has 1 proof reference
-
-Case Studies complete when:
-- Every case study uses proof-first structure
-- Every case study states before vs after
-- Every case study includes measurable outcomes
-- Every case study connects explicitly to a service
-
-Industry Pages complete when:
-- Every page has specialized positioning
-- Every page has service-aligned CTA
-- Every page includes proof or mapped proof reference
-- No industry page reads like a generic template
-
-Remaining Landing Pages complete when:
-- The remaining landing-page sequence is finished in order
-- No generic title, description, or CTA remains
-- Every landing page functions as a conversion layer, not a catalog layer
-
--------------------------------------
-WORKFLOW (IMPORTANT)
--------------------------------------
-
-1. Use Copilot:
-   → for system fixes + repo-wide changes
-
-2. Use GPT:
-   → for planning + validation
-
-3. Use Claude:
-   → content writing ONLY after system stabilization
-
-4. ALWAYS:
-   → Update this file after completing tasks
+Execution-group mapping:
+- Group A Content Alignment
+- Group E Validation
 
 ---
 
--------------------------------------
-RULES
--------------------------------------
+# 4. SERVICE PAGE STANDARD (LOCKED)
 
-- Do NOT create random content
-- Do NOT expand topics
-- Do NOT over-engineer
-- Do NOT scale content before system stabilization
-- Do NOT introduce new pages before SEO + CTA systems are centralized
-- System fixes come BEFORE content fixes
+This section is the single source of truth for service-page execution.
 
-Focus ONLY on:
-→ revenue
-→ conversion
-→ execution
+## Page Readiness States
 
-- Do NOT jump to BOFU pages early
-- Do NOT touch new content before fixing existing
-- Do NOT over-optimize graph early
+### Level 3 — Explanatory
 
-Component Integrity Rule (Critical):
-- When adding new content or sections, do NOT modify existing reusable components
-- Do NOT inject new logic into existing component props
-- Do NOT extend existing data structures for new behavior
-- Create a new dedicated component or section instead
-- Add it explicitly at the page level
-- Keep existing components unchanged
+Traits:
+- explains the topic or service
+- may have a CTA
+- lacks strong comparison, proof, or decision support
 
-Principle:
+### Level 4 — Partially Conversion-Ready
+
+Traits:
+- clearer commercial framing
+- may include comparison or proof
+- still lacks complete decision structure
+
+### Level 5 — Ready
+
+Traits:
+- complete commercial page structure
+- explicit service ownership
+- proof and CTA aligned to one service
+- ready to push a decision without drifting into noise or duplication
+
+---
+
+## Universal Level 5 Structure
+
+1. Hero
+2. Problem
+3. System Explanation
+4. Comparison
+5. Proof
+6. Outcome
+7. Decision Support
+8. Implementation Scope
+9. Mid CTA
+10. Final CTA
+
+Rule:
+This is the universal structure for Level 5 service pages.
+
+---
+
+## Section Definitions
+
+### 1. Hero
+
+Purpose:
+Confirm service relevance immediately.
+
+Must communicate:
+- the service
+- the buyer problem
+- the promised shift
+- one primary next step
+
+Role in conversion:
+Stops bounce and anchors intent.
+
+---
+
+### 2. Problem
+
+Purpose:
+Make the operational cost of the current state clear.
+
+Must communicate:
+- what is broken
+- why it matters
+- why the issue persists
+
+Role in conversion:
+Creates urgency and context.
+
+---
+
+### 3. System Explanation
+
+Purpose:
+Explain how the service actually works.
+
+Must communicate:
+- the operating model
+- the layers involved
+- what changes after implementation
+
+Role in conversion:
+Builds clarity, not abstraction.
+
+---
+
+### 4. Comparison
+
+Purpose:
+Make the alternative visible.
+
+Must communicate:
+- before vs after
+- generic vs system-based
+- manual vs structured
+
+Role in conversion:
+Clarifies the decision.
+
+---
+
+### 5. Proof
+
+Purpose:
+Show that the service creates real change.
+
+Must communicate:
+- before state
+- intervention
+- after state
+- measurable improvement where possible
+
+Role in conversion:
+Reduces trust friction.
+
+---
+
+### 6. Outcome
+
+Purpose:
+Translate implementation into business effect.
+
+Must communicate:
+- what improves
+- what becomes easier
+- what becomes more reliable
+
+Role in conversion:
+Moves value from features to business consequence.
+
+---
+
+### 7. Decision Support
+
+Purpose:
+Help the reader decide if this service is the right fit now.
+
+Must communicate:
+- who it fits
+- who it does not fit
+- timing and readiness
+- practical objections
+
+Role in conversion:
+Supports informed commitment.
+
+---
+
+### 8. Implementation Scope
+
+Purpose:
+Define what the service includes.
+
+Must communicate:
+- scope
+- boundaries
+- inclusions
+- delivery expectations
+
+Role in conversion:
+Removes ambiguity.
+
+---
+
+### 9. Mid CTA
+
+Purpose:
+Capture action after conviction begins.
+
+Must communicate:
+- one service
+- one next step
+- one clear route
+
+Role in conversion:
+Provides a decision point before the bottom of the page.
+
+---
+
+### 10. Final CTA
+
+Purpose:
+Close the page with one unambiguous action.
+
+Must communicate:
+- one service
+- one action
+- one commercial next step
+
+Role in conversion:
+Final decision capture.
+
+---
+
+## Proof Rules (Locked)
+
+- Proof must appear mid-content
+- Proof must not be footer-only
+- Proof must show before vs after
+- Proof must connect directly to the service being sold
+- Proof must not float as generic trust decoration
+
+MOFU proof:
+- validates a concept
+- supports authority content
+- does not push a hard decision
+
+BOFU proof:
+- validates a service decision
+- supports a service page or BOFU page only
+- must remain out of blog and resource content unless reduced to MOFU framing
+
+---
+
+## CTA Rules (Locked)
+
+### Service Page CTA Count
+
+Level 5 service pages should use:
+- one hero CTA
+- one mid CTA
+- one final CTA
+
+No random extra primary CTA blocks.
+
+### Placement
+
+- hero CTA = top
+- mid CTA = after proof or outcome
+- final CTA = end of page
+
+### Tone
+
+- short tone = fast scan / top-level action
+- descriptive tone = clarity / lower-page conviction
+
+Default rule:
+Use short tone where speed matters, descriptive tone where decision clarity matters.
+
+### Service Mapping Rule
+
+- one page = one primary service
+- one primary CTA = one service
+- CTA must not compete with another service on the same page
+
+---
+
+## Metadata System (Mandatory)
+
+Every service page rewrite MUST include:
+
+- Title (SEO + conversion aligned)
+- Meta Description (outcome-driven)
+- Primary Service (locked)
+- System Mapping (correct system)
+- Topic alignment (no mismatch)
+
+Rules:
+
+- no generic titles
+- no vague descriptions
+- must reflect decision intent
+- must match page content exactly
+
+Execution Rule:
+
+A page is NOT complete without metadata update.
+
+---
+
+# 5. COMPONENT INTEGRITY SYSTEM
+
+This rule is strict and visible because it controls all future execution.
+
+## Locked Rule
+
+- Do not modify existing reusable components to introduce new page behavior
+- Do not inject new logic through existing component props
+- Do not extend stable data structures just to squeeze in new behavior
+- Create a new page-level section instead
+- Insert new behavior explicitly at the page composition layer
+
+## Operating Principle
+
 - Components = stable building blocks
 - Pages = composition layer
 
+## Allowed
+
+- new dedicated sections
+- page-level composition
+- explicit insertion of new section blocks
+
+## Forbidden
+
+- hidden conditions inside shared CTA, hero, or section components
+- conditional logic injection for one-off rewrite behavior
+- turning reusable components into phase-specific behavior carriers
+
+## Reason
+
+- prevents component bloat
+- preserves deterministic behavior
+- keeps future audits readable
+
+---
+
+# 6. AUDIT INSIGHTS (LOCKED LEARNINGS)
+
+Purpose:
+Store hard learnings centrally so the same mistakes are not repeated.
+
+- BOFU must not exist in blog or resource pages
+- Proof must be mid-content
+- One page = one service
+- CTA must map to one service
+- Builders pages remain Level 3 support-path pages unless explicitly reclassified
+- Decision sections should not be forced into pages whose role does not allow BOFU behavior
+- Service pages are the only true BOFU layer
+- Resource and blog pages may educate, validate, compare, and route upward, but they may not become disguised service pages
+- Smart Website Systems remains the gravity layer and must not be visually or strategically displaced by supporting systems
+- Landing pages pre-sell the click; they do not explain everything
+
+---
+
+# 7. EXECUTION WORKFLOW (SIMPLIFIED)
+
+Use this workflow for all future execution.
+
+1. Audit (Copilot)
+2. Plan (GPT)
+3. Execute (Copilot / Claude)
+4. Validate (GPT)
+5. Update this doc
+
+Rules:
+- audit repo state, not assumptions
+- plan before broad execution
+- execute within the active phase and execution group
+- validate before moving forward
+- record the result here after completion
+
+---
+
+## Per Page Execution Checklist (Locked)
+
+For EACH service page:
+
+1. Audit
+  - current sections
+  - missing layers
+  - weak areas
+
+2. Structure Alignment
+  - hero
+  - problem
+  - system
+  - comparison
+  - proof
+  - outcome
+  - decision
+  - implementation
+  - CTA
+
+3. Content Rewrite
+  - rewrite ALL sections
+  - preserve meaning
+  - upgrade to Level 5
+
+4. Metadata Update
+  - title
+  - description
+  - system
+  - service mapping
+
+5. CTA Validation
+  - 1 service only
+  - correct tone
+  - correct placement
+
+6. Proof Validation
+  - mid content
+  - before/after
+  - measurable
+
+7. Final Validation
+  - no BOFU leakage outside service
+  - no component modification
+  - no duplicate logic
+
+8. Mark Complete
+
+---
+
+# 7.1 EXECUTION MODE — STRICT (LOCKED)
+
+Purpose:
+Enforce deterministic execution across service pages.
+
+Rules:
+
+- ALL service pages are part of ONE execution batch
+- BUT execution MUST be sequential (one page at a time)
+
+Execution Behavior:
+
+1. Create TODO list for ALL service pages
+2. Select ONE page
+3. Execute full cycle:
+  -> audit
+  -> rewrite (content + metadata)
+  -> validate
+  -> mark complete
+4. Move to next page ONLY after completion
+
+STRICTLY FORBIDDEN:
+
+- parallel page execution
+- bulk rewriting multiple pages
+- skipping validation per page
+
 Reason:
-- Prevents component bloat
-- Maintains deterministic system behavior
-- Avoids hidden logic and conditional complexity
 
-Violation Example (Forbidden):
-- Adding new conditions inside existing CTASection / Hero / Feature components
+- maintain consistency
+- prevent system drift
+- ensure deterministic results
 
-Correct Approach:
-- Create a new section such as DecisionSection or ComparisonBlock
-- Insert it in the page layout explicitly
+---
 
-Scope:
-- This rule is strict and applies across all phases
+# 8. MODEL ROLE SYSTEM
 
--------------------------------------
-EXECUTION LOG
--------------------------------------
+## GPT (5.4)
+
+Owns:
+- planning
+- structure decisions
+- validation
+- success criteria
+- planning.md updates
+
+Must not:
+- perform bulk repo edits
+- generate long-form production content
+
+---
+
+## Copilot
+
+Owns:
+- repo audits
+- file patching
+- system fixes
+- metadata fixes
+- CTA and structure implementation
+- consistent multi-file execution
+
+Must not:
+- invent new architecture
+- write uncontrolled creative content
+
+---
+
+## Claude
+
+Owns:
+- controlled content writing and rewriting
+- service page rewrites
+- case study rewrites
+- industry page rewrites
+- targeted blog or resource writing only when explicitly allowed
+
+Must not:
+- change system logic
+- change metadata logic
+- change architecture decisions
+
+---
+
+## Responsibility Rule
+
+- never mix responsibilities loosely
+- never let Claude change system logic
+- never let Copilot rewrite architecture by implication
+- always return to GPT for validation and planning control
+
+---
+
+# 9. PHASE COMPLETION RULES
+
+## Phase 0 complete when
+
+- CTA system is centralized
+- SEO builder work is complete where required
+- related-system dead fields are resolved
+- location system remains blocked but future-ready
+
+## Phase 3 complete when
+
+- CRM patch is complete
+- service-page improvement is complete
+- all 3 BOFU pages are built in order
+- proof integration is complete
+- validation fixes are complete
+
+## Phase 4.1 complete when
+
+- all target service pages meet the Level 5 standard
+- each page owns one clear primary service
+- each page has proof support
+- each page has decision-ready structure where appropriate
+
+## Phase 4.2 complete when
+
+- no broken topic mappings remain
+- no invalid system associations remain
+- authority graph is clean
+
+## Phase 4.3 complete when
+
+- no weak generic primary CTA remains
+- every primary CTA maps to one service
+- CTA placement follows page-role logic
+
+## Phase 4.4 complete when
+
+- landing pages are upgraded one by one in sequence
+- titles, descriptions, and CTA blocks are conversion-driven
+- each card or section pushes one clear next step
+
+## Phase 4.5 complete when
+
+- industry pages feel specialized
+- proof and CTA alignment are present
+- no generic-template feel remains
+
+## Phase 4.6 complete when
+
+- every case study uses proof-first structure
+- before vs after is explicit
+- measurable outcomes are included where available
+- service connection is explicit
+
+## Phase 4.8 complete when
+
+- no targeted blog or resource remains in the zero-validate scope
+- each patched page has one CTA
+- each patched page has one service mapping
+- each patched page has one proof reference
+- no unnecessary rewrites were introduced
+
+---
+
+# 10. GLOBAL RULES
+
+- Do not create random content
+- Do not expand topics
+- Do not over-engineer
+- Do not scale content before system stabilization and alignment work are secure
+- Do not introduce new pages before SEO and CTA systems are centralized where required
+- System fixes come before content fixes
+- Do not jump to BOFU pages early
+- Do not touch new content before fixing existing problems
+- Do not over-optimize graph work early
+- Focus on revenue, conversion, and execution
+
+---
+
+# 11. EXECUTION LOG
 
 [Date]
 
 - Completed:
-  → 
+  ->
 
 - Result:
-  → 
+  ->
 
 - Next:
-  → 
-
-# MODEL EXECUTION LAYER
-
-Purpose:
-Define strict responsibility boundaries between GPT, Copilot, and Claude to avoid inconsistency, duplication, and execution chaos.
-
--------------------------------------
-MODEL ROLE DEFINITIONS
--------------------------------------
-
-## GPT (5.4) — SYSTEM + PLANNING + VALIDATION
-
-Responsibilities:
-- Planning phases and execution structure
-- Defining tasks and success criteria
-- System design decisions
-- Validation logic
-- Reviewing outputs from Copilot and Claude
-- Detecting inconsistencies
-- Updating planning.md
-
-Must NOT:
-- Write long-form content
-- Perform bulk file edits
-- Modify repo directly
+  ->
 
 ---
 
-## COPILOT — EXECUTION (CODE + FILE PATCHING)
+# 12. SUCCESS CONDITION
 
-Responsibilities:
-- Apply changes across repo
-- Update multiple files consistently
-- Refactor repeated patterns
-- Implement:
-   → CTA fixes
-   → SEO fixes
-   → system/topic alignment
-   → component updates
-- Run repo-level audits
-
-Must:
-- Follow planning.md strictly
-
-Must NOT:
-- Invent new structure
-- Redesign logic
-- Write creative content
-
----
-
-## CLAUDE — CONTENT WRITING (CONTROLLED)
-
-Responsibilities:
-- Write/rewrite:
-   → service pages
-   → blogs (targeted)
-   → case studies
-   → industry pages
-- Follow writing-instructions doc
-- Produce conversion-focused content
-
-Must:
-- Follow structure (problem → proof → decision → CTA)
-- Stay aligned with services/systems
-
-Must NOT:
-- Change metadata/system logic
-- Introduce new concepts outside plan
-
--------------------------------------
-PHASE → MODEL MAPPING
--------------------------------------
-
-PHASE 0 — SYSTEM STABILIZATION  
-Owner: Copilot + GPT  
-Claude: NOT USED
-
----
-
-PHASE 3.1 — CRM-INTEGRATION PATCH  
-Owner: Copilot + Claude  
-GPT: Validation
-
----
-
-PHASE 3.2 — SERVICE-PAGES IMPROVEMENT  
-Owner: Copilot + Claude  
-GPT: Validation
-
----
-
-PHASE 3.3 — BOFU PAGE #1 (CRM DECISION)  
-Owner: Claude + GPT  
-Copilot: Implementation
-
----
-
-PHASE 3.4 — BOFU PAGE #2 (SERVICE PAGE DECISION)  
-Owner: Claude + GPT  
-Copilot: Implementation
-
----
-
-PHASE 3.5 — BOFU PAGE #3 (CONVERSION DECISION)  
-Owner: Claude + GPT  
-Copilot: Implementation
-
----
-
-PHASE 3.6 — PROOF INTEGRATION  
-Owner: Copilot + Claude  
-GPT: Validation
-
----
-
-PHASE 3.7 — VALIDATION FIXES  
-Owner: GPT + Copilot
-
----
-
-PHASE 4 — SERVICE ALIGNMENT  
-Owner: Copilot + GPT
-
----
-
-PHASE 4.1 — SERVICE LEVEL 5  
-Owner: Claude + Copilot  
-GPT: Validation
-
----
-
-PHASE 4.2 — METADATA & GRAPH  
-Owner: Copilot + GPT
-
----
-
-PHASE 4.3 — CTA STANDARDIZATION  
-Owner: Copilot + GPT
-
----
-
-PHASE 4.4 — LANDING PAGES  
-Owner: Claude + Copilot  
-GPT: Validation
-
----
-
-PHASE 4.5 — INDUSTRY PAGES  
-Owner: Claude + Copilot
-
----
-
-PHASE 4.6 — CASE STUDIES  
-Owner: Claude (PRIMARY)  
-Copilot: Apply  
-GPT: Validate
-
----
-
-PHASE 4.7 — WRITING SYSTEM  
-Owner: GPT
-
----
-
-PHASE 4.8 — BLOG & RESOURCE ALIGNMENT  
-Owner: Copilot + GPT  
-Claude: LIMITED
-
--------------------------------------
-STRICT RULES
--------------------------------------
-
-- NEVER mix responsibilities
-- NEVER let Claude modify system logic
-- NEVER let Copilot write content creatively
-- ALWAYS validate with GPT before moving phase
-
--------------------------------------
-SUCCESS CONDITION
--------------------------------------
-
-- Consistent execution across 200+ files
-- No tone inconsistency
-- No system breakage
-- Clean separation of concerns
+- consistent execution across the system
+- no tone inconsistency from role drift
+- no system breakage from component mutation
+- clean separation of concerns
+- easier auditability for future phases

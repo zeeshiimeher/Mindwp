@@ -1,16 +1,14 @@
-import { CTA_LABELS } from '@/config/ctaLabels';
-
 export const CTA_CONFIG = {
   primary: {
-    label: CTA_LABELS.PRIMARY,
+    label: 'Start a Conversation',
     type: 'contact',
   },
   demo: {
-    label: CTA_LABELS.DEMO,
+    label: 'See Demo',
     type: 'demo',
   },
   booking: {
-    label: CTA_LABELS.REVIEW_BOOKING,
+    label: 'Book a Review',
     type: 'contact',
   },
 } as const;

@@ -104,14 +104,15 @@ export function SmartCTA({
   wrapper = 'section',
   includeContainer = true,
 }: SmartCTAProps) {
+  const resolvedSystem = system ?? 'smart-website-systems';
   const resolvedTitle = title ?? DEFAULT_CTA_LABEL;
 
-  if (!system || !pageType || !slug) {
+  if (!resolvedSystem || !pageType || !slug) {
     throw new Error('SmartCTA requires system, pageType, and slug');
   }
 
   const label = resolveCtaLabel({
-    system,
+    system: resolvedSystem,
     pageType,
     intent: inferIntent(pageType),
     tone,
@@ -124,8 +125,9 @@ export function SmartCTA({
     label,
     ...(primaryButtonCssPrefix ? { cssPrefix: primaryButtonCssPrefix } : {}),
     href: buildContactHref({
-      system,
-      source: `${pageType}/${slug}`,
+      system: resolvedSystem,
+      sourceType: pageType,
+      slug,
     }),
   };
   const secondaryAction: ButtonProps | undefined = secondaryConfig

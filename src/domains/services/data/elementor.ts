@@ -41,10 +41,10 @@ export const elementorPage = {
   }),
   hero: {
     badge: 'Elementor Implementation',
-    title:
-      'WordPress implementation with Elementor — built for editing flexibility and long-term clarity',
+      title: 'Elementor Websites Built for Clear Editing and Control',
     description:
       'We build WordPress websites using Elementor where the visual output stays faithful to the approved design and the editing experience stays manageable over time. This is disciplined implementation, not a quick drag-and-drop assembly.',
+      list: ['Design Fidelity', 'Clean Editing', 'Long Term'],
     cssPrefix: 'elementor-hero',
     backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },

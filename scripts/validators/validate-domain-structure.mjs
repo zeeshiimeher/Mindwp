@@ -177,11 +177,15 @@ function validateServiceStructure(issues) {
 
     if (expectedOrder.length > 0) {
       const currentOrder = getSectionsOrder(sectionsObject);
-      const filteredCurrent = currentOrder.filter(key => expectedOrder.includes(key));
-      const filteredExpected = expectedOrder.filter(key => currentOrder.includes(key));
-      const matches = filteredCurrent.length === filteredExpected.length && filteredCurrent.every((key, index) => key === filteredExpected[index]);
-      if (!matches) {
-        pushIssue(issues, 'service', rel, 'section_order_mismatch', `sections order does not match renderer order for ${expectedSlug}.`);
+      const missingKeys = expectedOrder.filter(key => !currentOrder.includes(key));
+      if (missingKeys.length > 0) {
+        pushIssue(
+          issues,
+          'service',
+          rel,
+          'missing_renderer_section',
+          `sections is missing renderer-referenced key(s) for ${expectedSlug}: ${missingKeys.join(', ')}.`
+        );
       }
     }
   }

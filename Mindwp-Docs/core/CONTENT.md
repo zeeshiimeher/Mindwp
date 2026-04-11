@@ -41,6 +41,99 @@ AI systems must operate in execution mode, not strategy mode. AI may implement, 
 
 ---
 
+## BOFU CONTENT ISOLATION RULE (LOCKED)
+
+BOFU (decision-ready) sections are STRICTLY limited to SERVICE pages.
+
+The following sections are classified as BOFU:
+
+- Decision Section
+- Failure Section
+- Proof escalation blocks (conversion-focused proof)
+- Direct service-mapped CTA escalation
+
+Rules:
+
+1. Blog pages MUST NOT contain:
+   - Decision sections
+   - Failure sections
+   - Aggressive conversion proof blocks
+   - Direct service conversion framing
+
+2. Resource pages MUST NOT contain:
+   - Decision sections
+   - Failure sections
+   - BOFU-style CTA escalation
+   - Sales-driven proof positioning
+
+3. Blog and Resource pages may:
+   - educate
+   - explain systems
+   - introduce problems
+   - link upward to services
+
+4. Conversion escalation must happen ONLY at:
+   - Industry pages
+   - Service pages
+
+Violation Consequence:
+
+If a page includes BOFU sections outside service pages:
+
+- It is considered CONTENT ROLE DRIFT
+- It must be rewritten or stripped before publish
+
+Purpose:
+
+This rule preserves:
+
+- intent hierarchy
+- content flow integrity
+- authority structure
+- conversion clarity
+
+---
+
+## FUNNEL ROLE SEPARATION (LOCKED)
+
+MindWP content must follow a clear funnel-role model:
+
+- TOFU = discovery and problem awareness
+- MOFU = system explanation, validation, and transition
+- BOFU = decision-ready service conversion
+
+Role ownership:
+
+1. Blog pages
+   - Primary role: TOFU and MOFU
+   - May: explain problems, teach systems, clarify tradeoffs, route upward
+   - Must not: behave like direct BOFU conversion pages
+
+2. Resource pages
+   - Primary role: MOFU
+   - May: explain frameworks, comparisons, blueprints, and implementation logic
+   - Must not: behave like decision-close pages
+
+3. Industry pages
+   - Primary role: late MOFU to controlled BOFU transition
+   - May: contextualize services commercially
+   - Must remain aligned to service routing, not isolated sales narratives
+
+4. Service pages
+   - Primary role: BOFU
+   - Own: decision support, conversion proof, implementation scope, and service CTA escalation
+
+Execution rule:
+
+- Service pages are the only true BOFU layer
+- Blog and resource pages must route upward into service pages rather than absorb BOFU structure themselves
+
+Violation consequence:
+
+- If blog or resource pages absorb BOFU structure, the page has broken content-role integrity and must be corrected before publish
+
+---
+
 # ===== PART 1: SERVICE ARCHITECTURE =====
 
 ---

@@ -70,33 +70,32 @@ export const crmAutomationPage = {
   category: 'Lead & Follow-Up',
   seo: buildServiceSeo({
     slug,
-    title: 'CRM Setup | Track Every Lead and Never Miss a Follow-Up',
+    title: 'CRM Setup for Service Businesses | MindWP',
     description:
-      'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+      'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
     schemaName: 'CRM setup and lead tracking for service businesses',
     schemaDescription:
-      'Done-for-you CRM setup that tracks every lead, sends follow-ups on time, and lets your team see exactly where every enquiry stands.',
+      'Done-for-you CRM setup that tracks every lead, sends follow-ups on time, and gives your team clear visibility into every enquiry.',
   }),
   hero: {
-    badge: 'Never Lose a Lead Again',
-    title: 'Know where every lead is, who\'s handling it, and what happens next',
+    badge: 'CRM Setup for Service Businesses',
+      title: 'CRM Setup That Stops Leads Falling Through',
     description:
-      'Right now, leads come in through calls, emails, and forms — and some just disappear. We set up your CRM so every single one is captured, the right person is told about it, and follow-up happens even when nobody remembers. Open your CRM and you can see every lead, who\'s handling it, and what\'s happening next.',
+      'Your team handles enquiries across email, text, and voicemail. Some get answered. Some get forgotten. Nobody is sure who owns what. We set up your CRM so every lead is captured, the right person is notified, and follow-up happens even when the day gets busy.',
     list: [
-      'Every lead lands in one place — nothing gets lost',
-      'Follow-ups happen automatically, even when the team is busy',
-      'You can see exactly where every opportunity stands',
-      'Bookings and reminders run on their own',
+        'Lead Tracking',
+        'Auto Follow-up',
+        'Pipeline Visibility',
     ],
     cssPrefix: 'crm-automation-hero',
   },
   sections: {
     positioning: {
       badge: 'The real problem',
-      title: 'The first conversation usually goes fine. It\'s everything after that falls apart.',
+      title: 'The first conversation usually goes fine. Everything after that falls apart.',
       description:
-        'Leads come in from calls, emails, and your website. Someone responds. But then what? Messages pile up in different inboxes. Nobody is sure who\'s handling what. Follow-ups get forgotten when the day gets busy. A proper CRM setup puts every lead in one place, assigns it to someone specific, and makes sure the next step actually happens — even when your team is flat out.',
-      currentStateLabel: 'What\'s happening now',
+        'Leads arrive from calls, emails, and your website. Someone responds. But then messages pile up in different inboxes. Nobody is sure who owns what. Follow-ups get forgotten when the day gets busy. A CRM setup fixes this by putting every lead in one place, assigning it to someone specific, and making sure the next step actually happens.',
+      currentStateLabel: 'What is happening now',
       structuredStateLabel: 'What changes with a CRM',
       painPoints: [
         {
@@ -109,7 +108,7 @@ export const crmAutomationPage = {
         },
         {
           before: 'Nobody knows how many leads came in this week or where they stand.',
-          after: 'You can see every active lead, which stage it\'s at, and who\'s responsible — all in one view.',
+          after: 'You can see every active lead, which stage it is at, and who is responsible — in one view.',
         },
       ],
       cssPrefix: 'crm-automation-positioning-header',
@@ -117,9 +116,9 @@ export const crmAutomationPage = {
     },
     useCasesSection: {
       badge: 'Day-to-day impact',
-      title: 'Here\'s what changes when your CRM is actually set up properly',
+      title: 'What changes when your CRM is actually set up properly',
       description:
-        'These are everyday situations your team deals with. Right now they probably rely on memory and scattered tools. After setup, each one just works — without anyone chasing or remembering.',
+        'These are everyday situations your team already deals with. Right now they rely on memory and scattered tools. After setup, each one just works.',
       cssPrefix: 'crm-automation-use-cases-header',
       items: [
         {
@@ -778,28 +777,96 @@ export const crmAutomationPage = {
     },
     governance: {
       badge: 'Built on clear rules',
-      title: 'We make sure the basics are sorted before turning anything on',
+      title: 'We define ownership and process before turning anything on',
       description:
-        'Before anything runs on its own, we define who handles what, how a lead moves from first contact to outcome, and what happens at each stage. That way the CRM helps your team instead of creating more confusion.',
+        'Before any automation runs, we define who handles what, how a lead moves from first contact to outcome, and what happens at each stage. The CRM helps your team instead of creating more confusion.',
       cssPrefix: 'crm-automation-governance-header',
+    },
+    comparison: {
+      header: {
+        title: 'Scattered tools vs a structured CRM setup',
+        description:
+          'Most service businesses track leads across email, texts, spreadsheets, and memory. Here is what that costs compared to a properly configured CRM.',
+      },
+      items: [
+        {
+          type: 'before' as const,
+          title: 'Scattered tools and manual tracking',
+          items: [
+            'Leads arrive in different inboxes and some never get seen',
+            'Follow-up depends on someone remembering to check',
+            'Nobody knows how many leads came in or where they stand',
+            'Missed calls and after-hours enquiries fall through the cracks',
+            'Review requests and re-engagement happen inconsistently',
+          ],
+        },
+        {
+          type: 'after' as const,
+          title: 'Structured CRM setup',
+          items: [
+            'Every lead captured in one place with clear ownership',
+            'Follow-up sequences run automatically based on stage and timing',
+            'Pipeline shows every active lead, who owns it, and what happens next',
+            'Missed calls trigger notifications and follow-up immediately',
+            'Review requests and re-engagement run on schedule without manual effort',
+          ],
+        },
+      ],
+    },
+    proof: {
+      header: {
+        title: 'What this looks like when it is running',
+        description:
+          'A service business was getting consistent enquiries but had no way to track them. Leads sat in email, texts were scattered, and follow-up depended on who remembered.',
+      },
+      cards: [
+        {
+          title: 'Before: leads everywhere, follow-up nowhere',
+          description: 'The business was generating 50+ enquiries per month across forms, calls, and messages. But there was no central system. The team used email, sticky notes, and memory to manage follow-up.',
+          points: [
+            'No single view of active leads or their status',
+            'Follow-up happened when someone remembered, if at all',
+            'Missed calls and after-hours enquiries went untracked',
+          ],
+        },
+        {
+          title: 'What we built: one system for everything',
+          description: 'We configured a CRM to capture every enquiry source, set up automated follow-up sequences, built a pipeline with clear stages, and gave the team notifications and ownership rules.',
+          points: [
+            'All enquiry sources feeding into one unified inbox',
+            'Automated follow-up sequences triggered by lead stage',
+            'Pipeline with clear stages, ownership, and next-step visibility',
+          ],
+          featured: true,
+        },
+        {
+          title: 'After: nothing falls through, team knows where everything stands',
+          description: 'Within weeks, the team could see every active lead. Follow-up happened on time. Missed calls triggered immediate notifications. The business stopped losing leads to disorganisation.',
+          points: [
+            'Every lead tracked from first contact through to outcome',
+            'Follow-up response times dropped from days to minutes',
+            'Team gained full visibility into pipeline and workload',
+          ],
+        },
+      ],
     },
     qualification: {
       title: 'Is this the right fit for your business?',
       description:
-        'This works for businesses that get regular leads and want to stop losing them to disorganisation. Here\'s how to tell if it\'s right for you.',
+        'This works for businesses that get regular leads and want to stop losing them to disorganisation.',
       cssPrefix: 'crm-automation-qualification-header',
-      strongFitTitle: 'Great fit if',
+      strongFitTitle: 'Strong fit if',
       strongFitItems: [
-        'Leads come in regularly but you\'re not confident every one gets handled.',
-        'Your team juggles follow-ups across email, text, and calls — and some slip through.',
-        'You want to open your CRM and see every active lead, who owns it, and what\'s next.',
-        'You\'d rather have things happen automatically than rely on someone remembering.',
+        'Leads come in regularly but you are not confident every one gets handled.',
+        'Your team juggles follow-ups across email, text, and calls \u2014 and some slip through.',
+        'You want to see every active lead, who owns it, and what happens next.',
+        'You would rather have things happen automatically than rely on someone remembering.',
       ],
-      notDesignedTitle: 'Probably not the right fit if',
+      notDesignedTitle: 'Not the right fit if',
       notDesignedItems: [
         'You only get a handful of leads per month and can easily track them yourself.',
         'Your team genuinely prefers doing everything manually and has no interest in changing.',
-        'You need a short-term campaign tool, not a long-term setup.',
+        'You need a short-term campaign tool, not a long-term operational setup.',
         'Nobody on the team has agreed on how leads should be handled in the first place.',
       ],
     },
@@ -807,13 +874,52 @@ export const crmAutomationPage = {
       badge: 'Works best with a clear website',
       title: 'Your CRM does more when your website already makes sense',
       description:
-        'When your website clearly explains your services and makes it easy for people to get in touch, the CRM picks it up from there — capturing the enquiry, notifying your team, and kicking off the follow-up. If your website needs work first, we can help with that too.',
+        'When the website clearly explains your services and makes it easy for people to get in touch, the CRM picks it up from there \u2014 capturing the enquiry, notifying your team, and kicking off the follow-up. If your website needs work first, we can help with that too.',
       cssPrefix: 'crm-automation-connection-header',
     },
+    faqSection: {
+      badge: 'FAQ',
+      title: 'Common questions about CRM setup',
+      description:
+        'Practical questions from businesses trying to decide if a CRM setup is the right move.',
+      faqs: [
+        {
+          question: 'Do I need to switch to a new CRM?',
+          answer:
+            'Not necessarily. We can work with what you have or recommend the right platform based on your business size, team, and needs.',
+        },
+        {
+          question: 'How long does the setup take?',
+          answer:
+            'Most setups take a few weeks depending on complexity. The goal is to get the core working quickly and refine from there.',
+        },
+        {
+          question: 'Will my team actually use it?',
+          answer:
+            'We build the CRM around how your team works, not the other way around. Clear ownership, simple next steps, and useful visibility make adoption easier.',
+        },
+        {
+          question: 'Can this connect to our website forms and booking system?',
+          answer:
+            'Yes. We integrate forms, booking tools, email, SMS, and other lead sources so everything feeds into one system.',
+        },
+        {
+          question: 'What if we already have a CRM but it is not set up properly?',
+          answer:
+            'That is one of the most common starting points. We audit what exists, identify what is broken or unused, and restructure it so it actually works.',
+        },
+      ],
+      cssPrefix: 'crm-automation-faq',
+    },
+  },
+  inlineCta: {
+    title: 'Not sure how many leads you are losing?',
+    description:
+      'Tell us how your team handles enquiries today. We will show you where leads are falling through and what a structured CRM would change.',
   },
   cta: {
-    title: 'Tired of leads slipping through the cracks?',
+    title: 'Stop losing leads to disorganisation',
     description:
-      'Tell us how your team handles enquiries today. We\'ll show you exactly where things are falling through and set up a CRM that makes sure every lead is tracked, followed up, and accounted for.',
+      'Tell us how enquiries come in and how your team handles them. We will show you where things are falling through and set up a CRM that tracks every lead from first contact to outcome.',
   },
 } satisfies ServicePageData;

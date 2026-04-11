@@ -49,55 +49,55 @@ export const growthRevenueSystemsPage = {
   category: 'Growth Systems',
   seo: buildServiceSeo({
     slug: 'growth-revenue-systems',
-    title: 'Revenue Growth Systems | Fix Lead & Follow-Up Gaps',
+    title: 'Revenue Growth Systems for Service Businesses | MindWP',
     description:
-      'Revenue Growth Systems help service businesses identify where leads stall, follow-up breaks down, and conversion leaks happen across the website, CRM, and workflow.',
+      'Find where leads stall, follow-up breaks, and revenue leaks. Structured growth-system reviews that diagnose the real problem before adding more pressure.',
     schemaName: 'Revenue Growth Systems for service businesses',
     schemaDescription:
-      'A structured growth-system review for service businesses that need clearer lead handling, follow-up, conversion flow, and operational visibility.',
+      'Structured growth-system reviews for service businesses — diagnosing lead handling, follow-up, conversion flow, and operational visibility gaps.',
   }),
   hero: {
     badge: 'Revenue Growth Systems',
-    title: 'Growth slows when leads come in but nothing moves them forward reliably',
+      title: 'Find What Is Stalling Revenue After First Contact',
     description:
-      'Most revenue problems are not demand problems. They come from weak follow-up, unclear routing, or a website that generates interest without a clear next step. This service finds where momentum is being lost and helps fix it in the right order.',
+      'Most service businesses lose revenue between the enquiry and the close. Slow follow-up, unclear routing, weak handoff, and invisible pipeline gaps cost more than any marketing budget. This review finds exactly where momentum breaks down.',
     cssPrefix: 'technical-audit-hero',
     list: [
-      'Find where enquiries leak or stall after first contact',
-      'See where follow-up and handoff lose momentum',
-      'Fix the weak points before adding more pressure',
+        'Leak Detection',
+        'Handoff Gaps',
+        'Revenue Recovery',
     ],
   },
   sections: {
     foundation: {
       badge: 'Why revenue feels inconsistent',
-      title: 'What looks like a demand problem is usually a structure problem',
+      title: 'The real reason revenue stays flat despite more leads',
       description:
-        'More activity is not always the answer. Often the better move is to find where the current system is already slowing things down — and fix that first.',
+        'Spending more on marketing when the conversion system is broken just creates expensive inconsistency. The problem is usually closer than you think.',
       painPoints: [
         {
-          before: 'More leads come in, but results still feel inconsistent.',
+          before: 'Leads come in but revenue still feels unpredictable month to month.',
           after:
-            'The review identifies where conversion slows after first contact, so improvements are based on evidence rather than guesswork.',
+            'The review pinpoints exactly where conversion breaks down after first contact — so you fix what matters instead of guessing.',
         },
         {
-          before: 'Teams assume the website, CRM, or follow-up process is good enough.',
+          before: 'The team assumes the website, CRM, and follow-up are working well enough.',
           after:
-            'The review shows where handoff, routing, or follow-up are creating friction that nobody has looked at properly.',
+            'The review exposes handoff gaps, routing failures, and follow-up blind spots that nobody has examined properly.',
         },
         {
-          before: 'The business keeps adding activity without fixing the weak points underneath.',
+          before: 'More traffic, more tools, more activity — but the same inconsistent results.',
           after:
-            'The system focuses on the bottlenecks first, so future traffic or sales effort has a stronger base to work from.',
+            'Bottlenecks get fixed first so that future spend and effort work through a stronger system.',
         },
       ],
     },
     auditAreas: {
       header: {
-        badge: 'Revenue leak review',
-        title: 'Where we look first when growth feels inconsistent',
+        badge: 'Where we look',
+        title: 'The eight areas where revenue typically leaks',
         description:
-          'Most growth problems come from a small number of repeat areas: unclear page structure, slow follow-up, poor pipeline visibility, or weak handoff between tools and people.',
+          'Growth problems cluster around the same areas: unclear pages, slow response, poor handoff, invisible pipeline, and weak trust signals. We check all of them.',
         cssPrefix: 'technical-audit-areas-header',
       },
       items: [
@@ -217,10 +217,10 @@ export const growthRevenueSystemsPage = {
     },
     wordpressContext: {
       header: {
-        badge: 'Why growth work often stalls',
-        title: 'Revenue problems are usually system problems, not marketing problems',
+        badge: 'Why growth work stalls',
+        title: 'Revenue problems are system problems, not marketing problems',
         description:
-          'The weak point is rarely one thing. It is the gap between website clarity, response handling, CRM use, and visibility into what actually happens after someone gets in touch.',
+          'The weak point is rarely one thing. It is the gap between website clarity, response handling, CRM use, and visibility into what happens after someone gets in touch.',
         cssPrefix: 'technical-audit-wordpress-header',
         alignment: 'left' as const,
       },
@@ -259,9 +259,9 @@ export const growthRevenueSystemsPage = {
     deliverables: {
       header: {
         badge: 'What you get',
-        title: 'What the review produces once the diagnosis is clear',
+        title: 'What the review produces',
         description:
-          'The goal is not a pile of observations. It is a structured view of what is slowing growth down and a practical plan for fixing it.',
+          'Not a pile of observations. A structured view of what is slowing growth and a practical plan for fixing it in the right order.',
         cssPrefix: 'technical-audit-deliverables-header',
       },
       items: [
@@ -310,34 +310,34 @@ export const growthRevenueSystemsPage = {
       ],
     },
     process: {
-      badge: 'Our Approach',
-      title: 'How the review works',
+      badge: 'How it works',
+      title: 'How the growth-system review works',
       description:
-        'The review follows a clear sequence: understand the current setup, find the weak points, organise priorities, and decide the right next step.',
+        'Clear sequence: understand the current setup, find the weak points, prioritise fixes, decide the right next step.',
       steps: [
         {
           number: '1',
-          title: 'Understand the current setup',
+          title: 'Map the current setup',
           description:
-            'We look at the website, lead flow, follow-up process, and the systems involved in first contact and conversion.',
+            'We look at the website, lead flow, follow-up process, and the systems involved from first contact to close.',
         },
         {
           number: '2',
-          title: 'Find where momentum is lost',
+          title: 'Find where momentum breaks',
           description:
-            'We identify where the business is losing leads, missing context, or relying on weak handoff between tools and people.',
+            'We identify where the business is losing leads, missing follow-up, or relying on weak handoff between tools and people.',
         },
         {
           number: '3',
-          title: 'Organise the priorities',
+          title: 'Prioritise the fixes',
           description:
-            'Findings are turned into a practical sequence so the most important fixes are visible first.',
+            'Findings become a practical sequence so the highest-impact fixes happen first.',
         },
         {
           number: '4',
-          title: 'Decide the right next step',
+          title: 'Decide what to do next',
           description:
-            'Whether the next move is a rebuild, follow-up improvement, CRM work, or better search and discovery — the decision is based on what the review found.',
+            'Whether the next move is a rebuild, follow-up improvement, CRM work, or visibility fix — the decision is based on what the review found.',
         },
       ],
       columns: 4 as const,
@@ -345,130 +345,198 @@ export const growthRevenueSystemsPage = {
       backgroundColor: 'bg-alt' as const,
     },
     bridge: {
-      badge: 'Before adding more pressure',
-      title: 'Fix the weak points before adding more traffic or automation',
+      badge: 'What changes',
+      title: 'What changes when you fix the system instead of adding more pressure',
       description:
-        'Many businesses try to fix revenue by doing more. But doing more through a broken system just creates more inconsistency. This review helps you find and fix the structural problems first.',
+        'Most businesses try to grow by doing more. But more activity through a broken system just multiplies the inconsistency. Fix the foundation and everything above it works harder.',
       tagline: 'Clarity before more activity',
       narrativeTitle: 'The right fix depends on where momentum is actually being lost',
       narrativeParagraphs: [
-        'Sometimes the issue is the website. Sometimes it is follow-up. Sometimes it is routing, trust, or pipeline visibility. The right answer depends on where the leakage is really happening.',
-        'That is why this service is structured as a growth-system review, not a generic performance audit. The aim is to find the real weak points so the next move is based on evidence, not assumption.',
+        'Sometimes the issue is the website. Sometimes it is follow-up speed. Sometimes it is CRM adoption or lead routing. The right answer depends on where the leakage is really happening.',
+        'That is why this is structured as a growth-system review, not a generic audit. The aim is to find the real weak points so the next move is based on evidence.',
       ],
       features: [
         {
           icon: Search,
           title: 'Diagnose before scaling',
           description:
-            'Find where leads and conversion lose momentum before adding more traffic or automation.',
+            'Find where leads and conversion lose momentum before spending more on traffic or automation.',
         },
         {
           icon: Settings,
           title: 'Fix the right layer',
           description:
-            'Decide the next step based on whether the issue is structural, technical, operational, or follow-up related.',
+            'The next step depends on whether the issue is structural, technical, operational, or follow-up related.',
         },
         {
           icon: BarChart3,
-          title: 'Prioritise clearly',
+          title: 'Prioritise what matters most',
           description:
-            'Focus on the parts of the system that affect growth most, instead of trying to fix everything at once.',
+            'Focus on the parts of the system that affect revenue directly, instead of trying to fix everything at once.',
+        },
+      ],
+    },
+    comparison: {
+      header: {
+        title: 'Fixing symptoms vs diagnosing the system',
+        description:
+          'Most businesses react to revenue problems by adding more activity. Here is what that approach costs compared to diagnosing the system first.',
+      },
+      items: [
+        {
+          type: 'before' as const,
+          title: 'Symptom-fixing approach',
+          items: [
+            'More traffic added through a website that does not convert clearly',
+            'New tools purchased without fixing the handoff problems underneath',
+            'Follow-up responsibility scattered with no clear ownership or timing',
+            'Revenue feels inconsistent but nobody can pinpoint exactly why',
+            'Decisions are based on assumptions instead of evidence',
+          ],
+        },
+        {
+          type: 'after' as const,
+          title: 'System-diagnosis approach',
+          items: [
+            'Website, follow-up, and CRM reviewed together as one connected system',
+            'Specific weak points identified before any new tools or spend are added',
+            'Follow-up ownership and timing made visible and accountable',
+            'Revenue leaks traced to exact stages so fixes are targeted',
+            'Next steps prioritised based on what the review actually found',
+          ],
+        },
+      ],
+    },
+    proof: {
+      header: {
+        title: 'What this looks like in practice',
+        description:
+          'A home services company was spending on ads and getting enquiries, but revenue stayed flat. The problem was not demand. It was what happened after first contact.',
+      },
+      cards: [
+        {
+          title: 'Before: leads coming in, revenue staying flat',
+          description: 'The business was generating consistent enquiry volume through paid traffic and organic search. But close rates were low, follow-up was inconsistent, and the team could not see where deals were stalling.',
+          points: [
+            'Enquiries came in but many went cold within 48 hours',
+            'No visibility into which leads were being followed up',
+            'The CRM existed but pipeline stages were not used meaningfully',
+          ],
+        },
+        {
+          title: 'What we found: three layers of leakage',
+          description: 'The growth-system review identified slow first-response times, unclear lead routing between team members, and a website that generated interest but gave no clear next step.',
+          points: [
+            'Average first response was over 6 hours for form enquiries',
+            'Lead routing had no ownership rules — enquiries sat in a shared inbox',
+            'Service pages described capabilities but had no clear conversion path',
+          ],
+          featured: true,
+        },
+        {
+          title: 'After: targeted fixes, measurable improvement',
+          description: 'By fixing response speed, routing ownership, and page conversion paths in the right order, close rates improved and revenue became more predictable without increasing ad spend.',
+          points: [
+            'First-response time reduced from hours to minutes',
+            'Lead ownership clear at every stage of the pipeline',
+            'Revenue improved without increasing marketing spend',
+          ],
         },
       ],
     },
     qualification: {
-      title: 'Who this is designed for',
+      title: 'Is this the right fit for your business?',
       description:
-        'This review works best for businesses that want to understand what is slowing revenue down before committing to the wrong kind of fix.',
-      strongFitTitle: 'Strong fit',
+        'This review works best for businesses that already have lead flow but want to understand what is limiting conversion before committing to the wrong fix.',
+      strongFitTitle: 'Strong fit if',
       strongFitItems: [
         {
-          title: 'You already have lead flow of some kind',
+          title: 'You have leads but revenue feels inconsistent',
           description:
-            'The business is already getting enquiries, but revenue feels less consistent than it should.',
+            'Enquiries are coming in but results vary month to month and nobody can explain why.',
         },
         {
-          title: 'You are unsure where the weak point is',
+          title: 'You are not sure where the weak point actually is',
           description:
-            'You do not want to guess whether the issue is the website, CRM, follow-up process, or conversion flow.',
+            'It could be the website, follow-up, CRM use, or handoff between people and tools. You want clarity before committing.',
         },
         {
-          title: 'You want a prioritised plan',
+          title: 'You want priorities, not a generic checklist',
           description:
-            'You want to know what matters first, what can wait, and what should not be changed blindly.',
+            'You need to know what matters first, what depends on other work, and what to leave alone for now.',
         },
         {
-          title: 'You prefer diagnosis before pressure',
+          title: 'You prefer diagnosis before adding more spend',
           description:
-            'You value a structured review before more spend, more tools, or more activity is added.',
+            'You want evidence that the system can handle growth before pouring more money into traffic or tools.',
         },
       ],
-      notDesignedTitle: 'Not designed for',
+      notDesignedTitle: 'Not the right fit if',
       notDesignedItems: [
         {
-          title: 'Brand new businesses with no current system',
+          title: 'You are starting from zero with no current lead flow',
           description:
-            'If there is nothing established yet, another implementation page is usually a better starting point.',
+            'If nothing is established yet, a build-first approach is usually more appropriate.',
         },
         {
-          title: 'Quick fixes only',
+          title: 'You want a quick patch without diagnosis',
           description:
-            'This is not the right fit if the goal is a fast patch without review or prioritisation.',
+            'This is a structured review that identifies root causes. It is not a surface-level fix.',
         },
         {
-          title: 'Traffic promises or fixed outcome commitments',
+          title: 'You expect guaranteed traffic or revenue numbers',
           description:
-            'The service is about diagnosing and improving the system, not making unrealistic growth claims.',
+            'The service diagnoses and improves the system. It does not make unrealistic promises about outcomes.',
         },
         {
-          title: 'Very low-complexity brochure sites',
+          title: 'Your business has very little operational complexity',
           description:
-            'If the business has little operational depth, a full growth-system review may be unnecessary.',
+            'If the setup is a simple brochure site with minimal lead flow, a full growth-system review may be more than you need.',
         },
       ],
     },
     faqSection: {
-      badge: 'Revenue Growth Questions',
-      title: 'Common Questions',
+      badge: 'FAQ',
+      title: 'Common questions about growth-system reviews',
       description:
-        'Questions we hear most about the review process, what it covers, and what happens once the findings are clear.',
+        'Practical questions from businesses trying to decide whether a system review is the right next step.',
       faqs: [
         {
           question: 'Is this the same as a technical SEO audit?',
           answer:
-            'No. Technical SEO may be one part of the review, but this service looks more broadly at website structure, follow-up, routing, CRM visibility, and where revenue momentum is being lost.',
+            'No. SEO may be one part of the review, but this looks more broadly at website conversion, follow-up speed, CRM visibility, lead routing, and where revenue momentum actually breaks down.',
         },
         {
-          question: 'Do I need a WordPress website for this to be useful?',
+          question: 'Do I need a WordPress website for this?',
           answer:
-            'No, but the service is most useful when there is already a real website, real enquiry flow, and some operational structure to review. The current page still fits best when there is an existing setup to diagnose.',
+            'No. The review works with any platform. It is most useful when there is already a real website, real enquiry flow, and some operational depth to examine.',
         },
         {
           question: 'What if the main problem turns out not to be the website?',
           answer:
-            'That is still useful. The point of the review is to find the real weak point, whether that is follow-up, CRM use, routing, trust, or something else in the system.',
+            'That is still a valuable finding. The point of the review is to find the real weak point \u2014 whether it is follow-up, CRM use, routing, trust, or something else entirely.',
         },
         {
-          question: 'What happens after the review?',
+          question: 'What happens after the review is complete?',
           answer:
-            'After the review, the next step may be a rebuild, CRM work, follow-up improvement, search and discovery work, or another structural fix. The point is to choose the next step with more confidence.',
+            'You get structured findings, prioritised next steps, and a clear recommendation for whether the next move is a rebuild, follow-up improvement, CRM work, or visibility work.',
         },
         {
-          question: 'Is this only for businesses already spending on marketing?',
+          question: 'Can this help if revenue varies a lot month to month?',
           answer:
-            'No, but it is most useful when there is already enough activity, lead flow, or operational complexity for the weak points to be visible.',
-        },
-        {
-          question: 'Can this help if revenue feels inconsistent month to month?',
-          answer:
-            'Yes. That is one of the clearest reasons to use this kind of review. Inconsistent revenue often points to weak handoff, poor follow-up, unclear offers, or broken visibility between stages of the system.',
+            'Yes. Inconsistent revenue is one of the clearest signals that the system has weak handoff, poor follow-up, or broken visibility between stages.',
         },
       ],
     },
   },
-  cta: {
-    title: 'Find out what is slowing growth down',
+  inlineCta: {
+    title: 'Not sure where your revenue is leaking?',
     description:
-      'Tell us how leads move from first contact to follow-up. We will show you where momentum drops and what needs fixing first.',
+      'Tell us how leads move from first contact to close. We will show you where momentum drops and what needs fixing first.',
+  },
+  cta: {
+    title: 'Find out what is actually slowing your growth',
+    description:
+      'Tell us how leads, follow-up, and conversion work in your business today. We will show you where the system breaks and what to fix first.',
   },
 } satisfies ServicePageData;

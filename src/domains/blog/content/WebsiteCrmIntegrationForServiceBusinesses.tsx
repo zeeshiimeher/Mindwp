@@ -26,7 +26,7 @@ export const websiteCrmIntegrationForServiceBusinesses: BlogPostData = {
   authorKey: 'TECHNICAL',
   category: 'smart-website-systems',
   industries: [],
-  systems: ['smart-website-systems'],
+  systems: ['crm-automation'],
   topics: ['crm-integration'],
   primaryKeyword: 'website crm integration for service businesses',
   supportingKeywords: [
@@ -101,6 +101,41 @@ export const websiteCrmIntegrationForServiceBusinesses: BlogPostData = {
       ],
     },
     {
+      type: 'content',
+      heading: 'Decision Section',
+      content: [
+        'Manual lead handling breaks at scale. The more enquiries a service business generates, the more fragile the process becomes when submissions depend on inbox checks, spreadsheet updates, and memory-based follow-up.',
+        'That fragility creates lost leads, slower response times, and revenue leakage. CRM infrastructure is not an optional admin upgrade at that point. It becomes the operating layer that determines whether demand turns into booked work or disappears between handoffs.',
+      ],
+      callout:
+        'If the website is still handing leads to an inbox before they reach the CRM, the business is choosing delay, inconsistency, and missed revenue over structured pipeline control.',
+    },
+    {
+      type: 'content',
+      heading: 'Proof Block: RoofingWebsiteRebuildWithCrm',
+      content: [
+        'In RoofingWebsiteRebuildWithCrm, the before state was fragmented lead handling: website enquiries were separated from pipeline management, response timing depended on manual intervention, and follow-up consistency suffered whenever the team got busy.',
+        'After the CRM system was integrated into the website workflow, lead capture, routing, and follow-up moved into one structured operational layer. The measurable improvement was not cosmetic. Response handling became immediate and trackable, pipeline visibility improved, and the system stopped leaking revenue between first contact and booked work.',
+      ],
+      list: [
+        'Before: enquiries depended on inbox monitoring and manual transfer',
+        'After: submissions entered a CRM-driven workflow with structured routing',
+        'Measured improvement: faster response handling and fewer leads lost between capture and follow-up',
+      ],
+    },
+    {
+      type: 'checklist',
+      heading: 'What Happens If You Do Not Fix This',
+      content: [
+        'When the website and CRM stay disconnected, the business keeps absorbing operational losses that compound as lead volume rises.',
+      ],
+      items: [
+        'Missed leads remain buried in inboxes or scattered across multiple tools',
+        'Follow-up becomes inconsistent because no single system controls timing and ownership',
+        'Revenue is lost when high-intent enquiries slow down before anyone responds',
+      ],
+    },
+    {
       type: 'takeaways',
       heading: 'Key Takeaways',
       items: [
@@ -114,9 +149,9 @@ export const websiteCrmIntegrationForServiceBusinesses: BlogPostData = {
     },
     {
       type: 'cta',
-      heading: 'Connect Your Website to Your CRM',
+      heading: 'Build CRM Infrastructure That Handles Leads Properly',
       content:
-        'If your website captures leads but your CRM remains disconnected, you are losing data, time, and opportunities with every submission. Explore how website CRM integration creates a seamless lead handling workflow.',
+        'If manual lead handling is slowing response time and leaking revenue, crm-infrastructure-implementation gives you a structured system for capture, routing, and follow-up instead of another disconnected tool.',
     },
   ],
 };

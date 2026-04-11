@@ -49,7 +49,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -57,7 +57,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -69,7 +69,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -77,7 +77,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign & System Rebuild',
           description:
-            'Website redesign and system rebuild work for service businesses whose current site no longer matches their services, enquiry flow, integrations, or operational needs.',
+            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -85,7 +85,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -97,7 +97,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -105,7 +105,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign & System Rebuild',
           description:
-            'Website redesign and system rebuild work for service businesses whose current site no longer matches their services, enquiry flow, integrations, or operational needs.',
+            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -113,7 +113,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -125,7 +125,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Revenue Growth Systems',
           description:
-            'Revenue Growth Systems help service businesses identify where leads stall, follow-up breaks down, and conversion leaks happen across the website, CRM, and workflow.',
+            'Find where leads stall, follow-up breaks, and revenue leaks. Structured growth-system reviews that diagnose the real problem before adding more pressure.',
           slug: 'growth-revenue-systems',
           path: '/services/growth-revenue-systems',
           nodeType: 'service',
@@ -133,7 +133,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Marketing Automation Setup',
           description:
-            'Marketing automation setup for service businesses that need structured follow-up, reminders, reactivation, and lifecycle messaging without relying on manual chasing.',
+            'Stop relying on memory for follow-up. Structured marketing automation setup covering follow-up logic, reminders, reactivation, and lifecycle messaging.',
           slug: 'marketing-automation-setup',
           path: '/services/marketing-automation-setup',
           nodeType: 'service',
@@ -141,7 +141,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Funnel & Landing Page Development',
           description:
-            'Funnel and landing page development for service businesses that need focused offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
+            'Focused landing page and funnel page development for service businesses. Tighter offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
           slug: 'funnel-landing-page-development',
           path: '/services/funnel-landing-page-development',
           nodeType: 'service',
@@ -156,7 +156,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -164,7 +164,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign & System Rebuild',
           description:
-            'Website redesign and system rebuild work for service businesses whose current site no longer matches their services, enquiry flow, integrations, or operational needs.',
+            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -172,7 +172,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -184,7 +184,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -192,7 +192,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign & System Rebuild',
           description:
-            'Website redesign and system rebuild work for service businesses whose current site no longer matches their services, enquiry flow, integrations, or operational needs.',
+            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -200,7 +200,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -212,7 +212,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -220,7 +220,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign & System Rebuild',
           description:
-            'Website redesign and system rebuild work for service businesses whose current site no longer matches their services, enquiry flow, integrations, or operational needs.',
+            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -228,7 +228,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -240,7 +240,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Revenue Growth Systems',
           description:
-            'Revenue Growth Systems help service businesses identify where leads stall, follow-up breaks down, and conversion leaks happen across the website, CRM, and workflow.',
+            'Find where leads stall, follow-up breaks, and revenue leaks. Structured growth-system reviews that diagnose the real problem before adding more pressure.',
           slug: 'growth-revenue-systems',
           path: '/services/growth-revenue-systems',
           nodeType: 'service',
@@ -248,7 +248,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Marketing Automation Setup',
           description:
-            'Marketing automation setup for service businesses that need structured follow-up, reminders, reactivation, and lifecycle messaging without relying on manual chasing.',
+            'Stop relying on memory for follow-up. Structured marketing automation setup covering follow-up logic, reminders, reactivation, and lifecycle messaging.',
           slug: 'marketing-automation-setup',
           path: '/services/marketing-automation-setup',
           nodeType: 'service',
@@ -256,7 +256,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Conversion Funnel System',
           description:
-            'Conversion funnel systems for service businesses that need clearer page-to-enquiry journeys, fewer drop-offs, better offer structure, and more measurable funnel stages.',
+            'Stop losing visitors between the page and the enquiry. Structured conversion funnel systems that fix page flow, offer clarity, CTA logic, and enquiry handoff.',
           slug: 'conversion-funnel-system',
           path: '/services/conversion-funnel-system',
           nodeType: 'service',
@@ -268,7 +268,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Marketing Automation Setup',
           description:
-            'Marketing automation setup for service businesses that need structured follow-up, reminders, reactivation, and lifecycle messaging without relying on manual chasing.',
+            'Stop relying on memory for follow-up. Structured marketing automation setup covering follow-up logic, reminders, reactivation, and lifecycle messaging.',
           slug: 'marketing-automation-setup',
           path: '/services/marketing-automation-setup',
           nodeType: 'service',
@@ -276,7 +276,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Conversion Funnel System',
           description:
-            'Conversion funnel systems for service businesses that need clearer page-to-enquiry journeys, fewer drop-offs, better offer structure, and more measurable funnel stages.',
+            'Stop losing visitors between the page and the enquiry. Structured conversion funnel systems that fix page flow, offer clarity, CTA logic, and enquiry handoff.',
           slug: 'conversion-funnel-system',
           path: '/services/conversion-funnel-system',
           nodeType: 'service',
@@ -284,7 +284,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Funnel & Landing Page Development',
           description:
-            'Funnel and landing page development for service businesses that need focused offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
+            'Focused landing page and funnel page development for service businesses. Tighter offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
           slug: 'funnel-landing-page-development',
           path: '/services/funnel-landing-page-development',
           nodeType: 'service',
@@ -296,7 +296,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Marketing Automation Setup',
           description:
-            'Marketing automation setup for service businesses that need structured follow-up, reminders, reactivation, and lifecycle messaging without relying on manual chasing.',
+            'Stop relying on memory for follow-up. Structured marketing automation setup covering follow-up logic, reminders, reactivation, and lifecycle messaging.',
           slug: 'marketing-automation-setup',
           path: '/services/marketing-automation-setup',
           nodeType: 'service',
@@ -304,7 +304,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Conversion Funnel System',
           description:
-            'Conversion funnel systems for service businesses that need clearer page-to-enquiry journeys, fewer drop-offs, better offer structure, and more measurable funnel stages.',
+            'Stop losing visitors between the page and the enquiry. Structured conversion funnel systems that fix page flow, offer clarity, CTA logic, and enquiry handoff.',
           slug: 'conversion-funnel-system',
           path: '/services/conversion-funnel-system',
           nodeType: 'service',
@@ -312,7 +312,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Funnel & Landing Page Development',
           description:
-            'Funnel and landing page development for service businesses that need focused offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
+            'Focused landing page and funnel page development for service businesses. Tighter offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
           slug: 'funnel-landing-page-development',
           path: '/services/funnel-landing-page-development',
           nodeType: 'service',
@@ -327,7 +327,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Lead Reactivation System',
           description:
-            'Lead reactivation systems for service businesses that need a cleaner way to re-engage old enquiries, dormant quotes, and cold opportunities without random follow-up.',
+            'Stop letting old enquiries, stalled quotes, and past customers sit unused. Structured reactivation that turns dormant pipeline into recovered revenue.',
           slug: 'lead-reactivation-system',
           path: '/services/lead-reactivation-system',
           nodeType: 'service',
@@ -335,7 +335,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Conversion Funnel System',
           description:
-            'Conversion funnel systems for service businesses that need clearer page-to-enquiry journeys, fewer drop-offs, better offer structure, and more measurable funnel stages.',
+            'Stop losing visitors between the page and the enquiry. Structured conversion funnel systems that fix page flow, offer clarity, CTA logic, and enquiry handoff.',
           slug: 'conversion-funnel-system',
           path: '/services/conversion-funnel-system',
           nodeType: 'service',
@@ -343,7 +343,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Funnel & Landing Page Development',
           description:
-            'Funnel and landing page development for service businesses that need focused offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
+            'Focused landing page and funnel page development for service businesses. Tighter offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
           slug: 'funnel-landing-page-development',
           path: '/services/funnel-landing-page-development',
           nodeType: 'service',
@@ -355,7 +355,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -363,7 +363,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -375,7 +375,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -387,7 +387,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -399,7 +399,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'WordPress Website Development',
           description:
-            'Structured WordPress website development for service businesses that need clear site architecture, better enquiry flow, cleaner implementation, and long-term maintainability.',
+            'WordPress website development built around how the business works. Clear service architecture, proper enquiry flow, and a foundation that stays manageable after launch.',
           slug: 'wordpress-development',
           path: '/services/wordpress-development',
           nodeType: 'service',
@@ -407,7 +407,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign & System Rebuild',
           description:
-            'Website redesign and system rebuild work for service businesses whose current site no longer matches their services, enquiry flow, integrations, or operational needs.',
+            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -415,7 +415,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -427,7 +427,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -435,7 +435,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'WordPress Website Development',
           description:
-            'Structured WordPress website development for service businesses that need clear site architecture, better enquiry flow, cleaner implementation, and long-term maintainability.',
+            'WordPress website development built around how the business works. Clear service architecture, proper enquiry flow, and a foundation that stays manageable after launch.',
           slug: 'wordpress-development',
           path: '/services/wordpress-development',
           nodeType: 'service',
@@ -443,7 +443,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign & System Rebuild',
           description:
-            'Website redesign and system rebuild work for service businesses whose current site no longer matches their services, enquiry flow, integrations, or operational needs.',
+            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -455,7 +455,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -463,7 +463,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -475,7 +475,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -483,7 +483,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'WordPress Website Development',
           description:
-            'Structured WordPress website development for service businesses that need clear site architecture, better enquiry flow, cleaner implementation, and long-term maintainability.',
+            'WordPress website development built around how the business works. Clear service architecture, proper enquiry flow, and a foundation that stays manageable after launch.',
           slug: 'wordpress-development',
           path: '/services/wordpress-development',
           nodeType: 'service',
@@ -491,7 +491,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -503,7 +503,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -511,7 +511,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign & System Rebuild',
           description:
-            'Website redesign and system rebuild work for service businesses whose current site no longer matches their services, enquiry flow, integrations, or operational needs.',
+            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -519,7 +519,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -533,7 +533,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -541,7 +541,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -549,7 +549,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -561,7 +561,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -569,7 +569,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Booking & Scheduling System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
           slug: 'booking-scheduling-system',
           path: '/services/booking-scheduling-system',
           nodeType: 'service',
@@ -577,7 +577,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Conversion Funnel System',
           description:
-            'Conversion funnel systems for service businesses that need clearer page-to-enquiry journeys, fewer drop-offs, better offer structure, and more measurable funnel stages.',
+            'Stop losing visitors between the page and the enquiry. Structured conversion funnel systems that fix page flow, offer clarity, CTA logic, and enquiry handoff.',
           slug: 'conversion-funnel-system',
           path: '/services/conversion-funnel-system',
           nodeType: 'service',
@@ -589,7 +589,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Marketing Automation Setup',
           description:
-            'Marketing automation setup for service businesses that need structured follow-up, reminders, reactivation, and lifecycle messaging without relying on manual chasing.',
+            'Stop relying on memory for follow-up. Structured marketing automation setup covering follow-up logic, reminders, reactivation, and lifecycle messaging.',
           slug: 'marketing-automation-setup',
           path: '/services/marketing-automation-setup',
           nodeType: 'service',
@@ -597,7 +597,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Conversion Funnel System',
           description:
-            'Conversion funnel systems for service businesses that need clearer page-to-enquiry journeys, fewer drop-offs, better offer structure, and more measurable funnel stages.',
+            'Stop losing visitors between the page and the enquiry. Structured conversion funnel systems that fix page flow, offer clarity, CTA logic, and enquiry handoff.',
           slug: 'conversion-funnel-system',
           path: '/services/conversion-funnel-system',
           nodeType: 'service',
@@ -605,7 +605,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Funnel & Landing Page Development',
           description:
-            'Funnel and landing page development for service businesses that need focused offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
+            'Focused landing page and funnel page development for service businesses. Tighter offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
           slug: 'funnel-landing-page-development',
           path: '/services/funnel-landing-page-development',
           nodeType: 'service',
@@ -617,7 +617,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -625,7 +625,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -633,7 +633,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -645,7 +645,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -653,7 +653,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -661,7 +661,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Local SEO for Service Businesses',
           description:
-            'Show up when local customers search for your services. We handle your website, Google profile, and local listings so the right people find you and get in touch.',
+            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
           slug: 'local-seo-authority',
           path: '/services/local-seo-authority',
           nodeType: 'service',
@@ -673,7 +673,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -681,7 +681,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -689,7 +689,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -701,7 +701,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Marketing Automation Setup',
           description:
-            'Marketing automation setup for service businesses that need structured follow-up, reminders, reactivation, and lifecycle messaging without relying on manual chasing.',
+            'Stop relying on memory for follow-up. Structured marketing automation setup covering follow-up logic, reminders, reactivation, and lifecycle messaging.',
           slug: 'marketing-automation-setup',
           path: '/services/marketing-automation-setup',
           nodeType: 'service',
@@ -709,7 +709,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Conversion Funnel System',
           description:
-            'Conversion funnel systems for service businesses that need clearer page-to-enquiry journeys, fewer drop-offs, better offer structure, and more measurable funnel stages.',
+            'Stop losing visitors between the page and the enquiry. Structured conversion funnel systems that fix page flow, offer clarity, CTA logic, and enquiry handoff.',
           slug: 'conversion-funnel-system',
           path: '/services/conversion-funnel-system',
           nodeType: 'service',
@@ -717,7 +717,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Funnel & Landing Page Development',
           description:
-            'Funnel and landing page development for service businesses that need focused offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
+            'Focused landing page and funnel page development for service businesses. Tighter offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
           slug: 'funnel-landing-page-development',
           path: '/services/funnel-landing-page-development',
           nodeType: 'service',
@@ -731,7 +731,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -739,7 +739,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -747,7 +747,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -789,19 +789,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Reputation Monitoring Systems',
-          description:
-            'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
-          slug: 'reputation-monitoring-systems',
-          path: '/resources/reputation-monitoring-systems',
-          nodeType: 'resource',
-        },
-        {
           title: 'Website + CRM Integration Explained',
           description:
             'Understand how website-CRM integration connects form submissions, booking data, and visitor behaviour directly to your CRM pipeline for faster response and better tracking.',
           slug: 'website-crm-integration-explained',
           path: '/resources/website-crm-integration-explained',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Reputation Monitoring Systems',
+          description:
+            'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
+          slug: 'reputation-monitoring-systems',
+          path: '/resources/reputation-monitoring-systems',
           nodeType: 'resource',
         },
       ],
@@ -811,7 +811,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -819,7 +819,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -827,7 +827,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -891,7 +891,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -899,7 +899,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -907,7 +907,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -971,7 +971,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -979,7 +979,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -987,7 +987,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -1051,7 +1051,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1059,7 +1059,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -1067,7 +1067,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Booking & Scheduling System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
           slug: 'booking-scheduling-system',
           path: '/services/booking-scheduling-system',
           nodeType: 'service',
@@ -1131,7 +1131,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1139,7 +1139,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -1147,7 +1147,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -1211,7 +1211,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1219,7 +1219,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -1227,7 +1227,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -1291,25 +1291,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'CRM Setup for Service Businesses',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
         {
-          title: 'CRM Setup for Service Businesses',
+          title: 'Booking & Scheduling System',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
+            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -1349,19 +1349,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Sales Pipeline Visibility Framework',
-          description:
-            'Build a pipeline visibility framework that shows real-time deal health, flags stalled deals, and provides accurate revenue forecasting for your service business.',
-          slug: 'sales-pipeline-visibility-framework',
-          path: '/resources/sales-pipeline-visibility-framework',
-          nodeType: 'resource',
-        },
-        {
           title: 'Website + CRM Integration Explained',
           description:
             'Understand how website-CRM integration connects form submissions, booking data, and visitor behaviour directly to your CRM pipeline for faster response and better tracking.',
           slug: 'website-crm-integration-explained',
           path: '/resources/website-crm-integration-explained',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Sales Pipeline Visibility Framework',
+          description:
+            'Build a pipeline visibility framework that shows real-time deal health, flags stalled deals, and provides accurate revenue forecasting for your service business.',
+          slug: 'sales-pipeline-visibility-framework',
+          path: '/resources/sales-pipeline-visibility-framework',
           nodeType: 'resource',
         },
       ],
@@ -1371,7 +1371,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1379,7 +1379,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -1387,7 +1387,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -1451,7 +1451,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1459,7 +1459,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -1467,7 +1467,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -1531,7 +1531,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1539,7 +1539,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -1547,7 +1547,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -1611,7 +1611,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1619,7 +1619,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -1627,7 +1627,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Booking & Scheduling System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
           slug: 'booking-scheduling-system',
           path: '/services/booking-scheduling-system',
           nodeType: 'service',
@@ -1691,7 +1691,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1699,7 +1699,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -1707,7 +1707,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -1771,7 +1771,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1779,7 +1779,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -1787,7 +1787,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -1851,7 +1851,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1859,7 +1859,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -1867,7 +1867,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -1901,19 +1901,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       resources: [
         {
-          title: 'Auto Repair Lead Handling Example',
-          description:
-            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
-          slug: 'auto-repair-lead-handling-example',
-          path: '/resources/auto-repair-lead-handling-example',
-          nodeType: 'resource',
-        },
-        {
           title: 'HVAC Emergency Call Handling System',
           description:
             'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
           slug: 'hvac-emergency-call-handling-system',
           path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
         {
@@ -1931,7 +1931,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1939,7 +1939,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -1947,7 +1947,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Local SEO for Service Businesses',
           description:
-            'Show up when local customers search for your services. We handle your website, Google profile, and local listings so the right people find you and get in touch.',
+            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
           slug: 'local-seo-authority',
           path: '/services/local-seo-authority',
           nodeType: 'service',
@@ -2011,7 +2011,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2019,7 +2019,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -2027,7 +2027,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Booking & Scheduling System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
           slug: 'booking-scheduling-system',
           path: '/services/booking-scheduling-system',
           nodeType: 'service',
@@ -2091,7 +2091,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2099,7 +2099,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -2107,7 +2107,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -2171,7 +2171,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2179,7 +2179,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -2187,7 +2187,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -2251,7 +2251,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -2259,7 +2259,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Local SEO for Service Businesses',
           description:
-            'Show up when local customers search for your services. We handle your website, Google profile, and local listings so the right people find you and get in touch.',
+            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
           slug: 'local-seo-authority',
           path: '/services/local-seo-authority',
           nodeType: 'service',
@@ -2267,7 +2267,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -2331,25 +2331,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'CRM Setup for Service Businesses',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
         {
-          title: 'CRM Setup for Service Businesses',
+          title: 'Booking & Scheduling System',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
+            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -2411,7 +2411,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2419,7 +2419,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -2427,7 +2427,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Booking & Scheduling System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
           slug: 'booking-scheduling-system',
           path: '/services/booking-scheduling-system',
           nodeType: 'service',
@@ -2491,7 +2491,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2499,7 +2499,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -2507,7 +2507,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Booking & Scheduling System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
           slug: 'booking-scheduling-system',
           path: '/services/booking-scheduling-system',
           nodeType: 'service',
@@ -2571,25 +2571,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'CRM Setup for Service Businesses',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
         {
-          title: 'CRM Setup for Service Businesses',
+          title: 'Booking & Scheduling System',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
+            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
+          slug: 'booking-scheduling-system',
+          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -2651,7 +2651,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2659,7 +2659,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -2667,7 +2667,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -2731,7 +2731,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -2739,7 +2739,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -2747,7 +2747,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Local SEO for Service Businesses',
           description:
-            'Show up when local customers search for your services. We handle your website, Google profile, and local listings so the right people find you and get in touch.',
+            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
           slug: 'local-seo-authority',
           path: '/services/local-seo-authority',
           nodeType: 'service',
@@ -2811,7 +2811,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2819,7 +2819,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -2827,7 +2827,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -2891,7 +2891,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2899,7 +2899,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -2907,7 +2907,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -2971,7 +2971,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2979,7 +2979,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -2987,7 +2987,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -3051,7 +3051,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -3059,7 +3059,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -3067,7 +3067,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -3131,7 +3131,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -3139,7 +3139,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -3147,7 +3147,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -3211,7 +3211,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -3219,7 +3219,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -3227,7 +3227,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -4405,19 +4405,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Smart Website Systems for Mobile Mechanics',
-          description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for Realtors',
           description:
             'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Mobile Mechanics',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -4729,19 +4729,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Smart Website Systems for Mobile Mechanics',
-          description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for Realtors',
           description:
             'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Mobile Mechanics',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -5073,19 +5073,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'lead-routing-models-for-service-companies': {
       resources: [
         {
-          title: 'Auto Repair Lead Handling Example',
-          description:
-            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
-          slug: 'auto-repair-lead-handling-example',
-          path: '/resources/auto-repair-lead-handling-example',
-          nodeType: 'resource',
-        },
-        {
           title: 'HVAC Emergency Call Handling System',
           description:
             'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
           slug: 'hvac-emergency-call-handling-system',
           path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
           nodeType: 'resource',
         },
         {
@@ -5377,19 +5377,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Smart Website Systems for Mobile Mechanics',
-          description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for Realtors',
           description:
             'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Mobile Mechanics',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -5701,19 +5701,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Smart Website Systems for Mobile Mechanics',
-          description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for Realtors',
           description:
             'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Mobile Mechanics',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -6855,19 +6855,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'website-crm-integration-for-salons': {
       resources: [
         {
-          title: 'Auto Repair Lead Handling Example',
+          title: 'Reducing Salon No-Shows with Automation',
           description:
-            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
-          slug: 'auto-repair-lead-handling-example',
-          path: '/resources/auto-repair-lead-handling-example',
+            'See how salons use automated reminders, waitlist management, and smart deposit policies to cut no-show rates by 60-80% and recover thousands in monthly lost revenue.',
+          slug: 'reducing-salon-no-shows-with-automation',
+          path: '/resources/reducing-salon-no-shows-with-automation',
           nodeType: 'resource',
         },
         {
-          title: 'Booking Systems Inside Website Infrastructure',
+          title: 'CRM Pipeline Setup Guide for Salons',
           description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
           nodeType: 'resource',
         },
         {
@@ -6881,11 +6881,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
+          title: 'Smart Website Systems for Car Detailing Businesses',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
@@ -6909,19 +6909,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'website-crm-integration-for-service-businesses': {
       resources: [
         {
-          title: 'Auto Repair Lead Handling Example',
+          title: 'Automotive CRM Pipeline for Repair Jobs',
           description:
-            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
-          slug: 'auto-repair-lead-handling-example',
-          path: '/resources/auto-repair-lead-handling-example',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
+            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
+          slug: 'automotive-crm-pipeline-for-repair-jobs',
+          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
           nodeType: 'resource',
         },
         {
@@ -6932,14 +6924,22 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/resources/website-crm-integration-explained',
           nodeType: 'resource',
         },
+        {
+          title: 'Automotive Service Reminder Automation Framework',
+          description:
+            'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
+          slug: 'automotive-service-reminder-automation',
+          path: '/resources/automotive-service-reminder-automation',
+          nodeType: 'resource',
+        },
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
+          title: 'Smart Website Systems for Car Detailing Businesses',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
@@ -7267,19 +7267,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Smart Website Systems for Mobile Mechanics',
-          description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for Realtors',
           description:
             'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Mobile Mechanics',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -7483,19 +7483,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Smart Website Systems for Mobile Mechanics',
-          description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for Realtors',
           description:
             'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Mobile Mechanics',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -8047,7 +8047,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Local SEO for Service Businesses',
           description:
-            'Show up when local customers search for your services. We handle your website, Google profile, and local listings so the right people find you and get in touch.',
+            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
           slug: 'local-seo-authority',
           path: '/services/local-seo-authority',
           nodeType: 'service',
@@ -8085,7 +8085,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -8093,7 +8093,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Booking & Scheduling System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
           slug: 'booking-scheduling-system',
           path: '/services/booking-scheduling-system',
           nodeType: 'service',
@@ -8101,7 +8101,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -8139,7 +8139,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -8147,7 +8147,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -8155,7 +8155,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -8193,7 +8193,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8231,7 +8231,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -8239,7 +8239,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -8277,7 +8277,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8315,7 +8315,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -8323,7 +8323,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -8331,7 +8331,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Booking & Scheduling System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
           slug: 'booking-scheduling-system',
           path: '/services/booking-scheduling-system',
           nodeType: 'service',
@@ -8369,7 +8369,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8407,7 +8407,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8445,7 +8445,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -8453,7 +8453,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -8461,7 +8461,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Booking & Scheduling System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
           slug: 'booking-scheduling-system',
           path: '/services/booking-scheduling-system',
           nodeType: 'service',
@@ -8499,7 +8499,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -8507,7 +8507,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -8515,7 +8515,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Booking & Scheduling System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
           slug: 'booking-scheduling-system',
           path: '/services/booking-scheduling-system',
           nodeType: 'service',
@@ -8553,7 +8553,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8591,7 +8591,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8629,7 +8629,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8667,7 +8667,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8705,7 +8705,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -8713,7 +8713,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -8751,7 +8751,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -8759,7 +8759,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -8767,7 +8767,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Booking & Scheduling System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
           slug: 'booking-scheduling-system',
           path: '/services/booking-scheduling-system',
           nodeType: 'service',
@@ -8805,7 +8805,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Local SEO for Service Businesses',
           description:
-            'Show up when local customers search for your services. We handle your website, Google profile, and local listings so the right people find you and get in touch.',
+            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
           slug: 'local-seo-authority',
           path: '/services/local-seo-authority',
           nodeType: 'service',
@@ -8843,7 +8843,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -8851,7 +8851,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -8889,7 +8889,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -8897,7 +8897,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign & System Rebuild',
           description:
-            'Website redesign and system rebuild work for service businesses whose current site no longer matches their services, enquiry flow, integrations, or operational needs.',
+            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -8905,7 +8905,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -8943,7 +8943,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8981,7 +8981,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -8989,7 +8989,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8997,7 +8997,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9035,7 +9035,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9043,7 +9043,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9051,7 +9051,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9089,7 +9089,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -9097,7 +9097,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -9135,7 +9135,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9143,7 +9143,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9151,7 +9151,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9189,7 +9189,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9197,7 +9197,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9205,7 +9205,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9243,7 +9243,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -9281,7 +9281,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9289,7 +9289,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9297,7 +9297,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9335,7 +9335,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9343,7 +9343,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9351,7 +9351,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9389,7 +9389,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Local SEO for Service Businesses',
           description:
-            'Show up when local customers search for your services. We handle your website, Google profile, and local listings so the right people find you and get in touch.',
+            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
           slug: 'local-seo-authority',
           path: '/services/local-seo-authority',
           nodeType: 'service',
@@ -9427,7 +9427,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -9435,7 +9435,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Booking & Scheduling System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
           slug: 'booking-scheduling-system',
           path: '/services/booking-scheduling-system',
           nodeType: 'service',
@@ -9443,7 +9443,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Local SEO for Service Businesses',
           description:
-            'Show up when local customers search for your services. We handle your website, Google profile, and local listings so the right people find you and get in touch.',
+            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
           slug: 'local-seo-authority',
           path: '/services/local-seo-authority',
           nodeType: 'service',
@@ -9481,7 +9481,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Local SEO for Service Businesses',
           description:
-            'Show up when local customers search for your services. We handle your website, Google profile, and local listings so the right people find you and get in touch.',
+            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
           slug: 'local-seo-authority',
           path: '/services/local-seo-authority',
           nodeType: 'service',
@@ -9497,19 +9497,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Smart Website Systems for Mobile Mechanics',
-          description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for Realtors',
           description:
             'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Mobile Mechanics',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -9519,7 +9519,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -9527,7 +9527,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -9543,19 +9543,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Smart Website Systems for Mobile Mechanics',
-          description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for Realtors',
           description:
             'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Mobile Mechanics',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -9565,7 +9565,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -9573,7 +9573,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -9589,19 +9589,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Smart Website Systems for Mobile Mechanics',
-          description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for Realtors',
           description:
             'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Mobile Mechanics',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -9611,7 +9611,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9619,7 +9619,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9627,7 +9627,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9665,7 +9665,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9673,7 +9673,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9681,7 +9681,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9719,7 +9719,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9727,7 +9727,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9735,7 +9735,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9773,7 +9773,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9781,7 +9781,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9789,7 +9789,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9827,7 +9827,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9835,7 +9835,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9873,7 +9873,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9881,7 +9881,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9889,7 +9889,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9927,7 +9927,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9935,7 +9935,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -9943,7 +9943,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9981,7 +9981,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -9989,7 +9989,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -10027,7 +10027,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -10035,7 +10035,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -10073,7 +10073,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -10081,7 +10081,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -10119,7 +10119,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -10127,7 +10127,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -10165,7 +10165,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -10173,7 +10173,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -10211,7 +10211,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -10249,7 +10249,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -10257,7 +10257,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -10265,7 +10265,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -10303,7 +10303,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -10311,7 +10311,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -10319,7 +10319,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -10357,7 +10357,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -10365,7 +10365,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -10403,7 +10403,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -10441,7 +10441,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -10449,7 +10449,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -10457,7 +10457,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -10495,7 +10495,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Reputation and review systems for service businesses that need consistent review generation, feedback routing, stronger trust signals, and local credibility over time.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -10503,7 +10503,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Review Automation System',
           description:
-            'Stop chasing customers for reviews. We set things up so happy customers get asked at the right time, bad experiences are caught early, and your review count keeps climbing.',
+            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
           slug: 'review-automation-system',
           path: '/services/review-automation-system',
           nodeType: 'service',
@@ -10541,7 +10541,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'AI lead handling for service businesses, including website chat, call support, booking assistance, and structured handoff into CRM and follow-up systems.',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -10549,7 +10549,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Missed call recovery for service businesses that need faster first response, better capture of missed enquiries, reduced lead leakage, and clearer follow-up handoff.',
+            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -10557,7 +10557,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Unified communication systems for service businesses that need clearer message routing, fewer missed conversations, and better ownership across calls, forms, chat, and inboxes.',
+            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -10595,7 +10595,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -10603,7 +10603,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Website Redesign & System Rebuild',
           description:
-            'Website redesign and system rebuild work for service businesses whose current site no longer matches their services, enquiry flow, integrations, or operational needs.',
+            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -10611,7 +10611,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Booking & Scheduling System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
           slug: 'booking-scheduling-system',
           path: '/services/booking-scheduling-system',
           nodeType: 'service',
@@ -10649,7 +10649,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks. Built for service businesses that are tired of losing customers to disorganisation.',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -10687,7 +10687,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Revenue Growth Systems',
           description:
-            'Revenue Growth Systems help service businesses identify where leads stall, follow-up breaks down, and conversion leaks happen across the website, CRM, and workflow.',
+            'Find where leads stall, follow-up breaks, and revenue leaks. Structured growth-system reviews that diagnose the real problem before adding more pressure.',
           slug: 'growth-revenue-systems',
           path: '/services/growth-revenue-systems',
           nodeType: 'service',
@@ -10695,7 +10695,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Conversion Funnel System',
           description:
-            'Conversion funnel systems for service businesses that need clearer page-to-enquiry journeys, fewer drop-offs, better offer structure, and more measurable funnel stages.',
+            'Stop losing visitors between the page and the enquiry. Structured conversion funnel systems that fix page flow, offer clarity, CTA logic, and enquiry handoff.',
           slug: 'conversion-funnel-system',
           path: '/services/conversion-funnel-system',
           nodeType: 'service',
@@ -10703,7 +10703,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Funnel & Landing Page Development',
           description:
-            'Funnel and landing page development for service businesses that need focused offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
+            'Focused landing page and funnel page development for service businesses. Tighter offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
           slug: 'funnel-landing-page-development',
           path: '/services/funnel-landing-page-development',
           nodeType: 'service',
@@ -10739,37 +10739,21 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'website-crm-integration-explained': {
       services: [
         {
-          title: 'Smart Websites',
+          title: 'CRM Setup for Service Businesses',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration & Platform Consolidation',
-          description:
-            'System migration and platform consolidation for service businesses moving away from fragmented tools, outdated platforms, or disconnected website systems.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
-          nodeType: 'service',
-        },
-        {
-          title: 'Booking & Scheduling System',
-          description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
       ],
       industries: [
         {
-          title: 'Smart Website Systems for Auto Repair Shops',
+          title: 'Smart Website Systems for Car Detailing Businesses',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
@@ -10795,7 +10779,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Smart Websites',
           description:
-            "Most business websites look fine but don't bring in enquiries. We build ones that do — clear pages, forms that go somewhere useful, and follow-up that actually happens.",
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
           nodeType: 'service',
@@ -10803,7 +10787,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'WordPress Website Development',
           description:
-            'Structured WordPress website development for service businesses that need clear site architecture, better enquiry flow, cleaner implementation, and long-term maintainability.',
+            'WordPress website development built around how the business works. Clear service architecture, proper enquiry flow, and a foundation that stays manageable after launch.',
           slug: 'wordpress-development',
           path: '/services/wordpress-development',
           nodeType: 'service',
@@ -10811,7 +10795,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Booking & Scheduling System',
           description:
-            'Booking and scheduling systems for service businesses that need cleaner appointment flow, better confirmations and reminders, and fewer missed or delayed bookings.',
+            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
           slug: 'booking-scheduling-system',
           path: '/services/booking-scheduling-system',
           nodeType: 'service',
@@ -11637,19 +11621,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Smart Website Systems for Body Shops',
-          description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for Hair Salons',
           description:
             'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Body Shops',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],

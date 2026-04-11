@@ -209,12 +209,10 @@ function InfrastructureGapsSection() {
         ))}
       </div>
     </div>
-                  <SmartCTA
-                    system='smart-website-systems'
-                    pageType='page'
-                    slug='home'
-                    mode='actions-only'
-                    primaryActionVariant='primary'
+  );
+}
+
+function SmartWebsiteFrameworkSection() {
   const smartWebsiteFrameworkData = homepageData.smartWebsiteFramework;
 
   return (

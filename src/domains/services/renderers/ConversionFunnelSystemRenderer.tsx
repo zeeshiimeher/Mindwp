@@ -1,8 +1,10 @@
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
+  ComparisonSection,
   DualToneChecklistComparisonSection,
   ProblemCardsSection,
   ProcessStepsSection,
+  ServiceSpectrumCardsSection,
 } from '@/components/reusable/sections';
 import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { BeforeAfterMetricCard } from '@/components/reusable/single/BeforeAfterMetricCard';
@@ -25,7 +27,7 @@ export function ConversionFunnelSystemRenderer({
   data,
   slug,
 }: ConversionFunnelSystemRendererProps) {
-  const { hero, sections, cta } = data;
+  const { hero, sections, cta, inlineCta } = data;
   const {
     foundation,
     funnelBreakpoints,
@@ -34,9 +36,13 @@ export function ConversionFunnelSystemRenderer({
     funnelLevers,
     qualification,
     faqSection,
+    comparison,
+    proof,
   } = sections;
   const ctaTitle = cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
   const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
+  const inlineCtaTitle = inlineCta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
+  const inlineCtaDescription = inlineCta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
 
   return (
     <>
@@ -142,6 +148,33 @@ export function ConversionFunnelSystemRenderer({
               ))}
             </div>
           </SectionWrapper>
+
+          {comparison && (
+            <ComparisonSection
+              title={comparison.header.title}
+              description={comparison.header.description}
+              comparisons={comparison.items}
+              cssPrefix='conversion-funnel-comparison'
+            />
+          )}
+
+          {proof && (
+            <ServiceSpectrumCardsSection
+              title={proof.header.title}
+              description={proof.header.description}
+              cards={proof.cards}
+              cssPrefix='conversion-funnel-proof'
+            />
+          )}
+
+          <SmartCTA
+            system={data.systems?.[0] ?? 'smart-website-systems'}
+            slug={slug}
+            pageType='service'
+            title={inlineCtaTitle}
+            description={inlineCtaDescription}
+            primaryActionVariant='primary'
+          />
 
           <DualToneChecklistComparisonSection
             title={qualification.title}

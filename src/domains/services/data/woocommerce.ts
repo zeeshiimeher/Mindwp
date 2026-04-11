@@ -40,13 +40,13 @@ export const woocommercePage = {
   }),
   hero: {
     badge: 'E-commerce Infrastructure on WordPress',
-    title: 'E-commerce implementation built around how you sell, ship, and operate',
+      title: 'WooCommerce Stores Built Around Real Selling Workflows',
     description:
       'We implement e-commerce systems on WordPress with WooCommerce where it fits. Catalog logic, checkout flow, fulfilment rules, and reporting are set up around your actual operating model — not just assembled to get a store online.',
     list: [
-      'Catalog and product logic that matches the business',
-      'Checkout and fulfilment aligned to real workflows',
-      'Foundations ready for future integrations',
+        'Product Logic',
+        'Checkout Flow',
+        'Fulfilment Ready',
     ],
     cssPrefix: 'woocommerce-hero',
   },

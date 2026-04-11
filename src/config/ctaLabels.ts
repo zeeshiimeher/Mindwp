@@ -10,6 +10,17 @@ type ResolveCtaLabelOptions = {
   tone?: CtaTone;
 };
 
+type ResolveCtaLabelOverrides = Omit<ResolveCtaLabelOptions, 'system'>;
+
+export const CTA_LABEL_MAP: Record<string, string> = {
+  'smart-website-systems': 'Start a Conversation',
+  'local-seo-authority': 'Start a Conversation',
+  'ai-lead-handling': 'Start a Conversation',
+  'crm-automation': 'Start a Conversation',
+  'reputation-review': 'Start a Conversation',
+  'revenue-growth': 'Start a Conversation',
+};
+
 const CTA_LABEL_RULES: Record<ContactSourceType, readonly string[]> = {
   blog: ['See How It Works', 'Understand the System'],
   'case-study': ['See How It Works', 'Understand the System'],
@@ -63,12 +74,28 @@ export function inferIntent(pageType: ContactSourceType): CtaIntent {
   }
 }
 
-export function resolveCtaLabel({
-  system: _system,
-  pageType,
-  intent,
-  tone = 'descriptive',
-}: ResolveCtaLabelOptions) {
+export function resolveCtaLabel(system: string, overrides?: ResolveCtaLabelOverrides): string;
+export function resolveCtaLabel(options: ResolveCtaLabelOptions): string;
+export function resolveCtaLabel(
+  input: string | ResolveCtaLabelOptions,
+  overrides?: ResolveCtaLabelOverrides
+) {
+  const options: ResolveCtaLabelOptions =
+    typeof input === 'string'
+      ? {
+          system: input,
+          pageType: overrides?.pageType ?? 'service',
+          intent: overrides?.intent,
+          tone: overrides?.tone,
+        }
+      : input;
+
+  const { system, pageType, intent, tone = 'descriptive' } = options;
+
+  if (!system || !(system in CTA_LABEL_MAP)) {
+    return DEFAULT_CTA_LABEL;
+  }
+
   const resolvedIntent = intent ?? inferIntent(pageType);
   const labelRules = tone === 'short' ? SHORT_CTA_LABEL_RULES : CTA_LABEL_RULES;
   const labels = labelRules[pageType] ?? labelRules.service;

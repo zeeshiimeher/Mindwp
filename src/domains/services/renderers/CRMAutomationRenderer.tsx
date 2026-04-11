@@ -1,4 +1,5 @@
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
+import { ComparisonSection, ServiceSpectrumCardsSection } from '@/components/reusable/sections';
 import { OperationalShiftCardsSection } from '@/components/reusable/sections/core/OperationalShiftCardsSection';
 import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import {
@@ -8,6 +9,7 @@ import {
   WorkflowStepCard,
 } from '@/components/reusable/single';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
+import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { crmAutomationPage } from '@/domains/services/data/crm-automation';
@@ -19,7 +21,7 @@ interface CRMAutomationRendererProps {
 }
 
 export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps) {
-  const { hero, sections, cta } = data;
+  const { hero, sections, cta, inlineCta } = data;
   const {
     positioning,
     useCasesSection,
@@ -28,9 +30,14 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
     governance,
     qualification,
     connection,
+    comparison,
+    proof,
+    faqSection,
   } = sections;
   const ctaTitle = cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
   const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
+  const inlineCtaTitle = inlineCta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
+  const inlineCtaDescription = inlineCta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
 
   return (
     <>
@@ -139,6 +146,45 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
             />
           </SectionWrapper>
 
+          <SectionWrapper className='crm-automation-connection'>
+            <SectionIntro
+              badge={connection.badge}
+              title={connection.title}
+              description={connection.description}
+              cssPrefix={connection.cssPrefix}
+            />
+          </SectionWrapper>
+
+          {comparison && (
+            <ComparisonSection
+              title={comparison.header.title}
+              description={comparison.header.description}
+              comparisons={comparison.items}
+              cssPrefix='crm-automation-comparison'
+              backgroundColor='bg-alt'
+            />
+          )}
+
+          {proof && (
+            <ServiceSpectrumCardsSection
+              badge='Proof'
+              title={proof.header.title}
+              description={proof.header.description}
+              cards={proof.cards}
+              cssPrefix='crm-automation-proof'
+              backgroundColor='bg-base'
+            />
+          )}
+
+          <SmartCTA
+            system={data.systems?.[0] ?? 'smart-website-systems'}
+            slug={slug}
+            pageType='service'
+            title={inlineCtaTitle}
+            description={inlineCtaDescription}
+            primaryActionVariant='primary'
+          />
+
           {/* Qualification Section */}
           <SectionWrapper className='crm-automation-qualification' background='bg-alt'>
             <SectionIntro
@@ -167,14 +213,16 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
               </div>
             </div>
           </SectionWrapper>
-          <SectionWrapper className='crm-automation-connection'>
-            <SectionIntro
-              badge={connection.badge}
-              title={connection.title}
-              description={connection.description}
-              cssPrefix={connection.cssPrefix}
+
+          {faqSection && (
+            <FAQSection
+              badge={faqSection.badge}
+              title={faqSection.title}
+              description={faqSection.description}
+              faqs={faqSection.faqs}
+              cssPrefix={faqSection.cssPrefix}
             />
-          </SectionWrapper>
+          )}
 
           <SmartCTA
             system={data.systems?.[0] ?? 'smart-website-systems'}

@@ -122,10 +122,10 @@ export const websiteCrmIntegrationExplained: ResourceData = {
     'Understand how website-CRM integration connects form submissions, booking data, and visitor behaviour directly to your CRM pipeline for faster response and better tracking.',
   category: 'smart-website-systems',
   publishedAt: '2025-11-15',
-  systems: ['smart-website-systems'],
+  systems: ['crm-automation'],
   industries: [],
   topics: ['crm-integration'],
-  primaryService: 'smart-website-systems',
+  primaryService: 'crm-infrastructure-implementation',
   seo: {
     title: 'Website + CRM Integration Explained',
     description:
@@ -161,10 +161,51 @@ export const websiteCrmIntegrationExplained: ResourceData = {
       resultHeading: 'The Outcome',
     },
     {
+      type: 'case',
+      heading: 'Proof Block: RoofingWebsiteRebuildWithCrm',
+      content: ['A live implementation example shows why CRM infrastructure changes business performance, not just data flow.'],
+      caseExample: {
+        businessType: 'Roofing CRM Infrastructure Implementation',
+        problem:
+          'Before the rebuild, website enquiries and pipeline handling were disconnected. Lead data moved slowly, context was inconsistent, and follow-up depended on manual intervention.',
+        solution:
+          'RoofingWebsiteRebuildWithCrm connected website capture, CRM routing, and follow-up automation into one operating system tied directly to the CRM infrastructure layer.',
+        result:
+          'The measurable improvement was a faster, more reliable response workflow with fewer leads lost between first contact and pipeline entry, turning CRM integration into a direct revenue-protection system.',
+        stat: 'Before vs after: disconnected lead handling replaced by one integrated CRM workflow',
+      },
+      challengeHeading: 'Before',
+      solutionHeading: 'After',
+      resultHeading: 'Measured Improvement',
+    },
+    {
+      type: 'checklist',
+      heading: 'Decision Section',
+      content: [
+        'Manual lead handling breaks at scale because the website generates demand faster than inbox-based processing can classify, route, and follow up consistently.',
+        'That leads to lost leads, slow response, and revenue leakage. CRM infrastructure is not optional once enquiries need structured ownership, automation, and pipeline visibility.',
+      ],
+      items: [
+        'Manual handoff delays pipeline entry',
+        'Slow response weakens close rates',
+        'No structured CRM layer means revenue leaks between capture and follow-up',
+      ],
+    },
+    {
       type: 'diy',
       heading: 'Implement Website-CRM Integration Step by Step',
       content: ['Follow these steps to connect your website to your CRM:'],
       steps: diy.steps,
+    },
+    {
+      type: 'checklist',
+      heading: 'What Happens If You Do Not Fix This',
+      content: ['Leaving the website and CRM disconnected creates operational losses that keep compounding as lead volume grows.'],
+      items: [
+        'Missed leads remain trapped in email or disconnected tools',
+        'Follow-up quality varies because no single CRM workflow controls timing',
+        'Revenue is lost when high-intent enquiries do not enter the pipeline immediately',
+      ],
     },
     {
       type: 'templates',
@@ -174,8 +215,10 @@ export const websiteCrmIntegrationExplained: ResourceData = {
     },
     {
       type: 'cta',
-      heading: finalCta.title,
-      content: [finalCta.description],
+      heading: 'Build CRM Infrastructure That Captures and Routes Every Lead',
+      content: [
+        'crm-infrastructure-implementation turns website enquiries into structured CRM pipeline activity with direct routing, follow-up control, and fewer lost opportunities.',
+      ],
     },
     {
       type: 'related-resources',

@@ -441,7 +441,7 @@ export function extractCTAContent(
     features: ctaSection?.features || DEFAULTS.CTA_FEATURES,
     finalButtonText: ctaSection?.button?.text || DEFAULTS.CTA_PRIMARY_BUTTON,
     finalButtonUrl: ctaSection?.button?.url || DEFAULTS.CTA_BUTTON_URL,
-    secondaryActionUrl: ctaSection?.secondaryAction?.url || DEFAULTS.CTA_SECONDARY_BUTTON_URL,
+    secondaryActionUrl: DEFAULTS.CTA_SECONDARY_BUTTON_URL,
   };
 }
 

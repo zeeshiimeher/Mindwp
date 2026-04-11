@@ -41,10 +41,10 @@ export const bricksBuilderPage = {
   }),
   hero: {
     badge: 'Bricks Builder Implementation',
-    title:
-      'WordPress implementation with Bricks — built for performance, precision, and long-term clarity',
+      title: 'Bricks Websites Built for Speed Precision and Control',
     description:
       'We build WordPress websites using Bricks Builder where performance and clean output matter. Approved designs are converted precisely, with a build that stays fast, maintainable, and easy to extend.',
+      list: ['Fast Output', 'Clean Structure', 'Precision Build'],
     cssPrefix: 'bricks-hero',
     backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },

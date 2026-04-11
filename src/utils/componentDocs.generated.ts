@@ -567,8 +567,8 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/single/index.ts",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/screens/Homepage.tsx",
-    "representativePageUrl": "/",
+    "representativeUsageFilePath": "src/screens/Contact.tsx",
+    "representativePageUrl": "/contact",
     "props": [
       {
         "name": "ariaLabel",
@@ -790,7 +790,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-current",
-        "type": "boolean | \"location\" | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"date\" | undefined",
+        "type": "boolean | \"page\" | \"location\" | \"time\" | \"true\" | \"false\" | \"step\" | \"date\" | undefined",
         "optional": true,
         "description": "Indicates the element that represents the current item within a container or set of related elements."
       },
@@ -2486,7 +2486,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-current",
-        "type": "boolean | \"location\" | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"date\" | undefined",
+        "type": "boolean | \"page\" | \"location\" | \"time\" | \"true\" | \"false\" | \"step\" | \"date\" | undefined",
         "optional": true,
         "description": "Indicates the element that represents the current item within a container or set of related elements."
       },
@@ -4182,7 +4182,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-current",
-        "type": "boolean | \"location\" | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"date\" | undefined",
+        "type": "boolean | \"page\" | \"location\" | \"time\" | \"true\" | \"false\" | \"step\" | \"date\" | undefined",
         "optional": true,
         "description": "Indicates the element that represents the current item within a container or set of related elements."
       },
@@ -5878,7 +5878,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-current",
-        "type": "boolean | \"location\" | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"date\" | undefined",
+        "type": "boolean | \"page\" | \"location\" | \"time\" | \"true\" | \"false\" | \"step\" | \"date\" | undefined",
         "optional": true,
         "description": "Indicates the element that represents the current item within a container or set of related elements."
       },
@@ -7574,7 +7574,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-current",
-        "type": "boolean | \"location\" | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"date\" | undefined",
+        "type": "boolean | \"page\" | \"location\" | \"time\" | \"true\" | \"false\" | \"step\" | \"date\" | undefined",
         "optional": true,
         "description": "Indicates the element that represents the current item within a container or set of related elements."
       },
@@ -9270,7 +9270,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-current",
-        "type": "boolean | \"location\" | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"date\" | undefined",
+        "type": "boolean | \"page\" | \"location\" | \"time\" | \"true\" | \"false\" | \"step\" | \"date\" | undefined",
         "optional": true,
         "description": "Indicates the element that represents the current item within a container or set of related elements."
       },
@@ -10966,7 +10966,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-current",
-        "type": "boolean | \"location\" | \"time\" | \"true\" | \"false\" | \"page\" | \"step\" | \"date\" | undefined",
+        "type": "boolean | \"page\" | \"location\" | \"time\" | \"true\" | \"false\" | \"step\" | \"date\" | undefined",
         "optional": true,
         "description": "Indicates the element that represents the current item within a container or set of related elements."
       },
@@ -12739,70 +12739,70 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "representativePageUrl": "/",
     "props": [
       {
-        "name": "title",
+        "name": "pageType",
+        "type": "\"blog\" | \"case-study\" | \"feature\" | \"global\" | \"industry\" | \"page\" | \"resource\" | \"service\"",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "slug",
         "type": "string",
         "optional": false,
-        "description": "Main call-to-action heading"
+        "description": ""
+      },
+      {
+        "name": "system",
+        "type": "string",
+        "optional": false,
+        "description": ""
       },
       {
         "name": "backgroundColor",
         "type": "string | undefined",
         "optional": true,
-        "description": "Background color/styling for the section"
-      },
-      {
-        "name": "badge",
-        "type": "{ text: string; icon?: React.ReactNode; className?: string; } | undefined",
-        "optional": true,
-        "description": "Optional badge displayed above the heading"
+        "description": ""
       },
       {
         "name": "cssPrefix",
         "type": "string | undefined",
         "optional": true,
-        "description": "Additional class(es) for the root element.\n\nNote: The component always applies its internal BEM block class (`cta-section`).\nThis prop is additive and will not change the BEM base."
+        "description": ""
       },
       {
         "name": "description",
         "type": "string | undefined",
         "optional": true,
-        "description": "Descriptive text explaining the value proposition"
+        "description": ""
       },
       {
         "name": "headingLevel",
         "type": "\"h2\" | \"h3\" | undefined",
         "optional": true,
-        "description": "Heading element to use for the title"
+        "description": ""
       },
       {
         "name": "includeContainer",
         "type": "boolean | undefined",
         "optional": true,
-        "description": "Controls whether the component wraps the CTA panel in `.l-container`.\nUseful when you already have a container and want only the panel markup."
+        "description": ""
       },
       {
         "name": "metaItems",
         "type": "{ text: string; }[] | undefined",
         "optional": true,
-        "description": "Optional array of trust indicators or guarantees\nDisplayed as checkmark items below the main content\nPerfect for highlighting credentials, guarantees, or key benefits"
+        "description": ""
       },
       {
-        "name": "primaryAction",
-        "type": "import(\"/Users/zeeshansadiq/Projects/Mindwp/src/components/reusable/single/Button\").ButtonProps | undefined",
+        "name": "title",
+        "type": "string | undefined",
         "optional": true,
-        "description": "Primary call-to-action button configuration"
-      },
-      {
-        "name": "secondaryAction",
-        "type": "import(\"/Users/zeeshansadiq/Projects/Mindwp/src/components/reusable/single/Button\").ButtonProps | undefined",
-        "optional": true,
-        "description": "Optional secondary call-to-action button configuration"
+        "description": ""
       },
       {
         "name": "wrapper",
-        "type": "\"section\" | \"none\" | undefined",
+        "type": "\"none\" | \"section\" | undefined",
         "optional": true,
-        "description": "Controls whether the component renders the outer <section> wrapper.\nUse `wrapper=\"none\"` when you need to place the CTA panel inside an existing section."
+        "description": ""
       }
     ]
   },
@@ -12996,7 +12996,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "headingTag",
-        "type": "\"h2\" | \"h3\" | \"h1\" | undefined",
+        "type": "\"h1\" | \"h2\" | \"h3\" | undefined",
         "optional": true,
         "description": "Optional heading tag for headline semantics."
       },
@@ -13502,7 +13502,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "iconType",
-        "type": "\"none\" | \"checkmark\" | \"cross\" | undefined",
+        "type": "\"checkmark\" | \"cross\" | \"none\" | undefined",
         "optional": true,
         "description": ""
       },
@@ -14042,7 +14042,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "wrapper",
-        "type": "\"section\" | \"none\" | undefined",
+        "type": "\"none\" | \"section\" | undefined",
         "optional": true,
         "description": ""
       }
@@ -14303,70 +14303,70 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "representativePageUrl": "/",
     "props": [
       {
-        "name": "title",
+        "name": "pageType",
+        "type": "\"blog\" | \"case-study\" | \"feature\" | \"global\" | \"industry\" | \"page\" | \"resource\" | \"service\"",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "slug",
         "type": "string",
         "optional": false,
-        "description": "Main call-to-action heading"
+        "description": ""
+      },
+      {
+        "name": "system",
+        "type": "string",
+        "optional": false,
+        "description": ""
       },
       {
         "name": "backgroundColor",
         "type": "string | undefined",
         "optional": true,
-        "description": "Background color/styling for the section"
-      },
-      {
-        "name": "badge",
-        "type": "{ text: string; icon?: import(\"/Users/zeeshansadiq/Projects/Mindwp/node_modules/@types/react/index\").ReactNode; className?: string; } | undefined",
-        "optional": true,
-        "description": "Optional badge displayed above the heading"
+        "description": ""
       },
       {
         "name": "cssPrefix",
         "type": "string | undefined",
         "optional": true,
-        "description": "Additional class(es) for the root element.\n\nNote: The component always applies its internal BEM block class (`cta-section`).\nThis prop is additive and will not change the BEM base."
+        "description": ""
       },
       {
         "name": "description",
         "type": "string | undefined",
         "optional": true,
-        "description": "Descriptive text explaining the value proposition"
+        "description": ""
       },
       {
         "name": "headingLevel",
         "type": "\"h2\" | \"h3\" | undefined",
         "optional": true,
-        "description": "Heading element to use for the title"
+        "description": ""
       },
       {
         "name": "includeContainer",
         "type": "boolean | undefined",
         "optional": true,
-        "description": "Controls whether the component wraps the CTA panel in `.l-container`.\nUseful when you already have a container and want only the panel markup."
+        "description": ""
       },
       {
         "name": "metaItems",
         "type": "{ text: string; }[] | undefined",
         "optional": true,
-        "description": "Optional array of trust indicators or guarantees\nDisplayed as checkmark items below the main content\nPerfect for highlighting credentials, guarantees, or key benefits"
+        "description": ""
       },
       {
-        "name": "primaryAction",
-        "type": "import(\"/Users/zeeshansadiq/Projects/Mindwp/src/components/reusable/single/Button\").ButtonProps | undefined",
+        "name": "title",
+        "type": "string | undefined",
         "optional": true,
-        "description": "Primary call-to-action button configuration"
-      },
-      {
-        "name": "secondaryAction",
-        "type": "import(\"/Users/zeeshansadiq/Projects/Mindwp/src/components/reusable/single/Button\").ButtonProps | undefined",
-        "optional": true,
-        "description": "Optional secondary call-to-action button configuration"
+        "description": ""
       },
       {
         "name": "wrapper",
-        "type": "\"section\" | \"none\" | undefined",
+        "type": "\"none\" | \"section\" | undefined",
         "optional": true,
-        "description": "Controls whether the component renders the outer <section> wrapper.\nUse `wrapper=\"none\"` when you need to place the CTA panel inside an existing section."
+        "description": ""
       }
     ]
   },
@@ -14395,6 +14395,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "type": "string",
         "optional": false,
         "description": "Descriptive text explaining the feature value proposition"
+      },
+      {
+        "name": "smartCta",
+        "type": "Pick<SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\">",
+        "optional": false,
+        "description": "SmartCTA ownership context for page hero CTAs"
       },
       {
         "name": "title",
@@ -14428,21 +14434,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "headingTag",
-        "type": "\"h2\" | \"h3\" | \"h1\" | undefined",
+        "type": "\"h1\" | \"h2\" | \"h3\" | undefined",
         "optional": true,
         "description": "Optional heading tag for title semantics."
-      },
-      {
-        "name": "primaryAction",
-        "type": "ButtonProps | undefined",
-        "optional": true,
-        "description": "Primary call-to-action button configuration"
-      },
-      {
-        "name": "secondaryAction",
-        "type": "ButtonProps | undefined",
-        "optional": true,
-        "description": "Optional secondary call-to-action button configuration"
       },
       {
         "name": "stats",
@@ -15046,7 +15040,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "wrapper",
-        "type": "\"section\" | \"none\" | undefined",
+        "type": "\"none\" | \"section\" | undefined",
         "optional": true,
         "description": ""
       }
@@ -15416,7 +15410,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "wrapper",
-        "type": "\"section\" | \"none\" | undefined",
+        "type": "\"none\" | \"section\" | undefined",
         "optional": true,
         "description": ""
       }
@@ -15535,70 +15529,70 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "representativePageUrl": "/",
     "props": [
       {
-        "name": "title",
+        "name": "pageType",
+        "type": "\"blog\" | \"case-study\" | \"feature\" | \"global\" | \"industry\" | \"page\" | \"resource\" | \"service\"",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "slug",
         "type": "string",
         "optional": false,
-        "description": "Main call-to-action heading"
+        "description": ""
+      },
+      {
+        "name": "system",
+        "type": "string",
+        "optional": false,
+        "description": ""
       },
       {
         "name": "backgroundColor",
         "type": "string | undefined",
         "optional": true,
-        "description": "Background color/styling for the section"
-      },
-      {
-        "name": "badge",
-        "type": "{ text: string; icon?: React.ReactNode; className?: string; } | undefined",
-        "optional": true,
-        "description": "Optional badge displayed above the heading"
+        "description": ""
       },
       {
         "name": "cssPrefix",
         "type": "string | undefined",
         "optional": true,
-        "description": "Additional class(es) for the root element.\n\nNote: The component always applies its internal BEM block class (`cta-section`).\nThis prop is additive and will not change the BEM base."
+        "description": ""
       },
       {
         "name": "description",
         "type": "string | undefined",
         "optional": true,
-        "description": "Descriptive text explaining the value proposition"
+        "description": ""
       },
       {
         "name": "headingLevel",
         "type": "\"h2\" | \"h3\" | undefined",
         "optional": true,
-        "description": "Heading element to use for the title"
+        "description": ""
       },
       {
         "name": "includeContainer",
         "type": "boolean | undefined",
         "optional": true,
-        "description": "Controls whether the component wraps the CTA panel in `.l-container`.\nUseful when you already have a container and want only the panel markup."
+        "description": ""
       },
       {
         "name": "metaItems",
         "type": "{ text: string; }[] | undefined",
         "optional": true,
-        "description": "Optional array of trust indicators or guarantees\nDisplayed as checkmark items below the main content\nPerfect for highlighting credentials, guarantees, or key benefits"
+        "description": ""
       },
       {
-        "name": "primaryAction",
-        "type": "import(\"/Users/zeeshansadiq/Projects/Mindwp/src/components/reusable/single/Button\").ButtonProps | undefined",
+        "name": "title",
+        "type": "string | undefined",
         "optional": true,
-        "description": "Primary call-to-action button configuration"
-      },
-      {
-        "name": "secondaryAction",
-        "type": "import(\"/Users/zeeshansadiq/Projects/Mindwp/src/components/reusable/single/Button\").ButtonProps | undefined",
-        "optional": true,
-        "description": "Optional secondary call-to-action button configuration"
+        "description": ""
       },
       {
         "name": "wrapper",
-        "type": "\"section\" | \"none\" | undefined",
+        "type": "\"none\" | \"section\" | undefined",
         "optional": true,
-        "description": "Controls whether the component renders the outer <section> wrapper.\nUse `wrapper=\"none\"` when you need to place the CTA panel inside an existing section."
+        "description": ""
       }
     ]
   },
@@ -15734,7 +15728,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "headingTag",
-        "type": "\"h2\" | \"h3\" | \"h1\" | undefined",
+        "type": "\"h1\" | \"h2\" | \"h3\" | undefined",
         "optional": true,
         "description": "Optional heading tag for title semantics."
       },
@@ -15745,16 +15739,10 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": "Optional array of bullet points displayed below the main content\nUses the BulletList component for consistent styling\nPerfect for highlighting key benefits or features"
       },
       {
-        "name": "primaryAction",
-        "type": "ButtonProps | undefined",
+        "name": "smartCta",
+        "type": "Pick<SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\"> | undefined",
         "optional": true,
-        "description": "Primary call-to-action button configuration"
-      },
-      {
-        "name": "secondaryAction",
-        "type": "ButtonProps | undefined",
-        "optional": true,
-        "description": "Optional secondary call-to-action button configuration"
+        "description": "SmartCTA ownership context for page hero CTAs"
       }
     ]
   },
@@ -15834,7 +15822,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "wrapper",
-        "type": "\"section\" | \"none\" | undefined",
+        "type": "\"none\" | \"section\" | undefined",
         "optional": true,
         "description": ""
       }
@@ -15875,6 +15863,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
       {
         "name": "description",
         "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "smartCta",
+        "type": "Pick<SmartCTAProps, \"system\" | \"pageType\" | \"slug\"> | undefined",
         "optional": true,
         "description": ""
       },
@@ -15921,6 +15915,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
       {
         "name": "description",
         "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "smartCta",
+        "type": "Pick<SmartCTAProps, \"system\" | \"pageType\" | \"slug\"> | undefined",
         "optional": true,
         "description": ""
       },
@@ -16785,13 +16785,13 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "representativePageUrl": "/",
     "props": [
       {
-        "name": "actionHref",
+        "name": "slug",
         "type": "string | undefined",
         "optional": true,
         "description": ""
       },
       {
-        "name": "actionLabel",
+        "name": "system",
         "type": "string | undefined",
         "optional": true,
         "description": ""
@@ -17494,7 +17494,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "headingLevel",
-        "type": "\"h2\" | \"h3\" | \"h1\" | \"h4\" | undefined",
+        "type": "\"h1\" | \"h2\" | \"h3\" | \"h4\" | undefined",
         "optional": true,
         "description": "Semantic heading level for the title."
       },
@@ -17527,70 +17527,70 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "representativePageUrl": "/",
     "props": [
       {
-        "name": "title",
+        "name": "pageType",
+        "type": "\"blog\" | \"case-study\" | \"feature\" | \"global\" | \"industry\" | \"page\" | \"resource\" | \"service\"",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "slug",
         "type": "string",
         "optional": false,
-        "description": "Main call-to-action heading"
+        "description": ""
+      },
+      {
+        "name": "system",
+        "type": "string",
+        "optional": false,
+        "description": ""
       },
       {
         "name": "backgroundColor",
         "type": "string | undefined",
         "optional": true,
-        "description": "Background color/styling for the section"
-      },
-      {
-        "name": "badge",
-        "type": "{ text: string; icon?: React.ReactNode; className?: string; } | undefined",
-        "optional": true,
-        "description": "Optional badge displayed above the heading"
+        "description": ""
       },
       {
         "name": "cssPrefix",
         "type": "string | undefined",
         "optional": true,
-        "description": "Additional class(es) for the root element.\n\nNote: The component always applies its internal BEM block class (`cta-section`).\nThis prop is additive and will not change the BEM base."
+        "description": ""
       },
       {
         "name": "description",
         "type": "string | undefined",
         "optional": true,
-        "description": "Descriptive text explaining the value proposition"
+        "description": ""
       },
       {
         "name": "headingLevel",
         "type": "\"h2\" | \"h3\" | undefined",
         "optional": true,
-        "description": "Heading element to use for the title"
+        "description": ""
       },
       {
         "name": "includeContainer",
         "type": "boolean | undefined",
         "optional": true,
-        "description": "Controls whether the component wraps the CTA panel in `.l-container`.\nUseful when you already have a container and want only the panel markup."
+        "description": ""
       },
       {
         "name": "metaItems",
         "type": "{ text: string; }[] | undefined",
         "optional": true,
-        "description": "Optional array of trust indicators or guarantees\nDisplayed as checkmark items below the main content\nPerfect for highlighting credentials, guarantees, or key benefits"
+        "description": ""
       },
       {
-        "name": "primaryAction",
-        "type": "import(\"/Users/zeeshansadiq/Projects/Mindwp/src/components/reusable/single/Button\").ButtonProps | undefined",
+        "name": "title",
+        "type": "string | undefined",
         "optional": true,
-        "description": "Primary call-to-action button configuration"
-      },
-      {
-        "name": "secondaryAction",
-        "type": "import(\"/Users/zeeshansadiq/Projects/Mindwp/src/components/reusable/single/Button\").ButtonProps | undefined",
-        "optional": true,
-        "description": "Optional secondary call-to-action button configuration"
+        "description": ""
       },
       {
         "name": "wrapper",
-        "type": "\"section\" | \"none\" | undefined",
+        "type": "\"none\" | \"section\" | undefined",
         "optional": true,
-        "description": "Controls whether the component renders the outer <section> wrapper.\nUse `wrapper=\"none\"` when you need to place the CTA panel inside an existing section."
+        "description": ""
       }
     ]
   },
@@ -17634,7 +17634,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "headingTag",
-        "type": "\"h2\" | \"h3\" | \"h1\" | undefined",
+        "type": "\"h1\" | \"h2\" | \"h3\" | undefined",
         "optional": true,
         "description": "Optional heading tag for title semantics."
       },
@@ -17645,16 +17645,10 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": "Optional array of bullet points displayed below the main content\nUses the BulletList component for consistent styling\nPerfect for highlighting key benefits or features"
       },
       {
-        "name": "primaryAction",
-        "type": "import(\"/Users/zeeshansadiq/Projects/Mindwp/src/components/reusable/single/Button\").ButtonProps | undefined",
+        "name": "smartCta",
+        "type": "Pick<import(\"/Users/zeeshansadiq/Projects/Mindwp/src/components/system/SmartCTA\").SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\"> | undefined",
         "optional": true,
-        "description": "Primary call-to-action button configuration"
-      },
-      {
-        "name": "secondaryAction",
-        "type": "import(\"/Users/zeeshansadiq/Projects/Mindwp/src/components/reusable/single/Button\").ButtonProps | undefined",
-        "optional": true,
-        "description": "Optional secondary call-to-action button configuration"
+        "description": "SmartCTA ownership context for page hero CTAs"
       }
     ]
   },
@@ -17750,7 +17744,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "headingTag",
-        "type": "\"h2\" | \"h3\" | \"h1\" | undefined",
+        "type": "\"h1\" | \"h2\" | \"h3\" | undefined",
         "optional": true,
         "description": "Optional heading tag for title semantics."
       },
@@ -17761,16 +17755,10 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": "Optional array of bullet points displayed below the main content\nUses the BulletList component for consistent styling\nPerfect for highlighting key benefits or features"
       },
       {
-        "name": "primaryAction",
-        "type": "ButtonProps | undefined",
+        "name": "smartCta",
+        "type": "Pick<SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\"> | undefined",
         "optional": true,
-        "description": "Primary call-to-action button configuration"
-      },
-      {
-        "name": "secondaryAction",
-        "type": "ButtonProps | undefined",
-        "optional": true,
-        "description": "Optional secondary call-to-action button configuration"
+        "description": "SmartCTA ownership context for page hero CTAs"
       }
     ]
   },
@@ -17835,6 +17823,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": "Descriptive text explaining the feature value proposition"
       },
       {
+        "name": "smartCta",
+        "type": "Pick<SmartCTAProps, \"system\" | \"pageType\" | \"slug\" | \"primaryActionVariant\" | \"primaryButtonCssPrefix\" | \"secondaryButtonCssPrefix\">",
+        "optional": false,
+        "description": "SmartCTA ownership context for page hero CTAs"
+      },
+      {
         "name": "title",
         "type": "string",
         "optional": false,
@@ -17866,21 +17860,9 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "headingTag",
-        "type": "\"h2\" | \"h3\" | \"h1\" | undefined",
+        "type": "\"h1\" | \"h2\" | \"h3\" | undefined",
         "optional": true,
         "description": "Optional heading tag for title semantics."
-      },
-      {
-        "name": "primaryAction",
-        "type": "ButtonProps | undefined",
-        "optional": true,
-        "description": "Primary call-to-action button configuration"
-      },
-      {
-        "name": "secondaryAction",
-        "type": "ButtonProps | undefined",
-        "optional": true,
-        "description": "Optional secondary call-to-action button configuration"
       },
       {
         "name": "stats",
@@ -18321,6 +18303,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
       {
         "name": "description",
         "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "smartCta",
+        "type": "Pick<SmartCTAProps, \"system\" | \"pageType\" | \"slug\"> | undefined",
         "optional": true,
         "description": ""
       },
