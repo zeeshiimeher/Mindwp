@@ -610,6 +610,10 @@ export function ComponentLibrary() {
                       const componentDoc = (
                         componentDocs as Record<string, ComponentDoc | undefined>
                       )[componentInfo.name];
+                      const sourceLabel =
+                        componentInfo.filePath && componentInfo.filePath !== 'unknown'
+                          ? componentInfo.filePath
+                          : componentInfo.importPath;
 
                       const livePageUrl =
                         componentDoc?.representativePageUrl ||
@@ -642,7 +646,7 @@ export function ComponentLibrary() {
                             </h3>
                             <div className='component-library__component-meta'>
                               <div className='component-library__component-path'>
-                                {componentInfo.filePath}
+                                {sourceLabel}
                               </div>
                               {componentDoc?.representativeUsageFilePath ? (
                                 <div className='component-library__component-path'>

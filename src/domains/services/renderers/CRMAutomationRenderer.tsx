@@ -1,5 +1,9 @@
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
-import { ComparisonSection, ServiceSpectrumCardsSection } from '@/components/reusable/sections';
+import {
+  ComparisonSection,
+  ServiceSpectrumCardsSection,
+  TransformationProofSection,
+} from '@/components/reusable/sections';
 import { OperationalShiftCardsSection } from '@/components/reusable/sections/core/OperationalShiftCardsSection';
 import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import {
@@ -166,14 +170,24 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
           )}
 
           {proof && (
-            <ServiceSpectrumCardsSection
-              badge='Proof'
-              title={proof.header.title}
-              description={proof.header.description}
-              cards={proof.cards}
-              cssPrefix='crm-automation-proof'
-              backgroundColor='bg-base'
-            />
+            data.transformationProof ? (
+              <TransformationProofSection
+                badge={proof.header.badge ?? 'Proof'}
+                title={proof.header.title}
+                description={proof.header.description}
+                before={data.transformationProof.before}
+                build={data.transformationProof.build}
+                after={data.transformationProof.after}
+                cssPrefix='transformation-proof'
+              />
+            ) : (
+              <ServiceSpectrumCardsSection
+                title={proof.header.title}
+                description={proof.header.description}
+                cards={proof.cards}
+                cssPrefix='crm-automation-proof'
+              />
+            )
           )}
 
           <SmartCTA

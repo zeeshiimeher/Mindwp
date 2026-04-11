@@ -337,8 +337,44 @@ const USAGE_SEEDED_PRESETS: Record<string, Record<string, unknown>> = {
       'It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.',
       'It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.',
     ],
+    layout: 'split-features',
+    stats: [
+      { value: '24/7', label: 'Coverage' },
+      { value: '3x', label: 'Faster follow-up' },
+    ],
     primaryAction: { label: 'Call to action', href: '/contact' },
     secondaryAction: { label: 'Secondary action', href: '/services' },
+  },
+  TransformationProofSection: {
+    badge: 'Proof',
+    title: 'What changed after the system was implemented',
+    description: 'A deterministic three-stage proof pattern with emphasis on the build phase.',
+    before: {
+      title: 'Before: slow response and weak visibility',
+      points: [
+        'Leads waited hours before anyone replied',
+        'No clear ownership after first contact',
+        'The team could not see where opportunities stalled',
+      ],
+    },
+    build: {
+      title: 'What we built: one structured response layer',
+      description:
+        'We connected capture, routing, and follow-up into one operating flow so the team could respond with clear ownership.',
+      highlights: [
+        'Unified lead capture across channels',
+        'Automated routing and acknowledgment',
+        'Tracked follow-up with visible ownership',
+      ],
+    },
+    after: {
+      title: 'After: faster response and cleaner handoff',
+      results: [
+        'Every lead entered one visible workflow',
+        'Response times dropped from hours to minutes',
+        'The team could see the next action at every stage',
+      ],
+    },
   },
   DarkSplitShowcaseSection: {
     badge: 'Accent heading',
@@ -893,6 +929,90 @@ const USAGE_SEEDED_PRESETS: Record<string, Record<string, unknown>> = {
       },
     ],
     variant: 'default',
+    layout: 'split',
+  },
+  SignalResponseSection: {
+    badge: 'Workflow logic',
+    title: 'Signals turn into controlled responses',
+    description: 'Seeded preview for structured operational workflows.',
+    items: [
+      {
+        title: 'New lead received',
+        signal: 'A prospect submits the primary form.',
+        response: 'The lead is acknowledged and routed automatically.',
+        points: ['Assign owner', 'Start follow-up', 'Log source'],
+      },
+      {
+        title: 'Missed call detected',
+        signal: 'The call ends without an answer.',
+        response: 'A recovery sequence starts immediately.',
+        points: ['Send SMS', 'Create callback task', 'Notify owner'],
+      },
+    ],
+  },
+  OutcomeTimelineSection: {
+    badge: 'Implementation flow',
+    title: 'Each stage resolves to a clear outcome',
+    description: 'Seeded preview for implementation walkthroughs.',
+    stages: [
+      {
+        step: '01',
+        title: 'Audit the current workflow',
+        description: 'Document the real handoff path before system changes begin.',
+        outcomes: ['Visible bottlenecks', 'Clear ownership map'],
+      },
+      {
+        step: '02',
+        title: 'Launch the first automation layer',
+        description: 'Move the most time-sensitive routing logic into the system.',
+        outcomes: ['Faster first response', 'Cleaner assignment flow'],
+      },
+    ],
+  },
+  DecisionFitSection: {
+    badge: 'Qualification',
+    title: 'Know whether the system is the right fit',
+    description: 'Seeded preview for qualification-only service sections.',
+    strongFitTitle: 'Strong fit',
+    strongFitItems: ['Clear service offer', 'Active lead flow', 'Team ownership'],
+    notFitTitle: 'Not a fit',
+    notFitItems: ['No sales process', 'No response capacity', 'No implementation owner'],
+  },
+  AlternatingDetailRowsSection: {
+    badge: 'Operational details',
+    title: 'Explain each layer without another flat grid',
+    description: 'Seeded preview for alternating narrative and detail rows.',
+    items: [
+      {
+        title: 'Lead routing rules',
+        description: 'Each route reflects service intent and response priority.',
+        points: ['Intent-based routing', 'Channel-aware assignment', 'Fallback ownership'],
+      },
+      {
+        title: 'Visibility checkpoints',
+        description: 'Teams can see where leads stall and what happens next.',
+        points: ['Stage progression', 'Missed touchpoints', 'Escalation triggers'],
+      },
+    ],
+  },
+  ComparisonEvidenceBand: {
+    badge: 'Decision support',
+    title: 'Compare the old workflow to the system-backed approach',
+    description: 'Seeded preview for comparison plus proof in one band.',
+    beforeTitle: 'Before systemization',
+    beforeItems: ['Manual handoffs', 'Delayed follow-up', 'No tracking clarity'],
+    afterTitle: 'After systemization',
+    afterItems: ['Automated routing', 'Immediate response', 'Shared lifecycle visibility'],
+    evidenceItems: [
+      {
+        title: 'Operational proof',
+        description: 'The handoff path is visible from first contact to booked action.',
+      },
+      {
+        title: 'Decision proof',
+        description: 'Teams can see which workflows improve speed and ownership first.',
+      },
+    ],
   },
   ComparisonSection: {
     badge: 'Comparison',
@@ -952,6 +1072,7 @@ const USAGE_SEEDED_PRESETS: Record<string, Record<string, unknown>> = {
         iconType: 'accent',
       },
     ],
+    layout: 'timeline',
   },
   LinkedIconCardsSection: {
     title: 'Recommended next reads',
@@ -1104,6 +1225,140 @@ const USAGE_SEEDED_PRESETS: Record<string, Record<string, unknown>> = {
   },
 };
 
+const MANUAL_COMPONENT_VARIATIONS: Record<
+  string,
+  Array<{
+    variationLabel: string;
+    overrides: Record<string, unknown>;
+  }>
+> = {
+  ProcessStepsSection: [
+    {
+      variationLabel: 'layout = timeline',
+      overrides: {
+        layout: 'timeline',
+      },
+    },
+  ],
+  FeatureChecklistCardsSection: [
+    {
+      variationLabel: 'layout = split',
+      overrides: {
+        layout: 'split',
+      },
+    },
+    {
+      variationLabel: 'variant = stacked',
+      overrides: {
+        variant: 'stacked',
+      },
+    },
+  ],
+  StackedFeatureListSection: [
+    {
+      variationLabel: 'layout = narrative-stats',
+      overrides: {
+        layout: 'narrative-stats',
+      },
+    },
+    {
+      variationLabel: 'variant = media',
+      overrides: {
+        variant: 'media',
+      },
+    },
+  ],
+  SignalResponseSection: [
+    {
+      variationLabel: 'without points',
+      overrides: {
+        items: [
+          {
+            title: 'New lead received',
+            signal: 'A prospect submits the primary form.',
+            response: 'The lead is acknowledged and routed automatically.',
+          },
+          {
+            title: 'Missed call detected',
+            signal: 'The call ends without an answer.',
+            response: 'A recovery sequence starts immediately.',
+          },
+        ],
+      },
+    },
+  ],
+  OutcomeTimelineSection: [
+    {
+      variationLabel: 'named phases',
+      overrides: {
+        stages: [
+          {
+            step: 'Phase 1',
+            title: 'Audit the current workflow',
+            description: 'Document the real handoff path before system changes begin.',
+            outcomes: ['Visible bottlenecks', 'Clear ownership map'],
+          },
+          {
+            step: 'Phase 2',
+            title: 'Launch the first automation layer',
+            description: 'Move the most time-sensitive routing logic into the system.',
+            outcomes: ['Faster first response', 'Cleaner assignment flow'],
+          },
+        ],
+      },
+    },
+  ],
+  DecisionFitSection: [
+    {
+      variationLabel: 'no badge',
+      overrides: {
+        badge: undefined,
+      },
+    },
+  ],
+  AlternatingDetailRowsSection: [
+    {
+      variationLabel: '3 detail rows',
+      overrides: {
+        items: [
+          {
+            title: 'Lead routing rules',
+            description: 'Each route reflects service intent and response priority.',
+            points: ['Intent-based routing', 'Channel-aware assignment', 'Fallback ownership'],
+          },
+          {
+            title: 'Visibility checkpoints',
+            description: 'Teams can see where leads stall and what happens next.',
+            points: ['Stage progression', 'Missed touchpoints', 'Escalation triggers'],
+          },
+          {
+            title: 'Follow-up governance',
+            description: 'The system defines when reminders and escalations occur.',
+            points: ['Reminder timing', 'Escalation rules', 'Ownership review'],
+          },
+        ],
+      },
+    },
+  ],
+  ComparisonEvidenceBand: [
+    {
+      variationLabel: '2 evidence cards',
+      overrides: {
+        evidenceItems: [
+          {
+            title: 'Operational proof',
+            description: 'The handoff path is visible from first contact to booked action.',
+          },
+          {
+            title: 'Decision proof',
+            description: 'Teams can see which workflows improve speed and ownership first.',
+          },
+        ],
+      },
+    },
+  ],
+};
+
 const getStringLiteralUnion = (typeText: string): string[] => {
   const matches = typeText.match(/'([^']+)'|"([^"]+)"/g) ?? [];
   const values = matches.map(v => v.replace(/^['"]|['"]$/g, '').trim()).filter(Boolean);
@@ -1236,6 +1491,15 @@ export const generateComponentVariations = (componentName: string) => {
       });
       continue;
     }
+  }
+
+  const manualVariations = MANUAL_COMPONENT_VARIATIONS[componentName] ?? [];
+  for (const variation of manualVariations) {
+    variations.push({
+      ...base,
+      ...variation.overrides,
+      variationLabel: variation.variationLabel,
+    });
   }
 
   const unique = new Map<string, Record<string, unknown>>();

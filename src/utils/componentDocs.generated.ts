@@ -18320,6 +18320,64 @@ export const componentDocs: Record<string, ComponentDoc> = {
       }
     ]
   },
+  "TransformationProofSection": {
+    "name": "TransformationProofSection",
+    "filePath": "src/components/reusable/sections/core/TransformationProofSection.tsx",
+    "summary": "",
+    "description": "",
+    "representativeUsageFilePath": "",
+    "representativePageUrl": "/",
+    "props": [
+      {
+        "name": "after",
+        "type": "{ title: string; results: string[]; }",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "before",
+        "type": "{ title: string; points: string[]; }",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "build",
+        "type": "{ title: string; description: string; highlights?: string[] | undefined; }",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "backgroundColor",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "badge",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "cssPrefix",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "description",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      }
+    ]
+  },
   "WorkflowStepCard": {
     "name": "WorkflowStepCard",
     "filePath": "src/components/reusable/sections/service/index.ts",

@@ -53,6 +53,24 @@ import {
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
+type CRMAutomationTransformationProof = {
+  transformationProof: {
+    before: {
+      title: string;
+      points: string[];
+    };
+    build: {
+      title: string;
+      description: string;
+      highlights?: string[];
+    };
+    after: {
+      title: string;
+      results: string[];
+    };
+  };
+};
+
 const slug = 'crm-infrastructure-implementation';
 
 export const crmAutomationPage = {
@@ -815,6 +833,7 @@ export const crmAutomationPage = {
     },
     proof: {
       header: {
+        badge: 'Proof',
         title: 'What this looks like when it is running',
         description:
           'A service business was getting consistent enquiries but had no way to track them. Leads sat in email, texts were scattered, and follow-up depended on who remembered.',
@@ -922,4 +941,32 @@ export const crmAutomationPage = {
     description:
       'Tell us how enquiries come in and how your team handles them. We will show you where things are falling through and set up a CRM that tracks every lead from first contact to outcome.',
   },
-} satisfies ServicePageData;
+  transformationProof: {
+    before: {
+      title: 'Before: leads everywhere, follow-up nowhere',
+      points: [
+        'No single view of active leads or their status',
+        'Follow-up happened when someone remembered, if at all',
+        'Missed calls and after-hours enquiries went untracked',
+      ],
+    },
+    build: {
+      title: 'What we built: one system for everything',
+      description:
+        'We configured a CRM to capture every enquiry source, set up automated follow-up sequences, built a pipeline with clear stages, and gave the team notifications and ownership rules.',
+      highlights: [
+        'All enquiry sources feeding into one unified inbox',
+        'Automated follow-up sequences triggered by lead stage',
+        'Pipeline with clear stages, ownership, and next-step visibility',
+      ],
+    },
+    after: {
+      title: 'After: nothing falls through, team knows where everything stands',
+      results: [
+        'Every lead tracked from first contact through to outcome',
+        'Follow-up response times dropped from days to minutes',
+        'Team gained full visibility into pipeline and workload',
+      ],
+    },
+  },
+} satisfies ServicePageData & CRMAutomationTransformationProof;
