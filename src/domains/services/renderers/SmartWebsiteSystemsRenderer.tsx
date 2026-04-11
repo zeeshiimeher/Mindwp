@@ -17,6 +17,7 @@ import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { smartWebsiteSystemsPage } from '@/domains/services/data/smart-website-systems';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
+import { renderAlternatingSection } from '@/domains/services/renderers/renderAlternatingSection';
 import type { ServicePageSections } from '@/domains/services/types';
 
 interface Props {
@@ -126,22 +127,30 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             />
           )}
           {/* Strategic Bridge */}
-          {data.sections.visibilityFoundations && (
-            <StackedFeatureListSection
-              title={data.sections.visibilityFoundations.header.title}
-              description={data.sections.visibilityFoundations.header.description}
-              tagline={data.sections.visibilityFoundations.tagline}
-              narrativeTitle={data.sections.visibilityFoundations.narrativeTitle}
-              narrativeParagraphs={data.sections.visibilityFoundations.narrativeParagraphs}
-              features={data.sections.visibilityFoundations.items.map(item => ({
-                icon: item.icon,
-                title: item.title,
-                description: item.description,
-              }))}
-              cssPrefix='smart-websites-visibility-foundations'
-              backgroundColor='bg-base'
-            />
-          )}
+          {data.sections.visibilityFoundations &&
+            renderAlternatingSection(
+              {
+                title: data.sections.visibilityFoundations.header.title,
+                description: data.sections.visibilityFoundations.header.description,
+                alternatingItems: data.sections.visibilityFoundations.alternatingItems,
+                cssPrefix: 'smart-websites-visibility-foundations',
+                backgroundColor: 'bg-base',
+              },
+              <StackedFeatureListSection
+                title={data.sections.visibilityFoundations.header.title}
+                description={data.sections.visibilityFoundations.header.description}
+                tagline={data.sections.visibilityFoundations.tagline}
+                narrativeTitle={data.sections.visibilityFoundations.narrativeTitle}
+                narrativeParagraphs={data.sections.visibilityFoundations.narrativeParagraphs}
+                features={data.sections.visibilityFoundations.items.map(item => ({
+                  icon: item.icon,
+                  title: item.title,
+                  description: item.description,
+                }))}
+                cssPrefix='smart-websites-visibility-foundations'
+                backgroundColor='bg-base'
+              />,
+            )}
 
           {/* NEW: Benefits by Business Size */}
           {optionalSections.businessSizes && (

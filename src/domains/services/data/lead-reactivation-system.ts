@@ -118,6 +118,38 @@ export const leadReactivationSystemPage = {
             'Existing customer relationships become a revenue source, not just a contact list.',
         },
       ],
+      alternatingItems: [
+        {
+          title: 'Stalled quote follow-up',
+          description:
+            'A quote was sent, the prospect went quiet, and nobody followed up properly.',
+          points: [
+            'Segment stalled quotes',
+            'Restart follow-up with timed prompts',
+            'Revisit stalled quote value',
+          ],
+        },
+        {
+          title: 'Enquiries losing momentum',
+          description:
+            'A lead showed interest, but the conversation drifted because follow-up was weak or nobody owned it.',
+          points: [
+            'Trigger re-engagement follow-up',
+            'Clarify messaging and handoff',
+            'Restart warm conversations',
+          ],
+        },
+        {
+          title: 'Past customer reactivation',
+          description:
+            'Past customers could buy again or refer, but there is no structured way to reach them at the right time.',
+          points: [
+            'Trigger lifecycle follow-up',
+            'Send relevant return reminders',
+            'Recover repeat-work opportunities',
+          ],
+        },
+      ],
     },
     auditAreas: {
       badge: 'What the system needs',

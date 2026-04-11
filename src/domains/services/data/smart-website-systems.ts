@@ -361,6 +361,26 @@ export const smartWebsiteSystemsPage = {
           iconType: 'primary' as const,
         },
       ],
+      alternatingItems: [
+        {
+          title: 'Marketing spend pays back',
+          description:
+            'The traffic you already pay for starts converting. Visitors find what they need, get in touch, and your team follows up before the opportunity goes cold.',
+          points: ['More return', 'Less waste', 'Measurable results'],
+        },
+        {
+          title: 'Less chasing better delivery',
+          description:
+            'Enquiries arrive with full context. Follow-up runs on its own. Your team handles the work instead of checking inboxes and sending reminders.',
+          points: ['Less admin', 'Faster response', 'Better focus'],
+        },
+        {
+          title: 'Organic search brings customers',
+          description:
+            'Service pages with clear titles and descriptions mean Google can understand what you offer and show you when people nearby are searching.',
+          points: ['Organic visibility', 'Local search', 'Long-term traffic'],
+        },
+      ],
     },
     qualification: {
       header: {

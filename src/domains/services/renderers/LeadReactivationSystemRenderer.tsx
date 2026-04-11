@@ -1,10 +1,8 @@
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
-  ComparisonSection,
   DualToneChecklistComparisonSection,
   ProblemCardsSection,
   ProcessStepsSection,
-  ServiceSpectrumCardsSection,
 } from '@/components/reusable/sections';
 import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { IconListCard, ScenarioSolutionCard, SectionIntro } from '@/components/reusable/single';
@@ -15,6 +13,7 @@ import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { leadReactivationSystemPage } from '@/domains/services/data/lead-reactivation-system';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
+import { renderAlternatingSection } from '@/domains/services/renderers/renderAlternatingSection';
 
 interface LeadReactivationSystemRendererProps {
   data: typeof leadReactivationSystemPage;
@@ -25,7 +24,7 @@ export function LeadReactivationSystemRenderer({
   data,
   slug,
 }: LeadReactivationSystemRendererProps) {
-  const { hero, sections, cta, inlineCta } = data;
+  const { hero, sections, cta } = data;
   const {
     foundation,
     reactivationScenarios,
@@ -34,13 +33,9 @@ export function LeadReactivationSystemRenderer({
     entryPoints,
     qualification,
     faqSection,
-    comparison,
-    proof,
   } = sections;
   const ctaTitle = cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
   const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
-  const inlineCtaTitle = inlineCta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
-  const inlineCtaDescription = inlineCta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
 
   return (
     <>
@@ -69,29 +64,39 @@ export function LeadReactivationSystemRenderer({
             cssPrefix='lead-reactivation-foundation'
           />
 
-          <SectionWrapper className='lead-reactivation-scenarios' background='bg-base'>
-            <SectionIntro
-              badge={reactivationScenarios.badge}
-              title={reactivationScenarios.title}
-              description={reactivationScenarios.description}
-              cssPrefix='lead-reactivation-scenarios-header'
-            />
-            <div className='l-grid l-gap-6 md:l-grid-3'>
-              {reactivationScenarios.items.map((item, index) => (
-                <ScenarioSolutionCard
-                  key={index}
-                  icon={item.icon}
-                  title={item.title}
-                  scenario={item.scenario}
-                  solution={item.solution}
-                  result={item.result}
-                  scenarioLabel={reactivationScenarios.scenarioLabel}
-                  solutionLabel={reactivationScenarios.solutionLabel}
-                  cssPrefix='lead-reactivation-scenario'
-                />
-              ))}
-            </div>
-          </SectionWrapper>
+          {renderAlternatingSection(
+            {
+              badge: reactivationScenarios.badge,
+              title: reactivationScenarios.title,
+              description: reactivationScenarios.description,
+              alternatingItems: reactivationScenarios.alternatingItems,
+              cssPrefix: 'lead-reactivation-scenarios',
+              backgroundColor: 'bg-base',
+            },
+            <SectionWrapper className='lead-reactivation-scenarios' background='bg-base'>
+              <SectionIntro
+                badge={reactivationScenarios.badge}
+                title={reactivationScenarios.title}
+                description={reactivationScenarios.description}
+                cssPrefix='lead-reactivation-scenarios-header'
+              />
+              <div className='l-grid l-gap-6 md:l-grid-3'>
+                {reactivationScenarios.items.map((item, index) => (
+                  <ScenarioSolutionCard
+                    key={index}
+                    icon={item.icon}
+                    title={item.title}
+                    scenario={item.scenario}
+                    solution={item.solution}
+                    result={item.result}
+                    scenarioLabel={reactivationScenarios.scenarioLabel}
+                    solutionLabel={reactivationScenarios.solutionLabel}
+                    cssPrefix='lead-reactivation-scenario'
+                  />
+                ))}
+              </div>
+            </SectionWrapper>,
+          )}
 
           <SectionWrapper className='lead-reactivation-audit'>
             <SectionIntro
@@ -144,33 +149,6 @@ export function LeadReactivationSystemRenderer({
               ))}
             </div>
           </SectionWrapper>
-
-          {comparison && (
-            <ComparisonSection
-              title={comparison.header.title}
-              description={comparison.header.description}
-              comparisons={comparison.items}
-              cssPrefix='lead-reactivation-comparison'
-            />
-          )}
-
-          {proof && (
-            <ServiceSpectrumCardsSection
-              title={proof.header.title}
-              description={proof.header.description}
-              cards={proof.cards}
-              cssPrefix='lead-reactivation-proof'
-            />
-          )}
-
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
-            title={inlineCtaTitle}
-            description={inlineCtaDescription}
-            primaryActionVariant='primary'
-          />
 
           <DualToneChecklistComparisonSection
             title={qualification.title}

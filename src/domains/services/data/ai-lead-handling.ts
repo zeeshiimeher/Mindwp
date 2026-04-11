@@ -179,6 +179,52 @@ export const aiLeadHandlingPage = {
           ],
         },
       ],
+      alternatingItems: [
+        {
+          title: 'After-hours missed calls',
+          description:
+            'A missed call comes in after business hours from a potential customer.',
+          points: [
+            'Send immediate text acknowledgement',
+            'Capture the enquiry details',
+            'Route the lead into CRM',
+            'Flag the team for next-day follow-up',
+          ],
+        },
+        {
+          title: 'Consultation booking requests',
+          description:
+            'A website visitor asks whether they can book a consultation.',
+          points: [
+            'Answer the basic question',
+            'Offer the correct booking path',
+            'Collect the key details',
+            'Log the conversation for follow-up',
+          ],
+        },
+        {
+          title: 'Service fit questions',
+          description:
+            'A caller asks a common service question before deciding whether to enquire.',
+          points: [
+            'Provide approved first-response answer',
+            'Identify whether the caller is a fit',
+            'Pass the conversation to a human when needed',
+            'Record the interaction for continuity',
+          ],
+        },
+        {
+          title: 'Incomplete lead conversations',
+          description:
+            'A lead starts a conversation but does not complete the next step.',
+          points: [
+            'Capture the partial interaction',
+            'Route it into the right follow-up workflow',
+            'Keep the context available for the team',
+            'Reduce the chance of the enquiry going cold',
+          ],
+        },
+      ],
     },
     useCasesSection: {
       badge: 'Where it helps most',

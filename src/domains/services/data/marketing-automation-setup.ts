@@ -101,6 +101,39 @@ export const marketingAutomationSetupPage = {
           ],
         },
       ],
+      alternatingItems: [
+        {
+          title: 'Leads not ready to book',
+          description: 'A new lead enquires but is not ready to book immediately.',
+          points: [
+            'Send a relevant first follow-up',
+            'Space the next messages properly',
+            'Route engaged replies into the next sales step',
+            'Stop the sequence when the person becomes active',
+          ],
+        },
+        {
+          title: 'Appointment reminder timing',
+          description:
+            'An appointment or service milestone is coming up and reminders matter.',
+          points: [
+            'Trigger confirmation and reminder messages',
+            'Set timing based on the service model',
+            'Reduce admin chasing and forgotten next steps',
+            'Keep the team aware when action is needed',
+          ],
+        },
+        {
+          title: 'Dormant lead reactivation',
+          description: 'Past customers or dormant leads need structured reactivation.',
+          points: [
+            'Segment the right audience first',
+            'Send relevant reactivation messaging',
+            'Track responses and hand off the warm contacts',
+            'Avoid treating old contacts like one generic list',
+          ],
+        },
+      ],
     },
     governanceAreas: {
       badge: 'What good setup depends on',

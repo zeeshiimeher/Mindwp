@@ -3,8 +3,8 @@ import {
   ComparisonSection,
   DualToneChecklistComparisonSection,
   ProblemCardsSection,
-  ProcessStepsSection,
   ServiceSpectrumCardsSection,
+  StepCardsSplitSection,
 } from '@/components/reusable/sections';
 import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import {
@@ -133,7 +133,7 @@ export function UnifiedCommunicationSystemRenderer({
             </div>
           </SectionWrapper>
 
-          <ProcessStepsSection
+          <StepCardsSplitSection
             badge={operatingLayers.badge}
             title={operatingLayers.title}
             description={operatingLayers.description}
@@ -163,7 +163,6 @@ export function UnifiedCommunicationSystemRenderer({
                   'Improve visibility so important conversations do not stall simply because nobody owned them clearly.',
               },
             ]}
-            columns={4}
             cssPrefix='unified-communication-process'
           />
 

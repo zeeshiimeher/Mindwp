@@ -1,7 +1,6 @@
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   ChecklistCardsSection,
-  ComparisonSection,
   DualToneChecklistComparisonSection,
   FeatureChecklistCardsSection,
   ProblemCardsSection,
@@ -17,6 +16,7 @@ import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { aiLeadHandlingPage } from '@/domains/services/data/ai-lead-handling';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
+import { renderAlternatingSection } from '@/domains/services/renderers/renderAlternatingSection';
 
 interface AiLeadHandlingRendererProps {
   data: typeof aiLeadHandlingPage;
@@ -30,8 +30,6 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
     featureCategoriesSection,
     processSection,
     workflowExamples,
-    comparison,
-    proof,
     useCasesSection,
     positioning,
     checklistSection,
@@ -40,9 +38,6 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
   } = sections;
   const ctaTitle = cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
   const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
-  const inlineCtaTitle = data.inlineCta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
-  const inlineCtaDescription =
-    data.inlineCta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
   const heroCssPrefix = (hero as { cssPrefix?: string }).cssPrefix;
 
   return (
@@ -91,25 +86,35 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
             cssPrefix='ai-response-process'
           />
 
-          <SectionWrapper className='ai-response-workflows' background='bg-alt'>
-            <SectionIntro
-              badge={workflowExamples.badge}
-              title={workflowExamples.title}
-              description={workflowExamples.description}
-              cssPrefix='ai-response-workflows-header'
-            />
+          {renderAlternatingSection(
+            {
+              badge: workflowExamples.badge,
+              title: workflowExamples.title,
+              description: workflowExamples.description,
+              alternatingItems: workflowExamples.alternatingItems,
+              cssPrefix: 'ai-response-workflows',
+              backgroundColor: 'bg-alt',
+            },
+            <SectionWrapper className='ai-response-workflows' background='bg-alt'>
+              <SectionIntro
+                badge={workflowExamples.badge}
+                title={workflowExamples.title}
+                description={workflowExamples.description}
+                cssPrefix='ai-response-workflows-header'
+              />
 
-            <div className='l-grid l-gap-6 md:l-grid-2'>
-              {workflowExamples.items.map((workflow, index) => (
-                <WorkflowStepCard
-                  key={index}
-                  trigger={workflow.trigger}
-                  actions={workflow.actions}
-                  cssPrefix='ai-response-workflow'
-                />
-              ))}
-            </div>
-          </SectionWrapper>
+              <div className='l-grid l-gap-6 md:l-grid-2'>
+                {workflowExamples.items.map((workflow, index) => (
+                  <WorkflowStepCard
+                    key={index}
+                    trigger={workflow.trigger}
+                    actions={workflow.actions}
+                    cssPrefix='ai-response-workflow'
+                  />
+                ))}
+              </div>
+            </SectionWrapper>,
+          )}
 
           <ServiceSpectrumCardsSection
             badge={useCasesSection.badge}
@@ -117,35 +122,6 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
             description={useCasesSection.description}
             cards={useCasesSection.cards}
             cssPrefix='ai-response-use-cases'
-          />
-
-          {comparison && (
-            <ComparisonSection
-              title={comparison.header.title}
-              description={comparison.header.description}
-              comparisons={comparison.items}
-              cssPrefix='ai-response-comparison'
-              backgroundColor='bg-base'
-            />
-          )}
-
-          {proof && (
-            <ServiceSpectrumCardsSection
-              title={proof.header.title}
-              description={proof.header.description}
-              cards={proof.cards}
-              cssPrefix='ai-response-proof'
-            />
-          )}
-
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
-            title={inlineCtaTitle}
-            description={inlineCtaDescription}
-            cssPrefix='ai-response-inline-cta'
-            primaryActionVariant='white'
           />
 
           <StackedFeatureListSection
@@ -198,7 +174,7 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'
-          />
+            />
         </main>
       </ErrorBoundary>
     </>

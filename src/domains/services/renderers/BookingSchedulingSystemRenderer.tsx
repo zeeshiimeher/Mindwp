@@ -101,14 +101,30 @@ export function BookingSchedulingSystemRenderer({
           )}
 
           {proof && (
-            <ServiceSpectrumCardsSection
-              badge='Proof'
-              title={proof.header.title}
-              description={proof.header.description}
-              cards={proof.cards}
-              cssPrefix='booking-scheduling-proof'
-              backgroundColor='bg-base'
-            />
+            proof.cards.every(card => card.points?.length) ? (
+              <FeatureChecklistCardsSection
+                badge='Proof'
+                title={proof.header.title}
+                description={proof.header.description}
+                featureCategories={proof.cards.map(card => ({
+                  title: card.title,
+                  description: card.description,
+                  features: card.points,
+                }))}
+                columns={3}
+                cssPrefix='booking-scheduling-proof'
+                backgroundColor='bg-base'
+              />
+            ) : (
+              <ServiceSpectrumCardsSection
+                badge='Proof'
+                title={proof.header.title}
+                description={proof.header.description}
+                cards={proof.cards}
+                cssPrefix='booking-scheduling-proof'
+                backgroundColor='bg-base'
+              />
+            )
           )}
 
           <SmartCTA

@@ -1,10 +1,8 @@
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
-  ComparisonSection,
   DualToneChecklistComparisonSection,
   ProblemCardsSection,
-  ProcessStepsSection,
-  ServiceSpectrumCardsSection,
+  StepCardsSplitSection,
 } from '@/components/reusable/sections';
 import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { IconTextCard, LinkCard, SectionIntro } from '@/components/reusable/single';
@@ -25,22 +23,18 @@ export function SystemMigrationPlatformConsolidationRenderer({
   data,
   slug,
 }: SystemMigrationPlatformConsolidationRendererProps) {
-  const { hero, sections, cta, inlineCta } = data;
+  const { hero, sections, cta } = data;
   const {
     foundation,
     migrationSignals,
     riskAreas,
     consolidationTargets,
     processSection,
-    comparison,
-    proof,
     qualification,
     faqSection,
   } = sections;
   const ctaTitle = cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
   const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
-  const inlineCtaTitle = inlineCta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
-  const inlineCtaDescription = inlineCta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
 
   return (
     <>
@@ -129,40 +123,12 @@ export function SystemMigrationPlatformConsolidationRenderer({
             </div>
           </SectionWrapper>
 
-          <ProcessStepsSection
+          <StepCardsSplitSection
             badge={processSection.badge}
             title={processSection.title}
             description={processSection.description}
             steps={processSection.steps}
-            columns={4}
             cssPrefix='system-migration-process'
-          />
-
-          {comparison && (
-            <ComparisonSection
-              title={comparison.header.title}
-              description={comparison.header.description}
-              comparisons={comparison.items}
-              cssPrefix='system-migration-comparison'
-            />
-          )}
-
-          {proof && (
-            <ServiceSpectrumCardsSection
-              title={proof.header.title}
-              description={proof.header.description}
-              cards={proof.cards}
-              cssPrefix='system-migration-proof'
-            />
-          )}
-
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
-            title={inlineCtaTitle}
-            description={inlineCtaDescription}
-            primaryActionVariant='primary'
           />
 
           <DualToneChecklistComparisonSection

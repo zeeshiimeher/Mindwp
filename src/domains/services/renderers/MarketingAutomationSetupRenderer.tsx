@@ -1,10 +1,8 @@
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
-  ComparisonSection,
   DualToneChecklistComparisonSection,
   ProblemCardsSection,
   ProcessStepsSection,
-  ServiceSpectrumCardsSection,
 } from '@/components/reusable/sections';
 import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { SectionIntro, WorkflowStepCard } from '@/components/reusable/single';
@@ -16,6 +14,7 @@ import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { marketingAutomationSetupPage } from '@/domains/services/data/marketing-automation-setup';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
+import { renderAlternatingSection } from '@/domains/services/renderers/renderAlternatingSection';
 
 interface MarketingAutomationSetupRendererProps {
   data: typeof marketingAutomationSetupPage;
@@ -26,7 +25,7 @@ export function MarketingAutomationSetupRenderer({
   data,
   slug,
 }: MarketingAutomationSetupRendererProps) {
-  const { hero, sections, cta, inlineCta } = data;
+  const { hero, sections, cta } = data;
   const {
     foundation,
     automationExamples,
@@ -35,13 +34,9 @@ export function MarketingAutomationSetupRenderer({
     processSection,
     qualification,
     faqSection,
-    comparison,
-    proof,
   } = sections;
   const ctaTitle = cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
   const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
-  const inlineCtaTitle = inlineCta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
-  const inlineCtaDescription = inlineCta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
 
   return (
     <>
@@ -70,24 +65,34 @@ export function MarketingAutomationSetupRenderer({
             cssPrefix='marketing-automation-foundation'
           />
 
-          <SectionWrapper className='marketing-automation-examples' background='bg-alt'>
-            <SectionIntro
-              badge={automationExamples.badge}
-              title={automationExamples.title}
-              description={automationExamples.description}
-              cssPrefix='marketing-automation-examples-header'
-            />
-            <div className='l-grid l-gap-6 md:l-grid-3'>
-              {automationExamples.items.map((workflow, index) => (
-                <WorkflowStepCard
-                  key={index}
-                  trigger={workflow.trigger}
-                  actions={workflow.actions}
-                  cssPrefix='marketing-automation-example'
-                />
-              ))}
-            </div>
-          </SectionWrapper>
+          {renderAlternatingSection(
+            {
+              badge: automationExamples.badge,
+              title: automationExamples.title,
+              description: automationExamples.description,
+              alternatingItems: automationExamples.alternatingItems,
+              cssPrefix: 'marketing-automation-examples',
+              backgroundColor: 'bg-alt',
+            },
+            <SectionWrapper className='marketing-automation-examples' background='bg-alt'>
+              <SectionIntro
+                badge={automationExamples.badge}
+                title={automationExamples.title}
+                description={automationExamples.description}
+                cssPrefix='marketing-automation-examples-header'
+              />
+              <div className='l-grid l-gap-6 md:l-grid-3'>
+                {automationExamples.items.map((workflow, index) => (
+                  <WorkflowStepCard
+                    key={index}
+                    trigger={workflow.trigger}
+                    actions={workflow.actions}
+                    cssPrefix='marketing-automation-example'
+                  />
+                ))}
+              </div>
+            </SectionWrapper>,
+          )}
 
           <SectionWrapper className='marketing-automation-governance'>
             <SectionIntro
@@ -138,33 +143,6 @@ export function MarketingAutomationSetupRenderer({
             steps={processSection.steps}
             columns={4}
             cssPrefix='marketing-automation-process'
-          />
-
-          {comparison && (
-            <ComparisonSection
-              title={comparison.header.title}
-              description={comparison.header.description}
-              comparisons={comparison.items}
-              cssPrefix='marketing-automation-comparison'
-            />
-          )}
-
-          {proof && (
-            <ServiceSpectrumCardsSection
-              title={proof.header.title}
-              description={proof.header.description}
-              cards={proof.cards}
-              cssPrefix='marketing-automation-proof'
-            />
-          )}
-
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
-            title={inlineCtaTitle}
-            description={inlineCtaDescription}
-            primaryActionVariant='primary'
           />
 
           <DualToneChecklistComparisonSection

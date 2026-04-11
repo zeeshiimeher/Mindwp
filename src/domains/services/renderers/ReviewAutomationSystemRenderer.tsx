@@ -1,5 +1,4 @@
 import {
-  ComparisonSection,
   DualToneChecklistComparisonSection,
   FeatureChecklistCardsSection,
   ProblemCardsSection,
@@ -24,7 +23,7 @@ export function ReviewAutomationSystemRenderer({
   data,
   slug,
 }: ReviewAutomationSystemRendererProps) {
-  const { hero, sections, cta, inlineCta } = data;
+  const { hero, sections, cta } = data;
   const {
     foundation,
     workflowLayer,
@@ -33,13 +32,9 @@ export function ReviewAutomationSystemRenderer({
     capabilitySection,
     qualification,
     faqSection,
-    comparison,
-    proof,
   } = sections;
   const ctaTitle = cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
   const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
-  const inlineCtaTitle = inlineCta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
-  const inlineCtaDescription = inlineCta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
 
   return (
     <>
@@ -86,36 +81,6 @@ export function ReviewAutomationSystemRenderer({
             narrativeTitle={positioning.narrativeTitle}
             narrativeParagraphs={positioning.narrativeParagraphs}
             cssPrefix='review-automation-positioning'
-          />
-
-          {comparison && (
-            <ComparisonSection
-              title={comparison.header.title}
-              description={comparison.header.description}
-              comparisons={comparison.items}
-              cssPrefix='review-automation-comparison'
-              backgroundColor='bg-alt'
-            />
-          )}
-
-          {proof && (
-            <ServiceSpectrumCardsSection
-              badge='Proof'
-              title={proof.header.title}
-              description={proof.header.description}
-              cards={proof.cards}
-              cssPrefix='review-automation-proof'
-              backgroundColor='bg-base'
-            />
-          )}
-
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
-            title={inlineCtaTitle}
-            description={inlineCtaDescription}
-            primaryActionVariant='primary'
           />
 
           <ProcessStepsSection

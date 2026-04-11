@@ -1,5 +1,4 @@
 import {
-  ComparisonSection,
   DualToneChecklistComparisonSection,
   FeatureChecklistCardsSection,
   ProblemCardsSection,
@@ -21,7 +20,7 @@ interface WordPressDevelopmentRendererProps {
 }
 
 export function WordPressDevelopmentRenderer({ data, slug }: WordPressDevelopmentRendererProps) {
-  const { hero, sections, cta, inlineCta } = data;
+  const { hero, sections, cta } = data;
   const {
     foundation,
     implementationScope,
@@ -30,13 +29,9 @@ export function WordPressDevelopmentRenderer({ data, slug }: WordPressDevelopmen
     capabilitySection,
     qualification,
     faqSection,
-    comparison,
-    proof,
   } = sections;
   const ctaTitle = cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
   const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
-  const inlineCtaTitle = inlineCta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
-  const inlineCtaDescription = inlineCta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
 
   return (
     <>
@@ -102,33 +97,6 @@ export function WordPressDevelopmentRenderer({ data, slug }: WordPressDevelopmen
             featureCategories={capabilitySection.categories}
             columns={3}
             cssPrefix='wordpress-development-capabilities'
-          />
-
-          {comparison && (
-            <ComparisonSection
-              title={comparison.header.title}
-              description={comparison.header.description}
-              comparisons={comparison.items}
-              cssPrefix='wordpress-development-comparison'
-            />
-          )}
-
-          {proof && (
-            <ServiceSpectrumCardsSection
-              title={proof.header.title}
-              description={proof.header.description}
-              cards={proof.cards}
-              cssPrefix='wordpress-development-proof'
-            />
-          )}
-
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
-            title={inlineCtaTitle}
-            description={inlineCtaDescription}
-            primaryActionVariant='primary'
           />
 
           <DualToneChecklistComparisonSection

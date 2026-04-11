@@ -1,5 +1,4 @@
 import {
-  ComparisonSection,
   DualToneChecklistComparisonSection,
   FeatureChecklistCardsSection,
   ProblemCardsSection,
@@ -25,8 +24,6 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
   const {
     misconceptions,
     why,
-    comparison,
-    proof,
     integrations,
     processSection,
     scopeSection,
@@ -35,9 +32,6 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
   } = sections;
   const ctaTitle = cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
   const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
-  const inlineCtaTitle = data.inlineCta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
-  const inlineCtaDescription =
-    data.inlineCta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
 
   return (
     <>
@@ -94,35 +88,6 @@ export function LocalSeoAuthorityRenderer({ data, slug }: LocalSeoAuthorityRende
               cssPrefix='website-seo-integrations'
             />
           )}
-
-          {comparison && (
-            <ComparisonSection
-              title={comparison.header.title}
-              description={comparison.header.description}
-              comparisons={comparison.items}
-              cssPrefix='website-seo-comparison'
-              backgroundColor='bg-base'
-            />
-          )}
-
-          {proof && (
-            <ServiceSpectrumCardsSection
-              title={proof.header.title}
-              description={proof.header.description}
-              cards={proof.cards}
-              cssPrefix='website-seo-proof'
-            />
-          )}
-
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
-            title={inlineCtaTitle}
-            description={inlineCtaDescription}
-            cssPrefix='website-seo-inline-cta'
-            primaryActionVariant='white'
-          />
 
           {processSection && (
             <ProcessStepsSection

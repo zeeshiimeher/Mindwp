@@ -2,6 +2,7 @@ import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper'
 import {
   ComparisonSection,
   DualToneChecklistComparisonSection,
+  FeatureChecklistCardsSection,
   ProblemCardsSection,
   ProcessStepsSection,
   ServiceSpectrumCardsSection,
@@ -138,14 +139,30 @@ export function MissedCallRecoverySystemRenderer({
           )}
 
           {proof && (
-            <ServiceSpectrumCardsSection
-              badge='Proof'
-              title={proof.header.title}
-              description={proof.header.description}
-              cards={proof.cards}
-              cssPrefix='missed-call-recovery-proof'
-              backgroundColor='bg-base'
-            />
+            proof.cards.every(card => card.points?.length) ? (
+              <FeatureChecklistCardsSection
+                badge='Proof'
+                title={proof.header.title}
+                description={proof.header.description}
+                featureCategories={proof.cards.map(card => ({
+                  title: card.title,
+                  description: card.description,
+                  features: card.points,
+                }))}
+                columns={3}
+                cssPrefix='missed-call-recovery-proof'
+                backgroundColor='bg-base'
+              />
+            ) : (
+              <ServiceSpectrumCardsSection
+                badge='Proof'
+                title={proof.header.title}
+                description={proof.header.description}
+                cards={proof.cards}
+                cssPrefix='missed-call-recovery-proof'
+                backgroundColor='bg-base'
+              />
+            )
           )}
 
           <SmartCTA
