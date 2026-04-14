@@ -287,7 +287,7 @@ function buildMobileMechanicsIndustryPageData(): IndustryPageData {
         icon: Calendar,
         title: 'Booking & Scheduling System',
         description: 'Support callouts, reminders, and clearer next-step handling.',
-        href: '/services/booking-scheduling-system',
+        href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
       },

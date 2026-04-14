@@ -273,7 +273,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
         icon: Calendar,
         title: 'Booking & Scheduling System',
         description: 'Support service booking, reminders, and clearer appointment handling.',
-        href: '/services/booking-scheduling-system',
+        href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
       },

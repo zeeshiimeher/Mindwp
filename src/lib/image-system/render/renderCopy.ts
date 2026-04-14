@@ -6,9 +6,9 @@ export interface RenderCopy {
 }
 
 const SERVICE_COPY_BY_SLUG: Record<string, RenderCopy> = {
-  'growth-revenue-systems': {
-    title: 'Revenue Growth Systems',
-    subtitle: 'Find and fix the points where leads and conversion slow down.',
+  'conversion-layer': {
+    title: 'Conversion Layer',
+    subtitle: 'Tighten the page path where attention becomes enquiries.',
   },
   'smart-website-systems': {
     title: 'Smart Website Systems',

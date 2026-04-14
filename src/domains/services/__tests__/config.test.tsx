@@ -1,19 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
 
-vi.mock('@/domains/services/renderers/ReviewAutomationSystemRenderer', () => ({
-  ReviewAutomationSystemRenderer: () => null,
-}));
-
-vi.mock('@/domains/services/renderers/BookingSchedulingSystemRenderer', () => ({
-  BookingSchedulingSystemRenderer: () => null,
-}));
-
-vi.mock('@/domains/services/renderers/ConversionFunnelSystemRenderer', () => ({
-  ConversionFunnelSystemRenderer: () => null,
-}));
-
-vi.mock('@/domains/services/renderers/FunnelLandingPageDevelopmentRenderer', () => ({
-  FunnelLandingPageDevelopmentRenderer: () => null,
+vi.mock('@/domains/services/renderers/ConversionLayerRenderer', () => ({
+  ConversionLayerRenderer: () => null,
 }));
 
 vi.mock('@/domains/services/renderers/SystemMigrationPlatformConsolidationRenderer', () => ({
@@ -48,8 +36,8 @@ vi.mock('@/domains/services/renderers/LocalSeoAuthorityRenderer', () => ({
   LocalSeoAuthorityRenderer: () => null,
 }));
 
-vi.mock('@/domains/services/renderers/GrowthRevenueSystemsRenderer', () => ({
-  GrowthRevenueSystemsRenderer: () => null,
+vi.mock('@/domains/services/renderers/ReputationReviewSystemsRenderer', () => ({
+  ReputationReviewSystemsRenderer: () => null,
 }));
 
 vi.mock('@/domains/services/renderers/CRMAutomationRenderer', () => ({
@@ -88,9 +76,7 @@ import {
 
 describe('services config slugs', () => {
   it('treats canonical slugs as valid service slugs', () => {
-    expect(isServiceSlug('booking-scheduling-system')).toBe(true);
-    expect(isServiceSlug('conversion-funnel-system')).toBe(true);
-    expect(isServiceSlug('funnel-landing-page-development')).toBe(true);
+    expect(isServiceSlug('conversion-layer')).toBe(true);
     expect(isServiceSlug('marketing-automation-setup')).toBe(true);
     expect(isServiceSlug('system-migration-platform-consolidation')).toBe(true);
     expect(isServiceSlug('website-redesign-system-rebuild')).toBe(true);
@@ -98,7 +84,6 @@ describe('services config slugs', () => {
     expect(isServiceSlug('missed-call-recovery-system')).toBe(true);
     expect(isServiceSlug('unified-communication-system')).toBe(true);
     expect(isServiceSlug('reputation-review-systems')).toBe(true);
-    expect(isServiceSlug('review-automation-system')).toBe(true);
     expect(isServiceSlug('crm-infrastructure-implementation')).toBe(true);
     expect(isServiceSlug('crm-automation')).toBe(false);
     expect(isServiceSlug('lead-generation-conversion')).toBe(false);
@@ -109,14 +94,8 @@ describe('services config slugs', () => {
   });
 
   it('returns the expected canonical service data', () => {
-    const bookingData = getServiceDataBySlug('booking-scheduling-system');
-    expect(bookingData.seo.canonical).toBe('/services/booking-scheduling-system');
-
-    const conversionFunnelData = getServiceDataBySlug('conversion-funnel-system');
-    expect(conversionFunnelData.seo.canonical).toBe('/services/conversion-funnel-system');
-
-    const funnelLandingData = getServiceDataBySlug('funnel-landing-page-development');
-    expect(funnelLandingData.seo.canonical).toBe('/services/funnel-landing-page-development');
+    const conversionLayerData = getServiceDataBySlug('conversion-layer');
+    expect(conversionLayerData.seo.canonical).toBe('/services/conversion-layer');
 
     const automationData = getServiceDataBySlug('marketing-automation-setup');
     expect(automationData.seo.canonical).toBe('/services/marketing-automation-setup');
@@ -136,11 +115,11 @@ describe('services config slugs', () => {
     const unifiedCommunicationData = getServiceDataBySlug('unified-communication-system');
     expect(unifiedCommunicationData.seo.canonical).toBe('/services/unified-communication-system');
 
+    const reputationData = getServiceDataBySlug('reputation-review-systems');
+    expect(reputationData.seo.canonical).toBe('/services/reputation-review-systems');
+
     const crmData = getServiceDataBySlug('crm-infrastructure-implementation');
     expect(crmData.seo.canonical).toBe('/services/crm-infrastructure-implementation');
-
-    const reviewAutomationData = getServiceDataBySlug('review-automation-system');
-    expect(reviewAutomationData.seo.canonical).toBe('/services/review-automation-system');
 
     const ecommerceData = getServiceDataBySlug('ecommerce');
     const wpData = getServiceDataBySlug('wordpress-development');
@@ -151,14 +130,8 @@ describe('services config slugs', () => {
   });
 
   it('returns distinct canonical renderers where expected', () => {
-    const bookingRenderer = getServiceRendererBySlug('booking-scheduling-system');
-    expect(bookingRenderer).toBeDefined();
-
-    const conversionFunnelRenderer = getServiceRendererBySlug('conversion-funnel-system');
-    expect(conversionFunnelRenderer).toBeDefined();
-
-    const funnelLandingRenderer = getServiceRendererBySlug('funnel-landing-page-development');
-    expect(funnelLandingRenderer).toBeDefined();
+    const conversionLayerRenderer = getServiceRendererBySlug('conversion-layer');
+    expect(conversionLayerRenderer).toBeDefined();
 
     const automationRenderer = getServiceRendererBySlug('marketing-automation-setup');
     expect(automationRenderer).toBeDefined();
@@ -178,11 +151,11 @@ describe('services config slugs', () => {
     const unifiedCommunicationRenderer = getServiceRendererBySlug('unified-communication-system');
     expect(unifiedCommunicationRenderer).toBeDefined();
 
+    const reputationRenderer = getServiceRendererBySlug('reputation-review-systems');
+    expect(reputationRenderer).toBeDefined();
+
     const crmRenderer = getServiceRendererBySlug('crm-infrastructure-implementation');
     expect(crmRenderer).toBeDefined();
-
-    const reviewAutomationRenderer = getServiceRendererBySlug('review-automation-system');
-    expect(reviewAutomationRenderer).toBeDefined();
 
     const wooRenderer = getServiceRendererBySlug('ecommerce');
     const wpRenderer = getServiceRendererBySlug('wordpress-development');

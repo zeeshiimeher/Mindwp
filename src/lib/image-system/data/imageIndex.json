@@ -111,22 +111,6 @@
       "generatedAt": "2026-04-07T02:01:37.967Z"
     }
   },
-  "growth-revenue-systems": {
-    "featured-clean": {
-      "file": "public/images/services/growth-revenue-systems-raw.webp",
-      "hash": "1090989b9b9b9b00",
-      "provider": "pexels",
-      "imageId": "7581130",
-      "generatedAt": "2026-04-07T02:01:49.785Z"
-    },
-    "featured-overlay": {
-      "file": "public/images/services/growth-revenue-systems.webp",
-      "hash": "1090989b9b9b9b00",
-      "provider": "pexels",
-      "imageId": "7581130",
-      "generatedAt": "2026-04-07T02:01:49.786Z"
-    }
-  },
   "smart-website-systems": {
     "featured-clean": {
       "file": "public/images/services/smart-website-systems-raw.webp",

@@ -21,328 +21,319 @@ export const missedCallRecoverySystemPage = {
   category: 'Lead Protection Systems',
   seo: buildServiceSeo({
     slug,
-    title: 'Missed Call Recovery System for Service Businesses | MindWP',
+    title: 'Missed Call Recovery for Service Businesses | MindWP',
     description:
-      'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
-    schemaName: 'Missed call recovery system for service businesses',
+      'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+    schemaName: 'Missed call recovery for service businesses',
     schemaDescription:
-      'Structured missed call recovery covering immediate response, text-back workflows, enquiry capture, and follow-up handoff for service businesses.',
+      'Missed call handling covering instant text-back, detail capture, and follow-up routing for service businesses losing jobs to unanswered phones.',
   }),
   hero: {
-    badge: 'Missed Call Recovery System',
-      title: 'Recover Missed Calls Before They Become Lost Leads',
+    badge: 'Missed Call Recovery',
+      title: 'The Phone Rang. Nobody Was Free.',
     description:
-      'Missing the call is one problem. Losing the enquiry afterwards is the bigger one. This service catches missed calls, responds immediately, captures the opportunity, and routes it into the right next step before the lead disappears.',
-    list: [
-        'Instant Textback',
-        'Lead Capture',
-        'Next Step',
-    ],
+      'Mid-job. On another call. Driving. The person calling needed something done. Got voicemail. Tried the next name on Google. That one picked up.',
+    list: ['Gone', 'No record'],
     cssPrefix: 'missed-call-recovery-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
   sections: {
     foundation: {
-      badge: 'Where leads leak',
-      title: 'You are not just losing calls. You are losing the follow-up moment after the call.',
+      badge: 'What actually happens',
+      title: 'A missed call isn\'t a missed call. It\'s a job that went somewhere else.',
       description:
-        'Missed call recovery matters when high-intent enquiries arrive by phone but the response window closes before anyone gets back to the caller.',
+        'They needed something done. Rang. Silence. Tried the next one.',
       painPoints: [
         {
-          before: 'A missed caller gets silence, so they call the next provider on the list.',
-          after: 'An immediate acknowledgement creates a second chance before the enquiry goes cold.',
+          before: 'Voicemail. Ten minutes. Next business on the list.',
+          after: 'Text back within seconds. They know someone noticed. Enough time for a proper follow-up.',
         },
         {
           before:
-            'The team sees a missed call later but has no idea what the person needed.',
+            'End of the day. Missed call on the screen. No name. No idea what they wanted.',
           after:
-            'The system captures intent and routes enough context to make the follow-up useful.',
+            'Name, reason, time \u2014 captured at the point of the miss. Callback starts with context.',
         },
         {
-          before: 'Busy periods, after-hours gaps, and field work create repeated lead leakage.',
+          before: 'Friday evening. Burst pipe. They called. You were done for the week. Gone by Monday.',
           after:
-            'Recovery logic catches those missed opportunities without relying on memory or luck.',
+            'After-hours calls caught and queued. Monday starts with a list, not a blank.',
         },
       ],
     },
     signalSection: {
-      badge: 'Where it usually hurts',
-      title: 'The strongest fit is where calls still carry high intent',
+      badge: 'Where this hits hardest',
+      title: 'Businesses where a phone call means real money',
       description:
-        'These patterns usually show that missed call recovery can create immediate operational value without needing a full system rebuild first.',
+        'If your customers call before they buy, every missed one is a job you\'ll never know about.',
     },
     signalCards: [
       {
         icon: Phone,
-        title: 'Busy periods and on-site work',
+        title: 'On-site or mid-job',
         description:
-          'Useful where the team regularly misses calls because they are already serving customers or working on-site.',
+          'The team can\'t answer because they\'re doing the work. Calls stack up. By the time anyone checks, the caller hired someone else.',
         iconType: 'primary' as const,
       },
       {
         icon: Clock,
-        title: 'After-hours enquiries',
+        title: 'Evenings and weekends',
         description:
-          'Useful when good calls come in outside business hours and disappear before the next morning.',
+          'People search and call outside office hours. If nobody responds until Monday, Friday night\'s urgent job is long gone.',
         iconType: 'accent' as const,
       },
       {
         icon: Search,
-        title: 'High-value local intent',
+        title: 'Local, high-intent callers',
         description:
-          'Useful where each missed call could represent a nearby quote request, booking, or urgent service enquiry.',
+          'Someone nearby needs a job done now. They call three businesses. The one that answers gets the work.',
         iconType: 'secondary' as const,
       },
     ],
     workflowExamples: {
-      badge: 'Recovery examples',
-      title: 'A missed call recovery workflow should feel immediate and simple',
+      badge: 'What recovery looks like',
+      title: 'Three situations. What happens when calls get caught.',
       description:
-        'The goal is not complexity. It is to acknowledge the caller, capture the opportunity, and move it into a clear next action.',
+        'Not complicated. Text goes out. Details captured. The right person follows up.',
       items: [
         {
-          trigger: 'A potential customer calls after business hours and nobody answers.',
+          trigger: 'Someone calls at 8pm on a Wednesday. Nobody in the office.',
           actions: [
-            'Send an immediate acknowledgement text',
-            'Offer a simple next step or callback expectation',
-            'Capture the enquiry into the right follow-up path',
-            'Flag the team for next-day action',
+            'Text goes back — thanks for calling, we\'ll be in touch first thing',
+            'Caller details and reason captured',
+            'Queued as first follow-up for Thursday morning',
+            'Team sees it with context before they pick up the phone',
           ],
         },
         {
-          trigger: 'A busy team misses several calls during a high-demand period.',
+          trigger: 'Three calls missed in an hour because the team is on a job.',
           actions: [
-            'Acknowledge each missed caller quickly',
-            'Separate urgent from routine enquiries',
-            'Route the calls into a clear callback queue',
-            'Reduce the chance of good leads going cold',
+            'Each caller gets a text within seconds',
+            'Urgent ones flagged separately from general enquiries',
+            'All three queued with details attached',
+            'Team works through them in priority order when free',
           ],
         },
         {
-          trigger: 'A missed caller is ready to book but cannot reach the team immediately.',
+          trigger: 'A caller wants to book something but can\'t get through.',
           actions: [
-            'Send a clear text-back response',
-            'Collect the key booking details',
-            'Route into the next booking or scheduling step',
-            'Keep context ready for whoever follows up',
+            'Text back with a link to book or leave details',
+            'Key information collected without a live conversation',
+            'Booking request handed to whoever manages the calendar',
+            'Caller gets confirmation instead of silence',
           ],
         },
       ],
     },
     processSection: {
-      badge: 'Recovery flow',
-      title: 'How missed call recovery works',
+      badge: 'How it runs',
+      title: 'What happens between the missed call and the follow-up',
       description:
-        'The flow needs to be simple enough to run consistently, and clear enough that the team knows what happens next.',
+        'Four steps. No waiting for someone to notice.',
       steps: [
         {
           number: '1',
-          title: 'Detect the missed call event',
+          title: 'Call comes in, nobody picks up',
           description:
-            'Define what should count as a recoverable missed call and what the first automated action should be.',
+            'The miss is detected. Doesn\'t matter if it was after hours, mid-job, or on another line. Recovery starts immediately.',
         },
         {
           number: '2',
-          title: 'Send the immediate response',
+          title: 'Text goes back to the caller',
           description:
-            'A quick text-back or acknowledgement creates a new chance to keep the lead engaged.',
+            'Within seconds. Not generic. They know they called a real business and someone noticed.',
         },
         {
           number: '3',
-          title: 'Capture and route the enquiry',
+          title: 'Details captured and queued',
           description:
-            'The caller intent, timing, and contact details move into the right follow-up or booking path.',
+            'Who called, when, what they need. Visible to the team before the callback.',
         },
         {
           number: '4',
-          title: 'Close the handoff gap',
+          title: 'The right person follows up',
           description:
-            'The right person or system gets the context needed to follow up instead of starting from zero later.',
+            'With context. Not "I think you called us?" Picks up where the caller left off.',
         },
       ],
     },
     recoveryLayer: {
-      badge: 'What the system covers',
-      title: 'The recovery layer usually includes three working parts',
+      badge: 'What it covers',
+      title: 'Three things that happen after a miss',
       description:
-        'This stays focused on the recovery workflow itself, not the full phone-answering stack.',
+        'Not a phone-answering setup. Just the part between "nobody picked up" and "someone followed up."',
       cards: [
         {
-          title: 'Immediate acknowledgement',
+          title: 'The caller hears back immediately',
           description:
-            'A fast response so the caller knows the enquiry has not disappeared into silence.',
+            'Phone rings. Nobody picks up. Text lands. They know someone\'s there.',
           points: [
-            'Text-back acknowledgement',
-            'Basic expectation-setting',
-            'Faster first response',
+            'Text fires within seconds of the miss',
+            'Buys time for someone real to follow up',
           ],
           featured: true,
         },
         {
-          title: 'Enquiry capture and triage',
+          title: 'Caller replies. Details land somewhere useful.',
           description:
-            'A way to separate urgent, routine, and booking-led calls so the next step is more useful.',
-          points: ['Caller intent capture', 'Priority handling rules', 'Cleaner follow-up queue'],
+            'They text back: blocked drain, free after 3pm. That goes into a follow-up list. Urgent ones surface first.',
+          points: ['Name and job type pulled from the reply', 'Emergencies flagged separately'],
         },
         {
-          title: 'Handoff into the wider system',
+          title: 'It reaches someone who can act',
           description:
-            'Missed call recovery should feed the right next layer instead of stopping at the text-back message.',
+            'Routed to whoever handles that type of job. Details attached. Connects into booking or CRM if those exist.',
           points: [
-            'Booking or callback routing',
-            'CRM or task visibility',
-            'Operational continuity',
+            'Right person or booking path',
+            'Keeps moving until someone owns it',
           ],
         },
       ],
     },
     qualification: {
-      title: 'Is this the right fit for your business?',
+      title: 'Is this right for your business?',
       description:
-        'This works best where unanswered calls are a real source of lead leakage and the response gap is costing you business.',
+        'If unanswered calls are costing you jobs, this fixes that. If they\'re not, start somewhere else.',
       strongFitTitle: 'Strong fit if',
       notDesignedTitle: 'Not the right fit if',
       strongFitItems: [
         {
-          title: 'Phone enquiries are a major source of new business',
+          title: 'Most of your work starts with a phone call',
           description:
-            'Calls still carry high intent and each missed one could represent a quote, booking, or urgent service request.',
+            'Customers call before they book. Each unanswered one could be a job worth hundreds. You just can\'t always get to the phone.',
         },
         {
-          title: 'Your team regularly misses calls during real work',
+          title: 'Your team is often unavailable during working hours',
           description:
-            'Staff are on-site, with customers, or otherwise unable to answer consistently during busy periods.',
+            'On-site, with a customer, between appointments. Good calls come in while everyone\'s busy. Those callers don\'t wait.',
         },
         {
-          title: 'You want a focused lead-protection layer first',
+          title: 'You want to fix the most obvious leak first',
           description:
-            'Missed calls are the obvious leak and you want that fixed before tackling wider AI, CRM, or visibility work.',
+            'Before anything else — the unanswered calls. That\'s the clearest money walking out the door.',
         },
       ],
       notDesignedItems: [
         {
-          title: 'Calls are not a meaningful lead source for your business',
+          title: 'Your customers don\'t really call',
           description:
-            'If enquiries come primarily through forms or messages, another service may be a better starting point.',
+            'If everything comes through forms or messages, missed calls aren\'t the problem. Start with the channel your customers actually use.',
         },
         {
-          title: 'You think a text-back alone will solve everything',
+          title: 'You think the text alone does it',
           description:
-            'The text-back is one part. The real value comes from capture, routing, and follow-up continuity.',
+            'The text buys a minute. What matters is capturing what they need and getting someone real back to them. Without that, it\'s a dead end.',
         },
         {
-          title: 'Trust or visibility is the bigger gap',
+          title: 'People aren\'t finding you yet',
           description:
-            'If the business is not being found or trusted in the first place, website, reputation, or local visibility may need to lead.',
+            'If call volume is low because nobody knows you exist, recovering the few that come in won\'t change much. Get visible first.',
         },
       ],
     },
     comparison: {
       header: {
-        title: 'No recovery system vs structured missed call handling',
+        title: 'What happens without recovery vs with it',
         description:
-          'Most businesses treat missed calls as an unavoidable loss. Here is what that costs compared to catching and recovering those opportunities.',
+          'Most businesses treat missed calls as bad luck. The difference is whether those callers come back or not.',
       },
       items: [
         {
           type: 'before' as const,
-          title: 'No recovery system',
+          title: 'No recovery in place',
           items: [
-            'Missed callers get silence and move to the next provider',
-            'After-hours enquiries disappear before the next working day',
-            'No record of what the caller wanted or how urgent it was',
-            'Team sees missed calls later but has no context to follow up',
-            'Lead leakage is invisible \u2014 nobody knows how much is being lost',
+            'Caller gets silence. Rings the next one. Gone before anyone knows they tried.',
+            'After-hours calls vanish. Monday morning — nothing. No names, no numbers.',
+            'Callbacks happen when someone remembers. Hours later. Sometimes days. Cold by then.',
+            'No way to know how many calls were missed or what they were worth.',
           ],
         },
         {
           type: 'after' as const,
-          title: 'Structured missed call recovery',
+          title: 'Recovery running',
           items: [
-            'Immediate text-back acknowledges the caller and keeps the conversation alive',
-            'After-hours enquiries are captured and queued for morning follow-up',
-            'Caller intent and details are recorded for useful next-step action',
-            'Team gets context and notification so follow-up is informed and timely',
-            'Recovery rates are visible so you can see how many leads are being saved',
+            'Text goes out within seconds. Caller knows they were heard.',
+            'After-hours calls caught and queued. First job next morning.',
+            'Name, number, what they need — captured. Callback starts warm.',
+            'Every missed call tracked. You see what came back and what didn\'t.',
           ],
         },
       ],
     },
     proof: {
       header: {
-        title: 'What this looks like when it is running',
+        title: 'What changed for a plumbing company',
         description:
-          'A local service business was missing calls regularly during busy periods and after hours. Each missed call was a potential job worth hundreds of pounds.',
+          'Three-man operation. Busy. Phone ringing constantly. Nobody free to pick it up half the time.',
       },
       cards: [
         {
-          title: 'Before: missed calls going straight to competitors',
-          description: 'The business was missing 15-20 calls per week during on-site work and after hours. Callers who got no answer simply called the next provider. There was no way to know how much revenue was being lost.',
+          title: 'Before: ringing out, every day',
+          description: 'Fifteen to twenty missed calls a week. All three on jobs. Phone ringing in the van, on the counter, in a pocket nobody could reach.',
           points: [
-            'No response to missed calls \u2014 callers moved on immediately',
-            'After-hours enquiries disappeared before morning',
-            'No visibility into how many opportunities were being missed',
+            'Voicemail. Most didn\'t leave a message. Tried the next plumber.',
+            'Weekend emergencies — burst pipes, boilers — gone before Monday. Someone else already there.',
+            'The owner knew he was losing work. Couldn\'t say how much. Just a feeling.',
           ],
         },
         {
-          title: 'What we built: immediate text-back with capture and routing',
-          description: 'We configured an immediate text-back response for every missed call, collected key details from the caller, and routed the enquiry into the team follow-up queue with full context.',
+          title: 'What we set up: text-back with detail capture',
+          description: 'Every missed call triggered a text within seconds. Caller could reply with what they needed. Details landed in a queue the team checked between jobs.',
           points: [
-            'Automatic text-back within seconds of a missed call',
-            'Caller intent and details captured for useful follow-up',
-            'Enquiries routed to the team with context and priority flags',
+            'Missed call fires a text. Caller knows the business exists.',
+            'Reply captures the job — leak, boiler, blocked drain — and urgency. Queue fills itself.',
           ],
           featured: true,
         },
         {
-          title: 'After: recovered leads that would have been lost',
-          description: 'Within the first month, the business recovered multiple jobs from callers who would have gone to competitors. The team could see every missed call, what the person needed, and follow up with full context.',
+          title: 'After: jobs recovered that would\'ve gone elsewhere',
+          description: 'First month, eleven jobs came back that would\'ve gone. Three were emergencies. Rest were quotes that converted within a week.',
           points: [
-            'Multiple jobs recovered from previously lost calls each month',
-            'After-hours enquiries captured and followed up next morning',
-            'Team visibility into missed call volume and recovery rates',
+            'Eleven jobs. Three emergencies. The rest were quote requests that actually closed.',
+            'Weekends stopped being a black hole. Monday had a list.',
+            'Owner could finally see what was coming in, what was missed, and what happened after. First time he had that.',
           ],
         },
       ],
     },
     faqSection: {
       badge: 'FAQ',
-      title: 'Common questions about missed call recovery',
+      title: 'Questions about missed call recovery',
       description:
-        'Practical questions from businesses that realise missed calls are costing them real opportunities.',
+        'What business owners ask before deciding.',
       faqs: [
         {
-          question: 'Can this work without a full AI phone assistant?',
+          question: 'Does this need AI or a full phone answering setup?',
           answer:
-            'Yes. This is specifically about the recovery layer after a missed call. It can stand alone or connect into a wider AI lead-handling setup.',
+            'No. Handles what happens after the miss — the text, the capture, the handoff. Works alone or next to something bigger.',
         },
         {
-          question: 'Is this mainly for urgent local services?',
+          question: 'Is this only for emergency-type businesses?',
           answer:
-            'That is one strong use case, but it helps any business where calls carry high intent and a missed response window means a lost opportunity.',
+            'Helps most where calls carry real intent. Trades, clinics, professional services — anywhere a missed call could be a job that won\'t wait.',
         },
         {
-          question: 'How is this different from Booking & Scheduling?',
+          question: 'How\'s this different from booking or scheduling?',
           answer:
-            'Booking & Scheduling focuses on appointment flow once someone is moving toward a slot. Missed Call Recovery focuses earlier \u2014 protecting the opportunity immediately after a call is missed.',
+            'Booking handles people already trying to pick a time. This catches people who couldn\'t get through at all. Earlier in the chain.',
         },
         {
-          question: 'What happens if the caller replies to the text-back?',
+          question: 'What if the caller texts back?',
           answer:
-            'The conversation continues into the follow-up system. The reply is captured, the team is notified, and the enquiry stays visible until resolved.',
+            'Their reply gets captured and added to the follow-up queue. Team sees it and picks it up. Nothing lost between the text and the callback.',
         },
       ],
       cssPrefix: 'missed-call-recovery-faq',
     },
   },
   inlineCta: {
-    title: 'How many leads are you losing to missed calls?',
+    title: 'How many calls are you losing a week?',
     description:
-      'Tell us how missed calls are handled now. We will show you where opportunities are being lost and what a recovery system would change.',
+      'Ten minutes. We look at your call patterns and show you what\'s disappearing.',
   },
   cta: {
-    title: 'Stop losing leads after missed calls',
+    title: 'Find out how many calls you\'re missing',
     description:
-      'Tell us how your team handles missed calls today. We will show you where enquiries are disappearing and set up a recovery system that catches them.',
+      'Quick look at how calls are handled now. How many go unanswered. What recovering them would change.',
   },
 } satisfies ServicePageData;

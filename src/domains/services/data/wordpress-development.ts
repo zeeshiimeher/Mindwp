@@ -32,11 +32,11 @@ export const wordpressDevelopmentPage = {
     badge: 'WordPress Website Development',
       title: 'WordPress Builds That Support Services Enquiries and Growth',
     description:
-      'This is for service businesses that need a proper WordPress foundation. Not pages thrown together quickly, but a site where services are clearly presented, enquiry paths make sense, and the whole thing stays manageable after launch.',
+      'For service businesses that need a proper WordPress foundation. Not pages thrown together quickly, but a site where services are clearly presented, enquiry paths make sense, and the whole thing stays manageable after launch.',
     list: [
-        'Service Architecture',
-        'Enquiry Paths',
-        'CRM Ready',
+        'Service-first page architecture',
+        'Defined enquiry paths',
+        'CRM-ready from day one',
     ],
     cssPrefix: 'wordpress-development-hero',
     backgroundColor: 'bg-gradient-surface-muted',
@@ -46,7 +46,7 @@ export const wordpressDevelopmentPage = {
       badge: 'Why this matters',
       title: 'Most WordPress problems start before the build even begins',
       description:
-        'The problem is rarely WordPress itself. It is what happens when building starts before anyone has agreed on the site purpose, service presentation, or enquiry flow.',
+        'Rarely WordPress itself. The problem starts when building begins before anyone has agreed on site purpose, service presentation, or enquiry flow.',
       painPoints: [
         {
           before: 'Pages are planned one by one with no overall logic holding them together.',
@@ -113,8 +113,8 @@ export const wordpressDevelopmentPage = {
       tagline: 'Build for the business, not just the handover.',
       narrativeTitle: 'The website should still make sense after the project ends',
       narrativeParagraphs: [
-        'A WordPress website becomes more valuable when its pages, content logic, and editing paths are easy to understand. That matters more than packing in features that only make sense during launch week.',
-        'Implementation decisions are made around maintainability, message clarity, and future readiness. If later work includes CRM, local SEO, reviews, or automation, the website should already be able to support it.',
+        'A WordPress website becomes more valuable when pages, content logic, and editing paths are easy to understand. That matters more than packing in features that only make sense during launch week.',
+        'Implementation decisions centre on maintainability, message clarity, and future readiness. If later work includes CRM, local SEO, reviews, or automation, the website should already support it.',
       ],
       features: [
         {
@@ -153,25 +153,25 @@ export const wordpressDevelopmentPage = {
           number: '1',
           title: 'Scope and priorities review',
           description:
-            'We define what the website needs to do, which pages matter most, and what the real operational priorities are.',
+            'Define what the website needs to do, which pages matter most, and what the real operational priorities are — so the build serves the business, not a template.',
         },
         {
           number: '2',
           title: 'Page planning and content logic',
           description:
-            'Navigation, page hierarchy, service coverage, and conversion paths are mapped before any building starts.',
+            'Navigation, page hierarchy, service coverage, and conversion paths are mapped before any building starts — so implementation has a clear blueprint.',
         },
         {
           number: '3',
           title: 'Implementation setup',
           description:
-            'Templates, build approach, integrations, and governance decisions are locked in to keep the project stable.',
+            'Templates, build approach, integrations, and governance decisions are locked in — so the project stays stable instead of drifting on ad-hoc decisions.',
         },
         {
           number: '4',
           title: 'Build, refine, and handover',
           description:
-            'The site is built, checked, refined, and prepared so future updates stay manageable.',
+            'The site is built, checked, refined, and prepared — so future updates stay manageable without depending on the original builder.',
         },
       ],
     },
@@ -223,39 +223,39 @@ export const wordpressDevelopmentPage = {
     qualification: {
       title: 'Is this the right fit for your business?',
       description:
-        'This works best for businesses that want a proper WordPress foundation — not just a quick launch.',
+        'Works best for businesses that want a proper WordPress foundation — not just a quick launch.',
       strongFitTitle: 'Strong fit if',
       notDesignedTitle: 'Not the right fit if',
       strongFitItems: [
         {
-          title: 'Your website should reflect how the business actually works',
+          title: 'Your website should reflect how the business actually operates',
           description:
-            'The site needs to present services clearly, handle enquiries properly, and make sense operationally.',
+            'The site needs to present services clearly, handle enquiries through defined paths, and support the systems behind it.',
         },
         {
-          title: 'You are planning for future systems',
+          title: 'You are building toward CRM, SEO, or automation',
           description:
-            'CRM, SEO, reviews, automation, or commerce may follow and the site needs to be ready for them.',
+            'Future systems need a structured foundation — not a site that has to be rebuilt before anything else can connect.',
         },
         {
           title: 'You value maintainability over launch-day speed',
-          description: 'Long-term clarity matters more than getting something live as fast as possible.',
+          description: 'Long-term clarity matters more than going live fast — because a rushed build costs more to fix than it saves.',
         },
       ],
       notDesignedItems: [
         {
           title: 'You want a quick template swap with no planning',
           description:
-            'If the goal is only to launch something fast with no care for what happens afterwards, this is not the right approach.',
+            'If speed is the only priority and post-launch quality does not matter, this approach will feel too structured.',
         },
         {
           title: 'Your project starts with a plugin list',
-          description: 'The build should start from business needs, not the other way around.',
+          description: 'Builds that start from tools instead of business needs end up locked to technology that does not serve the outcome.',
         },
         {
           title: 'You need a large software product built',
           description:
-            'This is for service-business website implementation, not SaaS product engineering.',
+            'This is for service-business website implementation — not SaaS product engineering or custom application development.',
         },
       ],
     },
@@ -267,7 +267,7 @@ export const wordpressDevelopmentPage = {
         {
           question: 'Can this include a redesign as well as a rebuild?',
           answer:
-            'Yes. Some projects include a redesign or restructuring phase before implementation. The work is framed around clarity and usefulness rather than visual change for its own sake.',
+            'Yes. Some projects include a redesign or restructuring phase before implementation. The work is framed around clarity and usefulness — not visual change for its own sake.',
         },
         {
           question: 'Do you work with one specific builder or theme?',
@@ -298,22 +298,22 @@ export const wordpressDevelopmentPage = {
           type: 'before' as const,
           title: 'Template-first build',
           items: [
-            'Pages built one by one with no overall content logic',
-            'Theme and plugins chosen first, business needs fitted around them',
-            'Enquiry flow depends on whichever form plugin was installed',
-            'No plan for how the site will evolve after launch',
-            'Editing becomes fragile because the build was not structured for change',
+            'Pages built one by one with no overall content logic — so the site feels like a collection of pages, not a business tool',
+            'Theme and plugins chosen first, business needs fitted around them — so the build locks around technology instead of outcomes',
+            'Enquiry flow depends on whichever form plugin was installed — so leads follow a random path instead of a designed one',
+            'No plan for how the site will evolve after launch — so every future system requires rework',
+            'Editing becomes fragile because the build was not structured for change — so the team avoids updates instead of making them',
           ],
         },
         {
           type: 'after' as const,
           title: 'Structured WordPress development',
           items: [
-            'Pages organised around service priorities and visitor intent',
-            'Technology choices support the business outcome, not the other way around',
-            'Enquiry flow designed into the site architecture from the start',
-            'CRM, SEO, and automation foundations built in from day one',
-            'Editing model stays clean because the structure was planned for it',
+            'Pages organised around service priorities and visitor intent — so the structure reflects the business, not a theme default',
+            'Technology choices support the business outcome — so the build stays flexible instead of locked to one plugin',
+            'Enquiry flow designed into the site architecture from the start — so leads follow a clear path to the right person',
+            'CRM, SEO, and automation foundations built in from day one — so future systems connect cleanly',
+            'Editing model stays clean because the structure was planned — so the team can update without breaking things',
           ],
         },
       ],
@@ -327,30 +327,30 @@ export const wordpressDevelopmentPage = {
       cards: [
         {
           title: 'Before: a template site that did not match the business',
-          description: 'The existing website was built from a generic template. Services were listed but not properly structured. The enquiry form went to a shared inbox with no routing or follow-up.',
+          description: 'Generic template with no service-specific page logic. Enquiry form went to a shared inbox with no routing — so there was no foundation for the systems the business needed next.',
           points: [
-            'Generic template with no service-specific page logic',
-            'Enquiry form went to a shared inbox with no workflow',
-            'No foundation for SEO, CRM, or future systems',
+            'Generic template with no service-specific page logic — so visitors bounced before finding the right service',
+            'Enquiry form went to a shared inbox with no routing — so leads waited hours for whoever checked email first',
+            'No foundation for SEO, CRM, or future systems — so every later improvement required rebuilding what already existed',
           ],
         },
         {
           title: 'What we built: structured WordPress foundation',
-          description: 'We rebuilt the site around the business structure — clear service pages, defined enquiry paths, CRM-ready forms, and a content model that could grow with the business.',
+          description: 'Site rebuilt around the business structure — clear service pages, defined enquiry paths, CRM-ready forms, and a content model that could grow with the business.',
           points: [
-            'Service pages structured around how the business operates',
-            'Enquiry paths connected to CRM and routing logic',
-            'Content model built for future SEO and system expansion',
+            'Service pages structured around how the business operates — so each page served a clear commercial purpose',
+            'Enquiry paths connected to CRM and routing logic — so leads reached the right person with context',
+            'Content model built for future SEO and system expansion — so later work connected instead of requiring rebuilds',
           ],
           featured: true,
         },
         {
           title: 'After: a website that works as a business tool',
-          description: 'The site became the foundation for everything that followed — local SEO, review management, lead handling, and CRM. Each system connected cleanly because the WordPress build was structured for it.',
+          description: 'The site became the operational foundation for local SEO, review management, lead handling, and CRM — each system connected cleanly because the WordPress build was structured to support it.',
           points: [
-            'SEO, reviews, and CRM all connected to the site foundation',
-            'Enquiry volume increased because the paths were clearer',
-            'Site stayed maintainable as the business added more services',
+            'SEO, reviews, and CRM all connected to the site foundation — because the page structure and data model were designed for integration from the start',
+            'Enquiry volume increased without more traffic — because clearer service pages and defined paths converted more of the existing visitors',
+            'Site stayed maintainable as the business added services — because the content model scaled without creating technical debt',
           ],
         },
       ],

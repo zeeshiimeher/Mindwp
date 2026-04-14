@@ -78,9 +78,9 @@ export function PortfolioSection() {
     <SectionWrapper id='portfolio' className={BLOCK}>
       <div className={`${BLOCK}__container`}>
         <SectionIntro
-          badge='Our Work'
-          title='Smart Website Implementations'
-          description="From small local businesses to established brands, we've helped hundreds of UK companies build smart websites that generate leads and drive growth."
+          badge='Recent Work'
+          title='What this looks like in practice'
+          description="Real businesses. Real problems. Infrastructure that changed how enquiries, visibility, and follow-up actually work day to day."
           cssPrefix='portfolio-section'
         />
 

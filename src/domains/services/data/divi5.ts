@@ -34,7 +34,7 @@ export const divi5Page = {
       title: 'Divi Websites Built for Flexible Editing and Control',
     description:
       'We build WordPress websites using Divi where the team needs a flexible editing experience without losing visual or technical control. Approved designs are converted precisely, with a build that stays maintainable over time.',
-      list: ['Flexible Editing', 'Governed Build', 'Clear Structure'],
+      list: ['Flexible team editing', 'Governed build standards', 'Clear page structure'],
     cssPrefix: 'divi5-hero',
     backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },

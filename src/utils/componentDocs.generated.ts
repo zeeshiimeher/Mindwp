@@ -120,6 +120,52 @@ export const componentDocs: Record<string, ComponentDoc> = {
       }
     ]
   },
+  "AlternatingDetailRowsSection": {
+    "name": "AlternatingDetailRowsSection",
+    "filePath": "src/components/reusable/sections/core/index.ts",
+    "summary": "",
+    "description": "",
+    "representativeUsageFilePath": "",
+    "representativePageUrl": "/",
+    "props": [
+      {
+        "name": "items",
+        "type": "AlternatingDetailItem[]",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "backgroundColor",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "badge",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "cssPrefix",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "description",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      }
+    ]
+  },
   "AuditChecklistCard": {
     "name": "AuditChecklistCard",
     "filePath": "src/components/reusable/single/AuditChecklistCard.tsx",
@@ -850,7 +896,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-haspopup",
-        "type": "boolean | \"dialog\" | \"menu\" | \"true\" | \"false\" | \"grid\" | \"listbox\" | \"tree\" | undefined",
+        "type": "boolean | \"grid\" | \"dialog\" | \"menu\" | \"true\" | \"false\" | \"listbox\" | \"tree\" | undefined",
         "optional": true,
         "description": "Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element."
       },
@@ -2546,7 +2592,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-haspopup",
-        "type": "boolean | \"dialog\" | \"menu\" | \"true\" | \"false\" | \"grid\" | \"listbox\" | \"tree\" | undefined",
+        "type": "boolean | \"grid\" | \"dialog\" | \"menu\" | \"true\" | \"false\" | \"listbox\" | \"tree\" | undefined",
         "optional": true,
         "description": "Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element."
       },
@@ -4242,7 +4288,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-haspopup",
-        "type": "boolean | \"dialog\" | \"menu\" | \"true\" | \"false\" | \"grid\" | \"listbox\" | \"tree\" | undefined",
+        "type": "boolean | \"grid\" | \"dialog\" | \"menu\" | \"true\" | \"false\" | \"listbox\" | \"tree\" | undefined",
         "optional": true,
         "description": "Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element."
       },
@@ -5938,7 +5984,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-haspopup",
-        "type": "boolean | \"dialog\" | \"menu\" | \"true\" | \"false\" | \"grid\" | \"listbox\" | \"tree\" | undefined",
+        "type": "boolean | \"grid\" | \"dialog\" | \"menu\" | \"true\" | \"false\" | \"listbox\" | \"tree\" | undefined",
         "optional": true,
         "description": "Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element."
       },
@@ -7634,7 +7680,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-haspopup",
-        "type": "boolean | \"dialog\" | \"menu\" | \"true\" | \"false\" | \"grid\" | \"listbox\" | \"tree\" | undefined",
+        "type": "boolean | \"grid\" | \"dialog\" | \"menu\" | \"true\" | \"false\" | \"listbox\" | \"tree\" | undefined",
         "optional": true,
         "description": "Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element."
       },
@@ -9330,7 +9376,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-haspopup",
-        "type": "boolean | \"dialog\" | \"menu\" | \"true\" | \"false\" | \"grid\" | \"listbox\" | \"tree\" | undefined",
+        "type": "boolean | \"grid\" | \"dialog\" | \"menu\" | \"true\" | \"false\" | \"listbox\" | \"tree\" | undefined",
         "optional": true,
         "description": "Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element."
       },
@@ -11026,7 +11072,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "aria-haspopup",
-        "type": "boolean | \"dialog\" | \"menu\" | \"true\" | \"false\" | \"grid\" | \"listbox\" | \"tree\" | undefined",
+        "type": "boolean | \"grid\" | \"dialog\" | \"menu\" | \"true\" | \"false\" | \"listbox\" | \"tree\" | undefined",
         "optional": true,
         "description": "Indicates the availability and type of interactive popup element, such as menu or dialog, that can be triggered by an element."
       },
@@ -13410,6 +13456,76 @@ export const componentDocs: Record<string, ComponentDoc> = {
       }
     ]
   },
+  "ComparisonEvidenceBand": {
+    "name": "ComparisonEvidenceBand",
+    "filePath": "src/components/reusable/sections/core/index.ts",
+    "summary": "",
+    "description": "",
+    "representativeUsageFilePath": "",
+    "representativePageUrl": "/",
+    "props": [
+      {
+        "name": "afterItems",
+        "type": "string[]",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "afterTitle",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "beforeItems",
+        "type": "string[]",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "beforeTitle",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "evidenceItems",
+        "type": "ComparisonEvidenceItem[]",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "backgroundColor",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "badge",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "cssPrefix",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "description",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      }
+    ]
+  },
   "ComparisonSection": {
     "name": "ComparisonSection",
     "filePath": "src/components/reusable/sections/service/index.ts",
@@ -13631,6 +13747,70 @@ export const componentDocs: Record<string, ComponentDoc> = {
       {
         "name": "secondaryAction",
         "type": "ButtonProps | undefined",
+        "optional": true,
+        "description": ""
+      }
+    ]
+  },
+  "DecisionFitSection": {
+    "name": "DecisionFitSection",
+    "filePath": "src/components/reusable/sections/core/index.ts",
+    "summary": "",
+    "description": "",
+    "representativeUsageFilePath": "",
+    "representativePageUrl": "/",
+    "props": [
+      {
+        "name": "notFitItems",
+        "type": "string[]",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "notFitTitle",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "strongFitItems",
+        "type": "string[]",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "strongFitTitle",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "backgroundColor",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "badge",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "cssPrefix",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "description",
+        "type": "string | undefined",
         "optional": true,
         "description": ""
       }
@@ -14105,6 +14285,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": ""
       },
       {
+        "name": "layout",
+        "type": "\"grid\" | \"segmented\" | \"split\" | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
         "name": "variant",
         "type": "\"default\" | \"stacked\" | undefined",
         "optional": true,
@@ -14283,6 +14469,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
       {
         "name": "description",
         "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "layout",
+        "type": "\"grid\" | \"segmented\" | \"split\" | undefined",
         "optional": true,
         "description": ""
       },
@@ -14597,6 +14789,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
       {
         "name": "description",
         "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "layout",
+        "type": "\"grid\" | \"split-rail\" | \"timeline\" | undefined",
         "optional": true,
         "description": ""
       },
@@ -15977,6 +16175,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": ""
       },
       {
+        "name": "layout",
+        "type": "\"grid\" | \"split-rail\" | \"timeline\" | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
         "name": "title",
         "type": "string | undefined",
         "optional": true,
@@ -16041,6 +16245,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": ""
       },
       {
+        "name": "layout",
+        "type": "\"split-features\" | \"narrative-stats\" | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
         "name": "primaryAction",
         "type": "ButtonProps | undefined",
         "optional": true,
@@ -16049,6 +16259,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
       {
         "name": "secondaryAction",
         "type": "ButtonProps | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "stats",
+        "type": "{ value: string; label: string; }[] | undefined",
         "optional": true,
         "description": ""
       },
@@ -16119,6 +16335,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
       {
         "name": "description",
         "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "layout",
+        "type": "\"grid\" | \"segmented\" | \"split\" | undefined",
         "optional": true,
         "description": ""
       },
@@ -16470,6 +16692,52 @@ export const componentDocs: Record<string, ComponentDoc> = {
       }
     ]
   },
+  "OutcomeTimelineSection": {
+    "name": "OutcomeTimelineSection",
+    "filePath": "src/components/reusable/sections/core/OutcomeTimelineSection.tsx",
+    "summary": "",
+    "description": "",
+    "representativeUsageFilePath": "",
+    "representativePageUrl": "/",
+    "props": [
+      {
+        "name": "stages",
+        "type": "OutcomeTimelineStage[]",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "backgroundColor",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "badge",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "cssPrefix",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "description",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      }
+    ]
+  },
   "ProblemCard": {
     "name": "ProblemCard",
     "filePath": "src/components/reusable/single/ProblemCard.tsx",
@@ -16683,6 +16951,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
       {
         "name": "description",
         "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "layout",
+        "type": "\"grid\" | \"split-rail\" | \"timeline\" | undefined",
         "optional": true,
         "description": ""
       },
@@ -17704,6 +17978,52 @@ export const componentDocs: Record<string, ComponentDoc> = {
       }
     ]
   },
+  "SignalResponseSection": {
+    "name": "SignalResponseSection",
+    "filePath": "src/components/reusable/sections/core/SignalResponseSection.tsx",
+    "summary": "",
+    "description": "",
+    "representativeUsageFilePath": "",
+    "representativePageUrl": "/",
+    "props": [
+      {
+        "name": "items",
+        "type": "SignalResponseItem[]",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "backgroundColor",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "badge",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "cssPrefix",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "description",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      }
+    ]
+  },
   "SimpleHero": {
     "name": "SimpleHero",
     "filePath": "src/components/reusable/single/SimpleHero.tsx",
@@ -17929,6 +18249,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": ""
       },
       {
+        "name": "layout",
+        "type": "\"split-features\" | \"narrative-stats\" | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
         "name": "primaryAction",
         "type": "ButtonProps | undefined",
         "optional": true,
@@ -17937,6 +18263,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
       {
         "name": "secondaryAction",
         "type": "ButtonProps | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "stats",
+        "type": "{ value: string; label: string; }[] | undefined",
         "optional": true,
         "description": ""
       },
@@ -18342,7 +18674,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "build",
-        "type": "{ title: string; description: string; highlights?: string[] | undefined; }",
+        "type": "{ title: string; description: string; highlights?: string[]; }",
         "optional": false,
         "description": ""
       },

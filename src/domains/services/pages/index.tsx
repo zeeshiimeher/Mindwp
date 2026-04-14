@@ -1,11 +1,9 @@
 import {
   ArrowRight,
   BarChart3,
-  Bell,
   Blocks,
   Bot,
   Boxes,
-  Calendar,
   FileSearch,
   Inbox,
   LayoutTemplate,
@@ -36,15 +34,12 @@ const SUPPORTING_SYSTEM_SLUGS = [
   'local-seo-authority',
   'ai-lead-handling',
   'reputation-review-systems',
-  'growth-revenue-systems',
 ] as const;
 
 const OPERATIONAL_MODULE_SLUGS = [
-  'booking-scheduling-system',
   'missed-call-recovery-system',
-  'review-automation-system',
   'lead-reactivation-system',
-  'conversion-funnel-system',
+  'conversion-layer',
   'unified-communication-system',
 ] as const;
 
@@ -53,7 +48,6 @@ const IMPLEMENTATION_SUPPORT_SLUGS = [
   'website-redesign-system-rebuild',
   'crm-infrastructure-implementation',
   'marketing-automation-setup',
-  'funnel-landing-page-development',
   'system-migration-platform-consolidation',
   'ecommerce',
   'elementor',
@@ -81,23 +75,11 @@ const SERVICE_META: Record<
     description:
       'Websites and landing pages with integrated automation and CRM. Structured digital foundation.',
   },
-  'booking-scheduling-system': {
-    icon: Calendar,
-    title: 'Booking & Scheduling System',
-    description:
-      'A focused appointment-flow system for cleaner booking, confirmation, reminders, and reduced scheduling friction.',
-  },
-  'conversion-funnel-system': {
+  'conversion-layer': {
     icon: BarChart3,
-    title: 'Conversion Funnel System',
+    title: 'Conversion Layer',
     description:
-      'A focused conversion-clarity system for better page flow, stronger offer structure, and cleaner handoff into enquiry action.',
-  },
-  'funnel-landing-page-development': {
-    icon: Target,
-    title: 'Funnel & Landing Page Development',
-    description:
-      'A focused implementation pathway for landing pages, offer pages, and campaign journeys that need a tighter conversion asset.',
+      'A focused conversion system for stronger page flow, tighter offer pages, cleaner CTA logic, and clearer enquiry handoff.',
   },
   'marketing-automation-setup': {
     icon: Mail,
@@ -138,24 +120,12 @@ const SERVICE_META: Record<
     icon: Star,
     title: 'Reputation & Review Systems',
     description:
-      'Structured review request, response, and escalation workflows to strengthen trust signals.',
-  },
-  'review-automation-system': {
-    icon: Bell,
-    title: 'Review Automation System',
-    description:
-      'A focused workflow for review requests, feedback routing, and stronger review velocity without manual chasing.',
+      'Structured review request, response, escalation, and monitoring workflows to strengthen trust signals.',
   },
   'ai-lead-handling': {
     icon: Bot,
     title: 'AI Lead Handling Systems',
     description: 'AI chat and voice assistants for enquiry handling, routing, and support.',
-  },
-  'growth-revenue-systems': {
-    icon: FileSearch,
-    title: 'Revenue Growth Systems',
-    description:
-      'Technical and growth system reviews that improve revenue pathways, performance, and clarity.',
   },
   'crm-infrastructure-implementation': {
     icon: Workflow,

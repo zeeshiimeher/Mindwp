@@ -32,11 +32,11 @@ export const marketingAutomationSetupPage = {
     badge: 'Marketing Automation Setup',
       title: 'Marketing Automation That Keeps Follow Up Moving',
     description:
-      'This service implements structured automation around follow-up, reminders, reactivation, and lifecycle messaging. Less manual chasing, clearer handoff, more reliable commercial communication.',
+      'Structured automation around follow-up, reminders, reactivation, and lifecycle messaging. Less manual chasing, clearer handoff, more reliable commercial communication.',
     list: [
-        'Auto Follow-up',
-        'Lifecycle Messaging',
-        'Team Handoff',
+        'Timed follow-up sequences',
+        'Stage-based lifecycle messaging',
+        'Clean team handoff',
     ],
     cssPrefix: 'marketing-automation-hero',
     backgroundColor: 'bg-gradient-surface-muted',
@@ -47,23 +47,23 @@ export const marketingAutomationSetupPage = {
       title:
         'Manual follow-up breaks down when timing matters but the process depends on spare time',
       description:
-        'Automation is most useful when the business already knows which follow-up moments matter but needs a more reliable way to make them happen.',
+        'Automation is most useful when the business knows which follow-up moments matter but needs a reliable way to make them happen.',
       painPoints: [
         {
           before:
             'Follow-up, reminders, and reactivation happen inconsistently because people are busy.',
           after:
-            'Routine timing runs consistently so good opportunities are less likely to be missed.',
+            'Routine timing runs consistently — so good opportunities are less likely to be missed during busy periods.',
         },
         {
           before: 'Messages are sent ad hoc with no clear rules for when, why, or to whom.',
           after:
-            'Automation runs on clear triggers, segmentation, and workflow logic.',
+            'Automation runs on clear triggers, segmentation, and workflow logic — so every message has a reason and a defined audience.',
         },
         {
           before: 'Even when automations exist, the handoff into the team is weak.',
           after:
-            'Cleaner ownership and next actions when someone replies or reaches the next stage.',
+            'Cleaner ownership and next actions when someone replies — so engaged leads reach a person, not another automated sequence.',
         },
       ],
     },
@@ -71,7 +71,7 @@ export const marketingAutomationSetupPage = {
       badge: 'Common automation pathways',
       title: 'Automation works best when tied to real business moments',
       description:
-        'The aim is not to build a pile of sequences. It is to make the right follow-up happen at the right point in the customer journey.',
+        'Not about building a pile of sequences. It is making the right follow-up happen at the right point in the customer journey.',
       items: [
         {
           trigger: 'A new lead enquires but is not ready to book immediately.',
@@ -139,7 +139,7 @@ export const marketingAutomationSetupPage = {
       badge: 'What good setup depends on',
       title: 'Useful automation depends on governance, not just triggers',
       description:
-        'These are the layers that decide whether automation improves the business or just adds noise.',
+        'These layers decide whether automation improves the business or adds noise.',
       items: [
         {
           icon: Settings,
@@ -218,72 +218,72 @@ export const marketingAutomationSetupPage = {
       badge: 'Setup sequence',
       title: 'How the automation setup works',
       description:
-        'The useful part is designing the logic first, then implementing automation the business can actually manage.',
+        'The useful part is designing the logic first, then implementing automation the business can manage.',
       steps: [
         {
           number: '1',
           title: 'Choose the key lifecycle moments',
           description:
-            'Identify where follow-up, reminders, or reactivation should happen and what each sequence is meant to achieve.',
+            'Identify where follow-up, reminders, or reactivation should happen — so the automation targets the moments that actually affect revenue.',
         },
         {
           number: '2',
           title: 'Define rules and message paths',
           description:
-            'Set the trigger logic, timing, segmentation, and messaging structure before the automation is built.',
+            'Set the trigger logic, timing, segmentation, and messaging structure — so the automation runs on clear rules, not guesswork.',
         },
         {
           number: '3',
           title: 'Connect the handoff points',
           description:
-            'Make sure responses, stage changes, and team actions feed into the right workflow instead of floating separately.',
+            'Make sure responses, stage changes, and team actions feed into the right workflow — so automation creates action, not more inbox noise.',
         },
         {
           number: '4',
           title: 'Refine around real behaviour',
           description:
-            'Watch what gets ignored, what gets engagement, and where the automation should be adjusted over time.',
+            'Watch what gets ignored, what gets engagement, and where the automation should adjust — so the system improves based on evidence.',
         },
       ],
     },
     qualification: {
       title: 'Is this the right fit for your business?',
       description:
-        'This works best where the business already knows what follow-up should happen but execution still depends on memory or inconsistent habits.',
+        'Works best where the business knows what follow-up should happen but execution still depends on memory or inconsistent habits.',
       strongFitTitle: 'Strong fit if',
       notDesignedTitle: 'Not the right fit if',
       strongFitItems: [
         {
           title: 'You have repeatable follow-up that keeps happening manually',
           description:
-            'The same reminders, nurture messages, or reactivation steps keep being done by hand.',
+            'The same reminders, nurture messages, or reactivation steps are done by hand every week — and some get missed.',
         },
         {
-          title: 'Leads or customers move through recognisable stages',
+          title: 'Leads and customers move through recognisable stages',
           description:
-            'There are clear lifecycle points but the communication between them is inconsistent.',
+            'There are clear lifecycle points — enquiry, booking, service, follow-up — but the communication between them is inconsistent.',
         },
         {
-          title: 'You want structure and reliability, not hype',
+          title: 'You want controlled automation, not black-box sequences',
           description:
-            'The team wants controlled automation, not "set and forget" sequences with no governance.',
+            'The team needs automation they can see, understand, and adjust — not opaque logic nobody wants to touch.',
         },
       ],
       notDesignedItems: [
         {
-          title: 'You do not have a clear workflow to automate',
+          title: 'You do not have a clear workflow to automate yet',
           description:
-            'If the underlying follow-up process is still undefined, automation should not be the first layer added.',
+            'If the underlying follow-up process is still undefined, automation will scale confusion instead of solving it.',
         },
         {
           title: 'You expect automation to fix weak messaging',
           description:
-            'Automation makes clear communication more consistent. It does not make unclear messaging effective.',
+            'Automation delivers messages on time — but it will not make unclear or irrelevant messaging effective.',
         },
         {
-          title: 'Traffic or site structure is the bigger issue',
+          title: 'Traffic or site structure is the bigger gap',
           description:
-            'If not enough good enquiries are arriving or the website is weak, those may need fixing first.',
+            'If not enough enquiries are arriving or the website does not convert, those problems need fixing before automation adds value.',
         },
       ],
     },
@@ -296,7 +296,7 @@ export const marketingAutomationSetupPage = {
         {
           question: 'Can this include both email and SMS?',
           answer:
-            'Yes, where that makes sense. Channel choice should follow the business model and customer context rather than using every channel by default.',
+            'Yes, where that makes sense. Channel choice should follow the business model and customer context — not use every channel by default.',
         },
         {
           question: 'How does this relate to Lead Reactivation or Review Automation?',
@@ -327,22 +327,22 @@ export const marketingAutomationSetupPage = {
           type: 'before' as const,
           title: 'Manual follow-up',
           items: [
-            'Follow-up depends on memory, spare time, or someone remembering to check',
-            'Messages sent ad hoc with no rules for timing, audience, or next step',
-            'Past customers and dormant leads sit in the CRM untouched',
-            'No visibility into what follow-up happened or what got missed',
-            'Reminders and confirmations handled by hand or forgotten entirely',
+            'Follow-up depends on memory, spare time, or someone remembering to check — so warm leads go cold before anyone reaches out',
+            'Messages sent ad hoc with no rules for timing, audience, or next step — so communication feels random to the recipient',
+            'Past customers and dormant leads sit in the CRM untouched — so repeat revenue depends on the customer coming back independently',
+            'No visibility into what follow-up happened or what got missed — so the team cannot tell which leads were nurtured and which were ignored',
+            'Reminders and confirmations handled by hand or forgotten entirely — so no-shows and missed appointments cost time and revenue',
           ],
         },
         {
           type: 'after' as const,
           title: 'Structured automation',
           items: [
-            'Follow-up triggers automatically based on lifecycle stage and timing rules',
-            'Messages segmented by audience, stage, and commercial purpose',
-            'Dormant leads and past customers get structured reactivation',
-            'Workflow visibility shows what ran, what got engagement, and what needs attention',
-            'Reminders and confirmations happen reliably without manual chasing',
+            'Follow-up triggers automatically based on lifecycle stage and timing rules — so nothing depends on someone remembering',
+            'Messages segmented by audience, stage, and commercial purpose — so each contact gets relevant communication',
+            'Dormant leads and past customers get structured reactivation — so pipeline value is recovered instead of ignored',
+            'Workflow visibility shows what ran, what got engagement, and what needs attention — so the team knows where to focus',
+            'Reminders and confirmations happen reliably — so no-shows and forgotten actions drop without manual chasing',
           ],
         },
       ],
@@ -356,30 +356,30 @@ export const marketingAutomationSetupPage = {
       cards: [
         {
           title: 'Before: follow-up depended on spare time',
-          description: 'The business received a steady flow of enquiries, but follow-up was manual and inconsistent. Leads went cold, reminders were forgotten, and past customers were never contacted again.',
+          description: 'Steady flow of enquiries, but follow-up was manual and inconsistent. Leads went cold because nobody had time to chase, reminders were forgotten, and past customers were never contacted again.',
           points: [
-            'Follow-up happened when someone remembered',
-            'Reminders were manual and often missed',
-            'Past customers sat dormant with no outreach',
+            'Follow-up happened when someone remembered — so warm leads went cold within days of enquiring',
+            'Reminders were manual and often missed — so no-shows wasted booked calendar slots and cost real revenue',
+            'Past customers sat dormant with no outreach — so the business paid full acquisition cost for every new job instead of reactivating existing relationships',
           ],
         },
         {
           title: 'What we built: lifecycle automation with clear handoff',
-          description: 'We implemented structured follow-up sequences for new leads, reminder automations for appointments, and reactivation flows for past customers — all with clear handoff rules back to the team.',
+          description: 'Structured follow-up sequences for new leads, reminder automations for appointments, and reactivation flows for past customers — all with clear handoff rules back to the team.',
           points: [
-            'New-lead nurture with timed follow-up and next-step routing',
-            'Appointment reminders reducing no-shows and admin chasing',
-            'Past-customer reactivation with segmented messaging',
+            'New-lead nurture with timed follow-up and next-step routing — so every enquiry got a consistent response path',
+            'Appointment reminders reducing no-shows — so the calendar stayed productive',
+            'Past-customer reactivation with segmented messaging — so dormant contacts became a revenue source again',
           ],
           featured: true,
         },
         {
           title: 'After: consistent follow-up without more staff',
-          description: 'Follow-up became reliable without adding headcount. New leads got timely nurture, reminders ran automatically, and past customers started coming back through structured reactivation.',
+          description: 'Follow-up became reliable without adding headcount. New leads got timely nurture, reminders ran automatically, and past customers returned through structured reactivation — all without increasing the team’s manual workload.',
           points: [
-            'Lead nurture ran consistently without manual effort',
-            'Appointment no-shows reduced through automated reminders',
-            'Past customers re-engaged through lifecycle messaging',
+            'Lead nurture ran consistently — because timed sequences replaced manual chasing, so no enquiry went unanswered during busy periods',
+            'Appointment no-shows reduced through automated reminders — because timing was based on the service model, not someone remembering to send a text',
+            'Past customers re-engaged through lifecycle messaging — because segmented reactivation turned dormant contacts into repeat revenue without new acquisition cost',
           ],
         },
       ],

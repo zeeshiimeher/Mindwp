@@ -1,20 +1,16 @@
 import type { ReactElement } from 'react';
 
 import { aiLeadHandlingPage } from '@/domains/services/data/ai-lead-handling';
-import { bookingSchedulingSystemPage } from '@/domains/services/data/booking-scheduling-system';
 import { bricksBuilderPage } from '@/domains/services/data/bricks-builder';
-import { conversionFunnelSystemPage } from '@/domains/services/data/conversion-funnel-system';
+import { conversionLayerPage } from '@/domains/services/data/conversion-layer';
 import { crmAutomationPage } from '@/domains/services/data/crm-automation';
 import { divi5Page } from '@/domains/services/data/divi5';
 import { elementorPage } from '@/domains/services/data/elementor';
-import { funnelLandingPageDevelopmentPage } from '@/domains/services/data/funnel-landing-page-development';
-import { growthRevenueSystemsPage } from '@/domains/services/data/growth-revenue-systems';
 import { leadReactivationSystemPage } from '@/domains/services/data/lead-reactivation-system';
 import { localSeoAuthorityPage } from '@/domains/services/data/local-seo-authority';
 import { marketingAutomationSetupPage } from '@/domains/services/data/marketing-automation-setup';
 import { missedCallRecoverySystemPage } from '@/domains/services/data/missed-call-recovery-system';
 import { reputationReviewSystemsPage } from '@/domains/services/data/reputation-review-systems';
-import { reviewAutomationSystemPage } from '@/domains/services/data/review-automation-system';
 import { smartWebsiteSystemsPage } from '@/domains/services/data/smart-website-systems';
 import { systemMigrationPlatformConsolidationPage } from '@/domains/services/data/system-migration-platform-consolidation';
 import { unifiedCommunicationSystemPage } from '@/domains/services/data/unified-communication-system';
@@ -22,20 +18,16 @@ import { websiteRedesignSystemRebuildPage } from '@/domains/services/data/websit
 import { woocommercePage } from '@/domains/services/data/woocommerce';
 import { wordpressDevelopmentPage } from '@/domains/services/data/wordpress-development';
 import { AiLeadHandlingRenderer } from '@/domains/services/renderers/AiLeadHandlingRenderer';
-import { BookingSchedulingSystemRenderer } from '@/domains/services/renderers/BookingSchedulingSystemRenderer';
 import { BricksBuilderRenderer } from '@/domains/services/renderers/BricksBuilderRenderer';
-import { ConversionFunnelSystemRenderer } from '@/domains/services/renderers/ConversionFunnelSystemRenderer';
+import { ConversionLayerRenderer } from '@/domains/services/renderers/ConversionLayerRenderer';
 import { CRMAutomationRenderer } from '@/domains/services/renderers/CRMAutomationRenderer';
 import { Divi5Renderer } from '@/domains/services/renderers/Divi5Renderer';
 import { ElementorRenderer } from '@/domains/services/renderers/ElementorRenderer';
-import { FunnelLandingPageDevelopmentRenderer } from '@/domains/services/renderers/FunnelLandingPageDevelopmentRenderer';
-import { GrowthRevenueSystemsRenderer } from '@/domains/services/renderers/GrowthRevenueSystemsRenderer';
 import { LeadReactivationSystemRenderer } from '@/domains/services/renderers/LeadReactivationSystemRenderer';
 import { LocalSeoAuthorityRenderer } from '@/domains/services/renderers/LocalSeoAuthorityRenderer';
 import { MarketingAutomationSetupRenderer } from '@/domains/services/renderers/MarketingAutomationSetupRenderer';
 import { MissedCallRecoverySystemRenderer } from '@/domains/services/renderers/MissedCallRecoverySystemRenderer';
 import { ReputationReviewSystemsRenderer } from '@/domains/services/renderers/ReputationReviewSystemsRenderer';
-import { ReviewAutomationSystemRenderer } from '@/domains/services/renderers/ReviewAutomationSystemRenderer';
 import SmartWebsiteSystemsRenderer from '@/domains/services/renderers/SmartWebsiteSystemsRenderer';
 import { SystemMigrationPlatformConsolidationRenderer } from '@/domains/services/renderers/SystemMigrationPlatformConsolidationRenderer';
 import { UnifiedCommunicationSystemRenderer } from '@/domains/services/renderers/UnifiedCommunicationSystemRenderer';
@@ -57,16 +49,9 @@ export const SERVICE_ENTRY_BY_SLUG = {
   'smart-website-systems': createServiceEntry(smartWebsiteSystemsPage, (data, slug) => (
     <SmartWebsiteSystemsRenderer data={data} slug={slug} />
   )),
-  'booking-scheduling-system': createServiceEntry(bookingSchedulingSystemPage, (data, slug) => (
-    <BookingSchedulingSystemRenderer data={data} slug={slug} />
+  'conversion-layer': createServiceEntry(conversionLayerPage, (data, slug) => (
+    <ConversionLayerRenderer data={data} slug={slug} />
   )),
-  'conversion-funnel-system': createServiceEntry(conversionFunnelSystemPage, (data, slug) => (
-    <ConversionFunnelSystemRenderer data={data} slug={slug} />
-  )),
-  'funnel-landing-page-development': createServiceEntry(
-    funnelLandingPageDevelopmentPage,
-    (data, slug) => <FunnelLandingPageDevelopmentRenderer data={data} slug={slug} />
-  ),
   'system-migration-platform-consolidation': createServiceEntry(
     systemMigrationPlatformConsolidationPage,
     (data, slug) => <SystemMigrationPlatformConsolidationRenderer data={data} slug={slug} />
@@ -91,14 +76,8 @@ export const SERVICE_ENTRY_BY_SLUG = {
   'local-seo-authority': createServiceEntry(localSeoAuthorityPage, (data, slug) => (
     <LocalSeoAuthorityRenderer data={data} slug={slug} />
   )),
-  'growth-revenue-systems': createServiceEntry(growthRevenueSystemsPage, (data, slug) => (
-    <GrowthRevenueSystemsRenderer data={data} slug={slug} />
-  )),
   'reputation-review-systems': createServiceEntry(reputationReviewSystemsPage, (data, slug) => (
     <ReputationReviewSystemsRenderer data={data} slug={slug} />
-  )),
-  'review-automation-system': createServiceEntry(reviewAutomationSystemPage, (data, slug) => (
-    <ReviewAutomationSystemRenderer data={data} slug={slug} />
   )),
   'crm-infrastructure-implementation': createServiceEntry(crmAutomationPage, (data, slug) => (
     <CRMAutomationRenderer data={data} slug={slug} />
@@ -148,16 +127,8 @@ export const renderServicePageBySlug = (slug: ServiceSlug): ReactElement => {
       const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['smart-website-systems'];
       return entry.render(entry.data, slug);
     }
-    case 'booking-scheduling-system': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['booking-scheduling-system'];
-      return entry.render(entry.data, slug);
-    }
-    case 'conversion-funnel-system': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['conversion-funnel-system'];
-      return entry.render(entry.data, slug);
-    }
-    case 'funnel-landing-page-development': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['funnel-landing-page-development'];
+    case 'conversion-layer': {
+      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['conversion-layer'];
       return entry.render(entry.data, slug);
     }
     case 'system-migration-platform-consolidation': {
@@ -188,16 +159,8 @@ export const renderServicePageBySlug = (slug: ServiceSlug): ReactElement => {
       const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['local-seo-authority'];
       return entry.render(entry.data, slug);
     }
-    case 'growth-revenue-systems': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['growth-revenue-systems'];
-      return entry.render(entry.data, slug);
-    }
     case 'reputation-review-systems': {
       const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['reputation-review-systems'];
-      return entry.render(entry.data, slug);
-    }
-    case 'review-automation-system': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['review-automation-system'];
       return entry.render(entry.data, slug);
     }
     case 'crm-infrastructure-implementation': {

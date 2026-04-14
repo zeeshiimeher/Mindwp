@@ -13,18 +13,15 @@ import { ProblemSolutionSplitCard } from '@/components/reusable/single/ProblemSo
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { conversionFunnelSystemPage } from '@/domains/services/data/conversion-funnel-system';
+import { conversionLayerPage } from '@/domains/services/data/conversion-layer';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
-interface ConversionFunnelSystemRendererProps {
-  data: typeof conversionFunnelSystemPage;
+interface ConversionLayerRendererProps {
+  data: typeof conversionLayerPage;
   slug: string;
 }
 
-export function ConversionFunnelSystemRenderer({
-  data,
-  slug,
-}: ConversionFunnelSystemRendererProps) {
+export function ConversionLayerRenderer({ data, slug }: ConversionLayerRendererProps) {
   const { hero, sections, cta } = data;
   const {
     foundation,

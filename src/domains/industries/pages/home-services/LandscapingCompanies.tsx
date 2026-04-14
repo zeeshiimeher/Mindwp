@@ -269,7 +269,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
         icon: Calendar,
         title: 'Booking & Scheduling System',
         description: 'Support estimate visits, reminders, and clearer next-step handling.',
-        href: '/services/booking-scheduling-system',
+        href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
       },

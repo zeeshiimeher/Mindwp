@@ -283,7 +283,7 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
         icon: Calendar,
         title: 'Booking & Scheduling System',
         description: 'Support salon booking, reminders, and clearer diary handling.',
-        href: '/services/booking-scheduling-system',
+        href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
       },

@@ -23,44 +23,44 @@ import type { ServicePageData } from '../types';
 
 const smartWebsitesFaqItems = [
   {
-    question: 'What makes this different from a regular website?',
+    question: 'How is this different from getting a new website built?',
     answer:
-      'A regular website displays information. This captures enquiries, routes them to the right person, and follows up automatically. The difference is between a brochure and a system that brings in work.',
+      'Most builds stop at how it looks. This connects every enquiry to a real person, logs it, and follows up automatically. The difference shows up in your inbox, not your homepage.',
   },
   {
-    question: 'We already have a website. Can you improve it?',
+    question: 'We already spent a lot on our current site. Do we start over?',
     answer:
-      'If the foundation is sound, we rebuild the enquiry flow, connect it to your CRM, and set up follow-up. If the site is beyond repair, we tell you upfront and recommend starting fresh.',
+      'Not always. If the bones are solid, we wire in the enquiry handling, connect your CRM, and add follow-up. If it can\'t support that, we\'ll be upfront about it.',
   },
   {
     question: 'Do we need a specific CRM?',
     answer:
-      'No. We connect to whatever you use — or set up something simple if you have nothing. The point is that every enquiry lands somewhere your team can act on it immediately.',
+      'No. We plug into whatever you\'re running. If you don\'t have one yet, we\'ll set up something simple your team can pick up straight away.',
   },
   {
-    question: 'Will this help us show up on Google?',
+    question: 'Will local people actually find us on Google?',
     answer:
-      'Yes. Each service gets its own page with titles and descriptions matching what people actually search. Google can read and index your services properly, which means you start appearing for local searches.',
+      'Each service gets its own listing with titles that match what people search for. That\'s what gets Google to show your business when someone nearby needs what you do.',
   },
   {
-    question: 'Do I need to know anything technical?',
+    question: 'How much upkeep is there once it\'s running?',
     answer:
-      'No. We handle everything technical. After launch, updating text or images is straightforward. Your team gets a walkthrough before handover.',
+      'Day-to-day is light — updating content, checking leads. Your team gets a proper walkthrough before we hand anything over.',
   },
   {
-    question: 'What happens after launch?',
+    question: 'What exactly do we walk away with?',
     answer:
-      'You get documentation and training. Your team manages pages, checks enquiries, and updates content independently. Some businesses prefer ongoing support — that option is available too.',
+      'Full documentation, hands-on training, and a team that can run it without us. If you want ongoing support after that, it\'s there.',
   },
   {
-    question: 'How long does the build take?',
+    question: 'How long does the whole thing take?',
     answer:
-      'Four to six weeks for most businesses. Complex setups with multiple locations, booking, or payment connections can take eight to twelve weeks. You get a realistic timeline before anything starts.',
+      'Four to six weeks for a straightforward build. Multiple locations or complex booking connections push it closer to eight to twelve. You\'ll know the timeline upfront.',
   },
   {
-    question: 'How much does it cost?',
+    question: 'What should we expect to pay?',
     answer:
-      'It depends on service count, integrations, and content scope. No mystery pricing — you get a clear number before we begin.',
+      'It depends on how many services you run, what needs connecting, and how much content is involved. You get a clear number before anything starts.',
   },
 ];
 
@@ -93,384 +93,384 @@ export const smartWebsiteSystemsPage = {
       'A website system that turns visitors into tracked enquiries — with dedicated service pages, CRM integration, automated follow-up, and measurable conversion paths.',
   }),
   hero: {
-    badge: 'Smart Website Systems',
-      title: 'Smart Websites That Capture Route and Follow Up',
+    badge: 'Smart Websites',
+    title: 'Enquiries Arrive. Nobody Picks Them Up.',
     description:
-      'Visitors land on your site, look around, and leave — because nothing tells them what to do next. When someone does get in touch, their details sit in an inbox nobody checks. This is not a design problem. Your website was never built to bring in business.',
+      'Somebody finds your business online. Ready to talk. They fill in a form. That message goes to an email nobody checks until the end of the day. They\'ve already rung someone else.',
     list: [
-        'Service Pages',
-        'Lead Routing',
-        'Auto Follow-up',
+      'Lost leads',
+      'No follow-up',
+      'No tracking',
     ],
   },
   sections: {
     value: {
       header: {
-        title: 'What a broken website costs you every week',
+        title: 'What slips through every week',
         description:
-          'Your website costs money to build and money to maintain — but it does not bring in work. Here is what that looks like in practice.',
+          'People reach out. Messages land in the wrong place. Your team doesn\'t see half of them.',
       },
       items: [
         {
           icon: AlertTriangle,
-          title: 'Enquiries disappear before anyone sees them',
+          title: 'Messages pile up where nobody looks',
           description:
-            'Someone fills in your form. The email lands in a shared inbox. Nobody is sure who should reply. By the time someone checks, the customer has already called a competitor.',
+            'A lead comes through on Thursday afternoon. It sits in a shared inbox over the weekend. Monday rolls around and they\'ve already hired someone else.',
           iconType: 'primary' as const,
         },
         {
           icon: Search,
-          title: 'Google cannot tell what you do',
+          title: 'People searching for one thing can\'t find it',
           description:
-            'All your services sit on one page with no clear title or description. When someone searches for what you offer nearby, Google has no reason to show your business.',
+            'All your services sit under a single heading. Someone who needs one specific thing has to sift through everything. They won\'t. They\'ll try the next business that makes it obvious.',
           iconType: 'primary' as const,
         },
         {
           icon: Smartphone,
-          title: 'Half your visitors see a broken layout on their phone',
+          title: 'Mobile visitors hit a wall',
           description:
-            'Buttons overlap, text is too small, and the contact form takes three attempts to fill in. Half of your traffic gives up before doing anything.',
+            'Buttons too small to tap. Forms that reload halfway through. The majority of people trying to reach you are on their phone. Most of them quit.',
           iconType: 'primary' as const,
         },
         {
           icon: Zap,
-          title: 'Nobody follows up after first contact',
+          title: 'Busy days swallow new enquiries whole',
           description:
-            'A lead comes in on a busy day. Your team means to reply but forgets. A week later the opportunity is cold and gone — and you never knew it existed.',
+            'Your team is mid-job. A lead arrives. Someone says they\'ll get to it. Nobody does. That person already called the next number on their list.',
           iconType: 'primary' as const,
         },
         {
           icon: BarChart3,
-          title: 'You cannot measure what is working',
+          title: 'You\'re spending money but can\'t see what works',
           description:
-            'You do not know how many people visited, which pages they looked at, or where they left. You spend money on marketing with no way to see what comes back.',
+            'Ads running in one place. Social posts in another. A directory listing somewhere. You can\'t point to which one brought in a single real enquiry last month.',
           iconType: 'primary' as const,
         },
         {
           icon: Users,
-          title: 'You lose customers you already attracted',
+          title: 'Ready buyers vanish quietly',
           description:
-            'People find you and they are interested — but your website does not help them take the next step. They leave, and you never know they were there.',
+            'Wanted what you offer. Arrived, looked around, left. Nobody on your team ever knew they existed.',
           iconType: 'primary' as const,
         },
       ],
     },
     comparison: {
       header: {
-        title: 'A typical website vs one built to bring in work',
+        title: 'The difference between a site that exists and one that earns',
         description:
-          'The question is not whether you have a website. It is whether yours is costing you business every day.',
+          'Having something online isn\'t the bar. The question is whether anything happens after someone shows up.',
       },
       items: [
         {
           type: 'before' as const,
-          title: 'What most businesses are running',
+          title: 'How it runs right now',
           items: [
-            'One generic services page — visitors cannot find the specific thing they need',
-            'Contact form goes to a shared inbox nobody checks consistently',
-            'No way to know how many visitors you get, where they come from, or what they look at',
-            'No connection between the website and any CRM, calendar, or booking tool',
-            'The site has not been touched since it was built',
+            'Services lumped together. A visitor looking for one specific thing scrolls past everything else. Most leave before they find it.',
+            'Contact form feeds into an email account. Whoever remembers to check it, replies. Could be hours. Could be days.',
+            'No visibility into who visited, what they looked at, or where they dropped off. Marketing spend is a guess.',
+            'Enquiries live in one place. Customer details in another. When it gets busy, things get missed between the two.',
+            'Content hasn\'t been touched since launch. Outdated information. Broken links. Nobody\'s checking.',
           ],
         },
         {
           type: 'after' as const,
-          title: 'What a smart website does instead',
+          title: 'How it runs when it\'s connected',
           items: [
-            'Each service has its own page — visitors find what they need and know what to do next',
-            'Enquiry details go straight to the right person with name, number, and context',
-            'You see which pages get visits, where visitors leave, and what drives enquiries',
-            'Forms, CRM, booking, and follow-up are connected — nothing slips through',
-            'The site is maintained, backed up, and kept working every day',
+            'Each service is its own clear entry. Visitors recognise what they need and act.',
+            'Enquiries arrive with name, number, and what they\'re after. The right person picks it up in minutes.',
+            'You can see where people come from, what they do, and which spend brings real work.',
+            'From form to CRM to follow-up — no one has to copy anything manually.',
+            'Backed up. Monitored. Updated. Issues flagged before customers notice them.',
           ],
         },
       ],
     },
     included: {
       header: {
-        title: 'What your website includes — scope and delivery',
-        description: 'Every build follows the same standard. These are not add-ons. This is the baseline.',
+        title: 'What\'s in the build — scope and delivery',
+        description: 'Not a pick-and-choose list. Everything here is standard.',
       },
       items: [
-        'WordPress website built around your services and how customers find you',
-        'Enquiry forms that route details to the right person with full context',
-        'CRM or booking tool connected so every lead is captured automatically',
-        'Automated confirmations, reminders, and follow-up emails',
-        'Tracking so you know where visitors come from and what they do',
-        'SSL, daily backups, and security configured from day one',
-        'Tested and working properly on phones, tablets, and desktops',
-        'Pages written so Google can index and show your services locally',
-        'Documentation and team training so you manage it independently',
+        'WordPress build shaped around what you actually do and how customers look for it',
+        'Enquiry forms that capture name, number, and what they need — routed to the right person',
+        'CRM or booking tool connected from day one. Every lead logged the moment it lands.',
+        'Automated confirmations, reminders, and follow-up running without anyone on your team lifting a finger',
+        'Tracking showing where visitors come from and what they do before they leave or get in touch',
+        'SSL, daily backups, and security monitoring from the start',
+        'Tested across phones, tablets, and desktops — working properly on each',
+        'Written so Google can match your services to what people in your area search for',
+        'Documentation and a proper walkthrough. Your team runs it independently from there.',
       ],
     },
     types: {
       header: {
-        title: 'Built for businesses where every enquiry counts',
+        title: 'Built for businesses where the first contact matters',
         description:
-          'If your revenue depends on people contacting you, booking a time, or placing an order — your website needs to earn that action.',
+          'If your work starts when someone calls, books, or fills in a form — that moment has to go right. Everything after depends on it.',
       },
       items: [
         {
           icon: Briefcase,
           title: 'Service businesses',
-          description: 'Plumbers, accountants, consultants — each service listed clearly, contact obvious, every enquiry captured and routed.',
-          keywords: 'Clear services • Easy contact • Enquiries captured',
+          description: 'Tradespeople, consultants, agencies — services listed individually, contact paths clear, every enquiry captured and routed.',
+          keywords: 'Listed services • Direct contact • Tracked leads',
           iconType: 'primary' as const,
         },
         {
           icon: Store,
           title: 'Online shops',
-          description: 'Products, checkout, orders, and delivery managed through WooCommerce. Customers browse, buy, and pay in one place.',
-          keywords: 'Products • Checkout • Order management',
+          description: 'Products shown, checkout functioning, orders logged. Find it, buy it, done.',
+          keywords: 'Products • Checkout • Orders',
           iconType: 'primary' as const,
         },
         {
           icon: Calendar,
           title: 'Appointment-based businesses',
-          description: 'Salons, clinics, trainers — booking built into the website. Customers pick a time without calling. Reminders go out automatically.',
-          keywords: 'Online booking • Reminders • Availability',
+          description: 'Salons, clinics, coaches — customers book a slot without calling. Reminders go out automatically. No-shows drop.',
+          keywords: 'Booking • Reminders • Availability',
           iconType: 'primary' as const,
         },
         {
           icon: Building2,
-          title: 'Focused landing pages',
-          description: 'One page. One offer. One next step. Built for specific campaigns or services that need to drive a measurable action.',
-          keywords: 'One offer • Clear action • Measurable result',
+          title: 'Single-offer campaigns',
+          description: 'One service. One action. One number to track. Built for a specific offer that needs a direct outcome.',
+          keywords: 'Single offer • Clear action • Tracked result',
           iconType: 'primary' as const,
         },
       ],
     },
     coreLayer: {
       header: {
-        title: 'How it works — from visitor to enquiry to follow-up',
+        title: 'From visitor to handled enquiry',
         description:
-          'This is one connected system. A visitor arrives, sees what you offer, takes action, and your team picks it up — without anything falling through the cracks.',
+          'Someone arrives. Sees what they need. Reaches out. Your team has it. Nothing drops between.',
       },
       cards: [
         {
-          title: 'Every service gets its own page — visitors find what they need',
-          description: 'Someone lands on your site looking for a specific service. They see it immediately, read what you do, and know how to get in touch. No scrolling through a long list.',
+          title: 'Someone looking for one thing can find it and act',
+          description: 'They land looking for one specific service. It\'s right there. What it involves, how to reach you. No scrolling through everything else.',
           points: [
-            'Each service listed clearly with its own dedicated page',
-            'Every page has a form, phone number, or booking button',
-            'Pages written for your customers, not your team',
+            'They find what they came for. Not buried under ten other things.',
+            'Clear next step on every service — form, call, or booking',
+            'Written the way people ask for help, not the way you file it internally',
           ],
           featured: true,
         },
         {
-          title: 'Google sees your services and shows you in local searches',
+          title: 'Your services are structured so Google can match them',
           description:
-            'Each page has a title and description matching what customers actually type into Google. When someone nearby searches for your services, Google has a reason to show your business.',
+            'Each service listed separately. Written the way people look for help. When the site is structured right, the rest of your visibility — search, ads, directories — has something to land on.',
           points: [
-            'Each service has its own page with a specific title',
-            'Titles and descriptions match the words your customers search for',
-            'Pages link to each other so Google sees the full range of what you offer',
+            'The words on your site match what people actually type into Google.',
+            'Each service has its own page. Google reads the full picture.',
+            'Everything else you do to get found feeds back here.',
           ],
         },
         {
-          title: 'Enquiries go straight into your CRM with full context',
-          description: 'Someone fills in a form, books a call, or sends a message. Their name, number, and what they need land in your CRM instantly — no copying from emails, no re-typing into spreadsheets.',
+          title: 'The right person on your team gets it immediately',
+          description: 'Someone reaches out. Their name, number, what they want — it hits your CRM in seconds. Nobody\'s copying between inboxes. Nobody\'s retyping into a spreadsheet.',
           points: [
-            'Forms send details to the right person automatically',
-            'Booking calendar shows availability without manual updates',
-            'Every enquiry tracked — nothing gets lost',
+            'Goes to the right person. Not a shared inbox nobody checks.',
+            'Booking shows real availability. They pick a time without phoning.',
+            'Tracked from the moment it arrives. Nothing disappears between form and follow-up.',
           ],
         },
         {
-          title: 'Follow-up happens without your team lifting a finger',
+          title: 'Nobody on your team has to remember to chase',
           description:
-            'Someone books a call — they get a confirmation. No reply yet — a reminder goes out. Your team focuses on the work instead of chasing replies.',
+            'They reach out. Confirmation goes straight away. No reply? Reminder goes out. Your team does the work. Chasing runs on its own.',
           points: [
-            'New enquiries get an automated reply within minutes — even outside hours',
-            'Appointment reminders sent the day before, every time',
-            'Follow-up sequences run until the customer responds',
+            'First response in minutes. Even at midnight.',
+            'Reminders the day before an appointment. No-shows drop.',
+            'Keeps going until they respond. Nothing goes cold quietly.',
           ],
         },
       ],
     },
     proof: {
       header: {
-        title: 'What this looks like when it is running',
+        title: 'What changed for a real business',
         description:
-          'A roofing company came to us with a website that looked fine but was not bringing in work. Here is what was happening — and what changed after the rebuild.',
+          'A veterinary clinic had a decent-looking site and regular traffic. Barely any of it converted into actual bookings. Here\'s what we found.',
       },
       cards: [
         {
-          title: 'Before: professional-looking website, no enquiries',
-          description: 'The roofing company had a decent website. All services listed on one page, the contact form went to a shared email, and nobody could tell where leads came from or where they went.',
+          title: 'Before: visitors coming in, almost nothing coming out',
+          description: 'Everything on one long scroll. Contact form going to an email nobody really owned. Enquiries dying in a queue.',
           points: [
-            'All services crammed onto a single page',
-            'Enquiries landed in a shared inbox — missed for days',
-            'No CRM, no follow-up, no tracking',
+            'Vaccinations, dental, emergency — all jammed together. A pet owner looking for one thing had to wade through the rest. Most didn\'t.',
+            'The contact form went somewhere. Reception sometimes checked it. Sometimes didn\'t. Two-day response was a good week.',
+            'Nobody knew how many people enquired. Or what happened after. The vet had a feeling things were slipping — but no numbers to prove it.',
           ],
         },
         {
-          title: 'What we built: website connected to CRM and follow-up',
-          description: 'We rebuilt the site with a dedicated page for each roofing service, connected forms to a CRM, set up automated follow-up, and added tracking so the business could see where every enquiry came from.',
+          title: 'What changed: services separated, handling connected',
+          description: 'Vaccinations in one place. Dental in another. Emergency in its own spot. Forms going straight to the booking tool. Follow-up running on its own.',
           points: [
-            'Each roofing service given its own optimised page',
-            'Enquiry forms connected directly to CRM pipeline',
-            'Automated confirmation emails and follow-up reminders configured',
+            'Each service pulled apart — its own content, its own booking option. Pet owners land where they need to be. No hunting.',
+            'Forms hit the practice management tool directly. Staff saw enquiries the second they arrived.',
+            'Confirmations and reminders ran automatically. Reception stopped having to remember who to chase.',
           ],
           featured: true,
         },
         {
-          title: 'After: more enquiries, faster response, nothing missed',
-          description: 'Within two months, enquiry volume exceeded the previous six months combined. Every lead was captured, followed up, and tracked. Google started showing the business for local roofing searches.',
+          title: 'After: same traffic, completely different outcome',
+          description: 'Six weeks in, bookings picked up. Not a trickle — actual appointments from people who found what they needed.',
           points: [
-            'Enquiry volume increased significantly within two months',
-            'Response time dropped from days to minutes',
-            'Every lead tracked from first visit to booked appointment',
+            'Went from a handful of bookings a month to over forty. Same visitors. Just — people could finally find what they were looking for.',
+            'Response time collapsed. Days became minutes. Enquiries arrived with a notification, not buried in an inbox.',
+            'First time the practice could see which channels actually brought appointments in. Cut the ones that didn\'t.',
           ],
         },
       ],
     },
     visibilityFoundations: {
       header: {
-        title: 'What changes for your business when the website works',
+        title: 'What changes when the site actually works',
         description:
-          'This is not about a nicer site. It is about what happens in your business when the website starts doing its job — bringing in real work, consistently.',
+          'Not about how it looks. About what happens when every interested person can reach you — and your team knows the second they do.',
       },
-      tagline: 'Fix the website. Everything else starts working.',
-      narrativeTitle: 'Why ads, SEO, and social media only work when your website does',
+      tagline: 'Get the site right. Everything after it starts working.',
+      narrativeTitle: 'Why your ads and social media aren\'t paying off yet',
       narrativeParagraphs: [
-        'You spend on Google ads. You post on social media. You are listed on directories. People click — but the phone does not ring. That is not a marketing problem. It is a website problem. Visitors arrive and do not know what to do.',
-        'When your site shows each service clearly, puts a form on every page, and sends enquiry details straight to your team with automated follow-up — the same traffic you already pay for starts turning into real work. Every pound you spend on marketing goes further.',
+        'You\'re running ads. Posting on social. Listed in a couple of directories. People click through — nothing happens. Not a traffic problem. The site isn\'t catching what arrives.',
+        'When services are clear and contact is obvious, those same visitors turn into work. Follow-up runs itself. What you\'re already spending starts earning back.',
       ],
       items: [
         {
           icon: TrendingUp,
-          title: 'Marketing spend starts paying back',
+          title: 'Ad spend starts paying for itself',
           description:
-            'The traffic you already pay for starts converting. Visitors find what they need, get in touch, and your team follows up before the opportunity goes cold.',
-          keywords: 'More return • Less waste • Measurable results',
+            'Traffic you already pay for starts converting. People find what they came for and get in touch. Follow-up runs before it goes cold.',
+          keywords: 'Less waste • Real return • Measurable',
           iconType: 'primary' as const,
         },
         {
           icon: MessageSquare,
-          title: 'Your team spends less time chasing and more time delivering',
-          description: 'Enquiries arrive with full context. Follow-up runs on its own. Your team handles the work instead of checking inboxes and sending reminders.',
-          keywords: 'Less admin • Faster response • Better focus',
+          title: 'Your team stops chasing and starts delivering',
+          description: 'Enquiries show up with context attached. Follow-up is handled. Your team focuses on the actual work — not on checking inboxes.',
+          keywords: 'Less admin • Quicker response • Better focus',
           iconType: 'primary' as const,
         },
         {
           icon: Search,
-          title: 'Google sends you customers without paying for every click',
-          description: 'Service pages with clear titles and descriptions mean Google can understand what you offer and show you when people nearby are searching.',
-          keywords: 'Organic visibility • Local search • Long-term traffic',
+          title: 'Search traffic has somewhere to land',
+          description: 'When what you offer is listed properly, Google can match you to people looking for it. The site becomes the thing every other channel points to.',
+          keywords: 'Organic traffic • Local search • Foundation',
           iconType: 'primary' as const,
         },
       ],
       alternatingItems: [
         {
-          title: 'Marketing spend pays back',
+          title: 'Ad spend pays for itself',
           description:
-            'The traffic you already pay for starts converting. Visitors find what they need, get in touch, and your team follows up before the opportunity goes cold.',
-          points: ['More return', 'Less waste', 'Measurable results'],
+            'Traffic you already pay for starts converting. People find what they came for and get in touch. Follow-up runs before it goes cold.',
+          points: ['Less waste', 'Real return', 'Measurable'],
         },
         {
-          title: 'Less chasing better delivery',
+          title: 'Less chasing, more delivering',
           description:
-            'Enquiries arrive with full context. Follow-up runs on its own. Your team handles the work instead of checking inboxes and sending reminders.',
-          points: ['Less admin', 'Faster response', 'Better focus'],
+            'Enquiries arrive with context. Follow-up is handled. Your team spends time on real work, not inbox checking.',
+          points: ['Less admin', 'Quicker response', 'Better focus'],
         },
         {
-          title: 'Organic search brings customers',
+          title: 'Search picks up',
           description:
-            'Service pages with clear titles and descriptions mean Google can understand what you offer and show you when people nearby are searching.',
-          points: ['Organic visibility', 'Local search', 'Long-term traffic'],
+            'When what you offer is listed properly, Google can match you to local queries. The site becomes the thing everything else points to.',
+          points: ['Organic traffic', 'Local search', 'Foundation'],
         },
       ],
     },
     qualification: {
       header: {
-        title: 'Is this the right fit for your business?',
-        description: 'This service is built for a specific type of business. Here is how to tell whether it fits — or whether something else makes more sense.',
+        title: 'Is this the right fit?',
+        description: 'This solves a specific kind of problem. Here\'s how to tell if yours matches.',
       },
       strongFitTitle: 'This is a strong fit if',
-      notForTitle: 'This probably is not for you if',
+      notForTitle: 'This probably isn\'t for you if',
       strongFit: [
         {
-          title: 'Your website gets visitors but does not generate enquiries',
-          description: 'People find your site but do not contact you. The website needs to guide them toward action, not just display information.',
+          title: 'Traffic comes in but nothing converts',
+          description: 'People visit. Browse. Leave. Attention isn\'t the problem. Nothing on the site gives them a reason to act.',
         },
         {
-          title: 'Enquiries get lost or take too long to follow up',
-          description: 'Leads go to a shared inbox and slip through the cracks. You need forms connected to a CRM with automated follow-up.',
+          title: 'Enquiries take days to get a response',
+          description: 'Messages sit in a shared inbox nobody owns. By the time someone replies, the customer\'s moved on to whoever answered first.',
         },
         {
-          title: 'You spend on ads but cannot see what is working',
-          description: 'Traffic comes in but you have no way to measure which pages convert, where visitors leave, or what drives actual business.',
+          title: 'You can\'t tell which marketing is working',
+          description: 'Money goes out across different channels. You\'ve no idea which one produced the last real enquiry — or if any of them did.',
         },
         {
-          title: 'Your services do not show up when people search nearby',
-          description: 'You offer real services in a real area but Google does not show your business because the site does not give it enough to work with.',
+          title: 'Local people can\'t find your individual services',
+          description: 'Everything\'s bundled into one listing. Someone searching for a specific thing you do doesn\'t find you. They find whoever listed it separately.',
         },
       ],
       notFor: [
         {
-          title: 'You need a simple one-page site with no integrations',
-          description: 'If you do not need a CRM, booking system, or follow-up — a simpler build is a better fit.',
+          title: 'You need something basic with no connections',
+          description: 'If CRM, booking, and follow-up aren\'t needed, this is more than you need. A simpler build costs less and does the job.',
         },
         {
-          title: 'Your current enquiry volume is already where you need it',
-          description: 'If your website already brings in the work you need and nothing gets missed, this level of rebuild may not be necessary.',
+          title: 'Enquiries are already steady and nothing\'s slipping',
+          description: 'If your current setup brings in enough work and nothing gets missed, a rebuild won\'t shift much.',
         },
         {
-          title: 'You need an e-commerce store, not a service website',
-          description: 'If your primary need is product-based selling, our e-commerce implementation is a better starting point.',
+          title: 'You sell products, not services',
+          description: 'If you need checkout and inventory, our e-commerce build is a better starting point for that.',
         },
       ],
     },
     process: {
       header: {
         badge: 'How it works',
-        title: 'From conversation to a website that brings in work',
-        description: 'We do not start with design. We learn how your business works, where enquiries fall apart, and what the website needs to do. Then we build it.',
+        title: 'From first conversation to a site pulling its weight',
+        description: 'We don\'t begin with visuals. We start with how your business runs, where enquiries fall apart, and what the site actually needs to handle.',
       },
       steps: [
         {
           number: '1',
           title: 'We learn how your business runs',
           description:
-            'We ask about your services, how customers find you, where enquiries drop off, and what tools you use. This shapes everything we build.',
+            'What you offer, how people find you, where things drop off, which tools you already use. Everything after this follows from what we learn here.',
         },
         {
           number: '2',
-          title: 'We plan the site around your services and customers',
+          title: 'We plan around your services and customers',
           description:
-            'Before anything is designed, we map out which pages you need, what each one should say, and how visitors go from landing on your site to getting in touch.',
+            'Which services need their own listing, what each one says, how someone moves from arriving to getting in touch. The build follows the business, not the other way round.',
         },
         {
           number: '3',
-          title: 'We build and connect everything',
+          title: 'We build it and connect everything',
           description:
-            'Your site goes live on WordPress. Forms send enquiry details into your CRM, follow-up emails go out automatically, and you can see where every visitor comes from.',
+            'Live on WordPress. Forms feed into your CRM. Follow-up runs automatically. You can see where people come from and what they do.',
         },
         {
           number: '4',
-          title: 'We hand over, train your team, and confirm it works',
+          title: 'Handover and training',
           description:
-            'Everything is tested and live. Your team gets documentation and a walkthrough so they can manage the site, check enquiries, and update content independently.',
+            'Everything tested. Running. Your team gets documentation and a walkthrough. They handle content, check enquiries, manage updates from there.',
         },
       ],
     },
     faq: {
       header: {
-        title: 'Common questions before getting started',
-        description: 'Straight answers to what business owners ask most before committing.',
+        title: 'What business owners ask before getting started',
+        description: 'Direct answers. No jargon.',
       },
       items: smartWebsitesFaqItems,
     },
   },
   cta: {
-    title: 'Send us your website — we will tell you what is costing you enquiries',
+    title: 'Show me what\'s broken',
     description:
-      'Share your website link and a few details about your business. We review it and come back with a clear breakdown of what is working, what is losing you leads, and what it would take to fix it.',
+      'Drop your URL. We come back with what\'s working, what\'s leaking, and what to fix.',
   },
   inlineCta: {
-    title: 'Not sure how many enquiries your website is losing?',
+    title: 'Not sure what your site is costing you?',
     description:
-      'Send us your site. We will give you an honest assessment of where visitors are dropping off, what is missing, and what you could change to start getting more enquiries.',
+      'Send the link. Where visitors drop off. What\'s missing. What would change.',
   },
 } satisfies ServicePageData;

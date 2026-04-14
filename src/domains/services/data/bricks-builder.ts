@@ -44,7 +44,7 @@ export const bricksBuilderPage = {
       title: 'Bricks Websites Built for Speed Precision and Control',
     description:
       'We build WordPress websites using Bricks Builder where performance and clean output matter. Approved designs are converted precisely, with a build that stays fast, maintainable, and easy to extend.',
-      list: ['Fast Output', 'Clean Structure', 'Precision Build'],
+      list: ['Fast page output', 'Clean code structure', 'Pixel-precision builds'],
     cssPrefix: 'bricks-hero',
     backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },

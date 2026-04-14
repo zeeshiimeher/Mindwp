@@ -84,12 +84,15 @@ Run: `npm run -s generate:global-inventory`
 ### Sections domain: `core` (from `src/components/reusable/sections/core/index.ts`)
 | Export | Source |
 |---|---|
+| `AlternatingDetailRowsSection` | `src/components/reusable/sections/core/AlternatingDetailRowsSection.tsx` |
 | `AutoRelatedContentCardsSection` | `src/components/reusable/sections/core/AutoRelatedContentCardsSection.tsx` |
 | `CaseStudyCardsSection` | `src/components/reusable/sections/core/CaseStudyCardsSection.tsx` |
 | `ChecklistCardsSection` | `src/components/reusable/sections/core/ChecklistCardsSection.tsx` |
+| `ComparisonEvidenceBand` | `src/components/reusable/sections/core/ComparisonEvidenceBand.tsx` |
 | `ComparisonSection` | `src/components/reusable/sections/core/ComparisonSection.tsx` |
 | `ContentCardsGridSection` | `src/components/reusable/sections/core/ContentCardsGridSection.tsx` |
 | `DarkSplitShowcaseSection` | `src/components/reusable/sections/core/DarkSplitShowcaseSection.tsx` |
+| `DecisionFitSection` | `src/components/reusable/sections/core/DecisionFitSection.tsx` |
 | `DualFeatureCardsSection` | `src/components/reusable/sections/core/DualFeatureCardsSection.tsx` |
 | `DualToneChecklistComparisonSection` | `src/components/reusable/sections/core/DualToneChecklistComparisonSection.tsx` |
 | `ExploreCardsSection` | `src/components/reusable/sections/core/ExploreCardsSection.tsx` |
@@ -105,17 +108,20 @@ Run: `npm run -s generate:global-inventory`
 | `NarrativeStatsSection` | `src/components/reusable/sections/core/NarrativeStatsSection.tsx` |
 | `OperationalShiftCardsSection` | `src/components/reusable/sections/core/OperationalShiftCardsSection.tsx` |
 | `OptionComparisonSection` | `src/components/reusable/sections/core/OptionComparisonSection.tsx` |
+| `OutcomeTimelineSection` | `src/components/reusable/sections/core/OutcomeTimelineSection.tsx` |
 | `ProblemCardsSection` | `src/components/reusable/sections/core/ProblemCardsSection.tsx` |
 | `ProcessStepsSection` | `src/components/reusable/sections/core/ProcessStepsSection.tsx` |
 | `RelatedCardsSection` | `src/components/reusable/sections/core/RelatedCardsSection.tsx` |
 | `ScenarioCardsSection` | `src/components/reusable/sections/core/ScenarioCardsSection.tsx` |
 | `ServiceSpectrumCardsSection` | `src/components/reusable/sections/core/ServiceSpectrumCardsSection.tsx` |
+| `SignalResponseSection` | `src/components/reusable/sections/core/SignalResponseSection.tsx` |
 | `StackedFeatureListSection` | `src/components/reusable/sections/core/StackedFeatureListSection.tsx` |
 | `StepCardsSplitSection` | `src/components/reusable/sections/core/StepCardsSplitSection.tsx` |
 | `TabbedFeatureCardsSection` | `src/components/reusable/sections/core/TabbedFeatureCardsSection.tsx` |
 | `TechnologyCardsSection` | `src/components/reusable/sections/core/TechnologyCardsSection.tsx` |
 | `TestimonialSpotlightSplitSection` | `src/components/reusable/sections/core/TestimonialSpotlightSplitSection.tsx` |
 | `TierCardsSection` | `src/components/reusable/sections/core/TierCardsSection.tsx` |
+| `TransformationProofSection` | `src/components/reusable/sections/core/TransformationProofSection.tsx` |
 
 ### Sections domain: `features` (from `src/components/reusable/sections/features/index.ts`)
 | Export | Source |

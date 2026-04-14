@@ -44,9 +44,9 @@ export const woocommercePage = {
     description:
       'We implement e-commerce systems on WordPress with WooCommerce where it fits. Catalog logic, checkout flow, fulfilment rules, and reporting are set up around your actual operating model — not just assembled to get a store online.',
     list: [
-        'Product Logic',
-        'Checkout Flow',
-        'Fulfilment Ready',
+        'Structured product logic',
+        'Defined checkout flow',
+        'Fulfilment-ready setup',
     ],
     cssPrefix: 'woocommerce-hero',
   },

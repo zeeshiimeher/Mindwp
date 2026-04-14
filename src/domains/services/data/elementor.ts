@@ -44,7 +44,7 @@ export const elementorPage = {
       title: 'Elementor Websites Built for Clear Editing and Control',
     description:
       'We build WordPress websites using Elementor where the visual output stays faithful to the approved design and the editing experience stays manageable over time. This is disciplined implementation, not a quick drag-and-drop assembly.',
-      list: ['Design Fidelity', 'Clean Editing', 'Long Term'],
+      list: ['Pixel-accurate design', 'Clean editing model', 'Long-term maintainability'],
     cssPrefix: 'elementor-hero',
     backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },

@@ -284,7 +284,7 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
         icon: Calendar,
         title: 'Booking & Scheduling System',
         description: 'Support nail salon booking, reminders, and cleaner diary handling.',
-        href: '/services/booking-scheduling-system',
+        href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
       },

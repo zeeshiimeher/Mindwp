@@ -37,241 +37,241 @@ export const localSeoAuthorityPage = {
   }),
   hero: {
     badge: 'Get Found Locally',
-      title: 'Local SEO That Brings Nearby Customers In',
+    title: 'Your Competitors Show Up. You Don\'t.',
     description:
-      'People in your area search for what you do every day. If your website does not clearly explain your services, your Google profile is incomplete, or your business details are wrong across the web — Google has no reason to show you. We fix that.',
+      'Someone five minutes away needs exactly what you do. Searches. Three businesses come up. Not yours. Details different in every directory. Google can\'t tell what\'s real.',
     cssPrefix: 'website-seo-hero',
     backgroundColor: 'bg-gradient-surface-muted',
     list: [
-        'Search Visibility',
-        'Google Profile',
-        'Local Trust',
+      'Scattered details',
+      'Incomplete profile',
+      'Hidden services',
     ],
   },
   sections: {
     misconceptions: {
       badge: 'Why SEO has not worked before',
-      title: 'Three mistakes that keep businesses invisible on Google',
+      title: 'Three assumptions that keep you invisible',
       description:
-        'Most businesses that come to us have tried SEO before and been disappointed. Usually the starting point was wrong.',
+        'Most businesses we talk to have spent money on SEO before. It didn\'t work because the starting point was wrong.',
       currentStateLabel: 'What most businesses think',
       structuredStateLabel: 'What actually needs to happen',
       painPoints: [
         {
-          before: '\u201CWe just need more website traffic and rankings will follow.\u201D',
+          before: '\u201CMore traffic will fix everything.\u201D',
           after:
-            'Traffic only turns into customers when your website clearly shows what you do, where you do it, and how to get in touch.',
+            'Traffic to a confusing site burns money. If visitors can\'t tell what you do, where you work, or how to reach you — they leave. You paid for nothing.',
         },
         {
-          before: '\u201CSEO should work even if our website is unclear.\u201D',
+          before: '\u201CSEO can work around a messy website.\u201D',
           after:
-            'If visitors land on your site and cannot figure out what you offer, more traffic just means more people leaving.',
+            'Google shows results that answer the question someone typed. If your site doesn\'t clearly do that, spending on SEO won\'t compensate.',
         },
         {
-          before: '\u201CWe want to be on page one by next month.\u201D',
+          before: '\u201CWe should be ranking by next month.\u201D',
           after:
-            'Real local SEO builds over time. Quick fixes do not last. What works is steady improvements to your site, Google profile, and local presence.',
+            'Shortcuts get penalised when Google updates. Businesses that relied on them lose everything overnight. Steady monthly work compounds. Survives algorithm changes.',
         },
       ],
     },
 
     why: {
       badge: 'Our approach',
-      title: 'We fix your website first, then build your local presence around it',
+      title: 'We start with your website, then build outward',
       description:
-        'Local SEO is not a one-time project. It is regular, ongoing work on your website and how your business appears online — so the right people keep finding you.',
+        'Local SEO isn\'t a one-off project. It\'s regular work on your website and how your business shows up. Customers keep finding you because the foundations hold.',
       tagline: 'Your website comes first',
-      narrativeTitle: 'Why we always start with your website',
+      narrativeTitle: 'Why the website has to be right before anything else',
       narrativeParagraphs: [
-        'If your website does not clearly explain what you do, where you work, and how to contact you — sending more people to it will not help. They will just leave.',
-        'That is why we start there. We make sure your services are clearly presented, everything works on mobile, and your Google profile matches your site. Then we keep improving it month after month.',
+        'If your website doesn\'t clearly explain what you offer, where you operate, and how to get in touch — driving more people to it just wastes money. They\'ll leave.',
+        'We fix that first. Services clearly laid out, mobile working properly, Google profile matching the site. Then we keep pushing it forward month after month.',
       ],
       features: [
         {
           icon: Settings,
-          title: 'Fix your website foundations first',
+          title: 'Sort out the website foundations',
           description:
-            'We check how your site is organised, whether it works on phones, and whether the basics are set up correctly for Google.',
+            'How your site loads, how it works on mobile, how Google reads it — all reviewed and corrected. The basics have to be right first.',
         },
         {
           icon: Globe,
-          title: 'Keep your local details accurate everywhere',
+          title: 'Get your details right everywhere',
           description:
-            'Your name, address, phone number, and services need to match across Google, directories, and your website. We make sure they do.',
+            'Name, address, phone, and services matched across Google, directories, and your website. Google treats your business as one verified entity.',
         },
         {
           icon: Workflow,
-          title: 'Keep improving month after month',
+          title: 'Keep building month after month',
           description:
-            'We do not disappear after the first round. Every month we review what is working, fix what is not, and keep pushing your business higher in search results.',
+            'Every month we review what\'s working, fix what isn\'t, and push your business higher. Visibility compounds instead of stalling.',
         },
       ],
     },
     integrations: {
       badge: 'How it all fits together',
-      title: 'What changes for your business when local SEO is working',
+      title: 'What actually changes when local SEO is working',
       description:
-        'Showing up on Google is not about keywords. It is about your website being clear, your Google profile being accurate, and your details being the same everywhere. When those three things align, Google trusts your business enough to show it.',
+        'Showing up on Google isn\'t about stuffing keywords. Your website has to be clear, your Google profile accurate, your details the same everywhere. When those line up, Google trusts you enough to show your business.',
       cards: [
         {
-          title: 'A website that makes sense to Google and to customers',
+          title: 'Your website answers the question someone just typed',
           description:
-            'Your service pages clearly explain what you do and where. Visitors know in seconds how to take the next step.',
+            'They search for what you do. They land on your site. In seconds they can tell what you offer, where, and how to reach you.',
           points: [
-            'Services explained in plain language on dedicated pages',
-            'Easy to find how to get in touch',
-            'Works properly on phones and tablets',
+            'Each service on its own listing. Google indexes and ranks them individually.',
+            'Contact details right there — nobody has to hunt for a phone number',
+            'Works on mobile. That\'s where most local searchers are.',
           ],
           featured: true,
         },
         {
-          title: 'A Google presence people trust',
+          title: 'What Google finds about you actually matches reality',
           description:
-            'Your Google Business Profile, directory listings, and reviews are accurate, up to date, and matching your website.',
+            'Profile, directories, reviews — all saying the same thing. Accurate. Current. Matching what\'s on your website.',
           points: [
-            'Google Business Profile fully set up and maintained',
-            'Business details consistent everywhere online',
-            'Services and areas you cover clearly listed',
+            'Google Business Profile complete and actively managed. Eligible for local pack results.',
+            'Same details in every directory. Google can verify you\'re real.',
+            'Services and areas listed clearly. Google matches you to the right searches.',
           ],
         },
         {
-          title: 'Enquiries that actually reach your team',
+          title: 'Every listing leads somewhere useful',
           description:
-            'Showing up on Google only matters if people can reach you. Forms work, calls go to the right person, and someone responds.',
+            'Showing up means nothing if the page behind it is vague. Each result leads to a clear, relevant listing with a way to act.',
           points: [
-            'Contact forms and calls reach your team reliably',
-            'Follow-up happens promptly, not days later',
-            'People who find you online turn into real conversations',
+            'Each service page answers the search that triggered it',
+            'Contact details right there — no hunting required',
+            'The visit makes sense. The next step is obvious.',
           ],
         },
       ],
     },
     comparison: {
       header: {
-        title: 'Generic SEO agencies vs a local visibility system',
+        title: 'Off-the-shelf SEO vs local visibility that holds',
         description:
-          'Most SEO work focuses on rankings in isolation. We build local visibility that connects your website, Google profile, and business listings into one working system.',
+          'Most SEO focuses on rankings alone. We connect your website, Google profile, and listings into something Google can actually trust.',
       },
       items: [
         {
           type: 'before' as const,
-          title: 'What generic SEO looks like',
+          title: 'What typical SEO looks like',
           items: [
-            'Keyword stuffing across a handful of pages with no clear service structure',
-            'Google Business Profile set up once and never maintained',
-            'Business details wrong or inconsistent across directories',
-            'Monthly reports full of jargon but no visible change in enquiries',
-            'No connection between SEO work and your actual website experience',
+            'Keywords crammed across a few generic sections. Google can\'t match anything specific to what someone\'s actually searching for.',
+            'Google Business Profile created once, never touched again. Losing eligibility for local pack results month by month.',
+            'Business name and phone number wrong or different in every directory. Google can\'t confirm you\'re a real business.',
+            'Monthly reports loaded with jargon. No visible change in actual enquiries. You\'re paying for activity with nothing to show.',
+            'SEO work completely disconnected from the website itself. Higher rankings still send people to a confusing experience.',
           ],
         },
         {
           type: 'after' as const,
-          title: 'What structured local SEO does instead',
+          title: 'What structured local work does instead',
           items: [
-            'Each service gets its own page written for customers and for Google',
-            'Google Business Profile actively maintained and kept accurate',
-            'Business details checked and corrected across all listings',
-            'Monthly work that you can see — updated pages, better profiles, more visibility',
-            'SEO improvements tied directly to website clarity and enquiry flow',
+            'Each service has its own listing Google can rank for specific searches in your area.',
+            'Google Business Profile actively maintained. Your business stays eligible for the local pack where most clicks happen.',
+            'Details corrected and matched across every directory. Google sees one consistent business.',
+            'Monthly work tied to visible changes — updated content, stronger profiles, growing local presence.',
+            'SEO connected to website clarity. Better rankings also mean better conversion when people actually arrive.',
           ],
         },
       ],
     },
     proof: {
       header: {
-        title: 'What this looks like when it is working',
+        title: 'What this looked like for a real business',
         description:
-          'A roofing company was spending on ads but invisible in local search results. Here is what we found and what changed.',
+          'A dental practice was paying for ads but invisible in organic search. Here\'s what was going on and what shifted.',
       },
       cards: [
         {
-          title: 'Before: invisible in local search despite running ads',
-          description: 'The roofing company had all services on one page, no dedicated service pages for Google to index, and business details were inconsistent across directories.',
+          title: 'Before: paying for every click, invisible otherwise',
+          description: 'Everything on one listing. Google had nothing specific to rank. Details wrong in half the directories.',
           points: [
-            'All services crammed onto a single page with no individual titles',
-            'Google Business Profile incomplete and not matching the website',
-            'Business name and phone number different across directories',
+            'Cleanings, implants, emergency — all on one long listing. Someone searching for a specific treatment found the competitors who\'d listed it separately.',
+            'Google Business Profile half-done. The practice wasn\'t showing up in the local pack for any of their core services.',
+            'Phone number different on three directories. Address slightly wrong on two others. Google couldn\'t tell which was right.',
           ],
         },
         {
-          title: 'What we did: rebuilt the local visibility layer',
-          description: 'We created dedicated pages for each roofing service, corrected business details across directories, and set up and maintained the Google Business Profile properly.',
+          title: 'What we did: gave each treatment its own presence',
+          description: 'Separated every dental service out. Corrected the details everywhere. Got the Google profile finished and actively managed.',
           points: [
-            'Each roofing service given its own page with clear titles',
-            'Google Business Profile completed and actively maintained',
-            'Business details corrected and made consistent across all listings',
+            'Each treatment on its own — cleanings, implants, emergency — written around how patients actually search for them.',
+            'Google Business Profile completed. Accurate hours, services, photos. The practice became eligible for local pack results.',
+            'Details fixed across every directory. Google started treating them as one verified business.',
           ],
           featured: true,
         },
         {
-          title: 'After: appearing in local searches and getting enquiries',
-          description: 'Within three months, the business started appearing in local search results for roofing services. Organic enquiries grew steadily without increasing ad spend.',
+          title: 'After: organic search doing what ads used to',
+          description: 'Four months in, showing up for targeted dental terms. Organic enquiries growing. Ad spend dropping.',
           points: [
-            'Started appearing in Google local results for targeted roofing terms',
-            'Organic enquiry volume grew month over month',
-            'Reduced dependence on paid ads for lead generation',
+            'Individual treatments started ranking. Patients found what they needed without the practice paying for that click.',
+            'Organic volume climbed each month as more content indexed. Compounded. No extra spend.',
+            'Ad budget came down by a third. Organic was bringing in qualified patients who already knew what they wanted.',
           ],
         },
       ],
     },
     processSection: {
       badge: 'How we work',
-      title: 'What happens once we start',
+      title: 'What happens after we start',
       description:
-        'We follow a repeating cycle: check what is working, fix what is not, keep your local presence strong, and adjust as your business changes.',
+        'A repeating cycle: check what\'s working, fix what isn\'t, keep your local presence strong, and adjust as things change.',
       steps: [
         {
           number: '1',
           title: 'See where you stand right now',
           description:
-            'We review your website, Google profile, and local listings to find what is helping, what is hurting, and what is missing.',
+            'We look at your website, Google profile, and listings. First round of work targets whatever\'s costing you the most visibility.',
         },
         {
           number: '2',
           title: 'Make your services and location clear online',
           description:
-            'We update your pages, fix your metadata, and make sure your local details match everywhere — website, Google, and directories.',
+            'Content updated, metadata corrected, local details matched everywhere. Google gets clear signals about what you do and where you do it.',
         },
         {
           number: '3',
-          title: 'Keep building your local presence',
+          title: 'Build on it every month',
           description:
-            'We maintain your content, monitor your reviews, update business listings, and make sure nothing goes stale.',
+            'Content kept current, reviews monitored, listings maintained. Visibility grows instead of fading.',
         },
         {
           number: '4',
-          title: 'Adapt when things change',
+          title: 'Adjust when things shift',
           description:
-            'When you add new services, cover new areas, or Google changes how it ranks businesses — we update everything to keep you visible.',
+            'New services, new areas, algorithm changes — everything gets updated. Visibility holds through change.',
         },
       ],
     },
     scopeSection: {
       badge: 'What is included',
-      title: 'Everything we handle for your local visibility',
+      title: 'What we handle for your local visibility',
       description:
-        'The exact work depends on where your business is starting from. Here is what we typically take care of.',
+        'The exact scope depends on where your business is starting from. Here\'s what we cover.',
       services: [
         {
           icon: Code,
-          title: 'Making Your Website Work for Google',
+          title: 'Getting Your Website Right for Google',
           items: [
-            'Organising your site so Google can read it properly',
-            'Making sure it loads fast and works on mobile',
-            'Adding the right behind-the-scenes tags Google looks for',
-            'Setting up sitemaps and indexing correctly',
-            'Keeping your site secure and reliable',
+            'Organising your site so Google can read and index it properly',
+            'Making sure it loads quickly and works on mobile',
+            'Adding the technical tags Google looks for behind the scenes',
+            'Setting up sitemaps and making sure indexing is correct',
+            'Keeping the site secure and stable',
           ],
         },
         {
           icon: FileText,
-          title: 'Making Your Pages Clear and Useful',
+          title: 'Making Each Listing Clear and Useful',
           items: [
-            'Writing service pages that explain what you do and where',
-            'Getting page titles and descriptions right for search',
-            'Making content easy to skim and understand',
-            'Linking related pages together so visitors find more',
-            'Making sure images are optimised and labelled',
+            'Writing content for each service that explains what you do and where you do it',
+            'Titles and descriptions matching what people search for',
+            'Easy to scan. Easy to act on.',
+            'Related services linking to each other so visitors stay longer',
+            'Making sure images load fast and are labelled correctly',
           ],
         },
         {
@@ -279,40 +279,40 @@ export const localSeoAuthorityPage = {
           title: 'Building Your Local Reputation Online',
           items: [
             'Setting up and managing your Google Business Profile',
-            'Making sure your details match across all directories',
-            'Helping you get more reviews and respond to them',
-            'Building references to your business in local and relevant sites',
-            'Getting your business mentioned where it matters locally',
+            'Matching your details across all directories',
+            'Helping you collect more reviews and respond to them',
+            'Getting your business referenced on local and relevant sites',
+            'Building mentions where they matter for your area',
           ],
         },
         {
           icon: Layers,
-          title: 'Planning Content That Attracts Customers',
+          title: 'Planning Content That Brings Customers In',
           items: [
-            'Creating pages for each service and location you cover',
-            'Writing helpful FAQs and supporting content',
-            'Planning topics based on what real customers search for',
-            'Keeping content fresh and up to date',
+            'Creating a listing for each service and location you cover',
+            'Writing FAQs and supporting content around real searches',
+            'Planning topics based on what customers actually look for',
+            'Keeping everything current as your business changes',
           ],
         },
         {
           icon: LineChart,
-          title: 'Tracking Progress in Plain English',
+          title: 'Reporting in Plain English',
           items: [
             'Monitoring your Google Search Console results',
-            'Tracking how your visibility changes over time',
-            'Keeping watch on what competitors are doing',
-            'Giving you clear, jargon-free updates',
+            'Tracking how your visibility shifts over time',
+            'Watching what competitors are doing locally',
+            'Giving you updates you can actually understand',
           ],
         },
         {
           icon: Settings,
-          title: 'Continuously Improving',
+          title: 'Continuous Improvement',
           items: [
-            'Regular check-ups on your content and technical setup',
-            'Adapting when Google changes how it ranks businesses',
-            'Updating when your services or priorities shift',
-            'Making small improvements that add up over time',
+            'Regular reviews of content and technical health',
+            'Adapting when Google changes how it ranks local businesses',
+            'Updating when your services or priorities change',
+            'Small improvements that compound over months',
           ],
         },
       ],
@@ -320,127 +320,127 @@ export const localSeoAuthorityPage = {
     qualification: {
       title: 'Is this right for your business?',
       description:
-        'This works for established service businesses that want more local customers finding them online — and are willing to commit to the time it takes for results to build.',
+        'Built for established service businesses that want local customers finding them online — and are willing to commit to the time it takes.',
       strongFitTitle: 'Strong fit if',
       strongFitItems: [
         {
-          title: 'You have real services and want more local customers to find them',
+          title: 'You run real services and want local people to find them',
           description:
-            'You run a real business with real services. You need more of the right people in your area to discover you online.',
+            'Defined services. Specific area. The people nearby who need what you do are searching for it. They\'re finding competitors instead.',
         },
         {
-          title: 'You want results that last, not a quick spike',
+          title: 'You want lasting results, not a spike',
           description:
-            'You understand that showing up on Google takes consistent work — and you want something that builds over time.',
+            'Showing up on Google takes steady monthly work. Not a one-off fix. You\'re prepared for that.',
         },
         {
-          title: 'Your business details need to be right everywhere online',
+          title: 'Your business details are wrong or missing online',
           description:
-            'You want your Google profile, directory listings, and website to all say the same thing — and stay that way.',
+            'Information scattered or inaccurate across the web. You want one correct presence everywhere Google looks.',
         },
         {
-          title: 'You are ready for a steady, long-term approach',
+          title: 'You\'re ready for a long-term approach',
           description:
-            'You know local SEO is not a switch you flip. It is something you maintain. You are ready for that.',
+            'Not a switch. Three to six months minimum to see results compound. If that\'s too long, this isn\'t the right fit.',
         },
       ],
       notDesignedTitle: 'Probably not the right fit if',
       notDesignedItems: [
         {
-          title: 'You want a guarantee of ranking number one by a specific date',
+          title: 'You expect a guaranteed ranking by a set date',
           description:
-            'Nobody can honestly promise that. We focus on doing the right things consistently — rankings follow from that.',
+            'Nobody controls Google\'s algorithm. Anyone promising a specific position by a specific date is either guessing or using tactics that won\'t last.',
         },
         {
-          title: 'You need a rush of traffic and do not care about long-term',
+          title: 'You need immediate traffic and aren\'t thinking long-term',
           description:
-            'If you need quick volume right now, paid ads are a better option. This is about building lasting visibility.',
+            'Paid ads deliver fast traffic. This builds organic visibility over months. If you need leads this week, start with ads.',
         },
         {
-          title: 'Your website has serious problems you are not ready to fix',
+          title: 'Your website has fundamental problems you won\'t address',
           description:
-            'If the site itself is broken or unclear and there is no willingness to address that, SEO work will not deliver.',
+            'SEO layered on a broken site produces nothing. If the site needs fixing and you\'re not ready to do it, the investment won\'t return.',
         },
         {
-          title: 'You want a one-time checklist, not ongoing work',
+          title: 'You want a one-off audit, not ongoing work',
           description:
-            'A single audit on its own does not change your rankings. This is a monthly service where we do the work, not just tell you what to do.',
+            'An audit shows you what\'s wrong. It doesn\'t fix it. This is monthly work where we make the changes — not hand you a list and walk away.',
         },
       ],
     },
     faqSection: {
       badge: 'Common questions',
-      title: 'Questions business owners ask about local SEO',
+      title: 'What business owners ask about local SEO',
       description:
-        'Straight answers to what you are probably wondering before getting started.',
+        'Direct answers to the things you\'re probably wondering about.',
       cssPrefix: 'seo-growth-faq',
       faqs: [
         {
-          question: 'How is ongoing SEO different from a one-time audit?',
+          question: 'What\'s the difference between ongoing SEO and a one-time audit?',
           answer:
-            'An audit gives you a snapshot and a to-do list. Ongoing SEO means we do the work — and keep doing it. We monitor your site, update content, maintain your Google profile, and adapt as things change.',
+            'An audit gives you a snapshot and a list of problems. Ongoing SEO means we fix them — and keep fixing them. We update content, manage your Google profile, and adapt as things change.',
         },
         {
-          question: 'Can you guarantee higher rankings?',
+          question: 'Can you guarantee we\'ll rank higher?',
           answer:
-            'No — and anyone who promises that is being dishonest. What we can promise is that your website and local presence will be consistently well-maintained, which gives Google the best reasons to show your business.',
+            'No. Anyone promising that is being dishonest. What we can promise is that your website and local presence will be consistently well-maintained. That gives Google the best reasons to show your business.',
         },
         {
-          question: 'How long before results appear?',
+          question: 'How long before we see results?',
           answer:
-            'Some technical fixes show results within weeks. Broader improvements — like ranking for competitive local terms — usually develop over three to six months of steady work.',
+            'Some technical fixes show improvement within weeks. Broader gains — like ranking for competitive local terms — typically develop over three to six months of steady work.',
         },
         {
-          question: 'What if we already work with an SEO agency?',
+          question: 'We already have an SEO agency. Can you still help?',
           answer:
-            'We can work alongside them or take over entirely. Our focus — your website, Google profile, and directory listings being right — often fills the gaps that campaign-focused SEO misses.',
+            'We can work alongside them or take over. Our focus — making your website, Google profile, and directory listings genuinely right — fills gaps that campaign-focused SEO often misses.',
         },
         {
-          question: 'Do you run Google Ads?',
+          question: 'Do you manage Google Ads?',
           answer:
-            'No. We focus entirely on getting you found in normal search results — the ones people see without clicking on an ad.',
+            'No. We focus on getting you found in organic search results — the ones people see without clicking on an ad.',
         },
         {
-          question: 'What types of businesses do you work with?',
+          question: 'Which types of businesses do you work with?',
           answer:
-            'Mainly established service businesses — home services, beauty, automotive, professional services, and similar. The approach works across industries because it is built around your real services and where you operate.',
+            'Mostly established service businesses — trades, beauty, health, automotive, professional services. The approach works across industries because it\'s built around your real services and where you operate.',
         },
         {
-          question: 'How do you decide what to charge?',
+          question: 'How do you work out pricing?',
           answer:
-            'Pricing depends on the current state of your website, how many services and locations you cover, and how much ongoing work is needed. We scope everything clearly before starting.',
+            'It depends on the state of your website, how many services and locations you cover, and the amount of ongoing work needed. We scope it clearly before we start.',
         },
         {
-          question: 'What happens when Google changes how it ranks businesses?',
+          question: 'What happens when Google changes its algorithm?',
           answer:
-            'It happens often. Because we build around clear service pages, solid technical basics, and real business information, your site holds up much better than one relying on shortcuts.',
+            'It happens often. Because we build around clear service content, solid technical basics, and accurate business information, your site holds up much better than one relying on tricks.',
         },
         {
-          question: 'Can you teach our team to handle some of this?',
+          question: 'Can our team learn to handle some of it?',
           answer:
-            'Yes. We can include training so your team understands the key decisions and can keep things consistent as your business grows.',
+            'Yes. We can include training so your team understands the key decisions and keeps things consistent as the business grows.',
         },
         {
-          question: 'How will we know if it is working?',
+          question: 'How do we know if it\'s working?',
           answer:
-            'We track things you can understand: whether your pages show up in search results, whether your business details are correct across the web, whether your site is technically healthy, and whether traffic is growing.',
+            'We track things you can understand: do your services show up in search, are your details right across the web, is the site technically healthy. And is traffic growing.',
         },
         {
-          question: 'What if our website needs a complete overhaul first?',
+          question: 'What if our website needs rebuilding first?',
           answer:
-            'We will tell you. Sometimes the smartest first step is fixing the website before layering SEO on top. We can help with that directly or guide your team on what to prioritise.',
+            'We\'ll tell you. Sometimes the smartest first step is fixing the website before layering SEO on top. We can handle that directly or guide your team on what to prioritise.',
         },
       ],
     },
   },
   inlineCta: {
-    title: 'Not sure why your competitors show up on Google and you do not?',
+    title: 'Why am I not showing up?',
     description:
-      'Tell us what you do and where you operate. We will review how your business appears on Google right now and show you what is holding you back.',
+      'Drop your business name and postcode. We check how you appear on Google right now and what\'s holding you back.',
   },
   cta: {
-    title: 'Want to know why your competitors are showing up and you are not?',
+    title: 'Find out why they show up and you don\'t',
     description:
-      'Tell us what you do and where you work. We take a look at how your business appears on Google right now and tell you what is missing.',
+      'Your business name and area. We look at how Google sees you and come back with what\'s off.',
   },
 } satisfies ServicePageData;

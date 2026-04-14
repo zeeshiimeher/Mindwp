@@ -228,318 +228,318 @@ export const homepageData: HomepageData = {
     },
   },
   hero: {
-    badge: 'Smart Websites for Service Businesses',
-    title: 'A website that helps your service business bring in and handle enquiries properly',
+    badge: 'For Service Businesses',
+    title: 'Busy. Leaking. Running on guesswork.',
     description:
-      'We build Smart Websites that connect how people find you, how they get in touch, and how enquiries are handled — so your website works as part of the business, not just a page people land on.',
-    valueProps: ['Right Enquiries', 'Search Ready', 'Built to Grow'],
+      "Your diary is full. But calls still go to voicemail. Enquiries sit in inboxes. Happy customers leave without a word. The work is good. Everything around it isn't.",
+    valueProps: ['Missed calls', 'Dead enquiries', 'Invisible online'],
     primaryAction: {
-      label: 'See how Smart Websites work',
-      href: '/services/smart-website-systems',
+      label: "What's actually going wrong?",
+      href: '/contact',
     },
   },
   infrastructureGaps: {
-    badge: 'Where Websites Fall Short',
-    title: 'Traffic that doesn’t turn into enquiries',
+    badge: "What's Actually Happening",
+    title: 'The business is working. The business is also leaking.',
     description:
-      'Most service businesses have a website that looks fine but does not do enough. It does not help people find you, does not make it easy to get in touch, and does not support follow-up — leading to missed opportunities and unnecessary manual work.',
+      "Not a dramatic failure. Not a crisis. Just a steady drip of missed opportunities and invisible damage. Compounding every week.",
     problems: [
       {
         icon: Search,
-        title: 'Hard to be found when people are searching',
+        title: "Nobody can find you when they need you",
         description:
-          'When potential clients can’t find you online or in local results, your website isn’t supporting discovery.',
+          "Someone nearby needs exactly what you do. They search. You don't show up. The competitor with a worse service gets the call.",
         solution:
-          'We implement a visibility-ready structure—pages, technical foundations, and local signals—so discovery is built in from the start.',
-        impact: 'Low discovery in search',
+          'Local visibility from day one. The right searches reach you.',
+        impact: 'Invisible locally',
       },
       {
         icon: Workflow,
-        title: 'Unclear enquiry handling',
+        title: "The phone rings. The team's on a job.",
         description:
-          'When enquiries come in without clear handling, responses become inconsistent and time gets lost.',
+          "Three missed calls by lunchtime. You find out when you check your phone at 6pm. Two already booked someone else.",
         solution:
-          'We set up clear steps — forms, notifications, and team assignments — so every enquiry gets a proper response.',
-        impact: 'Inconsistent follow-up',
+          'Every missed call caught, logged, and chased. Before they ring someone else.',
+        impact: 'Calls lost daily',
       },
       {
         icon: SlidersHorizontal,
-        title: 'Traffic without a clear next step',
+        title: 'Messages in five different places. Nobody tracking them.',
         description:
-          'Website visits don’t become enquiries when the journey and decision path aren’t clear or easy to follow.',
+          "Facebook DMs, voicemails, form submissions, texts. Some get answered. Some don't. Nobody knows which is which.",
         solution:
-          'We implement clear page structure and calls-to-action that guide visitors to the right next step—without pressure.',
-        impact: 'Unclear on-site journey',
+          'One place. Clear ownership. Follow-up.',
+        impact: 'Scattered and slow',
       },
     ],
   },
   smartWebsiteFramework: {
-    badge: 'The Smart Website Difference',
-    title: 'How a Smart Website actually works',
+    badge: 'Sound Familiar?',
+    title: "You've probably seen some of this already",
     description:
-      'A Smart Website connects how people find you, how they get in touch, and how you or your team handles enquiries — so nothing is missed and every enquiry is handled properly.',
-    journeyTitle: 'How it works: from search to follow-up',
+      "These are the things that slip. Not emergencies. Quiet leaks that add up until the numbers stop making sense.",
+    journeyTitle: 'Where it starts to break',
     principles: [
       {
         icon: Check,
-        title: 'Everything Works Together',
+        title: 'Tuesday. Four missed calls. Nobody knew.',
         description:
-          'Search, enquiries, and follow-up are connected from the start — not bolted on separately.',
+          "Busy morning. Calls stacked up. By the time someone looked, two were already gone.",
       },
       {
         icon: Search,
-        title: 'Built to Be Found in Search',
+        title: 'Someone visits the site, scrolls, leaves',
         description:
-          'Search and local discovery are part of the build from day one — not something you have to add later.',
+          "Can't tell what you do. Can't figure out the next step. Interested and gone in thirty seconds.",
       },
       {
         icon: Database,
-        title: 'Enquiries Go to the Right Place',
+        title: 'Old enquiries. No follow-up. Just sitting there.',
         description:
-          'Every enquiry is captured and sent to the right person, so your team can respond quickly and consistently.',
+          "Quotes from months ago. Good customers who never heard from you again.",
       },
       {
         icon: SlidersHorizontal,
-        title: 'Automation Where It Actually Helps',
+        title: 'Happy customers. Twelve reviews. Competitor has eighty.',
         description:
-          'Automation is added only where it genuinely helps — saving time and improving response speed while keeping the personal touch.',
+          'Good work. No asks. No proof.',
       },
       {
         icon: Wrench,
-        title: 'Built to Grow With You',
+        title: 'Replies take hours. Sometimes a day.',
         description:
-          'Your website can grow as your services change — without needing a full redesign every time.',
+          "Nobody dropped the ball. The message sat there.",
       },
     ],
     journeySteps: [
-      { icon: Search, title: 'They Search', subtitle: 'Google / Maps', iconType: 'primary' },
-      { icon: Globe, title: 'They Land', subtitle: 'Your Website', iconType: 'accent' },
-      { icon: Workflow, title: 'They Engage', subtitle: 'Chat or Call', iconType: 'secondary' },
-      { icon: Database, title: 'System Captures', subtitle: 'Enquiry Saved', iconType: 'primary' },
-      { icon: Calendar, title: 'They Book', subtitle: 'Next Step', iconType: 'secondary' },
-      { icon: ShieldCheck, title: 'They Review', subtitle: 'Ongoing Trust', iconType: 'accent' },
+      { icon: Search, title: 'Invisible', subtitle: 'Locally', iconType: 'primary' },
+      { icon: Globe, title: 'Site Visit', subtitle: 'Then Gone', iconType: 'accent' },
+      { icon: Workflow, title: 'Missed Calls', subtitle: 'Every Week', iconType: 'secondary' },
+      { icon: Database, title: 'Dead Leads', subtitle: 'In the CRM', iconType: 'primary' },
+      { icon: Calendar, title: 'Slow Reply', subtitle: 'Too Late', iconType: 'secondary' },
+      { icon: ShieldCheck, title: 'No Proof', subtitle: 'Online', iconType: 'accent' },
     ],
-    journeyNote: 'Each step connects to the next',
+    journeyNote: "These aren't separate problems. They're connected.",
     cta: {
-      title: 'See how this could work for your business',
+      title: 'Something here feel familiar?',
       description:
-        'We can walk through how your website currently handles enquiries and where a more structured setup could make things easier.',
+        "Tell us what you're seeing. We'll find the leak.",
     },
   },
   implementationSection: {
-    title: 'Built to match how your business actually runs',
+    title: 'We look at the business first. Then we fix it.',
     description:
-      'We build Smart Websites as a working part of your business — connecting your services, enquiry handling, and follow-up so your team can handle work consistently.',
+      "Not a template. Not a redesign. We find what's breaking and sort out what's around it.",
     steps: [
       {
         number: '01',
-        title: 'Clear Structure',
+        title: 'We look at what you have',
         description:
-          'Your services, pages, and contact options are organised so visitors find what they need — and your team knows what to do next.',
+          "How calls come in. Where leads go. What happens after. Obvious fast.",
       },
       {
         number: '02',
-        title: 'Fits Your Process',
+        title: 'We show you where it leaks',
         description:
-          'Set up to match how your team already handles enquiries — who responds, what happens next, and how follow-up works.',
+          "No pitch deck. A short, honest rundown of what's falling apart.",
       },
       {
         number: '03',
-        title: 'Easy to Improve Over Time',
+        title: 'The leaks that cost money. Those get fixed first.',
         description:
-          'Designed so you can make changes and improvements without starting from scratch.',
+          "Missed calls. Dead leads. Pages nobody finds. Damage that's already happening.",
       },
       {
         number: '04',
-        title: 'Calm, Careful Delivery',
+        title: 'It runs. You stop thinking about it.',
         description:
-          'Delivered through a steady process focused on getting things right — not rushing to launch.',
+          "Not a project that needs managing. Enquiries, follow-up, visibility — keeps going while everyone's out on jobs.",
       },
     ],
   },
   clientJourney: {
-    badge: 'How Enquiries Flow',
-    title: 'From first enquiry to reliable follow-up',
+    badge: 'The Shift',
+    title: 'What changes when things stop slipping',
     description:
-      'Every enquiry is captured, sent to the right person, and recorded properly. Follow-up happens consistently — so enquiries are handled properly and nothing slips through the cracks.',
+      "Not a sales pitch. The difference between a business that catches everything and one that doesn't.",
     steps: [
       {
         number: '01',
         icon: Layers,
-        title: 'Clear Ways to Get in Touch',
-        subtitle: 'Forms, calls, and bookings',
+        title: 'Enquiries arrive in one place',
+        subtitle: 'Not scattered across five apps',
         description:
-          'Whether someone fills in a form, calls, or books online — the enquiry reaches your team in an organised way that matches your services.',
+          "Calls, forms, messages. All captured. Nothing hidden. One place to check instead of hunting through inboxes.",
         highlights: [
-          'Contact options matched to your services',
-          'Clear paths for calls, forms, and bookings',
-          'Every enquiry starts in the right place',
+          'Every channel feeding into one record',
+          'Nothing missed because someone forgot to check',
+          'Clear trail for every enquiry',
         ],
         iconType: 'primary',
       },
       {
         number: '02',
         icon: Database,
-        title: 'Sent to the Right Person',
-        subtitle: 'Nothing gets lost',
+        title: 'Nothing gets lost in the handoff',
+        subtitle: 'Assigned. Tracked. Followed up.',
         description:
-          'Each enquiry goes to the right team member, gets recorded, and stays visible — so there is no confusion about who is handling what.',
+          "Leads go to the right person. You can see where things stand. No more limbo.",
         highlights: [
-          'Enquiries assigned to the right person',
-          'Everything recorded in one place',
-          'Clear responsibility for every lead',
+          'Routed to the right person without asking',
+          'You can see where every lead stands',
+          'No more guessing who handled what',
         ],
         iconType: 'secondary',
       },
       {
         number: '03',
         icon: Workflow,
-        title: 'Consistent Follow-Up',
-        subtitle: 'Nothing falls through the cracks',
+        title: 'Follow-up happens on schedule',
+        subtitle: 'Not when someone remembers',
         description:
-          'Follow-up happens on time, your team can see where things stand, and you can spot what needs improving.',
+          "Reminders fire. Responses go out. The gap between enquiry and reply shrinks from days to minutes.",
         highlights: [
-          'Follow-up that runs on schedule',
-          'Your team can see every lead status',
-          'Easy to spot what needs improving',
+          'Timed follow-up instead of manual chasing',
+          "Replies that don't depend on who's working",
+          'Leads that used to go cold get caught',
         ],
         iconType: 'accent',
       },
     ],
     cta: {
-      title: 'Let’s review how your enquiries and follow-up are currently handled',
+      title: 'Where are your enquiries dropping?',
       description:
-        'We will look at how enquiries come in, how your team handles them, and where things could be made more consistent and easier to manage.',
+        "How things run right now. You see the gaps yourself.",
     },
   },
   systemCapabilities: {
-    title: 'What’s inside your Smart Website',
+    title: 'Where service businesses break',
     description:
-      'These are the main parts that work together inside your Smart Website — handling enquiries, bookings, follow-up, and search visibility as one connected system.',
-    visualMetaLabel: 'Component overview',
-    tabsAriaLabel: 'System components',
-    defaultComponentId: 'enquiry',
+      "Five pressure points. Each one leaks money quietly. Most businesses have at least three.",
+    visualMetaLabel: 'Breakage point overview',
+    tabsAriaLabel: 'Business pressure points',
+    defaultComponentId: 'calls',
     components: [
       {
-        id: 'enquiry',
+        id: 'calls',
         icon: Layers,
-        title: 'Enquiry Capture',
-        subline: 'How people get in touch with you.',
+        title: 'Missed Calls',
+        subline: 'Ringing out during every job.',
         description:
-          'Sets up clear ways for people to contact you — through forms, calls, or booking pages that match your actual services. The goal is to make sure every enquiry arrives in a way your team can act on.',
-        outcome: 'Every enquiry arrives in a way your team can act on.',
+          "The phone goes while everyone's on site. Four rings. Voicemail. By the time someone checks, they've called the next name on the list.",
+        outcome: "Calls get caught. Logged. Chased. Even when nobody's free.",
         benefits: [
-          'Contact options that match your services',
-          'The right information captured upfront',
-          'Clear first step for every enquiry',
-          'Consistent intake across all channels',
+          'Answered or not, it gets logged',
+          'Missed calls trigger a follow-up',
+          'Team sees who called and when',
+          'No more checking voicemail at 6pm',
         ],
         visual: {
           stats: [
-            { label: 'Entry Paths', value: 'Intentional' },
-            { label: 'Information', value: 'Complete' },
-            { label: 'Intake', value: 'Consistent' },
-            { label: 'Alignment', value: 'Service-Based' },
+            { label: 'Calls caught', value: 'All' },
+            { label: 'Follow-up', value: 'Triggered' },
+            { label: 'Response gap', value: 'Minutes' },
+            { label: 'Visibility', value: 'Full' },
           ],
           gradientFrom: 'var(--gradient-accent-from)',
           gradientTo: 'var(--gradient-accent-to)',
         },
       },
       {
-        id: 'routing',
+        id: 'leads',
         icon: Database,
-        title: 'Lead Management',
-        subline: 'How enquiries reach the right person and stay on record.',
+        title: 'Dead Leads',
+        subline: 'Hundreds of names. Nothing happening.',
         description:
-          'Makes sure each enquiry goes to the right team member and gets properly recorded — so there is no confusion about ownership and nothing gets lost.',
-        outcome: 'No more lost enquiries or confusion about who handles what.',
+          "A hundred names sitting in a spreadsheet. Old quotes, past customers, half-finished conversations. Nobody's opened it in weeks.",
+        outcome: 'Some of those old leads start replying. Past customers hear from you.',
         benefits: [
-          'Enquiries assigned to the right person',
-          'Clear ownership for every lead',
-          'All records kept in one place',
-          'Smooth handover between team members',
+          'Dormant leads flagged and woken up',
+          'Past customers contacted at the right time',
+          'Old quotes get chased',
+          'Revenue from work you already earned',
         ],
         visual: {
           stats: [
-            { label: 'Routing', value: 'Assigned' },
-            { label: 'Records', value: 'Centralised' },
-            { label: 'Ownership', value: 'Explicit' },
-            { label: 'Visibility', value: 'Internal' },
+            { label: 'Lead status', value: 'Known' },
+            { label: 'Re-engagement', value: 'Timed' },
+            { label: 'Past customers', value: 'Active' },
+            { label: 'Lead flow', value: 'Visible' },
           ],
           gradientFrom: 'var(--gradient-secondary-from)',
           gradientTo: 'var(--gradient-secondary-to)',
         },
       },
       {
-        id: 'followup',
+        id: 'visibility',
         icon: Workflow,
-        title: 'Follow-Up',
-        subline: 'How you stay on top of every lead.',
+        title: 'Invisible Online',
+        subline: "They search. You don't show up.",
         description:
-          'Sets up follow-up timing and reminders so leads do not go cold. Your team knows when to follow up and nothing gets forgotten.',
-        outcome: 'Fewer dropped conversations and faster responses.',
+          "Someone types in exactly what you do. Three competitors come up. You're nowhere. Not because they're better. Because they showed up.",
+        outcome: "The right searches find you. Maps. Results. Locally.",
         benefits: [
-          'Follow-up reminders that run on time',
-          'Clear ownership of every task',
-          'Consistent responses across the team',
-          'Easy to see where each lead stands',
+          'Pages structured for the searches that matter',
+          'Local presence set up. Not guessed at.',
+          'Service areas showing up where they should',
+          'Fewer calls going to your competitors',
         ],
         visual: {
           stats: [
-            { label: 'Follow-Up', value: 'Timed' },
-            { label: 'Workflow', value: 'Structured' },
-            { label: 'Tracking', value: 'Active' },
-            { label: 'Consistency', value: 'Maintained' },
+            { label: 'Local reach', value: 'Visible' },
+            { label: 'Search match', value: 'Aligned' },
+            { label: 'Pages', value: 'Done right' },
+            { label: 'Discovery', value: 'Active' },
           ],
           gradientFrom: 'var(--gradient-accent-from)',
           gradientTo: 'var(--gradient-accent-to)',
         },
       },
       {
-        id: 'booking',
+        id: 'replies',
         icon: Calendar,
-        title: 'Booking & Scheduling',
-        subline: 'How bookings match your real availability.',
+        title: 'Slow Replies',
+        subline: 'Six hours. Sometimes longer.',
         description:
-          'Connects your booking page to your real availability and service types — so people can book the right thing at the right time, with automatic confirmations.',
-        outcome: 'Less back-and-forth to get appointments booked.',
+          "An enquiry arrives at 10am. Someone sees it at 4pm. By then the customer has moved on. Not because anyone forgot. Because nothing flagged it.",
+        outcome: 'Enquiries get a reply. Fast. Follow-up stops depending on memory.',
         benefits: [
-          'Booking pages matched to your services',
-          'Real availability shown to customers',
-          'Automatic confirmations and reminders',
-          'Fewer scheduling mix-ups',
+          'Enquiries get a reply. Not six hours later.',
+          'Right person gets the alert',
+          'You see how long replies take',
+          'That six-hour gap starts shrinking.',
         ],
         visual: {
           stats: [
-            { label: 'Scheduling', value: 'Aligned' },
-            { label: 'Confirmations', value: 'Automated' },
-            { label: 'Availability', value: 'Real-Time' },
-            { label: 'Friction', value: 'Reduced' },
+            { label: 'First contact', value: 'Instant' },
+            { label: 'Team alert', value: 'Immediate' },
+            { label: 'Follow-up', value: 'Scheduled' },
+            { label: 'Response gap', value: 'Shrinking' },
           ],
           gradientFrom: 'var(--color-accent-warning)',
           gradientTo: 'var(--color-accent-warning-90)',
         },
       },
       {
-        id: 'visibility',
+        id: 'proof',
         icon: ShieldCheck,
-        title: 'Search & Discovery',
-        subline: 'How people find you online.',
+        title: 'No Proof Online',
+        subline: 'Five-star work. Barely any proof.',
         description:
-          'Makes sure your website is set up so the right people can find you — through Google, local results, and maps. Your services and locations are clearly presented so search engines match you with the right searches.',
-        outcome: 'The right people find you when they search for what you offer.',
+          "Happy customers. But online? Nothing. They leave without saying a word. Competitors with worse service have five times the reviews.",
+        outcome: 'Reviews start showing up. Without anyone chasing.',
         benefits: [
-          'Services clearly organised for search',
-          'Local search and maps set up properly',
-          'Search presence matched to real services',
-          'Easy to track how people find you',
+          'Review requests after every job',
+          "Asked when they're happiest",
+          'Proof visible where people search',
+          'Reputation catching up to the work',
         ],
         visual: {
           stats: [
-            { label: 'Structure', value: 'Aligned' },
-            { label: 'Signals', value: 'Consistent' },
-            { label: 'Starting Points', value: 'Defined' },
-            { label: 'Measurement', value: 'Connected' },
+            { label: 'Review flow', value: 'Ongoing' },
+            { label: 'Timing', value: 'Post-job' },
+            { label: 'Visibility', value: 'Search' },
+            { label: 'Growth', value: 'Steady' },
           ],
           gradientFrom: 'var(--gradient-secondary-from)',
           gradientTo: 'var(--gradient-secondary-to)',
@@ -548,250 +548,249 @@ export const homepageData: HomepageData = {
     ],
   },
   infrastructureLayers: {
-    title: 'What your Smart Website is built on',
+    title: "It's not a website project. It's infrastructure.",
     description:
-      'A Smart Website is the foundation. Everything else — enquiry handling, bookings, records, and follow-up — works on top of it as one connected system.',
+      "The site is the surface. Underneath: what happens to enquiries, follow-up, visibility, proof collection, lead recovery. Connected. Running.",
     foundation: {
       badge: 'Foundation',
-      title: 'Smart Website',
+      title: 'Business Infrastructure',
       description:
-        'Clear page structure, easy-to-follow journeys, and reliable enquiry handling — forming the foundation of a website that supports how your business runs reliably day to day.',
+        "Everything needed to catch and keep the work that's already coming in. Matched to how you run.",
       checklist: [
-        'Services clearly organised and easy to navigate',
-        'Clear contact options with obvious next steps',
-        'Easy to update and improve without rebuilding',
-        'Set up to match how your team actually works',
-        'Fewer missed enquiries and manual mistakes',
+        'Calls caught and chased without asking',
+        'Enquiries reaching the right person. First time.',
+        'Past leads contacted on a schedule',
+        'Reviews requested at the right moment',
+        'Visibility where your customers search',
       ],
     },
     layers: [
       {
-        title: 'Search & Local Discovery',
+        title: 'Visibility Layer',
         description:
-          'Makes sure the right people can find you when they search — and that your services and locations are clearly presented in search results and maps.',
+          "Local search, maps, service pages. People find you when they need what you do.",
       },
       {
-        title: 'Enquiry & Booking Systems',
+        title: 'Capture Layer',
         description:
-          'Handles how enquiries come in, what information is collected, and how people book — so every request moves to the right next step.',
+          "Forms, calls, bookings. Caught and logged. Nothing lost between channels.",
       },
       {
-        title: 'Lead Records & Follow-Up',
+        title: 'Follow-Up Layer',
         description:
-          'Records every enquiry, assigns it to the right person, and keeps follow-up on track — so nothing falls through the cracks.',
+          "Instant replies, team alerts, timed reminders. The gap between enquiry and reply closes on its own.",
       },
       {
-        title: 'Automation & Tracking',
+        title: 'Proof Layer',
         description:
-          'Adds helpful automation and tracking where it makes a real difference — without unnecessary complexity.',
+          "Review requests, reputation tracking. Evidence that shows up while everyone works.",
       },
     ],
     trustFoundations: {
-      title: 'Built for established service businesses.',
+      title: 'This works when the business is already running.',
       description:
-        'Smart Websites are built for established service businesses that need reliable enquiry handling, consistent follow-up, and more control over how things run day to day.',
+        "Not for startups. Not for side projects. For businesses where missed work costs real money.",
       strongFitBadge: 'Strong Fit',
-      strongFitTitle: 'This is a strong fit when:',
+      strongFitTitle: 'This works well when:',
       strongFitItems: [
         {
-          title: 'Established service business with meaningful job value',
-          description: 'Typically $300+ per job, with repeat work or clear long-term value.',
+          title: 'Jobs are worth real money',
+          description: 'Hundreds per job. Repeat work. Real customer value.',
         },
         {
-          title: 'Enquiries need consistent handling',
-          description: 'You want every enquiry to reach the right person with clear follow-up.',
+          title: 'Enquiries come in but get lost',
+          description: "The demand is there. What happens to them isn't.",
         },
         {
-          title: 'Your business has moving parts',
-          description: 'Multiple services, team members, locations, or stages of qualification.',
+          title: 'Everyone is busy doing the actual work',
+          description: "No time to chase leads, check voicemails, or send review requests.",
         },
         {
-          title: 'You’re already investing in visibility',
-          description: 'And want your website to support that investment properly.',
+          title: "You've tried marketing before",
+          description: "Spent money on ads or SEO. Got traffic. Didn't convert enough of it.",
         },
         {
-          title: 'You value long-term stability',
-          description: 'A measured implementation that evolves as operations grow.',
+          title: 'You want something that runs, not another project',
+          description: 'Set up once. Keeps going.',
         },
       ],
-      notDesignedBadge: 'Not Designed For',
-      notDesignedTitle: 'This is not the right fit if:',
+      notDesignedBadge: 'Not The Right Fit',
+      notDesignedTitle: "Probably not right if:",
       notDesignedItems: [
         {
-          title: 'Brochure-style redesign projects',
-          description: 'Where the goal is mainly visual refresh without operational improvement.',
+          title: 'You need a quick visual refresh',
+          description: "A brochure redesign without operational change.",
         },
         {
-          title: 'Primarily price-driven comparisons',
-          description: 'Where the lowest upfront cost matters more than long-term reliability.',
+          title: "You're comparing on price alone",
+          description: "Lowest cost matters more than what gets built.",
         },
         {
-          title: 'Feature-driven builds',
-          description: 'Prioritising a checklist of tools over a connected system.',
+          title: 'You want a feature checklist',
+          description: "Tools for the sake of tools. Not connected to anything.",
         },
         {
-          title: 'Short-term marketing experiments',
-          description: 'When short-term testing takes priority over disciplined systems.',
+          title: "You're testing short-term campaigns",
+          description: "Quick experiments rather than something built to last.",
         },
         {
-          title: 'Rebuilds focused on looks, not function',
-          description:
-            'Where the goal is a visual refresh without improving how the site actually works.',
+          title: 'The business is brand new',
+          description: "No existing customer base or enquiry volume to work with.",
         },
       ],
     },
   },
   industries: {
-    title: 'Who we work best with',
+    title: 'Made for businesses that do the work',
     description:
-      'We work with service businesses where missed enquiries, slow follow-up, or poor search visibility create daily friction — and where a better website setup makes a real difference.',
+      "Trades. Services. Professionals. Businesses where everyone's out doing the job. Enquiries pile up. Calls ring out. Customers slip away.",
     items: [
       {
         icon: Scissors,
         title: 'Beauty & Personal Care',
         description:
-          'Beauty and personal care businesses that value clear discovery and dependable booking workflows.',
+          "Bookings scattered across Instagram DMs and phone calls. No-shows nobody chased. Reviews that never got requested.",
       },
       {
         icon: Wrench,
-        title: 'Home Services',
+        title: 'Trades & Home Services',
         description:
-          'Trades and home service businesses that need enquiry handoff and organised follow-up.',
+          "Van's out. Phone's ringing. Quotes sent last month still sitting there. Half the leads came from a Google listing that hasn't been touched in years.",
       },
       {
         icon: Users,
-        title: 'Legal & Professional Services',
+        title: 'Professional Services',
         description:
-          'Law firms, accountants, and consultants that need organised enquiry handling and a credible online presence.',
+          "Consultations booked by email chains. Follow-up that depends on someone remembering. A website that doesn't match the work.",
       },
       {
         icon: Calendar,
-        title: 'Automotive & Local Services',
+        title: 'Local & Appointment-Based',
         description:
-          'Auto repair shops, dental clinics, and other local businesses that depend on steady bookings and strong local search presence.',
+          "Clinics, repair shops, studios. Steady demand. Booking friction. Review counts that don't match the customer satisfaction.",
       },
     ],
   },
   visibilityTimeline: {
-    badge: 'Search Visibility Over Time',
-    title: 'How your search visibility grows over time',
+    badge: 'What Changes Over Time',
+    title: "It doesn't all happen at once. That's the point.",
     description:
-      'SEO results do not happen overnight, and they do not grow in a straight line. Here is how progress typically develops when the work is done properly.',
+      "The urgent stuff gets fixed first. Then the rest catches up. Then it compounds.",
     items: [
       {
-        phase: 'Stage 1',
-        title: 'Getting the Basics Right',
+        phase: 'Week 1-2',
+        title: 'Stop the bleeding',
         icon: Layers,
         items: [
-          'Technical setup checked and made solid',
-          'Pages organised with clear connections between them',
-          'Page titles, descriptions, and business details set up properly',
-          'Google Business Profile and key details consistent',
+          'Missed calls caught and followed up',
+          'Enquiries going to the right person. Nothing in limbo.',
+          'Obvious visibility problems fixed',
+          'Leads visible in one place',
         ],
       },
       {
-        phase: 'Stage 2',
-        title: 'Matching Services & Locations',
+        phase: 'Month 1-2',
+        title: 'Get the groundwork in',
         icon: Search,
         items: [
-          'Service pages and location coverage clearly defined',
-          'Contact options linked to the services you actually offer',
-          'Consistent setup across Google, maps, and your website',
-          'Where your enquiries come from is tracked clearly',
+          'Service pages matched to searches people run',
+          'Local presence sorted across maps and listings',
+          'Review requests going out after completed jobs',
+          'Follow-up running without reminders',
         ],
       },
       {
-        phase: 'Stage 3',
-        title: 'Regular Improvements',
+        phase: 'Month 3-6',
+        title: 'Start compounding',
         icon: Workflow,
         items: [
-          'Priority pages reviewed on a regular schedule',
-          'Content, structure, and links improved step by step',
-          'Key pages kept fresh and relevant',
-          'Local presence updated as your services change',
+          'Search visibility climbing for the terms that matter',
+          'Review count growing steadily',
+          'Old leads coming back and converting',
+          'Response times down. Conversion rate up.',
         ],
       },
       {
-        phase: 'Stage 4',
-        title: 'Steady Monitoring',
+        phase: 'Ongoing',
+        title: 'Runs without you',
         icon: ShieldCheck,
         items: [
-          'Regular check-ins instead of reacting to problems',
-          'Updates made as your services and priorities shift',
-          'Important pages kept to a clear standard',
-          'Changes and decisions documented so nothing is forgotten',
+          'Monthly reviews instead of reactive scrambles',
+          'Shifts when you do',
+          'Proof building. Visibility climbing. Leads moving.',
+          'Everyone does the work. The rest runs.',
         ],
       },
     ],
-    note: 'Timelines vary based on industry, competition, and starting point. SEO works best as a long-term, continuously optimised process.',
+    note: "Every business starts somewhere different. We figure out what's leaking first and work from there.",
   },
   caseStudies: {
-    title: 'How this works in real businesses',
+    title: 'One business. Before and after.',
     description:
-      'Examples of Smart Websites improving enquiry handling and making day-to-day operations more reliable.',
+      "Not a portfolio. What changed when things stopped slipping through.",
     quote:
-      'We moved from a basic website to a connected system. Enquiries now land in the right place, follow-up is clearer, and the business feels easier and more organised day to day.',
-    quoteAuthor: '— Lisa Chen, Pawfect Mobile Grooming, Birmingham',
+      'We moved from a basic website to something connected. Enquiries land in the right place, follow-up is clearer. The business runs easier now.',
+    quoteAuthor: '\u2014 Lisa Chen, Pawfect Mobile Grooming, Birmingham',
   },
   faq: {
-    title: 'Common Questions',
+    title: 'Straight answers',
     items: [
       {
-        question: 'What does MindWP actually do?',
+        question: "What do you build?",
         answer:
-          'We build Smart Websites for established service businesses. Every project starts with how the business actually works — your services, how enquiries come in, and how your team handles follow-up. Search visibility, lead management, and automation are added where they genuinely help.',
+          "What happens underneath a website. Enquiries. Follow-up. Visibility. Proof collection. Connected. For service businesses that already have the work.",
       },
       {
-        question: 'What makes a Smart Website different from a regular website?',
+        question: "How is this different from getting a new website?",
         answer:
-          'A Smart Website is built as a working part of your business — not a one-off design project. It is designed around your services, enquiry handling, and long-term growth.',
+          "A website is a page people land on. This catches calls, routes enquiries, chases follow-up, and gets you reviews. The website is one piece.",
       },
       {
-        question: 'Do you work with businesses that already have a website?',
+        question: "We already have a website. Can you work with that?",
         answer:
-          'Yes. We assess what is in place and determine whether refinement or a rebuild is structurally appropriate based on complexity and integration needs.',
+          "Usually. We look at what you have. Sometimes the site is fine and everything around it is broken.",
       },
       {
-        question: 'Is SEO included?',
+        question: "Is SEO included?",
         answer:
-          'Smart Websites include the technical setup that supports search visibility. Ongoing SEO work is available when it aligns with your business priorities.',
+          "Baked into the site. Ongoing SEO when it makes sense.",
       },
       {
-        question: 'Can the system support booking, enquiries, and CRM handling?',
+        question: "What about missed calls and follow-up?",
         answer:
-          'Yes. Enquiry forms, booking pages, lead records, and follow-up tools are set up where they improve how your team handles incoming work.',
+          "Missed calls get caught and chased. Enquiries get routed. Reminders fire on schedule. Nobody remembers. It runs.",
       },
       {
-        question: 'How does follow-up work after someone contacts us?',
+        question: "What kind of businesses is this for?",
         answer:
-          'Follow-up is set up around how your team works — confirmations, team assignments, reminders, and clear status — so handling stays consistent.',
+          "Established service businesses. Trades, professionals, local services. Businesses where everyone is out doing the work and enquiries pile up unhandled.",
       },
       {
-        question: 'What types of businesses do you work with?',
+        question: "How long before we see results?",
         answer:
-          'Primarily established service businesses that value well-organised systems and long-term reliability over short-term tactics.',
+          "Missed calls and follow-up? Weeks. Visibility and reviews? Months. It compounds.",
       },
       {
-        question: 'Do you provide ongoing refinement?',
+        question: "Do you do ongoing work or is it a one-off?",
         answer:
-          'Yes. We offer ongoing review and practical updates as your services, priorities, and search visibility develop.',
+          "Either way. Everything keeps running. Ongoing means we keep tightening as the business shifts.",
       },
       {
-        question: 'How do we get started?',
+        question: "How do we start?",
         answer:
-          'We start with a conversation to understand how your business works today — your services, how enquiries come in, and what you want to improve — then outline a sensible next step.',
+          "We look at how enquiries come in right now. Where calls go. What happens to leads. Then come back with what's leaking.",
       },
     ],
   },
   cta: {
     footer: {
-      title: 'If your website is not supporting enquiries properly, it is worth fixing',
+      title: "Something here hit close. Find where it's breaking.",
       description:
-        'We can look at how your website is currently set up, how enquiries are handled, and what could be improved to make enquiry handling more reliable.',
+        "Enquiries. Calls. Follow-up. Find where yours are leaking.",
       metaItems: [
-        { text: 'Calm, consultative approach' },
-        { text: 'Clarity before complexity' },
-        { text: 'No pressure, no upsells' },
+        { text: 'Free diagnostic' },
+        { text: 'No commitment' },
+        { text: 'Honest assessment' },
       ],
     },
   },

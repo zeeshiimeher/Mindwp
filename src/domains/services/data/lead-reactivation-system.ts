@@ -33,140 +33,135 @@ export const leadReactivationSystemPage = {
     slug,
     title: 'Lead Reactivation System for Service Businesses | MindWP',
     description:
-      'Stop letting old enquiries, stalled quotes, and past customers sit unused. Structured reactivation that turns dormant pipeline into recovered revenue.',
+      'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
     schemaName: 'Lead reactivation system for service businesses',
     schemaDescription:
-      'Structured lead reactivation covering dormant lead segmentation, follow-up timing, re-engagement messaging, and ownership for recovering stalled opportunities.',
+      'Lead reactivation covering dormant lead segmentation, timed follow-up sequences, re-engagement messaging, and response routing for service businesses with unused pipeline.',
   }),
   hero: {
     badge: 'Lead Reactivation System',
-      title: 'Bring Old Leads Back Into Active Pipeline',
+    title: 'They Enquired Once. Nobody Followed Up.',
     description:
-      'Old enquiries, stalled quotes, and past customers do not come back because someone remembers to chase them at the right time. A structured reactivation system brings the right ones back with the right message at the right moment.',
-    list: [
-        'Dormant Leads',
-        'Timed Follow-up',
-        'Pipeline Recovery',
-    ],
+      'Hundreds of old contacts. Stalled quotes. Past customers who never heard from you again. The leads are there. Nobody\'s working them.',
+    list: ['Forgotten', 'Unworked'],
     cssPrefix: 'lead-reactivation-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
   sections: {
     foundation: {
-      badge: 'Where old opportunities get wasted',
-      title:
-        'You do not have a lead shortage. You have a follow-up shortage.',
+      badge: 'The neglected asset',
+      title: 'You don\'t need more leads. You need to work the ones you had.',
       description:
-        'Good opportunities are sitting in old enquiries, stalled quotes, and past-customer records. Nobody is working them because there is no system to bring them back.',
+        'Real opportunities sitting in old enquiries and stalled quotes. Nobody works them because there\'s no prompt and no message ready to go.',
       painPoints: [
         {
           before:
-            'Old enquiries sit in the CRM with no reason or prompt to contact them again.',
+            'Old enquiries in the CRM. Untouched. Nobody knows which are worth revisiting.',
           after:
-            'Reactivation rules create a practical reason, message, and timing for following up.',
+            'Reactivation rules give a reason, a message, and a time to follow up. Old leads get worked.',
         },
         {
           before:
-            'Teams remember some old opportunities but ignore most of them when work gets busy.',
+            'Someone remembers a stalled quote when things slow down. The rest get forgotten.',
           after:
-            'A defined workflow turns reactivation into a repeatable process instead of a memory task.',
+            'Defined sequence. Happens consistently. Not just when someone feels like it.',
         },
         {
           before:
-            'Past customers, stalled quotes, and cold prospects are all mixed together with no segmentation.',
+            'Past customers, cold prospects, dead quotes \u2014 all in the same inbox. No segmentation.',
           after:
-            'Different groups get handled with different triggers, messages, and next-step logic.',
+            'Each group gets different triggers, timing, and messages. Outreach feels relevant because it is. And when someone responds, it routes into the same follow-up flow as any other live lead.',
         },
       ],
     },
     reactivationScenarios: {
-      badge: 'Common recovery scenarios',
+      badge: 'Three types of dormant lead',
       title:
-        'Different dormant leads need different follow-up logic',
+        'Different contacts need different follow-up',
       description:
-        'Stalled quotes, cold enquiries, and past customers are not the same. The system works when each group gets the right message at the right time.',
+        'A stalled quote isn\'t the same as a cold enquiry. A past customer isn\'t the same as either. Each group needs its own message, timing, and next step.',
       scenarioLabel: 'Dormant opportunity',
       solutionLabel: 'Reactivation approach',
       items: [
         {
           icon: FileSearch,
-          title: 'Old quotes that never closed',
+          title: 'Quotes that stalled',
           scenario:
-            'A quote was sent, the prospect went quiet, and nobody followed up properly.',
+            'A quote went out. The prospect went quiet. Nobody chased it. The opportunity is probably still there — just unworked.',
           solution:
-            'Segment stalled quotes, set a timed follow-up path, and give the team a clear prompt to restart the conversation.',
+            'Segment stalled quotes by age and value. Set a timed follow-up path with a specific prompt to restart the conversation.',
           result:
-            'Stalled quote value gets revisited instead of sitting invisible in the pipeline.',
+            'Stalled quote value gets revisited before it expires completely.',
         },
         {
           icon: MessageSquare,
-          title: 'Enquiries that lost momentum',
+          title: 'Enquiries that drifted',
           scenario:
-            'A lead showed interest, but the conversation drifted because follow-up was weak or nobody owned it.',
+            'Someone reached out. The conversation started. Then it faded because follow-up was slow, vague, or nobody owned it.',
           solution:
-            'Re-engagement workflow with clearer triggers, messaging, and handoff so warm leads get picked up again.',
+            'Re-engagement sequence with clearer triggers, relevant messaging, and a defined handoff when the contact responds.',
           result: 'Warm conversations restart before they go fully cold.',
         },
         {
           icon: Users,
-          title: 'Past customers ready for repeat work',
+          title: 'Past customers who could return',
           scenario:
-            'Past customers could buy again or refer, but there is no structured way to reach them at the right time.',
+            'They bought once. Liked the work. Never heard from you again. They\'d come back if prompted. Nobody prompted them.',
           solution:
-            'Lifecycle-based follow-up around repeat-service windows and relevant return reminders.',
+            'Lifecycle-based follow-up timed around when repeat demand is naturally likely — not when the business needs revenue.',
           result:
-            'Existing customer relationships become a revenue source, not just a contact list.',
+            'Existing relationships become a revenue source, not a dormant contact list.',
         },
       ],
       alternatingItems: [
         {
-          title: 'Stalled quote follow-up',
+          title: 'Stalled quote recovery',
           description:
-            'A quote was sent, the prospect went quiet, and nobody followed up properly.',
+            'A quote went out. The prospect went quiet. Nobody chased it.',
           points: [
-            'Segment stalled quotes',
-            'Restart follow-up with timed prompts',
-            'Revisit stalled quote value',
+            'Segment stalled quotes by age and value',
+            'Restart with timed, relevant prompts',
+            'Recover pipeline value before it decays',
           ],
         },
         {
-          title: 'Enquiries losing momentum',
+          title: 'Drifted enquiry re-engagement',
           description:
-            'A lead showed interest, but the conversation drifted because follow-up was weak or nobody owned it.',
+            'The conversation started but faded. Follow-up was slow or unowned.',
           points: [
-            'Trigger re-engagement follow-up',
-            'Clarify messaging and handoff',
-            'Restart warm conversations',
+            'Trigger re-engagement with context',
+            'Clarify the message and next step',
+            'Restart warm conversations early',
           ],
         },
         {
           title: 'Past customer reactivation',
           description:
-            'Past customers could buy again or refer, but there is no structured way to reach them at the right time.',
+            'They bought once and never heard from you again. They\'d return if prompted.',
           points: [
-            'Trigger lifecycle follow-up',
-            'Send relevant return reminders',
-            'Recover repeat-work opportunities',
+            'Time follow-up to natural repeat windows',
+            'Send relevant return prompts',
+            'Turn past relationships into repeat revenue',
           ],
         },
       ],
     },
     auditAreas: {
-      badge: 'What the system needs',
-      title: 'Three layers that make reactivation work',
+      badge: 'Three layers that matter',
+      title: 'Segmentation, message logic, and ownership',
       description:
-        'Without segmentation, message logic, and ownership, re-engagement just becomes noise.',
+        'Without all three, re-engagement is just noise. The difference is whether old leads actually come back.',
       items: [
         {
           icon: Database,
-          title: 'Segment dormant opportunities',
+          title: 'Segment dormant contacts',
           description:
-            'Separate old opportunities so reactivation feels relevant, not random.',
+            'Separate old contacts into groups that actually make sense for follow-up.',
           checks: [
-            'Old enquiries versus old quotes',
-            'Past customers versus cold prospects',
+            'Old enquiries vs stalled quotes',
+            'Past customers vs cold prospects',
             'Lead age and lifecycle grouping',
-            'Priority opportunities worth pursuing first',
+            'Priority contacts worth pursuing first',
           ],
           iconType: 'primary' as const,
         },
@@ -174,86 +169,86 @@ export const leadReactivationSystemPage = {
           icon: Mail,
           title: 'Build the re-engagement logic',
           description:
-            'Define the message path, timing, and next step so follow-up actually happens.',
+            'Define the message, timing, and channel for each group. Make follow-up deliberate.',
           checks: [
             'Channel choice by contact type',
             'Timing rules and follow-up spacing',
-            'Message angles for each segment',
-            'Clear next actions when someone responds',
+            'Message angle for each segment',
+            'Defined next step when someone responds',
           ],
           iconType: 'accent' as const,
         },
         {
           icon: Workflow,
-          title: 'Track ownership and outcomes',
+          title: 'Route replies into action',
           description:
-            'Make sure replies move into a visible workflow instead of creating more mess.',
+            'Make sure responses move into a visible queue with a named owner, not back into the void.',
           checks: [
-            'Assigned owner for reactivated leads',
+            'Assigned owner for every reactivated lead',
             'Pipeline or CRM visibility',
             'Task creation or callback handoff',
-            'Simple reporting on what came back to life',
+            'Simple reporting on recovered outcomes',
           ],
           iconType: 'secondary' as const,
         },
       ],
     },
     processSection: {
-      badge: 'Reactivation flow',
-      title: 'How the system works',
+      badge: 'How the work runs',
+      title: 'Four steps from dormant to active',
       description:
-        'The details change by business, but the logic follows a clean sequence so follow-up stays controlled.',
+        'Details change by business, but the sequence stays the same. Segment, message, route, refine.',
       steps: [
         {
           number: '1',
-          title: 'Identify the dormant groups',
+          title: 'Identify dormant groups',
           description:
-            'Start by separating old enquiries, quotes, past customers, and stalled opportunities into useful segments.',
+            'Separate old enquiries, stalled quotes, past customers, and dead deals into useful segments. Start with who\'s worth contacting.',
         },
         {
           number: '2',
-          title: 'Set the message and timing rules',
+          title: 'Set message and timing rules',
           description:
-            'Define how and when each group should be contacted so the re-engagement feels relevant and controlled.',
+            'Define how and when each group hears from you. Relevant and controlled. Not a mass blast from a desperate month.',
         },
         {
           number: '3',
           title: 'Route responses into action',
           description:
-            'Make sure replies create a visible next step for the team instead of landing back in another unmanaged inbox.',
+            'Every reply creates a visible next step. Revived leads move forward instead of landing in an unmonitored inbox.',
         },
         {
           number: '4',
-          title: 'Refine around response quality',
+          title: 'Refine around what works',
           description:
-            'Watch what actually reopens conversations and adjust the workflow over time rather than treating it as fixed.',
+            'Track which sequences actually reopen conversations. Adjust based on evidence.',
         },
       ],
     },
     entryPoints: {
-      badge: 'Where reactivation can start',
-      title: 'Reactivation touches sales follow-up, CRM hygiene, and lifecycle timing',
+      badge: 'Where reactivation touches the business',
+      title: 'Sales follow-up, CRM hygiene, and lifecycle timing',
       description:
-        'This is not a generic email campaign. It sits across several parts of the business at once.',
+        'Not a generic email campaign. Reactivation sits across several parts of the business, targeting where old value is sitting and nobody is working it.',
       columns: [
         {
-          title: 'Old enquiries and quotes',
+          title: 'Old enquiries and stalled quotes',
           icon: Search,
           features: [
             {
               icon: Clock,
               name: 'Timed follow-up windows',
-              detail: 'Revisit opportunities based on how long they have been sitting inactive.',
+              detail: 'Revisit opportunities based on how long they have been sitting idle. Older contacts are not always dead.',
             },
             {
               icon: MessageSquare,
               name: 'Context-aware prompts',
-              detail: 'Use messages that reflect what the person asked about originally.',
+              detail: 'Messages that reference what the person originally asked about. Not a cold intro — a warm restart.',
             },
             {
               icon: Workflow,
-              name: 'Clear response routing',
-              detail: 'Move revived leads back into the right owner or stage quickly.',
+              name: 'Response routing',
+              detail: 'Move revived leads into a named owner and stage. No replies left floating.',
             },
           ],
         },
@@ -264,18 +259,18 @@ export const leadReactivationSystemPage = {
             {
               icon: Database,
               name: 'Segment cleanup',
-              detail: 'Separate true dead leads from leads that still justify a second attempt.',
+              detail: 'Separate genuinely dead contacts from leads that warrant one more attempt.',
             },
             {
               icon: FileSearch,
               name: 'Opportunity review',
-              detail: 'Spot which quotes, proposals, or stalled deals are worth re-opening first.',
+              detail: 'Identify which stalled quotes, proposals, or deals are worth re-opening first.',
             },
             {
               icon: Mail,
-              name: 'Follow-up sequence logic',
+              name: 'Follow-up sequence',
               detail:
-                'Use structured re-engagement instead of one-off messages sent under pressure.',
+                'Deliberate re-engagement instead of one-off messages sent when someone remembers.',
             },
           ],
         },
@@ -286,170 +281,169 @@ export const leadReactivationSystemPage = {
             {
               icon: Clock,
               name: 'Lifecycle timing',
-              detail: 'Reconnect when repeat demand is realistically likely, not at random.',
+              detail: 'Reconnect when repeat demand is naturally likely, not when the business needs a revenue boost.',
             },
             {
               icon: MessageSquare,
-              name: 'Relevant return offers',
-              detail: 'Frame the contact around maintenance, repeat work, or the next likely need.',
+              name: 'Relevant return prompts',
+              detail: 'Frame the contact around maintenance, repeat work, or the next likely need — not a generic check-in.',
             },
             {
               icon: Search,
-              name: 'Commercial visibility',
+              name: 'Revenue visibility',
               detail:
-                'See whether repeat-customer reactivation is becoming a meaningful revenue source.',
+                'See whether past-customer reactivation is actually producing repeat revenue, not just activity.',
             },
           ],
         },
       ],
     },
     qualification: {
-      title: 'Is this the right fit for your business?',
+      title: 'Is this the right fit?',
       description:
-        'This works best where good opportunities already exist inside old enquiries, stalled quotes, or past-customer records but nobody is working them.',
+        'Best for businesses where recoverable opportunities already exist in old enquiries, stalled quotes, or past-customer records — but nobody\'s working them.',
       strongFitTitle: 'Strong fit if',
       notDesignedTitle: 'Not the right fit if',
       strongFitItems: [
         {
-          title: 'You have dormant leads sitting unused in your CRM',
+          title: 'Dormant leads are sitting untouched in your CRM',
           description:
-            'There is visible pipeline value in old enquiries, quotes, or CRM stages that nobody is touching.',
+            'There\'s visible value in old enquiries, stalled quotes, or past customers. Some of those contacts are still recoverable. Nobody\'s reaching out.',
         },
         {
-          title: 'Your follow-up discipline is inconsistent',
+          title: 'Follow-up depends on memory, not process',
           description:
-            'Re-engagement depends on memory, mood, or spare time rather than a structured workflow.',
+            'Re-engagement only happens when someone remembers or when work dries up. Most recoverable contacts never get a second attempt.',
         },
         {
-          title: 'You have repeat-service potential with past customers',
+          title: 'Past customers could return if prompted',
           description:
-            'Existing customers could come back if the lifecycle follow-up were clearer and better timed.',
+            'Existing customers liked the work. They\'d come back for maintenance, repeat service, or referrals. But there\'s no prompt, so they don\'t.',
         },
       ],
       notDesignedItems: [
         {
-          title: 'Your real problem is lead quality, not follow-up',
+          title: 'The real issue is lead quality, not follow-up',
           description:
-            'If the issue is weak traffic, poor-fit enquiries, or low trust, reactivation alone is not the right fix.',
+            'If the traffic is wrong or the enquiries are poor-fit, reactivation recycles bad leads. Fix the source first.',
         },
         {
-          title: 'You want a single campaign, not a system',
+          title: 'You want a one-off blast, not a repeatable process',
           description:
-            'This works best as repeatable reactivation, not a one-time blast with no follow-up behind it.',
+            'A single email to the whole list produces a brief spike and nothing after. This works as ongoing reactivation, not a one-time push.',
         },
         {
-          title: 'Response speed or booking flow is the bigger leak',
+          title: 'Response speed is the bigger leak',
           description:
-            'If the main issue is missed calls, slow first response, or appointment friction, those may need fixing first.',
+            'If new leads are dying to slow replies or missed calls, the gap between new and old is the wrong place to focus. Fix the front door first.',
         },
       ],
     },
     comparison: {
       header: {
-        title: 'Random re-engagement vs structured reactivation',
+        title: 'Sporadic re-engagement vs structured reactivation',
         description:
-          'Most businesses treat dormant leads as a forgotten backlog. Here is what that costs compared to structured reactivation.',
+          'Most businesses treat dormant leads as a forgotten backlog. Here\'s what that costs compared to working them properly.',
       },
       items: [
         {
           type: 'before' as const,
-          title: 'Random re-engagement',
+          title: 'Sporadic re-engagement',
           items: [
-            'Old leads sit in the CRM with no prompt to follow up',
-            'Someone sends a batch email when business is slow \u2014 then nothing',
-            'Past customers, stalled quotes, and cold leads all get the same message',
-            'No ownership over who follows up on responses',
-            'Pipeline value sits dormant with no visibility into what could come back',
+            'Old leads sit in the CRM with no prompt. Value depreciates silently every month.',
+            'Someone sends a batch email when things slow down. Nothing after. No sequence. No ownership.',
+            'Past customers, stalled quotes, and cold leads all get the same message. Response rates stay low because nothing feels relevant.',
+            'Nobody owns the responses that do come back. Replies create confusion instead of moving deals forward.',
+            'Recoverable revenue sitting there. The business keeps paying for new leads when existing value is right there.',
           ],
         },
         {
           type: 'after' as const,
-          title: 'Structured reactivation system',
+          title: 'Reactivation that runs',
           items: [
-            'Dormant groups segmented by type, age, and likely intent',
-            'Follow-up timing and messaging tailored to each segment',
-            'Past customers get lifecycle-based outreach, cold leads get different treatment',
-            'Responses routed to a named owner with clear next steps',
-            'Reactivation becomes a measurable source of recovered pipeline value',
+            'Dormant contacts segmented by type, age, and likely intent. Each group gets the right message at the right time.',
+            'Follow-up timing and messaging tailored to each segment. Outreach feels relevant, not random or desperate.',
+            'Past customers get lifecycle-based prompts. Cold leads get a different approach. The message matches the relationship.',
+            'Every response routes to a named owner with a clear next step. Revived leads move forward immediately.',
+            'Reactivation becomes a measurable source of recovered revenue. Justifies itself in the numbers.',
           ],
         },
       ],
     },
     proof: {
       header: {
-        title: 'What this looks like when it is running',
+        title: 'A physiotherapy clinic that recovered revenue from its own database',
         description:
-          'A service business had hundreds of old enquiries and stalled quotes in their CRM. Nobody was working them because there was no structured way to follow up.',
+          'Two practitioners. Five years of patient records. Hundreds of past patients who completed treatment and never came back — not because they didn\'t need to, but because nobody reached out.',
       },
       cards: [
         {
-          title: 'Before: dormant pipeline with no follow-up',
-          description: 'The business had over 300 old leads in their CRM from the past two years. Stalled quotes, past customers, and cold enquiries were all mixed together. Re-engagement happened only when someone remembered.',
+          title: 'Before: years of records, no follow-up',
+          description: 'Over 400 past patients in their booking system. Some finished treatment. Others cancelled mid-way. A handful called but never booked. Sitting there.',
           points: [
-            'Hundreds of dormant contacts with no follow-up plan',
-            'Stalled quotes mixed in with cold leads and past customers',
-            'Re-engagement happened sporadically, if at all',
+            'Past patients who finished treatment were never contacted again. Recurring conditions. Nobody prompted them.',
+            'Cancelled patients sat in the system. Some stopped because of scheduling, not need.',
           ],
         },
         {
-          title: 'What we built: segmented reactivation with timed follow-up',
-          description: 'We segmented dormant leads into three groups \u2014 stalled quotes, cold enquiries, and past customers \u2014 then built tailored follow-up sequences with different timing, messaging, and next-step logic for each.',
+          title: 'What changed: three segments, three sequences',
+          description: 'Past patients were split into three groups: completed-treatment patients likely to need repeat care, lapsed patients who\'d stopped mid-course, and old enquiries who\'d never booked. Each group got a different message, different timing, and a direct booking link.',
           points: [
-            'Three reactivation segments with tailored messaging',
-            'Timed follow-up sequences for each group',
-            'Responses routed to named team members with context',
+            'Completed-treatment patients received a check-in message timed to when their condition was likely to need attention again. Relevant and specific, not a generic newsletter.',
+            'Lapsed patients got a short follow-up acknowledging they\'d stopped and offering a quick rebook. No pressure. Just a clear next step.',
+            'Old enquiries received a brief message referencing their original call, with availability and a booking link. Simple context restart.',
           ],
           featured: true,
         },
         {
-          title: 'After: recovered revenue from leads that were already there',
-          description: 'Within the first two months, the business re-engaged multiple stalled quotes and booked repeat work from past customers. Pipeline value that had been sitting unused became a measurable revenue source.',
+          title: 'After: 28 rebookings in six weeks',
+          description: 'No advertising. No acquisition. Twenty-eight rebookings from people already in the system.',
           points: [
-            'Multiple stalled quotes re-engaged and moved forward',
-            'Past customers booked repeat work through lifecycle messaging',
-            'Recovered pipeline value visible in monthly reporting',
+            'Completed-treatment patients made up the biggest share. Most said they\'d been meaning to come back.',
+            'Seven lapsed patients rebooked. Two had gone to competitors but came back because the clinic reached out first.',
+            'Three old enquiries booked. Small. But zero cost.',
           ],
         },
       ],
     },
     faqSection: {
       badge: 'FAQ',
-      title: 'Common questions about lead reactivation',
+      title: 'Questions about lead reactivation',
       description:
-        'Practical questions from businesses that realise there is pipeline value sitting dormant in old contacts.',
+        'Honest answers from businesses that realised recoverable revenue was sitting in their own records.',
       faqs: [
         {
           question: 'Can this work without a sophisticated CRM?',
           answer:
-            'Yes. A stronger CRM helps, but even a simpler business can benefit from clearer segmentation, re-engagement timing, and ownership. The workflow can start at the right level and become more structured over time.',
+            'Yes. A stronger CRM helps, but even a simple setup benefits from clearer segmentation, timed follow-up, and defined ownership. The work starts at the right level for your tools.',
         },
         {
           question: 'Is this the same as email marketing?',
           answer:
-            'No. Email marketing is broader communication. Lead reactivation is focused on stalled opportunities, old enquiries, or past customers where the business wants a targeted commercial follow-up path.',
+            'No. Email marketing is broader communication. This is targeted commercial follow-up aimed at specific stalled opportunities, old enquiries, and past customers where there\'s a recoverable outcome.',
         },
         {
           question: 'How does this relate to the Revenue Growth review?',
           answer:
-            'Revenue Growth looks at the broader commercial system. Lead Reactivation is a narrower workflow specifically for recovering value from opportunities the business has already touched but failed to move forward.',
+            'Revenue Growth looks at the broader commercial picture. Lead reactivation is a narrower piece — recovering value from contacts the business has already touched but failed to convert or retain.',
         },
         {
           question: 'How soon can we expect results?',
           answer:
-            'Most businesses see re-engaged conversations within weeks of the first reactivation sequences going out \u2014 especially from stalled quotes and past customers.',
+            'Most businesses see re-engaged conversations within weeks. Stalled quotes and past customers tend to respond fastest because the relationship already exists.',
         },
       ],
       cssPrefix: 'lead-reactivation-faq',
     },
   },
   inlineCta: {
-    title: 'How much dormant pipeline value are you sitting on?',
+    title: 'What are you sitting on?',
     description:
-      'Tell us about your old leads, stalled quotes, and past customers. We will show you what is worth reactivating and how to structure the follow-up.',
+      'Old leads, stalled quotes, past customers. What\'s worth pursuing. What isn\'t.',
   },
   cta: {
-    title: 'Bring dormant opportunities back to life',
+    title: 'Find out what\'s recoverable in your own records',
     description:
-      'Tell us about your old enquiries, stalled quotes, and past customers. We will show you what is worth pursuing and set up a system to recover it.',
+      'Your old enquiries and past customers. What\'s still warm. How to work it.',
   },
 } satisfies ServicePageData;

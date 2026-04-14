@@ -64,34 +64,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
     },
-    'booking-scheduling-system': {
-      services: [
-        {
-          title: 'Smart Websites',
-          description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Website Redesign & System Rebuild',
-          description:
-            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
-          slug: 'website-redesign-system-rebuild',
-          path: '/services/website-redesign-system-rebuild',
-          nodeType: 'service',
-        },
-        {
-          title: 'System Migration & Platform Consolidation',
-          description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
-          nodeType: 'service',
-        },
-      ],
-    },
     'bricks-builder': {
       services: [
         {
@@ -120,16 +92,8 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
     },
-    'conversion-funnel-system': {
+    'conversion-layer': {
       services: [
-        {
-          title: 'Revenue Growth Systems',
-          description:
-            'Find where leads stall, follow-up breaks, and revenue leaks. Structured growth-system reviews that diagnose the real problem before adding more pressure.',
-          slug: 'growth-revenue-systems',
-          path: '/services/growth-revenue-systems',
-          nodeType: 'service',
-        },
         {
           title: 'Marketing Automation Setup',
           description:
@@ -139,11 +103,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Funnel & Landing Page Development',
+          title: 'Lead Reactivation System',
           description:
-            'Focused landing page and funnel page development for service businesses. Tighter offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
-          slug: 'funnel-landing-page-development',
-          path: '/services/funnel-landing-page-development',
+            'Stop letting old enquiries, stalled quotes, and past customers sit unused. Structured reactivation that turns dormant pipeline into recovered revenue.',
+          slug: 'lead-reactivation-system',
+          path: '/services/lead-reactivation-system',
           nodeType: 'service',
         },
       ],
@@ -235,62 +199,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
     },
-    'funnel-landing-page-development': {
-      services: [
-        {
-          title: 'Revenue Growth Systems',
-          description:
-            'Find where leads stall, follow-up breaks, and revenue leaks. Structured growth-system reviews that diagnose the real problem before adding more pressure.',
-          slug: 'growth-revenue-systems',
-          path: '/services/growth-revenue-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Marketing Automation Setup',
-          description:
-            'Stop relying on memory for follow-up. Structured marketing automation setup covering follow-up logic, reminders, reactivation, and lifecycle messaging.',
-          slug: 'marketing-automation-setup',
-          path: '/services/marketing-automation-setup',
-          nodeType: 'service',
-        },
-        {
-          title: 'Conversion Funnel System',
-          description:
-            'Stop losing visitors between the page and the enquiry. Structured conversion funnel systems that fix page flow, offer clarity, CTA logic, and enquiry handoff.',
-          slug: 'conversion-funnel-system',
-          path: '/services/conversion-funnel-system',
-          nodeType: 'service',
-        },
-      ],
-    },
-    'growth-revenue-systems': {
-      services: [
-        {
-          title: 'Marketing Automation Setup',
-          description:
-            'Stop relying on memory for follow-up. Structured marketing automation setup covering follow-up logic, reminders, reactivation, and lifecycle messaging.',
-          slug: 'marketing-automation-setup',
-          path: '/services/marketing-automation-setup',
-          nodeType: 'service',
-        },
-        {
-          title: 'Conversion Funnel System',
-          description:
-            'Stop losing visitors between the page and the enquiry. Structured conversion funnel systems that fix page flow, offer clarity, CTA logic, and enquiry handoff.',
-          slug: 'conversion-funnel-system',
-          path: '/services/conversion-funnel-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Funnel & Landing Page Development',
-          description:
-            'Focused landing page and funnel page development for service businesses. Tighter offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
-          slug: 'funnel-landing-page-development',
-          path: '/services/funnel-landing-page-development',
-          nodeType: 'service',
-        },
-      ],
-    },
     'lead-reactivation-system': {
       services: [
         {
@@ -302,19 +210,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Conversion Funnel System',
+          title: 'Conversion Layer',
           description:
-            'Stop losing visitors between the page and the enquiry. Structured conversion funnel systems that fix page flow, offer clarity, CTA logic, and enquiry handoff.',
-          slug: 'conversion-funnel-system',
-          path: '/services/conversion-funnel-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Funnel & Landing Page Development',
-          description:
-            'Focused landing page and funnel page development for service businesses. Tighter offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
-          slug: 'funnel-landing-page-development',
-          path: '/services/funnel-landing-page-development',
+            'Stop losing visitors between the page and the enquiry. Structured conversion-layer work covering offer pages, landing paths, CTA logic, and enquiry handoff.',
+          slug: 'conversion-layer',
+          path: '/services/conversion-layer',
           nodeType: 'service',
         },
       ],
@@ -333,19 +233,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Conversion Funnel System',
+          title: 'Conversion Layer',
           description:
-            'Stop losing visitors between the page and the enquiry. Structured conversion funnel systems that fix page flow, offer clarity, CTA logic, and enquiry handoff.',
-          slug: 'conversion-funnel-system',
-          path: '/services/conversion-funnel-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Funnel & Landing Page Development',
-          description:
-            'Focused landing page and funnel page development for service businesses. Tighter offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
-          slug: 'funnel-landing-page-development',
-          path: '/services/funnel-landing-page-development',
+            'Stop losing visitors between the page and the enquiry. Structured conversion-layer work covering offer pages, landing paths, CTA logic, and enquiry handoff.',
+          slug: 'conversion-layer',
+          path: '/services/conversion-layer',
           nodeType: 'service',
         },
       ],
@@ -371,28 +263,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
     },
     'reputation-review-systems': {
-      services: [
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
-          nodeType: 'service',
-        },
-      ],
-    },
-    'review-automation-system': {
-      services: [
-        {
-          title: 'Reputation & Review Systems',
-          description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
-          slug: 'reputation-review-systems',
-          path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-      ],
+      services: [],
     },
     'smart-website-systems': {
       services: [
@@ -567,19 +438,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'System Migration & Platform Consolidation',
           description:
-            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
         {
-          title: 'Conversion Funnel System',
+          title: 'Conversion Layer',
           description:
-            'Stop losing visitors between the page and the enquiry. Structured conversion funnel systems that fix page flow, offer clarity, CTA logic, and enquiry handoff.',
-          slug: 'conversion-funnel-system',
-          path: '/services/conversion-funnel-system',
+            'Stop losing visitors between the page and the enquiry. Structured conversion-layer work covering offer pages, landing paths, CTA logic, and enquiry handoff.',
+          slug: 'conversion-layer',
+          path: '/services/conversion-layer',
           nodeType: 'service',
         },
       ],
@@ -595,19 +466,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Conversion Funnel System',
+          title: 'Lead Reactivation System',
           description:
-            'Stop losing visitors between the page and the enquiry. Structured conversion funnel systems that fix page flow, offer clarity, CTA logic, and enquiry handoff.',
-          slug: 'conversion-funnel-system',
-          path: '/services/conversion-funnel-system',
+            'Stop letting old enquiries, stalled quotes, and past customers sit unused. Structured reactivation that turns dormant pipeline into recovered revenue.',
+          slug: 'lead-reactivation-system',
+          path: '/services/lead-reactivation-system',
           nodeType: 'service',
         },
         {
-          title: 'Funnel & Landing Page Development',
+          title: 'Conversion Layer',
           description:
-            'Focused landing page and funnel page development for service businesses. Tighter offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
-          slug: 'funnel-landing-page-development',
-          path: '/services/funnel-landing-page-development',
+            'Stop losing visitors between the page and the enquiry. Structured conversion-layer work covering offer pages, landing paths, CTA logic, and enquiry handoff.',
+          slug: 'conversion-layer',
+          path: '/services/conversion-layer',
           nodeType: 'service',
         },
       ],
@@ -645,17 +516,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
         {
@@ -707,19 +570,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Conversion Funnel System',
+          title: 'Lead Reactivation System',
           description:
-            'Stop losing visitors between the page and the enquiry. Structured conversion funnel systems that fix page flow, offer clarity, CTA logic, and enquiry handoff.',
-          slug: 'conversion-funnel-system',
-          path: '/services/conversion-funnel-system',
+            'Stop letting old enquiries, stalled quotes, and past customers sit unused. Structured reactivation that turns dormant pipeline into recovered revenue.',
+          slug: 'lead-reactivation-system',
+          path: '/services/lead-reactivation-system',
           nodeType: 'service',
         },
         {
-          title: 'Funnel & Landing Page Development',
+          title: 'Conversion Layer',
           description:
-            'Focused landing page and funnel page development for service businesses. Tighter offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
-          slug: 'funnel-landing-page-development',
-          path: '/services/funnel-landing-page-development',
+            'Stop losing visitors between the page and the enquiry. Structured conversion-layer work covering offer pages, landing paths, CTA logic, and enquiry handoff.',
+          slug: 'conversion-layer',
+          path: '/services/conversion-layer',
           nodeType: 'service',
         },
       ],
@@ -731,7 +594,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -811,17 +674,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'Smart Websites',
           description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
@@ -891,7 +754,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -971,7 +834,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1051,25 +914,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'Smart Websites',
           description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'System Migration & Platform Consolidation',
           description:
-            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -1131,17 +994,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'AI Lead Handling Systems',
           description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
@@ -1211,17 +1074,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
         {
@@ -1230,6 +1085,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation',
+          description:
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -1305,11 +1168,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'System Migration & Platform Consolidation',
           description:
-            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -1371,17 +1234,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
         {
@@ -1390,6 +1245,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation',
+          description:
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -1451,17 +1314,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
         {
@@ -1470,6 +1325,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation',
+          description:
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -1531,17 +1394,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'Smart Websites',
           description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
@@ -1611,25 +1474,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'Smart Websites',
           description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'System Migration & Platform Consolidation',
           description:
-            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -1691,17 +1554,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'Smart Websites',
           description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
@@ -1771,7 +1634,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1851,17 +1714,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'AI Lead Handling Systems',
           description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
           nodeType: 'service',
         },
         {
@@ -1931,17 +1794,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'Smart Websites',
           description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
@@ -2011,25 +1874,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'Smart Websites',
           description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'System Migration & Platform Consolidation',
           description:
-            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -2091,7 +1954,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2171,17 +2034,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
         {
@@ -2190,6 +2045,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation',
+          description:
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -2345,11 +2208,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'System Migration & Platform Consolidation',
           description:
-            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -2411,25 +2274,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'Smart Websites',
           description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'System Migration & Platform Consolidation',
           description:
-            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -2491,7 +2354,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2505,11 +2368,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'System Migration & Platform Consolidation',
           description:
-            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -2585,11 +2448,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'System Migration & Platform Consolidation',
           description:
-            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -2651,17 +2514,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'Smart Websites',
           description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
@@ -2811,17 +2674,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
         {
@@ -2830,6 +2685,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation',
+          description:
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -2891,17 +2754,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
         },
         {
-          title: 'Review Automation System',
+          title: 'Smart Websites',
           description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
           nodeType: 'service',
         },
         {
@@ -2971,7 +2834,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -3051,17 +2914,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
         {
@@ -3070,6 +2925,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation',
+          description:
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -3131,17 +2994,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
         {
@@ -3150,6 +3005,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation',
+          description:
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -3211,17 +3074,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
         {
@@ -3230,6 +3085,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
           slug: 'smart-website-systems',
           path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation',
+          description:
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -5567,19 +5430,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Responding to Negative Reviews Systematically Guide',
-          description:
-            'Build a systematic process for handling negative reviews with professional templates, fast response times, and resolution follow-up that protects your reputation.',
-          slug: 'responding-to-negative-reviews-systematically',
-          path: '/resources/responding-to-negative-reviews-systematically',
-          nodeType: 'resource',
-        },
-        {
           title: 'Customer Feedback Loop Framework',
           description:
             'Build a structured feedback loop that captures customer sentiment after every job, routes issues to private resolution, and drives continuous service improvement.',
           slug: 'customer-feedback-loop-framework',
           path: '/resources/customer-feedback-loop-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Responding to Negative Reviews Systematically Guide',
+          description:
+            'Build a systematic process for handling negative reviews with professional templates, fast response times, and resolution follow-up that protects your reputation.',
+          slug: 'responding-to-negative-reviews-systematically',
+          path: '/resources/responding-to-negative-reviews-systematically',
           nodeType: 'resource',
         },
       ],
@@ -8091,11 +7954,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'System Migration & Platform Consolidation',
           description:
-            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
         {
@@ -8231,17 +8094,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
       ],
@@ -8321,19 +8176,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
+          title: 'Website Redesign & System Rebuild',
+          description:
+            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
           title: 'System Migration & Platform Consolidation',
           description:
             'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
-          nodeType: 'service',
-        },
-        {
-          title: 'Booking & Scheduling System',
-          description:
-            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -8451,19 +8306,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
+          title: 'Website Redesign & System Rebuild',
+          description:
+            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
           title: 'System Migration & Platform Consolidation',
           description:
             'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
-          nodeType: 'service',
-        },
-        {
-          title: 'Booking & Scheduling System',
-          description:
-            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -8505,19 +8360,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
+          title: 'Website Redesign & System Rebuild',
+          description:
+            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
           title: 'System Migration & Platform Consolidation',
           description:
             'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
-          nodeType: 'service',
-        },
-        {
-          title: 'Booking & Scheduling System',
-          description:
-            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -8705,17 +8560,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
       ],
@@ -8757,19 +8604,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
+          title: 'Website Redesign & System Rebuild',
+          description:
+            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
           title: 'System Migration & Platform Consolidation',
           description:
             'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
-          nodeType: 'service',
-        },
-        {
-          title: 'Booking & Scheduling System',
-          description:
-            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
           nodeType: 'service',
         },
       ],
@@ -8843,17 +8690,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
       ],
@@ -9089,17 +8928,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
       ],
@@ -9433,11 +9264,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'System Migration & Platform Consolidation',
           description:
-            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
         {
@@ -9519,17 +9350,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
       ],
@@ -9565,17 +9388,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
       ],
@@ -9981,17 +9796,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
       ],
@@ -10027,17 +9834,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
       ],
@@ -10073,17 +9872,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
       ],
@@ -10119,17 +9910,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
       ],
@@ -10165,17 +9948,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
       ],
@@ -10357,17 +10132,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
       ],
@@ -10495,17 +10262,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, and reputation monitoring that builds credibility consistently.',
+            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
-          nodeType: 'service',
-        },
-        {
-          title: 'Review Automation System',
-          description:
-            'Stop chasing customers for reviews. Automated review requests go out after every job, complaints get caught early, and your Google reviews grow without anyone remembering to ask.',
-          slug: 'review-automation-system',
-          path: '/services/review-automation-system',
           nodeType: 'service',
         },
       ],
@@ -10609,11 +10368,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'System Migration & Platform Consolidation',
           description:
-            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -10685,27 +10444,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'tracking-salon-client-lifetime-value': {
       services: [
         {
-          title: 'Revenue Growth Systems',
+          title: 'Marketing Automation Setup',
           description:
-            'Find where leads stall, follow-up breaks, and revenue leaks. Structured growth-system reviews that diagnose the real problem before adding more pressure.',
-          slug: 'growth-revenue-systems',
-          path: '/services/growth-revenue-systems',
+            'Stop relying on memory for follow-up. Structured marketing automation setup covering follow-up logic, reminders, reactivation, and lifecycle messaging.',
+          slug: 'marketing-automation-setup',
+          path: '/services/marketing-automation-setup',
           nodeType: 'service',
         },
         {
-          title: 'Conversion Funnel System',
+          title: 'Lead Reactivation System',
           description:
-            'Stop losing visitors between the page and the enquiry. Structured conversion funnel systems that fix page flow, offer clarity, CTA logic, and enquiry handoff.',
-          slug: 'conversion-funnel-system',
-          path: '/services/conversion-funnel-system',
+            'Stop letting old enquiries, stalled quotes, and past customers sit unused. Structured reactivation that turns dormant pipeline into recovered revenue.',
+          slug: 'lead-reactivation-system',
+          path: '/services/lead-reactivation-system',
           nodeType: 'service',
         },
         {
-          title: 'Funnel & Landing Page Development',
+          title: 'Conversion Layer',
           description:
-            'Focused landing page and funnel page development for service businesses. Tighter offer pages, campaign journeys, booking pages, and clearer next-step implementation.',
-          slug: 'funnel-landing-page-development',
-          path: '/services/funnel-landing-page-development',
+            'Stop losing visitors between the page and the enquiry. Structured conversion-layer work covering offer pages, landing paths, CTA logic, and enquiry handoff.',
+          slug: 'conversion-layer',
+          path: '/services/conversion-layer',
           nodeType: 'service',
         },
       ],
@@ -10793,11 +10552,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Booking & Scheduling System',
+          title: 'System Migration & Platform Consolidation',
           description:
-            'Stop losing bookings to friction, forgotten confirmations, and messy handoff. A structured booking system that turns interest into confirmed appointments.',
-          slug: 'booking-scheduling-system',
-          path: '/services/booking-scheduling-system',
+            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
         },
       ],
@@ -11647,19 +11406,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Responding to Negative Reviews Systematically Guide',
-          description:
-            'Build a systematic process for handling negative reviews with professional templates, fast response times, and resolution follow-up that protects your reputation.',
-          slug: 'responding-to-negative-reviews-systematically',
-          path: '/resources/responding-to-negative-reviews-systematically',
-          nodeType: 'resource',
-        },
-        {
           title: 'Customer Feedback Loop Framework',
           description:
             'Build a structured feedback loop that captures customer sentiment after every job, routes issues to private resolution, and drives continuous service improvement.',
           slug: 'customer-feedback-loop-framework',
           path: '/resources/customer-feedback-loop-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Responding to Negative Reviews Systematically Guide',
+          description:
+            'Build a systematic process for handling negative reviews with professional templates, fast response times, and resolution follow-up that protects your reputation.',
+          slug: 'responding-to-negative-reviews-systematically',
+          path: '/resources/responding-to-negative-reviews-systematically',
           nodeType: 'resource',
         },
       ],
@@ -11785,15 +11544,11 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionGoal: 'consultation',
     conversionPriority: 100,
   },
-  'booking-scheduling-system': {
-    conversionGoal: 'consultation',
-    conversionPriority: 100,
-  },
   'bricks-builder': {
     conversionGoal: 'consultation',
     conversionPriority: 100,
   },
-  'conversion-funnel-system': {
+  'conversion-layer': {
     conversionGoal: 'consultation',
     conversionPriority: 100,
   },
@@ -11810,14 +11565,6 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionPriority: 100,
   },
   elementor: {
-    conversionGoal: 'consultation',
-    conversionPriority: 100,
-  },
-  'funnel-landing-page-development': {
-    conversionGoal: 'consultation',
-    conversionPriority: 100,
-  },
-  'growth-revenue-systems': {
     conversionGoal: 'consultation',
     conversionPriority: 100,
   },
@@ -11838,10 +11585,6 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionPriority: 50,
   },
   'reputation-review-systems': {
-    conversionGoal: 'consultation',
-    conversionPriority: 100,
-  },
-  'review-automation-system': {
     conversionGoal: 'consultation',
     conversionPriority: 100,
   },

@@ -33,11 +33,11 @@ export const systemMigrationPlatformConsolidationPage = {
     badge: 'System Migration & Platform Consolidation',
       title: 'Consolidate Your Tools Into One Stable Operating Platform',
     description:
-      'You are running your business across disconnected platforms, patching around limitations, and losing time to tool sprawl. This service consolidates everything into a cleaner foundation that is easier to manage, maintain, and extend.',
+      'Running your business across disconnected platforms, patching around limitations, and losing time to tool sprawl. This service consolidates everything into a cleaner foundation — easier to manage, maintain, and extend.',
     list: [
-        'Fewer Tools',
-        'Cleaner Stack',
-        'Easier Growth',
+        'Reduced tool sprawl',
+        'Cleaner tech stack',
+        'Growth-ready foundation',
     ],
     cssPrefix: 'system-migration-hero',
     backgroundColor: 'bg-gradient-surface-muted',
@@ -54,19 +54,19 @@ export const systemMigrationPlatformConsolidationPage = {
           before:
             'Your website and tools grew in fragments. Updates and integrations now feel harder than they should.',
           after:
-            'A consolidated structure so you work from one cleaner, more predictable foundation.',
+            'A consolidated structure — so you work from one cleaner, more predictable foundation instead of managing fragmented pieces.',
         },
         {
           before:
             'Important functions live across too many tools, each with its own limits, costs, and workarounds.',
           after:
-            'Reduced tool sprawl so ownership, maintenance, and change are easier to manage.',
+            'Reduced tool sprawl — so ownership, maintenance, and change become easier to manage from one place.',
         },
         {
           before:
             'Your current platform no longer supports how your business actually operates, but the team keeps patching around the limitations.',
           after:
-            'A platform and system model that fits how your business works today, not three years ago.',
+            'A platform and system model that fits how your business works today — so changes happen cleanly instead of requiring workarounds.',
         },
       ],
     },
@@ -74,7 +74,7 @@ export const systemMigrationPlatformConsolidationPage = {
       badge: 'Typical migration triggers',
       title: 'Migration becomes relevant when you recognise one of these patterns',
       description:
-        'The issue is rarely one bug. It is usually a repeated pattern showing the current platform or tool mix is no longer a good fit.',
+        'Rarely one bug. Usually a repeated pattern showing the current platform or tool mix is no longer a good fit.',
       items: [
         {
           icon: LayoutTemplate,
@@ -111,7 +111,7 @@ export const systemMigrationPlatformConsolidationPage = {
       title:
         'Migration fails when the old fragmentation gets copied into the new setup',
       description:
-        'The goal is not just to move systems. It is to simplify them enough that the new foundation is genuinely easier to manage.',
+        'The goal is not just to move systems — it is to simplify them enough that the new foundation is genuinely easier to manage.',
       lists: [
         {
           title: 'Migration risks',
@@ -183,72 +183,72 @@ export const systemMigrationPlatformConsolidationPage = {
       badge: 'Migration sequence',
       title: 'How we approach migration and consolidation',
       description:
-        'We decide what should be preserved, rebuilt, or removed before the move is executed.',
+        'What is preserved, rebuilt, or removed is decided before the move is executed.',
       steps: [
         {
           number: '1',
-          title: 'Audit your current platform and tool stack',
+          title: 'Audit current platform and tool stack',
           description:
-            'We identify where the present setup is creating structural drag, duplication, or maintenance problems.',
+            'Identify where the present setup is creating structural drag, duplication, or maintenance problems — so the migration scope targets the real cost, not surface symptoms.',
         },
         {
           number: '2',
           title: 'Define the consolidation logic',
           description:
-            'We decide what should move, what should be rebuilt, and what should be simplified rather than carried forward.',
+            'Decide what should move, what should be rebuilt, and what should be simplified — so the new foundation is genuinely cleaner, not a copy of old complexity.',
         },
         {
           number: '3',
           title: 'Execute the migration',
           description:
-            'Content, workflows, and platform responsibilities move into a cleaner structure that fits how your business actually operates.',
+            'Content, workflows, and platform responsibilities move into a cleaner structure — so the business operates from a foundation that fits how it actually works.',
         },
         {
           number: '4',
           title: 'Stabilise the new foundation',
           description:
-            'The post-migration system is tested, documented, and confirmed easier to maintain and extend after launch.',
+            'The post-migration system is tested, documented, and confirmed — so the team can maintain and extend it without depending on the migration team.',
         },
       ],
     },
     qualification: {
       title: 'Is this the right fit for your business?',
       description:
-        'This works best when you are carrying too much platform or tool fragmentation and the next step needs to simplify the foundation, not just patch it again.',
+        'Works best when carrying too much platform or tool fragmentation and the next step needs to simplify the foundation, not patch it again.',
       strongFitTitle: 'Strong fit if',
       notDesignedTitle: 'Not the right fit if',
       strongFitItems: [
         {
-          title: 'You are moving away from a limited platform',
+          title: 'You are moving away from a limited or locked platform',
           description:
-            'Your current platform is constraining structure, integrations, or long-term maintainability and you need a better foundation.',
+            'Your current platform constrains structure, integrations, or long-term maintainability — and the limitations are costing you more than the migration.',
         },
         {
-          title: 'You have too many disconnected tools',
+          title: 'You have too many disconnected tools doing overlapping jobs',
           description:
-            'Your website, forms, booking, messaging, and follow-up are spread across fragmented systems with no central structure.',
+            'Website, forms, booking, messaging, and follow-up are spread across fragmented systems with no shared data or workflow.',
         },
         {
-          title: 'You need a cleaner foundation before other work can succeed',
+          title: 'You need a stable foundation before other systems can succeed',
           description:
-            'Future website, CRM, SEO, or automation projects will stay weaker until the platform layer is simplified properly.',
+            'Future CRM, SEO, or automation work will underperform until the platform layer is consolidated and simplified.',
         },
       ],
       notDesignedItems: [
         {
           title: 'You only need one focused page or campaign asset',
           description:
-            'If your current platform is broadly fine and the need is narrower, a landing page or funnel build may be a better fit.',
+            'If your platform is broadly fine and the need is narrow, a landing page or funnel build is faster and cheaper.',
         },
         {
           title: 'You only want a cosmetic redesign',
           description:
-            'If the core problem is surface presentation rather than platform or tool fragmentation, this scope may be broader than needed.',
+            'If the core problem is surface presentation rather than platform fragmentation, migration scope is broader than needed.',
         },
         {
           title: 'You are not willing to simplify the old setup',
           description:
-            'Migration works best when the move is used to reduce complexity, not preserve every historical workaround unchanged.',
+            'Migration works when the move reduces complexity. Preserving every historical workaround unchanged defeats the purpose.',
         },
       ],
     },
@@ -261,7 +261,7 @@ export const systemMigrationPlatformConsolidationPage = {
         {
           question: 'Can this include moving from Wix or Squarespace to WordPress?',
           answer:
-            'Yes. That is one of the most common paths. The useful part is not only moving the content but rebuilding the structure and connected workflows in a more flexible foundation.',
+            'Yes. That is one of the most common paths. The useful part is not only moving content but rebuilding the structure and connected workflows in a more flexible foundation.',
         },
         {
           question: 'How is this different from Website Redesign & System Rebuild?',
@@ -292,22 +292,22 @@ export const systemMigrationPlatformConsolidationPage = {
           type: 'before' as const,
           title: 'Patching around limitations',
           items: [
-            'Logging into five different tools to manage one customer journey',
-            'Every update requires workarounds or depends on the one person who knows the setup',
-            'Adding anything new means layering another tool on top of existing fragmentation',
-            'The team spends more time managing tools than serving customers',
-            'Nobody is confident the foundation can support what the business needs next',
+            'Logging into five different tools to manage one customer journey — so every process takes longer than the work itself',
+            'Every update requires workarounds or depends on the one person who knows the setup — so the business stalls when that person is unavailable',
+            'Adding anything new means layering another tool on top of existing fragmentation — so complexity compounds with every improvement attempt',
+            'The team spends more time managing tools than serving customers — so operational overhead eats into capacity',
+            'Nobody is confident the foundation can support what the business needs next — so growth decisions get delayed by infrastructure uncertainty',
           ],
         },
         {
           type: 'after' as const,
           title: 'Consolidated foundation',
           items: [
-            'One platform handles the full workflow with fewer logins and less friction',
-            'Changes are straightforward because the structure is documented and maintainable',
-            'New features plug into a stable foundation instead of creating more sprawl',
-            'Maintenance time drops because there are fewer disconnected systems to manage',
-            'The team can extend and grow on a platform they understand and control',
+            'One platform handles the full workflow with fewer logins — so the team spends less time switching tools',
+            'Changes are straightforward because the structure is documented — so updates do not depend on one person',
+            'New features plug into a stable foundation — so growth adds capability instead of creating more sprawl',
+            'Maintenance time drops because there are fewer disconnected systems — so the team focuses on customers, not tools',
+            'The team can extend and grow on a platform they understand — so confidence in the foundation stops being a blocker',
           ],
         },
       ],
@@ -321,30 +321,30 @@ export const systemMigrationPlatformConsolidationPage = {
       cards: [
         {
           title: 'Before: seven tools, no continuity',
-          description: 'The business was running forms, booking, messaging, tracking, CRM, and website across disconnected platforms. Every customer touchpoint involved a manual handoff.',
+          description: 'Forms, booking, messaging, tracking, CRM, and website running across disconnected platforms. Every customer touchpoint involved a manual handoff — so the team spent more time managing tools than serving customers.',
           points: [
-            'Seven separate tools with no shared data or workflow',
-            'Manual syncing between platforms wasted hours each week',
-            'No visibility into where leads were stalling or dropping off',
+            'Seven separate tools with no shared data or workflow — so every process required manual syncing between platforms',
+            'Manual syncing wasted hours each week — so staff capacity went to tool management instead of customer-facing work',
+            'No visibility into where leads were stalling — so revenue leaked at handoff points nobody could see',
           ],
         },
         {
           title: 'What we consolidated: one clear foundation',
-          description: 'We migrated the website to WordPress and connected forms, booking, and follow-up into a single workflow. Tools were reduced from seven to three with clear ownership of each.',
+          description: 'Website migrated to WordPress with forms, booking, and follow-up connected into a single workflow — tools reduced from seven to three with clear ownership.',
           points: [
-            'Website, forms, and booking consolidated into one platform',
-            'CRM connected with automated lead routing and follow-up',
-            'Tool count reduced from seven to three with clear governance',
+            'Website, forms, and booking consolidated into one platform — so the team worked from a single system',
+            'CRM connected with automated lead routing and follow-up — so leads moved through the pipeline without manual handoff',
+            'Tool count reduced from seven to three with clear governance — so maintenance became manageable',
           ],
           featured: true,
         },
         {
           title: 'After: stable, documented, maintainable',
-          description: 'The new foundation was easier to maintain, extend, and hand over. The team stopped patching and started building.',
+          description: 'The new foundation was easier to maintain, extend, and hand over. The team stopped patching and started building on stable ground — because the consolidation was designed for independence, not just migration day.',
           points: [
-            'Maintenance time dropped by 60% per month',
-            'The team could make changes without specialist knowledge',
-            'Full documentation meant the system was not dependent on one person',
+            'Maintenance time dropped by 60% per month — because fewer tools and clear governance meant less overhead per change',
+            'The team could make changes without specialist knowledge — because the system was documented and structured for internal ownership',
+            'Full documentation meant the system was transferable — because the build was designed for the business to own, not depend on the builder',
           ],
         },
       ],

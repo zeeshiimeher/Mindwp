@@ -1,953 +1,662 @@
-# WRITING — MindWP
+# WRITING PLAYBOOK — MindWP
 
-> Writing rules, voice, rewrite method, and quality checks for all public-facing content.
-> If this document conflicts with SYSTEM.md → SYSTEM.md wins.
+> Single authority for all public-facing content.
+> Read top → down. Follow without deviation.
 
----
+### Document Map
 
-## WHEN TO USE THIS DOC
-
-Use this when writing, rewriting, or reviewing any public-facing content.
-Service definitions, boundaries, and terminology are in SYSTEM.md.
-
----
-
-## COPY LANGUAGE LAW (LOCKED)
-
-MindWP website copy must read like plain English written by a clear human operator.
-
-- Use simple, direct words before advanced or abstract wording
-- Prefer short to medium sentences. Keep paragraphs easy to scan.
-- Sound calm and structured, not polished to the point of sounding artificial
-- Explain operational ideas in normal business language
-
-MindWP copy must NOT sound: robotic, overly academic, over-optimized for SEO, corporate for the sake of sounding important, or like generic AI marketing copy.
-
-**Practical test:** If a capable business owner can understand the sentence quickly on first read, it is probably acceptable.
-
-### Copywriting Vocabulary Rule
-
-Internal concepts like "structure", "infrastructure", and "architecture" must not be overused in public-facing copy. Most business owners do not think in technical terminology.
-
-Avoid repeating: structure, infrastructure, architecture, structural visibility, operational structure, infrastructure layer.
-
-Prefer wording that describes the outcome:
-- "structure" → organised clearly
-- "visibility structure" → pages search engines can understand
-- "enquiry routing structure" → how enquiries reach the right person
-
-**Rule:** If a sentence still makes perfect sense after removing the word "structure", rewrite it without that word.
+| §1–3 | Context, AI contract, rewrite decisions |
+|------|---|
+| §4–6 | Core rules, language, voice |
+| §7–9 | Connectors, rhythm, observation/L5 |
+| §10–14 | Section rules, hero, comparison, proof, other sections |
+| §15–16 | Industry rules, cross-page rules |
+| §17–18 | Rewrite method, visual language |
+| §19–24 | Content types, validation, polish, page intent, workflow, execution |
 
 ---
 
-This is the complete writing system for all MindWP content — service pages, blog posts, case studies, and resources. Follow it step by step. Every rule is enforced. Every section teaches how, not just what.
+## 1. CONTEXT LOCK
+
+Before writing anything, lock this:
+
+**MindWP is NOT** a website design service, page builder, or SEO agency.
+**MindWP IS** a business operation layer — focused on what happens AFTER someone shows interest.
+
+Traffic, calls, and messages already exist. The problem: leads aren't handled, follow-up doesn't happen, enquiries aren't routed, opportunities are lost silently.
+
+**Writing direction:** FLOW → HANDLING → RESULT
+**Never:** PAGES → DESIGN → FEATURES
+
+If content sounds like building websites, designing pages, or selling SEO → STOP and REWRITE.
+
+**System boundary:** Writing controls perception only. Writing does NOT control graph relationships or conversion logic. If writing conflicts with graph or conversion → writing adapts without exposing system complexity.
 
 ---
 
-## 1. CORE PHILOSOPHY
+## 2. AI EXECUTION CONTRACT
 
-### Content-first thinking
+**DO NOT:** change meaning, add new ideas, add fluff, expand, rewrite blindly, overuse patterns.
+**MUST:** preserve intent, preserve strong lines, improve clarity not creativity, reduce not expand, maintain natural unevenness.
 
-The content is the product. Design, layout, and code exist to deliver the words. If the words are weak, nothing else matters.
+**Output:** final content only. No explanations. No commentary.
 
-Before writing anything, answer three questions:
+**Meaning rule:** meaning stays. Expression may change completely during FULL REWRITE.
+
+**Priority when rules conflict:**
+1. Clarity — reader understands instantly
+2. Reality — feels true, not constructed
+3. Flow — reads naturally
+4. Style rules — connectors, rhythm, etc.
+
+If style hurts clarity → ignore the style rule.
+
+**If output feels** too structured, too symmetrical, too polished → REJECT and rewrite.
+
+### Output Shape Control
+
+Do NOT increase total word count significantly, add new sections during polish, or expand sections beyond original density. If a rewrite becomes longer → compress before final output.
+
+---
+
+## 3. REWRITE DECISIONS
+
+### Decision Matrix
+
+| Decision | When | Action |
+|----------|------|--------|
+| KEEP | Clear, visual, natural | Don't touch |
+| POLISH | Slightly wordy, minor issue | Light edit only |
+| REWRITE | Vague, abstract, hard to picture | Apply rewrite method |
+| DELETE | Repetitive, adds nothing | Remove |
+
+Not everything should be rewritten. Strong lines must be preserved.
+
+### Rewrite Modes
+
+| Mode | When | What |
+|------|------|------|
+| Light Polish | Content is clear, only minor issues | Fix clarity, keep structure |
+| Clarity Rewrite (DEFAULT) | Sentences need clarity | Rewrite sentences, keep ideas |
+| Level 5 Upgrade | High-impact sections | Apply signature style, control rhythm |
+| Full Rewrite (RARE) | Content is broken | Rebuild from scratch |
+
+If mode not specified → default to Clarity Rewrite.
+
+### Full Rewrite Trigger
+
+Use FULL REWRITE if content shows ANY of: repeated patterns, connector overuse, builder language, generic phrasing, structural similarity across sections, sections that feel interchangeable, weak phrasing.
+
+If in doubt → FULL REWRITE. Do NOT polish broken structure.
+
+**Full rewrite execution:** ignore original phrasing, structure, wording, tone, flow. Extract core meaning only. Rebuild from scratch using: problem → scenario → outcome.
+
+**Input contamination rule:** existing content is context only — NOT a writing reference. Do NOT reuse sentence structures, phrasing, or paragraph flow. Extract meaning → discard original language → rebuild. If output resembles original → FAIL.
+
+---
+
+## 4. CORE WRITING RULES
+
+Write like plain English from a clear human operator.
+
+### Signature Style
+
+- Observational, not persuasive
+- Operational, not descriptive
+- Grounded, not conceptual
+- Slightly imperfect, not polished
+
+❌ "We help businesses optimize their processes"
+✅ "Leads come in. Nobody follows up."
+
+If content sounds like marketing, SaaS, or agency copy → rewrite.
+
+### Before Writing, Answer:
 
 1. What is the reader's actual problem right now?
-2. What will change for them if we solve it?
+2. What changes if we solve it?
 3. Can they picture that change?
 
-If you can't answer all three clearly, you're not ready to write.
+### Key Rules
 
-### Outcome-first writing
+- **Outcome-first:** start with what changes, not what we do
+- **Visual:** every important line creates a picture. If they can't picture it → rewrite
+- **No jargon:** if a customer wouldn't say it, don't write it
+- **No hype:** promise only what can be believed
+- **One idea per sentence** when possible
+- **Real situations, not features:** describe what happens in someone's day
+- **Scannability:** no paragraph longer than 3 lines. Mix lengths. Avoid dense blocks.
 
-Never start with what we do. Start with what changes for them.
+### Simplicity Override
 
-Bad:
-> We build WordPress websites with CRM integration and SEO foundations.
+If a sentence sounds clever, designed, or written → simplify it.
+Best writing feels obvious, direct, like speech.
+If it feels impressive → it is wrong.
 
-Good:
-> People search for your services, find your website, and get in touch — without you chasing anyone.
+### Sentence Patterns That Work
 
-The reader should feel "that's what I want" before they know how we do it.
+- **"When [trigger], [what happens]"** → When someone fills in a form, their details go straight into your CRM.
+- **"You [benefit] without [old pain]"** → You get follow-ups going out without anyone having to remember.
+- **"Instead of [old way], [new reality]"** → Instead of copying names from emails into spreadsheets, details go where they need to go.
+- **"Right now [pain]. After this, [relief]."** → Right now, leads sit in different inboxes. After setup, every lead lands in one place.
+- **"[Real scenario]. [What changes]."** → A customer calls while you're on another job. Their details are captured and the right person gets notified.
 
-### Why we avoid technical language
+### Ownership Rule
 
-Words like "system", "automation", "workflow", "pipeline", and "infrastructure" describe how things work internally. The reader doesn't care about internals. They care about what happens in their day.
+We set things up — then it belongs to them. Use "your", not "our".
 
-"Automated follow-up workflow" means nothing to a plumber.
-"Follow-up emails go out on their own, even if your team forgets" — that's real.
-
-### Clarity beats cleverness
-
-A clever headline that nobody understands is worse than a plain one that everyone gets.
-
-Bad:
-> Intelligent lead orchestration for modern service enterprises.
-
-Good:
-> When someone contacts you, the right person finds out straight away.
-
-If a 14-year-old can't understand it, rewrite it.
+❌ "Our CRM tracks every lead." → ✅ "Your CRM tracks every lead."
+❌ "Our system handles follow-ups." → ✅ "Follow-up emails go out on their own."
 
 ---
 
-## 2. WRITING PRINCIPLES
+## 5. LANGUAGE RULES
 
-Each principle includes a name, explanation, and before/after examples.
+### Banned Words (replace every time)
 
-### 2.1 No vague language
+system, workflow, pipeline, infrastructure, optimization, leverage, streamline, seamless, robust, scalable, solution, empower, cutting-edge, powerful, comprehensive, holistic, touchpoint, onboarding, ecosystem, actionable insights
 
-Every sentence must say something specific. If you can delete a sentence and nothing is lost, delete it.
+Also banned: our CRM, our system, our platform, ensures, enables, effectively, empowers, facilitates
 
-❌ "It sets you up well for long-term growth."
+### Preferred Replacements
 
-✅ "Your pages are clear, your services are easy to find, and Google can read everything properly."
-
-❌ "This gives you a strong foundation."
-
-✅ "SSL is on, backups run every day, and updates don't break anything."
-
-### 2.2 Visual language (the mental picture rule)
-
-Every important line should create an image in the reader's head. If they can't picture it, rewrite it.
-
-❌ "Improved lead management"
-✅ "When someone fills in a form, you see their name, number, and what they need — straight away."
-
-See §8 for the full conversion method and extended examples.
-
-### 2.3 Outcome-first writing
-
-The result comes before the method. Always.
-
-❌ "We build automated follow-up sequences using your CRM."
-
-✅ "Follow-up emails go out on their own — even if your team is busy."
-
-❌ "Our SEO methodology includes technical audits, on-page optimization, and link building."
-
-✅ "More people find your business when they search nearby."
-
-### 2.4 No jargon
-
-If a word wouldn't appear in a conversation with a customer, don't use it.
-
-❌ "Conversion optimization" → ✅ "Getting more visitors to actually get in touch"
-
-❌ "Lead capture mechanism" → ✅ "When someone contacts you, their details are saved properly"
-
-❌ "Pipeline architecture" → ✅ "You can see where every enquiry stands"
-
-### 2.5 No hype
-
-Never promise what you can't prove. Keep every claim believable.
-
-❌ "Guaranteed #1 rankings on Google"
-
-✅ "Google can read your services properly, which gives you a better chance of showing up when people search nearby."
-
-❌ "The most powerful CRM solution for service businesses"
-
-✅ "A CRM that actually works for how your team operates."
-
-### 2.6 Human tone
-
-Write like you're explaining something to a business owner across a table. Slightly direct. Not stuffy, not casual.
-
-❌ "Our comprehensive approach ensures all touchpoints are addressed."
-
-✅ "We make sure nothing gets missed."
-
-❌ "Leverage our expertise to unlock your growth potential."
-
-✅ "We'll sort it out so it works properly."
-
-### 2.7 Short sentences with one idea each
-
-Long sentences try to do too much. Split them.
-
-❌ "We set up your website with proper service pages, CRM integration, lead capture forms, automated follow-ups, and Google Business Profile optimization so your business gets more visibility and more leads."
-
-✅ "Each of your services gets its own page. Forms send enquiries to the right person. Follow-ups go out on their own. Google can see what you offer and where you are."
-
-### 2.8 Real situations, not features
-
-Don't list features. Describe what happens in someone's day.
-
-❌ "Automated appointment reminders"
-
-✅ "The customer gets a text the day before their appointment. Nobody on your team had to send it."
-
-❌ "Multi-channel unified inbox"
-
-✅ "Chat messages, texts, and emails all show up in one place. Your team replies from one screen."
-
----
-
-## 3. THE REWRITE METHOD
-
-This is the step-by-step process for turning a bad sentence into a good one. Use this every time you write or edit.
-
-### Step 1 — Spot the vague word
-
-Read the sentence and circle any word that doesn't describe something you can see, hear, or measure.
-
-**Vague words to catch:**
-- Adjectives that describe nothing: strong, robust, powerful, comprehensive, effective
-- Verbs that hide the action: optimize, leverage, streamline, enable, empower, enhance
-- Nouns that aren't real things: solution, infrastructure, ecosystem, touchpoint, pipeline
-
-Example sentence:
-> "Our comprehensive solution streamlines your lead management process."
-
-Flagged words: comprehensive, solution, streamlines, lead management process.
-
-That's 4 out of 8 words that mean nothing. The sentence is hollow.
-
-### Step 2 — Ask "what actually happens?"
-
-For the same sentence, answer literally: what changes in someone's day?
-
-Answer: "When a lead comes in, it goes to the right person, and follow-up emails go out without anyone remembering to send them."
-
-### Step 3 — Turn it into a scene
-
-Put a real person in the sentence. Give them a situation.
-
-Rewrite: "A new enquiry comes in through your website at 3pm. By 3:01, the details are in your CRM, the right person on your team has been notified, and a confirmation email has gone out to the customer."
-
-### Step 4 — Cut it down
-
-Remove anything you don't need. One idea per sentence.
-
-Final: "When someone gets in touch, their details land in your CRM and the right person is notified. A confirmation email goes out straight away — nobody has to send it."
-
-### Full worked examples
-
-**Example 1:**
-
-Original: "We provide a seamless onboarding experience."
-
-Step 1 — Flagged: seamless, onboarding experience
-Step 2 — What happens: We walk the team through how it works and give them documentation.
-Step 3 — Scene: "After launch, we sit down with your team and show them how to update pages, check enquiries, and manage the site."
-Step 4 — Cut: No cuts needed. That's the final version.
-
-**Example 2:**
-
-Original: "Our platform enables data-driven optimization of your marketing strategy."
-
-Step 1 — Flagged: platform, enables, data-driven, optimization, strategy
-Step 2 — What happens: You can see which pages visitors look at before getting in touch.
-Step 3 — Scene: "You open a report and see that 40% of people who called you visited your 'emergency plumbing' page first. Now you know what's working."
-Step 4 — Cut: "You can see which pages people visit before they call — so you know what's working."
-
-**Example 3:**
-
-Original: "Leverage our reputation management system to enhance your online presence."
-
-Step 1 — Flagged: leverage, reputation management system, enhance, online presence
-Step 2 — What happens: Happy customers leave reviews on Google because they're asked at the right time.
-Step 3 — Scene: "A customer finishes a job happy. That evening, they get a short, friendly message asking for a review. Most of them do it."
-Step 4 — Cut: "Happy customers get a friendly review request the same day. Most of them respond."
-
-### The rewrite rule
-
-If a sentence survives all 4 steps without changing, it was already good. If it changes at any step, the new version is better. Always trust the rewrite.
-
----
-
-## 4. LANGUAGE SYSTEM
-
-### Words and phrases to AVOID
-
-These words sound technical, abstract, or AI-generated. Replace them every time.
-
-| Avoid | Why |
+| Instead of | Write |
 |---|---|
-| system | Sounds like software, not a real thing happening |
-| workflow | Nobody says this in real life |
-| pipeline | Developer jargon |
-| infrastructure | Too abstract |
-| optimization / optimize | Vague — what actually gets better? |
-| leverage | Corporate buzzword |
-| streamline | Means nothing specific |
-| seamless / seamlessly | Filler — everything claims to be seamless |
-| robust | Empty adjective |
-| scalable | Nobody cares until they need it |
-| solution | The most overused word in tech |
-| empower | Nobody wants to be "empowered" |
-| cutting-edge | Meaningless |
-| powerful | Prove it instead of claiming it |
-| comprehensive | Vague — say what's actually included |
-| holistic | Nobody talks like this |
-| touchpoint | Say "when they call" or "when they email" |
-| onboarding | Say "getting started" |
-| ecosystem | Just say what connects to what |
-| actionable insights | Say what you can actually see or do |
+| comprehensive tracking | nothing gets missed |
+| full visibility | you can see what's happening |
+| seamless integration | it just works |
+| automated notification routing | the right person finds out |
+| automated follow-up sequences | follow-up happens on its own |
+| unified platform | everything in one place |
+| automated scheduling | you don't have to remember |
+| SEO-optimized | Google can read it |
+| lead capture | their details land somewhere useful |
+| automated reminders | nobody has to chase |
 
-### Words and phrases to USE
+### Anti-Builder Rule
 
-These feel grounded and human:
+"page/pages" repeated 3+ times in a section → FAIL
 
-| Use | When you mean |
-|---|---|
-| nothing gets missed | replacing "comprehensive tracking" |
-| you can see what's happening | replacing "full visibility" |
-| it just works | replacing "seamless integration" |
-| the right person finds out | replacing "automated notification routing" |
-| follow-up happens on its own | replacing "automated follow-up sequences" |
-| everything in one place | replacing "unified platform" |
-| you don't have to remember | replacing "automated scheduling" |
-| Google can read it | replacing "SEO-optimized" |
-| their details land somewhere useful | replacing "lead capture" |
-| nobody has to chase | replacing "automated reminders" |
+Replace builder framing with: FLOW → ACTION → HANDLING → RESULT
 
-### Sentence patterns that work
+Test: if a designer would say it → rewrite. If a business owner would say it → pass.
 
-These structures consistently produce clear, human copy:
+### System Language
 
-**"When [trigger], [what happens]"**
-> When someone fills in a form, their name and number go straight into your CRM.
+"system" is required in metadata/routing/conversion logic. In content, avoid it unless clarity requires it.
 
-**"You [benefit] without [old pain]"**
-> You get follow-ups going out without anyone having to remember.
-
-**"Instead of [old way], [new reality]"**
-> Instead of copying names out of emails into spreadsheets, details go where they need to go on their own.
-
-**"Right now [pain]. After this, [relief]."**
-> Right now, leads sit in different inboxes and some get missed. After setup, every lead lands in one place with a clear next step.
-
-**"[Real scenario]. [What changes]."**
-> A customer calls while you're on another job. Their details are captured and the right person gets notified.
+❌ "Our system handles leads"
+✅ "Leads get handled properly"
 
 ---
 
-## 5. VOICE CALIBRATION
+## 6. VOICE
 
-MindWP has one voice. It doesn't shift based on who's writing. This section defines exactly where that voice sits and how to stay on it.
+Position **7** on 1-10 scale. Slightly direct. Confident, not arrogant. Warm, not desperate.
 
-### The tone scale
+❌ Soft: "We'd be happy to take a look and see if improvements could potentially be made."
+❌ Corporate: "Our team leverages industry-leading methodologies."
+❌ Aggressive: "Your website is broken and costing you thousands."
+✅ Correct: "Send us your website. We'll tell you what's working and what isn't."
 
-The voice sits at position **7** on this 1-10 scale:
-
-| 1-3 (too soft) | 4-6 (too vague) | **7 (correct)** | 8-9 (too aggressive) | 10 (hostile) |
-|---|---|---|---|---|
-| "We'd love to help you explore options..." | "We can assist with improving your digital presence..." | **"Tell us what's not working. We'll fix it."** | "Your website is losing you money every single day." | "You're throwing money away and you don't even know it." |
-
-### What "correct" sounds like
-
-- Slightly direct. Not bossy.
-- Confident but not arrogant. We know what we're doing, but we don't brag.
-- Warm enough to be approachable. Not so warm it sounds desperate.
-- Like a builder who also happens to be good at explaining things.
-
-### Voice examples
-
-**Too soft (wrong):**
-> "We'd be happy to take a look at your website and see if there might be some areas where improvements could potentially be made."
-
-**Too corporate (wrong):**
-> "Our team leverages industry-leading methodologies to deliver measurable improvements to your digital infrastructure."
-
-**Too aggressive (wrong):**
-> "Your website is broken and it's costing you thousands every month. You need to act now."
-
-**Correct:**
-> "Send us your website. We'll look through it and tell you honestly what's working and what isn't."
-
-### Voice consistency rules
-
-1. **Always use "we" and "you".** Not "the team" or "the client" or "one might consider."
-2. **Never hedge.** Don't say "might help" or "could potentially improve." Say what it does.
-3. **State facts, not opinions.** "Your forms go to a shared inbox nobody checks" is a fact. "We believe your forms could be better" is a hedge.
-4. **Match the reader's words.** If a plumber says "leads", say "leads." If they say "enquiries", say "enquiries." Don't correct their vocabulary.
-5. **End sentences firmly.** No trailing "...and more" or "...and so much more." Say what's included. Stop.
-6. **Keep contractions.** "We'll", "you're", "it's", "don't." Never "we will", "you are", "it is" — that's too stiff.
-
-### Voice test
-
-Read the sentence as if you're sitting across from a business owner in their office. Would they nod? Or would they glaze over? If they'd glaze over, rewrite it.
+**Rules:**
+- Always "we" and "you" — never "the team" or "the client"
+- Never hedge. State facts, not opinions.
+- Match the reader's vocabulary
+- End sentences firmly. No "...and more"
+- Use contractions: don't, can't, it's, you're, we'll
 
 ---
 
-## 6. PAGE STRUCTURE — SERVICE PAGES
+## 7. CONNECTOR LAW
 
-Every service page follows this structure. The sections may have different names in the code, but the purpose is the same.
+**Hard limits per section:**
+- "— so" → max 1
+- "which means" → max 1
+- "as a result" → max 1
+- bare "so" mid-sentence → max 2
 
-### 6.1 SEO (title + meta description)
+**Priority order for cause → effect:**
+1. Implied consequence (no connector — preferred)
+2. Split sentence
+3. Embedded cause
+4. "which means"
+5. "as a result"
+6. "— so" (last resort)
 
-**Purpose:** Get the click from Google search results.
+If obvious → remove the connector entirely. Reader is not stupid.
 
-**Rules:**
-- Title must include the core service and the main benefit
-- Description must describe the change, not the service
-- Keep it under 160 characters
-- No hype, no superlatives
+❌ "Leads sit in inboxes — so nobody follows up."
+✅ "Leads sit in inboxes. Nobody follows up."
 
-Good:
-> Title: "CRM Setup | Track Every Lead and Never Miss a Follow-Up"
-> Description: "We set up your CRM so every lead is tracked, every follow-up happens on time, and nothing falls through the cracks."
-
-Bad:
-> Title: "Advanced CRM Infrastructure Solutions"
-> Description: "Our comprehensive CRM platform delivers seamless automation for modern businesses."
-
-### 6.2 Hero
-
-**Purpose:** Stop the reader. Make them feel "this is exactly my problem."
-
-**Rules:**
-- Badge: 2-5 word label that frames the page
-- Title: State the problem or the outcome. One sentence. No jargon.
-- Description: Paint the current situation. What's going wrong? What does the reader recognise?
-- List: 3-4 bullet points showing what changes. Specific and visual.
-
-**What NOT to do:**
-- Don't describe the service
-- Don't use feature language
-- Don't open with "We build..." or "Our solution..."
-
-Good hero title:
-> "Your website probably looks fine. The problem is what happens after someone visits."
-
-Bad hero title:
-> "Smart Website Infrastructure for Service Businesses"
-
-### 6.3 Problem section
-
-**Purpose:** Make the reader nod and think "that's exactly what happens to us."
-
-**Rules:**
-- Use before/after pairs
-- "Before" must describe a real, specific situation — not a vague problem
-- "After" must describe what changes in concrete terms
-- 3 pairs is the sweet spot
-
-Good before:
-> "Your team finishes a job, the customer says thanks, and everyone moves on. A week later, nobody's asked for a review and the moment's gone."
-
-Bad before:
-> "Review collection is unstructured and inconsistent."
-
-### 6.4 Outcome section (what changes)
-
-**Purpose:** Show what the reader's business looks like after working with you.
-
-**Rules:**
-- Lead with results, not methods
-- Use icon cards with short titles and descriptions
-- Each card should answer: "What will I see / experience?"
-- 3-6 items
-
-Good card:
-> Title: "Enquiries reach the right person"
-> Description: "When someone contacts you, it doesn't vanish into a shared inbox nobody checks. It goes to the person who can actually deal with it."
-
-Bad card:
-> Title: "Intelligent lead routing"
-> Description: "Our system automatically distributes inbound enquiries based on configurable routing rules."
-
-### 6.5 How it works
-
-**Purpose:** Show the reader how simple the process is. Remove fear and uncertainty.
-
-**Rules:**
-- 3-5 numbered steps
-- Each step title is a plain English action
-- Each step description explains what happens — not technical how
-- Step 1 is always about understanding their business
-
-Good step:
-> "We talk about your business — We ask about your services, how people find you today, and where things fall apart."
-
-Bad step:
-> "Discovery & Requirements Gathering — We conduct a comprehensive audit of your existing digital infrastructure."
-
-### 6.6 What's included
-
-**Purpose:** Show scope without jargon. Build confidence that everything is covered.
-
-**Rules:**
-- Plain English list items
-- Each item describes a real thing, not a category
-- Avoid feature names — describe what the thing does
-
-Good:
-> "Enquiry forms that send details to the right person, not a black hole"
-
-Bad:
-> "Lead capture form integration with CRM routing"
-
-### 6.7 Qualification (who it's for / not for)
-
-**Purpose:** Build trust by being honest about fit. Filter out bad-fit leads.
-
-**Rules:**
-- "Great fit" items describe situations, not customer types
-- "Not the right fit" items are honest and redirect to better options
-- Never be dismissive — always suggest an alternative
-
-Good "not fit" item:
-> "Your main problem is that people can't find you — Local SEO or improving your website will help more than review collection."
-
-Bad "not fit" item:
-> "Not suitable for small businesses."
-
-### 6.8 FAQ
-
-**Purpose:** Answer the questions the reader is already thinking. Remove the last objections.
-
-**Rules:**
-- Use real questions in the reader's voice ("Will this help me show up on Google?")
-- Answers should be direct — start with yes, no, or the key point
-- Don't hedge or add unnecessary caveats
-- 5-10 questions per page
-
-Good answer:
-> "Yes. Each of your services gets its own page, titles match what people actually search for, and the site is built so Google can read it properly."
-
-Bad answer:
-> "Our holistic approach to search engine optimization ensures comprehensive indexation of your service taxonomy."
-
-### 6.9 CTA
-
-**Purpose:** Low pressure next step. Make it easy to say yes.
-
-**Rules:**
-- Title should feel like a conversation starter, not a sales pitch
-- Description should tell them what happens next — no mystery
-- Never use urgency tactics or fake scarcity
-
-Good:
-> Title: "Want to know why your competitors are showing up and you're not?"
-> Description: "Tell us what you do and where you work. We'll take a look at how your business appears on Google right now and tell you what's missing."
-
-Bad:
-> Title: "Transform Your Digital Presence Today!"
-> Description: "Book your free consultation and unlock your growth potential."
+**Suppression rule:** if the reader can infer the outcome → don't explain it.
+**Pattern fatigue:** even correct patterns fail if repeated. Same structure 5+ times → rewrite.
 
 ---
 
-## 7. PAGE INTENT FRAMEWORK
+## 8. RHYTHM + STRUCTURE
 
-Every page has a specific emotional job. The core problem, the reader's mindset, and what they need to hear are different for each page type.
+### Sentence Rhythm
 
-### Smart Website page
+Mix: short + medium, direct + descriptive, with connector + without.
 
-**Core problem:** "My website looks fine but doesn't bring in business."
+Each section needs: 1 short high-impact line, 2–3 medium lines. Avoid equal lengths.
 
-**Reader mindset:** They've had a website for years. They know something's wrong but can't pinpoint it. They've probably been told they need a "redesign" or "new branding."
+Each section must include at least one ultra-short sentence (2–5 words): "Nobody notices." "That's the problem."
 
-**Messaging angle:** The website isn't ugly — it's just not doing anything. Visitors arrive and leave because there's no clear next step. The website needs to guide people toward getting in touch, capture their details, and make sure someone follows up.
+### Bullet Rules
 
-**Key phrases:**
-- "Your website probably looks fine. The problem is what happens after."
-- "People land, look around, and leave."
-- "Nobody gets notified when someone fills in a form."
+- Mix structures and lengths
+- Max 1 "— so" per list, max 1 "which means"
+- At least 1 implied bullet, at least 1 split sentence
+- Max 5 bullets per section
+- 2 bullets saying similar thing → merge. 3 → collapse to 1.
+- If all bullets have same length/structure → rewrite
 
-### CRM page
+### Asymmetry
 
-**Core problem:** "Leads come in but some just disappear. Nobody knows who's handling what."
+If writing has equal sentence lengths, balanced bullets, clean symmetry → it is wrong. Break it.
 
-**Reader mindset:** They're busy. Leads arrive through calls, emails, forms. The team does their best, but follow-ups slip. They can feel they're losing business but can't prove it.
+### Content Density
 
-**Messaging angle:** The first conversation usually goes fine. Everything after that falls apart. The CRM puts every lead in one place, assigns it to someone, and makes sure follow-up actually happens.
+Per section: max 3 core ideas, max 5 bullets, max 1 idea per bullet.
 
-**Key phrases:**
-- "Leads sit in emails, voicemails, and DMs — and some just get missed."
-- "Nobody knows how many leads came in this week."
-- "Follow-up only happens when someone has a spare moment."
+- 2 bullets = same idea → merge
+- 3 bullets = same idea → collapse to 1
 
-### Local SEO page
-
-**Core problem:** "People are searching for what I do, but they're finding my competitors."
-
-**Reader mindset:** They know Google matters. They might have tried SEO before and been burned. They're sceptical of promises but frustrated that competitors keep showing up instead of them.
-
-**Messaging angle:** The problem usually isn't that SEO "doesn't work" — it's that the website doesn't clearly explain what they do or where they do it. Fix the website first, then Google can actually understand the business.
-
-**Key phrases:**
-- "Your competitors are showing up and you're not."
-- "Google can't tell what you do or where you do it."
-- "Fix the website first — then SEO starts working."
-
-### Reputation / Review page
-
-**Core problem:** "We do great work but our Google reviews don't show it."
-
-**Reader mindset:** They get compliments from customers all the time. But somehow only 8 reviews on Google, half from three years ago. Meanwhile a competitor with worse work has 200 reviews. They feel this is unfair — and they're right.
-
-**Messaging angle:** The work is already good. The missing piece is asking at the right time. Happy customers will leave a review — they just need to be asked while they still remember the experience.
-
-**Key phrases:**
-- "Customers tell you how great the job was — then walk away without leaving a review."
-- "We're better than our reviews make us look."
-- "Ask while they're still smiling."
+**Global:** one idea appears only once per page. If repeated across sections → keep strongest, delete rest.
 
 ---
 
-## 8. VISUAL LANGUAGE SYSTEM
+## 9. OBSERVATION SYSTEM (LEVEL 5)
 
-This is the most important skill in the playbook. Use the Rewrite Method from §3 to convert abstract language into visual language. This section provides the reference examples.
+Writing should feel observed, not constructed. Not explained. Not persuasive. Not formatted.
 
-### The rule
+**Before writing a section, ask:** "What would I notice if I watched this business for 1 day?"
 
-Every key sentence must create a picture in the reader's head. If they can't see it, they won't act.
+Then write THAT.
 
-### How to convert abstract → visual
+### Observation Depth
 
-Ask: "What would this literally look like if I was watching?" Then describe that scene.
+| Level | Type |
+|------|------|
+| L1 | Abstract ("lead management issues") |
+| L2 | Slightly concrete ("leads get missed") |
+| L3 | Scenario ("leads sit in inboxes") |
+| L4 | Specific ("emails, WhatsApp, forms all separate") |
+| L5 | Observed reality (step-by-step what happens) |
 
-### Reference examples
+All core sections: L4 minimum. Hero, Problem, Proof: L5.
+
+### Too-Smart Filter
+
+If it sounds insightful instead of obvious → rewrite.
+Reader should think "that's exactly what happens" — NOT "clever way to say it."
+
+### Level 5 Application
+
+Use for: Hero, Problem, Proof, Comparison.
+Do NOT force into: FAQ, definitions, technical clarity, instructions.
+If Level 5 hurts clarity → revert.
+
+---
+
+## 10. SECTION RULES
+
+### Page Flow
+
+Every page: Recognition → Friction → Clarity → Trust → Action
+
+### Section Style Lock
+
+| Section | Behavior | Energy | Must NOT Do |
+|---------|----------|--------|-------------|
+| HERO | Observational | Recognition | Explain, teach, justify |
+| PROBLEM | Real situations | Tension | Offer solutions |
+| COMPARISON | Contrast clarity | Clarity | Tell stories |
+| OUTCOME | Calm certainty | Quiet confidence | Explain how |
+| PROCESS | Clear, instructional | Calm | Persuade |
+| PROOF | Observed, slightly messy | Realism | Generalize, summarize |
+| QUALIFICATION | Direct, filtering | Transparency | Sell |
+
+Each section must FEEL different from the previous one. If it says the same thing differently → rewrite. If tone feels the same across 2+ sections → rewrite the page.
+
+### Cross-Section Check
+
+If same idea appears in multiple sections → keep strongest version only. Each section introduces NEW information.
+
+---
+
+## 11. HERO SYSTEM
+
+- **Badge:** 2–5 words
+- **Title:** one sentence, 4–8 words (max 10)
+- **Description:** current reality — what's going wrong
+- **List:** 3–4 items, 1–2 words each (max 3)
+
+**Hero must:** feel like recognition, not explanation. Be instantly scannable. No cause-effect chains. No abstract nouns (visibility, growth, performance, optimization).
+
+**Hero must NOT:** describe the service, use feature language, open with "We build..." or "Our solution..."
+
+### Hero Type System (one per page, no repeats)
+
+1. Loss — "Leads come in. Some get missed."
+2. Visibility — "People search. You don't show up."
+3. Confusion — "Customers don't know what you do."
+4. Delay — "People reach out. Nobody responds quickly."
+5. Leakage — "Work is there. You're not capturing it."
+6. Waste — "You're paying for leads you don't convert."
+
+If hero can fit another page → it is wrong. If two heroes feel similar → rewrite one.
+
+### Hero Title Anti-Patterns
+
+❌ "[Service] that does X, Y, Z"
+❌ "[Service] for [audience]"
+❌ Feature-stacked titles
+
+✅ "People visit your site. Then nothing happens."
+✅ "Your competitors show up. You don't."
+
+---
+
+## 12. COMPARISON RULES
+
+Before = broken reality (reactive, unclear, human-dependent, messy)
+After = operational clarity (controlled, visible, assigned, predictable)
+
+AFTER is NOT a cleaner version of BEFORE — it is a different operating state.
+
+Before and After must NOT mirror each other structurally. If structure matches → rewrite.
+
+---
+
+## 13. PROOF RULES
+
+Structure: 1 messy reality line + 1 structural change line + 1 outcome line. If more → compress.
+
+Must feel observed, not narrated. Slightly messy, not clean. Must include at least one imperfection.
+
+Each service page must use a different business context. Same example across pages = FAIL.
+
+---
+
+## 14. OTHER SECTIONS
+
+### Problem
+Use before/after pairs. "Before" = real specific situation. 3 pairs.
+
+### Outcome
+Lead with results, not methods. Each card answers "What will I see?"
+
+### Process
+3–5 numbered steps. Plain English. Step 1 = understanding their business. No technical how.
+
+### What's Included
+Plain English, real things, not categories. Avoid feature names.
+
+### Qualification
+"Great fit" = situations, not customer types. "Not the right fit" = honest, never dismissive.
+
+### FAQ
+Real questions in reader's voice. Direct answers — start with yes, no, or the key point. No hedging. 5–10 per page.
+
+### CTA
+Feel like a conversation, not a pitch. Tell them what happens next. No urgency tactics. Must feel like continuation of the page.
+
+### SEO
+Title: core service + main benefit. Description: describe the change, not the service. Under 160 chars. No hype.
+
+---
+
+## 15. INDUSTRY RULES
+
+**Service pages:** industry-agnostic by default. Use generic service business language (calls, forms, jobs, customers). NOT "roofing business" or "plumbing company."
+
+**Industry pages:** fully industry-specific.
+
+**Proofs:** may include industries, but each page uses a different one. Industry is supporting detail, not positioning.
+
+If a reader thinks "this is only for roofers" → FAIL.
+
+Graph metadata may include `industries[]` for resolution — content must NOT surface them unless the page is explicitly industry-specific.
+
+---
+
+## 16. CROSS-PAGE RULES
+
+- No reused sentence structures, phrasing patterns, or hero logic across pages
+- If a phrase appears 3+ times across pages → rewrite all but the strongest
+- If two pages feel interchangeable → rewrite one
+
+Track recent structural choices when writing multiple pages. If similarity > 60% → rewrite.
+
+Content must align with graph metadata, conversion system, and page intent. Mismatch → rewrite.
+
+### Entry Page Rule
+
+Even SEO/entry pages must reflect system thinking, NOT sound like standalone services, and naturally lead to core systems. If a page can exist independently → FAIL.
+
+---
+
+## 17. REWRITE METHOD (4 STEPS)
+
+**Step 1 — Spot the vague word.** Flag adjectives that describe nothing (strong, robust), verbs that hide action (optimize, leverage), nouns that aren't real (solution, pipeline).
+
+**Step 2 — Ask "what actually happens?"** Answer literally: what changes in someone's day?
+
+**Step 3 — Turn it into a scene.** Put a real person in a real situation.
+
+**Step 4 — Cut it down.** One idea per sentence. Remove what you don't need.
+
+If a sentence survives all 4 steps unchanged → it was already good.
+
+### Worked Example
+
+❌ "Our comprehensive solution streamlines your lead management process."
+
+→ What happens? When a lead comes in, it goes to the right person. Follow-up goes out without anyone remembering.
+
+✅ "When someone gets in touch, their details land in your CRM and the right person is notified. A confirmation email goes out — nobody sends it."
+
+---
+
+## 18. VISUAL LANGUAGE
+
+Ask: "What would this literally look like if I was watching?" Describe that scene.
 
 ❌ "Automated lead capture and routing"
-✅ "Someone fills in your form. Their name, number, and message land in your CRM. The right person on your team gets a notification."
-
----
-
-❌ "Improved online presence"
-✅ "When someone nearby searches 'plumber in Manchester', your business shows up."
-
----
-
-❌ "Streamlined customer communication"
-✅ "Chat messages, texts, and emails all show up in one inbox. Your team replies from one screen."
-
----
-
-❌ "Feedback management system"
-✅ "If a customer is unhappy, they share it with you privately instead of posting a one-star review on Google."
-
----
+✅ "Someone fills in your form. Their name, number, and message land in your CRM. The right person gets a notification."
 
 ❌ "Smart follow-up automation"
-✅ "Someone books a call? They get a confirmation email. Haven't heard back in two days? A reminder goes out. Your team doesn't touch any of it."
+✅ "Someone books a call? Confirmation email. Haven't heard back in two days? Reminder goes out. Your team doesn't touch it."
+
+**Over-conversion warning:** not every sentence needs to be visual. Only convert key lines, decision lines, proof, problem statements. Support lines stay simple.
 
 ---
 
-❌ "Consistent local signals across directories"
-✅ "Your name, address, phone number, and services match on Google, Yell, and every other directory — because one wrong detail can stop you showing up."
+## 19. CONTENT TYPES
+
+### Blog Posts
+Open with a real situation. Explain what's going wrong in their day. Show what better looks like. End with low-pressure next step. No "In this article..." or "Let's dive in..."
+
+### Case Studies
+Who they are (one sentence). What was going wrong (real situation). What we did (like telling a friend). What changed (specific, measurable). Use the client's language.
+
+### Feature Pages
+One capability, one situation, one fix. More direct, less narrative. Must feel like "a specific fix" not "a full solution."
+
+### Resource Pages
+Answer one question. Write for someone who's never heard the term. Include real examples.
 
 ---
 
-❌ "Multi-channel engagement capabilities"
-✅ "Customers can reach you by form, phone, text, or chat — and every message ends up in the same place."
+## 20. VALIDATION CHECKLIST
 
----
+Run after every write/rewrite. All must pass.
 
-❌ "Data-driven optimization of conversion paths"
-✅ "You can see which pages people visit before they get in touch — so you know what's working."
+### Clarity
+- [ ] Non-technical business owner understands every sentence
+- [ ] Key lines describe something visible, audible, or measurable
+- [ ] No sentence says nothing
+- [ ] No sentence exceeds 25 words unless telling a story
 
----
+### Language
+- [ ] Zero banned words (§5) unless required by system-language rule
+- [ ] No SaaS-style feature lists
 
-### The test
-
-Read the sentence out loud. If you can't picture a real person doing a real thing, rewrite it.
-
----
-
-## 9. COMMON MISTAKES
-
-### 9.1 Vague phrases that say nothing
-
-These sentences feel like they're saying something but actually say nothing:
-
-- "It sets you up well"
-- "Gives you a strong foundation"
-- "Improves your online presence"
-- "Helps your business grow"
-- "Works seamlessly"
-- "Everything is connected"
-
-**Fix:** Replace every one with WHAT actually happens. What changes? What can you see? What's different tomorrow?
-
-### 9.2 AI-clean sentences
-
-Sentences that are grammatically perfect but feel sterile. See §10 for the full AI Detection Filter.
-
-**The test:** Read it out loud. If it sounds like a brochure, ask "how would I say this to a mate?" and use that instead.
-
-❌ "Our comprehensive approach ensures all touchpoints are addressed."
-✅ "We make sure nothing gets missed."
-
-### 9.3 Feature-first writing
-
-Starting with what we do instead of what changes for them:
-
-❌ "We integrate your website with your CRM and set up automated follow-up sequences."
-
-✅ "When someone fills in a form on your site, their details land in your CRM and a follow-up email goes out — without anyone doing anything."
-
-**Fix:** Flip the order. Result first, method second (or leave method out entirely).
-
-### 9.4 Over-explaining
-
-Saying in 40 words what could be said in 12:
-
-❌ "Our team of experienced professionals will work closely with your business to understand your unique requirements and develop a tailored solution that meets your specific needs and objectives."
-
-✅ "We learn how your business works, then build around that."
-
-**Fix:** After writing a paragraph, ask "can I say this in half the words?" Usually you can.
-
-### 9.5 Sounding like SaaS marketing
-
-MindWP is not a software company. We don't sell a tool. We don't have "features". We're people who set things up for other people.
-
-SaaS language to avoid:
-- "Platform"
-- "Dashboard" (unless describing a specific screen they'll see)
-- "Features include..."
-- "Unlock / enable / empower"
-- "Getting started is easy with our..."
-- "Trusted by X businesses"
-
-**Fix:** Talk like a tradesperson who happens to work on websites. "We'll sort it out. Here's what you'll get. Here's how it works."
-
-### 9.6 Using "our" when you mean "your"
-
-❌ "Our CRM tracks every lead."
-✅ "Your CRM tracks every lead."
-
-❌ "Our system handles follow-ups."
-✅ "Follow-up emails go out on their own."
-
-We don't own the CRM. We don't own the system. We set things up — then it belongs to them.
-
----
-
-## 10. AI DETECTION FILTER
-
-Run this filter on every piece of content before publishing. It catches the patterns that make writing feel artificial even when the words are technically correct.
-
-### Red flag phrases
-
-If any of these appear, the sentence needs rewriting:
-
-| Red flag | Why it fails |
-|---|---|
-| "ensures that..." | Nobody talks like this. Say what actually happens. |
-| "enables businesses to..." | Passive. Flip it: "[You] can now..." |
-| "effectively manage..." | "Effectively" is filler. Remove it and see if the sentence still works. It will. |
-| "...and more" / "...and so much more" | Lazy ending. List exactly what's included or stop. |
-| "In today's [landscape/world/climate]..." | AI opening. Delete the whole sentence and start with the actual point. |
-| "Whether you're [X] or [Y]..." | Generic. Pick a specific reader and talk to them. |
-| "It's important to note that..." | Filler. Delete it. Whatever comes next is the actual sentence. |
-| "This allows you to..." | Passive feature language. Flip to: "You can..." |
-| "Take your [X] to the next level" | Meaningless. What specific thing changes? |
-| "In order to..." | Just say "to." |
-
-### Structure red flags
-
-These patterns signal AI-generated or AI-influenced writing:
-
-1. **Three-part lists with escalating adjectives.** "Fast, reliable, and powerful." Real writing is uneven. It doesn't always come in threes.
-2. **Opening with a definition.** "A CRM is a tool that..." Real content opens with a problem or situation, not a definition.
-3. **Every paragraph is the same length.** Real writing has short paragraphs, long ones, one-sentence paragraphs. Uniform length = machine rhythm.
-4. **Conclusions that restate the introduction.** "As we've seen, [repeats intro]." Cut the conclusion entirely or add something new.
-5. **Hedging everywhere.** "Can potentially help improve..." Just say what it does. "Improves your local search rankings" or cut it.
-6. **Symmetrical before/after pairs that sound too clean.** Real problems are messy. If every "before" is perfectly balanced with an "after," it feels manufactured.
-
-### Human signals (what passes the filter)
-
-Good writing has these qualities:
-
-- **Uneven sentence lengths.** A long sentence followed by a short one. Then a medium one. Then a really short one.
-- **Specific details.** Names of tools (WordPress, Google Business Profile), real timeframes ("the same day", "within minutes"), real scenarios ("a customer calls while you're on another job").
-- **Asymmetry.** Not everything lines up perfectly. One bullet is 8 words, the next is 20. That's natural.
-- **Real opinions.** "We don't do this" or "that doesn't work" — not "all approaches have their merits."
-- **Imperfect phrasing.** "Sort it out", "get it right", "the boring stuff" — humans use casual words that AI won't default to.
-
-### The 3-second test
-
-Read any sentence. Count to 3. Can you remember what it said?
-
-- If yes: it's concrete enough.
-- If no: it was vague. Rewrite it.
-
----
-
-## 11. QUALITY CHECK
-
-Run this checklist on every piece of content. Every box must be ticked before publishing. If one fails, fix it before moving on.
-
-### Pass 1 — Clarity
-
-- [ ] Can a non-technical business owner understand every sentence?
-- [ ] Every key line describes something you can see, hear, or measure
-- [ ] Every sentence that says nothing has been deleted
-- [ ] No sentence is longer than 25 words unless it's telling a story
-
-### Pass 2 — Language
-
-- [ ] Zero uses of: system, workflow, pipeline, infrastructure, optimization, leverage, streamline, seamless, robust, comprehensive, holistic, solution, empower, ecosystem
-- [ ] Zero uses of "our CRM", "our system", or "our platform"
-- [ ] Zero uses of: ensures, enables, effectively, empowers, facilitates
-- [ ] No SaaS-style feature lists ("Features include...")
-
-### Pass 3 — AI Detection
-
-- [ ] No sentences starting with "In today's..." or "Whether you're..."
-- [ ] No sentences containing "It's important to note" or "This allows you to"
+### AI Detection
+- [ ] No "In today's..." or "Whether you're..."
+- [ ] No "It's important to note" or "This allows you to"
+- [ ] No "ensures that", "enables businesses to", "effectively manage"
 - [ ] No three-part escalating adjective lists
-- [ ] Paragraphs vary in length (not all the same size)
-- [ ] Sentence lengths are uneven (mix of 5-word and 15-word sentences)
+- [ ] No opening with definitions ("A CRM is a tool that...")
+- [ ] No conclusions restating the introduction
+- [ ] Paragraph and sentence lengths vary
 
-### Pass 4 — Believability
+### Human Signals (what PASSES the filter)
+- [ ] Uneven sentence lengths (long → short → medium → very short)
+- [ ] Specific details: tool names (WordPress, Google Business Profile), real timeframes ("same day", "within minutes")
+- [ ] Asymmetry in bullet lengths (one is 8 words, the next is 20)
+- [ ] Real opinions: "we don't do this", "that doesn't work"
+- [ ] Casual phrasing: "sort it out", "the boring stuff", "get it right"
 
-- [ ] Every claim is realistic — no #1 rankings, no guaranteed results
-- [ ] No superlatives without evidence (most powerful, best-in-class, industry-leading)
-- [ ] A sceptical reader would accept every statement
+### 3-Second Test
+Read any sentence. Count to 3. Can you remember what it said? If yes → concrete enough. If no → vague, rewrite.
 
-### Pass 5 — Voice
+### Believability
+- [ ] No guaranteed results
+- [ ] No unsupported superlatives
+- [ ] A sceptical reader accepts every statement
 
-- [ ] Tone sits at 7/10 (direct, warm, not aggressive, not soft)
-- [ ] Uses "we" and "you" — not "the team" or "the client"
-- [ ] Uses contractions (we'll, you're, it's, don't)
-- [ ] Read every sentence out loud — none feel embarrassing
+### Voice
+- [ ] Tone at 7/10 (direct, warm)
+- [ ] Uses "we" and "you"
+- [ ] Uses contractions consistently
+- [ ] No hedging
+- [ ] Sounds like speaking, not writing
 
-### Pass 6 — Structure
+### Structure
+- [ ] Opens with reader's problem, not our service
+- [ ] Outcomes before methods
+- [ ] CTA feels like conversation
+- [ ] FAQ in reader's voice
 
-- [ ] Opens with the reader's problem, not our service
-- [ ] Outcomes come before methods in every section
-- [ ] CTA feels like a conversation, not a sales pitch
-- [ ] FAQ questions are written in the reader's voice
+### Connectors
+- [ ] Hard limits respected (§7)
+- [ ] At least 40% sentences have no connector
+- [ ] No repeated connector weakens a section
 
----
+### Builder Check
+- [ ] Does not sound like building websites
+- [ ] Does not mention pages excessively
+- [ ] Does not feel like a design service
 
-## 12. HOW TO WRITE NEW CONTENT
-
-Use this workflow for any new page, blog post, or case study. For rewriting existing content, use the Rewrite Method in §3 instead.
-
-### Step 1 — Define the problem
-
-Write one sentence describing what the reader is experiencing right now. Not what they need — what's going wrong.
-
-> "Leads come in from calls, emails, and the website — and some just disappear."
-
-### Step 2 — Define the outcome
-
-Write one sentence describing what their day looks like after it's fixed. Be specific enough to picture.
-
-> "Every lead lands in one place. Your team knows who's handling it. Follow-ups go out on their own."
-
-### Step 3 — Write three real scenarios
-
-Describe three everyday situations where the problem shows up. These become your problem section.
-
-> "A customer calls while you're on another job. Nobody writes down the details. By the time you remember, they've called someone else."
-
-### Step 4 — Write the change for each scenario
-
-For each situation, describe what happens differently. These become your outcome sections.
-
-> "A customer calls while you're on another job. Their details are captured and your team gets a notification. Follow-up happens even if nobody picked up."
-
-### Step 5 — Run the Rewrite Method (§3) on every sentence
-
-Go through each sentence using the 4-step process: spot vague words, ask what actually happens, turn it into a scene, cut it down.
-
-### Step 6 — Run the Quality Check (§11)
-
-Run all 6 passes. Fix anything that fails before publishing.
+### Signature Feel
+- [ ] Read 10 lines. Feels natural, not patterned.
+- [ ] Read out loud. Sounds like speaking.
+- [ ] A business owner could say it.
 
 ---
 
-## 13. EXTENSIONS — APPLYING THIS TO OTHER CONTENT
+## 21. FINAL POLISH
 
-### Blog posts
+After writing:
+1. Remove 20–30% of sentences where meaning holds
+2. Remove 30% of connectors
+3. Break 2–3 sentences into shorter lines
+4. Add 1–2 micro-sentences
+5. Scan for repetition
 
-Blog posts follow the same philosophy: problem → situation → clarity.
+If content still feels patterned → rewrite.
 
-**Structure:**
-1. Open with a real situation the reader recognises
-2. Explain what's actually going wrong (not in theory — in their day)
-3. Show what a better version looks like
-4. End with a simple, low-pressure next step
+**Sentence kill rule:** delete any sentence that repeats a previous idea, explains an obvious outcome, adds no new information, or feels like filler. When unsure → delete.
 
-**Rules:**
-- No "In this article, we'll explore..."
-- No "Let's dive in..."
-- No "In conclusion..."
-- Start with the problem. End with the answer.
+### Common Mistakes (Quick Reference)
 
-**Good blog opening:**
-> "You've had the same website for two years. It looks fine. But when was the last time someone found you through Google and actually called?"
-
-**Bad blog opening:**
-> "In today's digital landscape, having a strong online presence is essential for businesses looking to attract and retain customers."
-
-### Case studies
-
-Case studies should read like a short story, not a report.
-
-**Structure:**
-1. Who they are (one sentence — industry, size, location)
-2. What was going wrong (real situation, not jargon)
-3. What we did (explain like you're telling a friend)
-4. What changed (specific, measurable where possible)
-
-**Rules:**
-- Use the client's language, not ours
-- Include at least one specific number or timeframe
-- Don't list every feature we set up — describe what the client notices
-
-**Good:**
-> "Before: Sarah's team was copying lead details from emails into a spreadsheet. Three or four a week were getting missed entirely.
-> After: Every enquiry goes straight into their CRM. Follow-up emails go out the same day. They haven't missed a lead in four months."
-
-**Bad:**
-> "We implemented a comprehensive CRM solution with automated lead routing, pipeline management, and multi-channel follow-up sequences."
-
-### Resource pages
-
-Resource pages explain a concept. They should answer one clear question the reader already has.
-
-**Structure:**
-1. What it is (one plain sentence)
-2. Why it matters (in their terms, not ours)
-3. How it works (simple, honest)
-4. What to do about it (specific actions or a link to the relevant service)
-
-**Rules:**
-- Don't try to cover everything — cover one thing well
-- Write for someone who's never heard the term before
-- Include real examples from the kinds of businesses we work with
-
-**Good resource opening:**
-> "Your Google Business Profile is the box that appears on the right when someone searches for your business. It shows your name, address, phone number, hours, and reviews. If it's wrong or incomplete, people either call someone else or don't call at all."
-
-**Bad resource opening:**
-> "Google Business Profile (formerly Google My Business) is a critical component of local SEO strategy that enables businesses to manage their online presence across Google Search and Maps."
+| Mistake | Fix |
+|---------|-----|
+| Vague phrases ("sets you up well", "strong foundation") | Replace with WHAT actually happens |
+| AI-clean sentences (grammatically perfect, feels sterile) | Ask "how would I say this to a mate?" |
+| Feature-first writing ("We integrate your CRM...") | Flip: result first, method second or omit |
+| Over-explaining (40 words where 12 work) | "Can I say this in half the words?" |
+| SaaS marketing ("Platform", "Features include...") | Talk like a tradesperson who works on websites |
 
 ---
 
-## 14. SYSTEM-LEVEL RULES (REFERENCE)
+## 22. PAGE INTENT REFERENCE
 
-The following system-level rules have been centralized in **SYSTEM.md**. They are NOT duplicated here. Read SYSTEM.md for the authoritative versions.
+### Smart Website
+Problem: "My website looks fine but doesn't bring in business."
+Angle: The website isn't ugly — it's not doing anything. No clear next steps. No follow-up.
 
-| Rule Area | Location |
-|---|---|
-| Service System Map (4 core services) | SYSTEM.md §2 |
-| Page Boundary Rules (per service) | SYSTEM.md §4 |
-| Terminology Control System (per service) | SYSTEM.md §5 |
-| Tool Positioning Rule | SYSTEM.md §7 |
-| Connection Rule (bridge system) | SYSTEM.md §6 |
-| System Consistency Check (drift detection) | SYSTEM.md §9 |
+### CRM
+Problem: "Leads come in but some disappear. Nobody knows who's handling what."
+Angle: First conversation goes fine. Everything after falls apart.
+
+### Local SEO
+Problem: "People search for what I do. They find my competitors."
+Angle: Website doesn't explain what you do or where. Fix the website first — then SEO works.
+
+### Reputation
+Problem: "We do great work but our Google reviews don't show it."
+Angle: Work is already good. Missing piece: asking at the right time.
+
+Each page must clearly reflect ONE primary system. If a reader can't tell what the page is about → FAIL.
+
+---
+
+## 23. NEW CONTENT WORKFLOW
+
+1. Define the problem (one sentence — what's going wrong)
+2. Define the outcome (one sentence — what their day looks like after)
+3. Write three real scenarios (everyday situations where the problem shows up)
+4. Write the change for each scenario
+5. Run the rewrite method (§17) on every sentence
+6. Run the validation checklist (§20)
+
+If full-rewrite triggers during this → ignore original phrasing, rebuild from scratch.
+
+---
+
+## 24. EXECUTION SEQUENCE
+
+When rewriting, follow this order:
+
+1. Lock context (§1)
+2. Choose rewrite mode (§3)
+3. Check full-rewrite triggers (§3)
+4. Apply contamination rule (§3)
+5. Rewrite content (§17, §18)
+6. Anti-builder check (§5)
+7. Connector audit (§7)
+8. Section rules check (§10–§14)
+9. Run validation checklist (§20)
+10. Final polish + output (§21)
+
+### Bulk Execution (Multi-Page)
+
+When processing multiple pages:
+- Work section by section, NOT entire file at once
+- Execution order: Hero → Problem → Comparison → Proof → remaining sections
+- After each section: run connector audit + duplication check + density filter
+- Do NOT over-engineer low-impact sections (FAQ, Included = L3 is fine)
 
 ---
 
 ## QUICK REFERENCE — THE 6 QUESTIONS
 
-When stuck on any piece of content, answer these:
+1. What's the reader's situation right now?
+2. What changes after?
+3. Can they picture it?
+4. Would a real person say this?
+5. Is this believable?
+6. Is anything vague?
 
-1. **What's the reader's situation right now?** (The problem they feel)
-2. **What changes after?** (The outcome they can see)
-3. **Can they picture it?** (If not, add a real scenario)
-4. **Would a real person say this?** (Read it out loud)
-5. **Is this believable?** (No hype, no exaggeration)
-6. **Is anything vague?** (Cut or rewrite it)
+If every section passes → content is ready.
 
-If every section passes these six questions, the content is ready.
+---
+
+## SYSTEM-LEVEL RULES (REFERENCE)
+
+Service definitions, boundaries, terminology, and system consistency → **SYSTEM.md**

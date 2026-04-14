@@ -1,18 +1,14 @@
 import { aiLeadHandlingPage } from '@/domains/services/data/ai-lead-handling';
-import { bookingSchedulingSystemPage } from '@/domains/services/data/booking-scheduling-system';
 import { bricksBuilderPage } from '@/domains/services/data/bricks-builder';
-import { conversionFunnelSystemPage } from '@/domains/services/data/conversion-funnel-system';
+import { conversionLayerPage } from '@/domains/services/data/conversion-layer';
 import { crmAutomationPage } from '@/domains/services/data/crm-automation';
 import { divi5Page } from '@/domains/services/data/divi5';
 import { elementorPage } from '@/domains/services/data/elementor';
-import { funnelLandingPageDevelopmentPage } from '@/domains/services/data/funnel-landing-page-development';
-import { growthRevenueSystemsPage } from '@/domains/services/data/growth-revenue-systems';
 import { leadReactivationSystemPage } from '@/domains/services/data/lead-reactivation-system';
 import { localSeoAuthorityPage } from '@/domains/services/data/local-seo-authority';
 import { marketingAutomationSetupPage } from '@/domains/services/data/marketing-automation-setup';
 import { missedCallRecoverySystemPage } from '@/domains/services/data/missed-call-recovery-system';
 import { reputationReviewSystemsPage } from '@/domains/services/data/reputation-review-systems';
-import { reviewAutomationSystemPage } from '@/domains/services/data/review-automation-system';
 import { smartWebsiteSystemsPage } from '@/domains/services/data/smart-website-systems';
 import { systemMigrationPlatformConsolidationPage } from '@/domains/services/data/system-migration-platform-consolidation';
 import { unifiedCommunicationSystemPage } from '@/domains/services/data/unified-communication-system';
@@ -60,85 +56,31 @@ export const SERVICE_REGISTRY: Record<string, ServiceMetadata> = {
       return smartWebsiteSystemsPage.topics;
     },
   },
-  'booking-scheduling-system': {
-    slug: 'booking-scheduling-system',
+  'conversion-layer': {
+    slug: 'conversion-layer',
     get path() {
-      return bookingSchedulingSystemPage.seo.canonical;
+      return conversionLayerPage.seo.canonical;
     },
     get title() {
-      return bookingSchedulingSystemPage.seo.title;
+      return conversionLayerPage.seo.title;
     },
     get description() {
-      return bookingSchedulingSystemPage.seo.description;
+      return conversionLayerPage.seo.description;
     },
     get keywords() {
-      return bookingSchedulingSystemPage.keywords;
+      return conversionLayerPage.keywords;
     },
     get badge() {
-      return bookingSchedulingSystemPage.badge;
+      return conversionLayerPage.badge;
     },
     get category() {
-      return bookingSchedulingSystemPage.category;
+      return conversionLayerPage.category;
     },
     get systems() {
-      return bookingSchedulingSystemPage.systems;
+      return conversionLayerPage.systems;
     },
     get topics() {
-      return bookingSchedulingSystemPage.topics;
-    },
-  },
-  'conversion-funnel-system': {
-    slug: 'conversion-funnel-system',
-    get path() {
-      return conversionFunnelSystemPage.seo.canonical;
-    },
-    get title() {
-      return conversionFunnelSystemPage.seo.title;
-    },
-    get description() {
-      return conversionFunnelSystemPage.seo.description;
-    },
-    get keywords() {
-      return conversionFunnelSystemPage.keywords;
-    },
-    get badge() {
-      return conversionFunnelSystemPage.badge;
-    },
-    get category() {
-      return conversionFunnelSystemPage.category;
-    },
-    get systems() {
-      return conversionFunnelSystemPage.systems;
-    },
-    get topics() {
-      return conversionFunnelSystemPage.topics;
-    },
-  },
-  'funnel-landing-page-development': {
-    slug: 'funnel-landing-page-development',
-    get path() {
-      return funnelLandingPageDevelopmentPage.seo.canonical;
-    },
-    get title() {
-      return funnelLandingPageDevelopmentPage.seo.title;
-    },
-    get description() {
-      return funnelLandingPageDevelopmentPage.seo.description;
-    },
-    get keywords() {
-      return funnelLandingPageDevelopmentPage.keywords;
-    },
-    get badge() {
-      return funnelLandingPageDevelopmentPage.badge;
-    },
-    get category() {
-      return funnelLandingPageDevelopmentPage.category;
-    },
-    get systems() {
-      return funnelLandingPageDevelopmentPage.systems;
-    },
-    get topics() {
-      return funnelLandingPageDevelopmentPage.topics;
+      return conversionLayerPage.topics;
     },
   },
   'system-migration-platform-consolidation': {
@@ -330,33 +272,6 @@ export const SERVICE_REGISTRY: Record<string, ServiceMetadata> = {
       return localSeoAuthorityPage.topics;
     },
   },
-  'growth-revenue-systems': {
-    slug: 'growth-revenue-systems',
-    get path() {
-      return growthRevenueSystemsPage.seo.canonical;
-    },
-    get title() {
-      return growthRevenueSystemsPage.seo.title;
-    },
-    get description() {
-      return growthRevenueSystemsPage.seo.description;
-    },
-    get keywords() {
-      return growthRevenueSystemsPage.keywords;
-    },
-    get badge() {
-      return growthRevenueSystemsPage.badge;
-    },
-    get category() {
-      return growthRevenueSystemsPage.category;
-    },
-    get systems() {
-      return growthRevenueSystemsPage.systems;
-    },
-    get topics() {
-      return growthRevenueSystemsPage.topics;
-    },
-  },
   'reputation-review-systems': {
     slug: 'reputation-review-systems',
     get path() {
@@ -382,33 +297,6 @@ export const SERVICE_REGISTRY: Record<string, ServiceMetadata> = {
     },
     get topics() {
       return reputationReviewSystemsPage.topics;
-    },
-  },
-  'review-automation-system': {
-    slug: 'review-automation-system',
-    get path() {
-      return reviewAutomationSystemPage.seo.canonical;
-    },
-    get title() {
-      return reviewAutomationSystemPage.seo.title;
-    },
-    get description() {
-      return reviewAutomationSystemPage.seo.description;
-    },
-    get keywords() {
-      return reviewAutomationSystemPage.keywords;
-    },
-    get badge() {
-      return reviewAutomationSystemPage.badge;
-    },
-    get category() {
-      return reviewAutomationSystemPage.category;
-    },
-    get systems() {
-      return reviewAutomationSystemPage.systems;
-    },
-    get topics() {
-      return reviewAutomationSystemPage.topics;
     },
   },
   'crm-infrastructure-implementation': {
