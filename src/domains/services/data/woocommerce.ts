@@ -32,33 +32,33 @@ export const woocommercePage = {
     slug,
     title: 'WooCommerce & E-commerce Implementation | MindWP',
     description:
-      'WooCommerce gets your products online. But products listed doesn\'t mean orders flowing. Here\'s what most stores miss between the catalog and the sale.',
+      "WooCommerce gets your products online. But products listed doesn't mean orders flowing. Here's what most stores miss between the catalog and the sale.",
     schemaName: 'E-commerce implementation on WordPress',
     schemaDescription:
       'WooCommerce implementation that connects product display to order handling, customer follow-up, and a website that works as a complete business tool.',
   }),
   hero: {
     badge: 'WooCommerce & E-commerce',
-    title: 'Products Are Listed. Orders Aren\'t Coming.',
+    title: "Products Are Listed. Orders Aren't Coming.",
     description:
-      'Your WooCommerce store is live. Products photographed, prices set, checkout working. People browse, add things to the cart, and... leave. The store is there. The sales aren\'t.',
+      "Your WooCommerce store is live. Products photographed, prices set, checkout working. People browse, add things to the cart, and... leave. The store is there. The sales aren't.",
     list: ['Store live', 'Low orders', 'Abandoned carts'],
     cssPrefix: 'woocommerce-hero',
   },
   sections: {
     benefitsSection: {
       badge: 'What Actually Drives Sales',
-      title: 'A product catalog isn\'t a selling machine. What happens around it is.',
+      title: "A product catalog isn't a selling machine. What happens around it is.",
       description:
-        'WooCommerce handles the store mechanics fine. Products, cart, checkout — all working. But a store that gets traffic and doesn\'t convert has a problem that isn\'t the catalog.',
+        "WooCommerce handles the store mechanics fine. Products, cart, checkout — all working. But a store that gets traffic and doesn't convert has a problem that isn't the catalog.",
       backgroundColor: 'bg-base' as const,
       cssPrefix: 'woocommerce-benefits',
       items: [
         {
           icon: ShoppingCart,
-          title: 'People browse but don\'t buy',
+          title: "People browse but don't buy",
           description:
-            'Products are there. Navigation works. But nothing pushes the visitor from \"looking\" to \"buying.\" No urgency, no social proof, no reason to act now.',
+            'Products are there. Navigation works. But nothing pushes the visitor from "looking" to "buying." No urgency, no social proof, no reason to act now.',
           iconType: 'primary' as const,
         },
         {
@@ -70,7 +70,7 @@ export const woocommercePage = {
         },
         {
           icon: Shield,
-          title: 'Repeat customers don\'t come back automatically',
+          title: "Repeat customers don't come back automatically",
           description:
             'A customer buys once. No follow-up, no thank-you, no reason to return. One-time buyers stay one-time.',
           iconType: 'secondary' as const,
@@ -84,7 +84,7 @@ export const woocommercePage = {
     },
     whySection: {
       badge: 'The real question',
-      title: 'Is the store the problem — or is it what\'s missing around it?',
+      title: "Is the store the problem — or is it what's missing around it?",
       description:
         'WooCommerce is a solid e-commerce foundation. But a store without follow-up, recovery, and customer handling is just a catalog with a checkout button.',
       columns: 4 as const,
@@ -102,9 +102,9 @@ export const woocommercePage = {
             'Order ships. No check-in, no review request, no cross-sell. Every customer is a one-time buyer by default.',
         },
         {
-          title: 'You can\'t see what\'s working',
+          title: "You can't see what's working",
           description:
-            'Traffic comes from somewhere. You don\'t know which channels produce actual orders.',
+            "Traffic comes from somewhere. You don't know which channels produce actual orders.",
         },
         {
           title: 'The store runs in isolation',
@@ -115,7 +115,7 @@ export const woocommercePage = {
     },
     featureSection: {
       badge: 'What The Build Covers',
-      title: 'What a WooCommerce store looks like when it\'s connected to the business',
+      title: "What a WooCommerce store looks like when it's connected to the business",
       columns: 3 as const,
       backgroundColor: 'bg-base' as const,
       cssPrefix: 'woocommerce-features',
@@ -177,7 +177,7 @@ export const woocommercePage = {
             'Conversion tracking on orders',
             'Google Shopping connection',
             'Social media integration',
-            'Analytics that show what\'s actually selling',
+            "Analytics that show what's actually selling",
           ],
         },
         {
@@ -196,8 +196,8 @@ export const woocommercePage = {
     },
   },
   cta: {
-    title: 'Store live but sales aren\'t happening?',
+    title: "Store live but sales aren't happening?",
     description:
-      'Tell us what\'s not converting. We\'ll show you whether it\'s the store, the checkout, or what\'s missing around it.',
+      "Tell us what's not converting. We'll show you whether it's the store, the checkout, or what's missing around it.",
   },
 } satisfies ServicePageData;

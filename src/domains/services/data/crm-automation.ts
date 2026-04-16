@@ -89,7 +89,7 @@ export const crmAutomationPage = {
     slug,
     title: 'CRM Setup for Service Businesses | MindWP',
     description:
-      'Leads come in from your website, calls, and messages. Some get answered. Some don\'t. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.',
+      "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
     schemaName: 'CRM setup and lead tracking for service businesses',
     schemaDescription:
       'CRM implementation that captures every enquiry, automates follow-up, and gives service businesses clear visibility into their lead pipeline.',
@@ -98,7 +98,7 @@ export const crmAutomationPage = {
     badge: 'CRM Setup for Service Businesses',
     title: 'Leads Come In. Then They Disappear.',
     description:
-      'Your marketing works. Enquiries arrive from calls, forms, emails, and messages. But they land in different inboxes, different phones, different apps. Nobody knows which ones are waiting. Follow-up happens when someone remembers. On a busy day, it doesn\'t happen at all.',
+      "Your marketing works. Enquiries arrive from calls, forms, emails, and messages. But they land in different inboxes, different phones, different apps. Nobody knows which ones are waiting. Follow-up happens when someone remembers. On a busy day, it doesn't happen at all.",
     list: ['Leads scattered', 'Follow-up inconsistent', 'No visibility'],
     cssPrefix: 'crm-automation-hero',
   },
@@ -107,7 +107,7 @@ export const crmAutomationPage = {
       badge: 'The real problem',
       title: 'The first conversation usually goes well. Everything after that falls apart.',
       description:
-        'A lead calls. Someone answers. Helpful conversation. Then life happens. The follow-up email doesn\'t go out. The quote sits in drafts. The prospect calls a competitor who replied faster. This isn\'t a people problem. It\'s a system problem.',
+        "A lead calls. Someone answers. Helpful conversation. Then life happens. The follow-up email doesn't go out. The quote sits in drafts. The prospect calls a competitor who replied faster. This isn't a people problem. It's a system problem.",
       currentStateLabel: 'What happens now',
       structuredStateLabel: 'What a CRM changes',
       painPoints: [
@@ -134,7 +134,7 @@ export const crmAutomationPage = {
       badge: 'Day-to-day impact',
       title: 'Situations your team already deals with — handled properly',
       description:
-        'These aren\'t hypothetical. They happen in service businesses every week. Right now they depend on someone remembering. After CRM setup, they just work.',
+        "These aren't hypothetical. They happen in service businesses every week. Right now they depend on someone remembering. After CRM setup, they just work.",
       cssPrefix: 'crm-automation-use-cases-header',
       items: [
         {
@@ -206,7 +206,7 @@ export const crmAutomationPage = {
       badge: 'What gets built',
       title: 'Everything configured inside your CRM',
       description:
-        'We don\'t hand you a login and wish you luck. Every feature below is configured around your services, your team, and how your customers actually get in touch.',
+        "We don't hand you a login and wish you luck. Every feature below is configured around your services, your team, and how your customers actually get in touch.",
       cssPrefix: 'crm-automation-features-header',
       categories: [
         {
@@ -795,14 +795,14 @@ export const crmAutomationPage = {
       badge: 'Process before automation',
       title: 'We define how leads should be handled before we automate anything',
       description:
-        'A CRM that automates a broken process just breaks things faster. Before any automation runs, we work out who handles what, how a lead moves from first contact to outcome, and what happens at each stage. The system supports your team — it doesn\'t replace thinking.',
+        "A CRM that automates a broken process just breaks things faster. Before any automation runs, we work out who handles what, how a lead moves from first contact to outcome, and what happens at each stage. The system supports your team — it doesn't replace thinking.",
       cssPrefix: 'crm-automation-governance-header',
     },
     comparison: {
       header: {
         title: 'Scattered tools vs. one structured system',
         description:
-          'Most service businesses track leads across email, texts, spreadsheets, and memory. This is what that costs — and what changes when it\'s handled properly.',
+          "Most service businesses track leads across email, texts, spreadsheets, and memory. This is what that costs — and what changes when it's handled properly.",
       },
       items: [
         {
@@ -872,40 +872,40 @@ export const crmAutomationPage = {
     },
     qualification: {
       title: 'Is a CRM the right next step?',
-      description:
-        'Not every business needs one. Here\'s how to tell if yours does.',
+      description: "Not every business needs one. Here's how to tell if yours does.",
       cssPrefix: 'crm-automation-qualification-header',
       strongFitTitle: 'Good fit if',
       strongFitItems: [
-        'Leads come in regularly but you\'re not confident every one gets handled — and you suspect revenue is leaking where you can\'t see it.',
+        "Leads come in regularly but you're not confident every one gets handled — and you suspect revenue is leaking where you can't see it.",
         'Your team juggles follow-ups across email, text, and calls — and on busy days, some slip through with no way to recover them.',
-        'You want to see every active lead, who owns it, and what\'s next — in one place instead of across five tools.',
-        'You\'d rather follow-up happen automatically than rely on someone remembering when the day gets busy.',
+        "You want to see every active lead, who owns it, and what's next — in one place instead of across five tools.",
+        "You'd rather follow-up happen automatically than rely on someone remembering when the day gets busy.",
       ],
       notDesignedTitle: 'Probably not right if',
       notDesignedItems: [
-        'You get a handful of leads per month and track them easily yourself — the system investment doesn\'t pay back at low volume.',
-        'Your team genuinely prefers doing everything manually and won\'t adopt a CRM regardless of how well it\'s configured.',
+        "You get a handful of leads per month and track them easily yourself — the system investment doesn't pay back at low volume.",
+        "Your team genuinely prefers doing everything manually and won't adopt a CRM regardless of how well it's configured.",
         'You need a short-term campaign tool, not a long-term system that requires commitment to maintain.',
-        'Nobody has agreed on how leads should be handled — a CRM will automate confusion if the process underneath isn\'t defined first.',
+        "Nobody has agreed on how leads should be handled — a CRM will automate confusion if the process underneath isn't defined first.",
       ],
     },
     connection: {
       badge: 'CRM works best with a clear website',
       title: 'Your CRM captures what your website generates',
       description:
-        'When the website clearly explains your services and makes it easy to get in touch, the CRM captures those enquiries and handles everything after. If your website needs work first, that\'s a separate conversation we can have.',
+        "When the website clearly explains your services and makes it easy to get in touch, the CRM captures those enquiries and handles everything after. If your website needs work first, that's a separate conversation we can have.",
       cssPrefix: 'crm-automation-connection-header',
     },
     faqSection: {
       badge: 'FAQ',
       title: 'Questions that come up before CRM setup',
-      description: 'Practical questions from businesses working out whether this is the right move.',
+      description:
+        'Practical questions from businesses working out whether this is the right move.',
       faqs: [
         {
           question: 'Do we need to switch to a new CRM?',
           answer:
-            'Not necessarily. If your current platform works, we configure it properly. If it doesn\'t, we recommend the right one based on your team size, lead volume, and how your customers get in touch.',
+            "Not necessarily. If your current platform works, we configure it properly. If it doesn't, we recommend the right one based on your team size, lead volume, and how your customers get in touch.",
         },
         {
           question: 'How long does setup take?',
@@ -915,31 +915,31 @@ export const crmAutomationPage = {
         {
           question: 'Will my team actually use it?',
           answer:
-            'That depends on whether it\'s built around how they work. We configure the CRM to fit their routine, not the other way around. Clear ownership, simple next steps, and useful visibility make the difference.',
+            "That depends on whether it's built around how they work. We configure the CRM to fit their routine, not the other way around. Clear ownership, simple next steps, and useful visibility make the difference.",
         },
         {
           question: 'Can this connect to our website forms and booking?',
           answer:
-            'Yes. Forms, booking tools, email, SMS, and other lead sources all feed into one system. That\'s the whole point — everything in one place.',
+            "Yes. Forms, booking tools, email, SMS, and other lead sources all feed into one system. That's the whole point — everything in one place.",
         },
         {
-          question: 'What if we already have a CRM but it\'s not working?',
+          question: "What if we already have a CRM but it's not working?",
           answer:
-            'That\'s the most common starting point. We audit what exists, identify what\'s broken or unused, and restructure it so it actually does the job.',
+            "That's the most common starting point. We audit what exists, identify what's broken or unused, and restructure it so it actually does the job.",
         },
       ],
       cssPrefix: 'crm-automation-faq',
     },
   },
   inlineCta: {
-    title: 'Not sure how many leads you\'re losing?',
+    title: "Not sure how many leads you're losing?",
     description:
-      'Tell us how your team handles enquiries today. We\'ll show you where leads are falling through and what a proper CRM setup would change.',
+      "Tell us how your team handles enquiries today. We'll show you where leads are falling through and what a proper CRM setup would change.",
   },
   cta: {
     title: 'Leads coming in but not converting?',
     description:
-      'Tell us how enquiries arrive and how your team handles them. We\'ll show you where things are falling through and build a CRM that tracks every lead from first contact to outcome.',
+      "Tell us how enquiries arrive and how your team handles them. We'll show you where things are falling through and build a CRM that tracks every lead from first contact to outcome.",
   },
   transformationProof: {
     before: {

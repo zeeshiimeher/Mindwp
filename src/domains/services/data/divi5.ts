@@ -23,27 +23,27 @@ export const divi5Page = {
     slug,
     title: 'Divi WordPress Development | MindWP',
     description:
-      'Divi gives your team flexible editing and visual control. But editing freedom doesn\'t fix a website that isn\'t bringing in work. Here\'s what to look at first.',
+      "Divi gives your team flexible editing and visual control. But editing freedom doesn't fix a website that isn't bringing in work. Here's what to look at first.",
     schemaName: 'Divi WordPress development',
     schemaDescription:
       'WordPress implementation using Divi Builder as part of a structured website system that handles enquiries, follow-up, and lead routing.',
   }),
   hero: {
     badge: 'Divi Builder',
-    title: 'Your Team Can Edit Everything. Enquiries Still Don\'t Come.',
+    title: "Your Team Can Edit Everything. Enquiries Still Don't Come.",
     description:
-      'Divi gives your team the freedom to update anything on the site without calling a developer. The problem is nobody\'s calling you either. Visitors land, browse, and move on.',
+      "Divi gives your team the freedom to update anything on the site without calling a developer. The problem is nobody's calling you either. Visitors land, browse, and move on.",
     list: ['Easy editing', 'Low enquiries', 'No follow-up'],
     cssPrefix: 'divi5-hero',
     backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },
   sections: {
     conversionSection: {
-      title: 'We build with Divi. But the builder isn\'t what needs fixing.',
+      title: "We build with Divi. But the builder isn't what needs fixing.",
       description1:
         'Flexible editing, visual control, strong community. If your team needs to make updates without developer help, Divi is a sensible choice. We use it when the project fits.',
       description2:
-        'But giving your team easier editing doesn\'t fix a site that isn\'t converting visitors into work. Enquiry handling, follow-up, and routing — that\'s where most sites fall apart. The full picture starts with Smart Websites.',
+        "But giving your team easier editing doesn't fix a site that isn't converting visitors into work. Enquiry handling, follow-up, and routing — that's where most sites fall apart. The full picture starts with Smart Websites.",
     },
     benefitsSection: {
       badge: 'What Actually Drives Results',
@@ -55,7 +55,7 @@ export const divi5Page = {
           icon: Zap,
           title: 'Divi keeps your team independent',
           description:
-            'Content updates, page tweaks, visual changes — your team handles them. That saves time and money. It doesn\'t bring in more work.',
+            "Content updates, page tweaks, visual changes — your team handles them. That saves time and money. It doesn't bring in more work.",
           iconType: 'primary' as const,
         },
         {
@@ -69,7 +69,7 @@ export const divi5Page = {
           icon: Code,
           title: 'Clean templates keep things consistent',
           description:
-            'Organised sections and governed editing mean the site doesn\'t drift. That\'s good housekeeping. Not lead generation.',
+            "Organised sections and governed editing mean the site doesn't drift. That's good housekeeping. Not lead generation.",
           iconType: 'secondary' as const,
         },
         {
@@ -88,9 +88,9 @@ export const divi5Page = {
         },
         {
           icon: Settings,
-          title: 'A governed build stays tidy — it doesn\'t grow revenue',
+          title: "A governed build stays tidy — it doesn't grow revenue",
           description:
-            'Your site stays consistent and easy to manage. That protects the investment. It doesn\'t create new business.',
+            "Your site stays consistent and easy to manage. That protects the investment. It doesn't create new business.",
           iconType: 'secondary' as const,
         },
       ],
@@ -185,7 +185,7 @@ export const divi5Page = {
       badge: 'The real question',
       title: 'Is the builder your problem — or is the site just not converting?',
       description:
-        'Divi gives you editing power and visual control. Most Divi sites we see work perfectly well as websites. They just don\'t bring in work because nothing handles what arrives.',
+        "Divi gives you editing power and visual control. Most Divi sites we see work perfectly well as websites. They just don't bring in work because nothing handles what arrives.",
       columns: 3 as const,
       cssPrefix: 'divi5-why',
       backgroundColor: 'bg-base' as const,
@@ -193,27 +193,33 @@ export const divi5Page = {
       items: [
         {
           title: 'The editing experience is fine',
-          description: 'Your team can update content, swap images, adjust layouts. The tool works as advertised.',
+          description:
+            'Your team can update content, swap images, adjust layouts. The tool works as advertised.',
         },
         {
           title: 'Visitors still leave without acting',
-          description: 'All your services sit on one page. Someone looking for one thing scrolls past everything and gives up.',
+          description:
+            'All your services sit on one page. Someone looking for one thing scrolls past everything and gives up.',
         },
         {
           title: 'Enquiries go to the wrong place',
-          description: 'Forms submit to a generic email. Whoever checks it first responds. Could be hours. Could be days.',
+          description:
+            'Forms submit to a generic email. Whoever checks it first responds. Could be hours. Could be days.',
         },
         {
           title: 'Nobody follows up',
-          description: 'A lead gets in touch Monday morning. Your team is flat out. By Wednesday, that person hired someone else.',
+          description:
+            'A lead gets in touch Monday morning. Your team is flat out. By Wednesday, that person hired someone else.',
         },
         {
           title: 'The site looks good on every device',
-          description: 'Responsive layouts, clean fonts, proper spacing. None of that matters if there\'s no clear next step.',
+          description:
+            "Responsive layouts, clean fonts, proper spacing. None of that matters if there's no clear next step.",
         },
         {
           title: 'Nothing connects underneath',
-          description: 'No CRM. No tracking. No automated anything. Every lead depends on someone remembering.',
+          description:
+            'No CRM. No tracking. No automated anything. Every lead depends on someone remembering.',
         },
       ],
     },
@@ -228,7 +234,7 @@ export const divi5Page = {
       steps: [
         {
           number: '1',
-          title: 'Figure out what\'s not working',
+          title: "Figure out what's not working",
           description:
             'Is it the design? The structure? The way enquiries are handled? We diagnose before recommending anything.',
           icon: Eye,
@@ -236,13 +242,15 @@ export const divi5Page = {
         {
           number: '2',
           title: 'Map how visitors should become customers',
-          description: 'Which services need their own presence, what happens when someone gets in touch, where things drop off now.',
+          description:
+            'Which services need their own presence, what happens when someone gets in touch, where things drop off now.',
           icon: Layers,
         },
         {
           number: '3',
           title: 'Build with the right approach',
-          description: 'If Divi fits your team and project, we use it. Clean templates, governed editing, responsive layouts.',
+          description:
+            'If Divi fits your team and project, we use it. Clean templates, governed editing, responsive layouts.',
           icon: Zap,
         },
         {
@@ -255,7 +263,8 @@ export const divi5Page = {
         {
           number: '5',
           title: 'Test the full visitor journey',
-          description: 'Not just visual checks. We verify someone can find a service, reach out, and get handled properly.',
+          description:
+            'Not just visual checks. We verify someone can find a service, reach out, and get handled properly.',
           icon: Code,
         },
         {
@@ -269,7 +278,7 @@ export const divi5Page = {
     },
   },
   cta: {
-    title: 'Not sure if the builder is what\'s holding you back?',
+    title: "Not sure if the builder is what's holding you back?",
     description:
       "Tell us what your site isn't doing. We'll work out whether it's a build problem or something the builder can't solve.",
   },

@@ -1,3 +1,9 @@
+# Plan1 Raw Notes
+
+Structured version: [Plan1-Structured-Audit.md](./Plan1-Structured-Audit.md)
+
+This file remains the raw intake/source note list. The structured audit, phases, and repo-scan findings live in the file above.
+
 ##1 -Smart website page
 
 sec  - smart-websites-value section

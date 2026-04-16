@@ -5,7 +5,12 @@ async function getGraphSampleRoutes() {
   const reactModule = await import('react');
   globalThis.React ??= reactModule.default;
 
-  const { contentGraph } = await import('../../src/lib/content-graph/registry');
+  const { ensureGraphInitialized } = await import('../../src/domains/init/ensureGraphInitialized');
+  const { getContentGraph } = await import('../../src/lib/content-graph/registry');
+
+  await ensureGraphInitialized();
+
+  const contentGraph = getContentGraph();
 
   const blogSlug = Object.values(contentGraph)
     .filter(node => node.type === 'blog')
