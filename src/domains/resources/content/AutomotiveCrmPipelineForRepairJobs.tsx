@@ -1,6 +1,5 @@
 import { Clock, Database, Users } from 'lucide-react';
 
-
 import type { ResourceData } from '../types';
 import {
   getRelatedResources,

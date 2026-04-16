@@ -4,7 +4,7 @@ import type { ReactNode } from 'react';
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Button, type ButtonProps } from '@/components/reusable/single/Button';
 import { cn } from '@/components/ui/utils';
-import { DEFAULT_CTA_LABEL, inferIntent, resolveCtaLabel, type CtaTone } from '@/config/ctaLabels';
+import { type CtaTone, DEFAULT_CTA_LABEL, inferIntent, resolveCtaLabel } from '@/config/ctaLabels';
 import { buildContactHref, type ContactSourceType } from '@/lib/contact/contactHref';
 
 const BLOCK = 'cta-section';
@@ -19,7 +19,9 @@ const ALLOW_SECONDARY_BY_PAGE_TYPE: Record<ContactSourceType, boolean> = {
   service: false,
 };
 
-const SECONDARY_CTA_MAP: Partial<Record<ContactSourceType, { label: string; href: (slug: string) => string }>> = {
+const SECONDARY_CTA_MAP: Partial<
+  Record<ContactSourceType, { label: string; href: (slug: string) => string }>
+> = {
   feature: {
     label: 'See How It Works',
     href: slug => `/features/${slug}`,

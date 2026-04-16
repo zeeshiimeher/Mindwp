@@ -1,5 +1,5 @@
 import { type AnchorHTMLAttributes, type ReactNode } from 'react';
-import { Award, CheckCircle2, Heart, Mail, Phone, Shield, Star } from 'lucide-react';
+import { Award, CheckCircle2, Heart, Phone, Shield, Star } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
@@ -27,7 +27,6 @@ import { ResourceSolutionsSection } from '@/components/reusable/sections/resourc
 import { ResourceTakeawaysSection } from '@/components/reusable/sections/resources/ResourceTakeawaysSection';
 import { ResourceTemplatesSection } from '@/components/reusable/sections/resources/ResourceTemplatesSection';
 import { Badge } from '@/components/reusable/single/Badge';
-import { Button } from '@/components/reusable/single/Button';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import {

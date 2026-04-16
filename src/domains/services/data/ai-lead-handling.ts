@@ -1,6 +1,5 @@
 import { MessageSquare, Phone, Users } from 'lucide-react';
 
-
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
@@ -23,42 +22,39 @@ export const aiLeadHandlingPage = {
     slug,
     title: 'AI Lead Handling for Service Businesses | MindWP',
     description:
-      'Enquiries come in at all hours. Nobody\'s always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.',
+      "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
     schemaName: 'AI lead handling for service businesses',
     schemaDescription:
       'AI-powered first response covering website chat, call handling, booking support, and handoff into CRM for service businesses.',
   }),
   hero: {
     badge: 'AI Lead Handling',
-      title: 'They Messaged. Waited. Left.',
+    title: 'They Messaged. Waited. Left.',
     description:
-      'Someone sends an enquiry at 7pm. Team finished an hour ago. By morning, they\'ve spoken to two competitors. Not a better offer. A faster reply.',
-    list: [
-        'Slow replies',
-        'Dead by morning',
-    ],
+      "Someone sends an enquiry at 7pm. Team finished an hour ago. By morning, they've spoken to two competitors. Not a better offer. A faster reply.",
+    list: ['Slow replies', 'Dead by morning'],
   },
   sections: {
     foundation: {
       badge: 'The real problem',
       title: 'Stick AI on something broken and it breaks faster',
       description:
-        'If enquiry paths are unclear and nobody owns the handoff, automation doesn\'t help. It just speeds up the confusion.',
+        "If enquiry paths are unclear and nobody owns the handoff, automation doesn't help. It just speeds up the confusion.",
       painPoints: [
         {
-          before: 'AI added. It answers. Then the conversation hits a wall because nothing picks up after.',
-          after: 'AI sits inside a path that actually goes somewhere. Answers, captures, hands off. With context.',
+          before:
+            'AI added. It answers. Then the conversation hits a wall because nothing picks up after.',
+          after:
+            'AI sits inside a path that actually goes somewhere. Answers, captures, hands off. With context.',
         },
         {
-          before:
-            'The bot talks to people. Conversation dies. Nobody owns what comes next.',
+          before: 'The bot talks to people. Conversation dies. Nobody owns what comes next.',
           after:
             'Every conversation routes somewhere \u2014 CRM entry, booking step, named team member.',
         },
         {
           before: 'Sounds good in theory. Visitors end up going in circles.',
-          after:
-            'Four things: answer, capture, route, escalate. That\'s it.',
+          after: "Four things: answer, capture, route, escalate. That's it.",
         },
       ],
     },
@@ -96,10 +92,15 @@ export const aiLeadHandlingPage = {
         {
           title: 'Follow-up and repeat questions',
           description:
-            'Handles the routine stuff — order updates, return queries, basic info. Escalates when it\'s something a person should deal with.',
+            "Handles the routine stuff — order updates, return queries, basic info. Escalates when it's something a person should deal with.",
           icon: Users,
           label: 'Handles:',
-          features: ['Common repeat questions', 'Order and update queries', 'Knowledge lookups', 'Escalation to your team'],
+          features: [
+            'Common repeat questions',
+            'Order and update queries',
+            'Knowledge lookups',
+            'Escalation to your team',
+          ],
           iconType: 'primary' as const,
         },
       ],
@@ -108,7 +109,7 @@ export const aiLeadHandlingPage = {
       badge: 'How it fits',
       title: 'AI at the front. Your team where it matters.',
       description:
-        'Not replacing people. Making sure nobody waits for a reply that could\'ve been instant.',
+        "Not replacing people. Making sure nobody waits for a reply that could've been instant.",
       steps: [
         {
           number: '1',
@@ -120,7 +121,7 @@ export const aiLeadHandlingPage = {
           number: '2',
           title: 'AI handles the first step',
           description:
-            'Answers the common questions. Collects what\'s needed. Moves the conversation forward even when nobody\'s at a desk.',
+            "Answers the common questions. Collects what's needed. Moves the conversation forward even when nobody's at a desk.",
         },
         {
           number: '3',
@@ -132,21 +133,20 @@ export const aiLeadHandlingPage = {
           number: '4',
           title: 'Everything recorded',
           description:
-            'Conversation details land where the team can see them. Nothing depends on someone\'s memory.',
+            "Conversation details land where the team can see them. Nothing depends on someone's memory.",
         },
       ],
     },
     workflowExamples: {
       badge: 'In practice',
       title: 'What this looks like during a normal week',
-      description:
-        'Not theory. Real moments where AI handles what would otherwise fall through.',
+      description: 'Not theory. Real moments where AI handles what would otherwise fall through.',
       items: [
         {
           trigger: 'A call comes in after hours from someone who needs a quote.',
           actions: [
             'Immediate text acknowledging the call',
-            'Captures what they need and when they\'re free',
+            "Captures what they need and when they're free",
             'Queued for first thing next morning',
             'Team has context before they dial back',
           ],
@@ -156,8 +156,8 @@ export const aiLeadHandlingPage = {
           actions: [
             'Chat answers the question straight away',
             'Offers the booking path',
-            'Collects name, number, and what it\'s about',
-            'Logged for follow-up if they don\'t complete',
+            "Collects name, number, and what it's about",
+            "Logged for follow-up if they don't complete",
           ],
         },
         {
@@ -165,7 +165,7 @@ export const aiLeadHandlingPage = {
           actions: [
             'AI provides the standard answer',
             'Checks whether the caller is a good fit',
-            'Passes to a person if it\'s complex',
+            "Passes to a person if it's complex",
             'Conversation recorded for continuity',
           ],
         },
@@ -182,8 +182,7 @@ export const aiLeadHandlingPage = {
       alternatingItems: [
         {
           title: 'After-hours missed call',
-          description:
-            'A call comes in after hours from someone who needs a quote.',
+          description: 'A call comes in after hours from someone who needs a quote.',
           points: [
             'Immediate text acknowledgement',
             'Details and availability captured',
@@ -193,8 +192,7 @@ export const aiLeadHandlingPage = {
         },
         {
           title: 'Booking question on the site',
-          description:
-            'Visitor on the website asks if they can book a consultation.',
+          description: 'Visitor on the website asks if they can book a consultation.',
           points: [
             'Question answered immediately',
             'Booking path offered',
@@ -204,8 +202,7 @@ export const aiLeadHandlingPage = {
         },
         {
           title: 'Pricing call before commitment',
-          description:
-            'Someone calls with a question about pricing before deciding.',
+          description: 'Someone calls with a question about pricing before deciding.',
           points: [
             'Standard answer provided',
             'Fit checked automatically',
@@ -215,8 +212,7 @@ export const aiLeadHandlingPage = {
         },
         {
           title: 'Dropped conversation',
-          description:
-            'A lead starts chatting but drops off halfway.',
+          description: 'A lead starts chatting but drops off halfway.',
           points: [
             'Partial details saved',
             'Routed to follow-up queue',
@@ -246,17 +242,17 @@ export const aiLeadHandlingPage = {
         {
           title: 'Home and trade services',
           description:
-            'Quote requests and calls come in during jobs. AI captures the details and routes them. Nothing goes unanswered just because the team\'s busy.',
+            "Quote requests and calls come in during jobs. AI captures the details and routes them. Nothing goes unanswered just because the team's busy.",
           points: [
             'Missed calls recovered with instant text-back',
             'Quote requests captured properly',
-            'After-hours enquiries don\'t vanish',
+            "After-hours enquiries don't vanish",
           ],
         },
         {
           title: 'Online shops and product businesses',
           description:
-            'Simple questions — stock, shipping, returns — handled without waiting for a person. Escalation when it\'s something more.',
+            "Simple questions — stock, shipping, returns — handled without waiting for a person. Escalation when it's something more.",
           points: [
             'Common questions answered fast',
             'Product guidance available instantly',
@@ -284,7 +280,7 @@ export const aiLeadHandlingPage = {
       narrativeTitle: 'AI takes the front. Your team takes the rest.',
       narrativeParagraphs: [
         'For most service businesses, AI should handle the repeatable front-end: answer common questions, collect details, support bookings, clean up the handoff.',
-        'It shouldn\'t pretend to replace real judgement. Used well, it gives your team a better starting point instead of a cold conversation with no context.',
+        "It shouldn't pretend to replace real judgement. Used well, it gives your team a better starting point instead of a cold conversation with no context.",
       ],
       features: [
         {
@@ -309,9 +305,8 @@ export const aiLeadHandlingPage = {
     },
     checklistSection: {
       badge: 'Included',
-      title: 'What\'s in the setup',
-      description:
-        'Exact scope depends on your channels and volume. These are the common parts.',
+      title: "What's in the setup",
+      description: 'Exact scope depends on your channels and volume. These are the common parts.',
       columns: 2 as const,
       items: [
         'AI trained on your services and business',
@@ -341,10 +336,10 @@ export const aiLeadHandlingPage = {
           title: 'Fully manual',
           items: [
             'Missed calls sit in voicemail for hours. The caller hired someone who picked up.',
-            'Website visitors leave because nobody\'s there to reply. The ad spend that brought them in is gone.',
+            "Website visitors leave because nobody's there to reply. The ad spend that brought them in is gone.",
             'Enquiry details scattered between inboxes, texts, and notes. Team works from fragments.',
             'Same first questions answered manually, over and over. Hours spent on work that adds nothing.',
-            'After-hours messages wait until morning. By then the customer\'s already committed elsewhere.',
+            "After-hours messages wait until morning. By then the customer's already committed elsewhere.",
           ],
         },
         {
@@ -364,12 +359,13 @@ export const aiLeadHandlingPage = {
       header: {
         title: 'What changed for an estate agent',
         description:
-          'Three offices. Enquiries coming through website, phone, and social. Response time averaging four hours. Viewings were going to whoever replied first. Usually, it wasn\'t them.',
+          "Three offices. Enquiries coming through website, phone, and social. Response time averaging four hours. Viewings were going to whoever replied first. Usually, it wasn't them.",
       },
       cards: [
         {
           title: 'Before: slow replies, lost viewings',
-          description: 'Most enquiries came in online or by phone. During busy periods, nobody free. By the time someone got back, the buyer had booked a viewing somewhere else.',
+          description:
+            'Most enquiries came in online or by phone. During busy periods, nobody free. By the time someone got back, the buyer had booked a viewing somewhere else.',
           points: [
             'Website enquiries sat for hours. People moved on.',
             'Calls during viewings went to voicemail. Half never returned.',
@@ -377,7 +373,8 @@ export const aiLeadHandlingPage = {
         },
         {
           title: 'What we put in place: chat, call handling, CRM handoff',
-          description: 'AI on the website answering property questions. Missed calls recovered with text-back. Everything into CRM with context. The team picked up leads that already had details attached.',
+          description:
+            'AI on the website answering property questions. Missed calls recovered with text-back. Everything into CRM with context. The team picked up leads that already had details attached.',
           points: [
             'Chat handling viewing questions, availability, area info. Name and contact captured.',
             'Missed calls triggering instant text. Property interest recorded.',
@@ -387,9 +384,10 @@ export const aiLeadHandlingPage = {
         },
         {
           title: 'After: faster replies, more viewings booked',
-          description: 'Response time dropped from hours to under a minute. Within six weeks, more viewings booked. Same traffic. Reached faster.',
+          description:
+            'Response time dropped from hours to under a minute. Within six weeks, more viewings booked. Same traffic. Reached faster.',
           points: [
-            'First response from four hours to under sixty seconds. The agents didn\'t change. The front end did.',
+            "First response from four hours to under sixty seconds. The agents didn't change. The front end did.",
             'Viewing bookings up in six weeks. Nobody could say by exactly how much. But the diary was noticeably fuller.',
             'Team stopped doing first-response admin. Spent time on conversations that actually closed.',
           ],
@@ -427,7 +425,8 @@ export const aiLeadHandlingPage = {
       notDesignedItems: [
         {
           title: 'Enquiry volume is very low',
-          description: 'If you get a handful of leads a week, the investment doesn\'t pay back. Get more enquiries coming in first.',
+          description:
+            "If you get a handful of leads a week, the investment doesn't pay back. Get more enquiries coming in first.",
         },
         {
           title: 'You want to remove people entirely',
@@ -437,20 +436,19 @@ export const aiLeadHandlingPage = {
         {
           title: 'You want a standalone bot with no connection to anything',
           description:
-            'A chatbot that doesn\'t route, book, or update your CRM is a dead end. Not what this is.',
+            "A chatbot that doesn't route, book, or update your CRM is a dead end. Not what this is.",
         },
         {
           title: 'Your enquiry paths are undefined',
           description:
-            'AI amplifies what\'s there. If there\'s nothing clear underneath, build that first. Same problem missed calls and routing have \u2014 basics before speed.',
+            "AI amplifies what's there. If there's nothing clear underneath, build that first. Same problem missed calls and routing have \u2014 basics before speed.",
         },
       ],
     },
     faqSection: {
       badge: 'Common Questions',
       title: 'Questions about AI lead handling',
-      description:
-        'Straight answers about what AI does and doesn\'t do.',
+      description: "Straight answers about what AI does and doesn't do.",
       faqs: [
         {
           question: 'Is this replacing my receptionist or team?',
@@ -465,17 +463,17 @@ export const aiLeadHandlingPage = {
         {
           question: 'Do we need a CRM?',
           answer:
-            'It helps. Keeps conversations, routing, and follow-up organised. If you don\'t have one, we\'ll figure out the right starting point.',
+            "It helps. Keeps conversations, routing, and follow-up organised. If you don't have one, we'll figure out the right starting point.",
         },
         {
           question: 'What if the AI gives a wrong answer?',
           answer:
-            'Managed through training, boundaries, and handoff rules. It answers what it\'s trained to. Anything else goes to your team.',
+            "Managed through training, boundaries, and handoff rules. It answers what it's trained to. Anything else goes to your team.",
         },
         {
           question: 'Is this only for big businesses?',
           answer:
-            'No. It\'s useful for smaller businesses too — especially when missed calls, slow replies, or the same first questions come up over and over.',
+            "No. It's useful for smaller businesses too — especially when missed calls, slow replies, or the same first questions come up over and over.",
         },
         {
           question: 'What needs to be in place first?',

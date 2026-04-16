@@ -178,8 +178,7 @@ function buildAppointmentReminderNoShowReduction(): CaseStudyData {
   return {
     slug: 'appointment-reminder-no-show-reduction',
     title: 'Dental Appointment Reminder & No-Show Reduction',
-    metaTitle:
-      'Dental No-Show Reduction | 16% to 5% With Reminders',
+    metaTitle: 'Dental No-Show Reduction | 16% to 5% With Reminders',
     metaDescription:
       'How a Northampton dental practice cut no-shows from 16% to 5% and recovered £1,400 per week using automated reminders and waitlist recovery.',
     industryCategory: 'healthcare',

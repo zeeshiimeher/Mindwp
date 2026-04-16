@@ -1,6 +1,5 @@
 import { BarChart3, MessageSquare, Star } from 'lucide-react';
 
-
 import type { ResourceData } from '../types';
 import {
   getRelatedResources,

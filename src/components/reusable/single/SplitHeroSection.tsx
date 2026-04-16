@@ -194,7 +194,10 @@ export function SplitHeroSection({
                 pageType={smartCta.pageType}
                 slug={smartCta.slug}
                 primaryActionVariant={smartCta.primaryActionVariant}
-                primaryButtonCssPrefix={cn(`${BLOCK}__primary-cta`, smartCta.primaryButtonCssPrefix)}
+                primaryButtonCssPrefix={cn(
+                  `${BLOCK}__primary-cta`,
+                  smartCta.primaryButtonCssPrefix
+                )}
                 secondaryButtonCssPrefix={cn(
                   `${BLOCK}__secondary-cta`,
                   smartCta.secondaryButtonCssPrefix

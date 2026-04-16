@@ -10,7 +10,6 @@ import {
   Wrench,
 } from 'lucide-react';
 
-
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
@@ -27,342 +26,341 @@ export const websiteRedesignSystemRebuildPage = {
     'website architecture redesign',
     'service business website rebuild',
   ],
-  badge: 'Website Redesign & System Rebuild',
+  badge: 'Website Redesign',
   category: 'Structural Rebuild Services',
   seo: buildServiceSeo({
     slug,
-    title: 'Website Redesign & System Rebuild for Service Businesses | MindWP',
+    title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
     description:
-      'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
+      'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
     schemaName: 'Website redesign and system rebuild for service businesses',
     schemaDescription:
-      'A structural website redesign and rebuild pathway for service businesses needing clearer architecture, better enquiry flow, reduced technical clutter, and stronger long-term maintainability.',
+      'A website redesign pathway that addresses the real problem — what the site does with visitors, not just how it looks.',
   }),
   hero: {
-    badge: 'Website Redesign & System Rebuild',
-      title: 'Rebuild Your Website Around The Business You Run',
+    badge: 'Website Redesign',
+    title: 'A New Look Won\'t Fix a Quiet Phone.',
     description:
-      'Your site has drifted too far from your services, enquiry flow, and operating reality. The fix is structural correction and rebuild logic, not cosmetic redesign.',
-    list: [
-        'Structural realignment',
-        'Defined enquiry flow',
-        'Cleaner tech stack',
-    ],
+      'You\'re thinking about a redesign because the site feels outdated, or it doesn\'t represent the business anymore. Fair enough. But the visitors you\'re losing aren\'t leaving because of the colours. They\'re leaving because they can\'t find what they need, or nobody follows up.',
+    list: ['Dated design', 'Low enquiries', 'No follow-up'],
     cssPrefix: 'website-redesign-rebuild-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
   sections: {
     foundation: {
-      badge: 'Why rebuild work becomes necessary',
-      title:
-        'A rebuild is necessary when the website carries structural decisions that no longer fit the business',
+      badge: 'Where the real problem is',
+      title: 'The website looks outdated. But the design isn\'t what\'s costing you work.',
       description:
-        'The signal is usually operational, not cosmetic. The site may still function, but the structure underneath no longer supports the business as it runs today.',
-      currentStateLabel: 'What the current site is carrying',
-      structuredStateLabel: 'What the rebuild corrects',
+        'Most redesign requests come from a feeling that the site is \'letting the business down.\' That\'s usually true — but the problem is what happens after someone visits, not how the site looks.',
+      currentStateLabel: 'What you\'re seeing',
+      structuredStateLabel: 'What\'s actually going wrong',
       painPoints: [
         {
           before:
-            'The site reflects an older version of the business, so services, navigation, and message flow feel misaligned.',
+            'The homepage looks tired and the content is stale. You assume that\'s why enquiries are low.',
           after:
-            'The structure can be rebuilt around the current business model — so navigation, services, and enquiry flow match operational reality.',
+            'But visitors who do arrive can\'t find the service they need. Everything is lumped together. They leave because the path is unclear, not because the font is wrong.',
         },
         {
           before:
-            'Technical clutter, patchwork pages, and builder shortcuts make change slower and less reliable over time.',
+            'Competitors have shinier sites and seem to get more work. A redesign feels like the obvious next step.',
           after:
-            'The rebuild reduces clutter — so the site becomes easier to maintain, extend, and govern without fear of breaking things.',
+            'But those competitors might just be handling enquiries faster. Their form goes to a CRM, yours goes to an inbox nobody checks.',
         },
         {
           before:
-            'Integrations, forms, tracking, and follow-up behaviour were added in fragments instead of as one system.',
+            'The site was built years ago and has been patched repeatedly. A fresh start feels overdue.',
           after:
-            'The new build aligns service architecture, enquiry flow, and integrations — so everything behaves like one system instead of a stack of patches.',
+            'A fresh design over the same broken structure will feel new for a month, then the same problems return. What needs changing is what the site does, not how it looks.',
         },
       ],
     },
     structuralSignals: {
-      badge: 'Strong signals for rebuild work',
-      title: 'These patterns point to structural realignment, not small-page tweaking',
+      badge: 'Signs the problem isn\'t the design',
+      title: 'These patterns point to something deeper than a visual refresh',
       description:
-        'Not always that the site looks old. More often, the website no longer behaves like a clear operating layer for the business.',
+        'If you recognise these, a redesign alone won\'t solve them. The issue is what the site does with visitors — not how it presents itself.',
       items: [
         {
           icon: LayoutTemplate,
-          title: 'The site looks organised, but the service structure is not',
+          title: 'Traffic is decent but enquiries are low',
           description:
-            'Pages exist, but they do not reflect the current offer hierarchy, enquiry priorities, or decision path clearly enough.',
+            'People are finding you. They\'re just not reaching out. The site doesn\'t make the next step obvious enough.',
         },
         {
           icon: Layers,
-          title: 'Too many layers were added without a governing structure',
+          title: 'Services are hard to find individually',
           description:
-            'New tools, builders, plugins, and page types were added over time, but the site lost coherence underneath.',
+            'Everything is on one page or buried in dropdowns. Someone looking for one thing can\'t find it without scrolling through everything else.',
         },
         {
           icon: Waypoints,
-          title: 'The enquiry journey breaks between page visit and next action',
+          title: 'Enquiries go to a generic inbox',
           description:
-            'The site may still get visits, but the flow into contact, booking, CRM, or follow-up no longer feels connected.',
+            'Forms land in a shared email nobody owns. Leads wait hours or days. By then they\'ve already called someone else.',
         },
         {
           icon: Settings,
-          title: 'Routine updates feel risky or unnecessarily slow',
+          title: 'There\'s no follow-up after someone reaches out',
           description:
-            'The business avoids change because the current build is fragile, unclear, or too dependent on one-off workarounds.',
+            'No confirmation, no reminder, no next step. Just silence until someone on the team remembers to check.',
         },
       ],
     },
     rebuildScenarios: {
-      badge: 'Common rebuild scenarios',
-      title: 'A rebuild should solve the structural problem behind the redesign request',
+      badge: 'What really needs to change',
+      title: 'A redesign handles the surface. Here\'s what actually moves the needle.',
       description:
-        'These are common situations where the right answer is not a visual redesign but a more deliberate rebuild.',
-      scenarioLabel: 'Current problem',
-      solutionLabel: 'Rebuild logic',
+        'Each of these situations looks like a design problem from the outside. Underneath, the fix is always about what happens between the visit and the enquiry.',
+      scenarioLabel: 'What it looks like',
+      solutionLabel: 'What actually needs to change',
       items: [
         {
           icon: RefreshCcw,
-          title: 'Outdated brochure site that no longer matches the business',
+          title: 'The site feels outdated and the phone is quiet',
           scenario:
-            'The website still reflects an older service mix, weak messaging, or a simpler business model that has now outgrown it.',
+            'The business has grown but the website still reflects the old version. New services aren\'t listed. Content is stale.',
           solution:
-            'Restructure the site around the current services, enquiry pathways, and operational priorities before redesign decisions are finalised.',
+            'List each service individually. Write them the way people search. Add a clear next step to every page. Connect the form to your CRM.',
           result:
-            'The new website supports the real business instead of preserving the old one in a cleaner visual shell.',
+            'Visitors find what they came for and reach out. Nothing sits unread in an inbox.',
         },
         {
           icon: Wrench,
-          title: 'Patchwork rebuild needs caused by accumulated technical clutter',
+          title: 'Competitors seem to get more work from their websites',
           scenario:
-            'Builder layers, plugins, templates, and manual fixes have piled up to the point where routine improvement is slow and fragile.',
+            'Their sites look newer, more polished. It feels like the design is the difference.',
           solution:
-            'Strip back the clutter and rebuild with a cleaner architecture that supports maintenance, performance, and controlled expansion.',
-          result: 'The site becomes easier to manage, change, and trust operationally over time.',
+            'Usually the difference is handling speed. Their forms route to a real person. Confirmations go out instantly. Follow-up runs without anyone remembering.',
+          result:
+            'Matching their handling speed matters more than matching their homepage.',
         },
         {
           icon: GitBranch,
-          title: 'Enquiry, follow-up, and integrations no longer connect cleanly',
+          title: 'Enquiries come through but nothing happens quickly enough',
           scenario:
-            'Forms, tracking, CRM behaviour, and follow-up steps were added in separate stages and now feel disconnected.',
+            'Leads arrive via form, call, or message. Someone replies eventually. Some get missed entirely.',
           solution:
-            'Treat the rebuild as a system correction so service architecture, conversion paths, and integrations work together more cleanly.',
+            'Route every enquiry to the right person with context. Automate the first response. Build follow-up into the site, not into someone\'s memory.',
           result:
-            'The website stops acting like a disconnected front end and starts behaving like a structured operating layer again.',
+            'The team handles real work while the site handles the chasing.',
         },
       ],
     },
     processSection: {
-      badge: 'Rebuild sequence',
-      title: 'How the redesign and rebuild works',
+      badge: 'How we approach this',
+      title: 'We don\'t start with the design. We start with the problem.',
       description:
-        'Structural clarification comes first — so redesign decisions support the system instead of hiding old problems under new visuals.',
+        'Before any redesign work, we figure out whether the issue is actually the design or whether the site just isn\'t connected to anything useful.',
       steps: [
         {
           number: '1',
-          title: 'Assess what is actually broken',
+          title: 'Find what\'s actually not working',
           description:
-            'Review service structure, page flow, integrations, and maintainability — so the rebuild scope addresses the real problems, not assumptions.',
+            'Is it the design? The structure? The enquiry handling? We look at what happens when someone visits and where things fall apart.',
         },
         {
           number: '2',
-          title: 'Define the corrected architecture',
+          title: 'Plan around the real problem',
           description:
-            'Clarify how services are organised, navigation, conversion paths, and operational requirements — so every rebuild decision has a structural rationale.',
+            'Which services need their own page, how enquiries should be handled, and what needs connecting. The design follows the solution, not the other way around.',
         },
         {
           number: '3',
-          title: 'Rebuild around the new structure',
+          title: 'Build and connect',
           description:
-            'Implement the website so the page model, content flow, and system behaviour match the corrected architecture — so the old problems do not carry forward.',
+            'The site goes live with services clearly listed, forms routed properly, CRM connected, and follow-up running automatically.',
         },
         {
           number: '4',
-          title: 'Launch with cleaner continuity',
+          title: 'Handover',
           description:
-            'Ensure the rebuilt site is easier to manage, extend, and connect into the wider business — so the investment compounds instead of decaying.',
+            'Your team gets documentation and a walkthrough. They manage content updates and check enquiries from there.',
         },
       ],
     },
     implementationLayers: {
-      badge: 'What the rebuild usually needs',
-      title: 'Rebuild work touches several connected layers, not one design file',
+      badge: 'What actually gets fixed',
+      title: 'Design is one layer. These are the ones that drive results.',
       description:
-        'The exact scope varies, but these are the structural areas that matter most when the website needs realignment.',
+        'A redesign touches the surface. These are the layers underneath that determine whether the site brings in work.',
       items: [
         {
           icon: Search,
-          title: 'Service and page architecture',
+          title: 'Service clarity',
           description:
-            'Clarify what the business sells, how those services should be structured publicly, and how the pages should support enquiry flow.',
+            'Each service listed individually, written the way people search. Visitors find what they need and act — instead of scrolling through everything.',
         },
         {
           icon: MessageSquare,
-          title: 'Message and conversion flow',
+          title: 'Enquiry handling',
           description:
-            'Reshape the page sequence so value, relevance, proof, and action feel more coherent from first visit to enquiry.',
+            'Forms capture the right details and route them to the right person. No more generic inboxes. No more waiting.',
         },
         {
           icon: Settings,
-          title: 'System and integration cleanup',
+          title: 'Follow-up and routing',
           description:
-            'Reduce clutter in forms, tracking, plugins, routing, and connected tools so the rebuilt site behaves more reliably.',
+            'Confirmations go out immediately. Follow-up runs on its own. Your team does the work while the site handles the chasing.',
         },
         {
           icon: Layers,
-          title: 'Maintainability and governance',
+          title: 'Connected foundations',
           description:
-            'Make future updates, new pages, and operational changes easier to manage without repeating the same drift.',
+            'CRM, booking, review requests, local SEO — built into the site from day one instead of bolted on later.',
         },
       ],
     },
     qualification: {
-      title: 'Is this the right fit for your business?',
+      title: 'Is a redesign what you actually need?',
       description:
-        'Works best where the current website no longer supports the business model and the next step needs to be structural realignment.',
-      strongFitTitle: 'Strong fit if',
-      notDesignedTitle: 'Not the right fit if',
+        'Sometimes yes. But often the problem isn\'t the design. Here\'s how to tell.',
+      strongFitTitle: 'Redesign + rebuild makes sense if',
+      notDesignedTitle: 'A redesign alone won\'t help if',
       strongFitItems: [
         {
-          title: 'Your site has drifted from how the business actually operates',
+          title: 'The site doesn\'t represent what you do anymore',
           description:
-            'The website reflects old services, outdated page flow, or assumptions that no longer match how enquiries should happen.',
+            'Services have changed, the business has grown, and the website still shows the old version. That needs fixing — but how it looks is the smaller half.',
         },
         {
-          title: 'Technical clutter makes routine changes slow or risky',
+          title: 'Traffic is there but enquiries aren\'t',
           description:
-            'Builder layers, plugins, and manual fixes have piled up — so the team avoids changes instead of making them.',
+            'People find the site. They browse. They leave. The problem isn\'t visibility — it\'s that nothing on the site gives them a reason to act.',
         },
         {
-          title: 'You need structural correction before further growth work',
+          title: 'You want everything connected from the start',
           description:
-            'SEO, automation, or follow-up improvements will keep underperforming until the website itself is rebuilt on a stable foundation.',
+            'CRM, booking, follow-up, tracking — you want it wired in from day one instead of bolted on after the redesign.',
         },
       ],
       notDesignedItems: [
         {
-          title: 'You only want a cosmetic refresh',
+          title: 'The site converts well — it just looks dated',
           description:
-            'If the structure is sound and only surface styling needs attention, a full rebuild adds cost without solving a real problem.',
+            'If enquiries are strong and nothing is slipping, a visual refresh without restructuring might be enough.',
         },
         {
-          title: 'The issue is one isolated page',
+          title: 'The problem is one page, not the whole site',
           description:
-            'If the problem is limited to a single campaign or service page, targeted refinement is faster and cheaper than a broader rebuild.',
+            'If a single landing page or service page is underperforming, a targeted fix is faster and cheaper.',
         },
         {
-          title: 'Your main problem is traffic, not structure',
+          title: 'Nobody\'s finding the site at all',
           description:
-            'If the site is not being found at all, visibility work needs to lead — rebuilding a site nobody visits will not generate enquiries.',
+            'If visibility is the problem, redesigning a site nobody visits won\'t help. Visibility work comes first.',
         },
       ],
     },
     faqSection: {
       badge: 'FAQ',
-      title: 'Common questions about website rebuild work',
+      title: 'Questions about website redesign',
       description:
-        'Practical questions from businesses that sense the website problem is structural, not purely visual.',
+        'What business owners ask when they\'re weighing up a redesign.',
       faqs: [
         {
-          question: 'Does a rebuild always mean starting from zero?',
+          question: 'Do we always need a full rebuild?',
           answer:
-            'No. Some content, assets, and structural decisions can be retained. The key question is whether the underlying architecture is worth preserving or whether it is slowing the business down.',
+            'No. Sometimes what you have is structurally sound and just needs connecting to CRM, follow-up, and proper routing. We\'ll tell you which.',
         },
         {
-          question: 'How does this relate to WordPress Development?',
+          question: 'How is this different from just getting a new design?',
           answer:
-            'WordPress Development is the broader implementation pathway. This page focuses more specifically on the redesign and rebuild decision when structural realignment is needed first.',
+            'A new design changes how the site looks. This changes what it does. Services listed properly, enquiries handled, follow-up automated. The design is one part of it.',
         },
         {
-          question: 'Can you rebuild around existing SEO or content priorities?',
+          question: 'Will we keep our search rankings?',
           answer:
-            'Yes. The rebuild can preserve and improve important content, SEO structure, and operational pathways rather than discarding them blindly.',
+            'We preserve and improve what\'s working. Redirects, content migration, and SEO structure are handled as part of the project.',
         },
         {
-          question: 'How long does a rebuild take?',
+          question: 'How long does it take?',
           answer:
-            'It depends on scope. Some rebuilds take weeks, some take longer. The structural clarification phase upfront is what keeps the build controlled and the outcome useful.',
+            'Depends on scope. Straightforward rebuilds take a few weeks. Larger projects with CRM and automation connections take longer. You\'ll know the timeline before we start.',
         },
       ],
       cssPrefix: 'website-redesign-rebuild-faq',
     },
     comparison: {
       header: {
-        title: 'Cosmetic redesign vs structural rebuild',
+        title: 'Visual redesign vs fixing what actually matters',
         description:
-          'Most businesses treat a website refresh as a visual exercise. Here is what that looks like compared to fixing the underlying structure first.',
+          'Most redesigns focus on how the site looks. Here\'s what that costs compared to fixing what the site does.',
       },
       items: [
         {
           type: 'before' as const,
-          title: 'Cosmetic redesign',
+          title: 'Visual redesign only',
           items: [
-            'New theme applied over the same broken page structure — so the old problems resurface within months',
-            'Old service pages kept even though the business has changed — so visitors see an outdated version of the company',
-            'Enquiry flow still depends on a single generic contact form — so high-intent leads get the same path as casual browsers',
-            'Plugin and builder clutter carried forward into the new design — so maintenance stays fragile and slow',
-            'Same maintenance problems resurface within months of launch — so the business pays for two builds instead of one',
+            'New colours and layout over the same broken structure. Looks fresh for a month, then the same problems return.',
+            'Services still bundled together. Visitors looking for one thing still can\'t find it.',
+            'Same generic contact form going to the same inbox nobody checks regularly.',
+            'No CRM, no tracking, no follow-up. Every lead still depends on someone remembering.',
+            'Same maintenance headaches within months because the foundation didn\'t change.',
           ],
         },
         {
           type: 'after' as const,
-          title: 'Structural rebuild',
+          title: 'Redesign + rebuild around how the business works',
           items: [
-            'Pages restructured around current services and enquiry priorities — so the site reflects the real business',
-            'Service architecture reflects how the business actually operates — so visitors find what they need',
-            'Enquiry paths designed into the site with clear next steps — so leads follow a defined route',
-            'Technical clutter removed so the build stays maintainable — and routine updates stop feeling risky',
-            'Foundation supports SEO, CRM, and automation from day one — so future systems connect cleanly',
+            'Services listed individually. Visitors find what they came for and act.',
+            'Enquiries routed to the right person with context. Response in minutes, not days.',
+            'Follow-up runs automatically. Confirmations, reminders, and check-ins happen without anyone chasing.',
+            'CRM and tracking connected from day one. You can see where work comes from.',
+            'Foundation built for what comes next — SEO, reviews, automation all connect cleanly.',
           ],
         },
       ],
     },
     proof: {
       header: {
-        title: 'What a structural rebuild looks like in practice',
+        title: 'What happened when we fixed the right problem',
         description:
-          'A roofing company had a website that looked presentable but no longer matched how the business worked. The structure underneath was holding everything back.',
+          'An electrical contractor wanted a redesign because the site looked dated. Enquiries were low. When we looked closer, the design wasn\'t the issue at all.',
       },
       cards: [
         {
-          title: 'Before: a site that looked fine but worked against the business',
-          description: 'Patched together over several years. Pages reflected old services, the enquiry form went to a shared inbox, and routine updates were risky — the site looked fine but the structure underneath was working against the business.',
+          title: 'Before: the site looked old, but that wasn\'t the problem',
+          description:
+            'Professional business, steady referrals, decent Google traffic. But the website wasn\'t converting any of it. The owner assumed it needed a facelift.',
           points: [
-            'Pages reflected an older version of the business — so visitors saw services that no longer existed or mattered',
-            'Enquiry form went to a shared inbox with no routing — so leads waited hours for whoever happened to check email',
-            'Builder and plugin clutter made every change slow and risky — so the team stopped updating the site altogether',
+            'Every service on one page. Someone needing a specific thing had to scroll through everything.',
+            'Contact form went to a Gmail account. The team checked it when they remembered.',
+            'No tracking, no CRM, no automated follow-up. Leads went cold in the gap between enquiry and response.',
           ],
         },
         {
-          title: 'What we built: structural realignment with future-ready foundations',
-          description: 'Site rebuilt around the current business model — clear service pages, defined enquiry paths, CRM-ready forms, and a content structure that could grow without breaking.',
+          title: 'What we actually fixed: enquiry handling, not colours',
+          description:
+            'Yes, the design got updated. But that was the smallest change. Services split out. Forms connected to CRM. Follow-up automated.',
           points: [
-            'Service pages rebuilt around current priorities and enquiry flow — so each page served a clear purpose',
-            'Enquiry paths connected to CRM and follow-up workflows — so leads reached the right person with context',
-            'Build organised for maintainability and future expansion — so later systems connected without rework',
+            'Each service got its own page. Visitors landed on what they needed and acted.',
+            'Enquiries went to the CRM with name, service, and number. The right person picked it up in minutes.',
+            'Confirmation went out immediately. Follow-up ran without the team doing anything.',
           ],
           featured: true,
         },
         {
-          title: 'After: a website that actually supports the business',
-          description: 'The rebuilt site became the operational foundation for local SEO, review management, and lead handling — each system connected cleanly because the structural problems were fixed before anything else was layered on.',
+          title: 'After: same visitors, completely different outcome',
+          description:
+            'The redesign looked good. But the results came from handling speed and service clarity — not from the new colours.',
           points: [
-            'SEO, reviews, and CRM all built on the new foundation — because the page structure and data model were designed for integration from the start',
-            'Enquiry volume improved without extra traffic — because clearer service pages and defined paths converted more of the visitors already arriving',
-            'Routine updates became simple instead of risky — because the build was organised for change, not just for launch day',
+            'Enquiries tripled from the same traffic. People could finally find the service they needed.',
+            'Response time went from days to minutes. The CRM did what the inbox couldn\'t.',
+            'The business could see which channels brought real enquiries for the first time. Marketing spend stopped being a guess.',
           ],
         },
       ],
     },
   },
   inlineCta: {
-    title: 'Is your website holding the business back?',
+    title: 'Not sure if a redesign will actually fix it?',
     description:
-      'Tell us what is not working. We will show you whether the fix is structural and what a rebuild pathway looks like for your situation.',
+      'Send us your URL. We\'ll tell you whether the problem is the design, the structure, or what happens after someone visits.',
   },
   cta: {
-    title: 'Rebuild the website around how the business actually works',
+    title: 'Show us what\'s not working',
     description:
-      'Tell us what has drifted. We will show you what needs structural correction and define a clear rebuild path.',
+      'Drop your URL and tell us what you think the problem is. We\'ll come back with what\'s actually costing you enquiries.',
   },
 } satisfies ServicePageData;

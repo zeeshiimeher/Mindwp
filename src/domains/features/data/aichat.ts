@@ -1,6 +1,5 @@
 import { Calendar, Clock, Globe, Inbox, MessageSquare, Settings, Users } from 'lucide-react';
 
-
 import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
 
@@ -236,8 +235,9 @@ export const aiChatData: FeaturePageData = {
           ],
           iconType: 'primary' as const,
         },
-      ],},
-       faq: {
+      ],
+    },
+    faq: {
       badge: 'Common Questions',
       title: 'Structured Chat FAQ',
       description:

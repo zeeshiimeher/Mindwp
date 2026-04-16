@@ -645,9 +645,7 @@ export function ComponentLibrary() {
                               {componentInfo.name}
                             </h3>
                             <div className='component-library__component-meta'>
-                              <div className='component-library__component-path'>
-                                {sourceLabel}
-                              </div>
+                              <div className='component-library__component-path'>{sourceLabel}</div>
                               {componentDoc?.representativeUsageFilePath ? (
                                 <div className='component-library__component-path'>
                                   Usage: {componentDoc.representativeUsageFilePath}

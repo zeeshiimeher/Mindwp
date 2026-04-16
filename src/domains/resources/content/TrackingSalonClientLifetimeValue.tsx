@@ -1,6 +1,5 @@
 import { BarChart3, TrendingUp, Users } from 'lucide-react';
 
-
 import type { ResourceData } from '../types';
 import {
   getRelatedResources,

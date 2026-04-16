@@ -159,8 +159,7 @@ function buildSmartWebsiteInfrastructureImplementation(): CaseStudyData {
   return {
     slug: 'smart-website-infrastructure-implementation',
     title: 'Smart Website Infrastructure Implementation',
-    metaTitle:
-      'Systems-First Website Rebuild | 4 to 31 Monthly Leads',
+    metaTitle: 'Systems-First Website Rebuild | 4 to 31 Monthly Leads',
     metaDescription:
       'How a Leeds plumbing company went from 4 leads per month to 31 by rebuilding their website as systems-first infrastructure with CRM, tracking, and booking.',
     industryCategory: 'home-services',

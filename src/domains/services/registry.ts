@@ -6,7 +6,6 @@ import { divi5Page } from '@/domains/services/data/divi5';
 import { elementorPage } from '@/domains/services/data/elementor';
 import { leadReactivationSystemPage } from '@/domains/services/data/lead-reactivation-system';
 import { localSeoAuthorityPage } from '@/domains/services/data/local-seo-authority';
-import { marketingAutomationSetupPage } from '@/domains/services/data/marketing-automation-setup';
 import { missedCallRecoverySystemPage } from '@/domains/services/data/missed-call-recovery-system';
 import { reputationReviewSystemsPage } from '@/domains/services/data/reputation-review-systems';
 import { smartWebsiteSystemsPage } from '@/domains/services/data/smart-website-systems';
@@ -108,33 +107,6 @@ export const SERVICE_REGISTRY: Record<string, ServiceMetadata> = {
     },
     get topics() {
       return systemMigrationPlatformConsolidationPage.topics;
-    },
-  },
-  'marketing-automation-setup': {
-    slug: 'marketing-automation-setup',
-    get path() {
-      return marketingAutomationSetupPage.seo.canonical;
-    },
-    get title() {
-      return marketingAutomationSetupPage.seo.title;
-    },
-    get description() {
-      return marketingAutomationSetupPage.seo.description;
-    },
-    get keywords() {
-      return marketingAutomationSetupPage.keywords;
-    },
-    get badge() {
-      return marketingAutomationSetupPage.badge;
-    },
-    get category() {
-      return marketingAutomationSetupPage.category;
-    },
-    get systems() {
-      return marketingAutomationSetupPage.systems;
-    },
-    get topics() {
-      return marketingAutomationSetupPage.topics;
     },
   },
   'website-redesign-system-rebuild': {

@@ -23,7 +23,10 @@ const POINT_MAX_ITEMS = 5;
 const LEADING_FILLER_WORDS = new Set(['a', 'an', 'the']);
 
 function cleanText(value: string) {
-  return value.replace(/\s+/g, ' ').trim().replace(/[.!?,;:]+$/g, '');
+  return value
+    .replace(/\s+/g, ' ')
+    .trim()
+    .replace(/[.!?,;:]+$/g, '');
 }
 
 function truncateWords(value: string, maxWords: number) {
@@ -90,7 +93,7 @@ export function normalizeAlternatingItems(items: AlternatingItemInput[] = []) {
 
 export function renderAlternatingSection(
   data: AlternatingSectionRenderData | null | undefined,
-  fallback: ReactNode,
+  fallback: ReactNode
 ) {
   if (!data) {
     return fallback;

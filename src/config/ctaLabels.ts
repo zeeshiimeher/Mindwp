@@ -74,8 +74,6 @@ export function inferIntent(pageType: ContactSourceType): CtaIntent {
   }
 }
 
-export function resolveCtaLabel(system: string, overrides?: ResolveCtaLabelOverrides): string;
-export function resolveCtaLabel(options: ResolveCtaLabelOptions): string;
 export function resolveCtaLabel(
   input: string | ResolveCtaLabelOptions,
   overrides?: ResolveCtaLabelOverrides

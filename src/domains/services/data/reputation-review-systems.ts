@@ -1,6 +1,5 @@
 import { AlertTriangle, Bell, GitBranch, MessageSquare, Search, Star } from 'lucide-react';
 
-
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
@@ -33,20 +32,17 @@ export const reputationReviewSystemsPage = {
     slug,
     title: 'Reputation & Review Management for Service Businesses | MindWP',
     description:
-      'Your customers are happy. Your reviews don\'t show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.',
+      "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
     schemaName: 'Reputation and review management for service businesses',
     schemaDescription:
       'Review collection, feedback routing, and reputation monitoring for service businesses where trust directly affects whether people enquire.',
   }),
   hero: {
     badge: 'Reputation & Reviews',
-      title: 'Happy Customers Walk Out. Say Nothing.',
+    title: 'Happy Customers Walk Out. Say Nothing.',
     description:
       'A hundred jobs last quarter. Good ones. Customers thanked you on the way out. Four left a review. Competitor with half your skill has three times your proof.',
-    list: [
-        'Happy. Silent.',
-        'Competitors look more trustworthy',
-    ],
+    list: ['Happy. Silent.', 'Competitors look more trustworthy'],
     cssPrefix: 'reputation-review-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
@@ -55,24 +51,22 @@ export const reputationReviewSystemsPage = {
       badge: 'Why your reviews are stuck',
       title: 'Not about asking more. About asking when it counts.',
       description:
-        'Customer leaves happy. Two weeks pass. Forgotten the business name. That five-star review? Doesn\'t exist.',
+        "Customer leaves happy. Two weeks pass. Forgotten the business name. That five-star review? Doesn't exist.",
       painPoints: [
         {
           before:
-            'Someone has to remember to ask. They don\'t. Review count hasn\'t moved in months.',
+            "Someone has to remember to ask. They don't. Review count hasn't moved in months.",
           after:
             'Request goes out after the job. Right timing. Reviews grow without anyone chasing.',
         },
         {
-          before: 'One-star notification. That\'s how you find out someone\'s unhappy.',
+          before: "One-star notification. That's how you find out someone's unhappy.",
           after:
             'Feedback gets routed to the team first. Complaint handled before it goes permanent.',
         },
         {
-          before:
-            'Google, directories, social \u2014 nobody checks. Trust erodes quietly.',
-          after:
-            'Monitoring catches it. Replies go out. Profile stays managed.',
+          before: 'Google, directories, social \u2014 nobody checks. Trust erodes quietly.',
+          after: 'Monitoring catches it. Replies go out. Profile stays managed.',
         },
       ],
     },
@@ -80,16 +74,13 @@ export const reputationReviewSystemsPage = {
       badge: 'How it works',
       title: 'What it actually does when reviews are working',
       description:
-        'Depends on your business. When customers are happiest, how they communicate, what to do when someone\'s unhappy. Three parts.',
+        "Depends on your business. When customers are happiest, how they communicate, what to do when someone's unhappy. Three parts.",
       cards: [
         {
           title: 'Ask at the right moment',
           description:
-            'Not two weeks after the job. Right after the handshake. When they\'re still feeling it.',
-          points: [
-            'Request sent the same day',
-            'Via the channel the customer actually checks',
-          ],
+            "Not two weeks after the job. Right after the handshake. When they're still feeling it.",
+          points: ['Request sent the same day', 'Via the channel the customer actually checks'],
           featured: true,
         },
         {
@@ -99,13 +90,13 @@ export const reputationReviewSystemsPage = {
           points: [
             'Complaints sent straight to the person who can fix it',
             'Named owner — not a shared inbox',
-            'Resolved before it becomes someone\'s first impression of your business',
+            "Resolved before it becomes someone's first impression of your business",
           ],
         },
         {
-          title: 'Keep an eye on what\'s out there',
+          title: "Keep an eye on what's out there",
           description:
-            'Google, directories, social. Reviews come in. Some are fair. Some aren\'t. Responses go out either way.',
+            "Google, directories, social. Reviews come in. Some are fair. Some aren't. Responses go out either way.",
           points: [
             'Monitoring across the platforms that actually matter for your trade',
             'Replies that show the business is awake',
@@ -121,7 +112,7 @@ export const reputationReviewSystemsPage = {
       tagline: 'Turn real work into visible proof.',
       narrativeTitle: 'For some businesses, trust is the real bottleneck',
       narrativeParagraphs: [
-        'People find you. Look at the reviews. Twelve total, one from 2022. Competitor has eighty. They get the call. Not because they\'re better.',
+        "People find you. Look at the reviews. Twelve total, one from 2022. Competitor has eighty. They get the call. Not because they're better.",
         'When collection, complaint handling, and response all run, the gap closes. Steadily. And it feeds back into whether people bother reaching out at all.',
       ],
       features: [
@@ -134,7 +125,7 @@ export const reputationReviewSystemsPage = {
         {
           title: 'Problems caught early',
           description:
-            'Complaints routed internally before they\'re posted publicly. The team gets a chance to fix it.',
+            "Complaints routed internally before they're posted publicly. The team gets a chance to fix it.",
           icon: AlertTriangle,
         },
         {
@@ -155,7 +146,7 @@ export const reputationReviewSystemsPage = {
           number: '1',
           title: 'Find when customers are happiest',
           description:
-            'Identify when satisfaction peaks \u2014 right after the service, right after the result. That\'s when the ask lands.',
+            "Identify when satisfaction peaks \u2014 right after the service, right after the result. That's when the ask lands.",
         },
         {
           number: '2',
@@ -167,21 +158,20 @@ export const reputationReviewSystemsPage = {
           number: '3',
           title: 'Set up monitoring and response ownership',
           description:
-            'Someone owns what\'s public. Replies happen consistently. Nothing sits there unanswered for weeks.',
+            "Someone owns what's public. Replies happen consistently. Nothing sits there unanswered for weeks.",
         },
         {
           number: '4',
           title: 'Refine from real results',
           description:
-            'Track what\'s working, where trust is still weak. Adjust. Gets sharper over time.',
+            "Track what's working, where trust is still weak. Adjust. Gets sharper over time.",
         },
       ],
     },
     capabilitySection: {
-      badge: 'What\'s included',
+      badge: "What's included",
       title: 'The parts that matter when trust drives enquiries',
-      description:
-        'Not every business needs all of this. Depends on where your trust gap is.',
+      description: 'Not every business needs all of this. Depends on where your trust gap is.',
       services: [
         {
           title: 'Review request and follow-up',
@@ -223,7 +213,7 @@ export const reputationReviewSystemsPage = {
       notDesignedTitle: 'Not the right fit if',
       strongFitItems: [
         {
-          title: 'You do good work but your reviews don\'t show it',
+          title: "You do good work but your reviews don't show it",
           description:
             'Customers leave happy. Evidence never shows up online. Competitors with worse service look more credible because they have more proof.',
         },
@@ -242,17 +232,17 @@ export const reputationReviewSystemsPage = {
         {
           title: 'You want fake or inflated reviews',
           description:
-            'This builds real trust from real customers. If you want fabricated ratings, this isn\'t the right service.',
+            "This builds real trust from real customers. If you want fabricated ratings, this isn't the right service.",
         },
         {
-          title: 'The team won\'t act on complaints',
+          title: "The team won't act on complaints",
           description:
             'Routing feedback to your team only works if someone actually addresses it. If complaints will be ignored either way, the routing changes nothing.',
         },
         {
-          title: 'Nobody\'s finding your business yet',
+          title: "Nobody's finding your business yet",
           description:
-            'If the issue is visibility, not trust, reviews alone won\'t fix it. Get found first. Then make sure what people see looks right.',
+            "If the issue is visibility, not trust, reviews alone won't fix it. Get found first. Then make sure what people see looks right.",
         },
       ],
     },
@@ -260,17 +250,17 @@ export const reputationReviewSystemsPage = {
       header: {
         title: 'Leaving it to chance vs managing it properly',
         description:
-          'Most businesses rely on memory and good intentions. Here\'s what that looks like next to a business that actually manages its reputation.',
+          "Most businesses rely on memory and good intentions. Here's what that looks like next to a business that actually manages its reputation.",
       },
       items: [
         {
           type: 'before' as const,
           title: 'Left to chance',
           items: [
-            'Reviews requested when someone remembers. Weeks after the job. The customer\'s already forgotten the company name.',
+            "Reviews requested when someone remembers. Weeks after the job. The customer's already forgotten the company name.",
             'A one-star review appears. No warning. No chance to fix it first. Hundreds of prospects see it before anyone on the team does.',
-            'No idea what\'s being said across Google, directories, or social. Trust quietly eroding.',
-            'Public replies are sporadic or missing entirely. To a prospect, it looks like the business doesn\'t care.',
+            "No idea what's being said across Google, directories, or social. Trust quietly eroding.",
+            "Public replies are sporadic or missing entirely. To a prospect, it looks like the business doesn't care.",
             'No view of reputation health. Problems compound in silence until enquiries dry up.',
           ],
         },
@@ -296,7 +286,8 @@ export const reputationReviewSystemsPage = {
       cards: [
         {
           title: 'Before: great work, invisible online',
-          description: 'Hundreds of jobs a year. Customers came back. But the review profile was almost empty. Nobody ever asked. The occasional text went out when the owner remembered. Usually too late.',
+          description:
+            'Hundreds of jobs a year. Customers came back. But the review profile was almost empty. Nobody ever asked. The occasional text went out when the owner remembered. Usually too late.',
           points: [
             'Twelve reviews in four years. Customers were happy. Just never bothered.',
             'One bad review from a misunderstanding sat at the top. No reply. That was the first thing anyone saw.',
@@ -304,9 +295,10 @@ export const reputationReviewSystemsPage = {
         },
         {
           title: 'What we set up: timed requests with complaint routing',
-          description: 'Review request sent after every completed job. Simple rating step — happy customers directed to Google, unhappy responses sent straight to the owner.',
+          description:
+            'Review request sent after every completed job. Simple rating step — happy customers directed to Google, unhappy responses sent straight to the owner.',
           points: [
-            'SMS request goes out the same day the car is picked up. That\'s when satisfaction peaks.',
+            "SMS request goes out the same day the car is picked up. That's when satisfaction peaks.",
             'Negative feedback routed to the owner privately. Handled before it becomes permanent.',
             'Google profile monitored. Public replies posted within the day.',
           ],
@@ -314,11 +306,12 @@ export const reputationReviewSystemsPage = {
         },
         {
           title: 'After: reviews growing, complaints caught',
-          description: 'Three months in, over fifty new reviews. The bad one was buried. Two complaints caught privately that would\'ve gone public.',
+          description:
+            "Three months in, over fifty new reviews. The bad one was buried. Two complaints caught privately that would've gone public.",
           points: [
-            'Fifty-odd new reviews. All real. All from that week\'s customers.',
-            'Two complaints caught privately. Would\'ve been one-stars. Weren\'t.',
-            'Started getting calls from people they\'d never spoken to. The profile was doing the work before anyone picked up the phone.',
+            "Fifty-odd new reviews. All real. All from that week's customers.",
+            "Two complaints caught privately. Would've been one-stars. Weren't.",
+            "Started getting calls from people they'd never spoken to. The profile was doing the work before anyone picked up the phone.",
           ],
         },
       ],
@@ -326,8 +319,7 @@ export const reputationReviewSystemsPage = {
     faqSection: {
       badge: 'FAQ',
       title: 'Questions about reputation and reviews',
-      description:
-        'What people ask before they start.',
+      description: 'What people ask before they start.',
       faqs: [
         {
           question: 'Can we start this without changing the website?',
@@ -337,7 +329,7 @@ export const reputationReviewSystemsPage = {
         {
           question: 'Will this actually get us more reviews?',
           answer:
-            'Typically, yes. But the point isn\'t just volume. It\'s consistent collection, complaint handling, and a profile that looks like a business worth trusting.',
+            "Typically, yes. But the point isn't just volume. It's consistent collection, complaint handling, and a profile that looks like a business worth trusting.",
         },
         {
           question: 'Do you help with responding to reviews?',
@@ -355,12 +347,11 @@ export const reputationReviewSystemsPage = {
   },
   inlineCta: {
     title: 'How do your reviews compare to the competition?',
-    description:
-      'Your review profile vs theirs. Where trust is thin. What to fix first.',
+    description: 'Your review profile vs theirs. Where trust is thin. What to fix first.',
   },
   cta: {
     title: 'See how you look next to your competitors',
     description:
-      'Your reviews, their reviews. Where you\'re losing trust. What fixing it looks like.',
+      "Your reviews, their reviews. Where you're losing trust. What fixing it looks like.",
   },
 } satisfies ServicePageData;

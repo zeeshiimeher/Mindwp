@@ -177,8 +177,7 @@ function buildRoofingWebsiteRebuildWithCrm(): CaseStudyData {
   return {
     slug: 'roofing-website-rebuild-with-crm',
     title: 'Roofing Website Rebuild With CRM',
-    metaTitle:
-      'Roofing Website Rebuild | 6 to 22 Weekly Leads',
+    metaTitle: 'Roofing Website Rebuild | 6 to 22 Weekly Leads',
     metaDescription:
       'How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service pages, CRM integration, and mobile-first design.',
     industryCategory: 'home-services',

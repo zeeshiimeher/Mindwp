@@ -80,7 +80,7 @@ export function PortfolioSection() {
         <SectionIntro
           badge='Recent Work'
           title='What this looks like in practice'
-          description="Real businesses. Real problems. Infrastructure that changed how enquiries, visibility, and follow-up actually work day to day."
+          description='Real businesses. Real problems. Infrastructure that changed how enquiries, visibility, and follow-up actually work day to day.'
           cssPrefix='portfolio-section'
         />
 

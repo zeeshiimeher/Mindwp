@@ -1,6 +1,5 @@
 import { Blocks, Cog, LayoutTemplate, Link2, Search, Workflow } from 'lucide-react';
 
-
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
@@ -17,353 +16,353 @@ export const wordpressDevelopmentPage = {
     'business website development on wordpress',
     'web shop development on wordpress',
   ],
-  badge: 'WordPress Website Development',
+  badge: 'WordPress Development',
   category: 'Implementation Services',
   seo: buildServiceSeo({
     slug,
     title: 'WordPress Development for Service Businesses | MindWP',
     description:
-      'WordPress website development built around how the business works. Clear service architecture, proper enquiry flow, and a foundation that stays manageable after launch.',
+      'A properly built WordPress site is a good start. But the build alone doesn\'t bring in work. What matters is what happens when someone visits and tries to get in touch.',
     schemaName: 'WordPress website development for service businesses',
     schemaDescription:
-      'Structured WordPress implementation focused on clear service architecture, enquiry handling, maintainability, and future-ready foundations.',
+      'WordPress implementation focused on turning visitors into handled enquiries — with clear service pages, proper routing, and automated follow-up.',
   }),
   hero: {
-    badge: 'WordPress Website Development',
-      title: 'WordPress Builds That Support Services Enquiries and Growth',
+    badge: 'WordPress Development',
+    title: 'The Build Is Solid. The Leads Still Disappear.',
     description:
-      'For service businesses that need a proper WordPress foundation. Not pages thrown together quickly, but a site where services are clearly presented, enquiry paths make sense, and the whole thing stays manageable after launch.',
-    list: [
-        'Service-first page architecture',
-        'Defined enquiry paths',
-        'CRM-ready from day one',
-    ],
+      'You invested in a proper WordPress site. Clean code, decent structure, looks professional. Someone visits, fills in the form, and... nothing. Nobody picks it up in time. No follow-up goes out. The build was fine. The website just doesn\'t handle what arrives.',
+    list: ['Solid build', 'Lost enquiries', 'No follow-up'],
     cssPrefix: 'wordpress-development-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
   sections: {
     foundation: {
-      badge: 'Why this matters',
-      title: 'Most WordPress problems start before the build even begins',
+      badge: 'Where the real problem sits',
+      title: 'Most WordPress sites are built well enough. They just don\'t do enough.',
       description:
-        'Rarely WordPress itself. The problem starts when building begins before anyone has agreed on site purpose, service presentation, or enquiry flow.',
+        'The issue is rarely the code or the theme. It\'s that the site was built to look right, not to handle enquiries, route them to the right person, or follow up when your team is busy.',
       painPoints: [
         {
-          before: 'Pages are planned one by one with no overall logic holding them together.',
+          before: 'Visitors land on a decent-looking homepage but can\'t find the specific service they need.',
           after:
-            'Implementation starts from service priorities, content logic, and enquiry flow — so every page has a clear job.',
+            'Each service gets its own page, written the way people search. Visitors find what they came for and act.',
         },
         {
           before:
-            'Theme, builder, and plugin decisions are made too early and end up driving the project.',
-          after: 'Technology choices support the business outcome instead of dictating it.',
+            'The contact form feeds into an inbox nobody checks until end of day. Warm leads go cold.',
+          after: 'Enquiries reach the right person in minutes with name, number, and what they need.',
         },
         {
           before:
-            'The site launches looking fine but quickly becomes hard to update, inconsistent, or fragile.',
+            'No confirmation email, no reminder, no follow-up sequence. Every lead depends on someone remembering.',
           after:
-            'The build is organised so the site keeps improving without creating internal mess.',
+            'Confirmation goes out immediately. Follow-up runs on its own. Nothing depends on memory.',
         },
       ],
     },
     implementationScope: {
-      badge: 'Implementation scope',
-      title: 'What this pathway covers',
+      badge: 'What we actually build',
+      title: 'WordPress development that connects the visit to the outcome',
       description:
-        'This covers the practical implementation work needed to build a clear WordPress foundation. Scope depends on the business, but it usually falls into a few groups.',
+        'We build WordPress sites. But we don\'t stop at pages and templates. The build includes everything between someone arriving and your team having their details in hand.',
       cards: [
         {
-          title: 'Service-business website implementation',
+          title: 'Service pages that match what people search for',
           description:
-            'A WordPress build for businesses that need their services clearly presented, enquiry paths defined, and pages that work together.',
+            'Your services listed individually, written the way customers look for help. Each page has a clear next step — form, call, or booking.',
           points: [
-            'Core page and navigation logic',
-            'Service-page hierarchy',
-            'Quote, booking, or contact pathways',
+            'Each service on its own page',
+            'Written for how people search',
+            'Clear action on every page',
           ],
           featured: true,
         },
         {
-          title: 'Brochure-style rebuilds with better logic',
+          title: 'Enquiry handling built into the site',
           description:
-            'For businesses whose current website feels dated, unclear, or disconnected from how the business actually operates now.',
+            'Forms that capture what you need, routing that gets it to the right person, and confirmations that go out before your team even sees the enquiry.',
           points: [
-            'Content restructuring',
-            'Cleaner navigation',
-            'Reduced clutter and duplication',
+            'Forms → CRM → the right person',
+            'Automatic confirmations',
+            'Follow-up runs without manual effort',
           ],
         },
         {
-          title: 'Commerce-ready WordPress implementations',
+          title: 'A foundation that supports what comes next',
           description:
-            'Where relevant, WordPress can also support e-commerce or web shop delivery using WooCommerce as a technology layer.',
+            'CRM, local SEO, reviews, automation — they all need a structured site underneath. We build WordPress so everything connects cleanly later.',
           points: [
-            'Catalog and product logic',
-            'Checkout and fulfilment flow',
-            'Commerce kept within the wider site system',
+            'CRM-ready from day one',
+            'SEO-supportive page structure',
+            'Room to grow without rework',
           ],
         },
       ],
     },
     principles: {
-      badge: 'Implementation principles',
-      title: 'What a good WordPress build should protect',
+      badge: 'What changes results',
+      title: 'A well-built site is the start. What it does with visitors is what matters.',
       description:
-        'A strong WordPress build is not only about launch day. It should support operational clarity, future changes, and cleaner system expansion over time.',
+        'Code quality, page speed, clean templates — all important. But none of them generate enquiries on their own. What changes results is how the site handles the people who show up.',
       tagline: 'Build for the business, not just the handover.',
-      narrativeTitle: 'The website should still make sense after the project ends',
+      narrativeTitle: 'Why a properly built site still doesn\'t bring in work',
       narrativeParagraphs: [
-        'A WordPress website becomes more valuable when pages, content logic, and editing paths are easy to understand. That matters more than packing in features that only make sense during launch week.',
-        'Implementation decisions centre on maintainability, message clarity, and future readiness. If later work includes CRM, local SEO, reviews, or automation, the website should already support it.',
+        'The WordPress build is solid. Theme is clean. Plugins are up to date. But the form goes to an inbox nobody really owns. Services are all on one page. There\'s no follow-up, no tracking, no routing. The build was good. It just wasn\'t connected to anything.',
+        'When the site is structured around services, and enquiries reach the right person with context, and follow-up runs automatically — that\'s when a WordPress build starts earning its investment back.',
       ],
       features: [
         {
-          title: 'Clear page hierarchy',
+          title: 'Services listed individually',
           description:
-            'Visitors and the internal team should both understand what each page is for and where it sits.',
+            'Each service gets its own page. Visitors find what they need. Google can match you to what people search for.',
           icon: LayoutTemplate,
         },
         {
-          title: 'Maintainable editing model',
+          title: 'Enquiries reach the right person',
           description:
-            'Templates, sections, and content patterns should be easy to manage without things drifting out of shape.',
+            'Forms capture name, number, and what they need. Details go to your CRM. The right team member picks it up.',
           icon: Blocks,
         },
         {
-          title: 'Search-ready foundations',
+          title: 'Follow-up runs on its own',
           description:
-            'Content and page logic should support visibility work later rather than blocking it.',
+            'Confirmation out immediately. Reminder before the appointment. Check-in after the job. Nobody has to remember.',
           icon: Search,
         },
         {
-          title: 'System-ready foundations',
+          title: 'Everything connects',
           description:
-            'Forms, calls to action, tracking, and routing should be ready to connect into future operational systems.',
+            'CRM, booking, reviews, local SEO — they all plug into the same foundation instead of floating separately.',
           icon: Workflow,
         },
       ],
     },
     processSection: {
-      badge: 'Implementation process',
-      title: 'How WordPress projects move from brief to handover',
+      badge: 'How we work',
+      title: 'We start with your business — the build follows',
       description:
-        'The exact path depends on the project, but the process follows a clear sequence so the build stays controlled.',
+        'WordPress is the tool. But we don\'t start with WordPress. We start with how your business works, where enquiries come from, and what happens when someone gets in touch.',
       steps: [
         {
           number: '1',
-          title: 'Scope and priorities review',
+          title: 'Understand what\'s actually happening',
           description:
-            'Define what the website needs to do, which pages matter most, and what the real operational priorities are — so the build serves the business, not a template.',
+            'How do people find you? What happens when they enquire? Where do things drop off? We learn the reality before planning the build.',
         },
         {
           number: '2',
-          title: 'Page planning and content logic',
+          title: 'Plan around services and customer behaviour',
           description:
-            'Navigation, page hierarchy, service coverage, and conversion paths are mapped before any building starts — so implementation has a clear blueprint.',
+            'Which services need their own page, how visitors move from arriving to getting in touch, what happens after first contact.',
         },
         {
           number: '3',
-          title: 'Implementation setup',
+          title: 'Build and connect everything',
           description:
-            'Templates, build approach, integrations, and governance decisions are locked in — so the project stays stable instead of drifting on ad-hoc decisions.',
+            'WordPress site live. Forms feeding into CRM. Follow-up running. Tracking showing where visitors come from and what they do.',
         },
         {
           number: '4',
-          title: 'Build, refine, and handover',
+          title: 'Handover so your team runs it',
           description:
-            'The site is built, checked, refined, and prepared — so future updates stay manageable without depending on the original builder.',
+            'Documentation, walkthrough, and a site your team can manage. Content updates, enquiry checks, and day-to-day running handled internally.',
         },
       ],
     },
     capabilitySection: {
-      badge: 'What can be included',
-      title: 'Common layers inside a WordPress website project',
+      badge: 'What the build includes',
+      title: 'Not just pages and templates — everything between the visit and the outcome',
       description:
-        'Not every project needs every layer. These are the types of work often included when building a solid WordPress foundation.',
+        'Every project is different. But the build always covers how visitors find you, how they get in touch, and what happens after.',
       categories: [
         {
-          title: 'Structure and page system',
-          description: 'Core implementation decisions that shape the site itself.',
+          title: 'Service pages and site structure',
+          description: 'What visitors see and how they navigate.',
           icon: LayoutTemplate,
           features: [
-            'Page and template architecture',
-            'Navigation and internal hierarchy',
-            'Service page structure',
-            'Content blocks and reusable sections',
-            'Clear CTA pathways',
+            'Each service on its own page',
+            'Navigation that makes sense to visitors',
+            'Clear calls to action on every page',
+            'Content written for how people search',
+            'Mobile-friendly throughout',
           ],
         },
         {
-          title: 'Technical and operational setup',
-          description: 'The implementation layer that keeps the website stable and usable.',
+          title: 'Enquiry handling and routing',
+          description: 'What happens when someone reaches out.',
           icon: Cog,
           features: [
-            'Form setup and routing',
-            'Analytics and tracking setup',
-            'Core plugin governance',
-            'Performance and stability basics',
-            'Security and update hygiene',
+            'Forms → CRM → the right person',
+            'Immediate confirmation to the visitor',
+            'Follow-up sequences that run automatically',
+            'Missed call and voicemail handling',
+            'Every enquiry logged and trackable',
           ],
         },
         {
-          title: 'Expansion-ready foundations',
-          description:
-            'Support for what comes after launch when the business grows into more systems.',
+          title: 'Foundations for what comes next',
+          description: 'What the site needs to connect to later.',
           icon: Link2,
           features: [
-            'CRM-ready form and enquiry pathways',
-            'SEO-supportive structure',
-            'Review and authority support pages',
-            'Commerce-ready planning where needed',
-            'Content scaling and future refinement',
+            'CRM-ready from day one',
+            'Local SEO-supportive structure',
+            'Review and reputation foundations',
+            'Booking and calendar connections',
+            'Tracking and reporting wired in',
           ],
         },
       ],
     },
     qualification: {
-      title: 'Is this the right fit for your business?',
+      title: 'Is this the right fit?',
       description:
-        'Works best for businesses that want a proper WordPress foundation — not just a quick launch.',
+        'This works for businesses that want a WordPress site connected to how they actually operate — not just a set of pages.',
       strongFitTitle: 'Strong fit if',
       notDesignedTitle: 'Not the right fit if',
       strongFitItems: [
         {
-          title: 'Your website should reflect how the business actually operates',
+          title: 'People visit your site but don\'t get in touch',
           description:
-            'The site needs to present services clearly, handle enquiries through defined paths, and support the systems behind it.',
+            'Traffic is there. The build looks fine. But enquiries are thin, and the ones that come through take too long to handle.',
         },
         {
-          title: 'You are building toward CRM, SEO, or automation',
+          title: 'Your services aren\'t listed the way people search',
           description:
-            'Future systems need a structured foundation — not a site that has to be rebuilt before anything else can connect.',
+            'Everything is bundled. Someone looking for one specific thing can\'t find it. They leave and try the next business.',
         },
         {
-          title: 'You value maintainability over launch-day speed',
-          description: 'Long-term clarity matters more than going live fast — because a rushed build costs more to fix than it saves.',
+          title: 'You want CRM, SEO, and automation to connect',
+          description:
+            'Future systems need something structured underneath. A site built for integration saves rebuilding later.',
         },
       ],
       notDesignedItems: [
         {
-          title: 'You want a quick template swap with no planning',
+          title: 'You just need a template swapped out',
           description:
-            'If speed is the only priority and post-launch quality does not matter, this approach will feel too structured.',
+            'If the goal is a fresh theme and nothing else, this approach adds structure you don\'t need.',
         },
         {
-          title: 'Your project starts with a plugin list',
-          description: 'Builds that start from tools instead of business needs end up locked to technology that does not serve the outcome.',
+          title: 'Enquiries are steady and nothing\'s being missed',
+          description:
+            'If the current site converts well and leads are handled, a rebuild won\'t change much.',
         },
         {
-          title: 'You need a large software product built',
+          title: 'You need custom software, not a business website',
           description:
-            'This is for service-business website implementation — not SaaS product engineering or custom application development.',
+            'This is for service businesses that need a site working for them. Not SaaS or app development.',
         },
       ],
     },
     faqSection: {
       badge: 'FAQ',
-      title: 'Common questions about WordPress development',
-      description: 'Practical questions that come up before a WordPress project begins.',
+      title: 'Questions about WordPress development',
+      description: 'What business owners ask before committing to a WordPress build.',
       faqs: [
         {
-          question: 'Can this include a redesign as well as a rebuild?',
+          question: 'We already have a WordPress site. Do we need a new one?',
           answer:
-            'Yes. Some projects include a redesign or restructuring phase before implementation. The work is framed around clarity and usefulness — not visual change for its own sake.',
+            'Not always. Sometimes the structure is fine and it just needs connecting to CRM, follow-up, and proper routing. We\'ll tell you which.',
         },
         {
-          question: 'Do you work with one specific builder or theme?',
+          question: 'Does the builder or theme matter?',
           answer:
-            'No. The builder or theme approach depends on what best supports the project. Those choices stay secondary to business needs and long-term maintainability.',
+            'Less than people think. What matters is whether the site handles enquiries properly. The builder choice follows from the project, not the other way around.',
         },
         {
-          question: 'Can you migrate an existing website into WordPress?',
+          question: 'Will this help us show up on Google?',
           answer:
-            'Yes, when that is the right move. Migration can be part of this pathway, or it can lead into a dedicated migration scope.',
+            'A well-structured site with individual service pages gives search engines something useful to index. That\'s the foundation local SEO builds on.',
         },
         {
-          question: 'Will the website support SEO and CRM later?',
+          question: 'What happens after launch?',
           answer:
-            'That is one of the main reasons to approach WordPress development this way. A well-built foundation makes later SEO, CRM, review, and automation work much easier to add.',
+            'Your team runs it. Documentation, walkthrough, and a site built so you don\'t need us to make changes.',
         },
       ],
       cssPrefix: 'wordpress-development-faq',
     },
     comparison: {
       header: {
-        title: 'Template-first build vs structured WordPress development',
+        title: 'Pages-first build vs enquiry-first build',
         description:
-          'Most WordPress projects start from a template or plugin list. Here is what that looks like compared to building around how the business actually works.',
+          'Most WordPress projects focus on pages, templates, and launch day. Here\'s what that costs compared to building around how the business actually gets work.',
       },
       items: [
         {
           type: 'before' as const,
-          title: 'Template-first build',
+          title: 'Pages-first build',
           items: [
-            'Pages built one by one with no overall content logic — so the site feels like a collection of pages, not a business tool',
-            'Theme and plugins chosen first, business needs fitted around them — so the build locks around technology instead of outcomes',
-            'Enquiry flow depends on whichever form plugin was installed — so leads follow a random path instead of a designed one',
-            'No plan for how the site will evolve after launch — so every future system requires rework',
-            'Editing becomes fragile because the build was not structured for change — so the team avoids updates instead of making them',
+            'Services lumped together on one page. Someone looking for one thing scrolls past everything else and leaves.',
+            'Contact form goes to a shared inbox. Whoever remembers to check it responds. Could be hours later.',
+            'No follow-up after someone enquires. The lead goes cold while the team handles other work.',
+            'No visibility into where visitors come from or what they do. Marketing spend is blind.',
+            'CRM, SEO, and automation need a complete rework because the build wasn\'t designed for them.',
           ],
         },
         {
           type: 'after' as const,
-          title: 'Structured WordPress development',
+          title: 'Enquiry-first build',
           items: [
-            'Pages organised around service priorities and visitor intent — so the structure reflects the business, not a theme default',
-            'Technology choices support the business outcome — so the build stays flexible instead of locked to one plugin',
-            'Enquiry flow designed into the site architecture from the start — so leads follow a clear path to the right person',
-            'CRM, SEO, and automation foundations built in from day one — so future systems connect cleanly',
-            'Editing model stays clean because the structure was planned — so the team can update without breaking things',
+            'Each service on its own page. Visitors find what they need and act.',
+            'Enquiries arrive with context. The right person picks up in minutes.',
+            'Follow-up goes out automatically. Confirmations, reminders, check-ins — without manual effort.',
+            'Tracking shows which channels bring real enquiries. Spend goes where it works.',
+            'CRM, local SEO, and reviews connect cleanly because the foundation was built for it.',
           ],
         },
       ],
     },
     proof: {
       header: {
-        title: 'What this looks like when it is done properly',
+        title: 'What changed for a real business',
         description:
-          'A roofing company needed a WordPress website that reflected how the business actually worked — not just a brochure with a contact form.',
+          'A trades company had a professional WordPress site. Traffic was decent. Enquiries were thin. The build wasn\'t the problem — but the site wasn\'t doing anything with the visitors it had.',
       },
       cards: [
         {
-          title: 'Before: a template site that did not match the business',
-          description: 'Generic template with no service-specific page logic. Enquiry form went to a shared inbox with no routing — so there was no foundation for the systems the business needed next.',
+          title: 'Before: good site, quiet phone',
+          description:
+            'Clean WordPress build. Responsive. Fast. But all services on one page, form going to a generic inbox, and no follow-up at all.',
           points: [
-            'Generic template with no service-specific page logic — so visitors bounced before finding the right service',
-            'Enquiry form went to a shared inbox with no routing — so leads waited hours for whoever checked email first',
-            'No foundation for SEO, CRM, or future systems — so every later improvement required rebuilding what already existed',
+            'All services bundled together. Visitors looking for one thing couldn\'t find it quickly and left.',
+            'Form submissions sat unread for hours. By the time someone replied, the customer had moved on.',
+            'No tracking. No idea which channels were bringing visitors or whether they converted.',
           ],
         },
         {
-          title: 'What we built: structured WordPress foundation',
-          description: 'Site rebuilt around the business structure — clear service pages, defined enquiry paths, CRM-ready forms, and a content model that could grow with the business.',
+          title: 'What we changed: same WordPress, different outcome',
+          description:
+            'Services split into their own pages. Forms routed to the right person with context. Follow-up automated. CRM connected.',
           points: [
-            'Service pages structured around how the business operates — so each page served a clear commercial purpose',
-            'Enquiry paths connected to CRM and routing logic — so leads reached the right person with context',
-            'Content model built for future SEO and system expansion — so later work connected instead of requiring rebuilds',
+            'Each service got its own page written around what people actually search for.',
+            'Enquiries hit the CRM with name, number, and service interest. The right team member picked it up.',
+            'Confirmation went out in seconds. Follow-up ran on its own. Nothing depended on someone remembering.',
           ],
           featured: true,
         },
         {
-          title: 'After: a website that works as a business tool',
-          description: 'The site became the operational foundation for local SEO, review management, lead handling, and CRM — each system connected cleanly because the WordPress build was structured to support it.',
+          title: 'After: same traffic, actual work coming through',
+          description:
+            'Enquiries went up without extra marketing spend. The team stopped losing leads to slow responses and started converting the visitors who were already there.',
           points: [
-            'SEO, reviews, and CRM all connected to the site foundation — because the page structure and data model were designed for integration from the start',
-            'Enquiry volume increased without more traffic — because clearer service pages and defined paths converted more of the existing visitors',
-            'Site stayed maintainable as the business added services — because the content model scaled without creating technical debt',
+            'Enquiry volume doubled from the same traffic. People could find the right service and act.',
+            'Response time dropped from hours to minutes. Automated routing beat manual inbox checking.',
+            'First time the business could see which channels produced real enquiries — and cut the ones that didn\'t.',
           ],
         },
       ],
     },
   },
   inlineCta: {
-    title: 'Need a WordPress site that actually works for the business?',
+    title: 'Not sure if the build is the real problem?',
     description:
-      'Tell us about your services and how enquiries come in. We will outline what the build should cover and the best path forward.',
+      'Send us your URL. We\'ll show you where visitors are dropping off and whether it\'s a build issue or something deeper.',
   },
   cta: {
-    title: 'Build a WordPress site around how your business works',
+    title: 'Show us what\'s not working',
     description:
-      'Tell us about your services and how enquiries come in now. We will outline what the build should cover and the best implementation path forward.',
+      'Tell us about your site and how enquiries come in. We\'ll tell you what\'s costing you leads and what to fix first.',
   },
 } satisfies ServicePageData;

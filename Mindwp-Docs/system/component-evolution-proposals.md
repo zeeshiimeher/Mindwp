@@ -123,7 +123,6 @@ Root repetition examples:
 - WordPress Development
 - Booking Scheduling System
 - Local SEO Authority
-- Marketing Automation Setup
 - System Migration Platform Consolidation
 - Website Redesign System Rebuild
 
@@ -193,7 +192,6 @@ Root repetition examples:
 - WordPress Development
 - Booking Scheduling System
 - Local SEO Authority
-- Marketing Automation Setup
 - Website Redesign System Rebuild
 - System Migration Platform Consolidation
 
@@ -218,7 +216,6 @@ Root repetition examples:
 - Booking Scheduling System
 - Review Automation System
 - Reputation Review Systems
-- Marketing Automation Setup
 - Funnel Landing Page Development
 
 ### 3. JSX Structure
@@ -276,7 +273,6 @@ Root repetition examples:
 - WordPress Development
 - Booking Scheduling System
 - Funnel Landing Page Development
-- Marketing Automation Setup
 - Review Automation System
 - Reputation Review Systems
 
@@ -306,7 +302,6 @@ Structure changes from a flat `CardGrid` to a split layout with intro on one sid
 - Booking Scheduling System
 - System Migration Platform Consolidation
 - Conversion Funnel System
-- Marketing Automation Setup
 
 ---
 

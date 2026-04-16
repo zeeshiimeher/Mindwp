@@ -138,8 +138,8 @@ export function MissedCallRecoverySystemRenderer({
             />
           )}
 
-          {proof && (
-            proof.cards.every(card => card.points?.length) ? (
+          {proof &&
+            (proof.cards.every(card => card.points?.length) ? (
               <FeatureChecklistCardsSection
                 badge='Proof'
                 title={proof.header.title}
@@ -162,8 +162,7 @@ export function MissedCallRecoverySystemRenderer({
                 cssPrefix='missed-call-recovery-proof'
                 backgroundColor='bg-base'
               />
-            )
-          )}
+            ))}
 
           <SmartCTA
             system={data.systems?.[0] ?? 'smart-website-systems'}

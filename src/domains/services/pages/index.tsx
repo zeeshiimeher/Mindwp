@@ -4,10 +4,8 @@ import {
   Blocks,
   Bot,
   Boxes,
-  FileSearch,
   Inbox,
   LayoutTemplate,
-  Mail,
   Phone,
   RefreshCcw,
   RefreshCcwDot,
@@ -15,7 +13,6 @@ import {
   ShoppingCart,
   Sparkles,
   Star,
-  Target,
   Workflow,
 } from 'lucide-react';
 
@@ -47,7 +44,6 @@ const IMPLEMENTATION_SUPPORT_SLUGS = [
   'wordpress-development',
   'website-redesign-system-rebuild',
   'crm-infrastructure-implementation',
-  'marketing-automation-setup',
   'system-migration-platform-consolidation',
   'ecommerce',
   'elementor',
@@ -80,12 +76,6 @@ const SERVICE_META: Record<
     title: 'Conversion Layer',
     description:
       'A focused conversion system for stronger page flow, tighter offer pages, cleaner CTA logic, and clearer enquiry handoff.',
-  },
-  'marketing-automation-setup': {
-    icon: Mail,
-    title: 'Marketing Automation Setup',
-    description:
-      'A structured automation implementation pathway for follow-up, reminders, reactivation, and lifecycle messaging.',
   },
   'system-migration-platform-consolidation': {
     icon: Boxes,

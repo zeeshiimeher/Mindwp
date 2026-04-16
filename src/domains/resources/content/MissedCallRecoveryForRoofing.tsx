@@ -1,6 +1,5 @@
 import { MessageSquare, PhoneMissed, RotateCcw } from 'lucide-react';
 
-
 import type { ResourceData } from '../types';
 import {
   getRelatedResources,

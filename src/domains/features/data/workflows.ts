@@ -12,7 +12,6 @@ import {
   Zap,
 } from 'lucide-react';
 
-
 import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
 

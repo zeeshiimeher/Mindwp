@@ -1,6 +1,5 @@
 import { GitBranch, MapPin, Users } from 'lucide-react';
 
-
 import type { ResourceData } from '../types';
 import {
   getRelatedResources,

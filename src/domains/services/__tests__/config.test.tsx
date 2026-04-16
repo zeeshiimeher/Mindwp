@@ -8,10 +8,6 @@ vi.mock('@/domains/services/renderers/SystemMigrationPlatformConsolidationRender
   SystemMigrationPlatformConsolidationRenderer: () => null,
 }));
 
-vi.mock('@/domains/services/renderers/MarketingAutomationSetupRenderer', () => ({
-  MarketingAutomationSetupRenderer: () => null,
-}));
-
 vi.mock('@/domains/services/renderers/WebsiteRedesignSystemRebuildRenderer', () => ({
   WebsiteRedesignSystemRebuildRenderer: () => null,
 }));
@@ -77,7 +73,6 @@ import {
 describe('services config slugs', () => {
   it('treats canonical slugs as valid service slugs', () => {
     expect(isServiceSlug('conversion-layer')).toBe(true);
-    expect(isServiceSlug('marketing-automation-setup')).toBe(true);
     expect(isServiceSlug('system-migration-platform-consolidation')).toBe(true);
     expect(isServiceSlug('website-redesign-system-rebuild')).toBe(true);
     expect(isServiceSlug('lead-reactivation-system')).toBe(true);
@@ -96,9 +91,6 @@ describe('services config slugs', () => {
   it('returns the expected canonical service data', () => {
     const conversionLayerData = getServiceDataBySlug('conversion-layer');
     expect(conversionLayerData.seo.canonical).toBe('/services/conversion-layer');
-
-    const automationData = getServiceDataBySlug('marketing-automation-setup');
-    expect(automationData.seo.canonical).toBe('/services/marketing-automation-setup');
 
     const migrationData = getServiceDataBySlug('system-migration-platform-consolidation');
     expect(migrationData.seo.canonical).toBe('/services/system-migration-platform-consolidation');
@@ -132,9 +124,6 @@ describe('services config slugs', () => {
   it('returns distinct canonical renderers where expected', () => {
     const conversionLayerRenderer = getServiceRendererBySlug('conversion-layer');
     expect(conversionLayerRenderer).toBeDefined();
-
-    const automationRenderer = getServiceRendererBySlug('marketing-automation-setup');
-    expect(automationRenderer).toBeDefined();
 
     const migrationRenderer = getServiceRendererBySlug('system-migration-platform-consolidation');
     expect(migrationRenderer).toBeDefined();

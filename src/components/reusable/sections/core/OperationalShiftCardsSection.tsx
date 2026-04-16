@@ -46,17 +46,17 @@ export function OperationalShiftCardsSection({
             <div className='l-stack l-gap-4'>
               <div className='l-stack l-gap-3'>
                 <div className='rounded-2xl bg-muted/40 p-4'>
-                  <p className='text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+                  <p className='text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground before-label'>
                     {currentStateLabel}
                   </p>
-                  <p className='mt-2 text-sm leading-6 text-foreground'>{point.before}</p>
+                  <p className='mt-2 text-sm leading-6 text-foreground before-description'>{point.before}</p>
                 </div>
 
                 <div className='rounded-2xl border border-border/60 bg-background p-4'>
-                  <p className='text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground'>
+                  <p className='text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground after-label'>
                     {structuredStateLabel}
                   </p>
-                  <p className='mt-2 text-sm leading-6 text-foreground'>{point.after}</p>
+                  <p className='mt-2 text-sm leading-6 text-foreground after-description'>{point.after}</p>
                 </div>
               </div>
             </div>

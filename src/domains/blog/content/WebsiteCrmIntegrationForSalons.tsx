@@ -111,7 +111,9 @@ export const websiteCrmIntegrationForSalons: BlogPostData = {
     {
       type: 'checklist',
       heading: 'What Happens If You Do Not Fix This',
-      content: ['Disconnected salon systems create compounding losses even when bookings keep coming in.'],
+      content: [
+        'Disconnected salon systems create compounding losses even when bookings keep coming in.',
+      ],
       items: [
         'Missed leads sit across forms, booking tools, and inboxes without one accountable system',
         'Follow-ups become inconsistent because reminders and next actions are not triggered centrally',

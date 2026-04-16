@@ -1,6 +1,6 @@
 # Topic Authority Scores
 
-> Generated: 2026-04-13
+> Generated: 2026-04-14
 
 ## Summary
 
@@ -24,7 +24,7 @@
 | 2 | missed-calls | core | 100 | 🟢 Dominant | complete | validated | 5 | 5 | 2 | 1 | 4 | 4 |
 | 3 | lead-response-time | core | 100 | 🟢 Dominant | complete | validated | 5 | 3 | 2 | 3 | 5 | 4 |
 | 4 | review-generation | core | 100 | 🟢 Dominant | complete | validated | 5 | 5 | 1 | 1 | 23 | 4 |
-| 5 | follow-up | core | 90 | 🟢 Dominant | complete | validated | 2 | 2 | 2 | 0 | 13 | 4 |
+| 5 | follow-up | core | 90 | 🟢 Dominant | complete | validated | 2 | 2 | 1 | 0 | 13 | 4 |
 | 6 | lead-routing | core | 90 | 🟢 Dominant | complete | validated | 2 | 1 | 1 | 0 | 2 | 2 |
 | 7 | lead-qualification | core | 90 | 🟢 Dominant | complete | validated | 2 | 1 | 1 | 0 | 8 | 1 |
 | 8 | crm-integration | core | 90 | 🟢 Dominant | complete | validated | 2 | 1 | 1 | 0 | 3 | 1 |
@@ -34,7 +34,7 @@
 | 12 | local-visibility | core | 90 | 🟢 Dominant | complete | validated | 6 | 3 | 1 | 0 | 2 | 1 |
 | 13 | local-service-pages | core | 90 | 🟢 Dominant | complete | validated | 2 | 1 | 1 | 0 | 1 | 1 |
 | 14 | crm-pipeline | core | 90 | 🟢 Dominant | complete | validated | 8 | 2 | 1 | 0 | 3 | 5 |
-| 15 | client-reactivation | core | 90 | 🟢 Dominant | complete | validated | 2 | 1 | 2 | 0 | 3 | 2 |
+| 15 | client-reactivation | core | 90 | 🟢 Dominant | complete | validated | 2 | 1 | 1 | 0 | 3 | 2 |
 | 16 | booking-automation | core | 85 | 🔵 Strong | complete | validated | 1 | 1 | 0 | 1 | 4 | 7 |
 | 17 | conversion-optimization | core | 80 | 🔵 Strong | complete | validated | 1 | 1 | 2 | 0 | 0 | 2 |
 | 18 | lead-capture | core | 80 | 🔵 Strong | complete | validated | 2 | 1 | 3 | 0 | 0 | 4 |

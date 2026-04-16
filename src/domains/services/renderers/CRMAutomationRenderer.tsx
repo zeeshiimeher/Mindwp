@@ -169,8 +169,8 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
             />
           )}
 
-          {proof && (
-            data.transformationProof ? (
+          {proof &&
+            (data.transformationProof ? (
               <TransformationProofSection
                 badge={proof.header.badge ?? 'Proof'}
                 title={proof.header.title}
@@ -187,8 +187,7 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
                 cards={proof.cards}
                 cssPrefix='crm-automation-proof'
               />
-            )
-          )}
+            ))}
 
           <SmartCTA
             system={data.systems?.[0] ?? 'smart-website-systems'}

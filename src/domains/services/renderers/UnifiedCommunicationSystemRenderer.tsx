@@ -236,14 +236,14 @@ export function UnifiedCommunicationSystemRenderer({
             backgroundColor='bg-alt'
           />
 
-            <SmartCTA
-              system={data.systems?.[0] ?? 'smart-website-systems'}
-              slug={slug}
+          <SmartCTA
+            system={data.systems?.[0] ?? 'smart-website-systems'}
+            slug={slug}
             pageType='service'
-              title={ctaTitle}
-              description={ctaDescription}
-              primaryActionVariant='white'
-            />
+            title={ctaTitle}
+            description={ctaDescription}
+            primaryActionVariant='white'
+          />
         </main>
       </ErrorBoundary>
     </>

@@ -33,16 +33,16 @@ export const conversionLayerPage = {
     slug,
     title: 'Conversion Layer for Service Businesses | MindWP',
     description:
-      'Visitors arrive interested. Then they can\'t figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry handoff.',
+      "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry handoff.",
     schemaName: 'Conversion layer for service businesses',
     schemaDescription:
       'Conversion-layer work covering offer clarity, decision-path structure, CTA alignment, and enquiry handoff for service businesses losing visitors between interest and action.',
   }),
   hero: {
     badge: 'Conversion Layer',
-    title: 'Interested. Couldn\'t Figure Out What To Do.',
+    title: "Interested. Couldn't Figure Out What To Do.",
     description:
-      'They clicked. Read half the content. Scrolled past three offers. Couldn\'t tell which was for them. Left. Traffic numbers looked fine.',
+      "They clicked. Read half the content. Scrolled past three offers. Couldn't tell which was for them. Left. Traffic numbers looked fine.",
     list: ['Interested', 'Confused', 'Gone'],
     cssPrefix: 'conversion-funnel-hero',
     backgroundColor: 'bg-gradient-surface-muted',
@@ -50,26 +50,25 @@ export const conversionLayerPage = {
   sections: {
     foundation: {
       badge: 'Where it breaks',
-      title: 'Attention is there. The path after isn\'t.',
+      title: "Attention is there. The path after isn't.",
       description:
-        'People arrive interested. Offer\'s buried. Next step\'s vague. What happens after they reach out? Nobody\'s sure.',
+        "People arrive interested. Offer's buried. Next step's vague. What happens after they reach out? Nobody's sure.",
       painPoints: [
         {
           before:
-            'Traffic lands. Ten seconds in, the visitor still can\'t tell what you do or why it matters to them.',
-          after:
-            'What\'s relevant, why, and what to do next \u2014 obvious from the first scroll.',
+            "Traffic lands. Ten seconds in, the visitor still can't tell what you do or why it matters to them.",
+          after: "What's relevant, why, and what to do next \u2014 obvious from the first scroll.",
         },
         {
           before:
-            'Too many messages and CTAs crammed into one place. Nobody knows what\'s for them.',
-          after:
-            'One path. One offer. Easier.',
+            "Too many messages and CTAs crammed into one place. Nobody knows what's for them.",
+          after: 'One path. One offer. Easier.',
         },
         {
-          before: 'Form goes through. Then nothing. Slow reply. No confirmation. They wonder if anyone saw it.',
+          before:
+            'Form goes through. Then nothing. Slow reply. No confirmation. They wonder if anyone saw it.',
           after:
-            'The moment after submit is handled. Confirmation, booking, follow-up. Momentum doesn\'t die at the button. And it connects into whatever handles the next step \u2014 CRM, routing, callback.',
+            "The moment after submit is handled. Confirmation, booking, follow-up. Momentum doesn't die at the button. And it connects into whatever handles the next step \u2014 CRM, routing, callback.",
         },
       ],
     },
@@ -77,7 +76,7 @@ export const conversionLayerPage = {
       badge: 'Three places it usually fails',
       title: 'Conversion breaks at predictable points',
       description:
-        'Not about complicated funnels. It\'s about removing what makes someone hesitate when they\'re already interested.',
+        "Not about complicated funnels. It's about removing what makes someone hesitate when they're already interested.",
       items: [
         {
           icon: LayoutTemplate,
@@ -91,18 +90,18 @@ export const conversionLayerPage = {
         {
           icon: MousePointerClick,
           badge: 'CTA mismatch',
-          title: 'The next step doesn\'t match what they just read',
+          title: "The next step doesn't match what they just read",
           description:
             'Interest was there. CTA felt generic, disconnected, or too big a commitment. They hesitated. Drifted.',
           solution:
-            'Match the action to the buyer\'s stage. Make it feel like a natural next step, not a leap.',
+            "Match the action to the buyer's stage. Make it feel like a natural next step, not a leap.",
         },
         {
           icon: Workflow,
           badge: 'Dead end after the form',
           title: 'They enquired. Then silence.',
           description:
-            'Form went through. No confirmation. No timeline. Nothing. They\'re wondering if it even worked.',
+            "Form went through. No confirmation. No timeline. Nothing. They're wondering if it even worked.",
           solution:
             'Define what happens after submit. Confirmation, booking, or reply — the experience continues.',
         },
@@ -153,7 +152,7 @@ export const conversionLayerPage = {
           number: '1',
           title: 'Map the drop-off',
           description:
-            'Look at where traffic lands, what the visitor sees, where attention dies. Start with what\'s happening, not assumptions.',
+            "Look at where traffic lands, what the visitor sees, where attention dies. Start with what's happening, not assumptions.",
         },
         {
           number: '2',
@@ -171,7 +170,7 @@ export const conversionLayerPage = {
           number: '4',
           title: 'Measure and refine',
           description:
-            'Track where drop-off reduced and where it didn\'t. Next round targets real weak points, not guesses.',
+            "Track where drop-off reduced and where it didn't. Next round targets real weak points, not guesses.",
         },
       ],
     },
@@ -179,7 +178,7 @@ export const conversionLayerPage = {
       badge: 'What the work covers',
       title: 'Six layers between interest and action',
       description:
-        'Not just page design. It\'s the decision path itself \u2014 what visitors see, when they see it, and what happens after they act.',
+        "Not just page design. It's the decision path itself \u2014 what visitors see, when they see it, and what happens after they act.",
       items: [
         {
           icon: Waypoints,
@@ -203,7 +202,7 @@ export const conversionLayerPage = {
           icon: BarChart3,
           title: 'Stage visibility',
           description:
-            'Know where attention turns into enquiries and where it\'s still leaking. Fix based on evidence, not instinct.',
+            "Know where attention turns into enquiries and where it's still leaking. Fix based on evidence, not instinct.",
         },
         {
           icon: Search,
@@ -215,7 +214,7 @@ export const conversionLayerPage = {
           icon: ListOrdered,
           title: 'Post-form handoff',
           description:
-            'Define what happens after submit. Booking link, CRM entry, follow-up sequence — the action doesn\'t end at the form.',
+            "Define what happens after submit. Booking link, CRM entry, follow-up sequence — the action doesn't end at the form.",
         },
       ],
     },
@@ -229,7 +228,7 @@ export const conversionLayerPage = {
         {
           title: 'Traffic arrives but few people take the next step',
           description:
-            'Visitors land, read, and leave. The problem isn\'t the audience — it\'s the page. The offer isn\'t clear, the CTA doesn\'t match, or the next step disappears.',
+            "Visitors land, read, and leave. The problem isn't the audience — it's the page. The offer isn't clear, the CTA doesn't match, or the next step disappears.",
         },
         {
           title: 'A specific offer needs its own focused path',
@@ -244,7 +243,7 @@ export const conversionLayerPage = {
       ],
       notDesignedItems: [
         {
-          title: 'Nobody\'s arriving in the first place',
+          title: "Nobody's arriving in the first place",
           description:
             'If the issue is no traffic or no demand, conversion work has nothing to work with. Visibility and local SEO come first.',
         },
@@ -293,7 +292,7 @@ export const conversionLayerPage = {
       header: {
         title: 'Random page tweaks vs structured conversion work',
         description:
-          'Most businesses try to fix conversion by changing headlines or buttons in isolation. Here\'s what that looks like compared to fixing the actual path.',
+          "Most businesses try to fix conversion by changing headlines or buttons in isolation. Here's what that looks like compared to fixing the actual path.",
       },
       items: [
         {
@@ -301,7 +300,7 @@ export const conversionLayerPage = {
           title: 'Random page tweaks',
           items: [
             'Headlines and CTAs changed on instinct. Feels productive. Conversion stays flat because nothing underneath changed.',
-            'Multiple services crammed onto one page with no decision path. The visitor has to piece together what\'s relevant. Most don\'t bother.',
+            "Multiple services crammed onto one page with no decision path. The visitor has to piece together what's relevant. Most don't bother.",
             'Form submissions land in an inbox with no follow-up plan. Even the leads that convert go cold waiting for a reply.',
             'No visibility into where visitors drop off or why. The next round of changes is another guess aimed at the wrong section.',
             'Every redesign starts from scratch. The business pays to rebuild instead of building on what already worked.',
@@ -331,7 +330,7 @@ export const conversionLayerPage = {
           description:
             'The site ranked well for landscaping keywords. People landed. But service pages mixed paving, fencing, and garden design into one long scroll. Every CTA said the same thing.',
           points: [
-            'Homeowner looking for patio work scrolled past fencing and turfing to find it. Most didn\'t.',
+            "Homeowner looking for patio work scrolled past fencing and turfing to find it. Most didn't.",
             'Every page: same "Get in touch" button. No context. No reason to think clicking it would go anywhere useful.',
           ],
         },
@@ -361,8 +360,7 @@ export const conversionLayerPage = {
   },
   inlineCta: {
     title: 'Where are people dropping off?',
-    description:
-      'Your traffic and pages. Where visitors lose interest. No commitment.',
+    description: 'Your traffic and pages. Where visitors lose interest. No commitment.',
   },
   cta: {
     title: 'Find out where your page loses them',

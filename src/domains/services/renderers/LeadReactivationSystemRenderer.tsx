@@ -95,7 +95,7 @@ export function LeadReactivationSystemRenderer({
                   />
                 ))}
               </div>
-            </SectionWrapper>,
+            </SectionWrapper>
           )}
 
           <SectionWrapper className='lead-reactivation-audit'>

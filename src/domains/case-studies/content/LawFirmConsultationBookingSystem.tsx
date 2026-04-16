@@ -152,8 +152,7 @@ function buildLawFirmConsultationBookingSystem(): CaseStudyData {
   return {
     slug: 'law-firm-consultation-booking-system',
     title: 'Law Firm Consultation Booking System',
-    metaTitle:
-      'Law Firm Booking System | 34% More Consultations',
+    metaTitle: 'Law Firm Booking System | 34% More Consultations',
     metaDescription:
       'How a Norwich law firm increased consultation bookings by 34% and freed 12 hours per week by replacing phone-only booking with CRM-integrated scheduling.',
     industryCategory: 'professional-services',

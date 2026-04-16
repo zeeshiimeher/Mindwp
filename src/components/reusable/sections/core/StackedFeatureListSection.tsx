@@ -67,10 +67,7 @@ export function StackedFeatureListSection({
             {features.map((feature, index) => (
               <Card
                 key={`${feature.title}-${index}`}
-                className={cn(
-                  `${BLOCK}__feature`,
-                  `${BLOCK}__feature--offset-${(index % 3) + 1}`
-                )}
+                className={cn(`${BLOCK}__feature`, `${BLOCK}__feature--offset-${(index % 3) + 1}`)}
               >
                 {variant === 'media' ? (
                   <div className={`${BLOCK}__feature-media`} aria-hidden='true' />

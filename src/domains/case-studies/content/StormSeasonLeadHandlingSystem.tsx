@@ -189,8 +189,7 @@ function buildStormSeasonLeadHandlingSystem(): CaseStudyData {
   return {
     slug: 'storm-season-lead-handling-system',
     title: 'Storm Season Lead Handling System',
-    metaTitle:
-      'Storm Season Lead Handling | 89% Missed Call Recovery',
+    metaTitle: 'Storm Season Lead Handling | 89% Missed Call Recovery',
     metaDescription:
       'How a Birmingham roofing contractor recovered 89% of missed calls during storm season using automated SMS response, CRM lead routing, and priority triage.',
     industryCategory: 'home-services',

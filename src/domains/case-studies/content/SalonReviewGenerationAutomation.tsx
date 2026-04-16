@@ -161,8 +161,7 @@ function buildSalonReviewGenerationAutomation(): CaseStudyData {
   return {
     slug: 'salon-review-generation-automation',
     title: 'Salon Review Generation Automation',
-    metaTitle:
-      'Salon Review Automation | 23 to 67 Google Reviews',
+    metaTitle: 'Salon Review Automation | 23 to 67 Google Reviews',
     metaDescription:
       'How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks using automated post-appointment review requests with sentiment routing.',
     industryCategory: 'beauty-personal-care',

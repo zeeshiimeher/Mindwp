@@ -418,7 +418,6 @@ Required pages:
 - WordPress Website Development
 - Website Redesign & System Rebuild
 - CRM Infrastructure Implementation
-- Marketing Automation Setup
 - Funnel & Landing Page Development
 - System Migration & Platform Consolidation
 
@@ -530,9 +529,8 @@ They are not positioned as strategic pillars.
 1. WordPress Website Development
 2. Website Redesign & System Rebuild
 3. CRM Infrastructure Implementation
-4. Marketing Automation Setup
-5. Funnel & Landing Page Development
-6. System Migration & Platform Consolidation
+4. Funnel & Landing Page Development
+5. System Migration & Platform Consolidation
 
 These pages: Support SEO acquisition, Convert technical-entry clients, Feed into Tier 1 systems.
 
@@ -560,19 +558,13 @@ Positioning role: A technical implementation pathway for businesses that need le
 
 Core outcomes: Better lead routing, Clearer pipeline structure, More reliable follow-up, Cleaner CRM adoption.
 
-### 4. Marketing Automation Setup
-
-Positioning role: An execution pathway for businesses needing structured automation around follow-up, reminders, reactivation, and lifecycle messaging.
-
-Core outcomes: Reduced manual follow-up, Better automation governance, More reliable lifecycle messaging, Cleaner workflow handoff.
-
-### 5. Funnel & Landing Page Development
+### 4. Funnel & Landing Page Development
 
 Positioning role: A focused implementation pathway for specific offers, campaigns, or conversion journeys that need tighter page flow and clearer next-step design.
 
 Core outcomes: More focused conversion journeys, Cleaner landing-page structure, Better offer clarity, More measurable actions.
 
-### 6. System Migration & Platform Consolidation
+### 5. System Migration & Platform Consolidation
 
 Positioning role: A migration pathway for businesses moving away from fragmented tools, outdated platforms, or disconnected systems.
 

@@ -1,4 +1,4 @@
-import { ArrowRight, Mail, Phone } from 'lucide-react';
+import { Mail, Phone } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';

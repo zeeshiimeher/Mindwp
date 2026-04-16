@@ -357,7 +357,6 @@ Common in:
 - `LocalSeoAuthorityRenderer`
 - `WordPressDevelopmentRenderer`
 - `ConversionFunnelSystemRenderer`
-- `MarketingAutomationSetupRenderer`
 - `SystemMigrationPlatformConsolidationRenderer`
 - `UnifiedCommunicationSystemRenderer`
 
@@ -408,7 +407,6 @@ Observed in:
 - `MissedCallRecoverySystemRenderer`
 - `UnifiedCommunicationSystemRenderer`
 - `CRMAutomationRenderer`
-- `MarketingAutomationSetupRenderer`
 - `LeadReactivationSystemRenderer`
 
 Shared structure:

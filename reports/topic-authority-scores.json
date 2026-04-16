@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-13T08:12:52.496Z",
+  "generatedAt": "2026-04-14T06:13:23.965Z",
   "topicsAnalyzed": 42,
   "averageScore": 81,
   "completeCoverageTopics": 42,
@@ -138,11 +138,11 @@
       "classification": "core",
       "blogCount": 2,
       "resourceCount": 2,
-      "serviceCount": 2,
+      "serviceCount": 1,
       "featureCount": 0,
       "industryCount": 13,
       "caseStudyCount": 4,
-      "supportCount": 21,
+      "supportCount": 20,
       "validatingCaseStudyCount": 4,
       "validatingResourceCount": 2,
       "validatesCount": 6,
@@ -159,7 +159,7 @@
       "coverageStatus": "complete",
       "reasons": [
         "2 supporting blog posts are attached to this topic.",
-        "21 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "20 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 90/100.",
         "4 case studies reinforce proof for this topic.",
         "Validation coverage: 4 case studies and 2 resource counts toward required proof."
@@ -458,11 +458,11 @@
       "classification": "core",
       "blogCount": 2,
       "resourceCount": 1,
-      "serviceCount": 2,
+      "serviceCount": 1,
       "featureCount": 0,
       "industryCount": 3,
       "caseStudyCount": 2,
-      "supportCount": 8,
+      "supportCount": 7,
       "validatingCaseStudyCount": 2,
       "validatingResourceCount": 1,
       "validatesCount": 3,
@@ -479,7 +479,7 @@
       "coverageStatus": "complete",
       "reasons": [
         "2 supporting blog posts are attached to this topic.",
-        "8 internal support paths are attached across resources, services, features, industries, and case studies.",
+        "7 internal support paths are attached across resources, services, features, industries, and case studies.",
         "Coverage status is complete; weighted authority score is 90/100.",
         "2 case studies reinforce proof for this topic.",
         "Validation coverage: 2 case studies and 1 resource count toward required proof."

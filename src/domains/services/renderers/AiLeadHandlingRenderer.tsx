@@ -113,7 +113,7 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
                   />
                 ))}
               </div>
-            </SectionWrapper>,
+            </SectionWrapper>
           )}
 
           <ServiceSpectrumCardsSection
@@ -174,7 +174,7 @@ export function AiLeadHandlingRenderer({ data, slug }: AiLeadHandlingRendererPro
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'
-            />
+          />
         </main>
       </ErrorBoundary>
     </>

@@ -49,7 +49,10 @@ function getNodeTitle(node: ContentGraphNode): string {
   return node.title?.trim() || slugLabel(node.slug);
 }
 
-function overlapsCount(left: readonly string[] | undefined, right: readonly string[] | undefined): number {
+function overlapsCount(
+  left: readonly string[] | undefined,
+  right: readonly string[] | undefined
+): number {
   if (!left?.length || !right?.length) return 0;
   const rightSet = new Set(right);
   return left.reduce((count, value) => count + (rightSet.has(value) ? 1 : 0), 0);
@@ -101,7 +104,7 @@ function pickSuggestedCandidate(
   nodes: ContentGraphNode[],
   topic: string,
   targetType: 'case-study' | 'resource',
-  topicNodes: ContentGraphNode[],
+  topicNodes: ContentGraphNode[]
 ): TopicValidationCandidate | null {
   const topicSystems = buildTargetSystems(topicNodes);
   const topicIndustries = buildTargetIndustries(topicNodes);
@@ -112,14 +115,19 @@ function pickSuggestedCandidate(
     .map(node => {
       const systemScore = overlapsCount(node.systems, topicSystems) * 3;
       const industryScore = overlapsCount(node.industries, topicIndustries) * 2;
-      const topicScore = overlapsCount(node.topics, topicNodes.flatMap(topicNode => topicNode.topics ?? []));
+      const topicScore = overlapsCount(
+        node.topics,
+        topicNodes.flatMap(topicNode => topicNode.topics ?? [])
+      );
       return {
         node,
         score: systemScore + industryScore + topicScore,
       };
     })
     .filter(candidate => candidate.score > 0)
-    .sort((left, right) => right.score - left.score || left.node.slug.localeCompare(right.node.slug));
+    .sort(
+      (left, right) => right.score - left.score || left.node.slug.localeCompare(right.node.slug)
+    );
 
   return candidates[0] ? toCandidate(candidates[0].node) : null;
 }
@@ -140,7 +148,9 @@ function buildSuggestedFixes(snapshot: Omit<TopicValidationSnapshot, 'suggestedF
         `Retag ${snapshot.suggestedCaseStudy.title} to ${topicLabel} if the implementation demonstrates that outcome in a live workflow.`
       );
     } else {
-      fixes.push(`Add one case study for ${topicLabel}${serviceContext} so the topic has primary proof.`);
+      fixes.push(
+        `Add one case study for ${topicLabel}${serviceContext} so the topic has primary proof.`
+      );
     }
   }
 
@@ -150,7 +160,9 @@ function buildSuggestedFixes(snapshot: Omit<TopicValidationSnapshot, 'suggestedF
         `Retag ${snapshot.suggestedResource.title} to ${topicLabel} and include one concrete example so the topic has secondary validation.`
       );
     } else {
-      fixes.push(`Add one example-led resource for ${topicLabel}${serviceContext} so the topic has secondary validation.`);
+      fixes.push(
+        `Add one example-led resource for ${topicLabel}${serviceContext} so the topic has secondary validation.`
+      );
     }
   }
 
@@ -159,7 +171,7 @@ function buildSuggestedFixes(snapshot: Omit<TopicValidationSnapshot, 'suggestedF
 
 function getValidationStatus(
   classification: TopicClassification,
-  missingValidation: ValidationRequirement[],
+  missingValidation: ValidationRequirement[]
 ): ValidationStatus {
   if (classification === 'conceptual') return 'not-required';
   if (missingValidation.length === 0) return 'validated';
@@ -169,7 +181,7 @@ function getValidationStatus(
 
 export function buildTopicValidationSnapshots(
   nodes: ContentGraphNode[],
-  topics: readonly string[] = CANONICAL_TOPICS,
+  topics: readonly string[] = CANONICAL_TOPICS
 ): TopicValidationSnapshot[] {
   return topics.map(topic => {
     const topicNodes = nodes.filter(node => (node.topics ?? []).includes(topic));
@@ -209,7 +221,9 @@ export function buildTopicValidationSnapshots(
   });
 }
 
-export function buildServiceValidationSnapshots(nodes: ContentGraphNode[]): ServiceValidationSnapshot[] {
+export function buildServiceValidationSnapshots(
+  nodes: ContentGraphNode[]
+): ServiceValidationSnapshot[] {
   const caseStudies = nodes.filter(node => node.type === 'case-study');
   const services = nodes.filter(node => node.type === 'service');
 

@@ -1,4 +1,3 @@
-
 import type { ResourceData } from '../types';
 import {
   getRelatedResources,

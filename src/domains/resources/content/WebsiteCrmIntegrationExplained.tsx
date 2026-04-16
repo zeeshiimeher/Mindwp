@@ -1,4 +1,3 @@
-
 import type { ResourceData } from '../types';
 import {
   getRelatedResources,
@@ -109,12 +108,6 @@ const templates = [
   },
 ];
 
-const finalCta = {
-  title: 'Connect Your Website to Your CRM Infrastructure',
-  description:
-    'Our Smart Website Systems include native CRM integration — every form, booking widget, and contact point routes data to your pipeline with full context. No manual data entry. No lost leads.',
-};
-
 export const websiteCrmIntegrationExplained: ResourceData = {
   slug,
   title: 'Website + CRM Integration Explained',
@@ -163,7 +156,9 @@ export const websiteCrmIntegrationExplained: ResourceData = {
     {
       type: 'case',
       heading: 'Proof Block: RoofingWebsiteRebuildWithCrm',
-      content: ['A live implementation example shows why CRM infrastructure changes business performance, not just data flow.'],
+      content: [
+        'A live implementation example shows why CRM infrastructure changes business performance, not just data flow.',
+      ],
       caseExample: {
         businessType: 'Roofing CRM Infrastructure Implementation',
         problem:
@@ -200,7 +195,9 @@ export const websiteCrmIntegrationExplained: ResourceData = {
     {
       type: 'checklist',
       heading: 'What Happens If You Do Not Fix This',
-      content: ['Leaving the website and CRM disconnected creates operational losses that keep compounding as lead volume grows.'],
+      content: [
+        'Leaving the website and CRM disconnected creates operational losses that keep compounding as lead volume grows.',
+      ],
       items: [
         'Missed leads remain trapped in email or disconnected tools',
         'Follow-up quality varies because no single CRM workflow controls timing',

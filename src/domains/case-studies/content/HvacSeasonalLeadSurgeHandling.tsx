@@ -178,8 +178,7 @@ function buildHvacSeasonalLeadSurgeHandling(): CaseStudyData {
   return {
     slug: 'hvac-seasonal-lead-surge-handling',
     title: 'HVAC Seasonal Lead Surge Handling',
-    metaTitle:
-      'HVAC Seasonal Lead Handling | 3x Call Capacity',
+    metaTitle: 'HVAC Seasonal Lead Handling | 3x Call Capacity',
     metaDescription:
       'How a Nottingham HVAC contractor tripled their effective call capacity during seasonal surges using automated overflow management and queue prioritisation.',
     industryCategory: 'home-services',

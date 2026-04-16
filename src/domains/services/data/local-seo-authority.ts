@@ -1,6 +1,5 @@
 import { Code, FileText, Globe, Layers, LineChart, Link2, Settings, Workflow } from 'lucide-react';
 
-
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
@@ -37,35 +36,31 @@ export const localSeoAuthorityPage = {
   }),
   hero: {
     badge: 'Get Found Locally',
-    title: 'Your Competitors Show Up. You Don\'t.',
+    title: "Your Competitors Show Up. You Don't.",
     description:
-      'Someone five minutes away needs exactly what you do. Searches. Three businesses come up. Not yours. Details different in every directory. Google can\'t tell what\'s real.',
+      "Someone five minutes away needs exactly what you do. Searches. Three businesses come up. Not yours. Details different in every directory. Google can't tell what's real.",
     cssPrefix: 'website-seo-hero',
     backgroundColor: 'bg-gradient-surface-muted',
-    list: [
-      'Scattered details',
-      'Incomplete profile',
-      'Hidden services',
-    ],
+    list: ['Scattered details', 'Incomplete profile', 'Hidden services'],
   },
   sections: {
     misconceptions: {
       badge: 'Why SEO has not worked before',
       title: 'Three assumptions that keep you invisible',
       description:
-        'Most businesses we talk to have spent money on SEO before. It didn\'t work because the starting point was wrong.',
+        "Most businesses we talk to have spent money on SEO before. It didn't work because the starting point was wrong.",
       currentStateLabel: 'What most businesses think',
       structuredStateLabel: 'What actually needs to happen',
       painPoints: [
         {
           before: '\u201CMore traffic will fix everything.\u201D',
           after:
-            'Traffic to a confusing site burns money. If visitors can\'t tell what you do, where you work, or how to reach you — they leave. You paid for nothing.',
+            "Traffic to a confusing site burns money. If visitors can't tell what you do, where you work, or how to reach you — they leave. You paid for nothing.",
         },
         {
           before: '\u201CSEO can work around a messy website.\u201D',
           after:
-            'Google shows results that answer the question someone typed. If your site doesn\'t clearly do that, spending on SEO won\'t compensate.',
+            "Google shows results that answer the question someone typed. If your site doesn't clearly do that, spending on SEO won't compensate.",
         },
         {
           before: '\u201CWe should be ranking by next month.\u201D',
@@ -79,11 +74,11 @@ export const localSeoAuthorityPage = {
       badge: 'Our approach',
       title: 'We start with your website, then build outward',
       description:
-        'Local SEO isn\'t a one-off project. It\'s regular work on your website and how your business shows up. Customers keep finding you because the foundations hold.',
+        "Local SEO isn't a one-off project. It's regular work on your website and how your business shows up. Customers keep finding you because the foundations hold.",
       tagline: 'Your website comes first',
       narrativeTitle: 'Why the website has to be right before anything else',
       narrativeParagraphs: [
-        'If your website doesn\'t clearly explain what you offer, where you operate, and how to get in touch — driving more people to it just wastes money. They\'ll leave.',
+        "If your website doesn't clearly explain what you offer, where you operate, and how to get in touch — driving more people to it just wastes money. They'll leave.",
         'We fix that first. Services clearly laid out, mobile working properly, Google profile matching the site. Then we keep pushing it forward month after month.',
       ],
       features: [
@@ -103,7 +98,7 @@ export const localSeoAuthorityPage = {
           icon: Workflow,
           title: 'Keep building month after month',
           description:
-            'Every month we review what\'s working, fix what isn\'t, and push your business higher. Visibility compounds instead of stalling.',
+            "Every month we review what's working, fix what isn't, and push your business higher. Visibility compounds instead of stalling.",
         },
       ],
     },
@@ -111,7 +106,7 @@ export const localSeoAuthorityPage = {
       badge: 'How it all fits together',
       title: 'What actually changes when local SEO is working',
       description:
-        'Showing up on Google isn\'t about stuffing keywords. Your website has to be clear, your Google profile accurate, your details the same everywhere. When those line up, Google trusts you enough to show your business.',
+        "Showing up on Google isn't about stuffing keywords. Your website has to be clear, your Google profile accurate, your details the same everywhere. When those line up, Google trusts you enough to show your business.",
       cards: [
         {
           title: 'Your website answers the question someone just typed',
@@ -120,17 +115,17 @@ export const localSeoAuthorityPage = {
           points: [
             'Each service on its own listing. Google indexes and ranks them individually.',
             'Contact details right there — nobody has to hunt for a phone number',
-            'Works on mobile. That\'s where most local searchers are.',
+            "Works on mobile. That's where most local searchers are.",
           ],
           featured: true,
         },
         {
           title: 'What Google finds about you actually matches reality',
           description:
-            'Profile, directories, reviews — all saying the same thing. Accurate. Current. Matching what\'s on your website.',
+            "Profile, directories, reviews — all saying the same thing. Accurate. Current. Matching what's on your website.",
           points: [
             'Google Business Profile complete and actively managed. Eligible for local pack results.',
-            'Same details in every directory. Google can verify you\'re real.',
+            "Same details in every directory. Google can verify you're real.",
             'Services and areas listed clearly. Google matches you to the right searches.',
           ],
         },
@@ -157,10 +152,10 @@ export const localSeoAuthorityPage = {
           type: 'before' as const,
           title: 'What typical SEO looks like',
           items: [
-            'Keywords crammed across a few generic sections. Google can\'t match anything specific to what someone\'s actually searching for.',
+            "Keywords crammed across a few generic sections. Google can't match anything specific to what someone's actually searching for.",
             'Google Business Profile created once, never touched again. Losing eligibility for local pack results month by month.',
-            'Business name and phone number wrong or different in every directory. Google can\'t confirm you\'re a real business.',
-            'Monthly reports loaded with jargon. No visible change in actual enquiries. You\'re paying for activity with nothing to show.',
+            "Business name and phone number wrong or different in every directory. Google can't confirm you're a real business.",
+            "Monthly reports loaded with jargon. No visible change in actual enquiries. You're paying for activity with nothing to show.",
             'SEO work completely disconnected from the website itself. Higher rankings still send people to a confusing experience.',
           ],
         },
@@ -181,21 +176,23 @@ export const localSeoAuthorityPage = {
       header: {
         title: 'What this looked like for a real business',
         description:
-          'A dental practice was paying for ads but invisible in organic search. Here\'s what was going on and what shifted.',
+          "A dental practice was paying for ads but invisible in organic search. Here's what was going on and what shifted.",
       },
       cards: [
         {
           title: 'Before: paying for every click, invisible otherwise',
-          description: 'Everything on one listing. Google had nothing specific to rank. Details wrong in half the directories.',
+          description:
+            'Everything on one listing. Google had nothing specific to rank. Details wrong in half the directories.',
           points: [
-            'Cleanings, implants, emergency — all on one long listing. Someone searching for a specific treatment found the competitors who\'d listed it separately.',
-            'Google Business Profile half-done. The practice wasn\'t showing up in the local pack for any of their core services.',
-            'Phone number different on three directories. Address slightly wrong on two others. Google couldn\'t tell which was right.',
+            "Cleanings, implants, emergency — all on one long listing. Someone searching for a specific treatment found the competitors who'd listed it separately.",
+            "Google Business Profile half-done. The practice wasn't showing up in the local pack for any of their core services.",
+            "Phone number different on three directories. Address slightly wrong on two others. Google couldn't tell which was right.",
           ],
         },
         {
           title: 'What we did: gave each treatment its own presence',
-          description: 'Separated every dental service out. Corrected the details everywhere. Got the Google profile finished and actively managed.',
+          description:
+            'Separated every dental service out. Corrected the details everywhere. Got the Google profile finished and actively managed.',
           points: [
             'Each treatment on its own — cleanings, implants, emergency — written around how patients actually search for them.',
             'Google Business Profile completed. Accurate hours, services, photos. The practice became eligible for local pack results.',
@@ -205,7 +202,8 @@ export const localSeoAuthorityPage = {
         },
         {
           title: 'After: organic search doing what ads used to',
-          description: 'Four months in, showing up for targeted dental terms. Organic enquiries growing. Ad spend dropping.',
+          description:
+            'Four months in, showing up for targeted dental terms. Organic enquiries growing. Ad spend dropping.',
           points: [
             'Individual treatments started ranking. Patients found what they needed without the practice paying for that click.',
             'Organic volume climbed each month as more content indexed. Compounded. No extra spend.',
@@ -218,13 +216,13 @@ export const localSeoAuthorityPage = {
       badge: 'How we work',
       title: 'What happens after we start',
       description:
-        'A repeating cycle: check what\'s working, fix what isn\'t, keep your local presence strong, and adjust as things change.',
+        "A repeating cycle: check what's working, fix what isn't, keep your local presence strong, and adjust as things change.",
       steps: [
         {
           number: '1',
           title: 'See where you stand right now',
           description:
-            'We look at your website, Google profile, and listings. First round of work targets whatever\'s costing you the most visibility.',
+            "We look at your website, Google profile, and listings. First round of work targets whatever's costing you the most visibility.",
         },
         {
           number: '2',
@@ -250,7 +248,7 @@ export const localSeoAuthorityPage = {
       badge: 'What is included',
       title: 'What we handle for your local visibility',
       description:
-        'The exact scope depends on where your business is starting from. Here\'s what we cover.',
+        "The exact scope depends on where your business is starting from. Here's what we cover.",
       services: [
         {
           icon: Code,
@@ -326,12 +324,12 @@ export const localSeoAuthorityPage = {
         {
           title: 'You run real services and want local people to find them',
           description:
-            'Defined services. Specific area. The people nearby who need what you do are searching for it. They\'re finding competitors instead.',
+            "Defined services. Specific area. The people nearby who need what you do are searching for it. They're finding competitors instead.",
         },
         {
           title: 'You want lasting results, not a spike',
           description:
-            'Showing up on Google takes steady monthly work. Not a one-off fix. You\'re prepared for that.',
+            "Showing up on Google takes steady monthly work. Not a one-off fix. You're prepared for that.",
         },
         {
           title: 'Your business details are wrong or missing online',
@@ -339,9 +337,9 @@ export const localSeoAuthorityPage = {
             'Information scattered or inaccurate across the web. You want one correct presence everywhere Google looks.',
         },
         {
-          title: 'You\'re ready for a long-term approach',
+          title: "You're ready for a long-term approach",
           description:
-            'Not a switch. Three to six months minimum to see results compound. If that\'s too long, this isn\'t the right fit.',
+            "Not a switch. Three to six months minimum to see results compound. If that's too long, this isn't the right fit.",
         },
       ],
       notDesignedTitle: 'Probably not the right fit if',
@@ -349,39 +347,38 @@ export const localSeoAuthorityPage = {
         {
           title: 'You expect a guaranteed ranking by a set date',
           description:
-            'Nobody controls Google\'s algorithm. Anyone promising a specific position by a specific date is either guessing or using tactics that won\'t last.',
+            "Nobody controls Google's algorithm. Anyone promising a specific position by a specific date is either guessing or using tactics that won't last.",
         },
         {
-          title: 'You need immediate traffic and aren\'t thinking long-term',
+          title: "You need immediate traffic and aren't thinking long-term",
           description:
             'Paid ads deliver fast traffic. This builds organic visibility over months. If you need leads this week, start with ads.',
         },
         {
-          title: 'Your website has fundamental problems you won\'t address',
+          title: "Your website has fundamental problems you won't address",
           description:
-            'SEO layered on a broken site produces nothing. If the site needs fixing and you\'re not ready to do it, the investment won\'t return.',
+            "SEO layered on a broken site produces nothing. If the site needs fixing and you're not ready to do it, the investment won't return.",
         },
         {
           title: 'You want a one-off audit, not ongoing work',
           description:
-            'An audit shows you what\'s wrong. It doesn\'t fix it. This is monthly work where we make the changes — not hand you a list and walk away.',
+            "An audit shows you what's wrong. It doesn't fix it. This is monthly work where we make the changes — not hand you a list and walk away.",
         },
       ],
     },
     faqSection: {
       badge: 'Common questions',
       title: 'What business owners ask about local SEO',
-      description:
-        'Direct answers to the things you\'re probably wondering about.',
+      description: "Direct answers to the things you're probably wondering about.",
       cssPrefix: 'seo-growth-faq',
       faqs: [
         {
-          question: 'What\'s the difference between ongoing SEO and a one-time audit?',
+          question: "What's the difference between ongoing SEO and a one-time audit?",
           answer:
             'An audit gives you a snapshot and a list of problems. Ongoing SEO means we fix them — and keep fixing them. We update content, manage your Google profile, and adapt as things change.',
         },
         {
-          question: 'Can you guarantee we\'ll rank higher?',
+          question: "Can you guarantee we'll rank higher?",
           answer:
             'No. Anyone promising that is being dishonest. What we can promise is that your website and local presence will be consistently well-maintained. That gives Google the best reasons to show your business.',
         },
@@ -403,7 +400,7 @@ export const localSeoAuthorityPage = {
         {
           question: 'Which types of businesses do you work with?',
           answer:
-            'Mostly established service businesses — trades, beauty, health, automotive, professional services. The approach works across industries because it\'s built around your real services and where you operate.',
+            "Mostly established service businesses — trades, beauty, health, automotive, professional services. The approach works across industries because it's built around your real services and where you operate.",
         },
         {
           question: 'How do you work out pricing?',
@@ -421,14 +418,14 @@ export const localSeoAuthorityPage = {
             'Yes. We can include training so your team understands the key decisions and keeps things consistent as the business grows.',
         },
         {
-          question: 'How do we know if it\'s working?',
+          question: "How do we know if it's working?",
           answer:
             'We track things you can understand: do your services show up in search, are your details right across the web, is the site technically healthy. And is traffic growing.',
         },
         {
           question: 'What if our website needs rebuilding first?',
           answer:
-            'We\'ll tell you. Sometimes the smartest first step is fixing the website before layering SEO on top. We can handle that directly or guide your team on what to prioritise.',
+            "We'll tell you. Sometimes the smartest first step is fixing the website before layering SEO on top. We can handle that directly or guide your team on what to prioritise.",
         },
       ],
     },
@@ -436,11 +433,11 @@ export const localSeoAuthorityPage = {
   inlineCta: {
     title: 'Why am I not showing up?',
     description:
-      'Drop your business name and postcode. We check how you appear on Google right now and what\'s holding you back.',
+      "Drop your business name and postcode. We check how you appear on Google right now and what's holding you back.",
   },
   cta: {
-    title: 'Find out why they show up and you don\'t',
+    title: "Find out why they show up and you don't",
     description:
-      'Your business name and area. We look at how Google sees you and come back with what\'s off.',
+      "Your business name and area. We look at how Google sees you and come back with what's off.",
   },
 } satisfies ServicePageData;

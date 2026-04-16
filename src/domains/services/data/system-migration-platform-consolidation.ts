@@ -1,6 +1,5 @@
 import { LayoutTemplate, Puzzle, ShieldCheck, Wrench } from 'lucide-react';
 
-
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
@@ -21,343 +20,338 @@ export const systemMigrationPlatformConsolidationPage = {
   category: 'Migration Pathway Services',
   seo: buildServiceSeo({
     slug,
-    title:
-      'System Migration & Platform Consolidation for Service Businesses | MindWP',
+    title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
     description:
-      'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+      'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
     schemaName: 'System migration and platform consolidation for service businesses',
     schemaDescription:
-      'A migration pathway for service businesses that need cleaner platform structure, reduced tool sprawl, better maintainability, and a more stable operating foundation.',
+      'Migration and consolidation that moves your business onto a connected foundation where enquiries, follow-up, and visibility work together instead of running in fragments.',
   }),
   hero: {
     badge: 'System Migration & Platform Consolidation',
-      title: 'Consolidate Your Tools Into One Stable Operating Platform',
+    title: 'New Platform. Same Quiet Phone.',
     description:
-      'Running your business across disconnected platforms, patching around limitations, and losing time to tool sprawl. This service consolidates everything into a cleaner foundation — easier to manage, maintain, and extend.',
-    list: [
-        'Reduced tool sprawl',
-        'Cleaner tech stack',
-        'Growth-ready foundation',
-    ],
+      'The old setup is a mess. Too many tools, too many logins, too many workarounds. So you want to move. That makes sense. But the platform was never the reason enquiries weren\'t coming. Moving everything to a cleaner system doesn\'t fix what was missing in the first place.',
+    list: ['Platform feels outdated', 'Tools disconnected', 'Enquiries still not flowing'],
     cssPrefix: 'system-migration-hero',
     backgroundColor: 'bg-gradient-surface-muted',
   },
   sections: {
     foundation: {
-      badge: 'Why migration work appears',
-      title:
-        'Your current platform is technically running, but it is dragging the business down',
+      badge: 'Why you\'re looking at migration',
+      title: 'The platform frustration is real. The fix might not be what you expect.',
       description:
-        'Migration becomes relevant when the setup still works, but every change, integration, or update takes longer than it should.',
+        'Something pushed you to search for this. Usually it\'s not one thing — it\'s the accumulation.',
       painPoints: [
         {
           before:
-            'Your website and tools grew in fragments. Updates and integrations now feel harder than they should.',
+            'Five tools, five logins, five monthly invoices. Nothing talks to anything else. Every customer touchpoint requires manual work.',
           after:
-            'A consolidated structure — so you work from one cleaner, more predictable foundation instead of managing fragmented pieces.',
+            'One connected foundation where forms, follow-up, CRM, and visibility share information without manual syncing.',
         },
         {
           before:
-            'Important functions live across too many tools, each with its own limits, costs, and workarounds.',
+            'The website builder limits what you can do. Want to change the layout? Can\'t. Need a custom form? Workaround. Want tracking? Another plugin.',
           after:
-            'Reduced tool sprawl — so ownership, maintenance, and change become easier to manage from one place.',
+            'A platform that lets you build what the business actually needs — not what the template allows.',
         },
         {
           before:
-            'Your current platform no longer supports how your business actually operates, but the team keeps patching around the limitations.',
+            'You\'ve outgrown the setup but every change feels risky. The team patches around problems instead of fixing them.',
           after:
-            'A platform and system model that fits how your business works today — so changes happen cleanly instead of requiring workarounds.',
+            'A stable foundation where changes are straightforward and the team isn\'t afraid to touch anything.',
         },
       ],
     },
     migrationSignals: {
-      badge: 'Typical migration triggers',
-      title: 'Migration becomes relevant when you recognise one of these patterns',
+      badge: 'What\'s actually wrong',
+      title: 'The platform is annoying. But it\'s probably not the real problem.',
       description:
-        'Rarely one bug. Usually a repeated pattern showing the current platform or tool mix is no longer a good fit.',
+        'Most businesses that search for migration are frustrated with their tools. The tools deserve some of that frustration. But the enquiry problem usually lives somewhere else.',
       items: [
         {
           icon: LayoutTemplate,
-          title: 'Your platform is limiting your business',
+          title: 'The platform limits what you can build',
           description:
-            'Wix, Squarespace, or another locked platform is constraining structure, integrations, and future growth.',
+            'True. Wix, Squarespace, and similar builders cap what\'s possible. But the bigger issue is that even within those limits, the site isn\'t handling enquiries properly.',
           iconType: 'primary' as const,
         },
         {
           icon: Puzzle,
-          title: 'Too many tools doing pieces of the same job',
+          title: 'Too many tools, nothing connected',
           description:
-            'Forms, booking, messaging, tracking, and follow-up all live in disconnected systems with no continuity between them.',
+            'Also true. But moving to one platform doesn\'t automatically connect anything. You need the connections designed, not just fewer logins.',
           iconType: 'secondary' as const,
         },
         {
           icon: Wrench,
-          title: 'Every update depends on a workaround',
+          title: 'Every change is a workaround',
           description:
-            'The current setup keeps needing patches, manual fixes, or fragile integrations just to stay running.',
+            'That\'s exhausting. But rebuilding from scratch without fixing the visitor-to-enquiry path just gives you a neater system that still doesn\'t convert.',
           iconType: 'accent' as const,
         },
         {
           icon: ShieldCheck,
-          title: 'The foundation does not feel stable anymore',
+          title: 'The team has lost confidence in the setup',
           description:
-            'Your team has lost confidence in how reliable, maintainable, or scalable the current structure actually is.',
+            'Understandable. Confidence returns when the foundation is stable AND the business results follow. A clean migration alone doesn\'t produce either.',
           iconType: 'primary' as const,
         },
       ],
     },
     riskAreas: {
-      badge: 'What weak migration planning causes',
-      title:
-        'Migration fails when the old fragmentation gets copied into the new setup',
+      badge: 'What most migrations get wrong',
+      title: 'Moving platforms without fixing the gaps just relocates the problem',
       description:
-        'The goal is not just to move systems — it is to simplify them enough that the new foundation is genuinely easier to manage.',
+        'A migration done well is a chance to fix everything at once. A migration done poorly is the same mess on new software.',
       lists: [
         {
-          title: 'Migration risks',
+          title: 'What gets carried forward by accident',
           issues: [
             {
-              title: 'Too much of the old structure carried forward',
+              title: 'The old page structure moves over unchanged',
               description:
-                'Outdated page models, tool logic, and platform habits get rebuilt instead of corrected.',
+                'Pages that weren\'t converting before arrive on the new platform still not converting. Different CMS, same weak pages.',
             },
             {
-              title: 'The move focuses on software, not workflow',
+              title: 'Nobody designs the enquiry path',
               description:
-                'The platform changes, but routing, ownership, and maintenance problems stay untouched.',
+                'The migration focuses on moving content, not on building a visitor-to-customer journey. The new site looks better but still doesn\'t generate leads.',
             },
             {
-              title: 'Nobody defines what should be consolidated',
+              title: 'Consolidation stops at the platform level',
               description:
-                'The new setup ends up with fewer logos but roughly the same complexity.',
+                'Fewer tools, same gaps. CRM isn\'t connected. Follow-up isn\'t automatic. The tools are tidier but the business process is identical.',
             },
           ],
         },
         {
-          title: 'Consolidation risks',
+          title: 'What gets missed entirely',
           issues: [
             {
-              title: 'The team loses visibility during the move',
+              title: 'No follow-up system built into the new setup',
               description:
-                'Content, forms, and operational logic become harder to track because the migration path was not planned clearly.',
+                'Enquiries arrive on the new platform and sit in the same inbox they sat in before. No CRM, no routing, no automation.',
             },
             {
-              title: 'The new system is still too tool-dependent',
+              title: 'Visibility drops during and after the move',
               description:
-                'The project swaps one set of constraints for another without improving maintainability.',
+                'SEO rankings, tracking, and analytics break during migration and never get properly restored.',
             },
             {
-              title: 'Stability is assumed instead of designed',
+              title: 'The new platform launches without a maintenance plan',
               description:
-                'The new foundation launches, but update paths, governance, and management remain weak.',
+                'Day one looks great. Six months later, the same neglect that killed the old platform starts killing this one.',
             },
           ],
         },
       ],
     },
     consolidationTargets: {
-      badge: 'What the migration often consolidates',
-      title: 'What the migration typically consolidates',
+      badge: 'What should actually change',
+      title: 'Migration is the chance to fix everything — not just change the login screen',
       description:
-        'The emphasis stays on what is being simplified or brought together more cleanly.',
+        'The platform move is the easy part. The valuable part is building what should have been there all along.',
       items: [
         {
-          title: 'Platform and website structure',
-          desc: 'Move your website onto a more suitable foundation with improved architecture, maintainability, and flexibility.',
+          title: 'The visitor-to-enquiry path',
+          desc: 'Not just pages moved over — an actual journey from landing to contact, designed to convert the people who are already visiting.',
         },
         {
-          title: 'Form, booking, and enquiry pathways',
-          desc: 'Reduce fragmentation where conversion paths jump between disconnected tools or duplicated workflows.',
+          title: 'Enquiry handling and follow-up',
+          desc: 'CRM connected, routing automatic, follow-up triggered — so leads don\'t sit in an inbox waiting for someone to notice.',
         },
         {
-          title: 'Tool stack and integrations',
-          desc: 'Simplify how your key tools work together so updates, ownership, and reporting are easier to manage.',
+          title: 'Visibility and search foundations',
+          desc: 'SEO preserved during migration and strengthened after — so the traffic you\'ve built doesn\'t disappear with the old platform.',
         },
         {
-          title: 'Operational continuity after the move',
-          desc: 'The new setup should be easier to support, maintain, and extend after launch, not just during migration.',
+          title: 'A foundation you can actually maintain',
+          desc: 'Documentation, training, and clear governance — so the new platform doesn\'t end up in the same state as the old one.',
         },
       ],
     },
     processSection: {
-      badge: 'Migration sequence',
-      title: 'How we approach migration and consolidation',
-      description:
-        'What is preserved, rebuilt, or removed is decided before the move is executed.',
+      badge: 'How it works',
+      title: 'Migration that fixes the gaps, not just the platform',
+      description: 'The move is planned around what the business needs to work — not just what needs to be transferred.',
       steps: [
         {
           number: '1',
-          title: 'Audit current platform and tool stack',
+          title: 'Map what\'s broken and what\'s missing',
           description:
-            'Identify where the present setup is creating structural drag, duplication, or maintenance problems — so the migration scope targets the real cost, not surface symptoms.',
+            'Not just which tools you have — where enquiries are leaking, what\'s not connected, and why the current setup isn\'t producing results.',
         },
         {
           number: '2',
-          title: 'Define the consolidation logic',
+          title: 'Design the new foundation',
           description:
-            'Decide what should move, what should be rebuilt, and what should be simplified — so the new foundation is genuinely cleaner, not a copy of old complexity.',
+            'Pages, forms, CRM, follow-up, and visibility planned as one connected system — not content dumped onto a new platform.',
         },
         {
           number: '3',
-          title: 'Execute the migration',
+          title: 'Build and migrate together',
           description:
-            'Content, workflows, and platform responsibilities move into a cleaner structure — so the business operates from a foundation that fits how it actually works.',
+            'Content moves over while the new enquiry handling, automation, and tracking are built in. Nothing launches half-finished.',
         },
         {
           number: '4',
-          title: 'Stabilise the new foundation',
+          title: 'Stabilise and hand over',
           description:
-            'The post-migration system is tested, documented, and confirmed — so the team can maintain and extend it without depending on the migration team.',
+            'The new system is tested, documented, and the team is trained. You own it completely — no ongoing dependency on whoever built it.',
         },
       ],
     },
     qualification: {
-      title: 'Is this the right fit for your business?',
+      title: 'Is migration actually what you need?',
       description:
-        'Works best when carrying too much platform or tool fragmentation and the next step needs to simplify the foundation, not patch it again.',
-      strongFitTitle: 'Strong fit if',
-      notDesignedTitle: 'Not the right fit if',
+        'Sometimes the platform is the problem. Sometimes it\'s just the most visible symptom of a bigger gap.',
+      strongFitTitle: 'Migration makes sense when',
+      notDesignedTitle: 'Probably not migration if',
       strongFitItems: [
         {
-          title: 'You are moving away from a limited or locked platform',
+          title: 'The platform genuinely limits what you can build',
           description:
-            'Your current platform constrains structure, integrations, or long-term maintainability — and the limitations are costing you more than the migration.',
+            'You need forms, automations, CRM connections, or page structures that the current platform physically can\'t support.',
         },
         {
-          title: 'You have too many disconnected tools doing overlapping jobs',
+          title: 'You\'re ready to fix the gaps while you move',
           description:
-            'Website, forms, booking, messaging, and follow-up are spread across fragmented systems with no shared data or workflow.',
+            'You want the migration to include enquiry handling, follow-up, and visibility — not just content transferred to a new CMS.',
         },
         {
-          title: 'You need a stable foundation before other systems can succeed',
+          title: 'You\'re consolidating tools, not just swapping them',
           description:
-            'Future CRM, SEO, or automation work will underperform until the platform layer is consolidated and simplified.',
+            'The goal is fewer systems doing more — not the same number of systems with different names.',
         },
       ],
       notDesignedItems: [
         {
-          title: 'You only need one focused page or campaign asset',
+          title: 'The website just needs better content and forms',
           description:
-            'If your platform is broadly fine and the need is narrow, a landing page or funnel build is faster and cheaper.',
+            'If the platform works fine but the pages don\'t convert, migration is solving the wrong problem.',
         },
         {
-          title: 'You only want a cosmetic redesign',
+          title: 'You want a visual refresh, not a structural change',
           description:
-            'If the core problem is surface presentation rather than platform fragmentation, migration scope is broader than needed.',
+            'New colours and layout don\'t require a platform move. That\'s a redesign, not a migration.',
         },
         {
-          title: 'You are not willing to simplify the old setup',
+          title: 'You want to move everything exactly as it is',
           description:
-            'Migration works when the move reduces complexity. Preserving every historical workaround unchanged defeats the purpose.',
+            'If nothing changes in the process, the results won\'t change either. Migration is only valuable when it\'s also improvement.',
         },
       ],
     },
     faqSection: {
       badge: 'FAQ',
-      title: 'Common questions about migration and consolidation',
+      title: 'Questions that come up before a migration',
       description:
-        'Questions that come up when you know the current platform or tool stack has become part of the problem.',
+        'Most of these come from businesses who\'ve been burned before — or who sense that a straight platform swap won\'t fix the real issue.',
       faqs: [
         {
-          question: 'Can this include moving from Wix or Squarespace to WordPress?',
+          question: 'We\'re on Wix/Squarespace. Is WordPress actually better?',
           answer:
-            'Yes. That is one of the most common paths. The useful part is not only moving content but rebuilding the structure and connected workflows in a more flexible foundation.',
+            'For a brochure site, probably not worth the move. For a business that needs forms, CRM, automation, and proper enquiry handling — WordPress gives you the flexibility those platforms don\'t. The value isn\'t the CMS. It\'s what you can build on it.',
         },
         {
-          question: 'How is this different from Website Redesign & System Rebuild?',
+          question: 'What if the real problem isn\'t the platform?',
           answer:
-            'Website Redesign focuses on structural correction inside the website itself. System Migration focuses on moving away from fragmented platforms or tool stacks and simplifying the operating foundation around that move.',
+            'Then we\'ll tell you that during the audit. Sometimes the platform is fine and the gaps are in content, follow-up, or CRM. Migration for the sake of migration wastes money.',
         },
         {
-          question: 'Will the new setup automatically be simpler?',
+          question: 'Will we lose our Google rankings during the move?',
           answer:
-            'Only if consolidation is designed intentionally. A migration can reduce complexity, but only when the project chooses what to simplify instead of carrying every old workaround forward.',
+            'Not if the migration is planned properly. Redirects, URL structure, and on-page SEO are handled as part of the move. Most businesses see rankings stabilise within weeks and improve within months because the new foundation supports better content structure.',
         },
         {
-          question: 'How long does a typical migration take?',
+          question: 'How is this different from a website redesign?',
           answer:
-            'It depends on how many tools and platforms are being consolidated. A focused platform move can take a few weeks. A full consolidation across website, forms, CRM, and automations usually takes longer because the planning phase matters as much as the execution.',
+            'A redesign rebuilds what\'s on your current platform. A migration moves you to a different platform and rebuilds the structure around it. If you\'re staying on the same CMS, you probably need a redesign. If the CMS itself is the constraint, you need migration.',
         },
       ],
       cssPrefix: 'system-migration-faq',
     },
     comparison: {
       header: {
-        title: 'What changes when migration is done properly',
+        title: 'Platform swap vs. proper migration',
         description:
-          'The difference between patching around platform limitations and consolidating into a cleaner foundation.',
+          'The difference between changing software and changing how the business actually works online.',
       },
       items: [
         {
           type: 'before' as const,
-          title: 'Patching around limitations',
+          title: 'Platform swap',
           items: [
-            'Logging into five different tools to manage one customer journey — so every process takes longer than the work itself',
-            'Every update requires workarounds or depends on the one person who knows the setup — so the business stalls when that person is unavailable',
-            'Adding anything new means layering another tool on top of existing fragmentation — so complexity compounds with every improvement attempt',
-            'The team spends more time managing tools than serving customers — so operational overhead eats into capacity',
-            'Nobody is confident the foundation can support what the business needs next — so growth decisions get delayed by infrastructure uncertainty',
+            'Same pages on a new CMS — content moved over without rethinking what converts',
+            'Fewer tools but the same gaps in follow-up and enquiry handling',
+            'Migration focused on launch day — no plan for what happens after',
+            'SEO drops because redirects and structure weren\'t planned',
+            'Six months later, the new platform feels as neglected as the old one',
           ],
         },
         {
           type: 'after' as const,
-          title: 'Consolidated foundation',
+          title: 'Proper migration',
           items: [
-            'One platform handles the full workflow with fewer logins — so the team spends less time switching tools',
-            'Changes are straightforward because the structure is documented — so updates do not depend on one person',
-            'New features plug into a stable foundation — so growth adds capability instead of creating more sprawl',
-            'Maintenance time drops because there are fewer disconnected systems — so the team focuses on customers, not tools',
-            'The team can extend and grow on a platform they understand — so confidence in the foundation stops being a blocker',
+            'Pages rebuilt around how visitors actually find and contact you',
+            'CRM, forms, and follow-up connected as part of the move',
+            'The team trained and the system documented for long-term ownership',
+            'SEO preserved and strengthened through better page structure',
+            'A foundation the business can maintain, extend, and grow on',
           ],
         },
       ],
     },
     proof: {
       header: {
-        title: 'What consolidation looked like for one business',
+        title: 'What a proper migration actually changed',
         description:
-          'A service business migrated from a fragmented Wix and multi-tool setup to a consolidated WordPress foundation with integrated workflows.',
+          'A service business moved from Wix plus six disconnected tools to a connected WordPress foundation. The platform change was the smallest part of what improved.',
       },
       cards: [
         {
-          title: 'Before: seven tools, no continuity',
-          description: 'Forms, booking, messaging, tracking, CRM, and website running across disconnected platforms. Every customer touchpoint involved a manual handoff — so the team spent more time managing tools than serving customers.',
+          title: 'Before: lots of tools, no enquiry system',
+          description:
+            'Website on Wix. Forms going to email. No CRM. No follow-up. Booking through a separate tool. Marketing through another. Every lead touched four systems before anyone responded.',
           points: [
-            'Seven separate tools with no shared data or workflow — so every process required manual syncing between platforms',
-            'Manual syncing wasted hours each week — so staff capacity went to tool management instead of customer-facing work',
-            'No visibility into where leads were stalling — so revenue leaked at handoff points nobody could see',
+            'Average response time to enquiries was over 24 hours — because nobody knew where leads were arriving',
+            'No way to see which marketing channels produced actual customers — because tracking was fragmented across tools',
+            'The team spent hours weekly on manual data entry between systems — because nothing was connected',
           ],
         },
         {
-          title: 'What we consolidated: one clear foundation',
-          description: 'Website migrated to WordPress with forms, booking, and follow-up connected into a single workflow — tools reduced from seven to three with clear ownership.',
+          title: 'What the migration actually built',
+          description:
+            'WordPress with forms, CRM, booking, and follow-up connected as one system. The migration wasn\'t just moving content — it was building the enquiry handling that never existed.',
           points: [
-            'Website, forms, and booking consolidated into one platform — so the team worked from a single system',
-            'CRM connected with automated lead routing and follow-up — so leads moved through the pipeline without manual handoff',
-            'Tool count reduced from seven to three with clear governance — so maintenance became manageable',
+            'Every form submission routes to CRM with automatic follow-up — response time dropped from days to minutes',
+            'Booking, enquiries, and customer data visible in one place — the team stopped guessing and started seeing the full picture',
+            'Tools reduced from seven to three with clear ownership — maintenance time dropped, team confidence went up',
           ],
           featured: true,
         },
         {
-          title: 'After: stable, documented, maintainable',
-          description: 'The new foundation was easier to maintain, extend, and hand over. The team stopped patching and started building on stable ground — because the consolidation was designed for independence, not just migration day.',
+          title: 'After: a business that runs differently',
+          description:
+            'The new platform mattered less than what was built on it. The team owns the system, understands it, and can extend it without calling the developer for every change.',
           points: [
-            'Maintenance time dropped by 60% per month — because fewer tools and clear governance meant less overhead per change',
-            'The team could make changes without specialist knowledge — because the system was documented and structured for internal ownership',
-            'Full documentation meant the system was transferable — because the build was designed for the business to own, not depend on the builder',
+            'Enquiry-to-response time under 5 minutes — because automation handles the routing humans used to forget',
+            'Monthly enquiry volume visible and trackable — because every touchpoint feeds into one reporting system',
+            'The team makes changes independently — because the system was documented and designed for their ownership',
           ],
         },
       ],
     },
   },
   inlineCta: {
-    title: 'Tired of patching around platform limitations?',
+    title: 'Thinking about moving platforms?',
     description:
-      'If your tools are creating more friction than value, a consolidation conversation is a good starting point.',
+      'Before you migrate, it\'s worth knowing whether the platform is the problem — or just the most visible symptom.',
   },
   cta: {
-    title: 'Ready to simplify your platform foundation?',
+    title: 'Want to move platforms and actually fix things this time?',
     description:
-      'If your business is being slowed by fragmented tools or an outdated platform, we can help define a cleaner migration and consolidation path.',
+      'Tell us what\'s frustrating you about the current setup. We\'ll tell you whether migration is the answer — and what else needs to change for the move to be worth it.',
   },
 } satisfies ServicePageData;

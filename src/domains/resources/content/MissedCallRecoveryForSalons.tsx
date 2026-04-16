@@ -1,6 +1,5 @@
 import { Calendar, MessageSquare, PhoneMissed } from 'lucide-react';
 
-
 import type { ResourceData } from '../types';
 import {
   getRelatedResources,

@@ -10,7 +10,6 @@ import {
   Workflow,
 } from 'lucide-react';
 
-
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
@@ -42,7 +41,7 @@ export const leadReactivationSystemPage = {
     badge: 'Lead Reactivation System',
     title: 'They Enquired Once. Nobody Followed Up.',
     description:
-      'Hundreds of old contacts. Stalled quotes. Past customers who never heard from you again. The leads are there. Nobody\'s working them.',
+      "Hundreds of old contacts. Stalled quotes. Past customers who never heard from you again. The leads are there. Nobody's working them.",
     list: ['Forgotten', 'Unworked'],
     cssPrefix: 'lead-reactivation-hero',
     backgroundColor: 'bg-gradient-surface-muted',
@@ -50,21 +49,19 @@ export const leadReactivationSystemPage = {
   sections: {
     foundation: {
       badge: 'The neglected asset',
-      title: 'You don\'t need more leads. You need to work the ones you had.',
+      title: "You don't need more leads. You need to work the ones you had.",
       description:
-        'Real opportunities sitting in old enquiries and stalled quotes. Nobody works them because there\'s no prompt and no message ready to go.',
+        "Real opportunities sitting in old enquiries and stalled quotes. Nobody works them because there's no prompt and no message ready to go.",
       painPoints: [
         {
-          before:
-            'Old enquiries in the CRM. Untouched. Nobody knows which are worth revisiting.',
+          before: 'Old enquiries in the CRM. Untouched. Nobody knows which are worth revisiting.',
           after:
             'Reactivation rules give a reason, a message, and a time to follow up. Old leads get worked.',
         },
         {
           before:
             'Someone remembers a stalled quote when things slow down. The rest get forgotten.',
-          after:
-            'Defined sequence. Happens consistently. Not just when someone feels like it.',
+          after: 'Defined sequence. Happens consistently. Not just when someone feels like it.',
         },
         {
           before:
@@ -76,10 +73,9 @@ export const leadReactivationSystemPage = {
     },
     reactivationScenarios: {
       badge: 'Three types of dormant lead',
-      title:
-        'Different contacts need different follow-up',
+      title: 'Different contacts need different follow-up',
       description:
-        'A stalled quote isn\'t the same as a cold enquiry. A past customer isn\'t the same as either. Each group needs its own message, timing, and next step.',
+        "A stalled quote isn't the same as a cold enquiry. A past customer isn't the same as either. Each group needs its own message, timing, and next step.",
       scenarioLabel: 'Dormant opportunity',
       solutionLabel: 'Reactivation approach',
       items: [
@@ -90,8 +86,7 @@ export const leadReactivationSystemPage = {
             'A quote went out. The prospect went quiet. Nobody chased it. The opportunity is probably still there — just unworked.',
           solution:
             'Segment stalled quotes by age and value. Set a timed follow-up path with a specific prompt to restart the conversation.',
-          result:
-            'Stalled quote value gets revisited before it expires completely.',
+          result: 'Stalled quote value gets revisited before it expires completely.',
         },
         {
           icon: MessageSquare,
@@ -106,18 +101,16 @@ export const leadReactivationSystemPage = {
           icon: Users,
           title: 'Past customers who could return',
           scenario:
-            'They bought once. Liked the work. Never heard from you again. They\'d come back if prompted. Nobody prompted them.',
+            "They bought once. Liked the work. Never heard from you again. They'd come back if prompted. Nobody prompted them.",
           solution:
             'Lifecycle-based follow-up timed around when repeat demand is naturally likely — not when the business needs revenue.',
-          result:
-            'Existing relationships become a revenue source, not a dormant contact list.',
+          result: 'Existing relationships become a revenue source, not a dormant contact list.',
         },
       ],
       alternatingItems: [
         {
           title: 'Stalled quote recovery',
-          description:
-            'A quote went out. The prospect went quiet. Nobody chased it.',
+          description: 'A quote went out. The prospect went quiet. Nobody chased it.',
           points: [
             'Segment stalled quotes by age and value',
             'Restart with timed, relevant prompts',
@@ -126,8 +119,7 @@ export const leadReactivationSystemPage = {
         },
         {
           title: 'Drifted enquiry re-engagement',
-          description:
-            'The conversation started but faded. Follow-up was slow or unowned.',
+          description: 'The conversation started but faded. Follow-up was slow or unowned.',
           points: [
             'Trigger re-engagement with context',
             'Clarify the message and next step',
@@ -137,7 +129,7 @@ export const leadReactivationSystemPage = {
         {
           title: 'Past customer reactivation',
           description:
-            'They bought once and never heard from you again. They\'d return if prompted.',
+            "They bought once and never heard from you again. They'd return if prompted.",
           points: [
             'Time follow-up to natural repeat windows',
             'Send relevant return prompts',
@@ -155,8 +147,7 @@ export const leadReactivationSystemPage = {
         {
           icon: Database,
           title: 'Segment dormant contacts',
-          description:
-            'Separate old contacts into groups that actually make sense for follow-up.',
+          description: 'Separate old contacts into groups that actually make sense for follow-up.',
           checks: [
             'Old enquiries vs stalled quotes',
             'Past customers vs cold prospects',
@@ -203,7 +194,7 @@ export const leadReactivationSystemPage = {
           number: '1',
           title: 'Identify dormant groups',
           description:
-            'Separate old enquiries, stalled quotes, past customers, and dead deals into useful segments. Start with who\'s worth contacting.',
+            "Separate old enquiries, stalled quotes, past customers, and dead deals into useful segments. Start with who's worth contacting.",
         },
         {
           number: '2',
@@ -238,12 +229,14 @@ export const leadReactivationSystemPage = {
             {
               icon: Clock,
               name: 'Timed follow-up windows',
-              detail: 'Revisit opportunities based on how long they have been sitting idle. Older contacts are not always dead.',
+              detail:
+                'Revisit opportunities based on how long they have been sitting idle. Older contacts are not always dead.',
             },
             {
               icon: MessageSquare,
               name: 'Context-aware prompts',
-              detail: 'Messages that reference what the person originally asked about. Not a cold intro — a warm restart.',
+              detail:
+                'Messages that reference what the person originally asked about. Not a cold intro — a warm restart.',
             },
             {
               icon: Workflow,
@@ -264,7 +257,8 @@ export const leadReactivationSystemPage = {
             {
               icon: FileSearch,
               name: 'Opportunity review',
-              detail: 'Identify which stalled quotes, proposals, or deals are worth re-opening first.',
+              detail:
+                'Identify which stalled quotes, proposals, or deals are worth re-opening first.',
             },
             {
               icon: Mail,
@@ -281,12 +275,14 @@ export const leadReactivationSystemPage = {
             {
               icon: Clock,
               name: 'Lifecycle timing',
-              detail: 'Reconnect when repeat demand is naturally likely, not when the business needs a revenue boost.',
+              detail:
+                'Reconnect when repeat demand is naturally likely, not when the business needs a revenue boost.',
             },
             {
               icon: MessageSquare,
               name: 'Relevant return prompts',
-              detail: 'Frame the contact around maintenance, repeat work, or the next likely need — not a generic check-in.',
+              detail:
+                'Frame the contact around maintenance, repeat work, or the next likely need — not a generic check-in.',
             },
             {
               icon: Search,
@@ -301,14 +297,14 @@ export const leadReactivationSystemPage = {
     qualification: {
       title: 'Is this the right fit?',
       description:
-        'Best for businesses where recoverable opportunities already exist in old enquiries, stalled quotes, or past-customer records — but nobody\'s working them.',
+        "Best for businesses where recoverable opportunities already exist in old enquiries, stalled quotes, or past-customer records — but nobody's working them.",
       strongFitTitle: 'Strong fit if',
       notDesignedTitle: 'Not the right fit if',
       strongFitItems: [
         {
           title: 'Dormant leads are sitting untouched in your CRM',
           description:
-            'There\'s visible value in old enquiries, stalled quotes, or past customers. Some of those contacts are still recoverable. Nobody\'s reaching out.',
+            "There's visible value in old enquiries, stalled quotes, or past customers. Some of those contacts are still recoverable. Nobody's reaching out.",
         },
         {
           title: 'Follow-up depends on memory, not process',
@@ -318,7 +314,7 @@ export const leadReactivationSystemPage = {
         {
           title: 'Past customers could return if prompted',
           description:
-            'Existing customers liked the work. They\'d come back for maintenance, repeat service, or referrals. But there\'s no prompt, so they don\'t.',
+            "Existing customers liked the work. They'd come back for maintenance, repeat service, or referrals. But there's no prompt, so they don't.",
         },
       ],
       notDesignedItems: [
@@ -343,7 +339,7 @@ export const leadReactivationSystemPage = {
       header: {
         title: 'Sporadic re-engagement vs structured reactivation',
         description:
-          'Most businesses treat dormant leads as a forgotten backlog. Here\'s what that costs compared to working them properly.',
+          "Most businesses treat dormant leads as a forgotten backlog. Here's what that costs compared to working them properly.",
       },
       items: [
         {
@@ -374,12 +370,13 @@ export const leadReactivationSystemPage = {
       header: {
         title: 'A physiotherapy clinic that recovered revenue from its own database',
         description:
-          'Two practitioners. Five years of patient records. Hundreds of past patients who completed treatment and never came back — not because they didn\'t need to, but because nobody reached out.',
+          "Two practitioners. Five years of patient records. Hundreds of past patients who completed treatment and never came back — not because they didn't need to, but because nobody reached out.",
       },
       cards: [
         {
           title: 'Before: years of records, no follow-up',
-          description: 'Over 400 past patients in their booking system. Some finished treatment. Others cancelled mid-way. A handful called but never booked. Sitting there.',
+          description:
+            'Over 400 past patients in their booking system. Some finished treatment. Others cancelled mid-way. A handful called but never booked. Sitting there.',
           points: [
             'Past patients who finished treatment were never contacted again. Recurring conditions. Nobody prompted them.',
             'Cancelled patients sat in the system. Some stopped because of scheduling, not need.',
@@ -387,19 +384,21 @@ export const leadReactivationSystemPage = {
         },
         {
           title: 'What changed: three segments, three sequences',
-          description: 'Past patients were split into three groups: completed-treatment patients likely to need repeat care, lapsed patients who\'d stopped mid-course, and old enquiries who\'d never booked. Each group got a different message, different timing, and a direct booking link.',
+          description:
+            "Past patients were split into three groups: completed-treatment patients likely to need repeat care, lapsed patients who'd stopped mid-course, and old enquiries who'd never booked. Each group got a different message, different timing, and a direct booking link.",
           points: [
             'Completed-treatment patients received a check-in message timed to when their condition was likely to need attention again. Relevant and specific, not a generic newsletter.',
-            'Lapsed patients got a short follow-up acknowledging they\'d stopped and offering a quick rebook. No pressure. Just a clear next step.',
+            "Lapsed patients got a short follow-up acknowledging they'd stopped and offering a quick rebook. No pressure. Just a clear next step.",
             'Old enquiries received a brief message referencing their original call, with availability and a booking link. Simple context restart.',
           ],
           featured: true,
         },
         {
           title: 'After: 28 rebookings in six weeks',
-          description: 'No advertising. No acquisition. Twenty-eight rebookings from people already in the system.',
+          description:
+            'No advertising. No acquisition. Twenty-eight rebookings from people already in the system.',
           points: [
-            'Completed-treatment patients made up the biggest share. Most said they\'d been meaning to come back.',
+            "Completed-treatment patients made up the biggest share. Most said they'd been meaning to come back.",
             'Seven lapsed patients rebooked. Two had gone to competitors but came back because the clinic reached out first.',
             'Three old enquiries booked. Small. But zero cost.',
           ],
@@ -420,7 +419,7 @@ export const leadReactivationSystemPage = {
         {
           question: 'Is this the same as email marketing?',
           answer:
-            'No. Email marketing is broader communication. This is targeted commercial follow-up aimed at specific stalled opportunities, old enquiries, and past customers where there\'s a recoverable outcome.',
+            "No. Email marketing is broader communication. This is targeted commercial follow-up aimed at specific stalled opportunities, old enquiries, and past customers where there's a recoverable outcome.",
         },
         {
           question: 'How does this relate to the Revenue Growth review?',
@@ -438,12 +437,10 @@ export const leadReactivationSystemPage = {
   },
   inlineCta: {
     title: 'What are you sitting on?',
-    description:
-      'Old leads, stalled quotes, past customers. What\'s worth pursuing. What isn\'t.',
+    description: "Old leads, stalled quotes, past customers. What's worth pursuing. What isn't.",
   },
   cta: {
-    title: 'Find out what\'s recoverable in your own records',
-    description:
-      'Your old enquiries and past customers. What\'s still warm. How to work it.',
+    title: "Find out what's recoverable in your own records",
+    description: "Your old enquiries and past customers. What's still warm. How to work it.",
   },
 } satisfies ServicePageData;

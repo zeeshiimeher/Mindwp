@@ -164,7 +164,7 @@ MindWP has four core services. Each one does one job. Every page, blog post, and
 |---|---|---|
 | **Tier 1 — Core Revenue Systems** | Strategic entry points | Smart Website (flagship), Local Authority & SEO, AI Lead Handling, Reputation & Review, Revenue Growth, CRM & Automation |
 | **Tier 2 — Specialized Modules** | Solve specific operational pains | Booking & Scheduling, Missed Call Recovery, Review Automation, Lead Reactivation, Conversion Funnel, Unified Communication |
-| **Tier 3 — Implementation** | Execution-layer entry pathways | WordPress Development, Website Redesign, CRM Implementation, Marketing Automation Setup, Funnel & Landing Page Dev, System Migration |
+| **Tier 3 — Implementation** | Execution-layer entry pathways | WordPress Development, Website Redesign, CRM Implementation, Funnel & Landing Page Dev, System Migration |
 
 **Gravity rule:** Smart Website Systems is the conceptual framework. All other Tier 1 systems integrate into it. They must never override its dominance in hierarchy, navigation, or homepage composition.
 

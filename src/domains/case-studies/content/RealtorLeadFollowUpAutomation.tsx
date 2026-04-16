@@ -150,8 +150,7 @@ function buildRealtorLeadFollowUpAutomation(): CaseStudyData {
   return {
     slug: 'realtor-lead-follow-up-automation',
     title: 'Realtor Lead Follow-Up Automation',
-    metaTitle:
-      'Estate Agent Follow-Up | 22% to 41% Conversion',
+    metaTitle: 'Estate Agent Follow-Up | 22% to 41% Conversion',
     metaDescription:
       'How a Bath estate agency increased enquiry-to-viewing conversion from 22% to 41% and recovered £14,000 per quarter using automated CRM follow-up sequences.',
     industryCategory: 'real-estate',

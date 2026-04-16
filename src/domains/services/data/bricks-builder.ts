@@ -10,7 +10,6 @@ import {
   Zap,
 } from 'lucide-react';
 
-
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
@@ -28,108 +27,105 @@ export const bricksBuilderPage = {
     'custom breakpoints',
     'performance',
   ],
-  badge: 'Bricks Implementation',
+  badge: 'Bricks Builder',
   category: 'Implementation Services',
   seo: buildServiceSeo({
     slug,
-    title: 'Bricks Builder | Structured WordPress Implementation',
+    title: 'Bricks Builder WordPress Development | MindWP',
     description:
-      'Structured WordPress implementation with Bricks Builder for teams that need performance-conscious delivery, clean architecture, and disciplined conversion of approved designs.',
-    schemaName: 'Structured WordPress Implementation with Bricks Builder',
+      'Bricks Builder produces fast, clean WordPress sites. But clean code alone doesn\'t convert visitors into enquiries. Here\'s what to get right first.',
+    schemaName: 'Bricks Builder WordPress development',
     schemaDescription:
-      'WordPress development using Bricks Builder with performance-first architecture, clean markup output, and structured build standards.',
+      'WordPress implementation using Bricks Builder as part of a structured website system that handles enquiries, follow-up, and lead routing.',
   }),
   hero: {
-    badge: 'Bricks Builder Implementation',
-      title: 'Bricks Websites Built for Speed Precision and Control',
+    badge: 'Bricks Builder',
+    title: 'Your Site Loads Fast. Nobody Gets In Touch.',
     description:
-      'We build WordPress websites using Bricks Builder where performance and clean output matter. Approved designs are converted precisely, with a build that stays fast, maintainable, and easy to extend.',
-      list: ['Fast page output', 'Clean code structure', 'Pixel-precision builds'],
+      'Bricks gives you clean code and quick pages. Visitors land, browse, leave. The builder did its job. The website didn\'t do anything with the attention.',
+    list: ['Fast pages', 'Low enquiries', 'No follow-up'],
     cssPrefix: 'bricks-hero',
     backgroundColor: 'bg-gradient-surface-muted relative overflow-hidden',
   },
   sections: {
     conversionSection: {
-      title: 'From Figma, PSD, or XD to a production-ready Bricks build',
+      title: 'We build with Bricks. The builder was never the real problem.',
       description1:
-        'We convert approved design files into precise Bricks implementations. Typography, spacing, layout logic, and responsive behaviour are built accurately — without compromising performance or long-term clarity.',
+        'Clean markup, fast output, genuine developer control. If you\'re comparing builders, Bricks is a strong choice. We use it on projects where performance and code quality matter.',
       description2:
-        'This is a production-focused implementation service. For full business planning and system design, explore Smart Websites.',
+        'But a faster site doesn\'t fix a site that isn\'t doing anything with visitors. Enquiries, follow-up, lead handling — that\'s where most websites actually fall apart. The full picture starts with Smart Websites.',
     },
     benefitsSection: {
-      badge: 'Implementation Principles',
-      title: 'What disciplined Bricks implementation protects',
+      badge: 'What Actually Changes Results',
+      title: 'Speed and clean code are table stakes. What happens next is what counts.',
       cssPrefix: 'bricks-benefits',
       backgroundColor: 'bg-base' as const,
       items: [
         {
           icon: Zap,
-          title: 'Design Fidelity',
+          title: 'Fast pages keep people around longer',
           description:
-            'The approved design is implemented precisely. Visual intent stays intact without sacrificing performance.',
+            'Bricks output is genuinely quick. Visitors don\'t bounce from slow loads. But staying longer doesn\'t mean getting in touch.',
           iconType: 'primary' as const,
         },
         {
           icon: Smartphone,
-          title: 'Responsive by Design',
+          title: 'Responsive builds work on every device',
           description:
-            'Layouts are built with intentional breakpoints and clean responsive logic — not patched overrides.',
+            'Intentional breakpoints mean the site looks right on phones, tablets, desktops. Looking right and converting visitors are different problems.',
           iconType: 'accent' as const,
         },
         {
           icon: Code,
-          title: 'Clean Build',
+          title: 'Clean code makes future changes easier',
           description:
-            'Minimal plugin reliance, semantic markup, and organised components for long-term maintainability.',
+            'Semantic markup and minimal bloat mean updates don\'t break things. That protects the build. It doesn\'t bring in work.',
           iconType: 'secondary' as const,
         },
         {
           icon: Database,
-          title: 'Predictable Delivery',
+          title: 'The real gap is between the visit and the enquiry',
           description:
-            'Clear scope and a disciplined process mean the build stays on track from start to handover.',
+            'Someone finds your site. Do they see the right service? Can they reach the right person? Does anyone follow up? That\'s where results live.',
           iconType: 'primary' as const,
         },
         {
           icon: Search,
-          title: 'Search-Ready Foundations',
+          title: 'Search-ready structure needs somewhere useful to land',
           description:
-            'Clean HTML, schema compatibility, and performance hygiene are built in from the start.',
+            'Clean HTML helps Google read the site. But traffic to a page with no clear next step just means more people leaving.',
           iconType: 'accent' as const,
         },
         {
           icon: Shield,
-          title: 'Maintainable and Extensible',
+          title: 'Maintainability keeps things stable — not growing',
           description:
-            'The build is organised so that future refinement, scaling, and integration stay straightforward.',
+            'A well-organised build stays manageable over time. Good. But it doesn\'t generate enquiries, route them, or follow up.',
           iconType: 'secondary' as const,
         },
       ],
     },
     whySection: {
-      badge: 'Why this approach works',
-      title: 'Bricks works well when the implementation is disciplined',
+      badge: 'The real question',
+      title: 'Is the builder your problem — or what happens after someone visits?',
       description:
-        'Bricks Builder produces clean output with deep control and genuine performance advantages. When the build is governed properly, the result is a fast, maintainable site that stays coherent over time.',
+        'Bricks produces excellent output. But most sites we see have a capable builder underneath and still lose leads. The site doesn\'t route enquiries, follow up, or track what happens. Those aren\'t builder problems.',
       items: [
         {
-          title: 'Design intent preserved',
-          description:
-            'What was approved is what gets built — every element, spacing, and detail stays intact.',
+          title: 'The build quality is fine',
+          description: 'Clean output, fast pages, developer-friendly configuration. Bricks does what it should.',
         },
         {
-          title: 'Technical clarity',
-          description:
-            'Professional code output and clean configuration avoid the bloat that builder projects often create.',
+          title: 'Visitors still leave quietly',
+          description: 'Someone arrives, scrolls around, can\'t find the specific service they need. They try the next business.',
         },
         {
-          title: 'Faster launch',
-          description: 'A disciplined process replaces trial-and-error with predictable delivery.',
+          title: 'Enquiries reach the wrong place',
+          description: 'A form submission lands in an inbox nobody checks until evening. By then they\'ve called someone else.',
         },
         {
-          title: 'Built to last',
-          description:
-            'Clean, maintainable code that is easy to update, extend, and scale as needs change.',
+          title: 'Nothing happens after first contact',
+          description: 'No confirmation. No reminder. No follow-up sequence. The lead goes cold while your team works.',
         },
       ],
       columns: 4 as const,
@@ -138,50 +134,51 @@ export const bricksBuilderPage = {
       iconType: 'checkmark' as const,
     },
     processSection: {
-      badge: 'Our Process',
-      title: 'How we move from design file to production site',
+      badge: 'How We Work',
+      title: 'We start with what the site needs to do — then pick the right builder',
       description:
-        'A clear process that keeps the build on track from design review through to handover.',
+        'Builder choice comes after we understand your services, how people reach you, and where things drop off. Sometimes that\'s Bricks. Sometimes the build isn\'t the problem at all.',
       steps: [
         {
           number: '1',
-          title: 'Design Review',
+          title: 'Understand what\'s actually broken',
           description:
-            'We review the design system, component needs, and operational requirements before building anything.',
+            'Load speed? Page structure? Enquiry handling? Follow-up? We figure out the real problem before recommending a build.',
           icon: Eye,
         },
         {
           number: '2',
-          title: 'Build Planning',
+          title: 'Map how visitors become enquiries',
           description:
-            'Template logic, responsive approach, and component hierarchy are defined upfront.',
+            'Which services need their own pages, how someone moves from browsing to contact, what happens after they reach out.',
           icon: Layers,
         },
         {
           number: '3',
-          title: 'Precise Build',
+          title: 'Build with the right tools',
           description:
-            'Implementation begins with clean components, global styles, and organised layout systems.',
+            'If Bricks fits, we use it. Clean layouts, fast output, proper responsive work. The builder serves the plan.',
           icon: Zap,
         },
         {
           number: '4',
-          title: 'Responsive Refinement',
-          description: 'Responsive behaviour and performance are refined across device sizes.',
+          title: 'Connect forms, CRM, and follow-up',
+          description:
+            'Enquiries go to the right person. Confirmations go out immediately. Follow-up runs without your team remembering.',
           icon: Smartphone,
         },
         {
           number: '5',
-          title: 'Performance Pass',
+          title: 'Test the full journey',
           description:
-            'Code hygiene, optimisation, and cleanup ensure the site stays fast and maintainable.',
+            'We check that someone can find a service, reach out, and get handled properly. Not just that the site loads fast.',
           icon: Code,
         },
         {
           number: '6',
-          title: 'Testing and Handover',
+          title: 'Handover with documentation',
           description:
-            'Cross-browser checks, performance validation, and final review before delivery.',
+            'Your team gets a walkthrough, documentation, and a site they can manage without us.',
           icon: Shield,
         },
       ],
@@ -190,68 +187,68 @@ export const bricksBuilderPage = {
       backgroundColor: 'bg-alt' as const,
     },
     featureSection: {
-      badge: 'Implementation Capabilities',
-      title: 'Bricks Builder Implementation Capabilities',
+      badge: 'What The Build Covers',
+      title: 'What a Bricks build looks like as part of something bigger',
       cssPrefix: 'bricks-features',
       categories: [
         {
-          title: 'Precision Conversion',
-          description: 'Pixel-perfect layouts from your designs',
+          title: 'Clean Build Quality',
+          description: 'The technical foundation Bricks does well',
           icon: Zap,
           features: [
-            'Exact pixel matching',
-            'Precise spacing & positioning',
-            'Typography reproduction',
-            'Color accuracy',
-            'Custom breakpoints',
-            'Design system implementation',
+            'Fast, clean page output',
+            'Intentional responsive breakpoints',
+            'Proper spacing and typography',
+            'Minimal plugin reliance',
+            'Semantic markup for search',
+            'Organised component structure',
           ],
         },
         {
-          title: 'Performance-First Code',
-          description: 'Optimized code with minimal overhead',
+          title: 'Enquiry Handling',
+          description: 'What makes the site actually produce results',
           icon: Code,
           features: [
-            'Clean HTML output',
-            'Minimal CSS generation',
-            'No unnecessary plugins',
-            'Fast loading times',
-            'SEO-friendly structure',
-            'Version control friendly',
+            'Forms that capture the right details',
+            'Routing to the right person on your team',
+            'Immediate confirmations to the visitor',
+            'Follow-up that runs on its own',
+            'Missed-call handling and notifications',
+            'Every enquiry logged and tracked',
           ],
         },
         {
-          title: 'Developer Tools',
-          description: 'Professional development features',
+          title: 'Service Clarity',
+          description: 'What visitors need before they reach out',
           icon: Database,
           features: [
-            'Custom CSS/JS per element',
-            'PHP execution capabilities',
-            'Template conditions',
-            'Global classes & elements',
-            'Advanced query loops',
-            'Dynamic data integration',
+            'Each service on its own page',
+            'Clear next steps on every page',
+            'Written how people search for help',
+            'Mobile-friendly contact paths',
+            'Area coverage visible',
+            'Real content, not placeholder blocks',
           ],
         },
         {
-          title: 'Design Freedom',
-          description: 'Complete creative control',
+          title: 'Connected Foundations',
+          description: 'What the build plugs into',
           icon: Palette,
           features: [
-            '100+ elements available',
-            'Complete style control',
-            'Flexbox & Grid layouts',
-            'Advanced animations',
-            'Shape dividers & effects',
-            'Custom interaction states',
+            'CRM receives every lead automatically',
+            'Booking tools connected from day one',
+            'Tracking shows where visitors come from',
+            'Review and reputation ready',
+            'Local SEO foundations built in',
+            'Your team manages content independently',
           ],
         },
       ],
     },
   },
   cta: {
-    title: 'Want cleaner code without losing flexibility?',
+    title: 'Not sure if the builder is your actual problem?',
     description:
-      'Tell us what your current site struggles with. We\'ll review whether a Bricks build solves it and what the project would look like.',
+      "Tell us what's happening with your website visitors — or what isn't. We'll tell you whether it's a build issue or something the site itself can't fix.",
   },
 } satisfies ServicePageData;

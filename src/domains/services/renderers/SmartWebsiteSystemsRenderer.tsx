@@ -149,7 +149,7 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
                 }))}
                 cssPrefix='smart-websites-visibility-foundations'
                 backgroundColor='bg-base'
-              />,
+              />
             )}
 
           {/* NEW: Benefits by Business Size */}

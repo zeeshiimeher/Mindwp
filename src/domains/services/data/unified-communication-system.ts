@@ -10,7 +10,6 @@ import {
   Workflow,
 } from 'lucide-react';
 
-
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
 
@@ -40,7 +39,7 @@ export const unifiedCommunicationSystemPage = {
   }),
   hero: {
     badge: 'Unified Communication System',
-    title: 'Five Channels. Three Inboxes. Nobody Knows What\'s Live.',
+    title: "Five Channels. Three Inboxes. Nobody Knows What's Live.",
     description:
       'Call comes in. Form gets submitted. Someone messages on chat. Each one lands somewhere different. Which conversations are live? Who owns them? What happened before?',
     list: ['Calls in one place', 'Forms in another', 'Chat somewhere else'],
@@ -57,15 +56,15 @@ export const unifiedCommunicationSystemPage = {
         {
           before:
             'Messages in five places. No single view of what came in, who replied, or what fell through.',
-          after:
-            'Incoming conversations route through a shared layer. Nothing sits unseen.',
+          after: 'Incoming conversations route through a shared layer. Nothing sits unseen.',
         },
         {
           before: 'Three people see the message. Nobody replies. Or two reply differently.',
           after: 'One owner per conversation. One person accountable.',
         },
         {
-          before: 'Someone calls, fills a form, sends a message. Three contacts. Treated like three cases.',
+          before:
+            'Someone calls, fills a form, sends a message. Three contacts. Treated like three cases.',
           after: 'Contact matching carries context forward. One response, not three.',
         },
       ],
@@ -74,7 +73,7 @@ export const unifiedCommunicationSystemPage = {
       badge: 'Where the enquiries come from',
       title: 'More channels, more need for clear routing',
       description:
-        'Each new channel adds value when routed properly. Without that, it\'s just more noise.',
+        "Each new channel adds value when routed properly. Without that, it's just more noise.",
       items: [
         {
           icon: Phone,
@@ -94,7 +93,7 @@ export const unifiedCommunicationSystemPage = {
           icon: MessageSquare,
           title: 'Chat and direct messaging',
           description:
-            'Chat, SMS, and social messages create response gaps because the team can\'t see the full thread. Quick channels need quick routing.',
+            "Chat, SMS, and social messages create response gaps because the team can't see the full thread. Quick channels need quick routing.",
           iconType: 'accent' as const,
         },
         {
@@ -108,8 +107,7 @@ export const unifiedCommunicationSystemPage = {
     },
     ownershipRisks: {
       badge: 'What usually goes wrong',
-      title:
-        'These are routing problems, not technology problems',
+      title: 'These are routing problems, not technology problems',
       description:
         'Adding more tools to a broken model just spreads the mess. These are signs the business needs clearer rules \u2014 not another app.',
       lists: [
@@ -118,8 +116,7 @@ export const unifiedCommunicationSystemPage = {
           issues: [
             {
               title: 'No one owns the next step',
-              description:
-                'Message gets seen. What happens after? Nothing. Conversation stalls.',
+              description: 'Message gets seen. What happens after? Nothing. Conversation stalls.',
             },
             {
               title: 'Two people respond differently',
@@ -208,17 +205,20 @@ export const unifiedCommunicationSystemPage = {
             {
               icon: Inbox,
               name: 'Shared intake view',
-              detail: 'Calls, forms, chat, and email arrive in one visible layer instead of five separate places.',
+              detail:
+                'Calls, forms, chat, and email arrive in one visible layer instead of five separate places.',
             },
             {
               icon: Search,
               name: 'Conversation visibility',
-              detail: 'See which channel the message came from and what already happened before this touchpoint.',
+              detail:
+                'See which channel the message came from and what already happened before this touchpoint.',
             },
             {
               icon: Bell,
               name: 'Priority surfacing',
-              detail: 'Commercially important or urgent conversations surface faster than routine noise.',
+              detail:
+                'Commercially important or urgent conversations surface faster than routine noise.',
             },
           ],
         },
@@ -346,7 +346,7 @@ export const unifiedCommunicationSystemPage = {
       header: {
         title: 'Inbox chaos vs routing that works',
         description:
-          'Most businesses add channels without fixing what\'s behind them. Here\'s what that costs.',
+          "Most businesses add channels without fixing what's behind them. Here's what that costs.",
       },
       items: [
         {
@@ -382,15 +382,17 @@ export const unifiedCommunicationSystemPage = {
       cards: [
         {
           title: 'Before: five channels, no routing',
-          description: 'Calls went to the office phone. Forms to Gmail. WhatsApp to the owner\'s personal phone. Emails to whoever the customer last spoke to. No idea what was live.',
+          description:
+            "Calls went to the office phone. Forms to Gmail. WhatsApp to the owner's personal phone. Emails to whoever the customer last spoke to. No idea what was live.",
           points: [
             'Office manager handled calls. No visibility of WhatsApp or form leads. Jobs booked from calls while form enquiries waited days.',
-            'WhatsApp sat on the owner\'s phone. Busy weeks, threads went cold. Same customer calling, emailing, messaging \u2014 treated as three separate people.',
+            "WhatsApp sat on the owner's phone. Busy weeks, threads went cold. Same customer calling, emailing, messaging \u2014 treated as three separate people.",
           ],
         },
         {
           title: 'What changed: one shared routing layer across all channels',
-          description: 'Every inbound message now routes into one view. Named owner. Defined next step. One queue instead of five. Same approach whether it started as a missed call, a form, or a WhatsApp message.',
+          description:
+            'Every inbound message now routes into one view. Named owner. Defined next step. One queue instead of five. Same approach whether it started as a missed call, a form, or a WhatsApp message.',
           points: [
             'Calls, forms, WhatsApp, and email feed into a single intake view. The office manager sees everything, not just phone calls.',
             'Each conversation is assigned to one person. The owner stops being the default handler for every WhatsApp thread.',
@@ -400,7 +402,8 @@ export const unifiedCommunicationSystemPage = {
         },
         {
           title: 'After: fewer missed conversations, faster follow-up',
-          description: 'First month, missed conversations dropped. Response times improved. The owner got his evenings back because WhatsApp had a route.',
+          description:
+            'First month, missed conversations dropped. Response times improved. The owner got his evenings back because WhatsApp had a route.',
           points: [
             'Missed conversations roughly halved. Nothing changed except every message had a visible owner.',
             'First-response time from over a day to under four hours. Routing was the bottleneck. Not capacity.',
@@ -412,8 +415,7 @@ export const unifiedCommunicationSystemPage = {
   },
   inlineCta: {
     title: 'Where are your messages breaking?',
-    description:
-      'Fifteen minutes. Map your channels. See where conversations are dying.',
+    description: 'Fifteen minutes. Map your channels. See where conversations are dying.',
   },
   cta: {
     title: 'Find out where conversations are falling apart',

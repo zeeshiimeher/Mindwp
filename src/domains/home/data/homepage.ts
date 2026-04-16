@@ -14,6 +14,7 @@ import {
   Wrench,
 } from 'lucide-react';
 
+import { buildContactHref } from '@/lib/contact/contactHref';
 import { SITE_NAME, SITE_ORIGIN, toAbsoluteUrl } from '@/lib/seo/config';
 
 type IconTone = 'primary' | 'secondary' | 'accent';
@@ -235,31 +236,33 @@ export const homepageData: HomepageData = {
     valueProps: ['Missed calls', 'Dead enquiries', 'Invisible online'],
     primaryAction: {
       label: "What's actually going wrong?",
-      href: '/contact',
+      href: buildContactHref({
+        system: 'smart-website-systems',
+        sourceType: 'global',
+        slug: 'home',
+      }),
     },
   },
   infrastructureGaps: {
     badge: "What's Actually Happening",
     title: 'The business is working. The business is also leaking.',
     description:
-      "Not a dramatic failure. Not a crisis. Just a steady drip of missed opportunities and invisible damage. Compounding every week.",
+      'Not a dramatic failure. Not a crisis. Just a steady drip of missed opportunities and invisible damage. Compounding every week.',
     problems: [
       {
         icon: Search,
-        title: "Nobody can find you when they need you",
+        title: 'Nobody can find you when they need you',
         description:
           "Someone nearby needs exactly what you do. They search. You don't show up. The competitor with a worse service gets the call.",
-        solution:
-          'Local visibility from day one. The right searches reach you.',
+        solution: 'Local visibility from day one. The right searches reach you.',
         impact: 'Invisible locally',
       },
       {
         icon: Workflow,
         title: "The phone rings. The team's on a job.",
         description:
-          "Three missed calls by lunchtime. You find out when you check your phone at 6pm. Two already booked someone else.",
-        solution:
-          'Every missed call caught, logged, and chased. Before they ring someone else.',
+          'Three missed calls by lunchtime. You find out when you check your phone at 6pm. Two already booked someone else.',
+        solution: 'Every missed call caught, logged, and chased. Before they ring someone else.',
         impact: 'Calls lost daily',
       },
       {
@@ -267,8 +270,7 @@ export const homepageData: HomepageData = {
         title: 'Messages in five different places. Nobody tracking them.',
         description:
           "Facebook DMs, voicemails, form submissions, texts. Some get answered. Some don't. Nobody knows which is which.",
-        solution:
-          'One place. Clear ownership. Follow-up.',
+        solution: 'One place. Clear ownership. Follow-up.',
         impact: 'Scattered and slow',
       },
     ],
@@ -277,14 +279,14 @@ export const homepageData: HomepageData = {
     badge: 'Sound Familiar?',
     title: "You've probably seen some of this already",
     description:
-      "These are the things that slip. Not emergencies. Quiet leaks that add up until the numbers stop making sense.",
+      'These are the things that slip. Not emergencies. Quiet leaks that add up until the numbers stop making sense.',
     journeyTitle: 'Where it starts to break',
     principles: [
       {
         icon: Check,
         title: 'Tuesday. Four missed calls. Nobody knew.',
         description:
-          "Busy morning. Calls stacked up. By the time someone looked, two were already gone.",
+          'Busy morning. Calls stacked up. By the time someone looked, two were already gone.',
       },
       {
         icon: Search,
@@ -295,20 +297,17 @@ export const homepageData: HomepageData = {
       {
         icon: Database,
         title: 'Old enquiries. No follow-up. Just sitting there.',
-        description:
-          "Quotes from months ago. Good customers who never heard from you again.",
+        description: 'Quotes from months ago. Good customers who never heard from you again.',
       },
       {
         icon: SlidersHorizontal,
         title: 'Happy customers. Twelve reviews. Competitor has eighty.',
-        description:
-          'Good work. No asks. No proof.',
+        description: 'Good work. No asks. No proof.',
       },
       {
         icon: Wrench,
         title: 'Replies take hours. Sometimes a day.',
-        description:
-          "Nobody dropped the ball. The message sat there.",
+        description: 'Nobody dropped the ball. The message sat there.',
       },
     ],
     journeySteps: [
@@ -322,8 +321,7 @@ export const homepageData: HomepageData = {
     journeyNote: "These aren't separate problems. They're connected.",
     cta: {
       title: 'Something here feel familiar?',
-      description:
-        "Tell us what you're seeing. We'll find the leak.",
+      description: "Tell us what you're seeing. We'll find the leak.",
     },
   },
   implementationSection: {
@@ -334,14 +332,12 @@ export const homepageData: HomepageData = {
       {
         number: '01',
         title: 'We look at what you have',
-        description:
-          "How calls come in. Where leads go. What happens after. Obvious fast.",
+        description: 'How calls come in. Where leads go. What happens after. Obvious fast.',
       },
       {
         number: '02',
         title: 'We show you where it leaks',
-        description:
-          "No pitch deck. A short, honest rundown of what's falling apart.",
+        description: "No pitch deck. A short, honest rundown of what's falling apart.",
       },
       {
         number: '03',
@@ -369,7 +365,7 @@ export const homepageData: HomepageData = {
         title: 'Enquiries arrive in one place',
         subtitle: 'Not scattered across five apps',
         description:
-          "Calls, forms, messages. All captured. Nothing hidden. One place to check instead of hunting through inboxes.",
+          'Calls, forms, messages. All captured. Nothing hidden. One place to check instead of hunting through inboxes.',
         highlights: [
           'Every channel feeding into one record',
           'Nothing missed because someone forgot to check',
@@ -382,8 +378,7 @@ export const homepageData: HomepageData = {
         icon: Database,
         title: 'Nothing gets lost in the handoff',
         subtitle: 'Assigned. Tracked. Followed up.',
-        description:
-          "Leads go to the right person. You can see where things stand. No more limbo.",
+        description: 'Leads go to the right person. You can see where things stand. No more limbo.',
         highlights: [
           'Routed to the right person without asking',
           'You can see where every lead stands',
@@ -397,7 +392,7 @@ export const homepageData: HomepageData = {
         title: 'Follow-up happens on schedule',
         subtitle: 'Not when someone remembers',
         description:
-          "Reminders fire. Responses go out. The gap between enquiry and reply shrinks from days to minutes.",
+          'Reminders fire. Responses go out. The gap between enquiry and reply shrinks from days to minutes.',
         highlights: [
           'Timed follow-up instead of manual chasing',
           "Replies that don't depend on who's working",
@@ -408,14 +403,13 @@ export const homepageData: HomepageData = {
     ],
     cta: {
       title: 'Where are your enquiries dropping?',
-      description:
-        "How things run right now. You see the gaps yourself.",
+      description: 'How things run right now. You see the gaps yourself.',
     },
   },
   systemCapabilities: {
     title: 'Where service businesses break',
     description:
-      "Five pressure points. Each one leaks money quietly. Most businesses have at least three.",
+      'Five pressure points. Each one leaks money quietly. Most businesses have at least three.',
     visualMetaLabel: 'Breakage point overview',
     tabsAriaLabel: 'Business pressure points',
     defaultComponentId: 'calls',
@@ -477,7 +471,7 @@ export const homepageData: HomepageData = {
         subline: "They search. You don't show up.",
         description:
           "Someone types in exactly what you do. Three competitors come up. You're nowhere. Not because they're better. Because they showed up.",
-        outcome: "The right searches find you. Maps. Results. Locally.",
+        outcome: 'The right searches find you. Maps. Results. Locally.',
         benefits: [
           'Pages structured for the searches that matter',
           'Local presence set up. Not guessed at.',
@@ -501,7 +495,7 @@ export const homepageData: HomepageData = {
         title: 'Slow Replies',
         subline: 'Six hours. Sometimes longer.',
         description:
-          "An enquiry arrives at 10am. Someone sees it at 4pm. By then the customer has moved on. Not because anyone forgot. Because nothing flagged it.",
+          'An enquiry arrives at 10am. Someone sees it at 4pm. By then the customer has moved on. Not because anyone forgot. Because nothing flagged it.',
         outcome: 'Enquiries get a reply. Fast. Follow-up stops depending on memory.',
         benefits: [
           'Enquiries get a reply. Not six hours later.',
@@ -526,7 +520,7 @@ export const homepageData: HomepageData = {
         title: 'No Proof Online',
         subline: 'Five-star work. Barely any proof.',
         description:
-          "Happy customers. But online? Nothing. They leave without saying a word. Competitors with worse service have five times the reviews.",
+          'Happy customers. But online? Nothing. They leave without saying a word. Competitors with worse service have five times the reviews.',
         outcome: 'Reviews start showing up. Without anyone chasing.',
         benefits: [
           'Review requests after every job',
@@ -550,7 +544,7 @@ export const homepageData: HomepageData = {
   infrastructureLayers: {
     title: "It's not a website project. It's infrastructure.",
     description:
-      "The site is the surface. Underneath: what happens to enquiries, follow-up, visibility, proof collection, lead recovery. Connected. Running.",
+      'The site is the surface. Underneath: what happens to enquiries, follow-up, visibility, proof collection, lead recovery. Connected. Running.',
     foundation: {
       badge: 'Foundation',
       title: 'Business Infrastructure',
@@ -568,28 +562,27 @@ export const homepageData: HomepageData = {
       {
         title: 'Visibility Layer',
         description:
-          "Local search, maps, service pages. People find you when they need what you do.",
+          'Local search, maps, service pages. People find you when they need what you do.',
       },
       {
         title: 'Capture Layer',
-        description:
-          "Forms, calls, bookings. Caught and logged. Nothing lost between channels.",
+        description: 'Forms, calls, bookings. Caught and logged. Nothing lost between channels.',
       },
       {
         title: 'Follow-Up Layer',
         description:
-          "Instant replies, team alerts, timed reminders. The gap between enquiry and reply closes on its own.",
+          'Instant replies, team alerts, timed reminders. The gap between enquiry and reply closes on its own.',
       },
       {
         title: 'Proof Layer',
         description:
-          "Review requests, reputation tracking. Evidence that shows up while everyone works.",
+          'Review requests, reputation tracking. Evidence that shows up while everyone works.',
       },
     ],
     trustFoundations: {
       title: 'This works when the business is already running.',
       description:
-        "Not for startups. Not for side projects. For businesses where missed work costs real money.",
+        'Not for startups. Not for side projects. For businesses where missed work costs real money.',
       strongFitBadge: 'Strong Fit',
       strongFitTitle: 'This works well when:',
       strongFitItems: [
@@ -603,7 +596,7 @@ export const homepageData: HomepageData = {
         },
         {
           title: 'Everyone is busy doing the actual work',
-          description: "No time to chase leads, check voicemails, or send review requests.",
+          description: 'No time to chase leads, check voicemails, or send review requests.',
         },
         {
           title: "You've tried marketing before",
@@ -615,27 +608,27 @@ export const homepageData: HomepageData = {
         },
       ],
       notDesignedBadge: 'Not The Right Fit',
-      notDesignedTitle: "Probably not right if:",
+      notDesignedTitle: 'Probably not right if:',
       notDesignedItems: [
         {
           title: 'You need a quick visual refresh',
-          description: "A brochure redesign without operational change.",
+          description: 'A brochure redesign without operational change.',
         },
         {
           title: "You're comparing on price alone",
-          description: "Lowest cost matters more than what gets built.",
+          description: 'Lowest cost matters more than what gets built.',
         },
         {
           title: 'You want a feature checklist',
-          description: "Tools for the sake of tools. Not connected to anything.",
+          description: 'Tools for the sake of tools. Not connected to anything.',
         },
         {
           title: "You're testing short-term campaigns",
-          description: "Quick experiments rather than something built to last.",
+          description: 'Quick experiments rather than something built to last.',
         },
         {
           title: 'The business is brand new',
-          description: "No existing customer base or enquiry volume to work with.",
+          description: 'No existing customer base or enquiry volume to work with.',
         },
       ],
     },
@@ -649,7 +642,7 @@ export const homepageData: HomepageData = {
         icon: Scissors,
         title: 'Beauty & Personal Care',
         description:
-          "Bookings scattered across Instagram DMs and phone calls. No-shows nobody chased. Reviews that never got requested.",
+          'Bookings scattered across Instagram DMs and phone calls. No-shows nobody chased. Reviews that never got requested.',
       },
       {
         icon: Wrench,
@@ -674,8 +667,7 @@ export const homepageData: HomepageData = {
   visibilityTimeline: {
     badge: 'What Changes Over Time',
     title: "It doesn't all happen at once. That's the point.",
-    description:
-      "The urgent stuff gets fixed first. Then the rest catches up. Then it compounds.",
+    description: 'The urgent stuff gets fixed first. Then the rest catches up. Then it compounds.',
     items: [
       {
         phase: 'Week 1-2',
@@ -726,8 +718,7 @@ export const homepageData: HomepageData = {
   },
   caseStudies: {
     title: 'One business. Before and after.',
-    description:
-      "Not a portfolio. What changed when things stopped slipping through.",
+    description: 'Not a portfolio. What changed when things stopped slipping through.',
     quote:
       'We moved from a basic website to something connected. Enquiries land in the right place, follow-up is clearer. The business runs easier now.',
     quoteAuthor: '\u2014 Lisa Chen, Pawfect Mobile Grooming, Birmingham',
@@ -736,47 +727,45 @@ export const homepageData: HomepageData = {
     title: 'Straight answers',
     items: [
       {
-        question: "What do you build?",
+        question: 'What do you build?',
         answer:
-          "What happens underneath a website. Enquiries. Follow-up. Visibility. Proof collection. Connected. For service businesses that already have the work.",
+          'What happens underneath a website. Enquiries. Follow-up. Visibility. Proof collection. Connected. For service businesses that already have the work.',
       },
       {
-        question: "How is this different from getting a new website?",
+        question: 'How is this different from getting a new website?',
         answer:
-          "A website is a page people land on. This catches calls, routes enquiries, chases follow-up, and gets you reviews. The website is one piece.",
+          'A website is a page people land on. This catches calls, routes enquiries, chases follow-up, and gets you reviews. The website is one piece.',
       },
       {
-        question: "We already have a website. Can you work with that?",
+        question: 'We already have a website. Can you work with that?',
         answer:
-          "Usually. We look at what you have. Sometimes the site is fine and everything around it is broken.",
+          'Usually. We look at what you have. Sometimes the site is fine and everything around it is broken.',
       },
       {
-        question: "Is SEO included?",
-        answer:
-          "Baked into the site. Ongoing SEO when it makes sense.",
+        question: 'Is SEO included?',
+        answer: 'Baked into the site. Ongoing SEO when it makes sense.',
       },
       {
-        question: "What about missed calls and follow-up?",
+        question: 'What about missed calls and follow-up?',
         answer:
-          "Missed calls get caught and chased. Enquiries get routed. Reminders fire on schedule. Nobody remembers. It runs.",
+          'Missed calls get caught and chased. Enquiries get routed. Reminders fire on schedule. Nobody remembers. It runs.',
       },
       {
-        question: "What kind of businesses is this for?",
+        question: 'What kind of businesses is this for?',
         answer:
-          "Established service businesses. Trades, professionals, local services. Businesses where everyone is out doing the work and enquiries pile up unhandled.",
+          'Established service businesses. Trades, professionals, local services. Businesses where everyone is out doing the work and enquiries pile up unhandled.',
       },
       {
-        question: "How long before we see results?",
-        answer:
-          "Missed calls and follow-up? Weeks. Visibility and reviews? Months. It compounds.",
+        question: 'How long before we see results?',
+        answer: 'Missed calls and follow-up? Weeks. Visibility and reviews? Months. It compounds.',
       },
       {
-        question: "Do you do ongoing work or is it a one-off?",
+        question: 'Do you do ongoing work or is it a one-off?',
         answer:
-          "Either way. Everything keeps running. Ongoing means we keep tightening as the business shifts.",
+          'Either way. Everything keeps running. Ongoing means we keep tightening as the business shifts.',
       },
       {
-        question: "How do we start?",
+        question: 'How do we start?',
         answer:
           "We look at how enquiries come in right now. Where calls go. What happens to leads. Then come back with what's leaking.",
       },
@@ -785,8 +774,7 @@ export const homepageData: HomepageData = {
   cta: {
     footer: {
       title: "Something here hit close. Find where it's breaking.",
-      description:
-        "Enquiries. Calls. Follow-up. Find where yours are leaking.",
+      description: 'Enquiries. Calls. Follow-up. Find where yours are leaking.',
       metaItems: [
         { text: 'Free diagnostic' },
         { text: 'No commitment' },

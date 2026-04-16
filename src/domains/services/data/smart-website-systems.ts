@@ -1,22 +1,17 @@
 import {
   AlertTriangle,
-  ArrowRight,
   BarChart3,
   Briefcase,
   Building2,
   Calendar,
-  CheckCircle,
-  Globe,
   MessageSquare,
   Search,
-  Shield,
   Smartphone,
   Store,
   TrendingUp,
   Users,
   Zap,
 } from 'lucide-react';
-
 
 import { buildServiceSeo } from '../seo';
 import type { ServicePageData } from '../types';
@@ -30,32 +25,32 @@ const smartWebsitesFaqItems = [
   {
     question: 'We already spent a lot on our current site. Do we start over?',
     answer:
-      'Not always. If the bones are solid, we wire in the enquiry handling, connect your CRM, and add follow-up. If it can\'t support that, we\'ll be upfront about it.',
+      "Not always. If the bones are solid, we wire in the enquiry handling, connect your CRM, and add follow-up. If it can't support that, we'll be upfront about it.",
   },
   {
     question: 'Do we need a specific CRM?',
     answer:
-      'No. We plug into whatever you\'re running. If you don\'t have one yet, we\'ll set up something simple your team can pick up straight away.',
+      "No. We plug into whatever you're running. If you don't have one yet, we'll set up something simple your team can pick up straight away.",
   },
   {
     question: 'Will local people actually find us on Google?',
     answer:
-      'Each service gets its own listing with titles that match what people search for. That\'s what gets Google to show your business when someone nearby needs what you do.',
+      "Each service gets its own listing with titles that match what people search for. That's what gets Google to show your business when someone nearby needs what you do.",
   },
   {
-    question: 'How much upkeep is there once it\'s running?',
+    question: "How much upkeep is there once it's running?",
     answer:
       'Day-to-day is light — updating content, checking leads. Your team gets a proper walkthrough before we hand anything over.',
   },
   {
     question: 'What exactly do we walk away with?',
     answer:
-      'Full documentation, hands-on training, and a team that can run it without us. If you want ongoing support after that, it\'s there.',
+      "Full documentation, hands-on training, and a team that can run it without us. If you want ongoing support after that, it's there.",
   },
   {
     question: 'How long does the whole thing take?',
     answer:
-      'Four to six weeks for a straightforward build. Multiple locations or complex booking connections push it closer to eight to twelve. You\'ll know the timeline upfront.',
+      "Four to six weeks for a straightforward build. Multiple locations or complex booking connections push it closer to eight to twelve. You'll know the timeline upfront.",
   },
   {
     question: 'What should we expect to pay?',
@@ -96,33 +91,29 @@ export const smartWebsiteSystemsPage = {
     badge: 'Smart Websites',
     title: 'Enquiries Arrive. Nobody Picks Them Up.',
     description:
-      'Somebody finds your business online. Ready to talk. They fill in a form. That message goes to an email nobody checks until the end of the day. They\'ve already rung someone else.',
-    list: [
-      'Lost leads',
-      'No follow-up',
-      'No tracking',
-    ],
+      "Somebody finds your business online. Ready to talk. They fill in a form. That message goes to an email nobody checks until the end of the day. They've already rung someone else.",
+    list: ['Lost leads', 'No follow-up', 'No tracking'],
   },
   sections: {
     value: {
       header: {
         title: 'What slips through every week',
         description:
-          'People reach out. Messages land in the wrong place. Your team doesn\'t see half of them.',
+          "People reach out. Messages land in the wrong place. Your team doesn't see half of them.",
       },
       items: [
         {
           icon: AlertTriangle,
           title: 'Messages pile up where nobody looks',
           description:
-            'A lead comes through on Thursday afternoon. It sits in a shared inbox over the weekend. Monday rolls around and they\'ve already hired someone else.',
+            "A lead comes through on Thursday afternoon. It sits in a shared inbox over the weekend. Monday rolls around and they've already hired someone else.",
           iconType: 'primary' as const,
         },
         {
           icon: Search,
-          title: 'People searching for one thing can\'t find it',
+          title: "People searching for one thing can't find it",
           description:
-            'All your services sit under a single heading. Someone who needs one specific thing has to sift through everything. They won\'t. They\'ll try the next business that makes it obvious.',
+            "All your services sit under a single heading. Someone who needs one specific thing has to sift through everything. They won't. They'll try the next business that makes it obvious.",
           iconType: 'primary' as const,
         },
         {
@@ -136,14 +127,14 @@ export const smartWebsiteSystemsPage = {
           icon: Zap,
           title: 'Busy days swallow new enquiries whole',
           description:
-            'Your team is mid-job. A lead arrives. Someone says they\'ll get to it. Nobody does. That person already called the next number on their list.',
+            "Your team is mid-job. A lead arrives. Someone says they'll get to it. Nobody does. That person already called the next number on their list.",
           iconType: 'primary' as const,
         },
         {
           icon: BarChart3,
-          title: 'You\'re spending money but can\'t see what works',
+          title: "You're spending money but can't see what works",
           description:
-            'Ads running in one place. Social posts in another. A directory listing somewhere. You can\'t point to which one brought in a single real enquiry last month.',
+            "Ads running in one place. Social posts in another. A directory listing somewhere. You can't point to which one brought in a single real enquiry last month.",
           iconType: 'primary' as const,
         },
         {
@@ -159,7 +150,7 @@ export const smartWebsiteSystemsPage = {
       header: {
         title: 'The difference between a site that exists and one that earns',
         description:
-          'Having something online isn\'t the bar. The question is whether anything happens after someone shows up.',
+          "Having something online isn't the bar. The question is whether anything happens after someone shows up.",
       },
       items: [
         {
@@ -170,15 +161,15 @@ export const smartWebsiteSystemsPage = {
             'Contact form feeds into an email account. Whoever remembers to check it, replies. Could be hours. Could be days.',
             'No visibility into who visited, what they looked at, or where they dropped off. Marketing spend is a guess.',
             'Enquiries live in one place. Customer details in another. When it gets busy, things get missed between the two.',
-            'Content hasn\'t been touched since launch. Outdated information. Broken links. Nobody\'s checking.',
+            "Content hasn't been touched since launch. Outdated information. Broken links. Nobody's checking.",
           ],
         },
         {
           type: 'after' as const,
-          title: 'How it runs when it\'s connected',
+          title: "How it runs when it's connected",
           items: [
             'Each service is its own clear entry. Visitors recognise what they need and act.',
-            'Enquiries arrive with name, number, and what they\'re after. The right person picks it up in minutes.',
+            "Enquiries arrive with name, number, and what they're after. The right person picks it up in minutes.",
             'You can see where people come from, what they do, and which spend brings real work.',
             'From form to CRM to follow-up — no one has to copy anything manually.',
             'Backed up. Monitored. Updated. Issues flagged before customers notice them.',
@@ -188,7 +179,7 @@ export const smartWebsiteSystemsPage = {
     },
     included: {
       header: {
-        title: 'What\'s in the build — scope and delivery',
+        title: "What's in the build — scope and delivery",
         description: 'Not a pick-and-choose list. Everything here is standard.',
       },
       items: [
@@ -213,28 +204,32 @@ export const smartWebsiteSystemsPage = {
         {
           icon: Briefcase,
           title: 'Service businesses',
-          description: 'Tradespeople, consultants, agencies — services listed individually, contact paths clear, every enquiry captured and routed.',
+          description:
+            'Tradespeople, consultants, agencies — services listed individually, contact paths clear, every enquiry captured and routed.',
           keywords: 'Listed services • Direct contact • Tracked leads',
           iconType: 'primary' as const,
         },
         {
           icon: Store,
           title: 'Online shops',
-          description: 'Products shown, checkout functioning, orders logged. Find it, buy it, done.',
+          description:
+            'Products shown, checkout functioning, orders logged. Find it, buy it, done.',
           keywords: 'Products • Checkout • Orders',
           iconType: 'primary' as const,
         },
         {
           icon: Calendar,
           title: 'Appointment-based businesses',
-          description: 'Salons, clinics, coaches — customers book a slot without calling. Reminders go out automatically. No-shows drop.',
+          description:
+            'Salons, clinics, coaches — customers book a slot without calling. Reminders go out automatically. No-shows drop.',
           keywords: 'Booking • Reminders • Availability',
           iconType: 'primary' as const,
         },
         {
           icon: Building2,
           title: 'Single-offer campaigns',
-          description: 'One service. One action. One number to track. Built for a specific offer that needs a direct outcome.',
+          description:
+            'One service. One action. One number to track. Built for a specific offer that needs a direct outcome.',
           keywords: 'Single offer • Clear action • Tracked result',
           iconType: 'primary' as const,
         },
@@ -249,7 +244,8 @@ export const smartWebsiteSystemsPage = {
       cards: [
         {
           title: 'Someone looking for one thing can find it and act',
-          description: 'They land looking for one specific service. It\'s right there. What it involves, how to reach you. No scrolling through everything else.',
+          description:
+            "They land looking for one specific service. It's right there. What it involves, how to reach you. No scrolling through everything else.",
           points: [
             'They find what they came for. Not buried under ten other things.',
             'Clear next step on every service — form, call, or booking',
@@ -269,7 +265,8 @@ export const smartWebsiteSystemsPage = {
         },
         {
           title: 'The right person on your team gets it immediately',
-          description: 'Someone reaches out. Their name, number, what they want — it hits your CRM in seconds. Nobody\'s copying between inboxes. Nobody\'s retyping into a spreadsheet.',
+          description:
+            "Someone reaches out. Their name, number, what they want — it hits your CRM in seconds. Nobody's copying between inboxes. Nobody's retyping into a spreadsheet.",
           points: [
             'Goes to the right person. Not a shared inbox nobody checks.',
             'Booking shows real availability. They pick a time without phoning.',
@@ -292,21 +289,23 @@ export const smartWebsiteSystemsPage = {
       header: {
         title: 'What changed for a real business',
         description:
-          'A veterinary clinic had a decent-looking site and regular traffic. Barely any of it converted into actual bookings. Here\'s what we found.',
+          "A veterinary clinic had a decent-looking site and regular traffic. Barely any of it converted into actual bookings. Here's what we found.",
       },
       cards: [
         {
           title: 'Before: visitors coming in, almost nothing coming out',
-          description: 'Everything on one long scroll. Contact form going to an email nobody really owned. Enquiries dying in a queue.',
+          description:
+            'Everything on one long scroll. Contact form going to an email nobody really owned. Enquiries dying in a queue.',
           points: [
-            'Vaccinations, dental, emergency — all jammed together. A pet owner looking for one thing had to wade through the rest. Most didn\'t.',
-            'The contact form went somewhere. Reception sometimes checked it. Sometimes didn\'t. Two-day response was a good week.',
+            "Vaccinations, dental, emergency — all jammed together. A pet owner looking for one thing had to wade through the rest. Most didn't.",
+            "The contact form went somewhere. Reception sometimes checked it. Sometimes didn't. Two-day response was a good week.",
             'Nobody knew how many people enquired. Or what happened after. The vet had a feeling things were slipping — but no numbers to prove it.',
           ],
         },
         {
           title: 'What changed: services separated, handling connected',
-          description: 'Vaccinations in one place. Dental in another. Emergency in its own spot. Forms going straight to the booking tool. Follow-up running on its own.',
+          description:
+            'Vaccinations in one place. Dental in another. Emergency in its own spot. Forms going straight to the booking tool. Follow-up running on its own.',
           points: [
             'Each service pulled apart — its own content, its own booking option. Pet owners land where they need to be. No hunting.',
             'Forms hit the practice management tool directly. Staff saw enquiries the second they arrived.',
@@ -316,11 +315,12 @@ export const smartWebsiteSystemsPage = {
         },
         {
           title: 'After: same traffic, completely different outcome',
-          description: 'Six weeks in, bookings picked up. Not a trickle — actual appointments from people who found what they needed.',
+          description:
+            'Six weeks in, bookings picked up. Not a trickle — actual appointments from people who found what they needed.',
           points: [
             'Went from a handful of bookings a month to over forty. Same visitors. Just — people could finally find what they were looking for.',
             'Response time collapsed. Days became minutes. Enquiries arrived with a notification, not buried in an inbox.',
-            'First time the practice could see which channels actually brought appointments in. Cut the ones that didn\'t.',
+            "First time the practice could see which channels actually brought appointments in. Cut the ones that didn't.",
           ],
         },
       ],
@@ -332,10 +332,10 @@ export const smartWebsiteSystemsPage = {
           'Not about how it looks. About what happens when every interested person can reach you — and your team knows the second they do.',
       },
       tagline: 'Get the site right. Everything after it starts working.',
-      narrativeTitle: 'Why your ads and social media aren\'t paying off yet',
+      narrativeTitle: "Why your ads and social media aren't paying off yet",
       narrativeParagraphs: [
-        'You\'re running ads. Posting on social. Listed in a couple of directories. People click through — nothing happens. Not a traffic problem. The site isn\'t catching what arrives.',
-        'When services are clear and contact is obvious, those same visitors turn into work. Follow-up runs itself. What you\'re already spending starts earning back.',
+        "You're running ads. Posting on social. Listed in a couple of directories. People click through — nothing happens. Not a traffic problem. The site isn't catching what arrives.",
+        "When services are clear and contact is obvious, those same visitors turn into work. Follow-up runs itself. What you're already spending starts earning back.",
       ],
       items: [
         {
@@ -349,14 +349,16 @@ export const smartWebsiteSystemsPage = {
         {
           icon: MessageSquare,
           title: 'Your team stops chasing and starts delivering',
-          description: 'Enquiries show up with context attached. Follow-up is handled. Your team focuses on the actual work — not on checking inboxes.',
+          description:
+            'Enquiries show up with context attached. Follow-up is handled. Your team focuses on the actual work — not on checking inboxes.',
           keywords: 'Less admin • Quicker response • Better focus',
           iconType: 'primary' as const,
         },
         {
           icon: Search,
           title: 'Search traffic has somewhere to land',
-          description: 'When what you offer is listed properly, Google can match you to people looking for it. The site becomes the thing every other channel points to.',
+          description:
+            'When what you offer is listed properly, Google can match you to people looking for it. The site becomes the thing every other channel points to.',
           keywords: 'Organic traffic • Local search • Foundation',
           iconType: 'primary' as const,
         },
@@ -385,40 +387,47 @@ export const smartWebsiteSystemsPage = {
     qualification: {
       header: {
         title: 'Is this the right fit?',
-        description: 'This solves a specific kind of problem. Here\'s how to tell if yours matches.',
+        description: "This solves a specific kind of problem. Here's how to tell if yours matches.",
       },
       strongFitTitle: 'This is a strong fit if',
-      notForTitle: 'This probably isn\'t for you if',
+      notForTitle: "This probably isn't for you if",
       strongFit: [
         {
           title: 'Traffic comes in but nothing converts',
-          description: 'People visit. Browse. Leave. Attention isn\'t the problem. Nothing on the site gives them a reason to act.',
+          description:
+            "People visit. Browse. Leave. Attention isn't the problem. Nothing on the site gives them a reason to act.",
         },
         {
           title: 'Enquiries take days to get a response',
-          description: 'Messages sit in a shared inbox nobody owns. By the time someone replies, the customer\'s moved on to whoever answered first.',
+          description:
+            "Messages sit in a shared inbox nobody owns. By the time someone replies, the customer's moved on to whoever answered first.",
         },
         {
-          title: 'You can\'t tell which marketing is working',
-          description: 'Money goes out across different channels. You\'ve no idea which one produced the last real enquiry — or if any of them did.',
+          title: "You can't tell which marketing is working",
+          description:
+            "Money goes out across different channels. You've no idea which one produced the last real enquiry — or if any of them did.",
         },
         {
-          title: 'Local people can\'t find your individual services',
-          description: 'Everything\'s bundled into one listing. Someone searching for a specific thing you do doesn\'t find you. They find whoever listed it separately.',
+          title: "Local people can't find your individual services",
+          description:
+            "Everything's bundled into one listing. Someone searching for a specific thing you do doesn't find you. They find whoever listed it separately.",
         },
       ],
       notFor: [
         {
           title: 'You need something basic with no connections',
-          description: 'If CRM, booking, and follow-up aren\'t needed, this is more than you need. A simpler build costs less and does the job.',
+          description:
+            "If CRM, booking, and follow-up aren't needed, this is more than you need. A simpler build costs less and does the job.",
         },
         {
-          title: 'Enquiries are already steady and nothing\'s slipping',
-          description: 'If your current setup brings in enough work and nothing gets missed, a rebuild won\'t shift much.',
+          title: "Enquiries are already steady and nothing's slipping",
+          description:
+            "If your current setup brings in enough work and nothing gets missed, a rebuild won't shift much.",
         },
         {
           title: 'You sell products, not services',
-          description: 'If you need checkout and inventory, our e-commerce build is a better starting point for that.',
+          description:
+            'If you need checkout and inventory, our e-commerce build is a better starting point for that.',
         },
       ],
     },
@@ -426,7 +435,8 @@ export const smartWebsiteSystemsPage = {
       header: {
         badge: 'How it works',
         title: 'From first conversation to a site pulling its weight',
-        description: 'We don\'t begin with visuals. We start with how your business runs, where enquiries fall apart, and what the site actually needs to handle.',
+        description:
+          "We don't begin with visuals. We start with how your business runs, where enquiries fall apart, and what the site actually needs to handle.",
       },
       steps: [
         {
@@ -464,13 +474,12 @@ export const smartWebsiteSystemsPage = {
     },
   },
   cta: {
-    title: 'Show me what\'s broken',
+    title: "Show me what's broken",
     description:
-      'Drop your URL. We come back with what\'s working, what\'s leaking, and what to fix.',
+      "Drop your URL. We come back with what's working, what's leaking, and what to fix.",
   },
   inlineCta: {
     title: 'Not sure what your site is costing you?',
-    description:
-      'Send the link. Where visitors drop off. What\'s missing. What would change.',
+    description: "Send the link. Where visitors drop off. What's missing. What would change.",
   },
 } satisfies ServicePageData;

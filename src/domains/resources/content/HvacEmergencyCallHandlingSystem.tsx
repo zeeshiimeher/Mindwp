@@ -1,6 +1,5 @@
 import { AlertTriangle, Clock, PhoneCall } from 'lucide-react';
 
-
 import type { ResourceData } from '../types';
 import {
   getRelatedResources,

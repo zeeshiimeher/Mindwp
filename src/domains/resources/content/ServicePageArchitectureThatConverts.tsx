@@ -1,6 +1,5 @@
 import { FileText, Layers, Search } from 'lucide-react';
 
-
 import type { ResourceData } from '../types';
 import {
   getRelatedResources,

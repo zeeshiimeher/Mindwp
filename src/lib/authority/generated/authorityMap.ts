@@ -49,7 +49,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -57,7 +57,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -95,17 +95,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'conversion-layer': {
       services: [
         {
-          title: 'Marketing Automation Setup',
-          description:
-            'Stop relying on memory for follow-up. Structured marketing automation setup covering follow-up logic, reminders, reactivation, and lifecycle messaging.',
-          slug: 'marketing-automation-setup',
-          path: '/services/marketing-automation-setup',
-          nodeType: 'service',
-        },
-        {
           title: 'Lead Reactivation System',
           description:
-            'Stop letting old enquiries, stalled quotes, and past customers sit unused. Structured reactivation that turns dormant pipeline into recovered revenue.',
+            'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
           slug: 'lead-reactivation-system',
           path: '/services/lead-reactivation-system',
           nodeType: 'service',
@@ -202,17 +194,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'lead-reactivation-system': {
       services: [
         {
-          title: 'Marketing Automation Setup',
-          description:
-            'Stop relying on memory for follow-up. Structured marketing automation setup covering follow-up logic, reminders, reactivation, and lifecycle messaging.',
-          slug: 'marketing-automation-setup',
-          path: '/services/marketing-automation-setup',
-          nodeType: 'service',
-        },
-        {
           title: 'Conversion Layer',
           description:
-            'Stop losing visitors between the page and the enquiry. Structured conversion-layer work covering offer pages, landing paths, CTA logic, and enquiry handoff.',
+            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry handoff.",
           slug: 'conversion-layer',
           path: '/services/conversion-layer',
           nodeType: 'service',
@@ -222,32 +206,12 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'local-seo-authority': {
       services: [],
     },
-    'marketing-automation-setup': {
-      services: [
-        {
-          title: 'Lead Reactivation System',
-          description:
-            'Stop letting old enquiries, stalled quotes, and past customers sit unused. Structured reactivation that turns dormant pipeline into recovered revenue.',
-          slug: 'lead-reactivation-system',
-          path: '/services/lead-reactivation-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Conversion Layer',
-          description:
-            'Stop losing visitors between the page and the enquiry. Structured conversion-layer work covering offer pages, landing paths, CTA logic, and enquiry handoff.',
-          slug: 'conversion-layer',
-          path: '/services/conversion-layer',
-          nodeType: 'service',
-        },
-      ],
-    },
     'missed-call-recovery-system': {
       services: [
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -255,7 +219,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -326,7 +290,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -334,7 +298,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -404,7 +368,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -412,7 +376,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -420,7 +384,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -448,7 +412,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Conversion Layer',
           description:
-            'Stop losing visitors between the page and the enquiry. Structured conversion-layer work covering offer pages, landing paths, CTA logic, and enquiry handoff.',
+            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry handoff.",
           slug: 'conversion-layer',
           path: '/services/conversion-layer',
           nodeType: 'service',
@@ -458,17 +422,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
     crm: {
       services: [
         {
-          title: 'Marketing Automation Setup',
-          description:
-            'Stop relying on memory for follow-up. Structured marketing automation setup covering follow-up logic, reminders, reactivation, and lifecycle messaging.',
-          slug: 'marketing-automation-setup',
-          path: '/services/marketing-automation-setup',
-          nodeType: 'service',
-        },
-        {
           title: 'Lead Reactivation System',
           description:
-            'Stop letting old enquiries, stalled quotes, and past customers sit unused. Structured reactivation that turns dormant pipeline into recovered revenue.',
+            'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
           slug: 'lead-reactivation-system',
           path: '/services/lead-reactivation-system',
           nodeType: 'service',
@@ -476,7 +432,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Conversion Layer',
           description:
-            'Stop losing visitors between the page and the enquiry. Structured conversion-layer work covering offer pages, landing paths, CTA logic, and enquiry handoff.',
+            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry handoff.",
           slug: 'conversion-layer',
           path: '/services/conversion-layer',
           nodeType: 'service',
@@ -488,7 +444,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -496,7 +452,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -504,7 +460,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -516,7 +472,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -536,7 +492,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -544,7 +500,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -552,7 +508,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -562,17 +518,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
     workflows: {
       services: [
         {
-          title: 'Marketing Automation Setup',
-          description:
-            'Stop relying on memory for follow-up. Structured marketing automation setup covering follow-up logic, reminders, reactivation, and lifecycle messaging.',
-          slug: 'marketing-automation-setup',
-          path: '/services/marketing-automation-setup',
-          nodeType: 'service',
-        },
-        {
           title: 'Lead Reactivation System',
           description:
-            'Stop letting old enquiries, stalled quotes, and past customers sit unused. Structured reactivation that turns dormant pipeline into recovered revenue.',
+            'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
           slug: 'lead-reactivation-system',
           path: '/services/lead-reactivation-system',
           nodeType: 'service',
@@ -580,7 +528,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Conversion Layer',
           description:
-            'Stop losing visitors between the page and the enquiry. Structured conversion-layer work covering offer pages, landing paths, CTA logic, and enquiry handoff.',
+            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry handoff.",
           slug: 'conversion-layer',
           path: '/services/conversion-layer',
           nodeType: 'service',
@@ -594,7 +542,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -674,7 +622,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -754,7 +702,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -762,7 +710,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -770,7 +718,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -834,7 +782,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -842,7 +790,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -850,7 +798,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -914,7 +862,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -994,7 +942,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1002,7 +950,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -1010,7 +958,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -1074,7 +1022,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1234,7 +1182,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1314,7 +1262,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1394,7 +1342,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1410,7 +1358,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -1474,7 +1422,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1554,7 +1502,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1634,7 +1582,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1642,7 +1590,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -1650,7 +1598,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -1714,7 +1662,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1722,7 +1670,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -1730,7 +1678,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -1794,7 +1742,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1874,7 +1822,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -1954,7 +1902,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2034,7 +1982,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2114,7 +2062,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -2130,7 +2078,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -2274,7 +2222,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2354,7 +2302,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2514,7 +2462,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2674,7 +2622,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2754,7 +2702,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2770,7 +2718,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -2834,7 +2782,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2914,7 +2862,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -2994,7 +2942,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -3074,7 +3022,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -7964,7 +7912,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -8002,7 +7950,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -8010,7 +7958,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -8018,7 +7966,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -8094,7 +8042,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -8560,7 +8508,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -8690,7 +8638,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -8820,7 +8768,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -8836,7 +8784,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -8874,7 +8822,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -8882,7 +8830,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -8890,7 +8838,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -8928,7 +8876,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -8966,7 +8914,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -8974,7 +8922,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -8982,7 +8930,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9020,7 +8968,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9028,7 +8976,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9036,7 +8984,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9112,7 +9060,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9120,7 +9068,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9128,7 +9076,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9166,7 +9114,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9174,7 +9122,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9182,7 +9130,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9350,7 +9298,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -9388,7 +9336,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -9426,7 +9374,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9434,7 +9382,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9442,7 +9390,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9480,7 +9428,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9488,7 +9436,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9496,7 +9444,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9534,7 +9482,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9542,7 +9490,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9550,7 +9498,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9588,7 +9536,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9596,7 +9544,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9604,7 +9552,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9642,7 +9590,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9650,7 +9598,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9688,7 +9636,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -9696,7 +9644,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9704,7 +9652,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9742,7 +9690,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -9758,7 +9706,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -9796,7 +9744,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -9834,7 +9782,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -9872,7 +9820,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -9910,7 +9858,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -9948,7 +9896,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -10024,7 +9972,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -10040,7 +9988,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -10078,7 +10026,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -10086,7 +10034,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -10094,7 +10042,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -10132,7 +10080,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -10208,7 +10156,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -10216,7 +10164,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -10224,7 +10172,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -10262,7 +10210,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Reputation & Review Systems',
           description:
-            'Turn customer satisfaction into visible trust. Automated review requests, negative feedback routing, response discipline, and reputation monitoring that builds credibility consistently.',
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
           slug: 'reputation-review-systems',
           path: '/services/reputation-review-systems',
           nodeType: 'service',
@@ -10300,7 +10248,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'AI Lead Handling Systems',
           description:
-            'Respond faster to every enquiry across chat, calls, and bookings. AI handles the first step, captures the right details, and hands off cleanly to your team.',
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
           slug: 'ai-lead-handling',
           path: '/services/ai-lead-handling',
           nodeType: 'service',
@@ -10308,7 +10256,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Missed Call Recovery System',
           description:
-            'Stop losing leads after missed calls. Immediate text-back, enquiry capture, and follow-up routing so missed calls turn into recovered opportunities.',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
           nodeType: 'service',
@@ -10316,7 +10264,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Unified Communication System',
           description:
-            'Stop losing enquiries across calls, forms, chat, and inboxes. Unified communication systems with clear routing, ownership, and follow-up for every channel.',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
           slug: 'unified-communication-system',
           path: '/services/unified-communication-system',
           nodeType: 'service',
@@ -10444,17 +10392,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'tracking-salon-client-lifetime-value': {
       services: [
         {
-          title: 'Marketing Automation Setup',
+          title: 'CRM Setup for Service Businesses',
           description:
-            'Stop relying on memory for follow-up. Structured marketing automation setup covering follow-up logic, reminders, reactivation, and lifecycle messaging.',
-          slug: 'marketing-automation-setup',
-          path: '/services/marketing-automation-setup',
+            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
         {
           title: 'Lead Reactivation System',
           description:
-            'Stop letting old enquiries, stalled quotes, and past customers sit unused. Structured reactivation that turns dormant pipeline into recovered revenue.',
+            'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
           slug: 'lead-reactivation-system',
           path: '/services/lead-reactivation-system',
           nodeType: 'service',
@@ -10462,7 +10410,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Conversion Layer',
           description:
-            'Stop losing visitors between the page and the enquiry. Structured conversion-layer work covering offer pages, landing paths, CTA logic, and enquiry handoff.',
+            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry handoff.",
           slug: 'conversion-layer',
           path: '/services/conversion-layer',
           nodeType: 'service',
@@ -11573,10 +11521,6 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionPriority: 100,
   },
   'local-seo-authority': {
-    conversionGoal: 'consultation',
-    conversionPriority: 100,
-  },
-  'marketing-automation-setup': {
     conversionGoal: 'consultation',
     conversionPriority: 100,
   },

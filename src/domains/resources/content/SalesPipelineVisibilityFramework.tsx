@@ -1,6 +1,5 @@
 import { AlertTriangle, BarChart, Eye } from 'lucide-react';
 
-
 import type { ResourceData } from '../types';
 import {
   getRelatedResources,

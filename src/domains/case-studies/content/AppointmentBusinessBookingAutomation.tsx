@@ -151,8 +151,7 @@ function buildAppointmentBusinessBookingAutomation(): CaseStudyData {
   return {
     slug: 'appointment-business-booking-automation',
     title: 'Dental Practice Booking Automation',
-    metaTitle:
-      'Dental Booking Automation | 52% Online Booking Adoption',
+    metaTitle: 'Dental Booking Automation | 52% Online Booking Adoption',
     metaDescription:
       'How a Swindon dental practice moved to 52% online booking, increased appointments by 28%, and freed 14 receptionist hours per week with automated scheduling.',
     industryCategory: 'healthcare',

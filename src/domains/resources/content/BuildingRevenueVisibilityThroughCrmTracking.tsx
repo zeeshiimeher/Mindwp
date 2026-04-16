@@ -1,6 +1,5 @@
 import { BarChart3, DollarSign, Eye } from 'lucide-react';
 
-
 import type { ResourceData } from '../types';
 import {
   getRelatedResources,

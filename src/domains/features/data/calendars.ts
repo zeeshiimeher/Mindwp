@@ -1,6 +1,5 @@
 import { Calendar, Clock, Inbox, MessageSquare, Settings, Users } from 'lucide-react';
 
-
 import { buildFeatureSeo } from '../seo';
 import type { FeaturePageData } from '../types';
 

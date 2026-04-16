@@ -126,8 +126,7 @@ Service pages are the top execution domain in planning, and these pages also sit
 4. Booking Scheduling System
 5. Conversion Funnel System
 6. Local SEO Authority
-7. Marketing Automation Setup
-8. WordPress Development
+7. WordPress Development
 
 These are tier 1 because they are both commercially central and structurally representative of the main service-system story: attract demand, capture response, route work, follow up, and support delivery.
 
@@ -365,32 +364,7 @@ Why keep:
 
 ---
 
-## 7. Marketing Automation Setup
-
-### Current Components
-`ServiceHeroSection` -> `ProblemCardsSection` -> `SectionWrapper` with `WorkflowStepCard` grid -> `SectionWrapper` with `AuditChecklistCard` grid -> `SectionWrapper` with `CenteredFeatureCard` grid -> `ProcessStepsSection` -> `ComparisonSection` -> `ServiceSpectrumCardsSection` -> `SmartCTA` -> `DualToneChecklistComparisonSection` -> `FAQSection`
-
-### Content Check
-Problem framing -> scenario-response -> governance guidance -> capability scope -> process -> comparison -> proof -> qualification
-
-### Mapping Decision
-Keep the current mapping.
-
-Reason: the page is semantically correct now and does not justify a structural replacement beyond a proof-specific rewrite.
-
-Why keep:
-
-- `automationExamples` is scenario-response, not process
-- `governanceAreas` is control-layer audit content, not proof
-- `automationLayers` is parallel capability scope, not narrative flow
-- `processSection` is setup methodology, not scenario-response
-
-### Upgrade Direction
-No current replacement recommended.
-
----
-
-## 8. WordPress Development
+## 7. WordPress Development
 
 ### Current Components
 `ServiceHeroSection` -> `ProblemCardsSection` -> `ServiceSpectrumCardsSection` -> `StackedFeatureListSection` -> `ProcessStepsSection` -> `FeatureChecklistCardsSection` -> `ComparisonSection` -> `ServiceSpectrumCardsSection` -> `SmartCTA` -> `DualToneChecklistComparisonSection` -> `FAQSection`

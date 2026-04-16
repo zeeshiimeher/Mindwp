@@ -8,7 +8,6 @@ import { divi5Page } from '@/domains/services/data/divi5';
 import { elementorPage } from '@/domains/services/data/elementor';
 import { leadReactivationSystemPage } from '@/domains/services/data/lead-reactivation-system';
 import { localSeoAuthorityPage } from '@/domains/services/data/local-seo-authority';
-import { marketingAutomationSetupPage } from '@/domains/services/data/marketing-automation-setup';
 import { missedCallRecoverySystemPage } from '@/domains/services/data/missed-call-recovery-system';
 import { reputationReviewSystemsPage } from '@/domains/services/data/reputation-review-systems';
 import { smartWebsiteSystemsPage } from '@/domains/services/data/smart-website-systems';
@@ -25,7 +24,6 @@ import { Divi5Renderer } from '@/domains/services/renderers/Divi5Renderer';
 import { ElementorRenderer } from '@/domains/services/renderers/ElementorRenderer';
 import { LeadReactivationSystemRenderer } from '@/domains/services/renderers/LeadReactivationSystemRenderer';
 import { LocalSeoAuthorityRenderer } from '@/domains/services/renderers/LocalSeoAuthorityRenderer';
-import { MarketingAutomationSetupRenderer } from '@/domains/services/renderers/MarketingAutomationSetupRenderer';
 import { MissedCallRecoverySystemRenderer } from '@/domains/services/renderers/MissedCallRecoverySystemRenderer';
 import { ReputationReviewSystemsRenderer } from '@/domains/services/renderers/ReputationReviewSystemsRenderer';
 import SmartWebsiteSystemsRenderer from '@/domains/services/renderers/SmartWebsiteSystemsRenderer';
@@ -56,9 +54,6 @@ export const SERVICE_ENTRY_BY_SLUG = {
     systemMigrationPlatformConsolidationPage,
     (data, slug) => <SystemMigrationPlatformConsolidationRenderer data={data} slug={slug} />
   ),
-  'marketing-automation-setup': createServiceEntry(marketingAutomationSetupPage, (data, slug) => (
-    <MarketingAutomationSetupRenderer data={data} slug={slug} />
-  )),
   'website-redesign-system-rebuild': createServiceEntry(
     websiteRedesignSystemRebuildPage,
     (data, slug) => <WebsiteRedesignSystemRebuildRenderer data={data} slug={slug} />
@@ -133,10 +128,6 @@ export const renderServicePageBySlug = (slug: ServiceSlug): ReactElement => {
     }
     case 'system-migration-platform-consolidation': {
       const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['system-migration-platform-consolidation'];
-      return entry.render(entry.data, slug);
-    }
-    case 'marketing-automation-setup': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['marketing-automation-setup'];
       return entry.render(entry.data, slug);
     }
     case 'website-redesign-system-rebuild': {
