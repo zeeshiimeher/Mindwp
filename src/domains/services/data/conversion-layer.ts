@@ -33,10 +33,10 @@ export const conversionLayerPage = {
     slug,
     title: 'Conversion Layer for Service Businesses | MindWP',
     description:
-      "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry handoff.",
+      "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
     schemaName: 'Conversion layer for service businesses',
     schemaDescription:
-      'Conversion-layer work covering offer clarity, decision-path structure, CTA alignment, and enquiry handoff for service businesses losing visitors between interest and action.',
+      'Conversion-layer work covering offer clarity, decision-path structure, CTA alignment, and enquiry follow-up for service businesses losing visitors between interest and action.',
   }),
   hero: {
     badge: 'Conversion Layer',
@@ -57,12 +57,14 @@ export const conversionLayerPage = {
         {
           before:
             "Traffic lands. Ten seconds in, the visitor still can't tell what you do or why it matters to them.",
-          after: "What's relevant, why, and what to do next \u2014 obvious from the first scroll.",
+          after:
+            "What's relevant, why it matters, and what to do next becomes obvious from the first scroll instead of being buried halfway down the page.",
         },
         {
           before:
             "Too many messages and CTAs crammed into one place. Nobody knows what's for them.",
-          after: 'One path. One offer. Easier.',
+          after:
+            'One path, one offer, and one clear next step make it easier for the visitor to understand where they fit and act without hesitating.',
         },
         {
           before:
@@ -98,7 +100,7 @@ export const conversionLayerPage = {
         },
         {
           icon: Workflow,
-          badge: 'Dead end after the form',
+          badge: 'Momentum dies after the form',
           title: 'They enquired. Then silence.',
           description:
             "Form went through. No confirmation. No timeline. Nothing. They're wondering if it even worked.",
@@ -119,7 +121,7 @@ export const conversionLayerPage = {
         {
           metric: 'Offer clarity',
           before: 'Mixed',
-          after: 'Focused',
+          after: 'Clear in the first screen',
           improvement: 'Clearer first impression',
           description:
             'Visitors understand the value faster instead of piecing the offer together themselves.',
@@ -127,18 +129,18 @@ export const conversionLayerPage = {
         {
           metric: 'Decision path',
           before: 'Fragmented',
-          after: 'Sequential',
+          after: 'Visitor can follow the next step',
           improvement: 'Less hesitation',
           description:
-            'The page gives a more natural order for understanding, trusting, and acting.',
+            'The page moves from relevance to proof to action without forcing the visitor to guess what comes next.',
         },
         {
           metric: 'Next-step continuity',
           before: 'Weak',
-          after: 'Connected',
+          after: 'Response path stays visible',
           improvement: 'Fewer drop-offs',
           description:
-            'Handoff from visit to enquiry to next response becomes easier to follow and measure.',
+            'The move from visit to enquiry to follow-up stays visible and measurable instead of ending at the form submit.',
         },
       ],
     },
@@ -146,7 +148,7 @@ export const conversionLayerPage = {
       badge: 'How the work runs',
       title: 'Four steps. Each one builds on the last.',
       description:
-        'Every business is different, but the sequence stays the same. Diagnose first, fix next, connect the handoff, then measure.',
+        'Every business is different, but the sequence stays the same. Diagnose first, fix next, connect the follow-up path, then measure.',
       steps: [
         {
           number: '1',
@@ -255,7 +257,7 @@ export const conversionLayerPage = {
         {
           title: 'The bigger leak is after contact',
           description:
-            'If the main loss happens after someone reaches out — missed calls, slow replies, no routing — fixing the page just sends more people into a broken handoff.',
+            'If the main loss happens after someone reaches out — missed calls, slow replies, no routing — fixing the page just sends more people into a broken follow-up path.',
         },
       ],
     },
@@ -273,7 +275,7 @@ export const conversionLayerPage = {
         {
           question: 'Can this connect to CRM or booking tools?',
           answer:
-            'Yes. Conversion work becomes more useful when the enquiry handoff feeds into CRM, booking, or a follow-up sequence instead of stopping at the form.',
+            'Yes. Conversion work becomes more useful when the enquiry follow-up feeds into CRM, booking, or a follow-up sequence instead of stopping at the form.',
         },
         {
           question: 'Is this mainly for paid traffic?',
@@ -312,7 +314,7 @@ export const conversionLayerPage = {
           items: [
             'Page follows a clear sequence: relevance, proof, action. The visitor knows what to do without figuring it out.',
             'Each page focuses on one offer with one clear next step. Decision friction drops.',
-            'Enquiry handoff connects into booking, CRM, or follow-up. What happens after the form is defined.',
+            'Enquiry follow-up connects into booking, CRM, or follow-up. What happens after the form is defined.',
             'Drop-off points visible at each stage. You know exactly where to improve next.',
           ],
         },

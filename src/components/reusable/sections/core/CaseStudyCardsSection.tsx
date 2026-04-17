@@ -37,9 +37,9 @@ export function CaseStudyCardsSection({
         </div>
 
         <CardGrid columns={1} gap={8} mode='controlled' className='md:l-grid-2 lg:l-grid-3'>
-          {studies.map(study => (
+          {studies.map((study, index) => (
             <CaseStudyCard
-              key={study.slug}
+              key={`${study.slug || study.client || 'case-study'}-${index}`}
               variant='compact'
               slug={study.slug}
               industry={study.industry}

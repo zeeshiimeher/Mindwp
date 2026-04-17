@@ -1,11 +1,26 @@
+"use client";
+import { useEffect, useId } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import type { ReactNode } from 'react';
-
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Button, type ButtonProps } from '@/components/reusable/single/Button';
+import { useCTARegistry, usePageIdentity } from '@/components/system/PageEnforcement';
 import { cn } from '@/components/ui/utils';
-import { type CtaTone, DEFAULT_CTA_LABEL, inferIntent, resolveCtaLabel } from '@/config/ctaLabels';
+import { type CtaTone, DEFAULT_CTA_LABEL, resolveCtaLabel } from '@/config/ctaLabels';
+import {
+  createCTARegistry,
+  registerCTA,
+  reportCTAError,
+  unregisterCTA,
+} from '@/lib/cta/ctaRegistry';
 import { buildContactHref, type ContactSourceType } from '@/lib/contact/contactHref';
+import {
+  type CTAIntent,
+  type CTAPosition,
+  type PageType,
+  buildPageId,
+  toContactSourceType,
+} from '@/lib/page/pageIdentity';
 
 const BLOCK = 'cta-section';
 const ALLOW_SECONDARY_BY_PAGE_TYPE: Record<ContactSourceType, boolean> = {
@@ -63,8 +78,11 @@ function isActionableButton(action?: ButtonProps): boolean {
 
 export interface SmartCTAProps {
   system: string;
-  pageType: ContactSourceType;
   slug: string;
+  pageId?: string;
+  pageType?: PageType;
+  intent?: CTAIntent;
+  position?: CTAPosition;
   mode?: 'full' | 'actions-only';
   backgroundColor?: string;
   cssPrefix?: string;
@@ -88,8 +106,11 @@ export interface SmartCTAProps {
 
 export function SmartCTA({
   system,
-  pageType,
   slug,
+  pageId,
+  pageType: pageTypeProp,
+  intent,
+  position,
   mode = 'full',
   backgroundColor = '',
   cssPrefix = '',
@@ -106,21 +127,64 @@ export function SmartCTA({
   wrapper = 'section',
   includeContainer = true,
 }: SmartCTAProps) {
+  const instanceId = useId();
+  const pageIdentity = usePageIdentity();
+  const activeRegistry = useCTARegistry();
   const resolvedSystem = system ?? 'smart-website-systems';
   const resolvedTitle = title ?? DEFAULT_CTA_LABEL;
+  const resolvedPageType = pageTypeProp ?? pageIdentity?.pageType;
+  const resolvedPageId =
+    pageId ?? pageIdentity?.pageId ?? (resolvedPageType ? buildPageId(resolvedPageType, slug) : undefined);
+  const resolvedIntent = intent ?? (mode === 'actions-only' ? 'entry' : 'conversion');
+  const resolvedPosition = position ?? (mode === 'actions-only' ? 'hero' : 'footer');
 
-  if (!resolvedSystem || !pageType || !slug) {
-    throw new Error('SmartCTA requires system, pageType, and slug');
+  if (!resolvedSystem || !resolvedPageId || !resolvedPageType || !slug) {
+    throw new Error(
+      'SmartCTA requires system, slug, page identity, CTA intent, and CTA position.'
+    );
+  }
+
+  if (
+    pageIdentity &&
+    ((pageId && pageId !== pageIdentity.pageId) ||
+      (pageTypeProp && pageTypeProp !== pageIdentity.pageType))
+  ) {
+    throw new Error('SmartCTA page identity props must match the active CTARegistryProvider.');
+  }
+
+  const pageTypeForHref: ContactSourceType = toContactSourceType(resolvedPageType);
+  const pageType = pageTypeForHref;
+  const registry =
+    activeRegistry ?? createCTARegistry({ pageId: resolvedPageId, pageType: resolvedPageType });
+
+  useEffect(() => {
+    return () => {
+      unregisterCTA(registry, instanceId);
+    };
+  }, [instanceId, registry]);
+
+  try {
+    registerCTA(registry, {
+      instanceId,
+      pageId: resolvedPageId,
+      pageType: resolvedPageType,
+      intent: resolvedIntent,
+      position: resolvedPosition,
+    });
+  } catch (error) {
+    const handledError = error instanceof Error ? error : new Error('CTA registration failed.');
+    reportCTAError(handledError);
+    return null;
   }
 
   const label = resolveCtaLabel({
     system: resolvedSystem,
-    pageType,
-    intent: inferIntent(pageType),
+    pageType: resolvedPageType,
+    intent: resolvedIntent,
     tone,
   });
-  const allowSecondary = ALLOW_SECONDARY_BY_PAGE_TYPE[pageType];
-  const secondaryConfig = allowSecondary ? SECONDARY_CTA_MAP[pageType] : undefined;
+  const allowSecondary = ALLOW_SECONDARY_BY_PAGE_TYPE[pageTypeForHref];
+  const secondaryConfig = allowSecondary ? SECONDARY_CTA_MAP[pageTypeForHref] : undefined;
 
   const primaryAction: ButtonProps = {
     variant: primaryActionVariant,

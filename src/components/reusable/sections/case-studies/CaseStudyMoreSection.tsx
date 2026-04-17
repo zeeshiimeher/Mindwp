@@ -29,9 +29,9 @@ export function CaseStudyMoreSection({ studies }: CaseStudyMoreSectionProps) {
 
       {studies.length > 0 && (
         <div className='c-case-study-cards-section__grid case-study-more-section__grid'>
-          {studies.map(study => (
+          {studies.map((study, index) => (
             <CaseStudyCard
-              key={study.slug}
+              key={`${study.slug || study.business || 'case-study'}-${index}`}
               variant='compact'
               slug={study.slug}
               industry={study.industryLabel}

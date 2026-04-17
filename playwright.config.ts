@@ -1,5 +1,8 @@
 import { defineConfig } from '@playwright/test';
 
+const playwrightPort = Number(process.env.PLAYWRIGHT_PORT ?? 3001);
+const playwrightBaseUrl = `http://localhost:${playwrightPort}`;
+
 export default defineConfig({
   testDir: './tests',
   timeout: 60_000,
@@ -9,7 +12,7 @@ export default defineConfig({
   retries: process.env.CI ? 2 : 0,
   reporter: 'list',
   use: {
-    baseURL: 'http://localhost:3001',
+    baseURL: playwrightBaseUrl,
     trace: 'retain-on-failure',
     headless: true,
   },
@@ -23,8 +26,8 @@ export default defineConfig({
   ],
   webServer: {
     command:
-      'node scripts/runners/run-next.mjs build && node scripts/runners/run-next.mjs --filter start -- -p 3001',
-    port: 3001,
+      `node scripts/runners/run-next.mjs build && node scripts/runners/run-next.mjs --filter start -- -p ${playwrightPort}`,
+    port: playwrightPort,
     reuseExistingServer: false,
     timeout: 120_000,
   },

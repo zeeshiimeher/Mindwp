@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { ImageAccordionStripSection } from '@/components/reusable/sections/core/ImageAccordionStripSection';
+import { ServiceSpectrumCardsSection } from '@/components/reusable/sections/core/ServiceSpectrumCardsSection';
 import {
   IndustryCaseStudiesSection,
   IndustryChallengesSection,
   IndustryComparisonSection,
-  IndustryFAQSection,
   IndustryHeroSection,
   IndustryOperatingPatternsSection,
   IndustryPackagesSection,
@@ -14,13 +14,11 @@ import {
   IndustryWorkflowExamplesSection,
 } from '@/components/reusable/sections/industries';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
+import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
-import {
-  resolveIndustryDetailExplore,
-  resolveIndustryPathwaySection,
-} from '@/lib/cta/industryPresentation';
+import { resolveIndustryPathwaySection } from '@/lib/cta/industryPresentation';
 
-import { IndustryExploreSection } from '../components/IndustryExploreSection';
+import type { IndustryExploreSectionProps } from '../components/IndustryExploreSection';
 
 export type IndustryDetailPageTemplateProps = {
   slug: string;
@@ -38,9 +36,9 @@ export type IndustryDetailPageTemplateProps = {
   workflowExamples?: React.ComponentProps<typeof IndustryWorkflowExamplesSection>;
 
   caseStudies?: React.ComponentProps<typeof IndustryCaseStudiesSection>;
-  explore?: Omit<React.ComponentProps<typeof IndustryExploreSection>, 'title'>;
+  explore?: Omit<IndustryExploreSectionProps, 'title'>;
 
-  faq: React.ComponentProps<typeof IndustryFAQSection>;
+  faq: React.ComponentProps<typeof FAQSection>;
   cta: Pick<
     SmartCTAProps,
     | 'title'
@@ -70,15 +68,34 @@ export function IndustryDetailPageTemplate({
   pathways,
   workflowExamples,
   caseStudies: _caseStudies,
-  explore,
+  explore: _explore,
   faq,
   cta,
 }: IndustryDetailPageTemplateProps) {
   const challengeSection = operatingPatterns ?? challenges;
   const solutionSection = systemLayers ?? solutions;
   const pathwaySection = pathways ?? packages;
-  const resolvedPathwaySection = resolveIndustryPathwaySection(pathwaySection, system, slug);
-  const resolvedExplore = resolveIndustryDetailExplore(explore);
+  const resolvedPathwaySection = resolveIndustryPathwaySection(
+    pathwaySection,
+    system,
+    slug,
+    'industry-detail'
+  );
+  const resolvedDetailJourneySection = resolvedPathwaySection
+    ? {
+        badge: resolvedPathwaySection.badge,
+        title: resolvedPathwaySection.title ?? '',
+        description: resolvedPathwaySection.description,
+        backgroundColor: resolvedPathwaySection.backgroundColor,
+        cssPrefix: resolvedPathwaySection.cssPrefix,
+        cards: resolvedPathwaySection.packages.map(pkg => ({
+          title: pkg.name,
+          description: `${pkg.price} — ${pkg.description}`,
+          points: pkg.priceDetail ? [pkg.priceDetail, ...pkg.features] : pkg.features,
+          featured: pkg.popular,
+        })),
+      }
+    : undefined;
 
   return (
     <>
@@ -88,7 +105,7 @@ export function IndustryDetailPageTemplate({
             {...hero}
             smartCta={{
               system,
-              pageType: 'industry',
+              pageType: 'industry-detail',
               slug,
               primaryActionVariant: 'primary',
             }}
@@ -99,16 +116,15 @@ export function IndustryDetailPageTemplate({
           {challengeSection && <IndustryOperatingPatternsSection {...challengeSection} />}
 
           {comparison && <IndustryComparisonSection {...comparison} />}
-          {resolvedPathwaySection && <IndustryPathwaysSection {...resolvedPathwaySection} />}
+          {resolvedDetailJourneySection && (
+            <ServiceSpectrumCardsSection {...resolvedDetailJourneySection} />
+          )}
           {workflowExamples && <IndustryWorkflowExamplesSection {...workflowExamples} />}
           {solutionSection && <IndustrySolutionsSection {...solutionSection} />}
-          {resolvedExplore && (
-            <IndustryExploreSection title='Relevant Modules' {...resolvedExplore} />
-          )}
-          <IndustryFAQSection {...faq} />
+          <FAQSection {...faq} />
           <SmartCTA
             system={system}
-            pageType='industry'
+            pageType='industry-detail'
             slug={slug}
             title={cta.title}
             description={cta.description}

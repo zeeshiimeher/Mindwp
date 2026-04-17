@@ -1,5 +1,7 @@
 import type { ComponentType } from 'react';
 
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { aiChatData } from '@/domains/features/data/aichat';
 import { calendarsData } from '@/domains/features/data/calendars';
 import { crmData } from '@/domains/features/data/crm';
@@ -52,7 +54,13 @@ export const getFeaturePageBySlug = (slug: FeatureSlug) => {
 
 export const renderFeaturePageBySlug = (slug: FeatureSlug) => {
   const FeaturePage = getFeaturePageBySlug(slug);
-  return <FeaturePage />;
+
+  return (
+    <CTARegistryProvider pageId={`feature:${slug}`} pageType='feature'>
+      <FeaturePage />
+      <SmartRelatedSection slug={slug} />
+    </CTARegistryProvider>
+  );
 };
 
 export const getFeatureConfigEntries = () =>

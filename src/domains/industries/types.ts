@@ -7,7 +7,6 @@ import {
   IndustryChallengesSection,
   IndustryChecklistSection,
   IndustryComparisonSection,
-  IndustryFAQSection,
   IndustryHeroSection,
   IndustryOperatingPatternsSection,
   IndustryPackagesSection,
@@ -18,6 +17,7 @@ import {
   IndustrySpectrumSection,
   IndustryWorkflowExamplesSection,
 } from '@/components/reusable/sections/industries';
+import type { FAQSection } from '@/components/reusable/single/FAQSection';
 import type { SmartCTAProps } from '@/components/system/SmartCTA';
 import type { IndustryCategory } from '@/domains/industries/catalog';
 import type { IndustryExploreSection } from '@/domains/industries/components/IndustryExploreSection';
@@ -37,7 +37,7 @@ type IndustryImageStripProps = ComponentProps<typeof ImageAccordionStripSection>
 type IndustryDetailRoutesProps = ComponentProps<typeof RelatedCardsSection>;
 type IndustryExploreProps = Omit<ComponentProps<typeof IndustryExploreSection>, 'title'>;
 type IndustryCaseStudiesProps = ComponentProps<typeof IndustryCaseStudiesSection>;
-type IndustryFaqProps = ComponentProps<typeof IndustryFAQSection>;
+type IndustryFaqProps = ComponentProps<typeof FAQSection>;
 type IndustryCtaProps = Pick<
   SmartCTAProps,
   | 'title'

@@ -4,6 +4,7 @@ import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
 import { FEATURE_REGISTRY } from '@/domains/features/registry';
@@ -28,7 +29,8 @@ export function FeaturesLanding() {
           </div>
         }
       >
-        <main>
+        <CTARegistryProvider pageId='page:features' pageType='page'>
+          <main>
           {/* Hero Section */}
           <SectionWrapper
             className='feature-lnd feature-lnd__hero'
@@ -38,18 +40,18 @@ export function FeaturesLanding() {
               <Badge variant='secondary' context='section'>
                 Features Index
               </Badge>
-              <h1>Platform Features Overview</h1>
+              <h1>Feature Layers That Support The Main Build</h1>
               <p className='text-muted-foreground text-lg'>
-                This page lists all core features available in your platform. Each feature is a
-                distinct capability, organized for visibility and control. Use this index to
-                navigate and review every function included in your system.
+                These feature pages break down the capability layers that support routing,
+                communication, booking, reputation, CRM visibility, and follow-up once the core
+                website system is in place.
               </p>
             </div>
           </SectionWrapper>
 
           {/* All Features Grid */}
           <SectionWrapper className='feature-lnd feature-lnd__gridSec' background='bg-white'>
-            <div className='feature-lnd__grid l-grid l-gap-6 md:l-grid-2 lg:l-grid-3 xl:l-grid-4'>
+            <div className='feature-lnd__grid l-grid l-gap-6 md:l-grid-2 lg:l-grid-3'>
               {features.map(feature => {
                 const Icon = feature.icon;
                 return (
@@ -85,13 +87,16 @@ export function FeaturesLanding() {
             system='smart-website-systems'
             pageType='page'
             slug='features'
-            title='Not sure which part of the system you need?'
-            description='Tell us what is not working. We will point you to the right service and explain what it covers.'
+            intent='conversion'
+            position='footer'
+            title='Need help matching the right feature to the real problem?'
+            description='Tell us where the friction is showing up today, and we will point you to the feature layer that supports the wider system instead of sending you through the wrong page.'
             primaryActionVariant='white'
             cssPrefix='footer-cta'
             backgroundColor='bg-gradient-primary'
           />
-        </main>
+          </main>
+        </CTARegistryProvider>
       </ErrorBoundary>
     </div>
   );

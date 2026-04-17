@@ -193,6 +193,8 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
             system={data.systems?.[0] ?? 'smart-website-systems'}
             slug={slug}
             pageType='service'
+            intent='diagnostic'
+            position='mid'
             title={inlineCtaTitle}
             description={inlineCtaDescription}
             primaryActionVariant='primary'
@@ -241,6 +243,8 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
             system={data.systems?.[0] ?? 'smart-website-systems'}
             slug={slug}
             pageType='service'
+            intent='conversion'
+            position='footer'
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

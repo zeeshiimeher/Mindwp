@@ -75,9 +75,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & System Rebuild',
+          title: 'Website Redesign',
           description:
-            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -85,7 +85,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -118,9 +118,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & System Rebuild',
+          title: 'Website Redesign',
           description:
-            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -128,7 +128,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -146,9 +146,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & System Rebuild',
+          title: 'Website Redesign',
           description:
-            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -156,7 +156,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -174,9 +174,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & System Rebuild',
+          title: 'Website Redesign',
           description:
-            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -184,7 +184,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -196,7 +196,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Conversion Layer',
           description:
-            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry handoff.",
+            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
           slug: 'conversion-layer',
           path: '/services/conversion-layer',
           nodeType: 'service',
@@ -232,17 +232,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'smart-website-systems': {
       services: [
         {
-          title: 'WordPress Website Development',
+          title: 'WordPress Development',
           description:
-            'WordPress website development built around how the business works. Clear service architecture, proper enquiry flow, and a foundation that stays manageable after launch.',
+            "A properly built WordPress site is a good start. But the build alone doesn't bring in work. What matters is what happens when someone visits and tries to get in touch.",
           slug: 'wordpress-development',
           path: '/services/wordpress-development',
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & System Rebuild',
+          title: 'Website Redesign',
           description:
-            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -250,7 +250,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -268,17 +268,17 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'WordPress Website Development',
+          title: 'WordPress Development',
           description:
-            'WordPress website development built around how the business works. Clear service architecture, proper enquiry flow, and a foundation that stays manageable after launch.',
+            "A properly built WordPress site is a good start. But the build alone doesn't bring in work. What matters is what happens when someone visits and tries to get in touch.",
           slug: 'wordpress-development',
           path: '/services/wordpress-development',
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & System Rebuild',
+          title: 'Website Redesign',
           description:
-            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -316,9 +316,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'WordPress Website Development',
+          title: 'WordPress Development',
           description:
-            'WordPress website development built around how the business works. Clear service architecture, proper enquiry flow, and a foundation that stays manageable after launch.',
+            "A properly built WordPress site is a good start. But the build alone doesn't bring in work. What matters is what happens when someone visits and tries to get in touch.",
           slug: 'wordpress-development',
           path: '/services/wordpress-development',
           nodeType: 'service',
@@ -326,7 +326,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -344,9 +344,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & System Rebuild',
+          title: 'Website Redesign',
           description:
-            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -354,7 +354,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -404,7 +404,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -412,7 +412,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Conversion Layer',
           description:
-            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry handoff.",
+            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
           slug: 'conversion-layer',
           path: '/services/conversion-layer',
           nodeType: 'service',
@@ -432,7 +432,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Conversion Layer',
           description:
-            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry handoff.",
+            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
           slug: 'conversion-layer',
           path: '/services/conversion-layer',
           nodeType: 'service',
@@ -528,7 +528,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Conversion Layer',
           description:
-            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry handoff.",
+            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
           slug: 'conversion-layer',
           path: '/services/conversion-layer',
           nodeType: 'service',
@@ -558,7 +558,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -638,7 +638,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -878,7 +878,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -1038,7 +1038,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -1110,7 +1110,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -1118,7 +1118,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -1198,7 +1198,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -1278,7 +1278,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -1438,7 +1438,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -1518,7 +1518,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -1838,7 +1838,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -1918,7 +1918,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -1998,7 +1998,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -2150,7 +2150,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -2158,7 +2158,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -2238,7 +2238,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -2318,7 +2318,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -2390,7 +2390,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -2398,7 +2398,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -2478,7 +2478,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -2550,7 +2550,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -2638,7 +2638,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -2798,7 +2798,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -2878,7 +2878,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -2958,7 +2958,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -3038,7 +3038,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -7904,7 +7904,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -8004,7 +8004,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8080,7 +8080,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8124,9 +8124,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & System Rebuild',
+          title: 'Website Redesign',
           description:
-            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -8134,7 +8134,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -8172,7 +8172,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8210,7 +8210,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8254,9 +8254,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & System Rebuild',
+          title: 'Website Redesign',
           description:
-            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -8264,7 +8264,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -8308,9 +8308,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & System Rebuild',
+          title: 'Website Redesign',
           description:
-            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -8318,7 +8318,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -8356,7 +8356,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8394,7 +8394,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8432,7 +8432,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8470,7 +8470,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8552,9 +8552,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & System Rebuild',
+          title: 'Website Redesign',
           description:
-            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -8562,7 +8562,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -8682,9 +8682,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & System Rebuild',
+          title: 'Website Redesign',
           description:
-            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -8692,7 +8692,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -8730,7 +8730,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -8776,7 +8776,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -9022,7 +9022,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -9214,7 +9214,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -9698,7 +9698,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -9934,7 +9934,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -9980,7 +9980,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -10118,7 +10118,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -10308,9 +10308,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign & System Rebuild',
+          title: 'Website Redesign',
           description:
-            'When the website no longer matches the business, a visual refresh is not enough. Structural redesign and system rebuild for service businesses.',
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
           slug: 'website-redesign-system-rebuild',
           path: '/services/website-redesign-system-rebuild',
           nodeType: 'service',
@@ -10318,7 +10318,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',
@@ -10356,7 +10356,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -10394,7 +10394,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -10410,7 +10410,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'Conversion Layer',
           description:
-            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry handoff.",
+            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
           slug: 'conversion-layer',
           path: '/services/conversion-layer',
           nodeType: 'service',
@@ -10448,7 +10448,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'CRM Setup for Service Businesses',
           description:
-            'Stop losing leads to disorganisation. We set up your CRM so every enquiry is tracked, follow-up happens on time, and your team can see where every opportunity stands.',
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
@@ -10492,9 +10492,9 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'WordPress Website Development',
+          title: 'WordPress Development',
           description:
-            'WordPress website development built around how the business works. Clear service architecture, proper enquiry flow, and a foundation that stays manageable after launch.',
+            "A properly built WordPress site is a good start. But the build alone doesn't bring in work. What matters is what happens when someone visits and tries to get in touch.",
           slug: 'wordpress-development',
           path: '/services/wordpress-development',
           nodeType: 'service',
@@ -10502,7 +10502,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
         {
           title: 'System Migration & Platform Consolidation',
           description:
-            'Move away from fragmented tools, outdated platforms, and disconnected systems. We consolidate your website foundation so it is easier to manage, maintain, and grow.',
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
           slug: 'system-migration-platform-consolidation',
           path: '/services/system-migration-platform-consolidation',
           nodeType: 'service',

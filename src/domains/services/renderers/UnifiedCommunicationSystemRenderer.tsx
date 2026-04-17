@@ -186,6 +186,17 @@ export function UnifiedCommunicationSystemRenderer({
             </div>
           </SectionWrapper>
 
+          <SmartCTA
+            system={data.systems?.[0] ?? 'smart-website-systems'}
+            slug={slug}
+            pageType='service'
+            intent='comparison'
+            position='mid'
+            title={inlineCtaTitle}
+            description={inlineCtaDescription}
+            primaryActionVariant='primary'
+          />
+
           {comparison && (
             <ComparisonSection
               title={comparison.header.title}
@@ -203,15 +214,6 @@ export function UnifiedCommunicationSystemRenderer({
               cssPrefix='unified-communication-proof'
             />
           )}
-
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
-            title={inlineCtaTitle}
-            description={inlineCtaDescription}
-            primaryActionVariant='primary'
-          />
 
           <DualToneChecklistComparisonSection
             title={qualification.title}
@@ -240,6 +242,8 @@ export function UnifiedCommunicationSystemRenderer({
             system={data.systems?.[0] ?? 'smart-website-systems'}
             slug={slug}
             pageType='service'
+            intent='conversion'
+            position='footer'
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

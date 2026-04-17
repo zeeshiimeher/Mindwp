@@ -33,6 +33,8 @@ export function BlogFooterCTA({
           system={system}
           pageType='blog'
           slug={slug}
+          intent='conversion'
+          position='footer'
           primaryActionVariant='white'
           mode='actions-only'
         />

@@ -2,10 +2,13 @@ import { Check } from 'lucide-react';
 
 import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
+import { Button } from '@/components/reusable/single/Button';
 import { Card } from '@/components/reusable/single/Card';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
-import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
+import type { SmartCTAProps } from '@/components/system/SmartCTA';
 import { cn } from '@/components/ui/utils';
+import { buildContactHref } from '@/lib/contact/contactHref';
+import { toContactSourceType } from '@/lib/page/pageIdentity';
 
 const BLOCK = 'c-tier-cards-section';
 
@@ -26,9 +29,28 @@ export interface TierCardsSectionProps {
   title?: string;
   description?: string;
   packages: PackageItem[];
-  smartCta?: Pick<SmartCTAProps, 'system' | 'pageType' | 'slug'>;
+  smartCta?: {
+    system: NonNullable<SmartCTAProps['system']>;
+    pageType: NonNullable<SmartCTAProps['pageType']>;
+    slug: NonNullable<SmartCTAProps['slug']>;
+  };
   cssPrefix?: string;
   backgroundColor?: string;
+}
+
+function buildPackageHref(
+  smartCta: NonNullable<TierCardsSectionProps['smartCta']>,
+  pkg: PackageItem
+) {
+  if (pkg.buttonHref) {
+    return pkg.buttonHref;
+  }
+
+  return buildContactHref({
+    system: smartCta.system,
+    sourceType: toContactSourceType(smartCta.pageType),
+    slug: smartCta.slug,
+  });
 }
 
 function resolvePrimaryActionVariant(
@@ -106,13 +128,11 @@ export function TierCardsSection({
               </ul>
 
               {smartCta ? (
-                <SmartCTA
-                  system={smartCta.system}
-                  pageType={smartCta.pageType}
-                  slug={smartCta.slug}
-                  mode='actions-only'
-                  primaryActionVariant={resolvePrimaryActionVariant(pkg.ctaVariant, pkg.popular)}
-                  primaryButtonCssPrefix='btn-block'
+                <Button
+                  href={buildPackageHref(smartCta, pkg)}
+                  variant={resolvePrimaryActionVariant(pkg.ctaVariant, pkg.popular)}
+                  label={pkg.buttonText ?? 'Start Conversation'}
+                  cssPrefix='btn-block'
                 />
               ) : null}
             </div>

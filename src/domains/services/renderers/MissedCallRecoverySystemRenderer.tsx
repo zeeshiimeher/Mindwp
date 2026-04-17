@@ -120,6 +120,17 @@ export function MissedCallRecoverySystemRenderer({
             backgroundColor='bg-alt'
           />
 
+          <SmartCTA
+            system={data.systems?.[0] ?? 'smart-website-systems'}
+            slug={slug}
+            pageType='service'
+            intent='diagnostic'
+            position='mid'
+            title={inlineCtaTitle}
+            description={inlineCtaDescription}
+            primaryActionVariant='primary'
+          />
+
           <ServiceSpectrumCardsSection
             badge={recoveryLayer.badge}
             title={recoveryLayer.title}
@@ -164,15 +175,6 @@ export function MissedCallRecoverySystemRenderer({
               />
             ))}
 
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
-            title={inlineCtaTitle}
-            description={inlineCtaDescription}
-            primaryActionVariant='primary'
-          />
-
           <DualToneChecklistComparisonSection
             title={qualification.title}
             description={qualification.description}
@@ -200,6 +202,8 @@ export function MissedCallRecoverySystemRenderer({
             system={data.systems?.[0] ?? 'smart-website-systems'}
             slug={slug}
             pageType='service'
+            intent='conversion'
+            position='footer'
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

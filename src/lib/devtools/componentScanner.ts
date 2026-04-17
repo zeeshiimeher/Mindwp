@@ -27,6 +27,7 @@ type ComponentPropDoc = {
 type ComponentDoc = {
   filePath?: string;
   props?: ComponentPropDoc[];
+  usageCount?: number;
 };
 
 const MOCK_ICONS: Array<React.ComponentType<{ className?: string }>> = [ShieldCheck, Workflow, Zap];
@@ -46,6 +47,7 @@ const hashSeed = (value: string) => {
 };
 
 const PREVIEW_VARIATION_EXCLUDED_PROPS = new Set([
+  'as',
   'headingLevel',
   'headingTag',
   'alignment',
@@ -264,6 +266,66 @@ const USAGE_SEEDED_PRESETS: Record<string, Record<string, unknown>> = {
     href: '/contact',
     variant: 'primary',
   },
+  WorkflowStepCard: {
+    trigger: 'A new lead form is submitted',
+    actions: ['Create contact record', 'Assign owner', 'Send confirmation message'],
+    triggerLabel: 'When...',
+    actionsLabel: 'Then automatically:',
+  },
+  CaseStudyCardsSection: {
+    title: 'Related case studies',
+    description: 'Concrete implementation snapshots with clear outcomes.',
+    studies: [
+      {
+        slug: 'auto-repair-missed-call-recovery',
+        industry: 'Auto Repair',
+        client: 'Northside Auto Care',
+        location: 'Manchester',
+        metaDescription: 'Missed-call recovery and callback automation for a busy repair shop.',
+        publishDate: 'April 2026',
+      },
+      {
+        slug: 'hvac-emergency-lead-routing',
+        industry: 'HVAC',
+        client: 'Summit Heating & Air',
+        location: 'Leeds',
+        metaDescription: 'Emergency lead routing with clearer ownership and faster response.',
+        publishDate: 'March 2026',
+      },
+      {
+        slug: 'crm-pipeline-visibility-transformation',
+        industry: 'Home Services',
+        client: 'ClearFlow Services',
+        location: 'Birmingham',
+        metaDescription: 'Pipeline visibility rebuild with routing, follow-up, and reporting.',
+        publishDate: 'February 2026',
+      },
+    ],
+  },
+  AutoRelatedContentCardsSection: {
+    title: 'Related next steps',
+    description: 'Preview of related pages with a valid section header action set.',
+    items: [
+      {
+        title: 'CRM Infrastructure Implementation',
+        desc: 'Connect routing, handoff, and follow-up into one system.',
+        href: '/services/crm-infrastructure-implementation',
+      },
+      {
+        title: 'Auto-reply Funnel',
+        desc: 'See how first-response automation is structured.',
+        href: '/resources/auto-reply-funnel',
+      },
+      {
+        title: 'Lead Response Framework',
+        desc: 'Operational checklist for reducing response delays.',
+        href: '/resources/lead-response-time-framework',
+      },
+    ],
+    primaryAction: { label: 'See all resources', href: '/resources' },
+    secondaryAction: { label: 'View services', href: '/services' },
+    sessionVariantKey: 'component-library-related-cards-style',
+  },
   ServiceCTASection: {
     badge: {
       text: 'Implementation-ready',
@@ -344,6 +406,18 @@ const USAGE_SEEDED_PRESETS: Record<string, Record<string, unknown>> = {
     ],
     primaryAction: { label: 'Call to action', href: '/contact' },
     secondaryAction: { label: 'Secondary action', href: '/services' },
+  },
+  BlogImageSection: {
+    heading: 'System screenshot in context',
+    src: '/images/og-default.jpg',
+    alt: 'MindWP interface preview used inside a blog section example',
+    caption: 'Example implementation visual used to support the article narrative.',
+  },
+  BlogQuoteSection: {
+    heading: 'Key idea worth isolating',
+    quote:
+      'If the process only works when one person remembers every next step, the system is still fragile.',
+    attribution: 'MindWP operations review note',
   },
   TransformationProofSection: {
     badge: 'Proof',
@@ -831,7 +905,7 @@ const USAGE_SEEDED_PRESETS: Record<string, Record<string, unknown>> = {
     heading: 'Before vs after implementation',
     content: [
       'Compare current manual workflows with a structured automated system.',
-      'This preview should render two visible comparison columns with checklist items.',
+      'A simple before-and-after view helps the workflow shift read immediately.',
     ],
     before: {
       title: 'Before',
@@ -1178,22 +1252,6 @@ const USAGE_SEEDED_PRESETS: Record<string, Record<string, unknown>> = {
       },
     ],
   },
-  CaseStudyFAQSection: {
-    badge: 'FAQ',
-    title: 'Common implementation questions',
-    description: 'Answers based on this project scope and rollout process.',
-    items: [
-      {
-        question: 'How long did implementation take?',
-        answer: 'The first production workflow launched in under two weeks.',
-      },
-      {
-        question: 'Did the team need new tools?',
-        answer:
-          'No full stack replacement was required; we integrated and structured the existing setup.',
-      },
-    ],
-  },
   SectionIntro: {
     badge: 'Systems-First',
     title: 'Section heading from real usage pattern',
@@ -1395,10 +1453,21 @@ const inferMockValue = (propName: string, typeText: string, seed = 0): unknown =
 
   if (/(^|\W)string(\W|$)/.test(normalized)) {
     if (lowerName === 'number') return '01';
+    if (lowerName.includes('badge')) return 'Operational snapshot';
+    if (lowerName.includes('eyebrow')) return 'Implementation detail';
+    if (lowerName.includes('heroheadline')) return 'What changed after the workflow was rebuilt';
+    if (lowerName.includes('headline')) return 'Operational clarity without extra manual handoffs';
     if (lowerName.includes('title')) return 'Example Title';
     if (lowerName.includes('description')) return 'Example description';
+    if (lowerName.includes('content')) return 'Example supporting narrative for the section preview.';
     if (lowerName.includes('heading')) return 'Example Heading';
-    if (lowerName.includes('label')) return 'Example Label';
+    if (lowerName.includes('label')) return 'View implementation summary';
+    if (lowerName.includes('industry')) return 'Automotive Services';
+    if (lowerName.includes('business')) return 'Northside Auto Care';
+    if (lowerName.includes('location')) return 'Manchester';
+    if (lowerName.includes('duration')) return '6 weeks';
+    if (lowerName.includes('completeddate')) return 'April 2026';
+    if (lowerName.includes('scenario')) return 'Missed-call recovery';
     if (lowerName.includes('alt')) return 'Example image alt text';
     if (lowerName === 'src' || lowerName.endsWith('src')) return '/images/og-default.jpg';
     return `${propName}-value`;
@@ -1445,6 +1514,12 @@ export const generateMockData = (componentName: string) => {
   const preset = USAGE_SEEDED_PRESETS[componentName];
   if (preset) {
     Object.assign(base, preset);
+  }
+
+  if (componentName === 'Button') {
+    delete base.as;
+    delete base.children;
+    delete base.text;
   }
 
   return base;
@@ -1586,7 +1661,6 @@ const buildRegistry = (): RegistryBuildResult => {
   const registry: Record<string, AnyPropsComponent> = {};
   const components: ComponentInfo[] = [];
 
-  const seenByReference = new Set<AnyPropsComponent>();
   const seenByName = new Set<string>();
 
   for (const source of NAMESPACE_CATALOG) {
@@ -1594,10 +1668,8 @@ const buildRegistry = (): RegistryBuildResult => {
       if (!isComponentName(name)) continue;
       if (!isReactComponent(value)) continue;
       if (seenByName.has(name)) continue;
-      if (seenByReference.has(value)) continue;
 
       seenByName.add(name);
-      seenByReference.add(value);
       registry[name] = value;
       components.push({
         name,

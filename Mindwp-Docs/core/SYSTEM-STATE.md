@@ -205,6 +205,18 @@ Test results only stay meaningful if rerun after behavior changes.
 ### E-016 — Launch Readiness Pass
 **Date:** 2026-04-08. Static OG fallback. Zero weak topics. Clean system report.
 
+### E-017 — Enforcement Runtime Migration
+**Date:** 2026-04-16. Added canonical page identity, page-scoped CTA registry enforcement, centralized related-content building, and template/adaptor ownership for related-content rendering. Detail routes no longer compose related-content UI.
+
+### E-018 — FAQ + Component Inventory Consolidation
+**Date:** 2026-04-16. Consolidated live FAQ rendering on `FAQSection`, removed dead FAQ/related wrappers, regenerated component docs, and switched component-library metadata to generator-owned representative usage plus usage counts.
+
+### E-019 — Structured Audit Reconciliation and Landing Cleanup
+**Date:** 2026-04-17. Reconciled the migrated structured audit against the retired raw planning notes, kept the approved service-page rewrite pass and homepage cleanup closed, removed the unwanted related case-study strips from the generic services, features, industries, and blog landing pages, and preserved the case-study hub as the place where proof-grid behavior remains data-driven.
+
+### E-020 — Component Library Review Hardening
+**Date:** 2026-04-17. Extended component-library reporting to account for transitive composition through section wrappers, surfaced reusable single-component dependencies inside section entries, normalized live-page links away from dynamic placeholder routes, narrowed preview controls to reviewer-focused switches, set the approved tablet/mobile preview widths, and fixed the preview presentation issues uncovered during the reopened review pass.
+
 ---
 
 # 7. PRIORITIES

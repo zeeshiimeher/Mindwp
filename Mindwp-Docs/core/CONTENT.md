@@ -1128,6 +1128,7 @@ Therefore:
 - System-level case studies that demonstrate cross-industry frameworks may appear in the Case Study Hub when they are not tied to a single industry.
 - Case studies may reference the systems used in the implementation.
 - Case studies must not appear as related sections on Tier 1, Tier 2, or Tier 3 service pages.
+- Generic landing pages must not auto-inject case-study strips or proof grids. Services, features, industries, blog, and resources landing pages should route interested users toward the Case Study Hub or the relevant detail pages instead.
 
 Relationship model:
 
@@ -1478,6 +1479,7 @@ Content relationships flow upward through the hierarchy. Lower-hierarchy content
 - Resources link to services and industries.
 - Case studies link to industries and resources.
 - Services link only to other services.
+- Generic landing pages do not pull proof-layer case studies unless the landing page is the dedicated Case Study Hub.
 
 Higher-hierarchy pages do not reach down to pull in lower-hierarchy content.
 
@@ -2072,14 +2074,22 @@ SmartRelatedSection is the sole graph-driven linking mechanism across all page t
 
 No other linking system is active. The deprecated internal linking engine (`src/lib/internal-linking/`) has zero production usage.
 
+Runtime owner:
+- `buildRelatedContent()` is the only grouping/label builder.
+- `SmartRelatedSection` renders builder output only.
+- Templates and domain page adapters own placement.
+- Routes do not build related-content groups or append extra related UI.
+
 ### Rules
 
 - All related content is resolved via the content graph authority resolver.
+- Related-content labels and grouping are owned centrally by `buildRelatedContent()`.
 - Service- and feature-level `related` config is not a live contract and must not be reintroduced.
 - Scoring formula: `(systemOverlap × 3) + (topicOverlap × 2) + (industryOverlap × 1)` — LOCKED.
 - No page type may display content types outside its slot definition (see RELATED CONTENT SLOT SYSTEM).
 - Max 2 sections per page, max 3 items per section, max 6 total (Phase 10 Decision 4).
 - Output is deterministic and pre-computed at build time via the static authority map.
+- One related-content zone only per page.
 
 ### Constraints
 

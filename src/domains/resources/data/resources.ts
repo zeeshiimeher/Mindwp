@@ -27,11 +27,6 @@ type ResourcesHubData = {
     loadMoreLabel: string;
     comingSoonText: string;
   };
-  faqPreview: {
-    title: string;
-    description: string;
-    action: { label: string; href: string };
-  };
   cta: {
     title: string;
     description: string;
@@ -65,15 +60,9 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
     title: 'Problem/Solution Guides',
     description:
       'Deep-dive guides that identify common problems and provide both DIY fixes and automated solutions',
-    initialVisibleCount: 9,
+    initialVisibleCount: 15,
     loadMoreLabel: 'Load more resources',
     comingSoonText: 'More guides coming soon on automation, reviews, and website performance',
-  },
-  faqPreview: {
-    title: 'Have Questions?',
-    description:
-      'Browse our comprehensive FAQ section for quick answers to common questions about Smart Websites, SEO, automation, and more.',
-    action: { label: 'Browse FAQ', href: '/faq' },
   },
   cta: {
     title: 'Ready to Apply the Right System?',

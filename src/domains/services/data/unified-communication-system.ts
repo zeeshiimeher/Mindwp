@@ -311,6 +311,11 @@ export const unifiedCommunicationSystemPage = {
           description:
             'If enquiry volume is too low, improving the routing will not create the conversations that are missing. Fix visibility first.',
         },
+        {
+          title: 'The team already works from one clear shared queue',
+          description:
+            'If every important conversation already lands in one visible place with named ownership and reliable follow-up, this is not the first problem to solve.',
+        },
       ],
     },
     faqSection: {
@@ -414,8 +419,9 @@ export const unifiedCommunicationSystemPage = {
     },
   },
   inlineCta: {
-    title: 'Where are your messages breaking?',
-    description: 'Fifteen minutes. Map your channels. See where conversations are dying.',
+    title: 'Which channel is dropping your live conversations?',
+    description:
+      'Fifteen minutes. Map your channels, see where context breaks, and identify where routing needs to change first.',
   },
   cta: {
     title: 'Find out where conversations are falling apart',

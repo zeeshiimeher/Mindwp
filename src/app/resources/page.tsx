@@ -2,7 +2,6 @@ import { Suspense } from 'react';
 
 import { categories, resources } from '@/domains/resources/api';
 import { ResourcesHub } from '@/domains/resources/pages/ResourcesHub';
-import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates';
 import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 
 export const dynamic = 'force-static';
@@ -36,22 +35,15 @@ export default function Page() {
       const categoryLabel =
         categories.find(category => category.id === resource.category)?.label ??
         String(resource.category);
-      const lastChanged = resource.updatedAt ?? resource.publishedAt;
-      const isUpdated = Boolean(resource.updatedAt);
-      const freshnessBadge = isRecentIsoDate(lastChanged, 60)
-        ? isUpdated
-          ? 'Updated'
-          : 'New'
-        : undefined;
 
       return {
         title: resource.title,
         url: resource.seo.canonical,
         categoryLabel,
         excerpt: resource.description,
-        freshnessBadge,
-        dateLabel: isUpdated ? 'Updated' : 'Published',
-        dateText: formatIsoDate(lastChanged),
+        freshnessBadge: undefined,
+        dateLabel: '',
+        dateText: '',
       };
     });
 

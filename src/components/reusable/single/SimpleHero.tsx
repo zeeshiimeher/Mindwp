@@ -119,6 +119,8 @@ export function SimpleHero({
             system={smartCta.system}
             pageType={smartCta.pageType}
             slug={smartCta.slug}
+            intent='entry'
+            position='hero'
             primaryActionVariant={smartCta.primaryActionVariant}
             primaryButtonCssPrefix={smartCta.primaryButtonCssPrefix}
             secondaryButtonCssPrefix={smartCta.secondaryButtonCssPrefix}

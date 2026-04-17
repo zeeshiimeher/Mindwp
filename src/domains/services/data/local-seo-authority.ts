@@ -36,9 +36,9 @@ export const localSeoAuthorityPage = {
   }),
   hero: {
     badge: 'Get Found Locally',
-    title: "Your Competitors Show Up. You Don't.",
+    title: 'People Search Nearby. You Still Miss The Click.',
     description:
-      "Someone five minutes away needs exactly what you do. Searches. Three businesses come up. Not yours. Details different in every directory. Google can't tell what's real.",
+      "Someone nearby needs the service you offer right now. Google shows three businesses. Yours is missing, or the details are inconsistent enough that Google does not trust what it sees.",
     cssPrefix: 'website-seo-hero',
     backgroundColor: 'bg-gradient-surface-muted',
     list: ['Scattered details', 'Incomplete profile', 'Hidden services'],
@@ -55,12 +55,12 @@ export const localSeoAuthorityPage = {
         {
           before: '\u201CMore traffic will fix everything.\u201D',
           after:
-            "Traffic to a confusing site burns money. If visitors can't tell what you do, where you work, or how to reach you — they leave. You paid for nothing.",
+            "More traffic to a vague website just wastes more budget. If the site does not clearly show what you do, where you work, and how to contact you, the extra clicks change nothing.",
         },
         {
           before: '\u201CSEO can work around a messy website.\u201D',
           after:
-            "Google shows results that answer the question someone typed. If your site doesn't clearly do that, spending on SEO won't compensate.",
+            'SEO cannot compensate for a site that hides the service, location, or next step. Google still needs a clear page that answers the search properly.',
         },
         {
           before: '\u201CWe should be ranking by next month.\u201D',
@@ -122,7 +122,7 @@ export const localSeoAuthorityPage = {
         {
           title: 'What Google finds about you actually matches reality',
           description:
-            "Profile, directories, reviews — all saying the same thing. Accurate. Current. Matching what's on your website.",
+            'Your profile, directories, reviews, and service pages all carry the same current business details, service list, and contact information.',
           points: [
             'Google Business Profile complete and actively managed. Eligible for local pack results.',
             "Same details in every directory. Google can verify you're real.",
@@ -234,7 +234,7 @@ export const localSeoAuthorityPage = {
           number: '3',
           title: 'Build on it every month',
           description:
-            'Content kept current, reviews monitored, listings maintained. Visibility grows instead of fading.',
+            'Service pages updated when things change, reviews kept moving, listings checked regularly. Visibility keeps building instead of slipping back.',
         },
         {
           number: '4',
@@ -290,7 +290,7 @@ export const localSeoAuthorityPage = {
             'Creating a listing for each service and location you cover',
             'Writing FAQs and supporting content around real searches',
             'Planning topics based on what customers actually look for',
-            'Keeping everything current as your business changes',
+            'Updating service, area, and business details whenever the business changes',
           ],
         },
         {
@@ -436,8 +436,8 @@ export const localSeoAuthorityPage = {
       "Drop your business name and postcode. We check how you appear on Google right now and what's holding you back.",
   },
   cta: {
-    title: "Find out why they show up and you don't",
+    title: 'See why nearby customers are finding other businesses first',
     description:
-      "Your business name and area. We look at how Google sees you and come back with what's off.",
+      'Send your business name and service area. We check your website, Google profile, and listings to show where trust is breaking and what needs fixing first.',
   },
 } satisfies ServicePageData;

@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { AlertCircle, ChevronDown, ChevronUp } from 'lucide-react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { Card } from '@/components/reusable/single/Card';
@@ -56,8 +56,8 @@ export function FAQSection({
   cssPrefix = '',
   backgroundColor = '',
   displayMode = 'accordion',
-  showIcon = true,
-  icon: IconComponent = AlertCircle,
+  showIcon = false,
+  icon: IconComponent,
   allowMultiple = false,
   variant = 'default',
 }: FAQSectionProps) {
@@ -118,7 +118,9 @@ export function FAQSection({
                   disabled={displayMode === 'expanded'}
                 >
                   <div className={`${BLOCK}__question-row`}>
-                    {showIcon && <IconComponent className={`${BLOCK}__q-icon`} />}
+                    {showIcon && IconComponent ? (
+                      <IconComponent className={`${BLOCK}__q-icon`} />
+                    ) : null}
                     <h4 className={`${BLOCK}__q`}>{question}</h4>
                   </div>
 

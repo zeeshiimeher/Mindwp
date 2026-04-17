@@ -2,16 +2,12 @@ import type { Metadata } from 'next';
 import { notFound, permanentRedirect } from 'next/navigation';
 
 import JsonLd from '@/components/system/JsonLd';
-import type { RelatedContentBlock } from '@/components/system/RelatedContentSection';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
-import { RELATED_SECTION_LABELS } from '@/config/ui-intelligence';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import {
   getServiceDataBySlug,
   isServiceSlug,
   renderServicePageBySlug,
 } from '@/domains/services/config';
-import { getRelatedContent, type RelatedContent } from '@/lib/graph/query';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 import { getServiceMetadata } from '@/lib/seo/pageMetadata';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
@@ -60,37 +56,6 @@ function resolveService(slugParts?: string[]) {
   const serviceData = getServiceDataBySlug(slug);
   if (!serviceData) return null;
   return { slug, serviceNode, serviceData };
-}
-
-function buildRelatedBlocks(slug: string): RelatedContentBlock[] {
-  const related = getRelatedContent(slug, 'service');
-  const labels = RELATED_SECTION_LABELS.service ?? {};
-  const slotKeys = Object.keys(labels) as Array<keyof RelatedContent>;
-  const blocks: RelatedContentBlock[] = [];
-
-  for (const key of slotKeys) {
-    const items = related[key];
-    const label = labels[key];
-    if (!label || !items || items.length === 0) {
-      continue;
-    }
-
-    blocks.push({
-      title: label.title,
-      description: label.description,
-      items: items.slice(0, 3).map(item => ({
-        title: item.title,
-        desc: item.description,
-        href: item.path,
-      })),
-    });
-
-    if (blocks.length === 2) {
-      break;
-    }
-  }
-
-  return blocks;
 }
 
 export async function generateStaticParams() {
@@ -142,15 +107,12 @@ export default async function Page({ params }: { params: Promise<{ slug: string[
     { id: 'service-breadcrumb-jsonld', schema: breadcrumbSchema },
   ];
 
-  const relatedBlocks = buildRelatedBlocks(resolved.slug);
-
   return (
     <>
       {schemaEntries.map(entry => (
         <JsonLd key={entry.id} id={entry.id} schema={entry.schema} />
       ))}
       {renderServicePageBySlug(resolved.slug)}
-      {relatedBlocks.length > 0 ? <SmartRelatedSection blocks={relatedBlocks} /> : null}
     </>
   );
 }

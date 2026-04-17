@@ -3,6 +3,7 @@ import { Clock, TrendingUp } from 'lucide-react';
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { CaseStudyCard } from '@/components/reusable/single';
 import { Badge } from '@/components/reusable/single/Badge';
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { getCaseStudiesTemplateMetadata } from '@/domains/case-studies/data';
 
@@ -10,19 +11,19 @@ export function CaseStudiesPage() {
   const studies = getCaseStudiesTemplateMetadata();
 
   return (
-    <div className='min-h-screen'>
-      <main>
+    <CTARegistryProvider pageId='page:case-studies' pageType='page'>
+      <div className='min-h-screen'>
+        <main>
         {/* Hero */}
         <SectionWrapper background='bg-gradient-surface-muted'>
           <div className='text-center l-stack l-stack--loose'>
             <Badge variant='outline'>Customer Success Stories</Badge>
 
-            <h1>Real Results from Small Businesses Like Yours</h1>
+            <h1>Real Before-And-After System Changes</h1>
 
             <p className='text-muted-foreground l-max-w-3xl l-mx-auto'>
-              We work with small, local businesses—not giant enterprises. See how our WordPress
-              websites, CRM automation, and local SEO help real owners get more leads, save time,
-              and grow revenue without massive marketing budgets.
+              These case studies show what changed when the website layer, routing, follow-up,
+              visibility, and proof systems were rebuilt around how the business actually runs.
             </p>
 
             <div className='l-row l-items-center l-row-center l-gap-8 pt-4 text-sm text-muted-foreground'>
@@ -40,7 +41,7 @@ export function CaseStudiesPage() {
 
         {/* Case Studies Grid */}
         <SectionWrapper background='bg-background'>
-          <div className='l-grid l-gap-8 c-case-study-cards-section__grid'>
+          <div className='l-grid l-gap-8 md:l-grid-2 lg:l-grid-3 c-case-study-cards-section__grid'>
             {studies.map(study => (
               <CaseStudyCard
                 key={study.slug}
@@ -108,6 +109,8 @@ export function CaseStudiesPage() {
           system='smart-website-systems'
           pageType='page'
           slug='case-studies'
+          intent='conversion'
+          position='footer'
           title='Want Results Like This for Your Business?'
           description="Book a free 20-minute call and we'll walk you through what would actually move the needle for your business—no pressure, no sales scripts."
           primaryActionVariant='white'
@@ -119,7 +122,8 @@ export function CaseStudiesPage() {
           cssPrefix='case-studies-cta'
           backgroundColor='bg-gradient-primary'
         />
-      </main>
-    </div>
+        </main>
+      </div>
+    </CTARegistryProvider>
   );
 }

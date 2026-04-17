@@ -26,7 +26,7 @@ export interface WorkflowStepCardProps {
 
 export function WorkflowStepCard({
   trigger,
-  actions,
+  actions = [],
   triggerLabel = 'When...',
   actionsLabel = 'Then automatically:',
   cssPrefix = '',

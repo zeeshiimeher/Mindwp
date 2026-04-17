@@ -3,11 +3,11 @@
 
 import React from 'react';
 
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   CaseStudyBusinessImpactSection,
   CaseStudyDeliverablesSection,
-  CaseStudyFAQSection,
   CaseStudyFeaturesSection,
   CaseStudyHeroSection,
   CaseStudyInvestmentSection,
@@ -18,8 +18,10 @@ import {
   CaseStudySolutionSection,
   CaseStudyWorkflowsSection,
 } from '@/components/reusable/sections/case-studies';
+import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { TestimonialCard } from '@/components/reusable/single';
 import { SmartCTA } from '@/components/system/SmartCTA';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 
 import type { CaseStudyContent, CaseStudyMetadata } from './types';
 
@@ -154,6 +156,7 @@ function findSection<T extends CaseStudyTemplateSection['type']>(
 }
 
 export function CaseStudyTemplate({
+  pageId,
   metadata,
   content,
   sections,
@@ -172,6 +175,7 @@ export function CaseStudyTemplate({
   investment,
   cta,
 }: {
+  pageId: string;
   metadata: CaseStudyMetadata;
   content?: CaseStudyContent;
   sections?: CaseStudyTemplateSection[];
@@ -295,8 +299,9 @@ export function CaseStudyTemplate({
 
   if (missingSections.length > 0 && process.env.NODE_ENV === 'development') {
     return (
-      <div className='case-study-detail'>
-        <main className='l-section'>
+      <CTARegistryProvider pageId={pageId} pageType='case-study'>
+        <div className='case-study-detail'>
+          <main className='l-section'>
           <div className='l-container'>
             <div className='resource-page__dev-error'>
               <h2 className='resource-page__dev-error-title'>
@@ -314,8 +319,9 @@ export function CaseStudyTemplate({
               </ul>
             </div>
           </div>
-        </main>
-      </div>
+          </main>
+        </div>
+      </CTARegistryProvider>
     );
   }
 
@@ -450,12 +456,14 @@ export function CaseStudyTemplate({
 
       case 'faq':
         return (
-          <CaseStudyFAQSection
+          <FAQSection
             key={`faq-${index}`}
             {...(section.badge !== undefined && { badge: section.badge })}
             {...(section.title !== undefined && { title: section.title })}
             {...(section.description !== undefined && { description: section.description })}
-            items={section.items}
+            faqs={section.items}
+            cssPrefix='case-study-detail-faq'
+            displayMode='accordion'
           />
         );
 
@@ -490,8 +498,9 @@ export function CaseStudyTemplate({
   }
 
   return (
-    <div className='case-study-detail'>
-      {featuredImage ? (
+    <CTARegistryProvider pageId={pageId} pageType='case-study'>
+      <div className='case-study-detail'>
+        {featuredImage ? (
         <div
           style={{
             backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
@@ -512,7 +521,7 @@ export function CaseStudyTemplate({
             backgroundColor=''
           />
         </div>
-      ) : (
+        ) : (
         <CaseStudyHeroSection
           backToCaseStudiesLabel={backToCaseStudiesLabel}
           industry={metadata.industryLabel}
@@ -524,22 +533,26 @@ export function CaseStudyTemplate({
           location={metadata.location}
           completedDate={metadata.completedDate}
         />
-      )}
+        )}
 
-      {inFlowSections.map((section, index) => renderSection(section, index))}
+        {inFlowSections.map((section, index) => renderSection(section, index))}
 
-      {pinnedFaqSections.map((section, index) => renderSection(section, index))}
-      {ctaSection && (
-        <SmartCTA
-          system={metadata.systems[0] ?? 'smart-website-systems'}
-          pageType='case-study'
-          slug={metadata.slug}
-          title={ctaSection.heading}
-          description={ctaSection.body}
-          metaItems={ctaSection.metaItems ?? resolvedCtaMetaItems}
-          backgroundColor='bg-gradient-primary'
-        />
-      )}
-    </div>
+        {pinnedFaqSections.map((section, index) => renderSection(section, index))}
+        {ctaSection && (
+          <SmartCTA
+            system={metadata.systems[0] ?? 'smart-website-systems'}
+            pageType='case-study'
+            slug={metadata.slug}
+            intent='conversion'
+            position='footer'
+            title={ctaSection.heading}
+            description={ctaSection.body}
+            metaItems={ctaSection.metaItems ?? resolvedCtaMetaItems}
+            backgroundColor='bg-gradient-primary'
+          />
+        )}
+        <SmartRelatedSection slug={metadata.slug} />
+      </div>
+    </CTARegistryProvider>
   );
 }

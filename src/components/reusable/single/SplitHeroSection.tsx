@@ -193,6 +193,8 @@ export function SplitHeroSection({
                 system={smartCta.system}
                 pageType={smartCta.pageType}
                 slug={smartCta.slug}
+                intent='entry'
+                position='hero'
                 primaryActionVariant={smartCta.primaryActionVariant}
                 primaryButtonCssPrefix={cn(
                   `${BLOCK}__primary-cta`,

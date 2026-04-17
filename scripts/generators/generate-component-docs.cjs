@@ -65,6 +65,68 @@ function guessRouteFromScreenFile(relFilePath) {
   return `/${slugifyName(withoutPageSuffix)}`;
 }
 
+function getDirectRouteContext(relFilePath, screenToRoute) {
+  return {
+    routePath:
+      toRoutePathFromAppPageFile(relFilePath) ||
+      screenToRoute.get(relFilePath) ||
+      guessRouteFromScreenFile(relFilePath),
+    routeFilePath:
+      toRoutePathFromAppPageFile(relFilePath) || screenToRoute.has(relFilePath)
+        ? relFilePath
+        : guessRouteFromScreenFile(relFilePath)
+          ? relFilePath
+          : undefined,
+  };
+}
+
+function buildImporterMap(project) {
+  const importerMap = new Map();
+
+  for (const sourceFile of project.getSourceFiles('src/**/*.{ts,tsx}')) {
+    const importerRel = toPosix(path.relative(WORKSPACE_ROOT, sourceFile.getFilePath()));
+
+    for (const imp of sourceFile.getImportDeclarations()) {
+      const target = imp.getModuleSpecifierSourceFile();
+      if (!target) continue;
+
+      const targetRel = toPosix(path.relative(WORKSPACE_ROOT, target.getFilePath()));
+      if (!importerMap.has(targetRel)) importerMap.set(targetRel, new Set());
+      importerMap.get(targetRel).add(importerRel);
+    }
+  }
+
+  return importerMap;
+}
+
+function resolveNearestRouteContext(startFileRel, importerMap, screenToRoute) {
+  const queue = [{ filePath: startFileRel, depth: 0 }];
+  const visited = new Set([startFileRel]);
+
+  while (queue.length > 0) {
+    const current = queue.shift();
+    const direct = getDirectRouteContext(current.filePath, screenToRoute);
+    if (direct.routePath && direct.routeFilePath) {
+      return {
+        routePath: direct.routePath,
+        routeFilePath: direct.routeFilePath,
+        depth: current.depth,
+      };
+    }
+
+    const importers = importerMap.get(current.filePath);
+    if (!importers) continue;
+
+    for (const importerRel of importers) {
+      if (visited.has(importerRel)) continue;
+      visited.add(importerRel);
+      queue.push({ filePath: importerRel, depth: current.depth + 1 });
+    }
+  }
+
+  return undefined;
+}
+
 function collectRepresentativeUsageMap(project, componentNames) {
   const componentNameSet = new Set(componentNames);
 
@@ -76,9 +138,18 @@ function collectRepresentativeUsageMap(project, componentNames) {
     .getSourceFiles('src/screens/**/*.tsx')
     .filter(sf => !toPosix(sf.getFilePath()).endsWith('/ComponentLibrary.tsx'));
 
-  const usageCandidateFiles = [...screenFiles, ...appPageFiles];
+  const usageCandidateFiles = project
+    .getSourceFiles('src/**/*.tsx')
+    .filter(sf => {
+      const rel = toPosix(path.relative(WORKSPACE_ROOT, sf.getFilePath()));
+      if (rel.endsWith('.generated.tsx')) return false;
+      if (rel.includes('/__tests__/') || rel.includes('/tests/')) return false;
+      if (rel.endsWith('/ComponentLibrary.tsx')) return false;
+      return true;
+    });
 
   const screenToRoute = new Map();
+  const importerMap = buildImporterMap(project);
 
   for (const appPageFile of appPageFiles) {
     const appPageRel = toPosix(path.relative(WORKSPACE_ROOT, appPageFile.getFilePath()));
@@ -139,23 +210,25 @@ function collectRepresentativeUsageMap(project, componentNames) {
 
       if (occurrences === 0) continue;
 
-      const score = propScore + occurrences * 3;
+      const routeContext = resolveNearestRouteContext(fileRel, importerMap, screenToRoute);
+      const routeDepth = routeContext?.depth ?? 999;
+      const score = propScore + occurrences * 3 - Math.min(routeDepth, 20);
 
       const existing = usageByComponent.get(componentName);
       const currentCandidate = {
-        filePath: fileRel,
-        routePath:
-          toRoutePathFromAppPageFile(fileRel) ||
-          screenToRoute.get(fileRel) ||
-          guessRouteFromScreenFile(fileRel) ||
-          '/',
+        filePath: routeContext?.routeFilePath || fileRel,
+        routePath: routeContext?.routePath || '/',
         occurrences,
         propScore,
         score,
+        routeDepth,
+        usageCount: (existing?.usageCount || 0) + occurrences,
       };
 
       if (!existing || currentCandidate.score > existing.score) {
         usageByComponent.set(componentName, currentCandidate);
+      } else {
+        existing.usageCount += occurrences;
       }
     }
   }
@@ -187,6 +260,24 @@ function isOptionalProperty(propSymbol, propDecls, propTypeText) {
   // Fall back to `| undefined` in the type text
   if (typeof propTypeText === 'string' && propTypeText.includes('undefined')) return true;
   return false;
+}
+
+function getComposedComponents(sourceFile, componentNameSet, currentName) {
+  const composed = new Set();
+
+  for (const imp of sourceFile.getImportDeclarations()) {
+    const moduleText = imp.getModuleSpecifierValue();
+    if (!moduleText.includes('components/reusable/')) continue;
+
+    for (const namedImport of imp.getNamedImports()) {
+      const importedName = namedImport.getName();
+      if (importedName === currentName) continue;
+      if (!componentNameSet.has(importedName)) continue;
+      composed.add(importedName);
+    }
+  }
+
+  return Array.from(composed).sort((a, b) => a.localeCompare(b));
 }
 
 async function main() {
@@ -293,6 +384,8 @@ async function main() {
         description: safeText(descriptionRaw),
         representativeUsageFilePath: representativeUsageByComponent.get(name)?.filePath || '',
         representativePageUrl: representativeUsageByComponent.get(name)?.routePath || '/',
+        usageCount: representativeUsageByComponent.get(name)?.usageCount || 0,
+        composedComponents: getComposedComponents(sourceFile, componentNames, name),
         props,
       };
     }
@@ -304,7 +397,7 @@ async function main() {
   };
 
   const outFile = path.join(WORKSPACE_ROOT, SOURCE_ROOT_REL, 'utils', 'componentDocs.generated.ts');
-  const content = `/* This file is auto-generated by scripts/generate-component-docs.cjs */\n\nexport interface ComponentPropDoc {\n  name: string;\n  type: string;\n  optional: boolean;\n  description?: string;\n}\n\nexport interface ComponentDoc {\n  name: string;\n  filePath: string;\n  summary?: string;\n  description?: string;\n  representativeUsageFilePath?: string;\n  representativePageUrl?: string;\n  props: ComponentPropDoc[];\n}\n\nexport const componentDocs: Record<string, ComponentDoc> = ${JSON.stringify(out.components, null, 2)};\n`;
+  const content = `/* This file is auto-generated by scripts/generate-component-docs.cjs */\n\nexport interface ComponentPropDoc {\n  name: string;\n  type: string;\n  optional: boolean;\n  description?: string;\n}\n\nexport interface ComponentDoc {\n  name: string;\n  filePath: string;\n  summary?: string;\n  description?: string;\n  representativeUsageFilePath?: string;\n  representativePageUrl?: string;\n  usageCount?: number;\n  composedComponents?: string[];\n  props: ComponentPropDoc[];\n}\n\nexport const componentDocs: Record<string, ComponentDoc> = ${JSON.stringify(out.components, null, 2)};\n`;
 
   fs.mkdirSync(path.dirname(outFile), { recursive: true });
   fs.writeFileSync(outFile, content, 'utf8');

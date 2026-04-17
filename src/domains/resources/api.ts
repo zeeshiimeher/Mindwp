@@ -65,7 +65,7 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
     title: 'Problem/Solution Guides',
     description:
       'Deep-dive guides that identify common problems and provide both DIY fixes and automated solutions',
-    initialVisibleCount: 9,
+    initialVisibleCount: 15,
     loadMoreLabel: 'Load more resources',
     comingSoonText: 'More guides coming soon on automation, reviews, and website performance',
   },

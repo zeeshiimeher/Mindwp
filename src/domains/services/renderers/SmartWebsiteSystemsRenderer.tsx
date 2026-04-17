@@ -126,6 +126,19 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               cssPrefix='smart-websites-core-layer'
             />
           )}
+
+          <SmartCTA
+            system={data.systems?.[0] ?? 'smart-website-systems'}
+            slug={slug}
+            pageType='service'
+            intent='diagnostic'
+            position='mid'
+            title={inlineCtaTitle}
+            description={inlineCtaDescription}
+            cssPrefix='smart-websites-cta'
+            primaryActionVariant='white'
+          />
+
           {/* Strategic Bridge */}
           {data.sections.visibilityFoundations &&
             renderAlternatingSection(
@@ -175,16 +188,6 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               </div>
             </SectionWrapper>
           )}
-
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
-            title={inlineCtaTitle}
-            description={inlineCtaDescription}
-            cssPrefix='smart-websites-cta'
-            primaryActionVariant='white'
-          />
 
           {/* How It Works */}
           {data.sections.process && (
@@ -267,6 +270,8 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
             system={data.systems?.[0] ?? 'smart-website-systems'}
             slug={slug}
             pageType='service'
+            intent='conversion'
+            position='footer'
             title={ctaTitle}
             description={ctaDescription}
             primaryActionVariant='white'

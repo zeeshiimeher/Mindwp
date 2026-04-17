@@ -4,12 +4,10 @@ export {
   CaseStudyBusinessImpactSection,
   type CaseStudyBusinessImpactSectionProps,
 } from './CaseStudyBusinessImpactSection';
-export { CaseStudyCTASection, type CaseStudyCTASectionProps } from './CaseStudyCTASection';
 export {
   CaseStudyDeliverablesSection,
   type CaseStudyDeliverablesSectionProps,
 } from './CaseStudyDeliverablesSection';
-export { CaseStudyFAQSection, type CaseStudyFAQSectionProps } from './CaseStudyFAQSection';
 export {
   CaseStudyFeaturesSection,
   type CaseStudyFeaturesSectionProps,

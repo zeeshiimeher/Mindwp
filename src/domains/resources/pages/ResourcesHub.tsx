@@ -1,9 +1,9 @@
 import { type AnchorHTMLAttributes, type ReactNode } from 'react';
-import { ArrowRight, BookOpen, MessageSquare } from 'lucide-react';
+import { ArrowRight, BookOpen } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
-import { Button } from '@/components/reusable/single/Button';
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
 import { RESOURCE_HUB_DATA } from '@/domains/resources/api';
@@ -55,8 +55,9 @@ export function ResourcesHub({
   const hubData = RESOURCE_HUB_DATA;
 
   return (
-    <div className='resources-hub'>
-      <main>
+    <CTARegistryProvider pageId='page:resources' pageType='page'>
+      <div className='resources-hub'>
+        <main>
         {/* Hero Section */}
         <SectionWrapper className='resources-hub__hero' background='bg-gradient-surface-muted'>
           <div className='resources-hub__hero-content'>
@@ -76,6 +77,8 @@ export function ResourcesHub({
                 system='smart-website-systems'
                 pageType='page'
                 slug='resources'
+                intent='entry'
+                position='hero'
                 mode='actions-only'
                 primaryActionVariant='secondary'
               />
@@ -99,14 +102,20 @@ export function ResourcesHub({
                     href={category.href}
                     className='link-primary resources-hub__topic-link'
                   >
-                    <IconComponent className='resources-hub__topic-icon' aria-hidden='true' />
                     <div className='resources-hub__topic-top'>
-                      <h3 className='resources-hub__topic-title'>{category.name}</h3>
-                      <Badge variant='outline' size='sm' context='meta'>
-                        {category.count} {hubData.topics.countSuffix}
-                      </Badge>
+                      <div className='l-row l-items-center l-gap-3'>
+                        <div className='resources-hub__topic-icon-wrap'>
+                          <IconComponent className='resources-hub__topic-icon' aria-hidden='true' />
+                          <Badge variant='outline' size='sm' context='meta'>
+                            {category.count} {hubData.topics.countSuffix}
+                          </Badge>
+                        </div>
+                      </div>
                     </div>
-                    <p className='resources-hub__topic-desc'>{category.description}</p>
+                    <div className='l-stack l-gap-2'>
+                      <h3 className='resources-hub__topic-title'>{category.name}</h3>
+                      <p className='resources-hub__topic-desc'>{category.description}</p>
+                    </div>
                     <div className='resources-hub__topic-cta'>
                       {TOPIC_CARD_CTA_LABEL}
                       <ArrowRight className='resources-hub__topic-arrow' aria-hidden='true' />
@@ -143,34 +152,21 @@ export function ResourcesHub({
           </div>
         </SectionWrapper>
 
-        {/* FAQ Preview */}
-        <SectionWrapper className='resources-hub__faq'>
-          <Card className='resources-hub__faq-card'>
-            <MessageSquare className='resources-hub__faq-icon' aria-hidden='true' />
-            <h2 className='resources-hub__faq-title'>{hubData.faqPreview.title}</h2>
-            <p className='resources-hub__faq-text'>{hubData.faqPreview.description}</p>
-            <Button
-              href={hubData.faqPreview.action.href}
-              variant='outline'
-              label={hubData.faqPreview.action.label}
-              icon={ArrowRight}
-              showDefaultIcon
-            />
-          </Card>
-        </SectionWrapper>
-
         {/* CTA Section */}
         <SmartCTA
           system='smart-website-systems'
           pageType='page'
           slug='resources'
+          intent='conversion'
+          position='footer'
           title={hubData.cta.title}
           description={hubData.cta.description}
           primaryActionVariant='white'
           cssPrefix='footer-cta'
           backgroundColor='bg-gradient-primary'
         />
-      </main>
-    </div>
+        </main>
+      </div>
+    </CTARegistryProvider>
   );
 }

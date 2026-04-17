@@ -365,6 +365,12 @@ Each doc has a defined scope. No doc may absorb responsibilities from another.
 
 **Rule:** If a doc needs to reference a rule owned by another doc, use a one-line pointer — do not restate the rule.
 
+Component inventory runtime note:
+- The live component inventory is owned by `scripts/generators/generate-component-docs.cjs`, `src/lib/devtools/componentScanner.ts`, and `src/utils/componentDocs.generated.ts` together.
+- Representative usage and usage counts come from generated component docs, not hardcoded preview mappings.
+- Usage reporting must include transitive composition through reusable section wrappers so single components do not fall back to `0` simply because a route imports the section instead of the single component directly.
+- The component library must expose reviewer-controlled prop/variant switches from generated metadata rather than relying only on canned snapshot variations.
+
 ---
 
 # 9. DRIFT PREVENTION

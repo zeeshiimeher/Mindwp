@@ -7,6 +7,38 @@ import { Button, type ButtonProps } from './Button';
 
 const BLOCK = 'section-header';
 
+function hasRenderableActionText(
+  value: ButtonProps['children'] | ButtonProps['label'] | ButtonProps['text']
+): boolean {
+  if (value === null || value === undefined || typeof value === 'boolean') {
+    return false;
+  }
+
+  if (typeof value === 'string') {
+    return value.trim().length > 0;
+  }
+
+  if (Array.isArray(value)) {
+    return value.some(item => hasRenderableActionText(item));
+  }
+
+  return true;
+}
+
+function isRenderableAction(action?: ButtonProps): boolean {
+  if (!action) {
+    return false;
+  }
+
+  const hasInteraction = Boolean(action.href || action.onClick);
+  const hasContent =
+    hasRenderableActionText(action.children) ||
+    hasRenderableActionText(action.label) ||
+    hasRenderableActionText(action.text);
+
+  return hasInteraction && hasContent;
+}
+
 /**
  * SectionIntro - Flexible section header component with optional actions
  *
@@ -83,6 +115,8 @@ export function SectionIntro({
   }
 
   const HeadingTag = headingLevel;
+  const showPrimaryAction = isRenderableAction(primaryAction);
+  const showSecondaryAction = isRenderableAction(secondaryAction);
 
   const rootClassName = [
     BLOCK,
@@ -120,14 +154,14 @@ export function SectionIntro({
         </p>
       )}
 
-      {(primaryAction || secondaryAction) && (
+      {(showPrimaryAction || showSecondaryAction) && (
         <div className={`${BLOCK}__actions`}>
-          {primaryAction && (
+          {showPrimaryAction && primaryAction && (
             <div className={`${BLOCK}__primary-action`}>
               <Button {...{ variant: 'primary', ...primaryAction }} />
             </div>
           )}
-          {secondaryAction && (
+          {showSecondaryAction && secondaryAction && (
             <div className={`${BLOCK}__secondary-action`}>
               <Button {...{ variant: 'outline', ...secondaryAction }} />
             </div>

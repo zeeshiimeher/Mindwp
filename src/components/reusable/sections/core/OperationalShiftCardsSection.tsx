@@ -43,22 +43,22 @@ export function OperationalShiftCardsSection({
       <div className='l-grid l-gap-6 md:l-grid-3'>
         {painPoints.map((point, index) => (
           <Card key={index} className={cn(`${BLOCK}__card`, 'card-base h-full p-6')}>
-            <div className='l-stack l-gap-4'>
+            <div className={`${BLOCK}__panels l-stack l-gap-4`}>
               <div className='l-stack l-gap-3'>
-                <div className='rounded-2xl bg-muted/40 p-4'>
-                  <p className='text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground before-label'>
+                <div className={`${BLOCK}__state ${BLOCK}__state--before`}>
+                  <p className={`${BLOCK}__eyebrow ${BLOCK}__eyebrow--before`}>
                     {currentStateLabel}
                   </p>
-                  <p className='mt-2 text-sm leading-6 text-foreground before-description'>
+                  <p className={`${BLOCK}__copy ${BLOCK}__copy--before`}>
                     {point.before}
                   </p>
                 </div>
 
-                <div className='rounded-2xl border border-border/60 bg-background p-4'>
-                  <p className='text-xs font-medium uppercase tracking-[0.12em] text-muted-foreground after-label'>
+                <div className={`${BLOCK}__state ${BLOCK}__state--after`}>
+                  <p className={`${BLOCK}__eyebrow ${BLOCK}__eyebrow--after`}>
                     {structuredStateLabel}
                   </p>
-                  <p className='mt-2 text-sm leading-6 text-foreground after-description'>
+                  <p className={`${BLOCK}__copy ${BLOCK}__copy--after`}>
                     {point.after}
                   </p>
                 </div>

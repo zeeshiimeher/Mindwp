@@ -2,7 +2,7 @@ import { ArrowRight } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
-import { Button } from '@/components/reusable/single/Button';
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
 import { getCategoryIndexIndustries } from '@/domains/industries/catalog';
@@ -10,23 +10,16 @@ import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 export default function IndustriesLanding() {
   const categoryPages = getCategoryIndexIndustries();
-  const primaryCategories = categoryPages.filter(industry => industry.priority === 'primary');
-  const expansionCategories = categoryPages.filter(industry => industry.priority === 'expansion');
-  const coverageCategories = categoryPages.filter(industry => industry.priority === 'coverage');
+
+  const priorityLabels = {
+    primary: 'Primary Focus',
+    expansion: 'Expansion Category',
+    coverage: 'Coverage Category',
+  } as const;
 
   const renderCategoryCard = (industry: (typeof categoryPages)[number]) => {
     const Icon = industry.icon;
-    const isCoverageLane = industry.priority === 'coverage';
-    const buttonLabel =
-      industry.priority === 'primary'
-        ? 'See Primary Category'
-        : industry.priority === 'expansion'
-          ? 'See Expansion Category'
-          : industry.priority === 'coverage'
-            ? 'View Coverage Category'
-            : industry.isLive
-              ? `Explore ${industry.name}`
-              : 'Discuss Fit';
+    const priorityLabel = priorityLabels[industry.priority ?? 'coverage'];
 
     return (
       <Card
@@ -39,44 +32,42 @@ export default function IndustriesLanding() {
             <div className={`icon-container-lg ${getVariantStyles('primary').icon.bg}`}>
               <Icon className={getVariantStyles('primary').icon.text} />
             </div>
-            {industry.prioritySignal && (
-              <Badge variant='secondary'>{industry.prioritySignal}</Badge>
-            )}
+            <Badge variant='secondary'>{priorityLabel}</Badge>
           </div>
           <div>
             <h2 className='mb-2'>{industry.name}</h2>
-            {!isCoverageLane && industry.landingSubtitle && (
+            {industry.landingSubtitle && (
               <p className='text-sm font-medium mb-1'>{industry.landingSubtitle}</p>
             )}
             <p className='text-sm text-muted-foreground'>{industry.description}</p>
           </div>
-          <Button
+          <a
             href={industry.href}
-            variant={industry.isLive ? 'outline' : 'secondary'}
-            label={buttonLabel}
-            icon={ArrowRight}
-            cssPrefix='btn-block'
-            showDefaultIcon
-          />
+            className='link-primary l-row l-items-center l-gap-2 text-primary text-sm'
+          >
+            Explore Category
+            <ArrowRight aria-hidden='true' />
+          </a>
         </div>
       </Card>
     );
   };
 
   return (
-    <div className='min-h-screen'>
-      <main>
+    <CTARegistryProvider pageId='page:industries' pageType='page'>
+      <div className='min-h-screen'>
+        <main>
         {/* Hero */}
         <SectionWrapper background='bg-gradient-to-b from-muted/50 to-background'>
           <div className='text-center l-stack l-stack--loose'>
             <Badge variant='secondary' context='section'>
               Industry Navigation
             </Badge>
-            <h1>Who This System Is Built For</h1>
+            <h1>Industry Systems Built Around How The Work Actually Runs</h1>
             <p className='text-muted-foreground text-lg l-max-w-3xl l-mx-auto'>
-              Home Services is the primary front-door lane, Beauty & Personal Care is the active
-              secondary lane, and the remaining approved categories stay visible as coverage lanes
-              without equal promotional weight.
+              Explore the live industry categories where MindWP has mapped the website, lead
+              handling, follow-up, and proof system into a clearer operating model. Each route
+              leads into category-specific detail pages instead of generic service summaries.
             </p>
           </div>
         </SectionWrapper>
@@ -84,70 +75,17 @@ export default function IndustriesLanding() {
         {/* Industries Grid */}
         <SectionWrapper background='bg-background'>
           <div className='l-stack l-stack--loose'>
-            <section aria-labelledby='industry-primary'>
-              <div className='mb-6 l-stack'>
-                <Badge variant='secondary'>Primary Lane</Badge>
-                <h2 id='industry-primary'>Primary Front-Door Categories</h2>
-                <p className='text-muted-foreground'>
-                  These categories carry the deepest current buildout and the strongest promotional
-                  emphasis.
-                </p>
-                <p className='text-sm text-muted-foreground'>
-                  The main lane where Smart Website Systems are most actively demonstrated.
-                </p>
-              </div>
-              <div className='l-stack l-gap-8'>{primaryCategories.map(renderCategoryCard)}</div>
-            </section>
-
-            <section aria-labelledby='industry-expansion'>
-              <div className='mb-6 l-stack'>
-                <Badge variant='secondary'>Expansion Lane</Badge>
-                <h2 id='industry-expansion'>Secondary Expansion Lane</h2>
-                <p className='text-muted-foreground'>
-                  These categories are live and credible, but carry lighter front-door emphasis.
-                </p>
-                <p className='text-sm text-muted-foreground'>
-                  Actively promoted, but secondary to the primary lane.
-                </p>
-              </div>
-              <div className='l-stack l-gap-8'>{expansionCategories.map(renderCategoryCard)}</div>
-            </section>
-
-            <section aria-labelledby='industry-coverage'>
-              <div className='mb-6 l-stack'>
-                <Badge variant='secondary'>Coverage Lane</Badge>
-                <h2 id='industry-coverage'>Coverage Lane Categories</h2>
-                <p className='text-muted-foreground'>
-                  These categories are live as part of the approved model, but carry lighter
-                  promotional weight.
-                </p>
-                <p className='text-sm text-muted-foreground'>
-                  Kept intentionally lighter so the page preserves clear priority between lanes.
-                </p>
-              </div>
-              <div className='l-grid md:grid-cols-2 l-gap-8'>
-                {coverageCategories.map(renderCategoryCard)}
-              </div>
-            </section>
+            <div className='l-stack'>
+              <h2>Browse The Current Industry Front Doors</h2>
+              <p className='text-muted-foreground'>
+                Each category groups the active sub-industries and shows the supporting system
+                patterns that matter most in that operating environment.
+              </p>
+            </div>
+            <div className='l-grid l-gap-8 md:grid-cols-2 xl:grid-cols-2'>
+              {categoryPages.map(renderCategoryCard)}
+            </div>
           </div>
-        </SectionWrapper>
-
-        {/* Not Listed? */}
-        <SectionWrapper>
-          <Card className='p-8 md:p-12 text-center'>
-            <h2 className='mb-4'>How Industry Pages Connect Upward</h2>
-            <p className='text-muted-foreground text-lg mb-8'>
-              Industry pages route into Smart Website Systems first, then into the most relevant
-              supporting service pages and authority content for that operating environment.
-            </p>
-            <Button
-              href='/services/smart-website-systems'
-              variant='outline'
-              label='See Smart Website Systems'
-              icon={ArrowRight}
-              showDefaultIcon
-            />
-          </Card>
         </SectionWrapper>
 
         {/* CTA */}
@@ -155,13 +93,16 @@ export default function IndustriesLanding() {
           system='smart-website-systems'
           pageType='page'
           slug='industries'
+          intent='conversion'
+          position='footer'
           title='Not sure where your business fits?'
           description='If growth feels inconsistent, we can show you which part of your lead flow needs attention first.'
           primaryActionVariant='white'
           cssPrefix='footer-cta'
           backgroundColor='bg-gradient-primary'
         />
-      </main>
-    </div>
+        </main>
+      </div>
+    </CTARegistryProvider>
   );
 }

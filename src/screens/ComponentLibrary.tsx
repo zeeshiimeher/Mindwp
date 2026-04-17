@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 import AppErrorBoundary from '@/components/ErrorBoundary';
 import {
@@ -16,9 +16,19 @@ type ComponentDoc = {
   filePath?: string;
   representativeUsageFilePath?: string;
   representativePageUrl?: string;
+  usageCount?: number;
+  composedComponents?: string[];
   summary?: string;
   props?: Array<{ name: string; type: string; optional: boolean; description?: string }>;
 };
+
+type PreviewControl = {
+  name: string;
+  type: 'select' | 'boolean';
+  options?: string[];
+};
+
+type PreviewViewport = 'desktop' | 'tablet' | 'mobile';
 
 const CATEGORY_ORDER = [
   'components',
@@ -32,6 +42,7 @@ const CATEGORY_ORDER = [
 ] as const;
 
 const PREVIEW_VARIATION_EXCLUDED_PROPS = new Set([
+  'as',
   'headingLevel',
   'headingTag',
   'alignment',
@@ -59,86 +70,6 @@ const isSingleCategory = (category: string) => category === 'components';
 
 const getCategoryLabel = (category: string) => category.replace(/-/g, ' ');
 
-const REPRESENTATIVE_SECTION_ID_BY_COMPONENT: Record<string, string> = {
-  Badge: 'hero',
-  IconBenefitCardsSection: 'industries',
-  Button: 'hero',
-  FeatureChecklistCard: 'visibility-alignment',
-  DetailedStepCard: 'client-journey',
-  IconBenefitCard: 'smart-website-framework',
-  ProcessStepsSection: 'implementation-principles',
-  ProblemSolutionSplitCard: 'infrastructure-gaps',
-  ResourceBusinessCostsSection: 'resource-business-costs',
-  ResourceCaseSection: 'resource-case',
-  ResourceChecklistSection: 'resource-checklist',
-  ResourceComparisonSection: 'resource-comparison',
-  ResourceDIYSection: 'resource-diy',
-  ResourceProblemSection: 'resource-problem',
-  ResourceSolutionsSection: 'resource-solution-cards',
-  ResourceTakeawaysSection: 'resource-takeaways',
-  ResourceTemplatesSection: 'resource-templates',
-  SectionIntro: 'smart-website-framework',
-};
-
-const getRepresentativeSectionId = (componentName: string, category: string) => {
-  if (componentName in REPRESENTATIVE_SECTION_ID_BY_COMPONENT) {
-    return REPRESENTATIVE_SECTION_ID_BY_COMPONENT[componentName];
-  }
-
-  if (category === 'industry-sections') return 'industries';
-
-  return undefined;
-};
-
-const getRepresentativePageUrl = (componentName: string, category: string) => {
-  const sectionId = getRepresentativeSectionId(componentName, category);
-
-  if (componentName.startsWith('CaseStudy')) {
-    const base = '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections';
-    return sectionId ? `${base}#${sectionId}` : base;
-  }
-
-  if (componentName.startsWith('Resource')) {
-    const base = '/resources/auto-reply-funnel';
-    return sectionId ? `${base}#${sectionId}` : base;
-  }
-
-  if (componentName.startsWith('Blog')) {
-    const base = '/blog/ai-reception-for-automotive-shops';
-    return sectionId ? `${base}#${sectionId}` : base;
-  }
-
-  if (componentName.startsWith('Industry')) {
-    const base = '/industries/beauty-personal-care';
-    return sectionId ? `${base}#${sectionId}` : base;
-  }
-
-  if (componentName.startsWith('Service')) {
-    const base = '/services/crm-infrastructure-implementation';
-    return sectionId ? `${base}#${sectionId}` : base;
-  }
-
-  if (componentName.startsWith('Feature')) {
-    const base = '/features/crm';
-    return sectionId ? `${base}#${sectionId}` : base;
-  }
-
-  const byCategory: Record<string, string> = {
-    components: '/',
-    'core-sections': '/',
-    'feature-sections': '/features/crm',
-    'service-sections': '/services/crm-infrastructure-implementation',
-    'industry-sections': '/industries/beauty-personal-care',
-    'resource-sections': '/resources/auto-reply-funnel',
-    'blog-sections': '/blog/ai-reception-for-automotive-shops',
-    'case-study-sections':
-      '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
-  };
-
-  const base = byCategory[category] ?? '/';
-  return sectionId ? `${base}#${sectionId}` : base;
-};
-
 const getVariationLabel = (variationProps: Record<string, unknown>, index: number) => {
   const label = variationProps['variationLabel'];
   if (typeof label === 'string' && label.trim().length > 0) return label;
@@ -151,9 +82,58 @@ const stripPreviewProps = (variationProps: Record<string, unknown>) => {
   return rest;
 };
 
+const PREVIEW_VIEWPORTS: Array<{ id: PreviewViewport; label: string }> = [
+  { id: 'desktop', label: 'Desktop' },
+  { id: 'tablet', label: 'Tablet 980px' },
+  { id: 'mobile', label: 'Mobile 392px' },
+];
+
+const DOMAIN_LIVE_PAGE_FALLBACKS: Array<{ match: RegExp; url: string }> = [
+  { match: /^\/services\//, url: '/services/smart-website-systems' },
+  { match: /^\/resources\//, url: '/resources/auto-reply-funnel' },
+  { match: /^\/blog\//, url: '/blog/ai-reception-for-automotive-shops' },
+  { match: /^\/features\//, url: '/features/crm' },
+  { match: /^\/industries\//, url: '/industries/beauty-personal-care' },
+  { match: /^\/case-study\//, url: '/case-study/auto-repair-missed-call-recovery' },
+];
+
+const hasRepresentativeLivePage = (doc?: ComponentDoc) => {
+  return Boolean(doc?.representativeUsageFilePath && doc.representativePageUrl);
+};
+
+const getNormalizedLivePageUrl = (doc?: ComponentDoc) => {
+  const url = doc?.representativePageUrl;
+  if (!url) return null;
+  if (!url.includes('[')) return url;
+
+  const fallback = DOMAIN_LIVE_PAGE_FALLBACKS.find(entry => entry.match.test(url));
+  return fallback?.url ?? null;
+};
+
+const getComponentDoc = (name: string) => {
+  return (componentDocs as Record<string, ComponentDoc | undefined>)[name];
+};
+
 const renderType = (typeText: string) => {
   // Keep preview labels readable; extracted types can include long import(...) prefixes.
   return typeText.replace(/import\([^)]*\)\./g, '');
+};
+
+const renderPreviewContent = (
+  componentName: string,
+  content: React.ReactNode,
+  variationLabel: string
+) => {
+  if (componentName === 'BulletList') {
+    return (
+      <div className='component-library__inline-preview-shell'>
+        <div className='component-library__inline-preview-label'>{variationLabel}</div>
+        <div className='component-library__inline-preview-content'>{content}</div>
+      </div>
+    );
+  }
+
+  return content;
 };
 
 const extractStringLiterals = (typeText: string) => {
@@ -199,6 +179,37 @@ const toOverridesSnippet = (componentName: string, propName: string, value: unkn
     `const overrides = { ${propName}: ${toTsLiteral(value)} };`,
     `<${componentName} {...baseProps} {...overrides} />`,
   ].join('\n');
+};
+
+const getPreviewControls = (name: string, baseProps: Record<string, unknown>) => {
+  const doc = getComponentDoc(name);
+  const propMetas = Array.isArray(doc?.props) ? doc.props : [];
+
+  return propMetas.flatMap<PreviewControl>(propMeta => {
+    if (!propMeta?.name || propMeta.name === 'variationLabel') return [];
+    if (PREVIEW_VARIATION_EXCLUDED_PROPS.has(propMeta.name)) return [];
+
+    const type = renderType(propMeta.type ?? '').trim();
+    const current = baseProps[propMeta.name];
+    const literals = extractStringLiterals(type);
+
+    if (literals.length > 0) {
+      const currentValue = typeof current === 'string' && current.trim().length > 0 ? [current] : [];
+      return [
+        {
+          name: propMeta.name,
+          type: 'select',
+          options: Array.from(new Set([...currentValue, ...literals])),
+        },
+      ];
+    }
+
+    if (/(^|\W)boolean(\W|$)/.test(type) || type === 'true | false' || type === 'false | true') {
+      return [{ name: propMeta.name, type: 'boolean' }];
+    }
+
+    return [];
+  });
 };
 
 const pickExampleValue = (typeText: string, baseValue: unknown) => {
@@ -470,11 +481,270 @@ function PropsDocs({ name }: { name: string }) {
   );
 }
 
+function ComponentPreviewPanel({
+  name,
+  Component,
+  variations,
+  fullWidth,
+}: {
+  name: string;
+  Component: React.ComponentType<Record<string, unknown>>;
+  variations: Array<Record<string, unknown>>;
+  fullWidth: boolean;
+}) {
+  const previewVariations = useMemo(
+    () =>
+      variations.map((variationProps, variationIndex) => {
+        const safeVariationProps = variationProps as Record<string, unknown>;
+        return {
+          key: `${name}-${variationIndex}`,
+          label: getVariationLabel(safeVariationProps, variationIndex),
+          props: stripPreviewProps(safeVariationProps),
+        };
+      }),
+    [name, variations]
+  );
+
+  const [selectedIndex, setSelectedIndex] = useState(0);
+  const [viewport, setViewport] = useState<PreviewViewport>('desktop');
+  const [showAll, setShowAll] = useState(false);
+  const [overrides, setOverrides] = useState<Record<string, unknown>>({});
+
+  const activeVariation = previewVariations[selectedIndex] ?? previewVariations[0];
+  const previewControls = useMemo(
+    () => (activeVariation ? getPreviewControls(name, activeVariation.props) : []),
+    [activeVariation, name]
+  );
+  const activeProps = useMemo(
+    () => (activeVariation ? { ...activeVariation.props, ...overrides } : null),
+    [activeVariation, overrides]
+  );
+
+  useEffect(() => {
+    setOverrides({});
+  }, [selectedIndex]);
+
+  if (previewVariations.length === 0 || !activeVariation) return null;
+
+  const renderPreview = (variation: { key: string; label: string; props: Record<string, unknown> }) => (
+    <AppErrorBoundary fallback={() => <div className='text-sm'>Failed to render</div>}>
+      {renderPreviewContent(name, <Component {...variation.props} />, variation.label)}
+    </AppErrorBoundary>
+  );
+
+  if (showAll) {
+    return fullWidth ? (
+      <div className='component-library__variation-stack'>
+        {previewVariations.map(variation => (
+          <div key={variation.key} className='component-library__variation-card'>
+            <div className='component-library__variation-header'>{variation.label}</div>
+            <div className='component-library__variation-body'>{renderPreview(variation)}</div>
+          </div>
+        ))}
+      </div>
+    ) : (
+      <div className='component-library__grid component-library__grid--2-md component-library__grid--3-lg'>
+        {previewVariations.map(variation => (
+          <div key={variation.key} className='component-library__mini-card'>
+            <div className='component-library__muted-label'>{variation.label}</div>
+            {renderPreview(variation)}
+          </div>
+        ))}
+      </div>
+    );
+  }
+
+  return (
+    <div className='component-library__preview-panel'>
+      <div className='component-library__preview-heading'>
+        <div>
+          <div className='component-library__preview-eyebrow'>Preview studio</div>
+          <div className='component-library__preview-title'>{activeVariation.label}</div>
+        </div>
+        <div className='component-library__preview-note'>
+          {previewControls.length > 0 ? 'Interactive controls enabled' : 'Static preview'}
+        </div>
+      </div>
+
+      <div className='component-library__preview-toolbar'>
+        <label className='component-library__control-field'>
+          <span className='component-library__control-label'>Variation</span>
+          <select
+            className='component-library__control-select'
+            value={selectedIndex}
+            onChange={event => setSelectedIndex(Number(event.target.value))}
+          >
+            {previewVariations.map((variation, variationIndex) => (
+              <option key={variation.key} value={variationIndex}>
+                {variation.label}
+              </option>
+            ))}
+          </select>
+        </label>
+
+        <div className='component-library__control-group'>
+          <span className='component-library__control-label'>Viewport</span>
+          <div className='component-library__segmented-control'>
+            {PREVIEW_VIEWPORTS.map(option => (
+              <button
+                key={option.id}
+                type='button'
+                className='component-library__segmented-button'
+                data-active={viewport === option.id ? 'true' : 'false'}
+                onClick={() => setViewport(option.id)}
+              >
+                {option.label}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {previewVariations.length > 1 ? (
+          <button
+            type='button'
+            className='component-library__toggle-button'
+            onClick={() => setShowAll(true)}
+          >
+            Show all variations
+          </button>
+        ) : null}
+
+        {previewControls.length > 0 ? (
+          <button
+            type='button'
+            className='component-library__toggle-button'
+            onClick={() => setOverrides({})}
+          >
+            Reset prop controls
+          </button>
+        ) : null}
+      </div>
+
+      {previewControls.length > 0 ? (
+        <div className='component-library__control-grid'>
+          {previewControls.map(control => {
+            const currentValue = activeProps?.[control.name];
+
+            if (control.type === 'select') {
+              return (
+                <label key={control.name} className='component-library__control-field'>
+                  <span className='component-library__control-label'>{control.name}</span>
+                  <select
+                    className='component-library__control-select'
+                    value={typeof currentValue === 'string' ? currentValue : control.options?.[0] ?? ''}
+                    onChange={event => {
+                      setOverrides(prev => ({
+                        ...prev,
+                        [control.name]: event.target.value,
+                      }));
+                    }}
+                  >
+                    {(control.options ?? []).map(option => (
+                      <option key={`${control.name}-${option}`} value={option}>
+                        {option}
+                      </option>
+                    ))}
+                  </select>
+                </label>
+              );
+            }
+
+            if (control.type === 'boolean') {
+              return (
+                <label key={control.name} className='component-library__control-field'>
+                  <span className='component-library__control-label'>{control.name}</span>
+                  <select
+                    className='component-library__control-select'
+                    value={String(typeof currentValue === 'boolean' ? currentValue : false)}
+                    onChange={event => {
+                      setOverrides(prev => ({
+                        ...prev,
+                        [control.name]: event.target.value === 'true',
+                      }));
+                    }}
+                  >
+                    <option value='true'>true</option>
+                    <option value='false'>false</option>
+                  </select>
+                </label>
+              );
+            }
+
+            return null;
+          })}
+        </div>
+      ) : null}
+
+      <div className='component-library__variation-card'>
+        <div className='component-library__variation-header'>{activeVariation.label}</div>
+        <div className='component-library__variation-body'>
+          <div
+            className='component-library__preview-frame'
+            data-viewport={viewport}
+            data-full-width={fullWidth ? 'true' : 'false'}
+          >
+            {activeProps ? renderPreview({ ...activeVariation, props: activeProps }) : null}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function UnderlyingSingleComponentsPanel({
+  componentNames,
+  registry,
+  componentInfoByName,
+}: {
+  componentNames: string[];
+  registry: Record<string, unknown>;
+  componentInfoByName: Map<string, { category: string }>;
+}) {
+  const singleComponents = componentNames.filter(name => {
+    return componentInfoByName.get(name)?.category === 'components';
+  });
+
+  if (singleComponents.length === 0) return null;
+
+  return (
+    <details className='component-library__details' open={false}>
+      <summary className='component-library__details-summary'>
+        Underlying single components ({singleComponents.length})
+      </summary>
+      <div className='component-library__details-body component-library__dependency-stack'>
+        {singleComponents.map(componentName => {
+          const Component = registry[componentName] as
+            | React.ComponentType<Record<string, unknown>>
+            | undefined;
+          const fullWidth = isFullWidthPreview(
+            componentName,
+            componentInfoByName.get(componentName)?.category ?? 'components'
+          );
+
+          return (
+            <div key={`dependency-${componentName}`} className='component-library__dependency-card'>
+              <div className='component-library__dependency-title'>{componentName}</div>
+              <PropsDocs name={componentName} />
+              {Component ? (
+                <PropExplorer name={componentName} Component={Component} fullWidth={fullWidth} />
+              ) : null}
+            </div>
+          );
+        })}
+      </div>
+    </details>
+  );
+}
+
 export function ComponentLibrary() {
   const [query, setQuery] = useState('');
 
   const registry = useMemo(() => getComponentRegistry(), []);
   const allComponents = useMemo(() => getAllComponents(), []);
+  const componentInfoByName = useMemo(
+    () => new Map(allComponents.map(component => [component.name, { category: component.category }])),
+    [allComponents]
+  );
 
   const filteredComponents = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -508,18 +778,6 @@ export function ComponentLibrary() {
     () => orderedCategoryEntries.filter(([category]) => !isSingleCategory(category)),
     [orderedCategoryEntries]
   );
-
-  const makePreviewFallback = (componentLabel: string): React.ComponentType<{ error: Error }> => {
-    function PreviewFallback({ error }: { error: Error }) {
-      return (
-        <div className='p-4 border border-destructive/30 rounded-md bg-destructive/5 text-sm'>
-          <div className='font-semibold mb-1'>Failed to render: {componentLabel}</div>
-          <div className='text-muted-foreground break-words'>{error.message}</div>
-        </div>
-      );
-    }
-    return PreviewFallback;
-  };
 
   return (
     <div className='l-section component-library'>
@@ -615,9 +873,9 @@ export function ComponentLibrary() {
                           ? componentInfo.filePath
                           : componentInfo.importPath;
 
-                      const livePageUrl =
-                        componentDoc?.representativePageUrl ||
-                        getRepresentativePageUrl(componentInfo.name, componentInfo.category);
+                      const livePageUrl = hasRepresentativeLivePage(componentDoc)
+                        ? getNormalizedLivePageUrl(componentDoc)
+                        : null;
                       const fullWidth = isFullWidthPreview(
                         componentInfo.name,
                         componentInfo.category
@@ -638,89 +896,63 @@ export function ComponentLibrary() {
                         <div
                           key={componentInfo.name}
                           id={`component-${componentInfo.name}`}
-                          className='component-library__scroll-anchor'
+                          className='component-library__component-card component-library__scroll-anchor'
                         >
                           <div className='component-library__component-head'>
                             <h3 className='component-library__component-title'>
                               {componentInfo.name}
                             </h3>
                             <div className='component-library__component-meta'>
-                              <div className='component-library__component-path'>{sourceLabel}</div>
+                              <div className='component-library__meta-item'>
+                                <span className='component-library__meta-label'>Source</span>
+                                <span className='component-library__meta-value'>{sourceLabel}</span>
+                              </div>
                               {componentDoc?.representativeUsageFilePath ? (
-                                <div className='component-library__component-path'>
-                                  Usage: {componentDoc.representativeUsageFilePath}
+                                <div className='component-library__meta-item'>
+                                  <span className='component-library__meta-label'>Usage</span>
+                                  <span className='component-library__meta-value'>
+                                    {componentDoc.representativeUsageFilePath}
+                                  </span>
                                 </div>
                               ) : null}
-                              <a
-                                href={livePageUrl}
-                                target='_blank'
-                                rel='noopener noreferrer'
-                                className='component-library__component-live-link'
-                              >
-                                Live page: {livePageUrl}
-                              </a>
+                              <div className='component-library__meta-item'>
+                                <span className='component-library__meta-label'>Used on</span>
+                                <span className='component-library__meta-value'>
+                                  {componentDoc?.usageCount ?? 0} pages
+                                </span>
+                              </div>
+                              {componentDoc?.composedComponents?.length ? (
+                                <div className='component-library__meta-item'>
+                                  <span className='component-library__meta-label'>Built from</span>
+                                  <span className='component-library__meta-value'>
+                                    {componentDoc.composedComponents.join(', ')}
+                                  </span>
+                                </div>
+                              ) : null}
+                              {livePageUrl ? (
+                                <a
+                                  href={livePageUrl}
+                                  target='_blank'
+                                  rel='noopener noreferrer'
+                                  className='component-library__component-live-link'
+                                >
+                                  Live page: {livePageUrl}
+                                </a>
+                              ) : (
+                                <div className='component-library__meta-item'>
+                                  <span className='component-library__meta-label'>Live page</span>
+                                  <span className='component-library__meta-value'>not linked yet</span>
+                                </div>
+                              )}
                             </div>
                           </div>
 
-                          {fullWidth ? (
-                            <div className='component-library__variation-stack'>
-                              {variations.filter(Boolean).map((variationProps, variationIndex) => {
-                                const safeVariationProps = variationProps as Record<
-                                  string,
-                                  unknown
-                                >;
-                                const label = getVariationLabel(safeVariationProps, variationIndex);
-                                const props = stripPreviewProps(safeVariationProps);
-
-                                return (
-                                  <div
-                                    key={`${componentInfo.name}-${variationIndex}`}
-                                    className='component-library__variation-card'
-                                  >
-                                    <div className='component-library__variation-header'>
-                                      {label}
-                                    </div>
-                                    <div className='component-library__variation-body'>
-                                      <AppErrorBoundary
-                                        fallback={makePreviewFallback(
-                                          `${componentInfo.name} — ${label}`
-                                        )}
-                                      >
-                                        <Component {...props} />
-                                      </AppErrorBoundary>
-                                    </div>
-                                  </div>
-                                );
-                              })}
-                            </div>
-                          ) : (
-                            <div className='component-library__grid component-library__grid--2-md component-library__grid--3-lg'>
-                              {variations.filter(Boolean).map((variationProps, variationIndex) => {
-                                const safeVariationProps = variationProps as Record<
-                                  string,
-                                  unknown
-                                >;
-                                const label = getVariationLabel(safeVariationProps, variationIndex);
-                                const props = stripPreviewProps(safeVariationProps);
-
-                                return (
-                                  <div
-                                    key={`${componentInfo.name}-${variationIndex}`}
-                                    className='component-library__mini-card'
-                                  >
-                                    <div className='component-library__muted-label'>{label}</div>
-                                    <AppErrorBoundary
-                                      fallback={makePreviewFallback(
-                                        `${componentInfo.name} — ${label}`
-                                      )}
-                                    >
-                                      <Component {...props} />
-                                    </AppErrorBoundary>
-                                  </div>
-                                );
-                              })}
-                            </div>
-                          )}
+                          <ComponentPreviewPanel
+                            name={componentInfo.name}
+                            Component={Component}
+                            variations={variations.filter(Boolean) as Array<Record<string, unknown>>}
+                            fullWidth={fullWidth}
+                          />
 
                           <PropsDocs name={componentInfo.name} />
 
@@ -728,6 +960,12 @@ export function ComponentLibrary() {
                             name={componentInfo.name}
                             Component={Component}
                             fullWidth={fullWidth}
+                          />
+
+                          <UnderlyingSingleComponentsPanel
+                            componentNames={componentDoc?.composedComponents ?? []}
+                            registry={registry as Record<string, unknown>}
+                            componentInfoByName={componentInfoByName}
                           />
                         </div>
                       );

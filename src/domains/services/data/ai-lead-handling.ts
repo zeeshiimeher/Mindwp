@@ -29,15 +29,15 @@ export const aiLeadHandlingPage = {
   }),
   hero: {
     badge: 'AI Lead Handling',
-    title: 'They Messaged. Waited. Left.',
+    title: 'The Enquiry Came In After Hours. Nobody Picked It Up.',
     description:
-      "Someone sends an enquiry at 7pm. Team finished an hour ago. By morning, they've spoken to two competitors. Not a better offer. A faster reply.",
+      'Someone sends a message at 7pm, asks a booking question on the site, or calls after the team has finished. By morning, the conversation has already moved to a business that replied faster.',
     list: ['Slow replies', 'Dead by morning'],
   },
   sections: {
     foundation: {
       badge: 'The real problem',
-      title: 'Stick AI on something broken and it breaks faster',
+      title: 'Add AI to a messy process and the mess just moves faster',
       description:
         "If enquiry paths are unclear and nobody owns the handoff, automation doesn't help. It just speeds up the confusion.",
       painPoints: [
@@ -226,7 +226,7 @@ export const aiLeadHandlingPage = {
       badge: 'Where it helps most',
       title: 'Businesses where reply speed directly affects revenue',
       description:
-        'If the first response is the difference between getting the work or not, this is where AI earns its keep.',
+        'If winning the job depends on who replies first, this is where AI makes a real difference.',
       cards: [
         {
           title: 'Appointment-led businesses',
@@ -320,6 +320,8 @@ export const aiLeadHandlingPage = {
         'Booking integration',
         'CRM connection and data sync',
         'Handoff rules — when AI stops and a person takes over',
+        'Escalation rules for urgent, sensitive, or high-value conversations',
+        'Fallback rules for anything the AI is not confident answering',
         'Reporting on conversations and outcomes',
         'Ongoing learning and improvement',
       ],
@@ -463,7 +465,7 @@ export const aiLeadHandlingPage = {
         {
           question: 'Do we need a CRM?',
           answer:
-            "It helps. Keeps conversations, routing, and follow-up organised. If you don't have one, we'll figure out the right starting point.",
+            'No, but we usually recommend connecting this to GoHighLevel so chat, calls, follow-up, and reporting stay in one place. If you already have a working setup, we can connect that instead.',
         },
         {
           question: 'What if the AI gives a wrong answer?',

@@ -2,14 +2,10 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import JsonLd from '@/components/system/JsonLd';
-import type { RelatedContentBlock } from '@/components/system/RelatedContentSection';
-import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
-import { RELATED_SECTION_LABELS } from '@/config/ui-intelligence';
 import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
 import type { CaseStudyTemplateSection } from '@/domains/case-studies/templates';
 import { CaseStudyTemplate } from '@/domains/case-studies/templates';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
-import { getRelatedContent, type RelatedContent } from '@/lib/graph/query';
 import { getImage } from '@/lib/image-system/resolver';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 import { getCaseStudyMetadata } from '@/lib/seo/pageMetadata';
@@ -49,37 +45,6 @@ async function resolveCaseStudy(slug: string) {
 
 function getCaseStudyFaqs(sections: CaseStudyTemplateSection[]) {
   return sections.flatMap(section => (section.type === 'faq' ? section.items : []));
-}
-
-function buildRelatedBlocks(slug: string): RelatedContentBlock[] {
-  const related = getRelatedContent(slug, 'case-study');
-  const labels = RELATED_SECTION_LABELS['case-study'] ?? {};
-  const slotKeys = Object.keys(labels) as Array<keyof RelatedContent>;
-  const blocks: RelatedContentBlock[] = [];
-
-  for (const key of slotKeys) {
-    const items = related[key];
-    const label = labels[key];
-    if (!label || !items || items.length === 0) {
-      continue;
-    }
-
-    blocks.push({
-      title: label.title,
-      description: label.description,
-      items: items.slice(0, 3).map(item => ({
-        title: item.title,
-        desc: item.description,
-        href: item.path,
-      })),
-    });
-
-    if (blocks.length === 2) {
-      break;
-    }
-  }
-
-  return blocks;
 }
 
 export async function generateStaticParams() {
@@ -130,20 +95,18 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     { id: 'case-study-breadcrumb-jsonld', schema: breadcrumbSchema },
   ];
 
-  const relatedBlocks = buildRelatedBlocks(slug);
-
   return (
     <>
       {schemaEntries.map(entry => (
         <JsonLd key={entry.id} id={entry.id} schema={entry.schema} />
       ))}
       <CaseStudyTemplate
+        pageId={`case-study:${slug}`}
         metadata={caseStudy}
         sections={caseStudy.sections}
         featuredImage={getImage(slug, 'case-studies', 'featured-clean')}
         {...(caseStudy.templateOverrides ?? {})}
       />
-      {relatedBlocks.length > 0 ? <SmartRelatedSection blocks={relatedBlocks} /> : null}
     </>
   );
 }

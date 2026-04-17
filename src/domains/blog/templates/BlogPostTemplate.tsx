@@ -14,6 +14,7 @@ import {
   User,
 } from 'lucide-react';
 
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   BlogChecklistSection,
@@ -28,6 +29,7 @@ import { Callout } from '@/components/reusable/single/Callout';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { SmartCTA } from '@/components/system/SmartCTA';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
 import {
   type Author,
@@ -41,6 +43,7 @@ import { BlogPostShareIsland } from '@/domains/blog/ui/BlogPostShareIsland';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 
 export interface BlogPostTemplateProps {
+  pageId: string;
   // Meta
   title: string;
   slug: string;
@@ -178,6 +181,7 @@ function estimateReadTimeFromContent(sections: BlogPostSection[]): string {
 }
 
 export function BlogPostTemplate({
+  pageId,
   title,
   slug,
   metaTitle: _metaTitle,
@@ -371,8 +375,9 @@ export function BlogPostTemplate({
   const categoryLabel = categoryMeta?.name ?? category;
 
   return (
-    <div className='min-h-screen'>
-      <main>
+    <CTARegistryProvider pageId={pageId} pageType='blog'>
+      <div className='min-h-screen'>
+        <main>
         {/* HERO */}
         <SectionWrapper
           className='blog-hero'
@@ -463,6 +468,8 @@ export function BlogPostTemplate({
                   system={primarySystem}
                   pageType='blog'
                   slug={slug}
+                  intent='diagnostic'
+                  position='sidebar'
                   mode='actions-only'
                   primaryButtonCssPrefix='btn-block'
                   actionClassName='blog-post__sidebar-actions'
@@ -514,6 +521,8 @@ export function BlogPostTemplate({
             system={systems?.[0] ?? 'smart-website-systems'}
             pageType='blog'
             slug={slug}
+            intent='conversion'
+            position='footer'
             title={ctaSection.heading}
             description={ctaSection.content}
             cssPrefix='blog-cta'
@@ -530,7 +539,9 @@ export function BlogPostTemplate({
             dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
           />
         )}
-      </main>
-    </div>
+          <SmartRelatedSection slug={slug} />
+        </main>
+      </div>
+    </CTARegistryProvider>
   );
 }

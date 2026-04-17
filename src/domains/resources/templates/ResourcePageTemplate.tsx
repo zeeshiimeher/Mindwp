@@ -1,6 +1,7 @@
 import { type AnchorHTMLAttributes, type ReactNode } from 'react';
 import { Award, CheckCircle2, Heart, Phone, Shield, Star } from 'lucide-react';
 
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   extractAutomationContent,
@@ -29,6 +30,7 @@ import { ResourceTemplatesSection } from '@/components/reusable/sections/resourc
 import { Badge } from '@/components/reusable/single/Badge';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { SmartCTA } from '@/components/system/SmartCTA';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -62,6 +64,7 @@ function InternalLink({ href, children, className, ...props }: InternalLinkProps
   Preserve AutoReplyFunnel structure and sections-based props. */
 
 export type ResourcePageTemplateProps = {
+  pageId: string;
   url: string;
   title: string;
   description: string;
@@ -152,8 +155,9 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   // Show error message for missing sections in development
   if (missingSections.length > 0 && process.env.NODE_ENV === 'development') {
     return (
-      <div className='resource-page'>
-        <main className='resource-page__main l-section'>
+      <CTARegistryProvider pageId={props.pageId} pageType='resource'>
+        <div className='resource-page'>
+          <main className='resource-page__main l-section'>
           <div className='l-container'>
             <div className='resource-page__dev-error'>
               <h2 className='resource-page__dev-error-title'>
@@ -178,8 +182,9 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               </div>
             </div>
           </div>
-        </main>
-      </div>
+          </main>
+        </div>
+      </CTARegistryProvider>
     );
   }
 
@@ -351,6 +356,8 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               system={primarySystem}
               pageType='resource'
               slug={currentSlug}
+              intent='conversion'
+              position='footer'
               title={ctaData.heading}
               description={ctaData.content}
               metaItems={ctaData.features?.map(f => ({ text: f.text }))}
@@ -389,8 +396,9 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   }
 
   return (
-    <div className='resource-page'>
-      <main className='resource-page__main'>
+    <CTARegistryProvider pageId={props.pageId} pageType='resource'>
+      <div className='resource-page'>
+        <main className='resource-page__main'>
         {/* 1. HERO SECTION */}
         <SectionWrapper className='resource-page__hero' background='bg-gradient-surface-muted'>
           <Breadcrumb className='resource-page__breadcrumb'>
@@ -454,6 +462,8 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
                 system={primarySystem}
                 pageType='resource'
                 slug={currentSlug}
+                intent='entry'
+                position='hero'
                 mode='actions-only'
               />
             </div>
@@ -480,6 +490,8 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
                     system={primarySystem}
                     pageType='resource'
                     slug={currentSlug}
+                    intent='diagnostic'
+                    position='sidebar'
                     mode='actions-only'
                     primaryButtonCssPrefix='btn-block'
                     actionClassName='resource-page__sidebar-actions'
@@ -530,23 +542,27 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
           </div>
         </div>
         {/* CTA section - full width outside container */}
-        <div className='resource-page__cta'>
-          {ctaSections.map((section, index) => {
-            const ctaData = extractCTAContent(section);
-            return ctaData.heading ? (
-              <SmartCTA
-                key={`cta-${index}`}
-                system={primarySystem}
-                pageType='resource'
-                slug={currentSlug}
-                title={ctaData.heading}
-                description={ctaData.content}
-                metaItems={ctaData.features?.map(f => ({ text: f.text }))}
-              />
-            ) : null;
-          })}
-        </div>
-      </main>
-    </div>
+          <div className='resource-page__cta'>
+            {ctaSections.map((section, index) => {
+              const ctaData = extractCTAContent(section);
+              return ctaData.heading ? (
+                <SmartCTA
+                  key={`cta-${index}`}
+                  system={primarySystem}
+                  pageType='resource'
+                  slug={currentSlug}
+                  intent='conversion'
+                  position='footer'
+                  title={ctaData.heading}
+                  description={ctaData.content}
+                  metaItems={ctaData.features?.map(f => ({ text: f.text }))}
+                />
+              ) : null;
+            })}
+          </div>
+          <SmartRelatedSection slug={currentSlug} />
+        </main>
+      </div>
+    </CTARegistryProvider>
   );
 }

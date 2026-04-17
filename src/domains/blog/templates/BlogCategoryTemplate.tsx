@@ -42,8 +42,6 @@ export function BlogCategoryTemplate({
               {posts.map(post => (
                 <Card key={post.slug} className='blog-category__card'>
                   <div className='l-stack'>
-                    <span className={`badge badge--meta ${badgeClassName}`}>{post.category}</span>
-
                     <h3 className='blog-category__card-title'>{post.title}</h3>
 
                     <p className='blog-category__card-description'>{post.metaDescription}</p>

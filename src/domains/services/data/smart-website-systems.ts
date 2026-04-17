@@ -25,17 +25,17 @@ const smartWebsitesFaqItems = [
   {
     question: 'We already spent a lot on our current site. Do we start over?',
     answer:
-      "Not always. If the bones are solid, we wire in the enquiry handling, connect your CRM, and add follow-up. If it can't support that, we'll be upfront about it.",
+      'Not always. If the current site is structurally sound, we can connect the enquiry handling, CRM, and follow-up into what you already have. If it cannot support that properly, we will say so clearly before recommending a rebuild.',
   },
   {
     question: 'Do we need a specific CRM?',
     answer:
-      "No. We plug into whatever you're running. If you don't have one yet, we'll set up something simple your team can pick up straight away.",
+      'No, but we usually recommend building this around GoHighLevel because it keeps enquiries, follow-up, and reporting in one place. If you already have a setup that works, we can connect that instead.',
   },
   {
     question: 'Will local people actually find us on Google?',
     answer:
-      "Each service gets its own listing with titles that match what people search for. That's what gets Google to show your business when someone nearby needs what you do.",
+      'Each service gets its own page with wording that matches how people actually search. That gives Google a clear page to show when someone nearby needs that exact service.',
   },
   {
     question: "How much upkeep is there once it's running?",
@@ -99,7 +99,7 @@ export const smartWebsiteSystemsPage = {
       header: {
         title: 'What slips through every week',
         description:
-          "People reach out. Messages land in the wrong place. Your team doesn't see half of them.",
+          "People reach out. Messages land in the wrong place. Your team misses some of them completely, and the rest get answered later than they should.",
       },
       items: [
         {
@@ -125,7 +125,7 @@ export const smartWebsiteSystemsPage = {
         },
         {
           icon: Zap,
-          title: 'Busy days swallow new enquiries whole',
+          title: 'New enquiries disappear on busy days',
           description:
             "Your team is mid-job. A lead arrives. Someone says they'll get to it. Nobody does. That person already called the next number on their list.",
           iconType: 'primary' as const,
@@ -157,7 +157,7 @@ export const smartWebsiteSystemsPage = {
           type: 'before' as const,
           title: 'How it runs right now',
           items: [
-            'Services lumped together. A visitor looking for one specific thing scrolls past everything else. Most leave before they find it.',
+            'Different services are crammed onto one page. Someone looking for one specific thing has to dig through everything else first.',
             'Contact form feeds into an email account. Whoever remembers to check it, replies. Could be hours. Could be days.',
             'No visibility into who visited, what they looked at, or where they dropped off. Marketing spend is a guess.',
             'Enquiries live in one place. Customer details in another. When it gets busy, things get missed between the two.',
@@ -168,10 +168,10 @@ export const smartWebsiteSystemsPage = {
           type: 'after' as const,
           title: "How it runs when it's connected",
           items: [
-            'Each service is its own clear entry. Visitors recognise what they need and act.',
+            'Each service has its own clear page. Visitors recognise what they need and act faster.',
             "Enquiries arrive with name, number, and what they're after. The right person picks it up in minutes.",
             'You can see where people come from, what they do, and which spend brings real work.',
-            'From form to CRM to follow-up — no one has to copy anything manually.',
+            'The form goes straight into your CRM and follow-up starts without anyone copying details by hand.',
             'Backed up. Monitored. Updated. Issues flagged before customers notice them.',
           ],
         },
@@ -187,10 +187,12 @@ export const smartWebsiteSystemsPage = {
         'Enquiry forms that capture name, number, and what they need — routed to the right person',
         'CRM or booking tool connected from day one. Every lead logged the moment it lands.',
         'Automated confirmations, reminders, and follow-up running without anyone on your team lifting a finger',
+        'Follow-up automation configured around your real enquiry flow, not bolted on after launch',
+        'Every enquiry path tested before launch so forms, buttons, calls, and bookings all work end to end',
         'Tracking showing where visitors come from and what they do before they leave or get in touch',
         'SSL, daily backups, and security monitoring from the start',
         'Tested across phones, tablets, and desktops — working properly on each',
-        'Written so Google can match your services to what people in your area search for',
+        'Service pages written clearly enough for Google to match them to the searches people nearby actually make',
         'Documentation and a proper walkthrough. Your team runs it independently from there.',
       ],
     },
@@ -329,7 +331,7 @@ export const smartWebsiteSystemsPage = {
       header: {
         title: 'What changes when the site actually works',
         description:
-          'Not about how it looks. About what happens when every interested person can reach you — and your team knows the second they do.',
+          'Not about how it looks. About what happens when every interested person can reach you and your team sees it straight away.',
       },
       tagline: 'Get the site right. Everything after it starts working.',
       narrativeTitle: "Why your ads and social media aren't paying off yet",
@@ -479,7 +481,8 @@ export const smartWebsiteSystemsPage = {
       "Drop your URL. We come back with what's working, what's leaking, and what to fix.",
   },
   inlineCta: {
-    title: 'Not sure what your site is costing you?',
-    description: "Send the link. Where visitors drop off. What's missing. What would change.",
+    title: 'Not sure where your site is leaking enquiries?',
+    description:
+      'Send the link. We will show you where people stop, what is not being captured, and which fix matters first.',
   },
 } satisfies ServicePageData;

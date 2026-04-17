@@ -57,6 +57,7 @@ type InfrastructureProblem = {
 
 type SystemCapabilityComponent = {
   id: string;
+  visualId: string;
   icon: LucideIcon;
   title: string;
   subline?: string;
@@ -168,7 +169,7 @@ export type HomepageData = {
   industries: {
     title: string;
     description: string;
-    items: Array<{ icon: LucideIcon; title: string; description: string }>;
+    items: Array<{ icon: LucideIcon; title: string; description: string; href: string }>;
   };
 
   visibilityTimeline: {
@@ -209,7 +210,7 @@ export const homepageData: HomepageData = {
   seo: {
     title: 'MindWP — Smart Websites That Work for Service Businesses',
     description:
-      'MindWP builds Smart Websites for established service businesses — designed to support search visibility, reliable enquiry handling, and long-term business growth.',
+      'MindWP builds Smart Websites for service businesses that need clearer visibility, enquiry handling, follow-up, and proof systems from day one or after years of patchwork.',
     keywords: [
       'Smart Website Systems',
       'website consultancy for service businesses',
@@ -230,9 +231,9 @@ export const homepageData: HomepageData = {
   },
   hero: {
     badge: 'For Service Businesses',
-    title: 'Busy. Leaking. Running on guesswork.',
+    title: 'Build The System First. Then Stop Losing Work Around It.',
     description:
-      "Your diary is full. But calls still go to voicemail. Enquiries sit in inboxes. Happy customers leave without a word. The work is good. Everything around it isn't.",
+      'We build the website, routing, follow-up, and proof systems that stop missed calls, dead enquiries, and invisible local search from quietly draining an already busy business.',
     valueProps: ['Missed calls', 'Dead enquiries', 'Invisible online'],
     primaryAction: {
       label: "What's actually going wrong?",
@@ -277,9 +278,9 @@ export const homepageData: HomepageData = {
   },
   smartWebsiteFramework: {
     badge: 'Sound Familiar?',
-    title: "You've probably seen some of this already",
+    title: 'What the business looks like before the system is set up properly',
     description:
-      'These are the things that slip. Not emergencies. Quiet leaks that add up until the numbers stop making sense.',
+      'These are the recurring breakpoints that show up when the website, lead handling, follow-up, and proof layers were never designed to work together.',
     journeyTitle: 'Where it starts to break',
     principles: [
       {
@@ -321,13 +322,14 @@ export const homepageData: HomepageData = {
     journeyNote: "These aren't separate problems. They're connected.",
     cta: {
       title: 'Something here feel familiar?',
-      description: "Tell us what you're seeing. We'll find the leak.",
+      description:
+        "Tell us what keeps slipping: calls, enquiries, follow-up, visibility, or proof. We'll map the first breakpoints and show what needs fixing first.",
     },
   },
   implementationSection: {
-    title: 'We look at the business first. Then we fix it.',
+    title: 'Build the website and the system around it.',
     description:
-      "Not a template. Not a redesign. We find what's breaking and sort out what's around it.",
+      'We start with how the business needs to run, then build the website, routing, follow-up, and proof layers in the order that makes the whole setup usable.',
     steps: [
       {
         number: '01',
@@ -403,7 +405,8 @@ export const homepageData: HomepageData = {
     ],
     cta: {
       title: 'Where are your enquiries dropping?',
-      description: 'How things run right now. You see the gaps yourself.',
+      description:
+        'Walk us through how leads arrive, where they stall, and what the team is juggling now. You will leave with a clearer picture of the gaps before any build starts.',
     },
   },
   systemCapabilities: {
@@ -416,6 +419,7 @@ export const homepageData: HomepageData = {
     components: [
       {
         id: 'calls',
+        visualId: 'calls',
         icon: Layers,
         title: 'Missed Calls',
         subline: 'Ringing out during every job.',
@@ -441,6 +445,7 @@ export const homepageData: HomepageData = {
       },
       {
         id: 'leads',
+        visualId: 'leads',
         icon: Database,
         title: 'Dead Leads',
         subline: 'Hundreds of names. Nothing happening.',
@@ -466,6 +471,7 @@ export const homepageData: HomepageData = {
       },
       {
         id: 'visibility',
+        visualId: 'visibility',
         icon: Workflow,
         title: 'Invisible Online',
         subline: "They search. You don't show up.",
@@ -491,6 +497,7 @@ export const homepageData: HomepageData = {
       },
       {
         id: 'replies',
+        visualId: 'replies',
         icon: Calendar,
         title: 'Slow Replies',
         subline: 'Six hours. Sometimes longer.',
@@ -516,6 +523,7 @@ export const homepageData: HomepageData = {
       },
       {
         id: 'proof',
+        visualId: 'proof',
         icon: ShieldCheck,
         title: 'No Proof Online',
         subline: 'Five-star work. Barely any proof.',
@@ -580,9 +588,9 @@ export const homepageData: HomepageData = {
       },
     ],
     trustFoundations: {
-      title: 'This works when the business is already running.',
+      title: 'This works for established businesses and serious new setups.',
       description:
-        'Not for startups. Not for side projects. For businesses where missed work costs real money.',
+        'Best when there is real demand already, or when you want the website, CRM, routing, and follow-up set up properly from day one instead of patching it later.',
       strongFitBadge: 'Strong Fit',
       strongFitTitle: 'This works well when:',
       strongFitItems: [
@@ -627,8 +635,9 @@ export const homepageData: HomepageData = {
           description: 'Quick experiments rather than something built to last.',
         },
         {
-          title: 'The business is brand new',
-          description: 'No existing customer base or enquiry volume to work with.',
+          title: 'You are still testing the offer itself',
+          description:
+            'If the service, market, or delivery model is still undefined, the first step is clarifying the offer before building full infrastructure around it.',
         },
       ],
     },
@@ -643,24 +652,28 @@ export const homepageData: HomepageData = {
         title: 'Beauty & Personal Care',
         description:
           'Bookings scattered across Instagram DMs and phone calls. No-shows nobody chased. Reviews that never got requested.',
+        href: '/industries/beauty-personal-care',
       },
       {
         icon: Wrench,
         title: 'Trades & Home Services',
         description:
           "Van's out. Phone's ringing. Quotes sent last month still sitting there. Half the leads came from a Google listing that hasn't been touched in years.",
+        href: '/industries/home-services',
       },
       {
         icon: Users,
         title: 'Professional Services',
         description:
           "Consultations booked by email chains. Follow-up that depends on someone remembering. A website that doesn't match the work.",
+        href: '/industries/legal-professional-services',
       },
       {
         icon: Calendar,
         title: 'Local & Appointment-Based',
         description:
           "Clinics, repair shops, studios. Steady demand. Booking friction. Review counts that don't match the customer satisfaction.",
+        href: '/industries/local-appointment-businesses',
       },
     ],
   },
@@ -753,7 +766,7 @@ export const homepageData: HomepageData = {
       {
         question: 'What kind of businesses is this for?',
         answer:
-          'Established service businesses. Trades, professionals, local services. Businesses where everyone is out doing the work and enquiries pile up unhandled.',
+          'Established service businesses are the main fit, but we also work with serious new businesses that want the website, CRM, routing, and follow-up set up properly from day one.',
       },
       {
         question: 'How long before we see results?',
@@ -774,7 +787,8 @@ export const homepageData: HomepageData = {
   cta: {
     footer: {
       title: "Something here hit close. Find where it's breaking.",
-      description: 'Enquiries. Calls. Follow-up. Find where yours are leaking.',
+      description:
+        'We can map what needs building first, whether you are fixing years of patchwork or setting the foundation properly from day one. Calls, follow-up, visibility, and proof all get reviewed together.',
       metaItems: [
         { text: 'Free diagnostic' },
         { text: 'No commitment' },

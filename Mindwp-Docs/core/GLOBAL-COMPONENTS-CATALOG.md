@@ -76,8 +76,6 @@ Run: `npm run -s generate:global-inventory`
 ### Sections domain: `case-studies` (from `src/components/reusable/sections/case-studies/index.ts`)
 | Export | Source |
 |---|---|
-| `CaseStudyCTASection` | `src/components/reusable/sections/case-studies/CaseStudyCTASection.tsx` |
-| `CaseStudyFAQSection` | `src/components/reusable/sections/case-studies/CaseStudyFAQSection.tsx` |
 | `CaseStudyHeroSection` | `src/components/reusable/sections/case-studies/CaseStudyHeroSection.tsx` |
 | `CaseStudyMoreSection` | `src/components/reusable/sections/case-studies/CaseStudyMoreSection.tsx` |
 
@@ -96,7 +94,6 @@ Run: `npm run -s generate:global-inventory`
 | `DualFeatureCardsSection` | `src/components/reusable/sections/core/DualFeatureCardsSection.tsx` |
 | `DualToneChecklistComparisonSection` | `src/components/reusable/sections/core/DualToneChecklistComparisonSection.tsx` |
 | `ExploreCardsSection` | `src/components/reusable/sections/core/ExploreCardsSection.tsx` |
-| `FaqAccordionSection` | `src/components/reusable/sections/core/FaqAccordionSection.tsx` |
 | `FeatureChecklistCardsSection` | `src/components/reusable/sections/core/FeatureChecklistCardsSection.tsx` |
 | `FeatureStatsMockupSection` | `src/components/reusable/sections/core/FeatureStatsMockupSection.tsx` |
 | `GenericCardsSection` | `src/components/reusable/sections/core/GenericCardsSection.tsx` |
@@ -128,7 +125,6 @@ Run: `npm run -s generate:global-inventory`
 |---|---|
 | `*` | `src/components/reusable/sections/features/FeatureBenefitsSection.tsx` |
 | `*` | `src/components/reusable/sections/features/FeatureCapabilitiesSection.tsx` |
-| `*` | `src/components/reusable/sections/features/FeatureCTASection.tsx` |
 | `*` | `src/components/reusable/sections/features/FeatureHeroSection.tsx` |
 | `*` | `src/components/reusable/sections/features/FeatureIconCardsSection.tsx` |
 | `*` | `src/components/reusable/sections/features/FeaturePainPointsSection.tsx` |
@@ -145,9 +141,7 @@ _No exports detected._
 | `*` | `src/components/reusable/sections/industries/IndustryChallengesSection.tsx` |
 | `*` | `src/components/reusable/sections/industries/IndustryChecklistSection.tsx` |
 | `*` | `src/components/reusable/sections/industries/IndustryComparisonSection.tsx` |
-| `*` | `src/components/reusable/sections/industries/IndustryCTASection.tsx` |
 | `*` | `src/components/reusable/sections/industries/IndustryExploreSection.tsx` |
-| `*` | `src/components/reusable/sections/industries/IndustryFAQSection.tsx` |
 | `*` | `src/components/reusable/sections/industries/IndustryHeroSection.tsx` |
 | `*` | `src/components/reusable/sections/industries/IndustryOperatingPatternsSection.tsx` |
 | `*` | `src/components/reusable/sections/industries/IndustryPackagesSection.tsx` |
@@ -178,7 +172,6 @@ _No exports detected._
 | `IconTextCard` | `src/components/reusable/single/IconTextCard.tsx` |
 | `LinkCard` | `src/components/reusable/single/LinkCard.tsx` |
 | `SectionIntro` | `src/components/reusable/single/SectionIntro.tsx` |
-| `ServiceCTASection` | `src/components/reusable/sections/service/ServiceCTASection.tsx` |
 | `ServiceHeroSection` | `src/components/reusable/sections/service/ServiceHeroSection.tsx` |
 | `WorkflowStepCard` | `src/components/reusable/single/WorkflowStepCard.tsx` |
 <!-- AUTO-GENERATED:GLOBAL-INVENTORY:END -->

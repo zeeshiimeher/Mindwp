@@ -93,7 +93,12 @@ export function IndustryCategoryPageTemplate({
   const challengeSection = operatingPatterns ?? challenges;
   const solutionSection = systemLayers ?? solutions;
   const pathwaySection = pathways ?? packages;
-  const resolvedPathwaySection = resolveIndustryPathwaySection(pathwaySection, system, slug);
+  const resolvedPathwaySection = resolveIndustryPathwaySection(
+    pathwaySection,
+    system,
+    slug,
+    'industry-category'
+  );
   const showSubIndustries = sectionControls?.subIndustries?.enabled !== false && !detailRoutes;
   const resolvedDetailRoutes = resolveIndustryCategoryDetailRoutes(detailRoutes, category);
 
@@ -105,7 +110,7 @@ export function IndustryCategoryPageTemplate({
             {...hero}
             smartCta={{
               system,
-              pageType: 'industry',
+              pageType: 'industry-category',
               slug,
               primaryActionVariant: 'primary',
             }}
@@ -140,7 +145,7 @@ export function IndustryCategoryPageTemplate({
           {resolvedPathwaySection && <IndustryPathwaysSection {...resolvedPathwaySection} />}
           <SmartCTA
             system={system}
-            pageType='industry'
+            pageType='industry-category'
             slug={slug}
             title={cta.title}
             description={cta.description}

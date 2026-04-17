@@ -41,19 +41,9 @@ export function ResourcesGuidesIsland({
           <Card key={resource.url} className='resource-card resource-card--interactive'>
             <div className='resource-card__body'>
               <div className='resource-card__meta'>
-                <div className='resource-card__badges'>
-                  <Badge variant='outline' size='sm' context='meta'>
-                    {resource.categoryLabel}
-                  </Badge>
-                  {resource.freshnessBadge && (
-                    <Badge variant='secondary' size='sm' context='meta'>
-                      {resource.freshnessBadge}
-                    </Badge>
-                  )}
-                </div>
-                <span className='resource-card__date'>
-                  {resource.dateLabel}: {resource.dateText}
-                </span>
+                <Badge variant='outline' size='sm' context='meta'>
+                  {resource.categoryLabel}
+                </Badge>
               </div>
 
               <h3 className='resource-card__title'>{resource.title}</h3>
@@ -78,7 +68,7 @@ export function ResourcesGuidesIsland({
             variant='outline'
             label={loadMoreLabel}
             cssPrefix='btn-block'
-            onClick={() => setVisibleCount(current => Math.min(current + 9, resources.length))}
+            onClick={() => setVisibleCount(current => Math.min(current + initialVisibleCount, resources.length))}
           />
         </div>
       )}

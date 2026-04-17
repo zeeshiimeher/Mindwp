@@ -9,7 +9,6 @@
  */
 export * from './FeatureBenefitsSection';
 export * from './FeatureCapabilitiesSection';
-export * from './FeatureCTASection';
 export * from './FeatureHeroSection';
 export * from './FeatureIconCardsSection';
 export * from './FeaturePainPointsSection';

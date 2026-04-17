@@ -1,25 +1,20 @@
 import {
   ArrowRight,
   BarChart3,
-  Blocks,
   Bot,
-  Boxes,
   Inbox,
-  LayoutTemplate,
   Phone,
   RefreshCcw,
-  RefreshCcwDot,
   Search,
-  ShoppingCart,
   Sparkles,
   Star,
-  Workflow,
 } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Badge } from '@/components/reusable/single/Badge';
 import { Button } from '@/components/reusable/single/Button';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
 import { SERVICE_REGISTRY } from '@/domains/services/registry';
@@ -40,22 +35,10 @@ const OPERATIONAL_MODULE_SLUGS = [
   'unified-communication-system',
 ] as const;
 
-const IMPLEMENTATION_SUPPORT_SLUGS = [
-  'wordpress-development',
-  'website-redesign-system-rebuild',
-  'crm-infrastructure-implementation',
-  'system-migration-platform-consolidation',
-  'ecommerce',
-  'elementor',
-  'bricks-builder',
-  'divi5',
-] as const;
-
 type VisibleServiceSlug =
   | typeof FEATURED_SERVICE_SLUG
   | (typeof SUPPORTING_SYSTEM_SLUGS)[number]
-  | (typeof OPERATIONAL_MODULE_SLUGS)[number]
-  | (typeof IMPLEMENTATION_SUPPORT_SLUGS)[number];
+  | (typeof OPERATIONAL_MODULE_SLUGS)[number];
 
 const SERVICE_META: Record<
   VisibleServiceSlug,
@@ -76,12 +59,6 @@ const SERVICE_META: Record<
     title: 'Conversion Layer',
     description:
       'A focused conversion system for stronger page flow, tighter offer pages, cleaner CTA logic, and clearer enquiry handoff.',
-  },
-  'system-migration-platform-consolidation': {
-    icon: Boxes,
-    title: 'System Migration & Platform Consolidation',
-    description:
-      'A migration pathway for moving away from fragmented tools, outdated platforms, and disconnected website systems.',
   },
   'lead-reactivation-system': {
     icon: RefreshCcw,
@@ -117,48 +94,13 @@ const SERVICE_META: Record<
     title: 'AI Lead Handling Systems',
     description: 'AI chat and voice assistants for enquiry handling, routing, and support.',
   },
-  'crm-infrastructure-implementation': {
-    icon: Workflow,
-    title: 'CRM Infrastructure Implementation',
-    description:
-      'Structured CRM setup for lead routing, follow-up ownership, and cleaner pipeline management.',
-  },
-  'wordpress-development': {
-    icon: LayoutTemplate,
-    title: 'WordPress Website Development',
-    description:
-      'Structured WordPress implementation for service businesses that need a clear, maintainable website foundation.',
-  },
-  'website-redesign-system-rebuild': {
-    icon: RefreshCcwDot,
-    title: 'Website Redesign & System Rebuild',
-    description:
-      'A structural realignment service for outdated or cluttered websites that need a cleaner rebuild, not just a visual refresh.',
-  },
-  ecommerce: {
-    icon: ShoppingCart,
-    title: 'E-commerce Implementation',
-    description:
-      'Commerce implementation on WordPress with structured catalog, checkout, and fulfilment foundations.',
-  },
-  elementor: {
-    icon: Blocks,
-    title: 'Elementor Implementation',
-    description:
-      'Support-tier implementation page for structured WordPress delivery using Elementor.',
-  },
-  'bricks-builder': {
-    icon: Blocks,
-    title: 'Bricks Implementation',
-    description:
-      'Support-tier implementation page for performance-conscious WordPress delivery using Bricks.',
-  },
-  divi5: {
-    icon: Blocks,
-    title: 'Divi Implementation',
-    description: 'Support-tier implementation page for structured WordPress delivery using Divi.',
-  },
 };
+
+const PRIMARY_AND_SECONDARY_SERVICE_SLUGS = [
+  FEATURED_SERVICE_SLUG,
+  ...SUPPORTING_SYSTEM_SLUGS,
+  ...OPERATIONAL_MODULE_SLUGS,
+] as const;
 
 type ServiceCardData = {
   slug: VisibleServiceSlug;
@@ -249,7 +191,8 @@ export function ServicesLanding() {
           </div>
         }
       >
-        <main role='main'>
+        <CTARegistryProvider pageId='page:services' pageType='page'>
+          <main role='main'>
           {/* Hero Section */}
           <SectionWrapper
             className='service-lnd service-lnd__hero'
@@ -257,16 +200,19 @@ export function ServicesLanding() {
           >
             <div className='service-lnd__heroContent l-mx-auto text-center l-stack l-stack--loose'>
               <Badge variant='primary'>Services Architecture</Badge>
-              <h1 className='service-lnd__title'>System Services for WordPress Businesses</h1>
+              <h1 className='service-lnd__title'>The Main Service Paths We Build First</h1>
               <p className='service-lnd__subtitle text-muted-foreground text-lg'>
-                Smart Website Systems leads the structure. Supporting systems, operational modules,
-                and implementation support pages sit beneath it in a controlled hierarchy.
+                These are the live Tier 1 and Tier 2 service pages: the core front-door website
+                layer plus the operating systems that strengthen visibility, lead handling,
+                follow-up, and conversion once the structure is in place.
               </p>
               <div className='service-lnd__actions l-row l-row-wrap l-gap-4 l-row-center'>
                 <SmartCTA
                   system='smart-website-systems'
                   pageType='page'
                   slug='services'
+                  intent='entry'
+                  position='hero'
                   mode='actions-only'
                 />
               </div>
@@ -344,37 +290,28 @@ export function ServicesLanding() {
               )}
 
               {renderServiceSection(
-                'Supporting Systems',
-                'These Tier 1 systems support the flagship Smart Website framework without competing with it as parallel pillars.',
-                SUPPORTING_SYSTEM_SLUGS
-              )}
-
-              {renderServiceSection(
-                'Operational Modules',
-                'These Tier 2 pages focus on narrower operating problems and connect upward into the broader system architecture.',
-                OPERATIONAL_MODULE_SLUGS
-              )}
-
-              {renderServiceSection(
-                'Implementation & Platform Support',
-                'These Tier 3 implementation pathways and builder support pages help deliver or extend the system without being positioned as strategic services.',
-                IMPLEMENTATION_SUPPORT_SLUGS
+                'Core Service Pages',
+                'This combined listing keeps the main front-door service and the active supporting system pages in one place, without mixing in implementation-only support pages.',
+                PRIMARY_AND_SECONDARY_SERVICE_SLUGS
               )}
             </div>
           </SectionWrapper>
-        </main>
+          </main>
 
-        {/* Footer CTA Section */}
-        <SmartCTA
-          system='smart-website-systems'
-          pageType='page'
-          slug='services'
-          title='Ready to transform your WordPress business?'
-          description='Discover how our integrated systems can streamline your operations and boost your growth.'
-          primaryActionVariant='white'
-          cssPrefix='footer-cta'
-          backgroundColor='bg-gradient-primary'
-        />
+          {/* Footer CTA Section */}
+          <SmartCTA
+            system='smart-website-systems'
+            pageType='page'
+            slug='services'
+            intent='conversion'
+            position='footer'
+            title='Need help choosing the right service path?'
+            description='Tell us what is breaking first: visibility, lead handling, missed calls, dormant follow-up, or conversion. We will map that problem to the right service page and explain what should come next.'
+            primaryActionVariant='white'
+            cssPrefix='footer-cta'
+            backgroundColor='bg-gradient-primary'
+          />
+        </CTARegistryProvider>
       </ErrorBoundary>
     </>
   );

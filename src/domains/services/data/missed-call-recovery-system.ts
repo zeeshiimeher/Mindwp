@@ -40,7 +40,7 @@ export const missedCallRecoverySystemPage = {
     foundation: {
       badge: 'What actually happens',
       title: "A missed call isn't a missed call. It's a job that went somewhere else.",
-      description: 'They needed something done. Rang. Silence. Tried the next one.',
+      description: 'They called. Silence. Gone.',
       painPoints: [
         {
           before: 'Voicemail. Ten minutes. Next business on the list.',
@@ -191,7 +191,7 @@ export const missedCallRecoverySystemPage = {
         {
           title: 'Most of your work starts with a phone call',
           description:
-            "Customers call before they book. Each unanswered one could be a job worth hundreds. You just can't always get to the phone.",
+            'Customers still call before they book. Each unanswered call can be a real job, but your team cannot always get to the phone in time.',
         },
         {
           title: 'Your team is often unavailable during working hours',
@@ -275,6 +275,7 @@ export const missedCallRecoverySystemPage = {
           points: [
             'Missed call fires a text. Caller knows the business exists.',
             'Reply captures the job — leak, boiler, blocked drain — and urgency. Queue fills itself.',
+            'Team sees the callback queue in priority order instead of working from memory.',
           ],
           featured: true,
         },
@@ -286,6 +287,16 @@ export const missedCallRecoverySystemPage = {
             'Eleven jobs. Three emergencies. The rest were quote requests that actually closed.',
             'Weekends stopped being a black hole. Monday had a list.',
             'Owner could finally see what was coming in, what was missed, and what happened after. First time he had that.',
+          ],
+        },
+        {
+          title: 'What changed operationally after that first month',
+          description:
+            'The team stopped treating missed calls like bad luck and started working from a visible queue with urgency and callback context attached.',
+          points: [
+            'Callback priority became obvious instead of whoever remembered first.',
+            'Urgent work surfaced separately from routine quote requests.',
+            'Recovered call value became measurable instead of a guess.',
           ],
         },
       ],
@@ -320,8 +331,9 @@ export const missedCallRecoverySystemPage = {
     },
   },
   inlineCta: {
-    title: 'How many calls are you losing a week?',
-    description: "Ten minutes. We look at your call patterns and show you what's disappearing.",
+    title: 'How many missed calls are turning into lost jobs?',
+    description:
+      'Ten minutes. We look at how calls are missed now, what happens after, and where the recovery gap is costing you work.',
   },
   cta: {
     title: "Find out how many calls you're missing",

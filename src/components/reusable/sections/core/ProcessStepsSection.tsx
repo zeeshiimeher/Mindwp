@@ -38,7 +38,7 @@ export function ProcessStepsSection({
 
   return (
     <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
-      {(badge || title || description) && (
+      {!isTimelineLayout && (badge || title || description) && (
         <SectionIntro
           {...(badge !== undefined && { badge })}
           title={title || ''}

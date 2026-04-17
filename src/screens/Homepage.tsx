@@ -23,6 +23,7 @@ import {
   ProblemSolutionSplitCard,
   SectionIntro,
 } from '@/components/reusable/single';
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { homepageData } from '@/domains/home/data/homepage';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
@@ -57,11 +58,12 @@ export default function Homepage({
 
   return (
     <ErrorBoundary>
-      <div className='home-page'>
-        <main>
-          <section id='hero' className='hero-section hero-section--homepage l-section'>
-            <HeroSection />
-          </section>
+      <CTARegistryProvider pageId='page:home' pageType='page'>
+        <div className='home-page'>
+          <main>
+            <section id='hero' className='hero-section hero-section--homepage l-section'>
+              <HeroSection />
+            </section>
 
           <section
             id='infrastructure-gaps'
@@ -116,9 +118,10 @@ export default function Homepage({
               backgroundColor='bg-base'
             />
           </Suspense>
-        </main>
-        <FooterCTASection />
-      </div>
+          </main>
+          <FooterCTASection />
+        </div>
+      </CTARegistryProvider>
     </ErrorBoundary>
   );
 }
@@ -154,6 +157,8 @@ function HeroSection() {
               system='smart-website-systems'
               pageType='page'
               slug='home'
+              intent='entry'
+              position='hero'
               mode='actions-only'
               primaryActionVariant='white'
               tone='short'
@@ -304,6 +309,8 @@ function SmartWebsiteFrameworkSection() {
           system='smart-website-systems'
           pageType='page'
           slug='home'
+          intent='diagnostic'
+          position='pre-mid'
           title={smartWebsiteFrameworkData.cta.title}
           description={smartWebsiteFrameworkData.cta.description}
           headingLevel='h3'
@@ -360,6 +367,8 @@ function ClientJourneySection() {
             system='smart-website-systems'
             pageType='page'
             slug='home'
+            intent='comparison'
+            position='mid'
             title={clientJourneyData.cta.title}
             description={clientJourneyData.cta.description}
             headingLevel='h3'
@@ -426,43 +435,210 @@ function TrustFoundationsSection() {
   );
 }
 
+function CallsVisual({ stats }: { stats: { label: string; value: string }[] }) {
+  return (
+    <div className='c-system-capabilities__visual c-system-capabilities__visual--calls'>
+      <svg viewBox='0 0 320 180' className='c-system-capabilities__visual-svg' aria-hidden='true'>
+        <rect x='20' y='18' width='126' height='138' rx='24' fill='rgba(255,255,255,0.78)' />
+        <rect x='174' y='32' width='126' height='112' rx='24' fill='rgba(255,255,255,0.68)' />
+        <text x='38' y='42' fontSize='12' fill='currentColor' opacity='0.45'>Incoming calls</text>
+        <text x='192' y='56' fontSize='12' fill='currentColor' opacity='0.45'>Callback queue</text>
+        {[0, 1, 2].map(index => (
+          <g key={index} transform={`translate(34 ${52 + index * 28})`}>
+            <rect width='98' height='18' rx='9' fill='rgba(255,255,255,0.88)' />
+            <circle cx='14' cy='9' r='4' fill='currentColor' opacity={0.35 + index * 0.12}>
+              <animate attributeName='r' values='4;6;4' dur={`${1.5 + index * 0.3}s`} repeatCount='indefinite' />
+            </circle>
+            <rect x='26' y='6' width='40' height='5' rx='2.5' fill='currentColor' opacity='0.18' />
+            <rect x='72' y='4' width='16' height='9' rx='4.5' fill='rgba(255,255,255,0.95)' />
+          </g>
+        ))}
+        {[0, 1, 2].map(index => (
+          <g key={`callback-${index}`} transform={`translate(188 ${66 + index * 22})`}>
+            <rect width='98' height='14' rx='7' fill='rgba(255,255,255,0.86)' />
+            <rect x='10' y='4' width='46' height='5' rx='2.5' fill='currentColor' opacity='0.16' />
+            <rect x='66' y='3' width='22' height='8' rx='4' fill='currentColor' opacity={0.28 + index * 0.08}>
+              <animate attributeName='opacity' values='0.24;0.62;0.24' dur={`${1.8 + index * 0.2}s`} repeatCount='indefinite' />
+            </rect>
+          </g>
+        ))}
+        <path d='M142 70 C164 70 170 72 188 84' stroke='currentColor' strokeWidth='4' fill='none' opacity='0.28'>
+          <animate attributeName='stroke-dasharray' values='0 120;52 68;0 120' dur='2.8s' repeatCount='indefinite' />
+        </path>
+        <path d='M142 100 C168 100 170 102 188 108' stroke='currentColor' strokeWidth='4' fill='none' opacity='0.22'>
+          <animate attributeName='stroke-dasharray' values='0 120;48 72;0 120' dur='3.1s' repeatCount='indefinite' />
+        </path>
+      </svg>
+      <div className='c-system-capabilities__visual-grid'>
+        {stats.map((stat, index) => (
+          <div key={index} className='c-system-capabilities__visual-stat'>
+            <div className='c-system-capabilities__visual-stat-value'>{stat.value}</div>
+            <div className='c-system-capabilities__visual-stat-label'>{stat.label}</div>
+          </div>
+        ))}
+      </div>
+      <div className='c-system-capabilities__visual-meta'>{homepageData.systemCapabilities.visualMetaLabel}</div>
+    </div>
+  );
+}
+
+function LeadsVisual({ stats }: { stats: { label: string; value: string }[] }) {
+  return (
+    <div className='c-system-capabilities__visual c-system-capabilities__visual--leads'>
+      <svg viewBox='0 0 320 180' className='c-system-capabilities__visual-svg' aria-hidden='true'>
+        <rect x='24' y='18' width='272' height='140' rx='24' fill='rgba(255,255,255,0.76)' />
+        <text x='42' y='42' fontSize='12' fill='currentColor' opacity='0.45'>Dormant lead list</text>
+        <rect x='40' y='54' width='240' height='18' rx='9' fill='rgba(255,255,255,0.86)' />
+        <rect x='52' y='60' width='52' height='6' rx='3' fill='currentColor' opacity='0.14' />
+        <rect x='118' y='60' width='56' height='6' rx='3' fill='currentColor' opacity='0.14' />
+        <rect x='200' y='57' width='58' height='12' rx='6' fill='currentColor' opacity='0.24' />
+        {[0, 1, 2, 3].map(index => (
+          <g key={index} transform={`translate(40 ${78 + index * 20})`}>
+            <rect width='240' height='14' rx='7' fill={index === 1 ? 'rgba(255,255,255,0.98)' : 'rgba(255,255,255,0.8)'} />
+            <rect x='12' y='4' width='48' height='5' rx='2.5' fill='currentColor' opacity='0.14' />
+            <rect x='76' y='4' width='80' height='5' rx='2.5' fill='currentColor' opacity='0.12' />
+            <rect x='176' y='3' width='50' height='8' rx='4' fill={index === 1 ? 'currentColor' : 'rgba(255,255,255,0.96)'} opacity={index === 1 ? 0.32 : 1}>
+              {index === 1 ? (
+                <animate attributeName='opacity' values='0.24;0.72;0.24' dur='2.1s' repeatCount='indefinite' />
+              ) : null}
+            </rect>
+          </g>
+        ))}
+        <path d='M206 106 l12 12 l26 -30' stroke='currentColor' strokeWidth='5' fill='none' opacity='0.34'>
+          <animate attributeName='opacity' values='0.2;0.8;0.2' dur='2.4s' repeatCount='indefinite' />
+        </path>
+      </svg>
+      <div className='c-system-capabilities__visual-grid'>
+        {stats.map((stat, index) => (
+          <div key={index} className='c-system-capabilities__visual-stat'>
+            <div className='c-system-capabilities__visual-stat-value'>{stat.value}</div>
+            <div className='c-system-capabilities__visual-stat-label'>{stat.label}</div>
+          </div>
+        ))}
+      </div>
+      <div className='c-system-capabilities__visual-meta'>{homepageData.systemCapabilities.visualMetaLabel}</div>
+    </div>
+  );
+}
+
+function VisibilityVisual({ stats }: { stats: { label: string; value: string }[] }) {
+  return (
+    <div className='c-system-capabilities__visual c-system-capabilities__visual--visibility'>
+      <svg viewBox='0 0 320 180' className='c-system-capabilities__visual-svg' aria-hidden='true'>
+        <rect x='26' y='20' width='268' height='136' rx='24' fill='rgba(255,255,255,0.74)' />
+        <rect x='44' y='36' width='232' height='28' rx='14' fill='rgba(255,255,255,0.9)' />
+        <circle cx='64' cy='50' r='8' fill='currentColor' opacity='0.18' />
+        <rect x='80' y='46' width='82' height='7' rx='3.5' fill='currentColor' opacity='0.16' />
+        <rect x='178' y='44' width='56' height='11' rx='5.5' fill='rgba(255,255,255,0.96)' />
+        <g transform='translate(50 86)'>
+          <path d='M0 28 C28 0 64 0 92 28 C92 56 64 82 46 98 C28 82 0 56 0 28Z' fill='rgba(255,255,255,0.92)' />
+          <circle cx='46' cy='30' r='14' fill='none' stroke='currentColor' strokeWidth='5'>
+            <animate attributeName='r' values='14;18;14' dur='2.6s' repeatCount='indefinite' />
+          </circle>
+        </g>
+        {[0, 1, 2].map(index => (
+          <g key={index} transform={`translate(172 ${84 + index * 20})`}>
+            <rect width='84' height='12' rx='6' fill='rgba(255,255,255,0.88)' />
+            <rect x='10' y='4' width={index === 0 ? 56 : index === 1 ? 42 : 32} height='4' rx='2' fill='currentColor' opacity='0.16' />
+          </g>
+        ))}
+        <path d='M124 116 C156 112 174 102 192 90' stroke='currentColor' strokeWidth='4' fill='none' opacity='0.24'>
+          <animate attributeName='stroke-dasharray' values='0 140;54 86;0 140' dur='2.7s' repeatCount='indefinite' />
+        </path>
+      </svg>
+      <div className='c-system-capabilities__visual-grid'>
+        {stats.map((stat, index) => (
+          <div key={index} className='c-system-capabilities__visual-stat'>
+            <div className='c-system-capabilities__visual-stat-value'>{stat.value}</div>
+            <div className='c-system-capabilities__visual-stat-label'>{stat.label}</div>
+          </div>
+        ))}
+      </div>
+      <div className='c-system-capabilities__visual-meta'>{homepageData.systemCapabilities.visualMetaLabel}</div>
+    </div>
+  );
+}
+
+function RepliesVisual({ stats }: { stats: { label: string; value: string }[] }) {
+  return (
+    <div className='c-system-capabilities__visual c-system-capabilities__visual--replies'>
+      <svg viewBox='0 0 320 180' className='c-system-capabilities__visual-svg' aria-hidden='true'>
+        <rect x='26' y='24' width='148' height='124' rx='24' fill='rgba(255,255,255,0.78)' />
+        <rect x='194' y='42' width='100' height='88' rx='22' fill='rgba(255,255,255,0.7)' />
+        <text x='44' y='48' fontSize='12' fill='currentColor' opacity='0.45'>Incoming enquiry</text>
+        <rect x='44' y='58' width='112' height='24' rx='12' fill='rgba(255,255,255,0.92)' />
+        <rect x='44' y='92' width='96' height='20' rx='10' fill='rgba(255,255,255,0.88)' />
+        <circle cx='244' cy='76' r='22' fill='rgba(255,255,255,0.94)' />
+        <path d='M244 62 v18 l12 8' stroke='currentColor' strokeWidth='5' fill='none' strokeLinecap='round'>
+          <animateTransform attributeName='transform' type='rotate' values='0 244 76;20 244 76;0 244 76' dur='2.8s' repeatCount='indefinite' />
+        </path>
+        <rect x='214' y='104' width='60' height='12' rx='6' fill='currentColor' opacity='0.16' />
+        <path d='M156 74 C184 74 198 76 214 84' stroke='currentColor' strokeWidth='4' fill='none' opacity='0.28'>
+          <animate attributeName='stroke-dasharray' values='0 120;44 76;0 120' dur='2.2s' repeatCount='indefinite' />
+        </path>
+        <circle cx='172' cy='74' r='6' fill='currentColor' opacity='0.28'>
+          <animate attributeName='opacity' values='0.22;0.7;0.22' dur='1.6s' repeatCount='indefinite' />
+        </circle>
+      </svg>
+      <div className='c-system-capabilities__visual-grid'>
+        {stats.map((stat, index) => (
+          <div key={index} className='c-system-capabilities__visual-stat'>
+            <div className='c-system-capabilities__visual-stat-value'>{stat.value}</div>
+            <div className='c-system-capabilities__visual-stat-label'>{stat.label}</div>
+          </div>
+        ))}
+      </div>
+      <div className='c-system-capabilities__visual-meta'>{homepageData.systemCapabilities.visualMetaLabel}</div>
+    </div>
+  );
+}
+
+function ProofVisual({ stats }: { stats: { label: string; value: string }[] }) {
+  return (
+    <div className='c-system-capabilities__visual c-system-capabilities__visual--proof'>
+      <svg viewBox='0 0 320 180' className='c-system-capabilities__visual-svg' aria-hidden='true'>
+        <rect x='30' y='22' width='260' height='132' rx='26' fill='rgba(255,255,255,0.74)' />
+        {[0, 1, 2].map(index => (
+          <g key={index} transform={`translate(48 ${42 + index * 30})`}>
+            <rect width='224' height='22' rx='11' fill='rgba(255,255,255,0.9)' />
+            {[0, 1, 2, 3, 4].map(star => (
+              <path
+                key={star}
+                d={`M${18 + star * 18} 5 l3.4 7 l7.6 1.1 l-5.5 5.4 l1.2 7.3 l-6.7 -3.5 l-6.7 3.5 l1.2 -7.3 l-5.5 -5.4 l7.6 -1.1 z`}
+                fill='currentColor'
+                opacity={0.18 + index * 0.08 + star * 0.02}
+              >
+                <animate attributeName='opacity' values='0.16;0.52;0.16' dur={`${1.9 + star * 0.2}s`} repeatCount='indefinite' />
+              </path>
+            ))}
+            <rect x='122' y='8' width='72' height='6' rx='3' fill='currentColor' opacity='0.12' />
+          </g>
+        ))}
+        <path d='M64 138 H256' stroke='currentColor' strokeWidth='8' strokeLinecap='round' opacity='0.14' />
+      </svg>
+      <div className='c-system-capabilities__visual-grid'>
+        {stats.map((stat, index) => (
+          <div key={index} className='c-system-capabilities__visual-stat'>
+            <div className='c-system-capabilities__visual-stat-value'>{stat.value}</div>
+            <div className='c-system-capabilities__visual-stat-label'>{stat.label}</div>
+          </div>
+        ))}
+      </div>
+      <div className='c-system-capabilities__visual-meta'>{homepageData.systemCapabilities.visualMetaLabel}</div>
+    </div>
+  );
+}
+
 function SystemCapabilitiesSection() {
   const BLOCK = 'c-system-capabilities';
   const systemCapabilitiesData = homepageData.systemCapabilities;
-
-  const StaticFeatureVisual = ({
-    icon: Icon,
-    title,
-    stats,
-    variant,
-  }: {
-    icon: React.ComponentType<{ className?: string }>;
-    title: string;
-    stats: { label: string; value: string }[];
-    variant: string;
-  }) => {
-    return (
-      <div className={`${BLOCK}__visual ${BLOCK}__visual--${variant}`}>
-        <div className={`${BLOCK}__visual-head`}>
-          <div className={`${BLOCK}__visual-title`}>{title}</div>
-          <div className={`${BLOCK}__visual-icon-wrap`}>
-            <Icon className={`${BLOCK}__visual-icon`} />
-          </div>
-        </div>
-
-        <div className={`${BLOCK}__visual-grid`}>
-          {stats.map((s, idx) => (
-            <div key={idx} className={`${BLOCK}__visual-stat`}>
-              <div className={`${BLOCK}__visual-stat-value`}>{s.value}</div>
-              <div className={`${BLOCK}__visual-stat-label`}>{s.label}</div>
-            </div>
-          ))}
-        </div>
-
-        <div className={`${BLOCK}__visual-meta`}>{systemCapabilitiesData.visualMetaLabel}</div>
-      </div>
-    );
-  };
+  const VISUAL_MAP = {
+    calls: CallsVisual,
+    leads: LeadsVisual,
+    visibility: VisibilityVisual,
+    replies: RepliesVisual,
+    proof: ProofVisual,
+  } as const;
 
   return (
     <section id='system-capabilities' className={`${BLOCK} bg-base`}>
@@ -500,6 +676,14 @@ function SystemCapabilitiesSection() {
 
           {systemCapabilitiesData.components.map(component => {
             const Icon = component.icon;
+            const VisualComponent = VISUAL_MAP[component.visualId as keyof typeof VISUAL_MAP];
+
+            if (!VisualComponent) {
+              throw new Error(
+                `Homepage system-capability visual is missing for visualId "${component.visualId}".`
+              );
+            }
+
             return (
               <TabsPrimitive.Content
                 key={component.id}
@@ -538,12 +722,7 @@ function SystemCapabilitiesSection() {
                     )}
                   </div>
 
-                  <StaticFeatureVisual
-                    icon={component.icon}
-                    title={component.title}
-                    stats={component.visual.stats}
-                    variant={component.id}
-                  />
+                  <VisualComponent stats={component.visual.stats} />
                 </div>
               </TabsPrimitive.Content>
             );
@@ -631,20 +810,14 @@ function IndustriesSection() {
         title: industry.title,
         description: industry.description,
         iconType: 'secondary' as const,
+        href: industry.href,
+        buttonText: 'View Industry',
       }))}
       cssPrefix='industry-section'
       columns={4}
       backgroundColor='bg-base'
       footer={
-        <div className='industry-section-cta'>
-          <SmartCTA
-            system='smart-website-systems'
-            pageType='page'
-            slug='home'
-            mode='actions-only'
-            primaryActionVariant='primary'
-          />
-        </div>
+        undefined
       }
     />
   );
@@ -751,6 +924,8 @@ function FooterCTASection() {
       system='smart-website-systems'
       pageType='page'
       slug='home'
+      intent='conversion'
+      position='footer'
       title={ctaData.footer.title}
       description={ctaData.footer.description}
       primaryActionVariant='white'

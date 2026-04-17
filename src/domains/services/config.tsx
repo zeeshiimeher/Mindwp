@@ -1,5 +1,7 @@
 import type { ReactElement } from 'react';
 
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { aiLeadHandlingPage } from '@/domains/services/data/ai-lead-handling';
 import { bricksBuilderPage } from '@/domains/services/data/bricks-builder';
 import { conversionLayerPage } from '@/domains/services/data/conversion-layer';
@@ -42,6 +44,18 @@ const createServiceEntry = <TData,>(
   data: TData,
   render: (data: TData, slug: string) => ReactElement
 ): ServiceEntry<TData> => ({ data, render });
+
+function renderServiceEntry(slug: ServiceSlug): ReactElement {
+  const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES[slug];
+  const render = entry.render as (data: typeof entry.data, slug: string) => ReactElement;
+
+  return (
+    <CTARegistryProvider pageId={`service:${slug}`} pageType='service'>
+      {render(entry.data, slug)}
+      <SmartRelatedSection slug={slug} />
+    </CTARegistryProvider>
+  );
+}
 
 export const SERVICE_ENTRY_BY_SLUG = {
   'smart-website-systems': createServiceEntry(smartWebsiteSystemsPage, (data, slug) => (
@@ -119,68 +133,52 @@ export const getServiceRendererBySlug = (slug: ServiceSlug) => {
 export const renderServicePageBySlug = (slug: ServiceSlug): ReactElement => {
   switch (slug) {
     case 'smart-website-systems': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['smart-website-systems'];
-      return entry.render(entry.data, slug);
+      return renderServiceEntry(slug);
     }
     case 'conversion-layer': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['conversion-layer'];
-      return entry.render(entry.data, slug);
+      return renderServiceEntry(slug);
     }
     case 'system-migration-platform-consolidation': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['system-migration-platform-consolidation'];
-      return entry.render(entry.data, slug);
+      return renderServiceEntry(slug);
     }
     case 'website-redesign-system-rebuild': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['website-redesign-system-rebuild'];
-      return entry.render(entry.data, slug);
+      return renderServiceEntry(slug);
     }
     case 'lead-reactivation-system': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['lead-reactivation-system'];
-      return entry.render(entry.data, slug);
+      return renderServiceEntry(slug);
     }
     case 'missed-call-recovery-system': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['missed-call-recovery-system'];
-      return entry.render(entry.data, slug);
+      return renderServiceEntry(slug);
     }
     case 'unified-communication-system': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['unified-communication-system'];
-      return entry.render(entry.data, slug);
+      return renderServiceEntry(slug);
     }
     case 'local-seo-authority': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['local-seo-authority'];
-      return entry.render(entry.data, slug);
+      return renderServiceEntry(slug);
     }
     case 'reputation-review-systems': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['reputation-review-systems'];
-      return entry.render(entry.data, slug);
+      return renderServiceEntry(slug);
     }
     case 'crm-infrastructure-implementation': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['crm-infrastructure-implementation'];
-      return entry.render(entry.data, slug);
+      return renderServiceEntry(slug);
     }
     case 'ai-lead-handling': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['ai-lead-handling'];
-      return entry.render(entry.data, slug);
+      return renderServiceEntry(slug);
     }
     case 'wordpress-development': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['wordpress-development'];
-      return entry.render(entry.data, slug);
+      return renderServiceEntry(slug);
     }
     case 'ecommerce': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES.ecommerce;
-      return entry.render(entry.data, slug);
+      return renderServiceEntry(slug);
     }
     case 'divi5': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES.divi5;
-      return entry.render(entry.data, slug);
+      return renderServiceEntry(slug);
     }
     case 'bricks-builder': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES['bricks-builder'];
-      return entry.render(entry.data, slug);
+      return renderServiceEntry(slug);
     }
     case 'elementor': {
-      const entry = SERVICE_ENTRY_BY_SLUG_WITH_ALIASES.elementor;
-      return entry.render(entry.data, slug);
+      return renderServiceEntry(slug);
     }
   }
 };

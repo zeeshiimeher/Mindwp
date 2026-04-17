@@ -83,8 +83,12 @@ Every CTA in the system maps to exactly one of five types. The type determines t
 |---|---|---|
 | `system` | YES | Canonical primary system value from `canonical.ts` |
 | `source` | YES | Generated from normalized source type + slug: `{type}/{slug}` |
+| `pageId` | YES at template/adaptor level | Stable page identity used by CTA registry scope |
+| `pageType` | YES at template/adaptor level | Canonical runtime page type |
 
 CTA construction is invalid if either required input is missing or malformed.
+
+`CTARegistryProvider` is required at every template or template-equivalent page adapter. `SmartCTA` registers into the active page-scoped registry; it does not own registry lifecycle.
 
 ### SmartCTA Contract (Locked)
 
@@ -95,13 +99,25 @@ CTA construction is invalid if either required input is missing or malformed.
 | `system` | Recommended | Canonical primary system — resolves label and contact href |
 | `sourceType` | Recommended | Normalized conversion source type |
 | `slug` | Recommended | Content slug — used for source path generation |
+| `intent` | Required | One of `entry`, `diagnostic`, `comparison`, `conversion` |
+| `position` | Required | One of `hero`, `pre-mid`, `mid`, `sidebar`, `footer` |
 
 Internally, `SmartCTA`:
 
 1. Resolves `system` through a single normalized `resolvedSystem` value.
 2. Calls `resolveCtaLabel(resolvedSystem)` from `src/config/ctaLabels.ts` to get the primary label.
 3. Calls `buildContactHref({ system: resolvedSystem, sourceType, slug })` to construct the href.
-4. Falls back to the global contact context when explicit CTA context is omitted.
+4. Registers the CTA against the active page-scoped registry before rendering.
+5. Blocks duplicate intent or duplicate conversion CTA output in development.
+
+### CTA Registry Rules (Locked)
+
+- Registry scope is per page via `CTARegistryProvider`.
+- Only one CTA per intent is allowed on a page.
+- Only one `conversion` CTA is allowed on a page.
+- Inline CTA must not use `conversion` intent.
+- Templates and domain page adapters own `intent` and `position`.
+- Routes and data files do not decide CTA intent.
 
 ### CTA Label Resolution (Locked)
 

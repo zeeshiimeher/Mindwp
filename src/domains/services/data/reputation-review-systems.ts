@@ -39,9 +39,9 @@ export const reputationReviewSystemsPage = {
   }),
   hero: {
     badge: 'Reputation & Reviews',
-    title: 'Happy Customers Walk Out. Say Nothing.',
+    title: 'Good Work. Hardly Any Proof.',
     description:
-      'A hundred jobs last quarter. Good ones. Customers thanked you on the way out. Four left a review. Competitor with half your skill has three times your proof.',
+      'You finished a quarter of solid work. Customers were happy. Only a few left a review. A less reliable competitor still looks safer online because their proof is easier to see.',
     list: ['Happy. Silent.', 'Competitors look more trustworthy'],
     cssPrefix: 'reputation-review-hero',
     backgroundColor: 'bg-gradient-surface-muted',
@@ -74,13 +74,17 @@ export const reputationReviewSystemsPage = {
       badge: 'How it works',
       title: 'What it actually does when reviews are working',
       description:
-        "Depends on your business. When customers are happiest, how they communicate, what to do when someone's unhappy. Three parts.",
+        "Depends on your business. When customers are happiest, how they reply, and what should happen when something goes wrong. Four parts.",
       cards: [
         {
           title: 'Ask at the right moment',
           description:
             "Not two weeks after the job. Right after the handshake. When they're still feeling it.",
-          points: ['Request sent the same day', 'Via the channel the customer actually checks'],
+          points: [
+            'Request sent the same day',
+            'Via the channel the customer actually checks',
+            'Follow-up timing stays consistent without relying on memory',
+          ],
           featured: true,
         },
         {
@@ -100,6 +104,17 @@ export const reputationReviewSystemsPage = {
           points: [
             'Monitoring across the platforms that actually matter for your trade',
             'Replies that show the business is awake',
+            'Issues reviewed in one place instead of getting discovered by accident',
+          ],
+        },
+        {
+          title: 'Keep fresh proof showing up',
+          description:
+            'Not one burst of reviews and then silence. New proof keeps appearing so the profile looks current, active, and believable.',
+          points: [
+            'Recent jobs keep turning into recent reviews',
+            'Older reviews stop being the whole story',
+            'Prospects see a business that still delivers now',
           ],
         },
       ],
@@ -112,8 +127,8 @@ export const reputationReviewSystemsPage = {
       tagline: 'Turn real work into visible proof.',
       narrativeTitle: 'For some businesses, trust is the real bottleneck',
       narrativeParagraphs: [
-        "People find you. Look at the reviews. Twelve total, one from 2022. Competitor has eighty. They get the call. Not because they're better.",
-        'When collection, complaint handling, and response all run, the gap closes. Steadily. And it feeds back into whether people bother reaching out at all.',
+        'People find you, then check the reviews. Twelve total. One from 2022. The competitor nearby has eighty recent ones, so they look safer before anyone even calls.',
+        'When requests go out on time, complaints get caught privately, and replies stay current, that gap starts closing month by month. More people trust what they see and get in touch.',
       ],
       features: [
         {
@@ -158,7 +173,7 @@ export const reputationReviewSystemsPage = {
           number: '3',
           title: 'Set up monitoring and response ownership',
           description:
-            "Someone owns what's public. Replies happen consistently. Nothing sits there unanswered for weeks.",
+            'Someone is responsible for what people see publicly. Reviews get checked, replies go out, and nothing sits there untouched for weeks.',
         },
         {
           number: '4',

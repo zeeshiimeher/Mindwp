@@ -10,7 +10,6 @@ export { DecisionFitSection } from './DecisionFitSection';
 export { DualFeatureCardsSection } from './DualFeatureCardsSection';
 export { DualToneChecklistComparisonSection } from './DualToneChecklistComparisonSection';
 export { ExploreCardsSection } from './ExploreCardsSection';
-export { FaqAccordionSection } from './FaqAccordionSection';
 export { FeatureChecklistCardsSection } from './FeatureChecklistCardsSection';
 export { FeatureStatsMockupSection } from './FeatureStatsMockupSection';
 export { GenericCardsSection } from './GenericCardsSection';

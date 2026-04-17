@@ -24,7 +24,6 @@ export { IconTextCard } from '../../single/IconTextCard';
 export { LinkCard } from '../../single/LinkCard';
 export { SectionIntro } from '../../single/SectionIntro';
 export { WorkflowStepCard } from '../../single/WorkflowStepCard';
-export { ServiceCTASection } from './ServiceCTASection';
 export { ServiceHeroSection } from './ServiceHeroSection';
 
 // Types

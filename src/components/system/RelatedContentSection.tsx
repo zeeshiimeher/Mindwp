@@ -1,39 +1,42 @@
+import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import { RelatedCardsSection } from '@/components/reusable/sections/core/RelatedCardsSection';
-import { RelatedSectionCTA } from '@/components/reusable/single/RelatedSectionCTA';
-
-export type RelatedContentBlock = {
-  title: string;
-  description?: string;
-  items: Array<{
-    title: string;
-    desc: string;
-    href: string;
-  }>;
-};
+import type { RelatedContentOutput } from '@/lib/related/buildRelatedContent';
 
 type RelatedContentSectionProps = {
-  blocks: RelatedContentBlock[];
-  showCTA?: boolean;
+  content: RelatedContentOutput;
 };
 
-export default function RelatedContentSection({
-  blocks,
-  showCTA = false,
-}: RelatedContentSectionProps) {
-  if (blocks.length === 0) return null;
+export default function RelatedContentSection({ content }: RelatedContentSectionProps) {
+  if (content.groups.length === 0) {
+    if (!content.emptyState) {
+      return null;
+    }
+
+    return (
+      <SectionWrapper className='related-content__empty' padding='default'>
+        <div className='l-container l-container--narrow l-stack'>
+          <h2>{content.emptyState.title}</h2>
+          <p>{content.emptyState.description}</p>
+        </div>
+      </SectionWrapper>
+    );
+  }
 
   return (
     <>
-      {blocks.map(block => (
+      {content.groups.map(group => (
         <RelatedCardsSection
-          key={block.title}
-          title={block.title}
-          {...(block.description ? { description: block.description } : {})}
-          items={block.items}
+          key={group.label}
+          title={group.label}
+          {...(group.description ? { description: group.description } : {})}
+          items={group.items.map(item => ({
+            title: item.title,
+            desc: item.description ?? '',
+            href: item.href,
+          }))}
           showArrows
         />
       ))}
-      {showCTA ? <RelatedSectionCTA /> : null}
     </>
   );
 }

@@ -49,12 +49,17 @@ Completed foundation:
 - Phase 2 CTA hardening + intelligence layer = complete
 - Phase 2.5 CTA tone system = initial implementation complete
 - CTA data cleanup = complete
+- Core service-page rewrite pass = implemented across the active target set
+- Services landing/content rewrite pass = implemented for the approved current slice
+- Generic landing-page proof-strip cleanup = implemented on the reopened landing pages
+- Component-library audit hardening = implemented for transitive usage, live-link normalization, and reviewer-focused preview controls
 
 In progress:
-- Phase 3 Revenue Activation
+- Validation and proof-closure follow-through for the completed rewrite work
+- Deferred visual revalidation for the approved landing-page and section-component slices
 
 Ready after active work:
-- Phase 4 Service Alignment
+- Phase 4 service-alignment preservation and any explicitly reopened follow-through slices
 
 ---
 
@@ -108,6 +113,86 @@ Important:
 
 Purpose:
 Remove overlap between scattered service-page work, revenue activation work, proof work, CTA work, and validation work.
+
+## Active Delivery Split (Locked)
+
+This execution cycle is now divided into two operating groups:
+
+### Group 1 — Non-Rewrite Work (Do Now)
+
+Purpose:
+Complete all alignment, structure, validation, metadata, CTA, graph, audit, proof-closure, and integrity work before any new rewrite cycle begins.
+
+Includes:
+- audits
+- validation fixes
+- proof closure
+- CTA standardization
+- metadata alignment
+- graph and authority cleanup
+- service mapping correction
+- UI integrity enforcement
+- structure enforcement and Level 5 gap detection
+- planning and documentation updates
+
+Rule:
+This group is the active execution lane now. If a task can be completed without opening a new rewrite pass, it belongs here.
+
+### Group 2 — Rewrite Work (Do Last)
+
+Purpose:
+Hold all page rewriting until the non-rewrite layer is stable, validated, and clearly scoped.
+
+Includes:
+- service-page rewrites
+- BOFU page builds
+- landing-page rewrites
+- industry-page rewrites
+- case-study rewrites
+- any reopened long-form content rewrite
+
+Rule:
+Rewrite work starts only after Group 1 is complete for the active scope. Rewriting is a final execution lane, not the default lane.
+
+## Mapping Between Systems
+
+The original execution groups still define the type of work.
+The new delivery split defines WHEN that work is allowed.
+
+- Group 1 Non-Rewrite Work contains: Group A, Group B, Group D, Group E, and non-rewrite parts of metadata/graph cleanup
+- Group 2 Rewrite Work contains: Group C and any explicit page-rewrite slice reopened by plan
+
+Operating rule:
+When a phase contains both rewrite and non-rewrite work, execute the non-rewrite portion first and defer rewrite tasks into Group 2.
+
+## Current Phase Routing (Locked)
+
+### Group 1 — Non-Rewrite Work (Active Now)
+
+Execute now:
+- Phase 0 preserved stabilization cleanup
+- Phase 3.1 CRM integration patch preservation and validation
+- Phase 3.2 service-page improvement closure work
+- Phase 3.6 proof integration closure
+- Phase 3.7 validation fixes
+- Phase 4.1 audit closure, proof closure, CTA closure, and intent alignment
+- Phase 4.2 metadata, system, and graph cleanup
+- Phase 4.3 CTA standardization
+- Phase 4.7 writing-system rule tightening
+- Phase 4.8 blog and resource alignment
+- Phase 4.4 audit, gap detection, validation, and document updates where no rewrite is required
+
+### Group 2 — Rewrite Work (Deferred Until Group 1 Closes)
+
+Execute last:
+- Phase 3.3 BOFU page 1
+- Phase 3.4 BOFU page 2
+- Phase 3.5 BOFU page 3
+- any reopened rewrite slice inside Phase 4.1
+- any rewrite-required landing-page work inside Phase 4.4
+- Phase 4.5 industry-page rewrites
+- Phase 4.6 case-study rewrites
+- any explicitly reopened long-form rewrite outside the already-approved pass
 
 Execution Groups:
 
@@ -275,23 +360,25 @@ Convert existing content and decision assets into a controlled revenue activatio
 Strict execution order:
 1. CRM integration patch
 2. Service-pages improvement
-3. BOFU page 1
-4. BOFU page 2
-5. BOFU page 3
-6. Proof integration
-7. Validation fixes
+3. Proof integration
+4. Validation fixes
+5. BOFU page 1
+6. BOFU page 2
+7. BOFU page 3
 
 Rules:
 - no jumping between subphases
 - complete each subphase before moving forward
 - keep all execution revenue-first and conversion-focused
+- under the active delivery split, complete the non-rewrite subphases first
+- BOFU page creation is deferred until the active non-rewrite lane is closed
 
 ---
 
 ### Phase 3.1 — CRM Integration Patch (Blocking)
 
 Priority: Critical
-Status: In progress
+Status: Closed for the current approved scope
 
 Target pages:
 - WebsiteCrmIntegrationForServiceBusinesses.tsx
@@ -333,6 +420,7 @@ Execution-group mapping:
 ### Phase 3.2 — Service-Pages Improvement
 
 Priority: High
+Status: Implemented for the active rewrite pass; preserve and validate
 
 Purpose:
 Use service-page audits to define and apply the global Level 5 standard.
@@ -348,6 +436,10 @@ Required outcomes:
 - define what Level 5 requires
 - use comparison, proof, and CTA strengthening only where role allows
 - keep BOFU behavior restricted to actual service pages
+
+Current execution reality:
+- the main service-page rewrite pass is already applied for the active slice
+- remaining work is proof closure, validation closure, and regression prevention rather than untouched first-pass drafting
 
 Execution-group mapping:
 - Group B Structure System
@@ -484,9 +576,28 @@ Alignment rules:
 - every BOFU page owns one CTA
 - generic primary CTA language is not allowed
 
+Active execution rule:
+Run Phase 4 in two passes.
+
+Pass 1 = Group 1 Non-Rewrite Work:
+- 4.1 closure tasks
+- 4.2 metadata and graph alignment
+- 4.3 CTA standardization
+- 4.7 writing-system tightening
+- 4.8 blog and resource alignment
+- 4.4 audit/validation-only work where no rewrite is required
+
+Pass 2 = Group 2 Rewrite Work:
+- reopened 4.1 rewrite work if still needed
+- rewrite-required 4.4 landing-page work
+- 4.5 industry-page rewrites
+- 4.6 case-study rewrites
+
 ---
 
 ### Phase 4.1 — Service Pages Level 5 Upgrade
+
+Status: Substantially implemented for the current approved rewrite set
 
 Purpose:
 Upgrade all service pages to the locked Level 5 standard.
@@ -497,6 +608,10 @@ Preserved tasks:
 - add proof where missing
 - ensure one clear CTA per page
 - align every page to the correct service intent
+
+Current execution reality:
+- the current repo already includes a substantial service-page rewrite and CTA-alignment pass
+- treat this phase as audit closure and selective follow-through, not as a blank-slate rewrite queue
 
 Execution-group mapping:
 - Group B Structure System
@@ -557,6 +672,10 @@ Per-page workflow remains:
 3. patch
 4. validate
 5. update this document
+
+Locked clarification:
+- generic landing pages do not inherit the case-study-hub proof-strip pattern by default
+- keep services, features, industries, and blog landing pages focused on routing and navigation unless a page has its own approved proof design
 
 Execution-group mapping:
 - Group C Full Rewrite
@@ -1000,20 +1119,26 @@ Use this workflow for all future execution.
 
 1. Audit (Copilot)
 2. Plan (GPT)
-3. Execute (Copilot / Claude)
-4. Validate (GPT)
-5. Update this doc
+3. Execute Group 1 Non-Rewrite Work
+4. Validate Group 1
+5. Open Group 2 Rewrite Work only after Group 1 closes
+6. Validate Group 2
+7. Update this doc
 
 Rules:
 - audit repo state, not assumptions
 - plan before broad execution
-- execute within the active phase and execution group
+- execute within the active phase and active delivery group
+- Group 1 is the default execution lane
+- Group 2 opens only after Group 1 closure for the approved scope
 - validate before moving forward
 - record the result here after completion
 
 ---
 
 ## Per Page Execution Checklist (Locked)
+
+Use this checklist only when Group 2 rewrite work is explicitly opened for that page.
 
 For EACH service page:
 
@@ -1072,6 +1197,7 @@ Rules:
 
 - ALL service pages are part of ONE execution batch
 - BUT execution MUST be sequential (one page at a time)
+- service-page execution mode applies only after Group 1 non-rewrite work is closed for the approved scope
 
 Execution Behavior:
 
@@ -1083,6 +1209,10 @@ Execution Behavior:
   -> validate
   -> mark complete
 4. Move to next page ONLY after completion
+
+Gate:
+
+Do not enter this rewrite loop while Group 1 tasks are still open.
 
 STRICTLY FORBIDDEN:
 

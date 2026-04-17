@@ -1,12 +1,12 @@
 import type { ContactSourceType } from '@/lib/contact/contactHref';
+import { type CTAIntent, type PageType, toContactSourceType } from '@/lib/page/pageIdentity';
 
-export type CtaIntent = 'explore' | 'consider' | 'ready';
 export type CtaTone = 'short' | 'descriptive';
 
 type ResolveCtaLabelOptions = {
   system: string;
-  pageType: ContactSourceType;
-  intent?: CtaIntent;
+  pageType: PageType;
+  intent?: CTAIntent;
   tone?: CtaTone;
 };
 
@@ -43,34 +43,37 @@ const SHORT_CTA_LABEL_RULES: Record<ContactSourceType, readonly string[]> = {
   service: ['Get Started', 'Start Now'],
 };
 
-const INTENT_DEFAULTS: Partial<Record<ContactSourceType, CtaIntent>> = {
-  blog: 'explore',
-  feature: 'consider',
-  industry: 'consider',
-  resource: 'explore',
-  service: 'ready',
+const INTENT_DEFAULTS: Partial<Record<PageType, CTAIntent>> = {
+  blog: 'entry',
+  feature: 'comparison',
+  'industry-detail': 'comparison',
+  'industry-category': 'comparison',
+  resource: 'entry',
+  service: 'conversion',
 };
 
-const INTENT_INDEX: Record<CtaIntent, number> = {
-  explore: 0,
-  consider: 0,
-  ready: 0,
+const INTENT_INDEX: Record<CTAIntent, number> = {
+  entry: 0,
+  diagnostic: 0,
+  comparison: 0,
+  conversion: 0,
 };
 
 export const DEFAULT_CTA_LABEL = CTA_LABEL_RULES.service[0];
 
-export function inferIntent(pageType: ContactSourceType): CtaIntent {
+export function inferIntent(pageType: PageType): CTAIntent {
   switch (pageType) {
     case 'blog':
     case 'resource':
-      return 'explore';
+      return 'entry';
     case 'feature':
-    case 'industry':
-      return 'consider';
+    case 'industry-detail':
+    case 'industry-category':
+      return 'comparison';
     case 'service':
-      return 'ready';
+      return 'conversion';
     default:
-      return INTENT_DEFAULTS[pageType] ?? 'explore';
+      return INTENT_DEFAULTS[pageType] ?? 'entry';
   }
 }
 
@@ -94,9 +97,10 @@ export function resolveCtaLabel(
     return DEFAULT_CTA_LABEL;
   }
 
+  const ruleKey = toContactSourceType(pageType);
   const resolvedIntent = intent ?? inferIntent(pageType);
   const labelRules = tone === 'short' ? SHORT_CTA_LABEL_RULES : CTA_LABEL_RULES;
-  const labels = labelRules[pageType] ?? labelRules.service;
+  const labels = labelRules[ruleKey] ?? labelRules.service;
   const index = Math.min(INTENT_INDEX[resolvedIntent] ?? 0, labels.length - 1);
 
   return labels[index] ?? DEFAULT_CTA_LABEL;

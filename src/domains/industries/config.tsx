@@ -1,5 +1,7 @@
 import type { ReactElement } from 'react';
 
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
+import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { INDUSTRY_REGISTRY } from '@/domains/industries/registry';
 import { IndustryCategoryPageTemplate } from '@/domains/industries/templates/IndustryCategoryPageTemplate';
 import { IndustryDetailPageTemplate } from '@/domains/industries/templates/IndustryDetailPageTemplate';
@@ -144,7 +146,12 @@ const createIndustryEntry = (data: IndustryPageData): IndustryEntry => {
       render: () => {
         const renderCategory =
           CATEGORY_RENDERER_OVERRIDES_BY_SLUG.get(data.slug) ?? renderCategoryWithDefaultTemplate;
-        return renderCategory(data);
+        return (
+          <CTARegistryProvider pageId={`industry-category:${data.slug}`} pageType='industry-category'>
+            {renderCategory(data)}
+            <SmartRelatedSection slug={data.slug} includeCaseStudies={false} />
+          </CTARegistryProvider>
+        );
       },
     };
   }
@@ -156,7 +163,12 @@ const createIndustryEntry = (data: IndustryPageData): IndustryEntry => {
     render: () => {
       const renderDetail =
         DETAIL_RENDERER_OVERRIDES_BY_PATH.get(path) ?? renderDetailWithDefaultTemplate;
-      return renderDetail(data);
+      return (
+        <CTARegistryProvider pageId={`industry-detail:${data.slug}`} pageType='industry-detail'>
+          {renderDetail(data)}
+          <SmartRelatedSection slug={data.slug} />
+        </CTARegistryProvider>
+      );
     },
   };
 };
