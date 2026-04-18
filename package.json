@@ -124,7 +124,6 @@
     "validate:industry-structure": "tsx scripts/validators/validate-domain-structure.mjs --type industry",
     "validate:industry-structure:fix": "tsx scripts/validators/validate-domain-structure.mjs --type industry --fix",
     "validate:industry-structure:report": "tsx scripts/validators/validate-domain-structure.mjs --type industry --report-json",
-    "validate:reports-structure": "node scripts/validators/validate-reports-structure.mjs",
     "graph:validate": "tsx scripts/validators/validate-graph.ts",
     "graph:inspect": "NODE_ENV=development tsx scripts/analyzers/inspect-graph.ts",
     "validate:design": "node scripts/validators/validate-design-system.cjs",

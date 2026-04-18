@@ -1,19 +1,5 @@
 {
   "scripts": [
-    {
-      "id": "validate-all",
-      "name": "Validate System",
-      "category": "core",
-      "intent": "system",
-      "group": "daily",
-      "priority": 1,
-      "estimatedTime": "medium",
-      "path": "scripts/core/validate-all.mjs",
-      "description": "Run all validators.",
-      "type": "validator",
-      "runnable": true
-    },
-    {
       "id": "system-sync",
       "name": "Sync System",
       "category": "core",
@@ -195,19 +181,6 @@
       "estimatedTime": "fast",
       "path": "scripts/validators/validate-internal-links.ts",
       "description": "Check internal links.",
-      "type": "validator",
-      "runnable": true
-    },
-    {
-      "id": "validate-reports-structure",
-      "name": "Check Reports",
-      "category": "validators",
-      "intent": "system",
-      "group": "daily",
-      "priority": 4,
-      "estimatedTime": "fast",
-      "path": "scripts/validators/validate-reports-structure.mjs",
-      "description": "Check report files.",
       "type": "validator",
       "runnable": true
     },

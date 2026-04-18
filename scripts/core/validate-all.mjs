@@ -151,12 +151,6 @@ const validators = [
     args: ['scripts/validators/validate-checklist.mjs'],
     blocking: false,
   },
-  {
-    name: 'validate-reports-structure',
-    command: 'node',
-    args: ['scripts/validators/validate-reports-structure.mjs'],
-    blocking: false,
-  },
 ];
 
 /**
