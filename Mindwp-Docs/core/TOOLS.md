@@ -123,7 +123,6 @@ These enforce rules. Run individually or all at once with `validate-all`.
 | validate-inline-styles | `node scripts/validators/validate-inline-styles.mjs` | Inline-style policy enforcement outside allowed exceptions | Yes |
 | lint | `node scripts/runners/run-eslint.mjs` | Lint and formatting drift | **No** (warnings only in system integrity flow) |
 
-| validate-checklist | `node scripts/validators/validate-checklist.mjs` | Checks fix checklist engine and integrations | **No** (warnings only) |
 
 
 ### Utility Scripts
@@ -211,27 +210,15 @@ These are the code modules that power the Authority Dashboard. They live in `src
 | Engine | File | Purpose |
 |--------|------|---------|
 | Authority Analyzer | `src/lib/dev/authorityAnalyzer.ts` | Reads precomputed reports, provides summary stats, top nodes, orphans, clusters, weak topics |
-| Conversion Analyzer | `src/lib/dev/conversionAnalyzer.ts` | Calculates per-page conversion scores based on CTA presence, service links, funnel depth, authority |
-| Link Health Analyzer | `src/lib/dev/linkHealthAnalyzer.ts` | Checks internal link quality per page, generates fix suggestions |
 | Conversion Priority Engine | `src/lib/dev/conversionPriorityEngine.ts` | Ranks pages by fix priority — combines conversion score, link health, authority |
-| Conversion Signals | `src/lib/dev/conversionSignals.ts` | Single source of truth for detecting CTA, service link, and journey step presence |
 | Conversion Issues | `src/lib/dev/conversionIssues.ts` | Normalized issue types (NO_CTA, NO_SERVICE_LINK, NO_JOURNEY) used by all systems |
-| Conversion Page Inspector | `src/lib/dev/conversionPageInspector.ts` | Deep inspection of a single page — aggregates signals, scores, health, suggestions |
 | Conversion Warnings Aggregator | `src/lib/dev/conversionWarningsAggregator.ts` | Summarizes conversion signals across ALL pages into dashboard overview |
 | Dashboard Bridge | `src/lib/dev/dashboardBridge.ts` | Connects Content Dashboard (SEO) with Authority Dashboard (conversion) — finds quick wins |
 | Fix Insights Analyzer | `src/lib/dev/fixInsightsAnalyzer.ts` | Reads fix-log.json, derives fix patterns, avg improvement, most-fixed pages |
-| Fix Simulation Engine | `src/lib/dev/fixSimulationEngine.ts` | Predicts conversion score changes for hypothetical fixes before you make them |
-| Guided Flow Engine | `src/lib/dev/guidedFlowEngine.ts` | Generates step-by-step optimization guides for improving any page |
-| Link Suggestion Engine | `src/lib/dev/linkSuggestionEngine.ts` | Suggests missing internal links based on graph relationships |
-| UI Suggestions Engine | `src/lib/dev/uiSuggestionsEngine.ts` | Generates human-readable, actionable UI improvement suggestions (context-aware per page type) |
 | Report Generator | `src/lib/dev/reportGenerator.ts` | Builds client-facing reports combining all analysis data |
 | Readable Report Generator | `src/lib/dev/readableReportGenerator.ts` | Transforms internal scores into human-readable audit reports with issues, opportunities, and priority actions |
 | Readable Report Formatter | `src/lib/dev/readableReportFormatter.ts` | Converts ReadableAuditReport to clean Markdown output |
 | Fix Learning Engine | `src/lib/dev/fixLearningEngine.ts` | Learns from fix-log.json history — tracks fix performance, finds best fixes per issue |
-| Auto Fix Recommendation | `src/lib/dev/autoFixRecommendationEngine.ts` | Suggests fixes based on learning engine + default rules, with confidence scoring |
-| Context Scoring Config | `src/lib/dev/contextScoringConfig.ts` | Per-page-type weights for conversion scoring (CTA, SERVICE_LINK, JOURNEY, PROOF weights per content type) |
-| Content Rewrite Engine | `src/lib/dev/contentRewriteEngine.ts` | Generates structured rewrite suggestions (issues, structure changes, sample text) — does NOT auto-rewrite |
-| Fix Checklist Engine | `src/lib/dev/fixChecklistEngine.ts` | Consolidated fix checklist per page combining suggestions, simulation, rewrite, and recommendations |
 | Session Tracker | `src/lib/dev/sessionTracker.ts` | Reads session-log.json to provide session history summary for the dashboard |
 
 ---

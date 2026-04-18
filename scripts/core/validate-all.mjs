@@ -145,12 +145,6 @@ const validators = [
     args: ['scripts/validators/validate-vocabulary.mjs', '--report-json'],
     blocking: false,
   },
-  {
-    name: 'validate-checklist',
-    command: 'node',
-    args: ['scripts/validators/validate-checklist.mjs'],
-    blocking: false,
-  },
 ];
 
 /**

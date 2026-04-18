@@ -1,101 +1,101 @@
 {
-  "generatedAt": "2026-04-18T20:44:41.208Z",
+  "generatedAt": "2026-04-18T20:51:25.657Z",
   "total": {
-    "passed": 22,
+    "passed": 21,
     "failed": 0,
     "blockingFailed": 0,
     "advisoryFailed": 0,
-    "total": 22
+    "total": 21
   },
   "validators": [
     {
       "name": "check-generated",
       "status": "pass",
-      "duration": 4126,
+      "duration": 3986,
       "blocking": true
     },
     {
       "name": "typecheck",
       "status": "pass",
-      "duration": 1938,
+      "duration": 1792,
       "blocking": true
     },
     {
       "name": "lint",
       "status": "pass",
-      "duration": 5621,
+      "duration": 5491,
       "blocking": false
     },
     {
       "name": "validate-content-contract",
       "status": "pass",
-      "duration": 2362,
+      "duration": 2258,
       "blocking": true
     },
     {
       "name": "validate-content-quality",
       "status": "pass",
-      "duration": 810,
+      "duration": 801,
       "blocking": true
     },
     {
       "name": "validate-domain-structure",
       "status": "pass",
-      "duration": 2262,
+      "duration": 2268,
       "blocking": true
     },
     {
       "name": "validate-cta-label-contract",
       "status": "pass",
-      "duration": 789,
+      "duration": 777,
       "blocking": true
     },
     {
       "name": "validate-conversion-contract",
       "status": "pass",
-      "duration": 774,
+      "duration": 768,
       "blocking": true
     },
     {
       "name": "validate-template-payload-sufficiency",
       "status": "pass",
-      "duration": 762,
+      "duration": 752,
       "blocking": true
     },
     {
       "name": "validate-section-structure",
       "status": "pass",
-      "duration": 699,
+      "duration": 704,
       "blocking": true
     },
     {
       "name": "validate-design-system",
       "status": "pass",
-      "duration": 160,
+      "duration": 152,
       "blocking": true
     },
     {
       "name": "validate-graph",
       "status": "pass",
-      "duration": 773,
+      "duration": 764,
       "blocking": true
     },
     {
       "name": "validate-internal-links",
       "status": "pass",
-      "duration": 956,
+      "duration": 959,
       "blocking": true
     },
     {
       "name": "validate-cta-violations",
       "status": "pass",
-      "duration": 536,
+      "duration": 523,
       "blocking": true
     },
     {
       "name": "validate-related-duplication",
       "status": "pass",
-      "duration": 493,
+      "duration": 509,
       "blocking": true
     },
     {
@@ -107,37 +107,31 @@
     {
       "name": "generate-proof-coverage",
       "status": "pass",
-      "duration": 921,
+      "duration": 1481,
       "blocking": false
     },
     {
       "name": "validate-tokens",
       "status": "pass",
-      "duration": 98,
+      "duration": 101,
       "blocking": true
     },
     {
       "name": "validate-inline-styles",
       "status": "pass",
-      "duration": 200,
+      "duration": 199,
       "blocking": true
     },
     {
       "name": "validate-docs",
       "status": "pass",
-      "duration": 109,
+      "duration": 106,
       "blocking": false
     },
     {
       "name": "validate-vocabulary",
       "status": "pass",
-      "duration": 196,
-      "blocking": false
-    },
-    {
-      "name": "validate-checklist",
-      "status": "pass",
-      "duration": 91,
+      "duration": 201,
       "blocking": false
     }
   ],

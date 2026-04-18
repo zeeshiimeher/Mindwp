@@ -29,6 +29,7 @@ Tracker status: active
 - Deleted `scripts/validators/validate-system-docs.mjs` and removed its remaining `validate-all`, registry, and documentation references.
 - Deleted `scripts/validators/validate-fix-log.mjs` and removed its remaining `validate-all`, registry, and documentation references.
 - Deleted `scripts/validators/validate-reports-structure.mjs` and removed its remaining `validate-all`, registry, npm script, and documentation references.
+- Deleted `scripts/validators/validate-checklist.mjs` with the full dormant `src/lib/dev/*` checklist-engine cluster and removed their remaining registry and documentation references.
 
 ### Phase 1 Verification Log
 
@@ -43,6 +44,8 @@ Tracker status: active
   - Evidence: advisory-only validator, removed from `scripts/core/validate-all.mjs`, removed from `scripts/system/script-registry.json`, and stale doc mentions removed from `Mindwp-Docs/core/TOOLS.md` and `Mindwp-Docs/core/CONTENT.md`.
 - Completed: `scripts/validators/validate-reports-structure.mjs`
   - Evidence: advisory-only validator, removed from `scripts/core/validate-all.mjs`, removed from `scripts/system/script-registry.json`, dead `package.json` script removed, and stale doc mentions removed from `Mindwp-Docs/core/TOOLS.md` and `Mindwp-Docs/core/CONTENT.md`.
+- Completed: `scripts/validators/validate-checklist.mjs` plus dormant checklist cluster
+  - Evidence: the authority dashboard no longer imports the cluster, `src/app/dev/authority-dashboard/actions.ts` no longer exists, remaining code references were self-contained within the cluster, and stale registry plus documentation references were removed.
 
 ## 1. ENFORCEMENT MODEL (FINAL)
 

@@ -81,19 +81,6 @@
       "runnable": true
     },
     {
-      "id": "validate-checklist",
-      "name": "Validate Checklist",
-      "category": "validators",
-      "intent": "debug",
-      "group": "advanced",
-      "priority": 7,
-      "estimatedTime": "fast",
-      "path": "scripts/validators/validate-checklist.mjs",
-      "description": "Check checklist drift.",
-      "type": "validator",
-      "runnable": true
-    },
-    {
       "id": "validate-conversion-contract",
       "name": "Validate Conversion Contract",
       "category": "validators",
