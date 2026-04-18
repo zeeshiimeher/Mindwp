@@ -1,5 +1,6 @@
 'use client';
 
+import Script from 'next/script';
 import React, { useEffect, useState } from 'react';
 import { CheckCircle2, Clock, Loader2, Mail, MapPin, Phone, Send } from 'lucide-react';
 
@@ -13,11 +14,21 @@ import { Textarea } from '@/components/ui/textarea';
 import { isValidContactContext } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
+declare global {
+  interface Window {
+    mindwpTurnstileSuccess?: (token: string) => void;
+    mindwpTurnstileExpired?: () => void;
+  }
+}
+
 const INITIAL_FORM_STATE = {
   name: '',
   email: '',
   message: '',
+  website: '',
 };
+
+const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '';
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -25,6 +36,7 @@ export function Contact() {
   const [errorMessage, setErrorMessage] = useState('');
   const [systemParam, setSystemParam] = useState('');
   const [sourceParam, setSourceParam] = useState('');
+  const [captchaToken, setCaptchaToken] = useState('');
   const [formState, setFormState] = useState(INITIAL_FORM_STATE);
 
   useEffect(() => {
@@ -33,6 +45,21 @@ export function Contact() {
     const source = params.get('source') ?? '';
     setSystemParam(system);
     setSourceParam(source);
+  }, []);
+
+  useEffect(() => {
+    window.mindwpTurnstileSuccess = (token: string) => {
+      setCaptchaToken(token);
+    };
+
+    window.mindwpTurnstileExpired = () => {
+      setCaptchaToken('');
+    };
+
+    return () => {
+      delete window.mindwpTurnstileSuccess;
+      delete window.mindwpTurnstileExpired;
+    };
   }, []);
 
   const hasContext = Boolean(systemParam && sourceParam);
@@ -54,6 +81,18 @@ export function Contact() {
       return;
     }
 
+    if (!turnstileSiteKey) {
+      setErrorMessage(
+        'Form protection is not configured. Please email us directly at hello@mindwp.com.'
+      );
+      return;
+    }
+
+    if (!captchaToken) {
+      setErrorMessage('Please complete the CAPTCHA challenge before sending your message.');
+      return;
+    }
+
     setIsSubmitting(true);
     setErrorMessage('');
 
@@ -67,6 +106,7 @@ export function Contact() {
           ...formState,
           system: systemParam,
           source: sourceParam,
+          captchaToken,
         }),
       });
 
@@ -77,6 +117,7 @@ export function Contact() {
       }
 
       setFormState(INITIAL_FORM_STATE);
+      setCaptchaToken('');
       setSubmitted(true);
     } catch (error) {
       setErrorMessage(
@@ -133,6 +174,13 @@ export function Contact() {
 
   return (
     <div className='contact-page'>
+      {turnstileSiteKey && (
+        <Script
+          src='https://challenges.cloudflare.com/turnstile/v0/api.js'
+          strategy='afterInteractive'
+        />
+      )}
+
       {/* Hero Section */}
       <SectionWrapper
         className='contact-page-hero'
@@ -237,6 +285,19 @@ export function Contact() {
                         />
                       </div>
 
+                      <div className='hidden' aria-hidden='true'>
+                        <Label htmlFor='website'>Website</Label>
+                        <Input
+                          id='website'
+                          name='website'
+                          type='text'
+                          tabIndex={-1}
+                          autoComplete='off'
+                          value={formState.website}
+                          onChange={event => handleInputChange('website', event.target.value)}
+                        />
+                      </div>
+
                       <div className='contact-page-form-field-6'>
                         <Label htmlFor='message' className='contact-page-form-label-6'>
                           Message *
@@ -253,6 +314,22 @@ export function Contact() {
                         />
                       </div>
 
+                      {turnstileSiteKey ? (
+                        <div className='contact-page-form-field-7'>
+                          <div
+                            className='cf-turnstile'
+                            data-sitekey={turnstileSiteKey}
+                            data-callback='mindwpTurnstileSuccess'
+                            data-expired-callback='mindwpTurnstileExpired'
+                          />
+                        </div>
+                      ) : (
+                        <p className='contact-page-form-error text-sm text-destructive'>
+                          Form protection is unavailable right now. Please email hello@mindwp.com
+                          directly.
+                        </p>
+                      )}
+
                       {errorMessage && (
                         <p className='contact-page-form-error text-sm text-destructive'>
                           {errorMessage}
@@ -262,7 +339,7 @@ export function Contact() {
                       <button
                         type='submit'
                         className='btn btn-primary btn-block'
-                        disabled={isSubmitting || !hasValidContext}
+                        disabled={isSubmitting || !hasValidContext || !turnstileSiteKey}
                       >
                         {isSubmitting ? (
                           <>

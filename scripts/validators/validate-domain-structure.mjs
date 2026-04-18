@@ -5,6 +5,10 @@ import path from 'node:path';
 
 import { Project, SyntaxKind } from 'ts-morph';
 
+import { FEATURE_REGISTRY } from '../../src/domains/features/registry.ts';
+import { INDUSTRY_REGISTRY } from '../../src/domains/industries/registry.ts';
+import { SERVICE_REGISTRY } from '../../src/domains/services/registry.ts';
+
 import {
   extractSectionsOrderFromRenderer,
   getPropertyInitializer,
@@ -58,6 +62,204 @@ function getExportedObjectLiteral(sourceFile) {
 
 function pushIssue(issues, type, file, code, message) {
   issues.push({ type, file, code, message });
+}
+
+function validateRegistryCoverage(issues, type, file, registryLabel, sourceSlugs, registrySlugs) {
+  const missingRegistrySlugs = [...sourceSlugs]
+    .filter(slug => !registrySlugs.has(slug))
+    .sort((left, right) => left.localeCompare(right));
+  const extraRegistrySlugs = [...registrySlugs]
+    .filter(slug => !sourceSlugs.has(slug))
+    .sort((left, right) => left.localeCompare(right));
+
+  if (missingRegistrySlugs.length > 0) {
+    pushIssue(
+      issues,
+      type,
+      file,
+      'missing_registry_entry',
+      `${registryLabel} is missing source-backed slug(s): ${missingRegistrySlugs.join(', ')}.`
+    );
+  }
+
+  if (extraRegistrySlugs.length > 0) {
+    pushIssue(
+      issues,
+      type,
+      file,
+      'stale_registry_entry',
+      `${registryLabel} contains slug(s) with no matching source file: ${extraRegistrySlugs.join(', ')}.`
+    );
+  }
+}
+
+function hasNonEmptyString(initializer, sourceFile) {
+  const value = resolveStringValue(initializer, sourceFile);
+  return typeof value === 'string' && value.trim().length > 0;
+}
+
+function getObjectPropertyLiteral(objectLiteral, key) {
+  return toObjectLiteral(getPropertyInitializer(objectLiteral, key));
+}
+
+function getArrayItemCount(initializer) {
+  return initializer?.asKind(SyntaxKind.ArrayLiteralExpression)?.getElements().length ?? 0;
+}
+
+function hasResolvableOrDelegatedList(initializer) {
+  if (!initializer) {
+    return false;
+  }
+
+  const arrayLiteral = initializer.asKind(SyntaxKind.ArrayLiteralExpression);
+  if (arrayLiteral) {
+    return arrayLiteral.getElements().length > 0;
+  }
+
+  return true;
+}
+
+function hasSpreadAssignment(objectLiteral) {
+  return objectLiteral.getProperties().some(property => property.getKind() === SyntaxKind.SpreadAssignment);
+}
+
+function validateServiceConversionContracts(issues, rel, sourceFile, exportedObject, sectionsObject) {
+  const heroObject = getObjectPropertyLiteral(exportedObject, 'hero');
+  if (!heroObject || !hasNonEmptyString(getPropertyInitializer(heroObject, 'title'), sourceFile)) {
+    pushIssue(issues, 'service', rel, 'missing_conversion_hero_title', 'hero.title must be a non-empty string.');
+  }
+
+  if (!heroObject || !hasNonEmptyString(getPropertyInitializer(heroObject, 'description'), sourceFile)) {
+    pushIssue(issues, 'service', rel, 'missing_conversion_hero_description', 'hero.description must be a non-empty string.');
+  }
+
+  const ctaObject = getObjectPropertyLiteral(exportedObject, 'cta');
+  if (!ctaObject) {
+    pushIssue(issues, 'service', rel, 'missing_conversion_cta', 'Service pages must define a top-level cta block.');
+  } else {
+    if (!hasNonEmptyString(getPropertyInitializer(ctaObject, 'title'), sourceFile)) {
+      pushIssue(issues, 'service', rel, 'missing_conversion_cta_title', 'cta.title must be a non-empty string.');
+    }
+
+    if (!hasNonEmptyString(getPropertyInitializer(ctaObject, 'description'), sourceFile)) {
+      pushIssue(issues, 'service', rel, 'missing_conversion_cta_description', 'cta.description must be a non-empty string.');
+    }
+  }
+
+  const inlineCtaObject = getObjectPropertyLiteral(exportedObject, 'inlineCta');
+  if (inlineCtaObject) {
+    if (!hasNonEmptyString(getPropertyInitializer(inlineCtaObject, 'title'), sourceFile)) {
+      pushIssue(issues, 'service', rel, 'invalid_inline_cta_title', 'inlineCta.title must be a non-empty string when inlineCta is present.');
+    }
+
+    if (!hasNonEmptyString(getPropertyInitializer(inlineCtaObject, 'description'), sourceFile)) {
+      pushIssue(issues, 'service', rel, 'invalid_inline_cta_description', 'inlineCta.description must be a non-empty string when inlineCta is present.');
+    }
+  }
+
+  const qualificationObject = getObjectPropertyLiteral(sectionsObject, 'qualification');
+  if (qualificationObject) {
+    const qualificationUsesSpread = hasSpreadAssignment(qualificationObject);
+    const qualificationHeader = getObjectPropertyLiteral(qualificationObject, 'header');
+    const hasQualificationTitle =
+      hasNonEmptyString(getPropertyInitializer(qualificationObject, 'title'), sourceFile) ||
+      (qualificationHeader &&
+        hasNonEmptyString(getPropertyInitializer(qualificationHeader, 'title'), sourceFile));
+    const hasQualificationDescription =
+      hasNonEmptyString(getPropertyInitializer(qualificationObject, 'description'), sourceFile) ||
+      (qualificationHeader &&
+        hasNonEmptyString(getPropertyInitializer(qualificationHeader, 'description'), sourceFile));
+
+    if (!hasQualificationTitle && !qualificationUsesSpread) {
+      pushIssue(issues, 'service', rel, 'invalid_qualification_title', 'sections.qualification.title must be a non-empty string.');
+    }
+
+    if (!hasQualificationDescription && !qualificationUsesSpread) {
+      pushIssue(issues, 'service', rel, 'invalid_qualification_description', 'sections.qualification.description must be a non-empty string.');
+    }
+
+    const hasStrongFitTitle = hasNonEmptyString(getPropertyInitializer(qualificationObject, 'strongFitTitle'), sourceFile);
+    const hasNotFitTitle =
+      hasNonEmptyString(getPropertyInitializer(qualificationObject, 'notDesignedTitle'), sourceFile) ||
+      hasNonEmptyString(getPropertyInitializer(qualificationObject, 'notForTitle'), sourceFile);
+    const hasStrongFitItems =
+      hasResolvableOrDelegatedList(getPropertyInitializer(qualificationObject, 'strongFitItems')) ||
+      hasResolvableOrDelegatedList(getPropertyInitializer(qualificationObject, 'strongFit'));
+    const hasNotFitItems =
+      hasResolvableOrDelegatedList(getPropertyInitializer(qualificationObject, 'notDesignedItems')) ||
+      hasResolvableOrDelegatedList(getPropertyInitializer(qualificationObject, 'notFor'));
+
+    if (
+      (!hasStrongFitTitle || !hasNotFitTitle || !hasStrongFitItems || !hasNotFitItems) &&
+      !qualificationUsesSpread
+    ) {
+      pushIssue(
+        issues,
+        'service',
+        rel,
+        'invalid_qualification_contract',
+        'sections.qualification must define titled strong-fit and not-fit lists with at least one item each.'
+      );
+    }
+  }
+
+  const proofObject = getObjectPropertyLiteral(sectionsObject, 'proof');
+  if (proofObject) {
+    const proofUsesSpread = hasSpreadAssignment(proofObject);
+    const proofHeader = getObjectPropertyLiteral(proofObject, 'header');
+    const hasProofItems =
+      hasResolvableOrDelegatedList(getPropertyInitializer(proofObject, 'cards')) ||
+      hasResolvableOrDelegatedList(getPropertyInitializer(proofObject, 'items'));
+
+    if (!proofHeader || !hasNonEmptyString(getPropertyInitializer(proofHeader, 'title'), sourceFile)) {
+      pushIssue(issues, 'service', rel, 'invalid_proof_header_title', 'sections.proof.header.title must be a non-empty string.');
+    }
+
+    if (!proofHeader || !hasNonEmptyString(getPropertyInitializer(proofHeader, 'description'), sourceFile)) {
+      pushIssue(issues, 'service', rel, 'invalid_proof_header_description', 'sections.proof.header.description must be a non-empty string.');
+    }
+
+    if (!hasProofItems && !proofUsesSpread) {
+      pushIssue(issues, 'service', rel, 'invalid_proof_items', 'sections.proof must define at least one card or item.');
+    }
+  }
+
+  const transformationProofObject = getObjectPropertyLiteral(exportedObject, 'transformationProof');
+  if (transformationProofObject) {
+    const beforeObject = getObjectPropertyLiteral(transformationProofObject, 'before');
+    const buildObject = getObjectPropertyLiteral(transformationProofObject, 'build');
+    const afterObject = getObjectPropertyLiteral(transformationProofObject, 'after');
+
+    if (!beforeObject || !hasNonEmptyString(getPropertyInitializer(beforeObject, 'title'), sourceFile)) {
+      pushIssue(issues, 'service', rel, 'invalid_transformation_proof_before_title', 'transformationProof.before.title must be a non-empty string.');
+    }
+
+    if (!buildObject || !hasNonEmptyString(getPropertyInitializer(buildObject, 'title'), sourceFile)) {
+      pushIssue(issues, 'service', rel, 'invalid_transformation_proof_build_title', 'transformationProof.build.title must be a non-empty string.');
+    }
+
+    if (!buildObject || !hasNonEmptyString(getPropertyInitializer(buildObject, 'description'), sourceFile)) {
+      pushIssue(issues, 'service', rel, 'invalid_transformation_proof_build_description', 'transformationProof.build.description must be a non-empty string.');
+    }
+
+    if (!afterObject || !hasNonEmptyString(getPropertyInitializer(afterObject, 'title'), sourceFile)) {
+      pushIssue(issues, 'service', rel, 'invalid_transformation_proof_after_title', 'transformationProof.after.title must be a non-empty string.');
+    }
+
+    const beforePoints = beforeObject ? getArrayItemCount(getPropertyInitializer(beforeObject, 'points')) : 0;
+    const buildHighlights = buildObject ? getArrayItemCount(getPropertyInitializer(buildObject, 'highlights')) : 0;
+    const afterResults = afterObject ? getArrayItemCount(getPropertyInitializer(afterObject, 'results')) : 0;
+
+    if (beforePoints === 0 || buildHighlights === 0 || afterResults === 0) {
+      pushIssue(
+        issues,
+        'service',
+        rel,
+        'invalid_transformation_proof_contract',
+        'transformationProof must define before.points, build.highlights, and after.results with at least one item each.'
+      );
+    }
+  }
 }
 
 function getSeoCanonicalValue(initializer, sourceFile) {
@@ -140,10 +342,59 @@ function buildServiceRendererOrder() {
   return { orderBySlug, slugByFile };
 }
 
+function collectIndustrySourceSlugs() {
+  const industriesRoot = path.join(root, 'src', 'domains', 'industries', 'pages');
+  const sourceSlugs = new Set();
+
+  function visit(dirPath) {
+    for (const entry of fs.readdirSync(dirPath, { withFileTypes: true })) {
+      const fullPath = path.join(dirPath, entry.name);
+
+      if (entry.isDirectory()) {
+        visit(fullPath);
+        continue;
+      }
+
+      if (!entry.name.endsWith('.ts') && !entry.name.endsWith('.tsx')) {
+        continue;
+      }
+
+      const sourceFile = project.addSourceFileAtPathIfExists(fullPath);
+      const exportedDeclaration = sourceFile
+        ?.getVariableDeclarations()
+        .find(item => item.getVariableStatement()?.isExported());
+      const pageObject = exportedDeclaration ? getIndustryObjectLiteral(exportedDeclaration) : null;
+      if (!pageObject) {
+        continue;
+      }
+
+      const seoObject = getPropertyAssignment(pageObject, 'seo')?.getInitializerIfKind(
+        SyntaxKind.ObjectLiteralExpression
+      );
+      const canonical = seoObject
+        ? getStringLiteralValue(getPropertyAssignment(seoObject, 'canonical')?.getInitializer())
+        : null;
+
+      if (!canonical || !canonical.startsWith('/industries/')) {
+        continue;
+      }
+
+      sourceSlugs.add(canonical.replace(/^\/industries\//, ''));
+    }
+  }
+
+  if (fs.existsSync(industriesRoot)) {
+    visit(industriesRoot);
+  }
+
+  return sourceSlugs;
+}
+
 function validateServiceStructure(issues) {
-  const requiredKeys = ['keywords', 'badge', 'category', 'seo', 'hero', 'sections'];
+  const requiredKeys = ['keywords', 'badge', 'category', 'seo', 'hero', 'sections', 'cta'];
   const sourceFiles = project.getSourceFiles('src/domains/services/data/*.ts');
   const { orderBySlug, slugByFile } = buildServiceRendererOrder();
+  const sourceSlugs = new Set();
 
   for (const sourceFile of sourceFiles) {
     const rel = path.relative(root, sourceFile.getFilePath());
@@ -154,6 +405,7 @@ function validateServiceStructure(issues) {
     }
 
     const expectedSlug = slugByFile.get(path.normalize(sourceFile.getFilePath())) ?? path.basename(sourceFile.getFilePath(), '.ts');
+    sourceSlugs.add(expectedSlug);
     for (const key of requiredKeys) {
       if (!hasProperty(exported.objectLiteral, key)) {
         pushIssue(issues, 'service', rel, 'missing_required_key', `Missing required key "${key}".`);
@@ -188,7 +440,18 @@ function validateServiceStructure(issues) {
         );
       }
     }
+
+    validateServiceConversionContracts(issues, rel, sourceFile, exported.objectLiteral, sectionsObject);
   }
+
+  validateRegistryCoverage(
+    issues,
+    'service',
+    path.relative(root, path.join(root, 'src', 'domains', 'services', 'registry.ts')),
+    'SERVICE_REGISTRY',
+    sourceSlugs,
+    new Set(Object.keys(SERVICE_REGISTRY))
+  );
 
   return sourceFiles.length;
 }
@@ -239,6 +502,7 @@ function validateFeatureStructure(issues) {
   const requiredKeys = ['slug', 'seo', 'hero', 'sections', 'cta'];
   const sourceFiles = project.getSourceFiles('src/domains/features/data/*.ts');
   const orderBySlug = buildFeatureRendererOrder();
+  const sourceSlugs = new Set();
 
   for (const sourceFile of sourceFiles) {
     const rel = path.relative(root, sourceFile.getFilePath());
@@ -249,6 +513,7 @@ function validateFeatureStructure(issues) {
     }
 
     const expectedSlug = path.basename(sourceFile.getFilePath(), '.ts');
+    sourceSlugs.add(expectedSlug);
     for (const key of requiredKeys) {
       if (!hasProperty(exported.objectLiteral, key)) {
         pushIssue(issues, 'feature', rel, 'missing_required_key', `Missing required key "${key}".`);
@@ -285,6 +550,15 @@ function validateFeatureStructure(issues) {
       }
     }
   }
+
+  validateRegistryCoverage(
+    issues,
+    'feature',
+    path.relative(root, path.join(root, 'src', 'domains', 'features', 'registry.ts')),
+    'FEATURE_REGISTRY',
+    sourceSlugs,
+    new Set(FEATURE_REGISTRY.map(feature => feature.slug))
+  );
 
   return sourceFiles.length;
 }
@@ -438,6 +712,15 @@ function validateIndustryStructure(issues) {
       pushIssue(issues, 'industry', rel, 'canonical_mismatch', `seo.canonical must be /industries/${slug}.`);
     }
   }
+
+  validateRegistryCoverage(
+    issues,
+    'industry',
+    path.relative(root, registryPath),
+    'INDUSTRY_REGISTRY',
+    collectIndustrySourceSlugs(),
+    new Set(Object.keys(INDUSTRY_REGISTRY))
+  );
 
   return scanned;
 }

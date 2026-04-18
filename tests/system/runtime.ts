@@ -9,8 +9,6 @@ export async function initRuntime() {
     return;
   }
 
-  const reactModule = await import('react');
-  globalThis.React ??= reactModule.default;
   await ensureGraphInitialized();
   initialized = true;
 }

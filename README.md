@@ -103,5 +103,7 @@ Resolver guarantees:
 
 ## Forms
 
-The contact page posts JSON to `/api/contact`, which sends a plain email through Resend. Configure `RESEND_API_KEY` and `CONTACT_EMAIL` in `.env.local` before testing submissions.
+The contact page posts JSON to `/api/contact`, which sends a plain email through Resend. Configure `RESEND_API_KEY`, `CONTACT_EMAIL`, `CONTACT_FROM_EMAIL`, `TURNSTILE_SECRET_KEY`, and `NEXT_PUBLIC_TURNSTILE_SITE_KEY` in `.env.local` before testing submissions. `CONTACT_FROM_EMAIL` must be a verified sender on your production domain.
+
+The contact route now enforces origin validation, a honeypot field, CAPTCHA verification, stronger email validation, and request rate limiting.
 

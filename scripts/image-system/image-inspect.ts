@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+// Keep the image system seperate ignore image system related files
 // ─── Image Inspector ────────────────────────────────────────────────
 // Analyzes generated images for overlay quality, contrast, and title fit
 

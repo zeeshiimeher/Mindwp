@@ -13,6 +13,14 @@ export const SERVICES = {
   },
   captcha: {
     enabled: true,
+    provider: 'turnstile',
+  },
+  contactForm: {
+    honeypotField: 'website',
+    rateLimit: {
+      maxRequests: 5,
+      windowMs: 15 * 60 * 1000,
+    },
   },
   reporting: {
     enabled: true,

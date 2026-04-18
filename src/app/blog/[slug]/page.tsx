@@ -5,7 +5,7 @@ import JsonLd from '@/components/system/JsonLd';
 import { BLOG_AUTHORS } from '@/domains/blog/api';
 import { BLOG_POSTS } from '@/domains/blog/registry';
 import { BlogPostTemplate } from '@/domains/blog/templates/BlogPostTemplate';
-import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
+import { getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
 import { getImage } from '@/lib/image-system/resolver';
 import { getBlogMetadata } from '@/lib/seo/pageMetadata';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
@@ -16,15 +16,14 @@ export const dynamicParams = false;
 export const revalidate = false;
 export const dynamic = 'force-static';
 
-const getBlogGraphNodes = async (): Promise<ContentGraphNode[]> => {
-  await ensureGraphInitialized();
-  const reactModule = await import('react');
-  globalThis.React ??= reactModule.default;
-
-  const { getContentGraph } = await import('../../../lib/content-graph/registry');
-  return Object.values(getContentGraph())
+const blogGraphNodesPromise = getInitializedContentGraph().then(graph =>
+  Object.values(graph)
     .filter(node => node.type === 'blog')
-    .sort((a, b) => a.slug.localeCompare(b.slug));
+    .sort((a, b) => a.slug.localeCompare(b.slug))
+);
+
+const getBlogGraphNodes = async (): Promise<ContentGraphNode[]> => {
+  return blogGraphNodesPromise;
 };
 
 const getBlogNodeBySlug = async (slug: string): Promise<ContentGraphNode | null> => {

@@ -7,9 +7,16 @@ import path from 'node:path';
 
 import { afterEach, describe, expect, test } from 'vitest';
 
+import {
+  getAdvisoryMetadataKeys,
+  getBlockingMetadataKeys,
+} from '../../scripts/lib/contract-validator-helpers.mjs';
+
 const root = process.cwd();
 const designValidatorPath = path.join(root, 'scripts/validators/validate-design-system.cjs');
 const conversionValidatorPath = path.join(root, 'scripts/validators/validate-conversion-contract.mjs');
+const internalLinksValidatorPath = path.join(root, 'scripts/validators/validate-internal-links.ts');
+const inlineLinkMisuseValidatorPath = path.join(root, 'scripts/validators/validate-inline-link-misuse.ts');
 
 const tempDirs: string[] = [];
 
@@ -48,6 +55,29 @@ afterEach(() => {
 });
 
 describe('integration: validator contracts', () => {
+  test('content contract treats publishable metadata as blocking instead of advisory', () => {
+    expect(getBlockingMetadataKeys('blog')).toEqual([
+      'slug',
+      'systems',
+      'title',
+      'description',
+      'canonical',
+      'openGraph',
+      'robots',
+    ]);
+    expect(getBlockingMetadataKeys('case-study')).toEqual([
+      'slug',
+      'systems',
+      'title',
+      'description',
+      'canonical',
+      'openGraph',
+      'robots',
+    ]);
+    expect(getAdvisoryMetadataKeys('blog')).toEqual([]);
+    expect(getAdvisoryMetadataKeys('case-study')).toEqual([]);
+  });
+
   test('design system validator fails on real UI contract violations and passes clean fixtures', () => {
     const failingWorkspace = createWorkspace();
     writePackageJson(failingWorkspace);
@@ -150,4 +180,108 @@ describe('integration: validator contracts', () => {
 
     expect(passingResult.status ?? 0).toBe(0);
   });
+
+  test('internal links validator fails on dead authored targets and passes valid publishable routes', () => {
+    const failingWorkspace = createWorkspace();
+    writePackageJson(failingWorkspace);
+    writeFile(
+      failingWorkspace,
+      'src/domains/resources/content/FailingLinks.tsx',
+      [
+        'export const failingLinks = {',
+        "  href: '/definitely-missing-route',",
+        '};',
+      ].join('\n')
+    );
+
+    const failingResult = spawnSync('npx', ['tsx', internalLinksValidatorPath], {
+      cwd: root,
+      encoding: 'utf8',
+      env: {
+        ...process.env,
+        MINDWP_LINK_SCAN_ROOT: failingWorkspace,
+      },
+    });
+
+    expect(failingResult.status).toBe(1);
+    expect(`${failingResult.stdout}\n${failingResult.stderr}`).toContain('invalid-authored-target');
+
+    const passingWorkspace = createWorkspace();
+    writePackageJson(passingWorkspace);
+    writeFile(
+      passingWorkspace,
+      'src/domains/resources/content/PassingLinks.tsx',
+      [
+        'export const passingLinks = {',
+        "  href: '/contact',",
+        '};',
+      ].join('\n')
+    );
+
+    const passingResult = spawnSync('npx', ['tsx', internalLinksValidatorPath], {
+      cwd: root,
+      encoding: 'utf8',
+      env: {
+        ...process.env,
+        MINDWP_LINK_SCAN_ROOT: passingWorkspace,
+      },
+    });
+
+    expect(passingResult.status ?? 0).toBe(0);
+  });
+
+  test(
+    'inline-link misuse validator requires the mirrored runtime helper contract on allowed templates',
+    () => {
+    const failingWorkspace = createWorkspace();
+    writePackageJson(failingWorkspace);
+    writeFile(
+      failingWorkspace,
+      'src/domains/blog/templates/BlogPostTemplate.tsx',
+      [
+        "import { createInlineLinkTracker } from '@/lib/seo/inlineLinking';",
+        '',
+        'export function BlogPostTemplate() {',
+        "  createInlineLinkTracker({ pagePath: '/blog/example' });",
+        '  return null;',
+        '}',
+      ].join('\n')
+    );
+
+    const failingResult = spawnSync('npx', ['tsx', inlineLinkMisuseValidatorPath], {
+      cwd: failingWorkspace,
+      encoding: 'utf8',
+    });
+
+    expect(failingResult.status).toBe(1);
+    expect(`${failingResult.stdout}\n${failingResult.stderr}`).toContain(
+      'Missing required inline-link enforcement contract'
+    );
+
+    const passingWorkspace = createWorkspace();
+    writePackageJson(passingWorkspace);
+    writeFile(
+      passingWorkspace,
+      'src/domains/blog/templates/BlogPostTemplate.tsx',
+      [
+        "import { createInlineLinkTracker } from '@/lib/seo/inlineLinking';",
+        "import { enforceInlineLinkUsage } from '@/lib/page/inlineLinkEnforcement';",
+        '',
+        'export function BlogPostTemplate({ pageId }: { pageId: string }) {',
+        "  createInlineLinkTracker({ pagePath: '/blog/example' });",
+        "  enforceInlineLinkUsage({ pageId, pageType: 'blog' }, 'blog');",
+        '  return null;',
+        '}',
+      ].join('\n')
+    );
+
+    const passingResult = spawnSync('npx', ['tsx', inlineLinkMisuseValidatorPath], {
+      cwd: passingWorkspace,
+      encoding: 'utf8',
+    });
+
+    expect(passingResult.status ?? 0).toBe(0);
+    },
+    20000
+  );
 });

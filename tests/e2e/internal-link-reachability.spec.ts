@@ -1,5 +1,7 @@
 import { expect, test } from '@playwright/test';
 
+import { normalizeInternalTarget as normalizeSharedInternalTarget } from '@/lib/seo/config';
+
 const baseUrl = (process.env.NEXT_BASE_URL || 'http://localhost:3001').replace(/\/$/, '');
 const baseOrigin = new URL(baseUrl).origin;
 const canonicalOrigin = 'https://mindwp.com';
@@ -37,17 +39,11 @@ function extractCanonicalHref(html: string): string | null {
 }
 
 function normalizeInternalTarget(href: string, currentPath: string): string | null {
-  if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) {
-    return null;
-  }
-
-  const url = new URL(href, `${baseOrigin}${currentPath}`);
-  if (url.origin !== baseOrigin) {
-    return null;
-  }
-
-  url.hash = '';
-  return `${url.pathname}${url.search}`;
+  return normalizeSharedInternalTarget(href, {
+    baseOrigin,
+    currentPath,
+    includeSearch: true,
+  });
 }
 
 async function getPublishedRoutes() {

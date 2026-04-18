@@ -7,7 +7,7 @@ import { SectionWrapper } from '@/components/reusable/primitives';
 import { Button, type ButtonProps } from '@/components/reusable/single/Button';
 import { useCTARegistry, usePageIdentity } from '@/components/system/PageEnforcement';
 import { cn } from '@/components/ui/utils';
-import { type CtaTone, DEFAULT_CTA_LABEL, resolveCtaLabel } from '@/config/ctaLabels';
+import { type CtaTone, DEFAULT_CTA_LABEL, resolveCtaLabel, resolveSecondaryCta } from '@/config/ctaLabels';
 import { buildContactHref, type ContactSourceType } from '@/lib/contact/contactHref';
 import { registerCTA, reportCTAError, unregisterCTA } from '@/lib/cta/ctaRegistry';
 import {
@@ -28,19 +28,6 @@ const ALLOW_SECONDARY_BY_PAGE_TYPE: Record<ContactSourceType, boolean> = {
   page: false,
   resource: false,
   service: false,
-};
-
-const SECONDARY_CTA_MAP: Partial<
-  Record<ContactSourceType, { label: string; href: (slug: string) => string }>
-> = {
-  feature: {
-    label: 'See How It Works',
-    href: slug => `/features/${slug}`,
-  },
-  industry: {
-    label: 'See How This Applies to Your Business',
-    href: slug => `/industries/${slug}`,
-  },
 };
 
 function hasRenderableText(value: ReactNode | undefined): boolean {
@@ -183,7 +170,7 @@ export function SmartCTA({
     tone,
   });
   const allowSecondary = ALLOW_SECONDARY_BY_PAGE_TYPE[pageTypeForHref];
-  const secondaryConfig = allowSecondary ? SECONDARY_CTA_MAP[pageTypeForHref] : undefined;
+  const secondaryConfig = allowSecondary ? resolveSecondaryCta(pageTypeForHref, slug) : undefined;
 
   const primaryAction: ButtonProps = {
     variant: primaryActionVariant,
@@ -200,7 +187,7 @@ export function SmartCTA({
         variant: 'outline-light',
         label: secondaryConfig.label,
         ...(secondaryButtonCssPrefix ? { cssPrefix: secondaryButtonCssPrefix } : {}),
-        href: secondaryConfig.href(slug),
+        href: secondaryConfig.href,
       }
     : undefined;
 

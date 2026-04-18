@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // ─── Image System CLI ───────────────────────────────────────────────
 // Main entry point for image generation commands
-//
+// Keep the image system seperate ignore image system related files
 // Usage:
 //   npx tsx scripts/image-system/image-generate.ts --mode test --slug <post-slug>
 //   npx tsx scripts/image-system/image-generate.ts --domain blog

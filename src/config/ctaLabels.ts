@@ -1,7 +1,17 @@
 import type { ContactSourceType } from '@/lib/contact/contactHref';
-import { type CTAIntent, type PageType, toContactSourceType } from '@/lib/page/pageIdentity';
+import {
+  inferPageIntent,
+  type CTAIntent,
+  type PageType,
+  toContactSourceType,
+} from '@/lib/page/pageIdentity';
 
 export type CtaTone = 'short' | 'descriptive';
+
+export type SecondaryCtaAction = {
+  label: string;
+  href: string;
+};
 
 type ResolveCtaLabelOptions = {
   system: string;
@@ -83,14 +93,20 @@ const SHORT_CTA_LABEL_RULES: Record<ContactSourceType, readonly string[]> = {
   service: ['See Build Path', 'Find The Leak', 'Compare Service Paths', 'Scope The Fix'],
 };
 
-const INTENT_DEFAULTS: Partial<Record<PageType, CTAIntent>> = {
-  blog: 'entry',
-  feature: 'comparison',
-  'industry-detail': 'comparison',
-  'industry-category': 'comparison',
-  resource: 'entry',
-  service: 'conversion',
+const SECONDARY_CTA_RULES: Partial<
+  Record<ContactSourceType, { label: string; href: (slug: string) => string }>
+> = {
+  feature: {
+    label: 'See How It Works',
+    href: slug => `/features/${slug}`,
+  },
+  industry: {
+    label: 'See How This Applies to Your Business',
+    href: slug => `/industries/${slug}`,
+  },
 };
+
+export const DEFAULT_TIER_CARD_CTA_LABEL = 'Start Conversation';
 
 const INTENT_INDEX: Record<CTAIntent, number> = {
   entry: 0,
@@ -101,20 +117,20 @@ const INTENT_INDEX: Record<CTAIntent, number> = {
 
 export const DEFAULT_CTA_LABEL = CTA_LABEL_RULES.service[3];
 
+export const APPROVED_CTA_LABELS = [...new Set([
+  ...Object.values(CTA_LABEL_MAP),
+  ...Object.values(CTA_LABEL_RULES).flat(),
+  ...Object.values(SHORT_CTA_LABEL_RULES).flat(),
+  ...Object.values(SECONDARY_CTA_RULES).map(rule => rule.label),
+  DEFAULT_TIER_CARD_CTA_LABEL,
+])];
+
+export function isApprovedCtaLabel(label: string): boolean {
+  return APPROVED_CTA_LABELS.includes(label.trim());
+}
+
 export function inferIntent(pageType: PageType): CTAIntent {
-  switch (pageType) {
-    case 'blog':
-    case 'resource':
-      return 'entry';
-    case 'feature':
-    case 'industry-detail':
-    case 'industry-category':
-      return 'comparison';
-    case 'service':
-      return 'conversion';
-    default:
-      return INTENT_DEFAULTS[pageType] ?? 'entry';
-  }
+  return inferPageIntent(pageType);
 }
 
 export function resolveCtaLabel(
@@ -140,4 +156,28 @@ export function resolveCtaLabel(
   const index = Math.min(INTENT_INDEX[resolvedIntent] ?? 0, labels.length - 1);
 
   return labels[index] ?? CTA_LABEL_MAP[system] ?? DEFAULT_CTA_LABEL;
+}
+
+export function resolveSecondaryCta(
+  pageType: ContactSourceType,
+  slug: string
+): SecondaryCtaAction | undefined {
+  const config = SECONDARY_CTA_RULES[pageType];
+
+  if (!config) {
+    return undefined;
+  }
+
+  return {
+    label: config.label,
+    href: config.href(slug),
+  };
+}
+
+export function resolveTierCardCtaLabel(buttonHref?: string, buttonText?: string): string {
+  if (buttonHref && !buttonHref.startsWith('/contact')) {
+    return buttonText?.trim() || DEFAULT_TIER_CARD_CTA_LABEL;
+  }
+
+  return DEFAULT_TIER_CARD_CTA_LABEL;
 }

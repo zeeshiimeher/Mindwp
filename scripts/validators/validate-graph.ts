@@ -4,11 +4,6 @@ import path from 'node:path';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 
 import {
-  CANONICAL_INDUSTRIES,
-  CANONICAL_SYSTEMS,
-  CANONICAL_TOPICS,
-} from '../../src/lib/content-graph/canonical';
-import {
   getContentGraph,
   getStructuredContentGraph,
 } from '../../src/lib/content-graph/registry';
@@ -35,12 +30,12 @@ const shouldReportJson = args.has('--report-json');
 
 await ensureGraphInitialized();
 
+// Canonical identifier ownership lives in validate-content-contract and the
+// graph initialization path. By the time validate-graph runs, canonical data
+// should already be guaranteed so this validator can focus on graph shape.
 const nodes = getStructuredContentGraph().nodes;
 const normalize = (value: string) => value.trim().toLowerCase();
 
-const canonicalIndustrySet: Set<string> = new Set(CANONICAL_INDUSTRIES);
-const canonicalSystemSet: Set<string> = new Set(CANONICAL_SYSTEMS);
-const canonicalTopicSet: Set<string> = new Set(CANONICAL_TOPICS);
 
 const errors: string[] = [];
 const warnings: string[] = [];
@@ -243,24 +238,6 @@ for (const node of nodes) {
   if (node.type === 'service' && uniqueValues(node.industries).length > 0) {
     errors.push(`${describeNode(node)} must not declare industry metadata`);
   }
-
-  for (const industry of uniqueValues(node.industries)) {
-    if (node.type !== 'industry-detail' && !canonicalIndustrySet.has(industry)) {
-      errors.push(`${describeNode(node)} invalid industry identifier: ${industry}`);
-    }
-  }
-
-  for (const system of uniqueValues(node.systems)) {
-    if (!canonicalSystemSet.has(system)) {
-      errors.push(`${describeNode(node)} invalid system identifier: ${system}`);
-    }
-  }
-
-  for (const topic of uniqueValues(node.topics)) {
-    if (!canonicalTopicSet.has(topic)) {
-      errors.push(`${describeNode(node)} invalid topic identifier: ${topic}`);
-    }
-  }
 }
 
 const blogNodes = nodes.filter(node => node.type === 'blog');
@@ -271,24 +248,24 @@ const serviceNodes = nodes.filter(node => node.type === 'service');
 for (const node of blogNodes) {
   if (!hasOverlapWithAny(node, resourceNodes)) {
     orphanNodeSet.add(`${node.type}/${node.slug}`);
-    warnings.push(`${describeNode(node)} has no matching resource`);
+    errors.push(`${describeNode(node)} has no matching resource`);
   }
 }
 
 for (const node of resourceNodes) {
-  const hasIndustry = uniqueValues(node.industries).some(industry => canonicalIndustrySet.has(industry));
-  const hasSystem = uniqueValues(node.systems).some(system => canonicalSystemSet.has(system));
+  const hasIndustry = uniqueValues(node.industries).length > 0;
+  const hasSystem = uniqueValues(node.systems).length > 0;
 
   if (!hasIndustry && !hasSystem) {
     orphanNodeSet.add(`${node.type}/${node.slug}`);
-    warnings.push(`${describeNode(node)} has no matching system or industry`);
+    errors.push(`${describeNode(node)} has no matching system or industry`);
   }
 }
 
 for (const node of caseStudyNodes) {
   if (!hasOverlapWithAny(node, serviceNodes)) {
     orphanNodeSet.add(`${node.type}/${node.slug}`);
-    warnings.push(`${describeNode(node)} has no matching system`);
+    errors.push(`${describeNode(node)} has no matching system`);
   }
 }
 

@@ -14,6 +14,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { isApprovedCtaLabel } from '../../src/config/ctaLabels.ts';
+
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'content-consistency-audit.json');
 
@@ -46,7 +48,6 @@ const BANNED_PATTERNS = BANNED_PHRASES.map(
   (w) => ({ phrase: w, pattern: new RegExp(`\\b${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi') })
 );
 
-const APPROVED_CTA_LABELS = ['Start a Conversation', 'Explore the Approach'];
 const APPROVED_CTA_HREF = '/contact';
 
 function walkFiles(dir, exts) {
@@ -126,7 +127,7 @@ function main() {
         // CTA consistency
         const { labels, hrefs } = extractCtaValues(text);
         for (const label of labels) {
-          if (!APPROVED_CTA_LABELS.includes(label)) {
+          if (!isApprovedCtaLabel(label)) {
             domainResult.ctaIssues.push({ file: rel, type: 'label', value: label });
           }
         }

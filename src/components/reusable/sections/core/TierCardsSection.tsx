@@ -7,6 +7,7 @@ import { Card } from '@/components/reusable/single/Card';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import type { SmartCTAProps } from '@/components/system/SmartCTA';
 import { cn } from '@/components/ui/utils';
+import { resolveTierCardCtaLabel } from '@/config/ctaLabels';
 import { buildContactHref } from '@/lib/contact/contactHref';
 import { toContactSourceType } from '@/lib/page/pageIdentity';
 
@@ -51,6 +52,10 @@ function buildPackageHref(
     sourceType: toContactSourceType(smartCta.pageType),
     slug: smartCta.slug,
   });
+}
+
+function buildPackageLabel(pkg: PackageItem) {
+  return resolveTierCardCtaLabel(pkg.buttonHref, pkg.buttonText);
 }
 
 function resolvePrimaryActionVariant(
@@ -131,7 +136,7 @@ export function TierCardsSection({
                 <Button
                   href={buildPackageHref(smartCta, pkg)}
                   variant={resolvePrimaryActionVariant(pkg.ctaVariant, pkg.popular)}
-                  label={pkg.buttonText ?? 'Start Conversation'}
+                  label={buildPackageLabel(pkg)}
                   cssPrefix='btn-block'
                 />
               ) : null}

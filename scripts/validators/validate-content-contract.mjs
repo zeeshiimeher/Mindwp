@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { resolveConversionGoal } from '../../src/lib/content-graph/conversionGoals.ts';
 import {
   getAdvisoryMetadataKeys,
   getBlockingMetadataKeys,
@@ -213,6 +214,36 @@ async function main() {
           description: `${label} exposes multiple systems; conversion will use "${systems[0]}" as primary.`,
           impact: 'The node remains valid, but primary-system behavior may be less obvious to operators.',
           fix: `Reduce ${label} to one primary system or accept the deterministic primary of "${systems[0]}".`,
+        })
+      );
+    }
+
+    const expectedConversion = resolveConversionGoal(node.type);
+
+    if (node.conversionGoal !== expectedConversion.conversionGoal) {
+      issues.push(
+        buildContractIssue({
+          node,
+          severity: 'critical',
+          code: 'invalid_conversion_goal',
+          title: 'Invalid conversion goal',
+          description: `${label} must resolve conversionGoal "${expectedConversion.conversionGoal}" for node type "${node.type}".`,
+          impact: 'Priority-aware analysis and conversion reporting drift when node conversion goals stop matching their shared type contract.',
+          fix: `Restore the shared conversionGoal mapping for ${label}.`,
+        })
+      );
+    }
+
+    if (node.conversionPriority !== expectedConversion.conversionPriority) {
+      issues.push(
+        buildContractIssue({
+          node,
+          severity: 'critical',
+          code: 'invalid_conversion_priority',
+          title: 'Invalid conversion priority',
+          description: `${label} must resolve conversionPriority ${expectedConversion.conversionPriority} for node type "${node.type}".`,
+          impact: 'Priority-aware analysis and release gating drift when node conversion priority stops matching the shared type contract.',
+          fix: `Restore the shared conversionPriority mapping for ${label}.`,
         })
       );
     }

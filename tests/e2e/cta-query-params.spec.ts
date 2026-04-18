@@ -13,7 +13,7 @@ async function getRepresentativeRoutes() {
   const nodes = Object.values(getContentGraph());
 
   return {
-    canonicalSystems: new Set(CANONICAL_SYSTEMS),
+    canonicalSystems: new Set<string>(CANONICAL_SYSTEMS),
     pages: [
       { path: '/', expectedSource: 'page/home' },
       {

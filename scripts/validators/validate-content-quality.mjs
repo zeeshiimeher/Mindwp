@@ -7,13 +7,15 @@ import { BLOG_POSTS } from '../../src/domains/blog/registry';
 import { RESOURCE_REGISTRY } from '../../src/domains/resources/registry';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 import { getStructuredContentGraph } from '../../src/lib/content-graph/registry';
-import { buildRouteInventory } from '../../src/lib/content-quality/inventory';
+import { buildRouteInventory, getInventoryMetadata } from '../../src/lib/content-quality/inventory';
 import { buildTopicCoverageSnapshots } from '../../src/lib/content-quality/topicCoverage';
-import { normalizePath } from '../../src/lib/seo/config';
+import { buildRoutePathFromSegments, normalizePath } from '../../src/lib/seo/config';
 import { createSystemIssue } from '../lib/system-issues.mjs';
 
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'content-quality-report.json');
+const MIN_INDEXABLE_DESCRIPTION_LENGTH = 60;
+const MIN_NON_INDEXABLE_DESCRIPTION_LENGTH = 50;
 
 function addIssue(target, payload) {
   target.push(payload);
@@ -106,10 +108,65 @@ function buildDuplicateMap(entries, field) {
     .map(([value, paths]) => ({ value, paths }));
 }
 
+function isWeakTitle(title, routePath) {
+  const value = title.trim();
+  if (routePath === '/') {
+    return false;
+  }
+
+  if (/^[A-Z0-9]{2,6}$/.test(value)) {
+    return false;
+  }
+
+  return value.length < 4;
+}
+
+function collectStaticAppRoutes(appRoot) {
+  const routes = new Set();
+
+  function visit(dirPath) {
+    const entries = fs.readdirSync(dirPath, { withFileTypes: true });
+
+    for (const entry of entries) {
+      const fullPath = path.join(dirPath, entry.name);
+
+      if (entry.isDirectory()) {
+        if (entry.name === 'api') {
+          continue;
+        }
+
+        visit(fullPath);
+        continue;
+      }
+
+      if (entry.name !== 'page.tsx') {
+        continue;
+      }
+
+      const relativeDir = path.relative(appRoot, path.dirname(fullPath));
+      const segments = relativeDir
+        .split(path.sep)
+        .filter(Boolean)
+        .filter(segment => !segment.startsWith('('));
+
+      if (segments.some(segment => segment.includes('['))) {
+        continue;
+      }
+
+      routes.add(buildRoutePathFromSegments(segments));
+    }
+  }
+
+  visit(appRoot);
+  return [...routes].sort((left, right) => left.localeCompare(right));
+}
+
 async function main() {
   await ensureGraphInitialized();
 
   const routeEntries = await buildRouteInventory();
+  const inventoryPaths = new Set(routeEntries.map(entry => entry.path));
+  const staticAppRoutes = collectStaticAppRoutes(path.join(root, 'src', 'app'));
   const graphNodes = getStructuredContentGraph().nodes;
   const topicCoverage = buildTopicCoverageSnapshots(graphNodes);
   const sitemapModule = await import('../../src/app/sitemap.ts');
@@ -121,8 +178,80 @@ async function main() {
   const issues = [];
   const warnings = [];
 
+  for (const routePath of staticAppRoutes) {
+    if (!inventoryPaths.has(routePath)) {
+      addIssue(
+        issues,
+        buildRouteIssue({
+          entry: { kind: 'static', path: routePath },
+          severity: 'critical',
+          category: 'seo',
+          code: 'inventory_missing_static_route',
+          title: 'Static app route missing from inventory',
+          description: `static/${routePath} exists in src/app but is missing from the route inventory.`,
+          impact: 'Inventory coverage is no longer a closed system for actual app routes.',
+          fix: `Add ${routePath} to the inventory source or remove the route from src/app.`,
+        })
+      );
+    }
+  }
+
+  const staticInventoryEntries = routeEntries.filter(entry => entry.kind === 'static');
+  for (const entry of staticInventoryEntries) {
+    if (!staticAppRoutes.includes(entry.path)) {
+      addIssue(
+        issues,
+        buildRouteIssue({
+          entry,
+          severity: 'critical',
+          category: 'seo',
+          code: 'inventory_static_route_without_page',
+          title: 'Inventory static route has no app page',
+          description: `static/${entry.path} exists in the route inventory but has no matching src/app page.`,
+          impact: 'Inventory can drift away from the actual app route surface.',
+          fix: `Remove ${entry.path} from the inventory source or restore its app page.`,
+        })
+      );
+    }
+  }
+
   for (const entry of routeEntries) {
     const label = `${entry.kind}/${entry.path}`;
+
+    try {
+      const metadata = await getInventoryMetadata(entry.path);
+
+      if (!metadata.title || !metadata.description || !metadata.alternates?.canonical || !metadata.openGraph || !metadata.robots) {
+        addIssue(
+          issues,
+          buildRouteIssue({
+            entry,
+            severity: 'critical',
+            category: 'seo',
+            code: 'inventory_metadata_incomplete',
+            title: 'Inventory metadata resolution is incomplete',
+            description: `${label} resolved incomplete metadata from the inventory helper.`,
+            impact: 'Publishable metadata can degrade after lookup instead of failing deterministically.',
+            fix: `Ensure ${entry.path} resolves complete metadata through getInventoryMetadata().`,
+          })
+        );
+      }
+    } catch (error) {
+      addIssue(
+        issues,
+        buildRouteIssue({
+          entry,
+          severity: 'critical',
+          category: 'seo',
+          code: 'inventory_metadata_resolution_failed',
+          title: 'Inventory metadata resolution failed',
+          description: `${label} could not resolve metadata through the inventory helper.`,
+          impact: 'Build-time metadata can fail or silently degrade if inventory resolution is not deterministic.',
+          fix: `Restore deterministic inventory metadata for ${entry.path}.`,
+          details: error instanceof Error ? { message: error.message } : null,
+        })
+      );
+    }
 
     if (!entry.title) {
       addIssue(
@@ -252,16 +381,37 @@ async function main() {
       );
     }
 
-    if (entry.description.length < 50) {
-      warnings.push(
+    if (isWeakTitle(entry.title, entry.path)) {
+      addIssue(
+        issues,
         buildRouteIssue({
           entry,
-          severity: 'warning',
-          category: 'content',
+          severity: 'critical',
+          category: 'seo',
+          code: 'weak_title',
+          title: 'Weak route title',
+          description: `${label} title is too short to be release-grade metadata.`,
+          impact: 'The route stays routable but loses clarity in search results and control-plane reports.',
+          fix: `Expand the title for ${entry.path} so it identifies the route clearly.`,
+        })
+      );
+    }
+
+    const minimumDescriptionLength = entry.indexable
+      ? MIN_INDEXABLE_DESCRIPTION_LENGTH
+      : MIN_NON_INDEXABLE_DESCRIPTION_LENGTH;
+
+    if (entry.description.length < minimumDescriptionLength) {
+      addIssue(
+        issues,
+        buildRouteIssue({
+          entry,
+          severity: 'critical',
+          category: 'seo',
           code: 'weak_description',
           title: 'Weak route description',
-          description: `${label} description is shorter than 50 characters.`,
-          impact: 'The route stays valid but provides low-context summaries in SEO and control-plane surfaces.',
+          description: `${label} description is shorter than ${minimumDescriptionLength} characters.`,
+          impact: 'The route stays routable but provides low-context summaries in search and reporting surfaces.',
           fix: `Expand the description for ${entry.path} so it clearly explains purpose and outcome.`,
         })
       );
@@ -377,7 +527,7 @@ async function main() {
   const topicsWithoutBlog = topicCoverage.filter(snapshot => !snapshot.hasSupportingPost).length;
   const orphanTopics = topicCoverage.filter(snapshot => snapshot.isOrphan).length;
   const topicsWithoutInternalPath = topicCoverage.filter(snapshot => !snapshot.hasInternalLinkPath).length;
-  const weakDescriptionCount = warnings.filter(warning => warning.code === 'weak_description').length;
+  const weakDescriptionCount = issues.filter(issue => issue.code === 'weak_description').length;
   const openGraphGapCount = issues.filter(issue => issue.code === 'missing_open_graph').length;
   const missingRobotsCount = issues.filter(issue => issue.code === 'missing_robots').length;
   const sitemapIssueCount = missingFromSitemapCount + noindexInSitemapCount;

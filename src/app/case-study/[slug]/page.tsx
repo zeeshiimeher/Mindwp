@@ -5,7 +5,7 @@ import JsonLd from '@/components/system/JsonLd';
 import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
 import type { CaseStudyTemplateSection } from '@/domains/case-studies/templates';
 import { CaseStudyTemplate } from '@/domains/case-studies/templates';
-import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
+import { getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
 import { getImage } from '@/lib/image-system/resolver';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 import { getCaseStudyMetadata } from '@/lib/seo/pageMetadata';
@@ -17,15 +17,14 @@ export const dynamicParams = false;
 export const revalidate = false;
 export const dynamic = 'force-static';
 
-const getCaseStudyGraphNodes = async (): Promise<ContentGraphNode[]> => {
-  await ensureGraphInitialized();
-  const reactModule = await import('react');
-  globalThis.React ??= reactModule.default;
-
-  const { getContentGraph } = await import('../../../lib/content-graph/registry');
-  return Object.values(getContentGraph())
+const caseStudyGraphNodesPromise = getInitializedContentGraph().then(graph =>
+  Object.values(graph)
     .filter(node => node.type === 'case-study')
-    .sort((a, b) => a.slug.localeCompare(b.slug));
+    .sort((a, b) => a.slug.localeCompare(b.slug))
+);
+
+const getCaseStudyGraphNodes = async (): Promise<ContentGraphNode[]> => {
+  return caseStudyGraphNodesPromise;
 };
 
 const getCaseStudyNodeBySlug = async (slug: string): Promise<ContentGraphNode | null> => {

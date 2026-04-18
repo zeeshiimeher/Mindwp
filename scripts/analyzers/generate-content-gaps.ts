@@ -3,6 +3,7 @@ import path from 'node:path';
 
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 import { getContentGraph } from '../../src/lib/content-graph/registry';
+import type { ContentGraphNode, ContentNodeType } from '../../src/lib/content-graph/types';
 import {
   buildTopicValidationSnapshots,
   type TopicClassification,
@@ -30,7 +31,7 @@ interface TopicGap {
   suggestions: string[];
 }
 
-function nodesByType(nodes: ReturnType<typeof Object.values<ReturnType<typeof getContentGraph>>>, type: string) {
+function nodesByType(nodes: ContentGraphNode[], type: ContentNodeType) {
   return nodes.filter(node => node.type === type);
 }
 
@@ -52,7 +53,7 @@ function buildAuthorityScore(snapshot: {
   );
 }
 
-function buildValidationGaps(nodes: ReturnType<typeof Object.values<ReturnType<typeof getContentGraph>>>) {
+function buildValidationGaps(nodes: ContentGraphNode[]) {
   const topicCoverage = buildTopicCoverageSnapshots(nodes);
   const validationSnapshots = new Map(
     buildTopicValidationSnapshots(nodes).map(snapshot => [snapshot.topic, snapshot])
@@ -196,7 +197,7 @@ async function main() {
   fs.mkdirSync(reportsDir, { recursive: true });
 
   const graphRecord = getContentGraph();
-  const allNodes = Object.values(graphRecord);
+  const allNodes: ContentGraphNode[] = Object.values(graphRecord);
   const blogs = nodesByType(allNodes, 'blog');
   const resources = nodesByType(allNodes, 'resource');
   const services = nodesByType(allNodes, 'service');

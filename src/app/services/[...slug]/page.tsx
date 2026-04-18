@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound, permanentRedirect } from 'next/navigation';
 
 import JsonLd from '@/components/system/JsonLd';
-import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
+import { getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
 import {
   getServiceDataBySlug,
   isServiceSlug,
@@ -12,20 +12,23 @@ import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 import { getServiceMetadata } from '@/lib/seo/pageMetadata';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
 
-import { getContentGraph } from '../../../lib/content-graph/registry';
-
 export const dynamicParams = false;
 export const revalidate = false;
 export const dynamic = 'force-static';
 
-function getServiceGraphNodes() {
-  return Object.values(getContentGraph())
+const serviceGraphNodesPromise = getInitializedContentGraph().then(graph =>
+  Object.values(graph)
     .filter(node => node.type === 'service')
-    .sort((a, b) => a.slug.localeCompare(b.slug));
+    .sort((a, b) => a.slug.localeCompare(b.slug))
+);
+
+function getServiceGraphNodes() {
+  return serviceGraphNodesPromise;
 }
 
-function getServiceNodeBySlug(slug: string) {
-  return getServiceGraphNodes().find(node => node.slug === slug) ?? null;
+async function getServiceNodeBySlug(slug: string) {
+  const nodes = await getServiceGraphNodes();
+  return nodes.find(node => node.slug === slug) ?? null;
 }
 
 type FaqItemInput = {
@@ -46,12 +49,12 @@ function getServiceFaqs(sections: unknown): FaqItemInput[] | undefined {
   return serviceSections.faqSection?.faqs ?? serviceSections.faq?.items;
 }
 
-function resolveService(slugParts?: string[]) {
+async function resolveService(slugParts?: string[]) {
   if (!slugParts || slugParts.length !== 1) return null;
   const slug = slugParts?.[0];
   if (!slug) return null;
   if (!isServiceSlug(slug)) return null;
-  const serviceNode = getServiceNodeBySlug(slug);
+  const serviceNode = await getServiceNodeBySlug(slug);
   if (!serviceNode) return null;
   const serviceData = getServiceDataBySlug(slug);
   if (!serviceData) return null;
@@ -59,8 +62,8 @@ function resolveService(slugParts?: string[]) {
 }
 
 export async function generateStaticParams() {
-  await ensureGraphInitialized();
-  return getServiceGraphNodes().map(node => ({ slug: [node.slug] }));
+  const nodes = await getServiceGraphNodes();
+  return nodes.map(node => ({ slug: [node.slug] }));
 }
 
 export async function generateMetadata({
@@ -68,18 +71,16 @@ export async function generateMetadata({
 }: {
   params: Promise<{ slug: string[] }>;
 }): Promise<Metadata> {
-  await ensureGraphInitialized();
   const { slug } = await params;
-  const resolved = resolveService(slug);
+  const resolved = await resolveService(slug);
   if (!resolved) return {};
 
   return getServiceMetadata(resolved.serviceNode.path);
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string[] }> }) {
-  await ensureGraphInitialized();
   const { slug } = await params;
-  const resolved = resolveService(slug);
+  const resolved = await resolveService(slug);
   if (!resolved) {
     notFound();
   }

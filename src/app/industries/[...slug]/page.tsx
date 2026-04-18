@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 
 import JsonLd from '@/components/system/JsonLd';
 import { getIndustryDataByPath, renderIndustryPageByPath } from '@/domains/industries/config';
-import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
+import { getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
 import { getIndustryMetadata } from '@/lib/seo/pageMetadata';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
 
@@ -12,6 +12,18 @@ import type { ContentGraphNode } from '../../../lib/content-graph/types';
 export const dynamicParams = false;
 export const revalidate = false;
 export const dynamic = 'force-static';
+
+const contentGraphNodesPromise = getInitializedContentGraph().then(graph => {
+  const categoryNodes = Object.values(graph)
+    .filter(node => node.type === 'industry-category')
+    .sort((a, b) => a.path.localeCompare(b.path));
+  const detailNodes = Object.values(graph)
+    .filter(node => node.type === 'industry-detail')
+    .sort((a, b) => a.path.localeCompare(b.path));
+  const categoryBySlug = new Map(categoryNodes.map(node => [node.slug, node]));
+
+  return { categoryNodes, detailNodes, categoryBySlug };
+});
 
 function isSchemaRecord(value: unknown): value is Record<string, unknown> {
   return typeof value === 'object' && value !== null;
@@ -24,21 +36,7 @@ const toLabelFromSlug = (value: string) =>
     .replace(/\b\w/g, char => char.toUpperCase());
 
 const getContentGraphNodes = async () => {
-  await ensureGraphInitialized();
-  const reactModule = await import('react');
-  globalThis.React ??= reactModule.default;
-
-  const { getContentGraph } = await import('../../../lib/content-graph/registry');
-  const graph = getContentGraph();
-  const categoryNodes = Object.values(graph)
-    .filter(node => node.type === 'industry-category')
-    .sort((a, b) => a.path.localeCompare(b.path));
-  const detailNodes = Object.values(graph)
-    .filter(node => node.type === 'industry-detail')
-    .sort((a, b) => a.path.localeCompare(b.path));
-  const categoryBySlug = new Map(categoryNodes.map(node => [node.slug, node]));
-
-  return { categoryNodes, detailNodes, categoryBySlug };
+  return contentGraphNodesPromise;
 };
 
 async function resolveIndustryNode(slugParts?: string[]): Promise<ContentGraphNode | null> {
@@ -102,8 +100,6 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string[] }> }) {
-  await ensureGraphInitialized();
-
   const { slug } = await params;
   const { categoryBySlug } = await getContentGraphNodes();
   const resolved = await resolveIndustry(slug);

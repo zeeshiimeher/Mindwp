@@ -3,7 +3,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { CTA_LABEL_MAP, DEFAULT_CTA_LABEL, resolveCtaLabel } from '../../src/config/ctaLabels.ts';
+import {
+  APPROVED_CTA_LABELS,
+  CTA_LABEL_MAP,
+  DEFAULT_CTA_LABEL,
+  DEFAULT_TIER_CARD_CTA_LABEL,
+  isApprovedCtaLabel,
+  resolveCtaLabel,
+} from '../../src/config/ctaLabels.ts';
 import { CANONICAL_SYSTEMS } from '../../src/lib/content-graph/canonical.ts';
 import { listFilesRecursive } from '../lib/validator-helpers.mjs';
 
@@ -13,6 +20,7 @@ const shouldReportJson = args.has('--report-json');
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'cta-label-contract-report.json');
 const smartCtaPath = path.join(root, 'src', 'components', 'system', 'SmartCTA.tsx');
+const tierCardsPath = path.join(root, 'src', 'components', 'reusable', 'sections', 'core', 'TierCardsSection.tsx');
 const canonicalSystems = new Set(CANONICAL_SYSTEMS);
 const repoSystemDirs = [
   'src/app',
@@ -80,6 +88,35 @@ function main() {
     issues.push({
       code: 'missing_resolver_label_usage',
       message: 'SmartCTA must resolve CTA labels from the normalized resolvedSystem value.',
+    });
+  }
+
+  if (!smartCtaSource.includes('resolveSecondaryCta(pageTypeForHref, slug)')) {
+    issues.push({
+      code: 'missing_centralized_secondary_cta_usage',
+      message: 'SmartCTA secondary CTA policy must resolve from the shared CTA config.',
+    });
+  }
+
+  const tierCardsSource = fs.readFileSync(tierCardsPath, 'utf8');
+  if (!tierCardsSource.includes('resolveTierCardCtaLabel')) {
+    issues.push({
+      code: 'missing_tier_card_label_resolver',
+      message: 'TierCardsSection must resolve contact CTA labels from the shared CTA config.',
+    });
+  }
+
+  if (!isApprovedCtaLabel(DEFAULT_TIER_CARD_CTA_LABEL)) {
+    issues.push({
+      code: 'invalid_tier_card_default_label',
+      message: 'Tier card default CTA label must be included in the shared approved CTA label list.',
+    });
+  }
+
+  if (!APPROVED_CTA_LABELS.every(label => isApprovedCtaLabel(label))) {
+    issues.push({
+      code: 'invalid_approved_cta_labels_export',
+      message: 'Approved CTA labels export must stay self-consistent with the shared approval helper.',
     });
   }
 

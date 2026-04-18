@@ -6,23 +6,23 @@ import { Project } from 'ts-morph';
 import { assert, getStringArrayDeclarationValues, listFilesRecursive } from './validator-helpers.mjs';
 
 const BLOCKING_METADATA_KEYS = {
-  blog: ['slug', 'systems'],
-  resource: ['slug', 'systems'],
-  service: ['slug', 'systems'],
-  feature: ['slug', 'systems'],
-  'industry-detail': ['slug', 'type', 'systems'],
-  'industry-category': ['slug', 'type', 'systems'],
-  'case-study': ['slug', 'systems'],
+  blog: ['slug', 'systems', 'title', 'description', 'canonical', 'openGraph', 'robots'],
+  resource: ['slug', 'systems', 'title', 'description', 'canonical', 'openGraph', 'robots'],
+  service: ['slug', 'systems', 'title', 'description', 'canonical', 'openGraph', 'robots'],
+  feature: ['slug', 'systems', 'title', 'description', 'canonical', 'openGraph', 'robots'],
+  'industry-detail': ['slug', 'type', 'systems', 'title', 'description', 'canonical', 'openGraph', 'robots'],
+  'industry-category': ['slug', 'type', 'systems', 'title', 'description', 'canonical', 'openGraph', 'robots'],
+  'case-study': ['slug', 'systems', 'title', 'description', 'canonical', 'openGraph', 'robots'],
 };
 
 const ADVISORY_METADATA_KEYS = {
-  blog: ['title', 'description', 'canonical', 'openGraph', 'robots'],
-  resource: ['title', 'description', 'canonical', 'openGraph', 'robots'],
-  service: ['title', 'description', 'canonical', 'openGraph', 'robots'],
-  feature: ['title', 'description', 'canonical', 'openGraph', 'robots'],
-  'industry-detail': ['title', 'description', 'canonical', 'openGraph', 'robots'],
-  'industry-category': ['title', 'description', 'canonical', 'openGraph', 'robots'],
-  'case-study': ['title', 'description', 'canonical', 'openGraph', 'robots'],
+  blog: [],
+  resource: [],
+  service: [],
+  feature: [],
+  'industry-detail': [],
+  'industry-category': [],
+  'case-study': [],
 };
 
 function uniqueNormalized(values) {

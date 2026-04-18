@@ -9,12 +9,27 @@ import { getGraphNodes, initRuntime, primarySystemForNode, sourceTypeForNode } f
 const originalEnv = {
   RESEND_API_KEY: process.env.RESEND_API_KEY,
   CONTACT_EMAIL: process.env.CONTACT_EMAIL,
+  CONTACT_FROM_EMAIL: process.env.CONTACT_FROM_EMAIL,
+  TURNSTILE_SECRET_KEY: process.env.TURNSTILE_SECRET_KEY,
 };
+const originalFetch = global.fetch;
 
 async function loadContactHandler() {
   const send = vi.fn().mockResolvedValue({ id: 'email_123' });
 
   vi.resetModules();
+  vi.stubGlobal(
+    'fetch',
+    vi.fn().mockImplementation(
+      async () =>
+        new Response(JSON.stringify({ success: true }), {
+          status: 200,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        })
+    )
+  );
   vi.doMock('resend', () => ({
     Resend: class Resend {
       emails = {
@@ -25,6 +40,8 @@ async function loadContactHandler() {
 
   process.env.RESEND_API_KEY = 'test-key';
   process.env.CONTACT_EMAIL = 'hello@mindwp.com';
+  process.env.CONTACT_FROM_EMAIL = 'noreply@mindwp.com';
+  process.env.TURNSTILE_SECRET_KEY = 'turnstile-secret';
 
   const module = await import('@/app/api/contact/route');
   return { POST: module.POST, send };
@@ -37,9 +54,13 @@ describe('system invariant: CTA contact context stays compatible with the contac
 
   afterEach(() => {
     vi.doUnmock('resend');
+    vi.unstubAllGlobals();
     vi.resetModules();
     process.env.RESEND_API_KEY = originalEnv.RESEND_API_KEY;
     process.env.CONTACT_EMAIL = originalEnv.CONTACT_EMAIL;
+    process.env.CONTACT_FROM_EMAIL = originalEnv.CONTACT_FROM_EMAIL;
+    process.env.TURNSTILE_SECRET_KEY = originalEnv.TURNSTILE_SECRET_KEY;
+    global.fetch = originalFetch;
   });
 
   test('every graph-backed CTA context produces a valid contact query string', () => {
@@ -75,7 +96,7 @@ describe('system invariant: CTA contact context stays compatible with the contac
       ...getGraphNodes('industry-detail').slice(0, 1),
     ];
 
-    for (const node of representativeNodes) {
+    for (const [index, node] of representativeNodes.entries()) {
       const href = buildContactHref({
         system: primarySystemForNode(node),
         sourceType: sourceTypeForNode(node),
@@ -88,6 +109,8 @@ describe('system invariant: CTA contact context stays compatible with the contac
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            Origin: 'https://mindwp.local',
+            'x-forwarded-for': `203.0.113.${index + 1}`,
           },
           body: JSON.stringify({
             name: 'MindWP Test',
@@ -95,6 +118,7 @@ describe('system invariant: CTA contact context stays compatible with the contac
             message: `Runtime CTA context check for ${node.path}`,
             system: url.searchParams.get('system'),
             source: url.searchParams.get('source'),
+            captchaToken: 'turnstile-token',
           }),
         })
       );

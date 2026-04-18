@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import JsonLd from '@/components/system/JsonLd';
-import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
+import { getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
 import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
 import ResourcePageTemplate from '@/domains/resources/templates/ResourcePageTemplate';
 import type { ResourceFAQItem } from '@/domains/resources/templates/types';
@@ -17,15 +17,14 @@ export const dynamicParams = false;
 export const revalidate = false;
 export const dynamic = 'force-static';
 
-const getResourceGraphNodes = async (): Promise<ContentGraphNode[]> => {
-  await ensureGraphInitialized();
-  const reactModule = await import('react');
-  globalThis.React ??= reactModule.default;
-
-  const { getContentGraph } = await import('../../../lib/content-graph/registry');
-  return Object.values(getContentGraph())
+const resourceGraphNodesPromise = getInitializedContentGraph().then(graph =>
+  Object.values(graph)
     .filter(node => node.type === 'resource')
-    .sort((a, b) => a.slug.localeCompare(b.slug));
+    .sort((a, b) => a.slug.localeCompare(b.slug))
+);
+
+const getResourceGraphNodes = async (): Promise<ContentGraphNode[]> => {
+  return resourceGraphNodesPromise;
 };
 
 const getResourceNodeBySlug = async (slug: string): Promise<ContentGraphNode | null> => {

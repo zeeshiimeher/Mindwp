@@ -18,8 +18,6 @@ export async function initPublishableRuntime() {
     return;
   }
 
-  const reactModule = await import('react');
-  globalThis.React ??= reactModule.default;
   await ensureGraphInitialized();
   initialized = true;
 }

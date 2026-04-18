@@ -5,7 +5,7 @@ import { INDUSTRY_REGISTRY } from '@/domains/industries/registry';
 import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
 import { SERVICE_REGISTRY } from '@/domains/services/registry';
 import { createResolver } from '@/lib/authority/resolver';
-import { getStructuredContentGraph, initContentGraph } from '@/lib/content-graph/registry';
+import { getContentGraph, getStructuredContentGraph, initContentGraph } from '@/lib/content-graph/registry';
 import { getResolverIndexes, initResolverIndexes } from '@/lib/content-graph/resolverIndexes';
 
 import { setInitMetrics } from './metrics';
@@ -100,7 +100,17 @@ export async function ensureGraphInitialized(): Promise<void> {
   return initPromise;
 }
 
+export async function getInitializedContentGraph() {
+  await ensureGraphInitialized();
+  return getContentGraph();
+}
+
 export function getResolver() {
   if (!_resolver) throw new Error('Resolver not initialized. Call ensureGraphInitialized() first.');
   return _resolver;
+}
+
+export async function getInitializedResolver() {
+  await ensureGraphInitialized();
+  return getResolver();
 }

@@ -21,6 +21,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { isApprovedCtaLabel } from '../../src/config/ctaLabels.ts';
+
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'content-score.json');
 
@@ -54,8 +56,6 @@ const HYPE_PATTERNS = HYPE_WORDS.map(
 const BANNED_PATTERNS = BANNED_PHRASES.map(
   (w) => new RegExp(`\\b${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi')
 );
-
-const APPROVED_CTA_LABELS = ['Start a Conversation', 'Explore the Approach'];
 
 function walkFiles(dir, exts) {
   if (!fs.existsSync(dir)) return [];
@@ -111,7 +111,7 @@ function scoreFile(filePath, label) {
   // CTA detection
   const hasCta = /type:\s*['"]cta['"]/.test(text) || /\bcta\s*:/.test(text);
   const actionLabelMatch = text.match(/actionLabel\s*:\s*['"]([^'"]+)['"]/);
-  const ctaLabelApproved = actionLabelMatch ? APPROVED_CTA_LABELS.includes(actionLabelMatch[1]) : null;
+  const ctaLabelApproved = actionLabelMatch ? isApprovedCtaLabel(actionLabelMatch[1]) : null;
 
   // Improvement flags
   const flags = [];
