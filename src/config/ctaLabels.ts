@@ -1,7 +1,7 @@
-import type { ContactSourceType } from '@/lib/contact/contactHref';
+import { CONTACT_PATH, type ContactSourceType } from '@/lib/contact/contactHref';
 import {
-  inferPageIntent,
   type CTAIntent,
+  inferPageIntent,
   type PageType,
   toContactSourceType,
 } from '@/lib/page/pageIdentity';
@@ -117,13 +117,15 @@ const INTENT_INDEX: Record<CTAIntent, number> = {
 
 export const DEFAULT_CTA_LABEL = CTA_LABEL_RULES.service[3];
 
-export const APPROVED_CTA_LABELS = [...new Set([
-  ...Object.values(CTA_LABEL_MAP),
-  ...Object.values(CTA_LABEL_RULES).flat(),
-  ...Object.values(SHORT_CTA_LABEL_RULES).flat(),
-  ...Object.values(SECONDARY_CTA_RULES).map(rule => rule.label),
-  DEFAULT_TIER_CARD_CTA_LABEL,
-])];
+export const APPROVED_CTA_LABELS = [
+  ...new Set([
+    ...Object.values(CTA_LABEL_MAP),
+    ...Object.values(CTA_LABEL_RULES).flat(),
+    ...Object.values(SHORT_CTA_LABEL_RULES).flat(),
+    ...Object.values(SECONDARY_CTA_RULES).map(rule => rule.label),
+    DEFAULT_TIER_CARD_CTA_LABEL,
+  ]),
+];
 
 export function isApprovedCtaLabel(label: string): boolean {
   return APPROVED_CTA_LABELS.includes(label.trim());
@@ -175,7 +177,7 @@ export function resolveSecondaryCta(
 }
 
 export function resolveTierCardCtaLabel(buttonHref?: string, buttonText?: string): string {
-  if (buttonHref && !buttonHref.startsWith('/contact')) {
+  if (buttonHref && !buttonHref.startsWith(CONTACT_PATH)) {
     return buttonText?.trim() || DEFAULT_TIER_CARD_CTA_LABEL;
   }
 

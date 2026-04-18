@@ -5,7 +5,11 @@ import { INDUSTRY_REGISTRY } from '@/domains/industries/registry';
 import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
 import { SERVICE_REGISTRY } from '@/domains/services/registry';
 import { createResolver } from '@/lib/authority/resolver';
-import { getContentGraph, getStructuredContentGraph, initContentGraph } from '@/lib/content-graph/registry';
+import {
+  getContentGraph,
+  getStructuredContentGraph,
+  initContentGraph,
+} from '@/lib/content-graph/registry';
 import { getResolverIndexes, initResolverIndexes } from '@/lib/content-graph/resolverIndexes';
 
 import { setInitMetrics } from './metrics';

@@ -186,7 +186,9 @@ function compareRelatedItems(left: RelatedContentItem, right: RelatedContentItem
   return left.slug.localeCompare(right.slug);
 }
 
-function toAuthorityRelatedItems(authorityItems: AuthorityMapItem[] | undefined): RelatedContentItem[] {
+function toAuthorityRelatedItems(
+  authorityItems: AuthorityMapItem[] | undefined
+): RelatedContentItem[] {
   return (authorityItems ?? []).map(item => ({
     ...item,
     score: 1,
@@ -201,9 +203,7 @@ function resolveSourceNode(slug: string, type: ContentNodeType) {
     return null;
   }
 
-  return (
-    Object.values(graph).find(node => node.slug === slug && node.type === type) ?? null
-  );
+  return Object.values(graph).find(node => node.slug === slug && node.type === type) ?? null;
 }
 
 function resolveNodeByPath(path: string) {

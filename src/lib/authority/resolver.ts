@@ -91,39 +91,52 @@ export function createResolver(deps: ResolverDependencies, indexes: ResolverInde
     if (node.type === 'service') {
       const s = deps.getServiceBySlug(node.slug);
       return {
-        title: s?.badge ?? s?.title ?? fallbackTitle,
-        description: s?.description ?? fallbackDesc,
+        title: node.title ?? s?.badge ?? s?.title ?? fallbackTitle,
+        description: node.description ?? s?.description ?? fallbackDesc,
       };
     }
     if (node.type === 'feature') {
       const f = deps.features.find(x => x.slug === node.slug);
-      return { title: f?.title ?? fallbackTitle, description: f?.description ?? fallbackDesc };
+      return {
+        title: node.title ?? f?.title ?? fallbackTitle,
+        description: node.description ?? f?.description ?? fallbackDesc,
+      };
     }
     if (node.type === 'industry-category' || node.type === 'industry-detail') {
       const key =
         node.type === 'industry-detail' && node.parent ? `${node.parent}/${node.slug}` : node.slug;
       const i = deps.industries[key];
       return {
-        title: i?.hero?.title ?? fallbackTitle,
-        description: i?.seo?.description ?? i?.hero?.description ?? fallbackDesc,
+        title: node.title ?? i?.hero?.title ?? fallbackTitle,
+        description:
+          node.description ?? i?.seo?.description ?? i?.hero?.description ?? fallbackDesc,
       };
     }
     if (node.type === 'blog') {
       const b = blogSlugIndex.get(normalize(node.slug));
-      return { title: b?.title ?? fallbackTitle, description: b?.metaDescription ?? fallbackDesc };
+      return {
+        title: node.title ?? b?.title ?? fallbackTitle,
+        description: node.description ?? b?.metaDescription ?? fallbackDesc,
+      };
     }
     if (node.type === 'resource') {
       const r = resourceSlugIndex.get(normalize(node.slug));
       return {
-        title: r?.title ?? fallbackTitle,
-        description: r?.description ?? r?.seo?.description ?? fallbackDesc,
+        title: node.title ?? r?.title ?? fallbackTitle,
+        description: node.description ?? r?.description ?? r?.seo?.description ?? fallbackDesc,
       };
     }
     if (node.type === 'case-study') {
       const c = deps.caseStudies[node.slug];
-      return { title: c?.title ?? fallbackTitle, description: c?.metaDescription ?? fallbackDesc };
+      return {
+        title: node.title ?? c?.title ?? fallbackTitle,
+        description: node.description ?? c?.metaDescription ?? fallbackDesc,
+      };
     }
-    return { title: fallbackTitle, description: fallbackDesc };
+    return {
+      title: node.title ?? fallbackTitle,
+      description: node.description ?? fallbackDesc,
+    };
   };
 
   const toAuthorityItem = (node: ContentGraphNode): AuthorityItem => {

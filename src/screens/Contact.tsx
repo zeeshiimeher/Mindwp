@@ -1,7 +1,7 @@
 'use client';
 
-import Script from 'next/script';
 import React, { useEffect, useState } from 'react';
+import Script from 'next/script';
 import { CheckCircle2, Clock, Loader2, Mail, MapPin, Phone, Send } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives';

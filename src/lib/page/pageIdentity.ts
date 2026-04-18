@@ -33,6 +33,24 @@ export function toContactSourceType(pageType: PageType): ContactSourceType {
   }
 }
 
+export function inferPageIntent(pageType: PageType): CTAIntent {
+  switch (pageType) {
+    case 'service':
+      return 'conversion';
+    case 'feature':
+    case 'industry-detail':
+    case 'industry-category':
+      return 'comparison';
+    case 'case-study':
+      return 'diagnostic';
+    case 'blog':
+    case 'resource':
+    case 'page':
+    default:
+      return 'entry';
+  }
+}
+
 export function isHomepage(pageId: string) {
   return pageId === 'page:home';
 }

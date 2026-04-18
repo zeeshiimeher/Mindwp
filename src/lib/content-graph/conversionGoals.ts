@@ -43,3 +43,17 @@ export function resolveConversionGoal(type: ContentNodeType): {
     conversionPriority: TYPE_TO_PRIORITY[type] ?? 0,
   };
 }
+
+export function resolveConversionPriorityTier(type: ContentNodeType): 'high' | 'medium' | 'low' {
+  const priority = TYPE_TO_PRIORITY[type] ?? 0;
+
+  if (priority >= 80) {
+    return 'high';
+  }
+
+  if (priority >= 50) {
+    return 'medium';
+  }
+
+  return 'low';
+}

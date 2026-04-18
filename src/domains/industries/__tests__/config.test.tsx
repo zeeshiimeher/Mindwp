@@ -35,11 +35,13 @@ describe('industries config resolution', () => {
     clearIndustryRendererOverrides();
 
     const rendered = renderIndustryPageByPath('/industries/beauty-personal-care');
+    const children = (rendered as { props?: { children?: unknown[] } }).props?.children as
+      | Array<{ type?: { name?: string } }>
+      | undefined;
 
     expect(rendered).not.toBeNull();
-    expect((rendered as { type?: { name?: string } }).type?.name).toBe(
-      'IndustryCategoryPageTemplate'
-    );
+    expect((rendered as { type?: { name?: string } }).type?.name).toBe('CTARegistryProvider');
+    expect(children?.[0]?.type?.name).toBe('IndustryCategoryPageTemplate');
   });
 
   it('applies registered category renderer override', () => {
@@ -50,12 +52,14 @@ describe('industries config resolution', () => {
     ));
 
     const rendered = renderIndustryPageByPath('/industries/beauty-personal-care');
+    const children = (rendered as { props?: { children?: unknown[] } }).props?.children as
+      | Array<{ type?: string; props?: { ['data-testid']?: string } }>
+      | undefined;
 
     expect(rendered).not.toBeNull();
-    expect((rendered as { type?: string; props?: { ['data-testid']?: string } }).type).toBe('div');
-    expect((rendered as { props?: { ['data-testid']?: string } }).props?.['data-testid']).toBe(
-      'category-override'
-    );
+    expect((rendered as { type?: { name?: string } }).type?.name).toBe('CTARegistryProvider');
+    expect(children?.[0]?.type).toBe('div');
+    expect(children?.[0]?.props?.['data-testid']).toBe('category-override');
 
     clearIndustryRendererOverrides();
   });
@@ -71,12 +75,14 @@ describe('industries config resolution', () => {
     const rendered = renderIndustryPageByPath(
       '/industries/beauty-personal-care/lash-lift-and-extensions'
     );
+    const children = (rendered as { props?: { children?: unknown[] } }).props?.children as
+      | Array<{ type?: string; props?: { ['data-testid']?: string } }>
+      | undefined;
 
     expect(rendered).not.toBeNull();
-    expect((rendered as { type?: string; props?: { ['data-testid']?: string } }).type).toBe('div');
-    expect((rendered as { props?: { ['data-testid']?: string } }).props?.['data-testid']).toBe(
-      'detail-override'
-    );
+    expect((rendered as { type?: { name?: string } }).type?.name).toBe('CTARegistryProvider');
+    expect(children?.[0]?.type).toBe('div');
+    expect(children?.[0]?.props?.['data-testid']).toBe('detail-override');
 
     clearIndustryRendererOverrides();
   });

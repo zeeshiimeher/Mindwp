@@ -2,6 +2,7 @@ import { normalizePath } from '../seo/config';
 import { DEFAULT_OG_IMAGE_PATH } from '../seo/metadata';
 
 import { CANONICAL_INDUSTRIES, CANONICAL_SYSTEMS, CANONICAL_TOPICS } from './canonical';
+import { resolveConversionGoal } from './conversionGoals';
 import {
   applyDerivedRelationships,
   deriveRelationships,
@@ -110,6 +111,8 @@ const getNodeMetadata = (carrier: MetadataCarrier) => ({
   ...(carrier.topics ? { topics: carrier.topics } : {}),
 });
 
+const getConversionSnapshot = (type: ContentGraphNode['type']) => resolveConversionGoal(type);
+
 const appendToIndex = (
   index: Map<string, ContentGraphNode[]>,
   key: string,
@@ -173,6 +176,7 @@ export function buildContentGraph(
       type: 'service',
       path: service.path,
       ...seoSnapshot,
+      ...getConversionSnapshot('service'),
       systems: [service.slug],
       ...getNodeMetadata({ systems: service.systems, topics: service.topics }),
     };
@@ -188,6 +192,7 @@ export function buildContentGraph(
         type: 'industry-category',
         path,
         ...getSeoSnapshot(industry as unknown as Record<string, unknown>, path),
+        ...getConversionSnapshot('industry-category'),
         ...getNodeMetadata(industry),
       };
       continue;
@@ -201,6 +206,7 @@ export function buildContentGraph(
       type: 'industry-detail',
       path,
       ...getSeoSnapshot(industry as unknown as Record<string, unknown>, path),
+      ...getConversionSnapshot('industry-detail'),
       parent: industry.parentSlug,
       ...getNodeMetadata(industry),
     };
@@ -215,6 +221,7 @@ export function buildContentGraph(
       type: 'feature',
       path,
       ...getSeoSnapshot(feature as unknown as Record<string, unknown>, path),
+      ...getConversionSnapshot('feature'),
       ...getNodeMetadata(feature),
     };
   }
@@ -228,6 +235,7 @@ export function buildContentGraph(
       type: 'blog',
       path,
       ...getSeoSnapshot(post as unknown as Record<string, unknown>, path),
+      ...getConversionSnapshot('blog'),
       ...getNodeMetadata(post),
     };
   }
@@ -241,6 +249,7 @@ export function buildContentGraph(
       type: 'resource',
       path,
       ...getSeoSnapshot(resource as unknown as Record<string, unknown>, path),
+      ...getConversionSnapshot('resource'),
       ...getNodeMetadata(resource as MetadataCarrier),
     };
   }
@@ -254,6 +263,7 @@ export function buildContentGraph(
       type: 'case-study',
       path,
       ...getSeoSnapshot(caseStudy as unknown as Record<string, unknown>, path),
+      ...getConversionSnapshot('case-study'),
       ...getNodeMetadata(caseStudy),
     };
   }

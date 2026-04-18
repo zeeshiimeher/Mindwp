@@ -1,4 +1,6 @@
 import type { Metadata } from 'next';
+import fs from 'node:fs';
+import path from 'node:path';
 
 import { getallTopicSlugs, getTopicBySlug } from '@/domains/blog/api';
 import { BLOG_CATEGORY_REGISTRY } from '@/domains/blog/categoryRegistry';
@@ -44,6 +46,7 @@ export interface RouteInventoryEntry {
 }
 
 const routeInventoryPromise = new Map<string, Promise<RouteInventoryEntry[]>>();
+const workspaceRoot = process.cwd();
 
 type StaticRouteSeed = {
   key: string;
@@ -89,6 +92,14 @@ const STATIC_ROUTE_SEEDS: StaticRouteSeed[] = [
     title: 'Contact MindWP',
     description:
       'Start a systems-first conversation about websites, automation, CRM, and authority infrastructure.',
+  },
+  {
+    key: 'static:conversation',
+    path: '/conversation',
+    title: 'Start a Conversation',
+    description:
+      'Redirect entrypoint into the canonical MindWP contact flow with preserved system and source context.',
+    indexable: false,
   },
   {
     key: 'static:cookies',
@@ -159,6 +170,21 @@ const STATIC_ROUTE_SEEDS: StaticRouteSeed[] = [
     indexable: false,
   },
   {
+    key: 'static:authority-dashboard',
+    path: '/dev/authority-dashboard',
+    title: 'Authority Dashboard Redirect',
+    description:
+      'Legacy internal authority dashboard route that redirects to the system dashboard control plane.',
+    indexable: false,
+  },
+  {
+    key: 'static:cta-label-contract',
+    path: '/dev/cta-label-contract',
+    title: 'CTA Label Contract',
+    description: 'Internal SmartCTA contract surface for deterministic label and href validation.',
+    indexable: false,
+  },
+  {
     key: 'static:image-dashboard',
     path: '/image-dashboard',
     title: 'Image Dashboard',
@@ -194,6 +220,34 @@ function normalizeRobots(
   return { index: defaultIndex, follow: defaultFollow };
 }
 
+function resolveInventoryOpenGraphImages(canonical: string): string[] {
+  const segments = normalizePath(canonical).split('/').filter(Boolean);
+  if (segments.length < 2) {
+    return [DEFAULT_OG_IMAGE_PATH];
+  }
+
+  const [rootSegment] = segments;
+  const assetDirectoryByRouteRoot: Partial<Record<string, string>> = {
+    blog: 'blog',
+    'case-study': 'case-studies',
+    features: 'features',
+    industries: 'industries',
+    resources: 'resources',
+    services: 'services',
+  };
+
+  const assetDirectory = rootSegment ? assetDirectoryByRouteRoot[rootSegment] : null;
+  const assetSlug = segments.at(-1);
+  if (!assetDirectory || !assetSlug) {
+    return [DEFAULT_OG_IMAGE_PATH];
+  }
+
+  const candidatePath = `/images/${assetDirectory}/${assetSlug}.webp`;
+  const candidateFilePath = path.join(workspaceRoot, 'public', candidatePath.replace(/^\//, ''));
+
+  return fs.existsSync(candidateFilePath) ? [candidatePath] : [DEFAULT_OG_IMAGE_PATH];
+}
+
 function normalizeOpenGraph(
   openGraph: unknown,
   title: string,
@@ -211,11 +265,21 @@ function normalizeOpenGraph(
         })
       : {};
 
+  const explicitImages =
+    value.images && value.images.length > 0 ? value.images : value.image ? [value.image] : [];
+  const inferredImages = resolveInventoryOpenGraphImages(canonical);
+  const onlyUsesDefaultImage =
+    explicitImages.length > 0 && explicitImages.every(image => image === DEFAULT_OG_IMAGE_PATH);
+
   return {
     title: value.title ?? title,
     description: value.description ?? description,
     url: normalizePath(value.url ?? canonical),
-    images: [DEFAULT_OG_IMAGE_PATH],
+    images:
+      explicitImages.length === 0 ||
+      (onlyUsesDefaultImage && inferredImages[0] !== DEFAULT_OG_IMAGE_PATH)
+        ? inferredImages
+        : explicitImages,
   };
 }
 
@@ -379,6 +443,10 @@ export async function getInventoryEntry(path: string) {
 
 export function inventoryEntryToMetadata(entry: RouteInventoryEntry): Metadata {
   const title = entry.path === '/' ? { absolute: entry.title } : entry.title;
+  const openGraphImages = entry.openGraph.images.map(image => ({
+    ...DEFAULT_OG_IMAGE,
+    url: image,
+  }));
 
   return {
     metadataBase: getMetadataBase(),
@@ -392,13 +460,13 @@ export function inventoryEntryToMetadata(entry: RouteInventoryEntry): Metadata {
       description: entry.openGraph.description,
       url: toAbsoluteUrl(entry.openGraph.url),
       siteName: SITE_NAME,
-      images: [DEFAULT_OG_IMAGE],
+      images: openGraphImages,
     },
     twitter: {
       card: 'summary_large_image',
       title: entry.openGraph.title,
       description: entry.openGraph.description,
-      images: [DEFAULT_OG_IMAGE_PATH],
+      images: entry.openGraph.images,
     },
     robots: {
       index: entry.robots.index,
@@ -409,7 +477,11 @@ export function inventoryEntryToMetadata(entry: RouteInventoryEntry): Metadata {
 
 export async function getInventoryMetadata(path: string): Promise<Metadata> {
   const entry = await getInventoryEntry(path);
-  return entry ? inventoryEntryToMetadata(entry) : {};
+  if (!entry) {
+    throw new Error(`Missing inventory metadata for path: ${normalizePath(path)}`);
+  }
+
+  return inventoryEntryToMetadata(entry);
 }
 
 export async function getPrimaryNavigationEntries(paths: readonly string[]) {

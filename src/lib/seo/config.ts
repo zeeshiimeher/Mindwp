@@ -48,6 +48,48 @@ export const normalizePath = (path: string): string => {
   return withoutTrailingSlash || '/';
 };
 
+export const buildRoutePathFromSegments = (segments: string[]): string => {
+  if (segments.length === 0) {
+    return '/';
+  }
+
+  return normalizePath(`/${segments.join('/')}`);
+};
+
+type NormalizeInternalTargetOptions = {
+  baseOrigin: string;
+  currentPath?: string;
+  includeSearch?: boolean;
+};
+
+export const normalizeInternalTarget = (
+  href: string,
+  { baseOrigin, currentPath = '/', includeSearch = false }: NormalizeInternalTargetOptions
+): string | null => {
+  const trimmed = href.trim();
+
+  if (!trimmed || /^(mailto:|tel:|javascript:|#)/i.test(trimmed)) {
+    return null;
+  }
+
+  let url: URL;
+
+  try {
+    url = new URL(trimmed, new URL(currentPath, baseOrigin));
+  } catch {
+    return null;
+  }
+
+  if (url.origin !== new URL(baseOrigin).origin) {
+    return null;
+  }
+
+  const normalizedPath = normalizePath(url.pathname);
+  const normalizedSearch = includeSearch ? url.search : '';
+
+  return `${normalizedPath}${normalizedSearch}`;
+};
+
 export const toAbsoluteUrl = (path: string): string => {
   const normalizedPath = normalizePath(path);
   return new URL(normalizedPath, SITE_ORIGIN).toString();

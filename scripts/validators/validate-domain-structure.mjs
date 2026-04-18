@@ -5,10 +5,6 @@ import path from 'node:path';
 
 import { Project, SyntaxKind } from 'ts-morph';
 
-import { FEATURE_REGISTRY } from '../../src/domains/features/registry.ts';
-import { INDUSTRY_REGISTRY } from '../../src/domains/industries/registry.ts';
-import { SERVICE_REGISTRY } from '../../src/domains/services/registry.ts';
-
 import {
   extractSectionsOrderFromRenderer,
   getPropertyInitializer,
@@ -27,14 +23,21 @@ const argsSet = new Set(args);
 const shouldReportJson = argsSet.has('--report-json');
 const requestedTypeIndex = args.indexOf('--type');
 const requestedType = requestedTypeIndex >= 0 ? args[requestedTypeIndex + 1] : null;
+const root = process.cwd();
+const tsConfigFilePath = path.join(root, 'tsconfig.json');
+
+const project = fs.existsSync(tsConfigFilePath)
+  ? new Project({ tsConfigFilePath })
+  : new Project({
+      compilerOptions: {
+        allowJs: true,
+      },
+    });
 
 if (argsSet.has('--fix')) {
   console.warn('[validate-domain-structure] --fix is not supported in the merged validator. Running in read-only mode.');
 }
-
-const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'domain-structure-report.json');
-const project = new Project({ tsConfigFilePath: path.join(root, 'tsconfig.json') });
 
 function normalizeRequestedType(value) {
   if (!value) return null;
@@ -91,6 +94,84 @@ function validateRegistryCoverage(issues, type, file, registryLabel, sourceSlugs
       `${registryLabel} contains slug(s) with no matching source file: ${extraRegistrySlugs.join(', ')}.`
     );
   }
+}
+
+function getImportSpecifierMap(sourceFile) {
+  const importMap = new Map();
+
+  for (const declaration of sourceFile.getImportDeclarations()) {
+    const moduleSpecifier = declaration.getModuleSpecifierValue();
+    const defaultImport = declaration.getDefaultImport();
+    if (defaultImport) {
+      importMap.set(defaultImport.getText(), moduleSpecifier);
+    }
+
+    for (const namedImport of declaration.getNamedImports()) {
+      importMap.set(namedImport.getName(), moduleSpecifier);
+    }
+  }
+
+  return importMap;
+}
+
+function getObjectLiteralRegistryKeys(sourceFile, declarationNames) {
+  const declaration = declarationNames
+    .map(name => sourceFile.getVariableDeclaration(name))
+    .find(Boolean);
+  const objectLiteral = declaration ? toObjectLiteral(declaration.getInitializer()) : null;
+
+  if (!objectLiteral) {
+    return new Set();
+  }
+
+  return new Set(
+    objectLiteral
+      .getProperties()
+      .filter(property => property.getKind() === SyntaxKind.PropertyAssignment)
+      .map(property => property.getName().replace(/^['"]|['"]$/g, ''))
+  );
+}
+
+function collectServiceRegistrySlugs() {
+  const registryPath = path.join(root, 'src', 'domains', 'services', 'registry.ts');
+  const registrySource = project.addSourceFileAtPathIfExists(registryPath);
+  if (!registrySource) {
+    return new Set();
+  }
+
+  return getObjectLiteralRegistryKeys(registrySource, ['SERVICE_REGISTRY']);
+}
+
+function collectFeatureRegistrySlugs() {
+  const registryPath = path.join(root, 'src', 'domains', 'features', 'registry.ts');
+  const registrySource = project.addSourceFileAtPathIfExists(registryPath);
+  if (!registrySource) {
+    return new Set();
+  }
+
+  const importMap = getImportSpecifierMap(registrySource);
+  const declaration = registrySource.getVariableDeclaration('FEATURE_DATA');
+  const initializer = declaration?.getInitializer();
+  const arrayLiteral =
+    initializer?.asKind(SyntaxKind.ArrayLiteralExpression) ??
+    initializer
+      ?.asKind(SyntaxKind.AsExpression)
+      ?.getExpression()
+      .asKind(SyntaxKind.ArrayLiteralExpression);
+  if (!arrayLiteral) {
+    return new Set();
+  }
+
+  return new Set(
+    arrayLiteral
+      .getElements()
+      .map(element => {
+        const identifier = element.asKind(SyntaxKind.Identifier);
+        const importPath = identifier ? importMap.get(identifier.getText()) : null;
+        return importPath ? path.basename(importPath) : null;
+      })
+      .filter(Boolean)
+  );
 }
 
 function hasNonEmptyString(initializer, sourceFile) {
@@ -450,7 +531,7 @@ function validateServiceStructure(issues) {
     path.relative(root, path.join(root, 'src', 'domains', 'services', 'registry.ts')),
     'SERVICE_REGISTRY',
     sourceSlugs,
-    new Set(Object.keys(SERVICE_REGISTRY))
+    collectServiceRegistrySlugs()
   );
 
   return sourceFiles.length;
@@ -557,7 +638,7 @@ function validateFeatureStructure(issues) {
     path.relative(root, path.join(root, 'src', 'domains', 'features', 'registry.ts')),
     'FEATURE_REGISTRY',
     sourceSlugs,
-    new Set(FEATURE_REGISTRY.map(feature => feature.slug))
+    collectFeatureRegistrySlugs()
   );
 
   return sourceFiles.length;
@@ -607,9 +688,47 @@ function validateHomeStructure(issues) {
     pushIssue(issues, 'home', rel, 'canonical_mismatch', 'homepageData.seo.canonical must be /.');
   }
 
+  if (!seoObject || !hasProperty(seoObject, 'keywords')) {
+    pushIssue(issues, 'home', rel, 'missing_keywords', 'Missing homepageData.seo.keywords');
+  }
+
   const heroObject = getPropertyAssignment(objectLiteral, 'hero')?.getInitializerIfKind(SyntaxKind.ObjectLiteralExpression);
   if (!heroObject || !hasProperty(heroObject, 'primaryAction')) {
     pushIssue(issues, 'home', rel, 'missing_primary_action', 'homepageData.hero.primaryAction is required.');
+  }
+
+  const systemCapabilitiesObject = getPropertyAssignment(objectLiteral, 'systemCapabilities')?.getInitializerIfKind(
+    SyntaxKind.ObjectLiteralExpression
+  );
+  const defaultComponentId = systemCapabilitiesObject
+    ? getStringLiteralValue(getPropertyAssignment(systemCapabilitiesObject, 'defaultComponentId')?.getInitializer())
+    : null;
+  const componentIds = systemCapabilitiesObject
+    ?.getProperty('components')
+    ?.getFirstDescendantByKind(SyntaxKind.ArrayLiteralExpression)
+    ?.getElements()
+    .map(element =>
+      element
+        .asKind(SyntaxKind.ObjectLiteralExpression)
+        ?.getProperty('id')
+        ?.getFirstDescendantByKind(SyntaxKind.StringLiteral)
+        ?.getLiteralText()
+    )
+    .filter(Boolean);
+
+  if (
+    defaultComponentId &&
+    Array.isArray(componentIds) &&
+    componentIds.length > 0 &&
+    !componentIds.includes(defaultComponentId)
+  ) {
+    pushIssue(
+      issues,
+      'home',
+      rel,
+      'invalid_default_component_id',
+      `defaultComponentId "${defaultComponentId}" is not in components ids`
+    );
   }
 
   return 1;
@@ -719,7 +838,7 @@ function validateIndustryStructure(issues) {
     path.relative(root, registryPath),
     'INDUSTRY_REGISTRY',
     collectIndustrySourceSlugs(),
-    new Set(Object.keys(INDUSTRY_REGISTRY))
+    getObjectLiteralRegistryKeys(registrySource, ['INDUSTRY_PAGES', 'INDUSTRY_REGISTRY'])
   );
 
   return scanned;

@@ -7,7 +7,12 @@ import { SectionWrapper } from '@/components/reusable/primitives';
 import { Button, type ButtonProps } from '@/components/reusable/single/Button';
 import { useCTARegistry, usePageIdentity } from '@/components/system/PageEnforcement';
 import { cn } from '@/components/ui/utils';
-import { type CtaTone, DEFAULT_CTA_LABEL, resolveCtaLabel, resolveSecondaryCta } from '@/config/ctaLabels';
+import {
+  type CtaTone,
+  DEFAULT_CTA_LABEL,
+  resolveCtaLabel,
+  resolveSecondaryCta,
+} from '@/config/ctaLabels';
 import { buildContactHref, type ContactSourceType } from '@/lib/contact/contactHref';
 import { registerCTA, reportCTAError, unregisterCTA } from '@/lib/cta/ctaRegistry';
 import {

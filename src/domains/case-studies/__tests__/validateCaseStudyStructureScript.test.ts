@@ -8,6 +8,7 @@ const validatorScriptPath = path.resolve(
   process.cwd(),
   'scripts/validators/validate-domain-structure.mjs'
 );
+const tsxCliPath = path.resolve(process.cwd(), 'node_modules/tsx/dist/cli.mjs');
 
 const tempDirs: string[] = [];
 
@@ -106,7 +107,7 @@ const createTempWorkspace = ({
 };
 
 const runValidator = (workspaceRoot: string) => {
-  return spawnSync('npx', ['tsx', validatorScriptPath, '--type', 'case-study'], {
+  return spawnSync(process.execPath, [tsxCliPath, validatorScriptPath, '--type', 'case-study'], {
     cwd: workspaceRoot,
     encoding: 'utf8',
   });

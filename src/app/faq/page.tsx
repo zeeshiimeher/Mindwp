@@ -1,5 +1,5 @@
-import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import JsonLd from '@/components/system/JsonLd';
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { buildFAQSchema } from '@/lib/seo/schema';
 import { FAQPage } from '@/screens/FAQPage';
