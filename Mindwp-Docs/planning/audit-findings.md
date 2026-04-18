@@ -17,6 +17,24 @@ Phase 2: 🟩🟩🟩🟩
 Phase 3: 🟩🟩🟩🟩
 Phase 4: 🟩🟩🟩🟩
 
+### Control-Layer Hardening Run (2026-04-19)
+
+Total Issues: 4
+Completed: 1
+In Progress: 1
+Pending: 2
+Phases:
+Phase 0: 🟩🟩🟩🟩
+Phase 1: 🟨⬜⬜⬜
+Phase 2: ⬜⬜⬜⬜
+Phase 3: ⬜⬜⬜⬜
+Phase 4: ⬜⬜⬜⬜
+
+- Baseline pre-flight result: clean after Phase 0 fix.
+- Report reset: completed and reports regenerated with fresh 2026-04-19 timestamps.
+- Phase 0 fix: increased timeout for the internal-links validator contract test after the post-reset full suite exposed a timeout flake.
+- Current focus: Phase 1 safe deletion candidate verification.
+
 ---
 
 ## Execution Rules

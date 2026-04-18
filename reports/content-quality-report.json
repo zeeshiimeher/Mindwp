@@ -1,0 +1,34 @@
+{
+  "generatedAt": "2026-04-18T20:23:53.735Z",
+  "passed": true,
+  "pageCount": 350,
+  "issueCount": 0,
+  "warningCount": 0,
+  "summary": {
+    "seo": {
+      "pagesAnalyzed": 350,
+      "missingMetadata": 0,
+      "duplicateTitles": 0,
+      "duplicateDescriptions": 0,
+      "canonicalMisalignment": 0,
+      "sitemapMisalignment": 0,
+      "openGraphGaps": 0,
+      "missingRobots": 0,
+      "canonicalAlignment": 100,
+      "sitemapAlignment": 100,
+      "openGraphCoverage": 100
+    },
+    "content": {
+      "weakDescriptions": 0,
+      "emptyHeadings": 0
+    },
+    "authority": {
+      "topicsAnalyzed": 42,
+      "topicsWithoutBlog": 0,
+      "orphanTopics": 0,
+      "topicsWithoutInternalPath": 0
+    }
+  },
+  "issues": [],
+  "warnings": []
+}

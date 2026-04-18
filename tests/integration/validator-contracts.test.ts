@@ -181,7 +181,9 @@ describe('integration: validator contracts', () => {
     expect(passingResult.status ?? 0).toBe(0);
   });
 
-  test('internal links validator fails on dead authored targets and passes valid publishable routes', () => {
+  test(
+    'internal links validator fails on dead authored targets and passes valid publishable routes',
+    () => {
     const failingWorkspace = createWorkspace();
     writePackageJson(failingWorkspace);
     writeFile(
@@ -228,7 +230,9 @@ describe('integration: validator contracts', () => {
     });
 
     expect(passingResult.status ?? 0).toBe(0);
-  });
+    },
+    15000
+  );
 
   test(
     'inline-link misuse validator requires the mirrored runtime helper contract on allowed templates',

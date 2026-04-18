@@ -1,0 +1,15 @@
+{
+  "generatedAt": "2026-04-18T20:24:00.162Z",
+  "passed": true,
+  "errorCount": 0,
+  "warningCount": 0,
+  "summary": {
+    "invalidEdges": 0,
+    "orphanNodes": 0
+  },
+  "errors": [],
+  "warnings": [],
+  "issues": [],
+  "advisory": [],
+  "derivedEdgeCount": 9626
+}

@@ -1,0 +1,13 @@
+{
+  "generatedAt": "2026-04-18T20:23:52.899Z",
+  "scannedNodes": 227,
+  "passed": true,
+  "issueCount": 0,
+  "warningCount": 0,
+  "summary": {
+    "missingSystem": 0,
+    "missingMetadata": 0
+  },
+  "issues": [],
+  "warnings": []
+}
