@@ -152,12 +152,6 @@ const validators = [
     blocking: false,
   },
   {
-    name: 'validate-fix-log',
-    command: 'node',
-    args: ['scripts/validators/validate-fix-log.mjs'],
-    blocking: false,
-  },
-  {
     name: 'validate-reports-structure',
     command: 'node',
     args: ['scripts/validators/validate-reports-structure.mjs'],

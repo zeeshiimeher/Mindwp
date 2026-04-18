@@ -410,9 +410,9 @@
       "type": "analyzer",
       "runnable": true
     },
+
     {
-      "id": "inspect-graph",
-      "name": "View Graph",
+      "id": "validate-tokens",
       "category": "analyzers",
       "intent": "debug",
       "group": "daily",

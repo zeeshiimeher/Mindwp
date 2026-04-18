@@ -124,7 +124,6 @@ These enforce rules. Run individually or all at once with `validate-all`.
 | lint | `node scripts/runners/run-eslint.mjs` | Lint and formatting drift | **No** (warnings only in system integrity flow) |
 
 | validate-checklist | `node scripts/validators/validate-checklist.mjs` | Checks fix checklist engine and integrations | **No** (warnings only) |
-| validate-fix-log | `node scripts/validators/validate-fix-log.mjs` | Checks fix history shape and append-only contract expectations | **No** (warnings only) |
 | validate-reports-structure | `node scripts/validators/validate-reports-structure.mjs` | Checks report file placement and naming drift | **No** (warnings only) |
 
 
