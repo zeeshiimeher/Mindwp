@@ -27,6 +27,11 @@ export default defineConfig({
   webServer: {
     command:
       `node scripts/runners/run-next.mjs build && node scripts/runners/run-next.mjs --filter start -- -p ${playwrightPort}`,
+    env: {
+      ...process.env,
+      NEXT_PUBLIC_TURNSTILE_SITE_KEY:
+        process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? 'test-turnstile-site-key',
+    },
     port: playwrightPort,
     reuseExistingServer: false,
     timeout: 120_000,
