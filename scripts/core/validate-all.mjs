@@ -146,12 +146,6 @@ const validators = [
     blocking: false,
   },
   {
-    name: 'validate-system-docs',
-    command: 'node',
-    args: ['scripts/validators/validate-system-docs.mjs'],
-    blocking: false,
-  },
-  {
     name: 'validate-checklist',
     command: 'node',
     args: ['scripts/validators/validate-checklist.mjs'],

@@ -121,7 +121,6 @@ These enforce rules. Run individually or all at once with `validate-all`.
 | validate-internal-links | `npx tsx scripts/validators/validate-internal-links.ts` | Max 2 sections × 3 items per page, no duplicates, no repeated anchors | Yes |
 | validate-tokens | `node scripts/validators/validate-tokens.mjs` | CSS token usage and token-contract compliance in production UI | Yes |
 | validate-inline-styles | `node scripts/validators/validate-inline-styles.mjs` | Inline-style policy enforcement outside allowed exceptions | Yes |
-| validate-system-docs | `node scripts/validators/validate-system-docs.mjs` | Checks this doc stays aligned with actual systems | **No** (warnings only) |
 | lint | `node scripts/runners/run-eslint.mjs` | Lint and formatting drift | **No** (warnings only in system integrity flow) |
 
 | validate-checklist | `node scripts/validators/validate-checklist.mjs` | Checks fix checklist engine and integrations | **No** (warnings only) |
@@ -368,7 +367,7 @@ How everything connects:
 - All dashboards are **development-only** — they are not visible in production.
 - Snapshot reports are generated and overwrite-only.
 - Run `validate-all` after any system change to verify nothing is broken.
-- When you add a new script, report, or dashboard — update this document or the `validate-system-docs` validator will warn you.
+- When you add a new script, report, or dashboard — update this document in the same change.
 
 ---
 
@@ -380,11 +379,7 @@ How everything connects:
 - A new dashboard → add it to Section 2 (Dashboards)
 - A new intelligence engine → add it to Section 5 (Intelligence Engines)
 
-The `validate-system-docs` validator checks this document against actual files and warns about:
-- Dashboards that exist but are not documented
-- Reports that exist but are not documented
-- Scripts that exist but are not documented
-- References in this doc to files that no longer exist
+Keep this document aligned with the current repo surface so dashboards, reports, scripts, and file references do not drift.
 
 ---
 

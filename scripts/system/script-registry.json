@@ -224,20 +224,6 @@
       "type": "validator",
       "runnable": true
     },
-
-    {
-      "id": "validate-system-docs",
-      "name": "Check System Docs",
-      "category": "validators",
-      "intent": "system",
-      "group": "advanced",
-      "priority": 8,
-      "estimatedTime": "fast",
-      "path": "scripts/validators/validate-system-docs.mjs",
-      "description": "Check system docs.",
-      "type": "validator",
-      "runnable": true
-    },
     {
       "id": "validate-tokens",
       "name": "Check Tokens",

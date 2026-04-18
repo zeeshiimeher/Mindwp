@@ -1754,7 +1754,7 @@ The control layer runs through `node scripts/core/validate-all.mjs` and is surfa
 
 Current structure:
 - **Blocking:** check-generated, typecheck, validate-content-contract, validate-domain-structure, validate-conversion-contract, validate-design-system, validate-graph, validate-internal-links, validate-tokens, validate-inline-styles
-- **Advisory:** lint, validate-docs, validate-vocabulary, validate-system-docs, validate-checklist, validate-fix-log, validate-reports-structure
+- **Advisory:** lint, validate-docs, validate-vocabulary, validate-checklist, validate-fix-log, validate-reports-structure
 
 Phase 2 enforcement rules:
 - Lint is advisory in system integrity flow

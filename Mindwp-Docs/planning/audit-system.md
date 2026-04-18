@@ -26,6 +26,7 @@ Tracker status: active
 - Re-ran `npm run validate`, `npm run build`, and `CI=1 npm run test` successfully after the Phase 0 fix.
 - Created checkpoint commit `4ab9b4f` with message `chore: stabilize post-reset baseline`.
 - Deleted `src/lib/utils/memoize.ts` after confirming no workspace usages beyond the file definition and this execution spec.
+- Deleted `scripts/validators/validate-system-docs.mjs` and removed its remaining `validate-all`, registry, and documentation references.
 
 ### Phase 1 Verification Log
 
@@ -34,6 +35,8 @@ Tracker status: active
 - Excluded from current delete pass by spec: `heading-audit.cjs`, `split-screenshots.cjs`, `visual-audit-runtime.js`, `visual-audit-engine.js`, `run-visual-audit.js`.
 - Completed: `src/lib/utils/memoize.ts`
   - Evidence: language-server usage search returned only the definition; text search found no workspace imports or call sites outside this execution spec.
+- Completed: `scripts/validators/validate-system-docs.mjs`
+  - Evidence: advisory-only validator, removed from `scripts/core/validate-all.mjs`, removed from `scripts/system/script-registry.json`, and stale doc mentions removed from `Mindwp-Docs/core/TOOLS.md` and `Mindwp-Docs/core/CONTENT.md`.
 
 ## 1. ENFORCEMENT MODEL (FINAL)
 
