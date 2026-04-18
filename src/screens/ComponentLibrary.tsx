@@ -194,7 +194,8 @@ const getPreviewControls = (name: string, baseProps: Record<string, unknown>) =>
     const literals = extractStringLiterals(type);
 
     if (literals.length > 0) {
-      const currentValue = typeof current === 'string' && current.trim().length > 0 ? [current] : [];
+      const currentValue =
+        typeof current === 'string' && current.trim().length > 0 ? [current] : [];
       return [
         {
           name: propMeta.name,
@@ -526,7 +527,11 @@ function ComponentPreviewPanel({
 
   if (previewVariations.length === 0 || !activeVariation) return null;
 
-  const renderPreview = (variation: { key: string; label: string; props: Record<string, unknown> }) => (
+  const renderPreview = (variation: {
+    key: string;
+    label: string;
+    props: Record<string, unknown>;
+  }) => (
     <AppErrorBoundary fallback={() => <div className='text-sm'>Failed to render</div>}>
       {renderPreviewContent(name, <Component {...variation.props} />, variation.label)}
     </AppErrorBoundary>
@@ -631,7 +636,9 @@ function ComponentPreviewPanel({
                   <span className='component-library__control-label'>{control.name}</span>
                   <select
                     className='component-library__control-select'
-                    value={typeof currentValue === 'string' ? currentValue : control.options?.[0] ?? ''}
+                    value={
+                      typeof currentValue === 'string' ? currentValue : (control.options?.[0] ?? '')
+                    }
                     onChange={event => {
                       setOverrides(prev => ({
                         ...prev,
@@ -742,7 +749,8 @@ export function ComponentLibrary() {
   const registry = useMemo(() => getComponentRegistry(), []);
   const allComponents = useMemo(() => getAllComponents(), []);
   const componentInfoByName = useMemo(
-    () => new Map(allComponents.map(component => [component.name, { category: component.category }])),
+    () =>
+      new Map(allComponents.map(component => [component.name, { category: component.category }])),
     [allComponents]
   );
 
@@ -941,7 +949,9 @@ export function ComponentLibrary() {
                               ) : (
                                 <div className='component-library__meta-item'>
                                   <span className='component-library__meta-label'>Live page</span>
-                                  <span className='component-library__meta-value'>not linked yet</span>
+                                  <span className='component-library__meta-value'>
+                                    not linked yet
+                                  </span>
                                 </div>
                               )}
                             </div>
@@ -950,7 +960,9 @@ export function ComponentLibrary() {
                           <ComponentPreviewPanel
                             name={componentInfo.name}
                             Component={Component}
-                            variations={variations.filter(Boolean) as Array<Record<string, unknown>>}
+                            variations={
+                              variations.filter(Boolean) as Array<Record<string, unknown>>
+                            }
                             fullWidth={fullWidth}
                           />
 

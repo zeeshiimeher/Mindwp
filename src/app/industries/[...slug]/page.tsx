@@ -102,6 +102,8 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string[] }> }) {
+  await ensureGraphInitialized();
+
   const { slug } = await params;
   const { categoryBySlug } = await getContentGraphNodes();
   const resolved = await resolveIndustry(slug);

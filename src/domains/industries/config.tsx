@@ -147,7 +147,10 @@ const createIndustryEntry = (data: IndustryPageData): IndustryEntry => {
         const renderCategory =
           CATEGORY_RENDERER_OVERRIDES_BY_SLUG.get(data.slug) ?? renderCategoryWithDefaultTemplate;
         return (
-          <CTARegistryProvider pageId={`industry-category:${data.slug}`} pageType='industry-category'>
+          <CTARegistryProvider
+            pageId={`industry-category:${data.slug}`}
+            pageType='industry-category'
+          >
             {renderCategory(data)}
             <SmartRelatedSection slug={data.slug} includeCaseStudies={false} />
           </CTARegistryProvider>

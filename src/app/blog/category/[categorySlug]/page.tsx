@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import JsonLd from '@/components/system/JsonLd';
 import { blogPosts, getAllCategorySlugs, getCategoryBySlug } from '@/domains/blog/api';
 import { BlogCategoryTemplate } from '@/domains/blog/templates/BlogCategoryTemplate';
+import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { getBlogCategoryMetadata } from '@/lib/seo/pageMetadata';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
 
@@ -35,6 +36,8 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params }: { params: Promise<{ categorySlug: string }> }) {
+  await ensureGraphInitialized();
+
   const { categorySlug } = await params;
   const category = resolveCategory(categorySlug);
   if (!category) {

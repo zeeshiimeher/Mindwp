@@ -113,11 +113,30 @@ Internally, `SmartCTA`:
 ### CTA Registry Rules (Locked)
 
 - Registry scope is per page via `CTARegistryProvider`.
-- Only one CTA per intent is allowed on a page.
 - Only one `conversion` CTA is allowed on a page.
+- Additional CTA panels may only use `entry`, `diagnostic`, or `comparison`.
+- Only one CTA per intent is allowed on a page unless the page is an approved homepage exception.
 - Inline CTA must not use `conversion` intent.
 - Templates and domain page adapters own `intent` and `position`.
 - Routes and data files do not decide CTA intent.
+
+### CTA Placement Matrix (Locked)
+
+| Domain | Max CTA Panels | Allowed Positions | Allowed Intents |
+|---|---|---|---|
+| Services | 3 | hero, optional mid, footer | entry, diagnostic or comparison, conversion |
+| Features | 2 | hero, footer | entry, conversion |
+| Blog | 2 panels + inline links | sidebar, footer | diagnostic, conversion |
+| Resources | 3 | hero, sidebar, footer | entry, diagnostic, conversion |
+| Industry Category | 2 | hero, footer | entry, conversion |
+| Industry Detail | 2 | hero, footer | entry, conversion |
+| Case Studies | 2 | mid within results/process, footer | diagnostic or comparison, conversion |
+| Homepage | existing approved positions only | existing approved positions only | existing approved intents only |
+| Other hubs | 1 | footer | conversion |
+
+- Mid CTA insertion is allowed only inside existing comparison, solution, process, results, or other proof-capable sections.
+- Mid CTA insertion must extend an existing section component; no standalone CTA band or wrapper may be introduced.
+- Blog and resources are the only domains that may add inline text links; inline links never replace CTA intent.
 
 ### CTA Label Resolution (Locked)
 

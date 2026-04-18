@@ -1,3 +1,4 @@
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { resolveCtaLabel } from '@/config/ctaLabels';
 
@@ -30,15 +31,21 @@ export default function CtaLabelContractPage() {
 
       <div style={{ display: 'grid', gap: '2rem' }}>
         {SMART_CTA_CASES.map(testCase => (
-          <div key={testCase.testId} data-testid={testCase.testId}>
-            <SmartCTA
-              system={testCase.system}
-              pageType={testCase.pageType}
-              slug={testCase.slug}
-              title={`Contract case: ${testCase.system}`}
-              description='Deterministic SmartCTA contract validation.'
-            />
-          </div>
+          <CTARegistryProvider
+            key={testCase.testId}
+            pageId={`service:${testCase.slug}`}
+            pageType='service'
+          >
+            <div data-testid={testCase.testId}>
+              <SmartCTA
+                system={testCase.system}
+                pageType={testCase.pageType}
+                slug={testCase.slug}
+                title={`Contract case: ${testCase.system}`}
+                description='Deterministic SmartCTA contract validation.'
+              />
+            </div>
+          </CTARegistryProvider>
         ))}
 
         <div data-testid='fallback-labels'>

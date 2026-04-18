@@ -2,9 +2,10 @@
  * Related Content Link Validator
  *
  * Validates SmartRelatedSection link limits:
- *   - Max 2 sections per page
- *   - Max 3 items per section
- *   - Max 6 total related links per page
+ *   - Max 1 section per page
+ *   - Max 3 items total per page
+ *   - No duplicate targets
+ *   - No zero-score items
  *
  * Scans the authority map to validate all related content outputs.
  *
@@ -12,14 +13,13 @@
  */
 
 import { AUTHORITY_MAP } from '../../src/lib/authority/generated/authorityMap';
-import { RELATED_SECTION_LABELS } from '../../src/config/ui-intelligence';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
+import { buildRelatedContent } from '../../src/lib/related/buildRelatedContent';
 import { getRelatedContent } from '../../src/lib/graph/query';
 import type { ContentNodeType } from '../../src/lib/content-graph/types';
 
-const MAX_SECTIONS_PER_PAGE = 2;
-const MAX_ITEMS_PER_SECTION = 3;
-const MAX_TOTAL_LINKS = MAX_SECTIONS_PER_PAGE * MAX_ITEMS_PER_SECTION;
+const MAX_SECTIONS_PER_PAGE = 1;
+const MAX_TOTAL_LINKS = 3;
 
 interface Violation {
   slug: string;
@@ -32,76 +32,59 @@ const violations: Violation[] = [];
 
 function validateRelatedContent(slug: string, type: ContentNodeType) {
   const related = getRelatedContent(slug, type);
-  const labels = RELATED_SECTION_LABELS[type] ?? {};
-  const configuredSlots = Object.keys(labels) as (keyof typeof related)[];
+  const output = buildRelatedContent({
+    pageId: `${type}:${slug}`,
+    pageType: type,
+    slug,
+    nodeType: type,
+  });
+  const groups = output.groups ?? [];
 
-  // Only validate slots that SmartRelatedSection would actually render
-  // SmartRelatedSection enforces max 2 sections (Decision 4)
-  let sectionCount = 0;
-  let totalItems = 0;
-  const seenSlugs = new Set<string>();
-  const renderedSlots: (keyof typeof related)[] = [];
-
-  for (const key of configuredSlots) {
-    const items = related[key];
-    if (items && items.length > 0) {
-      renderedSlots.push(key);
-    }
-  }
-
-  // SmartRelatedSection only renders first 2 non-empty slots
-  const effectiveSlots = renderedSlots.slice(0, MAX_SECTIONS_PER_PAGE);
-
-  for (const key of effectiveSlots) {
-    const items = related[key];
-    if (items && items.length > 0) {
-      sectionCount++;
-
-      // Rule 1: max 3 items per section
-      if (items.length > MAX_ITEMS_PER_SECTION) {
-        violations.push({
-          slug,
-          type,
-          rule: 'section-overflow',
-          detail: `Section "${key}" has ${items.length} items (max ${MAX_ITEMS_PER_SECTION})`,
-        });
-      }
-
-      totalItems += items.length;
-
-      // Rule 2: no duplicate targets across sections
-      for (const item of items) {
-        if (seenSlugs.has(item.slug)) {
-          violations.push({
-            slug,
-            type,
-            rule: 'duplicate-target',
-            detail: `Duplicate related target: ${item.slug}`,
-          });
-        }
-        seenSlugs.add(item.slug);
-      }
-    }
-  }
-
-  // Rule 3: max 2 sections per page
-  if (sectionCount > MAX_SECTIONS_PER_PAGE) {
+  if (groups.length > MAX_SECTIONS_PER_PAGE) {
     violations.push({
       slug,
       type,
       rule: 'max-sections',
-      detail: `${sectionCount} sections (max ${MAX_SECTIONS_PER_PAGE})`,
+      detail: `${groups.length} sections (max ${MAX_SECTIONS_PER_PAGE})`,
     });
   }
 
-  // Rule 4: max 6 total links per page
-  if (totalItems > MAX_TOTAL_LINKS) {
+  const items = groups.flatMap(group => group.items);
+  const seenHrefs = new Set<string>();
+
+  if (items.length > MAX_TOTAL_LINKS) {
     violations.push({
       slug,
       type,
       rule: 'max-total-links',
-      detail: `${totalItems} total related links (max ${MAX_TOTAL_LINKS})`,
+      detail: `${items.length} total related links (max ${MAX_TOTAL_LINKS})`,
     });
+  }
+
+  for (const item of items) {
+    if (seenHrefs.has(item.href)) {
+      violations.push({
+        slug,
+        type,
+        rule: 'duplicate-target',
+        detail: `Duplicate related target: ${item.href}`,
+      });
+    }
+
+    seenHrefs.add(item.href);
+  }
+
+  for (const slot of Object.values(related)) {
+    for (const item of slot) {
+      if (item.score <= 0) {
+        violations.push({
+          slug,
+          type,
+          rule: 'zero-score-target',
+          detail: `Related target ${item.slug} has score ${item.score}`,
+        });
+      }
+    }
   }
 }
 
@@ -139,6 +122,6 @@ if (violations.length > 0) {
   process.exit(1);
 } else {
   console.log(
-    `✓ Related content validation passed (${totalPages} pages, max ${MAX_SECTIONS_PER_PAGE} sections × ${MAX_ITEMS_PER_SECTION} items, 0 violations)`
+    `✓ Related content validation passed (${totalPages} pages, max ${MAX_SECTIONS_PER_PAGE} section, max ${MAX_TOTAL_LINKS} items, 0 violations)`
   );
 }

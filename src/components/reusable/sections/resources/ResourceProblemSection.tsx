@@ -1,3 +1,4 @@
+import { type ReactNode } from 'react';
 import { AlertCircle } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives';
@@ -12,6 +13,7 @@ export interface ResourceProblemSectionProps {
   causes?: string[];
   causesHeading?: string;
   className?: string;
+  renderParagraph?: (paragraph: string, index: number, className: string) => ReactNode;
 }
 
 export function ResourceProblemSection({
@@ -20,6 +22,7 @@ export function ResourceProblemSection({
   causes,
   causesHeading = 'Common Causes:',
   className = '',
+  renderParagraph,
 }: ResourceProblemSectionProps) {
   const BLOCK = 'infrastructure-gaps';
 
@@ -28,11 +31,15 @@ export function ResourceProblemSection({
       <ResourceSectionHeader icon={AlertCircle} title={heading} variant='problem' />
 
       <div className={`${BLOCK}__description`}>
-        {description.map((paragraph, index) => (
-          <p key={index} className={`${BLOCK}__paragraph`}>
-            {paragraph}
-          </p>
-        ))}
+        {description.map((paragraph, index) =>
+          renderParagraph ? (
+            renderParagraph(paragraph, index, `${BLOCK}__paragraph`)
+          ) : (
+            <p key={index} className={`${BLOCK}__paragraph`}>
+              {paragraph}
+            </p>
+          )
+        )}
       </div>
 
       {causes && causes.length > 0 && (

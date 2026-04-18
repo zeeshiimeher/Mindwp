@@ -872,7 +872,8 @@ export const crmAutomationPage = {
     },
     qualification: {
       title: 'Is a CRM the right next step?',
-      description: "Not every business needs one. Here's how to tell if yours does.",
+      description:
+        'Use this service when enquiry volume, channel sprawl, or inconsistent follow-up is already costing booked work. The goal is to leave clear on whether CRM infrastructure is the next move, or whether an earlier bottleneck should be fixed first.',
       cssPrefix: 'crm-automation-qualification-header',
       strongFitTitle: 'Good fit if',
       strongFitItems: [
@@ -893,7 +894,7 @@ export const crmAutomationPage = {
       badge: 'CRM works best with a clear website',
       title: 'Your CRM captures what your website generates',
       description:
-        "When the website clearly explains your services and makes it easy to get in touch, the CRM captures those enquiries and handles everything after. If your website needs work first, that's a separate conversation we can have.",
+        'When the website makes service intent, contact paths, and next steps obvious, the CRM can capture those enquiries cleanly and carry them forward. We check that handoff upfront so you know whether the first priority is CRM setup, website capture clarity, or both together.',
       cssPrefix: 'crm-automation-connection-header',
     },
     faqSection: {
@@ -932,14 +933,14 @@ export const crmAutomationPage = {
     },
   },
   inlineCta: {
-    title: "Not sure how many leads you're losing?",
+    title: 'Want to see which manual handoff is slowing pipeline movement first?',
     description:
-      "Tell us how your team handles enquiries today. We'll show you where leads are falling through and what a proper CRM setup would change.",
+      'We map the breakpoints across forms, calls, inboxes, and SMS so you can see where ownership fails, which delays matter most, and whether CRM setup is the next fix or not.',
   },
   cta: {
-    title: 'Leads coming in but not converting?',
+    title: 'Get a clear CRM priority map before you commit to a build',
     description:
-      "Tell us how enquiries arrive and how your team handles them. We'll show you where things are falling through and build a CRM that tracks every lead from first contact to outcome.",
+      'Tell us how enquiries arrive, who owns follow-up, and where deals stall. You will leave with the highest-risk handoff gaps, the first automation priorities, and a clear view of whether CRM infrastructure is the right next move.',
   },
   transformationProof: {
     before: {

@@ -74,7 +74,7 @@ export const reputationReviewSystemsPage = {
       badge: 'How it works',
       title: 'What it actually does when reviews are working',
       description:
-        "Depends on your business. When customers are happiest, how they reply, and what should happen when something goes wrong. Four parts.",
+        'Depends on your business. When customers are happiest, how they reply, and what should happen when something goes wrong. Four parts.',
       cards: [
         {
           title: 'Ask at the right moment',

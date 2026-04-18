@@ -361,12 +361,13 @@ export const conversionLayerPage = {
     },
   },
   inlineCta: {
-    title: 'Where are people dropping off?',
-    description: 'Your traffic and pages. Where visitors lose interest. No commitment.',
+    title: 'Want to see exactly where qualified intent stalls first?',
+    description:
+      'We map where the path breaks between page message, CTA fit, and follow-up so you can see which leak is structural, which is sequencing, and what should be fixed before anything else.',
   },
   cta: {
-    title: 'Find out where your page loses them',
+    title: 'Get a clear priority map for the conversion leaks that matter most',
     description:
-      'Your traffic, your pages, your numbers. Where the path breaks and what to tighten first.',
+      'We review the offer path, action step, and post-submit handoff so you leave knowing which leak is hurting revenue most, what to tighten first, and whether a fuller rebuild is actually necessary.',
   },
 } satisfies ServicePageData;

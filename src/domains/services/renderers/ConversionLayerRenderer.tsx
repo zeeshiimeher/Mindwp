@@ -22,7 +22,7 @@ interface ConversionLayerRendererProps {
 }
 
 export function ConversionLayerRenderer({ data, slug }: ConversionLayerRendererProps) {
-  const { hero, sections, cta } = data;
+  const { hero, sections, cta, inlineCta } = data;
   const {
     foundation,
     funnelBreakpoints,
@@ -34,6 +34,11 @@ export function ConversionLayerRenderer({ data, slug }: ConversionLayerRendererP
   } = sections;
   const ctaTitle = cta?.title ?? SERVICE_RENDERER_DEFAULTS.ctaTitle;
   const ctaDescription = cta?.description ?? SERVICE_RENDERER_DEFAULTS.ctaDescription;
+  const inlineCtaTitle =
+    inlineCta?.title ?? 'Want to see where your conversion path is leaking first?';
+  const inlineCtaDescription =
+    inlineCta?.description ??
+    'We can map the biggest drop-off points in your pages, enquiries, and handoff flow before you commit to a full rebuild.';
 
   return (
     <>
@@ -151,6 +156,18 @@ export function ConversionLayerRenderer({ data, slug }: ConversionLayerRendererP
               items: qualification.notDesignedItems,
             }}
             cssPrefix='conversion-funnel-qualification'
+            backgroundColor='bg-alt'
+          />
+
+          <SmartCTA
+            system={data.systems?.[0] ?? 'smart-website-systems'}
+            slug={slug}
+            pageType='service'
+            intent='diagnostic'
+            position='mid'
+            title={inlineCtaTitle}
+            description={inlineCtaDescription}
+            primaryActionVariant='primary'
             backgroundColor='bg-alt'
           />
 

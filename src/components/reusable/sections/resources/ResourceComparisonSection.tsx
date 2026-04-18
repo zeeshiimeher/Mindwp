@@ -1,3 +1,4 @@
+import { type ReactNode } from 'react';
 import { Repeat } from 'lucide-react';
 
 import { SectionWrapper } from '@/components/reusable/primitives';
@@ -18,6 +19,7 @@ export interface ResourceComparisonSectionProps {
   before: ResourceComparisonColumn;
   after: ResourceComparisonColumn;
   className?: string;
+  renderParagraph?: (paragraph: string, index: number, className: string) => ReactNode;
 }
 
 export function ResourceComparisonSection({
@@ -26,6 +28,7 @@ export function ResourceComparisonSection({
   before,
   after,
   className = '',
+  renderParagraph,
 }: ResourceComparisonSectionProps) {
   const BLOCK = 'resource-comparison-section';
 
@@ -49,7 +52,9 @@ export function ResourceComparisonSection({
         <div className={`${BLOCK}__description`}>
           {content.map((paragraph, index) => {
             if (index === 0) return null;
-            return (
+            return renderParagraph ? (
+              renderParagraph(paragraph, index, `${BLOCK}__paragraph`)
+            ) : (
               <p key={index} className={`${BLOCK}__paragraph`}>
                 {paragraph}
               </p>

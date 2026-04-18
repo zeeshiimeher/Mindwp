@@ -80,6 +80,16 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               title={data.sections.comparison.header.title}
               description={data.sections.comparison.header.description}
               comparisons={data.sections.comparison.items}
+              cta={{
+                system: data.systems?.[0] ?? 'smart-website-systems',
+                slug,
+                pageType: 'service',
+                intent: 'diagnostic',
+                position: 'mid',
+                title: inlineCtaTitle,
+                description: inlineCtaDescription,
+                primaryActionVariant: 'white',
+              }}
               cssPrefix='smart-websites-comparison'
               backgroundColor='bg-base'
             />
@@ -126,18 +136,6 @@ export default function SmartWebsiteSystemsRenderer({ data, slug }: Props) {
               cssPrefix='smart-websites-core-layer'
             />
           )}
-
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
-            intent='diagnostic'
-            position='mid'
-            title={inlineCtaTitle}
-            description={inlineCtaDescription}
-            cssPrefix='smart-websites-cta'
-            primaryActionVariant='white'
-          />
 
           {/* Strategic Bridge */}
           {data.sections.visibilityFoundations &&

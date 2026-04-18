@@ -14,12 +14,12 @@ interface BlogFooterCTAProps {
 export function BlogFooterCTA({
   system,
   slug,
-  title = 'Explore the Full System',
-  description = 'See how MindWP connects website, automation, and local visibility into one integrated system.',
+  title = 'Get the best-fit service path behind the issue you just read about',
+  description = 'We will turn the problem behind this article into a concrete next-step decision so you know the likely bottleneck, the right service path, and what would need fixing first.',
   features = [
-    'End-to-end system overview',
-    'Real implementation details',
-    'Built for local businesses',
+    'Best-fit system path',
+    'First-fix priority',
+    'Built around service-business operations',
   ],
 }: BlogFooterCTAProps) {
   return (

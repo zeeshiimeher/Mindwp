@@ -92,6 +92,26 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
     },
+    'conversion-funnel-system-vs-landing-page-development': {
+      services: [
+        {
+          title: 'Lead Reactivation System',
+          description:
+            'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
+          slug: 'lead-reactivation-system',
+          path: '/services/lead-reactivation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Conversion Layer',
+          description:
+            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
+          slug: 'conversion-layer',
+          path: '/services/conversion-layer',
+          nodeType: 'service',
+        },
+      ],
+    },
     'conversion-layer': {
       services: [
         {
@@ -102,10 +122,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/lead-reactivation-system',
           nodeType: 'service',
         },
+        {
+          title: 'Conversion Funnel System',
+          description:
+            'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
+          slug: 'conversion-funnel-system-vs-landing-page-development',
+          path: '/services/conversion-funnel-system-vs-landing-page-development',
+          nodeType: 'service',
+        },
       ],
     },
     'crm-infrastructure-implementation': {
-      services: [],
+      services: [
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
     },
     divi5: {
       services: [
@@ -201,6 +238,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/conversion-layer',
           nodeType: 'service',
         },
+        {
+          title: 'Conversion Funnel System',
+          description:
+            'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
+          slug: 'conversion-funnel-system-vs-landing-page-development',
+          path: '/services/conversion-funnel-system-vs-landing-page-development',
+          nodeType: 'service',
+        },
       ],
     },
     'local-seo-authority': {
@@ -229,14 +274,42 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'reputation-review-systems': {
       services: [],
     },
+    'service-pages-vs-one-generic-services-page': {
+      services: [
+        {
+          title: 'Smart Websites',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website Redesign',
+          description:
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+    },
     'smart-website-systems': {
       services: [
         {
-          title: 'WordPress Development',
+          title: 'Smart Websites',
           description:
-            "A properly built WordPress site is a good start. But the build alone doesn't bring in work. What matters is what happens when someone visits and tries to get in touch.",
-          slug: 'wordpress-development',
-          path: '/services/wordpress-development',
+            'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
+          slug: 'service-pages-vs-one-generic-services-page',
+          path: '/services/service-pages-vs-one-generic-services-page',
           nodeType: 'service',
         },
         {
@@ -268,11 +341,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'WordPress Development',
+          title: 'Smart Websites',
           description:
-            "A properly built WordPress site is a good start. But the build alone doesn't bring in work. What matters is what happens when someone visits and tries to get in touch.",
-          slug: 'wordpress-development',
-          path: '/services/wordpress-development',
+            'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
+          slug: 'service-pages-vs-one-generic-services-page',
+          path: '/services/service-pages-vs-one-generic-services-page',
           nodeType: 'service',
         },
         {
@@ -305,6 +378,18 @@ export const AUTHORITY_MAP: AuthorityMap = {
         },
       ],
     },
+    'website-crm-integration-vs-manual-lead-handling': {
+      services: [
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+      ],
+    },
     'website-redesign-system-rebuild': {
       services: [
         {
@@ -316,11 +401,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'WordPress Development',
+          title: 'Smart Websites',
           description:
-            "A properly built WordPress site is a good start. But the build alone doesn't bring in work. What matters is what happens when someone visits and tries to get in touch.",
-          slug: 'wordpress-development',
-          path: '/services/wordpress-development',
+            'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
+          slug: 'service-pages-vs-one-generic-services-page',
+          path: '/services/service-pages-vs-one-generic-services-page',
           nodeType: 'service',
         },
         {
@@ -402,19 +487,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation',
-          description:
-            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
-          nodeType: 'service',
-        },
-        {
           title: 'Conversion Layer',
           description:
             "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
           slug: 'conversion-layer',
           path: '/services/conversion-layer',
+          nodeType: 'service',
+        },
+        {
+          title: 'Conversion Funnel System',
+          description:
+            'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
+          slug: 'conversion-funnel-system-vs-landing-page-development',
+          path: '/services/conversion-funnel-system-vs-landing-page-development',
           nodeType: 'service',
         },
       ],
@@ -435,6 +520,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
           slug: 'conversion-layer',
           path: '/services/conversion-layer',
+          nodeType: 'service',
+        },
+        {
+          title: 'Conversion Funnel System',
+          description:
+            'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
+          slug: 'conversion-funnel-system-vs-landing-page-development',
+          path: '/services/conversion-funnel-system-vs-landing-page-development',
           nodeType: 'service',
         },
       ],
@@ -533,6 +626,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/conversion-layer',
           nodeType: 'service',
         },
+        {
+          title: 'Conversion Funnel System',
+          description:
+            'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
+          slug: 'conversion-funnel-system-vs-landing-page-development',
+          path: '/services/conversion-funnel-system-vs-landing-page-development',
+          nodeType: 'service',
+        },
       ],
     },
   },
@@ -548,19 +649,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Websites',
-          description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
           title: 'CRM Setup for Service Businesses',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
         },
       ],
@@ -628,19 +729,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Websites',
-          description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
           title: 'CRM Setup for Service Businesses',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
         },
       ],
@@ -1116,11 +1217,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation',
+          title: 'CRM Setup for Service Businesses',
           description:
-            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
         },
       ],
@@ -1508,19 +1609,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Websites',
-          description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
           title: 'CRM Setup for Service Businesses',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
         },
       ],
@@ -1908,19 +2009,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Websites',
-          description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
           title: 'CRM Setup for Service Businesses',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
         },
       ],
@@ -2156,11 +2257,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation',
+          title: 'CRM Setup for Service Businesses',
           description:
-            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
         },
       ],
@@ -2396,11 +2497,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation',
+          title: 'CRM Setup for Service Businesses',
           description:
-            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
         },
       ],
@@ -2468,19 +2569,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Websites',
-          description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
           title: 'CRM Setup for Service Businesses',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
         },
       ],
@@ -2540,19 +2641,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     realtors: {
       services: [
         {
-          title: 'Smart Websites',
-          description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
           title: 'CRM Setup for Service Businesses',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
         },
         {
@@ -2788,19 +2889,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Websites',
-          description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
-          nodeType: 'service',
-        },
-        {
           title: 'CRM Setup for Service Businesses',
           description:
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
         },
       ],
@@ -3514,19 +3615,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Smart Website Systems for Small Med Spas',
-          description:
-            'Smart Website systems for small med spas that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
-          slug: 'small-med-spas',
-          path: '/industries/beauty-personal-care/small-med-spas',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for Aesthetic & Cosmetic Clinics',
           description:
             'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Small Med Spas',
+          description:
+            'Smart Website systems for small med spas that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'small-med-spas',
+          path: '/industries/beauty-personal-care/small-med-spas',
           nodeType: 'industry-detail',
         },
       ],
@@ -7024,19 +7125,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'industry-detail',
         },
         {
-          title: 'Smart Website Systems for Small Med Spas',
-          description:
-            'Smart Website systems for small med spas that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
-          slug: 'small-med-spas',
-          path: '/industries/beauty-personal-care/small-med-spas',
-          nodeType: 'industry-detail',
-        },
-        {
           title: 'Smart Website Systems for Aesthetic & Cosmetic Clinics',
           description:
             'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Smart Website Systems for Small Med Spas',
+          description:
+            'Smart Website systems for small med spas that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'small-med-spas',
+          path: '/industries/beauty-personal-care/small-med-spas',
           nodeType: 'industry-detail',
         },
       ],
@@ -8009,6 +8110,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
       ],
       industries: [
         {
@@ -8083,6 +8192,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
         },
       ],
@@ -8177,6 +8294,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
       ],
       industries: [
         {
@@ -8213,6 +8338,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
         },
       ],
@@ -8254,11 +8387,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign',
+          title: 'Smart Websites',
           description:
-            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
-          slug: 'website-redesign-system-rebuild',
-          path: '/services/website-redesign-system-rebuild',
+            'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
+          slug: 'service-pages-vs-one-generic-services-page',
+          path: '/services/service-pages-vs-one-generic-services-page',
           nodeType: 'service',
         },
         {
@@ -8361,6 +8494,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
       ],
       industries: [
         {
@@ -8397,6 +8538,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
         },
       ],
@@ -8437,6 +8586,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
       ],
       industries: [
         {
@@ -8473,6 +8630,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
         },
       ],
@@ -8552,11 +8717,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Website Redesign',
+          title: 'Smart Websites',
           description:
-            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
-          slug: 'website-redesign-system-rebuild',
-          path: '/services/website-redesign-system-rebuild',
+            'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
+          slug: 'service-pages-vs-one-generic-services-page',
+          path: '/services/service-pages-vs-one-generic-services-page',
           nodeType: 'service',
         },
         {
@@ -8733,6 +8898,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
         },
       ],
@@ -9027,6 +9200,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
       ],
       industries: [
         {
@@ -9212,11 +9393,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation',
+          title: 'Smart Websites',
           description:
-            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
+          slug: 'service-pages-vs-one-generic-services-page',
+          path: '/services/service-pages-vs-one-generic-services-page',
           nodeType: 'service',
         },
         {
@@ -9939,6 +10120,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
       ],
       industries: [
         {
@@ -10121,6 +10310,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
         },
       ],
@@ -10361,6 +10558,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
           path: '/services/crm-infrastructure-implementation',
           nodeType: 'service',
         },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
       ],
       industries: [
         {
@@ -10392,14 +10597,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'tracking-salon-client-lifetime-value': {
       services: [
         {
-          title: 'CRM Setup for Service Businesses',
-          description:
-            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
-          nodeType: 'service',
-        },
-        {
           title: 'Lead Reactivation System',
           description:
             'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
@@ -10413,6 +10610,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
           slug: 'conversion-layer',
           path: '/services/conversion-layer',
+          nodeType: 'service',
+        },
+        {
+          title: 'Conversion Funnel System',
+          description:
+            'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
+          slug: 'conversion-funnel-system-vs-landing-page-development',
+          path: '/services/conversion-funnel-system-vs-landing-page-development',
           nodeType: 'service',
         },
       ],
@@ -10451,6 +10656,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
           slug: 'crm-infrastructure-implementation',
           path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
           nodeType: 'service',
         },
       ],
@@ -11496,6 +11709,10 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionGoal: 'consultation',
     conversionPriority: 100,
   },
+  'conversion-funnel-system-vs-landing-page-development': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
   'conversion-layer': {
     conversionGoal: 'consultation',
     conversionPriority: 100,
@@ -11532,6 +11749,10 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionGoal: 'consultation',
     conversionPriority: 100,
   },
+  'service-pages-vs-one-generic-services-page': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
   'smart-website-systems': {
     conversionGoal: 'consultation',
     conversionPriority: 100,
@@ -11541,6 +11762,10 @@ export const CONVERSION_META: Record<string, ConversionMeta> = {
     conversionPriority: 100,
   },
   'unified-communication-system': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  'website-crm-integration-vs-manual-lead-handling': {
     conversionGoal: 'consultation',
     conversionPriority: 100,
   },

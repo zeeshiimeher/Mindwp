@@ -4,6 +4,7 @@ import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { aiLeadHandlingPage } from '@/domains/services/data/ai-lead-handling';
 import { bricksBuilderPage } from '@/domains/services/data/bricks-builder';
+import { conversionFunnelSystemVsLandingPageDevelopmentPage } from '@/domains/services/data/conversion-funnel-system-vs-landing-page-development';
 import { conversionLayerPage } from '@/domains/services/data/conversion-layer';
 import { crmAutomationPage } from '@/domains/services/data/crm-automation';
 import { divi5Page } from '@/domains/services/data/divi5';
@@ -12,9 +13,11 @@ import { leadReactivationSystemPage } from '@/domains/services/data/lead-reactiv
 import { localSeoAuthorityPage } from '@/domains/services/data/local-seo-authority';
 import { missedCallRecoverySystemPage } from '@/domains/services/data/missed-call-recovery-system';
 import { reputationReviewSystemsPage } from '@/domains/services/data/reputation-review-systems';
+import { servicePagesVsOneGenericServicesPage } from '@/domains/services/data/service-pages-vs-one-generic-services-page';
 import { smartWebsiteSystemsPage } from '@/domains/services/data/smart-website-systems';
 import { systemMigrationPlatformConsolidationPage } from '@/domains/services/data/system-migration-platform-consolidation';
 import { unifiedCommunicationSystemPage } from '@/domains/services/data/unified-communication-system';
+import { websiteCrmIntegrationVsManualLeadHandlingPage } from '@/domains/services/data/website-crm-integration-vs-manual-lead-handling';
 import { websiteRedesignSystemRebuildPage } from '@/domains/services/data/website-redesign-system-rebuild';
 import { woocommercePage } from '@/domains/services/data/woocommerce';
 import { wordpressDevelopmentPage } from '@/domains/services/data/wordpress-development';
@@ -64,6 +67,10 @@ export const SERVICE_ENTRY_BY_SLUG = {
   'conversion-layer': createServiceEntry(conversionLayerPage, (data, slug) => (
     <ConversionLayerRenderer data={data} slug={slug} />
   )),
+  'conversion-funnel-system-vs-landing-page-development': createServiceEntry(
+    conversionFunnelSystemVsLandingPageDevelopmentPage,
+    (data, slug) => <ConversionLayerRenderer data={data} slug={slug} />
+  ),
   'system-migration-platform-consolidation': createServiceEntry(
     systemMigrationPlatformConsolidationPage,
     (data, slug) => <SystemMigrationPlatformConsolidationRenderer data={data} slug={slug} />
@@ -91,9 +98,17 @@ export const SERVICE_ENTRY_BY_SLUG = {
   'crm-infrastructure-implementation': createServiceEntry(crmAutomationPage, (data, slug) => (
     <CRMAutomationRenderer data={data} slug={slug} />
   )),
+  'website-crm-integration-vs-manual-lead-handling': createServiceEntry(
+    websiteCrmIntegrationVsManualLeadHandlingPage,
+    (data, slug) => <CRMAutomationRenderer data={data} slug={slug} />
+  ),
   'ai-lead-handling': createServiceEntry(aiLeadHandlingPage, (data, slug) => (
     <AiLeadHandlingRenderer data={data} slug={slug} />
   )),
+  'service-pages-vs-one-generic-services-page': createServiceEntry(
+    servicePagesVsOneGenericServicesPage,
+    (data, slug) => <SmartWebsiteSystemsRenderer data={data} slug={slug} />
+  ),
   'wordpress-development': createServiceEntry(wordpressDevelopmentPage, (data, slug) => (
     <WordPressDevelopmentRenderer data={data} slug={slug} />
   )),
@@ -138,6 +153,9 @@ export const renderServicePageBySlug = (slug: ServiceSlug): ReactElement => {
     case 'conversion-layer': {
       return renderServiceEntry(slug);
     }
+    case 'conversion-funnel-system-vs-landing-page-development': {
+      return renderServiceEntry(slug);
+    }
     case 'system-migration-platform-consolidation': {
       return renderServiceEntry(slug);
     }
@@ -162,7 +180,13 @@ export const renderServicePageBySlug = (slug: ServiceSlug): ReactElement => {
     case 'crm-infrastructure-implementation': {
       return renderServiceEntry(slug);
     }
+    case 'website-crm-integration-vs-manual-lead-handling': {
+      return renderServiceEntry(slug);
+    }
     case 'ai-lead-handling': {
+      return renderServiceEntry(slug);
+    }
+    case 'service-pages-vs-one-generic-services-page': {
       return renderServiceEntry(slug);
     }
     case 'wordpress-development': {

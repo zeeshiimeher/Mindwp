@@ -465,7 +465,8 @@ The content graph and the display layer operate under different rules.
 ### UI Layer (Public)
 
 - Strict and controlled
-- Maximum of 3 related items per section
+- Maximum of 1 related zone per eligible page
+- Maximum of 3 related items per page
 - Only high-relevance items appear
 - Context-specific — different page types show different related content
 - Service pages show only related services
@@ -486,7 +487,7 @@ The authority resolver converts graph relationships into the related content dis
 1. Content nodes declare metadata (systems, topics, industries).
 2. The derived relationship engine generates edges based on metadata overlap.
 3. The authority resolver scores and ranks all edges for a given node.
-4. SmartRelatedSection displays the top-scoring items, capped at 3 per section, max 2 sections per page (Phase 10 Decision 4).
+4. SmartRelatedSection displays one mixed related zone per eligible page, capped at 3 total items.
 
 ### Scoring Formula (Locked — Phase 10)
 
@@ -496,6 +497,8 @@ score = (systemOverlap × 3) + (topicOverlap × 2) + (industryOverlap × 1)
 
 - Derived edges with strong metadata overlap score highest.
 - The resolver prioritises relationships by type: direct peer relationships first, then supporting relationships, then validation relationships.
+- Only candidates with `score > 0` may render.
+- If fewer than 3 valid candidates exist, fallback order is: same domain -> services -> highest-scoring valid content.
 - SmartRelatedSection is the sole consumer of scored results (Phase 10 Decision 2).
 
 ### Static Authority Map

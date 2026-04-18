@@ -91,54 +91,6 @@ export function MissedCallRecoverySystemRenderer({
             </div>
           </SectionWrapper>
 
-          <SectionWrapper className='missed-call-recovery-workflows'>
-            <SectionIntro
-              badge={workflowExamples.badge}
-              title={workflowExamples.title}
-              description={workflowExamples.description}
-              cssPrefix='missed-call-recovery-workflows-header'
-            />
-            <div className='l-grid l-gap-6 md:l-grid-3'>
-              {workflowExamples.items.map((workflow, index) => (
-                <WorkflowStepCard
-                  key={index}
-                  trigger={workflow.trigger}
-                  actions={workflow.actions}
-                  cssPrefix='missed-call-recovery-workflow'
-                />
-              ))}
-            </div>
-          </SectionWrapper>
-
-          <ProcessStepsSection
-            badge={processSection.badge}
-            title={processSection.title}
-            description={processSection.description}
-            steps={processSection.steps}
-            columns={4}
-            cssPrefix='missed-call-recovery-process'
-            backgroundColor='bg-alt'
-          />
-
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
-            intent='diagnostic'
-            position='mid'
-            title={inlineCtaTitle}
-            description={inlineCtaDescription}
-            primaryActionVariant='primary'
-          />
-
-          <ServiceSpectrumCardsSection
-            badge={recoveryLayer.badge}
-            title={recoveryLayer.title}
-            description={recoveryLayer.description}
-            cards={recoveryLayer.cards}
-            cssPrefix='missed-call-recovery-layer'
-          />
-
           {comparison && (
             <ComparisonSection
               title={comparison.header.title}
@@ -174,6 +126,53 @@ export function MissedCallRecoverySystemRenderer({
                 backgroundColor='bg-base'
               />
             ))}
+
+          <SectionWrapper className='missed-call-recovery-workflows'>
+            <SectionIntro
+              badge={workflowExamples.badge}
+              title={workflowExamples.title}
+              description={workflowExamples.description}
+              cssPrefix='missed-call-recovery-workflows-header'
+            />
+            <div className='l-grid l-gap-6 md:l-grid-3'>
+              {workflowExamples.items.map((workflow, index) => (
+                <WorkflowStepCard
+                  key={index}
+                  trigger={workflow.trigger}
+                  actions={workflow.actions}
+                  cssPrefix='missed-call-recovery-workflow'
+                />
+              ))}
+            </div>
+          </SectionWrapper>
+
+          <ProcessStepsSection
+            badge={processSection.badge}
+            title={processSection.title}
+            description={processSection.description}
+            steps={processSection.steps}
+            cta={{
+              system: data.systems?.[0] ?? 'smart-website-systems',
+              slug,
+              pageType: 'service',
+              intent: 'diagnostic',
+              position: 'mid',
+              title: inlineCtaTitle,
+              description: inlineCtaDescription,
+              primaryActionVariant: 'primary',
+            }}
+            columns={4}
+            cssPrefix='missed-call-recovery-process'
+            backgroundColor='bg-alt'
+          />
+
+          <ServiceSpectrumCardsSection
+            badge={recoveryLayer.badge}
+            title={recoveryLayer.title}
+            description={recoveryLayer.description}
+            cards={recoveryLayer.cards}
+            cssPrefix='missed-call-recovery-layer'
+          />
 
           <DualToneChecklistComparisonSection
             title={qualification.title}

@@ -68,7 +68,9 @@ export function ResourcesGuidesIsland({
             variant='outline'
             label={loadMoreLabel}
             cssPrefix='btn-block'
-            onClick={() => setVisibleCount(current => Math.min(current + initialVisibleCount, resources.length))}
+            onClick={() =>
+              setVisibleCount(current => Math.min(current + initialVisibleCount, resources.length))
+            }
           />
         </div>
       )}

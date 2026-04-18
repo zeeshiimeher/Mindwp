@@ -3949,7 +3949,7 @@ summary.component-library__sidebar-link {
 
 .component-library__meta-item {
   display: grid;
-  gap: 0.15rem;
+  gap: var(--space-half);
   width: 100%;
 }
 
@@ -4146,7 +4146,7 @@ summary.component-library__sidebar-link {
 .component-library__preview-frame {
   width: 100%;
   margin-inline: auto;
-  padding: clamp(1rem, 1.2vw, 1.5rem);
+  padding: var(--space-5);
   border: 1px dashed color-mix(in oklab, var(--c-border-alpha) 85%, white);
   border-radius: var(--radius-lg);
   background:

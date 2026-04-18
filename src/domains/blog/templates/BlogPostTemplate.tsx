@@ -1,6 +1,7 @@
 /* Blog-post UI template.
   Renders from provided props only; routing, slug lookup, and registries stay outside this file. */
 
+import { Fragment, type ReactNode } from 'react';
 import {
   ArrowLeft,
   Award,
@@ -14,7 +15,6 @@ import {
   User,
 } from 'lucide-react';
 
-import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   BlogChecklistSection,
@@ -28,6 +28,7 @@ import { Button } from '@/components/reusable/single/Button';
 import { Callout } from '@/components/reusable/single/Callout';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 import { Card } from '@/components/ui/card';
@@ -40,6 +41,8 @@ import {
 import type { BlogCategory, BlogPostSection } from '@/domains/blog/types';
 import { BlogFooterCTA } from '@/domains/blog/ui/BlogFooterCTA';
 import { BlogPostShareIsland } from '@/domains/blog/ui/BlogPostShareIsland';
+import { createInlineLinkTracker, extractInternalLinks } from '@/domains/seo/inlineLinking';
+import { enforceInlineLinkUsage } from '@/lib/page/inlineLinkEnforcement';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 
 export interface BlogPostTemplateProps {
@@ -223,16 +226,66 @@ export function BlogPostTemplate({
   const faqSchema = buildFaqSchema(faqItems);
 
   const sidebarCTAData = {
-    heading: 'See How This System Works',
-    content: 'Understand how this fits into a complete website system.',
+    heading: 'See where this breakdown sits in the wider system',
+    content:
+      'Use this article as the diagnosis, then trace the service path, handoff, and operating layer that actually fixes it.',
     features: [
-      { text: 'System-level integration', icon: 'check' as const },
-      { text: 'Transparent process', icon: 'shield' as const },
-      { text: 'Built for real businesses', icon: 'award' as const },
+      { text: 'System-level context', icon: 'check' as const },
+      { text: 'Commercial next steps', icon: 'shield' as const },
+      { text: 'Built for operating teams', icon: 'award' as const },
     ],
   };
 
   const primarySystem = systems[0] ?? 'smart-website-systems';
+  const currentPath = `/blog/${slug}`;
+  const inlineLinkTracker = createInlineLinkTracker({
+    pagePath: currentPath,
+    debug: process.env.NEXT_PUBLIC_DEBUG_INLINE_LINKS === '1',
+  });
+  let remainingInlineLinks = 5;
+
+  enforceInlineLinkUsage({ pageId, pageType: 'blog' }, 'blog');
+
+  function renderLinkedParagraph(text: string, key: string, className?: string): ReactNode {
+    const segments =
+      remainingInlineLinks > 0
+        ? extractInternalLinks(text, {
+            excludePaths: [currentPath],
+            sourcePath: currentPath,
+            tracker: inlineLinkTracker,
+          })
+        : [{ type: 'text' as const, value: text }];
+
+    let linkedInParagraph = false;
+
+    return (
+      <p key={key} className={className}>
+        {segments.map((segment, segmentIndex) => {
+          if (segment.type === 'text') {
+            return <Fragment key={`${key}-text-${segmentIndex}`}>{segment.value}</Fragment>;
+          }
+
+          if (linkedInParagraph || remainingInlineLinks <= 0) {
+            return <Fragment key={`${key}-plain-${segmentIndex}`}>{segment.value}</Fragment>;
+          }
+
+          linkedInParagraph = true;
+          remainingInlineLinks -= 1;
+
+          return (
+            <a
+              key={`${key}-link-${segmentIndex}`}
+              href={segment.href}
+              className='link-primary'
+              title={segment.title}
+            >
+              {segment.value}
+            </a>
+          );
+        })}
+      </p>
+    );
+  }
 
   // Function to render a section based on its type
   function renderSection(section: BlogPostSection, index: number) {
@@ -240,9 +293,7 @@ export function BlogPostTemplate({
       case 'introduction':
         return section.content && section.content.length > 0 ? (
           <div key={`introduction-${index}`} className='blog-post__intro'>
-            {section.content.map((para, i) => (
-              <p key={`intro-${i}`}>{para}</p>
-            ))}
+            {section.content.map((para, i) => renderLinkedParagraph(para, `intro-${i}`))}
           </div>
         ) : null;
 
@@ -264,11 +315,9 @@ export function BlogPostTemplate({
             )}
 
             {section.content &&
-              (typeof section.content === 'string' ? (
-                <p>{section.content}</p>
-              ) : (
-                section.content.map((p, j) => <p key={`content-${index}-${j}`}>{p}</p>)
-              ))}
+              (typeof section.content === 'string'
+                ? renderLinkedParagraph(section.content, `content-${index}`)
+                : section.content.map((p, j) => renderLinkedParagraph(p, `content-${index}-${j}`)))}
 
             {section.list && section.list.length > 0 && (
               <ul className='blog-post__list'>
@@ -378,167 +427,176 @@ export function BlogPostTemplate({
     <CTARegistryProvider pageId={pageId} pageType='blog'>
       <div className='min-h-screen'>
         <main>
-        {/* HERO */}
-        <SectionWrapper
-          className='blog-hero'
-          {...(featuredImage
-            ? {
-                style: {
-                  backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
-                },
-              }
-            : {})}
-        >
-          <div className='l-stack l-stack--loose blog-post__hero'>
-            <span className={`badge badge--hero ${categoryColors.bg} ${categoryColors.text}`}>
-              {categoryLabel}
-            </span>
+          {/* HERO */}
+          <SectionWrapper
+            className='blog-hero'
+            {...(featuredImage
+              ? {
+                  style: {
+                    backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  },
+                }
+              : {})}
+          >
+            <div className='l-stack l-stack--loose blog-post__hero'>
+              <span className={`badge badge--hero ${categoryColors.bg} ${categoryColors.text}`}>
+                {categoryLabel}
+              </span>
 
-            <SectionIntro
-              title={title}
-              headingLevel='h1'
-              cssPrefix='blog-hero'
-              alignment='center'
-              className='l-max-w-4xl l-mx-auto'
-            />
-
-            <div className='blog-post__meta'>
-              <div className='blog-post__meta-item'>
-                <Calendar aria-hidden='true' />
-                <span>{publishDate}</span>
-              </div>
-              {effectiveReadTime && (
-                <div className='blog-post__meta-item'>
-                  <Clock aria-hidden='true' />
-                  <span>{effectiveReadTime}</span>
-                </div>
-              )}
-              {effectiveAuthor && (
-                <div className='blog-post__meta-item'>
-                  <User aria-hidden='true' />
-                  <span>{effectiveAuthor.name}</span>
-                </div>
-              )}
-            </div>
-
-            <div className='l-row l-justify-center l-gap-4'>
-              <Button
-                href='/blog'
-                variant='secondary'
-                size='sm'
-                label='Back to Blog'
-                icon={ArrowLeft}
-                iconPosition='left'
-                showDefaultIcon
+              <SectionIntro
+                title={title}
+                headingLevel='h1'
+                cssPrefix='blog-hero'
+                alignment='center'
+                className='l-max-w-4xl l-mx-auto'
               />
-            </div>
-          </div>
-        </SectionWrapper>
 
-        {/* CONTENT WITH SIDEBAR */}
-        <SectionWrapper background='bg-background'>
-          <div className='blog-post__layout'>
-            {/* Main Content Column */}
-            <div className='blog-post__stack'>
-              {/* Render sections dynamically */}
-              {articleSections.map((section, index) => renderSection(section, index))}
-
-              {tags.length > 0 && (
-                <div className='blog-post__tags'>
-                  {tags.map((tag, i) => (
-                    <Badge key={i} variant='outline' size='sm' context='meta'>
-                      {tag}
-                    </Badge>
-                  ))}
+              <div className='blog-post__meta'>
+                <div className='blog-post__meta-item'>
+                  <Calendar aria-hidden='true' />
+                  <span>{publishDate}</span>
                 </div>
-              )}
+                {effectiveReadTime && (
+                  <div className='blog-post__meta-item'>
+                    <Clock aria-hidden='true' />
+                    <span>{effectiveReadTime}</span>
+                  </div>
+                )}
+                {effectiveAuthor && (
+                  <div className='blog-post__meta-item'>
+                    <User aria-hidden='true' />
+                    <span>{effectiveAuthor.name}</span>
+                  </div>
+                )}
+              </div>
 
-              <BlogPostShareIsland title={title} />
-            </div>
-
-            {/* Sidebar */}
-            <aside>
-              <Card className='blog-post__sidebar-card'>
-                <h3 className='blog-post__sidebar-title'>{sidebarCTAData.heading}</h3>
-                <p className='blog-post__sidebar-text'>{sidebarCTAData.content}</p>
-
-                <SmartCTA
-                  system={primarySystem}
-                  pageType='blog'
-                  slug={slug}
-                  intent='diagnostic'
-                  position='sidebar'
-                  mode='actions-only'
-                  primaryButtonCssPrefix='btn-block'
-                  actionClassName='blog-post__sidebar-actions'
+              <div className='l-row l-justify-center l-gap-4'>
+                <Button
+                  href='/blog'
+                  variant='secondary'
+                  size='sm'
+                  label='Back to Blog'
+                  icon={ArrowLeft}
+                  iconPosition='left'
+                  showDefaultIcon
                 />
+              </div>
+            </div>
+          </SectionWrapper>
 
-                <div className='blog-post__sidebar-features'>
-                  {sidebarCTAData.features.map(
-                    (
-                      feature: {
-                        text: string;
-                        icon?: 'phone' | 'shield' | 'award' | 'star' | 'check' | 'heart';
-                      },
-                      index: number
-                    ) => {
-                      const getIcon = (iconType?: string) => {
-                        switch (iconType) {
-                          case 'phone':
-                            return <Phone className='blog-post__sidebar-feature-icon' />;
-                          case 'shield':
-                            return <Shield className='blog-post__sidebar-feature-icon' />;
-                          case 'award':
-                            return <Award className='blog-post__sidebar-feature-icon' />;
-                          case 'star':
-                            return <Star className='blog-post__sidebar-feature-icon' />;
-                          case 'check':
-                            return <CheckCircle2 className='blog-post__sidebar-feature-icon' />;
-                          case 'heart':
-                            return <Heart className='blog-post__sidebar-feature-icon' />;
-                          default:
-                            return <CheckCircle2 className='blog-post__sidebar-feature-icon' />;
-                        }
-                      };
+          {/* CONTENT WITH SIDEBAR */}
+          <SectionWrapper background='bg-background'>
+            <div className='blog-post__layout'>
+              {/* Main Content Column */}
+              <div className='blog-post__stack'>
+                {/* Render sections dynamically */}
+                {articleSections.map((section, index) => renderSection(section, index))}
 
-                      return (
-                        <div key={index} className='blog-post__sidebar-feature'>
-                          {getIcon(feature.icon)}
-                          <span className='blog-post__sidebar-feature-text'>{feature.text}</span>
-                        </div>
-                      );
-                    }
-                  )}
-                </div>
-              </Card>
-            </aside>
-          </div>
-        </SectionWrapper>
-        {ctaSection ? (
-          <SmartCTA
-            system={systems?.[0] ?? 'smart-website-systems'}
-            pageType='blog'
-            slug={slug}
-            intent='conversion'
-            position='footer'
-            title={ctaSection.heading}
-            description={ctaSection.content}
-            cssPrefix='blog-cta'
-            backgroundColor='blog-surface--muted'
-          />
-        ) : (
-          <BlogFooterCTA system={primarySystem} slug={slug} />
-        )}
+                {tags.length > 0 && (
+                  <div className='blog-post__tags'>
+                    {tags.map((tag, i) => (
+                      <Badge key={i} variant='outline' size='sm' context='meta'>
+                        {tag}
+                      </Badge>
+                    ))}
+                  </div>
+                )}
 
-        {faqSchema && (
-          <script
-            id='faq-jsonld'
-            type='application/ld+json'
-            dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-          />
-        )}
+                <BlogPostShareIsland title={title} />
+              </div>
+
+              {/* Sidebar */}
+              <aside>
+                <Card className='blog-post__sidebar-card'>
+                  <h3 className='blog-post__sidebar-title'>{sidebarCTAData.heading}</h3>
+                  <p className='blog-post__sidebar-text'>{sidebarCTAData.content}</p>
+
+                  <SmartCTA
+                    system={primarySystem}
+                    pageType='blog'
+                    slug={slug}
+                    intent='diagnostic'
+                    position='sidebar'
+                    mode='actions-only'
+                    primaryButtonCssPrefix='btn-block'
+                    actionClassName='blog-post__sidebar-actions'
+                  />
+
+                  <div className='blog-post__sidebar-features'>
+                    {sidebarCTAData.features.map(
+                      (
+                        feature: {
+                          text: string;
+                          icon?: 'phone' | 'shield' | 'award' | 'star' | 'check' | 'heart';
+                        },
+                        index: number
+                      ) => {
+                        const getIcon = (iconType?: string) => {
+                          switch (iconType) {
+                            case 'phone':
+                              return <Phone className='blog-post__sidebar-feature-icon' />;
+                            case 'shield':
+                              return <Shield className='blog-post__sidebar-feature-icon' />;
+                            case 'award':
+                              return <Award className='blog-post__sidebar-feature-icon' />;
+                            case 'star':
+                              return <Star className='blog-post__sidebar-feature-icon' />;
+                            case 'check':
+                              return <CheckCircle2 className='blog-post__sidebar-feature-icon' />;
+                            case 'heart':
+                              return <Heart className='blog-post__sidebar-feature-icon' />;
+                            default:
+                              return <CheckCircle2 className='blog-post__sidebar-feature-icon' />;
+                          }
+                        };
+
+                        return (
+                          <div key={index} className='blog-post__sidebar-feature'>
+                            {getIcon(feature.icon)}
+                            <span className='blog-post__sidebar-feature-text'>{feature.text}</span>
+                          </div>
+                        );
+                      }
+                    )}
+                  </div>
+                </Card>
+              </aside>
+            </div>
+          </SectionWrapper>
+          <SectionWrapper padding='none' background='bg-background'>
+            <div className='l-container'>
+              <div className='text-sm text-muted-foreground l-max-w-3xl'>
+                If the pattern in this article already feels expensive, move next into a resource
+                that shows how the same issue gets handled in an operating system before you commit
+                to a service decision.
+              </div>
+            </div>
+          </SectionWrapper>
+          {ctaSection ? (
+            <SmartCTA
+              system={systems?.[0] ?? 'smart-website-systems'}
+              pageType='blog'
+              slug={slug}
+              intent='conversion'
+              position='footer'
+              title={ctaSection.heading}
+              description={ctaSection.content}
+              cssPrefix='blog-cta'
+              backgroundColor='blog-surface--muted'
+            />
+          ) : (
+            <BlogFooterCTA system={primarySystem} slug={slug} />
+          )}
+
+          {faqSchema && (
+            <script
+              id='faq-jsonld'
+              type='application/ld+json'
+              dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
+          )}
           <SmartRelatedSection slug={slug} />
         </main>
       </div>

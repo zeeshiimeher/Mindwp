@@ -1,6 +1,7 @@
 import { CardGrid, SectionWrapper, SplitLayout } from '@/components/reusable/primitives';
 import { type ProcessStep, ProcessStepCard, SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
+import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
 import { cn } from '@/components/ui/utils';
 
 const BLOCK = 'c-process-steps-section';
@@ -15,6 +16,7 @@ export interface ProcessStepsSectionProps {
   title?: string;
   description?: string;
   steps: ProcessStep[];
+  cta?: SmartCTAProps;
   columns?: 2 | 3 | 4;
   /** Additional class(es) for the root element (additive only). */
   cssPrefix?: string;
@@ -28,6 +30,7 @@ export function ProcessStepsSection({
   title,
   description,
   steps,
+  cta,
   columns = 4,
   cssPrefix = '',
   backgroundColor = '',
@@ -47,19 +50,27 @@ export function ProcessStepsSection({
         />
       )}
       {layoutMode === 'grid' ? (
-        <CardGrid columns={columns} mode='controlled'>
-          {steps.map((step, index) => (
-            <ProcessStepCard
-              key={index}
-              number={step.number}
-              title={step.title}
-              description={step.description}
-              {...(step.icon !== undefined && { icon: step.icon })}
-              {...(step.iconType !== undefined && { iconType: step.iconType })}
-              cssPrefix={`${BLOCK}__step`}
-            />
-          ))}
-        </CardGrid>
+        <>
+          <CardGrid columns={columns} mode='controlled'>
+            {steps.map((step, index) => (
+              <ProcessStepCard
+                key={index}
+                number={step.number}
+                title={step.title}
+                description={step.description}
+                {...(step.icon !== undefined && { icon: step.icon })}
+                {...(step.iconType !== undefined && { iconType: step.iconType })}
+                cssPrefix={`${BLOCK}__step`}
+              />
+            ))}
+          </CardGrid>
+
+          {cta ? (
+            <div className={`${BLOCK}__cta l-mt-8`}>
+              <SmartCTA {...cta} wrapper='none' includeContainer={false} />
+            </div>
+          ) : null}
+        </>
       ) : isTimelineLayout ? (
         <SplitLayout breakpoint='lg' ratio='50/70' gap={8}>
           <div className={`${BLOCK}__rail-copy`}>
@@ -83,6 +94,12 @@ export function ProcessStepsSection({
                 <p className={`${BLOCK}__rail-step-description`}>{step.description}</p>
               </Card>
             ))}
+
+            {cta ? (
+              <div className={`${BLOCK}__cta`}>
+                <SmartCTA {...cta} wrapper='none' includeContainer={false} />
+              </div>
+            ) : null}
           </div>
         </SplitLayout>
       ) : null}

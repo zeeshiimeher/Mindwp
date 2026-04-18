@@ -3,6 +3,7 @@ import { Check, X } from 'lucide-react';
 import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
 import { ChecklistRow, SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
+import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
 import { cn } from '@/components/ui/utils';
 
 const BLOCK = 'c-comparison-section';
@@ -18,6 +19,7 @@ interface ComparisonSectionProps {
   title?: string;
   description?: string;
   comparisons: ComparisonItem[];
+  cta?: SmartCTAProps;
   /** Additional class(es) for the root element (additive only). */
   cssPrefix?: string;
   backgroundColor?: string;
@@ -28,6 +30,7 @@ export function ComparisonSection({
   title,
   description,
   comparisons = [],
+  cta,
   cssPrefix = '',
   backgroundColor = '',
 }: ComparisonSectionProps) {
@@ -107,6 +110,12 @@ export function ComparisonSection({
             );
           })}
         </CardGrid>
+
+        {cta ? (
+          <div className={`${BLOCK}__cta l-mt-8`}>
+            <SmartCTA {...cta} wrapper='none' includeContainer={false} />
+          </div>
+        ) : null}
       </div>
     </SectionWrapper>
   );

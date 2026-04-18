@@ -1559,23 +1559,27 @@ This section defines the exact slot structure for related content on each page t
 ## RELATED CONTENT DISPLAY RULES (LOCKED)
 
 This section defines how many related-content sections each page type renders.
-Controlled by the UI layer (`src/config/ui-intelligence.ts`) via **SmartRelatedSection** — the sole linking mechanism (Phase 10 Decision 2).
+Controlled by the UI layer (`src/config/ui-intelligence.ts`) via **SmartRelatedSection** — the sole linking mechanism.
 
-| Page Type         | Related Sections | Notes                              |
-|-------------------|------------------|------------------------------------|
-| Service           | 1                | Related services only              |
-| Industry Detail   | 2                | Services + case studies            |
-| Industry Category | 2                | Services + sub-industries          |
-| Case Study        | 1                | Industry + resources               |
-| Resource          | 2                | Services + industry pages          |
-| Blog              | 2                | Resources + industry pages         |
-| Feature           | 1                | Related services only (Decision 3)   |
+| Page Type         | Related Zones | Notes                                          |
+|-------------------|---------------|------------------------------------------------|
+| Service           | 1             | Mixed zone resolves to services only           |
+| Industry Detail   | 1             | Mixed zone resolves to services + case studies |
+| Industry Category | 1             | Mixed zone resolves to sub-industries + service |
+| Case Study        | 1             | Mixed zone resolves to service + resources     |
+| Resource          | 1             | Mixed zone resolves to services + industry pages |
+| Blog              | 1             | Mixed zone resolves to resources + industry page |
+| Feature           | 1             | Mixed zone resolves to parent/related services |
+| Landing / Hubs    | 0             | Use existing cards and grids only              |
 
 ### Display Rules
 
-- Section counts above are maximums. Empty sections are not rendered.
+- SmartRelatedSection is the only related-content mechanism.
+- A page may render at most 1 related-content zone.
+- A related-content zone may render at most 3 items total.
+- Only candidates with score > 0 may render.
+- Fallback order is: same domain -> services -> highest-scoring valid content.
 - Section behavior (allowLinks, allowCTA, allowProof) is governed by `src/config/section-intelligence.ts`.
-- SmartRelatedSection enforces link limits — max 2 sections × 3 items = 6 links per page (Phase 10 Decision 4).
 - Service and feature domain payloads must not define page-local related slot configuration. Related output is resolved from graph rules only.
 - No new page types may be added without updating both this table and the slot definition above.
 
@@ -1722,9 +1726,10 @@ Every content piece must include internal links that follow the ecosystem flow d
 
 Clarification:
 
-- SmartRelatedSection is the only system-level related-content mechanism
-- Editorial inline links inside body content may be used when contextually justified
-- Inline links must not replace graph-driven related-content slots or create alternate linking systems
+- SmartRelatedSection is the only system-level related-content mechanism.
+- Editorial inline links are allowed only in blog and resource body copy when the destination concept is already named in the sentence.
+- Inline links are not allowed on services, features, industries, or case studies.
+- Inline links must not replace graph-driven related-content slots or create alternate linking systems.
 
 ### Step 4 — Pass Pre-Publish Validation
 

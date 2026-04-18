@@ -1,5 +1,6 @@
 import { Suspense } from 'react';
 
+import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { categories, resources } from '@/domains/resources/api';
 import { ResourcesHub } from '@/domains/resources/pages/ResourcesHub';
 import { getInventoryMetadata } from '@/lib/content-quality/inventory';
@@ -11,7 +12,9 @@ export async function generateMetadata() {
   return getInventoryMetadata('/resources');
 }
 
-export default function Page() {
+export default async function Page() {
+  await ensureGraphInitialized();
+
   const categoryItems = categories.map(category => {
     const count = resources.filter(resource => resource.category === category.id).length;
 

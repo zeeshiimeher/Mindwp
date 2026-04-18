@@ -1459,7 +1459,8 @@ const inferMockValue = (propName: string, typeText: string, seed = 0): unknown =
     if (lowerName.includes('headline')) return 'Operational clarity without extra manual handoffs';
     if (lowerName.includes('title')) return 'Example Title';
     if (lowerName.includes('description')) return 'Example description';
-    if (lowerName.includes('content')) return 'Example supporting narrative for the section preview.';
+    if (lowerName.includes('content'))
+      return 'Example supporting narrative for the section preview.';
     if (lowerName.includes('heading')) return 'Example Heading';
     if (lowerName.includes('label')) return 'View implementation summary';
     if (lowerName.includes('industry')) return 'Automotive Services';

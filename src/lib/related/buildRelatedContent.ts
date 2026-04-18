@@ -1,5 +1,10 @@
-import { RELATED_SECTION_LABELS } from '@/config/ui-intelligence';
-import { getRelatedContent, type ContentNodeType, type RelatedContent } from '@/lib/graph/query';
+import { RELATED_SECTION_META } from '@/config/ui-intelligence';
+import {
+  type ContentNodeType,
+  getRelatedContent,
+  type RelatedContent,
+  type RelatedContentItem,
+} from '@/lib/graph/query';
 import type { PageType } from '@/lib/page/pageIdentity';
 
 export type RelatedContentGroup = {
@@ -25,24 +30,9 @@ export type BuildRelatedContentOptions = {
   pageType: PageType;
   slug?: string;
   nodeType?: ContentNodeType;
-  categorySlug?: string;
-  systems?: string[];
-  industries?: string[];
-  isIndustryPage?: boolean;
-  includeCaseStudies?: boolean;
-  includeServices?: boolean;
 };
 
-const MAX_GROUPS_BY_PAGE_TYPE: Record<PageType, number> = {
-  service: 1,
-  feature: 1,
-  blog: 1,
-  resource: 2,
-  'case-study': 1,
-  'industry-detail': 1,
-  'industry-category': 2,
-  page: 0,
-};
+const MAX_ITEMS = 3;
 
 function extractSlugFromPageId(pageId: string) {
   const parts = pageId.split(':');
@@ -61,42 +51,87 @@ function resolveNodeType(pageType: PageType, nodeType?: ContentNodeType): Conten
   return pageType;
 }
 
-function toRelatedItemDescription(itemType: keyof RelatedContent) {
-  switch (itemType) {
-    case 'services':
-      return 'Explore the related service.';
-    case 'resources':
-      return 'Go deeper with a related resource.';
-    case 'blog':
-      return 'Read the related article.';
-    case 'caseStudies':
-      return 'See the related implementation outcome.';
-    case 'industries':
-      return 'See where this applies in practice.';
+function appendUniqueItems(
+  selected: RelatedContentItem[],
+  candidates: RelatedContentItem[],
+  count: number,
+  options?: { filter?: (item: RelatedContentItem) => boolean }
+) {
+  if (count <= 0) {
+    return;
+  }
+
+  const seenPaths = new Set(selected.map(item => item.path));
+
+  for (const item of candidates) {
+    if (selected.length >= MAX_ITEMS || count <= 0) {
+      break;
+    }
+
+    if (seenPaths.has(item.path)) {
+      continue;
+    }
+
+    if (options?.filter && !options.filter(item)) {
+      continue;
+    }
+
+    selected.push(item);
+    seenPaths.add(item.path);
+    count -= 1;
   }
 }
 
-function shouldIncludeSlot(
-  slot: keyof RelatedContent,
-  options: Pick<BuildRelatedContentOptions, 'includeCaseStudies' | 'includeServices'>
-) {
-  if (slot === 'caseStudies' && options.includeCaseStudies === false) {
-    return false;
+function buildMixedItems(nodeType: ContentNodeType, related: RelatedContent) {
+  const selected: RelatedContentItem[] = [];
+  const services = related.services;
+  const resources = related.resources;
+  const caseStudies = related.caseStudies;
+  const industries = related.industries;
+
+  switch (nodeType) {
+    case 'service':
+      appendUniqueItems(selected, services, 3);
+      break;
+    case 'feature':
+      appendUniqueItems(selected, services, 1);
+      appendUniqueItems(selected, services, MAX_ITEMS - selected.length);
+      break;
+    case 'blog':
+      appendUniqueItems(selected, resources, 2);
+      appendUniqueItems(selected, industries, 1);
+      appendUniqueItems(selected, resources, MAX_ITEMS - selected.length);
+      break;
+    case 'resource':
+      appendUniqueItems(selected, services, 2);
+      appendUniqueItems(selected, industries, 1);
+      appendUniqueItems(selected, services, MAX_ITEMS - selected.length);
+      break;
+    case 'industry-category':
+      appendUniqueItems(selected, industries, 2);
+      appendUniqueItems(selected, services, 1);
+      appendUniqueItems(selected, services, MAX_ITEMS - selected.length);
+      break;
+    case 'industry-detail':
+      appendUniqueItems(selected, services, 2);
+      appendUniqueItems(selected, caseStudies, 1);
+      appendUniqueItems(selected, services, MAX_ITEMS - selected.length);
+      break;
+    case 'case-study':
+      appendUniqueItems(selected, services, 1);
+      appendUniqueItems(selected, resources, 2);
+      appendUniqueItems(selected, industries, MAX_ITEMS - selected.length);
+      break;
   }
 
-  if (slot === 'services' && options.includeServices === false) {
-    return false;
-  }
-
-  return true;
+  return selected.slice(0, MAX_ITEMS);
 }
 
 export function buildRelatedContent(options: BuildRelatedContentOptions): RelatedContentOutput {
   const nodeType = resolveNodeType(options.pageType, options.nodeType);
-  const slug = options.slug ?? options.categorySlug ?? extractSlugFromPageId(options.pageId);
-  const maxGroups = MAX_GROUPS_BY_PAGE_TYPE[options.pageType];
+  const slug = options.slug ?? extractSlugFromPageId(options.pageId);
 
-  if (!nodeType || !slug || maxGroups === 0) {
+  if (!nodeType || !slug || options.pageType === 'page') {
     return {
       groups: [],
       emptyState: {
@@ -107,38 +142,23 @@ export function buildRelatedContent(options: BuildRelatedContentOptions): Relate
   }
 
   const related = getRelatedContent(slug, nodeType);
-  const labels = RELATED_SECTION_LABELS[nodeType] ?? {};
-  const slotKeys = Object.keys(labels) as Array<keyof RelatedContent>;
-  const groups: RelatedContentGroup[] = [];
+  const items = buildMixedItems(nodeType, related);
+  const meta = RELATED_SECTION_META[nodeType];
 
-  for (const slot of slotKeys) {
-    if (!shouldIncludeSlot(slot, options)) {
-      continue;
-    }
-
-    const label = labels[slot];
-    const items = related[slot];
-    if (!label || !items || items.length === 0) {
-      continue;
-    }
-
-    groups.push({
-      label: label.title,
-      description: label.description,
-      items: items.slice(0, 3).map(item => ({
-        title: item.title,
-        href: item.path,
-        description: item.description || toRelatedItemDescription(slot),
-      })),
-    });
-
-    if (groups.length >= maxGroups) {
-      break;
-    }
-  }
-
-  if (groups.length > 0) {
-    return { groups };
+  if (meta && items.length > 0) {
+    return {
+      groups: [
+        {
+          label: meta.title,
+          description: meta.description,
+          items: items.map(item => ({
+            title: item.title,
+            href: item.path,
+            description: item.description,
+          })),
+        },
+      ],
+    };
   }
 
   return {

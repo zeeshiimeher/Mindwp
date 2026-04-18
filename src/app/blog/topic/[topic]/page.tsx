@@ -9,6 +9,7 @@ import {
   getTopicHubSections,
 } from '@/domains/blog/api';
 import { BlogTopicTemplate } from '@/domains/blog/templates/BlogTopicTemplate';
+import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { getBlogTopicMetadata } from '@/lib/seo/pageMetadata';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
 
@@ -36,6 +37,8 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params }: { params: Promise<{ topic: string }> }) {
+  await ensureGraphInitialized();
+
   const { topic } = await params;
   const meta = getTopicBySlug(topic);
   if (!meta) {

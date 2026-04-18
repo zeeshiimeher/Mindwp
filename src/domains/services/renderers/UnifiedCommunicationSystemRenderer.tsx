@@ -186,22 +186,21 @@ export function UnifiedCommunicationSystemRenderer({
             </div>
           </SectionWrapper>
 
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
-            intent='comparison'
-            position='mid'
-            title={inlineCtaTitle}
-            description={inlineCtaDescription}
-            primaryActionVariant='primary'
-          />
-
           {comparison && (
             <ComparisonSection
               title={comparison.header.title}
               description={comparison.header.description}
               comparisons={comparison.items}
+              cta={{
+                system: data.systems?.[0] ?? 'smart-website-systems',
+                slug,
+                pageType: 'service',
+                intent: 'comparison',
+                position: 'mid',
+                title: inlineCtaTitle,
+                description: inlineCtaDescription,
+                primaryActionVariant: 'primary',
+              }}
               cssPrefix='unified-communication-comparison'
             />
           )}

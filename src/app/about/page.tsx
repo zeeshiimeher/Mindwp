@@ -1,3 +1,4 @@
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { About } from '@/screens/About';
 
@@ -9,5 +10,9 @@ export async function generateMetadata() {
 }
 
 export default function AboutPage() {
-  return <About />;
+  return (
+    <CTARegistryProvider pageId='page:about' pageType='page'>
+      <About />
+    </CTARegistryProvider>
+  );
 }

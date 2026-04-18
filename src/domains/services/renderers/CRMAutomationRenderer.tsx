@@ -72,6 +72,46 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
           />
           {/* What You Can Do */}
           <SectionWrapper className='crm-automation-use-cases' background='bg-alt'>
+            {comparison && (
+              <ComparisonSection
+                title={comparison.header.title}
+                description={comparison.header.description}
+                comparisons={comparison.items}
+                cta={{
+                  system: data.systems?.[0] ?? 'smart-website-systems',
+                  slug,
+                  pageType: 'service',
+                  intent: 'diagnostic',
+                  position: 'mid',
+                  title: inlineCtaTitle,
+                  description: inlineCtaDescription,
+                  primaryActionVariant: 'primary',
+                }}
+                cssPrefix='crm-automation-comparison'
+                backgroundColor='bg-alt'
+              />
+            )}
+
+            {proof &&
+              (data.transformationProof ? (
+                <TransformationProofSection
+                  badge={proof.header.badge ?? 'Proof'}
+                  title={proof.header.title}
+                  description={proof.header.description}
+                  before={data.transformationProof.before}
+                  build={data.transformationProof.build}
+                  after={data.transformationProof.after}
+                  cssPrefix='transformation-proof'
+                />
+              ) : (
+                <ServiceSpectrumCardsSection
+                  title={proof.header.title}
+                  description={proof.header.description}
+                  cards={proof.cards}
+                  cssPrefix='crm-automation-proof'
+                />
+              ))}
+
             <div className='crm-automation-use-cases-container-1'>
               <SectionIntro
                 badge={useCasesSection.badge}
@@ -158,47 +198,6 @@ export function CRMAutomationRenderer({ data, slug }: CRMAutomationRendererProps
               cssPrefix={connection.cssPrefix}
             />
           </SectionWrapper>
-
-          {comparison && (
-            <ComparisonSection
-              title={comparison.header.title}
-              description={comparison.header.description}
-              comparisons={comparison.items}
-              cssPrefix='crm-automation-comparison'
-              backgroundColor='bg-alt'
-            />
-          )}
-
-          {proof &&
-            (data.transformationProof ? (
-              <TransformationProofSection
-                badge={proof.header.badge ?? 'Proof'}
-                title={proof.header.title}
-                description={proof.header.description}
-                before={data.transformationProof.before}
-                build={data.transformationProof.build}
-                after={data.transformationProof.after}
-                cssPrefix='transformation-proof'
-              />
-            ) : (
-              <ServiceSpectrumCardsSection
-                title={proof.header.title}
-                description={proof.header.description}
-                cards={proof.cards}
-                cssPrefix='crm-automation-proof'
-              />
-            ))}
-
-          <SmartCTA
-            system={data.systems?.[0] ?? 'smart-website-systems'}
-            slug={slug}
-            pageType='service'
-            intent='diagnostic'
-            position='mid'
-            title={inlineCtaTitle}
-            description={inlineCtaDescription}
-            primaryActionVariant='primary'
-          />
 
           {/* Qualification Section */}
           <SectionWrapper className='crm-automation-qualification' background='bg-alt'>

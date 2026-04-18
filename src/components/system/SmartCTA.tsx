@@ -1,24 +1,20 @@
-"use client";
+'use client';
 import { useEffect, useId } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import type { ReactNode } from 'react';
+
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { Button, type ButtonProps } from '@/components/reusable/single/Button';
 import { useCTARegistry, usePageIdentity } from '@/components/system/PageEnforcement';
 import { cn } from '@/components/ui/utils';
 import { type CtaTone, DEFAULT_CTA_LABEL, resolveCtaLabel } from '@/config/ctaLabels';
-import {
-  createCTARegistry,
-  registerCTA,
-  reportCTAError,
-  unregisterCTA,
-} from '@/lib/cta/ctaRegistry';
 import { buildContactHref, type ContactSourceType } from '@/lib/contact/contactHref';
+import { registerCTA, reportCTAError, unregisterCTA } from '@/lib/cta/ctaRegistry';
 import {
+  buildPageId,
   type CTAIntent,
   type CTAPosition,
   type PageType,
-  buildPageId,
   toContactSourceType,
 } from '@/lib/page/pageIdentity';
 
@@ -134,14 +130,18 @@ export function SmartCTA({
   const resolvedTitle = title ?? DEFAULT_CTA_LABEL;
   const resolvedPageType = pageTypeProp ?? pageIdentity?.pageType;
   const resolvedPageId =
-    pageId ?? pageIdentity?.pageId ?? (resolvedPageType ? buildPageId(resolvedPageType, slug) : undefined);
+    pageId ??
+    pageIdentity?.pageId ??
+    (resolvedPageType ? buildPageId(resolvedPageType, slug) : undefined);
   const resolvedIntent = intent ?? (mode === 'actions-only' ? 'entry' : 'conversion');
   const resolvedPosition = position ?? (mode === 'actions-only' ? 'hero' : 'footer');
 
   if (!resolvedSystem || !resolvedPageId || !resolvedPageType || !slug) {
-    throw new Error(
-      'SmartCTA requires system, slug, page identity, CTA intent, and CTA position.'
-    );
+    throw new Error('SmartCTA requires system, slug, page identity, CTA intent, and CTA position.');
+  }
+
+  if (!pageIdentity || !activeRegistry) {
+    throw new Error('SmartCTA requires CTARegistryProvider at the template level.');
   }
 
   if (
@@ -154,8 +154,7 @@ export function SmartCTA({
 
   const pageTypeForHref: ContactSourceType = toContactSourceType(resolvedPageType);
   const pageType = pageTypeForHref;
-  const registry =
-    activeRegistry ?? createCTARegistry({ pageId: resolvedPageId, pageType: resolvedPageType });
+  const registry = activeRegistry;
 
   useEffect(() => {
     return () => {

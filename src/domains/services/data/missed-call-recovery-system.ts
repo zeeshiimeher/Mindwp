@@ -331,13 +331,13 @@ export const missedCallRecoverySystemPage = {
     },
   },
   inlineCta: {
-    title: 'How many missed calls are turning into lost jobs?',
+    title: 'Want to see where missed-call leakage is actually happening first?',
     description:
-      'Ten minutes. We look at how calls are missed now, what happens after, and where the recovery gap is costing you work.',
+      'We look at when calls are missed, what callers hear back, and which enquiries are most likely to disappear before someone follows up so you can see where recovery needs to start.',
   },
   cta: {
-    title: "Find out how many calls you're missing",
+    title: 'Get a clear missed-call recovery priority before you change the stack',
     description:
-      'Quick look at how calls are handled now. How many go unanswered. What recovering them would change.',
+      'We review current call handling, response delay, and after-hours gaps so you leave with the highest-risk missed-call points, the first recovery fixes to make, and whether a larger communication system is actually needed.',
   },
 } satisfies ServicePageData;

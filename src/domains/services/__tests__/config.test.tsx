@@ -73,6 +73,7 @@ import {
 describe('services config slugs', () => {
   it('treats canonical slugs as valid service slugs', () => {
     expect(isServiceSlug('conversion-layer')).toBe(true);
+    expect(isServiceSlug('conversion-funnel-system-vs-landing-page-development')).toBe(true);
     expect(isServiceSlug('system-migration-platform-consolidation')).toBe(true);
     expect(isServiceSlug('website-redesign-system-rebuild')).toBe(true);
     expect(isServiceSlug('lead-reactivation-system')).toBe(true);
@@ -80,6 +81,8 @@ describe('services config slugs', () => {
     expect(isServiceSlug('unified-communication-system')).toBe(true);
     expect(isServiceSlug('reputation-review-systems')).toBe(true);
     expect(isServiceSlug('crm-infrastructure-implementation')).toBe(true);
+    expect(isServiceSlug('website-crm-integration-vs-manual-lead-handling')).toBe(true);
+    expect(isServiceSlug('service-pages-vs-one-generic-services-page')).toBe(true);
     expect(isServiceSlug('crm-automation')).toBe(false);
     expect(isServiceSlug('lead-generation-conversion')).toBe(false);
     expect(isServiceSlug('ecommerce')).toBe(true);
@@ -91,6 +94,13 @@ describe('services config slugs', () => {
   it('returns the expected canonical service data', () => {
     const conversionLayerData = getServiceDataBySlug('conversion-layer');
     expect(conversionLayerData.seo.canonical).toBe('/services/conversion-layer');
+
+    const conversionDecisionData = getServiceDataBySlug(
+      'conversion-funnel-system-vs-landing-page-development'
+    );
+    expect(conversionDecisionData.seo.canonical).toBe(
+      '/services/conversion-funnel-system-vs-landing-page-development'
+    );
 
     const migrationData = getServiceDataBySlug('system-migration-platform-consolidation');
     expect(migrationData.seo.canonical).toBe('/services/system-migration-platform-consolidation');
@@ -113,6 +123,18 @@ describe('services config slugs', () => {
     const crmData = getServiceDataBySlug('crm-infrastructure-implementation');
     expect(crmData.seo.canonical).toBe('/services/crm-infrastructure-implementation');
 
+    const crmDecisionData = getServiceDataBySlug('website-crm-integration-vs-manual-lead-handling');
+    expect(crmDecisionData.seo.canonical).toBe(
+      '/services/website-crm-integration-vs-manual-lead-handling'
+    );
+
+    const servicePagesDecisionData = getServiceDataBySlug(
+      'service-pages-vs-one-generic-services-page'
+    );
+    expect(servicePagesDecisionData.seo.canonical).toBe(
+      '/services/service-pages-vs-one-generic-services-page'
+    );
+
     const ecommerceData = getServiceDataBySlug('ecommerce');
     const wpData = getServiceDataBySlug('wordpress-development');
 
@@ -124,6 +146,11 @@ describe('services config slugs', () => {
   it('returns distinct canonical renderers where expected', () => {
     const conversionLayerRenderer = getServiceRendererBySlug('conversion-layer');
     expect(conversionLayerRenderer).toBeDefined();
+
+    const conversionDecisionRenderer = getServiceRendererBySlug(
+      'conversion-funnel-system-vs-landing-page-development'
+    );
+    expect(conversionDecisionRenderer).toBeDefined();
 
     const migrationRenderer = getServiceRendererBySlug('system-migration-platform-consolidation');
     expect(migrationRenderer).toBeDefined();
@@ -145,6 +172,16 @@ describe('services config slugs', () => {
 
     const crmRenderer = getServiceRendererBySlug('crm-infrastructure-implementation');
     expect(crmRenderer).toBeDefined();
+
+    const crmDecisionRenderer = getServiceRendererBySlug(
+      'website-crm-integration-vs-manual-lead-handling'
+    );
+    expect(crmDecisionRenderer).toBeDefined();
+
+    const servicePagesDecisionRenderer = getServiceRendererBySlug(
+      'service-pages-vs-one-generic-services-page'
+    );
+    expect(servicePagesDecisionRenderer).toBeDefined();
 
     const wooRenderer = getServiceRendererBySlug('ecommerce');
     const wpRenderer = getServiceRendererBySlug('wordpress-development');

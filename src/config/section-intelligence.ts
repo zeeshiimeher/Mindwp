@@ -1,3 +1,5 @@
+import type { CTAIntent, CTAPosition, PageType } from '@/lib/page/pageIdentity';
+
 /**
  * Section Intelligence Mapping.
  *
@@ -334,3 +336,66 @@ export const CTA_BEHAVIOR: Record<string, CTABehavior> = {
     maxCTAs: 2,
   },
 } as const;
+
+export interface CTAPageRule {
+  maxPanels: number;
+  allowedPositions: CTAPosition[];
+  allowedNonConversionIntents: Array<Exclude<CTAIntent, 'conversion'>>;
+  allowedConversionPositions: CTAPosition[];
+}
+
+export const CTA_RULES_BY_PAGE_TYPE: Record<PageType, CTAPageRule> = {
+  service: {
+    maxPanels: 3,
+    allowedPositions: ['hero', 'mid', 'footer'],
+    allowedNonConversionIntents: ['entry', 'diagnostic', 'comparison'],
+    allowedConversionPositions: ['footer'],
+  },
+  feature: {
+    maxPanels: 2,
+    allowedPositions: ['hero', 'footer'],
+    allowedNonConversionIntents: ['entry'],
+    allowedConversionPositions: ['footer'],
+  },
+  blog: {
+    maxPanels: 2,
+    allowedPositions: ['sidebar', 'footer'],
+    allowedNonConversionIntents: ['diagnostic'],
+    allowedConversionPositions: ['footer'],
+  },
+  resource: {
+    maxPanels: 3,
+    allowedPositions: ['hero', 'sidebar', 'footer'],
+    allowedNonConversionIntents: ['entry', 'diagnostic'],
+    allowedConversionPositions: ['footer'],
+  },
+  'case-study': {
+    maxPanels: 2,
+    allowedPositions: ['mid', 'footer'],
+    allowedNonConversionIntents: ['diagnostic', 'comparison'],
+    allowedConversionPositions: ['footer'],
+  },
+  'industry-category': {
+    maxPanels: 2,
+    allowedPositions: ['hero', 'footer'],
+    allowedNonConversionIntents: ['entry'],
+    allowedConversionPositions: ['footer'],
+  },
+  'industry-detail': {
+    maxPanels: 2,
+    allowedPositions: ['hero', 'footer'],
+    allowedNonConversionIntents: ['entry'],
+    allowedConversionPositions: ['footer'],
+  },
+  page: {
+    maxPanels: 2,
+    allowedPositions: ['hero', 'footer'],
+    allowedNonConversionIntents: ['entry'],
+    allowedConversionPositions: ['footer'],
+  },
+};
+
+export const MID_CTA_SECTION_TYPES_BY_PAGE_TYPE: Partial<Record<PageType, string[]>> = {
+  service: ['comparison', 'solution', 'process'],
+  'case-study': ['results', 'process'],
+};

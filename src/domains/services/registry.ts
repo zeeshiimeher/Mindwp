@@ -1,5 +1,6 @@
 import { aiLeadHandlingPage } from '@/domains/services/data/ai-lead-handling';
 import { bricksBuilderPage } from '@/domains/services/data/bricks-builder';
+import { conversionFunnelSystemVsLandingPageDevelopmentPage } from '@/domains/services/data/conversion-funnel-system-vs-landing-page-development';
 import { conversionLayerPage } from '@/domains/services/data/conversion-layer';
 import { crmAutomationPage } from '@/domains/services/data/crm-automation';
 import { divi5Page } from '@/domains/services/data/divi5';
@@ -8,9 +9,11 @@ import { leadReactivationSystemPage } from '@/domains/services/data/lead-reactiv
 import { localSeoAuthorityPage } from '@/domains/services/data/local-seo-authority';
 import { missedCallRecoverySystemPage } from '@/domains/services/data/missed-call-recovery-system';
 import { reputationReviewSystemsPage } from '@/domains/services/data/reputation-review-systems';
+import { servicePagesVsOneGenericServicesPage } from '@/domains/services/data/service-pages-vs-one-generic-services-page';
 import { smartWebsiteSystemsPage } from '@/domains/services/data/smart-website-systems';
 import { systemMigrationPlatformConsolidationPage } from '@/domains/services/data/system-migration-platform-consolidation';
 import { unifiedCommunicationSystemPage } from '@/domains/services/data/unified-communication-system';
+import { websiteCrmIntegrationVsManualLeadHandlingPage } from '@/domains/services/data/website-crm-integration-vs-manual-lead-handling';
 import { websiteRedesignSystemRebuildPage } from '@/domains/services/data/website-redesign-system-rebuild';
 import { woocommercePage } from '@/domains/services/data/woocommerce';
 import { wordpressDevelopmentPage } from '@/domains/services/data/wordpress-development';
@@ -80,6 +83,33 @@ export const SERVICE_REGISTRY: Record<string, ServiceMetadata> = {
     },
     get topics() {
       return conversionLayerPage.topics;
+    },
+  },
+  'conversion-funnel-system-vs-landing-page-development': {
+    slug: 'conversion-funnel-system-vs-landing-page-development',
+    get path() {
+      return conversionFunnelSystemVsLandingPageDevelopmentPage.seo.canonical;
+    },
+    get title() {
+      return conversionFunnelSystemVsLandingPageDevelopmentPage.seo.title;
+    },
+    get description() {
+      return conversionFunnelSystemVsLandingPageDevelopmentPage.seo.description;
+    },
+    get keywords() {
+      return conversionFunnelSystemVsLandingPageDevelopmentPage.keywords;
+    },
+    get badge() {
+      return conversionFunnelSystemVsLandingPageDevelopmentPage.badge;
+    },
+    get category() {
+      return conversionFunnelSystemVsLandingPageDevelopmentPage.category;
+    },
+    get systems() {
+      return conversionFunnelSystemVsLandingPageDevelopmentPage.systems;
+    },
+    get topics() {
+      return conversionFunnelSystemVsLandingPageDevelopmentPage.topics;
     },
   },
   'system-migration-platform-consolidation': {
@@ -298,6 +328,33 @@ export const SERVICE_REGISTRY: Record<string, ServiceMetadata> = {
       return crmAutomationPage.topics;
     },
   },
+  'website-crm-integration-vs-manual-lead-handling': {
+    slug: 'website-crm-integration-vs-manual-lead-handling',
+    get path() {
+      return websiteCrmIntegrationVsManualLeadHandlingPage.seo.canonical;
+    },
+    get title() {
+      return websiteCrmIntegrationVsManualLeadHandlingPage.seo.title;
+    },
+    get description() {
+      return websiteCrmIntegrationVsManualLeadHandlingPage.seo.description;
+    },
+    get keywords() {
+      return websiteCrmIntegrationVsManualLeadHandlingPage.keywords;
+    },
+    get badge() {
+      return websiteCrmIntegrationVsManualLeadHandlingPage.badge;
+    },
+    get category() {
+      return websiteCrmIntegrationVsManualLeadHandlingPage.category;
+    },
+    get systems() {
+      return websiteCrmIntegrationVsManualLeadHandlingPage.systems;
+    },
+    get topics() {
+      return websiteCrmIntegrationVsManualLeadHandlingPage.topics;
+    },
+  },
   'ai-lead-handling': {
     slug: 'ai-lead-handling',
     get path() {
@@ -323,6 +380,33 @@ export const SERVICE_REGISTRY: Record<string, ServiceMetadata> = {
     },
     get topics() {
       return aiLeadHandlingPage.topics;
+    },
+  },
+  'service-pages-vs-one-generic-services-page': {
+    slug: 'service-pages-vs-one-generic-services-page',
+    get path() {
+      return servicePagesVsOneGenericServicesPage.seo.canonical;
+    },
+    get title() {
+      return servicePagesVsOneGenericServicesPage.seo.title;
+    },
+    get description() {
+      return servicePagesVsOneGenericServicesPage.seo.description;
+    },
+    get keywords() {
+      return servicePagesVsOneGenericServicesPage.keywords;
+    },
+    get badge() {
+      return servicePagesVsOneGenericServicesPage.badge;
+    },
+    get category() {
+      return servicePagesVsOneGenericServicesPage.category;
+    },
+    get systems() {
+      return servicePagesVsOneGenericServicesPage.systems;
+    },
+    get topics() {
+      return servicePagesVsOneGenericServicesPage.topics;
     },
   },
   'wordpress-development': {

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import JsonLd from '@/components/system/JsonLd';
+import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { categories, getCategoryColors, resources } from '@/domains/resources/api';
 import ResourceCategoryTemplate from '@/domains/resources/templates/ResourceCategoryTemplate';
 import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates';
@@ -36,6 +37,8 @@ export async function generateMetadata({
 }
 
 export default async function Page({ params }: { params: Promise<{ categorySlug: string }> }) {
+  await ensureGraphInitialized();
+
   const { categorySlug } = await params;
   const category = resolveCategory(categorySlug);
   if (!category) {

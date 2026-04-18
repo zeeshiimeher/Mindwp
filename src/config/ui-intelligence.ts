@@ -87,6 +87,38 @@ export const RELATED_SECTION_LABELS: Record<
   },
 };
 
+export const RELATED_SECTION_META: Record<ContentNodeType, { title: string; description: string }> =
+  {
+    blog: {
+      title: 'Apply What You Just Read',
+      description: 'Resources and industry pages that move this topic into an action path.',
+    },
+    resource: {
+      title: 'Where To Go Next',
+      description: 'Services and industry pages that connect this resource to implementation.',
+    },
+    'case-study': {
+      title: 'Next Best Steps',
+      description: 'One service path and supporting resources that carry this proof forward.',
+    },
+    service: {
+      title: 'Related Services',
+      description: 'Services that support the same decision path without widening the page scope.',
+    },
+    feature: {
+      title: 'Services This Supports',
+      description: 'The parent and related services that turn this capability into a full system.',
+    },
+    'industry-detail': {
+      title: 'Action And Proof For This Industry',
+      description: 'Service options first, then the strongest validating proof for this industry.',
+    },
+    'industry-category': {
+      title: 'Explore This Category',
+      description: 'Sub-industries first, then the strongest service path for this category.',
+    },
+  };
+
 // ── CTA Intensity Config ─────────────────────────────────────────────
 
 export type CTAIntensity = 'soft' | 'mid' | 'strong';

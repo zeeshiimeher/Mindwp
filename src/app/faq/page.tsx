@@ -1,3 +1,4 @@
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import JsonLd from '@/components/system/JsonLd';
 import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { buildFAQSchema } from '@/lib/seo/schema';
@@ -42,9 +43,9 @@ const faqSchema = buildFAQSchema({
 
 export default function FaqPage() {
   return (
-    <>
+    <CTARegistryProvider pageId='page:faq' pageType='page'>
       {faqSchema && <JsonLd id='faq-jsonld' schema={faqSchema} />}
       <FAQPage />
-    </>
+    </CTARegistryProvider>
   );
 }

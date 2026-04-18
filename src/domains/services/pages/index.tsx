@@ -142,7 +142,7 @@ function renderServiceCard(service: ServiceCardData) {
           </p>
         </div>
         <div className='service-lnd__cta l-row l-items-center text-primary text-sm'>
-          Learn More <ArrowRight className='service-lnd__ctaIcon' aria-hidden='true' />
+          See the service path <ArrowRight className='service-lnd__ctaIcon' aria-hidden='true' />
         </div>
       </a>
     </Card>
@@ -193,120 +193,114 @@ export function ServicesLanding() {
       >
         <CTARegistryProvider pageId='page:services' pageType='page'>
           <main role='main'>
-          {/* Hero Section */}
-          <SectionWrapper
-            className='service-lnd service-lnd__hero'
-            background='bg-gradient-surface-muted'
-          >
-            <div className='service-lnd__heroContent l-mx-auto text-center l-stack l-stack--loose'>
-              <Badge variant='primary'>Services Architecture</Badge>
-              <h1 className='service-lnd__title'>The Main Service Paths We Build First</h1>
-              <p className='service-lnd__subtitle text-muted-foreground text-lg'>
-                These are the live Tier 1 and Tier 2 service pages: the core front-door website
-                layer plus the operating systems that strengthen visibility, lead handling,
-                follow-up, and conversion once the structure is in place.
-              </p>
-              <div className='service-lnd__actions l-row l-row-wrap l-gap-4 l-row-center'>
-                <SmartCTA
-                  system='smart-website-systems'
-                  pageType='page'
-                  slug='services'
-                  intent='entry'
-                  position='hero'
-                  mode='actions-only'
-                />
+            {/* Hero Section */}
+            <SectionWrapper
+              className='service-lnd service-lnd__hero'
+              background='bg-gradient-surface-muted'
+            >
+              <div className='service-lnd__heroContent l-mx-auto text-center l-stack l-stack--loose'>
+                <Badge variant='primary'>Services Architecture</Badge>
+                <h1 className='service-lnd__title'>The Main Service Paths We Build First</h1>
+                <p className='service-lnd__subtitle text-muted-foreground text-lg'>
+                  These are the live Tier 1 and Tier 2 service pages: the core front-door website
+                  layer plus the operating systems that strengthen visibility, lead handling,
+                  follow-up, and conversion once the structure is in place.
+                </p>
               </div>
-            </div>
-          </SectionWrapper>
+            </SectionWrapper>
 
-          {/* Structured Services Sections */}
-          <SectionWrapper className='service-lnd service-lnd__gridSec' background='bg-white'>
-            <div className='l-stack l-stack--loose'>
-              {featuredService && (
-                <section className='l-stack l-stack--loose'>
-                  <div className='l-stack'>
-                    <h2>Smart Website Systems</h2>
-                    <p className='text-muted-foreground'>
-                      The structural flagship of the services architecture. This is the featured
-                      front-door system that frames the broader website, enquiry, follow-up, and
-                      revenue chain.
-                    </p>
-                  </div>
-                  <Card className='border-2 shadow-xl bg-gradient-surface-muted'>
-                    <div className='p-8 md:p-10 l-grid l-gap-8 lg:l-grid-2 l-items-center'>
-                      <div className='l-stack l-stack--loose'>
-                        <div className='l-row l-items-center l-gap-3'>
-                          <div
-                            className={`service-lnd__icon icon-container-md ${getVariantStyles('primary').icon.bg}`}
-                          >
-                            <Sparkles
-                              className={getVariantStyles('primary').icon.text}
-                              aria-hidden='true'
+            {/* Structured Services Sections */}
+            <SectionWrapper className='service-lnd service-lnd__gridSec' background='bg-white'>
+              <div className='l-stack l-stack--loose'>
+                {featuredService && (
+                  <section className='l-stack l-stack--loose'>
+                    <div className='l-stack'>
+                      <h2>Smart Website Systems</h2>
+                      <p className='text-muted-foreground'>
+                        The structural flagship of the services architecture. This is the featured
+                        front-door system that frames the broader website, enquiry, follow-up, and
+                        revenue chain.
+                      </p>
+                    </div>
+                    <Card className='border-2 shadow-xl bg-gradient-surface-muted'>
+                      <div className='p-8 md:p-10 l-grid l-gap-8 lg:l-grid-2 l-items-center'>
+                        <div className='l-stack l-stack--loose'>
+                          <div className='l-row l-items-center l-gap-3'>
+                            <div
+                              className={`service-lnd__icon icon-container-md ${getVariantStyles('primary').icon.bg}`}
+                            >
+                              <Sparkles
+                                className={getVariantStyles('primary').icon.text}
+                                aria-hidden='true'
+                              />
+                            </div>
+                            <Badge variant='secondary'>Featured Framework</Badge>
+                          </div>
+                          <div className='l-stack'>
+                            <h3 className='service-lnd__cardTitle'>{featuredService.title}</h3>
+                            <p className='text-muted-foreground text-lg'>
+                              {featuredService.description}
+                            </p>
+                          </div>
+                          <p className='text-sm text-muted-foreground'>
+                            Start here when the website itself has to operate as the commercial
+                            control layer for visibility, response speed, booking, follow-up, and
+                            revenue movement.
+                          </p>
+                          <div>
+                            <Button
+                              href={featuredService.href}
+                              label='Explore Smart Website Systems'
+                              icon={ArrowRight}
+                              showDefaultIcon
                             />
                           </div>
-                          <Badge variant='secondary'>Featured Framework</Badge>
                         </div>
-                        <div className='l-stack'>
-                          <h3 className='service-lnd__cardTitle'>{featuredService.title}</h3>
-                          <p className='text-muted-foreground text-lg'>
-                            {featuredService.description}
-                          </p>
-                        </div>
-                        <p className='text-sm text-muted-foreground'>
-                          Start here when the website itself needs to operate as the core layer that
-                          supports visibility, lead handling, booking, follow-up, and revenue
-                          growth.
-                        </p>
-                        <div>
-                          <Button
-                            href={featuredService.href}
-                            label='Explore Smart Website Systems'
-                            icon={ArrowRight}
-                            showDefaultIcon
-                          />
+                        <div className='l-stack l-gap-4'>
+                          <Card className='p-5'>
+                            <h4 className='mb-2'>Why it leads</h4>
+                            <p className='text-sm text-muted-foreground'>
+                              Supporting systems perform better when the website layer already has
+                              clearer service structure, enquiry capture, routing, and conversion
+                              readiness.
+                            </p>
+                          </Card>
+                          <Card className='p-5'>
+                            <h4 className='mb-2'>What sits beneath it</h4>
+                            <p className='text-sm text-muted-foreground'>
+                              Supporting systems address visibility, AI lead handling, reputation,
+                              and revenue improvement. Modules and implementation pages support
+                              narrower workflow or delivery needs within that same structure.
+                            </p>
+                          </Card>
                         </div>
                       </div>
-                      <div className='l-stack l-gap-4'>
-                        <Card className='p-5'>
-                          <h4 className='mb-2'>Why it leads</h4>
-                          <p className='text-sm text-muted-foreground'>
-                            Supporting systems perform better when the website layer already has
-                            clearer service structure, enquiry capture, routing, and conversion
-                            readiness.
-                          </p>
-                        </Card>
-                        <Card className='p-5'>
-                          <h4 className='mb-2'>What sits beneath it</h4>
-                          <p className='text-sm text-muted-foreground'>
-                            Supporting systems address visibility, AI lead handling, reputation, and
-                            revenue improvement. Modules and implementation pages support narrower
-                            workflow or delivery needs within that same structure.
-                          </p>
-                        </Card>
-                      </div>
-                    </div>
-                  </Card>
-                </section>
-              )}
+                    </Card>
+                  </section>
+                )}
 
-              {renderServiceSection(
-                'Core Service Pages',
-                'This combined listing keeps the main front-door service and the active supporting system pages in one place, without mixing in implementation-only support pages.',
-                PRIMARY_AND_SECONDARY_SERVICE_SLUGS
-              )}
-            </div>
-          </SectionWrapper>
+                {renderServiceSection(
+                  'Core Service Pages',
+                  'This combined listing keeps the main front-door service and the active supporting system pages in one place, without mixing in implementation-only support pages.',
+                  PRIMARY_AND_SECONDARY_SERVICE_SLUGS
+                )}
+              </div>
+            </SectionWrapper>
           </main>
 
           {/* Footer CTA Section */}
+          <div className='text-sm text-muted-foreground text-center l-max-w-2xl l-mx-auto pt-6 pb-3'>
+            If one of these service paths already matches the bottleneck you are seeing, the next
+            step is to pressure-test that diagnosis before you invest in the wrong build.
+          </div>
           <SmartCTA
             system='smart-website-systems'
             pageType='page'
             slug='services'
             intent='conversion'
             position='footer'
-            title='Need help choosing the right service path?'
-            description='Tell us what is breaking first: visibility, lead handling, missed calls, dormant follow-up, or conversion. We will map that problem to the right service page and explain what should come next.'
+            title='Need help identifying the right system build first?'
+            description='Tell us which part of the revenue path is failing first, and we will map that breakdown to the service system that should be fixed before anything else.'
             primaryActionVariant='white'
             cssPrefix='footer-cta'
             backgroundColor='bg-gradient-primary'

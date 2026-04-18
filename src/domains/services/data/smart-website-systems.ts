@@ -99,7 +99,7 @@ export const smartWebsiteSystemsPage = {
       header: {
         title: 'What slips through every week',
         description:
-          "People reach out. Messages land in the wrong place. Your team misses some of them completely, and the rest get answered later than they should.",
+          'People reach out. Messages land in the wrong place. Your team misses some of them completely, and the rest get answered later than they should.',
       },
       items: [
         {

@@ -1,8 +1,10 @@
+import { CTA_RULES_BY_PAGE_TYPE } from '@/config/section-intelligence';
 import {
   type CTAIntent,
   type CTAPosition,
-  type PageIdentity,
   isHomepage,
+  type PageIdentity,
+  type PageType,
 } from '@/lib/page/pageIdentity';
 
 export type CTARegistration = PageIdentity & {
@@ -13,13 +15,43 @@ export type CTARegistration = PageIdentity & {
 
 export type CTARegistry = {
   pageId: string;
+  pageType: PageType;
   entries: Map<string, CTARegistration>;
+  countsByIntent: Record<CTAIntent, number>;
+  countsByPosition: Record<CTAPosition, number>;
 };
+
+type CTARegistrySnapshot = Pick<CTARegistry, 'countsByIntent' | 'countsByPosition'> & {
+  totalPanels: number;
+  entries: CTARegistration[];
+};
+
+function createIntentCounts(): Record<CTAIntent, number> {
+  return {
+    entry: 0,
+    diagnostic: 0,
+    comparison: 0,
+    conversion: 0,
+  };
+}
+
+function createPositionCounts(): Record<CTAPosition, number> {
+  return {
+    hero: 0,
+    'pre-mid': 0,
+    mid: 0,
+    sidebar: 0,
+    footer: 0,
+  };
+}
 
 export function createCTARegistry(pageIdentity: PageIdentity): CTARegistry {
   return {
     pageId: pageIdentity.pageId,
+    pageType: pageIdentity.pageType,
     entries: new Map(),
+    countsByIntent: createIntentCounts(),
+    countsByPosition: createPositionCounts(),
   };
 }
 
@@ -39,54 +71,109 @@ function assertCTA(condition: boolean, message: string, registration: CTARegistr
   throw new Error(formatCTAError(message, registration));
 }
 
+function isInlinePosition(position: CTAPosition) {
+  return position === 'pre-mid' || position === 'mid' || position === 'sidebar';
+}
+
+function syncRegistryCounts(registry: CTARegistry) {
+  const intentCounts = createIntentCounts();
+  const positionCounts = createPositionCounts();
+
+  for (const entry of registry.entries.values()) {
+    intentCounts[entry.intent] += 1;
+    positionCounts[entry.position] += 1;
+  }
+
+  registry.countsByIntent = intentCounts;
+  registry.countsByPosition = positionCounts;
+}
+
+export function getCTARegistrySnapshot(registry: CTARegistry): CTARegistrySnapshot {
+  return {
+    countsByIntent: registry.countsByIntent,
+    countsByPosition: registry.countsByPosition,
+    totalPanels: registry.entries.size,
+    entries: Array.from(registry.entries.values()),
+  };
+}
+
 function validateCTAPlacement(registration: CTARegistration) {
   const { intent, position, pageType, pageId } = registration;
   const homepage = isHomepage(pageId);
 
-  if (intent === 'conversion') {
-    assertCTA(position === 'footer', 'Conversion CTA must render at footer', registration);
+  assertCTA(
+    !(intent === 'conversion' && isInlinePosition(position)),
+    'Inline CTA cannot use conversion intent',
+    registration
+  );
+
+  if (homepage) {
     return;
   }
 
-  if (position === 'footer') {
-    assertCTA(false, 'Footer CTA must use conversion intent', registration);
-  }
+  const pageRule = CTA_RULES_BY_PAGE_TYPE[pageType];
 
-  if (position === 'sidebar') {
+  assertCTA(
+    pageRule.allowedPositions.includes(position),
+    'CTA position is not allowed for this page type',
+    registration
+  );
+
+  if (intent === 'conversion') {
+    assertCTA(
+      pageRule.allowedConversionPositions.includes(position),
+      'Conversion CTA position is not allowed for this page type',
+      registration
+    );
     return;
   }
 
   assertCTA(
-    position === 'hero' || position === 'pre-mid' || position === 'mid',
-    'Inline CTA must render before or at mid-page',
+    pageRule.allowedNonConversionIntents.includes(intent),
+    'CTA intent is not allowed for this page type',
     registration
   );
-
-  if (!homepage && pageType === 'service' && position === 'hero') {
-    return;
-  }
 }
 
 export function registerCTA(registry: CTARegistry, registration: CTARegistration) {
+  assertCTA(
+    registry.pageId === registration.pageId && registry.pageType === registration.pageType,
+    'CTA registry mismatch for page identity',
+    registration
+  );
+
   validateCTAPlacement(registration);
 
   const activeEntries = Array.from(registry.entries.values()).filter(
     entry => entry.instanceId !== registration.instanceId
   );
+  const nextConversionCount =
+    activeEntries.filter(entry => entry.intent === 'conversion').length +
+    (registration.intent === 'conversion' ? 1 : 0);
 
   if (registration.intent === 'conversion') {
-    const existingConversion = activeEntries.find(entry => entry.intent === 'conversion');
-    assertCTA(!existingConversion, 'Duplicate conversion CTA detected', registration);
+    assertCTA(nextConversionCount <= 1, 'Duplicate conversion CTA detected', registration);
   } else if (!isHomepage(registration.pageId)) {
     const duplicateIntent = activeEntries.find(entry => entry.intent === registration.intent);
     assertCTA(!duplicateIntent, 'Duplicate CTA intent detected', registration);
   }
 
+  if (!isHomepage(registration.pageId)) {
+    const pageRule = CTA_RULES_BY_PAGE_TYPE[registration.pageType];
+    assertCTA(
+      activeEntries.length < pageRule.maxPanels,
+      'CTA panel count exceeds page limit',
+      registration
+    );
+  }
+
   registry.entries.set(registration.instanceId, registration);
+  syncRegistryCounts(registry);
 }
 
 export function unregisterCTA(registry: CTARegistry, instanceId: string) {
   registry.entries.delete(instanceId);
+  syncRegistryCounts(registry);
 }
 
 export function reportCTAError(error: Error) {
@@ -94,5 +181,5 @@ export function reportCTAError(error: Error) {
     throw error;
   }
 
-  console.error(error);
+  globalThis.reportError?.(error);
 }

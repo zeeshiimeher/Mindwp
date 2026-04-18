@@ -49,18 +49,14 @@ export function OperationalShiftCardsSection({
                   <p className={`${BLOCK}__eyebrow ${BLOCK}__eyebrow--before`}>
                     {currentStateLabel}
                   </p>
-                  <p className={`${BLOCK}__copy ${BLOCK}__copy--before`}>
-                    {point.before}
-                  </p>
+                  <p className={`${BLOCK}__copy ${BLOCK}__copy--before`}>{point.before}</p>
                 </div>
 
                 <div className={`${BLOCK}__state ${BLOCK}__state--after`}>
                   <p className={`${BLOCK}__eyebrow ${BLOCK}__eyebrow--after`}>
                     {structuredStateLabel}
                   </p>
-                  <p className={`${BLOCK}__copy ${BLOCK}__copy--after`}>
-                    {point.after}
-                  </p>
+                  <p className={`${BLOCK}__copy ${BLOCK}__copy--after`}>{point.after}</p>
                 </div>
               </div>
             </div>

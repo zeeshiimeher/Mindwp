@@ -38,7 +38,7 @@ export const localSeoAuthorityPage = {
     badge: 'Get Found Locally',
     title: 'People Search Nearby. You Still Miss The Click.',
     description:
-      "Someone nearby needs the service you offer right now. Google shows three businesses. Yours is missing, or the details are inconsistent enough that Google does not trust what it sees.",
+      'Someone nearby needs the service you offer right now. Google shows three businesses. Yours is missing, or the details are inconsistent enough that Google does not trust what it sees.',
     cssPrefix: 'website-seo-hero',
     backgroundColor: 'bg-gradient-surface-muted',
     list: ['Scattered details', 'Incomplete profile', 'Hidden services'],
@@ -55,7 +55,7 @@ export const localSeoAuthorityPage = {
         {
           before: '\u201CMore traffic will fix everything.\u201D',
           after:
-            "More traffic to a vague website just wastes more budget. If the site does not clearly show what you do, where you work, and how to contact you, the extra clicks change nothing.",
+            'More traffic to a vague website just wastes more budget. If the site does not clearly show what you do, where you work, and how to contact you, the extra clicks change nothing.',
         },
         {
           before: '\u201CSEO can work around a messy website.\u201D',

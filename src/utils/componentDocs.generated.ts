@@ -785,8 +785,8 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "filePath": "src/components/reusable/single/Card.tsx",
     "summary": "",
     "description": "",
-    "representativeUsageFilePath": "src/app/blog/page.tsx",
-    "representativePageUrl": "/blog",
+    "representativeUsageFilePath": "src/app/resources/[slug]/page.tsx",
+    "representativePageUrl": "/resources/[slug]",
     "usageCount": 70,
     "composedComponents": [],
     "props": [
@@ -12709,7 +12709,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/screens/Homepage.tsx",
     "representativePageUrl": "/",
-    "usageCount": 8,
+    "usageCount": 4,
     "composedComponents": [],
     "props": [
       {
@@ -13611,6 +13611,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "type": "string | undefined",
         "optional": true,
         "description": "Additional class(es) for the root element (additive only)."
+      },
+      {
+        "name": "cta",
+        "type": "SmartCTAProps | undefined",
+        "optional": true,
+        "description": ""
       },
       {
         "name": "description",
@@ -14843,6 +14849,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": "Additional class(es) for the root element (additive only)."
       },
       {
+        "name": "cta",
+        "type": "SmartCTAProps | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
         "name": "description",
         "type": "string | undefined",
         "optional": true,
@@ -15796,6 +15808,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": "Additional class(es) for the root element (additive only)."
       },
       {
+        "name": "cta",
+        "type": "SmartCTAProps | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
         "name": "description",
         "type": "string | undefined",
         "optional": true,
@@ -16238,6 +16256,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "type": "string | undefined",
         "optional": true,
         "description": "Additional class(es) for the root element (additive only)."
+      },
+      {
+        "name": "cta",
+        "type": "SmartCTAProps | undefined",
+        "optional": true,
+        "description": ""
       },
       {
         "name": "description",
@@ -17071,6 +17095,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": "Additional class(es) for the root element (additive only)."
       },
       {
+        "name": "cta",
+        "type": "SmartCTAProps | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
         "name": "description",
         "type": "string | undefined",
         "optional": true,
@@ -17356,6 +17386,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "type": "string[] | undefined",
         "optional": true,
         "description": ""
+      },
+      {
+        "name": "renderParagraph",
+        "type": "((paragraph: string, index: number, className: string) => ReactNode) | undefined",
+        "optional": true,
+        "description": ""
       }
     ]
   },
@@ -17449,6 +17485,12 @@ export const componentDocs: Record<string, ComponentDoc> = {
       {
         "name": "className",
         "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "renderParagraph",
+        "type": "((paragraph: string, index: number, className: string) => ReactNode) | undefined",
         "optional": true,
         "description": ""
       }

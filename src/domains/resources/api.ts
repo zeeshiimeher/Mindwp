@@ -51,23 +51,25 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
   },
   hero: {
     badge: 'Free Resources',
-    title: 'Resources to Grow Your Service Business',
+    title: 'Resources That Expose Where Revenue Still Leaks',
     description:
-      'Practical guides, step-by-step tutorials, and proven strategies to help you get more customers, automate your business, and dominate local search.',
+      'Use these guides to identify where visibility, response speed, follow-up, and conversion still depend on guesswork, then move toward the system that fixes it.',
   },
   topics: {
-    title: 'Browse by Topic',
-    description: 'Find solutions to the most common challenges service businesses face',
+    title: 'Browse by operating problem',
+    description:
+      'Choose the problem cluster first so each next page points toward the system decision that matters.',
     countSuffix: 'guides',
   },
   guides: {
     badge: 'Featured Guides',
-    title: 'Problem/Solution Guides',
+    title: 'Guides that move from symptom to system fix',
     description:
-      'Deep-dive guides that identify common problems and provide both DIY fixes and automated solutions',
+      'Each guide shows what is breaking, what manual fixes look like, and where a structured operating system starts paying back.',
     initialVisibleCount: 15,
     loadMoreLabel: 'Load more resources',
-    comingSoonText: 'More guides coming soon on automation, reviews, and website performance',
+    comingSoonText:
+      'More guides are being added for automation, review generation, response handling, and conversion control.',
   },
   faqPreview: {
     title: 'Have Questions?',
@@ -76,9 +78,9 @@ export const RESOURCE_HUB_DATA: ResourcesHubData = {
     action: { label: 'Browse FAQ', href: '/faq' },
   },
   cta: {
-    title: 'Ready to Apply the Right System?',
+    title: 'Ready to turn the right diagnosis into a working system?',
     description:
-      'These guides show how the pieces fit together. We will show you how to turn website traffic into clearer, more consistent enquiries.',
+      'These guides isolate the bottleneck. We will show you which service path fixes it without adding more manual work or disconnected tools.',
   },
 };
 

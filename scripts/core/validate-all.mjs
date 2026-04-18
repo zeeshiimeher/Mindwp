@@ -98,6 +98,30 @@ const validators = [
     blocking: true,
   },
   {
+    name: 'validate-cta-violations',
+    command: 'npx',
+    args: ['tsx', 'scripts/validators/validate-cta-violations.ts'],
+    blocking: true,
+  },
+  {
+    name: 'validate-related-duplication',
+    command: 'npx',
+    args: ['tsx', 'scripts/validators/validate-related-duplication.ts'],
+    blocking: true,
+  },
+  {
+    name: 'validate-inline-link-misuse',
+    command: 'npx',
+    args: ['tsx', 'scripts/validators/validate-inline-link-misuse.ts'],
+    blocking: true,
+  },
+  {
+    name: 'generate-proof-coverage',
+    command: 'npx',
+    args: ['tsx', 'scripts/validators/generate-proof-coverage.ts'],
+    blocking: false,
+  },
+  {
     name: 'validate-tokens',
     command: 'node',
     args: ['scripts/validators/validate-tokens.mjs', '--report-json'],

@@ -109,7 +109,14 @@ export function getPropertyAssignment(objectLiteral, key) {
 }
 
 export function getPropertyInitializer(objectLiteral, key) {
-  const property = objectLiteral.getProperties().find(item => item.getName() === key);
+  const property = objectLiteral
+    .getProperties()
+    .find(
+      item =>
+        (item.getKind() === SyntaxKind.PropertyAssignment ||
+          item.getKind() === SyntaxKind.ShorthandPropertyAssignment) &&
+        item.getName() === key
+    );
   if (!property) return null;
 
   if (property.getKind() === SyntaxKind.PropertyAssignment) {

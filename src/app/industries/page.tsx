@@ -23,6 +23,8 @@ export async function generateMetadata() {
   return getInventoryMetadata('/industries');
 }
 
-export default function IndustriesPage() {
+export default async function IndustriesPage() {
+  await ensureGraphInitialized();
+
   return <IndustriesLanding />;
 }

@@ -3,7 +3,6 @@
 
 import React from 'react';
 
-import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
 import {
   CaseStudyBusinessImpactSection,
@@ -18,8 +17,9 @@ import {
   CaseStudySolutionSection,
   CaseStudyWorkflowsSection,
 } from '@/components/reusable/sections/case-studies';
-import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { TestimonialCard } from '@/components/reusable/single';
+import { FAQSection } from '@/components/reusable/single/FAQSection';
+import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
 
@@ -302,23 +302,23 @@ export function CaseStudyTemplate({
       <CTARegistryProvider pageId={pageId} pageType='case-study'>
         <div className='case-study-detail'>
           <main className='l-section'>
-          <div className='l-container'>
-            <div className='resource-page__dev-error'>
-              <h2 className='resource-page__dev-error-title'>
-                Case Study Template Configuration Error
-              </h2>
-              <p className='resource-page__dev-error-text'>
-                This case study is missing required sections. Please add:
-              </p>
-              <ul className='resource-page__dev-error-list'>
-                {missingSections.map(section => (
-                  <li key={section} className='capitalize'>
-                    {section.replace('-', ' ')} section
-                  </li>
-                ))}
-              </ul>
+            <div className='l-container'>
+              <div className='resource-page__dev-error'>
+                <h2 className='resource-page__dev-error-title'>
+                  Case Study Template Configuration Error
+                </h2>
+                <p className='resource-page__dev-error-text'>
+                  This case study is missing required sections. Please add:
+                </p>
+                <ul className='resource-page__dev-error-list'>
+                  {missingSections.map(section => (
+                    <li key={section} className='capitalize'>
+                      {section.replace('-', ' ')} section
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
           </main>
         </div>
       </CTARegistryProvider>
@@ -382,12 +382,32 @@ export function CaseStudyTemplate({
 
       case 'results':
         return (
-          <CaseStudyResultsSection
-            key={`results-${index}`}
-            detailedResultsBadgeLabel={resolvedDetailedResultsBadgeLabel}
-            detailedResultsSectionTitle={resolvedDetailedResultsSectionTitle}
-            results={section.results}
-          />
+          <React.Fragment key={`results-${index}`}>
+            <CaseStudyResultsSection
+              detailedResultsBadgeLabel={resolvedDetailedResultsBadgeLabel}
+              detailedResultsSectionTitle={resolvedDetailedResultsSectionTitle}
+              results={section.results}
+            />
+            <div className='l-container'>
+              <div className='text-sm text-muted-foreground l-max-w-3xl pt-2 pb-3'>
+                These gains came from fixing the workflow underneath the result, not just making the
+                page look better. The next step is to test whether the same handoff, response, or
+                routing issue is still slowing down your business and which system change would
+                remove it first.
+              </div>
+            </div>
+            <SmartCTA
+              system={metadata.systems[0] ?? 'smart-website-systems'}
+              pageType='case-study'
+              slug={metadata.slug}
+              intent='diagnostic'
+              position='mid'
+              title='Want to see which handoff fix would create the biggest lift in your business?'
+              description='We can map which part of your enquiry, routing, or follow-up flow matches the breakdown this case study fixed so you leave with a clearer first priority before committing to implementation.'
+              primaryActionVariant='primary'
+              backgroundColor='bg-base'
+            />
+          </React.Fragment>
         );
 
       case 'testimonial':
@@ -501,13 +521,27 @@ export function CaseStudyTemplate({
     <CTARegistryProvider pageId={pageId} pageType='case-study'>
       <div className='case-study-detail'>
         {featuredImage ? (
-        <div
-          style={{
-            backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
+          <div
+            style={{
+              backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), url(${featuredImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+          >
+            <CaseStudyHeroSection
+              backToCaseStudiesLabel={backToCaseStudiesLabel}
+              industry={metadata.industryLabel}
+              duration={metadata.duration}
+              heroHeadline={metadata.heroHeadline}
+              scenarioBadge={resolvedScenarioBadgeLabel}
+              heroIntroHtml={heroSection?.introHtml}
+              business={metadata.business}
+              location={metadata.location}
+              completedDate={metadata.completedDate}
+              backgroundColor=''
+            />
+          </div>
+        ) : (
           <CaseStudyHeroSection
             backToCaseStudiesLabel={backToCaseStudiesLabel}
             industry={metadata.industryLabel}
@@ -518,21 +552,7 @@ export function CaseStudyTemplate({
             business={metadata.business}
             location={metadata.location}
             completedDate={metadata.completedDate}
-            backgroundColor=''
           />
-        </div>
-        ) : (
-        <CaseStudyHeroSection
-          backToCaseStudiesLabel={backToCaseStudiesLabel}
-          industry={metadata.industryLabel}
-          duration={metadata.duration}
-          heroHeadline={metadata.heroHeadline}
-          scenarioBadge={resolvedScenarioBadgeLabel}
-          heroIntroHtml={heroSection?.introHtml}
-          business={metadata.business}
-          location={metadata.location}
-          completedDate={metadata.completedDate}
-        />
         )}
 
         {inFlowSections.map((section, index) => renderSection(section, index))}
