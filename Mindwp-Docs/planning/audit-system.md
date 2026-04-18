@@ -5,6 +5,36 @@
 
 ---
 
+## 0. LIVE EXECUTION TRACKER
+
+Run date: 2026-04-19
+Tracker status: active
+
+### Current State
+
+- Pre-flight baseline: complete, clean after Phase 0 fix.
+- Report reset: complete, reports regenerated with fresh 2026-04-19 timestamps.
+- Phase 0: complete.
+- Phase 1: in progress.
+- Phase 2: not started.
+- Phase 3: not started.
+- Phase 4: not started.
+
+### Completed In This Run
+
+- Stabilized the post-reset baseline by extending the timeout on the internal-links validator contract test so the full cold suite no longer flakes.
+- Re-ran `npm run validate`, `npm run build`, and `CI=1 npm run test` successfully after the Phase 0 fix.
+- Created checkpoint commit `4ab9b4f` with message `chore: stabilize post-reset baseline`.
+- Deleted `src/lib/utils/memoize.ts` after confirming no workspace usages beyond the file definition and this execution spec.
+
+### Phase 1 Verification Log
+
+- Blocked: `scripts/analyzers/test-editing-stability.mjs`
+  - Reason: still referenced in this spec, `scripts/system/script-registry.json`, and `Mindwp-Docs/core/TOOLS.md`.
+- Excluded from current delete pass by spec: `heading-audit.cjs`, `split-screenshots.cjs`, `visual-audit-runtime.js`, `visual-audit-engine.js`, `run-visual-audit.js`.
+- Completed: `src/lib/utils/memoize.ts`
+  - Evidence: language-server usage search returned only the definition; text search found no workspace imports or call sites outside this execution spec.
+
 ## 1. ENFORCEMENT MODEL (FINAL)
 
 ### Build Blocking (MUST FAIL)
