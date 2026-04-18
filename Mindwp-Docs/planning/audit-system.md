@@ -15,8 +15,8 @@ Tracker status: active
 - Pre-flight baseline: complete, clean after Phase 0 fix.
 - Report reset: complete, reports regenerated with fresh 2026-04-19 timestamps.
 - Phase 0: complete.
-- Phase 1: in progress.
-- Phase 2: not started.
+- Phase 1: complete.
+- Phase 2: in progress.
 - Phase 3: not started.
 - Phase 4: not started.
 
@@ -30,6 +30,7 @@ Tracker status: active
 - Deleted `scripts/validators/validate-fix-log.mjs` and removed its remaining `validate-all`, registry, and documentation references.
 - Deleted `scripts/validators/validate-reports-structure.mjs` and removed its remaining `validate-all`, registry, npm script, and documentation references.
 - Deleted `scripts/validators/validate-checklist.mjs` with the full dormant `src/lib/dev/*` checklist-engine cluster and removed their remaining registry and documentation references.
+- Merged `tests/integration/sitemap-robots-consistency.test.ts` into `tests/system/seo-consistency.test.ts` and deleted the integration copy.
 
 ### Phase 1 Verification Log
 
