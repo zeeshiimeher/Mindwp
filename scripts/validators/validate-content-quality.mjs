@@ -5,6 +5,7 @@ import path from 'node:path';
 
 import { BLOG_POSTS } from '../../src/domains/blog/registry';
 import { RESOURCE_REGISTRY } from '../../src/domains/resources/registry';
+import { resolveContentRules } from '../../src/lib/config/contentRules';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 import { getStructuredContentGraph } from '../../src/lib/content-graph/registry';
 import { buildRouteInventory, getInventoryMetadata } from '../../src/lib/content-quality/inventory';
@@ -14,8 +15,18 @@ import { createSystemIssue } from '../lib/system-issues.mjs';
 
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'content-quality-report.json');
-const MIN_INDEXABLE_DESCRIPTION_LENGTH = 60;
-const MIN_NON_INDEXABLE_DESCRIPTION_LENGTH = 50;
+
+function resolveContentQualityPageType(kind) {
+  if (kind === 'service' || kind === 'feature' || kind === 'blog' || kind === 'resource' || kind === 'case-study') {
+    return kind;
+  }
+
+  if (kind === 'industry-category' || kind === 'industry-detail') {
+    return 'industry';
+  }
+
+  return 'static';
+}
 
 function addIssue(target, payload) {
   target.push(payload);
@@ -109,16 +120,17 @@ function buildDuplicateMap(entries, field) {
 }
 
 function isWeakTitle(title, routePath) {
+  const rules = resolveContentRules('static').contentQuality;
   const value = title.trim();
   if (routePath === '/') {
     return false;
   }
 
-  if (/^[A-Z0-9]{2,6}$/.test(value)) {
+  if (rules.weakTitleAcronymPattern.test(value)) {
     return false;
   }
 
-  return value.length < 4;
+  return value.length < rules.weakTitleMinimumLength;
 }
 
 function collectStaticAppRoutes(appRoot) {
@@ -217,6 +229,7 @@ async function main() {
 
   for (const entry of routeEntries) {
     const label = `${entry.kind}/${entry.path}`;
+    const contentQualityRules = resolveContentRules(resolveContentQualityPageType(entry.kind)).contentQuality;
 
     try {
       const metadata = await getInventoryMetadata(entry.path);
@@ -398,8 +411,8 @@ async function main() {
     }
 
     const minimumDescriptionLength = entry.indexable
-      ? MIN_INDEXABLE_DESCRIPTION_LENGTH
-      : MIN_NON_INDEXABLE_DESCRIPTION_LENGTH;
+      ? contentQualityRules.minIndexableDescriptionLength
+      : contentQualityRules.minNonIndexableDescriptionLength;
 
     if (entry.description.length < minimumDescriptionLength) {
       addIssue(

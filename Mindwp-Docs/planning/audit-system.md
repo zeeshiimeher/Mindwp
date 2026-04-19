@@ -17,7 +17,7 @@ Tracker status: active
 - Phase 0: complete.
 - Phase 1: complete.
 - Phase 2: complete.
-- Phase 3: not started.
+- Phase 3: in progress.
 - Phase 4: not started.
 
 ### Completed In This Run
@@ -35,6 +35,7 @@ Tracker status: active
 - Stabilized the retained Playwright contact proof for Turnstile-gated submission by supplying a test site key in the Playwright web server environment and seeding the test CAPTCHA token inside `tests/e2e/conversion.spec.ts`.
 - Deleted `tests/integration/performance-budget.test.ts` because it enforced render-speed and markup-size budgets rather than release correctness.
 - Deleted `tests/system/graph-cold-start-performance.test.ts` because it enforced a cold-start timing budget rather than a release-correctness invariant.
+- Added `src/lib/config/contentRules.ts` and switched `validate-section-structure.mjs`, `validate-template-payload-sufficiency.mjs`, `validate-internal-links.ts`, and `validate-content-quality.mjs` to `resolveContentRules()` without changing the active thresholds.
 
 ### Phase 1 Verification Log
 

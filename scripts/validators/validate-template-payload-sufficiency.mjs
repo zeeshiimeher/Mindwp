@@ -6,6 +6,7 @@ import { fileURLToPath } from 'node:url';
 
 import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
 import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
+import { resolveContentRules } from '@/lib/config/contentRules';
 
 import {
   hasText,
@@ -27,18 +28,30 @@ function pushViolation(pageType, slug, rule, detail) {
 
 function validateServicePages(pages) {
   for (const page of pages) {
-    if (!hasText(page.hero.title) || !hasText(page.hero.description)) {
+    const rules = resolveContentRules('service', page.slug).templatePayload;
+    const serviceRules = rules.service;
+
+    if (
+      (serviceRules.heroTitleRequired && !hasText(page.hero.title)) ||
+      (serviceRules.heroDescriptionRequired && !hasText(page.hero.description))
+    ) {
       pushViolation('service', page.slug, 'hero-incomplete', 'Hero requires title and description.');
     }
 
     if (page.cta) {
-      if (!hasText(page.cta.title) || !hasText(page.cta.description)) {
+      if (
+        (serviceRules.ctaTitleRequired && !hasText(page.cta.title)) ||
+        (serviceRules.ctaDescriptionRequired && !hasText(page.cta.description))
+      ) {
         pushViolation('service', page.slug, 'cta-copy-incomplete', 'CTA block requires title and description.');
       }
     }
 
     if (page.inlineCta) {
-      if (!hasText(page.inlineCta.title) || !hasText(page.inlineCta.description)) {
+      if (
+        (serviceRules.inlineCtaTitleRequired && !hasText(page.inlineCta.title)) ||
+        (serviceRules.inlineCtaDescriptionRequired && !hasText(page.inlineCta.description))
+      ) {
         pushViolation('service', page.slug, 'inline-cta-copy-incomplete', 'Inline CTA requires title and description.');
       }
     }
@@ -46,44 +59,59 @@ function validateServicePages(pages) {
 }
 
 function validateFeaturePages(pages) {
-  const requiredSections = ['process', 'benefits', 'useCases', 'capabilities', 'faq', 'explore'];
-
   for (const page of pages) {
-    if (!hasText(page.hero.title) || !hasText(page.hero.description)) {
+    const rules = resolveContentRules('feature', page.slug).templatePayload;
+    const featureRules = rules.feature;
+
+    if (
+      (featureRules.heroTitleRequired && !hasText(page.hero.title)) ||
+      (featureRules.heroDescriptionRequired && !hasText(page.hero.description))
+    ) {
       pushViolation('feature', page.slug, 'hero-incomplete', 'Hero requires title and description.');
     }
 
-    for (const sectionKey of requiredSections) {
+    for (const sectionKey of featureRules.requiredSectionKeys) {
       if (!page.sections[sectionKey]) {
         pushViolation('feature', page.slug, 'missing-required-section', `Missing required section: ${sectionKey}.`);
       }
     }
 
-    if (!hasText(page.cta?.title) || !hasText(page.cta?.description)) {
+    if (
+      (featureRules.ctaTitleRequired && !hasText(page.cta?.title)) ||
+      (featureRules.ctaDescriptionRequired && !hasText(page.cta?.description))
+    ) {
       pushViolation('feature', page.slug, 'cta-copy-incomplete', 'Feature CTA requires title and description.');
     }
   }
 }
 
 function validateResourcePages(resources) {
-  const requiredTypes = ['hero', 'problem', 'diy', 'cta', 'related-resources'];
-
   for (const resource of resources) {
+    const rules = resolveContentRules('resource', resource.slug).templatePayload;
+    const resourceRules = rules.resource;
     const sectionTypes = new Set(resource.sections.map(section => section.type));
 
-    for (const requiredType of requiredTypes) {
+    for (const requiredType of resourceRules.requiredSectionTypes) {
       if (!sectionTypes.has(requiredType)) {
         pushViolation('resource', resource.slug, 'missing-required-section', `Missing required section: ${requiredType}.`);
       }
     }
 
     const cta = resource.sections.find(section => section.type === 'cta');
-    if (!cta || !hasText(cta.heading) || !hasText(cta.content)) {
+    if (
+      !cta ||
+      (resourceRules.ctaHeadingRequired && !hasText(cta.heading)) ||
+      (resourceRules.ctaContentRequired && !hasText(cta.content))
+    ) {
       pushViolation('resource', resource.slug, 'cta-incomplete', 'Resource CTA requires heading and content.');
     }
 
     const related = resource.sections.find(section => section.type === 'related-resources');
-    if (!related || !Array.isArray(related.resources) || related.resources.length === 0) {
+    if (
+      !related ||
+      !Array.isArray(related.resources) ||
+      related.resources.length < resourceRules.relatedResourcesMin
+    ) {
       pushViolation('resource', resource.slug, 'related-resources-missing', 'Resource page requires at least one related resource.');
     }
   }
@@ -91,19 +119,25 @@ function validateResourcePages(resources) {
 
 function validateCaseStudies(caseStudies) {
   for (const caseStudy of caseStudies) {
+    const rules = resolveContentRules('case-study', caseStudy.slug).templatePayload;
+    const caseStudyRules = rules.caseStudy;
     const sectionTypes = new Set(caseStudy.sections.map(section => section.type));
 
-    if (!sectionTypes.has('hero')) {
+    if (caseStudyRules.heroSectionRequired && !sectionTypes.has('hero')) {
       pushViolation('case-study', caseStudy.slug, 'missing-required-section', 'Missing required hero section.');
     }
 
     const cta = caseStudy.sections.find(section => section.type === 'cta');
-    if (!cta) {
+    if (caseStudyRules.ctaSectionRequired && !cta) {
       pushViolation('case-study', caseStudy.slug, 'missing-required-section', 'Missing required cta section.');
       continue;
     }
 
-    if (!hasText(cta.heading) || !hasText(cta.body)) {
+    if (
+      !cta ||
+      (caseStudyRules.ctaHeadingRequired && !hasText(cta.heading)) ||
+      (caseStudyRules.ctaBodyRequired && !hasText(cta.body))
+    ) {
       pushViolation('case-study', caseStudy.slug, 'cta-copy-incomplete', 'Case study CTA requires heading and body.');
     }
   }
@@ -111,16 +145,25 @@ function validateCaseStudies(caseStudies) {
 
 function validateIndustryPages(pages) {
   for (const page of pages) {
-    if (!hasText(page.hero.title) || !hasText(page.hero.description)) {
+    const rules = resolveContentRules('industry', page.slug).templatePayload;
+    const industryRules = rules.industry;
+
+    if (
+      (industryRules.heroTitleRequired && !hasText(page.hero.title)) ||
+      (industryRules.heroDescriptionRequired && !hasText(page.hero.description))
+    ) {
       pushViolation('industry', page.slug, 'hero-incomplete', 'Hero requires title and description.');
     }
 
-    if (!hasText(page.cta?.title) || !hasText(page.cta?.description)) {
+    if (
+      (industryRules.ctaTitleRequired && !hasText(page.cta?.title)) ||
+      (industryRules.ctaDescriptionRequired && !hasText(page.cta?.description))
+    ) {
       pushViolation('industry', page.slug, 'cta-copy-incomplete', 'Industry CTA requires title and description.');
     }
 
     if (page.type === 'detail') {
-      if (!page.faq || !Array.isArray(page.faq.faqs) || page.faq.faqs.length === 0) {
+      if (!page.faq || !Array.isArray(page.faq.faqs) || page.faq.faqs.length < industryRules.detailFaqMin) {
         pushViolation('industry', page.slug, 'faq-missing', 'Industry detail pages require a populated FAQ block.');
       }
     }

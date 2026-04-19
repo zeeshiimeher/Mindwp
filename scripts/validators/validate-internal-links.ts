@@ -12,6 +12,7 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 
 import { AUTHORITY_MAP } from '../../src/lib/authority/generated/authorityMap';
+import { resolveContentRules, type ContentRulePageType } from '../../src/lib/config/contentRules';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 import { buildRouteInventory } from '../../src/lib/content-quality/inventory';
 import { buildRelatedContent } from '../../src/lib/related/buildRelatedContent';
@@ -19,8 +20,6 @@ import { getRelatedContent } from '../../src/lib/graph/query';
 import type { ContentNodeType } from '../../src/lib/content-graph/types';
 import { normalizeInternalTarget } from '../../src/lib/seo/config';
 
-const MAX_SECTIONS_PER_PAGE = 1;
-const MAX_TOTAL_LINKS = 3;
 const SOURCE_SCAN_ROOTS = ['src/app', 'src/components', 'src/domains', 'src/screens'];
 const AUTHORED_HREF_PATTERN = /(?:href\s*:\s*|href=)(['"])(\/[^'"\s}]*)\1/g;
 const INTERNAL_LINK_BASE_ORIGIN = 'https://mindwp.local';
@@ -85,6 +84,18 @@ function stripComments(content: string) {
     .replace(/(^|\s+)\/\/.*$/gm, '$1');
 }
 
+function resolvePageTypeForAuthorityMapKey(mapKey: keyof typeof AUTHORITY_MAP): ContentRulePageType {
+  if (mapKey === 'caseStudy') {
+    return 'case-study';
+  }
+
+  if (mapKey === 'industry') {
+    return 'industry';
+  }
+
+  return mapKey;
+}
+
 async function validateAuthoredInternalLinks(validPaths: Set<string>) {
   const sourceFiles = (
     await Promise.all(SOURCE_SCAN_ROOTS.map(scanRoot => collectSourceFiles(path.join(root, scanRoot))))
@@ -113,7 +124,8 @@ async function validateAuthoredInternalLinks(validPaths: Set<string>) {
   }
 }
 
-function validateRelatedContent(slug: string, type: ContentNodeType) {
+function validateRelatedContent(slug: string, type: ContentNodeType, pageType: ContentRulePageType) {
+  const rules = resolveContentRules(pageType, slug).internalLinks;
   const related = getRelatedContent(slug, type);
   const output = buildRelatedContent({
     pageId: `${type}:${slug}`,
@@ -123,24 +135,24 @@ function validateRelatedContent(slug: string, type: ContentNodeType) {
   });
   const groups = output.groups ?? [];
 
-  if (groups.length > MAX_SECTIONS_PER_PAGE) {
+  if (groups.length > rules.maxSectionsPerPage) {
     violations.push({
       slug,
       type,
       rule: 'max-sections',
-      detail: `${groups.length} sections (max ${MAX_SECTIONS_PER_PAGE})`,
+      detail: `${groups.length} sections (max ${rules.maxSectionsPerPage})`,
     });
   }
 
   const items = groups.flatMap(group => group.items);
   const seenHrefs = new Set<string>();
 
-  if (items.length > MAX_TOTAL_LINKS) {
+  if (items.length > rules.maxTotalLinks) {
     violations.push({
       slug,
       type,
       rule: 'max-total-links',
-      detail: `${items.length} total related links (max ${MAX_TOTAL_LINKS})`,
+      detail: `${items.length} total related links (max ${rules.maxTotalLinks})`,
     });
   }
 
@@ -191,9 +203,10 @@ const validPaths = new Set(inventoryEntries.map(entry => entry.path));
 
 for (const [mapKey, nodeType] of typeMap) {
   const entries = AUTHORITY_MAP[mapKey];
+  const pageType = resolvePageTypeForAuthorityMapKey(mapKey);
   for (const slug of Object.keys(entries)) {
     totalPages++;
-    validateRelatedContent(slug, nodeType);
+    validateRelatedContent(slug, nodeType, pageType);
   }
 }
 
@@ -209,7 +222,8 @@ if (violations.length > 0) {
   console.error('');
   process.exit(1);
 } else {
+  const rules = resolveContentRules('static').internalLinks;
   console.log(
-    `✓ Internal link validation passed (${totalPages} pages, max ${MAX_SECTIONS_PER_PAGE} related section, max ${MAX_TOTAL_LINKS} related items, authored href targets valid, 0 violations)`
+    `✓ Internal link validation passed (${totalPages} pages, max ${rules.maxSectionsPerPage} related section, max ${rules.maxTotalLinks} related items, authored href targets valid, 0 violations)`
   );
 }
