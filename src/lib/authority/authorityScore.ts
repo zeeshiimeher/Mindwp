@@ -1,4 +1,3 @@
-import { bulkSetAuthority } from '../cache/authorityCache';
 import { getResolverIndexes } from '../content-graph/resolverIndexes';
 import { scoreRelationship } from '../content-graph/scoring';
 import type { ContentGraphNode, ContentNodeType } from '../content-graph/types';
@@ -95,9 +94,6 @@ export function computeAuthorityScores(): Record<string, number> {
   }
 
   _cache = scores;
-
-  // Warm the shared authority cache for individual slug lookups
-  bulkSetAuthority(scores);
 
   return scores;
 }

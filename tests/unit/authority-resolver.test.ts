@@ -2,8 +2,7 @@
 
 import { describe, expect, test } from 'vitest';
 
-import { createResolver } from '@/lib/authority/resolver';
-import { clearResolverCache } from '@/lib/cache/resolverCache';
+import { clearResolverCache, createResolver } from '@/lib/authority/resolver';
 import type { ContentGraphNode, ResolverDependencies, ResolverIndexes } from '@/lib/content-graph/types';
 
 function buildResolverIndexes(nodes: ContentGraphNode[]): ResolverIndexes {

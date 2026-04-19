@@ -1,4 +1,3 @@
-import { getCachedResolver, setCachedResolver } from '../cache/resolverCache';
 import { scoreRelationship } from '../content-graph/scoring';
 import type {
   AttributedEdge,
@@ -17,6 +16,8 @@ export type AuthorityItem = {
   path: string;
   nodeType: ContentNodeType;
 };
+
+type ResolverSlotResult = Record<string, AuthorityItem[]>;
 
 // ─── Constants ───────────────────────────────────────────────────────────────
 
@@ -59,6 +60,16 @@ const titleFromSlug = (slug: string) =>
     .replace(/[-/]+/g, ' ')
     .trim()
     .replace(/\b\w/g, c => c.toUpperCase());
+
+const resolverCache = new Map<string, ResolverSlotResult>();
+
+export function clearResolverCache(): void {
+  resolverCache.clear();
+}
+
+export function resolverCacheSize(): number {
+  return resolverCache.size;
+}
 
 // ─── Factory ─────────────────────────────────────────────────────────────────
 
@@ -224,72 +235,72 @@ export function createResolver(deps: ResolverDependencies, indexes: ResolverInde
 
   function getServiceSlots(slug: string) {
     const key = `service:${slug}`;
-    const cached = getCachedResolver(key);
+    const cached = resolverCache.get(key);
     if (cached) return cached;
     const result = {
       services: resolveSlot(slug, ['service'], ['service']),
     };
-    setCachedResolver(key, result);
+    resolverCache.set(key, result);
     return result;
   }
 
   function getFeatureSlots(slug: string) {
     const key = `feature:${slug}`;
-    const cached = getCachedResolver(key);
+    const cached = resolverCache.get(key);
     if (cached) return cached;
     const result = {
       services: resolveSlot(slug, ['feature'], ['service']),
     };
-    setCachedResolver(key, result);
+    resolverCache.set(key, result);
     return result;
   }
 
   function getBlogSlots(slug: string) {
     const key = `blog:${slug}`;
-    const cached = getCachedResolver(key);
+    const cached = resolverCache.get(key);
     if (cached) return cached;
     const result = {
       resources: resolveSlot(slug, ['blog'], ['resource']),
       industries: resolveSlot(slug, ['blog'], ['industry-detail']),
     };
-    setCachedResolver(key, result);
+    resolverCache.set(key, result);
     return result;
   }
 
   function getResourceSlots(slug: string) {
     const key = `resource:${slug}`;
-    const cached = getCachedResolver(key);
+    const cached = resolverCache.get(key);
     if (cached) return cached;
     const result = {
       services: resolveSlot(slug, ['resource'], ['service']),
       industries: resolveSlot(slug, ['resource'], ['industry-detail']),
     };
-    setCachedResolver(key, result);
+    resolverCache.set(key, result);
     return result;
   }
 
   function getCaseStudySlots(slug: string) {
     const key = `case-study:${slug}`;
-    const cached = getCachedResolver(key);
+    const cached = resolverCache.get(key);
     if (cached) return cached;
     const result = {
       industries: resolveSlot(slug, ['case-study'], ['industry-detail']),
       resources: resolveSlot(slug, ['case-study'], ['resource']),
     };
-    setCachedResolver(key, result);
+    resolverCache.set(key, result);
     return result;
   }
 
   function getIndustrySlots(slug: string) {
     const key = `industry:${slug}`;
-    const cached = getCachedResolver(key);
+    const cached = resolverCache.get(key);
     if (cached) return cached;
     const result = {
       services: resolveSlot(slug, ['industry-detail', 'industry-category'], ['service']),
       caseStudies: resolveSlot(slug, ['industry-detail', 'industry-category'], ['case-study']),
       resources: resolveSlot(slug, ['industry-detail', 'industry-category'], ['resource']),
     };
-    setCachedResolver(key, result);
+    resolverCache.set(key, result);
     return result;
   }
 

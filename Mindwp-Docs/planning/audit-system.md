@@ -17,7 +17,7 @@ Tracker status: active
 - Phase 0: complete.
 - Phase 1: complete.
 - Phase 2: complete.
-- Phase 3: in progress.
+- Phase 3: complete.
 - Phase 4: not started.
 
 ### Completed In This Run
@@ -37,6 +37,7 @@ Tracker status: active
 - Deleted `tests/system/graph-cold-start-performance.test.ts` because it enforced a cold-start timing budget rather than a release-correctness invariant.
 - Added `src/lib/config/contentRules.ts` and switched `validate-section-structure.mjs`, `validate-template-payload-sufficiency.mjs`, `validate-internal-links.ts`, and `validate-content-quality.mjs` to `resolveContentRules()` without changing the active thresholds.
 - Moved `src/lib/cta/industryPresentation.ts` to `src/domains/industries/utils/industryPresentation.ts` and updated the industry templates to import the domain-local utility.
+- Removed `src/lib/cache/authorityCache.ts` and `src/lib/cache/resolverCache.ts` after collapsing resolver cache ownership into `src/lib/authority/resolver.ts` and removing the dead authority-cache warm path.
 
 ### Phase 1 Verification Log
 
