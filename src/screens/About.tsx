@@ -108,6 +108,8 @@ export function About() {
                 system='smart-website-systems'
                 pageType='page'
                 slug='about'
+                intent='conversion'
+                position='footer'
                 mode='actions-only'
                 primaryActionVariant='white'
               />

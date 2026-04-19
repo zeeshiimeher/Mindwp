@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-18T21:05:30.399Z",
+  "generatedAt": "2026-04-19T03:08:37.535Z",
   "topicsAnalyzed": 42,
   "averageScore": 81,
   "completeCoverageTopics": 42,
@@ -1329,5 +1329,6 @@
         "No case studies currently reinforce proof for this topic."
       ]
     }
-  ]
+  ],
+  "sourceCommand": "node --import tsx/esm scripts/generators/generate-topic-authority-scores.ts"
 }

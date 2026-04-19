@@ -18,7 +18,7 @@ Tracker status: active
 - Phase 1: complete.
 - Phase 2: complete.
 - Phase 3: complete.
-- Phase 4: not started.
+- Phase 4: complete.
 
 ### Completed In This Run
 
@@ -38,6 +38,8 @@ Tracker status: active
 - Added `src/lib/config/contentRules.ts` and switched `validate-section-structure.mjs`, `validate-template-payload-sufficiency.mjs`, `validate-internal-links.ts`, and `validate-content-quality.mjs` to `resolveContentRules()` without changing the active thresholds.
 - Moved `src/lib/cta/industryPresentation.ts` to `src/domains/industries/utils/industryPresentation.ts` and updated the industry templates to import the domain-local utility.
 - Removed `src/lib/cache/authorityCache.ts` and `src/lib/cache/resolverCache.ts` after collapsing resolver cache ownership into `src/lib/authority/resolver.ts` and removing the dead authority-cache warm path.
+- Reset `/reports`, repaired `scripts/analyzers/export-reports.mjs` to regenerate surviving report producers and stamp dashboard-facing JSON with `sourceCommand`, and confirmed the refreshed report set was same-run.
+- Fixed the `/about` runtime CTA registration collision by making the footer `SmartCTA` explicit `conversion/footer`, then re-ran the full final release gate successfully.
 
 ### Phase 1 Verification Log
 

@@ -1,0 +1,96 @@
+{
+  "generatedAt": "2026-04-19T03:08:39.082Z",
+  "sourceCommand": "node --import tsx/esm scripts/analyzers/export-reports.mjs",
+  "summary": {
+    "totalPages": 350,
+    "healthy": 350,
+    "weak": 0,
+    "critical": 0
+  },
+  "validation": {
+    "passed": 21,
+    "failed": 0,
+    "blockingFailed": 0,
+    "advisoryFailed": 0,
+    "total": 21
+  },
+  "contentQuality": {
+    "issueCount": 0,
+    "warningCount": 0
+  },
+  "graph": {
+    "errorCount": 0,
+    "warningCount": 0
+  },
+  "reports": [
+    {
+      "name": "authority-map.json"
+    },
+    {
+      "name": "content-contract-report.json"
+    },
+    {
+      "name": "content-gaps.json"
+    },
+    {
+      "name": "content-gaps.md"
+    },
+    {
+      "name": "content-quality-report.json"
+    },
+    {
+      "name": "conversion-contract-report.json"
+    },
+    {
+      "name": "cta-label-contract-report.json"
+    },
+    {
+      "name": "cta-violation-scan.json"
+    },
+    {
+      "name": "design-system-report.json"
+    },
+    {
+      "name": "docs-report.json"
+    },
+    {
+      "name": "domain-structure-report.json"
+    },
+    {
+      "name": "graph-report.json"
+    },
+    {
+      "name": "inline-link-misuse-scan.json"
+    },
+    {
+      "name": "inline-style-report.json"
+    },
+    {
+      "name": "proof-coverage.json"
+    },
+    {
+      "name": "related-duplication-scan.json"
+    },
+    {
+      "name": "section-structure-report.json"
+    },
+    {
+      "name": "template-payload-report.json"
+    },
+    {
+      "name": "token-report.json"
+    },
+    {
+      "name": "topic-authority-scores.json"
+    },
+    {
+      "name": "topic-authority-scores.md"
+    },
+    {
+      "name": "validation-results.json"
+    },
+    {
+      "name": "vocabulary-report.json"
+    }
+  ]
+}

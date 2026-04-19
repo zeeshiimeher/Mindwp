@@ -229,12 +229,20 @@ const DEFAULT_CONTENT_RULES: ContentRules = {
   },
 };
 
-const PAGE_TYPE_RULE_OVERRIDES: Partial<Record<ContentRulePageType, PartialDeep<ContentRules>>> = {};
+const PAGE_TYPE_RULE_OVERRIDES: Partial<Record<ContentRulePageType, PartialDeep<ContentRules>>> =
+  {};
 
-const SLUG_RULE_OVERRIDES: Partial<Record<`${ContentRulePageType}:${string}`, PartialDeep<ContentRules>>> = {};
+const SLUG_RULE_OVERRIDES: Partial<
+  Record<`${ContentRulePageType}:${string}`, PartialDeep<ContentRules>>
+> = {};
 
 function isPlainObject(value: unknown): value is Record<string, unknown> {
-  return Boolean(value) && typeof value === 'object' && !Array.isArray(value) && !(value instanceof RegExp);
+  return (
+    Boolean(value) &&
+    typeof value === 'object' &&
+    !Array.isArray(value) &&
+    !(value instanceof RegExp)
+  );
 }
 
 function deepMerge<T>(base: T, override?: PartialDeep<T>): T {
@@ -254,7 +262,8 @@ function deepMerge<T>(base: T, override?: PartialDeep<T>): T {
     }
 
     const current = merged[key];
-    merged[key] = isPlainObject(current) && isPlainObject(value) ? deepMerge(current, value) : value;
+    merged[key] =
+      isPlainObject(current) && isPlainObject(value) ? deepMerge(current, value) : value;
   }
 
   return merged as T;
