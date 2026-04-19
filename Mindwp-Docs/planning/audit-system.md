@@ -36,6 +36,7 @@ Tracker status: active
 - Deleted `tests/integration/performance-budget.test.ts` because it enforced render-speed and markup-size budgets rather than release correctness.
 - Deleted `tests/system/graph-cold-start-performance.test.ts` because it enforced a cold-start timing budget rather than a release-correctness invariant.
 - Added `src/lib/config/contentRules.ts` and switched `validate-section-structure.mjs`, `validate-template-payload-sufficiency.mjs`, `validate-internal-links.ts`, and `validate-content-quality.mjs` to `resolveContentRules()` without changing the active thresholds.
+- Moved `src/lib/cta/industryPresentation.ts` to `src/domains/industries/utils/industryPresentation.ts` and updated the industry templates to import the domain-local utility.
 
 ### Phase 1 Verification Log
 

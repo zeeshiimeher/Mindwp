@@ -16,7 +16,7 @@ import {
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { SmartCTA, type SmartCTAProps } from '@/components/system/SmartCTA';
-import { resolveIndustryPathwaySection } from '@/lib/cta/industryPresentation';
+import { resolveIndustryPathwaySection } from '@/domains/industries/utils/industryPresentation';
 
 import type { IndustryExploreSectionProps } from '../components/IndustryExploreSection';
 

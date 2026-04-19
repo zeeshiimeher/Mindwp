@@ -23,7 +23,7 @@ import { IndustrySubIndustriesSection } from '@/domains/industries/components';
 import {
   resolveIndustryCategoryDetailRoutes,
   resolveIndustryPathwaySection,
-} from '@/lib/cta/industryPresentation';
+} from '@/domains/industries/utils/industryPresentation';
 
 export type IndustryCategoryPageTemplateProps = {
   slug: string;
