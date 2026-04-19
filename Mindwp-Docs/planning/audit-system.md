@@ -16,7 +16,7 @@ Tracker status: active
 - Report reset: complete, reports regenerated with fresh 2026-04-19 timestamps.
 - Phase 0: complete.
 - Phase 1: complete.
-- Phase 2: in progress.
+- Phase 2: complete.
 - Phase 3: not started.
 - Phase 4: not started.
 
@@ -34,6 +34,7 @@ Tracker status: active
 - Deleted `tests/e2e/conversion-paths.spec.ts` after retaining CTA query coverage in `tests/e2e/cta-query-params.spec.ts` and submission-path coverage in `tests/e2e/conversion.spec.ts`.
 - Stabilized the retained Playwright contact proof for Turnstile-gated submission by supplying a test site key in the Playwright web server environment and seeding the test CAPTCHA token inside `tests/e2e/conversion.spec.ts`.
 - Deleted `tests/integration/performance-budget.test.ts` because it enforced render-speed and markup-size budgets rather than release correctness.
+- Deleted `tests/system/graph-cold-start-performance.test.ts` because it enforced a cold-start timing budget rather than a release-correctness invariant.
 
 ### Phase 1 Verification Log
 
