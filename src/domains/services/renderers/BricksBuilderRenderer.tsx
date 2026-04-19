@@ -9,11 +9,11 @@ import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { bricksBuilderPage } from '@/domains/services/data/bricks-builder';
+import type { ServicePageDataBySlug } from '@/domains/services/registry';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
 interface BricksBuilderRendererProps {
-  data: typeof bricksBuilderPage;
+  data: ServicePageDataBySlug['bricks-builder'];
   slug: string;
 }
 

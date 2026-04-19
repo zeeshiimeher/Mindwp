@@ -14,12 +14,12 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { aiLeadHandlingPage } from '@/domains/services/data/ai-lead-handling';
+import type { ServicePageDataBySlug } from '@/domains/services/registry';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 import { renderAlternatingSection } from '@/domains/services/renderers/renderAlternatingSection';
 
 interface AiLeadHandlingRendererProps {
-  data: typeof aiLeadHandlingPage;
+  data: ServicePageDataBySlug['ai-lead-handling'];
   slug: string;
 }
 

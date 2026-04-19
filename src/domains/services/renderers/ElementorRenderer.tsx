@@ -9,11 +9,11 @@ import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { elementorPage } from '@/domains/services/data/elementor';
+import type { ServicePageDataBySlug } from '@/domains/services/registry';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
 interface ElementorRendererProps {
-  data: typeof elementorPage;
+  data: ServicePageDataBySlug['elementor'];
   slug: string;
 }
 

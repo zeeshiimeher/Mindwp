@@ -14,13 +14,17 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
-import { crmData } from '@/domains/features/data/crm';
+import type { FeaturePageData } from '@/domains/features/types';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
-export default function CRMRenderer() {
-  const { hero, sections, cta } = crmData;
+interface CRMRendererProps {
+  data: FeaturePageData;
+}
+
+export default function CRMRenderer({ data }: CRMRendererProps) {
+  const { hero, sections, cta } = data;
   const { process, benefits, useCases, capabilities, faq } = sections;
-  const primarySystem = crmData.systems[0] ?? 'smart-website-systems';
+  const primarySystem = data.systems[0] ?? 'smart-website-systems';
 
   const heroVisual = (
     <Card className='p-8 bg-white/80 backdrop-blur shadow-xl'>
@@ -102,7 +106,7 @@ export default function CRMRenderer() {
             smartCta={{
               system: primarySystem,
               pageType: 'feature',
-              slug: crmData.slug,
+              slug: data.slug,
               primaryActionVariant: 'primary',
               primaryButtonCssPrefix: 'feature-hero__primary-cta',
             }}
@@ -150,7 +154,7 @@ export default function CRMRenderer() {
           <SmartCTA
             system={primarySystem}
             pageType='feature'
-            slug={crmData.slug}
+            slug={data.slug}
             title={cta.title}
             description={cta.description}
             primaryActionVariant='white'

@@ -18,11 +18,11 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { RiskListCard } from '@/components/reusable/single/RiskListCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { unifiedCommunicationSystemPage } from '@/domains/services/data/unified-communication-system';
+import type { ServicePageDataBySlug } from '@/domains/services/registry';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
 interface UnifiedCommunicationSystemRendererProps {
-  data: typeof unifiedCommunicationSystemPage;
+  data: ServicePageDataBySlug['unified-communication-system'];
   slug: string;
 }
 

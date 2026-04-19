@@ -11,11 +11,11 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { RiskListCard } from '@/components/reusable/single/RiskListCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { systemMigrationPlatformConsolidationPage } from '@/domains/services/data/system-migration-platform-consolidation';
+import type { ServicePageDataBySlug } from '@/domains/services/registry';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
 interface SystemMigrationPlatformConsolidationRendererProps {
-  data: typeof systemMigrationPlatformConsolidationPage;
+  data: ServicePageDataBySlug['system-migration-platform-consolidation'];
   slug: string;
 }
 

@@ -12,10 +12,10 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
-import { workflowsData } from '@/domains/features/data/workflows';
+import type { FeaturePageData } from '@/domains/features/types';
 
-const WorkflowVisual = () => {
-  const flow = workflowsData.sections.visualFlow;
+const WorkflowVisual = ({ data }: { data: FeaturePageData }) => {
+  const flow = data.sections.visualFlow;
   if (!flow) return null;
   const TriggerIcon = flow.triggerIcon;
   const ConnectorIcon = flow.connectorIcon;
@@ -67,10 +67,14 @@ const WorkflowVisual = () => {
   );
 };
 
-export default function WorkflowsRenderer() {
-  const { hero, sections, cta } = workflowsData;
+interface WorkflowsRendererProps {
+  data: FeaturePageData;
+}
+
+export default function WorkflowsRenderer({ data }: WorkflowsRendererProps) {
+  const { hero, sections, cta } = data;
   const { process, benefits, useCases, capabilities, faq } = sections;
-  const primarySystem = workflowsData.systems[0] ?? 'smart-website-systems';
+  const primarySystem = data.systems[0] ?? 'smart-website-systems';
 
   return (
     <>
@@ -85,11 +89,11 @@ export default function WorkflowsRenderer() {
             smartCta={{
               system: primarySystem,
               pageType: 'feature',
-              slug: workflowsData.slug,
+              slug: data.slug,
               primaryActionVariant: 'primary',
               primaryButtonCssPrefix: 'feature-hero__primary-cta',
             }}
-            visualContent={<WorkflowVisual />}
+            visualContent={<WorkflowVisual data={data} />}
             cssPrefix='workflows-hero'
             backgroundColor='bg-gradient-surface-soft'
             decorations={[
@@ -143,7 +147,7 @@ export default function WorkflowsRenderer() {
           <SmartCTA
             system={primarySystem}
             pageType='feature'
-            slug={workflowsData.slug}
+              slug={data.slug}
             title={cta.title}
             description={cta.description}
             primaryActionVariant='white'

@@ -11,11 +11,11 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { wordpressDevelopmentPage } from '@/domains/services/data/wordpress-development';
+import type { ServicePageDataBySlug } from '@/domains/services/registry';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
 interface WordPressDevelopmentRendererProps {
-  data: typeof wordpressDevelopmentPage;
+  data: ServicePageDataBySlug['wordpress-development'];
   slug: string;
 }
 

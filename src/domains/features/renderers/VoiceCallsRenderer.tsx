@@ -14,14 +14,18 @@ import { TestimonialCard } from '@/components/reusable/single/TestimonialCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
-import { voicecallsData } from '@/domains/features/data/voicecalls';
+import type { FeaturePageData } from '@/domains/features/types';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
-export default function VoiceCallsRenderer() {
-  const { hero, sections, cta } = voicecallsData;
+interface VoiceCallsRendererProps {
+  data: FeaturePageData;
+}
+
+export default function VoiceCallsRenderer({ data }: VoiceCallsRendererProps) {
+  const { hero, sections, cta } = data;
   const { process, benefits, useCases, capabilities, faq } = sections;
   const testimonial = sections.testimonial;
-  const primarySystem = voicecallsData.systems[0] ?? 'smart-website-systems';
+  const primarySystem = data.systems[0] ?? 'smart-website-systems';
 
   if (!testimonial) {
     return null;
@@ -40,7 +44,7 @@ export default function VoiceCallsRenderer() {
             smartCta={{
               system: primarySystem,
               pageType: 'feature',
-              slug: voicecallsData.slug,
+              slug: data.slug,
               primaryActionVariant: 'primary',
               primaryButtonCssPrefix: 'feature-hero__primary-cta',
             }}
@@ -154,7 +158,7 @@ export default function VoiceCallsRenderer() {
           <SmartCTA
             system={primarySystem}
             pageType='feature'
-            slug={voicecallsData.slug}
+            slug={data.slug}
             title={cta.title}
             description={cta.description}
             primaryActionVariant='white'

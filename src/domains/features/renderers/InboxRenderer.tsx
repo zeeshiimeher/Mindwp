@@ -14,14 +14,18 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
-import { inboxData } from '@/domains/features/data/inbox';
+import type { FeaturePageData } from '@/domains/features/types';
 
-export default function InboxRenderer() {
-  const { hero, sections, cta } = inboxData;
+interface InboxRendererProps {
+  data: FeaturePageData;
+}
+
+export default function InboxRenderer({ data }: InboxRendererProps) {
+  const { hero, sections, cta } = data;
   const { process, benefits, useCases, faq } = sections;
   const channels = sections.channels;
   const painPoints = sections.painPoints;
-  const primarySystem = inboxData.systems[0] ?? 'smart-website-systems';
+  const primarySystem = data.systems[0] ?? 'smart-website-systems';
 
   if (!channels || !painPoints) {
     return null;
@@ -40,7 +44,7 @@ export default function InboxRenderer() {
             smartCta={{
               system: primarySystem,
               pageType: 'feature',
-              slug: inboxData.slug,
+              slug: data.slug,
               primaryActionVariant: 'primary',
               primaryButtonCssPrefix: 'feature-hero__primary-cta',
             }}
@@ -136,7 +140,7 @@ export default function InboxRenderer() {
           <SmartCTA
             system={primarySystem}
             pageType='feature'
-            slug={inboxData.slug}
+            slug={data.slug}
             title={cta.title}
             description={cta.description}
             primaryActionVariant='white'

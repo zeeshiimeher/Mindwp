@@ -11,11 +11,11 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { localSeoAuthorityPage } from '@/domains/services/data/local-seo-authority';
+import type { ServicePageDataBySlug } from '@/domains/services/registry';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
 interface LocalSeoAuthorityRendererProps {
-  data: typeof localSeoAuthorityPage;
+  data: ServicePageDataBySlug['local-seo-authority'];
   slug: string;
 }
 

@@ -8,11 +8,11 @@ import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { woocommercePage } from '@/domains/services/data/woocommerce';
+import type { ServicePageDataBySlug } from '@/domains/services/registry';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
 interface WooCommerceRendererProps {
-  data: typeof woocommercePage;
+  data: ServicePageDataBySlug['ecommerce'];
   slug: string;
 }
 

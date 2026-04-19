@@ -1,8 +1,29 @@
-import { describe, expect, it, vi } from 'vitest';
+// @vitest-environment jsdom
 
-vi.mock('@/domains/services/renderers/ConversionLayerRenderer', () => ({
-  ConversionLayerRenderer: () => null,
+import { cleanup, render, screen } from '@testing-library/react';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+
+vi.mock('@/components/system/SmartRelatedSection', () => ({
+  SmartRelatedSection: ({ slug }: { slug?: string }) => (
+    <div data-testid='related-section'>{slug}</div>
+  ),
 }));
+
+vi.mock('@/domains/services/renderers/ConversionLayerRenderer', async () => {
+  const { usePageIdentity } = await import('@/components/system/PageEnforcement');
+
+  return {
+    ConversionLayerRenderer: ({ data, slug }: { data: { slug: string }; slug: string }) => {
+      const pageIdentity = usePageIdentity();
+
+      return (
+        <div data-testid='service-renderer'>
+          {`${data.slug}:${slug}:${pageIdentity?.pageId}:${pageIdentity?.pageType}`}
+        </div>
+      );
+    },
+  };
+});
 
 vi.mock('@/domains/services/renderers/SystemMigrationPlatformConsolidationRenderer', () => ({
   SystemMigrationPlatformConsolidationRenderer: () => null,
@@ -65,10 +86,20 @@ vi.mock('@/domains/services/renderers/ElementorRenderer', () => ({
 }));
 
 import {
+  getPageEnforcementSnapshots,
+  resetPageEnforcementSnapshots,
+} from '@/components/system/PageEnforcement';
+import {
   getServiceDataBySlug,
-  getServiceRendererBySlug,
   isServiceSlug,
+  renderServicePageBySlug,
 } from '@/domains/services/config';
+import { getServicePageDataBySlug } from '@/domains/services/registry';
+
+afterEach(() => {
+  cleanup();
+  resetPageEnforcementSnapshots();
+});
 
 describe('services config slugs', () => {
   it('treats canonical slugs as valid service slugs', () => {
@@ -91,9 +122,10 @@ describe('services config slugs', () => {
     expect(isServiceSlug('not-a-service')).toBe(false);
   });
 
-  it('returns the expected canonical service data', () => {
+  it('returns the expected canonical service data from the registry-owned lookup', () => {
     const conversionLayerData = getServiceDataBySlug('conversion-layer');
     expect(conversionLayerData.seo.canonical).toBe('/services/conversion-layer');
+    expect(conversionLayerData).toBe(getServicePageDataBySlug('conversion-layer'));
 
     const conversionDecisionData = getServiceDataBySlug(
       'conversion-funnel-system-vs-landing-page-development'
@@ -143,48 +175,21 @@ describe('services config slugs', () => {
     expect(wpData.seo.canonical).toBe('/services/wordpress-development');
   });
 
-  it('returns distinct canonical renderers where expected', () => {
-    const conversionLayerRenderer = getServiceRendererBySlug('conversion-layer');
-    expect(conversionLayerRenderer).toBeDefined();
+  it('renders service pages through the config-owned render path with page enforcement context', () => {
+    render(renderServicePageBySlug('conversion-layer'));
 
-    const conversionDecisionRenderer = getServiceRendererBySlug(
-      'conversion-funnel-system-vs-landing-page-development'
+    expect(screen.getByTestId('service-renderer').textContent).toBe(
+      'conversion-layer:conversion-layer:service:conversion-layer:service'
     );
-    expect(conversionDecisionRenderer).toBeDefined();
+    expect(screen.getByTestId('related-section').textContent).toBe('conversion-layer');
 
-    const migrationRenderer = getServiceRendererBySlug('system-migration-platform-consolidation');
-    expect(migrationRenderer).toBeDefined();
-
-    const redesignRenderer = getServiceRendererBySlug('website-redesign-system-rebuild');
-    expect(redesignRenderer).toBeDefined();
-
-    const leadReactivationRenderer = getServiceRendererBySlug('lead-reactivation-system');
-    expect(leadReactivationRenderer).toBeDefined();
-
-    const missedCallRenderer = getServiceRendererBySlug('missed-call-recovery-system');
-    expect(missedCallRenderer).toBeDefined();
-
-    const unifiedCommunicationRenderer = getServiceRendererBySlug('unified-communication-system');
-    expect(unifiedCommunicationRenderer).toBeDefined();
-
-    const reputationRenderer = getServiceRendererBySlug('reputation-review-systems');
-    expect(reputationRenderer).toBeDefined();
-
-    const crmRenderer = getServiceRendererBySlug('crm-infrastructure-implementation');
-    expect(crmRenderer).toBeDefined();
-
-    const crmDecisionRenderer = getServiceRendererBySlug(
-      'website-crm-integration-vs-manual-lead-handling'
+    expect(getPageEnforcementSnapshots()).toContainEqual(
+      expect.objectContaining({
+        pageIdentity: {
+          pageId: 'service:conversion-layer',
+          pageType: 'service',
+        },
+      })
     );
-    expect(crmDecisionRenderer).toBeDefined();
-
-    const servicePagesDecisionRenderer = getServiceRendererBySlug(
-      'service-pages-vs-one-generic-services-page'
-    );
-    expect(servicePagesDecisionRenderer).toBeDefined();
-
-    const wooRenderer = getServiceRendererBySlug('ecommerce');
-    const wpRenderer = getServiceRendererBySlug('wordpress-development');
-    expect(wpRenderer).not.toBe(wooRenderer);
   });
 });

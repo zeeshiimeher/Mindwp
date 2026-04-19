@@ -11,12 +11,12 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { leadReactivationSystemPage } from '@/domains/services/data/lead-reactivation-system';
+import type { ServicePageDataBySlug } from '@/domains/services/registry';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 import { renderAlternatingSection } from '@/domains/services/renderers/renderAlternatingSection';
 
 interface LeadReactivationSystemRendererProps {
-  data: typeof leadReactivationSystemPage;
+  data: ServicePageDataBySlug['lead-reactivation-system'];
   slug: string;
 }
 

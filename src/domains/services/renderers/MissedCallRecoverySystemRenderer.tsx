@@ -13,11 +13,11 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { missedCallRecoverySystemPage } from '@/domains/services/data/missed-call-recovery-system';
+import type { ServicePageDataBySlug } from '@/domains/services/registry';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
 interface MissedCallRecoverySystemRendererProps {
-  data: typeof missedCallRecoverySystemPage;
+  data: ServicePageDataBySlug['missed-call-recovery-system'];
   slug: string;
 }
 

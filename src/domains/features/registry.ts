@@ -15,6 +15,7 @@ import { inboxData } from '@/domains/features/data/inbox';
 import { reputationData } from '@/domains/features/data/reputation';
 import { voicecallsData } from '@/domains/features/data/voicecalls';
 import { workflowsData } from '@/domains/features/data/workflows';
+import type { FeaturePageData } from '@/domains/features/types';
 
 export type FeatureMetadata = {
   slug: string;
@@ -35,15 +36,17 @@ type FeatureSlug =
   | 'calendars'
   | 'crm';
 
-const FEATURE_DATA = [
-  voicecallsData,
-  aiChatData,
-  reputationData,
-  inboxData,
-  workflowsData,
-  calendarsData,
-  crmData,
-] as const;
+export const FEATURE_PAGE_DATA_BY_SLUG = {
+  voicecalls: voicecallsData,
+  aichat: aiChatData,
+  reputation: reputationData,
+  inbox: inboxData,
+  workflows: workflowsData,
+  calendars: calendarsData,
+  crm: crmData,
+} as const satisfies Record<FeatureSlug, FeaturePageData>;
+
+const FEATURE_DATA = Object.values(FEATURE_PAGE_DATA_BY_SLUG);
 
 const FEATURE_ICON_BY_SLUG: Record<FeatureSlug, LucideIcon> = {
   voicecalls: Phone,
@@ -64,3 +67,7 @@ export const FEATURE_REGISTRY: FeatureMetadata[] = FEATURE_DATA.map(data => ({
   systems: data.systems,
   topics: data.topics,
 }));
+
+export const getFeaturePageDataBySlug = (slug: string): FeaturePageData | undefined => {
+  return FEATURE_PAGE_DATA_BY_SLUG[slug as FeatureSlug];
+};

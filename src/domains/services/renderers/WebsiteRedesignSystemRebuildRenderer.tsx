@@ -13,11 +13,11 @@ import { ScenarioSolutionCard } from '@/components/reusable/single/ScenarioSolut
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { websiteRedesignSystemRebuildPage } from '@/domains/services/data/website-redesign-system-rebuild';
+import type { ServicePageDataBySlug } from '@/domains/services/registry';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
 interface WebsiteRedesignSystemRebuildRendererProps {
-  data: typeof websiteRedesignSystemRebuildPage;
+  data: ServicePageDataBySlug['website-redesign-system-rebuild'];
   slug: string;
 }
 

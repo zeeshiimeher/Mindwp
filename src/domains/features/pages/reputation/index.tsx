@@ -1,5 +1,10 @@
+import type { FeaturePageData } from '@/domains/features/types';
 import ReputationRenderer from '@/domains/features/renderers/ReputationRenderer';
 
-export default function ReputationPage() {
-  return <ReputationRenderer />;
+interface ReputationPageProps {
+  data: FeaturePageData;
+}
+
+export default function ReputationPage({ data }: ReputationPageProps) {
+  return <ReputationRenderer data={data} />;
 }

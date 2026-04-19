@@ -1,4 +1,13 @@
-import { describe, expect, it, vi } from 'vitest';
+// @vitest-environment jsdom
+
+import { cleanup, render, screen } from '@testing-library/react';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+
+vi.mock('@/components/system/SmartRelatedSection', () => ({
+  SmartRelatedSection: ({ slug }: { slug?: string }) => (
+    <div data-testid='related-section'>{slug}</div>
+  ),
+}));
 
 vi.mock('@/domains/features/pages/voicecalls', () => ({ default: () => null }));
 vi.mock('@/domains/features/pages/aichat', () => ({ default: () => null }));
@@ -6,15 +15,38 @@ vi.mock('@/domains/features/pages/reputation', () => ({ default: () => null }));
 vi.mock('@/domains/features/pages/inbox', () => ({ default: () => null }));
 vi.mock('@/domains/features/pages/workflows', () => ({ default: () => null }));
 vi.mock('@/domains/features/pages/calendars', () => ({ default: () => null }));
-vi.mock('@/domains/features/pages/crm', () => ({ default: () => null }));
+vi.mock('@/domains/features/pages/crm', async () => {
+  const { usePageIdentity } = await import('@/components/system/PageEnforcement');
 
+  return {
+    default: ({ data }: { data: { slug: string } }) => {
+      const pageIdentity = usePageIdentity();
+
+      return (
+        <div data-testid='feature-page'>
+          {`${data.slug}:${pageIdentity?.pageId}:${pageIdentity?.pageType}`}
+        </div>
+      );
+    },
+  };
+});
+
+import {
+  getPageEnforcementSnapshots,
+  resetPageEnforcementSnapshots,
+} from '@/components/system/PageEnforcement';
 import {
   FEATURE_ENTRY_BY_SLUG,
   getFeatureDataBySlug,
-  getFeaturePageBySlug,
   isFeatureSlug,
+  renderFeaturePageBySlug,
 } from '@/domains/features/config';
-import { FEATURE_REGISTRY } from '@/domains/features/registry';
+import { FEATURE_REGISTRY, getFeaturePageDataBySlug } from '@/domains/features/registry';
+
+afterEach(() => {
+  cleanup();
+  resetPageEnforcementSnapshots();
+});
 
 describe('features config and registry', () => {
   it('accepts only known feature slugs', () => {
@@ -23,12 +55,10 @@ describe('features config and registry', () => {
     expect(isFeatureSlug('unknown-feature')).toBe(false);
   });
 
-  it('returns configured data and pages by slug', () => {
+  it('returns configured feature data by slug from the registry-owned lookup', () => {
     const crmData = getFeatureDataBySlug('crm');
     expect(crmData.slug).toBe('crm');
-
-    const inboxPage = getFeaturePageBySlug('inbox');
-    expect(typeof inboxPage).toBe('function');
+    expect(crmData).toBe(getFeaturePageDataBySlug('crm'));
   });
 
   it('builds registry entries from config with canonical feature paths', () => {
@@ -39,5 +69,21 @@ describe('features config and registry', () => {
       expect(item.title.length).toBeGreaterThan(0);
       expect(item.description.length).toBeGreaterThan(0);
     }
+  });
+
+  it('renders feature pages through the config-owned render path with page enforcement context', () => {
+    render(renderFeaturePageBySlug('crm'));
+
+    expect(screen.getByTestId('feature-page').textContent).toBe('crm:feature:crm:feature');
+    expect(screen.getByTestId('related-section').textContent).toBe('crm');
+
+    expect(getPageEnforcementSnapshots()).toContainEqual(
+      expect.objectContaining({
+        pageIdentity: {
+          pageId: 'feature:crm',
+          pageType: 'feature',
+        },
+      })
+    );
   });
 });

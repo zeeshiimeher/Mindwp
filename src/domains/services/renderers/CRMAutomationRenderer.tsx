@@ -16,11 +16,13 @@ import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { crmAutomationPage } from '@/domains/services/data/crm-automation';
+import type { ServicePageDataBySlug } from '@/domains/services/registry';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
 interface CRMAutomationRendererProps {
-  data: typeof crmAutomationPage;
+  data: ServicePageDataBySlug[
+    'crm-infrastructure-implementation' | 'website-crm-integration-vs-manual-lead-handling'
+  ];
   slug: string;
 }
 

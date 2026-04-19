@@ -15,7 +15,7 @@ import { TestimonialCard } from '@/components/reusable/single/TestimonialCard';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
-import { reputationData } from '@/domains/features/data/reputation';
+import type { FeaturePageData } from '@/domains/features/types';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
 const ReviewsVisual = () => (
@@ -77,10 +77,14 @@ const ReviewsVisual = () => (
   </Card>
 );
 
-export default function ReputationRenderer() {
-  const { hero, sections, cta } = reputationData;
+interface ReputationRendererProps {
+  data: FeaturePageData;
+}
+
+export default function ReputationRenderer({ data }: ReputationRendererProps) {
+  const { hero, sections, cta } = data;
   const { process, benefits, useCases, capabilities, faq } = sections;
-  const primarySystem = reputationData.systems[0] ?? 'smart-website-systems';
+  const primarySystem = data.systems[0] ?? 'smart-website-systems';
   const testimonials = sections.testimonials;
 
   if (!testimonials) {
@@ -100,7 +104,7 @@ export default function ReputationRenderer() {
             smartCta={{
               system: primarySystem,
               pageType: 'feature',
-              slug: reputationData.slug,
+              slug: data.slug,
               primaryActionVariant: 'primary',
               primaryButtonCssPrefix: 'feature-hero__primary-cta',
             }}
@@ -182,7 +186,7 @@ export default function ReputationRenderer() {
           <SmartCTA
             system={primarySystem}
             pageType='feature'
-            slug={reputationData.slug}
+            slug={data.slug}
             title={cta.title}
             description={cta.description}
             primaryActionVariant='white'

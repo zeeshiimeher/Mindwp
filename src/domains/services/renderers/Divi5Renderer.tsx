@@ -9,11 +9,11 @@ import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import { divi5Page } from '@/domains/services/data/divi5';
+import type { ServicePageDataBySlug } from '@/domains/services/registry';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
 interface Divi5RendererProps {
-  data: typeof divi5Page;
+  data: ServicePageDataBySlug['divi5'];
   slug: string;
 }
 

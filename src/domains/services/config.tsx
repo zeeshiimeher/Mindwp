@@ -2,25 +2,10 @@ import type { ReactElement } from 'react';
 
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
-import { aiLeadHandlingPage } from '@/domains/services/data/ai-lead-handling';
-import { bricksBuilderPage } from '@/domains/services/data/bricks-builder';
-import { conversionFunnelSystemVsLandingPageDevelopmentPage } from '@/domains/services/data/conversion-funnel-system-vs-landing-page-development';
-import { conversionLayerPage } from '@/domains/services/data/conversion-layer';
-import { crmAutomationPage } from '@/domains/services/data/crm-automation';
-import { divi5Page } from '@/domains/services/data/divi5';
-import { elementorPage } from '@/domains/services/data/elementor';
-import { leadReactivationSystemPage } from '@/domains/services/data/lead-reactivation-system';
-import { localSeoAuthorityPage } from '@/domains/services/data/local-seo-authority';
-import { missedCallRecoverySystemPage } from '@/domains/services/data/missed-call-recovery-system';
-import { reputationReviewSystemsPage } from '@/domains/services/data/reputation-review-systems';
-import { servicePagesVsOneGenericServicesPage } from '@/domains/services/data/service-pages-vs-one-generic-services-page';
-import { smartWebsiteSystemsPage } from '@/domains/services/data/smart-website-systems';
-import { systemMigrationPlatformConsolidationPage } from '@/domains/services/data/system-migration-platform-consolidation';
-import { unifiedCommunicationSystemPage } from '@/domains/services/data/unified-communication-system';
-import { websiteCrmIntegrationVsManualLeadHandlingPage } from '@/domains/services/data/website-crm-integration-vs-manual-lead-handling';
-import { websiteRedesignSystemRebuildPage } from '@/domains/services/data/website-redesign-system-rebuild';
-import { woocommercePage } from '@/domains/services/data/woocommerce';
-import { wordpressDevelopmentPage } from '@/domains/services/data/wordpress-development';
+import {
+  getServicePageDataBySlug,
+  type ServicePageDataBySlug,
+} from '@/domains/services/registry';
 import { AiLeadHandlingRenderer } from '@/domains/services/renderers/AiLeadHandlingRenderer';
 import { BricksBuilderRenderer } from '@/domains/services/renderers/BricksBuilderRenderer';
 import { ConversionLayerRenderer } from '@/domains/services/renderers/ConversionLayerRenderer';
@@ -60,66 +45,78 @@ function renderServiceEntry(slug: ServiceSlug): ReactElement {
   );
 }
 
+function getServiceDataOrThrow<TSlug extends keyof ServicePageDataBySlug>(
+  slug: TSlug
+): ServicePageDataBySlug[TSlug] {
+  const data = getServicePageDataBySlug(slug);
+
+  if (!data) {
+    throw new Error(`Missing service page data for slug "${slug}".`);
+  }
+
+  return data as ServicePageDataBySlug[TSlug];
+}
+
 export const SERVICE_ENTRY_BY_SLUG = {
-  'smart-website-systems': createServiceEntry(smartWebsiteSystemsPage, (data, slug) => (
+  'smart-website-systems': createServiceEntry(getServiceDataOrThrow('smart-website-systems'), (data, slug) => (
     <SmartWebsiteSystemsRenderer data={data} slug={slug} />
   )),
-  'conversion-layer': createServiceEntry(conversionLayerPage, (data, slug) => (
+  'conversion-layer': createServiceEntry(getServiceDataOrThrow('conversion-layer'), (data, slug) => (
     <ConversionLayerRenderer data={data} slug={slug} />
   )),
   'conversion-funnel-system-vs-landing-page-development': createServiceEntry(
-    conversionFunnelSystemVsLandingPageDevelopmentPage,
+    getServiceDataOrThrow('conversion-funnel-system-vs-landing-page-development'),
     (data, slug) => <ConversionLayerRenderer data={data} slug={slug} />
   ),
   'system-migration-platform-consolidation': createServiceEntry(
-    systemMigrationPlatformConsolidationPage,
+    getServiceDataOrThrow('system-migration-platform-consolidation'),
     (data, slug) => <SystemMigrationPlatformConsolidationRenderer data={data} slug={slug} />
   ),
   'website-redesign-system-rebuild': createServiceEntry(
-    websiteRedesignSystemRebuildPage,
+    getServiceDataOrThrow('website-redesign-system-rebuild'),
     (data, slug) => <WebsiteRedesignSystemRebuildRenderer data={data} slug={slug} />
   ),
-  'lead-reactivation-system': createServiceEntry(leadReactivationSystemPage, (data, slug) => (
+  'lead-reactivation-system': createServiceEntry(getServiceDataOrThrow('lead-reactivation-system'), (data, slug) => (
     <LeadReactivationSystemRenderer data={data} slug={slug} />
   )),
-  'missed-call-recovery-system': createServiceEntry(missedCallRecoverySystemPage, (data, slug) => (
+  'missed-call-recovery-system': createServiceEntry(getServiceDataOrThrow('missed-call-recovery-system'), (data, slug) => (
     <MissedCallRecoverySystemRenderer data={data} slug={slug} />
   )),
   'unified-communication-system': createServiceEntry(
-    unifiedCommunicationSystemPage,
+    getServiceDataOrThrow('unified-communication-system'),
     (data, slug) => <UnifiedCommunicationSystemRenderer data={data} slug={slug} />
   ),
-  'local-seo-authority': createServiceEntry(localSeoAuthorityPage, (data, slug) => (
+  'local-seo-authority': createServiceEntry(getServiceDataOrThrow('local-seo-authority'), (data, slug) => (
     <LocalSeoAuthorityRenderer data={data} slug={slug} />
   )),
-  'reputation-review-systems': createServiceEntry(reputationReviewSystemsPage, (data, slug) => (
+  'reputation-review-systems': createServiceEntry(getServiceDataOrThrow('reputation-review-systems'), (data, slug) => (
     <ReputationReviewSystemsRenderer data={data} slug={slug} />
   )),
-  'crm-infrastructure-implementation': createServiceEntry(crmAutomationPage, (data, slug) => (
+  'crm-infrastructure-implementation': createServiceEntry(getServiceDataOrThrow('crm-infrastructure-implementation'), (data, slug) => (
     <CRMAutomationRenderer data={data} slug={slug} />
   )),
   'website-crm-integration-vs-manual-lead-handling': createServiceEntry(
-    websiteCrmIntegrationVsManualLeadHandlingPage,
+    getServiceDataOrThrow('website-crm-integration-vs-manual-lead-handling'),
     (data, slug) => <CRMAutomationRenderer data={data} slug={slug} />
   ),
-  'ai-lead-handling': createServiceEntry(aiLeadHandlingPage, (data, slug) => (
+  'ai-lead-handling': createServiceEntry(getServiceDataOrThrow('ai-lead-handling'), (data, slug) => (
     <AiLeadHandlingRenderer data={data} slug={slug} />
   )),
   'service-pages-vs-one-generic-services-page': createServiceEntry(
-    servicePagesVsOneGenericServicesPage,
+    getServiceDataOrThrow('service-pages-vs-one-generic-services-page'),
     (data, slug) => <SmartWebsiteSystemsRenderer data={data} slug={slug} />
   ),
-  'wordpress-development': createServiceEntry(wordpressDevelopmentPage, (data, slug) => (
+  'wordpress-development': createServiceEntry(getServiceDataOrThrow('wordpress-development'), (data, slug) => (
     <WordPressDevelopmentRenderer data={data} slug={slug} />
   )),
-  ecommerce: createServiceEntry(woocommercePage, (data, slug) => (
+  ecommerce: createServiceEntry(getServiceDataOrThrow('ecommerce'), (data, slug) => (
     <WooCommerceRenderer data={data} slug={slug} />
   )),
-  divi5: createServiceEntry(divi5Page, (data, slug) => <Divi5Renderer data={data} slug={slug} />),
-  'bricks-builder': createServiceEntry(bricksBuilderPage, (data, slug) => (
+  divi5: createServiceEntry(getServiceDataOrThrow('divi5'), (data, slug) => <Divi5Renderer data={data} slug={slug} />),
+  'bricks-builder': createServiceEntry(getServiceDataOrThrow('bricks-builder'), (data, slug) => (
     <BricksBuilderRenderer data={data} slug={slug} />
   )),
-  elementor: createServiceEntry(elementorPage, (data, slug) => (
+  elementor: createServiceEntry(getServiceDataOrThrow('elementor'), (data, slug) => (
     <ElementorRenderer data={data} slug={slug} />
   )),
 } as const;

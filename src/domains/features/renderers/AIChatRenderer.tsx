@@ -13,7 +13,7 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { Card } from '@/components/ui/card';
-import { aiChatData } from '@/domains/features/data/aichat';
+import type { FeaturePageData } from '@/domains/features/types';
 
 const ChatDemo = () => (
   <Card
@@ -95,10 +95,14 @@ const ChatDemo = () => (
   </Card>
 );
 
-export default function AIChatRenderer() {
-  const { hero, sections, cta } = aiChatData;
+interface AIChatRendererProps {
+  data: FeaturePageData;
+}
+
+export default function AIChatRenderer({ data }: AIChatRendererProps) {
+  const { hero, sections, cta } = data;
   const { process, benefits, useCases, capabilities, faq } = sections;
-  const primarySystem = aiChatData.systems[0] ?? 'smart-website-systems';
+  const primarySystem = data.systems[0] ?? 'smart-website-systems';
 
   return (
     <>
@@ -113,7 +117,7 @@ export default function AIChatRenderer() {
             smartCta={{
               system: primarySystem,
               pageType: 'feature',
-              slug: aiChatData.slug,
+              slug: data.slug,
               primaryActionVariant: 'primary',
               primaryButtonCssPrefix: 'feature-hero__primary-cta',
             }}
@@ -233,7 +237,7 @@ export default function AIChatRenderer() {
           <SmartCTA
             system={primarySystem}
             pageType='feature'
-            slug={aiChatData.slug}
+            slug={data.slug}
             title={cta.title}
             description={cta.description}
             primaryActionVariant='white'
