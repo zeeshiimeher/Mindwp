@@ -8,7 +8,7 @@ import { ServiceHeroSection } from '@/components/reusable/sections/service';
 import { ErrorBoundary } from '@/components/reusable/single/ErrorBoundary';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import type { ServicePageDataBySlug } from '@/domains/services/registry';
+import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
 interface WooCommerceRendererProps {

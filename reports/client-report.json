@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-04-19T03:08:39.082Z",
+  "generatedAt": "2026-04-19T05:29:27.084Z",
   "sourceCommand": "node --import tsx/esm scripts/analyzers/export-reports.mjs",
   "summary": {
-    "totalPages": 350,
-    "healthy": 350,
+    "totalPages": 351,
+    "healthy": 351,
     "weak": 0,
     "critical": 0
   },
   "validation": {
     "passed": 21,
-    "failed": 0,
+    "failed": 1,
     "blockingFailed": 0,
-    "advisoryFailed": 0,
-    "total": 21
+    "advisoryFailed": 1,
+    "total": 22
   },
   "contentQuality": {
     "issueCount": 0,
@@ -25,6 +25,15 @@
   "reports": [
     {
       "name": "authority-map.json"
+    },
+    {
+      "name": "client-dashboard.json"
+    },
+    {
+      "name": "client-report.json"
+    },
+    {
+      "name": "client-report.md"
     },
     {
       "name": "content-contract-report.json"
@@ -43,6 +52,9 @@
     },
     {
       "name": "cta-label-contract-report.json"
+    },
+    {
+      "name": "cta-report.json"
     },
     {
       "name": "cta-violation-scan.json"
@@ -66,6 +78,9 @@
       "name": "inline-style-report.json"
     },
     {
+      "name": "production-contract-report.json"
+    },
+    {
       "name": "proof-coverage.json"
     },
     {
@@ -73,6 +88,21 @@
     },
     {
       "name": "section-structure-report.json"
+    },
+    {
+      "name": "session-log.json"
+    },
+    {
+      "name": "system-drift.json"
+    },
+    {
+      "name": "system-report.json"
+    },
+    {
+      "name": "system-snapshots"
+    },
+    {
+      "name": "system-state.json"
     },
     {
       "name": "template-payload-report.json"

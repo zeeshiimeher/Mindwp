@@ -1,8 +1,9 @@
 {
-  "generatedAt": "2026-04-19T03:31:21.807Z",
+  "generatedAt": "2026-04-19T05:29:05.281Z",
   "passed": true,
   "issueCount": 0,
   "warningCount": 0,
   "issues": [],
-  "warnings": []
+  "warnings": [],
+  "sourceCommand": "npm run system:full"
 }

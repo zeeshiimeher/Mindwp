@@ -94,7 +94,7 @@ import {
   isServiceSlug,
   renderServicePageBySlug,
 } from '@/domains/services/config';
-import { getServicePageDataBySlug } from '@/domains/services/registry';
+import { getServicePageDataBySlug } from '@/domains/services/pageData';
 
 afterEach(() => {
   cleanup();

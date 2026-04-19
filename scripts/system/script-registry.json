@@ -1,17 +1,5 @@
 {
   "scripts": [
-      "id": "system-sync",
-      "name": "Sync System",
-      "category": "core",
-      "intent": "system",
-      "group": "daily",
-      "priority": 2,
-      "estimatedTime": "fast",
-      "path": "scripts/core/system-sync.mjs",
-      "description": "Update system state and drift snapshots.",
-      "type": "runner",
-      "runnable": true
-    },
     {
       "id": "system-report",
       "name": "System Report",
@@ -21,7 +9,7 @@
       "priority": 1,
       "estimatedTime": "medium",
       "path": "scripts/core/system-report.mjs",
-      "description": "Run validation, sync, key analyzers, and write reports/system-report.json.",
+      "description": "Run the unified validation, test, and report pipeline and write reports/system-report.json.",
       "type": "runner",
       "runnable": true
     },

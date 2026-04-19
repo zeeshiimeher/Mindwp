@@ -1750,7 +1750,7 @@ If content cannot be placed correctly in the ecosystem flow, it should not be pu
 
 ## 🔒 Validation System (LOCKED)
 
-The control layer runs through `node scripts/core/validate-all.mjs` and is surfaced through `npm run system:report`.
+The control layer runs through `node scripts/core/validate-all.mjs` and is surfaced through `npm run system:full`.
 
 Current structure:
 - **Blocking:** check-generated, typecheck, validate-content-contract, validate-domain-structure, validate-conversion-contract, validate-design-system, validate-graph, validate-internal-links, validate-tokens, validate-inline-styles

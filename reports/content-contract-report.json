@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-19T03:31:15.648Z",
+  "generatedAt": "2026-04-19T05:29:00.470Z",
   "scannedNodes": 227,
   "passed": true,
   "issueCount": 0,
@@ -9,5 +9,6 @@
     "missingMetadata": 0
   },
   "issues": [],
-  "warnings": []
+  "warnings": [],
+  "sourceCommand": "npm run system:full"
 }

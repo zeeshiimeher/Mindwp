@@ -17,7 +17,6 @@ import { websiteCrmIntegrationVsManualLeadHandlingPage } from '@/domains/service
 import { websiteRedesignSystemRebuildPage } from '@/domains/services/data/website-redesign-system-rebuild';
 import { woocommercePage } from '@/domains/services/data/woocommerce';
 import { wordpressDevelopmentPage } from '@/domains/services/data/wordpress-development';
-import type { ServicePageData } from '@/domains/services/types';
 
 export interface ServiceMetadata {
   slug: string;
@@ -30,32 +29,6 @@ export interface ServiceMetadata {
   systems: string[];
   topics: string[];
 }
-
-export const SERVICE_PAGE_DATA_BY_SLUG = {
-  'smart-website-systems': smartWebsiteSystemsPage,
-  'conversion-layer': conversionLayerPage,
-  'conversion-funnel-system-vs-landing-page-development':
-    conversionFunnelSystemVsLandingPageDevelopmentPage,
-  'system-migration-platform-consolidation': systemMigrationPlatformConsolidationPage,
-  'website-redesign-system-rebuild': websiteRedesignSystemRebuildPage,
-  'lead-reactivation-system': leadReactivationSystemPage,
-  'missed-call-recovery-system': missedCallRecoverySystemPage,
-  'unified-communication-system': unifiedCommunicationSystemPage,
-  'local-seo-authority': localSeoAuthorityPage,
-  'reputation-review-systems': reputationReviewSystemsPage,
-  'crm-infrastructure-implementation': crmAutomationPage,
-  'website-crm-integration-vs-manual-lead-handling':
-    websiteCrmIntegrationVsManualLeadHandlingPage,
-  'ai-lead-handling': aiLeadHandlingPage,
-  'service-pages-vs-one-generic-services-page': servicePagesVsOneGenericServicesPage,
-  'wordpress-development': wordpressDevelopmentPage,
-  ecommerce: woocommercePage,
-  divi5: divi5Page,
-  'bricks-builder': bricksBuilderPage,
-  elementor: elementorPage,
-} as const satisfies Record<string, ServicePageData>;
-
-export type ServicePageDataBySlug = typeof SERVICE_PAGE_DATA_BY_SLUG;
 
 export const SERVICE_REGISTRY: Record<string, ServiceMetadata> = {
   'smart-website-systems': {
@@ -575,10 +548,6 @@ export const SERVICE_REGISTRY: Record<string, ServiceMetadata> = {
 
 export const getServiceBySlug = (slug: string): ServiceMetadata | undefined => {
   return SERVICE_REGISTRY[slug];
-};
-
-export const getServicePageDataBySlug = (slug: string): ServicePageData | undefined => {
-  return SERVICE_PAGE_DATA_BY_SLUG[slug as keyof ServicePageDataBySlug];
 };
 
 export const getServiceSlugs = (): string[] => {

@@ -2,35 +2,45 @@
 
 > Runtime snapshot. Current phase, active decisions, constraints, and known risks.
 > This document does NOT define architecture — it reflects current system reality.
-> If this document conflicts with SYSTEM.md → SYSTEM.md wins.
+> Historic execution entries are preserved below as system history.
+> If this document conflicts with SYSTEM.md -> SYSTEM.md wins.
 
 ---
 
 ## WHEN TO USE THIS DOC
 
-Use this when you need to know: what phase we are in, what decisions are active, what constraints apply, what risks exist, and what tasks are current.
+Use this when you need to know: the current live state, which decisions still govern the system, which constraints apply now, and what has already happened historically.
 
-Architecture → SYSTEM.md. Content rules → CONTENT.md. CTA contracts → CONVERSION.md.
+Architecture -> SYSTEM.md. Tooling -> TOOLS.md. CTA contracts -> CONVERSION.md.
 
 ---
 
 # 1. CURRENT SNAPSHOT
 
-**Phase:** Phase 3.0 — System Quality, Content Completeness, and SEO Authority Stabilized
-**Status:** Clean
-**Objective:** Preserve centralized, report-linked clean state across validation, metadata, crawl alignment, topic authority, and dashboard visibility.
+**Snapshot Date:** 2026-04-19
+**Phase:** Frozen production control plane with operator-mode internal dashboard
+**Status:** PASS
+**Objective:** Preserve the locked `system:full` pipeline, frozen report contracts, and historical system record without losing prior operational context.
 
-**Platform:** Next.js + TypeScript (strict). Custom BEM CSS. Tailwind v4 bridge. GoHighLevel backend. Vercel target.
+**Platform:** Next.js + TypeScript (strict). Custom BEM CSS. Tailwind v4 bridge. Vercel target.
 
-**Content graph:** 229 nodes, 9,893 edges, 7 formal content types (`ContentNodeType`).
+**Live system health from current report artifacts:**
+- Validators: 22 registered, 0 blocking failures, 1 advisory failure
+- Current advisory failure: lint drift in `src/app/dashboard/page.tsx`
+- System report: `reports/system-report.json` is `PASS`
+- Client dashboard artifact: healthy
+- Client dashboard issues: 0
+- Client dashboard optimized pages: 227
+- Topic authority: 42 topics analyzed, 42 complete coverage, average score 81
 
-**System health:**
-- Validators: 21 total, 0 blocking, 0 advisory
-- Tests: 49 passed, 0 failed, 0 skipped (unit 7, system 21, integration 11, e2e 10)
-- System state: CLEAN
-- Drift: 0 items
-- SEO: 349 routes, 0 missing metadata, 100% canonical/sitemap/OG alignment
-- Authority: 42 topics, 42 complete coverage, 0 orphan topics, average score 68
+**Current execution model:**
+- Full-system entrypoint: `npm run system:full`
+- Internal operator route: `/dev/system-dashboard`
+- Client-safe dashboard artifact: `reports/client-dashboard.json`
+- Dashboard remains report-driven; it does not define system truth
+
+**Test artifact note:**
+- Do not treat `reports/test-results.json` as current unless a test-producing run has explicitly written it.
 
 ---
 
@@ -39,8 +49,8 @@ Architecture → SYSTEM.md. Content rules → CONTENT.md. CTA contracts → CONV
 ### D-001 — SYSTEM.md Is the Only Behavioral Authority
 **Status:** Locked. Other docs reference behavior but may not redefine it.
 
-### D-002 — Three Core Contract Validators
-**Status:** Implemented. `validate-content-contract`, `validate-domain-structure`, `validate-conversion-contract`.
+### D-002 — Full-System Execution Is Locked To `system:full`
+**Status:** Implemented. Manual report entrypoints are blocked so validation, snapshots, dashboards, and registries stay aligned.
 
 ### D-003 — Lint Is Advisory
 **Status:** Implemented. Lint does not block system report or validation flow.
@@ -52,7 +62,7 @@ Architecture → SYSTEM.md. Content rules → CONTENT.md. CTA contracts → CONV
 **Status:** Implemented. Written to both `authorityMap.ts` and `reports/authority-map.json`.
 
 ### D-006 — Dashboard Is Visualization Only
-**Status:** Implemented. Reads report files only. No frontend recomputation.
+**Status:** Implemented. Reads frozen report files only. No dashboard-owned system truth.
 
 ### D-007 — Shared Route Inventory Governs SEO
 **Status:** Implemented. Single inventory for crawl, sitemap, metadata.
@@ -60,8 +70,8 @@ Architecture → SYSTEM.md. Content rules → CONTENT.md. CTA contracts → CONV
 ### D-008 — Topic Authority Uses Coverage Guarantees
 **Status:** Implemented. Each topic needs blog path + internal support path.
 
-### D-009 — One Control Plane Dashboard
-**Status:** Implemented. Only `/dev/system-dashboard`. Old content-dashboard removed.
+### D-009 — One Internal Control Plane Dashboard
+**Status:** Implemented. `/dev/system-dashboard` remains the internal dashboard surface.
 
 ### D-010 — Static OG Fallback
 **Status:** Implemented. All routes use `/og-default.png` (1200x630).
@@ -87,17 +97,19 @@ Architecture → SYSTEM.md. Content rules → CONTENT.md. CTA contracts → CONV
 - **No inline forms** on content pages
 - **Deterministic CTA routing:** no runtime variability outside contract-defined fallback
 - **One source of truth per concern:** no duplicate validators, report engines, or dashboard recomputation
-- **Validators block on critical integrity:** graph, contract, generated drift, tokens, inline styles, internal links
-- **Analyzers are advisory only**
+- **Validators block on critical integrity:** graph, contract, generated drift, tokens, inline styles, internal links, frozen production contracts
+- **Analyzers are advisory unless promoted into the locked control layer**
+- **Manual report paths are locked:** use `npm run system:full`
 - **Image system preserved:** path changes allowed, logic changes not allowed
 
 ## Permission Boundaries
 
 **Allowed without asking:**
-- Run sync and validators
+- Run validators and targeted checks
 - Read any repo file for context
 - Implement tasks from this document
 - Fix validator failures within active task scope
+- Update non-governing docs when requested
 
 **Requires user confirmation:**
 - Modify governing docs in Mindwp-Docs/core/
@@ -110,7 +122,7 @@ Architecture → SYSTEM.md. Content rules → CONTENT.md. CTA contracts → CONV
 
 # 4. CURRENT TASKS
 
-### T-001 — Preserve Clean Report State
+### T-001 — Preserve Locked Full-System State
 **Status:** Continuous | **Priority:** High
 
 ### T-002 — Preserve SEO Coverage Guarantees
@@ -120,15 +132,15 @@ Architecture → SYSTEM.md. Content rules → CONTENT.md. CTA contracts → CONV
 **Status:** Continuous | **Priority:** High
 
 ### T-004 — Preserve CTA Contract Integrity
-**Status:** Active | **Priority:** Medium
+**Status:** Continuous | **Priority:** High
 
-### T-005 — Preserve Test Health Snapshot
-**Status:** Active | **Priority:** Medium
+### T-005 — Preserve Historical System Records
+**Status:** Active | **Priority:** High
 
 ### T-006 — Preserve Report-Only Dashboard Boundary
 **Status:** Continuous | **Priority:** High
 
-### T-007 — Keep Contact Submissions Minimal
+### T-007 — Keep Documentation Aligned To The Current Control Plane
 **Status:** Active | **Priority:** High
 
 ### T-008 — Keep Structural Validators Authoritative
@@ -151,7 +163,10 @@ Adding or renaming canonical topics without coverage can reintroduce orphan topi
 Contact form only works with `RESEND_API_KEY` and `CONTACT_EMAIL` in env.
 
 ### R-005 — Test snapshot staleness
-Test results only stay meaningful if rerun after behavior changes.
+Test artifacts only stay meaningful if a current test-producing run has written them.
+
+### R-006 — Advisory lint can hide meaningful drift
+The latest full-system snapshot is still PASS, but advisory lint noise can accumulate and hide more important regressions.
 
 ---
 
@@ -164,10 +179,10 @@ Test results only stay meaningful if rerun after behavior changes.
 **Date:** 2026-04-07. Moved to `scripts/image-system/`. Logic preserved exactly.
 
 ### E-003 — System Sync Simplified
-**Date:** 2026-04-07. Reduced to state + drift generation. Outputs: `reports/system-state.json`, `reports/system-drift.json`.
+**Date:** 2026-04-07. Historical entry. Reduced to state + drift generation with `reports/system-state.json` and `reports/system-drift.json` at that time.
 
 ### E-004 — Master Report Engine Added
-**Date:** 2026-04-08. Added `system-report.mjs` and `npm run system:report`. Normalized output to `reports/system-report.json`.
+**Date:** 2026-04-08. Historical basis for the current control plane. The execution surface later evolved from `system:report` into the locked `npm run system:full` entrypoint, which now writes `reports/system-report.json`, `reports/client-dashboard.json`, and snapshot history.
 
 ### E-005 — Dashboard Alignment
 **Date:** 2026-04-08. Report-only mode. Removed monitor, panels, and server actions.
@@ -194,13 +209,13 @@ Test results only stay meaningful if rerun after behavior changes.
 **Date:** 2026-04-08. Direct email via Resend. No CRM, no webhooks, no automation.
 
 ### E-013 — Test System Centralized
-**Date:** 2026-04-08. Runtime layers added (unit/system/integration/e2e). `npm run test:all` → `reports/test-results.json`. 49 passed.
+**Date:** 2026-04-08. Historical snapshot. Runtime layers added (unit/system/integration/e2e). `npm run test:all` wrote `reports/test-results.json` at that stage.
 
 ### E-014 — SEO Authority Completion
-**Date:** 2026-04-08. 21/21 validators passed. 0 drift. 100% SEO coverage. 42/42 topics complete.
+**Date:** 2026-04-08. Historical milestone. 21/21 validators passed at that point, with zero drift and full topic coverage.
 
 ### E-015 — Content Dashboard Removed
-**Date:** 2026-04-08. Deleted route, middleware, robots. Only `/dev/system-dashboard` remains.
+**Date:** 2026-04-08. Deleted route, middleware, robots. Internal dashboard surface consolidated.
 
 ### E-016 — Launch Readiness Pass
 **Date:** 2026-04-08. Static OG fallback. Zero weak topics. Clean system report.
@@ -217,16 +232,24 @@ Test results only stay meaningful if rerun after behavior changes.
 ### E-020 — Component Library Review Hardening
 **Date:** 2026-04-17. Extended component-library reporting to account for transitive composition through section wrappers, surfaced reusable single-component dependencies inside section entries, normalized live-page links away from dynamic placeholder routes, narrowed preview controls to reviewer-focused switches, set the approved tablet/mobile preview widths, and fixed the preview presentation issues uncovered during the reopened review pass.
 
+### E-021 — Operator Dashboard Daily-Mode Pass
+**Date:** 2026-04-19. The internal system dashboard was refactored into a thin server wrapper plus a client operator layer with Today’s Focus, fast presets, local-only memory, and condensed system-log presentation.
+
+### E-022 — Current Report Snapshot Reviewed
+**Date:** 2026-04-19. `reports/system-report.json` shows `PASS`, 22 validator entries, zero blocking failures, and one advisory lint failure outside the internal system dashboard.
+
+### E-023 — Core Documentation Alignment Pass
+**Date:** 2026-04-19. Core docs were re-aligned to the current `system:full` contract while preserving historical system-state entries.
+
 ---
 
 # 7. PRIORITIES
 
-1. Keep `system-report.json` and `test-results.json` as linked control-layer outputs
-2. Keep all blocking validators and runtime test layers green
-3. Keep contact path minimal: `/contact` → `/api/contact` → Resend → inbox
-4. Preserve zero-gap SEO state
-5. Preserve complete canonical-topic coverage
-6. Preserve architecture, validators, dashboard report-loading, and static OG fallback
+1. Keep `reports/system-report.json` authoritative for internal system state.
+2. Keep `reports/client-dashboard.json` aligned with the locked full-system run.
+3. Keep core docs describing the current repo without deleting historical execution context.
+4. Clear advisory lint drift before it spreads into broader dashboard or report surfaces.
+5. Preserve graph, CTA, and topic-authority guarantees.
 
 ---
 

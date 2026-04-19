@@ -239,7 +239,7 @@ If any task requires structural change → STOP and escalate instead of implemen
 ## 7. Permission Boundaries
 
 ### Allowed without asking
-- Run sync and validators
+- Run validators and targeted checks
 - Read any repo file for context
 - Implement tasks from EXECUTION-MEMORY.md (On demand Only )
 - Fix validator failures and code defects inside active task scope
@@ -264,5 +264,5 @@ If any task requires structural change → STOP and escalate instead of implemen
 | Adding `type: 'industry'` to a node | Use `industry-detail` or `industry-category` |
 | Hardcoding spacing/font values | Use design tokens |
 | Creating CTA label outside approved config | Route through `CTA_CONFIG` |
-| Skipping validation after a change | Run validate-all → sync → verify clean |
+| Skipping validation after a change | Run the narrow validator/test needed, then rerun `system:full` when the change affects reports or system state |
 | Manually editing generated images | Regenerate with `--force` flag |

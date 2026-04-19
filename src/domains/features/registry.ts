@@ -46,7 +46,15 @@ export const FEATURE_PAGE_DATA_BY_SLUG = {
   crm: crmData,
 } as const satisfies Record<FeatureSlug, FeaturePageData>;
 
-const FEATURE_DATA = Object.values(FEATURE_PAGE_DATA_BY_SLUG);
+const FEATURE_DATA = [
+  voicecallsData,
+  aiChatData,
+  reputationData,
+  inboxData,
+  workflowsData,
+  calendarsData,
+  crmData,
+] as const;
 
 const FEATURE_ICON_BY_SLUG: Record<FeatureSlug, LucideIcon> = {
   voicecalls: Phone,

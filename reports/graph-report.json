@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-19T03:31:24.430Z",
+  "generatedAt": "2026-04-19T05:29:07.789Z",
   "passed": true,
   "errorCount": 0,
   "warningCount": 0,
@@ -11,5 +11,6 @@
   "warnings": [],
   "issues": [],
   "advisory": [],
-  "derivedEdgeCount": 9626
+  "derivedEdgeCount": 9626,
+  "sourceCommand": "npx tsx scripts/validators/validate-graph.ts"
 }

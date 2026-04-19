@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-19T03:31:20.211Z",
+  "generatedAt": "2026-04-19T05:29:04.488Z",
   "passed": true,
   "issueCount": 0,
   "warningCount": 0,
@@ -15,5 +15,6 @@
     "smart-website-systems"
   ],
   "issues": [],
-  "warnings": []
+  "warnings": [],
+  "sourceCommand": "npm run system:full"
 }

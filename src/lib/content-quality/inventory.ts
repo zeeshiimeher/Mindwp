@@ -170,6 +170,14 @@ const STATIC_ROUTE_SEEDS: StaticRouteSeed[] = [
     indexable: false,
   },
   {
+    key: 'static:client-dashboard',
+    path: '/dashboard',
+    title: 'Performance Dashboard',
+    description:
+      'Client-facing performance dashboard showing system health, prioritized improvements, and page-level progress in business language.',
+    indexable: false,
+  },
+  {
     key: 'static:authority-dashboard',
     path: '/dev/authority-dashboard',
     title: 'Authority Dashboard Redirect',

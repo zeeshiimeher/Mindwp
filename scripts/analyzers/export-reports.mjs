@@ -16,9 +16,24 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
 const EXPORT_SOURCE_COMMAND = 'node --import tsx/esm scripts/analyzers/export-reports.mjs';
+const SYSTEM_MODE = process.env.SYSTEM_MODE ?? 'development';
 
 const typeArg = process.argv.find(a => a.startsWith('--type='));
 const requestedType = typeArg ? typeArg.split('=')[1] : 'all';
+
+function assertExportLock() {
+  if (SYSTEM_MODE !== 'production') {
+    return;
+  }
+
+  if (process.env.SYSTEM_ALLOW_REPORT_EXPORT === '1') {
+    return;
+  }
+
+  throw new Error(
+    'Manual report generation is locked in production mode. Use npm run system:full so the full pipeline stays deterministic.'
+  );
+}
 
 async function init() {
   const { ensureGraphInitialized } = await import(
@@ -195,6 +210,8 @@ async function exportReadable(reportsDir) {
 }
 
 async function main() {
+  assertExportLock();
+
   const reportsDir = await init();
 
   if (requestedType === 'client' || requestedType === 'all') {

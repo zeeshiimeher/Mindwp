@@ -13,13 +13,13 @@ import { ProblemSolutionSplitCard } from '@/components/reusable/single/ProblemSo
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { GenericErrorFallback } from '@/components/system/GenericErrorFallback';
 import { SmartCTA } from '@/components/system/SmartCTA';
-import type { ServicePageDataBySlug } from '@/domains/services/registry';
+import type { ServicePageDataBySlug } from '@/domains/services/pageData';
 import { SERVICE_RENDERER_DEFAULTS } from '@/domains/services/rendererDefaults';
 
 interface ConversionLayerRendererProps {
   data: ServicePageDataBySlug[
-    'conversion-layer' | 'conversion-funnel-system-vs-landing-page-development'
-  ];
+    | 'conversion-layer'
+    | 'conversion-funnel-system-vs-landing-page-development'];
   slug: string;
 }
 

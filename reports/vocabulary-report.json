@@ -1,7 +1,8 @@
 {
-  "generatedAt": "2026-04-19T03:31:28.807Z",
+  "generatedAt": "2026-04-19T05:29:13.007Z",
   "passed": true,
   "scannedFiles": 197,
   "issueCount": 0,
-  "issues": []
+  "issues": [],
+  "sourceCommand": "npm run system:full"
 }

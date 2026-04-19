@@ -2,7 +2,7 @@
 
 This repo contains the MindWP marketing site: homepage + services, features, industries, resources, blog, case studies, and utility pages.
 
-Runtime is consolidated to the Next.js app in `next-app/`.
+Runtime lives directly in this workspace under `src/`, `scripts/`, `tests/`, and `Mindwp-Docs/`.
 
 ## Run
 
@@ -11,6 +11,7 @@ Runtime is consolidated to the Next.js app in `next-app/`.
 - Typecheck: `npm run typecheck`
 - Lint: `npm run lint`
 - Full validation: `npm run validate:all`
+- Unified full-system run: `npm run system:full`
 - Full test + validator aggregation: `npm run test:all`
 - CI-safe gate (recommended): `npm run validate:ci`
 - Production build: `npm run build`
@@ -33,7 +34,9 @@ Run the layers with:
 - `npm run test:e2e`
 - `npm run test:all`
 
-`npm run test:all` runs the validator layer, Vitest unit/system/integration layers, and Playwright E2E, then writes the aggregated machine-readable report to `reports/test-results.json` for dashboard and CI visibility.
+`npm run system:full` runs `validate-all`, a dedicated typecheck, the full Vitest runtime suite, optional Playwright E2E with `-- --include-e2e`, regenerates report artifacts, and writes the unified machine-readable control-plane snapshot to `reports/system-report.json`.
+
+`npm run test:all` is now an alias for `npm run system:full -- --include-e2e`.
 
 ## Validator Extensions
 
@@ -48,7 +51,7 @@ These catch incomplete template payloads and weak section-cardinality data befor
 
 - The local working folder is the source of truth.
 - Git is used to record and protect the current local state with frequent commits.
-- Preferred workflow: change files locally, validate, run system sync when needed, then commit the resulting code and docs.
+- Preferred workflow: change files locally, validate, run `npm run system:full` when needed, then commit the resulting code and docs.
 - Do not use Git to overwrite the working folder unless you explicitly intend to do that.
 - Keep the repo root clean: runtime logs, pid files, and temporary command output belong under `_workspace/`, not at the top level.
 
@@ -91,15 +94,18 @@ Resolver guarantees:
 
 ## Docs (authoritative)
 
-- Start here: `../Mindwp-Docs/DOCUMENTATION-INDEX.md`
-- AI agents: `../Mindwp-Docs/AI-AGENT-RUNBOOK.md`
-- Strategy / positioning: `../Mindwp-Docs/00_FOUNDATION_DOCTRINE.md`
-- Architecture reality: `../Mindwp-Docs/ARCHITECTURE-AND-DECISIONS.md`
+- System truth: `Mindwp-Docs/core/SYSTEM.md`
+- Tooling surface: `Mindwp-Docs/core/TOOLS.md`
+- Current state: `Mindwp-Docs/core/SYSTEM-STATE.md`
+- Content rules: `Mindwp-Docs/core/CONTENT.md`
+- CTA rules: `Mindwp-Docs/core/CONVERSION.md`
 
 ## Architecture
 
-- Runtime: Next.js App Router in `next-app/src/app/`
-- Shared/domain code: `next-app/src/`
+- Runtime: Next.js App Router in `src/app/`
+- Shared/domain code: `src/`
+- Control-plane scripts: `scripts/`
+- Documentation: `Mindwp-Docs/`
 
 ## Forms
 

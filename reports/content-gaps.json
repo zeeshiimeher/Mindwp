@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-19T03:31:30.356Z",
+  "generatedAt": "2026-04-19T05:29:27.054Z",
   "stats": {
     "totalNodes": 227,
     "blogs": 88,
@@ -78769,5 +78769,6 @@
     }
   ],
   "resourceIndustryGaps": [],
-  "industryCaseStudyGaps": []
+  "industryCaseStudyGaps": [],
+  "sourceCommand": "node --import tsx/esm scripts/analyzers/generate-content-gaps.ts"
 }

@@ -110,6 +110,12 @@ const validators = [
     blocking: true,
   },
   {
+    name: 'validate-production-contracts',
+    command: 'npx',
+    args: ['tsx', 'scripts/validators/validate-production-contracts.ts', '--report-json'],
+    blocking: true,
+  },
+  {
     name: 'validate-inline-link-misuse',
     command: 'npx',
     args: ['tsx', 'scripts/validators/validate-inline-link-misuse.ts'],

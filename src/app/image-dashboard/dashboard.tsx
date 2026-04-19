@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -132,6 +133,26 @@ export default function ImageDashboard() {
         <p className='text-sm text-zinc-400 mt-1'>
           Visual debug scores, auto-tune history, and learning memory
         </p>
+        <div className='mt-4 flex flex-wrap gap-3'>
+          <Link
+            href='/image-dashboard'
+            className='rounded-2xl border border-zinc-100 bg-zinc-100 px-4 py-3 text-sm font-bold text-zinc-950 transition hover:border-white hover:bg-white'
+          >
+            Image Dashboard
+          </Link>
+          <Link
+            href='/system-dashboard'
+            className='rounded-2xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm font-bold text-zinc-100 transition hover:border-zinc-500'
+          >
+            Operator Dashboard
+          </Link>
+          <Link
+            href='/dashboard'
+            className='rounded-2xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-sm font-bold text-zinc-100 transition hover:border-zinc-500'
+          >
+            Client Dashboard
+          </Link>
+        </div>
       </header>
 
       {log.length === 0 ? (

@@ -1,6 +1,7 @@
 {
-  "generatedAt": "2026-04-19T03:31:28.477Z",
+  "generatedAt": "2026-04-19T05:29:12.693Z",
   "passed": true,
   "violationCount": 0,
-  "violations": []
+  "violations": [],
+  "sourceCommand": "npm run system:full"
 }

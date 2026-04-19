@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-19T03:31:23.405Z",
+  "generatedAt": "2026-04-19T05:29:06.832Z",
   "sources": {
     "services": 19,
     "features": 7,
@@ -7,5 +7,6 @@
     "caseStudies": 22
   },
   "violationCount": 0,
-  "violations": []
+  "violations": [],
+  "sourceCommand": "npm run system:full"
 }

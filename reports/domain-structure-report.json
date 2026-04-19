@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-19T03:31:19.352Z",
+  "generatedAt": "2026-04-19T05:29:03.658Z",
   "passed": true,
   "scannedByType": {
     "service": 19,
@@ -9,5 +9,6 @@
     "case-study": 22
   },
   "issueCount": 0,
-  "issues": []
+  "issues": [],
+  "sourceCommand": "npm run system:full"
 }

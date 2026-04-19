@@ -1,15 +1,15 @@
 import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { readSystemReport } from '@/lib/dev/system-report';
 
-import OperatorDashboard from './OperatorDashboard';
+import OperatorDashboard from '../dev/system-dashboard/OperatorDashboard';
 
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata() {
-  return getInventoryMetadata('/dev/system-dashboard');
+  return getInventoryMetadata('/system-dashboard');
 }
 
-export default function SystemDashboardPage() {
+export default function SystemDashboardAliasPage() {
   const systemReport = readSystemReport();
 
   if (!systemReport) {

@@ -62,6 +62,16 @@ interface SystemStateSnapshot {
   };
 }
 
+interface UnifiedSystemReportSnapshot {
+  status?: 'PASS' | 'FAIL';
+  timestamp?: string;
+  validate?: {
+    status?: 'PASS' | 'FAIL';
+    validatorCount?: number;
+    blockingFailed?: number;
+  };
+}
+
 interface DriftSnapshot {
   generatedAt?: string;
   driftCount?: number;
@@ -292,27 +302,23 @@ export function recordScriptHistory(entry: ScriptHistoryEntry): void {
 }
 
 export function loadExecutionSystemStatus(): ExecutionSystemStatus {
-  const systemState = readJsonFile<SystemStateSnapshot>(path.join(reportsDir, 'system-state.json'));
-  const drift = readJsonFile<DriftSnapshot>(path.join(reportsDir, 'system-drift.json'));
-  const validation = readJsonFile<ValidationSnapshot>(
-    path.join(reportsDir, 'validation-results.json')
+  const report = readJsonFile<UnifiedSystemReportSnapshot>(
+    path.join(reportsDir, 'system-report.json')
   );
-
-  const rawStatus = systemState?.status ?? 'UNKNOWN';
+  const rawStatus =
+    report?.status === 'PASS' ? 'CLEAN' : report?.status === 'FAIL' ? 'BROKEN' : 'UNKNOWN';
   const status = rawStatus === 'BROKEN' ? 'ERROR' : rawStatus === 'UNKNOWN' ? 'WARNING' : rawStatus;
-  const validatorCount =
-    validation?.validators?.length ?? systemState?.validation?.total?.total ?? 0;
-  const blockingFailures =
-    validation?.total?.blockingFailed ?? systemState?.validation?.total?.blockingFailed ?? 0;
+  const validatorCount = report?.validate?.validatorCount ?? 0;
+  const blockingFailures = report?.validate?.blockingFailed ?? 0;
 
   return {
     status,
     rawStatus,
-    driftCount: drift?.driftCount ?? 0,
+    driftCount: 0,
     validatorCount,
     validatorState: blockingFailures > 0 ? 'FAIL' : 'PASS',
-    lastSync: systemState?.generatedAt ?? null,
-    validationGeneratedAt: validation?.generatedAt ?? null,
+    lastSync: report?.timestamp ?? null,
+    validationGeneratedAt: report?.timestamp ?? null,
   };
 }
 
