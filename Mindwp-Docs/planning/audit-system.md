@@ -33,6 +33,7 @@ Tracker status: active
 - Merged `tests/integration/sitemap-robots-consistency.test.ts` into `tests/system/seo-consistency.test.ts` and deleted the integration copy.
 - Deleted `tests/e2e/conversion-paths.spec.ts` after retaining CTA query coverage in `tests/e2e/cta-query-params.spec.ts` and submission-path coverage in `tests/e2e/conversion.spec.ts`.
 - Stabilized the retained Playwright contact proof for Turnstile-gated submission by supplying a test site key in the Playwright web server environment and seeding the test CAPTCHA token inside `tests/e2e/conversion.spec.ts`.
+- Deleted `tests/integration/performance-budget.test.ts` because it enforced render-speed and markup-size budgets rather than release correctness.
 
 ### Phase 1 Verification Log
 
