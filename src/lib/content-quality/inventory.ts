@@ -82,16 +82,16 @@ function resolveInventoryOpenGraphImages(canonical: string): string[] {
   }
 
   const [rootSegment] = segments;
-  const assetDirectoryByRouteRoot: Partial<Record<string, string>> = {
+  const assetDirectoryByCanonicalRoot: Partial<Record<string, string>> = {
     blog: 'blog',
-    'case-study': 'case-studies',
+    'case-studies': 'case-studies',
     features: 'features',
     industries: 'industries',
     resources: 'resources',
     services: 'services',
   };
 
-  const assetDirectory = rootSegment ? assetDirectoryByRouteRoot[rootSegment] : null;
+  const assetDirectory = rootSegment ? assetDirectoryByCanonicalRoot[rootSegment] : null;
   const assetSlug = segments.at(-1);
   if (!assetDirectory || !assetSlug) {
     return [DEFAULT_OG_IMAGE_PATH];

@@ -146,70 +146,8 @@ export const getServiceDataBySlug = (slug: ServiceSlug) => {
   return SERVICE_ENTRY_BY_SLUG_WITH_ALIASES[slug].data;
 };
 
-export const getServiceRendererBySlug = (slug: ServiceSlug) => {
-  return SERVICE_ENTRY_BY_SLUG_WITH_ALIASES[slug].render;
-};
-
 export const renderServicePageBySlug = (slug: ServiceSlug): ReactElement => {
-  switch (slug) {
-    case 'smart-website-systems': {
-      return renderServiceEntry(slug);
-    }
-    case 'conversion-layer': {
-      return renderServiceEntry(slug);
-    }
-    case 'conversion-funnel-system-vs-landing-page-development': {
-      return renderServiceEntry(slug);
-    }
-    case 'system-migration-platform-consolidation': {
-      return renderServiceEntry(slug);
-    }
-    case 'website-redesign-system-rebuild': {
-      return renderServiceEntry(slug);
-    }
-    case 'lead-reactivation-system': {
-      return renderServiceEntry(slug);
-    }
-    case 'missed-call-recovery-system': {
-      return renderServiceEntry(slug);
-    }
-    case 'unified-communication-system': {
-      return renderServiceEntry(slug);
-    }
-    case 'local-seo-authority': {
-      return renderServiceEntry(slug);
-    }
-    case 'reputation-review-systems': {
-      return renderServiceEntry(slug);
-    }
-    case 'crm-infrastructure-implementation': {
-      return renderServiceEntry(slug);
-    }
-    case 'website-crm-integration-vs-manual-lead-handling': {
-      return renderServiceEntry(slug);
-    }
-    case 'ai-lead-handling': {
-      return renderServiceEntry(slug);
-    }
-    case 'service-pages-vs-one-generic-services-page': {
-      return renderServiceEntry(slug);
-    }
-    case 'wordpress-development': {
-      return renderServiceEntry(slug);
-    }
-    case 'ecommerce': {
-      return renderServiceEntry(slug);
-    }
-    case 'divi5': {
-      return renderServiceEntry(slug);
-    }
-    case 'bricks-builder': {
-      return renderServiceEntry(slug);
-    }
-    case 'elementor': {
-      return renderServiceEntry(slug);
-    }
-  }
+  return renderServiceEntry(slug);
 };
 
 export const getSlugFromCanonical = (canonical: string) => {

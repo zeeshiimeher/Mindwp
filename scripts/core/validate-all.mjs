@@ -12,7 +12,7 @@
  *   node scripts/core/validate-all.mjs --report-json
  */
 
-import { execFileSync } from 'node:child_process';
+import { execFile, execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 
@@ -205,6 +205,33 @@ function runValidator(validator) {
   };
 }
 
+function runValidatorAsync(validator) {
+  const start = Date.now();
+
+  return new Promise(resolve => {
+    execFile(
+      validator.command,
+      validator.args,
+      {
+        cwd: root,
+        encoding: 'utf8',
+        stdio: ['pipe', 'pipe', 'pipe'],
+        timeout: 120_000,
+      },
+      (error, stdout, stderr) => {
+        resolve({
+          name: validator.name,
+          command: validator.command,
+          args: validator.args,
+          status: error ? 'fail' : 'pass',
+          duration: Date.now() - start,
+          output: error ? [stdout, stderr].filter(Boolean).join('\n') : stdout || '',
+        });
+      }
+    );
+  });
+}
+
 function buildReport(results) {
   const passed = results.filter(result => result.status === 'pass');
   const failed = results.filter(result => result.status === 'fail');
@@ -249,23 +276,53 @@ function buildReport(results) {
   };
 }
 
-function main() {
+function logValidatorResult(result) {
+  if (result.status === 'pass') {
+    console.log(`\u2713 (${result.duration}ms)`);
+  } else {
+    console.log(`\u2717 FAILED (${result.duration}ms)`);
+  }
+}
+
+async function main() {
   console.log('[validate-all] Running all validators...\n');
 
   /** @type {ValidatorResult[]} */
-  const results = [];
+  const blockingResults = [];
+  const advisoryValidators = [];
 
   for (const validator of validators) {
-    process.stdout.write(`  ${validator.name}${validator.blocking ? '' : ' [advisory]'} ... `);
-    const result = runValidator(validator);
-    results.push(result);
+    if (validator.blocking === false) {
+      advisoryValidators.push(validator);
+      continue;
+    }
 
-    if (result.status === 'pass') {
-      console.log(`\u2713 (${result.duration}ms)`);
-    } else {
-      console.log(`\u2717 FAILED (${result.duration}ms)`);
+    process.stdout.write(`  ${validator.name} ... `);
+    const result = runValidator(validator);
+    blockingResults.push(result);
+    logValidatorResult(result);
+  }
+
+  /** @type {ValidatorResult[]} */
+  let advisoryResults = [];
+
+  if (advisoryValidators.length > 0) {
+    console.log('\n[validate-all] Running advisory validators in parallel...');
+
+    for (const validator of advisoryValidators) {
+      console.log(`  ${validator.name} [advisory] ... running`);
+    }
+
+    advisoryResults = await Promise.all(advisoryValidators.map(runValidatorAsync));
+
+    for (const result of advisoryResults) {
+      process.stdout.write(`  ${result.name} [advisory] ... `);
+      logValidatorResult(result);
     }
   }
+
+  const resultByName = new Map([...blockingResults, ...advisoryResults].map(result => [result.name, result]));
+  const results = validators.map(validator => resultByName.get(validator.name)).filter(Boolean);
 
   const report = buildReport(results);
 

@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-04-20T09:26:37.573Z",
+  "generatedAt": "2026-04-20T10:28:42.216Z",
   "total": {
-    "passed": 24,
-    "failed": 1,
-    "blockingFailed": 1,
+    "passed": 25,
+    "failed": 0,
+    "blockingFailed": 0,
     "advisoryFailed": 0,
     "total": 25
   },
@@ -11,79 +11,79 @@
     {
       "name": "check-generated",
       "status": "pass",
-      "duration": 4330,
+      "duration": 4492,
       "blocking": true
     },
     {
       "name": "typecheck",
-      "status": "fail",
-      "duration": 1963,
+      "status": "pass",
+      "duration": 1943,
       "blocking": true
     },
     {
       "name": "lint",
       "status": "pass",
-      "duration": 5922,
+      "duration": 5867,
       "blocking": false
     },
     {
       "name": "validate-content-contract",
       "status": "pass",
-      "duration": 2403,
+      "duration": 2135,
       "blocking": true
     },
     {
       "name": "validate-content-quality",
       "status": "pass",
-      "duration": 839,
+      "duration": 836,
       "blocking": true
     },
     {
       "name": "validate-domain-structure",
       "status": "pass",
-      "duration": 2210,
+      "duration": 2187,
       "blocking": true
     },
     {
       "name": "validate-cta-label-contract",
       "status": "pass",
-      "duration": 795,
+      "duration": 815,
       "blocking": true
     },
     {
       "name": "validate-cta-resolver-integrity",
       "status": "pass",
-      "duration": 109,
+      "duration": 115,
       "blocking": true
     },
     {
       "name": "validate-conversion-contract",
       "status": "pass",
-      "duration": 750,
+      "duration": 744,
       "blocking": true
     },
     {
       "name": "validate-template-payload-sufficiency",
       "status": "pass",
-      "duration": 934,
+      "duration": 936,
       "blocking": true
     },
     {
       "name": "validate-section-structure",
       "status": "pass",
-      "duration": 835,
+      "duration": 814,
       "blocking": true
     },
     {
       "name": "validate-section-shell-integrity",
       "status": "pass",
-      "duration": 120,
+      "duration": 119,
       "blocking": true
     },
     {
       "name": "validate-design-system",
       "status": "pass",
-      "duration": 130,
+      "duration": 134,
       "blocking": true
     },
     {
@@ -101,71 +101,65 @@
     {
       "name": "validate-internal-links",
       "status": "pass",
-      "duration": 986,
+      "duration": 1000,
       "blocking": true
     },
     {
       "name": "validate-cta-violations",
       "status": "pass",
-      "duration": 561,
+      "duration": 565,
       "blocking": true
     },
     {
       "name": "validate-related-duplication",
       "status": "pass",
-      "duration": 550,
+      "duration": 561,
       "blocking": true
     },
     {
       "name": "validate-production-contracts",
       "status": "pass",
-      "duration": 848,
+      "duration": 863,
       "blocking": true
     },
     {
       "name": "validate-inline-link-misuse",
       "status": "pass",
-      "duration": 592,
+      "duration": 563,
       "blocking": true
     },
     {
       "name": "generate-proof-coverage",
       "status": "pass",
-      "duration": 996,
+      "duration": 1094,
       "blocking": false
     },
     {
       "name": "validate-tokens",
       "status": "pass",
-      "duration": 108,
+      "duration": 124,
       "blocking": true
     },
     {
       "name": "validate-inline-styles",
       "status": "pass",
-      "duration": 266,
+      "duration": 214,
       "blocking": true
     },
     {
       "name": "validate-docs",
       "status": "pass",
-      "duration": 98,
+      "duration": 243,
       "blocking": false
     },
     {
       "name": "validate-vocabulary",
       "status": "pass",
-      "duration": 234,
+      "duration": 385,
       "blocking": false
     }
   ],
-  "errors": [
-    {
-      "validator": "typecheck",
-      "blocking": true,
-      "output": ".next-audit/dev/types/validator.ts(116,39): error TS2307: Cannot find module '../../../src/app/case-study/[slug]/page.js' or its corresponding type declarations.\n.next/dev/types/validator.ts(116,39): error TS2307: Cannot find module '../../../src/app/case-study/[slug]/page.js' or its corresponding type declarations.\n.next/types/validator.ts(107,39): error TS2307: Cannot find module '../../src/app/case-study/[slug]/page.js' or its corresponding type declarations.\n"
-    }
-  ],
+  "errors": [],
   "seo": {
     "pagesAnalyzed": 352,
     "missingMetadata": 0,

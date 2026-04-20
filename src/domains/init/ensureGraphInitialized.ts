@@ -1,9 +1,8 @@
-import { BLOG_POSTS } from '@/domains/blog/registry';
-import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
-import { FEATURE_REGISTRY } from '@/domains/features/registry';
-import { INDUSTRY_REGISTRY } from '@/domains/industries/registry';
-import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
-import { SERVICE_REGISTRY } from '@/domains/services/registry';
+import {
+  DOMAIN_GRAPH_SOURCES,
+  RESOLVER_DEPENDENCY_SOURCES,
+  RESOLVER_INDEX_SOURCES,
+} from '@/domains/contentModel';
 import { createResolver } from '@/lib/authority/resolver';
 import {
   getContentGraph,
@@ -51,29 +50,26 @@ export async function ensureGraphInitialized(): Promise<void> {
   initPromise = (async () => {
     const t0 = performance.now();
 
-    initContentGraph({
-      blogPosts: BLOG_POSTS,
-      caseStudies: CASE_STUDY_REGISTRY,
-      features: FEATURE_REGISTRY,
-      industries: INDUSTRY_REGISTRY,
-      resources: RESOURCE_REGISTRY,
-      services: SERVICE_REGISTRY,
-    });
+    initContentGraph(DOMAIN_GRAPH_SOURCES);
 
     const t1 = performance.now();
 
-    initResolverIndexes(getStructuredContentGraph(), BLOG_POSTS, RESOURCE_REGISTRY);
+    initResolverIndexes(
+      getStructuredContentGraph(),
+      RESOLVER_INDEX_SOURCES.blogPosts,
+      RESOLVER_INDEX_SOURCES.resources
+    );
 
     const t2 = performance.now();
 
     _resolver = wrapResolverWithMetrics(
       createResolver(
         {
-          caseStudies: CASE_STUDY_REGISTRY,
-          features: FEATURE_REGISTRY,
-          industries: INDUSTRY_REGISTRY,
+          caseStudies: RESOLVER_DEPENDENCY_SOURCES.caseStudies,
+          features: RESOLVER_DEPENDENCY_SOURCES.features,
+          industries: RESOLVER_DEPENDENCY_SOURCES.industries,
           getServiceBySlug: (slug: string) => {
-            const s = SERVICE_REGISTRY[slug];
+            const s = RESOLVER_DEPENDENCY_SOURCES.services[slug];
             if (!s) return undefined;
             return { slug: s.slug, badge: s.badge, title: s.title, description: s.description };
           },

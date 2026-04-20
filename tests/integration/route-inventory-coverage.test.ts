@@ -54,4 +54,13 @@ describe('integration: route inventory coverage', () => {
 
 		expect(staticAppRoutes.every(routePath => inventoryPaths.has(routePath))).toBe(true);
 	});
+
+	test('inventory uses canonical case-study assets for case-study open graph images', async () => {
+		const inventory = await buildRouteInventory();
+		const entry = inventory.find(item => item.path === '/case-studies/hvac-emergency-lead-routing');
+
+		expect(entry?.openGraph.images).toEqual([
+			'/images/case-studies/hvac-emergency-lead-routing.webp',
+		]);
+	});
 });

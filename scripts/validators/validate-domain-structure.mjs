@@ -190,7 +190,19 @@ function collectServiceRegistrySlugs() {
     return new Set();
   }
 
-  return getObjectLiteralRegistryKeys(registrySource, ['SERVICE_REGISTRY']);
+  const objectLiteralKeys = getObjectLiteralRegistryKeys(registrySource, ['SERVICE_REGISTRY']);
+  if (objectLiteralKeys.size > 0) {
+    return objectLiteralKeys;
+  }
+
+  const declaration = registrySource.getVariableDeclaration('SERVICE_REGISTRY');
+  const initializerText = declaration?.getInitializer()?.getText() ?? '';
+  if (!initializerText.includes('SERVICE_PAGE_DATA_BY_SLUG')) {
+    return new Set();
+  }
+
+  const pageDataPath = path.join(root, 'src', 'domains', 'services', 'pageData.ts');
+  return new Set(collectServicePageDataPathBySlug(pageDataPath).keys());
 }
 
 function collectFeatureRegistrySlugs() {
