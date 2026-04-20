@@ -1,155 +1,173 @@
 {
-  "generatedAt": "2026-04-19T05:29:13.013Z",
+  "generatedAt": "2026-04-20T09:26:37.573Z",
   "total": {
-    "passed": 21,
+    "passed": 24,
     "failed": 1,
-    "blockingFailed": 0,
-    "advisoryFailed": 1,
-    "total": 22
+    "blockingFailed": 1,
+    "advisoryFailed": 0,
+    "total": 25
   },
   "validators": [
     {
       "name": "check-generated",
       "status": "pass",
-      "duration": 5244,
+      "duration": 4330,
       "blocking": true
     },
     {
       "name": "typecheck",
-      "status": "pass",
-      "duration": 2221,
+      "status": "fail",
+      "duration": 1963,
       "blocking": true
     },
     {
       "name": "lint",
-      "status": "fail",
-      "duration": 5963,
+      "status": "pass",
+      "duration": 5922,
       "blocking": false
     },
     {
       "name": "validate-content-contract",
       "status": "pass",
-      "duration": 2357,
+      "duration": 2403,
       "blocking": true
     },
     {
       "name": "validate-content-quality",
       "status": "pass",
-      "duration": 835,
+      "duration": 839,
       "blocking": true
     },
     {
       "name": "validate-domain-structure",
       "status": "pass",
-      "duration": 2366,
+      "duration": 2210,
       "blocking": true
     },
     {
       "name": "validate-cta-label-contract",
       "status": "pass",
-      "duration": 809,
+      "duration": 795,
+      "blocking": true
+    },
+    {
+      "name": "validate-cta-resolver-integrity",
+      "status": "pass",
+      "duration": 109,
       "blocking": true
     },
     {
       "name": "validate-conversion-contract",
       "status": "pass",
-      "duration": 787,
+      "duration": 750,
       "blocking": true
     },
     {
       "name": "validate-template-payload-sufficiency",
       "status": "pass",
-      "duration": 810,
+      "duration": 934,
       "blocking": true
     },
     {
       "name": "validate-section-structure",
       "status": "pass",
-      "duration": 740,
+      "duration": 835,
+      "blocking": true
+    },
+    {
+      "name": "validate-section-shell-integrity",
+      "status": "pass",
+      "duration": 120,
       "blocking": true
     },
     {
       "name": "validate-design-system",
       "status": "pass",
-      "duration": 166,
+      "duration": 130,
+      "blocking": true
+    },
+    {
+      "name": "validate-ui-purity",
+      "status": "pass",
+      "duration": 87,
       "blocking": true
     },
     {
       "name": "validate-graph",
       "status": "pass",
-      "duration": 792,
+      "duration": 763,
       "blocking": true
     },
     {
       "name": "validate-internal-links",
       "status": "pass",
-      "duration": 1000,
+      "duration": 986,
       "blocking": true
     },
     {
       "name": "validate-cta-violations",
       "status": "pass",
-      "duration": 569,
+      "duration": 561,
       "blocking": true
     },
     {
       "name": "validate-related-duplication",
       "status": "pass",
-      "duration": 554,
+      "duration": 550,
       "blocking": true
     },
     {
       "name": "validate-production-contracts",
       "status": "pass",
-      "duration": 885,
+      "duration": 848,
       "blocking": true
     },
     {
       "name": "validate-inline-link-misuse",
       "status": "pass",
-      "duration": 604,
+      "duration": 592,
       "blocking": true
     },
     {
       "name": "generate-proof-coverage",
       "status": "pass",
-      "duration": 961,
+      "duration": 996,
       "blocking": false
     },
     {
       "name": "validate-tokens",
       "status": "pass",
-      "duration": 113,
+      "duration": 108,
       "blocking": true
     },
     {
       "name": "validate-inline-styles",
       "status": "pass",
-      "duration": 211,
+      "duration": 266,
       "blocking": true
     },
     {
       "name": "validate-docs",
       "status": "pass",
-      "duration": 105,
+      "duration": 98,
       "blocking": false
     },
     {
       "name": "validate-vocabulary",
       "status": "pass",
-      "duration": 209,
+      "duration": 234,
       "blocking": false
     }
   ],
   "errors": [
     {
-      "validator": "lint",
-      "blocking": false,
-      "output": "\n/Users/zeeshansadiq/Projects/Mindwp/src/app/dashboard/page.tsx\n    1:1    error  Run autofix to sort these imports!                                                                                                                                                                                                                                                                         simple-import-sort/imports\n   30:33   error  Replace `value[0]·??·''·:·value·??·''` with `(value[0]·??·'')·:·(value·??·'')`                                                                                                                                                                                                                             prettier/prettier\n   77:13   error  Replace `·className={`rounded-[28px]·border·p-5·shadow-[0_26px_70px_rgba(15,23,42,0.08)]·${tone}`}` with `⏎······className={`rounded-[28px]·border·p-5·shadow-[0_26px_70px_rgba(15,23,42,0.08)]·${tone}`}⏎····`                                                                                            prettier/prettier\n  112:52   error  Replace `·searchParams·}:·{·searchParams?:·Promise<SearchParams>·` with `⏎··searchParams,⏎}:·{⏎··searchParams?:·Promise<SearchParams>;⏎`                                                                                                                                                                   prettier/prettier\n  123:49   error  Replace `This·page·only·renders·the·client-safe·dashboard·artifact.` with `⏎············This·page·only·renders·the·client-safe·dashboard·artifact.⏎··········`                                                                                                                                             prettier/prettier\n  152:97   error  Replace `Client·Performance·Dashboard` with `⏎················Client·Performance·Dashboard⏎··············`                                                                                                                                                                                                 prettier/prettier\n  157:90   error  Insert `⏎···············`                                                                                                                                                                                                                                                                                  prettier/prettier\n  208:80   error  Replace `{priority.message}` with `⏎························{priority.message}⏎······················`                                                                                                                                                                                                     prettier/prettier\n  234:23   error  Replace `·key={`${item.impact}:${item.message}:working`}·className='rounded-3xl·border·border-emerald-200·bg-white·p-4'` with `⏎····················key={`${item.impact}:${item.message}:working`}⏎····················className='rounded-3xl·border·border-emerald-200·bg-white·p-4'⏎··················`  prettier/prettier\n  238:46   error  Replace `·?·`${item.routes.length}·key·page${item.routes.length·===·1·?·''·:·'s'}.`` with `⏎························?·`${item.routes.length}·key·page${item.routes.length·===·1·?·''·:·'s'}.`⏎·······················`                                                                                     prettier/prettier\n  255:102  error  Replace `Resolved` with `⏎··················Resolved⏎················`                                                                                                                                                                                                                                     prettier/prettier\n  256:76   error  Replace `{report.changes.resolvedIssues.length}` with `⏎··················{report.changes.resolvedIssues.length}⏎················`                                                                                                                                                                         prettier/prettier\n  259:100  error  Replace `Watching` with `⏎··················Watching⏎················`                                                                                                                                                                                                                                     prettier/prettier\n  260:74   error  Replace `{report.changes.newIssues.length}` with `⏎··················{report.changes.newIssues.length}⏎················`                                                                                                                                                                                   prettier/prettier\n  263:99   error  Replace `Pages·Improved` with `⏎··················Pages·Improved⏎················`                                                                                                                                                                                                                         prettier/prettier\n  264:73   error  Replace `{report.changes.pagesImproved}` with `⏎··················{report.changes.pagesImproved}⏎················`                                                                                                                                                                                         prettier/prettier\n  276:21   error  Replace `·key={impact.impact}·className='grid·gap-1·rounded-3xl·border·border-slate-200·bg-slate-50·p-4'` with `⏎··················key={impact.impact}⏎··················className='grid·gap-1·rounded-3xl·border·border-slate-200·bg-slate-50·p-4'⏎················`                                      prettier/prettier\n  277:102  error  Replace `{impact.impact}` with `⏎····················{impact.impact}⏎··················`                                                                                                                                                                                                                   prettier/prettier\n  336:2    error  Insert `⏎`                                                                                                                                                                                                                                                                                                 prettier/prettier\n\n/Users/zeeshansadiq/Projects/Mindwp/src/app/dev/system-dashboard/page.tsx\n    1:1   error    Run autofix to sort these imports!                                                                                                                                                                                                                                                                             simple-import-sort/imports\n   67:4   error    Replace `·type:·'contract',·label:·'Structure',·matchers:·['contract',·'structure',·'template',·'domain']` with `⏎····type:·'contract',⏎····label:·'Structure',⏎····matchers:·['contract',·'structure',·'template',·'domain'],⏎·`                                                                              prettier/prettier\n   73:33  error    Replace `value[0]·??·''·:·value·??·''` with `(value[0]·??·'')·:·(value·??·'')`                                                                                                                                                                                                                                 prettier/prettier\n   85:23  error    Replace `.replace(/[^a-z0-9]+/gi,·'-').replace(/(^-|-$)/g,·'')` with `⏎····.replace(/[^a-z0-9]+/gi,·'-')⏎····.replace(/(^-|-$)/g,·'')⏎····`                                                                                                                                                                    prettier/prettier\n   88:10  warning  'buildHref' is defined but never used                                                                                                                                                                                                                                                                          @typescript-eslint/no-unused-vars\n  168:24  error    Replace `<p·className='mt-1·text-sm·leading-6·text-stone-600'>{description}</p>` with `(⏎··········<p·className='mt-1·text-sm·leading-6·text-stone-600'>{description}</p>⏎········)`                                                                                                                           prettier/prettier\n  200:23  error    Replace `·title,·summary,·children·}:·{·title:·string;·summary:·ReactNode;·children:·ReactNode·` with `⏎··title,⏎··summary,⏎··children,⏎}:·{⏎··title:·string;⏎··summary:·ReactNode;⏎··children:·ReactNode;⏎`                                                                                                   prettier/prettier\n  208:92  error    Replace `Expand` with `⏎··········Expand⏎········`                                                                                                                                                                                                                                                             prettier/prettier\n  274:44  error    Replace `·missing:·string[];·stale:·string[];·errors:·string[]·` with `⏎··missing:·string[];⏎··stale:·string[];⏎··errors:·string[];⏎`                                                                                                                                                                          prettier/prettier\n  299:84  error    Replace `⏎······.some(value·=>·value.toLowerCase().includes(query)` with `.some(value·=>⏎······value.toLowerCase().includes(query)⏎····`                                                                                                                                                                       prettier/prettier\n  354:14  error    Replace `right.issues.length·-·left.issues.length·||·right.conversionPriority·-·left.conversionPriority` with `(⏎········right.issues.length·-·left.issues.length·||⏎········right.conversionPriority·-·left.conversionPriority⏎······)`                                                                       prettier/prettier\n  363:22  error    Insert `⏎·····`                                                                                                                                                                                                                                                                                                prettier/prettier\n  364:23  error    Insert `⏎·····`                                                                                                                                                                                                                                                                                                prettier/prettier\n  370:40  error    Insert `⏎····`                                                                                                                                                                                                                                                                                                 prettier/prettier\n  371:1   error    Insert `··`                                                                                                                                                                                                                                                                                                    prettier/prettier\n  372:1   error    Replace `····` with `······`                                                                                                                                                                                                                                                                                   prettier/prettier\n  373:3   error    Replace `})` with `··})⏎····`                                                                                                                                                                                                                                                                                  prettier/prettier\n  392:52  error    Replace `·searchParams·}:·{·searchParams?:·Promise<SearchParams>·` with `⏎··searchParams,⏎}:·{⏎··searchParams?:·Promise<SearchParams>;⏎`                                                                                                                                                                       prettier/prettier\n  403:49  error    Replace `Run·<code>npm·run·system:full</code>·and·reload·this·page.` with `⏎············Run·<code>npm·run·system:full</code>·and·reload·this·page.⏎··········`                                                                                                                                                 prettier/prettier\n  477:68  error    Replace `{typeReasonMap[priority.type]}` with `⏎······················{typeReasonMap[priority.type]}⏎····················`                                                                                                                                                                                     prettier/prettier\n  508:86  error    Insert `{'·'}⏎·······················`                                                                                                                                                                                                                                                                         prettier/prettier\n  511:87  error    Insert `{'·'}⏎·······················`                                                                                                                                                                                                                                                                         prettier/prettier\n  517:88  error    Insert `{'·'}⏎·······················`                                                                                                                                                                                                                                                                         prettier/prettier\n  581:21  error    Replace `·title='Graph·Health'·description='Link·structure·and·node·integrity.'·tone='border-emerald-100·bg-emerald-50'` with `⏎················title='Graph·Health'⏎················description='Link·structure·and·node·integrity.'⏎················tone='border-emerald-100·bg-emerald-50'⏎··············`  prettier/prettier\n  583:78  error    Replace `{systemReport.system.graph.status}` with `⏎····················{systemReport.system.graph.status}⏎··················`                                                                                                                                                                                 prettier/prettier\n  592:21  error    Replace `·title='CTA·Health'·description='Primary·action·consistency.'·tone='border-amber-100·bg-amber-50'` with `⏎················title='CTA·Health'⏎················description='Primary·action·consistency.'⏎················tone='border-amber-100·bg-amber-50'⏎··············`                            prettier/prettier\n  594:76  error    Replace `{systemReport.system.cta.status}` with `⏎····················{systemReport.system.cta.status}⏎··················`                                                                                                                                                                                     prettier/prettier\n  603:21  error    Replace `·title='Report·Freshness'·description='Coverage·of·the·report·bundle.'·tone='border-emerald-100·bg-emerald-50'` with `⏎················title='Report·Freshness'⏎················description='Coverage·of·the·report·bundle.'⏎················tone='border-emerald-100·bg-emerald-50'⏎··············`  prettier/prettier\n  659:26  error    Replace `·type='submit'·className='rounded-xl·bg-stone-950·px-4·py-3·text-sm·font-bold·text-white'` with `⏎····················type='submit'⏎····················className='rounded-xl·bg-stone-950·px-4·py-3·text-sm·font-bold·text-white'⏎··················`                                                prettier/prettier\n  695:63  error    Replace `{page.status·===·'OK'·?·'Healthy'·:·'Needs·Attention'}` with `⏎··························{page.status·===·'OK'·?·'Healthy'·:·'Needs·Attention'}⏎························`                                                                                                                             prettier/prettier\n  696:79  error    Replace `{page.issues.length}` with `⏎··························{page.issues.length}⏎························`                                                                                                                                                                                                 prettier/prettier\n  697:79  error    Replace `{issueLabel(primaryType)}` with `⏎··························{issueLabel(primaryType)}⏎························`                                                                                                                                                                                       prettier/prettier\n  698:75  error    Replace `{pageActionHint(primaryType)}` with `⏎··························{pageActionHint(primaryType)}⏎························`                                                                                                                                                                               prettier/prettier\n  726:29  error    Replace `·items={systemReport.changes.resolvedIssues.map(issue·=>·issue.message)}` with `⏎····················items={systemReport.changes.resolvedIssues.map(issue·=>·issue.message)}⏎·················`                                                                                                       prettier/prettier\n  750:45  error    Replace `·?·validatorIssues·:·systemReport.validate.validators).map(` with `⏎··················?·validatorIssues⏎··················:·systemReport.validate.validators`                                                                                                                                         prettier/prettier\n  751:17  error    Replace `··` with `).map(`                                                                                                                                                                                                                                                                                     prettier/prettier\n  752:1   error    Delete `··`                                                                                                                                                                                                                                                                                                    prettier/prettier\n  753:17  error    Replace `··)⏎················` with `)`                                                                                                                                                                                                                                                                        prettier/prettier\n  795:2   error    Insert `⏎`                                                                                                                                                                                                                                                                                                     prettier/prettier\n\n/Users/zeeshansadiq/Projects/Mindwp/src/domains/features/__tests__/config.test.tsx\n  23:28  error  React Hook \"usePageIdentity\" is called in function \"default\" that is neither a React function component nor a custom React Hook function. React component names must start with an uppercase letter. React Hook names must start with the word \"use\"  react-hooks/rules-of-hooks\n\n/Users/zeeshansadiq/Projects/Mindwp/src/domains/features/pages/aichat/index.tsx\n  1:1  error  Run autofix to sort these imports!  simple-import-sort/imports\n\n/Users/zeeshansadiq/Projects/Mindwp/src/domains/features/pages/calendars/index.tsx\n  1:1  error  Run autofix to sort these imports!  simple-import-sort/imports\n\n/Users/zeeshansadiq/Projects/Mindwp/src/domains/features/pages/crm/index.tsx\n  1:1  error  Run autofix to sort these imports!  simple-import-sort/imports\n\n/Users/zeeshansadiq/Projects/Mindwp/src/domains/features/pages/inbox/index.tsx\n  1:1  error  Run autofix to sort these imports!  simple-import-sort/imports\n\n/Users/zeeshansadiq/Projects/Mindwp/src/domains/features/pages/reputation/index.tsx\n  1:1  error  Run autofix to sort these imports!  simple-import-sort/imports\n\n/Users/zeeshansadiq/Projects/Mindwp/src/domains/features/pages/voicecalls/index.tsx\n  1:1  error  Run autofix to sort these imports!  simple-import-sort/imports\n\n/Users/zeeshansadiq/Projects/Mindwp/src/domains/features/pages/workflows/index.tsx\n  1:1  error  Run autofix to sort these imports!  simple-import-sort/imports\n\n/Users/zeeshansadiq/Projects/Mindwp/src/domains/features/renderers/WorkflowsRenderer.tsx\n  150:13  error  Delete `··`  prettier/prettier\n\n/Users/zeeshansadiq/Projects/Mindwp/src/lib/dashboard/client-dashboard.ts\n  62:2  error  Insert `⏎`  prettier/prettier\n\n/Users/zeeshansadiq/Projects/Mindwp/src/lib/dev/executionVisibility.ts\n  37:11  warning  'ValidationSnapshot' is defined but never used   @typescript-eslint/no-unused-vars\n  54:11  warning  'SystemStateSnapshot' is defined but never used  @typescript-eslint/no-unused-vars\n  75:11  warning  'DriftSnapshot' is defined but never used        @typescript-eslint/no-unused-vars\n\n✖ 71 problems (67 errors, 4 warnings)\n  66 errors and 0 warnings potentially fixable with the `--fix` option.\n\n"
+      "validator": "typecheck",
+      "blocking": true,
+      "output": ".next-audit/dev/types/validator.ts(116,39): error TS2307: Cannot find module '../../../src/app/case-study/[slug]/page.js' or its corresponding type declarations.\n.next/dev/types/validator.ts(116,39): error TS2307: Cannot find module '../../../src/app/case-study/[slug]/page.js' or its corresponding type declarations.\n.next/types/validator.ts(107,39): error TS2307: Cannot find module '../../src/app/case-study/[slug]/page.js' or its corresponding type declarations.\n"
     }
   ],
   "seo": {
-    "pagesAnalyzed": 351,
+    "pagesAnalyzed": 352,
     "missingMetadata": 0,
     "duplicateTitles": 0,
     "duplicateDescriptions": 0,

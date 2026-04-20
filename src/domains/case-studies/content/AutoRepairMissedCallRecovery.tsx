@@ -173,7 +173,7 @@ function buildAutoRepairMissedCallRecovery(): CaseStudyData {
     })),
     tags: ['Missed Call Recovery', 'Auto Repair', 'Lead Capture', 'SMS Automation', 'Automotive'],
     seo: {
-      canonical: '/case-study/auto-repair-missed-call-recovery',
+      canonical: '/case-studies/auto-repair-missed-call-recovery',
       openGraph: {
         title: 'Why Auto Repair Shops Lose Leads During Peak Hours | MindWP Case Study',
         description:

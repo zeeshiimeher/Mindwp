@@ -360,14 +360,15 @@
     },
 
     {
-      "id": "validate-tokens",
+      "id": "inspect-graph",
+      "name": "Inspect Graph",
       "category": "analyzers",
       "intent": "debug",
-      "group": "daily",
+      "group": "advanced",
       "priority": 2,
       "estimatedTime": "fast",
       "path": "scripts/analyzers/inspect-graph.ts",
-      "description": "View graph details.",
+      "description": "Open the development graph inspector.",
       "type": "analyzer",
       "runnable": true,
       "command": "NODE_ENV=development npx tsx scripts/analyzers/inspect-graph.ts"
@@ -394,9 +395,10 @@
       "priority": 9,
       "estimatedTime": "medium",
       "path": "scripts/analyzers/test-editing-stability.mjs",
-      "description": "Check edit safety.",
+      "description": "Manual-only validator stress test with auto-reverted bad edits.",
       "type": "analyzer",
-      "runnable": true
+      "runnable": true,
+      "command": "node scripts/analyzers/test-editing-stability.mjs"
     },
 
     {
@@ -502,7 +504,7 @@
       "priority": 9,
       "estimatedTime": "medium",
       "path": "scripts/analyzers/heading-audit.cjs",
-      "description": "Audit heading hierarchy and accessibility.",
+      "description": "Manual-only heading hierarchy audit for visual review.",
       "type": "audit",
       "runnable": true,
       "command": "node scripts/analyzers/heading-audit.cjs"
@@ -517,24 +519,23 @@
       "priority": 10,
       "estimatedTime": "slow",
       "path": "scripts/analyzers/split-screenshots.cjs",
-      "description": "Split full-page screenshots into component-level segments.",
+      "description": "Manual-only post-processor for oversized visual-audit screenshots.",
       "type": "utility",
       "runnable": true,
       "command": "node scripts/analyzers/split-screenshots.cjs"
     },
     {
       "id": "visual-audit-engine",
-      "name": "Visual Audit Engine",
+      "name": "Visual Audit Engine (Legacy)",
       "category": "visual",
       "intent": "audit",
       "group": "advanced",
       "priority": 10,
       "estimatedTime": "slow",
       "path": "scripts/analyzers/visual-audit-engine.js",
-      "description": "Screenshot capture and hover analysis engine.",
+      "description": "Legacy screenshot capture script superseded by run-visual-audit.js.",
       "type": "audit",
-      "runnable": true,
-      "command": "node scripts/analyzers/visual-audit-engine.js"
+      "runnable": false
     },
     {
       "id": "visual-audit",

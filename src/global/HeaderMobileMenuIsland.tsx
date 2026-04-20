@@ -3,8 +3,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 
-import { PrimaryCta } from '@/components/PrimaryCta';
-import { buildGlobalContactHref } from '@/lib/contact/contactHref';
+import { resolveGlobalPrimaryCtaLinks } from '@/lib/cta/primaryAction';
 
 type HeaderMobileMenuIslandProps = {
   navLinks: Array<{ label: string; to: string }>;
@@ -12,7 +11,7 @@ type HeaderMobileMenuIslandProps = {
 
 export function HeaderMobileMenuIsland({ navLinks }: HeaderMobileMenuIslandProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const globalContactHref = buildGlobalContactHref();
+  const { contactHref: globalContactHref, primaryAction } = resolveGlobalPrimaryCtaLinks();
 
   return (
     <>
@@ -48,10 +47,12 @@ export function HeaderMobileMenuIsland({ navLinks }: HeaderMobileMenuIslandProps
               >
                 Contact Us
               </a>
-              <PrimaryCta
+              <a
+                href={primaryAction.href}
                 className='btn btn-primary btn-small btn-block header-mobile-button-2'
-                hrefOverride={globalContactHref}
-              />
+              >
+                {primaryAction.label}
+              </a>
             </div>
           </nav>
         </div>

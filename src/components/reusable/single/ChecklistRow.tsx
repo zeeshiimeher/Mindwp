@@ -2,6 +2,8 @@ import { CheckCircle2, X } from 'lucide-react';
 
 import { cn } from '@/components/ui/utils';
 
+const BLOCK = 'checklist-simple';
+
 /**
  * ChecklistRow - Lightweight checklist item component with checkmark or cross icon
  *
@@ -57,8 +59,6 @@ export interface ChecklistRowProps {
 }
 
 export function ChecklistRow({ children, variant = 'check', color, iconSize }: ChecklistRowProps) {
-  const BLOCK = 'checklist-simple';
-
   const IconComponent = variant === 'check' ? CheckCircle2 : X;
 
   return (

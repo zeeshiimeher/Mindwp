@@ -1,6 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { readJsonFile } from './reportJson';
+
 export type ScriptIntent = 'system' | 'content' | 'design' | 'build' | 'audit' | 'debug';
 export type ScriptGroup = 'daily' | 'occasional' | 'advanced';
 export type EstimatedTime = 'fast' | 'medium' | 'slow';
@@ -34,34 +36,6 @@ interface ScriptRegistryDocument {
   scripts: ScriptRegistryEntry[];
 }
 
-interface ValidationSnapshot {
-  generatedAt?: string;
-  total?: {
-    passed?: number;
-    failed?: number;
-    blockingFailed?: number;
-    advisoryFailed?: number;
-    total?: number;
-  };
-  validators?: Array<{
-    name: string;
-    status: 'pass' | 'fail';
-    duration: number;
-    blocking: boolean;
-  }>;
-}
-
-interface SystemStateSnapshot {
-  generatedAt?: string;
-  status?: 'CLEAN' | 'WARNING' | 'BROKEN';
-  validation?: {
-    total?: {
-      blockingFailed?: number;
-      total?: number;
-    };
-  };
-}
-
 interface UnifiedSystemReportSnapshot {
   status?: 'PASS' | 'FAIL';
   timestamp?: string;
@@ -70,11 +44,6 @@ interface UnifiedSystemReportSnapshot {
     validatorCount?: number;
     blockingFailed?: number;
   };
-}
-
-interface DriftSnapshot {
-  generatedAt?: string;
-  driftCount?: number;
 }
 
 export type ScriptRunStatus = 'success' | 'error';
@@ -219,14 +188,6 @@ function collectCurrentReportFiles(): DashboardReportFile[] {
   addFilesFromDir(reportsDir, 'reports');
 
   return files.sort((left, right) => right.updatedAt.localeCompare(left.updatedAt));
-}
-
-function readJsonFile<T>(filePath: string): T | null {
-  try {
-    return JSON.parse(fs.readFileSync(filePath, 'utf8')) as T;
-  } catch {
-    return null;
-  }
 }
 
 export function loadScriptRegistry(): ScriptRegistryEntry[] {

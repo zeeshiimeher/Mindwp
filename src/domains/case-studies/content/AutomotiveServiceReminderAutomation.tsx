@@ -186,7 +186,7 @@ function buildAutomotiveServiceReminderAutomation(): CaseStudyData {
       'CRM Automation',
     ],
     seo: {
-      canonical: '/case-study/automotive-service-reminder-automation',
+      canonical: '/case-studies/automotive-service-reminder-automation',
       openGraph: {
         title: 'Why Garages Lose Repeat Customers | MindWP Case Study',
         description:

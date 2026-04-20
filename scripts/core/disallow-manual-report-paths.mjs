@@ -1,8 +1,13 @@
 #!/usr/bin/env node
 
-const [recommendedCommand = 'system:full'] = process.argv.slice(2);
+import { spawnSync } from 'node:child_process';
 
-console.error(
-  `[production-mode] This execution path is locked. Use \`npm run ${recommendedCommand}\` so schema validation, snapshots, dashboards, and registries stay in sync.`
-);
-process.exit(1);
+const [recommendedCommand = 'system:full'] = process.argv.slice(2);
+const [command, ...args] = recommendedCommand.split(' ');
+
+const result = spawnSync('npm', ['run', command, '--', ...args], {
+  stdio: 'inherit',
+  shell: process.platform === 'win32',
+});
+
+process.exit(typeof result.status === 'number' ? result.status : 1);

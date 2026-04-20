@@ -192,7 +192,7 @@ function buildSalonReviewGenerationAutomation(): CaseStudyData {
     })),
     tags: ['Review Generation', 'Hair Salon', 'Google Reviews', 'Reputation System', 'Local SEO'],
     seo: {
-      canonical: '/case-study/salon-review-generation-automation',
+      canonical: '/case-studies/salon-review-generation-automation',
       openGraph: {
         title: 'Why Salons Struggle to Get Reviews | MindWP Case Study',
         description:

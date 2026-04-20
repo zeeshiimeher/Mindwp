@@ -63,7 +63,7 @@ export function CaseStudyCard({
   className = '',
   ctaClassName = '',
 }: CaseStudyCardProps) {
-  const href = `/case-study/${slug}`;
+  const href = `/case-studies/${slug}`;
 
   if (variant === 'compact') {
     return (

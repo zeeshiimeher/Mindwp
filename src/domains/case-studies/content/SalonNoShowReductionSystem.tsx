@@ -208,7 +208,7 @@ function buildSalonNoShowReductionSystem(): CaseStudyData {
       'Waitlist Recovery',
     ],
     seo: {
-      canonical: '/case-study/salon-no-show-reduction-system',
+      canonical: '/case-studies/salon-no-show-reduction-system',
       openGraph: {
         title: 'Why Salon Clients Miss Appointments | MindWP Case Study',
         description:

@@ -62,7 +62,7 @@ const createTempWorkspace = ({
       ].join('\n')
     : '';
 
-  const canonicalLine = includeCanonical ? "      canonical: '/case-study/test-case-study'," : '';
+  const canonicalLine = includeCanonical ? "      canonical: '/case-studies/test-case-study'," : '';
 
   writeFile(
     path.join(tempRoot, 'src/domains/case-studies/content/TestCaseStudy.tsx'),
@@ -150,7 +150,7 @@ describe('validate-case-study-structure script', () => {
 
     expect(result.status).toBe(1);
     expect(`${result.stdout}\n${result.stderr}`).toContain(
-      'seo.canonical must be /case-study/test-case-study'
+      'seo.canonical must be /case-studies/test-case-study'
     );
   });
 

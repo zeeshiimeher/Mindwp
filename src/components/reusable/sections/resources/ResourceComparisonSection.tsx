@@ -1,12 +1,13 @@
 import { type ReactNode } from 'react';
 import { Repeat } from 'lucide-react';
 
-import { SectionWrapper } from '@/components/reusable/primitives';
 import { Card } from '@/components/reusable/single/Card';
 import { ChecklistRow } from '@/components/reusable/single/ChecklistRow';
 import { cn } from '@/components/ui/utils';
 
-import { ResourceSectionHeader } from './ResourceSectionHeader';
+import { ResourceSectionShell } from './ResourceSectionShell';
+
+const BLOCK = 'resource-comparison-section';
 
 export interface ResourceComparisonColumn {
   title: string;
@@ -30,8 +31,6 @@ export function ResourceComparisonSection({
   className = '',
   renderParagraph,
 }: ResourceComparisonSectionProps) {
-  const BLOCK = 'resource-comparison-section';
-
   const safeBeforeItems = Array.isArray(before?.items) ? before.items : [];
   const safeAfterItems = Array.isArray(after?.items) ? after.items : [];
   const safeBeforeTitle = before?.title ?? '';
@@ -40,29 +39,15 @@ export function ResourceComparisonSection({
   if (!heading || safeBeforeItems.length === 0 || safeAfterItems.length === 0) return null;
 
   return (
-    <SectionWrapper padding='none' container='none' className={cn(BLOCK, className)}>
-      <ResourceSectionHeader
-        icon={Repeat}
-        title={heading}
-        variant='comparison'
-        {...(content && content.length > 0 && { subtitle: content[0] })}
-      />
-
-      {content && content.length > 1 && (
-        <div className={`${BLOCK}__description`}>
-          {content.map((paragraph, index) => {
-            if (index === 0) return null;
-            return renderParagraph ? (
-              renderParagraph(paragraph, index, `${BLOCK}__paragraph`)
-            ) : (
-              <p key={index} className={`${BLOCK}__paragraph`}>
-                {paragraph}
-              </p>
-            );
-          })}
-        </div>
-      )}
-
+    <ResourceSectionShell
+      block={BLOCK}
+      className={className}
+      content={content}
+      icon={Repeat}
+      title={heading}
+      variant='comparison'
+      renderParagraph={renderParagraph}
+    >
       <div className={`${BLOCK}__grid`}>
         <Card className={cn(`${BLOCK}__card`, `${BLOCK}__card--before`)}>
           <div className={`${BLOCK}__card-inner`}>
@@ -90,6 +75,6 @@ export function ResourceComparisonSection({
           </div>
         </Card>
       </div>
-    </SectionWrapper>
+    </ResourceSectionShell>
   );
 }

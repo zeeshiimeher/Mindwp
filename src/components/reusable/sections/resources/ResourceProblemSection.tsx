@@ -7,6 +7,8 @@ import { cn } from '@/components/ui/utils';
 
 import { ResourceSectionHeader } from './ResourceSectionHeader';
 
+const BLOCK = 'infrastructure-gaps';
+
 export interface ResourceProblemSectionProps {
   heading: string;
   description: string[];
@@ -24,8 +26,6 @@ export function ResourceProblemSection({
   className = '',
   renderParagraph,
 }: ResourceProblemSectionProps) {
-  const BLOCK = 'infrastructure-gaps';
-
   return (
     <SectionWrapper padding='none' container='none' className={cn(BLOCK, className)}>
       <ResourceSectionHeader icon={AlertCircle} title={heading} variant='problem' />

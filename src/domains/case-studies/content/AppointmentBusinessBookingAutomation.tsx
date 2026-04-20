@@ -180,7 +180,7 @@ function buildAppointmentBusinessBookingAutomation(): CaseStudyData {
       'Healthcare',
     ],
     seo: {
-      canonical: '/case-study/appointment-business-booking-automation',
+      canonical: '/case-studies/appointment-business-booking-automation',
       openGraph: {
         title: 'Why Dental Practices Lose Patients | MindWP Case Study',
         description:

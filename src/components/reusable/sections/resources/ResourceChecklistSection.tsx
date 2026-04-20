@@ -1,11 +1,12 @@
 import { ClipboardList } from 'lucide-react';
 
-import { SectionWrapper } from '@/components/reusable/primitives';
 import { Card } from '@/components/reusable/single/Card';
 import { ChecklistItem } from '@/components/reusable/single/ChecklistItem';
 import { cn } from '@/components/ui/utils';
 
-import { ResourceSectionHeader } from './ResourceSectionHeader';
+import { ResourceSectionShell } from './ResourceSectionShell';
+
+const BLOCK = 'resource-checklist-section';
 
 export interface ResourceChecklistSectionProps {
   heading: string;
@@ -22,34 +23,19 @@ export function ResourceChecklistSection({
   columns = 1,
   className = '',
 }: ResourceChecklistSectionProps) {
-  const BLOCK = 'resource-checklist-section';
-
   if (!heading || items.length === 0) return null;
 
   const columnsClass = columns === 2 ? `${BLOCK}__list--cols-2` : `${BLOCK}__list--cols-1`;
 
   return (
-    <SectionWrapper padding='none' container='none' className={cn(BLOCK, className)}>
-      <ResourceSectionHeader
-        icon={ClipboardList}
-        title={heading}
-        variant='checklist'
-        {...(content && content.length > 0 && { subtitle: content[0] })}
-      />
-
-      {content && content.length > 1 && (
-        <div className={`${BLOCK}__description`}>
-          {content.map((paragraph, index) => {
-            if (index === 0) return null;
-            return (
-              <p key={index} className={`${BLOCK}__paragraph`}>
-                {paragraph}
-              </p>
-            );
-          })}
-        </div>
-      )}
-
+    <ResourceSectionShell
+      block={BLOCK}
+      className={className}
+      content={content}
+      icon={ClipboardList}
+      title={heading}
+      variant='checklist'
+    >
       <Card className={`${BLOCK}__card`}>
         <ul className={cn(`${BLOCK}__list`, columnsClass)}>
           {items.map((item, index) => (
@@ -59,6 +45,6 @@ export function ResourceChecklistSection({
           ))}
         </ul>
       </Card>
-    </SectionWrapper>
+    </ResourceSectionShell>
   );
 }

@@ -3,7 +3,7 @@
 import { beforeAll, describe, expect, test } from 'vitest';
 
 import * as blogRoute from '@/app/blog/[slug]/page';
-import * as caseStudyRoute from '@/app/case-study/[slug]/page';
+import * as caseStudyRoute from '@/app/case-studies/[slug]/page';
 import * as featureRoute from '@/app/features/[...slug]/page';
 import * as industryRoute from '@/app/industries/[...slug]/page';
 import robots from '@/app/robots';

@@ -207,7 +207,7 @@ function buildHvacSeasonalLeadSurgeHandling(): CaseStudyData {
       'Queue Prioritisation',
     ],
     seo: {
-      canonical: '/case-study/hvac-seasonal-lead-surge-handling',
+      canonical: '/case-studies/hvac-seasonal-lead-surge-handling',
       openGraph: {
         title: 'Why HVAC Companies Lose Leads During Seasonal Demand | MindWP Case Study',
         description:

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-19T05:29:27.089Z",
+  "generatedAt": "2026-04-20T09:26:56.143Z",
   "sourceCommand": "node --import tsx/esm scripts/analyzers/export-reports.mjs",
   "status": "clean",
   "validators": [
@@ -7,19 +7,19 @@
       "name": "validate-cta-label-contract",
       "status": "pass",
       "blocking": true,
-      "duration": 809
+      "duration": 795
     },
     {
       "name": "validate-conversion-contract",
       "status": "pass",
       "blocking": true,
-      "duration": 787
+      "duration": 750
     },
     {
       "name": "validate-cta-violations",
       "status": "pass",
       "blocking": true,
-      "duration": 569
+      "duration": 561
     }
   ]
 }

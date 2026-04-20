@@ -58,17 +58,12 @@ const ICON_RULES: IconRule[] = [
  * - `default`: standard LinkCard-based related cards UI.
  * - `style1`: same title/description structure as default, with gradient
  *   background treatment and a stronger CTA button style.
- * - `session-auto`: resolved externally (client-side) to `default` or `style1`.
- *
  * Typical usage:
  * - Fixed style per page:
  *   `<RelatedCardsSection styleVariant='default' ... />`
  *   `<RelatedCardsSection styleVariant='style1' ... />`
- * - Per-session style switching:
- *   use `AutoRelatedContentCardsSection` (client wrapper) and provide
- *   a page-specific `sessionVariantKey` when you want independent behavior per page.
  */
-export type RelatedCardsStyleVariant = 'default' | 'style1' | 'session-auto';
+export type RelatedCardsStyleVariant = 'default' | 'style1';
 
 interface RelatedCardItem {
   title: string;
@@ -110,13 +105,6 @@ export interface RelatedCardsSectionProps {
    */
   styleVariant?: RelatedCardsStyleVariant;
   ctaLabel?: string;
-  /**
-   * Required only when `styleVariant='session-auto'`.
-   *
-   * This should be passed by a client wrapper (for example
-   * `AutoRelatedContentCardsSection`) after reading/writing sessionStorage.
-   */
-  sessionResolvedVariant?: 'default' | 'style1';
 }
 
 export function RelatedCardsSection({
@@ -131,14 +119,8 @@ export function RelatedCardsSection({
   showArrows = true,
   styleVariant = 'default',
   ctaLabel = 'Learn More',
-  sessionResolvedVariant,
 }: RelatedCardsSectionProps) {
-  // Server-safe resolution: `session-auto` falls back to `default` unless a
-  // client wrapper provides `sessionResolvedVariant`.
-  const resolvedVariant =
-    styleVariant === 'session-auto' ? (sessionResolvedVariant ?? 'default') : styleVariant;
-
-  const isStyle1 = resolvedVariant === 'style1';
+  const isStyle1 = styleVariant === 'style1';
   const activeBlock = isStyle1 ? EXPLORE_BLOCK : BLOCK;
 
   const getGradientVariantByIndex = (index: number) => {

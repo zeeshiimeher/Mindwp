@@ -671,7 +671,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -679,7 +679,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -687,7 +687,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
           slug: 'crm-pipeline-visibility-transformation',
-          path: '/case-study/crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
           nodeType: 'case-study',
         },
       ],
@@ -751,7 +751,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -759,7 +759,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -767,7 +767,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
           slug: 'crm-pipeline-visibility-transformation',
-          path: '/case-study/crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
           nodeType: 'case-study',
         },
       ],
@@ -831,7 +831,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -839,7 +839,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -847,7 +847,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.',
           slug: 'auto-repair-missed-call-recovery',
-          path: '/case-study/auto-repair-missed-call-recovery',
+          path: '/case-studies/auto-repair-missed-call-recovery',
           nodeType: 'case-study',
         },
       ],
@@ -911,7 +911,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -919,7 +919,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -927,7 +927,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.',
           slug: 'auto-repair-missed-call-recovery',
-          path: '/case-study/auto-repair-missed-call-recovery',
+          path: '/case-studies/auto-repair-missed-call-recovery',
           nodeType: 'case-study',
         },
       ],
@@ -991,7 +991,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -999,7 +999,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -1007,7 +1007,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How a Liverpool salon moved from phone-only bookings to 68% online adoption in 8 weeks, unlocking after-hours appointments and 22% more volume.',
           slug: 'salon-booking-automation',
-          path: '/case-study/salon-booking-automation',
+          path: '/case-studies/salon-booking-automation',
           nodeType: 'case-study',
         },
       ],
@@ -1071,7 +1071,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -1079,7 +1079,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -1087,7 +1087,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.',
           slug: 'auto-repair-missed-call-recovery',
-          path: '/case-study/auto-repair-missed-call-recovery',
+          path: '/case-studies/auto-repair-missed-call-recovery',
           nodeType: 'case-study',
         },
       ],
@@ -1151,7 +1151,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -1159,7 +1159,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -1167,7 +1167,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
           slug: 'local-authority-system-impact',
-          path: '/case-study/local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
           nodeType: 'case-study',
         },
       ],
@@ -1231,7 +1231,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -1239,7 +1239,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -1247,7 +1247,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
           slug: 'crm-pipeline-visibility-transformation',
-          path: '/case-study/crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
           nodeType: 'case-study',
         },
       ],
@@ -1311,7 +1311,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -1319,7 +1319,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -1327,7 +1327,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
           slug: 'local-authority-system-impact',
-          path: '/case-study/local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
           nodeType: 'case-study',
         },
       ],
@@ -1391,7 +1391,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -1399,7 +1399,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -1407,7 +1407,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
           slug: 'local-authority-system-impact',
-          path: '/case-study/local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
           nodeType: 'case-study',
         },
       ],
@@ -1471,7 +1471,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -1479,7 +1479,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -1487,7 +1487,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
           slug: 'local-authority-system-impact',
-          path: '/case-study/local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
           nodeType: 'case-study',
         },
       ],
@@ -1551,7 +1551,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -1559,7 +1559,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -1567,7 +1567,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How an Edinburgh salon reduced no-shows from 18% to 4% and recovered £870 per week using automated reminders and cancellation-triggered waitlist recovery.',
           slug: 'salon-no-show-reduction-system',
-          path: '/case-study/salon-no-show-reduction-system',
+          path: '/case-studies/salon-no-show-reduction-system',
           nodeType: 'case-study',
         },
       ],
@@ -1631,7 +1631,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -1639,7 +1639,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -1647,7 +1647,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
           slug: 'crm-pipeline-visibility-transformation',
-          path: '/case-study/crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
           nodeType: 'case-study',
         },
       ],
@@ -1711,7 +1711,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -1719,7 +1719,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -1727,7 +1727,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage, on-call technician routing, and CRM lead tracking.',
           slug: 'hvac-emergency-lead-routing',
-          path: '/case-study/hvac-emergency-lead-routing',
+          path: '/case-studies/hvac-emergency-lead-routing',
           nodeType: 'case-study',
         },
       ],
@@ -1791,7 +1791,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -1799,7 +1799,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -1807,7 +1807,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage, on-call technician routing, and CRM lead tracking.',
           slug: 'hvac-emergency-lead-routing',
-          path: '/case-study/hvac-emergency-lead-routing',
+          path: '/case-studies/hvac-emergency-lead-routing',
           nodeType: 'case-study',
         },
       ],
@@ -1871,7 +1871,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -1879,7 +1879,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -1887,7 +1887,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
           slug: 'local-authority-system-impact',
-          path: '/case-study/local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
           nodeType: 'case-study',
         },
       ],
@@ -1951,7 +1951,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -1959,7 +1959,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -1967,7 +1967,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How an Edinburgh salon reduced no-shows from 18% to 4% and recovered £870 per week using automated reminders and cancellation-triggered waitlist recovery.',
           slug: 'salon-no-show-reduction-system',
-          path: '/case-study/salon-no-show-reduction-system',
+          path: '/case-studies/salon-no-show-reduction-system',
           nodeType: 'case-study',
         },
       ],
@@ -2031,7 +2031,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -2039,7 +2039,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -2047,7 +2047,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
           slug: 'crm-pipeline-visibility-transformation',
-          path: '/case-study/crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
           nodeType: 'case-study',
         },
       ],
@@ -2111,7 +2111,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -2119,7 +2119,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -2127,7 +2127,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
           slug: 'local-authority-system-impact',
-          path: '/case-study/local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
           nodeType: 'case-study',
         },
       ],
@@ -2191,7 +2191,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -2199,7 +2199,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -2207,7 +2207,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How a Brighton estate agency reduced response time from 8 hours to 11 minutes and increased viewings by 38% using automated multi-channel lead routing.',
           slug: 'real-estate-inquiry-routing',
-          path: '/case-study/real-estate-inquiry-routing',
+          path: '/case-studies/real-estate-inquiry-routing',
           nodeType: 'case-study',
         },
       ],
@@ -2271,7 +2271,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -2279,7 +2279,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -2287,7 +2287,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
           slug: 'crm-pipeline-visibility-transformation',
-          path: '/case-study/crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
           nodeType: 'case-study',
         },
       ],
@@ -2351,7 +2351,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -2359,7 +2359,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -2367,7 +2367,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How an Edinburgh salon reduced no-shows from 18% to 4% and recovered £870 per week using automated reminders and cancellation-triggered waitlist recovery.',
           slug: 'salon-no-show-reduction-system',
-          path: '/case-study/salon-no-show-reduction-system',
+          path: '/case-studies/salon-no-show-reduction-system',
           nodeType: 'case-study',
         },
       ],
@@ -2431,7 +2431,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -2439,7 +2439,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -2447,7 +2447,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage, on-call technician routing, and CRM lead tracking.',
           slug: 'hvac-emergency-lead-routing',
-          path: '/case-study/hvac-emergency-lead-routing',
+          path: '/case-studies/hvac-emergency-lead-routing',
           nodeType: 'case-study',
         },
       ],
@@ -2511,7 +2511,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -2519,7 +2519,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -2527,7 +2527,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
           slug: 'crm-pipeline-visibility-transformation',
-          path: '/case-study/crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
           nodeType: 'case-study',
         },
       ],
@@ -2591,7 +2591,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -2599,7 +2599,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -2607,7 +2607,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
           slug: 'crm-pipeline-visibility-transformation',
-          path: '/case-study/crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
           nodeType: 'case-study',
         },
       ],
@@ -2671,7 +2671,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -2679,7 +2679,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -2687,7 +2687,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
           slug: 'crm-pipeline-visibility-transformation',
-          path: '/case-study/crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
           nodeType: 'case-study',
         },
       ],
@@ -2751,7 +2751,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -2759,7 +2759,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -2767,7 +2767,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
           slug: 'local-authority-system-impact',
-          path: '/case-study/local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
           nodeType: 'case-study',
         },
       ],
@@ -2831,7 +2831,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -2839,7 +2839,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -2847,7 +2847,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
           slug: 'local-authority-system-impact',
-          path: '/case-study/local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
           nodeType: 'case-study',
         },
       ],
@@ -2911,7 +2911,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -2919,7 +2919,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -2927,7 +2927,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
           slug: 'crm-pipeline-visibility-transformation',
-          path: '/case-study/crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
           nodeType: 'case-study',
         },
       ],
@@ -2991,7 +2991,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -2999,7 +2999,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -3007,7 +3007,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
           slug: 'local-authority-system-impact',
-          path: '/case-study/local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
           nodeType: 'case-study',
         },
       ],
@@ -3071,7 +3071,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -3079,7 +3079,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -3087,7 +3087,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
           slug: 'local-authority-system-impact',
-          path: '/case-study/local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
           nodeType: 'case-study',
         },
       ],
@@ -3151,7 +3151,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
           nodeType: 'case-study',
         },
         {
@@ -3159,7 +3159,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
           slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
-          path: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
           nodeType: 'case-study',
         },
         {
@@ -3167,7 +3167,7 @@ export const AUTHORITY_MAP: AuthorityMap = {
           description:
             'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
           slug: 'local-authority-system-impact',
-          path: '/case-study/local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
           nodeType: 'case-study',
         },
       ],

@@ -22,6 +22,11 @@ const reportPath = path.join(root, 'reports', 'cta-label-contract-report.json');
 const smartCtaPath = path.join(root, 'src', 'components', 'system', 'SmartCTA.tsx');
 const tierCardsPath = path.join(root, 'src', 'components', 'reusable', 'sections', 'core', 'TierCardsSection.tsx');
 const canonicalSystems = new Set(CANONICAL_SYSTEMS);
+const globalPrimaryCtaSurfaceChecks = [
+  'src/global/Header.tsx',
+  'src/global/Footer.tsx',
+  'src/global/HeaderMobileMenuIsland.tsx',
+];
 const repoSystemDirs = [
   'src/app',
   'src/components',
@@ -126,6 +131,19 @@ function main() {
       message:
         'SmartCTA href generation must use resolvedSystem with sourceType and slug when building contact hrefs.',
     });
+  }
+
+  for (const relativePath of globalPrimaryCtaSurfaceChecks) {
+    const absolutePath = path.join(root, relativePath);
+    const surfaceSource = fs.readFileSync(absolutePath, 'utf8');
+
+    if (!surfaceSource.includes('{primaryAction.label}')) {
+      issues.push({
+        code: 'missing_shared_global_cta_label_usage',
+        message: `${relativePath} must render the shared primaryAction.label value instead of hardcoding a CTA label.`,
+        file: relativePath,
+      });
+    }
   }
 
   const mappedSystems = new Set(Object.keys(CTA_LABEL_MAP));

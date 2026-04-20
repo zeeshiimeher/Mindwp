@@ -17,6 +17,7 @@ export { type FAQItem, FAQSection, type FAQSectionProps } from './FAQSection';
 export { type FeatureCategory, FeatureChecklistCard } from './FeatureChecklistCard';
 export { IconBenefitCard, type ServiceBenefitItem } from './IconBenefitCard';
 export { type FeatureItem, IconListCard } from './IconListCard';
+export { IconRow, type IconRowProps } from './IconRow';
 export { IconTextCard, type IconTextCardProps } from './IconTextCard';
 export { LinkCard, type LinkCardProps } from './LinkCard';
 export { ProblemCard, type ProblemCardProps } from './ProblemCard';

@@ -1,6 +1,8 @@
-import { primaryCta } from '@/config/primaryCta';
 import type { ResourcePageTemplateSection } from '@/domains/resources/templates/types';
-import { buildGlobalContactHref } from '@/lib/contact/contactHref';
+import {
+  resolveGlobalPrimaryCtaAction,
+  resolveGlobalPrimaryCtaLinks,
+} from '@/lib/cta/primaryAction';
 
 type ProblemSection = Extract<ResourcePageTemplateSection, { type: 'problem' }>;
 type TakeawaysSection = Extract<ResourcePageTemplateSection, { type: 'takeaways' }>;
@@ -135,10 +137,13 @@ const CONTENT_INDEX = {
   TERTIARY: 2,
 } as const;
 
+const DEFAULT_GLOBAL_PRIMARY_CTA = resolveGlobalPrimaryCtaAction();
+const DEFAULT_GLOBAL_PRIMARY_CTA_LINKS = resolveGlobalPrimaryCtaLinks();
+
 const DEFAULTS = {
   CTA_HEADING: 'Ready to Get Started?',
   CTA_CONTENT: 'Transform your business with our proven solutions. Get expert help today.',
-  CTA_PRIMARY_BUTTON: primaryCta.label,
+  CTA_PRIMARY_BUTTON: DEFAULT_GLOBAL_PRIMARY_CTA.label,
   CTA_SECONDARY_BUTTON: 'Contact Us',
   CTA_FEATURES: [
     { text: 'Call us anytime', icon: 'phone' as const },
@@ -159,8 +164,8 @@ const DEFAULTS = {
   CASE_CHALLENGE_HEADING: 'The Challenge',
   CASE_SOLUTION_HEADING: 'The Solution',
   CASE_RESULT_HEADING: 'The Result',
-  CTA_BUTTON_URL: primaryCta.href,
-  CTA_SECONDARY_BUTTON_URL: buildGlobalContactHref(),
+  CTA_BUTTON_URL: DEFAULT_GLOBAL_PRIMARY_CTA_LINKS.primaryAction.href,
+  CTA_SECONDARY_BUTTON_URL: DEFAULT_GLOBAL_PRIMARY_CTA_LINKS.contactHref,
 } as const;
 
 // Helpers

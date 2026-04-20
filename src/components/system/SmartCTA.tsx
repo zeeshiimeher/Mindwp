@@ -1,4 +1,5 @@
 'use client';
+
 import { useEffect, useId } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import type { ReactNode } from 'react';
@@ -177,7 +178,7 @@ export function SmartCTA({
   const allowSecondary = ALLOW_SECONDARY_BY_PAGE_TYPE[pageTypeForHref];
   const secondaryConfig = allowSecondary ? resolveSecondaryCta(pageTypeForHref, slug) : undefined;
 
-  const primaryAction: ButtonProps = {
+  const primaryButtonAction: ButtonProps = {
     variant: primaryActionVariant,
     label,
     ...(primaryButtonCssPrefix ? { cssPrefix: primaryButtonCssPrefix } : {}),
@@ -200,14 +201,14 @@ export function SmartCTA({
     throw new Error('SmartCTA requires a non-empty title.');
   }
 
-  if (!isActionableButton(primaryAction) && !isActionableButton(secondaryAction)) {
+  if (!isActionableButton(primaryButtonAction) && !isActionableButton(secondaryAction)) {
     throw new Error('SmartCTA requires at least one actionable primary or secondary action.');
   }
 
   if (mode === 'actions-only') {
     return (
       <div className={cn('cta__actions', actionClassName)}>
-        <Button {...primaryAction} />
+        <Button {...primaryButtonAction} />
       </div>
     );
   }
@@ -239,7 +240,7 @@ export function SmartCTA({
       {description && <p className='cta__text'>{description}</p>}
 
       <div className='cta__actions'>
-        <Button {...primaryAction} />
+        <Button {...primaryButtonAction} />
         {secondaryAction && <Button {...{ variant: 'outline-light', ...secondaryAction }} />}
       </div>
 

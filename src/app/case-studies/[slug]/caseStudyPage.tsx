@@ -13,10 +13,6 @@ import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
 
-export const dynamicParams = false;
-export const revalidate = false;
-export const dynamic = 'force-static';
-
 const caseStudyGraphNodesPromise = getInitializedContentGraph().then(graph =>
   Object.values(graph)
     .filter(node => node.type === 'case-study')
@@ -46,12 +42,12 @@ function getCaseStudyFaqs(sections: CaseStudyTemplateSection[]) {
   return sections.flatMap(section => (section.type === 'faq' ? section.items : []));
 }
 
-export async function generateStaticParams() {
+export async function generateCaseStudyStaticParams() {
   const nodes = await getCaseStudyGraphNodes();
   return nodes.map(node => ({ slug: node.slug }));
 }
 
-export async function generateMetadata({
+export async function generateCaseStudyMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
@@ -63,7 +59,7 @@ export async function generateMetadata({
   return getCaseStudyMetadata(resolved.node.path);
 }
 
-export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+export async function CaseStudyDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const resolved = await resolveCaseStudy(slug);
   if (!resolved) {

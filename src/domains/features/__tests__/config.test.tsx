@@ -18,16 +18,18 @@ vi.mock('@/domains/features/pages/calendars', () => ({ default: () => null }));
 vi.mock('@/domains/features/pages/crm', async () => {
   const { usePageIdentity } = await import('@/components/system/PageEnforcement');
 
-  return {
-    default: ({ data }: { data: { slug: string } }) => {
-      const pageIdentity = usePageIdentity();
+  function MockFeatureCrmPage({ data }: { data: { slug: string } }) {
+    const pageIdentity = usePageIdentity();
 
-      return (
-        <div data-testid='feature-page'>
-          {`${data.slug}:${pageIdentity?.pageId}:${pageIdentity?.pageType}`}
-        </div>
-      );
-    },
+    return (
+      <div data-testid='feature-page'>
+        {`${data.slug}:${pageIdentity?.pageId}:${pageIdentity?.pageType}`}
+      </div>
+    );
+  }
+
+  return {
+    default: MockFeatureCrmPage,
   };
 });
 

@@ -147,7 +147,7 @@ export default function WorkflowsRenderer({ data }: WorkflowsRendererProps) {
           <SmartCTA
             system={primarySystem}
             pageType='feature'
-              slug={data.slug}
+            slug={data.slug}
             title={cta.title}
             description={cta.description}
             primaryActionVariant='white'

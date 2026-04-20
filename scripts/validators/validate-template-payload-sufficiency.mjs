@@ -11,10 +11,8 @@ import { resolveContentRules } from '@/lib/config/contentRules';
 import {
   hasText,
   isActionableButton,
-  loadFeaturePages,
-  loadIndustryPages,
-  loadServicePages,
-} from './lib/contentValidationHelpers.mjs';
+  loadPagesByType,
+} from '../lib/content-validation-helpers.mjs';
 
 const args = new Set(process.argv.slice(2));
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -172,9 +170,9 @@ function validateIndustryPages(pages) {
 
 async function main() {
   const [servicePages, featurePages, industryPages] = await Promise.all([
-    loadServicePages(),
-    loadFeaturePages(),
-    loadIndustryPages(),
+    loadPagesByType('service'),
+    loadPagesByType('feature'),
+    loadPagesByType('industry'),
   ]);
 
   validateServicePages(servicePages);

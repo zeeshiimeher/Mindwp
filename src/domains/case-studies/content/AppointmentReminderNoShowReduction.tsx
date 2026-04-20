@@ -206,7 +206,7 @@ function buildAppointmentReminderNoShowReduction(): CaseStudyData {
       'Healthcare',
     ],
     seo: {
-      canonical: '/case-study/appointment-reminder-no-show-reduction',
+      canonical: '/case-studies/appointment-reminder-no-show-reduction',
       openGraph: {
         title: 'Why Dental Practices Lose Revenue to No-Shows | MindWP Case Study',
         description:

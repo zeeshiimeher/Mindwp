@@ -1,5 +1,4 @@
-import fs from 'node:fs';
-import path from 'node:path';
+import { readReportJson } from './reportJson';
 
 export type UnifiedStepStatus = 'PASS' | 'FAIL' | 'SKIPPED';
 export type UnifiedHealthStatus = 'OK' | 'ISSUES';
@@ -180,16 +179,6 @@ export interface UnifiedSystemReport {
   changes: ReportChanges;
 }
 
-function readJson<T>(fileName: string): T | null {
-  const filePath = path.join(process.cwd(), 'reports', fileName);
-
-  try {
-    return JSON.parse(fs.readFileSync(filePath, 'utf8')) as T;
-  } catch {
-    return null;
-  }
-}
-
 export function readSystemReport(): UnifiedSystemReport | null {
-  return readJson<UnifiedSystemReport>('system-report.json');
+  return readReportJson<UnifiedSystemReport>('system-report.json');
 }

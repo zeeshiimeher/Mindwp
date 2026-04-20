@@ -213,7 +213,7 @@ function buildRoofingWebsiteRebuildWithCrm(): CaseStudyData {
       'Conversion Optimisation',
     ],
     seo: {
-      canonical: '/case-study/roofing-website-rebuild-with-crm',
+      canonical: '/case-studies/roofing-website-rebuild-with-crm',
       openGraph: {
         title: 'Why Roofing Websites Fail to Convert Leads | MindWP Case Study',
         description:

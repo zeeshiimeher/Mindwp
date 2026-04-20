@@ -1,5 +1,5 @@
-import type { FeaturePageData } from '@/domains/features/types';
 import CRMRenderer from '@/domains/features/renderers/CRMRenderer';
+import type { FeaturePageData } from '@/domains/features/types';
 
 interface CRMPageProps {
   data: FeaturePageData;

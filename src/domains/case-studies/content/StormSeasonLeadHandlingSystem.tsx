@@ -212,7 +212,7 @@ function buildStormSeasonLeadHandlingSystem(): CaseStudyData {
     })),
     tags: ['Missed Call Recovery', 'Lead Handling', 'Roofing', 'Storm Season', 'CRM Automation'],
     seo: {
-      canonical: '/case-study/storm-season-lead-handling-system',
+      canonical: '/case-studies/storm-season-lead-handling-system',
       openGraph: {
         title: 'Why Roofing Companies Lose Leads During Storm Season | MindWP Case Study',
         description:

@@ -11,6 +11,7 @@ export {
 export { type DIYStep, ResourceDIYSection } from './ResourceDIYSection';
 export { ResourceProblemSection } from './ResourceProblemSection';
 export { ResourceSectionHeader, type ResourceSectionHeaderProps } from './ResourceSectionHeader';
+export { ResourceSectionShell } from './ResourceSectionShell';
 export { type AutomatedSolution, ResourceSolutionsSection } from './ResourceSolutionsSection';
 export { ResourceTakeawaysSection } from './ResourceTakeawaysSection';
 export { type ResourceTemplateItem, ResourceTemplatesSection } from './ResourceTemplatesSection';

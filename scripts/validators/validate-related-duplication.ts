@@ -10,6 +10,12 @@ type ViolationEntry = {
   violations: string[];
 };
 
+type RepeatedIconRowSignature = {
+  wrapperClassName: string;
+  iconName: string;
+  iconClassName: string;
+};
+
 async function collectTsxFiles(dirPath: string): Promise<string[]> {
   const entries = await fs.readdir(dirPath, { withFileTypes: true });
   const files = await Promise.all(
@@ -30,6 +36,31 @@ async function collectTsxFiles(dirPath: string): Promise<string[]> {
   return files.flat();
 }
 
+function collectRepeatedIconRows(content: string): RepeatedIconRowSignature[] {
+  const iconRowMatches = [
+    ...content.matchAll(
+      /<div className='([^']+)'>\s*<([A-Z][A-Za-z0-9]*) className='([^']+)'\s*\/?>\s*<span>\{[^}]+\}<\/span>\s*<\/div>/g
+    ),
+  ];
+  const counts = new Map<string, { count: number; signature: RepeatedIconRowSignature }>();
+
+  for (const match of iconRowMatches) {
+    const signature = {
+      wrapperClassName: match[1],
+      iconName: match[2],
+      iconClassName: match[3],
+    };
+    const key = `${signature.wrapperClassName}::${signature.iconName}::${signature.iconClassName}`;
+    const existing = counts.get(key) ?? { count: 0, signature };
+    existing.count += 1;
+    counts.set(key, existing);
+  }
+
+  return [...counts.values()]
+    .filter(entry => entry.count >= 3)
+    .map(entry => entry.signature);
+}
+
 const report: ViolationEntry[] = [];
 const files = await collectTsxFiles(srcRoot);
 
@@ -45,11 +76,22 @@ for (const filePath of files) {
 
   const content = await fs.readFile(filePath, 'utf8');
   const matches = content.match(/<SmartRelatedSection\b/g) ?? [];
+  const repeatedIconRows = collectRepeatedIconRows(content);
 
   if (matches.length > 1) {
     report.push({
       page: relativePath,
       violations: [`Detected ${matches.length} SmartRelatedSection renders in one file`],
+    });
+  }
+
+  if (repeatedIconRows.length > 0) {
+    report.push({
+      page: relativePath,
+      violations: repeatedIconRows.map(
+        signature =>
+          `Detected repeated inline icon-row JSX for wrapper "${signature.wrapperClassName}" and icon "${signature.iconName}". Extract a reusable single-row primitive instead of repeating the block.`
+      ),
     });
   }
 }

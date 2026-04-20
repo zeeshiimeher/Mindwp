@@ -173,7 +173,7 @@ function buildRealtorLeadFollowUpAutomation(): CaseStudyData {
     })),
     tags: ['Lead Follow-Up', 'Estate Agency', 'CRM Pipeline', 'Revenue Recovery', 'Real Estate'],
     seo: {
-      canonical: '/case-study/realtor-lead-follow-up-automation',
+      canonical: '/case-studies/realtor-lead-follow-up-automation',
       openGraph: {
         title: 'Why Estate Agents Lose Buyers | MindWP Case Study',
         description:

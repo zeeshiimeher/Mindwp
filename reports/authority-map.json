@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-19T05:28:49.886Z",
+  "generatedAt": "2026-04-20T09:26:14.426Z",
   "nodes": [
     {
       "id": "service:smart-website-systems",
@@ -3158,7 +3158,7 @@
       "id": "case-study:appointment-business-booking-automation",
       "slug": "appointment-business-booking-automation",
       "type": "case-study",
-      "path": "/case-study/appointment-business-booking-automation",
+      "path": "/case-studies/appointment-business-booking-automation",
       "systems": [
         "smart-website-systems"
       ],
@@ -3174,7 +3174,7 @@
       "id": "case-study:appointment-reminder-no-show-reduction",
       "slug": "appointment-reminder-no-show-reduction",
       "type": "case-study",
-      "path": "/case-study/appointment-reminder-no-show-reduction",
+      "path": "/case-studies/appointment-reminder-no-show-reduction",
       "systems": [
         "revenue-growth"
       ],
@@ -3190,7 +3190,7 @@
       "id": "case-study:auto-repair-missed-call-recovery",
       "slug": "auto-repair-missed-call-recovery",
       "type": "case-study",
-      "path": "/case-study/auto-repair-missed-call-recovery",
+      "path": "/case-studies/auto-repair-missed-call-recovery",
       "systems": [
         "ai-lead-handling"
       ],
@@ -3207,7 +3207,7 @@
       "id": "case-study:automotive-service-reminder-automation",
       "slug": "automotive-service-reminder-automation",
       "type": "case-study",
-      "path": "/case-study/automotive-service-reminder-automation",
+      "path": "/case-studies/automotive-service-reminder-automation",
       "systems": [
         "revenue-growth"
       ],
@@ -3227,7 +3227,7 @@
       "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
       "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
       "type": "case-study",
-      "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+      "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
       "systems": [
         "local-seo-authority",
         "smart-website-systems",
@@ -3245,7 +3245,7 @@
       "id": "case-study:beauty-salon-online-booking-local-seo-manchester-custom",
       "slug": "beauty-salon-online-booking-local-seo-manchester-custom",
       "type": "case-study",
-      "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-custom",
+      "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-custom",
       "systems": [
         "local-seo-authority",
         "smart-website-systems",
@@ -3263,7 +3263,7 @@
       "id": "case-study:crm-pipeline-visibility-transformation",
       "slug": "crm-pipeline-visibility-transformation",
       "type": "case-study",
-      "path": "/case-study/crm-pipeline-visibility-transformation",
+      "path": "/case-studies/crm-pipeline-visibility-transformation",
       "systems": [
         "crm-automation",
         "revenue-growth"
@@ -3287,7 +3287,7 @@
       "id": "case-study:hvac-emergency-lead-routing",
       "slug": "hvac-emergency-lead-routing",
       "type": "case-study",
-      "path": "/case-study/hvac-emergency-lead-routing",
+      "path": "/case-studies/hvac-emergency-lead-routing",
       "systems": [
         "ai-lead-handling"
       ],
@@ -3304,7 +3304,7 @@
       "id": "case-study:hvac-maintenance-plan-reactivation",
       "slug": "hvac-maintenance-plan-reactivation",
       "type": "case-study",
-      "path": "/case-study/hvac-maintenance-plan-reactivation",
+      "path": "/case-studies/hvac-maintenance-plan-reactivation",
       "systems": [
         "revenue-growth"
       ],
@@ -3321,7 +3321,7 @@
       "id": "case-study:hvac-seasonal-lead-surge-handling",
       "slug": "hvac-seasonal-lead-surge-handling",
       "type": "case-study",
-      "path": "/case-study/hvac-seasonal-lead-surge-handling",
+      "path": "/case-studies/hvac-seasonal-lead-surge-handling",
       "systems": [
         "ai-lead-handling"
       ],
@@ -3338,7 +3338,7 @@
       "id": "case-study:law-firm-client-intake-automation",
       "slug": "law-firm-client-intake-automation",
       "type": "case-study",
-      "path": "/case-study/law-firm-client-intake-automation",
+      "path": "/case-studies/law-firm-client-intake-automation",
       "systems": [
         "revenue-growth"
       ],
@@ -3355,7 +3355,7 @@
       "id": "case-study:law-firm-consultation-booking-system",
       "slug": "law-firm-consultation-booking-system",
       "type": "case-study",
-      "path": "/case-study/law-firm-consultation-booking-system",
+      "path": "/case-studies/law-firm-consultation-booking-system",
       "systems": [
         "smart-website-systems"
       ],
@@ -3371,7 +3371,7 @@
       "id": "case-study:local-authority-system-impact",
       "slug": "local-authority-system-impact",
       "type": "case-study",
-      "path": "/case-study/local-authority-system-impact",
+      "path": "/case-studies/local-authority-system-impact",
       "systems": [
         "local-seo-authority"
       ],
@@ -3390,7 +3390,7 @@
       "id": "case-study:real-estate-inquiry-routing",
       "slug": "real-estate-inquiry-routing",
       "type": "case-study",
-      "path": "/case-study/real-estate-inquiry-routing",
+      "path": "/case-studies/real-estate-inquiry-routing",
       "systems": [
         "ai-lead-handling"
       ],
@@ -3407,7 +3407,7 @@
       "id": "case-study:realtor-lead-follow-up-automation",
       "slug": "realtor-lead-follow-up-automation",
       "type": "case-study",
-      "path": "/case-study/realtor-lead-follow-up-automation",
+      "path": "/case-studies/realtor-lead-follow-up-automation",
       "systems": [
         "revenue-growth"
       ],
@@ -3424,7 +3424,7 @@
       "id": "case-study:roofing-estimate-follow-up-automation",
       "slug": "roofing-estimate-follow-up-automation",
       "type": "case-study",
-      "path": "/case-study/roofing-estimate-follow-up-automation",
+      "path": "/case-studies/roofing-estimate-follow-up-automation",
       "systems": [
         "revenue-growth"
       ],
@@ -3441,7 +3441,7 @@
       "id": "case-study:roofing-website-rebuild-with-crm",
       "slug": "roofing-website-rebuild-with-crm",
       "type": "case-study",
-      "path": "/case-study/roofing-website-rebuild-with-crm",
+      "path": "/case-studies/roofing-website-rebuild-with-crm",
       "systems": [
         "smart-website-systems"
       ],
@@ -3461,7 +3461,7 @@
       "id": "case-study:salon-booking-automation",
       "slug": "salon-booking-automation",
       "type": "case-study",
-      "path": "/case-study/salon-booking-automation",
+      "path": "/case-studies/salon-booking-automation",
       "systems": [
         "smart-website-systems"
       ],
@@ -3477,7 +3477,7 @@
       "id": "case-study:salon-no-show-reduction-system",
       "slug": "salon-no-show-reduction-system",
       "type": "case-study",
-      "path": "/case-study/salon-no-show-reduction-system",
+      "path": "/case-studies/salon-no-show-reduction-system",
       "systems": [
         "crm-automation",
         "revenue-growth"
@@ -3494,7 +3494,7 @@
       "id": "case-study:salon-review-generation-automation",
       "slug": "salon-review-generation-automation",
       "type": "case-study",
-      "path": "/case-study/salon-review-generation-automation",
+      "path": "/case-studies/salon-review-generation-automation",
       "systems": [
         "reputation-review"
       ],
@@ -3515,7 +3515,7 @@
       "id": "case-study:smart-website-infrastructure-implementation",
       "slug": "smart-website-infrastructure-implementation",
       "type": "case-study",
-      "path": "/case-study/smart-website-infrastructure-implementation",
+      "path": "/case-studies/smart-website-infrastructure-implementation",
       "systems": [
         "smart-website-systems",
         "revenue-growth"
@@ -3534,7 +3534,7 @@
       "id": "case-study:storm-season-lead-handling-system",
       "slug": "storm-season-lead-handling-system",
       "type": "case-study",
-      "path": "/case-study/storm-season-lead-handling-system",
+      "path": "/case-studies/storm-season-lead-handling-system",
       "systems": [
         "ai-lead-handling"
       ],
@@ -61329,7 +61329,7 @@
         "id": "case-study:local-authority-system-impact",
         "slug": "local-authority-system-impact",
         "title": "Local Authority System Impact",
-        "path": "/case-study/local-authority-system-impact",
+        "path": "/case-studies/local-authority-system-impact",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -61366,7 +61366,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -61410,7 +61410,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -61454,7 +61454,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -61491,7 +61491,7 @@
         "id": "case-study:crm-pipeline-visibility-transformation",
         "slug": "crm-pipeline-visibility-transformation",
         "title": "CRM Pipeline Visibility Transformation",
-        "path": "/case-study/crm-pipeline-visibility-transformation",
+        "path": "/case-studies/crm-pipeline-visibility-transformation",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -61520,7 +61520,7 @@
         "id": "case-study:smart-website-infrastructure-implementation",
         "slug": "smart-website-infrastructure-implementation",
         "title": "Smart Website Infrastructure Implementation",
-        "path": "/case-study/smart-website-infrastructure-implementation",
+        "path": "/case-studies/smart-website-infrastructure-implementation",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -61578,7 +61578,7 @@
         "id": "case-study:crm-pipeline-visibility-transformation",
         "slug": "crm-pipeline-visibility-transformation",
         "title": "CRM Pipeline Visibility Transformation",
-        "path": "/case-study/crm-pipeline-visibility-transformation",
+        "path": "/case-studies/crm-pipeline-visibility-transformation",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -61607,7 +61607,7 @@
         "id": "case-study:hvac-maintenance-plan-reactivation",
         "slug": "hvac-maintenance-plan-reactivation",
         "title": "HVAC Maintenance Plan Reactivation",
-        "path": "/case-study/hvac-maintenance-plan-reactivation",
+        "path": "/case-studies/hvac-maintenance-plan-reactivation",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -61644,7 +61644,7 @@
         "id": "case-study:crm-pipeline-visibility-transformation",
         "slug": "crm-pipeline-visibility-transformation",
         "title": "CRM Pipeline Visibility Transformation",
-        "path": "/case-study/crm-pipeline-visibility-transformation",
+        "path": "/case-studies/crm-pipeline-visibility-transformation",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -61709,7 +61709,7 @@
         "id": "case-study:smart-website-infrastructure-implementation",
         "slug": "smart-website-infrastructure-implementation",
         "title": "Smart Website Infrastructure Implementation",
-        "path": "/case-study/smart-website-infrastructure-implementation",
+        "path": "/case-studies/smart-website-infrastructure-implementation",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -61746,7 +61746,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -61790,7 +61790,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -61880,7 +61880,7 @@
         "id": "case-study:appointment-reminder-no-show-reduction",
         "slug": "appointment-reminder-no-show-reduction",
         "title": "Dental Appointment Reminder & No-Show Reduction",
-        "path": "/case-study/appointment-reminder-no-show-reduction",
+        "path": "/case-studies/appointment-reminder-no-show-reduction",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -61914,7 +61914,7 @@
         "id": "case-study:crm-pipeline-visibility-transformation",
         "slug": "crm-pipeline-visibility-transformation",
         "title": "CRM Pipeline Visibility Transformation",
-        "path": "/case-study/crm-pipeline-visibility-transformation",
+        "path": "/case-studies/crm-pipeline-visibility-transformation",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -61958,7 +61958,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -61999,7 +61999,7 @@
         "id": "case-study:roofing-website-rebuild-with-crm",
         "slug": "roofing-website-rebuild-with-crm",
         "title": "Roofing Website Rebuild With CRM",
-        "path": "/case-study/roofing-website-rebuild-with-crm",
+        "path": "/case-studies/roofing-website-rebuild-with-crm",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62047,7 +62047,7 @@
         "id": "case-study:smart-website-infrastructure-implementation",
         "slug": "smart-website-infrastructure-implementation",
         "title": "Smart Website Infrastructure Implementation",
-        "path": "/case-study/smart-website-infrastructure-implementation",
+        "path": "/case-studies/smart-website-infrastructure-implementation",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62076,7 +62076,7 @@
         "id": "case-study:roofing-website-rebuild-with-crm",
         "slug": "roofing-website-rebuild-with-crm",
         "title": "Roofing Website Rebuild With CRM",
-        "path": "/case-study/roofing-website-rebuild-with-crm",
+        "path": "/case-studies/roofing-website-rebuild-with-crm",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62105,7 +62105,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62142,7 +62142,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62179,7 +62179,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62216,7 +62216,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62253,7 +62253,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62290,7 +62290,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62327,7 +62327,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62364,7 +62364,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62401,7 +62401,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62438,7 +62438,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62467,7 +62467,7 @@
         "id": "case-study:roofing-estimate-follow-up-automation",
         "slug": "roofing-estimate-follow-up-automation",
         "title": "Roofing Estimate Follow-Up Automation",
-        "path": "/case-study/roofing-estimate-follow-up-automation",
+        "path": "/case-studies/roofing-estimate-follow-up-automation",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62511,7 +62511,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62548,7 +62548,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62585,7 +62585,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62614,7 +62614,7 @@
         "id": "case-study:crm-pipeline-visibility-transformation",
         "slug": "crm-pipeline-visibility-transformation",
         "title": "CRM Pipeline Visibility Transformation",
-        "path": "/case-study/crm-pipeline-visibility-transformation",
+        "path": "/case-studies/crm-pipeline-visibility-transformation",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62643,7 +62643,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62672,7 +62672,7 @@
         "id": "case-study:crm-pipeline-visibility-transformation",
         "slug": "crm-pipeline-visibility-transformation",
         "title": "CRM Pipeline Visibility Transformation",
-        "path": "/case-study/crm-pipeline-visibility-transformation",
+        "path": "/case-studies/crm-pipeline-visibility-transformation",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62709,7 +62709,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62738,7 +62738,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62782,7 +62782,7 @@
         "id": "case-study:hvac-maintenance-plan-reactivation",
         "slug": "hvac-maintenance-plan-reactivation",
         "title": "HVAC Maintenance Plan Reactivation",
-        "path": "/case-study/hvac-maintenance-plan-reactivation",
+        "path": "/case-studies/hvac-maintenance-plan-reactivation",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62811,7 +62811,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62840,7 +62840,7 @@
         "id": "case-study:roofing-estimate-follow-up-automation",
         "slug": "roofing-estimate-follow-up-automation",
         "title": "Roofing Estimate Follow-Up Automation",
-        "path": "/case-study/roofing-estimate-follow-up-automation",
+        "path": "/case-studies/roofing-estimate-follow-up-automation",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62884,7 +62884,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {
@@ -62913,7 +62913,7 @@
         "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
         "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
         "title": "Beauty Salon Case Study - All Sections Demo",
-        "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+        "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
         "type": "case-study"
       },
       "suggestedResource": {

@@ -5,9 +5,9 @@ import { SectionIntro } from '@/components/reusable/single';
 import { Badge } from '@/components/reusable/single/Badge';
 import { SmartCTA } from '@/components/system/SmartCTA';
 
-export function PortfolioSection() {
-  const BLOCK = 'portfolio-section';
+const BLOCK = 'portfolio-section';
 
+export function PortfolioSection() {
   const portfolioItems = [
     {
       title: 'Beauty Salon & Spa',

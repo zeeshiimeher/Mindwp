@@ -17,31 +17,12 @@ const REQUIRED_GENERATED_FILES = [
   'src/lib/authority/generated/authorityMap.ts',
 ];
 
-const OPTIONAL_GENERATED_FILES = [];
-
 const GENERATED_FILES = [...REQUIRED_GENERATED_FILES];
-const missingOptionalFiles = [];
-
-for (const rel of OPTIONAL_GENERATED_FILES) {
-  if (existsSync(resolve(root, rel))) {
-    GENERATED_FILES.push(rel);
-    continue;
-  }
-
-  missingOptionalFiles.push(rel);
-}
 
 const snapshot = new Map();
 for (const rel of GENERATED_FILES) {
   const abs = resolve(root, rel);
   snapshot.set(rel, readFileSync(abs, 'utf8'));
-}
-
-if (missingOptionalFiles.length > 0) {
-  // eslint-disable-next-line no-console
-  console.warn(
-    `[check-generated] Skipping missing optional generated file(s):\n- ${missingOptionalFiles.join('\n- ')}`
-  );
 }
 
 try {

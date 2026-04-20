@@ -8,6 +8,8 @@ import { cn } from '@/components/ui/utils';
 
 import { ResourceSectionHeader } from './ResourceSectionHeader';
 
+const BLOCK = 'framework-section';
+
 export interface AutomatedSolution {
   title: string;
   description: string;
@@ -31,8 +33,6 @@ export function ResourceSolutionsSection({
   differenceContent,
   className = '',
 }: ResourceSolutionsSectionProps) {
-  const BLOCK = 'framework-section';
-
   return (
     <SectionWrapper padding='none' container='none' className={cn(BLOCK, className)}>
       <ResourceSectionHeader

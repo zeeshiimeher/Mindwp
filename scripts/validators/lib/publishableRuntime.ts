@@ -1,7 +1,7 @@
 import { renderToStaticMarkup } from 'react-dom/server';
 
 import blogPage from '@/app/blog/[slug]/page';
-import caseStudyPage from '@/app/case-study/[slug]/page';
+import caseStudyPage from '@/app/case-studies/[slug]/page';
 import featurePage from '@/app/features/[...slug]/page';
 import industryPage from '@/app/industries/[...slug]/page';
 import resourcePage from '@/app/resources/[slug]/page';

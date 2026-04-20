@@ -16,6 +16,8 @@ import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { readReportJson } from '../lib/report-json.mjs';
+
 const args = new Set(process.argv.slice(2));
 const reportJson = args.has('--report-json');
 
@@ -62,6 +64,12 @@ const validators = [
     blocking: true,
   },
   {
+    name: 'validate-cta-resolver-integrity',
+    command: 'node',
+    args: ['scripts/validators/validate-cta-resolver-integrity.mjs', '--report-json'],
+    blocking: true,
+  },
+  {
     name: 'validate-conversion-contract',
     command: 'npx',
     args: ['tsx', 'scripts/validators/validate-conversion-contract.mjs', '--report-json'],
@@ -80,9 +88,21 @@ const validators = [
     blocking: true,
   },
   {
+    name: 'validate-section-shell-integrity',
+    command: 'node',
+    args: ['scripts/validators/validate-section-shell-integrity.mjs', '--report-json'],
+    blocking: true,
+  },
+  {
     name: 'validate-design-system',
     command: 'node',
     args: ['scripts/validators/validate-design-system.cjs', '--report-json'],
+    blocking: true,
+  },
+  {
+    name: 'validate-ui-purity',
+    command: 'node',
+    args: ['scripts/validators/validate-ui-purity.mjs', '--report-json'],
     blocking: true,
   },
   {
@@ -195,7 +215,7 @@ function buildReport(results) {
     result => validators.find(validator => validator.name === result.name)?.blocking === false
   );
 
-  const contentQualityReport = readJson('content-quality-report.json');
+  const contentQualityReport = readReportJson(root, 'content-quality-report.json');
 
   return {
     generatedAt: new Date().toISOString(),
@@ -227,16 +247,6 @@ function buildReport(results) {
     content: contentQualityReport?.summary?.content ?? null,
     authority: contentQualityReport?.summary?.authority ?? null,
   };
-}
-
-function readJson(fileName) {
-  const filePath = path.join(root, 'reports', fileName);
-
-  try {
-    return JSON.parse(fs.readFileSync(filePath, 'utf8'));
-  } catch {
-    return null;
-  }
 }
 
 function main() {

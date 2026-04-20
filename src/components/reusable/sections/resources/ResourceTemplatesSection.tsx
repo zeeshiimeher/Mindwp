@@ -1,10 +1,10 @@
 import { Copy } from 'lucide-react';
 
-import { SectionWrapper } from '@/components/reusable/primitives';
 import { Card } from '@/components/reusable/single/Card';
-import { cn } from '@/components/ui/utils';
 
-import { ResourceSectionHeader } from './ResourceSectionHeader';
+import { ResourceSectionShell } from './ResourceSectionShell';
+
+const BLOCK = 'resource-templates-section';
 
 export interface ResourceTemplateItem {
   title: string;
@@ -25,33 +25,18 @@ export function ResourceTemplatesSection({
   items,
   className = '',
 }: ResourceTemplatesSectionProps) {
-  const BLOCK = 'resource-templates-section';
-
   const safeItems = Array.isArray(items) ? items : [];
   if (!heading || safeItems.length === 0) return null;
 
   return (
-    <SectionWrapper padding='none' container='none' className={cn(BLOCK, className)}>
-      <ResourceSectionHeader
-        icon={Copy}
-        title={heading}
-        variant='templates'
-        {...(content && content.length > 0 && { subtitle: content[0] })}
-      />
-
-      {content && content.length > 1 && (
-        <div className={`${BLOCK}__description`}>
-          {content.map((paragraph, index) => {
-            if (index === 0) return null;
-            return (
-              <p key={index} className={`${BLOCK}__paragraph`}>
-                {paragraph}
-              </p>
-            );
-          })}
-        </div>
-      )}
-
+    <ResourceSectionShell
+      block={BLOCK}
+      className={className}
+      content={content}
+      icon={Copy}
+      title={heading}
+      variant='templates'
+    >
       <div className={`${BLOCK}__stack`}>
         {safeItems.map((item, index) => (
           <Card key={index} className={`${BLOCK}__card`}>
@@ -68,6 +53,6 @@ export function ResourceTemplatesSection({
           </Card>
         ))}
       </div>
-    </SectionWrapper>
+    </ResourceSectionShell>
   );
 }

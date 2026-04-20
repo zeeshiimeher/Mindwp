@@ -1,5 +1,5 @@
-import type { FeaturePageData } from '@/domains/features/types';
 import VoiceCallsRenderer from '@/domains/features/renderers/VoiceCallsRenderer';
+import type { FeaturePageData } from '@/domains/features/types';
 
 interface VoiceCallsPageProps {
   data: FeaturePageData;

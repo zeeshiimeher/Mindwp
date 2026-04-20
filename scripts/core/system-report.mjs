@@ -9,6 +9,7 @@ import {
   parseClientDashboardContract,
   parseSystemReportContract,
 } from '../lib/system-contract-schemas.mjs';
+import { readJsonFile, readReportJson } from '../lib/report-json.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const reportsDir = path.join(root, 'reports');
@@ -106,14 +107,6 @@ function runCommand(binary, args) {
   };
 }
 
-function readJson(filePath) {
-  try {
-    return JSON.parse(fs.readFileSync(filePath, 'utf8'));
-  } catch {
-    return null;
-  }
-}
-
 function writeJson(filePath, data) {
   ensureDir(path.dirname(filePath));
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2) + '\n');
@@ -174,7 +167,7 @@ function readPreviousSnapshotReport() {
 
   return {
     fileName: latestFileName,
-    report: readJson(path.join(snapshotDir, latestFileName)),
+    report: readJsonFile(path.join(snapshotDir, latestFileName)),
   };
 }
 
@@ -300,8 +293,8 @@ function scanSmartCtaUsage() {
   const srcRoot = path.join(root, 'src');
   const violationsPath = path.join(reportsDir, 'cta-violation-scan.json');
   const conversionReportPath = path.join(reportsDir, 'conversion-contract-report.json');
-  const ctaViolations = readJson(violationsPath) ?? [];
-  const conversionReport = readJson(conversionReportPath) ?? {};
+  const ctaViolations = readJsonFile(violationsPath) ?? [];
+  const conversionReport = readJsonFile(conversionReportPath) ?? {};
   const files = [];
 
   function visit(directoryPath) {
@@ -391,7 +384,7 @@ function getNodeSlug(node) {
 }
 
 function buildRouteIndex() {
-  const authorityMap = readJson(path.join(reportsDir, 'authority-map.json')) ?? {};
+  const authorityMap = readReportJson(root, 'authority-map.json') ?? {};
   const nodes = Array.isArray(authorityMap?.nodes) ? authorityMap.nodes : [];
 
   return nodes
@@ -519,13 +512,13 @@ function addPriority(priorities, routeIndex, raw) {
 function buildPriorities(validate) {
   const routeIndex = buildRouteIndex();
   const priorities = [];
-  const domainStructureReport = readJson(path.join(reportsDir, 'domain-structure-report.json')) ?? {};
-  const conversionReport = readJson(path.join(reportsDir, 'conversion-contract-report.json')) ?? {};
-  const contentContractReport = readJson(path.join(reportsDir, 'content-contract-report.json')) ?? {};
-  const contentQualityReport = readJson(path.join(reportsDir, 'content-quality-report.json')) ?? {};
-  const graphReport = readJson(path.join(reportsDir, 'graph-report.json')) ?? {};
-  const contentGapsReport = readJson(path.join(reportsDir, 'content-gaps.json')) ?? {};
-  const ctaViolations = readJson(path.join(reportsDir, 'cta-violation-scan.json')) ?? [];
+  const domainStructureReport = readReportJson(root, 'domain-structure-report.json') ?? {};
+  const conversionReport = readReportJson(root, 'conversion-contract-report.json') ?? {};
+  const contentContractReport = readReportJson(root, 'content-contract-report.json') ?? {};
+  const contentQualityReport = readReportJson(root, 'content-quality-report.json') ?? {};
+  const graphReport = readReportJson(root, 'graph-report.json') ?? {};
+  const contentGapsReport = readReportJson(root, 'content-gaps.json') ?? {};
+  const ctaViolations = readReportJson(root, 'cta-violation-scan.json') ?? [];
 
   for (const issue of domainStructureReport?.issues ?? []) {
     addPriority(priorities, routeIndex, {
@@ -1142,7 +1135,7 @@ function normalizeReportFile(absolutePath, timestamp, fallbackSource) {
   let fileSourceCommand = inferSourceCommand(fileName, fallbackSource);
 
   if (fileName.endsWith('.json')) {
-    const report = readJson(absolutePath);
+    const report = readJsonFile(absolutePath);
 
     if (report && typeof report === 'object' && !Array.isArray(report)) {
       const nextReport = {
@@ -1206,9 +1199,9 @@ function buildReportsSection(result, runStartedAt, timestamp) {
 }
 
 function buildSystemSection() {
-  const domainStructureReport = readJson(path.join(reportsDir, 'domain-structure-report.json')) ?? {};
-  const graphReport = readJson(path.join(reportsDir, 'graph-report.json')) ?? {};
-  const authorityMap = readJson(path.join(reportsDir, 'authority-map.json')) ?? {};
+  const domainStructureReport = readReportJson(root, 'domain-structure-report.json') ?? {};
+  const graphReport = readReportJson(root, 'graph-report.json') ?? {};
+  const authorityMap = readReportJson(root, 'authority-map.json') ?? {};
   const domainIssues = Array.isArray(domainStructureReport?.issues) ? domainStructureReport.issues : [];
   const featureIssues = domainIssues
     .filter(issue => issue?.type === 'feature')
@@ -1258,14 +1251,14 @@ function main() {
 
   const runStartedAt = Date.now();
   const timestamp = new Date().toISOString();
-  const previousReport = readJson(reportPath);
+  const previousReport = readJsonFile(reportPath);
 
   ensureDir(reportsDir);
   ensureDir(tempDir);
   ensureDir(snapshotDir);
 
   const validateResult = runCommand(binaries.node, ['scripts/core/validate-all.mjs', '--report-json']);
-  const validationReport = readJson(path.join(reportsDir, 'validation-results.json'));
+  const validationReport = readReportJson(root, 'validation-results.json');
   const validate = buildValidationSection(validateResult, validationReport);
 
   const typecheckResult = runCommand(binaries.npm, ['run', '-s', 'typecheck']);
@@ -1280,7 +1273,7 @@ function main() {
     '--reporter=json',
     `--outputFile=${vitestOutputPath}`,
   ]);
-  const vitestReport = readJson(vitestOutputPath);
+  const vitestReport = readJsonFile(vitestOutputPath);
   const tests = buildTestsSection(testsResult, vitestReport);
 
   const e2eResult = includeE2E

@@ -1,7 +1,7 @@
-import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
-import { SectionIntro } from '@/components/reusable/single';
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
+
+import { CardsSectionShell } from './CardsSectionShell';
 
 const BLOCK = 'c-generic-cards-section';
 
@@ -36,22 +36,21 @@ export function GenericCardsSection({
     variant === 'bordered' ? `${BLOCK}__card--bordered` : `${BLOCK}__card--default`;
 
   return (
-    <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
-      <SectionIntro
-        {...(badge !== undefined && { badge })}
-        title={title}
-        {...(description !== undefined && { description })}
-        className={`${BLOCK}__header`}
-      />
-
-      <CardGrid columns={columns} mode='controlled'>
-        {items.map((item, index) => (
-          <Card key={index} className={cn(`${BLOCK}__card`, cardVariantClass)}>
-            <h4 className={`${BLOCK}__item-title`}>{item.title}</h4>
-            <p className={`${BLOCK}__item-description`}>{item.description}</p>
-          </Card>
-        ))}
-      </CardGrid>
-    </SectionWrapper>
+    <CardsSectionShell
+      block={BLOCK}
+      badge={badge}
+      title={title}
+      description={description}
+      backgroundColor={backgroundColor}
+      cssPrefix={cn(cssPrefix)}
+      columns={columns}
+    >
+      {items.map((item, index) => (
+        <Card key={index} className={cn(`${BLOCK}__card`, cardVariantClass)}>
+          <h4 className={`${BLOCK}__item-title`}>{item.title}</h4>
+          <p className={`${BLOCK}__item-description`}>{item.description}</p>
+        </Card>
+      ))}
+    </CardsSectionShell>
   );
 }

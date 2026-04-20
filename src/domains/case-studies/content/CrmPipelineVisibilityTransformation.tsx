@@ -190,7 +190,7 @@ function buildCrmPipelineVisibilityTransformation(): CaseStudyData {
       'System Implementation',
     ],
     seo: {
-      canonical: '/case-study/crm-pipeline-visibility-transformation',
+      canonical: '/case-studies/crm-pipeline-visibility-transformation',
       openGraph: {
         title: 'Why Service Businesses Can\u2019t See Their Pipeline | MindWP Case Study',
         description:

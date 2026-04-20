@@ -3,6 +3,8 @@ import React from 'react';
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { SectionIntro, WorkflowStepCard } from '@/components/reusable/single';
 
+const BLOCK = 'case-study-detail-workflows';
+
 export interface CaseStudyWorkflow {
   trigger: string;
   actions: string[];
@@ -21,8 +23,6 @@ export function CaseStudyWorkflowsSection({
   description,
   workflows,
 }: CaseStudyWorkflowsSectionProps) {
-  const BLOCK = 'case-study-detail-workflows';
-
   return (
     <SectionWrapper className={BLOCK}>
       <SectionIntro

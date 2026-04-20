@@ -3,6 +3,8 @@ import React from 'react';
 import { SectionWrapper } from '@/components/reusable/primitives';
 import { AlertCard, SectionIntro } from '@/components/reusable/single';
 
+const BLOCK = 'case-study-detail-business-impact';
+
 export interface CaseStudyBusinessImpactSectionProps {
   badge?: string;
   title: string;
@@ -16,8 +18,6 @@ export function CaseStudyBusinessImpactSection({
   description,
   impacts,
 }: CaseStudyBusinessImpactSectionProps) {
-  const BLOCK = 'case-study-detail-business-impact';
-
   return (
     <SectionWrapper background='bg-muted/30' className={BLOCK}>
       <SectionIntro

@@ -215,7 +215,7 @@ function buildLawFirmClientIntakeAutomation(): CaseStudyData {
     })),
     tags: ['Client Intake', 'Law Firm', 'Automation', 'CRM Pipeline', 'Professional Services'],
     seo: {
-      canonical: '/case-study/law-firm-client-intake-automation',
+      canonical: '/case-studies/law-firm-client-intake-automation',
       openGraph: {
         title: 'Why Law Firms Lose Enquiries During Intake | MindWP Case Study',
         description:

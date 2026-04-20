@@ -187,7 +187,7 @@ function buildSalonBookingAutomation(): CaseStudyData {
       'Beauty & Personal Care',
     ],
     seo: {
-      canonical: '/case-study/salon-booking-automation',
+      canonical: '/case-studies/salon-booking-automation',
       openGraph: {
         title: 'Why Salon Booking Systems Break Down | MindWP Case Study',
         description:

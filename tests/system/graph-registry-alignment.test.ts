@@ -76,7 +76,7 @@ describe('system invariant: graph and registries stay aligned', () => {
     for (const caseStudy of Object.values(CASE_STUDY_REGISTRY)) {
       const node = caseStudyNodes.find(candidate => candidate.slug === caseStudy.slug);
       expect(node, `Missing graph node for case study "${caseStudy.slug}"`).toBeDefined();
-      expect(node?.path).toBe(`/case-study/${caseStudy.slug}`);
+      expect(node?.path).toBe(`/case-studies/${caseStudy.slug}`);
     }
   });
 

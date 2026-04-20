@@ -200,7 +200,7 @@ function buildLocalAuthoritySystemImpact(): CaseStudyData {
     })),
     tags: ['Local SEO', 'Google Maps', 'Review Generation', 'Local Authority', 'Home Services'],
     seo: {
-      canonical: '/case-study/local-authority-system-impact',
+      canonical: '/case-studies/local-authority-system-impact',
       openGraph: {
         title: 'Why Service Businesses Stay Invisible in Local Search | MindWP Case Study',
         description:

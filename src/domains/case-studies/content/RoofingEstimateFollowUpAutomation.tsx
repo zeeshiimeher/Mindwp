@@ -185,7 +185,7 @@ function buildRoofingEstimateFollowUpAutomation(): CaseStudyData {
     })),
     tags: ['Estimate Follow-Up', 'CRM Pipeline', 'Roofing', 'Revenue Recovery', 'Automation'],
     seo: {
-      canonical: '/case-study/roofing-estimate-follow-up-automation',
+      canonical: '/case-studies/roofing-estimate-follow-up-automation',
       openGraph: {
         title: 'Why Roofing Estimates Go Unanswered | MindWP Case Study',
         description:

@@ -181,7 +181,7 @@ function buildLawFirmConsultationBookingSystem(): CaseStudyData {
       'Professional Services',
     ],
     seo: {
-      canonical: '/case-study/law-firm-consultation-booking-system',
+      canonical: '/case-studies/law-firm-consultation-booking-system',
       openGraph: {
         title: 'Why Law Firms Lose Clients Before the First Meeting | MindWP Case Study',
         description:

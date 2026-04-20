@@ -1,6 +1,8 @@
 import { Card } from '@/components/reusable/single/Card';
 import { cn } from '@/components/ui/utils';
 
+const BLOCK = 'warning-list';
+
 export interface WarningListProps {
   title: string;
   items: string[];
@@ -8,8 +10,6 @@ export interface WarningListProps {
 }
 
 export function AlertList({ title, items, className = '' }: WarningListProps) {
-  const BLOCK = 'warning-list';
-
   return (
     <Card className={cn(BLOCK, className)}>
       <h3 className={`${BLOCK}__title`}>{title}</h3>

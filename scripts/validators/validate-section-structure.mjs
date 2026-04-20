@@ -8,7 +8,7 @@ import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
 import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
 import { resolveContentRules } from '@/lib/config/contentRules';
 
-import { loadFeaturePages, loadServicePages } from './lib/contentValidationHelpers.mjs';
+import { loadPagesByType } from '../lib/content-validation-helpers.mjs';
 
 const args = new Set(process.argv.slice(2));
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
@@ -266,7 +266,10 @@ function validateCaseStudies(caseStudies) {
 }
 
 async function main() {
-  const [servicePages, featurePages] = await Promise.all([loadServicePages(), loadFeaturePages()]);
+  const [servicePages, featurePages] = await Promise.all([
+    loadPagesByType('service'),
+    loadPagesByType('feature'),
+  ]);
 
   validateServicePages(servicePages);
   validateFeaturePages(featurePages);

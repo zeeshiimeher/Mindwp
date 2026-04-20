@@ -196,7 +196,7 @@ function buildBeautySalonManchesterAllSections(): CaseStudyData {
     })),
     tags: ['Local SEO', 'Online Booking', 'Beauty Salon', 'Manchester', 'All Sections Demo'],
     seo: {
-      canonical: '/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections',
+      canonical: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
       openGraph: {
         title: 'Beauty Salon Case Study (All Sections Demo) | Manchester',
         description:

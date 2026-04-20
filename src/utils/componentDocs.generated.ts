@@ -293,12 +293,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": ""
       },
       {
-        "name": "sessionVariantKey",
-        "type": "string | undefined",
-        "optional": true,
-        "description": ""
-      },
-      {
         "name": "showArrows",
         "type": "boolean | undefined",
         "optional": true,
@@ -444,7 +438,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "columns",
-        "type": "2 | 1 | undefined",
+        "type": "1 | 2 | undefined",
         "optional": true,
         "description": ""
       },
@@ -10968,6 +10962,72 @@ export const componentDocs: Record<string, ComponentDoc> = {
       }
     ]
   },
+  "CardsSectionShell": {
+    "name": "CardsSectionShell",
+    "filePath": "src/components/reusable/sections/core/index.ts",
+    "summary": "",
+    "description": "",
+    "representativeUsageFilePath": "",
+    "representativePageUrl": "/",
+    "usageCount": 0,
+    "composedComponents": [],
+    "props": [
+      {
+        "name": "block",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "backgroundColor",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "badge",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "columns",
+        "type": "1 | 2 | 3 | 4 | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "cssPrefix",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "description",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "gap",
+        "type": "4 | 6 | 8 | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      }
+    ]
+  },
   "CardTitle": {
     "name": "CardTitle",
     "filePath": "src/components/reusable/single/Card.tsx",
@@ -14088,7 +14148,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "columns",
-        "type": "2 | 3 | 1 | undefined",
+        "type": "1 | 2 | 3 | undefined",
         "optional": true,
         "description": ""
       },
@@ -15422,6 +15482,54 @@ export const componentDocs: Record<string, ComponentDoc> = {
       }
     ]
   },
+  "IconRow": {
+    "name": "IconRow",
+    "filePath": "src/components/reusable/single/index.ts",
+    "summary": "",
+    "description": "",
+    "representativeUsageFilePath": "src/screens/Homepage.tsx",
+    "representativePageUrl": "/",
+    "usageCount": 1,
+    "composedComponents": [],
+    "props": [
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "as",
+        "type": "ElementType | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "className",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "icon",
+        "type": "LucideIcon | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "iconClassName",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "textClassName",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      }
+    ]
+  },
   "IconTextCard": {
     "name": "IconTextCard",
     "filePath": "src/components/reusable/sections/service/index.ts",
@@ -15941,7 +16049,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "columns",
-        "type": "2 | 3 | 1 | undefined",
+        "type": "1 | 2 | 3 | undefined",
         "optional": true,
         "description": ""
       },
@@ -17185,12 +17293,6 @@ export const componentDocs: Record<string, ComponentDoc> = {
         "description": ""
       },
       {
-        "name": "sessionResolvedVariant",
-        "type": "\"default\" | \"style1\" | undefined",
-        "optional": true,
-        "description": "Required only when `styleVariant='session-auto'`.\n\nThis should be passed by a client wrapper (for example\n`AutoRelatedContentCardsSection`) after reading/writing sessionStorage."
-      },
-      {
         "name": "showArrows",
         "type": "boolean | undefined",
         "optional": true,
@@ -17332,7 +17434,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
       },
       {
         "name": "columns",
-        "type": "2 | 1 | undefined",
+        "type": "1 | 2 | undefined",
         "optional": true,
         "description": ""
       },
@@ -17527,6 +17629,72 @@ export const componentDocs: Record<string, ComponentDoc> = {
       {
         "name": "className",
         "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "subtitle",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      }
+    ]
+  },
+  "ResourceSectionShell": {
+    "name": "ResourceSectionShell",
+    "filePath": "src/components/reusable/sections/resources/ResourceSectionShell.tsx",
+    "summary": "",
+    "description": "",
+    "representativeUsageFilePath": "",
+    "representativePageUrl": "/",
+    "usageCount": 0,
+    "composedComponents": [],
+    "props": [
+      {
+        "name": "block",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "children",
+        "type": "ReactNode",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "icon",
+        "type": "import(\"/Users/zeeshansadiq/Projects/Mindwp/node_modules/@types/react/index\").ComponentType<{ className?: string; }>",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "title",
+        "type": "string",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "variant",
+        "type": "\"problem\" | \"solution\" | \"case\" | \"diy\" | \"business-costs\" | \"faq\" | \"takeaways\" | \"comparison\" | \"templates\" | \"checklist\"",
+        "optional": false,
+        "description": ""
+      },
+      {
+        "name": "className",
+        "type": "string | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "content",
+        "type": "string[] | undefined",
+        "optional": true,
+        "description": ""
+      },
+      {
+        "name": "renderParagraph",
+        "type": "((paragraph: string, index: number, className: string) => ReactNode) | undefined",
         "optional": true,
         "description": ""
       },
@@ -17837,7 +18005,7 @@ export const componentDocs: Record<string, ComponentDoc> = {
     "description": "",
     "representativeUsageFilePath": "src/screens/Homepage.tsx",
     "representativePageUrl": "/",
-    "usageCount": 90,
+    "usageCount": 89,
     "composedComponents": [],
     "props": [
       {

@@ -3,6 +3,8 @@ import { Card } from '@/components/reusable/single/Card';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { cn } from '@/components/ui/utils';
 
+const BLOCK = 'blog-steps-section';
+
 export type BlogStep = {
   label: string;
   description?: string;
@@ -21,8 +23,6 @@ export function BlogStepsSection({
   steps,
   className = '',
 }: BlogStepsSectionProps) {
-  const BLOCK = 'blog-steps-section';
-
   const paragraphs = content === undefined ? [] : typeof content === 'string' ? [content] : content;
 
   return (

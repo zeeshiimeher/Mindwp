@@ -5,6 +5,8 @@ import { Card } from '@/components/reusable/single/Card';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { cn } from '@/components/ui/utils';
 
+const BLOCK = 'blog-image-section';
+
 export interface BlogImageSectionProps {
   heading?: string;
   src: string;
@@ -20,7 +22,6 @@ export function BlogImageSection({
   caption,
   className = '',
 }: BlogImageSectionProps) {
-  const BLOCK = 'blog-image-section';
   const isRemoteSrc = /^https?:\/\//i.test(src);
 
   return (

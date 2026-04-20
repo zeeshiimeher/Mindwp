@@ -20,6 +20,7 @@ import {
   FAQSection,
   FeatureChecklistCard,
   IconBenefitCard,
+  IconRow,
   ProblemSolutionSplitCard,
   SectionIntro,
 } from '@/components/reusable/single';
@@ -38,6 +39,8 @@ const HOMEPAGE_CASE_STUDIES_BUTTON = {
   label: 'View All Case Studies',
   href: '/case-studies',
 } as const;
+
+const BLOCK = 'c-system-capabilities';
 
 type HomepageCaseStudy = {
   slug: string;
@@ -170,18 +173,16 @@ function HeroSection() {
 
           <div className='hero-section-value-props'>
             <div className='hero-section-value-props-grid'>
-              <div className='hero-section-value-prop'>
-                <CheckCircle2 className='hero-section-value-prop-icon icon-text-accent' />
-                <span>{heroData.valueProps[0]}</span>
-              </div>
-              <div className='hero-section-value-prop'>
-                <CheckCircle2 className='hero-section-value-prop-icon icon-text-accent' />
-                <span>{heroData.valueProps[1]}</span>
-              </div>
-              <div className='hero-section-value-prop'>
-                <CheckCircle2 className='hero-section-value-prop-icon icon-text-accent' />
-                <span>{heroData.valueProps[2]}</span>
-              </div>
+              {heroData.valueProps.map(valueProp => (
+                <IconRow
+                  key={valueProp}
+                  icon={CheckCircle2}
+                  className='hero-section-value-prop'
+                  iconClassName='hero-section-value-prop-icon icon-text-accent'
+                >
+                  {valueProp}
+                </IconRow>
+              ))}
             </div>
           </div>
         </div>
@@ -781,7 +782,6 @@ function ProofVisual({ stats }: { stats: { label: string; value: string }[] }) {
 }
 
 function SystemCapabilitiesSection() {
-  const BLOCK = 'c-system-capabilities';
   const systemCapabilitiesData = homepageData.systemCapabilities;
   const VISUAL_MAP = {
     calls: CallsVisual,

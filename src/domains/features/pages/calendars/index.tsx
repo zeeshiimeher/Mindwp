@@ -1,5 +1,5 @@
-import type { FeaturePageData } from '@/domains/features/types';
 import CalendarsRenderer from '@/domains/features/renderers/CalendarsRenderer';
+import type { FeaturePageData } from '@/domains/features/types';
 
 interface CalendarsPageProps {
   data: FeaturePageData;

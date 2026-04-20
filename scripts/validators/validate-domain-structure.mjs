@@ -1285,13 +1285,13 @@ function validateCaseStudyStructure(issues) {
       );
     }
 
-    if (slug && canonical !== `/case-study/${slug}`) {
+    if (slug && canonical !== `/case-studies/${slug}`) {
       pushIssue(
         issues,
         'case-study',
         rel,
         'canonical_mismatch',
-        `seo.canonical must be /case-study/${slug}.`
+        `seo.canonical must be /case-studies/${slug}.`
       );
     }
   }

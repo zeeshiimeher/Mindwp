@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-19T05:29:27.054Z",
+  "generatedAt": "2026-04-20T09:26:56.111Z",
   "stats": {
     "totalNodes": 227,
     "blogs": 88,
@@ -3710,14 +3710,14 @@
           "id": "case-study:crm-pipeline-visibility-transformation",
           "slug": "crm-pipeline-visibility-transformation",
           "type": "case-study",
-          "path": "/case-study/crm-pipeline-visibility-transformation",
+          "path": "/case-studies/crm-pipeline-visibility-transformation",
           "title": "CRM Pipeline Visibility Transformation",
           "description": "How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.",
-          "canonical": "/case-study/crm-pipeline-visibility-transformation",
+          "canonical": "/case-studies/crm-pipeline-visibility-transformation",
           "openGraph": {
             "title": "Why Service Businesses Can’t See Their Pipeline | MindWP Case Study",
             "description": "How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM.",
-            "url": "/case-study/crm-pipeline-visibility-transformation",
+            "url": "/case-studies/crm-pipeline-visibility-transformation",
             "images": [
               "/og-default.png"
             ]
@@ -3727,7 +3727,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/crm-pipeline-visibility-transformation",
+            "canonical": "/case-studies/crm-pipeline-visibility-transformation",
             "openGraph": {
               "title": "Why Service Businesses Can’t See Their Pipeline | MindWP Case Study",
               "description": "How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM."
@@ -3985,14 +3985,14 @@
           "id": "case-study:law-firm-client-intake-automation",
           "slug": "law-firm-client-intake-automation",
           "type": "case-study",
-          "path": "/case-study/law-firm-client-intake-automation",
+          "path": "/case-studies/law-firm-client-intake-automation",
           "title": "Law Firm Client Intake Automation",
           "description": "How a Plymouth law firm reduced client intake time from 4 days to 6 hours, improved completion from 58% to 87%, and freed 18 admin hours per week.",
-          "canonical": "/case-study/law-firm-client-intake-automation",
+          "canonical": "/case-studies/law-firm-client-intake-automation",
           "openGraph": {
             "title": "Why Law Firms Lose Enquiries During Intake | MindWP Case Study",
             "description": "How a Plymouth law firm cut intake time from 4 days to 6 hours using automated pipeline and document collection.",
-            "url": "/case-study/law-firm-client-intake-automation",
+            "url": "/case-studies/law-firm-client-intake-automation",
             "images": [
               "/og-default.png"
             ]
@@ -4002,7 +4002,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/law-firm-client-intake-automation",
+            "canonical": "/case-studies/law-firm-client-intake-automation",
             "openGraph": {
               "title": "Why Law Firms Lose Enquiries During Intake | MindWP Case Study",
               "description": "How a Plymouth law firm cut intake time from 4 days to 6 hours using automated pipeline and document collection."
@@ -4093,14 +4093,14 @@
           "id": "case-study:realtor-lead-follow-up-automation",
           "slug": "realtor-lead-follow-up-automation",
           "type": "case-study",
-          "path": "/case-study/realtor-lead-follow-up-automation",
+          "path": "/case-studies/realtor-lead-follow-up-automation",
           "title": "Realtor Lead Follow-Up Automation",
           "description": "How a Bath estate agency increased enquiry-to-viewing conversion from 22% to 41% and recovered £14,000 per quarter using automated CRM follow-up sequences.",
-          "canonical": "/case-study/realtor-lead-follow-up-automation",
+          "canonical": "/case-studies/realtor-lead-follow-up-automation",
           "openGraph": {
             "title": "Why Estate Agents Lose Buyers | MindWP Case Study",
             "description": "How a Bath estate agency increased viewing conversion from 22% to 41% with automated CRM follow-up.",
-            "url": "/case-study/realtor-lead-follow-up-automation",
+            "url": "/case-studies/realtor-lead-follow-up-automation",
             "images": [
               "/og-default.png"
             ]
@@ -4110,7 +4110,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/realtor-lead-follow-up-automation",
+            "canonical": "/case-studies/realtor-lead-follow-up-automation",
             "openGraph": {
               "title": "Why Estate Agents Lose Buyers | MindWP Case Study",
               "description": "How a Bath estate agency increased viewing conversion from 22% to 41% with automated CRM follow-up."
@@ -4201,14 +4201,14 @@
           "id": "case-study:roofing-estimate-follow-up-automation",
           "slug": "roofing-estimate-follow-up-automation",
           "type": "case-study",
-          "path": "/case-study/roofing-estimate-follow-up-automation",
+          "path": "/case-studies/roofing-estimate-follow-up-automation",
           "title": "Roofing Estimate Follow-Up Automation",
           "description": "How a Leeds roofing company increased their estimate close rate from 18% to 35% using automated CRM follow-up sequences and pipeline visibility.",
-          "canonical": "/case-study/roofing-estimate-follow-up-automation",
+          "canonical": "/case-studies/roofing-estimate-follow-up-automation",
           "openGraph": {
             "title": "Why Roofing Estimates Go Unanswered | MindWP Case Study",
             "description": "How a Leeds roofing company increased their estimate close rate from 18% to 35% using automated CRM follow-up sequences and pipeline visibility.",
-            "url": "/case-study/roofing-estimate-follow-up-automation",
+            "url": "/case-studies/roofing-estimate-follow-up-automation",
             "images": [
               "/og-default.png"
             ]
@@ -4218,7 +4218,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/roofing-estimate-follow-up-automation",
+            "canonical": "/case-studies/roofing-estimate-follow-up-automation",
             "openGraph": {
               "title": "Why Roofing Estimates Go Unanswered | MindWP Case Study",
               "description": "How a Leeds roofing company increased their estimate close rate from 18% to 35% using automated CRM follow-up sequences and pipeline visibility."
@@ -7143,14 +7143,14 @@
           "id": "case-study:auto-repair-missed-call-recovery",
           "slug": "auto-repair-missed-call-recovery",
           "type": "case-study",
-          "path": "/case-study/auto-repair-missed-call-recovery",
+          "path": "/case-studies/auto-repair-missed-call-recovery",
           "title": "Auto Repair Missed Call Recovery",
           "description": "How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.",
-          "canonical": "/case-study/auto-repair-missed-call-recovery",
+          "canonical": "/case-studies/auto-repair-missed-call-recovery",
           "openGraph": {
             "title": "Why Auto Repair Shops Lose Leads During Peak Hours | MindWP Case Study",
             "description": "How a Leicester garage recovered 9 leads per week using automated missed call detection and SMS recovery.",
-            "url": "/case-study/auto-repair-missed-call-recovery",
+            "url": "/case-studies/auto-repair-missed-call-recovery",
             "images": [
               "/og-default.png"
             ]
@@ -7160,7 +7160,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/auto-repair-missed-call-recovery",
+            "canonical": "/case-studies/auto-repair-missed-call-recovery",
             "openGraph": {
               "title": "Why Auto Repair Shops Lose Leads During Peak Hours | MindWP Case Study",
               "description": "How a Leicester garage recovered 9 leads per week using automated missed call detection and SMS recovery."
@@ -7355,14 +7355,14 @@
           "id": "case-study:hvac-emergency-lead-routing",
           "slug": "hvac-emergency-lead-routing",
           "type": "case-study",
-          "path": "/case-study/hvac-emergency-lead-routing",
+          "path": "/case-studies/hvac-emergency-lead-routing",
           "title": "HVAC Emergency Lead Routing",
           "description": "How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage, on-call technician routing, and CRM lead tracking.",
-          "canonical": "/case-study/hvac-emergency-lead-routing",
+          "canonical": "/case-studies/hvac-emergency-lead-routing",
           "openGraph": {
             "title": "Why HVAC Emergency Calls Get Missed | MindWP Case Study",
             "description": "How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage and on-call technician routing.",
-            "url": "/case-study/hvac-emergency-lead-routing",
+            "url": "/case-studies/hvac-emergency-lead-routing",
             "images": [
               "/og-default.png"
             ]
@@ -7372,7 +7372,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/hvac-emergency-lead-routing",
+            "canonical": "/case-studies/hvac-emergency-lead-routing",
             "openGraph": {
               "title": "Why HVAC Emergency Calls Get Missed | MindWP Case Study",
               "description": "How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage and on-call technician routing."
@@ -7563,14 +7563,14 @@
           "id": "case-study:hvac-seasonal-lead-surge-handling",
           "slug": "hvac-seasonal-lead-surge-handling",
           "type": "case-study",
-          "path": "/case-study/hvac-seasonal-lead-surge-handling",
+          "path": "/case-studies/hvac-seasonal-lead-surge-handling",
           "title": "HVAC Seasonal Lead Surge Handling",
           "description": "How a Nottingham HVAC contractor tripled their effective call capacity during seasonal surges using automated overflow management and queue prioritisation.",
-          "canonical": "/case-study/hvac-seasonal-lead-surge-handling",
+          "canonical": "/case-studies/hvac-seasonal-lead-surge-handling",
           "openGraph": {
             "title": "Why HVAC Companies Lose Leads During Seasonal Demand | MindWP Case Study",
             "description": "How a Nottingham HVAC contractor tripled their effective call capacity during seasonal surges using automated overflow management and queue prioritisation.",
-            "url": "/case-study/hvac-seasonal-lead-surge-handling",
+            "url": "/case-studies/hvac-seasonal-lead-surge-handling",
             "images": [
               "/og-default.png"
             ]
@@ -7580,7 +7580,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/hvac-seasonal-lead-surge-handling",
+            "canonical": "/case-studies/hvac-seasonal-lead-surge-handling",
             "openGraph": {
               "title": "Why HVAC Companies Lose Leads During Seasonal Demand | MindWP Case Study",
               "description": "How a Nottingham HVAC contractor tripled their effective call capacity during seasonal surges using automated overflow management and queue prioritisation."
@@ -7775,14 +7775,14 @@
           "id": "case-study:storm-season-lead-handling-system",
           "slug": "storm-season-lead-handling-system",
           "type": "case-study",
-          "path": "/case-study/storm-season-lead-handling-system",
+          "path": "/case-studies/storm-season-lead-handling-system",
           "title": "Storm Season Lead Handling System",
           "description": "How a Birmingham roofing contractor recovered 89% of missed calls during storm season using automated SMS response, CRM lead routing, and priority triage.",
-          "canonical": "/case-study/storm-season-lead-handling-system",
+          "canonical": "/case-studies/storm-season-lead-handling-system",
           "openGraph": {
             "title": "Why Roofing Companies Lose Leads During Storm Season | MindWP Case Study",
             "description": "How a Birmingham roofing contractor recovered 89% of missed calls during storm season using automated SMS response and CRM lead routing.",
-            "url": "/case-study/storm-season-lead-handling-system",
+            "url": "/case-studies/storm-season-lead-handling-system",
             "images": [
               "/og-default.png"
             ]
@@ -7792,7 +7792,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/storm-season-lead-handling-system",
+            "canonical": "/case-studies/storm-season-lead-handling-system",
             "openGraph": {
               "title": "Why Roofing Companies Lose Leads During Storm Season | MindWP Case Study",
               "description": "How a Birmingham roofing contractor recovered 89% of missed calls during storm season using automated SMS response and CRM lead routing."
@@ -10869,14 +10869,14 @@
           "id": "case-study:auto-repair-missed-call-recovery",
           "slug": "auto-repair-missed-call-recovery",
           "type": "case-study",
-          "path": "/case-study/auto-repair-missed-call-recovery",
+          "path": "/case-studies/auto-repair-missed-call-recovery",
           "title": "Auto Repair Missed Call Recovery",
           "description": "How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.",
-          "canonical": "/case-study/auto-repair-missed-call-recovery",
+          "canonical": "/case-studies/auto-repair-missed-call-recovery",
           "openGraph": {
             "title": "Why Auto Repair Shops Lose Leads During Peak Hours | MindWP Case Study",
             "description": "How a Leicester garage recovered 9 leads per week using automated missed call detection and SMS recovery.",
-            "url": "/case-study/auto-repair-missed-call-recovery",
+            "url": "/case-studies/auto-repair-missed-call-recovery",
             "images": [
               "/og-default.png"
             ]
@@ -10886,7 +10886,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/auto-repair-missed-call-recovery",
+            "canonical": "/case-studies/auto-repair-missed-call-recovery",
             "openGraph": {
               "title": "Why Auto Repair Shops Lose Leads During Peak Hours | MindWP Case Study",
               "description": "How a Leicester garage recovered 9 leads per week using automated missed call detection and SMS recovery."
@@ -11081,14 +11081,14 @@
           "id": "case-study:hvac-seasonal-lead-surge-handling",
           "slug": "hvac-seasonal-lead-surge-handling",
           "type": "case-study",
-          "path": "/case-study/hvac-seasonal-lead-surge-handling",
+          "path": "/case-studies/hvac-seasonal-lead-surge-handling",
           "title": "HVAC Seasonal Lead Surge Handling",
           "description": "How a Nottingham HVAC contractor tripled their effective call capacity during seasonal surges using automated overflow management and queue prioritisation.",
-          "canonical": "/case-study/hvac-seasonal-lead-surge-handling",
+          "canonical": "/case-studies/hvac-seasonal-lead-surge-handling",
           "openGraph": {
             "title": "Why HVAC Companies Lose Leads During Seasonal Demand | MindWP Case Study",
             "description": "How a Nottingham HVAC contractor tripled their effective call capacity during seasonal surges using automated overflow management and queue prioritisation.",
-            "url": "/case-study/hvac-seasonal-lead-surge-handling",
+            "url": "/case-studies/hvac-seasonal-lead-surge-handling",
             "images": [
               "/og-default.png"
             ]
@@ -11098,7 +11098,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/hvac-seasonal-lead-surge-handling",
+            "canonical": "/case-studies/hvac-seasonal-lead-surge-handling",
             "openGraph": {
               "title": "Why HVAC Companies Lose Leads During Seasonal Demand | MindWP Case Study",
               "description": "How a Nottingham HVAC contractor tripled their effective call capacity during seasonal surges using automated overflow management and queue prioritisation."
@@ -11293,14 +11293,14 @@
           "id": "case-study:real-estate-inquiry-routing",
           "slug": "real-estate-inquiry-routing",
           "type": "case-study",
-          "path": "/case-study/real-estate-inquiry-routing",
+          "path": "/case-studies/real-estate-inquiry-routing",
           "title": "Real Estate Inquiry Routing",
           "description": "How a Brighton estate agency reduced response time from 8 hours to 11 minutes and increased viewings by 38% using automated multi-channel lead routing.",
-          "canonical": "/case-study/real-estate-inquiry-routing",
+          "canonical": "/case-studies/real-estate-inquiry-routing",
           "openGraph": {
             "title": "Why Estate Agents Lose Property Enquiries | MindWP Case Study",
             "description": "How a Brighton estate agency cut response time from 8 hours to 11 minutes using automated lead routing.",
-            "url": "/case-study/real-estate-inquiry-routing",
+            "url": "/case-studies/real-estate-inquiry-routing",
             "images": [
               "/og-default.png"
             ]
@@ -11310,7 +11310,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/real-estate-inquiry-routing",
+            "canonical": "/case-studies/real-estate-inquiry-routing",
             "openGraph": {
               "title": "Why Estate Agents Lose Property Enquiries | MindWP Case Study",
               "description": "How a Brighton estate agency cut response time from 8 hours to 11 minutes using automated lead routing."
@@ -11509,14 +11509,14 @@
           "id": "case-study:storm-season-lead-handling-system",
           "slug": "storm-season-lead-handling-system",
           "type": "case-study",
-          "path": "/case-study/storm-season-lead-handling-system",
+          "path": "/case-studies/storm-season-lead-handling-system",
           "title": "Storm Season Lead Handling System",
           "description": "How a Birmingham roofing contractor recovered 89% of missed calls during storm season using automated SMS response, CRM lead routing, and priority triage.",
-          "canonical": "/case-study/storm-season-lead-handling-system",
+          "canonical": "/case-studies/storm-season-lead-handling-system",
           "openGraph": {
             "title": "Why Roofing Companies Lose Leads During Storm Season | MindWP Case Study",
             "description": "How a Birmingham roofing contractor recovered 89% of missed calls during storm season using automated SMS response and CRM lead routing.",
-            "url": "/case-study/storm-season-lead-handling-system",
+            "url": "/case-studies/storm-season-lead-handling-system",
             "images": [
               "/og-default.png"
             ]
@@ -11526,7 +11526,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/storm-season-lead-handling-system",
+            "canonical": "/case-studies/storm-season-lead-handling-system",
             "openGraph": {
               "title": "Why Roofing Companies Lose Leads During Storm Season | MindWP Case Study",
               "description": "How a Birmingham roofing contractor recovered 89% of missed calls during storm season using automated SMS response and CRM lead routing."
@@ -16277,14 +16277,14 @@
           "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
           "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
           "type": "case-study",
-          "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
           "title": "Beauty Salon Case Study - All Sections Demo",
           "description": "Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.",
-          "canonical": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "canonical": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
           "openGraph": {
             "title": "Beauty Salon Case Study (All Sections Demo) | Manchester",
             "description": "Demonstration case study that includes every supported case study section type, including optional sections like workflows, deliverables, business impact, and pinned FAQ.",
-            "url": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+            "url": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
             "images": [
               "/og-default.png"
             ]
@@ -16294,7 +16294,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+            "canonical": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
             "openGraph": {
               "title": "Beauty Salon Case Study (All Sections Demo) | Manchester",
               "description": "Demonstration case study that includes every supported case study section type, including optional sections like workflows, deliverables, business impact, and pinned FAQ."
@@ -16614,14 +16614,14 @@
           "id": "case-study:beauty-salon-online-booking-local-seo-manchester-custom",
           "slug": "beauty-salon-online-booking-local-seo-manchester-custom",
           "type": "case-study",
-          "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-custom",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-custom",
           "title": "Custom Beauty Salon Case Study - Demonstrating Template Flexibility",
           "description": "Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.",
-          "canonical": "/case-study/beauty-salon-online-booking-local-seo-manchester-custom",
+          "canonical": "/case-studies/beauty-salon-online-booking-local-seo-manchester-custom",
           "openGraph": {
             "title": "Custom Beauty Salon Case Study with Flexible Labels | Manchester",
             "description": "Demonstration case study showing how the template system allows complete customization of section labels, badges, and content while maintaining consistent structure.",
-            "url": "/case-study/beauty-salon-online-booking-local-seo-manchester-custom",
+            "url": "/case-studies/beauty-salon-online-booking-local-seo-manchester-custom",
             "images": [
               "/og-default.png"
             ]
@@ -16631,7 +16631,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/beauty-salon-online-booking-local-seo-manchester-custom",
+            "canonical": "/case-studies/beauty-salon-online-booking-local-seo-manchester-custom",
             "openGraph": {
               "title": "Custom Beauty Salon Case Study with Flexible Labels | Manchester",
               "description": "Demonstration case study showing how the template system allows complete customization of section labels, badges, and content while maintaining consistent structure."
@@ -16954,14 +16954,14 @@
           "id": "case-study:local-authority-system-impact",
           "slug": "local-authority-system-impact",
           "type": "case-study",
-          "path": "/case-study/local-authority-system-impact",
+          "path": "/case-studies/local-authority-system-impact",
           "title": "Local Authority System Impact",
           "description": "How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.",
-          "canonical": "/case-study/local-authority-system-impact",
+          "canonical": "/case-studies/local-authority-system-impact",
           "openGraph": {
             "title": "Why Service Businesses Stay Invisible in Local Search | MindWP Case Study",
             "description": "How an Oxford electrician went from page 2 to top 3 in Google Maps and grew organic leads from 2 to 17 per month.",
-            "url": "/case-study/local-authority-system-impact",
+            "url": "/case-studies/local-authority-system-impact",
             "images": [
               "/og-default.png"
             ]
@@ -16971,7 +16971,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/local-authority-system-impact",
+            "canonical": "/case-studies/local-authority-system-impact",
             "openGraph": {
               "title": "Why Service Businesses Stay Invisible in Local Search | MindWP Case Study",
               "description": "How an Oxford electrician went from page 2 to top 3 in Google Maps and grew organic leads from 2 to 17 per month."
@@ -17180,14 +17180,14 @@
           "id": "case-study:salon-review-generation-automation",
           "slug": "salon-review-generation-automation",
           "type": "case-study",
-          "path": "/case-study/salon-review-generation-automation",
+          "path": "/case-studies/salon-review-generation-automation",
           "title": "Salon Review Generation Automation",
           "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks using automated post-appointment review requests with sentiment routing.",
-          "canonical": "/case-study/salon-review-generation-automation",
+          "canonical": "/case-studies/salon-review-generation-automation",
           "openGraph": {
             "title": "Why Salons Struggle to Get Reviews | MindWP Case Study",
             "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks with automated review requests.",
-            "url": "/case-study/salon-review-generation-automation",
+            "url": "/case-studies/salon-review-generation-automation",
             "images": [
               "/og-default.png"
             ]
@@ -17197,7 +17197,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/salon-review-generation-automation",
+            "canonical": "/case-studies/salon-review-generation-automation",
             "openGraph": {
               "title": "Why Salons Struggle to Get Reviews | MindWP Case Study",
               "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks with automated review requests."
@@ -18462,14 +18462,14 @@
           "id": "case-study:appointment-business-booking-automation",
           "slug": "appointment-business-booking-automation",
           "type": "case-study",
-          "path": "/case-study/appointment-business-booking-automation",
+          "path": "/case-studies/appointment-business-booking-automation",
           "title": "Dental Practice Booking Automation",
           "description": "How a Swindon dental practice moved to 52% online booking, increased appointments by 28%, and freed 14 receptionist hours per week with automated scheduling.",
-          "canonical": "/case-study/appointment-business-booking-automation",
+          "canonical": "/case-studies/appointment-business-booking-automation",
           "openGraph": {
             "title": "Why Dental Practices Lose Patients | MindWP Case Study",
             "description": "How a Swindon dental practice moved to 52% online booking and increased appointments by 28%.",
-            "url": "/case-study/appointment-business-booking-automation",
+            "url": "/case-studies/appointment-business-booking-automation",
             "images": [
               "/og-default.png"
             ]
@@ -18479,7 +18479,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/appointment-business-booking-automation",
+            "canonical": "/case-studies/appointment-business-booking-automation",
             "openGraph": {
               "title": "Why Dental Practices Lose Patients | MindWP Case Study",
               "description": "How a Swindon dental practice moved to 52% online booking and increased appointments by 28%."
@@ -18749,14 +18749,14 @@
           "id": "case-study:appointment-reminder-no-show-reduction",
           "slug": "appointment-reminder-no-show-reduction",
           "type": "case-study",
-          "path": "/case-study/appointment-reminder-no-show-reduction",
+          "path": "/case-studies/appointment-reminder-no-show-reduction",
           "title": "Dental Appointment Reminder & No-Show Reduction",
           "description": "How a Northampton dental practice cut no-shows from 16% to 5% and recovered £1,400 per week using automated reminders and waitlist recovery.",
-          "canonical": "/case-study/appointment-reminder-no-show-reduction",
+          "canonical": "/case-studies/appointment-reminder-no-show-reduction",
           "openGraph": {
             "title": "Why Dental Practices Lose Revenue to No-Shows | MindWP Case Study",
             "description": "How a Northampton dental practice cut no-shows from 16% to 5% with automated reminders and waitlist recovery.",
-            "url": "/case-study/appointment-reminder-no-show-reduction",
+            "url": "/case-studies/appointment-reminder-no-show-reduction",
             "images": [
               "/og-default.png"
             ]
@@ -18766,7 +18766,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/appointment-reminder-no-show-reduction",
+            "canonical": "/case-studies/appointment-reminder-no-show-reduction",
             "openGraph": {
               "title": "Why Dental Practices Lose Revenue to No-Shows | MindWP Case Study",
               "description": "How a Northampton dental practice cut no-shows from 16% to 5% with automated reminders and waitlist recovery."
@@ -18848,14 +18848,14 @@
           "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
           "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
           "type": "case-study",
-          "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
           "title": "Beauty Salon Case Study - All Sections Demo",
           "description": "Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.",
-          "canonical": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "canonical": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
           "openGraph": {
             "title": "Beauty Salon Case Study (All Sections Demo) | Manchester",
             "description": "Demonstration case study that includes every supported case study section type, including optional sections like workflows, deliverables, business impact, and pinned FAQ.",
-            "url": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+            "url": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
             "images": [
               "/og-default.png"
             ]
@@ -18865,7 +18865,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/beauty-salon-online-booking-local-seo-manchester-all-sections",
+            "canonical": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
             "openGraph": {
               "title": "Beauty Salon Case Study (All Sections Demo) | Manchester",
               "description": "Demonstration case study that includes every supported case study section type, including optional sections like workflows, deliverables, business impact, and pinned FAQ."
@@ -19185,14 +19185,14 @@
           "id": "case-study:beauty-salon-online-booking-local-seo-manchester-custom",
           "slug": "beauty-salon-online-booking-local-seo-manchester-custom",
           "type": "case-study",
-          "path": "/case-study/beauty-salon-online-booking-local-seo-manchester-custom",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-custom",
           "title": "Custom Beauty Salon Case Study - Demonstrating Template Flexibility",
           "description": "Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.",
-          "canonical": "/case-study/beauty-salon-online-booking-local-seo-manchester-custom",
+          "canonical": "/case-studies/beauty-salon-online-booking-local-seo-manchester-custom",
           "openGraph": {
             "title": "Custom Beauty Salon Case Study with Flexible Labels | Manchester",
             "description": "Demonstration case study showing how the template system allows complete customization of section labels, badges, and content while maintaining consistent structure.",
-            "url": "/case-study/beauty-salon-online-booking-local-seo-manchester-custom",
+            "url": "/case-studies/beauty-salon-online-booking-local-seo-manchester-custom",
             "images": [
               "/og-default.png"
             ]
@@ -19202,7 +19202,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/beauty-salon-online-booking-local-seo-manchester-custom",
+            "canonical": "/case-studies/beauty-salon-online-booking-local-seo-manchester-custom",
             "openGraph": {
               "title": "Custom Beauty Salon Case Study with Flexible Labels | Manchester",
               "description": "Demonstration case study showing how the template system allows complete customization of section labels, badges, and content while maintaining consistent structure."
@@ -19525,14 +19525,14 @@
           "id": "case-study:law-firm-consultation-booking-system",
           "slug": "law-firm-consultation-booking-system",
           "type": "case-study",
-          "path": "/case-study/law-firm-consultation-booking-system",
+          "path": "/case-studies/law-firm-consultation-booking-system",
           "title": "Law Firm Consultation Booking System",
           "description": "How a Norwich law firm increased consultation bookings by 34% and freed 12 hours per week by replacing phone-only booking with CRM-integrated scheduling.",
-          "canonical": "/case-study/law-firm-consultation-booking-system",
+          "canonical": "/case-studies/law-firm-consultation-booking-system",
           "openGraph": {
             "title": "Why Law Firms Lose Clients Before the First Meeting | MindWP Case Study",
             "description": "How a Norwich law firm increased consultation bookings by 34% with online practice-area scheduling.",
-            "url": "/case-study/law-firm-consultation-booking-system",
+            "url": "/case-studies/law-firm-consultation-booking-system",
             "images": [
               "/og-default.png"
             ]
@@ -19542,7 +19542,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/law-firm-consultation-booking-system",
+            "canonical": "/case-studies/law-firm-consultation-booking-system",
             "openGraph": {
               "title": "Why Law Firms Lose Clients Before the First Meeting | MindWP Case Study",
               "description": "How a Norwich law firm increased consultation bookings by 34% with online practice-area scheduling."
@@ -19812,14 +19812,14 @@
           "id": "case-study:salon-booking-automation",
           "slug": "salon-booking-automation",
           "type": "case-study",
-          "path": "/case-study/salon-booking-automation",
+          "path": "/case-studies/salon-booking-automation",
           "title": "Salon Booking Automation",
           "description": "How a Liverpool salon moved from phone-only bookings to 68% online adoption in 8 weeks, unlocking after-hours appointments and 22% more volume.",
-          "canonical": "/case-study/salon-booking-automation",
+          "canonical": "/case-studies/salon-booking-automation",
           "openGraph": {
             "title": "Why Salon Booking Systems Break Down | MindWP Case Study",
             "description": "How a Liverpool hair salon moved from phone-only bookings to 68% online booking adoption in 8 weeks.",
-            "url": "/case-study/salon-booking-automation",
+            "url": "/case-studies/salon-booking-automation",
             "images": [
               "/og-default.png"
             ]
@@ -19829,7 +19829,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/salon-booking-automation",
+            "canonical": "/case-studies/salon-booking-automation",
             "openGraph": {
               "title": "Why Salon Booking Systems Break Down | MindWP Case Study",
               "description": "How a Liverpool hair salon moved from phone-only bookings to 68% online booking adoption in 8 weeks."
@@ -20063,14 +20063,14 @@
           "id": "case-study:salon-no-show-reduction-system",
           "slug": "salon-no-show-reduction-system",
           "type": "case-study",
-          "path": "/case-study/salon-no-show-reduction-system",
+          "path": "/case-studies/salon-no-show-reduction-system",
           "title": "Salon No-Show Reduction System",
           "description": "How an Edinburgh salon reduced no-shows from 18% to 4% and recovered £870 per week using automated reminders and cancellation-triggered waitlist recovery.",
-          "canonical": "/case-study/salon-no-show-reduction-system",
+          "canonical": "/case-studies/salon-no-show-reduction-system",
           "openGraph": {
             "title": "Why Salon Clients Miss Appointments | MindWP Case Study",
             "description": "How an Edinburgh hair salon reduced no-shows from 18% to 4% and recovered £870 per week.",
-            "url": "/case-study/salon-no-show-reduction-system",
+            "url": "/case-studies/salon-no-show-reduction-system",
             "images": [
               "/og-default.png"
             ]
@@ -20080,7 +20080,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/salon-no-show-reduction-system",
+            "canonical": "/case-studies/salon-no-show-reduction-system",
             "openGraph": {
               "title": "Why Salon Clients Miss Appointments | MindWP Case Study",
               "description": "How an Edinburgh hair salon reduced no-shows from 18% to 4% and recovered £870 per week."
@@ -21411,14 +21411,14 @@
           "id": "case-study:roofing-website-rebuild-with-crm",
           "slug": "roofing-website-rebuild-with-crm",
           "type": "case-study",
-          "path": "/case-study/roofing-website-rebuild-with-crm",
+          "path": "/case-studies/roofing-website-rebuild-with-crm",
           "title": "Roofing Website Rebuild With CRM",
           "description": "How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service pages, CRM integration, and mobile-first design.",
-          "canonical": "/case-study/roofing-website-rebuild-with-crm",
+          "canonical": "/case-studies/roofing-website-rebuild-with-crm",
           "openGraph": {
             "title": "Why Roofing Websites Fail to Convert Leads | MindWP Case Study",
             "description": "How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service-specific pages, CRM integration, and mobile-first design.",
-            "url": "/case-study/roofing-website-rebuild-with-crm",
+            "url": "/case-studies/roofing-website-rebuild-with-crm",
             "images": [
               "/og-default.png"
             ]
@@ -21428,7 +21428,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/roofing-website-rebuild-with-crm",
+            "canonical": "/case-studies/roofing-website-rebuild-with-crm",
             "openGraph": {
               "title": "Why Roofing Websites Fail to Convert Leads | MindWP Case Study",
               "description": "How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service-specific pages, CRM integration, and mobile-first design."
@@ -21698,14 +21698,14 @@
           "id": "case-study:smart-website-infrastructure-implementation",
           "slug": "smart-website-infrastructure-implementation",
           "type": "case-study",
-          "path": "/case-study/smart-website-infrastructure-implementation",
+          "path": "/case-studies/smart-website-infrastructure-implementation",
           "title": "Smart Website Infrastructure Implementation",
           "description": "How a Leeds plumbing company went from 4 leads per month to 31 by rebuilding their website as systems-first infrastructure with CRM, tracking, and booking.",
-          "canonical": "/case-study/smart-website-infrastructure-implementation",
+          "canonical": "/case-studies/smart-website-infrastructure-implementation",
           "openGraph": {
             "title": "Why Service Business Websites Fail | MindWP Case Study",
             "description": "How a plumbing company went from 4 to 31 leads per month with a systems-first website rebuild.",
-            "url": "/case-study/smart-website-infrastructure-implementation",
+            "url": "/case-studies/smart-website-infrastructure-implementation",
             "images": [
               "/og-default.png"
             ]
@@ -21715,7 +21715,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/smart-website-infrastructure-implementation",
+            "canonical": "/case-studies/smart-website-infrastructure-implementation",
             "openGraph": {
               "title": "Why Service Business Websites Fail | MindWP Case Study",
               "description": "How a plumbing company went from 4 to 31 leads per month with a systems-first website rebuild."
@@ -22621,14 +22621,14 @@
           "id": "case-study:crm-pipeline-visibility-transformation",
           "slug": "crm-pipeline-visibility-transformation",
           "type": "case-study",
-          "path": "/case-study/crm-pipeline-visibility-transformation",
+          "path": "/case-studies/crm-pipeline-visibility-transformation",
           "title": "CRM Pipeline Visibility Transformation",
           "description": "How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.",
-          "canonical": "/case-study/crm-pipeline-visibility-transformation",
+          "canonical": "/case-studies/crm-pipeline-visibility-transformation",
           "openGraph": {
             "title": "Why Service Businesses Can’t See Their Pipeline | MindWP Case Study",
             "description": "How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM.",
-            "url": "/case-study/crm-pipeline-visibility-transformation",
+            "url": "/case-studies/crm-pipeline-visibility-transformation",
             "images": [
               "/og-default.png"
             ]
@@ -22638,7 +22638,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/crm-pipeline-visibility-transformation",
+            "canonical": "/case-studies/crm-pipeline-visibility-transformation",
             "openGraph": {
               "title": "Why Service Businesses Can’t See Their Pipeline | MindWP Case Study",
               "description": "How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM."
@@ -25049,14 +25049,14 @@
           "id": "case-study:automotive-service-reminder-automation",
           "slug": "automotive-service-reminder-automation",
           "type": "case-study",
-          "path": "/case-study/automotive-service-reminder-automation",
+          "path": "/case-studies/automotive-service-reminder-automation",
           "title": "Automotive Service Reminder Automation",
           "description": "How a Coventry garage increased client retention from 48% to 72% and recovered £5,100 per month using automated service reminders and lapsed client reactivation.",
-          "canonical": "/case-study/automotive-service-reminder-automation",
+          "canonical": "/case-studies/automotive-service-reminder-automation",
           "openGraph": {
             "title": "Why Garages Lose Repeat Customers | MindWP Case Study",
             "description": "How a Coventry garage increased client retention from 48% to 72% with automated service reminders.",
-            "url": "/case-study/automotive-service-reminder-automation",
+            "url": "/case-studies/automotive-service-reminder-automation",
             "images": [
               "/og-default.png"
             ]
@@ -25066,7 +25066,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/automotive-service-reminder-automation",
+            "canonical": "/case-studies/automotive-service-reminder-automation",
             "openGraph": {
               "title": "Why Garages Lose Repeat Customers | MindWP Case Study",
               "description": "How a Coventry garage increased client retention from 48% to 72% with automated service reminders."
@@ -25152,14 +25152,14 @@
           "id": "case-study:law-firm-client-intake-automation",
           "slug": "law-firm-client-intake-automation",
           "type": "case-study",
-          "path": "/case-study/law-firm-client-intake-automation",
+          "path": "/case-studies/law-firm-client-intake-automation",
           "title": "Law Firm Client Intake Automation",
           "description": "How a Plymouth law firm reduced client intake time from 4 days to 6 hours, improved completion from 58% to 87%, and freed 18 admin hours per week.",
-          "canonical": "/case-study/law-firm-client-intake-automation",
+          "canonical": "/case-studies/law-firm-client-intake-automation",
           "openGraph": {
             "title": "Why Law Firms Lose Enquiries During Intake | MindWP Case Study",
             "description": "How a Plymouth law firm cut intake time from 4 days to 6 hours using automated pipeline and document collection.",
-            "url": "/case-study/law-firm-client-intake-automation",
+            "url": "/case-studies/law-firm-client-intake-automation",
             "images": [
               "/og-default.png"
             ]
@@ -25169,7 +25169,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/law-firm-client-intake-automation",
+            "canonical": "/case-studies/law-firm-client-intake-automation",
             "openGraph": {
               "title": "Why Law Firms Lose Enquiries During Intake | MindWP Case Study",
               "description": "How a Plymouth law firm cut intake time from 4 days to 6 hours using automated pipeline and document collection."
@@ -25260,14 +25260,14 @@
           "id": "case-study:realtor-lead-follow-up-automation",
           "slug": "realtor-lead-follow-up-automation",
           "type": "case-study",
-          "path": "/case-study/realtor-lead-follow-up-automation",
+          "path": "/case-studies/realtor-lead-follow-up-automation",
           "title": "Realtor Lead Follow-Up Automation",
           "description": "How a Bath estate agency increased enquiry-to-viewing conversion from 22% to 41% and recovered £14,000 per quarter using automated CRM follow-up sequences.",
-          "canonical": "/case-study/realtor-lead-follow-up-automation",
+          "canonical": "/case-studies/realtor-lead-follow-up-automation",
           "openGraph": {
             "title": "Why Estate Agents Lose Buyers | MindWP Case Study",
             "description": "How a Bath estate agency increased viewing conversion from 22% to 41% with automated CRM follow-up.",
-            "url": "/case-study/realtor-lead-follow-up-automation",
+            "url": "/case-studies/realtor-lead-follow-up-automation",
             "images": [
               "/og-default.png"
             ]
@@ -25277,7 +25277,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/realtor-lead-follow-up-automation",
+            "canonical": "/case-studies/realtor-lead-follow-up-automation",
             "openGraph": {
               "title": "Why Estate Agents Lose Buyers | MindWP Case Study",
               "description": "How a Bath estate agency increased viewing conversion from 22% to 41% with automated CRM follow-up."
@@ -25368,14 +25368,14 @@
           "id": "case-study:roofing-estimate-follow-up-automation",
           "slug": "roofing-estimate-follow-up-automation",
           "type": "case-study",
-          "path": "/case-study/roofing-estimate-follow-up-automation",
+          "path": "/case-studies/roofing-estimate-follow-up-automation",
           "title": "Roofing Estimate Follow-Up Automation",
           "description": "How a Leeds roofing company increased their estimate close rate from 18% to 35% using automated CRM follow-up sequences and pipeline visibility.",
-          "canonical": "/case-study/roofing-estimate-follow-up-automation",
+          "canonical": "/case-studies/roofing-estimate-follow-up-automation",
           "openGraph": {
             "title": "Why Roofing Estimates Go Unanswered | MindWP Case Study",
             "description": "How a Leeds roofing company increased their estimate close rate from 18% to 35% using automated CRM follow-up sequences and pipeline visibility.",
-            "url": "/case-study/roofing-estimate-follow-up-automation",
+            "url": "/case-studies/roofing-estimate-follow-up-automation",
             "images": [
               "/og-default.png"
             ]
@@ -25385,7 +25385,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/roofing-estimate-follow-up-automation",
+            "canonical": "/case-studies/roofing-estimate-follow-up-automation",
             "openGraph": {
               "title": "Why Roofing Estimates Go Unanswered | MindWP Case Study",
               "description": "How a Leeds roofing company increased their estimate close rate from 18% to 35% using automated CRM follow-up sequences and pipeline visibility."
@@ -26929,14 +26929,14 @@
           "id": "case-study:auto-repair-missed-call-recovery",
           "slug": "auto-repair-missed-call-recovery",
           "type": "case-study",
-          "path": "/case-study/auto-repair-missed-call-recovery",
+          "path": "/case-studies/auto-repair-missed-call-recovery",
           "title": "Auto Repair Missed Call Recovery",
           "description": "How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.",
-          "canonical": "/case-study/auto-repair-missed-call-recovery",
+          "canonical": "/case-studies/auto-repair-missed-call-recovery",
           "openGraph": {
             "title": "Why Auto Repair Shops Lose Leads During Peak Hours | MindWP Case Study",
             "description": "How a Leicester garage recovered 9 leads per week using automated missed call detection and SMS recovery.",
-            "url": "/case-study/auto-repair-missed-call-recovery",
+            "url": "/case-studies/auto-repair-missed-call-recovery",
             "images": [
               "/og-default.png"
             ]
@@ -26946,7 +26946,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/auto-repair-missed-call-recovery",
+            "canonical": "/case-studies/auto-repair-missed-call-recovery",
             "openGraph": {
               "title": "Why Auto Repair Shops Lose Leads During Peak Hours | MindWP Case Study",
               "description": "How a Leicester garage recovered 9 leads per week using automated missed call detection and SMS recovery."
@@ -27141,14 +27141,14 @@
           "id": "case-study:hvac-seasonal-lead-surge-handling",
           "slug": "hvac-seasonal-lead-surge-handling",
           "type": "case-study",
-          "path": "/case-study/hvac-seasonal-lead-surge-handling",
+          "path": "/case-studies/hvac-seasonal-lead-surge-handling",
           "title": "HVAC Seasonal Lead Surge Handling",
           "description": "How a Nottingham HVAC contractor tripled their effective call capacity during seasonal surges using automated overflow management and queue prioritisation.",
-          "canonical": "/case-study/hvac-seasonal-lead-surge-handling",
+          "canonical": "/case-studies/hvac-seasonal-lead-surge-handling",
           "openGraph": {
             "title": "Why HVAC Companies Lose Leads During Seasonal Demand | MindWP Case Study",
             "description": "How a Nottingham HVAC contractor tripled their effective call capacity during seasonal surges using automated overflow management and queue prioritisation.",
-            "url": "/case-study/hvac-seasonal-lead-surge-handling",
+            "url": "/case-studies/hvac-seasonal-lead-surge-handling",
             "images": [
               "/og-default.png"
             ]
@@ -27158,7 +27158,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/hvac-seasonal-lead-surge-handling",
+            "canonical": "/case-studies/hvac-seasonal-lead-surge-handling",
             "openGraph": {
               "title": "Why HVAC Companies Lose Leads During Seasonal Demand | MindWP Case Study",
               "description": "How a Nottingham HVAC contractor tripled their effective call capacity during seasonal surges using automated overflow management and queue prioritisation."
@@ -27353,14 +27353,14 @@
           "id": "case-study:real-estate-inquiry-routing",
           "slug": "real-estate-inquiry-routing",
           "type": "case-study",
-          "path": "/case-study/real-estate-inquiry-routing",
+          "path": "/case-studies/real-estate-inquiry-routing",
           "title": "Real Estate Inquiry Routing",
           "description": "How a Brighton estate agency reduced response time from 8 hours to 11 minutes and increased viewings by 38% using automated multi-channel lead routing.",
-          "canonical": "/case-study/real-estate-inquiry-routing",
+          "canonical": "/case-studies/real-estate-inquiry-routing",
           "openGraph": {
             "title": "Why Estate Agents Lose Property Enquiries | MindWP Case Study",
             "description": "How a Brighton estate agency cut response time from 8 hours to 11 minutes using automated lead routing.",
-            "url": "/case-study/real-estate-inquiry-routing",
+            "url": "/case-studies/real-estate-inquiry-routing",
             "images": [
               "/og-default.png"
             ]
@@ -27370,7 +27370,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/real-estate-inquiry-routing",
+            "canonical": "/case-studies/real-estate-inquiry-routing",
             "openGraph": {
               "title": "Why Estate Agents Lose Property Enquiries | MindWP Case Study",
               "description": "How a Brighton estate agency cut response time from 8 hours to 11 minutes using automated lead routing."
@@ -27569,14 +27569,14 @@
           "id": "case-study:storm-season-lead-handling-system",
           "slug": "storm-season-lead-handling-system",
           "type": "case-study",
-          "path": "/case-study/storm-season-lead-handling-system",
+          "path": "/case-studies/storm-season-lead-handling-system",
           "title": "Storm Season Lead Handling System",
           "description": "How a Birmingham roofing contractor recovered 89% of missed calls during storm season using automated SMS response, CRM lead routing, and priority triage.",
-          "canonical": "/case-study/storm-season-lead-handling-system",
+          "canonical": "/case-studies/storm-season-lead-handling-system",
           "openGraph": {
             "title": "Why Roofing Companies Lose Leads During Storm Season | MindWP Case Study",
             "description": "How a Birmingham roofing contractor recovered 89% of missed calls during storm season using automated SMS response and CRM lead routing.",
-            "url": "/case-study/storm-season-lead-handling-system",
+            "url": "/case-studies/storm-season-lead-handling-system",
             "images": [
               "/og-default.png"
             ]
@@ -27586,7 +27586,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/storm-season-lead-handling-system",
+            "canonical": "/case-studies/storm-season-lead-handling-system",
             "openGraph": {
               "title": "Why Roofing Companies Lose Leads During Storm Season | MindWP Case Study",
               "description": "How a Birmingham roofing contractor recovered 89% of missed calls during storm season using automated SMS response and CRM lead routing."
@@ -28772,14 +28772,14 @@
           "id": "case-study:hvac-emergency-lead-routing",
           "slug": "hvac-emergency-lead-routing",
           "type": "case-study",
-          "path": "/case-study/hvac-emergency-lead-routing",
+          "path": "/case-studies/hvac-emergency-lead-routing",
           "title": "HVAC Emergency Lead Routing",
           "description": "How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage, on-call technician routing, and CRM lead tracking.",
-          "canonical": "/case-study/hvac-emergency-lead-routing",
+          "canonical": "/case-studies/hvac-emergency-lead-routing",
           "openGraph": {
             "title": "Why HVAC Emergency Calls Get Missed | MindWP Case Study",
             "description": "How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage and on-call technician routing.",
-            "url": "/case-study/hvac-emergency-lead-routing",
+            "url": "/case-studies/hvac-emergency-lead-routing",
             "images": [
               "/og-default.png"
             ]
@@ -28789,7 +28789,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/hvac-emergency-lead-routing",
+            "canonical": "/case-studies/hvac-emergency-lead-routing",
             "openGraph": {
               "title": "Why HVAC Emergency Calls Get Missed | MindWP Case Study",
               "description": "How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage and on-call technician routing."
@@ -28980,14 +28980,14 @@
           "id": "case-study:real-estate-inquiry-routing",
           "slug": "real-estate-inquiry-routing",
           "type": "case-study",
-          "path": "/case-study/real-estate-inquiry-routing",
+          "path": "/case-studies/real-estate-inquiry-routing",
           "title": "Real Estate Inquiry Routing",
           "description": "How a Brighton estate agency reduced response time from 8 hours to 11 minutes and increased viewings by 38% using automated multi-channel lead routing.",
-          "canonical": "/case-study/real-estate-inquiry-routing",
+          "canonical": "/case-studies/real-estate-inquiry-routing",
           "openGraph": {
             "title": "Why Estate Agents Lose Property Enquiries | MindWP Case Study",
             "description": "How a Brighton estate agency cut response time from 8 hours to 11 minutes using automated lead routing.",
-            "url": "/case-study/real-estate-inquiry-routing",
+            "url": "/case-studies/real-estate-inquiry-routing",
             "images": [
               "/og-default.png"
             ]
@@ -28997,7 +28997,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/real-estate-inquiry-routing",
+            "canonical": "/case-studies/real-estate-inquiry-routing",
             "openGraph": {
               "title": "Why Estate Agents Lose Property Enquiries | MindWP Case Study",
               "description": "How a Brighton estate agency cut response time from 8 hours to 11 minutes using automated lead routing."
@@ -30801,14 +30801,14 @@
           "id": "case-study:crm-pipeline-visibility-transformation",
           "slug": "crm-pipeline-visibility-transformation",
           "type": "case-study",
-          "path": "/case-study/crm-pipeline-visibility-transformation",
+          "path": "/case-studies/crm-pipeline-visibility-transformation",
           "title": "CRM Pipeline Visibility Transformation",
           "description": "How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.",
-          "canonical": "/case-study/crm-pipeline-visibility-transformation",
+          "canonical": "/case-studies/crm-pipeline-visibility-transformation",
           "openGraph": {
             "title": "Why Service Businesses Can’t See Their Pipeline | MindWP Case Study",
             "description": "How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM.",
-            "url": "/case-study/crm-pipeline-visibility-transformation",
+            "url": "/case-studies/crm-pipeline-visibility-transformation",
             "images": [
               "/og-default.png"
             ]
@@ -30818,7 +30818,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/crm-pipeline-visibility-transformation",
+            "canonical": "/case-studies/crm-pipeline-visibility-transformation",
             "openGraph": {
               "title": "Why Service Businesses Can’t See Their Pipeline | MindWP Case Study",
               "description": "How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM."
@@ -34040,14 +34040,14 @@
           "id": "case-study:appointment-business-booking-automation",
           "slug": "appointment-business-booking-automation",
           "type": "case-study",
-          "path": "/case-study/appointment-business-booking-automation",
+          "path": "/case-studies/appointment-business-booking-automation",
           "title": "Dental Practice Booking Automation",
           "description": "How a Swindon dental practice moved to 52% online booking, increased appointments by 28%, and freed 14 receptionist hours per week with automated scheduling.",
-          "canonical": "/case-study/appointment-business-booking-automation",
+          "canonical": "/case-studies/appointment-business-booking-automation",
           "openGraph": {
             "title": "Why Dental Practices Lose Patients | MindWP Case Study",
             "description": "How a Swindon dental practice moved to 52% online booking and increased appointments by 28%.",
-            "url": "/case-study/appointment-business-booking-automation",
+            "url": "/case-studies/appointment-business-booking-automation",
             "images": [
               "/og-default.png"
             ]
@@ -34057,7 +34057,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/appointment-business-booking-automation",
+            "canonical": "/case-studies/appointment-business-booking-automation",
             "openGraph": {
               "title": "Why Dental Practices Lose Patients | MindWP Case Study",
               "description": "How a Swindon dental practice moved to 52% online booking and increased appointments by 28%."
@@ -34327,14 +34327,14 @@
           "id": "case-study:law-firm-consultation-booking-system",
           "slug": "law-firm-consultation-booking-system",
           "type": "case-study",
-          "path": "/case-study/law-firm-consultation-booking-system",
+          "path": "/case-studies/law-firm-consultation-booking-system",
           "title": "Law Firm Consultation Booking System",
           "description": "How a Norwich law firm increased consultation bookings by 34% and freed 12 hours per week by replacing phone-only booking with CRM-integrated scheduling.",
-          "canonical": "/case-study/law-firm-consultation-booking-system",
+          "canonical": "/case-studies/law-firm-consultation-booking-system",
           "openGraph": {
             "title": "Why Law Firms Lose Clients Before the First Meeting | MindWP Case Study",
             "description": "How a Norwich law firm increased consultation bookings by 34% with online practice-area scheduling.",
-            "url": "/case-study/law-firm-consultation-booking-system",
+            "url": "/case-studies/law-firm-consultation-booking-system",
             "images": [
               "/og-default.png"
             ]
@@ -34344,7 +34344,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/law-firm-consultation-booking-system",
+            "canonical": "/case-studies/law-firm-consultation-booking-system",
             "openGraph": {
               "title": "Why Law Firms Lose Clients Before the First Meeting | MindWP Case Study",
               "description": "How a Norwich law firm increased consultation bookings by 34% with online practice-area scheduling."
@@ -34614,14 +34614,14 @@
           "id": "case-study:roofing-website-rebuild-with-crm",
           "slug": "roofing-website-rebuild-with-crm",
           "type": "case-study",
-          "path": "/case-study/roofing-website-rebuild-with-crm",
+          "path": "/case-studies/roofing-website-rebuild-with-crm",
           "title": "Roofing Website Rebuild With CRM",
           "description": "How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service pages, CRM integration, and mobile-first design.",
-          "canonical": "/case-study/roofing-website-rebuild-with-crm",
+          "canonical": "/case-studies/roofing-website-rebuild-with-crm",
           "openGraph": {
             "title": "Why Roofing Websites Fail to Convert Leads | MindWP Case Study",
             "description": "How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service-specific pages, CRM integration, and mobile-first design.",
-            "url": "/case-study/roofing-website-rebuild-with-crm",
+            "url": "/case-studies/roofing-website-rebuild-with-crm",
             "images": [
               "/og-default.png"
             ]
@@ -34631,7 +34631,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/roofing-website-rebuild-with-crm",
+            "canonical": "/case-studies/roofing-website-rebuild-with-crm",
             "openGraph": {
               "title": "Why Roofing Websites Fail to Convert Leads | MindWP Case Study",
               "description": "How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service-specific pages, CRM integration, and mobile-first design."
@@ -34901,14 +34901,14 @@
           "id": "case-study:smart-website-infrastructure-implementation",
           "slug": "smart-website-infrastructure-implementation",
           "type": "case-study",
-          "path": "/case-study/smart-website-infrastructure-implementation",
+          "path": "/case-studies/smart-website-infrastructure-implementation",
           "title": "Smart Website Infrastructure Implementation",
           "description": "How a Leeds plumbing company went from 4 leads per month to 31 by rebuilding their website as systems-first infrastructure with CRM, tracking, and booking.",
-          "canonical": "/case-study/smart-website-infrastructure-implementation",
+          "canonical": "/case-studies/smart-website-infrastructure-implementation",
           "openGraph": {
             "title": "Why Service Business Websites Fail | MindWP Case Study",
             "description": "How a plumbing company went from 4 to 31 leads per month with a systems-first website rebuild.",
-            "url": "/case-study/smart-website-infrastructure-implementation",
+            "url": "/case-studies/smart-website-infrastructure-implementation",
             "images": [
               "/og-default.png"
             ]
@@ -34918,7 +34918,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/smart-website-infrastructure-implementation",
+            "canonical": "/case-studies/smart-website-infrastructure-implementation",
             "openGraph": {
               "title": "Why Service Business Websites Fail | MindWP Case Study",
               "description": "How a plumbing company went from 4 to 31 leads per month with a systems-first website rebuild."
@@ -36225,14 +36225,14 @@
           "id": "case-study:roofing-website-rebuild-with-crm",
           "slug": "roofing-website-rebuild-with-crm",
           "type": "case-study",
-          "path": "/case-study/roofing-website-rebuild-with-crm",
+          "path": "/case-studies/roofing-website-rebuild-with-crm",
           "title": "Roofing Website Rebuild With CRM",
           "description": "How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service pages, CRM integration, and mobile-first design.",
-          "canonical": "/case-study/roofing-website-rebuild-with-crm",
+          "canonical": "/case-studies/roofing-website-rebuild-with-crm",
           "openGraph": {
             "title": "Why Roofing Websites Fail to Convert Leads | MindWP Case Study",
             "description": "How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service-specific pages, CRM integration, and mobile-first design.",
-            "url": "/case-study/roofing-website-rebuild-with-crm",
+            "url": "/case-studies/roofing-website-rebuild-with-crm",
             "images": [
               "/og-default.png"
             ]
@@ -36242,7 +36242,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/roofing-website-rebuild-with-crm",
+            "canonical": "/case-studies/roofing-website-rebuild-with-crm",
             "openGraph": {
               "title": "Why Roofing Websites Fail to Convert Leads | MindWP Case Study",
               "description": "How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service-specific pages, CRM integration, and mobile-first design."
@@ -36512,14 +36512,14 @@
           "id": "case-study:smart-website-infrastructure-implementation",
           "slug": "smart-website-infrastructure-implementation",
           "type": "case-study",
-          "path": "/case-study/smart-website-infrastructure-implementation",
+          "path": "/case-studies/smart-website-infrastructure-implementation",
           "title": "Smart Website Infrastructure Implementation",
           "description": "How a Leeds plumbing company went from 4 leads per month to 31 by rebuilding their website as systems-first infrastructure with CRM, tracking, and booking.",
-          "canonical": "/case-study/smart-website-infrastructure-implementation",
+          "canonical": "/case-studies/smart-website-infrastructure-implementation",
           "openGraph": {
             "title": "Why Service Business Websites Fail | MindWP Case Study",
             "description": "How a plumbing company went from 4 to 31 leads per month with a systems-first website rebuild.",
-            "url": "/case-study/smart-website-infrastructure-implementation",
+            "url": "/case-studies/smart-website-infrastructure-implementation",
             "images": [
               "/og-default.png"
             ]
@@ -36529,7 +36529,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/smart-website-infrastructure-implementation",
+            "canonical": "/case-studies/smart-website-infrastructure-implementation",
             "openGraph": {
               "title": "Why Service Business Websites Fail | MindWP Case Study",
               "description": "How a plumbing company went from 4 to 31 leads per month with a systems-first website rebuild."
@@ -38330,14 +38330,14 @@
           "id": "case-study:roofing-website-rebuild-with-crm",
           "slug": "roofing-website-rebuild-with-crm",
           "type": "case-study",
-          "path": "/case-study/roofing-website-rebuild-with-crm",
+          "path": "/case-studies/roofing-website-rebuild-with-crm",
           "title": "Roofing Website Rebuild With CRM",
           "description": "How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service pages, CRM integration, and mobile-first design.",
-          "canonical": "/case-study/roofing-website-rebuild-with-crm",
+          "canonical": "/case-studies/roofing-website-rebuild-with-crm",
           "openGraph": {
             "title": "Why Roofing Websites Fail to Convert Leads | MindWP Case Study",
             "description": "How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service-specific pages, CRM integration, and mobile-first design.",
-            "url": "/case-study/roofing-website-rebuild-with-crm",
+            "url": "/case-studies/roofing-website-rebuild-with-crm",
             "images": [
               "/og-default.png"
             ]
@@ -38347,7 +38347,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/roofing-website-rebuild-with-crm",
+            "canonical": "/case-studies/roofing-website-rebuild-with-crm",
             "openGraph": {
               "title": "Why Roofing Websites Fail to Convert Leads | MindWP Case Study",
               "description": "How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service-specific pages, CRM integration, and mobile-first design."
@@ -41362,14 +41362,14 @@
           "id": "case-study:crm-pipeline-visibility-transformation",
           "slug": "crm-pipeline-visibility-transformation",
           "type": "case-study",
-          "path": "/case-study/crm-pipeline-visibility-transformation",
+          "path": "/case-studies/crm-pipeline-visibility-transformation",
           "title": "CRM Pipeline Visibility Transformation",
           "description": "How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.",
-          "canonical": "/case-study/crm-pipeline-visibility-transformation",
+          "canonical": "/case-studies/crm-pipeline-visibility-transformation",
           "openGraph": {
             "title": "Why Service Businesses Can’t See Their Pipeline | MindWP Case Study",
             "description": "How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM.",
-            "url": "/case-study/crm-pipeline-visibility-transformation",
+            "url": "/case-studies/crm-pipeline-visibility-transformation",
             "images": [
               "/og-default.png"
             ]
@@ -41379,7 +41379,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/crm-pipeline-visibility-transformation",
+            "canonical": "/case-studies/crm-pipeline-visibility-transformation",
             "openGraph": {
               "title": "Why Service Businesses Can’t See Their Pipeline | MindWP Case Study",
               "description": "How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM."
@@ -41637,14 +41637,14 @@
           "id": "case-study:smart-website-infrastructure-implementation",
           "slug": "smart-website-infrastructure-implementation",
           "type": "case-study",
-          "path": "/case-study/smart-website-infrastructure-implementation",
+          "path": "/case-studies/smart-website-infrastructure-implementation",
           "title": "Smart Website Infrastructure Implementation",
           "description": "How a Leeds plumbing company went from 4 leads per month to 31 by rebuilding their website as systems-first infrastructure with CRM, tracking, and booking.",
-          "canonical": "/case-study/smart-website-infrastructure-implementation",
+          "canonical": "/case-studies/smart-website-infrastructure-implementation",
           "openGraph": {
             "title": "Why Service Business Websites Fail | MindWP Case Study",
             "description": "How a plumbing company went from 4 to 31 leads per month with a systems-first website rebuild.",
-            "url": "/case-study/smart-website-infrastructure-implementation",
+            "url": "/case-studies/smart-website-infrastructure-implementation",
             "images": [
               "/og-default.png"
             ]
@@ -41654,7 +41654,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/smart-website-infrastructure-implementation",
+            "canonical": "/case-studies/smart-website-infrastructure-implementation",
             "openGraph": {
               "title": "Why Service Business Websites Fail | MindWP Case Study",
               "description": "How a plumbing company went from 4 to 31 leads per month with a systems-first website rebuild."
@@ -43564,14 +43564,14 @@
           "id": "case-study:salon-booking-automation",
           "slug": "salon-booking-automation",
           "type": "case-study",
-          "path": "/case-study/salon-booking-automation",
+          "path": "/case-studies/salon-booking-automation",
           "title": "Salon Booking Automation",
           "description": "How a Liverpool salon moved from phone-only bookings to 68% online adoption in 8 weeks, unlocking after-hours appointments and 22% more volume.",
-          "canonical": "/case-study/salon-booking-automation",
+          "canonical": "/case-studies/salon-booking-automation",
           "openGraph": {
             "title": "Why Salon Booking Systems Break Down | MindWP Case Study",
             "description": "How a Liverpool hair salon moved from phone-only bookings to 68% online booking adoption in 8 weeks.",
-            "url": "/case-study/salon-booking-automation",
+            "url": "/case-studies/salon-booking-automation",
             "images": [
               "/og-default.png"
             ]
@@ -43581,7 +43581,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/salon-booking-automation",
+            "canonical": "/case-studies/salon-booking-automation",
             "openGraph": {
               "title": "Why Salon Booking Systems Break Down | MindWP Case Study",
               "description": "How a Liverpool hair salon moved from phone-only bookings to 68% online booking adoption in 8 weeks."
@@ -46624,14 +46624,14 @@
           "id": "case-study:salon-review-generation-automation",
           "slug": "salon-review-generation-automation",
           "type": "case-study",
-          "path": "/case-study/salon-review-generation-automation",
+          "path": "/case-studies/salon-review-generation-automation",
           "title": "Salon Review Generation Automation",
           "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks using automated post-appointment review requests with sentiment routing.",
-          "canonical": "/case-study/salon-review-generation-automation",
+          "canonical": "/case-studies/salon-review-generation-automation",
           "openGraph": {
             "title": "Why Salons Struggle to Get Reviews | MindWP Case Study",
             "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks with automated review requests.",
-            "url": "/case-study/salon-review-generation-automation",
+            "url": "/case-studies/salon-review-generation-automation",
             "images": [
               "/og-default.png"
             ]
@@ -46641,7 +46641,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/salon-review-generation-automation",
+            "canonical": "/case-studies/salon-review-generation-automation",
             "openGraph": {
               "title": "Why Salons Struggle to Get Reviews | MindWP Case Study",
               "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks with automated review requests."
@@ -48046,14 +48046,14 @@
           "id": "case-study:salon-review-generation-automation",
           "slug": "salon-review-generation-automation",
           "type": "case-study",
-          "path": "/case-study/salon-review-generation-automation",
+          "path": "/case-studies/salon-review-generation-automation",
           "title": "Salon Review Generation Automation",
           "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks using automated post-appointment review requests with sentiment routing.",
-          "canonical": "/case-study/salon-review-generation-automation",
+          "canonical": "/case-studies/salon-review-generation-automation",
           "openGraph": {
             "title": "Why Salons Struggle to Get Reviews | MindWP Case Study",
             "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks with automated review requests.",
-            "url": "/case-study/salon-review-generation-automation",
+            "url": "/case-studies/salon-review-generation-automation",
             "images": [
               "/og-default.png"
             ]
@@ -48063,7 +48063,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/salon-review-generation-automation",
+            "canonical": "/case-studies/salon-review-generation-automation",
             "openGraph": {
               "title": "Why Salons Struggle to Get Reviews | MindWP Case Study",
               "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks with automated review requests."
@@ -49456,14 +49456,14 @@
           "id": "case-study:salon-review-generation-automation",
           "slug": "salon-review-generation-automation",
           "type": "case-study",
-          "path": "/case-study/salon-review-generation-automation",
+          "path": "/case-studies/salon-review-generation-automation",
           "title": "Salon Review Generation Automation",
           "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks using automated post-appointment review requests with sentiment routing.",
-          "canonical": "/case-study/salon-review-generation-automation",
+          "canonical": "/case-studies/salon-review-generation-automation",
           "openGraph": {
             "title": "Why Salons Struggle to Get Reviews | MindWP Case Study",
             "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks with automated review requests.",
-            "url": "/case-study/salon-review-generation-automation",
+            "url": "/case-studies/salon-review-generation-automation",
             "images": [
               "/og-default.png"
             ]
@@ -49473,7 +49473,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/salon-review-generation-automation",
+            "canonical": "/case-studies/salon-review-generation-automation",
             "openGraph": {
               "title": "Why Salons Struggle to Get Reviews | MindWP Case Study",
               "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks with automated review requests."
@@ -50694,14 +50694,14 @@
           "id": "case-study:salon-review-generation-automation",
           "slug": "salon-review-generation-automation",
           "type": "case-study",
-          "path": "/case-study/salon-review-generation-automation",
+          "path": "/case-studies/salon-review-generation-automation",
           "title": "Salon Review Generation Automation",
           "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks using automated post-appointment review requests with sentiment routing.",
-          "canonical": "/case-study/salon-review-generation-automation",
+          "canonical": "/case-studies/salon-review-generation-automation",
           "openGraph": {
             "title": "Why Salons Struggle to Get Reviews | MindWP Case Study",
             "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks with automated review requests.",
-            "url": "/case-study/salon-review-generation-automation",
+            "url": "/case-studies/salon-review-generation-automation",
             "images": [
               "/og-default.png"
             ]
@@ -50711,7 +50711,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/salon-review-generation-automation",
+            "canonical": "/case-studies/salon-review-generation-automation",
             "openGraph": {
               "title": "Why Salons Struggle to Get Reviews | MindWP Case Study",
               "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks with automated review requests."
@@ -51840,14 +51840,14 @@
           "id": "case-study:local-authority-system-impact",
           "slug": "local-authority-system-impact",
           "type": "case-study",
-          "path": "/case-study/local-authority-system-impact",
+          "path": "/case-studies/local-authority-system-impact",
           "title": "Local Authority System Impact",
           "description": "How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.",
-          "canonical": "/case-study/local-authority-system-impact",
+          "canonical": "/case-studies/local-authority-system-impact",
           "openGraph": {
             "title": "Why Service Businesses Stay Invisible in Local Search | MindWP Case Study",
             "description": "How an Oxford electrician went from page 2 to top 3 in Google Maps and grew organic leads from 2 to 17 per month.",
-            "url": "/case-study/local-authority-system-impact",
+            "url": "/case-studies/local-authority-system-impact",
             "images": [
               "/og-default.png"
             ]
@@ -51857,7 +51857,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/local-authority-system-impact",
+            "canonical": "/case-studies/local-authority-system-impact",
             "openGraph": {
               "title": "Why Service Businesses Stay Invisible in Local Search | MindWP Case Study",
               "description": "How an Oxford electrician went from page 2 to top 3 in Google Maps and grew organic leads from 2 to 17 per month."
@@ -54760,14 +54760,14 @@
           "id": "case-study:local-authority-system-impact",
           "slug": "local-authority-system-impact",
           "type": "case-study",
-          "path": "/case-study/local-authority-system-impact",
+          "path": "/case-studies/local-authority-system-impact",
           "title": "Local Authority System Impact",
           "description": "How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.",
-          "canonical": "/case-study/local-authority-system-impact",
+          "canonical": "/case-studies/local-authority-system-impact",
           "openGraph": {
             "title": "Why Service Businesses Stay Invisible in Local Search | MindWP Case Study",
             "description": "How an Oxford electrician went from page 2 to top 3 in Google Maps and grew organic leads from 2 to 17 per month.",
-            "url": "/case-study/local-authority-system-impact",
+            "url": "/case-studies/local-authority-system-impact",
             "images": [
               "/og-default.png"
             ]
@@ -54777,7 +54777,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/local-authority-system-impact",
+            "canonical": "/case-studies/local-authority-system-impact",
             "openGraph": {
               "title": "Why Service Businesses Stay Invisible in Local Search | MindWP Case Study",
               "description": "How an Oxford electrician went from page 2 to top 3 in Google Maps and grew organic leads from 2 to 17 per month."
@@ -56117,14 +56117,14 @@
           "id": "case-study:local-authority-system-impact",
           "slug": "local-authority-system-impact",
           "type": "case-study",
-          "path": "/case-study/local-authority-system-impact",
+          "path": "/case-studies/local-authority-system-impact",
           "title": "Local Authority System Impact",
           "description": "How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.",
-          "canonical": "/case-study/local-authority-system-impact",
+          "canonical": "/case-studies/local-authority-system-impact",
           "openGraph": {
             "title": "Why Service Businesses Stay Invisible in Local Search | MindWP Case Study",
             "description": "How an Oxford electrician went from page 2 to top 3 in Google Maps and grew organic leads from 2 to 17 per month.",
-            "url": "/case-study/local-authority-system-impact",
+            "url": "/case-studies/local-authority-system-impact",
             "images": [
               "/og-default.png"
             ]
@@ -56134,7 +56134,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/local-authority-system-impact",
+            "canonical": "/case-studies/local-authority-system-impact",
             "openGraph": {
               "title": "Why Service Businesses Stay Invisible in Local Search | MindWP Case Study",
               "description": "How an Oxford electrician went from page 2 to top 3 in Google Maps and grew organic leads from 2 to 17 per month."
@@ -57417,14 +57417,14 @@
           "id": "case-study:roofing-website-rebuild-with-crm",
           "slug": "roofing-website-rebuild-with-crm",
           "type": "case-study",
-          "path": "/case-study/roofing-website-rebuild-with-crm",
+          "path": "/case-studies/roofing-website-rebuild-with-crm",
           "title": "Roofing Website Rebuild With CRM",
           "description": "How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service pages, CRM integration, and mobile-first design.",
-          "canonical": "/case-study/roofing-website-rebuild-with-crm",
+          "canonical": "/case-studies/roofing-website-rebuild-with-crm",
           "openGraph": {
             "title": "Why Roofing Websites Fail to Convert Leads | MindWP Case Study",
             "description": "How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service-specific pages, CRM integration, and mobile-first design.",
-            "url": "/case-study/roofing-website-rebuild-with-crm",
+            "url": "/case-studies/roofing-website-rebuild-with-crm",
             "images": [
               "/og-default.png"
             ]
@@ -57434,7 +57434,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/roofing-website-rebuild-with-crm",
+            "canonical": "/case-studies/roofing-website-rebuild-with-crm",
             "openGraph": {
               "title": "Why Roofing Websites Fail to Convert Leads | MindWP Case Study",
               "description": "How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service-specific pages, CRM integration, and mobile-first design."
@@ -59001,14 +59001,14 @@
           "id": "case-study:local-authority-system-impact",
           "slug": "local-authority-system-impact",
           "type": "case-study",
-          "path": "/case-study/local-authority-system-impact",
+          "path": "/case-studies/local-authority-system-impact",
           "title": "Local Authority System Impact",
           "description": "How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.",
-          "canonical": "/case-study/local-authority-system-impact",
+          "canonical": "/case-studies/local-authority-system-impact",
           "openGraph": {
             "title": "Why Service Businesses Stay Invisible in Local Search | MindWP Case Study",
             "description": "How an Oxford electrician went from page 2 to top 3 in Google Maps and grew organic leads from 2 to 17 per month.",
-            "url": "/case-study/local-authority-system-impact",
+            "url": "/case-studies/local-authority-system-impact",
             "images": [
               "/og-default.png"
             ]
@@ -59018,7 +59018,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/local-authority-system-impact",
+            "canonical": "/case-studies/local-authority-system-impact",
             "openGraph": {
               "title": "Why Service Businesses Stay Invisible in Local Search | MindWP Case Study",
               "description": "How an Oxford electrician went from page 2 to top 3 in Google Maps and grew organic leads from 2 to 17 per month."
@@ -60088,14 +60088,14 @@
           "id": "case-study:crm-pipeline-visibility-transformation",
           "slug": "crm-pipeline-visibility-transformation",
           "type": "case-study",
-          "path": "/case-study/crm-pipeline-visibility-transformation",
+          "path": "/case-studies/crm-pipeline-visibility-transformation",
           "title": "CRM Pipeline Visibility Transformation",
           "description": "How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.",
-          "canonical": "/case-study/crm-pipeline-visibility-transformation",
+          "canonical": "/case-studies/crm-pipeline-visibility-transformation",
           "openGraph": {
             "title": "Why Service Businesses Can’t See Their Pipeline | MindWP Case Study",
             "description": "How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM.",
-            "url": "/case-study/crm-pipeline-visibility-transformation",
+            "url": "/case-studies/crm-pipeline-visibility-transformation",
             "images": [
               "/og-default.png"
             ]
@@ -60105,7 +60105,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/crm-pipeline-visibility-transformation",
+            "canonical": "/case-studies/crm-pipeline-visibility-transformation",
             "openGraph": {
               "title": "Why Service Businesses Can’t See Their Pipeline | MindWP Case Study",
               "description": "How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM."
@@ -64057,14 +64057,14 @@
           "id": "case-study:crm-pipeline-visibility-transformation",
           "slug": "crm-pipeline-visibility-transformation",
           "type": "case-study",
-          "path": "/case-study/crm-pipeline-visibility-transformation",
+          "path": "/case-studies/crm-pipeline-visibility-transformation",
           "title": "CRM Pipeline Visibility Transformation",
           "description": "How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.",
-          "canonical": "/case-study/crm-pipeline-visibility-transformation",
+          "canonical": "/case-studies/crm-pipeline-visibility-transformation",
           "openGraph": {
             "title": "Why Service Businesses Can’t See Their Pipeline | MindWP Case Study",
             "description": "How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM.",
-            "url": "/case-study/crm-pipeline-visibility-transformation",
+            "url": "/case-studies/crm-pipeline-visibility-transformation",
             "images": [
               "/og-default.png"
             ]
@@ -64074,7 +64074,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/crm-pipeline-visibility-transformation",
+            "canonical": "/case-studies/crm-pipeline-visibility-transformation",
             "openGraph": {
               "title": "Why Service Businesses Can’t See Their Pipeline | MindWP Case Study",
               "description": "How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM."
@@ -64332,14 +64332,14 @@
           "id": "case-study:hvac-maintenance-plan-reactivation",
           "slug": "hvac-maintenance-plan-reactivation",
           "type": "case-study",
-          "path": "/case-study/hvac-maintenance-plan-reactivation",
+          "path": "/case-studies/hvac-maintenance-plan-reactivation",
           "title": "HVAC Maintenance Plan Reactivation",
           "description": "How a Sheffield HVAC company reactivated 38% of lapsed maintenance plan customers and increased renewal rates from 54% to 71% using CRM-driven automation.",
-          "canonical": "/case-study/hvac-maintenance-plan-reactivation",
+          "canonical": "/case-studies/hvac-maintenance-plan-reactivation",
           "openGraph": {
             "title": "How HVAC Companies Recover Lost Maintenance Revenue | MindWP Case Study",
             "description": "How a Sheffield HVAC company reactivated 38% of lapsed maintenance plan customers and increased renewal rates from 54% to 71% using CRM-driven automation.",
-            "url": "/case-study/hvac-maintenance-plan-reactivation",
+            "url": "/case-studies/hvac-maintenance-plan-reactivation",
             "images": [
               "/og-default.png"
             ]
@@ -64349,7 +64349,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/hvac-maintenance-plan-reactivation",
+            "canonical": "/case-studies/hvac-maintenance-plan-reactivation",
             "openGraph": {
               "title": "How HVAC Companies Recover Lost Maintenance Revenue | MindWP Case Study",
               "description": "How a Sheffield HVAC company reactivated 38% of lapsed maintenance plan customers and increased renewal rates from 54% to 71% using CRM-driven automation."
@@ -64432,14 +64432,14 @@
           "id": "case-study:law-firm-client-intake-automation",
           "slug": "law-firm-client-intake-automation",
           "type": "case-study",
-          "path": "/case-study/law-firm-client-intake-automation",
+          "path": "/case-studies/law-firm-client-intake-automation",
           "title": "Law Firm Client Intake Automation",
           "description": "How a Plymouth law firm reduced client intake time from 4 days to 6 hours, improved completion from 58% to 87%, and freed 18 admin hours per week.",
-          "canonical": "/case-study/law-firm-client-intake-automation",
+          "canonical": "/case-studies/law-firm-client-intake-automation",
           "openGraph": {
             "title": "Why Law Firms Lose Enquiries During Intake | MindWP Case Study",
             "description": "How a Plymouth law firm cut intake time from 4 days to 6 hours using automated pipeline and document collection.",
-            "url": "/case-study/law-firm-client-intake-automation",
+            "url": "/case-studies/law-firm-client-intake-automation",
             "images": [
               "/og-default.png"
             ]
@@ -64449,7 +64449,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/law-firm-client-intake-automation",
+            "canonical": "/case-studies/law-firm-client-intake-automation",
             "openGraph": {
               "title": "Why Law Firms Lose Enquiries During Intake | MindWP Case Study",
               "description": "How a Plymouth law firm cut intake time from 4 days to 6 hours using automated pipeline and document collection."
@@ -64540,14 +64540,14 @@
           "id": "case-study:realtor-lead-follow-up-automation",
           "slug": "realtor-lead-follow-up-automation",
           "type": "case-study",
-          "path": "/case-study/realtor-lead-follow-up-automation",
+          "path": "/case-studies/realtor-lead-follow-up-automation",
           "title": "Realtor Lead Follow-Up Automation",
           "description": "How a Bath estate agency increased enquiry-to-viewing conversion from 22% to 41% and recovered £14,000 per quarter using automated CRM follow-up sequences.",
-          "canonical": "/case-study/realtor-lead-follow-up-automation",
+          "canonical": "/case-studies/realtor-lead-follow-up-automation",
           "openGraph": {
             "title": "Why Estate Agents Lose Buyers | MindWP Case Study",
             "description": "How a Bath estate agency increased viewing conversion from 22% to 41% with automated CRM follow-up.",
-            "url": "/case-study/realtor-lead-follow-up-automation",
+            "url": "/case-studies/realtor-lead-follow-up-automation",
             "images": [
               "/og-default.png"
             ]
@@ -64557,7 +64557,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/realtor-lead-follow-up-automation",
+            "canonical": "/case-studies/realtor-lead-follow-up-automation",
             "openGraph": {
               "title": "Why Estate Agents Lose Buyers | MindWP Case Study",
               "description": "How a Bath estate agency increased viewing conversion from 22% to 41% with automated CRM follow-up."
@@ -64648,14 +64648,14 @@
           "id": "case-study:roofing-estimate-follow-up-automation",
           "slug": "roofing-estimate-follow-up-automation",
           "type": "case-study",
-          "path": "/case-study/roofing-estimate-follow-up-automation",
+          "path": "/case-studies/roofing-estimate-follow-up-automation",
           "title": "Roofing Estimate Follow-Up Automation",
           "description": "How a Leeds roofing company increased their estimate close rate from 18% to 35% using automated CRM follow-up sequences and pipeline visibility.",
-          "canonical": "/case-study/roofing-estimate-follow-up-automation",
+          "canonical": "/case-studies/roofing-estimate-follow-up-automation",
           "openGraph": {
             "title": "Why Roofing Estimates Go Unanswered | MindWP Case Study",
             "description": "How a Leeds roofing company increased their estimate close rate from 18% to 35% using automated CRM follow-up sequences and pipeline visibility.",
-            "url": "/case-study/roofing-estimate-follow-up-automation",
+            "url": "/case-studies/roofing-estimate-follow-up-automation",
             "images": [
               "/og-default.png"
             ]
@@ -64665,7 +64665,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/roofing-estimate-follow-up-automation",
+            "canonical": "/case-studies/roofing-estimate-follow-up-automation",
             "openGraph": {
               "title": "Why Roofing Estimates Go Unanswered | MindWP Case Study",
               "description": "How a Leeds roofing company increased their estimate close rate from 18% to 35% using automated CRM follow-up sequences and pipeline visibility."
@@ -65876,14 +65876,14 @@
           "id": "case-study:automotive-service-reminder-automation",
           "slug": "automotive-service-reminder-automation",
           "type": "case-study",
-          "path": "/case-study/automotive-service-reminder-automation",
+          "path": "/case-studies/automotive-service-reminder-automation",
           "title": "Automotive Service Reminder Automation",
           "description": "How a Coventry garage increased client retention from 48% to 72% and recovered £5,100 per month using automated service reminders and lapsed client reactivation.",
-          "canonical": "/case-study/automotive-service-reminder-automation",
+          "canonical": "/case-studies/automotive-service-reminder-automation",
           "openGraph": {
             "title": "Why Garages Lose Repeat Customers | MindWP Case Study",
             "description": "How a Coventry garage increased client retention from 48% to 72% with automated service reminders.",
-            "url": "/case-study/automotive-service-reminder-automation",
+            "url": "/case-studies/automotive-service-reminder-automation",
             "images": [
               "/og-default.png"
             ]
@@ -65893,7 +65893,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/automotive-service-reminder-automation",
+            "canonical": "/case-studies/automotive-service-reminder-automation",
             "openGraph": {
               "title": "Why Garages Lose Repeat Customers | MindWP Case Study",
               "description": "How a Coventry garage increased client retention from 48% to 72% with automated service reminders."
@@ -65979,14 +65979,14 @@
           "id": "case-study:hvac-maintenance-plan-reactivation",
           "slug": "hvac-maintenance-plan-reactivation",
           "type": "case-study",
-          "path": "/case-study/hvac-maintenance-plan-reactivation",
+          "path": "/case-studies/hvac-maintenance-plan-reactivation",
           "title": "HVAC Maintenance Plan Reactivation",
           "description": "How a Sheffield HVAC company reactivated 38% of lapsed maintenance plan customers and increased renewal rates from 54% to 71% using CRM-driven automation.",
-          "canonical": "/case-study/hvac-maintenance-plan-reactivation",
+          "canonical": "/case-studies/hvac-maintenance-plan-reactivation",
           "openGraph": {
             "title": "How HVAC Companies Recover Lost Maintenance Revenue | MindWP Case Study",
             "description": "How a Sheffield HVAC company reactivated 38% of lapsed maintenance plan customers and increased renewal rates from 54% to 71% using CRM-driven automation.",
-            "url": "/case-study/hvac-maintenance-plan-reactivation",
+            "url": "/case-studies/hvac-maintenance-plan-reactivation",
             "images": [
               "/og-default.png"
             ]
@@ -65996,7 +65996,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/hvac-maintenance-plan-reactivation",
+            "canonical": "/case-studies/hvac-maintenance-plan-reactivation",
             "openGraph": {
               "title": "How HVAC Companies Recover Lost Maintenance Revenue | MindWP Case Study",
               "description": "How a Sheffield HVAC company reactivated 38% of lapsed maintenance plan customers and increased renewal rates from 54% to 71% using CRM-driven automation."
@@ -66859,14 +66859,14 @@
           "id": "case-study:salon-review-generation-automation",
           "slug": "salon-review-generation-automation",
           "type": "case-study",
-          "path": "/case-study/salon-review-generation-automation",
+          "path": "/case-studies/salon-review-generation-automation",
           "title": "Salon Review Generation Automation",
           "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks using automated post-appointment review requests with sentiment routing.",
-          "canonical": "/case-study/salon-review-generation-automation",
+          "canonical": "/case-studies/salon-review-generation-automation",
           "openGraph": {
             "title": "Why Salons Struggle to Get Reviews | MindWP Case Study",
             "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks with automated review requests.",
-            "url": "/case-study/salon-review-generation-automation",
+            "url": "/case-studies/salon-review-generation-automation",
             "images": [
               "/og-default.png"
             ]
@@ -66876,7 +66876,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/salon-review-generation-automation",
+            "canonical": "/case-studies/salon-review-generation-automation",
             "openGraph": {
               "title": "Why Salons Struggle to Get Reviews | MindWP Case Study",
               "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks with automated review requests."
@@ -67979,14 +67979,14 @@
           "id": "case-study:automotive-service-reminder-automation",
           "slug": "automotive-service-reminder-automation",
           "type": "case-study",
-          "path": "/case-study/automotive-service-reminder-automation",
+          "path": "/case-studies/automotive-service-reminder-automation",
           "title": "Automotive Service Reminder Automation",
           "description": "How a Coventry garage increased client retention from 48% to 72% and recovered £5,100 per month using automated service reminders and lapsed client reactivation.",
-          "canonical": "/case-study/automotive-service-reminder-automation",
+          "canonical": "/case-studies/automotive-service-reminder-automation",
           "openGraph": {
             "title": "Why Garages Lose Repeat Customers | MindWP Case Study",
             "description": "How a Coventry garage increased client retention from 48% to 72% with automated service reminders.",
-            "url": "/case-study/automotive-service-reminder-automation",
+            "url": "/case-studies/automotive-service-reminder-automation",
             "images": [
               "/og-default.png"
             ]
@@ -67996,7 +67996,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/automotive-service-reminder-automation",
+            "canonical": "/case-studies/automotive-service-reminder-automation",
             "openGraph": {
               "title": "Why Garages Lose Repeat Customers | MindWP Case Study",
               "description": "How a Coventry garage increased client retention from 48% to 72% with automated service reminders."
@@ -69039,14 +69039,14 @@
           "id": "case-study:hvac-emergency-lead-routing",
           "slug": "hvac-emergency-lead-routing",
           "type": "case-study",
-          "path": "/case-study/hvac-emergency-lead-routing",
+          "path": "/case-studies/hvac-emergency-lead-routing",
           "title": "HVAC Emergency Lead Routing",
           "description": "How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage, on-call technician routing, and CRM lead tracking.",
-          "canonical": "/case-study/hvac-emergency-lead-routing",
+          "canonical": "/case-studies/hvac-emergency-lead-routing",
           "openGraph": {
             "title": "Why HVAC Emergency Calls Get Missed | MindWP Case Study",
             "description": "How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage and on-call technician routing.",
-            "url": "/case-study/hvac-emergency-lead-routing",
+            "url": "/case-studies/hvac-emergency-lead-routing",
             "images": [
               "/og-default.png"
             ]
@@ -69056,7 +69056,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/hvac-emergency-lead-routing",
+            "canonical": "/case-studies/hvac-emergency-lead-routing",
             "openGraph": {
               "title": "Why HVAC Emergency Calls Get Missed | MindWP Case Study",
               "description": "How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage and on-call technician routing."
@@ -69787,14 +69787,14 @@
           "id": "case-study:automotive-service-reminder-automation",
           "slug": "automotive-service-reminder-automation",
           "type": "case-study",
-          "path": "/case-study/automotive-service-reminder-automation",
+          "path": "/case-studies/automotive-service-reminder-automation",
           "title": "Automotive Service Reminder Automation",
           "description": "How a Coventry garage increased client retention from 48% to 72% and recovered £5,100 per month using automated service reminders and lapsed client reactivation.",
-          "canonical": "/case-study/automotive-service-reminder-automation",
+          "canonical": "/case-studies/automotive-service-reminder-automation",
           "openGraph": {
             "title": "Why Garages Lose Repeat Customers | MindWP Case Study",
             "description": "How a Coventry garage increased client retention from 48% to 72% with automated service reminders.",
-            "url": "/case-study/automotive-service-reminder-automation",
+            "url": "/case-studies/automotive-service-reminder-automation",
             "images": [
               "/og-default.png"
             ]
@@ -69804,7 +69804,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/automotive-service-reminder-automation",
+            "canonical": "/case-studies/automotive-service-reminder-automation",
             "openGraph": {
               "title": "Why Garages Lose Repeat Customers | MindWP Case Study",
               "description": "How a Coventry garage increased client retention from 48% to 72% with automated service reminders."
@@ -70678,14 +70678,14 @@
           "id": "case-study:salon-review-generation-automation",
           "slug": "salon-review-generation-automation",
           "type": "case-study",
-          "path": "/case-study/salon-review-generation-automation",
+          "path": "/case-studies/salon-review-generation-automation",
           "title": "Salon Review Generation Automation",
           "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks using automated post-appointment review requests with sentiment routing.",
-          "canonical": "/case-study/salon-review-generation-automation",
+          "canonical": "/case-studies/salon-review-generation-automation",
           "openGraph": {
             "title": "Why Salons Struggle to Get Reviews | MindWP Case Study",
             "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks with automated review requests.",
-            "url": "/case-study/salon-review-generation-automation",
+            "url": "/case-studies/salon-review-generation-automation",
             "images": [
               "/og-default.png"
             ]
@@ -70695,7 +70695,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/salon-review-generation-automation",
+            "canonical": "/case-studies/salon-review-generation-automation",
             "openGraph": {
               "title": "Why Salons Struggle to Get Reviews | MindWP Case Study",
               "description": "How a Cardiff hair salon grew from 23 to 67 Google reviews in 10 weeks with automated review requests."
@@ -71962,14 +71962,14 @@
           "id": "case-study:appointment-reminder-no-show-reduction",
           "slug": "appointment-reminder-no-show-reduction",
           "type": "case-study",
-          "path": "/case-study/appointment-reminder-no-show-reduction",
+          "path": "/case-studies/appointment-reminder-no-show-reduction",
           "title": "Dental Appointment Reminder & No-Show Reduction",
           "description": "How a Northampton dental practice cut no-shows from 16% to 5% and recovered £1,400 per week using automated reminders and waitlist recovery.",
-          "canonical": "/case-study/appointment-reminder-no-show-reduction",
+          "canonical": "/case-studies/appointment-reminder-no-show-reduction",
           "openGraph": {
             "title": "Why Dental Practices Lose Revenue to No-Shows | MindWP Case Study",
             "description": "How a Northampton dental practice cut no-shows from 16% to 5% with automated reminders and waitlist recovery.",
-            "url": "/case-study/appointment-reminder-no-show-reduction",
+            "url": "/case-studies/appointment-reminder-no-show-reduction",
             "images": [
               "/og-default.png"
             ]
@@ -71979,7 +71979,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/appointment-reminder-no-show-reduction",
+            "canonical": "/case-studies/appointment-reminder-no-show-reduction",
             "openGraph": {
               "title": "Why Dental Practices Lose Revenue to No-Shows | MindWP Case Study",
               "description": "How a Northampton dental practice cut no-shows from 16% to 5% with automated reminders and waitlist recovery."
@@ -72061,14 +72061,14 @@
           "id": "case-study:salon-no-show-reduction-system",
           "slug": "salon-no-show-reduction-system",
           "type": "case-study",
-          "path": "/case-study/salon-no-show-reduction-system",
+          "path": "/case-studies/salon-no-show-reduction-system",
           "title": "Salon No-Show Reduction System",
           "description": "How an Edinburgh salon reduced no-shows from 18% to 4% and recovered £870 per week using automated reminders and cancellation-triggered waitlist recovery.",
-          "canonical": "/case-study/salon-no-show-reduction-system",
+          "canonical": "/case-studies/salon-no-show-reduction-system",
           "openGraph": {
             "title": "Why Salon Clients Miss Appointments | MindWP Case Study",
             "description": "How an Edinburgh hair salon reduced no-shows from 18% to 4% and recovered £870 per week.",
-            "url": "/case-study/salon-no-show-reduction-system",
+            "url": "/case-studies/salon-no-show-reduction-system",
             "images": [
               "/og-default.png"
             ]
@@ -72078,7 +72078,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/salon-no-show-reduction-system",
+            "canonical": "/case-studies/salon-no-show-reduction-system",
             "openGraph": {
               "title": "Why Salon Clients Miss Appointments | MindWP Case Study",
               "description": "How an Edinburgh hair salon reduced no-shows from 18% to 4% and recovered £870 per week."
@@ -73896,14 +73896,14 @@
           "id": "case-study:crm-pipeline-visibility-transformation",
           "slug": "crm-pipeline-visibility-transformation",
           "type": "case-study",
-          "path": "/case-study/crm-pipeline-visibility-transformation",
+          "path": "/case-studies/crm-pipeline-visibility-transformation",
           "title": "CRM Pipeline Visibility Transformation",
           "description": "How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.",
-          "canonical": "/case-study/crm-pipeline-visibility-transformation",
+          "canonical": "/case-studies/crm-pipeline-visibility-transformation",
           "openGraph": {
             "title": "Why Service Businesses Can’t See Their Pipeline | MindWP Case Study",
             "description": "How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM.",
-            "url": "/case-study/crm-pipeline-visibility-transformation",
+            "url": "/case-studies/crm-pipeline-visibility-transformation",
             "images": [
               "/og-default.png"
             ]
@@ -73913,7 +73913,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/crm-pipeline-visibility-transformation",
+            "canonical": "/case-studies/crm-pipeline-visibility-transformation",
             "openGraph": {
               "title": "Why Service Businesses Can’t See Their Pipeline | MindWP Case Study",
               "description": "How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM."
@@ -75365,14 +75365,14 @@
           "id": "case-study:crm-pipeline-visibility-transformation",
           "slug": "crm-pipeline-visibility-transformation",
           "type": "case-study",
-          "path": "/case-study/crm-pipeline-visibility-transformation",
+          "path": "/case-studies/crm-pipeline-visibility-transformation",
           "title": "CRM Pipeline Visibility Transformation",
           "description": "How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.",
-          "canonical": "/case-study/crm-pipeline-visibility-transformation",
+          "canonical": "/case-studies/crm-pipeline-visibility-transformation",
           "openGraph": {
             "title": "Why Service Businesses Can’t See Their Pipeline | MindWP Case Study",
             "description": "How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM.",
-            "url": "/case-study/crm-pipeline-visibility-transformation",
+            "url": "/case-studies/crm-pipeline-visibility-transformation",
             "images": [
               "/og-default.png"
             ]
@@ -75382,7 +75382,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/crm-pipeline-visibility-transformation",
+            "canonical": "/case-studies/crm-pipeline-visibility-transformation",
             "openGraph": {
               "title": "Why Service Businesses Can’t See Their Pipeline | MindWP Case Study",
               "description": "How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM."
@@ -76178,14 +76178,14 @@
           "id": "case-study:automotive-service-reminder-automation",
           "slug": "automotive-service-reminder-automation",
           "type": "case-study",
-          "path": "/case-study/automotive-service-reminder-automation",
+          "path": "/case-studies/automotive-service-reminder-automation",
           "title": "Automotive Service Reminder Automation",
           "description": "How a Coventry garage increased client retention from 48% to 72% and recovered £5,100 per month using automated service reminders and lapsed client reactivation.",
-          "canonical": "/case-study/automotive-service-reminder-automation",
+          "canonical": "/case-studies/automotive-service-reminder-automation",
           "openGraph": {
             "title": "Why Garages Lose Repeat Customers | MindWP Case Study",
             "description": "How a Coventry garage increased client retention from 48% to 72% with automated service reminders.",
-            "url": "/case-study/automotive-service-reminder-automation",
+            "url": "/case-studies/automotive-service-reminder-automation",
             "images": [
               "/og-default.png"
             ]
@@ -76195,7 +76195,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/automotive-service-reminder-automation",
+            "canonical": "/case-studies/automotive-service-reminder-automation",
             "openGraph": {
               "title": "Why Garages Lose Repeat Customers | MindWP Case Study",
               "description": "How a Coventry garage increased client retention from 48% to 72% with automated service reminders."
@@ -76281,14 +76281,14 @@
           "id": "case-study:crm-pipeline-visibility-transformation",
           "slug": "crm-pipeline-visibility-transformation",
           "type": "case-study",
-          "path": "/case-study/crm-pipeline-visibility-transformation",
+          "path": "/case-studies/crm-pipeline-visibility-transformation",
           "title": "CRM Pipeline Visibility Transformation",
           "description": "How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.",
-          "canonical": "/case-study/crm-pipeline-visibility-transformation",
+          "canonical": "/case-studies/crm-pipeline-visibility-transformation",
           "openGraph": {
             "title": "Why Service Businesses Can’t See Their Pipeline | MindWP Case Study",
             "description": "How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM.",
-            "url": "/case-study/crm-pipeline-visibility-transformation",
+            "url": "/case-studies/crm-pipeline-visibility-transformation",
             "images": [
               "/og-default.png"
             ]
@@ -76298,7 +76298,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/crm-pipeline-visibility-transformation",
+            "canonical": "/case-studies/crm-pipeline-visibility-transformation",
             "openGraph": {
               "title": "Why Service Businesses Can’t See Their Pipeline | MindWP Case Study",
               "description": "How a property maintenance company went from zero pipeline visibility to 34% close rate with CRM."
@@ -76556,14 +76556,14 @@
           "id": "case-study:hvac-maintenance-plan-reactivation",
           "slug": "hvac-maintenance-plan-reactivation",
           "type": "case-study",
-          "path": "/case-study/hvac-maintenance-plan-reactivation",
+          "path": "/case-studies/hvac-maintenance-plan-reactivation",
           "title": "HVAC Maintenance Plan Reactivation",
           "description": "How a Sheffield HVAC company reactivated 38% of lapsed maintenance plan customers and increased renewal rates from 54% to 71% using CRM-driven automation.",
-          "canonical": "/case-study/hvac-maintenance-plan-reactivation",
+          "canonical": "/case-studies/hvac-maintenance-plan-reactivation",
           "openGraph": {
             "title": "How HVAC Companies Recover Lost Maintenance Revenue | MindWP Case Study",
             "description": "How a Sheffield HVAC company reactivated 38% of lapsed maintenance plan customers and increased renewal rates from 54% to 71% using CRM-driven automation.",
-            "url": "/case-study/hvac-maintenance-plan-reactivation",
+            "url": "/case-studies/hvac-maintenance-plan-reactivation",
             "images": [
               "/og-default.png"
             ]
@@ -76573,7 +76573,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/hvac-maintenance-plan-reactivation",
+            "canonical": "/case-studies/hvac-maintenance-plan-reactivation",
             "openGraph": {
               "title": "How HVAC Companies Recover Lost Maintenance Revenue | MindWP Case Study",
               "description": "How a Sheffield HVAC company reactivated 38% of lapsed maintenance plan customers and increased renewal rates from 54% to 71% using CRM-driven automation."
@@ -77656,14 +77656,14 @@
           "id": "case-study:roofing-website-rebuild-with-crm",
           "slug": "roofing-website-rebuild-with-crm",
           "type": "case-study",
-          "path": "/case-study/roofing-website-rebuild-with-crm",
+          "path": "/case-studies/roofing-website-rebuild-with-crm",
           "title": "Roofing Website Rebuild With CRM",
           "description": "How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service pages, CRM integration, and mobile-first design.",
-          "canonical": "/case-study/roofing-website-rebuild-with-crm",
+          "canonical": "/case-studies/roofing-website-rebuild-with-crm",
           "openGraph": {
             "title": "Why Roofing Websites Fail to Convert Leads | MindWP Case Study",
             "description": "How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service-specific pages, CRM integration, and mobile-first design.",
-            "url": "/case-study/roofing-website-rebuild-with-crm",
+            "url": "/case-studies/roofing-website-rebuild-with-crm",
             "images": [
               "/og-default.png"
             ]
@@ -77673,7 +77673,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/roofing-website-rebuild-with-crm",
+            "canonical": "/case-studies/roofing-website-rebuild-with-crm",
             "openGraph": {
               "title": "Why Roofing Websites Fail to Convert Leads | MindWP Case Study",
               "description": "How a Bristol roofing contractor increased weekly leads from 6 to 22 by rebuilding their website with service-specific pages, CRM integration, and mobile-first design."
@@ -78549,14 +78549,14 @@
           "id": "case-study:automotive-service-reminder-automation",
           "slug": "automotive-service-reminder-automation",
           "type": "case-study",
-          "path": "/case-study/automotive-service-reminder-automation",
+          "path": "/case-studies/automotive-service-reminder-automation",
           "title": "Automotive Service Reminder Automation",
           "description": "How a Coventry garage increased client retention from 48% to 72% and recovered £5,100 per month using automated service reminders and lapsed client reactivation.",
-          "canonical": "/case-study/automotive-service-reminder-automation",
+          "canonical": "/case-studies/automotive-service-reminder-automation",
           "openGraph": {
             "title": "Why Garages Lose Repeat Customers | MindWP Case Study",
             "description": "How a Coventry garage increased client retention from 48% to 72% with automated service reminders.",
-            "url": "/case-study/automotive-service-reminder-automation",
+            "url": "/case-studies/automotive-service-reminder-automation",
             "images": [
               "/og-default.png"
             ]
@@ -78566,7 +78566,7 @@
             "follow": true
           },
           "seo": {
-            "canonical": "/case-study/automotive-service-reminder-automation",
+            "canonical": "/case-studies/automotive-service-reminder-automation",
             "openGraph": {
               "title": "Why Garages Lose Repeat Customers | MindWP Case Study",
               "description": "How a Coventry garage increased client retention from 48% to 72% with automated service reminders."

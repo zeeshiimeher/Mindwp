@@ -186,7 +186,7 @@ function buildHvacMaintenancePlanReactivation(): CaseStudyData {
       'CRM Automation',
     ],
     seo: {
-      canonical: '/case-study/hvac-maintenance-plan-reactivation',
+      canonical: '/case-studies/hvac-maintenance-plan-reactivation',
       openGraph: {
         title: 'How HVAC Companies Recover Lost Maintenance Revenue | MindWP Case Study',
         description:

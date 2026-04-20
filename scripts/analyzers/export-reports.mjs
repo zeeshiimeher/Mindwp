@@ -4,14 +4,15 @@
  * Regenerates report artifacts that are not emitted directly by validate-all.
  * Usage:
  *   node --import tsx/esm scripts/analyzers/export-reports.mjs --type=client
- *   node --import tsx/esm scripts/analyzers/export-reports.mjs --type=readable
- *   node --import tsx/esm scripts/analyzers/export-reports.mjs              (both)
+ *   node --import tsx/esm scripts/analyzers/export-reports.mjs
  */
 
 import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+
+import { readJsonFile } from '../lib/report-json.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
@@ -46,14 +47,6 @@ async function init() {
   return reportsDir;
 }
 
-function readJson(filePath) {
-  try {
-    return JSON.parse(fs.readFileSync(filePath, 'utf8'));
-  } catch {
-    return null;
-  }
-}
-
 function writeJson(filePath, data) {
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2) + '\n');
 }
@@ -72,7 +65,7 @@ function runTsScript(relativePath) {
 
 function stampReportSource(reportsDir, fileName, sourceCommand) {
   const filePath = path.join(reportsDir, fileName);
-  const report = readJson(filePath);
+  const report = readJsonFile(filePath);
 
   if (!report || typeof report !== 'object' || Array.isArray(report)) {
     return;
@@ -111,9 +104,9 @@ function buildMarkdownSummary(report) {
 }
 
 function buildClientReport(reportsDir) {
-  const validationResults = readJson(path.join(reportsDir, 'validation-results.json')) ?? {};
-  const contentQuality = readJson(path.join(reportsDir, 'content-quality-report.json')) ?? {};
-  const graphReport = readJson(path.join(reportsDir, 'graph-report.json')) ?? {};
+  const validationResults = readJsonFile(path.join(reportsDir, 'validation-results.json')) ?? {};
+  const contentQuality = readJsonFile(path.join(reportsDir, 'content-quality-report.json')) ?? {};
+  const graphReport = readJsonFile(path.join(reportsDir, 'graph-report.json')) ?? {};
   const reportNames = fs.readdirSync(reportsDir).filter(name => !name.startsWith('.')).sort();
 
   const report = {
@@ -151,7 +144,7 @@ function buildClientReport(reportsDir) {
 }
 
 function buildCtaReport(reportsDir) {
-  const validationResults = readJson(path.join(reportsDir, 'validation-results.json')) ?? {};
+  const validationResults = readJsonFile(path.join(reportsDir, 'validation-results.json')) ?? {};
   const validators = new Map(
     (validationResults.validators ?? []).map(validator => [validator.name, validator])
   );
@@ -205,10 +198,6 @@ async function exportClient(reportsDir) {
   buildCtaReport(reportsDir);
 }
 
-async function exportReadable(reportsDir) {
-  console.log('[export-reports] Readable report generator has been removed. Skipping.');
-}
-
 async function main() {
   assertExportLock();
 
@@ -216,10 +205,6 @@ async function main() {
 
   if (requestedType === 'client' || requestedType === 'all') {
     await exportClient(reportsDir);
-  }
-
-  if (requestedType === 'readable' || requestedType === 'all') {
-    await exportReadable(reportsDir);
   }
 
   console.log('[export-reports] Done.');

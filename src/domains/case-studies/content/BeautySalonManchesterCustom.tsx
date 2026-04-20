@@ -223,7 +223,7 @@ function buildBeautySalonManchesterCustom(): CaseStudyData {
     })),
     tags: ['Local SEO', 'Online Booking', 'Beauty Salon', 'Manchester', 'Custom Template'],
     seo: {
-      canonical: '/case-study/beauty-salon-online-booking-local-seo-manchester-custom',
+      canonical: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
       openGraph: {
         title: 'Custom Beauty Salon Case Study with Flexible Labels | Manchester',
         description:

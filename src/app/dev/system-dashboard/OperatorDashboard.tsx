@@ -5,13 +5,40 @@ import Link from 'next/link';
 import type { ReactNode } from 'react';
 
 import { SectionWrapper } from '@/components/reusable/primitives/SectionWrapper';
+import { type ConfidenceLevel, getConfidence, priorityRank } from '@/lib/dev/confidence';
+import {
+  getConfidenceSeverity,
+  getHealthSeverity,
+  getPrioritySeverity,
+  getSeverityTone,
+  getStatusSeverity,
+} from '@/lib/dev/dashboardSeverity';
+import {
+  loadStoredState,
+  MAX_WORKING_SET,
+  persistStoredState,
+  priorityKey,
+  type StoredActionState,
+} from '@/lib/dev/dashboardStorage';
+import {
+  buildLastChangedMap,
+  filterPagesByPreset,
+  type FilterPreset,
+  filterPrioritiesByPreset,
+  getDefaultPreset,
+  getProgressCopy,
+} from '@/lib/dev/filterPresets';
+import {
+  detectPrimaryIssueType,
+  issueLabel,
+  typeHintMap,
+  typeReasonMap,
+} from '@/lib/dev/priorityClassification';
 import type {
   ContractIntegrityReport,
-  PageIntelligenceItem,
   PageStatus,
   PriorityItem,
   PriorityLevel,
-  PriorityType,
   SlowTestReport,
   StatusChangeItem,
   TestFileReport,
@@ -21,74 +48,22 @@ import type {
   ValidationDetailReport,
 } from '@/lib/dev/system-report';
 
-type FilterPreset = 'needs-attention' | 'high-impact' | 'all-healthy';
-type ConfidenceLevel = 'High' | 'Medium' | 'Low';
 type ActionStatus = 'pending' | 'in-progress' | 'completed';
-type StoredActionState = {
-  inProgress: string[];
-  completed: string[];
-  dismissed: string[];
-  focusMode: boolean;
-};
 
-const STORAGE_KEY = 'mindwp:operator-dashboard:v2';
-const MAX_WORKING_SET = 3;
+function statusTone(status: UnifiedStepStatus | PageStatus) {
+  return getSeverityTone(getStatusSeverity(status));
+}
 
-const statusTone: Record<UnifiedStepStatus | PageStatus, string> = {
-  PASS: 'border-emerald-300 bg-emerald-100 text-emerald-900',
-  FAIL: 'border-rose-300 bg-rose-100 text-rose-900',
-  SKIPPED: 'border-amber-200 bg-amber-50 text-amber-900',
-  OK: 'border-emerald-300 bg-emerald-100 text-emerald-900',
-  WARNING: 'border-amber-300 bg-amber-100 text-amber-900',
-};
+function healthTone(status: UnifiedHealthStatus) {
+  return getSeverityTone(getHealthSeverity(status));
+}
 
-const healthTone: Record<UnifiedHealthStatus, string> = {
-  OK: 'border-emerald-300 bg-emerald-100 text-emerald-900',
-  ISSUES: 'border-amber-300 bg-amber-100 text-amber-900',
-};
+function priorityTone(level: PriorityLevel) {
+  return getSeverityTone(getPrioritySeverity(level));
+}
 
-const priorityTone: Record<PriorityLevel, string> = {
-  HIGH: 'border-rose-300 bg-rose-100 text-rose-900',
-  MEDIUM: 'border-amber-300 bg-amber-100 text-amber-900',
-  LOW: 'border-emerald-300 bg-emerald-100 text-emerald-900',
-};
-
-const confidenceTone: Record<ConfidenceLevel, string> = {
-  High: 'border-emerald-300 bg-emerald-100 text-emerald-900',
-  Medium: 'border-amber-300 bg-amber-100 text-amber-900',
-  Low: 'border-rose-300 bg-rose-100 text-rose-900',
-};
-
-const typeReasonMap: Record<PriorityType, string> = {
-  conversion: 'Conversion path is weaker than it should be.',
-  cta: 'Call-to-action pattern needs attention.',
-  contract: 'Required page structure is drifting.',
-  content: 'Page content is not supporting the next decision clearly.',
-  lint: 'Implementation cleanup is still visible in the run.',
-};
-
-const typeHintMap: Record<PriorityType, string> = {
-  conversion: 'Tighten the next action on the affected page.',
-  cta: 'Standardize the CTA and restore the lead path.',
-  contract: 'Bring the page back to the expected structure.',
-  content: 'Clarify the page message and support content.',
-  lint: 'Clean the implementation issue before it spreads.',
-};
-
-const pageTypeMap: Array<{ type: PriorityType; label: string; matchers: string[] }> = [
-  { type: 'cta', label: 'CTA', matchers: ['cta', 'call to action', 'lead capture'] },
-  { type: 'conversion', label: 'Conversion', matchers: ['conversion', 'capture path', 'lead'] },
-  {
-    type: 'contract',
-    label: 'Structure',
-    matchers: ['contract', 'structure', 'template', 'domain'],
-  },
-  { type: 'content', label: 'Content', matchers: ['content', 'copy', 'coverage', 'quality'] },
-  { type: 'lint', label: 'Implementation', matchers: ['lint', 'typecheck', 'implementation'] },
-];
-
-function priorityKey(priority: PriorityItem) {
-  return `${priority.level}:${priority.type}:${priority.route ?? 'system'}:${priority.message}`;
+function confidenceTone(level: ConfidenceLevel) {
+  return getSeverityTone(getConfidenceSeverity(level));
 }
 
 function routeAnchor(route: string) {
@@ -104,38 +79,6 @@ function formatDuration(durationMs: number) {
   }
 
   return `${Math.round(durationMs)} ms`;
-}
-
-function getDefaultPreset(report: UnifiedSystemReport): FilterPreset {
-  const hasAttention = report.priorities.some(priority => priority.level !== 'LOW');
-  const hasProblemPages = report.pages.some(page => page.status !== 'OK');
-
-  if (hasAttention || hasProblemPages) {
-    return 'needs-attention';
-  }
-
-  return 'all-healthy';
-}
-
-function loadStoredState(validKeys: Set<string>): StoredActionState {
-  try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (!raw) {
-      return { inProgress: [], completed: [], dismissed: [], focusMode: false };
-    }
-
-    const parsed = JSON.parse(raw) as Partial<StoredActionState>;
-    return {
-      inProgress: (parsed.inProgress ?? [])
-        .filter(key => validKeys.has(key))
-        .slice(0, MAX_WORKING_SET),
-      completed: (parsed.completed ?? []).filter(key => validKeys.has(key)),
-      dismissed: (parsed.dismissed ?? []).filter(key => validKeys.has(key)),
-      focusMode: parsed.focusMode === true,
-    };
-  } catch {
-    return { inProgress: [], completed: [], dismissed: [], focusMode: false };
-  }
 }
 
 function buildContractIssues(contracts: ContractIntegrityReport) {
@@ -154,135 +97,8 @@ function buildReportHealthIssues(reports: {
   ];
 }
 
-function buildLastChangedMap(changes: StatusChangeItem[]) {
-  return new Set(changes.map(change => change.route));
-}
-
-function detectPrimaryIssueType(page: PageIntelligenceItem): PriorityType {
-  const joined = page.issues.join(' ').toLowerCase();
-
-  if (page.cta.issues > 0) {
-    return 'cta';
-  }
-
-  for (const entry of pageTypeMap) {
-    if (entry.matchers.some(matcher => joined.includes(matcher))) {
-      return entry.type;
-    }
-  }
-
-  if (page.content.status !== 'OK') {
-    return 'content';
-  }
-
-  return 'conversion';
-}
-
-function issueLabel(type: PriorityType) {
-  return pageTypeMap.find(entry => entry.type === type)?.label ?? 'Attention';
-}
-
-function priorityRank(level: PriorityLevel) {
-  return level === 'HIGH' ? 0 : level === 'MEDIUM' ? 1 : 2;
-}
-
-function getConfidence(
-  report: UnifiedSystemReport,
-  activePriorities: PriorityItem[]
-): {
-  level: ConfidenceLevel;
-  reason: string;
-} {
-  const blockingFailure = report.validate.blockingFailed > 0 || report.status === 'FAIL';
-  const highCount = activePriorities.filter(priority => priority.level === 'HIGH').length;
-  const newIssueCount = report.changes.newIssues.length;
-
-  if (blockingFailure || highCount >= 3) {
-    return {
-      level: 'Low',
-      reason: 'Blocking health or several high-priority items need attention.',
-    };
-  }
-
-  if (highCount === 0 && newIssueCount === 0 && report.validate.warningCount <= 1) {
-    return {
-      level: 'High',
-      reason: 'Validation is stable and no new urgent work appeared.',
-    };
-  }
-
-  return {
-    level: 'Medium',
-    reason: 'System is safe, but there are active items worth checking today.',
-  };
-}
-
-function filterPrioritiesByPreset(
-  priorities: PriorityItem[],
-  preset: FilterPreset,
-  pageByRoute: Map<string, PageIntelligenceItem>
-) {
-  if (preset === 'all-healthy') {
-    return [];
-  }
-
-  if (preset === 'high-impact') {
-    return priorities.filter(priority => {
-      if (priority.level === 'HIGH') {
-        return true;
-      }
-
-      const page = priority.route ? pageByRoute.get(priority.route) : null;
-      return Boolean(page && page.conversionPriority > 0);
-    });
-  }
-
-  return priorities.filter(priority => priority.level !== 'LOW' || priority.type === 'lint');
-}
-
-function filterPagesByPreset(
-  pages: PageIntelligenceItem[],
-  preset: FilterPreset,
-  changedRoutes: Set<string>
-) {
-  const filtered = pages.filter(page => {
-    if (preset === 'all-healthy') {
-      return page.status === 'OK';
-    }
-
-    if (preset === 'high-impact') {
-      return page.conversionPriority > 0 || page.status !== 'OK';
-    }
-
-    return page.status !== 'OK';
-  });
-
-  return filtered.sort((left, right) => {
-    const leftChanged = changedRoutes.has(left.route) ? 1 : 0;
-    const rightChanged = changedRoutes.has(right.route) ? 1 : 0;
-
-    if (rightChanged !== leftChanged) {
-      return rightChanged - leftChanged;
-    }
-
-    if (right.conversionPriority !== left.conversionPriority) {
-      return right.conversionPriority - left.conversionPriority;
-    }
-
-    return right.issues.length - left.issues.length || left.route.localeCompare(right.route);
-  });
-}
-
 function changeMessages(items: StatusChangeItem[]) {
   return items.map(item => `${item.route}: ${item.previousStatus} -> ${item.nextStatus}`);
-}
-
-function getProgressCopy(completed: number, total: number) {
-  if (total === 0) {
-    return '0 / 0 actions completed';
-  }
-
-  return `${completed} / ${total} actions completed`;
 }
 
 function Badge({ children, tone }: { children: ReactNode; tone: string }) {
@@ -446,7 +262,7 @@ function ValidatorItem({ validator }: { validator: ValidationDetailReport }) {
         </div>
         <div className='flex items-center gap-2'>
           <span className='text-xs text-stone-600'>{formatDuration(validator.durationMs)}</span>
-          <Badge tone={statusTone[validator.status]}>{validator.status}</Badge>
+          <Badge tone={statusTone(validator.status)}>{validator.status}</Badge>
         </div>
       </div>
       {validator.errors.length > 0 ? <ErrorList items={validator.errors} /> : null}
@@ -462,7 +278,7 @@ function TestFileItem({ file }: { file: TestFileReport }) {
         <div className='break-words text-sm font-bold text-stone-900'>{file.file}</div>
         <div className='flex items-center gap-2'>
           <span className='text-xs text-stone-600'>{formatDuration(file.durationMs)}</span>
-          <Badge tone={statusTone[file.status]}>{file.status}</Badge>
+          <Badge tone={statusTone(file.status)}>{file.status}</Badge>
         </div>
       </div>
       <div className='flex flex-wrap gap-3 text-xs text-stone-600'>
@@ -482,7 +298,7 @@ function SlowTestItem({ test }: { test: SlowTestReport }) {
       <div className='mt-1 break-words text-xs text-stone-600'>{test.file}</div>
       <div className='mt-2 flex items-center gap-2'>
         <span className='text-xs text-stone-600'>{formatDuration(test.durationMs)}</span>
-        <Badge tone={statusTone[test.status]}>{test.status}</Badge>
+        <Badge tone={statusTone(test.status)}>{test.status}</Badge>
       </div>
     </div>
   );
@@ -582,16 +398,7 @@ export default function OperatorDashboard({ report }: { report: UnifiedSystemRep
 
     const validKeys = new Set(report.priorities.map(priorityKey));
 
-    const nextState = {
-      inProgress: storedActions.inProgress
-        .filter(key => validKeys.has(key))
-        .slice(0, MAX_WORKING_SET),
-      completed: storedActions.completed.filter(key => validKeys.has(key)),
-      dismissed: storedActions.dismissed.filter(key => validKeys.has(key)),
-      focusMode: storedActions.focusMode,
-    };
-
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(nextState));
+    persistStoredState(storedActions, validKeys);
   }, [hydrated, report.priorities, storedActions]);
 
   const pageByRoute = new Map(report.pages.map(page => [page.route, page]));
@@ -751,8 +558,8 @@ export default function OperatorDashboard({ report }: { report: UnifiedSystemRep
               </p>
             </div>
             <div className='grid gap-2'>
-              <Badge tone={statusTone[report.status]}>{report.status}</Badge>
-              <Badge tone={confidenceTone[confidence.level]}>
+              <Badge tone={statusTone(report.status)}>{report.status}</Badge>
+              <Badge tone={confidenceTone(confidence.level)}>
                 System confidence: {confidence.level}
               </Badge>
             </div>
@@ -772,28 +579,28 @@ export default function OperatorDashboard({ report }: { report: UnifiedSystemRep
           </div>
 
           <div className='grid gap-3 md:grid-cols-2 xl:grid-cols-5'>
-            <MetricPill label='System' value={report.status} tone={statusTone[report.status]} />
+            <MetricPill label='System' value={report.status} tone={statusTone(report.status)} />
             <MetricPill
               label='Progress Today'
               value={getProgressCopy(progressCompleted, progressTotal)}
-              tone={progressCompleted > 0 ? priorityTone.LOW : priorityTone.MEDIUM}
+              tone={progressCompleted > 0 ? priorityTone('LOW') : priorityTone('MEDIUM')}
             />
             <MetricPill
               label='Confidence'
               value={confidence.level}
-              tone={confidenceTone[confidence.level]}
+              tone={confidenceTone(confidence.level)}
             />
             <MetricPill
               label='Working set'
               value={inProgressPriorities.length}
-              tone={inProgressPriorities.length > 0 ? priorityTone.MEDIUM : priorityTone.LOW}
+              tone={inProgressPriorities.length > 0 ? priorityTone('MEDIUM') : priorityTone('LOW')}
             />
             <MetricPill
               label='Needs attention'
               value={pendingPriorities.length}
-              tone={statusTone.WARNING}
+              tone={statusTone('WARNING')}
             />
-            <MetricPill label='Completed' value={progressCompleted} tone={priorityTone.LOW} />
+            <MetricPill label='Completed' value={progressCompleted} tone={priorityTone('LOW')} />
           </div>
 
           <div className='flex flex-wrap gap-3 text-xs text-stone-600'>
@@ -837,7 +644,7 @@ export default function OperatorDashboard({ report }: { report: UnifiedSystemRep
                         </div>
                       </div>
                       <div className='grid justify-items-end gap-2'>
-                        <Badge tone={priorityTone[priority.level]}>{priority.level}</Badge>
+                        <Badge tone={priorityTone(priority.level)}>{priority.level}</Badge>
                         <Badge tone='border-stone-300 bg-white text-stone-700'>Pending</Badge>
                       </div>
                     </div>
@@ -877,7 +684,7 @@ export default function OperatorDashboard({ report }: { report: UnifiedSystemRep
                         </div>
                       </div>
                       <div className='grid justify-items-end gap-2'>
-                        <Badge tone={priorityTone[priority.level]}>{priority.level}</Badge>
+                        <Badge tone={priorityTone(priority.level)}>{priority.level}</Badge>
                         <Badge tone='border-blue-300 bg-blue-100 text-blue-900'>In Progress</Badge>
                       </div>
                     </div>
@@ -950,7 +757,7 @@ export default function OperatorDashboard({ report }: { report: UnifiedSystemRep
                               </div>
                             </div>
                             <div className='grid justify-items-end gap-2'>
-                              <Badge tone={priorityTone[priority.level]}>{priority.level}</Badge>
+                              <Badge tone={priorityTone(priority.level)}>{priority.level}</Badge>
                               <Badge tone='border-stone-300 bg-white text-stone-700'>Pending</Badge>
                             </div>
                           </div>
@@ -1001,7 +808,7 @@ export default function OperatorDashboard({ report }: { report: UnifiedSystemRep
                                 {typeHintMap[primaryType]}
                               </div>
                             </div>
-                            <Badge tone={statusTone[page.status]}>
+                            <Badge tone={statusTone(page.status)}>
                               {page.status === 'OK' ? 'Healthy' : 'Needs attention'}
                             </Badge>
                             <div className='text-sm font-semibold text-stone-700'>
@@ -1053,7 +860,7 @@ export default function OperatorDashboard({ report }: { report: UnifiedSystemRep
                       Report health
                     </div>
                     <div className='mt-2'>
-                      <Badge tone={healthTone[reportHealthStatus]}>{reportHealthStatus}</Badge>
+                      <Badge tone={healthTone(reportHealthStatus)}>{reportHealthStatus}</Badge>
                     </div>
                   </div>
                 </div>
@@ -1075,8 +882,8 @@ export default function OperatorDashboard({ report }: { report: UnifiedSystemRep
                           tone={
                             report.system.contracts.features === 'OK' &&
                             report.system.contracts.services === 'OK'
-                              ? healthTone.OK
-                              : healthTone.ISSUES
+                              ? healthTone('OK')
+                              : healthTone('ISSUES')
                           }
                         >
                           Contracts
@@ -1084,7 +891,7 @@ export default function OperatorDashboard({ report }: { report: UnifiedSystemRep
                         <ErrorList items={buildContractIssues(report.system.contracts)} />
                       </div>
                       <div className='grid gap-2 rounded-2xl border border-stone-200 bg-white p-4'>
-                        <Badge tone={healthTone[report.system.graph.status]}>Graph</Badge>
+                        <Badge tone={healthTone(report.system.graph.status)}>Graph</Badge>
                         <div className='text-sm text-stone-700'>
                           Nodes: {report.system.graph.nodes} | Orphans:{' '}
                           {report.system.graph.orphanNodes} | Invalid edges:{' '}
@@ -1092,7 +899,7 @@ export default function OperatorDashboard({ report }: { report: UnifiedSystemRep
                         </div>
                       </div>
                       <div className='grid gap-2 rounded-2xl border border-stone-200 bg-white p-4'>
-                        <Badge tone={healthTone[report.system.cta.status]}>CTA</Badge>
+                        <Badge tone={healthTone(report.system.cta.status)}>CTA</Badge>
                         <div className='text-sm text-stone-700'>
                           Total: {report.system.cta.total} | Duplicate intents:{' '}
                           {report.system.cta.duplicateIntents} | Missing source:{' '}
@@ -1100,7 +907,7 @@ export default function OperatorDashboard({ report }: { report: UnifiedSystemRep
                         </div>
                       </div>
                       <div className='grid gap-2 rounded-2xl border border-stone-200 bg-white p-4'>
-                        <Badge tone={healthTone[reportHealthStatus]}>Reports</Badge>
+                        <Badge tone={healthTone(reportHealthStatus)}>Reports</Badge>
                         <ErrorList items={buildReportHealthIssues(report.reports)} />
                       </div>
                     </div>

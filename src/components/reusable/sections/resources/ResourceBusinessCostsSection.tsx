@@ -6,6 +6,8 @@ import { cn } from '@/components/ui/utils';
 
 import { ResourceSectionHeader } from './ResourceSectionHeader';
 
+const BLOCK = 'business-costs-section';
+
 export interface ResourceBusinessCostsSectionProps {
   heading: string;
   subheading?: string;
@@ -19,8 +21,6 @@ export function ResourceBusinessCostsSection({
   items,
   className = '',
 }: ResourceBusinessCostsSectionProps) {
-  const BLOCK = 'business-costs-section';
-
   return (
     <SectionWrapper padding='none' container='none' className={cn(BLOCK, className)}>
       <ResourceSectionHeader

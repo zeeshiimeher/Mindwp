@@ -94,7 +94,7 @@ const DOMAIN_LIVE_PAGE_FALLBACKS: Array<{ match: RegExp; url: string }> = [
   { match: /^\/blog\//, url: '/blog/ai-reception-for-automotive-shops' },
   { match: /^\/features\//, url: '/features/crm' },
   { match: /^\/industries\//, url: '/industries/beauty-personal-care' },
-  { match: /^\/case-study\//, url: '/case-study/auto-repair-missed-call-recovery' },
+  { match: /^\/case-studies\//, url: '/case-studies/auto-repair-missed-call-recovery' },
 ];
 
 const hasRepresentativeLivePage = (doc?: ComponentDoc) => {

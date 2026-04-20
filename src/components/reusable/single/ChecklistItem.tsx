@@ -3,6 +3,8 @@ import { Check, LucideIcon } from 'lucide-react';
 
 import { cn } from '@/components/ui/utils';
 
+const BLOCK = 'checklist-item';
+
 export interface ChecklistItemProps {
   children: ReactNode;
   icon?: LucideIcon;
@@ -18,8 +20,6 @@ export function ChecklistItem({
   className = '',
   textClassName = '',
 }: ChecklistItemProps) {
-  const BLOCK = 'checklist-item';
-
   return (
     <li className={cn(BLOCK, className)}>
       <div className={cn(`${BLOCK}__icon-wrap`, 'icon-container-sm icon-bg-accent')}>

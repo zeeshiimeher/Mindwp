@@ -256,7 +256,7 @@ export function buildContentGraph(
 
   for (const caseStudy of Object.values(registries.caseStudies)) {
     const id = `case-study:${caseStudy.slug}`;
-    const path = `/case-study/${caseStudy.slug}`;
+    const path = `/case-studies/${caseStudy.slug}`;
     graph[id] = {
       id,
       slug: caseStudy.slug,

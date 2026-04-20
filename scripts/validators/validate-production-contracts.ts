@@ -14,6 +14,7 @@ const args = new Set(process.argv.slice(2));
 const shouldReportJson = args.has('--report-json');
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'production-contract-report.json');
+const DISALLOWED_LEGACY_ROUTE_FILES = ['src/app/case-study/[slug]/page.tsx'];
 
 const featureRegistryEntrySchema = z
   .object({
@@ -210,6 +211,29 @@ async function main() {
       name: 'content-graph-registry',
       status: 'fail',
       details: error instanceof Error ? error.message : 'Unknown content graph contract failure.',
+    });
+  }
+
+  try {
+    const existingLegacyRouteFiles = DISALLOWED_LEGACY_ROUTE_FILES.filter(relativePath =>
+      fs.existsSync(path.join(root, relativePath))
+    );
+    if (existingLegacyRouteFiles.length > 0) {
+      throw new Error(
+        `Legacy app route aliases must be deleted: ${existingLegacyRouteFiles.join(', ')}`
+      );
+    }
+
+    results.push({
+      name: 'route-canonicality',
+      status: 'pass',
+      details: 'Validated that legacy duplicate app route aliases are absent.',
+    });
+  } catch (error) {
+    results.push({
+      name: 'route-canonicality',
+      status: 'fail',
+      details: error instanceof Error ? error.message : 'Unknown route canonicality failure.',
     });
   }
 

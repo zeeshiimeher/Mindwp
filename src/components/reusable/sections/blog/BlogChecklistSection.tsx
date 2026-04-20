@@ -4,6 +4,8 @@ import { ChecklistRow } from '@/components/reusable/single/ChecklistRow';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { cn } from '@/components/ui/utils';
 
+const BLOCK = 'blog-checklist-section';
+
 export interface BlogChecklistSectionProps {
   heading?: string;
   content?: string | string[];
@@ -19,8 +21,6 @@ export function BlogChecklistSection({
   columns = 1,
   className = '',
 }: BlogChecklistSectionProps) {
-  const BLOCK = 'blog-checklist-section';
-
   const paragraphs = content === undefined ? [] : typeof content === 'string' ? [content] : content;
 
   return (

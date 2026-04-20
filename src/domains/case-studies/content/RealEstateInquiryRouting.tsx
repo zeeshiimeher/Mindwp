@@ -193,7 +193,7 @@ function buildRealEstateInquiryRouting(): CaseStudyData {
     })),
     tags: ['Lead Routing', 'Estate Agency', 'Property Enquiries', 'Response Time', 'Multi-Channel'],
     seo: {
-      canonical: '/case-study/real-estate-inquiry-routing',
+      canonical: '/case-studies/real-estate-inquiry-routing',
       openGraph: {
         title: 'Why Estate Agents Lose Property Enquiries | MindWP Case Study',
         description:

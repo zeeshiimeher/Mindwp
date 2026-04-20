@@ -193,7 +193,7 @@ function buildSmartWebsiteInfrastructureImplementation(): CaseStudyData {
       'Conversion Tracking',
     ],
     seo: {
-      canonical: '/case-study/smart-website-infrastructure-implementation',
+      canonical: '/case-studies/smart-website-infrastructure-implementation',
       openGraph: {
         title: 'Why Service Business Websites Fail | MindWP Case Study',
         description:

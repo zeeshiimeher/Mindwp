@@ -63,6 +63,15 @@ const SECURITY_HEADERS = [
 /** @type {import('next').NextConfig} */
 const nextConfig = {
 	distDir: process.env.NEXT_DIST_DIR || '.next',
+	async redirects() {
+		return [
+			{
+				source: '/case-study/:slug',
+				destination: '/case-studies/:slug',
+				permanent: true,
+			},
+		];
+	},
 	async headers() {
 		return [
 			{

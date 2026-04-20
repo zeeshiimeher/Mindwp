@@ -213,7 +213,7 @@ function buildHvacEmergencyLeadRouting(): CaseStudyData {
     })),
     tags: ['Emergency Routing', 'After-Hours Leads', 'HVAC', 'Call Triage', 'Lead Recovery'],
     seo: {
-      canonical: '/case-study/hvac-emergency-lead-routing',
+      canonical: '/case-studies/hvac-emergency-lead-routing',
       openGraph: {
         title: 'Why HVAC Emergency Calls Get Missed | MindWP Case Study',
         description:

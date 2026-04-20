@@ -38,6 +38,7 @@ Run: `npm run -s generate:global-inventory`
 | `FeatureChecklistCard` | `src/components/reusable/single/FeatureChecklistCard.tsx` |
 | `IconBenefitCard` | `src/components/reusable/single/IconBenefitCard.tsx` |
 | `IconListCard` | `src/components/reusable/single/IconListCard.tsx` |
+| `IconRow` | `src/components/reusable/single/IconRow.tsx` |
 | `IconTextCard` | `src/components/reusable/single/IconTextCard.tsx` |
 | `LinkCard` | `src/components/reusable/single/LinkCard.tsx` |
 | `ProblemCard` | `src/components/reusable/single/ProblemCard.tsx` |
@@ -84,6 +85,7 @@ Run: `npm run -s generate:global-inventory`
 |---|---|
 | `AlternatingDetailRowsSection` | `src/components/reusable/sections/core/AlternatingDetailRowsSection.tsx` |
 | `AutoRelatedContentCardsSection` | `src/components/reusable/sections/core/AutoRelatedContentCardsSection.tsx` |
+| `CardsSectionShell` | `src/components/reusable/sections/core/CardsSectionShell.tsx` |
 | `CaseStudyCardsSection` | `src/components/reusable/sections/core/CaseStudyCardsSection.tsx` |
 | `ChecklistCardsSection` | `src/components/reusable/sections/core/ChecklistCardsSection.tsx` |
 | `ComparisonEvidenceBand` | `src/components/reusable/sections/core/ComparisonEvidenceBand.tsx` |
@@ -106,7 +108,6 @@ Run: `npm run -s generate:global-inventory`
 | `OperationalShiftCardsSection` | `src/components/reusable/sections/core/OperationalShiftCardsSection.tsx` |
 | `OptionComparisonSection` | `src/components/reusable/sections/core/OptionComparisonSection.tsx` |
 | `OutcomeTimelineSection` | `src/components/reusable/sections/core/OutcomeTimelineSection.tsx` |
-| `ProblemCardsSection` | `src/components/reusable/sections/core/ProblemCardsSection.tsx` |
 | `ProcessStepsSection` | `src/components/reusable/sections/core/ProcessStepsSection.tsx` |
 | `RelatedCardsSection` | `src/components/reusable/sections/core/RelatedCardsSection.tsx` |
 | `ScenarioCardsSection` | `src/components/reusable/sections/core/ScenarioCardsSection.tsx` |
@@ -162,6 +163,7 @@ _No exports detected._
 | `ResourceDIYSection` | `src/components/reusable/sections/resources/ResourceDIYSection.tsx` |
 | `ResourceProblemSection` | `src/components/reusable/sections/resources/ResourceProblemSection.tsx` |
 | `ResourceSectionHeader` | `src/components/reusable/sections/resources/ResourceSectionHeader.tsx` |
+| `ResourceSectionShell` | `src/components/reusable/sections/resources/ResourceSectionShell.tsx` |
 | `ResourceSolutionsSection` | `src/components/reusable/sections/resources/ResourceSolutionsSection.tsx` |
 | `ResourceTakeawaysSection` | `src/components/reusable/sections/resources/ResourceTakeawaysSection.tsx` |
 | `ResourceTemplatesSection` | `src/components/reusable/sections/resources/ResourceTemplatesSection.tsx` |

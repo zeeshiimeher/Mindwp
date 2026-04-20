@@ -1,8 +1,7 @@
 import type { AnchorHTMLAttributes, ReactNode } from 'react';
 
-import { PrimaryCta } from '@/components/PrimaryCta';
-import { buildGlobalContactHref } from '@/lib/contact/contactHref';
 import { getPrimaryNavigationEntries } from '@/lib/content-quality/inventory';
+import { resolveGlobalPrimaryCtaLinks } from '@/lib/cta/primaryAction';
 
 import { HeaderMobileMenuIsland } from './HeaderMobileMenuIsland';
 import { Logo } from './Logo';
@@ -29,7 +28,7 @@ const PRIMARY_NAV_PATHS = [
 ] as const;
 
 export async function Header() {
-  const globalContactHref = buildGlobalContactHref();
+  const { contactHref: globalContactHref, primaryAction } = resolveGlobalPrimaryCtaLinks();
   const inventoryEntries = await getPrimaryNavigationEntries(PRIMARY_NAV_PATHS);
   const navLinks = inventoryEntries.map(entry => ({
     label: entry.title.replace(/^MindWP\s+/i, ''),
@@ -68,10 +67,9 @@ export async function Header() {
             >
               Contact Us
             </InternalLink>
-            <PrimaryCta
-              className='btn btn-primary btn-small header-button-2'
-              hrefOverride={globalContactHref}
-            />
+            <a href={primaryAction.href} className='btn btn-primary btn-small header-button-2'>
+              {primaryAction.label}
+            </a>
           </nav>
 
           <HeaderMobileMenuIsland navLinks={navLinks} />

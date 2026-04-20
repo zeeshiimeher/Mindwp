@@ -47,12 +47,7 @@
     "tests/**/*.ts",
     "tests/**/*.tsx",
     "scripts/**/*.ts",
-    ".next/types/**/*.ts",
-    "archive/old-sections/TechnologyStackSection.tsx",
-    ".next/dev/types/**/*.ts",
-    ".next-audit/types/**/*.ts",
-    ".next-audit/dev/types/**/*.ts",
-    ".next-audit/dev/dev/types/**/*.ts"
+    "archive/old-sections/TechnologyStackSection.tsx"
   ],
   "exclude": [
     "node_modules",

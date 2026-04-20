@@ -5,6 +5,8 @@ import { Card } from '@/components/reusable/single/Card';
 import { SectionIntro } from '@/components/reusable/single/SectionIntro';
 import { cn } from '@/components/ui/utils';
 
+const BLOCK = 'blog-quote-section';
+
 export interface BlogQuoteSectionProps {
   heading?: string;
   quote: string;
@@ -18,8 +20,6 @@ export function BlogQuoteSection({
   attribution,
   className = '',
 }: BlogQuoteSectionProps) {
-  const BLOCK = 'blog-quote-section';
-
   return (
     <SectionWrapper
       padding='none'

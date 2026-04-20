@@ -1,5 +1,6 @@
 export { AlternatingDetailRowsSection } from './AlternatingDetailRowsSection';
 export { AutoRelatedContentCardsSection } from './AutoRelatedContentCardsSection';
+export { CardsSectionShell } from './CardsSectionShell';
 export { CaseStudyCardsSection } from './CaseStudyCardsSection';
 export { ChecklistCardsSection } from './ChecklistCardsSection';
 export { ComparisonEvidenceBand } from './ComparisonEvidenceBand';
@@ -20,9 +21,12 @@ export { ImageStatsServicesSection } from './ImageStatsServicesSection';
 export { LinkedIconCardsSection } from './LinkedIconCardsSection';
 export { NarrativeStatsSection } from './NarrativeStatsSection';
 export { OperationalShiftCardsSection } from './OperationalShiftCardsSection';
+export {
+  OperationalShiftCardsSection as ProblemCardsSection,
+  type OperationalShiftCardsSectionProps as ProblemCardsSectionProps,
+} from './OperationalShiftCardsSection';
 export { OptionComparisonSection } from './OptionComparisonSection';
 export { OutcomeTimelineSection } from './OutcomeTimelineSection';
-export { ProblemCardsSection } from './ProblemCardsSection';
 export { ProcessStepsSection } from './ProcessStepsSection';
 export { RelatedCardsSection } from './RelatedCardsSection';
 export { ScenarioCardsSection } from './ScenarioCardsSection';

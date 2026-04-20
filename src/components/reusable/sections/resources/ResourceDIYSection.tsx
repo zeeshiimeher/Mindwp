@@ -7,6 +7,8 @@ import { cn } from '@/components/ui/utils';
 
 import { ResourceSectionHeader } from './ResourceSectionHeader';
 
+const BLOCK = 'diy-section';
+
 export interface DIYStep {
   step: number;
   title: string;
@@ -30,8 +32,6 @@ export function ResourceDIYSection({
   proTip,
   className = '',
 }: ResourceDIYSectionProps) {
-  const BLOCK = 'diy-section';
-
   return (
     <SectionWrapper padding='none' container='none' className={cn(BLOCK, className)}>
       <ResourceSectionHeader

@@ -3,7 +3,7 @@
 import { beforeAll, describe, expect, test } from 'vitest';
 
 import * as blogRoute from '@/app/blog/[slug]/page';
-import * as caseStudyRoute from '@/app/case-study/[slug]/page';
+import * as caseStudyRoute from '@/app/case-studies/[slug]/page';
 import * as featureRoute from '@/app/features/[...slug]/page';
 import * as industryRoute from '@/app/industries/[...slug]/page';
 import * as resourceRoute from '@/app/resources/[slug]/page';
@@ -50,7 +50,7 @@ describe('system invariant: all publishable content has a generated route', () =
       (await resourceRoute.generateStaticParams()).map(param => `/resources/${param.slug}`)
     );
     const actualCaseStudies = toSorted(
-      (await caseStudyRoute.generateStaticParams()).map(param => `/case-study/${param.slug}`)
+      (await caseStudyRoute.generateStaticParams()).map(param => `/case-studies/${param.slug}`)
     );
 
     expect(actualBlog).toEqual(expectedBlog);
