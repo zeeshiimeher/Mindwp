@@ -1,6 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 import { getContentGraph } from '../../src/lib/content-graph/registry';
 import type { ContentGraphNode, ContentNodeType } from '../../src/lib/content-graph/types';
@@ -11,6 +13,12 @@ import {
   type ValidationStatus,
 } from '../../src/lib/content-quality/topicAuthority';
 import { buildTopicCoverageSnapshots } from '../../src/lib/content-quality/topicCoverage';
+
+const logger = createLogger({
+  label: 'content-gaps',
+  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  rootDir: path.resolve(import.meta.dirname, '../..'),
+});
 
 interface TopicGap {
   topic: string;
@@ -221,43 +229,37 @@ async function main() {
   const result = { gaps, stats };
 
   const mdPath = path.join(reportsDir, 'content-gaps.md');
-  fs.writeFileSync(mdPath, generateMarkdown(result), 'utf-8');
+  logger.writeReport(mdPath, generateMarkdown(result));
 
   const jsonPath = path.join(reportsDir, 'content-gaps.json');
-  fs.writeFileSync(
-    jsonPath,
-    JSON.stringify(
-      {
-        generatedAt: new Date().toISOString(),
-        stats,
-        topicCoverage,
-        topicGaps: gaps,
-        resourceIndustryGaps: [],
-        industryCaseStudyGaps: [],
-      },
-      null,
-      2,
-    ),
-    'utf-8',
-  );
+  logger.writeReport(jsonPath, {
+    generatedAt: new Date().toISOString(),
+    stats,
+    topicCoverage,
+    topicGaps: gaps,
+    resourceIndustryGaps: [],
+    industryCaseStudyGaps: [],
+  });
 
-  const W = 49;
-  const line = (text: string) => `║  ${text.padEnd(W - 4)}║`;
+  logger.printTotals({
+    topics: stats.topics,
+    orphanTopics: stats.orphanTopics,
+    topicGaps: gaps.length,
+    supportObjective: '1 case study + 1 resource',
+  });
+  logger.printSummary(`report -> ${logger.relativePath(mdPath)}`);
+  logger.printSummary(`report -> ${logger.relativePath(jsonPath)}`);
 
-  console.log('');
-  console.log('╔' + '═'.repeat(W - 2) + '╗');
-  console.log('║   CONTENT GAP REPORT — SUMMARY              ║');
-  console.log('╠' + '═'.repeat(W - 2) + '╣');
-  console.log(line(`Topics analyzed:         ${stats.topics}`));
-  console.log(line(`Orphan topics:           ${stats.orphanTopics}`));
-  console.log(line(`Topic gaps detected:     ${gaps.length}`));
-  console.log(line(`Support objective:       1 case study + 1 resource`));
-  console.log('╠' + '═'.repeat(W - 2) + '╣');
-  console.log(line('OUTPUT'));
-  console.log(line('  MD:   reports/content-gaps.md'));
-  console.log(line('  JSON: reports/content-gaps.json'));
-  console.log('╚' + '═'.repeat(W - 2) + '╝');
-  console.log('');
+  for (const gap of gaps) {
+    logger.printNodeLine({
+      scope: 'topic-gap',
+      slug: gap.topic,
+      supports: gap.resourceCount,
+      validates: gap.caseStudyCount,
+      total: gap.score,
+      missing: gap.missing.join(', '),
+    });
+  }
 }
 
 await main();

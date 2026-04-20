@@ -6,10 +6,17 @@
  * No limits at the graph layer — limits exist only at the resolver layer.
  */
 
-/* eslint-disable no-console */
+import { resolveLoggingMode } from '../../../config/loggingConfig.mjs';
+import { createLogger } from '../../../lib/logger/index.mjs';
 
 import { hasOverlap, scoreRelationship } from './scoring';
 import type { AttributedEdge, ContentGraphNode, ContentNodeType } from './types';
+
+const logger = createLogger({
+  label: 'derived-relationships',
+  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  rootDir: process.cwd(),
+});
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -181,10 +188,6 @@ export interface DerivedEdgeSummary {
 export function logDerivedEdgeSummary(allNodes: ContentGraphNode[]): DerivedEdgeSummary[] {
   const summaries: DerivedEdgeSummary[] = [];
 
-  console.log('\n╔══════════════════════════════════════════════════════════════════════╗');
-  console.log('║                 DERIVED RELATIONSHIP SUMMARY (all types)             ║');
-  console.log('╠══════════════════════════════════════════════════════════════════════╣');
-
   for (const node of allNodes) {
     const derived = deriveRelationships(node, allNodes);
     const total = derived.relatesTo.length + derived.supports.length + derived.validates.length;
@@ -200,20 +203,23 @@ export function logDerivedEdgeSummary(allNodes: ContentGraphNode[]): DerivedEdge
       validates: derived.validates.length,
       total,
     });
-
-    const label = `[${node.type}] ${node.slug}`;
-    console.log(`║ ${label.padEnd(50)} ║`);
-    console.log(
-      `║   relatesTo=${String(derived.relatesTo.length).padStart(3)}  supports=${String(derived.supports.length).padStart(3)}  validates=${String(derived.validates.length).padStart(3)}  total=${String(total).padStart(4)} ║`
-    );
-    console.log('║──────────────────────────────────────────────────────────────────────║');
   }
 
   const totalAll = summaries.reduce((sum, s) => sum + s.total, 0);
   const nodesWithEdges = summaries.length;
 
-  console.log(`║ TOTALS: ${nodesWithEdges} nodes with edges, ${totalAll} total edges`);
-  console.log('╚══════════════════════════════════════════════════════════════════════╝\n');
+  logger.printTotals({ nodesWithEdges, totalEdges: totalAll });
+
+  for (const summary of summaries) {
+    logger.printNodeLine({
+      scope: summary.type,
+      slug: summary.slug,
+      relates: summary.relatesTo,
+      supports: summary.supports,
+      validates: summary.validates,
+      total: summary.total,
+    });
+  }
 
   return summaries;
 }

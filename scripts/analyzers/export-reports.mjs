@@ -12,12 +12,16 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 import { readJsonFile } from '../lib/report-json.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
 const EXPORT_SOURCE_COMMAND = 'node --import tsx/esm scripts/analyzers/export-reports.mjs';
 const SYSTEM_MODE = process.env.SYSTEM_MODE ?? 'development';
+const LOGGING_MODE = resolveLoggingMode(process.argv.slice(2), process.env);
+const logger = createLogger({ label: 'export-reports', mode: LOGGING_MODE, rootDir: ROOT });
 
 const typeArg = process.argv.find(a => a.startsWith('--type='));
 const requestedType = typeArg ? typeArg.split('=')[1] : 'all';
@@ -48,18 +52,30 @@ async function init() {
 }
 
 function writeJson(filePath, data) {
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2) + '\n');
+  logger.writeReport(filePath, data);
 }
 
 function runTsScript(relativePath) {
   const scriptPath = path.join(ROOT, relativePath);
   const result = spawnSync(process.execPath, ['--import', 'tsx/esm', scriptPath], {
     cwd: ROOT,
-    stdio: 'inherit',
+    encoding: 'utf8',
+    env: {
+      ...process.env,
+      SYSTEM_LOGGING_MODE: LOGGING_MODE,
+    },
   });
 
   if (result.status !== 0) {
-    throw new Error(`Failed to run ${relativePath}`);
+    const output = [result.stdout, result.stderr]
+      .filter(Boolean)
+      .join('\n')
+      .split('\n')
+      .map(line => line.trim())
+      .filter(Boolean)
+      .slice(0, 8)
+      .join(' | ');
+    throw new Error(`Failed to run ${relativePath}${output ? `: ${output}` : ''}`);
   }
 }
 
@@ -132,15 +148,17 @@ function buildClientReport(reportsDir) {
 
   const jsonPath = path.join(reportsDir, 'client-report.json');
   writeJson(jsonPath, report);
-  console.log(`[export-reports] Written: ${jsonPath}`);
+  logger.printSummary(`report -> ${logger.relativePath(jsonPath)}`);
 
   const mdPath = path.join(reportsDir, 'client-report.md');
   fs.writeFileSync(mdPath, buildMarkdownSummary(report));
-  console.log(`[export-reports] Written: ${mdPath}`);
-
-  console.log(
-    `  Summary: ${report.summary.totalPages} pages | ${report.summary.healthy} healthy | ${report.summary.weak} weak | ${report.summary.critical} critical`
-  );
+  logger.printSummary(`report -> ${logger.relativePath(mdPath)}`);
+  logger.printTotals({
+    pages: report.summary.totalPages,
+    healthy: report.summary.healthy,
+    weak: report.summary.weak,
+    critical: report.summary.critical,
+  });
 }
 
 function buildCtaReport(reportsDir) {
@@ -172,7 +190,7 @@ function buildCtaReport(reportsDir) {
 }
 
 async function exportClient(reportsDir) {
-  console.log('[export-reports] Generating topic authority scores...');
+  logger.printSection('generating topic authority scores');
   runTsScript('scripts/generators/generate-topic-authority-scores.ts');
   stampReportSource(
     reportsDir,
@@ -180,7 +198,7 @@ async function exportClient(reportsDir) {
     'node --import tsx/esm scripts/generators/generate-topic-authority-scores.ts'
   );
 
-  console.log('[export-reports] Generating content gaps report...');
+  logger.printSection('generating content gaps report');
   runTsScript('scripts/analyzers/generate-content-gaps.ts');
   stampReportSource(
     reportsDir,
@@ -192,9 +210,9 @@ async function exportClient(reportsDir) {
   stampReportSource(reportsDir, 'content-quality-report.json', 'npx tsx scripts/validators/validate-content-quality.mjs --report-json');
   stampReportSource(reportsDir, 'graph-report.json', 'npx tsx scripts/validators/validate-graph.ts');
 
-  console.log('[export-reports] Generating client intelligence report...');
+  logger.printSection('generating client report');
   buildClientReport(reportsDir);
-  console.log('[export-reports] Generating CTA report...');
+  logger.printSection('generating cta report');
   buildCtaReport(reportsDir);
 }
 
@@ -207,10 +225,10 @@ async function main() {
     await exportClient(reportsDir);
   }
 
-  console.log('[export-reports] Done.');
+  logger.printSummary('done');
 }
 
 main().catch(err => {
-  console.error('[export-reports] Failed:', err);
+  process.stderr.write(`[export-reports] Failed: ${err instanceof Error ? err.message : String(err)}\n`);
   process.exit(1);
 });

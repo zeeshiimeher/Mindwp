@@ -1,6 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 import { CANONICAL_TOPICS } from '../../src/lib/content-graph/canonical';
 import { getContentGraph } from '../../src/lib/content-graph/registry';
@@ -51,6 +53,12 @@ const LEVEL_EMOJI: Record<AuthorityLevel, string> = {
   Weak: '🟠',
   Gap: '🔴',
 };
+
+const logger = createLogger({
+  label: 'topic-authority',
+  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  rootDir: process.cwd(),
+});
 
 interface TopicScore {
   topic: string;
@@ -272,30 +280,20 @@ async function main() {
   const sorted = [...scores].sort((left, right) => right.score - left.score);
   const avg = Math.round(sorted.reduce((sum, topic) => sum + topic.score, 0) / (sorted.length || 1));
 
-  fs.writeFileSync(
-    path.join(reportsDir, 'topic-authority-scores.md'),
-    generateMarkdown(scores),
-    'utf-8',
-  );
+  const markdownPath = path.join(reportsDir, 'topic-authority-scores.md');
+  logger.writeReport(markdownPath, generateMarkdown(scores));
 
-  fs.writeFileSync(
-    path.join(reportsDir, 'topic-authority-scores.json'),
-    JSON.stringify(
-      {
-        generatedAt: new Date().toISOString(),
-        topicsAnalyzed: scores.length,
-        averageScore: avg,
-        completeCoverageTopics: scores.filter(topic => topic.coverageStatus === 'complete').length,
-        validatedCoreTopics: scores.filter(
-          topic => topic.classification === 'core' && topic.validationStatus === 'validated'
-        ).length,
-        scores: sorted,
-      },
-      null,
-      2,
-    ),
-    'utf-8',
-  );
+  const jsonPath = path.join(reportsDir, 'topic-authority-scores.json');
+  logger.writeReport(jsonPath, {
+    generatedAt: new Date().toISOString(),
+    topicsAnalyzed: scores.length,
+    averageScore: avg,
+    completeCoverageTopics: scores.filter(topic => topic.coverageStatus === 'complete').length,
+    validatedCoreTopics: scores.filter(
+      topic => topic.classification === 'core' && topic.validationStatus === 'validated'
+    ).length,
+    scores: sorted,
+  });
 
   const strongest = sorted.slice(0, 5);
   const weakest = sorted.slice(-5).reverse();
@@ -311,41 +309,31 @@ async function main() {
     levelCounts[score.level] += 1;
   }
 
-  const W = 51;
-  const line = (text: string) => `║  ${text.padEnd(W - 4)}║`;
+  logger.printTotals({
+    topics: scores.length,
+    averageAuthority: `${avg}/100`,
+    completeCoverage: scores.filter(topic => topic.coverageStatus === 'complete').length,
+    dominant: levelCounts.Dominant,
+    strong: levelCounts.Strong,
+    growing: levelCounts.Growing,
+    weak: levelCounts.Weak,
+    gap: levelCounts.Gap,
+  });
+  logger.printSummary(`strongest -> ${strongest.map(topic => `${topic.topic} (${topic.score})`).join(', ')}`);
+  logger.printSummary(`weakest -> ${weakest.map(topic => `${topic.topic} (${topic.score})`).join(', ')}`);
+  logger.printSummary(`report -> ${logger.relativePath(markdownPath)}`);
+  logger.printSummary(`report -> ${logger.relativePath(jsonPath)}`);
 
-  console.log('');
-  console.log('╔' + '═'.repeat(W - 2) + '╗');
-  console.log('║   TOPIC AUTHORITY SCORES — SUMMARY           ║');
-  console.log('╠' + '═'.repeat(W - 2) + '╣');
-  console.log(line(`Topics analyzed:       ${scores.length}`));
-  console.log(line(`Average authority:     ${avg}/100`));
-  console.log(
-    line(`Complete coverage:     ${scores.filter(topic => topic.coverageStatus === 'complete').length}`)
-  );
-  console.log('╠' + '═'.repeat(W - 2) + '╣');
-  console.log(line('Distribution:'));
-  console.log(line(`  🟢 Dominant (≥90):   ${levelCounts.Dominant}`));
-  console.log(line(`  🔵 Strong  (75–89):  ${levelCounts.Strong}`));
-  console.log(line(`  🟡 Growing (60–74):  ${levelCounts.Growing}`));
-  console.log(line(`  🟠 Weak    (40–59):  ${levelCounts.Weak}`));
-  console.log(line(`  🔴 Gap     (<40):    ${levelCounts.Gap}`));
-  console.log('╠' + '═'.repeat(W - 2) + '╣');
-  console.log(line('Strongest topics:'));
-  for (const topic of strongest) {
-    console.log(line(`  ${String(topic.score).padStart(3)}/100  ${topic.topic}`));
+  for (const topic of sorted) {
+    logger.printNodeLine({
+      scope: topic.classification,
+      slug: topic.topic,
+      supports: topic.supportCount,
+      validates: topic.validatesCount,
+      total: topic.score,
+      status: topic.validationStatus,
+    });
   }
-  console.log('╠' + '═'.repeat(W - 2) + '╣');
-  console.log(line('Weakest topics:'));
-  for (const topic of weakest) {
-    console.log(line(`  ${String(topic.score).padStart(3)}/100  ${topic.topic}`));
-  }
-  console.log('╠' + '═'.repeat(W - 2) + '╣');
-  console.log(line('OUTPUT'));
-  console.log(line('  MD:   reports/topic-authority-scores.md'));
-  console.log(line('  JSON: reports/topic-authority-scores.json'));
-  console.log('╚' + '═'.repeat(W - 2) + '╝');
-  console.log('');
 }
 
 await main();

@@ -5,6 +5,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import prettier from 'prettier';
 
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 import { ensureGraphInitialized, getResolver } from '../../src/domains/init/ensureGraphInitialized';
 import { sortByAuthority } from '../../src/lib/authority/authorityScore';
 import type { AuthorityItem } from '../../src/lib/authority/resolver';
@@ -21,6 +23,11 @@ const OUTPUT_DIR = path.join(root, 'src', 'lib', 'authority', 'generated');
 const OUTPUT_FILE = path.join(OUTPUT_DIR, 'authorityMap.ts');
 const REPORTS_DIR = path.join(root, 'reports');
 const REPORT_FILE = path.join(REPORTS_DIR, 'authority-map.json');
+const logger = createLogger({
+  label: 'authority-map',
+  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  rootDir: root,
+});
 
 type SlotMap<T> = Record<string, T>;
 
@@ -193,8 +200,7 @@ async function main() {
     serviceValidation: buildServiceValidationSnapshots(structuredGraph.nodes),
   };
 
-  fs.mkdirSync(REPORTS_DIR, { recursive: true });
-  fs.writeFileSync(REPORT_FILE, JSON.stringify(authorityReport, null, 2) + '\n', 'utf8');
+  logger.writeReport(REPORT_FILE, authorityReport);
 
   const stats = {
     services: slugs.services.length,
@@ -206,12 +212,45 @@ async function main() {
   };
   const total = Object.values(stats).reduce((a, b) => a + b, 0);
 
-  console.log(
-    `[authority-map] Generated map for ${total} nodes → ${path.relative(root, OUTPUT_FILE)}`
-  );
-  console.log(`  report: ${path.relative(root, REPORT_FILE)}`);
-  console.log(`  services: ${stats.services}, features: ${stats.features}, industries: ${stats.industries}`);
-  console.log(`  blog: ${stats.blogPosts}, resources: ${stats.resources}, caseStudies: ${stats.caseStudies}`);
+  logger.printTotals({
+    nodes: total,
+    services: stats.services,
+    features: stats.features,
+    industries: stats.industries,
+    blog: stats.blogPosts,
+    resources: stats.resources,
+    caseStudies: stats.caseStudies,
+  });
+  logger.printSummary(`map -> ${path.relative(root, OUTPUT_FILE).replaceAll(path.sep, '/')}`);
+  logger.printSummary(`report -> ${logger.relativePath(REPORT_FILE)}`);
+
+  if (logger.isVerbose()) {
+    const edgeCountsBySource = new Map<string, { relates: number; supports: number; validates: number }>();
+
+    for (const edge of authorityReport.edges) {
+      const counts = edgeCountsBySource.get(edge.source) ?? { relates: 0, supports: 0, validates: 0 };
+      if (edge.type === 'relatesTo') {
+        counts.relates += 1;
+      } else if (edge.type === 'supports') {
+        counts.supports += 1;
+      } else if (edge.type === 'validates') {
+        counts.validates += 1;
+      }
+      edgeCountsBySource.set(edge.source, counts);
+    }
+
+    for (const node of authorityReport.nodes) {
+      const counts = edgeCountsBySource.get(node.id) ?? { relates: 0, supports: 0, validates: 0 };
+      logger.printNodeLine({
+        scope: node.type,
+        slug: node.slug,
+        relates: counts.relates,
+        supports: counts.supports,
+        validates: counts.validates,
+        total: counts.relates + counts.supports + counts.validates,
+      });
+    }
+  }
 }
 
 main();

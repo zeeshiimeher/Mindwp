@@ -1,6 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 
 import {
@@ -27,6 +29,11 @@ const VALID_CONTENT_NODE_TYPES: ReadonlySet<string> = new Set([
 
 const args = new Set(process.argv.slice(2));
 const shouldReportJson = args.has('--report-json');
+const logger = createLogger({
+  label: 'validate-graph',
+  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  rootDir: process.cwd(),
+});
 
 await ensureGraphInitialized();
 
@@ -186,13 +193,7 @@ const hasOverlapWithAny = (source: ContentGraphNode, candidates: ContentGraphNod
   candidates.some(candidate => metadataOverlapScore(source, candidate) > 0);
 
 const printMessages = (label: string, items: string[]) => {
-  console.log(`${label}:`);
-
-  for (const item of items) {
-    console.log(`- ${item}`);
-  }
-
-  console.log('');
+  logger.printErrors(items.map(item => `${label}: ${item}`), label.toLowerCase(), logger.isVerbose() ? 20 : 5);
 };
 
 for (const node of nodes) {
@@ -383,9 +384,6 @@ if (fs.existsSync(authorityMapPath)) {
   }
 }
 
-console.log('GRAPH VALIDATION RESULTS');
-console.log('');
-
 if (errors.length > 0) {
   printMessages('Errors', errors);
 }
@@ -394,46 +392,38 @@ if (warnings.length > 0) {
   printMessages('Warnings', warnings);
 }
 
-console.log('Derived Edge Audit');
-console.log('');
-console.log(`Total derived edges: ${allEdges.length}`);
-console.log(`  relatesTo: ${relatesToCount}`);
-console.log(`  supports: ${supportsCount}`);
-console.log(`  validates: ${validatesCount}`);
-console.log(`Cross-type pairs: ${[...crossTypePairs].sort().join(', ')}`);
-console.log('');
+logger.printTotals({
+  derivedEdges: allEdges.length,
+  relatesTo: relatesToCount,
+  supports: supportsCount,
+  validates: validatesCount,
+  crossTypePairs: [...crossTypePairs].sort().join(', '),
+});
 
 if (errors.length === 0 && warnings.length === 0) {
-  console.log('Graph metadata validation passed.');
+  logger.printSummary('graph metadata validation passed');
 }
 
 if (shouldReportJson) {
   const issueObjects = errors.map(error => buildGraphIssueFromMessage(error, 'critical'));
   const warningObjects = warnings.map(warning => buildGraphIssueFromMessage(warning, 'warning'));
   const reportPath = path.join(process.cwd(), 'reports', 'graph-report.json');
-  fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-  fs.writeFileSync(
-    reportPath,
-    JSON.stringify(
-      {
-        generatedAt: new Date().toISOString(),
-        passed: errors.length === 0,
-        errorCount: errors.length,
-        warningCount: warnings.length,
-        summary: {
-          invalidEdges: errors.filter(error => error.startsWith('edge ') || error.startsWith('duplicate edge:') || error.startsWith('missing required cross-type edge coverage:')).length,
-          orphanNodes: orphanNodeSet.size,
-        },
-        errors,
-        warnings,
-        issues: issueObjects,
-        advisory: warningObjects,
-        derivedEdgeCount: allEdges.length,
-      },
-      null,
-      2
-    )
-  );
+  logger.writeReport(reportPath, {
+    generatedAt: new Date().toISOString(),
+    passed: errors.length === 0,
+    errorCount: errors.length,
+    warningCount: warnings.length,
+    summary: {
+      invalidEdges: errors.filter(error => error.startsWith('edge ') || error.startsWith('duplicate edge:') || error.startsWith('missing required cross-type edge coverage:')).length,
+      orphanNodes: orphanNodeSet.size,
+    },
+    errors,
+    warnings,
+    issues: issueObjects,
+    advisory: warningObjects,
+    derivedEdgeCount: allEdges.length,
+  });
+  logger.printSummary(`report -> ${logger.relativePath(reportPath)}`);
 }
 
 if (errors.length > 0) {

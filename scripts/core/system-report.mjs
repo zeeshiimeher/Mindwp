@@ -5,6 +5,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 import {
   parseClientDashboardContract,
   parseSystemReportContract,
@@ -23,6 +25,8 @@ const includeE2E = process.argv.includes('--include-e2e') || process.argv.includ
 const sourceCommand = includeE2E ? 'npm run system:full -- --include-e2e' : 'npm run system:full';
 const systemMode = process.env.SYSTEM_MODE ?? 'development';
 const executionLock = process.env.SYSTEM_EXECUTION_LOCK ?? '';
+const loggingMode = resolveLoggingMode(process.argv.slice(2), process.env);
+const logger = createLogger({ label: 'system:full', mode: loggingMode, rootDir: root });
 
 const binaries = {
   node: process.execPath,
@@ -57,6 +61,7 @@ const requiredReportFiles = new Set([
   'token-report.json',
   'topic-authority-scores.json',
   'topic-authority-scores.md',
+  'validation-report.json',
   'validation-results.json',
   'vocabulary-report.json',
   'system-report.json',
@@ -64,6 +69,7 @@ const requiredReportFiles = new Set([
 ]);
 
 const reportSourceByFile = new Map([
+  ['validation-report.json', 'node scripts/core/validate-all.mjs --report-json'],
   ['validation-results.json', 'node scripts/core/validate-all.mjs --report-json'],
   ['content-quality-report.json', 'npx tsx scripts/validators/validate-content-quality.mjs'],
   ['graph-report.json', 'npx tsx scripts/validators/validate-graph.ts'],
@@ -95,7 +101,10 @@ function runCommand(binary, args) {
     cwd: root,
     encoding: 'utf8',
     maxBuffer: 30 * 1024 * 1024,
-    env: process.env,
+    env: {
+      ...process.env,
+      SYSTEM_LOGGING_MODE: loggingMode,
+    },
   });
 
   return {
@@ -1344,7 +1353,19 @@ function main() {
   writeSnapshotArtifacts(validatedOutputs.report);
 
   const shouldFail = validatedOutputs.report.status === 'FAIL';
-  process.stdout.write(`${JSON.stringify(validatedOutputs.report, null, 2)}\n`);
+  logger.printTotals({
+    status: validatedOutputs.report.status,
+    validators: `${validatedOutputs.report.validate.passed}/${validatedOutputs.report.validate.total}`,
+    blockingFailed: validatedOutputs.report.validate.blockingFailed,
+    advisoryFailed: validatedOutputs.report.validate.advisoryFailed,
+    reportFiles: validatedOutputs.report.reports.fileCount,
+    testsFailed: validatedOutputs.report.tests.failed,
+    e2e: validatedOutputs.report.e2e.status,
+  });
+  logger.printSummary(`system report -> ${logger.relativePath(reportPath)}`);
+  logger.printSummary(`client dashboard -> ${logger.relativePath(clientDashboardPath)}`);
+  logger.printErrors(validatedOutputs.report.validate.errors, 'validator errors', 5);
+  logger.printErrors(validatedOutputs.report.reports.errors, 'report errors', 5);
   process.exitCode = shouldFail ? 1 : 0;
 }
 
@@ -1352,6 +1373,6 @@ try {
   main();
 } catch (error) {
   const message = error instanceof Error ? error.message : 'Unknown system:full failure.';
-  console.error(`[system:full] ${message}`);
+  process.stderr.write(`[system:full] ${message}\n`);
   process.exit(1);
 }

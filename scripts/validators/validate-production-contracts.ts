@@ -3,6 +3,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 import { z } from 'zod';
 
 import { ensureGraphInitialized, getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
@@ -14,6 +16,11 @@ const args = new Set(process.argv.slice(2));
 const shouldReportJson = args.has('--report-json');
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'production-contract-report.json');
+const logger = createLogger({
+  label: 'validate-production-contracts',
+  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  rootDir: root,
+});
 const DISALLOWED_LEGACY_ROUTE_FILES = ['src/app/case-study/[slug]/page.tsx'];
 
 const featureRegistryEntrySchema = z
@@ -240,22 +247,19 @@ async function main() {
   writeReport(results);
 
   if (shouldReportJson) {
-    process.stdout.write(`${JSON.stringify({ checks: results }, null, 2)}\n`);
+    logger.printSummary('report-json flag active; full payload preserved in file output');
   }
 
   const failures = results.filter(result => result.status === 'fail');
   if (failures.length > 0) {
-    console.error('✗ Production contract freeze failed:');
-    for (const failure of failures) {
-      console.error(`  - ${failure.name}: ${failure.details}`);
-    }
+    logger.printErrors(failures.map(failure => `${failure.name}: ${failure.details}`), 'failures', 20);
     process.exit(1);
   }
 
-  console.log('✓ Production contract freeze passed.');
+  logger.printSummary('passed');
 }
 
 main().catch(error => {
-  console.error('✗ Production contract freeze crashed:', error);
+  logger.printErrors([error instanceof Error ? error.message : String(error)], 'crash', 5);
   process.exit(1);
 });

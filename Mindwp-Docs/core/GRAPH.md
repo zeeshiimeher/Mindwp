@@ -1,546 +1,265 @@
 # GRAPH — MindWP
 
-> Graph ontology, metadata, relationship resolution, and scoring.
-> If this document conflicts with SYSTEM.md → SYSTEM.md wins.
+> Source of truth for graph ontology, metadata requirements, derived relationships, and authority scoring.
+> If this file conflicts with `SYSTEM.md` or `CONTENT.md`, fix the conflict immediately.
 
 ---
 
-## WHEN TO USE THIS DOC
+## USE THIS DOC
 
-Use this when working on content graph structure, metadata, relationships, or authority scoring.
-
----
-
-# CONTENT GRAPH SYSTEM (LOCKED)
-
-Status: Live System Architecture
-Version: 2.1
-Last Updated: 2026-04-07
-
-Cleaned from: CONTENT-GRAPH-ARCHITECTURE.md
+Use this file when working on graph structure, metadata, relationship resolution, related-content ranking, or graph query access.
 
 ---
 
-## Purpose
+## SYSTEM GUARANTEES
 
-This document defines the content graph ontology, relationship model, and authority resolution system for MindWP.
-
-The content graph is a live, implemented system. It governs how content entities connect, how relationships are derived from metadata, and how the authority resolver surfaces related content across the site.
-
-This document is the engineering source of truth for the graph layer.
-
-The content hierarchy, content type roles, exposure rules, and per-page-type slot structure are defined in **CONTENT.md**.
-
-Positioning, copy voice, and AI execution lock are defined in **SYSTEM.md**.
+- The graph is metadata-driven.
+- Canonical identifiers come from shared registries, not per-page invention.
+- Relationships are derived from metadata overlap by default.
+- Related-content display is stricter than the graph itself.
+- CTA context uses page identity and primary system, not graph display guesses.
 
 ---
 
-## How the Content Graph Works
+## GRAPH MODEL
 
-Most websites treat pages as isolated units.
+MindWP treats routed content as a connected graph rather than isolated pages.
 
-MindWP treats content as a graph of connected entities.
+Each node declares canonical metadata through:
 
-Each content item declares metadata:
+- `systems[]`
+- `topics[]`
+- `industries[]` where applicable
 
-- industries
-- systems
-- topics
+That metadata feeds:
 
-These declarations allow the system to automatically generate relationships between content layers.
-
----
-
-## Core Content Entities
-
-| Node Type | Purpose |
-|-----------|---------|
-| Blog | Discovery layer and problem exploration |
-| Resource | System explanation and operational frameworks |
-| Industry Category | Taxonomy container for grouping industries |
-| Industry Detail | Vertical-specific system application |
-| Case Study | Implementation proof |
-| Feature | System component capability |
-| System (Service) | Infrastructure layer |
+1. relationship generation
+2. authority scoring
+3. related-content selection
+4. cluster and query APIs
 
 ---
 
-## Feature Components (System Sub-Layer)
+## CANONICAL NODE TYPES
 
-The runtime architecture includes feature pages that represent operational components of Tier 1 systems.
+| Node Type | Role |
+|---|---|
+| Service | primary system node and BOFU destination |
+| Feature | capability node subordinate to a system |
+| Blog | problem and discovery node |
+| Resource | framework and implementation node |
+| Case Study | proof node |
+| Industry Detail | vertical application node |
+| Industry Category | taxonomy container, not a derived-relationship node |
 
-Features are not standalone systems. They belong to a parent system and describe a specific automation capability or operational layer.
+### Feature Rule
 
-Example:
+Features are not standalone systems.
 
-slug: "missed-call-recovery-system"
-type: feature
-systems: ["ai-lead-handling"]
-topics: ["missed-calls"]
+- A feature must belong to one parent system.
+- A feature may connect to blogs, resources, or case studies.
+- A feature must not behave like an independent strategic system.
 
-Feature nodes always belong to a parent system node. A feature node must never exist without an associated system identifier.
+### Industry Rule
 
-Feature pages do not declare industries, because they represent system capabilities rather than vertical applications. Industry relationships resolve through the hierarchy:
-
-Industry → System → Feature
-
-Feature pages may connect to blog posts, resources, and case studies. However, features must always resolve through their parent system rather than acting as independent system nodes.
-
----
-
-## Ontology Entities
-
-The graph is powered by shared ontology entities.
-
-### Canonical Systems
-
-- smart-website-systems
-- local-seo-authority
-- ai-lead-handling
-- crm-automation
-- reputation-review
-- revenue-growth
-
-These are the only approved system identifiers. All metadata must use these values exactly.
-
-### Canonical Industries (Examples)
-
-- roofing
-- hvac
-- plumbing
-- electrical
-- landscaping
-- aesthetic-clinic
-- hair-salon
-- nail-salon
-- med-spa
-- lash-extensions
-
-These identifiers represent industry verticals, not page slugs.
-
-### Canonical Topics (Examples)
-
-- lead-management
-- missed-calls
-- lead-response-time
-- review-generation
-- booking-automation
-- conversion-optimization
-- crm-visibility
-- booking-systems
-- seo-visibility
-
-Topic identifiers must remain stable over time so multiple posts can build topical authority without creating duplicate clusters.
-
-If a new topic is required, it must be added deliberately to the canonical registry before being used in content metadata.
+- Industry detail nodes participate in graph relationships.
+- Industry category nodes support grouping and navigation.
+- Industry category nodes do not pollute derived relationship logic.
 
 ---
 
-## Industry Node Types
+## CANONICAL IDENTIFIERS
 
-The runtime graph uses two distinct node types for industries.
+Canonical identifiers come from the shared registry layer.
 
-**Industry Category** nodes act as taxonomy containers that group related industry detail pages.
+### Systems
 
-Examples: home-services, beauty-personal-care, automotive-services
+- `smart-website-systems`
+- `local-seo-authority`
+- `ai-lead-handling`
+- `crm-automation`
+- `reputation-review`
+- `revenue-growth`
 
-**Industry Detail** nodes represent the actual vertical entities that participate in content relationships through metadata.
+### Industries
 
-Examples: roofing-companies, hvac-companies, hair-salons
+Examples include:
 
-Industry detail nodes participate in graph relationships with blog posts, resources, case studies, and systems.
+- `roofing`
+- `hvac`
+- `plumbing`
+- `electrical`
+- `landscaping`
+- `aesthetic-clinic`
+- `hair-salon`
+- `nail-salon`
+- `med-spa`
+- `lash-extensions`
 
-Industry category nodes are primarily used for navigation and taxonomy grouping. They do not participate in derived relationships.
+### Topics
 
-This separation keeps taxonomy containers from polluting the derived relationship graph.
+Examples include:
+
+- `lead-management`
+- `missed-calls`
+- `lead-response-time`
+- `review-generation`
+- `booking-automation`
+- `conversion-optimization`
+- `crm-visibility`
+- `booking-systems`
+- `seo-visibility`
+
+New identifiers must be added to the canonical registry before content may use them.
 
 ---
 
-## Topic Governance Rule
+## METADATA CONTRACT
 
-To prevent topic duplication and SEO cannibalization, every blog post and resource must declare a primary topic from the shared topic ontology.
+### Locked Metadata Fields
 
-Each topic should represent a single problem space.
+Every graph-participating content node uses plural arrays:
 
-Rules:
+- `systems[]`
+- `topics[]`
+- `industries[]` when applicable
 
-- One primary topic per content item
-- Multiple posts may exist under a topic, but they must target different search intents
-- No two posts should target the exact same query intent
-
-This rule ensures that future content expands topical authority instead of competing with existing content.
-
-The Primary Topic Authority Rule and Unique Topic Cluster Rule are defined in **CONTENT.md**.
-
----
-
-## Content Node Metadata
-
-Every content item must declare metadata used by the graph.
-
-### Metadata Standard (Locked)
-
-All content must declare the following metadata fields in its data object.
-
-industries: string[]
-systems: string[]
-topics: string[]
-
-These fields must always use plural arrays, even if only one value exists.
-
-Every routed page must also expose:
+Every routed page also exposes:
 
 - `slug`
 - `intent`
-- one canonical primary system for conversion use
+- one canonical primary system for conversion context
 
-## METADATA ENFORCEMENT
+### Field Expectations By Node Type
 
-Each node MUST define:
+| Node Type | `industries[]` | `systems[]` | `topics[]` |
+|---|---|---|---|
+| Blog | optional | required | required |
+| Resource | optional | required | required |
+| Case Study | required | required | optional |
+| Feature | not used | required | optional |
+| Industry Detail | required | required | optional |
+| Industry Category | optional | required | optional |
+| Service | not used | required | optional |
 
-- slug (REQUIRED)
-- systems[] (primary required)
-- topics[]
-- industries[] (optional depending on type)
+### Primary System Rule
 
-The graph layer may store multiple systems in `systems[]`, but every node must still have exactly one primary system for CTA resolution via `SmartCTA`.
+- Each node must have exactly one primary system for CTA resolution.
+- Secondary systems may exist for relationship resolution.
+- CTA behavior uses only the primary system.
 
-## SOURCE FIELD
+### Source Rule
 
-- source is NOT stored manually
-- generated from normalized `{type}/{slug}`
-- used by CTA system (`SmartCTA` → `buildContactHref`) only
-- `industry-detail` and `industry-category` normalize to `industry` for source generation
-
-## PRIMARY SYSTEM RULE
-
-- exactly 1 primary system required
-- secondary systems allowed for graph relationship resolution
-- CTA uses ONLY primary system (passed to `SmartCTA` as `system` prop)
-
-Cross-reference: CTA rendering, URL contract, and SmartCTA spec are defined in **CONVERSION.md**.
+- `source` is generated, not stored manually.
+- It uses normalized `{type}/{slug}` format.
+- `industry-detail` and `industry-category` normalize to `industry` for source generation.
 
 ---
 
-## Metadata Governance Rule
+## RELATIONSHIP CONTRACT
 
-Metadata must describe the subject of the content, not its presentation category.
+### Source Of Truth
 
-Metadata fields power the internal content graph and automatic relationship resolution.
+Relationships are derived from metadata overlap by default.
 
-These fields must remain consistent:
+The graph uses overlap across:
 
-industries[]
-systems[]
-topics[]
+- `systems[]`
+- `topics[]`
+- `industries[]`
 
-If new identifiers are required, they must first be added to the canonical registry before being used.
+Manual presentation helpers are not graph authority.
 
----
+Disallowed graph owners include:
 
-### Graph Consistency Rule (LOCKED)
+- `relatedPosts`
+- `relatedResources`
+- `relatedServices`
+- `relatedIndustries`
+- `relatedUrls`
 
-All content nodes must declare valid metadata that matches the canonical identifier registries. Invalid or orphaned metadata breaks graph relationships.
+### Relationship Types
 
-- systems[] must use canonical system identifiers.
-- industries[] must use canonical industry identifiers.
-- topics[] must use canonical topic identifiers.
-- New identifiers must be added to the canonical registry before use.
-- Content without required metadata fields must fail validation.
+- `relatesTo`: peer or lateral relationships
+- `supports`: supporting or enabling relationships
+- `validates`: proof relationships from case-study-style content
 
-Cross-reference: Enforcement Rules section in CONTENT.md.
+### Minimum Expectations
 
----
-
-### Metadata Field Expectations by Node Type
-
-| Node Type        | industries | systems | topics |
-|------------------|-----------|--------|--------|
-| Blog             | optional  | **required** | **required** |
-| Resource         | optional  | **required** | **required** |
-| Case Study       | **required** | **required** | optional |
-| Feature          | — | **required** | optional |
-| Industry Detail  | **required** | **required** | optional |
-| Industry Category | optional | **required** | optional |
-| System (Service) | — | **required** | optional |
-
-Explanation:
-
-- Blog posts primarily represent topics, and must still define a primary system for conversion use.
-- Resources explain systems and operational frameworks, and therefore must declare both systems and topics.
-- Case studies demonstrate system implementation in a real vertical, so they must declare industries and systems.
-- Feature pages represent system components, so they declare systems and optionally topics but not industries.
-- Industry detail and industry category pages represent vertical entry points and must declare a primary system for CTA resolution.
-- System (Service) pages must declare their canonical system and may declare topics to enable derived relationship matching.
+- Blogs should naturally connect upward into resource or service-relevant content.
+- Resources should connect through systems and topics.
+- Case studies should connect to at least one industry and one system.
+- Features should connect through their parent system.
+- Industry detail nodes should connect through industry plus system metadata.
 
 ---
 
-### Industry Metadata Rule
+## GRAPH VS UI
 
-Industry detail pages may optionally declare the `industries` metadata field so that content nodes can resolve relationships to a specific vertical.
+### Graph Layer
 
-Example industry detail page:
+- richer and metadata-driven
+- stores more valid relationships than the UI exposes
+- supports ranking and clustering logic
 
-slug: "roofing-companies"
-industries: ["roofing"]
+### UI Layer
 
-Industry category pages do not need metadata because they function as taxonomy containers.
+- one related-content zone per eligible page
+- maximum of three displayed items
+- stricter per-page-type exposure rules
+- `SmartRelatedSection` is the related-content display owner
 
-Examples: home-services, beauty-personal-care, automotive-services
-
-These pages group industries but are not treated as content nodes in the graph.
-
----
-
-### System Identifier Rule
-
-The `systems` field must use the canonical Tier 1 system slugs so relationships can automatically resolve to the correct system pages.
-
-Approved system identifiers:
-
-- smart-website-systems
-- local-seo-authority
-- ai-lead-handling
-- crm-automation
-- reputation-review
-- revenue-growth
-
-Service pages may declare the `systems` and `topics` metadata fields to enable the derived relationship engine to compute metadata overlap with other content nodes.
+The graph decides what is valid. The UI decides what is shown.
 
 ---
 
-### Metadata Usage Rule
+## AUTHORITY RESOLUTION
 
-Metadata must describe the subject of the content, not the presentation category.
+The authority resolver turns graph-valid candidates into ranked related-content output.
 
-Example blog post:
+### Resolution Flow
 
-Title: "Why Roofing Companies Lose Leads"
-industries: ["roofing"]
-systems: ["ai-lead-handling"]
-topics: ["lead-management"]
+1. Nodes declare canonical metadata.
+2. Derived edges are generated from metadata overlap.
+3. Candidates are scored and ranked.
+4. The related-content surface consumes the highest valid results.
 
-Example resource:
+### Locked Scoring Formula
 
-Title: "Lead Management System for Service Businesses"
-industries: ["roofing", "hvac"]
-systems: ["ai-lead-handling"]
-topics: ["lead-management"]
-
-Example case study:
-
-Title: "Roofing Lead Recovery System"
-industries: ["roofing"]
-systems: ["ai-lead-handling", "revenue-growth"]
-topics: ["lead-recovery"]
-
-This metadata is used by the content graph to generate relationships automatically.
-
----
-
-### Canonical Identifier Registry (Locked)
-
-To prevent metadata drift and ensure consistent graph relationships, the project maintains a canonical identifier registry for industries, systems, and topics.
-
-All metadata values must use these identifiers exactly. New identifiers should not be invented during content creation.
-
-#### Canonical Industry Identifiers
-
-- roofing
-- hvac
-- plumbing
-- electrical
-- landscaping
-- aesthetic-clinic
-- hair-salon
-- nail-salon
-- med-spa
-- lash-extensions
-
-#### Canonical System Identifiers
-
-- smart-website-systems
-- local-seo-authority
-- ai-lead-handling
-- crm-automation
-- reputation-review
-- revenue-growth
-
-#### Canonical Topic Identifiers
-
-Topics represent problem spaces, not keywords or titles.
-
-Examples:
-
-- lead-management
-- missed-calls
-- lead-response-time
-- review-generation
-- booking-automation
-- conversion-optimization
-- crm-visibility
-
-If a new topic is required, it must be added to this registry before being used in content metadata.
-
----
-
-## Relationship Source of Truth
-
-Relationships between content entities are primarily derived from metadata, not manually stored on content objects.
-
-The graph resolver generates relationships based on shared metadata fields:
-
-- industries
-- systems
-- topics
-
-Derived relationships are the primary source of truth for the content graph.
-
-### Manual Relationships (Future — Not Yet Implemented)
-
-Manual relationships are defined in the type system as a controlled strategic override, but are not currently used by any content node.
-
-When implemented, the rules will be:
-
-- Manual edges are allowed only on service nodes.
-- They encode business-strategic connections that metadata overlap alone cannot express.
-- They must be reviewed when the service hierarchy changes.
-- They do not replace the derived system — they supplement it.
-
-Manual relationships are a governance layer, not the default system.
-
-The following fields are considered legacy presentation helpers and must not control the graph architecture:
-
-- relatedPosts
-- relatedResources
-- relatedServices
-- relatedIndustries
-- relatedUrls
-
-The canonical relationship logic comes from metadata-derived edges.
-
----
-
-## Relationship Rules
-
-Relationship rules operate on content nodes, not taxonomy containers.
-
-Content nodes include: Blog posts, Resources, Case studies, Feature pages, Service pages.
-
-Industry detail pages participate in relationships through the `industries` metadata field.
-
-Minimum connection expectations:
-
-- Blog must connect to: at least one resource (through shared metadata)
-- Resources must connect to: one system, one topic, optional industries
-- Industry detail pages may connect to: resources, case studies, systems
-- Case studies must connect to: one industry, one or more systems
-- Feature pages must connect to: one parent system
-
-These connections are resolved automatically through the derived relationship engine based on metadata overlap.
-
----
-
-## Relationship Types
-
-The graph uses three relationship types:
-
-- **relatesTo** — connects peer nodes at the same level (e.g. service to service).
-- **supports** — connects a higher-level node to content it enables (e.g. service to resource).
-- **validates** — connects proof content to the systems it demonstrates (e.g. case study to service).
-
----
-
-## Graph vs UI Separation
-
-The content graph and the display layer operate under different rules.
-
-### Graph Layer (Internal)
-
-- Flexible and metadata-driven
-- Bidirectional — nodes can discover each other through forward and reverse edges
-- Stores more relationships than are displayed
-- Operates on scoring and ranking logic
-
-### UI Layer (Public)
-
-- Strict and controlled
-- Maximum of 1 related zone per eligible page
-- Maximum of 3 related items per page
-- Only high-relevance items appear
-- Context-specific — different page types show different related content
-- Service pages show only related services
-- SmartRelatedSection governs related-content slots; editorial inline links do not alter graph resolution
-
-The graph provides the data. The UI decides what to show.
-
-This separation means the graph can be rich and flexible without the UI becoming cluttered.
-
----
-
-## Authority Resolution System
-
-The authority resolver converts graph relationships into the related content displayed on each page.
-
-### How It Works
-
-1. Content nodes declare metadata (systems, topics, industries).
-2. The derived relationship engine generates edges based on metadata overlap.
-3. The authority resolver scores and ranks all edges for a given node.
-4. SmartRelatedSection displays one mixed related zone per eligible page, capped at 3 total items.
-
-### Scoring Formula (Locked — Phase 10)
-
-```
-score = (systemOverlap × 3) + (topicOverlap × 2) + (industryOverlap × 1)
+```text
+score = (systemOverlap * 3) + (topicOverlap * 2) + (industryOverlap * 1)
 ```
 
-- Derived edges with strong metadata overlap score highest.
-- The resolver prioritises relationships by type: direct peer relationships first, then supporting relationships, then validation relationships.
+Rules:
+
 - Only candidates with `score > 0` may render.
-- If fewer than 3 valid candidates exist, fallback order is: same domain -> services -> highest-scoring valid content.
-- SmartRelatedSection is the sole consumer of scored results (Phase 10 Decision 2).
+- Peer relationships rank before supporting relationships, which rank before validation relationships.
+- If fewer than three valid results exist, fallback order is same domain -> services -> highest-scoring remaining valid content.
 
 ### Static Authority Map
 
-The resolver output is pre-computed into a static authority map at build time. This map powers the related content sections across the site.
-
-The authority map must be regenerated when content is added, removed, or when relationship rules change.
-
-The ranking factor definitions (metadata overlap, relationship type priority, derived vs manual behaviour, resolution principle) are locked in **CONTENT.md** under **"AUTHORITY RESOLUTION SYSTEM (LOCKED)"**.
+The ranked resolver output is precomputed into the authority-map/report layer and must be regenerated when content or relationship rules change.
 
 ---
 
-## Content Relationship & Exposure Rules — Reference
+## QUERY ACCESS RULE
 
-The master definition for all per-page-type content exposure rules is maintained in **CONTENT.md** under **"CONTENT RELATIONSHIP & EXPOSURE RULES (LOCKED)"**.
+Downstream surfaces should use the graph query API rather than reading raw graph or authority-map internals directly.
 
-That section defines:
-- What related content appears on each page type (Industry, Resource, Service, Case Study, Blog, Feature)
-- Global display cap (max 3 per section)
-- Dual-layer architecture rule
-- Relationship exposure principle
-- Anti-drift rules
+Primary query shapes include:
 
-The **RELATED CONTENT SLOT SYSTEM** defines the exact UI slot structure per page type.
+- related content by page identity
+- topic cluster lookup
+- system cluster lookup
+- industry content lookup
 
-The graph layer implements these rules through the authority resolver and static authority map. The UI layer enforces the per-page-type slot constraints. Do not duplicate those rules here.
+Query access stays deterministic. No runtime AI or ad hoc scoring layer is allowed.
 
 ---
 
-## Graph Query API (LOCKED)
+## CROSS-REFERENCE MAP
 
-The graph is accessed exclusively through the Query API (`src/lib/graph/query.ts`). No UI component or downstream system accesses the raw graph or authority map directly.
-
-Exported functions:
-
-- `getRelatedContent(slug, type)` — returns pre-computed related content slots (services, resources, blog, caseStudies, industries) for a page
-- `getTopicCluster(topic)` — returns all content nodes sharing a topic identifier
-- `getSystemCluster(system)` — returns all content nodes sharing a system identifier
-- `getContentByIndustry(industry)` — returns all content nodes in an industry
-
-All functions return deterministic, pre-computed data. No runtime scoring or AI logic.
-
----
-
-END OF DOCUMENT.
+- Page roles and exposure rules: `CONTENT.md`
+- Identity and system boundaries: `SYSTEM.md`
+- CTA and contact context: `CONVERSION.md`
+- Control plane and validation: `TOOLS.md`

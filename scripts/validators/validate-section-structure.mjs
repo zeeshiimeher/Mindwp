@@ -4,6 +4,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
 import { RESOURCE_REGISTRY } from '@/domains/resources/registry';
 import { resolveContentRules } from '@/lib/config/contentRules';
@@ -13,6 +15,11 @@ import { loadPagesByType } from '../lib/content-validation-helpers.mjs';
 const args = new Set(process.argv.slice(2));
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const reportPath = path.join(root, 'reports', 'section-structure-report.json');
+const logger = createLogger({
+  label: 'validate-section-structure',
+  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  rootDir: root,
+});
 
 const violations = [];
 
@@ -288,26 +295,23 @@ async function main() {
     violations,
   };
 
-  fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-  fs.writeFileSync(reportPath, JSON.stringify(report, null, 2) + '\n');
+  logger.writeReport(reportPath, report);
 
   if (args.has('--report-json')) {
-    console.log(JSON.stringify(report, null, 2));
+    logger.printSummary('report-json flag active; full payload preserved in file output');
   }
 
   if (violations.length > 0) {
-    console.error(`✗ Section structure validation failed with ${violations.length} issue(s).`);
-    for (const violation of violations.slice(0, 20)) {
-      console.error(`- [${violation.pageType}] ${violation.slug}: ${violation.detail}`);
-    }
-    if (violations.length > 20) {
-      console.error(`- ... ${violations.length - 20} additional issue(s) omitted`);
-    }
+    logger.printErrors(
+      violations.map(violation => `[${violation.pageType}] ${violation.slug}: ${violation.detail}`),
+      'violations',
+      20
+    );
     process.exit(1);
   }
 
-  console.log(
-    `✓ Section structure validation passed (${servicePages.length + featurePages.length + Object.keys(RESOURCE_REGISTRY).length + Object.keys(CASE_STUDY_REGISTRY).length} pages checked)`
+  logger.printSummary(
+    `passed (${servicePages.length + featurePages.length + Object.keys(RESOURCE_REGISTRY).length + Object.keys(CASE_STUDY_REGISTRY).length} pages checked)`
   );
 }
 

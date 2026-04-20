@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-/* eslint-disable no-console */
 
 /**
  * Unified Validation Runner
@@ -13,9 +12,10 @@
  */
 
 import { execFile, execFileSync } from 'node:child_process';
-import fs from 'node:fs';
 import path from 'node:path';
 
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 import { readReportJson } from '../lib/report-json.mjs';
 
 const args = new Set(process.argv.slice(2));
@@ -23,6 +23,9 @@ const reportJson = args.has('--report-json');
 
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'validation-results.json');
+const validationReportPath = path.join(root, 'reports', 'validation-report.json');
+const loggingMode = resolveLoggingMode(process.argv.slice(2), process.env);
+const logger = createLogger({ label: 'validate-all', mode: loggingMode, rootDir: root });
 
 /**
  * @typedef {{ name: string; command: string; args: string[]; blocking: boolean }} Validator
@@ -277,15 +280,11 @@ function buildReport(results) {
 }
 
 function logValidatorResult(result) {
-  if (result.status === 'pass') {
-    console.log(`\u2713 (${result.duration}ms)`);
-  } else {
-    console.log(`\u2717 FAILED (${result.duration}ms)`);
-  }
+  logger.printNodeLine(`${result.name} -> ${result.status === 'pass' ? 'PASS' : 'FAIL'} (${result.duration}ms)`);
 }
 
 async function main() {
-  console.log('[validate-all] Running all validators...\n');
+  logger.printSection('running validators');
 
   /** @type {ValidatorResult[]} */
   const blockingResults = [];
@@ -297,7 +296,6 @@ async function main() {
       continue;
     }
 
-    process.stdout.write(`  ${validator.name} ... `);
     const result = runValidator(validator);
     blockingResults.push(result);
     logValidatorResult(result);
@@ -307,16 +305,11 @@ async function main() {
   let advisoryResults = [];
 
   if (advisoryValidators.length > 0) {
-    console.log('\n[validate-all] Running advisory validators in parallel...');
-
-    for (const validator of advisoryValidators) {
-      console.log(`  ${validator.name} [advisory] ... running`);
-    }
+    logger.printSection('running advisory validators');
 
     advisoryResults = await Promise.all(advisoryValidators.map(runValidatorAsync));
 
     for (const result of advisoryResults) {
-      process.stdout.write(`  ${result.name} [advisory] ... `);
       logValidatorResult(result);
     }
   }
@@ -326,43 +319,44 @@ async function main() {
 
   const report = buildReport(results);
 
-  console.log('');
-  console.log('='.repeat(60));
-  console.log(
-    `[validate-all] Results: ${report.total.passed} passed, ${report.total.blockingFailed} blocking failed, ${report.total.advisoryFailed} advisory failed (${report.total.total} total)`
-  );
-  console.log('='.repeat(60));
+  logger.printTotals({
+    passed: report.total.passed,
+    blockingFailed: report.total.blockingFailed,
+    advisoryFailed: report.total.advisoryFailed,
+    total: report.total.total,
+  });
 
   if (report.errors.length > 0) {
-    console.log('\nFailed validators:\n');
-    for (const failure of report.errors) {
-      console.log(`  \u2717 ${failure.validator}`);
-      console.log(`    type: ${failure.blocking ? 'blocking' : 'advisory'}`);
-      if (failure.output) {
-        const lines = failure.output.split('\n').slice(0, 20);
-        for (const line of lines) {
-          console.log(`    ${line}`);
-        }
-        if (failure.output.split('\n').length > 20) {
-          console.log('    ... (truncated)');
-        }
-      }
-      console.log('');
-    }
+    logger.printErrors(
+      report.errors.map(failure => {
+        const excerpt = failure.output
+          ? failure.output
+              .split('\n')
+              .map(line => line.trim())
+              .filter(Boolean)
+              .slice(0, logger.isVerbose() ? 8 : 1)
+              .join(' | ')
+          : 'no output captured';
+        return `${failure.validator} (${failure.blocking ? 'blocking' : 'advisory'}): ${excerpt}`;
+      }),
+      'failures',
+      logger.isVerbose() ? 12 : 5
+    );
   }
 
-  fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-  fs.writeFileSync(reportPath, JSON.stringify(report, null, 2) + '\n');
-  console.log(`[validate-all] Wrote ${path.relative(root, reportPath)}`);
+  const writtenReportPath = logger.writeReport(reportPath, report);
+  logger.writeReport(validationReportPath, report);
+  logger.printSummary(`report -> ${writtenReportPath}`);
+  logger.printSummary(`report -> ${logger.relativePath(validationReportPath)}`);
 
-  if (reportJson) {
-    console.log('\n' + JSON.stringify(report, null, 2));
+  if (reportJson && logger.isVerbose()) {
+    logger.printSummary('report-json flag active; full payload preserved in file output');
   }
 
   if (report.total.blockingFailed > 0) {
     process.exitCode = 1;
   } else {
-    console.log('\n[validate-all] All blocking validators passed.');
+    logger.printSummary('all blocking validators passed');
   }
 }
 
