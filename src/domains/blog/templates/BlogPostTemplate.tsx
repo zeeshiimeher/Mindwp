@@ -42,6 +42,7 @@ import type { BlogCategory, BlogPostSection } from '@/domains/blog/types';
 import { BlogFooterCTA } from '@/domains/blog/ui/BlogFooterCTA';
 import { BlogPostShareIsland } from '@/domains/blog/ui/BlogPostShareIsland';
 import { createInlineLinkTracker, extractInternalLinks } from '@/domains/seo/inlineLinking';
+import { env } from '@/env';
 import { enforceInlineLinkUsage } from '@/lib/page/inlineLinkEnforcement';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
 
@@ -240,7 +241,7 @@ export function BlogPostTemplate({
   const currentPath = `/blog/${slug}`;
   const inlineLinkTracker = createInlineLinkTracker({
     pagePath: currentPath,
-    debug: process.env.NEXT_PUBLIC_DEBUG_INLINE_LINKS === '1',
+    debug: env.NEXT_PUBLIC_DEBUG_INLINE_LINKS === '1',
   });
   let remainingInlineLinks = 5;
 

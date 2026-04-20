@@ -4,6 +4,11 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { chromium } from '@playwright/test';
 
+import {
+  systemEnv,
+  withSystemEnvOverrides,
+} from '../../config/systemEnv.mjs';
+
 import { ensureAuditServer } from '../dev/audit-server.mjs';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized.ts';
 import { getContentGraph } from '../../src/lib/content-graph/registry.ts';
@@ -17,7 +22,7 @@ const HISTORY_DIR = path.join(VISUAL_REPORTS_DIR, 'history');
 const ENGINE_PATH = path.join(ROOT, 'scripts/analyzers/visual-audit-runtime.js');
 
 const BASE_URL = 'http://127.0.0.1:3009';
-const DEFAULT_BASE_URL = process.env.VISUAL_AUDIT_BASE_URL || BASE_URL;
+const DEFAULT_BASE_URL = systemEnv.VISUAL_AUDIT_BASE_URL || BASE_URL;
 const VIEWPORTS = [
   { name: 'desktop', width: 1440, height: 2200 },
   { name: 'mobile', width: 390, height: 1600 },
@@ -115,14 +120,9 @@ function getOverviewRoutes() {
 }
 
 export async function resolveAuditRoutes() {
-  const previousNodeEnv = process.env.NODE_ENV;
-
-  try {
-    process.env.NODE_ENV = 'production';
+  await withSystemEnvOverrides({ NODE_ENV: 'production' }, async () => {
     await ensureGraphInitialized();
-  } finally {
-    process.env.NODE_ENV = previousNodeEnv;
-  }
+  });
 
   const graph = Object.values(getContentGraph());
 

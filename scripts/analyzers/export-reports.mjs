@@ -10,6 +10,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { buildSystemProcessEnv, systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { readJsonFile } from '../lib/report-json.mjs';
@@ -19,10 +20,10 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
 const REPORTS_DIR = path.join(ROOT, 'reports');
 const EXPORT_SOURCE_COMMAND = 'node --import tsx/esm scripts/analyzers/export-reports.mjs';
-const SYSTEM_MODE = process.env.SYSTEM_MODE ?? 'development';
-const LOGGING_MODE = resolveLoggingMode(process.argv.slice(2), process.env);
+const SYSTEM_MODE = systemEnv.SYSTEM_MODE;
+const LOGGING_MODE = resolveLoggingMode(process.argv.slice(2), systemEnv);
 const logger = createLogger({ label: 'export-reports', mode: LOGGING_MODE, rootDir: ROOT });
-const OPTIONAL_AUDITS_ENABLED = process.env.SYSTEM_INCLUDE_OPTIONAL_AUDITS === '1';
+const OPTIONAL_AUDITS_ENABLED = systemEnv.SYSTEM_INCLUDE_OPTIONAL_AUDITS === '1';
 
 const typeArg = process.argv.find(arg => arg.startsWith('--type='));
 const requestedType = typeArg ? typeArg.split('=')[1] : 'all';
@@ -85,6 +86,30 @@ const analyzerSteps = [
     reason: 'not required',
     syntheticReportFile: 'visual-audit-report.json',
   },
+  {
+    name: 'split-screenshots',
+    optional: true,
+    reason: 'manual-only helper',
+    syntheticReportFile: 'split-screenshots-report.json',
+  },
+  {
+    name: 'test-editing-stability',
+    optional: true,
+    reason: 'manual-only helper',
+    syntheticReportFile: 'test-editing-stability-report.json',
+  },
+  {
+    name: 'visual-audit-engine',
+    optional: true,
+    reason: 'runtime helper used by visual audit',
+    syntheticReportFile: 'visual-audit-engine-report.json',
+  },
+  {
+    name: 'visual-audit-runtime',
+    optional: true,
+    reason: 'runtime helper used by visual audit',
+    syntheticReportFile: 'visual-audit-runtime-report.json',
+  },
 ];
 
 function assertExportLock() {
@@ -92,7 +117,7 @@ function assertExportLock() {
     return;
   }
 
-  if (process.env.SYSTEM_ALLOW_REPORT_EXPORT === '1') {
+  if (systemEnv.SYSTEM_ALLOW_REPORT_EXPORT === '1') {
     return;
   }
 
@@ -124,10 +149,9 @@ function runManagedScript(relativePath) {
   const result = spawnSync(process.execPath, ['--import', 'tsx/esm', scriptPath], {
     cwd: ROOT,
     encoding: 'utf8',
-    env: {
-      ...process.env,
+    env: buildSystemProcessEnv({
       SYSTEM_LOGGING_MODE: LOGGING_MODE,
-    },
+    }),
   });
 
   if (result.status !== 0) {

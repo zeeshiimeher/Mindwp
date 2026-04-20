@@ -4,6 +4,7 @@
  */
 
 import { getInitMetrics } from '@/domains/init/metrics';
+import { env } from '@/env';
 import { computeAuthorityScores } from '@/lib/authority/authorityScore';
 import {
   getContentGraph,
@@ -12,7 +13,7 @@ import {
 } from '@/lib/content-graph/registry';
 import type { ContentNodeType } from '@/lib/content-graph/types';
 
-const isDev = process.env.NODE_ENV === 'development';
+const isDev = env.NODE_ENV === 'development';
 
 function guardDev(label: string): boolean {
   if (!isDev) {

@@ -8,7 +8,7 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-20T20:42:36.414Z",
+    "generatedAt": "2026-04-20T21:45:52.317Z",
     "stats": {
       "totalNodes": 227,
       "blogs": 88,
@@ -78780,6 +78780,6 @@
     "resourceIndustryGaps": [],
     "industryCaseStudyGaps": []
   },
-  "generatedAt": "2026-04-20T20:42:36.414Z",
+  "generatedAt": "2026-04-20T21:45:52.317Z",
   "sourceCommand": "node --import tsx/esm scripts/analyzers/generate-content-gaps.ts"
 }

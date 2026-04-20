@@ -1,4 +1,5 @@
 import { CTA_RULES_BY_PAGE_TYPE } from '@/config/section-intelligence';
+import { env } from '@/env';
 import {
   type CTAIntent,
   type CTAPosition,
@@ -56,7 +57,7 @@ export function createCTARegistry(pageIdentity: PageIdentity): CTARegistry {
 }
 
 function isDevelopment() {
-  return process.env.NODE_ENV !== 'production';
+  return env.NODE_ENV !== 'production';
 }
 
 function formatCTAError(message: string, registration: CTARegistration) {

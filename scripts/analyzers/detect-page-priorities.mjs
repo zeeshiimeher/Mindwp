@@ -16,6 +16,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized.ts';
@@ -28,7 +29,7 @@ const reportPath = path.join(root, 'reports', 'page-priorities.json');
 const sourceCommand = 'node --import tsx/esm scripts/analyzers/detect-page-priorities.mjs';
 const logger = createLogger({
   label: 'page-priorities',
-  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  mode: resolveLoggingMode(process.argv.slice(2), systemEnv),
   rootDir: root,
 });
 

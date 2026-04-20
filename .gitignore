@@ -6,6 +6,9 @@ build/
 .next-audit/
 out/
 reports/
+tmp/
+pids/
+logs/
 
 # Tooling caches
 .vite/

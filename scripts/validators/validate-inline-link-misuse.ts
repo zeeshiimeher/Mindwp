@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
+import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { normalizeRawReport } from '../lib/report-schema.mjs';
@@ -11,7 +12,7 @@ const reportPath = path.join(root, 'reports', 'inline-link-misuse-scan.json');
 const sourceCommand = 'npx tsx scripts/validators/validate-inline-link-misuse.ts';
 const logger = createLogger({
   label: 'validate-inline-link-misuse',
-  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  mode: resolveLoggingMode(process.argv.slice(2), systemEnv),
   rootDir: root,
 });
 const allowedFiles = new Set([

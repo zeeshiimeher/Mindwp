@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
+import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { normalizeRawReport } from '../lib/report-schema.mjs';
@@ -11,7 +12,7 @@ const reportPath = path.join(root, 'reports', 'related-duplication-scan.json');
 const sourceCommand = 'npx tsx scripts/validators/validate-related-duplication.ts';
 const logger = createLogger({
   label: 'validate-related-duplication',
-  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  mode: resolveLoggingMode(process.argv.slice(2), systemEnv),
   rootDir: root,
 });
 

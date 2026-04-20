@@ -1,6 +1,6 @@
 # Client Report
 
-Generated at: 2026-04-20T20:42:37.797Z
+Generated at: 2026-04-20T21:45:53.892Z
 
 ## Summary
 
@@ -28,6 +28,7 @@ Generated at: 2026-04-20T20:42:37.797Z
 - cta-report.json
 - cta-resolver-integrity-report.json
 - cta-violation-scan.json
+- dashboard
 - design-system-report.json
 - docs-report.json
 - domain-structure-report.json
@@ -46,11 +47,13 @@ Generated at: 2026-04-20T20:42:37.797Z
 - section-shell-integrity-report.json
 - section-structure-report.json
 - session-log.json
+- split-screenshots-report.json
 - system-drift.json
 - system-report.json
 - system-snapshots
 - system-state.json
 - template-payload-report.json
+- test-editing-stability-report.json
 - token-report.json
 - topic-authority-scores.json
 - topic-authority-scores.md
@@ -60,5 +63,7 @@ Generated at: 2026-04-20T20:42:37.797Z
 - validation-report.json
 - validation-results.json
 - visual-audit
+- visual-audit-engine-report.json
 - visual-audit-report.json
+- visual-audit-runtime-report.json
 - vocabulary-report.json

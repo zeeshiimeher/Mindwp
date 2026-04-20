@@ -16,6 +16,8 @@
 import fs from 'fs';
 import path from 'path';
 
+import { systemEnv, withSystemEnvOverrides } from '../../config/systemEnv.mjs';
+
 // ─── Helpers ────────────────────────────────────────────────────────
 
 function loadEnv() {
@@ -29,6 +31,7 @@ function loadEnv() {
   }
 
   const content = fs.readFileSync(envPath, 'utf-8');
+  const overrides: Record<string, string> = {};
   for (const line of content.split('\n')) {
     const trimmed = line.trim();
     if (!trimmed || trimmed.startsWith('#')) continue;
@@ -36,10 +39,12 @@ function loadEnv() {
     if (eqIdx < 0) continue;
     const key = trimmed.slice(0, eqIdx).trim();
     const value = trimmed.slice(eqIdx + 1).trim();
-    if (!process.env[key]) {
-      process.env[key] = value;
+    if (!(key in overrides)) {
+      overrides[key] = value;
     }
   }
+
+  return overrides;
 }
 
 // ─── Argument Parsing ───────────────────────────────────────────────
@@ -714,100 +719,99 @@ async function runDiagramTest(slug: string) {
 // ─── Main ───────────────────────────────────────────────────────────
 
 async function main() {
-  loadEnv();
+  const envOverrides = loadEnv();
 
-  // Validate API keys
-  const keys = {
-    unsplash: process.env.UNSPLASH_ACCESS_KEY,
-    pexels: process.env.PEXELS_API_KEY,
-    pixabay: process.env.PIXABAY_API_KEY,
-  };
+  await withSystemEnvOverrides(envOverrides, async () => {
+    const keys = {
+      unsplash: systemEnv.UNSPLASH_ACCESS_KEY,
+      pexels: systemEnv.PEXELS_API_KEY,
+      pixabay: systemEnv.PIXABAY_API_KEY,
+    };
 
-  const missingKeys = Object.entries(keys)
-    .filter(([, v]) => !v)
-    .map(([k]) => k);
+    const missingKeys = Object.entries(keys)
+      .filter(([, value]) => !value)
+      .map(([key]) => key);
 
-  if (missingKeys.length > 0) {
-    console.warn(`⚠️  Missing API keys: ${missingKeys.join(', ')}`);
-    console.warn('   Some providers will be skipped.');
-    console.warn('');
-  }
-
-  const args = parseArgs();
-
-  // Route to correct command
-  if (args.queue) {
-    switch (args.queue) {
-      case 'status':
-        await showQueueStatus();
-        break;
-      case 'start':
-      case 'resume':
-        await resumeQueue();
-        break;
-      default:
-        console.error(`Unknown queue command: ${args.queue}`);
+    if (missingKeys.length > 0) {
+      console.warn(`⚠️  Missing API keys: ${missingKeys.join(', ')}`);
+      console.warn('   Some providers will be skipped.');
+      console.warn('');
     }
-    return;
-  }
 
-  if (args.mode === 'test' || (!args.mode && !args.domain && args.slug)) {
-    const domain = (args.domain ?? 'blog') as ContentDomain;
-    const slug = args.slug ?? DEFAULT_TEST_SLUGS[domain];
-    await runTestMode(slug, domain, args.regenerate ?? false, args.fresh ?? false);
-    return;
-  }
+    const args = parseArgs();
 
-  if (args.diagram) {
-    const slug = args.slug ?? DEFAULT_TEST_SLUGS.resources;
-    await runDiagramTest(slug);
-    return;
-  }
-
-  if (args.domain) {
-    const validDomains: ContentDomain[] = ['blog', 'resources', 'industries', 'case-studies'];
-    if (!validDomains.includes(args.domain as ContentDomain)) {
-      console.error(`Invalid domain: ${args.domain}`);
-      console.error(`Valid domains: ${validDomains.join(', ')}`);
-      process.exit(1);
+    if (args.queue) {
+      switch (args.queue) {
+        case 'status':
+          await showQueueStatus();
+          break;
+        case 'start':
+        case 'resume':
+          await resumeQueue();
+          break;
+        default:
+          console.error(`Unknown queue command: ${args.queue}`);
+      }
+      return;
     }
-    await runBulkMode(args.domain as ContentDomain);
-    return;
-  }
 
-  if (args.slug) {
-    await runSinglePost(args.slug);
-    return;
-  }
+    if (args.mode === 'test' || (!args.mode && !args.domain && args.slug)) {
+      const domain = (args.domain ?? 'blog') as ContentDomain;
+      const slug = args.slug ?? DEFAULT_TEST_SLUGS[domain];
+      await runTestMode(slug, domain, args.regenerate ?? false, args.fresh ?? false);
+      return;
+    }
 
-  // Default: show help
-  console.log('');
-  console.log('MindWP Image System');
-  console.log('═══════════════════');
-  console.log('');
-  console.log('Quick Test Commands (hardcoded default slugs):');
-  console.log('  npx tsx scripts/image-system/image-generate.ts --mode test                          # blog default');
-  console.log('  npx tsx scripts/image-system/image-generate.ts --mode test --domain case-studies    # case-study default');
-  console.log('  npx tsx scripts/image-system/image-generate.ts --mode test --domain resources       # resource default');
-  console.log('  npx tsx scripts/image-system/image-generate.ts --diagram                            # resource diagram');
-  console.log('');
-  console.log('Test with custom slug:');
-  console.log('  npx tsx scripts/image-system/image-generate.ts --mode test --slug <slug>');
-  console.log('  npx tsx scripts/image-system/image-generate.ts --mode test --domain case-studies --slug <slug>');
-  console.log('');
-  console.log('Regenerate / Fresh:');
-  console.log('  npx tsx scripts/image-system/image-generate.ts --mode test --regenerate             # re-overlay same image');
-  console.log('  npx tsx scripts/image-system/image-generate.ts --mode test --fresh                  # find new image');
-  console.log('');
-  console.log('Inspect generated images:');
-  console.log('  npx tsx scripts/image-system/image-inspect.ts');
-  console.log('');
-  console.log('Bulk mode:');
-  console.log('  npx tsx scripts/image-system/image-generate.ts --domain blog');
-  console.log('  npx tsx scripts/image-system/image-generate.ts --domain resources');
-  console.log('  npx tsx scripts/image-system/image-generate.ts --domain case-studies');
-  console.log('  npx tsx scripts/image-system/image-generate.ts --domain industries');
-  console.log('');
+    if (args.diagram) {
+      const slug = args.slug ?? DEFAULT_TEST_SLUGS.resources;
+      await runDiagramTest(slug);
+      return;
+    }
+
+    if (args.domain) {
+      const validDomains: ContentDomain[] = ['blog', 'resources', 'industries', 'case-studies'];
+      if (!validDomains.includes(args.domain as ContentDomain)) {
+        console.error(`Invalid domain: ${args.domain}`);
+        console.error(`Valid domains: ${validDomains.join(', ')}`);
+        process.exit(1);
+      }
+      await runBulkMode(args.domain as ContentDomain);
+      return;
+    }
+
+    if (args.slug) {
+      await runSinglePost(args.slug);
+      return;
+    }
+
+    console.log('');
+    console.log('MindWP Image System');
+    console.log('═══════════════════');
+    console.log('');
+    console.log('Quick Test Commands (hardcoded default slugs):');
+    console.log('  npx tsx scripts/image-system/image-generate.ts --mode test                          # blog default');
+    console.log('  npx tsx scripts/image-system/image-generate.ts --mode test --domain case-studies    # case-study default');
+    console.log('  npx tsx scripts/image-system/image-generate.ts --mode test --domain resources       # resource default');
+    console.log('  npx tsx scripts/image-system/image-generate.ts --diagram                            # resource diagram');
+    console.log('');
+    console.log('Test with custom slug:');
+    console.log('  npx tsx scripts/image-system/image-generate.ts --mode test --slug <slug>');
+    console.log('  npx tsx scripts/image-system/image-generate.ts --mode test --domain case-studies --slug <slug>');
+    console.log('');
+    console.log('Regenerate / Fresh:');
+    console.log('  npx tsx scripts/image-system/image-generate.ts --mode test --regenerate             # re-overlay same image');
+    console.log('  npx tsx scripts/image-system/image-generate.ts --mode test --fresh                  # find new image');
+    console.log('');
+    console.log('Inspect generated images:');
+    console.log('  npx tsx scripts/image-system/image-inspect.ts');
+    console.log('');
+    console.log('Bulk mode:');
+    console.log('  npx tsx scripts/image-system/image-generate.ts --domain blog');
+    console.log('  npx tsx scripts/image-system/image-generate.ts --domain resources');
+    console.log('  npx tsx scripts/image-system/image-generate.ts --domain case-studies');
+    console.log('  npx tsx scripts/image-system/image-generate.ts --domain industries');
+    console.log('');
+  });
 }
 
 main().catch((err) => {

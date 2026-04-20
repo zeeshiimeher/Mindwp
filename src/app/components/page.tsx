@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 
+import { env } from '@/env';
 import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 
 export const dynamic = 'force-static';
@@ -10,9 +11,9 @@ export async function generateMetadata() {
 }
 
 export default async function Page() {
-  const isExplicitlyEnabled = process.env.COMPONENT_LIBRARY_ENABLED === 'true';
+  const isExplicitlyEnabled = env.COMPONENT_LIBRARY_ENABLED === 'true';
 
-  if (process.env.NODE_ENV !== 'development' && !isExplicitlyEnabled) {
+  if (env.NODE_ENV !== 'development' && !isExplicitlyEnabled) {
     notFound();
   }
 

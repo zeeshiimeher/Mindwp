@@ -1,6 +1,8 @@
 import { defineConfig } from '@playwright/test';
 
-const playwrightPort = Number(process.env.PLAYWRIGHT_PORT ?? 3001);
+import { buildProcessEnv, env } from './src/env';
+
+const playwrightPort = Number(env.PLAYWRIGHT_PORT);
 const playwrightBaseUrl = `http://localhost:${playwrightPort}`;
 
 export default defineConfig({
@@ -9,7 +11,7 @@ export default defineConfig({
   expect: {
     timeout: 10_000,
   },
-  retries: process.env.CI ? 2 : 0,
+  retries: env.CI ? 2 : 0,
   reporter: 'list',
   use: {
     baseURL: playwrightBaseUrl,
@@ -27,11 +29,9 @@ export default defineConfig({
   webServer: {
     command:
       `node scripts/runners/run-next.mjs build && node scripts/runners/run-next.mjs --filter start -- -p ${playwrightPort}`,
-    env: {
-      ...process.env,
-      NEXT_PUBLIC_TURNSTILE_SITE_KEY:
-        process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? 'test-turnstile-site-key',
-    },
+    env: buildProcessEnv({
+      NEXT_PUBLIC_TURNSTILE_SITE_KEY: env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || 'test-turnstile-site-key',
+    }),
     port: playwrightPort,
     reuseExistingServer: false,
     timeout: 120_000,

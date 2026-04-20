@@ -19,7 +19,7 @@
       {
         "name": "check-generated",
         "status": "pass",
-        "duration": 3989,
+        "duration": 3909,
         "blocking": true,
         "reportFile": "check-generated-report.json",
         "reportMissing": false
@@ -27,7 +27,7 @@
       {
         "name": "typecheck",
         "status": "pass",
-        "duration": 1726,
+        "duration": 1528,
         "blocking": true,
         "reportFile": "typecheck-report.json",
         "reportMissing": false
@@ -35,7 +35,7 @@
       {
         "name": "lint",
         "status": "pass",
-        "duration": 5766,
+        "duration": 5670,
         "blocking": false,
         "reportFile": "lint-report.json",
         "reportMissing": false
@@ -43,7 +43,7 @@
       {
         "name": "validate-content-contract",
         "status": "pass",
-        "duration": 2097,
+        "duration": 2112,
         "blocking": true,
         "reportFile": "content-contract-report.json",
         "reportMissing": false
@@ -51,7 +51,7 @@
       {
         "name": "validate-content-quality",
         "status": "pass",
-        "duration": 886,
+        "duration": 890,
         "blocking": true,
         "reportFile": "content-quality-report.json",
         "reportMissing": false
@@ -59,7 +59,7 @@
       {
         "name": "validate-domain-structure",
         "status": "pass",
-        "duration": 2207,
+        "duration": 2186,
         "blocking": true,
         "reportFile": "domain-structure-report.json",
         "reportMissing": false
@@ -67,7 +67,7 @@
       {
         "name": "validate-cta-label-contract",
         "status": "pass",
-        "duration": 806,
+        "duration": 781,
         "blocking": true,
         "reportFile": "cta-label-contract-report.json",
         "reportMissing": false
@@ -75,7 +75,7 @@
       {
         "name": "validate-cta-resolver-integrity",
         "status": "pass",
-        "duration": 116,
+        "duration": 111,
         "blocking": true,
         "reportFile": "cta-resolver-integrity-report.json",
         "reportMissing": false
@@ -83,7 +83,7 @@
       {
         "name": "validate-conversion-contract",
         "status": "pass",
-        "duration": 740,
+        "duration": 742,
         "blocking": true,
         "reportFile": "conversion-contract-report.json",
         "reportMissing": false
@@ -91,7 +91,7 @@
       {
         "name": "validate-template-payload-sufficiency",
         "status": "pass",
-        "duration": 972,
+        "duration": 959,
         "blocking": true,
         "reportFile": "template-payload-report.json",
         "reportMissing": false
@@ -99,7 +99,7 @@
       {
         "name": "validate-section-structure",
         "status": "pass",
-        "duration": 814,
+        "duration": 873,
         "blocking": true,
         "reportFile": "section-structure-report.json",
         "reportMissing": false
@@ -107,7 +107,7 @@
       {
         "name": "validate-section-shell-integrity",
         "status": "pass",
-        "duration": 106,
+        "duration": 114,
         "blocking": true,
         "reportFile": "section-shell-integrity-report.json",
         "reportMissing": false
@@ -115,7 +115,7 @@
       {
         "name": "validate-design-system",
         "status": "pass",
-        "duration": 132,
+        "duration": 131,
         "blocking": true,
         "reportFile": "design-system-report.json",
         "reportMissing": false
@@ -123,7 +123,7 @@
       {
         "name": "validate-ui-purity",
         "status": "pass",
-        "duration": 87,
+        "duration": 85,
         "blocking": true,
         "reportFile": "ui-purity-report.json",
         "reportMissing": false
@@ -131,7 +131,7 @@
       {
         "name": "validate-graph",
         "status": "pass",
-        "duration": 835,
+        "duration": 801,
         "blocking": true,
         "reportFile": "graph-report.json",
         "reportMissing": false
@@ -139,7 +139,7 @@
       {
         "name": "validate-internal-links",
         "status": "pass",
-        "duration": 991,
+        "duration": 1043,
         "blocking": true,
         "reportFile": "internal-links-report.json",
         "reportMissing": false
@@ -147,7 +147,7 @@
       {
         "name": "validate-cta-violations",
         "status": "pass",
-        "duration": 566,
+        "duration": 619,
         "blocking": true,
         "reportFile": "cta-violation-scan.json",
         "reportMissing": false
@@ -155,7 +155,7 @@
       {
         "name": "validate-related-duplication",
         "status": "pass",
-        "duration": 562,
+        "duration": 624,
         "blocking": true,
         "reportFile": "related-duplication-scan.json",
         "reportMissing": false
@@ -163,7 +163,7 @@
       {
         "name": "validate-production-contracts",
         "status": "pass",
-        "duration": 864,
+        "duration": 867,
         "blocking": true,
         "reportFile": "production-contract-report.json",
         "reportMissing": false
@@ -171,7 +171,7 @@
       {
         "name": "validate-inline-link-misuse",
         "status": "pass",
-        "duration": 592,
+        "duration": 652,
         "blocking": true,
         "reportFile": "inline-link-misuse-scan.json",
         "reportMissing": false
@@ -179,7 +179,7 @@
       {
         "name": "generate-proof-coverage",
         "status": "pass",
-        "duration": 1172,
+        "duration": 1125,
         "blocking": false,
         "reportFile": "proof-coverage.json",
         "reportMissing": false
@@ -187,7 +187,7 @@
       {
         "name": "validate-tokens",
         "status": "pass",
-        "duration": 124,
+        "duration": 116,
         "blocking": true,
         "reportFile": "token-report.json",
         "reportMissing": false
@@ -195,7 +195,7 @@
       {
         "name": "validate-inline-styles",
         "status": "pass",
-        "duration": 210,
+        "duration": 207,
         "blocking": true,
         "reportFile": "inline-style-report.json",
         "reportMissing": false
@@ -203,7 +203,7 @@
       {
         "name": "validate-docs",
         "status": "pass",
-        "duration": 301,
+        "duration": 237,
         "blocking": false,
         "reportFile": "docs-report.json",
         "reportMissing": false
@@ -211,7 +211,7 @@
       {
         "name": "validate-vocabulary",
         "status": "pass",
-        "duration": 441,
+        "duration": 371,
         "blocking": false,
         "reportFile": "vocabulary-report.json",
         "reportMissing": false
@@ -242,6 +242,6 @@
       "topicsWithoutInternalPath": 0
     }
   },
-  "generatedAt": "2026-04-20T20:42:22.696Z",
+  "generatedAt": "2026-04-20T21:45:41.241Z",
   "sourceCommand": "node scripts/core/validate-all.mjs --report-json"
 }

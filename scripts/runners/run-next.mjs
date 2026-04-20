@@ -3,6 +3,8 @@ import net from 'node:net';
 import path from 'node:path';
 import { spawnSync, spawn } from 'node:child_process';
 
+import { buildSystemProcessEnv } from '../../config/systemEnv.mjs';
+
 const repoRoot = process.cwd();
 
 function hasNextRuntimeRoot(baseDir) {
@@ -162,7 +164,7 @@ async function main() {
   if (useFilter) {
     const child = spawn(nextBin, [command, ...resolvedArgs], {
       cwd: appRoot,
-      env: process.env,
+      env: buildSystemProcessEnv(),
       stdio: ['inherit', 'pipe', 'pipe'],
     });
 
@@ -185,6 +187,7 @@ async function main() {
   } else {
     const result = spawnSync(nextBin, [command, ...resolvedArgs], {
       cwd: appRoot,
+      env: buildSystemProcessEnv(),
       stdio: 'inherit',
     });
 

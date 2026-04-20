@@ -7,6 +7,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { systemEnv, withSystemEnvOverrides } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
@@ -19,13 +20,14 @@ const reportPath = path.join(root, 'reports', 'graph-derived-summary.json');
 const sourceCommand = 'node --import tsx/esm scripts/analyzers/inspect-graph.ts';
 const logger = createLogger({
   label: 'inspect-graph',
-  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  mode: resolveLoggingMode(process.argv.slice(2), systemEnv),
   rootDir: root,
 });
 
 async function main() {
-  (process.env as Record<string, string>).NODE_ENV = 'development';
-  await ensureGraphInitialized();
+  await withSystemEnvOverrides({ NODE_ENV: 'development' }, async () => {
+    await ensureGraphInitialized();
+  });
 
   const graph = getStructuredContentGraph();
   const scores = computeAuthorityScores();

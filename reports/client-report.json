@@ -82,6 +82,9 @@
         "name": "cta-violation-scan.json"
       },
       {
+        "name": "dashboard"
+      },
+      {
         "name": "design-system-report.json"
       },
       {
@@ -136,6 +139,9 @@
         "name": "session-log.json"
       },
       {
+        "name": "split-screenshots-report.json"
+      },
+      {
         "name": "system-drift.json"
       },
       {
@@ -149,6 +155,9 @@
       },
       {
         "name": "template-payload-report.json"
+      },
+      {
+        "name": "test-editing-stability-report.json"
       },
       {
         "name": "token-report.json"
@@ -178,13 +187,19 @@
         "name": "visual-audit"
       },
       {
+        "name": "visual-audit-engine-report.json"
+      },
+      {
         "name": "visual-audit-report.json"
+      },
+      {
+        "name": "visual-audit-runtime-report.json"
       },
       {
         "name": "vocabulary-report.json"
       }
     ]
   },
-  "generatedAt": "2026-04-20T20:42:37.797Z",
+  "generatedAt": "2026-04-20T21:45:53.892Z",
   "sourceCommand": "node --import tsx/esm scripts/analyzers/export-reports.mjs"
 }

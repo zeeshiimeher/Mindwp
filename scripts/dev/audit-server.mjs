@@ -4,6 +4,8 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawn, spawnSync } from 'node:child_process';
 
+import { buildSystemProcessEnv, systemEnv } from '../../config/systemEnv.mjs';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
 const WORK_DIR = path.join(ROOT, '_workspace');
@@ -11,9 +13,9 @@ const LOG_DIR = path.join(WORK_DIR, 'logs');
 const PID_DIR = path.join(WORK_DIR, 'pids');
 const PID_FILE = path.join(PID_DIR, 'audit-server.pid.json');
 const LOG_FILE = path.join(LOG_DIR, 'audit-server.log');
-const AUDIT_PORT = Number.parseInt(process.env.VISUAL_AUDIT_PORT || '3009', 10);
-const AUDIT_HOST = process.env.VISUAL_AUDIT_HOST || '127.0.0.1';
-const AUDIT_DIST_DIR = process.env.VISUAL_AUDIT_DIST_DIR || '.next-audit';
+const AUDIT_PORT = Number.parseInt(systemEnv.VISUAL_AUDIT_PORT, 10);
+const AUDIT_HOST = systemEnv.VISUAL_AUDIT_HOST;
+const AUDIT_DIST_DIR = systemEnv.VISUAL_AUDIT_DIST_DIR;
 const START_TIMEOUT_MS = 120000;
 
 function getNpmBin() {
@@ -71,7 +73,7 @@ function runGenerateStep(scriptName) {
   const result = spawnSync(getNpmBin(), ['run', '-s', scriptName], {
     cwd: ROOT,
     stdio: 'inherit',
-    env: process.env,
+    env: buildSystemProcessEnv(),
   });
 
   if (result.status !== 0) {
@@ -171,11 +173,10 @@ export async function startAuditServer({ waitForReady = true } = {}) {
       cwd: ROOT,
       detached: true,
       stdio: ['ignore', logFd, logFd],
-      env: {
-        ...process.env,
+      env: buildSystemProcessEnv({
         PORT: String(AUDIT_PORT),
         NEXT_DIST_DIR: AUDIT_DIST_DIR,
-      },
+      }),
     }
   );
 

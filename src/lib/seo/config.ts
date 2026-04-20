@@ -1,3 +1,5 @@
+import { env } from '@/env';
+
 const DEFAULT_SITE_ORIGIN = 'https://mindwp.com';
 
 const normalizeOrigin = (value: string): string => {
@@ -18,9 +20,9 @@ const normalizeOrigin = (value: string): string => {
 export const SITE_NAME = 'MindWP';
 export const TITLE_TEMPLATE = `%s | ${SITE_NAME}`;
 export const SITE_ORIGIN = normalizeOrigin(
-  process.env.NEXT_PUBLIC_SITE_URL ??
-    process.env.NEXT_PUBLIC_SITE_ORIGIN ??
-    process.env.NEXT_PUBLIC_APP_URL ??
+  env.NEXT_PUBLIC_SITE_URL ??
+    env.NEXT_PUBLIC_SITE_ORIGIN ??
+    env.NEXT_PUBLIC_APP_URL ??
     DEFAULT_SITE_ORIGIN
 );
 

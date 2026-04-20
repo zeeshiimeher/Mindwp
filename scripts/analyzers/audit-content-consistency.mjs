@@ -14,6 +14,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { isApprovedCtaLabel } from '../../src/config/ctaLabels.ts';
@@ -24,7 +25,7 @@ const reportPath = path.join(root, 'reports', 'content-consistency-audit.json');
 const sourceCommand = 'node --import tsx/esm scripts/analyzers/audit-content-consistency.mjs';
 const logger = createLogger({
   label: 'content-consistency',
-  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  mode: resolveLoggingMode(process.argv.slice(2), systemEnv),
   rootDir: root,
 });
 

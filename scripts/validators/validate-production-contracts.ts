@@ -3,6 +3,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { z } from 'zod';
@@ -18,7 +19,7 @@ const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'production-contract-report.json');
 const logger = createLogger({
   label: 'validate-production-contracts',
-  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  mode: resolveLoggingMode(process.argv.slice(2), systemEnv),
   rootDir: root,
 });
 const DISALLOWED_LEGACY_ROUTE_FILES = ['src/app/case-study/[slug]/page.tsx'];

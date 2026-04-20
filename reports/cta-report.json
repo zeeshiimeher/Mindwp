@@ -13,22 +13,22 @@
         "name": "validate-cta-label-contract",
         "status": "pass",
         "blocking": true,
-        "duration": 806
+        "duration": 781
       },
       {
         "name": "validate-conversion-contract",
         "status": "pass",
         "blocking": true,
-        "duration": 740
+        "duration": 742
       },
       {
         "name": "validate-cta-violations",
         "status": "pass",
         "blocking": true,
-        "duration": 566
+        "duration": 619
       }
     ]
   },
-  "generatedAt": "2026-04-20T20:42:37.797Z",
+  "generatedAt": "2026-04-20T21:45:53.892Z",
   "sourceCommand": "node --import tsx/esm scripts/analyzers/export-reports.mjs"
 }

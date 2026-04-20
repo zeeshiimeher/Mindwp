@@ -3,6 +3,7 @@ import {
   RESOLVER_DEPENDENCY_SOURCES,
   RESOLVER_INDEX_SOURCES,
 } from '@/domains/contentModel';
+import { env } from '@/env';
 import { createResolver } from '@/lib/authority/resolver';
 import {
   getContentGraph,
@@ -13,8 +14,8 @@ import { getResolverIndexes, initResolverIndexes } from '@/lib/content-graph/res
 
 import { setInitMetrics } from './metrics';
 
-const isDev = process.env.NODE_ENV === 'development';
-const shouldProfile = isDev || process.env.PROFILE_GRAPH === 'true';
+const isDev = env.NODE_ENV === 'development';
+const shouldProfile = isDev || env.PROFILE_GRAPH === 'true';
 
 let initialized = false;
 let initPromise: Promise<void> | null = null;

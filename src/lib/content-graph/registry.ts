@@ -1,3 +1,5 @@
+import { env } from '@/env';
+
 import { normalizePath } from '../seo/config';
 import { DEFAULT_OG_IMAGE_PATH } from '../seo/metadata';
 
@@ -284,7 +286,7 @@ export function buildContentGraph(
   const allNodes = Object.values(graph);
 
   // Debug log (dev only)
-  if (process.env.NODE_ENV !== 'production') {
+  if (env.NODE_ENV !== 'production') {
     logDerivedEdgeSummary(allNodes);
   }
 

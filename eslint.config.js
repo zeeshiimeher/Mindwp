@@ -13,6 +13,7 @@ export default [
       'dist/',
       'build/',
       '.next/',
+      '.next-audit/',
       'node_modules/',
       '*.config.js',
       '*.config.ts',
@@ -25,12 +26,16 @@ export default [
       'src/domains/blog/registry.ts',
       'src/domains/case-studies/registry.ts',
       'src/domains/resources/generatedRegistry.ts',
-      'scripts/',
+      'reports/',
+      'test-results/',
+      'tmp/',
+      'logs/',
+      '_workspace/',
     ],
   },
   js.configs.recommended,
   {
-    files: ['src/**/*.{ts,tsx}'],
+    files: ['src/**/*.{ts,tsx}', 'scripts/**/*.{ts,tsx,mts,cts}', 'lib/**/*.{ts,tsx,mts,cts}', 'config/**/*.{ts,tsx,mts,cts}'],
     languageOptions: {
       parser: tsparser,
       parserOptions: {
@@ -63,6 +68,8 @@ export default [
         alert: 'readonly',
         FormData: 'readonly',
         process: 'readonly',
+        URL: 'readonly',
+        AbortController: 'readonly',
       },
     },
     plugins: {

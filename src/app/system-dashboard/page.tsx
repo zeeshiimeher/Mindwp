@@ -1,7 +1,7 @@
 import { getInventoryMetadata } from '@/lib/content-quality/inventory';
-import { readSystemReport } from '@/lib/dev/system-report';
+import { readDashboardBundle } from '@/lib/dev/dashboard-reports';
 
-import OperatorDashboard from '../dev/system-dashboard/OperatorDashboard';
+import PureSystemDashboard from '../dev/system-dashboard/PureSystemDashboard';
 
 export const dynamic = 'force-dynamic';
 
@@ -10,9 +10,9 @@ export async function generateMetadata() {
 }
 
 export default function SystemDashboardAliasPage() {
-  const systemReport = readSystemReport();
+  const reports = readDashboardBundle();
 
-  if (!systemReport) {
+  if (!reports) {
     return (
       <div className='mx-auto max-w-6xl px-6 py-8'>
         <div className='rounded-[28px] border border-stone-200 bg-white p-5 shadow-[0_20px_60px_rgba(28,25,23,0.08)]'>
@@ -25,5 +25,5 @@ export default function SystemDashboardAliasPage() {
     );
   }
 
-  return <OperatorDashboard report={systemReport} />;
+  return <PureSystemDashboard reports={reports} />;
 }

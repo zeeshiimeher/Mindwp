@@ -8,7 +8,7 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-20T20:42:36.057Z",
+    "generatedAt": "2026-04-20T21:45:51.919Z",
     "topicsAnalyzed": 42,
     "averageScore": 81,
     "completeCoverageTopics": 42,
@@ -1340,6 +1340,6 @@
       }
     ]
   },
-  "generatedAt": "2026-04-20T20:42:36.057Z",
+  "generatedAt": "2026-04-20T21:45:51.919Z",
   "sourceCommand": "node --import tsx/esm scripts/generators/generate-topic-authority-scores.ts"
 }

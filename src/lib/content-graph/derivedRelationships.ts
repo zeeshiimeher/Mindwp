@@ -6,6 +6,8 @@
  * No limits at the graph layer — limits exist only at the resolver layer.
  */
 
+import { env } from '@/env';
+
 import { resolveLoggingMode } from '../../../config/loggingConfig.mjs';
 import { createLogger } from '../../../lib/logger/index.mjs';
 
@@ -14,7 +16,7 @@ import type { AttributedEdge, ContentGraphNode, ContentNodeType } from './types'
 
 const logger = createLogger({
   label: 'derived-relationships',
-  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  mode: resolveLoggingMode(process.argv.slice(2), env),
   rootDir: process.cwd(),
 });
 

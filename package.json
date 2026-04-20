@@ -3,6 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "engines": {
+    "node": "20.x"
+  },
+  "packageManager": "npm@11",
   "dependencies": {
     "@radix-ui/react-alert-dialog": "^1.1.6",
     "@radix-ui/react-aspect-ratio": "^1.1.2",
@@ -84,6 +88,7 @@
     "generate:all": "npm run -s generate:core && npm run -s generate:dev",
     "check:generated": "node scripts/core/check-generated.mjs",
     "system:report": "node --import tsx/esm scripts/analyzers/export-reports.mjs",
+    "export:reports": "node --import tsx/esm scripts/analyzers/export-reports.mjs",
     "system:full": "node scripts/core/run-system-full.mjs",
     "predev": "npm run -s generate:all",
     "dev": "node scripts/runners/run-next.mjs dev -- --webpack -p 3000",

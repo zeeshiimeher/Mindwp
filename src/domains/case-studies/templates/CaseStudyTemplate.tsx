@@ -22,6 +22,7 @@ import { FAQSection } from '@/components/reusable/single/FAQSection';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { SmartRelatedSection } from '@/components/system/SmartRelatedSection';
+import { env } from '@/env';
 
 import type { CaseStudyContent, CaseStudyMetadata } from './types';
 
@@ -140,7 +141,7 @@ function validateRequiredSections(sections: CaseStudyTemplateSection[]) {
     }
   }
 
-  if (missing.length > 0 && process.env.NODE_ENV === 'development') {
+  if (missing.length > 0 && env.NODE_ENV === 'development') {
     // eslint-disable-next-line no-console
     console.warn(`CaseStudyTemplate: Missing required sections: ${missing.join(', ')}`);
   }
@@ -297,7 +298,7 @@ export function CaseStudyTemplate({
   const heroSection = findSection(resolvedSections, 'hero');
   const ctaSection = findSection(resolvedSections, 'cta');
 
-  if (missingSections.length > 0 && process.env.NODE_ENV === 'development') {
+  if (missingSections.length > 0 && env.NODE_ENV === 'development') {
     return (
       <CTARegistryProvider pageId={pageId} pageType='case-study'>
         <div className='case-study-detail'>

@@ -1,0 +1,25 @@
+name: System Validation
+
+on: [push]
+
+jobs:
+  system:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: npm ci
+      - run: npm run system:full -- --mode=summary
+      - name: Validate Reports
+        run: |
+          test -f reports/system-report.json
+          test -f reports/pipeline-report.json
+          test -f reports/validation-report.json
+          test -f reports/dashboard/system.json
+          test -f reports/dashboard/validators.json
+          test -f reports/dashboard/graph.json
+          test -f reports/dashboard/topics.json
+          test -f reports/dashboard/content.json
+          test -f reports/dashboard/pipeline.json

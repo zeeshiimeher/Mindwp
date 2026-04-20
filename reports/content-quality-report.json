@@ -3,7 +3,7 @@
   "status": "PASS",
   "summary": {},
   "data": {
-    "generatedAt": "2026-04-20T20:42:06.193Z",
+    "generatedAt": "2026-04-20T21:45:24.646Z",
     "passed": true,
     "pageCount": 352,
     "issueCount": 0,
@@ -36,6 +36,6 @@
     "issues": [],
     "warnings": []
   },
-  "generatedAt": "2026-04-20T20:42:06.193Z",
+  "generatedAt": "2026-04-20T21:45:24.646Z",
   "sourceCommand": "npx tsx scripts/validators/validate-content-quality.mjs"
 }

@@ -19,6 +19,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
@@ -36,7 +37,7 @@ import { createReportSchema } from '../../lib/reports/reportSchema';
 const root = path.resolve(import.meta.dirname, '../..');
 const logger = createLogger({
   label: 'content-intelligence',
-  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  mode: resolveLoggingMode(process.argv.slice(2), systemEnv),
   rootDir: root,
 });
 const sourceCommand = 'node --import tsx/esm scripts/analyzers/generate-content-intelligence.ts';

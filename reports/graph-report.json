@@ -3,7 +3,7 @@
   "status": "PASS",
   "summary": {},
   "data": {
-    "generatedAt": "2026-04-20T20:42:13.007Z",
+    "generatedAt": "2026-04-20T21:45:31.425Z",
     "passed": true,
     "errorCount": 0,
     "warningCount": 0,
@@ -17,6 +17,6 @@
     "advisory": [],
     "derivedEdgeCount": 9626
   },
-  "generatedAt": "2026-04-20T20:42:13.007Z",
+  "generatedAt": "2026-04-20T21:45:31.425Z",
   "sourceCommand": "npx tsx scripts/validators/validate-graph.ts"
 }

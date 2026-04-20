@@ -2,6 +2,7 @@ import { NextResponse } from 'next/server';
 import { exec } from 'node:child_process';
 import { promisify } from 'node:util';
 
+import { buildProcessEnv, env } from '@/env';
 import {
   buildScriptCommand,
   getScriptRegistryEntry,
@@ -43,7 +44,7 @@ function jsonError(
 }
 
 export async function POST(request: Request) {
-  if (process.env.NODE_ENV !== 'development') {
+  if (env.NODE_ENV !== 'development') {
     return jsonError('', 'Execution API is available in development only.', 404);
   }
 
@@ -77,10 +78,10 @@ export async function POST(request: Request) {
   try {
     const { stdout, stderr } = await execAsync(command, {
       cwd: process.cwd(),
-      env: process.env,
+      env: buildProcessEnv(),
       maxBuffer: 8 * 1024 * 1024,
       timeout: scriptId === 'dev-server' ? 15_000 : 120_000,
-      shell: process.env.SHELL || '/bin/zsh',
+      shell: env.SHELL,
     });
 
     const duration = Date.now() - startedAt;

@@ -4,6 +4,15 @@ import path from 'node:path';
 import { createReportSchema, unwrapReportData } from './report-schema.mjs';
 import { readJsonFile } from './report-json.mjs';
 
+export const DASHBOARD_REPORT_FILES = [
+  'system.json',
+  'validators.json',
+  'graph.json',
+  'topics.json',
+  'content.json',
+  'pipeline.json',
+];
+
 function readReport(root, fileName) {
   return readJsonFile(path.join(root, 'reports', fileName));
 }
@@ -24,6 +33,11 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
   const pipelineData = unwrapReportData(pipelineReport) ?? {};
 
   const validators = Array.isArray(validationData.validators) ? validationData.validators : [];
+  const validatorPassCount = validators.filter(validator => String(validator.status).toLowerCase() === 'pass').length;
+  const validatorFailCount = validators.filter(validator => String(validator.status).toLowerCase() === 'fail').length;
+  const validatorWarningCount = validators.filter(
+    validator => String(validator.status).toLowerCase() !== 'pass' && !validator.blocking
+  ).length;
   const validatorReports = validators.map(validator => ({
     name: validator.name,
     reportFile: validator.reportFile,
@@ -64,9 +78,9 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
         status: validators.some(validator => String(validator.status).toUpperCase() === 'FAIL') ? 'FAIL' : 'PASS',
         summary: {
           total: validatorReports.length,
-          passed: validatorReports.filter(item => item.reportFile && item.report).length,
-          failed: validatorReports.filter(item => !item.report).length,
-          warnings: 0,
+          passed: validatorPassCount,
+          failed: validatorFailCount,
+          warnings: validatorWarningCount,
         },
         issues: validatorReports.filter(item => !item.report),
         data: {
@@ -145,10 +159,10 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
         name: 'dashboard-pipeline',
         status: pipelineReport?.status === 'FAIL' ? 'FAIL' : pipelineReport?.status === 'WARN' ? 'WARN' : 'PASS',
         summary: {
-          total: 1,
-          passed: pipelineReport ? 1 : 0,
-          failed: 0,
-          warnings: pipelineReport?.status === 'WARN' ? 1 : 0,
+          total: pipelineReport?.summary?.total ?? 0,
+          passed: pipelineReport?.summary?.passed ?? 0,
+          failed: pipelineReport?.summary?.failed ?? 0,
+          warnings: pipelineReport?.summary?.warnings ?? 0,
         },
         data: {
           pipeline: pipelineReport,
@@ -162,4 +176,6 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
   for (const entry of files) {
     writeJson(path.join(dashboardDir, entry.fileName), entry.report);
   }
+
+  return files.map(entry => entry.fileName);
 }

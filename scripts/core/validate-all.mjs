@@ -15,6 +15,7 @@ import { execFile, execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { readReportJson } from '../lib/report-json.mjs';
@@ -26,7 +27,7 @@ const reportJson = args.has('--report-json');
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'validation-results.json');
 const validationReportPath = path.join(root, 'reports', 'validation-report.json');
-const loggingMode = resolveLoggingMode(process.argv.slice(2), process.env);
+const loggingMode = resolveLoggingMode(process.argv.slice(2), systemEnv);
 const logger = createLogger({ label: 'validate-all', mode: loggingMode, rootDir: root });
 
 /**

@@ -1,15 +1,17 @@
 // ─── Image System Configuration ─────────────────────────────────────
 // Constants and configuration for the MindWP image pipeline
 
+import { env } from '@/env';
+
 import type { ContentDomain, DomainStyleRule, ProviderName } from './types';
 
 // ─── API Keys (loaded from environment) ─────────────────────────────
 
 export function getProviderKeys() {
   return {
-    unsplash: process.env.UNSPLASH_ACCESS_KEY ?? '',
-    pexels: process.env.PEXELS_API_KEY ?? '',
-    pixabay: process.env.PIXABAY_API_KEY ?? '',
+    unsplash: env.UNSPLASH_ACCESS_KEY,
+    pexels: env.PEXELS_API_KEY,
+    pixabay: env.PIXABAY_API_KEY,
   };
 }
 

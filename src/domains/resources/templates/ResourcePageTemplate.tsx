@@ -44,6 +44,7 @@ import { categories } from '@/domains/resources/api';
 import type { ResourceCategory } from '@/domains/resources/types';
 import { formatIsoDate, isRecentIsoDate } from '@/domains/resources/utils/dates';
 import { createInlineLinkTracker, extractInternalLinks } from '@/domains/seo/inlineLinking';
+import { env } from '@/env';
 import { enforceInlineLinkUsage } from '@/lib/page/inlineLinkEnforcement';
 
 import type { ResourcePageTemplateSection } from './types';
@@ -121,7 +122,7 @@ function validateRequiredSections(sections: ResourcePageTemplateSection[]) {
   }
 
   if (missingSections.length > 0) {
-    if (process.env.NODE_ENV === 'development') {
+    if (env.NODE_ENV === 'development') {
       // eslint-disable-next-line no-console
       console.warn(
         `ResourcePageTemplate: Missing required sections: ${missingSections.join(', ')}`
@@ -152,7 +153,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   const currentPath = props.url;
   const inlineLinkTracker = createInlineLinkTracker({
     pagePath: currentPath,
-    debug: process.env.NEXT_PUBLIC_DEBUG_INLINE_LINKS === '1',
+    debug: env.NEXT_PUBLIC_DEBUG_INLINE_LINKS === '1',
   });
   let remainingInlineLinks = 5;
 
@@ -205,7 +206,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
   const sidebarCTAData = extractSidebarCTAContent(props.sections);
 
   // Show error message for missing sections in development
-  if (missingSections.length > 0 && process.env.NODE_ENV === 'development') {
+  if (missingSections.length > 0 && env.NODE_ENV === 'development') {
     return (
       <CTARegistryProvider pageId={props.pageId} pageType='resource'>
         <div className='resource-page'>

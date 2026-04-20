@@ -16,9 +16,9 @@
       "failed": 0,
       "warnings": 0
     },
-    "generatedAt": "2026-04-20T20:42:16.586Z",
+    "generatedAt": "2026-04-20T21:45:35.238Z",
     "sourceCommand": "npx tsx scripts/validators/validate-inline-link-misuse.ts"
   },
-  "generatedAt": "2026-04-20T20:42:16.586Z",
+  "generatedAt": "2026-04-20T21:45:35.238Z",
   "sourceCommand": "npm run system:full"
 }

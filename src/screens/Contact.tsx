@@ -11,6 +11,7 @@ import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import { env } from '@/env';
 import { isValidContactContext } from '@/lib/contact/contactHref';
 import { getVariantStyles } from '@/lib/ui/variantStyles';
 
@@ -28,7 +29,7 @@ const INITIAL_FORM_STATE = {
   website: '',
 };
 
-const turnstileSiteKey = process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? '';
+const turnstileSiteKey = env.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
 
 export function Contact() {
   const [submitted, setSubmitted] = useState(false);

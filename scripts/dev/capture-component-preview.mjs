@@ -3,6 +3,8 @@ import path from 'node:path';
 
 import { chromium } from '@playwright/test';
 
+import { systemEnv } from '../../config/systemEnv.mjs';
+
 const componentName = process.argv[2];
 
 if (!componentName) {
@@ -10,7 +12,7 @@ if (!componentName) {
   process.exit(1);
 }
 
-const baseUrl = process.env.COMPONENT_CAPTURE_BASE_URL || 'http://127.0.0.1:3001/components';
+const baseUrl = systemEnv.COMPONENT_CAPTURE_BASE_URL;
 const outDir = path.resolve(process.cwd(), 'reports', 'component-visual-pass', componentName);
 
 const viewports = [

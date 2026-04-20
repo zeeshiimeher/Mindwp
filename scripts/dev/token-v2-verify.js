@@ -15,11 +15,13 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from '@playwright/test';
 
+import { systemEnv } from '../../config/systemEnv.mjs';
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, '../..');
 const SNAPSHOT_PATH = path.join(ROOT, 'reports', 'token-v2-baseline.json');
 const VALIDATOR_PATH = path.join(ROOT, 'scripts', 'dev', 'token-v2-validator.js');
-const BASE_URL = process.env.BASE_URL || 'http://127.0.0.1:3009';
+const BASE_URL = systemEnv.BASE_URL;
 
 const ROUTES = ['/', '/services', '/blog', '/features', '/case-studies'];
 

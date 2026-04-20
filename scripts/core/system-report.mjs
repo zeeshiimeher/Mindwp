@@ -5,13 +5,14 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { buildSystemProcessEnv, systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import {
   parseClientDashboardContract,
   parseSystemReportContract,
 } from '../lib/system-contract-schemas.mjs';
-import { buildDashboardData } from '../lib/dashboard-data.mjs';
+import { DASHBOARD_REPORT_FILES, buildAndValidateDashboardData } from './dashboard-data.mjs';
 import { readJsonFile, readReportJson } from '../lib/report-json.mjs';
 import { normalizeRawReport, unwrapReportData } from '../lib/report-schema.mjs';
 
@@ -25,9 +26,9 @@ const tempDir = path.join(reportsDir, '.system-full');
 const isWindows = process.platform === 'win32';
 const includeE2E = process.argv.includes('--include-e2e') || process.argv.includes('--e2e');
 const sourceCommand = includeE2E ? 'npm run system:full -- --include-e2e' : 'npm run system:full';
-const systemMode = process.env.SYSTEM_MODE ?? 'development';
-const executionLock = process.env.SYSTEM_EXECUTION_LOCK ?? '';
-const loggingMode = resolveLoggingMode(process.argv.slice(2), process.env);
+const systemMode = systemEnv.SYSTEM_MODE;
+const executionLock = systemEnv.SYSTEM_EXECUTION_LOCK;
+const loggingMode = resolveLoggingMode(process.argv.slice(2), systemEnv);
 const logger = createLogger({ label: 'system:full', mode: loggingMode, rootDir: root });
 
 const binaries = {
@@ -78,6 +79,7 @@ const requiredReportFiles = new Set([
   'vocabulary-report.json',
   'system-report.json',
   'client-dashboard.json',
+  ...DASHBOARD_REPORT_FILES,
 ]);
 
 const reportSourceByFile = new Map([
@@ -101,6 +103,12 @@ const reportSourceByFile = new Map([
   ['client-report.md', 'node --import tsx/esm scripts/analyzers/export-reports.mjs'],
   ['client-dashboard.json', 'npm run system:full'],
   ['cta-report.json', 'node --import tsx/esm scripts/analyzers/export-reports.mjs'],
+  ['system.json', 'node scripts/core/dashboard-data.mjs'],
+  ['validators.json', 'node scripts/core/dashboard-data.mjs'],
+  ['graph.json', 'node scripts/core/dashboard-data.mjs'],
+  ['topics.json', 'node scripts/core/dashboard-data.mjs'],
+  ['content.json', 'node scripts/core/dashboard-data.mjs'],
+  ['pipeline.json', 'node scripts/core/dashboard-data.mjs'],
 ]);
 
 function ensureDir(dirPath) {
@@ -121,10 +129,9 @@ function runCommand(binary, args) {
     cwd: root,
     encoding: 'utf8',
     maxBuffer: 30 * 1024 * 1024,
-    env: {
-      ...process.env,
+    env: buildSystemProcessEnv({
       SYSTEM_LOGGING_MODE: loggingMode,
-    },
+    }),
   });
 
   return {
@@ -942,21 +949,6 @@ function summarizeVitestReport(report, fallbackDuration) {
   };
 }
 
-function collectTypecheckErrors(output) {
-  const lines = String(output)
-    .split('\n')
-    .map(line => line.trim())
-    .filter(Boolean);
-  const errors = uniqueStrings(lines.filter(line => line.includes('error TS')));
-
-  if (errors.length > 0) {
-    return errors;
-  }
-
-  const excerpt = excerptOutput(output);
-  return excerpt ? [excerpt] : [];
-}
-
 function buildValidationSection(result, validationReport) {
   const validationData = unwrapReportData(validationReport);
   const validators = validationData?.validators ?? [];
@@ -1016,14 +1008,14 @@ function buildValidationSection(result, validationReport) {
   };
 }
 
-function buildTypecheckSection(result) {
-  const output = combineOutput(result);
-  const errors = result.exitCode === 0 ? [] : collectTypecheckErrors(output);
+function buildTypecheckSection(validate) {
+  const typecheckValidator = validate.validators.find(validator => validator.name === 'typecheck');
+  const errors = typecheckValidator?.errors ?? [];
 
   return {
-    status: result.exitCode === 0 ? 'PASS' : 'FAIL',
+    status: typecheckValidator?.status ?? 'FAIL',
     command: 'npm run typecheck',
-    durationMs: result.durationMs,
+    durationMs: typecheckValidator?.durationMs ?? 0,
     errors,
     errorCount: errors.length,
   };
@@ -1299,8 +1291,7 @@ function main() {
   const validationReport = readReportJson(root, 'validation-results.json');
   const validate = buildValidationSection(validateResult, validationReport);
 
-  const typecheckResult = runCommand(binaries.npm, ['run', '-s', 'typecheck']);
-  const typecheck = buildTypecheckSection(typecheckResult);
+  const typecheck = buildTypecheckSection(validate);
 
   const vitestOutputPath = path.join(tempDir, 'vitest-all.json');
   const testsResult = runCommand(binaries.npm, [
@@ -1375,11 +1366,39 @@ function main() {
   report.status = buildOverallStatus(report);
 
   const validatedOutputs = validateFrozenOutputs(report, clientDashboard);
+  writeJson(clientDashboardPath, validatedOutputs.clientDashboard);
+  writeJson(reportPath, validatedOutputs.report);
+
+  const dashboardResult = buildAndValidateDashboardData(root, sourceCommand);
+  const dashboardFiles = dashboardResult.files.map(fileName => ({
+    name: fileName,
+    path: `reports/dashboard/${fileName}`,
+    generatedAt: timestamp,
+    sourceCommand,
+    updatedAt: timestamp,
+    ageMs: 0,
+  }));
+
+  for (const dashboardFile of dashboardFiles) {
+    validatedOutputs.report.reports.files.push(dashboardFile);
+  }
+
+  validatedOutputs.report.reports.fileCount = validatedOutputs.report.reports.files.length;
+  validatedOutputs.report.reports.missing = validatedOutputs.report.reports.missing.filter(
+    fileName => !dashboardResult.files.includes(fileName)
+  );
+  validatedOutputs.report.reports.status =
+    validatedOutputs.report.reports.errors.length === 0 &&
+    validatedOutputs.report.reports.files.length > 0 &&
+    validatedOutputs.report.reports.missing.length === 0 &&
+    validatedOutputs.report.reports.stale.length === 0
+      ? 'PASS'
+      : 'FAIL';
+  validatedOutputs.report.status = buildOverallStatus(validatedOutputs.report);
 
   writeJson(clientDashboardPath, validatedOutputs.clientDashboard);
   writeJson(reportPath, validatedOutputs.report);
   writeSnapshotArtifacts(validatedOutputs.report);
-  buildDashboardData(root, sourceCommand);
 
   const shouldFail = validatedOutputs.report.status === 'FAIL';
   logger.printTotals({

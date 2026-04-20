@@ -2,6 +2,7 @@
 
 import { createContext, type ReactNode, useContext, useMemo } from 'react';
 
+import { env } from '@/env';
 import { createCTARegistry, type CTARegistry, getCTARegistrySnapshot } from '@/lib/cta/ctaRegistry';
 import { enforceInlineLinkUsage } from '@/lib/page/inlineLinkEnforcement';
 import type { PageIdentity, PageType } from '@/lib/page/pageIdentity';
@@ -37,7 +38,7 @@ export type PageEnforcement = {
 };
 
 function isDevelopment() {
-  return process.env.NODE_ENV !== 'production';
+  return env.NODE_ENV !== 'production';
 }
 
 export function reportPageEnforcementError(error: Error) {

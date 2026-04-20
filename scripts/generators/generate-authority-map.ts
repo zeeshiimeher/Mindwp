@@ -5,6 +5,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import prettier from 'prettier';
 
+import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { ensureGraphInitialized, getResolver } from '../../src/domains/init/ensureGraphInitialized';
@@ -25,7 +26,7 @@ const REPORTS_DIR = path.join(root, 'reports');
 const REPORT_FILE = path.join(REPORTS_DIR, 'authority-map.json');
 const logger = createLogger({
   label: 'authority-map',
-  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  mode: resolveLoggingMode(process.argv.slice(2), systemEnv),
   rootDir: root,
 });
 

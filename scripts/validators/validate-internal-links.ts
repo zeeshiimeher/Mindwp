@@ -11,6 +11,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
+import { env } from '../../src/env';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { AUTHORITY_MAP } from '../../src/lib/authority/generated/authorityMap';
@@ -26,14 +27,14 @@ import { createReportSchema } from '../../lib/reports/reportSchema';
 const SOURCE_SCAN_ROOTS = ['src/app', 'src/components', 'src/domains', 'src/screens'];
 const AUTHORED_HREF_PATTERN = /(?:href\s*:\s*|href=)(['"])(\/[^'"\s}]*)\1/g;
 const INTERNAL_LINK_BASE_ORIGIN = 'https://mindwp.local';
-const root = process.env.MINDWP_LINK_SCAN_ROOT
-  ? path.resolve(process.env.MINDWP_LINK_SCAN_ROOT)
+const root = env.MINDWP_LINK_SCAN_ROOT
+  ? path.resolve(env.MINDWP_LINK_SCAN_ROOT)
   : process.cwd();
 const reportPath = path.join(root, 'reports', 'internal-links-report.json');
 const sourceCommand = 'npx tsx scripts/validators/validate-internal-links.ts';
 const logger = createLogger({
   label: 'validate-internal-links',
-  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  mode: resolveLoggingMode(process.argv.slice(2), env),
   rootDir: root,
 });
 

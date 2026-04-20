@@ -2,7 +2,8 @@
 
 > Source of truth for commands, validators, reports, and control-plane working order.
 > If this file conflicts with [./SYSTEM.md](./SYSTEM.md), fix the conflict immediately.
-
+> System structure is defined in:
+> src/system/knowledge.ts
 ---
 
 ## USE THIS DOC

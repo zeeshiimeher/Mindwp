@@ -1,16 +1,17 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
+import { env } from '@/env';
 import { SERVICES } from '@/global/site-wide/services';
 import { isValidContactContext } from '@/lib/contact/contactHref';
 import { SITE_ORIGIN } from '@/lib/seo/config';
 
 export const runtime = 'nodejs';
 
-const resendApiKey = process.env.RESEND_API_KEY;
-const contactEmail = process.env.CONTACT_EMAIL;
-const contactFromEmail = process.env.CONTACT_FROM_EMAIL;
-const turnstileSecretKey = process.env.TURNSTILE_SECRET_KEY;
+const resendApiKey = env.RESEND_API_KEY;
+const contactEmail = env.CONTACT_EMAIL;
+const contactFromEmail = env.CONTACT_FROM_EMAIL;
+const turnstileSecretKey = env.TURNSTILE_SECRET_KEY;
 
 const resend = resendApiKey ? new Resend(resendApiKey) : null;
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -88,7 +89,7 @@ async function verifyTurnstileToken(request: Request, captchaToken: string) {
     return true;
   }
 
-  if (process.env.NODE_ENV !== 'production' && SERVICES.debug.bypassCaptchaInDev) {
+  if (env.NODE_ENV !== 'production' && SERVICES.debug.bypassCaptchaInDev) {
     return true;
   }
 

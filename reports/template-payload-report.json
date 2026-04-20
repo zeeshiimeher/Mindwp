@@ -8,7 +8,7 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-20T20:42:11.033Z",
+    "generatedAt": "2026-04-20T21:45:29.423Z",
     "sources": {
       "services": 19,
       "features": 7,
@@ -19,6 +19,6 @@
     "violationCount": 0,
     "violations": []
   },
-  "generatedAt": "2026-04-20T20:42:11.033Z",
+  "generatedAt": "2026-04-20T21:45:29.423Z",
   "sourceCommand": "npm run system:full"
 }
