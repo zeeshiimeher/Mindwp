@@ -21,10 +21,19 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 import { isApprovedCtaLabel } from '../../src/config/ctaLabels.ts';
+import { createReportSchema } from '../lib/report-schema.mjs';
 
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'content-score.json');
+const sourceCommand = 'node --import tsx/esm scripts/analyzers/score-content.mjs';
+const logger = createLogger({
+  label: 'content-score',
+  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  rootDir: root,
+});
 
 const DOMAINS = [
   { label: 'services', dirs: ['src/domains/services/data'], exts: ['.ts'] },
@@ -148,28 +157,41 @@ function main() {
     }
   }
 
-  const report = {
-    generatedAt: new Date().toISOString(),
-    totalFiles: scores.length,
-    summary: {
-      filesWithHype: scores.filter((s) => s.hypeCount > 0).length,
-      filesWithBanned: scores.filter((s) => s.bannedPhraseCount > 0).length,
-      filesWithoutCta: scores.filter((s) => !s.hasCta).length,
-      filesWithFlags: scores.filter((s) => s.flags.length > 0).length,
-    },
-    scores,
+  const summary = {
+    filesWithHype: scores.filter((s) => s.hypeCount > 0).length,
+    filesWithBanned: scores.filter((s) => s.bannedPhraseCount > 0).length,
+    filesWithoutCta: scores.filter((s) => !s.hasCta).length,
+    filesWithFlags: scores.filter((s) => s.flags.length > 0).length,
   };
+  const report = createReportSchema({
+    name: 'content-score',
+    status: summary.filesWithFlags > 0 ? 'WARN' : 'PASS',
+    summary: {
+      total: scores.length,
+      passed: scores.length - summary.filesWithFlags,
+      failed: 0,
+      warnings: summary.filesWithFlags,
+    },
+    issues: scores.filter(score => score.flags.length > 0),
+    data: {
+      totalFiles: scores.length,
+      summary,
+      scores,
+    },
+    sourceCommand,
+  });
 
   fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-  fs.writeFileSync(reportPath, JSON.stringify(report, null, 2));
+  fs.writeFileSync(reportPath, JSON.stringify(report, null, 2) + '\n');
 
-  console.log('Content scoring complete.');
-  console.log(`  Files scored: ${report.totalFiles}`);
-  console.log(`  Files with hype words: ${report.summary.filesWithHype}`);
-  console.log(`  Files with banned phrases: ${report.summary.filesWithBanned}`);
-  console.log(`  Files without CTA: ${report.summary.filesWithoutCta}`);
-  console.log(`  Files with flags: ${report.summary.filesWithFlags}`);
-  console.log(`  Report: reports/content-score.json`);
+  logger.printTotals({
+    files: scores.length,
+    hype: summary.filesWithHype,
+    banned: summary.filesWithBanned,
+    missingCta: summary.filesWithoutCta,
+    flagged: summary.filesWithFlags,
+  });
+  logger.printSummary(`report -> ${logger.relativePath(reportPath)}`);
 }
 
 main();

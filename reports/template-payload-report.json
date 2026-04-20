@@ -1,13 +1,24 @@
 {
-  "generatedAt": "2026-04-20T20:05:09.748Z",
-  "sources": {
-    "services": 19,
-    "features": 7,
-    "resources": 59,
-    "caseStudies": 22,
-    "industries": 32
+  "name": "template-payload-report",
+  "status": "PASS",
+  "summary": {
+    "total": 0,
+    "passed": 1,
+    "failed": 0,
+    "warnings": 0
   },
-  "violationCount": 0,
-  "violations": [],
+  "data": {
+    "generatedAt": "2026-04-20T20:42:11.033Z",
+    "sources": {
+      "services": 19,
+      "features": 7,
+      "resources": 59,
+      "caseStudies": 22,
+      "industries": 32
+    },
+    "violationCount": 0,
+    "violations": []
+  },
+  "generatedAt": "2026-04-20T20:42:11.033Z",
   "sourceCommand": "npm run system:full"
 }

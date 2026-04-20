@@ -19,6 +19,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 import { computeAuthorityScores } from '../../src/lib/authority/authorityScore';
 import {
@@ -29,6 +31,15 @@ import {
 import { buildGraphIndexes, getContentGraph } from '../../src/lib/content-graph/registry';
 import { getResolverIndexes } from '../../src/lib/content-graph/resolverIndexes';
 import type { ContentGraphNode, ContentNodeType } from '../../src/lib/content-graph/types';
+import { createReportSchema } from '../../lib/reports/reportSchema';
+
+const root = path.resolve(import.meta.dirname, '../..');
+const logger = createLogger({
+  label: 'content-intelligence',
+  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  rootDir: root,
+});
+const sourceCommand = 'node --import tsx/esm scripts/analyzers/generate-content-intelligence.ts';
 
 // ── Thresholds (locked) ──────────────────────────────────────────────
 
@@ -498,7 +509,7 @@ async function main() {
 
   const unhealthyClusters = clusters.filter(c => c.health === 'weak').length;
 
-  const report: ContentIntelligenceReport = {
+  const reportData: ContentIntelligenceReport = {
     generatedAt: new Date().toISOString().split('T')[0],
     summary: {
       totalNodes: allNodes.length,
@@ -519,39 +530,53 @@ async function main() {
   };
 
   // Write output
-  const root = path.resolve(import.meta.dirname, '../..');
   const reportsDir = path.join(root, 'reports');
   fs.mkdirSync(reportsDir, { recursive: true });
 
   const outPath = path.join(reportsDir, 'content-intelligence.json');
+  const report = createReportSchema({
+    name: 'content-intelligence',
+    status:
+      reportData.summary.gaps > 0 ||
+      reportData.summary.weakNodes > 0 ||
+      reportData.summary.unhealthyClusters > 0
+        ? 'WARN'
+        : 'PASS',
+    summary: {
+      total: reportData.summary.totalNodes,
+      passed: Math.max(
+        reportData.summary.totalNodes - reportData.summary.gaps - reportData.summary.weakNodes,
+        0
+      ),
+      failed: 0,
+      warnings:
+        reportData.summary.gaps + reportData.summary.weakNodes + reportData.summary.unhealthyClusters,
+    },
+    issues: [...reportData.gaps, ...reportData.weakNodes],
+    data: reportData,
+    sourceCommand,
+  });
   fs.writeFileSync(outPath, JSON.stringify(report, null, 2) + '\n');
 
-  // Summary
-  console.log('\n╔══════════════════════════════════════════════════════════════╗');
-  console.log('║            CONTENT INTELLIGENCE ENGINE — REPORT             ║');
-  console.log('╠══════════════════════════════════════════════════════════════╣');
-  console.log(`║  Total nodes:           ${String(report.summary.totalNodes).padStart(6)}                          ║`);
-  console.log(`║  Total edges:           ${String(report.summary.totalEdges).padStart(6)}                          ║`);
-  console.log(`║  Gaps detected:         ${String(report.summary.gaps).padStart(6)}                          ║`);
-  console.log(`║  Weak nodes:            ${String(report.summary.weakNodes).padStart(6)}                          ║`);
-  console.log(`║  Unhealthy clusters:    ${String(report.summary.unhealthyClusters).padStart(6)}                          ║`);
-  console.log(`║  Suggestions:           ${String(suggestions.length).padStart(6)}                          ║`);
-  console.log('╠══════════════════════════════════════════════════════════════╣');
-  console.log(`║  Output: reports/content-intelligence.json                  ║`);
-  console.log('╚══════════════════════════════════════════════════════════════╝\n');
-
-  // Top 10 suggestions
-  const top10 = suggestions.slice(0, 10);
-  if (top10.length > 0) {
-    console.log('Top suggestions (by priority):');
-    for (const s of top10) {
-      console.log(`  [${s.priority}] ${s.contentType} → ${Object.values(s.target).filter(Boolean).join(' + ')}`);
-    }
-    console.log('');
+  logger.printTotals({
+    nodes: reportData.summary.totalNodes,
+    edges: reportData.summary.totalEdges,
+    gaps: reportData.summary.gaps,
+    weakNodes: reportData.summary.weakNodes,
+    unhealthyClusters: reportData.summary.unhealthyClusters,
+    suggestions: suggestions.length,
+  });
+  logger.printSummary(`report -> ${logger.relativePath(outPath)}`);
+  for (const suggestion of suggestions.slice(0, 10)) {
+    logger.printNodeLine({
+      scope: suggestion.priority,
+      slug: suggestion.contentType,
+      label: Object.values(suggestion.target).filter(Boolean).join(' + '),
+    });
   }
 }
 
 main().catch(err => {
-  console.error('Content intelligence generation failed:', err);
+  process.stderr.write(`Content intelligence generation failed: ${err instanceof Error ? err.message : String(err)}\n`);
   process.exit(1);
 });

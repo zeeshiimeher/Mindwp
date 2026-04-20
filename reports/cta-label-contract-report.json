@@ -1,20 +1,31 @@
 {
-  "generatedAt": "2026-04-20T20:05:07.903Z",
-  "passed": true,
-  "issueCount": 0,
-  "warningCount": 0,
-  "usedSystems": [
-    "smart-website-systems"
-  ],
-  "mappedSystems": [
-    "ai-lead-handling",
-    "crm-automation",
-    "local-seo-authority",
-    "reputation-review",
-    "revenue-growth",
-    "smart-website-systems"
-  ],
-  "issues": [],
-  "warnings": [],
+  "name": "cta-label-contract-report",
+  "status": "PASS",
+  "summary": {
+    "total": 0,
+    "passed": 1,
+    "failed": 0,
+    "warnings": 0
+  },
+  "data": {
+    "generatedAt": "2026-04-20T20:42:09.201Z",
+    "passed": true,
+    "issueCount": 0,
+    "warningCount": 0,
+    "usedSystems": [
+      "smart-website-systems"
+    ],
+    "mappedSystems": [
+      "ai-lead-handling",
+      "crm-automation",
+      "local-seo-authority",
+      "reputation-review",
+      "revenue-growth",
+      "smart-website-systems"
+    ],
+    "issues": [],
+    "warnings": []
+  },
+  "generatedAt": "2026-04-20T20:42:09.201Z",
   "sourceCommand": "npm run system:full"
 }

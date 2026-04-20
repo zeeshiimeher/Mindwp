@@ -11,7 +11,9 @@ import {
   parseClientDashboardContract,
   parseSystemReportContract,
 } from '../lib/system-contract-schemas.mjs';
+import { buildDashboardData } from '../lib/dashboard-data.mjs';
 import { readJsonFile, readReportJson } from '../lib/report-json.mjs';
+import { normalizeRawReport, unwrapReportData } from '../lib/report-schema.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const reportsDir = path.join(root, 'reports');
@@ -52,15 +54,25 @@ const requiredReportFiles = new Set([
   'docs-report.json',
   'domain-structure-report.json',
   'graph-report.json',
+  'graph-derived-summary.json',
+  'internal-links-report.json',
   'inline-link-misuse-scan.json',
   'inline-style-report.json',
+  'page-priorities.json',
+  'pipeline-report.json',
   'proof-coverage.json',
+  'production-contract-report.json',
   'related-duplication-scan.json',
+  'section-shell-integrity-report.json',
   'section-structure-report.json',
   'template-payload-report.json',
   'token-report.json',
+  'topic-insights.json',
   'topic-authority-scores.json',
   'topic-authority-scores.md',
+  'content-intelligence.json',
+  'content-consistency-audit.json',
+  'content-score.json',
   'validation-report.json',
   'validation-results.json',
   'vocabulary-report.json',
@@ -73,10 +85,18 @@ const reportSourceByFile = new Map([
   ['validation-results.json', 'node scripts/core/validate-all.mjs --report-json'],
   ['content-quality-report.json', 'npx tsx scripts/validators/validate-content-quality.mjs'],
   ['graph-report.json', 'npx tsx scripts/validators/validate-graph.ts'],
+  ['graph-derived-summary.json', 'node --import tsx/esm scripts/analyzers/inspect-graph.ts'],
+  ['internal-links-report.json', 'npx tsx scripts/validators/validate-internal-links.ts'],
   ['topic-authority-scores.json', 'node --import tsx/esm scripts/generators/generate-topic-authority-scores.ts'],
   ['topic-authority-scores.md', 'node --import tsx/esm scripts/generators/generate-topic-authority-scores.ts'],
+  ['topic-insights.json', 'node --import tsx/esm scripts/analyzers/export-reports.mjs'],
   ['content-gaps.json', 'node --import tsx/esm scripts/analyzers/generate-content-gaps.ts'],
   ['content-gaps.md', 'node --import tsx/esm scripts/analyzers/generate-content-gaps.ts'],
+  ['content-intelligence.json', 'node --import tsx/esm scripts/analyzers/generate-content-intelligence.ts'],
+  ['content-consistency-audit.json', 'node --import tsx/esm scripts/analyzers/audit-content-consistency.mjs'],
+  ['content-score.json', 'node --import tsx/esm scripts/analyzers/score-content.mjs'],
+  ['page-priorities.json', 'node --import tsx/esm scripts/analyzers/detect-page-priorities.mjs'],
+  ['pipeline-report.json', 'node --import tsx/esm scripts/analyzers/export-reports.mjs'],
   ['client-report.json', 'node --import tsx/esm scripts/analyzers/export-reports.mjs'],
   ['client-report.md', 'node --import tsx/esm scripts/analyzers/export-reports.mjs'],
   ['client-dashboard.json', 'npm run system:full'],
@@ -302,8 +322,13 @@ function scanSmartCtaUsage() {
   const srcRoot = path.join(root, 'src');
   const violationsPath = path.join(reportsDir, 'cta-violation-scan.json');
   const conversionReportPath = path.join(reportsDir, 'conversion-contract-report.json');
-  const ctaViolations = readJsonFile(violationsPath) ?? [];
-  const conversionReport = readJsonFile(conversionReportPath) ?? {};
+  const ctaViolationReport = readJsonFile(violationsPath) ?? [];
+  const ctaViolations = Array.isArray(ctaViolationReport)
+    ? ctaViolationReport
+    : Array.isArray(ctaViolationReport?.issues)
+      ? ctaViolationReport.issues
+      : [];
+  const conversionReport = unwrapReportData(readJsonFile(conversionReportPath)) ?? {};
   const files = [];
 
   function visit(directoryPath) {
@@ -521,13 +546,18 @@ function addPriority(priorities, routeIndex, raw) {
 function buildPriorities(validate) {
   const routeIndex = buildRouteIndex();
   const priorities = [];
-  const domainStructureReport = readReportJson(root, 'domain-structure-report.json') ?? {};
-  const conversionReport = readReportJson(root, 'conversion-contract-report.json') ?? {};
-  const contentContractReport = readReportJson(root, 'content-contract-report.json') ?? {};
-  const contentQualityReport = readReportJson(root, 'content-quality-report.json') ?? {};
-  const graphReport = readReportJson(root, 'graph-report.json') ?? {};
-  const contentGapsReport = readReportJson(root, 'content-gaps.json') ?? {};
-  const ctaViolations = readReportJson(root, 'cta-violation-scan.json') ?? [];
+  const domainStructureReport = unwrapReportData(readReportJson(root, 'domain-structure-report.json')) ?? {};
+  const conversionReport = unwrapReportData(readReportJson(root, 'conversion-contract-report.json')) ?? {};
+  const contentContractReport = unwrapReportData(readReportJson(root, 'content-contract-report.json')) ?? {};
+  const contentQualityReport = unwrapReportData(readReportJson(root, 'content-quality-report.json')) ?? {};
+  const graphReport = unwrapReportData(readReportJson(root, 'graph-report.json')) ?? {};
+  const contentGapsReport = unwrapReportData(readReportJson(root, 'content-gaps.json')) ?? {};
+  const ctaViolationReport = readReportJson(root, 'cta-violation-scan.json') ?? [];
+  const ctaViolations = Array.isArray(ctaViolationReport)
+    ? ctaViolationReport
+    : Array.isArray(ctaViolationReport?.issues)
+      ? ctaViolationReport.issues
+      : [];
 
   for (const issue of domainStructureReport?.issues ?? []) {
     addPriority(priorities, routeIndex, {
@@ -928,10 +958,11 @@ function collectTypecheckErrors(output) {
 }
 
 function buildValidationSection(result, validationReport) {
-  const validators = validationReport?.validators ?? [];
-  const total = validationReport?.total ?? {};
+  const validationData = unwrapReportData(validationReport);
+  const validators = validationData?.validators ?? [];
+  const total = validationData?.total ?? {};
   const failuresByValidator = new Map(
-    (validationReport?.errors ?? [])
+    (validationData?.errors ?? [])
       .filter(error => error && typeof error.validator === 'string')
       .map(error => [error.validator, error])
   );
@@ -1146,15 +1177,13 @@ function normalizeReportFile(absolutePath, timestamp, fallbackSource) {
   if (fileName.endsWith('.json')) {
     const report = readJsonFile(absolutePath);
 
-    if (report && typeof report === 'object' && !Array.isArray(report)) {
-      const nextReport = {
-        ...report,
-        generatedAt: typeof report.generatedAt === 'string' ? report.generatedAt : timestamp,
-        sourceCommand:
-          typeof report.sourceCommand === 'string' && report.sourceCommand.trim().length > 0
-            ? report.sourceCommand
-            : inferSourceCommand(fileName, fallbackSource),
-      };
+    if (report !== null) {
+      const nextReport = normalizeRawReport({
+        name: fileName.replace(/\.json$/i, ''),
+        payload: report,
+        sourceCommand: inferSourceCommand(fileName, fallbackSource),
+        generatedAt: typeof report?.generatedAt === 'string' ? report.generatedAt : timestamp,
+      });
 
       generatedAt = nextReport.generatedAt;
       fileSourceCommand = nextReport.sourceCommand;
@@ -1208,9 +1237,9 @@ function buildReportsSection(result, runStartedAt, timestamp) {
 }
 
 function buildSystemSection() {
-  const domainStructureReport = readReportJson(root, 'domain-structure-report.json') ?? {};
-  const graphReport = readReportJson(root, 'graph-report.json') ?? {};
-  const authorityMap = readReportJson(root, 'authority-map.json') ?? {};
+  const domainStructureReport = unwrapReportData(readReportJson(root, 'domain-structure-report.json')) ?? {};
+  const graphReport = unwrapReportData(readReportJson(root, 'graph-report.json')) ?? {};
+  const authorityMap = unwrapReportData(readReportJson(root, 'authority-map.json')) ?? {};
   const domainIssues = Array.isArray(domainStructureReport?.issues) ? domainStructureReport.issues : [];
   const featureIssues = domainIssues
     .filter(issue => issue?.type === 'feature')
@@ -1306,7 +1335,6 @@ function main() {
     durationMs: Date.now() - runStartedAt,
     validate,
     typecheck,
-    types: typecheck,
     tests,
     e2e,
     reports,
@@ -1351,6 +1379,7 @@ function main() {
   writeJson(clientDashboardPath, validatedOutputs.clientDashboard);
   writeJson(reportPath, validatedOutputs.report);
   writeSnapshotArtifacts(validatedOutputs.report);
+  buildDashboardData(root, sourceCommand);
 
   const shouldFail = validatedOutputs.report.status === 'FAIL';
   logger.printTotals({

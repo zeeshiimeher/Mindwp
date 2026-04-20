@@ -16,12 +16,22 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized.ts';
 import { resolveConversionPriorityTier } from '../../src/lib/content-graph/conversionGoals.ts';
 import { getStructuredContentGraph } from '../../src/lib/content-graph/registry.ts';
+import { createReportSchema } from '../lib/report-schema.mjs';
 
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'page-priorities.json');
+const sourceCommand = 'node --import tsx/esm scripts/analyzers/detect-page-priorities.mjs';
+const logger = createLogger({
+  label: 'page-priorities',
+  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  rootDir: root,
+});
+
 async function main() {
   await ensureGraphInitialized();
 
@@ -35,26 +45,38 @@ async function main() {
     }))
     .sort((left, right) => left.path.localeCompare(right.path));
 
-  const report = {
-    generatedAt: new Date().toISOString(),
-    totalPages: pages.length,
-    summary: {
-      high: pages.filter((p) => p.priority === 'high').length,
-      medium: pages.filter((p) => p.priority === 'medium').length,
-      low: pages.filter((p) => p.priority === 'low').length,
-    },
-    pages,
+  const prioritySummary = {
+    high: pages.filter((p) => p.priority === 'high').length,
+    medium: pages.filter((p) => p.priority === 'medium').length,
+    low: pages.filter((p) => p.priority === 'low').length,
   };
+  const report = createReportSchema({
+    name: 'page-priorities',
+    status: 'PASS',
+    summary: {
+      total: pages.length,
+      passed: pages.length,
+      failed: 0,
+      warnings: 0,
+    },
+    data: {
+      totalPages: pages.length,
+      prioritySummary,
+      pages,
+    },
+    sourceCommand,
+  });
 
   fs.mkdirSync(path.dirname(reportPath), { recursive: true });
   fs.writeFileSync(reportPath, JSON.stringify(report, null, 2) + '\n');
 
-  console.log('Page priority detection complete.');
-  console.log(`  Total pages: ${report.totalPages}`);
-  console.log(`  High priority: ${report.summary.high}`);
-  console.log(`  Medium priority: ${report.summary.medium}`);
-  console.log(`  Low priority: ${report.summary.low}`);
-  console.log(`  Report: reports/page-priorities.json`);
+  logger.printTotals({
+    total: pages.length,
+    high: prioritySummary.high,
+    medium: prioritySummary.medium,
+    low: prioritySummary.low,
+  });
+  logger.printSummary(`report -> ${logger.relativePath(reportPath)}`);
 }
 
 main();

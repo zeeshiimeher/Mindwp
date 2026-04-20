@@ -1,35 +1,41 @@
 {
-  "generatedAt": "2026-04-20T20:05:04.796Z",
-  "passed": true,
-  "pageCount": 352,
-  "issueCount": 0,
-  "warningCount": 0,
-  "summary": {
-    "seo": {
-      "pagesAnalyzed": 352,
-      "missingMetadata": 0,
-      "duplicateTitles": 0,
-      "duplicateDescriptions": 0,
-      "canonicalMisalignment": 0,
-      "sitemapMisalignment": 0,
-      "openGraphGaps": 0,
-      "missingRobots": 0,
-      "canonicalAlignment": 100,
-      "sitemapAlignment": 100,
-      "openGraphCoverage": 100
+  "name": "content-quality-report",
+  "status": "PASS",
+  "summary": {},
+  "data": {
+    "generatedAt": "2026-04-20T20:42:06.193Z",
+    "passed": true,
+    "pageCount": 352,
+    "issueCount": 0,
+    "warningCount": 0,
+    "summary": {
+      "seo": {
+        "pagesAnalyzed": 352,
+        "missingMetadata": 0,
+        "duplicateTitles": 0,
+        "duplicateDescriptions": 0,
+        "canonicalMisalignment": 0,
+        "sitemapMisalignment": 0,
+        "openGraphGaps": 0,
+        "missingRobots": 0,
+        "canonicalAlignment": 100,
+        "sitemapAlignment": 100,
+        "openGraphCoverage": 100
+      },
+      "content": {
+        "weakDescriptions": 0,
+        "emptyHeadings": 0
+      },
+      "authority": {
+        "topicsAnalyzed": 42,
+        "topicsWithoutBlog": 0,
+        "orphanTopics": 0,
+        "topicsWithoutInternalPath": 0
+      }
     },
-    "content": {
-      "weakDescriptions": 0,
-      "emptyHeadings": 0
-    },
-    "authority": {
-      "topicsAnalyzed": 42,
-      "topicsWithoutBlog": 0,
-      "orphanTopics": 0,
-      "topicsWithoutInternalPath": 0
-    }
+    "issues": [],
+    "warnings": []
   },
-  "issues": [],
-  "warnings": [],
-  "sourceCommand": "npx tsx scripts/validators/validate-content-quality.mjs --report-json"
+  "generatedAt": "2026-04-20T20:42:06.193Z",
+  "sourceCommand": "npx tsx scripts/validators/validate-content-quality.mjs"
 }

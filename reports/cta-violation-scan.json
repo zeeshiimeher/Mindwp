@@ -1,1 +1,24 @@
-[]
+{
+  "name": "cta-violation-scan",
+  "status": "PASS",
+  "summary": {
+    "total": 0,
+    "passed": 1,
+    "failed": 0,
+    "warnings": 0
+  },
+  "data": {
+    "name": "cta-violation-scan",
+    "status": "PASS",
+    "summary": {
+      "total": 0,
+      "passed": 1,
+      "failed": 0,
+      "warnings": 0
+    },
+    "generatedAt": "2026-04-20T20:42:14.568Z",
+    "sourceCommand": "npx tsx scripts/validators/validate-cta-violations.ts"
+  },
+  "generatedAt": "2026-04-20T20:42:14.568Z",
+  "sourceCommand": "npm run system:full"
+}

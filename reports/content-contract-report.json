@@ -1,14 +1,20 @@
 {
-  "generatedAt": "2026-04-20T20:05:03.920Z",
-  "scannedNodes": 227,
-  "passed": true,
-  "issueCount": 0,
-  "warningCount": 0,
-  "summary": {
-    "missingSystem": 0,
-    "missingMetadata": 0
+  "name": "content-contract-report",
+  "status": "PASS",
+  "summary": {},
+  "data": {
+    "generatedAt": "2026-04-20T20:42:05.289Z",
+    "scannedNodes": 227,
+    "passed": true,
+    "issueCount": 0,
+    "warningCount": 0,
+    "summary": {
+      "missingSystem": 0,
+      "missingMetadata": 0
+    },
+    "issues": [],
+    "warnings": []
   },
-  "issues": [],
-  "warnings": [],
+  "generatedAt": "2026-04-20T20:42:05.289Z",
   "sourceCommand": "npm run system:full"
 }

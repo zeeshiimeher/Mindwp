@@ -11,6 +11,8 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 import { AUTHORITY_MAP } from '../../src/lib/authority/generated/authorityMap';
 import { resolveContentRules, type ContentRulePageType } from '../../src/lib/config/contentRules';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
@@ -19,6 +21,7 @@ import { buildRelatedContent } from '../../src/lib/related/buildRelatedContent';
 import { getRelatedContent } from '../../src/lib/graph/query';
 import type { ContentNodeType } from '../../src/lib/content-graph/types';
 import { normalizeInternalTarget } from '../../src/lib/seo/config';
+import { createReportSchema } from '../../lib/reports/reportSchema';
 
 const SOURCE_SCAN_ROOTS = ['src/app', 'src/components', 'src/domains', 'src/screens'];
 const AUTHORED_HREF_PATTERN = /(?:href\s*:\s*|href=)(['"])(\/[^'"\s}]*)\1/g;
@@ -26,6 +29,13 @@ const INTERNAL_LINK_BASE_ORIGIN = 'https://mindwp.local';
 const root = process.env.MINDWP_LINK_SCAN_ROOT
   ? path.resolve(process.env.MINDWP_LINK_SCAN_ROOT)
   : process.cwd();
+const reportPath = path.join(root, 'reports', 'internal-links-report.json');
+const sourceCommand = 'npx tsx scripts/validators/validate-internal-links.ts';
+const logger = createLogger({
+  label: 'validate-internal-links',
+  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  rootDir: root,
+});
 
 interface Violation {
   slug: string;
@@ -214,16 +224,41 @@ await validateAuthoredInternalLinks(validPaths);
 
 // ── Report ───────────────────────────────────────────────────────────────────
 
+const report = createReportSchema({
+  name: 'internal-links-report',
+  status: violations.length > 0 ? 'FAIL' : 'PASS',
+  summary: {
+    total: totalPages + violations.length,
+    passed: totalPages,
+    failed: violations.length,
+    warnings: 0,
+  },
+  issues: violations,
+  data: {
+    totalPages,
+    validPaths: validPaths.size,
+    scanRoots: SOURCE_SCAN_ROOTS,
+  },
+  sourceCommand,
+});
+
+await fs.mkdir(path.dirname(reportPath), { recursive: true });
+await fs.writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`, 'utf8');
+
 if (violations.length > 0) {
-  console.error(`\n✗ Internal link validation FAILED — ${violations.length} violation(s):\n`);
-  for (const v of violations) {
-    console.error(`  [${v.rule}] ${v.type}/${v.slug}: ${v.detail}`);
-  }
-  console.error('');
+  logger.printErrors(
+    violations.map(v => `[${v.rule}] ${v.type}/${v.slug}: ${v.detail}`),
+    'violations',
+    logger.isVerbose() ? 20 : 5
+  );
+  logger.printSummary(`report -> ${logger.relativePath(reportPath)}`);
   process.exit(1);
 } else {
   const rules = resolveContentRules('static').internalLinks;
-  console.log(
-    `✓ Internal link validation passed (${totalPages} pages, max ${rules.maxSectionsPerPage} related section, max ${rules.maxTotalLinks} related items, authored href targets valid, 0 violations)`
-  );
+  logger.printTotals({
+    ...report.summary,
+    maxSectionsPerPage: rules.maxSectionsPerPage,
+    maxTotalLinks: rules.maxTotalLinks,
+  });
+  logger.printSummary(`report -> ${logger.relativePath(reportPath)}`);
 }

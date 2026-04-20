@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-04-20T20:05:15.706Z",
-  "passed": true,
-  "violationCount": 0,
-  "violations": [],
+  "name": "inline-style-report",
+  "status": "PASS",
+  "summary": {
+    "total": 0,
+    "passed": 1,
+    "failed": 0,
+    "warnings": 0
+  },
+  "data": {
+    "generatedAt": "2026-04-20T20:42:16.924Z",
+    "passed": true,
+    "violationCount": 0,
+    "violations": []
+  },
+  "generatedAt": "2026-04-20T20:42:16.924Z",
   "sourceCommand": "npm run system:full"
 }

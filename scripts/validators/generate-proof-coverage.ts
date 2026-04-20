@@ -1,18 +1,31 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
+
 import { BLOG_POSTS } from '@/domains/blog/registry';
 import { CASE_STUDY_REGISTRY } from '@/domains/case-studies/registry';
 import { FEATURE_REGISTRY } from '@/domains/features/registry';
 import { INDUSTRY_REGISTRY } from '@/domains/industries/registry';
 import { RESOURCE_REGISTRY } from '@/domains/resources/generatedRegistry';
 import { SERVICE_ENTRY_BY_SLUG_WITH_ALIASES } from '@/domains/services/config';
+import { createReportSchema } from '../../lib/reports/reportSchema';
 
 type ProofCoverageEntry = {
   page: string;
   hasProof: boolean;
   reason: string;
 };
+
+const root = process.cwd();
+const reportPath = path.join(root, 'reports', 'proof-coverage.json');
+const sourceCommand = 'npx tsx scripts/validators/generate-proof-coverage.ts';
+const logger = createLogger({
+  label: 'generate-proof-coverage',
+  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  rootDir: root,
+});
 
 function collectText(value: unknown, parts: string[] = []): string[] {
   if (typeof value === 'string') {
@@ -90,7 +103,25 @@ const report: ProofCoverageEntry[] = datasets.map(entry => {
   };
 });
 
-const reportPath = path.join(process.cwd(), 'reports', 'proof-coverage.json');
-await fs.writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`, 'utf8');
+const missingProof = report.filter(entry => !entry.hasProof);
+const normalizedReport = createReportSchema({
+  name: 'proof-coverage',
+  status: missingProof.length > 0 ? 'WARN' : 'PASS',
+  summary: {
+    total: report.length,
+    passed: report.length - missingProof.length,
+    failed: 0,
+    warnings: missingProof.length,
+  },
+  issues: missingProof,
+  data: {
+    coverage: report,
+  },
+  sourceCommand,
+});
 
-console.log(`Generated proof coverage report: ${reportPath}`);
+await fs.mkdir(path.dirname(reportPath), { recursive: true });
+await fs.writeFile(reportPath, `${JSON.stringify(normalizedReport, null, 2)}\n`, 'utf8');
+
+logger.printTotals(normalizedReport.summary);
+logger.printSummary(`report -> ${logger.relativePath(reportPath)}`);

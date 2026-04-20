@@ -1,9 +1,19 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
+import { normalizeRawReport } from '../lib/report-schema.mjs';
+
 const root = process.cwd();
 const srcRoot = path.join(root, 'src');
 const reportPath = path.join(root, 'reports', 'related-duplication-scan.json');
+const sourceCommand = 'npx tsx scripts/validators/validate-related-duplication.ts';
+const logger = createLogger({
+  label: 'validate-related-duplication',
+  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  rootDir: root,
+});
 
 type ViolationEntry = {
   page: string;
@@ -96,11 +106,25 @@ for (const filePath of files) {
   }
 }
 
-await fs.writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`, 'utf8');
+const normalizedReport = normalizeRawReport({
+  name: 'related-duplication-scan',
+  payload: report,
+  sourceCommand,
+});
+const issues = (normalizedReport.issues ?? []) as ViolationEntry[];
 
-if (report.length > 0) {
-  console.error(`Related duplication scan failed: ${report.length} file(s)`);
+await fs.mkdir(path.dirname(reportPath), { recursive: true });
+await fs.writeFile(reportPath, `${JSON.stringify(normalizedReport, null, 2)}\n`, 'utf8');
+
+if ((normalizedReport.summary.failed ?? 0) > 0) {
+  logger.printErrors(
+    issues.map(entry => `${entry.page}: ${(entry.violations ?? []).join(' | ')}`),
+    'violations',
+    logger.isVerbose() ? 20 : 5
+  );
+  logger.printSummary(`report -> ${logger.relativePath(reportPath)}`);
   process.exit(1);
 }
 
-console.log(`Related duplication scan passed: ${reportPath}`);
+logger.printTotals(normalizedReport.summary);
+logger.printSummary(`report -> ${logger.relativePath(reportPath)}`);

@@ -1,12 +1,23 @@
 {
-  "generatedAt": "2026-04-20T20:05:10.592Z",
-  "sources": {
-    "services": 19,
-    "features": 7,
-    "resources": 59,
-    "caseStudies": 22
+  "name": "section-structure-report",
+  "status": "PASS",
+  "summary": {
+    "total": 0,
+    "passed": 1,
+    "failed": 0,
+    "warnings": 0
   },
-  "violationCount": 0,
-  "violations": [],
+  "data": {
+    "generatedAt": "2026-04-20T20:42:11.848Z",
+    "sources": {
+      "services": 19,
+      "features": 7,
+      "resources": 59,
+      "caseStudies": 22
+    },
+    "violationCount": 0,
+    "violations": []
+  },
+  "generatedAt": "2026-04-20T20:42:11.848Z",
   "sourceCommand": "npm run system:full"
 }

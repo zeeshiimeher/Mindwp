@@ -2,9 +2,19 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
+import { normalizeRawReport } from '../lib/report-schema.mjs';
+
 const root = process.cwd();
 const srcRoot = path.join(root, 'src');
 const reportPath = path.join(root, 'reports', 'cta-violation-scan.json');
+const sourceCommand = 'npx tsx scripts/validators/validate-cta-violations.ts';
+const logger = createLogger({
+  label: 'validate-cta-violations',
+  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  rootDir: root,
+});
 
 type ViolationEntry = {
   page: string;
@@ -135,20 +145,30 @@ export async function runCtaViolationScan() {
     }
   }
 
-  await fs.writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`, 'utf8');
+  const normalizedReport = normalizeRawReport({
+    name: 'cta-violation-scan',
+    payload: report,
+    sourceCommand,
+  });
 
-  return report;
+  await fs.mkdir(path.dirname(reportPath), { recursive: true });
+  await fs.writeFile(reportPath, `${JSON.stringify(normalizedReport, null, 2)}\n`, 'utf8');
+
+  return normalizedReport;
 }
 
 async function main() {
   const report = await runCtaViolationScan();
+  const issues = (report.issues ?? []) as ViolationEntry[];
 
-  if (report.length > 0) {
-    console.error(formatViolationReport(report));
+  if ((report.summary.failed ?? 0) > 0) {
+    logger.printErrors([formatViolationReport(issues)], 'violations', 1);
+    logger.printSummary(`report -> ${logger.relativePath(reportPath)}`);
     process.exit(1);
   }
 
-  console.log(`CTA violation scan passed: ${reportPath}`);
+  logger.printTotals(report.summary);
+  logger.printSummary(`report -> ${logger.relativePath(reportPath)}`);
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {

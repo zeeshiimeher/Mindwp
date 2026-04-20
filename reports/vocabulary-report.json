@@ -1,8 +1,19 @@
 {
-  "generatedAt": "2026-04-20T20:05:16.148Z",
-  "passed": true,
-  "scannedFiles": 197,
-  "issueCount": 0,
-  "issues": [],
+  "name": "vocabulary-report",
+  "status": "PASS",
+  "summary": {
+    "total": 0,
+    "passed": 1,
+    "failed": 0,
+    "warnings": 0
+  },
+  "data": {
+    "generatedAt": "2026-04-20T20:42:17.366Z",
+    "passed": true,
+    "scannedFiles": 197,
+    "issueCount": 0,
+    "issues": []
+  },
+  "generatedAt": "2026-04-20T20:42:17.366Z",
   "sourceCommand": "npm run system:full"
 }

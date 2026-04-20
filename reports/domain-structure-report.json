@@ -1,14 +1,25 @@
 {
-  "generatedAt": "2026-04-20T20:05:07.038Z",
-  "passed": true,
-  "scannedByType": {
-    "service": 19,
-    "feature": 7,
-    "home": 1,
-    "industry": 32,
-    "case-study": 22
+  "name": "domain-structure-report",
+  "status": "PASS",
+  "summary": {
+    "total": 0,
+    "passed": 1,
+    "failed": 0,
+    "warnings": 0
   },
-  "issueCount": 0,
-  "issues": [],
+  "data": {
+    "generatedAt": "2026-04-20T20:42:08.381Z",
+    "passed": true,
+    "scannedByType": {
+      "service": 19,
+      "feature": 7,
+      "home": 1,
+      "industry": 32,
+      "case-study": 22
+    },
+    "issueCount": 0,
+    "issues": []
+  },
+  "generatedAt": "2026-04-20T20:42:08.381Z",
   "sourceCommand": "npm run system:full"
 }

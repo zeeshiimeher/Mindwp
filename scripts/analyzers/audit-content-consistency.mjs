@@ -14,10 +14,19 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 import { isApprovedCtaLabel } from '../../src/config/ctaLabels.ts';
+import { createReportSchema } from '../lib/report-schema.mjs';
 
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'content-consistency-audit.json');
+const sourceCommand = 'node --import tsx/esm scripts/analyzers/audit-content-consistency.mjs';
+const logger = createLogger({
+  label: 'content-consistency',
+  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  rootDir: root,
+});
 
 const DOMAINS = [
   { label: 'services', dirs: ['src/domains/services/data'], exts: ['.ts'] },
@@ -86,7 +95,6 @@ function extractCtaValues(text) {
 
 function main() {
   const audit = {
-    generatedAt: new Date().toISOString(),
     domains: {},
     summary: { totalFiles: 0, totalHypeWords: 0, totalBannedPhrases: 0, ctaMismatches: 0 },
   };
@@ -150,14 +158,29 @@ function main() {
   }
 
   fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-  fs.writeFileSync(reportPath, JSON.stringify(audit, null, 2));
+  const warningCount = audit.summary.totalHypeWords + audit.summary.totalBannedPhrases + audit.summary.ctaMismatches;
+  const report = createReportSchema({
+    name: 'content-consistency-audit',
+    status: warningCount > 0 ? 'WARN' : 'PASS',
+    summary: {
+      total: audit.summary.totalFiles,
+      passed: Math.max(audit.summary.totalFiles - audit.summary.ctaMismatches, 0),
+      failed: 0,
+      warnings: warningCount,
+    },
+    issues: Object.values(audit.domains).flatMap(domain => domain.ctaIssues),
+    data: audit,
+    sourceCommand,
+  });
+  fs.writeFileSync(reportPath, JSON.stringify(report, null, 2) + '\n');
 
-  console.log('Content consistency audit complete.');
-  console.log(`  Files scanned: ${audit.summary.totalFiles}`);
-  console.log(`  Hype words found: ${audit.summary.totalHypeWords}`);
-  console.log(`  Banned phrases found: ${audit.summary.totalBannedPhrases}`);
-  console.log(`  CTA mismatches: ${audit.summary.ctaMismatches}`);
-  console.log(`  Report: reports/content-consistency-audit.json`);
+  logger.printTotals({
+    files: audit.summary.totalFiles,
+    hypeWords: audit.summary.totalHypeWords,
+    bannedPhrases: audit.summary.totalBannedPhrases,
+    ctaMismatches: audit.summary.ctaMismatches,
+  });
+  logger.printSummary(`report -> ${logger.relativePath(reportPath)}`);
 }
 
 main();

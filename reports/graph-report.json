@@ -1,16 +1,22 @@
 {
-  "generatedAt": "2026-04-20T20:05:11.710Z",
-  "passed": true,
-  "errorCount": 0,
-  "warningCount": 0,
-  "summary": {
-    "invalidEdges": 0,
-    "orphanNodes": 0
+  "name": "graph-report",
+  "status": "PASS",
+  "summary": {},
+  "data": {
+    "generatedAt": "2026-04-20T20:42:13.007Z",
+    "passed": true,
+    "errorCount": 0,
+    "warningCount": 0,
+    "summary": {
+      "invalidEdges": 0,
+      "orphanNodes": 0
+    },
+    "errors": [],
+    "warnings": [],
+    "issues": [],
+    "advisory": [],
+    "derivedEdgeCount": 9626
   },
-  "errors": [],
-  "warnings": [],
-  "issues": [],
-  "advisory": [],
-  "derivedEdgeCount": 9626,
+  "generatedAt": "2026-04-20T20:42:13.007Z",
   "sourceCommand": "npx tsx scripts/validators/validate-graph.ts"
 }

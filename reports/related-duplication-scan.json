@@ -1,1 +1,24 @@
-[]
+{
+  "name": "related-duplication-scan",
+  "status": "PASS",
+  "summary": {
+    "total": 0,
+    "passed": 1,
+    "failed": 0,
+    "warnings": 0
+  },
+  "data": {
+    "name": "related-duplication-scan",
+    "status": "PASS",
+    "summary": {
+      "total": 0,
+      "passed": 1,
+      "failed": 0,
+      "warnings": 0
+    },
+    "generatedAt": "2026-04-20T20:42:15.129Z",
+    "sourceCommand": "npx tsx scripts/validators/validate-related-duplication.ts"
+  },
+  "generatedAt": "2026-04-20T20:42:15.129Z",
+  "sourceCommand": "npm run system:full"
+}

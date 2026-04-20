@@ -1,187 +1,247 @@
 {
-  "generatedAt": "2026-04-20T20:05:22.118Z",
-  "total": {
+  "name": "validation-results",
+  "status": "PASS",
+  "summary": {
+    "total": 25,
     "passed": 25,
     "failed": 0,
-    "blockingFailed": 0,
-    "advisoryFailed": 0,
-    "total": 25
+    "warnings": 0
   },
-  "validators": [
-    {
-      "name": "check-generated",
-      "status": "pass",
-      "duration": 4276,
-      "blocking": true
+  "data": {
+    "total": {
+      "passed": 25,
+      "failed": 0,
+      "blockingFailed": 0,
+      "advisoryFailed": 0,
+      "total": 25
     },
-    {
-      "name": "typecheck",
-      "status": "pass",
-      "duration": 1961,
-      "blocking": true
+    "validators": [
+      {
+        "name": "check-generated",
+        "status": "pass",
+        "duration": 3989,
+        "blocking": true,
+        "reportFile": "check-generated-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "typecheck",
+        "status": "pass",
+        "duration": 1726,
+        "blocking": true,
+        "reportFile": "typecheck-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "lint",
+        "status": "pass",
+        "duration": 5766,
+        "blocking": false,
+        "reportFile": "lint-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-content-contract",
+        "status": "pass",
+        "duration": 2097,
+        "blocking": true,
+        "reportFile": "content-contract-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-content-quality",
+        "status": "pass",
+        "duration": 886,
+        "blocking": true,
+        "reportFile": "content-quality-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-domain-structure",
+        "status": "pass",
+        "duration": 2207,
+        "blocking": true,
+        "reportFile": "domain-structure-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-cta-label-contract",
+        "status": "pass",
+        "duration": 806,
+        "blocking": true,
+        "reportFile": "cta-label-contract-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-cta-resolver-integrity",
+        "status": "pass",
+        "duration": 116,
+        "blocking": true,
+        "reportFile": "cta-resolver-integrity-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-conversion-contract",
+        "status": "pass",
+        "duration": 740,
+        "blocking": true,
+        "reportFile": "conversion-contract-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-template-payload-sufficiency",
+        "status": "pass",
+        "duration": 972,
+        "blocking": true,
+        "reportFile": "template-payload-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-section-structure",
+        "status": "pass",
+        "duration": 814,
+        "blocking": true,
+        "reportFile": "section-structure-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-section-shell-integrity",
+        "status": "pass",
+        "duration": 106,
+        "blocking": true,
+        "reportFile": "section-shell-integrity-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-design-system",
+        "status": "pass",
+        "duration": 132,
+        "blocking": true,
+        "reportFile": "design-system-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-ui-purity",
+        "status": "pass",
+        "duration": 87,
+        "blocking": true,
+        "reportFile": "ui-purity-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-graph",
+        "status": "pass",
+        "duration": 835,
+        "blocking": true,
+        "reportFile": "graph-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-internal-links",
+        "status": "pass",
+        "duration": 991,
+        "blocking": true,
+        "reportFile": "internal-links-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-cta-violations",
+        "status": "pass",
+        "duration": 566,
+        "blocking": true,
+        "reportFile": "cta-violation-scan.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-related-duplication",
+        "status": "pass",
+        "duration": 562,
+        "blocking": true,
+        "reportFile": "related-duplication-scan.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-production-contracts",
+        "status": "pass",
+        "duration": 864,
+        "blocking": true,
+        "reportFile": "production-contract-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-inline-link-misuse",
+        "status": "pass",
+        "duration": 592,
+        "blocking": true,
+        "reportFile": "inline-link-misuse-scan.json",
+        "reportMissing": false
+      },
+      {
+        "name": "generate-proof-coverage",
+        "status": "pass",
+        "duration": 1172,
+        "blocking": false,
+        "reportFile": "proof-coverage.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-tokens",
+        "status": "pass",
+        "duration": 124,
+        "blocking": true,
+        "reportFile": "token-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-inline-styles",
+        "status": "pass",
+        "duration": 210,
+        "blocking": true,
+        "reportFile": "inline-style-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-docs",
+        "status": "pass",
+        "duration": 301,
+        "blocking": false,
+        "reportFile": "docs-report.json",
+        "reportMissing": false
+      },
+      {
+        "name": "validate-vocabulary",
+        "status": "pass",
+        "duration": 441,
+        "blocking": false,
+        "reportFile": "vocabulary-report.json",
+        "reportMissing": false
+      }
+    ],
+    "errors": [],
+    "seo": {
+      "pagesAnalyzed": 352,
+      "missingMetadata": 0,
+      "duplicateTitles": 0,
+      "duplicateDescriptions": 0,
+      "canonicalMisalignment": 0,
+      "sitemapMisalignment": 0,
+      "openGraphGaps": 0,
+      "missingRobots": 0,
+      "canonicalAlignment": 100,
+      "sitemapAlignment": 100,
+      "openGraphCoverage": 100
     },
-    {
-      "name": "lint",
-      "status": "pass",
-      "duration": 6405,
-      "blocking": false
+    "content": {
+      "weakDescriptions": 0,
+      "emptyHeadings": 0
     },
-    {
-      "name": "validate-content-contract",
-      "status": "pass",
-      "duration": 2161,
-      "blocking": true
-    },
-    {
-      "name": "validate-content-quality",
-      "status": "pass",
-      "duration": 859,
-      "blocking": true
-    },
-    {
-      "name": "validate-domain-structure",
-      "status": "pass",
-      "duration": 2277,
-      "blocking": true
-    },
-    {
-      "name": "validate-cta-label-contract",
-      "status": "pass",
-      "duration": 836,
-      "blocking": true
-    },
-    {
-      "name": "validate-cta-resolver-integrity",
-      "status": "pass",
-      "duration": 105,
-      "blocking": true
-    },
-    {
-      "name": "validate-conversion-contract",
-      "status": "pass",
-      "duration": 772,
-      "blocking": true
-    },
-    {
-      "name": "validate-template-payload-sufficiency",
-      "status": "pass",
-      "duration": 960,
-      "blocking": true
-    },
-    {
-      "name": "validate-section-structure",
-      "status": "pass",
-      "duration": 847,
-      "blocking": true
-    },
-    {
-      "name": "validate-section-shell-integrity",
-      "status": "pass",
-      "duration": 111,
-      "blocking": true
-    },
-    {
-      "name": "validate-design-system",
-      "status": "pass",
-      "duration": 134,
-      "blocking": true
-    },
-    {
-      "name": "validate-ui-purity",
-      "status": "pass",
-      "duration": 88,
-      "blocking": true
-    },
-    {
-      "name": "validate-graph",
-      "status": "pass",
-      "duration": 783,
-      "blocking": true
-    },
-    {
-      "name": "validate-internal-links",
-      "status": "pass",
-      "duration": 1016,
-      "blocking": true
-    },
-    {
-      "name": "validate-cta-violations",
-      "status": "pass",
-      "duration": 578,
-      "blocking": true
-    },
-    {
-      "name": "validate-related-duplication",
-      "status": "pass",
-      "duration": 570,
-      "blocking": true
-    },
-    {
-      "name": "validate-production-contracts",
-      "status": "pass",
-      "duration": 887,
-      "blocking": true
-    },
-    {
-      "name": "validate-inline-link-misuse",
-      "status": "pass",
-      "duration": 606,
-      "blocking": true
-    },
-    {
-      "name": "generate-proof-coverage",
-      "status": "pass",
-      "duration": 1216,
-      "blocking": false
-    },
-    {
-      "name": "validate-tokens",
-      "status": "pass",
-      "duration": 115,
-      "blocking": true
-    },
-    {
-      "name": "validate-inline-styles",
-      "status": "pass",
-      "duration": 216,
-      "blocking": true
-    },
-    {
-      "name": "validate-docs",
-      "status": "pass",
-      "duration": 249,
-      "blocking": false
-    },
-    {
-      "name": "validate-vocabulary",
-      "status": "pass",
-      "duration": 441,
-      "blocking": false
+    "authority": {
+      "topicsAnalyzed": 42,
+      "topicsWithoutBlog": 0,
+      "orphanTopics": 0,
+      "topicsWithoutInternalPath": 0
     }
-  ],
-  "errors": [],
-  "seo": {
-    "pagesAnalyzed": 352,
-    "missingMetadata": 0,
-    "duplicateTitles": 0,
-    "duplicateDescriptions": 0,
-    "canonicalMisalignment": 0,
-    "sitemapMisalignment": 0,
-    "openGraphGaps": 0,
-    "missingRobots": 0,
-    "canonicalAlignment": 100,
-    "sitemapAlignment": 100,
-    "openGraphCoverage": 100
   },
-  "content": {
-    "weakDescriptions": 0,
-    "emptyHeadings": 0
-  },
-  "authority": {
-    "topicsAnalyzed": 42,
-    "topicsWithoutBlog": 0,
-    "orphanTopics": 0,
-    "topicsWithoutInternalPath": 0
-  },
+  "generatedAt": "2026-04-20T20:42:22.696Z",
   "sourceCommand": "node scripts/core/validate-all.mjs --report-json"
 }

@@ -1,7 +1,18 @@
 {
-  "generatedAt": "2026-04-20T20:05:15.491Z",
-  "passed": true,
-  "violationCount": 0,
-  "violations": [],
+  "name": "token-report",
+  "status": "PASS",
+  "summary": {
+    "total": 0,
+    "passed": 1,
+    "failed": 0,
+    "warnings": 0
+  },
+  "data": {
+    "generatedAt": "2026-04-20T20:42:16.715Z",
+    "passed": true,
+    "violationCount": 0,
+    "violations": []
+  },
+  "generatedAt": "2026-04-20T20:42:16.715Z",
   "sourceCommand": "npm run system:full"
 }

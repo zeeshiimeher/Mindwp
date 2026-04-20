@@ -1,9 +1,19 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
+import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
+import { normalizeRawReport } from '../lib/report-schema.mjs';
+
 const root = process.cwd();
 const srcRoot = path.join(root, 'src');
 const reportPath = path.join(root, 'reports', 'inline-link-misuse-scan.json');
+const sourceCommand = 'npx tsx scripts/validators/validate-inline-link-misuse.ts';
+const logger = createLogger({
+  label: 'validate-inline-link-misuse',
+  mode: resolveLoggingMode(process.argv.slice(2), process.env),
+  rootDir: root,
+});
 const allowedFiles = new Set([
   'src/domains/blog/templates/BlogPostTemplate.tsx',
   'src/domains/resources/templates/ResourcePageTemplate.tsx',
@@ -86,18 +96,26 @@ for (const filePath of files) {
 }
 
 await fs.mkdir(path.dirname(reportPath), { recursive: true });
-await fs.writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`, 'utf8');
+const normalizedReport = normalizeRawReport({
+  name: 'inline-link-misuse-scan',
+  payload: report,
+  sourceCommand,
+});
+const issues = (normalizedReport.issues ?? []) as ViolationEntry[];
 
-if (report.length > 0) {
-  console.error(`Inline link misuse scan failed: ${report.length} file(s)`);
+await fs.writeFile(reportPath, `${JSON.stringify(normalizedReport, null, 2)}\n`, 'utf8');
 
-  for (const entry of report) {
-    for (const violation of entry.violations) {
-      console.error(`  - [${entry.page}] ${violation}`);
-    }
-  }
-
+if ((normalizedReport.summary.failed ?? 0) > 0) {
+  logger.printErrors(
+    issues.flatMap(entry =>
+      (entry.violations ?? []).map(violation => `[${entry.page}] ${violation}`)
+    ),
+    'violations',
+    logger.isVerbose() ? 20 : 5
+  );
+  logger.printSummary(`report -> ${logger.relativePath(reportPath)}`);
   process.exit(1);
 }
 
-console.log(`Inline link misuse scan passed: ${reportPath}`);
+logger.printTotals(normalizedReport.summary);
+logger.printSummary(`report -> ${logger.relativePath(reportPath)}`);

@@ -1,9 +1,20 @@
 {
-  "generatedAt": "2026-04-20T20:05:08.786Z",
-  "passed": true,
-  "issueCount": 0,
-  "warningCount": 0,
-  "issues": [],
-  "warnings": [],
+  "name": "conversion-contract-report",
+  "status": "PASS",
+  "summary": {
+    "total": 0,
+    "passed": 1,
+    "failed": 0,
+    "warnings": 0
+  },
+  "data": {
+    "generatedAt": "2026-04-20T20:42:10.062Z",
+    "passed": true,
+    "issueCount": 0,
+    "warningCount": 0,
+    "issues": [],
+    "warnings": []
+  },
+  "generatedAt": "2026-04-20T20:42:10.062Z",
   "sourceCommand": "npm run system:full"
 }

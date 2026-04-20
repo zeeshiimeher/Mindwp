@@ -1,141 +1,190 @@
 {
-  "generatedAt": "2026-04-20T20:05:35.926Z",
-  "sourceCommand": "node --import tsx/esm scripts/analyzers/export-reports.mjs",
+  "name": "client-report",
+  "status": "PASS",
   "summary": {
-    "totalPages": 352,
-    "healthy": 352,
-    "weak": 0,
-    "critical": 0
-  },
-  "validation": {
-    "passed": 25,
+    "total": 352,
+    "passed": 352,
     "failed": 0,
-    "blockingFailed": 0,
-    "advisoryFailed": 0,
-    "total": 25
+    "warnings": 0
   },
-  "contentQuality": {
-    "issueCount": 0,
-    "warningCount": 0
+  "data": {
+    "summary": {
+      "totalPages": 352,
+      "healthy": 352,
+      "weak": 0,
+      "critical": 0
+    },
+    "validation": {
+      "passed": 25,
+      "failed": 0,
+      "blockingFailed": 0,
+      "advisoryFailed": 0,
+      "total": 25
+    },
+    "contentQuality": {
+      "issueCount": 0,
+      "warningCount": 0
+    },
+    "graph": {
+      "errorCount": 0,
+      "warningCount": 0
+    },
+    "reports": [
+      {
+        "name": "authority-map.json"
+      },
+      {
+        "name": "check-generated-report.json"
+      },
+      {
+        "name": "client-dashboard.json"
+      },
+      {
+        "name": "client-report.json"
+      },
+      {
+        "name": "client-report.md"
+      },
+      {
+        "name": "content-consistency-audit.json"
+      },
+      {
+        "name": "content-contract-report.json"
+      },
+      {
+        "name": "content-gaps.json"
+      },
+      {
+        "name": "content-gaps.md"
+      },
+      {
+        "name": "content-intelligence.json"
+      },
+      {
+        "name": "content-quality-report.json"
+      },
+      {
+        "name": "content-score.json"
+      },
+      {
+        "name": "conversion-contract-report.json"
+      },
+      {
+        "name": "cta-label-contract-report.json"
+      },
+      {
+        "name": "cta-report.json"
+      },
+      {
+        "name": "cta-resolver-integrity-report.json"
+      },
+      {
+        "name": "cta-violation-scan.json"
+      },
+      {
+        "name": "design-system-report.json"
+      },
+      {
+        "name": "docs-report.json"
+      },
+      {
+        "name": "domain-structure-report.json"
+      },
+      {
+        "name": "graph-derived-summary.json"
+      },
+      {
+        "name": "graph-report.json"
+      },
+      {
+        "name": "heading-audit-report.json"
+      },
+      {
+        "name": "inline-link-misuse-scan.json"
+      },
+      {
+        "name": "inline-style-report.json"
+      },
+      {
+        "name": "internal-links-report.json"
+      },
+      {
+        "name": "lint-report.json"
+      },
+      {
+        "name": "page-priorities.json"
+      },
+      {
+        "name": "pipeline-report.json"
+      },
+      {
+        "name": "production-contract-report.json"
+      },
+      {
+        "name": "proof-coverage.json"
+      },
+      {
+        "name": "related-duplication-scan.json"
+      },
+      {
+        "name": "section-shell-integrity-report.json"
+      },
+      {
+        "name": "section-structure-report.json"
+      },
+      {
+        "name": "session-log.json"
+      },
+      {
+        "name": "system-drift.json"
+      },
+      {
+        "name": "system-report.json"
+      },
+      {
+        "name": "system-snapshots"
+      },
+      {
+        "name": "system-state.json"
+      },
+      {
+        "name": "template-payload-report.json"
+      },
+      {
+        "name": "token-report.json"
+      },
+      {
+        "name": "topic-authority-scores.json"
+      },
+      {
+        "name": "topic-authority-scores.md"
+      },
+      {
+        "name": "topic-insights.json"
+      },
+      {
+        "name": "typecheck-report.json"
+      },
+      {
+        "name": "ui-purity-report.json"
+      },
+      {
+        "name": "validation-report.json"
+      },
+      {
+        "name": "validation-results.json"
+      },
+      {
+        "name": "visual-audit"
+      },
+      {
+        "name": "visual-audit-report.json"
+      },
+      {
+        "name": "vocabulary-report.json"
+      }
+    ]
   },
-  "graph": {
-    "errorCount": 0,
-    "warningCount": 0
-  },
-  "reports": [
-    {
-      "name": "authority-map.json"
-    },
-    {
-      "name": "client-dashboard.json"
-    },
-    {
-      "name": "client-report.json"
-    },
-    {
-      "name": "client-report.md"
-    },
-    {
-      "name": "content-contract-report.json"
-    },
-    {
-      "name": "content-gaps.json"
-    },
-    {
-      "name": "content-gaps.md"
-    },
-    {
-      "name": "content-quality-report.json"
-    },
-    {
-      "name": "conversion-contract-report.json"
-    },
-    {
-      "name": "cta-label-contract-report.json"
-    },
-    {
-      "name": "cta-report.json"
-    },
-    {
-      "name": "cta-resolver-integrity-report.json"
-    },
-    {
-      "name": "cta-violation-scan.json"
-    },
-    {
-      "name": "design-system-report.json"
-    },
-    {
-      "name": "docs-report.json"
-    },
-    {
-      "name": "domain-structure-report.json"
-    },
-    {
-      "name": "graph-report.json"
-    },
-    {
-      "name": "inline-link-misuse-scan.json"
-    },
-    {
-      "name": "inline-style-report.json"
-    },
-    {
-      "name": "production-contract-report.json"
-    },
-    {
-      "name": "proof-coverage.json"
-    },
-    {
-      "name": "related-duplication-scan.json"
-    },
-    {
-      "name": "section-shell-integrity-report.json"
-    },
-    {
-      "name": "section-structure-report.json"
-    },
-    {
-      "name": "session-log.json"
-    },
-    {
-      "name": "system-drift.json"
-    },
-    {
-      "name": "system-report.json"
-    },
-    {
-      "name": "system-snapshots"
-    },
-    {
-      "name": "system-state.json"
-    },
-    {
-      "name": "template-payload-report.json"
-    },
-    {
-      "name": "token-report.json"
-    },
-    {
-      "name": "topic-authority-scores.json"
-    },
-    {
-      "name": "topic-authority-scores.md"
-    },
-    {
-      "name": "ui-purity-report.json"
-    },
-    {
-      "name": "validation-report.json"
-    },
-    {
-      "name": "validation-results.json"
-    },
-    {
-      "name": "visual-audit"
-    },
-    {
-      "name": "vocabulary-report.json"
-    }
-  ]
+  "generatedAt": "2026-04-20T20:42:37.797Z",
+  "sourceCommand": "node --import tsx/esm scripts/analyzers/export-reports.mjs"
 }
