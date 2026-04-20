@@ -566,7 +566,7 @@ export default function OperatorDashboard({ report }: { report: UnifiedSystemRep
           </div>
 
           <div className='flex flex-wrap gap-3'>
-            <DashboardLinkButton href='/system-dashboard' label='Operator Dashboard' active />
+            <DashboardLinkButton href='/dev/system-dashboard' label='Operator Dashboard' active />
             <DashboardLinkButton href='/dashboard' label='Client Dashboard' />
             <DashboardLinkButton href='/image-dashboard' label='Image Dashboard' />
           </div>

@@ -1,6 +1,11 @@
 {
-  "name": "domain-structure-report",
-  "status": "PASS",
+  "meta": {
+    "name": "domain-structure-report",
+    "source": "npx tsx scripts/validators/validate-domain-structure.mjs --report-json",
+    "generatedAt": "2026-04-20T23:48:27.917Z",
+    "status": "PASS",
+    "version": "1.0"
+  },
   "summary": {
     "total": 0,
     "passed": 1,
@@ -8,7 +13,7 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-20T21:45:26.818Z",
+    "generatedAt": "2026-04-20T23:48:27.917Z",
     "passed": true,
     "scannedByType": {
       "service": 19,
@@ -20,6 +25,9 @@
     "issueCount": 0,
     "issues": []
   },
-  "generatedAt": "2026-04-20T21:45:26.818Z",
-  "sourceCommand": "npm run system:full"
+  "issues": [],
+  "name": "domain-structure-report",
+  "status": "PASS",
+  "generatedAt": "2026-04-20T23:48:27.917Z",
+  "sourceCommand": "npx tsx scripts/validators/validate-domain-structure.mjs --report-json"
 }

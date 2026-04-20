@@ -598,7 +598,7 @@ export function BlogPostTemplate({
               dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
             />
           )}
-          <SmartRelatedSection slug={slug} />
+          <SmartRelatedSection pageId={`blog:${slug}`} pageType='blog' slug={slug} />
         </main>
       </div>
     </CTARegistryProvider>

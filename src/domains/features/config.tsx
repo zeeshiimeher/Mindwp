@@ -57,7 +57,7 @@ export const renderFeaturePageBySlug = (slug: FeatureSlug) => {
   return (
     <CTARegistryProvider pageId={`feature:${slug}`} pageType='feature'>
       <FeaturePage data={data} />
-      <SmartRelatedSection slug={slug} />
+      <SmartRelatedSection pageId={`feature:${slug}`} pageType='feature' slug={slug} />
     </CTARegistryProvider>
   );
 };

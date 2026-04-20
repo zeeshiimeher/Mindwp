@@ -91,6 +91,6 @@ async function main() {
 }
 
 main().catch(error => {
-  process.stderr.write(`${error instanceof Error ? error.message : String(error)}\n`);
+  logger.error(error instanceof Error ? error.message : String(error));
   process.exit(1);
 });

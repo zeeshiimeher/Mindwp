@@ -210,6 +210,10 @@ export function logDerivedEdgeSummary(allNodes: ContentGraphNode[]): DerivedEdge
   const totalAll = summaries.reduce((sum, s) => sum + s.total, 0);
   const nodesWithEdges = summaries.length;
 
+  if (!logger.isDebug()) {
+    return summaries;
+  }
+
   logger.printTotals({ nodesWithEdges, totalEdges: totalAll });
 
   for (const summary of summaries) {

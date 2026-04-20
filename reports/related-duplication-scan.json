@@ -1,24 +1,21 @@
 {
-  "name": "related-duplication-scan",
-  "status": "PASS",
+  "meta": {
+    "name": "related-duplication-scan",
+    "source": "npx tsx scripts/validators/validate-related-duplication.ts",
+    "generatedAt": "2026-04-20T23:48:35.139Z",
+    "status": "PASS",
+    "version": "1.0"
+  },
   "summary": {
     "total": 0,
     "passed": 1,
     "failed": 0,
     "warnings": 0
   },
-  "data": {
-    "name": "related-duplication-scan",
-    "status": "PASS",
-    "summary": {
-      "total": 0,
-      "passed": 1,
-      "failed": 0,
-      "warnings": 0
-    },
-    "generatedAt": "2026-04-20T21:45:33.720Z",
-    "sourceCommand": "npx tsx scripts/validators/validate-related-duplication.ts"
-  },
-  "generatedAt": "2026-04-20T21:45:33.720Z",
-  "sourceCommand": "npm run system:full"
+  "data": null,
+  "issues": [],
+  "name": "related-duplication-scan",
+  "status": "PASS",
+  "generatedAt": "2026-04-20T23:48:35.139Z",
+  "sourceCommand": "npx tsx scripts/validators/validate-related-duplication.ts"
 }

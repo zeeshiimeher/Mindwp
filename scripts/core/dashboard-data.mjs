@@ -6,8 +6,8 @@ import { fileURLToPath } from 'node:url';
 
 import { createLogger } from '../../lib/logger/index.mjs';
 import {
-  DASHBOARD_REPORT_FILES as REQUIRED_DASHBOARD_REPORT_FILES,
   buildDashboardData,
+  DASHBOARD_REPORT_FILES as REQUIRED_DASHBOARD_REPORT_FILES,
 } from '../lib/dashboard-data.mjs';
 
 export const DASHBOARD_REPORT_FILES = REQUIRED_DASHBOARD_REPORT_FILES;
@@ -15,7 +15,10 @@ export const DASHBOARD_REPORT_FILES = REQUIRED_DASHBOARD_REPORT_FILES;
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const logger = createLogger({ label: 'dashboard-data', mode: 'summary', rootDir: root });
 
-export function buildAndValidateDashboardData(targetRoot = root, sourceCommand = 'npm run system:full') {
+export function buildAndValidateDashboardData(
+  targetRoot = root,
+  sourceCommand = 'npm run system:full'
+) {
   buildDashboardData(targetRoot, sourceCommand);
 
   const dashboardDir = path.join(targetRoot, 'reports', 'dashboard');
@@ -36,10 +39,11 @@ export function buildAndValidateDashboardData(targetRoot = root, sourceCommand =
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   try {
+    logger.step('dashboard:data');
     const result = buildAndValidateDashboardData();
     logger.printSummary(`dashboard data -> ${logger.relativePath(result.dashboardDir)}`);
   } catch (error) {
-    process.stderr.write(`[dashboard-data] ${error instanceof Error ? error.message : String(error)}\n`);
+    logger.error(error instanceof Error ? error.message : String(error));
     process.exit(1);
   }
 }

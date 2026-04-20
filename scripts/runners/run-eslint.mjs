@@ -1,8 +1,11 @@
+import { spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
-import { spawnSync } from 'node:child_process';
+
+import { createLogger } from '../../lib/logger/index.mjs';
 
 const repoRoot = process.cwd();
+const logger = createLogger({ label: 'run-eslint', mode: 'summary', rootDir: repoRoot });
 
 function resolveSourceRoot() {
   const rootSrc = path.join(repoRoot, 'src');
@@ -23,10 +26,19 @@ if (!fs.existsSync(eslintBin)) {
 }
 
 try {
-  const sourceRoot = resolveSourceRoot();
   const shouldFix = process.argv.includes('--fix');
+  const lintTargets = [
+    resolveSourceRoot(),
+    path.join(repoRoot, 'config'),
+    path.join(repoRoot, 'lib'),
+    path.join(repoRoot, 'scripts', 'core'),
+    path.join(repoRoot, 'scripts', 'runners'),
+    path.join(repoRoot, 'scripts', 'lib'),
+    path.join(repoRoot, 'scripts', 'analyzers', 'export-reports.mjs'),
+    path.join(repoRoot, 'scripts', 'validators', 'validate-system-knowledge.ts'),
+  ].filter(target => fs.existsSync(target));
 
-  const args = [sourceRoot, '--ext', '.ts,.tsx'];
+  const args = [...lintTargets, '--ext', '.ts,.tsx,.mjs'];
   if (shouldFix) args.push('--fix');
 
   const result = spawnSync(eslintBin, args, {
@@ -36,7 +48,6 @@ try {
 
   process.exitCode = typeof result.status === 'number' ? result.status : 1;
 } catch (err) {
-  // eslint-disable-next-line no-console
-  console.error(`[run-eslint] ${err instanceof Error ? err.message : String(err)}`);
+  logger.error(err instanceof Error ? err.message : String(err));
   process.exitCode = 1;
 }

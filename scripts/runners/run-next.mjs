@@ -1,11 +1,13 @@
+import { spawn, spawnSync } from 'node:child_process';
 import fs from 'node:fs';
 import net from 'node:net';
 import path from 'node:path';
-import { spawnSync, spawn } from 'node:child_process';
 
 import { buildSystemProcessEnv } from '../../config/systemEnv.mjs';
+import { createLogger } from '../../lib/logger/index.mjs';
 
 const repoRoot = process.cwd();
+const logger = createLogger({ label: 'run-next', mode: 'summary', rootDir: repoRoot });
 
 function hasNextRuntimeRoot(baseDir) {
   return (
@@ -121,10 +123,14 @@ async function resolveDevArgs(args) {
     return args;
   }
 
-  for (let candidatePort = requestedPort + 1; candidatePort <= requestedPort + 10; candidatePort += 1) {
+  for (
+    let candidatePort = requestedPort + 1;
+    candidatePort <= requestedPort + 10;
+    candidatePort += 1
+  ) {
     if (await canListenOnPort(candidatePort)) {
-      console.log(
-        `[run-next] Port ${requestedPort} is in use. Starting Next dev server on port ${candidatePort}.`
+      logger.warn(
+        `Port ${requestedPort} is in use. Starting Next dev server on port ${candidatePort}.`
       );
       return replacePortArg(args, candidatePort);
     }
@@ -155,7 +161,9 @@ async function main() {
 
   const [command, ...rest] = rawArgs;
   if (!command) {
-    throw new Error('Usage: node scripts/runners/run-next.mjs <dev|build|start|lint> [--filter] [-- <args...>]');
+    throw new Error(
+      'Usage: node scripts/runners/run-next.mjs <dev|build|start|lint> [--filter] [-- <args...>]'
+    );
   }
 
   const forwardedArgs = rest[0] === '--' ? rest.slice(1) : rest;
@@ -181,7 +189,7 @@ async function main() {
     });
 
     child.on('error', err => {
-      console.error(`[run-next] ${err instanceof Error ? err.message : String(err)}`);
+      logger.error(err instanceof Error ? err.message : String(err));
       process.exitCode = 1;
     });
   } else {
@@ -198,7 +206,6 @@ async function main() {
 try {
   await main();
 } catch (err) {
-  // eslint-disable-next-line no-console
-  console.error(`[run-next] ${err instanceof Error ? err.message : String(err)}`);
+  logger.error(err instanceof Error ? err.message : String(err));
   process.exitCode = 1;
 }

@@ -1,15 +1,21 @@
 import { createLogger } from '../../lib/logger/index.mjs';
+import { buildValidatedReport } from '../core/report-schema-validator.mjs';
 
 function coerceSummary(summary) {
   if (!summary || typeof summary !== 'object' || Array.isArray(summary)) {
-    return {};
+    return {
+      total: 0,
+      passed: 0,
+      failed: 0,
+      warnings: 0,
+    };
   }
 
   return {
-    ...(typeof summary.total === 'number' ? { total: summary.total } : {}),
-    ...(typeof summary.passed === 'number' ? { passed: summary.passed } : {}),
-    ...(typeof summary.failed === 'number' ? { failed: summary.failed } : {}),
-    ...(typeof summary.warnings === 'number' ? { warnings: summary.warnings } : {}),
+    total: typeof summary.total === 'number' ? summary.total : 0,
+    passed: typeof summary.passed === 'number' ? summary.passed : 0,
+    failed: typeof summary.failed === 'number' ? summary.failed : 0,
+    warnings: typeof summary.warnings === 'number' ? summary.warnings : 0,
   };
 }
 
@@ -20,7 +26,12 @@ function normalizeStatusString(status) {
 
   const normalized = status.trim().toUpperCase();
 
-  if (normalized === 'PASS' || normalized === 'PASSED' || normalized === 'CLEAN' || normalized === 'OK') {
+  if (
+    normalized === 'PASS' ||
+    normalized === 'PASSED' ||
+    normalized === 'CLEAN' ||
+    normalized === 'OK'
+  ) {
     return 'PASS';
   }
 
@@ -67,15 +78,15 @@ export function createReportSchema({
   generatedAt,
   sourceCommand,
 }) {
-  return {
+  return buildValidatedReport({
     name,
     status,
     summary: coerceSummary(summary),
-    ...(Array.isArray(issues) && issues.length > 0 ? { issues } : {}),
-    ...(data !== undefined ? { data } : {}),
+    issues,
+    data,
     generatedAt: typeof generatedAt === 'string' ? generatedAt : new Date().toISOString(),
     sourceCommand,
-  };
+  });
 }
 
 /**
@@ -107,15 +118,22 @@ export function normalizeRawReport({
       : Array.isArray(payload?.issues)
         ? payload.issues
         : [];
-  const normalizedData = data !== undefined
-    ? data
-    : Array.isArray(payload)
-      ? undefined
-      : payload?.data !== undefined
-        ? payload.data
-        : payload;
-  const normalizedSummary = coerceSummary(summary ?? payload?.summary ?? summarizeIssues(normalizedIssues));
-  const normalizedStatus = normalizeStatusString(status) ?? normalizeStatusString(payload?.status) ?? inferReportStatus(normalizedSummary);
+  const normalizedData =
+    data !== undefined
+      ? data
+      : Array.isArray(payload)
+        ? undefined
+        : payload?.data !== undefined
+          ? payload.data
+          : payload;
+  const normalizedSummary = coerceSummary(
+    summary ?? payload?.summary ?? summarizeIssues(normalizedIssues)
+  );
+  const normalizedStatus =
+    normalizeStatusString(status) ??
+    normalizeStatusString(payload?.meta?.status) ??
+    normalizeStatusString(payload?.status) ??
+    inferReportStatus(normalizedSummary);
 
   return createReportSchema({
     name,
@@ -123,14 +141,33 @@ export function normalizeRawReport({
     summary: normalizedSummary,
     issues: normalizedIssues,
     data: normalizedData,
-    generatedAt: typeof generatedAt === 'string' ? generatedAt : payload?.generatedAt,
-    sourceCommand,
+    generatedAt:
+      typeof generatedAt === 'string'
+        ? generatedAt
+        : typeof payload?.meta?.generatedAt === 'string'
+          ? payload.meta.generatedAt
+          : payload?.generatedAt,
+    sourceCommand:
+      typeof payload?.meta?.source === 'string' && payload.meta.source.trim().length > 0
+        ? payload.meta.source
+        : sourceCommand,
   });
 }
 
 export function unwrapReportData(report) {
   if (!report || typeof report !== 'object' || Array.isArray(report)) {
     return report;
+  }
+
+  if (
+    report.meta &&
+    typeof report.meta.name === 'string' &&
+    typeof report.meta.status === 'string' &&
+    typeof report.meta.generatedAt === 'string' &&
+    typeof report.meta.source === 'string' &&
+    report.summary
+  ) {
+    return report.data ?? {};
   }
 
   if (

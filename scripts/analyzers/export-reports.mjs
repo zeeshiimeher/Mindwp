@@ -10,9 +10,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { resolveLoggingMode, stripLoggingModeArgs } from '../../config/loggingConfig.mjs';
 import { buildSystemProcessEnv, systemEnv } from '../../config/systemEnv.mjs';
-import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
+import { validateReportFile } from '../core/report-schema-validator.mjs';
 import { readJsonFile } from '../lib/report-json.mjs';
 import { createReportSchema, normalizeRawReport, unwrapReportData } from '../lib/report-schema.mjs';
 
@@ -21,11 +22,14 @@ const ROOT = path.resolve(__dirname, '../..');
 const REPORTS_DIR = path.join(ROOT, 'reports');
 const EXPORT_SOURCE_COMMAND = 'node --import tsx/esm scripts/analyzers/export-reports.mjs';
 const SYSTEM_MODE = systemEnv.SYSTEM_MODE;
+const rawArgs = stripLoggingModeArgs(process.argv.slice(2));
 const LOGGING_MODE = resolveLoggingMode(process.argv.slice(2), systemEnv);
 const logger = createLogger({ label: 'export-reports', mode: LOGGING_MODE, rootDir: ROOT });
 const OPTIONAL_AUDITS_ENABLED = systemEnv.SYSTEM_INCLUDE_OPTIONAL_AUDITS === '1';
+const forceRun = rawArgs.includes('--force');
+const staleOutputThresholdMs = 15 * 60 * 1000;
 
-const typeArg = process.argv.find(arg => arg.startsWith('--type='));
+const typeArg = rawArgs.find(arg => arg.startsWith('--type='));
 const requestedType = typeArg ? typeArg.split('=')[1] : 'all';
 
 const generatorSteps = [
@@ -127,17 +131,29 @@ function assertExportLock() {
 }
 
 async function init() {
-  const { ensureGraphInitialized } = await import(path.join(ROOT, 'src/domains/init/ensureGraphInitialized.ts'));
+  const { ensureGraphInitialized } = await import(
+    path.join(ROOT, 'src/domains/init/ensureGraphInitialized.ts')
+  );
   await ensureGraphInitialized();
   fs.mkdirSync(REPORTS_DIR, { recursive: true });
 }
 
 function writeJson(filePath, data) {
   logger.writeReport(filePath, data);
+  if (filePath.endsWith('.json')) {
+    validateReportFile(filePath, path.basename(filePath));
+  }
 }
 
 function readReport(fileName) {
-  return readJsonFile(path.join(REPORTS_DIR, fileName));
+  const filePath = path.join(REPORTS_DIR, fileName);
+  const report = readJsonFile(filePath);
+
+  if (report !== null && fileName.endsWith('.json')) {
+    validateReportFile(filePath, fileName);
+  }
+
+  return report;
 }
 
 function readReportData(fileName) {
@@ -210,22 +226,104 @@ function writeSkippedReport(fileName, name, reason) {
   );
 }
 
-function runPipelineStep(step, bucket) {
+function createPipelineStep({ name, status, durationMs, outputs, skipped = false, reason }) {
+  return {
+    name,
+    status,
+    durationMs: Number.isFinite(durationMs) ? durationMs : 0,
+    outputs: Array.isArray(outputs) ? outputs : [],
+    skipped,
+    cached: skipped && reason === 'cached output reused',
+    reason,
+  };
+}
+
+function canReuseOutput(fileName) {
+  const filePath = path.join(REPORTS_DIR, fileName);
+
+  if (!fs.existsSync(filePath)) {
+    return false;
+  }
+
+  const stats = fs.statSync(filePath);
+  if (Date.now() - stats.mtimeMs > staleOutputThresholdMs) {
+    return false;
+  }
+
+  if (fileName.endsWith('.json')) {
+    validateReportFile(filePath, fileName);
+  }
+
+  return true;
+}
+
+function getStepOutputs(step) {
+  return step.reportFiles ?? (step.syntheticReportFile ? [step.syntheticReportFile] : []);
+}
+
+function canUseCachedStep(step) {
+  const outputs = getStepOutputs(step);
+  return outputs.length > 0 && outputs.every(canReuseOutput);
+}
+
+function runPipelineStep(step, bucket, kind) {
+  const startedAt = Date.now();
+  const outputs = getStepOutputs(step);
+
   if (step.optional && !OPTIONAL_AUDITS_ENABLED) {
     if (step.syntheticReportFile) {
       writeSkippedReport(step.syntheticReportFile, step.name, step.reason ?? 'not required');
     }
 
-    bucket.push({
-      name: step.name,
-      status: 'SKIPPED',
-      outputs: step.syntheticReportFile ? [step.syntheticReportFile] : [],
-      skipped: true,
-      reason: step.reason ?? 'not required',
-    });
+    bucket.push(
+      createPipelineStep({
+        name: step.name,
+        status: 'SKIPPED',
+        outputs,
+        skipped: true,
+        reason: step.reason ?? 'not required',
+        durationMs: 0,
+      })
+    );
+
+    if (logger.isDebug()) {
+      logger.printDebug(step.name, {
+        kind,
+        input: step.relativePath ?? 'synthetic report',
+        output: outputs.join(', '),
+        durationMs: 0,
+        warning: step.reason ?? 'not required',
+      });
+    }
     return;
   }
 
+  if (!forceRun && canUseCachedStep(step)) {
+    bucket.push(
+      createPipelineStep({
+        name: step.name,
+        status: 'SKIPPED',
+        outputs,
+        skipped: true,
+        reason: 'cached output reused',
+        durationMs: 0,
+      })
+    );
+
+    logger.printNodeLine(`[${kind.toUpperCase()}] ${step.name} -> SKIPPED (cached)`);
+    if (logger.isDebug()) {
+      logger.printDebug(step.name, {
+        kind,
+        input: step.relativePath ?? 'synthetic report',
+        output: outputs.join(', '),
+        durationMs: 0,
+        warning: 'cached output reused',
+      });
+    }
+    return;
+  }
+
+  logger.step(step.name);
   logger.printSection(`running ${step.name}`);
   runManagedScript(step.relativePath);
 
@@ -233,12 +331,27 @@ function runPipelineStep(step, bucket) {
     normalizeReportOutput(fileName, step.sourceCommand);
   }
 
-  bucket.push({
-    name: step.name,
-    status: 'PASS',
-    outputs: step.reportFiles ?? [],
-    skipped: false,
-  });
+  bucket.push(
+    createPipelineStep({
+      name: step.name,
+      status: 'PASS',
+      outputs,
+      skipped: false,
+      durationMs: Date.now() - startedAt,
+    })
+  );
+
+  logger.printNodeLine(
+    `[${kind.toUpperCase()}] ${step.name} -> PASS (${Date.now() - startedAt}ms)`
+  );
+  if (logger.isDebug()) {
+    logger.printDebug(step.name, {
+      kind,
+      input: step.relativePath,
+      output: outputs.join(', '),
+      durationMs: Date.now() - startedAt,
+    });
+  }
 }
 
 function buildTopicInsights() {
@@ -250,12 +363,15 @@ function buildTopicInsights() {
     level: topic.level,
     status: topic.status,
   }));
-  const weakest = [...scores].slice(-5).reverse().map(topic => ({
-    topic: topic.topic,
-    score: topic.score,
-    level: topic.level,
-    status: topic.status,
-  }));
+  const weakest = [...scores]
+    .slice(-5)
+    .reverse()
+    .map(topic => ({
+      topic: topic.topic,
+      score: topic.score,
+      level: topic.level,
+      status: topic.status,
+    }));
   const report = createReportSchema({
     name: 'topic-insights',
     status: weakest.length > 0 ? 'WARN' : 'PASS',
@@ -284,7 +400,10 @@ function buildClientReport() {
   const validationResults = readReportData('validation-results.json');
   const contentQuality = readReportData('content-quality-report.json');
   const graphReport = readReportData('graph-report.json');
-  const reportNames = fs.readdirSync(REPORTS_DIR).filter(name => !name.startsWith('.')).sort();
+  const reportNames = fs
+    .readdirSync(REPORTS_DIR)
+    .filter(name => !name.startsWith('.'))
+    .sort();
 
   const totalPages = validationResults?.seo?.pagesAnalyzed ?? 0;
   const issueCount = contentQuality?.issueCount ?? 0;
@@ -353,7 +472,9 @@ function buildClientReport() {
 
 function buildCtaReport() {
   const validationResults = readReportData('validation-results.json');
-  const validators = new Map((validationResults?.validators ?? []).map(validator => [validator.name, validator]));
+  const validators = new Map(
+    (validationResults?.validators ?? []).map(validator => [validator.name, validator])
+  );
   const trackedValidators = [
     'validate-cta-label-contract',
     'validate-conversion-contract',
@@ -389,19 +510,34 @@ function buildCtaReport() {
   );
 }
 
-function buildPipelineReport(generatorResults, analyzerResults) {
+function buildPipelineReport(generatorResults, analyzerResults, exportDurationMs) {
   const validationResults = readReportData('validation-results.json');
-  const validators = Array.isArray(validationResults?.validators) ? validationResults.validators : [];
+  const validators = Array.isArray(validationResults?.validators)
+    ? validationResults.validators
+    : [];
   const validatorEntries = validators.map(validator => ({
     name: validator.name,
-    status: String(validator.status).toUpperCase() === 'FAIL' ? 'FAIL' : 'PASS',
+    status:
+      typeof validator.reportStatus === 'string'
+        ? String(validator.reportStatus).toUpperCase()
+        : String(validator.status).toUpperCase() === 'FAIL'
+          ? 'FAIL'
+          : 'PASS',
     reportFile: validator.reportFile,
     reportMissing: validator.reportMissing === true,
+    durationMs: validator.duration ?? 0,
+    outputs: validator.reportFile ? [validator.reportFile] : [],
+    cached: validator.cached === true,
+    stale: validator.stale === true,
   }));
 
   const missing = [
-    ...generatorResults.flatMap(entry => entry.outputs ?? []).filter(fileName => !fs.existsSync(path.join(REPORTS_DIR, fileName))),
-    ...analyzerResults.flatMap(entry => entry.outputs ?? []).filter(fileName => !fs.existsSync(path.join(REPORTS_DIR, fileName))),
+    ...generatorResults
+      .flatMap(entry => entry.outputs ?? [])
+      .filter(fileName => !fs.existsSync(path.join(REPORTS_DIR, fileName))),
+    ...analyzerResults
+      .flatMap(entry => entry.outputs ?? [])
+      .filter(fileName => !fs.existsSync(path.join(REPORTS_DIR, fileName))),
     ...validatorEntries.filter(entry => entry.reportMissing).map(entry => entry.reportFile),
   ];
   const skipped = analyzerResults
@@ -409,10 +545,50 @@ function buildPipelineReport(generatorResults, analyzerResults) {
     .map(entry => ({
       name: entry.name,
       skipped: true,
+      cached: entry.cached === true,
       reason: entry.reason,
     }));
-  const failedCount = validatorEntries.filter(entry => entry.status === 'FAIL').length + missing.length;
-  const warningCount = skipped.length;
+  const warnValidators = validatorEntries.filter(entry => entry.status === 'WARN');
+  const staleReports = validatorEntries.filter(entry => entry.stale === true);
+  const sizeWarnings = Array.isArray(validationResults?.reportSize?.warnings)
+    ? validationResults.reportSize.warnings
+    : [];
+  const failedCount =
+    validatorEntries.filter(entry => entry.status === 'FAIL').length + missing.length;
+  const warningCount =
+    skipped.length + warnValidators.length + staleReports.length + sizeWarnings.length;
+  const validationStatus =
+    validationResults?.status === 'FAIL'
+      ? 'FAIL'
+      : validationResults?.status === 'WARN'
+        ? 'WARN'
+        : 'PASS';
+  const validationDurationMs = validators.reduce(
+    (total, validator) => total + (validator.duration ?? 0),
+    0
+  );
+  const steps = [
+    createPipelineStep({
+      name: 'validate-all',
+      status: validationStatus,
+      durationMs: validationDurationMs,
+      outputs: ['validation-results.json', 'validation-report.json'],
+    }),
+    ...generatorResults.map(entry => createPipelineStep(entry)),
+    ...analyzerResults.map(entry => createPipelineStep(entry)),
+    createPipelineStep({
+      name: 'export-reports',
+      status: failedCount > 0 ? 'FAIL' : warningCount > 0 ? 'WARN' : 'PASS',
+      durationMs: exportDurationMs,
+      outputs: [
+        'topic-insights.json',
+        'client-report.json',
+        'client-report.md',
+        'cta-report.json',
+        'pipeline-report.json',
+      ],
+    }),
+  ];
   const report = createReportSchema({
     name: 'pipeline-report',
     status: failedCount > 0 ? 'FAIL' : warningCount > 0 ? 'WARN' : 'PASS',
@@ -430,8 +606,20 @@ function buildPipelineReport(generatorResults, analyzerResults) {
       generators: generatorResults,
       analyzers: analyzerResults,
       validators: validatorEntries,
+      steps,
       missing,
       skipped,
+      warnings: {
+        validators: warnValidators,
+        skippedAnalyzers: skipped,
+        sizeWarnings,
+        staleReports,
+      },
+      durations: {
+        validateAllMs: validationDurationMs,
+        exportReportsMs: exportDurationMs,
+        totalMs: validationDurationMs + exportDurationMs,
+      },
     },
     sourceCommand: EXPORT_SOURCE_COMMAND,
   });
@@ -442,35 +630,57 @@ function buildPipelineReport(generatorResults, analyzerResults) {
 }
 
 function normalizeCoreReports() {
-  normalizeReportOutput('validation-results.json', 'node scripts/core/validate-all.mjs --report-json');
-  normalizeReportOutput('validation-report.json', 'node scripts/core/validate-all.mjs --report-json');
-  normalizeReportOutput('content-quality-report.json', 'npx tsx scripts/validators/validate-content-quality.mjs --report-json');
-  normalizeReportOutput('graph-report.json', 'npx tsx scripts/validators/validate-graph.ts --report-json');
-  normalizeReportOutput('authority-map.json', 'node --import tsx/esm scripts/generators/generate-authority-map.ts');
+  normalizeReportOutput(
+    'validation-results.json',
+    'node scripts/core/validate-all.mjs --report-json'
+  );
+  normalizeReportOutput(
+    'validation-report.json',
+    'node scripts/core/validate-all.mjs --report-json'
+  );
+  normalizeReportOutput(
+    'content-quality-report.json',
+    'npx tsx scripts/validators/validate-content-quality.mjs --report-json'
+  );
+  normalizeReportOutput(
+    'graph-report.json',
+    'npx tsx scripts/validators/validate-graph.ts --report-json'
+  );
+  normalizeReportOutput(
+    'authority-map.json',
+    'node --import tsx/esm scripts/generators/generate-authority-map.ts'
+  );
 }
 
 async function exportClient() {
+  const exportStartedAt = Date.now();
   const generatorResults = [];
   const analyzerResults = [];
 
   for (const step of generatorSteps) {
-    runPipelineStep(step, generatorResults);
+    runPipelineStep(step, generatorResults, 'generator');
   }
 
   for (const step of analyzerSteps) {
-    runPipelineStep(step, analyzerResults);
+    runPipelineStep(step, analyzerResults, 'analyzer');
   }
 
   normalizeCoreReports();
   buildTopicInsights();
   buildClientReport();
   buildCtaReport();
-  buildPipelineReport(generatorResults, analyzerResults);
+  buildPipelineReport(generatorResults, analyzerResults, Date.now() - exportStartedAt);
 }
 
 async function main() {
   assertExportLock();
   await init();
+
+  if (forceRun) {
+    logger.printSummary(
+      'force mode -> analyzers and generators will rerun even when outputs exist'
+    );
+  }
 
   if (requestedType === 'client' || requestedType === 'all') {
     await exportClient();
@@ -480,6 +690,8 @@ async function main() {
 }
 
 main().catch(error => {
-  process.stderr.write(`[export-reports] Failed: ${error instanceof Error ? error.message : String(error)}\n`);
+  process.stderr.write(
+    `[export-reports] Failed: ${error instanceof Error ? error.message : String(error)}\n`
+  );
   process.exit(1);
 });

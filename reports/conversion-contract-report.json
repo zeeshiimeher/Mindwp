@@ -1,6 +1,11 @@
 {
-  "name": "conversion-contract-report",
-  "status": "PASS",
+  "meta": {
+    "name": "conversion-contract-report",
+    "source": "npx tsx scripts/validators/validate-conversion-contract.mjs --report-json",
+    "generatedAt": "2026-04-20T23:48:29.645Z",
+    "status": "PASS",
+    "version": "1.0"
+  },
   "summary": {
     "total": 0,
     "passed": 1,
@@ -8,13 +13,16 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-20T21:45:28.467Z",
+    "generatedAt": "2026-04-20T23:48:29.645Z",
     "passed": true,
     "issueCount": 0,
     "warningCount": 0,
     "issues": [],
     "warnings": []
   },
-  "generatedAt": "2026-04-20T21:45:28.467Z",
-  "sourceCommand": "npm run system:full"
+  "issues": [],
+  "name": "conversion-contract-report",
+  "status": "PASS",
+  "generatedAt": "2026-04-20T23:48:29.645Z",
+  "sourceCommand": "npx tsx scripts/validators/validate-conversion-contract.mjs --report-json"
 }

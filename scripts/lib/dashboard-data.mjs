@@ -1,8 +1,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-import { createReportSchema, unwrapReportData } from './report-schema.mjs';
 import { readJsonFile } from './report-json.mjs';
+import { createReportSchema, unwrapReportData } from './report-schema.mjs';
 
 export const DASHBOARD_REPORT_FILES = [
   'system.json',
@@ -22,27 +22,149 @@ function writeJson(filePath, data) {
   fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
 }
 
+function toUpperStatus(value, fallback = 'PASS') {
+  const status = typeof value === 'string' ? value.toUpperCase() : fallback;
+  return ['PASS', 'FAIL', 'WARN', 'SKIPPED'].includes(status) ? status : fallback;
+}
+
+function toPercent(value, total) {
+  if (!Number.isFinite(total) || total <= 0) {
+    return 0;
+  }
+
+  return Math.round((value / total) * 100);
+}
+
+function summarizeValidatorReport(report) {
+  if (!report || typeof report !== 'object') {
+    return null;
+  }
+
+  return {
+    name: typeof report.name === 'string' ? report.name : null,
+    status: toUpperStatus(report.status, 'PASS'),
+    generatedAt: typeof report.generatedAt === 'string' ? report.generatedAt : null,
+    summary: report.summary ?? null,
+    issuesCount: Array.isArray(report.issues) ? report.issues.length : 0,
+  };
+}
+
+function buildValidationSnapshot(validationResults) {
+  const validationData = unwrapReportData(validationResults) ?? {};
+
+  return {
+    meta: validationResults?.meta ?? null,
+    summary: validationResults?.summary ?? null,
+    data: {
+      total: validationData?.total ?? null,
+      validators: Array.isArray(validationData.validators) ? validationData.validators : [],
+      errors: Array.isArray(validationData.errors) ? validationData.errors : [],
+      reportSize: validationData?.reportSize ?? null,
+      latestRun: validationData?.latestRun ?? null,
+      cacheHits: validationData?.cacheHits ?? 0,
+      staleReports: Array.isArray(validationData?.staleReports) ? validationData.staleReports : [],
+    },
+    issues: Array.isArray(validationResults?.issues) ? validationResults.issues : [],
+  };
+}
+
 export function buildDashboardData(root, sourceCommand = 'npm run system:full') {
   const dashboardDir = path.join(root, 'reports', 'dashboard');
   fs.mkdirSync(dashboardDir, { recursive: true });
 
   const systemReport = readReport(root, 'system-report.json') ?? {};
+  const systemHealth = readReport(root, 'system-health.json') ?? {};
+  const systemHealthData = unwrapReportData(systemHealth) ?? {};
   const validationResults = readReport(root, 'validation-results.json') ?? {};
   const validationData = unwrapReportData(validationResults) ?? {};
   const pipelineReport = readReport(root, 'pipeline-report.json') ?? {};
   const pipelineData = unwrapReportData(pipelineReport) ?? {};
+  const validationSnapshot = buildValidationSnapshot(validationResults);
 
   const validators = Array.isArray(validationData.validators) ? validationData.validators : [];
-  const validatorPassCount = validators.filter(validator => String(validator.status).toLowerCase() === 'pass').length;
-  const validatorFailCount = validators.filter(validator => String(validator.status).toLowerCase() === 'fail').length;
+  const validatorPassCount = validators.filter(
+    validator => String(validator.status).toLowerCase() === 'pass'
+  ).length;
+  const validatorFailCount = validators.filter(
+    validator => String(validator.status).toLowerCase() === 'fail'
+  ).length;
   const validatorWarningCount = validators.filter(
     validator => String(validator.status).toLowerCase() !== 'pass' && !validator.blocking
   ).length;
   const validatorReports = validators.map(validator => ({
     name: validator.name,
+    status: toUpperStatus(validator.status, 'PASS'),
+    blocking: validator.blocking === true,
     reportFile: validator.reportFile,
-    report: validator.reportFile ? readReport(root, validator.reportFile) : null,
+    report: summarizeValidatorReport(
+      validator.reportFile ? readReport(root, validator.reportFile) : null
+    ),
   }));
+  const validatorGroups = {
+    failed: validatorReports.filter(
+      item => String(item.report?.status ?? '').toUpperCase() === 'FAIL'
+    ),
+    warnings: validatorReports.filter(
+      item => String(item.report?.status ?? '').toUpperCase() === 'WARN'
+    ),
+    passed: validatorReports.filter(
+      item => String(item.report?.status ?? '').toUpperCase() === 'PASS'
+    ),
+  };
+  const failureDrilldown = {
+    failures: validatorReports
+      .filter(
+        item => item.status === 'FAIL' || toUpperStatus(item.report?.status, 'PASS') === 'FAIL'
+      )
+      .map(item => ({
+        name: item.name,
+        status: item.status,
+        reportFile: item.reportFile,
+        reportStatus: toUpperStatus(item.report?.status, 'PASS'),
+        blocking: item.blocking,
+      })),
+    warnings: validatorReports
+      .filter(
+        item => item.status === 'WARN' || toUpperStatus(item.report?.status, 'PASS') === 'WARN'
+      )
+      .map(item => ({
+        name: item.name,
+        status: item.status,
+        reportFile: item.reportFile,
+        reportStatus: toUpperStatus(item.report?.status, 'PASS'),
+        blocking: item.blocking,
+      })),
+  };
+  const pipelineSteps = Array.isArray(pipelineData.steps) ? pipelineData.steps : [];
+  const analyzerCoverage = Array.isArray(pipelineData.analyzers)
+    ? pipelineData.analyzers.map(analyzer => ({
+        name: analyzer.name,
+        status: toUpperStatus(analyzer.status, 'PASS'),
+        outputs: analyzer.outputs ?? [],
+        skipped: analyzer.skipped === true,
+        durationMs: analyzer.durationMs ?? 0,
+      }))
+    : [];
+  const integrityStrip = {
+    reportsStatus: toUpperStatus(systemReport?.reports?.status ?? systemHealth?.status, 'PASS'),
+    validatorCoveragePct: toPercent(validatorPassCount, validators.length),
+    analyzerCoveragePct: toPercent(analyzerCoverage.length, analyzerCoverage.length || 1),
+    drift: systemHealthData?.drift === true,
+  };
+  const lastRunSummary = {
+    durationMs: systemReport?.durationMs ?? 0,
+    totalReports: systemReport?.reports?.fileCount ?? 0,
+    passed: validationData?.total?.passed ?? 0,
+    failed: validationData?.total?.failed ?? 0,
+    warnings:
+      (validationData?.total?.advisoryFailed ?? 0) + (pipelineReport?.summary?.warnings ?? 0),
+  };
+  const lastRunDetails = {
+    time: systemReport?.timestamp ?? systemReport?.generatedAt ?? 'n/a',
+    durationMs: systemReport?.durationMs ?? 0,
+    status: toUpperStatus(systemReport?.status, 'PASS'),
+    cacheHits: validationData?.cacheHits ?? 0,
+  };
 
   const graphReport = readReport(root, 'graph-report.json') ?? {};
   const graphDerivedSummary = readReport(root, 'graph-derived-summary.json') ?? {};
@@ -54,6 +176,48 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
   const contentScore = readReport(root, 'content-score.json') ?? {};
   const contentConsistency = readReport(root, 'content-consistency-audit.json') ?? {};
   const contentIntelligence = readReport(root, 'content-intelligence.json') ?? {};
+  const slowestSteps = [...pipelineSteps]
+    .sort((left, right) => (right.durationMs ?? 0) - (left.durationMs ?? 0))
+    .slice(0, 5)
+    .map(step => ({
+      name: step.name,
+      status: toUpperStatus(step.status, 'PASS'),
+      durationMs: step.durationMs ?? 0,
+      outputs: Array.isArray(step.outputs) ? step.outputs : [],
+      skipped: step.skipped === true,
+      reason: step.reason,
+    }));
+  const warningSource = pipelineData.warnings ?? {};
+  const warningsPanel = {
+    validators: Array.isArray(warningSource.validators)
+      ? warningSource.validators.map(item => ({
+          name: item.name,
+          detail: item.reportFile ?? 'validator warning',
+          status: toUpperStatus(item.status, 'WARN'),
+        }))
+      : [],
+    skippedAnalyzers: Array.isArray(warningSource.skippedAnalyzers)
+      ? warningSource.skippedAnalyzers.map(item => ({
+          name: item.name,
+          detail: item.reason ?? (item.cached ? 'cached output reused' : 'skipped'),
+          status: 'SKIPPED',
+        }))
+      : [],
+    sizeWarnings: Array.isArray(warningSource.sizeWarnings)
+      ? warningSource.sizeWarnings.map(item => ({
+          name: item.label,
+          detail: `${item.size} / ${item.warnAt} bytes`,
+          status: 'WARN',
+        }))
+      : [],
+    staleReports: Array.isArray(warningSource.staleReports)
+      ? warningSource.staleReports.map(item => ({
+          name: item.name,
+          detail: item.reportFile ?? 'stale report reused',
+          status: 'WARN',
+        }))
+      : [],
+  };
 
   const files = [
     {
@@ -67,7 +231,13 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
           failed: systemReport?.status === 'FAIL' ? 1 : 0,
           warnings: 0,
         },
-        data: systemReport,
+        data: {
+          ...systemReport,
+          systemHealth,
+          integrityStrip,
+          lastRunSummary,
+          lastRunDetails,
+        },
         sourceCommand,
       }),
     },
@@ -75,7 +245,9 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
       fileName: 'validators.json',
       report: createReportSchema({
         name: 'dashboard-validators',
-        status: validators.some(validator => String(validator.status).toUpperCase() === 'FAIL') ? 'FAIL' : 'PASS',
+        status: validators.some(validator => String(validator.status).toUpperCase() === 'FAIL')
+          ? 'FAIL'
+          : 'PASS',
         summary: {
           total: validatorReports.length,
           passed: validatorPassCount,
@@ -84,8 +256,10 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
         },
         issues: validatorReports.filter(item => !item.report),
         data: {
-          validationResults,
+          validationResults: validationSnapshot,
           reports: validatorReports,
+          groups: validatorGroups,
+          failureDrilldown,
         },
         sourceCommand,
       }),
@@ -94,7 +268,12 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
       fileName: 'graph.json',
       report: createReportSchema({
         name: 'dashboard-graph',
-        status: graphReport?.status === 'FAIL' ? 'FAIL' : graphDerivedSummary?.status === 'WARN' ? 'WARN' : 'PASS',
+        status:
+          graphReport?.status === 'FAIL'
+            ? 'FAIL'
+            : graphDerivedSummary?.status === 'WARN'
+              ? 'WARN'
+              : 'PASS',
         summary: {
           total: 3,
           passed: [authorityMap, graphReport, graphDerivedSummary].filter(Boolean).length,
@@ -139,9 +318,17 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
               : 'PASS',
         summary: {
           total: 5,
-          passed: [contentGaps, contentQuality, contentScore, contentConsistency, contentIntelligence].filter(Boolean).length,
+          passed: [
+            contentGaps,
+            contentQuality,
+            contentScore,
+            contentConsistency,
+            contentIntelligence,
+          ].filter(Boolean).length,
           failed: 0,
-          warnings: [contentScore, contentConsistency, contentIntelligence].filter(report => report?.status === 'WARN').length,
+          warnings: [contentScore, contentConsistency, contentIntelligence].filter(
+            report => report?.status === 'WARN'
+          ).length,
         },
         data: {
           gaps: contentGaps,
@@ -157,7 +344,12 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
       fileName: 'pipeline.json',
       report: createReportSchema({
         name: 'dashboard-pipeline',
-        status: pipelineReport?.status === 'FAIL' ? 'FAIL' : pipelineReport?.status === 'WARN' ? 'WARN' : 'PASS',
+        status:
+          pipelineReport?.status === 'FAIL'
+            ? 'FAIL'
+            : pipelineReport?.status === 'WARN'
+              ? 'WARN'
+              : 'PASS',
         summary: {
           total: pipelineReport?.summary?.total ?? 0,
           passed: pipelineReport?.summary?.passed ?? 0,
@@ -167,6 +359,17 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
         data: {
           pipeline: pipelineReport,
           coverage: pipelineData,
+          timelineSteps: pipelineSteps.map(step => ({
+            name: step.name,
+            status: toUpperStatus(step.status, 'PASS'),
+            durationMs: step.durationMs ?? 0,
+            outputs: Array.isArray(step.outputs) ? step.outputs : [],
+            skipped: step.skipped === true,
+            reason: step.reason,
+          })),
+          analyzerCoverage,
+          slowestSteps,
+          warningsPanel,
         },
         sourceCommand,
       }),

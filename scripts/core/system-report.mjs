@@ -5,16 +5,18 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import { buildSystemProcessEnv, systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
+import { buildSystemProcessEnv, systemEnv } from '../../config/systemEnv.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
+import { readJsonFile, readReportJson } from '../lib/report-json.mjs';
+import { createReportSchema, normalizeRawReport, unwrapReportData } from '../lib/report-schema.mjs';
 import {
   parseClientDashboardContract,
   parseSystemReportContract,
 } from '../lib/system-contract-schemas.mjs';
-import { DASHBOARD_REPORT_FILES, buildAndValidateDashboardData } from './dashboard-data.mjs';
-import { readJsonFile, readReportJson } from '../lib/report-json.mjs';
-import { normalizeRawReport, unwrapReportData } from '../lib/report-schema.mjs';
+
+import { buildAndValidateDashboardData, DASHBOARD_REPORT_FILES } from './dashboard-data.mjs';
+import { validateReportFile } from './report-schema-validator.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const reportsDir = path.join(root, 'reports');
@@ -30,6 +32,37 @@ const systemMode = systemEnv.SYSTEM_MODE;
 const executionLock = systemEnv.SYSTEM_EXECUTION_LOCK;
 const loggingMode = resolveLoggingMode(process.argv.slice(2), systemEnv);
 const logger = createLogger({ label: 'system:full', mode: loggingMode, rootDir: root });
+
+function parseOutputModeArg(arg) {
+  if (!arg.startsWith('--output=')) {
+    return null;
+  }
+
+  return arg.slice('--output='.length).trim() || null;
+}
+
+function normalizeOutputMode(value) {
+  return value === 'full' ? 'full' : 'summary';
+}
+
+function resolveOutputMode(argv = []) {
+  for (let index = 0; index < argv.length; index += 1) {
+    const arg = argv[index];
+
+    if (arg === '--output') {
+      return normalizeOutputMode(argv[index + 1]);
+    }
+
+    const inlineMode = parseOutputModeArg(arg);
+    if (inlineMode) {
+      return normalizeOutputMode(inlineMode);
+    }
+  }
+
+  return 'summary';
+}
+
+const outputMode = resolveOutputMode(process.argv.slice(2));
 
 const binaries = {
   node: process.execPath,
@@ -77,6 +110,7 @@ const requiredReportFiles = new Set([
   'validation-report.json',
   'validation-results.json',
   'vocabulary-report.json',
+  'system-health.json',
   'system-report.json',
   'client-dashboard.json',
   ...DASHBOARD_REPORT_FILES,
@@ -89,13 +123,25 @@ const reportSourceByFile = new Map([
   ['graph-report.json', 'npx tsx scripts/validators/validate-graph.ts'],
   ['graph-derived-summary.json', 'node --import tsx/esm scripts/analyzers/inspect-graph.ts'],
   ['internal-links-report.json', 'npx tsx scripts/validators/validate-internal-links.ts'],
-  ['topic-authority-scores.json', 'node --import tsx/esm scripts/generators/generate-topic-authority-scores.ts'],
-  ['topic-authority-scores.md', 'node --import tsx/esm scripts/generators/generate-topic-authority-scores.ts'],
+  [
+    'topic-authority-scores.json',
+    'node --import tsx/esm scripts/generators/generate-topic-authority-scores.ts',
+  ],
+  [
+    'topic-authority-scores.md',
+    'node --import tsx/esm scripts/generators/generate-topic-authority-scores.ts',
+  ],
   ['topic-insights.json', 'node --import tsx/esm scripts/analyzers/export-reports.mjs'],
   ['content-gaps.json', 'node --import tsx/esm scripts/analyzers/generate-content-gaps.ts'],
   ['content-gaps.md', 'node --import tsx/esm scripts/analyzers/generate-content-gaps.ts'],
-  ['content-intelligence.json', 'node --import tsx/esm scripts/analyzers/generate-content-intelligence.ts'],
-  ['content-consistency-audit.json', 'node --import tsx/esm scripts/analyzers/audit-content-consistency.mjs'],
+  [
+    'content-intelligence.json',
+    'node --import tsx/esm scripts/analyzers/generate-content-intelligence.ts',
+  ],
+  [
+    'content-consistency-audit.json',
+    'node --import tsx/esm scripts/analyzers/audit-content-consistency.mjs',
+  ],
   ['content-score.json', 'node --import tsx/esm scripts/analyzers/score-content.mjs'],
   ['page-priorities.json', 'node --import tsx/esm scripts/analyzers/detect-page-priorities.mjs'],
   ['pipeline-report.json', 'node --import tsx/esm scripts/analyzers/export-reports.mjs'],
@@ -109,6 +155,7 @@ const reportSourceByFile = new Map([
   ['topics.json', 'node scripts/core/dashboard-data.mjs'],
   ['content.json', 'node scripts/core/dashboard-data.mjs'],
   ['pipeline.json', 'node scripts/core/dashboard-data.mjs'],
+  ['system-health.json', 'npm run system:full'],
 ]);
 
 function ensureDir(dirPath) {
@@ -146,6 +193,55 @@ function runCommand(binary, args) {
 function writeJson(filePath, data) {
   ensureDir(path.dirname(filePath));
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2) + '\n');
+
+  if (
+    filePath.endsWith('.json') &&
+    !filePath.startsWith(snapshotDir) &&
+    path.basename(filePath) !== 'system-report.json' &&
+    path.basename(filePath) !== 'client-dashboard.json'
+  ) {
+    validateReportFile(filePath, normalizePath(path.relative(root, filePath)));
+  }
+}
+
+function buildSystemHealthReport(report, pipelineReport) {
+  const pipelineData = unwrapReportData(pipelineReport) ?? {};
+  const validatorCount = report.validate.validatorCount ?? report.validate.total ?? 0;
+  const analyzerCount = Array.isArray(pipelineData.analyzers) ? pipelineData.analyzers.length : 0;
+  const reportsCount = report.reports.fileCount ?? 0;
+  const drift =
+    report.reports.missing.length > 0 ||
+    report.reports.stale.length > 0 ||
+    report.validate.blockingFailed > 0;
+
+  return createReportSchema({
+    name: 'system-health',
+    status: drift ? 'FAIL' : report.status === 'WARN' ? 'WARN' : 'PASS',
+    summary: {
+      total: validatorCount + analyzerCount,
+      passed: drift ? 0 : validatorCount + analyzerCount,
+      failed: drift ? 1 : 0,
+      warnings: report.status === 'WARN' ? 1 : 0,
+    },
+    data: {
+      status: drift ? 'FAIL' : report.status,
+      validators: validatorCount,
+      analyzers: analyzerCount,
+      reports: reportsCount,
+      coverage: {
+        validators:
+          report.validate.blockingFailed === 0 && report.validate.advisoryFailed === 0
+            ? '100%'
+            : 'partial',
+        analyzers:
+          Array.isArray(pipelineData.missing) && pipelineData.missing.length === 0
+            ? '100%'
+            : 'partial',
+      },
+      drift,
+    },
+    sourceCommand,
+  });
 }
 
 function combineOutput(result) {
@@ -162,8 +258,88 @@ function excerptOutput(output, maxLines = 8) {
   return lines.join(' | ');
 }
 
+function isGitWorkspaceDirty() {
+  const result = spawnSync('git', ['status', '--porcelain'], {
+    cwd: root,
+    encoding: 'utf8',
+  });
+
+  if (result.status !== 0) {
+    return false;
+  }
+
+  return String(result.stdout ?? '').trim().length > 0;
+}
+
 function uniqueStrings(values) {
   return [...new Set(values.filter(Boolean))];
+}
+
+function pluralize(count, noun) {
+  return `${count} ${noun}${count === 1 ? '' : 's'}`;
+}
+
+function printStructuredSystemSummary(report) {
+  const warningCount = report.validate.advisoryFailed;
+  const testStatus = report.tests.failed === 0 ? 'PASS' : 'FAIL';
+
+  process.stdout.write('[system:full]\n');
+  process.stdout.write(`Status: ${report.status}\n`);
+  process.stdout.write(`Validators: ${report.validate.passed}/${report.validate.total}\n`);
+  process.stdout.write(`Tests: ${testStatus}\n`);
+  process.stdout.write(`Warnings: ${warningCount}\n`);
+  process.stdout.write(`Reports: ${report.reports.fileCount}\n`);
+}
+
+function printStructuredSystemDetails(report) {
+  const blockingValidators = report.validate.validators
+    .filter(validator => validator.status === 'FAIL' && validator.blocking)
+    .map(validator => validator.name)
+    .sort((left, right) => left.localeCompare(right));
+  const advisoryValidators = report.validate.validators
+    .filter(validator => validator.status === 'FAIL' && !validator.blocking)
+    .map(validator => validator.name)
+    .sort((left, right) => left.localeCompare(right));
+  const failingTests = report.tests.files
+    .filter(file => file.status === 'FAIL')
+    .flatMap(file => file.failedTests.map(name => `${file.file}: ${name}`))
+    .sort((left, right) => left.localeCompare(right));
+  const reportWarnings = [
+    ...report.reports.stale.map(name => `stale report: ${name}`),
+    ...report.reports.missing.map(name => `missing report: ${name}`),
+  ].sort((left, right) => left.localeCompare(right));
+
+  process.stdout.write('Steps:\n');
+  process.stdout.write(
+    `- Validate: ${report.validate.status} (${report.validate.passed}/${report.validate.total})\n`
+  );
+  process.stdout.write(`- Typecheck: ${report.typecheck.status}\n`);
+  process.stdout.write(`- Tests: ${report.tests.status} (${report.tests.failed}/${report.tests.total} failed)\n`);
+  process.stdout.write(`- Reports: ${report.reports.status} (${report.reports.fileCount} files)\n`);
+  process.stdout.write(`- E2E: ${report.e2e.status}\n`);
+
+  if (advisoryValidators.length > 0 || reportWarnings.length > 0) {
+    process.stdout.write('Warnings:\n');
+    for (const warning of [...advisoryValidators, ...reportWarnings]) {
+      process.stdout.write(`- ${warning}\n`);
+    }
+  }
+
+  if (blockingValidators.length > 0 || failingTests.length > 0) {
+    process.stdout.write('Failures:\n');
+    for (const validator of blockingValidators) {
+      process.stdout.write(`- validator: ${validator}\n`);
+    }
+    for (const testName of failingTests) {
+      process.stdout.write(`- test: ${testName}\n`);
+    }
+  }
+
+  process.stdout.write('Metrics:\n');
+  process.stdout.write(`- Duration: ${report.durationMs}ms\n`);
+  process.stdout.write(`- Blocking: ${report.validate.blockingFailed}\n`);
+  process.stdout.write(`- Advisory: ${report.validate.advisoryFailed}\n`);
+  process.stdout.write(`- Slow tests: ${pluralize(report.tests.slowTests.length, 'entry')}\n`);
 }
 
 function assertLockedExecution() {
@@ -189,7 +365,9 @@ function listSnapshotFiles() {
 
   return fs
     .readdirSync(snapshotDir)
-    .filter(fileName => fileName.endsWith('.json') && fileName !== path.basename(snapshotSummaryPath))
+    .filter(
+      fileName => fileName.endsWith('.json') && fileName !== path.basename(snapshotSummaryPath)
+    )
     .sort();
 }
 
@@ -234,14 +412,20 @@ function writeSnapshotArtifacts(report) {
   const previousSnapshot = readPreviousSnapshotReport();
   const snapshotFileName = `system-report-${sanitizeSnapshotTimestamp(report.timestamp)}.json`;
   const snapshotFilePath = path.join(snapshotDir, snapshotFileName);
-  const snapshotChanges = buildChanges(previousSnapshot?.report ?? null, report.priorities, report.pages);
+  const snapshotChanges = buildChanges(
+    previousSnapshot?.report ?? null,
+    report.priorities,
+    report.pages
+  );
 
   writeJson(snapshotFilePath, report);
   writeJson(snapshotSummaryPath, {
     generatedAt: report.timestamp,
     sourceCommand: report.sourceCommand,
     currentSnapshot: `reports/system-snapshots/${snapshotFileName}`,
-    previousSnapshot: previousSnapshot ? `reports/system-snapshots/${previousSnapshot.fileName}` : null,
+    previousSnapshot: previousSnapshot
+      ? `reports/system-snapshots/${previousSnapshot.fileName}`
+      : null,
     trackedChanges: {
       priorities: {
         current: report.priorities.length,
@@ -375,7 +559,9 @@ function scanSmartCtaUsage() {
 
   const duplicateIntents = ctaViolations.reduce((count, entry) => {
     const violations = Array.isArray(entry?.violations) ? entry.violations : [];
-    return count + violations.filter(violation => /conversion CTAs/i.test(String(violation))).length;
+    return (
+      count + violations.filter(violation => /conversion CTAs/i.test(String(violation))).length
+    );
   }, 0);
 
   const conversionIssues = Array.isArray(conversionReport?.issues) ? conversionReport.issues : [];
@@ -397,7 +583,8 @@ function scanSmartCtaUsage() {
       })
       .map(issue => {
         const file = typeof issue?.file === 'string' ? issue.file : 'unknown';
-        const message = typeof issue?.message === 'string' ? issue.message : 'Missing CTA source context.';
+        const message =
+          typeof issue?.message === 'string' ? issue.message : 'Missing CTA source context.';
         return `${file}: ${message}`;
       }),
   ];
@@ -435,7 +622,8 @@ function buildRouteIndex() {
       route: node.path,
       slug: getNodeSlug(node) ?? '',
       type: typeof node?.type === 'string' ? node.type : 'unknown',
-      conversionPriority: typeof node?.conversionPriority === 'number' ? node.conversionPriority : 0,
+      conversionPriority:
+        typeof node?.conversionPriority === 'number' ? node.conversionPriority : 0,
       title: typeof node?.title === 'string' ? node.title : node.path,
     }));
 }
@@ -457,10 +645,16 @@ function findMatchingRoute(text, routeIndex) {
 
   const candidates = routeIndex.filter(node => {
     const routePattern = new RegExp(escapeRegExp(node.route), 'i');
-    const slugPattern = node.slug ? new RegExp(`(^|[^a-z0-9-])${escapeRegExp(node.slug)}([^a-z0-9-]|$)`, 'i') : null;
+    const slugPattern = node.slug
+      ? new RegExp(`(^|[^a-z0-9-])${escapeRegExp(node.slug)}([^a-z0-9-]|$)`, 'i')
+      : null;
     const idPattern = node.id ? new RegExp(escapeRegExp(node.id), 'i') : null;
 
-    return routePattern.test(text) || (slugPattern ? slugPattern.test(text) : false) || (idPattern ? idPattern.test(text) : false);
+    return (
+      routePattern.test(text) ||
+      (slugPattern ? slugPattern.test(text) : false) ||
+      (idPattern ? idPattern.test(text) : false)
+    );
   });
 
   if (candidates.length === 0) {
@@ -491,7 +685,12 @@ function classifyPriorityType(source, message) {
 
   if (haystack.includes('conversion')) return 'conversion';
   if (haystack.includes('cta')) return 'cta';
-  if (haystack.includes('lint') || haystack.includes('prettier') || haystack.includes('react-hooks')) return 'lint';
+  if (
+    haystack.includes('lint') ||
+    haystack.includes('prettier') ||
+    haystack.includes('react-hooks')
+  )
+    return 'lint';
   if (haystack.includes('contract') || haystack.includes('domain-structure')) return 'contract';
   return 'content';
 }
@@ -533,7 +732,8 @@ function buildPriorityAction(type, message) {
 function addPriority(priorities, routeIndex, raw) {
   const type = raw.type ?? classifyPriorityType(raw.source ?? '', raw.message ?? '');
   const level = raw.level ?? classifyPriorityLevel(type);
-  const route = raw.route ?? findMatchingRoute(`${raw.message ?? ''} ${raw.context ?? ''}`, routeIndex);
+  const route =
+    raw.route ?? findMatchingRoute(`${raw.message ?? ''} ${raw.context ?? ''}`, routeIndex);
   const message = cleanIssueMessage(raw.message);
   const priority = {
     level,
@@ -545,7 +745,11 @@ function addPriority(priorities, routeIndex, raw) {
   };
   const key = `${priority.level}:${priority.type}:${priority.route ?? 'system'}:${priority.message}`;
 
-  if (!priorities.some(item => `${item.level}:${item.type}:${item.route ?? 'system'}:${item.message}` === key)) {
+  if (
+    !priorities.some(
+      item => `${item.level}:${item.type}:${item.route ?? 'system'}:${item.message}` === key
+    )
+  ) {
     priorities.push(priority);
   }
 }
@@ -553,10 +757,14 @@ function addPriority(priorities, routeIndex, raw) {
 function buildPriorities(validate) {
   const routeIndex = buildRouteIndex();
   const priorities = [];
-  const domainStructureReport = unwrapReportData(readReportJson(root, 'domain-structure-report.json')) ?? {};
-  const conversionReport = unwrapReportData(readReportJson(root, 'conversion-contract-report.json')) ?? {};
-  const contentContractReport = unwrapReportData(readReportJson(root, 'content-contract-report.json')) ?? {};
-  const contentQualityReport = unwrapReportData(readReportJson(root, 'content-quality-report.json')) ?? {};
+  const domainStructureReport =
+    unwrapReportData(readReportJson(root, 'domain-structure-report.json')) ?? {};
+  const conversionReport =
+    unwrapReportData(readReportJson(root, 'conversion-contract-report.json')) ?? {};
+  const contentContractReport =
+    unwrapReportData(readReportJson(root, 'content-contract-report.json')) ?? {};
+  const contentQualityReport =
+    unwrapReportData(readReportJson(root, 'content-quality-report.json')) ?? {};
   const graphReport = unwrapReportData(readReportJson(root, 'graph-report.json')) ?? {};
   const contentGapsReport = unwrapReportData(readReportJson(root, 'content-gaps.json')) ?? {};
   const ctaViolationReport = readReportJson(root, 'cta-violation-scan.json') ?? [];
@@ -622,7 +830,7 @@ function buildPriorities(validate) {
     addPriority(priorities, routeIndex, {
       type: 'content',
       level: 'MEDIUM',
-      message: typeof issue === 'string' ? issue : issue?.message ?? 'Graph issue detected.',
+      message: typeof issue === 'string' ? issue : (issue?.message ?? 'Graph issue detected.'),
       context: issue?.file,
       source: 'validate-graph',
     });
@@ -651,7 +859,8 @@ function buildPriorities(validate) {
       continue;
     }
 
-    const detailMessage = validator.errors[0] ?? validator.warnings[0] ?? `${validator.name} reported issues.`;
+    const detailMessage =
+      validator.errors[0] ?? validator.warnings[0] ?? `${validator.name} reported issues.`;
     addPriority(priorities, routeIndex, {
       message: detailMessage,
       source: validator.name,
@@ -679,7 +888,9 @@ function buildPages(priorities) {
 
   const pages = routeIndex.map(node => {
     const pagePriorities = priorities.filter(priority => priority.route === node.route);
-    const ctaIssues = pagePriorities.filter(priority => priority.type === 'cta' || priority.type === 'conversion');
+    const ctaIssues = pagePriorities.filter(
+      priority => priority.type === 'cta' || priority.type === 'conversion'
+    );
     const contentIssues = pagePriorities.filter(priority => priority.type === 'content');
     const highIssues = pagePriorities.filter(priority => priority.level === 'HIGH');
     const mediumIssues = pagePriorities.filter(priority => priority.level === 'MEDIUM');
@@ -688,19 +899,27 @@ function buildPages(priorities) {
     return {
       route: node.route,
       type: normalizePageType(node.type),
-      status: highIssues.length > 0 ? 'FAIL' : mediumIssues.length > 0 || lowIssues.length > 0 ? 'WARNING' : 'OK',
+      status:
+        highIssues.length > 0
+          ? 'FAIL'
+          : mediumIssues.length > 0 || lowIssues.length > 0
+            ? 'WARNING'
+            : 'OK',
       conversionPriority: node.conversionPriority,
       cta: {
-        status: ctaIssues.some(issue => issue.level === 'HIGH') ? 'FAIL' : ctaIssues.length > 0 ? 'WARNING' : 'OK',
+        status: ctaIssues.some(issue => issue.level === 'HIGH')
+          ? 'FAIL'
+          : ctaIssues.length > 0
+            ? 'WARNING'
+            : 'OK',
         issues: ctaIssues.length,
       },
       content: {
-        status:
-          contentIssues.some(issue => issue.level === 'HIGH')
-            ? 'FAIL'
-            : contentIssues.length > 0
-              ? 'WARNING'
-              : 'OK',
+        status: contentIssues.some(issue => issue.level === 'HIGH')
+          ? 'FAIL'
+          : contentIssues.length > 0
+            ? 'WARNING'
+            : 'OK',
       },
       issues: pagePriorities.map(priority => priority.message),
     };
@@ -723,13 +942,21 @@ function buildPages(priorities) {
 }
 
 function buildChanges(previousReport, priorities, pages) {
-  const previousPriorities = Array.isArray(previousReport?.priorities) ? previousReport.priorities : [];
+  const previousPriorities = Array.isArray(previousReport?.priorities)
+    ? previousReport.priorities
+    : [];
   const previousPages = Array.isArray(previousReport?.pages) ? previousReport.pages : [];
   const currentPriorityMap = new Map(
-    priorities.map(priority => [`${priority.type}:${priority.route ?? 'system'}:${priority.message}`, priority])
+    priorities.map(priority => [
+      `${priority.type}:${priority.route ?? 'system'}:${priority.message}`,
+      priority,
+    ])
   );
   const previousPriorityMap = new Map(
-    previousPriorities.map(priority => [`${priority.type}:${priority.route ?? 'system'}:${priority.message}`, priority])
+    previousPriorities.map(priority => [
+      `${priority.type}:${priority.route ?? 'system'}:${priority.message}`,
+      priority,
+    ])
   );
 
   const newIssues = [...currentPriorityMap.entries()]
@@ -741,7 +968,11 @@ function buildChanges(previousReport, priorities, pages) {
 
   const previousPageStatusByRoute = new Map(previousPages.map(page => [page.route, page.status]));
   const statusChanged = pages
-    .filter(page => previousPageStatusByRoute.has(page.route) && previousPageStatusByRoute.get(page.route) !== page.status)
+    .filter(
+      page =>
+        previousPageStatusByRoute.has(page.route) &&
+        previousPageStatusByRoute.get(page.route) !== page.status
+    )
     .map(page => ({
       route: page.route,
       previousStatus: previousPageStatusByRoute.get(page.route),
@@ -844,7 +1075,9 @@ function buildClientDashboard(report) {
     }));
 
   const pagesOptimized = pages.filter(page => page.status === 'OK').length;
-  const improvementsMade = (changes.resolvedIssues?.length ?? 0) + (changes.statusChanged?.filter(item => item.nextStatus === 'OK').length ?? 0);
+  const improvementsMade =
+    (changes.resolvedIssues?.length ?? 0) +
+    (changes.statusChanged?.filter(item => item.nextStatus === 'OK').length ?? 0);
   const status =
     criticalIssues === 0 && clientPriorities.length === 0
       ? 'healthy'
@@ -857,7 +1090,8 @@ function buildClientDashboard(report) {
     sourceCommand,
     status,
     summary: {
-      systemHealth: status === 'healthy' ? 'Healthy' : status === 'improving' ? 'Improving' : 'Needs Attention',
+      systemHealth:
+        status === 'healthy' ? 'Healthy' : status === 'improving' ? 'Improving' : 'Needs Attention',
       issues: clientPriorities.length,
       criticalIssues,
       pagesOptimized,
@@ -869,10 +1103,17 @@ function buildClientDashboard(report) {
       status: getClientPageStatus(page, changes),
       insight: buildClientPageInsight(page, changes),
     })),
-    impacts: [...groupedPriorities.values()].map(group => ({ impact: group.impact, issues: group.count })),
+    impacts: [...groupedPriorities.values()].map(group => ({
+      impact: group.impact,
+      issues: group.count,
+    })),
     changes: {
-      newIssues: (changes.newIssues ?? []).map(priority => buildClientPriorityMessage(mapPriorityImpact(priority), 1)),
-      resolvedIssues: (changes.resolvedIssues ?? []).map(priority => buildClientPriorityMessage(mapPriorityImpact(priority), 1)),
+      newIssues: (changes.newIssues ?? []).map(priority =>
+        buildClientPriorityMessage(mapPriorityImpact(priority), 1)
+      ),
+      resolvedIssues: (changes.resolvedIssues ?? []).map(priority =>
+        buildClientPriorityMessage(mapPriorityImpact(priority), 1)
+      ),
       pagesImproved: (changes.statusChanged ?? []).filter(item => item.nextStatus === 'OK').length,
     },
   };
@@ -890,7 +1131,8 @@ function summarizeVitestReport(report, fallbackDuration) {
 
     return sum;
   }, 0);
-  const files = (report?.testResults ?? []).map(item => {
+  const files = (report?.testResults ?? [])
+    .map(item => {
     const assertions = Array.isArray(item?.assertionResults) ? item.assertionResults : [];
     const passedCount = assertions.filter(assertion => assertion?.status === 'passed').length;
     const failedCount = assertions.filter(assertion => assertion?.status === 'failed').length;
@@ -900,34 +1142,41 @@ function summarizeVitestReport(report, fallbackDuration) {
       typeof item?.startTime === 'number' && typeof item?.endTime === 'number'
         ? Math.max(0, item.endTime - item.startTime)
         : Math.round(
-            assertions.reduce((sum, assertion) => {
-              return sum + (typeof assertion?.duration === 'number' ? assertion.duration : 0);
-            }, 0)
-          );
+          assertions.reduce((sum, assertion) => {
+            return sum + (typeof assertion?.duration === 'number' ? assertion.duration : 0);
+          }, 0)
+        );
 
-    return {
-      file,
-      status: item?.status === 'failed' || failedCount > 0 ? 'FAIL' : 'PASS',
-      tests: assertions.length,
-      durationMs,
-      passed: passedCount,
-      failed: failedCount,
-      skipped: skippedCount,
-      failedTests: assertions
-        .filter(assertion => assertion?.status === 'failed')
-        .map(assertion => assertion?.fullName ?? assertion?.title ?? 'Unnamed test')
-        .filter(Boolean),
-    };
-  });
+      return {
+        file,
+        status: item?.status === 'failed' || failedCount > 0 ? 'FAIL' : 'PASS',
+        tests: assertions.length,
+        durationMs,
+        passed: passedCount,
+        failed: failedCount,
+        skipped: skippedCount,
+        failedTests: assertions
+          .filter(assertion => assertion?.status === 'failed')
+          .map(assertion => assertion?.fullName ?? assertion?.title ?? 'Unnamed test')
+          .filter(Boolean)
+          .sort((left, right) => left.localeCompare(right)),
+      };
+    })
+    .sort((left, right) => left.file.localeCompare(right.file));
 
-  const failedFiles = uniqueStrings(files.filter(file => file.status === 'FAIL').map(file => file.file));
+  const failedFiles = uniqueStrings(
+    files.filter(file => file.status === 'FAIL').map(file => file.file)
+  );
   const slowTests = (report?.testResults ?? [])
     .flatMap(item => {
       const file = extractRelativePath(item?.name) ?? 'unknown';
       const assertions = Array.isArray(item?.assertionResults) ? item.assertionResults : [];
 
       return assertions
-        .filter(assertion => typeof assertion?.duration === 'number' && assertion.duration >= slowTestThresholdMs)
+        .filter(
+          assertion =>
+            typeof assertion?.duration === 'number' && assertion.duration >= slowTestThresholdMs
+        )
         .map(assertion => ({
           name: assertion?.fullName ?? assertion?.title ?? 'Unnamed test',
           file,
@@ -935,7 +1184,17 @@ function summarizeVitestReport(report, fallbackDuration) {
           status: normalizeStatus(assertion?.status),
         }));
     })
-    .sort((left, right) => right.durationMs - left.durationMs);
+    .sort((left, right) => {
+      if (right.durationMs !== left.durationMs) {
+        return right.durationMs - left.durationMs;
+      }
+
+      if (left.file !== right.file) {
+        return left.file.localeCompare(right.file);
+      }
+
+      return left.name.localeCompare(right.name);
+    });
 
   return {
     total,
@@ -958,8 +1217,12 @@ function buildValidationSection(result, validationReport) {
       .filter(error => error && typeof error.validator === 'string')
       .map(error => [error.validator, error])
   );
-  const blockingFailures = validators.filter(validator => validator.status === 'fail' && validator.blocking);
-  const advisoryFailures = validators.filter(validator => validator.status === 'fail' && !validator.blocking);
+  const blockingFailures = validators.filter(
+    validator => validator.status === 'fail' && validator.blocking
+  );
+  const advisoryFailures = validators.filter(
+    validator => validator.status === 'fail' && !validator.blocking
+  );
 
   const errors = blockingFailures.map(validator => {
     const failure = failuresByValidator.get(validator.name);
@@ -1180,59 +1443,59 @@ function normalizeReportFile(absolutePath, timestamp, fallbackSource) {
       generatedAt = nextReport.generatedAt;
       fileSourceCommand = nextReport.sourceCommand;
       writeJson(absolutePath, nextReport);
+      validateReportFile(absolutePath, relativePath);
     }
   }
 
   const statsAfter = fs.statSync(absolutePath);
-  const ageMs = Math.max(0, parseTimestamp(timestamp) - parseTimestamp(generatedAt, statsAfter.mtimeMs));
-
   return {
     name: fileName,
     path: relativePath,
     generatedAt,
     sourceCommand: fileSourceCommand,
-    updatedAt: statsAfter.mtime.toISOString(),
-    ageMs,
   };
 }
 
 function buildReportsSection(result, runStartedAt, timestamp) {
-  const refreshedFiles = listReportFiles(reportsDir)
-    .filter(filePath => fs.statSync(filePath).mtimeMs >= runStartedAt - 1000)
+  const allFiles = listReportFiles(reportsDir)
     .map(filePath => normalizeReportFile(filePath, timestamp, sourceCommand))
     .sort((left, right) => left.name.localeCompare(right.name));
+  const trackedFiles = allFiles.filter(file => requiredReportFiles.has(file.name));
 
-  const generatedAtValues = refreshedFiles
-    .map(file => file.generatedAt)
-    .filter(value => typeof value === 'string')
-    .sort();
-  const refreshedFileNames = new Set(refreshedFiles.map(file => file.name));
-  const missing = [...requiredReportFiles].filter(fileName => !refreshedFileNames.has(fileName));
-  const stale = refreshedFiles
-    .filter(file => file.ageMs > reportStaleThresholdMs)
+  const availableFileNames = new Set(trackedFiles.map(file => file.name));
+  const missing = [...requiredReportFiles].filter(fileName => !availableFileNames.has(fileName));
+  const stale = trackedFiles
+    .filter(file => parseTimestamp(timestamp) - parseTimestamp(file.generatedAt, runStartedAt) > reportStaleThresholdMs)
     .map(file => file.name)
     .sort((left, right) => left.localeCompare(right));
 
   return {
-    status: result.exitCode === 0 && refreshedFiles.length > 0 && missing.length === 0 && stale.length === 0 ? 'PASS' : 'FAIL',
+    status:
+      result.exitCode === 0 && trackedFiles.length > 0 && missing.length === 0 && stale.length === 0
+        ? 'PASS'
+        : 'FAIL',
     command: 'node --import tsx/esm scripts/analyzers/export-reports.mjs',
     durationMs: result.durationMs,
     generatedAt: timestamp,
-    fileCount: refreshedFiles.length,
-    freshestGeneratedAt: generatedAtValues[generatedAtValues.length - 1] ?? null,
-    stalestGeneratedAt: generatedAtValues[0] ?? null,
-    files: refreshedFiles,
+    fileCount: trackedFiles.length,
+    files: trackedFiles,
     missing,
     stale,
-    errors: result.exitCode === 0 ? [] : [excerptOutput(combineOutput(result)) || 'Report export failed.'],
+    errors:
+      result.exitCode === 0
+        ? []
+        : [excerptOutput(combineOutput(result)) || 'Report export failed.'],
   };
 }
 
 function buildSystemSection() {
-  const domainStructureReport = unwrapReportData(readReportJson(root, 'domain-structure-report.json')) ?? {};
+  const domainStructureReport =
+    unwrapReportData(readReportJson(root, 'domain-structure-report.json')) ?? {};
   const graphReport = unwrapReportData(readReportJson(root, 'graph-report.json')) ?? {};
   const authorityMap = unwrapReportData(readReportJson(root, 'authority-map.json')) ?? {};
-  const domainIssues = Array.isArray(domainStructureReport?.issues) ? domainStructureReport.issues : [];
+  const domainIssues = Array.isArray(domainStructureReport?.issues)
+    ? domainStructureReport.issues
+    : [];
   const featureIssues = domainIssues
     .filter(issue => issue?.type === 'feature')
     .map(issue => issue?.message ?? 'Feature contract issue.');
@@ -1254,7 +1517,7 @@ function buildSystemSection() {
     graph: {
       status:
         (graphReport?.errorCount ?? graphErrors.length) === 0 &&
-        (graphReport?.summary?.orphanNodes ?? 0) === 0
+          (graphReport?.summary?.orphanNodes ?? 0) === 0
           ? 'OK'
           : 'ISSUES',
       nodes: Array.isArray(authorityMap?.nodes) ? authorityMap.nodes.length : 0,
@@ -1267,7 +1530,12 @@ function buildSystemSection() {
 }
 
 function buildOverallStatus(report) {
-  const requiredSteps = [report.validate.status, report.typecheck.status, report.tests.status, report.reports.status];
+  const requiredSteps = [
+    report.validate.status,
+    report.typecheck.status,
+    report.tests.status,
+    report.reports.status,
+  ];
 
   if (report.e2e.status === 'FAIL') {
     requiredSteps.push('FAIL');
@@ -1287,7 +1555,14 @@ function main() {
   ensureDir(tempDir);
   ensureDir(snapshotDir);
 
-  const validateResult = runCommand(binaries.node, ['scripts/core/validate-all.mjs', '--report-json']);
+  if (isGitWorkspaceDirty()) {
+    logger.warn('running on dirty workspace');
+  }
+
+  const validateResult = runCommand(binaries.node, [
+    'scripts/core/validate-all.mjs',
+    '--report-json',
+  ]);
   const validationReport = readReportJson(root, 'validation-results.json');
   const validate = buildValidationSection(validateResult, validationReport);
 
@@ -1312,7 +1587,11 @@ function main() {
     ? buildE2ESection(e2eResult, parseJsonText(e2eResult.stdout))
     : buildSkippedE2ESection();
 
-  const reportsResult = runCommand(binaries.node, ['--import', 'tsx/esm', 'scripts/analyzers/export-reports.mjs']);
+  const reportsResult = runCommand(binaries.node, [
+    '--import',
+    'tsx/esm',
+    'scripts/analyzers/export-reports.mjs',
+  ]);
   const reports = buildReportsSection(reportsResult, runStartedAt, timestamp);
   const system = buildSystemSection();
   const priorities = buildPriorities(validate);
@@ -1338,34 +1617,47 @@ function main() {
   report.status = buildOverallStatus(report);
   const clientDashboard = buildClientDashboard(report);
   report.reports.files.push({
+    name: 'system-health.json',
+    path: 'reports/system-health.json',
+    generatedAt: timestamp,
+    sourceCommand,
+  });
+  report.reports.files.push({
     name: 'system-report.json',
     path: 'reports/system-report.json',
     generatedAt: timestamp,
     sourceCommand,
-    updatedAt: timestamp,
-    ageMs: 0,
   });
   report.reports.files.push({
     name: 'client-dashboard.json',
     path: 'reports/client-dashboard.json',
     generatedAt: timestamp,
     sourceCommand,
-    updatedAt: timestamp,
-    ageMs: 0,
   });
-  report.reports.missing = report.reports.missing.filter(fileName => fileName !== 'system-report.json');
-  report.reports.missing = report.reports.missing.filter(fileName => fileName !== 'client-dashboard.json');
+  report.reports.missing = report.reports.missing.filter(
+    fileName => fileName !== 'system-health.json'
+  );
+  report.reports.missing = report.reports.missing.filter(
+    fileName => fileName !== 'system-report.json'
+  );
+  report.reports.missing = report.reports.missing.filter(
+    fileName => fileName !== 'client-dashboard.json'
+  );
   report.reports.fileCount = report.reports.files.length;
   report.reports.status =
     report.reports.errors.length === 0 &&
-    report.reports.files.length > 0 &&
-    report.reports.missing.length === 0 &&
-    report.reports.stale.length === 0
+      report.reports.files.length > 0 &&
+      report.reports.missing.length === 0 &&
+      report.reports.stale.length === 0
       ? 'PASS'
       : 'FAIL';
   report.status = buildOverallStatus(report);
 
   const validatedOutputs = validateFrozenOutputs(report, clientDashboard);
+  const pipelineReport = readReportJson(root, 'pipeline-report.json');
+  const systemHealthReport = buildSystemHealthReport(validatedOutputs.report, pipelineReport);
+  const systemHealthPath = path.join(reportsDir, 'system-health.json');
+  writeJson(systemHealthPath, systemHealthReport);
   writeJson(clientDashboardPath, validatedOutputs.clientDashboard);
   writeJson(reportPath, validatedOutputs.report);
 
@@ -1375,8 +1667,6 @@ function main() {
     path: `reports/dashboard/${fileName}`,
     generatedAt: timestamp,
     sourceCommand,
-    updatedAt: timestamp,
-    ageMs: 0,
   }));
 
   for (const dashboardFile of dashboardFiles) {
@@ -1389,9 +1679,9 @@ function main() {
   );
   validatedOutputs.report.reports.status =
     validatedOutputs.report.reports.errors.length === 0 &&
-    validatedOutputs.report.reports.files.length > 0 &&
-    validatedOutputs.report.reports.missing.length === 0 &&
-    validatedOutputs.report.reports.stale.length === 0
+      validatedOutputs.report.reports.files.length > 0 &&
+      validatedOutputs.report.reports.missing.length === 0 &&
+      validatedOutputs.report.reports.stale.length === 0
       ? 'PASS'
       : 'FAIL';
   validatedOutputs.report.status = buildOverallStatus(validatedOutputs.report);
@@ -1401,15 +1691,10 @@ function main() {
   writeSnapshotArtifacts(validatedOutputs.report);
 
   const shouldFail = validatedOutputs.report.status === 'FAIL';
-  logger.printTotals({
-    status: validatedOutputs.report.status,
-    validators: `${validatedOutputs.report.validate.passed}/${validatedOutputs.report.validate.total}`,
-    blockingFailed: validatedOutputs.report.validate.blockingFailed,
-    advisoryFailed: validatedOutputs.report.validate.advisoryFailed,
-    reportFiles: validatedOutputs.report.reports.fileCount,
-    testsFailed: validatedOutputs.report.tests.failed,
-    e2e: validatedOutputs.report.e2e.status,
-  });
+  printStructuredSystemSummary(validatedOutputs.report);
+  if (outputMode === 'full') {
+    printStructuredSystemDetails(validatedOutputs.report);
+  }
   logger.printSummary(`system report -> ${logger.relativePath(reportPath)}`);
   logger.printSummary(`client dashboard -> ${logger.relativePath(clientDashboardPath)}`);
   logger.printErrors(validatedOutputs.report.validate.errors, 'validator errors', 5);

@@ -152,7 +152,12 @@ const createIndustryEntry = (data: IndustryPageData): IndustryEntry => {
             pageType='industry-category'
           >
             {renderCategory(data)}
-            <SmartRelatedSection slug={data.slug} includeCaseStudies={false} />
+            <SmartRelatedSection
+              pageId={`industry-category:${data.slug}`}
+              pageType='industry-category'
+              slug={data.slug}
+              includeCaseStudies={false}
+            />
           </CTARegistryProvider>
         );
       },
@@ -169,7 +174,11 @@ const createIndustryEntry = (data: IndustryPageData): IndustryEntry => {
       return (
         <CTARegistryProvider pageId={`industry-detail:${data.slug}`} pageType='industry-detail'>
           {renderDetail(data)}
-          <SmartRelatedSection slug={data.slug} />
+          <SmartRelatedSection
+            pageId={`industry-detail:${data.slug}`}
+            pageType='industry-detail'
+            slug={data.slug}
+          />
         </CTARegistryProvider>
       );
     },

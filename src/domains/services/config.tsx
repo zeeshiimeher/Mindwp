@@ -37,7 +37,7 @@ function renderServiceEntry(slug: ServiceSlug): ReactElement {
   return (
     <CTARegistryProvider pageId={`service:${slug}`} pageType='service'>
       {render(entry.data, slug)}
-      <SmartRelatedSection slug={slug} />
+      <SmartRelatedSection pageId={`service:${slug}`} pageType='service' slug={slug} />
     </CTARegistryProvider>
   );
 }

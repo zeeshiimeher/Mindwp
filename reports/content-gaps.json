@@ -1,6 +1,11 @@
 {
-  "name": "content-gaps",
-  "status": "PASS",
+  "meta": {
+    "name": "content-gaps",
+    "source": "node --import tsx/esm scripts/analyzers/generate-content-gaps.ts",
+    "generatedAt": "2026-04-20T23:55:23.013Z",
+    "status": "PASS",
+    "version": "1.0"
+  },
   "summary": {
     "total": 0,
     "passed": 1,
@@ -8,7 +13,7 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-20T21:45:52.317Z",
+    "generatedAt": "2026-04-20T23:55:23.013Z",
     "stats": {
       "totalNodes": 227,
       "blogs": 88,
@@ -3745,13 +3750,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Works for any service business"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -4020,13 +4025,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for law firms"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -4128,13 +4133,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for estate agents"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -4236,13 +4241,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for trades"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -7178,13 +7183,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for garages"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -7390,13 +7395,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for HVAC"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -7598,13 +7603,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for HVAC"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -7810,13 +7815,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for trades"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -10904,13 +10909,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for garages"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -11116,13 +11121,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for HVAC"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -11328,13 +11333,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for estate agents"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -11544,13 +11549,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for trades"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -16312,13 +16317,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "20-minute discovery call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Actionable system roadmap"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No long-term contract required"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -16570,38 +16575,6 @@
               {
                 "id": "resource:local-visibility-framework",
                 "source": "derived"
-              },
-              {
-                "id": "resource:local-visibility-optimization-guide-for-hvac-companies",
-                "source": "derived"
-              },
-              {
-                "id": "resource:local-visibility-optimization-guide-for-realtors",
-                "source": "derived"
-              },
-              {
-                "id": "resource:reputation-monitoring-systems",
-                "source": "derived"
-              },
-              {
-                "id": "resource:responding-to-negative-reviews-systematically",
-                "source": "derived"
-              },
-              {
-                "id": "resource:review-automation-setup-guide-for-roofing-companies",
-                "source": "derived"
-              },
-              {
-                "id": "resource:review-automation-setup-guide-for-salons",
-                "source": "derived"
-              },
-              {
-                "id": "resource:service-page-architecture-that-converts",
-                "source": "derived"
-              },
-              {
-                "id": "resource:what-is-a-systems-first-website",
-                "source": "derived"
               }
             ],
             "validates": [
@@ -16649,16 +16622,16 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute strategy call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Custom beauty salon solutions"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No long-term contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Results within 30 days"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -16910,38 +16883,6 @@
               {
                 "id": "resource:local-visibility-framework",
                 "source": "derived"
-              },
-              {
-                "id": "resource:local-visibility-optimization-guide-for-hvac-companies",
-                "source": "derived"
-              },
-              {
-                "id": "resource:local-visibility-optimization-guide-for-realtors",
-                "source": "derived"
-              },
-              {
-                "id": "resource:reputation-monitoring-systems",
-                "source": "derived"
-              },
-              {
-                "id": "resource:responding-to-negative-reviews-systematically",
-                "source": "derived"
-              },
-              {
-                "id": "resource:review-automation-setup-guide-for-roofing-companies",
-                "source": "derived"
-              },
-              {
-                "id": "resource:review-automation-setup-guide-for-salons",
-                "source": "derived"
-              },
-              {
-                "id": "resource:service-page-architecture-that-converts",
-                "source": "derived"
-              },
-              {
-                "id": "resource:what-is-a-systems-first-website",
-                "source": "derived"
               }
             ],
             "validates": [
@@ -16989,13 +16930,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Works for any local business"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -17215,13 +17156,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for salons"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -18216,42 +18157,6 @@
               {
                 "id": "resource:hvac-emergency-call-handling-system",
                 "source": "derived"
-              },
-              {
-                "id": "resource:lead-response-optimization-checklist-for-hvac-businesses",
-                "source": "derived"
-              },
-              {
-                "id": "resource:local-service-page-architecture",
-                "source": "derived"
-              },
-              {
-                "id": "resource:roofing-crm-pipeline-structure",
-                "source": "derived"
-              },
-              {
-                "id": "resource:roofing-estimate-follow-up-workflow",
-                "source": "derived"
-              },
-              {
-                "id": "resource:sales-pipeline-visibility-framework",
-                "source": "derived"
-              },
-              {
-                "id": "resource:service-page-architecture-that-converts",
-                "source": "derived"
-              },
-              {
-                "id": "resource:tracking-customer-lifetime-value-using-crm",
-                "source": "derived"
-              },
-              {
-                "id": "resource:website-crm-integration-explained",
-                "source": "derived"
-              },
-              {
-                "id": "resource:what-is-a-systems-first-website",
-                "source": "derived"
               }
             ],
             "validates": [
@@ -18497,13 +18402,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for dental practices"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -18784,13 +18689,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for dental practices"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -18883,13 +18788,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "20-minute discovery call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Actionable system roadmap"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No long-term contract required"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -19141,38 +19046,6 @@
               {
                 "id": "resource:local-visibility-framework",
                 "source": "derived"
-              },
-              {
-                "id": "resource:local-visibility-optimization-guide-for-hvac-companies",
-                "source": "derived"
-              },
-              {
-                "id": "resource:local-visibility-optimization-guide-for-realtors",
-                "source": "derived"
-              },
-              {
-                "id": "resource:reputation-monitoring-systems",
-                "source": "derived"
-              },
-              {
-                "id": "resource:responding-to-negative-reviews-systematically",
-                "source": "derived"
-              },
-              {
-                "id": "resource:review-automation-setup-guide-for-roofing-companies",
-                "source": "derived"
-              },
-              {
-                "id": "resource:review-automation-setup-guide-for-salons",
-                "source": "derived"
-              },
-              {
-                "id": "resource:service-page-architecture-that-converts",
-                "source": "derived"
-              },
-              {
-                "id": "resource:what-is-a-systems-first-website",
-                "source": "derived"
               }
             ],
             "validates": [
@@ -19220,16 +19093,16 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute strategy call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Custom beauty salon solutions"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No long-term contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Results within 30 days"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -19481,38 +19354,6 @@
               {
                 "id": "resource:local-visibility-framework",
                 "source": "derived"
-              },
-              {
-                "id": "resource:local-visibility-optimization-guide-for-hvac-companies",
-                "source": "derived"
-              },
-              {
-                "id": "resource:local-visibility-optimization-guide-for-realtors",
-                "source": "derived"
-              },
-              {
-                "id": "resource:reputation-monitoring-systems",
-                "source": "derived"
-              },
-              {
-                "id": "resource:responding-to-negative-reviews-systematically",
-                "source": "derived"
-              },
-              {
-                "id": "resource:review-automation-setup-guide-for-roofing-companies",
-                "source": "derived"
-              },
-              {
-                "id": "resource:review-automation-setup-guide-for-salons",
-                "source": "derived"
-              },
-              {
-                "id": "resource:service-page-architecture-that-converts",
-                "source": "derived"
-              },
-              {
-                "id": "resource:what-is-a-systems-first-website",
-                "source": "derived"
               }
             ],
             "validates": [
@@ -19560,13 +19401,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for law firms"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -19847,13 +19688,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for salons"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -20098,13 +19939,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for salons"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -21446,13 +21287,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for trades"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -21733,13 +21574,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Works for any service business"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -22656,13 +22497,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Works for any service business"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -24285,70 +24126,6 @@
               {
                 "id": "resource:hvac-crm-pipeline-structure",
                 "source": "derived"
-              },
-              {
-                "id": "resource:hvac-lead-handling-example",
-                "source": "derived"
-              },
-              {
-                "id": "resource:lead-automation-framework",
-                "source": "derived"
-              },
-              {
-                "id": "resource:lead-qualification-framework",
-                "source": "derived"
-              },
-              {
-                "id": "resource:lead-response-optimization-checklist-for-hvac-businesses",
-                "source": "derived"
-              },
-              {
-                "id": "resource:lead-response-time-framework",
-                "source": "derived"
-              },
-              {
-                "id": "resource:lead-routing-models-for-service-companies",
-                "source": "derived"
-              },
-              {
-                "id": "resource:missed-call-recovery-for-auto-repair",
-                "source": "derived"
-              },
-              {
-                "id": "resource:missed-call-recovery-for-hvac",
-                "source": "derived"
-              },
-              {
-                "id": "resource:missed-call-recovery-for-salons",
-                "source": "derived"
-              },
-              {
-                "id": "resource:missed-call-recovery-system",
-                "source": "derived"
-              },
-              {
-                "id": "resource:multi-channel-lead-capture-systems",
-                "source": "derived"
-              },
-              {
-                "id": "resource:sales-pipeline-visibility-framework",
-                "source": "derived"
-              },
-              {
-                "id": "resource:salon-lead-handling-example",
-                "source": "derived"
-              },
-              {
-                "id": "resource:tracking-customer-lifetime-value-using-crm",
-                "source": "derived"
-              },
-              {
-                "id": "resource:tracking-salon-client-lifetime-value",
-                "source": "derived"
-              },
-              {
-                "id": "resource:website-crm-integration-explained",
-                "source": "derived"
               }
             ]
           },
@@ -25084,13 +24861,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for garages"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -25187,13 +24964,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for law firms"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -25295,13 +25072,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for estate agents"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -25403,13 +25180,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for trades"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -26964,13 +26741,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for garages"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -27176,13 +26953,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for HVAC"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -27388,13 +27165,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for estate agents"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -27604,13 +27381,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for trades"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -28807,13 +28584,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for HVAC"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -29015,13 +28792,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for estate agents"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -30836,13 +30613,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Works for any service business"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -34075,13 +33852,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for dental practices"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -34362,13 +34139,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for law firms"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -34649,13 +34426,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for trades"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -34936,13 +34713,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Works for any service business"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -36260,13 +36037,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for trades"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -36547,13 +36324,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Works for any service business"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -38365,13 +38142,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for trades"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -40868,42 +40645,6 @@
               {
                 "id": "resource:local-service-page-architecture",
                 "source": "derived"
-              },
-              {
-                "id": "resource:reducing-salon-no-shows-with-automation",
-                "source": "derived"
-              },
-              {
-                "id": "resource:roofing-crm-pipeline-structure",
-                "source": "derived"
-              },
-              {
-                "id": "resource:roofing-estimate-follow-up-workflow",
-                "source": "derived"
-              },
-              {
-                "id": "resource:sales-pipeline-visibility-framework",
-                "source": "derived"
-              },
-              {
-                "id": "resource:service-page-architecture-that-converts",
-                "source": "derived"
-              },
-              {
-                "id": "resource:tracking-customer-lifetime-value-using-crm",
-                "source": "derived"
-              },
-              {
-                "id": "resource:tracking-salon-client-lifetime-value",
-                "source": "derived"
-              },
-              {
-                "id": "resource:website-crm-integration-explained",
-                "source": "derived"
-              },
-              {
-                "id": "resource:what-is-a-systems-first-website",
-                "source": "derived"
               }
             ]
           },
@@ -41397,13 +41138,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Works for any service business"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -41672,13 +41413,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Works for any service business"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -43063,42 +42804,6 @@
               {
                 "id": "resource:hvac-emergency-call-handling-system",
                 "source": "derived"
-              },
-              {
-                "id": "resource:lead-response-optimization-checklist-for-hvac-businesses",
-                "source": "derived"
-              },
-              {
-                "id": "resource:local-service-page-architecture",
-                "source": "derived"
-              },
-              {
-                "id": "resource:roofing-crm-pipeline-structure",
-                "source": "derived"
-              },
-              {
-                "id": "resource:roofing-estimate-follow-up-workflow",
-                "source": "derived"
-              },
-              {
-                "id": "resource:sales-pipeline-visibility-framework",
-                "source": "derived"
-              },
-              {
-                "id": "resource:service-page-architecture-that-converts",
-                "source": "derived"
-              },
-              {
-                "id": "resource:tracking-customer-lifetime-value-using-crm",
-                "source": "derived"
-              },
-              {
-                "id": "resource:website-crm-integration-explained",
-                "source": "derived"
-              },
-              {
-                "id": "resource:what-is-a-systems-first-website",
-                "source": "derived"
               }
             ]
           },
@@ -43599,13 +43304,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for salons"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -46659,13 +46364,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for salons"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -48081,13 +47786,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for salons"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -49491,13 +49196,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for salons"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -50729,13 +50434,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for salons"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -51875,13 +51580,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Works for any local business"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -54795,13 +54500,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Works for any local business"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -56152,13 +55857,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Works for any local business"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -57452,13 +57157,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for trades"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -59036,13 +58741,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Works for any local business"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -60123,13 +59828,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Works for any service business"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -64092,13 +63797,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Works for any service business"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -64367,13 +64072,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for HVAC"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -64467,13 +64172,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for law firms"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -64575,13 +64280,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for estate agents"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -64683,13 +64388,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for trades"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -65911,13 +65616,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for garages"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -66014,13 +65719,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for HVAC"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -66894,13 +66599,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for salons"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -68014,13 +67719,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for garages"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -68675,70 +68380,6 @@
               {
                 "id": "resource:lead-automation-framework",
                 "source": "derived"
-              },
-              {
-                "id": "resource:lead-qualification-framework",
-                "source": "derived"
-              },
-              {
-                "id": "resource:lead-response-time-framework",
-                "source": "derived"
-              },
-              {
-                "id": "resource:lead-routing-models-for-service-companies",
-                "source": "derived"
-              },
-              {
-                "id": "resource:missed-call-recovery-for-auto-repair",
-                "source": "derived"
-              },
-              {
-                "id": "resource:missed-call-recovery-for-roofing",
-                "source": "derived"
-              },
-              {
-                "id": "resource:missed-call-recovery-for-salons",
-                "source": "derived"
-              },
-              {
-                "id": "resource:missed-call-recovery-system",
-                "source": "derived"
-              },
-              {
-                "id": "resource:multi-channel-lead-capture-systems",
-                "source": "derived"
-              },
-              {
-                "id": "resource:roofing-crm-pipeline-structure",
-                "source": "derived"
-              },
-              {
-                "id": "resource:roofing-lead-handling-example",
-                "source": "derived"
-              },
-              {
-                "id": "resource:sales-pipeline-visibility-framework",
-                "source": "derived"
-              },
-              {
-                "id": "resource:salon-lead-handling-example",
-                "source": "derived"
-              },
-              {
-                "id": "resource:service-business-follow-up-automation-guide",
-                "source": "derived"
-              },
-              {
-                "id": "resource:tracking-customer-lifetime-value-using-crm",
-                "source": "derived"
-              },
-              {
-                "id": "resource:tracking-salon-client-lifetime-value",
-                "source": "derived"
-              },
-              {
-                "id": "resource:website-crm-integration-explained",
-                "source": "derived"
               }
             ]
           },
@@ -69074,13 +68715,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for HVAC"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -69822,13 +69463,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for garages"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -70713,13 +70354,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for salons"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -71598,70 +71239,6 @@
               {
                 "id": "resource:hvac-lead-handling-example",
                 "source": "derived"
-              },
-              {
-                "id": "resource:lead-automation-framework",
-                "source": "derived"
-              },
-              {
-                "id": "resource:lead-qualification-framework",
-                "source": "derived"
-              },
-              {
-                "id": "resource:lead-response-optimization-checklist-for-hvac-businesses",
-                "source": "derived"
-              },
-              {
-                "id": "resource:lead-response-time-framework",
-                "source": "derived"
-              },
-              {
-                "id": "resource:lead-routing-models-for-service-companies",
-                "source": "derived"
-              },
-              {
-                "id": "resource:missed-call-recovery-for-auto-repair",
-                "source": "derived"
-              },
-              {
-                "id": "resource:missed-call-recovery-for-hvac",
-                "source": "derived"
-              },
-              {
-                "id": "resource:missed-call-recovery-for-roofing",
-                "source": "derived"
-              },
-              {
-                "id": "resource:missed-call-recovery-system",
-                "source": "derived"
-              },
-              {
-                "id": "resource:multi-channel-lead-capture-systems",
-                "source": "derived"
-              },
-              {
-                "id": "resource:roofing-crm-pipeline-structure",
-                "source": "derived"
-              },
-              {
-                "id": "resource:roofing-lead-handling-example",
-                "source": "derived"
-              },
-              {
-                "id": "resource:sales-pipeline-visibility-framework",
-                "source": "derived"
-              },
-              {
-                "id": "resource:service-business-follow-up-automation-guide",
-                "source": "derived"
-              },
-              {
-                "id": "resource:tracking-customer-lifetime-value-using-crm",
-                "source": "derived"
-              },
-              {
-                "id": "resource:website-crm-integration-explained",
-                "source": "derived"
               }
             ]
           },
@@ -71997,13 +71574,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for dental practices"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -72096,13 +71673,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for salons"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -73931,13 +73508,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Works for any service business"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -75400,13 +74977,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Works for any service business"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -76213,13 +75790,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for garages"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -76316,13 +75893,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Works for any service business"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -76591,13 +76168,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for HVAC"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -77691,13 +77268,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for trades"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -78584,13 +78161,13 @@
             "cta": {
               "metaItems": [
                 {
-                  "text": "Free 20-minute call"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "No contracts"
+                  "text": "[truncated: max depth reached]"
                 },
                 {
-                  "text": "Built for garages"
+                  "text": "[truncated: max depth reached]"
                 }
               ]
             },
@@ -78780,6 +78357,9 @@
     "resourceIndustryGaps": [],
     "industryCaseStudyGaps": []
   },
-  "generatedAt": "2026-04-20T21:45:52.317Z",
+  "issues": [],
+  "name": "content-gaps",
+  "status": "PASS",
+  "generatedAt": "2026-04-20T23:55:23.013Z",
   "sourceCommand": "node --import tsx/esm scripts/analyzers/generate-content-gaps.ts"
 }

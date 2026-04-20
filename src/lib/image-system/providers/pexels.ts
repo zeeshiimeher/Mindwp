@@ -1,9 +1,10 @@
 // ─── Pexels Provider ────────────────────────────────────────────────
 
-/* eslint-disable no-console */
-
+import { createLogger } from '../../../../lib/logger/index.mjs';
 import { PROVIDER_ENDPOINTS } from '../config';
 import type { ProviderImage, ProviderSearchResult } from '../types';
+
+const logger = createLogger({ label: 'pexels', mode: 'summary', rootDir: process.cwd() });
 
 export async function searchPexels(
   query: string,
@@ -22,7 +23,7 @@ export async function searchPexels(
   });
 
   if (!response.ok) {
-    console.warn(`[pexels] Search failed (${response.status}): ${query}`);
+    logger.warn(`Search failed (${response.status}): ${query}`);
     return { provider: 'pexels', images: [], totalResults: 0 };
   }
 

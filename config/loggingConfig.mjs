@@ -1,6 +1,7 @@
 export const LOGGING_MODE = {
   DEFAULT: 'summary',
   VERBOSE: 'verbose',
+  DEBUG: 'debug',
 };
 
 export const DEFAULT_LOGGING_MODE = LOGGING_MODE.DEFAULT;
@@ -14,6 +15,10 @@ function parseInlineModeArg(arg) {
 }
 
 export function normalizeLoggingMode(value) {
+  if (value === LOGGING_MODE.DEBUG) {
+    return LOGGING_MODE.DEBUG;
+  }
+
   if (value === LOGGING_MODE.VERBOSE) {
     return LOGGING_MODE.VERBOSE;
   }

@@ -7,6 +7,10 @@ import sharp from 'sharp';
 import fs from 'fs';
 import path from 'path';
 
+import { createLogger } from '../../lib/logger/index.mjs';
+
+const logger = createLogger({ label: 'image-inspect', mode: 'summary', rootDir: process.cwd() });
+
 interface InspectResult {
   file: string;
   width: number;
@@ -20,7 +24,7 @@ interface InspectResult {
 
 async function inspectImage(imgPath: string): Promise<InspectResult | null> {
   if (!fs.existsSync(imgPath)) {
-    console.log(`  ⚠️  Not found: ${imgPath}`);
+    logger.warn(`Not found: ${imgPath}`);
     return null;
   }
 
@@ -89,11 +93,11 @@ async function inspectImage(imgPath: string): Promise<InspectResult | null> {
 }
 
 async function main() {
-  console.log('');
-  console.log('╔══════════════════════════════════════════════════════╗');
-  console.log('║        MindWP Image Inspector — Visual QA          ║');
-  console.log('╚══════════════════════════════════════════════════════╝');
-  console.log('');
+  logger.info('');
+  logger.info('╔══════════════════════════════════════════════════════╗');
+  logger.info('║        MindWP Image Inspector — Visual QA          ║');
+  logger.info('╚══════════════════════════════════════════════════════╝');
+  logger.info('');
 
   const images = [
     {
@@ -126,33 +130,36 @@ async function main() {
   let allPass = true;
 
   for (const img of images) {
-    console.log(`📁 ${img.domain.toUpperCase()}: ${path.basename(path.dirname(img.path))}`);
+    logger.info(`📁 ${img.domain.toUpperCase()}: ${path.basename(path.dirname(img.path))}`);
 
     const result = await inspectImage(img.path);
     if (!result) continue;
 
     const fileSizeKB = (fs.statSync(img.path).size / 1024).toFixed(0);
 
-    console.log(`   📐 Dimensions: ${result.width}×${result.height}`);
-    console.log(`   💾 File size: ${fileSizeKB}KB`);
-    console.log(`   ☀️  Overall brightness: ${result.avgBrightness.toFixed(1)}`);
-    console.log(`   🎯 Center brightness: ${result.centerBrightness.toFixed(1)}`);
-    console.log(`   🎨 Overlay strength: ${result.overlayStrength}`);
-    console.log(
+    logger.info(`   📐 Dimensions: ${result.width}×${result.height}`);
+    logger.info(`   💾 File size: ${fileSizeKB}KB`);
+    logger.info(`   ☀️  Overall brightness: ${result.avgBrightness.toFixed(1)}`);
+    logger.info(`   🎯 Center brightness: ${result.centerBrightness.toFixed(1)}`);
+    logger.info(`   🎨 Overlay strength: ${result.overlayStrength}`);
+    logger.info(
       `   📊 Contrast ratio: ${result.contrastRatio.toFixed(2)}:1 ${result.wcagPass ? '✅ WCAG AA' : '❌ FAIL (need 4.5:1)'}`
     );
 
     if (!result.wcagPass) allPass = false;
-    console.log('');
+    logger.info('');
   }
 
-  console.log('────────────────────────────────────────────────────────');
+  logger.info('────────────────────────────────────────────────────────');
   if (allPass) {
-    console.log('✅ All images pass WCAG AA contrast requirements');
+    logger.info('✅ All images pass WCAG AA contrast requirements');
   } else {
-    console.log('❌ Some images FAIL contrast. Run --regenerate to fix overlay.');
+    logger.warn('❌ Some images FAIL contrast. Run --regenerate to fix overlay.');
   }
-  console.log('');
+  logger.info('');
 }
 
-main().catch(console.error);
+main().catch(error => {
+  logger.error(error instanceof Error ? error.message : String(error));
+  process.exit(1);
+});

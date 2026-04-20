@@ -1,12 +1,15 @@
 import { execFileSync } from 'node:child_process';
-import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
+
+import { createLogger } from '../../lib/logger/index.mjs';
 
 const run = (cmd, args) => {
   execFileSync(cmd, args, { stdio: 'inherit' });
 };
 
 const root = process.cwd();
+const logger = createLogger({ label: 'check-generated', mode: 'summary', rootDir: root });
 const COMPONENT_DOCS_REL = 'src/utils/componentDocs.generated.ts';
 
 const REQUIRED_GENERATED_FILES = [
@@ -31,8 +34,7 @@ try {
   try {
     run('npm', ['run', '-s', 'generate:global-inventory']);
   } catch {
-    // eslint-disable-next-line no-console
-    console.warn('[check-generated] generate:global-inventory skipped (optional dependency missing)');
+    logger.warn('generate:global-inventory skipped (optional dependency missing)');
   }
 
   run('npm', ['run', '-s', 'generate:content-registries']);
@@ -52,11 +54,9 @@ try {
       writeFileSync(resolve(root, rel), snapshot.get(rel), 'utf8');
     }
 
-    // eslint-disable-next-line no-console
-    console.error(`\n[check-generated] Generated outputs are out of date:\n- ${changed.join('\n- ')}\n`);
-    // eslint-disable-next-line no-console
-    console.error(
-      '[check-generated] Run: npm run -s generate:component-docs && npm run -s generate:global-inventory && npm run -s generate:content-registries'
+    logger.error(`generated outputs are out of date: ${changed.join(', ')}`);
+    logger.error(
+      'run: npm run -s generate:component-docs && npm run -s generate:global-inventory && npm run -s generate:content-registries'
     );
     process.exitCode = 1;
   }

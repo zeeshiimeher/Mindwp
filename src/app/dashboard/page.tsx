@@ -199,7 +199,7 @@ export default async function ClientDashboardPage({
           </div>
           <div className='flex flex-wrap gap-3'>
             <DashboardLinkButton href='/dashboard' label='Client Dashboard' active />
-            <DashboardLinkButton href='/system-dashboard' label='Operator Dashboard' />
+            <DashboardLinkButton href='/dev/system-dashboard' label='Operator Dashboard' />
             <DashboardLinkButton href='/image-dashboard' label='Image Dashboard' />
           </div>
         </header>

@@ -539,8 +539,8 @@ async function main() {
     name: 'content-intelligence',
     status:
       reportData.summary.gaps > 0 ||
-      reportData.summary.weakNodes > 0 ||
-      reportData.summary.unhealthyClusters > 0
+        reportData.summary.weakNodes > 0 ||
+        reportData.summary.unhealthyClusters > 0
         ? 'WARN'
         : 'PASS',
     summary: {
@@ -578,6 +578,8 @@ async function main() {
 }
 
 main().catch(err => {
-  process.stderr.write(`Content intelligence generation failed: ${err instanceof Error ? err.message : String(err)}\n`);
+  logger.error(
+    `Content intelligence generation failed: ${err instanceof Error ? err.message : String(err)}`
+  );
   process.exit(1);
 });

@@ -1,9 +1,10 @@
 // ─── Unsplash Provider ──────────────────────────────────────────────
 
-/* eslint-disable no-console */
-
+import { createLogger } from '../../../../lib/logger/index.mjs';
 import { PROVIDER_ENDPOINTS } from '../config';
 import type { ProviderImage, ProviderSearchResult } from '../types';
+
+const logger = createLogger({ label: 'unsplash', mode: 'summary', rootDir: process.cwd() });
 
 export async function searchUnsplash(
   query: string,
@@ -22,7 +23,7 @@ export async function searchUnsplash(
   });
 
   if (!response.ok) {
-    console.warn(`[unsplash] Search failed (${response.status}): ${query}`);
+    logger.warn(`Search failed (${response.status}): ${query}`);
     return { provider: 'unsplash', images: [], totalResults: 0 };
   }
 

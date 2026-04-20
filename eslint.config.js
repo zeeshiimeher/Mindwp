@@ -35,7 +35,7 @@ export default [
   },
   js.configs.recommended,
   {
-    files: ['src/**/*.{ts,tsx}', 'scripts/**/*.{ts,tsx,mts,cts}', 'lib/**/*.{ts,tsx,mts,cts}', 'config/**/*.{ts,tsx,mts,cts}'],
+    files: ['src/**/*.{ts,tsx}', 'scripts/**/*.{ts,tsx,mjs,mts,cts}', 'lib/**/*.{ts,tsx,mjs,mts,cts}', 'config/**/*.{ts,tsx,mjs,mts,cts}'],
     languageOptions: {
       parser: tsparser,
       parserOptions: {
@@ -151,6 +151,18 @@ export default [
       react: {
         version: 'detect',
       },
+    },
+  },
+  {
+    files: [
+      'scripts/core/**/*.{mjs,ts}',
+      'scripts/runners/**/*.{mjs,ts}',
+      'scripts/lib/**/*.mjs',
+      'scripts/analyzers/export-reports.mjs',
+      'scripts/validators/validate-system-knowledge.ts',
+    ],
+    rules: {
+      'no-console': 'error',
     },
   },
 ];

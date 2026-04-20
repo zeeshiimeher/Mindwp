@@ -1,6 +1,11 @@
 {
-  "name": "docs-report",
-  "status": "PASS",
+  "meta": {
+    "name": "docs-report",
+    "source": "node scripts/validators/validate-docs.mjs --report-json",
+    "generatedAt": "2026-04-20T23:48:37.347Z",
+    "status": "PASS",
+    "version": "1.0"
+  },
   "summary": {
     "total": 0,
     "passed": 1,
@@ -8,11 +13,14 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-20T21:45:35.806Z",
+    "generatedAt": "2026-04-20T23:48:37.347Z",
     "passed": true,
     "violationCount": 0,
     "violations": []
   },
-  "generatedAt": "2026-04-20T21:45:35.806Z",
-  "sourceCommand": "npm run system:full"
+  "issues": [],
+  "name": "docs-report",
+  "status": "PASS",
+  "generatedAt": "2026-04-20T23:48:37.347Z",
+  "sourceCommand": "node scripts/validators/validate-docs.mjs --report-json"
 }

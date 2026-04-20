@@ -572,7 +572,11 @@ export function CaseStudyTemplate({
             backgroundColor='bg-gradient-primary'
           />
         )}
-        <SmartRelatedSection slug={metadata.slug} />
+        <SmartRelatedSection
+          pageId={`case-study:${metadata.slug}`}
+          pageType='case-study'
+          slug={metadata.slug}
+        />
       </div>
     </CTARegistryProvider>
   );

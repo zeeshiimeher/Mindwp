@@ -15,20 +15,30 @@ import { execFile, execFileSync } from 'node:child_process';
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { resolveLoggingMode, stripLoggingModeArgs } from '../../config/loggingConfig.mjs';
 import { systemEnv } from '../../config/systemEnv.mjs';
-import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { readReportJson } from '../lib/report-json.mjs';
-import { createReportSchema, unwrapReportData } from '../lib/report-schema.mjs';
+import { createReportSchema, normalizeRawReport, unwrapReportData } from '../lib/report-schema.mjs';
 
-const args = new Set(process.argv.slice(2));
+import { evaluateReportSize, validateReportFile } from './report-schema-validator.mjs';
+
+const rawArgs = stripLoggingModeArgs(process.argv.slice(2));
+const args = new Set(rawArgs);
 const reportJson = args.has('--report-json');
+const forceRun = args.has('--force');
+const latestRun = new Date().toISOString();
 
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'validation-results.json');
 const validationReportPath = path.join(root, 'reports', 'validation-report.json');
+const staleReportThresholdMs = 15 * 60 * 1000;
 const loggingMode = resolveLoggingMode(process.argv.slice(2), systemEnv);
 const logger = createLogger({ label: 'validate-all', mode: loggingMode, rootDir: root });
+const reportAuditDirectories = [
+  path.join(root, 'reports'),
+  path.join(root, 'reports', 'dashboard'),
+];
 
 /**
  * @typedef {{ name: string; command: string; args: string[]; blocking: boolean; reportFile: string; syntheticReport?: boolean }} Validator
@@ -45,8 +55,22 @@ const validators = [
     reportFile: 'check-generated-report.json',
     syntheticReport: true,
   },
-  { name: 'typecheck', command: 'npx', args: ['tsc', '--noEmit'], blocking: true, reportFile: 'typecheck-report.json', syntheticReport: true },
-  { name: 'lint', command: 'node', args: ['scripts/runners/run-eslint.mjs'], blocking: false, reportFile: 'lint-report.json', syntheticReport: true },
+  {
+    name: 'typecheck',
+    command: 'npx',
+    args: ['tsc', '--noEmit'],
+    blocking: true,
+    reportFile: 'typecheck-report.json',
+    syntheticReport: true,
+  },
+  {
+    name: 'lint',
+    command: 'node',
+    args: ['scripts/runners/run-eslint.mjs'],
+    blocking: false,
+    reportFile: 'lint-report.json',
+    syntheticReport: true,
+  },
   {
     name: 'validate-content-contract',
     command: 'npx',
@@ -201,10 +225,75 @@ const validators = [
     blocking: false,
     reportFile: 'vocabulary-report.json',
   },
+  {
+    name: 'validate-system-knowledge',
+    command: 'node',
+    args: ['--import', 'tsx/esm', 'scripts/validators/validate-system-knowledge.ts'],
+    blocking: false,
+    reportFile: 'system-knowledge-report.json',
+  },
 ];
 
 function getReportAbsolutePath(fileName) {
   return path.join(root, 'reports', fileName);
+}
+
+function getCachedReportState(validator) {
+  const reportPath = getReportAbsolutePath(validator.reportFile);
+
+  if (!fs.existsSync(reportPath)) {
+    return null;
+  }
+
+  validateReportFile(reportPath, validator.reportFile);
+  const payload = readReportJson(root, validator.reportFile);
+
+  if (payload === null) {
+    return null;
+  }
+
+  const normalized = normalizeRawReport({
+    name: validator.name,
+    payload,
+    sourceCommand: [validator.command, ...validator.args].join(' '),
+  });
+
+  fs.writeFileSync(reportPath, `${JSON.stringify(normalized, null, 2)}\n`, 'utf8');
+
+  const generatedAtTimestamp = Date.parse(normalized.generatedAt);
+  if (
+    Number.isFinite(generatedAtTimestamp) &&
+    Date.now() - generatedAtTimestamp > staleReportThresholdMs
+  ) {
+    return null;
+  }
+
+  return {
+    generatedAt: normalized.generatedAt,
+    reportStatus: normalized.status,
+  };
+}
+
+function buildCachedValidatorResult(validator, cachedReport) {
+  const generatedAtTimestamp = Date.parse(cachedReport.generatedAt);
+
+  return {
+    name: validator.name,
+    command: validator.command,
+    args: validator.args,
+    status: cachedReport.reportStatus === 'FAIL' ? 'fail' : 'pass',
+    duration: 0,
+    output: '',
+    reportFile: validator.reportFile,
+    reportMissing: false,
+    cached: true,
+    executionStatus: 'SKIPPED',
+    reportStatus: cachedReport.reportStatus,
+    reportGeneratedAt: cachedReport.generatedAt,
+    stale:
+      Number.isFinite(generatedAtTimestamp) &&
+      Date.now() - generatedAtTimestamp > staleReportThresholdMs,
+  };
 }
 
 function writeSyntheticValidatorReport(validator, result) {
@@ -218,7 +307,10 @@ function writeSyntheticValidatorReport(validator, result) {
       failed: result.status === 'fail' && validator.blocking ? 1 : 0,
       warnings: result.status === 'fail' && !validator.blocking ? 1 : 0,
     },
-    issues: result.status === 'fail' ? [{ validator: validator.name, output: result.output || 'Validator failed.' }] : [],
+    issues:
+      result.status === 'fail'
+        ? [{ validator: validator.name, output: result.output || 'Validator failed.' }]
+        : [],
     data: {
       validator: validator.name,
       blocking: validator.blocking,
@@ -233,17 +325,42 @@ function writeSyntheticValidatorReport(validator, result) {
 }
 
 function finalizeValidatorResult(validator, result) {
-  if (validator.syntheticReport) {
+  if (validator.syntheticReport && result.cached !== true) {
     writeSyntheticValidatorReport(validator, result);
   }
 
   const reportPath = getReportAbsolutePath(validator.reportFile);
   const reportExists = fs.existsSync(reportPath);
   if (reportExists) {
+    try {
+      const payload = readReportJson(root, validator.reportFile);
+      if (payload !== null) {
+        const normalizedReport = normalizeRawReport({
+          name: validator.name,
+          payload,
+          sourceCommand: [validator.command, ...validator.args].join(' '),
+        });
+        fs.writeFileSync(reportPath, `${JSON.stringify(normalizedReport, null, 2)}\n`, 'utf8');
+      }
+
+      validateReportFile(reportPath, validator.reportFile);
+    } catch (error) {
+      return {
+        ...result,
+        status: 'fail',
+        output: [result.output, error instanceof Error ? error.message : String(error)]
+          .filter(Boolean)
+          .join('\n'),
+        reportFile: validator.reportFile,
+        reportMissing: false,
+      };
+    }
+
     return {
       ...result,
       reportFile: validator.reportFile,
       reportMissing: false,
+      executionStatus: result.executionStatus ?? (result.status === 'fail' ? 'FAIL' : 'PASS'),
     };
   }
 
@@ -255,6 +372,7 @@ function finalizeValidatorResult(validator, result) {
       .join('\n'),
     reportFile: validator.reportFile,
     reportMissing: true,
+    executionStatus: 'FAIL',
   };
 }
 
@@ -288,6 +406,11 @@ function runValidator(validator) {
     duration: Date.now() - start,
     output,
     reportFile: validator.reportFile,
+    cached: false,
+    executionStatus: status === 'fail' ? 'FAIL' : 'PASS',
+    reportStatus: status === 'fail' ? 'FAIL' : 'PASS',
+    reportGeneratedAt: latestRun,
+    stale: false,
   };
 }
 
@@ -313,6 +436,11 @@ function runValidatorAsync(validator) {
           duration: Date.now() - start,
           output: error ? [stdout, stderr].filter(Boolean).join('\n') : stdout || '',
           reportFile: validator.reportFile,
+          cached: false,
+          executionStatus: error ? 'FAIL' : 'PASS',
+          reportStatus: error ? 'FAIL' : 'PASS',
+          reportGeneratedAt: latestRun,
+          stale: false,
         });
       }
     );
@@ -320,24 +448,36 @@ function runValidatorAsync(validator) {
 }
 
 function buildReport(results) {
+  const reportSize = auditReportSizes();
   const passed = results.filter(result => result.status === 'pass');
   const failed = results.filter(result => result.status === 'fail');
+  const staleReports = results.filter(result => result.stale === true);
   const blockingFailed = failed.filter(
     result => validators.find(validator => validator.name === result.name)?.blocking !== false
   );
   const advisoryFailed = failed.filter(
     result => validators.find(validator => validator.name === result.name)?.blocking === false
   );
+  const reportSizePassed = reportSize.failures.length === 0 && reportSize.warnings.length === 0;
+  const totalChecks = results.length + 1;
+  const totalPassed = passed.length + (reportSizePassed ? 1 : 0);
+  const totalFailed = blockingFailed.length + (reportSize.failures.length > 0 ? 1 : 0);
+  const totalWarnings =
+    advisoryFailed.length +
+    (reportSize.failures.length === 0 && reportSize.warnings.length > 0 ? 1 : 0) +
+    staleReports.length;
 
-  const contentQualityReport = unwrapReportData(readReportJson(root, 'content-quality-report.json'));
+  const contentQualityReport = unwrapReportData(
+    readReportJson(root, 'content-quality-report.json')
+  );
 
   const payload = {
     total: {
-      passed: passed.length,
-      failed: failed.length,
-      blockingFailed: blockingFailed.length,
-      advisoryFailed: advisoryFailed.length,
-      total: results.length,
+      passed: totalPassed,
+      failed: totalFailed,
+      blockingFailed: blockingFailed.length + reportSize.failures.length,
+      advisoryFailed: advisoryFailed.length + reportSize.warnings.length,
+      total: totalChecks,
     },
     validators: results.map(result => {
       const validator = validators.find(entry => entry.name === result.name);
@@ -348,6 +488,11 @@ function buildReport(results) {
         blocking: validator?.blocking !== false,
         reportFile: result.reportFile,
         reportMissing: result.reportMissing === true,
+        cached: result.cached === true,
+        executionStatus: result.executionStatus,
+        reportStatus: result.reportStatus,
+        reportGeneratedAt: result.reportGeneratedAt,
+        stale: result.stale === true,
       };
     }),
     errors: failed.map(result => {
@@ -358,32 +503,131 @@ function buildReport(results) {
         output: result.output,
       };
     }),
+    reportSize: {
+      status:
+        reportSize.failures.length > 0 ? 'FAIL' : reportSize.warnings.length > 0 ? 'WARN' : 'PASS',
+      checked: reportSize.checked,
+      warnings: reportSize.warnings,
+      failures: reportSize.failures,
+    },
+    latestRun,
+    cacheHits: results.filter(result => result.cached === true).length,
+    staleReports: staleReports.map(result => ({
+      validator: result.name,
+      reportFile: result.reportFile,
+      generatedAt: result.reportGeneratedAt,
+    })),
     seo: contentQualityReport?.summary?.seo ?? null,
     content: contentQualityReport?.summary?.content ?? null,
     authority: contentQualityReport?.summary?.authority ?? null,
   };
 
+  const issues = [
+    ...payload.errors,
+    ...reportSize.failures.map(item => ({
+      validator: 'report-size-guard',
+      blocking: true,
+      output: `${item.label} exceeded ${item.failAt} bytes (${item.size} bytes)`,
+    })),
+    ...reportSize.warnings.map(item => ({
+      validator: 'report-size-guard',
+      blocking: false,
+      output: `${item.label} reached warning threshold ${item.warnAt} bytes (${item.size} bytes)`,
+    })),
+    ...staleReports.map(result => ({
+      validator: result.name,
+      blocking: false,
+      output: `stale report reused: ${result.reportFile} (${result.reportGeneratedAt ?? 'unknown'})`,
+    })),
+  ];
+
   return createReportSchema({
     name: 'validation-results',
-    status: blockingFailed.length > 0 ? 'FAIL' : advisoryFailed.length > 0 ? 'WARN' : 'PASS',
+    status: totalFailed > 0 ? 'FAIL' : totalWarnings > 0 ? 'WARN' : 'PASS',
     summary: {
-      total: results.length,
-      passed: passed.length,
-      failed: blockingFailed.length,
-      warnings: advisoryFailed.length,
+      total: totalChecks,
+      passed: totalPassed,
+      failed: totalFailed,
+      warnings: totalWarnings,
     },
-    issues: payload.errors,
+    issues,
     data: payload,
     sourceCommand: 'node scripts/core/validate-all.mjs --report-json',
   });
 }
 
+function listAuditedReportFiles() {
+  const reportFiles = [];
+
+  for (const dirPath of reportAuditDirectories) {
+    if (!fs.existsSync(dirPath)) {
+      continue;
+    }
+
+    for (const entry of fs.readdirSync(dirPath, { withFileTypes: true })) {
+      if (
+        entry.name.startsWith('.') ||
+        entry.name === 'system-snapshots' ||
+        entry.name === 'visual-audit'
+      ) {
+        continue;
+      }
+
+      const absolutePath = path.join(dirPath, entry.name);
+      if (entry.isDirectory()) {
+        continue;
+      }
+
+      if (!/\.(json|md)$/i.test(entry.name)) {
+        continue;
+      }
+
+      reportFiles.push({
+        absolutePath,
+        label: path.relative(path.join(root, 'reports'), absolutePath).replaceAll(path.sep, '/'),
+      });
+    }
+  }
+
+  return reportFiles.sort((left, right) => left.label.localeCompare(right.label));
+}
+
+function auditReportSizes() {
+  const checked = listAuditedReportFiles().map(({ absolutePath, label }) => {
+    const size = fs.statSync(absolutePath).size;
+    return evaluateReportSize(label, size);
+  });
+
+  return {
+    checked: checked.length,
+    warnings: checked.filter(item => item.status === 'WARN'),
+    failures: checked.filter(item => item.status === 'FAIL'),
+  };
+}
+
 function logValidatorResult(result) {
-  logger.printNodeLine(`${result.name} -> ${result.status === 'pass' ? 'PASS' : 'FAIL'} (${result.duration}ms)`);
+  const displayStatus = result.cached ? 'SKIPPED' : result.status === 'pass' ? 'PASS' : 'FAIL';
+  logger.printNodeLine(
+    `[VALIDATOR] ${result.name} -> ${displayStatus} (${result.duration}ms${result.cached ? ', cached' : ''})`
+  );
+
+  if (logger.isDebug()) {
+    logger.printDebug(result.name, {
+      kind: 'validator',
+      input: [result.command, ...result.args].join(' '),
+      output: result.reportFile,
+      durationMs: result.duration,
+      executionStatus: displayStatus,
+      warning: result.stale ? 'stale report reused' : undefined,
+    });
+  }
 }
 
 async function main() {
   logger.printSection('running validators');
+  if (forceRun) {
+    logger.printSummary('force mode -> validators will rerun even when reports already exist');
+  }
 
   /** @type {ValidatorResult[]} */
   const blockingResults = [];
@@ -395,7 +639,11 @@ async function main() {
       continue;
     }
 
-    const result = finalizeValidatorResult(validator, runValidator(validator));
+    const cachedReport = forceRun ? null : getCachedReportState(validator);
+    const result = finalizeValidatorResult(
+      validator,
+      cachedReport ? buildCachedValidatorResult(validator, cachedReport) : runValidator(validator)
+    );
     blockingResults.push(result);
     logValidatorResult(result);
   }
@@ -407,7 +655,15 @@ async function main() {
     logger.printSection('running advisory validators');
 
     advisoryResults = await Promise.all(
-      advisoryValidators.map(async validator => finalizeValidatorResult(validator, await runValidatorAsync(validator)))
+      advisoryValidators.map(async validator => {
+        const cachedReport = forceRun ? null : getCachedReportState(validator);
+        return finalizeValidatorResult(
+          validator,
+          cachedReport
+            ? buildCachedValidatorResult(validator, cachedReport)
+            : await runValidatorAsync(validator)
+        );
+      })
     );
 
     for (const result of advisoryResults) {
@@ -415,7 +671,9 @@ async function main() {
     }
   }
 
-  const resultByName = new Map([...blockingResults, ...advisoryResults].map(result => [result.name, result]));
+  const resultByName = new Map(
+    [...blockingResults, ...advisoryResults].map(result => [result.name, result])
+  );
   const results = validators.map(validator => resultByName.get(validator.name)).filter(Boolean);
 
   const report = buildReport(results);
@@ -447,6 +705,8 @@ async function main() {
 
   const writtenReportPath = logger.writeReport(reportPath, report);
   logger.writeReport(validationReportPath, report);
+  validateReportFile(reportPath, 'validation-results.json');
+  validateReportFile(validationReportPath, 'validation-report.json');
   logger.printSummary(`report -> ${writtenReportPath}`);
   logger.printSummary(`report -> ${logger.relativePath(validationReportPath)}`);
 

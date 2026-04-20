@@ -1,16 +1,26 @@
 {
-  "name": "content-quality-report",
-  "status": "PASS",
-  "summary": {},
+  "meta": {
+    "name": "content-quality-report",
+    "source": "npx tsx scripts/validators/validate-content-quality.mjs --report-json",
+    "generatedAt": "2026-04-20T23:48:25.692Z",
+    "status": "PASS",
+    "version": "1.0"
+  },
+  "summary": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "warnings": 0
+  },
   "data": {
-    "generatedAt": "2026-04-20T21:45:24.646Z",
+    "generatedAt": "2026-04-20T23:48:25.692Z",
     "passed": true,
-    "pageCount": 352,
+    "pageCount": 355,
     "issueCount": 0,
     "warningCount": 0,
     "summary": {
       "seo": {
-        "pagesAnalyzed": 352,
+        "pagesAnalyzed": 355,
         "missingMetadata": 0,
         "duplicateTitles": 0,
         "duplicateDescriptions": 0,
@@ -36,6 +46,9 @@
     "issues": [],
     "warnings": []
   },
-  "generatedAt": "2026-04-20T21:45:24.646Z",
-  "sourceCommand": "npx tsx scripts/validators/validate-content-quality.mjs"
+  "issues": [],
+  "name": "content-quality-report",
+  "status": "PASS",
+  "generatedAt": "2026-04-20T23:48:25.692Z",
+  "sourceCommand": "npx tsx scripts/validators/validate-content-quality.mjs --report-json"
 }

@@ -8,7 +8,6 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
-
 import { SyntaxKind } from 'ts-morph';
 
 // ──────────────────────────────────────────────
@@ -36,9 +35,7 @@ export function listFilesRecursive(dirAbs, { exts, ignoreDirNames = [] } = {}) {
   for (const ent of entries) {
     if (ent.isDirectory()) {
       if (ignoreDirNames.includes(ent.name)) continue;
-      out.push(
-        ...listFilesRecursive(path.join(dirAbs, ent.name), { exts, ignoreDirNames })
-      );
+      out.push(...listFilesRecursive(path.join(dirAbs, ent.name), { exts, ignoreDirNames }));
       continue;
     }
 
@@ -103,8 +100,7 @@ export function getPropertyAssignment(objectLiteral, key) {
   return objectLiteral
     .getProperties()
     .find(
-      property =>
-        property.getKind() === SyntaxKind.PropertyAssignment && property.getName() === key
+      property => property.getKind() === SyntaxKind.PropertyAssignment && property.getName() === key
     );
 }
 
@@ -305,7 +301,10 @@ export function parseDestructuredSectionsKeys(text) {
 
   while ((match = re.exec(text)) !== null) {
     const body = match[1];
-    const parts = body.split(',').map(part => part.trim()).filter(Boolean);
+    const parts = body
+      .split(',')
+      .map(part => part.trim())
+      .filter(Boolean);
     parts.forEach((part, index) => {
       const keyMatch = part.match(/^([A-Za-z0-9_]+)/);
       if (keyMatch) {
@@ -413,7 +412,11 @@ export function findLegacyImportIssues(appSrcPath, legacyPattern, replacementPat
 
   for (const filePath of files) {
     const text = fs.readFileSync(filePath, 'utf8');
-    if (!text.includes(legacyPattern) && !text.includes(`src/lib/${legacyPattern.replace('@/lib/', '')}`)) continue;
+    if (
+      !text.includes(legacyPattern) &&
+      !text.includes(`src/lib/${legacyPattern.replace('@/lib/', '')}`)
+    )
+      continue;
 
     issues.push({
       file: path.relative(process.cwd(), filePath),

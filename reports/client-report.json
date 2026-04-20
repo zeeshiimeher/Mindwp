@@ -1,25 +1,30 @@
 {
-  "name": "client-report",
-  "status": "PASS",
+  "meta": {
+    "name": "client-report",
+    "source": "node --import tsx/esm scripts/analyzers/export-reports.mjs",
+    "generatedAt": "2026-04-20T23:56:57.372Z",
+    "status": "PASS",
+    "version": "1.0"
+  },
   "summary": {
-    "total": 352,
-    "passed": 352,
+    "total": 355,
+    "passed": 355,
     "failed": 0,
     "warnings": 0
   },
   "data": {
     "summary": {
-      "totalPages": 352,
-      "healthy": 352,
+      "totalPages": 355,
+      "healthy": 355,
       "weak": 0,
       "critical": 0
     },
     "validation": {
-      "passed": 25,
+      "passed": 27,
       "failed": 0,
       "blockingFailed": 0,
       "advisoryFailed": 0,
-      "total": 25
+      "total": 27
     },
     "contentQuality": {
       "issueCount": 0,
@@ -145,6 +150,12 @@
         "name": "system-drift.json"
       },
       {
+        "name": "system-health.json"
+      },
+      {
+        "name": "system-knowledge-report.json"
+      },
+      {
         "name": "system-report.json"
       },
       {
@@ -173,33 +184,12 @@
       },
       {
         "name": "typecheck-report.json"
-      },
-      {
-        "name": "ui-purity-report.json"
-      },
-      {
-        "name": "validation-report.json"
-      },
-      {
-        "name": "validation-results.json"
-      },
-      {
-        "name": "visual-audit"
-      },
-      {
-        "name": "visual-audit-engine-report.json"
-      },
-      {
-        "name": "visual-audit-report.json"
-      },
-      {
-        "name": "visual-audit-runtime-report.json"
-      },
-      {
-        "name": "vocabulary-report.json"
       }
     ]
   },
-  "generatedAt": "2026-04-20T21:45:53.892Z",
+  "issues": [],
+  "name": "client-report",
+  "status": "PASS",
+  "generatedAt": "2026-04-20T23:56:57.372Z",
   "sourceCommand": "node --import tsx/esm scripts/analyzers/export-reports.mjs"
 }

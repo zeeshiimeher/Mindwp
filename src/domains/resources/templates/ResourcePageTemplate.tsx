@@ -614,7 +614,7 @@ export default function ResourcePageTemplate(props: ResourcePageTemplateProps) {
               separate the primary leak from the secondary ones before you commit to a build.
             </div>
           </div>
-          <SmartRelatedSection slug={currentSlug} />
+          <SmartRelatedSection pageId={`resource:${currentSlug}`} pageType='resource' slug={currentSlug} />
         </main>
       </div>
     </CTARegistryProvider>

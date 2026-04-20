@@ -1,10 +1,9 @@
 // ─── Main Pipeline Orchestrator ─────────────────────────────────────
 // Coordinates the full image generation pipeline from content to output
 
-/* eslint-disable no-console */
-
 import sharp from 'sharp';
 
+import { createLogger } from '../../../../lib/logger/index.mjs';
 import { DOMAIN_IMAGE_RULES, getImageOutputPath } from '../config';
 import { applyFixes, clampOverrides } from '../debug/autoTune';
 import { debugImage } from '../debug/debugImage';
@@ -35,6 +34,8 @@ import { downloadImage } from './downloader';
 import { generateStandardFeaturedImage } from './featuredImage';
 import { optimizeImage, saveImage } from './optimizer';
 import { buildDesignContext } from './overlayDesign';
+
+const logger = createLogger({ label: 'image-pipeline', mode: 'summary', rootDir: process.cwd() });
 
 /** Verify white text contrast on the generated image (WCAG AA = 4.5:1) */
 async function verifyContrast(imageBuffer: Buffer): Promise<{ ratio: number; pass: boolean }> {
@@ -80,23 +81,23 @@ export async function processImage(
   // For featured images, check for featured-clean as the canonical marker
   const guardType = isFeatured ? 'featured-clean' : imageType;
   if (hasImage(slug, guardType)) {
-    console.log(`[pipeline] ${domain}/${slug} already has ${guardType} image, skipping`);
+    logger.info(`[pipeline] ${domain}/${slug} already has ${guardType} image, skipping`);
     return null;
   }
 
   // Check if domain allows this image type
   if (imageType === 'content' && !rules.contentAllowed) {
-    console.log(`[pipeline] ${domain} does not allow content images, skipping`);
+    logger.info(`[pipeline] ${domain} does not allow content images, skipping`);
     return null;
   }
 
-  console.log(`[pipeline] Processing ${imageType} image for ${domain}/${slug}`);
+  logger.info(`[pipeline] Processing ${imageType} image for ${domain}/${slug}`);
 
   // Generate semantic search queries
   const queries = generateSemanticQueries(metadata, domain);
-  console.log(`[pipeline] Generated ${queries.length} search queries`);
+  logger.info(`[pipeline] Generated ${queries.length} search queries`);
   if (queries.length > 0) {
-    console.log(`[pipeline] Top query: "${queries[0].query}" (source: ${queries[0].source})`);
+    logger.info(`[pipeline] Top query: "${queries[0].query}" (source: ${queries[0].source})`);
   }
 
   // Negative filter — reject images with these terms in tags/description
@@ -113,78 +114,78 @@ export async function processImage(
 
   // Try each query until we find a good image
   for (const semanticQuery of queries) {
-    console.log(`[pipeline] Searching: "${semanticQuery.query}"`);
+    logger.info(`[pipeline] Searching: "${semanticQuery.query}"`);
 
     // Search all providers
     const providerResults = await searchAllProviders(semanticQuery.query, domain, 4);
     const allImages: ProviderImage[] = providerResults.flatMap(r => r.images);
 
     if (allImages.length === 0) {
-      console.log(`[pipeline] No results for "${semanticQuery.query}"`);
+      logger.info(`[pipeline] No results for "${semanticQuery.query}"`);
       continue;
     }
 
-    console.log(`[pipeline] Found ${allImages.length} candidates`);
+    logger.info(`[pipeline] Found ${allImages.length} candidates`);
 
     // Score and rank all candidates
     const scoredCandidates: ScoredImage[] = [];
 
     for (let i = 0; i < allImages.length; i++) {
       const image = allImages[i];
-      console.log(
+      logger.info(
         `[pipeline] Evaluating candidate ${i + 1}/${allImages.length} (${image.provider}/${image.id})`
       );
 
       // Stop early if we have enough good candidates
       if (scoredCandidates.length >= 3) {
-        console.log(`[pipeline] Have ${scoredCandidates.length} good candidates, stopping early`);
+        logger.info(`[pipeline] Have ${scoredCandidates.length} good candidates, stopping early`);
         break;
       }
 
       // Quick filters first
       if (image.width < 1200) {
-        console.log(`[pipeline]   ↳ skipped: too small (${image.width}px)`);
+        logger.info(`[pipeline]   ↳ skipped: too small (${image.width}px)`);
         continue;
       }
       if (isImageUsed(image.id, image.provider)) {
-        console.log(`[pipeline]   ↳ skipped: already used`);
+        logger.info(`[pipeline]   ↳ skipped: already used`);
         continue;
       }
       if (blockedImageId && image.id === blockedImageId) {
-        console.log(`[pipeline]   ↳ skipped: blocked (previous image)`);
+        logger.info(`[pipeline]   ↳ skipped: blocked (previous image)`);
         continue;
       }
 
       // Safety check
       const safety = checkImageSafety(image);
       if (!safety.passed) {
-        console.log(`[pipeline] Safety rejected: ${safety.reasons.join(', ')}`);
+        logger.info(`[pipeline] Safety rejected: ${safety.reasons.join(', ')}`);
         continue;
       }
 
       // Negative filter — reject illustrations, cartoons, vectors
       const imageText = [image.description, ...image.tags].join(' ').toLowerCase();
       if (NEGATIVE_TERMS.some(term => imageText.includes(term))) {
-        console.log(`[pipeline]   ↳ skipped: matched negative filter`);
+        logger.info(`[pipeline]   ↳ skipped: matched negative filter`);
         continue;
       }
 
       // Download for analysis
       let buffer: Buffer;
       try {
-        console.log(`[pipeline]   ↳ downloading...`);
+        logger.info(`[pipeline]   ↳ downloading...`);
         buffer = await downloadImage(image.downloadUrl);
-        console.log(`[pipeline]   ↳ downloaded (${(buffer.length / 1024).toFixed(0)}KB)`);
+        logger.info(`[pipeline]   ↳ downloaded (${(buffer.length / 1024).toFixed(0)}KB)`);
       } catch (err) {
-        console.warn(`[pipeline]   ↳ download failed: ${(err as Error).message}`);
+        logger.warn(`[pipeline]   ↳ download failed: ${(err as Error).message}`);
         continue;
       }
 
       // Run intelligence analysis
-      console.log(`[pipeline]   ↳ analyzing...`);
+      logger.info(`[pipeline]   ↳ analyzing...`);
       const intelligence = await analyzeImage(buffer);
       if (!intelligence.passed) {
-        console.log(
+        logger.info(
           `[pipeline] Intelligence rejected ${image.id}: ${intelligence.rejectionReasons.join(', ')}`
         );
         // Update provider score negatively
@@ -195,13 +196,13 @@ export async function processImage(
       // Check visual similarity
       const hashResult = await generatePerceptualHash(buffer);
       if (isHashTooSimilar(hashResult.hash)) {
-        console.log(`[pipeline] Image ${image.id} too similar to existing images`);
+        logger.info(`[pipeline] Image ${image.id} too similar to existing images`);
         continue;
       }
 
       // Score the candidate
       const scored = scoreImage(image, intelligence, metadata, domain);
-      console.log(`[pipeline]   ↳ scored: ${scored.relevanceScore.toFixed(2)}`);
+      logger.info(`[pipeline]   ↳ scored: ${scored.relevanceScore.toFixed(2)}`);
       scoredCandidates.push(scored);
 
       // Store buffer for later use (attach to scored object)
@@ -217,7 +218,7 @@ export async function processImage(
     const bestBuffer = (best as ScoredImage & { _buffer: Buffer })._buffer;
     const bestHash = (best as ScoredImage & { _hash: string })._hash;
 
-    console.log(
+    logger.info(
       `[pipeline] Selected: ${best.image.provider}/${best.image.id} (score: ${best.relevanceScore})`
     );
 
@@ -226,7 +227,7 @@ export async function processImage(
       // Generate both clean and overlay variants from one download
       const brightness = best.intelligence.brightness;
       const design = buildDesignContext(metadata, domain, brightness);
-      console.log(
+      logger.info(
         `[design] Variant: ${design.variant} | Layout: L${design.layout} | Icon: ${design.icon ? 'yes' : 'none'} | Badge: ${design.badge ?? 'none'} | Accent: ${design.palette.accent}`
       );
 
@@ -269,7 +270,7 @@ export async function processImage(
 
         // Verify contrast
         const contrastCheck = await verifyContrast(result.overlay);
-        console.log(
+        logger.info(
           `[pipeline] Contrast check: ${contrastCheck.ratio.toFixed(2)}:1 ${contrastCheck.pass ? '✅' : '⚠️'}`
         );
 
@@ -280,17 +281,17 @@ export async function processImage(
 
         // Run visual debug analysis
         const debug = debugImage(result.debugInput);
-        console.log(
+        logger.info(
           `[debug] Score: ${debug.score}/10 | Confidence: ${debug.confidence} | Issues: ${debug.issues.length > 0 ? debug.issues.join(', ') : 'none'}`
         );
-        console.log(
+        logger.info(
           `[debug] Sub-scores: CTR=${debug.ctrScore} | Synergy=${debug.synergyScore} | Conversion=${debug.conversionScore}`
         );
-        console.log(
+        logger.info(
           `[debug] Details: textBlockWidth=${result.debugInput.textBlockWidth.toFixed(0)} textX=${result.debugInput.textX} fontSize=${result.debugInput.fontSize} contrast=${result.debugInput.contrast.toFixed(2)} edgeDensityLeft=${result.debugInput.edgeDensityLeft.toFixed(3)} subject=${result.debugInput.subjectRegion}`
         );
         if (debug.fixes.length > 0) {
-          console.log(`[debug] Recommended fixes: ${debug.fixes.join(', ')}`);
+          logger.info(`[debug] Recommended fixes: ${debug.fixes.join(', ')}`);
         }
 
         // Track best result
@@ -310,19 +311,19 @@ export async function processImage(
         const shouldAccept = debug.score >= 9 || (debug.score >= 7.5 && debug.issues.length === 0);
 
         if (shouldAccept) {
-          console.log(`[tune] Score ${debug.score} — accepting result`);
+          logger.info(`[tune] Score ${debug.score} — accepting result`);
           break;
         }
 
         // Last iteration — nothing more to try
         if (iteration >= MAX_TUNE_ITERATIONS) {
-          console.log(`[tune] Max iterations reached — using best (score: ${bestDebugScore})`);
+          logger.info(`[tune] Max iterations reached — using best (score: ${bestDebugScore})`);
           break;
         }
 
         // Early exit — score plateau means fixes aren't helping
         if (previousScore > 0 && Math.abs(debug.score - previousScore) < 0.2) {
-          console.log(`[tune] Score plateau (${previousScore} → ${debug.score}) — stopping`);
+          logger.info(`[tune] Score plateau (${previousScore} → ${debug.score}) — stopping`);
           break;
         }
         previousScore = debug.score;
@@ -330,10 +331,10 @@ export async function processImage(
         // Apply fixes for next iteration — skip already-applied fixes
         const fixesToApply = debug.fixes.filter(f => !appliedFixSet.has(f)).slice(0, 2);
         if (fixesToApply.length === 0) {
-          console.log(`[tune] No new fixes available — stopping`);
+          logger.info(`[tune] No new fixes available — stopping`);
           break;
         }
-        console.log(
+        logger.info(
           `[tune] Score ${debug.score} with issues [${debug.issues.join(', ')}] — applying fixes: ${fixesToApply.join(', ')}`
         );
         for (const f of fixesToApply) appliedFixSet.add(f);
@@ -355,8 +356,8 @@ export async function processImage(
       // Generate SEO metadata
       const seo = generateImageSeo(metadata.title, metadata.primaryKeyword, domain);
       const exifMeta = buildExifMetadata(seo);
-      console.log(`[seo] Alt: "${seo.alt}"`);
-      console.log(`[seo] File: ${overlayPath}`);
+      logger.info(`[seo] Alt: "${seo.alt}"`);
+      logger.info(`[seo] File: ${overlayPath}`);
 
       // ── Log generation result ──
       const lp = design.layout;
@@ -391,14 +392,14 @@ export async function processImage(
       }
 
       if (!bestClean || !bestOverlay) {
-        console.warn(
+        logger.warn(
           `[pipeline] Featured generation produced no final output for ${domain}/${slug}`
         );
         continue;
       }
 
       await saveImage(bestClean, cleanPath);
-      console.log(`[pipeline] Saved: ${cleanPath}`);
+      logger.info(`[pipeline] Saved: ${cleanPath}`);
 
       // Embed EXIF metadata into overlay image
       const overlayWithExif = await sharp(bestOverlay)
@@ -406,7 +407,7 @@ export async function processImage(
         .webp({ quality: 90 })
         .toBuffer();
       await saveImage(overlayWithExif, overlayPath);
-      console.log(`[pipeline] Saved: ${overlayPath}`);
+      logger.info(`[pipeline] Saved: ${overlayPath}`);
 
       // Register both in index
       const registrationData = {
@@ -444,7 +445,7 @@ export async function processImage(
 
       // Save to disk
       await saveImage(outputBuffer, outputPath);
-      console.log(`[pipeline] Saved: ${outputPath}`);
+      logger.info(`[pipeline] Saved: ${outputPath}`);
 
       // Register in index
       registerImage(slug, imageType, {
@@ -476,7 +477,7 @@ export async function processImage(
     }
   }
 
-  console.log(`[pipeline] Failed to find suitable image for ${domain}/${slug}`);
+  logger.info(`[pipeline] Failed to find suitable image for ${domain}/${slug}`);
   return null;
 }
 

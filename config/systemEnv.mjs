@@ -18,7 +18,7 @@ const systemEnvSchema = z.object({
   NODE_ENV: nodeEnv.default('development'),
   SYSTEM_MODE: z.enum(['development', 'production']).default('development'),
   SYSTEM_EXECUTION_LOCK: z.string().default(''),
-  SYSTEM_LOGGING_MODE: z.enum(['summary', 'verbose']).default('summary'),
+  SYSTEM_LOGGING_MODE: z.enum(['summary', 'verbose', 'debug']).default('summary'),
   SYSTEM_INCLUDE_OPTIONAL_AUDITS: z.enum(['0', '1']).default('0'),
   SYSTEM_ALLOW_REPORT_EXPORT: z.enum(['0', '1']).default('0'),
   MINDWP_LINK_SCAN_ROOT: z.string().default(''),
@@ -52,8 +52,7 @@ function buildRawSystemEnv(source = process.env) {
     VISUAL_AUDIT_BASE_URL: readOptionalValue(source.VISUAL_AUDIT_BASE_URL),
     BASE_URL: readOptionalValue(source.BASE_URL) ?? 'http://127.0.0.1:3009',
     COMPONENT_CAPTURE_BASE_URL:
-      readOptionalValue(source.COMPONENT_CAPTURE_BASE_URL) ??
-      'http://127.0.0.1:3001/components',
+      readOptionalValue(source.COMPONENT_CAPTURE_BASE_URL) ?? 'http://127.0.0.1:3001/components',
     NEXT_DIST_DIR: readOptionalValue(source.NEXT_DIST_DIR) ?? '.next',
     UNSPLASH_ACCESS_KEY: readOptionalValue(source.UNSPLASH_ACCESS_KEY) ?? '',
     PEXELS_API_KEY: readOptionalValue(source.PEXELS_API_KEY) ?? '',

@@ -1,9 +1,10 @@
 // ─── Pixabay Provider ───────────────────────────────────────────────
 
-/* eslint-disable no-console */
-
+import { createLogger } from '../../../../lib/logger/index.mjs';
 import { PROVIDER_ENDPOINTS } from '../config';
 import type { ProviderImage, ProviderSearchResult } from '../types';
+
+const logger = createLogger({ label: 'pixabay', mode: 'summary', rootDir: process.cwd() });
 
 export async function searchPixabay(
   query: string,
@@ -24,7 +25,7 @@ export async function searchPixabay(
   const response = await fetch(url.toString());
 
   if (!response.ok) {
-    console.warn(`[pixabay] Search failed (${response.status}): ${query}`);
+    logger.warn(`Search failed (${response.status}): ${query}`);
     return { provider: 'pixabay', images: [], totalResults: 0 };
   }
 

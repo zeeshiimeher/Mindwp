@@ -1,99 +1,17 @@
 {
-  "name": "proof-coverage",
-  "status": "WARN",
+  "meta": {
+    "name": "proof-coverage",
+    "source": "npx tsx scripts/validators/generate-proof-coverage.ts",
+    "generatedAt": "2026-04-20T23:48:38.299Z",
+    "status": "WARN",
+    "version": "1.0"
+  },
   "summary": {
     "total": 227,
     "passed": 210,
     "failed": 0,
     "warnings": 17
   },
-  "issues": [
-    {
-      "page": "/blog/automotive-service-reminders-explained",
-      "hasProof": false,
-      "reason": "no proof signals detected"
-    },
-    {
-      "page": "/blog/how-review-automation-improves-local-authority",
-      "hasProof": false,
-      "reason": "no proof signals detected"
-    },
-    {
-      "page": "/blog/hvac-local-visibility-system-for-service-areas",
-      "hasProof": false,
-      "reason": "no proof signals detected"
-    },
-    {
-      "page": "/blog/lead-qualification-for-roofing-companies",
-      "hasProof": false,
-      "reason": "no proof signals detected"
-    },
-    {
-      "page": "/blog/lead-routing-for-hvac-companies",
-      "hasProof": false,
-      "reason": "no proof signals detected"
-    },
-    {
-      "page": "/blog/lead-routing-models-for-service-companies",
-      "hasProof": false,
-      "reason": "no proof signals detected"
-    },
-    {
-      "page": "/blog/local-seo-vs-website-optimization",
-      "hasProof": false,
-      "reason": "no proof signals detected"
-    },
-    {
-      "page": "/blog/realtor-local-visibility-system-for-lead-generation",
-      "hasProof": false,
-      "reason": "no proof signals detected"
-    },
-    {
-      "page": "/blog/service-page-architecture-for-service-businesses",
-      "hasProof": false,
-      "reason": "no proof signals detected"
-    },
-    {
-      "page": "/blog/why-salons-lose-clients-without-crm-pipeline",
-      "hasProof": false,
-      "reason": "no proof signals detected"
-    },
-    {
-      "page": "/features/voicecalls",
-      "hasProof": false,
-      "reason": "no proof signals detected"
-    },
-    {
-      "page": "/features/aichat",
-      "hasProof": false,
-      "reason": "no proof signals detected"
-    },
-    {
-      "page": "/features/reputation",
-      "hasProof": false,
-      "reason": "no proof signals detected"
-    },
-    {
-      "page": "/features/inbox",
-      "hasProof": false,
-      "reason": "no proof signals detected"
-    },
-    {
-      "page": "/features/workflows",
-      "hasProof": false,
-      "reason": "no proof signals detected"
-    },
-    {
-      "page": "/features/calendars",
-      "hasProof": false,
-      "reason": "no proof signals detected"
-    },
-    {
-      "page": "/features/crm",
-      "hasProof": false,
-      "reason": "no proof signals detected"
-    }
-  ],
   "data": {
     "coverage": [
       {
@@ -345,894 +263,98 @@
         "page": "/blog/lead-qualification-framework-for-service-businesses",
         "hasProof": true,
         "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/lead-response-time-for-service-businesses",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/blog/lead-routing-for-hvac-companies",
-        "hasProof": false,
-        "reason": "no proof signals detected"
-      },
-      {
-        "page": "/blog/lead-routing-models-for-service-companies",
-        "hasProof": false,
-        "reason": "no proof signals detected"
-      },
-      {
-        "page": "/blog/local-seo-for-roofing-companies-explained",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/local-seo-vs-website-optimization",
-        "hasProof": false,
-        "reason": "no proof signals detected"
-      },
-      {
-        "page": "/blog/local-service-page-architecture-for-local-businesses",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/local-service-page-architecture-for-roofing-companies",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/local-visibility-framework-for-service-businesses",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/missed-call-recovery-for-service-businesses",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/multi-channel-lead-capture-for-salons",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/multi-channel-lead-capture-system-for-service-businesses",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/negative-reviews-for-auto-repair-shops",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/blog/plumbing-crm-pipeline-for-job-management",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/realtor-local-visibility-system-for-lead-generation",
-        "hasProof": false,
-        "reason": "no proof signals detected"
-      },
-      {
-        "page": "/blog/reducing-salon-no-shows-with-automation",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/blog/reputation-monitoring-systems-for-service-businesses",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/responding-to-negative-reviews-systematically",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/revenue-visibility-for-roofing-companies",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/review-automation-for-hvac-companies",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/blog/review-automation-for-roofing-companies",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/blog/review-automation-for-salons",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/review-generation-system-for-local-businesses",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/blog/roofing-crm-pipeline-for-estimates",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/roofing-estimate-follow-up-delays",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/roofing-review-generation-system",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/blog/sales-pipeline-visibility-for-hvac-companies",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/sales-pipeline-visibility-framework",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/salon-crm-pipeline-for-client-retention",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/salon-review-generation-framework",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/blog/service-business-follow-up-automation",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/service-page-architecture-for-service-businesses",
-        "hasProof": false,
-        "reason": "no proof signals detected"
-      },
-      {
-        "page": "/blog/smart-website-systems-for-roofing-companies",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/systems-first-website-for-hvac-companies",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/tracking-customer-lifetime-value-using-crm",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/tracking-salon-client-lifetime-value",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/website-crm-integration-for-salons",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/website-crm-integration-for-service-businesses",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/website-design-that-supports-crm-systems",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/what-is-a-systems-first-website-for-service-businesses",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/why-auto-repair-missed-calls-lose-booked-work",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/why-auto-repair-shops-lose-phone-leads",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/why-booking-systems-need-website-infrastructure",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/blog/why-hvac-companies-disappear-from-local-search",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/why-hvac-companies-lose-leads-after-hours",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/why-hvac-missed-calls-lose-after-hours-revenue",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/why-plumbing-companies-lose-jobs-without-crm-pipeline",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/why-realtors-lose-leads-without-local-visibility",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/why-roofing-companies-lose-jobs-without-review-automation",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/why-roofing-companies-lose-leads-during-storm-season",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/why-roofing-missed-calls-cost-emergency-jobs",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/why-salons-lose-calls-during-service-hours",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/why-salons-lose-clients-without-crm-pipeline",
-        "hasProof": false,
-        "reason": "no proof signals detected"
-      },
-      {
-        "page": "/blog/why-salons-lose-clients-without-review-automation",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/why-salons-need-lead-handling-systems",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/why-service-business-websites-fail-to-convert",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/why-slow-lead-response-is-killing-automotive-businesses",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/blog/why-slow-lead-response-is-killing-hvac-businesses",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/resources/authority-signals-for-local-search",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/auto-repair-lead-handling-example",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/auto-reply-funnel",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/automotive-crm-pipeline-for-repair-jobs",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/automotive-review-generation-system",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/automotive-service-reminder-automation",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/booking-systems-inside-website-infrastructure",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/building-revenue-visibility-through-crm-tracking",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/client-reactivation-systems",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/conversion-architecture-for-service-websites",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/conversion-tracking-for-service-businesses",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/crm-pipeline-architecture",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/crm-pipeline-automation",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/crm-pipeline-setup-guide-for-plumbing-businesses",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/resources/crm-pipeline-setup-guide-for-salons",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/resources/customer-feedback-loop-framework",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/designing-websites-that-support-crm-systems",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/google-business-profile-system-architecture",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/how-review-automation-improves-local-authority",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/how-smart-website-systems-work",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/hvac-crm-pipeline-structure",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/hvac-emergency-call-handling-system",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/hvac-lead-handling-example",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/hvac-review-generation-framework",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/lead-automation-framework",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/lead-qualification-framework",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/lead-response-optimization-checklist-for-hvac-businesses",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/resources/lead-response-time-framework",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/lead-routing-models-for-service-companies",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/local-seo-vs-website-optimization",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/local-service-page-architecture",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/local-visibility-framework",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/local-visibility-optimization-guide-for-hvac-companies",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/resources/local-visibility-optimization-guide-for-realtors",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/resources/missed-call-recovery-for-auto-repair",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/missed-call-recovery-for-hvac",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/missed-call-recovery-for-roofing",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/missed-call-recovery-for-salons",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/missed-call-recovery-system",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/multi-channel-lead-capture-systems",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/reducing-salon-no-shows-with-automation",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/reputation-monitoring-systems",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/responding-to-negative-reviews-systematically",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/review-automation-setup-guide-for-roofing-companies",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/resources/review-automation-setup-guide-for-salons",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/resources/review-generation-system",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/roofing-crm-pipeline-structure",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/roofing-estimate-follow-up-workflow",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/roofing-lead-handling-example",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/roofing-review-generation-system",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/sales-pipeline-visibility-framework",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/salon-lead-handling-example",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/salon-review-generation-framework",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/service-business-follow-up-automation-guide",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/service-page-architecture-that-converts",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/resources/tracking-customer-lifetime-value-using-crm",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/tracking-salon-client-lifetime-value",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/website-crm-integration-explained",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/resources/what-is-a-systems-first-website",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/appointment-business-booking-automation",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/appointment-reminder-no-show-reduction",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/auto-repair-missed-call-recovery",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/automotive-service-reminder-automation",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/beauty-salon-online-booking-local-seo-manchester-custom",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/crm-pipeline-visibility-transformation",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/hvac-emergency-lead-routing",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/hvac-maintenance-plan-reactivation",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/hvac-seasonal-lead-surge-handling",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/law-firm-client-intake-automation",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/law-firm-consultation-booking-system",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/local-authority-system-impact",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/real-estate-inquiry-routing",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/realtor-lead-follow-up-automation",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/roofing-estimate-follow-up-automation",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/roofing-website-rebuild-with-crm",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/salon-booking-automation",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/salon-no-show-reduction-system",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/salon-review-generation-automation",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/smart-website-infrastructure-implementation",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/case-studies/storm-season-lead-handling-system",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/industries/automotive-services",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/automotive-services/auto-repair",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/automotive-services/body-shops",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/automotive-services/car-detailing",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/automotive-services/mobile-mechanics",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/home-services",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/home-services/roofing-companies",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/home-services/hvac-companies",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/home-services/plumbing-companies",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/home-services/electrical-companies",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/home-services/landscaping-companies",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/beauty-personal-care",
-        "hasProof": true,
-        "reason": "before/after and measurable metric detected"
-      },
-      {
-        "page": "/industries/beauty-personal-care/aesthetic-cosmetic-clinics",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/beauty-personal-care/hair-salons",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/beauty-personal-care/nail-salons",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/beauty-personal-care/small-med-spas",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/beauty-personal-care/lash-lift-and-extensions",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/legal-professional-services",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/legal-professional-services/accounting-firms",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/legal-professional-services/consultants",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/legal-professional-services/small-law-firms",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/local-appointment-businesses",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/local-appointment-businesses/dental-clinics",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/local-appointment-businesses/driving-schools",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/local-appointment-businesses/repair-shops",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/local-appointment-businesses/small-private-clinics",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/local-appointment-businesses/tattoo-studios",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/real-estate-property-services",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/real-estate-property-services/home-inspectors",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/real-estate-property-services/mortgage-brokers",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/real-estate-property-services/property-managers",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/industries/real-estate-property-services/realtors",
-        "hasProof": true,
-        "reason": "before/after proof detected"
-      },
-      {
-        "page": "/features/voicecalls",
-        "hasProof": false,
-        "reason": "no proof signals detected"
-      },
-      {
-        "page": "/features/aichat",
-        "hasProof": false,
-        "reason": "no proof signals detected"
-      },
-      {
-        "page": "/features/reputation",
-        "hasProof": false,
-        "reason": "no proof signals detected"
-      },
-      {
-        "page": "/features/inbox",
-        "hasProof": false,
-        "reason": "no proof signals detected"
-      },
-      {
-        "page": "/features/workflows",
-        "hasProof": false,
-        "reason": "no proof signals detected"
-      },
-      {
-        "page": "/features/calendars",
-        "hasProof": false,
-        "reason": "no proof signals detected"
-      },
-      {
-        "page": "/features/crm",
-        "hasProof": false,
-        "reason": "no proof signals detected"
       }
     ]
   },
-  "generatedAt": "2026-04-20T21:45:36.676Z",
-  "sourceCommand": "npm run system:full"
+  "issues": [
+    {
+      "page": "/blog/automotive-service-reminders-explained",
+      "hasProof": false,
+      "reason": "no proof signals detected"
+    },
+    {
+      "page": "/blog/how-review-automation-improves-local-authority",
+      "hasProof": false,
+      "reason": "no proof signals detected"
+    },
+    {
+      "page": "/blog/hvac-local-visibility-system-for-service-areas",
+      "hasProof": false,
+      "reason": "no proof signals detected"
+    },
+    {
+      "page": "/blog/lead-qualification-for-roofing-companies",
+      "hasProof": false,
+      "reason": "no proof signals detected"
+    },
+    {
+      "page": "/blog/lead-routing-for-hvac-companies",
+      "hasProof": false,
+      "reason": "no proof signals detected"
+    },
+    {
+      "page": "/blog/lead-routing-models-for-service-companies",
+      "hasProof": false,
+      "reason": "no proof signals detected"
+    },
+    {
+      "page": "/blog/local-seo-vs-website-optimization",
+      "hasProof": false,
+      "reason": "no proof signals detected"
+    },
+    {
+      "page": "/blog/realtor-local-visibility-system-for-lead-generation",
+      "hasProof": false,
+      "reason": "no proof signals detected"
+    },
+    {
+      "page": "/blog/service-page-architecture-for-service-businesses",
+      "hasProof": false,
+      "reason": "no proof signals detected"
+    },
+    {
+      "page": "/blog/why-salons-lose-clients-without-crm-pipeline",
+      "hasProof": false,
+      "reason": "no proof signals detected"
+    },
+    {
+      "page": "/features/voicecalls",
+      "hasProof": false,
+      "reason": "no proof signals detected"
+    },
+    {
+      "page": "/features/aichat",
+      "hasProof": false,
+      "reason": "no proof signals detected"
+    },
+    {
+      "page": "/features/reputation",
+      "hasProof": false,
+      "reason": "no proof signals detected"
+    },
+    {
+      "page": "/features/inbox",
+      "hasProof": false,
+      "reason": "no proof signals detected"
+    },
+    {
+      "page": "/features/workflows",
+      "hasProof": false,
+      "reason": "no proof signals detected"
+    },
+    {
+      "page": "/features/calendars",
+      "hasProof": false,
+      "reason": "no proof signals detected"
+    },
+    {
+      "page": "/features/crm",
+      "hasProof": false,
+      "reason": "no proof signals detected"
+    }
+  ],
+  "name": "proof-coverage",
+  "status": "WARN",
+  "generatedAt": "2026-04-20T23:48:38.299Z",
+  "sourceCommand": "npx tsx scripts/validators/generate-proof-coverage.ts"
 }

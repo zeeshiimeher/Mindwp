@@ -97,8 +97,6 @@ const unifiedReportFileSchema = z
     path: z.string(),
     generatedAt: z.string(),
     sourceCommand: z.string(),
-    updatedAt: z.string(),
-    ageMs: z.number(),
   })
   .strict();
 
@@ -106,8 +104,6 @@ const reportsStepReportSchema = unifiedStepReportSchema
   .extend({
     generatedAt: z.string(),
     fileCount: z.number(),
-    freshestGeneratedAt: z.string().nullable(),
-    stalestGeneratedAt: z.string().nullable(),
     files: z.array(unifiedReportFileSchema),
     missing: z.array(z.string()),
     stale: z.array(z.string()),
@@ -304,7 +300,9 @@ function collectClientSafetyViolations(value, path = 'root', violations = []) {
   }
 
   if (Array.isArray(value)) {
-    value.forEach((entry, index) => collectClientSafetyViolations(entry, `${path}[${index}]`, violations));
+    value.forEach((entry, index) =>
+      collectClientSafetyViolations(entry, `${path}[${index}]`, violations)
+    );
     return violations;
   }
 

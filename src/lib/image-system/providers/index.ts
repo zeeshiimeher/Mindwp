@@ -1,8 +1,7 @@
 // ─── Provider Manager ───────────────────────────────────────────────
 // Manages provider priority, fallback, and dynamic ordering based on learning
 
-/* eslint-disable no-console */
-
+import { createLogger } from '../../../../lib/logger/index.mjs';
 import { DEFAULT_PROVIDER_ORDER, getProviderKeys } from '../config';
 import { loadProviderScores } from '../learning/providerLearning';
 import type { ContentDomain, ProviderName, ProviderScores, ProviderSearchResult } from '../types';
@@ -10,6 +9,8 @@ import type { ContentDomain, ProviderName, ProviderScores, ProviderSearchResult 
 import { searchPexels } from './pexels';
 import { searchPixabay } from './pixabay';
 import { searchUnsplash } from './unsplash';
+
+const logger = createLogger({ label: 'image-providers', mode: 'summary', rootDir: process.cwd() });
 
 const searchFunctions: Record<
   ProviderName,
@@ -51,7 +52,7 @@ export async function searchAllProviders(
   for (const provider of order) {
     const key = keys[provider];
     if (!key) {
-      console.warn(`[provider] No API key for ${provider}, skipping`);
+      logger.warn(`No API key for ${provider}, skipping`);
       continue;
     }
 
@@ -59,7 +60,7 @@ export async function searchAllProviders(
       const result = await searchFunctions[provider](query, key, perPage);
       results.push(result);
     } catch (err) {
-      console.warn(`[provider] ${provider} search failed:`, err);
+      logger.warn(`${provider} search failed: ${err instanceof Error ? err.message : String(err)}`);
     }
   }
 
@@ -86,7 +87,9 @@ export async function searchWithFallback(
         return result;
       }
     } catch (err) {
-      console.warn(`[provider] ${provider} fallback search failed:`, err);
+      logger.warn(
+        `${provider} fallback search failed: ${err instanceof Error ? err.message : String(err)}`
+      );
     }
   }
 

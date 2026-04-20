@@ -1,11 +1,11 @@
 # Client Report
 
-Generated at: 2026-04-20T21:45:53.892Z
+Generated at: 2026-04-20T23:56:57.372Z
 
 ## Summary
 
-- Total pages: 352
-- Healthy: 352
+- Total pages: 355
+- Healthy: 355
 - Weak: 0
 - Critical: 0
 
@@ -49,6 +49,8 @@ Generated at: 2026-04-20T21:45:53.892Z
 - session-log.json
 - split-screenshots-report.json
 - system-drift.json
+- system-health.json
+- system-knowledge-report.json
 - system-report.json
 - system-snapshots
 - system-state.json

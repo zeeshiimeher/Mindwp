@@ -1,10 +1,9 @@
 // ─── Featured Image Generator ───────────────────────────────────────
 // Cinematic featured image system — depth, composition, contrast, variation
 
-/* eslint-disable no-console */
-
 import sharp from 'sharp';
 
+import { createLogger } from '../../../../lib/logger/index.mjs';
 import { IMAGE_SIZES, OVERLAY_CONFIG, TITLE_LAYOUT } from '../config';
 import { resolveRenderCopy } from '../render/renderCopy';
 import { renderImage } from '../render/renderer';
@@ -20,6 +19,8 @@ import type {
 } from '../types';
 
 import { calculateTitleLayout } from './titleLayout';
+
+const logger = createLogger({ label: 'featured-image', mode: 'summary', rootDir: process.cwd() });
 
 /** Calculate adaptive overlay opacity based on image brightness (legacy helper) */
 export function calculateOverlayOpacity(brightness: BrightnessResult): number {
@@ -472,7 +473,7 @@ export async function generateFeaturedImage(
 ): Promise<FeaturedImageWithDebug> {
   const { title, brightness, outputWidth, outputHeight, label, design } = options;
 
-  console.log(
+  logger.info(
     `[overlay] Brightness: ${brightness.average.toFixed(1)}, ` +
       `Gradient: ${(design.palette.overlayStart * 100).toFixed(0)}%→${(design.palette.overlayEnd * 100).toFixed(0)}%, ` +
       `Layout: L${design.layout}`
@@ -484,7 +485,7 @@ export async function generateFeaturedImage(
     if (tuneOverrides.maxTextWidth) parts.push(`maxTextWidth=${tuneOverrides.maxTextWidth}`);
     if (tuneOverrides.gradientStrength)
       parts.push(`gradient=${tuneOverrides.gradientStrength.toFixed(2)}`);
-    if (parts.length) console.log(`[tune] Overrides: ${parts.join(', ')}`);
+    if (parts.length) logger.info(`[tune] Overrides: ${parts.join(', ')}`);
   }
 
   // ── Step 1: Resize with attention-aware composition ──

@@ -34,7 +34,8 @@ export function isActionableButton(action) {
 }
 
 export async function loadPagesByType(pageType) {
-  const { getInitializedContentGraph } = await import('../../src/domains/init/ensureGraphInitialized.ts');
+  const { getInitializedContentGraph } =
+    await import('../../src/domains/init/ensureGraphInitialized.ts');
   const graph = await getInitializedContentGraph();
   const nodes = Object.values(graph)
     .filter(node => {

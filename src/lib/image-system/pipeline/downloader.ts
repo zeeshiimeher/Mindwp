@@ -1,12 +1,12 @@
 // ─── Image Downloader ───────────────────────────────────────────────
 // Downloads images with rate limiting and retry logic
 
-/* eslint-disable no-console */
-
+import { createLogger } from '../../../../lib/logger/index.mjs';
 import { RATE_LIMIT } from '../config';
 
 let downloadCount = 0;
 let windowStart = Date.now();
+const logger = createLogger({ label: 'image-downloader', mode: 'summary', rootDir: process.cwd() });
 
 /** Check if we can download (respects rate limit) */
 function canDownload(): boolean {
@@ -26,9 +26,7 @@ function canDownload(): boolean {
 async function waitForWindow(): Promise<void> {
   const elapsed = Date.now() - windowStart;
   const remaining = 3600000 - elapsed;
-  console.log(
-    `[downloader] Rate limit reached. Waiting ${Math.ceil(remaining / 60000)} minutes...`
-  );
+  logger.warn(`Rate limit reached. Waiting ${Math.ceil(remaining / 60000)} minutes...`);
   await new Promise(resolve => setTimeout(resolve, remaining + 1000));
   downloadCount = 0;
   windowStart = Date.now();
@@ -53,7 +51,7 @@ export async function downloadImage(url: string): Promise<Buffer> {
       throw new Error(`Download failed (${response.status}): ${url}`);
     }
 
-    console.log(`[download] Image URL: ${url}`);
+    logger.info(`Image URL: ${url}`);
 
     const arrayBuffer = await response.arrayBuffer();
     downloadCount++;

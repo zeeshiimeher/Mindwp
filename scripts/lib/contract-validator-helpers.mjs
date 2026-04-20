@@ -1,17 +1,38 @@
 import fs from 'node:fs';
 import path from 'node:path';
-
 import { Project } from 'ts-morph';
 
-import { assert, getStringArrayDeclarationValues, listFilesRecursive } from './validator-helpers.mjs';
+import {
+  assert,
+  getStringArrayDeclarationValues,
+  listFilesRecursive,
+} from './validator-helpers.mjs';
 
 const BLOCKING_METADATA_KEYS = {
   blog: ['slug', 'systems', 'title', 'description', 'canonical', 'openGraph', 'robots'],
   resource: ['slug', 'systems', 'title', 'description', 'canonical', 'openGraph', 'robots'],
   service: ['slug', 'systems', 'title', 'description', 'canonical', 'openGraph', 'robots'],
   feature: ['slug', 'systems', 'title', 'description', 'canonical', 'openGraph', 'robots'],
-  'industry-detail': ['slug', 'type', 'systems', 'title', 'description', 'canonical', 'openGraph', 'robots'],
-  'industry-category': ['slug', 'type', 'systems', 'title', 'description', 'canonical', 'openGraph', 'robots'],
+  'industry-detail': [
+    'slug',
+    'type',
+    'systems',
+    'title',
+    'description',
+    'canonical',
+    'openGraph',
+    'robots',
+  ],
+  'industry-category': [
+    'slug',
+    'type',
+    'systems',
+    'title',
+    'description',
+    'canonical',
+    'openGraph',
+    'robots',
+  ],
   'case-study': ['slug', 'systems', 'title', 'description', 'canonical', 'openGraph', 'robots'],
 };
 
@@ -68,12 +89,13 @@ export function getPrimarySystem(values) {
 }
 
 export function loadStructuredGraphNodes() {
-  return import('../../src/domains/init/ensureGraphInitialized.ts')
-    .then(async ({ ensureGraphInitialized }) => {
+  return import('../../src/domains/init/ensureGraphInitialized.ts').then(
+    async ({ ensureGraphInitialized }) => {
       await ensureGraphInitialized();
       const { getStructuredContentGraph } = await import('../../src/lib/content-graph/registry.ts');
       return getStructuredContentGraph().nodes;
-    });
+    }
+  );
 }
 
 export function buildSlugIndex(nodes) {
@@ -88,7 +110,10 @@ function parseBannedVocabularyTable(docText) {
   const rows = [];
   const match = docText.match(/\| Removed \| Replace With \| Reason \|([\s\S]*?)\n---/);
   const block = match?.[1] ?? '';
-  const lines = block.split('\n').map(line => line.trim()).filter(Boolean);
+  const lines = block
+    .split('\n')
+    .map(line => line.trim())
+    .filter(Boolean);
 
   for (const line of lines) {
     if (!line.startsWith('|') || line.includes('---')) continue;
@@ -113,7 +138,9 @@ function parseBannedVocabularyTable(docText) {
 }
 
 function parseAntiHypeWords(docText) {
-  const match = docText.match(/Anti-hype language discipline:\s*Avoid words such as:\s*([\s\S]*?)\n\nAI sales guardrail:/);
+  const match = docText.match(
+    /Anti-hype language discipline:\s*Avoid words such as:\s*([\s\S]*?)\n\nAI sales guardrail:/
+  );
   const raw = match?.[1] ?? '';
   return raw
     .split(',')

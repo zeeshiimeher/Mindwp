@@ -17,6 +17,59 @@ export interface DashboardReport<TData = unknown> {
   data: TData;
 }
 
+export interface DashboardTimelineStep {
+  name: string;
+  status: DashboardStatus;
+  durationMs: number;
+  outputs?: string[];
+  skipped?: boolean;
+  reason?: string;
+}
+
+export interface DashboardAnalyzerCoverage {
+  name: string;
+  status: DashboardStatus;
+  outputs: string[];
+  skipped: boolean;
+  durationMs: number;
+}
+
+export interface DashboardIntegrityStrip {
+  reportsStatus: DashboardStatus;
+  validatorCoveragePct: number;
+  analyzerCoveragePct: number;
+  drift: boolean;
+}
+
+export interface DashboardLastRunSummary {
+  durationMs: number;
+  totalReports: number;
+  passed: number;
+  failed: number;
+  warnings: number;
+}
+
+export interface DashboardLastRunDetails {
+  time: string;
+  durationMs: number;
+  status: DashboardStatus;
+  cacheHits: number;
+}
+
+export interface DashboardFailureDrilldownItem {
+  name: string;
+  status: DashboardStatus;
+  reportFile: string;
+  reportStatus: DashboardStatus;
+  blocking: boolean;
+}
+
+export interface DashboardWarningPanelItem {
+  name: string;
+  detail: string;
+  status: DashboardStatus;
+}
+
 export interface DashboardBundle {
   system: DashboardReport<Record<string, unknown>>;
   validators: DashboardReport<Record<string, unknown>>;

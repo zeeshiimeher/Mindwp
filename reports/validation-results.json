@@ -1,225 +1,376 @@
 {
-  "name": "validation-results",
-  "status": "PASS",
+  "meta": {
+    "name": "validation-results",
+    "source": "node scripts/core/validate-all.mjs --report-json",
+    "generatedAt": "2026-04-20T23:56:45.352Z",
+    "status": "PASS",
+    "version": "1.0"
+  },
   "summary": {
-    "total": 25,
-    "passed": 25,
+    "total": 27,
+    "passed": 27,
     "failed": 0,
     "warnings": 0
   },
   "data": {
     "total": {
-      "passed": 25,
+      "passed": 27,
       "failed": 0,
       "blockingFailed": 0,
       "advisoryFailed": 0,
-      "total": 25
+      "total": 27
     },
     "validators": [
       {
         "name": "check-generated",
         "status": "pass",
-        "duration": 3909,
+        "duration": 0,
         "blocking": true,
         "reportFile": "check-generated-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:17.156Z",
+        "stale": false
       },
       {
         "name": "typecheck",
         "status": "pass",
-        "duration": 1528,
+        "duration": 0,
         "blocking": true,
         "reportFile": "typecheck-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:22.551Z",
+        "stale": false
       },
       {
         "name": "lint",
         "status": "pass",
-        "duration": 5670,
+        "duration": 0,
         "blocking": false,
         "reportFile": "lint-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "WARN",
+        "reportGeneratedAt": "2026-04-20T23:48:43.625Z",
+        "stale": false
       },
       {
         "name": "validate-content-contract",
         "status": "pass",
-        "duration": 2112,
+        "duration": 0,
         "blocking": true,
         "reportFile": "content-contract-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:24.765Z",
+        "stale": false
       },
       {
         "name": "validate-content-quality",
         "status": "pass",
-        "duration": 890,
+        "duration": 0,
         "blocking": true,
         "reportFile": "content-quality-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:25.692Z",
+        "stale": false
       },
       {
         "name": "validate-domain-structure",
         "status": "pass",
-        "duration": 2186,
+        "duration": 0,
         "blocking": true,
         "reportFile": "domain-structure-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:27.917Z",
+        "stale": false
       },
       {
         "name": "validate-cta-label-contract",
         "status": "pass",
-        "duration": 781,
+        "duration": 0,
         "blocking": true,
         "reportFile": "cta-label-contract-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:28.774Z",
+        "stale": false
       },
       {
         "name": "validate-cta-resolver-integrity",
         "status": "pass",
-        "duration": 111,
+        "duration": 0,
         "blocking": true,
         "reportFile": "cta-resolver-integrity-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:28.907Z",
+        "stale": false
       },
       {
         "name": "validate-conversion-contract",
         "status": "pass",
-        "duration": 742,
+        "duration": 0,
         "blocking": true,
         "reportFile": "conversion-contract-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:29.645Z",
+        "stale": false
       },
       {
         "name": "validate-template-payload-sufficiency",
         "status": "pass",
-        "duration": 959,
+        "duration": 0,
         "blocking": true,
         "reportFile": "template-payload-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:30.669Z",
+        "stale": false
       },
       {
         "name": "validate-section-structure",
         "status": "pass",
-        "duration": 873,
+        "duration": 0,
         "blocking": true,
         "reportFile": "section-structure-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:31.589Z",
+        "stale": false
       },
       {
         "name": "validate-section-shell-integrity",
         "status": "pass",
-        "duration": 114,
+        "duration": 0,
         "blocking": true,
         "reportFile": "section-shell-integrity-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:31.717Z",
+        "stale": false
       },
       {
         "name": "validate-design-system",
         "status": "pass",
-        "duration": 131,
+        "duration": 0,
         "blocking": true,
         "reportFile": "design-system-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:31.854Z",
+        "stale": false
       },
       {
         "name": "validate-ui-purity",
         "status": "pass",
-        "duration": 85,
+        "duration": 0,
         "blocking": true,
         "reportFile": "ui-purity-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:31.940Z",
+        "stale": false
       },
       {
         "name": "validate-graph",
         "status": "pass",
-        "duration": 801,
+        "duration": 0,
         "blocking": true,
         "reportFile": "graph-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:32.771Z",
+        "stale": false
       },
       {
         "name": "validate-internal-links",
         "status": "pass",
-        "duration": 1043,
+        "duration": 0,
         "blocking": true,
         "reportFile": "internal-links-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:33.843Z",
+        "stale": false
       },
       {
         "name": "validate-cta-violations",
         "status": "pass",
-        "duration": 619,
+        "duration": 0,
         "blocking": true,
         "reportFile": "cta-violation-scan.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:34.485Z",
+        "stale": false
       },
       {
         "name": "validate-related-duplication",
         "status": "pass",
-        "duration": 624,
+        "duration": 0,
         "blocking": true,
         "reportFile": "related-duplication-scan.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:35.139Z",
+        "stale": false
       },
       {
         "name": "validate-production-contracts",
         "status": "pass",
-        "duration": 867,
+        "duration": 0,
         "blocking": true,
         "reportFile": "production-contract-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:36.028Z",
+        "stale": false
       },
       {
         "name": "validate-inline-link-misuse",
         "status": "pass",
-        "duration": 652,
+        "duration": 0,
         "blocking": true,
         "reportFile": "inline-link-misuse-scan.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:36.718Z",
+        "stale": false
       },
       {
         "name": "generate-proof-coverage",
         "status": "pass",
-        "duration": 1125,
+        "duration": 0,
         "blocking": false,
         "reportFile": "proof-coverage.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "WARN",
+        "reportGeneratedAt": "2026-04-20T23:48:38.299Z",
+        "stale": false
       },
       {
         "name": "validate-tokens",
         "status": "pass",
-        "duration": 116,
+        "duration": 0,
         "blocking": true,
         "reportFile": "token-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:36.850Z",
+        "stale": false
       },
       {
         "name": "validate-inline-styles",
         "status": "pass",
-        "duration": 207,
+        "duration": 0,
         "blocking": true,
         "reportFile": "inline-style-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:37.066Z",
+        "stale": false
       },
       {
         "name": "validate-docs",
         "status": "pass",
-        "duration": 237,
+        "duration": 0,
         "blocking": false,
         "reportFile": "docs-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:37.347Z",
+        "stale": false
       },
       {
         "name": "validate-vocabulary",
         "status": "pass",
-        "duration": 371,
+        "duration": 0,
         "blocking": false,
         "reportFile": "vocabulary-report.json",
-        "reportMissing": false
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:37.512Z",
+        "stale": false
+      },
+      {
+        "name": "validate-system-knowledge",
+        "status": "pass",
+        "duration": 0,
+        "blocking": false,
+        "reportFile": "system-knowledge-report.json",
+        "reportMissing": false,
+        "cached": true,
+        "executionStatus": "SKIPPED",
+        "reportStatus": "PASS",
+        "reportGeneratedAt": "2026-04-20T23:48:37.501Z",
+        "stale": false
       }
     ],
-    "errors": [],
+    "reportSize": {
+      "status": "PASS",
+      "checked": 61,
+      "warnings": [],
+      "failures": []
+    },
+    "latestRun": "2026-04-20T23:56:45.331Z",
+    "cacheHits": 26,
+    "staleReports": [],
     "seo": {
-      "pagesAnalyzed": 352,
+      "pagesAnalyzed": 355,
       "missingMetadata": 0,
       "duplicateTitles": 0,
       "duplicateDescriptions": 0,
@@ -242,6 +393,9 @@
       "topicsWithoutInternalPath": 0
     }
   },
-  "generatedAt": "2026-04-20T21:45:41.241Z",
+  "issues": [],
+  "name": "validation-results",
+  "status": "PASS",
+  "generatedAt": "2026-04-20T23:56:45.352Z",
   "sourceCommand": "node scripts/core/validate-all.mjs --report-json"
 }

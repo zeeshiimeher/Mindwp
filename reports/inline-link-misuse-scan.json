@@ -1,24 +1,21 @@
 {
-  "name": "inline-link-misuse-scan",
-  "status": "PASS",
+  "meta": {
+    "name": "inline-link-misuse-scan",
+    "source": "npx tsx scripts/validators/validate-inline-link-misuse.ts",
+    "generatedAt": "2026-04-20T23:48:36.718Z",
+    "status": "PASS",
+    "version": "1.0"
+  },
   "summary": {
     "total": 0,
     "passed": 1,
     "failed": 0,
     "warnings": 0
   },
-  "data": {
-    "name": "inline-link-misuse-scan",
-    "status": "PASS",
-    "summary": {
-      "total": 0,
-      "passed": 1,
-      "failed": 0,
-      "warnings": 0
-    },
-    "generatedAt": "2026-04-20T21:45:35.238Z",
-    "sourceCommand": "npx tsx scripts/validators/validate-inline-link-misuse.ts"
-  },
-  "generatedAt": "2026-04-20T21:45:35.238Z",
-  "sourceCommand": "npm run system:full"
+  "data": null,
+  "issues": [],
+  "name": "inline-link-misuse-scan",
+  "status": "PASS",
+  "generatedAt": "2026-04-20T23:48:36.718Z",
+  "sourceCommand": "npx tsx scripts/validators/validate-inline-link-misuse.ts"
 }

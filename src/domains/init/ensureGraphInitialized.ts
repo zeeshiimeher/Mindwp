@@ -15,7 +15,7 @@ import { getResolverIndexes, initResolverIndexes } from '@/lib/content-graph/res
 import { setInitMetrics } from './metrics';
 
 const isDev = env.NODE_ENV === 'development';
-const shouldProfile = isDev || env.PROFILE_GRAPH === 'true';
+const shouldProfile = env.PROFILE_GRAPH === 'true' || process.env.SYSTEM_LOGGING_MODE === 'debug';
 
 let initialized = false;
 let initPromise: Promise<void> | null = null;

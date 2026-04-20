@@ -2,6 +2,8 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
+import { createLogger } from '../../lib/logger/index.mjs';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const repoRoot = path.resolve(__dirname, '../..');
@@ -28,6 +30,7 @@ const START = '<!-- AUTO-GENERATED:GLOBAL-INVENTORY:START -->';
 const END = '<!-- AUTO-GENERATED:GLOBAL-INVENTORY:END -->';
 
 const CHECK_MODE = process.argv.includes('--check');
+const logger = createLogger({ label: 'global-inventory', mode: 'summary', rootDir: repoRoot });
 
 function toPosix(p) {
   return p.split(path.sep).join('/');
@@ -232,11 +235,9 @@ async function main() {
 
   if (CHECK_MODE) {
     if (outOfDate.length > 0) {
-      // eslint-disable-next-line no-console
-      console.error('[global-inventory] Docs are out of date. Run: npm run -s generate:global-inventory');
+      logger.error('Docs are out of date. Run: npm run -s generate:global-inventory');
       for (const filePath of outOfDate) {
-        // eslint-disable-next-line no-console
-        console.error(`[global-inventory] - ${toPosix(path.relative(repoRoot, filePath))}`);
+        logger.error(`- ${toPosix(path.relative(repoRoot, filePath))}`);
       }
       process.exitCode = 1;
       return;
@@ -244,12 +245,10 @@ async function main() {
     return;
   }
 
-  // eslint-disable-next-line no-console
-  console.log(`[global-inventory] Updated ${updated}/${docFiles.length} docs`);
+  logger.info(`Updated ${updated}/${docFiles.length} docs`);
 }
 
 main().catch(err => {
-  // eslint-disable-next-line no-console
-  console.error('[global-inventory] Failed:', err);
+  logger.error(`Failed: ${err instanceof Error ? err.message : String(err)}`);
   process.exitCode = 1;
 });
