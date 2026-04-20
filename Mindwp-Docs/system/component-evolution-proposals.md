@@ -1,372 +1,161 @@
-# Component Evolution Proposals
+# COMPONENT EVOLUTION GUIDE
 
-## Basis
-
-This proposal is grounded in:
-
-- `Mindwp-Docs/system/component-audit.md`
-- repeated service renderer chains under `src/domains/services/renderers/**`
-- current reusable sections under `src/components/reusable/sections/**`
-
-## Root Cause Map
-
-| Repetition | Root Cause | Structural Fix |
-| --- | --- | --- |
-| Repeated `SectionWrapper -> SectionIntro -> CardGrid` custom sections for signals, use cases, risks, workflows, targets | the system has generic grids, but lacks deterministic sections that combine narrative context with mapped decision items | add asymmetric sections that merge context + structured rows instead of another flat grid |
-| Repeated `ComparisonSection -> proof grid -> SmartCTA -> qualification split` ladders | decision support is fragmented across separate grid sections, so many pages converge on the same bottom-half sequence | add a single decision-stage section that can carry comparison, fit, and action handoff together |
-| Repeated `ProcessStepsSection` as a 4-card grid | process sections explain sequence, but not handoff, deliverables, or checkpoints, so pages fall back to another grid after process | add a process layout with a rail/timeline structure and explicit outputs |
-| Underused narrative and split patterns already exist (`NarrativeStatsSection`, `StepCardsSplitSection`, `TabbedFeatureCardsSection`) | renderer vocabulary is narrower than library capacity | introduce variants that reuse those structural ideas in high-frequency service components |
+> Planning rules for future section and component changes.
+> This file is not runtime authority. It defines when a new component is justified and which candidate patterns are approved for future implementation.
 
 ---
 
-## New Components
+## USE THIS DOC
 
-### 1. Component Name
-
-`SignalResponseSection`
-
-### 2. Problem It Solves
-
-This solves repeated custom sections where pages render another flat card grid for symptoms, use cases, risks, or workflow triggers.
-
-Repeated pattern it replaces:
-
-- `SectionWrapper -> SectionIntro -> IconTextCard[]`
-- `SectionWrapper -> SectionIntro -> RiskListCard[]`
-- `SectionWrapper -> SectionIntro -> WorkflowStepCard[]`
-
-Root repetition examples:
-
-- CRM Automation: use cases, feature categories, workflows
-- System Migration: migration signals, risk areas, consolidation targets
-- Conversion Funnel System: funnel breakpoints, levers
-- Unified Communication System: fragmented mid-page operational blocks
-
-### 3. JSX Structure
-
-```tsx
-<SectionWrapper>
-  <div className='section-shell'>
-    <div className='context-column'>
-      <SectionIntro />
-      <p />
-      <ul />
-    </div>
-
-    <div className='response-column'>
-      {items.map(item => (
-        <Card>
-          <div className='row-head'>
-            <Badge />
-            <h3 />
-          </div>
-          <p className='signal' />
-          <p className='response' />
-          <ul className='impact-list' />
-        </Card>
-      ))}
-    </div>
-  </div>
-</SectionWrapper>
-```
-
-### 4. Props Shape
-
-```ts
-{
-  badge?: string
-  title: string
-  description?: string
-  contextTitle?: string
-  contextParagraphs?: string[]
-  contextPoints?: string[]
-  items: Array<{
-    label?: string
-    title: string
-    signal: string
-    response: string
-    impactPoints?: string[]
-  }>
-  backgroundColor?: string
-  cssPrefix?: string
-}
-```
-
-### 5. Where It Will Be Used
-
-- CRM Automation
-- System Migration Platform Consolidation
-- Conversion Funnel System
-- Unified Communication System
-- Missed Call Recovery System
-- Lead Reactivation System
+Use this file when deciding whether to keep an existing section, add a variant, or introduce a new reusable component.
 
 ---
 
-### 2. Component Name
+## DEFAULT RULE
 
-`DecisionPathsSection`
+Default action is `NO CHANGE`.
 
-### 2. Problem It Solves
+The system should prefer:
 
-This solves the repeated bottom-half ladder where pages separately render comparison, proof, qualification, and then CTA.
-
-Repeated pattern it replaces:
-
-- `ComparisonSection`
-- `ServiceSpectrumCardsSection`
-- inline `SmartCTA`
-- `DualToneChecklistComparisonSection`
-
-Root repetition examples:
-
-- WordPress Development
-- Booking Scheduling System
-- Local SEO Authority
-- System Migration Platform Consolidation
-- Website Redesign System Rebuild
-
-### 3. JSX Structure
-
-```tsx
-<SectionWrapper>
-  <SectionIntro />
-
-  <div className='decision-layout'>
-    <div className='decision-summary'>
-      <h3 />
-      <p />
-      <SmartCTA mode='actions-only' />
-    </div>
-
-    <div className='decision-paths'>
-      {paths.map(path => (
-        <Card>
-          <div className='path-head'>
-            <h3 />
-            <Badge />
-          </div>
-          <p />
-          <div className='path-columns'>
-            <ul className='fit-list' />
-            <ul className='risk-list' />
-          </div>
-          <p className='outcome-line' />
-        </Card>
-      ))}
-    </div>
-  </div>
-</SectionWrapper>
-```
-
-### 4. Props Shape
-
-```ts
-{
-  badge?: string
-  title: string
-  description?: string
-  summaryTitle?: string
-  summaryDescription?: string
-  smartCta?: {
-    system: string
-    pageType: 'service'
-    slug: string
-    primaryActionVariant?: 'primary' | 'white'
-  }
-  paths: Array<{
-    title: string
-    label?: string
-    description?: string
-    goodFit: string[]
-    cautionPoints?: string[]
-    expectedOutcome?: string
-  }>
-  backgroundColor?: string
-  cssPrefix?: string
-}
-```
-
-### 5. Where It Will Be Used
-
-- WordPress Development
-- Booking Scheduling System
-- Local SEO Authority
-- Website Redesign System Rebuild
-- System Migration Platform Consolidation
+1. reuse an existing component
+2. add a variant to an existing component family
+3. create a new component only if the first two options fail
 
 ---
 
-### 3. Component Name
+## NEW COMPONENT GATE
 
-`OutcomeTimelineSection`
+A new component is allowed only when all three are true:
 
-### 2. Problem It Solves
+1. the pattern appears in three or more meaningful surfaces
+2. the pattern has one stable semantic job
+3. existing components or variants cannot express it cleanly
 
-This solves the repeated use of `ProcessStepsSection` followed by another card grid just to show outputs, checkpoints, or what the client gets at each stage.
-
-Repeated pattern it replaces:
-
-- `ProcessStepsSection`
-- followed by `FeatureChecklistCardsSection` or `ServiceSpectrumCardsSection`
-
-Root repetition examples:
-
-- WordPress Development
-- Booking Scheduling System
-- Review Automation System
-- Reputation Review Systems
-- Funnel Landing Page Development
-
-### 3. JSX Structure
-
-```tsx
-<SectionWrapper>
-  <SectionIntro />
-
-  <div className='timeline'>
-    {stages.map(stage => (
-      <div className='timeline-row'>
-        <div className='timeline-rail'>
-          <span className='stage-number' />
-        </div>
-
-        <Card>
-          <div className='stage-head'>
-            <h3 />
-            <p className='stage-duration' />
-          </div>
-          <p className='stage-description' />
-          <div className='stage-columns'>
-            <ul className='actions' />
-            <ul className='deliverables' />
-          </div>
-        </Card>
-      </div>
-    ))}
-  </div>
-</SectionWrapper>
-```
-
-### 4. Props Shape
-
-```ts
-{
-  badge?: string
-  title: string
-  description?: string
-  stages: Array<{
-    number: string
-    title: string
-    description: string
-    duration?: string
-    actions?: string[]
-    deliverables?: string[]
-  }>
-  backgroundColor?: string
-  cssPrefix?: string
-}
-```
-
-### 5. Where It Will Be Used
-
-- WordPress Development
-- Booking Scheduling System
-- Funnel Landing Page Development
-- Review Automation System
-- Reputation Review Systems
+If any condition fails, do not create the component.
 
 ---
 
-## Variants
+## SEMANTIC BUCKETS
 
-### Component Name
+Use these buckets before proposing a new section:
 
-`ProcessStepsSection`
+- problem framing
+- capability scope
+- process
+- scenario-response
+- qualification narrowing
+- strategic bridge
+- proof
+- decision fit
 
-### Variant Name
-
-`split-rail`
-
-### What Changes
-
-Structure changes from a flat `CardGrid` to a split layout with intro on one side and a vertical stack of steps on the other, borrowing the proven structure from the currently underused `StepCardsSplitSection`.
-
-### Why It Matters
-
-`ProcessStepsSection` is one of the most overused service-page components. A structural variant immediately breaks the repeated four-card grid without adding a new conceptual component category.
-
-### Where Used
-
-- WordPress Development
-- Booking Scheduling System
-- System Migration Platform Consolidation
-- Conversion Funnel System
+If the proposed component does not own one of these clearly, it is probably too page-specific.
 
 ---
 
-### Component Name
+## CURRENTLY APPROVED CANDIDATE DIRECTIONS
 
-`FeatureChecklistCardsSection`
+These are approved future directions. They are not live runtime components yet.
 
-### Variant Name
+### SignalResponseSection
 
-`segmented`
+Use case:
 
-### What Changes
+- repeated sections where a page explains a trigger, signal, or operational symptom and then pairs it with the correct response
 
-Structure changes from all categories shown at once in a single grid to grouped capability segments with one active segment displayed at a time, borrowing the structural logic of `TabbedFeatureCardsSection` but keeping the same feature-checklist content model.
+Best-fit surfaces:
 
-### Why It Matters
+- CRM and workflow-heavy service pages
+- migration/consolidation pages
+- communication and missed-call pages
 
-Capability sections are currently one of the biggest sources of repeat mid-page grids. This variant preserves the current data shape while changing the browsing structure.
+Purpose:
 
-### Where Used
+- replace flat symptom/use-case grids when the real job is signal-to-response explanation
 
-- WordPress Development
-- Booking Scheduling System
-- Local SEO Authority
-- AI Lead Handling
-- Elementor
-- Bricks Builder
-- Divi 5
-- WooCommerce
+### OutcomeTimelineSection
 
----
+Use case:
 
-### Component Name
+- pages that show a sequential process and also need stage-by-stage outputs or deliverables
 
-`StackedFeatureListSection`
+Best-fit surfaces:
 
-### Variant Name
+- implementation pages
+- review/reputation workflows
+- funnel and booking flows
 
-`narrative-stats`
+Purpose:
 
-### What Changes
+- replace `process steps + second grid of outputs` when both belong to one timeline story
 
-Structure changes from stacked feature cards plus narrative copy to narrative copy plus a stats or outcomes rail, borrowing from the currently unused `NarrativeStatsSection` pattern.
+### DecisionFitSection
 
-### Why It Matters
+Use case:
 
-`StackedFeatureListSection` already introduces one of the few asymmetric layouts in the service system. This variant keeps that asymmetry but swaps repeated feature cards for proof-oriented stats, which helps break the repeated `features -> proof grid` sequence.
+- qualification blocks that are purely strong-fit vs not-fit decisions
 
-### Where Used
+Best-fit surfaces:
 
-- Smart Website Systems
-- Local SEO Authority
-- Booking Scheduling System
-- Review Automation System
-- Reputation Review Systems
-- Growth Revenue Systems
+- service pages that currently end with a comparison CTA ladder followed by a fit split
+
+Purpose:
+
+- replace one-off qualification blocks when a deterministic decision-fit pattern is enough
 
 ---
 
-## Recommended Priority
+## DEFERRED DIRECTIONS
 
-1. Add `split-rail` to `ProcessStepsSection`.
-2. Add `segmented` to `FeatureChecklistCardsSection`.
-3. Add `SignalResponseSection`.
-4. Add `OutcomeTimelineSection`.
-5. Add `DecisionPathsSection` only where pages currently chain comparison, proof, qualification, and CTA too tightly.
+### WorkflowOrchestrationSection
 
-This keeps complexity bounded while attacking the exact renderer-level repetition found in the audit.
+Status: deferred
+
+Reason:
+
+- current pages show process, scenario-response, and capability layers
+- current data does not yet prove one strong orchestration pattern repeated often enough to justify a reusable section
+
+Do not recommend or implement this pattern unless the data changes materially.
+
+---
+
+## UPGRADE RULES
+
+### Grid vs Narrative Rule
+
+- grid = parallel independent items
+- narrative = sequential explanation or progression
+
+Do not move grid content into narrative layouts unless the content is intentionally rewritten to behave like narrative content.
+
+### Proof Rule
+
+Use a proof-specific section only when the data clearly expresses:
+
+1. before state
+2. intervention or build
+3. after state or result
+
+If those are not explicit, keep the current proof structure instead of forcing transformation language.
+
+### Comparison Merge Rule
+
+Merge comparison and proof only when the proof directly validates the comparison being shown.
+
+Otherwise keep them separate.
+
+---
+
+## CHANGE SAFETY RULES
+
+- A new reusable component must not require implicit data inference to understand its content.
+- A section family should not absorb multiple unrelated semantic jobs just because the visuals look similar.
+- Page-level rewrites should happen only when the data is intentionally reshaped to fit the target component contract.
+
+---
+
+## REFERENCE FILES
+
+- `component-audit.md`: current live component system overview
+- `component-final-apis.md`: approved future API shapes
+- `component-mapping.md`: page-level keep/replace guidance

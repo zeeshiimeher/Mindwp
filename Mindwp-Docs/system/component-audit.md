@@ -1,305 +1,220 @@
-# Component Audit
+# COMPONENT SYSTEM OVERVIEW
 
-## Scope
-
-This audit covers:
-
-- all reusable components under `src/components/**`
-- emphasis on `src/components/reusable/sections/**`
-- emphasis on `src/components/reusable/single/**`
-- emphasis on `src/components/system/**`
-- all service renderers under `src/domains/services/renderers/**`
-- the component preview system implemented through:
-  - `src/app/components/components-client-page.tsx`
-  - `src/screens/ComponentLibrary.tsx`
-  - `src/lib/devtools/componentScanner.ts`
-  - `src/utils/componentDocs.generated.ts`
-
-This is an analysis document only. No refactor or redesign decisions are included here.
-
-## System Summary
-
-- The system is composition-first at the page layer and building-block-first at the component layer.
-- The preview system is scanner-driven, not manually curated.
-- Real service renderer composition depends on a relatively small core subset of components.
-- The broader reusable library is much larger than the subset currently exercised by service pages.
-- Repetition is caused less by individual component quality and more by repeated renderer sequencing around the same component families.
+> Reference map for the live component system.
+> This file describes the current structure, the highest-value building blocks, and the rules for reasoning about component reuse.
 
 ---
 
-## 1. Core Component Library
+## USE THIS DOC
 
-## 1.1 Primitives
-
-| Name | File Path | Category | JSX Structure | Props Structure | Visual Role | Service Renderer Usage |
-| --- | --- | --- | --- | --- | --- | --- |
-| `SectionWrapper` | `src/components/reusable/primitives/SectionWrapper.tsx` | layout | outer `section` or `div`; optional internal container wrapper; stacked shell | `as`, `padding`, `container`, `background`, `className`, `children` | universal section shell and spacing controller | used indirectly everywhere; all section components and many custom renderer blocks rely on it |
-| `CardGrid` | `src/components/reusable/primitives/CardGrid.tsx` | layout | responsive grid wrapper with 2/3/4/6 column modes | `columns`, `gap`, `mode`, `className`, `children` | grid layout controller for mapped cards | used by many section components; service renderers usually consume it through section wrappers |
-
-## 1.2 System Components
-
-| Name | File Path | Category | JSX Structure | Props Structure | Visual Role | Service Renderer Usage |
-| --- | --- | --- | --- | --- | --- | --- |
-| `SmartCTA` | `src/components/system/SmartCTA.tsx` | CTA | actions-only mode or full CTA panel; optional `SectionWrapper`; optional meta row | `system`, `pageType`, `slug`, `mode`, `title`, `description`, `badge`, `metaItems`, button styling props | context-aware CTA and contact routing layer | direct in 14+ service renderers; typically mid-page and footer |
-| `GenericErrorFallback` | `src/components/system/GenericErrorFallback.tsx` | utility | static fallback block | fallback-only props | renderer error fallback UI | paired with `ErrorBoundary` in all service renderers |
-| `RelatedContentSection` | `src/components/system/RelatedContentSection.tsx` | section | related content grid | content arrays and headings | related-content block | not used by current service renderers |
-| `SmartRelatedSection` | `src/components/system/SmartRelatedSection.tsx` | section | wrapper around related content logic | page context props | graph-aware related content block | not used in current service renderer bodies |
-| `ClusterPageLayout` | `src/components/system/ClusterPageLayout.tsx` | layout | page shell layout | page-level props | cluster/topic page layout | not used in service renderers |
-| `GraphAwareSidebar` | `src/components/system/GraphAwareSidebar.tsx` | layout | sidebar | graph and navigation props | graph/navigation support | not used in service renderers |
-| `RetryButtonIsland` | `src/components/system/RetryButtonIsland.tsx` | utility | small interactive control | retry props | retry interaction | not used in service renderers |
-| `JsonLd` | `src/components/system/JsonLd.tsx` | utility | schema output | schema payload props | SEO/schema utility | used in route layer, not renderer body composition |
-
-## 1.3 Reusable Single Components
-
-### High-Impact Single Components
-
-| Name | File Path | Category | JSX Structure | Props Structure | Visual Role | Service Renderer Usage |
-| --- | --- | --- | --- | --- | --- | --- |
-| `SectionIntro` | `src/components/reusable/single/SectionIntro.tsx` | utility | static header block; optional badge and actions; centered or left-aligned | `badge`, `title`, `description`, `headingLevel`, `alignment`, optional actions | section intro / hierarchy control | heavy indirect and direct use; top of many custom `SectionWrapper` sections; mostly top and mid |
-| `SimpleHero` | `src/components/reusable/single/SimpleHero.tsx` | hero | `SectionWrapper` + centered stack + `SectionIntro` + optional `SmartCTA` + bullet list | `badge`, `title`, `description`, `smartCta`, `list`, `backgroundColor`, `cssPrefix` | base hero for service pages | consumed through `ServiceHeroSection`; top of every service page |
-| `FAQSection` | `src/components/reusable/single/FAQSection.tsx` | section | FAQ wrapper plus mapped accordion items | `badge`, `title`, `description`, `faqs`, `cssPrefix` | FAQ / objection handling | appears in bottom section of most service pages |
-| `Badge` | `src/components/reusable/single/Badge.tsx` | utility | inline badge | text/style props | label / section marker | indirect throughout |
-| `Button` | `src/components/reusable/single/Button.tsx` | CTA | standalone button | label, href, variant, icon and behavior props | primitive CTA control | indirect everywhere via `SmartCTA` and `SectionIntro` |
-| `BulletList` | `src/components/reusable/single/BulletList.tsx` | utility | mapped list | `items` | compact supporting bullets | hero bullet lists and some CTA/meta contexts |
-| `Card` | `src/components/reusable/single/Card.tsx` | layout/card | generic container | class and children props | card surface primitive | indirect via many card sections |
-
-### Card and Item Components Used in Service Pages
-
-| Name | File Path | Category | JSX Structure | Props Structure | Visual Role | Service Renderer Usage |
-| --- | --- | --- | --- | --- | --- | --- |
-| `IconBenefitCard` | `src/components/reusable/single/IconBenefitCard.tsx` | card | static card; icon + title + description + optional keywords/benefit | icon, title, description, `iconType`, optional `keywords`, optional `benefit` | benefit/value/proof card | frequent in Smart Website and custom renderer grids; top and mid |
-| `FeatureChecklistCard` | `src/components/reusable/single/FeatureChecklistCard.tsx` | card | static card with mapped feature list | title, icon, features | capability card | indirect via `FeatureChecklistCardsSection`; mid |
-| `ChecklistRow` | `src/components/reusable/single/ChecklistRow.tsx` | utility | single row item | row text + variant props | list item inside comparison/checklist cards | indirect |
-| `ProcessStepCard` | `src/components/reusable/single/ProcessStepCard.tsx` | card | static process card | number, title, description, optional icon | process step display | indirect via `ProcessStepsSection`; mid |
-| `AuditChecklistCard` | `src/components/reusable/single/AuditChecklistCard.tsx` | card | static card with mapped checks | title, description, checks, icon | audit coverage card | appears in growth/reactivation-style custom sections |
-| `ScenarioSolutionCard` | `src/components/reusable/single/ScenarioSolutionCard.tsx` | card | split scenario/solution/result card | title, scenario, solution, result, icon | scenario-to-solution compare | low-frequency service use |
-| `IconListCard` | `src/components/reusable/single/IconListCard.tsx` | card | icon + title + mapped features list | title, icon, features | list-style capability card | low-frequency service use |
-| `IconTextCard` | `src/components/reusable/single/IconTextCard.tsx` | card | icon + title + description | icon, title, description | compact category/value block | low-frequency service use |
-| `WorkflowStepCard` | `src/components/reusable/single/WorkflowStepCard.tsx` | card | structured workflow step | trigger, actions or detail props | workflow explanation | low-frequency service use |
-| `BeforeAfterMetricCard` | `src/components/reusable/single/BeforeAfterMetricCard.tsx` | card | before/after metric split | metric and label props | outcome/proof card | niche service use |
-| `AlertCard` | `src/components/reusable/single/AlertCard.tsx` | card | alert block | title, description, tone props | warning/implementation risk | niche service use |
-| `LinkCard` | `src/components/reusable/single/LinkCard.tsx` | card | linked card | title, description, href | navigation/action card | niche service use |
-| `CenteredFeatureCard` | `src/components/reusable/single/CenteredFeatureCard.tsx` | card | centered icon/title/description | centered feature props | centered value card | niche service use |
-| `RiskListCard` | `src/components/reusable/single/RiskListCard.tsx` | card | title + mapped issue list | title, issues | risk framing | niche service use |
-| `ProblemSolutionSplitCard` | `src/components/reusable/single/ProblemSolutionSplitCard.tsx` | card | before/after split | problem/solution props | problem framing | niche service use |
-
-### Single Components Present But Not Meaningfully Used by Service Renderers
-
-| Name | File Path | Category | JSX Structure | Props Structure | Visual Role | Service Renderer Usage |
-| --- | --- | --- | --- | --- | --- | --- |
-| `SplitHeroSection` | `src/components/reusable/single/SplitHeroSection.tsx` | hero | split hero with visual panel | hero copy plus `visualContent`, stats, actions | feature-style hero | not used in current service renderers |
-| `TestimonialCard` | `src/components/reusable/single/TestimonialCard.tsx` | card | testimonial card | quote, name, role, rating | proof/testimonial | not directly used in current service renderers |
-| `CaseStudyCard` | `src/components/reusable/single/CaseStudyCard.tsx` | card | case-study card | case-study preview props | proof/navigation | not used in service renderers |
-| `DetailedStepCard` | `src/components/reusable/single/DetailedStepCard.tsx` | card | detailed step item | step, action, result props | detailed process explanation | not used in service renderers |
-| `ActionStepCard`, `ChecklistItem`, `Callout`, `HighlightCard`, `ProblemCard`, `CostRoiCard`, `SolutionDetailCard`, `RelatedSectionCTA`, `AlertList` | various | card/utility | specialized static or mapped patterns | specialized props | niche domain support | not materially used in current service renderers |
-
-## 1.4 Reusable Core Sections
-
-### Core Sections Used Repeatedly in Service Renderers
-
-| Name | File Path | Category | JSX Structure | Props Structure | Visual Role | Service Renderer Usage |
-| --- | --- | --- | --- | --- | --- | --- |
-| `ProblemCardsSection` | `src/components/reusable/sections/core/ProblemCardsSection.tsx` | section | `SectionWrapper` + `SectionIntro` + mapped cards | badge/title/description + `painPoints` arrays and labels | foundation/problem framing | high frequency; mostly immediately below hero |
-| `ProcessStepsSection` | `src/components/reusable/sections/core/ProcessStepsSection.tsx` | section | `SectionWrapper` + `SectionIntro` + `CardGrid` of mapped `ProcessStepCard`s | badge/title/description + `steps`, `columns` | process / implementation flow | high frequency; mid-page |
-| `ServiceSpectrumCardsSection` | `src/components/reusable/sections/core/ServiceSpectrumCardsSection.tsx` | section | `SectionWrapper` + `SectionIntro` + mapped cards | title, description, `cards` | capability/proof/spectrum display | high frequency; mid-page and proof |
-| `StackedFeatureListSection` | `src/components/reusable/sections/core/StackedFeatureListSection.tsx` | section | split stacked layout; mapped feature rail plus narrative column | heading props + `features`, `tagline`, `narrativeTitle`, `narrativeParagraphs` | positioning / bridge / narrative support | high frequency; mid-page |
-| `ComparisonSection` | `src/components/reusable/sections/core/ComparisonSection.tsx` | section | `SectionWrapper` + optional `SectionIntro` + 2-column mapped cards | title, description, `comparisons` | before/after comparison | common mid-page or qualification-prep |
-| `DualToneChecklistComparisonSection` | `src/components/reusable/sections/core/DualToneChecklistComparisonSection.tsx` | section | dual-column split comparison | title/description + `leftColumn` and `rightColumn` | qualification / fit-vs-not-fit | common bottom-third section |
-| `FeatureChecklistCardsSection` | `src/components/reusable/sections/core/FeatureChecklistCardsSection.tsx` | section | `SectionWrapper` + intro + mapped feature cards | headings + `featureCategories`, `columns` | capability cluster | mid-page |
-| `ChecklistCardsSection` | `src/components/reusable/sections/core/ChecklistCardsSection.tsx` | section | intro + mapped checklist cards | headings + `items`, `columns` | included items / deliverables | mid-page |
-| `TechnologyCardsSection` | `src/components/reusable/sections/core/TechnologyCardsSection.tsx` | section | intro + mapped technology cards | headings + `cards` or items | technology stack / stack proof | low but recurring |
-| `OperationalShiftCardsSection` | `src/components/reusable/sections/core/OperationalShiftCardsSection.tsx` | section | mapped before/after or shift cards | shift items and headings | operational contrast / problem framing | used by CRM and related operational pages |
-| `IconBenefitCardsSection` | `src/components/reusable/sections/core/IconBenefitCardsSection.tsx` | section | intro + mapped benefit cards grid | headings + `items` | benefit grid | low-frequency service use |
-
-### Core Sections Available but Rare or Unused in Service Renderers
-
-| Name | File Path | Category | JSX Structure | Props Structure | Visual Role | Service Renderer Usage |
-| --- | --- | --- | --- | --- | --- | --- |
-| `TierCardsSection` | `src/components/reusable/sections/core/TierCardsSection.tsx` | section | intro + mapped pricing/offer tiers | title, description, `packages`, optional `smartCta` | tier/package display | not used in current service renderers |
-| `GenericCardsSection` | `src/components/reusable/sections/core/GenericCardsSection.tsx` | section | general card grid | headings + generic items | flexible card grid | not materially used |
-| `ScenarioCardsSection` | `src/components/reusable/sections/core/ScenarioCardsSection.tsx` | section | mapped scenarios | scenario arrays | scenario grid | not materially used |
-| `NarrativeStatsSection` | `src/components/reusable/sections/core/NarrativeStatsSection.tsx` | section | split narrative + stats | narrative plus stats arrays | narrative-led proof | not used in service renderers |
-| `DarkSplitShowcaseSection` | `src/components/reusable/sections/core/DarkSplitShowcaseSection.tsx` | section | dark split showcase with two fixed panels | intro, actions, `panels` | high-contrast showcase | not used in service renderers |
-| `TabbedFeatureCardsSection` | `src/components/reusable/sections/core/TabbedFeatureCardsSection.tsx` | section | tabs + mapped cards | tab labels and card arrays | tabbed exploration | not used in service renderers |
-| `ImageAccordionStripSection` | `src/components/reusable/sections/core/ImageAccordionStripSection.tsx` | section | accordion strip with images | accordion item arrays | interactive showcase | not used in service renderers |
-| `TestimonialSpotlightSplitSection` | `src/components/reusable/sections/core/TestimonialSpotlightSplitSection.tsx` | section | split testimonial narrative | testimonial and narrative props | testimonial-led proof | not used in service renderers |
-| `OptionComparisonSection`, `RelatedCardsSection`, `CaseStudyCardsSection`, `LinkedIconCardsSection`, `ContentCardsGridSection`, `IconInfoCardsSection`, `DualFeatureCardsSection`, `FeatureStatsMockupSection`, `StepCardsSplitSection`, `ImageStatsServicesSection`, `AutoRelatedContentCardsSection`, `ExploreCardsSection`, `FaqAccordionSection` | various | section | specialized grid, split, or accordion structures | specialized arrays and headings | specialized showcase/content blocks | absent from current service renderer layer |
-
-## 1.5 Service Sections
-
-| Name | File Path | Category | JSX Structure | Props Structure | Visual Role | Service Renderer Usage |
-| --- | --- | --- | --- | --- | --- | --- |
-| `ServiceHeroSection` | `src/components/reusable/sections/service/ServiceHeroSection.tsx` | section | thin wrapper over `SimpleHero` | mirrors `SimpleHero` props | service hero abstraction | every service renderer; top |
-| `ServiceCTASection` | `src/components/reusable/sections/service/ServiceCTASection.tsx` | CTA | service CTA wrapper | title, description, actions | footer CTA abstraction | not the dominant CTA pattern in current service renderers because `SmartCTA` is usually called directly |
-
-## 1.6 Feature Sections
-
-These are scanner-registered and previewed, but they are not part of the service renderer composition layer.
-
-| Components |
-| --- |
-| `FeatureHeroSection`, `FeatureBenefitsSection`, `FeatureCapabilitiesSection`, `FeatureUseCasesSection`, `FeaturePainPointsSection`, `FeatureIconCardsSection`, `FeatureProcessStepsSection`, `FeatureCTASection` |
-
-Structural notes:
-
-- all are section-level wrappers over stable heading + mapped-card or mapped-step patterns
-- most follow the same `SectionWrapper` plus `SectionIntro` plus mapped-content structure as the service-core sections
-- service renderer usage: none directly
-
-## 1.7 Industry Sections
-
-These are scanner-registered and previewed, but not used inside service renderers.
-
-| Components |
-| --- |
-| `IndustryHeroSection`, `IndustryChallengesSection`, `IndustryComparisonSection`, `IndustryChecklistSection`, `IndustryPathwaysSection`, `IndustryPackagesSection`, `IndustryProcessSection`, `IndustrySpectrumSection`, `IndustryCaseStudiesSection`, `IndustryExploreSection`, `IndustryFAQSection`, `IndustryCTASection`, `IndustryOperatingPatternsSection`, `IndustryWorkflowExamplesSection`, `IndustryServiceEnvironmentsSection`, `IndustrySolutionsSection` |
-
-Structural notes:
-
-- these extend the same card-grid, comparison, FAQ, and process archetypes into industry-specific wrappers
-- service renderer usage: none directly
-
-## 1.8 Resource Sections
-
-| Components |
-| --- |
-| `ResourceBusinessCostsSection`, `ResourceCaseSection`, `ResourceChecklistSection`, `ResourceComparisonSection`, `ResourceDIYSection`, `ResourceFAQSection`, `ResourceProblemSection`, `ResourceSectionHeader`, `ResourceSolutionsSection`, `ResourceTakeawaysSection`, `ResourceTemplatesSection` |
-
-Structural notes:
-
-- resource sections are more content-rich and article-oriented than service renderers
-- they still rely on the same stable building blocks: intros, mapped lists, comparisons, checklists, cases
-- service renderer usage: none directly
-
-## 1.9 Blog Sections
-
-| Components |
-| --- |
-| `BlogChecklistSection`, `BlogImageSection`, `BlogQuoteSection`, `BlogStepsSection`, `BlogTakeawaysSection` |
-
-Structural notes:
-
-- blog sections are content-first and simpler than service sections
-- service renderer usage: none directly
-
-## 1.10 Case-Study Sections
-
-| Components |
-| --- |
-| `CaseStudyHeroSection`, `CaseStudyProblemSection`, `CaseStudySolutionSection`, `CaseStudyMetricsSection`, `CaseStudyResultsSection`, `CaseStudyFeaturesSection`, `CaseStudyProcessSection`, `CaseStudyDeliverablesSection`, `CaseStudyBusinessImpactSection`, `CaseStudyInvestmentSection`, `CaseStudyWorkflowsSection`, `CaseStudyFAQSection`, `CaseStudyCTASection`, `CaseStudyMoreSection` |
-
-Structural notes:
-
-- case-study sections are more proof-oriented and outcome-led
-- they rely on the same mapped-card and section-intro vocabulary but are not currently part of service renderer composition
+Use this file when you need a fast mental model of how the component system is organized and which components matter most in the live page and renderer layer.
 
 ---
 
-## 2. Layout Patterns
+## SYSTEM SUMMARY
 
-## 2.1 Stable Structural Archetypes
+- The runtime is composition-first at the page and renderer layer.
+- The reusable library is larger than the subset currently used heavily by service renderers.
+- Service pages repeat a small, stable family of section and card patterns.
+- The component preview system is scanner-driven rather than manually curated.
+- Most drift comes from repeating renderer sequences, not from missing primitives.
 
-### Pattern A: Intro + Grid
+---
 
-Canonical shape:
+## PRIMARY LAYERS
 
-`SectionWrapper` -> `SectionIntro` -> mapped cards/grid
+### Primitives
 
-Typical component realizations:
+These are the lowest reusable layout controls.
+
+- `SectionWrapper`: section shell, spacing, and container control
+- `CardGrid`: responsive grid wrapper for mapped card layouts
+
+### System Components
+
+These own cross-page behavior rather than just presentation.
+
+- `SmartCTA`: page-level CTA rendering and contextual contact routing
+- `PageEnforcement` surfaces: page identity, CTA registry, related-content enforcement
+- `SmartRelatedSection`: graph-aware related-content output
+- `JsonLd`: schema output at the route layer
+
+### Reusable Single Components
+
+These are the most important high-frequency single components in live service composition:
+
+- `SectionIntro`
+- `SimpleHero`
+- `FAQSection`
+- `Badge`
+- `Button`
+- `Card`
+- `IconBenefitCard`
+- `FeatureChecklistCard`
+- `ProcessStepCard`
+- `WorkflowStepCard`
+
+### Reusable Section Families
+
+The most important live section families are:
 
 - `ProblemCardsSection`
-- `FeatureChecklistCardsSection`
-- `ChecklistCardsSection`
+- `ProcessStepsSection`
 - `ServiceSpectrumCardsSection`
-- `IconBenefitCardsSection`
-- custom renderer sections using `SectionWrapper` + `SectionIntro` + `IconBenefitCard` / `WorkflowStepCard` / `IconListCard`
-
-Role:
-
-- the dominant section pattern across the system
-- used for benefits, use cases, proof, included scope, concerns, technology, workflows, and audit areas
-
-### Pattern B: Intro + Two-Column Comparison
-
-Canonical shape:
-
-`SectionWrapper` -> `SectionIntro` -> two mapped columns/cards
-
-Typical component realizations:
-
+- `StackedFeatureListSection`
 - `ComparisonSection`
 - `DualToneChecklistComparisonSection`
+- `FeatureChecklistCardsSection`
+- `ChecklistCardsSection`
+- `TechnologyCardsSection`
+- `OperationalShiftCardsSection`
 
-Role:
+### Domain Wrappers
 
-- before/after framing
-- qualification framing
-- fit-vs-not-fit framing
+Domain wrappers keep page-specific composition thin.
 
-### Pattern C: Hero + CTA + Bullet Support
+- service wrappers such as `ServiceHeroSection`
+- feature wrappers
+- industry wrappers
+- resource wrappers
+- blog wrappers
+- case-study wrappers
+
+These wrappers should stay thin and should not reimplement shared core behavior.
+
+---
+
+## LIVE HIGH-FREQUENCY PATTERNS
+
+### Hero Pattern
 
 Canonical shape:
 
-`SectionWrapper` -> centered stack -> `SectionIntro` -> `SmartCTA` -> optional bullet list
+`SectionWrapper -> SectionIntro -> SmartCTA -> optional bullets`
 
-Typical component realization:
+Primary owners:
 
 - `SimpleHero`
 - `ServiceHeroSection`
 
-Role:
-
-- BOFU service-page entry point
-
-### Pattern D: Split Narrative + Structured Features
+### Intro Plus Grid Pattern
 
 Canonical shape:
 
-section shell -> mapped feature rail or cards on one side + narrative title/paragraphs on the other
+`SectionWrapper -> SectionIntro -> CardGrid -> mapped cards`
 
-Typical component realization:
+Used for:
 
-- `StackedFeatureListSection`
+- problems
+- benefits
+- included scope
+- capabilities
+- proof grids
+- technology grids
 
-Role:
-
-- bridge from feature list to strategic narrative
-- positioning or “what changes” section
-
-### Pattern E: Process Grid
+### Comparison Pattern
 
 Canonical shape:
 
-`SectionWrapper` -> `SectionIntro` -> mapped numbered cards
+`SectionWrapper -> SectionIntro -> two-column comparison or qualification split`
 
-Typical component realization:
+Primary owners:
 
-- `ProcessStepsSection`
-
-Role:
-
-- implementation sequence
-- workflow sequence
-
-## 2.2 Real Renderer Layout Vocabulary
-
-The service renderers are not using the full component inventory evenly. Their active vocabulary is mostly:
-
-- `ServiceHeroSection`
-- `ProblemCardsSection`
-- `ServiceSpectrumCardsSection`
-- `StackedFeatureListSection`
-- `ProcessStepsSection`
-- `FeatureChecklistCardsSection`
 - `ComparisonSection`
 - `DualToneChecklistComparisonSection`
-- `FAQSection`
-- `SmartCTA`
-- custom `SectionWrapper` + `SectionIntro` + mapped single-card blocks
 
-This means the effective service-page system is narrower than the total reusable library.
+### Process Pattern
+
+Canonical shape:
+
+`SectionWrapper -> SectionIntro -> ordered steps`
+
+Primary owner:
+
+- `ProcessStepsSection`
+
+### Narrative Bridge Pattern
+
+Canonical shape:
+
+`SectionWrapper -> narrative column + structured feature rail`
+
+Primary owner:
+
+- `StackedFeatureListSection`
 
 ---
+
+## WHAT IS CENTRAL RIGHT NOW
+
+The smallest useful mental model is:
+
+1. `SectionWrapper` controls shell and spacing.
+2. `SectionIntro` controls heading hierarchy.
+3. `SmartCTA` controls CTA behavior.
+4. A small set of section families control most service-page structure.
+5. Domain wrappers assemble those sections into page-specific narratives.
+
+If a change does not fit into one of those layers cleanly, it usually needs reevaluation before implementation.
+
+---
+
+## OWNERSHIP RULES
+
+### Primitives Own Layout Mechanics
+
+Primitives control spacing, containment, and grid behavior. They do not own page semantics.
+
+### Section Components Own Repeated Semantic Patterns
+
+Reusable sections should represent stable semantic jobs such as:
+
+- problem framing
+- process explanation
+- capability grouping
+- comparison
+- qualification
+- proof
+
+### Domain Wrappers Own Page-Specific Composition
+
+Service, feature, industry, resource, blog, and case-study wrappers may sequence sections differently, but they should not fork shared section logic without a strong reason.
+
+### System Components Own Cross-Page Runtime Behavior
+
+Anything involving CTA routing, page identity, related-content enforcement, or schema output belongs in the system layer rather than in presentational components.
+
+---
+
+## PREVIEW SYSTEM
+
+The preview/library surface is scanner-driven.
+
+Important surfaces:
+
+- `src/app/components/components-client-page.tsx`
+- `src/screens/ComponentLibrary.tsx`
+- `src/lib/devtools/componentScanner.ts`
+- `src/utils/componentDocs.generated.ts`
+
+Preview data should come from the scanner and generated metadata rather than hand-maintained component catalogs.
+
+---
+
+## WHAT IS NOT ALLOWED
+
+- Page-specific wrappers that silently duplicate a reusable section pattern.
+- System behavior hidden inside presentational components.
+- New components created for one page when an existing section or card family already fits.
+- Treating preview/demo structures as runtime authority.
+
+---
+
+## RELATED REFERENCE FILES
+
+- `component-mapping.md`: how to decide between keep, variant, or new component
+- `component-evolution-proposals.md`: current rules for future section evolution
+- `component-final-apis.md`: approved future API shapes for planned components
 
 ## 3. Repeated Structures
 
