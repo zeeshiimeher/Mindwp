@@ -4,10 +4,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 
 import { chromium } from '@playwright/test';
 
-import {
-  systemEnv,
-  withSystemEnvOverrides,
-} from '../../config/systemEnv.mjs';
+import { systemEnv, withSystemEnvOverrides } from '../../config/systemEnv.mjs';
 
 import { ensureAuditServer } from '../dev/audit-server.mjs';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized.ts';

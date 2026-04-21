@@ -50,28 +50,28 @@ Case studies validate the system and should support industry and service underst
 
 ### Categories
 
-| Category | Scope |
-|---|---|
-| `smart-website-systems` | website infrastructure, conversion systems |
-| `ai-lead-handling` | response speed, routing, qualification, missed calls |
-| `local-authority-seo` | authority signals, local visibility, GBP, service-page visibility |
-| `crm-automation` | follow-up, pipeline visibility, revenue visibility, lifecycle workflow |
-| `reputation-review` | review generation, monitoring, trust systems |
-| `home-services-industry` | roofing, HVAC, plumbing, electrical, landscaping context |
-| `beauty-personal-care-industry` | salons, clinics, med spas, appointment businesses |
-| `future-local-business-tech` | controlled future-facing system shifts |
+| Category                        | Scope                                                                  |
+| ------------------------------- | ---------------------------------------------------------------------- |
+| `smart-website-systems`         | website infrastructure, conversion systems                             |
+| `ai-lead-handling`              | response speed, routing, qualification, missed calls                   |
+| `local-authority-seo`           | authority signals, local visibility, GBP, service-page visibility      |
+| `crm-automation`                | follow-up, pipeline visibility, revenue visibility, lifecycle workflow |
+| `reputation-review`             | review generation, monitoring, trust systems                           |
+| `home-services-industry`        | roofing, HVAC, plumbing, electrical, landscaping context               |
+| `beauty-personal-care-industry` | salons, clinics, med spas, appointment businesses                      |
+| `future-local-business-tech`    | controlled future-facing system shifts                                 |
 
 Categories are organizational only. SEO targeting comes from metadata and page intent.
 
 ### Blog Archetypes
 
-| Archetype | Purpose |
-|---|---|
-| Problem Analysis | explain why a business problem happens |
-| Industry Breakdown | show how one industry experiences a repeated issue |
-| System Explanation | explain how a business system works conceptually |
-| Operational Mistake | show a repeatable mistake and the correct response |
-| Trend Analysis | explain a new shift without turning into hype content |
+| Archetype           | Purpose                                               |
+| ------------------- | ----------------------------------------------------- |
+| Problem Analysis    | explain why a business problem happens                |
+| Industry Breakdown  | show how one industry experiences a repeated issue    |
+| System Explanation  | explain how a business system works conceptually      |
+| Operational Mistake | show a repeatable mistake and the correct response    |
+| Trend Analysis      | explain a new shift without turning into hype content |
 
 ### Blog Structure Rules
 
@@ -197,13 +197,13 @@ Typical pattern:
 
 ### Resource Archetypes
 
-| Archetype | Purpose |
-|---|---|
-| Framework | explain the structure of a system |
-| Workflow | explain a step-by-step operational flow |
-| Diagnostic | explain root causes before the system fix |
-| Industry Example | show how a system appears in one vertical |
-| Implementation Guide | explain a practical implementation path |
+| Archetype            | Purpose                                   |
+| -------------------- | ----------------------------------------- |
+| Framework            | explain the structure of a system         |
+| Workflow             | explain a step-by-step operational flow   |
+| Diagnostic           | explain root causes before the system fix |
+| Industry Example     | show how a system appears in one vertical |
+| Implementation Guide | explain a practical implementation path   |
 
 Allowed template section types:
 
@@ -387,37 +387,42 @@ The live architecture still belongs to `CONTENT.md`, `GRAPH.md`, and the runtime
 # Case Study Planning
 
 ## Case Study Role
+
 Case studies = proof layer. They validate system implementation inside industry contexts.
 
 Authority flow: Blog/Resource → Industry Page → Case Study → Service Implementation (reference only)
 
 **Rules:**
+
 - Case studies support industries, not services
 - Must NOT appear on service pages
 - Appear on industry pages and case study hub only
 
 ## Case Study Archetypes
 
-| Archetype | Focus |
-|---|---|
-| System Implementation | Architecture, technical workflow, system design decisions |
-| Operational Problem | Problem identification, root cause, system response |
-| Revenue Recovery | Revenue impact, reactivation workflows, measurable outcomes |
+| Archetype             | Focus                                                       |
+| --------------------- | ----------------------------------------------------------- |
+| System Implementation | Architecture, technical workflow, system design decisions   |
+| Operational Problem   | Problem identification, root cause, system response         |
+| Revenue Recovery      | Revenue impact, reactivation workflows, measurable outcomes |
 
 ## Case Study Metadata
 
 Required: UI Label, SEO Title, Slug, industries[], systems[], resources[], Archetype, Operational Problem, Implementation Summary, Outcome
 
 ## Page Structure
+
 Required sections: Hero, Operational Problem, System Implementation, Consultation CTA
 Optional sections: Workflow Breakdown, Results, Metrics, Frameworks Used, Lessons (4–9 sections total)
 
 ## Cluster Rules
+
 Each case study unique across: industry + operational problem + system
 
 ## Planned Scenarios (~16–20)
 
 ### Lead Handling Failures
+
 - Storm Season Lead Handling System (Roofing)
 - HVAC Emergency Lead Routing (HVAC)
 - HVAC Seasonal Lead Surge Handling (HVAC)
@@ -425,22 +430,26 @@ Each case study unique across: industry + operational problem + system
 - Real Estate Inquiry Routing (Real Estate)
 
 ### Follow-Up Failures
+
 - Roofing Estimate Follow-Up Automation (Roofing)
 - Realtor Lead Follow-Up Automation (Real Estate)
 - Automotive Service Reminder Automation (Automotive)
 - HVAC Maintenance Plan Reactivation (HVAC)
 
 ### Booking System Breakdowns
+
 - Salon Booking Automation (Salon)
 - Law Firm Consultation Booking System (Legal)
 - Appointment Business Booking Automation (Local Appointment)
 - Law Firm Client Intake Automation (Legal)
 
 ### No-Show & Reminder Failures
+
 - Salon No-Show Reduction System (Salon)
 - Appointment Reminder No-Show Reduction (Local Appointment)
 
 ### Review / Revenue / Infrastructure
+
 - Salon Review Generation Automation (Salon)
 - CRM Pipeline Visibility Transformation (System-Level)
 - Roofing Website Rebuild With CRM (Roofing)
@@ -448,12 +457,15 @@ Each case study unique across: industry + operational problem + system
 - Local Authority System Impact (System-Level)
 
 ## Case Study Hub
+
 Primary grouping: by industry. NOT by service.
 
 ### Publishing Order
+
 1. Smart Website infrastructure → 2. Roofing → 3. HVAC → 4. Salon → 5. Remaining
 
 ## Writing Rules
+
 - Describe real operational environment before solution
 - Explain system components and why chosen
 - Show workflow change after implementation

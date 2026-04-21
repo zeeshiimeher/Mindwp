@@ -51,11 +51,23 @@ function validateServicePages(pages) {
     }
 
     if (sections.value) {
-      requireCount('service', page.slug, 'value.items', sections.value.items, serviceRules.valueItemsMin);
+      requireCount(
+        'service',
+        page.slug,
+        'value.items',
+        sections.value.items,
+        serviceRules.valueItemsMin
+      );
     }
 
     if (sections.coreLayer) {
-      requireCount('service', page.slug, 'coreLayer.cards', sections.coreLayer.cards, serviceRules.coreLayerCardsMin);
+      requireCount(
+        'service',
+        page.slug,
+        'coreLayer.cards',
+        sections.coreLayer.cards,
+        serviceRules.coreLayerCardsMin
+      );
       for (const [index, card] of (sections.coreLayer.cards ?? []).entries()) {
         requireCount(
           'service',
@@ -68,15 +80,33 @@ function validateServicePages(pages) {
     }
 
     if (sections.types) {
-      requireCount('service', page.slug, 'types.items', sections.types.items, serviceRules.typesItemsMin);
+      requireCount(
+        'service',
+        page.slug,
+        'types.items',
+        sections.types.items,
+        serviceRules.typesItemsMin
+      );
     }
 
     if (sections.included) {
-      requireCount('service', page.slug, 'included.items', sections.included.items, serviceRules.includedItemsMin);
+      requireCount(
+        'service',
+        page.slug,
+        'included.items',
+        sections.included.items,
+        serviceRules.includedItemsMin
+      );
     }
 
     if (sections.process) {
-      requireCount('service', page.slug, 'process.steps', sections.process.steps, serviceRules.processStepsMin);
+      requireCount(
+        'service',
+        page.slug,
+        'process.steps',
+        sections.process.steps,
+        serviceRules.processStepsMin
+      );
     }
 
     if (sections.visibilityFoundations) {
@@ -117,7 +147,13 @@ function validateServicePages(pages) {
     }
 
     if (sections.concerns) {
-      requireCount('service', page.slug, 'concerns.items', sections.concerns.items, serviceRules.concernsItemsMin);
+      requireCount(
+        'service',
+        page.slug,
+        'concerns.items',
+        sections.concerns.items,
+        serviceRules.concernsItemsMin
+      );
     }
 
     if (sections.qualification) {
@@ -147,9 +183,27 @@ function validateFeaturePages(pages) {
   for (const page of pages) {
     const rules = resolveContentRules('feature', page.slug).sectionStructure;
     const featureRules = rules.feature;
-    requireCount('feature', page.slug, 'sections.process.steps', page.sections.process?.steps, featureRules.processStepsMin);
-    requireCount('feature', page.slug, 'sections.benefits.items', page.sections.benefits?.items, featureRules.benefitsItemsMin);
-    requireCount('feature', page.slug, 'sections.useCases.items', page.sections.useCases?.items, featureRules.useCasesItemsMin);
+    requireCount(
+      'feature',
+      page.slug,
+      'sections.process.steps',
+      page.sections.process?.steps,
+      featureRules.processStepsMin
+    );
+    requireCount(
+      'feature',
+      page.slug,
+      'sections.benefits.items',
+      page.sections.benefits?.items,
+      featureRules.benefitsItemsMin
+    );
+    requireCount(
+      'feature',
+      page.slug,
+      'sections.useCases.items',
+      page.sections.useCases?.items,
+      featureRules.useCasesItemsMin
+    );
     requireCount(
       'feature',
       page.slug,
@@ -157,15 +211,39 @@ function validateFeaturePages(pages) {
       page.sections.capabilities?.featureCategories,
       featureRules.capabilitiesFeatureCategoriesMin
     );
-    requireCount('feature', page.slug, 'sections.faq.items', page.sections.faq?.items, featureRules.faqItemsMin);
-    requireCount('feature', page.slug, 'sections.explore.cards', page.sections.explore?.cards, featureRules.exploreCardsMin);
+    requireCount(
+      'feature',
+      page.slug,
+      'sections.faq.items',
+      page.sections.faq?.items,
+      featureRules.faqItemsMin
+    );
+    requireCount(
+      'feature',
+      page.slug,
+      'sections.explore.cards',
+      page.sections.explore?.cards,
+      featureRules.exploreCardsMin
+    );
 
     if (page.sections.channels) {
-      requireCount('feature', page.slug, 'sections.channels.items', page.sections.channels.items, featureRules.channelsItemsMin);
+      requireCount(
+        'feature',
+        page.slug,
+        'sections.channels.items',
+        page.sections.channels.items,
+        featureRules.channelsItemsMin
+      );
     }
 
     if (page.sections.painPoints) {
-      requireCount('feature', page.slug, 'sections.painPoints.items', page.sections.painPoints.items, featureRules.painPointsItemsMin);
+      requireCount(
+        'feature',
+        page.slug,
+        'sections.painPoints.items',
+        page.sections.painPoints.items,
+        featureRules.painPointsItemsMin
+      );
     }
 
     if (page.sections.testimonials) {
@@ -187,35 +265,101 @@ function validateResourcePages(resources) {
     for (const section of resource.sections) {
       switch (section.type) {
         case 'takeaways':
-          requireCount('resource', resource.slug, 'takeaways.items', section.items, resourceRules.takeawaysItemsMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'takeaways.items',
+            section.items,
+            resourceRules.takeawaysItemsMin
+          );
           break;
         case 'problem':
-          requireCount('resource', resource.slug, 'problem.items', section.items, resourceRules.problemItemsMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'problem.items',
+            section.items,
+            resourceRules.problemItemsMin
+          );
           break;
         case 'business-costs':
-          requireCount('resource', resource.slug, 'business-costs.items', section.items, resourceRules.businessCostsItemsMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'business-costs.items',
+            section.items,
+            resourceRules.businessCostsItemsMin
+          );
           break;
         case 'diy':
-          requireCount('resource', resource.slug, 'diy.steps', section.steps, resourceRules.diyStepsMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'diy.steps',
+            section.steps,
+            resourceRules.diyStepsMin
+          );
           break;
         case 'solution-cards':
-          requireCount('resource', resource.slug, 'solution-cards.solutions', section.solutions, resourceRules.solutionCardsMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'solution-cards.solutions',
+            section.solutions,
+            resourceRules.solutionCardsMin
+          );
           break;
         case 'templates':
-          requireCount('resource', resource.slug, 'templates.items', section.items, resourceRules.templatesItemsMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'templates.items',
+            section.items,
+            resourceRules.templatesItemsMin
+          );
           break;
         case 'checklist':
-          requireCount('resource', resource.slug, 'checklist.items', section.items, resourceRules.checklistItemsMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'checklist.items',
+            section.items,
+            resourceRules.checklistItemsMin
+          );
           break;
         case 'faq':
-          requireCount('resource', resource.slug, 'faq.items', section.items, resourceRules.faqItemsMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'faq.items',
+            section.items,
+            resourceRules.faqItemsMin
+          );
           break;
         case 'comparison':
-          requireCount('resource', resource.slug, 'comparison.before.items', section.before?.items, resourceRules.comparisonBeforeItemsMin);
-          requireCount('resource', resource.slug, 'comparison.after.items', section.after?.items, resourceRules.comparisonAfterItemsMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'comparison.before.items',
+            section.before?.items,
+            resourceRules.comparisonBeforeItemsMin
+          );
+          requireCount(
+            'resource',
+            resource.slug,
+            'comparison.after.items',
+            section.after?.items,
+            resourceRules.comparisonAfterItemsMin
+          );
           break;
         case 'related-resources':
-          requireCount('resource', resource.slug, 'related-resources.resources', section.resources, resourceRules.relatedResourcesMin);
+          requireCount(
+            'resource',
+            resource.slug,
+            'related-resources.resources',
+            section.resources,
+            resourceRules.relatedResourcesMin
+          );
           break;
         default:
           break;
@@ -231,28 +375,76 @@ function validateCaseStudies(caseStudies) {
     for (const section of caseStudy.sections) {
       switch (section.type) {
         case 'metrics':
-          requireCount('case-study', caseStudy.slug, 'metrics.keyMetrics', section.keyMetrics, caseStudyRules.metricsKeyMetricsMin);
+          requireCount(
+            'case-study',
+            caseStudy.slug,
+            'metrics.keyMetrics',
+            section.keyMetrics,
+            caseStudyRules.metricsKeyMetricsMin
+          );
           break;
         case 'problem':
-          requireCount('case-study', caseStudy.slug, 'problem.painPoints', section.painPoints, caseStudyRules.problemPainPointsMin);
+          requireCount(
+            'case-study',
+            caseStudy.slug,
+            'problem.painPoints',
+            section.painPoints,
+            caseStudyRules.problemPainPointsMin
+          );
           break;
         case 'solution':
-          requireCount('case-study', caseStudy.slug, 'solution.whatWeDid', section.whatWeDid, caseStudyRules.solutionWhatWeDidMin);
+          requireCount(
+            'case-study',
+            caseStudy.slug,
+            'solution.whatWeDid',
+            section.whatWeDid,
+            caseStudyRules.solutionWhatWeDidMin
+          );
           break;
         case 'process':
-          requireCount('case-study', caseStudy.slug, 'process.howWeDidIt', section.howWeDidIt, caseStudyRules.processHowWeDidItMin);
+          requireCount(
+            'case-study',
+            caseStudy.slug,
+            'process.howWeDidIt',
+            section.howWeDidIt,
+            caseStudyRules.processHowWeDidItMin
+          );
           break;
         case 'features':
-          requireCount('case-study', caseStudy.slug, 'features.featuresUsed', section.featuresUsed, caseStudyRules.featuresUsedMin);
+          requireCount(
+            'case-study',
+            caseStudy.slug,
+            'features.featuresUsed',
+            section.featuresUsed,
+            caseStudyRules.featuresUsedMin
+          );
           break;
         case 'results':
-          requireCount('case-study', caseStudy.slug, 'results.results', section.results, caseStudyRules.resultsMin);
+          requireCount(
+            'case-study',
+            caseStudy.slug,
+            'results.results',
+            section.results,
+            caseStudyRules.resultsMin
+          );
           break;
         case 'deliverables':
-          requireCount('case-study', caseStudy.slug, 'deliverables.items', section.items, caseStudyRules.deliverablesItemsMin);
+          requireCount(
+            'case-study',
+            caseStudy.slug,
+            'deliverables.items',
+            section.items,
+            caseStudyRules.deliverablesItemsMin
+          );
           break;
         case 'workflows':
-          requireCount('case-study', caseStudy.slug, 'workflows.workflows', section.workflows, caseStudyRules.workflowsMin);
+          requireCount(
+            'case-study',
+            caseStudy.slug,
+            'workflows.workflows',
+            section.workflows,
+            caseStudyRules.workflowsMin
+          );
           for (const [index, workflow] of (section.workflows ?? []).entries()) {
             requireCount(
               'case-study',
@@ -264,7 +456,13 @@ function validateCaseStudies(caseStudies) {
           }
           break;
         case 'faq':
-          requireCount('case-study', caseStudy.slug, 'faq.items', section.items, caseStudyRules.faqItemsMin);
+          requireCount(
+            'case-study',
+            caseStudy.slug,
+            'faq.items',
+            section.items,
+            caseStudyRules.faqItemsMin
+          );
           break;
         default:
           break;

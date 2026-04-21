@@ -27,19 +27,28 @@ describe('integration: route module rendering', () => {
     const blogNode = getGraphNodes('blog')[0];
     const resourceNode = getGraphNodes('resource')[0];
     const caseStudyNode = getGraphNodes('case-study')[0];
-    const industryNode = getGraphNodes('industry-detail')[0] ?? getGraphNodes('industry-category')[0];
+    const industryNode =
+      getGraphNodes('industry-detail')[0] ?? getGraphNodes('industry-category')[0];
 
     await expect(
-      render(servicePage({ params: Promise.resolve({ slug: toCatchAllParam(serviceNode.path, '/services/') }) }))
+      render(
+        servicePage({
+          params: Promise.resolve({ slug: toCatchAllParam(serviceNode.path, '/services/') }),
+        })
+      )
     ).resolves.toContain(serviceNode.slug);
 
     await expect(
-      render(featurePage({ params: Promise.resolve({ slug: toCatchAllParam(featureNode.path, '/features/') }) }))
+      render(
+        featurePage({
+          params: Promise.resolve({ slug: toCatchAllParam(featureNode.path, '/features/') }),
+        })
+      )
     ).resolves.toContain('application/ld+json');
 
-    await expect(render(blogPage({ params: Promise.resolve({ slug: blogNode.slug }) }))).resolves.toContain(
-      'article-jsonld'
-    );
+    await expect(
+      render(blogPage({ params: Promise.resolve({ slug: blogNode.slug }) }))
+    ).resolves.toContain('article-jsonld');
 
     await expect(
       render(resourcePage({ params: Promise.resolve({ slug: resourceNode.slug }) }))
@@ -50,16 +59,32 @@ describe('integration: route module rendering', () => {
     ).resolves.toContain('case-study-article-jsonld');
 
     await expect(
-      render(industryPage({ params: Promise.resolve({ slug: toCatchAllParam(industryNode.path, '/industries/') }) }))
+      render(
+        industryPage({
+          params: Promise.resolve({ slug: toCatchAllParam(industryNode.path, '/industries/') }),
+        })
+      )
     ).resolves.toContain('industries-breadcrumb-jsonld');
   });
 
   test('rejects invalid dynamic route params instead of silently rendering bad content', async () => {
-    await expect(servicePage({ params: Promise.resolve({ slug: ['not-a-service'] }) })).rejects.toThrow();
-    await expect(featurePage({ params: Promise.resolve({ slug: ['not-a-feature'] }) })).rejects.toThrow();
-    await expect(blogPage({ params: Promise.resolve({ slug: 'not-a-blog-post' }) })).rejects.toThrow();
-    await expect(resourcePage({ params: Promise.resolve({ slug: 'not-a-resource' }) })).rejects.toThrow();
-    await expect(caseStudyPage({ params: Promise.resolve({ slug: 'not-a-case-study' }) })).rejects.toThrow();
-    await expect(industryPage({ params: Promise.resolve({ slug: ['not-a-category'] }) })).rejects.toThrow();
+    await expect(
+      servicePage({ params: Promise.resolve({ slug: ['not-a-service'] }) })
+    ).rejects.toThrow();
+    await expect(
+      featurePage({ params: Promise.resolve({ slug: ['not-a-feature'] }) })
+    ).rejects.toThrow();
+    await expect(
+      blogPage({ params: Promise.resolve({ slug: 'not-a-blog-post' }) })
+    ).rejects.toThrow();
+    await expect(
+      resourcePage({ params: Promise.resolve({ slug: 'not-a-resource' }) })
+    ).rejects.toThrow();
+    await expect(
+      caseStudyPage({ params: Promise.resolve({ slug: 'not-a-case-study' }) })
+    ).rejects.toThrow();
+    await expect(
+      industryPage({ params: Promise.resolve({ slug: ['not-a-category'] }) })
+    ).rejects.toThrow();
   });
 });

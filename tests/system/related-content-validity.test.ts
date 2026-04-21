@@ -20,11 +20,18 @@ describe('system invariant: related content stays valid at runtime', () => {
           expect(item.slug, `Related content self-linked on ${node.path}`).not.toBe(node.slug);
 
           const targetNode = getGraphNodes().find(candidate => candidate.path === item.path);
-          expect(targetNode, `Dead related-content target "${item.path}" from ${node.path}`).toBeDefined();
-          expect(targetNode?.slug, `Slug drift for related-content target "${item.path}" from ${node.path}`).toBe(
-            item.slug
-          );
-          expect(item.title.length, `Missing related-content title for "${item.slug}" from ${node.path}`).toBeGreaterThan(0);
+          expect(
+            targetNode,
+            `Dead related-content target "${item.path}" from ${node.path}`
+          ).toBeDefined();
+          expect(
+            targetNode?.slug,
+            `Slug drift for related-content target "${item.path}" from ${node.path}`
+          ).toBe(item.slug);
+          expect(
+            item.title.length,
+            `Missing related-content title for "${item.slug}" from ${node.path}`
+          ).toBeGreaterThan(0);
         }
       }
     }

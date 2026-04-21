@@ -11,6 +11,8 @@ import {
   initContentGraph,
 } from '@/lib/content-graph/registry';
 import { getResolverIndexes, initResolverIndexes } from '@/lib/content-graph/resolverIndexes';
+import fs from 'node:fs';
+import path from 'node:path';
 
 import { setInitMetrics } from './metrics';
 
@@ -79,17 +81,22 @@ export async function ensureGraphInitialized(): Promise<void> {
     );
 
     const t3 = performance.now();
+    const metrics = {
+      totalTime: t3 - t0,
+      contentGraphTime: t1 - t0,
+      resolverIndexesTime: t2 - t1,
+      resolverCreationTime: t3 - t2,
+    };
+
+    setInitMetrics(metrics);
+
+    const metricsPath = process.env.MINDWP_GRAPH_INIT_METRICS_FILE;
+    if (metricsPath) {
+      fs.mkdirSync(path.dirname(metricsPath), { recursive: true });
+      fs.writeFileSync(metricsPath, JSON.stringify(metrics, null, 2) + '\n', 'utf8');
+    }
 
     if (shouldProfile) {
-      const metrics = {
-        totalTime: t3 - t0,
-        contentGraphTime: t1 - t0,
-        resolverIndexesTime: t2 - t1,
-        resolverCreationTime: t3 - t2,
-      };
-
-      setInitMetrics(metrics);
-
       // eslint-disable-next-line no-console
       console.debug('[graph:init]', metrics);
     }

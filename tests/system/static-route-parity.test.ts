@@ -33,7 +33,9 @@ describe('system invariant: static route parity', () => {
     )
       .map(route => route.path)
       .sort((left, right) => left.localeCompare(right));
-    const staticPagePaths = STATIC_PAGES.map(page => page.url).sort((left, right) => left.localeCompare(right));
+    const staticPagePaths = STATIC_PAGES.map(page => page.url).sort((left, right) =>
+      left.localeCompare(right)
+    );
     const humanStaticPagePaths = STATIC_PAGES.filter(page => page.showOnHumanSitemap !== false)
       .map(page => page.url)
       .sort((left, right) => left.localeCompare(right));

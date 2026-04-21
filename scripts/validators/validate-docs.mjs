@@ -10,8 +10,8 @@
  * - Broken links (basic check)
  */
 
-import fs from "fs";
-import path from "path";
+import fs from 'fs';
+import path from 'path';
 
 const args = new Set(process.argv.slice(2));
 const shouldReportJson = args.has('--report-json');
@@ -20,11 +20,11 @@ const WORKSPACE_ROOT = process.cwd();
 
 function resolveDocsDir() {
   const candidates = [
-    path.join(WORKSPACE_ROOT, "src", "internal", "docs"),
-    path.join(WORKSPACE_ROOT, "Mindwp-Docs"),
-    path.join(WORKSPACE_ROOT, "MindWP-Docs"),
-    path.join(WORKSPACE_ROOT, "..", "Mindwp-Docs"),
-    path.join(WORKSPACE_ROOT, "..", "MindWP-Docs"),
+    path.join(WORKSPACE_ROOT, 'src', 'internal', 'docs'),
+    path.join(WORKSPACE_ROOT, 'Mindwp-Docs'),
+    path.join(WORKSPACE_ROOT, 'MindWP-Docs'),
+    path.join(WORKSPACE_ROOT, '..', 'Mindwp-Docs'),
+    path.join(WORKSPACE_ROOT, '..', 'MindWP-Docs'),
   ];
 
   for (const candidate of candidates) {
@@ -39,8 +39,8 @@ function resolveDocsDir() {
 
   throw new Error(
     `Could not locate docs directory. Checked: ${candidates
-      .map(p => path.relative(WORKSPACE_ROOT, p) || ".")
-      .join(", ")}`
+      .map(p => path.relative(WORKSPACE_ROOT, p) || '.')
+      .join(', ')}`
   );
 }
 
@@ -58,20 +58,20 @@ function walkFiles(dir) {
       continue;
     }
     if (!ent.isFile()) continue;
-    if (!full.endsWith(".md")) continue;
+    if (!full.endsWith('.md')) continue;
     out.push(full);
   }
   return out;
 }
 
 function toRel(absPath) {
-  return path.relative(WORKSPACE_ROOT, absPath).replaceAll(path.sep, "/");
+  return path.relative(WORKSPACE_ROOT, absPath).replaceAll(path.sep, '/');
 }
 
 function lineOfIndex(text, index) {
   let line = 1;
   for (let i = 0; i < index && i < text.length; i++) {
-    if (text[i] === "\n") line++;
+    if (text[i] === '\n') line++;
   }
   return line;
 }
@@ -79,14 +79,14 @@ function lineOfIndex(text, index) {
 function addViolation(fileAbs, index, rule, message) {
   violations.push({
     file: toRel(fileAbs),
-    line: lineOfIndex(fs.readFileSync(fileAbs, "utf8"), index),
+    line: lineOfIndex(fs.readFileSync(fileAbs, 'utf8'), index),
     rule,
     message,
   });
 }
 
 function validateMarkdownFile(fileAbs) {
-  const content = fs.readFileSync(fileAbs, "utf8");
+  const content = fs.readFileSync(fileAbs, 'utf8');
   const filename = path.basename(fileAbs);
 
   // Basic validation - check for broken links and malformed markdown
@@ -94,17 +94,17 @@ function validateMarkdownFile(fileAbs) {
   let match;
   while ((match = linkRegex.exec(content)) !== null) {
     const link = match[2];
-    if (link.startsWith("./") || link.startsWith("../")) {
+    if (link.startsWith('./') || link.startsWith('../')) {
       const linkPath = path.resolve(path.dirname(fileAbs), link);
       if (!fs.existsSync(linkPath)) {
         // Check if it's a directory or file
         try {
-          const stat = fs.statSync(linkPath.replace(/\.md$/, ""));
+          const stat = fs.statSync(linkPath.replace(/\.md$/, ''));
           if (!stat) {
-            addViolation(fileAbs, match.index, "BROKEN_LINK", `Broken internal link: ${link}`);
+            addViolation(fileAbs, match.index, 'BROKEN_LINK', `Broken internal link: ${link}`);
           }
         } catch (e) {
-          addViolation(fileAbs, match.index, "BROKEN_LINK", `Broken internal link: ${link}`);
+          addViolation(fileAbs, match.index, 'BROKEN_LINK', `Broken internal link: ${link}`);
         }
       }
     }
@@ -120,7 +120,7 @@ function validateMarkdownFile(fileAbs) {
 }
 
 function main() {
-  console.log("[validate-docs] Validating documentation files...");
+  console.log('[validate-docs] Validating documentation files...');
 
   const DOCS_DIR = resolveDocsDir();
   const docFiles = walkFiles(DOCS_DIR);
@@ -137,7 +137,7 @@ function main() {
     return;
   }
 
-  console.log("[validate-docs] All documentation files passed validation");
+  console.log('[validate-docs] All documentation files passed validation');
 }
 
 try {
@@ -145,13 +145,36 @@ try {
   if (shouldReportJson) {
     const reportPath = path.join(WORKSPACE_ROOT, 'reports', 'docs-report.json');
     fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-    fs.writeFileSync(reportPath, JSON.stringify({ generatedAt: new Date().toISOString(), passed: true, violationCount: violations.length, violations }, null, 2));
+    fs.writeFileSync(
+      reportPath,
+      JSON.stringify(
+        {
+          generatedAt: new Date().toISOString(),
+          passed: true,
+          violationCount: violations.length,
+          violations,
+        },
+        null,
+        2
+      )
+    );
   }
 } catch (err) {
   if (shouldReportJson) {
     const reportPath = path.join(WORKSPACE_ROOT, 'reports', 'docs-report.json');
     fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-    fs.writeFileSync(reportPath, JSON.stringify({ generatedAt: new Date().toISOString(), passed: true, warning: err instanceof Error ? err.message : String(err) }, null, 2));
+    fs.writeFileSync(
+      reportPath,
+      JSON.stringify(
+        {
+          generatedAt: new Date().toISOString(),
+          passed: true,
+          warning: err instanceof Error ? err.message : String(err),
+        },
+        null,
+        2
+      )
+    );
   }
   console.warn(`[validate-docs] ${err instanceof Error ? err.message : String(err)}`);
 }

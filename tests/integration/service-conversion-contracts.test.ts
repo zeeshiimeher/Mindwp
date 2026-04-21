@@ -22,15 +22,20 @@ describe('integration: service conversion contracts', () => {
       const transformationProof = data.transformationProof as Record<string, any> | undefined;
 
       expect(isNonEmptyString(data.hero?.title), `${slug} must define hero.title`).toBe(true);
-      expect(isNonEmptyString(data.hero?.description), `${slug} must define hero.description`).toBe(true);
+      expect(isNonEmptyString(data.hero?.description), `${slug} must define hero.description`).toBe(
+        true
+      );
 
       expect(isNonEmptyString(data.cta?.title), `${slug} must define cta.title`).toBe(true);
-      expect(isNonEmptyString(data.cta?.description), `${slug} must define cta.description`).toBe(true);
+      expect(isNonEmptyString(data.cta?.description), `${slug} must define cta.description`).toBe(
+        true
+      );
 
       if (data.inlineCta) {
-        expect(isNonEmptyString(data.inlineCta.title), `${slug} inlineCta.title must be non-empty`).toBe(
-          true
-        );
+        expect(
+          isNonEmptyString(data.inlineCta.title),
+          `${slug} inlineCta.title must be non-empty`
+        ).toBe(true);
         expect(
           isNonEmptyString(data.inlineCta.description),
           `${slug} inlineCta.description must be non-empty`
@@ -41,9 +46,13 @@ describe('integration: service conversion contracts', () => {
         const strongFitItems = asArray(qualification.strongFitItems ?? qualification.strongFit);
         const notFitItems = asArray(qualification.notDesignedItems ?? qualification.notFor);
         const qualificationTitle = qualification.title ?? qualification.header?.title;
-        const qualificationDescription = qualification.description ?? qualification.header?.description;
+        const qualificationDescription =
+          qualification.description ?? qualification.header?.description;
 
-        expect(isNonEmptyString(qualificationTitle), `${slug} qualification.title must be non-empty`).toBe(true);
+        expect(
+          isNonEmptyString(qualificationTitle),
+          `${slug} qualification.title must be non-empty`
+        ).toBe(true);
         expect(
           isNonEmptyString(qualificationDescription),
           `${slug} qualification.description must be non-empty`
@@ -53,19 +62,26 @@ describe('integration: service conversion contracts', () => {
           `${slug} qualification.strongFitTitle must be non-empty`
         ).toBe(true);
         expect(
-          isNonEmptyString(qualification.notDesignedTitle) || isNonEmptyString(qualification.notForTitle),
+          isNonEmptyString(qualification.notDesignedTitle) ||
+            isNonEmptyString(qualification.notForTitle),
           `${slug} qualification must define a non-empty not-fit title`
         ).toBe(true);
-        expect(strongFitItems.length > 0, `${slug} qualification must include strong-fit items`).toBe(true);
-        expect(notFitItems.length > 0, `${slug} qualification must include not-fit items`).toBe(true);
+        expect(
+          strongFitItems.length > 0,
+          `${slug} qualification must include strong-fit items`
+        ).toBe(true);
+        expect(notFitItems.length > 0, `${slug} qualification must include not-fit items`).toBe(
+          true
+        );
       }
 
       if (proof) {
         const proofItems = proof.cards ?? proof.items;
 
-        expect(isNonEmptyString(proof.header?.title), `${slug} proof.header.title must be non-empty`).toBe(
-          true
-        );
+        expect(
+          isNonEmptyString(proof.header?.title),
+          `${slug} proof.header.title must be non-empty`
+        ).toBe(true);
         expect(
           isNonEmptyString(proof.header?.description),
           `${slug} proof.header.description must be non-empty`

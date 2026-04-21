@@ -14,7 +14,10 @@ describe('integration: template rendering across all publishable content', () =>
     for (const node of getGraphNodes()) {
       const markup = await renderPublishableNode(node);
       expect(markup.length, `Empty markup for ${node.path}`).toBeGreaterThan(100);
-      expect(markup.includes('Page not found.'), `Route fell through to a 404 render for ${node.path}`).toBe(false);
+      expect(
+        markup.includes('Page not found.'),
+        `Route fell through to a 404 render for ${node.path}`
+      ).toBe(false);
     }
   }, 300_000);
 });

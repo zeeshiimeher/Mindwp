@@ -65,7 +65,9 @@ describe('system invariant: all publishable content has a generated route', () =
       )
     );
     const actual = toSorted(
-      (await industryRoute.generateStaticParams()).map(param => `/industries/${param.slug.join('/')}`)
+      (await industryRoute.generateStaticParams()).map(
+        param => `/industries/${param.slug.join('/')}`
+      )
     );
 
     expect(actual).toEqual(expected);
@@ -84,7 +86,10 @@ describe('system invariant: all publishable content has a generated route', () =
       expect(featurePaths).toContainEqual({ slug: toCatchAllParam(node.path, '/features/') });
     }
 
-    for (const node of [...getGraphNodes('industry-category'), ...getGraphNodes('industry-detail')]) {
+    for (const node of [
+      ...getGraphNodes('industry-category'),
+      ...getGraphNodes('industry-detail'),
+    ]) {
       expect(industryPaths).toContainEqual({ slug: toCatchAllParam(node.path, '/industries/') });
     }
   });

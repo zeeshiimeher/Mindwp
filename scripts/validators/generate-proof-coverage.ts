@@ -55,12 +55,12 @@ function detectProofSignals(text: string) {
   const hasBeforeAfter =
     (/\bbefore\b/.test(normalized) && /\bafter\b/.test(normalized)) ||
     /\bfrom\b.+\bto\b/.test(normalized);
-  const hasMetric = /\b\d+(?:\.\d+)?\s?(?:%|x|hours?|days?|minutes?|seconds?|weeks?|months?|calls?|leads?|bookings?|jobs?)\b/i.test(
-    text
-  );
-  const hasProofLanguage = /(result|results|reduced|increased|improved|dropped|grew|lifted|cut|faster|slower)/i.test(
-    text
-  );
+  const hasMetric =
+    /\b\d+(?:\.\d+)?\s?(?:%|x|hours?|days?|minutes?|seconds?|weeks?|months?|calls?|leads?|bookings?|jobs?)\b/i.test(
+      text
+    );
+  const hasProofLanguage =
+    /(result|results|reduced|increased|improved|dropped|grew|lifted|cut|faster|slower)/i.test(text);
 
   if (hasBeforeAfter && hasMetric) {
     return { hasProof: true, reason: 'before/after and measurable metric detected' };
@@ -87,9 +87,18 @@ const datasets: Array<{ page: string; data: unknown }> = [
     data: entry.data,
   })),
   ...Object.values(BLOG_POSTS).map(post => ({ page: `/blog/${post.slug}`, data: post })),
-  ...Object.values(RESOURCE_REGISTRY).map(resource => ({ page: resource.seo.canonical, data: resource })),
-  ...Object.values(CASE_STUDY_REGISTRY).map(caseStudy => ({ page: caseStudy.seo.canonical, data: caseStudy })),
-  ...Object.entries(INDUSTRY_REGISTRY).map(([, industry]) => ({ page: industry.seo.canonical, data: industry })),
+  ...Object.values(RESOURCE_REGISTRY).map(resource => ({
+    page: resource.seo.canonical,
+    data: resource,
+  })),
+  ...Object.values(CASE_STUDY_REGISTRY).map(caseStudy => ({
+    page: caseStudy.seo.canonical,
+    data: caseStudy,
+  })),
+  ...Object.entries(INDUSTRY_REGISTRY).map(([, industry]) => ({
+    page: industry.seo.canonical,
+    data: industry,
+  })),
   ...FEATURE_REGISTRY.map(feature => ({ page: feature.path, data: feature })),
 ];
 

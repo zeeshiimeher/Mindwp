@@ -41,7 +41,12 @@ function validateServicePages(pages) {
       (serviceRules.heroTitleRequired && !hasText(page.hero.title)) ||
       (serviceRules.heroDescriptionRequired && !hasText(page.hero.description))
     ) {
-      pushViolation('service', page.slug, 'hero-incomplete', 'Hero requires title and description.');
+      pushViolation(
+        'service',
+        page.slug,
+        'hero-incomplete',
+        'Hero requires title and description.'
+      );
     }
 
     if (page.cta) {
@@ -49,7 +54,12 @@ function validateServicePages(pages) {
         (serviceRules.ctaTitleRequired && !hasText(page.cta.title)) ||
         (serviceRules.ctaDescriptionRequired && !hasText(page.cta.description))
       ) {
-        pushViolation('service', page.slug, 'cta-copy-incomplete', 'CTA block requires title and description.');
+        pushViolation(
+          'service',
+          page.slug,
+          'cta-copy-incomplete',
+          'CTA block requires title and description.'
+        );
       }
     }
 
@@ -58,7 +68,12 @@ function validateServicePages(pages) {
         (serviceRules.inlineCtaTitleRequired && !hasText(page.inlineCta.title)) ||
         (serviceRules.inlineCtaDescriptionRequired && !hasText(page.inlineCta.description))
       ) {
-        pushViolation('service', page.slug, 'inline-cta-copy-incomplete', 'Inline CTA requires title and description.');
+        pushViolation(
+          'service',
+          page.slug,
+          'inline-cta-copy-incomplete',
+          'Inline CTA requires title and description.'
+        );
       }
     }
   }
@@ -73,12 +88,22 @@ function validateFeaturePages(pages) {
       (featureRules.heroTitleRequired && !hasText(page.hero.title)) ||
       (featureRules.heroDescriptionRequired && !hasText(page.hero.description))
     ) {
-      pushViolation('feature', page.slug, 'hero-incomplete', 'Hero requires title and description.');
+      pushViolation(
+        'feature',
+        page.slug,
+        'hero-incomplete',
+        'Hero requires title and description.'
+      );
     }
 
     for (const sectionKey of featureRules.requiredSectionKeys) {
       if (!page.sections[sectionKey]) {
-        pushViolation('feature', page.slug, 'missing-required-section', `Missing required section: ${sectionKey}.`);
+        pushViolation(
+          'feature',
+          page.slug,
+          'missing-required-section',
+          `Missing required section: ${sectionKey}.`
+        );
       }
     }
 
@@ -86,7 +111,12 @@ function validateFeaturePages(pages) {
       (featureRules.ctaTitleRequired && !hasText(page.cta?.title)) ||
       (featureRules.ctaDescriptionRequired && !hasText(page.cta?.description))
     ) {
-      pushViolation('feature', page.slug, 'cta-copy-incomplete', 'Feature CTA requires title and description.');
+      pushViolation(
+        'feature',
+        page.slug,
+        'cta-copy-incomplete',
+        'Feature CTA requires title and description.'
+      );
     }
   }
 }
@@ -99,7 +129,12 @@ function validateResourcePages(resources) {
 
     for (const requiredType of resourceRules.requiredSectionTypes) {
       if (!sectionTypes.has(requiredType)) {
-        pushViolation('resource', resource.slug, 'missing-required-section', `Missing required section: ${requiredType}.`);
+        pushViolation(
+          'resource',
+          resource.slug,
+          'missing-required-section',
+          `Missing required section: ${requiredType}.`
+        );
       }
     }
 
@@ -109,7 +144,12 @@ function validateResourcePages(resources) {
       (resourceRules.ctaHeadingRequired && !hasText(cta.heading)) ||
       (resourceRules.ctaContentRequired && !hasText(cta.content))
     ) {
-      pushViolation('resource', resource.slug, 'cta-incomplete', 'Resource CTA requires heading and content.');
+      pushViolation(
+        'resource',
+        resource.slug,
+        'cta-incomplete',
+        'Resource CTA requires heading and content.'
+      );
     }
 
     const related = resource.sections.find(section => section.type === 'related-resources');
@@ -118,7 +158,12 @@ function validateResourcePages(resources) {
       !Array.isArray(related.resources) ||
       related.resources.length < resourceRules.relatedResourcesMin
     ) {
-      pushViolation('resource', resource.slug, 'related-resources-missing', 'Resource page requires at least one related resource.');
+      pushViolation(
+        'resource',
+        resource.slug,
+        'related-resources-missing',
+        'Resource page requires at least one related resource.'
+      );
     }
   }
 }
@@ -130,12 +175,22 @@ function validateCaseStudies(caseStudies) {
     const sectionTypes = new Set(caseStudy.sections.map(section => section.type));
 
     if (caseStudyRules.heroSectionRequired && !sectionTypes.has('hero')) {
-      pushViolation('case-study', caseStudy.slug, 'missing-required-section', 'Missing required hero section.');
+      pushViolation(
+        'case-study',
+        caseStudy.slug,
+        'missing-required-section',
+        'Missing required hero section.'
+      );
     }
 
     const cta = caseStudy.sections.find(section => section.type === 'cta');
     if (caseStudyRules.ctaSectionRequired && !cta) {
-      pushViolation('case-study', caseStudy.slug, 'missing-required-section', 'Missing required cta section.');
+      pushViolation(
+        'case-study',
+        caseStudy.slug,
+        'missing-required-section',
+        'Missing required cta section.'
+      );
       continue;
     }
 
@@ -144,7 +199,12 @@ function validateCaseStudies(caseStudies) {
       (caseStudyRules.ctaHeadingRequired && !hasText(cta.heading)) ||
       (caseStudyRules.ctaBodyRequired && !hasText(cta.body))
     ) {
-      pushViolation('case-study', caseStudy.slug, 'cta-copy-incomplete', 'Case study CTA requires heading and body.');
+      pushViolation(
+        'case-study',
+        caseStudy.slug,
+        'cta-copy-incomplete',
+        'Case study CTA requires heading and body.'
+      );
     }
   }
 }
@@ -158,19 +218,38 @@ function validateIndustryPages(pages) {
       (industryRules.heroTitleRequired && !hasText(page.hero.title)) ||
       (industryRules.heroDescriptionRequired && !hasText(page.hero.description))
     ) {
-      pushViolation('industry', page.slug, 'hero-incomplete', 'Hero requires title and description.');
+      pushViolation(
+        'industry',
+        page.slug,
+        'hero-incomplete',
+        'Hero requires title and description.'
+      );
     }
 
     if (
       (industryRules.ctaTitleRequired && !hasText(page.cta?.title)) ||
       (industryRules.ctaDescriptionRequired && !hasText(page.cta?.description))
     ) {
-      pushViolation('industry', page.slug, 'cta-copy-incomplete', 'Industry CTA requires title and description.');
+      pushViolation(
+        'industry',
+        page.slug,
+        'cta-copy-incomplete',
+        'Industry CTA requires title and description.'
+      );
     }
 
     if (page.type === 'detail') {
-      if (!page.faq || !Array.isArray(page.faq.faqs) || page.faq.faqs.length < industryRules.detailFaqMin) {
-        pushViolation('industry', page.slug, 'faq-missing', 'Industry detail pages require a populated FAQ block.');
+      if (
+        !page.faq ||
+        !Array.isArray(page.faq.faqs) ||
+        page.faq.faqs.length < industryRules.detailFaqMin
+      ) {
+        pushViolation(
+          'industry',
+          page.slug,
+          'faq-missing',
+          'Industry detail pages require a populated FAQ block.'
+        );
       }
     }
   }
@@ -210,7 +289,10 @@ async function main() {
 
   if (violations.length > 0) {
     logger.printErrors(
-      violations.map(violation => `[${violation.pageType}] ${violation.slug}: ${violation.rule} - ${violation.detail}`),
+      violations.map(
+        violation =>
+          `[${violation.pageType}] ${violation.slug}: ${violation.rule} - ${violation.detail}`
+      ),
       'violations',
       20
     );

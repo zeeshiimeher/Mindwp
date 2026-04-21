@@ -148,7 +148,8 @@ function main() {
     const slug = requireArg(args, 'slug');
     const before = parseScore('before', requireArg(args, 'before'));
     const after = parseScore('after', requireArg(args, 'after'));
-    const notes = typeof args.notes === 'string' && args.notes.trim() ? args.notes.trim() : undefined;
+    const notes =
+      typeof args.notes === 'string' && args.notes.trim() ? args.notes.trim() : undefined;
 
     validateEnum('type', type, VALID_TYPES);
     validateEnum('impact', impact, VALID_IMPACTS);

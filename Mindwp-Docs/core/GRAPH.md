@@ -42,14 +42,14 @@ That metadata feeds:
 
 ## CANONICAL NODE TYPES
 
-| Node Type | Role |
-|---|---|
-| Service | primary system node and BOFU destination |
-| Feature | capability node subordinate to a system |
-| Blog | problem and discovery node |
-| Resource | framework and implementation node |
-| Case Study | proof node |
-| Industry Detail | vertical application node |
+| Node Type         | Role                                                |
+| ----------------- | --------------------------------------------------- |
+| Service           | primary system node and BOFU destination            |
+| Feature           | capability node subordinate to a system             |
+| Blog              | problem and discovery node                          |
+| Resource          | framework and implementation node                   |
+| Case Study        | proof node                                          |
+| Industry Detail   | vertical application node                           |
 | Industry Category | taxonomy container, not a derived-relationship node |
 
 ### Feature Rule
@@ -132,15 +132,15 @@ Every routed page also exposes:
 
 ### Field Expectations By Node Type
 
-| Node Type | `industries[]` | `systems[]` | `topics[]` |
-|---|---|---|---|
-| Blog | optional | required | required |
-| Resource | optional | required | required |
-| Case Study | required | required | optional |
-| Feature | not used | required | optional |
-| Industry Detail | required | required | optional |
-| Industry Category | optional | required | optional |
-| Service | not used | required | optional |
+| Node Type         | `industries[]` | `systems[]` | `topics[]` |
+| ----------------- | -------------- | ----------- | ---------- |
+| Blog              | optional       | required    | required   |
+| Resource          | optional       | required    | required   |
+| Case Study        | required       | required    | optional   |
+| Feature           | not used       | required    | optional   |
+| Industry Detail   | required       | required    | optional   |
+| Industry Category | optional       | required    | optional   |
+| Service           | not used       | required    | optional   |
 
 ### Primary System Rule
 

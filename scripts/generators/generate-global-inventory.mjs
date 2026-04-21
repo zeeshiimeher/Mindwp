@@ -20,11 +20,7 @@ function getSourceBaseDir() {
   });
 }
 
-const DOC_RELATIVE_CANDIDATES = [
-  [
-    'Mindwp-Docs/core/GLOBAL-COMPONENTS-CATALOG.md',
-  ],
-];
+const DOC_RELATIVE_CANDIDATES = [['Mindwp-Docs/core/GLOBAL-COMPONENTS-CATALOG.md']];
 
 const START = '<!-- AUTO-GENERATED:GLOBAL-INVENTORY:START -->';
 const END = '<!-- AUTO-GENERATED:GLOBAL-INVENTORY:END -->';
@@ -140,11 +136,13 @@ async function generateInventoryMarkdown() {
 
   // Site chrome
   parts.push('### Site chrome');
-  parts.push(toMarkdownTable([
-    { name: 'Header', source: `${sourceBaseRel}/global/Header.tsx` },
-    { name: 'Footer', source: `${sourceBaseRel}/global/Footer.tsx` },
-    { name: 'Logo', source: `${sourceBaseRel}/global/Logo.tsx` },
-  ]));
+  parts.push(
+    toMarkdownTable([
+      { name: 'Header', source: `${sourceBaseRel}/global/Header.tsx` },
+      { name: 'Footer', source: `${sourceBaseRel}/global/Footer.tsx` },
+      { name: 'Logo', source: `${sourceBaseRel}/global/Logo.tsx` },
+    ])
+  );
 
   // Components
   const componentsBarrel = path.join(sourceBaseDir, 'components/reusable/single/index.ts');
@@ -167,7 +165,9 @@ async function generateInventoryMarkdown() {
   for (const domain of domainDirs) {
     const barrel = path.join(sectionsDir, domain, 'index.ts');
     if (!(await fileExists(barrel))) continue;
-    parts.push(`### Sections domain: \`${domain}\` (from \`${sourceBaseRel}/components/reusable/sections/${domain}/index.ts\`)`);
+    parts.push(
+      `### Sections domain: \`${domain}\` (from \`${sourceBaseRel}/components/reusable/sections/${domain}/index.ts\`)`
+    );
     parts.push(toMarkdownTable(await parseBarrel(barrel)));
   }
 

@@ -67,9 +67,7 @@ function collectRepeatedIconRows(content: string): RepeatedIconRowSignature[] {
     counts.set(key, existing);
   }
 
-  return [...counts.values()]
-    .filter(entry => entry.count >= 3)
-    .map(entry => entry.signature);
+  return [...counts.values()].filter(entry => entry.count >= 3).map(entry => entry.signature);
 }
 
 const report: ViolationEntry[] = [];

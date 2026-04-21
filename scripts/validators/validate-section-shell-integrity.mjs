@@ -7,7 +7,14 @@ const root = process.cwd();
 const args = new Set(process.argv.slice(2));
 const shouldReportJson = args.has('--report-json');
 const reportPath = path.join(root, 'reports', 'section-shell-integrity-report.json');
-const resourceSectionsDir = path.join(root, 'src', 'components', 'reusable', 'sections', 'resources');
+const resourceSectionsDir = path.join(
+  root,
+  'src',
+  'components',
+  'reusable',
+  'sections',
+  'resources'
+);
 const shellBackedResourceSections = new Set([
   'ResourceChecklistSection.tsx',
   'ResourceComparisonSection.tsx',

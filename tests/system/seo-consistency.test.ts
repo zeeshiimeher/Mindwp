@@ -90,7 +90,9 @@ describe('system invariant: metadata, canonicals, and sitemap stay consistent', 
 
     for (const prefix of disallowedPrefixes) {
       for (const url of urls) {
-        expect(url.includes(prefix), `Sitemap should not contain disallowed prefix ${prefix}`).toBe(false);
+        expect(url.includes(prefix), `Sitemap should not contain disallowed prefix ${prefix}`).toBe(
+          false
+        );
       }
     }
   });
@@ -100,7 +102,10 @@ describe('system invariant: metadata, canonicals, and sitemap stay consistent', 
     const sitemapUrls = new Set(entries.map(entry => entry.url.toString()));
 
     for (const node of getGraphNodes()) {
-      expect(sitemapUrls.has(toAbsoluteUrl(node.path)), `Missing sitemap entry for ${node.path}`).toBe(true);
+      expect(
+        sitemapUrls.has(toAbsoluteUrl(node.path)),
+        `Missing sitemap entry for ${node.path}`
+      ).toBe(true);
     }
   });
 

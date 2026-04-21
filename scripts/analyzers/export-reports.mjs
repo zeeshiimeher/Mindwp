@@ -14,6 +14,7 @@ import { resolveLoggingMode, stripLoggingModeArgs } from '../../config/loggingCo
 import { buildSystemProcessEnv, systemEnv } from '../../config/systemEnv.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { validateReportFile } from '../core/report-schema-validator.mjs';
+import { isExecutionCacheValid } from '../lib/execution-cache.mjs';
 import { readJsonFile } from '../lib/report-json.mjs';
 import { createReportSchema, normalizeRawReport, unwrapReportData } from '../lib/report-schema.mjs';
 
@@ -38,6 +39,19 @@ const generatorSteps = [
     relativePath: 'scripts/generators/generate-topic-authority-scores.ts',
     sourceCommand: 'node --import tsx/esm scripts/generators/generate-topic-authority-scores.ts',
     reportFiles: ['topic-authority-scores.json', 'topic-authority-scores.md'],
+    inputPaths: [
+      'src/domains/blog/registry.ts',
+      'src/domains/case-studies/registry.ts',
+      'src/domains/features/registry.ts',
+      'src/domains/industries/registry.ts',
+      'src/domains/resources/generatedRegistry.ts',
+      'src/domains/services/registry.ts',
+      'src/domains/contentModel.ts',
+      'src/domains/init',
+      'src/lib/content-graph',
+      'src/lib/content-quality',
+      'scripts/generators/generate-topic-authority-scores.ts',
+    ],
   },
 ];
 
@@ -47,36 +61,70 @@ const analyzerSteps = [
     relativePath: 'scripts/analyzers/generate-content-gaps.ts',
     sourceCommand: 'node --import tsx/esm scripts/analyzers/generate-content-gaps.ts',
     reportFiles: ['content-gaps.json', 'content-gaps.md'],
+    inputPaths: [
+      'reports/authority-map.json',
+      'reports/topic-authority-scores.json',
+      'reports/content-quality-report.json',
+      'scripts/analyzers/generate-content-gaps.ts',
+    ],
   },
   {
     name: 'audit-content-consistency',
     relativePath: 'scripts/analyzers/audit-content-consistency.mjs',
     sourceCommand: 'node --import tsx/esm scripts/analyzers/audit-content-consistency.mjs',
     reportFiles: ['content-consistency-audit.json'],
+    inputPaths: [
+      'reports/content-quality-report.json',
+      'reports/authority-map.json',
+      'scripts/analyzers/audit-content-consistency.mjs',
+    ],
   },
   {
     name: 'detect-page-priorities',
     relativePath: 'scripts/analyzers/detect-page-priorities.mjs',
     sourceCommand: 'node --import tsx/esm scripts/analyzers/detect-page-priorities.mjs',
     reportFiles: ['page-priorities.json'],
+    inputPaths: [
+      'reports/authority-map.json',
+      'reports/content-quality-report.json',
+      'reports/validation-results.json',
+      'scripts/analyzers/detect-page-priorities.mjs',
+    ],
   },
   {
     name: 'generate-content-intelligence',
     relativePath: 'scripts/analyzers/generate-content-intelligence.ts',
     sourceCommand: 'node --import tsx/esm scripts/analyzers/generate-content-intelligence.ts',
     reportFiles: ['content-intelligence.json'],
+    inputPaths: [
+      'reports/authority-map.json',
+      'reports/topic-authority-scores.json',
+      'reports/content-quality-report.json',
+      'scripts/analyzers/generate-content-intelligence.ts',
+    ],
   },
   {
     name: 'inspect-graph',
     relativePath: 'scripts/analyzers/inspect-graph.ts',
     sourceCommand: 'node --import tsx/esm scripts/analyzers/inspect-graph.ts',
     reportFiles: ['graph-derived-summary.json'],
+    inputPaths: [
+      'reports/graph-report.json',
+      'reports/authority-map.json',
+      'scripts/analyzers/inspect-graph.ts',
+      'src/lib/content-graph',
+    ],
   },
   {
     name: 'score-content',
     relativePath: 'scripts/analyzers/score-content.mjs',
     sourceCommand: 'node --import tsx/esm scripts/analyzers/score-content.mjs',
     reportFiles: ['content-score.json'],
+    inputPaths: [
+      'reports/content-quality-report.json',
+      'reports/authority-map.json',
+      'scripts/analyzers/score-content.mjs',
+    ],
   },
   {
     name: 'heading-audit',
@@ -264,7 +312,18 @@ function getStepOutputs(step) {
 
 function canUseCachedStep(step) {
   const outputs = getStepOutputs(step);
-  return outputs.length > 0 && outputs.every(output => canReuseOutput(output, step.sourceCommand));
+
+  if (outputs.length === 0) {
+    return false;
+  }
+
+  const outputPaths = outputs.map(output => path.join(REPORTS_DIR, output));
+  const inputPaths = Array.isArray(step.inputPaths)
+    ? step.inputPaths.map(inputPath => path.join(ROOT, inputPath))
+    : [];
+  const cacheState = isExecutionCacheValid({ inputPaths, outputPaths });
+
+  return cacheState.valid && outputs.every(output => canReuseOutput(output, step.sourceCommand));
 }
 
 function runPipelineStep(step, bucket, kind) {
@@ -311,7 +370,7 @@ function runPipelineStep(step, bucket, kind) {
       })
     );
 
-    logger.printNodeLine(`[${kind.toUpperCase()}] ${step.name} -> SKIPPED (cached)`);
+    logger.printSummary(`${step.name} -> skipped (cache valid)`);
     if (logger.isDebug()) {
       logger.printDebug(step.name, {
         kind,
@@ -324,8 +383,10 @@ function runPipelineStep(step, bucket, kind) {
     return;
   }
 
-  logger.step(step.name);
-  logger.printSection(`running ${step.name}`);
+  if (logger.isDebug()) {
+    logger.step(step.name);
+    logger.printSection(`running ${step.name}`);
+  }
   runManagedScript(step.relativePath);
 
   for (const fileName of step.reportFiles ?? []) {
@@ -342,9 +403,7 @@ function runPipelineStep(step, bucket, kind) {
     })
   );
 
-  logger.printNodeLine(
-    `[${kind.toUpperCase()}] ${step.name} -> PASS (${Date.now() - startedAt}ms)`
-  );
+  logger.printSummary(`${step.name} -> PASS (${Date.now() - startedAt}ms)`);
   if (logger.isDebug()) {
     logger.printDebug(step.name, {
       kind,

@@ -37,7 +37,9 @@ function main() {
   const args = parseArgs();
 
   if (!args.action || !args.slugs) {
-    console.error('Usage: node scripts/dev/add-session-entry.mjs --action "..." --slugs "slug1,slug2" --before "slug1:30" --after "slug1:60" [--notes "..."]');
+    console.error(
+      'Usage: node scripts/dev/add-session-entry.mjs --action "..." --slugs "slug1,slug2" --before "slug1:30" --after "slug1:60" [--notes "..."]'
+    );
     process.exit(1);
   }
 

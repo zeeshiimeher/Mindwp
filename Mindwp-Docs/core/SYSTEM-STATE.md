@@ -23,9 +23,14 @@ Architecture lives in `SYSTEM-ARCHITECTURE.md`. Tooling lives in `TOOLS.md`.
 
 - `SYSTEM.md` is the behavioral authority for identity, hierarchy, and vocabulary.
 - `npm run system:full` is the full-system control-plane entrypoint.
+- `npm run system:quick` is the fast non-mutating operator check.
+- `npm run system:debug` is the full-system debug path.
+- `--output=full` is available when a human wants the detailed terminal section in addition to the summary.
 - `node scripts/core/validate-all.mjs` is the validator orchestrator.
+- The validator orchestrator currently manages 26 validators.
 - `/dev/system-dashboard` is the internal operator surface.
 - `reports/system-report.json` and `reports/client-dashboard.json` are the primary report artifacts.
+- `reports/system-health.json` and `reports/pipeline-report.json` are supporting control-plane artifacts.
 - Dashboards read reports; they do not define system truth.
 - `/contact` remains the only form entry route.
 
@@ -34,8 +39,12 @@ Architecture lives in `SYSTEM-ARCHITECTURE.md`. Tooling lives in `TOOLS.md`.
 ## ACTIVE DECISIONS
 
 - Full-system execution stays locked to `npm run system:full`.
+- `system:quick` preserves the locked full-report and dashboard bundle instead of rewriting it.
 - Generated drift is blocking.
 - Lint remains advisory.
+- Summary-mode logging is the normal operator view; debug mode exists for internals and timing.
+- `--output=full` is a display choice only; it does not change report ownership or execution authority.
+- Input-aware execution skip is allowed for generators and analyzers when outputs are still valid.
 - CTA and related-content enforcement stay page-scoped and runtime-backed.
 - Shared route and graph owners remain the authority for SEO, metadata, and relationships.
 - Static report artifacts remain the source for dashboard visibility.
@@ -58,6 +67,7 @@ Architecture lives in `SYSTEM-ARCHITECTURE.md`. Tooling lives in `TOOLS.md`.
 - Topic-authority regression if canonical topics change without supporting coverage.
 - Conversion failure if contact configuration is missing or invalid.
 - Test artifact staleness if test outputs are read without a fresh producing run.
+- Docs drift if human instructions lag behind the control plane.
 - Advisory lint drift accumulating until it hides more meaningful regressions.
 
 ---
@@ -67,7 +77,7 @@ Architecture lives in `SYSTEM-ARCHITECTURE.md`. Tooling lives in `TOOLS.md`.
 1. Keep `reports/system-report.json` authoritative.
 2. Keep `reports/client-dashboard.json` aligned with the locked full-system run.
 3. Preserve graph, CTA, and topic-authority guarantees.
-4. Keep documentation aligned with the live control plane.
+4. Keep human docs aligned with the live command and report surface.
 5. Clear advisory drift before it spreads into more important surfaces.
 
 ---

@@ -33,4 +33,3 @@ export const SERVICES = {
     bypassCaptchaInDev: false,
   },
 } as const;
-

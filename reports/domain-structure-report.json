@@ -1,8 +1,8 @@
 {
   "meta": {
-    "name": "domain-structure-report",
+    "name": "validate-domain-structure",
     "source": "npm run system:full",
-    "generatedAt": "2026-04-21T00:03:57.758Z",
+    "generatedAt": "2026-04-21T07:33:07.972Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,7 +13,7 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-21T00:03:57.758Z",
+    "generatedAt": "2026-04-21T07:33:07.972Z",
     "passed": true,
     "scannedByType": {
       "service": 19,
@@ -26,8 +26,8 @@
     "issues": []
   },
   "issues": [],
-  "name": "domain-structure-report",
+  "name": "validate-domain-structure",
   "status": "PASS",
-  "generatedAt": "2026-04-21T00:03:57.758Z",
+  "generatedAt": "2026-04-21T07:33:07.972Z",
   "sourceCommand": "npm run system:full"
 }

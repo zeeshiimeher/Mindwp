@@ -14,9 +14,15 @@ import {
 
 const root = process.cwd();
 const designValidatorPath = path.join(root, 'scripts/validators/validate-design-system.cjs');
-const conversionValidatorPath = path.join(root, 'scripts/validators/validate-conversion-contract.mjs');
+const conversionValidatorPath = path.join(
+  root,
+  'scripts/validators/validate-conversion-contract.mjs'
+);
 const internalLinksValidatorPath = path.join(root, 'scripts/validators/validate-internal-links.ts');
-const inlineLinkMisuseValidatorPath = path.join(root, 'scripts/validators/validate-inline-link-misuse.ts');
+const inlineLinkMisuseValidatorPath = path.join(
+  root,
+  'scripts/validators/validate-inline-link-misuse.ts'
+);
 
 const tempDirs: string[] = [];
 
@@ -89,9 +95,9 @@ describe('integration: validator contracts', () => {
         '',
         'export function FailingCard() {',
         '  return (',
-        "    <section>",
-        "      <h2>Book a Demo</h2>",
-        "      <p>See the system in action.</p>",
+        '    <section>',
+        '      <h2>Book a Demo</h2>',
+        '      <p>See the system in action.</p>',
         "      <a href='/contact' className='btn bg-red-500 px-4'>Contact</a>",
         '      <Button>Broken</Button>',
         '    </section>',
@@ -118,8 +124,8 @@ describe('integration: validator contracts', () => {
         '  return (',
         "    <section className='footer-cta'>",
         "      <div className='cta__panel'>",
-        "        <h2>Book a Demo</h2>",
-        "        <p>See the system in action.</p>",
+        '        <h2>Book a Demo</h2>',
+        '        <p>See the system in action.</p>',
         "        <a href='/demo' className='btn btn-primary'>Contact</a>",
         '      </div>',
         '    </section>',
@@ -181,19 +187,13 @@ describe('integration: validator contracts', () => {
     expect(passingResult.status ?? 0).toBe(0);
   });
 
-  test(
-    'internal links validator fails on dead authored targets and passes valid publishable routes',
-    () => {
+  test('internal links validator fails on dead authored targets and passes valid publishable routes', () => {
     const failingWorkspace = createWorkspace();
     writePackageJson(failingWorkspace);
     writeFile(
       failingWorkspace,
       'src/domains/resources/content/FailingLinks.tsx',
-      [
-        'export const failingLinks = {',
-        "  href: '/definitely-missing-route',",
-        '};',
-      ].join('\n')
+      ['export const failingLinks = {', "  href: '/definitely-missing-route',", '};'].join('\n')
     );
 
     const failingResult = spawnSync('npx', ['tsx', internalLinksValidatorPath], {
@@ -213,11 +213,7 @@ describe('integration: validator contracts', () => {
     writeFile(
       passingWorkspace,
       'src/domains/resources/content/PassingLinks.tsx',
-      [
-        'export const passingLinks = {',
-        "  href: '/contact',",
-        '};',
-      ].join('\n')
+      ['export const passingLinks = {', "  href: '/contact',", '};'].join('\n')
     );
 
     const passingResult = spawnSync('npx', ['tsx', internalLinksValidatorPath], {
@@ -230,13 +226,9 @@ describe('integration: validator contracts', () => {
     });
 
     expect(passingResult.status ?? 0).toBe(0);
-    },
-    15000
-  );
+  }, 15000);
 
-  test(
-    'inline-link misuse validator requires the mirrored runtime helper contract on allowed templates',
-    () => {
+  test('inline-link misuse validator requires the mirrored runtime helper contract on allowed templates', () => {
     const failingWorkspace = createWorkspace();
     writePackageJson(failingWorkspace);
     writeFile(
@@ -285,7 +277,5 @@ describe('integration: validator contracts', () => {
     });
 
     expect(passingResult.status ?? 0).toBe(0);
-    },
-    20000
-  );
+  }, 20000);
 });

@@ -79,7 +79,8 @@ function scanButtonViolations(fileAbs, text) {
   const shadcnButtonVariantsImportRe =
     /import\s*\{[^}]*\bbuttonVariants\b[^}]*\}\s*from\s*["'][^"']*components\/ui\/button[^"']*["']/g;
 
-  const hasShadcnButtonImport = shadcnButtonImportRe.test(text) || shadcnButtonVariantsImportRe.test(text);
+  const hasShadcnButtonImport =
+    shadcnButtonImportRe.test(text) || shadcnButtonVariantsImportRe.test(text);
 
   // Flag shadcn imports directly.
   {
@@ -89,7 +90,7 @@ function scanButtonViolations(fileAbs, text) {
         fileAbs,
         lineOfIndex(text, m.index),
         'BUTTON_VIOLATION',
-        'shadcn Button import detected (from `components/ui/button`).',
+        'shadcn Button import detected (from `components/ui/button`).'
       );
     }
   }
@@ -101,7 +102,7 @@ function scanButtonViolations(fileAbs, text) {
         fileAbs,
         lineOfIndex(text, m.index),
         'BUTTON_VIOLATION',
-        'shadcn `buttonVariants` import detected (from `components/ui/button`).',
+        'shadcn `buttonVariants` import detected (from `components/ui/button`).'
       );
     }
   }
@@ -194,7 +195,7 @@ function scanTailwindButtonViolations(fileAbs, text) {
         fileAbs,
         lineOfIndex(text, startIdx),
         'TAILWIND_BUTTON_VIOLATION',
-        `Tailwind utility class detected on <${m[1]}> element: \`${offending}\``,
+        `Tailwind utility class detected on <${m[1]}> element: \`${offending}\``
       );
     }
   }
@@ -232,11 +233,15 @@ function isFooterCTAIntent(sectionBody) {
 
   // Require 1–2 .btn anchor actions within a short window after the <h2>.
   const afterH2ForButtons = sectionBody.slice(h2Idx, h2Idx + 2000);
-  const btnAnchors = [...afterH2ForButtons.matchAll(/<a\s+[^>]*className\s*=\s*["'][^"']*\bbtn\b[^"']*["'][^>]*>/g)].length;
+  const btnAnchors = [
+    ...afterH2ForButtons.matchAll(/<a\s+[^>]*className\s*=\s*["'][^"']*\bbtn\b[^"']*["'][^>]*>/g),
+  ].length;
   if (btnAnchors < 1 || btnAnchors > 2) return false;
 
   // Conversion intent heuristic: CTA buttons to demo/contact/pricing.
-  const hasConversionHref = /<a\s+[^>]*href\s*=\s*["']\/(demo|contact|pricing)\b[^"']*["']/g.test(afterH2ForButtons);
+  const hasConversionHref = /<a\s+[^>]*href\s*=\s*["']\/(demo|contact|pricing)\b[^"']*["']/g.test(
+    afterH2ForButtons
+  );
   return hasConversionHref;
 }
 
@@ -257,7 +262,7 @@ function scanCtaViolations(fileAbs, text) {
         fileAbs,
         lineOfIndex(text, s.start),
         'CTA_VIOLATION',
-        'Footer CTA intent detected (h2 + paragraph + 1–2 btn actions) but missing required CTA system classes (`footer-cta` and `cta__panel`).',
+        'Footer CTA intent detected (h2 + paragraph + 1–2 btn actions) but missing required CTA system classes (`footer-cta` and `cta__panel`).'
       );
     }
   }
@@ -293,7 +298,7 @@ function scanInlineStyleViolations(fileAbs, text) {
         fileAbs,
         i + 1,
         'INLINE_VAR_TOKEN',
-        'SR3 violation: Inline style using var(--*) token. Use a BEM class instead.',
+        'SR3 violation: Inline style using var(--*) token. Use a BEM class instead.'
       );
       continue;
     }
@@ -317,7 +322,7 @@ function scanInlineStyleViolations(fileAbs, text) {
           fileAbs,
           i + 1,
           'INLINE_VAR_TOKEN',
-          'SR3 violation: Inline style using var(--*) token. Use a BEM class instead.',
+          'SR3 violation: Inline style using var(--*) token. Use a BEM class instead.'
         );
       }
     }
@@ -335,7 +340,12 @@ function isSvgTextContext(lines, lineIndex) {
       return true;
     }
     // If we hit an opening tag that's NOT text/tspan, stop looking
-    if (/<[a-zA-Z]/.test(lines[j]) && !/<text/.test(lines[j]) && !/<tspan/.test(lines[j]) && j !== lineIndex) {
+    if (
+      /<[a-zA-Z]/.test(lines[j]) &&
+      !/<text/.test(lines[j]) &&
+      !/<tspan/.test(lines[j]) &&
+      j !== lineIndex
+    ) {
       return false;
     }
   }
@@ -439,7 +449,19 @@ function main() {
     if (shouldReportJson) {
       const reportPath = path.join(WORKSPACE_ROOT, 'reports', 'design-system-report.json');
       fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-      fs.writeFileSync(reportPath, JSON.stringify({ generatedAt: new Date().toISOString(), passed: false, violationCount: violations.length, violations }, null, 2));
+      fs.writeFileSync(
+        reportPath,
+        JSON.stringify(
+          {
+            generatedAt: new Date().toISOString(),
+            passed: false,
+            violationCount: violations.length,
+            violations,
+          },
+          null,
+          2
+        )
+      );
     }
     process.exitCode = 1;
     return;
@@ -450,7 +472,14 @@ function main() {
   if (shouldReportJson) {
     const reportPath = path.join(WORKSPACE_ROOT, 'reports', 'design-system-report.json');
     fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-    fs.writeFileSync(reportPath, JSON.stringify({ generatedAt: new Date().toISOString(), passed: true, violationCount: 0, violations: [] }, null, 2));
+    fs.writeFileSync(
+      reportPath,
+      JSON.stringify(
+        { generatedAt: new Date().toISOString(), passed: true, violationCount: 0, violations: [] },
+        null,
+        2
+      )
+    );
   }
 }
 

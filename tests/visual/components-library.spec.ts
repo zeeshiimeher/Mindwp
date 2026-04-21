@@ -9,8 +9,12 @@ test('Component Library renders all previews without fallback errors', async ({ 
   const consoleErrors: string[] = [];
   const consoleWarnings: string[] = [];
   const pageErrors: string[] = [];
-  const requestFailures: Array<{ url: string; method: string; resourceType: string; error: string }> =
-    [];
+  const requestFailures: Array<{
+    url: string;
+    method: string;
+    resourceType: string;
+    error: string;
+  }> = [];
   const badResponses: Array<{ url: string; status: number; method: string; resourceType: string }> =
     [];
   let baseOrigin = '';

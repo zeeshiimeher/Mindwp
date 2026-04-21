@@ -1,13 +1,13 @@
 # Client Report
 
-Generated at: 2026-04-21T00:10:27.878Z
+Generated at: 2026-04-21T07:45:01.737Z
 
 ## Summary
 
 - Total pages: 355
 - Healthy: 355
 - Weak: 0
-- Critical: 0
+- Critical: 1
 
 ## Report Files
 

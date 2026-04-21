@@ -5,13 +5,13 @@
 
 ### Document Map
 
-| §1–3 | Context, AI contract, rewrite decisions |
-|------|---|
-| §4–6 | Core rules, language, voice |
-| §7–9 | Connectors, rhythm, observation/L5 |
-| §10–14 | Section rules, hero, comparison, proof, other sections |
-| §15–16 | Industry rules, cross-page rules |
-| §17–18 | Rewrite method, visual language |
+| §1–3   | Context, AI contract, rewrite decisions                             |
+| ------ | ------------------------------------------------------------------- |
+| §4–6   | Core rules, language, voice                                         |
+| §7–9   | Connectors, rhythm, observation/L5                                  |
+| §10–14 | Section rules, hero, comparison, proof, other sections              |
+| §15–16 | Industry rules, cross-page rules                                    |
+| §17–18 | Rewrite method, visual language                                     |
 | §19–24 | Content types, validation, polish, page intent, workflow, execution |
 
 ---
@@ -44,6 +44,7 @@ If content sounds like building websites, designing pages, or selling SEO → ST
 **Meaning rule:** meaning stays. Expression may change completely during FULL REWRITE.
 
 **Priority when rules conflict:**
+
 1. Clarity — reader understands instantly
 2. Reality — feels true, not constructed
 3. Flow — reads naturally
@@ -63,23 +64,23 @@ Do NOT increase total word count significantly, add new sections during polish, 
 
 ### Decision Matrix
 
-| Decision | When | Action |
-|----------|------|--------|
-| KEEP | Clear, visual, natural | Don't touch |
-| POLISH | Slightly wordy, minor issue | Light edit only |
-| REWRITE | Vague, abstract, hard to picture | Apply rewrite method |
-| DELETE | Repetitive, adds nothing | Remove |
+| Decision | When                             | Action               |
+| -------- | -------------------------------- | -------------------- |
+| KEEP     | Clear, visual, natural           | Don't touch          |
+| POLISH   | Slightly wordy, minor issue      | Light edit only      |
+| REWRITE  | Vague, abstract, hard to picture | Apply rewrite method |
+| DELETE   | Repetitive, adds nothing         | Remove               |
 
 Not everything should be rewritten. Strong lines must be preserved.
 
 ### Rewrite Modes
 
-| Mode | When | What |
-|------|------|------|
-| Light Polish | Content is clear, only minor issues | Fix clarity, keep structure |
-| Clarity Rewrite (DEFAULT) | Sentences need clarity | Rewrite sentences, keep ideas |
-| Level 5 Upgrade | High-impact sections | Apply signature style, control rhythm |
-| Full Rewrite (RARE) | Content is broken | Rebuild from scratch |
+| Mode                      | When                                | What                                  |
+| ------------------------- | ----------------------------------- | ------------------------------------- |
+| Light Polish              | Content is clear, only minor issues | Fix clarity, keep structure           |
+| Clarity Rewrite (DEFAULT) | Sentences need clarity              | Rewrite sentences, keep ideas         |
+| Level 5 Upgrade           | High-impact sections                | Apply signature style, control rhythm |
+| Full Rewrite (RARE)       | Content is broken                   | Rebuild from scratch                  |
 
 If mode not specified → default to Clarity Rewrite.
 
@@ -160,18 +161,18 @@ Also banned: our CRM, our system, our platform, ensures, enables, effectively, e
 
 ### Preferred Replacements
 
-| Instead of | Write |
-|---|---|
-| comprehensive tracking | nothing gets missed |
-| full visibility | you can see what's happening |
-| seamless integration | it just works |
-| automated notification routing | the right person finds out |
-| automated follow-up sequences | follow-up happens on its own |
-| unified platform | everything in one place |
-| automated scheduling | you don't have to remember |
-| SEO-optimized | Google can read it |
-| lead capture | their details land somewhere useful |
-| automated reminders | nobody has to chase |
+| Instead of                     | Write                               |
+| ------------------------------ | ----------------------------------- |
+| comprehensive tracking         | nothing gets missed                 |
+| full visibility                | you can see what's happening        |
+| seamless integration           | it just works                       |
+| automated notification routing | the right person finds out          |
+| automated follow-up sequences  | follow-up happens on its own        |
+| unified platform               | everything in one place             |
+| automated scheduling           | you don't have to remember          |
+| SEO-optimized                  | Google can read it                  |
+| lead capture                   | their details land somewhere useful |
+| automated reminders            | nobody has to chase                 |
 
 ### Anti-Builder Rule
 
@@ -200,6 +201,7 @@ Position **7** on 1-10 scale. Slightly direct. Confident, not arrogant. Warm, no
 ✅ Correct: "Send us your website. We'll tell you what's working and what isn't."
 
 **Rules:**
+
 - Always "we" and "you" — never "the team" or "the client"
 - Never hedge. State facts, not opinions.
 - Match the reader's vocabulary
@@ -211,12 +213,14 @@ Position **7** on 1-10 scale. Slightly direct. Confident, not arrogant. Warm, no
 ## 7. CONNECTOR LAW
 
 **Hard limits per section:**
+
 - "— so" → max 1
 - "which means" → max 1
 - "as a result" → max 1
 - bare "so" mid-sentence → max 2
 
 **Priority order for cause → effect:**
+
 1. Implied consequence (no connector — preferred)
 2. Split sentence
 3. Embedded cause
@@ -278,13 +282,13 @@ Then write THAT.
 
 ### Observation Depth
 
-| Level | Type |
-|------|------|
-| L1 | Abstract ("lead management issues") |
-| L2 | Slightly concrete ("leads get missed") |
-| L3 | Scenario ("leads sit in inboxes") |
-| L4 | Specific ("emails, WhatsApp, forms all separate") |
-| L5 | Observed reality (step-by-step what happens) |
+| Level | Type                                              |
+| ----- | ------------------------------------------------- |
+| L1    | Abstract ("lead management issues")               |
+| L2    | Slightly concrete ("leads get missed")            |
+| L3    | Scenario ("leads sit in inboxes")                 |
+| L4    | Specific ("emails, WhatsApp, forms all separate") |
+| L5    | Observed reality (step-by-step what happens)      |
 
 All core sections: L4 minimum. Hero, Problem, Proof: L5.
 
@@ -309,15 +313,15 @@ Every page: Recognition → Friction → Clarity → Trust → Action
 
 ### Section Style Lock
 
-| Section | Behavior | Energy | Must NOT Do |
-|---------|----------|--------|-------------|
-| HERO | Observational | Recognition | Explain, teach, justify |
-| PROBLEM | Real situations | Tension | Offer solutions |
-| COMPARISON | Contrast clarity | Clarity | Tell stories |
-| OUTCOME | Calm certainty | Quiet confidence | Explain how |
-| PROCESS | Clear, instructional | Calm | Persuade |
-| PROOF | Observed, slightly messy | Realism | Generalize, summarize |
-| QUALIFICATION | Direct, filtering | Transparency | Sell |
+| Section       | Behavior                 | Energy           | Must NOT Do             |
+| ------------- | ------------------------ | ---------------- | ----------------------- |
+| HERO          | Observational            | Recognition      | Explain, teach, justify |
+| PROBLEM       | Real situations          | Tension          | Offer solutions         |
+| COMPARISON    | Contrast clarity         | Clarity          | Tell stories            |
+| OUTCOME       | Calm certainty           | Quiet confidence | Explain how             |
+| PROCESS       | Clear, instructional     | Calm             | Persuade                |
+| PROOF         | Observed, slightly messy | Realism          | Generalize, summarize   |
+| QUALIFICATION | Direct, filtering        | Transparency     | Sell                    |
 
 Each section must FEEL different from the previous one. If it says the same thing differently → rewrite. If tone feels the same across 2+ sections → rewrite the page.
 
@@ -384,27 +388,35 @@ Each service page must use a different business context. Same example across pag
 ## 14. OTHER SECTIONS
 
 ### Problem
+
 Use before/after pairs. "Before" = real specific situation. 3 pairs.
 
 ### Outcome
+
 Lead with results, not methods. Each card answers "What will I see?"
 
 ### Process
+
 3–5 numbered steps. Plain English. Step 1 = understanding their business. No technical how.
 
 ### What's Included
+
 Plain English, real things, not categories. Avoid feature names.
 
 ### Qualification
+
 "Great fit" = situations, not customer types. "Not the right fit" = honest, never dismissive.
 
 ### FAQ
+
 Real questions in reader's voice. Direct answers — start with yes, no, or the key point. No hedging. 5–10 per page.
 
 ### CTA
+
 Feel like a conversation, not a pitch. Tell them what happens next. No urgency tactics. Must feel like continuation of the page.
 
 ### SEO
+
 Title: core service + main benefit. Description: describe the change, not the service. Under 160 chars. No hype.
 
 ---
@@ -478,15 +490,19 @@ Ask: "What would this literally look like if I was watching?" Describe that scen
 ## 19. CONTENT TYPES
 
 ### Blog Posts
+
 Open with a real situation. Explain what's going wrong in their day. Show what better looks like. End with low-pressure next step. No "In this article..." or "Let's dive in..."
 
 ### Case Studies
+
 Who they are (one sentence). What was going wrong (real situation). What we did (like telling a friend). What changed (specific, measurable). Use the client's language.
 
 ### Feature Pages
+
 One capability, one situation, one fix. More direct, less narrative. Must feel like "a specific fix" not "a full solution."
 
 ### Resource Pages
+
 Answer one question. Write for someone who's never heard the term. Include real examples.
 
 ---
@@ -496,16 +512,19 @@ Answer one question. Write for someone who's never heard the term. Include real 
 Run after every write/rewrite. All must pass.
 
 ### Clarity
+
 - [ ] Non-technical business owner understands every sentence
 - [ ] Key lines describe something visible, audible, or measurable
 - [ ] No sentence says nothing
 - [ ] No sentence exceeds 25 words unless telling a story
 
 ### Language
+
 - [ ] Zero banned words (§5) unless required by system-language rule
 - [ ] No SaaS-style feature lists
 
 ### AI Detection
+
 - [ ] No "In today's..." or "Whether you're..."
 - [ ] No "It's important to note" or "This allows you to"
 - [ ] No "ensures that", "enables businesses to", "effectively manage"
@@ -515,6 +534,7 @@ Run after every write/rewrite. All must pass.
 - [ ] Paragraph and sentence lengths vary
 
 ### Human Signals (what PASSES the filter)
+
 - [ ] Uneven sentence lengths (long → short → medium → very short)
 - [ ] Specific details: tool names (WordPress, Google Business Profile), real timeframes ("same day", "within minutes")
 - [ ] Asymmetry in bullet lengths (one is 8 words, the next is 20)
@@ -522,14 +542,17 @@ Run after every write/rewrite. All must pass.
 - [ ] Casual phrasing: "sort it out", "the boring stuff", "get it right"
 
 ### 3-Second Test
+
 Read any sentence. Count to 3. Can you remember what it said? If yes → concrete enough. If no → vague, rewrite.
 
 ### Believability
+
 - [ ] No guaranteed results
 - [ ] No unsupported superlatives
 - [ ] A sceptical reader accepts every statement
 
 ### Voice
+
 - [ ] Tone at 7/10 (direct, warm)
 - [ ] Uses "we" and "you"
 - [ ] Uses contractions consistently
@@ -537,22 +560,26 @@ Read any sentence. Count to 3. Can you remember what it said? If yes → concret
 - [ ] Sounds like speaking, not writing
 
 ### Structure
+
 - [ ] Opens with reader's problem, not our service
 - [ ] Outcomes before methods
 - [ ] CTA feels like conversation
 - [ ] FAQ in reader's voice
 
 ### Connectors
+
 - [ ] Hard limits respected (§7)
 - [ ] At least 40% sentences have no connector
 - [ ] No repeated connector weakens a section
 
 ### Builder Check
+
 - [ ] Does not sound like building websites
 - [ ] Does not mention pages excessively
 - [ ] Does not feel like a design service
 
 ### Signature Feel
+
 - [ ] Read 10 lines. Feels natural, not patterned.
 - [ ] Read out loud. Sounds like speaking.
 - [ ] A business owner could say it.
@@ -562,6 +589,7 @@ Read any sentence. Count to 3. Can you remember what it said? If yes → concret
 ## 21. FINAL POLISH
 
 After writing:
+
 1. Remove 20–30% of sentences where meaning holds
 2. Remove 30% of connectors
 3. Break 2–3 sentences into shorter lines
@@ -574,31 +602,35 @@ If content still feels patterned → rewrite.
 
 ### Common Mistakes (Quick Reference)
 
-| Mistake | Fix |
-|---------|-----|
-| Vague phrases ("sets you up well", "strong foundation") | Replace with WHAT actually happens |
-| AI-clean sentences (grammatically perfect, feels sterile) | Ask "how would I say this to a mate?" |
-| Feature-first writing ("We integrate your CRM...") | Flip: result first, method second or omit |
-| Over-explaining (40 words where 12 work) | "Can I say this in half the words?" |
-| SaaS marketing ("Platform", "Features include...") | Talk like a tradesperson who works on websites |
+| Mistake                                                   | Fix                                            |
+| --------------------------------------------------------- | ---------------------------------------------- |
+| Vague phrases ("sets you up well", "strong foundation")   | Replace with WHAT actually happens             |
+| AI-clean sentences (grammatically perfect, feels sterile) | Ask "how would I say this to a mate?"          |
+| Feature-first writing ("We integrate your CRM...")        | Flip: result first, method second or omit      |
+| Over-explaining (40 words where 12 work)                  | "Can I say this in half the words?"            |
+| SaaS marketing ("Platform", "Features include...")        | Talk like a tradesperson who works on websites |
 
 ---
 
 ## 22. PAGE INTENT REFERENCE
 
 ### Smart Website
+
 Problem: "My website looks fine but doesn't bring in business."
 Angle: The website isn't ugly — it's not doing anything. No clear next steps. No follow-up.
 
 ### CRM
+
 Problem: "Leads come in but some disappear. Nobody knows who's handling what."
 Angle: First conversation goes fine. Everything after falls apart.
 
 ### Local SEO
+
 Problem: "People search for what I do. They find my competitors."
 Angle: Website doesn't explain what you do or where. Fix the website first — then SEO works.
 
 ### Reputation
+
 Problem: "We do great work but our Google reviews don't show it."
 Angle: Work is already good. Missing piece: asking at the right time.
 
@@ -637,6 +669,7 @@ When rewriting, follow this order:
 ### Bulk Execution (Multi-Page)
 
 When processing multiple pages:
+
 - Work section by section, NOT entire file at once
 - Execution order: Hero → Problem → Comparison → Proof → remaining sections
 - After each section: run connector audit + duplication check + density filter

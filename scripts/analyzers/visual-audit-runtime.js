@@ -42,7 +42,10 @@
     }
 
     const discovered = scale.sort((left, right) => left.value - right.value);
-    const fallback = SPACING_SCALE_VALUES.map((value, index) => ({ token: `scale-${index + 1}`, value }));
+    const fallback = SPACING_SCALE_VALUES.map((value, index) => ({
+      token: `scale-${index + 1}`,
+      value,
+    }));
     return discovered.length > 0 ? discovered : fallback;
   }
 
@@ -180,8 +183,10 @@
       if (token.startsWith('grid')) return false;
       if (token.startsWith('flex')) return false;
       if (token.startsWith('gap-')) return false;
-      if (token.startsWith('px-') || token.startsWith('py-') || token.startsWith('pt-')) return false;
-      if (token.startsWith('pb-') || token.startsWith('mx-') || token.startsWith('my-')) return false;
+      if (token.startsWith('px-') || token.startsWith('py-') || token.startsWith('pt-'))
+        return false;
+      if (token.startsWith('pb-') || token.startsWith('mx-') || token.startsWith('my-'))
+        return false;
       if (token.startsWith('items-') || token.startsWith('justify-')) return false;
       if (token.startsWith('@')) return false;
       if (token.includes('__') || token.includes('--')) return false;
@@ -192,7 +197,11 @@
   }
 
   function getSectionBlock(element) {
-    return getBlockClasses(element).find(token => token.startsWith('c-') || token.endsWith('-section')) || '';
+    return (
+      getBlockClasses(element).find(
+        token => token.startsWith('c-') || token.endsWith('-section')
+      ) || ''
+    );
   }
 
   function getComponentBlock(element) {
@@ -201,7 +210,11 @@
 
   function extractComponentFromClass(className) {
     const classes = toClassList(className);
-    return classes.find(token => token.startsWith('c-') || token.startsWith('s-')) || getBlockClasses({ className })[0] || '';
+    return (
+      classes.find(token => token.startsWith('c-') || token.startsWith('s-')) ||
+      getBlockClasses({ className })[0] ||
+      ''
+    );
   }
 
   function getComponentName(element) {
@@ -601,9 +614,13 @@
     const { snapshots, traversedNodes } = collectSnapshots(root, spacingScale, colorTokens);
     const rootStyles = getNormalizedStyles(root, spacingScale, colorTokens);
     const rootText = (root.textContent || '').replace(/\s+/g, ' ').trim();
-    const buttons = root.querySelectorAll('button, a.btn, [data-slot="button"], [role="button"]').length;
+    const buttons = root.querySelectorAll(
+      'button, a.btn, [data-slot="button"], [role="button"]'
+    ).length;
     const blockName = getSectionBlock(root) || root.tagName.toLowerCase();
-    const backgroundColor = rootStyles.colors.backgroundColor ? rootStyles.colors.backgroundColor.value : 'transparent';
+    const backgroundColor = rootStyles.colors.backgroundColor
+      ? rootStyles.colors.backgroundColor.value
+      : 'transparent';
 
     return {
       type: 'section',
@@ -659,7 +676,10 @@
         }
       }
 
-      if (section.containsCta && (section.backgroundLabel === 'white' || section.backgroundLabel === 'transparent')) {
+      if (
+        section.containsCta &&
+        (section.backgroundLabel === 'white' || section.backgroundLabel === 'transparent')
+      ) {
         pushIssue(
           section,
           {
@@ -694,7 +714,14 @@
 
     document.querySelectorAll('[class*="c-"], [class*="s-"]').forEach(element => {
       if (!isLikelyComponent(element)) return;
-      if (hasAncestorMatch(element, ancestor => isLikelyComponent(ancestor) && getComponentBlock(ancestor) === getComponentBlock(element))) {
+      if (
+        hasAncestorMatch(
+          element,
+          ancestor =>
+            isLikelyComponent(ancestor) &&
+            getComponentBlock(ancestor) === getComponentBlock(element)
+        )
+      ) {
         return;
       }
       roots.add(element);
@@ -707,7 +734,9 @@
     const roots = [];
     let count = 0;
 
-    for (const element of document.body.querySelectorAll('section, div, h1, h2, h3, h4, p, button')) {
+    for (const element of document.body.querySelectorAll(
+      'section, div, h1, h2, h3, h4, p, button'
+    )) {
       if (count >= MAX_FALLBACK_NODES) break;
       if (shouldSkipElement(element)) continue;
       if (hasAncestorMatch(element, ancestor => roots.includes(ancestor))) continue;
@@ -727,7 +756,13 @@
 
     document.querySelectorAll('[class*="c-"], [class*="s-"]').forEach(element => {
       if (!isLikelySection(element)) return;
-      if (hasAncestorMatch(element, ancestor => isLikelySection(ancestor) && getSectionBlock(ancestor) === getSectionBlock(element))) {
+      if (
+        hasAncestorMatch(
+          element,
+          ancestor =>
+            isLikelySection(ancestor) && getSectionBlock(ancestor) === getSectionBlock(element)
+        )
+      ) {
         return;
       }
       roots.add(element);
@@ -755,7 +790,10 @@
   }
 
   function sortEntries(entries) {
-    return [...entries].sort((left, right) => left.name.localeCompare(right.name) || left.rootPath.localeCompare(right.rootPath));
+    return [...entries].sort(
+      (left, right) =>
+        left.name.localeCompare(right.name) || left.rootPath.localeCompare(right.rootPath)
+    );
   }
 
   function runVisualAudit(config) {
@@ -771,14 +809,24 @@
     const designSystem = createDesignSystemSummary();
 
     const components = sortEntries(
-      componentRoots.map(root => auditComponent(root, spacingScale, colorTokens, config.route, config.viewport, designSystem))
+      componentRoots.map(root =>
+        auditComponent(root, spacingScale, colorTokens, config.route, config.viewport, designSystem)
+      )
     );
-    const sectionEntries = sectionRoots.map(root => auditSection(root, spacingScale, colorTokens, config.route, config.viewport));
+    const sectionEntries = sectionRoots.map(root =>
+      auditSection(root, spacingScale, colorTokens, config.route, config.viewport)
+    );
     applySectionRhythm(sectionEntries);
     const sections = sortEntries(sectionEntries);
 
-    designSystem.spacingViolations.sort((left, right) => left.route.localeCompare(right.route) || left.component.localeCompare(right.component));
-    designSystem.colorViolations.sort((left, right) => left.route.localeCompare(right.route) || left.component.localeCompare(right.component));
+    designSystem.spacingViolations.sort(
+      (left, right) =>
+        left.route.localeCompare(right.route) || left.component.localeCompare(right.component)
+    );
+    designSystem.colorViolations.sort(
+      (left, right) =>
+        left.route.localeCompare(right.route) || left.component.localeCompare(right.component)
+    );
 
     console.log('[engine] done');
 

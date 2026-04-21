@@ -30,7 +30,9 @@ function isDocumentEndpoint(pathname: string): boolean {
 }
 
 function extractCanonicalHref(html: string): string | null {
-  const relThenHref = /<link[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["'][^>]*>/i.exec(html)?.[1];
+  const relThenHref = /<link[^>]*rel=["']canonical["'][^>]*href=["']([^"']+)["'][^>]*>/i.exec(
+    html
+  )?.[1];
   if (relThenHref) {
     return relThenHref;
   }
@@ -95,7 +97,10 @@ async function getPublishedRoutes() {
 test.describe('internal link reachability', () => {
   test.setTimeout(360_000);
 
-  test('rendered internal links resolve and canonicalize across published pages', async ({ page, request }) => {
+  test('rendered internal links resolve and canonicalize across published pages', async ({
+    page,
+    request,
+  }) => {
     const routes = await getPublishedRoutes();
     const probes = new Map<string, RouteProbe>();
 
@@ -161,16 +166,20 @@ test.describe('internal link reachability', () => {
       }
 
       const pageCanonical = await page.locator('link[rel="canonical"]').getAttribute('href');
-      expect(pageCanonical, `${route} should emit a canonical URL`).toBe(canonicalForPath(currentPath));
+      expect(pageCanonical, `${route} should emit a canonical URL`).toBe(
+        canonicalForPath(currentPath)
+      );
     }
   });
 
   test('header and footer navigation targets stay valid', async ({ page, request }) => {
     await page.goto('/', { waitUntil: 'domcontentloaded' });
 
-    const chromeLinks = await page.locator('header a[href], footer a[href]').evaluateAll(elements =>
-      elements.map(element => element.getAttribute('href') ?? '').filter(Boolean)
-    );
+    const chromeLinks = await page
+      .locator('header a[href], footer a[href]')
+      .evaluateAll(elements =>
+        elements.map(element => element.getAttribute('href') ?? '').filter(Boolean)
+      );
 
     const uniqueTargets = [...new Set(chromeLinks)]
       .map(href => normalizeInternalTarget(href, '/'))

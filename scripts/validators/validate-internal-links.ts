@@ -27,9 +27,7 @@ import { createReportSchema } from '../../lib/reports/reportSchema';
 const SOURCE_SCAN_ROOTS = ['src/app', 'src/components', 'src/domains', 'src/screens'];
 const AUTHORED_HREF_PATTERN = /(?:href\s*:\s*|href=)(['"])(\/[^'"\s}]*)\1/g;
 const INTERNAL_LINK_BASE_ORIGIN = 'https://mindwp.local';
-const root = env.MINDWP_LINK_SCAN_ROOT
-  ? path.resolve(env.MINDWP_LINK_SCAN_ROOT)
-  : process.cwd();
+const root = env.MINDWP_LINK_SCAN_ROOT ? path.resolve(env.MINDWP_LINK_SCAN_ROOT) : process.cwd();
 const reportPath = path.join(root, 'reports', 'internal-links-report.json');
 const sourceCommand = 'npx tsx scripts/validators/validate-internal-links.ts';
 const logger = createLogger({
@@ -90,12 +88,12 @@ function normalizeAuthoredTarget(href: string): string | null {
 }
 
 function stripComments(content: string) {
-  return content
-    .replace(/\/\*[\s\S]*?\*\//g, '')
-    .replace(/(^|\s+)\/\/.*$/gm, '$1');
+  return content.replace(/\/\*[\s\S]*?\*\//g, '').replace(/(^|\s+)\/\/.*$/gm, '$1');
 }
 
-function resolvePageTypeForAuthorityMapKey(mapKey: keyof typeof AUTHORITY_MAP): ContentRulePageType {
+function resolvePageTypeForAuthorityMapKey(
+  mapKey: keyof typeof AUTHORITY_MAP
+): ContentRulePageType {
   if (mapKey === 'caseStudy') {
     return 'case-study';
   }
@@ -109,7 +107,9 @@ function resolvePageTypeForAuthorityMapKey(mapKey: keyof typeof AUTHORITY_MAP): 
 
 async function validateAuthoredInternalLinks(validPaths: Set<string>) {
   const sourceFiles = (
-    await Promise.all(SOURCE_SCAN_ROOTS.map(scanRoot => collectSourceFiles(path.join(root, scanRoot))))
+    await Promise.all(
+      SOURCE_SCAN_ROOTS.map(scanRoot => collectSourceFiles(path.join(root, scanRoot)))
+    )
   ).flat();
 
   for (const filePath of sourceFiles) {
@@ -135,7 +135,11 @@ async function validateAuthoredInternalLinks(validPaths: Set<string>) {
   }
 }
 
-function validateRelatedContent(slug: string, type: ContentNodeType, pageType: ContentRulePageType) {
+function validateRelatedContent(
+  slug: string,
+  type: ContentNodeType,
+  pageType: ContentRulePageType
+) {
   const rules = resolveContentRules(pageType, slug).internalLinks;
   const related = getRelatedContent(slug, type);
   const output = buildRelatedContent({

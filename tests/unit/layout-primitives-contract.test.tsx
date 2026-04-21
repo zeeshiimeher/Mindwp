@@ -6,13 +6,9 @@ import { SplitLayout } from '@/components/reusable/primitives/SplitLayout';
 
 describe('unit: layout primitive contracts', () => {
   test('CardGrid rejects empty children', () => {
-    expect(() =>
-      render(
-        <CardGrid>
-          {null}
-        </CardGrid>
-      )
-    ).toThrow('CardGrid requires at least one child');
+    expect(() => render(<CardGrid>{null}</CardGrid>)).toThrow(
+      'CardGrid requires at least one child'
+    );
   });
 
   test('CardGrid renders when content exists', () => {

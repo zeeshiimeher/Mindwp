@@ -93,7 +93,10 @@
     for (const key of Object.keys(before)) {
       const b = before[key];
       const a = after[key];
-      if (!a) { diffs.push({ selector: key, issue: 'MISSING in after' }); continue; }
+      if (!a) {
+        diffs.push({ selector: key, issue: 'MISSING in after' });
+        continue;
+      }
 
       // Compare root
       for (const prop of PROPS) {
@@ -122,5 +125,7 @@
   window.__compare = compare;
   window.__snapshot = snapshot;
 
-  console.log('[token-v2] Validator loaded. Use __check(".selector"), __checkAll(), __compare(before, after)');
+  console.log(
+    '[token-v2] Validator loaded. Use __check(".selector"), __checkAll(), __compare(before, after)'
+  );
 })();

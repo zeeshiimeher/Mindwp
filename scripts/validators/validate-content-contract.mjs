@@ -92,7 +92,8 @@ async function main() {
             metadataKey: key,
             title: `Missing required metadata: ${key}`,
             description: `${label} is missing required metadata key "${key}".`,
-            impact: 'The node fails the contract surface and can break downstream reporting or deterministic routing.',
+            impact:
+              'The node fails the contract surface and can break downstream reporting or deterministic routing.',
             fix: `Populate the "${key}" metadata on ${label}.`,
           })
         );
@@ -109,7 +110,8 @@ async function main() {
             metadataKey: key,
             title: `Missing recommended metadata: ${key}`,
             description: `${label} is missing recommended metadata key "${key}".`,
-            impact: 'The node remains valid but becomes less self-explaining in reports and inventory-driven analysis.',
+            impact:
+              'The node remains valid but becomes less self-explaining in reports and inventory-driven analysis.',
             fix: `Populate the recommended "${key}" metadata on ${label}.`,
           })
         );
@@ -125,7 +127,8 @@ async function main() {
           code: 'invalid_system',
           title: 'Invalid system identifier',
           description: `${label} uses unknown system "${value}".`,
-          impact: 'The node is outside the canonical system registry and will drift from deterministic grouping.',
+          impact:
+            'The node is outside the canonical system registry and will drift from deterministic grouping.',
           fix: `Replace "${value}" with a canonical system identifier on ${label}.`,
         })
       );
@@ -140,7 +143,8 @@ async function main() {
           code: 'invalid_topic',
           title: 'Invalid topic identifier',
           description: `${label} uses unknown topic "${value}".`,
-          impact: 'The node will fall out of canonical topic coverage, authority scoring, and issue aggregation.',
+          impact:
+            'The node will fall out of canonical topic coverage, authority scoring, and issue aggregation.',
           fix: `Replace "${value}" with a canonical topic identifier on ${label}.`,
         })
       );
@@ -155,7 +159,8 @@ async function main() {
           code: 'invalid_industry',
           title: 'Invalid industry identifier',
           description: `${label} uses unknown industry "${value}".`,
-          impact: 'The node will not align to canonical industry slices in the deterministic graph.',
+          impact:
+            'The node will not align to canonical industry slices in the deterministic graph.',
           fix: `Replace "${value}" with a canonical industry identifier on ${label}.`,
         })
       );
@@ -175,7 +180,10 @@ async function main() {
       );
     }
 
-    if (isIndustriesRequired(node.type) && (!Array.isArray(node.industries) || node.industries.length === 0)) {
+    if (
+      isIndustriesRequired(node.type) &&
+      (!Array.isArray(node.industries) || node.industries.length === 0)
+    ) {
       issues.push(
         buildContractIssue({
           node,
@@ -212,7 +220,8 @@ async function main() {
           code: 'multiple_systems',
           title: 'Multiple systems declared',
           description: `${label} exposes multiple systems; conversion will use "${systems[0]}" as primary.`,
-          impact: 'The node remains valid, but primary-system behavior may be less obvious to operators.',
+          impact:
+            'The node remains valid, but primary-system behavior may be less obvious to operators.',
           fix: `Reduce ${label} to one primary system or accept the deterministic primary of "${systems[0]}".`,
         })
       );
@@ -228,7 +237,8 @@ async function main() {
           code: 'invalid_conversion_goal',
           title: 'Invalid conversion goal',
           description: `${label} must resolve conversionGoal "${expectedConversion.conversionGoal}" for node type "${node.type}".`,
-          impact: 'Priority-aware analysis and conversion reporting drift when node conversion goals stop matching their shared type contract.',
+          impact:
+            'Priority-aware analysis and conversion reporting drift when node conversion goals stop matching their shared type contract.',
           fix: `Restore the shared conversionGoal mapping for ${label}.`,
         })
       );
@@ -242,12 +252,12 @@ async function main() {
           code: 'invalid_conversion_priority',
           title: 'Invalid conversion priority',
           description: `${label} must resolve conversionPriority ${expectedConversion.conversionPriority} for node type "${node.type}".`,
-          impact: 'Priority-aware analysis and release gating drift when node conversion priority stops matching the shared type contract.',
+          impact:
+            'Priority-aware analysis and release gating drift when node conversion priority stops matching the shared type contract.',
           fix: `Restore the shared conversionPriority mapping for ${label}.`,
         })
       );
     }
-
   }
 
   const report = {
@@ -257,8 +267,13 @@ async function main() {
     issueCount: issues.length,
     warningCount: warnings.length,
     summary: {
-      missingSystem: issues.filter(issue => issue.code === 'missing_required_metadata' && issue.metadataKey === 'systems').length,
-      missingMetadata: [...issues, ...warnings].filter(item => item.code === 'missing_required_metadata' || item.code === 'missing_advisory_metadata').length,
+      missingSystem: issues.filter(
+        issue => issue.code === 'missing_required_metadata' && issue.metadataKey === 'systems'
+      ).length,
+      missingMetadata: [...issues, ...warnings].filter(
+        item =>
+          item.code === 'missing_required_metadata' || item.code === 'missing_advisory_metadata'
+      ).length,
     },
     issues,
     warnings,

@@ -9,6 +9,8 @@
 
 Use this file when you need the shortest architecture map across governance, domain data, graph, presentation, validation, and reports.
 
+If you are new to the repo, read this file for the mental model, then read `TOOLS.md` for the commands you actually run.
+
 ---
 
 ## SYSTEM LAYERS
@@ -51,8 +53,20 @@ Governance -> Domain data and registries -> Graph and resolver -> Routes and tem
 
 - `scripts/core/validate-all.mjs`
 - `npm run system:full`
+- `npm run system:quick`
 - report artifacts in `reports/**`
 - operator visibility through `/dev/system-dashboard`
+
+---
+
+## HUMAN WORKING MODEL
+
+Think about MindWP in two lanes:
+
+1. Runtime lane: domain registries, graph initialization, routes, templates, CTA behavior, and the contact flow.
+2. Control-plane lane: validators, analyzers, report writers, and dashboard readers.
+
+Human rule: the runtime lane produces behavior, and the control-plane lane confirms that behavior. The dashboard only reads the control-plane outputs.
 
 ---
 
@@ -66,6 +80,7 @@ Governance -> Domain data and registries -> Graph and resolver -> Routes and tem
 6. Page adapters create page identity and CTA enforcement scope.
 7. `SmartCTA` generates the correct CTA behavior and `/contact` context.
 8. Validators and reports confirm that runtime behavior still matches the contracts.
+9. The dashboard reads frozen report outputs for operator visibility.
 
 ---
 
@@ -74,26 +89,29 @@ Governance -> Domain data and registries -> Graph and resolver -> Routes and tem
 - Governing docs describe expected behavior; code must match them.
 - One content item gets one canonical route.
 - Components render content; they do not become graph or report engines.
+- Runtime code does not become a dashboard computation layer.
 - Dashboards read reports; they do not define system truth.
 - Generated files and report artifacts are not edited manually.
 - The full refresh path is `npm run system:full`, not a manual side path.
+- `npm run system:quick` is a safe operator check, not a replacement for the full source-of-truth run.
 
 ---
 
 ## KEY OWNERS
 
-| Concern | Primary Owner |
-|---|---|
-| Identity and hierarchy | `Mindwp-Docs/core/SYSTEM.md` |
-| Content model | `src/domains/contentModel.ts` |
-| Graph initialization | `src/domains/init/ensureGraphInitialized.ts` |
-| Publishable runtime | `src/lib/content-graph/publishable.tsx` |
-| CTA rendering | `src/components/system/SmartCTA.tsx` |
-| CTA registry | `src/lib/cta/ctaRegistry.ts` |
-| Contact URL generation | `src/lib/contact/contactHref.ts` |
-| Validator orchestration | `scripts/core/validate-all.mjs` |
-| Full-system control plane | `npm run system:full` |
-| Internal observability | `/dev/system-dashboard` |
+| Concern                   | Primary Owner                                |
+| ------------------------- | -------------------------------------------- |
+| Identity and hierarchy    | `Mindwp-Docs/core/SYSTEM.md`                 |
+| Content model             | `src/domains/contentModel.ts`                |
+| Graph initialization      | `src/domains/init/ensureGraphInitialized.ts` |
+| Publishable runtime       | `src/lib/content-graph/publishable.tsx`      |
+| CTA rendering             | `src/components/system/SmartCTA.tsx`         |
+| CTA registry              | `src/lib/cta/ctaRegistry.ts`                 |
+| Contact URL generation    | `src/lib/contact/contactHref.ts`             |
+| Validator orchestration   | `scripts/core/validate-all.mjs`              |
+| Full-system control plane | `npm run system:full`                        |
+| Fast operator check       | `npm run system:quick`                       |
+| Internal observability    | `/dev/system-dashboard`                      |
 
 ---
 
@@ -107,3 +125,9 @@ Read in this order:
 4. `CONVERSION.md`
 5. `TOOLS.md`
 6. `SYSTEM-STATE.md`
+
+For day-to-day work, the practical order is:
+
+1. `SYSTEM-ARCHITECTURE.md`
+2. `TOOLS.md`
+3. the narrow domain or contract doc for the surface you are changing

@@ -181,13 +181,13 @@ Every downloaded image passes through 5 parallel analysis checks before scoring.
 
 Each candidate image is scored across 5 weighted factors:
 
-| Factor | Weight | What it measures |
-|---|---|---|
-| Subject Relevance | 0.40 | Keyword matching: image tags/description vs content metadata |
-| Visual Clarity | 0.20 | Resolution, contrast, brightness range |
-| Composition Quality | 0.15 | Subject not centered, right-side subject preferred, landscape, no text |
-| Overlay Compatibility | 0.15 | Clean left zone, low center edge density, good contrast |
-| Resolution Quality | 0.10 | Pixel dimensions (best: ≥2400×1350) |
+| Factor                | Weight | What it measures                                                       |
+| --------------------- | ------ | ---------------------------------------------------------------------- |
+| Subject Relevance     | 0.40   | Keyword matching: image tags/description vs content metadata           |
+| Visual Clarity        | 0.20   | Resolution, contrast, brightness range                                 |
+| Composition Quality   | 0.15   | Subject not centered, right-side subject preferred, landscape, no text |
+| Overlay Compatibility | 0.15   | Clean left zone, low center edge density, good contrast                |
+| Resolution Quality    | 0.10   | Pixel dimensions (best: ≥2400×1350)                                    |
 
 Images are ranked descending by total weighted score. Top candidate is selected.
 
@@ -244,11 +244,11 @@ Layer order (bottom to top):
 
 3 composition profiles, selected deterministically via `hash(slug) % 3`:
 
-| Variant | Name | Purpose | Text Width | Font Scale | Position |
-|---|---|---|---|---|---|
-| L1 | Editorial | Clean, balanced (resources) | 720px | 1.38× | 38% × 52% |
-| L2 | Focused | Primary CTR (blog) | 820px | 1.56× | 42% × 55% |
-| L3 | Impact | Bold, aggressive (case studies) | 860px | 1.68× | 35% × 58% |
+| Variant | Name      | Purpose                         | Text Width | Font Scale | Position  |
+| ------- | --------- | ------------------------------- | ---------- | ---------- | --------- |
+| L1      | Editorial | Clean, balanced (resources)     | 720px      | 1.38×      | 38% × 52% |
+| L2      | Focused   | Primary CTR (blog)              | 820px      | 1.56×      | 42% × 55% |
+| L3      | Impact    | Bold, aggressive (case studies) | 860px      | 1.68×      | 35% × 58% |
 
 ### 9.5 Text Block Positioning
 
@@ -264,11 +264,11 @@ All elements anchor to textX: accent bar, badge, label, icon, title lines.
 
 ### 9.6 Brightness-Adaptive Overlay
 
-| Image Type | Overlay Start | Overlay End | Gradient |
-|---|---|---|---|
-| Bright (>160) | 88% | 20% | Strong darkening |
-| Mid-range | Linear interpolation | | Proportional |
-| Dark (<70) | 55% | 5% | Light touch |
+| Image Type    | Overlay Start        | Overlay End | Gradient         |
+| ------------- | -------------------- | ----------- | ---------------- |
+| Bright (>160) | 88%                  | 20%         | Strong darkening |
+| Mid-range     | Linear interpolation |             | Proportional     |
+| Dark (<70)    | 55%                  | 5%          | Light touch      |
 
 ### 9.7 CTR Psychology Layer
 
@@ -416,22 +416,22 @@ After overlay generation, the pipeline samples the center region and verifies wh
 
 # 16. Key File Paths
 
-| Area | Location |
-|---|---|
-| Pipeline orchestrator | `src/lib/image-system/pipeline/processor.ts` |
-| Featured image generator | `src/lib/image-system/pipeline/featuredImage.ts` |
-| SVG overlay design | `src/lib/image-system/pipeline/overlayDesign.ts` |
-| Title layout engine | `src/lib/image-system/pipeline/titleLayout.ts` |
-| Image analysis | `src/lib/image-system/intelligence/imageAnalysis.ts` |
-| Relevance scoring | `src/lib/image-system/intelligence/scoring.ts` |
-| Perceptual hashing | `src/lib/image-system/intelligence/similarity.ts` |
-| Safety checks | `src/lib/image-system/intelligence/safety.ts` |
-| Semantic query engine | `src/lib/image-system/semantic/queryGenerator.ts` |
-| Content analyzer | `src/lib/image-system/semantic/contentAnalyzer.ts` |
-| Provider manager | `src/lib/image-system/providers/index.ts` |
-| Config + thresholds | `src/lib/image-system/config.ts` |
-| Type definitions | `src/lib/image-system/types.ts` |
-| CLI entry point | `scripts/image-system/image-generate.ts` |
-| Dedup index data | `src/lib/image-system/data/imageIndex.json` |
-| Provider scores data | `src/lib/image-system/data/providerScores.json` |
-| Context memory data | `src/lib/image-system/data/contextMemory.json` |
+| Area                     | Location                                             |
+| ------------------------ | ---------------------------------------------------- |
+| Pipeline orchestrator    | `src/lib/image-system/pipeline/processor.ts`         |
+| Featured image generator | `src/lib/image-system/pipeline/featuredImage.ts`     |
+| SVG overlay design       | `src/lib/image-system/pipeline/overlayDesign.ts`     |
+| Title layout engine      | `src/lib/image-system/pipeline/titleLayout.ts`       |
+| Image analysis           | `src/lib/image-system/intelligence/imageAnalysis.ts` |
+| Relevance scoring        | `src/lib/image-system/intelligence/scoring.ts`       |
+| Perceptual hashing       | `src/lib/image-system/intelligence/similarity.ts`    |
+| Safety checks            | `src/lib/image-system/intelligence/safety.ts`        |
+| Semantic query engine    | `src/lib/image-system/semantic/queryGenerator.ts`    |
+| Content analyzer         | `src/lib/image-system/semantic/contentAnalyzer.ts`   |
+| Provider manager         | `src/lib/image-system/providers/index.ts`            |
+| Config + thresholds      | `src/lib/image-system/config.ts`                     |
+| Type definitions         | `src/lib/image-system/types.ts`                      |
+| CLI entry point          | `scripts/image-system/image-generate.ts`             |
+| Dedup index data         | `src/lib/image-system/data/imageIndex.json`          |
+| Provider scores data     | `src/lib/image-system/data/providerScores.json`      |
+| Context memory data      | `src/lib/image-system/data/contextMemory.json`       |

@@ -94,16 +94,16 @@ Rules:
 
 Default page-intent mapping is owned by `src/lib/page/pageIdentity.ts`.
 
-| Page Type | Default Intent |
-|---|---|
-| `service` | `conversion` |
-| `feature` | `comparison` |
-| `industry-detail` | `comparison` |
-| `industry-category` | `comparison` |
-| `case-study` | `diagnostic` |
-| `blog` | `entry` |
-| `resource` | `entry` |
-| `page` | `entry` |
+| Page Type           | Default Intent |
+| ------------------- | -------------- |
+| `service`           | `conversion`   |
+| `feature`           | `comparison`   |
+| `industry-detail`   | `comparison`   |
+| `industry-category` | `comparison`   |
+| `case-study`        | `diagnostic`   |
+| `blog`              | `entry`        |
+| `resource`          | `entry`        |
+| `page`              | `entry`        |
 
 This default may be narrowed by the page template, but it may not break page-level registry rules.
 
@@ -165,13 +165,13 @@ If `system` or `source` is invalid or missing, the conversion contract has faile
 
 ## ENFORCEMENT MODEL
 
-| Concern | Primary Owner | Enforced By |
-|---|---|---|
-| CTA owner boundary | Page adapters and templates | `validate-cta-violations.ts` |
-| CTA placement and duplication | CTA registry | runtime assertions in `ctaRegistry.ts` |
-| Contact context validity | `buildContactHref()` | runtime validation in `contactHref.ts` |
-| Label contract | `ctaLabels.ts` | CTA label contract validator |
-| Conversion URL and `/contact` flow | contact and conversion layer | conversion contract validator |
+| Concern                            | Primary Owner                | Enforced By                            |
+| ---------------------------------- | ---------------------------- | -------------------------------------- |
+| CTA owner boundary                 | Page adapters and templates  | `validate-cta-violations.ts`           |
+| CTA placement and duplication      | CTA registry                 | runtime assertions in `ctaRegistry.ts` |
+| Contact context validity           | `buildContactHref()`         | runtime validation in `contactHref.ts` |
+| Label contract                     | `ctaLabels.ts`               | CTA label contract validator           |
+| Conversion URL and `/contact` flow | contact and conversion layer | conversion contract validator          |
 
 ---
 

@@ -11,9 +11,9 @@
   /* Container padding maps to site tokens (scaled per breakpoint below) */
   --l-container-padding-x: calc(var(--site-padding-x) * 0.5);
 
-  --l-stack-gap-sm: var(--space-3);   /* 12px */
-  --l-stack-gap: var(--space-4);      /* 16px */
-  --l-stack-gap-lg: var(--space-6);   /* 24px */
+  --l-stack-gap-sm: var(--space-3); /* 12px */
+  --l-stack-gap: var(--space-4); /* 16px */
+  --l-stack-gap-lg: var(--space-6); /* 24px */
 
   /* Default section paddings map to the canonical site padding tokens */
   --l-section-padding: calc(var(--site-padding-y) * 0.5);

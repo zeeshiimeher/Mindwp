@@ -39,7 +39,9 @@ async function main() {
     const relatesTo = node.relatesTo ?? [];
     const supports = node.supports ?? [];
     const validates = node.validates ?? [];
-    const derivedEdges = [...relatesTo, ...supports, ...validates].filter(edge => edge.source === 'derived').length;
+    const derivedEdges = [...relatesTo, ...supports, ...validates].filter(
+      edge => edge.source === 'derived'
+    ).length;
     const edgeCount = relatesTo.length + supports.length + validates.length;
     totalEdges += edgeCount;
     totalDerivedEdges += derivedEdges;

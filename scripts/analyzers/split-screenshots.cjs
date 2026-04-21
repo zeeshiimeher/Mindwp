@@ -25,7 +25,9 @@ for (const file of pngFiles) {
   const baseName = file.replace('.png', '');
 
   // Get dimensions via sips
-  const sipsOutput = execSync(`sips -g pixelHeight -g pixelWidth "${srcPath}"`, { encoding: 'utf-8' });
+  const sipsOutput = execSync(`sips -g pixelHeight -g pixelWidth "${srcPath}"`, {
+    encoding: 'utf-8',
+  });
   const heightMatch = sipsOutput.match(/pixelHeight:\s*(\d+)/);
   const widthMatch = sipsOutput.match(/pixelWidth:\s*(\d+)/);
   if (!heightMatch || !widthMatch) continue;
@@ -76,9 +78,13 @@ segment.save('${outFile.replace(/'/g, "\\'")}')
         fs.copyFileSync(srcPath, tmpPath);
         if (yOffset > 0) {
           execSync(`sips --cropOffset ${yOffset} 0 "${tmpPath}"`, { stdio: 'pipe' });
-          execSync(`sips --cropToHeightWidth ${segHeight} ${width} "${tmpPath}"`, { stdio: 'pipe' });
+          execSync(`sips --cropToHeightWidth ${segHeight} ${width} "${tmpPath}"`, {
+            stdio: 'pipe',
+          });
         } else {
-          execSync(`sips --cropToHeightWidth ${segHeight} ${width} "${tmpPath}"`, { stdio: 'pipe' });
+          execSync(`sips --cropToHeightWidth ${segHeight} ${width} "${tmpPath}"`, {
+            stdio: 'pipe',
+          });
         }
         fs.renameSync(tmpPath, outFile);
       } catch (e2) {
@@ -95,7 +101,10 @@ console.log(`\nDone. ${copyCount} files copied, ${splitCount} files split.`);
 console.log(`Output: ${SPLIT_DIR}/`);
 
 // List result files
-const resultFiles = fs.readdirSync(SPLIT_DIR).filter(f => f.endsWith('.png')).sort();
+const resultFiles = fs
+  .readdirSync(SPLIT_DIR)
+  .filter(f => f.endsWith('.png'))
+  .sort();
 console.log(`\nTotal output files: ${resultFiles.length}`);
 for (const f of resultFiles) {
   const fp = path.join(SPLIT_DIR, f);

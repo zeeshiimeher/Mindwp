@@ -24,16 +24,16 @@ Use this file when creating or editing service, feature, blog, resource, industr
 
 ## UNIFIED CONTENT HIERARCHY (CANONICAL DEFINITION)
 
-| Page Type | Primary Role | Funnel Role | Required Metadata | Primary Outcome |
-|---|---|---|---|---|
-| Service | System decision page | BOFU | `systems[]` | conversion-ready service selection |
-| Feature | Capability page | MOFU | `systems[]` | explain one system capability in context |
-| Industry Detail | Vertical application page | late MOFU / controlled BOFU | `systems[]`, `industries[]` | show how the system applies to one vertical |
-| Industry Category | Taxonomy and navigation page | MOFU | `systems[]` | group industry detail pathways |
-| Blog | Problem discovery page | TOFU / MOFU | `systems[]`, `topics[]` | teach one problem or tradeoff |
-| Resource | Framework and implementation page | MOFU | `systems[]`, `topics[]` | explain one system, framework, or method |
-| Case Study | Proof page | MOFU / proof support | `systems[]`, `industries[]` | validate the system with implementation proof |
-| Page | Generic structural page | context-specific | page-owned identity | support navigation or non-domain surfaces |
+| Page Type         | Primary Role                      | Funnel Role                 | Required Metadata           | Primary Outcome                               |
+| ----------------- | --------------------------------- | --------------------------- | --------------------------- | --------------------------------------------- |
+| Service           | System decision page              | BOFU                        | `systems[]`                 | conversion-ready service selection            |
+| Feature           | Capability page                   | MOFU                        | `systems[]`                 | explain one system capability in context      |
+| Industry Detail   | Vertical application page         | late MOFU / controlled BOFU | `systems[]`, `industries[]` | show how the system applies to one vertical   |
+| Industry Category | Taxonomy and navigation page      | MOFU                        | `systems[]`                 | group industry detail pathways                |
+| Blog              | Problem discovery page            | TOFU / MOFU                 | `systems[]`, `topics[]`     | teach one problem or tradeoff                 |
+| Resource          | Framework and implementation page | MOFU                        | `systems[]`, `topics[]`     | explain one system, framework, or method      |
+| Case Study        | Proof page                        | MOFU / proof support        | `systems[]`, `industries[]` | validate the system with implementation proof |
+| Page              | Generic structural page           | context-specific            | page-owned identity         | support navigation or non-domain surfaces     |
 
 Source of truth for canonical identifiers: `src/lib/content-graph/canonical.ts`.
 
@@ -259,13 +259,13 @@ Case studies may support service conversion, but the case study itself remains a
 
 ## ENFORCEMENT MODEL
 
-| Concern | Primary Owner | Enforced By |
-|---|---|---|
-| Metadata completeness and canonical identifiers | Domain data and registries | `validate-content-contract.mjs` |
-| Route and page structure | Domain route and page surfaces | `validate-domain-structure.mjs` |
-| Graph integrity | Content model and graph registry | `validate-graph.ts` |
-| Related-content duplication | Related-content system | `validate-related-duplication.ts` |
-| Internal link and docs hygiene | Content and docs surfaces | `validate-internal-links.ts`, `validate-docs.mjs` |
+| Concern                                         | Primary Owner                    | Enforced By                                       |
+| ----------------------------------------------- | -------------------------------- | ------------------------------------------------- |
+| Metadata completeness and canonical identifiers | Domain data and registries       | `validate-content-contract.mjs`                   |
+| Route and page structure                        | Domain route and page surfaces   | `validate-domain-structure.mjs`                   |
+| Graph integrity                                 | Content model and graph registry | `validate-graph.ts`                               |
+| Related-content duplication                     | Related-content system           | `validate-related-duplication.ts`                 |
+| Internal link and docs hygiene                  | Content and docs surfaces        | `validate-internal-links.ts`, `validate-docs.mjs` |
 
 ---
 

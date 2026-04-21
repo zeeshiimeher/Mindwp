@@ -20,7 +20,9 @@ describe('unit: contact href helpers', () => {
       slug: 'smart-website-systems',
     });
 
-    expect(href).toBe('/contact?system=smart-website-systems&source=service%2Fsmart-website-systems');
+    expect(href).toBe(
+      '/contact?system=smart-website-systems&source=service%2Fsmart-website-systems'
+    );
   });
 
   test('returns non-contact base hrefs unchanged', () => {

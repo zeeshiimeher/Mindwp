@@ -75,7 +75,9 @@ async function auditHeadings(page) {
         lineHeight: style.lineHeight,
         color: style.color,
         marginBottom: style.marginBottom,
-        parentSection: getClasses(h.closest('section, [class*="l-section"]') || h.parentElement).substring(0, 120),
+        parentSection: getClasses(
+          h.closest('section, [class*="l-section"]') || h.parentElement
+        ).substring(0, 120),
       };
     });
 
@@ -161,7 +163,11 @@ async function main() {
 
       results[pg.name] = { url: pg.url, desktop, mobile };
     } catch (err) {
-      results[pg.name] = { url: pg.url, desktop: { error: err.message }, mobile: { error: err.message } };
+      results[pg.name] = {
+        url: pg.url,
+        desktop: { error: err.message },
+        mobile: { error: err.message },
+      };
       console.error(`  ERROR: ${err.message.substring(0, 80)}`);
     }
 
@@ -180,10 +186,15 @@ async function main() {
       continue;
     }
     const viols = vp.hierarchyViolations?.length || 0;
-    console.log(`  ${name}: H1=${vp.pageH1Count} H2=${vp.pageH2Count} H3=${vp.pageH3Count} H4=${vp.pageH4Count} violations=${viols}`);
+    console.log(
+      `  ${name}: H1=${vp.pageH1Count} H2=${vp.pageH2Count} H3=${vp.pageH3Count} H4=${vp.pageH4Count} violations=${viols}`
+    );
   }
 
   await browser.close();
 }
 
-main().catch(e => { console.error(e); process.exit(1); });
+main().catch(e => {
+  console.error(e);
+  process.exit(1);
+});

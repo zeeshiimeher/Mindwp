@@ -84,7 +84,17 @@ function main() {
     fs.mkdirSync(path.dirname(reportPath), { recursive: true });
     fs.writeFileSync(
       reportPath,
-      JSON.stringify({ generatedAt: new Date().toISOString(), passed: issues.length === 0, scannedFiles, issueCount: issues.length, issues }, null, 2)
+      JSON.stringify(
+        {
+          generatedAt: new Date().toISOString(),
+          passed: issues.length === 0,
+          scannedFiles,
+          issueCount: issues.length,
+          issues,
+        },
+        null,
+        2
+      )
     );
   }
 
@@ -94,7 +104,9 @@ function main() {
   }
 
   // Warn mode: log violations but do NOT fail the build.
-  console.warn(`⚠ Vocabulary validation: ${issues.length} warning(s) across ${scannedFiles} files:`);
+  console.warn(
+    `⚠ Vocabulary validation: ${issues.length} warning(s) across ${scannedFiles} files:`
+  );
   for (const issue of issues) {
     console.warn(`  - [${issue.file}] ${issue.message}`);
   }

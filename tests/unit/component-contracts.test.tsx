@@ -10,9 +10,9 @@ describe('unit: reusable component contracts', () => {
   test('Button rejects empty content and conflicting interaction props', () => {
     expect(() => render(<Button />)).toThrow('Button requires non-empty content');
 
-    expect(() => render(<Button label='Contact' href='/contact' onClick={() => undefined} />)).toThrow(
-      'Button cannot receive both href and onClick'
-    );
+    expect(() =>
+      render(<Button label='Contact' href='/contact' onClick={() => undefined} />)
+    ).toThrow('Button cannot receive both href and onClick');
 
     expect(() =>
       render(
@@ -65,7 +65,9 @@ describe('unit: reusable component contracts', () => {
   });
 
   test('SectionIntro rejects empty titles', () => {
-    expect(() => render(<SectionIntro title='   ' />)).toThrow('SectionIntro requires a non-empty title');
+    expect(() => render(<SectionIntro title='   ' />)).toThrow(
+      'SectionIntro requires a non-empty title'
+    );
   });
 
   test('TabbedFeatureCardsSection validates tabs and cards', () => {

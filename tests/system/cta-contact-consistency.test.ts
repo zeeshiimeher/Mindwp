@@ -76,11 +76,16 @@ describe('system invariant: CTA contact context stays compatible with the contac
       const source = url.searchParams.get('source') ?? '';
 
       expect(url.pathname, `CTA path must stay on /contact for ${node.path}`).toBe('/contact');
-      expect(system, `Missing system query param for ${node.path}`).toBe(primarySystemForNode(node));
+      expect(system, `Missing system query param for ${node.path}`).toBe(
+        primarySystemForNode(node)
+      );
       expect(source, `Missing source query param for ${node.path}`).toBe(
         `${sourceTypeForNode(node)}/${node.slug}`
       );
-      expect(isValidContactContext(system, source), `Invalid contact context for ${node.path}`).toBe(true);
+      expect(
+        isValidContactContext(system, source),
+        `Invalid contact context for ${node.path}`
+      ).toBe(true);
     }
   });
 

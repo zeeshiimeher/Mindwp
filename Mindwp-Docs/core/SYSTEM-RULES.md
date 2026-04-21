@@ -17,6 +17,7 @@ src/lib/content-graph/canonical.ts
 ```
 
 Do NOT use:
+
 - UI labels (e.g. `home-services`, `automotive-services`)
 - Grouping page slugs
 - Inferred categories
@@ -24,6 +25,7 @@ Do NOT use:
 If a value is not in `canonical.ts` → it is INVALID.
 
 Reason:
+
 - Ensures graph consistency
 - Prevents broken relationships
 - Guarantees validator accuracy
@@ -37,17 +39,20 @@ Content expansion uses clusters:
 **Cluster = 1 Topic × 1 System × Multiple Industries**
 
 Each cluster produces:
+
 - Blog (PROBLEM)
 - Blog (SYSTEM)
 - Resource (ACTIONABLE)
 
 Execution rule:
+
 - Start small (2 industries)
 - Validate
 - Observe dashboard impact
 - Then expand
 
 Do NOT:
+
 - Scale blindly
 - Generate bulk content without validation
 
@@ -65,6 +70,7 @@ Blog validation rules:
   - `metaDescription`
 
 Important:
+
 - `primaryKeyword` must be a substring match (case-insensitive)
 - Avoid long keywords that break `metaTitle` limits
 
@@ -91,11 +97,13 @@ All content MUST belong to:
 - Existing industries (from `canonical.ts`)
 
 Content types allowed:
+
 - Blog (`PROBLEM`, `SYSTEM`)
 - Resource (`ACTIONABLE`, `EDUCATIONAL`)
 - Case Study (`EXAMPLE`)
 
 Do NOT:
+
 - Create new topics
 - Create new systems
 - Create generic/unclassified content
@@ -110,6 +118,7 @@ Each content piece = ONE primary topic only.
 This system follows STRICT execution boundaries.
 
 Do NOT:
+
 - Redesign content structure
 - Modify blueprint formats
 - Change CTA logic (governed by CONVERSION-SYSTEM.md)
@@ -118,6 +127,7 @@ Do NOT:
 - Rename canonical values
 
 Do ONLY:
+
 - Create content using existing patterns
 - Follow metadata rules strictly
 
@@ -215,14 +225,14 @@ Forbidden:
 
 Content lives in exactly one place per type.
 
-| Content Type | Canonical Location |
-|---|---|
-| Service/Industry/CaseStudy/Blog/Resource/Feature data | `src/domains/*/data/{slug}.ts` |
-| Route metadata (title, description, OG, robots) | `inventory.ts` |
-| CTA labels | `src/config/ctaLabels.ts` |
-| CTA intensity + copy | `src/config/ui-intelligence.ts` |
-| Navigation links | Derived from inventory |
-| Canonical values | `src/lib/content-graph/canonical.ts` |
+| Content Type                                          | Canonical Location                   |
+| ----------------------------------------------------- | ------------------------------------ |
+| Service/Industry/CaseStudy/Blog/Resource/Feature data | `src/domains/*/data/{slug}.ts`       |
+| Route metadata (title, description, OG, robots)       | `inventory.ts`                       |
+| CTA labels                                            | `src/config/ctaLabels.ts`            |
+| CTA intensity + copy                                  | `src/config/ui-intelligence.ts`      |
+| Navigation links                                      | Derived from inventory               |
+| Canonical values                                      | `src/lib/content-graph/canonical.ts` |
 
 Forbidden:
 
@@ -239,6 +249,7 @@ If any task requires structural change → STOP and escalate instead of implemen
 ## 7. Permission Boundaries
 
 ### Allowed without asking
+
 - Run validators and targeted checks
 - Read any repo file for context
 - Implement tasks from EXECUTION-MEMORY.md (On demand Only )
@@ -246,6 +257,7 @@ If any task requires structural change → STOP and escalate instead of implemen
 - Keep Update EXECUTION-MEMORY.md
 
 ### Requires user confirmation
+
 - Update SYSTEM-TRUTH.md
 - Modify governing docs in Mindwp-Docs/core/
 - Add or remove validators
@@ -258,11 +270,11 @@ If any task requires structural change → STOP and escalate instead of implemen
 
 ## 8. Common Failure Patterns
 
-| Mistake | Correct action |
-|---|---|
-| Writing plans into SYSTEM-TRUTH.md | Put execution state in EXECUTION-MEMORY.md |
-| Adding `type: 'industry'` to a node | Use `industry-detail` or `industry-category` |
-| Hardcoding spacing/font values | Use design tokens |
-| Creating CTA label outside approved config | Route through `CTA_CONFIG` |
-| Skipping validation after a change | Run the narrow validator/test needed, then rerun `system:full` when the change affects reports or system state |
-| Manually editing generated images | Regenerate with `--force` flag |
+| Mistake                                    | Correct action                                                                                                 |
+| ------------------------------------------ | -------------------------------------------------------------------------------------------------------------- |
+| Writing plans into SYSTEM-TRUTH.md         | Put execution state in EXECUTION-MEMORY.md                                                                     |
+| Adding `type: 'industry'` to a node        | Use `industry-detail` or `industry-category`                                                                   |
+| Hardcoding spacing/font values             | Use design tokens                                                                                              |
+| Creating CTA label outside approved config | Route through `CTA_CONFIG`                                                                                     |
+| Skipping validation after a change         | Run the narrow validator/test needed, then rerun `system:full` when the change affects reports or system state |
+| Manually editing generated images          | Regenerate with `--force` flag                                                                                 |

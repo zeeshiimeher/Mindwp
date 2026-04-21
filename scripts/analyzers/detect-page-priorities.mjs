@@ -37,8 +37,7 @@ async function main() {
   await ensureGraphInitialized();
 
   const pages = getStructuredContentGraph()
-    .nodes
-    .map(node => ({
+    .nodes.map(node => ({
       slug: node.slug,
       path: node.path,
       domain: node.type,
@@ -47,9 +46,9 @@ async function main() {
     .sort((left, right) => left.path.localeCompare(right.path));
 
   const prioritySummary = {
-    high: pages.filter((p) => p.priority === 'high').length,
-    medium: pages.filter((p) => p.priority === 'medium').length,
-    low: pages.filter((p) => p.priority === 'low').length,
+    high: pages.filter(p => p.priority === 'high').length,
+    medium: pages.filter(p => p.priority === 'medium').length,
+    low: pages.filter(p => p.priority === 'low').length,
   };
   const report = createReportSchema({
     name: 'page-priorities',

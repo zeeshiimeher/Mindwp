@@ -20,7 +20,15 @@ const shouldReportJson = args.has('--report-json');
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'cta-label-contract-report.json');
 const smartCtaPath = path.join(root, 'src', 'components', 'system', 'SmartCTA.tsx');
-const tierCardsPath = path.join(root, 'src', 'components', 'reusable', 'sections', 'core', 'TierCardsSection.tsx');
+const tierCardsPath = path.join(
+  root,
+  'src',
+  'components',
+  'reusable',
+  'sections',
+  'core',
+  'TierCardsSection.tsx'
+);
 const canonicalSystems = new Set(CANONICAL_SYSTEMS);
 const globalPrimaryCtaSurfaceChecks = [
   'src/global/Header.tsx',
@@ -89,7 +97,10 @@ function main() {
     });
   }
 
-  if (!smartCtaSource.includes('resolveCtaLabel({') || !smartCtaSource.includes('system: resolvedSystem')) {
+  if (
+    !smartCtaSource.includes('resolveCtaLabel({') ||
+    !smartCtaSource.includes('system: resolvedSystem')
+  ) {
     issues.push({
       code: 'missing_resolver_label_usage',
       message: 'SmartCTA must resolve CTA labels from the normalized resolvedSystem value.',
@@ -114,18 +125,23 @@ function main() {
   if (!isApprovedCtaLabel(DEFAULT_TIER_CARD_CTA_LABEL)) {
     issues.push({
       code: 'invalid_tier_card_default_label',
-      message: 'Tier card default CTA label must be included in the shared approved CTA label list.',
+      message:
+        'Tier card default CTA label must be included in the shared approved CTA label list.',
     });
   }
 
   if (!APPROVED_CTA_LABELS.every(label => isApprovedCtaLabel(label))) {
     issues.push({
       code: 'invalid_approved_cta_labels_export',
-      message: 'Approved CTA labels export must stay self-consistent with the shared approval helper.',
+      message:
+        'Approved CTA labels export must stay self-consistent with the shared approval helper.',
     });
   }
 
-  if (!smartCtaSource.includes('system: resolvedSystem') || !smartCtaSource.includes('sourceType: pageType')) {
+  if (
+    !smartCtaSource.includes('system: resolvedSystem') ||
+    !smartCtaSource.includes('sourceType: pageType')
+  ) {
     issues.push({
       code: 'missing_resolved_system_href_usage',
       message:

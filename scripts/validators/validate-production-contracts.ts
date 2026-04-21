@@ -8,7 +8,10 @@ import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { z } from 'zod';
 
-import { ensureGraphInitialized, getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
+import {
+  ensureGraphInitialized,
+  getInitializedContentGraph,
+} from '@/domains/init/ensureGraphInitialized';
 import { FEATURE_REGISTRY } from '@/domains/features/registry';
 import { SERVICE_REGISTRY } from '@/domains/services/registry';
 import { createCTARegistry, getCTARegistrySnapshot } from '@/lib/cta/ctaRegistry';
@@ -95,7 +98,15 @@ const contentGraphNodeSchema = z
   .object({
     id: z.string(),
     slug: z.string(),
-    type: z.enum(['service', 'industry-category', 'industry-detail', 'feature', 'blog', 'resource', 'case-study']),
+    type: z.enum([
+      'service',
+      'industry-category',
+      'industry-detail',
+      'feature',
+      'blog',
+      'resource',
+      'case-study',
+    ]),
     path: z.string(),
     title: z.string().optional(),
     description: z.string().optional(),
@@ -169,7 +180,8 @@ async function main() {
     results.push({
       name: 'feature-registry',
       status: 'fail',
-      details: error instanceof Error ? error.message : 'Unknown feature registry contract failure.',
+      details:
+        error instanceof Error ? error.message : 'Unknown feature registry contract failure.',
     });
   }
 
@@ -184,12 +196,16 @@ async function main() {
     results.push({
       name: 'service-registry',
       status: 'fail',
-      details: error instanceof Error ? error.message : 'Unknown service registry contract failure.',
+      details:
+        error instanceof Error ? error.message : 'Unknown service registry contract failure.',
     });
   }
 
   try {
-    const ctaRegistry = createCTARegistry({ pageId: 'service:contract-freeze', pageType: 'service' });
+    const ctaRegistry = createCTARegistry({
+      pageId: 'service:contract-freeze',
+      pageType: 'service',
+    });
     const snapshot = getCTARegistrySnapshot(ctaRegistry);
     ctaSnapshotSchema.parse(snapshot);
     results.push({
@@ -253,7 +269,11 @@ async function main() {
 
   const failures = results.filter(result => result.status === 'fail');
   if (failures.length > 0) {
-    logger.printErrors(failures.map(failure => `${failure.name}: ${failure.details}`), 'failures', 20);
+    logger.printErrors(
+      failures.map(failure => `${failure.name}: ${failure.details}`),
+      'failures',
+      20
+    );
     process.exit(1);
   }
 

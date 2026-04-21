@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { buildSystemProcessEnv, systemEnv } from '../../config/systemEnv.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
+import { isExecutionCacheValid } from '../lib/execution-cache.mjs';
 import { readJsonFile, readReportJson } from '../lib/report-json.mjs';
 import { createReportSchema, normalizeRawReport, unwrapReportData } from '../lib/report-schema.mjs';
 import {
@@ -26,12 +27,100 @@ const snapshotDir = path.join(reportsDir, 'system-snapshots');
 const snapshotSummaryPath = path.join(snapshotDir, 'latest-summary.json');
 const tempDir = path.join(reportsDir, '.system-full');
 const isWindows = process.platform === 'win32';
+const skipTests = process.argv.includes('--skip-tests');
 const includeE2E = process.argv.includes('--include-e2e') || process.argv.includes('--e2e');
-const sourceCommand = includeE2E ? 'npm run system:full -- --include-e2e' : 'npm run system:full';
+const sourceCommand =
+  systemEnv.SYSTEM_ENTRY_COMMAND ??
+  (includeE2E ? 'npm run system:full -- --include-e2e' : 'npm run system:full');
 const systemMode = systemEnv.SYSTEM_MODE;
 const executionLock = systemEnv.SYSTEM_EXECUTION_LOCK;
 const loggingMode = resolveLoggingMode(process.argv.slice(2), systemEnv);
 const logger = createLogger({ label: 'system:full', mode: loggingMode, rootDir: root });
+const generatorStepDefinitions = [
+  {
+    name: 'authority-map',
+    command: [
+      '--import',
+      'tsx/esm',
+      'scripts/generators/generate-authority-map.ts',
+      `--mode=${loggingMode}`,
+    ],
+    metricsFile: path.join(tempDir, 'authority-map-graph-init.json'),
+  },
+  {
+    name: 'topic-authority',
+    command: [
+      '--import',
+      'tsx/esm',
+      'scripts/generators/generate-topic-authority-scores.ts',
+      `--mode=${loggingMode}`,
+    ],
+    metricsFile: path.join(tempDir, 'topic-authority-graph-init.json'),
+  },
+];
+const reportInputPathsByFile = new Map([
+  [
+    'authority-map.json',
+    [
+      'src/domains/blog/registry.ts',
+      'src/domains/case-studies/registry.ts',
+      'src/domains/features/registry.ts',
+      'src/domains/industries/registry.ts',
+      'src/domains/resources/generatedRegistry.ts',
+      'src/domains/services/registry.ts',
+      'src/domains/contentModel.ts',
+      'src/domains/init',
+      'src/lib/authority',
+      'src/lib/content-graph',
+      'src/lib/content-quality',
+      'scripts/generators/generate-authority-map.ts',
+    ],
+  ],
+  [
+    'topic-authority-scores.json',
+    [
+      'src/domains/blog/registry.ts',
+      'src/domains/case-studies/registry.ts',
+      'src/domains/features/registry.ts',
+      'src/domains/industries/registry.ts',
+      'src/domains/resources/generatedRegistry.ts',
+      'src/domains/services/registry.ts',
+      'src/domains/contentModel.ts',
+      'src/domains/init',
+      'src/lib/content-graph',
+      'src/lib/content-quality',
+      'scripts/generators/generate-topic-authority-scores.ts',
+    ],
+  ],
+  [
+    'topic-authority-scores.md',
+    [
+      'src/domains/blog/registry.ts',
+      'src/domains/case-studies/registry.ts',
+      'src/domains/features/registry.ts',
+      'src/domains/industries/registry.ts',
+      'src/domains/resources/generatedRegistry.ts',
+      'src/domains/services/registry.ts',
+      'src/domains/contentModel.ts',
+      'src/domains/init',
+      'src/lib/content-graph',
+      'src/lib/content-quality',
+      'scripts/generators/generate-topic-authority-scores.ts',
+    ],
+  ],
+]);
+const quickPreservedReportFiles = [
+  'pipeline-report.json',
+  'system-report.json',
+  'system-health.json',
+  'client-dashboard.json',
+  'dashboard/system.json',
+  'dashboard/validators.json',
+  'dashboard/graph.json',
+  'dashboard/topics.json',
+  'dashboard/content.json',
+  'dashboard/pipeline.json',
+];
 
 function parseOutputModeArg(arg) {
   if (!arg.startsWith('--output=')) {
@@ -170,13 +259,14 @@ function formatCommand(binary, args) {
   return [binary, ...args].join(' ');
 }
 
-function runCommand(binary, args) {
+function runCommand(binary, args, extraEnv = {}) {
   const startedAt = Date.now();
   const result = spawnSync(binary, args, {
     cwd: root,
     encoding: 'utf8',
     maxBuffer: 30 * 1024 * 1024,
     env: buildSystemProcessEnv({
+      ...extraEnv,
       SYSTEM_LOGGING_MODE: loggingMode,
     }),
   });
@@ -275,10 +365,141 @@ function uniqueStrings(values) {
   return [...new Set(values.filter(Boolean))];
 }
 
-function printStructuredSystemSummary(report) {
+function readMetricsFile(filePath) {
+  if (!fs.existsSync(filePath)) {
+    return null;
+  }
+
+  return readJsonFile(filePath);
+}
+
+function summarizeCommandStep(name, result, metricsFile) {
+  const output = combineOutput(result);
+  const skipped = /skipped \(cache valid\)/i.test(output);
+  const metrics = metricsFile ? readMetricsFile(metricsFile) : null;
+
+  return {
+    name,
+    status: skipped ? 'SKIPPED' : result.exitCode === 0 ? 'PASS' : 'FAIL',
+    skipped,
+    cached: skipped,
+    durationMs: result.durationMs,
+    graphInitMs:
+      metrics && Number.isFinite(metrics.totalTime) ? Math.round(metrics.totalTime) : null,
+    errors: result.exitCode === 0 ? [] : [excerptOutput(output) || `${name} failed.`],
+  };
+}
+
+function runGeneratorSteps() {
+  const steps = [];
+
+  for (const step of generatorStepDefinitions) {
+    if (fs.existsSync(step.metricsFile)) {
+      fs.rmSync(step.metricsFile, { force: true });
+    }
+
+    const result = runCommand(binaries.node, step.command, {
+      MINDWP_GRAPH_INIT_METRICS_FILE: step.metricsFile,
+    });
+
+    steps.push(summarizeCommandStep(step.name, result, step.metricsFile));
+  }
+
+  return steps;
+}
+
+function buildSkippedTestsSection() {
+  return {
+    status: 'SKIPPED',
+    command: 'npm run test -- --run',
+    durationMs: 0,
+    total: 0,
+    passed: 0,
+    failed: 0,
+    skipped: 0,
+    files: [],
+    failedFiles: [],
+    errors: [],
+  };
+}
+
+function preserveReportFiles(relativePaths) {
+  const preserved = new Map();
+
+  for (const relativePath of relativePaths) {
+    const absolutePath = path.join(reportsDir, relativePath);
+    if (!fs.existsSync(absolutePath)) {
+      continue;
+    }
+
+    preserved.set(relativePath, fs.readFileSync(absolutePath, 'utf8'));
+  }
+
+  return preserved;
+}
+
+function restoreReportFiles(preserved) {
+  for (const [relativePath, content] of preserved.entries()) {
+    const absolutePath = path.join(reportsDir, relativePath);
+    ensureDir(path.dirname(absolutePath));
+    fs.writeFileSync(absolutePath, content, 'utf8');
+  }
+}
+
+function buildPerformanceSummary(report, generatorSteps, pipelineReport) {
+  const pipelineData = unwrapReportData(pipelineReport) ?? {};
+  const analyzerSteps = Array.isArray(pipelineData.analyzers) ? pipelineData.analyzers : [];
+  const topSlowSteps = [
+    ...generatorSteps.map(step => ({
+      name: step.name,
+      durationMs: step.durationMs,
+      skipped: step.skipped,
+    })),
+    ...analyzerSteps.map(step => ({
+      name: step.name,
+      durationMs: step.durationMs ?? 0,
+      skipped: step.skipped === true,
+    })),
+  ]
+    .sort((left, right) => {
+      if ((right.durationMs ?? 0) !== (left.durationMs ?? 0)) {
+        return (right.durationMs ?? 0) - (left.durationMs ?? 0);
+      }
+
+      return left.name.localeCompare(right.name);
+    })
+    .slice(0, 3);
+  const graphInitMs =
+    generatorSteps
+      .map(step => step.graphInitMs)
+      .filter(value => Number.isFinite(value))
+      .sort((left, right) => right - left)[0] ?? null;
+  const analyzerRuntimeMs = analyzerSteps.reduce(
+    (total, step) => total + (step.durationMs ?? 0),
+    0
+  );
+
+  return {
+    graphInitMs,
+    topSlowSteps,
+    validatorRuntimeMs: report.validate.durationMs ?? 0,
+    analyzerRuntimeMs,
+  };
+}
+
+function formatPerformanceDuration(step) {
+  if (step.skipped) {
+    return 'skipped (cache valid)';
+  }
+
+  return `${step.durationMs} ms`;
+}
+
+function printStructuredSystemSummary(report, performanceSummary) {
   const warningCount =
     report.validate.advisoryFailed + report.reports.stale.length + report.reports.missing.length;
-  const testStatus = report.tests.failed === 0 ? 'PASS' : 'FAIL';
+  const testStatus =
+    report.tests.status === 'SKIPPED' ? 'SKIPPED' : report.tests.failed === 0 ? 'PASS' : 'FAIL';
 
   process.stdout.write('[system:full]\n');
   process.stdout.write(`Status: ${report.status}\n`);
@@ -286,9 +507,22 @@ function printStructuredSystemSummary(report) {
   process.stdout.write(`Tests: ${testStatus}\n`);
   process.stdout.write(`Warnings: ${warningCount}\n`);
   process.stdout.write(`Reports: ${report.reports.fileCount}\n`);
+
+  if (performanceSummary.topSlowSteps.length > 0 || performanceSummary.graphInitMs !== null) {
+    process.stdout.write('Top Slow Steps:\n');
+    if (performanceSummary.graphInitMs !== null) {
+      process.stdout.write(`- graph-init: ${performanceSummary.graphInitMs} ms\n`);
+    }
+    for (const step of performanceSummary.topSlowSteps) {
+      process.stdout.write(`- ${step.name}: ${formatPerformanceDuration(step)}\n`);
+    }
+    process.stdout.write('Total Runtime:\n');
+    process.stdout.write(`- validators: ${performanceSummary.validatorRuntimeMs} ms\n`);
+    process.stdout.write(`- analyzers: ${performanceSummary.analyzerRuntimeMs} ms\n`);
+  }
 }
 
-function printStructuredSystemDetails(report) {
+function printStructuredSystemDetails(report, performanceSummary) {
   const blockingValidators = report.validate.validators
     .filter(validator => validator.status === 'FAIL' && validator.blocking)
     .map(validator => validator.name)
@@ -338,6 +572,8 @@ function printStructuredSystemDetails(report) {
   process.stdout.write(`- Duration: ${report.durationMs}ms\n`);
   process.stdout.write(`- Blocking: ${report.validate.blockingFailed}\n`);
   process.stdout.write(`- Advisory: ${report.validate.advisoryFailed}\n`);
+  process.stdout.write(`- Validator runtime: ${performanceSummary.validatorRuntimeMs}ms\n`);
+  process.stdout.write(`- Analyzer runtime: ${performanceSummary.analyzerRuntimeMs}ms\n`);
 }
 
 function assertLockedExecution() {
@@ -1140,10 +1376,10 @@ function summarizeVitestReport(report, fallbackDuration) {
         typeof item?.startTime === 'number' && typeof item?.endTime === 'number'
           ? Math.max(0, item.endTime - item.startTime)
           : Math.round(
-            assertions.reduce((sum, assertion) => {
-              return sum + (typeof assertion?.duration === 'number' ? assertion.duration : 0);
-            }, 0)
-          );
+              assertions.reduce((sum, assertion) => {
+                return sum + (typeof assertion?.duration === 'number' ? assertion.duration : 0);
+              }, 0)
+            );
 
       return {
         file,
@@ -1442,7 +1678,21 @@ function buildReportsSection(result, runStartedAt, timestamp) {
   const availableFileNames = new Set(trackedFiles.map(entry => entry.file.name));
   const missing = [...requiredReportFiles].filter(fileName => !availableFileNames.has(fileName));
   const stale = trackedFiles
-    .filter(entry => entry.ageMs > reportStaleThresholdMs)
+    .filter(entry => {
+      if (entry.ageMs <= reportStaleThresholdMs) {
+        return false;
+      }
+
+      const inputPaths = reportInputPathsByFile.get(entry.file.name);
+      if (!inputPaths) {
+        return true;
+      }
+
+      return !isExecutionCacheValid({
+        inputPaths: inputPaths.map(relativePath => path.join(root, relativePath)),
+        outputPaths: [path.join(reportsDir, entry.file.name)],
+      }).valid;
+    })
     .map(entry => entry.file.name)
     .sort((left, right) => left.localeCompare(right));
 
@@ -1494,7 +1744,7 @@ function buildSystemSection() {
     graph: {
       status:
         (graphReport?.errorCount ?? graphErrors.length) === 0 &&
-          (graphReport?.summary?.orphanNodes ?? 0) === 0
+        (graphReport?.summary?.orphanNodes ?? 0) === 0
           ? 'OK'
           : 'ISSUES',
       nodes: Array.isArray(authorityMap?.nodes) ? authorityMap.nodes.length : 0,
@@ -1507,12 +1757,11 @@ function buildSystemSection() {
 }
 
 function buildOverallStatus(report) {
-  const requiredSteps = [
-    report.validate.status,
-    report.typecheck.status,
-    report.tests.status,
-    report.reports.status,
-  ];
+  const requiredSteps = [report.validate.status, report.typecheck.status, report.reports.status];
+
+  if (report.tests.status !== 'SKIPPED') {
+    requiredSteps.push(report.tests.status);
+  }
 
   if (report.e2e.status === 'FAIL') {
     requiredSteps.push('FAIL');
@@ -1532,8 +1781,18 @@ function main() {
   ensureDir(tempDir);
   ensureDir(snapshotDir);
 
+  const preservedQuickReports = skipTests ? preserveReportFiles(quickPreservedReportFiles) : null;
+
   if (isGitWorkspaceDirty()) {
     logger.warn('running on dirty workspace');
+  }
+
+  const generatorSteps = runGeneratorSteps();
+  const generatorErrors = generatorSteps.flatMap(step => step.errors);
+  if (generatorErrors.length > 0) {
+    logger.printErrors(generatorErrors, 'generator errors', 5);
+    process.exitCode = 1;
+    return;
   }
 
   const validateResult = runCommand(binaries.node, [
@@ -1546,16 +1805,20 @@ function main() {
   const typecheck = buildTypecheckSection(validate);
 
   const vitestOutputPath = path.join(tempDir, 'vitest-all.json');
-  const testsResult = runCommand(binaries.npm, [
-    'run',
-    'test',
-    '--',
-    '--run',
-    '--reporter=json',
-    `--outputFile=${vitestOutputPath}`,
-  ]);
-  const vitestReport = readJsonFile(vitestOutputPath);
-  const tests = buildTestsSection(testsResult, vitestReport);
+  const tests = skipTests
+    ? buildSkippedTestsSection()
+    : (() => {
+        const testsResult = runCommand(binaries.npm, [
+          'run',
+          'test',
+          '--',
+          '--run',
+          '--reporter=json',
+          `--outputFile=${vitestOutputPath}`,
+        ]);
+        const vitestReport = readJsonFile(vitestOutputPath);
+        return buildTestsSection(testsResult, vitestReport);
+      })();
 
   const e2eResult = includeE2E
     ? runCommand(binaries.npx, ['playwright', 'test', '--reporter=json'])
@@ -1568,6 +1831,7 @@ function main() {
     '--import',
     'tsx/esm',
     'scripts/analyzers/export-reports.mjs',
+    `--mode=${loggingMode}`,
   ]);
   const reports = buildReportsSection(reportsResult, runStartedAt, timestamp);
   const system = buildSystemSection();
@@ -1593,6 +1857,26 @@ function main() {
 
   report.status = buildOverallStatus(report);
   const clientDashboard = buildClientDashboard(report);
+
+  if (skipTests) {
+    const pipelineReport = readReportJson(root, 'pipeline-report.json');
+    const performanceSummary = buildPerformanceSummary(report, generatorSteps, pipelineReport);
+    const shouldFail = report.status === 'FAIL';
+
+    if (preservedQuickReports) {
+      restoreReportFiles(preservedQuickReports);
+    }
+
+    printStructuredSystemSummary(report, performanceSummary);
+    if (outputMode === 'full') {
+      printStructuredSystemDetails(report, performanceSummary);
+    }
+
+    logger.printSummary('quick mode -> preserved system:full source-of-truth reports');
+    process.exitCode = shouldFail ? 1 : 0;
+    return;
+  }
+
   report.reports.files.push({
     name: 'system-health.json',
     path: 'reports/system-health.json',
@@ -1623,15 +1907,20 @@ function main() {
   report.reports.fileCount = report.reports.files.length;
   report.reports.status =
     report.reports.errors.length === 0 &&
-      report.reports.files.length > 0 &&
-      report.reports.missing.length === 0 &&
-      report.reports.stale.length === 0
+    report.reports.files.length > 0 &&
+    report.reports.missing.length === 0 &&
+    report.reports.stale.length === 0
       ? 'PASS'
       : 'FAIL';
   report.status = buildOverallStatus(report);
 
   const validatedOutputs = validateFrozenOutputs(report, clientDashboard);
   const pipelineReport = readReportJson(root, 'pipeline-report.json');
+  const performanceSummary = buildPerformanceSummary(
+    validatedOutputs.report,
+    generatorSteps,
+    pipelineReport
+  );
   const systemHealthReport = buildSystemHealthReport(validatedOutputs.report, pipelineReport);
   const systemHealthPath = path.join(reportsDir, 'system-health.json');
   writeJson(systemHealthPath, systemHealthReport);
@@ -1656,9 +1945,9 @@ function main() {
   );
   validatedOutputs.report.reports.status =
     validatedOutputs.report.reports.errors.length === 0 &&
-      validatedOutputs.report.reports.files.length > 0 &&
-      validatedOutputs.report.reports.missing.length === 0 &&
-      validatedOutputs.report.reports.stale.length === 0
+    validatedOutputs.report.reports.files.length > 0 &&
+    validatedOutputs.report.reports.missing.length === 0 &&
+    validatedOutputs.report.reports.stale.length === 0
       ? 'PASS'
       : 'FAIL';
   validatedOutputs.report.status = buildOverallStatus(validatedOutputs.report);
@@ -1668,9 +1957,9 @@ function main() {
   writeSnapshotArtifacts(validatedOutputs.report);
 
   const shouldFail = validatedOutputs.report.status === 'FAIL';
-  printStructuredSystemSummary(validatedOutputs.report);
+  printStructuredSystemSummary(validatedOutputs.report, performanceSummary);
   if (outputMode === 'full') {
-    printStructuredSystemDetails(validatedOutputs.report);
+    printStructuredSystemDetails(validatedOutputs.report, performanceSummary);
   }
   logger.printSummary(`system report -> ${logger.relativePath(reportPath)}`);
   logger.printSummary(`client dashboard -> ${logger.relativePath(clientDashboardPath)}`);

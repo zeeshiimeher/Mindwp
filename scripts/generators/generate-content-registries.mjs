@@ -55,17 +55,12 @@ const writeIfChanged = (filePath, content) => {
   return true;
 };
 
-const buildRegistryFile = ({
-  entries,
-  typeImport,
-  typeName,
-  registryConst,
-  listConst,
-  header,
-}) => {
+const buildRegistryFile = ({ entries, typeImport, typeName, registryConst, listConst, header }) => {
   const sortedEntries = [...entries].sort((a, b) => a.slug.localeCompare(b.slug));
 
-  const importLines = sortedEntries.map(entry => `import { ${entry.constName} } from '${entry.importPath}';`);
+  const importLines = sortedEntries.map(
+    entry => `import { ${entry.constName} } from '${entry.importPath}';`
+  );
   const objectLines = sortedEntries.map(entry => `  '${entry.slug}': ${entry.constName},`);
 
   return [

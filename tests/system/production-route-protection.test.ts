@@ -25,10 +25,14 @@ describe('system invariant: production route protection', () => {
     mutableEnv.ENABLE_DEV_DASHBOARD = 'false';
 
     const devResponse = middleware(new NextRequest('https://mindwp.com/dev/cta-label-contract'));
-    const dashboardResponse = middleware(new NextRequest('https://mindwp.com/dev/system-dashboard'));
+    const dashboardResponse = middleware(
+      new NextRequest('https://mindwp.com/dev/system-dashboard')
+    );
 
     expect(devResponse.headers.get('x-middleware-rewrite')).toBe('https://mindwp.com/not-found');
-    expect(dashboardResponse.headers.get('x-middleware-rewrite')).toBe('https://mindwp.com/not-found');
+    expect(dashboardResponse.headers.get('x-middleware-rewrite')).toBe(
+      'https://mindwp.com/not-found'
+    );
   });
 
   test('keeps public routes available in production and allows protected routes only when explicitly enabled', () => {
@@ -39,7 +43,9 @@ describe('system invariant: production route protection', () => {
     expect(publicResponse.headers.get('x-middleware-rewrite')).toBeNull();
 
     mutableEnv.ENABLE_DEV_DASHBOARD = 'true';
-    const enabledResponse = middleware(new NextRequest('https://mindwp.com/dev/cta-label-contract'));
+    const enabledResponse = middleware(
+      new NextRequest('https://mindwp.com/dev/cta-label-contract')
+    );
     expect(enabledResponse.headers.get('x-middleware-rewrite')).toBeNull();
   });
 

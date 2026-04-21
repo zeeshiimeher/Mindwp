@@ -49,6 +49,51 @@ function summarizeValidatorReport(report) {
   };
 }
 
+function summarizeValidatorEntry(validator) {
+  return {
+    name: validator?.name ?? null,
+    status: toUpperStatus(validator?.status, 'PASS'),
+    blocking: validator?.blocking === true,
+    reportFile: validator?.reportFile ?? null,
+    reportStatus: toUpperStatus(validator?.reportStatus, 'PASS'),
+    cached: validator?.cached === true,
+    stale: validator?.stale === true,
+    duration: Number.isFinite(validator?.duration) ? validator.duration : 0,
+  };
+}
+
+function summarizeValidationError(error) {
+  const output =
+    typeof error?.output === 'string'
+      ? error.output
+          .split('\n')
+          .map(line => line.trim())
+          .filter(Boolean)
+          .slice(0, 3)
+          .join(' | ')
+      : null;
+
+  return {
+    validator: error?.validator ?? null,
+    reportFile: error?.reportFile ?? null,
+    blocking: error?.blocking === true,
+    output,
+  };
+}
+
+function summarizeIssue(issue) {
+  if (!issue || typeof issue !== 'object') {
+    return issue ?? null;
+  }
+
+  return {
+    code: issue.code ?? null,
+    message: issue.message ?? null,
+    file: issue.file ?? null,
+    validator: issue.validator ?? null,
+  };
+}
+
 function buildValidationSnapshot(validationResults) {
   const validationData = unwrapReportData(validationResults) ?? {};
 
@@ -57,14 +102,20 @@ function buildValidationSnapshot(validationResults) {
     summary: validationResults?.summary ?? null,
     data: {
       total: validationData?.total ?? null,
-      validators: Array.isArray(validationData.validators) ? validationData.validators : [],
-      errors: Array.isArray(validationData.errors) ? validationData.errors : [],
+      validators: Array.isArray(validationData.validators)
+        ? validationData.validators.map(summarizeValidatorEntry)
+        : [],
+      errors: Array.isArray(validationData.errors)
+        ? validationData.errors.slice(0, 12).map(summarizeValidationError)
+        : [],
       reportSize: validationData?.reportSize ?? null,
       latestRun: validationData?.latestRun ?? null,
       cacheHits: validationData?.cacheHits ?? 0,
       staleReports: Array.isArray(validationData?.staleReports) ? validationData.staleReports : [],
     },
-    issues: Array.isArray(validationResults?.issues) ? validationResults.issues : [],
+    issues: Array.isArray(validationResults?.issues)
+      ? validationResults.issues.slice(0, 12).map(summarizeIssue)
+      : [],
   };
 }
 

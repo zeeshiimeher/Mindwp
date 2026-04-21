@@ -8,6 +8,7 @@ import prettier from 'prettier';
 import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
+import { isExecutionCacheValid } from '../lib/execution-cache.mjs';
 import { ensureGraphInitialized, getResolver } from '../../src/domains/init/ensureGraphInitialized';
 import { sortByAuthority } from '../../src/lib/authority/authorityScore';
 import type { AuthorityItem } from '../../src/lib/authority/resolver';
@@ -24,6 +25,20 @@ const OUTPUT_DIR = path.join(root, 'src', 'lib', 'authority', 'generated');
 const OUTPUT_FILE = path.join(OUTPUT_DIR, 'authorityMap.ts');
 const REPORTS_DIR = path.join(root, 'reports');
 const REPORT_FILE = path.join(REPORTS_DIR, 'authority-map.json');
+const INPUT_PATHS: string[] = [
+  path.join(root, 'src', 'domains', 'blog', 'registry.ts'),
+  path.join(root, 'src', 'domains', 'case-studies', 'registry.ts'),
+  path.join(root, 'src', 'domains', 'features', 'registry.ts'),
+  path.join(root, 'src', 'domains', 'industries', 'registry.ts'),
+  path.join(root, 'src', 'domains', 'resources', 'generatedRegistry.ts'),
+  path.join(root, 'src', 'domains', 'services', 'registry.ts'),
+  path.join(root, 'src', 'domains', 'contentModel.ts'),
+  path.join(root, 'src', 'domains', 'init'),
+  path.join(root, 'src', 'lib', 'authority'),
+  path.join(root, 'src', 'lib', 'content-graph'),
+  path.join(root, 'src', 'lib', 'content-quality'),
+  path.join(root, 'scripts', 'generators', 'generate-authority-map.ts'),
+];
 const logger = createLogger({
   label: 'authority-map',
   mode: resolveLoggingMode(process.argv.slice(2), systemEnv),
@@ -57,6 +72,16 @@ interface CaseStudySlots {
 }
 
 async function main() {
+  const cacheState = isExecutionCacheValid({
+    inputPaths: INPUT_PATHS,
+    outputPaths: [OUTPUT_FILE, REPORT_FILE],
+  });
+
+  if (cacheState.valid) {
+    logger.printSummary('skipped (cache valid)');
+    return;
+  }
+
   await ensureGraphInitialized();
 
   const structuredGraph = getStructuredContentGraph();
@@ -193,9 +218,24 @@ async function main() {
       industries: node.industries ?? [],
     })),
     edges: structuredGraph.nodes.flatMap(node => [
-      ...(node.relatesTo ?? []).map(edge => ({ source: node.id, target: edge.id, type: 'relatesTo', sourceType: edge.source })),
-      ...(node.supports ?? []).map(edge => ({ source: node.id, target: edge.id, type: 'supports', sourceType: edge.source })),
-      ...(node.validates ?? []).map(edge => ({ source: node.id, target: edge.id, type: 'validates', sourceType: edge.source })),
+      ...(node.relatesTo ?? []).map(edge => ({
+        source: node.id,
+        target: edge.id,
+        type: 'relatesTo',
+        sourceType: edge.source,
+      })),
+      ...(node.supports ?? []).map(edge => ({
+        source: node.id,
+        target: edge.id,
+        type: 'supports',
+        sourceType: edge.source,
+      })),
+      ...(node.validates ?? []).map(edge => ({
+        source: node.id,
+        target: edge.id,
+        type: 'validates',
+        sourceType: edge.source,
+      })),
     ]),
     topicValidation: buildTopicValidationSnapshots(structuredGraph.nodes),
     serviceValidation: buildServiceValidationSnapshots(structuredGraph.nodes),
@@ -226,10 +266,17 @@ async function main() {
   logger.printSummary(`report -> ${logger.relativePath(REPORT_FILE)}`);
 
   if (logger.isVerbose()) {
-    const edgeCountsBySource = new Map<string, { relates: number; supports: number; validates: number }>();
+    const edgeCountsBySource = new Map<
+      string,
+      { relates: number; supports: number; validates: number }
+    >();
 
     for (const edge of authorityReport.edges) {
-      const counts = edgeCountsBySource.get(edge.source) ?? { relates: 0, supports: 0, validates: 0 };
+      const counts = edgeCountsBySource.get(edge.source) ?? {
+        relates: 0,
+        supports: 0,
+        validates: 0,
+      };
       if (edge.type === 'relatesTo') {
         counts.relates += 1;
       } else if (edge.type === 'supports') {

@@ -34,9 +34,21 @@ const violations = [];
 /**
  * Properties where spacing tokens (--space-*) should be used.
  */
-const SPACING_PROPS = ['padding', 'padding-top', 'padding-right', 'padding-bottom', 'padding-left',
-  'margin', 'margin-top', 'margin-right', 'margin-bottom', 'margin-left', 'gap',
-  'row-gap', 'column-gap'];
+const SPACING_PROPS = [
+  'padding',
+  'padding-top',
+  'padding-right',
+  'padding-bottom',
+  'padding-left',
+  'margin',
+  'margin-top',
+  'margin-right',
+  'margin-bottom',
+  'margin-left',
+  'gap',
+  'row-gap',
+  'column-gap',
+];
 
 /**
  * Properties where font tokens (--font-*) should be used.
@@ -97,14 +109,23 @@ function scanComponentsCSS() {
     }
 
     // Skip comments and empty lines
-    if (trimmed.startsWith('/*') || trimmed.startsWith('*') || trimmed.startsWith('//') || trimmed === '') continue;
+    if (
+      trimmed.startsWith('/*') ||
+      trimmed.startsWith('*') ||
+      trimmed.startsWith('//') ||
+      trimmed === ''
+    )
+      continue;
 
     // Parse property: value from CSS line
     const propMatch = trimmed.match(/^([a-z-]+)\s*:\s*(.+?)\s*;?\s*$/);
     if (!propMatch) continue;
 
     const prop = propMatch[1];
-    const value = propMatch[2].replace(/!important\s*$/, '').replace(/\/\*.*?\*\//, '').trim();
+    const value = propMatch[2]
+      .replace(/!important\s*$/, '')
+      .replace(/\/\*.*?\*\//, '')
+      .trim();
 
     // Check spacing properties
     if (SPACING_PROPS.includes(prop)) {
@@ -140,12 +161,16 @@ function main() {
     fs.mkdirSync(path.dirname(reportPath), { recursive: true });
     fs.writeFileSync(
       reportPath,
-      JSON.stringify({
-        generatedAt: new Date().toISOString(),
-        passed: violations.length === 0,
-        violationCount: violations.length,
-        violations,
-      }, null, 2)
+      JSON.stringify(
+        {
+          generatedAt: new Date().toISOString(),
+          passed: violations.length === 0,
+          violationCount: violations.length,
+          violations,
+        },
+        null,
+        2
+      )
     );
   }
 

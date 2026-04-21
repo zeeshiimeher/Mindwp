@@ -1,8 +1,8 @@
 {
   "meta": {
-    "name": "section-structure-report",
+    "name": "validate-section-structure",
     "source": "npm run system:full",
-    "generatedAt": "2026-04-21T00:04:01.482Z",
+    "generatedAt": "2026-04-21T07:33:11.530Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,7 +13,7 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-21T00:04:01.482Z",
+    "generatedAt": "2026-04-21T07:33:11.530Z",
     "sources": {
       "services": 19,
       "features": 7,
@@ -24,8 +24,8 @@
     "violations": []
   },
   "issues": [],
-  "name": "section-structure-report",
+  "name": "validate-section-structure",
   "status": "PASS",
-  "generatedAt": "2026-04-21T00:04:01.482Z",
+  "generatedAt": "2026-04-21T07:33:11.530Z",
   "sourceCommand": "npm run system:full"
 }

@@ -81,7 +81,8 @@ function scanFile(filePath, issues, warnings) {
     rel,
     issues,
     'hardcoded_contact_base',
-    () => 'buildContactHref() must be called with canonical options only, not a raw /contact base string.'
+    () =>
+      'buildContactHref() must be called with canonical options only, not a raw /contact base string.'
   );
 
   pushMatches(
@@ -90,7 +91,8 @@ function scanFile(filePath, issues, warnings) {
     rel,
     issues,
     'manual_source_string',
-    () => 'Manual source strings are not allowed. Use buildContactHref({ system, sourceType, slug }).'
+    () =>
+      'Manual source strings are not allowed. Use buildContactHref({ system, sourceType, slug }).'
   );
 
   pushMatches(
@@ -178,6 +180,8 @@ async function main() {
 }
 
 main().catch(err => {
-  console.error(`[validate-conversion-contract] ${err instanceof Error ? err.message : String(err)}`);
+  console.error(
+    `[validate-conversion-contract] ${err instanceof Error ? err.message : String(err)}`
+  );
   process.exitCode = 1;
 });

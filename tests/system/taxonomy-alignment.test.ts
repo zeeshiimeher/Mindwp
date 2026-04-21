@@ -22,7 +22,9 @@ describe('system invariant: taxonomy and category routes stay aligned', () => {
   });
 
   test('every blog post category and topic is backed by generated taxonomy routes', async () => {
-    const expectedCategorySlugs = sort(unique(Object.values(BLOG_POSTS).map(post => post.category)));
+    const expectedCategorySlugs = sort(
+      unique(Object.values(BLOG_POSTS).map(post => post.category))
+    );
     const configuredCategorySlugs = sort(getAllCategorySlugs());
     const generatedCategorySlugs = sort(
       (await blogCategoryRoute.generateStaticParams()).map(param => param.categorySlug)
@@ -35,7 +37,9 @@ describe('system invariant: taxonomy and category routes stay aligned', () => {
       unique(Object.values(BLOG_POSTS).flatMap(post => post.topics ?? []))
     );
     const configuredTopicSlugs = sort(getallTopicSlugs());
-    const generatedTopicSlugs = sort((await blogTopicRoute.generateStaticParams()).map(param => param.topic));
+    const generatedTopicSlugs = sort(
+      (await blogTopicRoute.generateStaticParams()).map(param => param.topic)
+    );
 
     expect(generatedTopicSlugs).toEqual(configuredTopicSlugs);
 
@@ -57,7 +61,10 @@ describe('system invariant: taxonomy and category routes stay aligned', () => {
     expect(generatedCategorySlugs).toEqual(categorySlugs);
 
     for (const resource of Object.values(RESOURCE_REGISTRY)) {
-      expect(categoryIds.has(resource.category), `Unknown resource category "${resource.category}" on ${resource.slug}`).toBe(true);
+      expect(
+        categoryIds.has(resource.category),
+        `Unknown resource category "${resource.category}" on ${resource.slug}`
+      ).toBe(true);
     }
   });
 });

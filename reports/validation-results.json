@@ -2,36 +2,36 @@
   "meta": {
     "name": "validation-results",
     "source": "node scripts/core/validate-all.mjs --report-json",
-    "generatedAt": "2026-04-21T00:10:15.100Z",
-    "status": "PASS",
+    "generatedAt": "2026-04-21T07:45:55.254Z",
+    "status": "FAIL",
     "version": "1.0"
   },
   "summary": {
     "total": 27,
-    "passed": 27,
-    "failed": 0,
+    "passed": 26,
+    "failed": 1,
     "warnings": 0
   },
   "data": {
     "total": {
-      "passed": 27,
-      "failed": 0,
-      "blockingFailed": 0,
+      "passed": 26,
+      "failed": 1,
+      "blockingFailed": 1,
       "advisoryFailed": 0,
       "total": 27
     },
     "validators": [
       {
         "name": "check-generated",
-        "status": "pass",
-        "duration": 0,
+        "status": "fail",
+        "duration": 3748,
         "blocking": true,
         "reportFile": "check-generated-report.json",
         "reportMissing": false,
-        "cached": true,
-        "executionStatus": "SKIPPED",
-        "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:03:50.540Z",
+        "cached": false,
+        "executionStatus": "FAIL",
+        "reportStatus": "FAIL",
+        "reportGeneratedAt": "2026-04-21T07:45:51.471Z",
         "stale": false
       },
       {
@@ -44,7 +44,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:03:52.362Z",
+        "reportGeneratedAt": "2026-04-21T07:33:02.641Z",
         "stale": false
       },
       {
@@ -57,7 +57,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "WARN",
-        "reportGeneratedAt": "2026-04-21T00:04:13.662Z",
+        "reportGeneratedAt": "2026-04-21T07:33:23.251Z",
         "stale": false
       },
       {
@@ -70,7 +70,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:03:54.565Z",
+        "reportGeneratedAt": "2026-04-21T07:33:04.775Z",
         "stale": false
       },
       {
@@ -83,7 +83,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:03:55.509Z",
+        "reportGeneratedAt": "2026-04-21T07:33:05.671Z",
         "stale": false
       },
       {
@@ -96,7 +96,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:03:57.758Z",
+        "reportGeneratedAt": "2026-04-21T07:33:07.972Z",
         "stale": false
       },
       {
@@ -109,7 +109,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:03:58.613Z",
+        "reportGeneratedAt": "2026-04-21T07:33:08.811Z",
         "stale": false
       },
       {
@@ -122,7 +122,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:03:58.750Z",
+        "reportGeneratedAt": "2026-04-21T07:33:08.946Z",
         "stale": false
       },
       {
@@ -135,7 +135,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:03:59.513Z",
+        "reportGeneratedAt": "2026-04-21T07:33:09.678Z",
         "stale": false
       },
       {
@@ -148,7 +148,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:04:00.565Z",
+        "reportGeneratedAt": "2026-04-21T07:33:10.653Z",
         "stale": false
       },
       {
@@ -161,7 +161,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:04:01.482Z",
+        "reportGeneratedAt": "2026-04-21T07:33:11.530Z",
         "stale": false
       },
       {
@@ -174,7 +174,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:04:01.597Z",
+        "reportGeneratedAt": "2026-04-21T07:33:11.658Z",
         "stale": false
       },
       {
@@ -187,7 +187,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:04:01.735Z",
+        "reportGeneratedAt": "2026-04-21T07:33:11.791Z",
         "stale": false
       },
       {
@@ -200,7 +200,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:04:01.826Z",
+        "reportGeneratedAt": "2026-04-21T07:33:11.876Z",
         "stale": false
       },
       {
@@ -213,7 +213,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:04:02.664Z",
+        "reportGeneratedAt": "2026-04-21T07:33:12.674Z",
         "stale": false
       },
       {
@@ -226,7 +226,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:04:03.737Z",
+        "reportGeneratedAt": "2026-04-21T07:33:13.724Z",
         "stale": false
       },
       {
@@ -239,7 +239,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:04:04.387Z",
+        "reportGeneratedAt": "2026-04-21T07:33:14.343Z",
         "stale": false
       },
       {
@@ -252,7 +252,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:04:05.045Z",
+        "reportGeneratedAt": "2026-04-21T07:33:15.028Z",
         "stale": false
       },
       {
@@ -265,7 +265,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:04:05.950Z",
+        "reportGeneratedAt": "2026-04-21T07:33:15.906Z",
         "stale": false
       },
       {
@@ -278,7 +278,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:04:06.640Z",
+        "reportGeneratedAt": "2026-04-21T07:33:16.585Z",
         "stale": false
       },
       {
@@ -291,7 +291,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "WARN",
-        "reportGeneratedAt": "2026-04-21T00:04:08.266Z",
+        "reportGeneratedAt": "2026-04-21T07:33:18.180Z",
         "stale": false
       },
       {
@@ -304,7 +304,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:04:06.776Z",
+        "reportGeneratedAt": "2026-04-21T07:33:16.719Z",
         "stale": false
       },
       {
@@ -317,7 +317,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:04:06.992Z",
+        "reportGeneratedAt": "2026-04-21T07:33:16.928Z",
         "stale": false
       },
       {
@@ -330,7 +330,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:04:07.295Z",
+        "reportGeneratedAt": "2026-04-21T07:33:17.216Z",
         "stale": false
       },
       {
@@ -343,7 +343,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:04:07.460Z",
+        "reportGeneratedAt": "2026-04-21T07:33:17.364Z",
         "stale": false
       },
       {
@@ -356,8 +356,15 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-21T00:04:07.450Z",
+        "reportGeneratedAt": "2026-04-21T07:33:17.348Z",
         "stale": false
+      }
+    ],
+    "errors": [
+      {
+        "validator": "check-generated",
+        "blocking": true,
+        "output": "[component-docs] Wrote 133 component docs -> src/utils/componentDocs.generated.ts\n[global-inventory] Updated 0/1 docs\n✅ Content registries generated (0 file(s) changed).\n[authority-map] skipped (cache valid)\n\n[check-generated] error -> generated outputs are out of date: src/utils/componentDocs.generated.ts\n[check-generated] error -> run: npm run -s generate:component-docs && npm run -s generate:global-inventory && npm run -s generate:content-registries\n"
       }
     ],
     "reportSize": {
@@ -366,8 +373,8 @@
       "warnings": [],
       "failures": []
     },
-    "latestRun": "2026-04-21T00:10:15.077Z",
-    "cacheHits": 26,
+    "latestRun": "2026-04-21T07:45:51.471Z",
+    "cacheHits": 25,
     "staleReports": [],
     "seo": {
       "pagesAnalyzed": 355,
@@ -393,9 +400,15 @@
       "topicsWithoutInternalPath": 0
     }
   },
-  "issues": [],
+  "issues": [
+    {
+      "validator": "check-generated",
+      "blocking": true,
+      "output": "[component-docs] Wrote 133 component docs -> src/utils/componentDocs.generated.ts\n[global-inventory] Updated 0/1 docs\n✅ Content registries generated (0 file(s) changed).\n[authority-map] skipped (cache valid)\n\n[check-generated] error -> generated outputs are out of date: src/utils/componentDocs.generated.ts\n[check-generated] error -> run: npm run -s generate:component-docs && npm run -s generate:global-inventory && npm run -s generate:content-registries\n"
+    }
+  ],
   "name": "validation-results",
-  "status": "PASS",
-  "generatedAt": "2026-04-21T00:10:15.100Z",
+  "status": "FAIL",
+  "generatedAt": "2026-04-21T07:45:55.254Z",
   "sourceCommand": "node scripts/core/validate-all.mjs --report-json"
 }

@@ -117,12 +117,12 @@ After generating an image, open both files from `public/images/<domain>/<slug>/`
 
 ## Output Locations
 
-| Domain | Clean Path | Overlay Path |
-|--------|-----------|-------------|
-| Blog | `public/images/blog/<slug>/featured-clean.webp` | `public/images/blog/<slug>/featured-overlay.webp` |
+| Domain       | Clean Path                                              | Overlay Path                                              |
+| ------------ | ------------------------------------------------------- | --------------------------------------------------------- |
+| Blog         | `public/images/blog/<slug>/featured-clean.webp`         | `public/images/blog/<slug>/featured-overlay.webp`         |
 | Case Studies | `public/images/case-studies/<slug>/featured-clean.webp` | `public/images/case-studies/<slug>/featured-overlay.webp` |
-| Resources | `public/images/resources/<slug>/featured-clean.webp` | `public/images/resources/<slug>/featured-overlay.webp` |
-| Industries | `public/images/industries/<slug>/featured-clean.webp` | `public/images/industries/<slug>/featured-overlay.webp` |
+| Resources    | `public/images/resources/<slug>/featured-clean.webp`    | `public/images/resources/<slug>/featured-overlay.webp`    |
+| Industries   | `public/images/industries/<slug>/featured-clean.webp`   | `public/images/industries/<slug>/featured-overlay.webp`   |
 
 ---
 
@@ -130,12 +130,12 @@ After generating an image, open both files from `public/images/<domain>/<slug>/`
 
 These are hardcoded in `scripts/image-system/image-generate.ts` under `DEFAULT_TEST_SLUGS`:
 
-| Domain | Slug |
-|--------|------|
-| blog | `lead-response-time-for-service-businesses` |
-| case-studies | `appointment-business-booking-automation` |
-| resources | `authority-signals-for-local-search` |
-| industries | `plumbing` |
+| Domain       | Slug                                        |
+| ------------ | ------------------------------------------- |
+| blog         | `lead-response-time-for-service-businesses` |
+| case-studies | `appointment-business-booking-automation`   |
+| resources    | `authority-signals-for-local-search`        |
+| industries   | `plumbing`                                  |
 
 ---
 
@@ -191,14 +191,14 @@ Every image generation produces detailed console output:
 
 ## Troubleshooting
 
-| Issue | Fix |
-|-------|-----|
-| "already has featured-clean image, skipping" | Use `--force`, `--regenerate`, or `--fresh` flag |
-| Title overflowing or too small | Title layout engine auto-sizes 24-52px, then scales by variant (1.38-1.68×) |
-| Text block positioned too far left | Safety clamp at 80px. If text block exceeds image bounds, widen `maxTextWidth` in config |
-| Overlay too weak / too strong | Adjust `OVERLAY_CONFIG` in `src/lib/image-system/config.ts` |
-| No suitable image found | Try `--fresh` (blocks previous image) or check API keys in `.env.local` |
-| WCAG contrast fail | Use `--force` to regenerate with current settings |
-| Rate limited | System auto-pauses at 50 downloads/hour. Wait or try later |
-| Same image every time | Page rotation and tier shuffling provide variety. Use `--fresh` to force different image |
-| Intelligence rejecting all candidates | Check rejection reasons in logs: "subject centered", "text detected", "not landscape", "low contrast" |
+| Issue                                        | Fix                                                                                                   |
+| -------------------------------------------- | ----------------------------------------------------------------------------------------------------- |
+| "already has featured-clean image, skipping" | Use `--force`, `--regenerate`, or `--fresh` flag                                                      |
+| Title overflowing or too small               | Title layout engine auto-sizes 24-52px, then scales by variant (1.38-1.68×)                           |
+| Text block positioned too far left           | Safety clamp at 80px. If text block exceeds image bounds, widen `maxTextWidth` in config              |
+| Overlay too weak / too strong                | Adjust `OVERLAY_CONFIG` in `src/lib/image-system/config.ts`                                           |
+| No suitable image found                      | Try `--fresh` (blocks previous image) or check API keys in `.env.local`                               |
+| WCAG contrast fail                           | Use `--force` to regenerate with current settings                                                     |
+| Rate limited                                 | System auto-pauses at 50 downloads/hour. Wait or try later                                            |
+| Same image every time                        | Page rotation and tier shuffling provide variety. Use `--fresh` to force different image              |
+| Intelligence rejecting all candidates        | Check rejection reasons in logs: "subject centered", "text detected", "not landscape", "low contrast" |

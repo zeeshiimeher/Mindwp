@@ -71,9 +71,7 @@ function main() {
       buildIssue(
         'duplicate_global_cta_defaults',
         `Expected exactly one global CTA defaults definition shape in src/lib/cta/primaryAction.ts, found ${globalDefaultMatches.length}.`,
-        globalDefaultMatches[1]
-          ? lineNumberForIndex(source, globalDefaultMatches[1].index ?? 0)
-          : 1
+        globalDefaultMatches[1] ? lineNumberForIndex(source, globalDefaultMatches[1].index ?? 0) : 1
       )
     );
   }

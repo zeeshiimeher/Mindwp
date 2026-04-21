@@ -25,6 +25,9 @@ function stripVolatileFields(value: unknown): unknown {
       key === 'generatedAt' ||
       key === 'timestamp' ||
       key === 'durationMs' ||
+      key === 'validateAllMs' ||
+      key === 'exportReportsMs' ||
+      key === 'totalMs' ||
       key === 'updatedAt' ||
       key === 'count' ||
       key === 'reportCount' ||

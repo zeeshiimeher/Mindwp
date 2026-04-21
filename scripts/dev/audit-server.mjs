@@ -98,7 +98,11 @@ function isPortReachable({ host = AUDIT_HOST, port = AUDIT_PORT, timeout = 1000 
   });
 }
 
-async function waitForPort({ host = AUDIT_HOST, port = AUDIT_PORT, timeoutMs = START_TIMEOUT_MS } = {}) {
+async function waitForPort({
+  host = AUDIT_HOST,
+  port = AUDIT_PORT,
+  timeoutMs = START_TIMEOUT_MS,
+} = {}) {
   const startedAt = Date.now();
 
   while (Date.now() - startedAt < timeoutMs) {
@@ -168,7 +172,15 @@ export async function startAuditServer({ waitForReady = true } = {}) {
   const logFd = fs.openSync(LOG_FILE, 'a');
   const child = spawn(
     process.execPath,
-    ['scripts/runners/run-next.mjs', '--filter', 'dev', '--', '--webpack', '-p', String(AUDIT_PORT)],
+    [
+      'scripts/runners/run-next.mjs',
+      '--filter',
+      'dev',
+      '--',
+      '--webpack',
+      '-p',
+      String(AUDIT_PORT),
+    ],
     {
       cwd: ROOT,
       detached: true,
@@ -194,7 +206,9 @@ export async function startAuditServer({ waitForReady = true } = {}) {
   if (waitForReady) {
     const ready = await waitForPort();
     if (!ready) {
-      throw new Error(`Audit server did not become reachable on port ${AUDIT_PORT} within ${START_TIMEOUT_MS}ms.`);
+      throw new Error(
+        `Audit server did not become reachable on port ${AUDIT_PORT} within ${START_TIMEOUT_MS}ms.`
+      );
     }
   }
 

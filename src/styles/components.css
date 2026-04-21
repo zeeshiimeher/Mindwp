@@ -938,11 +938,7 @@
 .c-system-capabilities__visual--routing,
 .system-capabilities__visual--visibility,
 .c-system-capabilities__visual--visibility {
-  background: linear-gradient(
-    135deg,
-    var(--gradient-secondary-from),
-    var(--gradient-secondary-to)
-  );
+  background: linear-gradient(135deg, var(--gradient-secondary-from), var(--gradient-secondary-to));
 }
 
 .system-capabilities__visual-head,
@@ -1050,11 +1046,7 @@
 }
 
 .how-it-works-step__number--secondary {
-  background: linear-gradient(
-    135deg,
-    var(--gradient-secondary-from),
-    var(--gradient-secondary-to)
-  );
+  background: linear-gradient(135deg, var(--gradient-secondary-from), var(--gradient-secondary-to));
 }
 
 .how-it-works-step__number--accent {
@@ -2493,11 +2485,7 @@
 
 .technologies__icon-container--grad,
 .c-technology-cards-section__icon-container--grad {
-  background: linear-gradient(
-    135deg,
-    var(--from, var(--c-primary)),
-    var(--to, var(--c-primary))
-  );
+  background: linear-gradient(135deg, var(--from, var(--c-primary)), var(--to, var(--c-primary)));
   border-radius: var(--radius);
   box-shadow: var(--shadow-md);
 }
@@ -2862,8 +2850,8 @@
     max-height var(--transition-fast),
     opacity var(--transition-fast);
 }
-.faq-list .faq__card{
-  gap:0px;
+.faq-list .faq__card {
+  gap: 0px;
 }
 
 .faq__answer[data-open='true'] {
@@ -2970,7 +2958,6 @@
    ---------------------------------------------------------------------- */
 
 @media (max-width: 767px) {
-
   .industry-packages__card,
   .c-tier-cards-section__card {
     padding: var(--space-4);
@@ -2993,7 +2980,9 @@
   border-color: var(--c-primary);
   border-width: 2px;
   background-color: color-mix(in oklab, var(--c-primary) 4%, var(--c-surface));
-  box-shadow: var(--shadow-xl), 0 0 20px color-mix(in oklab, var(--c-primary) 15%, transparent);
+  box-shadow:
+    var(--shadow-xl),
+    0 0 20px color-mix(in oklab, var(--c-primary) 15%, transparent);
 }
 
 .industry-packages__popular-badge,
@@ -4043,7 +4032,11 @@ summary.component-library__sidebar-link {
   border: 1px solid color-mix(in oklab, var(--c-border-alpha) 75%, white);
   border-radius: var(--radius-lg);
   background:
-    radial-gradient(circle at top right, color-mix(in oklab, var(--c-primary) 9%, white), transparent 38%),
+    radial-gradient(
+      circle at top right,
+      color-mix(in oklab, var(--c-primary) 9%, white),
+      transparent 38%
+    ),
     linear-gradient(180deg, color-mix(in oklab, white 90%, var(--c-primary) 10%), white 100%);
 }
 
@@ -4149,8 +4142,11 @@ summary.component-library__sidebar-link {
   padding: var(--space-5);
   border: 1px dashed color-mix(in oklab, var(--c-border-alpha) 85%, white);
   border-radius: var(--radius-lg);
-  background:
-    linear-gradient(180deg, color-mix(in oklab, white 96%, var(--c-primary) 4%), white 100%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, white 96%, var(--c-primary) 4%),
+    white 100%
+  );
 }
 
 .component-library__preview-frame[data-full-width='true'][data-viewport='tablet'] {
@@ -4175,8 +4171,11 @@ summary.component-library__sidebar-link {
   padding: var(--space-4);
   border: 1px solid color-mix(in oklab, var(--c-border-alpha) 80%, white);
   border-radius: var(--radius-lg);
-  background:
-    linear-gradient(180deg, color-mix(in oklab, white 92%, var(--c-primary) 8%), white 100%);
+  background: linear-gradient(
+    180deg,
+    color-mix(in oklab, white 92%, var(--c-primary) 8%),
+    white 100%
+  );
 }
 
 .component-library__inline-preview-label {
@@ -6612,7 +6611,11 @@ summary.component-library__sidebar-link {
 
 .explore-cards-section__card--gradient-blue,
 .c-explore-cards-section__card--gradient-blue {
-  background-image: linear-gradient(135deg, var(--color-surface-accent-blue) 0%, var(--c-surface) 100%);
+  background-image: linear-gradient(
+    135deg,
+    var(--color-surface-accent-blue) 0%,
+    var(--c-surface) 100%
+  );
 }
 
 .explore-cards-section__card--gradient-teal,
@@ -6697,7 +6700,6 @@ summary.component-library__sidebar-link {
 }
 
 @media (max-width: 767px) {
-
   .explore-cards-section__card,
   .c-explore-cards-section__card {
     padding: var(--space-4);
@@ -8621,31 +8623,80 @@ h3.cta-heading {
    ===================================================================== */
 
 /* --- variant-text: semantic text color --- */
-.variant-text-primary   { color: var(--variant-text-primary); }
-.variant-text-secondary { color: var(--variant-text-secondary); }
-.variant-text-accent    { color: var(--variant-text-accent); }
-.variant-text-success   { color: var(--variant-text-success); }
-.variant-text-warning   { color: var(--variant-text-warning); }
-.variant-text-info      { color: var(--variant-text-info); }
-.variant-text-neutral   { color: var(--variant-text-neutral); }
+.variant-text-primary {
+  color: var(--variant-text-primary);
+}
+.variant-text-secondary {
+  color: var(--variant-text-secondary);
+}
+.variant-text-accent {
+  color: var(--variant-text-accent);
+}
+.variant-text-success {
+  color: var(--variant-text-success);
+}
+.variant-text-warning {
+  color: var(--variant-text-warning);
+}
+.variant-text-info {
+  color: var(--variant-text-info);
+}
+.variant-text-neutral {
+  color: var(--variant-text-neutral);
+}
 
 /* --- variant-badge: semantic badge pill --- */
-.variant-badge-primary   { background-color: var(--icon-bg-primary);   color: var(--icon-text-primary); }
-.variant-badge-secondary { background-color: var(--icon-bg-secondary); color: var(--icon-text-secondary); }
-.variant-badge-accent    { background-color: var(--icon-bg-accent);    color: var(--icon-text-accent); }
-.variant-badge-success   { background-color: var(--icon-bg-success);   color: var(--icon-text-success); }
-.variant-badge-warning   { background-color: var(--icon-bg-warning);   color: var(--icon-text-warning); }
-.variant-badge-info      { background-color: var(--icon-bg-info);      color: var(--icon-text-info); }
-.variant-badge-neutral   { background-color: var(--icon-bg-neutral);   color: var(--icon-text-neutral); }
+.variant-badge-primary {
+  background-color: var(--icon-bg-primary);
+  color: var(--icon-text-primary);
+}
+.variant-badge-secondary {
+  background-color: var(--icon-bg-secondary);
+  color: var(--icon-text-secondary);
+}
+.variant-badge-accent {
+  background-color: var(--icon-bg-accent);
+  color: var(--icon-text-accent);
+}
+.variant-badge-success {
+  background-color: var(--icon-bg-success);
+  color: var(--icon-text-success);
+}
+.variant-badge-warning {
+  background-color: var(--icon-bg-warning);
+  color: var(--icon-text-warning);
+}
+.variant-badge-info {
+  background-color: var(--icon-bg-info);
+  color: var(--icon-text-info);
+}
+.variant-badge-neutral {
+  background-color: var(--icon-bg-neutral);
+  color: var(--icon-text-neutral);
+}
 
 /* --- variant-card: subtle left-border accent --- */
-.variant-card-primary   { border-left: 3px solid var(--variant-border-primary); }
-.variant-card-secondary { border-left: 3px solid var(--variant-border-secondary); }
-.variant-card-accent    { border-left: 3px solid var(--variant-border-accent); }
-.variant-card-success   { border-left: 3px solid var(--variant-border-success); }
-.variant-card-warning   { border-left: 3px solid var(--variant-border-warning); }
-.variant-card-info      { border-left: 3px solid var(--variant-border-info); }
-.variant-card-neutral   { border-left: 3px solid var(--variant-border-neutral); }
+.variant-card-primary {
+  border-left: 3px solid var(--variant-border-primary);
+}
+.variant-card-secondary {
+  border-left: 3px solid var(--variant-border-secondary);
+}
+.variant-card-accent {
+  border-left: 3px solid var(--variant-border-accent);
+}
+.variant-card-success {
+  border-left: 3px solid var(--variant-border-success);
+}
+.variant-card-warning {
+  border-left: 3px solid var(--variant-border-warning);
+}
+.variant-card-info {
+  border-left: 3px solid var(--variant-border-info);
+}
+.variant-card-neutral {
+  border-left: 3px solid var(--variant-border-neutral);
+}
 
 /* =========================================================
    GRADIENT ICON RESTRICTION
@@ -8667,27 +8718,15 @@ h3.cta-heading {
 
 /* Allowed gradient utilities (lg/xl only) */
 .icon-bg-gradient-primary {
-  background: linear-gradient(
-    135deg,
-    var(--gradient-primary-from),
-    var(--gradient-primary-to)
-  );
+  background: linear-gradient(135deg, var(--gradient-primary-from), var(--gradient-primary-to));
 }
 
 .icon-bg-gradient-accent {
-  background: linear-gradient(
-    135deg,
-    var(--gradient-accent-from),
-    var(--gradient-accent-to)
-  );
+  background: linear-gradient(135deg, var(--gradient-accent-from), var(--gradient-accent-to));
 }
 
 .icon-bg-gradient-secondary {
-  background: linear-gradient(
-    135deg,
-    var(--gradient-secondary-from),
-    var(--gradient-secondary-to)
-  );
+  background: linear-gradient(135deg, var(--gradient-secondary-from), var(--gradient-secondary-to));
 }
 
 /* RULE:
@@ -9598,12 +9637,11 @@ h3.cta-heading {
   grid-template-columns: 5rem minmax(0, 1fr);
   padding: var(--space-5);
   border: 1px solid color-mix(in oklab, var(--c-primary) 10%, var(--c-border-alpha));
-  background:
-    linear-gradient(
-      145deg,
-      color-mix(in oklab, var(--c-surface) 94%, white),
-      color-mix(in oklab, var(--c-bg) 20%, var(--c-surface))
-    );
+  background: linear-gradient(
+    145deg,
+    color-mix(in oklab, var(--c-surface) 94%, white),
+    color-mix(in oklab, var(--c-bg) 20%, var(--c-surface))
+  );
   box-shadow: 0 20px 50px -36px color-mix(in oklab, var(--c-dark) 18%, transparent);
 }
 
@@ -9629,12 +9667,11 @@ h3.cta-heading {
   width: var(--space-9);
   height: var(--space-9);
   border-radius: 1.25rem;
-  background:
-    linear-gradient(
-      135deg,
-      color-mix(in oklab, var(--c-primary) 14%, white),
-      color-mix(in oklab, var(--color-action-secondary) 18%, white)
-    );
+  background: linear-gradient(
+    135deg,
+    color-mix(in oklab, var(--c-primary) 14%, white),
+    color-mix(in oklab, var(--color-action-secondary) 18%, white)
+  );
   border-color: color-mix(in oklab, var(--c-primary) 18%, var(--c-border-alpha));
 }
 
@@ -11120,7 +11157,8 @@ h3.cta-heading {
   color: var(--c-text-muted);
 }
 
-.c-service-spectrum-cards-section__card--featured .c-service-spectrum-cards-section__card-description {
+.c-service-spectrum-cards-section__card--featured
+  .c-service-spectrum-cards-section__card-description {
   color: var(--color-inverse-80);
 }
 

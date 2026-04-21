@@ -38,7 +38,12 @@ function isSvgTextContext(lines, lineIndex) {
     if (/<text(\s|>|$)/.test(lines[j]) || /<tspan(\s|>|$)/.test(lines[j])) {
       return true;
     }
-    if (/<[a-zA-Z]/.test(lines[j]) && !/<text/.test(lines[j]) && !/<tspan/.test(lines[j]) && j !== lineIndex) {
+    if (
+      /<[a-zA-Z]/.test(lines[j]) &&
+      !/<text/.test(lines[j]) &&
+      !/<tspan/.test(lines[j]) &&
+      j !== lineIndex
+    ) {
       return false;
     }
   }
@@ -87,12 +92,16 @@ function main() {
     fs.mkdirSync(path.dirname(reportPath), { recursive: true });
     fs.writeFileSync(
       reportPath,
-      JSON.stringify({
-        generatedAt: new Date().toISOString(),
-        passed: violations.length === 0,
-        violationCount: violations.length,
-        violations,
-      }, null, 2)
+      JSON.stringify(
+        {
+          generatedAt: new Date().toISOString(),
+          passed: violations.length === 0,
+          violationCount: violations.length,
+          violations,
+        },
+        null,
+        2
+      )
     );
   }
 

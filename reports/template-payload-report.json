@@ -1,8 +1,8 @@
 {
   "meta": {
-    "name": "template-payload-report",
+    "name": "validate-template-payload-sufficiency",
     "source": "npm run system:full",
-    "generatedAt": "2026-04-21T00:04:00.565Z",
+    "generatedAt": "2026-04-21T07:33:10.653Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,7 +13,7 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-21T00:04:00.565Z",
+    "generatedAt": "2026-04-21T07:33:10.653Z",
     "sources": {
       "services": 19,
       "features": 7,
@@ -25,8 +25,8 @@
     "violations": []
   },
   "issues": [],
-  "name": "template-payload-report",
+  "name": "validate-template-payload-sufficiency",
   "status": "PASS",
-  "generatedAt": "2026-04-21T00:04:00.565Z",
+  "generatedAt": "2026-04-21T07:33:10.653Z",
   "sourceCommand": "npm run system:full"
 }

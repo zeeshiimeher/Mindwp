@@ -46,6 +46,10 @@ Example settings:
 2. `npm run system:full -- --mode=summary`
 3. `npm run preaudit`
 
+If you want the setup run to print the detailed structured section as well as the summary, use:
+
+- `npm run system:full -- --mode=summary --output=full`
+
 ## AI Instruction
 
 Read `system/AI_AUDIT_CONTEXT.md` before doing anything else.

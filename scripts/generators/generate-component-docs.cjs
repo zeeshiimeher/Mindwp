@@ -32,9 +32,7 @@ function toRoutePathFromAppPageFile(relFilePath) {
   const normalized = toPosix(relFilePath);
   if (!normalized.startsWith('src/app/') || !normalized.endsWith('/page.tsx')) return undefined;
 
-  const routePart = normalized
-    .replace(/^src\/app\//, '')
-    .replace(/(^|\/)page\.tsx$/, '');
+  const routePart = normalized.replace(/^src\/app\//, '').replace(/(^|\/)page\.tsx$/, '');
   if (!routePart) return '/';
 
   const segments = routePart
@@ -138,15 +136,13 @@ function collectRepresentativeUsageMap(project, componentNames) {
     .getSourceFiles('src/screens/**/*.tsx')
     .filter(sf => !toPosix(sf.getFilePath()).endsWith('/ComponentLibrary.tsx'));
 
-  const usageCandidateFiles = project
-    .getSourceFiles('src/**/*.tsx')
-    .filter(sf => {
-      const rel = toPosix(path.relative(WORKSPACE_ROOT, sf.getFilePath()));
-      if (rel.endsWith('.generated.tsx')) return false;
-      if (rel.includes('/__tests__/') || rel.includes('/tests/')) return false;
-      if (rel.endsWith('/ComponentLibrary.tsx')) return false;
-      return true;
-    });
+  const usageCandidateFiles = project.getSourceFiles('src/**/*.tsx').filter(sf => {
+    const rel = toPosix(path.relative(WORKSPACE_ROOT, sf.getFilePath()));
+    if (rel.endsWith('.generated.tsx')) return false;
+    if (rel.includes('/__tests__/') || rel.includes('/tests/')) return false;
+    if (rel.endsWith('/ComponentLibrary.tsx')) return false;
+    return true;
+  });
 
   const screenToRoute = new Map();
   const importerMap = buildImporterMap(project);
@@ -183,7 +179,8 @@ function collectRepresentativeUsageMap(project, componentNames) {
         if (!componentNameSet.has(importedName)) continue;
 
         const localName = namedImport.getAliasNode()?.getText() || importedName;
-        if (!localNamesByComponent.has(importedName)) localNamesByComponent.set(importedName, new Set());
+        if (!localNamesByComponent.has(importedName))
+          localNamesByComponent.set(importedName, new Set());
         localNamesByComponent.get(importedName).add(localName);
       }
     }
@@ -295,12 +292,13 @@ async function main() {
 
   const checker = project.getTypeChecker();
 
-  const sourceFiles = project
-    .getSourceFiles()
-    .filter(sf => {
-      const fp = toPosix(sf.getFilePath());
-      return fp.includes('/src/components/reusable/single/') || fp.includes('/src/components/reusable/sections/');
-    });
+  const sourceFiles = project.getSourceFiles().filter(sf => {
+    const fp = toPosix(sf.getFilePath());
+    return (
+      fp.includes('/src/components/reusable/single/') ||
+      fp.includes('/src/components/reusable/sections/')
+    );
+  });
 
   const docs = {};
 
@@ -314,7 +312,9 @@ async function main() {
     }
   }
 
-  const representativeUsageByComponent = collectRepresentativeUsageMap(project, [...componentNames]);
+  const representativeUsageByComponent = collectRepresentativeUsageMap(project, [
+    ...componentNames,
+  ]);
 
   for (const sourceFile of sourceFiles) {
     for (const symbol of sourceFile.getExportSymbols()) {
@@ -402,7 +402,9 @@ async function main() {
   fs.mkdirSync(path.dirname(outFile), { recursive: true });
   fs.writeFileSync(outFile, content, 'utf8');
 
-  console.log(`[component-docs] Wrote ${sortedNames.length} component docs -> ${toPosix(path.relative(WORKSPACE_ROOT, outFile))}`);
+  console.log(
+    `[component-docs] Wrote ${sortedNames.length} component docs -> ${toPosix(path.relative(WORKSPACE_ROOT, outFile))}`
+  );
 }
 
 main().catch(err => {

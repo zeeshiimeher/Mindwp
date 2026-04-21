@@ -17,7 +17,13 @@ const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'content-quality-report.json');
 
 function resolveContentQualityPageType(kind) {
-  if (kind === 'service' || kind === 'feature' || kind === 'blog' || kind === 'resource' || kind === 'case-study') {
+  if (
+    kind === 'service' ||
+    kind === 'feature' ||
+    kind === 'blog' ||
+    kind === 'resource' ||
+    kind === 'case-study'
+  ) {
     return kind;
   }
 
@@ -37,26 +43,38 @@ function slugFromPath(pathname) {
     return 'home';
   }
 
-  return String(pathname).replace(/^\/+|\/+$/g, '').replace(/\//g, '--');
+  return String(pathname)
+    .replace(/^\/+|\/+$/g, '')
+    .replace(/\//g, '--');
 }
 
-function buildRouteIssue({ entry, severity, category, code, title, description, impact, fix, details = null }) {
+function buildRouteIssue({
+  entry,
+  severity,
+  category,
+  code,
+  title,
+  description,
+  impact,
+  fix,
+  details = null,
+}) {
   return {
     message: description,
     ...createSystemIssue({
-    source: 'validate-content-quality',
-    code,
-    severity,
-    category,
-    entityType: entry.kind,
-    slug: slugFromPath(entry.path),
-    title,
-    description,
-    impact,
-    fix,
-    autoFixable: false,
-    details,
-    path: entry.path,
+      source: 'validate-content-quality',
+      code,
+      severity,
+      category,
+      entityType: entry.kind,
+      slug: slugFromPath(entry.path),
+      title,
+      description,
+      impact,
+      fix,
+      autoFixable: false,
+      details,
+      path: entry.path,
     }),
   };
 }
@@ -65,18 +83,18 @@ function buildTopicIssue({ snapshot, severity, code, title, description, impact,
   return {
     message: description,
     ...createSystemIssue({
-    source: 'validate-content-quality',
-    code,
-    severity,
-    category: 'authority',
-    entityType: 'topic',
-    slug: snapshot.topic,
-    title,
-    description,
-    impact,
-    fix,
-    autoFixable: false,
-    path: `/topics/${snapshot.topic}`,
+      source: 'validate-content-quality',
+      code,
+      severity,
+      category: 'authority',
+      entityType: 'topic',
+      slug: snapshot.topic,
+      title,
+      description,
+      impact,
+      fix,
+      autoFixable: false,
+      path: `/topics/${snapshot.topic}`,
     }),
   };
 }
@@ -229,12 +247,20 @@ async function main() {
 
   for (const entry of routeEntries) {
     const label = `${entry.kind}/${entry.path}`;
-    const contentQualityRules = resolveContentRules(resolveContentQualityPageType(entry.kind)).contentQuality;
+    const contentQualityRules = resolveContentRules(
+      resolveContentQualityPageType(entry.kind)
+    ).contentQuality;
 
     try {
       const metadata = await getInventoryMetadata(entry.path);
 
-      if (!metadata.title || !metadata.description || !metadata.alternates?.canonical || !metadata.openGraph || !metadata.robots) {
+      if (
+        !metadata.title ||
+        !metadata.description ||
+        !metadata.alternates?.canonical ||
+        !metadata.openGraph ||
+        !metadata.robots
+      ) {
         addIssue(
           issues,
           buildRouteIssue({
@@ -244,7 +270,8 @@ async function main() {
             code: 'inventory_metadata_incomplete',
             title: 'Inventory metadata resolution is incomplete',
             description: `${label} resolved incomplete metadata from the inventory helper.`,
-            impact: 'Publishable metadata can degrade after lookup instead of failing deterministically.',
+            impact:
+              'Publishable metadata can degrade after lookup instead of failing deterministically.',
             fix: `Ensure ${entry.path} resolves complete metadata through getInventoryMetadata().`,
           })
         );
@@ -259,7 +286,8 @@ async function main() {
           code: 'inventory_metadata_resolution_failed',
           title: 'Inventory metadata resolution failed',
           description: `${label} could not resolve metadata through the inventory helper.`,
-          impact: 'Build-time metadata can fail or silently degrade if inventory resolution is not deterministic.',
+          impact:
+            'Build-time metadata can fail or silently degrade if inventory resolution is not deterministic.',
           fix: `Restore deterministic inventory metadata for ${entry.path}.`,
           details: error instanceof Error ? { message: error.message } : null,
         })
@@ -276,7 +304,8 @@ async function main() {
           code: 'missing_title',
           title: 'Missing SEO title',
           description: `${label} is missing a title.`,
-          impact: 'The route loses deterministic metadata coverage and becomes harder to debug operationally.',
+          impact:
+            'The route loses deterministic metadata coverage and becomes harder to debug operationally.',
           fix: `Add a deterministic title for ${entry.path} through the inventory-backed metadata source.`,
         })
       );
@@ -314,7 +343,11 @@ async function main() {
       );
     }
 
-    if (!entry.openGraph?.title || !entry.openGraph?.description || !entry.openGraph?.images?.length) {
+    if (
+      !entry.openGraph?.title ||
+      !entry.openGraph?.description ||
+      !entry.openGraph?.images?.length
+    ) {
       addIssue(
         issues,
         buildRouteIssue({
@@ -404,7 +437,8 @@ async function main() {
           code: 'weak_title',
           title: 'Weak route title',
           description: `${label} title is too short to be release-grade metadata.`,
-          impact: 'The route stays routable but loses clarity in search results and control-plane reports.',
+          impact:
+            'The route stays routable but loses clarity in search results and control-plane reports.',
           fix: `Expand the title for ${entry.path} so it identifies the route clearly.`,
         })
       );
@@ -424,7 +458,8 @@ async function main() {
           code: 'weak_description',
           title: 'Weak route description',
           description: `${label} description is shorter than ${minimumDescriptionLength} characters.`,
-          impact: 'The route stays routable but provides low-context summaries in search and reporting surfaces.',
+          impact:
+            'The route stays routable but provides low-context summaries in search and reporting surfaces.',
           fix: `Expand the description for ${entry.path} so it clearly explains purpose and outcome.`,
         })
       );
@@ -444,7 +479,8 @@ async function main() {
         code: 'duplicate_title',
         title: 'Duplicate SEO title',
         description: `Duplicate title detected across ${duplicate.paths.length} routes.`,
-        impact: 'Search surfaces lose route-level differentiation and dashboard diagnostics become ambiguous.',
+        impact:
+          'Search surfaces lose route-level differentiation and dashboard diagnostics become ambiguous.',
         fix: `Give each affected route a distinct title: ${duplicate.paths.join(', ')}.`,
         details: duplicate.paths,
       })
@@ -496,7 +532,8 @@ async function main() {
           code: 'topic_missing_internal_path',
           title: 'Topic missing internal support path',
           description: `Canonical topic ${snapshot.topic} has no internal support path.`,
-          impact: 'The topic cannot prove internal coverage through resources, services, features, industries, or case studies.',
+          impact:
+            'The topic cannot prove internal coverage through resources, services, features, industries, or case studies.',
           fix: `Add or retag one internal support path for the ${snapshot.topic} topic.`,
         })
       );
@@ -504,14 +541,13 @@ async function main() {
   }
 
   const emptyHeadingCount =
-    countEmptyHeadings(Object.values(BLOG_POSTS)) + countEmptyHeadings(Object.values(RESOURCE_REGISTRY));
+    countEmptyHeadings(Object.values(BLOG_POSTS)) +
+    countEmptyHeadings(Object.values(RESOURCE_REGISTRY));
 
   if (emptyHeadingCount > 0) {
-    addIssue(
-      issues,
-      {
-        message: `Content contains ${emptyHeadingCount} empty heading fields.`,
-        ...createSystemIssue({
+    addIssue(issues, {
+      message: `Content contains ${emptyHeadingCount} empty heading fields.`,
+      ...createSystemIssue({
         source: 'validate-content-quality',
         code: 'empty_headings',
         severity: 'critical',
@@ -520,26 +556,40 @@ async function main() {
         slug: 'content',
         title: 'Empty heading fields detected',
         description: `Content contains ${emptyHeadingCount} empty heading fields.`,
-        impact: 'Structured content becomes less trustworthy and harder to render or audit consistently.',
+        impact:
+          'Structured content becomes less trustworthy and harder to render or audit consistently.',
         fix: 'Populate or remove empty heading and title fields in the affected structured content entries.',
         autoFixable: false,
         path: 'content',
-        }),
-      }
-    );
+      }),
+    });
   }
 
   const missingMetadataCount = issues.filter(issue =>
-    ['missing_title', 'missing_description', 'missing_canonical', 'missing_open_graph', 'missing_robots'].includes(issue.code)
+    [
+      'missing_title',
+      'missing_description',
+      'missing_canonical',
+      'missing_open_graph',
+      'missing_robots',
+    ].includes(issue.code)
   ).length;
   const duplicateTitleCount = issues.filter(issue => issue.code === 'duplicate_title').length;
-  const duplicateDescriptionCount = issues.filter(issue => issue.code === 'duplicate_description').length;
-  const canonicalMisalignmentCount = issues.filter(issue => issue.code === 'canonical_misalignment').length;
-  const missingFromSitemapCount = issues.filter(issue => issue.code === 'missing_from_sitemap').length;
+  const duplicateDescriptionCount = issues.filter(
+    issue => issue.code === 'duplicate_description'
+  ).length;
+  const canonicalMisalignmentCount = issues.filter(
+    issue => issue.code === 'canonical_misalignment'
+  ).length;
+  const missingFromSitemapCount = issues.filter(
+    issue => issue.code === 'missing_from_sitemap'
+  ).length;
   const noindexInSitemapCount = issues.filter(issue => issue.code === 'noindex_in_sitemap').length;
   const topicsWithoutBlog = topicCoverage.filter(snapshot => !snapshot.hasSupportingPost).length;
   const orphanTopics = topicCoverage.filter(snapshot => snapshot.isOrphan).length;
-  const topicsWithoutInternalPath = topicCoverage.filter(snapshot => !snapshot.hasInternalLinkPath).length;
+  const topicsWithoutInternalPath = topicCoverage.filter(
+    snapshot => !snapshot.hasInternalLinkPath
+  ).length;
   const weakDescriptionCount = issues.filter(issue => issue.code === 'weak_description').length;
   const openGraphGapCount = issues.filter(issue => issue.code === 'missing_open_graph').length;
   const missingRobotsCount = issues.filter(issue => issue.code === 'missing_robots').length;

@@ -39,32 +39,73 @@ const logger = createLogger({
 const DOMAINS = [
   { label: 'services', dirs: ['src/domains/services/data'], exts: ['.ts'] },
   { label: 'features', dirs: ['src/domains/features/data'], exts: ['.ts'] },
-  { label: 'blog', dirs: ['src/domains/blog/data', 'src/domains/blog/content'], exts: ['.ts', '.tsx'] },
-  { label: 'resources', dirs: ['src/domains/resources/data', 'src/domains/resources/content'], exts: ['.ts', '.tsx'] },
-  { label: 'case-studies', dirs: ['src/domains/case-studies/data', 'src/domains/case-studies/content'], exts: ['.ts', '.tsx'] },
+  {
+    label: 'blog',
+    dirs: ['src/domains/blog/data', 'src/domains/blog/content'],
+    exts: ['.ts', '.tsx'],
+  },
+  {
+    label: 'resources',
+    dirs: ['src/domains/resources/data', 'src/domains/resources/content'],
+    exts: ['.ts', '.tsx'],
+  },
+  {
+    label: 'case-studies',
+    dirs: ['src/domains/case-studies/data', 'src/domains/case-studies/content'],
+    exts: ['.ts', '.tsx'],
+  },
   { label: 'industries', dirs: ['src/domains/industries/data'], exts: ['.ts'] },
 ];
 
 const HYPE_WORDS = [
-  'dominate', 'dominates', 'explode', 'explosive', 'disrupt', 'disruptive',
-  'revolutionary', 'guaranteed', 'guarantees', 'hyper-growth', 'skyrocket',
-  'proven', 'transform', 'transformed', 'game-changer', 'at scale', 'unlock', 'unlocked',
+  'dominate',
+  'dominates',
+  'explode',
+  'explosive',
+  'disrupt',
+  'disruptive',
+  'revolutionary',
+  'guaranteed',
+  'guarantees',
+  'hyper-growth',
+  'skyrocket',
+  'proven',
+  'transform',
+  'transformed',
+  'game-changer',
+  'at scale',
+  'unlock',
+  'unlocked',
 ];
 
 const BANNED_PHRASES = [
-  'enquiry routing', 'operational flow', 'operational integration', 'infrastructure layer',
-  'entry points', 'intentional entry points', 'refinement capability', 'deliberate implementation',
-  'structural visibility', 'visibility alignment', 'connected architecture',
-  'core operational components', 'operational cadence', 'service hierarchy', 'system chain',
-  'routing', 'configured', 'enables', 'facilitates',
+  'enquiry routing',
+  'operational flow',
+  'operational integration',
+  'infrastructure layer',
+  'entry points',
+  'intentional entry points',
+  'refinement capability',
+  'deliberate implementation',
+  'structural visibility',
+  'visibility alignment',
+  'connected architecture',
+  'core operational components',
+  'operational cadence',
+  'service hierarchy',
+  'system chain',
+  'routing',
+  'configured',
+  'enables',
+  'facilitates',
 ];
 
 const HYPE_PATTERNS = HYPE_WORDS.map(
-  (w) => new RegExp(`\\b${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi')
+  w => new RegExp(`\\b${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi')
 );
 
 const BANNED_PATTERNS = BANNED_PHRASES.map(
-  (w) => new RegExp(`\\b${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi')
+  w => new RegExp(`\\b${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi')
 );
 
 function walkFiles(dir, exts) {
@@ -73,7 +114,7 @@ function walkFiles(dir, exts) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) out.push(...walkFiles(full, exts));
-    else if (entry.isFile() && exts.some((e) => entry.name.endsWith(e))) out.push(full);
+    else if (entry.isFile() && exts.some(e => entry.name.endsWith(e))) out.push(full);
   }
   return out;
 }
@@ -110,7 +151,7 @@ function scoreFile(filePath, label) {
   const text = fs.readFileSync(filePath, 'utf8');
   const content = extractTextContent(text);
   const words = content.split(/\s+/).filter(Boolean);
-  const sentences = content.split(/[.!?]+/).filter((s) => s.trim().length > 0);
+  const sentences = content.split(/[.!?]+/).filter(s => s.trim().length > 0);
   const wordCount = words.length;
   const sentenceCount = sentences.length;
   const avgSentenceLength = sentenceCount > 0 ? Math.round(wordCount / sentenceCount) : 0;
@@ -159,10 +200,10 @@ function main() {
   }
 
   const summary = {
-    filesWithHype: scores.filter((s) => s.hypeCount > 0).length,
-    filesWithBanned: scores.filter((s) => s.bannedPhraseCount > 0).length,
-    filesWithoutCta: scores.filter((s) => !s.hasCta).length,
-    filesWithFlags: scores.filter((s) => s.flags.length > 0).length,
+    filesWithHype: scores.filter(s => s.hypeCount > 0).length,
+    filesWithBanned: scores.filter(s => s.bannedPhraseCount > 0).length,
+    filesWithoutCta: scores.filter(s => !s.hasCta).length,
+    filesWithFlags: scores.filter(s => s.flags.length > 0).length,
   };
   const report = createReportSchema({
     name: 'content-score',

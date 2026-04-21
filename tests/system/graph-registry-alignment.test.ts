@@ -90,7 +90,10 @@ describe('system invariant: graph and registries stay aligned', () => {
 
     for (const industry of Object.values(INDUSTRY_REGISTRY)) {
       const node = industryNodes.find(candidate => candidate.path === industry.seo.canonical);
-      expect(node, `Missing graph node for industry path "${industry.seo.canonical}"`).toBeDefined();
+      expect(
+        node,
+        `Missing graph node for industry path "${industry.seo.canonical}"`
+      ).toBeDefined();
       expect(node?.slug).toBe(industry.slug);
 
       if (industry.type === 'category') {

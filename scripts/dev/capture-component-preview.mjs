@@ -32,11 +32,9 @@ const viewports = [
 
 async function expandAllCategories(page) {
   await page.evaluate(() => {
-    document
-      .querySelectorAll('.component-library__category-details')
-      .forEach(node => {
-        node.open = true;
-      });
+    document.querySelectorAll('.component-library__category-details').forEach(node => {
+      node.open = true;
+    });
   });
 }
 

@@ -90,7 +90,7 @@
     "system:report": "node --import tsx/esm scripts/analyzers/export-reports.mjs",
     "export:reports": "node --import tsx/esm scripts/analyzers/export-reports.mjs",
     "system:full": "node scripts/core/run-system-full.mjs",
-    "system:quick": "node scripts/core/run-system-full.mjs --mode=summary",
+    "system:quick": "node scripts/core/run-system-full.mjs --mode=summary --skip-tests",
     "system:debug": "node scripts/core/run-system-full.mjs --mode=debug --force",
     "system:clean": "node scripts/core/clean-system.mjs",
     "preaudit": "node scripts/core/preaudit.mjs",

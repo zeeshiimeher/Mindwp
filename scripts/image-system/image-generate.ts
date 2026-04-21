@@ -124,7 +124,7 @@ async function loadBlogPost(slug: string): Promise<ContentMetadata | null> {
 
     // Load all blog content files and find the matching slug
     const contentDir = path.resolve('src/domains/blog/content');
-    const files = fs.readdirSync(contentDir).filter((f) => f.endsWith('.tsx'));
+    const files = fs.readdirSync(contentDir).filter(f => f.endsWith('.tsx'));
 
     for (const file of files) {
       const filePath = path.join(contentDir, file);
@@ -136,7 +136,9 @@ async function loadBlogPost(slug: string): Promise<ContentMetadata | null> {
       // Extract data using regex patterns from the TypeScript source
       // Find the export-level title: appears right after slug in the export block
       // Handles both `slug,\n  title:` (variable ref) and `slug: '...',\n  title:` (inline)
-      const exportTitleMatch = content.match(/slug(?:,|:\s*['"][^'"]+['"]\s*,)\s*\n\s+title:\s*['"]([^'"]{5,80})['"]/);
+      const exportTitleMatch = content.match(
+        /slug(?:,|:\s*['"][^'"]+['"]\s*,)\s*\n\s+title:\s*['"]([^'"]{5,80})['"]/
+      );
       const headingsMatches = [...content.matchAll(/heading:\s*['"]([^'"]+)['"]/g)];
       const title = exportTitleMatch?.[1] ?? headingsMatches[0]?.[1] ?? slug;
 
@@ -151,7 +153,7 @@ async function loadBlogPost(slug: string): Promise<ContentMetadata | null> {
         topics: extractArrayValues(topicsMatch?.[1] ?? ''),
         systems: extractArrayValues(systemsMatch?.[1] ?? ''),
         tags: extractArrayValues(tagsMatch?.[1] ?? ''),
-        sectionHeadings: headingsMatches.map((m) => m[1]),
+        sectionHeadings: headingsMatches.map(m => m[1]),
         slug,
       };
     }
@@ -166,14 +168,14 @@ async function loadBlogPost(slug: string): Promise<ContentMetadata | null> {
 
 function extractArrayValues(content: string): string[] {
   const matches = [...content.matchAll(/['"]([^'"]+)['"]/g)];
-  return matches.map((m) => m[1]);
+  return matches.map(m => m[1]);
 }
 
 async function loadAllBlogSlugs(): Promise<string[]> {
   const contentDir = path.resolve('src/domains/blog/content');
   if (!fs.existsSync(contentDir)) return [];
 
-  const files = fs.readdirSync(contentDir).filter((f) => f.endsWith('.tsx'));
+  const files = fs.readdirSync(contentDir).filter(f => f.endsWith('.tsx'));
   const slugs: string[] = [];
 
   for (const file of files) {
@@ -189,7 +191,7 @@ async function loadAllResourceSlugs(): Promise<string[]> {
   const contentDir = path.resolve('src/domains/resources/content');
   if (!fs.existsSync(contentDir)) return [];
 
-  const files = fs.readdirSync(contentDir).filter((f) => f.endsWith('.tsx'));
+  const files = fs.readdirSync(contentDir).filter(f => f.endsWith('.tsx'));
   const slugs: string[] = [];
 
   for (const file of files) {
@@ -231,7 +233,10 @@ async function loadIndustryMetadata(slug: string): Promise<ContentMetadata | nul
   };
 }
 
-async function loadContentMetadata(slug: string, domain: ContentDomain): Promise<ContentMetadata | null> {
+async function loadContentMetadata(
+  slug: string,
+  domain: ContentDomain
+): Promise<ContentMetadata | null> {
   if (domain === 'industries') {
     return loadIndustryMetadata(slug);
   }
@@ -243,7 +248,7 @@ async function loadContentMetadata(slug: string, domain: ContentDomain): Promise
   const contentDir = path.resolve(`src/domains/${domain}/${subDir}`);
   if (!fs.existsSync(contentDir)) return null;
 
-  const files = fs.readdirSync(contentDir).filter((f) => f.endsWith(ext));
+  const files = fs.readdirSync(contentDir).filter(f => f.endsWith(ext));
 
   for (const file of files) {
     const filePath = path.join(contentDir, file);
@@ -253,7 +258,9 @@ async function loadContentMetadata(slug: string, domain: ContentDomain): Promise
 
     // Find the export-level title: appears right after slug in the export block
     // Handles both `slug,\n  title:` (variable ref) and `slug: '...',\n  title:` (inline)
-    const exportTitleMatch = content.match(/slug(?:,|:\s*['"][^'"]+['"]\s*,)\s*\n\s+title:\s*['"]([^'"]{5,80})['"]/);
+    const exportTitleMatch = content.match(
+      /slug(?:,|:\s*['"][^'"]+['"]\s*,)\s*\n\s+title:\s*['"]([^'"]{5,80})['"]/
+    );
     // Features/services: hero title is the display title
     const heroTitleMatch = content.match(/hero:\s*\{[\s\S]*?title:\s*['"]([^'"]{5,120})['"]/);
     const headingsMatches = [...content.matchAll(/heading:\s*['"]([^'"]+)['"]/g)];
@@ -270,7 +277,7 @@ async function loadContentMetadata(slug: string, domain: ContentDomain): Promise
       topics: extractArrayValues(topicsMatch?.[1] ?? ''),
       systems: extractArrayValues(systemsMatch?.[1] ?? ''),
       tags: extractArrayValues(tagsMatch?.[1] ?? ''),
-      sectionHeadings: headingsMatches.map((m) => m[1]),
+      sectionHeadings: headingsMatches.map(m => m[1]),
       slug,
     };
   }
@@ -317,7 +324,12 @@ async function importCharts() {
 
 // ─── Commands ───────────────────────────────────────────────────────
 
-async function runTestMode(slug: string, domain: ContentDomain = 'blog', regenerate = false, fresh = false) {
+async function runTestMode(
+  slug: string,
+  domain: ContentDomain = 'blog',
+  regenerate = false,
+  fresh = false
+) {
   logger.info('');
   logger.info('╔══════════════════════════════════════════════════════╗');
   logger.info('║           MindWP Image System — TEST MODE           ║');
@@ -328,9 +340,8 @@ async function runTestMode(slug: string, domain: ContentDomain = 'blog', regener
   if (fresh) logger.info('🆕 Fresh mode: searching for a completely new image');
   logger.info('');
 
-  const metadata = domain === 'blog'
-    ? await loadBlogPost(slug)
-    : await loadContentMetadata(slug, domain);
+  const metadata =
+    domain === 'blog' ? await loadBlogPost(slug) : await loadContentMetadata(slug, domain);
   if (!metadata) {
     logger.error(`❌ Could not load ${domain} post: ${slug}`);
     process.exit(1);
@@ -357,7 +368,9 @@ async function runTestMode(slug: string, domain: ContentDomain = 'blog', regener
     const existingEntry = dedup.getImageEntry(slug, 'featured-clean');
     if (existingEntry) {
       blockedImageId = existingEntry.imageId;
-      logger.info(`🚫 Will skip previous image: ${existingEntry.provider}/${existingEntry.imageId}`);
+      logger.info(
+        `🚫 Will skip previous image: ${existingEntry.provider}/${existingEntry.imageId}`
+      );
     }
   }
 
@@ -450,7 +463,7 @@ async function runBulkMode(domain: ContentDomain) {
       const ext = isDataDomain ? '.ts' : '.tsx';
       const contentDir = path.resolve(`src/domains/${domain}/${subDir}`);
       if (fs.existsSync(contentDir)) {
-        const files = fs.readdirSync(contentDir).filter((f) => f.endsWith(ext));
+        const files = fs.readdirSync(contentDir).filter(f => f.endsWith(ext));
         for (const file of files) {
           const content = fs.readFileSync(path.join(contentDir, file), 'utf-8');
           const slugMatch = content.match(/slug:\s*['"]([^'"]+)['"]/);
@@ -467,7 +480,7 @@ async function runBulkMode(domain: ContentDomain) {
   const queue = await importQueue();
 
   // Filter out posts that already have images
-  const needed = slugs.filter((s) => !dedup.hasImage(s, 'featured-clean'));
+  const needed = slugs.filter(s => !dedup.hasImage(s, 'featured-clean'));
   logger.info(`🔍 ${needed.length} posts need featured images`);
   logger.info('');
 
@@ -513,7 +526,14 @@ async function runSinglePost(slug: string) {
   logger.info(`\n🔄 Generating image for: ${slug}\n`);
 
   // Try blog first, then other domains
-  const domains: ContentDomain[] = ['blog', 'resources', 'case-studies', 'industries', 'features', 'services'];
+  const domains: ContentDomain[] = [
+    'blog',
+    'resources',
+    'case-studies',
+    'industries',
+    'features',
+    'services',
+  ];
   const pipeline = await importPipeline();
 
   for (const domain of domains) {
@@ -524,7 +544,9 @@ async function runSinglePost(slug: string) {
     const result = await pipeline.processImage(metadata, domain, 'featured-clean');
 
     if (result) {
-      logger.info(`\n✅ Output: ${result.outputPath} (${result.provider}, score: ${result.relevanceScore})`);
+      logger.info(
+        `\n✅ Output: ${result.outputPath} (${result.provider}, score: ${result.relevanceScore})`
+      );
     } else {
       logger.info('\n⚠️  No suitable image found');
     }
@@ -617,7 +639,12 @@ async function runDiagramTest(slug: string) {
   // Load the resource file sections for diagram extraction
   const contentDir = path.resolve('src/domains/resources/content');
   const files = fs.readdirSync(contentDir).filter((f: string) => f.endsWith('.tsx'));
-  let sections: Array<{ type: string; heading?: string; content?: string | string[]; steps?: Array<{ label: string }> }> = [];
+  let sections: Array<{
+    type: string;
+    heading?: string;
+    content?: string | string[];
+    steps?: Array<{ label: string }>;
+  }> = [];
 
   for (const file of files) {
     const filePath = path.join(contentDir, file);
@@ -625,15 +652,21 @@ async function runDiagramTest(slug: string) {
     if (!content.includes(`'${slug}'`) && !content.includes(`"${slug}"`)) continue;
 
     // Extract section types and headings
-    const sectionMatches = [...content.matchAll(/\{\s*type:\s*['"](\w+)['"][\s\S]*?heading:\s*['"]([^'"]+)['"]/g)];
+    const sectionMatches = [
+      ...content.matchAll(/\{\s*type:\s*['"](\w+)['"][\s\S]*?heading:\s*['"]([^'"]+)['"]/g),
+    ];
     for (const m of sectionMatches) {
       sections.push({ type: m[1], heading: m[2] });
     }
 
     // Priority 1: Solution-cards / pillar cards — best for diagrams (structured pillars)
-    const solutionCardsMatch = content.match(/type:\s*['"]solution-cards['"][\s\S]*?heading:\s*['"]([^'"]+)['"]/);
+    const solutionCardsMatch = content.match(
+      /type:\s*['"]solution-cards['"][\s\S]*?heading:\s*['"]([^'"]+)['"]/
+    );
     if (solutionCardsMatch) {
-      const arrayMatches = [...content.matchAll(/const\s+\w+\s*(?::\s*[^=]+)?\s*=\s*\[([\s\S]*?)\];/g)];
+      const arrayMatches = [
+        ...content.matchAll(/const\s+\w+\s*(?::\s*[^=]+)?\s*=\s*\[([\s\S]*?)\];/g),
+      ];
       for (const am of arrayMatches) {
         const block = am[1];
         if (block.includes('description:')) {
@@ -642,7 +675,7 @@ async function runDiagramTest(slug: string) {
             sections.push({
               type: 'steps',
               heading: solutionCardsMatch[1],
-              steps: cardTitles.map((t) => ({ label: t[1] })),
+              steps: cardTitles.map(t => ({ label: t[1] })),
             });
             break;
           }
@@ -659,7 +692,7 @@ async function runDiagramTest(slug: string) {
           sections.push({
             type: 'steps',
             heading: 'Process Flow',
-            steps: labels.map((l) => ({ label: l[1] })),
+            steps: labels.map(l => ({ label: l[1] })),
           });
         }
       }
@@ -674,7 +707,7 @@ async function runDiagramTest(slug: string) {
           sections.push({
             type: 'steps',
             heading: 'Key Takeaways',
-            steps: items.map((t) => ({ label: t[1] })),
+            steps: items.map(t => ({ label: t[1] })),
           });
         }
       }
@@ -792,18 +825,32 @@ async function main() {
     logger.info('═══════════════════');
     logger.info('');
     logger.info('Quick Test Commands (hardcoded default slugs):');
-    logger.info('  npx tsx scripts/image-system/image-generate.ts --mode test                          # blog default');
-    logger.info('  npx tsx scripts/image-system/image-generate.ts --mode test --domain case-studies    # case-study default');
-    logger.info('  npx tsx scripts/image-system/image-generate.ts --mode test --domain resources       # resource default');
-    logger.info('  npx tsx scripts/image-system/image-generate.ts --diagram                            # resource diagram');
+    logger.info(
+      '  npx tsx scripts/image-system/image-generate.ts --mode test                          # blog default'
+    );
+    logger.info(
+      '  npx tsx scripts/image-system/image-generate.ts --mode test --domain case-studies    # case-study default'
+    );
+    logger.info(
+      '  npx tsx scripts/image-system/image-generate.ts --mode test --domain resources       # resource default'
+    );
+    logger.info(
+      '  npx tsx scripts/image-system/image-generate.ts --diagram                            # resource diagram'
+    );
     logger.info('');
     logger.info('Test with custom slug:');
     logger.info('  npx tsx scripts/image-system/image-generate.ts --mode test --slug <slug>');
-    logger.info('  npx tsx scripts/image-system/image-generate.ts --mode test --domain case-studies --slug <slug>');
+    logger.info(
+      '  npx tsx scripts/image-system/image-generate.ts --mode test --domain case-studies --slug <slug>'
+    );
     logger.info('');
     logger.info('Regenerate / Fresh:');
-    logger.info('  npx tsx scripts/image-system/image-generate.ts --mode test --regenerate             # re-overlay same image');
-    logger.info('  npx tsx scripts/image-system/image-generate.ts --mode test --fresh                  # find new image');
+    logger.info(
+      '  npx tsx scripts/image-system/image-generate.ts --mode test --regenerate             # re-overlay same image'
+    );
+    logger.info(
+      '  npx tsx scripts/image-system/image-generate.ts --mode test --fresh                  # find new image'
+    );
     logger.info('');
     logger.info('Inspect generated images:');
     logger.info('  npx tsx scripts/image-system/image-inspect.ts');
@@ -817,7 +864,7 @@ async function main() {
   });
 }
 
-main().catch((err) => {
+main().catch(err => {
   logger.error(`Fatal error: ${err instanceof Error ? err.message : String(err)}`);
   process.exit(1);
 });

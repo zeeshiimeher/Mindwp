@@ -133,7 +133,7 @@ function nodesByType(nodes: ContentGraphNode[], type: string): ContentGraphNode[
 
 function countByMetadataField(
   nodes: ContentGraphNode[],
-  field: 'systems' | 'topics' | 'industries',
+  field: 'systems' | 'topics' | 'industries'
 ): [string, number][] {
   const counts = new Map<string, number>();
   for (const node of nodes) {
@@ -165,7 +165,11 @@ function countEdgesWithinCluster(nodes: ContentGraphNode[]): number {
 
 function detectGaps(
   allNodes: ContentGraphNode[],
-  indexes: { topics: Map<string, ContentGraphNode[]>; systems: Map<string, ContentGraphNode[]>; industries: Map<string, ContentGraphNode[]> },
+  indexes: {
+    topics: Map<string, ContentGraphNode[]>;
+    systems: Map<string, ContentGraphNode[]>;
+    industries: Map<string, ContentGraphNode[]>;
+  }
 ): RawGap[] {
   const gaps: RawGap[] = [];
 
@@ -242,9 +246,7 @@ function detectGaps(
   // Industry gaps
   for (const industry of CANONICAL_INDUSTRIES) {
     const industryNodes = allNodes.filter(
-      n =>
-        (n.type === 'industry-category' || n.type === 'industry-detail') &&
-        n.slug === industry,
+      n => (n.type === 'industry-category' || n.type === 'industry-detail') && n.slug === industry
     );
     if (industryNodes.length === 0) continue;
 
@@ -253,7 +255,7 @@ function detectGaps(
       n =>
         n.type === 'case-study' &&
         ((n.industries ?? []).includes(industry) ||
-          (n.topics ?? []).some(t => industryTopics.has(t))),
+          (n.topics ?? []).some(t => industryTopics.has(t)))
     );
 
     if (caseStudies.length < MIN_CASE_STUDIES_PER_INDUSTRY) {
@@ -276,7 +278,7 @@ function detectGaps(
 function detectAuthorityWeaknesses(
   allNodes: ContentGraphNode[],
   scores: Record<string, number>,
-  reverseRelationIndex: Map<string, ContentGraphNode[]>,
+  reverseRelationIndex: Map<string, ContentGraphNode[]>
 ): WeakNode[] {
   const weaknesses: WeakNode[] = [];
 
@@ -320,14 +322,18 @@ function detectAuthorityWeaknesses(
 // ── 3. Cluster Health ────────────────────────────────────────────────
 
 function analyzeClusterHealth(
-  indexes: { topics: Map<string, ContentGraphNode[]>; systems: Map<string, ContentGraphNode[]>; industries: Map<string, ContentGraphNode[]> },
-  scores: Record<string, number>,
+  indexes: {
+    topics: Map<string, ContentGraphNode[]>;
+    systems: Map<string, ContentGraphNode[]>;
+    industries: Map<string, ContentGraphNode[]>;
+  },
+  scores: Record<string, number>
 ): ClusterEntry[] {
   const clusters: ClusterEntry[] = [];
 
   const analyzeSet = (
     clusterType: 'topic' | 'system' | 'industry',
-    index: Map<string, ContentGraphNode[]>,
+    index: Map<string, ContentGraphNode[]>
   ) => {
     for (const [identifier, nodes] of index.entries()) {
       const edgeCount = countEdgesWithinCluster(nodes);
@@ -365,7 +371,7 @@ function analyzeClusterHealth(
 function generateSuggestions(
   rawGaps: RawGap[],
   allNodes: ContentGraphNode[],
-  clusters: ClusterEntry[],
+  clusters: ClusterEntry[]
 ): ContentSuggestion[] {
   const suggestions: ContentSuggestion[] = [];
   let idCounter = 1;
@@ -468,7 +474,8 @@ async function main() {
       }
       // Promote priority if any sub-gap is higher
       if (raw.priority === 'high') existing.priority = 'high';
-      else if (raw.priority === 'medium' && existing.priority === 'low') existing.priority = 'medium';
+      else if (raw.priority === 'medium' && existing.priority === 'low')
+        existing.priority = 'medium';
     } else {
       gapMap.set(mapKey, {
         id: `gap-${String(gapIdCounter++).padStart(3, '0')}`,
@@ -539,8 +546,8 @@ async function main() {
     name: 'content-intelligence',
     status:
       reportData.summary.gaps > 0 ||
-        reportData.summary.weakNodes > 0 ||
-        reportData.summary.unhealthyClusters > 0
+      reportData.summary.weakNodes > 0 ||
+      reportData.summary.unhealthyClusters > 0
         ? 'WARN'
         : 'PASS',
     summary: {
@@ -551,7 +558,9 @@ async function main() {
       ),
       failed: 0,
       warnings:
-        reportData.summary.gaps + reportData.summary.weakNodes + reportData.summary.unhealthyClusters,
+        reportData.summary.gaps +
+        reportData.summary.weakNodes +
+        reportData.summary.unhealthyClusters,
     },
     issues: [...reportData.gaps, ...reportData.weakNodes],
     data: reportData,

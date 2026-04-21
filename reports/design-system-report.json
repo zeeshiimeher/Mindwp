@@ -1,8 +1,8 @@
 {
   "meta": {
-    "name": "design-system-report",
+    "name": "validate-design-system",
     "source": "npm run system:full",
-    "generatedAt": "2026-04-21T00:04:01.735Z",
+    "generatedAt": "2026-04-21T07:33:11.791Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,14 +13,14 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-21T00:04:01.735Z",
+    "generatedAt": "2026-04-21T07:33:11.791Z",
     "passed": true,
     "violationCount": 0,
     "violations": []
   },
   "issues": [],
-  "name": "design-system-report",
+  "name": "validate-design-system",
   "status": "PASS",
-  "generatedAt": "2026-04-21T00:04:01.735Z",
+  "generatedAt": "2026-04-21T07:33:11.791Z",
   "sourceCommand": "npm run system:full"
 }

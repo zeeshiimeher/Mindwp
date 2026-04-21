@@ -82,9 +82,10 @@ test.describe('SEO smoke', () => {
       );
 
       const jsonLdBlocks = extractJsonLdScripts(body);
-      expect(jsonLdBlocks.length, `${item.path} should include at least one JSON-LD block`).toBeGreaterThan(
-        0
-      );
+      expect(
+        jsonLdBlocks.length,
+        `${item.path} should include at least one JSON-LD block`
+      ).toBeGreaterThan(0);
 
       expect(
         jsonLdBlocks.some(block => hasContextAndType(block)),

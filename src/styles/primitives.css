@@ -5,8 +5,12 @@
    ========================================================= */
 
 @layer properties {
-  @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
-    *, :before, :after, ::backdrop {
+  @supports (((-webkit-hyphens: none)) and (not (margin-trim: inline))) or
+    ((-moz-orient: inline) and (not (color: rgb(from red r g b)))) {
+    *,
+    :before,
+    :after,
+    ::backdrop {
       --tw-translate-x: 0;
       --tw-translate-y: 0;
       --tw-translate-z: 0;
@@ -77,18 +81,31 @@
 }
 
 @layer base {
-  *, :after, :before, ::backdrop {
+  *,
+  :after,
+  :before,
+  ::backdrop {
     box-sizing: border-box;
     border: 0 solid;
     margin: 0;
     padding: 0;
   }
 
-  html, :host {
+  html,
+  :host {
     -webkit-text-size-adjust: 100%;
     tab-size: 4;
     line-height: 1.5;
-    font-family: var(--default-font-family, ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji");
+    font-family: var(
+      --default-font-family,
+      ui-sans-serif,
+      system-ui,
+      sans-serif,
+      'Apple Color Emoji',
+      'Segoe UI Emoji',
+      'Segoe UI Symbol',
+      'Noto Color Emoji'
+    );
     font-feature-settings: var(--default-font-feature-settings, normal);
     font-variation-settings: var(--default-font-variation-settings, normal);
     -webkit-tap-highlight-color: transparent;
@@ -101,13 +118,22 @@
     line-height: var(--line-height-prose);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-size: inherit;
     font-weight: inherit;
     color: var(--c-text);
   }
 
-  button, input, select, optgroup, textarea {
+  button,
+  input,
+  select,
+  optgroup,
+  textarea {
     font: inherit;
     font-feature-settings: inherit;
     font-variation-settings: inherit;
@@ -118,7 +144,8 @@
     border-radius: 0;
   }
 
-  button, input:where([type="button"], [type="reset"], [type="submit"]) {
+  button,
+  input:where([type='button'], [type='reset'], [type='submit']) {
     appearance: button;
   }
 
@@ -137,17 +164,17 @@
     font-size: var(--font-size);
   }
 
-  h1{
+  h1 {
     font-size: var(--font-5xl);
     font-weight: var(--font-weight-semibold);
-    letter-spacing: -.02em;
+    letter-spacing: -0.02em;
     line-height: 1.15;
   }
 
-  h2{
+  h2 {
     font-size: var(--font-4xl);
     font-weight: var(--font-weight-semibold);
-    letter-spacing: -.015em;
+    letter-spacing: -0.015em;
     line-height: 1.25;
   }
 
@@ -157,13 +184,13 @@
     line-height: 1.35;
   }
 
-  h4{
+  h4 {
     font-size: var(--font-xl);
     font-weight: var(--font-weight-medium);
     line-height: var(--line-height-normal);
   }
 
-  h5{
+  h5 {
     font-size: var(--font-lg);
     font-weight: var(--font-weight-medium);
     line-height: var(--line-height-normal);
@@ -175,15 +202,14 @@
     line-height: var(--line-height-normal);
   }
 
- 
-
-  label:not([class*="text-"]), button:not([class*="text-"]) {
+  label:not([class*='text-']),
+  button:not([class*='text-']) {
     font-size: var(--font-base);
     font-weight: var(--font-weight-medium);
     line-height: var(--line-height-normal);
   }
 
-  input:not([class*="text-"]) {
+  input:not([class*='text-']) {
     font-size: var(--font-base);
     font-weight: var(--font-weight-normal);
     line-height: var(--line-height-normal);
@@ -221,7 +247,7 @@
   --breakpoint-xl: 80rem;
   --breakpoint-2xl: 96rem;
 
-  --radius: .625rem;
+  --radius: 0.625rem;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -239,10 +265,4 @@
 
 /* === BASE + UTILITIES (migrated from design-system) === */
 
-
 /* Component-level styling has moved to src/styles/components.css */
-
-
-
-
-

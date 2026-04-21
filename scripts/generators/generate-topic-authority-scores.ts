@@ -4,12 +4,11 @@ import path from 'node:path';
 import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
+import { isExecutionCacheValid } from '../lib/execution-cache.mjs';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 import { CANONICAL_TOPICS } from '../../src/lib/content-graph/canonical';
 import { getContentGraph } from '../../src/lib/content-graph/registry';
-import {
-  buildTopicCoverageSnapshots,
-} from '../../src/lib/content-quality/topicCoverage';
+import { buildTopicCoverageSnapshots } from '../../src/lib/content-quality/topicCoverage';
 import {
   buildTopicValidationSnapshots,
   type TopicClassification,
@@ -60,6 +59,23 @@ const logger = createLogger({
   mode: resolveLoggingMode(process.argv.slice(2), systemEnv),
   rootDir: process.cwd(),
 });
+const root = path.resolve(import.meta.dirname, '../..');
+const reportsDir = path.join(root, 'reports');
+const markdownPath = path.join(reportsDir, 'topic-authority-scores.md');
+const jsonPath = path.join(reportsDir, 'topic-authority-scores.json');
+const INPUT_PATHS: string[] = [
+  path.join(root, 'src', 'domains', 'blog', 'registry.ts'),
+  path.join(root, 'src', 'domains', 'case-studies', 'registry.ts'),
+  path.join(root, 'src', 'domains', 'features', 'registry.ts'),
+  path.join(root, 'src', 'domains', 'industries', 'registry.ts'),
+  path.join(root, 'src', 'domains', 'resources', 'generatedRegistry.ts'),
+  path.join(root, 'src', 'domains', 'services', 'registry.ts'),
+  path.join(root, 'src', 'domains', 'contentModel.ts'),
+  path.join(root, 'src', 'domains', 'init'),
+  path.join(root, 'src', 'lib', 'content-graph'),
+  path.join(root, 'src', 'lib', 'content-quality'),
+  path.join(root, 'scripts', 'generators', 'generate-topic-authority-scores.ts'),
+];
 
 interface TopicScore {
   topic: string;
@@ -120,7 +136,7 @@ function scoreTopic(topic: TopicScore): number {
       partialScore(topic.serviceCount, FULL_THRESHOLDS.service, WEIGHTS.service) +
       partialScore(topic.featureCount, FULL_THRESHOLDS.feature, WEIGHTS.feature) +
       partialScore(topic.industryCount, FULL_THRESHOLDS.industry, WEIGHTS.industry) +
-      partialScore(topic.caseStudyCount, FULL_THRESHOLDS.caseStudy, WEIGHTS.caseStudy),
+      partialScore(topic.caseStudyCount, FULL_THRESHOLDS.caseStudy, WEIGHTS.caseStudy)
   );
 }
 
@@ -194,8 +210,12 @@ function generateMarkdown(scores: TopicScore[]): string {
   lines.push('|--------|-------|');
   lines.push(`| Topics analyzed | ${sorted.length} |`);
   lines.push(`| Average score | ${avg} |`);
-  lines.push(`| Complete coverage | ${sorted.filter(topic => topic.coverageStatus === 'complete').length} |`);
-  lines.push(`| Coverage gaps | ${sorted.filter(topic => topic.coverageStatus === 'gap').length} |`);
+  lines.push(
+    `| Complete coverage | ${sorted.filter(topic => topic.coverageStatus === 'complete').length} |`
+  );
+  lines.push(
+    `| Coverage gaps | ${sorted.filter(topic => topic.coverageStatus === 'gap').length} |`
+  );
   lines.push(`| Dominant (≥90) | ${sorted.filter(topic => topic.level === 'Dominant').length} |`);
   lines.push(`| Strong (75–89) | ${sorted.filter(topic => topic.level === 'Strong').length} |`);
   lines.push(`| Growing (60–74) | ${sorted.filter(topic => topic.level === 'Growing').length} |`);
@@ -213,7 +233,7 @@ function generateMarkdown(scores: TopicScore[]): string {
   for (let index = 0; index < sorted.length; index += 1) {
     const topic = sorted[index];
     lines.push(
-      `| ${index + 1} | ${topic.topic} | ${topic.classification} | ${topic.score} | ${LEVEL_EMOJI[topic.level]} ${topic.level} | ${topic.coverageStatus} | ${topic.validationStatus} | ${topic.blogCount} | ${topic.resourceCount} | ${topic.serviceCount} | ${topic.featureCount} | ${topic.industryCount} | ${topic.caseStudyCount} |`,
+      `| ${index + 1} | ${topic.topic} | ${topic.classification} | ${topic.score} | ${LEVEL_EMOJI[topic.level]} ${topic.level} | ${topic.coverageStatus} | ${topic.validationStatus} | ${topic.blogCount} | ${topic.resourceCount} | ${topic.serviceCount} | ${topic.featureCount} | ${topic.industryCount} | ${topic.caseStudyCount} |`
     );
   }
   lines.push('');
@@ -222,16 +242,26 @@ function generateMarkdown(scores: TopicScore[]): string {
 }
 
 async function main() {
-  await ensureGraphInitialized();
+  const cacheState = isExecutionCacheValid({
+    inputPaths: INPUT_PATHS,
+    outputPaths: [markdownPath, jsonPath],
+  });
 
-  const root = path.resolve(import.meta.dirname, '../..');
-  const reportsDir = path.join(root, 'reports');
+  if (cacheState.valid) {
+    logger.printSummary('skipped (cache valid)');
+    return;
+  }
+
+  await ensureGraphInitialized();
   fs.mkdirSync(reportsDir, { recursive: true });
 
   const allNodes = Object.values(getContentGraph());
   const coverage = buildTopicCoverageSnapshots(allNodes, CANONICAL_TOPICS);
   const validationCoverage = new Map(
-    buildTopicValidationSnapshots(allNodes, CANONICAL_TOPICS).map(snapshot => [snapshot.topic, snapshot])
+    buildTopicValidationSnapshots(allNodes, CANONICAL_TOPICS).map(snapshot => [
+      snapshot.topic,
+      snapshot,
+    ])
   );
 
   const scores: TopicScore[] = coverage.map(snapshot => {
@@ -260,7 +290,8 @@ async function main() {
       score: 0,
       level: 'Gap',
       status: 'gap',
-      coverageStatus: snapshot.hasSupportingPost && snapshot.hasInternalLinkPath ? 'complete' : 'gap',
+      coverageStatus:
+        snapshot.hasSupportingPost && snapshot.hasInternalLinkPath ? 'complete' : 'gap',
       reasons: [],
     };
 
@@ -279,12 +310,12 @@ async function main() {
   });
 
   const sorted = [...scores].sort((left, right) => right.score - left.score);
-  const avg = Math.round(sorted.reduce((sum, topic) => sum + topic.score, 0) / (sorted.length || 1));
+  const avg = Math.round(
+    sorted.reduce((sum, topic) => sum + topic.score, 0) / (sorted.length || 1)
+  );
 
-  const markdownPath = path.join(reportsDir, 'topic-authority-scores.md');
   logger.writeReport(markdownPath, generateMarkdown(scores));
 
-  const jsonPath = path.join(reportsDir, 'topic-authority-scores.json');
   logger.writeReport(jsonPath, {
     generatedAt: new Date().toISOString(),
     topicsAnalyzed: scores.length,
@@ -320,8 +351,12 @@ async function main() {
     weak: levelCounts.Weak,
     gap: levelCounts.Gap,
   });
-  logger.printSummary(`strongest -> ${strongest.map(topic => `${topic.topic} (${topic.score})`).join(', ')}`);
-  logger.printSummary(`weakest -> ${weakest.map(topic => `${topic.topic} (${topic.score})`).join(', ')}`);
+  logger.printSummary(
+    `strongest -> ${strongest.map(topic => `${topic.topic} (${topic.score})`).join(', ')}`
+  );
+  logger.printSummary(
+    `weakest -> ${weakest.map(topic => `${topic.topic} (${topic.score})`).join(', ')}`
+  );
   logger.printSummary(`report -> ${logger.relativePath(markdownPath)}`);
   logger.printSummary(`report -> ${logger.relativePath(jsonPath)}`);
 

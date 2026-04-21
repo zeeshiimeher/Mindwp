@@ -3,7 +3,11 @@
 import { describe, expect, test } from 'vitest';
 
 import { clearResolverCache, createResolver } from '@/lib/authority/resolver';
-import type { ContentGraphNode, ResolverDependencies, ResolverIndexes } from '@/lib/content-graph/types';
+import type {
+  ContentGraphNode,
+  ResolverDependencies,
+  ResolverIndexes,
+} from '@/lib/content-graph/types';
 
 function buildResolverIndexes(nodes: ContentGraphNode[]): ResolverIndexes {
   return {

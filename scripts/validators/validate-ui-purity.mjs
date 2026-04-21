@@ -25,10 +25,7 @@ function pushViolation(file, line, rule, message) {
   violations.push({ file, line, rule, message });
 }
 
-const uiRoots = [
-  path.join(root, 'src', 'components'),
-  path.join(root, 'src', 'global'),
-];
+const uiRoots = [path.join(root, 'src', 'components'), path.join(root, 'src', 'global')];
 
 for (const filePath of uiRoots.flatMap(listFiles).filter(file => file.endsWith('.tsx'))) {
   const relativePath = path.relative(root, filePath).replaceAll(path.sep, '/');
@@ -84,7 +81,9 @@ if (shouldReportJson) {
 if (violations.length > 0) {
   console.error(`✗ UI purity validation found ${violations.length} issue(s):`);
   for (const violation of violations) {
-    console.error(`  [${violation.file}:${violation.line}] [${violation.rule}] ${violation.message}`);
+    console.error(
+      `  [${violation.file}:${violation.line}] [${violation.rule}] ${violation.message}`
+    );
   }
   process.exitCode = 1;
 } else {

@@ -62,8 +62,7 @@ async function inspectImage(imgPath: string): Promise<InspectResult | null> {
   let centerLuma = 0;
   const cPx = centerInfo.width * centerInfo.height;
   for (let i = 0; i < centerData.length; i += centerInfo.channels) {
-    centerLuma +=
-      0.299 * centerData[i] + 0.587 * centerData[i + 1] + 0.114 * centerData[i + 2];
+    centerLuma += 0.299 * centerData[i] + 0.587 * centerData[i + 1] + 0.114 * centerData[i + 2];
   }
   const centerAvg = centerLuma / cPx;
 
@@ -121,7 +120,7 @@ async function main() {
     if (!fs.existsSync(dir)) continue;
     for (const slug of fs.readdirSync(dir)) {
       const p = `${dir}/${slug}/featured.webp`;
-      if (fs.existsSync(p) && !images.find((i) => i.path === p)) {
+      if (fs.existsSync(p) && !images.find(i => i.path === p)) {
         images.push({ domain, path: p });
       }
     }

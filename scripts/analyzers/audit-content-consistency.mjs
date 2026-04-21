@@ -31,32 +31,75 @@ const logger = createLogger({
 
 const DOMAINS = [
   { label: 'services', dirs: ['src/domains/services/data'], exts: ['.ts'] },
-  { label: 'blog', dirs: ['src/domains/blog/data', 'src/domains/blog/content'], exts: ['.ts', '.tsx'] },
-  { label: 'resources', dirs: ['src/domains/resources/data', 'src/domains/resources/content'], exts: ['.ts', '.tsx'] },
-  { label: 'case-studies', dirs: ['src/domains/case-studies/data', 'src/domains/case-studies/content'], exts: ['.ts', '.tsx'] },
+  {
+    label: 'blog',
+    dirs: ['src/domains/blog/data', 'src/domains/blog/content'],
+    exts: ['.ts', '.tsx'],
+  },
+  {
+    label: 'resources',
+    dirs: ['src/domains/resources/data', 'src/domains/resources/content'],
+    exts: ['.ts', '.tsx'],
+  },
+  {
+    label: 'case-studies',
+    dirs: ['src/domains/case-studies/data', 'src/domains/case-studies/content'],
+    exts: ['.ts', '.tsx'],
+  },
 ];
 
 const HYPE_WORDS = [
-  'dominate', 'dominates', 'explode', 'explosive', 'disrupt', 'disruptive',
-  'revolutionary', 'guaranteed', 'guarantees', 'hyper-growth', 'skyrocket',
-  'proven', 'transform', 'transformed', 'game-changer', 'at scale', 'unlock', 'unlocked',
+  'dominate',
+  'dominates',
+  'explode',
+  'explosive',
+  'disrupt',
+  'disruptive',
+  'revolutionary',
+  'guaranteed',
+  'guarantees',
+  'hyper-growth',
+  'skyrocket',
+  'proven',
+  'transform',
+  'transformed',
+  'game-changer',
+  'at scale',
+  'unlock',
+  'unlocked',
 ];
 
-const HYPE_PATTERNS = HYPE_WORDS.map(
-  (w) => ({ word: w, pattern: new RegExp(`\\b${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi') })
-);
+const HYPE_PATTERNS = HYPE_WORDS.map(w => ({
+  word: w,
+  pattern: new RegExp(`\\b${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi'),
+}));
 
 const BANNED_PHRASES = [
-  'enquiry routing', 'operational flow', 'operational integration', 'infrastructure layer',
-  'entry points', 'intentional entry points', 'refinement capability', 'deliberate implementation',
-  'structural visibility', 'visibility alignment', 'connected architecture',
-  'core operational components', 'operational cadence', 'service hierarchy', 'system chain',
-  'routing', 'configured', 'enables', 'facilitates',
+  'enquiry routing',
+  'operational flow',
+  'operational integration',
+  'infrastructure layer',
+  'entry points',
+  'intentional entry points',
+  'refinement capability',
+  'deliberate implementation',
+  'structural visibility',
+  'visibility alignment',
+  'connected architecture',
+  'core operational components',
+  'operational cadence',
+  'service hierarchy',
+  'system chain',
+  'routing',
+  'configured',
+  'enables',
+  'facilitates',
 ];
 
-const BANNED_PATTERNS = BANNED_PHRASES.map(
-  (w) => ({ phrase: w, pattern: new RegExp(`\\b${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi') })
-);
+const BANNED_PATTERNS = BANNED_PHRASES.map(w => ({
+  phrase: w,
+  pattern: new RegExp(`\\b${w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'gi'),
+}));
 
 const APPROVED_CTA_HREF = '/contact';
 
@@ -66,7 +109,7 @@ function walkFiles(dir, exts) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) out.push(...walkFiles(full, exts));
-    else if (entry.isFile() && exts.some((e) => entry.name.endsWith(e))) out.push(full);
+    else if (entry.isFile() && exts.some(e => entry.name.endsWith(e))) out.push(full);
   }
   return out;
 }
@@ -142,8 +185,15 @@ function main() {
         }
         for (const href of hrefs) {
           // Skip internal section links (anchors) and service/page links
-          if (href.startsWith('#') || href.startsWith('/services/') || href.startsWith('/features/') ||
-              href.startsWith('/industries/') || href.startsWith('/blog/') || href.startsWith('/resources/')) continue;
+          if (
+            href.startsWith('#') ||
+            href.startsWith('/services/') ||
+            href.startsWith('/features/') ||
+            href.startsWith('/industries/') ||
+            href.startsWith('/blog/') ||
+            href.startsWith('/resources/')
+          )
+            continue;
           if (href !== APPROVED_CTA_HREF && href !== '/') {
             domainResult.ctaIssues.push({ file: rel, type: 'href', value: href });
           }
@@ -159,7 +209,8 @@ function main() {
   }
 
   fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-  const warningCount = audit.summary.totalHypeWords + audit.summary.totalBannedPhrases + audit.summary.ctaMismatches;
+  const warningCount =
+    audit.summary.totalHypeWords + audit.summary.totalBannedPhrases + audit.summary.ctaMismatches;
   const report = createReportSchema({
     name: 'content-consistency-audit',
     status: warningCount > 0 ? 'WARN' : 'PASS',

@@ -35,9 +35,12 @@ const TEST_FILES = [
 ];
 
 const INJECTIONS = [
-  { label: 'hype-word', text: "// TEST-INJECT: This will skyrocket your leads guaranteed\n" },
-  { label: 'banned-phrase', text: "// TEST-INJECT: The enquiry routing and operational flow is great\n" },
-  { label: 'anti-hype', text: "// TEST-INJECT: Revolutionary game-changer that will dominate\n" },
+  { label: 'hype-word', text: '// TEST-INJECT: This will skyrocket your leads guaranteed\n' },
+  {
+    label: 'banned-phrase',
+    text: '// TEST-INJECT: The enquiry routing and operational flow is great\n',
+  },
+  { label: 'anti-hype', text: '// TEST-INJECT: Revolutionary game-changer that will dominate\n' },
 ];
 
 function runValidator(command) {

@@ -31,7 +31,7 @@ test('homepage CTA carries canonical contact context through form submission', a
   await page.locator('button[type="submit"]').click();
 
   await expect.poll(() => submittedBody).not.toBeNull();
-  await expect(page.getByText('Thanks — we\'ll respond within 24 hours')).toBeVisible();
+  await expect(page.getByText("Thanks — we'll respond within 24 hours")).toBeVisible();
   expect(submittedBody).toMatchObject({
     name: 'Conversion Test',
     email: 'conversion@example.com',
@@ -47,6 +47,10 @@ test('direct contact access without canonical context is blocked', async ({ page
 
   await expect(page.locator('input[name="system"]')).toHaveValue('');
   await expect(page.locator('input[name="source"]')).toHaveValue('');
-  await expect(page.getByText('This form requires a valid system and source context. Please reopen it from a page CTA.')).toBeVisible();
+  await expect(
+    page.getByText(
+      'This form requires a valid system and source context. Please reopen it from a page CTA.'
+    )
+  ).toBeVisible();
   await expect(page.locator('button[type="submit"]')).toBeDisabled();
 });

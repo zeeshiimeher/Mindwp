@@ -64,7 +64,8 @@ async function assertColorContrast(
   includeSelector: string
 ) {
   const violations = await page.evaluate(async selector => {
-    const axe = (window as unknown as { axe?: { run: (...args: unknown[]) => Promise<unknown> } }).axe;
+    const axe = (window as unknown as { axe?: { run: (...args: unknown[]) => Promise<unknown> } })
+      .axe;
     if (!axe) return [];
 
     const result = (await axe.run(
@@ -78,7 +79,12 @@ async function assertColorContrast(
         },
       }
     )) as {
-      violations?: Array<{ id: string; help: string; impact: string | null; nodes: Array<{ target: string[] }> }>;
+      violations?: Array<{
+        id: string;
+        help: string;
+        impact: string | null;
+        nodes: Array<{ target: string[] }>;
+      }>;
     };
 
     return (result.violations ?? []).map(violation => ({

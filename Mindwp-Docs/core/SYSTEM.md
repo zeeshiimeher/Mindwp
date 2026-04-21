@@ -39,14 +39,14 @@ The commercial posture is calm, clear, and operational. MindWP sells structure b
 
 MindWP operates on six canonical systems. These identifiers are fixed in code and must be used exactly.
 
-| Canonical System | Role | Owns | Does Not Own |
-|---|---|---|---|
-| `smart-website-systems` | Flagship framework and structural gravity | Website architecture, enquiry capture, page flow, conversion clarity | Search acquisition, CRM follow-up, review collection |
-| `local-seo-authority` | Visibility layer | Local discovery, authority signals, service-page visibility | Conversion handling, CRM, review operations |
-| `ai-lead-handling` | Response and routing layer | Instant response, missed-call recovery, qualification, booking handoff | Website strategy, SEO acquisition, reputation management |
-| `crm-automation` | Pipeline and follow-up layer | Lead ownership, follow-up workflow, pipeline visibility, lifecycle routing | Search visibility, website architecture, review collection |
-| `reputation-review` | Trust layer | Review generation, negative feedback routing, reputation monitoring | Traffic acquisition, website conversion handling, CRM pipelines |
-| `revenue-growth` | Improvement and recovery layer | Conversion refinement, recovery workflows, lifecycle optimization | Core website foundation, local visibility, review operations |
+| Canonical System        | Role                                      | Owns                                                                       | Does Not Own                                                    |
+| ----------------------- | ----------------------------------------- | -------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| `smart-website-systems` | Flagship framework and structural gravity | Website architecture, enquiry capture, page flow, conversion clarity       | Search acquisition, CRM follow-up, review collection            |
+| `local-seo-authority`   | Visibility layer                          | Local discovery, authority signals, service-page visibility                | Conversion handling, CRM, review operations                     |
+| `ai-lead-handling`      | Response and routing layer                | Instant response, missed-call recovery, qualification, booking handoff     | Website strategy, SEO acquisition, reputation management        |
+| `crm-automation`        | Pipeline and follow-up layer              | Lead ownership, follow-up workflow, pipeline visibility, lifecycle routing | Search visibility, website architecture, review collection      |
+| `reputation-review`     | Trust layer                               | Review generation, negative feedback routing, reputation monitoring        | Traffic acquisition, website conversion handling, CRM pipelines |
+| `revenue-growth`        | Improvement and recovery layer            | Conversion refinement, recovery workflows, lifecycle optimization          | Core website foundation, local visibility, review operations    |
 
 Source of truth: `src/lib/content-graph/canonical.ts`.
 

@@ -35,7 +35,12 @@ export default [
   },
   js.configs.recommended,
   {
-    files: ['src/**/*.{ts,tsx}', 'scripts/**/*.{ts,tsx,mjs,mts,cts}', 'lib/**/*.{ts,tsx,mjs,mts,cts}', 'config/**/*.{ts,tsx,mjs,mts,cts}'],
+    files: [
+      'src/**/*.{ts,tsx}',
+      'scripts/**/*.{ts,tsx,mjs,mts,cts}',
+      'lib/**/*.{ts,tsx,mjs,mts,cts}',
+      'config/**/*.{ts,tsx,mjs,mts,cts}',
+    ],
     languageOptions: {
       parser: tsparser,
       parserOptions: {
@@ -138,8 +143,7 @@ export default [
                 'Import blog types from `@/domains/blog/types` (keep `@/domains/blog/api` for registries/helpers only).',
             },
           ],
-          patterns: [
-          ],
+          patterns: [],
         },
       ],
 

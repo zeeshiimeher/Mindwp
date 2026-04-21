@@ -18,6 +18,7 @@ import path from 'node:path';
 import { resolveLoggingMode, stripLoggingModeArgs } from '../../config/loggingConfig.mjs';
 import { systemEnv } from '../../config/systemEnv.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
+import { getLatestInputMtime } from '../lib/execution-cache.mjs';
 import { readReportJson } from '../lib/report-json.mjs';
 import { createReportSchema, normalizeRawReport, unwrapReportData } from '../lib/report-schema.mjs';
 
@@ -238,6 +239,21 @@ function getReportAbsolutePath(fileName) {
   return path.join(root, 'reports', fileName);
 }
 
+function getSyntheticValidatorInputPaths(validator) {
+  if (validator.name === 'typecheck') {
+    return [
+      path.join(root, 'src'),
+      path.join(root, 'scripts'),
+      path.join(root, 'config'),
+      path.join(root, 'tsconfig.json'),
+      path.join(root, 'next-env.d.ts'),
+      path.join(root, 'package.json'),
+    ];
+  }
+
+  return [];
+}
+
 function getCachedReportState(validator) {
   const reportPath = getReportAbsolutePath(validator.reportFile);
 
@@ -266,6 +282,17 @@ function getCachedReportState(validator) {
     Date.now() - generatedAtTimestamp > staleReportThresholdMs
   ) {
     return null;
+  }
+
+  if (validator.syntheticReport && normalized.status === 'FAIL') {
+    return null;
+  }
+
+  if (validator.syntheticReport) {
+    const { latestMtimeMs } = getLatestInputMtime(getSyntheticValidatorInputPaths(validator));
+    if (latestMtimeMs > fs.statSync(reportPath).mtimeMs) {
+      return null;
+    }
   }
 
   return {

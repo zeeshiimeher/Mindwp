@@ -30,16 +30,16 @@ async function capturePageData(page, route) {
   await page.waitForTimeout(1000);
 
   // Full page screenshot
-  await page.screenshot({ 
-    path: path.join(OUT_DIR, `${route.name}-full.png`), 
-    fullPage: true 
+  await page.screenshot({
+    path: path.join(OUT_DIR, `${route.name}-full.png`),
+    fullPage: true,
   });
 
   // Desktop viewport
   await page.setViewportSize({ width: 1440, height: 900 });
-  await page.screenshot({ 
-    path: path.join(OUT_DIR, `${route.name}-desktop.png`), 
-    fullPage: false 
+  await page.screenshot({
+    path: path.join(OUT_DIR, `${route.name}-desktop.png`),
+    fullPage: false,
   });
 
   // Extract section flow data
@@ -65,13 +65,18 @@ async function capturePageData(page, route) {
 
   // Extract hover targets analysis
   const hoverData = await page.evaluate(() => {
-    const interactiveEls = document.querySelectorAll('a, button, [role="button"], .btn, [class*="card"]');
+    const interactiveEls = document.querySelectorAll(
+      'a, button, [role="button"], .btn, [class*="card"]'
+    );
     const results = [];
     for (const el of Array.from(interactiveEls).slice(0, 80)) {
       const style = getComputedStyle(el);
       results.push({
         tag: el.tagName,
-        classes: (typeof el.className === 'string' ? el.className : el.getAttribute('class') || '').substring(0, 150),
+        classes: (typeof el.className === 'string'
+          ? el.className
+          : el.getAttribute('class') || ''
+        ).substring(0, 150),
         cursor: style.cursor,
         transition: style.transition.substring(0, 200),
         transform: style.transform,
@@ -80,20 +85,25 @@ async function capturePageData(page, route) {
     return results;
   });
 
-  // Extract card consistency data 
+  // Extract card consistency data
   const cardData = await page.evaluate(() => {
     const cards = document.querySelectorAll('[class*="card"]');
-    return Array.from(cards).slice(0, 40).map(c => {
-      const style = getComputedStyle(c);
-      return {
-        classes: (typeof c.className === 'string' ? c.className : c.getAttribute('class') || '').substring(0, 150),
-        bgColor: style.backgroundColor,
-        border: style.border,
-        borderRadius: style.borderRadius,
-        boxShadow: style.boxShadow.substring(0, 150),
-        padding: style.padding,
-      };
-    });
+    return Array.from(cards)
+      .slice(0, 40)
+      .map(c => {
+        const style = getComputedStyle(c);
+        return {
+          classes: (typeof c.className === 'string'
+            ? c.className
+            : c.getAttribute('class') || ''
+          ).substring(0, 150),
+          bgColor: style.backgroundColor,
+          border: style.border,
+          borderRadius: style.borderRadius,
+          boxShadow: style.boxShadow.substring(0, 150),
+          padding: style.padding,
+        };
+      });
   });
 
   // Extract gradient usage
@@ -104,7 +114,10 @@ async function capturePageData(page, route) {
       const bg = getComputedStyle(el).backgroundImage;
       if (bg && bg !== 'none' && bg.includes('gradient')) {
         gradients.push({
-          classes: (typeof el.className === 'string' ? el.className : el.getAttribute('class') || '').substring(0, 100),
+          classes: (typeof el.className === 'string'
+            ? el.className
+            : el.getAttribute('class') || ''
+          ).substring(0, 100),
           gradient: bg.substring(0, 250),
         });
       }
@@ -115,24 +128,28 @@ async function capturePageData(page, route) {
   // Extract heading hierarchy
   const headingData = await page.evaluate(() => {
     const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-    return Array.from(headings).slice(0, 30).map(h => {
-      const style = getComputedStyle(h);
-      return {
-        tag: h.tagName,
-        text: h.textContent.substring(0, 60),
-        fontSize: style.fontSize,
-        fontWeight: style.fontWeight,
-        color: style.color,
-        marginBottom: style.marginBottom,
-        lineHeight: style.lineHeight,
-      };
-    });
+    return Array.from(headings)
+      .slice(0, 30)
+      .map(h => {
+        const style = getComputedStyle(h);
+        return {
+          tag: h.tagName,
+          text: h.textContent.substring(0, 60),
+          fontSize: style.fontSize,
+          fontWeight: style.fontWeight,
+          color: style.color,
+          marginBottom: style.marginBottom,
+          lineHeight: style.lineHeight,
+        };
+      });
   });
 
   // Extract contrast issues (dark bg + dark text)
   const contrastIssues = await page.evaluate(() => {
     const issues = [];
-    const sections = document.querySelectorAll('section, div[class*="section"], div[class*="hero"]');
+    const sections = document.querySelectorAll(
+      'section, div[class*="section"], div[class*="hero"]'
+    );
     for (const s of sections) {
       const sBg = getComputedStyle(s).backgroundColor;
       // Check if background is dark
@@ -150,8 +167,10 @@ async function capturePageData(page, route) {
           const [, tr, tg, tb] = tMatch.map(Number);
           const tLum = (0.299 * tr + 0.587 * tg + 0.114 * tb) / 255;
           if (tLum < 0.5) {
-            const sCls = typeof s.className === 'string' ? s.className : s.getAttribute('class') || '';
-            const tCls = typeof t.className === 'string' ? t.className : t.getAttribute('class') || '';
+            const sCls =
+              typeof s.className === 'string' ? s.className : s.getAttribute('class') || '';
+            const tCls =
+              typeof t.className === 'string' ? t.className : t.getAttribute('class') || '';
             issues.push({
               section: sCls.substring(0, 100),
               textClasses: tCls.substring(0, 80),
@@ -191,10 +210,7 @@ async function main() {
   }
 
   // Write JSON report
-  fs.writeFileSync(
-    path.join(OUT_DIR, 'visual-audit-data.json'),
-    JSON.stringify(allData, null, 2)
-  );
+  fs.writeFileSync(path.join(OUT_DIR, 'visual-audit-data.json'), JSON.stringify(allData, null, 2));
 
   console.log(`\n[audit] ✅ Complete — ${PAGES.length} pages captured`);
   console.log(`[audit] Screenshots: ${OUT_DIR}/`);
@@ -203,4 +219,7 @@ async function main() {
   await browser.close();
 }
 
-main().catch(e => { console.error(e); process.exit(1); });
+main().catch(e => {
+  console.error(e);
+  process.exit(1);
+});

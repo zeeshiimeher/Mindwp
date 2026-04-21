@@ -6,10 +6,7 @@ import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 
-import {
-  getContentGraph,
-  getStructuredContentGraph,
-} from '../../src/lib/content-graph/registry';
+import { getContentGraph, getStructuredContentGraph } from '../../src/lib/content-graph/registry';
 import { overlapCount, scoreRelationship } from '../../src/lib/content-graph/scoring';
 import type { ContentGraphNode } from '../../src/lib/content-graph/types';
 import { createSystemIssue } from '../lib/system-issues.mjs';
@@ -43,7 +40,6 @@ await ensureGraphInitialized();
 // should already be guaranteed so this validator can focus on graph shape.
 const nodes = getStructuredContentGraph().nodes;
 const normalize = (value: string) => value.trim().toLowerCase();
-
 
 const errors: string[] = [];
 const warnings: string[] = [];
@@ -128,7 +124,13 @@ function buildGraphIssueFromMessage(message: string, severity: 'critical' | 'war
       severity,
       category: 'authority',
       entityType: 'graph-coverage',
-      slug: normalizedMessage.split(':').slice(1).join(':').trim().replace(/\s+/g, '-').toLowerCase(),
+      slug: normalizedMessage
+        .split(':')
+        .slice(1)
+        .join(':')
+        .trim()
+        .replace(/\s+/g, '-')
+        .toLowerCase(),
       title: 'Missing cross-type coverage',
       description: normalizedMessage,
       impact: 'The graph stops proving the required relationship coverage across content layers.',
@@ -194,13 +196,19 @@ const hasOverlapWithAny = (source: ContentGraphNode, candidates: ContentGraphNod
   candidates.some(candidate => metadataOverlapScore(source, candidate) > 0);
 
 const printMessages = (label: string, items: string[]) => {
-  logger.printErrors(items.map(item => `${label}: ${item}`), label.toLowerCase(), logger.isVerbose() ? 20 : 5);
+  logger.printErrors(
+    items.map(item => `${label}: ${item}`),
+    label.toLowerCase(),
+    logger.isVerbose() ? 20 : 5
+  );
 };
 
 for (const node of nodes) {
   // SR5 — Type integrity: every node.type MUST be in ContentNodeType
   if (!VALID_CONTENT_NODE_TYPES.has(node.type)) {
-    errors.push(`SR5 violation: ${describeNode(node)} has invalid type "${node.type}" (not in ContentNodeType)`);
+    errors.push(
+      `SR5 violation: ${describeNode(node)} has invalid type "${node.type}" (not in ContentNodeType)`
+    );
   }
 
   if (node.type === 'blog') {
@@ -379,7 +387,9 @@ if (fs.existsSync(authorityMapPath)) {
   if (Array.isArray(authorityMap.nodes)) {
     for (const mapNode of authorityMap.nodes) {
       if (mapNode.type && !VALID_CONTENT_NODE_TYPES.has(mapNode.type)) {
-        errors.push(`SR5 violation (authority-map.json): node "${mapNode.id}" has invalid type "${mapNode.type}" (not in ContentNodeType)`);
+        errors.push(
+          `SR5 violation (authority-map.json): node "${mapNode.id}" has invalid type "${mapNode.type}" (not in ContentNodeType)`
+        );
       }
     }
   }
@@ -415,7 +425,12 @@ if (shouldReportJson) {
     errorCount: errors.length,
     warningCount: warnings.length,
     summary: {
-      invalidEdges: errors.filter(error => error.startsWith('edge ') || error.startsWith('duplicate edge:') || error.startsWith('missing required cross-type edge coverage:')).length,
+      invalidEdges: errors.filter(
+        error =>
+          error.startsWith('edge ') ||
+          error.startsWith('duplicate edge:') ||
+          error.startsWith('missing required cross-type edge coverage:')
+      ).length,
       orphanNodes: orphanNodeSet.size,
     },
     errors,

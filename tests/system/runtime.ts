@@ -15,7 +15,9 @@ export async function initRuntime() {
 }
 
 export function getGraphNodes(type?: ContentNodeType): ContentGraphNode[] {
-  const nodes = Object.values(getContentGraph()).sort((left, right) => left.path.localeCompare(right.path));
+  const nodes = Object.values(getContentGraph()).sort((left, right) =>
+    left.path.localeCompare(right.path)
+  );
   return type ? nodes.filter(node => node.type === type) : nodes;
 }
 

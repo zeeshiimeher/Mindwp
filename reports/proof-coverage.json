@@ -1,8 +1,8 @@
 {
   "meta": {
-    "name": "proof-coverage",
+    "name": "generate-proof-coverage",
     "source": "npm run system:full",
-    "generatedAt": "2026-04-21T00:04:08.266Z",
+    "generatedAt": "2026-04-21T07:33:18.180Z",
     "status": "WARN",
     "version": "1.0"
   },
@@ -353,8 +353,8 @@
       "reason": "no proof signals detected"
     }
   ],
-  "name": "proof-coverage",
+  "name": "generate-proof-coverage",
   "status": "WARN",
-  "generatedAt": "2026-04-21T00:04:08.266Z",
+  "generatedAt": "2026-04-21T07:33:18.180Z",
   "sourceCommand": "npm run system:full"
 }
