@@ -10,7 +10,7 @@
  *   - src/components/ui/ (shadcn components — third-party)
  *   - SVG <text> / <tspan> elements (fontSize, fontWeight, letterSpacing)
  *
- * Source: SYSTEM-STATE.md (Architecture Rules)
+ * Source: docs/system/SYSTEM-ARCHITECTURE.md (Architecture Rules)
  */
 
 import fs from 'node:fs';

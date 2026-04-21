@@ -9,7 +9,7 @@
 
 Use this file when you need the shortest architecture map across governance, domain data, graph, presentation, validation, and reports.
 
-If you are new to the repo, read this file for the mental model, then read `TOOLS.md` for the commands you actually run.
+If you are new to the repo, read this file for the mental model, then read `../ops/WORKFLOW.md` for the day-to-day command path.
 
 ---
 
@@ -21,8 +21,8 @@ Governance -> Domain data and registries -> Graph and resolver -> Routes and tem
 
 ### Governance
 
-- `Mindwp-Docs/core/SYSTEM.md`
-- supporting core contracts in `CONTENT.md`, `GRAPH.md`, `CONVERSION.md`, and `TOOLS.md`
+- `FOUNDATION.md`
+- supporting core contracts in `CONTENT.md`, `GRAPH.md`, and `CONVERSION.md`
 
 ### Domain Data and Registries
 
@@ -52,9 +52,8 @@ Governance -> Domain data and registries -> Graph and resolver -> Routes and tem
 ### Validation and Reports
 
 - `scripts/core/validate-all.mjs`
-- `npm run system:full`
-- `npm run system:quick`
-- report artifacts in `reports/**`
+- manifest-driven control-plane execution
+- generated report artifacts in `reports/**`
 - operator visibility through `/dev/system-dashboard`
 
 ---
@@ -101,7 +100,7 @@ Human rule: the runtime lane produces behavior, and the control-plane lane confi
 
 | Concern                   | Primary Owner                                |
 | ------------------------- | -------------------------------------------- |
-| Identity and hierarchy    | `Mindwp-Docs/core/SYSTEM.md`                 |
+| Identity and hierarchy    | `docs/system/FOUNDATION.md`                  |
 | Content model             | `src/domains/contentModel.ts`                |
 | Graph initialization      | `src/domains/init/ensureGraphInitialized.ts` |
 | Publishable runtime       | `src/lib/content-graph/publishable.tsx`      |
@@ -109,8 +108,8 @@ Human rule: the runtime lane produces behavior, and the control-plane lane confi
 | CTA registry              | `src/lib/cta/ctaRegistry.ts`                 |
 | Contact URL generation    | `src/lib/contact/contactHref.ts`             |
 | Validator orchestration   | `scripts/core/validate-all.mjs`              |
-| Full-system control plane | `npm run system:full`                        |
-| Fast operator check       | `npm run system:quick`                       |
+| Workflow authority        | `docs/ops/WORKFLOW.md`                       |
+| Audit authority           | `docs/ops/AUDIT.md`                          |
 | Internal observability    | `/dev/system-dashboard`                      |
 
 ---
@@ -119,15 +118,15 @@ Human rule: the runtime lane produces behavior, and the control-plane lane confi
 
 Read in this order:
 
-1. `SYSTEM.md`
+1. `FOUNDATION.md`
 2. `CONTENT.md`
 3. `GRAPH.md`
 4. `CONVERSION.md`
-5. `TOOLS.md`
-6. `SYSTEM-STATE.md`
+5. `../ops/AUDIT.md`
+6. `../ops/WORKFLOW.md`
 
 For day-to-day work, the practical order is:
 
 1. `SYSTEM-ARCHITECTURE.md`
-2. `TOOLS.md`
+2. `../ops/WORKFLOW.md`
 3. the narrow domain or contract doc for the surface you are changing

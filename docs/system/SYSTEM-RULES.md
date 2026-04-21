@@ -259,7 +259,7 @@ If any task requires structural change → STOP and escalate instead of implemen
 ### Requires user confirmation
 
 - Update SYSTEM-TRUTH.md
-- Modify governing docs in Mindwp-Docs/core/
+- Modify governing docs in docs/system/
 - Add or remove validators
 - Change CTA governance or conversion model
 - Add new content types

@@ -1,114 +1,51 @@
-# MindWP Website (Next.js App Router)
+# MindWP - Smart Website System
 
-This repo contains the MindWP marketing site: homepage + services, features, industries, resources, blog, case studies, and utility pages.
+## What This Is
 
-Runtime lives directly in this workspace under `src/`, `scripts/`, `tests/`, and `Mindwp-Docs/`.
+MindWP is a smart website system for service businesses.
 
-## Run
+It combines a Next.js application with a deterministic control plane that validates content, routing, conversion flow, and deployment safety before production builds are allowed to proceed.
 
-- Dev: `npm run dev`
-- Start production server: `npm run start`
-- Typecheck: `npm run typecheck`
-- Lint: `npm run lint`
-- Full validation: `npm run validate:all`
-- Unified full-system run: `npm run system:full`
-- Full test + validator aggregation: `npm run test:all`
-- CI-safe gate (recommended): `npm run validate:ci`
-- Production build: `npm run build`
+This repo is built for service-led operations, not ad inventory, affiliate content, or blog-first publishing.
 
-## Test Architecture
+## Core Idea
 
-This repo now separates runtime test coverage into four layers:
+1 command -> full validation -> safe deploy
 
-- `tests/unit` — high-value helper contracts
-- `tests/integration` — route modules, API handlers, validator contract fixtures, and runtime budgets
-- `tests/system` — cross-layer invariants across graph, routing, metadata, CTA/contact, taxonomy, and protection rules
-- `tests/e2e` — Playwright revenue-path flows and route crawling
+`npm run system:full` is the trusted gate. It validates the system, regenerates required artifacts, runs tests, and confirms the repo is safe to deploy.
 
-Run the layers with:
+Production builds are blocked if that gate fails.
 
-- `npm run test:unit`
-- `npm run test:integration`
-- `npm run test:system`
-- `npm run test:runtime`
-- `npm run test:e2e`
-- `npm run test:all`
+## What This Repo Contains
 
-`npm run system:full` runs `validate-all`, a dedicated typecheck, the full Vitest runtime suite, optional Playwright E2E with `-- --include-e2e`, regenerates report artifacts, and writes the unified machine-readable control-plane snapshot to `reports/system-report.json`.
+- Next.js app
+- deterministic system engine
+- validators and analyzers
+- reporting and dashboard outputs
 
-`npm run test:all` is now an alias for `npm run system:full -- --include-e2e`.
+## Quick Start
 
-## Validator Extensions
+```bash
+npm install
+npm run system:full
+npm run dev
+```
 
-The production control layer now includes these additional blocking validators:
+## Daily Workflow
 
-- `npm run validate:template-payload-sufficiency`
-- `npm run validate:section-structure`
+```bash
+npm run system:quick
+npm run system:regen
+npm run system:full
+```
 
-These catch incomplete template payloads and weak section-cardinality data before they reach runtime.
+## Deployment
 
-## Local-first Git policy
+- Push to `main` -> Vercel deploy
+- Build automatically runs `system:full`
 
-- The local working folder is the source of truth.
-- Git is used to record and protect the current local state with frequent commits.
-- Preferred workflow: change files locally, validate, run `npm run system:full` when needed, then commit the resulting code and docs.
-- Do not use Git to overwrite the working folder unless you explicitly intend to do that.
-- Keep the repo root clean: runtime logs, pid files, and temporary command output belong under `_workspace/`, not at the top level.
+## Documentation
 
-## Smoke Tests (Routing)
-
-This repo includes a lightweight Playwright smoke test that loads a small set of critical routes in a real browser and fails if critical routes do not render correctly.
-
-- Run: `npm run test:smoke`
-- Full gate (validate + smoke): `npm run validate:ci`
-
-## Case Study Structure Validator
-
-Use these commands for case-study content structure checks:
-
-- Human-readable check: `npm run validate:case-study-structure`
-- Auto-fix core section order: `npm run validate:case-study-structure:fix`
-- Machine-readable JSON report (for CI tooling): `npm run validate:case-study-structure:report`
-
-Recommended usage:
-
-- Local development: run human-readable check (and `:fix` when needed).
-- CI/automation: use JSON report mode for machine parsing and annotations.
-
-## Related Cards Resolver
-
-Related cards are resolver-driven and graph-backed for service and feature pages.
-
-Variants:
-
-- `domain-only` (default): same-domain related cards only.
-- `mix-ranked`: service-first, then industry/case-study, then feature fill.
-- `one-each-sic`: one service + one industry + one case-study.
-- `domain-resource-blog`: one same-domain + one resource + one blog.
-
-Resolver guarantees:
-
-- Excludes current page slug.
-- Deduplicates by slug.
-- Caps output at 3 cards.
-
-## Docs (authoritative)
-
-- System truth: `Mindwp-Docs/core/SYSTEM.md`
-- Tooling surface: `Mindwp-Docs/core/TOOLS.md`
-- Current state: `Mindwp-Docs/core/SYSTEM-STATE.md`
-- Content rules: `Mindwp-Docs/core/CONTENT.md`
-- CTA rules: `Mindwp-Docs/core/CONVERSION.md`
-
-## Architecture
-
-- Runtime: Next.js App Router in `src/app/`
-- Shared/domain code: `src/`
-- Control-plane scripts: `scripts/`
-- Documentation: `Mindwp-Docs/`
-
-## Forms
-
-The contact page posts JSON to `/api/contact`, which sends a plain email through Resend. Configure `RESEND_API_KEY`, `CONTACT_EMAIL`, `CONTACT_FROM_EMAIL`, `TURNSTILE_SECRET_KEY`, and `NEXT_PUBLIC_TURNSTILE_SITE_KEY` in `.env.local` before testing submissions. `CONTACT_FROM_EMAIL` must be a verified sender on your production domain.
-
-The contact route now enforces origin validation, a honeypot field, CAPTCHA verification, stronger email validation, and request rate limiting.
+- System -> `docs/system/`
+- Workflow -> `docs/ops/WORKFLOW.md`
+- Audit -> `docs/ops/AUDIT.md`

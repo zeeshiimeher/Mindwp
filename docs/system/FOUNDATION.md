@@ -245,4 +245,5 @@ MindWP copy must not use phrases such as:
 - Content roles and metadata: [./CONTENT.md](./CONTENT.md)
 - Graph ontology and resolver rules: [./GRAPH.md](./GRAPH.md)
 - CTA and contact contracts: [./CONVERSION.md](./CONVERSION.md)
-- Tooling and control plane: [./TOOLS.md](./TOOLS.md)
+- Workflow and setup: [../ops/WORKFLOW.md](../ops/WORKFLOW.md)
+- Audit and enforcement model: [../ops/AUDIT.md](../ops/AUDIT.md)

@@ -262,4 +262,4 @@ Query access stays deterministic. No runtime AI or ad hoc scoring layer is allow
 - Page roles and exposure rules: `CONTENT.md`
 - Identity and system boundaries: `SYSTEM.md`
 - CTA and contact context: `CONVERSION.md`
-- Control plane and validation: `TOOLS.md`
+- Control plane and validation: `../ops/AUDIT.md`
