@@ -5,13 +5,14 @@ import path from 'node:path';
 
 import { createLogger } from '../../lib/logger/index.mjs';
 import { systemKnowledge } from '../../src/system/knowledge';
+import { validators as activeValidators } from '../core/validator-manifest.mjs';
 import { createReportSchema } from '../lib/report-schema.mjs';
 
 const root = process.cwd();
 const reportsDir = path.join(root, 'reports');
 const sourceCommand = 'node --import tsx/esm scripts/validators/validate-system-knowledge.ts';
 const logger = createLogger({ label: 'validate-system-knowledge', mode: 'summary', rootDir: root });
-const syntheticValidators = ['check-generated', 'typecheck', 'lint', 'report-size-guard'];
+const syntheticValidators = ['check-generated', 'validate-env', 'typecheck', 'lint', 'report-size-guard'];
 
 function toName(fileName: string) {
   return fileName.replace(/\.(mjs|cjs|js|ts)$/i, '');
@@ -72,6 +73,12 @@ function writeReport(report: unknown) {
 function main() {
   logger.step('validate-system-knowledge');
 
+  const trackedActiveValidators = [...systemKnowledge.validators]
+    .filter(name => name !== 'report-size-guard')
+    .sort((left, right) => left.localeCompare(right));
+  const activeValidatorNames = activeValidators
+    .map(validator => validator.name)
+    .sort((left, right) => left.localeCompare(right));
   const validatorFiles = [
     ...syntheticValidators,
     ...listNames(path.join(root, 'scripts', 'validators')),
@@ -82,12 +89,15 @@ function main() {
   );
 
   const validatorDiff = diff([...systemKnowledge.validators].sort(), validatorFiles);
+  const activeValidatorDiff = diff(trackedActiveValidators, activeValidatorNames);
   const analyzerDiff = diff([...systemKnowledge.analyzers].sort(), analyzerFiles);
   const reportDiff = diff([...systemKnowledge.reports].sort(), reportFiles);
 
   const issues = [
     ...validatorDiff.missing.map(name => ({ area: 'validators', type: 'missing', name })),
     ...validatorDiff.unexpected.map(name => ({ area: 'validators', type: 'orphaned', name })),
+    ...activeValidatorDiff.missing.map(name => ({ area: 'active-validators', type: 'missing', name })),
+    ...activeValidatorDiff.unexpected.map(name => ({ area: 'active-validators', type: 'orphaned', name })),
     ...analyzerDiff.missing.map(name => ({ area: 'analyzers', type: 'missing', name })),
     ...analyzerDiff.unexpected.map(name => ({ area: 'analyzers', type: 'orphaned', name })),
     ...reportDiff.missing.map(name => ({ area: 'reports', type: 'missing', name })),
@@ -110,11 +120,18 @@ function main() {
         actual: validatorFiles,
         ...validatorDiff,
       },
+      activeValidators: {
+        expected: trackedActiveValidators,
+        actual: activeValidatorNames,
+        ...activeValidatorDiff,
+      },
       analyzers: { expected: systemKnowledge.analyzers, actual: analyzerFiles, ...analyzerDiff },
       reports: { expected: systemKnowledge.reports, actual: reportFiles, ...reportDiff },
       coverage: {
         validatorCoverage:
           validatorDiff.missing.length === 0 && validatorDiff.unexpected.length === 0,
+        activeValidatorCoverage:
+          activeValidatorDiff.missing.length === 0 && activeValidatorDiff.unexpected.length === 0,
         analyzerCoverage: analyzerDiff.missing.length === 0 && analyzerDiff.unexpected.length === 0,
         reportCoverage: reportDiff.missing.length === 0 && reportDiff.unexpected.length === 0,
       },

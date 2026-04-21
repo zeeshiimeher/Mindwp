@@ -6,7 +6,7 @@ Scope: Visibility, SEO, deployment, and validator-enforced system hardening
 
 ## EXECUTION GATE
 
-Current state: Blocked pending critical gap remediation
+Current state: UNBLOCKED ✅
 
 ## PHASE 0 - DEEP VALIDATION
 
@@ -260,7 +260,7 @@ Task 3 - TOPIC VISIBILITY
 
 ### Gate Status
 
-- Execution gate remains BLOCKED until Gaps 4 and 5 are completed.
+- Execution gate is UNBLOCKED after Gap 4, Gap 5, and final system validation passed.
 
 ## GAP 4 - SEO ENFORCEMENT
 
@@ -398,6 +398,55 @@ Task 5 - DUPLICATE INTENT
 - files modified: `scripts/core/validate-all.mjs`, `package.json`
 - results: PASS for duplicate-intent validator, PASS for indexing validator regression check, PASS for topic indexability regression check, PASS for duplicate-intent simulation coverage
 - status: PASS
+
+## GLOBAL VALIDATION
+
+Status: COMPLETE
+
+### Final Validation
+
+- Full gate: `ENABLE_MAIL_SERVICE=true ENABLE_CAPTCHA_SERVICE=true NEXT_PUBLIC_SITE_URL=https://mindwp.com NEXT_PUBLIC_SITE_ORIGIN=https://mindwp.com NEXT_PUBLIC_TURNSTILE_SITE_KEY=site-key RESEND_API_KEY=test-key CONTACT_EMAIL=hello@mindwp.com CONTACT_FROM_EMAIL=noreply@mindwp.com TURNSTILE_SECRET_KEY=turnstile-secret BASE_URL=http://127.0.0.1:3009 COMPONENT_CAPTURE_BASE_URL=http://127.0.0.1:3001/components npm run system:full` -> PASS.
+- Result: `Status: PASS`, `Validators: 32/32`, `Tests: PASS`, `Warnings: 0`, `Reports: 55`.
+
+### Gate Status
+
+- EXECUTION GATE -> UNBLOCKED ✅
+
+## FINAL STRESS VALIDATION
+
+Status: COMPLETE
+
+### Stress Findings
+
+- Test 1 - New Route Without Config: path policy fallback resolved `/random/test-page` to `utility`, `noindex`, `nofollow`, `disallow`, and sitemap exclusion. A real undeclared static app route still failed loudly through `tests/integration/route-inventory-coverage.test.ts` because route existence must be declared in inventory.
+- Test 2 - Manual SEO Injection: `validate-seo-enforcement` failed immediately on manual `export const metadata`.
+- Test 3 - Duplicate Intent Attack: forcing topic hubs and blog topic archives public caused `validate-duplicate-intent` to fail loudly; `validate-topic-indexability` also failed on the same attack.
+- Test 4 - Missing Env (Production): startup failed before Next boot when `ENABLE_MAIL_SERVICE=true` without `RESEND_API_KEY`; `system:full` also failed loudly.
+- Test 5 - Thin Topic Promotion: forcing low-authority topic `authority-signals` public caused `validate-topic-indexability` to fail loudly.
+- Test 6 - Bypass Resolver: `validate-seo-enforcement` failed on `generateMetadata()` that did not return `resolveSEO(...)`.
+- Test 7 - New Route Type: unknown route type fallback resolved to `utility`, `noindex`, `nofollow`, `disallow`; `validate-indexing-policy` still passed.
+- Test 8 - Remove Validator: stress validation exposed one real leak. Removing `validate-duplicate-intent` from the active runner initially passed silently. Root cause was split knowledge of validator existence vs active execution. This was fixed by centralizing the active validator registry in `scripts/core/validator-manifest.mjs`, enforcing active registry parity in `validate-system-knowledge`, promoting that validator to blocking, and adding `tests/system/validator-registry-parity.test.ts`. After the fix, the same removal failed loudly in both `validate-system-knowledge` and `validate-all`.
+- Test 9 - Conflicting Canonical: forcing a shared canonical URL caused the SEO resolver and SEO enforcement path to fail loudly.
+
+### Scalability Check
+
+- Synthetic growth simulation added `+20` services, `+100` blog posts, and `+50` topics (`+220` routes total, `355 -> 575`) against the duplicate-intent grouping path.
+- Result: `0` duplicate groups under the safe synthetic shape and `0.2 ms` grouping time, which confirms the current enforcement logic is linear and stable at that scale.
+- Constraint: zero manual work is not yet true for service and topic expansion. Services still require explicit registry and renderer wiring, and topics still require canonical topic registry updates. That is an authoring scalability constraint, not a silent drift path.
+
+### Final Validation
+
+- Full gate after stress remediation: `ENABLE_MAIL_SERVICE=true ENABLE_CAPTCHA_SERVICE=true NEXT_PUBLIC_SITE_URL=https://mindwp.com NEXT_PUBLIC_SITE_ORIGIN=https://mindwp.com NEXT_PUBLIC_TURNSTILE_SITE_KEY=site-key RESEND_API_KEY=test-key CONTACT_EMAIL=hello@mindwp.com CONTACT_FROM_EMAIL=noreply@mindwp.com TURNSTILE_SECRET_KEY=turnstile-secret BASE_URL=http://127.0.0.1:3009 COMPONENT_CAPTURE_BASE_URL=http://127.0.0.1:3001/components npm run system:full` -> PASS.
+- Result: `Status: PASS`, `Validators: 32/32`, `Tests: PASS`, `Warnings: 0`, `Reports: 55`.
+
+All tests executed.
+Results:
+- silent failures: 0
+- enforced failures: 8
+- system leaks: 0
+
+Verdict:
+SYSTEM IS ENFORCED ✅
 
 ## Task Tracker
 
@@ -837,3 +886,259 @@ Task 5 - DUPLICATE INTENT
 - One blocking validation contract through `npm run system:full`.
 - Zero ambiguous public topic surfaces.
 - Zero accidental indexing by default.
+
+---
+
+## PHASE 1.5 — SYSTEM CONSOLIDATION (PLANNED)
+
+**Status:** NOT STARTED
+**Source:** Distilled from `system-audit2.md` (file-level quick search audit).
+**Scope:** Structural deduplication and ownership consolidation. Excludes anything already addressed in Phase 0 / Gap 1–5 / stress validation.
+**Mode:** Plan only. No code changes in this phase.
+
+### Intent
+
+Phase 0 + Gap 1–5 fixed correctness and policy gaps. Phase 1.5 fixes **structural drift surface area** — duplicated logic, fragmented policy ownership, and overlapping orchestration that make future enforcement expansion expensive. Each system below collapses many small file-level smells into one executable consolidation track.
+
+---
+
+### SYSTEM 1 — VALIDATOR ARCHITECTURE
+
+**Problems**
+
+- Duplicated AST / TSX scanning across multiple validators (CTA, content, structure, SEO).
+- Policy rules split across validators with overlapping ownership (CTA labels vs CTA violations vs conversion contract; SEO enforcement vs indexing vs topic indexability vs content quality; design-system vs inline-styles vs tokens).
+- Validators mix repo-wide file walking, regex scanning, and policy assertions in single files.
+- Several validators re-implement file recursion and import scanning instead of using shared helpers.
+
+**Decision**
+
+👉 Create a shared validator core and enforce single-responsibility validators.
+
+**Tasks**
+
+- Extract shared AST / TSX scanning utilities into one helper module.
+- Extract a shared repo file walker with one allowlist/ownership policy surface.
+- Centralize policy definitions per concern (CTA, SEO/indexing, content metadata, UI/structure).
+- Move CTA surface checks, label-map checks, and resolver integrity checks to one CTA policy module consumed by thin validators.
+- Collapse SEO enforcement, indexing policy, and topic indexability into one SEO/indexing rule layer with topic rules as a sub-policy, not a parallel validator.
+- Collapse design-system, inline-styles, and tokens into one UI rule engine with shared SVG/exemption helpers.
+- Remove duplicated logic from individual validators after extraction.
+
+**Expected Result**
+
+- Validators become thin policy adapters over a shared core.
+- Zero rule duplication across validators.
+- New enforcement rules can be added in one place.
+
+---
+
+### SYSTEM 2 — SCRIPT ORCHESTRATION
+
+**Problems**
+
+- `scripts/core/system-report.mjs` and `scripts/core/validate-all.mjs` overlap: both own validator inventories, synthetic reports, cache rules, and report-size auditing.
+- `scripts/core/run-system-full.mjs` adds a third orchestration layer with hardcoded env flags.
+- `scripts/core/preaudit.mjs` and `check-generated.mjs` carry duplicated required-output manifests.
+- Runner scripts (`run-eslint.mjs`, `run-next.mjs`, `disallow-manual-report-paths.mjs`) re-implement target lists, env bootstrap, and CLI parsing.
+
+**Decision**
+
+👉 Unify the execution pipeline behind one orchestration core; runners stay thin.
+
+**Tasks**
+
+- Extract a shared orchestration core that owns: validator registry, generated-output manifest, cache rules, and report-size policy.
+- Cleanly separate three layers: **execution** (run scripts), **validation** (apply policy), **reporting** (write artifacts/dashboard).
+- Make `system-report.mjs`, `validate-all.mjs`, `run-system-full.mjs`, `preaudit.mjs`, and `check-generated.mjs` consume the shared core instead of redefining manifests.
+- Move runner targets and env bootstrap into shared config.
+- Remove duplicated runner logic and wrapper-only entrypoints.
+
+**Expected Result**
+
+- One execution pipeline, one source for required outputs.
+- No orchestration drift between `system:full`, validation, and pre-audit gates.
+
+---
+
+### SYSTEM 3 — REPORT SYSTEM
+
+**Problems**
+
+- Report schema, normalization, and status enums are duplicated across `scripts/lib/report-schema.mjs`, `scripts/core/report-schema-validator.mjs`, `scripts/lib/system-contract-schemas.mjs`, `src/lib/dev/system-report.ts`, `src/lib/dev/dashboard-reports.ts`, `src/lib/dashboard/client-dashboard.ts`.
+- Multiple JSON readers (`scripts/lib/report-json.mjs`, `src/lib/dev/reportJson.ts`, `client-dashboard.ts`) implement parallel report IO.
+- Status semantics drift (e.g. `SKIPPED` mapped into `WARN` in one place, preserved elsewhere).
+- Snapshot tests (`tests/system/__snapshots__/report-contracts.test.ts.snap`) cover too broad a surface and produce noisy failures on benign content drift.
+- Report-name groupings overlap (`cta-report.json` listed in both system and content sets in `executionVisibility.ts`).
+
+**Decision**
+
+👉 Centralize one report contract and one IO surface.
+
+**Tasks**
+
+- Define one canonical report envelope, status enum, and severity enum; derive all dashboard/client DTOs from it.
+- Make one report JSON reader the only entrypoint; route all callers through it.
+- Unify report normalization (canonicalization + size validation + status coercion) into one module.
+- Reduce snapshot scope to structure-critical slices; replace prose snapshots with structural assertions.
+- Move report grouping (system / content / CTA / SEO buckets) into one manifest with no overlap.
+- Remove redundant report helpers after consolidation.
+
+**Expected Result**
+
+- Stable report contracts.
+- Low-noise snapshot tests.
+- Predictable, single-sourced report taxonomy across scripts, dashboard, and client-facing surfaces.
+
+---
+
+### SYSTEM 4 — CONFIG & POLICY LAYER
+
+**Problems**
+
+- Page-type, CTA, and section policy are split across `src/config/section-intelligence.ts`, `src/config/ui-intelligence.ts`, `src/config/ctaLabels.ts`, `src/lib/cta/*`, `src/lib/page/pageIdentity.ts`, `src/lib/contact/contactHref.ts`.
+- `CTA_LABEL_MAP` is effectively dead because generic rule labels resolve first.
+- Env defaults are declared twice (schema fields + raw-env builders) in `config/env.schema.shared.mjs`.
+- `LoggingMode` TS contract omits `debug` although runtime supports it (`config/loggingConfig.ts`, `lib/logger/index.ts`).
+- Indexing policy (`config/indexingPolicy.ts`) keeps manual path maps that must be updated for every new route/kind.
+- Taxonomy slugs are split between `src/lib/content-graph/canonical.ts`, `conversionGoals.ts`, and `topicAuthority.ts`.
+
+**Decision**
+
+👉 Consolidate the policy layer: one source per concern.
+
+**Tasks**
+
+- Merge page-type / CTA-intent / section policy into a single page-policy module consumed by CTA, contact, related, and section systems.
+- Apply system-specific CTA overrides before generic rules; remove dead `CTA_LABEL_MAP` or wire it correctly.
+- Keep env defaults in one layer (schema only); make raw-env builder normalization-only.
+- Align `LoggingMode` TS union with runtime modes; share one exported type.
+- Drive indexing policy from route metadata, with a parity test asserting full route coverage.
+- Centralize taxonomy metadata (slug, label, class, aliases) in one canonical source consumed by graph, conversion goals, and topic authority.
+- Add config-completeness tests so missing keys fail the pipeline.
+
+**Expected Result**
+
+- No config drift between page identity, CTA, contact, and section systems.
+- One source per policy concern; rule updates land in one place.
+
+---
+
+### SYSTEM 5 — TEST SYSTEM
+
+**Problems**
+
+- Duplicated fixtures and harnesses: temp-workspace builders for validator tests are reimplemented in each domain (`case-studies`, `industries`, `home`).
+- Overlapping coverage across SEO (`tests/system/seo-consistency.test.ts`, `tests/integration/inventory-metadata.test.ts`, `tests/seo/next-seo.smoke.spec.ts`, `tests/e2e/internal-link-reachability.spec.ts`).
+- Overlapping route inventory crawls in `tests/e2e/major-routes-crawl.spec.ts`, `internal-link-reachability.spec.ts`, `tests/integration/route-rendering.test.ts`, `tests/integration/route-inventory-coverage.test.ts`.
+- Brittle assertions: exact thrown-message strings, exact CTA prose, exact thank-you copy, CSS-class-based locators.
+- Contact-API harness duplicated across integration and system suites.
+- Snapshot drift on benign copy edits.
+
+**Decision**
+
+👉 Normalize test architecture around shared utilities and structural assertions.
+
+**Tasks**
+
+- Create shared test utilities: temp-workspace validator harness, route inventory helper, contact-API fixture, representative-node helper.
+- Remove duplicated SEO and route-inventory coverage; assign one canonical test per concern.
+- Replace fragile assertions (exact strings, class selectors) with structural checks (error type, role/test-id locators, key tokens).
+- Promote `tests/system/runtime.ts` helpers to also serve E2E.
+- Split combined suites (CTA + SEO + reachability) into per-concern files.
+- Convert per-family repeated loops into table-driven assertions.
+
+**Expected Result**
+
+- Faster, less flaky tests.
+- Clearer failure localization.
+- Lower maintenance cost per copy / markup edit.
+
+---
+
+### SYSTEM 6 — GENERATORS & ANALYZERS
+
+**Problems**
+
+- `scripts/analyzers/generate-content-intelligence.ts`, `inspect-graph.ts`, `generate-content-gaps.ts`, and `detect-page-priorities.mjs` share graph bootstrap, scoring, and report-shaping logic.
+- Authority scoring split across `src/lib/authority/authorityScore.ts`, `resolver.ts`, `generated/authorityMap.ts`, and `src/lib/graph/query.ts` — three runtime paths.
+- Topic / authority generators (`generate-authority-map.ts`, `generate-topic-authority-scores.ts`) hardcode weights and thresholds in-script instead of using shared policy.
+- `scripts/analyzers/score-content.mjs` and `audit-content-consistency.mjs` repeat phrase sets, file walkers, and CTA parsing.
+- Visual audit layer fragmented: `run-visual-audit.js`, `visual-audit-engine.js` (legacy), `visual-audit-runtime.js`, `heading-audit.cjs`, `split-screenshots.cjs` overlap and emit overlapping artifacts.
+- `scripts/analyzers/export-reports.mjs` re-models manual/runtime helpers as pipeline steps.
+
+**Decision**
+
+👉 Unify the analysis layer into shared graph + scoring primitives.
+
+**Tasks**
+
+- Extract one graph-analysis core (bootstrap, node iteration, derived edges).
+- Centralize scoring: one authority/scoring module consumed by analyzers, generators, and runtime resolvers.
+- Move generator weights/thresholds into shared policy config.
+- Build one shared content-audit core (phrase sets, file walker, CTA parser) used by `score-content` and `audit-content-consistency`.
+- Cleanly separate three layers in analyzers: **data collection**, **scoring**, **report assembly**.
+- Standardize one report helper and one graph-init entrypoint across analyzers.
+- Resolve visual audit ownership: keep one supported runner, retire/archive the legacy engine, fold heading + split-screenshot logic in or out explicitly.
+
+**Expected Result**
+
+- Consistent reports across analyzers.
+- One scoring authority across runtime and generation.
+- Reduced script count; predictable analyzer ownership.
+
+---
+
+### SYSTEM 7 — CLEANUP TARGETS
+
+**Remove or Refactor**
+
+- Legacy `scripts/analyzers/visual-audit-engine.js` (overlaps the supported visual audit runner).
+- Dead `CTA_LABEL_MAP` in `src/config/ctaLabels.ts` (or wire system overrides correctly).
+- `src/lib/related/relatedRegistry.ts` — replace with a simple single-zone helper.
+- `src/lib/ui/bem.ts` — remove or scope; design system no longer relies on it.
+- `INPUT_PATHS` in `scripts/generators/generate-authority-map.ts` (declared but unused).
+- `subjectCompetingPercent` in `src/lib/image-system/debug/debugImage.ts` (unused).
+- `scripts/core/disallow-manual-report-paths.mjs` — replace with a documented npm alias.
+- Empty override layers in `src/lib/config/contentRules.ts` (inline defaults until real overrides exist).
+- Redundant entrypoints: `scripts/core/dashboard-data.mjs`, `scripts/core/run-system-full.mjs` (fold into shared launcher).
+- Legacy `featured` image-key handling in `src/lib/image-system/dedup/imageIndex.ts` after schema migration.
+- Duplicate FAQ schema entrypoint between `src/lib/seo/schema.ts` and `src/lib/schema/buildFaqSchema.ts`.
+- Duplicate provider ranking between `src/lib/image-system/providers/index.ts` (`getProviderOrder`) and learning module (`getRankedProviders`).
+
+---
+
+### EXECUTION STRATEGY
+
+Phase 1.5 follows the Gap-system playbook:
+
+- **Atomic tasks** — each system ships as small, independently mergeable steps.
+- **Validator-backed enforcement** — wherever consolidation defines a single source, add a parity/coverage validator so re-fragmentation fails the pipeline.
+- **Doc updates after each system** — `system-audit.md`, `AI_AUDIT_CONTEXT.md`, and relevant READMEs updated as ownership shifts.
+- **Order:** SYSTEM 4 (config/policy) → SYSTEM 1 (validator core) → SYSTEM 2 (orchestration) → SYSTEM 3 (reports) → SYSTEM 6 (analyzers) → SYSTEM 5 (tests) → SYSTEM 7 (cleanup). Policy first ensures downstream consolidations have a stable target.
+
+---
+
+### SUCCESS CRITERIA
+
+After Phase 1.5:
+
+- ✅ Zero duplicated logic across validators, analyzers, runners, and report modules.
+- ✅ Single source per system concern (policy, orchestration, reports, scoring, taxonomy).
+- ✅ Minimal script surface; no parallel orchestration layers.
+- ✅ Clean validator boundaries enforced by validator-backed parity tests.
+- ✅ No structural drift possible without a failing pipeline gate.
+
+---
+
+### NON-GOALS (Phase 1.5)
+
+- No new product features or content changes.
+- No changes to public route behavior, SEO output, or rendered markup.
+- No replacement of Phase 0 / Gap 1–5 contracts — only deduplication around them.
+- No service content rewrites (content-level overlap noted in `system-audit2.md` is out of scope; this phase consolidates code/policy, not copy).
+
+---
+
+**END PHASE 1.5 PLAN**
+

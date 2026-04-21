@@ -17,6 +17,10 @@ import { getGraphNodes, initRuntime, toCatchAllParam } from './runtime';
 
 function toCanonicalPath(value: unknown): string {
   if (typeof value === 'string') {
+    if (value.startsWith('http://') || value.startsWith('https://')) {
+      return new URL(value).pathname;
+    }
+
     return value;
   }
 

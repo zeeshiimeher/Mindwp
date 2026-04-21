@@ -247,6 +247,13 @@ describe('integration: validator contracts', () => {
     const failingResult = spawnSync('npx', ['tsx', inlineLinkMisuseValidatorPath], {
       cwd: failingWorkspace,
       encoding: 'utf8',
+      env: {
+        ...process.env,
+        NODE_ENV: 'test',
+        NEXT_PUBLIC_SITE_URL: 'https://mindwp.com',
+        BASE_URL: 'http://127.0.0.1:3009',
+        COMPONENT_CAPTURE_BASE_URL: 'http://127.0.0.1:3001/components',
+      },
     });
 
     expect(failingResult.status).toBe(1);
@@ -274,6 +281,13 @@ describe('integration: validator contracts', () => {
     const passingResult = spawnSync('npx', ['tsx', inlineLinkMisuseValidatorPath], {
       cwd: passingWorkspace,
       encoding: 'utf8',
+      env: {
+        ...process.env,
+        NODE_ENV: 'test',
+        NEXT_PUBLIC_SITE_URL: 'https://mindwp.com',
+        BASE_URL: 'http://127.0.0.1:3009',
+        COMPONENT_CAPTURE_BASE_URL: 'http://127.0.0.1:3001/components',
+      },
     });
 
     expect(passingResult.status ?? 0).toBe(0);

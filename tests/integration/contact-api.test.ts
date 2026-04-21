@@ -3,6 +3,9 @@
 import { afterEach, describe, expect, test, vi } from 'vitest';
 
 const originalEnv = {
+  ENABLE_MAIL_SERVICE: process.env.ENABLE_MAIL_SERVICE,
+  ENABLE_CAPTCHA_SERVICE: process.env.ENABLE_CAPTCHA_SERVICE,
+  NEXT_PUBLIC_TURNSTILE_SITE_KEY: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
   RESEND_API_KEY: process.env.RESEND_API_KEY,
   CONTACT_EMAIL: process.env.CONTACT_EMAIL,
   CONTACT_FROM_EMAIL: process.env.CONTACT_FROM_EMAIL,
@@ -25,12 +28,16 @@ const validBody = {
 };
 
 async function loadContactRoute({
+  mailEnabled = true,
+  captchaEnabled = true,
   apiKey = true,
   contactEmail = true,
   contactFromEmail = true,
   turnstileSecretKey = true,
   turnstileVerified = true,
 }: {
+  mailEnabled?: boolean;
+  captchaEnabled?: boolean;
   apiKey?: boolean;
   contactEmail?: boolean;
   contactFromEmail?: boolean;
@@ -60,6 +67,9 @@ async function loadContactRoute({
     },
   }));
 
+  process.env.ENABLE_MAIL_SERVICE = mailEnabled ? 'true' : 'false';
+  process.env.ENABLE_CAPTCHA_SERVICE = captchaEnabled ? 'true' : 'false';
+  process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY = captchaEnabled ? 'site-key' : '';
   process.env.RESEND_API_KEY = apiKey ? 'test-key' : '';
   process.env.CONTACT_EMAIL = contactEmail ? 'hello@mindwp.com' : '';
   process.env.CONTACT_FROM_EMAIL = contactFromEmail ? 'noreply@mindwp.com' : '';
@@ -74,6 +84,9 @@ describe('integration: contact API', () => {
     vi.doUnmock('resend');
     vi.unstubAllGlobals();
     vi.resetModules();
+    process.env.ENABLE_MAIL_SERVICE = originalEnv.ENABLE_MAIL_SERVICE;
+    process.env.ENABLE_CAPTCHA_SERVICE = originalEnv.ENABLE_CAPTCHA_SERVICE;
+    process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY = originalEnv.NEXT_PUBLIC_TURNSTILE_SITE_KEY;
     process.env.RESEND_API_KEY = originalEnv.RESEND_API_KEY;
     process.env.CONTACT_EMAIL = originalEnv.CONTACT_EMAIL;
     process.env.CONTACT_FROM_EMAIL = originalEnv.CONTACT_FROM_EMAIL;
@@ -83,6 +96,8 @@ describe('integration: contact API', () => {
 
   test('rejects payloads missing required fields', async () => {
     const { POST } = await loadContactRoute({
+      mailEnabled: false,
+      captchaEnabled: false,
       apiKey: false,
       contactEmail: false,
       contactFromEmail: false,
@@ -102,6 +117,8 @@ describe('integration: contact API', () => {
 
   test('rejects payloads without valid CTA context', async () => {
     const { POST } = await loadContactRoute({
+      mailEnabled: false,
+      captchaEnabled: false,
       apiKey: false,
       contactEmail: false,
       contactFromEmail: false,
@@ -166,19 +183,9 @@ describe('integration: contact API', () => {
   });
 
   test('rejects valid payloads when sender configuration is missing', async () => {
-    const { POST, send } = await loadContactRoute({ contactFromEmail: false });
-
-    const response = await POST(
-      new Request('https://mindwp.local/api/contact', {
-        method: 'POST',
-        headers: validHeaders,
-        body: JSON.stringify(validBody),
-      })
+    await expect(loadContactRoute({ contactFromEmail: false })).rejects.toThrow(
+      'ENABLE_MAIL_SERVICE=true requires CONTACT_FROM_EMAIL.'
     );
-
-    expect(response.status).toBe(500);
-    await expect(response.json()).resolves.toEqual({ error: 'Email service is not configured.' });
-    expect(send).not.toHaveBeenCalled();
   });
 
   test('rejects payloads from invalid origins', async () => {

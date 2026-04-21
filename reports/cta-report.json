@@ -2,7 +2,7 @@
   "meta": {
     "name": "cta-report",
     "source": "node --import tsx/esm scripts/analyzers/export-reports.mjs",
-    "generatedAt": "2026-04-21T18:09:07.239Z",
+    "generatedAt": "2026-04-21T19:56:57.421Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -18,25 +18,25 @@
         "name": "validate-cta-label-contract",
         "status": "pass",
         "blocking": true,
-        "duration": 813
+        "duration": 0
       },
       {
         "name": "validate-conversion-contract",
         "status": "pass",
         "blocking": true,
-        "duration": 735
+        "duration": 0
       },
       {
         "name": "validate-cta-violations",
         "status": "pass",
         "blocking": true,
-        "duration": 624
+        "duration": 0
       }
     ]
   },
   "issues": [],
   "name": "cta-report",
   "status": "PASS",
-  "generatedAt": "2026-04-21T18:09:07.239Z",
+  "generatedAt": "2026-04-21T19:56:57.421Z",
   "sourceCommand": "node --import tsx/esm scripts/analyzers/export-reports.mjs"
 }

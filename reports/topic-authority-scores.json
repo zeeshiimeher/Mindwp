@@ -2,7 +2,7 @@
   "meta": {
     "name": "topic-authority-scores",
     "source": "node --import tsx/esm scripts/generators/generate-topic-authority-scores.ts",
-    "generatedAt": "2026-04-21T08:57:43.401Z",
+    "generatedAt": "2026-04-21T19:56:43.104Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,7 +13,7 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-21T08:57:43.401Z",
+    "generatedAt": "2026-04-21T19:56:43.104Z",
     "topicsAnalyzed": 42,
     "averageScore": 81,
     "completeCoverageTopics": 42,
@@ -1348,6 +1348,6 @@
   "issues": [],
   "name": "topic-authority-scores",
   "status": "PASS",
-  "generatedAt": "2026-04-21T08:57:43.401Z",
+  "generatedAt": "2026-04-21T19:56:43.104Z",
   "sourceCommand": "node --import tsx/esm scripts/generators/generate-topic-authority-scores.ts"
 }
