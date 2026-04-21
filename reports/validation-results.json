@@ -2,7 +2,7 @@
   "meta": {
     "name": "validation-results",
     "source": "node scripts/core/validate-all.mjs --report-json",
-    "generatedAt": "2026-04-20T23:56:45.352Z",
+    "generatedAt": "2026-04-21T00:10:15.100Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -31,7 +31,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:17.156Z",
+        "reportGeneratedAt": "2026-04-21T00:03:50.540Z",
         "stale": false
       },
       {
@@ -44,7 +44,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:22.551Z",
+        "reportGeneratedAt": "2026-04-21T00:03:52.362Z",
         "stale": false
       },
       {
@@ -57,7 +57,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "WARN",
-        "reportGeneratedAt": "2026-04-20T23:48:43.625Z",
+        "reportGeneratedAt": "2026-04-21T00:04:13.662Z",
         "stale": false
       },
       {
@@ -70,7 +70,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:24.765Z",
+        "reportGeneratedAt": "2026-04-21T00:03:54.565Z",
         "stale": false
       },
       {
@@ -83,7 +83,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:25.692Z",
+        "reportGeneratedAt": "2026-04-21T00:03:55.509Z",
         "stale": false
       },
       {
@@ -96,7 +96,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:27.917Z",
+        "reportGeneratedAt": "2026-04-21T00:03:57.758Z",
         "stale": false
       },
       {
@@ -109,7 +109,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:28.774Z",
+        "reportGeneratedAt": "2026-04-21T00:03:58.613Z",
         "stale": false
       },
       {
@@ -122,7 +122,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:28.907Z",
+        "reportGeneratedAt": "2026-04-21T00:03:58.750Z",
         "stale": false
       },
       {
@@ -135,7 +135,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:29.645Z",
+        "reportGeneratedAt": "2026-04-21T00:03:59.513Z",
         "stale": false
       },
       {
@@ -148,7 +148,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:30.669Z",
+        "reportGeneratedAt": "2026-04-21T00:04:00.565Z",
         "stale": false
       },
       {
@@ -161,7 +161,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:31.589Z",
+        "reportGeneratedAt": "2026-04-21T00:04:01.482Z",
         "stale": false
       },
       {
@@ -174,7 +174,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:31.717Z",
+        "reportGeneratedAt": "2026-04-21T00:04:01.597Z",
         "stale": false
       },
       {
@@ -187,7 +187,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:31.854Z",
+        "reportGeneratedAt": "2026-04-21T00:04:01.735Z",
         "stale": false
       },
       {
@@ -200,7 +200,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:31.940Z",
+        "reportGeneratedAt": "2026-04-21T00:04:01.826Z",
         "stale": false
       },
       {
@@ -213,7 +213,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:32.771Z",
+        "reportGeneratedAt": "2026-04-21T00:04:02.664Z",
         "stale": false
       },
       {
@@ -226,7 +226,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:33.843Z",
+        "reportGeneratedAt": "2026-04-21T00:04:03.737Z",
         "stale": false
       },
       {
@@ -239,7 +239,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:34.485Z",
+        "reportGeneratedAt": "2026-04-21T00:04:04.387Z",
         "stale": false
       },
       {
@@ -252,7 +252,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:35.139Z",
+        "reportGeneratedAt": "2026-04-21T00:04:05.045Z",
         "stale": false
       },
       {
@@ -265,7 +265,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:36.028Z",
+        "reportGeneratedAt": "2026-04-21T00:04:05.950Z",
         "stale": false
       },
       {
@@ -278,7 +278,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:36.718Z",
+        "reportGeneratedAt": "2026-04-21T00:04:06.640Z",
         "stale": false
       },
       {
@@ -291,7 +291,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "WARN",
-        "reportGeneratedAt": "2026-04-20T23:48:38.299Z",
+        "reportGeneratedAt": "2026-04-21T00:04:08.266Z",
         "stale": false
       },
       {
@@ -304,7 +304,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:36.850Z",
+        "reportGeneratedAt": "2026-04-21T00:04:06.776Z",
         "stale": false
       },
       {
@@ -317,7 +317,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:37.066Z",
+        "reportGeneratedAt": "2026-04-21T00:04:06.992Z",
         "stale": false
       },
       {
@@ -330,7 +330,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:37.347Z",
+        "reportGeneratedAt": "2026-04-21T00:04:07.295Z",
         "stale": false
       },
       {
@@ -343,7 +343,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:37.512Z",
+        "reportGeneratedAt": "2026-04-21T00:04:07.460Z",
         "stale": false
       },
       {
@@ -356,7 +356,7 @@
         "cached": true,
         "executionStatus": "SKIPPED",
         "reportStatus": "PASS",
-        "reportGeneratedAt": "2026-04-20T23:48:37.501Z",
+        "reportGeneratedAt": "2026-04-21T00:04:07.450Z",
         "stale": false
       }
     ],
@@ -366,7 +366,7 @@
       "warnings": [],
       "failures": []
     },
-    "latestRun": "2026-04-20T23:56:45.331Z",
+    "latestRun": "2026-04-21T00:10:15.077Z",
     "cacheHits": 26,
     "staleReports": [],
     "seo": {
@@ -396,6 +396,6 @@
   "issues": [],
   "name": "validation-results",
   "status": "PASS",
-  "generatedAt": "2026-04-20T23:56:45.352Z",
+  "generatedAt": "2026-04-21T00:10:15.100Z",
   "sourceCommand": "node scripts/core/validate-all.mjs --report-json"
 }

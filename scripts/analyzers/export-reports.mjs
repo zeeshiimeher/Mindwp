@@ -238,7 +238,7 @@ function createPipelineStep({ name, status, durationMs, outputs, skipped = false
   };
 }
 
-function canReuseOutput(fileName) {
+function canReuseOutput(fileName, sourceCommand = EXPORT_SOURCE_COMMAND) {
   const filePath = path.join(REPORTS_DIR, fileName);
 
   if (!fs.existsSync(filePath)) {
@@ -251,6 +251,7 @@ function canReuseOutput(fileName) {
   }
 
   if (fileName.endsWith('.json')) {
+    normalizeReportOutput(fileName, sourceCommand);
     validateReportFile(filePath, fileName);
   }
 
@@ -263,7 +264,7 @@ function getStepOutputs(step) {
 
 function canUseCachedStep(step) {
   const outputs = getStepOutputs(step);
-  return outputs.length > 0 && outputs.every(canReuseOutput);
+  return outputs.length > 0 && outputs.every(output => canReuseOutput(output, step.sourceCommand));
 }
 
 function runPipelineStep(step, bucket, kind) {

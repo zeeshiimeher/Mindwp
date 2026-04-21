@@ -3,6 +3,8 @@
  * Gated behind NODE_ENV === 'development' — zero production impact.
  */
 
+/* eslint-disable no-console */
+
 import { getInitMetrics } from '@/domains/init/metrics';
 import { env } from '@/env';
 import { computeAuthorityScores } from '@/lib/authority/authorityScore';

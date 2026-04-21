@@ -59,15 +59,6 @@ const testFileReportSchema = z
   })
   .strict();
 
-const slowTestReportSchema = z
-  .object({
-    name: z.string(),
-    file: z.string(),
-    durationMs: z.number(),
-    status: unifiedStepStatusSchema,
-  })
-  .strict();
-
 const testStepReportSchema = unifiedStepReportSchema
   .extend({
     total: z.number(),
@@ -75,7 +66,6 @@ const testStepReportSchema = unifiedStepReportSchema
     failed: z.number(),
     skipped: z.number(),
     files: z.array(testFileReportSchema),
-    slowTests: z.array(slowTestReportSchema),
     failedFiles: z.array(z.string()),
   })
   .strict();

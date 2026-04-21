@@ -1,8 +1,8 @@
 {
   "meta": {
     "name": "authority-map",
-    "source": "npm run system:full",
-    "generatedAt": "2026-04-20T23:52:06.340Z",
+    "source": "node --import tsx/esm scripts/generators/generate-authority-map.ts",
+    "generatedAt": "2026-04-21T00:09:58.139Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,7 +13,7 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-20T23:52:06.340Z",
+    "generatedAt": "2026-04-21T00:09:58.139Z",
     "nodes": [
       {
         "id": "service:smart-website-systems",
@@ -3067,6 +3067,6 @@
   "issues": [],
   "name": "authority-map",
   "status": "PASS",
-  "generatedAt": "2026-04-20T23:52:06.340Z",
-  "sourceCommand": "npm run system:full"
+  "generatedAt": "2026-04-21T00:09:58.139Z",
+  "sourceCommand": "node --import tsx/esm scripts/generators/generate-authority-map.ts"
 }

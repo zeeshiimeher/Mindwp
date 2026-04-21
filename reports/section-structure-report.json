@@ -1,8 +1,8 @@
 {
   "meta": {
     "name": "section-structure-report",
-    "source": "npx tsx scripts/validators/validate-section-structure.mjs --report-json",
-    "generatedAt": "2026-04-20T23:48:31.589Z",
+    "source": "npm run system:full",
+    "generatedAt": "2026-04-21T00:04:01.482Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,7 +13,7 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-20T23:48:31.589Z",
+    "generatedAt": "2026-04-21T00:04:01.482Z",
     "sources": {
       "services": 19,
       "features": 7,
@@ -26,6 +26,6 @@
   "issues": [],
   "name": "section-structure-report",
   "status": "PASS",
-  "generatedAt": "2026-04-20T23:48:31.589Z",
-  "sourceCommand": "npx tsx scripts/validators/validate-section-structure.mjs --report-json"
+  "generatedAt": "2026-04-21T00:04:01.482Z",
+  "sourceCommand": "npm run system:full"
 }

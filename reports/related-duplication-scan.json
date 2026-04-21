@@ -1,8 +1,8 @@
 {
   "meta": {
     "name": "related-duplication-scan",
-    "source": "npx tsx scripts/validators/validate-related-duplication.ts",
-    "generatedAt": "2026-04-20T23:48:35.139Z",
+    "source": "npm run system:full",
+    "generatedAt": "2026-04-21T00:04:05.045Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -16,6 +16,6 @@
   "issues": [],
   "name": "related-duplication-scan",
   "status": "PASS",
-  "generatedAt": "2026-04-20T23:48:35.139Z",
-  "sourceCommand": "npx tsx scripts/validators/validate-related-duplication.ts"
+  "generatedAt": "2026-04-21T00:04:05.045Z",
+  "sourceCommand": "npm run system:full"
 }

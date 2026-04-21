@@ -2,7 +2,7 @@
   "meta": {
     "name": "client-report",
     "source": "node --import tsx/esm scripts/analyzers/export-reports.mjs",
-    "generatedAt": "2026-04-20T23:56:57.372Z",
+    "generatedAt": "2026-04-21T00:10:27.878Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -190,6 +190,6 @@
   "issues": [],
   "name": "client-report",
   "status": "PASS",
-  "generatedAt": "2026-04-20T23:56:57.372Z",
+  "generatedAt": "2026-04-21T00:10:27.878Z",
   "sourceCommand": "node --import tsx/esm scripts/analyzers/export-reports.mjs"
 }

@@ -71,7 +71,6 @@ const binaries = {
 };
 
 const reportStaleThresholdMs = 15 * 60 * 1000;
-const slowTestThresholdMs = 1000;
 const requiredReportFiles = new Set([
   'authority-map.json',
   'client-report.json',
@@ -117,6 +116,7 @@ const requiredReportFiles = new Set([
 ]);
 
 const reportSourceByFile = new Map([
+  ['authority-map.json', 'node --import tsx/esm scripts/generators/generate-authority-map.ts'],
   ['validation-report.json', 'node scripts/core/validate-all.mjs --report-json'],
   ['validation-results.json', 'node scripts/core/validate-all.mjs --report-json'],
   ['content-quality-report.json', 'npx tsx scripts/validators/validate-content-quality.mjs'],
@@ -275,12 +275,9 @@ function uniqueStrings(values) {
   return [...new Set(values.filter(Boolean))];
 }
 
-function pluralize(count, noun) {
-  return `${count} ${noun}${count === 1 ? '' : 's'}`;
-}
-
 function printStructuredSystemSummary(report) {
-  const warningCount = report.validate.advisoryFailed;
+  const warningCount =
+    report.validate.advisoryFailed + report.reports.stale.length + report.reports.missing.length;
   const testStatus = report.tests.failed === 0 ? 'PASS' : 'FAIL';
 
   process.stdout.write('[system:full]\n');
@@ -314,7 +311,9 @@ function printStructuredSystemDetails(report) {
     `- Validate: ${report.validate.status} (${report.validate.passed}/${report.validate.total})\n`
   );
   process.stdout.write(`- Typecheck: ${report.typecheck.status}\n`);
-  process.stdout.write(`- Tests: ${report.tests.status} (${report.tests.failed}/${report.tests.total} failed)\n`);
+  process.stdout.write(
+    `- Tests: ${report.tests.status} (${report.tests.failed}/${report.tests.total} failed)\n`
+  );
   process.stdout.write(`- Reports: ${report.reports.status} (${report.reports.fileCount} files)\n`);
   process.stdout.write(`- E2E: ${report.e2e.status}\n`);
 
@@ -339,7 +338,6 @@ function printStructuredSystemDetails(report) {
   process.stdout.write(`- Duration: ${report.durationMs}ms\n`);
   process.stdout.write(`- Blocking: ${report.validate.blockingFailed}\n`);
   process.stdout.write(`- Advisory: ${report.validate.advisoryFailed}\n`);
-  process.stdout.write(`- Slow tests: ${pluralize(report.tests.slowTests.length, 'entry')}\n`);
 }
 
 function assertLockedExecution() {
@@ -1133,19 +1131,19 @@ function summarizeVitestReport(report, fallbackDuration) {
   }, 0);
   const files = (report?.testResults ?? [])
     .map(item => {
-    const assertions = Array.isArray(item?.assertionResults) ? item.assertionResults : [];
-    const passedCount = assertions.filter(assertion => assertion?.status === 'passed').length;
-    const failedCount = assertions.filter(assertion => assertion?.status === 'failed').length;
-    const skippedCount = assertions.filter(assertion => assertion?.status === 'pending').length;
-    const file = extractRelativePath(item?.name) ?? 'unknown';
-    const durationMs =
-      typeof item?.startTime === 'number' && typeof item?.endTime === 'number'
-        ? Math.max(0, item.endTime - item.startTime)
-        : Math.round(
-          assertions.reduce((sum, assertion) => {
-            return sum + (typeof assertion?.duration === 'number' ? assertion.duration : 0);
-          }, 0)
-        );
+      const assertions = Array.isArray(item?.assertionResults) ? item.assertionResults : [];
+      const passedCount = assertions.filter(assertion => assertion?.status === 'passed').length;
+      const failedCount = assertions.filter(assertion => assertion?.status === 'failed').length;
+      const skippedCount = assertions.filter(assertion => assertion?.status === 'pending').length;
+      const file = extractRelativePath(item?.name) ?? 'unknown';
+      const durationMs =
+        typeof item?.startTime === 'number' && typeof item?.endTime === 'number'
+          ? Math.max(0, item.endTime - item.startTime)
+          : Math.round(
+            assertions.reduce((sum, assertion) => {
+              return sum + (typeof assertion?.duration === 'number' ? assertion.duration : 0);
+            }, 0)
+          );
 
       return {
         file,
@@ -1167,42 +1165,12 @@ function summarizeVitestReport(report, fallbackDuration) {
   const failedFiles = uniqueStrings(
     files.filter(file => file.status === 'FAIL').map(file => file.file)
   );
-  const slowTests = (report?.testResults ?? [])
-    .flatMap(item => {
-      const file = extractRelativePath(item?.name) ?? 'unknown';
-      const assertions = Array.isArray(item?.assertionResults) ? item.assertionResults : [];
-
-      return assertions
-        .filter(
-          assertion =>
-            typeof assertion?.duration === 'number' && assertion.duration >= slowTestThresholdMs
-        )
-        .map(assertion => ({
-          name: assertion?.fullName ?? assertion?.title ?? 'Unnamed test',
-          file,
-          durationMs: Math.round(assertion.duration),
-          status: normalizeStatus(assertion?.status),
-        }));
-    })
-    .sort((left, right) => {
-      if (right.durationMs !== left.durationMs) {
-        return right.durationMs - left.durationMs;
-      }
-
-      if (left.file !== right.file) {
-        return left.file.localeCompare(right.file);
-      }
-
-      return left.name.localeCompare(right.name);
-    });
-
   return {
     total,
     passed,
     failed,
     skipped,
     files,
-    slowTests,
     failedFiles,
     durationMs: typeof duration === 'number' && duration > 0 ? duration : fallbackDuration,
   };
@@ -1298,7 +1266,6 @@ function buildTestsSection(result, vitestReport) {
     failed: summary.failed,
     skipped: summary.skipped,
     files: summary.files,
-    slowTests: summary.slowTests,
     failedFiles: summary.failedFiles,
     errors,
   };
@@ -1427,7 +1394,8 @@ function normalizeReportFile(absolutePath, timestamp, fallbackSource) {
   const relativePath = normalizePath(path.relative(root, absolutePath));
   const statsBefore = fs.statSync(absolutePath);
   let generatedAt = statsBefore.mtime.toISOString();
-  let fileSourceCommand = inferSourceCommand(fileName, fallbackSource);
+  const inferredSourceCommand = inferSourceCommand(fileName, fallbackSource);
+  let fileSourceCommand = inferredSourceCommand;
 
   if (fileName.endsWith('.json')) {
     const report = readJsonFile(absolutePath);
@@ -1436,9 +1404,12 @@ function normalizeReportFile(absolutePath, timestamp, fallbackSource) {
       const nextReport = normalizeRawReport({
         name: fileName.replace(/\.json$/i, ''),
         payload: report,
-        sourceCommand: inferSourceCommand(fileName, fallbackSource),
+        sourceCommand: inferredSourceCommand,
         generatedAt: typeof report?.generatedAt === 'string' ? report.generatedAt : timestamp,
       });
+
+      nextReport.meta.source = inferredSourceCommand;
+      nextReport.sourceCommand = inferredSourceCommand;
 
       generatedAt = nextReport.generatedAt;
       fileSourceCommand = nextReport.sourceCommand;
@@ -1447,7 +1418,6 @@ function normalizeReportFile(absolutePath, timestamp, fallbackSource) {
     }
   }
 
-  const statsAfter = fs.statSync(absolutePath);
   return {
     name: fileName,
     path: relativePath,
@@ -1458,15 +1428,22 @@ function normalizeReportFile(absolutePath, timestamp, fallbackSource) {
 
 function buildReportsSection(result, runStartedAt, timestamp) {
   const allFiles = listReportFiles(reportsDir)
-    .map(filePath => normalizeReportFile(filePath, timestamp, sourceCommand))
-    .sort((left, right) => left.name.localeCompare(right.name));
-  const trackedFiles = allFiles.filter(file => requiredReportFiles.has(file.name));
+    .map(filePath => {
+      const file = normalizeReportFile(filePath, timestamp, sourceCommand);
 
-  const availableFileNames = new Set(trackedFiles.map(file => file.name));
+      return {
+        file,
+        ageMs: Math.max(0, parseTimestamp(timestamp) - fs.statSync(filePath).mtimeMs),
+      };
+    })
+    .sort((left, right) => left.file.name.localeCompare(right.file.name));
+  const trackedFiles = allFiles.filter(entry => requiredReportFiles.has(entry.file.name));
+
+  const availableFileNames = new Set(trackedFiles.map(entry => entry.file.name));
   const missing = [...requiredReportFiles].filter(fileName => !availableFileNames.has(fileName));
   const stale = trackedFiles
-    .filter(file => parseTimestamp(timestamp) - parseTimestamp(file.generatedAt, runStartedAt) > reportStaleThresholdMs)
-    .map(file => file.name)
+    .filter(entry => entry.ageMs > reportStaleThresholdMs)
+    .map(entry => entry.file.name)
     .sort((left, right) => left.localeCompare(right));
 
   return {
@@ -1478,7 +1455,7 @@ function buildReportsSection(result, runStartedAt, timestamp) {
     durationMs: result.durationMs,
     generatedAt: timestamp,
     fileCount: trackedFiles.length,
-    files: trackedFiles,
+    files: trackedFiles.map(entry => entry.file),
     missing,
     stale,
     errors:

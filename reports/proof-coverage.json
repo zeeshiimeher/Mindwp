@@ -1,8 +1,8 @@
 {
   "meta": {
     "name": "proof-coverage",
-    "source": "npx tsx scripts/validators/generate-proof-coverage.ts",
-    "generatedAt": "2026-04-20T23:48:38.299Z",
+    "source": "npm run system:full",
+    "generatedAt": "2026-04-21T00:04:08.266Z",
     "status": "WARN",
     "version": "1.0"
   },
@@ -355,6 +355,6 @@
   ],
   "name": "proof-coverage",
   "status": "WARN",
-  "generatedAt": "2026-04-20T23:48:38.299Z",
-  "sourceCommand": "npx tsx scripts/validators/generate-proof-coverage.ts"
+  "generatedAt": "2026-04-21T00:04:08.266Z",
+  "sourceCommand": "npm run system:full"
 }
