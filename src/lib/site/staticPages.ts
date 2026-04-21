@@ -1,3 +1,5 @@
+import { getIsSystemEnabled } from '@/system/isSystemEnabled';
+
 export type StaticPage = {
   name: string;
   url: string;
@@ -22,7 +24,20 @@ export type StaticRouteDefinition = {
  * - Route inventory + sitemap generation
  * - Human sitemap consumers
  */
-export const STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
+const INTERNAL_STATIC_ROUTE_PATHS = new Set([
+  '/components',
+  '/dev/system-dashboard',
+  '/system-dashboard',
+  '/dev/system-dashboard/reports/system-report',
+  '/dev/system-dashboard/reports/pipeline-report',
+  '/dev/system-dashboard/reports/validation-report',
+  '/dashboard',
+  '/dev/authority-dashboard',
+  '/dev/cta-label-contract',
+  '/image-dashboard',
+]);
+
+const ALL_STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
   {
     key: 'static:home',
     path: '/',
@@ -228,6 +243,10 @@ export const STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
     includeInRouteInventory: false,
   },
 ];
+
+export const STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = ALL_STATIC_ROUTE_DEFINITIONS.filter(
+  route => getIsSystemEnabled() || !INTERNAL_STATIC_ROUTE_PATHS.has(route.path)
+);
 
 export const STATIC_PAGES: StaticPage[] = STATIC_ROUTE_DEFINITIONS.map(route => ({
   name: route.name,

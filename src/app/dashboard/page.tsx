@@ -1,8 +1,10 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
+import { notFound } from 'next/navigation';
 
 import { readClientDashboardReport } from '@/lib/dashboard/client-dashboard';
 import { resolveSEO } from '@/lib/seo/seoResolver';
+import { getIsSystemEnabled } from '@/system/isSystemEnabled';
 
 export const dynamic = 'force-dynamic';
 
@@ -123,8 +125,8 @@ function DashboardLinkButton({
     <Link
       href={href}
       className={`rounded-2xl border px-4 py-3 text-sm font-bold transition ${active
-          ? 'border-slate-950 bg-slate-950 text-white shadow-md'
-          : 'border-slate-300 bg-white/90 text-slate-800 hover:border-slate-400'
+        ? 'border-slate-950 bg-slate-950 text-white shadow-md'
+        : 'border-slate-300 bg-white/90 text-slate-800 hover:border-slate-400'
         }`}
     >
       {label}
@@ -137,6 +139,10 @@ export default async function ClientDashboardPage({
 }: {
   searchParams?: Promise<SearchParams>;
 }) {
+  if (!getIsSystemEnabled()) {
+    notFound();
+  }
+
   const params = (await searchParams) ?? {};
   const report = readClientDashboardReport();
 

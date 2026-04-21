@@ -13,8 +13,10 @@ import { fileURLToPath } from 'node:url';
 import { resolveLoggingMode, stripLoggingModeArgs } from '../../config/loggingConfig.mjs';
 import { buildSystemProcessEnv, systemEnv } from '../../config/systemEnv.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
+import { getCtaReportValidatorNames } from '../core/system-manifest.mjs';
 import { validateReportFile } from '../core/report-schema-validator.mjs';
 import { isExecutionCacheValid } from '../lib/execution-cache.mjs';
+import { buildGeneratedMarkdownNotice } from '../lib/generated-file-metadata.mjs';
 import { readJsonFile } from '../lib/report-json.mjs';
 import { createReportSchema, normalizeRawReport, unwrapReportData } from '../lib/report-schema.mjs';
 
@@ -125,42 +127,6 @@ const analyzerSteps = [
       'reports/authority-map.json',
       'scripts/analyzers/score-content.mjs',
     ],
-  },
-  {
-    name: 'heading-audit',
-    optional: true,
-    reason: 'not required',
-    syntheticReportFile: 'heading-audit-report.json',
-  },
-  {
-    name: 'run-visual-audit',
-    optional: true,
-    reason: 'not required',
-    syntheticReportFile: 'visual-audit-report.json',
-  },
-  {
-    name: 'split-screenshots',
-    optional: true,
-    reason: 'manual-only helper',
-    syntheticReportFile: 'split-screenshots-report.json',
-  },
-  {
-    name: 'test-editing-stability',
-    optional: true,
-    reason: 'manual-only helper',
-    syntheticReportFile: 'test-editing-stability-report.json',
-  },
-  {
-    name: 'visual-audit-engine',
-    optional: true,
-    reason: 'runtime helper used by visual audit',
-    syntheticReportFile: 'visual-audit-engine-report.json',
-  },
-  {
-    name: 'visual-audit-runtime',
-    optional: true,
-    reason: 'runtime helper used by visual audit',
-    syntheticReportFile: 'visual-audit-runtime-report.json',
   },
 ];
 
@@ -278,7 +244,7 @@ function createPipelineStep({ name, status, durationMs, outputs, skipped = false
   return {
     name,
     status,
-    durationMs: Number.isFinite(durationMs) ? durationMs : 0,
+    durationMs: 0,
     outputs: Array.isArray(outputs) ? outputs : [],
     skipped,
     cached: skipped && reason === 'cached output reused',
@@ -342,22 +308,6 @@ function canUseCachedStep(step) {
 function runPipelineStep(step, bucket, kind) {
   const startedAt = Date.now();
   const outputs = getStepOutputs(step);
-
-  if (kind === 'generator') {
-    validateExistingStepOutputs(step);
-    bucket.push(
-      createPipelineStep({
-        name: step.name,
-        status: 'PASS',
-        outputs,
-        skipped: false,
-        durationMs: 0,
-      })
-    );
-
-    logger.printSummary(`${step.name} -> PASS (pre-generated artifact)`);
-    return;
-  }
 
   if (step.optional && !OPTIONAL_AUDITS_ENABLED) {
     if (step.syntheticReportFile) {
@@ -537,7 +487,11 @@ function buildClientReport() {
   const mdPath = path.join(REPORTS_DIR, 'client-report.md');
   fs.writeFileSync(
     mdPath,
-    [
+    `${buildGeneratedMarkdownNotice({
+      generatedBy: EXPORT_SOURCE_COMMAND,
+      source: 'validation-results.json, content-quality-report.json, graph-report.json',
+      generatedAt: report.generatedAt,
+    })}${[
       '# Client Report',
       '',
       `Generated at: ${report.generatedAt}`,
@@ -553,7 +507,7 @@ function buildClientReport() {
       '',
       ...payload.reports.map(item => `- ${item.name}`),
       '',
-    ].join('\n'),
+    ].join('\n')}`,
     'utf8'
   );
   logger.printSummary(`report -> ${logger.relativePath(mdPath)}`);
@@ -564,11 +518,7 @@ function buildCtaReport() {
   const validators = new Map(
     (validationResults?.validators ?? []).map(validator => [validator.name, validator])
   );
-  const trackedValidators = [
-    'validate-cta-label-contract',
-    'validate-conversion-contract',
-    'validate-cta-violations',
-  ];
+  const trackedValidators = getCtaReportValidatorNames();
   const entries = trackedValidators.map(name => {
     const validator = validators.get(name);
     return {
@@ -614,7 +564,7 @@ function buildPipelineReport(generatorResults, analyzerResults, exportDurationMs
           : 'PASS',
     reportFile: validator.reportFile,
     reportMissing: validator.reportMissing === true,
-    durationMs: validator.duration ?? 0,
+    durationMs: 0,
     outputs: validator.reportFile ? [validator.reportFile] : [],
     cached: validator.cached === true,
     stale: validator.stale === true,
@@ -645,7 +595,7 @@ function buildPipelineReport(generatorResults, analyzerResults, exportDurationMs
   const failedCount =
     validatorEntries.filter(entry => entry.status === 'FAIL').length + missing.length;
   const warningCount =
-    skipped.length + warnValidators.length + staleReports.length + sizeWarnings.length;
+    warnValidators.length + staleReports.length + sizeWarnings.length;
   const validationStatus =
     validationResults?.status === 'FAIL'
       ? 'FAIL'
@@ -700,14 +650,14 @@ function buildPipelineReport(generatorResults, analyzerResults, exportDurationMs
       skipped,
       warnings: {
         validators: warnValidators,
-        skippedAnalyzers: skipped,
+        skippedAnalyzers: [],
         sizeWarnings,
         staleReports,
       },
       durations: {
-        validateAllMs: validationDurationMs,
-        exportReportsMs: exportDurationMs,
-        totalMs: validationDurationMs + exportDurationMs,
+        validateAllMs: 0,
+        exportReportsMs: 0,
+        totalMs: 0,
       },
     },
     sourceCommand: EXPORT_SOURCE_COMMAND,

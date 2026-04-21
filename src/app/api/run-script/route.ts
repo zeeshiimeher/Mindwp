@@ -8,6 +8,7 @@ import {
   getScriptRegistryEntry,
   recordScriptHistory,
 } from '@/lib/dev/executionVisibility';
+import { getIsSystemEnabled } from '@/system/isSystemEnabled';
 
 const execAsync = promisify(exec);
 
@@ -44,7 +45,7 @@ function jsonError(
 }
 
 export async function POST(request: Request) {
-  if (env.NODE_ENV !== 'development') {
+  if (!getIsSystemEnabled() || env.NODE_ENV !== 'development') {
     return jsonError('', 'Execution API is available in development only.', 404);
   }
 

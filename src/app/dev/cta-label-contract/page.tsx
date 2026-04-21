@@ -1,6 +1,9 @@
+import { notFound } from 'next/navigation';
+
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
 import { SmartCTA } from '@/components/system/SmartCTA';
 import { resolveCtaLabel } from '@/config/ctaLabels';
+import { getIsSystemEnabled } from '@/system/isSystemEnabled';
 
 const SMART_CTA_CASES = [
   {
@@ -24,6 +27,10 @@ const SMART_CTA_CASES = [
 ] as const;
 
 export default function CtaLabelContractPage() {
+  if (!getIsSystemEnabled()) {
+    notFound();
+  }
+
   return (
     <main className='l-container l-section' data-testid='cta-label-contract-page'>
       <h1>CTA Label Contract</h1>

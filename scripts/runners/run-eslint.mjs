@@ -35,7 +35,7 @@ try {
     path.join(repoRoot, 'scripts', 'runners'),
     path.join(repoRoot, 'scripts', 'lib'),
     path.join(repoRoot, 'scripts', 'analyzers', 'export-reports.mjs'),
-    path.join(repoRoot, 'scripts', 'validators', 'validate-system-knowledge.ts'),
+    path.join(repoRoot, 'scripts', 'validators', 'validate-system-manifest-integrity.ts'),
   ].filter(target => fs.existsSync(target));
 
   const args = [...lintTargets, '--ext', '.ts,.tsx,.mjs'];

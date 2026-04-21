@@ -84,7 +84,7 @@ export function createReportSchema({
     summary: coerceSummary(summary),
     issues,
     data,
-    generatedAt: typeof generatedAt === 'string' ? generatedAt : new Date().toISOString(),
+    generatedAt,
     sourceCommand,
   });
 }

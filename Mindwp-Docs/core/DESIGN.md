@@ -116,7 +116,7 @@ The `.cta-heading` hardcoded values (`1.875rem`, `2.25rem`, `1.5rem`) sit betwee
 
 ### Orphan Utilities
 
-`.card-bordered` and `.card-elevated` exist in CSS but have **0 TSX consumers**. Cleaned up in Phase 4 (standalone, no `--tw-*` deps). Keep as available utilities for future use.
+`.card-bordered` and `.card-elevated` exist in CSS but have **0 TSX consumers**. They were cleaned up during an earlier standalone utility pass with no `--tw-*` dependencies. Keep as available utilities for future use.
 
 ---
 
@@ -285,7 +285,7 @@ These are **by design** and should NOT be tokenized or standardized:
 - If a gradient token is removed, its corresponding BEM class MUST also be removed.
 - Do NOT add gradient tokens without a consuming BEM class (dead tokens drift).
 - The `validate-design-system.cjs` validator checks gradient class existence against token definitions.
-- **Previously removed:** `--gradient-cta-5` and `--gradient-cta-6` (undefined tokens with fallbacks — removed in Phase 3.1).
+- **Previously removed:** `--gradient-cta-5` and `--gradient-cta-6` (undefined tokens with fallbacks — removed in an earlier cleanup pass).
 
 ---
 
@@ -322,7 +322,7 @@ Two hero patterns are used across the system:
 
 ## 13. ICON & BADGE SYSTEM RULES (STRICT — ENFORCED)
 
-> Phase 7D enforcement pass completed. All rules below are MANDATORY.
+> Final enforcement pass completed. All rules below are MANDATORY.
 
 ### 13.1 Icon Container Contract
 
@@ -466,9 +466,9 @@ Button sizing in UI primitives is governed by `data-slot` CSS selectors:
 
 ---
 
-## 14. ICON & BADGE HARD ENFORCEMENT RULES (PHASE 8)
+## 14. ICON & BADGE HARD ENFORCEMENT RULES
 
-> Eliminates remaining escape hatches and ambiguity from Phase 7D.
+> Eliminates remaining escape hatches and ambiguity from the earlier enforcement pass.
 
 ### 14.1 icon-text-\* Usage Restriction
 
@@ -572,7 +572,7 @@ The icon + badge system has zero uncontrolled entry points:
 
 **System status: HARDENED.**
 
-## 15. FINAL ICON SIZE TOKENIZATION (PHASE 7 CLOSE)
+## 15. FINAL ICON SIZE TOKENIZATION
 
 All remaining hardcoded rem icon sizes in components.css have been tokenized:
 

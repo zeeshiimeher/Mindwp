@@ -1,6 +1,8 @@
 import fs from 'node:fs';
 import { z } from 'zod';
 
+import { attachGeneratedJsonMetadata, createGeneratedJsonMetadata } from '../lib/generated-file-metadata.mjs';
+
 export const REPORT_SCHEMA_VERSION = '1.0';
 export const MAX_REPORT_SIZE = 2_000_000;
 export const MAX_REPORT_ARRAY_ITEMS = 50;
@@ -23,6 +25,11 @@ export const REPORT_SIZE_LIMITS = {
 };
 
 const reportStatusSchema = z.enum(['PASS', 'FAIL', 'WARN']);
+const generatedFileSchema = z.object({
+  source: z.string().min(1),
+  type: z.string().min(1),
+  hash: z.string().min(1),
+});
 
 export const ReportSchema = z
   .object({
@@ -32,6 +39,7 @@ export const ReportSchema = z
       generatedAt: z.string().min(1),
       status: reportStatusSchema,
       version: z.string().min(1).default(REPORT_SCHEMA_VERSION),
+      _generated: generatedFileSchema,
     }),
     summary: z.record(z.string(), z.any()),
     data: z.any(),
@@ -40,6 +48,7 @@ export const ReportSchema = z
     status: reportStatusSchema,
     generatedAt: z.string().min(1),
     sourceCommand: z.string().min(1),
+    _generated: generatedFileSchema.optional(),
   })
   .strict();
 
@@ -109,16 +118,28 @@ export function sanitizeReportValue(value, depth = 0) {
 
 function coerceMeta(candidate) {
   const meta = isRecord(candidate?.meta) ? candidate.meta : {};
+  const source = typeof meta.source === 'string' ? meta.source : candidate?.sourceCommand;
+  const generatedMetadata = isRecord(meta._generated)
+    ? meta._generated
+    : isRecord(candidate?._generated)
+      ? candidate._generated
+      : createGeneratedJsonMetadata({
+        payload: candidate,
+        source,
+        type: 'report',
+      });
+  const generatedAt = generatedMetadata.hash;
 
   return {
     name: typeof meta.name === 'string' ? meta.name : candidate?.name,
-    source: typeof meta.source === 'string' ? meta.source : candidate?.sourceCommand,
-    generatedAt: typeof meta.generatedAt === 'string' ? meta.generatedAt : candidate?.generatedAt,
+    source,
+    generatedAt,
     status: typeof meta.status === 'string' ? meta.status : candidate?.status,
     version:
       typeof meta.version === 'string' && meta.version.trim().length > 0
         ? meta.version
         : REPORT_SCHEMA_VERSION,
+    _generated: generatedMetadata,
   };
 }
 
@@ -135,6 +156,7 @@ function toCanonicalReport(candidate) {
     status: meta.status,
     generatedAt: meta.generatedAt,
     sourceCommand: meta.source,
+    _generated: isRecord(candidate?._generated) ? candidate._generated : meta._generated,
   };
 }
 
@@ -198,23 +220,28 @@ export function buildValidatedReport({
   data,
   issues,
 }) {
-  return validateReportEnvelope(
-    {
-      meta: {
-        name,
-        source: sourceCommand,
-        generatedAt: typeof generatedAt === 'string' ? generatedAt : new Date().toISOString(),
-        status,
-        version: REPORT_SCHEMA_VERSION,
-      },
-      summary,
-      data: data ?? null,
-      issues: Array.isArray(issues) ? issues : [],
+  const baseReport = {
+    meta: {
       name,
+      source: sourceCommand,
+      generatedAt: typeof generatedAt === 'string' ? generatedAt : 'pending-hash',
       status,
-      generatedAt: typeof generatedAt === 'string' ? generatedAt : new Date().toISOString(),
-      sourceCommand,
+      version: REPORT_SCHEMA_VERSION,
     },
+    summary,
+    data: data ?? null,
+    issues: Array.isArray(issues) ? issues : [],
+    name,
+    status,
+    generatedAt: typeof generatedAt === 'string' ? generatedAt : 'pending-hash',
+    sourceCommand,
+  };
+
+  return validateReportEnvelope(
+    attachGeneratedJsonMetadata(baseReport, {
+      source: sourceCommand,
+      type: 'report',
+    }),
     name
   );
 }

@@ -1,4 +1,5 @@
 import { readEnv as parseEnv, validateEnv as validateRuntimeEnv } from '../config/env.schema.ts';
+import { ensureSetupEnvNodeOptions } from '../scripts/setup-env.mjs';
 
 if (typeof window === 'undefined') {
   validateRuntimeEnv();
@@ -29,8 +30,13 @@ export const env = new Proxy({} as ReturnType<typeof readEnv>, {
 });
 
 export function buildProcessEnv(overrides: Partial<NodeJS.ProcessEnv> = {}): NodeJS.ProcessEnv {
-  return {
+  const nextEnv = {
     ...process.env,
     ...overrides,
+  };
+
+  return {
+    ...nextEnv,
+    NODE_OPTIONS: ensureSetupEnvNodeOptions(nextEnv.NODE_OPTIONS),
   };
 }

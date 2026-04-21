@@ -1,18 +1,7 @@
+import { getContentPolicy } from '../../../config/contentPolicy';
 import { getResolverIndexes } from '../content-graph/resolverIndexes';
 import { scoreRelationship } from '../content-graph/scoring';
-import type { ContentGraphNode, ContentNodeType } from '../content-graph/types';
-
-// ─── Context Boost ───────────────────────────────────────────────────────────
-
-const CONTEXT_BOOST: Record<ContentNodeType, number> = {
-  service: 10,
-  feature: 8,
-  'industry-detail': 6,
-  'industry-category': 4,
-  'case-study': 5,
-  blog: 2,
-  resource: 3,
-};
+import type { ContentGraphNode } from '../content-graph/types';
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
@@ -87,7 +76,7 @@ export function computeAuthorityScores(): Record<string, number> {
     }
 
     // 4. Context boost based on node type
-    const contextBoost = CONTEXT_BOOST[node.type] ?? 0;
+    const contextBoost = getContentPolicy(node.type).authorityWeight;
 
     // Final formula
     scores[node.slug] = baseScore + incomingAuthority * 1.5 + outgoingStrength + contextBoost;

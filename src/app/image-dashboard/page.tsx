@@ -1,6 +1,9 @@
-import { resolveSEO } from '@/lib/seo/seoResolver';
+import { notFound } from 'next/navigation';
 
-export const dynamic = 'force-static';
+import { resolveSEO } from '@/lib/seo/seoResolver';
+import { getIsSystemEnabled } from '@/system/isSystemEnabled';
+
+export const dynamic = 'force-dynamic';
 export const revalidate = false;
 
 export async function generateMetadata() {
@@ -8,6 +11,10 @@ export async function generateMetadata() {
 }
 
 export default async function Page() {
+  if (!getIsSystemEnabled()) {
+    notFound();
+  }
+
   const { default: Dashboard } = await import('./dashboard');
   return <Dashboard />;
 }

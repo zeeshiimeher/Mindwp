@@ -13,6 +13,7 @@ import {
 } from '../../scripts/lib/contract-validator-helpers.mjs';
 
 const root = process.cwd();
+const tsxCliPath = path.join(root, 'node_modules/tsx/dist/cli.mjs');
 const designValidatorPath = path.join(root, 'scripts/validators/validate-design-system.cjs');
 const conversionValidatorPath = path.join(
   root,
@@ -196,7 +197,7 @@ describe('integration: validator contracts', () => {
       ['export const failingLinks = {', "  href: '/definitely-missing-route',", '};'].join('\n')
     );
 
-    const failingResult = spawnSync('npx', ['tsx', internalLinksValidatorPath], {
+    const failingResult = spawnSync(process.execPath, [tsxCliPath, internalLinksValidatorPath], {
       cwd: root,
       encoding: 'utf8',
       env: {
@@ -216,7 +217,7 @@ describe('integration: validator contracts', () => {
       ['export const passingLinks = {', "  href: '/contact',", '};'].join('\n')
     );
 
-    const passingResult = spawnSync('npx', ['tsx', internalLinksValidatorPath], {
+    const passingResult = spawnSync(process.execPath, [tsxCliPath, internalLinksValidatorPath], {
       cwd: root,
       encoding: 'utf8',
       env: {
@@ -244,7 +245,7 @@ describe('integration: validator contracts', () => {
       ].join('\n')
     );
 
-    const failingResult = spawnSync('npx', ['tsx', inlineLinkMisuseValidatorPath], {
+    const failingResult = spawnSync(process.execPath, [tsxCliPath, inlineLinkMisuseValidatorPath], {
       cwd: failingWorkspace,
       encoding: 'utf8',
       env: {
@@ -278,7 +279,7 @@ describe('integration: validator contracts', () => {
       ].join('\n')
     );
 
-    const passingResult = spawnSync('npx', ['tsx', inlineLinkMisuseValidatorPath], {
+    const passingResult = spawnSync(process.execPath, [tsxCliPath, inlineLinkMisuseValidatorPath], {
       cwd: passingWorkspace,
       encoding: 'utf8',
       env: {

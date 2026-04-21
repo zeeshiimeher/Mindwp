@@ -1,8 +1,7 @@
 {
   "meta": {
     "name": "proof-coverage",
-    "source": "npm run system:full",
-    "generatedAt": "2026-04-21T19:44:31.317Z",
+    "source": "npx tsx scripts/validators/generate-proof-coverage.ts",
     "status": "WARN",
     "version": "1.0"
   },
@@ -355,6 +354,10 @@
   ],
   "name": "proof-coverage",
   "status": "WARN",
-  "generatedAt": "2026-04-21T19:44:31.317Z",
-  "sourceCommand": "npm run system:full"
+  "sourceCommand": "npx tsx scripts/validators/generate-proof-coverage.ts",
+  "_generated": {
+    "source": "npm run system:full",
+    "type": "generated-artifact",
+    "hash": "26af09f139a414edbca87b8fe28a4ae0c3b3c19306d09c9cdf5d5049e6bd7120"
+  }
 }

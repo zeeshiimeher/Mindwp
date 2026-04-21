@@ -7,6 +7,7 @@ import { fileURLToPath } from 'node:url';
 
 import { readSystemEnv } from '../../config/systemEnv.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
+import { getDashboardReportFiles } from './system-manifest.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const logger = createLogger({ label: 'preaudit', mode: 'summary', rootDir: root });
@@ -15,9 +16,7 @@ const requiredReports = [
   'reports/system-health.json',
   'reports/pipeline-report.json',
   'reports/validation-results.json',
-  'reports/dashboard/system.json',
-  'reports/dashboard/validators.json',
-  'reports/dashboard/pipeline.json',
+  ...getDashboardReportFiles().map(fileName => `reports/${fileName}`),
 ];
 
 function fail(message) {

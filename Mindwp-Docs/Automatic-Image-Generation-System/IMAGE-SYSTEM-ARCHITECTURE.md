@@ -3,7 +3,7 @@
 STATUS: ACTIVE
 Last Updated: 2026-04-06
 
-This document defines the automated image pipeline used across the MindWP content system. The system is fully operational with 13 phases of development complete.
+This document defines the automated image pipeline used across the MindWP content system. The system is fully operational and maintained as a single production pipeline.
 
 Domains supported:
 

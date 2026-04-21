@@ -1,3 +1,6 @@
+<!--
+AUTO-GENERATED FILE - DO NOT EDIT
+-->
 # Content Gap Report
 
 > Generated: 2026-04-21

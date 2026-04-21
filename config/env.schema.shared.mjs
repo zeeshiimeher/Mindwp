@@ -47,6 +47,7 @@ const optionalAnalyticsId = z.preprocess(
 export const sharedEnvSchema = z.object({
   NODE_ENV: nodeEnv.default('development'),
   CI: optionalString,
+  SYSTEM_ENABLED: booleanFlag.default('false'),
   ENABLE_DEV_DASHBOARD: booleanFlag.default('false'),
   COMPONENT_LIBRARY_ENABLED: booleanFlag.default('false'),
   PROFILE_GRAPH: booleanFlag.default('false'),
@@ -91,6 +92,7 @@ export function buildRuntimeRawEnv(source = process.env) {
     ...source,
     NODE_ENV: readOptionalValue(source.NODE_ENV) ?? 'development',
     CI: readOptionalValue(source.CI),
+    SYSTEM_ENABLED: readFlag(source.SYSTEM_ENABLED),
     ENABLE_DEV_DASHBOARD: readFlag(source.ENABLE_DEV_DASHBOARD),
     COMPONENT_LIBRARY_ENABLED: readFlag(source.COMPONENT_LIBRARY_ENABLED),
     PROFILE_GRAPH: readFlag(source.PROFILE_GRAPH),

@@ -2,7 +2,6 @@
   "meta": {
     "name": "client-report",
     "source": "node --import tsx/esm scripts/analyzers/export-reports.mjs",
-    "generatedAt": "2026-04-21T19:56:57.420Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,19 +12,6 @@
     "warnings": 0
   },
   "data": {
-    "summary": {
-      "totalPages": 355,
-      "healthy": 355,
-      "weak": 0,
-      "critical": 0
-    },
-    "validation": {
-      "passed": 32,
-      "failed": 0,
-      "blockingFailed": 0,
-      "advisoryFailed": 0,
-      "total": 32
-    },
     "contentQuality": {
       "issueCount": 0,
       "warningCount": 0
@@ -39,6 +25,9 @@
         "name": "authority-map.json"
       },
       {
+        "name": "build-safety-report.json"
+      },
+      {
         "name": "check-generated-report.json"
       },
       {
@@ -49,6 +38,9 @@
       },
       {
         "name": "client-report.md"
+      },
+      {
+        "name": "command-integrity-report.json"
       },
       {
         "name": "content-consistency-audit.json"
@@ -105,6 +97,9 @@
         "name": "env-validation-report.json"
       },
       {
+        "name": "generated-file-protection-report.json"
+      },
+      {
         "name": "graph-derived-summary.json"
       },
       {
@@ -144,6 +139,9 @@
         "name": "related-duplication-scan.json"
       },
       {
+        "name": "route-ownership-report.json"
+      },
+      {
         "name": "section-shell-integrity-report.json"
       },
       {
@@ -165,31 +163,36 @@
         "name": "system-health.json"
       },
       {
-        "name": "system-knowledge-report.json"
+        "name": "system-manifest-integrity-report.json"
       },
       {
         "name": "system-report.json"
       },
       {
         "name": "system-snapshots"
-      },
-      {
-        "name": "system-state.json"
-      },
-      {
-        "name": "template-payload-report.json"
-      },
-      {
-        "name": "test-editing-stability-report.json"
-      },
-      {
-        "name": "token-report.json"
       }
-    ]
+    ],
+    "summary": {
+      "critical": 0,
+      "healthy": 355,
+      "totalPages": 355,
+      "weak": 0
+    },
+    "validation": {
+      "advisoryFailed": 0,
+      "blockingFailed": 0,
+      "failed": 0,
+      "passed": 36,
+      "total": 36
+    }
   },
   "issues": [],
   "name": "client-report",
   "status": "PASS",
-  "generatedAt": "2026-04-21T19:56:57.420Z",
-  "sourceCommand": "node --import tsx/esm scripts/analyzers/export-reports.mjs"
+  "sourceCommand": "node --import tsx/esm scripts/analyzers/export-reports.mjs",
+  "_generated": {
+    "source": "npm run system:full",
+    "type": "generated-artifact",
+    "hash": "add1df3b45257e7f3b02ff50cbd16d732c1d34c7851e278015b0bd42c6c886f3"
+  }
 }

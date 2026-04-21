@@ -12,6 +12,7 @@ import {
   getContentGraph,
   getStructuredContentGraph,
   initContentGraph,
+  initContentGraphFromSnapshot,
 } from '@/lib/content-graph/registry';
 import { getResolverIndexes, initResolverIndexes } from '@/lib/content-graph/resolverIndexes';
 
@@ -22,6 +23,23 @@ const shouldProfile = env.PROFILE_GRAPH === 'true' || process.env.SYSTEM_LOGGING
 let initialized = false;
 let initPromise: Promise<void> | null = null;
 let _resolver: ReturnType<typeof createResolver> | null = null;
+
+type SystemSnapshot = {
+  graph?: Parameters<typeof initContentGraphFromSnapshot>[0];
+};
+
+function readSystemSnapshot(): SystemSnapshot | null {
+  const snapshotPath = process.env.SYSTEM_SNAPSHOT_PATH;
+  if (!snapshotPath) {
+    return null;
+  }
+
+  try {
+    return JSON.parse(fs.readFileSync(snapshotPath, 'utf8')) as SystemSnapshot;
+  } catch {
+    return null;
+  }
+}
 
 function wrapResolverWithMetrics(
   resolver: ReturnType<typeof createResolver>
@@ -53,7 +71,13 @@ export async function ensureGraphInitialized(): Promise<void> {
   initPromise = (async () => {
     const t0 = performance.now();
 
-    initContentGraph(DOMAIN_GRAPH_SOURCES);
+    const snapshot = readSystemSnapshot();
+
+    if (snapshot?.graph) {
+      initContentGraphFromSnapshot(snapshot.graph);
+    } else {
+      initContentGraph(DOMAIN_GRAPH_SOURCES);
+    }
 
     const t1 = performance.now();
 

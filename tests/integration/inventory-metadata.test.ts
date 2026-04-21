@@ -4,6 +4,7 @@ import { describe, expect, test } from 'vitest';
 
 import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { resolveSEO } from '@/lib/seo/seoResolver';
+import { env } from '@/env';
 
 type OpenGraphImage = string | URL | { url?: string | URL };
 
@@ -34,10 +35,11 @@ function toImageUrl(image: OpenGraphImage | undefined) {
 describe('integration: inventory metadata', () => {
   test('resolves complete metadata for known publishable routes', async () => {
     const metadata = await getInventoryMetadata('/contact');
+    const expectedCanonical = new URL('/contact', env.NEXT_PUBLIC_SITE_URL).toString();
 
     expect(metadata.title).toBeTruthy();
     expect(metadata.description).toBeTruthy();
-    expect(metadata.alternates?.canonical).toBe('https://mindwp.com/contact');
+    expect(metadata.alternates?.canonical).toBe(expectedCanonical);
     expect(metadata.openGraph?.title).toBeTruthy();
     expect(metadata.robots).toEqual({ index: true, follow: true });
   });

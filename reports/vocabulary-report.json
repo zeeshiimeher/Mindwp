@@ -1,8 +1,7 @@
 {
   "meta": {
     "name": "vocabulary-report",
-    "source": "npm run system:full",
-    "generatedAt": "2026-04-21T19:44:30.508Z",
+    "source": "node scripts/validators/validate-vocabulary.mjs --report-json",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,7 +12,6 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-21T19:44:30.508Z",
     "passed": true,
     "scannedFiles": 197,
     "issueCount": 0,
@@ -22,6 +20,10 @@
   "issues": [],
   "name": "vocabulary-report",
   "status": "PASS",
-  "generatedAt": "2026-04-21T19:44:30.508Z",
-  "sourceCommand": "npm run system:full"
+  "sourceCommand": "node scripts/validators/validate-vocabulary.mjs --report-json",
+  "_generated": {
+    "source": "npm run system:full",
+    "type": "generated-artifact",
+    "hash": "630adb7833c8d2557712fdec4c83a192d9a0891a2e1126995163ae78e990b1a2"
+  }
 }

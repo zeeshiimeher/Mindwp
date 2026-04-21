@@ -1,8 +1,7 @@
 {
   "meta": {
     "name": "inline-style-report",
-    "source": "npm run system:full",
-    "generatedAt": "2026-04-21T19:44:30.177Z",
+    "source": "node scripts/validators/validate-inline-styles.mjs --report-json",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,7 +12,6 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-21T19:44:30.177Z",
     "passed": true,
     "violationCount": 0,
     "violations": []
@@ -21,6 +19,10 @@
   "issues": [],
   "name": "inline-style-report",
   "status": "PASS",
-  "generatedAt": "2026-04-21T19:44:30.177Z",
-  "sourceCommand": "npm run system:full"
+  "sourceCommand": "node scripts/validators/validate-inline-styles.mjs --report-json",
+  "_generated": {
+    "source": "npm run system:full",
+    "type": "generated-artifact",
+    "hash": "9aacc9acc8c35cc1e5eed1056e6049a5ae2cb97fb6496ed38743e88b115fd8b7"
+  }
 }

@@ -1,8 +1,7 @@
 {
   "meta": {
     "name": "token-report",
-    "source": "npm run system:full",
-    "generatedAt": "2026-04-21T19:44:29.956Z",
+    "source": "node scripts/validators/validate-tokens.mjs --report-json",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,7 +12,6 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-21T19:44:29.956Z",
     "passed": true,
     "violationCount": 0,
     "violations": []
@@ -21,6 +19,10 @@
   "issues": [],
   "name": "token-report",
   "status": "PASS",
-  "generatedAt": "2026-04-21T19:44:29.956Z",
-  "sourceCommand": "npm run system:full"
+  "sourceCommand": "node scripts/validators/validate-tokens.mjs --report-json",
+  "_generated": {
+    "source": "npm run system:full",
+    "type": "generated-artifact",
+    "hash": "83e0c1f7294032f03c4bc251c893eb5121bdd3e0bcab1f196135e9d084f1d45b"
+  }
 }

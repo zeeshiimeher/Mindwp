@@ -1,8 +1,7 @@
 {
   "meta": {
     "name": "cta-label-contract-report",
-    "source": "npm run system:full",
-    "generatedAt": "2026-04-21T19:44:22.671Z",
+    "source": "npx tsx scripts/validators/validate-cta-label-contract.mjs --report-json",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,7 +12,6 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-21T19:44:22.671Z",
     "passed": true,
     "issueCount": 0,
     "warningCount": 0,
@@ -34,6 +32,10 @@
   "issues": [],
   "name": "cta-label-contract-report",
   "status": "PASS",
-  "generatedAt": "2026-04-21T19:44:22.671Z",
-  "sourceCommand": "npm run system:full"
+  "sourceCommand": "npx tsx scripts/validators/validate-cta-label-contract.mjs --report-json",
+  "_generated": {
+    "source": "npm run system:full",
+    "type": "generated-artifact",
+    "hash": "0bd077468a1cdde20969d79aef6df235d6ff23a54ae5584d279b0d91f5d7a9ad"
+  }
 }

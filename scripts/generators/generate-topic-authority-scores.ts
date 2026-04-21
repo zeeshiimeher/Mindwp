@@ -5,6 +5,7 @@ import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { createReportSchema } from '../lib/report-schema.mjs';
+import { buildGeneratedMarkdownNotice } from '../lib/generated-file-metadata.mjs';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 import { CANONICAL_TOPICS } from '../../src/lib/content-graph/canonical';
 import { getContentGraph } from '../../src/lib/content-graph/registry';
@@ -305,7 +306,14 @@ async function main() {
     sorted.reduce((sum, topic) => sum + topic.score, 0) / (sorted.length || 1)
   );
 
-  logger.writeReport(markdownPath, generateMarkdown(scores));
+  logger.writeReport(
+    markdownPath,
+    `${buildGeneratedMarkdownNotice({
+      generatedBy: 'node --import tsx/esm scripts/generators/generate-topic-authority-scores.ts',
+      source: 'content graph, domain registries',
+      generatedAt,
+    })}${generateMarkdown(scores)}`
+  );
 
   logger.writeReport(
     jsonPath,

@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import { describe, expect, it } from 'vitest';
+import { systemManifest } from '@/system/manifest';
 
 import {
   assertDashboardBundle,
@@ -52,12 +53,7 @@ describe('report contracts', () => {
     const reportFiles = [
       'system-report.json',
       'pipeline-report.json',
-      'dashboard/system.json',
-      'dashboard/validators.json',
-      'dashboard/graph.json',
-      'dashboard/topics.json',
-      'dashboard/content.json',
-      'dashboard/pipeline.json',
+      ...systemManifest.dashboardReports,
     ];
 
     for (const fileName of reportFiles) {

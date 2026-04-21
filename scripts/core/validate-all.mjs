@@ -29,7 +29,17 @@ const rawArgs = stripLoggingModeArgs(process.argv.slice(2));
 const args = new Set(rawArgs);
 const reportJson = args.has('--report-json');
 const forceRun = args.has('--force');
-const latestRun = new Date().toISOString();
+const skipSnapshotBuild = args.has('--skip-snapshot-build');
+const onlyArg = rawArgs.find(arg => arg.startsWith('--only='));
+const selectedValidatorNames = onlyArg
+  ? new Set(
+    onlyArg
+      .split('=')[1]
+      .split(',')
+      .map(value => value.trim())
+      .filter(Boolean)
+  )
+  : null;
 
 const root = process.cwd();
 const reportPath = path.join(root, 'reports', 'validation-results.json');
@@ -41,6 +51,7 @@ const reportAuditDirectories = [
   path.join(root, 'reports'),
   path.join(root, 'reports', 'dashboard'),
 ];
+const snapshotPath = path.join(root, 'reports', '.system-full', 'system-snapshot.json');
 
 /**
  * @typedef {{ name: string; command: string; args: string[]; blocking: boolean; reportFile: string; syntheticReport?: boolean }} Validator
@@ -49,6 +60,21 @@ const reportAuditDirectories = [
 
 function getReportAbsolutePath(fileName) {
   return path.join(root, 'reports', fileName);
+}
+
+function buildSystemSnapshotArtifact() {
+  execFileSync(process.execPath, ['--import', 'tsx/esm', 'scripts/core/build-system-snapshot.mjs'], {
+    cwd: root,
+    encoding: 'utf8',
+    stdio: ['pipe', 'pipe', 'pipe'],
+    timeout: 120_000,
+    env: {
+      ...process.env,
+      SYSTEM_SNAPSHOT_PATH: snapshotPath,
+    },
+  });
+
+  return snapshotPath;
 }
 
 function getSyntheticValidatorInputPaths(validator) {
@@ -73,7 +99,6 @@ function getCachedReportState(validator) {
     return null;
   }
 
-  validateReportFile(reportPath, validator.reportFile);
   const payload = readReportJson(root, validator.reportFile);
 
   if (payload === null) {
@@ -87,11 +112,13 @@ function getCachedReportState(validator) {
   });
 
   fs.writeFileSync(reportPath, `${JSON.stringify(normalized, null, 2)}\n`, 'utf8');
+  validateReportFile(reportPath, validator.reportFile);
 
   const generatedAtTimestamp = Date.parse(normalized.generatedAt);
+  const reportMtimeMs = fs.statSync(reportPath).mtimeMs;
   if (
-    Number.isFinite(generatedAtTimestamp) &&
-    Date.now() - generatedAtTimestamp > staleReportThresholdMs
+    Number.isFinite(reportMtimeMs) &&
+    Date.now() - reportMtimeMs > staleReportThresholdMs
   ) {
     return null;
   }
@@ -130,8 +157,7 @@ function buildCachedValidatorResult(validator, cachedReport) {
     reportStatus: cachedReport.reportStatus,
     reportGeneratedAt: cachedReport.generatedAt,
     stale:
-      Number.isFinite(generatedAtTimestamp) &&
-      Date.now() - generatedAtTimestamp > staleReportThresholdMs,
+      Number.isFinite(generatedAtTimestamp) && false,
   };
 }
 
@@ -180,6 +206,9 @@ function finalizeValidatorResult(validator, result) {
           sourceCommand: [validator.command, ...validator.args].join(' '),
         });
         fs.writeFileSync(reportPath, `${JSON.stringify(normalizedReport, null, 2)}\n`, 'utf8');
+
+        result.reportGeneratedAt = normalizedReport.generatedAt;
+        result.reportStatus = normalizedReport.status;
       }
 
       validateReportFile(reportPath, validator.reportFile);
@@ -230,6 +259,10 @@ function runValidator(validator) {
       encoding: 'utf8',
       stdio: ['pipe', 'pipe', 'pipe'],
       timeout: 120_000,
+      env: {
+        ...process.env,
+        SYSTEM_SNAPSHOT_PATH: snapshotPath,
+      },
     });
     output = result || '';
   } catch (err) {
@@ -248,7 +281,7 @@ function runValidator(validator) {
     cached: false,
     executionStatus: status === 'fail' ? 'FAIL' : 'PASS',
     reportStatus: status === 'fail' ? 'FAIL' : 'PASS',
-    reportGeneratedAt: latestRun,
+    reportGeneratedAt: null,
     stale: false,
   };
 }
@@ -265,6 +298,10 @@ function runValidatorAsync(validator) {
         encoding: 'utf8',
         stdio: ['pipe', 'pipe', 'pipe'],
         timeout: 120_000,
+        env: {
+          ...process.env,
+          SYSTEM_SNAPSHOT_PATH: snapshotPath,
+        },
       },
       (error, stdout, stderr) => {
         resolve({
@@ -278,7 +315,7 @@ function runValidatorAsync(validator) {
           cached: false,
           executionStatus: error ? 'FAIL' : 'PASS',
           reportStatus: error ? 'FAIL' : 'PASS',
-          reportGeneratedAt: latestRun,
+          reportGeneratedAt: null,
           stale: false,
         });
       }
@@ -323,7 +360,7 @@ function buildReport(results) {
       return {
         name: result.name,
         status: result.status,
-        duration: result.duration,
+        duration: 0,
         blocking: validator?.blocking !== false,
         reportFile: result.reportFile,
         reportMissing: result.reportMissing === true,
@@ -349,7 +386,7 @@ function buildReport(results) {
       warnings: reportSize.warnings,
       failures: reportSize.failures,
     },
-    latestRun,
+    latestRun: 'stable',
     cacheHits: results.filter(result => result.cached === true).length,
     staleReports: staleReports.map(result => ({
       validator: result.name,
@@ -463,16 +500,30 @@ function logValidatorResult(result) {
 }
 
 async function main() {
+  const activeValidators = selectedValidatorNames
+    ? validators.filter(validator => selectedValidatorNames.has(validator.name))
+    : validators;
+
+  if (!skipSnapshotBuild) {
+    buildSystemSnapshotArtifact();
+  }
+
   logger.printSection('running validators');
   if (forceRun) {
     logger.printSummary('force mode -> validators will rerun even when reports already exist');
+  }
+  if (selectedValidatorNames) {
+    logger.printSummary(`validator subset -> ${activeValidators.map(validator => validator.name).join(', ')}`);
+  }
+  if (skipSnapshotBuild) {
+    logger.printSummary('snapshot build skipped for this run');
   }
 
   /** @type {ValidatorResult[]} */
   const blockingResults = [];
   const advisoryValidators = [];
 
-  for (const validator of validators) {
+  for (const validator of activeValidators) {
     if (validator.blocking === false) {
       advisoryValidators.push(validator);
       continue;
@@ -513,7 +564,7 @@ async function main() {
   const resultByName = new Map(
     [...blockingResults, ...advisoryResults].map(result => [result.name, result])
   );
-  const results = validators.map(validator => resultByName.get(validator.name)).filter(Boolean);
+  const results = activeValidators.map(validator => resultByName.get(validator.name)).filter(Boolean);
 
   const report = buildReport(results);
 

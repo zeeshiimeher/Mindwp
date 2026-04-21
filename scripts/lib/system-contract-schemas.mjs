@@ -204,6 +204,13 @@ export const systemReportSchema = z
     priorities: z.array(priorityItemSchema),
     pages: z.array(pageIntelligenceItemSchema),
     changes: reportChangesSchema,
+    _generated: z
+      .object({
+        source: z.string(),
+        type: z.string(),
+        hash: z.string(),
+      })
+      .optional(),
   })
   .strict();
 
@@ -262,6 +269,13 @@ export const clientDashboardSchema = z
     pages: z.array(clientPageInsightSchema),
     impacts: z.array(clientImpactGroupSchema),
     changes: clientDashboardChangesSchema,
+    _generated: z
+      .object({
+        source: z.string(),
+        type: z.string(),
+        hash: z.string(),
+      })
+      .optional(),
   })
   .strict();
 

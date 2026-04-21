@@ -1,3 +1,4 @@
+import { getContentPolicy } from './contentPolicy';
 import type { ContentNodeType } from '@/lib/content-graph/types';
 import { normalizePath } from '@/lib/seo/config';
 import topicAuthorityScoresReport from '../reports/topic-authority-scores.json';
@@ -83,6 +84,18 @@ const CLASSIFIED_STATIC_PATHS = new Map<string, IndexingClassification>([
     ['/image-dashboard', 'dev'],
 ]);
 
+const CONTENT_NODE_TYPES: ContentNodeType[] = [
+    'service',
+    'feature',
+    'industry-category',
+    'industry-detail',
+    'case-study',
+    'blog',
+    'resource',
+];
+
+const CONTENT_NODE_TYPE_SET = new Set<IndexingPolicyKind>(CONTENT_NODE_TYPES);
+
 function buildPolicy(
     classification: IndexingClassification,
     source: IndexingPolicySource,
@@ -147,22 +160,15 @@ function resolveStaticClassification(path: string): ResolvedIndexingPolicy {
 }
 
 function resolveKindClassification(kind: IndexingPolicyKind, routePathForKind: string): ResolvedIndexingPolicy | null {
+    if (CONTENT_NODE_TYPE_SET.has(kind)) {
+        return buildPolicy(getContentPolicy(kind as ContentNodeType).indexingClassification, 'explicit');
+    }
+
     switch (kind) {
-        case 'blog':
         case 'blog-category':
             return buildPolicy('blog', 'explicit');
-        case 'resource':
         case 'resource-category':
             return buildPolicy('resources', 'explicit');
-        case 'service':
-            return buildPolicy('services', 'explicit');
-        case 'feature':
-            return buildPolicy('features', 'explicit');
-        case 'industry-category':
-        case 'industry-detail':
-            return buildPolicy('industries', 'explicit');
-        case 'case-study':
-            return buildPolicy('caseStudies', 'explicit');
         case 'topic-hub':
         case 'blog-topic':
             return resolveTopicClassification(kind, routePathForKind);

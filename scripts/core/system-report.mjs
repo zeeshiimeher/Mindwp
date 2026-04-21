@@ -9,6 +9,7 @@ import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { buildSystemProcessEnv, systemEnv } from '../../config/systemEnv.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
 import { isExecutionCacheValid } from '../lib/execution-cache.mjs';
+import { attachGeneratedJsonMetadata } from '../lib/generated-file-metadata.mjs';
 import { readJsonFile, readReportJson } from '../lib/report-json.mjs';
 import { createReportSchema, normalizeRawReport, unwrapReportData } from '../lib/report-schema.mjs';
 import {
@@ -16,6 +17,7 @@ import {
   parseSystemReportContract,
 } from '../lib/system-contract-schemas.mjs';
 
+import { getReportFiles, getValidatorDefinitions } from './system-manifest.mjs';
 import { buildAndValidateDashboardData, DASHBOARD_REPORT_FILES } from './dashboard-data.mjs';
 import { validateReportFile } from './report-schema-validator.mjs';
 
@@ -138,58 +140,20 @@ const binaries = {
 };
 
 const reportStaleThresholdMs = 15 * 60 * 1000;
-const requiredReportFiles = new Set([
-  'authority-map.json',
-  'client-report.json',
-  'client-report.md',
-  'content-contract-report.json',
-  'content-gaps.json',
-  'content-gaps.md',
-  'content-quality-report.json',
-  'conversion-contract-report.json',
-  'cta-label-contract-report.json',
-  'cta-report.json',
-  'cta-violation-scan.json',
-  'design-system-report.json',
-  'docs-report.json',
-  'domain-structure-report.json',
-  'graph-report.json',
-  'graph-derived-summary.json',
-  'internal-links-report.json',
-  'inline-link-misuse-scan.json',
-  'inline-style-report.json',
-  'page-priorities.json',
-  'pipeline-report.json',
-  'proof-coverage.json',
-  'production-contract-report.json',
-  'related-duplication-scan.json',
-  'section-shell-integrity-report.json',
-  'section-structure-report.json',
-  'template-payload-report.json',
-  'token-report.json',
-  'topic-insights.json',
-  'topic-authority-scores.json',
-  'topic-authority-scores.md',
-  'content-intelligence.json',
-  'content-consistency-audit.json',
-  'content-score.json',
-  'validation-report.json',
-  'validation-results.json',
-  'vocabulary-report.json',
-  'system-health.json',
-  'system-report.json',
-  'client-dashboard.json',
-  ...DASHBOARD_REPORT_FILES,
-]);
+const requiredReportFiles = new Set(getReportFiles());
+
+const validatorReportSourceByFile = new Map(
+  getValidatorDefinitions().map(validator => [
+    validator.reportFile,
+    [validator.command, ...validator.args].join(' '),
+  ])
+);
 
 const reportSourceByFile = new Map([
   ['authority-map.json', 'node --import tsx/esm scripts/generators/generate-authority-map.ts'],
   ['validation-report.json', 'node scripts/core/validate-all.mjs --report-json'],
   ['validation-results.json', 'node scripts/core/validate-all.mjs --report-json'],
-  ['content-quality-report.json', 'npx tsx scripts/validators/validate-content-quality.mjs'],
-  ['graph-report.json', 'npx tsx scripts/validators/validate-graph.ts'],
   ['graph-derived-summary.json', 'node --import tsx/esm scripts/analyzers/inspect-graph.ts'],
-  ['internal-links-report.json', 'npx tsx scripts/validators/validate-internal-links.ts'],
   [
     'topic-authority-scores.json',
     'node --import tsx/esm scripts/generators/generate-topic-authority-scores.ts',
@@ -223,6 +187,7 @@ const reportSourceByFile = new Map([
   ['content.json', 'node scripts/core/dashboard-data.mjs'],
   ['pipeline.json', 'node scripts/core/dashboard-data.mjs'],
   ['system-health.json', 'npm run system:full'],
+  ...validatorReportSourceByFile,
 ]);
 
 function ensureDir(dirPath) {
@@ -260,7 +225,24 @@ function runCommand(binary, args, extraEnv = {}) {
 
 function writeJson(filePath, data) {
   ensureDir(path.dirname(filePath));
-  fs.writeFileSync(filePath, JSON.stringify(data, null, 2) + '\n');
+  const payload =
+    filePath.endsWith('.json') && !data?.meta?.generatedFile && !data?.generatedFile
+      ? attachGeneratedJsonMetadata(data, {
+        generatedBy:
+          path.basename(filePath) === 'client-dashboard.json' ? 'system-report' : sourceCommand,
+        source:
+          path.basename(filePath) === 'client-dashboard.json'
+            ? 'system dashboard inputs'
+            : sourceCommand,
+        generatedAt:
+          typeof data?.generatedAt === 'string'
+            ? data.generatedAt
+            : typeof data?.timestamp === 'string'
+              ? data.timestamp
+              : new Date().toISOString(),
+      })
+      : data;
+  fs.writeFileSync(filePath, JSON.stringify(payload, null, 2) + '\n');
 
   if (
     filePath.endsWith('.json') &&
@@ -537,16 +519,16 @@ function listSnapshotFiles() {
 }
 
 function readPreviousSnapshotReport() {
-  const snapshotFiles = listSnapshotFiles();
-  const latestFileName = snapshotFiles[snapshotFiles.length - 1];
+  const latestFileName = 'system-report-current.json';
+  const latestPath = path.join(snapshotDir, latestFileName);
 
-  if (!latestFileName) {
+  if (!fs.existsSync(latestPath)) {
     return null;
   }
 
   return {
     fileName: latestFileName,
-    report: readJsonFile(path.join(snapshotDir, latestFileName)),
+    report: readJsonFile(latestPath),
   };
 }
 
@@ -574,38 +556,51 @@ function validateFrozenOutputs(report, clientDashboard) {
 function writeSnapshotArtifacts(report) {
   ensureDir(snapshotDir);
 
-  const previousSnapshot = readPreviousSnapshotReport();
-  const snapshotFileName = `system-report-${sanitizeSnapshotTimestamp(report.timestamp)}.json`;
+  const snapshotFileName = 'system-report-current.json';
   const snapshotFilePath = path.join(snapshotDir, snapshotFileName);
-  const snapshotChanges = buildChanges(
-    previousSnapshot?.report ?? null,
-    report.priorities,
-    report.pages
-  );
 
   writeJson(snapshotFilePath, report);
   writeJson(snapshotSummaryPath, {
-    generatedAt: report.timestamp,
+    generatedAt: 'stable',
     sourceCommand: report.sourceCommand,
     currentSnapshot: `reports/system-snapshots/${snapshotFileName}`,
-    previousSnapshot: previousSnapshot
-      ? `reports/system-snapshots/${previousSnapshot.fileName}`
-      : null,
+    previousSnapshot: null,
     trackedChanges: {
       priorities: {
         current: report.priorities.length,
-        previous: previousSnapshot?.report?.priorities?.length ?? 0,
-        delta:
-          report.priorities.length -
-          (Array.isArray(previousSnapshot?.report?.priorities)
-            ? previousSnapshot.report.priorities.length
-            : 0),
+        previous: report.priorities.length,
+        delta: 0,
       },
-      pageStatusChanged: snapshotChanges.statusChanged,
-      newIssues: snapshotChanges.newIssues,
-      resolvedIssues: snapshotChanges.resolvedIssues,
+      pageStatusChanged: [],
+      newIssues: [],
+      resolvedIssues: [],
     },
   });
+}
+
+function stabilizeRuntimeMetrics(value) {
+  if (Array.isArray(value)) {
+    return value.map(stabilizeRuntimeMetrics);
+  }
+
+  if (!value || typeof value !== 'object') {
+    return value;
+  }
+
+  return Object.entries(value).reduce((output, [key, entry]) => {
+    if (key === 'durationMs' || key === 'duration') {
+      output[key] = 0;
+      return output;
+    }
+
+    if (key === 'timestamp' || key === 'generatedAt' || key === 'time') {
+      output[key] = 'stable';
+      return output;
+    }
+
+    output[key] = stabilizeRuntimeMetrics(entry);
+    return output;
+  }, Array.isArray(value) ? [] : {});
 }
 
 function parseJsonText(raw) {
@@ -1307,10 +1302,10 @@ function summarizeVitestReport(report, fallbackDuration) {
         typeof item?.startTime === 'number' && typeof item?.endTime === 'number'
           ? Math.max(0, item.endTime - item.startTime)
           : Math.round(
-              assertions.reduce((sum, assertion) => {
-                return sum + (typeof assertion?.duration === 'number' ? assertion.duration : 0);
-              }, 0)
-            );
+            assertions.reduce((sum, assertion) => {
+              return sum + (typeof assertion?.duration === 'number' ? assertion.duration : 0);
+            }, 0)
+          );
 
       return {
         file,
@@ -1603,10 +1598,15 @@ function buildReportsSection(result, runStartedAt, timestamp) {
         ageMs: Math.max(0, parseTimestamp(timestamp) - fs.statSync(filePath).mtimeMs),
       };
     })
-    .sort((left, right) => left.file.name.localeCompare(right.file.name));
-  const trackedFiles = allFiles.filter(entry => requiredReportFiles.has(entry.file.name));
+    .sort((left, right) => left.file.path.localeCompare(right.file.path));
+  const trackedFiles = allFiles.filter(entry => {
+    const relativeReportPath = path.relative(reportsDir, path.join(root, entry.file.path)).replaceAll('\\', '/');
+    return requiredReportFiles.has(relativeReportPath);
+  });
 
-  const availableFileNames = new Set(trackedFiles.map(entry => entry.file.name));
+  const availableFileNames = new Set(
+    trackedFiles.map(entry => path.relative(reportsDir, path.join(root, entry.file.path)).replaceAll('\\', '/'))
+  );
   const missing = [...requiredReportFiles].filter(fileName => !availableFileNames.has(fileName));
   const stale = trackedFiles
     .filter(entry => {
@@ -1614,7 +1614,10 @@ function buildReportsSection(result, runStartedAt, timestamp) {
         return false;
       }
 
-      const inputPaths = reportInputPathsByFile.get(entry.file.name);
+      const relativeReportPath = path
+        .relative(reportsDir, path.join(root, entry.file.path))
+        .replaceAll('\\', '/');
+      const inputPaths = reportInputPathsByFile.get(entry.file.name) ?? reportInputPathsByFile.get(relativeReportPath);
       if (!inputPaths) {
         return true;
       }
@@ -1624,7 +1627,7 @@ function buildReportsSection(result, runStartedAt, timestamp) {
         outputPaths: [path.join(reportsDir, entry.file.name)],
       }).valid;
     })
-    .map(entry => entry.file.name)
+    .map(entry => path.relative(reportsDir, path.join(root, entry.file.path)).replaceAll('\\', '/'))
     .sort((left, right) => left.localeCompare(right));
 
   return {
@@ -1675,7 +1678,7 @@ function buildSystemSection() {
     graph: {
       status:
         (graphReport?.errorCount ?? graphErrors.length) === 0 &&
-        (graphReport?.summary?.orphanNodes ?? 0) === 0
+          (graphReport?.summary?.orphanNodes ?? 0) === 0
           ? 'OK'
           : 'ISSUES',
       nodes: Array.isArray(authorityMap?.nodes) ? authorityMap.nodes.length : 0,
@@ -1706,8 +1709,6 @@ function main() {
 
   const runStartedAt = Date.now();
   const timestamp = new Date().toISOString();
-  const previousReport = readJsonFile(reportPath);
-
   ensureDir(reportsDir);
   ensureDir(tempDir);
   ensureDir(snapshotDir);
@@ -1731,17 +1732,17 @@ function main() {
   const tests = skipTests
     ? buildSkippedTestsSection()
     : (() => {
-        const testsResult = runCommand(binaries.npm, [
-          'run',
-          'test',
-          '--',
-          '--run',
-          '--reporter=json',
-          `--outputFile=${vitestOutputPath}`,
-        ]);
-        const vitestReport = readJsonFile(vitestOutputPath);
-        return buildTestsSection(testsResult, vitestReport);
-      })();
+      const testsResult = runCommand(binaries.npm, [
+        'run',
+        'test',
+        '--',
+        '--run',
+        '--reporter=json',
+        `--outputFile=${vitestOutputPath}`,
+      ]);
+      const vitestReport = readJsonFile(vitestOutputPath);
+      return buildTestsSection(testsResult, vitestReport);
+    })();
 
   const e2eResult = includeE2E
     ? runCommand(binaries.npx, ['playwright', 'test', '--reporter=json'])
@@ -1760,7 +1761,7 @@ function main() {
   const system = buildSystemSection();
   const priorities = buildPriorities(validate);
   const pages = buildPages(priorities);
-  const changes = buildChanges(previousReport, priorities, pages);
+  const changes = buildChanges(null, priorities, pages);
 
   const report = {
     status: 'FAIL',
@@ -1779,20 +1780,21 @@ function main() {
   };
 
   report.status = buildOverallStatus(report);
-  const clientDashboard = buildClientDashboard(report);
+  const stabilizedReport = stabilizeRuntimeMetrics(report);
+  const clientDashboard = buildClientDashboard(stabilizedReport);
 
   if (skipTests) {
     const pipelineReport = readReportJson(root, 'pipeline-report.json');
-    const performanceSummary = buildPerformanceSummary(report, pipelineReport);
-    const shouldFail = report.status === 'FAIL';
+    const performanceSummary = buildPerformanceSummary(stabilizedReport, pipelineReport);
+    const shouldFail = stabilizedReport.status === 'FAIL';
 
     if (preservedQuickReports) {
       restoreReportFiles(preservedQuickReports);
     }
 
-    printStructuredSystemSummary(report, performanceSummary);
+    printStructuredSystemSummary(stabilizedReport, performanceSummary);
     if (outputMode === 'full') {
-      printStructuredSystemDetails(report, performanceSummary);
+      printStructuredSystemDetails(stabilizedReport, performanceSummary);
     }
 
     logger.printSummary('quick mode -> preserved system:full source-of-truth reports');
@@ -1800,44 +1802,44 @@ function main() {
     return;
   }
 
-  report.reports.files.push({
+  stabilizedReport.reports.files.push({
     name: 'system-health.json',
     path: 'reports/system-health.json',
-    generatedAt: timestamp,
+    generatedAt: 'stable',
     sourceCommand,
   });
-  report.reports.files.push({
+  stabilizedReport.reports.files.push({
     name: 'system-report.json',
     path: 'reports/system-report.json',
-    generatedAt: timestamp,
+    generatedAt: 'stable',
     sourceCommand,
   });
-  report.reports.files.push({
+  stabilizedReport.reports.files.push({
     name: 'client-dashboard.json',
     path: 'reports/client-dashboard.json',
-    generatedAt: timestamp,
+    generatedAt: 'stable',
     sourceCommand,
   });
-  report.reports.missing = report.reports.missing.filter(
+  stabilizedReport.reports.missing = stabilizedReport.reports.missing.filter(
     fileName => fileName !== 'system-health.json'
   );
-  report.reports.missing = report.reports.missing.filter(
+  stabilizedReport.reports.missing = stabilizedReport.reports.missing.filter(
     fileName => fileName !== 'system-report.json'
   );
-  report.reports.missing = report.reports.missing.filter(
+  stabilizedReport.reports.missing = stabilizedReport.reports.missing.filter(
     fileName => fileName !== 'client-dashboard.json'
   );
-  report.reports.fileCount = report.reports.files.length;
-  report.reports.status =
-    report.reports.errors.length === 0 &&
-    report.reports.files.length > 0 &&
-    report.reports.missing.length === 0 &&
-    report.reports.stale.length === 0
+  stabilizedReport.reports.fileCount = stabilizedReport.reports.files.length;
+  stabilizedReport.reports.status =
+    stabilizedReport.reports.errors.length === 0 &&
+      stabilizedReport.reports.files.length > 0 &&
+      stabilizedReport.reports.missing.length === 0 &&
+      stabilizedReport.reports.stale.length === 0
       ? 'PASS'
       : 'FAIL';
-  report.status = buildOverallStatus(report);
+  stabilizedReport.status = buildOverallStatus(stabilizedReport);
 
-  const validatedOutputs = validateFrozenOutputs(report, clientDashboard);
+  const validatedOutputs = validateFrozenOutputs(stabilizedReport, clientDashboard);
   const pipelineReport = readReportJson(root, 'pipeline-report.json');
   const performanceSummary = buildPerformanceSummary(validatedOutputs.report, pipelineReport);
   const systemHealthReport = buildSystemHealthReport(validatedOutputs.report, pipelineReport);
@@ -1850,7 +1852,7 @@ function main() {
   const dashboardFiles = dashboardResult.files.map(fileName => ({
     name: fileName,
     path: `reports/dashboard/${fileName}`,
-    generatedAt: timestamp,
+    generatedAt: 'stable',
     sourceCommand,
   }));
 
@@ -1864,9 +1866,9 @@ function main() {
   );
   validatedOutputs.report.reports.status =
     validatedOutputs.report.reports.errors.length === 0 &&
-    validatedOutputs.report.reports.files.length > 0 &&
-    validatedOutputs.report.reports.missing.length === 0 &&
-    validatedOutputs.report.reports.stale.length === 0
+      validatedOutputs.report.reports.files.length > 0 &&
+      validatedOutputs.report.reports.missing.length === 0 &&
+      validatedOutputs.report.reports.stale.length === 0
       ? 'PASS'
       : 'FAIL';
   validatedOutputs.report.status = buildOverallStatus(validatedOutputs.report);

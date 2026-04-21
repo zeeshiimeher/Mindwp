@@ -1,17 +1,14 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
+import { getDashboardReportFiles, getReportFiles } from '../core/system-manifest.mjs';
+import { attachGeneratedJsonMetadata } from './generated-file-metadata.mjs';
 import { readJsonFile } from './report-json.mjs';
 import { createReportSchema, unwrapReportData } from './report-schema.mjs';
 
-export const DASHBOARD_REPORT_FILES = [
-  'system.json',
-  'validators.json',
-  'graph.json',
-  'topics.json',
-  'content.json',
-  'pipeline.json',
-];
+export const DASHBOARD_REPORT_FILES = getDashboardReportFiles().map(fileName =>
+  fileName.replace(/^dashboard\//, '')
+);
 
 function readReport(root, fileName) {
   return readJsonFile(path.join(root, 'reports', fileName));
@@ -19,7 +16,14 @@ function readReport(root, fileName) {
 
 function writeJson(filePath, data) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
-  fs.writeFileSync(filePath, `${JSON.stringify(data, null, 2)}\n`, 'utf8');
+  const payload =
+    filePath.endsWith('.json') && !data?._generated
+      ? attachGeneratedJsonMetadata(data, {
+        source: 'dashboard-data',
+        type: 'dashboard',
+      })
+      : data;
+  fs.writeFileSync(filePath, `${JSON.stringify(payload, null, 2)}\n`, 'utf8');
 }
 
 function toUpperStatus(value, fallback = 'PASS') {
@@ -66,11 +70,11 @@ function summarizeValidationError(error) {
   const output =
     typeof error?.output === 'string'
       ? error.output
-          .split('\n')
-          .map(line => line.trim())
-          .filter(Boolean)
-          .slice(0, 3)
-          .join(' | ')
+        .split('\n')
+        .map(line => line.trim())
+        .filter(Boolean)
+        .slice(0, 3)
+        .join(' | ')
       : null;
 
   return {
@@ -92,6 +96,22 @@ function summarizeIssue(issue) {
     file: issue.file ?? null,
     validator: issue.validator ?? null,
   };
+}
+
+function resolveGeneratedTimestamp(report, filePath) {
+  if (typeof report?._generated?.hash === 'string') {
+    return report._generated.hash;
+  }
+
+  if (typeof report?.meta?._generated?.hash === 'string') {
+    return report.meta._generated.hash;
+  }
+
+  if (typeof report?.generatedAt === 'string') {
+    return report.generatedAt;
+  }
+
+  return null;
 }
 
 function buildValidationSnapshot(validationResults) {
@@ -130,6 +150,10 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
   const validationData = unwrapReportData(validationResults) ?? {};
   const pipelineReport = readReport(root, 'pipeline-report.json') ?? {};
   const pipelineData = unwrapReportData(pipelineReport) ?? {};
+  const envValidationReport = readReport(root, 'env-validation-report.json') ?? {};
+  const envValidationData = unwrapReportData(envValidationReport) ?? {};
+  const snapshotPayload = readJsonFile(path.join(root, 'reports', '.system-full', 'system-snapshot.json')) ?? {};
+  const snapshotSummary = readJsonFile(path.join(root, 'reports', 'system-snapshots', 'latest-summary.json')) ?? {};
   const validationSnapshot = buildValidationSnapshot(validationResults);
 
   const validators = Array.isArray(validationData.validators) ? validationData.validators : [];
@@ -189,12 +213,12 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
   const pipelineSteps = Array.isArray(pipelineData.steps) ? pipelineData.steps : [];
   const analyzerCoverage = Array.isArray(pipelineData.analyzers)
     ? pipelineData.analyzers.map(analyzer => ({
-        name: analyzer.name,
-        status: toUpperStatus(analyzer.status, 'PASS'),
-        outputs: analyzer.outputs ?? [],
-        skipped: analyzer.skipped === true,
-        durationMs: analyzer.durationMs ?? 0,
-      }))
+      name: analyzer.name,
+      status: toUpperStatus(analyzer.status, 'PASS'),
+      outputs: analyzer.outputs ?? [],
+      skipped: analyzer.skipped === true,
+      durationMs: analyzer.durationMs ?? 0,
+    }))
     : [];
   const integrityStrip = {
     reportsStatus: toUpperStatus(systemReport?.reports?.status ?? systemHealth?.status, 'PASS'),
@@ -215,6 +239,44 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
     durationMs: systemReport?.durationMs ?? 0,
     status: toUpperStatus(systemReport?.status, 'PASS'),
     cacheHits: validationData?.cacheHits ?? 0,
+  };
+  const durableReports = getReportFiles().map(fileName => {
+    const absolutePath = path.join(root, 'reports', fileName);
+    const report = readJsonFile(absolutePath);
+    const staleEntries = Array.isArray(systemReport?.reports?.stale) ? systemReport.reports.stale : [];
+    const missingEntries = Array.isArray(systemReport?.reports?.missing) ? systemReport.reports.missing : [];
+
+    return {
+      fileName,
+      status: missingEntries.includes(fileName)
+        ? 'missing'
+        : staleEntries.includes(fileName)
+          ? 'stale'
+          : 'fresh',
+      exists: fs.existsSync(absolutePath),
+      lastGenerated: resolveGeneratedTimestamp(report, absolutePath),
+    };
+  });
+  const snapshotInfo = {
+    hash: snapshotPayload?._generated?.hash ?? null,
+    lastBuilt: snapshotPayload?._generated?.hash ?? snapshotPayload?.generatedAt ?? null,
+    sourceConsistency:
+      Boolean(snapshotPayload?.graph) && Boolean(snapshotPayload?.routeInventory) && systemHealthData?.drift !== true,
+    latestSummary: snapshotSummary?.currentSnapshot ?? null,
+  };
+  const envStatus = {
+    status: toUpperStatus(envValidationReport?.status, 'PASS'),
+    missingKeys: Array.isArray(envValidationData?.missingKeys) ? envValidationData.missingKeys : [],
+    generatedAt: resolveGeneratedTimestamp(
+      envValidationReport,
+      path.join(root, 'reports', 'env-validation-report.json')
+    ),
+  };
+  const systemStatus = {
+    status: toUpperStatus(systemReport?.status, 'PASS'),
+    validators: `${validatorPassCount}/${validators.length}`,
+    tests: systemReport?.tests?.status ?? 'UNKNOWN',
+    warnings: lastRunSummary.warnings,
   };
 
   const graphReport = readReport(root, 'graph-report.json') ?? {};
@@ -242,31 +304,31 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
   const warningsPanel = {
     validators: Array.isArray(warningSource.validators)
       ? warningSource.validators.map(item => ({
-          name: item.name,
-          detail: item.reportFile ?? 'validator warning',
-          status: toUpperStatus(item.status, 'WARN'),
-        }))
+        name: item.name,
+        detail: item.reportFile ?? 'validator warning',
+        status: toUpperStatus(item.status, 'WARN'),
+      }))
       : [],
     skippedAnalyzers: Array.isArray(warningSource.skippedAnalyzers)
       ? warningSource.skippedAnalyzers.map(item => ({
-          name: item.name,
-          detail: item.reason ?? (item.cached ? 'cached output reused' : 'skipped'),
-          status: 'SKIPPED',
-        }))
+        name: item.name,
+        detail: item.reason ?? (item.cached ? 'cached output reused' : 'skipped'),
+        status: 'SKIPPED',
+      }))
       : [],
     sizeWarnings: Array.isArray(warningSource.sizeWarnings)
       ? warningSource.sizeWarnings.map(item => ({
-          name: item.label,
-          detail: `${item.size} / ${item.warnAt} bytes`,
-          status: 'WARN',
-        }))
+        name: item.label,
+        detail: `${item.size} / ${item.warnAt} bytes`,
+        status: 'WARN',
+      }))
       : [],
     staleReports: Array.isArray(warningSource.staleReports)
       ? warningSource.staleReports.map(item => ({
-          name: item.name,
-          detail: item.reportFile ?? 'stale report reused',
-          status: 'WARN',
-        }))
+        name: item.name,
+        detail: item.reportFile ?? 'stale report reused',
+        status: 'WARN',
+      }))
       : [],
   };
 
@@ -285,9 +347,13 @@ export function buildDashboardData(root, sourceCommand = 'npm run system:full') 
         data: {
           ...systemReport,
           systemHealth,
+          systemStatus,
           integrityStrip,
           lastRunSummary,
           lastRunDetails,
+          envStatus,
+          snapshotInfo,
+          durableReports,
         },
         sourceCommand,
       }),

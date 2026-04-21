@@ -1,8 +1,7 @@
 {
   "meta": {
     "name": "graph-report",
-    "source": "npx tsx scripts/validators/validate-graph.ts",
-    "generatedAt": "2026-04-21T19:44:26.306Z",
+    "source": "npx tsx scripts/validators/validate-graph.ts --report-json",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,22 +12,25 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-21T19:44:26.306Z",
-    "passed": true,
+    "advisory": [],
+    "derivedEdgeCount": 9626,
     "errorCount": 0,
-    "warningCount": 0,
+    "issues": [],
+    "passed": true,
     "summary": {
       "invalidEdges": 0,
       "orphanNodes": 0
     },
-    "warnings": [],
-    "issues": [],
-    "advisory": [],
-    "derivedEdgeCount": 9626
+    "warningCount": 0,
+    "warnings": []
   },
   "issues": [],
   "name": "graph-report",
   "status": "PASS",
-  "generatedAt": "2026-04-21T19:44:26.306Z",
-  "sourceCommand": "npx tsx scripts/validators/validate-graph.ts"
+  "sourceCommand": "npx tsx scripts/validators/validate-graph.ts --report-json",
+  "_generated": {
+    "source": "npm run system:full",
+    "type": "generated-artifact",
+    "hash": "bf052eb480e75afc912825d0c61807cc9387ba2284f851290ce9b44b11403d70"
+  }
 }

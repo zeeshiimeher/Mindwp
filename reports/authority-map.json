@@ -2,7 +2,6 @@
   "meta": {
     "name": "authority-map",
     "source": "node --import tsx/esm scripts/generators/generate-authority-map.ts",
-    "generatedAt": "2026-04-21T08:57:42.622Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,13 +12,314 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-21T08:57:42.622Z",
+    "edges": [
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "service:service-pages-vs-one-generic-services-page",
+        "type": "relatesTo"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "service:system-migration-platform-consolidation",
+        "type": "relatesTo"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "service:website-redesign-system-rebuild",
+        "type": "relatesTo"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "service:wordpress-development",
+        "type": "relatesTo"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "service:ecommerce",
+        "type": "relatesTo"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "service:divi5",
+        "type": "relatesTo"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "service:bricks-builder",
+        "type": "relatesTo"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "service:elementor",
+        "type": "relatesTo"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "resource:conversion-architecture-for-service-websites",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "resource:designing-websites-that-support-crm-systems",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "resource:how-smart-website-systems-work",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "resource:local-service-page-architecture",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-category:automotive-services",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:auto-repair",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:body-shops",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:car-detailing",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:mobile-mechanics",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-category:home-services",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:roofing-companies",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:hvac-companies",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:plumbing-companies",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:electrical-companies",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:landscaping-companies",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-category:beauty-personal-care",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:aesthetic-cosmetic-clinics",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:hair-salons",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:nail-salons",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:small-med-spas",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:lash-lift-and-extensions",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-category:legal-professional-services",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:accounting-firms",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:consultants",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:small-law-firms",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-category:local-appointment-businesses",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:dental-clinics",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:driving-schools",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:repair-shops",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:small-private-clinics",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:tattoo-studios",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-category:real-estate-property-services",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:home-inspectors",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:mortgage-brokers",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:property-managers",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "industry-detail:realtors",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "feature:calendars",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "resource:auto-repair-lead-handling-example",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "resource:booking-systems-inside-website-infrastructure",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "resource:conversion-tracking-for-service-businesses",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "resource:service-page-architecture-that-converts",
+        "type": "supports"
+      },
+      {
+        "source": "service:smart-website-systems",
+        "sourceType": "derived",
+        "target": "resource:what-is-a-systems-first-website",
+        "type": "supports"
+      }
+    ],
     "nodes": [
       {
         "id": "service:smart-website-systems",
-        "slug": "smart-website-systems",
-        "type": "service",
+        "industries": [],
         "path": "/services/smart-website-systems",
+        "slug": "smart-website-systems",
         "systems": [
           "smart-website-systems"
         ],
@@ -30,13 +330,13 @@
           "crm-enabled-websites",
           "service-pages"
         ],
-        "industries": []
+        "type": "service"
       },
       {
         "id": "service:conversion-layer",
-        "slug": "conversion-layer",
-        "type": "service",
+        "industries": [],
         "path": "/services/conversion-layer",
+        "slug": "conversion-layer",
         "systems": [
           "revenue-growth"
         ],
@@ -45,13 +345,13 @@
           "lead-capture",
           "service-page-architecture"
         ],
-        "industries": []
+        "type": "service"
       },
       {
         "id": "service:conversion-funnel-system-vs-landing-page-development",
-        "slug": "conversion-funnel-system-vs-landing-page-development",
-        "type": "service",
+        "industries": [],
         "path": "/services/conversion-funnel-system-vs-landing-page-development",
+        "slug": "conversion-funnel-system-vs-landing-page-development",
         "systems": [
           "revenue-growth"
         ],
@@ -60,26 +360,26 @@
           "lead-capture",
           "service-page-architecture"
         ],
-        "industries": []
+        "type": "service"
       },
       {
         "id": "service:system-migration-platform-consolidation",
-        "slug": "system-migration-platform-consolidation",
-        "type": "service",
+        "industries": [],
         "path": "/services/system-migration-platform-consolidation",
+        "slug": "system-migration-platform-consolidation",
         "systems": [
           "smart-website-systems"
         ],
         "topics": [
           "website-infrastructure"
         ],
-        "industries": []
+        "type": "service"
       },
       {
         "id": "service:website-redesign-system-rebuild",
-        "slug": "website-redesign-system-rebuild",
-        "type": "service",
+        "industries": [],
         "path": "/services/website-redesign-system-rebuild",
+        "slug": "website-redesign-system-rebuild",
         "systems": [
           "smart-website-systems"
         ],
@@ -87,13 +387,13 @@
           "website-infrastructure",
           "service-page-architecture"
         ],
-        "industries": []
+        "type": "service"
       },
       {
         "id": "service:lead-reactivation-system",
-        "slug": "lead-reactivation-system",
-        "type": "service",
+        "industries": [],
         "path": "/services/lead-reactivation-system",
+        "slug": "lead-reactivation-system",
         "systems": [
           "revenue-growth"
         ],
@@ -101,13 +401,13 @@
           "client-reactivation",
           "follow-up"
         ],
-        "industries": []
+        "type": "service"
       },
       {
         "id": "service:missed-call-recovery-system",
-        "slug": "missed-call-recovery-system",
-        "type": "service",
+        "industries": [],
         "path": "/services/missed-call-recovery-system",
+        "slug": "missed-call-recovery-system",
         "systems": [
           "ai-lead-handling"
         ],
@@ -115,13 +415,13 @@
           "missed-calls",
           "lead-response-time"
         ],
-        "industries": []
+        "type": "service"
       },
       {
         "id": "service:unified-communication-system",
-        "slug": "unified-communication-system",
-        "type": "service",
+        "industries": [],
         "path": "/services/unified-communication-system",
+        "slug": "unified-communication-system",
         "systems": [
           "ai-lead-handling"
         ],
@@ -129,13 +429,13 @@
           "lead-routing",
           "lead-management"
         ],
-        "industries": []
+        "type": "service"
       },
       {
         "id": "service:local-seo-authority",
-        "slug": "local-seo-authority",
-        "type": "service",
+        "industries": [],
         "path": "/services/local-seo-authority",
+        "slug": "local-seo-authority",
         "systems": [
           "local-seo-authority"
         ],
@@ -147,13 +447,13 @@
           "authority-signals",
           "local-service-pages"
         ],
-        "industries": []
+        "type": "service"
       },
       {
         "id": "service:reputation-review-systems",
-        "slug": "reputation-review-systems",
-        "type": "service",
+        "industries": [],
         "path": "/services/reputation-review-systems",
+        "slug": "reputation-review-systems",
         "systems": [
           "reputation-review"
         ],
@@ -166,13 +466,13 @@
           "feedback-loops",
           "negative-review-response"
         ],
-        "industries": []
+        "type": "service"
       },
       {
         "id": "service:crm-infrastructure-implementation",
-        "slug": "crm-infrastructure-implementation",
-        "type": "service",
+        "industries": [],
         "path": "/services/crm-infrastructure-implementation",
+        "slug": "crm-infrastructure-implementation",
         "systems": [
           "crm-automation"
         ],
@@ -182,13 +482,13 @@
           "lead-qualification",
           "pipeline-architecture"
         ],
-        "industries": []
+        "type": "service"
       },
       {
         "id": "service:website-crm-integration-vs-manual-lead-handling",
-        "slug": "website-crm-integration-vs-manual-lead-handling",
-        "type": "service",
+        "industries": [],
         "path": "/services/website-crm-integration-vs-manual-lead-handling",
+        "slug": "website-crm-integration-vs-manual-lead-handling",
         "systems": [
           "crm-automation"
         ],
@@ -198,13 +498,13 @@
           "lead-qualification",
           "pipeline-architecture"
         ],
-        "industries": []
+        "type": "service"
       },
       {
         "id": "service:ai-lead-handling",
-        "slug": "ai-lead-handling",
-        "type": "service",
+        "industries": [],
         "path": "/services/ai-lead-handling",
+        "slug": "ai-lead-handling",
         "systems": [
           "ai-lead-handling"
         ],
@@ -213,13 +513,13 @@
           "missed-calls",
           "lead-capture"
         ],
-        "industries": []
+        "type": "service"
       },
       {
         "id": "service:service-pages-vs-one-generic-services-page",
-        "slug": "service-pages-vs-one-generic-services-page",
-        "type": "service",
+        "industries": [],
         "path": "/services/service-pages-vs-one-generic-services-page",
+        "slug": "service-pages-vs-one-generic-services-page",
         "systems": [
           "smart-website-systems"
         ],
@@ -230,13 +530,13 @@
           "crm-enabled-websites",
           "service-pages"
         ],
-        "industries": []
+        "type": "service"
       },
       {
         "id": "service:wordpress-development",
-        "slug": "wordpress-development",
-        "type": "service",
+        "industries": [],
         "path": "/services/wordpress-development",
+        "slug": "wordpress-development",
         "systems": [
           "smart-website-systems"
         ],
@@ -244,65 +544,70 @@
           "website-infrastructure",
           "systems-first-websites"
         ],
-        "industries": []
+        "type": "service"
       },
       {
         "id": "service:ecommerce",
-        "slug": "ecommerce",
-        "type": "service",
+        "industries": [],
         "path": "/services/ecommerce",
+        "slug": "ecommerce",
         "systems": [
           "smart-website-systems"
         ],
         "topics": [
           "website-infrastructure"
         ],
-        "industries": []
+        "type": "service"
       },
       {
         "id": "service:divi5",
-        "slug": "divi5",
-        "type": "service",
+        "industries": [],
         "path": "/services/divi5",
+        "slug": "divi5",
         "systems": [
           "smart-website-systems"
         ],
         "topics": [
           "website-infrastructure"
         ],
-        "industries": []
+        "type": "service"
       },
       {
         "id": "service:bricks-builder",
-        "slug": "bricks-builder",
-        "type": "service",
+        "industries": [],
         "path": "/services/bricks-builder",
+        "slug": "bricks-builder",
         "systems": [
           "smart-website-systems"
         ],
         "topics": [
           "website-infrastructure"
         ],
-        "industries": []
+        "type": "service"
       },
       {
         "id": "service:elementor",
-        "slug": "elementor",
-        "type": "service",
+        "industries": [],
         "path": "/services/elementor",
+        "slug": "elementor",
         "systems": [
           "smart-website-systems"
         ],
         "topics": [
           "website-infrastructure"
         ],
-        "industries": []
+        "type": "service"
       },
       {
         "id": "industry-category:automotive-services",
-        "slug": "automotive-services",
-        "type": "industry-category",
+        "industries": [
+          "auto-repair",
+          "body-shop",
+          "car-detailing",
+          "mobile-mechanic"
+        ],
         "path": "/industries/automotive-services",
+        "slug": "automotive-services",
         "systems": [
           "smart-website-systems",
           "ai-lead-handling",
@@ -315,18 +620,15 @@
           "review-generation",
           "booking-systems"
         ],
-        "industries": [
-          "auto-repair",
-          "body-shop",
-          "car-detailing",
-          "mobile-mechanic"
-        ]
+        "type": "industry-category"
       },
       {
         "id": "industry-detail:auto-repair",
-        "slug": "auto-repair",
-        "type": "industry-detail",
+        "industries": [
+          "auto-repair"
+        ],
         "path": "/industries/automotive-services/auto-repair",
+        "slug": "auto-repair",
         "systems": [
           "smart-website-systems",
           "ai-lead-handling",
@@ -338,15 +640,15 @@
           "missed-calls",
           "review-generation"
         ],
-        "industries": [
-          "auto-repair"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-detail:body-shops",
-        "slug": "body-shops",
-        "type": "industry-detail",
+        "industries": [
+          "body-shop"
+        ],
         "path": "/industries/automotive-services/body-shops",
+        "slug": "body-shops",
         "systems": [
           "smart-website-systems",
           "ai-lead-handling",
@@ -358,15 +660,15 @@
           "follow-up",
           "review-generation"
         ],
-        "industries": [
-          "body-shop"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-detail:car-detailing",
-        "slug": "car-detailing",
-        "type": "industry-detail",
+        "industries": [
+          "car-detailing"
+        ],
         "path": "/industries/automotive-services/car-detailing",
+        "slug": "car-detailing",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -378,15 +680,15 @@
           "client-reactivation",
           "review-generation"
         ],
-        "industries": [
-          "car-detailing"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-detail:mobile-mechanics",
-        "slug": "mobile-mechanics",
-        "type": "industry-detail",
+        "industries": [
+          "mobile-mechanic"
+        ],
         "path": "/industries/automotive-services/mobile-mechanics",
+        "slug": "mobile-mechanics",
         "systems": [
           "smart-website-systems",
           "ai-lead-handling",
@@ -398,15 +700,19 @@
           "lead-response-time",
           "local-visibility"
         ],
-        "industries": [
-          "mobile-mechanic"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-category:home-services",
-        "slug": "home-services",
-        "type": "industry-category",
+        "industries": [
+          "roofing",
+          "hvac",
+          "plumbing",
+          "electrical",
+          "landscaping"
+        ],
         "path": "/industries/home-services",
+        "slug": "home-services",
         "systems": [
           "smart-website-systems",
           "ai-lead-handling",
@@ -419,19 +725,15 @@
           "review-generation",
           "missed-calls"
         ],
-        "industries": [
-          "roofing",
-          "hvac",
-          "plumbing",
-          "electrical",
-          "landscaping"
-        ]
+        "type": "industry-category"
       },
       {
         "id": "industry-detail:roofing-companies",
-        "slug": "roofing-companies",
-        "type": "industry-detail",
+        "industries": [
+          "roofing"
+        ],
         "path": "/industries/home-services/roofing-companies",
+        "slug": "roofing-companies",
         "systems": [
           "smart-website-systems",
           "ai-lead-handling",
@@ -443,15 +745,15 @@
           "follow-up",
           "review-generation"
         ],
-        "industries": [
-          "roofing"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-detail:hvac-companies",
-        "slug": "hvac-companies",
-        "type": "industry-detail",
+        "industries": [
+          "hvac"
+        ],
         "path": "/industries/home-services/hvac-companies",
+        "slug": "hvac-companies",
         "systems": [
           "smart-website-systems",
           "ai-lead-handling",
@@ -463,15 +765,15 @@
           "missed-calls",
           "review-generation"
         ],
-        "industries": [
-          "hvac"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-detail:plumbing-companies",
-        "slug": "plumbing-companies",
-        "type": "industry-detail",
+        "industries": [
+          "plumbing"
+        ],
         "path": "/industries/home-services/plumbing-companies",
+        "slug": "plumbing-companies",
         "systems": [
           "smart-website-systems",
           "ai-lead-handling",
@@ -483,15 +785,15 @@
           "service-reminders",
           "feedback-loops"
         ],
-        "industries": [
-          "plumbing"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-detail:electrical-companies",
-        "slug": "electrical-companies",
-        "type": "industry-detail",
+        "industries": [
+          "electrical"
+        ],
         "path": "/industries/home-services/electrical-companies",
+        "slug": "electrical-companies",
         "systems": [
           "smart-website-systems",
           "ai-lead-handling",
@@ -503,15 +805,15 @@
           "follow-up",
           "review-generation"
         ],
-        "industries": [
-          "electrical"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-detail:landscaping-companies",
-        "slug": "landscaping-companies",
-        "type": "industry-detail",
+        "industries": [
+          "landscaping"
+        ],
         "path": "/industries/home-services/landscaping-companies",
+        "slug": "landscaping-companies",
         "systems": [
           "smart-website-systems",
           "ai-lead-handling",
@@ -523,15 +825,19 @@
           "follow-up",
           "review-generation"
         ],
-        "industries": [
-          "landscaping"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-category:beauty-personal-care",
-        "slug": "beauty-personal-care",
-        "type": "industry-category",
+        "industries": [
+          "aesthetic-clinic",
+          "hair-salon",
+          "nail-salon",
+          "med-spa",
+          "lash-extensions"
+        ],
         "path": "/industries/beauty-personal-care",
+        "slug": "beauty-personal-care",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -544,19 +850,15 @@
           "booking-automation",
           "client-reactivation"
         ],
-        "industries": [
-          "aesthetic-clinic",
-          "hair-salon",
-          "nail-salon",
-          "med-spa",
-          "lash-extensions"
-        ]
+        "type": "industry-category"
       },
       {
         "id": "industry-detail:aesthetic-cosmetic-clinics",
-        "slug": "aesthetic-cosmetic-clinics",
-        "type": "industry-detail",
+        "industries": [
+          "aesthetic-clinic"
+        ],
         "path": "/industries/beauty-personal-care/aesthetic-cosmetic-clinics",
+        "slug": "aesthetic-cosmetic-clinics",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -568,15 +870,15 @@
           "lead-qualification",
           "review-generation"
         ],
-        "industries": [
-          "aesthetic-clinic"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-detail:hair-salons",
-        "slug": "hair-salons",
-        "type": "industry-detail",
+        "industries": [
+          "hair-salon"
+        ],
         "path": "/industries/beauty-personal-care/hair-salons",
+        "slug": "hair-salons",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -588,15 +890,15 @@
           "no-show-reduction",
           "review-generation"
         ],
-        "industries": [
-          "hair-salon"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-detail:nail-salons",
-        "slug": "nail-salons",
-        "type": "industry-detail",
+        "industries": [
+          "nail-salon"
+        ],
         "path": "/industries/beauty-personal-care/nail-salons",
+        "slug": "nail-salons",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -608,15 +910,15 @@
           "no-show-reduction",
           "review-generation"
         ],
-        "industries": [
-          "nail-salon"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-detail:small-med-spas",
-        "slug": "small-med-spas",
-        "type": "industry-detail",
+        "industries": [
+          "med-spa"
+        ],
         "path": "/industries/beauty-personal-care/small-med-spas",
+        "slug": "small-med-spas",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -628,15 +930,15 @@
           "client-reactivation",
           "review-generation"
         ],
-        "industries": [
-          "med-spa"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-detail:lash-lift-and-extensions",
-        "slug": "lash-lift-and-extensions",
-        "type": "industry-detail",
+        "industries": [
+          "lash-extensions"
+        ],
         "path": "/industries/beauty-personal-care/lash-lift-and-extensions",
+        "slug": "lash-lift-and-extensions",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -648,15 +950,17 @@
           "no-show-reduction",
           "review-generation"
         ],
-        "industries": [
-          "lash-extensions"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-category:legal-professional-services",
-        "slug": "legal-professional-services",
-        "type": "industry-category",
+        "industries": [
+          "accounting",
+          "consulting",
+          "law-firm"
+        ],
         "path": "/industries/legal-professional-services",
+        "slug": "legal-professional-services",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -669,17 +973,15 @@
           "reputation-monitoring",
           "pipeline-visibility"
         ],
-        "industries": [
-          "accounting",
-          "consulting",
-          "law-firm"
-        ]
+        "type": "industry-category"
       },
       {
         "id": "industry-detail:accounting-firms",
-        "slug": "accounting-firms",
-        "type": "industry-detail",
+        "industries": [
+          "accounting"
+        ],
         "path": "/industries/legal-professional-services/accounting-firms",
+        "slug": "accounting-firms",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -691,15 +993,15 @@
           "crm-integration",
           "reputation-monitoring"
         ],
-        "industries": [
-          "accounting"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-detail:consultants",
-        "slug": "consultants",
-        "type": "industry-detail",
+        "industries": [
+          "consulting"
+        ],
         "path": "/industries/legal-professional-services/consultants",
+        "slug": "consultants",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -711,15 +1013,15 @@
           "crm-integration",
           "pipeline-visibility"
         ],
-        "industries": [
-          "consulting"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-detail:small-law-firms",
-        "slug": "small-law-firms",
-        "type": "industry-detail",
+        "industries": [
+          "law-firm"
+        ],
         "path": "/industries/legal-professional-services/small-law-firms",
+        "slug": "small-law-firms",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -731,15 +1033,19 @@
           "lead-response-time",
           "reputation-monitoring"
         ],
-        "industries": [
-          "law-firm"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-category:local-appointment-businesses",
-        "slug": "local-appointment-businesses",
-        "type": "industry-category",
+        "industries": [
+          "dental-clinic",
+          "driving-school",
+          "repair-shop",
+          "private-clinic",
+          "tattoo-studio"
+        ],
         "path": "/industries/local-appointment-businesses",
+        "slug": "local-appointment-businesses",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -752,19 +1058,15 @@
           "review-generation",
           "lead-response-time"
         ],
-        "industries": [
-          "dental-clinic",
-          "driving-school",
-          "repair-shop",
-          "private-clinic",
-          "tattoo-studio"
-        ]
+        "type": "industry-category"
       },
       {
         "id": "industry-detail:dental-clinics",
-        "slug": "dental-clinics",
-        "type": "industry-detail",
+        "industries": [
+          "dental-clinic"
+        ],
         "path": "/industries/local-appointment-businesses/dental-clinics",
+        "slug": "dental-clinics",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -776,15 +1078,15 @@
           "follow-up",
           "review-generation"
         ],
-        "industries": [
-          "dental-clinic"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-detail:driving-schools",
-        "slug": "driving-schools",
-        "type": "industry-detail",
+        "industries": [
+          "driving-school"
+        ],
         "path": "/industries/local-appointment-businesses/driving-schools",
+        "slug": "driving-schools",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -796,15 +1098,15 @@
           "follow-up",
           "review-generation"
         ],
-        "industries": [
-          "driving-school"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-detail:repair-shops",
-        "slug": "repair-shops",
-        "type": "industry-detail",
+        "industries": [
+          "repair-shop"
+        ],
         "path": "/industries/local-appointment-businesses/repair-shops",
+        "slug": "repair-shops",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -816,15 +1118,15 @@
           "follow-up",
           "review-generation"
         ],
-        "industries": [
-          "repair-shop"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-detail:small-private-clinics",
-        "slug": "small-private-clinics",
-        "type": "industry-detail",
+        "industries": [
+          "private-clinic"
+        ],
         "path": "/industries/local-appointment-businesses/small-private-clinics",
+        "slug": "small-private-clinics",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -836,15 +1138,15 @@
           "follow-up",
           "review-generation"
         ],
-        "industries": [
-          "private-clinic"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-detail:tattoo-studios",
-        "slug": "tattoo-studios",
-        "type": "industry-detail",
+        "industries": [
+          "tattoo-studio"
+        ],
         "path": "/industries/local-appointment-businesses/tattoo-studios",
+        "slug": "tattoo-studios",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -856,15 +1158,18 @@
           "follow-up",
           "review-generation"
         ],
-        "industries": [
-          "tattoo-studio"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-category:real-estate-property-services",
-        "slug": "real-estate-property-services",
-        "type": "industry-category",
+        "industries": [
+          "home-inspection",
+          "mortgage-broker",
+          "property-management",
+          "realtor"
+        ],
         "path": "/industries/real-estate-property-services",
+        "slug": "real-estate-property-services",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -877,18 +1182,15 @@
           "review-generation",
           "pipeline-visibility"
         ],
-        "industries": [
-          "home-inspection",
-          "mortgage-broker",
-          "property-management",
-          "realtor"
-        ]
+        "type": "industry-category"
       },
       {
         "id": "industry-detail:home-inspectors",
-        "slug": "home-inspectors",
-        "type": "industry-detail",
+        "industries": [
+          "home-inspection"
+        ],
         "path": "/industries/real-estate-property-services/home-inspectors",
+        "slug": "home-inspectors",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -900,15 +1202,15 @@
           "follow-up",
           "review-generation"
         ],
-        "industries": [
-          "home-inspection"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-detail:mortgage-brokers",
-        "slug": "mortgage-brokers",
-        "type": "industry-detail",
+        "industries": [
+          "mortgage-broker"
+        ],
         "path": "/industries/real-estate-property-services/mortgage-brokers",
+        "slug": "mortgage-brokers",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -920,15 +1222,15 @@
           "crm-pipeline",
           "pipeline-visibility"
         ],
-        "industries": [
-          "mortgage-broker"
-        ]
+        "type": "industry-detail"
       },
       {
         "id": "industry-detail:property-managers",
-        "slug": "property-managers",
-        "type": "industry-detail",
+        "industries": [
+          "property-management"
+        ],
         "path": "/industries/real-estate-property-services/property-managers",
+        "slug": "property-managers",
         "systems": [
           "smart-website-systems",
           "crm-automation",
@@ -940,1938 +1242,14 @@
           "crm-pipeline",
           "pipeline-visibility"
         ],
-        "industries": [
-          "property-management"
-        ]
-      }
-    ],
-    "edges": [
-      {
-        "source": "service:smart-website-systems",
-        "target": "service:service-pages-vs-one-generic-services-page",
-        "type": "relatesTo",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "service:system-migration-platform-consolidation",
-        "type": "relatesTo",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "service:website-redesign-system-rebuild",
-        "type": "relatesTo",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "service:wordpress-development",
-        "type": "relatesTo",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "service:ecommerce",
-        "type": "relatesTo",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "service:divi5",
-        "type": "relatesTo",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "service:bricks-builder",
-        "type": "relatesTo",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "service:elementor",
-        "type": "relatesTo",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "resource:conversion-architecture-for-service-websites",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "resource:designing-websites-that-support-crm-systems",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "resource:how-smart-website-systems-work",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "resource:local-service-page-architecture",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-category:automotive-services",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:auto-repair",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:body-shops",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:car-detailing",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:mobile-mechanics",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-category:home-services",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:roofing-companies",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:hvac-companies",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:plumbing-companies",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:electrical-companies",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:landscaping-companies",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-category:beauty-personal-care",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:aesthetic-cosmetic-clinics",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:hair-salons",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:nail-salons",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:small-med-spas",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:lash-lift-and-extensions",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-category:legal-professional-services",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:accounting-firms",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:consultants",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:small-law-firms",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-category:local-appointment-businesses",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:dental-clinics",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:driving-schools",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:repair-shops",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:small-private-clinics",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:tattoo-studios",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-category:real-estate-property-services",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:home-inspectors",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:mortgage-brokers",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:property-managers",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "industry-detail:realtors",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "feature:calendars",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "resource:auto-repair-lead-handling-example",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "resource:booking-systems-inside-website-infrastructure",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "resource:conversion-tracking-for-service-businesses",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "resource:service-page-architecture-that-converts",
-        "type": "supports",
-        "sourceType": "derived"
-      },
-      {
-        "source": "service:smart-website-systems",
-        "target": "resource:what-is-a-systems-first-website",
-        "type": "supports",
-        "sourceType": "derived"
-      }
-    ],
-    "topicValidation": [
-      {
-        "topic": "authority-signals",
-        "classification": "conceptual",
-        "validatingCaseStudyCount": 0,
-        "validatingResourceCount": 1,
-        "validatesCount": 1,
-        "requiredValidation": [],
-        "missingValidation": [],
-        "validationStatus": "not-required",
-        "serviceTargets": [
-          {
-            "id": "service:local-seo-authority",
-            "slug": "local-seo-authority",
-            "title": "Local SEO for Service Businesses | Show Up When Customers Search | MindWP",
-            "path": "/services/local-seo-authority",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:local-authority-system-impact",
-          "slug": "local-authority-system-impact",
-          "title": "Local Authority System Impact",
-          "path": "/case-studies/local-authority-system-impact",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:google-business-profile-system-architecture",
-          "slug": "google-business-profile-system-architecture",
-          "title": "Google Business Profile System Architecture Guide",
-          "path": "/resources/google-business-profile-system-architecture",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "lead-management",
-        "classification": "core",
-        "validatingCaseStudyCount": 4,
-        "validatingResourceCount": 6,
-        "validatesCount": 10,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:unified-communication-system",
-            "slug": "unified-communication-system",
-            "title": "Unified Communication System for Service Businesses | MindWP",
-            "path": "/services/unified-communication-system",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:roofing-estimate-follow-up-workflow",
-          "slug": "roofing-estimate-follow-up-workflow",
-          "title": "Roofing Estimate Follow-Up Workflow",
-          "path": "/resources/roofing-estimate-follow-up-workflow",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "missed-calls",
-        "classification": "core",
-        "validatingCaseStudyCount": 4,
-        "validatingResourceCount": 5,
-        "validatesCount": 9,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:missed-call-recovery-system",
-            "slug": "missed-call-recovery-system",
-            "title": "Missed Call Recovery for Service Businesses | MindWP",
-            "path": "/services/missed-call-recovery-system",
-            "type": "service"
-          },
-          {
-            "id": "service:ai-lead-handling",
-            "slug": "ai-lead-handling",
-            "title": "AI Lead Handling for Service Businesses | MindWP",
-            "path": "/services/ai-lead-handling",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:auto-repair-lead-handling-example",
-          "slug": "auto-repair-lead-handling-example",
-          "title": "Auto Repair Lead Handling Example",
-          "path": "/resources/auto-repair-lead-handling-example",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "lead-response-time",
-        "classification": "core",
-        "validatingCaseStudyCount": 4,
-        "validatingResourceCount": 3,
-        "validatesCount": 7,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:missed-call-recovery-system",
-            "slug": "missed-call-recovery-system",
-            "title": "Missed Call Recovery for Service Businesses | MindWP",
-            "path": "/services/missed-call-recovery-system",
-            "type": "service"
-          },
-          {
-            "id": "service:ai-lead-handling",
-            "slug": "ai-lead-handling",
-            "title": "AI Lead Handling for Service Businesses | MindWP",
-            "path": "/services/ai-lead-handling",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:roofing-estimate-follow-up-workflow",
-          "slug": "roofing-estimate-follow-up-workflow",
-          "title": "Roofing Estimate Follow-Up Workflow",
-          "path": "/resources/roofing-estimate-follow-up-workflow",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "review-generation",
-        "classification": "core",
-        "validatingCaseStudyCount": 4,
-        "validatingResourceCount": 5,
-        "validatesCount": 9,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:reputation-review-systems",
-            "slug": "reputation-review-systems",
-            "title": "Reputation & Review Management for Service Businesses | MindWP",
-            "path": "/services/reputation-review-systems",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:crm-pipeline-visibility-transformation",
-          "slug": "crm-pipeline-visibility-transformation",
-          "title": "CRM Pipeline Visibility Transformation",
-          "path": "/case-studies/crm-pipeline-visibility-transformation",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:auto-repair-lead-handling-example",
-          "slug": "auto-repair-lead-handling-example",
-          "title": "Auto Repair Lead Handling Example",
-          "path": "/resources/auto-repair-lead-handling-example",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "booking-automation",
-        "classification": "core",
-        "validatingCaseStudyCount": 7,
-        "validatingResourceCount": 1,
-        "validatesCount": 8,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [],
-        "suggestedCaseStudy": {
-          "id": "case-study:smart-website-infrastructure-implementation",
-          "slug": "smart-website-infrastructure-implementation",
-          "title": "Smart Website Infrastructure Implementation",
-          "path": "/case-studies/smart-website-infrastructure-implementation",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:tracking-salon-client-lifetime-value",
-          "slug": "tracking-salon-client-lifetime-value",
-          "title": "Tracking Salon Client Lifetime Value",
-          "path": "/resources/tracking-salon-client-lifetime-value",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "conversion-optimization",
-        "classification": "core",
-        "validatingCaseStudyCount": 2,
-        "validatingResourceCount": 1,
-        "validatesCount": 3,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:smart-website-systems",
-            "slug": "smart-website-systems",
-            "title": "Smart Website Systems for Service Businesses | MindWP",
-            "path": "/services/smart-website-systems",
-            "type": "service"
-          },
-          {
-            "id": "service:conversion-layer",
-            "slug": "conversion-layer",
-            "title": "Conversion Layer for Service Businesses | MindWP",
-            "path": "/services/conversion-layer",
-            "type": "service"
-          },
-          {
-            "id": "service:conversion-funnel-system-vs-landing-page-development",
-            "slug": "conversion-funnel-system-vs-landing-page-development",
-            "title": "Conversion Funnel System vs Landing Page Development | MindWP",
-            "path": "/services/conversion-funnel-system-vs-landing-page-development",
-            "type": "service"
-          },
-          {
-            "id": "service:service-pages-vs-one-generic-services-page",
-            "slug": "service-pages-vs-one-generic-services-page",
-            "title": "Service Pages vs One Generic Services Page | MindWP",
-            "path": "/services/service-pages-vs-one-generic-services-page",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:crm-pipeline-visibility-transformation",
-          "slug": "crm-pipeline-visibility-transformation",
-          "title": "CRM Pipeline Visibility Transformation",
-          "path": "/case-studies/crm-pipeline-visibility-transformation",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:local-service-page-architecture",
-          "slug": "local-service-page-architecture",
-          "title": "Local Service Page Architecture",
-          "path": "/resources/local-service-page-architecture",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "crm-visibility",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [],
-        "suggestedCaseStudy": {
-          "id": "case-study:hvac-maintenance-plan-reactivation",
-          "slug": "hvac-maintenance-plan-reactivation",
-          "title": "HVAC Maintenance Plan Reactivation",
-          "path": "/case-studies/hvac-maintenance-plan-reactivation",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:hvac-crm-pipeline-structure",
-          "slug": "hvac-crm-pipeline-structure",
-          "title": "HVAC CRM Pipeline Structure",
-          "path": "/resources/hvac-crm-pipeline-structure",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "follow-up",
-        "classification": "core",
-        "validatingCaseStudyCount": 4,
-        "validatingResourceCount": 2,
-        "validatesCount": 6,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:lead-reactivation-system",
-            "slug": "lead-reactivation-system",
-            "title": "Lead Reactivation System for Service Businesses | MindWP",
-            "path": "/services/lead-reactivation-system",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:crm-pipeline-visibility-transformation",
-          "slug": "crm-pipeline-visibility-transformation",
-          "title": "CRM Pipeline Visibility Transformation",
-          "path": "/case-studies/crm-pipeline-visibility-transformation",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:hvac-emergency-call-handling-system",
-          "slug": "hvac-emergency-call-handling-system",
-          "title": "HVAC Emergency Call Handling System",
-          "path": "/resources/hvac-emergency-call-handling-system",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "lead-capture",
-        "classification": "core",
-        "validatingCaseStudyCount": 4,
-        "validatingResourceCount": 1,
-        "validatesCount": 5,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:smart-website-systems",
-            "slug": "smart-website-systems",
-            "title": "Smart Website Systems for Service Businesses | MindWP",
-            "path": "/services/smart-website-systems",
-            "type": "service"
-          },
-          {
-            "id": "service:conversion-layer",
-            "slug": "conversion-layer",
-            "title": "Conversion Layer for Service Businesses | MindWP",
-            "path": "/services/conversion-layer",
-            "type": "service"
-          },
-          {
-            "id": "service:conversion-funnel-system-vs-landing-page-development",
-            "slug": "conversion-funnel-system-vs-landing-page-development",
-            "title": "Conversion Funnel System vs Landing Page Development | MindWP",
-            "path": "/services/conversion-funnel-system-vs-landing-page-development",
-            "type": "service"
-          },
-          {
-            "id": "service:ai-lead-handling",
-            "slug": "ai-lead-handling",
-            "title": "AI Lead Handling for Service Businesses | MindWP",
-            "path": "/services/ai-lead-handling",
-            "type": "service"
-          },
-          {
-            "id": "service:service-pages-vs-one-generic-services-page",
-            "slug": "service-pages-vs-one-generic-services-page",
-            "title": "Service Pages vs One Generic Services Page | MindWP",
-            "path": "/services/service-pages-vs-one-generic-services-page",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:smart-website-infrastructure-implementation",
-          "slug": "smart-website-infrastructure-implementation",
-          "title": "Smart Website Infrastructure Implementation",
-          "path": "/case-studies/smart-website-infrastructure-implementation",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:auto-repair-lead-handling-example",
-          "slug": "auto-repair-lead-handling-example",
-          "title": "Auto Repair Lead Handling Example",
-          "path": "/resources/auto-repair-lead-handling-example",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "lead-routing",
-        "classification": "core",
-        "validatingCaseStudyCount": 2,
-        "validatingResourceCount": 1,
-        "validatesCount": 3,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:unified-communication-system",
-            "slug": "unified-communication-system",
-            "title": "Unified Communication System for Service Businesses | MindWP",
-            "path": "/services/unified-communication-system",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:hvac-emergency-call-handling-system",
-          "slug": "hvac-emergency-call-handling-system",
-          "title": "HVAC Emergency Call Handling System",
-          "path": "/resources/hvac-emergency-call-handling-system",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "lead-qualification",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:crm-infrastructure-implementation",
-            "slug": "crm-infrastructure-implementation",
-            "title": "CRM Setup for Service Businesses | MindWP",
-            "path": "/services/crm-infrastructure-implementation",
-            "type": "service"
-          },
-          {
-            "id": "service:website-crm-integration-vs-manual-lead-handling",
-            "slug": "website-crm-integration-vs-manual-lead-handling",
-            "title": "Website CRM Integration vs Manual Lead Handling | MindWP",
-            "path": "/services/website-crm-integration-vs-manual-lead-handling",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:roofing-estimate-follow-up-workflow",
-          "slug": "roofing-estimate-follow-up-workflow",
-          "title": "Roofing Estimate Follow-Up Workflow",
-          "path": "/resources/roofing-estimate-follow-up-workflow",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "website-infrastructure",
-        "classification": "conceptual",
-        "validatingCaseStudyCount": 4,
-        "validatingResourceCount": 1,
-        "validatesCount": 5,
-        "requiredValidation": [],
-        "missingValidation": [],
-        "validationStatus": "not-required",
-        "serviceTargets": [
-          {
-            "id": "service:smart-website-systems",
-            "slug": "smart-website-systems",
-            "title": "Smart Website Systems for Service Businesses | MindWP",
-            "path": "/services/smart-website-systems",
-            "type": "service"
-          },
-          {
-            "id": "service:system-migration-platform-consolidation",
-            "slug": "system-migration-platform-consolidation",
-            "title": "System Migration & Platform Consolidation for Service Businesses | MindWP",
-            "path": "/services/system-migration-platform-consolidation",
-            "type": "service"
-          },
-          {
-            "id": "service:website-redesign-system-rebuild",
-            "slug": "website-redesign-system-rebuild",
-            "title": "Website Redesign & Rebuild for Service Businesses | MindWP",
-            "path": "/services/website-redesign-system-rebuild",
-            "type": "service"
-          },
-          {
-            "id": "service:service-pages-vs-one-generic-services-page",
-            "slug": "service-pages-vs-one-generic-services-page",
-            "title": "Service Pages vs One Generic Services Page | MindWP",
-            "path": "/services/service-pages-vs-one-generic-services-page",
-            "type": "service"
-          },
-          {
-            "id": "service:wordpress-development",
-            "slug": "wordpress-development",
-            "title": "WordPress Development for Service Businesses | MindWP",
-            "path": "/services/wordpress-development",
-            "type": "service"
-          },
-          {
-            "id": "service:ecommerce",
-            "slug": "ecommerce",
-            "title": "WooCommerce & E-commerce Implementation | MindWP",
-            "path": "/services/ecommerce",
-            "type": "service"
-          },
-          {
-            "id": "service:divi5",
-            "slug": "divi5",
-            "title": "Divi WordPress Development | MindWP",
-            "path": "/services/divi5",
-            "type": "service"
-          },
-          {
-            "id": "service:bricks-builder",
-            "slug": "bricks-builder",
-            "title": "Bricks Builder WordPress Development | MindWP",
-            "path": "/services/bricks-builder",
-            "type": "service"
-          },
-          {
-            "id": "service:elementor",
-            "slug": "elementor",
-            "title": "Elementor WordPress Development | MindWP",
-            "path": "/services/elementor",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:appointment-reminder-no-show-reduction",
-          "slug": "appointment-reminder-no-show-reduction",
-          "title": "Dental Appointment Reminder & No-Show Reduction",
-          "path": "/case-studies/appointment-reminder-no-show-reduction",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:local-service-page-architecture",
-          "slug": "local-service-page-architecture",
-          "title": "Local Service Page Architecture",
-          "path": "/resources/local-service-page-architecture",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "systems-first-websites",
-        "classification": "conceptual",
-        "validatingCaseStudyCount": 2,
-        "validatingResourceCount": 1,
-        "validatesCount": 3,
-        "requiredValidation": [],
-        "missingValidation": [],
-        "validationStatus": "not-required",
-        "serviceTargets": [
-          {
-            "id": "service:wordpress-development",
-            "slug": "wordpress-development",
-            "title": "WordPress Development for Service Businesses | MindWP",
-            "path": "/services/wordpress-development",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:crm-pipeline-visibility-transformation",
-          "slug": "crm-pipeline-visibility-transformation",
-          "title": "CRM Pipeline Visibility Transformation",
-          "path": "/case-studies/crm-pipeline-visibility-transformation",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:local-service-page-architecture",
-          "slug": "local-service-page-architecture",
-          "title": "Local Service Page Architecture",
-          "path": "/resources/local-service-page-architecture",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "crm-integration",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:crm-infrastructure-implementation",
-            "slug": "crm-infrastructure-implementation",
-            "title": "CRM Setup for Service Businesses | MindWP",
-            "path": "/services/crm-infrastructure-implementation",
-            "type": "service"
-          },
-          {
-            "id": "service:website-crm-integration-vs-manual-lead-handling",
-            "slug": "website-crm-integration-vs-manual-lead-handling",
-            "title": "Website CRM Integration vs Manual Lead Handling | MindWP",
-            "path": "/services/website-crm-integration-vs-manual-lead-handling",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:local-service-page-architecture",
-          "slug": "local-service-page-architecture",
-          "title": "Local Service Page Architecture",
-          "path": "/resources/local-service-page-architecture",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "crm-enabled-websites",
-        "classification": "conceptual",
-        "validatingCaseStudyCount": 0,
-        "validatingResourceCount": 1,
-        "validatesCount": 1,
-        "requiredValidation": [],
-        "missingValidation": [],
-        "validationStatus": "not-required",
-        "serviceTargets": [
-          {
-            "id": "service:smart-website-systems",
-            "slug": "smart-website-systems",
-            "title": "Smart Website Systems for Service Businesses | MindWP",
-            "path": "/services/smart-website-systems",
-            "type": "service"
-          },
-          {
-            "id": "service:service-pages-vs-one-generic-services-page",
-            "slug": "service-pages-vs-one-generic-services-page",
-            "title": "Service Pages vs One Generic Services Page | MindWP",
-            "path": "/services/service-pages-vs-one-generic-services-page",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:roofing-website-rebuild-with-crm",
-          "slug": "roofing-website-rebuild-with-crm",
-          "title": "Roofing Website Rebuild With CRM",
-          "path": "/case-studies/roofing-website-rebuild-with-crm",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:conversion-architecture-for-service-websites",
-          "slug": "conversion-architecture-for-service-websites",
-          "title": "Conversion Architecture for Service Websites",
-          "path": "/resources/conversion-architecture-for-service-websites",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "service-page-architecture",
-        "classification": "conceptual",
-        "validatingCaseStudyCount": 0,
-        "validatingResourceCount": 1,
-        "validatesCount": 1,
-        "requiredValidation": [],
-        "missingValidation": [],
-        "validationStatus": "not-required",
-        "serviceTargets": [
-          {
-            "id": "service:conversion-layer",
-            "slug": "conversion-layer",
-            "title": "Conversion Layer for Service Businesses | MindWP",
-            "path": "/services/conversion-layer",
-            "type": "service"
-          },
-          {
-            "id": "service:conversion-funnel-system-vs-landing-page-development",
-            "slug": "conversion-funnel-system-vs-landing-page-development",
-            "title": "Conversion Funnel System vs Landing Page Development | MindWP",
-            "path": "/services/conversion-funnel-system-vs-landing-page-development",
-            "type": "service"
-          },
-          {
-            "id": "service:website-redesign-system-rebuild",
-            "slug": "website-redesign-system-rebuild",
-            "title": "Website Redesign & Rebuild for Service Businesses | MindWP",
-            "path": "/services/website-redesign-system-rebuild",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:smart-website-infrastructure-implementation",
-          "slug": "smart-website-infrastructure-implementation",
-          "title": "Smart Website Infrastructure Implementation",
-          "path": "/case-studies/smart-website-infrastructure-implementation",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:conversion-architecture-for-service-websites",
-          "slug": "conversion-architecture-for-service-websites",
-          "title": "Conversion Architecture for Service Websites",
-          "path": "/resources/conversion-architecture-for-service-websites",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "conversion-tracking",
-        "classification": "core",
-        "validatingCaseStudyCount": 2,
-        "validatingResourceCount": 1,
-        "validatesCount": 3,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [],
-        "suggestedCaseStudy": {
-          "id": "case-study:roofing-website-rebuild-with-crm",
-          "slug": "roofing-website-rebuild-with-crm",
-          "title": "Roofing Website Rebuild With CRM",
-          "path": "/case-studies/roofing-website-rebuild-with-crm",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:hvac-crm-pipeline-structure",
-          "slug": "hvac-crm-pipeline-structure",
-          "title": "HVAC CRM Pipeline Structure",
-          "path": "/resources/hvac-crm-pipeline-structure",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "booking-systems",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:reducing-salon-no-shows-with-automation",
-          "slug": "reducing-salon-no-shows-with-automation",
-          "title": "Reducing Salon No-Shows with Automation",
-          "path": "/resources/reducing-salon-no-shows-with-automation",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "review-automation",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 3,
-        "validatesCount": 4,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:reputation-review-systems",
-            "slug": "reputation-review-systems",
-            "title": "Reputation & Review Management for Service Businesses | MindWP",
-            "path": "/services/reputation-review-systems",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:hvac-review-generation-framework",
-          "slug": "hvac-review-generation-framework",
-          "title": "HVAC Review Generation Framework",
-          "path": "/resources/hvac-review-generation-framework",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "feedback-loops",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:reputation-review-systems",
-            "slug": "reputation-review-systems",
-            "title": "Reputation & Review Management for Service Businesses | MindWP",
-            "path": "/services/reputation-review-systems",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:auto-repair-lead-handling-example",
-          "slug": "auto-repair-lead-handling-example",
-          "title": "Auto Repair Lead Handling Example",
-          "path": "/resources/auto-repair-lead-handling-example",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "negative-review-response",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:reputation-review-systems",
-            "slug": "reputation-review-systems",
-            "title": "Reputation & Review Management for Service Businesses | MindWP",
-            "path": "/services/reputation-review-systems",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:automotive-review-generation-system",
-          "slug": "automotive-review-generation-system",
-          "title": "Automotive Review Generation System",
-          "path": "/resources/automotive-review-generation-system",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "reputation-monitoring",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:reputation-review-systems",
-            "slug": "reputation-review-systems",
-            "title": "Reputation & Review Management for Service Businesses | MindWP",
-            "path": "/services/reputation-review-systems",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:local-service-page-architecture",
-          "slug": "local-service-page-architecture",
-          "title": "Local Service Page Architecture",
-          "path": "/resources/local-service-page-architecture",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "local-seo",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:local-seo-authority",
-            "slug": "local-seo-authority",
-            "title": "Local SEO for Service Businesses | Show Up When Customers Search | MindWP",
-            "path": "/services/local-seo-authority",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:authority-signals-for-local-search",
-          "slug": "authority-signals-for-local-search",
-          "title": "Authority Signals for Local Search",
-          "path": "/resources/authority-signals-for-local-search",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "local-visibility",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 3,
-        "validatesCount": 4,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:local-seo-authority",
-            "slug": "local-seo-authority",
-            "title": "Local SEO for Service Businesses | Show Up When Customers Search | MindWP",
-            "path": "/services/local-seo-authority",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:hvac-emergency-call-handling-system",
-          "slug": "hvac-emergency-call-handling-system",
-          "title": "HVAC Emergency Call Handling System",
-          "path": "/resources/hvac-emergency-call-handling-system",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "google-business-profile",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:local-seo-authority",
-            "slug": "local-seo-authority",
-            "title": "Local SEO for Service Businesses | Show Up When Customers Search | MindWP",
-            "path": "/services/local-seo-authority",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:authority-signals-for-local-search",
-          "slug": "authority-signals-for-local-search",
-          "title": "Authority Signals for Local Search",
-          "path": "/resources/authority-signals-for-local-search",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "local-service-pages",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:local-seo-authority",
-            "slug": "local-seo-authority",
-            "title": "Local SEO for Service Businesses | Show Up When Customers Search | MindWP",
-            "path": "/services/local-seo-authority",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:auto-repair-lead-handling-example",
-          "slug": "auto-repair-lead-handling-example",
-          "title": "Auto Repair Lead Handling Example",
-          "path": "/resources/auto-repair-lead-handling-example",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "local-authority",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:local-seo-authority",
-            "slug": "local-seo-authority",
-            "title": "Local SEO for Service Businesses | Show Up When Customers Search | MindWP",
-            "path": "/services/local-seo-authority",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:review-automation-setup-guide-for-roofing-companies",
-          "slug": "review-automation-setup-guide-for-roofing-companies",
-          "title": "Review Automation Setup Guide for Roofing Companies",
-          "path": "/resources/review-automation-setup-guide-for-roofing-companies",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "revenue-visibility",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [],
-        "suggestedCaseStudy": {
-          "id": "case-study:roofing-estimate-follow-up-automation",
-          "slug": "roofing-estimate-follow-up-automation",
-          "title": "Roofing Estimate Follow-Up Automation",
-          "path": "/case-studies/roofing-estimate-follow-up-automation",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:roofing-crm-pipeline-structure",
-          "slug": "roofing-crm-pipeline-structure",
-          "title": "Roofing CRM Pipeline Structure",
-          "path": "/resources/roofing-crm-pipeline-structure",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "crm-pipeline",
-        "classification": "core",
-        "validatingCaseStudyCount": 5,
-        "validatingResourceCount": 2,
-        "validatesCount": 7,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:crm-infrastructure-implementation",
-            "slug": "crm-infrastructure-implementation",
-            "title": "CRM Setup for Service Businesses | MindWP",
-            "path": "/services/crm-infrastructure-implementation",
-            "type": "service"
-          },
-          {
-            "id": "service:website-crm-integration-vs-manual-lead-handling",
-            "slug": "website-crm-integration-vs-manual-lead-handling",
-            "title": "Website CRM Integration vs Manual Lead Handling | MindWP",
-            "path": "/services/website-crm-integration-vs-manual-lead-handling",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:tracking-salon-client-lifetime-value",
-          "slug": "tracking-salon-client-lifetime-value",
-          "title": "Tracking Salon Client Lifetime Value",
-          "path": "/resources/tracking-salon-client-lifetime-value",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "client-reactivation",
-        "classification": "core",
-        "validatingCaseStudyCount": 2,
-        "validatingResourceCount": 1,
-        "validatesCount": 3,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:lead-reactivation-system",
-            "slug": "lead-reactivation-system",
-            "title": "Lead Reactivation System for Service Businesses | MindWP",
-            "path": "/services/lead-reactivation-system",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:tracking-salon-client-lifetime-value",
-          "slug": "tracking-salon-client-lifetime-value",
-          "title": "Tracking Salon Client Lifetime Value",
-          "path": "/resources/tracking-salon-client-lifetime-value",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "customer-feedback",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:reputation-review-systems",
-            "slug": "reputation-review-systems",
-            "title": "Reputation & Review Management for Service Businesses | MindWP",
-            "path": "/services/reputation-review-systems",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:responding-to-negative-reviews-systematically",
-          "slug": "responding-to-negative-reviews-systematically",
-          "title": "Responding to Negative Reviews Systematically Guide",
-          "path": "/resources/responding-to-negative-reviews-systematically",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "customer-lifetime-value",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [],
-        "suggestedCaseStudy": {
-          "id": "case-study:crm-pipeline-visibility-transformation",
-          "slug": "crm-pipeline-visibility-transformation",
-          "title": "CRM Pipeline Visibility Transformation",
-          "path": "/case-studies/crm-pipeline-visibility-transformation",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:tracking-salon-client-lifetime-value",
-          "slug": "tracking-salon-client-lifetime-value",
-          "title": "Tracking Salon Client Lifetime Value",
-          "path": "/resources/tracking-salon-client-lifetime-value",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "emergency-handling",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:auto-repair-lead-handling-example",
-          "slug": "auto-repair-lead-handling-example",
-          "title": "Auto Repair Lead Handling Example",
-          "path": "/resources/auto-repair-lead-handling-example",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "lifetime-value",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [],
-        "suggestedCaseStudy": {
-          "id": "case-study:crm-pipeline-visibility-transformation",
-          "slug": "crm-pipeline-visibility-transformation",
-          "title": "CRM Pipeline Visibility Transformation",
-          "path": "/case-studies/crm-pipeline-visibility-transformation",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:crm-pipeline-setup-guide-for-salons",
-          "slug": "crm-pipeline-setup-guide-for-salons",
-          "title": "CRM Pipeline Setup Guide for Salons",
-          "path": "/resources/crm-pipeline-setup-guide-for-salons",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "negative-reviews",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:reputation-review-systems",
-            "slug": "reputation-review-systems",
-            "title": "Reputation & Review Management for Service Businesses | MindWP",
-            "path": "/services/reputation-review-systems",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:automotive-review-generation-system",
-          "slug": "automotive-review-generation-system",
-          "title": "Automotive Review Generation System",
-          "path": "/resources/automotive-review-generation-system",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "no-show-reduction",
-        "classification": "core",
-        "validatingCaseStudyCount": 2,
-        "validatingResourceCount": 1,
-        "validatesCount": 3,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:tracking-salon-client-lifetime-value",
-          "slug": "tracking-salon-client-lifetime-value",
-          "title": "Tracking Salon Client Lifetime Value",
-          "path": "/resources/tracking-salon-client-lifetime-value",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "pipeline-architecture",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 4,
-        "validatesCount": 5,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:crm-infrastructure-implementation",
-            "slug": "crm-infrastructure-implementation",
-            "title": "CRM Setup for Service Businesses | MindWP",
-            "path": "/services/crm-infrastructure-implementation",
-            "type": "service"
-          },
-          {
-            "id": "service:website-crm-integration-vs-manual-lead-handling",
-            "slug": "website-crm-integration-vs-manual-lead-handling",
-            "title": "Website CRM Integration vs Manual Lead Handling | MindWP",
-            "path": "/services/website-crm-integration-vs-manual-lead-handling",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:hvac-maintenance-plan-reactivation",
-          "slug": "hvac-maintenance-plan-reactivation",
-          "title": "HVAC Maintenance Plan Reactivation",
-          "path": "/case-studies/hvac-maintenance-plan-reactivation",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:tracking-salon-client-lifetime-value",
-          "slug": "tracking-salon-client-lifetime-value",
-          "title": "Tracking Salon Client Lifetime Value",
-          "path": "/resources/tracking-salon-client-lifetime-value",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "pipeline-visibility",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:hvac-crm-pipeline-structure",
-          "slug": "hvac-crm-pipeline-structure",
-          "title": "HVAC CRM Pipeline Structure",
-          "path": "/resources/hvac-crm-pipeline-structure",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "revenue-tracking",
-        "classification": "core",
-        "validatingCaseStudyCount": 3,
-        "validatingResourceCount": 1,
-        "validatesCount": 4,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [],
-        "suggestedCaseStudy": {
-          "id": "case-study:roofing-estimate-follow-up-automation",
-          "slug": "roofing-estimate-follow-up-automation",
-          "title": "Roofing Estimate Follow-Up Automation",
-          "path": "/case-studies/roofing-estimate-follow-up-automation",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:tracking-salon-client-lifetime-value",
-          "slug": "tracking-salon-client-lifetime-value",
-          "title": "Tracking Salon Client Lifetime Value",
-          "path": "/resources/tracking-salon-client-lifetime-value",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "service-pages",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [
-          {
-            "id": "service:smart-website-systems",
-            "slug": "smart-website-systems",
-            "title": "Smart Website Systems for Service Businesses | MindWP",
-            "path": "/services/smart-website-systems",
-            "type": "service"
-          },
-          {
-            "id": "service:service-pages-vs-one-generic-services-page",
-            "slug": "service-pages-vs-one-generic-services-page",
-            "title": "Service Pages vs One Generic Services Page | MindWP",
-            "path": "/services/service-pages-vs-one-generic-services-page",
-            "type": "service"
-          }
-        ],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:conversion-architecture-for-service-websites",
-          "slug": "conversion-architecture-for-service-websites",
-          "title": "Conversion Architecture for Service Websites",
-          "path": "/resources/conversion-architecture-for-service-websites",
-          "type": "resource"
-        },
-        "suggestedFixes": []
-      },
-      {
-        "topic": "service-reminders",
-        "classification": "core",
-        "validatingCaseStudyCount": 1,
-        "validatingResourceCount": 1,
-        "validatesCount": 2,
-        "requiredValidation": [
-          "case-study",
-          "resource"
-        ],
-        "missingValidation": [],
-        "validationStatus": "validated",
-        "serviceTargets": [],
-        "suggestedCaseStudy": {
-          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "title": "Beauty Salon Case Study - All Sections Demo",
-          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
-          "type": "case-study"
-        },
-        "suggestedResource": {
-          "id": "resource:auto-repair-lead-handling-example",
-          "slug": "auto-repair-lead-handling-example",
-          "title": "Auto Repair Lead Handling Example",
-          "path": "/resources/auto-repair-lead-handling-example",
-          "type": "resource"
-        },
-        "suggestedFixes": []
+        "type": "industry-detail"
       }
     ],
     "serviceValidation": [
       {
+        "caseStudyValidationCount": 4,
         "serviceSlug": "smart-website-systems",
         "serviceTitle": "Smart Website Systems for Service Businesses | MindWP",
-        "caseStudyValidationCount": 4,
         "validatingCaseStudySlugs": [
           "appointment-business-booking-automation",
           "law-firm-consultation-booking-system",
@@ -2880,25 +1258,25 @@
         ]
       },
       {
+        "caseStudyValidationCount": 1,
         "serviceSlug": "conversion-layer",
         "serviceTitle": "Conversion Layer for Service Businesses | MindWP",
-        "caseStudyValidationCount": 1,
         "validatingCaseStudySlugs": [
           "smart-website-infrastructure-implementation"
         ]
       },
       {
+        "caseStudyValidationCount": 1,
         "serviceSlug": "conversion-funnel-system-vs-landing-page-development",
         "serviceTitle": "Conversion Funnel System vs Landing Page Development | MindWP",
-        "caseStudyValidationCount": 1,
         "validatingCaseStudySlugs": [
           "smart-website-infrastructure-implementation"
         ]
       },
       {
+        "caseStudyValidationCount": 4,
         "serviceSlug": "system-migration-platform-consolidation",
         "serviceTitle": "System Migration & Platform Consolidation for Service Businesses | MindWP",
-        "caseStudyValidationCount": 4,
         "validatingCaseStudySlugs": [
           "appointment-business-booking-automation",
           "law-firm-consultation-booking-system",
@@ -2907,9 +1285,9 @@
         ]
       },
       {
+        "caseStudyValidationCount": 4,
         "serviceSlug": "website-redesign-system-rebuild",
         "serviceTitle": "Website Redesign & Rebuild for Service Businesses | MindWP",
-        "caseStudyValidationCount": 4,
         "validatingCaseStudySlugs": [
           "appointment-business-booking-automation",
           "law-firm-consultation-booking-system",
@@ -2918,9 +1296,9 @@
         ]
       },
       {
+        "caseStudyValidationCount": 5,
         "serviceSlug": "lead-reactivation-system",
         "serviceTitle": "Lead Reactivation System for Service Businesses | MindWP",
-        "caseStudyValidationCount": 5,
         "validatingCaseStudySlugs": [
           "automotive-service-reminder-automation",
           "hvac-maintenance-plan-reactivation",
@@ -2930,9 +1308,9 @@
         ]
       },
       {
+        "caseStudyValidationCount": 5,
         "serviceSlug": "missed-call-recovery-system",
         "serviceTitle": "Missed Call Recovery for Service Businesses | MindWP",
-        "caseStudyValidationCount": 5,
         "validatingCaseStudySlugs": [
           "auto-repair-missed-call-recovery",
           "hvac-emergency-lead-routing",
@@ -2942,26 +1320,26 @@
         ]
       },
       {
+        "caseStudyValidationCount": 2,
         "serviceSlug": "unified-communication-system",
         "serviceTitle": "Unified Communication System for Service Businesses | MindWP",
-        "caseStudyValidationCount": 2,
         "validatingCaseStudySlugs": [
           "hvac-emergency-lead-routing",
           "real-estate-inquiry-routing"
         ]
       },
       {
+        "caseStudyValidationCount": 1,
         "serviceSlug": "local-seo-authority",
         "serviceTitle": "Local SEO for Service Businesses | Show Up When Customers Search | MindWP",
-        "caseStudyValidationCount": 1,
         "validatingCaseStudySlugs": [
           "local-authority-system-impact"
         ]
       },
       {
+        "caseStudyValidationCount": 3,
         "serviceSlug": "reputation-review-systems",
         "serviceTitle": "Reputation & Review Management for Service Businesses | MindWP",
-        "caseStudyValidationCount": 3,
         "validatingCaseStudySlugs": [
           "beauty-salon-online-booking-local-seo-manchester-all-sections",
           "beauty-salon-online-booking-local-seo-manchester-custom",
@@ -2969,25 +1347,25 @@
         ]
       },
       {
+        "caseStudyValidationCount": 1,
         "serviceSlug": "crm-infrastructure-implementation",
         "serviceTitle": "CRM Setup for Service Businesses | MindWP",
-        "caseStudyValidationCount": 1,
         "validatingCaseStudySlugs": [
           "crm-pipeline-visibility-transformation"
         ]
       },
       {
+        "caseStudyValidationCount": 1,
         "serviceSlug": "website-crm-integration-vs-manual-lead-handling",
         "serviceTitle": "Website CRM Integration vs Manual Lead Handling | MindWP",
-        "caseStudyValidationCount": 1,
         "validatingCaseStudySlugs": [
           "crm-pipeline-visibility-transformation"
         ]
       },
       {
+        "caseStudyValidationCount": 5,
         "serviceSlug": "ai-lead-handling",
         "serviceTitle": "AI Lead Handling for Service Businesses | MindWP",
-        "caseStudyValidationCount": 5,
         "validatingCaseStudySlugs": [
           "auto-repair-missed-call-recovery",
           "hvac-emergency-lead-routing",
@@ -2997,9 +1375,9 @@
         ]
       },
       {
+        "caseStudyValidationCount": 4,
         "serviceSlug": "service-pages-vs-one-generic-services-page",
         "serviceTitle": "Service Pages vs One Generic Services Page | MindWP",
-        "caseStudyValidationCount": 4,
         "validatingCaseStudySlugs": [
           "appointment-business-booking-automation",
           "law-firm-consultation-booking-system",
@@ -3008,9 +1386,9 @@
         ]
       },
       {
+        "caseStudyValidationCount": 4,
         "serviceSlug": "wordpress-development",
         "serviceTitle": "WordPress Development for Service Businesses | MindWP",
-        "caseStudyValidationCount": 4,
         "validatingCaseStudySlugs": [
           "appointment-business-booking-automation",
           "law-firm-consultation-booking-system",
@@ -3019,9 +1397,9 @@
         ]
       },
       {
+        "caseStudyValidationCount": 4,
         "serviceSlug": "ecommerce",
         "serviceTitle": "WooCommerce & E-commerce Implementation | MindWP",
-        "caseStudyValidationCount": 4,
         "validatingCaseStudySlugs": [
           "appointment-business-booking-automation",
           "law-firm-consultation-booking-system",
@@ -3030,9 +1408,9 @@
         ]
       },
       {
+        "caseStudyValidationCount": 4,
         "serviceSlug": "divi5",
         "serviceTitle": "Divi WordPress Development | MindWP",
-        "caseStudyValidationCount": 4,
         "validatingCaseStudySlugs": [
           "appointment-business-booking-automation",
           "law-firm-consultation-booking-system",
@@ -3041,9 +1419,9 @@
         ]
       },
       {
+        "caseStudyValidationCount": 4,
         "serviceSlug": "bricks-builder",
         "serviceTitle": "Bricks Builder WordPress Development | MindWP",
-        "caseStudyValidationCount": 4,
         "validatingCaseStudySlugs": [
           "appointment-business-booking-automation",
           "law-firm-consultation-booking-system",
@@ -3052,9 +1430,9 @@
         ]
       },
       {
+        "caseStudyValidationCount": 4,
         "serviceSlug": "elementor",
         "serviceTitle": "Elementor WordPress Development | MindWP",
-        "caseStudyValidationCount": 4,
         "validatingCaseStudySlugs": [
           "appointment-business-booking-automation",
           "law-firm-consultation-booking-system",
@@ -3062,11 +1440,1635 @@
           "smart-website-infrastructure-implementation"
         ]
       }
+    ],
+    "topicValidation": [
+      {
+        "classification": "conceptual",
+        "missingValidation": [],
+        "requiredValidation": [],
+        "serviceTargets": [
+          {
+            "id": "service:local-seo-authority",
+            "path": "/services/local-seo-authority",
+            "slug": "local-seo-authority",
+            "title": "Local SEO for Service Businesses | Show Up When Customers Search | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:local-authority-system-impact",
+          "path": "/case-studies/local-authority-system-impact",
+          "slug": "local-authority-system-impact",
+          "title": "Local Authority System Impact",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:google-business-profile-system-architecture",
+          "path": "/resources/google-business-profile-system-architecture",
+          "slug": "google-business-profile-system-architecture",
+          "title": "Google Business Profile System Architecture Guide",
+          "type": "resource"
+        },
+        "topic": "authority-signals",
+        "validatesCount": 1,
+        "validatingCaseStudyCount": 0,
+        "validatingResourceCount": 1,
+        "validationStatus": "not-required"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:unified-communication-system",
+            "path": "/services/unified-communication-system",
+            "slug": "unified-communication-system",
+            "title": "Unified Communication System for Service Businesses | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:roofing-estimate-follow-up-workflow",
+          "path": "/resources/roofing-estimate-follow-up-workflow",
+          "slug": "roofing-estimate-follow-up-workflow",
+          "title": "Roofing Estimate Follow-Up Workflow",
+          "type": "resource"
+        },
+        "topic": "lead-management",
+        "validatesCount": 10,
+        "validatingCaseStudyCount": 4,
+        "validatingResourceCount": 6,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:missed-call-recovery-system",
+            "path": "/services/missed-call-recovery-system",
+            "slug": "missed-call-recovery-system",
+            "title": "Missed Call Recovery for Service Businesses | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:ai-lead-handling",
+            "path": "/services/ai-lead-handling",
+            "slug": "ai-lead-handling",
+            "title": "AI Lead Handling for Service Businesses | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:auto-repair-lead-handling-example",
+          "path": "/resources/auto-repair-lead-handling-example",
+          "slug": "auto-repair-lead-handling-example",
+          "title": "Auto Repair Lead Handling Example",
+          "type": "resource"
+        },
+        "topic": "missed-calls",
+        "validatesCount": 9,
+        "validatingCaseStudyCount": 4,
+        "validatingResourceCount": 5,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:missed-call-recovery-system",
+            "path": "/services/missed-call-recovery-system",
+            "slug": "missed-call-recovery-system",
+            "title": "Missed Call Recovery for Service Businesses | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:ai-lead-handling",
+            "path": "/services/ai-lead-handling",
+            "slug": "ai-lead-handling",
+            "title": "AI Lead Handling for Service Businesses | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:roofing-estimate-follow-up-workflow",
+          "path": "/resources/roofing-estimate-follow-up-workflow",
+          "slug": "roofing-estimate-follow-up-workflow",
+          "title": "Roofing Estimate Follow-Up Workflow",
+          "type": "resource"
+        },
+        "topic": "lead-response-time",
+        "validatesCount": 7,
+        "validatingCaseStudyCount": 4,
+        "validatingResourceCount": 3,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:reputation-review-systems",
+            "path": "/services/reputation-review-systems",
+            "slug": "reputation-review-systems",
+            "title": "Reputation & Review Management for Service Businesses | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:crm-pipeline-visibility-transformation",
+          "path": "/case-studies/crm-pipeline-visibility-transformation",
+          "slug": "crm-pipeline-visibility-transformation",
+          "title": "CRM Pipeline Visibility Transformation",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:auto-repair-lead-handling-example",
+          "path": "/resources/auto-repair-lead-handling-example",
+          "slug": "auto-repair-lead-handling-example",
+          "title": "Auto Repair Lead Handling Example",
+          "type": "resource"
+        },
+        "topic": "review-generation",
+        "validatesCount": 9,
+        "validatingCaseStudyCount": 4,
+        "validatingResourceCount": 5,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [],
+        "suggestedCaseStudy": {
+          "id": "case-study:smart-website-infrastructure-implementation",
+          "path": "/case-studies/smart-website-infrastructure-implementation",
+          "slug": "smart-website-infrastructure-implementation",
+          "title": "Smart Website Infrastructure Implementation",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:tracking-salon-client-lifetime-value",
+          "path": "/resources/tracking-salon-client-lifetime-value",
+          "slug": "tracking-salon-client-lifetime-value",
+          "title": "Tracking Salon Client Lifetime Value",
+          "type": "resource"
+        },
+        "topic": "booking-automation",
+        "validatesCount": 8,
+        "validatingCaseStudyCount": 7,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:smart-website-systems",
+            "path": "/services/smart-website-systems",
+            "slug": "smart-website-systems",
+            "title": "Smart Website Systems for Service Businesses | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:conversion-layer",
+            "path": "/services/conversion-layer",
+            "slug": "conversion-layer",
+            "title": "Conversion Layer for Service Businesses | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:conversion-funnel-system-vs-landing-page-development",
+            "path": "/services/conversion-funnel-system-vs-landing-page-development",
+            "slug": "conversion-funnel-system-vs-landing-page-development",
+            "title": "Conversion Funnel System vs Landing Page Development | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:service-pages-vs-one-generic-services-page",
+            "path": "/services/service-pages-vs-one-generic-services-page",
+            "slug": "service-pages-vs-one-generic-services-page",
+            "title": "Service Pages vs One Generic Services Page | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:crm-pipeline-visibility-transformation",
+          "path": "/case-studies/crm-pipeline-visibility-transformation",
+          "slug": "crm-pipeline-visibility-transformation",
+          "title": "CRM Pipeline Visibility Transformation",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:local-service-page-architecture",
+          "path": "/resources/local-service-page-architecture",
+          "slug": "local-service-page-architecture",
+          "title": "Local Service Page Architecture",
+          "type": "resource"
+        },
+        "topic": "conversion-optimization",
+        "validatesCount": 3,
+        "validatingCaseStudyCount": 2,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [],
+        "suggestedCaseStudy": {
+          "id": "case-study:hvac-maintenance-plan-reactivation",
+          "path": "/case-studies/hvac-maintenance-plan-reactivation",
+          "slug": "hvac-maintenance-plan-reactivation",
+          "title": "HVAC Maintenance Plan Reactivation",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:hvac-crm-pipeline-structure",
+          "path": "/resources/hvac-crm-pipeline-structure",
+          "slug": "hvac-crm-pipeline-structure",
+          "title": "HVAC CRM Pipeline Structure",
+          "type": "resource"
+        },
+        "topic": "crm-visibility",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:lead-reactivation-system",
+            "path": "/services/lead-reactivation-system",
+            "slug": "lead-reactivation-system",
+            "title": "Lead Reactivation System for Service Businesses | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:crm-pipeline-visibility-transformation",
+          "path": "/case-studies/crm-pipeline-visibility-transformation",
+          "slug": "crm-pipeline-visibility-transformation",
+          "title": "CRM Pipeline Visibility Transformation",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:hvac-emergency-call-handling-system",
+          "path": "/resources/hvac-emergency-call-handling-system",
+          "slug": "hvac-emergency-call-handling-system",
+          "title": "HVAC Emergency Call Handling System",
+          "type": "resource"
+        },
+        "topic": "follow-up",
+        "validatesCount": 6,
+        "validatingCaseStudyCount": 4,
+        "validatingResourceCount": 2,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:smart-website-systems",
+            "path": "/services/smart-website-systems",
+            "slug": "smart-website-systems",
+            "title": "Smart Website Systems for Service Businesses | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:conversion-layer",
+            "path": "/services/conversion-layer",
+            "slug": "conversion-layer",
+            "title": "Conversion Layer for Service Businesses | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:conversion-funnel-system-vs-landing-page-development",
+            "path": "/services/conversion-funnel-system-vs-landing-page-development",
+            "slug": "conversion-funnel-system-vs-landing-page-development",
+            "title": "Conversion Funnel System vs Landing Page Development | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:ai-lead-handling",
+            "path": "/services/ai-lead-handling",
+            "slug": "ai-lead-handling",
+            "title": "AI Lead Handling for Service Businesses | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:service-pages-vs-one-generic-services-page",
+            "path": "/services/service-pages-vs-one-generic-services-page",
+            "slug": "service-pages-vs-one-generic-services-page",
+            "title": "Service Pages vs One Generic Services Page | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:smart-website-infrastructure-implementation",
+          "path": "/case-studies/smart-website-infrastructure-implementation",
+          "slug": "smart-website-infrastructure-implementation",
+          "title": "Smart Website Infrastructure Implementation",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:auto-repair-lead-handling-example",
+          "path": "/resources/auto-repair-lead-handling-example",
+          "slug": "auto-repair-lead-handling-example",
+          "title": "Auto Repair Lead Handling Example",
+          "type": "resource"
+        },
+        "topic": "lead-capture",
+        "validatesCount": 5,
+        "validatingCaseStudyCount": 4,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:unified-communication-system",
+            "path": "/services/unified-communication-system",
+            "slug": "unified-communication-system",
+            "title": "Unified Communication System for Service Businesses | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:hvac-emergency-call-handling-system",
+          "path": "/resources/hvac-emergency-call-handling-system",
+          "slug": "hvac-emergency-call-handling-system",
+          "title": "HVAC Emergency Call Handling System",
+          "type": "resource"
+        },
+        "topic": "lead-routing",
+        "validatesCount": 3,
+        "validatingCaseStudyCount": 2,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:crm-infrastructure-implementation",
+            "path": "/services/crm-infrastructure-implementation",
+            "slug": "crm-infrastructure-implementation",
+            "title": "CRM Setup for Service Businesses | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:website-crm-integration-vs-manual-lead-handling",
+            "path": "/services/website-crm-integration-vs-manual-lead-handling",
+            "slug": "website-crm-integration-vs-manual-lead-handling",
+            "title": "Website CRM Integration vs Manual Lead Handling | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:roofing-estimate-follow-up-workflow",
+          "path": "/resources/roofing-estimate-follow-up-workflow",
+          "slug": "roofing-estimate-follow-up-workflow",
+          "title": "Roofing Estimate Follow-Up Workflow",
+          "type": "resource"
+        },
+        "topic": "lead-qualification",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "conceptual",
+        "missingValidation": [],
+        "requiredValidation": [],
+        "serviceTargets": [
+          {
+            "id": "service:smart-website-systems",
+            "path": "/services/smart-website-systems",
+            "slug": "smart-website-systems",
+            "title": "Smart Website Systems for Service Businesses | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:system-migration-platform-consolidation",
+            "path": "/services/system-migration-platform-consolidation",
+            "slug": "system-migration-platform-consolidation",
+            "title": "System Migration & Platform Consolidation for Service Businesses | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:website-redesign-system-rebuild",
+            "path": "/services/website-redesign-system-rebuild",
+            "slug": "website-redesign-system-rebuild",
+            "title": "Website Redesign & Rebuild for Service Businesses | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:service-pages-vs-one-generic-services-page",
+            "path": "/services/service-pages-vs-one-generic-services-page",
+            "slug": "service-pages-vs-one-generic-services-page",
+            "title": "Service Pages vs One Generic Services Page | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:wordpress-development",
+            "path": "/services/wordpress-development",
+            "slug": "wordpress-development",
+            "title": "WordPress Development for Service Businesses | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:ecommerce",
+            "path": "/services/ecommerce",
+            "slug": "ecommerce",
+            "title": "WooCommerce & E-commerce Implementation | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:divi5",
+            "path": "/services/divi5",
+            "slug": "divi5",
+            "title": "Divi WordPress Development | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:bricks-builder",
+            "path": "/services/bricks-builder",
+            "slug": "bricks-builder",
+            "title": "Bricks Builder WordPress Development | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:elementor",
+            "path": "/services/elementor",
+            "slug": "elementor",
+            "title": "Elementor WordPress Development | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:appointment-reminder-no-show-reduction",
+          "path": "/case-studies/appointment-reminder-no-show-reduction",
+          "slug": "appointment-reminder-no-show-reduction",
+          "title": "Dental Appointment Reminder & No-Show Reduction",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:local-service-page-architecture",
+          "path": "/resources/local-service-page-architecture",
+          "slug": "local-service-page-architecture",
+          "title": "Local Service Page Architecture",
+          "type": "resource"
+        },
+        "topic": "website-infrastructure",
+        "validatesCount": 5,
+        "validatingCaseStudyCount": 4,
+        "validatingResourceCount": 1,
+        "validationStatus": "not-required"
+      },
+      {
+        "classification": "conceptual",
+        "missingValidation": [],
+        "requiredValidation": [],
+        "serviceTargets": [
+          {
+            "id": "service:wordpress-development",
+            "path": "/services/wordpress-development",
+            "slug": "wordpress-development",
+            "title": "WordPress Development for Service Businesses | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:crm-pipeline-visibility-transformation",
+          "path": "/case-studies/crm-pipeline-visibility-transformation",
+          "slug": "crm-pipeline-visibility-transformation",
+          "title": "CRM Pipeline Visibility Transformation",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:local-service-page-architecture",
+          "path": "/resources/local-service-page-architecture",
+          "slug": "local-service-page-architecture",
+          "title": "Local Service Page Architecture",
+          "type": "resource"
+        },
+        "topic": "systems-first-websites",
+        "validatesCount": 3,
+        "validatingCaseStudyCount": 2,
+        "validatingResourceCount": 1,
+        "validationStatus": "not-required"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:crm-infrastructure-implementation",
+            "path": "/services/crm-infrastructure-implementation",
+            "slug": "crm-infrastructure-implementation",
+            "title": "CRM Setup for Service Businesses | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:website-crm-integration-vs-manual-lead-handling",
+            "path": "/services/website-crm-integration-vs-manual-lead-handling",
+            "slug": "website-crm-integration-vs-manual-lead-handling",
+            "title": "Website CRM Integration vs Manual Lead Handling | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:local-service-page-architecture",
+          "path": "/resources/local-service-page-architecture",
+          "slug": "local-service-page-architecture",
+          "title": "Local Service Page Architecture",
+          "type": "resource"
+        },
+        "topic": "crm-integration",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "conceptual",
+        "missingValidation": [],
+        "requiredValidation": [],
+        "serviceTargets": [
+          {
+            "id": "service:smart-website-systems",
+            "path": "/services/smart-website-systems",
+            "slug": "smart-website-systems",
+            "title": "Smart Website Systems for Service Businesses | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:service-pages-vs-one-generic-services-page",
+            "path": "/services/service-pages-vs-one-generic-services-page",
+            "slug": "service-pages-vs-one-generic-services-page",
+            "title": "Service Pages vs One Generic Services Page | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:roofing-website-rebuild-with-crm",
+          "path": "/case-studies/roofing-website-rebuild-with-crm",
+          "slug": "roofing-website-rebuild-with-crm",
+          "title": "Roofing Website Rebuild With CRM",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:conversion-architecture-for-service-websites",
+          "path": "/resources/conversion-architecture-for-service-websites",
+          "slug": "conversion-architecture-for-service-websites",
+          "title": "Conversion Architecture for Service Websites",
+          "type": "resource"
+        },
+        "topic": "crm-enabled-websites",
+        "validatesCount": 1,
+        "validatingCaseStudyCount": 0,
+        "validatingResourceCount": 1,
+        "validationStatus": "not-required"
+      },
+      {
+        "classification": "conceptual",
+        "missingValidation": [],
+        "requiredValidation": [],
+        "serviceTargets": [
+          {
+            "id": "service:conversion-layer",
+            "path": "/services/conversion-layer",
+            "slug": "conversion-layer",
+            "title": "Conversion Layer for Service Businesses | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:conversion-funnel-system-vs-landing-page-development",
+            "path": "/services/conversion-funnel-system-vs-landing-page-development",
+            "slug": "conversion-funnel-system-vs-landing-page-development",
+            "title": "Conversion Funnel System vs Landing Page Development | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:website-redesign-system-rebuild",
+            "path": "/services/website-redesign-system-rebuild",
+            "slug": "website-redesign-system-rebuild",
+            "title": "Website Redesign & Rebuild for Service Businesses | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:smart-website-infrastructure-implementation",
+          "path": "/case-studies/smart-website-infrastructure-implementation",
+          "slug": "smart-website-infrastructure-implementation",
+          "title": "Smart Website Infrastructure Implementation",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:conversion-architecture-for-service-websites",
+          "path": "/resources/conversion-architecture-for-service-websites",
+          "slug": "conversion-architecture-for-service-websites",
+          "title": "Conversion Architecture for Service Websites",
+          "type": "resource"
+        },
+        "topic": "service-page-architecture",
+        "validatesCount": 1,
+        "validatingCaseStudyCount": 0,
+        "validatingResourceCount": 1,
+        "validationStatus": "not-required"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [],
+        "suggestedCaseStudy": {
+          "id": "case-study:roofing-website-rebuild-with-crm",
+          "path": "/case-studies/roofing-website-rebuild-with-crm",
+          "slug": "roofing-website-rebuild-with-crm",
+          "title": "Roofing Website Rebuild With CRM",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:hvac-crm-pipeline-structure",
+          "path": "/resources/hvac-crm-pipeline-structure",
+          "slug": "hvac-crm-pipeline-structure",
+          "title": "HVAC CRM Pipeline Structure",
+          "type": "resource"
+        },
+        "topic": "conversion-tracking",
+        "validatesCount": 3,
+        "validatingCaseStudyCount": 2,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:reducing-salon-no-shows-with-automation",
+          "path": "/resources/reducing-salon-no-shows-with-automation",
+          "slug": "reducing-salon-no-shows-with-automation",
+          "title": "Reducing Salon No-Shows with Automation",
+          "type": "resource"
+        },
+        "topic": "booking-systems",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:reputation-review-systems",
+            "path": "/services/reputation-review-systems",
+            "slug": "reputation-review-systems",
+            "title": "Reputation & Review Management for Service Businesses | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:hvac-review-generation-framework",
+          "path": "/resources/hvac-review-generation-framework",
+          "slug": "hvac-review-generation-framework",
+          "title": "HVAC Review Generation Framework",
+          "type": "resource"
+        },
+        "topic": "review-automation",
+        "validatesCount": 4,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 3,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:reputation-review-systems",
+            "path": "/services/reputation-review-systems",
+            "slug": "reputation-review-systems",
+            "title": "Reputation & Review Management for Service Businesses | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:auto-repair-lead-handling-example",
+          "path": "/resources/auto-repair-lead-handling-example",
+          "slug": "auto-repair-lead-handling-example",
+          "title": "Auto Repair Lead Handling Example",
+          "type": "resource"
+        },
+        "topic": "feedback-loops",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:reputation-review-systems",
+            "path": "/services/reputation-review-systems",
+            "slug": "reputation-review-systems",
+            "title": "Reputation & Review Management for Service Businesses | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:automotive-review-generation-system",
+          "path": "/resources/automotive-review-generation-system",
+          "slug": "automotive-review-generation-system",
+          "title": "Automotive Review Generation System",
+          "type": "resource"
+        },
+        "topic": "negative-review-response",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:reputation-review-systems",
+            "path": "/services/reputation-review-systems",
+            "slug": "reputation-review-systems",
+            "title": "Reputation & Review Management for Service Businesses | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:local-service-page-architecture",
+          "path": "/resources/local-service-page-architecture",
+          "slug": "local-service-page-architecture",
+          "title": "Local Service Page Architecture",
+          "type": "resource"
+        },
+        "topic": "reputation-monitoring",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:local-seo-authority",
+            "path": "/services/local-seo-authority",
+            "slug": "local-seo-authority",
+            "title": "Local SEO for Service Businesses | Show Up When Customers Search | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:authority-signals-for-local-search",
+          "path": "/resources/authority-signals-for-local-search",
+          "slug": "authority-signals-for-local-search",
+          "title": "Authority Signals for Local Search",
+          "type": "resource"
+        },
+        "topic": "local-seo",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:local-seo-authority",
+            "path": "/services/local-seo-authority",
+            "slug": "local-seo-authority",
+            "title": "Local SEO for Service Businesses | Show Up When Customers Search | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:hvac-emergency-call-handling-system",
+          "path": "/resources/hvac-emergency-call-handling-system",
+          "slug": "hvac-emergency-call-handling-system",
+          "title": "HVAC Emergency Call Handling System",
+          "type": "resource"
+        },
+        "topic": "local-visibility",
+        "validatesCount": 4,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 3,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:local-seo-authority",
+            "path": "/services/local-seo-authority",
+            "slug": "local-seo-authority",
+            "title": "Local SEO for Service Businesses | Show Up When Customers Search | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:authority-signals-for-local-search",
+          "path": "/resources/authority-signals-for-local-search",
+          "slug": "authority-signals-for-local-search",
+          "title": "Authority Signals for Local Search",
+          "type": "resource"
+        },
+        "topic": "google-business-profile",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:local-seo-authority",
+            "path": "/services/local-seo-authority",
+            "slug": "local-seo-authority",
+            "title": "Local SEO for Service Businesses | Show Up When Customers Search | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:auto-repair-lead-handling-example",
+          "path": "/resources/auto-repair-lead-handling-example",
+          "slug": "auto-repair-lead-handling-example",
+          "title": "Auto Repair Lead Handling Example",
+          "type": "resource"
+        },
+        "topic": "local-service-pages",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:local-seo-authority",
+            "path": "/services/local-seo-authority",
+            "slug": "local-seo-authority",
+            "title": "Local SEO for Service Businesses | Show Up When Customers Search | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:review-automation-setup-guide-for-roofing-companies",
+          "path": "/resources/review-automation-setup-guide-for-roofing-companies",
+          "slug": "review-automation-setup-guide-for-roofing-companies",
+          "title": "Review Automation Setup Guide for Roofing Companies",
+          "type": "resource"
+        },
+        "topic": "local-authority",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [],
+        "suggestedCaseStudy": {
+          "id": "case-study:roofing-estimate-follow-up-automation",
+          "path": "/case-studies/roofing-estimate-follow-up-automation",
+          "slug": "roofing-estimate-follow-up-automation",
+          "title": "Roofing Estimate Follow-Up Automation",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:roofing-crm-pipeline-structure",
+          "path": "/resources/roofing-crm-pipeline-structure",
+          "slug": "roofing-crm-pipeline-structure",
+          "title": "Roofing CRM Pipeline Structure",
+          "type": "resource"
+        },
+        "topic": "revenue-visibility",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:crm-infrastructure-implementation",
+            "path": "/services/crm-infrastructure-implementation",
+            "slug": "crm-infrastructure-implementation",
+            "title": "CRM Setup for Service Businesses | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:website-crm-integration-vs-manual-lead-handling",
+            "path": "/services/website-crm-integration-vs-manual-lead-handling",
+            "slug": "website-crm-integration-vs-manual-lead-handling",
+            "title": "Website CRM Integration vs Manual Lead Handling | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:tracking-salon-client-lifetime-value",
+          "path": "/resources/tracking-salon-client-lifetime-value",
+          "slug": "tracking-salon-client-lifetime-value",
+          "title": "Tracking Salon Client Lifetime Value",
+          "type": "resource"
+        },
+        "topic": "crm-pipeline",
+        "validatesCount": 7,
+        "validatingCaseStudyCount": 5,
+        "validatingResourceCount": 2,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:lead-reactivation-system",
+            "path": "/services/lead-reactivation-system",
+            "slug": "lead-reactivation-system",
+            "title": "Lead Reactivation System for Service Businesses | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:tracking-salon-client-lifetime-value",
+          "path": "/resources/tracking-salon-client-lifetime-value",
+          "slug": "tracking-salon-client-lifetime-value",
+          "title": "Tracking Salon Client Lifetime Value",
+          "type": "resource"
+        },
+        "topic": "client-reactivation",
+        "validatesCount": 3,
+        "validatingCaseStudyCount": 2,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:reputation-review-systems",
+            "path": "/services/reputation-review-systems",
+            "slug": "reputation-review-systems",
+            "title": "Reputation & Review Management for Service Businesses | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:responding-to-negative-reviews-systematically",
+          "path": "/resources/responding-to-negative-reviews-systematically",
+          "slug": "responding-to-negative-reviews-systematically",
+          "title": "Responding to Negative Reviews Systematically Guide",
+          "type": "resource"
+        },
+        "topic": "customer-feedback",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [],
+        "suggestedCaseStudy": {
+          "id": "case-study:crm-pipeline-visibility-transformation",
+          "path": "/case-studies/crm-pipeline-visibility-transformation",
+          "slug": "crm-pipeline-visibility-transformation",
+          "title": "CRM Pipeline Visibility Transformation",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:tracking-salon-client-lifetime-value",
+          "path": "/resources/tracking-salon-client-lifetime-value",
+          "slug": "tracking-salon-client-lifetime-value",
+          "title": "Tracking Salon Client Lifetime Value",
+          "type": "resource"
+        },
+        "topic": "customer-lifetime-value",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:auto-repair-lead-handling-example",
+          "path": "/resources/auto-repair-lead-handling-example",
+          "slug": "auto-repair-lead-handling-example",
+          "title": "Auto Repair Lead Handling Example",
+          "type": "resource"
+        },
+        "topic": "emergency-handling",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [],
+        "suggestedCaseStudy": {
+          "id": "case-study:crm-pipeline-visibility-transformation",
+          "path": "/case-studies/crm-pipeline-visibility-transformation",
+          "slug": "crm-pipeline-visibility-transformation",
+          "title": "CRM Pipeline Visibility Transformation",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:crm-pipeline-setup-guide-for-salons",
+          "path": "/resources/crm-pipeline-setup-guide-for-salons",
+          "slug": "crm-pipeline-setup-guide-for-salons",
+          "title": "CRM Pipeline Setup Guide for Salons",
+          "type": "resource"
+        },
+        "topic": "lifetime-value",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:reputation-review-systems",
+            "path": "/services/reputation-review-systems",
+            "slug": "reputation-review-systems",
+            "title": "Reputation & Review Management for Service Businesses | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:automotive-review-generation-system",
+          "path": "/resources/automotive-review-generation-system",
+          "slug": "automotive-review-generation-system",
+          "title": "Automotive Review Generation System",
+          "type": "resource"
+        },
+        "topic": "negative-reviews",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:tracking-salon-client-lifetime-value",
+          "path": "/resources/tracking-salon-client-lifetime-value",
+          "slug": "tracking-salon-client-lifetime-value",
+          "title": "Tracking Salon Client Lifetime Value",
+          "type": "resource"
+        },
+        "topic": "no-show-reduction",
+        "validatesCount": 3,
+        "validatingCaseStudyCount": 2,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:crm-infrastructure-implementation",
+            "path": "/services/crm-infrastructure-implementation",
+            "slug": "crm-infrastructure-implementation",
+            "title": "CRM Setup for Service Businesses | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:website-crm-integration-vs-manual-lead-handling",
+            "path": "/services/website-crm-integration-vs-manual-lead-handling",
+            "slug": "website-crm-integration-vs-manual-lead-handling",
+            "title": "Website CRM Integration vs Manual Lead Handling | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:hvac-maintenance-plan-reactivation",
+          "path": "/case-studies/hvac-maintenance-plan-reactivation",
+          "slug": "hvac-maintenance-plan-reactivation",
+          "title": "HVAC Maintenance Plan Reactivation",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:tracking-salon-client-lifetime-value",
+          "path": "/resources/tracking-salon-client-lifetime-value",
+          "slug": "tracking-salon-client-lifetime-value",
+          "title": "Tracking Salon Client Lifetime Value",
+          "type": "resource"
+        },
+        "topic": "pipeline-architecture",
+        "validatesCount": 5,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 4,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:hvac-crm-pipeline-structure",
+          "path": "/resources/hvac-crm-pipeline-structure",
+          "slug": "hvac-crm-pipeline-structure",
+          "title": "HVAC CRM Pipeline Structure",
+          "type": "resource"
+        },
+        "topic": "pipeline-visibility",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [],
+        "suggestedCaseStudy": {
+          "id": "case-study:roofing-estimate-follow-up-automation",
+          "path": "/case-studies/roofing-estimate-follow-up-automation",
+          "slug": "roofing-estimate-follow-up-automation",
+          "title": "Roofing Estimate Follow-Up Automation",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:tracking-salon-client-lifetime-value",
+          "path": "/resources/tracking-salon-client-lifetime-value",
+          "slug": "tracking-salon-client-lifetime-value",
+          "title": "Tracking Salon Client Lifetime Value",
+          "type": "resource"
+        },
+        "topic": "revenue-tracking",
+        "validatesCount": 4,
+        "validatingCaseStudyCount": 3,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [
+          {
+            "id": "service:smart-website-systems",
+            "path": "/services/smart-website-systems",
+            "slug": "smart-website-systems",
+            "title": "Smart Website Systems for Service Businesses | MindWP",
+            "type": "service"
+          },
+          {
+            "id": "service:service-pages-vs-one-generic-services-page",
+            "path": "/services/service-pages-vs-one-generic-services-page",
+            "slug": "service-pages-vs-one-generic-services-page",
+            "title": "Service Pages vs One Generic Services Page | MindWP",
+            "type": "service"
+          }
+        ],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:conversion-architecture-for-service-websites",
+          "path": "/resources/conversion-architecture-for-service-websites",
+          "slug": "conversion-architecture-for-service-websites",
+          "title": "Conversion Architecture for Service Websites",
+          "type": "resource"
+        },
+        "topic": "service-pages",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      },
+      {
+        "classification": "core",
+        "missingValidation": [],
+        "requiredValidation": [
+          "case-study",
+          "resource"
+        ],
+        "serviceTargets": [],
+        "suggestedCaseStudy": {
+          "id": "case-study:beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "path": "/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "slug": "beauty-salon-online-booking-local-seo-manchester-all-sections",
+          "title": "Beauty Salon Case Study - All Sections Demo",
+          "type": "case-study"
+        },
+        "suggestedFixes": [],
+        "suggestedResource": {
+          "id": "resource:auto-repair-lead-handling-example",
+          "path": "/resources/auto-repair-lead-handling-example",
+          "slug": "auto-repair-lead-handling-example",
+          "title": "Auto Repair Lead Handling Example",
+          "type": "resource"
+        },
+        "topic": "service-reminders",
+        "validatesCount": 2,
+        "validatingCaseStudyCount": 1,
+        "validatingResourceCount": 1,
+        "validationStatus": "validated"
+      }
     ]
   },
   "issues": [],
   "name": "authority-map",
   "status": "PASS",
-  "generatedAt": "2026-04-21T08:57:42.622Z",
-  "sourceCommand": "node --import tsx/esm scripts/generators/generate-authority-map.ts"
+  "sourceCommand": "node --import tsx/esm scripts/generators/generate-authority-map.ts",
+  "_generated": {
+    "source": "npm run system:full",
+    "type": "generated-artifact",
+    "hash": "f327fc89ed57d8935a0881d388aea42b2e0fef0460b06639c02758fb7c97baa3"
+  }
 }

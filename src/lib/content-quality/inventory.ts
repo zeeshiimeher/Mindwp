@@ -1,3 +1,4 @@
+import { assertRouteOwnershipEntries } from '../../../config/routeOwnership';
 import type { Metadata } from 'next';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -57,8 +58,26 @@ export interface RouteInventoryEntry {
 const routeInventoryPromise = new Map<string, Promise<RouteInventoryEntry[]>>();
 const workspaceRoot = process.cwd();
 
+type SystemSnapshot = {
+  routeInventory?: RouteInventoryEntry[];
+};
+
 function slugTitle(slug: string): string {
   return slug.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
+}
+
+function readSnapshotInventory(): RouteInventoryEntry[] | null {
+  const snapshotPath = process.env.SYSTEM_SNAPSHOT_PATH;
+  if (!snapshotPath) {
+    return null;
+  }
+
+  try {
+    const snapshot = JSON.parse(fs.readFileSync(snapshotPath, 'utf8')) as SystemSnapshot;
+    return Array.isArray(snapshot.routeInventory) ? snapshot.routeInventory : null;
+  } catch {
+    return null;
+  }
 }
 
 function resolveInventoryOpenGraphImages(canonical: string): string[] {
@@ -246,12 +265,15 @@ function createSystemHubEntries(): RouteInventoryEntry[] {
 }
 
 export async function buildRouteInventory(): Promise<RouteInventoryEntry[]> {
+  const snapshotInventory = readSnapshotInventory();
+  if (snapshotInventory) {
+    return [...snapshotInventory].sort((left, right) => left.path.localeCompare(right.path));
+  }
+
   await ensureGraphInitialized();
 
   const graphEntries = getStructuredContentGraph().nodes.map(createEntryFromNode);
-  const deduped = new Map<string, RouteInventoryEntry>();
-
-  for (const entry of [
+  const entries = [
     ...createStaticEntries(),
     ...createBlogCategoryEntries(),
     ...createResourceCategoryEntries(),
@@ -259,11 +281,11 @@ export async function buildRouteInventory(): Promise<RouteInventoryEntry[]> {
     ...createTopicHubEntries(),
     ...createSystemHubEntries(),
     ...graphEntries,
-  ]) {
-    deduped.set(entry.path, entry);
-  }
+  ];
 
-  return Array.from(deduped.values()).sort((left, right) => left.path.localeCompare(right.path));
+  assertRouteOwnershipEntries(entries.map(entry => ({ path: entry.path, kind: entry.kind })));
+
+  return [...entries].sort((left, right) => left.path.localeCompare(right.path));
 }
 
 async function getRouteInventory() {

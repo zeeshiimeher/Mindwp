@@ -1,3 +1,6 @@
+<!--
+AUTO-GENERATED FILE - DO NOT EDIT
+-->
 # Topic Authority Scores
 
 > Generated: 2026-04-21

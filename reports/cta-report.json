@@ -2,7 +2,6 @@
   "meta": {
     "name": "cta-report",
     "source": "node --import tsx/esm scripts/analyzers/export-reports.mjs",
-    "generatedAt": "2026-04-21T19:56:57.421Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -15,28 +14,32 @@
   "data": {
     "validators": [
       {
+        "blocking": true,
+        "duration": 0,
         "name": "validate-cta-label-contract",
-        "status": "pass",
-        "blocking": true,
-        "duration": 0
+        "status": "pass"
       },
       {
+        "blocking": true,
+        "duration": 0,
         "name": "validate-conversion-contract",
-        "status": "pass",
-        "blocking": true,
-        "duration": 0
+        "status": "pass"
       },
       {
-        "name": "validate-cta-violations",
-        "status": "pass",
         "blocking": true,
-        "duration": 0
+        "duration": 0,
+        "name": "validate-cta-violations",
+        "status": "pass"
       }
     ]
   },
   "issues": [],
   "name": "cta-report",
   "status": "PASS",
-  "generatedAt": "2026-04-21T19:56:57.421Z",
-  "sourceCommand": "node --import tsx/esm scripts/analyzers/export-reports.mjs"
+  "sourceCommand": "node --import tsx/esm scripts/analyzers/export-reports.mjs",
+  "_generated": {
+    "source": "npm run system:full",
+    "type": "generated-artifact",
+    "hash": "05ca360f5cd9effa95d4511533c4cfa3f47584812f131f2f94299d118f8075f8"
+  }
 }

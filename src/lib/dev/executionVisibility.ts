@@ -2,6 +2,12 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 import { readJsonFile } from './reportJson';
+import {
+  getDashboardReportFiles,
+  getReportFiles,
+  getRequiredCommands,
+  getValidatorDefinitions,
+} from '../../../scripts/core/system-manifest.mjs';
 
 export type ScriptIntent = 'system' | 'content' | 'design' | 'build' | 'audit' | 'debug';
 export type ScriptGroup = 'daily' | 'occasional' | 'advanced';
@@ -30,10 +36,6 @@ export interface ScriptRegistryEntry {
   type: ScriptType;
   runnable: boolean;
   command?: string;
-}
-
-interface ScriptRegistryDocument {
-  scripts: ScriptRegistryEntry[];
 }
 
 interface UnifiedSystemReportSnapshot {
@@ -84,57 +86,12 @@ export interface DashboardReportFile {
 
 const root = process.cwd();
 const reportsDir = path.join(root, 'reports');
-const registryPath = path.join(root, 'scripts', 'system', 'script-registry.json');
 const scriptHistoryPath = path.join(reportsDir, 'script-history.json');
-
-const systemReportNames = new Set([
-  'blog-report.json',
-  'case-study-structure-report.json',
-  'cta-report.json',
-  'design-system-report.json',
-  'docs-report.json',
-  'feature-structure-report.json',
-  'home-structure-report.json',
-  'industry-structure-report.json',
-  'inline-style-report.json',
-  'metadata-completeness.json',
-  'metadata-report.json',
-  'resources-report.json',
-  'service-structure-report.json',
-  'structure-report.json',
-  'test-results.json',
-  'validation-results.json',
-  'system-state.json',
-  'system-drift.json',
-  'token-report.json',
-  'vocabulary-report.json',
-]);
-
-const contentReportNames = new Set([
-  'authority-map.dot',
-  'authority-map.json',
-  'client-report.json',
-  'client-report.md',
-  'cta-report.json',
-  'content-gaps.json',
-  'content-gaps.md',
-  'content-intelligence.json',
-  'content-score.json',
-  'fix-log.json',
-  'page-priorities.json',
-  'topic-authority-scores.json',
-  'topic-authority-scores.md',
-]);
-
-const debugReportNames = new Set([
-  'graph-report.json',
-  'script-history.json',
-  'session-log.json',
-  'token-v2-baseline.json',
-]);
 
 const reportGroupOrder: ReportGroup[] = ['system', 'content', 'audit', 'debug'];
 const scriptGroupOrder: ScriptGroup[] = ['daily', 'occasional', 'advanced'];
+const dashboardReportNames = new Set(getDashboardReportFiles().map(filePath => path.basename(filePath)));
+const durableReportNames = new Set(getReportFiles().map(filePath => path.basename(filePath)));
 
 function compareScriptGroups(left: ScriptGroup, right: ScriptGroup): number {
   return scriptGroupOrder.indexOf(left) - scriptGroupOrder.indexOf(right);
@@ -191,12 +148,41 @@ function collectCurrentReportFiles(): DashboardReportFile[] {
 }
 
 export function loadScriptRegistry(): ScriptRegistryEntry[] {
-  const registry = readJsonFile<ScriptRegistryDocument>(registryPath);
-  if (!registry || !Array.isArray(registry.scripts)) {
-    return [];
-  }
+  const requiredCommands = getRequiredCommands().map((command, index) => ({
+    id: command.name,
+    name: command.name,
+    category: 'core' as const,
+    intent: command.name === 'build' ? 'build' as const : 'system' as const,
+    group: 'daily' as const,
+    priority: index + 1,
+    estimatedTime: command.name === 'system:quick' ? 'fast' as const : 'medium' as const,
+    path: 'package.json',
+    description: command.description,
+    type: 'runner' as const,
+    runnable: true,
+    command: `npm run ${command.name}`,
+  }));
+  const validators = getValidatorDefinitions().map((validator, index) => ({
+    id: validator.name,
+    name: validator.name,
+    category: validator.category === 'core' ? 'core' as const : 'validators' as const,
+    intent:
+      validator.category === 'seo' || validator.category === 'content'
+        ? 'content' as const
+        : validator.category === 'structure'
+          ? 'design' as const
+          : 'system' as const,
+    group: validator.blocking === false ? 'occasional' as const : 'daily' as const,
+    priority: index + 10,
+    estimatedTime: validator.blocking === false ? 'medium' as const : 'fast' as const,
+    path: [validator.command, ...validator.args].join(' '),
+    description: `Run ${validator.name}.`,
+    type: 'validator' as const,
+    runnable: true,
+    command: `npm run validate:all -- --only=${validator.name}`,
+  }));
 
-  return registry.scripts.sort((left, right) => {
+  return [...requiredCommands, ...validators].sort((left, right) => {
     if (left.priority !== right.priority) {
       return left.priority - right.priority;
     }
@@ -290,16 +276,23 @@ function classifyReportGroup(reportPath: string): ReportGroup {
     return 'audit';
   }
 
-  if (systemReportNames.has(fileName)) {
+  if (dashboardReportNames.has(fileName)) {
     return 'system';
   }
 
-  if (debugReportNames.has(fileName)) {
-    return 'debug';
+  if (
+    fileName.includes('content') ||
+    fileName.includes('topic') ||
+    fileName.includes('authority') ||
+    fileName.includes('client') ||
+    fileName.includes('priority') ||
+    fileName.includes('cta')
+  ) {
+    return 'content';
   }
 
-  if (contentReportNames.has(fileName)) {
-    return 'content';
+  if (durableReportNames.has(fileName)) {
+    return 'system';
   }
 
   return 'debug';

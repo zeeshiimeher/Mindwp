@@ -1,6 +1,9 @@
+<!--
+AUTO-GENERATED FILE - DO NOT EDIT
+-->
 # Client Report
 
-Generated at: 2026-04-21T19:56:57.420Z
+Generated at: 4b526ec1d3b8b52bbad6aa3bd3c7a5101eb591e1e9b67328254720e95816093b
 
 ## Summary
 
@@ -12,10 +15,12 @@ Generated at: 2026-04-21T19:56:57.420Z
 ## Report Files
 
 - authority-map.json
+- build-safety-report.json
 - check-generated-report.json
 - client-dashboard.json
 - client-report.json
 - client-report.md
+- command-integrity-report.json
 - content-consistency-audit.json
 - content-contract-report.json
 - content-gaps.json
@@ -34,6 +39,7 @@ Generated at: 2026-04-21T19:56:57.420Z
 - domain-structure-report.json
 - duplicate-intent-report.json
 - env-validation-report.json
+- generated-file-protection-report.json
 - graph-derived-summary.json
 - graph-report.json
 - heading-audit-report.json
@@ -47,6 +53,7 @@ Generated at: 2026-04-21T19:56:57.420Z
 - production-contract-report.json
 - proof-coverage.json
 - related-duplication-scan.json
+- route-ownership-report.json
 - section-shell-integrity-report.json
 - section-structure-report.json
 - seo-enforcement-report.json
@@ -54,7 +61,7 @@ Generated at: 2026-04-21T19:56:57.420Z
 - split-screenshots-report.json
 - system-drift.json
 - system-health.json
-- system-knowledge-report.json
+- system-manifest-integrity-report.json
 - system-report.json
 - system-snapshots
 - system-state.json
@@ -70,7 +77,6 @@ Generated at: 2026-04-21T19:56:57.420Z
 - validation-report.json
 - validation-results.json
 - visual-audit
-- visual-audit-engine-report.json
 - visual-audit-report.json
 - visual-audit-runtime-report.json
 - vocabulary-report.json

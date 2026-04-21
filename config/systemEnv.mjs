@@ -1,4 +1,7 @@
+import '../scripts/setup-env.mjs';
+
 import { buildSystemRawEnv, systemEnvSchema } from './env.schema.shared.mjs';
+import { ensureSetupEnvNodeOptions } from '../scripts/setup-env.mjs';
 
 export function readSystemEnv(source = process.env) {
   return systemEnvSchema.parse(buildSystemRawEnv(source));
@@ -25,9 +28,14 @@ export const systemEnv = new Proxy(/** @type {ReturnType<typeof readSystemEnv>} 
 });
 
 export function buildSystemProcessEnv(overrides = {}) {
-  return {
+  const nextEnv = {
     ...process.env,
     ...overrides,
+  };
+
+  return {
+    ...nextEnv,
+    NODE_OPTIONS: ensureSetupEnvNodeOptions(nextEnv.NODE_OPTIONS),
   };
 }
 

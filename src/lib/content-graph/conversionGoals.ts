@@ -6,31 +6,8 @@
  * and the journey engine.
  */
 
+import { getContentPolicy } from '../../../config/contentPolicy';
 import type { ContentNodeType, ConversionGoal } from './types';
-
-// --- Type → Conversion Goal mapping ---
-
-const TYPE_TO_GOAL: Record<ContentNodeType, ConversionGoal> = {
-  service: 'consultation',
-  feature: 'demo',
-  'industry-category': 'lead',
-  'industry-detail': 'lead',
-  'case-study': 'consultation',
-  blog: 'email-capture',
-  resource: 'email-capture',
-};
-
-// --- Type → Conversion Priority mapping ---
-
-const TYPE_TO_PRIORITY: Record<ContentNodeType, number> = {
-  service: 100,
-  'industry-detail': 90,
-  feature: 80,
-  'case-study': 70,
-  'industry-category': 60,
-  resource: 50,
-  blog: 40,
-};
 
 // --- Resolve conversion goal for a content node type ---
 
@@ -38,14 +15,16 @@ export function resolveConversionGoal(type: ContentNodeType): {
   conversionGoal: ConversionGoal;
   conversionPriority: number;
 } {
+  const policy = getContentPolicy(type);
+
   return {
-    conversionGoal: TYPE_TO_GOAL[type] ?? 'none',
-    conversionPriority: TYPE_TO_PRIORITY[type] ?? 0,
+    conversionGoal: policy?.conversionGoal ?? 'none',
+    conversionPriority: policy?.conversionPriority ?? 0,
   };
 }
 
 export function resolveConversionPriorityTier(type: ContentNodeType): 'high' | 'medium' | 'low' {
-  const priority = TYPE_TO_PRIORITY[type] ?? 0;
+  const priority = getContentPolicy(type).conversionPriority;
 
   if (priority >= 80) {
     return 'high';

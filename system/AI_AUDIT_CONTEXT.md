@@ -116,7 +116,6 @@ Root reports:
 - `reports/ui-purity-report.json`
 - `reports/validation-report.json`
 - `reports/validation-results.json`
-- `reports/visual-audit-engine-report.json`
 - `reports/visual-audit-report.json`
 - `reports/visual-audit-runtime-report.json`
 - `reports/vocabulary-report.json`

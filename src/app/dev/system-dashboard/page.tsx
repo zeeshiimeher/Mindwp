@@ -1,5 +1,8 @@
+import { notFound } from 'next/navigation';
+
 import { readDashboardBundle } from '@/lib/dev/dashboard-reports';
 import { resolveSEO } from '@/lib/seo/seoResolver';
+import { getIsSystemEnabled } from '@/system/isSystemEnabled';
 
 import PureSystemDashboard from './PureSystemDashboard';
 
@@ -10,6 +13,10 @@ export async function generateMetadata() {
 }
 
 export default function SystemDashboardPage() {
+  if (!getIsSystemEnabled()) {
+    notFound();
+  }
+
   const reports = readDashboardBundle();
 
   if (!reports) {

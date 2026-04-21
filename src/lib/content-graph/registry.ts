@@ -85,7 +85,7 @@ function validateIdentifiers(nodeId: string, carrier: MetadataCarrier): void {
     if (!canonicalIndustries.has(industry)) {
       throw new Error(
         `Non-canonical industry identifier "${industry}" on node "${nodeId}". ` +
-          `Allowed: ${[...canonicalIndustries].join(', ')}`
+        `Allowed: ${[...canonicalIndustries].join(', ')}`
       );
     }
   }
@@ -93,7 +93,7 @@ function validateIdentifiers(nodeId: string, carrier: MetadataCarrier): void {
     if (!canonicalSystems.has(system)) {
       throw new Error(
         `Non-canonical system identifier "${system}" on node "${nodeId}". ` +
-          `Allowed: ${[...canonicalSystems].join(', ')}`
+        `Allowed: ${[...canonicalSystems].join(', ')}`
       );
     }
   }
@@ -101,7 +101,7 @@ function validateIdentifiers(nodeId: string, carrier: MetadataCarrier): void {
     if (!canonicalTopics.has(topic)) {
       throw new Error(
         `Non-canonical topic identifier "${topic}" on node "${nodeId}". ` +
-          `Allowed: ${[...canonicalTopics].join(', ')}`
+        `Allowed: ${[...canonicalTopics].join(', ')}`
       );
     }
   }
@@ -320,6 +320,15 @@ export function initContentGraph(registries: GraphRegistryInput): void {
     throw new Error('Content graph already initialized. Do not call initContentGraph() twice.');
   _contentGraph = buildContentGraph(registries);
   _structuredContentGraph = buildStructuredContentGraph(_contentGraph);
+}
+
+export function initContentGraphFromSnapshot(graph: ContentGraph): void {
+  if (_contentGraph || _structuredContentGraph) {
+    throw new Error('Content graph already initialized. Do not call initContentGraphFromSnapshot() twice.');
+  }
+
+  _structuredContentGraph = graph;
+  _contentGraph = Object.fromEntries(graph.nodes.map(node => [node.id, node]));
 }
 
 export function getContentGraph(): Record<string, ContentGraphNode> {

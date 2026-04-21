@@ -182,10 +182,29 @@ describe('integration: contact API', () => {
     );
   });
 
-  test('rejects valid payloads when sender configuration is missing', async () => {
-    await expect(loadContactRoute({ contactFromEmail: false })).rejects.toThrow(
-      'ENABLE_MAIL_SERVICE=true requires CONTACT_FROM_EMAIL.'
+  test('returns service unavailable when mail delivery is disabled', async () => {
+    const { POST, send } = await loadContactRoute({
+      mailEnabled: false,
+      captchaEnabled: false,
+      apiKey: false,
+      contactEmail: false,
+      contactFromEmail: false,
+    });
+
+    const response = await POST(
+      new Request('https://mindwp.local/api/contact', {
+        method: 'POST',
+        headers: validHeaders,
+        body: JSON.stringify({
+          ...validBody,
+          captchaToken: undefined,
+        }),
+      })
     );
+
+    expect(response.status).toBe(503);
+    await expect(response.json()).resolves.toEqual({ error: 'Email service is currently disabled.' });
+    expect(send).not.toHaveBeenCalled();
   });
 
   test('rejects payloads from invalid origins', async () => {

@@ -1,8 +1,7 @@
 {
   "meta": {
     "name": "docs-report",
-    "source": "npm run system:full",
-    "generatedAt": "2026-04-21T19:44:30.346Z",
+    "source": "node scripts/validators/validate-docs.mjs --report-json",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,7 +12,6 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-21T19:44:30.346Z",
     "passed": true,
     "violationCount": 0,
     "violations": []
@@ -21,6 +19,10 @@
   "issues": [],
   "name": "docs-report",
   "status": "PASS",
-  "generatedAt": "2026-04-21T19:44:30.346Z",
-  "sourceCommand": "npm run system:full"
+  "sourceCommand": "node scripts/validators/validate-docs.mjs --report-json",
+  "_generated": {
+    "source": "npm run system:full",
+    "type": "generated-artifact",
+    "hash": "d1bc24092eca884c81e01ff631d8305580f738d95017f104f9dfaabfcc0c606f"
+  }
 }
