@@ -1,8 +1,8 @@
 {
   "meta": {
-    "name": "validate-content-quality",
+    "name": "content-quality-report",
     "source": "npx tsx scripts/validators/validate-content-quality.mjs",
-    "generatedAt": "2026-04-21T07:33:05.671Z",
+    "generatedAt": "2026-04-21T09:08:51.200Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,7 +13,7 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-21T07:33:05.671Z",
+    "generatedAt": "2026-04-21T09:08:51.200Z",
     "passed": true,
     "pageCount": 355,
     "issueCount": 0,
@@ -47,8 +47,8 @@
     "warnings": []
   },
   "issues": [],
-  "name": "validate-content-quality",
+  "name": "content-quality-report",
   "status": "PASS",
-  "generatedAt": "2026-04-21T07:33:05.671Z",
+  "generatedAt": "2026-04-21T09:08:51.200Z",
   "sourceCommand": "npx tsx scripts/validators/validate-content-quality.mjs"
 }

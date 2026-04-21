@@ -4,7 +4,7 @@ import path from 'node:path';
 import { systemEnv } from '../../config/systemEnv.mjs';
 import { resolveLoggingMode } from '../../config/loggingConfig.mjs';
 import { createLogger } from '../../lib/logger/index.mjs';
-import { isExecutionCacheValid } from '../lib/execution-cache.mjs';
+import { createReportSchema } from '../lib/report-schema.mjs';
 import { ensureGraphInitialized } from '../../src/domains/init/ensureGraphInitialized';
 import { CANONICAL_TOPICS } from '../../src/lib/content-graph/canonical';
 import { getContentGraph } from '../../src/lib/content-graph/registry';
@@ -132,11 +132,11 @@ function partialScore(count: number, threshold: number, weight: number): number 
 function scoreTopic(topic: TopicScore): number {
   return Math.round(
     partialScore(topic.blogCount, FULL_THRESHOLDS.blog, WEIGHTS.blog) +
-      partialScore(topic.resourceCount, FULL_THRESHOLDS.resource, WEIGHTS.resource) +
-      partialScore(topic.serviceCount, FULL_THRESHOLDS.service, WEIGHTS.service) +
-      partialScore(topic.featureCount, FULL_THRESHOLDS.feature, WEIGHTS.feature) +
-      partialScore(topic.industryCount, FULL_THRESHOLDS.industry, WEIGHTS.industry) +
-      partialScore(topic.caseStudyCount, FULL_THRESHOLDS.caseStudy, WEIGHTS.caseStudy)
+    partialScore(topic.resourceCount, FULL_THRESHOLDS.resource, WEIGHTS.resource) +
+    partialScore(topic.serviceCount, FULL_THRESHOLDS.service, WEIGHTS.service) +
+    partialScore(topic.featureCount, FULL_THRESHOLDS.feature, WEIGHTS.feature) +
+    partialScore(topic.industryCount, FULL_THRESHOLDS.industry, WEIGHTS.industry) +
+    partialScore(topic.caseStudyCount, FULL_THRESHOLDS.caseStudy, WEIGHTS.caseStudy)
   );
 }
 
@@ -242,18 +242,9 @@ function generateMarkdown(scores: TopicScore[]): string {
 }
 
 async function main() {
-  const cacheState = isExecutionCacheValid({
-    inputPaths: INPUT_PATHS,
-    outputPaths: [markdownPath, jsonPath],
-  });
-
-  if (cacheState.valid) {
-    logger.printSummary('skipped (cache valid)');
-    return;
-  }
-
   await ensureGraphInitialized();
   fs.mkdirSync(reportsDir, { recursive: true });
+  const generatedAt = new Date().toISOString();
 
   const allNodes = Object.values(getContentGraph());
   const coverage = buildTopicCoverageSnapshots(allNodes, CANONICAL_TOPICS);
@@ -316,16 +307,32 @@ async function main() {
 
   logger.writeReport(markdownPath, generateMarkdown(scores));
 
-  logger.writeReport(jsonPath, {
-    generatedAt: new Date().toISOString(),
-    topicsAnalyzed: scores.length,
-    averageScore: avg,
-    completeCoverageTopics: scores.filter(topic => topic.coverageStatus === 'complete').length,
-    validatedCoreTopics: scores.filter(
-      topic => topic.classification === 'core' && topic.validationStatus === 'validated'
-    ).length,
-    scores: sorted,
-  });
+  logger.writeReport(
+    jsonPath,
+    createReportSchema({
+      name: 'topic-authority-scores',
+      status: 'PASS',
+      generatedAt,
+      summary: {
+        total: scores.length,
+        passed: scores.filter(topic => topic.coverageStatus === 'complete').length,
+        failed: 0,
+        warnings: scores.filter(topic => topic.coverageStatus === 'gap').length,
+      },
+      issues: [],
+      data: {
+        generatedAt,
+        topicsAnalyzed: scores.length,
+        averageScore: avg,
+        completeCoverageTopics: scores.filter(topic => topic.coverageStatus === 'complete').length,
+        validatedCoreTopics: scores.filter(
+          topic => topic.classification === 'core' && topic.validationStatus === 'validated'
+        ).length,
+        scores: sorted,
+      },
+      sourceCommand: 'node --import tsx/esm scripts/generators/generate-topic-authority-scores.ts',
+    })
+  );
 
   const strongest = sorted.slice(0, 5);
   const weakest = sorted.slice(-5).reverse();

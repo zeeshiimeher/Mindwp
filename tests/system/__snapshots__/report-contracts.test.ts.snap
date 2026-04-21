@@ -42339,6 +42339,15 @@ exports[`report contracts > locked reports match snapshots > dashboard/pipeline.
     },
     "slowestSteps": [
       {
+        "name": "detect-page-priorities",
+        "outputs": [
+          "page-priorities.json",
+        ],
+        "reason": null,
+        "skipped": false,
+        "status": "PASS",
+      },
+      {
         "name": "export-reports",
         "outputs": [
           "topic-insights.json",
@@ -42356,15 +42365,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/pipeline.
         "outputs": [
           "content-gaps.json",
           "content-gaps.md",
-        ],
-        "reason": null,
-        "skipped": false,
-        "status": "PASS",
-      },
-      {
-        "name": "detect-page-priorities",
-        "outputs": [
-          "page-priorities.json",
         ],
         "reason": null,
         "skipped": false,
@@ -42628,7 +42628,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/system.js
     "lastRunDetails": {
       "cacheHits": 26,
       "status": "PASS",
-      "time": "2026-04-21T00:39:33.583Z",
     },
     "lastRunSummary": {
       "failed": 0,
@@ -44901,8 +44900,8 @@ exports[`report contracts > locked reports match snapshots > dashboard/topics.js
       "status": "PASS",
       "summary": {
         "failed": 0,
-        "passed": 1,
-        "total": 0,
+        "passed": 42,
+        "total": 42,
         "warnings": 0,
       },
     },
@@ -45844,7 +45843,6 @@ exports[`report contracts > locked reports match snapshots > dashboard/validator
     "validationResults": {
       "data": {
         "cacheHits": 26,
-        "latestRun": "2026-04-21T00:39:34.736Z",
         "reportSize": {
           "checked": 61,
           "failures": [],

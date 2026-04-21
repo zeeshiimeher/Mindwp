@@ -310,6 +310,19 @@ function getStepOutputs(step) {
   return step.reportFiles ?? (step.syntheticReportFile ? [step.syntheticReportFile] : []);
 }
 
+function validateExistingStepOutputs(step) {
+  for (const fileName of step.reportFiles ?? []) {
+    const filePath = path.join(REPORTS_DIR, fileName);
+    if (!fs.existsSync(filePath)) {
+      throw new Error(`${step.name} output missing: ${fileName}. Run npm run generate:core first.`);
+    }
+
+    if (fileName.endsWith('.json')) {
+      validateReportFile(filePath, fileName);
+    }
+  }
+}
+
 function canUseCachedStep(step) {
   const outputs = getStepOutputs(step);
 
@@ -329,6 +342,22 @@ function canUseCachedStep(step) {
 function runPipelineStep(step, bucket, kind) {
   const startedAt = Date.now();
   const outputs = getStepOutputs(step);
+
+  if (kind === 'generator') {
+    validateExistingStepOutputs(step);
+    bucket.push(
+      createPipelineStep({
+        name: step.name,
+        status: 'PASS',
+        outputs,
+        skipped: false,
+        durationMs: 0,
+      })
+    );
+
+    logger.printSummary(`${step.name} -> PASS (pre-generated artifact)`);
+    return;
+  }
 
   if (step.optional && !OPTIONAL_AUDITS_ENABLED) {
     if (step.syntheticReportFile) {

@@ -1,12 +1,13 @@
-import { execFileSync } from 'node:child_process';
-import { readFileSync, writeFileSync } from 'node:fs';
+import { readFileSync } from 'node:fs';
+import { createRequire } from 'node:module';
 import { resolve } from 'node:path';
 
 import { createLogger } from '../../lib/logger/index.mjs';
+import { buildAuthorityMapArtifacts } from '../generators/generate-authority-map.ts';
+import { buildContentRegistryOutputs } from '../generators/generate-content-registries.mjs';
 
-const run = (cmd, args) => {
-  execFileSync(cmd, args, { stdio: 'inherit' });
-};
+const require = createRequire(import.meta.url);
+const { buildComponentDocsOutput } = require('../generators/generate-component-docs.cjs');
 
 const root = process.cwd();
 const logger = createLogger({ label: 'check-generated', mode: 'summary', rootDir: root });
@@ -19,55 +20,42 @@ const REQUIRED_GENERATED_FILES = [
   'src/domains/case-studies/registry.ts',
   'src/lib/authority/generated/authorityMap.ts',
 ];
-
 const GENERATED_FILES = [...REQUIRED_GENERATED_FILES];
 
-const snapshot = new Map();
-for (const rel of GENERATED_FILES) {
-  const abs = resolve(root, rel);
-  snapshot.set(rel, readFileSync(abs, 'utf8'));
-}
+async function main() {
+  const expectedByFile = new Map();
 
-try {
-  run('npm', ['run', '-s', 'generate:component-docs']);
+  const componentDocs = await buildComponentDocsOutput();
+  expectedByFile.set(COMPONENT_DOCS_REL, componentDocs.content);
 
-  try {
-    run('npm', ['run', '-s', 'generate:global-inventory']);
-  } catch {
-    logger.warn('generate:global-inventory skipped (optional dependency missing)');
+  for (const output of buildContentRegistryOutputs()) {
+    const relativePath = output.filePath.replace(`${root}/`, '');
+    expectedByFile.set(relativePath, output.content);
   }
 
-  run('npm', ['run', '-s', 'generate:content-registries']);
-  run('npm', ['run', '-s', 'generate:authority-map']);
+  const authorityMap = await buildAuthorityMapArtifacts();
+  expectedByFile.set(
+    'src/lib/authority/generated/authorityMap.ts',
+    authorityMap.formattedAuthorityMap
+  );
 
   const changed = [];
   for (const rel of GENERATED_FILES) {
     const abs = resolve(root, rel);
-    const before = snapshot.get(rel);
-    const after = readFileSync(abs, 'utf8');
-    if (before !== after) changed.push(rel);
+    const before = readFileSync(abs, 'utf8');
+    const expected = expectedByFile.get(rel);
+    if (expected === undefined || before !== expected) {
+      changed.push(rel);
+    }
   }
 
   if (changed.length > 0) {
-    // Restore original content so check mode doesn't dirty workspaces.
-    for (const rel of changed) {
-      writeFileSync(resolve(root, rel), snapshot.get(rel), 'utf8');
-    }
-
     logger.error(`generated outputs are out of date: ${changed.join(', ')}`);
-    logger.error(
-      'run: npm run -s generate:component-docs && npm run -s generate:global-inventory && npm run -s generate:content-registries'
-    );
+    logger.error('run: npm run -s generate:core');
     process.exitCode = 1;
   }
-} catch (err) {
-  // Best-effort restore on failure.
-  for (const rel of GENERATED_FILES) {
-    try {
-      writeFileSync(resolve(root, rel), snapshot.get(rel), 'utf8');
-    } catch {
-      // ignore
-    }
-  }
-  throw err;
 }
+
+main().catch(err => {
+  throw err;
+});

@@ -51,7 +51,7 @@ const validators = [
   {
     name: 'check-generated',
     command: 'node',
-    args: ['scripts/core/check-generated.mjs'],
+    args: ['--import', 'tsx/esm', 'scripts/core/check-generated.mjs'],
     blocking: true,
     reportFile: 'check-generated-report.json',
     syntheticReport: true,

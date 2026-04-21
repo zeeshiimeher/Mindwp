@@ -1,3 +1,6 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
 import {
   DOMAIN_GRAPH_SOURCES,
   RESOLVER_DEPENDENCY_SOURCES,
@@ -11,8 +14,6 @@ import {
   initContentGraph,
 } from '@/lib/content-graph/registry';
 import { getResolverIndexes, initResolverIndexes } from '@/lib/content-graph/resolverIndexes';
-import fs from 'node:fs';
-import path from 'node:path';
 
 import { setInitMetrics } from './metrics';
 

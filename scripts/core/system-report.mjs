@@ -36,28 +36,6 @@ const systemMode = systemEnv.SYSTEM_MODE;
 const executionLock = systemEnv.SYSTEM_EXECUTION_LOCK;
 const loggingMode = resolveLoggingMode(process.argv.slice(2), systemEnv);
 const logger = createLogger({ label: 'system:full', mode: loggingMode, rootDir: root });
-const generatorStepDefinitions = [
-  {
-    name: 'authority-map',
-    command: [
-      '--import',
-      'tsx/esm',
-      'scripts/generators/generate-authority-map.ts',
-      `--mode=${loggingMode}`,
-    ],
-    metricsFile: path.join(tempDir, 'authority-map-graph-init.json'),
-  },
-  {
-    name: 'topic-authority',
-    command: [
-      '--import',
-      'tsx/esm',
-      'scripts/generators/generate-topic-authority-scores.ts',
-      `--mode=${loggingMode}`,
-    ],
-    metricsFile: path.join(tempDir, 'topic-authority-graph-init.json'),
-  },
-];
 const reportInputPathsByFile = new Map([
   [
     'authority-map.json',
@@ -365,49 +343,6 @@ function uniqueStrings(values) {
   return [...new Set(values.filter(Boolean))];
 }
 
-function readMetricsFile(filePath) {
-  if (!fs.existsSync(filePath)) {
-    return null;
-  }
-
-  return readJsonFile(filePath);
-}
-
-function summarizeCommandStep(name, result, metricsFile) {
-  const output = combineOutput(result);
-  const skipped = /skipped \(cache valid\)/i.test(output);
-  const metrics = metricsFile ? readMetricsFile(metricsFile) : null;
-
-  return {
-    name,
-    status: skipped ? 'SKIPPED' : result.exitCode === 0 ? 'PASS' : 'FAIL',
-    skipped,
-    cached: skipped,
-    durationMs: result.durationMs,
-    graphInitMs:
-      metrics && Number.isFinite(metrics.totalTime) ? Math.round(metrics.totalTime) : null,
-    errors: result.exitCode === 0 ? [] : [excerptOutput(output) || `${name} failed.`],
-  };
-}
-
-function runGeneratorSteps() {
-  const steps = [];
-
-  for (const step of generatorStepDefinitions) {
-    if (fs.existsSync(step.metricsFile)) {
-      fs.rmSync(step.metricsFile, { force: true });
-    }
-
-    const result = runCommand(binaries.node, step.command, {
-      MINDWP_GRAPH_INIT_METRICS_FILE: step.metricsFile,
-    });
-
-    steps.push(summarizeCommandStep(step.name, result, step.metricsFile));
-  }
-
-  return steps;
-}
-
 function buildSkippedTestsSection() {
   return {
     status: 'SKIPPED',
@@ -446,8 +381,9 @@ function restoreReportFiles(preserved) {
   }
 }
 
-function buildPerformanceSummary(report, generatorSteps, pipelineReport) {
+function buildPerformanceSummary(report, pipelineReport) {
   const pipelineData = unwrapReportData(pipelineReport) ?? {};
+  const generatorSteps = Array.isArray(pipelineData.generators) ? pipelineData.generators : [];
   const analyzerSteps = Array.isArray(pipelineData.analyzers) ? pipelineData.analyzers : [];
   const topSlowSteps = [
     ...generatorSteps.map(step => ({
@@ -469,18 +405,13 @@ function buildPerformanceSummary(report, generatorSteps, pipelineReport) {
       return left.name.localeCompare(right.name);
     })
     .slice(0, 3);
-  const graphInitMs =
-    generatorSteps
-      .map(step => step.graphInitMs)
-      .filter(value => Number.isFinite(value))
-      .sort((left, right) => right - left)[0] ?? null;
   const analyzerRuntimeMs = analyzerSteps.reduce(
     (total, step) => total + (step.durationMs ?? 0),
     0
   );
 
   return {
-    graphInitMs,
+    graphInitMs: null,
     topSlowSteps,
     validatorRuntimeMs: report.validate.durationMs ?? 0,
     analyzerRuntimeMs,
@@ -1787,14 +1718,6 @@ function main() {
     logger.warn('running on dirty workspace');
   }
 
-  const generatorSteps = runGeneratorSteps();
-  const generatorErrors = generatorSteps.flatMap(step => step.errors);
-  if (generatorErrors.length > 0) {
-    logger.printErrors(generatorErrors, 'generator errors', 5);
-    process.exitCode = 1;
-    return;
-  }
-
   const validateResult = runCommand(binaries.node, [
     'scripts/core/validate-all.mjs',
     '--report-json',
@@ -1860,7 +1783,7 @@ function main() {
 
   if (skipTests) {
     const pipelineReport = readReportJson(root, 'pipeline-report.json');
-    const performanceSummary = buildPerformanceSummary(report, generatorSteps, pipelineReport);
+    const performanceSummary = buildPerformanceSummary(report, pipelineReport);
     const shouldFail = report.status === 'FAIL';
 
     if (preservedQuickReports) {
@@ -1916,11 +1839,7 @@ function main() {
 
   const validatedOutputs = validateFrozenOutputs(report, clientDashboard);
   const pipelineReport = readReportJson(root, 'pipeline-report.json');
-  const performanceSummary = buildPerformanceSummary(
-    validatedOutputs.report,
-    generatorSteps,
-    pipelineReport
-  );
+  const performanceSummary = buildPerformanceSummary(validatedOutputs.report, pipelineReport);
   const systemHealthReport = buildSystemHealthReport(validatedOutputs.report, pipelineReport);
   const systemHealthPath = path.join(reportsDir, 'system-health.json');
   writeJson(systemHealthPath, systemHealthReport);

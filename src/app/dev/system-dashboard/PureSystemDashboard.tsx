@@ -14,6 +14,8 @@ import type {
   DashboardWarningPanelItem,
 } from '@/lib/dev/dashboard-reports';
 
+type DashboardTone = 'PASS' | 'FAIL' | 'WARN' | 'INFO';
+
 function toAnchorId(name: string) {
   return `validator-${name.replace(/[^a-z0-9]+/gi, '-').toLowerCase()}`;
 }
@@ -47,6 +49,22 @@ function toneForStatus(status: DashboardStatus) {
   }
 
   return 'border-stone-300 bg-stone-100 text-stone-800';
+}
+
+function toneForSignal(tone: DashboardTone) {
+  if (tone === 'FAIL') {
+    return 'border-rose-300 bg-rose-50 text-rose-950';
+  }
+
+  if (tone === 'WARN') {
+    return 'border-amber-300 bg-amber-50 text-amber-950';
+  }
+
+  if (tone === 'PASS') {
+    return 'border-emerald-300 bg-emerald-50 text-emerald-950';
+  }
+
+  return 'border-stone-300 bg-stone-50 text-stone-900';
 }
 
 function formatValue(value: unknown) {
@@ -105,6 +123,64 @@ function Surface({
       </div>
       {children}
     </section>
+  );
+}
+
+function DashboardHero({
+  status,
+  timestamp,
+  durationMs,
+  quickLinks,
+}: {
+  status: DashboardStatus;
+  timestamp: unknown;
+  durationMs: unknown;
+  quickLinks: ReactNode;
+}) {
+  return (
+    <div className='rounded-[28px] border border-stone-950 bg-stone-950 p-6 text-white shadow-[0_30px_80px_rgba(28,25,23,0.24)]'>
+      <div className='flex flex-wrap items-start justify-between gap-4'>
+        <div className='max-w-2xl'>
+          <div className='text-[11px] font-bold uppercase tracking-[0.18em] text-stone-300'>
+            System Health
+          </div>
+          <div className='mt-3 flex flex-wrap items-center gap-3'>
+            <span className='text-4xl font-black tracking-tight sm:text-5xl'>{status}</span>
+            <StatusBadge status={status} />
+          </div>
+          <p className='mt-3 text-sm leading-6 text-stone-300'>
+            Deterministic control-plane state from the current report bundle.
+          </p>
+        </div>
+        <div className='flex flex-col items-start gap-3'>{quickLinks}</div>
+      </div>
+      <div className='mt-5 grid gap-3 sm:grid-cols-3'>
+        <div className='rounded-2xl border border-stone-700 bg-stone-900/80 p-4'>
+          <div className='text-[11px] font-bold uppercase tracking-[0.12em] text-stone-400'>
+            Generated At
+          </div>
+          <div className='mt-2 text-sm font-medium text-stone-100'>{formatValue(timestamp)}</div>
+        </div>
+        <div className='rounded-2xl border border-stone-700 bg-stone-900/80 p-4'>
+          <div className='text-[11px] font-bold uppercase tracking-[0.12em] text-stone-400'>
+            Duration
+          </div>
+          <div className='mt-2 text-sm font-medium text-stone-100'>
+            {typeof durationMs === 'number'
+              ? `${durationMs.toLocaleString()} ms`
+              : formatValue(durationMs)}
+          </div>
+        </div>
+        <div className='rounded-2xl border border-stone-700 bg-stone-900/80 p-4'>
+          <div className='text-[11px] font-bold uppercase tracking-[0.12em] text-stone-400'>
+            Scan Goal
+          </div>
+          <div className='mt-2 text-sm font-medium text-stone-100'>
+            Status, issues, warnings, and slow steps in one pass.
+          </div>
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -264,6 +340,58 @@ function QuickLinks() {
   );
 }
 
+function OverviewSignalCard({
+  title,
+  summary,
+  tone,
+  items,
+  emptyLabel,
+}: {
+  title: string;
+  summary?: string;
+  tone: DashboardTone;
+  items: Array<{ title: string; detail?: string; status?: DashboardStatus }>;
+  emptyLabel: string;
+}) {
+  return (
+    <div className={`rounded-[24px] border p-4 ${toneForSignal(tone)}`}>
+      <div className='flex items-start justify-between gap-3'>
+        <div>
+          <h3 className='text-sm font-bold'>{title}</h3>
+          {summary ? <p className='mt-1 text-xs leading-5 opacity-80'>{summary}</p> : null}
+        </div>
+        <div className='rounded-full border border-current/20 px-2.5 py-1 text-[11px] font-bold uppercase tracking-[0.12em]'>
+          {items.length}
+        </div>
+      </div>
+      <div className='mt-3 grid gap-2'>
+        {items.length > 0 ? (
+          items.slice(0, 6).map(item => (
+            <div
+              key={`${title}-${item.title}-${item.detail ?? ''}`}
+              className='rounded-2xl border border-current/15 bg-white/70 px-3 py-3'
+            >
+              <div className='flex items-start justify-between gap-3'>
+                <div>
+                  <div className='text-sm font-semibold'>{item.title}</div>
+                  {item.detail ? (
+                    <div className='mt-1 text-xs opacity-80'>{item.detail}</div>
+                  ) : null}
+                </div>
+                {item.status ? <StatusBadge status={item.status} /> : null}
+              </div>
+            </div>
+          ))
+        ) : (
+          <div className='rounded-2xl border border-dashed border-current/25 bg-white/60 px-3 py-4 text-sm opacity-75'>
+            {emptyLabel}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
+
 function FailureDrilldown({
   items,
   title,
@@ -380,15 +508,11 @@ function ValidatorGroups({ report }: { report: DashboardReport<Record<string, un
   ];
 
   return (
-    <div className='grid gap-4 xl:grid-cols-3'>
-      {sections.map(section => (
-        <div key={section.title} className='rounded-2xl border border-stone-200 bg-stone-50 p-4'>
-          <div className='mb-3 flex items-center justify-between gap-3'>
-            <div className='text-sm font-bold text-stone-950'>{section.title}</div>
-            <div className='text-xs font-semibold uppercase tracking-[0.12em] text-stone-500'>
-              {section.items.length}
-            </div>
-          </div>
+    <div className='grid gap-4'>
+      {sections.map(section => {
+        const tone =
+          section.title === 'Failures' ? 'FAIL' : section.title === 'Warnings' ? 'WARN' : 'INFO';
+        const content = (
           <div className='grid gap-2'>
             {section.items.length > 0 ? (
               section.items.slice(0, 8).map(item => (
@@ -396,9 +520,16 @@ function ValidatorGroups({ report }: { report: DashboardReport<Record<string, un
                   key={String(item.name)}
                   className='rounded-xl border border-stone-200 bg-white px-3 py-2'
                 >
-                  <div className='text-sm font-medium text-stone-900'>{String(item.name)}</div>
-                  <div className='text-xs text-stone-500'>
-                    {String(item.reportFile ?? 'No report file')}
+                  <div className='flex items-center justify-between gap-3'>
+                    <div>
+                      <div className='text-sm font-medium text-stone-900'>{String(item.name)}</div>
+                      <div className='text-xs text-stone-500'>
+                        {String(item.reportFile ?? 'No report file')}
+                      </div>
+                    </div>
+                    {'status' in item && item.status ? (
+                      <StatusBadge status={String(item.status).toUpperCase() as DashboardStatus} />
+                    ) : null}
                   </div>
                 </div>
               ))
@@ -408,8 +539,37 @@ function ValidatorGroups({ report }: { report: DashboardReport<Record<string, un
               </div>
             )}
           </div>
-        </div>
-      ))}
+        );
+
+        if (section.title === 'Passed') {
+          return (
+            <details
+              key={section.title}
+              className='rounded-2xl border border-stone-200 bg-stone-50 p-4'
+            >
+              <summary className='flex cursor-pointer list-none items-center justify-between gap-3 text-sm font-bold text-stone-950'>
+                <span>{section.title}</span>
+                <span className='text-xs font-semibold uppercase tracking-[0.12em] text-stone-500'>
+                  {section.items.length}
+                </span>
+              </summary>
+              <div className='mt-3'>{content}</div>
+            </details>
+          );
+        }
+
+        return (
+          <div key={section.title} className={`rounded-2xl border p-4 ${toneForSignal(tone)}`}>
+            <div className='mb-3 flex items-center justify-between gap-3'>
+              <div className='text-sm font-bold'>{section.title}</div>
+              <div className='text-xs font-semibold uppercase tracking-[0.12em] opacity-80'>
+                {section.items.length}
+              </div>
+            </div>
+            {content}
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -539,6 +699,56 @@ export default function PureSystemDashboard({ reports }: { reports: DashboardBun
   const failureDrilldown = (reports.validators.data.failureDrilldown as
     | { failures?: DashboardFailureDrilldownItem[]; warnings?: DashboardFailureDrilldownItem[] }
     | undefined) ?? { failures: [], warnings: [] };
+  const testsData = (systemData.tests as Record<string, unknown> | undefined) ?? {};
+  const pipelineWarnings = (reports.pipeline.data.warningsPanel as
+    | {
+        validators?: DashboardWarningPanelItem[];
+        skippedAnalyzers?: DashboardWarningPanelItem[];
+        sizeWarnings?: DashboardWarningPanelItem[];
+        staleReports?: DashboardWarningPanelItem[];
+      }
+    | undefined) ?? {
+    validators: [],
+    skippedAnalyzers: [],
+    sizeWarnings: [],
+    staleReports: [],
+  };
+  const topIssueItems = [
+    ...(failureDrilldown.failures ?? []).map(item => ({
+      title: item.name,
+      detail: item.reportFile,
+      status: item.reportStatus,
+    })),
+    ...((testsData.failedFiles as string[] | undefined) ?? []).map(file => ({
+      title: file,
+      detail: 'Failed test file',
+      status: 'FAIL' as DashboardStatus,
+    })),
+  ];
+  const slowStepItems = (
+    (reports.pipeline.data.slowestSteps as DashboardTimelineStep[] | undefined) ?? []
+  ).map(step => ({
+    title: step.name,
+    detail: `${step.durationMs.toLocaleString()} ms${step.outputs && step.outputs.length > 0 ? ` | ${step.outputs.join(', ')}` : ''}`,
+    status: step.status,
+  }));
+  const recentWarningItems = [
+    ...(pipelineWarnings.validators ?? []).map(item => ({
+      title: item.name,
+      detail: item.detail,
+      status: item.status,
+    })),
+    ...(pipelineWarnings.staleReports ?? []).map(item => ({
+      title: item.name,
+      detail: item.detail,
+      status: item.status,
+    })),
+    ...(pipelineWarnings.sizeWarnings ?? []).map(item => ({
+      title: item.name,
+      detail: item.detail,
+      status: item.status,
+    })),
+  ];
 
   return (
     <div className='mx-auto grid max-w-7xl gap-6 px-6 py-8'>
@@ -550,22 +760,37 @@ export default function PureSystemDashboard({ reports }: { reports: DashboardBun
         subtitle='Single control panel for deterministic audit state.'
       >
         <div className='grid gap-4'>
-          <div className='flex flex-wrap items-start justify-between gap-3'>
-            <div>
-              <div className='text-xs font-bold uppercase tracking-[0.12em] text-stone-500'>
-                Last run
-              </div>
-              <div className='mt-1 text-sm text-stone-700'>
-                {String(systemData.timestamp ?? 'n/a')} | {String(systemData.status ?? 'n/a')} |{' '}
-                {typeof systemData.durationMs === 'number'
-                  ? `${systemData.durationMs.toLocaleString()} ms`
-                  : 'n/a'}
-              </div>
-            </div>
-            <QuickLinks />
-          </div>
+          <DashboardHero
+            status={String(systemData.status ?? 'PASS').toUpperCase() as DashboardStatus}
+            timestamp={systemData.timestamp}
+            durationMs={systemData.durationMs}
+            quickLinks={<QuickLinks />}
+          />
           {integrityStrip ? <IntegrityStrip entries={integrityStrip} /> : null}
           <SummaryGrid report={reports.system} />
+          <div className='grid gap-4 xl:grid-cols-3'>
+            <OverviewSignalCard
+              title='Top Issues'
+              summary='Critical failures first: failed validators and failed test files.'
+              tone='FAIL'
+              items={topIssueItems}
+              emptyLabel='No critical issues recorded.'
+            />
+            <OverviewSignalCard
+              title='Top Slow Steps'
+              summary='Most expensive pipeline steps from the current report bundle.'
+              tone='WARN'
+              items={slowStepItems}
+              emptyLabel='No slow-step data recorded.'
+            />
+            <OverviewSignalCard
+              title='Recent Warnings'
+              summary='Warnings and stale conditions that still deserve attention.'
+              tone='INFO'
+              items={recentWarningItems}
+              emptyLabel='No warnings recorded.'
+            />
+          </div>
           {lastRunDetails ? <LastRunDetails details={lastRunDetails} /> : null}
           {lastRunSummary ? <LastRunSummary summary={lastRunSummary} /> : null}
         </div>
@@ -604,7 +829,7 @@ export default function PureSystemDashboard({ reports }: { reports: DashboardBun
       <Surface
         sectionId='validators'
         title='Validators'
-        subtitle='Normalized validator status and report linkage'
+        subtitle='Failures first, warnings second, passed validators lowered in visual priority'
       >
         <SummaryGrid report={reports.validators} />
         <div className='mt-4 grid gap-4 xl:grid-cols-2'>
@@ -614,29 +839,46 @@ export default function PureSystemDashboard({ reports }: { reports: DashboardBun
         <div className='mt-4'>
           <ValidatorGroups report={reports.validators} />
         </div>
-        <div className='mt-4'>
-          <ValidatorList report={reports.validators} />
-        </div>
+        <details className='mt-4 rounded-2xl border border-stone-200 bg-stone-50 p-4'>
+          <summary className='cursor-pointer list-none text-sm font-bold text-stone-950'>
+            All Validators
+          </summary>
+          <div className='mt-4'>
+            <ValidatorList report={reports.validators} />
+          </div>
+        </details>
       </Surface>
 
       <Surface
         sectionId='pipeline'
         title='Pipeline'
-        subtitle='Generator, analyzer, and validator coverage from pipeline.json'
+        subtitle='Timing visibility with slow steps and warnings promoted above full trace output'
       >
         <SummaryGrid report={reports.pipeline} />
-        <div className='mt-4'>
-          <SlowestSteps report={reports.pipeline} />
+        <div className='mt-4 grid gap-4 xl:grid-cols-[1.3fr_0.9fr]'>
+          <div>
+            <SlowestSteps report={reports.pipeline} />
+          </div>
+          <div>
+            <WarningsPanel report={reports.pipeline} />
+          </div>
         </div>
-        <div className='mt-4'>
-          <WarningsPanel report={reports.pipeline} />
-        </div>
-        <div className='mt-4'>
-          <PipelineTimeline report={reports.pipeline} />
-        </div>
-        <div className='mt-4'>
-          <AnalyzerList report={reports.pipeline} />
-        </div>
+        <details className='mt-4 rounded-2xl border border-stone-200 bg-stone-50 p-4'>
+          <summary className='cursor-pointer list-none text-sm font-bold text-stone-950'>
+            Full Timeline
+          </summary>
+          <div className='mt-4'>
+            <PipelineTimeline report={reports.pipeline} />
+          </div>
+        </details>
+        <details className='mt-4 rounded-2xl border border-stone-200 bg-stone-50 p-4'>
+          <summary className='cursor-pointer list-none text-sm font-bold text-stone-950'>
+            Analyzer Coverage
+          </summary>
+          <div className='mt-4'>
+            <AnalyzerList report={reports.pipeline} />
+          </div>
+        </details>
       </Surface>
 
       <Surface

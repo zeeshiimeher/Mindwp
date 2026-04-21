@@ -2,27 +2,27 @@
   "meta": {
     "name": "client-report",
     "source": "node --import tsx/esm scripts/analyzers/export-reports.mjs",
-    "generatedAt": "2026-04-21T07:45:01.737Z",
-    "status": "WARN",
+    "generatedAt": "2026-04-21T09:12:11.387Z",
+    "status": "PASS",
     "version": "1.0"
   },
   "summary": {
     "total": 355,
     "passed": 355,
     "failed": 0,
-    "warnings": 1
+    "warnings": 0
   },
   "data": {
     "summary": {
       "totalPages": 355,
       "healthy": 355,
       "weak": 0,
-      "critical": 1
+      "critical": 0
     },
     "validation": {
-      "passed": 26,
-      "failed": 1,
-      "blockingFailed": 1,
+      "passed": 27,
+      "failed": 0,
+      "blockingFailed": 0,
       "advisoryFailed": 0,
       "total": 27
     },
@@ -189,7 +189,7 @@
   },
   "issues": [],
   "name": "client-report",
-  "status": "WARN",
-  "generatedAt": "2026-04-21T07:45:01.737Z",
+  "status": "PASS",
+  "generatedAt": "2026-04-21T09:12:11.387Z",
   "sourceCommand": "node --import tsx/esm scripts/analyzers/export-reports.mjs"
 }

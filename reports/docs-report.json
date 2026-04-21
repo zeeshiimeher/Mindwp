@@ -1,8 +1,8 @@
 {
   "meta": {
-    "name": "validate-docs",
+    "name": "docs-report",
     "source": "npm run system:full",
-    "generatedAt": "2026-04-21T07:33:17.216Z",
+    "generatedAt": "2026-04-21T09:09:02.883Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,14 +13,14 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-21T07:33:17.216Z",
+    "generatedAt": "2026-04-21T09:09:02.883Z",
     "passed": true,
     "violationCount": 0,
     "violations": []
   },
   "issues": [],
-  "name": "validate-docs",
+  "name": "docs-report",
   "status": "PASS",
-  "generatedAt": "2026-04-21T07:33:17.216Z",
+  "generatedAt": "2026-04-21T09:09:02.883Z",
   "sourceCommand": "npm run system:full"
 }

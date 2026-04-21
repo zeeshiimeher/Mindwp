@@ -1,8 +1,8 @@
 {
   "meta": {
-    "name": "validate-inline-link-misuse",
+    "name": "inline-link-misuse-scan",
     "source": "npm run system:full",
-    "generatedAt": "2026-04-21T07:33:16.585Z",
+    "generatedAt": "2026-04-21T09:09:02.219Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -14,8 +14,8 @@
   },
   "data": null,
   "issues": [],
-  "name": "validate-inline-link-misuse",
+  "name": "inline-link-misuse-scan",
   "status": "PASS",
-  "generatedAt": "2026-04-21T07:33:16.585Z",
+  "generatedAt": "2026-04-21T09:09:02.219Z",
   "sourceCommand": "npm run system:full"
 }

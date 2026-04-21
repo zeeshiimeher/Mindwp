@@ -1,8 +1,8 @@
 {
   "meta": {
-    "name": "validate-inline-styles",
+    "name": "inline-style-report",
     "source": "npm run system:full",
-    "generatedAt": "2026-04-21T07:33:16.928Z",
+    "generatedAt": "2026-04-21T09:09:02.572Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,14 +13,14 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-21T07:33:16.928Z",
+    "generatedAt": "2026-04-21T09:09:02.572Z",
     "passed": true,
     "violationCount": 0,
     "violations": []
   },
   "issues": [],
-  "name": "validate-inline-styles",
+  "name": "inline-style-report",
   "status": "PASS",
-  "generatedAt": "2026-04-21T07:33:16.928Z",
+  "generatedAt": "2026-04-21T09:09:02.572Z",
   "sourceCommand": "npm run system:full"
 }
