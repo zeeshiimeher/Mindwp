@@ -203,6 +203,7 @@ export function normalizeReportForSnapshot<TReport extends ReportLike>(report: T
       changes?: ReportLike;
       data?: ReportLike;
       meta?: ReportLike;
+      summary?: ReportLike;
       status?: string;
       tests?: ReportLike;
     };
