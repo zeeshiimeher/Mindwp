@@ -149,6 +149,26 @@ const nextBin = path.join(
   process.platform === 'win32' ? 'next.cmd' : 'next'
 );
 
+function runStartupEnvValidation() {
+  const result = spawnSync(
+    process.execPath,
+    ['--import', 'tsx/esm', 'scripts/validate-env.ts', '--target=runtime'],
+    {
+      cwd: appRoot,
+      env: buildSystemProcessEnv(),
+      stdio: 'inherit',
+    }
+  );
+
+  if (typeof result.status === 'number' && result.status !== 0) {
+    process.exit(result.status);
+  }
+
+  if (result.error) {
+    throw result.error;
+  }
+}
+
 async function main() {
   if (!fs.existsSync(nextBin)) {
     throw new Error(`Next binary not found at ${nextBin}. Run npm install in the runtime root.`);
@@ -168,6 +188,10 @@ async function main() {
 
   const forwardedArgs = rest[0] === '--' ? rest.slice(1) : rest;
   const resolvedArgs = command === 'dev' ? await resolveDevArgs(forwardedArgs) : forwardedArgs;
+
+  if (command === 'dev' || command === 'build' || command === 'start') {
+    runStartupEnvValidation();
+  }
 
   if (useFilter) {
     const child = spawn(nextBin, [command, ...resolvedArgs], {

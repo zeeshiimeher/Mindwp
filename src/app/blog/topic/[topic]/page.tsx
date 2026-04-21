@@ -10,7 +10,7 @@ import {
 } from '@/domains/blog/api';
 import { BlogTopicTemplate } from '@/domains/blog/templates/BlogTopicTemplate';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
-import { getBlogTopicMetadata } from '@/lib/seo/pageMetadata';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 export const dynamicParams = false;
@@ -33,7 +33,7 @@ export async function generateMetadata({
     return {};
   }
 
-  return getBlogTopicMetadata(`/blog/topic/${meta.slug}`);
+  return resolveSEO({ path: `/blog/topic/${meta.slug}`, type: 'blog-topic', slug: meta.slug });
 }
 
 export default async function Page({ params }: { params: Promise<{ topic: string }> }) {

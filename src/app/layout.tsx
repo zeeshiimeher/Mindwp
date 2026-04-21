@@ -1,12 +1,10 @@
-import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Roboto_Mono } from 'next/font/google';
 import Script from 'next/script';
 
 import { Footer } from '@/global/Footer';
 import { Header } from '@/global/Header';
-import { getMetadataBase, SITE_NAME, TITLE_TEMPLATE } from '@/lib/seo/config';
-import { DEFAULT_OG_IMAGE, DEFAULT_OG_IMAGE_PATH } from '@/lib/seo/metadata';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 
 import '@/index.css';
 
@@ -22,22 +20,9 @@ const robotoMono = Roboto_Mono({
   variable: '--font-mono',
 });
 
-export const metadata: Metadata = {
-  metadataBase: getMetadataBase(),
-  title: {
-    default: SITE_NAME,
-    template: TITLE_TEMPLATE,
-  },
-  openGraph: {
-    siteName: SITE_NAME,
-    type: 'website',
-    images: [DEFAULT_OG_IMAGE],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    images: [DEFAULT_OG_IMAGE_PATH],
-  },
-};
+export async function generateMetadata() {
+  return resolveSEO({ path: '/', type: 'static', slug: 'home' });
+}
 
 export default function RootLayout({
   children,

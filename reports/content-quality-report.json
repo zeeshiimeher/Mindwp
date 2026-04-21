@@ -2,7 +2,7 @@
   "meta": {
     "name": "content-quality-report",
     "source": "npx tsx scripts/validators/validate-content-quality.mjs",
-    "generatedAt": "2026-04-21T09:08:51.200Z",
+    "generatedAt": "2026-04-21T18:08:36.581Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,7 +13,7 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-21T09:08:51.200Z",
+    "generatedAt": "2026-04-21T18:08:36.581Z",
     "passed": true,
     "pageCount": 355,
     "issueCount": 0,
@@ -49,6 +49,6 @@
   "issues": [],
   "name": "content-quality-report",
   "status": "PASS",
-  "generatedAt": "2026-04-21T09:08:51.200Z",
+  "generatedAt": "2026-04-21T18:08:36.581Z",
   "sourceCommand": "npx tsx scripts/validators/validate-content-quality.mjs"
 }

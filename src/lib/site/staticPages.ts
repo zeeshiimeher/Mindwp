@@ -12,8 +12,6 @@ export type StaticRouteDefinition = {
   title: string;
   description: string;
   includeInRouteInventory?: boolean;
-  indexable?: boolean;
-  follow?: boolean;
   showOnHumanSitemap?: boolean;
 };
 
@@ -72,7 +70,6 @@ export const STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
     title: 'Start a Conversation',
     description:
       'Redirect entrypoint into the canonical MindWP contact flow with preserved system and source context.',
-    indexable: false,
   },
   {
     key: 'static:cookies',
@@ -143,7 +140,6 @@ export const STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
     name: 'Components Reference',
     title: 'Components Reference',
     description: 'Internal component reference for the production design system.',
-    indexable: false,
     showOnHumanSitemap: false,
   },
   {
@@ -153,7 +149,6 @@ export const STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
     title: 'System Dashboard',
     description:
       'Unified internal control plane for system health, issue diagnostics, topic authority, and inventory visibility.',
-    indexable: false,
     showOnHumanSitemap: false,
   },
   {
@@ -163,7 +158,6 @@ export const STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
     title: 'System Dashboard Alias',
     description:
       'Legacy alias route that redirects to the unified internal control plane at /dev/system-dashboard.',
-    indexable: false,
     showOnHumanSitemap: false,
   },
   {
@@ -172,7 +166,6 @@ export const STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
     name: 'System Dashboard System Report',
     title: 'System Report Viewer',
     description: 'Internal raw report viewer for the system-report artifact.',
-    indexable: false,
     showOnHumanSitemap: false,
   },
   {
@@ -181,7 +174,6 @@ export const STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
     name: 'System Dashboard Pipeline Report',
     title: 'Pipeline Report Viewer',
     description: 'Internal raw report viewer for the pipeline-report artifact.',
-    indexable: false,
     showOnHumanSitemap: false,
   },
   {
@@ -190,7 +182,6 @@ export const STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
     name: 'System Dashboard Validation Report',
     title: 'Validation Report Viewer',
     description: 'Internal raw report viewer for the validation-report artifact.',
-    indexable: false,
     showOnHumanSitemap: false,
   },
   {
@@ -200,7 +191,6 @@ export const STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
     title: 'Performance Dashboard',
     description:
       'Client-facing performance dashboard showing system health, prioritized improvements, and page-level progress in business language.',
-    indexable: false,
     showOnHumanSitemap: false,
   },
   {
@@ -210,7 +200,6 @@ export const STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
     title: 'Authority Dashboard Redirect',
     description:
       'Legacy internal authority dashboard route that redirects to the system dashboard control plane.',
-    indexable: false,
     showOnHumanSitemap: false,
   },
   {
@@ -219,7 +208,6 @@ export const STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
     name: 'CTA Label Contract',
     title: 'CTA Label Contract',
     description: 'Internal SmartCTA contract surface for deterministic label and href validation.',
-    indexable: false,
     showOnHumanSitemap: false,
   },
   {
@@ -229,7 +217,6 @@ export const STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
     title: 'Image Dashboard',
     description:
       'Internal image-system dashboard for generation scores, operational issues, and image learning memory.',
-    indexable: false,
     showOnHumanSitemap: false,
   },
   {

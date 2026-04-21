@@ -3,13 +3,13 @@ import { Suspense } from 'react';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { categories, resources } from '@/domains/resources/api';
 import { ResourcesHub } from '@/domains/resources/pages/ResourcesHub';
-import { getInventoryMetadata } from '@/lib/content-quality/inventory';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
 
 export async function generateMetadata() {
-  return getInventoryMetadata('/resources');
+  return resolveSEO({ path: '/resources', type: 'resource-index', slug: 'resources' });
 }
 
 export default async function Page() {

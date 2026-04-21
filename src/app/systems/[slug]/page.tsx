@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { ClusterPageLayout } from '@/components/system/ClusterPageLayout';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { CANONICAL_SYSTEMS } from '@/lib/content-graph/canonical';
-import { getSystemMetadata } from '@/lib/seo/pageMetadata';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 
 export const dynamicParams = false;
 export const revalidate = false;
@@ -22,7 +22,7 @@ export async function generateMetadata({
   const { slug } = await params;
   if (!(CANONICAL_SYSTEMS as readonly string[]).includes(slug)) return {};
 
-  return getSystemMetadata(`/systems/${slug}`);
+  return resolveSEO({ path: `/systems/${slug}`, type: 'system-hub', slug });
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

@@ -3,7 +3,7 @@
 import { describe, expect, test } from 'vitest';
 
 import { getInventoryMetadata } from '@/lib/content-quality/inventory';
-import { getRouteMetadata } from '@/lib/seo/pageMetadata';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 
 type OpenGraphImage = string | URL | { url?: string | URL };
 
@@ -37,7 +37,7 @@ describe('integration: inventory metadata', () => {
 
     expect(metadata.title).toBeTruthy();
     expect(metadata.description).toBeTruthy();
-    expect(metadata.alternates?.canonical).toBe('/contact');
+    expect(metadata.alternates?.canonical).toBe('https://mindwp.com/contact');
     expect(metadata.openGraph?.title).toBeTruthy();
     expect(metadata.robots).toEqual({ index: true, follow: true });
   });
@@ -58,8 +58,8 @@ describe('integration: inventory metadata', () => {
   });
 
   test('throws when inventory-backed metadata is missing', async () => {
-    await expect(getRouteMetadata('/__missing-route__')).rejects.toThrow(
-      'Missing inventory metadata for path: /__missing-route__'
+    await expect(resolveSEO({ path: '/__missing-route__' })).rejects.toThrow(
+      'Missing SEO inventory entry for /__missing-route__'
     );
   });
 });

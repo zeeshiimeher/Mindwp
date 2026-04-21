@@ -1,6 +1,6 @@
 import JsonLd from '@/components/system/JsonLd';
 import { CTARegistryProvider } from '@/components/system/PageEnforcement';
-import { getInventoryMetadata } from '@/lib/content-quality/inventory';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 import { buildFAQSchema } from '@/lib/seo/schema';
 import { FAQPage } from '@/screens/FAQPage';
 
@@ -8,7 +8,7 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export async function generateMetadata() {
-  return getInventoryMetadata('/faq');
+  return resolveSEO({ path: '/faq', type: 'static', slug: 'faq' });
 }
 
 const faqSchema = buildFAQSchema({

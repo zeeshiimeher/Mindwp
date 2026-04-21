@@ -2,6 +2,7 @@
 
 import { describe, expect, test } from 'vitest';
 
+import { resolveIndexingPolicy } from '../../config/indexingPolicy';
 import { buildRouteInventory, buildSitemapRoutePaths } from '@/lib/content-quality/inventory';
 import { STATIC_PAGES, STATIC_ROUTE_DEFINITIONS } from '@/lib/site/staticPages';
 
@@ -24,7 +25,8 @@ describe('system invariant: static route parity', () => {
       .map(route => route.path)
       .sort((left, right) => left.localeCompare(right));
     const indexableDefinitionPaths = STATIC_ROUTE_DEFINITIONS.filter(
-      route => route.includeInRouteInventory !== false && route.indexable !== false
+      route =>
+        route.includeInRouteInventory !== false && resolveIndexingPolicy('static', route.path).index
     )
       .map(route => route.path)
       .sort((left, right) => left.localeCompare(right));

@@ -2,7 +2,7 @@
   "meta": {
     "name": "proof-coverage",
     "source": "npm run system:full",
-    "generatedAt": "2026-04-21T09:09:03.824Z",
+    "generatedAt": "2026-04-21T18:08:48.931Z",
     "status": "WARN",
     "version": "1.0"
   },
@@ -355,6 +355,6 @@
   ],
   "name": "proof-coverage",
   "status": "WARN",
-  "generatedAt": "2026-04-21T09:09:03.824Z",
+  "generatedAt": "2026-04-21T18:08:48.931Z",
   "sourceCommand": "npm run system:full"
 }

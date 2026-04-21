@@ -8,12 +8,26 @@ import { SITE_ORIGIN } from '@/lib/seo/config';
 
 export const runtime = 'nodejs';
 
-const resendApiKey = env.RESEND_API_KEY;
-const contactEmail = env.CONTACT_EMAIL;
-const contactFromEmail = env.CONTACT_FROM_EMAIL;
-const turnstileSecretKey = env.TURNSTILE_SECRET_KEY;
+function requireConfiguredValue(value: string | undefined, variableName: string) {
+  if (!value) {
+    throw new Error(
+      `${variableName} is required when its service is enabled. Run scripts/validate-env.ts before startup.`
+    );
+  }
 
-const resend = resendApiKey ? new Resend(resendApiKey) : null;
+  return value;
+}
+
+const mailConfig = SERVICES.mail.enabled
+  ? {
+    client: new Resend(requireConfiguredValue(env.RESEND_API_KEY, 'RESEND_API_KEY')),
+    contactEmail: requireConfiguredValue(env.CONTACT_EMAIL, 'CONTACT_EMAIL'),
+    contactFromEmail: requireConfiguredValue(env.CONTACT_FROM_EMAIL, 'CONTACT_FROM_EMAIL'),
+  }
+  : null;
+const turnstileSecretKey = SERVICES.captcha.enabled
+  ? requireConfiguredValue(env.TURNSTILE_SECRET_KEY, 'TURNSTILE_SECRET_KEY')
+  : undefined;
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 const rateLimitStore = new Map<string, { count: number; resetAt: number }>();
 
@@ -93,9 +107,7 @@ async function verifyTurnstileToken(request: Request, captchaToken: string) {
     return true;
   }
 
-  if (!turnstileSecretKey) {
-    return false;
-  }
+  const captchaSecret = requireConfiguredValue(turnstileSecretKey, 'TURNSTILE_SECRET_KEY');
 
   try {
     const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
@@ -104,7 +116,7 @@ async function verifyTurnstileToken(request: Request, captchaToken: string) {
         'Content-Type': 'application/x-www-form-urlencoded',
       },
       body: new URLSearchParams({
-        secret: turnstileSecretKey,
+        secret: captchaSecret,
         response: captchaToken,
         remoteip: getClientAddress(request),
       }),
@@ -179,24 +191,20 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Missing CAPTCHA token.' }, { status: 400 });
     }
 
-    if (!turnstileSecretKey) {
-      return NextResponse.json({ error: 'CAPTCHA service is not configured.' }, { status: 500 });
-    }
-
     const captchaVerified = await verifyTurnstileToken(request, captchaToken);
     if (!captchaVerified) {
       return NextResponse.json({ error: 'CAPTCHA verification failed.' }, { status: 400 });
     }
   }
 
-  if (!resend || !contactEmail || !contactFromEmail) {
-    return NextResponse.json({ error: 'Email service is not configured.' }, { status: 500 });
+  if (!mailConfig) {
+    return NextResponse.json({ error: 'Email service is currently disabled.' }, { status: 503 });
   }
 
   try {
-    await resend.emails.send({
-      from: `Website <${contactFromEmail}>`,
-      to: [contactEmail],
+    await mailConfig.client.emails.send({
+      from: `Website <${mailConfig.contactFromEmail}>`,
+      to: [mailConfig.contactEmail],
       subject: 'New Contact Form Submission',
       replyTo: email,
       text: `Name: ${name}

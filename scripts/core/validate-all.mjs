@@ -57,6 +57,46 @@ const validators = [
     syntheticReport: true,
   },
   {
+    name: 'validate-env',
+    command: 'node',
+    args: ['--import', 'tsx/esm', 'scripts/validate-env.ts', '--target=all'],
+    blocking: true,
+    reportFile: 'env-validation-report.json',
+    syntheticReport: true,
+  },
+  {
+    name: 'validate-indexing-policy',
+    command: 'node',
+    args: ['--import', 'tsx/esm', 'scripts/validators/validate-indexing-policy.ts'],
+    blocking: true,
+    reportFile: 'indexing-policy-report.json',
+    syntheticReport: true,
+  },
+  {
+    name: 'validate-topic-indexability',
+    command: 'node',
+    args: ['--import', 'tsx/esm', 'scripts/validators/validate-topic-indexability.ts'],
+    blocking: true,
+    reportFile: 'topic-indexability-report.json',
+    syntheticReport: true,
+  },
+  {
+    name: 'validate-seo-enforcement',
+    command: 'node',
+    args: ['--import', 'tsx/esm', 'scripts/validators/validate-seo-enforcement.ts'],
+    blocking: true,
+    reportFile: 'seo-enforcement-report.json',
+    syntheticReport: true,
+  },
+  {
+    name: 'validate-duplicate-intent',
+    command: 'node',
+    args: ['--import', 'tsx/esm', 'scripts/validators/validate-duplicate-intent.ts'],
+    blocking: true,
+    reportFile: 'duplicate-intent-report.json',
+    syntheticReport: true,
+  },
+  {
     name: 'typecheck',
     command: 'npx',
     args: ['tsc', '--noEmit'],
@@ -717,11 +757,11 @@ async function main() {
       report.issues.map(failure => {
         const excerpt = failure.output
           ? failure.output
-              .split('\n')
-              .map(line => line.trim())
-              .filter(Boolean)
-              .slice(0, logger.isVerbose() ? 8 : 1)
-              .join(' | ')
+            .split('\n')
+            .map(line => line.trim())
+            .filter(Boolean)
+            .slice(0, logger.isVerbose() ? 8 : 1)
+            .join(' | ')
           : 'no output captured';
         return `${failure.validator} (${failure.blocking ? 'blocking' : 'advisory'}): ${excerpt}`;
       }),

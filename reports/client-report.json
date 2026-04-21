@@ -2,7 +2,7 @@
   "meta": {
     "name": "client-report",
     "source": "node --import tsx/esm scripts/analyzers/export-reports.mjs",
-    "generatedAt": "2026-04-21T09:12:11.387Z",
+    "generatedAt": "2026-04-21T18:09:07.238Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -20,11 +20,11 @@
       "critical": 0
     },
     "validation": {
-      "passed": 27,
+      "passed": 30,
       "failed": 0,
       "blockingFailed": 0,
-      "advisoryFailed": 0,
-      "total": 27
+      "advisoryFailed": 2,
+      "total": 32
     },
     "contentQuality": {
       "issueCount": 0,
@@ -99,6 +99,12 @@
         "name": "domain-structure-report.json"
       },
       {
+        "name": "duplicate-intent-report.json"
+      },
+      {
+        "name": "env-validation-report.json"
+      },
+      {
         "name": "graph-derived-summary.json"
       },
       {
@@ -106,6 +112,9 @@
       },
       {
         "name": "heading-audit-report.json"
+      },
+      {
+        "name": "indexing-policy-report.json"
       },
       {
         "name": "inline-link-misuse-scan.json"
@@ -141,6 +150,9 @@
         "name": "section-structure-report.json"
       },
       {
+        "name": "seo-enforcement-report.json"
+      },
+      {
         "name": "session-log.json"
       },
       {
@@ -172,24 +184,12 @@
       },
       {
         "name": "token-report.json"
-      },
-      {
-        "name": "topic-authority-scores.json"
-      },
-      {
-        "name": "topic-authority-scores.md"
-      },
-      {
-        "name": "topic-insights.json"
-      },
-      {
-        "name": "typecheck-report.json"
       }
     ]
   },
   "issues": [],
   "name": "client-report",
   "status": "PASS",
-  "generatedAt": "2026-04-21T09:12:11.387Z",
+  "generatedAt": "2026-04-21T18:09:07.238Z",
   "sourceCommand": "node --import tsx/esm scripts/analyzers/export-reports.mjs"
 }

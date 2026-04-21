@@ -9,7 +9,7 @@ import {
   renderServicePageBySlug,
 } from '@/domains/services/config';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
-import { getServiceMetadata } from '@/lib/seo/pageMetadata';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 import { buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 export const dynamicParams = false;
@@ -75,7 +75,7 @@ export async function generateMetadata({
   const resolved = await resolveService(slug);
   if (!resolved) return {};
 
-  return getServiceMetadata(resolved.serviceNode.path);
+  return resolveSEO({ path: resolved.serviceNode.path, type: 'service', slug: resolved.slug });
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string[] }> }) {

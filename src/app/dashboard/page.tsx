@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import type { ReactNode } from 'react';
 
-import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { readClientDashboardReport } from '@/lib/dashboard/client-dashboard';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 
 export const dynamic = 'force-dynamic';
 
@@ -22,7 +22,7 @@ const pageStatusTone = {
 } as const;
 
 export async function generateMetadata() {
-  return getInventoryMetadata('/dashboard');
+  return resolveSEO({ path: '/dashboard', type: 'static', slug: 'dashboard' });
 }
 
 function toSingleValue(value: SearchParamValue) {
@@ -122,11 +122,10 @@ function DashboardLinkButton({
   return (
     <Link
       href={href}
-      className={`rounded-2xl border px-4 py-3 text-sm font-bold transition ${
-        active
+      className={`rounded-2xl border px-4 py-3 text-sm font-bold transition ${active
           ? 'border-slate-950 bg-slate-950 text-white shadow-md'
           : 'border-slate-300 bg-white/90 text-slate-800 hover:border-slate-400'
-      }`}
+        }`}
     >
       {label}
     </Link>

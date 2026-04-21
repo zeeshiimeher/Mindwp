@@ -1,12 +1,12 @@
-import { getInventoryMetadata } from '@/lib/content-quality/inventory';
 import { readDashboardBundle } from '@/lib/dev/dashboard-reports';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 
 import PureSystemDashboard from './PureSystemDashboard';
 
 export const dynamic = 'force-dynamic';
 
 export async function generateMetadata() {
-  return getInventoryMetadata('/dev/system-dashboard');
+  return resolveSEO({ path: '/dev/system-dashboard', type: 'static', slug: 'system-dashboard' });
 }
 
 export default function SystemDashboardPage() {

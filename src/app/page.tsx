@@ -1,13 +1,13 @@
 import { getCaseStudiesTemplateMetadata } from '@/domains/case-studies/data';
 import { homepageData } from '@/domains/home/data/homepage';
-import { getInventoryMetadata } from '@/lib/content-quality/inventory';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 import Homepage from '@/screens/Homepage';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
 
 export async function generateMetadata() {
-  return getInventoryMetadata('/');
+  return resolveSEO({ path: '/', type: 'static', slug: 'home' });
 }
 
 export default function Home() {

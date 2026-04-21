@@ -1,4 +1,3 @@
-import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import JsonLd from '@/components/system/JsonLd';
@@ -8,7 +7,6 @@ import { CaseStudyTemplate } from '@/domains/case-studies/templates';
 import { getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
 import { getImage } from '@/lib/image-system/resolver';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
-import { getCaseStudyMetadata } from '@/lib/seo/pageMetadata';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
@@ -28,7 +26,7 @@ const getCaseStudyNodeBySlug = async (slug: string): Promise<ContentGraphNode | 
   return nodes.find(node => node.slug === slug) ?? null;
 };
 
-async function resolveCaseStudy(slug: string) {
+export async function resolveCaseStudy(slug: string) {
   const node = await getCaseStudyNodeBySlug(slug);
   if (!node) return null;
 
@@ -45,18 +43,6 @@ function getCaseStudyFaqs(sections: CaseStudyTemplateSection[]) {
 export async function generateCaseStudyStaticParams() {
   const nodes = await getCaseStudyGraphNodes();
   return nodes.map(node => ({ slug: node.slug }));
-}
-
-export async function generateCaseStudyMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
-  const resolved = await resolveCaseStudy(slug);
-  if (!resolved) return {};
-
-  return getCaseStudyMetadata(resolved.node.path);
 }
 
 export async function CaseStudyDetailPage({ params }: { params: Promise<{ slug: string }> }) {

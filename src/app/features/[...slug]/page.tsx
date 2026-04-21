@@ -9,7 +9,7 @@ import {
 } from '@/domains/features/config';
 import { getInitializedContentGraph } from '@/domains/init/ensureGraphInitialized';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
-import { getFeatureMetadata } from '@/lib/seo/pageMetadata';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 import { buildBreadcrumbSchema, buildSoftwareApplicationSchema } from '@/lib/seo/schema';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
@@ -61,7 +61,7 @@ export async function generateMetadata({
   const resolved = await resolveFeature(slug);
   if (!resolved) return {};
 
-  return getFeatureMetadata(resolved.featureNode.path);
+  return resolveSEO({ path: resolved.featureNode.path, type: 'feature', slug: resolved.slug });
 }
 
 const formatFeatureTitle = (slug: string) =>

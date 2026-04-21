@@ -1,13 +1,16 @@
 import type { MetadataRoute } from 'next';
 
+import { buildRouteInventory } from '@/lib/content-quality/inventory';
 import { toAbsoluteUrl } from '@/lib/seo/config';
 
-export default function robots(): MetadataRoute.Robots {
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const inventory = await buildRouteInventory();
+
   return {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/archive/', '/components', '/dev/', '/docs/', '/image-dashboard'],
+      disallow: inventory.filter(entry => !entry.indexable).map(entry => entry.path),
     },
     sitemap: toAbsoluteUrl('/sitemap.xml'),
   };

@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { ClusterPageLayout } from '@/components/system/ClusterPageLayout';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { CANONICAL_TOPICS } from '@/lib/content-graph/canonical';
-import { getTopicMetadata } from '@/lib/seo/pageMetadata';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 
 export const dynamicParams = false;
 export const revalidate = false;
@@ -22,7 +22,7 @@ export async function generateMetadata({
   const { slug } = await params;
   if (!(CANONICAL_TOPICS as readonly string[]).includes(slug)) return {};
 
-  return getTopicMetadata(`/topics/${slug}`);
+  return resolveSEO({ path: `/topics/${slug}`, type: 'topic-hub', slug });
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

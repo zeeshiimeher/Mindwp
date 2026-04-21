@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-import { getMetadataBase, normalizePath, SITE_NAME, toAbsoluteUrl } from '@/lib/seo/config';
+import { getMetadataBase, SITE_NAME } from '@/lib/seo/config';
 
 export const DEFAULT_OG_IMAGE_PATH = '/og-default.png';
 export const DEFAULT_OG_IMAGE = {
@@ -9,56 +9,21 @@ export const DEFAULT_OG_IMAGE = {
   height: 630,
 } as const;
 
-type MetadataType = 'website' | 'article';
-
-type BuildMetadataInput = {
-  title: string;
-  description: string;
-  keywords?: string[];
-  path: string;
-  type?: MetadataType;
-  noindex?: boolean;
-  nofollow?: boolean;
-};
-
-export function buildMetadata({
-  title,
-  description,
-  keywords,
-  path,
-  type = 'website',
-  noindex = false,
-  nofollow = false,
-}: BuildMetadataInput): Metadata {
-  const normalizedPath = normalizePath(path);
-  const normalizedTitle =
-    normalizedPath === '/' ? title : title.replace(/\s*\|\s*MindWP\s*$/i, '').trim();
-
+export function buildDefaultRootMetadata(): Metadata {
   return {
     metadataBase: getMetadataBase(),
-    title: normalizedPath === '/' ? { absolute: normalizedTitle } : normalizedTitle,
-    description,
-    ...(keywords && keywords.length > 0 ? { keywords } : {}),
-    alternates: {
-      canonical: normalizedPath,
+    title: {
+      default: SITE_NAME,
+      template: `%s | ${SITE_NAME}`,
     },
     openGraph: {
-      title: normalizedTitle,
-      description,
-      url: toAbsoluteUrl(normalizedPath),
-      type,
       siteName: SITE_NAME,
+      type: 'website',
       images: [DEFAULT_OG_IMAGE],
     },
     twitter: {
       card: 'summary_large_image',
-      title: normalizedTitle,
-      description,
       images: [DEFAULT_OG_IMAGE_PATH],
-    },
-    robots: {
-      index: !noindex,
-      follow: !nofollow,
     },
   };
 }

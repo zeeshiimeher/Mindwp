@@ -1,4 +1,4 @@
-import { getInventoryMetadata } from '@/lib/content-quality/inventory';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 
 import ContactClientPage from './contact-client-page';
 
@@ -6,7 +6,7 @@ export const dynamic = 'force-static';
 export const revalidate = false;
 
 export async function generateMetadata() {
-  return getInventoryMetadata('/contact');
+  return resolveSEO({ path: '/contact', type: 'static', slug: 'contact' });
 }
 
 export default function ContactPage() {

@@ -2,7 +2,7 @@
   "meta": {
     "name": "vocabulary-report",
     "source": "npm run system:full",
-    "generatedAt": "2026-04-21T09:09:03.036Z",
+    "generatedAt": "2026-04-21T18:08:48.141Z",
     "status": "PASS",
     "version": "1.0"
   },
@@ -13,7 +13,7 @@
     "warnings": 0
   },
   "data": {
-    "generatedAt": "2026-04-21T09:09:03.036Z",
+    "generatedAt": "2026-04-21T18:08:48.141Z",
     "passed": true,
     "scannedFiles": 197,
     "issueCount": 0,
@@ -22,6 +22,6 @@
   "issues": [],
   "name": "vocabulary-report",
   "status": "PASS",
-  "generatedAt": "2026-04-21T09:09:03.036Z",
+  "generatedAt": "2026-04-21T18:08:48.141Z",
   "sourceCommand": "npm run system:full"
 }

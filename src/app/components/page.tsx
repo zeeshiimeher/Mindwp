@@ -1,13 +1,13 @@
 import { notFound } from 'next/navigation';
 
 import { env } from '@/env';
-import { getInventoryMetadata } from '@/lib/content-quality/inventory';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 
 export const dynamic = 'force-static';
 export const revalidate = false;
 
 export async function generateMetadata() {
-  return getInventoryMetadata('/components');
+  return resolveSEO({ path: '/components', type: 'static', slug: 'components' });
 }
 
 export default async function Page() {

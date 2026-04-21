@@ -77,7 +77,7 @@ describe('system invariant: metadata, canonicals, and sitemap stay consistent', 
   });
 
   test('robots points at the canonical sitemap and sitemap excludes disallowed prefixes', async () => {
-    const robotsConfig = robots();
+    const robotsConfig = await robots();
     const entries = await sitemap();
     const urls = entries.map(entry => entry.url.toString());
     const rules = Array.isArray(robotsConfig.rules) ? robotsConfig.rules : [robotsConfig.rules];

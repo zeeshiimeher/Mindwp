@@ -6,6 +6,12 @@ import { getallTopicSlugs, getTopicBySlug } from '@/domains/blog/api';
 import { BLOG_CATEGORY_REGISTRY } from '@/domains/blog/categoryRegistry';
 import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
 import { RESOURCE_CATEGORY_REGISTRY } from '@/domains/resources/categoryRegistry';
+import {
+  resolveIndexingPolicy,
+  type IndexingClassification,
+  type IndexingPolicyKind,
+  type IndexingPolicySource,
+} from '../../../config/indexingPolicy';
 import { CANONICAL_SYSTEMS, CANONICAL_TOPICS } from '@/lib/content-graph/canonical';
 import { getStructuredContentGraph } from '@/lib/content-graph/registry';
 import type { ContentGraphNode, ContentNodeType } from '@/lib/content-graph/types';
@@ -25,8 +31,10 @@ type InventoryKind =
 
 export interface RouteInventoryEntry {
   key: string;
-  kind: InventoryKind;
+  kind: IndexingPolicyKind;
   path: string;
+  classification: IndexingClassification;
+  policySource: IndexingPolicySource;
   title: string;
   description: string;
   canonical: string;
@@ -51,28 +59,6 @@ const workspaceRoot = process.cwd();
 
 function slugTitle(slug: string): string {
   return slug.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase());
-}
-
-function normalizeRobots(
-  robots: unknown,
-  defaultIndex = true,
-  defaultFollow = true
-): { index: boolean; follow: boolean } {
-  if (robots && typeof robots === 'object') {
-    const value = robots as {
-      index?: boolean;
-      follow?: boolean;
-      noindex?: boolean;
-      nofollow?: boolean;
-    };
-
-    return {
-      index: value.index ?? (value.noindex != null ? !value.noindex : defaultIndex),
-      follow: value.follow ?? (value.nofollow != null ? !value.nofollow : defaultFollow),
-    };
-  }
-
-  return { index: defaultIndex, follow: defaultFollow };
 }
 
 function resolveInventoryOpenGraphImages(canonical: string): string[] {
@@ -112,12 +98,12 @@ function normalizeOpenGraph(
   const value =
     openGraph && typeof openGraph === 'object'
       ? (openGraph as {
-          title?: string;
-          description?: string;
-          url?: string;
-          image?: string;
-          images?: string[];
-        })
+        title?: string;
+        description?: string;
+        url?: string;
+        image?: string;
+        images?: string[];
+      })
       : {};
 
   const explicitImages =
@@ -132,7 +118,7 @@ function normalizeOpenGraph(
     url: normalizePath(value.url ?? canonical),
     images:
       explicitImages.length === 0 ||
-      (onlyUsesDefaultImage && inferredImages[0] !== DEFAULT_OG_IMAGE_PATH)
+        (onlyUsesDefaultImage && inferredImages[0] !== DEFAULT_OG_IMAGE_PATH)
         ? inferredImages
         : explicitImages,
   };
@@ -140,31 +126,33 @@ function normalizeOpenGraph(
 
 function createEntry(seed: {
   key: string;
-  kind: InventoryKind;
+  kind: IndexingPolicyKind;
   path: string;
   title: string;
   description: string;
   openGraph?: unknown;
-  robots?: unknown;
-  indexable?: boolean;
-  follow?: boolean;
   topics?: string[];
   systems?: string[];
   industries?: string[];
 }): RouteInventoryEntry {
   const path = normalizePath(seed.path);
-  const robots = normalizeRobots(seed.robots, seed.indexable ?? true, seed.follow ?? true);
+  const policy = resolveIndexingPolicy(seed.kind, path);
 
   return {
     key: seed.key,
     kind: seed.kind,
     path,
+    classification: policy.classification,
+    policySource: policy.source,
     title: seed.title.trim(),
     description: seed.description.trim(),
     canonical: path,
     openGraph: normalizeOpenGraph(seed.openGraph, seed.title.trim(), seed.description.trim(), path),
-    robots,
-    indexable: robots.index,
+    robots: {
+      index: policy.index,
+      follow: policy.follow,
+    },
+    indexable: policy.index,
     topics: seed.topics ?? [],
     systems: seed.systems ?? [],
     industries: seed.industries ?? [],
@@ -179,7 +167,6 @@ function createEntryFromNode(node: ContentGraphNode): RouteInventoryEntry {
     title: node.title ?? slugTitle(node.slug),
     description: node.description ?? `${slugTitle(node.slug)} on MindWP.`,
     openGraph: node.openGraph,
-    robots: node.robots,
     topics: node.topics ?? [],
     systems: node.systems ?? [],
     industries: node.industries ?? [],
@@ -310,7 +297,7 @@ export function inventoryEntryToMetadata(entry: RouteInventoryEntry): Metadata {
     title,
     description: entry.description,
     alternates: {
-      canonical: entry.canonical,
+      canonical: toAbsoluteUrl(entry.canonical),
     },
     openGraph: {
       title: entry.openGraph.title,

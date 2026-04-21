@@ -8,7 +8,7 @@ import ResourcePageTemplate from '@/domains/resources/templates/ResourcePageTemp
 import type { ResourceFAQItem } from '@/domains/resources/templates/types';
 import type { ResourceSection } from '@/domains/resources/types';
 import { buildFaqSchema } from '@/lib/schema/buildFaqSchema';
-import { getResourceMetadata } from '@/lib/seo/pageMetadata';
+import { resolveSEO } from '@/lib/seo/seoResolver';
 import { buildArticleSchema, buildBreadcrumbSchema } from '@/lib/seo/schema';
 
 import type { ContentGraphNode } from '../../../lib/content-graph/types';
@@ -62,7 +62,7 @@ export async function generateMetadata({
     return {};
   }
 
-  return getResourceMetadata(resolved.node.path);
+  return resolveSEO({ path: resolved.node.path, type: 'resource', slug });
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {

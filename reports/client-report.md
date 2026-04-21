@@ -1,6 +1,6 @@
 # Client Report
 
-Generated at: 2026-04-21T09:12:11.387Z
+Generated at: 2026-04-21T18:09:07.238Z
 
 ## Summary
 
@@ -32,9 +32,12 @@ Generated at: 2026-04-21T09:12:11.387Z
 - design-system-report.json
 - docs-report.json
 - domain-structure-report.json
+- duplicate-intent-report.json
+- env-validation-report.json
 - graph-derived-summary.json
 - graph-report.json
 - heading-audit-report.json
+- indexing-policy-report.json
 - inline-link-misuse-scan.json
 - inline-style-report.json
 - internal-links-report.json
@@ -46,6 +49,7 @@ Generated at: 2026-04-21T09:12:11.387Z
 - related-duplication-scan.json
 - section-shell-integrity-report.json
 - section-structure-report.json
+- seo-enforcement-report.json
 - session-log.json
 - split-screenshots-report.json
 - system-drift.json
@@ -59,6 +63,7 @@ Generated at: 2026-04-21T09:12:11.387Z
 - token-report.json
 - topic-authority-scores.json
 - topic-authority-scores.md
+- topic-indexability-report.json
 - topic-insights.json
 - typecheck-report.json
 - ui-purity-report.json
