@@ -14,25 +14,25 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildAutoRepairIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Coverage Lane',
-    title: 'Smart Website Systems for Auto Repair Shops',
+    badge: 'For Auto Repair Shops',
+    title: 'Calls Come In Mid-Job. Estimates Get Sent. Then Silence.',
     description:
-      'An auto repair website should support problem qualification, diagnostic booking, estimate follow-up, and local trust — without forcing the team to manage every step manually.',
+      'A driver rings about a warning light while the bay is full. The call rolls to voicemail. An estimate goes out at 5pm and never gets chased. Most repair shops don’t lose work because of skill — they lose it in the gaps between enquiry, booking, and follow-up.',
     list: [
-      'Clearer repair enquiries',
-      'Better diagnostic booking',
-      'Stronger estimate follow-up',
-      'More reliable local trust',
+      'Calls missed during jobs',
+      'Quotes that go quiet',
+      'Slow callbacks',
+      'Reviews that never get asked for',
     ],
     cssPrefix: 'auto-repair-hero',
   };
 
   const imageStripData = {
-    badge: 'Service Environment',
+    badge: 'How Repair Work Actually Comes In',
     title:
-      'Auto repair demand often arrives with urgency, uncertainty, and a need for trust before booking',
+      'A repair enquiry usually arrives stressed, half-informed, and wanting to know if you can help today',
     description:
-      'Warning lights, breakdown concerns, diagnostics, inspection needs, estimates, and review follow-up all shape the decision. When those steps feel disconnected, the front desk and workshop absorb too much uncertainty.',
+      'Warning lights, sudden noises, an MOT failure, an insurance job. People want to know if you can fit them in, what it might cost, and whether they can trust the shop. If any of those answers take too long, they ring the next garage on the list.',
     items: [
       {
         title: 'Fault and repair enquiries',
@@ -60,90 +60,102 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where auto repair shops lose time, clarity, or momentum',
-    description:
-      'The gap is rarely visibility alone — it sits between vehicle problems, diagnostic booking, quote approval, and the trust proof someone needs before they commit.',
+    badge: 'Where The Work Slips',
+    title: 'The repair business is busy. The repair business is also leaking.',
     benefits: [
       {
         icon: Car,
-        title: 'Vehicle problems are not always qualified clearly enough at first contact',
+        title: 'The phone rings while everyone’s under a bonnet',
         description:
-          'Faults, symptoms, and urgency arrive through one loose path — first-response quality drops when everything routes the same way.',
+          'Three missed calls before lunch. By the time someone checks voicemail, two of them have already booked the garage down the road.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'Inspection and diagnostic booking creates friction',
+        title: 'Booking a diagnostic turns into a back-and-forth',
         description:
-          'Availability, workshop timing, vehicle context, and next steps sit in different places — the booking flow slows before it should.',
+          'They want to know when they can drop the car. The team is busy. Texts go back and forth for half a day before a slot is agreed.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Estimates and pending decisions go quiet',
+        title: 'Estimates go out and never get chased',
         description:
-          'Once the vehicle has been checked, the follow-up process can become inconsistent when the team is already back under workshop pressure.',
+          'Quote sent Tuesday afternoon. No reply. Everyone’s back in the workshop and nobody picks it up again until Friday — if at all.',
         iconType: 'accent' as const,
       },
       {
         icon: MapPinned,
-        title: 'Trust signals stay fragmented across the local decision path',
+        title: 'The shop down the road has eighty reviews. You have nine.',
         description:
-          'Reviews, service pages, workshop credibility, and local visibility exist in different places — they rarely work together to support confident booking decisions.',
+          'Plenty of happy customers. Almost none of them ever wrote anything online. Locally, you look quieter than you actually are.',
         iconType: 'primary' as const,
       },
     ],
     columns: 4 as const,
+    description:
+      'It’s rarely one big problem. It’s a steady drip — a missed call here, an unchased quote there, a review never asked for. Compounding every week.',
   };
 
   const systemLayersData = {
-    badge: 'System Layers',
-    title: 'The working layers behind a steadier auto repair pipeline',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to handle every enquiry, from first ring to final review',
     description:
-      'An auto repair workflow needs structure before the vehicle arrives, during diagnosis and estimate handling, and after the job is complete.',
+      'Each piece does one job. Together they make sure work doesn’t quietly fall on the floor while the team is mid-job.',
     featureCategories: [
       {
-        title: 'Lead capture and qualification layer',
+        title: 'Make sure every enquiry gets caught',
         description:
-          'Routes diagnostics, repairs, inspections, and warning-light enquiries through a clearer first-contact path so the right issue reaches the right next step.',
+          'Calls, forms, web chat, missed calls — they all land in one place with the vehicle and the issue already noted. Nobody hunts through voicemails at 6pm.',
         icon: MessageSquare,
         features: [
-          'Vehicle issue qualification',
-          'Symptom and urgency capture',
-          'Cleaner first response',
+          'Missed calls texted back instantly',
+          'Web enquiries sent to the right person',
+          'Vehicle and fault captured up front',
         ],
       },
       {
-        title: 'Diagnostic booking layer',
+        title: 'Get the diagnostic booked without a back-and-forth',
         description:
-          'Moves workshop requests, callback timing, and appointment windows into a booked next step without unnecessary delay.',
+          'A clear way to offer a slot, confirm it, and remind them the day before. Less phone tag, fewer no-shows.',
         icon: Calendar,
-        features: ['Diagnostic scheduling', 'Reminder touchpoints', 'Clear next-step guidance'],
+        features: [
+          'Drop-off slots people can pick',
+          'Confirmations and reminders that go out on their own',
+          'Front desk knows what’s coming in',
+        ],
       },
       {
-        title: 'Estimate follow-up layer',
+        title: 'Stop quotes from going quiet',
         description:
-          'Keeps pending approvals on a calmer, more consistent follow-up path so work does not disappear into silence.',
+          'Every estimate gets a follow-up on a schedule. The customer hears back even when the team is flat out.',
         icon: Workflow,
-        features: ['Estimate follow-up', 'Decision reminders', 'Pipeline visibility'],
+        features: [
+          'Estimates chased automatically',
+          'A clear list of jobs sitting on a yes/no',
+          'Old quotes warmed up instead of forgotten',
+        ],
       },
       {
-        title: 'Trust and proof layer',
+        title: 'Turn finished jobs into proof you can show',
         description:
-          'Connects reviews, workshop credibility, and proof of work so they support local buying decisions before the booking happens.',
+          'Once the car’s back on the road, a review request goes out at the right moment. Reputation catches up to the actual work.',
         icon: ShieldCheck,
-        features: ['Review requests', 'Proof-of-work support', 'Trust-led page structure'],
+        features: [
+          'Review requests after every job',
+          'Asked when the customer is happiest',
+          'More five-stars showing where people search',
+        ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Show up when local drivers search',
         description:
-          'Reinforces the local work you want through repair pages, maps visibility, and service-area coverage.',
+          'The website, the Google profile, the service pages — lined up so the shop appears when someone nearby types in what they need.',
         icon: Search,
         features: [
-          'Local area targeting',
-          'Repair service-page clarity',
-          'Google Business Profile support',
+          'Found on Maps for the work you actually do',
+          'Service pages that match real searches',
+          'Local area coverage that’s visible',
         ],
       },
     ],
@@ -151,112 +163,111 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
   };
 
   const comparisonData = {
-    badge: 'Operational Shift',
-    title: 'From reactive auto repair enquiries to a more reliable booking and follow-up flow',
+    badge: 'What Actually Changes',
+    title: 'A normal Tuesday at the shop, before and after',
     description:
-      'The workshop stays hands-on. The repeatable friction around enquiry routing, estimate coordination, and follow-up gets reduced.',
+      'The workshop still runs the workshop. What changes is the part that used to depend on someone remembering.',
     comparisons: [
       {
         type: 'before' as const,
-        title: 'Before the workflow is structured',
+        title: 'How it runs now',
         items: [
-          'Repair leads arrive without enough detail to route them quickly',
-          'Diagnostics and callbacks depend on manual back-and-forth',
-          'Pending estimates are hard to follow consistently',
-          'Trust depends too heavily on one-off reassurance during the booking process',
+          'Phone rings during a brake job. Goes to voicemail. Nobody listens to it until tonight.',
+          'A customer wants a diagnostic slot. Three texts later, you’re still trying to confirm Wednesday.',
+          'Sent an estimate Monday. It’s Friday. Nobody’s rung them back.',
+          'You finished a great job last week. They never got asked for a review.',
         ],
       },
       {
         type: 'after' as const,
-        title: 'After the workflow is aligned',
+        title: 'How it runs after',
         items: [
-          'New repair leads move into the right diagnostic path faster',
-          'Booking and reminder flow protect the next step more consistently',
-          'Estimate follow-up happens with less manual chasing',
-          'Reviews, local proof, and page structure support better decision confidence',
+          'Missed call gets a text back inside a minute. The customer knows you’ll ring them straight after this job.',
+          'They pick a drop-off slot from the link you sent. Confirmed. Reminder fires the day before.',
+          'The estimate gets a polite chase the next morning. You can see who’s waiting on a yes.',
+          'A review request goes out the day they pick the car up. Reviews start stacking quietly.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Lead To Booking Flow',
-    title:
-      'How the auto repair workflow moves from first enquiry to booked diagnosis and follow-up',
+    badge: 'Where Most Shops Start',
+    title: 'Three stages — most shops feel one of them more than the others',
     description:
-      'How the system moves repair leads from first contact into the right diagnostic or booking path — then into consistent estimate follow-up.',
+      'You don’t have to fix everything at once. We start with whatever is leaking the most work right now.',
     packages: [
       {
-        name: 'Lead capture and qualification',
+        name: 'Stop the calls and enquiries from going missing',
         description:
-          'Routes diagnostics, faults, and inspection enquiries into a clearer first step — so the right details reach the right person faster.',
-        price: 'Flow stage 1',
-        priceDetail: 'Best when lead quality and first-contact clarity are the main issue',
+          'If the phone rings out and web enquiries sit unread, this is the first thing to fix. Everything else gets easier once enquiries actually land somewhere.',
+        price: 'Stage 1',
+        priceDetail: 'Start here if missed calls and slow first replies are costing the most work',
         features: [
-          'Repair-specific service pages',
-          'Better enquiry capture',
-          'Vehicle and symptom context',
+          'Missed-call text-back so they know you’ll ring them',
+          'One inbox for calls, forms, and web chat',
+          'Vehicle and fault noted before the conversation starts',
         ],
       },
       {
-        name: 'Diagnostic booking and estimate flow',
+        name: 'Get the diagnostic booked the same day',
         description:
-          'Adds steadier scheduling, clearer reminders, and better control over the next step after diagnosis.',
-        price: 'Flow stage 2',
-        priceDetail: 'Best when booking and estimate handling create friction',
+          'Once enquiries are caught, this stage takes the friction out of confirming a slot and getting the car in.',
+        price: 'Stage 2',
+        priceDetail: 'Start here if booking is where things slow down',
         features: [
-          'Diagnostic scheduling support',
-          'Callback and reminder structure',
-          'Estimate path clarity',
+          'Drop-off slots customers can pick themselves',
+          'Reminders the day before so cars actually turn up',
+          'Clear handover between front desk and workshop',
         ],
         popular: true,
       },
       {
-        name: 'Follow-up and trust reinforcement',
+        name: 'Keep estimates moving and turn jobs into reviews',
         description:
-          'Keeps pending estimates, reviews, and completed-job proof moving in a more reliable way.',
-        price: 'Flow stage 3',
-        priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
+          'For shops where the work comes in fine but quotes go quiet and reviews never get asked for.',
+        price: 'Stage 3',
+        priceDetail: 'Start here if follow-up and reputation are the weak spots',
         features: [
-          'Estimate follow-up workflows',
-          'Review request support',
-          'Local proof reinforcement',
+          'Quotes chased automatically without sounding pushy',
+          'Past customers nudged for return work',
+          'Review requests that go out at the right moment',
         ],
       },
     ],
   };
 
   const workflowExamplesData = {
-    badge: 'Follow-Up Examples',
-    title: 'What the auto repair lead, booking, and follow-up flow looks like in practice',
+    badge: 'Real Situations',
+    title: 'A few moments where the difference actually shows up',
     description:
-      'Repeatable situations where a structured repair setup reduces friction — without making the business feel scripted.',
+      'Nothing dramatic. Just the small handoffs that used to depend on someone remembering.',
     workflows: [
       {
         trigger:
-          'A driver notices a fault and wants to know whether the next step is diagnosis, inspection, or repair booking.',
+          'It’s 10am. The bay is full. A customer rings about a warning light and the call goes to voicemail.',
         actions: [
-          'Capture the right issue and urgency early',
-          'Route the enquiry into the right diagnostic or booking path',
-          'Reduce wasted time on unclear first contact',
+          'They get a text inside a minute saying you’ll ring back after this job',
+          'The text captures the car and the issue so the callback is faster',
+          'The voicemail isn’t the only line keeping the lead alive',
         ],
       },
       {
         trigger:
-          'A diagnostic is requested and the business needs to confirm timing, vehicle details, and the next step clearly.',
+          'Someone wants a diagnostic before the weekend and asks when they can drop the car.',
         actions: [
-          'Move the lead into a booked workshop slot',
-          'Send reminders and next-step guidance',
-          'Keep internal handoff cleaner between front desk and workshop',
+          'They pick a drop-off slot from a link — no more text tag',
+          'A reminder goes out the day before so they actually show',
+          'Front desk sees the booking with the car and the fault attached',
         ],
       },
       {
         trigger:
-          'The estimate has been delivered and the business wants to keep the job warm without manual chasing every time.',
+          'You sent a £640 estimate three days ago and haven’t heard back.',
         actions: [
-          'Send measured follow-up at the right times',
-          'Keep the estimate stage visible internally',
-          'Support the decision with reviews and trust proof if needed',
+          'A polite chase goes out automatically the next morning',
+          'You can see all the open quotes in one place instead of scrolling email',
+          'If they say yes, the booking happens without another five messages',
         ],
       },
     ],
@@ -273,9 +284,9 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
   };
 
   const exploreData = {
-    badge: 'Explore',
+    badge: 'Related',
     description:
-      'Relevant service layers for auto repair shops that want cleaner diagnostics, estimate follow-up, and stronger local trust support.',
+      'The other parts of the system that come up most often for repair shops trying to stop work slipping through.',
     cards: [
       {
         icon: Workflow,
@@ -316,39 +327,38 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Common questions about auto repair systems',
-    description: 'Common questions about MindWP for auto repair shops',
+    title: 'Things repair shops usually ask',
+    description: 'Straight answers about how this fits into a workshop that’s already busy.',
     faqs: [
       {
-        question: 'How can an auto repair shop get more qualified bookings from its website?',
+        question: 'We’re already flat out. How much extra work is this for the team?',
         answer:
-          'Clearer repair and diagnostic pages, better forms, and guided next-step paths help drivers understand what to do next — which directly improves booking quality.',
+          'Almost none after setup. Missed calls get answered with a text on their own. Quote chasing goes out on a schedule. Reminders fire by themselves. The point is that the team stops being the bottleneck.',
       },
       {
-        question: 'Should auto repair shops offer online booking or diagnostic requests?',
+        question: 'Will customers feel like they’re getting an automated response?',
         answer:
-          'Yes — a clean request path reduces back-and-forth and moves drivers into the right next step faster. The key is capturing context early: symptoms, urgency, vehicle details, and whether the next step is diagnosis or direct booking.',
+          'No — the messages are short, written like you’d actually text someone, and they always lead back to a real conversation. The aim is to hold the lead until you can ring them, not to replace the call.',
       },
       {
-        question: 'How do repair shops reduce missed calls and slow callbacks?',
+        question: 'We tried online booking before and it was more hassle than help. Why now?',
         answer:
-          'Missed calls become expensive when the workshop is already under pressure. A better enquiry system can capture requests through multiple paths, support missed-enquiry recovery, and make the first reply clearer even when nobody can answer immediately.',
+          'Usually the booking tool wasn’t connected to anything else — the team still had to retype it. We set it up so the slot, the vehicle, and the issue all land in one place the front desk already uses.',
       },
       {
-        question: 'Do repair shops need separate pages for different services?',
+        question: 'Do we have to chase reviews ourselves?',
         answer:
-          'Often, yes, as long as the pages reflect real service coverage and useful information rather than thin copy. Good service-page structure helps local visibility and also helps prospects feel confident that the shop can handle their problem.',
+          'No. The request goes out on its own after the job’s done, when the customer is happiest. You’ll see them appear on Google without anyone sending another email.',
       },
       {
-        question:
-          'How should auto repair businesses handle estimate follow-up without sounding pushy?',
+        question: 'What about all the old quotes sitting in the inbox?',
         answer:
-          'Calm, well-timed follow-up that confirms the next step, keeps the estimate visible, and makes it easy to re-engage. The aim is clarity and consistency — not pressure.',
+          'Those get worked into the follow-up too. A lot of repair shops find that warming up old estimates brings in real money before any new marketing kicks in.',
       },
       {
-        question: 'What kind of reviews matter most for auto repair shops?',
+        question: 'Do we need a brand new website for this to work?',
         answer:
-          'The most useful reviews help future customers trust the work, the communication, and the overall experience. A structured review request process after completed jobs can help build that proof more consistently over time.',
+          'Usually not. We look at what you have first. Sometimes the site is fine and the gap is everything that happens after the form is submitted.',
       },
     ],
   };
@@ -366,9 +376,9 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'automotive-services',
     seo: {
-      title: 'Auto Repair — Smart Website Systems | MindWP',
+      title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
       description:
-        'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+        'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place so the work already coming in actually books.',
       keywords: [
         'auto repair website design',
         'auto repair booking system',
@@ -391,9 +401,9 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Build a steadier auto repair diagnostic and estimate system',
+      title: 'Tell us where the work is slipping',
       description:
-        'If your repair business is dealing with missed enquiries, loose booking, or inconsistent estimate follow-up — we can map a practical system around how the workshop actually runs.',
+        'If calls go to voicemail mid-job, quotes go quiet, or reviews never get asked for — walk us through how the shop runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

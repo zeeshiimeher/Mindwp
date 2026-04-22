@@ -35423,7 +35423,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             "wordCount": 414,
           },
           {
-            "avgSentenceLength": 13,
+            "avgSentenceLength": 12,
             "bannedPhraseCount": 1,
             "ctaLabelApproved": null,
             "domain": "services",
@@ -35433,8 +35433,8 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
             ],
             "hasCta": true,
             "hypeCount": 0,
-            "sentenceCount": 141,
-            "wordCount": 1818,
+            "sentenceCount": 140,
+            "wordCount": 1722,
           },
           {
             "avgSentenceLength": 19,
@@ -36079,7 +36079,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
           "wordCount": 414,
         },
         {
-          "avgSentenceLength": 13,
+          "avgSentenceLength": 12,
           "bannedPhraseCount": 1,
           "ctaLabelApproved": null,
           "domain": "services",
@@ -36089,8 +36089,8 @@ exports[`report contracts > locked reports match snapshots > dashboard/content.j
           ],
           "hasCta": true,
           "hypeCount": 0,
-          "sentenceCount": 141,
-          "wordCount": 1818,
+          "sentenceCount": 140,
+          "wordCount": 1722,
         },
         {
           "avgSentenceLength": 19,
@@ -40897,15 +40897,15 @@ exports[`report contracts > locked reports match snapshots > dashboard/pipeline.
         "durations": {},
         "generators": [
           {
-            "cached": true,
+            "cached": false,
             "name": "generate-topic-authority-scores",
             "outputs": [
               "topic-authority-scores.json",
               "topic-authority-scores.md",
             ],
-            "reason": "cached output reused",
-            "skipped": true,
-            "status": "SKIPPED",
+            "reason": null,
+            "skipped": false,
+            "status": "PASS",
           },
         ],
         "missing": [],
@@ -40923,15 +40923,15 @@ exports[`report contracts > locked reports match snapshots > dashboard/pipeline.
             "status": "PASS",
           },
           {
-            "cached": true,
+            "cached": false,
             "name": "generate-topic-authority-scores",
             "outputs": [
               "topic-authority-scores.json",
               "topic-authority-scores.md",
             ],
-            "reason": "cached output reused",
-            "skipped": true,
-            "status": "SKIPPED",
+            "reason": null,
+            "skipped": false,
+            "status": "PASS",
           },
           {
             "cached": false,
@@ -41437,7 +41437,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/pipeline.
       "status": "WARN",
       "summary": {
         "failed": 0,
-        "passed": 39,
+        "passed": 40,
         "total": 42,
         "warnings": 2,
       },
@@ -41510,15 +41510,15 @@ exports[`report contracts > locked reports match snapshots > dashboard/pipeline.
         "durations": {},
         "generators": [
           {
-            "cached": true,
+            "cached": false,
             "name": "generate-topic-authority-scores",
             "outputs": [
               "topic-authority-scores.json",
               "topic-authority-scores.md",
             ],
-            "reason": "cached output reused",
-            "skipped": true,
-            "status": "SKIPPED",
+            "reason": null,
+            "skipped": false,
+            "status": "PASS",
           },
         ],
         "missing": [],
@@ -41536,15 +41536,15 @@ exports[`report contracts > locked reports match snapshots > dashboard/pipeline.
             "status": "PASS",
           },
           {
-            "cached": true,
+            "cached": false,
             "name": "generate-topic-authority-scores",
             "outputs": [
               "topic-authority-scores.json",
               "topic-authority-scores.md",
             ],
-            "reason": "cached output reused",
-            "skipped": true,
-            "status": "SKIPPED",
+            "reason": null,
+            "skipped": false,
+            "status": "PASS",
           },
           {
             "cached": false,
@@ -42050,7 +42050,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/pipeline.
       "status": "WARN",
       "summary": {
         "failed": 0,
-        "passed": 39,
+        "passed": 40,
         "total": 42,
         "warnings": 2,
       },
@@ -42075,7 +42075,7 @@ exports[`report contracts > locked reports match snapshots > dashboard/pipeline.
   "status": "WARN",
   "summary": {
     "failed": 0,
-    "passed": 39,
+    "passed": 40,
     "total": 42,
     "warnings": 2,
   },
@@ -44801,15 +44801,15 @@ exports[`report contracts > locked reports match snapshots > pipeline-report.jso
     "durations": {},
     "generators": [
       {
-        "cached": true,
+        "cached": false,
         "name": "generate-topic-authority-scores",
         "outputs": [
           "topic-authority-scores.json",
           "topic-authority-scores.md",
         ],
-        "reason": "cached output reused",
-        "skipped": true,
-        "status": "SKIPPED",
+        "reason": null,
+        "skipped": false,
+        "status": "PASS",
       },
     ],
     "missing": [],
@@ -44827,15 +44827,15 @@ exports[`report contracts > locked reports match snapshots > pipeline-report.jso
         "status": "PASS",
       },
       {
-        "cached": true,
+        "cached": false,
         "name": "generate-topic-authority-scores",
         "outputs": [
           "topic-authority-scores.json",
           "topic-authority-scores.md",
         ],
-        "reason": "cached output reused",
-        "skipped": true,
-        "status": "SKIPPED",
+        "reason": null,
+        "skipped": false,
+        "status": "PASS",
       },
       {
         "cached": false,
@@ -45341,7 +45341,7 @@ exports[`report contracts > locked reports match snapshots > pipeline-report.jso
   "status": "WARN",
   "summary": {
     "failed": 0,
-    "passed": 39,
+    "passed": 40,
     "total": 42,
     "warnings": 2,
   },

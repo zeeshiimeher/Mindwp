@@ -14,24 +14,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Primary Lane',
-    title: 'Smart Website Systems for Electrical',
+    badge: 'For Electrical Companies',
+    title: 'Half The Power’s Out. They’ve Already Phoned Two Other Sparkies.',
     description:
-      'An electrical business website should handle urgent faults, booked jobs, estimate requests, and review follow-up — without making every new enquiry depend on whoever happens to answer first.',
+      'When the lights go off, people don’t leave a voicemail — they ring the next number. Same with a quoted EV charger or rewire that goes quiet. We put the system in place that catches the urgent calls, follows up the quotes, and asks for the review without anyone in the office remembering.',
     list: [
-      'Clearer service routing',
-      'Better booking and estimate handling',
-      'Stronger trust before the call',
-      'Consistent follow-up',
+      'Fault calls that go to whoever picked up first',
+      'EV charger and rewire quotes nobody chased',
+      'Review requests nobody sent',
+      'Areas you never wanted to drive to',
     ],
     cssPrefix: 'electrical-companies-hero',
   };
 
   const imageStripData = {
-    badge: 'Service Environment',
-    title: 'Electrical demand often mixes urgency, safety concerns, and higher trust requirements',
+    badge: 'How Electrical Calls Actually Land',
+    title: 'Tripped board on a Sunday doesn’t wait for Monday',
     description:
-      'Faults, installations, inspections, upgrades, and commercial or domestic jobs all need a clearer first-contact path. When the workflow is loose, confidence drops on both sides of the enquiry.',
+      'Burning smell, dead sockets, no power upstairs. People worry and dial. Whoever answers first usually wins the job — and often the EV charger six months later.',
     items: [
       {
         title: 'Urgent faults and outages',
@@ -59,37 +59,36 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where electrical businesses lose time, trust, or enquiry clarity',
-    description:
-      'The gap is between safety-sensitive demand, service routing, job booking, and the visible trust people need before they choose who to contact.',
+    badge: 'Where The Work Slips',
+    title: 'You’re up a ladder. The phone rings. They call the next sparkie.',
+    description: 'Same handful of leaks in nearly every electrical business. None of them are about the work itself.',
     benefits: [
       {
         icon: Zap,
-        title: 'Urgent electrical issues arrive with higher pressure',
+        title: '“No power in half the house” went to voicemail',
         description:
-          'Faults and outages need fast response, but the first contact does not always capture enough detail to route the request confidently.',
+          'You were in a loft. They didn’t leave a message — they rang the next electrician on Google.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'Booked work and estimates lack one clear path',
+        title: 'A quoted EV charger went quiet for two weeks',
         description:
-          'Inspections, upgrades, installs, and repair work create booking friction when the business handles each service path differently.',
+          '£1,400 of work. One follow-up text would have closed it. Nobody had time to send it.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Follow-up around pending jobs becomes inconsistent',
+        title: 'Reviews don’t reflect the actual workload',
         description:
-          'Quotes and next-step decisions are harder to manage when the workday is full and the follow-up process is still manual.',
+          'Hundreds of jobs done well. 22 reviews online. Nobody was asked at the right moment.',
         iconType: 'accent' as const,
       },
       {
         icon: MapPinned,
-        title: 'Trust signals miss the right services',
+        title: 'Half your callouts are 45 minutes away',
         description:
-          'Reviews, safety credibility, service pages, and local coverage all exist but do not strengthen the electrical jobs you most want.',
+          'Not the postcodes you actually want. The site brings in whoever finds you, not the right area.',
         iconType: 'primary' as const,
       },
     ],
@@ -97,152 +96,167 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Layers',
-    title: 'The working layers behind a steadier electrical workflow',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to catch the urgent calls and follow up the bigger installs',
     description:
-      'The system supports urgent faults, booked visits, quote decisions, and trust-building follow-up without turning the workflow into overhead.',
+      'Each piece does one job. Together they keep the work moving while you’re up a ladder.',
     featureCategories: [
       {
-        title: 'Urgent request layer',
+        title: 'Catch every call, even when you’re mid-rewire',
         description:
-          'Routes faults, outages, and safety-related enquiries into a cleaner first-contact path so the business can respond properly.',
+          'Missed call gets an instant text — “on a job, what’s the issue, can call back in 20.” Most stop dialling the next sparkie.',
         icon: MessageSquare,
-        features: ['Urgency capture', 'Job-type routing', 'Clearer first response'],
+        features: [
+          'Missed-call text-back automatically',
+          'Urgency captured up front',
+          'Holds the lead until you’re free',
+        ],
       },
       {
-        title: 'Booking and visit layer',
+        title: 'Take the booking without the back-and-forth',
         description:
-          'Structures inspections, repairs, and scheduled work between first contact and the appointment itself.',
+          'For inspections and non-urgent work, they pick a slot themselves. The office stops being a calendar.',
         icon: Calendar,
-        features: ['Visit scheduling', 'Reminder timing', 'Clear next-step guidance'],
+        features: [
+          'Online booking for inspections and routine work',
+          'Reminders the day before',
+          'Reschedule link instead of a no-show',
+        ],
       },
       {
-        title: 'Estimate and upgrade layer',
+        title: 'Follow up the bigger jobs nobody has time to chase',
         description:
-          'Keeps bigger electrical jobs and upgrades visible with calmer follow-up after the first visit so opportunities do not stall.',
+          'EV charger or rewire quote sent Monday, automatic check-in Friday, another the week after. Quietly closes more.',
         icon: Workflow,
-        features: ['Estimate follow-up', 'Upgrade decision support', 'Pipeline visibility'],
+        features: [
+          'Quote follow-up at the right intervals',
+          'Pending jobs visible in one place',
+          'Closing rate goes up without nagging',
+        ],
       },
       {
-        title: 'Trust and proof layer',
+        title: 'Turn finished jobs into reviews you can show',
         description:
-          'Connects reviews, proof of reliable work, and safety credibility to the local buying decision before the call happens.',
+          'A polite review request goes out the day after, when the lights are back on.',
         icon: ShieldCheck,
-        features: ['Review request workflows', 'Trust-building proof', 'Credibility support'],
+        features: [
+          'Review requests after every job',
+          'Asked when customers are happiest',
+          'Reviews catch up to the workload',
+        ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Show up for the postcodes you actually want',
         description:
-          'Aligns service pages, emergency intent, and area coverage to reinforce the electrical work you want.',
+          'Service pages, Google profile, and local search lined up so the right area finds you first.',
         icon: Search,
-        features: ['Local service-page alignment', 'Area targeting', 'Search reinforcement'],
+        features: [
+          'Pages for the services and areas you want',
+          'Found on Maps for local searches',
+          'Less time driving to the wrong postcodes',
+        ],
       },
     ],
     columns: 3 as const,
   };
 
   const comparisonData = {
-    badge: 'Operational Shift',
-    title: 'From reactive electrical lead handling to a clearer booking and follow-up flow',
-    description:
-      'The expertise and safety judgement stay. The repeatable friction around lead handling, booking, and follow-up gets reduced.',
+    badge: 'What Actually Changes',
+    title: 'A normal week on the tools, before and after',
+    description: 'The work stays. The chasing and the missed calls stop.',
     comparisons: [
       {
         type: 'before' as const,
-        title: 'Before the workflow is structured',
+        title: 'How it runs now',
         items: [
-          'Urgent requests arrive without enough detail to route them confidently',
-          'Booked jobs and quote paths vary too much between services',
-          'Pending work is harder to follow consistently',
-          'Trust depends too much on manual reassurance during the buying process',
+          'Three urgent calls missed during a single fuse-board upgrade',
+          'A £1,400 EV charger quote went quiet for two weeks. No follow-up sent.',
+          '“Meant to ask for a review” — said about 200 jobs.',
+          'Half the new enquiries are from postcodes 45 minutes away.',
         ],
       },
       {
         type: 'after' as const,
-        title: 'After the workflow is aligned',
+        title: 'How it runs after',
         items: [
-          'New leads move into the right service path faster',
-          'Booking and reminder flow protect the next step more consistently',
-          'Quotes and pending jobs stay visible with less chasing',
-          'Reviews and local proof support stronger decision confidence',
+          'Missed calls get an instant text. Most wait the 20 minutes.',
+          'Quotes get followed up automatically. More close, none feel pestered.',
+          'Every customer gets asked the day after. Reviews catch up to the work.',
+          'The right postcodes find you first. Less driving for less money.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Lead To Booking Flow',
-    title: 'From first contact to booked work and follow-up',
-    description:
-      'Each stage moves electrical demand through a specific part of the journey — from first enquiry into the right job path, then into clearer follow-up.',
+    badge: 'Where Most Sparkies Start',
+    title: 'Three stages — most businesses feel one of them more than the others',
+    description: 'Pick whichever costs you the most jobs right now.',
     packages: [
       {
-        name: 'Urgent lead capture and routing',
-        description:
-          'Routes faults, repairs, inspections, and routine service requests into the right path with enough context for a clear first step.',
-        price: 'Flow stage 1',
-        priceDetail: 'Best when first-contact clarity and service routing are the main issue',
+        name: 'Stop missing the urgent calls',
+        description: 'For when fault calls hit while you’re on a job and go to the next sparkie.',
+        price: 'Stage 1',
+        priceDetail: 'Start here if missed calls during work hours is the biggest leak',
         features: [
-          'Service-specific request paths',
-          'Urgency capture',
-          'Cleaner lead qualification',
+          'Missed-call text-back the moment you can’t answer',
+          'Urgent vs non-urgent triaged automatically',
+          'Most callers wait instead of dialling the next electrician',
         ],
       },
       {
-        name: 'Booking and visit protection',
-        description:
-          'Adds steadier appointment booking, reminder support, and clearer handoffs so visits move forward without friction.',
-        price: 'Flow stage 2',
-        priceDetail: 'Best when booking friction and loose handoffs are the pressure points',
-        features: ['Visit scheduling support', 'Reminder structure', 'Appointment-path clarity'],
+        name: 'Close the bigger quotes that go quiet',
+        description: 'For when EV chargers, rewires, and upgrades get quoted and you never hear back.',
+        price: 'Stage 2',
+        priceDetail: 'Start here if quote-to-booking conversion is the leak',
+        features: [
+          'Quote follow-ups at the right intervals',
+          'Pending jobs visible in one place',
+          'No more “what happened to that EV charger quote?”',
+        ],
         popular: true,
       },
       {
-        name: 'Quote and review follow-up',
-        description:
-          'Keeps pending jobs, upgrades, and completed work moving through a reliable follow-up and trust path.',
-        price: 'Flow stage 3',
-        priceDetail: 'Best when follow-up consistency and trust-building need improvement',
+        name: 'Build the local proof that fills the diary on its own',
+        description: 'For when work is great but reviews and the right postcodes don’t reflect it.',
+        price: 'Stage 3',
+        priceDetail: 'Start here if reviews and area targeting are the weak spot',
         features: [
-          'Quote follow-up workflows',
-          'Review request support',
-          'Post-job trust reinforcement',
+          'Review requests after every job',
+          'Service pages for the work and postcodes you want',
+          'Less time driving to jobs you don’t want',
         ],
       },
     ],
   };
 
   const workflowExamplesData = {
-    badge: 'Follow-Up Examples',
-    title: 'What the electrical lead, booking, and follow-up flow looks like in practice',
-    description:
-      'Repeatable situations where the system reduces friction without making the business feel scripted.',
+    badge: 'Real Situations',
+    title: 'A few moments where the difference shows up',
+    description: 'Small moments on the tools and after, where things used to slip through.',
     workflows: [
       {
-        trigger:
-          'A property owner has an urgent electrical issue and wants to know whether the business can respond quickly and safely.',
+        trigger: 'A “no power upstairs” call comes in while you’re mid-rewire.',
         actions: [
-          'Capture urgency and job type early',
-          'Route the lead into the right service path',
-          'Reduce wasted time on unclear first contact',
+          'Missed call gets an instant text within seconds',
+          'They get told you’re on a job and when you’ll be free',
+          'Most wait. The ones who can’t are flagged as truly urgent.',
         ],
       },
       {
-        trigger:
-          'An inspection, repair, or upgrade is being booked and timing and next steps need confirming.',
+        trigger: 'An EV charger quote was sent Monday and went quiet.',
         actions: [
-          'Move the request into a booked visit',
-          'Send reminders and clear next-step guidance',
-          'Support cleaner internal handoff',
+          'A friendly check-in goes out Friday',
+          'Another a week later if no reply',
+          'Quote-to-booking quietly improves',
         ],
       },
       {
-        trigger:
-          'A quote or larger electrical job is still pending and the business wants to follow up without chasing manually.',
+        trigger: 'A job is finished and the lights are back on.',
         actions: [
-          'Send measured follow-up at the right times',
-          'Keep the opportunity visible internally',
-          'Support the decision with reviews and trust signals if needed',
+          'A polite review request goes out the next day',
+          'Asked when the customer is happiest',
+          'Local reviews catch up to the workload',
         ],
       },
     ],
@@ -251,9 +265,9 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
   };
 
   const exploreData = {
-    badge: 'Explore',
+    badge: 'Related',
     description:
-      'Relevant service layers for electrical companies that want cleaner booking, better response handling, and stronger local trust.',
+      'The other parts of the system that come up most often for electricians trying to stop missing work.',
     cards: [
       {
         icon: Workflow,
@@ -294,38 +308,38 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Common questions about electrical systems',
-    description: 'Common questions about MindWP for electrical companies',
+    title: 'Things electricians usually ask',
+    description: 'Straight answers about how this fits an electrical business.',
     faqs: [
       {
-        question: 'How can an electrical company get better local enquiries from its website?',
+        question: 'I’m up a ladder all day. Will this need me sat at a screen?',
         answer:
-          'Make service pages specific around faults, inspections, upgrades, installs, and the areas you serve. Then simplify the first contact path so people can describe the issue quickly and see a clear next step.',
+          'No. The whole point is that it runs while you’re on a job. You’ll see what came in on your phone between calls, but nothing waits on you to operate it.',
       },
       {
-        question: 'Should electrical businesses offer online booking?',
+        question: 'How does the missed-call text-back actually work?',
         answer:
-          'Yes, especially for clearer service types or inspections. The important part is making sure the request captures enough detail to route the work properly and avoid wasted time later.',
+          'A call comes in while you’re in a loft. It rings out. Within seconds the caller gets a text — “on a job, can call back in 20, what’s the issue?” Most stop dialling the next electrician.',
       },
       {
-        question: 'How can electricians reduce missed urgent opportunities?',
+        question: 'Can it handle quote follow-ups for EV chargers and rewires?',
         answer:
-          'Missed opportunities happen when urgent calls come in while the team is busy and there is no backup path. Better enquiry capture, clearer service routing, and stronger follow-up paths protect those leads.',
+          'Yes — friendly check-in messages go out at the right intervals after a quote is sent. Quote-to-booking conversion changes noticeably without anybody chasing.',
       },
       {
-        question: 'Do electrical companies need separate pages for different services?',
+        question: 'How do I get more reviews without nagging?',
         answer:
-          'Yes. Separate pages help visitors and search engines understand the work you do. They also route people into the right booking or quote path instead of forcing everything through one generic page.',
+          'A polite request goes out the day after the job, when the lights are back on. People who would have meant to leave one actually do.',
       },
       {
-        question: 'How should electrical businesses follow up on quotes?',
+        question: 'Can I stop being shown for postcodes I don’t want to drive to?',
         answer:
-          'Calm, well-timed follow-up that confirms the next step, keeps the opportunity visible, and makes it easy for the prospect to reply. The aim is clarity and consistency.',
+          'Yes — service pages and local search get tightened around the areas you actually want. Less time driving for less money.',
       },
       {
-        question: 'What kind of reviews matter most for electricians?',
+        question: 'Do I need to scrap my current website?',
         answer:
-          'Reviews that mention reliability, communication, and quality of work carry the most weight. A consistent review-request process after completed jobs builds that proof over time.',
+          'Usually not. We look at what you have first. The leak is normally the bit between the call coming in and the review going up — not the site itself.',
       },
     ],
   };
@@ -343,9 +357,9 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'home-services',
     seo: {
-      title: 'Electrical — Smart Website Systems | MindWP',
+      title: 'Electrical Companies — Stop Losing Calls, Quotes & Reviews | MindWP',
       description:
-        'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
+        'For electricians where fault calls go to whoever picked up first, EV charger and rewire quotes go quiet for weeks, and reviews don’t reflect the workload. We put the system in place that catches every job.',
       keywords: [
         'electrician website design',
         'electrical contractor marketing system',
@@ -367,9 +381,9 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Build a steadier electrical system',
+      title: 'Tell us where the work is leaking',
       description:
-        'If loose service routing, booking friction, inconsistent quote follow-up, or weak local proof are slowing things down, we can map a practical system around how the work actually runs.',
+        'If urgent calls go to voicemail, if quoted jobs go quiet, or if reviews never get asked for — walk us through how the business runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

@@ -17,24 +17,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Coverage Lane',
-    title: 'Smart Website Systems for Automotive Service Businesses',
+    badge: 'For Automotive Service Businesses',
+    title: 'The Bay Is Full. The Phone Is Ringing. The Quote Hasn’t Been Chased.',
     description:
-      'An automotive service website should support service clarity, estimate handling, appointment booking, trust signals, and follow-up — without making the front desk carry every gap manually.',
+      'Repair shops, mobile mechanics, body shops, detailers — most don’t lose work because the work is bad. They lose it in the gaps. Calls that go to voicemail. Quotes that go quiet. Reviews nobody asked for. We put the system in place that catches it.',
     list: [
-      'Clearer service routing',
-      'Better estimate and booking flow',
-      'Stronger local trust signals',
-      'More reliable follow-up',
+      'Calls missed during jobs',
+      'Quotes that go cold',
+      'Out-of-area enquiries that waste the day',
+      'Reviews that never get asked for',
     ],
     cssPrefix: 'automotive-services-hero',
   };
 
   const imageStripData = {
-    badge: 'Category Reality',
-    title: 'The workshop work happens offline, but the friction starts before the vehicle arrives',
+    badge: 'How The Work Comes In',
+    title: 'The hands-on work is fine. The mess is everything around it.',
     description:
-      'Calls arrive while the team is busy. Estimates need context. Diagnostics need clearer next steps. Reviews and repeat service reminders happen too loosely. That operating layer needs to be visible before narrowing into one automotive workflow.',
+      'Calls land mid-job. Estimates need a chase. Bookings need a confirmation. Reviews need an ask. Most automotive businesses already have the demand — they just need a way to stop it slipping through while the team is on the tools.',
     items: [
       {
         title: 'Urgent repair and fault enquiries',
@@ -62,37 +62,37 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where automotive service businesses feel the pressure first',
+    badge: 'Where The Work Slips',
+    title: 'The same handful of leaks shows up in nearly every automotive business',
     description:
-      'The gap is rarely demand alone — it sits between incoming vehicle problems, response speed, appointment clarity, trust proof, and follow-up after the visit.',
+      'Different shops, same patterns — the bay’s full, the phone goes, and somebody quietly gets booked elsewhere.',
     benefits: [
       {
         icon: AlertCircle,
-        title: 'Urgent enquiries arrive without enough qualification',
+        title: 'The phone rings while everyone’s under a bonnet',
         description:
-          'Repair, inspection, detailing, and bodywork requests come in through one loose path — first-response quality drops when everything routes the same way.',
+          'Three missed calls before lunch. Two of them already booked someone who answered.',
         iconType: 'primary' as const,
       },
       {
         icon: Clock3,
-        title: 'Estimates and next steps become uneven',
+        title: 'Quotes go out and never get chased',
         description:
-          'Diagnostics, inspection findings, quote follow-up, and booking decisions often rely on manual chasing when the day gets busy.',
+          'Estimate sent Tuesday. By Friday nobody’s rung them back. The job either rings you or quietly goes elsewhere.',
         iconType: 'secondary' as const,
       },
       {
         icon: MapPinned,
-        title: 'Trust and service visibility drift apart',
+        title: 'The competitor down the road has eighty reviews. You have eleven.',
         description:
-          'Google Business Profile, service pages, reviews, and workshop credibility exist in different places — they rarely reinforce one another properly.',
+          'Plenty of happy customers. Almost none of them ever wrote anything. Locally you look quieter than you actually are.',
         iconType: 'accent' as const,
       },
       {
         icon: MessageSquare,
-        title: 'Growth adds communication drag before it adds clarity',
+        title: 'More work coming in just makes the admin worse',
         description:
-          'More enquiries, more service types, or more booking volume can create front-desk pressure if the core operating path is still loose.',
+          'The marketing works. Then the front desk drowns. Reply times get worse, not better.',
         iconType: 'primary' as const,
       },
     ],
@@ -100,75 +100,75 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Architecture',
-    title: 'What the category operating system needs to hold together',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to catch every enquiry, book the work, and turn jobs into proof',
     description:
-      'A strong automotive setup connects the first enquiry, service qualification, estimate or booking path, local trust layer, and review loop into one practical system.',
+      'Each piece does one job. Together they stop work from slipping while the team is on the tools.',
     featureCategories: [
       {
-        title: 'Enquiry and diagnosis layer',
+        title: 'Catch every call and message in one place',
         description:
-          'Calls, forms, and service requests need a cleaner first step so the business can qualify vehicle issues and respond faster.',
+          'Calls, forms, web chat, missed calls, DMs — all land somewhere the team actually checks.',
         icon: MessageSquare,
         features: [
-          'Service request capture',
-          'Vehicle issue qualification',
-          'Cleaner first-contact routing',
+          'Missed-call text-back inside a minute',
+          'One inbox for every channel',
+          'Vehicle and fault captured up front',
         ],
       },
       {
-        title: 'Estimate and booking layer',
+        title: 'Get the booking confirmed without phone tag',
         description:
-          'Inspections, diagnostics, quotes, and appointment windows should move forward without loose handoffs.',
+          'Slots customers can pick. Confirmations and reminders that fire on their own. Cars that actually turn up.',
         icon: Calendar,
         features: [
-          'Inspection scheduling',
-          'Estimate follow-up triggers',
-          'Appointment-window clarity',
+          'Self-serve booking that fits how you run',
+          'Reminders the day before',
+          'Cleaner front-desk-to-workshop handover',
         ],
       },
       {
-        title: 'Workshop coordination layer',
+        title: 'Keep the workshop and the office in sync',
         description:
-          'Teams need better visibility around which service type, booking stage, or follow-up path each job sits inside.',
+          'Everyone sees what’s booked, what’s waiting on a quote, and what’s ready for handover.',
         icon: Wrench,
         features: [
-          'Lead-stage visibility',
-          'Service-path context',
-          'Better internal handoff points',
+          'Live view of every open job',
+          'Service path attached to each enquiry',
+          'Less “did anyone ring them back?”',
         ],
       },
       {
-        title: 'Trust and reputation layer',
+        title: 'Turn finished jobs into reviews you can show',
         description:
-          'Proof of work, reviews, and workshop credibility need to support the booking decision before the vehicle arrives.',
+          'A review request goes out at the right moment. Your reputation finally catches up to the work.',
         icon: Star,
         features: [
-          'Review request workflows',
-          'Proof and credibility support',
-          'Trust before booking',
+          'Review requests after every job',
+          'Asked when customers are happiest',
+          'More five-stars where local people search',
         ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Show up when local drivers search for the work you do',
         description:
-          'Search, maps, service pages, and area coverage need to reinforce the jobs and locations you actually want.',
+          'Service pages, Google profile, local listings — lined up so the right people find you instead of the next garage.',
         icon: Search,
         features: [
-          'Service-page clarity',
-          'Google Business Profile support',
-          'Local search reinforcement',
+          'Pages for the work you actually do',
+          'Found on Maps for local searches',
+          'Service-area visibility that compounds',
         ],
       },
       {
-        title: 'Follow-up layer',
+        title: 'Stop quotes from going cold',
         description:
-          'Pending quotes, unbooked inspections, completed jobs, and return-visit prompts all need calmer next steps.',
+          'Pending estimates, missed enquiries, and old leads get a polite chase on their own.',
         icon: Shield,
         features: [
-          'Quote follow-up',
-          'Missed-enquiry recovery',
-          'Post-visit review and return-service prompts',
+          'Quotes followed up automatically',
+          'Old enquiries warmed up instead of forgotten',
+          'Repeat-service nudges at the right interval',
         ],
       },
     ],
@@ -176,32 +176,40 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
   };
 
   const spectrumData = {
-    badge: 'Business Shapes',
-    title: 'The category covers different automotive operating models, not one fixed shop shape',
+    badge: 'Different Shapes, Same Leaks',
+    title: 'A workshop, a van, and a detailing unit don’t look the same — but the gaps usually are',
     description:
-      'Auto repair shops, mobile mechanics, detailers, and body shops can look related from the outside, but the workflow strain changes depending on urgency, booking style, service complexity, and how estimates are handled.',
+      'Owner-led garages, team workshops, mobile operators — different setups, but the friction lives in similar places.',
     cards: [
       {
         title: 'Owner-led garages',
         description:
-          'Fewer systems needed, but stronger first-response structure — because the same people are handling vehicles and new enquiries.',
-        points: ['Low admin capacity', 'High missed-call risk', 'Need for fast qualification'],
+          'One pair of hands does most of it. The phone going during a brake job is the single biggest leak.',
+        points: [
+          'Calls missed mid-job',
+          'Quotes never followed up',
+          'Reviews barely asked for',
+        ],
       },
       {
         title: 'Workshop teams',
         description:
-          'Need tighter handoffs between the person receiving enquiries, the person quoting, and the person delivering the work.',
-        points: ['Shared workload', 'Scheduling pressure', 'Follow-up gaps become expensive'],
+          'More hands, more handoffs. Things slip in the gap between the front desk, the workshop, and the customer.',
+        points: [
+          'Bookings that nobody confirmed',
+          'Quotes sitting in someone’s email',
+          '“Who was supposed to ring them?”',
+        ],
         featured: true,
       },
       {
-        title: 'Specialist or mobile operators',
+        title: 'Mobile and specialist operators',
         description:
-          'Clearer service routing, more visible trust, and stronger explanation of how the booking path actually works.',
+          'No workshop sign on the road, so the website and Google profile are the storefront — and they have to do real work.',
         points: [
-          'Service-path complexity',
-          'Trust has to carry more weight',
-          'Location context matters',
+          'Out-of-area enquiries that eat the day',
+          'Trust that has to be built before the call',
+          'Arrival timing that depends on memory',
         ],
       },
     ],
@@ -210,17 +218,17 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
   };
 
   const decisionChecklistData = {
-    badge: 'When Category Work Matters',
-    title: 'Signs the business needs category-level system thinking before another isolated fix',
+    badge: 'Sound Familiar?',
+    title: 'A few signs this is worth looking at properly',
     description:
-      'This is the point where one more page or one more tool is not the answer. The whole enquiry-to-booking flow needs tightening at category level first.',
+      'If most of these ring true, the leak is bigger than another marketing tweak will fix.',
     items: [
-      'Different automotive services exist, but lead handling still runs through one unclear process',
-      'Calls, forms, and estimate requests reach the business, but reply speed depends too much on who happens to be free',
-      'Reviews and local visibility exist, but they are not strengthening the right service pages or workshop trust signals',
-      'Pending quotes or inspection bookings are hard to track consistently',
-      'The business wants more service-specific pages, but the category logic behind them is still weak',
-      'Growth is creating admin pressure faster than it is creating operating clarity',
+      'Calls go to voicemail more days than not, and the callback happens hours later',
+      'Estimates go out and you don’t really know which ones got chased',
+      'Reviews online don’t reflect how the actual work compares to the competition',
+      '“Did anyone ring them back?” gets asked more than once a week',
+      'You’ve spent on ads or SEO before but enquiries still drop on the floor',
+      'More demand just makes the front desk feel worse, not better',
     ],
     columns: 2 as const,
     backgroundColor: 'bg-base',
@@ -228,69 +236,69 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
   };
 
   const serviceEnvironmentsData = {
-    badge: 'Service Environments',
-    title: 'The same category can operate through very different service environments',
+    badge: 'How You Actually Work',
+    title: 'A workshop, a team, and a van each break in different places',
     description:
-      'An auto repair shop, a mobile mechanic, a detailing business, and a body shop do not break in the same places. That difference needs to be visible before narrowing into one single-industry workflow.',
+      'A repair shop and a mobile mechanic and a detailer all do good work — but the moment things slip is different in each one. That’s where the system has to be shaped.',
     features: [
       {
-        title: 'Workshop-led repair environment',
+        title: 'Workshop-led repair',
         description:
-          'Better first-response structure, clearer inspection or repair capture, and less reliance on missed callbacks.',
+          'Calls land mid-job, quotes need chasing, the front desk gets buried when the bays are full.',
         icon: Car,
       },
       {
-        title: 'Team-based service environment',
+        title: 'Team-based operation',
         description:
-          'Stronger handoffs between the person receiving enquiries and the people scheduling or delivering the work.',
+          'Handoffs between the person taking the call, the person quoting, and the person doing the work.',
         icon: Users,
       },
       {
-        title: 'Specialist or appearance-led environment',
+        title: 'Mobile or appearance-led',
         description:
-          'Better routing between services, clearer trust signals, and stronger explanation of what the customer should do next.',
+          'No shopfront. The website and Google profile do the trust work — plus arrival timing matters.',
         icon: Sparkles,
       },
     ],
-    tagline: 'Category context before service-level depth',
-    narrativeTitle: 'Why this belongs on the category page',
+    tagline: 'Same category, different bottlenecks',
+    narrativeTitle: 'Why we look at the shape of the business first',
     narrativeParagraphs: [
-      'A category page should explain the operating environments inside automotive services before it narrows into one workflow like auto repair or detailing.',
-      'Once that context is clear, the single-industry page can go much deeper into inspection handling, appointment flow, estimate follow-up, and review support for that service type.',
+      'Before any change is made, we look at how enquiries actually arrive, who handles them, and where they currently slip. That’s usually obvious within a short conversation.',
+      'From there, the right next step — catching calls, sorting bookings, chasing quotes, building reviews — becomes obvious instead of generic.',
     ],
     backgroundColor: 'bg-alt',
     cssPrefix: 'automotive-services-service-environments',
   };
 
   const processData = {
-    badge: 'Tier 1 Layering',
-    title: 'How Smart Website structure expands into automotive-specific workflows',
+    badge: 'How We Get Started',
+    title: 'How a typical conversation moves from “we’re losing work” to “we’ve stopped losing work”',
     description:
-      'Once the category system is clear, the page can route visitors into the right automotive workflow while keeping Smart Website structure as the main operating layer.',
+      'Nothing fancy. We look at how the business actually runs, then put the missing pieces in place in the order that helps most.',
     steps: [
       {
         number: '01',
-        title: 'Frame the Smart Website core',
+        title: 'We look at how enquiries arrive now',
         description:
-          'Start with the enquiry, booking, and conversion structure that supports automotive demand before narrowing into one service type.',
+          'Calls, forms, DMs, walk-ins. Where they go, who sees them, who replies.',
       },
       {
         number: '02',
-        title: 'Show the operating shapes',
+        title: 'We map where work is slipping',
         description:
-          'Clarify how workshop-led, team-based, and specialist operators differ so visitors can place themselves quickly.',
+          'No pitch deck. A short, honest list of what’s breaking and what it’s costing.',
       },
       {
         number: '03',
-        title: 'Layer the supporting systems',
+        title: 'The biggest leak gets fixed first',
         description:
-          'Connect local visibility, trust proof, estimate handling, booking flow, and follow-up support around the Smart Website core.',
+          'Missed calls, dead quotes, no-shows, missing reviews — whichever is bleeding the most work.',
       },
       {
         number: '04',
-        title: 'Route into service pages',
+        title: 'It runs while the team is on the tools',
         description:
-          'Move the visitor into the right single-industry workflow page once the category context is clear.',
+          'Replies, reminders, reviews, follow-up. Going on their own while the workshop runs the workshop.',
       },
     ],
     columns: 4 as const,
@@ -299,36 +307,36 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
   };
 
   const detailRoutesData = {
-    badge: 'Approved Sub-Industry Workflows',
-    title: 'The next mapped workflows in this category',
+    badge: 'By Type Of Shop',
+    title: 'Pick the one closest to how you run',
     description:
-      'Automotive Services is live as a category page. The workflow pages in this lane — Auto Repair, Car Detailing, Mobile Mechanics, and Body Shops — each turn this category logic into a more specific operating path.',
+      'Same category, different bottlenecks. These pages get into the specifics for each kind of automotive business.',
     items: [
       {
         title: 'Auto Repair',
         description:
-          'From fault enquiries through diagnostics, booking coordination, estimate handling, and review follow-up.',
+          'For shops where calls go missing mid-job, estimates go quiet, and reviews never get asked for.',
         href: '/industries/automotive-services/auto-repair',
         icon: Wrench,
       },
       {
         title: 'Car Detailing',
         description:
-          'From package clarity through appointment scheduling, preparation guidance, and repeat-visit support.',
+          'For detailers losing Saturdays to slow DMs, no-shows, and regulars who quietly stopped coming.',
         href: '/industries/automotive-services/car-detailing',
         icon: Sparkles,
       },
       {
         title: 'Mobile Mechanics',
         description:
-          'From service-area qualification through call handling, mobile booking, and local trust support.',
+          'For van-based mechanics whose day is run from the glovebox — missed calls, out-of-area enquiries, arrival texts.',
         href: '/industries/automotive-services/mobile-mechanics',
         icon: Car,
       },
       {
         title: 'Body Shops',
         description:
-          'From damage-assessment enquiries through estimate steps, booking coordination, and trust reinforcement.',
+          'For body shops losing quotes to whoever replies first — photos sat unread, estimates that went cold.',
         href: '/industries/automotive-services/body-shops',
         icon: Shield,
       },
@@ -351,9 +359,9 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
     topics: ['lead-management', 'missed-calls', 'review-generation', 'booking-systems'],
     industries: ['auto-repair', 'body-shop', 'car-detailing', 'mobile-mechanic'],
     seo: {
-      title: 'Automotive Services Systems | MindWP',
+      title: 'Automotive Service Businesses — Stop Losing Calls, Quotes, and Reviews | MindWP',
       description:
-        'Smart Website systems for automotive service businesses that need clearer enquiry handling, estimate flow, booking support, and stronger local trust.',
+        'For repair shops, mobile mechanics, body shops, and detailers where calls get missed, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place so the work already coming in actually books.',
       keywords: [
         'automotive service website systems',
         'auto repair booking system',
@@ -381,9 +389,9 @@ function buildAutomotiveServicesIndustryPageData(): IndustryPageData {
       },
     },
     cta: {
-      title: 'Map the automotive category around how your business actually works',
+      title: 'Tell us where the work is slipping',
       description:
-        'If your automotive business is dealing with loose enquiry handling, inconsistent estimate follow-up, or booking friction — we can help map the right system around it.',
+        'If calls go missing, quotes go quiet, or reviews never get asked for — walk us through how the shop runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

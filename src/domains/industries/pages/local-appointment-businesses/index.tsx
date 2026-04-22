@@ -17,25 +17,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Coverage Lane',
-    title: 'Smart Website Systems for Local Appointment Businesses',
+    badge: 'For Appointment-Based Local Businesses',
+    title: 'They Enquired With Three Of You On Sunday Night. Whoever Replied First With A Slot Got The Booking.',
     description:
-      'Local appointment businesses run on qualification, scheduling, and trust — but those steps break when staff have to hold every handoff together manually. A Smart Website system structures the whole path from enquiry to follow-up.',
+      'Dental practices, private clinics, driving schools, repair shops, tattoo studios — the customer’s decision happens in 24 hours and on whoever replied first. We put the system in place that catches enquiries while you’re with a patient, learner, or client, takes the deposit so the slot doesn’t sit empty, and stops no-shows from killing the day.',
     list: [
-      'Clearer appointment qualification',
-      'Better booking flow',
-      'Stronger local trust signals',
-      'Consistent follow-up',
+      'Sunday-night enquiries that went unanswered until Monday',
+      'Bookings that took ten messages to confirm',
+      'No-shows on slots where no deposit was taken',
+      'Reviews from finished work you never asked for',
     ],
     cssPrefix: 'local-appointment-businesses-hero',
   };
 
   const imageStripData = {
-    badge: 'Category Reality',
-    title:
-      'The work happens in person, but the friction starts before the appointment is confirmed',
+    badge: 'How Booking Decisions Happen',
+    title: 'You’re mid-appointment. Three enquiries piled up. Two booked elsewhere by the time you looked.',
     description:
-      'New enquiries, service questions, booking timing, preparation steps, review signals, and follow-up all shape whether the next step happens smoothly. That operating layer matters before narrowing into one appointment-led workflow.',
+      'Evenings, Sunday nights, school holidays. The customer wants a price and a slot. Whoever sent both first wins the booking.',
     items: [
       {
         title: 'New enquiry and fit questions',
@@ -63,37 +62,36 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where local appointment businesses feel the pressure first',
-    description:
-      'The gap is between first enquiry, qualification, booking clarity, trust proof, and follow-up after the visit or session.',
+    badge: 'Where The Diary Slips',
+    title: 'You’re with a patient, a learner, or a client. The phone’s ringing. They’re booking somebody else.',
+    description: 'Same handful of leaks across nearly every appointment-based business. None of them are about the actual work.',
     benefits: [
       {
         icon: AlertCircle,
-        title: 'Different service requests arrive through one loose path',
+        title: 'Three enquiries came in while you were heads-down',
         description:
-          'Tattoo consultations, driving lessons, repair visits, and clinic appointments all have different needs, but intake starts in the same unclear way.',
+          'Dental call, learner DM, repair quote, tattoo enquiry — you couldn’t answer. Two booked with the next business on the list.',
         iconType: 'primary' as const,
       },
       {
         icon: Clock3,
-        title: 'Booking flow breaks when readiness is unclear',
+        title: 'A booking took ten messages back and forth',
         description:
-          'Availability, preparation steps, service fit, and next steps rely on manual clarification when the workflow is not structured.',
+          '“What times?” “How much?” “Who with?” Each reply waited until you were free. Half lost patience.',
         iconType: 'secondary' as const,
       },
       {
         icon: Shield,
-        title: 'Trust and booking confidence do not support each other',
+        title: 'A Saturday no-show cost the day rate',
         description:
-          'Reviews, local credibility, service pages, and staff proof all exist but do not reinforce the booking decision before the appointment happens.',
+          'Tattoo session, hygiene block, two-hour driving lesson — no deposit taken, slot stayed empty.',
         iconType: 'accent' as const,
       },
       {
         icon: MessageSquare,
-        title: 'Growth adds communication drag before clarity',
+        title: 'The business down the road has 600 reviews. You have 41.',
         description:
-          'More enquiries, more service variants, or more booking volume create admin pressure if the core enquiry-to-appointment path is still loose.',
+          'Your work is better. Online you look smaller because nobody asked at the right moment.',
         iconType: 'primary' as const,
       },
     ],
@@ -101,98 +99,117 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Architecture',
-    title: 'What the category operating system needs to hold together',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to catch the enquiries and stop the slots sitting empty',
     description:
-      'A strong local appointment setup connects first contact, qualification, booking support, trust signals, and follow-up into one practical system rather than disconnected tasks.',
+      'Each piece does one job. Together they keep the diary booked while you stay focused on the work.',
     featureCategories: [
       {
-        title: 'Qualification layer',
+        title: 'Reply to enquiries while you’re with a customer',
         description:
-          'Routes calls, forms, and booking requests through a clearer first step so the business can identify fit and respond with better context.',
+          'Call, DM, or form lands. Instant reply with price band and a calendar link. Most stop enquiring with the next business.',
         icon: MessageSquare,
-        features: ['Service-path capture', 'Fit qualification', 'Cleaner first-response routing'],
+        features: [
+          'Instant acknowledgement on every enquiry',
+          'Price band and slot up front',
+          'Holds the customer until you can reply properly',
+        ],
       },
       {
-        title: 'Booking layer',
+        title: 'Take the booking and the deposit online',
         description:
-          'Moves sessions, visits, and consultations forward without loose handoffs or unclear next steps.',
+          'Customer picks a slot themselves. Optional deposit-to-confirm. The ten-message back-and-forth stops.',
         icon: Calendar,
-        features: ['Appointment scheduling', 'Readiness guidance', 'Next-step clarity'],
+        features: [
+          'Self-serve online booking',
+          'Deposit-to-confirm for high-value slots',
+          'Reminders the day before',
+        ],
       },
       {
-        title: 'Service visibility layer',
+        title: 'Refill cancellations and stop no-shows',
         description:
-          'Gives teams visibility around which booking stage, preparation state, or follow-up path each enquiry sits inside.',
+          'Cancellation triggers a waitlist text. Reminders reduce no-shows. Slots stop staying empty.',
         icon: Users,
         features: [
-          'Lead-stage visibility',
-          'Preparation context',
-          'Better internal handoff points',
+          'Cancellation waitlist text-back',
+          'Reminders the day before',
+          'Slots stay earning',
         ],
       },
       {
-        title: 'Trust and proof layer',
+        title: 'Turn finished work into reviews',
         description:
-          'Connects reviews, work proof, and local credibility to the booking decision before the appointment starts.',
+          'A polite request goes out the day after the appointment, when satisfaction is freshest.',
         icon: Star,
         features: [
-          'Review request workflows',
-          'Proof and credibility support',
-          'Trust before booking',
+          'Review requests after every appointment',
+          'Asked at the right moment',
+          'Reviews catch up to the standard of work',
         ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Show up first when local people search',
         description:
-          'Aligns search visibility, service pages, and area language to reinforce the clients and locations you want.',
+          'Service pages and Google profile lined up so people in the right area find you first.',
         icon: Search,
-        features: ['Service-page clarity', 'Local authority support', 'Search reinforcement'],
+        features: [
+          'Pages for the services and areas you actually want',
+          'Found on Maps for local searches',
+          'Less time on enquiries that aren’t a fit',
+        ],
       },
       {
-        title: 'Follow-up layer',
+        title: 'Convert the people sitting in the maybe pile',
         description:
-          'Handles pending bookings, open decisions, and post-visit next steps with calmer follow-through.',
+          'Enquired but didn’t book? Polite check-in goes out at sensible intervals. A meaningful share book back in.',
         icon: Shield,
-        features: ['Lead nurture', 'Missed-enquiry recovery', 'Post-visit follow-up prompts'],
+        features: [
+          'Follow-up sequences for pending enquiries',
+          'Pending opportunities visible in one place',
+          'Conversion goes up without anybody chasing',
+        ],
       },
     ],
     columns: 3 as const,
   };
 
   const spectrumData = {
-    badge: 'Business Shapes',
-    title:
-      'The category covers different appointment-led operating models, not one fixed business shape',
+    badge: 'Different Diaries, Same Leak',
+    title: 'Different appointment businesses, but the bookings get lost in the same places',
     description:
-      'Tattoo studios, driving schools, repair shops, dental clinics, and small private clinics can all look similar from the outside because they depend on bookings, but the workflow strain changes depending on preparation, urgency, trust, and repeat-visit behavior.',
+      'A tattoo studio, a driving school, a dental practice, a repair shop — the diary leaks differently. The fix is the same: catch the enquiry, take the deposit, follow up the maybe pile.',
     cards: [
       {
-        title: 'Creative appointment environments',
+        title: 'High-value, deposit-led work',
         description:
-          'Trust and fit matter before a session is booked — clearer consultation and preparation flow makes the difference.',
+          'Tattoos, cosmetic dentistry, private consultations — a single no-show kills a day rate. Deposit-to-confirm and reminder timing matter most.',
         points: [
-          'Trust carries more weight',
-          'Preparation clarity matters',
-          'No-show risk is expensive',
+          'No-shows cost £300–£400 a slot',
+          'Late-night DMs go to whoever replied first',
+          'Reviews from finished work go unasked',
         ],
       },
       {
-        title: 'Training or structured-session environments',
+        title: 'Repeat-session and recall-led work',
         description:
-          'Tighter handoffs between first enquiry, package or lesson selection, booking cadence, and repeat scheduling.',
+          'Driving lessons, hygienist appointments, physio courses — the diary lives or dies on rebooking and refilling cancellations.',
         points: [
-          'Shared scheduling pressure',
-          'Recurring booking paths',
-          'Follow-up gaps become expensive',
+          'Recalls fall off when nobody chases',
+          'Cancellations leave half-day gaps',
+          'Block bookings need calendar discipline',
         ],
         featured: true,
       },
       {
-        title: 'Service or care-led environments',
+        title: 'Walk-in and quote-led work',
         description:
-          'Routing between service types, clearer trust signals, and stronger explanation of what the next step looks like.',
-        points: ['Service-path complexity', 'Local trust matters', 'Repeat-visit logic differs'],
+          'Repair shops, GP-style private clinics, smaller practices — the customer wants a price and a wait time, fast.',
+        points: [
+          '“How much?” calls go to whoever picks up',
+          'Drop-offs that ghost cost the bench',
+          'Local reviews decide the click on Maps',
+        ],
       },
     ],
     backgroundColor: 'bg-alt',
@@ -200,17 +217,17 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
   };
 
   const decisionChecklistData = {
-    badge: 'When Category Work Matters',
-    title: 'Signs the business needs category-level system thinking',
+    badge: 'When This Pays Back Quickest',
+    title: 'Honest signs the diary is losing more bookings than it should',
     description:
-      'At some point the business does not need one more booking button or one more profile page — it needs the whole enquiry-to-appointment flow tightened at category level.',
+      'If two or three of these sound familiar, the leak is bigger than “we just need a new website.”',
     items: [
-      'Different services or appointment types exist, but new bookings still enter through one unclear process',
-      'Requests reach the business, but response quality depends too much on who happens to be free',
-      'Reviews and local trust signals exist, but they are not strengthening the right service pages or booking decisions',
-      'Pending bookings or follow-up actions are hard to track consistently',
-      'The business wants more service-specific pages, but the category logic behind them is still weak',
-      'Growth is creating admin pressure faster than it is creating operational clarity',
+      'You’ve missed enquiries this week because you were with a patient, learner, or client',
+      'A booking recently took ten messages to confirm and the customer half-disappeared',
+      'You had a no-show on a high-value slot and no deposit was taken',
+      'Hygiene recalls, lesson rebookings, or follow-up appointments slipped because nobody had time',
+      'The business down the road has 5–10x your reviews despite worse work',
+      'Sunday-night enquiries went unanswered until Monday afternoon',
     ],
     columns: 2 as const,
     backgroundColor: 'bg-base',
@@ -218,69 +235,69 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
   };
 
   const serviceEnvironmentsData = {
-    badge: 'Service Environments',
-    title: 'The same category can operate through very different service environments',
+    badge: 'Pick The One That Fits',
+    title: 'The same fix — different ways the diary leaks',
     description:
-      'A tattoo studio, a driving school, a repair shop, and a small private clinic do not break in the same places. That context matters before narrowing into one single-industry workflow.',
+      'A tattoo studio, a driving school, a dental practice, and a repair shop don’t lose bookings in the same way. Pick the one that sounds most like yours.',
     features: [
       {
-        title: 'Creative booking environment',
+        title: 'High-value session work (tattoo, cosmetic, consult)',
         description:
-          'Better consultation structure, clearer expectation setting, and less reliance on loose manual messaging.',
+          'Late-night DMs, deposit-to-confirm, no-shows that kill the day rate. Catching the enquiry and taking the deposit matters most.',
         icon: PenTool,
       },
       {
-        title: 'Training and lesson environment',
+        title: 'Recurring lesson or recall work (driving, dental, physio)',
         description:
-          'Stronger handoffs between enquiry capture, scheduling cadence, and repeat-session flow.',
+          'Block bookings, six-month recalls, last-minute cancellations. Refilling the diary without phoning round matters most.',
         icon: Car,
       },
       {
-        title: 'Service and care environment',
+        title: 'Quote-led service work (repair, private GP, smaller clinic)',
         description:
-          'Better routing between appointment types, clearer trust signals, and stronger explanation of what happens next.',
+          'Walk-in pricing questions, drop-offs that ghost, local reviews deciding the Maps click. Instant quoting and follow-up matters most.',
         icon: HeartPulse,
       },
     ],
-    tagline: 'Category context before service-level depth',
-    narrativeTitle: 'Why this belongs on the category page',
+    tagline: 'Pick the shape closest to yours',
+    narrativeTitle: 'Why the page is laid out this way',
     narrativeParagraphs: [
-      'A category page should explain the operating environments inside local appointment businesses before it narrows into one workflow like a tattoo studio or a driving school.',
-      'Once that context is clear, the single-industry page can go much deeper into qualification handling, booking flow, trust support, and follow-up for that business type.',
+      'The leaks aren’t identical — a no-show on a tattoo Saturday hurts differently than a hygienist recall going cold. The detail pages below get specific.',
+      'Pick whichever business sounds closest to yours. The detail page goes deeper into the exact moments where the bookings used to slip through.',
     ],
     backgroundColor: 'bg-alt',
     cssPrefix: 'local-appointment-businesses-service-environments',
   };
 
   const processData = {
-    badge: 'Tier 1 Layering',
-    title: 'How Smart Website structure expands into local appointment workflows',
+    badge: 'How This Actually Lands',
+    title: 'How we put the system in place without disrupting the diary',
     description:
-      'Once the category system is clear, the page can route visitors into the right appointment-led workflow while keeping Smart Website structure as the main operating layer.',
+      'No big-bang website rebuild. We map the leaks, fix the worst ones first, and let the diary settle.',
     steps: [
       {
         number: '01',
-        title: 'Frame the Smart Website core',
+        title: 'Walk through how the diary actually runs',
         description:
-          'Start with the enquiry, booking, and conversion structure that supports appointment demand before narrowing into one service type.',
+          'A 30-minute conversation. Where enquiries come in, where deposits get taken, where reviews don’t get asked.',
       },
       {
         number: '02',
-        title: 'Show the operating shapes',
+        title: 'Fix the biggest leak first',
         description:
-          'Clarify how creative, training, repair, and care-led operators differ so visitors can place themselves quickly.',
+          'Usually it’s missed-call/DM text-back, or deposit-to-confirm on the high-value slots. The thing that pays itself back fastest.',
       },
       {
         number: '03',
-        title: 'Layer the supporting systems',
+        title: 'Layer in booking, recalls, and reviews',
         description:
-          'Connect local visibility, trust proof, booking flow, preparation guidance, and follow-up support around the Smart Website core.',
+          'Self-serve booking, recall messages, review requests after every appointment. The diary stops emptying.',
       },
       {
         number: '04',
-        title: 'Route into service pages',
+        title: 'Tighten local visibility once the diary holds',
         description:
-          'Move the visitor into the right single-industry workflow page once the category context is clear.',
+          'Pages for the services and areas you actually want. Less time on enquiries that aren’t a fit.',
       },
     ],
     columns: 4 as const,
@@ -289,43 +306,43 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
   };
 
   const detailRoutesData = {
-    badge: 'Approved Sub-Industry Workflows',
-    title: 'The next mapped workflows in this category',
+    badge: 'Pick Yours',
+    title: 'The detail page for your kind of business',
     description:
-      'Local Appointment Businesses is now live as a category page. The next workflow pages in this lane are Tattoo Studios, Driving Schools, Repair Shops, Small Private Clinics, and Dental Clinics. Each one turns this category logic into a more specific operating path.',
+      'Each one goes deeper into the exact moments where bookings used to slip through — the late-night DMs, the missed pain calls, the no-show Saturdays, the recalls that fell off the diary.',
     items: [
       {
         title: 'Tattoo Studios',
         description:
-          'From consultation enquiries through artist-fit clarity, booking preparation, and trust-led follow-up.',
+          'Late-night DMs, deposit-to-confirm on Saturday sessions, aftercare and review requests on autopilot.',
         href: '/industries/local-appointment-businesses/tattoo-studios',
         icon: PenTool,
       },
       {
         title: 'Driving Schools',
         description:
-          'From lesson-fit enquiries through package clarity, scheduling cadence, and ongoing learner follow-up.',
+          'Evening enquiries, first lessons booked without ten DMs, cancellation waitlist text-back.',
         href: '/industries/local-appointment-businesses/driving-schools',
         icon: Car,
       },
       {
         title: 'Repair Shops',
         description:
-          'From service qualification through booking, expectation setting, and local trust reinforcement.',
+          'Instant quotes on standard repairs, drop-off bookings, ready-to-collect notifications.',
         href: '/industries/local-appointment-businesses/repair-shops',
         icon: Wrench,
       },
       {
         title: 'Small Private Clinics',
         description:
-          'From appointment qualification through booking, preparation guidance, and trust-sensitive follow-up.',
+          'NHS-to-private after-hours enquiries, deposit-to-confirm consultations, follow-up on the maybe pile.',
         href: '/industries/local-appointment-businesses/small-private-clinics',
         icon: HeartPulse,
       },
       {
-        title: 'Dental Clinics',
+        title: 'Dental Practices',
         description:
-          'From treatment-fit enquiries through booking readiness, trust reinforcement, and measured follow-up.',
+          'Missed-call text-back for pain calls, hygiene recalls on autopilot, implant consult follow-up.',
         href: '/industries/local-appointment-businesses/dental-clinics',
         icon: HeartPulse,
       },
@@ -354,9 +371,9 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
       'tattoo-studio',
     ],
     seo: {
-      title: 'Local Appointment Business Systems | MindWP',
+      title: 'Appointment-Based Local Businesses — Stop Losing Enquiries, Bookings & Deposits | MindWP',
       description:
-        'Smart Website systems for local appointment businesses that need clearer qualification, booking flow, and stronger local trust support.',
+        'For dental practices, private clinics, driving schools, repair shops, and tattoo studios where enquiries go unanswered, bookings take ten messages, and no-shows kill the day rate. We put the system in place that catches them.',
       keywords: [
         'local appointment business website systems',
         'appointment booking system',
@@ -384,9 +401,9 @@ function buildLocalAppointmentBusinessesIndustryPageData(): IndustryPageData {
       },
     },
     cta: {
-      title: 'Map the system around how your appointment business actually works',
+      title: 'Tell us where the diary is leaking',
       description:
-        'If your business is dealing with loose qualification, inconsistent booking flow, follow-up friction, or scattered trust signals, we can help structure the right system around it.',
+        'If enquiries go unanswered while you’re with a customer, if bookings take ten messages to confirm, or if no-shows keep killing the day rate — walk us through how the business runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

@@ -13,25 +13,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Coverage Lane',
-    title: 'Smart Website Systems for Driving Schools',
+    badge: 'For Driving Schools',
+    title: 'A 17-Year-Old Texted Three Driving Schools On TikTok. Whoever Replied With A Slot Got The Block Booking.',
     description:
-      'A driving school website should support lesson-fit enquiries, package clarity, scheduling cadence, trust-building, and follow-up — without making every learner journey depend on manual back-and-forth.',
+      'Learners don’t ring round anymore. They DM three schools at 9pm and book whoever sent a calendar link first. We put the system in place that catches the enquiries while you’re teaching, books the first lesson, and stops cancellations from costing you a tank of fuel.',
     list: [
-      'Clearer learner qualification',
-      'Better lesson booking flow',
-      'Stronger local trust signals',
-      'Consistent follow-up',
+      'Enquiries that came in while you were in a lesson',
+      'First lessons that took ten messages to book',
+      'Last-minute cancellations nobody could refill',
+      'Reviews from passes you never asked for',
     ],
     cssPrefix: 'driving-schools-hero',
   };
 
   const imageStripData = {
-    badge: 'Service Environment',
-    title:
-      'Driving school demand depends on fit, scheduling clarity, and confidence before lessons start',
+    badge: 'How Learner Enquiries Actually Land',
+    title: 'You’re mid-roundabout when the phone buzzes. They booked someone else by the next lesson.',
     description:
-      'Lesson enquiries, instructor-fit questions, package decisions, scheduling cadence, test preparation, and follow-up all affect whether a learner progresses. When those steps stay loose, the booking path becomes harder to manage and harder to trust.',
+      'Enquiries hit at evenings, weekends, school holidays. You’re in the car teaching. Whoever replies first with a price and a slot wins the block booking.',
     items: [
       {
         title: 'Lesson and package enquiries',
@@ -59,37 +58,36 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where driving schools lose clarity, time, or booking momentum',
-    description:
-      'The gap is between first enquiry, lesson-fit qualification, scheduling cadence, and the trust people need before committing to a lesson package.',
+    badge: 'Where The Diary Slips',
+    title: 'You’re mid-lesson. The phone buzzes. By the time you reply, they’re booked with someone else.',
+    description: 'Same handful of leaks across nearly every driving school. None of them are about the teaching.',
     benefits: [
       {
         icon: Car,
-        title: 'Learner enquiries land without enough routing context',
+        title: 'Three new enquiries came in during a Saturday lesson',
         description:
-          'Experience level, timing, instructor preference, and package needs arrive through one loose path — first-response quality suffers.',
+          'You couldn’t check your phone with a learner doing roundabouts. By 5pm, two had booked elsewhere.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'Booking and lesson cadence friction when readiness is unclear',
+        title: 'Ten DMs to book one first lesson',
         description:
-          'Availability, package fit, recurring sessions, and next steps do not move through one clean path — the booking flow slows down early.',
+          '“What days?” “Where from?” “How much?” The Gen Z learners ghost after three.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Pending enquiries depend on manual follow-up',
+        title: 'A 4pm cancellation cost you the rest of the day',
         description:
-          'Some learners are not ready immediately, but follow-up becomes inconsistent when instructors and admin are handling live bookings.',
+          'Two-hour gap, half a tank of diesel, no way to fill it. Nobody had time to text the waitlist.',
         iconType: 'accent' as const,
       },
       {
         icon: Star,
-        title: 'Trust signals stay fragmented across the decision path',
+        title: 'You pass learners every week. Online you have 18 reviews.',
         description:
-          'Reviews, pass-rate style proof, and instructor credibility all exist but do not work together to support a confident first booking.',
+          'Pass rates speak for themselves — but only if anyone’s asked at the right moment.',
         iconType: 'primary' as const,
       },
     ],
@@ -97,148 +95,167 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Layers',
-    title: 'The working layers behind a steadier driving school booking pipeline',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to catch enquiries while you’re teaching and refill the cancellations',
     description:
-      'The system supports demand before lesson bookings, during scheduling, and after first contact when the learner decision takes time.',
+      'Each piece does one job. Together they keep the diary full while you’re in the passenger seat.',
     featureCategories: [
       {
-        title: 'Lesson qualification layer',
+        title: 'Reply to enquiries while you’re in a lesson',
         description:
-          'Routes new enquiries through a clearer first-contact path so the right learner and package details reach the right next step.',
+          'DM, form, or missed call lands. An instant reply goes out with price, area covered, and a calendar link. Most stop messaging the next school.',
         icon: MessageSquare,
-        features: ['Intent capture', 'Learner-fit qualification', 'Cleaner first response'],
+        features: [
+          'Instant acknowledgement on every enquiry',
+          'Price and area covered up front',
+          'Holds the learner until you can reply properly',
+        ],
       },
       {
-        title: 'Booking layer',
+        title: 'Book the first lesson without ten messages',
         description:
-          'Moves lessons and consultations into a booked next step without unnecessary delay.',
+          'Learners pick a slot themselves. Block bookings paid for online. The DM tennis stops.',
         icon: Calendar,
-        features: ['Lesson scheduling', 'Reminder touchpoints', 'Next-step guidance'],
+        features: [
+          'Self-serve first lesson booking',
+          'Block bookings paid online',
+          'Reminders the day before',
+        ],
       },
       {
-        title: 'Cadence layer',
+        title: 'Refill the cancellations before they cost you fuel',
         description:
-          'Gives learners a clearer path around how lesson frequency and preparation should work after the first booking.',
+          '4pm learner cancels at 3.30. A waitlist text goes out automatically. Most slots get refilled.',
         icon: Workflow,
-        features: ['Lesson cadence support', 'Preparation guidance', 'Booking visibility'],
+        features: [
+          'Cancellation waitlist text-back',
+          'Reschedule link instead of a no-show',
+          'Diary stays earning while you teach',
+        ],
       },
       {
-        title: 'Trust and proof layer',
+        title: 'Turn passes into reviews and referrals',
         description:
-          'Connects reviews, clarity, and instructor proof to the booking decision before lessons begin.',
+          'A polite review request goes out the day after the test pass, when they’re still buzzing.',
         icon: ShieldCheck,
-        features: ['Review requests', 'Proof-of-service support', 'Trust-led page structure'],
+        features: [
+          'Review requests after every pass',
+          'Asked at the right moment',
+          'Reviews catch up to your pass rate',
+        ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Show up first when local learners search',
         description:
-          'Aligns area pages and search visibility to reinforce the locations and lesson types the school wants.',
+          'Service pages and Google profile lined up so learners in the right area find you first.',
         icon: Search,
-        features: ['Area-page targeting', 'Local search clarity', 'Local authority support'],
+        features: [
+          'Pages for the postcodes you actually want',
+          'Found on Maps for local searches',
+          'Less time on enquiries miles away',
+        ],
       },
     ],
     columns: 3 as const,
   };
 
   const comparisonData = {
-    badge: 'Operational Shift',
-    title: 'From reactive lesson enquiries to a steadier booking and follow-up flow',
-    description:
-      'The teaching and personal guidance stay. The repeatable friction around qualification, booking, and follow-up gets reduced.',
+    badge: 'What Actually Changes',
+    title: 'A normal week, before and after',
+    description: 'The teaching stays. The diary stops haemorrhaging.',
     comparisons: [
       {
         type: 'before' as const,
-        title: 'Before the workflow is structured',
+        title: 'How it runs now',
         items: [
-          'Enquiries arrive without enough detail to route them quickly',
-          'Lesson and package booking depend on manual back-and-forth',
-          'Pending opportunities are hard to follow consistently',
-          'Trust depends too heavily on one-off reassurance during early messages',
+          'Three Saturday enquiries went unanswered until evening. Two booked elsewhere.',
+          'Ten DMs to lock down one first lesson.',
+          'A 4pm cancellation killed half the afternoon’s earnings.',
+          '“Meant to ask for a Google review” — said about every test pass.',
         ],
       },
       {
         type: 'after' as const,
-        title: 'After the workflow is aligned',
+        title: 'How it runs after',
         items: [
-          'New enquiries move into the right booking or nurture path faster',
-          'Scheduling and reminder flow protect the next step more consistently',
-          'Follow-up happens with less manual chasing',
-          'Reviews, instructor proof, and page structure support better booking confidence',
+          'Every enquiry gets an instant reply with a calendar link.',
+          'First lessons booked online without DM tennis.',
+          'Cancellations get refilled from a waitlist automatically.',
+          'Reviews get asked for the day after every pass.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Lead To Booking Flow',
-    title: 'From first enquiry to lesson booking and follow-up',
-    description:
-      'Each stage moves driving school enquiries through a specific part of the journey — from first contact into the right lesson or package path, then into consistent follow-up.',
+    badge: 'Where Most Schools Start',
+    title: 'Three stages — most schools feel one of them more than the others',
+    description: 'Pick whichever costs you the most lessons right now.',
     packages: [
       {
-        name: 'Lesson-fit capture',
-        description:
-          'Routes learner, package, and schedule enquiries into the right path with enough context for a clear first step.',
-        price: 'Flow stage 1',
-        priceDetail: 'Best when lead quality and first-contact clarity are the main issue',
+        name: 'Stop losing the evening enquiries',
+        description: 'For when learners DM at 9pm and book whoever replied first.',
+        price: 'Stage 1',
+        priceDetail: 'Start here if first-reply speed is the biggest leak',
         features: [
-          'Intent-specific service pages',
-          'Better enquiry capture',
-          'Learner and timing context',
+          'Instant reply with price and area covered',
+          'Calendar link straight away',
+          'Most learners stop messaging the next school',
         ],
       },
       {
-        name: 'Booking and cadence flow',
-        description:
-          'Adds steadier scheduling, clearer reminders, and cadence guidance so lessons move forward without friction.',
-        price: 'Flow stage 2',
-        priceDetail: 'Best when booking and lesson cadence handling create friction',
-        features: ['Lesson scheduling support', 'Reminder structure', 'Cadence guidance'],
+        name: 'Refill the diary without driving for free',
+        description: 'For when first lessons take ten DMs and last-minute cancellations cost you fuel.',
+        price: 'Stage 2',
+        priceDetail: 'Start here if booking and cancellations are the leak',
+        features: [
+          'Self-serve first lesson booking',
+          'Block bookings paid online',
+          'Cancellation waitlist text-back',
+        ],
         popular: true,
       },
       {
-        name: 'Follow-up and trust reinforcement',
-        description:
-          'Keeps pending opportunities, reviews, and credibility proof moving through a reliable follow-up path.',
-        price: 'Flow stage 3',
-        priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
-        features: ['Nurture workflows', 'Review request support', 'Trust reinforcement'],
+        name: 'Build the local proof that fills the diary on its own',
+        description: 'For when pass rate is great but the school looks small online.',
+        price: 'Stage 3',
+        priceDetail: 'Start here if reviews and area visibility are the weak spot',
+        features: [
+          'Review requests after every pass',
+          'Pages for the postcodes you want',
+          'Less time on enquiries miles away',
+        ],
       },
     ],
   };
 
   const workflowExamplesData = {
-    badge: 'Follow-Up Examples',
-    title: 'What the driving school enquiry, booking, and follow-up flow looks like in practice',
-    description:
-      'Repeatable situations where the system reduces friction without making the school feel scripted.',
+    badge: 'Real Situations',
+    title: 'A few moments where the difference shows up',
+    description: 'Small moments in the week of an instructor where the diary used to leak.',
     workflows: [
       {
-        trigger:
-          'A new enquiry arrives and the school needs to determine learner stage, timing, package fit, and instructor availability.',
+        trigger: 'A learner DMs on Instagram at 9pm.',
         actions: [
-          'Capture the right intent and timing early',
-          'Route the enquiry into the right booking or nurture path',
-          'Reduce wasted time on unclear first contact',
+          'Instant reply goes out with price, area, and calendar link',
+          'They book a first lesson without messaging again',
+          'They stop DMing the other two schools',
         ],
       },
       {
-        trigger:
-          'A lesson or package is requested and timing, readiness, and scheduling cadence need confirming.',
+        trigger: 'A 4pm learner cancels at 3.30.',
         actions: [
-          'Move the lead into a booked lesson window',
-          'Send reminders and preparation guidance',
-          'Keep internal handoff cleaner between enquiry and booking handling',
+          'A waitlist text goes out automatically',
+          'Someone snaps the slot up',
+          'Half-day of earnings saved',
         ],
       },
       {
-        trigger:
-          'The initial booking is complete and the school wants to keep the learner moving without chasing manually.',
+        trigger: 'A learner passed the test on Wednesday morning.',
         actions: [
-          'Send measured follow-up at the right times',
-          'Keep the lead stage visible internally',
-          'Support the decision with reviews and instructor proof if needed',
+          'A polite review request goes out Thursday',
+          'They’re still buzzing — they leave a 5-star',
+          'Review count quietly catches up to the pass rate',
         ],
       },
     ],
@@ -255,9 +272,9 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
   };
 
   const exploreData = {
-    badge: 'Explore',
+    badge: 'Related',
     description:
-      'Relevant service layers for driving schools that want cleaner bookings, steadier follow-up, and stronger local trust support.',
+      'The other parts of the system that come up most often for driving schools.',
     cards: [
       {
         icon: Workflow,
@@ -298,39 +315,38 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Common questions about driving school systems',
-    description: 'Common questions about MindWP for driving schools',
+    title: 'Things instructors usually ask',
+    description: 'Straight answers about how this fits a driving school.',
     faqs: [
       {
-        question: 'How can a driving school get more qualified enquiries from a website?',
+        question: 'I’m in the car teaching all day. Will this need someone in the office?',
         answer:
-          'Make lesson types, package options, and learner-fit paths clearer, then simplify the first contact step with better qualification prompts and next-step guidance. Qualified enquiries improve when the site reduces uncertainty early.',
+          'No. The whole point is it runs while you’re in lessons. You’ll see what came in on your phone between sessions, but nothing waits on you to operate it.',
       },
       {
-        question: 'Should driving schools offer online lesson requests?',
+        question: 'How does the missed-call/DM text-back work?',
         answer:
-          'Yes. A clean request path reduces back-and-forth and moves people into the right next step faster. The key is capturing learner stage, timing, and readiness early.',
+          'A learner messages while you’re mid-lesson. Within seconds they get an instant reply with price, area covered, and a calendar link. Most stop messaging the next school.',
       },
       {
-        question: 'How do driving schools reduce slow follow-up on colder enquiries?',
+        question: 'Will it work for a single instructor or only larger schools?',
         answer:
-          'A better enquiry system separates ready-now learners from nurture-stage opportunities, then supports measured follow-up over time. The aim is clarity, consistency, and less manual chasing.',
+          'Both. For a single instructor it’s about catching evening enquiries and refilling cancellations. For a larger school it’s about routing enquiries to the right instructor and area.',
       },
       {
-        question: 'Do driving schools need separate pages for different lesson types or packages?',
+        question: 'Can it really refill last-minute cancellations?',
         answer:
-          'Yes, as long as the pages reflect real service paths and useful information rather than thin copy. Good service-page structure helps local visibility and reassures prospects that the school handles their situation.',
+          'Yes — a waitlist text goes out automatically when a slot opens. Most refill before the end of the day. Saves the fuel and the dead time.',
       },
       {
-        question: 'What kind of reviews matter most for driving schools?',
+        question: 'How do I get more reviews without nagging?',
         answer:
-          'Reviews that reinforce trust, communication, patience, and the feeling that the school made the learning process clearer and more manageable. A consistent review-request process after completed work builds that proof over time.',
+          'A polite request goes out the day after the test pass, when learners are still buzzing. People who would have meant to leave one actually do.',
       },
       {
-        question:
-          'Can a Smart Website system help a driving school without replacing lesson scheduling software?',
+        question: 'Do I need to scrap my current website?',
         answer:
-          'Yes. The system improves the public-facing side of the workflow by making enquiries, booking, readiness guidance, and follow-up more consistent. It does not require replacing the scheduling tools you already use.',
+          'Usually not. We look at what you have first. The leak is normally the bit between the enquiry coming in and the lesson booked — not the site itself.',
       },
     ],
   };
@@ -348,9 +364,9 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'local-appointment-businesses',
     seo: {
-      title: 'Driving Schools — Smart Website Systems | MindWP',
+      title: 'Driving Schools — Stop Losing Evening Enquiries, First Lessons & Last-Minute Cancellations | MindWP',
       description:
-        'Smart Website systems for driving schools that need clearer booking flow, lesson cadence support, and stronger trust signals.',
+        'For driving instructors and schools where learners DM three schools and book whoever replied first, where ten DMs barely get one lesson booked, and where last-minute cancellations cost a tank of fuel. We put the system in place that keeps the diary full.',
       keywords: [
         'driving school website design',
         'driving lesson booking workflow',
@@ -373,9 +389,9 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Build a steadier driving school booking system',
+      title: 'Tell us where the diary is leaking',
       description:
-        'If unclear enquiry quality, loose booking flow, inconsistent follow-up, or weak trust proof are slowing things down, we can map a practical system around how the pipeline actually runs.',
+        'If evening enquiries go unanswered, if first lessons take ten DMs, or if cancellations cost you fuel — walk us through how the school runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

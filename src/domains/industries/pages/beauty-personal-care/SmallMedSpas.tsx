@@ -15,24 +15,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildSmallMedSpasIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Expansion Lane',
-    title: 'Smart Website Systems for Small Med Spas',
+    badge: 'For Small Med Spas',
+    title: 'She Asked About Tear Trough Filler. Three Days Later She’s Booked Somewhere Cheaper.',
     description:
-      'A med spa website should support treatment trust, consultation flow, and booking coordination — without making the client experience feel clinical or over-automated.',
+      'Most med spa enquiries don’t fail on the treatment — they fail in the consultation gap. The high-intent question that nobody answered. The consultation that didn’t lead to a booking. The aftercare that didn’t lead to her telling a friend. We put the system in place that turns curious enquiries into confident regulars.',
     list: [
-      'Treatment trust from the first visit',
-      'Coordinated consultation and booking',
-      'Preparation and aftercare guidance',
-      'Steady reputation growth',
+      'High-intent enquiries that go cold',
+      'Consultations that don’t convert',
+      'Aftercare nobody had time to send',
+      'Reviews that don’t reflect the work',
     ],
     cssPrefix: 'small-med-spas-hero',
   };
 
   const imageStripData = {
-    badge: 'Service Environment',
-    title: 'Med spa demand depends on trust, treatment clarity, and steady follow-up',
+    badge: 'How Bookings Actually Happen',
+    title: 'People research aesthetics for weeks before they message anyone',
     description:
-      'Consultation requests, treatment questions, preparation details, appointment timing, aftercare, and review follow-up all shape whether someone chooses the business and comes back again.',
+      'By the time she’s in your inbox, she’s already read forums, watched twenty TikToks, and compared three clinics. The difference between her booking with you and booking somewhere else is usually how she’s treated in the next twenty-four hours.',
     items: [
       {
         title: 'Consultation and suitability',
@@ -60,37 +60,37 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where small med spas lose trust and booking momentum',
+    badge: 'Where The Bookings Slip',
+    title: 'The injectables are great. The bit between her question and her chair is where it goes wrong.',
     description:
-      'The gap is between consultation intent, treatment understanding, booking coordination, and the trust clients need before they feel comfortable.',
+      'Aesthetics is a trust business. Most leaks happen quietly, in the days after the first message.',
     benefits: [
       {
         icon: Sparkles,
-        title: 'Mixed treatment intent at first contact',
+        title: '“Am I a candidate for tear trough filler?” sat for three days',
         description:
-          'Treatment interests, price sensitivity, and readiness levels enter through the same path — making it harder to guide each enquiry appropriately.',
+          'By the time you reply, she’s booked a consultation with the clinic that answered the same evening.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'Friction between consultation and treatment booking',
+        title: 'Consultations happen but treatment bookings don’t follow',
         description:
-          'Consultations, treatments, timing, and preparation details compete for attention instead of flowing through one coordinated booking path.',
+          'She loved the chat but never quite got round to booking. Nobody followed up. The momentum dies in a week.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Inconsistent aftercare and follow-up',
+        title: 'Pre-care and aftercare get forgotten when the day is back-to-back',
         description:
-          'Consultation reminders, pre-care, post-treatment guidance, and review requests depend on whoever has a moment between clients.',
+          '“No alcohol 24 hours before” — sent sometimes. Aftercare instructions — sent if she asks.',
         iconType: 'accent' as const,
       },
       {
         icon: MapPinned,
-        title: 'Trust signals that work separately',
+        title: 'The clinic in town has 400 reviews. You have 19.',
         description:
-          'Treatment pages, reviews, local visibility, and brand credibility all exist — but they do not reinforce one another as a decision-support layer.',
+          'Hundreds of brilliant results. Almost no one was ever asked to write anything.',
         iconType: 'primary' as const,
       },
     ],
@@ -98,52 +98,64 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Layers',
-    title: 'The working layers behind a steadier med spa workflow',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to turn curious enquiries into confident, returning clients',
     description:
-      'The system supports consultation demand, treatment booking, client communication, and trust-building follow-up without creating admin drag.',
+      'Each piece does one job. Together they keep the trust building from the first message all the way to her next appointment.',
     featureCategories: [
       {
-        title: 'Consultation and qualification layer',
+        title: 'Reply to every consultation enquiry the same day',
         description:
-          'Routes different treatment enquiries into appropriate paths so the right clients reach the right consultation.',
+          'High-intent questions get a warm, professional reply within minutes — with the next step ready.',
         icon: MessageSquare,
-        features: ['Treatment-intent capture', 'Consultation routing', 'Cleaner first response'],
-      },
-      {
-        title: 'Booking and reminder layer',
-        description:
-          'Structures consultations and treatments around timing, reminders, and confirmed next steps.',
-        icon: Calendar,
-        features: ['Consultation booking', 'Reminder timing', 'Treatment-path clarity'],
-      },
-      {
-        title: 'Preparation and aftercare layer',
-        description:
-          'Delivers pre-care and post-treatment guidance consistently so clients know what to expect.',
-        icon: Bell,
-        features: ['Pre-care guidance', 'Aftercare follow-up', 'Better client communication'],
-      },
-      {
-        title: 'Trust and proof layer',
-        description:
-          'Connects reviews, credibility signals, and treatment-page structure to support confident decisions before consultation.',
-        icon: ShieldCheck,
         features: [
-          'Review request workflows',
-          'Proof and credibility support',
-          'Trust-led treatment pages',
+          'Instant replies on DMs, web forms, calls',
+          'Treatment information and pricing handled professionally',
+          'Consultation booking link in the same reply',
         ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Move consultations into actual bookings',
         description:
-          'Ties treatment pages, maps visibility, and local search together so discovery supports the right services.',
+          'After a consultation, the right next step is teed up automatically — not left to whoever has time.',
+        icon: Calendar,
+        features: [
+          'Treatment booking flow after consultation',
+          'Reminders and reschedule options',
+          'Follow-up if she didn’t book on the day',
+        ],
+      },
+      {
+        title: 'Send pre-care and aftercare without remembering to',
+        description:
+          'No alcohol 24 hours before. No exercise the day after. Sent automatically at the right moment.',
+        icon: Bell,
+        features: [
+          'Pre-care guidance the day before',
+          'Aftercare sent right after treatment',
+          'Check-in messages a week later',
+        ],
+      },
+      {
+        title: 'Build the trust that aesthetics depends on',
+        description:
+          'Reviews, before/afters, treatment pages and credentials — lined up so she feels confident before she even messages.',
+        icon: ShieldCheck,
+        features: [
+          'Review requests after every treatment',
+          'Treatment pages that answer her real questions',
+          'Credentials and proof in the right places',
+        ],
+      },
+      {
+        title: 'Show up when local people search for aesthetic treatments',
+        description:
+          'Treatment pages, Google profile, and local search lined up so the right people find you.',
         icon: Search,
         features: [
-          'Treatment-page alignment',
-          'Google Business Profile support',
-          'Local search reinforcement',
+          'Pages for the treatments you actually do',
+          'Found on Maps for local searches',
+          'Local visibility that compounds',
         ],
       },
     ],
@@ -151,103 +163,107 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
   };
 
   const comparisonData = {
-    badge: 'Operational Shift',
-    title: 'From reactive treatment coordination to a calmer consultation and follow-up flow',
-    description:
-      'The care and personal attention stay. The repeatable friction around enquiry handling, booking, and follow-up gets reduced.',
+    badge: 'What Actually Changes',
+    title: 'A normal month at a small med spa, before and after',
+    description: 'The clinical care stays. The trust-building bits that used to be patchy get steady.',
     comparisons: [
       {
         type: 'before' as const,
-        title: 'Before the workflow is structured',
+        title: 'How it runs now',
         items: [
-          'Treatment enquiries arrive without enough context to route confidently',
-          'Preparation details are repeated manually for each consultation',
-          'Follow-up depends on who has time to send it',
-          'Trust relies on manual reassurance at each step',
+          'A high-intent filler enquiry sat in your inbox for three days. She booked elsewhere.',
+          'A great consultation. No follow-up. Treatment never booked.',
+          'Pre-care info “meant to send.” Aftercare “meant to send.”',
+          '“Amazing results” — said by hundreds, written by 19.',
         ],
       },
       {
         type: 'after' as const,
-        title: 'After the workflow is aligned',
+        title: 'How it runs after',
         items: [
-          'New enquiries move into the right consultation path faster',
-          'Booking and reminder flow protect the next step more consistently',
-          'Preparation and aftercare guidance happen more calmly',
-          'Reviews and local proof reinforce stronger treatment confidence',
+          'The high-intent enquiry gets a warm reply with a consultation link inside the hour.',
+          'After consultation, a personal follow-up goes out if she didn’t book on the day.',
+          'Pre-care lands the day before. Aftercare lands an hour after she leaves.',
+          'Every happy client gets asked. Reviews catch up to the work.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Lead To Booking Flow',
-    title: 'From first enquiry to treatment and ongoing care',
-    description:
-      'Each stage moves demand through a specific part of the journey — from consultation intent to treatment booking to aftercare.',
+    badge: 'Where Most Med Spas Start',
+    title: 'Three stages — most clinics feel one of them more than the others',
+    description: 'Pick whichever costs you the most treatments right now.',
     packages: [
       {
-        name: 'Consultation intent and routing',
+        name: 'Catch every enquiry while she’s still researching',
         description:
-          'Routes different treatment enquiries into qualified consultation paths with enough context to guide the next step.',
-        price: 'Flow stage 1',
-        priceDetail: 'Best when first-contact clarity and consultation routing are the main issue',
+          'For when high-intent questions sit for days and the booking goes elsewhere.',
+        price: 'Stage 1',
+        priceDetail: 'Start here if first-reply speed is the biggest leak',
         features: [
-          'Treatment-specific enquiry paths',
-          'Consultation qualification',
-          'Better first-response clarity',
+          'Instant replies on DMs, forms, calls',
+          'Treatment information handled professionally',
+          'Consultation link in the same reply',
         ],
       },
       {
-        name: 'Booking and treatment preparation',
-        description:
-          'Adds structured reminders and preparation guidance so consultations and treatments run predictably.',
-        price: 'Flow stage 2',
-        priceDetail: 'Best when booking friction and preparation gaps are the main pressure points',
-        features: ['Consultation scheduling support', 'Reminder structure', 'Preparation guidance'],
+        name: 'Turn consultations into actual treatments',
+        description: 'For when the consultations happen but bookings drag.',
+        price: 'Stage 2',
+        priceDetail: 'Start here if consultation-to-treatment conversion is the leak',
+        features: [
+          'Booking flow after consultation',
+          'Personal follow-up if she didn’t book on the day',
+          'Pre-care and aftercare sent automatically',
+        ],
         popular: true,
       },
       {
-        name: 'Aftercare and trust reinforcement',
+        name: 'Build the trust that fills the diary on its own',
         description:
-          'Introduces aftercare messaging, review prompts, and trust-building so the client relationship continues beyond treatment.',
-        price: 'Flow stage 3',
-        priceDetail: 'Best when follow-up consistency and proof-building need improvement',
-        features: ['Aftercare follow-up', 'Review request support', 'Trust reinforcement'],
+          'For when results are great but reviews and repeat visits depend on luck.',
+        price: 'Stage 3',
+        priceDetail: 'Start here if reviews and retention are the weak spot',
+        features: [
+          'Review requests after every treatment',
+          'Top-up nudges at the right interval',
+          'Past clients warmed up for new treatments',
+        ],
       },
     ],
   };
 
   const workflowExamplesData = {
-    badge: 'Follow-Up Examples',
-    title: 'What the med spa lead, booking, and follow-up flow looks like in practice',
-    description:
-      'Repeatable situations where the system reduces friction while keeping the client experience warm.',
+    badge: 'Real Situations',
+    title: 'A few moments where the difference shows up',
+    description: 'Small moments in the consultation room and after, where things used to slip.',
     workflows: [
       {
         trigger:
-          'A new enquiry arrives and the team needs to qualify treatment interest before consultation.',
+          'A first-time enquirer asks about lip filler on Instagram at lunchtime.',
         actions: [
-          'Capture treatment interest and early suitability context',
-          'Route the enquiry into the right consultation path',
-          'Reduce wasted time on unclear first contact',
+          'She gets a warm reply within minutes with a consultation link',
+          'Treatment options and pricing handled professionally',
+          'A consultation is on the books before the end of the day',
         ],
       },
       {
         trigger:
-          'A consultation or treatment is booked and the client needs preparation and timing details.',
+          'She has a consultation but doesn’t book treatment on the day.',
         actions: [
-          'Send reminders and preparation guidance at the right times',
-          'Confirm expectations and next steps clearly',
-          'Reduce avoidable confusion before the appointment',
+          'A personal follow-up goes out within 48 hours',
+          'Any concerns get answered without pressure',
+          'A booking link makes saying yes easy',
         ],
       },
       {
         trigger:
-          'The treatment is complete and the business needs a review and aftercare follow-up.',
+          'A treatment is finished and she leaves happy.',
         actions: [
-          'Send a well-timed review request',
-          'Share aftercare or next-step guidance',
-          'Keep longer-term trust-building moving more reliably',
+          'Aftercare guidance lands an hour later',
+          'A review request goes out a few days after',
+          'A top-up nudge appears at the right interval',
         ],
       },
     ],
@@ -264,9 +280,9 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
   };
 
   const exploreData = {
-    badge: 'Explore',
+    badge: 'Related',
     description:
-      'Relevant service layers for med spas that want stronger consultation flow, calmer booking, and better proof support.',
+      'The other parts of the system that come up most often for small med spas trying to turn enquiries into long-term clients.',
     cards: [
       {
         icon: Workflow,
@@ -307,38 +323,38 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Common questions about med spa systems',
-    description: 'Common questions about MindWP for small med spas',
+    title: 'Things small med spas usually ask',
+    description: 'Straight answers about how this fits an aesthetics-first business.',
     faqs: [
       {
-        question: 'How can a small med spa improve consultation bookings from its website?',
+        question: 'Will automated replies feel cold or clinical?',
         answer:
-          'Make treatment pages specific enough that clients can tell which consultation to request. When the site explains treatments clearly and reduces uncertainty, enquiries convert more easily.',
+          'No — they’re written warmly and professionally, and they buy you time to follow up personally. The alternative is silence for three days while she books elsewhere.',
       },
       {
-        question: 'Should a med spa show pricing online?',
+        question: 'How does this help convert consultations into actual treatments?',
         answer:
-          'Yes — or at least clear price guidance where appropriate. Pricing clarity reduces repeated back-and-forth and filters the wrong enquiries earlier.',
+          'A personal follow-up goes out within 48 hours if she didn’t book on the day, with a booking link and a chance to ask anything else. That alone changes consultation-to-treatment conversion noticeably.',
       },
       {
-        question: 'How can a med spa reduce no-shows or late cancellations?',
+        question: 'Can it handle pre-care and aftercare without me remembering?',
         answer:
-          'Well-timed reminders and clear booking expectations help the most. The system protects the diary without turning the experience into pressure.',
+          'Yes — “no alcohol 24 hours before” goes out the day before, aftercare goes out within an hour of treatment. You stop doing it from memory.',
       },
       {
-        question: 'Do small med spas need separate pages for different treatments?',
+        question: 'How do I get more reviews without making it weird?',
         answer:
-          'Yes. Separate pages help clients and search engines understand your treatments. They also route people into the right consultation instead of funnelling everything through one generic page.',
+          'A polite request goes out a few days after treatment, when results are settling and she’s loving them. The timing matters — too early feels rushed, too late feels random.',
       },
       {
-        question: 'What kind of reviews matter most for a med spa?',
+        question: 'Can past clients be brought back for top-ups automatically?',
         answer:
-          'Reviews that mention care, communication, and professionalism carry the most weight. A steady post-treatment review process builds that proof over time.',
+          'Yes — a friendly nudge at the right interval (filler, anti-wrinkle, etc.) brings regulars back without anyone in the clinic remembering to chase.',
       },
       {
-        question: 'How should a med spa handle aftercare communication?',
+        question: 'Do I need a brand new website?',
         answer:
-          'Clear, timely follow-up that reinforces the right next step without overwhelming the client. The aim is reassurance and clarity, not over-automation.',
+          'Usually not. We look at what you have first. The leak is normally everything that happens after she enquires — not the site itself.',
       },
     ],
   };
@@ -356,9 +372,9 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'beauty-personal-care',
     seo: {
-      title: 'Small Med Spas — Smart Website Systems | MindWP',
+      title: 'Small Med Spas — Stop Losing Filler Enquiries to a Three-Day Reply | MindWP',
       description:
-        'Smart Website systems for small med spas that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+        'For small med spas where high-intent treatment enquiries go cold, consultations don’t convert, and aftercare gets sent when somebody remembers. We put the system in place that turns curious enquiries into confident, returning clients.',
       keywords: [
         'med spa website design',
         'med spa consultation booking system',
@@ -381,9 +397,9 @@ function buildSmallMedSpasIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Build a steadier med spa system',
+      title: 'Tell us where the trust is breaking',
       description:
-        'If unclear consultation routing, booking friction, inconsistent aftercare, or weak trust signals are slowing things down, we can map a practical system around the real client journey.',
+        'If high-intent enquiries sit for days, if consultations don’t turn into bookings, or if reviews don’t reflect the work — walk us through how the clinic runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

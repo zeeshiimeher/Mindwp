@@ -21,24 +21,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildHomeServicesIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Primary Lane',
-    title: 'Smart Website Systems for Home Service Teams',
+    badge: 'For Home Service Businesses',
+    title: 'You’re On a Job. The Phone’s Ringing. They’ll Call The Next Trade On The List.',
     description:
-      'Home service businesses run on fast response, clear estimate handling, and local trust — but most of those steps break before the job even starts. A Smart Website system holds the whole path together.',
+      'Plumbers, electricians, roofers, HVAC, landscapers — different trades, same leaks. Calls missed mid-job. Quotes that went quiet. Reviews nobody asked for. Postcodes you never wanted to drive to. We put the system in place that catches the work before it walks past you.',
     list: [
-      'Clearer enquiry capture',
-      'Faster estimate booking',
-      'Stronger local trust signals',
-      'Consistent follow-up',
+      'Calls missed while you’re on the tools',
+      'Quotes nobody chased',
+      'Reviews nobody asked for',
+      'Postcodes you never wanted to drive to',
     ],
     cssPrefix: 'home-services-hero',
   };
 
   const imageStripData = {
-    badge: 'Category Reality',
-    title: 'The work happens in the field, but the friction starts before the job',
+    badge: 'How Trade Calls Actually Land',
+    title: 'The work is on the tools. The leak is everything around it.',
     description:
-      'Calls arrive while crews are busy. Quote requests need sorting. Service areas need clarity. Reviews need follow-up. That operating layer shapes everything else.',
+      'A burst pipe at 7pm. A storm Friday night. A boiler in January. People panic and dial. Whoever answers first wins the job — and often the next ten years of repeat work.',
     items: [
       {
         title: 'Emergency and urgent enquiries',
@@ -66,37 +66,36 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where home service businesses feel the pressure first',
-    description:
-      'The gap is between incoming demand, response speed, quote handling, and visible trust across the areas you serve.',
+    badge: 'Where The Work Slips',
+    title: 'Same handful of leaks in nearly every trade business',
+    description: 'Different trades, similar gaps. Once you see them, you can’t unsee them.',
     benefits: [
       {
         icon: Phone,
-        title: 'Calls arrive when no one can answer',
+        title: 'Three urgent calls missed during a single job',
         description:
-          'Owners and crews are on jobs when new leads come in — urgent opportunities can cool off before anyone responds.',
+          'You were under a sink, on a roof, up a ladder. They didn’t leave a message — they rang the next trade.',
         iconType: 'primary' as const,
       },
       {
         icon: Clock3,
-        title: 'Estimate follow-up becomes uneven',
+        title: 'A bigger quote went quiet for two weeks',
         description:
-          'Inspections, quotes, reminders, and pending decisions rely on memory or manual chasing — the pipeline becomes harder to trust.',
+          'Boiler swap, EV charger, full replacement. One follow-up text would have closed it. Nobody had time to send it.',
         iconType: 'secondary' as const,
       },
       {
         icon: MapPinned,
-        title: 'Service area visibility gets fragmented',
+        title: 'Half your callouts are 40 minutes away',
         description:
-          'Google Business Profile, service-area pages, reviews, and trade-specific pages do not reinforce each other — especially across multiple towns or services.',
+          'Not the postcodes you actually want. The site brings in whoever finds you, not the right area.',
         iconType: 'accent' as const,
       },
       {
         icon: AlertCircle,
-        title: 'Growth adds admin drag before clarity',
+        title: 'Reviews don’t reflect the actual workload',
         description:
-          'More leads, more trades, or more crew capacity can strain response and coordination if the core operating system is still loose.',
+          'Hundreds of jobs done well. Twenty-something reviews online. Nobody was asked at the right moment.',
         iconType: 'primary' as const,
       },
     ],
@@ -104,71 +103,75 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Architecture',
-    title: 'What the category operating system needs to hold together',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to catch every call, close every quote, and turn every job into proof',
     description:
-      'The system connects the first enquiry, the booking path, the estimate flow, the service-area trust layer, and the review loop into one practical setup.',
+      'Each piece does one job. Together they keep the work moving while the team is on the tools.',
     featureCategories: [
       {
-        title: 'Enquiry capture layer',
+        title: 'Catch every call, even when you’re mid-job',
         description:
-          'Routes phone calls, forms, and urgent service requests into qualified paths so the team can respond faster.',
+          'Missed call gets an instant text — “on a job, what’s happening, can call back in 20.” Most stop dialling the next trade.',
         icon: MessageSquare,
         features: [
-          'Clear service request forms',
-          'Urgency and job-type capture',
-          'Cleaner first-contact routing',
+          'Missed-call text-back automatically',
+          'Urgency captured up front',
+          'Holds the lead until you’re free',
         ],
       },
       {
-        title: 'Estimate and booking layer',
+        title: 'Take the booking without the back-and-forth',
         description:
-          'Moves site visits, callbacks, estimate requests, and appointment windows forward without loose handoffs.',
+          'For non-urgent work, customers pick a slot themselves. The office stops being a calendar.',
         icon: Calendar,
         features: [
-          'Inspection scheduling',
-          'Estimate follow-up triggers',
-          'Appointment-window clarity',
+          'Online booking for inspections and routine work',
+          'Reminders the day before',
+          'Reschedule link instead of a no-show',
         ],
       },
       {
-        title: 'Dispatch and coordination layer',
+        title: 'See where every job is in one place',
         description:
-          'Gives the team visibility around where demand is coming from and what stage each opportunity is in.',
+          'Quote sent, visit booked, job done, review asked. Nothing slips because nobody had time to write it down.',
         icon: Truck,
         features: [
-          'Lead-stage visibility',
-          'Area and route context',
-          'Better internal handoff points',
+          'Pipeline visible in one place',
+          'Lead stage and area context',
+          'Better handoff between office and field',
         ],
       },
       {
-        title: 'Trust and reputation layer',
+        title: 'Turn finished jobs into reviews you can show',
         description:
-          'Connects reviews, project proof, and reputation signals to the booking decision instead of leaving them disconnected.',
+          'A polite review request goes out the day after, when the kitchen, lights, or heating is back on.',
         icon: Star,
         features: [
-          'Review request workflows',
-          'Proof and credibility support',
-          'Trust before estimate booking',
+          'Review requests after every job',
+          'Asked when customers are happiest',
+          'Reviews catch up to the workload',
         ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Show up for the postcodes you actually want',
         description:
-          'Aligns search, maps, service pages, and location coverage to reinforce the areas and jobs you actually want.',
+          'Service pages, Google profile, and local search lined up so the right area finds you first.',
         icon: Search,
-        features: ['Service-area visibility', 'Trade-page clarity', 'Local search reinforcement'],
+        features: [
+          'Pages for the services and areas you want',
+          'Found on Maps for local searches',
+          'Less time driving to the wrong postcodes',
+        ],
       },
       {
-        title: 'Follow-up layer',
+        title: 'Follow up the quotes nobody has time to chase',
         description:
-          'Handles pending quotes, unbooked leads, and completed jobs with calmer next steps so revenue does not leak.',
+          'Quote sent Monday, automatic check-in Friday, another the week after. Quietly closes more.',
         icon: Workflow,
         features: [
-          'Quote follow-up',
-          'Missed-call recovery',
-          'Post-job review and referral prompts',
+          'Quote follow-up at the right intervals',
+          'Pending jobs visible in one place',
+          'Closing rate goes up without nagging',
         ],
       },
     ],
@@ -176,32 +179,40 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
   };
 
   const spectrumData = {
-    badge: 'Business Shapes',
-    title: 'The category covers different operating models, not one fixed company shape',
+    badge: 'Different Trades, Same Leaks',
+    title: 'A solo operator, a crew, and a multi-trade outfit don’t look alike — but the gaps usually are',
     description:
-      'Home services businesses can look similar from the outside, but the workflow strain changes depending on crew size, trade mix, service area spread, and how estimates are handled.',
+      'Different setups, similar friction. Once you place yours, the right next step gets obvious.',
     cards: [
       {
-        title: 'Owner-led trade businesses',
+        title: 'Owner-led trades',
         description:
-          'Fewer systems, but the same person handles jobs and new enquiries — first-response structure matters most.',
-        points: ['Low admin capacity', 'High missed-call risk', 'Need for fast qualification'],
+          'You’re on the tools. The phone going during a job is the single biggest leak.',
+        points: [
+          'Calls missed while you’re working',
+          'Quotes typed late at night',
+          'Reviews never asked for',
+        ],
       },
       {
         title: 'Office and field teams',
         description:
-          'Tighter handoffs between front-office response, estimate scheduling, and field delivery keep opportunities from going stale.',
-        points: ['Shared workload', 'More scheduling pressure', 'Follow-up gaps become expensive'],
+          'More hands, more handoffs. Things slip in the gap between front desk, dispatcher, and the van.',
+        points: [
+          'Quotes that nobody owned',
+          'Visits nobody confirmed',
+          '“Who was supposed to ring them?”',
+        ],
         featured: true,
       },
       {
         title: 'Multi-trade local companies',
         description:
-          'Routing across services, locations, and trade-specific pages gets complex fast — the website should simplify, not add confusion.',
+          'More services, more areas. Routing different jobs to the right team without confusion is the daily problem.',
         points: [
-          'Service routing complexity',
-          'Location coverage complexity',
-          'Trust has to scale across more offers',
+          'Wrong job types to wrong teams',
+          'Postcodes nobody wanted to cover',
+          'Trust spread thin across services',
         ],
       },
     ],
@@ -210,17 +221,16 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
   };
 
   const decisionChecklistData = {
-    badge: 'When Category Work Matters',
-    title: 'Signs the business needs category-level system thinking',
-    description:
-      'At some point, the business does not need one more page or one more tool — it needs the whole enquiry-to-job flow tightened at category level.',
+    badge: 'Sound Familiar?',
+    title: 'A few signs this is worth looking at properly',
+    description: 'If most of these ring true, the leak is bigger than another marketing tweak will fix.',
     items: [
-      'Different trades or services exist, but lead handling still runs through one unclear process',
-      'Calls, forms, and estimate requests reach the business, but reply speed depends too much on who happens to be free',
-      'Reviews and local visibility exist, but they are not strengthening the right service pages or areas',
-      'Pending quotes or inspection bookings are hard to track consistently',
-      'The company wants more trade-specific pages, but the category logic behind them is still weak',
-      'Growth is creating admin pressure faster than it is creating operating clarity',
+      'Calls go to voicemail during jobs and most callers don’t leave a message',
+      'Quoted bigger jobs go quiet for two weeks before anybody chases them',
+      'Reviews online don’t reflect how busy the business actually is',
+      'Half the new enquiries are postcodes you don’t want to drive to',
+      'Insurance and warranty work sits in three different threads',
+      'More work just makes the office feel worse, not better',
     ],
     columns: 2 as const,
     backgroundColor: 'bg-base',
@@ -228,69 +238,67 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
   };
 
   const serviceEnvironmentsData = {
-    badge: 'Service Environments',
-    title: 'The same category can operate through very different service environments',
+    badge: 'How You Actually Work',
+    title: 'A solo van, an office and field team, and a multi-trade outfit each break in different places',
     description:
-      'A roofing company, an HVAC team, and a multi-trade business do not break in the same places. That context matters before narrowing into single-industry workflows.',
+      'Different setups, different leaks. The bit that costs you the most work isn’t the same in a one-van trade as in a six-van outfit.',
     features: [
       {
-        title: 'Single-trade operator environment',
+        title: 'Solo or owner-led van',
         description:
-          'Better first-response structure, clearer estimate capture, and less reliance on missed callbacks.',
+          'You’re hands-on with one job at a time. The phone goes, nobody picks up, the lead’s gone.',
         icon: Home,
       },
       {
-        title: 'Office-supported field team environment',
+        title: 'Office and field team',
         description:
-          'Stronger handoffs between the person receiving enquiries and the people scheduling or delivering the work.',
+          'More hands, more handoffs. Things slip between the booker, the dispatcher, and the van.',
         icon: Users,
       },
       {
-        title: 'Multi-service local brand environment',
+        title: 'Multi-trade local company',
         description:
-          'Better routing between services, locations, and trust signals so the website supports the right enquiry path.',
+          'More services, more areas. Routing the right job to the right team without confusion is the daily problem.',
         icon: Wrench,
       },
     ],
-    tagline: 'Category context before trade-level depth',
-    narrativeTitle: 'Why this belongs on the category page',
+    tagline: 'Same category, different bottlenecks',
+    narrativeTitle: 'Why we look at the shape of the business first',
     narrativeParagraphs: [
-      'A category page should explain the operating environments inside home services before it narrows into one trade like roofing or HVAC.',
-      'Once that context is clear, the single-industry page can go much deeper into estimate handling, service-area coverage, reminders, and review flow for that trade.',
+      'Before any change is made, we look at how enquiries actually arrive, who handles them, and where they currently slip. That’s usually obvious within a short conversation.',
+      'From there, the right next step — missed-call text-back, quote follow-up, review collection, area targeting — becomes obvious instead of generic.',
     ],
     backgroundColor: 'bg-alt',
     cssPrefix: 'home-services-service-environments',
   };
 
   const processData = {
-    badge: 'Tier 1 Layering',
-    title: 'How Smart Website structure expands into trade-specific workflows',
+    badge: 'How We Get Started',
+    title: 'How a typical conversation moves from “we’re losing work” to “we’ve stopped losing work”',
     description:
-      'Once the category system is clear, the page can route visitors into the right trade workflow while keeping Smart Website structure as the main operating layer.',
+      'Nothing fancy. We look at how the business actually runs, then put the missing pieces in place in the order that helps most.',
     steps: [
       {
         number: '01',
-        title: 'Frame the Smart Website core',
-        description:
-          'Start with the enquiry, booking, and conversion structure that supports all home service demand before narrowing into one trade.',
+        title: 'We look at how enquiries arrive now',
+        description: 'Calls, forms, missed calls, walk-ins. Where they go, who sees them, who replies.',
       },
       {
         number: '02',
-        title: 'Show the operating shapes',
-        description:
-          'Clarify how owner-led trades, office-supported teams, and multi-service brands differ so visitors can place themselves quickly.',
+        title: 'We map where the jobs are slipping',
+        description: 'No pitch deck. A short, honest list of what’s breaking and what it’s costing.',
       },
       {
         number: '03',
-        title: 'Layer the supporting systems',
+        title: 'The biggest leak gets fixed first',
         description:
-          'Connect local visibility, missed-call handling, review flow, estimate follow-up, and coordination support around the Smart Website core.',
+          'Missed calls, quote follow-ups, missing reviews, wrong postcodes — whichever is bleeding the most work.',
       },
       {
         number: '04',
-        title: 'Route into trade pages',
+        title: 'It runs while the team is on the tools',
         description:
-          'Move the visitor into the right single-industry workflow page once the category context is clear.',
+          'Replies, reminders, reviews, follow-up. Going on their own while the trade does the trade.',
       },
     ],
     columns: 4 as const,
@@ -299,43 +307,43 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
   };
 
   const detailRoutesData = {
-    badge: 'Sub-Industry Workflows',
-    title: 'Explore the first mapped workflows in this category',
+    badge: 'By Trade',
+    title: 'Pick the one closest to how you run',
     description:
-      'Start with roofing, HVAC, plumbing, electrical, and landscaping to see how Smart Website structure adapts to urgent enquiries, booked work, estimate handling, seasonal pressure, and local trust-building.',
+      'Same category, different bottlenecks. These pages get into the specifics for each trade.',
     items: [
       {
         title: 'Roofing',
         description:
-          'From storm or repair enquiry through inspection booking, estimate follow-up, and review collection.',
+          'For roofers losing storm calls and replacement quotes that go quiet for weeks.',
         href: '/industries/home-services/roofing-companies',
         icon: Home,
       },
       {
         title: 'HVAC',
         description:
-          'From heating or cooling enquiry through service scheduling, reminder flow, maintenance follow-up, and repeat demand.',
+          'For HVAC where heatwave calls overflow and last year’s installs never get their service nudge.',
         href: '/industries/home-services/hvac-companies',
         icon: Workflow,
       },
       {
         title: 'Plumbing',
         description:
-          'From urgent or routine plumbing enquiry through booked visits, quote follow-up, and review collection.',
+          'For plumbers whose urgent calls go to whoever picked up first.',
         href: '/industries/home-services/plumbing-companies',
         icon: Droplets,
       },
       {
         title: 'Electrical',
         description:
-          'From faults and inspections through booked work, quote handling, and stronger local trust support.',
+          'For sparkies losing fault calls and EV charger quotes that go quiet.',
         href: '/industries/home-services/electrical-companies',
         icon: Zap,
       },
       {
         title: 'Landscaping',
         description:
-          'From maintenance and project enquiries through estimate booking, seasonal follow-up, and stronger visual proof.',
+          'For landscapers where spring quote requests pile up faster than anyone can reply.',
         href: '/industries/home-services/landscaping-companies',
         icon: Shovel,
       },
@@ -358,9 +366,9 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
     topics: ['lead-management', 'follow-up', 'review-generation', 'missed-calls'],
     industries: ['roofing', 'hvac', 'plumbing', 'electrical', 'landscaping'],
     seo: {
-      title: 'Home Services Systems | MindWP',
+      title: 'Home Service Trades — Stop Losing Calls, Quotes & Reviews | MindWP',
       description:
-        'Smart Website systems for roofing, HVAC, plumbing, electrical, and landscaping businesses that need clearer enquiry handling and follow-up.',
+        'For plumbers, electricians, roofers, HVAC, and landscapers where urgent calls go to whoever picked up first, quoted jobs go quiet for weeks, and reviews don’t reflect the workload. We put the system in place that catches every job.',
       keywords: [
         'home services website systems',
         'roofing hvac booking systems',
@@ -388,9 +396,9 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
       },
     },
     cta: {
-      title: 'Map the system around how your team actually works',
+      title: 'Tell us where the work is leaking',
       description:
-        'If jobs are slipping between first contact and follow-up, we can show you how to turn more enquiries into booked work.',
+        'If urgent calls go to voicemail, if quoted jobs go quiet, or if reviews never get asked for — walk us through how the business runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

@@ -14,25 +14,25 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildBodyShopsIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Coverage Lane',
-    title: 'Smart Website Systems for Body Shops',
+    badge: 'For Body Shops',
+    title: 'They Send Photos. You Send a Quote. Then Nothing.',
     description:
-      'A body shop website should support damage-assessment enquiries, estimate flow, booking coordination, and follow-up — without forcing the team to patch every gap manually.',
+      'Someone’s had a knock. They want to know what it’ll cost and how soon you can take the car. The first hour matters — by the next day they’re ringing the next shop. Most body shops don’t lose work on price. They lose it because nobody chased the estimate or replied fast enough.',
     list: [
-      'Clearer damage enquiries',
-      'Better estimate coordination',
-      'Stronger booking flow',
-      'More reliable local trust',
+      'Photos sent, no reply for hours',
+      'Estimates that go cold',
+      'Insurance jobs that stall',
+      'Reviews that never get asked for',
     ],
     cssPrefix: 'body-shops-hero',
   };
 
   const imageStripData = {
-    badge: 'Service Environment',
+    badge: 'How Body Work Comes In',
     title:
-      'Body shop demand depends on damage clarity, estimate confidence, and trust before booking',
+      'Most body shop enquiries arrive with a few phone photos and one big question — can you sort it, and how much?',
     description:
-      'Accident repairs, cosmetic work, inspection needs, estimate decisions, booking timing, and review follow-up all shape the buying process. When those steps feel disconnected, the team absorbs more uncertainty than it should.',
+      'Insurance claims, kerbed alloys, supermarket dings, full panel work. People are usually frustrated, sometimes shaken, and almost always shopping at two or three other shops at the same time. Speed and clarity decide who they bring the car to.',
     items: [
       {
         title: 'Damage and repair enquiries',
@@ -60,37 +60,37 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where body shops lose time, clarity, or momentum',
+    badge: 'Where The Work Slips',
+    title: 'Good repairs going out. Decent leads going cold.',
     description:
-      'The gap is rarely visibility alone — it sits between damage understanding, estimate confidence, booking coordination, and the proof someone needs before they commit.',
+      'It’s not the workshop. It’s the bit before and after — photos sat in an inbox, quotes nobody chased, insurance jobs that hit a wall halfway through.',
     benefits: [
       {
         icon: Car,
-        title: 'Damage enquiries are not always qualified clearly enough at first contact',
+        title: 'Damage photos land in an inbox nobody opens until tonight',
         description:
-          'Accident repairs, cosmetic work, and panel issues arrive through one loose path — first-response quality drops when everything routes the same way.',
+          'They sent the pictures at lunch. By the time someone replies, they’ve already had two other quotes back.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'Assessment and booking coordination create friction',
+        title: 'Trying to book an assessment turns into seven texts',
         description:
-          'Estimate timing, workshop capacity, vehicle context, and next steps sit in different places — the booking flow slows before it should.',
+          'They want to drop the car. Your team is busy. The slot doesn’t get confirmed for two days.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Estimates and pending decisions go quiet',
+        title: 'The estimate goes out. The job sits at “thinking about it”.',
         description:
-          'Once the repair has been assessed, the follow-up path can become inconsistent when the team is already under workshop pressure.',
+          'No follow-up. No nudge. The customer either rings back themselves or quietly goes elsewhere.',
         iconType: 'accent' as const,
       },
       {
         icon: MapPinned,
-        title: 'Trust signals stay fragmented across the local decision path',
+        title: 'Five years of great paintwork. Eleven Google reviews.',
         description:
-          'Reviews, proof of work, repair pages, and local visibility exist in different places — they rarely work together to support confident booking decisions.',
+          'You know the work is good. Online, the next shop along looks busier just because they ask people for reviews.',
         iconType: 'primary' as const,
       },
     ],
@@ -98,52 +98,64 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Layers',
-    title: 'The working layers behind a steadier body shop pipeline',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to handle every photo, quote, and follow-up',
     description:
-      'A body shop workflow needs structure before the vehicle arrives, during assessment and estimate handling, and after the repair is complete.',
+      'Each piece does one job. Together they make sure repair work doesn’t quietly slip to the shop down the road while your team is in the booth.',
     featureCategories: [
       {
-        title: 'Lead capture and qualification layer',
+        title: 'Catch every enquiry, even when the team is spraying',
         description:
-          'Routes damage assessments, accident repairs, and cosmetic repair enquiries through a clearer first-contact path so the right issue reaches the right next step.',
+          'Photos, calls, web forms — all land in one place with the damage and the customer’s details already attached.',
         icon: MessageSquare,
         features: [
-          'Damage and repair qualification',
-          'Vehicle context capture',
-          'Cleaner first response',
+          'Missed calls texted back inside a minute',
+          'Photos saved against the right enquiry',
+          'Insurance vs. private clearly tagged',
         ],
       },
       {
-        title: 'Assessment and booking layer',
+        title: 'Get the assessment booked the same day',
         description:
-          'Moves estimate requests, booking windows, and next-step guidance into a booked path without unnecessary delay.',
+          'A clear way to offer a drop-off slot, confirm it, and remind them the day before so cars actually turn up.',
         icon: Calendar,
-        features: ['Assessment scheduling', 'Reminder touchpoints', 'Clear next-step guidance'],
+        features: [
+          'Drop-off slots customers can pick',
+          'Reminders the day before',
+          'Front desk knows what’s booked in',
+        ],
       },
       {
-        title: 'Estimate follow-up layer',
+        title: 'Stop quotes from going cold',
         description:
-          'Keeps pending decisions on a calmer, more consistent follow-up path so repair work does not disappear into silence.',
+          'Every estimate gets a polite chase on a schedule. Insurance jobs get nudged through their stages.',
         icon: Workflow,
-        features: ['Estimate follow-up', 'Decision reminders', 'Pipeline visibility'],
+        features: [
+          'Quotes followed up automatically',
+          'A live list of jobs sitting on a yes/no',
+          'Old quotes warmed up instead of forgotten',
+        ],
       },
       {
-        title: 'Trust and proof layer',
+        title: 'Turn finished cars into proof you can show',
         description:
-          'Connects reviews, repair proof, and credibility signals so they support local buying decisions before the booking happens.',
+          'After a job goes out, a review request fires at the right moment. Your reputation catches up to the work.',
         icon: ShieldCheck,
-        features: ['Review requests', 'Proof-of-work support', 'Trust-led page structure'],
+        features: [
+          'Review requests after each handover',
+          'Before/after shots filed in one place',
+          'More five-stars where local people search',
+        ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Show up when local drivers search for the work you do',
         description:
-          'Reinforces the local work you want through repair pages, maps visibility, and service-area coverage.',
+          'Service pages, the Google profile, and local listings lined up so you appear for “bumper repair near me” — not buried on page two.',
         icon: Search,
         features: [
-          'Local area targeting',
-          'Repair service-page clarity',
-          'Google Business Profile support',
+          'Found on Maps for real local searches',
+          'Pages for the specific work you do',
+          'Service-area coverage that’s visible',
         ],
       },
     ],
@@ -151,111 +163,110 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
   };
 
   const comparisonData = {
-    badge: 'Operational Shift',
-    title: 'From reactive body shop enquiries to a more reliable estimate and booking flow',
+    badge: 'What Actually Changes',
+    title: 'Same workshop. Different week.',
     description:
-      'The repair quality stays. The repeatable friction around enquiry routing, estimate coordination, and follow-up gets reduced.',
+      'The repair quality stays. What changes is the part that depended on someone seeing a message at the right time.',
     comparisons: [
       {
         type: 'before' as const,
-        title: 'Before the workflow is structured',
+        title: 'How it runs now',
         items: [
-          'Repair leads arrive without enough detail to route them quickly',
-          'Assessments and booking steps depend on manual back-and-forth',
-          'Pending estimates are hard to follow consistently',
-          'Trust depends too heavily on one-off reassurance during the booking process',
+          'Photos arrive at lunchtime, sit in the inbox until 6pm.',
+          'A drop-off slot takes three days of texts to confirm.',
+          'Quote sent Monday. Friday rolls round and nobody’s chased it.',
+          'Customer collects the keys, drives off, never gets asked for a review.',
         ],
       },
       {
         type: 'after' as const,
-        title: 'After the workflow is aligned',
+        title: 'How it runs after',
         items: [
-          'New repair leads move into the right assessment path faster',
-          'Booking and reminder flow protect the next step more consistently',
-          'Estimate follow-up happens with less manual chasing',
-          'Reviews, repair proof, and page structure support better decision confidence',
+          'Photos hit one inbox, the customer gets a holding reply within minutes.',
+          'Drop-off slot picked from a link, confirmed automatically, reminder fires the day before.',
+          'The estimate gets a polite nudge the next morning. You can see who’s waiting on a yes.',
+          'A review request goes out the day they collect. Reviews start stacking quietly.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Lead To Booking Flow',
-    title: 'How the body shop workflow moves from first enquiry to booked assessment and follow-up',
+    badge: 'Where Most Shops Start',
+    title: 'Three stages — most shops feel one of them more than the others',
     description:
-      'How the system moves body shop demand from first contact into the right assessment or booking path — then into consistent estimate follow-up.',
+      'Pick whichever is leaking the most work right now. The rest can follow.',
     packages: [
       {
-        name: 'Lead capture and qualification',
+        name: 'Stop enquiries from going missing',
         description:
-          'Routes damage assessments and repair enquiries into a clearer first step — so the right details reach the right person faster.',
-        price: 'Flow stage 1',
-        priceDetail: 'Best when lead quality and first-contact clarity are the main issue',
+          'For shops where photos sit unread for hours and missed calls don’t get a reply until evening.',
+        price: 'Stage 1',
+        priceDetail: 'Start here if first replies are slow',
         features: [
-          'Repair-specific service pages',
-          'Better enquiry capture',
-          'Vehicle and damage context',
+          'Missed-call text-back',
+          'One inbox for photos, calls, and forms',
+          'Damage and customer details captured up front',
         ],
       },
       {
-        name: 'Assessment booking and estimate flow',
+        name: 'Get the assessment in the diary same day',
         description:
-          'Adds steadier scheduling, clearer reminders, and better control over the next step after assessment.',
-        price: 'Flow stage 2',
-        priceDetail: 'Best when booking and estimate handling create friction',
+          'For shops where the back-and-forth around drop-off slots is killing momentum.',
+        price: 'Stage 2',
+        priceDetail: 'Start here if booking is the bottleneck',
         features: [
-          'Assessment scheduling support',
-          'Reminder and callback structure',
-          'Estimate path clarity',
+          'Drop-off slots customers pick themselves',
+          'Reminders the day before',
+          'Clear front-desk to workshop handover',
         ],
         popular: true,
       },
       {
-        name: 'Follow-up and trust reinforcement',
+        name: 'Keep estimates moving and turn jobs into reviews',
         description:
-          'Keeps pending estimates, reviews, and completed-repair proof moving in a more reliable way.',
-        price: 'Flow stage 3',
-        priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
+          'For shops where quotes go quiet and reputation online doesn’t match the actual work.',
+        price: 'Stage 3',
+        priceDetail: 'Start here if follow-up and reviews are the weak spots',
         features: [
-          'Estimate follow-up workflows',
-          'Review request support',
-          'Repair proof reinforcement',
+          'Quotes chased automatically',
+          'Insurance jobs nudged through the stages',
+          'Review requests after every handover',
         ],
       },
     ],
   };
 
   const workflowExamplesData = {
-    badge: 'Follow-Up Examples',
-    title: 'What the body shop lead, booking, and follow-up flow looks like in practice',
-    description:
-      'Repeatable situations where a structured body shop setup reduces friction — without making the business feel scripted.',
+    badge: 'Real Situations',
+    title: 'A few moments where the difference shows up',
+    description: 'Small handoffs that used to depend on someone seeing a message in time.',
     workflows: [
       {
         trigger:
-          'A driver needs repair help and wants to know whether the next step is assessment, estimate, or booking.',
+          'A driver sends three photos of a kerbed alloy and a scuffed bumper at 1pm.',
         actions: [
-          'Capture the right damage context early',
-          'Route the enquiry into the right assessment or booking path',
-          'Reduce wasted time on unclear first contact',
+          'They get a holding reply within minutes confirming you’ve received the photos',
+          'The enquiry gets logged with the photos and customer attached',
+          'A team member is told someone is waiting for an estimate',
         ],
       },
       {
         trigger:
-          'An assessment is requested and the business needs to confirm timing, vehicle details, and the next step clearly.',
+          'They’re ready to bring the car in and want to know when they can drop it.',
         actions: [
-          'Move the lead into a booked assessment window',
-          'Send reminders and next-step guidance',
-          'Keep internal handoff cleaner between front desk and workshop',
+          'They pick a slot from a link, no more text tag',
+          'A reminder fires the day before',
+          'Workshop sees the booking with the photos already attached',
         ],
       },
       {
         trigger:
-          'The estimate has been delivered and the business wants to keep the repair warm without manual chasing every time.',
+          'You sent a quote on Monday and haven’t heard back by Wednesday.',
         actions: [
-          'Send measured follow-up at the right times',
-          'Keep the estimate stage visible internally',
-          'Support the decision with reviews and repair proof if needed',
+          'A polite chase goes out the next morning',
+          'The estimate stays visible on a list of open jobs',
+          'If they say yes, the booking happens without another five messages',
         ],
       },
     ],
@@ -272,9 +283,9 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
   };
 
   const exploreData = {
-    badge: 'Explore',
+    badge: 'Related',
     description:
-      'Relevant service layers for body shops that want cleaner assessments, estimate follow-up, and stronger local trust support.',
+      'The other parts of the system that come up most often for body shops trying to stop work slipping to the next garage.',
     cards: [
       {
         icon: Workflow,
@@ -315,38 +326,38 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Common questions about body shop systems',
-    description: 'Common questions about MindWP for body shops',
+    title: 'Things body shops usually ask',
+    description: 'Straight answers about how this fits a workshop that’s already busy.',
     faqs: [
       {
-        question: 'How can a body shop get more qualified repair bookings from its website?',
+        question: 'Most of our enquiries come with photos. Can it handle that?',
         answer:
-          'Clearer repair pages, better forms, and guided next-step paths help drivers understand what to do next — which directly improves booking quality.',
+          'Yes — photos land in the same place as the rest of the enquiry, attached to that customer. No more digging through three different inboxes to find the right ones.',
       },
       {
-        question: 'Should body shops offer online assessment or estimate requests?',
+        question: 'Will customers feel they’re getting an automated response?',
         answer:
-          'Yes — a clean request path reduces back-and-forth and moves drivers into the right next step faster. The key is capturing context early: damage type, urgency, vehicle details, and whether the next step is assessment or direct booking.',
+          'No. The first reply is short, sounds like a person, and just buys you the time you need to come back with a proper answer. The actual quote still comes from you.',
       },
       {
-        question: 'How do body shops reduce missed calls and slow callbacks?',
+        question: 'A lot of our work is insurance jobs. Does this still help?',
         answer:
-          'Missed calls become expensive when the workshop is already under pressure. A better enquiry system can capture requests through multiple paths, support missed-enquiry recovery, and make the first reply clearer even when nobody can answer immediately.',
+          'Yes. Insurance jobs have stages — photos, assessment, parts, repair, handover. Each one is a moment where things stall. The system nudges them through so jobs don’t live in limbo.',
       },
       {
-        question: 'Do body shops need separate pages for different repair services?',
+        question: 'We’re bad at asking for reviews. Can it do that for us?',
         answer:
-          'Often, yes, as long as the pages reflect real service coverage and useful information rather than thin copy. Good service-page structure helps local visibility and also helps prospects feel confident that the shop can handle their problem.',
+          'That’s exactly what it’s for. The request goes out at handover when people are happiest. You’ll see Google reviews appear without anyone chasing.',
       },
       {
-        question: 'How should body shops handle estimate follow-up without sounding pushy?',
+        question: 'What about quotes from a few weeks ago that went quiet?',
         answer:
-          'Calm, well-timed follow-up that confirms the next step, keeps the estimate visible, and makes it easy to re-engage. The aim is clarity and consistency — not pressure.',
+          'They get warmed up too. A lot of body shops find that re-engaging old estimates pulls in real money before any new marketing kicks in.',
       },
       {
-        question: 'What kind of reviews matter most for body shops?',
+        question: 'Do we need a brand new website for this?',
         answer:
-          'The most useful reviews help future customers trust the repair quality, communication, and overall experience. A structured review request process after completed jobs can help build that proof more consistently over time.',
+          'Usually not. We look at what you have first. Often the site is fine — the gap is everything that happens after the form is sent.',
       },
     ],
   };
@@ -364,9 +375,9 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'automotive-services',
     seo: {
-      title: 'Body Shops — Smart Website Systems | MindWP',
+      title: 'Body Shops — Stop Losing Quotes to the Garage Down the Road | MindWP',
       description:
-        'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+        'For body shops where damage photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place so the work already coming in actually books.',
       keywords: [
         'body shop website design',
         'body shop booking system',
@@ -389,9 +400,9 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Build a steadier body shop assessment and estimate system',
+      title: 'Tell us where the work is slipping',
       description:
-        'If your repair business is dealing with missed enquiries, loose booking, or inconsistent estimate follow-up — we can map a practical system around how the workshop actually runs.',
+        'If photos sit unread, quotes go quiet, or reviews never get asked for — walk us through how the shop runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

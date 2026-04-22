@@ -15,25 +15,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildNailSalonsIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Expansion Lane',
-    title: 'Smart Website Systems for Nail Salons',
+    badge: 'For Nail Salons',
+    title: 'She Asked About Builder Gel On a Friday Night. By Saturday She’s Booked Two Streets Over.',
     description:
-      'A nail salon website should make service options obvious, booking fast, and reminders automatic — so the team stops patching gaps between clients.',
+      'Nail salons don’t lose clients on the manicure — they lose them in the messages. Late DMs nobody answered. Empty Wednesdays nobody filled. No-shows nobody reminded. We put the system in place that catches every booking before it walks past you.',
     list: [
-      'Specific service paths',
-      'Automated reminder flow',
-      'Consistent rebooking rhythm',
-      'Local trust that compounds',
+      'DMs answered by whoever replies first',
+      'Empty midweek slots',
+      'No-shows with no deposit',
+      'Regulars who quietly stopped coming',
     ],
     cssPrefix: 'nail-salons-hero',
   };
 
   const imageStripData = {
-    badge: 'Service Environment',
-    title:
-      'Nail salon demand depends on service clarity, booking timing, and repeat client retention',
+    badge: 'How Bookings Actually Happen',
+    title: 'Most enquiries arrive on Instagram, after hours, asking about a specific set',
     description:
-      'New clients need to understand service options, timing, and what to expect. Existing clients need reminders and a smooth path back into the diary.',
+      'BIAB. Builder gel. Russian manicure. Soak-off and re-do. People know what they want and they want a price and a slot — fast. Whichever salon answers first usually gets the booking.',
     items: [
       {
         title: 'Service choice and enquiries',
@@ -61,37 +60,37 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where nail salons lose momentum',
+    badge: 'Where The Bookings Slip',
+    title: 'The set is fine. The bit between the DM and the diary is where it goes wrong.',
     description:
-      'The pressure comes from unclear service selection, appointment timing, reminder gaps, and weak repeat-visit follow-up — not from a lack of demand.',
+      'Same handful of leaks in nearly every nail salon. Once you see them, you can’t unsee them.',
     benefits: [
       {
         icon: Sparkles,
-        title: 'Vague service selection before booking',
+        title: '“How much for BIAB infill on Saturday?” sat unread until Sunday',
         description:
-          'Gel, acrylic, fill, removal, and add-on options run through one generic path instead of guiding the client toward the right appointment.',
+          'She didn’t wait. The salon that replied at 8pm got her in.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'Booking paths that miss real-world timing',
+        title: 'Wednesday is half-empty and nobody told the regulars',
         description:
-          'Appointment duration, technician availability, and service specifics create friction when the booking flow treats every service the same.',
+          'Two technicians, three clients all afternoon. The slots could’ve been filled with one message.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Inconsistent reminders and repeat handling',
+        title: 'A Saturday no-show with nothing on deposit',
         description:
-          'Review requests, return-visit prompts, and appointment reminders depend on whoever remembers — which means they happen unevenly.',
+          'Two hours of the chair, gone. A reminder the night before would have caught it.',
         iconType: 'accent' as const,
       },
       {
         icon: MapPinned,
-        title: 'Trust signals that sit disconnected',
+        title: 'The salon down the road has 600 reviews. You have 47.',
         description:
-          'Reviews, service pages, photos, and local search all exist but work independently instead of reinforcing the booking decision together.',
+          'Hundreds of beautiful sets. Almost no one was ever asked to write anything.',
         iconType: 'primary' as const,
       },
     ],
@@ -99,52 +98,64 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Layers',
-    title: 'The working layers behind a steadier nail salon workflow',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to catch enquiries, fill the diary, and keep clients coming back',
     description:
-      'The system covers service discovery, appointment selection, reminders, technician coordination, and repeat booking without piling more work onto the front desk.',
+      'Each piece does one job. Together they stop bookings from slipping while you’re mid-set.',
     featureCategories: [
       {
-        title: 'Service and enquiry layer',
+        title: 'Reply to every DM and missed call inside a minute',
         description:
-          'Routes different services into distinct paths so clients choose the right appointment without extra messages.',
+          'Late-night messages get an instant answer with prices, options, and a booking link — even at 11pm.',
         icon: MessageSquare,
         features: [
-          'Service-specific enquiry paths',
-          'Clearer booking guidance',
-          'Cleaner first response',
+          'Instant replies on Instagram, Facebook, web, missed calls',
+          'Service info and pricing answered up front',
+          'Booking link in the same message',
         ],
       },
       {
-        title: 'Booking and diary layer',
+        title: 'Let clients book themselves without back-and-forth',
         description:
-          'Structures appointments around timing, technician availability, and the practical differences between services.',
+          'They pick the technician, the service, the slot — and pay a deposit at the same time.',
         icon: Calendar,
-        features: ['Appointment scheduling support', 'Diary protection', 'Availability clarity'],
+        features: [
+          'Online booking by service and tech',
+          'Deposits taken at booking',
+          'No more 20-message threads to lock in a Saturday',
+        ],
       },
       {
-        title: 'Reminder and arrival layer',
+        title: 'Send the reminders nobody has time to send',
         description:
-          'Delivers reminders and visit guidance consistently so the day runs with fewer avoidable interruptions.',
+          'A reminder the day before. A “see you in an hour” on the morning. No-shows drop without nagging.',
         icon: Bell,
-        features: ['Reminder timing', 'Arrival guidance', 'Cleaner client communication'],
+        features: [
+          'Reminders the day before and morning of',
+          'Easy reschedule link instead of a no-show',
+          'Cancellations re-offered to the waitlist',
+        ],
       },
       {
-        title: 'Retention and review layer',
+        title: 'Bring clients back without anyone remembering to chase',
         description:
-          'Handles repeat-visit prompts and review requests so retention compounds rather than fading after each visit.',
+          'A “time for your infill?” nudge at the right interval. A review request after every visit.',
         icon: ShieldCheck,
-        features: ['Rebooking prompts', 'Review request workflows', 'Repeat-visit reinforcement'],
+        features: [
+          'Rebooking nudges at the right interval',
+          'Review requests after every appointment',
+          'Quiet days filled by past clients',
+        ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Show up when local people search for nails',
         description:
-          'Ties service pages, review proof, and local search together to build trust before the client books.',
+          'Service pages, photos, and Google profile lined up so you appear before the salon up the road.',
         icon: Search,
         features: [
-          'Service-page alignment',
-          'Google Business Profile support',
-          'Local trust reinforcement',
+          'Pages for the services you actually offer',
+          'Photos that do the selling for you',
+          'Found on Maps for local searches',
         ],
       },
     ],
@@ -152,105 +163,104 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
   };
 
   const comparisonData = {
-    badge: 'Operational Shift',
-    title: 'From reactive appointment handling to a calmer repeat-booking system',
-    description:
-      'The personal touch stays. The repeatable friction around booking and follow-up gets reduced so the salon operates more steadily.',
+    badge: 'What Actually Changes',
+    title: 'A normal week in the salon, before and after',
+    description: 'The vibe stays. The bits that drain the team and lose bookings get fixed.',
     comparisons: [
       {
         type: 'before' as const,
-        title: 'Before the workflow is structured',
+        title: 'How it runs now',
         items: [
-          'Clients cannot tell which service or time slot fits before booking',
-          'Reminder details are repeated manually throughout the week',
-          'Review and repeat prompts happen when someone has time',
-          'First-contact trust depends entirely on manual reassurance',
+          'A BIAB DM at 9pm sat unread. She booked someone else.',
+          'Wednesday is half-empty and nobody told the regulars.',
+          'A Saturday no-show. No deposit. No reminder.',
+          '“My nails are amazing” — said by 200 people, written by 47.',
         ],
       },
       {
         type: 'after' as const,
-        title: 'After the workflow is aligned',
+        title: 'How it runs after',
         items: [
-          'Clients move into the right booking path faster',
-          'Appointment timing and reminders protect the diary more consistently',
-          'Review and rebooking prompts happen with less manual chasing',
-          'Service clarity and local proof support stronger booking confidence',
+          'The 9pm DM gets a friendly reply with prices and a booking link inside a minute.',
+          'Quiet days get offered out to past clients automatically. The diary fills itself.',
+          'A reminder fires the day before. A small deposit secures the slot. No-shows drop.',
+          'Every happy client gets asked. Reviews catch up to the work.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Lead To Booking Flow',
-    title: 'From first enquiry to repeat visit',
-    description:
-      'Each stage moves demand through a different part of the journey — from first contact to appointment to steady repeat booking.',
+    badge: 'Where Most Salons Start',
+    title: 'Three stages — most salons feel one of them more than the others',
+    description: 'Pick whichever costs you the most bookings right now.',
     packages: [
       {
-        name: 'Service clarity and booking setup',
+        name: 'Catch every enquiry, day or night',
         description:
-          'Separates service options into distinct paths so clients reach the right appointment without back-and-forth.',
-        price: 'Flow stage 1',
-        priceDetail: 'Best when service choice and booking clarity are the main issue',
+          'For when DMs sit until morning and the booking goes to whoever replied first.',
+        price: 'Stage 1',
+        priceDetail: 'Start here if enquiries are leaking overnight',
         features: [
-          'Service-specific booking paths',
-          'Cleaner first-response guidance',
-          'Better appointment clarity',
+          'Instant replies on DMs, calls, forms',
+          'Pricing and options answered up front',
+          'Booking link in the same message',
         ],
       },
       {
-        name: 'Diary protection and reminders',
-        description:
-          'Adds structured reminders and preparation detail so appointments are protected and the day runs predictably.',
-        price: 'Flow stage 2',
-        priceDetail: 'Best when timing gaps and reminder inconsistency create pressure',
+        name: 'Fill the diary and stop the no-shows',
+        description: 'For when midweek sits empty and Saturdays sit half-cancelled.',
+        price: 'Stage 2',
+        priceDetail: 'Start here if the diary is the biggest leak',
         features: [
-          'Appointment scheduling support',
-          'Reminder structure',
-          'Cleaner arrival guidance',
+          'Self-serve booking by tech and service',
+          'Deposits taken at booking',
+          'Reminders and easy reschedule links',
         ],
         popular: true,
       },
       {
-        name: 'Repeat visits and review reinforcement',
+        name: 'Bring regulars back and turn them into proof',
         description:
-          'Introduces review prompts and rebooking follow-up so repeat demand builds without chasing.',
-        price: 'Flow stage 3',
-        priceDetail: 'Best when repeat demand and follow-up consistency need improvement',
-        features: ['Review request support', 'Rebooking prompts', 'Retention reinforcement'],
+          'For when the work is great but reviews and rebookings happen by accident.',
+        price: 'Stage 3',
+        priceDetail: 'Start here if reviews and retention are the weak spot',
+        features: [
+          'Review requests after every appointment',
+          'Rebooking nudges at the right interval',
+          'Quiet slots offered out automatically',
+        ],
       },
     ],
   };
 
   const workflowExamplesData = {
-    badge: 'Follow-Up Examples',
-    title: 'What the nail salon lead, booking, and repeat-visit flow looks like in practice',
-    description:
-      'Repeatable situations where the system removes friction while keeping the experience natural.',
+    badge: 'Real Situations',
+    title: 'A few moments where the difference shows up',
+    description: 'Small moments on the floor that used to need someone to remember to do them.',
     workflows: [
       {
-        trigger: 'A new client is browsing services but unsure which one to book.',
+        trigger: 'A new client DMs at 10pm asking about a full set in builder gel.',
         actions: [
-          'Guide the client into the correct service path',
-          'Clarify timing or add-on expectations early',
-          'Reduce wasted time on unclear first contact',
+          'She gets a friendly reply inside a minute with rough pricing and a booking link',
+          'She picks a slot herself, deposit included',
+          'By morning she’s in the diary, not the competitor’s',
         ],
       },
       {
-        trigger:
-          'An appointment is confirmed and the client needs reminders and preparation details.',
+        trigger: 'A Saturday client cancels last minute.',
         actions: [
-          'Send reminders at the right times',
-          'Confirm visit details or preparation clearly',
-          'Reduce avoidable no-shows and day-of confusion',
+          'The slot is offered to the waitlist automatically',
+          'A regular grabs it within the hour',
+          'The chair stays full, nobody made ten calls',
         ],
       },
       {
-        trigger: 'The appointment is complete and the salon needs a review and a rebooking prompt.',
+        trigger: 'A BIAB client leaves happy after her appointment.',
         actions: [
-          'Send a well-timed review request',
-          'Prompt the next visit clearly and calmly',
-          'Keep repeat demand moving more reliably',
+          'A review request goes out a few hours later',
+          'Three weeks on, an “time for your infill?” nudge appears',
+          'She rebooks without anyone at the salon having to remember',
         ],
       },
     ],
@@ -267,9 +277,9 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
   };
 
   const exploreData = {
-    badge: 'Explore',
+    badge: 'Related',
     description:
-      'Relevant service layers for nail salons that want stronger booking flow, steadier reminders, and better repeat demand.',
+      'The other parts of the system that come up most often for nail salons trying to keep the diary full.',
     cards: [
       {
         icon: Workflow,
@@ -310,38 +320,38 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Common questions about nail salon systems',
-    description: 'Common questions about MindWP for nail salons',
+    title: 'Things nail salons usually ask',
+    description: 'Straight answers about how this fits a busy nail floor.',
     faqs: [
       {
-        question: 'How can a nail salon improve appointment bookings from its website?',
+        question: 'My DMs are out of control. Will this actually help?',
         answer:
-          'Make service options specific enough that clients can tell which appointment to book. When the service path is clear and the booking path is obvious, more enquiries convert without extra effort.',
+          'Yes — every DM, missed call, and form gets an instant reply with prices, options, and a booking link. You stop losing bookings to whoever replied at 9pm.',
       },
       {
-        question: 'Should nail salons separate different services into dedicated pages?',
+        question: 'Will clients really book themselves online?',
         answer:
-          'Yes. Separate pages help visitors understand the difference between gel, acrylic, fill, and removal options. They also help search engines index each service and route clients into the right booking path.',
+          'Most do. They pick the tech, the service, and the slot — and a deposit comes off at the same time. The phone gets quieter, the diary gets fuller.',
       },
       {
-        question: 'How can nail salons reduce no-shows and missed appointments?',
+        question: 'Can I take deposits without scaring clients off?',
         answer:
-          'Well-timed reminders and clear booking expectations help the most. The system protects the diary without turning confirmation messages into pressure.',
+          'Yes — a small deposit at booking is normal in nails now and almost nobody complains. It pays for itself in one prevented no-show.',
       },
       {
-        question: 'What role do reviews play for nail salons?',
+        question: 'How do reminders cut no-shows?',
         answer:
-          'Reviews that mention quality, consistency, and the appointment experience carry the most weight. A steady post-appointment review process builds that proof over time.',
+          'A friendly reminder the day before and the morning of catches almost all of them. Anyone who can’t make it gets a reschedule link instead of just disappearing.',
       },
       {
-        question: 'How should nail salons handle repeat-booking follow-up?',
+        question: 'How do I get more reviews without nagging?',
         answer:
-          'Calm, consistent prompts that make the next appointment easy to understand and easy to book. The point is steady repeat demand, not pressure.',
+          'A review request goes out a few hours after the appointment, while she’s still posting her nails. That’s the moment people actually leave one.',
       },
       {
-        question: 'Do nail salons need local SEO support as well as booking tools?',
+        question: 'Do I need a brand new website?',
         answer:
-          'Yes. Booking tools convert intent, but local SEO and location trust signals help the salon get discovered and chosen in the first place.',
+          'Usually not. We look at what you have first. The gap is usually everything that happens after someone tries to book — not the site itself.',
       },
     ],
   };
@@ -359,9 +369,9 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'beauty-personal-care',
     seo: {
-      title: 'Nail Salons — Smart Website Systems | MindWP',
+      title: 'Nail Salons — Stop Losing DMs, No-Shows, and Quiet Midweeks | MindWP',
       description:
-        'Smart Website systems for nail salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+        'For nail salons whose DMs sit unanswered overnight, whose midweek sits empty, and whose reviews don’t reflect the work. We put the system in place to catch every booking, fill the diary, and bring clients back.',
       keywords: [
         'nail salon website design',
         'nail salon booking website system',
@@ -384,9 +394,9 @@ function buildNailSalonsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Build a steadier nail salon system',
+      title: 'Tell us where the bookings are slipping',
       description:
-        'If unclear service selection, reminder gaps, inconsistent reviews, or weak repeat follow-up are slowing things down, we can map a practical system around the real appointment journey.',
+        'If DMs go quiet overnight, if midweek sits empty, or if reviews never get asked for — walk us through how the salon runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

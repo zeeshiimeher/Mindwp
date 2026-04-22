@@ -17,25 +17,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Coverage Lane',
-    title: 'Smart Website Systems for Real Estate & Property Services',
+    badge: 'For Property Businesses',
+    title: 'They Enquired With Three Of You On Sunday Night. Whoever Replied With A Calendar Slot Got The Booking.',
     description:
-      'A real estate or property service website should support enquiry qualification, appointment or valuation booking, trust-building, and follow-up — without making the team manage every handoff manually.',
+      'Property decisions happen on portal enquiries at 9pm, valuation requests on Saturday morning, and broker comparisons during a lunch break. The buyer, vendor, landlord, or borrower picks whoever replied first with a clear next step. We put the system in place that catches them while you’re on a viewing, in a loft, or packaging a case.',
     list: [
-      'Clearer enquiry routing',
-      'Better valuation and viewing flow',
-      'Stronger trust signals',
-      'More reliable follow-up',
+      'Portal enquiries that came in while you were on a viewing',
+      'Valuation, viewing, or inspection bookings that took five emails',
+      'Vendors, landlords, or borrowers who went silent for months',
+      'Reviews from happy clients you never asked for',
     ],
     cssPrefix: 'real-estate-services-hero',
   };
 
   const imageStripData = {
-    badge: 'Category Reality',
-    title:
-      'The property work happens through trust, timing, and next-step clarity before any deal moves',
+    badge: 'How Property Enquiries Actually Land',
+    title: 'Sunday-night portal enquiries. Saturday valuations. Lunchtime broker comparisons.',
     description:
-      'Valuation requests, listing interest, viewing coordination, inspection enquiries, financing questions, and follow-up all compete for attention at once. That operating layer needs to be clear before narrowing into one property workflow.',
+      'It’s out-of-hours timing across the whole category. Decisions get made within hours of the first reply.',
     items: [
       {
         title: 'Valuation and seller enquiries',
@@ -63,37 +62,36 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where real estate and property businesses feel the pressure first',
-    description:
-      'The gap is rarely just lead volume — it sits between first enquiry, qualification, appointment handling, and the trust proof people need before moving forward.',
+    badge: 'Where Property Businesses Lose Deals',
+    title: 'You’re showing a flat. They’re booking with somebody else.',
+    description: 'Same handful of leaks across nearly every property business. None of them are about how good you actually are at the job.',
     benefits: [
       {
         icon: AlertCircle,
-        title: 'Different enquiry types arrive through one loose path',
+        title: 'Buyers, vendors, landlords, tenants — all in one inbox',
         description:
-          'Buyers, sellers, landlords, tenants, borrowers, and property owners often enter through the same contact path — first-response quality drops when everything routes the same way.',
+          'Different urgencies, completely different next steps. Everything waits behind everything else.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'Appointments and next steps create friction',
+        title: 'Bookings take half a week of email tennis',
         description:
-          'Viewings, valuations, inspections, consultations, and paperwork steps do not always move through one clean booking path.',
+          'Viewings, valuations, inspections, broker discovery calls — all stuck in five-email confirmation threads.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Follow-up depends too much on memory',
+        title: 'Pipelines go silent for six months at a time',
         description:
-          'Nurture, review requests, reminder flow, and pending-decision follow-up often happen inconsistently when the team is busy.',
+          'Vendor enquired in March. Borrower searching since spring. Landlord weighing options. No nurture, no check-in.',
         iconType: 'accent' as const,
       },
       {
         icon: MapPinned,
-        title: 'Trust and local credibility stay fragmented',
+        title: 'You’ve done the work for years. The reviews don’t show it.',
         description:
-          'Service pages, reviews, local area pages, and brand credibility exist in different places — they rarely work together to support confident next-step decisions.',
+          'Online you look smaller than the new entrants because nobody asked at the right moment.',
         iconType: 'primary' as const,
       },
     ],
@@ -101,97 +99,81 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Architecture',
-    title: 'What the category operating system needs to hold together',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to catch enquiries while you’re on the road',
     description:
-      'A strong property setup connects first enquiry, qualification, appointment flow, local trust, and follow-up into one practical system instead of treating them as isolated tasks.',
+      'Each piece does one job. Together they keep the pipeline moving while the team handles the actual property work.',
     featureCategories: [
       {
-        title: 'Enquiry and qualification layer',
+        title: 'Sort the enquiry by intent automatically',
         description:
-          'Different property journeys need a cleaner first-contact path so the business can route people into the right next step faster.',
+          'Buyer, vendor, landlord, tenant, borrower, owner — the website asks one question and routes them to the right path. Nothing waits behind something else.',
         icon: MessageSquare,
-        features: ['Intent capture', 'Lead qualification', 'Cleaner first-contact routing'],
+        features: ['Intent-specific intake', 'Priority enquiries flagged', 'No more shared inbox chaos'],
       },
       {
-        title: 'Booking and appointment layer',
+        title: 'Take the booking without phone tag',
         description:
-          'Viewings, valuations, inspections, and consultations need clearer scheduling and reminder structure.',
+          'Viewings, valuations, inspections, discovery calls — booked online with the right context captured up front.',
         icon: Calendar,
-        features: ['Appointment scheduling', 'Reminder timing', 'Cleaner next-step guidance'],
+        features: ['Self-serve booking', 'Property and access details captured', 'Reminders the day before'],
       },
       {
-        title: 'Documentation and process layer',
+        title: 'Capture the documents and information up front',
         description:
-          'Property and finance workflows often need better clarity around what information is needed and what happens next.',
+          'Whatever the next step needs — access details, mortgage documents, vendor questionnaires — captured at booking, not after five emails.',
         icon: FileSearch,
-        features: ['Information capture', 'Process visibility', 'Smoother handoffs'],
+        features: ['Document checklists at booking', 'Less email tennis', 'Cleaner internal handoff'],
       },
       {
-        title: 'Trust and proof layer',
+        title: 'Turn finished work into reviews',
         description:
-          'Reviews, case credibility, and service-page structure need to support confident decisions before the appointment happens.',
+          'Polite review requests go out at the right moment — the week after completion, the day after the report, after a smooth renewal.',
         icon: Star,
-        features: [
-          'Review request workflows',
-          'Proof and credibility support',
-          'Trust-led page structure',
-        ],
+        features: ['Review requests timed automatically', 'Asked when clients are happiest', 'Reviews catch up to the work'],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Show up first when local people search',
         description:
-          'Area pages, maps visibility, and service pages need to reinforce the locations and enquiries you actually want.',
+          'Pages and Google profile lined up so the right people in the right area find you first.',
         icon: Search,
-        features: [
-          'Area-page clarity',
-          'Google Business Profile support',
-          'Local search reinforcement',
-        ],
+        features: ['Pages for the streets, postcodes, and services that matter', 'Found on Maps for local searches', 'Less time on enquiries from outside your area'],
       },
       {
-        title: 'Follow-up layer',
+        title: 'Nurture the slow-burn pipeline',
         description:
-          'Pending decisions, unbooked leads, and post-service review requests all need calmer next steps.',
+          'Vendors not selling yet, borrowers not buying yet, landlords still weighing options. Useful sequences keep you top of mind until the moment arrives.',
         icon: Shield,
-        features: ['Lead nurture', 'Missed-enquiry recovery', 'Review and next-step prompts'],
+        features: ['Nurture for not-yet-ready leads', 'Past-client check-ins automated', 'Pipeline visible by stage'],
       },
     ],
     columns: 3 as const,
   };
 
   const spectrumData = {
-    badge: 'Business Shapes',
-    title: 'The category covers different property operating models, not one fixed business shape',
+    badge: 'Different Property Businesses, Different Leaks',
+    title: 'A realtor, a property manager, an inspector, and a broker do not lose deals in the same place',
     description:
-      'Realtors, property managers, inspectors, and mortgage brokers can look related from the outside, but the workflow strain changes depending on trust threshold, appointment style, and how long decisions take.',
+      'They look related from outside. Inside, the leak is somewhere different for each.',
     cards: [
       {
-        title: 'Lead-driven advisors',
+        title: 'Estate agents and brokers',
         description:
-          'Clearer qualification, stronger trust signals, and calmer nurture needed — because the sales cycle is rarely immediate.',
-        points: [
-          'Higher trust threshold',
-          'Longer follow-up cycles',
-          'Need for clearer next steps',
-        ],
+          'The leak is usually first-reply speed on portal enquiries and vendor nurture between valuation and instruction.',
+        points: ['Portal enquiry response time', 'Vendor nurture between valuation and listing', 'Past-client sphere staying warm'],
       },
       {
-        title: 'Appointment-led teams',
+        title: 'Property managers',
         description:
-          'Need tighter handoffs between enquiry capture, scheduling, reminders, and the next action after the appointment.',
-        points: ['Shared workload', 'Coordination pressure', 'Follow-up gaps become expensive'],
+          'The leak is usually landlord enquiries getting buried behind tenant complaints, and owner reports eating half a day.',
+        points: ['Separating landlord and tenant intake', 'Maintenance request acknowledgement', 'Automated owner reporting'],
         featured: true,
       },
       {
-        title: 'Location-led service operators',
+        title: 'Inspectors and on-site advisors',
         description:
-          'Need better area visibility, stronger credibility, and clearer explanation of what the service actually covers.',
-        points: [
-          'Area-specific trust',
-          'Location clarity matters',
-          'Credibility carries more weight',
-        ],
+          'The leak is usually agent calls going to voicemail mid-inspection, and post-report remediation work going cold.',
+        points: ['Missed-call text-back for agents', 'Booking with access details captured', 'Post-report remediation follow-up'],
       },
     ],
     backgroundColor: 'bg-alt',
@@ -199,17 +181,17 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
   };
 
   const decisionChecklistData = {
-    badge: 'When Category Work Matters',
-    title: 'Signs the business needs category-level system thinking before another isolated fix',
+    badge: 'Sound Familiar?',
+    title: 'A few signs the leak isn’t in the property work itself',
     description:
-      'This is the point where one more page or tool does not solve the problem. The whole enquiry-to-appointment flow needs tightening at category level first.',
+      'If three or four of these ring true, the next thing worth fixing isn’t another listing or another fee tweak.',
     items: [
-      'Different property services exist, but lead handling still runs through one unclear process',
-      'Valuation, viewing, or consultation requests arrive, but reply speed depends too much on who happens to be free',
-      'Reviews and local visibility exist, but they are not strengthening the right service pages or locations',
-      'Pending leads or next-step decisions are hard to track consistently',
-      'The business wants more property-specific pages, but the category logic behind them is still weak',
-      'Growth is creating admin pressure faster than it is creating operating clarity',
+      'Portal or website enquiries get replied to hours — sometimes days — after they land',
+      'Bookings take three to five emails before a slot is confirmed',
+      'You’re a landlord/buyer/borrower magnet on weekends, but only check Monday morning',
+      'Pipeline leads go silent for months and then instruct elsewhere',
+      'Reviews don’t reflect the years of work or the size of the operation',
+      'You’re losing to firms with newer offices or smaller patches because they reply first',
     ],
     columns: 2 as const,
     backgroundColor: 'bg-base',
@@ -217,69 +199,69 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
   };
 
   const serviceEnvironmentsData = {
-    badge: 'Service Environments',
-    title: 'The same category can operate through very different service environments',
+    badge: 'How Different Property Businesses Run',
+    title: 'Same category, completely different operating rhythms',
     description:
-      'A realtor, a property manager, a home inspector, and a mortgage broker do not break in the same places. That difference needs to be visible before narrowing into one single-industry workflow.',
+      'A realtor lives on portal enquiries. A property manager juggles two audiences. An inspector is on-site all day. A broker is on lender calls. The system fits the rhythm.',
     features: [
       {
-        title: 'Transaction-led environment',
+        title: 'Transaction-led: agents and brokers',
         description:
-          'Better first-response structure, clearer qualification, and more visible trust before appointments happen.',
+          'Portal enquiries at midnight, valuations on Saturday, discovery calls on rate windows. Speed of reply decides who gets instructed.',
         icon: Landmark,
       },
       {
-        title: 'Ongoing service environment',
+        title: 'Ongoing service: property managers',
         description:
-          'Stronger handoffs between enquiry capture, scheduling, follow-up, and longer-term communication.',
+          'Landlord enquiries vs tenant requests vs owner reporting — three different audiences in one inbox. Separating them is the whole game.',
         icon: Users,
       },
       {
-        title: 'Inspection and advisory environment',
+        title: 'On-site advisory: inspectors',
         description:
-          'Better routing between service types, stronger local credibility, and clearer explanation of what happens next.',
+          'You’re in a loft when the agent calls. By the time you climb down, they’ve booked the next inspector. Catching the call is the leak.',
         icon: Home,
       },
     ],
-    tagline: 'Category context before property-level depth',
-    narrativeTitle: 'Why this belongs on the category page',
+    tagline: 'Pick the rhythm closest to yours',
+    narrativeTitle: 'Why this matters before picking a workflow',
     narrativeParagraphs: [
-      'A category page should explain the operating environments inside real estate and property services before it narrows into one workflow like realtors or inspections.',
-      'Once that context is clear, the single-industry page can go much deeper into enquiry handling, appointment flow, nurture, and trust support for that service type.',
+      'It’s tempting to fix the website. The actual leak is usually somewhere upstream — the bit between the enquiry coming in and the booking landing in the diary.',
+      'Once you know which rhythm matches your business, the right detail page tells you exactly which leaks to plug first.',
     ],
     backgroundColor: 'bg-alt',
     cssPrefix: 'real-estate-services-service-environments',
   };
 
   const processData = {
-    badge: 'Tier 1 Layering',
-    title: 'How Smart Website structure expands into property-specific workflows',
+    badge: 'How It Gets Put In Place',
+    title: 'No big rebuild. Plug the worst leak first.',
     description:
-      'Once the category system is clear, the page can route visitors into the right property workflow while keeping Smart Website structure as the main operating layer.',
+      'We don’t arrive with a six-month plan. We find the bit costing you the most deals right now and start there.',
     steps: [
       {
         number: '01',
-        title: 'Frame the Smart Website core',
+        title: 'Walk us through how the business runs',
         description:
-          'Start with the enquiry, booking, and conversion structure that supports property demand before narrowing into one service type.',
+          'A short conversation. Where the enquiries come in, what happens when you’re on a viewing or in a loft, where the silence sits.',
       },
       {
         number: '02',
-        title: 'Show the operating shapes',
+        title: 'We point at the worst leak',
         description:
-          'Clarify how transaction-led, ongoing-service, and inspection-led operators differ so visitors can place themselves quickly.',
+          'Sometimes it’s portal enquiries. Sometimes it’s the booking thread. Sometimes it’s vendor nurture. We tell you which.',
       },
       {
         number: '03',
-        title: 'Layer the supporting systems',
+        title: 'We plug it without scrapping anything',
         description:
-          'Connect local visibility, trust proof, appointment flow, nurture, and process support around the Smart Website core.',
+          'Your CRM, your portals, your reporting tool stays. We add the bits that catch what’s currently slipping through.',
       },
       {
         number: '04',
-        title: 'Route into service pages',
+        title: 'We move to the next leak',
         description:
-          'Move the visitor into the right single-industry workflow page once the category context is clear.',
+          'When the first one is steady, we look at the next. Each step pays for the one after it.',
       },
     ],
     columns: 4 as const,
@@ -288,36 +270,36 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
   };
 
   const detailRoutesData = {
-    badge: 'Approved Sub-Industry Workflows',
-    title: 'The next mapped workflows in this category',
+    badge: 'Pick The One Closest To You',
+    title: 'Each one shows the specific leaks for that kind of business',
     description:
-      'Real Estate & Property Services is live as a category page. The workflow pages in this lane — Realtors, Property Managers, Home Inspectors, and Mortgage Brokers — each turn this category logic into a more specific operating path.',
+      'Same category logic. Different rhythms, different leaks, different first fix.',
     items: [
       {
-        title: 'Realtors',
+        title: 'Estate agents',
         description:
-          'From buyer and seller enquiries through appointment coordination, trust support, and nurture follow-up.',
+          'Where Friday-night Rightmove enquiries go to whoever booked the Saturday viewing first. Where vendor leads go quiet for six months.',
         href: '/industries/real-estate-property-services/realtors',
         icon: Landmark,
       },
       {
-        title: 'Property Managers',
+        title: 'Property managers',
         description:
-          'From owner enquiries and tenant requests through maintenance coordination, communication flow, and follow-up.',
+          'Where landlord portfolio enquiries get buried behind tenant complaints. Where owner reports eat half a day.',
         href: '/industries/real-estate-property-services/property-managers',
         icon: Users,
       },
       {
-        title: 'Home Inspectors',
+        title: 'Home inspectors',
         description:
-          'From inspection enquiries through scheduling, preparation steps, reporting follow-up, and local trust support.',
+          'Where agent calls go to voicemail while you’re in a loft. Where post-report remediation work goes cold.',
         href: '/industries/real-estate-property-services/home-inspectors',
         icon: Home,
       },
       {
-        title: 'Mortgage Brokers',
+        title: 'Mortgage brokers',
         description:
-          'From qualification enquiries through consultation booking, document-readiness guidance, and trust-building follow-up.',
+          'Where rate-window enquiries go to whoever replied first. Where remortgage clients drift to comparison sites.',
         href: '/industries/real-estate-property-services/mortgage-brokers',
         icon: Shield,
       },
@@ -340,9 +322,9 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
     topics: ['lead-qualification', 'follow-up', 'review-generation', 'pipeline-visibility'],
     industries: ['home-inspection', 'mortgage-broker', 'property-management', 'realtor'],
     seo: {
-      title: 'Real Estate & Property Services Systems | MindWP',
+      title: 'Real Estate & Property Services — Stop Losing Enquiries, Bookings & Vendor Trust | MindWP',
       description:
-        'Smart Website systems for real estate and property businesses that need clearer enquiry handling, appointment flow, and stronger local trust.',
+        'For estate agents, property managers, home inspectors, and mortgage brokers where Sunday-night enquiries go to whoever replied first, where bookings take five emails, and where pipeline leads instruct elsewhere. We put the system in place that catches them.',
       keywords: [
         'real estate website systems',
         'property services booking system',
@@ -370,9 +352,9 @@ function buildRealEstatePropertyServicesIndustryPageData(): IndustryPageData {
       },
     },
     cta: {
-      title: 'Map the property category around how your business actually works',
+      title: 'Tell us where the pipeline is leaking',
       description:
-        'If property enquiries feel inconsistent, we can show you how to turn more of them into qualified conversations.',
+        'If portal enquiries get late replies, if bookings take five emails to confirm, or if vendor and borrower leads go silent for months — walk us through how the business runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

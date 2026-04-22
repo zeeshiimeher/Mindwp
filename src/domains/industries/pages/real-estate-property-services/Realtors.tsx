@@ -14,25 +14,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildRealtorsIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Coverage Lane',
-    title: 'Smart Website Systems for Realtors',
+    badge: 'For Estate Agents',
+    title: 'A Couple Saw The Listing On Rightmove At 9pm. They Enquired With Three Agents. Whoever Booked The Saturday Viewing First Got Them.',
     description:
-      'A realtor website should support buyer and seller qualification, valuation or viewing coordination, trust-building, and follow-up — without making the whole pipeline depend on manual chasing.',
+      'Portal enquiries land at all hours. Vendors pick the agent who answered the phone, not the cheapest fee. We put the system in place that catches Rightmove enquiries while you’re on a viewing, books the valuation without phone tag, and stops vendor leads from going quiet for six months until the For Sale sign goes up next door.',
     list: [
-      'Clearer buyer and seller routing',
-      'Better appointment flow',
-      'Stronger local trust signals',
-      'More reliable nurture follow-up',
+      'Portal enquiries that came in while you were on a viewing',
+      'Valuations that took five emails to confirm a slot',
+      'Vendor leads that went quiet until they instructed elsewhere',
+      'Reviews from happy buyers and sellers you never asked for',
     ],
     cssPrefix: 'realtors-hero',
   };
 
   const imageStripData = {
-    badge: 'Service Environment',
-    title:
-      'Real estate demand depends on trust, timing, and next-step clarity before a decision moves',
+    badge: 'How Property Enquiries Actually Land',
+    title: 'They saw the listing at 9pm. Enquired with three agents. Whoever booked the viewing first wins.',
     description:
-      'Buyer enquiries, seller questions, valuation requests, viewing coordination, local credibility, and nurture follow-up all shape whether someone progresses. When those steps feel disconnected, the pipeline becomes harder to trust.',
+      'It’s portal enquiries at midnight, vendor valuations on Saturday morning, viewing requests from out-of-towners. The decision happens within hours.',
     items: [
       {
         title: 'Buyer and seller enquiries',
@@ -60,37 +59,36 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where realtors lose time, clarity, or deal momentum',
-    description:
-      'The gap is rarely just lead volume — it sits between first enquiry, qualification, appointment coordination, and the trust proof people need before they move forward.',
+    badge: 'Where Deals Get Lost',
+    title: 'You’re showing a flat in zone 3. The portal enquiry is going elsewhere.',
+    description: 'Same handful of leaks across nearly every estate agency. None of them are about how well you actually negotiate.',
     benefits: [
       {
         icon: Landmark,
-        title: 'Buyer and seller intent is not always separated clearly at first contact',
+        title: 'A portal enquiry came in at 9pm Friday. You replied Monday morning.',
         description:
-          'Different goals, timeframes, and levels of readiness arrive through one loose path — first-response quality drops when everything routes the same way.',
+          'They’d already booked Saturday viewings with two other agents. You were chasing.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'Valuation and viewing coordination creates friction',
+        title: 'A valuation took five emails to confirm a slot',
         description:
-          'Availability, property context, next steps, and reminder timing sit in different places — the booking path slows before it should.',
+          '“What times work?” “What’s the postcode?” “Who’ll be home?” Each reply waited a few hours.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Nurture and pending-decision follow-up depend too much on memory',
+        title: 'A vendor enquired in March, sold in October. With somebody else.',
         description:
-          'Lead nurture, reminder flow, and review requests often happen inconsistently when the team is already handling active deals.',
+          'Six months of silence between the valuation and the For Sale sign. No nurture, no check-in.',
         iconType: 'accent' as const,
       },
       {
         icon: MapPinned,
-        title: 'Trust signals stay fragmented across the local decision path',
+        title: 'You’ve sold 800 properties locally. You have 38 reviews.',
         description:
-          'Reviews, area pages, listings, and advisor credibility exist in different places — they rarely work together to support confident next-step decisions.',
+          'Your patch knowledge is unbeatable. Online you look like a new branch because nobody asked for the review at the right moment.',
         iconType: 'primary' as const,
       },
     ],
@@ -98,48 +96,75 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Layers',
-    title: 'The working layers behind a steadier real estate pipeline',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to catch portal enquiries and stop vendor leads from going cold',
     description:
-      'A realtor workflow needs structure before appointments, during valuation or viewing coordination, and after first contact — especially when the decision takes time.',
+      'Each piece does one job. Together they keep viewings booked while you’re on the road.',
     featureCategories: [
       {
-        title: 'Lead capture and qualification layer',
+        title: 'Reply to Rightmove enquiries while you’re on a viewing',
         description:
-          'Routes buyer, seller, valuation, and viewing enquiries through a clearer first-contact path so the right intent reaches the right next step.',
+          'Enquiry lands at 9pm Friday. Instant reply with a calendar link to book a Saturday viewing. Most stop enquiring with the next two agents.',
         icon: MessageSquare,
-        features: ['Intent capture', 'Buyer and seller qualification', 'Cleaner first response'],
+        features: [
+          'Instant reply on every portal enquiry',
+          'Calendar link for self-serve viewing booking',
+          'Holds the buyer until you’re free',
+        ],
       },
       {
-        title: 'Appointment booking layer',
+        title: 'Take valuation bookings without phone tag',
         description:
-          'Moves viewings, valuations, and consultations into a booked next step without unnecessary delay.',
+          'Vendor picks a slot online. Property type, postcode, who’ll be home — captured in one step. The five-email thread stops.',
         icon: Calendar,
-        features: ['Viewing scheduling', 'Reminder touchpoints', 'Clear next-step guidance'],
+        features: [
+          'Self-serve valuation booking',
+          'Property details captured up front',
+          'Reminders the day before',
+        ],
       },
       {
-        title: 'Nurture and follow-up layer',
+        title: 'Nurture vendors who aren’t selling yet',
         description:
-          'Keeps pending decisions on a calmer, more consistent follow-up path so opportunities do not disappear into silence.',
+          'Vendor enquired in March. They get a useful sequence — market updates, recent local sales, fee reminders. When they’re ready in October, you’re the agent they call.',
         icon: Workflow,
-        features: ['Lead nurture', 'Decision reminders', 'Pipeline visibility'],
+        features: [
+          'Nurture sequences for not-yet-selling vendors',
+          'Local market updates land monthly',
+          'Pipeline visible by stage',
+        ],
       },
       {
-        title: 'Trust and proof layer',
+        title: 'Stay top of mind with the past-client sphere',
         description:
-          'Connects reviews, local credibility, and advisor proof so they support property decisions before the appointment happens.',
+          'A polite check-in goes out to past vendors and buyers at sensible intervals. Past clients become repeat clients and referral sources.',
         icon: ShieldCheck,
-        features: ['Review requests', 'Proof-of-service support', 'Trust-led page structure'],
+        features: [
+          'Past-client check-ins automated',
+          'Sphere-of-influence stays warm',
+          'Referrals stop relying on memory',
+        ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Turn completed sales into reviews',
         description:
-          'Reinforces the locations and enquiries you want through area pages, search visibility, and local credibility.',
+          'A polite review request goes out the week after completion, when the relief is freshest.',
+        icon: Star,
+        features: [
+          'Review requests after every completion',
+          'Asked when buyers and sellers are happiest',
+          'Reviews catch up to the years on your patch',
+        ],
+      },
+      {
+        title: 'Show up first when local people search',
+        description:
+          'Pages and Google profile lined up so people in the right area find you first — not the online-only agent.',
         icon: Search,
         features: [
-          'Area-page targeting',
-          'Local search clarity',
-          'Google Business Profile support',
+          'Pages for the streets and postcodes you actually sell in',
+          'Found on Maps for local agent searches',
+          'Less time on enquiries from miles away',
         ],
       },
     ],
@@ -147,107 +172,102 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
   };
 
   const comparisonData = {
-    badge: 'Operational Shift',
-    title: 'From reactive property enquiries to a more reliable appointment and follow-up flow',
-    description:
-      'The personal relationship stays. The repeatable friction around qualification, appointment coordination, and follow-up gets reduced.',
+    badge: 'What Actually Changes',
+    title: 'A normal week, before and after',
+    description: 'The negotiating stays personal. The chasing stops.',
     comparisons: [
       {
         type: 'before' as const,
-        title: 'Before the workflow is structured',
+        title: 'How it runs now',
         items: [
-          'Leads arrive without enough detail to route them quickly',
-          'Viewings and valuations depend on manual back-and-forth',
-          'Pending opportunities are hard to follow consistently',
-          'Trust depends too heavily on one-off reassurance during the early sales process',
+          'Friday-night portal enquiries got Monday-morning replies. Saturday viewings booked elsewhere.',
+          'Valuations took five emails to confirm a slot.',
+          'Vendor enquired in March, instructed somebody else in October.',
+          '“Meant to ask for a Google review” — said about every completion.',
         ],
       },
       {
         type: 'after' as const,
-        title: 'After the workflow is aligned',
+        title: 'How it runs after',
         items: [
-          'New leads move into the right appointment or nurture path faster',
-          'Booking and reminder flow protect the next step more consistently',
-          'Follow-up happens with less manual chasing',
-          'Reviews, local proof, and page structure support better decision confidence',
+          'Every portal enquiry gets an instant reply with a viewing calendar link.',
+          'Valuations booked online with property details captured up front.',
+          'Not-yet-selling vendors nurtured automatically until they are.',
+          'Reviews get asked for the week after every completion.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Lead To Booking Flow',
-    title: 'How the realtor workflow moves from first enquiry to appointment and follow-up',
-    description:
-      'How the system moves property leads from first contact into the right valuation, viewing, or consultation path — then into consistent follow-up.',
+    badge: 'Where Most Agents Start',
+    title: 'Three stages — most agencies feel one of them more than the others',
+    description: 'Pick whichever costs you the most listings right now.',
     packages: [
       {
-        name: 'Lead capture and qualification',
-        description:
-          'Routes buyer, seller, valuation, and viewing enquiries into a clearer first step — so the right intent reaches the right next action faster.',
-        price: 'Flow stage 1',
-        priceDetail: 'Best when lead quality and first-contact clarity are the main issue',
+        name: 'Stop losing the portal enquiries',
+        description: 'For when Rightmove and Zoopla enquiries hit the inbox while you’re on a viewing.',
+        price: 'Stage 1',
+        priceDetail: 'Start here if first-reply speed is the biggest leak',
         features: [
-          'Intent-specific service pages',
-          'Better enquiry capture',
-          'Location and property context',
+          'Instant reply on every portal enquiry',
+          'Calendar link for self-serve viewing booking',
+          'Most stop enquiring with the next agent',
         ],
       },
       {
-        name: 'Appointment and reminder flow',
-        description:
-          'Adds steadier scheduling, clearer reminders, and better control over the next step after first contact.',
-        price: 'Flow stage 2',
-        priceDetail: 'Best when booking and appointment handling create friction',
+        name: 'Take valuations and viewings without phone tag',
+        description: 'For when bookings take a week of email tennis.',
+        price: 'Stage 2',
+        priceDetail: 'Start here if booking coordination is the leak',
         features: [
-          'Viewing and valuation scheduling support',
-          'Reminder structure',
-          'Next-step clarity',
+          'Self-serve valuation and viewing booking',
+          'Property details captured up front',
+          'Reminders the day before',
         ],
         popular: true,
       },
       {
-        name: 'Nurture and trust reinforcement',
-        description:
-          'Keeps pending opportunities, reviews, and local proof moving in a more reliable way.',
-        price: 'Flow stage 3',
-        priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
-        features: ['Nurture workflows', 'Review request support', 'Local proof reinforcement'],
+        name: 'Nurture vendors and capture local proof',
+        description: 'For when vendor leads go quiet for six months and reviews don’t reflect your years on the patch.',
+        price: 'Stage 3',
+        priceDetail: 'Start here if vendor nurture and reviews are the weak spot',
+        features: [
+          'Nurture sequences for not-yet-selling vendors',
+          'Past-client check-ins automated',
+          'Pages for the streets and postcodes you actually sell in',
+        ],
       },
     ],
   };
 
   const workflowExamplesData = {
-    badge: 'Follow-Up Examples',
-    title: 'What the realtor lead, booking, and follow-up flow looks like in practice',
-    description:
-      'Repeatable situations where a structured realtor setup reduces friction — without making the business feel scripted.',
+    badge: 'Real Situations',
+    title: 'A few moments where the difference shows up',
+    description: 'Small moments in the week of an estate agent where deals used to slip through.',
     workflows: [
       {
-        trigger:
-          'A new enquiry arrives and the realtor needs to determine whether the person is a buyer, seller, or valuation lead before booking the next step.',
+        trigger: 'A Rightmove enquiry comes in at 9pm Friday for a Saturday viewing.',
         actions: [
-          'Capture the right intent and timing early',
-          'Route the enquiry into the right appointment or nurture path',
-          'Reduce wasted time on unclear first contact',
+          'Instant reply goes out with a viewing calendar link',
+          'They book the 11am Saturday slot before bed',
+          'They stop enquiring with the next two agents',
         ],
       },
       {
-        trigger:
-          'A viewing or valuation is requested and the business needs to confirm timing, property context, and the next step clearly.',
+        trigger: 'A vendor requests a valuation but isn’t selling for six months.',
         actions: [
-          'Move the lead into a booked appointment window',
-          'Send reminders and next-step guidance',
-          'Keep internal handoff cleaner between enquiry and appointment handling',
+          'They’re placed on a useful nurture sequence',
+          'Local market updates and recent sales land monthly',
+          'When they’re ready, they instruct you',
         ],
       },
       {
-        trigger:
-          'The appointment is complete and the realtor wants to keep the opportunity moving without manual chasing every time.',
+        trigger: 'A completion happens on Friday.',
         actions: [
-          'Send measured follow-up at the right times',
-          'Keep the lead stage visible internally',
-          'Support the decision with reviews and local proof if needed',
+          'A polite review request goes out the following Tuesday',
+          'Past-client follow-up sequence kicks in for referrals',
+          'Reviews and the sphere stay warm without manual chasing',
         ],
       },
     ],
@@ -263,9 +283,9 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
   };
 
   const exploreData = {
-    badge: 'Explore',
+    badge: 'Related',
     description:
-      'Relevant service layers for realtors that want cleaner appointments, steadier follow-up, and stronger local trust support.',
+      'The other parts of the system that come up most often for estate agents.',
     cards: [
       {
         icon: Workflow,
@@ -307,38 +327,38 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Common questions about realtor systems',
-    description: 'Common questions about MindWP for realtors',
+    title: 'Things estate agents usually ask',
+    description: 'Straight answers about how this fits an agency.',
     faqs: [
       {
-        question: 'How can a realtor get more qualified property enquiries from a website?',
+        question: 'My team is on viewings all day. Will this need someone in the office?',
         answer:
-          'Clearer buyer, seller, and valuation paths plus stronger calls to action and better next-step guidance reduce uncertainty early — which directly improves enquiry quality.',
+          'No. The whole point is it runs while the team is on the road. Portal enquiry replies, viewing bookings, valuation confirmations, vendor nurture — all automatic. The team handles the actual viewings and negotiations.',
       },
       {
-        question: 'Should realtors offer online valuation or viewing requests?',
+        question: 'Will it work alongside my CRM (Reapit, Alto, Jupix, etc)?',
         answer:
-          'Yes — a clean request path reduces back-and-forth and moves people into the right next step faster. The key is capturing context early: intent, location, property type, and timing.',
+          'Yes. Whatever you use stays. The system improves the bit between the portal enquiry and the lead sitting in your CRM ready to be worked on.',
       },
       {
-        question: 'How do realtors reduce missed calls and slow follow-up?',
+        question: 'How does the after-hours portal enquiry handling work?',
         answer:
-          'Missed calls become expensive when deals rely on timing and trust. A better enquiry system can capture requests through multiple paths, support missed-enquiry recovery, and make the first reply clearer even when nobody can answer immediately.',
+          'A buyer enquires on Rightmove at 9pm Friday. Within seconds they get a reply with a calendar link to book the Saturday viewing. Most book before bed and stop enquiring with the next two agents.',
       },
       {
-        question: 'Do realtors need separate pages for buyer and seller services?',
+        question: 'Can it really nurture vendors who aren’t ready to sell?',
         answer:
-          'Often, yes, as long as the pages reflect real service paths and useful information rather than thin copy. Good service-page structure helps local visibility and also helps prospects feel confident that the realtor handles their situation.',
+          'Yes. Vendor enquired in March, not selling for six months? They get a useful monthly sequence — market updates, recent local sales, fee reminders. When they’re ready in October, you’re the agent they call.',
       },
       {
-        question: 'How should realtors handle nurture follow-up without sounding pushy?',
+        question: 'How do I get more reviews without nagging?',
         answer:
-          'Use calm, well-timed follow-up that confirms the next step, keeps the opportunity visible, and makes it easy for the prospect to re-engage — less pressure, more consistency.',
+          'A polite request goes out the week after completion, when the relief is freshest. People who would have meant to leave one actually do.',
       },
       {
-        question: 'What kind of reviews matter most for realtors?',
+        question: 'Do I need to scrap my current website?',
         answer:
-          'The most useful reviews help future clients trust the communication, local knowledge, and overall experience. A structured review request process after completed work can help build that proof more consistently over time.',
+          'Usually not. We look at what you have first. The leak is normally the bit between the portal enquiry and the viewing landing in the diary — not the site itself.',
       },
     ],
   };
@@ -356,9 +376,9 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'real-estate-property-services',
     seo: {
-      title: 'Realtors — Smart Website Systems | MindWP',
+      title: 'Estate Agents — Stop Losing Portal Enquiries, Valuations & Vendor Nurture | MindWP',
       description:
-        'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+        'For estate agents where Friday-night Rightmove enquiries get Monday-morning replies, where valuations take five emails to book, and where vendor leads go quiet for six months before instructing elsewhere. We put the system in place that catches them.',
       keywords: [
         'realtor website design',
         'real estate lead handling system',
@@ -381,9 +401,9 @@ function buildRealtorsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Build a steadier realtor appointment and follow-up system',
+      title: 'Tell us where the listings are leaking',
       description:
-        'If your real estate business is dealing with missed enquiries, loose appointment flow, or inconsistent nurture follow-up — we can map a practical system around how the pipeline actually runs.',
+        'If portal enquiries get Monday-morning replies, if valuations take five emails to confirm, or if vendor leads go quiet for six months — walk us through how the agency runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

@@ -20,24 +20,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Expansion Lane',
-    title: 'Smart Website Systems for Beauty & Personal Care',
+    badge: 'For Salons, Clinics, and Solo Beauty Pros',
+    title: 'You’re On The Floor. The Phone’s Ringing. The DMs Are Backing Up.',
     description:
-      'Beauty and personal care runs on timing, trust, and repeat visits. The system holds booking together first, then layers reminders, follow-up, visibility, and client records around it.',
+      'Salons, nail bars, lash studios, med spas, aesthetic clinics — different services, same leaks. Late-night DMs nobody answered. Quiet midweek slots nobody filled. Reviews nobody asked for. We put the system in place that catches every booking before it walks past you.',
     list: [
-      'Booking flow clarity',
-      'Fewer interruption points',
-      'Stronger repeat follow-up',
-      'Local trust support',
+      'DMs that go unanswered after hours',
+      'No-shows nobody reminded',
+      'Empty slots nobody offered out',
+      'Regulars who quietly stopped rebooking',
     ],
     cssPrefix: 'beauty-personal-care-hero',
   };
 
   const imageStripData = {
-    badge: 'Category Reality',
-    title: 'The day moves faster than the systems behind it',
+    badge: 'How Bookings Actually Happen',
+    title: 'The treatment is fine. The bit between the DM and the diary is where it goes wrong.',
     description:
-      'Appointments, consultations, room turnover, client messages, reviews, and rebooking all compete for attention at once — and they rarely wait for the team to finish what they are doing.',
+      'A late-night Instagram DM. A missed call between clients. A WhatsApp asking about prices. People decide quickly. Whoever replies first usually gets the booking.',
     items: [
       {
         title: 'Solo treatment rooms',
@@ -65,37 +65,37 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where the pressure shows up first',
+    badge: 'Where The Bookings Slip',
+    title: 'Same handful of leaks in nearly every beauty business',
     description:
-      'Day-to-day strain comes from coordination gaps, not effort. These patterns appear across salons, studios, spas, and treatment-led businesses.',
+      'Different services, similar gaps. Once you see them, you can’t unsee them.',
     benefits: [
       {
         icon: AlertCircle,
-        title: 'No-show and late-change gaps',
+        title: 'A no-show on a peak Saturday slot',
         description:
-          'Unconfirmed appointments and last-minute changes leave empty space in the calendar and make capacity harder to trust.',
+          'Two hours of the chair, gone. No deposit, no reminder, no waitlist to fill it.',
         iconType: 'primary' as const,
       },
       {
         icon: Phone,
-        title: 'Front-desk interruption loops',
+        title: 'The phone goes mid-treatment, ten times a day',
         description:
-          'Calls, DMs, and booking questions often hit while the team is already in session, creating broken attention and delayed responses.',
+          'You can’t answer. They don’t leave a message. They book wherever they get through next.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Follow-up that depends on memory',
+        title: 'Reviews and rebookings happen by accident',
         description:
-          'Review requests, rebooking nudges, consultation reminders, and check-ins often happen inconsistently when they rely on manual effort.',
+          'Hundreds of happy clients, almost no one ever asked. Quiet weeks nobody nudged regulars about.',
         iconType: 'accent' as const,
       },
       {
         icon: MapPinned,
-        title: 'Visibility split across too many channels',
+        title: 'The salon two streets over has 600 reviews. You have 38.',
         description:
-          'Google Business Profile, service pages, reviews, socials, and maps presence often drift apart, which weakens trust and discovery.',
+          'Your work is better. Locally you look quieter than you actually are.',
         iconType: 'primary' as const,
       },
     ],
@@ -103,73 +103,75 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Architecture',
-    title: 'What the operating system needs to cover',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to catch enquiries, fill the diary, and bring clients back',
     description:
-      'These are the working layers that keep beauty operations steady — from first enquiry through repeat visit.',
+      'Each piece does one job. Together they keep the day running while the team is on the floor.',
     featureCategories: [
       {
-        title: 'Booking and intake layer',
+        title: 'Let clients book themselves without phone tag',
         description:
-          'Handles appointment requests, service selection, consultation forms, and calendar coordination.',
+          'They pick the service, the practitioner, the slot — and pay a deposit at the same time.',
         icon: Calendar,
         features: [
-          '24/7 booking access',
-          'Service-specific intake',
-          'Calendar sync and buffer control',
+          'Online booking by service and provider',
+          'Deposits taken at booking',
+          'No more 20-message threads to lock in a slot',
         ],
       },
       {
-        title: 'Confirmation and reminder layer',
-        description: 'Protects the diary with confirmation touchpoints and timely reminders.',
+        title: 'Send the reminders nobody has time to send',
+        description:
+          'A reminder the day before. A “see you in an hour” on the morning. No-shows drop without nagging.',
         icon: Bell,
         features: [
-          'SMS and email reminders',
-          'Confirmation touchpoints',
-          'Late-change friction reduction',
+          'Reminders the day before and morning of',
+          'Easy reschedule link instead of a no-show',
+          'Cancellations re-offered to the waitlist',
         ],
       },
       {
-        title: 'Client record layer',
+        title: 'Keep client history without keeping it in your head',
         description:
-          'Keeps preferences, visit history, notes, and consent details accessible without slowing the team.',
+          'Last visit, preferences, notes, allergies — there when you need them, without stopping the day.',
         icon: Users,
         features: [
-          'Client notes and history',
-          'Preference tracking',
-          'Better repeat visit context',
+          'Client notes and visit history',
+          'Preferences saved automatically',
+          'Repeat clients feel remembered',
         ],
       },
       {
-        title: 'Response and enquiry layer',
+        title: 'Reply to every DM and missed call inside a minute',
         description:
-          'Gives common questions and booking intent a faster response path when the team is mid-session.',
+          'Late-night messages get an instant answer with prices, options, and a booking link.',
         icon: MessageSquare,
         features: [
-          'FAQ and booking replies',
-          'Missed-message recovery',
-          'After-hours response support',
+          'Instant replies on Instagram, web, missed calls',
+          'Pricing and service info answered up front',
+          'Booking link in the same message',
         ],
       },
       {
-        title: 'Reputation and review layer',
-        description: 'Turns good service into steady reviews so trust compounds between visits.',
+        title: 'Turn finished appointments into reviews you can show',
+        description:
+          'A review request after every visit, at the moment people are most likely to leave one.',
         icon: Star,
         features: [
-          'Review request automation',
-          'Reputation monitoring',
-          'Trust-building follow-up',
+          'Review requests after every appointment',
+          'Asked when clients are happiest',
+          'Reviews that catch up to the work',
         ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Show up when local people search for what you do',
         description:
-          'Connects maps, search, and service pages so they reinforce each other instead of drifting apart.',
+          'Service pages, Google profile, and local listings lined up so you appear before the salon up the road.',
         icon: Search,
         features: [
-          'Google Business Profile support',
-          'Service-page alignment',
-          'Location-led discovery',
+          'Pages for the services you actually offer',
+          'Found on Maps for local searches',
+          'Local visibility that compounds',
         ],
       },
     ],
@@ -177,17 +179,16 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
   };
 
   const decisionChecklistData = {
-    badge: 'When Category Work Matters',
-    title: 'Signs the business needs system-level thinking',
-    description:
-      'Isolated fixes stop helping at this stage. The business needs category-wide structure before individual workflows perform properly.',
+    badge: 'Sound Familiar?',
+    title: 'A few signs this is worth looking at properly',
+    description: 'If most of these ring true, the leak is bigger than another marketing tweak will fix.',
     items: [
-      'Different services are being promoted, but booking and follow-up still run through one unclear process',
-      'The team answers the same questions across calls, messages, and forms every week',
-      'Reviews, visibility, and repeat-booking efforts exist, but they are not reinforcing each other',
-      'Growth is adding admin pressure faster than it is adding operating clarity',
-      'New detail pages are needed, but the category logic behind them is still undefined',
-      'The business needs one system direction that can support multiple treatment or service paths',
+      'DMs come in after hours and don’t get a reply until the next morning',
+      'No-shows happen often enough that everybody has just accepted them',
+      'The same questions get answered ten times a week across calls and messages',
+      'Reviews online don’t reflect how the actual work compares locally',
+      'Quiet midweek slots stay empty even though plenty of regulars would fill them',
+      'More demand just makes the front desk feel worse, not better',
     ],
     columns: 2 as const,
     backgroundColor: 'bg-base',
@@ -195,71 +196,75 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
   };
 
   const serviceEnvironmentsData = {
-    badge: 'Service Environments',
-    title: 'Different environments, different system needs',
+    badge: 'How You Actually Work',
+    title: 'A solo room, a busy salon floor, and a clinic each break in different places',
     description:
-      'The operating environment changes what the system needs. A solo room, a busy salon floor, and a treatment-led care setting break in different places.',
+      'Different setups, different leaks. The bit that costs you the most work isn’t the same in a one-chair home studio as in a six-chair salon.',
     features: [
       {
-        title: 'Solo studio environment',
+        title: 'Solo room or home studio',
         description:
-          'Fewer tools, but booking, prep, and follow-up paths need to be tighter — the provider handles everything alone.',
+          'You’re working hands-on with one client at a time. The phone goes, the DMs back up, and there’s no front desk to catch it.',
         icon: Home,
       },
       {
-        title: 'Multi-staff salon environment',
+        title: 'Salon team',
         description:
-          'Role handoffs, calendar coordination, and client records become critical — the experience needs to stay consistent across multiple staff.',
+          'More chairs, more handoffs. Things slip in the gap between the booker, the practitioner, and the client.',
         icon: Store,
       },
       {
-        title: 'Treatment-led wellness environment',
+        title: 'Clinic or treatment-led',
         description:
-          'Trust, suitability, and client education carry more weight here. The system needs to guide before and after the appointment, not just during booking.',
+          'Trust matters most. Pre-care, aftercare, and consultation follow-up have to land at the right moment.',
         icon: HeartPulse,
       },
     ],
-    tagline: 'Category context before workflow depth',
-    narrativeTitle: 'Environment shapes the system, not the other way around',
+    tagline: 'Same category, different bottlenecks',
+    narrativeTitle: 'Why we look at the shape of the business first',
     narrativeParagraphs: [
-      'Understanding which environment the business operates in helps define which system layers matter most. A solo lash artist and a multi-chair salon face different coordination problems.',
-      'Once the environment is clear, the system can go deeper into specific workflows — booking, preparation, reminders, reviews, and repeat-visit handling.',
+      'Before any change is made, we look at how enquiries actually arrive, who handles them, and where they currently slip. That’s usually obvious within a short conversation.',
+      'From there, the right next step — catching DMs, taking deposits, sending reminders, building reviews — becomes obvious instead of generic.',
     ],
     backgroundColor: 'bg-alt',
     cssPrefix: 'beauty-personal-care-service-environments',
   };
 
   const spectrumData = {
-    badge: 'Business Shapes',
-    title: 'The category covers different operating models, not one fixed setup',
+    badge: 'Different Shapes, Same Leaks',
+    title: 'A solo room, a busy salon, and a clinic don’t look alike — but the gaps usually are',
     description:
-      'Beauty and personal care is a broad category. The system shape changes depending on booking volume, team structure, service complexity, and how much repeat care sits behind the appointment.',
+      'Different setups, similar friction. Once you place yours, the right next step gets obvious.',
     cards: [
       {
         title: 'Solo practitioners',
         description:
-          'Service clarity and self-service booking matter most. Follow-up should happen without adding admin weight.',
-        points: ['Low admin capacity', 'Fast reply pressure', 'Need for clear service information'],
+          'One pair of hands. The phone going during a treatment is the single biggest leak.',
+        points: [
+          'DMs missed after hours',
+          'Same prep info typed every week',
+          'Reviews never asked for',
+        ],
       },
       {
-        title: 'Growing salon teams',
+        title: 'Salon teams',
         description:
-          'Coordination pressure rises — staff calendars, front-desk interruptions, client records, and reviews all need tighter structure.',
+          'More hands, more handoffs. Things slip in the gap between front desk, practitioner, and client.',
         points: [
-          'Shared scheduling logic',
-          'More handoffs between people',
-          'Repeat visit coordination',
+          'Bookings nobody confirmed',
+          'No-shows on peak slots',
+          '“Who was supposed to ring them?”',
         ],
         featured: true,
       },
       {
-        title: 'Treatment-led wellness businesses',
+        title: 'Clinics and wellness',
         description:
-          'Client journeys are longer. The system needs to build trust before and after each appointment, not just at the point of booking.',
+          'Higher trust requirement. Consultation-to-treatment conversion is where most income leaks.',
         points: [
-          'More education around services',
-          'Longer nurture or follow-up cycles',
-          'Higher trust requirement before booking',
+          'Consultations that never become treatments',
+          'Aftercare sent when somebody remembers',
+          'Review counts that don’t match the work',
         ],
       },
     ],
@@ -268,34 +273,32 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
   };
 
   const processData = {
-    badge: 'Tier 1 Layering',
-    title: 'How Smart Website structure expands into category-specific workflows',
+    badge: 'How We Get Started',
+    title: 'How a typical conversation moves from “we’re losing bookings” to “we’ve stopped losing bookings”',
     description:
-      'Once the category system is clear, the page can route visitors into the right workflow while keeping Smart Website structure as the main operating layer.',
+      'Nothing fancy. We look at how the business actually runs, then put the missing pieces in place in the order that helps most.',
     steps: [
       {
         number: '01',
-        title: 'Frame the Smart Website core',
-        description:
-          'Establish the booking and conversion structure that holds the whole category together.',
+        title: 'We look at how enquiries arrive now',
+        description: 'DMs, calls, forms, walk-ins. Where they go, who sees them, who replies.',
       },
       {
         number: '02',
-        title: 'Show the operating shapes',
-        description:
-          'Show how solo providers, team-led salons, and wellness environments differ so visitors place themselves quickly.',
+        title: 'We map where bookings are slipping',
+        description: 'No pitch deck. A short, honest list of what’s breaking and what it’s costing.',
       },
       {
         number: '03',
-        title: 'Layer the supporting systems',
+        title: 'The biggest leak gets fixed first',
         description:
-          'Connect communication, client records, reputation, and visibility support around the core layer.',
+          'Missed DMs, no-shows, missing reviews, empty midweek — whichever is bleeding the most work.',
       },
       {
         number: '04',
-        title: 'Route into detail pages',
+        title: 'It runs while the team is on the floor',
         description:
-          'Guide visitors into the specific treatment or service workflow that fits their situation.',
+          'Replies, reminders, reviews, follow-up. Going on their own while the salon runs the salon.',
       },
     ],
     columns: 4 as const,
@@ -304,43 +307,43 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
   };
 
   const detailRoutesData = {
-    badge: 'Sub-Industry Workflow',
-    title: 'Mapped workflows in this category',
+    badge: 'By Type Of Business',
+    title: 'Pick the one closest to how you run',
     description:
-      'Each detail page maps a specific operating path — consultation handling, booking, reminders, follow-up, and visibility — for a real service environment.',
+      'Same category, different bottlenecks. These pages get into the specifics for each kind of business.',
     items: [
       {
         title: 'Aesthetic & Cosmetic Clinics',
         description:
-          'Consultation flow, booking coordination, preparation, aftercare, and local trust for clinics offering aesthetic and cosmetic treatments.',
+          'For clinics where high-intent enquiries go cold and consultations don’t convert.',
         href: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
         icon: HeartPulse,
       },
       {
         title: 'Hair Salons',
         description:
-          'Service selection, appointment handling, reminders, reviews, and repeat-visit support for salons.',
+          'For salons whose late-night DMs sit until morning and Tuesdays sit empty.',
         href: '/industries/beauty-personal-care/hair-salons',
         icon: Store,
       },
       {
         title: 'Nail Salons',
         description:
-          'Service options, appointment timing, reminders, reviews, and repeat-booking support for nail salons.',
+          'For nail salons losing weekend bookings to whoever replied first.',
         href: '/industries/beauty-personal-care/nail-salons',
         icon: Sparkles,
       },
       {
         title: 'Small Med Spas',
         description:
-          'Consultation trust, treatment coordination, booking, aftercare, and review support for small med spas.',
+          'For med spas where consultations don’t convert and aftercare gets sent when somebody remembers.',
         href: '/industries/beauty-personal-care/small-med-spas',
         icon: HeartPulse,
       },
       {
         title: 'Lash Lift & Extensions',
         description:
-          'Appointment flow, consultation handling, reminders, review collection, and local discovery for lash providers.',
+          'For lash artists working solo whose DMs sit until evening because their hands are full.',
         href: '/industries/beauty-personal-care/lash-lift-and-extensions',
         icon: Workflow,
       },
@@ -363,9 +366,9 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
     topics: ['booking-systems', 'review-generation', 'booking-automation', 'client-reactivation'],
     industries: ['aesthetic-clinic', 'hair-salon', 'nail-salon', 'med-spa', 'lash-extensions'],
     seo: {
-      title: 'Beauty & Personal Care Operations Systems | MindWP',
+      title: 'Salons, Clinics & Beauty Businesses — Stop Losing DMs, No-Shows & Reviews | MindWP',
       description:
-        'Operational infrastructure for salons, clinics, spas, lash artists, and beauty teams covering booking, reminders, follow-up, reputation, and local visibility.',
+        'For salons, nail bars, lash studios, med spas, and aesthetic clinics where late-night DMs sit until morning, no-shows eat peak slots, and reviews don’t reflect the work. We put the system in place that catches every booking.',
       keywords: [
         'beauty personal care systems',
         'salon booking automation',
@@ -393,9 +396,9 @@ function buildBeautyPersonalCareIndustryPageData(): IndustryPageData {
       },
     },
     cta: {
-      title: 'Map the system around how your business runs',
+      title: 'Tell us where the bookings are slipping',
       description:
-        'If booking and follow-up feel inconsistent, we can show you how to turn more enquiries into repeat appointments.',
+        'If DMs go quiet overnight, if midweek sits empty, or if reviews never get asked for — walk us through how the salon runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

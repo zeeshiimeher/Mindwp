@@ -14,25 +14,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildMortgageBrokersIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Coverage Lane',
-    title: 'Smart Website Systems for Mortgage Brokers',
+    badge: 'For Mortgage Brokers',
+    title: 'Rates Dropped At 10am. By Lunchtime, Three Brokers Had Replied To His Remortgage Enquiry. The Slowest One Lost The Case.',
     description:
-      'A mortgage broker website should support qualification enquiries, consultation booking, document-readiness guidance, and follow-up — without making the team manually hold every conversation together.',
+      'Mortgage decisions happen on rate windows and offer deadlines. Borrowers enquire with three brokers and instruct whoever replied first with a clear next step. We put the system in place that catches the enquiry while you’re packaging a case, books the discovery call, and stops cold-pipeline borrowers from drifting to a comparison site.',
     list: [
-      'Clearer enquiry qualification',
-      'Better consultation booking flow',
-      'Stronger trust and clarity signals',
-      'More reliable nurture follow-up',
+      'Enquiries that came in while you were on a lender call',
+      'Discovery calls that took six emails to confirm',
+      'Pipeline borrowers who went quiet for six weeks',
+      'Reviews from completed cases you never asked for',
     ],
     cssPrefix: 'mortgage-brokers-hero',
   };
 
   const imageStripData = {
-    badge: 'Service Environment',
-    title:
-      'Mortgage demand depends on trust, timing, and next-step clarity before a consultation ever happens',
+    badge: 'How Mortgage Enquiries Actually Land',
+    title: 'Rate change at 10am. They enquired with three brokers. Whoever replied first wins.',
     description:
-      'Purchase enquiries, refinance questions, qualification uncertainty, consultation booking, document-readiness, and follow-up all shape whether someone progresses. When those steps feel disconnected, the pipeline becomes harder to move and harder to trust.',
+      'It’s rate windows, AIP deadlines, panicked first-time buyers Sunday night. The decision happens within hours of the first email.',
     items: [
       {
         title: 'Purchase and refinance enquiries',
@@ -60,38 +59,36 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where mortgage brokers lose momentum, clarity, or consultation confidence',
-    description:
-      'The gap is rarely just lead volume — it sits between first enquiry, qualification, consultation booking, and the trust proof people need before sharing their financial situation.',
+    badge: 'Where Cases Get Lost',
+    title: 'You’re packaging a complex BTL. The new enquiries hit a comparison site instead.',
+    description: 'Same handful of leaks across nearly every brokerage. None of them are about the advice quality.',
     benefits: [
       {
         icon: Wallet,
-        title: 'Borrowers often enquire before they understand their readiness or next step',
+        title: 'Three Sunday-night enquiries went unanswered until Monday afternoon',
         description:
-          'Purchase, refinance, and remortgage enquiries can arrive with very different levels of intent — first-response quality drops when everything routes through one loose path.',
+          'Two had already booked discovery calls with online brokers by the time you replied.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title:
-          'Consultation booking creates friction when qualification and preparation are unclear',
+        title: 'A discovery call took six emails to confirm',
         description:
-          'Availability, document expectations, and consultation readiness sit in different places — the pipeline slows early when booking and preparation are unclear.',
+          '“What times work?” “Zoom or in-person?” “What documents?” Each reply waited a few hours.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Nurture and pending-decision follow-up depend too much on manual chasing',
+        title: 'Six pipeline borrowers went silent for a month',
         description:
-          'Many enquiries are not ready immediately, but the follow-up path often becomes inconsistent when advisors are already handling active files.',
+          'Searching, not buying yet. No nurture in place. By the time they bought, they’d used somebody else.',
         iconType: 'accent' as const,
       },
       {
         icon: Landmark,
-        title: 'Trust signals stay fragmented across the decision path',
+        title: 'You’ve completed 400 cases. The online broker has 1,200 reviews.',
         description:
-          'Reviews, credibility markers, educational clarity, and advisor proof exist in different places — they rarely work together to support confident consultation booking.',
+          'Your advice is sharper. Online you look smaller because nobody asked for the review at the right moment.',
         iconType: 'primary' as const,
       },
     ],
@@ -99,48 +96,75 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Layers',
-    title: 'The working layers behind a steadier mortgage enquiry pipeline',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to catch enquiries on rate windows and stop cold pipeline drifting',
     description:
-      'A mortgage broker workflow needs structure before consultations, while qualification is being clarified, and after first contact — especially when the decision takes time.',
+      'Each piece does one job. Together they keep cases coming in while you stay focused on packaging.',
     featureCategories: [
       {
-        title: 'Enquiry and qualification layer',
+        title: 'Reply to enquiries while you’re on a lender call',
         description:
-          'Routes purchase, refinance, and readiness enquiries through a clearer first-contact path so the right intent reaches the right next step.',
+          'Enquiry lands at 10pm Sunday. Instant reply with a calendar link, document checklist, and a quick reassurance. Most stop enquiring with the next broker.',
         icon: MessageSquare,
-        features: ['Intent capture', 'Qualification guidance', 'Cleaner first response'],
+        features: [
+          'Instant acknowledgement on every enquiry',
+          'Document checklist and calendar link up front',
+          'Holds the borrower until you’re free',
+        ],
       },
       {
-        title: 'Consultation booking layer',
+        title: 'Take the discovery call booking online',
         description:
-          'Moves initial calls and consultations into a booked next step without unnecessary delay or confusion.',
+          'Borrower picks a slot themselves. Documents requested in the same step. The six-email confirmation thread stops.',
         icon: Calendar,
-        features: ['Consultation scheduling', 'Reminder touchpoints', 'Next-step guidance'],
+        features: [
+          'Self-serve discovery call booking',
+          'Document checklist sent automatically',
+          'Reminders the day before',
+        ],
       },
       {
-        title: 'Nurture and follow-up layer',
+        title: 'Nurture the pipeline that’s six months away',
         description:
-          'Keeps pending borrowers on a calmer, more consistent follow-up path so opportunities do not disappear into silence.',
+          'First-time buyer searching but not ready. They get a useful sequence — deposit tips, AIP timing, rate updates. When they’re ready, you’re top of mind.',
         icon: Workflow,
-        features: ['Lead nurture', 'Decision reminders', 'Pipeline visibility'],
+        features: [
+          'Nurture sequences for not-yet-ready borrowers',
+          'Pipeline visible by stage',
+          'Borrowers come back to you, not a comparison site',
+        ],
       },
       {
-        title: 'Trust and proof layer',
+        title: 'Stay top of mind for product-end remortgages',
         description:
-          'Connects reviews, clarity, and advisor proof so they support confidence before a consultation happens.',
+          'Six months before the fix ends, a polite check-in goes out. “Your deal ends in six months — want to lock in early?”',
         icon: ShieldCheck,
-        features: ['Review requests', 'Proof-of-service support', 'Trust-led page structure'],
+        features: [
+          'Product-end reminders timed automatically',
+          'Existing clients re-engaged proactively',
+          'Remortgage book stops drifting away',
+        ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Turn completed cases into reviews and referrals',
         description:
-          'Reinforces the locations and borrower profiles you want through area pages, search visibility, and local credibility.',
+          'A polite review request goes out the week after completion, when the relief is freshest.',
+        icon: Star,
+        features: [
+          'Review requests after every completion',
+          'Asked when clients are most grateful',
+          'Reviews catch up to the cases you’ve closed',
+        ],
+      },
+      {
+        title: 'Show up first when local people search for a broker',
+        description:
+          'Service pages and Google profile lined up so people in the right area find you first — not the online broker.',
         icon: Search,
         features: [
-          'Area-page targeting',
-          'Local search clarity',
-          'Google Business Profile support',
+          'Pages for the case types you actually do',
+          'Found on Maps for local mortgage searches',
+          'Less time on enquiries that aren’t a fit',
         ],
       },
     ],
@@ -148,104 +172,102 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
   };
 
   const comparisonData = {
-    badge: 'Operational Shift',
-    title: 'From reactive mortgage enquiries to a steadier consultation and follow-up flow',
-    description:
-      'The advisory relationship stays personal. The repeatable friction around qualification, consultation coordination, and follow-up gets reduced.',
+    badge: 'What Actually Changes',
+    title: 'A normal week, before and after',
+    description: 'The advice stays personal. The pipeline stops leaking.',
     comparisons: [
       {
         type: 'before' as const,
-        title: 'Before the workflow is structured',
+        title: 'How it runs now',
         items: [
-          'Leads arrive without enough detail to qualify them quickly',
-          'Consultation booking depends on manual back-and-forth',
-          'Pending opportunities are hard to follow consistently',
-          'Trust depends too heavily on one-off reassurance during early conversations',
+          'Sunday-night enquiries went unanswered until Monday afternoon. Two booked elsewhere.',
+          'Discovery calls took six emails to confirm.',
+          'Six pipeline borrowers went silent for a month and bought through somebody else.',
+          '“Meant to ask for a Google review” — said about every completion.',
         ],
       },
       {
         type: 'after' as const,
-        title: 'After the workflow is aligned',
+        title: 'How it runs after',
         items: [
-          'New enquiries move into the right consultation or nurture path faster',
-          'Booking and reminder flow protect the next step more consistently',
-          'Follow-up happens with less manual chasing',
-          'Reviews, local proof, and page structure support better decision confidence',
+          'Every enquiry gets an instant reply with a calendar link.',
+          'Discovery calls booked online with documents requested up front.',
+          'Not-yet-ready borrowers nurtured automatically until they are.',
+          'Reviews get asked for the week after every completion.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Lead To Consultation Flow',
-    title:
-      'How the mortgage broker workflow moves from first enquiry to consultation and follow-up',
-    description:
-      'How the system moves mortgage leads from first contact into the right qualification and consultation path — then into consistent follow-up when the decision takes time.',
+    badge: 'Where Most Brokers Start',
+    title: 'Three stages — most brokerages feel one of them more than the others',
+    description: 'Pick whichever costs you the most cases right now.',
     packages: [
       {
-        name: 'Enquiry capture and qualification',
-        description:
-          'Routes purchase, refinance, and readiness enquiries into a clearer first step — so the right intent reaches the right next action faster.',
-        price: 'Flow stage 1',
-        priceDetail: 'Best when lead quality and first-contact clarity are the main issue',
+        name: 'Stop losing the rate-window enquiries',
+        description: 'For when borrowers enquire on rate changes and book whoever replied first.',
+        price: 'Stage 1',
+        priceDetail: 'Start here if first-reply speed is the biggest leak',
         features: [
-          'Intent-specific service pages',
-          'Better enquiry capture',
-          'Readiness and timing context',
+          'Instant reply with calendar link and document checklist',
+          'Holds the borrower until you’re free',
+          'Most stop enquiring with the next broker',
         ],
       },
       {
-        name: 'Consultation and reminder flow',
-        description:
-          'Adds steadier scheduling, clearer reminders, and better control over the next step after first contact.',
-        price: 'Flow stage 2',
-        priceDetail: 'Best when booking and appointment handling create friction',
-        features: ['Consultation scheduling support', 'Reminder structure', 'Next-step clarity'],
+        name: 'Take the discovery call without six emails',
+        description: 'For when discovery calls take half a week of email tennis.',
+        price: 'Stage 2',
+        priceDetail: 'Start here if booking and document-readiness are the leak',
+        features: [
+          'Self-serve discovery call booking',
+          'Document checklist sent automatically',
+          'Reminders the day before',
+        ],
         popular: true,
       },
       {
-        name: 'Nurture and trust reinforcement',
-        description:
-          'Keeps pending opportunities, reviews, and local proof moving in a more reliable way.',
-        price: 'Flow stage 3',
-        priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
-        features: ['Nurture workflows', 'Review request support', 'Local proof reinforcement'],
+        name: 'Nurture the pipeline and capture remortgages',
+        description: 'For when first-time buyers and product-end clients drift to comparison sites.',
+        price: 'Stage 3',
+        priceDetail: 'Start here if pipeline drift and remortgages are the weak spot',
+        features: [
+          'Nurture sequences for not-yet-ready borrowers',
+          'Product-end reminders timed automatically',
+          'Review requests after every completion',
+        ],
       },
     ],
   };
 
   const workflowExamplesData = {
-    badge: 'Follow-Up Examples',
-    title: 'What the mortgage lead, consultation, and follow-up flow looks like in practice',
-    description:
-      'Repeatable situations where a structured mortgage setup reduces friction — without making the advisory process feel scripted.',
+    badge: 'Real Situations',
+    title: 'A few moments where the difference shows up',
+    description: 'Small moments in the week of a brokerage where cases used to slip through.',
     workflows: [
       {
-        trigger:
-          'A new enquiry arrives and the broker needs to determine whether the person is buying, refinancing, or still clarifying readiness before booking the next step.',
+        trigger: 'A remortgage enquiry comes in at 10pm after a rate change.',
         actions: [
-          'Capture the right intent and timing early',
-          'Route the enquiry into the right consultation or nurture path',
-          'Reduce wasted time on unclear first contact',
+          'Instant reply goes out with a calendar link and reassurance',
+          'They book a discovery call before going to bed',
+          'They stop enquiring with the next two brokers',
         ],
       },
       {
-        trigger:
-          'A consultation is requested and the business needs to confirm timing, readiness, and next-step expectations clearly.',
+        trigger: 'A first-time buyer enquires but is six months away from being ready.',
         actions: [
-          'Move the lead into a booked consultation window',
-          'Send reminders and preparation guidance',
-          'Keep internal handoff cleaner between enquiry and consultation handling',
+          'They’re placed on a useful nurture sequence',
+          'Deposit tips, AIP timing, rate updates land monthly',
+          'When they’re ready, they come back to you',
         ],
       },
       {
-        trigger:
-          'The consultation is complete and the broker wants to keep the opportunity moving without manual chasing every time.',
+        trigger: 'A client’s fixed deal ends in six months.',
         actions: [
-          'Send measured follow-up at the right times',
-          'Keep the lead stage visible internally',
-          'Support the decision with reviews and local proof if needed',
+          'A polite check-in goes out automatically',
+          '“Your deal ends in six months — want to lock in early?”',
+          'Remortgage book stops drifting away',
         ],
       },
     ],
@@ -261,9 +283,9 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
   };
 
   const exploreData = {
-    badge: 'Explore',
+    badge: 'Related',
     description:
-      'Relevant service layers for mortgage brokers that want cleaner consultations, steadier follow-up, and stronger local trust support.',
+      'The other parts of the system that come up most often for mortgage brokers.',
     cards: [
       {
         icon: Workflow,
@@ -304,39 +326,38 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Common questions about mortgage broker systems',
-    description: 'Common questions about MindWP for mortgage brokers',
+    title: 'Things brokers usually ask',
+    description: 'Straight answers about how this fits a mortgage brokerage.',
     faqs: [
       {
-        question: 'How can a mortgage broker get more qualified enquiries from a website?',
+        question: 'I’m on lender calls all day. Will this need someone in the office?',
         answer:
-          'Clearer purchase, refinance, and readiness paths plus better next-step guidance reduce uncertainty early — which directly improves enquiry quality.',
+          'No. The whole point is it runs while you’re packaging cases. Instant enquiry replies, discovery call bookings, document requests, nurture sequences — all automatic. You handle the actual advice.',
       },
       {
-        question: 'Should mortgage brokers offer online consultation requests?',
+        question: 'Will it work alongside my CRM (Iress, Smartr, 360 Lifecycle, etc)?',
         answer:
-          'Yes — a clean request path reduces back-and-forth and moves people into the right next step faster. The key is capturing context early: intent, timing, and readiness.',
+          'Yes. Whatever you use stays. The system improves the bit between the borrower enquiry and the case sitting in your CRM ready to package.',
       },
       {
-        question: 'How do mortgage brokers reduce slow follow-up on colder leads?',
+        question: 'How does the after-hours enquiry handling work?',
         answer:
-          'A better enquiry system separates ready-now leads from nurture-stage opportunities, then supports measured follow-up over time — less manual chasing, more consistency.',
+          'A borrower enquires Sunday night after a rate change. Within seconds they get a reply with reassurance, a calendar link, and a document checklist. Most book a discovery call before going to bed.',
       },
       {
-        question: 'Do mortgage brokers need separate pages for purchase and refinance services?',
+        question: 'Can it really capture more remortgages from existing clients?',
         answer:
-          'Often, yes, as long as the pages reflect real service paths and useful information rather than thin copy. Good service-page structure helps local visibility and also helps prospects feel confident that the broker handles their situation.',
+          'Yes — a polite check-in goes out six months before the fix ends. “Your deal ends in six months — want to lock in early?” The remortgage book stops drifting to comparison sites.',
       },
       {
-        question: 'What kind of reviews matter most for mortgage brokers?',
+        question: 'How do I get more reviews without nagging?',
         answer:
-          'The most useful reviews reinforce trust, communication quality, and the feeling that the broker made a complex process easier to understand. A structured review request process after completed work can help build that proof more consistently over time.',
+          'A polite request goes out the week after completion, when the relief is freshest. People who would have meant to leave one actually do.',
       },
       {
-        question:
-          'Can a Smart Website system help mortgage brokers without replacing their CRM or lender tools?',
+        question: 'Do I need to scrap my current website?',
         answer:
-          'Yes. The system improves the public-facing side of the workflow by making enquiries, consultation booking, readiness guidance, and follow-up more consistent. It does not require replacing the internal tools you already use.',
+          'Usually not. We look at what you have first. The leak is normally the bit between the enquiry and the discovery call landing in the diary — not the site itself.',
       },
     ],
   };
@@ -354,9 +375,9 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'real-estate-property-services',
     seo: {
-      title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+      title: 'Mortgage Brokers — Stop Losing Rate-Window Enquiries, Discovery Calls & Remortgages | MindWP',
       description:
-        'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+        'For mortgage brokers where rate-change enquiries go to whoever replied first, where discovery calls take six emails to confirm, and where pipeline borrowers drift to comparison sites. We put the system in place that catches them.',
       keywords: [
         'mortgage broker website design',
         'mortgage broker lead handling system',
@@ -379,9 +400,9 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Build a steadier mortgage consultation and follow-up system',
+      title: 'Tell us where the pipeline is leaking',
       description:
-        'If your mortgage business is dealing with unclear enquiry quality, loose consultation flow, or inconsistent nurture follow-up — we can map a practical system around how the pipeline actually runs.',
+        'If rate-window enquiries go to whoever replied first, if discovery calls take six emails to confirm, or if remortgage clients drift to comparison sites — walk us through how the brokerage runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

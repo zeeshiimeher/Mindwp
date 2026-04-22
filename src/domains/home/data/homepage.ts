@@ -208,9 +208,9 @@ export type HomepageData = {
 
 export const homepageData: HomepageData = {
   seo: {
-    title: 'MindWP — Smart Websites That Work for Service Businesses',
+    title: 'MindWP — Stop Losing Enquiries. Catch Calls, Follow Up, Win More Work.',
     description:
-      'MindWP builds Smart Websites for service businesses that need clearer visibility, enquiry handling, follow-up, and proof systems from day one or after years of patchwork.',
+      'For service businesses where calls get missed, enquiries sit unread, and good leads quietly disappear. MindWP puts the routing, follow-up, visibility, and proof in place so the work already coming in actually turns into work.',
     keywords: [
       'Smart Website Systems',
       'website consultancy for service businesses',
@@ -231,9 +231,9 @@ export const homepageData: HomepageData = {
   },
   hero: {
     badge: 'For Service Businesses',
-    title: 'Build The System First. Then Stop Losing Work Around It.',
+    title: 'Leads Come In. Most of Them Never Turn Into Work.',
     description:
-      'We build the website, routing, follow-up, and proof systems that stop missed calls, dead enquiries, and invisible local search from quietly draining an already busy business.',
+      'Calls go to voicemail. Enquiries sit in an inbox until tomorrow. Quotes get sent and never chased. The work is already there — most of it just slips through before anyone notices. We put the system in place that catches it.',
     valueProps: ['Missed calls', 'Dead enquiries', 'Invisible online'],
     primaryAction: {
       label: "What's actually going wrong?",
@@ -327,9 +327,9 @@ export const homepageData: HomepageData = {
     },
   },
   implementationSection: {
-    title: 'Build the website and the system around it.',
+    title: 'What gets put in place so enquiries stop slipping.',
     description:
-      'We start with how the business needs to run, then build the website, routing, follow-up, and proof layers in the order that makes the whole setup usable.',
+      'We start with how the business actually runs, then put the routing, follow-up, visibility, and proof layers in place in the order that makes the whole thing usable on a busy day.',
     steps: [
       {
         number: '01',

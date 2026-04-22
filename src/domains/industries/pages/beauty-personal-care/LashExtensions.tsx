@@ -4,24 +4,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildLashExtensionsIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Expansion Lane',
-    title: 'Smart Website Systems for Lash Booking, Visibility, and Follow-Up',
+    badge: 'For Lash Artists',
+    title: 'You’re Mid-Set. The Phone Pings. Two More Enquiries Sat Until You’re Done.',
     description:
-      'The website should make booking clear, protect the diary with reminders, and keep trust-building follow-up consistent — even when the provider works alone.',
+      'Lash artists work one client at a time, eyes shut, three hours per set. Most enquiries arrive while you literally cannot reply. The ones who don’t hear back inside an hour book somebody else. We put the system in place that catches every booking even while your hands are full.',
     list: [
-      'Direct booking path',
-      'Diary protection',
-      'Consistent review follow-up',
-      'Visible local trust',
+      'Enquiries that arrive mid-set',
+      'No-shows with no deposit',
+      'Patch tests explained ten times a week',
+      'Infills that quietly stopped getting rebooked',
     ],
     cssPrefix: 'lash-extensions-hero',
   };
 
   const imageStripData = {
-    badge: 'Service Environment',
-    title: 'A lash workflow depends on clarity before the appointment even starts',
+    badge: 'How Bookings Actually Happen',
+    title: 'Most enquiries arrive when you literally cannot answer them',
     description:
-      'Consultation details, prep guidance, timing, deposits, reminders, aftercare, and review requests all shape the client experience. When those steps stay manual, the day gets noisier fast.',
+      'Mid-set, eyes shut, tweezers in hand. Or it’s 10pm and you’re finally done for the day. Either way, the woman asking about classics-vs-hybrids isn’t going to wait until tomorrow morning to find out.',
     items: [
       {
         title: 'Consultation and eligibility',
@@ -49,37 +49,37 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where lash providers lose time and booking stability',
+    badge: 'Where The Bookings Slip',
+    title: 'Working solo on someone’s eyes for three hours — the leaks are obvious once you list them',
     description:
-      'The pressure comes from repeat coordination work around one-to-one appointments. The issue is rarely effort — it is the lack of a reliable operating path around the appointment itself.',
+      'It’s the bit you can’t do with tweezers in your hand. Replies. Reminders. Patch tests. Reviews.',
     benefits: [
       {
         icon: Sparkles,
-        title: 'Enquiries arrive outside working hours',
+        title: 'A “how much for a full set?” at 9.30pm sat unread until morning',
         description:
-          'Potential clients often message in the evening or between appointments, which makes fast, consistent replies hard to maintain manually.',
+          'You see it after breakfast. She’s already booked the artist who replied while you were eating dinner.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'No-shows and late changes disturb the diary',
+        title: 'A no-show on a three-hour slot with nothing on deposit',
         description:
-          'A single missed appointment can affect income, timing, and the rest of the day when reminders, deposits, or policies are unclear.',
+          'Three hours of the day, gone. A reminder the night before would have caught it.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Prep, patch test, and aftercare steps get repeated manually',
+        title: 'You’ve typed the same patch test message ten times this week',
         description:
-          'The same explanations get sent again and again before and after appointments, adding admin pressure and inconsistency.',
+          'Prep, aftercare, infill timing — the same explanations on repeat between sets.',
         iconType: 'accent' as const,
       },
       {
         icon: MapPinned,
-        title: 'Trust signals are present but not connected',
+        title: 'The lash bar in town has 800 reviews. You have 32.',
         description:
-          'Photos, reviews, pricing, policies, and location visibility all exist — but they do not work together to support booking confidence.',
+          'You do better work. Locally you look smaller because nobody was ever asked.',
         iconType: 'primary' as const,
       },
     ],
@@ -87,162 +87,169 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Layers',
-    title: 'The working layers behind a steadier lash business',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to catch enquiries, fill the diary, and stop typing the same thing twice',
     description:
-      'The system supports the whole lash workflow from enquiry to repeat booking — not just disconnected tools bolted on.',
+      'Each piece does one job. Together they keep the day running while your hands are on someone’s eyes.',
     featureCategories: [
       {
-        title: 'Enquiry and reply layer',
+        title: 'Reply to every DM and missed call inside a minute',
         description:
-          'Handles questions about treatments, pricing, patch tests, and availability with a consistent first response.',
+          'Late-night messages get an instant answer with prices, options, and a booking link — even when you’re mid-set.',
         icon: Sparkles,
         features: [
-          'Faster first replies',
-          'Consistent booking guidance',
-          'After-hours response support',
+          'Instant replies on Instagram, Facebook, web, missed calls',
+          'Pricing, classics vs hybrids vs volume answered up front',
+          'Booking link in the same message',
         ],
       },
       {
-        title: 'Booking and reminder layer',
+        title: 'Let clients book themselves, deposit and all',
         description:
-          'Connects service selection, availability, deposits, confirmation, and reminders into one coordinated path.',
+          'They pick the service, the slot, and pay a deposit at the same time. The diary stays full, no-shows drop.',
         icon: Calendar,
-        features: ['Online booking flow', 'Reminder timing', 'Deposit and policy visibility'],
+        features: [
+          'Online booking by service',
+          'Deposits taken at booking',
+          'Reminders the day before',
+        ],
       },
       {
-        title: 'Client preparation layer',
+        title: 'Stop typing the same prep and aftercare ten times a week',
         description:
-          'Delivers prep guidance, consultation questions, patch-test information, and aftercare content predictably.',
+          'Patch test info, prep instructions, aftercare — sent automatically when they need them.',
         icon: Bell,
-        features: ['Pre-appointment guidance', 'Patch-test messaging', 'Aftercare follow-up'],
+        features: [
+          'Patch test confirmation handled for you',
+          'Prep guidance the day before',
+          'Aftercare sent right after the appointment',
+        ],
       },
       {
-        title: 'Visibility and trust layer',
+        title: 'Show up when local women search for lashes',
         description:
-          'Ties service pages, local search, and review proof together so discovery turns into bookings.',
+          'Service pages, photos, and Google profile lined up so you appear before the lash bar in town.',
         icon: Search,
         features: [
-          'Service-page clarity',
-          'Google Business Profile support',
-          'Local trust reinforcement',
+          'Pages for classics, hybrids, volume, lifts, infills',
+          'Photos that do the selling for you',
+          'Found on Maps for local searches',
         ],
       },
       {
-        title: 'Retention and reputation layer',
+        title: 'Turn finished sets into reviews and rebookings',
         description:
-          'Handles review requests and rebooking prompts so good experiences stay visible and repeat visits compound.',
+          'A review request after every set. An infill nudge at the right interval. Repeat work fills itself.',
         icon: Star,
-        features: ['Review requests', 'Rebooking prompts', 'Longer-term trust building'],
+        features: [
+          'Review requests after every appointment',
+          'Infill nudges at 2–3 weeks',
+          'Quiet days offered out to past clients',
+        ],
       },
     ],
     columns: 3 as const,
   };
 
   const comparisonData = {
-    badge: 'Operational Shift',
-    title: 'From reactive booking management to a more predictable service flow',
-    description:
-      'The personal service stays. The repeatable friction around booking, reminders, and follow-up gets removed.',
+    badge: 'What Actually Changes',
+    title: 'A normal week working solo, before and after',
+    description: 'The personal service stays. The bits that drain you and lose bookings get fixed.',
     comparisons: [
       {
         type: 'before' as const,
-        title: 'Before the workflow is structured',
+        title: 'How it runs now',
         items: [
-          'Client questions sit in DMs until there is time to reply',
-          'Deposits, preparation, and policies are explained repeatedly',
-          'Reminders and follow-up happen when there is a gap between clients',
-          'Trust depends on manual reassurance during every booking exchange',
+          'A 9pm DM about classics sat unread until morning. She booked someone else.',
+          'A three-hour Saturday no-show with nothing on deposit.',
+          'You typed the same patch test info ten times this week.',
+          '“Amazing lashes” — said by hundreds, written by 32.',
         ],
       },
       {
         type: 'after' as const,
-        title: 'After the workflow is aligned',
+        title: 'How it runs after',
         items: [
-          'Clients can understand services, pricing, and next steps sooner',
-          'Booking and reminder flow protects the calendar more consistently',
-          'Preparation and aftercare guidance can be delivered in a calmer way',
-          'Reviews and rebooking prompts happen with less manual chasing',
+          'The 9pm DM gets a friendly reply with prices and a booking link inside a minute.',
+          'A reminder the day before plus a deposit at booking. No-shows drop.',
+          'Prep, patch test, aftercare — sent automatically. You stop typing the same thing.',
+          'Every happy client gets asked. Reviews catch up to the work.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Lead To Booking Flow',
-    title: 'From enquiry to appointment and follow-up',
-    description:
-      'Each stage moves people through a different part of the journey — from first contact to appointment readiness to repeat booking.',
+    badge: 'Where Most Lash Artists Start',
+    title: 'Three stages — most artists feel one of them more than the others',
+    description: 'Pick whichever costs you the most bookings right now.',
     packages: [
       {
-        name: 'Enquiry to booking setup',
+        name: 'Catch every enquiry, even mid-set',
         description:
-          'Gives the website enough structure that clients can understand services, pricing, and availability before reaching out.',
-        price: 'Flow stage 1',
-        priceDetail: 'Best when the main issue is clarity before booking',
+          'For when DMs sit until evening and the booking goes to whoever replied first.',
+        price: 'Stage 1',
+        priceDetail: 'Start here if enquiries are leaking while you’re working',
         features: [
-          'Service-page structure for lash treatments',
-          'Pricing, FAQ, and policy clarity',
-          'Basic enquiry capture and direction',
+          'Instant replies on DMs, calls, forms',
+          'Pricing, set type, slot all answered up front',
+          'Booking link in the same message',
         ],
       },
       {
-        name: 'Booking protection setup',
-        description:
-          'Adds booking protection through reminders, deposit visibility, and post-visit follow-up.',
-        price: 'Flow stage 2',
-        priceDetail: 'Best when no-shows and follow-up consistency are the pressure points',
+        name: 'Protect the diary and stop the no-shows',
+        description: 'For when three-hour slots disappear with no warning.',
+        price: 'Stage 2',
+        priceDetail: 'Start here if no-shows are the biggest leak',
         features: [
-          'Online booking with reminder support',
-          'Deposit and rescheduling visibility',
-          'Review and rebooking prompts',
+          'Self-serve booking by service and slot',
+          'Deposits taken at booking',
+          'Patch test, prep, and aftercare sent automatically',
         ],
         popular: true,
       },
       {
-        name: 'Follow-up and retention setup',
+        name: 'Bring infill clients back and turn them into proof',
         description:
-          'Connects enquiry handling, preparation, reminders, reviews, and rebooking into one coordinated flow.',
-        price: 'Flow stage 3',
-        priceDetail: 'Best when multiple communication steps need to work together',
+          'For when the work is great but reviews and infill rebookings happen by accident.',
+        price: 'Stage 3',
+        priceDetail: 'Start here if reviews and retention are the weak spot',
         features: [
-          'Enquiry and reply workflow support',
-          'Automations across prep, reminders, and follow-up',
-          'Operational touchpoints for better predictability',
+          'Review requests after every set',
+          'Infill nudges at the right interval',
+          'Quiet days offered out automatically',
         ],
       },
     ],
   };
 
   const workflowExamplesData = {
-    badge: 'Follow-Up Examples',
-    title: 'What the lead, booking, and follow-up flow looks like in practice',
-    description:
-      'Repeatable situations where the system removes friction while keeping the business personal.',
+    badge: 'Real Situations',
+    title: 'A few moments where the difference shows up',
+    description: 'Small moments mid-set that used to need you to stop, wash up, and type.',
     workflows: [
       {
-        trigger: 'A new client wants to know if a lash lift or extensions are the better fit.',
+        trigger: 'A new client DMs at 10pm asking if classic or hybrid suits her better.',
         actions: [
-          'Send the right service explanation and booking path',
-          'Collect any key consultation details early',
-          'Move the client into the right appointment type',
+          'She gets a friendly reply inside a minute with the difference and a booking link',
+          'She picks a slot, deposit included',
+          'By morning she’s in your diary, not someone else’s',
         ],
       },
       {
-        trigger:
-          'An appointment is booked and the client needs prep guidance, timing, and policy details.',
+        trigger: 'A new client books a full set for next Tuesday.',
         actions: [
-          'Send preparation guidance automatically',
-          'Confirm deposit, timing, or rescheduling expectations',
-          'Reduce avoidable no-shows and day-of confusion',
+          'Patch test info goes out automatically with timing instructions',
+          'A reminder fires the day before',
+          'Aftercare lands in her inbox a couple of hours after the set',
         ],
       },
       {
-        trigger: 'The appointment is done and the studio needs a review and a rebooking prompt.',
+        trigger: 'An infill client leaves looking incredible.',
         actions: [
-          'Send a well-timed review request',
-          'Share aftercare or next-step guidance',
-          'Create a cleaner path back to the next appointment',
+          'A review request goes out a few hours later',
+          'At two weeks, an infill nudge appears',
+          'She rebooks without you remembering to chase',
         ],
       },
     ],
@@ -258,9 +265,9 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
   };
 
   const exploreData = {
-    badge: 'Explore',
+    badge: 'Related',
     description:
-      'Relevant service layers for lash studios that want clearer booking, stronger trust, and steadier follow-up.',
+      'The other parts of the system that come up most often for lash artists trying to keep the diary full while working solo.',
     cards: [
       {
         icon: Workflow,
@@ -300,58 +307,38 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Common questions about lash studio systems',
-    description: 'Common questions about MindWP for lash extension businesses',
+    title: 'Things lash artists usually ask',
+    description: 'Straight answers about how this fits a solo lash business.',
     faqs: [
       {
-        question: 'How can lash technicians improve their online presence?',
+        question: 'I work alone with my eyes on someone’s lashes. Will this actually help?',
         answer:
-          'Keep your Google Business Profile up to date with clear photos, accurate services, and consistent business details. On your website, use dedicated pages for key services (classic, volume, hybrid, lash lifts, infills) and make it easy for clients to understand pricing and availability. Collect reviews with a simple, repeatable process and post occasional updates so your profile stays active.',
+          'Yes — that’s exactly the point. Every DM, missed call, and form gets an instant reply with prices, options, and a booking link, even while you’re mid-set. You stop losing work to whoever replied first.',
       },
       {
-        question: 'Should lash technicians take deposits when clients book online?',
+        question: 'Should I be taking deposits?',
         answer:
-          'Deposits are often a good fit for appointment-based services because they set expectations and reduce last-minute cancellations. If you do take deposits, keep the policy simple and visible at booking (what it covers, rescheduling rules, and how it is applied to the final price). We can support deposit collection as part of the booking flow.\n\nThis is not financial or legal advice — use a policy that fits your local rules and your business model.',
+          'For three-hour sets, almost always yes. A small deposit at booking pays for itself in one prevented no-show. The system collects it without you doing anything.',
       },
       {
-        question: 'Can lash studios automate appointment reminders to reduce no-shows?',
+        question: 'Can it stop me typing patch test info ten times a week?',
         answer:
-          'Yes. Automated SMS and email reminders can reduce missed appointments by keeping bookings top of mind. You can also add preparation reminders (for example: arrive with clean lashes) and follow-up messages with aftercare tips, so clients feel looked after and your day stays predictable.',
+          'Yes. Patch test confirmation, prep instructions, and aftercare get sent automatically at the right moment. You stop being a copy-paste machine.',
       },
       {
-        question: "What's the best way for lash artists to get Google reviews?",
+        question: 'How do reminders cut no-shows on three-hour slots?',
         answer:
-          'Use a consistent review request process after appointments, with a direct review link and a short, polite message. The key is timing: send it soon enough that the experience is fresh, without making the client feel pressured. Our system can automate these requests with sensible defaults.\n\nAlways follow platform rules and keep requests genuine (no incentives).',
+          'A friendly reminder the day before catches almost all of them. Anyone who can’t make it gets a reschedule link instead of just disappearing.',
       },
       {
-        question: 'How can mobile lash technicians rank on Google Maps without a salon address?',
+        question: 'I’m mobile / I work from home. Can I still rank locally?',
         answer:
-          'Set your Google Business Profile up as a service-area business and define the areas you serve. On your website, add clear service-area/location pages (only where you genuinely operate) and keep your business details consistent across listings. This helps Google understand where you work and what you offer.',
+          'Yes — your Google profile gets set up as a service-area business with the areas you actually cover, and your service pages do the rest of the trust work.',
       },
       {
-        question: 'Should lash technicians show pricing on their website?',
+        question: 'Do I need a brand new website?',
         answer:
-          'Usually, yes. Clear pricing reduces back-and-forth messages and helps clients self-qualify. If your services vary, you can show a starting price and explain what affects the final cost (for example: fill level, time, or style), so expectations are aligned before booking.',
-      },
-      {
-        question: 'Can lash technicians automate new client consultations and patch tests?',
-        answer:
-          'Yes. You can use forms and automated messages to collect consultation details, share preparation guidance, and handle any required patch test steps in a consistent way. The goal is to keep onboarding calm, reduce risk, and avoid manual chasing.\n\nHealth-related requirements vary — follow your local guidance and your insurer’s rules.',
-      },
-      {
-        question: 'How can lash studios compete with beauty chains like Blink Brow Bar?',
-        answer:
-          'Focus on what you can do consistently: calm communication, clear expectations, reliable booking, and visible proof of work (before/after, reviews, and service pages). Local search visibility helps, but so does a smooth experience: quick answers, clear policies, and a predictable schedule.',
-      },
-      {
-        question: 'Should lash technicians create separate pages for different lash styles?',
-        answer:
-          'It can help. Separate pages for key services (classic, volume, hybrid, lash lifts, infills) make it easier for clients to find the right option and understand what they’re booking. It also helps search engines match your pages to specific queries, as long as the content is genuinely useful.',
-      },
-      {
-        question: 'How long does it take for a lash technician to get bookings from SEO?',
-        answer:
-          'It varies by location and competition. Profile cleanup and website improvements can start helping relatively quickly, but consistent results usually take time because search visibility compounds. If you need enquiries sooner, you can combine a solid SEO foundation with short-term channels while organic visibility builds.\n\nWe focus on the foundational work first: clear service pages, booking clarity, and trust signals (reviews and proof).',
+          'Usually not. We look at what you have first. The leak is normally everything that happens after someone tries to book — not the site itself.',
       },
     ],
   };
@@ -372,9 +359,9 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
       enabled: false,
     },
     seo: {
-      title: 'Lash Lift & Extensions — Smart Website Systems | MindWP',
+      title: 'Lash Lift & Extensions — Stop Losing Mid-Set DMs and No-Shows | MindWP',
       description:
-        'Smart Website systems for lash studios that need clearer booking flow, no-show reduction, review automation, and stronger local visibility to fill more appointments.',
+        'For lash artists working solo, whose DMs sit until evening, whose three-hour slots get no-showed, and who type the same patch test message ten times a week. We put the system in place so the business runs while your hands are full.',
       keywords: [
         'lash extension booking system',
         'lash salon crm automation',
@@ -397,9 +384,9 @@ function buildLashExtensionsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Build a calmer lash booking system',
+      title: 'Tell us where the day is leaking',
       description:
-        'If enquiry gaps, booking friction, inconsistent reminders, or weak follow-up are slowing things down, we can map a practical setup around how the service runs.',
+        'If DMs sit until evening, if no-shows are eating three-hour slots, or if reviews never get asked for — walk us through how the day actually runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

@@ -14,25 +14,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildAccountingFirmsIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Coverage Lane',
-    title: 'Smart Website Systems for Accounting Firms',
+    badge: 'For Accounting Firms',
+    title: 'A Limited Company Founder Sent Three Firms The Same Email. The First To Reply Got The Engagement.',
     description:
-      'An accounting firm website should support service-fit qualification, consultation booking, information readiness, and follow-up — without making every new client conversation depend on manual chasing.',
+      'Founders, contractors, and small businesses don’t shop accountants slowly anymore. They send three enquiries on a Tuesday and pick whoever sounds organised first. We put the system in place that catches the right enquiries, books the discovery call, and stops the easy ones from drifting.',
     list: [
-      'Clearer service-fit routing',
-      'Better consultation flow',
-      'Stronger trust signals',
-      'More reliable follow-up',
+      'Enquiries that needed a same-day reply',
+      'Discovery calls that took six emails to book',
+      'Onboarding chasers nobody had time to send',
+      'Reviews from happy clients you never asked',
     ],
     cssPrefix: 'accounting-firms-hero',
   };
 
   const imageStripData = {
-    badge: 'Service Environment',
-    title:
-      'Accounting demand depends on clarity, readiness, and trust before the advisory relationship starts',
+    badge: 'How Accounting Enquiries Actually Land',
+    title: 'It’s rarely “who’s the best accountant” — it’s “who replied first and sounded organised”',
     description:
-      'Bookkeeping enquiries, tax questions, advisory requests, consultation timing, information readiness, and follow-up all shape whether a prospect progresses. When those steps feel disconnected, the intake process becomes harder to manage and harder to trust.',
+      'A founder sends three enquiries on a Tuesday morning. By Wednesday lunchtime they’ve picked one. The technical work is the same; the intake experience decides it.',
     items: [
       {
         title: 'Service-fit enquiries',
@@ -60,37 +59,36 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where accounting firms lose clarity, time, or client momentum',
-    description:
-      'The gap is rarely visibility alone — it sits between first enquiry, service-fit qualification, consultation timing, readiness for the next step, and the trust proof someone needs before they commit.',
+    badge: 'Where The Work Slips',
+    title: 'You’re mid-VAT return. The phone rings. They book a discovery call with the next firm.',
+    description: 'Same handful of leaks in nearly every small accounting practice. None of them are about the technical work.',
     benefits: [
       {
         icon: Calculator,
-        title: 'Prospects arrive without enough information to identify the right service path',
+        title: 'A new limited company enquiry sat unread for two days',
         description:
-          'Bookkeeping, tax, advisory, and compliance needs arrive through one loose path — first-response quality drops when everything routes the same way.',
+          'You were heads-down on year-ends. By the time you replied, they’d already had a Zoom with somebody else.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'Consultation booking creates friction when readiness is unclear',
+        title: 'Six emails to book one discovery call',
         description:
-          'Availability, business stage, existing records, and next steps sit in different places — the intake process slows before it should.',
+          '“Tuesday at 2?” “Can’t do Tuesday.” “Thursday morning?” The good ones don’t stick around for that.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Nurture and pending-decision follow-up depend too much on manual effort',
+        title: 'A proposal went out and you never heard back',
         description:
-          'Some enquiries are not ready immediately, but follow-up often becomes inconsistent when advisors are already handling active client work.',
+          'One follow-up email two weeks later would have closed half of these. Nobody had time to send it.',
         iconType: 'accent' as const,
       },
       {
         icon: FileText,
-        title: 'Trust signals stay fragmented across the decision path',
+        title: 'The firm down the road has 200 reviews. You have 11.',
         description:
-          'Reviews, case-style proof, advisor credibility, and service clarity exist in different places — they rarely work together to support a confident first consultation.',
+          'Your retention is better. Online you look smaller because nobody was ever asked at the right moment.',
         iconType: 'primary' as const,
       },
     ],
@@ -98,155 +96,178 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Layers',
-    title: 'The working layers behind a steadier accounting intake pipeline',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to handle enquiries, book discovery calls, and turn happy clients into reviews',
     description:
-      'An accounting workflow needs structure before consultations, during service-fit qualification, and after first contact — especially when the client decision takes time.',
+      'Each piece does one job. Together they keep the intake moving while you do the actual accounting work.',
     featureCategories: [
       {
-        title: 'Service-fit qualification layer',
+        title: 'Reply to enquiries the same hour, even mid-deadline',
         description:
-          'Routes new enquiries through a clearer first-contact path so the right service type reaches the right next step.',
+          'Form lands, an instant acknowledgement goes out with what to expect next. Most prospects stop emailing other firms.',
         icon: MessageSquare,
-        features: ['Intent capture', 'Service-fit qualification', 'Cleaner first response'],
+        features: [
+          'Same-hour acknowledgement on every enquiry',
+          'Service type captured up front',
+          'Holds the lead until you can call back',
+        ],
       },
       {
-        title: 'Consultation booking layer',
+        title: 'Book the discovery call without the email tennis',
         description:
-          'Moves discovery calls and consultations into a booked next step without unnecessary delay.',
+          'Prospects pick a slot themselves. “Tuesday at 2 or Thursday at 10?” gets replaced with a calendar link.',
         icon: Calendar,
-        features: ['Consultation scheduling', 'Reminder touchpoints', 'Next-step guidance'],
+        features: [
+          'Self-serve discovery call booking',
+          'Reminders the day before',
+          'Reschedule link instead of a no-show',
+        ],
       },
       {
-        title: 'Information-readiness layer',
+        title: 'Tell them what to bring before you sit down',
         description:
-          'Gives prospects a clearer view of what records or context to prepare before the first conversation.',
+          'Last year’s accounts, UTR, bank feed access — sent automatically before the call so the meeting is actually useful.',
         icon: FileText,
-        features: ['Readiness guidance', 'Information prompts', 'Expectation setting'],
+        features: [
+          'Pre-call info request automatically',
+          'Sets the right expectations',
+          'Discovery calls actually go somewhere',
+        ],
       },
       {
-        title: 'Nurture and follow-up layer',
+        title: 'Follow up the proposals that go quiet',
         description:
-          'Keeps pending decisions on a calmer, more consistent follow-up path so opportunities do not disappear into silence.',
+          'Proposal sent Monday, automatic check-in Friday, another a week later. Quietly closes more.',
         icon: Workflow,
-        features: ['Lead nurture', 'Decision reminders', 'Pipeline visibility'],
+        features: [
+          'Proposal follow-up at the right intervals',
+          'Pending engagements visible in one place',
+          'Closing rate goes up without nagging',
+        ],
       },
       {
-        title: 'Trust and proof layer',
+        title: 'Turn finished onboardings into reviews',
         description:
-          'Connects reviews, clarity, and advisor proof so they support the consultation decision before the appointment.',
+          'A polite review request goes out the week after the first month-end is done and the client is relieved.',
         icon: ShieldCheck,
-        features: ['Review requests', 'Proof-of-service support', 'Trust-led page structure'],
+        features: [
+          'Review requests at the right moment',
+          'Asked once, never again',
+          'Reviews catch up to your retention',
+        ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Show up for the right type of client locally',
         description:
-          'Reinforces the businesses and locations the firm wants through area pages and search visibility.',
+          'Service pages and Google profile lined up so contractors, limited companies, or e-commerce founders find you first.',
         icon: Search,
-        features: ['Area-page targeting', 'Local search clarity', 'Authority-page support'],
+        features: [
+          'Pages for the niches you actually want',
+          'Found on local and niche searches',
+          'Less time on enquiries that aren’t a fit',
+        ],
       },
     ],
     columns: 3 as const,
   };
 
   const comparisonData = {
-    badge: 'Operational Shift',
-    title: 'From reactive accounting enquiries to a steadier consultation and follow-up flow',
-    description:
-      'The advisory relationship stays personal. The repeatable friction around qualification, consultation coordination, and follow-up gets reduced.',
+    badge: 'What Actually Changes',
+    title: 'A normal week, before and after',
+    description: 'The advisory work stays personal. The intake stops eating evenings.',
     comparisons: [
       {
         type: 'before' as const,
-        title: 'Before the workflow is structured',
+        title: 'How it runs now',
         items: [
-          'Enquiries arrive without enough detail to route them quickly',
-          'Consultation booking depends on manual back-and-forth',
-          'Pending opportunities are hard to follow consistently',
-          'Trust depends too heavily on one-off reassurance during early conversations',
+          'A new limited company enquiry sat in the inbox for two days.',
+          'Six emails to pin down one discovery call.',
+          'A proposal went out and never got followed up.',
+          '“We meant to ask for a review” — said about every onboarding.',
         ],
       },
       {
         type: 'after' as const,
-        title: 'After the workflow is aligned',
+        title: 'How it runs after',
         items: [
-          'New enquiries move into the right consultation or nurture path faster',
-          'Booking and reminder flow protect the next step more consistently',
-          'Follow-up happens with less manual chasing',
-          'Reviews, authority signals, and page structure support better decision confidence',
+          'Every enquiry gets an instant acknowledgement and the right next step.',
+          'Discovery calls booked through one link, no email tennis.',
+          'Proposals get followed up automatically. More close.',
+          'Reviews get asked for at the right moment, every time.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Lead To Consultation Flow',
-    title: 'How the accounting workflow moves from first enquiry to consultation and follow-up',
-    description:
-      'How the system moves accounting enquiries from first contact into the right consultation path — then into consistent follow-up when the decision takes time.',
+    badge: 'Where Most Firms Start',
+    title: 'Three stages — most firms feel one of them more than the others',
+    description: 'Pick whichever costs you the most engagements right now.',
     packages: [
       {
-        name: 'Qualification and service-path capture',
-        description:
-          'Routes bookkeeping, tax, and advisory enquiries into a clearer first step — so the right details reach the right advisor faster.',
-        price: 'Flow stage 1',
-        priceDetail: 'Best when lead quality and first-contact clarity are the main issue',
+        name: 'Stop losing the same-day enquiries',
+        description: 'For when good prospects email three firms and pick whoever replied first.',
+        price: 'Stage 1',
+        priceDetail: 'Start here if first-reply speed is the biggest leak',
         features: [
-          'Intent-specific service pages',
-          'Better enquiry capture',
-          'Business and timing context',
+          'Instant acknowledgement on every enquiry',
+          'Service type and timing captured up front',
+          'Most prospects stop emailing the next firm',
         ],
       },
       {
-        name: 'Consultation and readiness flow',
-        description:
-          'Adds steadier scheduling, clearer reminders, and better control over the next step after first contact.',
-        price: 'Flow stage 2',
-        priceDetail: 'Best when booking and information-readiness handling create friction',
-        features: ['Consultation scheduling support', 'Reminder structure', 'Readiness guidance'],
+        name: 'Close the discovery calls and proposals that drift',
+        description: 'For when discovery calls take six emails and proposals go quiet.',
+        price: 'Stage 2',
+        priceDetail: 'Start here if booking and proposal follow-up is the leak',
+        features: [
+          'Self-serve discovery call booking',
+          'Pre-call info request automatically',
+          'Proposal follow-up at the right intervals',
+        ],
         popular: true,
       },
       {
-        name: 'Follow-up and trust reinforcement',
-        description:
-          'Keeps pending opportunities, reviews, and credibility proof moving in a more reliable way.',
-        price: 'Flow stage 3',
-        priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
-        features: ['Nurture workflows', 'Review request support', 'Trust reinforcement'],
+        name: 'Build the local proof that fills the diary on its own',
+        description: 'For when retention is great but the firm looks small online.',
+        price: 'Stage 3',
+        priceDetail: 'Start here if reviews and niche visibility are the weak spot',
+        features: [
+          'Review requests after every onboarding',
+          'Service pages for the niches you want',
+          'Less time on enquiries that aren’t a fit',
+        ],
       },
     ],
   };
 
   const workflowExamplesData = {
-    badge: 'Follow-Up Examples',
-    title: 'What the accounting lead, consultation, and follow-up flow looks like in practice',
-    description:
-      'Repeatable situations where a structured accounting setup reduces friction — without making the firm feel scripted.',
+    badge: 'Real Situations',
+    title: 'A few moments where the difference shows up',
+    description: 'Small moments in the week of a small firm where things used to drift.',
     workflows: [
       {
-        trigger:
-          'A new enquiry arrives and the firm needs to determine whether the prospect needs bookkeeping, tax support, advisory help, or a broader consultation before booking the next step.',
+        trigger: 'A new limited company enquiry lands at 9am during year-end season.',
         actions: [
-          'Capture the right intent and timing early',
-          'Route the enquiry into the right consultation or nurture path',
-          'Reduce wasted time on unclear first contact',
+          'Instant acknowledgement goes out within minutes',
+          'Service type and timing captured before you reply',
+          'They stop emailing the other two firms',
         ],
       },
       {
-        trigger:
-          'A consultation is requested and the business needs to confirm timing, readiness, and information expectations clearly.',
+        trigger: 'A discovery call is booked for next Thursday.',
         actions: [
-          'Move the lead into a booked consultation window',
-          'Send reminders and preparation guidance',
-          'Keep internal handoff cleaner between enquiry and consultation handling',
+          'Pre-call info request goes out the day before',
+          'Reminder lands the morning of the call',
+          'The meeting actually goes somewhere',
         ],
       },
       {
-        trigger:
-          'The consultation is complete and the firm wants to keep the opportunity moving without manual chasing every time.',
+        trigger: 'A proposal was sent Monday and went quiet.',
         actions: [
-          'Send measured follow-up at the right times',
-          'Keep the lead stage visible internally',
-          'Support the decision with reviews and authority proof if needed',
+          'A friendly check-in goes out Friday',
+          'Another a week later if no reply',
+          'Proposal-to-engagement quietly improves',
         ],
       },
     ],
@@ -263,9 +284,9 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
   };
 
   const exploreData = {
-    badge: 'Explore',
+    badge: 'Related',
     description:
-      'Relevant service layers for accounting firms that want cleaner consultations, steadier follow-up, and stronger local trust support.',
+      'The other parts of the system that come up most often for small accounting practices.',
     cards: [
       {
         icon: Workflow,
@@ -306,39 +327,38 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Common questions about accounting firm systems',
-    description: 'Common questions about MindWP for accounting firms',
+    title: 'Things accountants usually ask',
+    description: 'Straight answers about how this fits a small accounting practice.',
     faqs: [
       {
-        question: 'How can an accounting firm get more qualified enquiries from a website?',
+        question: 'I’m flat out during year-end. Will this need someone in the office?',
         answer:
-          'Clearer bookkeeping, tax, and advisory paths — combined with better qualification prompts and guided next steps — reduce uncertainty early and directly improve enquiry quality.',
+          'No. The whole point is it runs while the team is heads-down on client work. You’ll see what came in on your phone between calls, but nothing waits on you to operate it.',
       },
       {
-        question: 'Should accounting firms offer online consultation requests?',
+        question: 'Can it really reply to enquiries faster than I can?',
         answer:
-          'Yes — a clean request path reduces back-and-forth and moves people into the right next step faster. The key is capturing context early: business stage, service need, and readiness.',
+          'Yes — not with anything pretending to be you. Just an instant acknowledgement that captures what they need and tells them when you’ll be in touch. Most prospects stop emailing other firms once they get that.',
       },
       {
-        question: 'How do accounting firms reduce slow follow-up on colder opportunities?',
+        question: 'Will it integrate with Xero, QuickBooks, or my practice software?',
         answer:
-          'A better enquiry system separates ready-now prospects from nurture-stage opportunities, then supports measured follow-up over time — less manual chasing, more consistency.',
+          'It sits in front of all that. The internal tools you already use stay where they are. The system improves the bit between the enquiry landing and onboarding starting.',
       },
       {
-        question: 'Do accounting firms need separate pages for different service lines?',
+        question: 'Can it help with proposal follow-up specifically?',
         answer:
-          'Often, yes, as long as the pages reflect real service paths and useful information rather than thin copy. Good service-page structure helps local visibility and also helps prospects feel confident that the firm handles their situation.',
+          'Yes — friendly check-in messages go out at the right intervals after a proposal is sent. Proposal-to-engagement conversion changes noticeably without anybody chasing.',
       },
       {
-        question: 'What kind of reviews matter most for accounting firms?',
+        question: 'How do I get more reviews without nagging clients?',
         answer:
-          'The most useful reviews reinforce trust, clarity, and the feeling that the firm made financial complexity easier to understand. A structured review request process after completed work can help build that proof more consistently over time.',
+          'A polite request goes out the week after the first month-end is done, when the client is most relieved. People who would have meant to leave one actually do.',
       },
       {
-        question:
-          'Can a Smart Website system help an accounting firm without replacing its practice software?',
+        question: 'Do I need to scrap my current website?',
         answer:
-          'Yes. The system improves the public-facing side of the workflow by making enquiries, consultation booking, readiness guidance, and follow-up more consistent. It does not require replacing the internal tools you already use.',
+          'Usually not. We look at what you have first. The leak is normally the bit between the enquiry landing and the engagement starting — not the site itself.',
       },
     ],
   };
@@ -356,9 +376,9 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'legal-professional-services',
     seo: {
-      title: 'Accounting Firms — Smart Website Systems | MindWP',
+      title: 'Accounting Firms — Stop Losing Same-Day Enquiries, Discovery Calls & Proposals | MindWP',
       description:
-        'Smart Website systems for accounting firms that need clearer qualification, consultation flow, and stronger trust support.',
+        'For small accounting practices where new enquiries get picked up by whoever replied first, discovery calls take six emails to book, and proposals go quiet. We put the system in place that catches the right clients.',
       keywords: [
         'accounting firm website design',
         'accounting lead handling system',
@@ -381,9 +401,9 @@ function buildAccountingFirmsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Build a steadier accounting intake and follow-up system',
+      title: 'Tell us where the work is leaking',
       description:
-        'If your firm is dealing with unclear enquiry quality, loose consultation flow, or inconsistent follow-up — we can map a practical system around how the pipeline actually runs.',
+        'If new enquiries take days to acknowledge, if discovery calls take a week of emails, or if proposals go quiet — walk us through how the practice runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

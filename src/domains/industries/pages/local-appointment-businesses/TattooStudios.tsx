@@ -13,25 +13,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildTattooStudiosIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Coverage Lane',
-    title: 'Smart Website Systems for Tattoo Studios',
+    badge: 'For Tattoo Studios',
+    title: 'A £400 Sleeve DM Came In At 11pm. By Morning, Three Other Studios Had Already Replied.',
     description:
-      'A tattoo studio website should support consultation enquiries, artist-fit clarity, booking readiness, and follow-up — without making every new request depend on manual messaging.',
+      'Tattoo decisions happen on Instagram at midnight. People DM three studios with reference images and book whoever replied first with a price and a date. We put the system in place that catches the DMs while you’re tattooing, takes the deposit so the chair doesn’t sit empty, and stops Sunday no-shows from killing the day rate.',
     list: [
-      'Clearer consultation qualification',
-      'Better booking readiness flow',
-      'Stronger trust signals',
-      'More reliable follow-up',
+      'DMs that came in while you were tattooing',
+      'Quote conversations that took 20 messages',
+      'Deposits that never quite got paid',
+      'Reviews from finished pieces you never asked for',
     ],
     cssPrefix: 'tattoo-studios-hero',
   };
 
   const imageStripData = {
-    badge: 'Service Environment',
-    title:
-      'Trust, fit, and preparation clarity shape the booking path before the session is confirmed',
+    badge: 'How Tattoo Enquiries Actually Land',
+    title: 'Reference image lands at 11pm. They DM’d three studios. Whoever replied first wins.',
     description:
-      'Style enquiries, placement questions, artist-fit concerns, consultation timing, and follow-up all affect whether someone progresses. When those steps feel disconnected, the booking path loses trust.',
+      'Instagram DMs at evenings and weekends. Reference photos. “How much for this on the forearm?” The decision happens in 24 hours.',
     items: [
       {
         title: 'Style and fit enquiries',
@@ -59,37 +58,36 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where tattoo studios lose clarity, time, or momentum',
-    description:
-      'The gap is rarely visibility alone — it sits between first enquiry, consultation fit, booking timing, and the trust someone needs before committing to the appointment.',
+    badge: 'Where The Chair Sits Empty',
+    title: 'You’re mid-piece. The DMs pile up. By the time you reply, they’re booked elsewhere.',
+    description: 'Same handful of leaks across nearly every tattoo studio. None of them are about the artwork.',
     benefits: [
       {
         icon: PenTool,
-        title: 'Different tattoo requests arrive without enough context to route well',
+        title: 'Six DMs piled up while you tattooed a back piece',
         description:
-          'Style, size, placement, and artist-fit questions arrive through one loose path — first-response quality drops when everything routes the same way.',
+          'You couldn’t answer mid-shading. Three booked with the studio across town by Sunday.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'Consultation and session booking create friction when readiness is unclear',
+        title: 'A sleeve quote took 20 messages back and forth',
         description:
-          'Availability, preparation, deposits, and next steps sit in different places — the booking flow slows before it should.',
+          '“How much?” “How many sessions?” “What date?” The client lost patience around message twelve.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Pending enquiries depend too much on manual follow-up',
+        title: 'A Saturday client no-showed. £400 day gone.',
         description:
-          'Some prospects need time, but follow-up becomes inconsistent when artists and staff are already managing the week.',
+          'No deposit taken. The chair sat empty. The artist sat scrolling.',
         iconType: 'accent' as const,
       },
       {
         icon: Star,
-        title: 'Trust signals stay fragmented across the booking decision path',
+        title: 'You do incredible work. The studio down the road has 300 reviews. You have 32.',
         description:
-          'Portfolio proof, reviews, and studio credibility exist in different places — they rarely work together to support a confident first booking.',
+          'Your portfolio is better. Online you look smaller because nobody asked at the right moment.',
         iconType: 'primary' as const,
       },
     ],
@@ -97,148 +95,178 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Layers',
-    title: 'The working layers behind a steadier tattoo booking pipeline',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to catch the DMs and make sure the chair doesn’t sit empty',
     description:
-      'A tattoo workflow needs structure before consultations, during booking readiness, and after first contact — especially when the decision takes time.',
+      'Each piece does one job. Together they keep the diary booked and the deposit in the bank.',
     featureCategories: [
       {
-        title: 'Consultation qualification layer',
+        title: 'Reply to DMs while you’re tattooing',
         description:
-          'Routes new enquiries through a clearer first-contact path so the right style and fit details reach the right artist.',
+          'DM lands at 11pm. Instant reply asks for reference, size, placement — then sends a price band and a calendar link. Most stop messaging the next studio.',
         icon: MessageSquare,
-        features: ['Intent capture', 'Artist-fit qualification', 'Cleaner first response'],
+        features: [
+          'Instant reply on every DM and form',
+          'Price band sent up front',
+          'Holds the client until you can quote properly',
+        ],
       },
       {
-        title: 'Booking layer',
+        title: 'Take the deposit when they book',
         description:
-          'Moves consultations and sessions into a booked next step without unnecessary delay.',
+          'Calendar link goes out with a deposit-to-confirm built in. No deposit, no booking. The chair stops sitting empty.',
         icon: Calendar,
-        features: ['Session scheduling', 'Reminder touchpoints', 'Next-step guidance'],
+        features: [
+          'Self-serve booking with deposit-to-confirm',
+          'Reminders the day before',
+          'No-shows drop sharply',
+        ],
       },
       {
-        title: 'Preparation layer',
+        title: 'Convert the people sitting in the maybe pile',
         description:
-          'Gives clients a clearer view of what to prepare or expect before the appointment.',
+          'Quote went out two weeks ago, no reply? Polite check-in goes out automatically. A meaningful share book back in.',
         icon: Workflow,
-        features: ['Preparation guidance', 'Expectation setting', 'Booking readiness'],
+        features: [
+          'Follow-up at sensible intervals',
+          'Pending quotes visible in one place',
+          'Conversion goes up without anybody chasing',
+        ],
       },
       {
-        title: 'Trust and proof layer',
+        title: 'Send aftercare without typing it out',
         description:
-          'Connects reviews, portfolio proof, and studio credibility so they support the booking decision before the appointment.',
+          'Aftercare instructions go out automatically the night of the session. Less re-explaining, fewer touch-up requests.',
         icon: ShieldCheck,
-        features: ['Review requests', 'Proof-of-service support', 'Trust-led page structure'],
+        features: [
+          'Aftercare sent automatically',
+          'Pre-session preparation included',
+          'Less time on repetitive admin',
+        ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Turn finished pieces into reviews and referrals',
         description:
-          'Reinforces the studio locations and appointment types you want through area pages and search visibility.',
+          'A polite review request goes out a week after healing, when the piece looks its best.',
+        icon: Star,
+        features: [
+          'Review requests timed for healed work',
+          'Asked when clients are happiest',
+          'Reviews catch up to the portfolio',
+        ],
+      },
+      {
+        title: 'Show up first when local people search for an artist',
+        description:
+          'Service pages and Google profile lined up so people in the right area find you first.',
         icon: Search,
-        features: ['Area-page targeting', 'Local search clarity', 'Local authority support'],
+        features: [
+          'Pages for the styles you actually do',
+          'Found on Maps for local searches',
+          'Less time on enquiries that aren’t a fit',
+        ],
       },
     ],
     columns: 3 as const,
   };
 
   const comparisonData = {
-    badge: 'Operational Shift',
-    title: 'From reactive tattoo enquiries to a steadier consultation and booking flow',
-    description:
-      'The artistry stays. The repeatable friction around enquiry routing, consultation coordination, and follow-up gets reduced.',
+    badge: 'What Actually Changes',
+    title: 'A normal week, before and after',
+    description: 'The artwork stays. The chair stops sitting empty.',
     comparisons: [
       {
         type: 'before' as const,
-        title: 'Before the workflow is structured',
+        title: 'How it runs now',
         items: [
-          'Enquiries arrive without enough detail to route them quickly',
-          'Consultation and session booking depend on manual back-and-forth',
-          'Pending opportunities are hard to follow consistently',
-          'Trust depends too heavily on one-off reassurance during early messages',
+          'Six DMs piled up while you tattooed. Three booked elsewhere.',
+          'Sleeve quotes took 20 messages and the client lost patience.',
+          'Saturday client no-showed. £400 day gone, no deposit taken.',
+          '“Meant to ask for a Google review” — said about every back piece.',
         ],
       },
       {
         type: 'after' as const,
-        title: 'After the workflow is aligned',
+        title: 'How it runs after',
         items: [
-          'New enquiries move into the right consultation or nurture path faster',
-          'Booking and reminder flow protect the next step more consistently',
-          'Follow-up happens with less manual chasing',
-          'Reviews, portfolio proof, and page structure support better booking confidence',
+          'Every DM gets an instant reply with a price band and a calendar link.',
+          'Bookings come with a deposit. No-shows drop sharply.',
+          'Pending quotes followed up at sensible intervals.',
+          'Reviews get asked for once the piece has healed.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Lead To Booking Flow',
-    title: 'How the tattoo workflow moves from first enquiry to booking and follow-up',
-    description:
-      'How the system moves tattoo enquiries from first contact into the right consultation or session path — then into consistent follow-up when the decision takes time.',
+    badge: 'Where Most Studios Start',
+    title: 'Three stages — most studios feel one of them more than the others',
+    description: 'Pick whichever costs you the most chair time right now.',
     packages: [
       {
-        name: 'Consultation and fit capture',
-        description:
-          'Routes style, placement, and artist-fit enquiries into a clearer first step — so the right details reach the right artist faster.',
-        price: 'Flow stage 1',
-        priceDetail: 'Best when lead quality and first-contact clarity are the main issue',
+        name: 'Stop losing the late-night DMs',
+        description: 'For when DMs pile up while you tattoo and clients book the studio across town.',
+        price: 'Stage 1',
+        priceDetail: 'Start here if first-reply speed is the biggest leak',
         features: [
-          'Intent-specific service pages',
-          'Better enquiry capture',
-          'Style and timing context',
+          'Instant reply on every DM and form',
+          'Price band and calendar link up front',
+          'Most stop messaging the next studio',
         ],
       },
       {
-        name: 'Booking and readiness flow',
-        description:
-          'Adds steadier scheduling, clearer reminders, and better control over the next step after first contact.',
-        price: 'Flow stage 2',
-        priceDetail: 'Best when booking and preparation handling create friction',
-        features: ['Session scheduling support', 'Reminder structure', 'Preparation guidance'],
+        name: 'Stop the no-shows from killing the day rate',
+        description: 'For when Saturday no-shows cost £400 because no deposit was taken.',
+        price: 'Stage 2',
+        priceDetail: 'Start here if no-shows and deposits are the leak',
+        features: [
+          'Self-serve booking with deposit-to-confirm',
+          'Aftercare sent automatically',
+          'Reminders the day before',
+        ],
         popular: true,
       },
       {
-        name: 'Follow-up and trust reinforcement',
-        description:
-          'Keeps pending opportunities, reviews, and credibility proof moving in a more reliable way.',
-        price: 'Flow stage 3',
-        priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
-        features: ['Nurture workflows', 'Review request support', 'Trust reinforcement'],
+        name: 'Build the local proof and convert the maybes',
+        description: 'For when your portfolio is incredible but the studio looks small online.',
+        price: 'Stage 3',
+        priceDetail: 'Start here if reviews and pending quotes are the weak spot',
+        features: [
+          'Follow-up sequences for pending quotes',
+          'Review requests timed for healed work',
+          'Pages for the styles you actually do',
+        ],
       },
     ],
   };
 
   const workflowExamplesData = {
-    badge: 'Follow-Up Examples',
-    title: 'What the tattoo enquiry, booking, and follow-up flow looks like in practice',
-    description:
-      'Repeatable situations where a structured tattoo setup reduces friction — without making the studio feel scripted.',
+    badge: 'Real Situations',
+    title: 'A few moments where the difference shows up',
+    description: 'Small moments in the studio where things used to slip through.',
     workflows: [
       {
-        trigger:
-          'A new enquiry arrives and the studio needs to determine style, scale, placement, and artist fit before confirming anything.',
+        trigger: 'A DM with a reference image lands at 11pm.',
         actions: [
-          'Capture the right intent and timing early',
-          'Route the enquiry into the right consultation or nurture path',
-          'Reduce wasted time on unclear first contact',
+          'Instant reply asks for size, placement, timing',
+          'Price band and calendar link sent automatically',
+          'They stop DMing the next studio',
         ],
       },
       {
-        trigger:
-          'A consultation or session is requested and the studio needs to confirm timing, readiness, and preparation expectations.',
+        trigger: 'A client books a Saturday session.',
         actions: [
-          'Move the lead into a booked appointment window',
-          'Send reminders and preparation guidance',
-          'Keep internal handoff cleaner between enquiry and booking handling',
+          'Deposit-to-confirm built into the booking',
+          'Reminder sent the day before',
+          'No-shows drop sharply',
         ],
       },
       {
-        trigger:
-          'The consultation is complete and the studio wants to keep the opportunity moving without manual chasing every time.',
+        trigger: 'A back piece is finished and healing.',
         actions: [
-          'Send measured follow-up at the right times',
-          'Keep the lead stage visible internally',
-          'Support the decision with reviews and studio proof if needed',
+          'Aftercare goes out the night of the session',
+          'Review request goes out a week later when it looks its best',
+          'Review count quietly catches up to the portfolio',
         ],
       },
     ],
@@ -255,9 +283,9 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
   };
 
   const exploreData = {
-    badge: 'Explore',
+    badge: 'Related',
     description:
-      'Relevant service layers for tattoo studios that want cleaner consultations, steadier follow-up, and stronger local trust support.',
+      'The other parts of the system that come up most often for tattoo studios.',
     cards: [
       {
         icon: Workflow,
@@ -298,39 +326,38 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Common questions about tattoo studio systems',
-    description: 'Common questions about MindWP for tattoo studios',
+    title: 'Things studio owners usually ask',
+    description: 'Straight answers about how this fits a tattoo studio.',
     faqs: [
       {
-        question: 'How can a tattoo studio get more qualified enquiries from a website?',
+        question: 'I’m tattooing all day. Will this need someone on the front desk?',
         answer:
-          'Clearer style, placement, and artist-fit paths — combined with better qualification prompts and guided next steps — reduce uncertainty early and directly improve enquiry quality.',
+          'No. The whole point is it runs while you’re tattooing. Instant DM replies, deposit-to-book, aftercare, review requests — all automatic. You handle the actual artwork.',
       },
       {
-        question: 'Should tattoo studios offer online consultation requests?',
+        question: 'How does the deposit-to-book actually work?',
         answer:
-          'Yes — a clean request path reduces back-and-forth and moves people into the right next step faster. The key is capturing context early: style, timing, and readiness.',
+          'When a client books a session, the calendar link includes a deposit payment. No deposit, no confirmed slot. The chair stops sitting empty on Saturdays.',
       },
       {
-        question: 'How do tattoo studios reduce slow follow-up on colder leads?',
+        question: 'Will it work alongside my booking software (Setmore, Square, etc)?',
         answer:
-          'A better enquiry system separates ready-now prospects from nurture-stage opportunities, then supports measured follow-up over time — less manual chasing, more consistency.',
+          'Yes. It sits in front of whatever you use. The system improves the bit between the DM coming in and the deposit landing in the bank.',
       },
       {
-        question: 'Do tattoo studios need separate pages for different styles or services?',
+        question: 'Can it really stop the late-night DMs from going to other studios?',
         answer:
-          'Often, yes, as long as the pages reflect real service paths and useful information rather than thin copy. Good service-page structure helps local visibility and also helps prospects feel confident that the studio handles their request.',
+          'Yes — an instant reply with a price band and a calendar link goes out the moment a DM lands. Most clients stop messaging the next studio.',
       },
       {
-        question: 'What kind of reviews matter most for tattoo studios?',
+        question: 'How do I get more reviews without nagging?',
         answer:
-          'The most useful reviews reinforce trust, cleanliness, communication, and the feeling that the studio handled the process clearly and professionally. A structured review request process after completed work can help build that proof more consistently over time.',
+          'A polite request goes out a week after the session, when the piece is healing nicely. People who would have meant to leave one actually do.',
       },
       {
-        question:
-          'Can a Smart Website system help a tattoo studio without replacing booking software?',
+        question: 'Do I need to scrap my current website?',
         answer:
-          'Yes. The system improves the public-facing side of the workflow by making enquiries, consultation booking, readiness guidance, and follow-up more consistent. It does not require replacing the booking tools you already use.',
+          'Usually not. We look at what you have first. The leak is normally the bit between the DM and the deposit in the bank — not the site itself.',
       },
     ],
   };
@@ -348,9 +375,9 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'local-appointment-businesses',
     seo: {
-      title: 'Tattoo Studios — Smart Website Systems | MindWP',
+      title: 'Tattoo Studios — Stop Losing Late-Night DMs, Deposits & Saturday Slots | MindWP',
       description:
-        'Smart Website systems for tattoo studios that need clearer consultation flow, booking readiness, and stronger trust support.',
+        'For tattoo studios where DMs pile up while you tattoo, where Saturday no-shows cost £400 because no deposit was taken, and where the studio across town has 10x the reviews. We put the system in place that catches them.',
       keywords: [
         'tattoo studio website design',
         'tattoo consultation booking workflow',
@@ -373,9 +400,9 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Build a steadier tattoo consultation and booking system',
+      title: 'Tell us where the chair is sitting empty',
       description:
-        'If your studio is dealing with unclear enquiry quality, loose booking flow, or inconsistent follow-up — we can map a practical system around how the pipeline actually runs.',
+        'If late-night DMs go unanswered, if Saturday no-shows kill the day rate, or if pending quotes never close — walk us through how the studio runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

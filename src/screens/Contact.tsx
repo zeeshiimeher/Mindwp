@@ -285,11 +285,11 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                       <CheckCircle2 className='text-green-600' size={48} />
                     </div>
                     <h2 className='contact-page-success-heading'>
-                      Thanks — we&apos;ll respond within 24 hours
+                      Thanks — your message is in. We&apos;ll reply within one working day.
                     </h2>
                     <p className='contact-page-success-text text-muted-foreground'>
                       {successMessage ||
-                        'Your request has been analyzed and routed to the right specialist. We\'ll respond with next steps within 24 hours.'}
+                        'A real person reads every enquiry. We\'ll come back with the right next step — not a generic reply, not a sales call.'}
                     </p>
                     <div className='contact-page-success-actions'>
                       <Button
@@ -310,7 +310,7 @@ export function Contact({ initialSystem = '', initialSource = '' }: ContactProps
                 ) : (
                   <>
                     <p className='contact-page-form-text-1 mb-3 text-sm font-medium text-foreground'>
-                      Share the context and we&apos;ll help you identify the right next move.
+                      Tell us where things are slipping — calls, follow-up, visibility, anything that&apos;s costing you work. A real person reads it and replies within one working day.
                     </p>
                     <h2 className='contact-page-form-heading-1 mb-6'>Discuss Your Project</h2>
 

@@ -38,8 +38,9 @@ export function Footer() {
           <div className='footer__column footer__column--brand'>
             <Logo variant='footer' />
             <p className='footer__description'>
-              Smart websites that work while you sleep. We combine WordPress, SEO, automation, and
-              AI to help service businesses get found, capture leads, and grow consistently.
+              For service businesses where calls get missed, follow-up slips, and good leads quietly
+              disappear. We put the routing, follow-up, and visibility in place so the work already
+              coming in actually turns into work.
             </p>
           </div>
 

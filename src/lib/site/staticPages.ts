@@ -44,7 +44,7 @@ const ALL_STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
     name: 'Homepage',
     title: 'MindWP',
     description:
-      'Systems-first digital infrastructure for service businesses that need websites, CRM, automation, and authority to work together.',
+      'For service businesses where calls get missed, enquiries sit unread, and good leads quietly disappear. MindWP puts the routing, follow-up, and visibility in place so the work already coming in actually turns into work.',
   },
   {
     key: 'static:about',
@@ -76,7 +76,7 @@ const ALL_STATIC_ROUTE_DEFINITIONS: StaticRouteDefinition[] = [
     name: 'Start a Conversation',
     title: 'Contact MindWP',
     description:
-      'Start a systems-first conversation about websites, automation, CRM, and authority infrastructure.',
+      'Tell us where things are slipping — missed calls, slow follow-up, leads going cold. We read every message and reply with the right next step within one working day.',
   },
   {
     key: 'static:conversation',

@@ -14,25 +14,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Coverage Lane',
-    title: 'Smart Website Systems for Small Law Firms',
+    badge: 'For Small Law Firms',
+    title: 'A Family Solicitor Enquiry Came In Friday At 5. By Monday Morning, They’d Instructed Somebody Else.',
     description:
-      'A small law firm website should support matter qualification, consultation booking, document-readiness, and follow-up — without making every new matter depend on manual chasing.',
+      'Family, conveyancing, employment, probate — people don’t shop solicitors slowly when something is going wrong. They ring three firms and instruct whoever answered first with a clear next step. We put the system in place that catches the enquiries, books the initial consultation, and stops easy matters from drifting.',
     list: [
-      'Clearer matter qualification',
-      'Better consultation flow',
-      'Stronger trust signals',
-      'More reliable follow-up',
+      'Friday-evening enquiries that went cold by Monday',
+      'Consultations that took five emails to book',
+      'Quoted matters nobody followed up on',
+      'Reviews from happy clients you never asked',
     ],
     cssPrefix: 'small-law-firms-hero',
   };
 
   const imageStripData = {
-    badge: 'Service Environment',
-    title:
-      'Legal demand depends on trust, fit, and next-step clarity before the consultation happens',
+    badge: 'How Legal Enquiries Actually Land',
+    title: 'It’s rarely “who’s the best lawyer” — it’s “who replied first and sounded calm”',
     description:
-      'New matter enquiries, conflict-fit questions, consultation timing, document preparation, authority signals, and follow-up all affect whether someone progresses. When those steps feel disconnected, the intake process becomes harder to trust internally and externally.',
+      'Somebody’s marriage is ending, or a sale is falling through, or a probate is overwhelming. They ring three firms in a row. Whoever picks up first usually gets the matter.',
     items: [
       {
         title: 'New matter enquiries',
@@ -60,37 +59,36 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where small law firms lose clarity, time, or consultation momentum',
-    description:
-      'The gap is rarely lead volume alone — it sits between first enquiry, fit qualification, consultation timing, and the trust proof someone needs before sharing sensitive details.',
+    badge: 'Where The Work Slips',
+    title: 'You’re in court Tuesday afternoon. The phone rings. They book a consultation with the next firm.',
+    description: 'Same handful of leaks in nearly every small high-street practice. None of them are about the legal work itself.',
     benefits: [
       {
         icon: Scale,
-        title: 'New matters arrive before the firm knows whether the fit is right',
+        title: 'A divorce enquiry came in Friday at 5pm and went unread until Monday',
         description:
-          'Different matter types, urgency levels, and service needs arrive through one loose path — first-response quality drops when everything routes the same way.',
+          'The fee earner was already gone for the weekend. By Monday morning, they’d instructed the firm down the road.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'Consultation booking creates friction when readiness is unclear',
+        title: 'Five emails to land one initial consultation',
         description:
-          'Availability, required documents, and next steps sit in different places — the intake process slows before it should.',
+          '“Tuesday at 10?” “Can’t do Tuesday.” “Wednesday afternoon?” The good ones don’t stick around for that.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Pending matters depend too much on manual follow-up',
+        title: 'A conveyancing quote went out and you never heard back',
         description:
-          'Enquiries that are not ready immediately often become inconsistent to track when the team is already handling active work.',
+          'One follow-up message a week later would have closed half of these. Nobody had time to send it.',
         iconType: 'accent' as const,
       },
       {
         icon: FileText,
-        title: 'Trust signals stay fragmented across the decision path',
+        title: 'The firm down the high street has 300 reviews. You have 14.',
         description:
-          'Reviews, authority pages, and advisor credibility exist in different places — they rarely work together to support a confident first consultation.',
+          'Your clients are happier. Online you look smaller because nobody was ever asked at the right moment.',
         iconType: 'primary' as const,
       },
     ],
@@ -98,155 +96,178 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Layers',
-    title: 'The working layers behind a steadier legal intake pipeline',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to handle enquiries, book consultations, and turn matters into reviews',
     description:
-      'A small law firm workflow needs structure before consultations, during qualification, and after first contact — especially when the decision takes time.',
+      'Each piece does one job. Together they keep the intake moving while the fee earners get on with the law.',
     featureCategories: [
       {
-        title: 'Matter qualification layer',
+        title: 'Reply to enquiries the same hour, even on a Friday at 5',
         description:
-          'Routes service enquiries through a clearer first-contact path so the right matter type reaches the right next step.',
+          'Form lands, an instant acknowledgement goes out with what to expect next. Most enquirers stop ringing other firms.',
         icon: MessageSquare,
-        features: ['Intent capture', 'Fit qualification', 'Cleaner first response'],
+        features: [
+          'Same-hour acknowledgement on every enquiry',
+          'Matter type and urgency captured up front',
+          'Holds the lead until somebody can call back',
+        ],
       },
       {
-        title: 'Consultation booking layer',
+        title: 'Book the initial consultation without the email tennis',
         description:
-          'Moves initial calls and consultations into a booked next step without unnecessary delay.',
+          'Clients pick a slot themselves. “When are you free?” gets replaced with a calendar link.',
         icon: Calendar,
-        features: ['Consultation scheduling', 'Reminder touchpoints', 'Next-step guidance'],
+        features: [
+          'Self-serve consultation booking',
+          'Reminders the day before',
+          'Reschedule link instead of a no-show',
+        ],
       },
       {
-        title: 'Document-readiness layer',
+        title: 'Tell them what to bring before they arrive',
         description:
-          'Gives prospects a clearer view of what information or documents to bring before the first conversation.',
+          'ID, marriage certificate, mortgage offer, will — sent automatically before the meeting so it actually goes somewhere.',
         icon: FileText,
-        features: ['Readiness guidance', 'Document prompts', 'Expectation setting'],
+        features: [
+          'Pre-meeting document request automatically',
+          'Sets the right expectations',
+          'Consultations actually progress to instruction',
+        ],
       },
       {
-        title: 'Nurture and follow-up layer',
+        title: 'Follow up the quotes and consultations that go quiet',
         description:
-          'Keeps pending decisions on a calmer, more consistent follow-up path so opportunities do not disappear into silence.',
+          'Quote sent Monday, polite check-in a week later, another the week after. Quietly closes more.',
         icon: Workflow,
-        features: ['Lead nurture', 'Decision reminders', 'Pipeline visibility'],
+        features: [
+          'Follow-up at the right intervals',
+          'Pending matters visible in one place',
+          'Closing rate goes up without nagging',
+        ],
       },
       {
-        title: 'Trust and proof layer',
+        title: 'Turn finished matters into reviews',
         description:
-          'Connects reviews, clarity, and advisor proof so they support the consultation decision before the appointment.',
+          'A polite review request goes out the week after completion, when the relief is freshest.',
         icon: ShieldCheck,
-        features: ['Review requests', 'Proof-of-service support', 'Trust-led page structure'],
+        features: [
+          'Review requests at the right moment',
+          'Asked once, never again',
+          'Reviews catch up to the workload',
+        ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Show up first when local people search for a solicitor',
         description:
-          'Reinforces the locations and matter types the firm wants through area pages and search visibility.',
+          'Service pages and Google profile lined up so people in the right town and matter type find you first.',
         icon: Search,
-        features: ['Area-page targeting', 'Local search clarity', 'Authority-page support'],
+        features: [
+          'Pages for the matters and towns you want',
+          'Found on Maps for local searches',
+          'Less time on enquiries that aren’t a fit',
+        ],
       },
     ],
     columns: 3 as const,
   };
 
   const comparisonData = {
-    badge: 'Operational Shift',
-    title: 'From reactive legal enquiries to a steadier consultation and follow-up flow',
-    description:
-      'The advisory relationship stays personal. The repeatable friction around qualification, consultation coordination, and follow-up gets reduced.',
+    badge: 'What Actually Changes',
+    title: 'A normal week, before and after',
+    description: 'The advisory work stays personal. The intake stops bleeding instructions.',
     comparisons: [
       {
         type: 'before' as const,
-        title: 'Before the workflow is structured',
+        title: 'How it runs now',
         items: [
-          'Enquiries arrive without enough detail to qualify them quickly',
-          'Consultation booking depends on manual back-and-forth',
-          'Pending matters are hard to follow consistently',
-          'Trust depends too heavily on one-off reassurance during early conversations',
+          'A divorce enquiry came in Friday at 5pm. They instructed somebody else by Monday.',
+          'Five emails to pin down one initial consultation.',
+          'A conveyancing quote went out and never got followed up.',
+          '“We meant to ask for a review” — said about every completed matter.',
         ],
       },
       {
         type: 'after' as const,
-        title: 'After the workflow is aligned',
+        title: 'How it runs after',
         items: [
-          'New enquiries move into the right consultation or nurture path faster',
-          'Booking and reminder flow protect the next step more consistently',
-          'Follow-up happens with less manual chasing',
-          'Reviews, authority signals, and page structure support better decision confidence',
+          'Every enquiry gets an instant acknowledgement, even out of hours.',
+          'Consultations booked through one link, no email tennis.',
+          'Quotes get followed up automatically. More close.',
+          'Reviews get asked for at the right moment, every time.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Lead To Consultation Flow',
-    title: 'How the legal intake workflow moves from first enquiry to consultation and follow-up',
-    description:
-      'How the system moves legal enquiries from first contact into the right consultation path — then into consistent follow-up when the decision takes time.',
+    badge: 'Where Most Firms Start',
+    title: 'Three stages — most firms feel one of them more than the others',
+    description: 'Pick whichever costs you the most matters right now.',
     packages: [
       {
-        name: 'Qualification and intake',
-        description:
-          'Routes new matter enquiries into a clearer first step — so the right details reach the right advisor faster.',
-        price: 'Flow stage 1',
-        priceDetail: 'Best when lead quality and first-contact clarity are the main issue',
+        name: 'Stop losing the after-hours enquiries',
+        description: 'For when Friday-evening and weekend enquiries go cold by the time anybody replies.',
+        price: 'Stage 1',
+        priceDetail: 'Start here if first-reply speed is the biggest leak',
         features: [
-          'Intent-specific service pages',
-          'Better enquiry capture',
-          'Matter and timing context',
+          'Instant acknowledgement on every enquiry',
+          'Matter type and urgency captured up front',
+          'Most enquirers stop ringing the next firm',
         ],
       },
       {
-        name: 'Consultation and readiness flow',
-        description:
-          'Adds steadier scheduling, clearer reminders, and better control over the next step after first contact.',
-        price: 'Flow stage 2',
-        priceDetail: 'Best when booking and document-readiness handling create friction',
-        features: ['Consultation scheduling support', 'Reminder structure', 'Readiness guidance'],
+        name: 'Close the consultations and quotes that drift',
+        description: 'For when initial consultations take five emails and quoted matters go quiet.',
+        price: 'Stage 2',
+        priceDetail: 'Start here if booking and follow-up is the leak',
+        features: [
+          'Self-serve consultation booking',
+          'Pre-meeting document request automatically',
+          'Quote follow-up at the right intervals',
+        ],
         popular: true,
       },
       {
-        name: 'Follow-up and trust reinforcement',
-        description:
-          'Keeps pending opportunities, reviews, and credibility proof moving in a more reliable way.',
-        price: 'Flow stage 3',
-        priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
-        features: ['Nurture workflows', 'Review request support', 'Trust reinforcement'],
+        name: 'Build the local proof that fills the diary on its own',
+        description: 'For when client outcomes are great but the firm looks small online.',
+        price: 'Stage 3',
+        priceDetail: 'Start here if reviews and local visibility are the weak spot',
+        features: [
+          'Review requests after every completed matter',
+          'Service pages for the matters and towns you want',
+          'Less time on enquiries that aren’t a fit',
+        ],
       },
     ],
   };
 
   const workflowExamplesData = {
-    badge: 'Follow-Up Examples',
-    title: 'What the legal intake, consultation, and follow-up flow looks like in practice',
-    description:
-      'Repeatable situations where a structured legal setup reduces friction — without making the firm feel scripted.',
+    badge: 'Real Situations',
+    title: 'A few moments where the difference shows up',
+    description: 'Small moments in the week of a small firm where things used to drift.',
     workflows: [
       {
-        trigger:
-          'A new enquiry arrives and the firm needs to determine matter type, urgency, and fit before booking the next step.',
+        trigger: 'A divorce enquiry comes in Friday at 5pm.',
         actions: [
-          'Capture the right intent and timing early',
-          'Route the enquiry into the right consultation or nurture path',
-          'Reduce wasted time on unclear first contact',
+          'Instant acknowledgement goes out within minutes',
+          'Matter type and urgency captured before Monday',
+          'They wait for your call instead of ringing the next firm',
         ],
       },
       {
-        trigger:
-          'A consultation is requested and the business needs to confirm timing, readiness, and document expectations clearly.',
+        trigger: 'An initial consultation is booked for next Wednesday.',
         actions: [
-          'Move the lead into a booked consultation window',
-          'Send reminders and preparation guidance',
-          'Keep internal handoff cleaner between enquiry and consultation handling',
+          'Pre-meeting document request goes out automatically',
+          'Reminder lands the morning of the meeting',
+          'The meeting actually progresses to instruction',
         ],
       },
       {
-        trigger:
-          'The consultation is complete and the firm wants to keep the opportunity moving without manual chasing every time.',
+        trigger: 'A conveyancing quote was sent Monday and went quiet.',
         actions: [
-          'Send measured follow-up at the right times',
-          'Keep the lead stage visible internally',
-          'Support the decision with reviews and authority proof if needed',
+          'A polite check-in goes out a week later',
+          'Another a fortnight after that if no reply',
+          'Quote-to-instruction quietly improves',
         ],
       },
     ],
@@ -263,9 +284,9 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
   };
 
   const exploreData = {
-    badge: 'Explore',
+    badge: 'Related',
     description:
-      'Relevant service layers for small law firms that want cleaner consultations, steadier follow-up, and stronger local trust support.',
+      'The other parts of the system that come up most often for small high-street practices.',
     cards: [
       {
         icon: Workflow,
@@ -306,39 +327,38 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Common questions about small law firm systems',
-    description: 'Common questions about MindWP for small law firms',
+    title: 'Things solicitors usually ask',
+    description: 'Straight answers about how this fits a small legal practice.',
     faqs: [
       {
-        question: 'How can a small law firm get more qualified enquiries from a website?',
+        question: 'I’m in court or with clients all day. Will this need a receptionist?',
         answer:
-          'Clearer service paths, better qualification prompts, and guided next steps reduce uncertainty early — which directly improves enquiry quality.',
+          'No. The whole point is it runs while the fee earners are on matters. You’ll see what came in on your phone between meetings, but nothing waits on you to operate it.',
       },
       {
-        question: 'Should a small law firm offer online consultation requests?',
+        question: 'Will it be SRA-compliant and respect confidentiality?',
         answer:
-          'Yes — a clean request path reduces back-and-forth and moves people into the right next step faster. The key is capturing context early: matter type, urgency, and readiness.',
+          'Yes — the acknowledgement is generic and procedural. No matter detail goes out automatically. It captures contact info and routes the enquiry; the legal advice always comes from the fee earner.',
       },
       {
-        question: 'How do small law firms reduce slow follow-up on new matters?',
+        question: 'Can it really reply to enquiries faster than I can?',
         answer:
-          'A better enquiry system separates ready-now matters from nurture-stage opportunities, then supports measured follow-up over time — less manual chasing, more consistency.',
+          'Yes — with a calm, professional acknowledgement that captures what they need and tells them when somebody will be in touch. Most enquirers stop ringing other firms once they get that.',
       },
       {
-        question: 'Do small law firms need separate pages for different matter types?',
+        question: 'Will it work alongside our case management system?',
         answer:
-          'Often, yes, as long as the pages reflect real service paths and useful information rather than thin copy. Good service-page structure helps local visibility and also helps prospects feel confident that the firm handles their situation.',
+          'It sits in front of your case management. Whatever you already use — LEAP, Clio, Actionstep — stays. The system improves the bit between enquiry and instruction.',
       },
       {
-        question: 'What kind of reviews matter most for small law firms?',
+        question: 'How do I get more reviews without being pushy?',
         answer:
-          'The most useful reviews reinforce trust, communication quality, and the feeling that the firm handled a complex situation with clarity. A structured review request process after completed work can help build that proof more consistently over time.',
+          'A polite request goes out the week after completion, when the relief is freshest. People who would have meant to leave one actually do.',
       },
       {
-        question:
-          'Can a Smart Website system help a small law firm without replacing its case management software?',
+        question: 'Do I need to scrap my current website?',
         answer:
-          'Yes. The system improves the public-facing side of the workflow by making enquiries, consultation booking, readiness guidance, and follow-up more consistent. It does not require replacing the internal tools you already use.',
+          'Usually not. We look at what you have first. The leak is normally the bit between enquiry and instruction — not the site itself.',
       },
     ],
   };
@@ -356,9 +376,9 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'legal-professional-services',
     seo: {
-      title: 'Small Law Firms — Smart Website Systems | MindWP',
+      title: 'Small Law Firms — Stop Losing After-Hours Enquiries, Consultations & Quotes | MindWP',
       description:
-        'Smart Website systems for small law firms that need clearer qualification, consultation flow, and stronger trust support.',
+        'For small high-street firms where Friday-evening enquiries get instructed elsewhere by Monday, consultations take five emails to book, and conveyancing quotes go quiet. We put the system in place that catches the matters.',
       keywords: [
         'small law firm website design',
         'law firm lead handling system',
@@ -381,9 +401,9 @@ function buildSmallLawFirmsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Build a steadier legal intake and follow-up system',
+      title: 'Tell us where the matters are leaking',
       description:
-        'If your firm is dealing with unclear enquiry quality, loose consultation flow, or inconsistent follow-up — we can map a practical system around how the pipeline actually runs.',
+        'If after-hours enquiries go cold, if consultations take a week of emails, or if quoted matters go quiet — walk us through how the firm runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

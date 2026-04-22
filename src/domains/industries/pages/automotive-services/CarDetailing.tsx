@@ -15,24 +15,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildCarDetailingIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Coverage Lane',
-    title: 'Smart Website Systems for Car Detailing Businesses',
+    badge: 'For Car Detailing Businesses',
+    title: 'Someone DMs You About a Wash. Three Days Later, They’ve Booked Elsewhere.',
     description:
-      'A car detailing website should support package clarity, appointment booking, preparation guidance, and repeat-visit follow-up — without making the team chase every step manually.',
+      'Most detailing enquiries come at strange hours — Instagram DMs, late-night WhatsApps, the contact form on your phone while you’re finishing a correction. The reply takes too long, the package question never gets answered, and the slot quietly gets given to someone faster.',
     list: [
-      'Clearer package selection',
-      'Better booking flow',
-      'Stronger preparation guidance',
-      'More reliable repeat demand',
+      'DMs that sit unread',
+      'Quote questions never answered',
+      'No-shows on busy Saturdays',
+      'Repeat customers nobody chased',
     ],
     cssPrefix: 'car-detailing-hero',
   };
 
   const imageStripData = {
-    badge: 'Service Environment',
-    title: 'Detailing demand depends on package clarity, timing, and visible proof before booking',
+    badge: 'How Detailing Work Comes In',
+    title: 'Most enquiries arrive on a phone — evenings, weekends, while you’re mid-job',
     description:
-      'Interior packages, correction work, coatings, maintenance plans, appointment timing, and before-and-after proof all shape the decision. When those steps feel disconnected, the business absorbs more confusion than it should.',
+      'Interior valets, full corrections, ceramic coatings, monthly maintenance. People want to know if you can fit them in this Saturday and what the price actually is. The longer they wait for a reply, the colder the booking.',
     items: [
       {
         title: 'Package and service enquiries',
@@ -60,37 +60,37 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where detailing businesses lose clarity, time, or repeat momentum',
+    badge: 'Where The Work Slips',
+    title: 'It’s not the work. It’s the bit before and after.',
     description:
-      'The gap is rarely visibility alone — it sits between package understanding, appointment planning, preparation guidance, and the proof someone needs before they commit.',
+      'You can’t answer Instagram with two hands deep in a polish. So the message sits. So does the booking.',
     benefits: [
       {
         icon: Sparkles,
-        title: 'Package selection is not always clear enough before booking',
+        title: '“What’s the price for a full detail?” — nobody answers',
         description:
-          'Exterior, interior, correction, coating, and maintenance options sit on one undifferentiated path — booking confusion starts before the customer reaches the calendar.',
+          'They DM. You’re mid-job. By the time you wipe your hands and reply, they’ve booked someone who answered in five minutes.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'Appointment timing and job scope create friction',
+        title: 'Saturday is fully booked, then two no-shows',
         description:
-          'Vehicle condition, package length, handoff timing, and prep details sit in different places — the booking flow slows before it should.',
+          'No reminder went out. They forgot. The slot sat empty while three other people would have taken it.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Review requests and return visits depend too much on memory',
+        title: 'Regulars used to come every six weeks. Now they don’t.',
         description:
-          'Maintenance reminders, review requests, and next-visit prompts often happen inconsistently when the day gets busy.',
+          'Nobody nudged them. Life got in the way. The repeat demand quietly dried up.',
         iconType: 'accent' as const,
       },
       {
         icon: MapPinned,
-        title: 'Trust signals are present but not reinforcing each other',
+        title: 'You post incredible before-and-afters. Reviews don’t catch up.',
         description:
-          'Photo proof, reviews, service pages, and local visibility exist in different places — they rarely work together to support booking confidence.',
+          'The work is amazing. Online, your Google profile looks quieter than the cheaper unit down the road.',
         iconType: 'primary' as const,
       },
     ],
@@ -98,56 +98,64 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Layers',
-    title: 'The working layers behind a steadier detailing workflow',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to handle every DM, deposit, and repeat visit',
     description:
-      'A stronger detailing setup supports service discovery, package selection, appointment planning, prep guidance, and repeat-visit follow-up without adding more operational noise.',
+      'Each piece does one job. Together they stop bookings from quietly going to whoever answered fastest.',
     featureCategories: [
       {
-        title: 'Service and enquiry layer',
+        title: 'Catch every enquiry, even when your hands are full',
         description:
-          'Routes different detailing packages through a clearer first-contact path so drivers reach the right next step faster.',
+          'DMs, web forms, calls, missed calls — all land in one inbox with the package they asked about already noted.',
         icon: MessageSquare,
         features: [
-          'Package-specific enquiry paths',
-          'Cleaner first response',
-          'Better booking guidance',
+          'Instagram and form messages in one place',
+          'Missed-call text-back inside a minute',
+          'Package and vehicle captured up front',
         ],
       },
       {
-        title: 'Booking and planning layer',
+        title: 'Make booking feel as simple as picking a slot',
         description:
-          'Structures appointments around package timing, vehicle condition, and next-step clarity.',
+          'A clear page that shows packages, prices, and the next free Saturday. Deposits taken if you want them. Reminders that fire on their own.',
         icon: Calendar,
-        features: ['Appointment booking', 'Scope and timing clarity', 'Cleaner workshop planning'],
+        features: [
+          'Slots customers can pick themselves',
+          'Optional deposit at booking',
+          'Reminders the day before to kill no-shows',
+        ],
       },
       {
-        title: 'Preparation and handoff layer',
+        title: 'Send prep and arrival notes without typing them every time',
         description:
-          'Delivers prep details, drop-off timing, and handoff expectations consistently so the day runs more calmly.',
+          'Where to bring the car, when, what to take out of it. Same message, every time, sent automatically.',
         icon: Bell,
         features: [
-          'Preparation guidance',
-          'Drop-off instructions',
-          'Cleaner appointment communication',
+          'Prep instructions sent on confirmation',
+          'Arrival reminder day-of',
+          'Less back-and-forth on the morning',
         ],
       },
       {
-        title: 'Rebooking and review layer',
+        title: 'Bring regulars back without chasing them yourself',
         description:
-          'Keeps return-visit prompts and review requests moving more reliably so repeat demand compounds.',
+          'Six-week nudges, ceramic top-up reminders, seasonal offers — all going out on their own. Repeat work compounds.',
         icon: ShieldCheck,
-        features: ['Maintenance prompts', 'Review request workflows', 'Repeat-visit support'],
+        features: [
+          'Maintenance reminders timed per package',
+          'Review requests after each visit',
+          'Past customers nudged at the right moment',
+        ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Get found when local people search for what you do',
         description:
-          'Reinforces the detailing experience before booking through service pages, photo proof, and local search.',
+          'Pages for “ceramic coating near me”, your Google profile sorted, before-and-after photos used as proof.',
         icon: Search,
         features: [
-          'Service-page alignment',
-          'Google Business Profile support',
-          'Local trust reinforcement',
+          'Service pages that match what people type',
+          'Google Business Profile sorted properly',
+          'Local reach customers can actually find',
         ],
       },
     ],
@@ -155,108 +163,109 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
   };
 
   const comparisonData = {
-    badge: 'Operational Shift',
-    title: 'From reactive detailing enquiries to a calmer booking and repeat-visit flow',
+    badge: 'What Actually Changes',
+    title: 'A normal weekend at the unit, before and after',
     description:
-      'The premium experience stays. The repeatable friction around package selection, booking, and follow-up gets reduced so the business can work more calmly.',
+      'The work stays the same. What changes is everything around the work that used to depend on you having a free hand.',
     comparisons: [
       {
         type: 'before' as const,
-        title: 'Before the workflow is structured',
+        title: 'How it runs now',
         items: [
-          'Drivers are not always sure which package fits before booking',
-          'Preparation and handoff details are explained repeatedly',
-          'Review requests and maintenance prompts happen inconsistently',
-          'Trust depends too heavily on manual reassurance during the booking process',
+          '“How much for a full detail?” sits in your DMs for four hours.',
+          'Saturday morning, two no-shows, slots empty.',
+          'Same regular hasn’t booked since March. Nobody noticed.',
+          'Brilliant correction job done Friday. No review request goes out.',
         ],
       },
       {
         type: 'after' as const,
-        title: 'After the workflow is aligned',
+        title: 'How it runs after',
         items: [
-          'Drivers move into the right booking path faster',
-          'Booking and preparation flow protect the schedule more consistently',
-          'Review and repeat-visit prompts happen with less manual chasing',
-          'Service clarity and visual proof reinforce stronger booking confidence',
+          'They get a quick reply with the price guide and a booking link inside minutes.',
+          'Slot booked through the link with a deposit. Reminder fires the day before. Cars actually turn up.',
+          'Six weeks after their last visit, an automatic nudge goes out. They book again.',
+          'A review request goes out the day they collect. Reviews keep stacking quietly.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Lead To Booking Flow',
-    title:
-      'How the detailing workflow moves from first enquiry to appointment and repeat follow-up',
-    description:
-      'How the system moves detailing demand from first contact into the right package path — then into steadier preparation, review, and repeat-visit handling.',
+    badge: 'Where Most Detailers Start',
+    title: 'Three stages — most detailers feel one of them more than the others',
+    description: 'Pick whichever is leaking the most work. The rest can follow.',
     packages: [
       {
-        name: 'Package clarity and booking setup',
+        name: 'Stop enquiries from sitting in your DMs',
         description:
-          'Routes different packages into a clearer first step — so drivers reach the right appointment path faster.',
-        price: 'Flow stage 1',
-        priceDetail: 'Best when package selection and booking clarity are the main issue',
+          'For when most messages come in while you’re working and the reply lands too late to win the booking.',
+        price: 'Stage 1',
+        priceDetail: 'Start here if speed of reply is the main issue',
         features: [
-          'Package-specific booking paths',
-          'Better first-response clarity',
-          'Cleaner service guidance',
+          'One inbox for DMs, forms, and calls',
+          'Auto-reply with package guide',
+          'Missed-call text-back',
         ],
       },
       {
-        name: 'Appointment planning and preparation',
+        name: 'Lock down the schedule and kill no-shows',
         description:
-          'Adds steadier booking, clearer prep guidance, and cleaner handoff before the visit.',
-        price: 'Flow stage 2',
-        priceDetail: 'Best when schedule friction and preparation gaps are the pressure points',
+          'For when Saturdays are losing slots to people who forget they ever booked.',
+        price: 'Stage 2',
+        priceDetail: 'Start here if no-shows are the bottleneck',
         features: [
-          'Appointment scheduling support',
-          'Preparation structure',
-          'Better handoff guidance',
+          'Self-serve booking with deposits if you want them',
+          'Reminders the day before',
+          'Prep notes sent automatically',
         ],
         popular: true,
       },
       {
-        name: 'Review and repeat-visit reinforcement',
+        name: 'Bring regulars back and turn jobs into reviews',
         description:
-          'Keeps repeat-visit prompts, review flow, and longer-term retention moving more consistently.',
-        price: 'Flow stage 3',
-        priceDetail: 'Best when follow-up consistency and repeat demand need improvement',
-        features: ['Maintenance prompts', 'Review request support', 'Retention reinforcement'],
+          'For when the work is great but reputation and repeat demand aren’t catching up.',
+        price: 'Stage 3',
+        priceDetail: 'Start here if reviews and repeat visits are the weak spot',
+        features: [
+          'Six-week and seasonal nudges',
+          'Ceramic top-up reminders',
+          'Review requests after every visit',
+        ],
       },
     ],
   };
 
   const workflowExamplesData = {
-    badge: 'Follow-Up Examples',
-    title: 'What the detailing lead, booking, and follow-up flow looks like in practice',
-    description:
-      'Repeatable situations where a structured detailing setup removes friction — without making the client experience feel robotic.',
+    badge: 'Real Situations',
+    title: 'A few moments where the difference shows up',
+    description: 'Small handoffs that used to depend on you being free to type a reply.',
     workflows: [
       {
         trigger:
-          'A driver wants to know which package to choose and whether the business is the right fit before booking.',
+          'Someone DMs at 9pm asking the price of a full interior detail.',
         actions: [
-          'Guide the driver into the right service path',
-          'Collect early vehicle or package context if needed',
-          'Reduce wasted time on unclear first contact',
+          'They get an instant reply with the package guide and a link to book',
+          'The enquiry is logged with the package they asked about',
+          'You see it in the morning, not buried in 30 unread DMs',
         ],
       },
       {
         trigger:
-          'An appointment is booked, but timing, prep details, and handoff instructions need to be delivered clearly.',
+          'A booking is made for Saturday and you don’t want another no-show.',
         actions: [
-          'Send preparation guidance at the right times',
-          'Confirm drop-off or handoff details clearly',
-          'Reduce avoidable no-shows and schedule confusion',
+          'Confirmation goes out with prep notes',
+          'A reminder fires the day before',
+          'Optional deposit means the slot is held seriously',
         ],
       },
       {
         trigger:
-          'The visit is complete and the business wants to support reviews and repeat detailing more consistently.',
+          'A regular hasn’t booked since their last ceramic top-up.',
         actions: [
-          'Send a well-timed review request',
-          'Prompt the right next maintenance or repeat visit',
-          'Keep repeat demand moving more reliably',
+          'A friendly nudge goes out at the right interval',
+          'Past customer comes back without you remembering',
+          'Review request after the visit keeps reputation climbing',
         ],
       },
     ],
@@ -273,9 +282,9 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
   };
 
   const exploreData = {
-    badge: 'Explore',
+    badge: 'Related',
     description:
-      'Relevant service layers for detailing businesses that want clearer booking flow, steadier preparation, and better repeat demand.',
+      'The other parts of the system that come up most often for detailers trying to win Saturdays back.',
     cards: [
       {
         icon: Workflow,
@@ -316,38 +325,38 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Common questions about car detailing systems',
-    description: 'Common questions about MindWP for car detailing businesses',
+    title: 'Things detailers usually ask',
+    description: 'Straight answers about how this fits into a unit that’s already busy.',
     faqs: [
       {
-        question: 'How can a detailing business improve online bookings from its website?',
+        question: 'Most of my work comes through Instagram. Will it actually catch DMs?',
         answer:
-          'Clearer packages, an easier booking path, and obvious next steps reduce confusion before the visit — which directly improves booking quality.',
+          'Yes — DMs land in the same inbox as web forms and calls. You stop scrolling through three apps to find who asked what.',
       },
       {
-        question: 'Should detailing businesses show pricing online?',
+        question: 'Will the auto-reply feel cold?',
         answer:
-          'Yes — or at least clearer pricing guidance where vehicle condition or package variation makes exact pricing harder. Price clarity reduces unnecessary back-and-forth and helps drivers choose the right next step sooner.',
+          'No. The first reply is short, written like you’d actually message a customer, and just buys the time you need to come back properly. The real conversation still happens with you.',
       },
       {
-        question: 'How can detailers reduce no-shows and late changes?',
+        question: 'Can I take deposits to stop no-shows?',
         answer:
-          'Clear booking expectations, well-timed reminders, and cleaner preparation guidance protect the schedule — without turning the customer experience into pressure-heavy messaging.',
+          'Yes — deposits at booking, full payment if you prefer. Reminders go out the day before either way. No-shows drop quickly.',
       },
       {
-        question: 'Do detailers need separate pages for different packages?',
+        question: 'What about regulars who used to book every six weeks?',
         answer:
-          'Yes. Separate pages help both visitors and search engines understand what the business offers — and make it easier to move someone into the right booking path instead of forcing every enquiry through one generic page.',
+          'They get a friendly nudge at the right interval. A lot of detailers find this brings back more revenue than any new ad.',
       },
       {
-        question: 'What kind of reviews matter most for detailing businesses?',
+        question: 'Do I have to ask for reviews myself?',
         answer:
-          'The most useful reviews help future customers trust the finish, communication, and consistency of the detailing experience. A simple and steady review request process after appointments can help build that proof more reliably over time.',
+          'No. The request goes out automatically after each visit. Your Google profile starts catching up to the actual standard of the work.',
       },
       {
-        question: 'How should detailers handle repeat-booking follow-up?',
+        question: 'Do I need a brand new website?',
         answer:
-          'Well-timed follow-up that makes the next appointment easy to understand and easy to take. The aim is to keep repeat demand moving in a calm, consistent way — not pressure.',
+          'Usually not. We look at what you’ve got first. Often the site is fine — the gap is everything that happens after the message comes in.',
       },
     ],
   };
@@ -365,9 +374,9 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'automotive-services',
     seo: {
-      title: 'Car Detailing — Smart Website Systems | MindWP',
+      title: 'Car Detailing — Stop Losing Saturdays to Slow Replies and No-Shows | MindWP',
       description:
-        'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+        'For detailers where DMs sit unread, no-shows kill weekends, and regulars stop coming back. We put the booking, reminder, and follow-up flow in place so the work already coming in actually books.',
       keywords: [
         'car detailing website design',
         'car detailing booking system',
@@ -390,9 +399,9 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Build a steadier detailing booking and repeat-visit system',
+      title: 'Tell us where the work is slipping',
       description:
-        'If your detailing business is dealing with package confusion, reminder gaps, or inconsistent review flow — we can map a practical system around how the appointment journey actually runs.',
+        'If DMs sit unread, no-shows hit hard, or regulars just stop coming — walk us through how the unit runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

@@ -15,25 +15,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildPropertyManagersIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Coverage Lane',
-    title: 'Smart Website Systems for Property Managers',
+    badge: 'For Property Managers',
+    title: 'A Landlord With 12 Units Got Three Quotes On Sunday Night. Whoever Sent A Clear Fee Breakdown Monday Morning Got The Portfolio.',
     description:
-      'A property management website should support owner enquiries, tenant communication, maintenance request handling, leasing flow, and follow-up — without forcing the team to manage every touchpoint manually.',
+      'Owner enquiries land in the same inbox as tenant maintenance requests, and both wait. Landlords compare three managers in a weekend. Tenants send the same boiler complaint twice because nobody acknowledged the first one. We put the system in place that separates the two flows, gives owners visibility, and stops requests from disappearing.',
     list: [
-      'Clearer owner and tenant routing',
-      'Better maintenance request flow',
-      'Stronger communication visibility',
-      'More reliable follow-up and trust support',
+      'Owner enquiries that sat with tenant complaints in the same inbox',
+      'Maintenance requests that took three follow-ups before being logged',
+      'Owner reports that took half a day to compile manually',
+      'Reviews from happy landlords you never asked for',
     ],
     cssPrefix: 'property-managers-hero',
   };
 
   const imageStripData = {
-    badge: 'Service Environment',
-    title:
-      'Property management demand depends on organised communication, service coordination, and next-step clarity across multiple stakeholders',
+    badge: 'How Property Enquiries Actually Land',
+    title: 'Landlord with 12 units got three quotes on Sunday. Clearest fee breakdown wins.',
     description:
-      'Owner enquiries, tenant requests, maintenance coordination, leasing questions, inspection timing, and review follow-up all compete for attention. When those paths feel disconnected, the business absorbs avoidable friction every day.',
+      'It’s landlord portfolio enquiries, urgent boiler failures, vacancy windows, owner reports the morning of a board meeting. Two completely different audiences competing for the same inbox.',
     items: [
       {
         title: 'Owner and management enquiries',
@@ -61,38 +60,36 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where property managers lose clarity, time, or service confidence first',
-    description:
-      'The pressure comes from overlap between owner expectations, tenant needs, maintenance coordination, and communication follow-through. When the workflow is unclear, the team ends up chasing status instead of managing the process.',
+    badge: 'Where Portfolios Get Lost',
+    title: 'You’re sorting a leak in flat 4. The new portfolio enquiry sits unread.',
+    description: 'Same handful of leaks across nearly every management business. None of them are about how well you actually manage properties.',
     benefits: [
       {
         icon: Users,
-        title: 'Owner and tenant requests often arrive through the same loose entry path',
+        title: 'A 12-unit portfolio enquiry sat in the inbox behind 14 maintenance complaints',
         description:
-          'Different priorities, urgency levels, and next steps land in one general inbox — routing and response quality drop when everything arrives through the same path.',
+          'By the time it was spotted on Monday afternoon, the landlord had already booked a meeting with another firm.',
         iconType: 'primary' as const,
       },
       {
         icon: Wrench,
-        title:
-          'Maintenance requests create friction when scope, urgency, and status are not clear early',
+        title: 'A tenant submitted the same boiler complaint three times',
         description:
-          'Small issues, urgent repairs, contractor coordination, and inspection timing all become harder to manage when the first request lacks structure.',
+          'No acknowledgement on the first two. By the third, they’d already complained to the landlord and Trustpilot.',
         iconType: 'secondary' as const,
       },
       {
         icon: Bell,
-        title: 'Communication follow-up depends too much on manual reminders',
+        title: 'Monthly owner reports took half a day to compile manually',
         description:
-          'Updates to owners, tenants, and internal staff often become inconsistent when the workflow depends on memory rather than visible next steps.',
+          'Spreadsheets, screenshots, copy-paste. Owners still rang to ask when the report was coming.',
         iconType: 'accent' as const,
       },
       {
         icon: Home,
-        title: 'Trust is shaped by how organised the process feels, not just the final outcome',
+        title: 'You manage 180 properties. You have 14 reviews.',
         description:
-          'People judge the service by response speed, communication clarity, and whether they understand what is happening next.',
+          'Your owners are happy. Online you look like a two-flat operation because nobody asked for the review at the right moment.',
         iconType: 'primary' as const,
       },
     ],
@@ -100,154 +97,178 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Layers',
-    title: 'The working layers behind a steadier property management operation',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to separate landlord enquiries from tenant requests',
     description:
-      'A property management workflow needs structure before a request is submitted, while service coordination is active, and after a job or enquiry needs follow-up — the website should make that operating path easier to manage.',
+      'Each piece does one job. Together they keep portfolios coming in while tenant requests stop slipping through the cracks.',
     featureCategories: [
       {
-        title: 'Enquiry and routing layer',
+        title: 'Send landlord enquiries down a different path to tenants',
         description:
-          'Routes owner, tenant, leasing, and service requests through clearer first-contact paths so the right issue reaches the right next step faster.',
+          'A landlord enquiring about portfolio management goes one place. A tenant reporting a leak goes another. Neither waits behind the other.',
         icon: MessageSquare,
         features: [
-          'Intent-specific routing',
-          'Cleaner first response',
-          'Request capture with context',
+          'Separate intake for landlords vs tenants',
+          'Portfolio enquiries flagged as priority',
+          'Maintenance requests captured with photos and urgency',
         ],
       },
       {
-        title: 'Scheduling and coordination layer',
+        title: 'Acknowledge every tenant request automatically',
         description:
-          'Moves maintenance visits, inspections, and follow-up timing through a clearer booking and update structure.',
+          'Tenant submits a request. Within seconds they get a reference number and an update. The same complaint stops being submitted three times.',
         icon: Calendar,
-        features: ['Visit coordination', 'Status updates', 'Reminder support'],
+        features: [
+          'Instant acknowledgement with reference number',
+          'Status updates as the job progresses',
+          'Repeat-complaint loops stop',
+        ],
       },
       {
-        title: 'Communication visibility layer',
+        title: 'Send owners their reports without compiling them by hand',
         description:
-          'Gives owners and tenants visibility into what is happening without the team rewriting the same updates manually every time.',
+          'Monthly owner statements, occupancy stats, maintenance summaries — sent automatically on the same date every month. The phone stops ringing about reports.',
         icon: Workflow,
-        features: ['Communication flow', 'Internal visibility', 'Next-step guidance'],
+        features: [
+          'Owner reports sent on schedule',
+          'Occupancy and maintenance summaries automated',
+          'Owners stop chasing the report',
+        ],
       },
       {
-        title: 'Trust and proof layer',
+        title: 'Win the landlord portfolio with a clear fee breakdown',
         description:
-          'Reinforces trust through reviews, process clarity, and service proof — reducing hesitation before an owner enquires or a resident escalates.',
+          'Landlord enquires Sunday night. They get a clear fee breakdown and a calendar link Monday morning. Most stop comparing.',
         icon: ShieldCheck,
-        features: ['Review requests', 'Trust-led service pages', 'Clear expectation setting'],
+        features: [
+          'Fast response with fee transparency',
+          'Calendar link for portfolio review meetings',
+          'Stops the comparison shopping',
+        ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Turn happy landlords into reviews',
         description:
-          'Supports the areas and property types you actually manage through search visibility and location clarity.',
+          'A polite review request goes out after a successful renewal or a smooth maintenance episode. Owners who would have meant to leave one actually do.',
+        icon: Star,
+        features: [
+          'Review requests timed to good moments',
+          'Asked when landlords are most satisfied',
+          'Reviews finally match the size of your portfolio',
+        ],
+      },
+      {
+        title: 'Show up first when local landlords search',
+        description:
+          'Pages and Google profile lined up so landlords in your patch find you first — not the corporate firm with a London office.',
         icon: Search,
-        features: ['Area-page targeting', 'Local search support', 'Service-area clarity'],
+        features: [
+          'Pages for the property types you actually manage',
+          'Found on Maps for local management searches',
+          'Less time on enquiries from outside your area',
+        ],
       },
     ],
     columns: 3 as const,
   };
 
   const comparisonData = {
-    badge: 'Operational Shift',
-    title: 'From reactive communication to a more structured property service flow',
-    description:
-      'The service relationships stay personal. The repeatable friction around requests, coordination, updates, and trust gets reduced.',
+    badge: 'What Actually Changes',
+    title: 'A normal week, before and after',
+    description: 'The relationships stay personal. The chasing stops.',
     comparisons: [
       {
         type: 'before' as const,
-        title: 'Before the workflow is structured',
+        title: 'How it runs now',
         items: [
-          'Owner and tenant requests arrive without enough context to route them quickly',
-          'Maintenance coordination depends on manual clarification and repeated status checking',
-          'Follow-up and updates become inconsistent during busy periods',
-          'Trust depends too heavily on one-off reassurance instead of a visible process',
+          'Portfolio enquiry sat behind tenant complaints. Landlord booked elsewhere.',
+          'Same boiler complaint submitted three times because nobody acknowledged it.',
+          'Half a day spent compiling owner reports manually.',
+          '“Meant to ask for a Google review” — said about every successful renewal.',
         ],
       },
       {
         type: 'after' as const,
-        title: 'After the workflow is aligned',
+        title: 'How it runs after',
         items: [
-          'Requests move into the right path with clearer intent and urgency',
-          'Visits, repairs, and inspections are easier to coordinate and follow through',
-          'Communication and reminder flow protect service confidence more consistently',
-          'Reviews, service clarity, and local proof support stronger trust before and after contact',
+          'Landlord and tenant intake flow separately. Portfolio enquiries flagged as priority.',
+          'Tenants get instant acknowledgement and a reference number.',
+          'Owner reports sent automatically on the same date every month.',
+          'Reviews get asked for after every good moment.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Lead To Service Flow',
-    title:
-      'How the property management workflow moves from first contact to coordination and follow-up',
-    description:
-      'How a structured setup moves owner enquiries, tenant requests, and service coordination into the right next step — without making the team improvise every handoff.',
+    badge: 'Where Most Property Managers Start',
+    title: 'Three stages — most management firms feel one of them more than the others',
+    description: 'Pick whichever costs you the most peace of mind right now.',
     packages: [
       {
-        name: 'Request capture and routing',
-        description:
-          'Routes owner, tenant, leasing, and maintenance intake into clearer paths before the team acts.',
-        price: 'Flow stage 1',
-        priceDetail: 'Best when first-contact clarity and request quality are the main problem',
+        name: 'Stop losing the landlord enquiries',
+        description: 'For when portfolio enquiries get buried behind tenant complaints.',
+        price: 'Stage 1',
+        priceDetail: 'Start here if landlord acquisition is the biggest leak',
         features: [
-          'Intent-specific service pages',
-          'Better request capture',
-          'Urgency and context signals',
+          'Separate intake for landlords vs tenants',
+          'Fast response with fee breakdown',
+          'Calendar link for portfolio review meetings',
         ],
       },
       {
-        name: 'Coordination and update flow',
-        description:
-          'Adds steadier scheduling, clearer updates, and better control over the service path after the first request.',
-        price: 'Flow stage 2',
-        priceDetail:
-          'Best when maintenance, inspection, or communication handling creates friction',
-        features: ['Scheduling support', 'Reminder structure', 'Status visibility'],
+        name: 'Sort the maintenance request chaos',
+        description: 'For when tenants submit the same complaint three times.',
+        price: 'Stage 2',
+        priceDetail: 'Start here if maintenance coordination is the leak',
+        features: [
+          'Instant acknowledgement with reference number',
+          'Status updates as the job progresses',
+          'Repeat-complaint loops stop',
+        ],
         popular: true,
       },
       {
-        name: 'Follow-up and trust reinforcement',
-        description:
-          'Keeps owner confidence, resident communication, and review support moving in a more reliable way.',
-        price: 'Flow stage 3',
-        priceDetail: 'Best when service confidence and long-tail follow-up are the pressure points',
-        features: ['Communication workflows', 'Review request support', 'Trust reinforcement'],
+        name: 'Automate owner reporting and reviews',
+        description: 'For when owner reports take half a day and reviews never get asked for.',
+        price: 'Stage 3',
+        priceDetail: 'Start here if owner retention and proof are the weak spot',
+        features: [
+          'Owner reports sent on schedule',
+          'Review requests timed to good moments',
+          'Pages for the property types you actually manage',
+        ],
       },
     ],
   };
 
   const workflowExamplesData = {
-    badge: 'Follow-Up Examples',
-    title: 'What the property management lead, service, and follow-up flow looks like in practice',
-    description:
-      'Repeatable situations where a structured property management setup reduces friction — without making the business feel rigid.',
+    badge: 'Real Situations',
+    title: 'A few moments where the difference shows up',
+    description: 'Small moments in the week of a property manager where things used to slip through.',
     workflows: [
       {
-        trigger:
-          'A new owner enquiry arrives and the business needs to identify whether the conversation is about management, leasing support, or a specific operational issue before booking the next step.',
+        trigger: 'A landlord with a 12-unit portfolio enquires Sunday night.',
         actions: [
-          'Capture the right intent and property context early',
-          'Route the enquiry into the right consultation or service path',
-          'Reduce wasted time on unclear first contact',
+          'They get a clear fee breakdown and calendar link Monday morning',
+          'They book a portfolio review meeting before the week starts',
+          'They stop comparing the other two firms',
         ],
       },
       {
-        trigger:
-          'A tenant or maintenance request comes in and the team needs to confirm urgency, responsibility, and the next step clearly.',
+        trigger: 'A tenant reports a leaking boiler at 9pm.',
         actions: [
-          'Move the request into the right coordination path',
-          'Send clearer updates and reminder touchpoints',
-          'Keep internal handoff cleaner between request intake and service follow-through',
+          'They get an instant acknowledgement with a reference number',
+          'A contractor is dispatched and the tenant gets status updates',
+          'The same complaint stops being submitted three times',
         ],
       },
       {
-        trigger:
-          'The issue is resolved and the business wants to maintain confidence without relying on ad hoc follow-up each time.',
+        trigger: 'It’s the first of the month — owner report day.',
         actions: [
-          'Send measured follow-up at the right time',
-          'Keep service status and next-step visibility clearer',
-          'Support trust with reviews and process clarity when appropriate',
+          'Reports compile and send automatically with occupancy and maintenance summaries',
+          'Owners stop ringing to ask when the report is coming',
+          'You spend the morning on actual work instead of spreadsheets',
         ],
       },
     ],
@@ -263,9 +284,9 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
   };
 
   const exploreData = {
-    badge: 'Explore',
+    badge: 'Related',
     description:
-      'Relevant service layers for property managers that need clearer communication, steadier coordination, and stronger trust support.',
+      'The other parts of the system that come up most often for property managers.',
     cards: [
       {
         icon: Workflow,
@@ -308,40 +329,38 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Common questions about property management systems',
-    description: 'Common questions about MindWP for property managers',
+    title: 'Things property managers usually ask',
+    description: 'Straight answers about how this fits a management firm.',
     faqs: [
       {
-        question:
-          'How can a property management company get better-quality enquiries from a website?',
+        question: 'My team is small. Will this need someone new in the office?',
         answer:
-          'Separating owner enquiries, tenant requests, leasing questions, and maintenance issues more clearly is the first step. Better routing improves when the website helps people choose the right path instead of sending every request through one generic form.',
+          'No. The whole point is it runs while the team handles actual properties. Tenant acknowledgements, owner reports, landlord enquiries — all automatic. The team handles the work that needs a human.',
       },
       {
-        question: 'Should property managers let tenants submit maintenance requests online?',
+        question: 'Will it work alongside my management software (Arthur, PayProp, Reapit, etc)?',
         answer:
-          'Yes — if the request path captures the right context early. Good request structure helps the team understand urgency, property details, and responsibility before the issue turns into repeated back-and-forth.',
+          'Yes. Whatever you use stays. The system improves the bit between the enquiry coming in and the job sitting in your management software ready to be worked on.',
       },
       {
-        question: 'How do property managers reduce communication delays and missed follow-up?',
+        question: 'How does separating landlord and tenant enquiries actually work?',
         answer:
-          'The main improvement comes from making request status, reminders, and next steps more visible. When follow-up depends only on memory, delays become normal during busy periods.',
+          'The website asks one question up front — “Are you a landlord or a tenant?”. Landlords go to a portfolio enquiry flow. Tenants go to a maintenance request flow. Neither waits behind the other.',
       },
       {
-        question: 'Do property managers need separate pages for owners, tenants, and leasing?',
+        question: 'What about repeat tenant complaints?',
         answer:
-          'Often, yes, when those are genuinely different service paths. Clearer page structure helps local visibility and also helps visitors understand that the business can handle their specific situation.',
+          'Every request gets an instant acknowledgement with a reference number and a status update as it progresses. Tenants stop submitting the same complaint because they can see it’s been received and what’s happening.',
       },
       {
-        question: 'What kind of reviews matter most for property managers?',
+        question: 'How do I stop owners ringing for their monthly reports?',
         answer:
-          'The most useful reviews reinforce communication quality, organisation, response speed, and the feeling that issues were handled properly. A structured review request process can help that proof build more consistently over time.',
+          'Owner reports compile and send automatically on the same date every month — occupancy stats, maintenance summaries, financials. The phone stops ringing about reports.',
       },
       {
-        question:
-          'Can a Smart Website system help property managers without replacing their management software?',
+        question: 'Do I need to scrap my current website?',
         answer:
-          'Yes. The system improves how enquiries, requests, appointments, and follow-up move through the public-facing side of the business — so the operational flow starts in a better place without replacing internal software.',
+          'Usually not. We look at what you have first. The leak is normally the bit between an enquiry and the job sitting in your management software — not the site itself.',
       },
     ],
   };
@@ -359,9 +378,9 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'real-estate-property-services',
     seo: {
-      title: 'Property Managers — Smart Website Systems | MindWP',
+      title: 'Property Managers — Stop Losing Landlord Enquiries, Tenant Requests & Owner Trust | MindWP',
       description:
-        'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+        'For property managers where landlord portfolio enquiries get buried behind tenant complaints, where the same boiler request is submitted three times, and where owner reports take half a day to compile. We put the system in place that catches them.',
       keywords: [
         'property management website design',
         'property management lead handling system',
@@ -384,9 +403,9 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Build a steadier property management request and follow-up system',
+      title: 'Tell us where the portfolio is leaking',
       description:
-        'If your property management business is dealing with unclear request routing, maintenance coordination friction, or inconsistent communication updates — we can map a practical system around how the operation actually runs.',
+        'If landlord enquiries get buried behind tenant complaints, if maintenance requests get submitted three times, or if owner reports take half a day to compile — walk us through how the firm runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

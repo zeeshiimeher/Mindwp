@@ -15,24 +15,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildHairSalonsIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Expansion Lane',
-    title: 'Smart Website Systems for Hair Salons',
+    badge: 'For Hair Salons',
+    title: 'She Messaged About a Balayage at 9pm. By Morning She’s Booked Somewhere Else.',
     description:
-      'A salon website should support service clarity, appointment booking, reminders, and repeat-visit follow-up — without the front desk absorbing every gap.',
+      'Salons don’t lose clients on the chair — they lose them in the inbox. Late-night DMs that nobody saw. “Which service is right for me?” that nobody answered. Empty Tuesdays nobody filled. We put the system in place that catches every booking before it walks past you.',
     list: [
-      'Defined booking paths',
-      'Protected diary structure',
-      'Steady repeat-visit rhythm',
-      'Visible local trust',
+      'DMs that go unanswered overnight',
+      'No-shows nobody reminded',
+      'Empty slots nobody offered out',
+      'Regulars who quietly stopped rebooking',
     ],
     cssPrefix: 'hair-salons-hero',
   };
 
   const imageStripData = {
-    badge: 'Service Environment',
-    title: 'Salon demand depends on booking clarity, timing, and repeat client trust',
+    badge: 'How Bookings Actually Happen',
+    title: 'Most enquiries arrive after the salon has shut for the day',
     description:
-      'Service selection, stylist availability, appointment timing, reminders, and rebooking all shape the client experience. When those steps are loose, the team repeats the same coordination work all day.',
+      'Instagram DMs at 10pm. Calls during a colour. Texts asking “how much for highlights?” People decide quickly. The salons that reply first usually win the booking, and the ones that wait until tomorrow usually don’t.',
     items: [
       {
         title: 'New client enquiries',
@@ -60,37 +60,37 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where salons lose time and repeat momentum',
+    badge: 'Where The Bookings Slip',
+    title: 'The chair work is fine. The bit between the DM and the diary is where it goes wrong.',
     description:
-      'The issue is not getting booked — it is the gap between service selection, calendar coordination, reminders, and the trust signals that help clients choose and return.',
+      'Same handful of gaps in nearly every salon. Once you see them, you can’t unsee them.',
     benefits: [
       {
         icon: Scissors,
-        title: 'Unclear service paths before booking',
+        title: '“How much for a balayage on hair like mine?” sat unanswered overnight',
         description:
-          'Cut, colour, treatment, and styling services share one generic booking path, which creates confusion before the appointment is even selected.',
+          'By the time someone opens Instagram in the morning, she’s already booked the salon that replied at 9.30pm.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'Diary friction from booking complexity',
+        title: 'Tuesday afternoon is empty. Nobody told the regulars.',
         description:
-          'Stylist availability, service duration, and reminder timing compete for attention instead of flowing through one coordinated path.',
+          'Three stylists, two clients, a quiet panic. The slots could’ve been filled with a single message.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Follow-up that depends on memory',
+        title: 'No-shows on a Saturday morning, with a deposit nobody took',
         description:
-          'Review requests, return-visit prompts, and post-appointment follow-up happen only when someone remembers.',
+          'A reminder the night before would have caught it. Nobody had time to send one.',
         iconType: 'accent' as const,
       },
       {
         icon: MapPinned,
-        title: 'Disconnected trust signals',
+        title: 'The salon two streets over has 400 reviews. You have 38.',
         description:
-          'Reviews, stylist profiles, service pages, and local search all exist — but they do not reinforce each other.',
+          'Hundreds of brilliant cuts. Almost no one was ever asked. Locally you look quieter than you actually are.',
         iconType: 'primary' as const,
       },
     ],
@@ -98,52 +98,64 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Layers',
-    title: 'The working layers behind a steadier salon workflow',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to catch enquiries, fill the diary, and keep clients coming back',
     description:
-      'The salon system supports service discovery, booking, front-desk coordination, reminders, and repeat-visit follow-up without adding noise.',
+      'Each piece does one job. Together they stop bookings from slipping while the team is on the floor.',
     featureCategories: [
       {
-        title: 'Service and enquiry layer',
+        title: 'Reply to every DM and missed call inside a minute',
         description:
-          'Guides different services into separate first-contact paths so the right next step is obvious.',
+          'Late-night messages get an answer with prices, options, and a link to book — even at 11pm.',
         icon: MessageSquare,
         features: [
-          'Service-specific enquiry paths',
-          'Cleaner first response',
-          'Better booking guidance',
+          'Instant replies on Instagram, Facebook, web, missed calls',
+          'Service info and pricing answered up front',
+          'Booking link in the same message',
         ],
       },
       {
-        title: 'Booking and diary layer',
+        title: 'Let clients book themselves without phone tag',
         description:
-          'Structures appointments around service timing, stylist allocation, and confirmed next steps.',
+          'They pick a stylist, a service, and a slot that fits. Confirmations and deposits go out automatically.',
         icon: Calendar,
-        features: ['Appointment booking', 'Diary protection', 'Stylist and timing clarity'],
+        features: [
+          'Online booking by stylist and service',
+          'Deposits taken at the point of booking',
+          'Diary stays full, front desk stays free',
+        ],
       },
       {
-        title: 'Reminder and arrival layer',
+        title: 'Send the reminders nobody has time to send',
         description:
-          'Delivers reminders and preparation details consistently so the appointment day runs smoothly.',
+          'A reminder the day before. A “see you in an hour” on the morning. No-shows drop without nagging.',
         icon: Bell,
-        features: ['Reminder timing', 'Arrival guidance', 'Cleaner appointment communication'],
+        features: [
+          'Reminders the day before and morning of',
+          'Easy reschedule link instead of a no-show',
+          'Cancellations re-offered to the waitlist',
+        ],
       },
       {
-        title: 'Rebooking and review layer',
+        title: 'Bring clients back without anyone remembering to chase',
         description:
-          'Handles return-visit prompts and review requests so repeat demand compounds over time.',
+          'A “time for your next colour?” nudge at the right interval. A review request after every visit.',
         icon: ShieldCheck,
-        features: ['Rebooking prompts', 'Review request workflows', 'Better repeat-visit support'],
+        features: [
+          'Rebooking nudges at the right interval',
+          'Review requests after every appointment',
+          'Quiet days filled by past clients',
+        ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Show up when local people search for a stylist',
         description:
-          'Ties service pages, stylist credibility, and local search together to reinforce trust before booking.',
+          'Service pages, stylist profiles, and Google profile lined up so you appear before the salon two streets over.',
         icon: Search,
         features: [
-          'Service-page alignment',
-          'Google Business Profile support',
-          'Local trust reinforcement',
+          'Pages for the services you actually do',
+          'Stylist profiles that build trust',
+          'Found on Maps for local searches',
         ],
       },
     ],
@@ -151,105 +163,108 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
   };
 
   const comparisonData = {
-    badge: 'Operational Shift',
-    title: 'From reactive salon coordination to a calmer booking and rebooking flow',
+    badge: 'What Actually Changes',
+    title: 'A normal week in the salon, before and after',
     description:
-      'The personal feel of a salon stays intact. The friction around booking, reminders, and follow-up gets reduced so the team can work more calmly.',
+      'The personal feel stays. The bits that drain the team and lose bookings get fixed.',
     comparisons: [
       {
         type: 'before' as const,
-        title: 'Before the workflow is structured',
+        title: 'How it runs now',
         items: [
-          'Clients are unsure which service or time slot fits before booking',
-          'Arrival details and reminders are repeated manually each day',
-          'Review and rebooking prompts happen when someone remembers',
-          'Trust relies on manual reassurance during every first contact',
+          'A balayage DM at 9pm sat until morning. She booked someone else.',
+          'Tuesday is half-empty and nobody told the regulars.',
+          'A Saturday no-show. No deposit. No reminder.',
+          '“Amazing cut” — said by 200 people, written by 38.',
         ],
       },
       {
         type: 'after' as const,
-        title: 'After the workflow is aligned',
+        title: 'How it runs after',
         items: [
-          'New clients move into the right booking path faster',
-          'Booking and reminder flow protect the diary more consistently',
-          'Rebooking and review prompts happen with less manual chasing',
-          'Service clarity and local proof reinforce stronger booking confidence',
+          'The 9pm DM gets a friendly reply with prices and a booking link inside a minute.',
+          'Quiet days get offered out to past clients automatically. The diary fills itself.',
+          'A reminder fires the day before and morning of. No-shows drop.',
+          'Every happy client gets asked. The reviews catch up to the work.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Lead To Booking Flow',
-    title: 'From first enquiry to repeat follow-up',
-    description:
-      'Each stage moves salon demand through a specific part of the journey — from first contact to appointment to repeat booking.',
+    badge: 'Where Most Salons Start',
+    title: 'Three stages — most salons feel one of them more than the others',
+    description: 'Pick whichever costs you the most bookings right now.',
     packages: [
       {
-        name: 'Service clarity and booking setup',
+        name: 'Catch every enquiry, day or night',
         description:
-          'Separates services into distinct booking paths so clients land on the right appointment without extra back-and-forth.',
-        price: 'Flow stage 1',
-        priceDetail: 'Best when service selection and booking clarity are the main issue',
+          'For when DMs and missed calls keep going to whoever replies first — and that’s rarely you.',
+        price: 'Stage 1',
+        priceDetail: 'Start here if enquiries are leaking overnight',
         features: [
-          'Service-specific booking paths',
-          'Better first-response clarity',
-          'Cleaner service guidance',
+          'Instant replies on DMs, calls, and forms',
+          'Pricing and options answered up front',
+          'Booking link in the same message',
         ],
       },
       {
-        name: 'Diary protection and reminders',
+        name: 'Fill the diary and stop the no-shows',
         description:
-          'Adds reminder structure and preparation guidance so appointments are protected and the day runs with fewer surprises.',
-        price: 'Flow stage 2',
-        priceDetail: 'Best when calendar friction and reminder gaps are the pressure points',
+          'For when Tuesdays sit empty and Saturdays sit half-cancelled.',
+        price: 'Stage 2',
+        priceDetail: 'Start here if the diary is the biggest leak',
         features: [
-          'Appointment scheduling support',
-          'Reminder structure',
-          'Better arrival guidance',
+          'Self-serve booking by stylist and service',
+          'Deposits taken at booking',
+          'Reminders and easy reschedule links',
         ],
         popular: true,
       },
       {
-        name: 'Rebooking and review reinforcement',
+        name: 'Bring regulars back and turn them into proof',
         description:
-          'Introduces review prompts and rebooking follow-up so repeat demand builds without manual chasing.',
-        price: 'Flow stage 3',
-        priceDetail: 'Best when follow-up consistency and repeat demand need improvement',
-        features: ['Rebooking prompts', 'Review request support', 'Retention reinforcement'],
+          'For when the work is great but reviews and rebookings happen by accident.',
+        price: 'Stage 3',
+        priceDetail: 'Start here if reviews and retention are the weak spot',
+        features: [
+          'Review requests after every visit',
+          'Rebooking nudges at the right interval',
+          'Quiet slots offered out automatically',
+        ],
       },
     ],
   };
 
   const workflowExamplesData = {
-    badge: 'Follow-Up Examples',
-    title: 'What the salon lead, booking, and follow-up flow looks like in practice',
-    description:
-      'Repeatable situations where the system removes friction while keeping the experience personal.',
+    badge: 'Real Situations',
+    title: 'A few moments where the difference shows up',
+    description: 'Small moments on the floor that used to need someone to remember to do them.',
     workflows: [
       {
-        trigger: 'A new client reaches out but is unsure which service or time slot fits.',
+        trigger: 'A new client DMs at 9pm asking about a balayage on dark hair.',
         actions: [
-          'Guide the client into the right service path',
-          'Collect any early consultation context if needed',
-          'Reduce wasted time on unclear first contact',
+          'She gets a friendly reply inside a minute with rough pricing and a booking link',
+          'A consultation slot is offered if needed',
+          'By morning she’s in the diary, not the competitor’s',
         ],
       },
       {
         trigger:
-          'An appointment is confirmed and the client needs reminders and preparation details.',
+          'A Saturday client cancels last minute.',
         actions: [
-          'Send reminders at the right times',
-          'Confirm any key preparation or arrival details',
-          'Reduce avoidable no-shows and late confusion',
+          'The slot is offered to the waitlist automatically',
+          'A regular grabs it within the hour',
+          'The chair stays full, nobody had to make ten calls',
         ],
       },
       {
-        trigger: 'The visit is complete and the salon needs a review and a rebooking prompt.',
+        trigger:
+          'A colour client leaves happy after her appointment.',
         actions: [
-          'Send a well-timed review request',
-          'Prompt the right next visit or rebooking path',
-          'Keep repeat demand moving more reliably',
+          'A review request goes out a few hours later',
+          'Six weeks on, a “time for your next colour?” nudge appears',
+          'She rebooks without anyone at the salon having to remember',
         ],
       },
     ],
@@ -266,9 +281,9 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
   };
 
   const exploreData = {
-    badge: 'Explore',
+    badge: 'Related',
     description:
-      'Relevant service layers for salons that want stronger booking flow, steadier reminders, and better repeat demand.',
+      'The other parts of the system that come up most often for salons trying to keep the diary full and the chairs busy.',
     cards: [
       {
         icon: Workflow,
@@ -309,38 +324,38 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Common questions about salon systems',
-    description: 'Common questions about MindWP for hair salons',
+    title: 'Things salons usually ask',
+    description: 'Straight answers about how this fits a busy salon floor.',
     faqs: [
       {
-        question: 'How can a hair salon improve online bookings from its website?',
+        question: 'My DMs are out of control. Will this actually help?',
         answer:
-          'Make service pages specific enough that clients can tell which appointment to book. When the service path and the booking path are clear, conversion improves without any extra marketing.',
+          'Yes — every DM, missed call, and form gets an instant reply with prices, options, and a booking link. You stop losing bookings to whoever replied at 9pm.',
       },
       {
-        question: 'Should salons show pricing online?',
+        question: 'Will clients really book themselves online?',
         answer:
-          'Yes — or at least clear pricing guidance where service variation makes exact numbers harder. Price clarity reduces back-and-forth and helps clients decide sooner.',
+          'Most do, given the option. They can pick the stylist, the service, and the slot — and pay a deposit at the same time. The front desk gets quieter, not busier.',
       },
       {
-        question: 'How can salons reduce no-shows and late cancellations?',
+        question: 'How do reminders cut no-shows?',
         answer:
-          'Well-timed reminders and clear booking expectations help the most. The system protects the diary without turning the client experience into pressure-heavy messaging.',
+          'A friendly reminder the day before and the morning of catches almost all of them. Anyone who can’t make it gets a reschedule link instead of just not turning up.',
       },
       {
-        question: 'Do hair salons need separate pages for different services?',
+        question: 'Can I take deposits without scaring clients off?',
         answer:
-          'Yes. Separate pages help visitors and search engines understand each service. They also make it easier to route clients into the correct booking path instead of funnelling everything through one generic page.',
+          'Yes — a small deposit at booking is normal now and almost nobody complains. It pays for itself in one prevented no-show.',
       },
       {
-        question: 'What kind of reviews matter most for salons?',
+        question: 'How do I get more reviews without nagging?',
         answer:
-          'Reviews that mention quality, communication, and consistency carry the most weight. A steady review request process after each appointment builds that proof over time.',
+          'A review request goes out a few hours after the appointment, when she’s still loving her hair. That’s the moment people actually leave one.',
       },
       {
-        question: 'How should salons handle rebooking follow-up?',
+        question: 'Do I need a brand new website?',
         answer:
-          'Well-timed follow-up that makes the next appointment easy to understand and easy to book. The point is steady repeat demand, not pressure.',
+          'Usually not. We look at what you have first. Often the gap is everything that happens after someone tries to book — not the site itself.',
       },
     ],
   };
@@ -358,9 +373,9 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'beauty-personal-care',
     seo: {
-      title: 'Hair Salons — Smart Website Systems | MindWP',
+      title: 'Hair Salons — Stop Losing DMs, No-Shows, and Quiet Tuesdays | MindWP',
       description:
-        'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+        'For salons whose late-night DMs sit until morning, whose Tuesdays sit empty, and whose reviews don’t reflect the work. We put the system in place to catch every booking, fill the diary, and bring clients back.',
       keywords: [
         'hair salon website design',
         'salon booking website system',
@@ -383,9 +398,9 @@ function buildHairSalonsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Build a steadier salon workflow',
+      title: 'Tell us where the bookings are slipping',
       description:
-        'If booking confusion, reminder gaps, inconsistent reviews, or weak repeat-visit follow-up are slowing things down, we can map a practical system around the real client journey.',
+        'If DMs go quiet overnight, if Tuesdays sit empty, or if reviews never get asked for — walk us through how the salon runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

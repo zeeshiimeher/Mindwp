@@ -16,25 +16,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Coverage Lane',
-    title: 'Smart Website Systems for Legal & Professional Services',
+    badge: 'For Legal & Professional Practices',
+    title: 'They Sent The Same Enquiry To Three Firms On Tuesday. By Thursday, Whoever Replied First Was Instructed.',
     description:
-      'A legal or professional service website should support qualification, consultation booking, document-readiness, and follow-up — without making every new matter depend on manual chasing.',
+      'Solicitors, accountants, consultants — different work, same leaks. Enquiries that took two days to reply to. Consultations stuck in email tennis. Proposals and quotes that went quiet. We put the system in place that catches the right enquiries before they go to the firm down the road.',
     list: [
-      'Clearer enquiry qualification',
-      'Better consultation flow',
-      'Stronger trust signals',
-      'More reliable follow-up',
+      'Enquiries that took two days to acknowledge',
+      'Consultations lost in email tennis',
+      'Quotes and proposals that went quiet',
+      'Reviews from happy clients you never asked',
     ],
     cssPrefix: 'legal-professional-services-hero',
   };
 
   const imageStripData = {
-    badge: 'Category Reality',
-    title:
-      'The work is advisory and trust-led, but the friction starts before the consultation happens',
+    badge: 'How Advisory Enquiries Actually Land',
+    title: 'It’s rarely “who’s the best” — it’s “who replied first and made the next step obvious”',
     description:
-      'Prospects arrive with uncertainty, urgency, and incomplete context. Qualification, consultation timing, document-readiness, credibility signals, and follow-up all shape whether the conversation moves forward. That operating layer needs to be visible before narrowing into one professional workflow.',
+      'A founder needs an accountant. A homeowner needs a solicitor. A scale-up needs a consultant. They contact three firms, and the one that replied first with a clear next step usually wins.',
     items: [
       {
         title: 'Qualification and fit enquiries',
@@ -62,37 +61,36 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where legal and professional service businesses feel pressure first',
-    description:
-      'The gap is rarely visibility alone — it sits between first enquiry, qualification, consultation readiness, trust proof, and consistent follow-up after the first conversation.',
+    badge: 'Where The Work Slips',
+    title: 'You’re heads-down with current clients. The new enquiry waits. They instructed somebody else.',
+    description: 'Same handful of leaks across legal, accounting, and consulting. None of them are about the actual advisory work.',
     benefits: [
       {
         icon: AlertCircle,
-        title: 'Prospects enquire before the business knows whether the fit is right',
+        title: 'A serious enquiry sat unread for two days',
         description:
-          'Different matter types, service scopes, urgency levels, and budgets arrive through one loose path — first-response quality drops when everything routes the same way.',
+          'You were in court, on year-end, or delivering a workshop. By the time you replied, they’d already chosen.',
         iconType: 'primary' as const,
       },
       {
         icon: Clock3,
-        title: 'Consultation flow becomes uneven when readiness is unclear',
+        title: 'Five emails to land one consultation',
         description:
-          'Initial calls, document requests, scope clarification, and next steps often depend on manual back-and-forth when the workflow is not structured clearly.',
+          '“Tuesday at 2?” “Can’t do Tuesday.” The good ones don’t stick around for that.',
         iconType: 'secondary' as const,
       },
       {
         icon: Shield,
-        title: 'Trust signals exist, but they do not always support the decision path properly',
+        title: 'A quote or proposal went quiet for weeks',
         description:
-          'Reviews, authority signals, service pages, and advisor credibility exist in different places — they rarely reinforce one another before the consultation happens.',
+          'One nudge would have closed half of these. Nobody had time to send it.',
         iconType: 'accent' as const,
       },
       {
         icon: MessageSquare,
-        title: 'Growth adds communication drag faster than it adds clarity',
+        title: 'The firm down the road has hundreds of reviews. You have a handful.',
         description:
-          'More enquiries or more service types can create intake pressure if qualification and follow-up still rely too heavily on memory.',
+          'Your retention is better. Online you look smaller because nobody was ever asked at the right moment.',
         iconType: 'primary' as const,
       },
     ],
@@ -100,63 +98,75 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Architecture',
-    title: 'What the category operating system needs to hold together',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to handle enquiries, book consultations, and turn finished work into reviews',
     description:
-      'A strong legal or professional services setup connects first contact, qualification, consultation booking, trust support, and follow-up into one practical system rather than separate disconnected tasks.',
+      'Each piece does one job. Together they keep the intake moving while you do the actual advisory work.',
     featureCategories: [
       {
-        title: 'Qualification layer',
+        title: 'Reply to enquiries the same hour, even mid-matter',
         description:
-          'Calls, forms, and service requests need a clearer first step so the business can identify fit and respond with better context.',
+          'Form lands, an instant acknowledgement goes out with what to expect next. Most enquirers stop messaging other firms.',
         icon: MessageSquare,
-        features: ['Service-path capture', 'Fit qualification', 'Cleaner first-response routing'],
+        features: [
+          'Same-hour acknowledgement on every enquiry',
+          'Service type and urgency captured up front',
+          'Holds the lead until you can call back',
+        ],
       },
       {
-        title: 'Consultation layer',
+        title: 'Book the consultation without the email tennis',
         description:
-          'Initial calls and advisory appointments should move forward without loose handoffs or unclear next steps.',
+          'Clients pick a slot themselves. “When are you free?” gets replaced with a calendar link.',
         icon: Calendar,
-        features: ['Consultation scheduling', 'Readiness guidance', 'Next-step clarity'],
+        features: [
+          'Self-serve consultation booking',
+          'Reminders the day before',
+          'Reschedule link instead of a no-show',
+        ],
       },
       {
-        title: 'Workflow visibility layer',
+        title: 'See where every enquiry is in one place',
         description:
-          'Teams need better visibility around which enquiry stage, document state, or follow-up path each prospect currently sits inside.',
+          'Quote sent, consultation booked, matter open, review asked. Nothing slips because nobody had time to write it down.',
         icon: FileText,
         features: [
-          'Lead-stage visibility',
+          'Pipeline visible in one place',
           'Document-readiness context',
-          'Better internal handoff points',
+          'Better handoff between fee earners',
         ],
       },
       {
-        title: 'Trust and proof layer',
+        title: 'Turn finished matters into reviews you can show',
         description:
-          'Proof of competence, reviews, and credibility signals need to support the consultation decision before the conversation starts.',
+          'A polite review request goes out the week after completion, when the relief or result is freshest.',
         icon: Star,
         features: [
-          'Review request workflows',
-          'Proof and credibility support',
-          'Trust before booking',
+          'Review requests at the right moment',
+          'Asked once, never again',
+          'Reviews catch up to the workload',
         ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Show up for the right kind of client locally and online',
         description:
-          'Search visibility, authority pages, and service-area language need to reinforce the matters and clients you actually want.',
+          'Service pages and authority content lined up so the right matter, niche, or area finds you first.',
         icon: Search,
-        features: ['Service-page clarity', 'Local authority support', 'Search reinforcement'],
+        features: [
+          'Pages for the work and clients you want',
+          'Found on the searches that bring real briefs',
+          'Less time on enquiries that aren’t a fit',
+        ],
       },
       {
-        title: 'Follow-up layer',
+        title: 'Follow up the quotes and proposals that go quiet',
         description:
-          'Pending consultations, open decisions, and post-consultation next steps all need calmer follow-through.',
+          'Sent Monday, polite check-in a week later, another the week after. Quietly closes more.',
         icon: Shield,
         features: [
-          'Lead nurture',
-          'Missed-enquiry recovery',
-          'Post-consultation follow-up prompts',
+          'Follow-up at the right intervals',
+          'Pending matters visible in one place',
+          'Closing rate goes up without nagging',
         ],
       },
     ],
@@ -164,36 +174,40 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
   };
 
   const spectrumData = {
-    badge: 'Business Shapes',
-    title: 'The category covers different advisory operating models, not one fixed firm shape',
+    badge: 'Different Practices, Same Leaks',
+    title: 'A solo solicitor, a high-street firm, and a six-person consultancy don’t look alike — but the gaps usually are',
     description:
-      'Small law firms, accounting firms, and consultants can look similar from the outside, but the workflow strain changes depending on urgency, qualification depth, document-readiness, and how trust is established before the first meeting.',
+      'Different setups, similar friction. Once you place yours, the right next step gets obvious.',
     cards: [
       {
         title: 'Owner-led specialist firms',
         description:
-          'Fewer systems needed, but much stronger intake structure — because the same people are delivering the work and qualifying new matters.',
+          'You’re the fee earner and the intake desk. Anything that drops between the two costs work.',
         points: [
-          'Low admin capacity',
-          'High first-response pressure',
-          'Need for clearer fit qualification',
+          'Enquiries missed during client meetings',
+          'Consultations booked late at night',
+          'Reviews never asked for',
         ],
       },
       {
-        title: 'Team-based professional practices',
+        title: 'Team-based practices',
         description:
-          'Need tighter handoffs between intake, advisory staff, and the person managing the next step after the first consultation.',
-        points: ['Shared workload', 'Scheduling pressure', 'Follow-up gaps become expensive'],
+          'More hands, more handoffs. Things slip in the gap between reception, fee earner, and follow-up.',
+        points: [
+          'Quotes that nobody owned',
+          'Consultations nobody confirmed',
+          '“Who was supposed to ring them?”',
+        ],
         featured: true,
       },
       {
         title: 'Relationship-led consultants',
         description:
-          'Need clearer service-path explanation, stronger trust proof, and better guidance around what the first conversation should look like.',
+          'Longer sales cycles. Buying committees, board sign-offs, summer holidays. Proposals drift if nobody nudges.',
         points: [
-          'Trust has to carry more weight',
-          'Service-path clarity matters',
-          'Nurture can be longer',
+          'Proposals quiet for weeks',
+          'Past clients who would refer if asked',
+          'Pipeline that depends on memory',
         ],
       },
     ],
@@ -202,17 +216,16 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
   };
 
   const decisionChecklistData = {
-    badge: 'When Category Work Matters',
-    title: 'Signs the business needs category-level system thinking before another isolated fix',
-    description:
-      'This is the point where one more brochure page or one more intake tweak is not the answer. The whole qualification-to-consultation flow needs tightening at category level first.',
+    badge: 'Sound Familiar?',
+    title: 'A few signs this is worth looking at properly',
+    description: 'If most of these ring true, the leak is bigger than another marketing tweak will fix.',
     items: [
-      'Different service types exist, but new matters still enter through one unclear process',
-      'Consultation requests reach the business, but response quality depends too much on who happens to be free',
-      'Trust signals exist, but they are not strengthening the right service pages or consultation decisions',
-      'Pending consultations or follow-up actions are hard to track consistently',
-      'The business wants more service-specific pages, but the category logic behind them is still weak',
-      'Growth is creating intake pressure faster than it is creating operational clarity',
+      'Enquiries take a day or more to be acknowledged, even the urgent ones',
+      'Consultations or discovery calls take five emails to book',
+      'Quotes and proposals go quiet for weeks before anybody chases them',
+      'Reviews online don’t reflect how good the work actually is',
+      'Pipeline visibility lives in someone’s head, not in a system',
+      'More work just makes the office feel worse, not better',
     ],
     columns: 2 as const,
     backgroundColor: 'bg-base',
@@ -220,69 +233,67 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
   };
 
   const serviceEnvironmentsData = {
-    badge: 'Service Environments',
-    title: 'The same category can operate through very different service environments',
+    badge: 'How You Actually Work',
+    title: 'A high-street firm, a recurring-fee accountancy, and a project-led consultant break in different places',
     description:
-      'A small law firm, an accounting practice, and a consulting business do not break in the same places. That difference needs to be visible before narrowing into one single-industry workflow.',
+      'Different setups, different leaks. The bit that costs you the most work isn’t the same in a small law firm as in an independent consultancy.',
     features: [
       {
-        title: 'Matter-led legal environment',
+        title: 'Matter-led legal practice',
         description:
-          'Better first-response structure, clearer qualification, and less reliance on loose manual intake.',
+          'Urgent enquiries arrive when fee earners are in court or with clients. Speed of acknowledgement is everything.',
         icon: Scale,
       },
       {
-        title: 'Recurring advisory environment',
+        title: 'Recurring advisory practice',
         description:
-          'Stronger handoffs between enquiry capture, consultation scheduling, and the ongoing client relationship.',
+          'New enquiries land while the team is heads-down on year-ends or VAT. Same-hour acknowledgement makes the difference.',
         icon: Calculator,
       },
       {
-        title: 'Project-led consulting environment',
+        title: 'Project-led consulting',
         description:
-          'Better routing between service types, clearer trust signals, and stronger explanation of how the advisory process works.',
+          'Longer sales cycles, buying committees, summer holidays. Proposals drift unless somebody nudges at the right moment.',
         icon: BriefcaseBusiness,
       },
     ],
-    tagline: 'Category context before service-level depth',
-    narrativeTitle: 'Why this belongs on the category page',
+    tagline: 'Same category, different bottlenecks',
+    narrativeTitle: 'Why we look at the shape of the practice first',
     narrativeParagraphs: [
-      'A category page should explain the operating environments inside legal and professional services before it narrows into one workflow like a law firm or an accounting practice.',
-      'Once that context is clear, the single-industry page can go much deeper into qualification handling, consultation flow, trust support, and follow-up for that service type.',
+      'Before any change is made, we look at how enquiries actually arrive, who handles them, and where they currently slip. That’s usually obvious within a short conversation.',
+      'From there, the right next step — instant acknowledgement, consultation booking, proposal follow-up, review collection — becomes obvious instead of generic.',
     ],
     backgroundColor: 'bg-alt',
     cssPrefix: 'legal-professional-services-service-environments',
   };
 
   const processData = {
-    badge: 'Tier 1 Layering',
-    title: 'How Smart Website structure expands into legal and professional workflows',
+    badge: 'How We Get Started',
+    title: 'How a typical conversation moves from “we’re losing work” to “we’ve stopped losing work”',
     description:
-      'Once the category system is clear, the page can route visitors into the right advisory workflow while keeping Smart Website structure as the main operating layer.',
+      'Nothing fancy. We look at how the practice actually runs, then put the missing pieces in place in the order that helps most.',
     steps: [
       {
         number: '01',
-        title: 'Frame the Smart Website core',
-        description:
-          'Start with the enquiry, qualification, and consultation structure that supports advisory demand before narrowing into one service type.',
+        title: 'We look at how enquiries arrive now',
+        description: 'Calls, forms, referrals, walk-ins. Where they go, who sees them, who replies.',
       },
       {
         number: '02',
-        title: 'Show the operating shapes',
-        description:
-          'Clarify how legal, accounting, and consulting operators differ so visitors can place themselves quickly.',
+        title: 'We map where the matters are slipping',
+        description: 'No pitch deck. A short, honest list of what’s breaking and what it’s costing.',
       },
       {
         number: '03',
-        title: 'Layer the supporting systems',
+        title: 'The biggest leak gets fixed first',
         description:
-          'Connect local visibility, trust proof, qualification flow, consultation booking, and follow-up support around the Smart Website core.',
+          'Slow acknowledgement, consultation booking, proposal follow-up, missing reviews — whichever is bleeding the most work.',
       },
       {
         number: '04',
-        title: 'Route into service pages',
+        title: 'It runs while the team is on matters',
         description:
-          'Move the visitor into the right single-industry workflow page once the category context is clear.',
+          'Replies, reminders, reviews, follow-up. Going on their own while the fee earners do the law.',
       },
     ],
     columns: 4 as const,
@@ -291,29 +302,29 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
   };
 
   const detailRoutesData = {
-    badge: 'Approved Sub-Industry Workflows',
-    title: 'The next mapped workflows in this category',
+    badge: 'By Practice Type',
+    title: 'Pick the one closest to how you run',
     description:
-      'Legal & Professional Services is live as a category page. The workflow pages in this lane — Small Law Firms, Accounting Firms, and Consultants — each turn this category logic into a more specific operating path.',
+      'Same category, different bottlenecks. These pages get into the specifics for each kind of practice.',
     items: [
       {
         title: 'Small Law Firms',
         description:
-          'From matter qualification through consultation booking, document-readiness, and trust-led follow-up.',
+          'For high-street firms losing Friday-evening enquiries and conveyancing quotes that go quiet.',
         href: '/industries/legal-professional-services/small-law-firms',
         icon: Scale,
       },
       {
         title: 'Accounting Firms',
         description:
-          'From service-fit enquiries through consultation booking, information readiness, and ongoing client confidence.',
+          'For small practices where founders email three accountants and pick whoever replied first.',
         href: '/industries/legal-professional-services/accounting-firms',
         icon: Calculator,
       },
       {
         title: 'Consultants',
         description:
-          'From qualification and discovery through advisory booking, trust reinforcement, and measured nurture follow-up.',
+          'For independent consultants where proposals go quiet for a month and testimonials never get asked for.',
         href: '/industries/legal-professional-services/consultants',
         icon: BriefcaseBusiness,
       },
@@ -341,9 +352,9 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
     ],
     industries: ['accounting', 'consulting', 'law-firm'],
     seo: {
-      title: 'Legal & Professional Services Systems | MindWP',
+      title: 'Legal, Accounting & Consulting Practices — Stop Losing Enquiries, Consultations & Proposals | MindWP',
       description:
-        'Smart Website systems for legal and professional service businesses that need clearer qualification, consultation flow, and stronger trust support.',
+        'For solicitors, accountants, and consultants where enquiries go to whoever replied first, consultations take five emails to book, and proposals go quiet for weeks. We put the system in place that catches the right work.',
       keywords: [
         'legal professional services website systems',
         'law firm consultation booking system',
@@ -371,9 +382,9 @@ function buildLegalProfessionalServicesIndustryPageData(): IndustryPageData {
       },
     },
     cta: {
-      title: 'Map the legal or professional category around how your business actually works',
+      title: 'Tell us where the work is leaking',
       description:
-        'If consultations feel inconsistent, we can show you how to turn more qualified enquiries into booked calls.',
+        'If new enquiries take days to acknowledge, if consultations take a week of emails, or if proposals and quotes go quiet — walk us through how the practice runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

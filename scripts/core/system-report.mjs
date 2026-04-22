@@ -148,6 +148,12 @@ const validatorReportSourceByFile = new Map(
     [validator.command, ...validator.args].join(' '),
   ])
 );
+const validatorCommandByName = new Map(
+  getValidatorDefinitions().map(validator => [validator.name, [validator.command, ...validator.args].join(' ')])
+);
+const validatorReportFileByName = new Map(
+  getValidatorDefinitions().map(validator => [validator.name, validator.reportFile])
+);
 
 const reportSourceByFile = new Map([
   ['authority-map.json', 'node --import tsx/esm scripts/generators/generate-authority-map.ts'],
@@ -667,6 +673,331 @@ function collectOutputLines(output, maxLines = 20) {
 
 function findValidatorFailure(failuresByValidator, validatorName) {
   return failuresByValidator.get(validatorName)?.output ?? '';
+}
+
+function stripAnsi(value) {
+  return String(value).replace(/\u001B\[[0-9;]*m/g, '');
+}
+
+function normalizeFailureText(value) {
+  return stripAnsi(value).replace(/\r/g, '').trim();
+}
+
+function extractPrimaryFailureReason(message, fallback = 'Unknown failure.') {
+  const lines = normalizeFailureText(message)
+    .split('\n')
+    .map(line => line.trim())
+    .filter(Boolean);
+
+  for (const line of lines) {
+    if (line.startsWith('at ') || line.startsWith('file://')) {
+      continue;
+    }
+
+    if (line === 'Error:' || line === 'AssertionError:') {
+      continue;
+    }
+
+    return line.replace(/^(Error|AssertionError):\s*/u, '').trim() || fallback;
+  }
+
+  return fallback;
+}
+
+function extractExpectedReceived(message) {
+  const normalized = normalizeFailureText(message);
+  const expectedMatch = normalized.match(/Expected:\s*([^\n]+)/u);
+  const receivedMatch = normalized.match(/Received:\s*([^\n]+)/u);
+
+  return {
+    expected: expectedMatch?.[1]?.trim() ?? null,
+    received: receivedMatch?.[1]?.trim() ?? null,
+  };
+}
+
+function isSnapshotFailure(message) {
+  return /snapshot/i.test(normalizeFailureText(message));
+}
+
+function classifySnapshotReason(message) {
+  const normalized = normalizeFailureText(message);
+
+  if (/mismatched/i.test(normalized)) {
+    return 'Snapshot content mismatch.';
+  }
+
+  if (/obsolete|unchecked|removed|not written|missing snapshot/i.test(normalized)) {
+    return 'Snapshot count mismatch.';
+  }
+
+  return 'Snapshot assertion failed.';
+}
+
+function createFailureEntry({ file, reason, fixSuggestion, expected = null, received = null }) {
+  return {
+    file,
+    reason,
+    fixSuggestion,
+    expected,
+    received,
+  };
+}
+
+function dedupeFailures(entries) {
+  const seen = new Set();
+
+  return entries.filter(entry => {
+    const key = [entry.file, entry.reason, entry.fixSuggestion, entry.expected, entry.received].join('::');
+    if (seen.has(key)) {
+      return false;
+    }
+    seen.add(key);
+    return true;
+  });
+}
+
+function readValidatorIssueEntries(validatorName) {
+  const reportFile = validatorReportFileByName.get(validatorName);
+
+  if (!reportFile) {
+    return [];
+  }
+
+  const report = readReportJson(root, reportFile);
+  const data = unwrapReportData(report) ?? report ?? {};
+  const issues = Array.isArray(data?.issues) ? data.issues : Array.isArray(report?.issues) ? report.issues : [];
+
+  return issues
+    .map(issue => {
+      const file = issue?.file ? extractRelativePath(issue.file) ?? issue.file : `validator:${validatorName}`;
+      const line = typeof issue?.line === 'number' ? issue.line : null;
+      const code = typeof issue?.code === 'string' ? issue.code : null;
+      const message = typeof issue?.message === 'string' ? issue.message : null;
+
+      if (!message) {
+        return null;
+      }
+
+      return createFailureEntry({
+        file: line ? `${file}:${line}` : file,
+        reason: code ? `${message} [${code}]` : message,
+        fixSuggestion: validatorCommandByName.get(validatorName) ?? 'npm run system:full',
+      });
+    })
+    .filter(Boolean);
+}
+
+function buildRuntimeFailureDiagnostics(report, vitestReport = null) {
+  const testFailures = [];
+  const snapshotFailures = [];
+  const validationFailures = [];
+
+  for (const testResult of vitestReport?.testResults ?? []) {
+    const file = extractRelativePath(testResult?.name) ?? 'unknown';
+
+    for (const assertion of testResult?.assertionResults ?? []) {
+      if (assertion?.status !== 'failed') {
+        continue;
+      }
+
+      const failureMessage = Array.isArray(assertion?.failureMessages)
+        ? assertion.failureMessages.join('\n')
+        : '';
+      const reason = extractPrimaryFailureReason(
+        failureMessage,
+        assertion?.fullName ?? assertion?.title ?? 'Unnamed failed test.'
+      );
+      const { expected, received } = extractExpectedReceived(failureMessage);
+
+      if (isSnapshotFailure(failureMessage)) {
+        snapshotFailures.push(
+          createFailureEntry({
+            file,
+            reason: classifySnapshotReason(failureMessage),
+            fixSuggestion: `npx vitest run ${file} -u`,
+            expected,
+            received,
+          })
+        );
+        continue;
+      }
+
+      testFailures.push(
+        createFailureEntry({
+          file,
+          reason,
+          fixSuggestion: `npx vitest run ${file}`,
+          expected,
+          received,
+        })
+      );
+    }
+  }
+
+  for (const unchecked of vitestReport?.snapshot?.uncheckedKeysByFile ?? []) {
+    const file = extractRelativePath(unchecked?.filePath) ?? 'unknown';
+    const count = Array.isArray(unchecked?.keys) ? unchecked.keys.length : 0;
+    snapshotFailures.push(
+      createFailureEntry({
+        file,
+        reason:
+          count > 0
+            ? `Snapshot count mismatch (${count} unchecked snapshot key${count === 1 ? '' : 's'}).`
+            : 'Snapshot count mismatch.',
+        fixSuggestion: `npx vitest run ${file} -u`,
+      })
+    );
+  }
+
+  for (const validator of report.validate.validators ?? []) {
+    if (validator.status !== 'FAIL') {
+      continue;
+    }
+
+    const issueEntries = readValidatorIssueEntries(validator.name);
+    if (issueEntries.length > 0) {
+      validationFailures.push(...issueEntries);
+      continue;
+    }
+
+    const lines = validator.blocking ? validator.errors : validator.warnings;
+    validationFailures.push(
+      createFailureEntry({
+        file: `validator:${validator.name}`,
+        reason: lines[0] ?? `${validator.name} failed.`,
+        fixSuggestion: validatorCommandByName.get(validator.name) ?? 'npm run system:full',
+      })
+    );
+  }
+
+  for (const error of report.reports.errors ?? []) {
+    validationFailures.push(
+      createFailureEntry({
+        file: 'reports',
+        reason: error,
+        fixSuggestion: 'node --import tsx/esm scripts/analyzers/export-reports.mjs',
+      })
+    );
+  }
+
+  for (const fileName of report.reports.missing ?? []) {
+    validationFailures.push(
+      createFailureEntry({
+        file: `reports/${fileName}`,
+        reason: 'Required report file is missing.',
+        fixSuggestion: reportSourceByFile.get(fileName) ?? validatorReportSourceByFile.get(fileName) ?? 'node --import tsx/esm scripts/analyzers/export-reports.mjs',
+      })
+    );
+  }
+
+  for (const fileName of report.reports.stale ?? []) {
+    validationFailures.push(
+      createFailureEntry({
+        file: `reports/${fileName}`,
+        reason: 'Report file is stale.',
+        fixSuggestion: reportSourceByFile.get(fileName) ?? validatorReportSourceByFile.get(fileName) ?? 'node --import tsx/esm scripts/analyzers/export-reports.mjs',
+      })
+    );
+  }
+
+  return {
+    testFailures: dedupeFailures(testFailures),
+    snapshotFailures: dedupeFailures(snapshotFailures),
+    validationFailures: dedupeFailures(validationFailures),
+  };
+}
+
+function printFailureEntries(title, entries) {
+  if (entries.length === 0) {
+    return;
+  }
+
+  process.stdout.write(`${title}\n`);
+  for (const entry of entries) {
+    process.stdout.write(`- file: ${entry.file}\n`);
+    process.stdout.write(`  reason: ${entry.reason}\n`);
+    if (entry.expected) {
+      process.stdout.write(`  expected: ${entry.expected}\n`);
+    }
+    if (entry.received) {
+      process.stdout.write(`  received: ${entry.received}\n`);
+    }
+    process.stdout.write(`  fix: ${entry.fixSuggestion}\n`);
+  }
+}
+
+function printSystemFailures(diagnostics) {
+  const totalFailures =
+    diagnostics.testFailures.length +
+    diagnostics.snapshotFailures.length +
+    diagnostics.validationFailures.length;
+
+  if (totalFailures === 0) {
+    return;
+  }
+
+  process.stdout.write('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
+  process.stdout.write('❌ SYSTEM FAILURES\n');
+  process.stdout.write('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
+  printFailureEntries('TEST FAILURES', diagnostics.testFailures);
+  printFailureEntries('SNAPSHOT FAILURES', diagnostics.snapshotFailures);
+  printFailureEntries('VALIDATION FAILURES', diagnostics.validationFailures);
+}
+
+function buildActionCommands(report, diagnostics) {
+  const commands = [];
+
+  for (const entry of diagnostics.testFailures) {
+    commands.push(entry.fixSuggestion);
+  }
+
+  for (const entry of diagnostics.snapshotFailures) {
+    commands.push(entry.fixSuggestion);
+  }
+
+  for (const entry of diagnostics.validationFailures) {
+    commands.push(entry.fixSuggestion);
+  }
+
+  if (report.status === 'PASS') {
+    commands.push('npm run build');
+  } else {
+    commands.push('npm run system:full');
+  }
+
+  return uniqueStrings(commands);
+}
+
+function printActionSection(report, diagnostics) {
+  const commands = buildActionCommands(report, diagnostics);
+  const hasFailures =
+    diagnostics.testFailures.length > 0 ||
+    diagnostics.snapshotFailures.length > 0 ||
+    diagnostics.validationFailures.length > 0;
+
+  process.stdout.write('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
+  process.stdout.write('🧠 WHAT YOU SHOULD DO\n');
+  process.stdout.write('━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\n');
+
+  if (!hasFailures) {
+    process.stdout.write('- No blocking issues detected.\n');
+    process.stdout.write('- Next step: continue with your normal workflow or rerun the build if you need a fresh production artifact.\n');
+  } else {
+    process.stdout.write('- Run the targeted command(s) below in order.\n');
+    process.stdout.write('- Re-run system:full after the targeted fix so validators, tests, and reports stay in sync.\n');
+  }
+
+  for (const command of commands) {
+    process.stdout.write(`- command: ${command}\n`);
+  }
+
+  if (report.reports.stale.length > 0 || report.reports.missing.length > 0) {
+    process.stdout.write('- Warning: report outputs are out of sync; refresh the affected generators before trusting downstream dashboards.\n');
+  }
+
+  if (hasFailures && isGitWorkspaceDirty()) {
+    process.stdout.write('- Warning: the workspace is dirty; confirm generated report or snapshot changes are intentional before committing them.\n');
+  }
 }
 
 function scanSmartCtaUsage() {
@@ -1743,6 +2074,7 @@ function main() {
       const vitestReport = readJsonFile(vitestOutputPath);
       return buildTestsSection(testsResult, vitestReport);
     })();
+  const vitestReport = skipTests ? null : readJsonFile(vitestOutputPath);
 
   const e2eResult = includeE2E
     ? runCommand(binaries.npx, ['playwright', 'test', '--reporter=json'])
@@ -1792,9 +2124,14 @@ function main() {
       restoreReportFiles(preservedQuickReports);
     }
 
+    const diagnostics = buildRuntimeFailureDiagnostics(stabilizedReport, vitestReport);
     printStructuredSystemSummary(stabilizedReport, performanceSummary);
+    printSystemFailures(diagnostics);
     if (outputMode === 'full') {
       printStructuredSystemDetails(stabilizedReport, performanceSummary);
+    }
+    if (stabilizedReport.status === 'FAIL' || outputMode === 'full') {
+      printActionSection(stabilizedReport, diagnostics);
     }
 
     logger.printSummary('quick mode -> preserved system:full source-of-truth reports');
@@ -1878,9 +2215,14 @@ function main() {
   writeSnapshotArtifacts(validatedOutputs.report);
 
   const shouldFail = validatedOutputs.report.status === 'FAIL';
+  const diagnostics = buildRuntimeFailureDiagnostics(validatedOutputs.report, vitestReport);
   printStructuredSystemSummary(validatedOutputs.report, performanceSummary);
+  printSystemFailures(diagnostics);
   if (outputMode === 'full') {
     printStructuredSystemDetails(validatedOutputs.report, performanceSummary);
+  }
+  if (validatedOutputs.report.status === 'FAIL' || outputMode === 'full') {
+    printActionSection(validatedOutputs.report, diagnostics);
   }
   logger.printSummary(`system report -> ${logger.relativePath(reportPath)}`);
   logger.printSummary(`client dashboard -> ${logger.relativePath(clientDashboardPath)}`);

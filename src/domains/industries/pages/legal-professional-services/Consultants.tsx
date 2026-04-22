@@ -14,25 +14,24 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildConsultantsIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'Coverage Lane',
-    title: 'Smart Website Systems for Consultants',
+    badge: 'For Independent Consultants',
+    title: 'A Founder Booked A Call With You And Two Other Consultants. Whoever Sounded Sharpest First Got The Project.',
     description:
-      'A consulting website should support qualification, discovery-call booking, scope clarity, and follow-up — without making every opportunity depend on manual chasing.',
+      'Consulting work doesn’t walk in cold anymore. People shortlist three people on LinkedIn, send the same enquiry, and move on whoever replied with the clearest next step. We put the system in place that catches the right enquiries, books the discovery call, and keeps the proposal alive when the decision drags.',
     list: [
-      'Clearer qualification routing',
-      'Better discovery-call flow',
-      'Stronger trust signals',
-      'More reliable follow-up',
+      'Enquiries that took two days to reply to',
+      'Discovery calls lost in email tennis',
+      'Proposals that went quiet for a month',
+      'Past clients who would have referred if asked',
     ],
     cssPrefix: 'consultants-hero',
   };
 
   const imageStripData = {
-    badge: 'Service Environment',
-    title:
-      'Consulting demand depends on trust, fit, and scope clarity before the advisory relationship starts',
+    badge: 'How Consulting Enquiries Actually Land',
+    title: 'It’s rarely “who’s the smartest” — it’s “who replied first and made the next step obvious”',
     description:
-      'Discovery enquiries, service-fit questions, call timing, scope expectations, credibility signals, and follow-up all shape whether a prospect progresses. When those steps feel disconnected, the pipeline becomes harder to trust and harder to manage.',
+      'A founder shortlists three consultants from LinkedIn, sends the same DM Tuesday morning, and books a call with whoever replied first with a calendar link.',
     items: [
       {
         title: 'Qualification and fit enquiries',
@@ -60,37 +59,36 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Operating Patterns',
-    title: 'Where consultants lose clarity, time, or deal momentum',
-    description:
-      'The gap is rarely visibility alone — it sits between first enquiry, qualification, discovery timing, scope clarity, and the trust proof someone needs before they buy advisory work.',
+    badge: 'Where The Work Slips',
+    title: 'You’re mid-delivery on a current project. The new enquiry waits two days. They booked someone else.',
+    description: 'Same handful of leaks in nearly every solo or small consultancy. None of them are about the actual work.',
     benefits: [
       {
         icon: BriefcaseBusiness,
-        title: 'Prospects enquire before the consultant knows whether the fit is right',
+        title: 'A six-figure project enquiry sat in the inbox for two days',
         description:
-          'Different project types, budgets, urgency levels, and decision stages arrive through one loose path — first-response quality drops when everything routes the same way.',
+          'You were heads-down delivering. By the time you replied, they’d already had a Zoom with somebody else.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'Discovery-call booking creates friction when readiness is unclear',
+        title: 'Six emails to land one discovery call',
         description:
-          'Availability, scope expectations, and next steps sit in different places — the pipeline slows before it should.',
+          '“Tuesday at 2?” “No good.” “Thursday morning?” The serious ones don’t stick around for that.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Pending opportunities depend too much on manual follow-up',
+        title: 'A proposal went out and you never heard back',
         description:
-          'Many prospects are not ready immediately, but the nurture path often becomes inconsistent when delivery work is already filling the week.',
+          'Buying committee, board sign-off, summer holidays. One nudge after three weeks would have closed half of these.',
         iconType: 'accent' as const,
       },
       {
         icon: FileText,
-        title: 'Trust signals stay fragmented across the decision path',
+        title: 'Past clients would refer if you asked. You haven’t.',
         description:
-          'Proof, case-style authority, service clarity, and advisor credibility exist in different places — they rarely work together to support a confident first call.',
+          'The work landed well three months ago. The thank-you was warm. Nobody ever asked for the testimonial.',
         iconType: 'primary' as const,
       },
     ],
@@ -98,155 +96,178 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
   };
 
   const systemLayersData = {
-    badge: 'System Layers',
-    title: 'The working layers behind a steadier consulting pipeline',
+    badge: 'What Gets Put In Place',
+    title: 'A steadier way to handle enquiries, run discovery calls, and keep proposals alive',
     description:
-      'A consulting workflow needs structure before discovery calls, during qualification, and after first contact — especially when the decision takes time.',
+      'Each piece does one job. Together they keep the pipeline moving while you do the actual delivery.',
     featureCategories: [
       {
-        title: 'Qualification layer',
+        title: 'Reply to enquiries the same hour, even mid-project',
         description:
-          'Routes new enquiries through a clearer first-contact path so the right project type reaches the right next step.',
+          'Form lands, an instant acknowledgement goes out with what to expect next. Most prospects stop messaging other consultants.',
         icon: MessageSquare,
-        features: ['Intent capture', 'Fit qualification', 'Cleaner first response'],
+        features: [
+          'Same-hour acknowledgement on every enquiry',
+          'Project type and timing captured up front',
+          'Holds the lead until you can call back',
+        ],
       },
       {
-        title: 'Discovery-call booking layer',
+        title: 'Book the discovery call without the email tennis',
         description:
-          'Moves initial calls and advisory sessions into a booked next step without unnecessary delay.',
+          'Prospects pick a slot themselves. “When are you free?” gets replaced with a calendar link.',
         icon: Calendar,
-        features: ['Discovery scheduling', 'Reminder touchpoints', 'Next-step guidance'],
+        features: [
+          'Self-serve discovery call booking',
+          'Reminders the day before',
+          'Reschedule link instead of a no-show',
+        ],
       },
       {
-        title: 'Scope-clarity layer',
+        title: 'Set the scope before the call so the meeting is useful',
         description:
-          'Gives prospects a clearer view of what the engagement covers before the first conversation.',
+          'A short pre-call form goes out automatically — budget range, timeline, what good looks like. The conversation actually goes somewhere.',
         icon: FileText,
-        features: ['Scope guidance', 'Engagement prompts', 'Expectation setting'],
+        features: [
+          'Pre-call brief request automatically',
+          'Sets the right expectations',
+          'Discovery calls actually qualify',
+        ],
       },
       {
-        title: 'Nurture and follow-up layer',
+        title: 'Keep proposals alive while the buying committee deliberates',
         description:
-          'Keeps pending decisions on a calmer, more consistent follow-up path so opportunities do not disappear into silence.',
+          'Proposal sent Monday, automatic check-in two weeks later, another a fortnight after that. Quietly closes more.',
         icon: Workflow,
-        features: ['Lead nurture', 'Decision reminders', 'Pipeline visibility'],
+        features: [
+          'Proposal follow-up at the right intervals',
+          'Pending engagements visible in one place',
+          'Closing rate goes up without nagging',
+        ],
       },
       {
-        title: 'Trust and proof layer',
+        title: 'Turn finished projects into testimonials',
         description:
-          'Connects reviews, clarity, and advisor proof so they support the discovery-call decision before the appointment.',
+          'A polite request goes out the week after handover, when the result is freshest in their mind.',
         icon: ShieldCheck,
-        features: ['Review requests', 'Proof-of-service support', 'Trust-led page structure'],
+        features: [
+          'Testimonial requests at the right moment',
+          'Asked once, never again',
+          'Proof catches up to the work',
+        ],
       },
       {
-        title: 'Local visibility layer',
+        title: 'Show up for the right type of project online',
         description:
-          'Reinforces the locations and project types the consultant wants through search visibility and authority pages.',
+          'Service pages and authority content lined up so the right kind of company finds you first.',
         icon: Search,
-        features: ['Area-page targeting', 'Local search clarity', 'Authority-page support'],
+        features: [
+          'Pages for the niches you actually want',
+          'Found on the searches that bring real briefs',
+          'Less time on enquiries that aren’t a fit',
+        ],
       },
     ],
     columns: 3 as const,
   };
 
   const comparisonData = {
-    badge: 'Operational Shift',
-    title: 'From reactive consulting enquiries to a steadier discovery and follow-up flow',
-    description:
-      'The advisory depth stays. The repeatable friction around qualification, discovery coordination, and follow-up gets reduced.',
+    badge: 'What Actually Changes',
+    title: 'A normal pipeline, before and after',
+    description: 'The advisory work stays personal. The pipeline stops drifting between projects.',
     comparisons: [
       {
         type: 'before' as const,
-        title: 'Before the workflow is structured',
+        title: 'How it runs now',
         items: [
-          'Enquiries arrive without enough detail to qualify them quickly',
-          'Discovery-call booking depends on manual back-and-forth',
-          'Pending opportunities are hard to follow consistently',
-          'Trust depends too heavily on one-off reassurance during early conversations',
+          'A six-figure enquiry sat unread for two days. They picked someone else.',
+          'Six emails to book one discovery call.',
+          'A proposal went out and went quiet for a month.',
+          '“We meant to ask for a testimonial” — said about every finished project.',
         ],
       },
       {
         type: 'after' as const,
-        title: 'After the workflow is aligned',
+        title: 'How it runs after',
         items: [
-          'New enquiries move into the right discovery or nurture path faster',
-          'Booking and reminder flow protect the next step more consistently',
-          'Follow-up happens with less manual chasing',
-          'Reviews, authority signals, and page structure support better decision confidence',
+          'Every enquiry gets an instant reply with the right next step.',
+          'Discovery calls booked through one link. Pre-call brief in already.',
+          'Proposals get followed up automatically at the right intervals.',
+          'Testimonials get asked for the week after handover, every time.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Lead To Discovery Flow',
-    title: 'How the consulting workflow moves from first enquiry to discovery and follow-up',
-    description:
-      'How the system moves consulting enquiries from first contact into the right discovery path — then into consistent follow-up when the decision takes time.',
+    badge: 'Where Most Consultants Start',
+    title: 'Three stages — most consultants feel one of them more than the others',
+    description: 'Pick whichever costs you the most projects right now.',
     packages: [
       {
-        name: 'Qualification and enquiry capture',
-        description:
-          'Routes advisory enquiries into a clearer first step — so the right details reach the right person faster.',
-        price: 'Flow stage 1',
-        priceDetail: 'Best when lead quality and first-contact clarity are the main issue',
+        name: 'Stop losing the same-day enquiries',
+        description: 'For when good prospects message three consultants and pick whoever replied first.',
+        price: 'Stage 1',
+        priceDetail: 'Start here if first-reply speed is the biggest leak',
         features: [
-          'Intent-specific service pages',
-          'Better enquiry capture',
-          'Scope and timing context',
+          'Instant acknowledgement on every enquiry',
+          'Project type and timing captured up front',
+          'Most prospects stop messaging the next consultant',
         ],
       },
       {
-        name: 'Discovery and readiness flow',
-        description:
-          'Adds steadier scheduling, clearer reminders, and better control over the next step after first contact.',
-        price: 'Flow stage 2',
-        priceDetail: 'Best when booking and scope-readiness handling create friction',
-        features: ['Discovery scheduling support', 'Reminder structure', 'Readiness guidance'],
+        name: 'Close the discovery calls and proposals that drift',
+        description: 'For when discovery calls take six emails and proposals go quiet for a month.',
+        price: 'Stage 2',
+        priceDetail: 'Start here if booking and proposal follow-up is the leak',
+        features: [
+          'Self-serve discovery call booking',
+          'Pre-call brief request automatically',
+          'Proposal follow-up at the right intervals',
+        ],
         popular: true,
       },
       {
-        name: 'Follow-up and trust reinforcement',
-        description:
-          'Keeps pending opportunities, reviews, and credibility proof moving in a more reliable way.',
-        price: 'Flow stage 3',
-        priceDetail: 'Best when follow-up consistency and trust-building are the pressure points',
-        features: ['Nurture workflows', 'Review request support', 'Trust reinforcement'],
+        name: 'Build the proof that fills the pipeline on its own',
+        description: 'For when finished projects deserve testimonials and referrals you never got.',
+        price: 'Stage 3',
+        priceDetail: 'Start here if proof and inbound is the weak spot',
+        features: [
+          'Testimonial requests after every project',
+          'Service pages for the niches you want',
+          'Less time on enquiries that aren’t a fit',
+        ],
       },
     ],
   };
 
   const workflowExamplesData = {
-    badge: 'Follow-Up Examples',
-    title: 'What the consulting lead, discovery, and follow-up flow looks like in practice',
-    description:
-      'Repeatable situations where a structured consulting setup reduces friction — without making the business feel scripted.',
+    badge: 'Real Situations',
+    title: 'A few moments where the difference shows up',
+    description: 'Small moments in the week of an independent consultant where things used to drift.',
     workflows: [
       {
-        trigger:
-          'A new enquiry arrives and the consultant needs to determine project type, fit, budget range, and decision stage before booking the next step.',
+        trigger: 'A founder DMs on LinkedIn at 9am while you’re running a workshop.',
         actions: [
-          'Capture the right intent and timing early',
-          'Route the enquiry into the right discovery or nurture path',
-          'Reduce wasted time on unclear first contact',
+          'Instant acknowledgement goes out within minutes',
+          'Project type, timing, and budget range captured up front',
+          'They stop messaging the other two consultants',
         ],
       },
       {
-        trigger:
-          'A discovery call is requested and the business needs to confirm timing, scope expectations, and next-step readiness clearly.',
+        trigger: 'A discovery call is booked for next Thursday.',
         actions: [
-          'Move the lead into a booked discovery window',
-          'Send reminders and preparation guidance',
-          'Keep internal handoff cleaner between enquiry and discovery handling',
+          'Pre-call brief request goes out automatically',
+          'Reminder lands the morning of the call',
+          'The conversation actually qualifies',
         ],
       },
       {
-        trigger:
-          'The discovery call is complete and the consultant wants to keep the opportunity moving without manual chasing every time.',
+        trigger: 'A proposal was sent two weeks ago and the buyer went silent.',
         actions: [
-          'Send measured follow-up at the right times',
-          'Keep the lead stage visible internally',
-          'Support the decision with reviews and authority proof if needed',
+          'A friendly check-in goes out at the right interval',
+          'Another a fortnight later if needed',
+          'Proposal-to-engagement quietly improves',
         ],
       },
     ],
@@ -263,9 +284,9 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
   };
 
   const exploreData = {
-    badge: 'Explore',
+    badge: 'Related',
     description:
-      'Relevant service layers for consultants that want cleaner discovery calls, steadier follow-up, and stronger trust support.',
+      'The other parts of the system that come up most often for solo and small-team consultants.',
     cards: [
       {
         icon: Workflow,
@@ -306,39 +327,38 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Common questions about consulting systems',
-    description: 'Common questions about MindWP for consultants',
+    title: 'Things consultants usually ask',
+    description: 'Straight answers about how this fits a solo or small consulting business.',
     faqs: [
       {
-        question: 'How can a consultant get more qualified enquiries from a website?',
+        question: 'I’m mostly delivering current projects. Will this need a marketing person?',
         answer:
-          'Clearer service paths, better qualification prompts, and guided next steps reduce uncertainty early — which directly improves enquiry quality.',
+          'No. The whole point is it runs while you’re in delivery. You’ll see what came in on your phone between calls, but nothing waits on you to operate it.',
       },
       {
-        question: 'Should consultants offer online discovery-call requests?',
+        question: 'Can it really reply to enquiries faster than I can?',
         answer:
-          'Yes — a clean request path reduces back-and-forth and moves people into the right next step faster. The key is capturing context early: project type, timing, and readiness.',
+          'Yes — not with anything pretending to be you. Just an instant acknowledgement that captures what they need and tells them when you’ll be in touch. Most prospects stop messaging other consultants once they get that.',
       },
       {
-        question: 'How do consultants reduce slow follow-up on longer sales cycles?',
+        question: 'Will it integrate with my existing tools — Notion, HubSpot, whatever?',
         answer:
-          'A better enquiry system separates ready-now prospects from nurture-stage opportunities, then supports measured follow-up over time — less manual chasing, more consistency.',
+          'It sits in front of your existing stack. Whatever you already use stays. The system improves the public-facing side: enquiry, discovery, proposal follow-up, testimonials.',
       },
       {
-        question: 'Do consultants need separate pages for different offer types?',
+        question: 'Can it help with proposal follow-up specifically?',
         answer:
-          'Often, yes, as long as the pages reflect real service paths and useful information rather than thin copy. Good service-page structure helps visibility and also helps prospects feel confident that the consultant handles their situation.',
+          'Yes — friendly check-in messages go out at the right intervals after a proposal is sent. Proposal-to-engagement conversion changes noticeably without anybody chasing.',
       },
       {
-        question: 'What kind of reviews matter most for consultants?',
+        question: 'How do I get more testimonials and referrals without nagging?',
         answer:
-          'The most useful reviews reinforce trust, clarity, and the feeling that the consultant made a complex problem easier to understand or solve. A structured review request process after completed work can help build that proof more consistently over time.',
+          'A polite request goes out the week after handover, when the result is freshest in their mind. People who would have meant to leave one actually do.',
       },
       {
-        question:
-          'Can a Smart Website system help a consultant without replacing CRM or delivery tools?',
+        question: 'Do I need to scrap my current website?',
         answer:
-          'Yes. The system improves the public-facing side of the workflow by making enquiries, discovery booking, readiness guidance, and follow-up more consistent. It does not require replacing the internal tools you already use.',
+          'Usually not. We look at what you have first. The leak is normally the bit between the enquiry landing and the engagement starting — not the site itself.',
       },
     ],
   };
@@ -356,9 +376,9 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'legal-professional-services',
     seo: {
-      title: 'Consultants — Smart Website Systems | MindWP',
+      title: 'Consultants — Stop Losing Same-Day Enquiries, Discovery Calls & Proposals | MindWP',
       description:
-        'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
+        'For independent consultants where new enquiries get picked up by whoever replied first, discovery calls take six emails to book, and proposals go quiet for a month. We put the system in place that catches the right projects.',
       keywords: [
         'consultant website design',
         'consulting lead handling system',
@@ -381,9 +401,9 @@ function buildConsultantsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Build a steadier consulting discovery and follow-up system',
+      title: 'Tell us where the pipeline is leaking',
       description:
-        'If discovery calls are slipping, we can show you how to turn more enquiries into booked conversations.',
+        'If new enquiries take days to acknowledge, if discovery calls take a week of emails, or if proposals go quiet — walk us through how the work comes in and we’ll show you the first thing worth fixing.',
     },
   };
 }
