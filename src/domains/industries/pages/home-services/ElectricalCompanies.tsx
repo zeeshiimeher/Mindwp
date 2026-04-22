@@ -1,13 +1,13 @@
 import {
   Calendar,
   Clock3,
-  MapPinned,
   MessageSquare,
+  Plug,
   Search,
   ShieldCheck,
   Star,
+  Wrench,
   Workflow,
-  Zap,
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
@@ -15,80 +15,70 @@ import type { IndustryPageData } from '@/domains/industries/types';
 function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
   const heroData = {
     badge: 'For Electrical Companies',
-    title: 'Half The Power’s Out. They’ve Already Phoned Two Other Sparkies.',
+    title: 'The Phone Rings While You Are on a Job. They Call the Next Electrician.',
     description:
-      'When the lights go off, people don’t leave a voicemail — they ring the next number. Same with a quoted EV charger or rewire that goes quiet. We put the system in place that catches the urgent calls, follows up the quotes, and asks for the review without anyone in the office remembering.',
-    list: [
-      'Fault calls that go to whoever picked up first',
-      'EV charger and rewire quotes nobody chased',
-      'Review requests nobody sent',
-      'Areas you never wanted to drive to',
-    ],
+      'Electrical enquiries arrive while the team is on site. Calls go to voicemail. Quotes get sent and forgotten. The customer books whoever rang back first.',
+    list: ['Missed calls', 'Quiet quotes', 'Slow callbacks', 'Few reviews'],
     cssPrefix: 'electrical-companies-hero',
   };
 
   const imageStripData = {
-    badge: 'How Electrical Calls Actually Land',
-    title: 'Tripped board on a Sunday doesn’t wait for Monday',
+    badge: 'How Electrical Work Comes In',
+    title: 'A homeowner wants someone to come and look',
     description:
-      'Burning smell, dead sockets, no power upstairs. People worry and dial. Whoever answers first usually wins the job — and often the EV charger six months later.',
+      'A fault, a small upgrade, a job they have been putting off. They want to know if you can fit them in, what it might cost, and that you will turn up.',
     items: [
       {
-        title: 'Urgent faults and outages',
+        title: 'Fault and job enquiries',
         image: '/images/placeholders/service-card-5.svg',
-        alt: 'Abstract placeholder image representing urgent electrical faults',
+        alt: 'Abstract placeholder image representing electrical enquiries',
       },
       {
-        title: 'Booked visits and inspections',
+        title: 'Site visits and inspections',
         image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing electrical inspections and visits',
+        alt: 'Abstract placeholder image representing electrical site visits',
       },
       {
-        title: 'Quotes and upgrades',
+        title: 'Quotes and approvals',
         image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing electrical quotes and upgrades',
+        alt: 'Abstract placeholder image representing electrical quotes',
       },
       {
-        title: 'Reviews and trust signals',
+        title: 'Reviews and repeat customers',
         image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing electrical reviews and trust signals',
+        alt: 'Abstract placeholder image representing electrical reviews',
       },
     ],
     backgroundColor: 'bg-base',
-    cssPrefix: 'electrical-image-strip',
+    cssPrefix: 'electrical-companies-image-strip',
   };
 
   const operatingPatternsData = {
     badge: 'Where The Work Slips',
-    title: 'You’re up a ladder. The phone rings. They call the next sparkie.',
-    description: 'Same handful of leaks in nearly every electrical business. None of them are about the work itself.',
+    title: 'The work is steady. The bit between calls is where it leaks.',
     benefits: [
       {
-        icon: Zap,
-        title: '“No power in half the house” went to voicemail',
-        description:
-          'You were in a loft. They didn’t leave a message — they rang the next electrician on Google.',
+        icon: Plug,
+        title: 'The phone rings while the team is on site',
+        description: 'By the time someone rings back, the homeowner has already booked the next electrician.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'A quoted EV charger went quiet for two weeks',
-        description:
-          '£1,400 of work. One follow-up text would have closed it. Nobody had time to send it.',
+        title: 'Booking turns into a back and forth',
+        description: 'A simple visit takes too many texts before anything is on the diary.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Reviews don’t reflect the actual workload',
-        description:
-          'Hundreds of jobs done well. 22 reviews online. Nobody was asked at the right moment.',
+        title: 'Quotes go out and never get chased',
+        description: 'A price gets sent. The homeowner thinks about it. Nobody follows up.',
         iconType: 'accent' as const,
       },
       {
-        icon: MapPinned,
-        title: 'Half your callouts are 45 minutes away',
-        description:
-          'Not the postcodes you actually want. The site brings in whoever finds you, not the right area.',
+        icon: Wrench,
+        title: 'Online you look smaller than the work you do',
+        description: 'Plenty of finished jobs. Almost no reviews to show for them.',
         iconType: 'primary' as const,
       },
     ],
@@ -97,63 +87,57 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
 
   const systemLayersData = {
     badge: 'What Gets Put In Place',
-    title: 'A steadier way to catch the urgent calls and follow up the bigger installs',
-    description:
-      'Each piece does one job. Together they keep the work moving while you’re up a ladder.',
+    title: 'A steadier way to handle every call, visit, and quote',
+    description: 'Each piece does one job. Together they keep work from falling on the floor while the team is on site.',
     featureCategories: [
       {
-        title: 'Catch every call, even when you’re mid-rewire',
-        description:
-          'Missed call gets an instant text — “on a job, what’s the issue, can call back in 20.” Most stop dialling the next sparkie.',
+        title: 'Catch every call and form',
+        description: 'Calls, missed calls, web forms — all in one place with the address and the issue noted.',
         icon: MessageSquare,
         features: [
-          'Missed-call text-back automatically',
-          'Urgency captured up front',
-          'Holds the lead until you’re free',
+          'Missed calls texted back instantly',
+          'Web enquiries sent to the office and the team lead',
+          'Address and issue captured up front',
         ],
       },
       {
-        title: 'Take the booking without the back-and-forth',
-        description:
-          'For inspections and non-urgent work, they pick a slot themselves. The office stops being a calendar.',
+        title: 'Get the visit booked without phone tag',
+        description: 'A clear way to offer a slot, confirm it, and remind the homeowner the day before.',
         icon: Calendar,
         features: [
-          'Online booking for inspections and routine work',
-          'Reminders the day before',
-          'Reschedule link instead of a no-show',
+          'Visit slots people can pick themselves',
+          'Confirmations and reminders sent automatically',
+          'Team sees the address and the issue before they arrive',
         ],
       },
       {
-        title: 'Follow up the bigger jobs nobody has time to chase',
-        description:
-          'EV charger or rewire quote sent Monday, automatic check-in Friday, another the week after. Quietly closes more.',
+        title: 'Stop quotes going quiet',
+        description: 'Every quote gets a follow-up on a schedule, even when the team is on site.',
         icon: Workflow,
         features: [
-          'Quote follow-up at the right intervals',
-          'Pending jobs visible in one place',
-          'Closing rate goes up without nagging',
+          'Quotes chased automatically',
+          'Open quotes in one place',
+          'Old quotes warmed up instead of forgotten',
         ],
       },
       {
-        title: 'Turn finished jobs into reviews you can show',
-        description:
-          'A polite review request goes out the day after, when the lights are back on.',
+        title: 'Turn finished jobs into proof',
+        description: 'A review request goes out at the right moment so the work shows up online.',
         icon: ShieldCheck,
         features: [
           'Review requests after every job',
-          'Asked when customers are happiest',
-          'Reviews catch up to the workload',
+          'Asked when the customer is happiest',
+          'More reviews where local people search',
         ],
       },
       {
-        title: 'Show up for the postcodes you actually want',
-        description:
-          'Service pages, Google profile, and local search lined up so the right area finds you first.',
+        title: 'Show up when local homeowners search',
+        description: 'Service pages and Google profile lined up so you appear when someone nearby needs an electrician.',
         icon: Search,
         features: [
-          'Pages for the services and areas you want',
-          'Found on Maps for local searches',
-          'Less time driving to the wrong postcodes',
+          'Found on Maps for the work you do',
+          'Service pages that match real searches',
+          'Local area coverage that is visible',
         ],
       },
     ],
@@ -162,69 +146,69 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
 
   const comparisonData = {
     badge: 'What Actually Changes',
-    title: 'A normal week on the tools, before and after',
-    description: 'The work stays. The chasing and the missed calls stop.',
+    title: 'A normal week, before and after',
+    description: 'You still do the work. What changes is the part that used to depend on someone remembering.',
     comparisons: [
       {
         type: 'before' as const,
         title: 'How it runs now',
         items: [
-          'Three urgent calls missed during a single fuse-board upgrade',
-          'A £1,400 EV charger quote went quiet for two weeks. No follow-up sent.',
-          '“Meant to ask for a review” — said about 200 jobs.',
-          'Half the new enquiries are from postcodes 45 minutes away.',
+          'Phone rings while the team is on site. Goes to voicemail. Lost.',
+          'A homeowner wants a visit. Three texts later, still no time set.',
+          'Quote sent on Monday. By Friday nobody has chased it.',
+          'You finished a great job last week. They never got asked for a review.',
         ],
       },
       {
         type: 'after' as const,
         title: 'How it runs after',
         items: [
-          'Missed calls get an instant text. Most wait the 20 minutes.',
-          'Quotes get followed up automatically. More close, none feel pestered.',
-          'Every customer gets asked the day after. Reviews catch up to the work.',
-          'The right postcodes find you first. Less driving for less money.',
+          'Missed call gets a text back inside a minute. They know you will ring back.',
+          'They pick a slot from a link. Confirmed. Reminder fires the day before.',
+          'The quote gets a polite chase the next morning. You can see who is waiting.',
+          'A review request goes out the day you finish. Reviews start stacking quietly.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Where Most Sparkies Start',
-    title: 'Three stages — most businesses feel one of them more than the others',
-    description: 'Pick whichever costs you the most jobs right now.',
+    badge: 'Where Most Electricians Start',
+    title: 'Three stages, most electricians feel one more than the others',
+    description: 'You do not have to fix everything at once. Start with whatever is leaking the most work.',
     packages: [
       {
-        name: 'Stop missing the urgent calls',
-        description: 'For when fault calls hit while you’re on a job and go to the next sparkie.',
+        name: 'Stop calls and enquiries going missing',
+        description: 'For when the team is on site and quick enquiries sit unread.',
         price: 'Stage 1',
-        priceDetail: 'Start here if missed calls during work hours is the biggest leak',
+        priceDetail: 'Start here if missed calls are the leak',
         features: [
-          'Missed-call text-back the moment you can’t answer',
-          'Urgent vs non-urgent triaged automatically',
-          'Most callers wait instead of dialling the next electrician',
+          'Missed-call text-back so they know you will ring',
+          'One inbox for calls, forms, and web enquiries',
+          'Address and issue noted before the conversation',
         ],
       },
       {
-        name: 'Close the bigger quotes that go quiet',
-        description: 'For when EV chargers, rewires, and upgrades get quoted and you never hear back.',
+        name: 'Get the visit booked the same day',
+        description: 'Once enquiries are caught, this stage takes the friction out of confirming a site visit.',
         price: 'Stage 2',
-        priceDetail: 'Start here if quote-to-booking conversion is the leak',
+        priceDetail: 'Start here if booking is where it slows down',
         features: [
-          'Quote follow-ups at the right intervals',
-          'Pending jobs visible in one place',
-          'No more “what happened to that EV charger quote?”',
+          'Visit slots customers can pick themselves',
+          'Reminders the day before so visits actually happen',
+          'Team sees the job before they arrive',
         ],
         popular: true,
       },
       {
-        name: 'Build the local proof that fills the diary on its own',
-        description: 'For when work is great but reviews and the right postcodes don’t reflect it.',
+        name: 'Keep quotes moving and turn jobs into reviews',
+        description: 'For when work comes in fine but quotes go quiet and reviews never get asked for.',
         price: 'Stage 3',
-        priceDetail: 'Start here if reviews and area targeting are the weak spot',
+        priceDetail: 'Start here if follow-up and reputation are the weak spots',
         features: [
-          'Review requests after every job',
-          'Service pages for the work and postcodes you want',
-          'Less time driving to jobs you don’t want',
+          'Quotes chased automatically',
+          'Past customers nudged for return work',
+          'Review requests at the right moment',
         ],
       },
     ],
@@ -233,47 +217,52 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
   const workflowExamplesData = {
     badge: 'Real Situations',
     title: 'A few moments where the difference shows up',
-    description: 'Small moments on the tools and after, where things used to slip through.',
+    description: 'Small handoffs that used to depend on someone remembering.',
     workflows: [
       {
-        trigger: 'A “no power upstairs” call comes in while you’re mid-rewire.',
+        trigger: 'The team is on site and a homeowner rings the office.',
         actions: [
-          'Missed call gets an instant text within seconds',
-          'They get told you’re on a job and when you’ll be free',
-          'Most wait. The ones who can’t are flagged as truly urgent.',
+          'They get a text inside a minute saying you will ring back',
+          'The text captures the address and the issue',
+          'The lead is held instead of going to the next electrician',
         ],
       },
       {
-        trigger: 'An EV charger quote was sent Monday and went quiet.',
+        trigger: 'A homeowner needs a visit this week.',
         actions: [
-          'A friendly check-in goes out Friday',
-          'Another a week later if no reply',
-          'Quote-to-booking quietly improves',
+          'They pick a slot from a link, no more text tag',
+          'A reminder goes out the day before',
+          'You arrive with the address and the issue already noted',
         ],
       },
       {
-        trigger: 'A job is finished and the lights are back on.',
+        trigger: 'You sent a quote a few days ago and have not heard back.',
         actions: [
-          'A polite review request goes out the next day',
-          'Asked when the customer is happiest',
-          'Local reviews catch up to the workload',
+          'A polite chase goes out automatically',
+          'Open quotes are visible in one place',
+          'If they say yes, the booking happens without another five messages',
         ],
       },
     ],
     backgroundColor: 'bg-base',
-    cssPrefix: 'electrical-workflow-examples',
+    cssPrefix: 'electrical-companies-workflow-examples',
+  };
+
+  const caseStudiesData = {
+    category: 'home-services' as const,
+    title: 'Related Case Studies',
+    description: 'Examples of how the system supports home service businesses in this category.',
+    limit: 2,
   };
 
   const exploreData = {
     badge: 'Related',
-    description:
-      'The other parts of the system that come up most often for electricians trying to stop missing work.',
+    description: 'The other parts of the system that come up most often for electrical companies.',
     cards: [
       {
         icon: Workflow,
         title: 'Smart Website Systems',
-        description:
-          'See the core system layer that holds electrical demand, booking, and follow-up together.',
+        description: 'The core layer that holds enquiry, booking, and follow-up together.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -281,7 +270,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Calendar,
         title: 'Booking & Scheduling System',
-        description: 'Support visits, reminders, and clearer next-step handling.',
+        description: 'Support visit booking, reminders, and clearer next steps.',
         href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
@@ -289,7 +278,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Search,
         title: 'Local Authority & SEO Systems',
-        description: 'Strengthen local electrical visibility and trust.',
+        description: 'Strengthen electrical visibility and local trust.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -297,7 +286,7 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Review Systems',
-        description: 'Turn completed jobs into stronger local proof and review flow.',
+        description: 'Turn finished jobs into reviews and proof.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -309,37 +298,37 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
 
   const faqData = {
     title: 'Things electricians usually ask',
-    description: 'Straight answers about how this fits an electrical business.',
+    description: 'Straight answers about how this fits into a small electrical business.',
     faqs: [
       {
-        question: 'I’m up a ladder all day. Will this need me sat at a screen?',
+        question: 'I am on site all day. How much extra work is this?',
         answer:
-          'No. The whole point is that it runs while you’re on a job. You’ll see what came in on your phone between calls, but nothing waits on you to operate it.',
+          'Almost none after setup. Missed calls get answered by text on their own. Quote chasing goes out on a schedule. Reminders fire by themselves.',
       },
       {
-        question: 'How does the missed-call text-back actually work?',
+        question: 'Will customers feel like they are getting an automated response?',
         answer:
-          'A call comes in while you’re in a loft. It rings out. Within seconds the caller gets a text — “on a job, can call back in 20, what’s the issue?” Most stop dialling the next electrician.',
+          'No. The messages are short and written like you would actually text someone. The aim is to hold the lead until you can ring back.',
       },
       {
-        question: 'Can it handle quote follow-ups for EV chargers and rewires?',
+        question: 'Can it handle quotes for jobs that need a site visit first?',
         answer:
-          'Yes — friendly check-in messages go out at the right intervals after a quote is sent. Quote-to-booking conversion changes noticeably without anybody chasing.',
+          'Yes. The first reply confirms a visit and the quote follows after the inspection.',
       },
       {
-        question: 'How do I get more reviews without nagging?',
+        question: 'Do I have to chase reviews myself?',
         answer:
-          'A polite request goes out the day after the job, when the lights are back on. People who would have meant to leave one actually do.',
+          'No. The request goes out on its own after the job is done, when the customer is happiest.',
       },
       {
-        question: 'Can I stop being shown for postcodes I don’t want to drive to?',
+        question: 'What about old quotes sitting in the inbox?',
         answer:
-          'Yes — service pages and local search get tightened around the areas you actually want. Less time driving for less money.',
+          'Those get worked in too. Many electricians find that warming up old quotes brings in real money before any new marketing kicks in.',
       },
       {
-        question: 'Do I need to scrap my current website?',
+        question: 'Do I need a brand new website?',
         answer:
-          'Usually not. We look at what you have first. The leak is normally the bit between the call coming in and the review going up — not the site itself.',
+          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
       },
     ],
   };
@@ -357,15 +346,15 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'home-services',
     seo: {
-      title: 'Electrical Companies — Stop Losing Calls, Quotes & Reviews | MindWP',
+      title: 'Electrical Companies — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
       description:
-        'For electricians where fault calls go to whoever picked up first, EV charger and rewire quotes go quiet for weeks, and reviews don’t reflect the workload. We put the system in place that catches every job.',
+        'For electrical companies where calls go to voicemail on site, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
       keywords: [
-        'electrician website design',
-        'electrical contractor marketing system',
-        'electrical company website system',
-        'electrician lead automation system',
-        'electrician reputation management system',
+        'electrical company website design',
+        'electrical booking system',
+        'electrical lead handling system',
+        'electrical seo services',
+        'electrical reputation management system',
       ],
       canonical: '/industries/home-services/electrical-companies',
     },
@@ -378,15 +367,15 @@ function buildElectricalCompaniesIndustryPageData(): IndustryPageData {
     comparison: comparisonData,
     pathways: pathwaysData,
     workflowExamples: workflowExamplesData,
+    caseStudies: caseStudiesData,
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the work is leaking',
+      title: 'Tell us where the work is slipping',
       description:
-        'If urgent calls go to voicemail, if quoted jobs go quiet, or if reviews never get asked for — walk us through how the business runs and we’ll show you the first thing worth fixing.',
+        'If calls go to voicemail on site, quotes go quiet, or reviews never get asked for, walk us through how the week runs and we will show you the first thing worth fixing.',
     },
   };
 }
 
-export const electricalCompaniesIndustryPageData: IndustryPageData =
-  buildElectricalCompaniesIndustryPageData();
+export const electricalCompaniesIndustryPageData: IndustryPageData = buildElectricalCompaniesIndustryPageData();

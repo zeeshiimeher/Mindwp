@@ -1,12 +1,12 @@
 import {
+  Banknote,
   Calendar,
   Clock3,
-  Landmark,
+  FileSignature,
   MessageSquare,
   Search,
   ShieldCheck,
   Star,
-  Wallet,
   Workflow,
 } from 'lucide-react';
 
@@ -15,43 +15,38 @@ import type { IndustryPageData } from '@/domains/industries/types';
 function buildMortgageBrokersIndustryPageData(): IndustryPageData {
   const heroData = {
     badge: 'For Mortgage Brokers',
-    title: 'Rates Dropped At 10am. By Lunchtime, Three Brokers Had Replied To His Remortgage Enquiry. The Slowest One Lost The Case.',
+    title: 'A Buyer Wants Advice This Week. They Picked Whoever Replied First.',
     description:
-      'Mortgage decisions happen on rate windows and offer deadlines. Borrowers enquire with three brokers and instruct whoever replied first with a clear next step. We put the system in place that catches the enquiry while you’re packaging a case, books the discovery call, and stops cold-pipeline borrowers from drifting to a comparison site.',
-    list: [
-      'Enquiries that came in while you were on a lender call',
-      'Discovery calls that took six emails to confirm',
-      'Pipeline borrowers who went quiet for six weeks',
-      'Reviews from completed cases you never asked for',
-    ],
+      'Mortgage enquiries are time-sensitive. The buyer is comparing a few brokers. Whoever replies first usually gets the conversation.',
+    list: ['Slow replies', 'Lost enquiries', 'Quiet pipelines', 'Few reviews'],
     cssPrefix: 'mortgage-brokers-hero',
   };
 
   const imageStripData = {
-    badge: 'How Mortgage Enquiries Actually Land',
-    title: 'Rate change at 10am. They enquired with three brokers. Whoever replied first wins.',
+    badge: 'How Enquiries Come In',
+    title: 'A buyer wants to know if you can help',
     description:
-      'It’s rate windows, AIP deadlines, panicked first-time buyers Sunday night. The decision happens within hours of the first email.',
+      'A first-time purchase, a remortgage, a buy-to-let. They want to know what you offer, how it works, and that you will reply.',
     items: [
       {
-        title: 'Purchase and refinance enquiries',
+        title: 'New buyer enquiries',
         image: '/images/placeholders/service-card-5.svg',
         alt: 'Abstract placeholder image representing mortgage broker enquiries',
       },
       {
-        title: 'Consultation booking and qualification',
+        title: 'Discovery calls and fact-finds',
         image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing mortgage consultation booking',
+        alt: 'Abstract placeholder image representing mortgage broker discovery calls',
       },
       {
-        title: 'Document readiness and follow-up',
+        title: 'Applications and follow-up',
         image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing mortgage document readiness and follow-up',
+        alt: 'Abstract placeholder image representing mortgage broker applications',
       },
       {
-        title: 'Reviews and local proof',
+        title: 'Reviews and referrals',
         image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing mortgage broker reviews and trust signals',
+        alt: 'Abstract placeholder image representing mortgage broker reviews',
       },
     ],
     backgroundColor: 'bg-base',
@@ -59,36 +54,31 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Where Cases Get Lost',
-    title: 'You’re packaging a complex BTL. The new enquiries hit a comparison site instead.',
-    description: 'Same handful of leaks across nearly every brokerage. None of them are about the advice quality.',
+    badge: 'Where Enquiries Slip',
+    title: 'The pipeline is steady. The bit between enquiry and signed application is where it leaks.',
     benefits: [
       {
-        icon: Wallet,
-        title: 'Three Sunday-night enquiries went unanswered until Monday afternoon',
-        description:
-          'Two had already booked discovery calls with online brokers by the time you replied.',
+        icon: Banknote,
+        title: 'Calls miss while you are with a client',
+        description: 'You are on a fact-find. The phone rings out. The buyer picks the next broker.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'A discovery call took six emails to confirm',
-        description:
-          '“What times work?” “Zoom or in-person?” “What documents?” Each reply waited a few hours.',
+        title: 'Discovery calls take days to arrange',
+        description: 'A simple call takes too many emails before anything is on the diary.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Six pipeline borrowers went silent for a month',
-        description:
-          'Searching, not buying yet. No nurture in place. By the time they bought, they’d used somebody else.',
+        title: 'Applications stall mid-pipeline',
+        description: 'Documents are outstanding. The buyer goes quiet. Nobody chases.',
         iconType: 'accent' as const,
       },
       {
-        icon: Landmark,
-        title: 'You’ve completed 400 cases. The online broker has 1,200 reviews.',
-        description:
-          'Your advice is sharper. Online you look smaller because nobody asked for the review at the right moment.',
+        icon: FileSignature,
+        title: 'Online you look smaller than the work you do',
+        description: 'Plenty of completed cases. Almost no reviews to show for them.',
         iconType: 'primary' as const,
       },
     ],
@@ -97,74 +87,57 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
 
   const systemLayersData = {
     badge: 'What Gets Put In Place',
-    title: 'A steadier way to catch enquiries on rate windows and stop cold pipeline drifting',
-    description:
-      'Each piece does one job. Together they keep cases coming in while you stay focused on packaging.',
+    title: 'A steadier way to handle every enquiry, call, and application',
+    description: 'Each piece does one job. Together they keep buyers from slipping out of the pipeline.',
     featureCategories: [
       {
-        title: 'Reply to enquiries while you’re on a lender call',
-        description:
-          'Enquiry lands at 10pm Sunday. Instant reply with a calendar link, document checklist, and a quick reassurance. Most stop enquiring with the next broker.',
+        title: 'Catch every call and form',
+        description: 'Calls, missed calls, web forms — all in one place with the buyer and the request noted.',
         icon: MessageSquare,
         features: [
-          'Instant acknowledgement on every enquiry',
-          'Document checklist and calendar link up front',
-          'Holds the borrower until you’re free',
+          'Missed calls texted back instantly',
+          'Web enquiries sent to your inbox',
+          'Buyer and request captured up front',
         ],
       },
       {
-        title: 'Take the discovery call booking online',
-        description:
-          'Borrower picks a slot themselves. Documents requested in the same step. The six-email confirmation thread stops.',
+        title: 'Get the discovery call booked without email tag',
+        description: 'A clear way to offer a slot, confirm it, and remind both sides the day before.',
         icon: Calendar,
         features: [
-          'Self-serve discovery call booking',
-          'Document checklist sent automatically',
-          'Reminders the day before',
+          'Discovery slots buyers can pick themselves',
+          'Confirmations and reminders sent automatically',
+          'You see the request before the call',
         ],
       },
       {
-        title: 'Nurture the pipeline that’s six months away',
-        description:
-          'First-time buyer searching but not ready. They get a useful sequence — deposit tips, AIP timing, rate updates. When they’re ready, you’re top of mind.',
+        title: 'Stop applications stalling',
+        description: 'Every open application gets a follow-up on a schedule, even when you are deep in cases.',
         icon: Workflow,
         features: [
-          'Nurture sequences for not-yet-ready borrowers',
-          'Pipeline visible by stage',
-          'Borrowers come back to you, not a comparison site',
+          'Outstanding documents chased automatically',
+          'Open cases visible in one place',
+          'Old enquiries warmed up instead of forgotten',
         ],
       },
       {
-        title: 'Stay top of mind for product-end remortgages',
-        description:
-          'Six months before the fix ends, a polite check-in goes out. “Your deal ends in six months — want to lock in early?”',
+        title: 'Turn completed cases into proof',
+        description: 'A review request goes out at the right moment so the work shows up online.',
         icon: ShieldCheck,
         features: [
-          'Product-end reminders timed automatically',
-          'Existing clients re-engaged proactively',
-          'Remortgage book stops drifting away',
+          'Review requests after completion',
+          'Asked when the buyer is happiest',
+          'More reviews where buyers look',
         ],
       },
       {
-        title: 'Turn completed cases into reviews and referrals',
-        description:
-          'A polite review request goes out the week after completion, when the relief is freshest.',
-        icon: Star,
-        features: [
-          'Review requests after every completion',
-          'Asked when clients are most grateful',
-          'Reviews catch up to the cases you’ve closed',
-        ],
-      },
-      {
-        title: 'Show up first when local people search for a broker',
-        description:
-          'Service pages and Google profile lined up so people in the right area find you first — not the online broker.',
+        title: 'Show up when buyers search',
+        description: 'Service pages and Google profile lined up so you appear when someone looks for a broker.',
         icon: Search,
         features: [
-          'Pages for the case types you actually do',
-          'Found on Maps for local mortgage searches',
-          'Less time on enquiries that aren’t a fit',
+          'Found for the products you handle',
+          'Service pages that match real searches',
+          'Local and niche coverage that is visible',
         ],
       },
     ],
@@ -174,26 +147,26 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
   const comparisonData = {
     badge: 'What Actually Changes',
     title: 'A normal week, before and after',
-    description: 'The advice stays personal. The pipeline stops leaking.',
+    description: 'You still do the work. What changes is the part that used to depend on you remembering.',
     comparisons: [
       {
         type: 'before' as const,
         title: 'How it runs now',
         items: [
-          'Sunday-night enquiries went unanswered until Monday afternoon. Two booked elsewhere.',
-          'Discovery calls took six emails to confirm.',
-          'Six pipeline borrowers went silent for a month and bought through somebody else.',
-          '“Meant to ask for a Google review” — said about every completion.',
+          'Phone rings while you are on a fact-find. Goes to voicemail. Lost.',
+          'A buyer wants a call. Three emails later, still no time set.',
+          'An application has been waiting on documents for days. Nobody chased.',
+          'You completed a great case last month. They never got asked for a review.',
         ],
       },
       {
         type: 'after' as const,
         title: 'How it runs after',
         items: [
-          'Every enquiry gets an instant reply with a calendar link.',
-          'Discovery calls booked online with documents requested up front.',
-          'Not-yet-ready borrowers nurtured automatically until they are.',
-          'Reviews get asked for the week after every completion.',
+          'Missed call gets a text back inside a minute. They know you will reply.',
+          'They pick a slot from a link. Confirmed. Reminder fires the day before.',
+          'Outstanding documents get a polite chase. You can see who is waiting.',
+          'A review request goes out at completion. Reviews start stacking quietly.',
         ],
       },
     ],
@@ -201,41 +174,41 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
 
   const pathwaysData = {
     badge: 'Where Most Brokers Start',
-    title: 'Three stages — most brokerages feel one of them more than the others',
-    description: 'Pick whichever costs you the most cases right now.',
+    title: 'Three stages, most brokers feel one more than the others',
+    description: 'You do not have to fix everything at once. Start with whatever is leaking the most enquiries.',
     packages: [
       {
-        name: 'Stop losing the rate-window enquiries',
-        description: 'For when borrowers enquire on rate changes and book whoever replied first.',
+        name: 'Stop calls and enquiries going missing',
+        description: 'For when you are with a client and quick enquiries sit unread.',
         price: 'Stage 1',
-        priceDetail: 'Start here if first-reply speed is the biggest leak',
+        priceDetail: 'Start here if missed calls are the leak',
         features: [
-          'Instant reply with calendar link and document checklist',
-          'Holds the borrower until you’re free',
-          'Most stop enquiring with the next broker',
+          'Missed-call text-back so they know you will reply',
+          'One inbox for calls, forms, and web enquiries',
+          'Buyer and request noted before the conversation',
         ],
       },
       {
-        name: 'Take the discovery call without six emails',
-        description: 'For when discovery calls take half a week of email tennis.',
+        name: 'Get the discovery call booked the same week',
+        description: 'Once enquiries are caught, this stage takes the friction out of confirming a call.',
         price: 'Stage 2',
-        priceDetail: 'Start here if booking and document-readiness are the leak',
+        priceDetail: 'Start here if booking is where it slows down',
         features: [
-          'Self-serve discovery call booking',
-          'Document checklist sent automatically',
-          'Reminders the day before',
+          'Discovery slots buyers can pick themselves',
+          'Reminders the day before so calls actually happen',
+          'You see the request before the call',
         ],
         popular: true,
       },
       {
-        name: 'Nurture the pipeline and capture remortgages',
-        description: 'For when first-time buyers and product-end clients drift to comparison sites.',
+        name: 'Keep applications moving and turn completions into reviews',
+        description: 'For when enquiries come in fine but applications stall and reviews never get asked for.',
         price: 'Stage 3',
-        priceDetail: 'Start here if pipeline drift and remortgages are the weak spot',
+        priceDetail: 'Start here if follow-up and reputation are the weak spots',
         features: [
-          'Nurture sequences for not-yet-ready borrowers',
-          'Product-end reminders timed automatically',
-          'Review requests after every completion',
+          'Outstanding documents chased automatically',
+          'Past enquiries nudged at the right moment',
+          'Review requests at completion',
         ],
       },
     ],
@@ -244,30 +217,30 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
   const workflowExamplesData = {
     badge: 'Real Situations',
     title: 'A few moments where the difference shows up',
-    description: 'Small moments in the week of a brokerage where cases used to slip through.',
+    description: 'Small handoffs that used to depend on you remembering.',
     workflows: [
       {
-        trigger: 'A remortgage enquiry comes in at 10pm after a rate change.',
+        trigger: 'You are on a fact-find and a new enquiry call rings out.',
         actions: [
-          'Instant reply goes out with a calendar link and reassurance',
-          'They book a discovery call before going to bed',
-          'They stop enquiring with the next two brokers',
+          'They get a text inside a minute saying you will reply',
+          'The text captures the buyer and the request',
+          'The lead is held instead of going to the next broker',
         ],
       },
       {
-        trigger: 'A first-time buyer enquires but is six months away from being ready.',
+        trigger: 'A buyer wants a discovery call this week.',
         actions: [
-          'They’re placed on a useful nurture sequence',
-          'Deposit tips, AIP timing, rate updates land monthly',
-          'When they’re ready, they come back to you',
+          'They pick a slot from a link, no more email tag',
+          'A reminder goes out the day before',
+          'You walk into the call with the request already noted',
         ],
       },
       {
-        trigger: 'A client’s fixed deal ends in six months.',
+        trigger: 'An application has been waiting on documents for days.',
         actions: [
-          'A polite check-in goes out automatically',
-          '“Your deal ends in six months — want to lock in early?”',
-          'Remortgage book stops drifting away',
+          'A polite chase goes out automatically',
+          'Open cases are visible in one place',
+          'When the documents arrive, the case moves without another five emails',
         ],
       },
     ],
@@ -278,20 +251,18 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
   const caseStudiesData = {
     category: 'real-estate-property-services' as const,
     title: 'Related Case Studies',
-    description: 'Examples of how the system supports property businesses in this category.',
+    description: 'Examples of how the system supports real estate and property businesses in this category.',
     limit: 2,
   };
 
   const exploreData = {
     badge: 'Related',
-    description:
-      'The other parts of the system that come up most often for mortgage brokers.',
+    description: 'The other parts of the system that come up most often for mortgage brokers.',
     cards: [
       {
         icon: Workflow,
         title: 'Smart Website Systems',
-        description:
-          'See the core system layer that holds mortgage enquiries, consultation flow, and follow-up together.',
+        description: 'The core layer that holds enquiry, booking, and follow-up together.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -299,7 +270,7 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
       {
         icon: Calendar,
         title: 'Booking & Scheduling System',
-        description: 'Support consultations, reminders, and clearer next-step handling.',
+        description: 'Support discovery booking, reminders, and clearer next steps.',
         href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
@@ -307,7 +278,7 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
       {
         icon: Search,
         title: 'Local Authority & SEO Systems',
-        description: 'Strengthen area visibility, local credibility, and borrower discovery.',
+        description: 'Strengthen broker visibility and trust.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -315,7 +286,7 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Review Systems',
-        description: 'Turn completed advisory work into stronger proof and review flow.',
+        description: 'Turn completed cases into reviews and proof.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -326,38 +297,38 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Things brokers usually ask',
-    description: 'Straight answers about how this fits a mortgage brokerage.',
+    title: 'Things mortgage brokers usually ask',
+    description: 'Straight answers about how this fits into a busy broker pipeline.',
     faqs: [
       {
-        question: 'I’m on lender calls all day. Will this need someone in the office?',
+        question: 'I am on calls and fact-finds most of the day. How much extra work is this?',
         answer:
-          'No. The whole point is it runs while you’re packaging cases. Instant enquiry replies, discovery call bookings, document requests, nurture sequences — all automatic. You handle the actual advice.',
+          'Almost none after setup. Missed calls get answered by text on their own. Document chasing goes out on a schedule. Reminders fire by themselves.',
       },
       {
-        question: 'Will it work alongside my CRM (Iress, Smartr, 360 Lifecycle, etc)?',
+        question: 'Will buyers feel like they are getting an automated response?',
         answer:
-          'Yes. Whatever you use stays. The system improves the bit between the borrower enquiry and the case sitting in your CRM ready to package.',
+          'No. The messages are short and written like you would actually reply. The aim is to hold the lead until you can speak to them.',
       },
       {
-        question: 'How does the after-hours enquiry handling work?',
+        question: 'Can it handle buyers who need a discovery call before any application?',
         answer:
-          'A borrower enquires Sunday night after a rate change. Within seconds they get a reply with reassurance, a calendar link, and a document checklist. Most book a discovery call before going to bed.',
+          'Yes. The first reply confirms a discovery call and the application starts after the call.',
       },
       {
-        question: 'Can it really capture more remortgages from existing clients?',
+        question: 'Do I have to chase reviews myself?',
         answer:
-          'Yes — a polite check-in goes out six months before the fix ends. “Your deal ends in six months — want to lock in early?” The remortgage book stops drifting to comparison sites.',
+          'No. The request goes out on its own at completion, when the buyer is happiest.',
       },
       {
-        question: 'How do I get more reviews without nagging?',
+        question: 'What about enquiries sitting in old emails?',
         answer:
-          'A polite request goes out the week after completion, when the relief is freshest. People who would have meant to leave one actually do.',
+          'Those get worked in too. Many brokers find that warming up old enquiries brings in real cases before any new marketing kicks in.',
       },
       {
-        question: 'Do I need to scrap my current website?',
+        question: 'Do I need a brand new website?',
         answer:
-          'Usually not. We look at what you have first. The leak is normally the bit between the enquiry and the discovery call landing in the diary — not the site itself.',
+          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
       },
     ],
   };
@@ -375,15 +346,15 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'real-estate-property-services',
     seo: {
-      title: 'Mortgage Brokers — Stop Losing Rate-Window Enquiries, Discovery Calls & Remortgages | MindWP',
+      title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
       description:
-        'For mortgage brokers where rate-change enquiries go to whoever replied first, where discovery calls take six emails to confirm, and where pipeline borrowers drift to comparison sites. We put the system in place that catches them.',
+        'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
       keywords: [
         'mortgage broker website design',
+        'mortgage broker booking system',
         'mortgage broker lead handling system',
-        'mortgage consultation booking workflow',
         'mortgage broker seo services',
-        'mortgage broker review system',
+        'mortgage broker reputation management system',
       ],
       canonical: '/industries/real-estate-property-services/mortgage-brokers',
     },
@@ -400,12 +371,11 @@ function buildMortgageBrokersIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the pipeline is leaking',
+      title: 'Tell us where enquiries are slipping',
       description:
-        'If rate-window enquiries go to whoever replied first, if discovery calls take six emails to confirm, or if remortgage clients drift to comparison sites — walk us through how the brokerage runs and we’ll show you the first thing worth fixing.',
+        'If calls go to voicemail in fact-finds, applications stall, or reviews never get asked for, walk us through how the week runs and we will show you the first thing worth fixing.',
     },
   };
 }
 
-export const mortgageBrokersIndustryPageData: IndustryPageData =
-  buildMortgageBrokersIndustryPageData();
+export const mortgageBrokersIndustryPageData: IndustryPageData = buildMortgageBrokersIndustryPageData();

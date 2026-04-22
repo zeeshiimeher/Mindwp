@@ -1,18 +1,19 @@
 import {
   AlertCircle,
-  Calendar,
-  Clock3,
+  CloudRain,
   Droplets,
+  FileText,
   Home,
   MapPinned,
   MessageSquare,
-  Phone,
+  PhoneOff,
   Search,
   Shovel,
+  Snowflake,
   Star,
-  Truck,
+  Timer,
   Users,
-  Workflow,
+  Wallet,
   Wrench,
   Zap,
 } from 'lucide-react';
@@ -21,44 +22,39 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildHomeServicesIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'For Home Service Businesses',
-    title: 'You’re On a Job. The Phone’s Ringing. They’ll Call The Next Trade On The List.',
+    badge: 'For Home Service Trades',
+    title: 'Water’s On The Floor. They’re Dialling The Next Number While Yours Rings Out.',
     description:
-      'Plumbers, electricians, roofers, HVAC, landscapers — different trades, same leaks. Calls missed mid-job. Quotes that went quiet. Reviews nobody asked for. Postcodes you never wanted to drive to. We put the system in place that catches the work before it walks past you.',
-    list: [
-      'Calls missed while you’re on the tools',
-      'Quotes nobody chased',
-      'Reviews nobody asked for',
-      'Postcodes you never wanted to drive to',
-    ],
+      'Plumbers, electricians, roofers, HVAC, landscapers — the calls that pay best are the ones nobody can wait on. A pipe burst at 7pm. No heat on the coldest night of the year. A storm took half a roof off on Friday. Whoever picks up inside two minutes gets the job and probably the next ten years of repeat work. We put the system in place that catches them before they reach the next number on the list.',
+    list: ['Burst pipes', 'No heat', 'Storm damage', 'Power down'],
     cssPrefix: 'home-services-hero',
   };
 
   const imageStripData = {
-    badge: 'How Trade Calls Actually Land',
-    title: 'The work is on the tools. The leak is everything around it.',
+    badge: 'When Trade Calls Actually Land',
+    title: 'They’re not browsing. Something is broken right now and getting worse by the minute.',
     description:
-      'A burst pipe at 7pm. A storm Friday night. A boiler in January. People panic and dial. Whoever answers first wins the job — and often the next ten years of repeat work.',
+      'A boiler that won’t fire on the first cold morning. A leak coming through a ceiling. Lights out across half the house. The clock is running on damage, comfort, or a job site standing idle. Whoever answers first wins — and usually wins the warranty work, the upgrade quote, and the neighbours.',
     items: [
       {
-        title: 'Emergency and urgent enquiries',
+        title: '7pm burst pipe, water across a kitchen floor',
         image: '/images/placeholders/service-card-1.svg',
-        alt: 'Abstract placeholder image representing urgent home service enquiries',
+        alt: 'Abstract placeholder image representing an after-hours plumbing emergency',
       },
       {
-        title: 'Estimate and inspection booking',
+        title: 'No heat on the first sub-zero morning',
         image: '/images/placeholders/service-card-2.svg',
-        alt: 'Abstract placeholder image representing estimate and inspection scheduling',
+        alt: 'Abstract placeholder image representing a winter HVAC breakdown',
       },
       {
-        title: 'Field team coordination',
+        title: 'Storm overnight, three slates on the lawn',
         image: '/images/placeholders/service-card-3.svg',
-        alt: 'Abstract placeholder image representing field team coordination',
+        alt: 'Abstract placeholder image representing storm-damage roofing enquiries',
       },
       {
-        title: 'Review and referral follow-up',
+        title: 'Half the house dark, the other half flickering',
         image: '/images/placeholders/service-card-4.svg',
-        alt: 'Abstract placeholder image representing review and referral follow-up',
+        alt: 'Abstract placeholder image representing an electrical emergency callout',
       },
     ],
     backgroundColor: 'bg-base',
@@ -66,284 +62,260 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Where The Work Slips',
-    title: 'Same handful of leaks in nearly every trade business',
-    description: 'Different trades, similar gaps. Once you see them, you can’t unsee them.',
+    badge: 'Where Trade Work Bleeds Out',
+    title: 'The work is fine. The first two minutes after the call rings out is what costs you.',
+    description:
+      'Different trades, same shape of leak. The damage is happening in real time, the customer is on a list of five numbers, and the office is empty.',
     benefits: [
       {
-        icon: Phone,
-        title: 'Three urgent calls missed during a single job',
+        icon: PhoneOff,
+        title: 'Two minutes of voicemail and they’ve already moved on',
         description:
-          'You were under a sink, on a roof, up a ladder. They didn’t leave a message — they rang the next trade.',
+          'They were watching water spread or shivering in a coat. They didn’t leave a message. They went down the list.',
         iconType: 'primary' as const,
       },
       {
-        icon: Clock3,
-        title: 'A bigger quote went quiet for two weeks',
+        icon: Wallet,
+        title: 'A £6,000 quote went cold on a Tuesday',
         description:
-          'Boiler swap, EV charger, full replacement. One follow-up text would have closed it. Nobody had time to send it.',
+          'Boiler swap, full re-roof, EV charger and consumer unit. One nudge a week later would have closed it. Nobody had a free hand.',
         iconType: 'secondary' as const,
       },
       {
         icon: MapPinned,
-        title: 'Half your callouts are 40 minutes away',
+        title: 'Half the diary is the wrong side of town',
         description:
-          'Not the postcodes you actually want. The site brings in whoever finds you, not the right area.',
+          'Forty-minute drives to twenty-minute jobs. The site brings in whoever finds you, not the postcodes that pay.',
         iconType: 'accent' as const,
       },
       {
-        icon: AlertCircle,
-        title: 'Reviews don’t reflect the actual workload',
+        icon: FileText,
+        title: 'Insurance and warranty paperwork lives in three threads',
         description:
-          'Hundreds of jobs done well. Twenty-something reviews online. Nobody was asked at the right moment.',
+          'Photos on a phone. Invoice in an inbox. Schedule of works on a clipboard in the van. The claim drags. The customer goes quiet.',
         iconType: 'primary' as const,
       },
+      {
+        icon: CloudRain,
+        title: 'A storm hits and the inbox doesn’t survive Monday',
+        description:
+          'Forty messages, fifteen photos, six callbacks promised. Some get done, some don’t, nobody is sure which.',
+        iconType: 'secondary' as const,
+      },
+      {
+        icon: Star,
+        title: 'A thousand jobs a year, twenty-two reviews online',
+        description:
+          'The work earns the reviews. The asking never happens. The shop down the road with worse work has triple the count.',
+        iconType: 'accent' as const,
+      },
     ],
-    columns: 4 as const,
+    columns: 3 as const,
+  };
+
+  const decisionChecklistData = {
+    badge: 'Sound Familiar?',
+    title: 'A few signs the leak isn’t marketing — it’s what happens after the phone rings',
+    description:
+      'If most of these land, more leads will only make it louder. The bottleneck is the handling, not the demand.',
+    items: [
+      'On a typical day, two or three calls go to voicemail and most don’t leave a message',
+      'A storm or a cold snap turns the inbox into a triage problem nobody owns',
+      'Big-ticket quotes — boilers, roofs, EV chargers, full rewires — go quiet for a fortnight before anyone chases',
+      'Half the new enquiries are postcodes that aren’t worth the drive',
+      'Insurance work and warranty claims sit across an inbox, a phone, and a van',
+      'Reviews online don’t come close to the volume of jobs the team actually finishes',
+    ],
+    columns: 2 as const,
+    backgroundColor: 'bg-alt',
+    cssPrefix: 'home-services-decision-checklist',
   };
 
   const systemLayersData = {
     badge: 'What Gets Put In Place',
-    title: 'A steadier way to catch every call, close every quote, and turn every job into proof',
+    title: 'Catch the panic call. Close the big-ticket quote. Stop driving to postcodes that don’t pay.',
     description:
-      'Each piece does one job. Together they keep the work moving while the team is on the tools.',
+      'Each piece does one job. Together they keep the work moving while the team stays on the tools.',
     featureCategories: [
       {
-        title: 'Catch every call, even when you’re mid-job',
+        title: 'Catch the call inside two minutes — even mid-job',
         description:
-          'Missed call gets an instant text — “on a job, what’s happening, can call back in 20.” Most stop dialling the next trade.',
+          'Missed call lands a text within seconds. “Working on a job, what’s happening, can be on the line in 20.” Most stop dialling.',
         icon: MessageSquare,
         features: [
-          'Missed-call text-back automatically',
-          'Urgency captured up front',
-          'Holds the lead until you’re free',
+          'Instant text-back on every missed call',
+          'Captures the urgency and the postcode up front',
+          'Holds the panic call until you can pick up properly',
         ],
       },
       {
-        title: 'Take the booking without the back-and-forth',
+        title: 'Triage the storm-day inbox without losing anyone',
         description:
-          'For non-urgent work, customers pick a slot themselves. The office stops being a calendar.',
-        icon: Calendar,
+          'Calls, forms, WhatsApp, and Facebook messages land in one queue, sorted by urgency and area instead of who shouted last.',
+        icon: AlertCircle,
         features: [
-          'Online booking for inspections and routine work',
-          'Reminders the day before',
-          'Reschedule link instead of a no-show',
+          'One queue across every channel',
+          'Urgency tag the moment it lands',
+          'Nobody falls behind a wall of forty messages',
         ],
       },
       {
-        title: 'See where every job is in one place',
+        title: 'Follow up the £6k quotes nobody had time to chase',
         description:
-          'Quote sent, visit booked, job done, review asked. Nothing slips because nobody had time to write it down.',
-        icon: Truck,
+          'Quote sent Monday. Polite check-in Friday. A second one ten days later. The big-ticket close rate climbs without anyone nagging.',
+        icon: Timer,
         features: [
-          'Pipeline visible in one place',
-          'Lead stage and area context',
-          'Better handoff between office and field',
+          'Auto follow-up at the right intervals',
+          'Pending quotes visible in one list',
+          'Boiler, roof, EV, rewire — none go quiet',
         ],
       },
       {
-        title: 'Turn finished jobs into reviews you can show',
+        title: 'Show up first for the postcodes you actually want',
         description:
-          'A polite review request goes out the day after, when the kitchen, lights, or heating is back on.',
-        icon: Star,
-        features: [
-          'Review requests after every job',
-          'Asked when customers are happiest',
-          'Reviews catch up to the workload',
-        ],
-      },
-      {
-        title: 'Show up for the postcodes you actually want',
-        description:
-          'Service pages, Google profile, and local search lined up so the right area finds you first.',
+          'Service pages, Google profile, and local search lined up so the right town finds you before the wrong one does.',
         icon: Search,
         features: [
-          'Pages for the services and areas you want',
-          'Found on Maps for local searches',
-          'Less time driving to the wrong postcodes',
+          'Pages for the trades and areas worth driving to',
+          'Found on Maps when neighbours search',
+          'Less time wasted on the long drives',
         ],
       },
       {
-        title: 'Follow up the quotes nobody has time to chase',
+        title: 'Keep insurance and warranty work in one place',
         description:
-          'Quote sent Monday, automatic check-in Friday, another the week after. Quietly closes more.',
-        icon: Workflow,
+          'Photos, scope, invoice, claim number — all attached to the customer, not scattered across three apps.',
+        icon: FileText,
         features: [
-          'Quote follow-up at the right intervals',
-          'Pending jobs visible in one place',
-          'Closing rate goes up without nagging',
+          'Job folder per customer, not per channel',
+          'Faster claims, fewer chasers',
+          'No more “who has the photos?”',
+        ],
+      },
+      {
+        title: 'Ask for the review the day the heat comes back on',
+        description:
+          'Polite request the day after, when the kitchen is dry, the lights are working, or the boiler is humming. The reviews finally catch up.',
+        icon: Star,
+        features: [
+          'Request goes out at the moment of relief',
+          'Asked when the customer is happiest',
+          'Online count starts to match the workload',
         ],
       },
     ],
     columns: 3 as const,
   };
 
-  const spectrumData = {
-    badge: 'Different Trades, Same Leaks',
-    title: 'A solo operator, a crew, and a multi-trade outfit don’t look alike — but the gaps usually are',
-    description:
-      'Different setups, similar friction. Once you place yours, the right next step gets obvious.',
-    cards: [
-      {
-        title: 'Owner-led trades',
-        description:
-          'You’re on the tools. The phone going during a job is the single biggest leak.',
-        points: [
-          'Calls missed while you’re working',
-          'Quotes typed late at night',
-          'Reviews never asked for',
-        ],
-      },
-      {
-        title: 'Office and field teams',
-        description:
-          'More hands, more handoffs. Things slip in the gap between front desk, dispatcher, and the van.',
-        points: [
-          'Quotes that nobody owned',
-          'Visits nobody confirmed',
-          '“Who was supposed to ring them?”',
-        ],
-        featured: true,
-      },
-      {
-        title: 'Multi-trade local companies',
-        description:
-          'More services, more areas. Routing different jobs to the right team without confusion is the daily problem.',
-        points: [
-          'Wrong job types to wrong teams',
-          'Postcodes nobody wanted to cover',
-          'Trust spread thin across services',
-        ],
-      },
-    ],
-    backgroundColor: 'bg-alt',
-    cssPrefix: 'home-services-spectrum',
-  };
-
-  const decisionChecklistData = {
-    badge: 'Sound Familiar?',
-    title: 'A few signs this is worth looking at properly',
-    description: 'If most of these ring true, the leak is bigger than another marketing tweak will fix.',
-    items: [
-      'Calls go to voicemail during jobs and most callers don’t leave a message',
-      'Quoted bigger jobs go quiet for two weeks before anybody chases them',
-      'Reviews online don’t reflect how busy the business actually is',
-      'Half the new enquiries are postcodes you don’t want to drive to',
-      'Insurance and warranty work sits in three different threads',
-      'More work just makes the office feel worse, not better',
-    ],
-    columns: 2 as const,
-    backgroundColor: 'bg-base',
-    cssPrefix: 'home-services-decision-checklist',
-  };
-
   const serviceEnvironmentsData = {
-    badge: 'How You Actually Work',
-    title: 'A solo van, an office and field team, and a multi-trade outfit each break in different places',
+    badge: 'How You Actually Run',
+    title: 'A solo van, an office-and-vans crew, and a multi-trade outfit don’t leak in the same place',
     description:
-      'Different setups, different leaks. The bit that costs you the most work isn’t the same in a one-van trade as in a six-van outfit.',
+      'Different setups, different bottlenecks. The fix that helps a one-van plumber doesn’t move the needle for a six-van HVAC business.',
     features: [
       {
         title: 'Solo or owner-led van',
         description:
-          'You’re hands-on with one job at a time. The phone goes, nobody picks up, the lead’s gone.',
+          'You’re hands-on, one job at a time. The phone going during a job is the single biggest leak — everything else is downstream of that.',
         icon: Home,
       },
       {
-        title: 'Office and field team',
+        title: 'Office and field crew',
         description:
-          'More hands, more handoffs. Things slip between the booker, the dispatcher, and the van.',
+          'More hands, more handoffs. Quotes get sent and forgotten. Nobody is sure who was meant to ring the customer back.',
         icon: Users,
       },
       {
         title: 'Multi-trade local company',
         description:
-          'More services, more areas. Routing the right job to the right team without confusion is the daily problem.',
+          'More services, more areas. The daily mess is routing the right job to the right team without it being a phone call every time.',
         icon: Wrench,
       },
     ],
-    tagline: 'Same category, different bottlenecks',
-    narrativeTitle: 'Why we look at the shape of the business first',
+    tagline: 'Same trade category, different bottlenecks',
+    narrativeTitle: 'We start with the shape of the business, not a generic checklist',
     narrativeParagraphs: [
-      'Before any change is made, we look at how enquiries actually arrive, who handles them, and where they currently slip. That’s usually obvious within a short conversation.',
-      'From there, the right next step — missed-call text-back, quote follow-up, review collection, area targeting — becomes obvious instead of generic.',
+      'Before anything is changed, we look at how calls and forms actually arrive, who picks them up, and where they currently slip. That’s usually clear inside one short call.',
+      'From there, the right first move — text-back, quote follow-up, review collection, area targeting — becomes obvious instead of guessed at.',
     ],
-    backgroundColor: 'bg-alt',
+    backgroundColor: 'bg-base',
     cssPrefix: 'home-services-service-environments',
   };
 
   const processData = {
-    badge: 'How We Get Started',
-    title: 'How a typical conversation moves from “we’re losing work” to “we’ve stopped losing work”',
+    badge: 'How A Conversation Usually Goes',
+    title: 'From “we’re losing work” to “we’ve stopped losing work” — without rebuilding the business',
     description:
-      'Nothing fancy. We look at how the business actually runs, then put the missing pieces in place in the order that helps most.',
+      'Nothing dramatic. We map how the work currently flows, then put the missing pieces in the order that helps most.',
     steps: [
       {
         number: '01',
-        title: 'We look at how enquiries arrive now',
-        description: 'Calls, forms, missed calls, walk-ins. Where they go, who sees them, who replies.',
+        title: 'We watch how a typical week of enquiries actually lands',
+        description:
+          'Calls, forms, WhatsApps, missed calls, walk-ins. Where they go. Who sees them. Who replies first.',
       },
       {
         number: '02',
-        title: 'We map where the jobs are slipping',
-        description: 'No pitch deck. A short, honest list of what’s breaking and what it’s costing.',
+        title: 'We put a number on the leak',
+        description:
+          'A short, honest list of what’s slipping and what it’s probably costing. No deck.',
       },
       {
         number: '03',
         title: 'The biggest leak gets fixed first',
         description:
-          'Missed calls, quote follow-ups, missing reviews, wrong postcodes — whichever is bleeding the most work.',
+          'Missed calls, cold quotes, missing reviews, wrong postcodes — whichever is bleeding the most work goes first.',
       },
       {
         number: '04',
-        title: 'It runs while the team is on the tools',
+        title: 'It runs while the team stays on the tools',
         description:
-          'Replies, reminders, reviews, follow-up. Going on their own while the trade does the trade.',
+          'Replies, reminders, reviews, follow-up — going on their own while the trade does the trade.',
       },
     ],
     columns: 4 as const,
-    backgroundColor: 'bg-base',
+    backgroundColor: 'bg-alt',
     cssPrefix: 'home-services-process',
   };
 
   const detailRoutesData = {
     badge: 'By Trade',
-    title: 'Pick the one closest to how you run',
+    title: 'Pick the trade closest to how you run',
     description:
-      'Same category, different bottlenecks. These pages get into the specifics for each trade.',
+      'Same category, different trigger moments. These pages get into the specifics for each trade.',
     items: [
       {
         title: 'Roofing',
         description:
-          'For roofers losing storm calls and replacement quotes that go quiet for weeks.',
+          'For roofers losing the storm-week surge and big-ticket re-roof quotes that go quiet for a fortnight.',
         href: '/industries/home-services/roofing-companies',
         icon: Home,
       },
       {
         title: 'HVAC',
         description:
-          'For HVAC where heatwave calls overflow and last year’s installs never get their service nudge.',
+          'For HVAC where the first cold morning overflows the line and last year’s installs never get a service nudge.',
         href: '/industries/home-services/hvac-companies',
-        icon: Workflow,
+        icon: Snowflake,
       },
       {
         title: 'Plumbing',
         description:
-          'For plumbers whose urgent calls go to whoever picked up first.',
+          'For plumbers whose 7pm burst-pipe calls go to whoever picked up first, not whoever does the better work.',
         href: '/industries/home-services/plumbing-companies',
         icon: Droplets,
       },
       {
         title: 'Electrical',
         description:
-          'For sparkies losing fault calls and EV charger quotes that go quiet.',
+          'For sparkies losing fault calls and EV charger or consumer-unit quotes that go quiet by the weekend.',
         href: '/industries/home-services/electrical-companies',
         icon: Zap,
       },
       {
         title: 'Landscaping',
         description:
-          'For landscapers where spring quote requests pile up faster than anyone can reply.',
+          'For landscapers whose spring quote requests pile up faster than anyone can write them and reviews never get asked for.',
         href: '/industries/home-services/landscaping-companies',
         icon: Shovel,
       },
@@ -366,22 +338,21 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
     topics: ['lead-management', 'follow-up', 'review-generation', 'missed-calls'],
     industries: ['roofing', 'hvac', 'plumbing', 'electrical', 'landscaping'],
     seo: {
-      title: 'Home Service Trades — Stop Losing Calls, Quotes & Reviews | MindWP',
+      title: 'Home Services Trades — Catch The Emergency Call & Close The Big Quote | MindWP',
       description:
-        'For plumbers, electricians, roofers, HVAC, and landscapers where urgent calls go to whoever picked up first, quoted jobs go quiet for weeks, and reviews don’t reflect the workload. We put the system in place that catches every job.',
+        'For plumbers, electricians, roofers, HVAC, and landscapers. Burst-pipe calls go to whoever picked up first. £6k quotes go quiet for a fortnight. We put the system in place that catches the panic call and closes the big-ticket job.',
       keywords: [
-        'home services website systems',
-        'roofing hvac booking systems',
         'home services lead handling',
-        'estimate follow up system',
-        'local service business infrastructure',
+        'trade business missed call recovery',
+        'plumbing hvac quote follow up',
+        'roofing storm enquiry system',
+        'local trade visibility system',
       ],
       canonical: '/industries/home-services',
     },
     hero: heroData,
     imageStrip: imageStripData,
     operatingPatterns: operatingPatternsData,
-    spectrum: spectrumData,
     decisionChecklist: decisionChecklistData,
     serviceEnvironments: serviceEnvironmentsData,
     systemLayers: systemLayersData,
@@ -396,9 +367,9 @@ function buildHomeServicesIndustryPageData(): IndustryPageData {
       },
     },
     cta: {
-      title: 'Tell us where the work is leaking',
+      title: 'Tell us where the work is bleeding out',
       description:
-        'If urgent calls go to voicemail, if quoted jobs go quiet, or if reviews never get asked for — walk us through how the business runs and we’ll show you the first thing worth fixing.',
+        'If panic calls go to voicemail, if a £6k quote went quiet last week, or if the review count doesn’t match the job count — walk us through how a normal week runs and we’ll show you the first thing worth fixing.',
     },
   };
 }

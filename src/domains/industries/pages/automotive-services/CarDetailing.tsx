@@ -1,12 +1,11 @@
 import {
-  Bell,
   Calendar,
+  Car,
   Clock3,
   MapPinned,
   MessageSquare,
   Search,
   ShieldCheck,
-  Sparkles,
   Star,
   Workflow,
 } from 'lucide-react';
@@ -15,44 +14,39 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildCarDetailingIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'For Car Detailing Businesses',
-    title: 'Someone DMs You About a Wash. Three Days Later, They’ve Booked Elsewhere.',
+    badge: 'For Car Detailing',
+    title: 'A Driver Wants Their Car Booked In This Weekend. They Picked Whoever Replied First.',
     description:
-      'Most detailing enquiries come at strange hours — Instagram DMs, late-night WhatsApps, the contact form on your phone while you’re finishing a correction. The reply takes too long, the package question never gets answered, and the slot quietly gets given to someone faster.',
-    list: [
-      'DMs that sit unread',
-      'Quote questions never answered',
-      'No-shows on busy Saturdays',
-      'Repeat customers nobody chased',
-    ],
+      'Detailing enquiries are time-sensitive. People want to know what you offer, what it costs, and when you can fit them in. The detailer who answers first usually gets the job.',
+    list: ['Slow replies', 'Lost bookings', 'No follow-up', 'Few reviews'],
     cssPrefix: 'car-detailing-hero',
   };
 
   const imageStripData = {
     badge: 'How Detailing Work Comes In',
-    title: 'Most enquiries arrive on a phone — evenings, weekends, while you’re mid-job',
+    title: 'A driver wants their car booked in soon',
     description:
-      'Interior valets, full corrections, ceramic coatings, monthly maintenance. People want to know if you can fit them in this Saturday and what the price actually is. The longer they wait for a reply, the colder the booking.',
+      'A weekend slot, a one-off treatment, a regular clean. They want to know what you offer, when you can do it, and that the car will come back looking right.',
     items: [
       {
-        title: 'Package and service enquiries',
+        title: 'Booking enquiries',
         image: '/images/placeholders/service-card-5.svg',
-        alt: 'Abstract placeholder image representing car detailing package enquiries',
+        alt: 'Abstract placeholder image representing detailing enquiries',
       },
       {
-        title: 'Booking and slot planning',
+        title: 'Slots and reminders',
         image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing car detailing booking flow',
+        alt: 'Abstract placeholder image representing detailing booking',
       },
       {
-        title: 'Preparation and handoff details',
+        title: 'Repeat customers',
         image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing car detailing preparation guidance',
+        alt: 'Abstract placeholder image representing detailing repeat customers',
       },
       {
-        title: 'Reviews and repeat visits',
+        title: 'Reviews and referrals',
         image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing car detailing reviews and repeat visits',
+        alt: 'Abstract placeholder image representing detailing reviews',
       },
     ],
     backgroundColor: 'bg-base',
@@ -60,37 +54,31 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Where The Work Slips',
-    title: 'It’s not the work. It’s the bit before and after.',
-    description:
-      'You can’t answer Instagram with two hands deep in a polish. So the message sits. So does the booking.',
+    badge: 'Where Bookings Slip',
+    title: 'The work is there. The way enquiries get handled is what loses it.',
     benefits: [
       {
-        icon: Sparkles,
-        title: '“What’s the price for a full detail?” — nobody answers',
-        description:
-          'They DM. You’re mid-job. By the time you wipe your hands and reply, they’ve booked someone who answered in five minutes.',
+        icon: Car,
+        title: 'Enquiries arrive while you are mid-job',
+        description: 'You are working on a car. The phone rings. By the time you reply, they have booked the next detailer.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'Saturday is fully booked, then two no-shows',
-        description:
-          'No reminder went out. They forgot. The slot sat empty while three other people would have taken it.',
+        title: 'Booking turns into a back and forth',
+        description: 'A simple weekend slot takes too many texts before anything is on the diary.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Regulars used to come every six weeks. Now they don’t.',
-        description:
-          'Nobody nudged them. Life got in the way. The repeat demand quietly dried up.',
+        title: 'Past customers never come back',
+        description: 'A great clean six months ago. Nobody nudged them for the next one.',
         iconType: 'accent' as const,
       },
       {
         icon: MapPinned,
-        title: 'You post incredible before-and-afters. Reviews don’t catch up.',
-        description:
-          'The work is amazing. Online, your Google profile looks quieter than the cheaper unit down the road.',
+        title: 'Online you look smaller than the work you do',
+        description: 'Plenty of happy customers. Almost none ever wrote anything online.',
         iconType: 'primary' as const,
       },
     ],
@@ -99,63 +87,57 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
 
   const systemLayersData = {
     badge: 'What Gets Put In Place',
-    title: 'A steadier way to handle every DM, deposit, and repeat visit',
-    description:
-      'Each piece does one job. Together they stop bookings from quietly going to whoever answered fastest.',
+    title: 'A steadier way to handle every enquiry, booking, and repeat visit',
+    description: 'Each piece does one job. Together they keep work from slipping while you are in the bay.',
     featureCategories: [
       {
-        title: 'Catch every enquiry, even when your hands are full',
-        description:
-          'DMs, web forms, calls, missed calls — all land in one inbox with the package they asked about already noted.',
+        title: 'Catch every call and form',
+        description: 'Calls, missed calls, web forms — all in one place with the car and the request noted.',
         icon: MessageSquare,
         features: [
-          'Instagram and form messages in one place',
-          'Missed-call text-back inside a minute',
-          'Package and vehicle captured up front',
+          'Missed calls texted back instantly',
+          'Web enquiries sent to your phone',
+          'Vehicle and request captured up front',
         ],
       },
       {
-        title: 'Make booking feel as simple as picking a slot',
-        description:
-          'A clear page that shows packages, prices, and the next free Saturday. Deposits taken if you want them. Reminders that fire on their own.',
+        title: 'Get the booking confirmed without phone tag',
+        description: 'A clear way to offer a slot, confirm it, and remind them the day before.',
         icon: Calendar,
         features: [
           'Slots customers can pick themselves',
-          'Optional deposit at booking',
-          'Reminders the day before to kill no-shows',
+          'Confirmations and reminders sent automatically',
+          'Arrival window in the same message',
         ],
       },
       {
-        title: 'Send prep and arrival notes without typing them every time',
-        description:
-          'Where to bring the car, when, what to take out of it. Same message, every time, sent automatically.',
-        icon: Bell,
+        title: 'Bring past customers back',
+        description: 'Gentle nudges for the next clean so the diary fills itself.',
+        icon: Workflow,
         features: [
-          'Prep instructions sent on confirmation',
-          'Arrival reminder day-of',
-          'Less back-and-forth on the morning',
+          'Past customers nudged automatically',
+          'Open quotes warmed up',
+          'Repeat work that does not depend on you remembering',
         ],
       },
       {
-        title: 'Bring regulars back without chasing them yourself',
-        description:
-          'Six-week nudges, ceramic top-up reminders, seasonal offers — all going out on their own. Repeat work compounds.',
+        title: 'Turn finished jobs into proof',
+        description: 'A review request goes out at the right moment so the work shows up online.',
         icon: ShieldCheck,
         features: [
-          'Maintenance reminders timed per package',
-          'Review requests after each visit',
-          'Past customers nudged at the right moment',
+          'Review requests after every job',
+          'Asked when the customer is happiest',
+          'More reviews where local people search',
         ],
       },
       {
-        title: 'Get found when local people search for what you do',
-        description:
-          'Pages for “ceramic coating near me”, your Google profile sorted, before-and-after photos used as proof.',
+        title: 'Show up when local drivers search',
+        description: 'Service pages and Google profile lined up so you appear when someone nearby needs help.',
         icon: Search,
         features: [
-          'Service pages that match what people type',
-          'Google Business Profile sorted properly',
-          'Local reach customers can actually find',
+          'Found on Maps for the work you do',
+          'Service pages that match real searches',
+          'Local area coverage that is visible',
         ],
       },
     ],
@@ -164,28 +146,27 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
 
   const comparisonData = {
     badge: 'What Actually Changes',
-    title: 'A normal weekend at the unit, before and after',
-    description:
-      'The work stays the same. What changes is everything around the work that used to depend on you having a free hand.',
+    title: 'A normal week, before and after',
+    description: 'You still do the work. What changes is the part that used to depend on you remembering.',
     comparisons: [
       {
         type: 'before' as const,
         title: 'How it runs now',
         items: [
-          '“How much for a full detail?” sits in your DMs for four hours.',
-          'Saturday morning, two no-shows, slots empty.',
-          'Same regular hasn’t booked since March. Nobody noticed.',
-          'Brilliant correction job done Friday. No review request goes out.',
+          'Phone rings while you are mid-job. Goes to voicemail. Lost.',
+          'A driver wants a slot. Three texts later, still no time set.',
+          'A great customer last month. Nobody nudged them for the next clean.',
+          'You finished a great job last week. They never got asked for a review.',
         ],
       },
       {
         type: 'after' as const,
         title: 'How it runs after',
         items: [
-          'They get a quick reply with the price guide and a booking link inside minutes.',
-          'Slot booked through the link with a deposit. Reminder fires the day before. Cars actually turn up.',
-          'Six weeks after their last visit, an automatic nudge goes out. They book again.',
-          'A review request goes out the day they collect. Reviews keep stacking quietly.',
+          'Missed call gets a text back inside a minute. They know you will reply.',
+          'They pick a slot from a link. Confirmed. Reminder fires the day before.',
+          'A gentle nudge goes out and the next booking lands without effort.',
+          'A review request goes out the day they pick the car up. Reviews start stacking quietly.',
         ],
       },
     ],
@@ -193,44 +174,41 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
 
   const pathwaysData = {
     badge: 'Where Most Detailers Start',
-    title: 'Three stages — most detailers feel one of them more than the others',
-    description: 'Pick whichever is leaking the most work. The rest can follow.',
+    title: 'Three stages, most detailers feel one more than the others',
+    description: 'You do not have to fix everything at once. Start with whatever is leaking the most work.',
     packages: [
       {
-        name: 'Stop enquiries from sitting in your DMs',
-        description:
-          'For when most messages come in while you’re working and the reply lands too late to win the booking.',
+        name: 'Stop calls and enquiries going missing',
+        description: 'For when the phone rings out and quick enquiries sit unread.',
         price: 'Stage 1',
-        priceDetail: 'Start here if speed of reply is the main issue',
+        priceDetail: 'Start here if missed calls are the leak',
         features: [
-          'One inbox for DMs, forms, and calls',
-          'Auto-reply with package guide',
-          'Missed-call text-back',
+          'Missed-call text-back so they know you will reply',
+          'One inbox for calls, forms, and web enquiries',
+          'Vehicle and request noted before the conversation',
         ],
       },
       {
-        name: 'Lock down the schedule and kill no-shows',
-        description:
-          'For when Saturdays are losing slots to people who forget they ever booked.',
+        name: 'Get the booking confirmed the same day',
+        description: 'Once enquiries are caught, this stage takes the friction out of confirming a slot.',
         price: 'Stage 2',
-        priceDetail: 'Start here if no-shows are the bottleneck',
+        priceDetail: 'Start here if booking is where it slows down',
         features: [
-          'Self-serve booking with deposits if you want them',
-          'Reminders the day before',
-          'Prep notes sent automatically',
+          'Slots customers can pick themselves',
+          'Reminders the day before so cars actually turn up',
+          'Arrival window sent automatically',
         ],
         popular: true,
       },
       {
-        name: 'Bring regulars back and turn jobs into reviews',
-        description:
-          'For when the work is great but reputation and repeat demand aren’t catching up.',
+        name: 'Bring past customers back and turn jobs into reviews',
+        description: 'For when work comes in fine but past customers never come back and reviews never get asked for.',
         price: 'Stage 3',
-        priceDetail: 'Start here if reviews and repeat visits are the weak spot',
+        priceDetail: 'Start here if repeat work and reputation are the weak spots',
         features: [
-          'Six-week and seasonal nudges',
-          'Ceramic top-up reminders',
-          'Review requests after every visit',
+          'Past customers nudged automatically',
+          'Open quotes warmed up',
+          'Review requests at the right moment',
         ],
       },
     ],
@@ -239,33 +217,30 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
   const workflowExamplesData = {
     badge: 'Real Situations',
     title: 'A few moments where the difference shows up',
-    description: 'Small handoffs that used to depend on you being free to type a reply.',
+    description: 'Small handoffs that used to depend on you remembering.',
     workflows: [
       {
-        trigger:
-          'Someone DMs at 9pm asking the price of a full interior detail.',
+        trigger: 'A driver rings while you are mid-job.',
         actions: [
-          'They get an instant reply with the package guide and a link to book',
-          'The enquiry is logged with the package they asked about',
-          'You see it in the morning, not buried in 30 unread DMs',
+          'They get a text inside a minute saying you will reply',
+          'The text captures the car and the request',
+          'The lead is held instead of going to the next detailer',
         ],
       },
       {
-        trigger:
-          'A booking is made for Saturday and you don’t want another no-show.',
+        trigger: 'A driver wants a weekend slot.',
         actions: [
-          'Confirmation goes out with prep notes',
-          'A reminder fires the day before',
-          'Optional deposit means the slot is held seriously',
+          'They pick a slot from a link, no more text tag',
+          'A reminder goes out the day before',
+          'You see the booking with the car and the request attached',
         ],
       },
       {
-        trigger:
-          'A regular hasn’t booked since their last ceramic top-up.',
+        trigger: 'A past customer is due for their next clean.',
         actions: [
-          'A friendly nudge goes out at the right interval',
-          'Past customer comes back without you remembering',
-          'Review request after the visit keeps reputation climbing',
+          'A gentle nudge goes out automatically',
+          'They book again without you having to chase',
+          'The diary keeps filling without extra marketing',
         ],
       },
     ],
@@ -276,21 +251,18 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
   const caseStudiesData = {
     category: 'automotive-services' as const,
     title: 'Related Case Studies',
-    description:
-      'Examples of how the system supports automotive service businesses in this category.',
+    description: 'Examples of how the system supports automotive service businesses in this category.',
     limit: 2,
   };
 
   const exploreData = {
     badge: 'Related',
-    description:
-      'The other parts of the system that come up most often for detailers trying to win Saturdays back.',
+    description: 'The other parts of the system that come up most often for car detailers.',
     cards: [
       {
         icon: Workflow,
         title: 'Smart Website Systems',
-        description:
-          'See the core system layer that holds package clarity, booking, and follow-up together.',
+        description: 'The core layer that holds enquiry, booking, and follow-up together.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -298,7 +270,7 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
       {
         icon: Calendar,
         title: 'Booking & Scheduling System',
-        description: 'Support detailing bookings, reminders, and clearer appointment handling.',
+        description: 'Support booking, reminders, and clearer next steps.',
         href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
@@ -306,7 +278,7 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
       {
         icon: Search,
         title: 'Local Authority & SEO Systems',
-        description: 'Strengthen local service visibility and detailing trust signals.',
+        description: 'Strengthen detailer visibility and local trust.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -314,7 +286,7 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Review Systems',
-        description: 'Turn good appointments into stronger reviews and repeat trust.',
+        description: 'Turn finished jobs into reviews and proof.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -326,37 +298,37 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
 
   const faqData = {
     title: 'Things detailers usually ask',
-    description: 'Straight answers about how this fits into a unit that’s already busy.',
+    description: 'Straight answers about how this fits into a small detailing business.',
     faqs: [
       {
-        question: 'Most of my work comes through Instagram. Will it actually catch DMs?',
+        question: 'I am in the bay all day. How much extra work is this?',
         answer:
-          'Yes — DMs land in the same inbox as web forms and calls. You stop scrolling through three apps to find who asked what.',
+          'Almost none after setup. Missed calls get answered by text on their own. Reminders fire by themselves. Past customers get nudged without you doing it.',
       },
       {
-        question: 'Will the auto-reply feel cold?',
+        question: 'Will customers feel like they are getting an automated response?',
         answer:
-          'No. The first reply is short, written like you’d actually message a customer, and just buys the time you need to come back properly. The real conversation still happens with you.',
+          'No. The messages are short and written like you would actually text someone. The aim is to hold the lead until you can reply.',
       },
       {
-        question: 'Can I take deposits to stop no-shows?',
+        question: 'Can it handle bookings that need a price first?',
         answer:
-          'Yes — deposits at booking, full payment if you prefer. Reminders go out the day before either way. No-shows drop quickly.',
+          'Yes. The first reply confirms a slot or sends a price, depending on how you usually work.',
       },
       {
-        question: 'What about regulars who used to book every six weeks?',
+        question: 'Do I have to chase reviews myself?',
         answer:
-          'They get a friendly nudge at the right interval. A lot of detailers find this brings back more revenue than any new ad.',
+          'No. The request goes out on its own after the job is done, when the customer is happiest.',
       },
       {
-        question: 'Do I have to ask for reviews myself?',
+        question: 'What about past customers we have not heard from in a while?',
         answer:
-          'No. The request goes out automatically after each visit. Your Google profile starts catching up to the actual standard of the work.',
+          'They get gentle nudges so the next booking happens without effort.',
       },
       {
         question: 'Do I need a brand new website?',
         answer:
-          'Usually not. We look at what you’ve got first. Often the site is fine — the gap is everything that happens after the message comes in.',
+          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
       },
     ],
   };
@@ -374,13 +346,13 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'automotive-services',
     seo: {
-      title: 'Car Detailing — Stop Losing Saturdays to Slow Replies and No-Shows | MindWP',
+      title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
       description:
-        'For detailers where DMs sit unread, no-shows kill weekends, and regulars stop coming back. We put the booking, reminder, and follow-up flow in place so the work already coming in actually books.',
+        'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
       keywords: [
         'car detailing website design',
         'car detailing booking system',
-        'car detailing marketing system',
+        'car detailing lead handling system',
         'car detailing seo services',
         'car detailing reputation management system',
       ],
@@ -401,7 +373,7 @@ function buildCarDetailingIndustryPageData(): IndustryPageData {
     cta: {
       title: 'Tell us where the work is slipping',
       description:
-        'If DMs sit unread, no-shows hit hard, or regulars just stop coming — walk us through how the unit runs and we’ll show you the first thing worth fixing.',
+        'If calls go to voicemail mid-job, past customers never come back, or reviews never get asked for, walk us through how the week runs and we will show you the first thing worth fixing.',
     },
   };
 }

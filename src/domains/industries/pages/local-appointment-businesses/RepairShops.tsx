@@ -14,43 +14,38 @@ import type { IndustryPageData } from '@/domains/industries/types';
 function buildRepairShopsIndustryPageData(): IndustryPageData {
   const heroData = {
     badge: 'For Repair Shops',
-    title: 'A Cracked iPhone At Lunchtime. Three Shops On Google Maps. Whoever Replied With A Price Got The Walk-In.',
+    title: 'A Customer Wants Their Item Looked At Today. They Picked Whoever Replied First.',
     description:
-      'People with a broken phone, laptop, or watch don’t shop carefully. They tap the first shop on Maps, want a price and a wait time, and walk in within the hour. We put the system in place that catches the enquiries while you’re mid-repair, quotes the easy ones automatically, and stops “is it worth fixing?” going unanswered.',
-    list: [
-      'Walk-in enquiries you couldn’t answer mid-repair',
-      'Quote requests that took half a day to reply to',
-      'Devices people promised to drop in but never did',
-      'Reviews from happy fixes you never asked for',
-    ],
+      'Repair enquiries arrive while you are at the bench. Calls go to voicemail. The customer drops it off at the next shop instead.',
+    list: ['Missed calls', 'Slow replies', 'Lost bookings', 'Few reviews'],
     cssPrefix: 'repair-shops-hero',
   };
 
   const imageStripData = {
-    badge: 'How Repair Enquiries Actually Land',
-    title: 'Cracked screen at lunch. They want a price and a wait time. They’re walking in within the hour.',
+    badge: 'How Repairs Come In',
+    title: 'A customer wants something fixed soon',
     description:
-      'Phones, laptops, watches, consoles. The decision happens in twenty minutes. Whoever replied with a number first gets the device on the bench.',
+      'A device, a small appliance, anything they want sorted. They want to know if you can look at it, what it might cost, and when they can collect.',
     items: [
       {
-        title: 'Service and fault enquiries',
+        title: 'Repair enquiries',
         image: '/images/placeholders/service-card-5.svg',
-        alt: 'Abstract placeholder image representing repair shop service enquiries',
+        alt: 'Abstract placeholder image representing repair shop enquiries',
       },
       {
-        title: 'Booking and visit timing',
+        title: 'Drop-offs and bookings',
         image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing repair visit booking',
+        alt: 'Abstract placeholder image representing repair shop drop-offs',
       },
       {
-        title: 'Expectation setting and next steps',
+        title: 'Quotes and approvals',
         image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing repair expectation setting',
+        alt: 'Abstract placeholder image representing repair shop quotes',
       },
       {
-        title: 'Reviews and local proof',
+        title: 'Reviews and repeat customers',
         image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing repair shop reviews and local proof',
+        alt: 'Abstract placeholder image representing repair shop reviews',
       },
     ],
     backgroundColor: 'bg-base',
@@ -58,36 +53,31 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Where The Bench Goes Quiet',
-    title: 'You’re mid-screen replacement. The phone rings. They walked into the shop two doors down.',
-    description: 'Same handful of leaks across nearly every repair shop. None of them are about the soldering.',
+    badge: 'Where Repairs Slip',
+    title: 'The bench is full but new customers and repeat work slip through',
     benefits: [
       {
         icon: Wrench,
-        title: 'Three “how much for a screen?” calls came in while you were soldering',
-        description:
-          'You couldn’t pick up. Two walked into the shop two doors down with a faster reply.',
+        title: 'Calls miss while you are at the bench',
+        description: 'Hands are busy. The phone rings out. The customer drops it at the next shop.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'A laptop quote sat in the inbox for half a day',
-        description:
-          'By the time you replied, they’d already taken it to the chain in the shopping centre.',
+        title: 'Booking turns into a back and forth',
+        description: 'A simple drop-off takes too many messages before anything is on the diary.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Five “I’ll drop it in tomorrow” devices never showed up',
-        description:
-          'No reminder. No follow-up. Five jobs vanished without a trace.',
+        title: 'Quotes go out and never get chased',
+        description: 'A price gets sent. The customer thinks about it. Nobody follows up.',
         iconType: 'accent' as const,
       },
       {
-        icon: Star,
-        title: 'You fix more devices than the chain. They have 800 reviews. You have 47.',
-        description:
-          'Your repairs come back working. Online you look smaller because nobody asked at the right moment.',
+        icon: ShieldCheck,
+        title: 'Online you look smaller than the work you do',
+        description: 'Plenty of finished repairs. Almost no reviews to show for them.',
         iconType: 'primary' as const,
       },
     ],
@@ -96,74 +86,57 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
 
   const systemLayersData = {
     badge: 'What Gets Put In Place',
-    title: 'A steadier way to catch quote requests and stop devices from vanishing',
-    description:
-      'Each piece does one job. Together they keep the bench full while you’re heads-down in a repair.',
+    title: 'A steadier way to handle every enquiry, drop-off, and quote',
+    description: 'Each piece does one job. Together they keep work coming in without you chasing.',
     featureCategories: [
       {
-        title: 'Quote the easy ones automatically',
-        description:
-          '“iPhone 13 screen — £X, takes 45 minutes.” Standard repairs get a price and a slot back instantly. You only quote manually for the tricky ones.',
+        title: 'Catch every call and form',
+        description: 'Calls, missed calls, web forms — all in one place with the customer and the item noted.',
         icon: MessageSquare,
         features: [
-          'Instant quote on standard repairs',
-          'Wait time included up front',
-          'They start walking in instead of shopping around',
+          'Missed calls texted back instantly',
+          'Web enquiries sent to your phone',
+          'Customer and item captured up front',
         ],
       },
       {
-        title: 'Take the booking without a phone call',
-        description:
-          'They pick a drop-off slot online. Optional deposit to hold it. Less DM tennis, fewer no-shows.',
+        title: 'Get the drop-off booked without phone tag',
+        description: 'A clear way to offer a slot, confirm it, and remind them the day before.',
         icon: Calendar,
         features: [
-          'Self-serve drop-off booking',
-          'Optional deposit-to-hold',
-          'Day-before reminder',
+          'Slots customers can pick themselves',
+          'Confirmations and reminders sent automatically',
+          'You see the day at a glance',
         ],
       },
       {
-        title: 'Stop “I’ll drop it in tomorrow” disappearing',
-        description:
-          'Promised drop-off didn’t happen? A polite nudge goes out the next day. A second one in three. Most show up.',
+        title: 'Stop quotes going quiet',
+        description: 'Every quote gets a follow-up on a schedule, even when the bench is full.',
         icon: Workflow,
         features: [
-          'Drop-off reminder if they didn’t show',
-          'Quote follow-up at sensible intervals',
-          'Pipeline of pending jobs visible',
+          'Quotes chased automatically',
+          'Open quotes in one place',
+          'Old quotes warmed up instead of forgotten',
         ],
       },
       {
-        title: 'Tell people the device is ready without phoning',
-        description:
-          '“Your laptop’s ready. £120 to collect.” Auto text the moment you mark it done. Devices get picked up faster.',
+        title: 'Turn finished repairs into proof',
+        description: 'A review request goes out at the right moment so the work shows up online.',
         icon: ShieldCheck,
         features: [
-          'Ready-to-collect notifications',
-          'Devices stop sitting on the shelf',
-          'Less time on the phone chasing collections',
+          'Review requests after a repair',
+          'Asked when the customer is happiest',
+          'More reviews where local people search',
         ],
       },
       {
-        title: 'Turn finished repairs into reviews',
-        description:
-          'A polite review request goes out the day after collection. People who would have meant to leave one actually do.',
-        icon: Star,
-        features: [
-          'Review requests after every collection',
-          'Asked when the relief is freshest',
-          'Reviews catch up to the quality of work',
-        ],
-      },
-      {
-        title: 'Show up first when local people search',
-        description:
-          'Service pages and Google profile lined up so people in the right area find you first — not the chain in the shopping centre.',
+        title: 'Show up when local people search',
+        description: 'Service pages and Google profile lined up so you appear when someone nearby needs a repair.',
         icon: Search,
         features: [
-          'Pages for the devices and brands you actually fix',
-          'Found on Maps for local searches',
-          'Less time on out-of-area enquiries',
+          'Found on Maps for the work you do',
+          'Service pages that match real searches',
+          'Local area coverage that is visible',
         ],
       },
     ],
@@ -173,26 +146,26 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
   const comparisonData = {
     badge: 'What Actually Changes',
     title: 'A normal week, before and after',
-    description: 'The repairs stay. The chasing stops.',
+    description: 'You still do the work. What changes is the part that used to depend on you remembering.',
     comparisons: [
       {
         type: 'before' as const,
         title: 'How it runs now',
         items: [
-          '“How much for a screen?” calls go unanswered. They walked into the shop two doors down.',
-          'Laptop quotes sit in the inbox for half a day.',
-          '“I’ll drop it in tomorrow” devices never show up.',
-          '“Meant to ask for a Google review” — said about every collection.',
+          'Phone rings while you are at the bench. Goes to voicemail. Lost.',
+          'A customer wants to drop something off. Three messages later, still no time set.',
+          'Quote sent on Monday. By Friday nobody has chased it.',
+          'You finished a repair last week. They never got asked for a review.',
         ],
       },
       {
         type: 'after' as const,
         title: 'How it runs after',
         items: [
-          'Standard quotes go out instantly with a wait time.',
-          'Drop-offs booked online without phoning.',
-          'Promised drop-offs get a polite nudge — most show up.',
-          'Reviews get asked for the day after every collection.',
+          'Missed call gets a text back inside a minute. They know you will reply.',
+          'They pick a slot from a link. Confirmed. Reminder fires the day before.',
+          'The quote gets a polite chase the next morning. You can see who is waiting.',
+          'A review request goes out the day they collect. Reviews start stacking quietly.',
         ],
       },
     ],
@@ -200,41 +173,41 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
 
   const pathwaysData = {
     badge: 'Where Most Shops Start',
-    title: 'Three stages — most shops feel one of them more than the others',
-    description: 'Pick whichever costs you the most jobs right now.',
+    title: 'Three stages, most shops feel one more than the others',
+    description: 'You do not have to fix everything at once. Start with whatever is leaking the most work.',
     packages: [
       {
-        name: 'Stop losing the lunchtime walk-ins',
-        description: 'For when “how much for a screen?” calls go unanswered while you’re mid-repair.',
+        name: 'Stop calls and enquiries going missing',
+        description: 'For when you are at the bench and quick enquiries sit unread.',
         price: 'Stage 1',
-        priceDetail: 'Start here if quote-speed is the biggest leak',
+        priceDetail: 'Start here if missed calls are the leak',
         features: [
-          'Instant quote on standard repairs',
-          'Wait time included up front',
-          'Most start walking in instead of shopping around',
+          'Missed-call text-back so they know you will reply',
+          'One inbox for calls, forms, and web enquiries',
+          'Customer and item noted before the conversation',
         ],
       },
       {
-        name: 'Refill the bench without phoning round',
-        description: 'For when drop-offs ghost and the bench has gaps in the afternoon.',
+        name: 'Get the drop-off booked the same day',
+        description: 'Once enquiries are caught, this stage takes the friction out of confirming a slot.',
         price: 'Stage 2',
-        priceDetail: 'Start here if drop-offs and pending quotes are the leak',
+        priceDetail: 'Start here if booking is where it slows down',
         features: [
-          'Self-serve drop-off booking with optional deposit',
-          'Drop-off reminder if they didn’t show',
-          'Ready-to-collect notifications',
+          'Slots customers can pick themselves',
+          'Reminders the day before so drop-offs actually happen',
+          'You see the day at a glance',
         ],
         popular: true,
       },
       {
-        name: 'Build the local proof that beats the chain',
-        description: 'For when your work is better than the chain but the chain has more reviews.',
+        name: 'Keep quotes moving and turn repairs into reviews',
+        description: 'For when work comes in fine but quotes go quiet and reviews never get asked for.',
         price: 'Stage 3',
-        priceDetail: 'Start here if reviews and area visibility are the weak spot',
+        priceDetail: 'Start here if follow-up and reputation are the weak spots',
         features: [
-          'Review requests after every collection',
-          'Pages for the devices and brands you actually fix',
-          'Less time on out-of-area enquiries',
+          'Quotes chased automatically',
+          'Past customers nudged for return work',
+          'Review requests at the right moment',
         ],
       },
     ],
@@ -243,30 +216,30 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
   const workflowExamplesData = {
     badge: 'Real Situations',
     title: 'A few moments where the difference shows up',
-    description: 'Small moments at the bench where things used to slip through.',
+    description: 'Small handoffs that used to depend on you remembering.',
     workflows: [
       {
-        trigger: '“How much for an iPhone 13 screen?” comes in while you’re soldering.',
+        trigger: 'You are at the bench and a new enquiry call rings out.',
         actions: [
-          'Instant quote goes back with the wait time',
-          'They start walking in instead of shopping around',
-          'You finish the repair without losing the next job',
+          'They get a text inside a minute saying you will reply',
+          'The text captures the customer and the item',
+          'The lead is held instead of going to the next shop',
         ],
       },
       {
-        trigger: 'Someone said “I’ll drop it in tomorrow” but never did.',
+        trigger: 'A customer wants to drop something off this week.',
         actions: [
-          'A polite reminder goes out the next day',
-          'A second nudge three days later',
-          'Most actually show up with the device',
+          'They pick a slot from a link, no more text tag',
+          'A reminder goes out the day before',
+          'You see the day at a glance',
         ],
       },
       {
-        trigger: 'A laptop repair is finished on the bench.',
+        trigger: 'You sent a quote a few days ago and have not heard back.',
         actions: [
-          'Mark it done — collection text goes out automatically',
-          'They collect within a day instead of three',
-          'Review request goes out the day after collection',
+          'A polite chase goes out automatically',
+          'Open quotes are visible in one place',
+          'If they say yes, the work goes on the bench without another five messages',
         ],
       },
     ],
@@ -277,21 +250,18 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
   const caseStudiesData = {
     category: 'local-appointment-businesses' as const,
     title: 'Related Case Studies',
-    description:
-      'Examples of how the system supports local appointment businesses in this category.',
+    description: 'Examples of how the system supports local appointment businesses in this category.',
     limit: 2,
   };
 
   const exploreData = {
     badge: 'Related',
-    description:
-      'The other parts of the system that come up most often for repair shops.',
+    description: 'The other parts of the system that come up most often for repair shops.',
     cards: [
       {
         icon: Workflow,
         title: 'Smart Website Systems',
-        description:
-          'See the core system layer that holds repair enquiry, booking flow, and follow-up together.',
+        description: 'The core layer that holds enquiry, booking, and follow-up together.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -299,7 +269,7 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
       {
         icon: Calendar,
         title: 'Booking & Scheduling System',
-        description: 'Support visits, reminders, and clearer next-step handling.',
+        description: 'Support drop-off booking, reminders, and clearer next steps.',
         href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
@@ -307,7 +277,7 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
       {
         icon: Search,
         title: 'Local Authority & SEO Systems',
-        description: 'Strengthen area visibility, local credibility, and service discovery.',
+        description: 'Strengthen shop visibility and local trust.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -315,7 +285,7 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Review Systems',
-        description: 'Turn completed jobs into stronger proof and review flow.',
+        description: 'Turn finished repairs into reviews and proof.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -326,38 +296,38 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Things shop owners usually ask',
-    description: 'Straight answers about how this fits a repair shop.',
+    title: 'Things repair shops usually ask',
+    description: 'Straight answers about how this fits into a busy bench.',
     faqs: [
       {
-        question: 'I’m at the bench all day. Will this need someone on the front desk?',
+        question: 'I am at the bench most of the day. How much extra work is this?',
         answer:
-          'No. The whole point is it runs while you’re heads-down. Standard quotes, drop-off bookings, ready-to-collect texts — all automatic. You handle the tricky quotes and the actual repairs.',
+          'Almost none after setup. Missed calls get answered by text on their own. Quote chasing goes out on a schedule. Reminders fire by themselves.',
       },
       {
-        question: 'How does the instant quote work for repairs?',
+        question: 'Will customers feel like they are getting an automated response?',
         answer:
-          'For standard jobs — iPhone screens, common laptop screens, battery swaps — we set up a price and wait time that goes back automatically. For unusual repairs it routes to you for a manual quote. You stay in control.',
+          'No. The messages are short and written like you would actually text someone. The aim is to hold the lead until you can reply.',
       },
       {
-        question: 'Will it work alongside my repair tracking software?',
+        question: 'Can it handle quotes for repairs that need to be looked at first?',
         answer:
-          'Yes. It sits in front of whatever you use. The system improves the bit between the customer messaging and the device landing on the bench — the tracking stays where it is.',
+          'Yes. The first reply confirms a drop-off and the quote follows after the inspection.',
       },
       {
-        question: 'Can it really stop “I’ll drop it in tomorrow” devices vanishing?',
+        question: 'Do I have to chase reviews myself?',
         answer:
-          'Yes — a polite reminder goes out the next day, another a few days later. Most show up. The ones that don’t, you stop wasting headspace on.',
+          'No. The request goes out on its own after the customer collects, when they are happiest.',
       },
       {
-        question: 'How do I get more reviews without nagging?',
+        question: 'What about old quotes sitting in the inbox?',
         answer:
-          'A polite request goes out the day after collection, when the relief is freshest. People who would have meant to leave one actually do.',
+          'Those get worked in too. Many shops find that warming up old quotes brings in real money before any new marketing kicks in.',
       },
       {
-        question: 'Do I need to scrap my current website?',
+        question: 'Do I need a brand new website?',
         answer:
-          'Usually not. We look at what you have first. The leak is normally the bit between the enquiry and the device landing on the bench — not the site itself.',
+          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
       },
     ],
   };
@@ -375,15 +345,15 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'local-appointment-businesses',
     seo: {
-      title: 'Repair Shops — Stop Losing Walk-Ins, Quote Requests & Drop-Off Bookings | MindWP',
+      title: 'Repair Shops — Stop Losing Bookings to Missed Calls and Quiet Quotes | MindWP',
       description:
-        'For repair shops where “how much for a screen?” goes unanswered, where quotes sit in the inbox for half a day, and where promised drop-offs never show up. We put the system in place that catches the work between repairs.',
+        'For repair shops where calls go to voicemail at the bench, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
       keywords: [
         'repair shop website design',
-        'repair booking workflow',
+        'repair shop booking system',
         'repair shop lead handling system',
         'repair shop seo services',
-        'repair shop review system',
+        'repair shop reputation management system',
       ],
       canonical: '/industries/local-appointment-businesses/repair-shops',
     },
@@ -400,9 +370,9 @@ function buildRepairShopsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the bench is going quiet',
+      title: 'Tell us where work is slipping',
       description:
-        'If quote requests sit in the inbox, if drop-offs never show up, or if devices sit on the shelf waiting to be collected — walk us through how the shop runs and we’ll show you the first thing worth fixing.',
+        'If calls go to voicemail at the bench, quotes stall, or reviews never get asked for, walk us through how the week runs and we will show you the first thing worth fixing.',
     },
   };
 }

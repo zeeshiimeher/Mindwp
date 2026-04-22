@@ -15,24 +15,18 @@ import type { IndustryPageData } from '@/domains/industries/types';
 function buildAutoRepairIndustryPageData(): IndustryPageData {
   const heroData = {
     badge: 'For Auto Repair Shops',
-    title: 'Calls Come In Mid-Job. Estimates Get Sent. Then Silence.',
+    title: 'Calls Come In Mid-Job. Quotes Get Sent. Then Silence.',
     description:
-      'A driver rings about a warning light while the bay is full. The call rolls to voicemail. An estimate goes out at 5pm and never gets chased. Most repair shops don’t lose work because of skill — they lose it in the gaps between enquiry, booking, and follow-up.',
-    list: [
-      'Calls missed during jobs',
-      'Quotes that go quiet',
-      'Slow callbacks',
-      'Reviews that never get asked for',
-    ],
+      'A driver rings while the bay is full. The call goes to voicemail. A quote goes out and never gets chased. Most repair shops do not lose work because of skill — they lose it in the gaps between enquiry, booking, and follow-up.',
+    list: ['Missed calls', 'Quiet quotes', 'Slow callbacks', 'Few reviews'],
     cssPrefix: 'auto-repair-hero',
   };
 
   const imageStripData = {
-    badge: 'How Repair Work Actually Comes In',
-    title:
-      'A repair enquiry usually arrives stressed, half-informed, and wanting to know if you can help today',
+    badge: 'How Repair Work Comes In',
+    title: 'A driver wants to know if you can fit them in today',
     description:
-      'Warning lights, sudden noises, an MOT failure, an insurance job. People want to know if you can fit them in, what it might cost, and whether they can trust the shop. If any of those answers take too long, they ring the next garage on the list.',
+      'A warning light, a noise, an MOT issue. They want to know if you can help, what it might cost, and whether they can trust the shop.',
     items: [
       {
         title: 'Fault and repair enquiries',
@@ -40,19 +34,19 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
         alt: 'Abstract placeholder image representing auto repair fault enquiries',
       },
       {
-        title: 'Diagnostics and booking',
+        title: 'Booking and drop-off',
         image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing auto repair booking and diagnostics',
+        alt: 'Abstract placeholder image representing auto repair booking',
       },
       {
-        title: 'Estimates and approvals',
+        title: 'Quotes and approvals',
         image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing auto repair estimates and approvals',
+        alt: 'Abstract placeholder image representing auto repair quotes',
       },
       {
         title: 'Reviews and return visits',
         image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing auto repair reviews and return visits',
+        alt: 'Abstract placeholder image representing auto repair reviews',
       },
     ],
     backgroundColor: 'bg-base',
@@ -61,52 +55,44 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
 
   const operatingPatternsData = {
     badge: 'Where The Work Slips',
-    title: 'The repair business is busy. The repair business is also leaking.',
+    title: 'The shop is busy. The shop is also leaking.',
     benefits: [
       {
         icon: Car,
-        title: 'The phone rings while everyone’s under a bonnet',
-        description:
-          'Three missed calls before lunch. By the time someone checks voicemail, two of them have already booked the garage down the road.',
+        title: 'The phone rings while everyone is on a job',
+        description: 'By the time someone checks voicemail, the driver has already booked the next garage.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'Booking a diagnostic turns into a back-and-forth',
-        description:
-          'They want to know when they can drop the car. The team is busy. Texts go back and forth for half a day before a slot is agreed.',
+        title: 'Booking turns into a back and forth',
+        description: 'A simple drop-off slot takes half a day of texts before anything is on the diary.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Estimates go out and never get chased',
-        description:
-          'Quote sent Tuesday afternoon. No reply. Everyone’s back in the workshop and nobody picks it up again until Friday — if at all.',
+        title: 'Quotes go out and never get chased',
+        description: 'A price gets sent. The driver thinks about it. Nobody follows up.',
         iconType: 'accent' as const,
       },
       {
         icon: MapPinned,
-        title: 'The shop down the road has eighty reviews. You have nine.',
-        description:
-          'Plenty of happy customers. Almost none of them ever wrote anything online. Locally, you look quieter than you actually are.',
+        title: 'Online you look smaller than the work you do',
+        description: 'Plenty of happy customers. Almost none ever wrote anything online.',
         iconType: 'primary' as const,
       },
     ],
     columns: 4 as const,
-    description:
-      'It’s rarely one big problem. It’s a steady drip — a missed call here, an unchased quote there, a review never asked for. Compounding every week.',
   };
 
   const systemLayersData = {
     badge: 'What Gets Put In Place',
     title: 'A steadier way to handle every enquiry, from first ring to final review',
-    description:
-      'Each piece does one job. Together they make sure work doesn’t quietly fall on the floor while the team is mid-job.',
+    description: 'Each piece does one job. Together they keep work from falling on the floor while the team is mid-job.',
     featureCategories: [
       {
-        title: 'Make sure every enquiry gets caught',
-        description:
-          'Calls, forms, web chat, missed calls — they all land in one place with the vehicle and the issue already noted. Nobody hunts through voicemails at 6pm.',
+        title: 'Catch every call and form',
+        description: 'Calls, missed calls, web forms — all in one place with the car and the issue noted.',
         icon: MessageSquare,
         features: [
           'Missed calls texted back instantly',
@@ -115,47 +101,43 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
         ],
       },
       {
-        title: 'Get the diagnostic booked without a back-and-forth',
-        description:
-          'A clear way to offer a slot, confirm it, and remind them the day before. Less phone tag, fewer no-shows.',
+        title: 'Get the booking confirmed without phone tag',
+        description: 'A clear way to offer a slot, confirm it, and remind them the day before.',
         icon: Calendar,
         features: [
-          'Drop-off slots people can pick',
-          'Confirmations and reminders that go out on their own',
-          'Front desk knows what’s coming in',
+          'Drop-off slots customers can pick',
+          'Confirmations and reminders sent automatically',
+          'Front desk sees what is coming in',
         ],
       },
       {
-        title: 'Stop quotes from going quiet',
-        description:
-          'Every estimate gets a follow-up on a schedule. The customer hears back even when the team is flat out.',
+        title: 'Stop quotes going quiet',
+        description: 'Every quote gets a follow-up on a schedule, even when the team is flat out.',
         icon: Workflow,
         features: [
-          'Estimates chased automatically',
-          'A clear list of jobs sitting on a yes/no',
+          'Quotes chased automatically',
+          'Open quotes in one place',
           'Old quotes warmed up instead of forgotten',
         ],
       },
       {
-        title: 'Turn finished jobs into proof you can show',
-        description:
-          'Once the car’s back on the road, a review request goes out at the right moment. Reputation catches up to the actual work.',
+        title: 'Turn finished jobs into proof',
+        description: 'A review request goes out at the right moment so the work shows up online.',
         icon: ShieldCheck,
         features: [
           'Review requests after every job',
           'Asked when the customer is happiest',
-          'More five-stars showing where people search',
+          'More reviews where local people search',
         ],
       },
       {
         title: 'Show up when local drivers search',
-        description:
-          'The website, the Google profile, the service pages — lined up so the shop appears when someone nearby types in what they need.',
+        description: 'Service pages and Google profile lined up so you appear when someone nearby needs help.',
         icon: Search,
         features: [
-          'Found on Maps for the work you actually do',
+          'Found on Maps for the work you do',
           'Service pages that match real searches',
-          'Local area coverage that’s visible',
+          'Local area coverage that is visible',
         ],
       },
     ],
@@ -164,17 +146,16 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
 
   const comparisonData = {
     badge: 'What Actually Changes',
-    title: 'A normal Tuesday at the shop, before and after',
-    description:
-      'The workshop still runs the workshop. What changes is the part that used to depend on someone remembering.',
+    title: 'A normal day at the shop, before and after',
+    description: 'The workshop still runs the workshop. What changes is the part that used to depend on someone remembering.',
     comparisons: [
       {
         type: 'before' as const,
         title: 'How it runs now',
         items: [
-          'Phone rings during a brake job. Goes to voicemail. Nobody listens to it until tonight.',
-          'A customer wants a diagnostic slot. Three texts later, you’re still trying to confirm Wednesday.',
-          'Sent an estimate Monday. It’s Friday. Nobody’s rung them back.',
+          'Phone rings during a job. Goes to voicemail. Nobody hears it until later.',
+          'A driver wants a slot. Three texts later, still no time set.',
+          'Quote sent on Monday. By Friday nobody has chased it.',
           'You finished a great job last week. They never got asked for a review.',
         ],
       },
@@ -182,9 +163,9 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
         type: 'after' as const,
         title: 'How it runs after',
         items: [
-          'Missed call gets a text back inside a minute. The customer knows you’ll ring them straight after this job.',
-          'They pick a drop-off slot from the link you sent. Confirmed. Reminder fires the day before.',
-          'The estimate gets a polite chase the next morning. You can see who’s waiting on a yes.',
+          'Missed call gets a text back inside a minute. They know you will ring back.',
+          'They pick a slot from a link. Confirmed. Reminder fires the day before.',
+          'The quote gets a polite chase the next morning. You can see who is waiting.',
           'A review request goes out the day they pick the car up. Reviews start stacking quietly.',
         ],
       },
@@ -193,45 +174,41 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
 
   const pathwaysData = {
     badge: 'Where Most Shops Start',
-    title: 'Three stages — most shops feel one of them more than the others',
-    description:
-      'You don’t have to fix everything at once. We start with whatever is leaking the most work right now.',
+    title: 'Three stages, most shops feel one more than the others',
+    description: 'You do not have to fix everything at once. Start with whatever is leaking the most work.',
     packages: [
       {
-        name: 'Stop the calls and enquiries from going missing',
-        description:
-          'If the phone rings out and web enquiries sit unread, this is the first thing to fix. Everything else gets easier once enquiries actually land somewhere.',
+        name: 'Stop calls and enquiries going missing',
+        description: 'For when the phone rings out and quick enquiries sit unread.',
         price: 'Stage 1',
-        priceDetail: 'Start here if missed calls and slow first replies are costing the most work',
+        priceDetail: 'Start here if missed calls are the leak',
         features: [
-          'Missed-call text-back so they know you’ll ring them',
-          'One inbox for calls, forms, and web chat',
-          'Vehicle and fault noted before the conversation starts',
+          'Missed-call text-back so they know you will ring',
+          'One inbox for calls, forms, and web enquiries',
+          'Vehicle and fault noted before the conversation',
         ],
       },
       {
-        name: 'Get the diagnostic booked the same day',
-        description:
-          'Once enquiries are caught, this stage takes the friction out of confirming a slot and getting the car in.',
+        name: 'Get the booking confirmed the same day',
+        description: 'Once enquiries are caught, this stage takes the friction out of confirming a slot.',
         price: 'Stage 2',
-        priceDetail: 'Start here if booking is where things slow down',
+        priceDetail: 'Start here if booking is where it slows down',
         features: [
-          'Drop-off slots customers can pick themselves',
+          'Slots customers can pick themselves',
           'Reminders the day before so cars actually turn up',
           'Clear handover between front desk and workshop',
         ],
         popular: true,
       },
       {
-        name: 'Keep estimates moving and turn jobs into reviews',
-        description:
-          'For shops where the work comes in fine but quotes go quiet and reviews never get asked for.',
+        name: 'Keep quotes moving and turn jobs into reviews',
+        description: 'For when work comes in fine but quotes go quiet and reviews never get asked for.',
         price: 'Stage 3',
         priceDetail: 'Start here if follow-up and reputation are the weak spots',
         features: [
-          'Quotes chased automatically without sounding pushy',
+          'Quotes chased automatically',
           'Past customers nudged for return work',
-          'Review requests that go out at the right moment',
+          'Review requests at the right moment',
         ],
       },
     ],
@@ -239,34 +216,30 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
 
   const workflowExamplesData = {
     badge: 'Real Situations',
-    title: 'A few moments where the difference actually shows up',
-    description:
-      'Nothing dramatic. Just the small handoffs that used to depend on someone remembering.',
+    title: 'A few moments where the difference shows up',
+    description: 'Small handoffs that used to depend on someone remembering.',
     workflows: [
       {
-        trigger:
-          'It’s 10am. The bay is full. A customer rings about a warning light and the call goes to voicemail.',
+        trigger: 'The bay is full and a driver rings about a fault.',
         actions: [
-          'They get a text inside a minute saying you’ll ring back after this job',
-          'The text captures the car and the issue so the callback is faster',
-          'The voicemail isn’t the only line keeping the lead alive',
+          'They get a text inside a minute saying you will ring back',
+          'The text captures the car and the issue',
+          'The lead is held instead of going to the next garage',
         ],
       },
       {
-        trigger:
-          'Someone wants a diagnostic before the weekend and asks when they can drop the car.',
+        trigger: 'A driver wants to drop the car off this week.',
         actions: [
-          'They pick a drop-off slot from a link — no more text tag',
-          'A reminder goes out the day before so they actually show',
+          'They pick a slot from a link, no more text tag',
+          'A reminder goes out the day before',
           'Front desk sees the booking with the car and the fault attached',
         ],
       },
       {
-        trigger:
-          'You sent a £640 estimate three days ago and haven’t heard back.',
+        trigger: 'You sent a quote a few days ago and have not heard back.',
         actions: [
           'A polite chase goes out automatically the next morning',
-          'You can see all the open quotes in one place instead of scrolling email',
+          'You can see all the open quotes in one place',
           'If they say yes, the booking happens without another five messages',
         ],
       },
@@ -278,21 +251,18 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
   const caseStudiesData = {
     category: 'automotive-services' as const,
     title: 'Related Case Studies',
-    description:
-      'Examples of how the system supports automotive service businesses in this category.',
+    description: 'Examples of how the system supports automotive service businesses in this category.',
     limit: 2,
   };
 
   const exploreData = {
     badge: 'Related',
-    description:
-      'The other parts of the system that come up most often for repair shops trying to stop work slipping through.',
+    description: 'The other parts of the system that come up most often for repair shops.',
     cards: [
       {
         icon: Workflow,
         title: 'Smart Website Systems',
-        description:
-          'See the core system layer that holds repair enquiry, diagnosis, and follow-up together.',
+        description: 'The core layer that holds enquiry, booking, and follow-up together.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -300,7 +270,7 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
       {
         icon: Calendar,
         title: 'Booking & Scheduling System',
-        description: 'Support diagnostics, reminders, and clearer next-step handling.',
+        description: 'Support booking, reminders, and clearer next steps.',
         href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
@@ -308,7 +278,7 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
       {
         icon: Search,
         title: 'Local Authority & SEO Systems',
-        description: 'Strengthen repair visibility, maps trust, and local service discovery.',
+        description: 'Strengthen repair shop visibility and local trust.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -316,7 +286,7 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Review Systems',
-        description: 'Turn completed work into stronger proof and review flow.',
+        description: 'Turn finished jobs into reviews and proof.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -328,37 +298,37 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
 
   const faqData = {
     title: 'Things repair shops usually ask',
-    description: 'Straight answers about how this fits into a workshop that’s already busy.',
+    description: 'Straight answers about how this fits into a workshop that is already busy.',
     faqs: [
       {
-        question: 'We’re already flat out. How much extra work is this for the team?',
+        question: 'We are already flat out. How much extra work is this for the team?',
         answer:
-          'Almost none after setup. Missed calls get answered with a text on their own. Quote chasing goes out on a schedule. Reminders fire by themselves. The point is that the team stops being the bottleneck.',
+          'Almost none after setup. Missed calls get answered by text on their own. Quote chasing goes out on a schedule. Reminders fire by themselves.',
       },
       {
-        question: 'Will customers feel like they’re getting an automated response?',
+        question: 'Will customers feel like they are getting an automated response?',
         answer:
-          'No — the messages are short, written like you’d actually text someone, and they always lead back to a real conversation. The aim is to hold the lead until you can ring them, not to replace the call.',
+          'No. The messages are short and written like you would actually text someone. The aim is to hold the lead until you can ring back.',
       },
       {
         question: 'We tried online booking before and it was more hassle than help. Why now?',
         answer:
-          'Usually the booking tool wasn’t connected to anything else — the team still had to retype it. We set it up so the slot, the vehicle, and the issue all land in one place the front desk already uses.',
+          'Usually the booking tool was not connected to anything else. Here the slot, the vehicle, and the issue all land in one place the front desk already uses.',
       },
       {
         question: 'Do we have to chase reviews ourselves?',
         answer:
-          'No. The request goes out on its own after the job’s done, when the customer is happiest. You’ll see them appear on Google without anyone sending another email.',
+          'No. The request goes out on its own after the job is done, when the customer is happiest.',
       },
       {
-        question: 'What about all the old quotes sitting in the inbox?',
+        question: 'What about old quotes sitting in the inbox?',
         answer:
-          'Those get worked into the follow-up too. A lot of repair shops find that warming up old estimates brings in real money before any new marketing kicks in.',
+          'Those get worked in too. Many shops find that warming up old quotes brings in real money before any new marketing kicks in.',
       },
       {
-        question: 'Do we need a brand new website for this to work?',
+        question: 'Do we need a brand new website?',
         answer:
-          'Usually not. We look at what you have first. Sometimes the site is fine and the gap is everything that happens after the form is submitted.',
+          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
       },
     ],
   };
@@ -378,7 +348,7 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
     seo: {
       title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
       description:
-        'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place so the work already coming in actually books.',
+        'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
       keywords: [
         'auto repair website design',
         'auto repair booking system',
@@ -403,7 +373,7 @@ function buildAutoRepairIndustryPageData(): IndustryPageData {
     cta: {
       title: 'Tell us where the work is slipping',
       description:
-        'If calls go to voicemail mid-job, quotes go quiet, or reviews never get asked for — walk us through how the shop runs and we’ll show you the first thing worth fixing.',
+        'If calls go to voicemail mid-job, quotes go quiet, or reviews never get asked for, walk us through how the shop runs and we will show you the first thing worth fixing.',
     },
   };
 }

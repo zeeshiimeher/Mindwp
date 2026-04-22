@@ -1,13 +1,12 @@
 import {
-  Bell,
   Calendar,
   Clock3,
-  MapPinned,
+  Leaf,
   MessageSquare,
   Search,
+  Shovel,
   ShieldCheck,
   Star,
-  Trees,
   Workflow,
 } from 'lucide-react';
 
@@ -15,81 +14,71 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'For Landscaping Businesses',
-    title: 'Spring Hits. Fifty Quote Requests. By July, Half Of Them Went Cold.',
+    badge: 'For Landscaping Companies',
+    title: 'Spring Hits. Quotes Pile Up. Most Of Them Go Quiet.',
     description:
-      'Lawn care, garden makeovers, patios, fencing — the season comes fast and the enquiries pile up faster. Most landscapers lose half the quotes to slow follow-up and forget last year’s clients before next spring. We put the system in place that catches every estimate request, follows up the quotes, and brings every client back next year.',
-    list: [
-      'Quote requests nobody followed up',
-      'Estimate visits nobody confirmed',
-      'Last year’s clients nobody contacted',
-      'Reviews nobody asked for after the build',
-    ],
+      'Landscaping enquiries arrive in seasonal waves. The team is on site. Quotes get sent and forgotten. The homeowner books whoever followed up first.',
+    list: ['Slow replies', 'Quiet quotes', 'Lost bookings', 'Few reviews'],
     cssPrefix: 'landscaping-companies-hero',
   };
 
   const imageStripData = {
-    badge: 'How Landscaping Demand Actually Lands',
-    title: 'March hits and the quote requests don’t stop for ten weeks',
+    badge: 'How Landscaping Work Comes In',
+    title: 'A homeowner wants someone to come and look',
     description:
-      'A new patio, a tidy-up, a hedge that’s out of control. People ring three landscapers and book whichever one shows up first. Whoever follows up the quote usually gets the build.',
+      'A garden refresh, a tidy-up, a bigger project. They want to know if you can fit them in, what it might cost, and that you will turn up.',
     items: [
       {
-        title: 'Recurring maintenance enquiries',
+        title: 'Project enquiries',
         image: '/images/placeholders/service-card-5.svg',
-        alt: 'Abstract placeholder image representing landscaping maintenance enquiries',
+        alt: 'Abstract placeholder image representing landscaping enquiries',
       },
       {
-        title: 'Project and estimate requests',
+        title: 'Site visits and quotes',
         image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing landscaping project estimates',
+        alt: 'Abstract placeholder image representing landscaping site visits',
       },
       {
-        title: 'Seasonal booking demand',
+        title: 'Bookings and reminders',
         image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing seasonal landscaping demand',
+        alt: 'Abstract placeholder image representing landscaping bookings',
       },
       {
-        title: 'Reviews and visual proof',
+        title: 'Reviews and repeat customers',
         image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing landscaping reviews and proof of work',
+        alt: 'Abstract placeholder image representing landscaping reviews',
       },
     ],
     backgroundColor: 'bg-base',
-    cssPrefix: 'landscaping-image-strip',
+    cssPrefix: 'landscaping-companies-image-strip',
   };
 
   const operatingPatternsData = {
     badge: 'Where The Work Slips',
-    title: 'You’re on a build. The phone rings. They book the next landscaper.',
-    description: 'Same handful of leaks in nearly every landscaping business. None of them are about the craft.',
+    title: 'The work is there. The way it gets handled is what loses it.',
     benefits: [
       {
-        icon: Trees,
-        title: '“Can you quote a new patio?” sat for five days',
-        description:
-          'You were on a job. By the time you replied, two other landscapers had already been out.',
+        icon: Leaf,
+        title: 'In season, the phones go off all at once',
+        description: 'Most calls go to voicemail. By the next morning the homeowner has already booked someone else.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'A £12,000 garden makeover quote went quiet',
-        description:
-          'One follow-up text would have closed it. Nobody had time to send it.',
+        title: 'Site visits take days to arrange',
+        description: 'A simple time slot takes too many messages before anything is on the diary.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Last year’s clients never got contacted before spring',
-        description:
-          'Repeat work walked off to whoever messaged them first in February.',
+        title: 'Quotes go out and never get chased',
+        description: 'A price gets sent. The homeowner thinks about it. Nobody follows up.',
         iconType: 'accent' as const,
       },
       {
-        icon: MapPinned,
-        title: 'The landscaper up the road has 400 reviews. You have 31.',
-        description:
-          'Your work looks better in person. Locally you look smaller because nobody was ever asked.',
+        icon: Shovel,
+        title: 'Online you look smaller than the work you do',
+        description: 'Plenty of finished projects. Almost no reviews to show for them.',
         iconType: 'primary' as const,
       },
     ],
@@ -98,63 +87,57 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
 
   const systemLayersData = {
     badge: 'What Gets Put In Place',
-    title: 'A steadier way to catch quotes, close projects, and bring clients back next spring',
-    description:
-      'Each piece does one job. Together they keep the work moving while the team is on a build.',
+    title: 'A steadier way to handle every call, visit, and quote',
+    description: 'Each piece does one job. Together they keep work from falling on the floor in the busy season.',
     featureCategories: [
       {
-        title: 'Reply to every quote request the same day',
-        description:
-          'New enquiry gets a warm reply within minutes with options for an estimate visit — even on a 12-hour build day.',
+        title: 'Catch every call and form',
+        description: 'Calls, missed calls, web forms — all in one place with the address and the project noted.',
         icon: MessageSquare,
         features: [
-          'Instant replies on web forms, calls, DMs',
-          'Service-type captured up front',
-          'Estimate booking link in the same reply',
+          'Missed calls texted back instantly',
+          'Web enquiries sent to the office and the team lead',
+          'Address and project captured up front',
         ],
       },
       {
-        title: 'Take the estimate visit without phone tag',
-        description:
-          'Clients pick a slot themselves. The office stops being a calendar.',
+        title: 'Get the site visit booked without phone tag',
+        description: 'A clear way to offer a slot, confirm it, and remind the homeowner the day before.',
         icon: Calendar,
         features: [
-          'Online booking for estimate visits',
-          'Reminders the day before',
-          'Reschedule link instead of a no-show',
+          'Visit slots people can pick themselves',
+          'Confirmations and reminders sent automatically',
+          'Team sees the project before they arrive',
         ],
       },
       {
-        title: 'Follow up the quotes nobody has time to chase',
-        description:
-          'Patio quote sent Monday, automatic check-in Friday, another the week after. Quietly closes more.',
+        title: 'Stop quotes going quiet',
+        description: 'Every quote gets a follow-up on a schedule, even when the team is on site.',
         icon: Workflow,
         features: [
-          'Quote follow-up at the right intervals',
-          'Pending projects visible in one place',
-          'Closing rate goes up without nagging',
+          'Quotes chased automatically',
+          'Open quotes in one place',
+          'Old quotes warmed up instead of forgotten',
         ],
       },
       {
-        title: 'Bring last year’s clients back before spring',
-        description:
-          'February nudge goes out automatically. Repeat work books before the first quote request comes in.',
-        icon: Bell,
-        features: [
-          'Pre-season reminders sent automatically',
-          'Past clients booked before the rush',
-          'Repeat demand smooths out the season',
-        ],
-      },
-      {
-        title: 'Turn finished builds into reviews and proof',
-        description:
-          'Review request goes out the week after handover. Build photos line up with service pages locally.',
+        title: 'Turn finished projects into proof',
+        description: 'A review request goes out at the right moment so the work shows up online.',
         icon: ShieldCheck,
         features: [
-          'Review requests after every build',
-          'Project proof tied to local search',
-          'Reviews that catch up to the work',
+          'Review requests after every project',
+          'Asked when the customer is happiest',
+          'More reviews where local people search',
+        ],
+      },
+      {
+        title: 'Show up when local homeowners search',
+        description: 'Service pages and Google profile lined up so you appear when someone nearby needs landscaping.',
+        icon: Search,
+        features: [
+          'Found on Maps for the work you do',
+          'Service pages that match real searches',
+          'Local area coverage that is visible',
         ],
       },
     ],
@@ -163,69 +146,69 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
 
   const comparisonData = {
     badge: 'What Actually Changes',
-    title: 'A normal spring, before and after',
-    description: 'The work stays. The chasing and the missed quotes stop.',
+    title: 'A normal week, before and after',
+    description: 'You still do the work. What changes is the part that used to depend on someone remembering.',
     comparisons: [
       {
         type: 'before' as const,
         title: 'How it runs now',
         items: [
-          'Fifty quote requests in March. Half went cold by April.',
-          'A £12,000 garden makeover quote went quiet for two weeks. No follow-up sent.',
-          'Last year’s clients booked elsewhere because nobody got in touch first.',
-          '“Meant to ask for a review” — said about every finished build.',
+          'Phones ring all morning. Most go to voicemail. Lost.',
+          'A homeowner wants a visit. Three texts later, still no time set.',
+          'Quote sent on Monday. By Friday nobody has chased it.',
+          'You finished a great project last month. They never got asked for a review.',
         ],
       },
       {
         type: 'after' as const,
         title: 'How it runs after',
         items: [
-          'Every quote request gets a same-day reply with an estimate booking link.',
-          'Quotes get followed up automatically. More close, none feel pestered.',
-          'February nudge brings last year’s clients back before the rush.',
-          'Every build ends with a review request. Reviews catch up to the work.',
+          'Missed call gets a text back inside a minute. They know you will ring back.',
+          'They pick a slot from a link. Confirmed. Reminder fires the day before.',
+          'The quote gets a polite chase the next morning. You can see who is waiting.',
+          'A review request goes out the day you finish. Reviews start stacking quietly.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Where Most Landscapers Start',
-    title: 'Three stages — most businesses feel one of them more than the others',
-    description: 'Pick whichever costs you the most builds right now.',
+    badge: 'Where Most Companies Start',
+    title: 'Three stages, most landscapers feel one more than the others',
+    description: 'You do not have to fix everything at once. Start with whatever is leaking the most work.',
     packages: [
       {
-        name: 'Stop losing quote requests in March',
-        description: 'For when spring enquiries pile up faster than the team can reply.',
+        name: 'Stop calls and enquiries going missing',
+        description: 'For when the phones go off in season and most never get answered.',
         price: 'Stage 1',
-        priceDetail: 'Start here if same-day quote response is the biggest leak',
+        priceDetail: 'Start here if missed calls are the leak',
         features: [
-          'Instant replies on web forms and calls',
-          'Service type captured up front',
-          'Estimate booking link in the same reply',
+          'Missed-call text-back so they know you will ring',
+          'One inbox for calls, forms, and web enquiries',
+          'Address and project noted before the conversation',
         ],
       },
       {
-        name: 'Close the quotes that go quiet',
-        description: 'For when patios, makeovers, and big builds get quoted and you never hear back.',
+        name: 'Get the site visit booked the same week',
+        description: 'Once enquiries are caught, this stage takes the friction out of confirming a site visit.',
         price: 'Stage 2',
-        priceDetail: 'Start here if quote-to-build conversion is the leak',
+        priceDetail: 'Start here if booking is where it slows down',
         features: [
-          'Quote follow-ups at the right intervals',
-          'Pending projects visible in one place',
-          'No more “what happened to that patio quote?”',
+          'Visit slots customers can pick themselves',
+          'Reminders the day before so visits actually happen',
+          'Team sees the project before they arrive',
         ],
         popular: true,
       },
       {
-        name: 'Bring every client back next year',
-        description: 'For when last year’s clients book elsewhere before you remember to call.',
+        name: 'Keep quotes moving and turn jobs into reviews',
+        description: 'For when work comes in fine but quotes go quiet and reviews never get asked for.',
         price: 'Stage 3',
-        priceDetail: 'Start here if repeat work and reviews are the weak spot',
+        priceDetail: 'Start here if follow-up and reputation are the weak spots',
         features: [
-          'Pre-season reminders sent automatically',
-          'Review requests after every build',
-          'Repeat demand smooths out the season',
+          'Quotes chased automatically',
+          'Past customers nudged for return work',
+          'Review requests at the right moment',
         ],
       },
     ],
@@ -234,47 +217,52 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
   const workflowExamplesData = {
     badge: 'Real Situations',
     title: 'A few moments where the difference shows up',
-    description: 'Small moments on a build and after, where things used to slip through.',
+    description: 'Small handoffs that used to depend on someone remembering.',
     workflows: [
       {
-        trigger: 'A new patio enquiry comes in on a Tuesday during a build week.',
+        trigger: 'The team is on site and a homeowner rings the office.',
         actions: [
-          'A warm reply goes out within minutes',
-          'Service type and rough scope captured up front',
-          'An estimate visit gets booked before the next two landscapers reply',
+          'They get a text inside a minute saying you will ring back',
+          'The text captures the address and the project',
+          'The lead is held instead of going to the next landscaper',
         ],
       },
       {
-        trigger: 'A garden makeover quote was sent Monday and went quiet.',
+        trigger: 'A homeowner needs a site visit this week.',
         actions: [
-          'A friendly check-in goes out Friday',
-          'Another a week later if no reply',
-          'Quote-to-build quietly improves',
+          'They pick a slot from a link, no more text tag',
+          'A reminder goes out the day before',
+          'You arrive with the address and the project already noted',
         ],
       },
       {
-        trigger: 'It’s February and last year’s clients haven’t booked yet.',
+        trigger: 'You sent a quote a few days ago and have not heard back.',
         actions: [
-          'A polite pre-season nudge goes out',
-          'Booking link in the same message',
-          'Repeat work fills March before the rush',
+          'A polite chase goes out automatically',
+          'Open quotes are visible in one place',
+          'If they say yes, the booking happens without another five messages',
         ],
       },
     ],
     backgroundColor: 'bg-base',
-    cssPrefix: 'landscaping-workflow-examples',
+    cssPrefix: 'landscaping-companies-workflow-examples',
+  };
+
+  const caseStudiesData = {
+    category: 'home-services' as const,
+    title: 'Related Case Studies',
+    description: 'Examples of how the system supports home service businesses in this category.',
+    limit: 2,
   };
 
   const exploreData = {
     badge: 'Related',
-    description:
-      'The other parts of the system that come up most often for landscapers trying to stop losing builds.',
+    description: 'The other parts of the system that come up most often for landscaping companies.',
     cards: [
       {
         icon: Workflow,
         title: 'Smart Website Systems',
-        description:
-          'See the core system layer that holds landscaping demand, estimates, and follow-up together.',
+        description: 'The core layer that holds enquiry, booking, and follow-up together.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -282,7 +270,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Calendar,
         title: 'Booking & Scheduling System',
-        description: 'Support estimate visits, reminders, and clearer next-step handling.',
+        description: 'Support visit booking, reminders, and clearer next steps.',
         href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
@@ -290,7 +278,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Search,
         title: 'Local Authority & SEO Systems',
-        description: 'Strengthen local landscaping visibility and service-area trust.',
+        description: 'Strengthen landscaping visibility and local trust.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -298,7 +286,7 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Review Systems',
-        description: 'Turn completed jobs into stronger local proof and review flow.',
+        description: 'Turn finished projects into reviews and proof.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -310,37 +298,37 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
 
   const faqData = {
     title: 'Things landscapers usually ask',
-    description: 'Straight answers about how this fits a landscaping business.',
+    description: 'Straight answers about how this fits into a seasonal business.',
     faqs: [
       {
-        question: 'I’m on a build all day. Will this need someone in the office?',
+        question: 'In peak season the phones never stop. Will this actually keep up?',
         answer:
-          'No. The whole point is that it runs while you’re working. You’ll see what came in on your phone between tasks, but nothing waits on you to operate it.',
+          'That is the part it handles best. Every missed call gets a text back instantly, and every enquiry lands in one place so nothing gets lost in the surge.',
       },
       {
-        question: 'How does same-day quote response actually work?',
+        question: 'Will customers feel like they are getting an automated response?',
         answer:
-          'A quote request comes in. Within minutes the client gets a warm reply with options for an estimate visit. Most book before the next two landscapers reply.',
+          'No. The messages are short and written like you would actually text someone. The aim is to hold the lead until you can ring back.',
       },
       {
-        question: 'Can it handle quote follow-ups for patios and makeovers?',
+        question: 'Can it handle quotes for jobs that need a site visit first?',
         answer:
-          'Yes — friendly check-in messages go out at the right intervals after a quote is sent. Quote-to-build conversion changes noticeably without anybody chasing.',
+          'Yes. The first reply confirms a visit and the quote follows after the inspection.',
       },
       {
-        question: 'Can past clients be brought back before spring?',
+        question: 'Do I have to chase reviews myself?',
         answer:
-          'Yes — a February nudge goes out automatically. Repeat work books before the first new quote request comes in.',
+          'No. The request goes out on its own after the project is done, when the customer is happiest.',
       },
       {
-        question: 'How do I get more reviews without nagging?',
+        question: 'What about old quotes sitting in the inbox?',
         answer:
-          'A polite request goes out the week after handover, when the garden’s settled in. People who would have meant to leave one actually do.',
+          'Those get worked in too. Many landscapers find that warming up old quotes brings in real money before any new marketing kicks in.',
       },
       {
-        question: 'Do I need to scrap my current website?',
+        question: 'Do I need a brand new website?',
         answer:
-          'Usually not. We look at what you have first. The leak is normally the bit between the quote request and the review going up — not the site itself.',
+          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
       },
     ],
   };
@@ -358,14 +346,14 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'home-services',
     seo: {
-      title: 'Landscaping Companies — Stop Losing Quote Requests, Builds & Repeat Clients | MindWP',
+      title: 'Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP',
       description:
-        'For landscapers where spring quote requests pile up faster than you can reply, big project quotes go quiet, and last year’s clients book elsewhere. We put the system in place that catches every estimate, closes more builds, and brings clients back next spring.',
+        'For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
       keywords: [
         'landscaping website design',
-        'landscaping lead generation website',
-        'landscaping marketing system',
-        'landscaping lead automation system',
+        'landscaping booking system',
+        'landscaping lead handling system',
+        'landscaping seo services',
         'landscaping reputation management system',
       ],
       canonical: '/industries/home-services/landscaping-companies',
@@ -379,15 +367,15 @@ function buildLandscapingCompaniesIndustryPageData(): IndustryPageData {
     comparison: comparisonData,
     pathways: pathwaysData,
     workflowExamples: workflowExamplesData,
+    caseStudies: caseStudiesData,
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the builds are leaking',
+      title: 'Tell us where the work is slipping',
       description:
-        'If quote requests sit for days, if big project quotes go quiet, or if last year’s clients walked off — walk us through how the business runs and we’ll show you the first thing worth fixing.',
+        'If peak-season calls go to voicemail, quotes stall, or reviews never get asked for, walk us through how the week runs and we will show you the first thing worth fixing.',
     },
   };
 }
 
-export const landscapingCompaniesIndustryPageData: IndustryPageData =
-  buildLandscapingCompaniesIndustryPageData();
+export const landscapingCompaniesIndustryPageData: IndustryPageData = buildLandscapingCompaniesIndustryPageData();

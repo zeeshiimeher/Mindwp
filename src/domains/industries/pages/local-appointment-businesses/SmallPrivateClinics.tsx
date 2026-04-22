@@ -5,6 +5,7 @@ import {
   MessageSquare,
   Search,
   ShieldCheck,
+  Stethoscope,
   Star,
   Workflow,
 } from 'lucide-react';
@@ -14,43 +15,38 @@ import type { IndustryPageData } from '@/domains/industries/types';
 function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
   const heroData = {
     badge: 'For Small Private Clinics',
-    title: 'She’s Been On The NHS Waiting List Six Months. Tonight She’ll Pay To Be Seen This Week. Whoever Replies First Gets Her.',
+    title: 'A Patient Wants to Be Seen This Week. They Picked Whoever Replied First.',
     description:
-      'GP, dermatology, physio, women’s health — patients waiting on the NHS reach a tipping point and decide to go private at 9pm. They enquire with three clinics. Whoever replies first with a slot and a price gets the appointment. We put the system in place that catches those enquiries, books the consultation, and stops the deposit-to-book process from leaking patients.',
-    list: [
-      'NHS-to-private enquiries that came in after hours',
-      'Consultations that took ten emails to confirm',
-      'Deposits that never quite got paid',
-      'Reviews from grateful patients you never asked for',
-    ],
+      'Private clinic enquiries are time-sensitive. Reception is busy. The phone rings out. The patient books the next clinic.',
+    list: ['Missed calls', 'Slow replies', 'Lost consultations', 'Few reviews'],
     cssPrefix: 'small-private-clinics-hero',
   };
 
   const imageStripData = {
-    badge: 'How Private Enquiries Actually Land',
-    title: 'They’ve been waiting six months on the NHS. They want a slot this week. Whoever replied first wins.',
+    badge: 'How Patients Come In',
+    title: 'A patient wants to know if you can help',
     description:
-      'It’s evenings and Sunday nights. The pain or the worry got too much. They enquired with three clinics. The decision is happening fast.',
+      'A consultation, a treatment, a follow-up. They want to know what you offer, what it costs, and that the clinic feels in control.',
     items: [
       {
-        title: 'Appointment and treatment-fit enquiries',
+        title: 'New patient enquiries',
         image: '/images/placeholders/service-card-5.svg',
         alt: 'Abstract placeholder image representing private clinic enquiries',
       },
       {
-        title: 'Booking and timing coordination',
+        title: 'Consultations and bookings',
         image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing clinic appointment booking',
+        alt: 'Abstract placeholder image representing private clinic consultations',
       },
       {
-        title: 'Preparation and next-step guidance',
+        title: 'Treatment plans and follow-up',
         image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing clinic preparation guidance',
+        alt: 'Abstract placeholder image representing private clinic treatment plans',
       },
       {
-        title: 'Reviews and trust proof',
+        title: 'Reviews and referrals',
         image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing private clinic reviews and trust proof',
+        alt: 'Abstract placeholder image representing private clinic reviews',
       },
     ],
     backgroundColor: 'bg-base',
@@ -58,36 +54,31 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Where Patients Go Elsewhere',
-    title: 'Reception is in clinic. Three NHS-to-private enquiries came in last night. Two booked elsewhere by morning.',
-    description: 'Same handful of leaks across nearly every small private clinic. None of them are about the clinical care.',
+    badge: 'Where Patients Slip',
+    title: 'The clinic is full but new patients and treatment plans slip through',
     benefits: [
       {
-        icon: HeartPulse,
-        title: 'Three Sunday-night enquiries went unanswered until Monday afternoon',
-        description:
-          'Two had booked elsewhere by 11am. The third was already lukewarm.',
+        icon: Stethoscope,
+        title: 'Calls miss reception',
+        description: 'Reception is with a patient. The phone rings out. The new patient books the next clinic.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'A consultation took ten emails to confirm',
-        description:
-          '“What times?” “How much?” “Which consultant?” Each reply waited until reception was off the phone.',
+        title: 'Booking turns into a back and forth',
+        description: 'A simple consultation takes too many messages before anything is on the diary.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Two deposit invoices sat unpaid for a week',
-        description:
-          'Nobody had time to chase. The slot stayed empty when somebody else would have taken it.',
+        title: 'Treatment plans go quiet',
+        description: 'A plan was discussed. It went home with the patient. Nobody followed up.',
         iconType: 'accent' as const,
       },
       {
-        icon: Star,
-        title: 'The clinic on the high street has 400 reviews. You have 38.',
-        description:
-          'Your consultants are better. Online you look smaller because nobody asked at the right moment.',
+        icon: HeartPulse,
+        title: 'Online you look smaller than the work you do',
+        description: 'Plenty of happy patients. Almost no reviews to show for them.',
         iconType: 'primary' as const,
       },
     ],
@@ -96,74 +87,57 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
 
   const systemLayersData = {
     badge: 'What Gets Put In Place',
-    title: 'A steadier way to catch the after-hours enquiries and convert the deposits',
-    description:
-      'Each piece does one job. Together they keep consultations booked while the clinical team stays focused on patients.',
+    title: 'A steadier way to handle every enquiry, consultation, and treatment plan',
+    description: 'Each piece does one job. Together they keep new patients from slipping through the gaps.',
     featureCategories: [
       {
-        title: 'Reply to after-hours enquiries automatically',
-        description:
-          'Sunday-night enquiry lands. Instant reply with consultant fees, next available slots, and a calendar link. Most stop enquiring with the next clinic.',
+        title: 'Catch every call and form',
+        description: 'Calls, missed calls, web forms — all in one place with the patient and the request noted.',
         icon: MessageSquare,
         features: [
-          'Instant acknowledgement on every enquiry',
-          'Consultant fees and next slots up front',
-          'Holds the patient until reception is back',
+          'Missed calls texted back instantly',
+          'Web enquiries land with reception',
+          'Patient and request captured up front',
         ],
       },
       {
-        title: 'Take the consultation booking online',
-        description:
-          'Patient picks a slot themselves. Deposit paid online to confirm. The ten-email confirmation thread stops.',
+        title: 'Get the consultation booked without phone tag',
+        description: 'A clear way to offer a slot, confirm it, and remind them the day before.',
         icon: Calendar,
         features: [
-          'Self-serve consultation booking',
-          'Deposit-to-confirm built in',
-          'Reminders the day before',
+          'Slots patients can pick themselves',
+          'Confirmations and reminders sent automatically',
+          'Reception sees the day at a glance',
         ],
       },
       {
-        title: 'Convert the patients sitting in the maybe pile',
-        description:
-          'Enquired but didn’t book? Polite check-in goes out at the right interval with reassurance and a slot.',
+        title: 'Stop treatment plans going quiet',
+        description: 'Every plan gets a follow-up on a schedule, even when the chair is full.',
         icon: Workflow,
         features: [
-          'Follow-up at sensible intervals',
-          'Pending enquiries visible in one place',
-          'Conversion goes up without anybody chasing',
+          'Plans followed up automatically',
+          'Open plans in one place',
+          'Past patients gently nudged back in',
         ],
       },
       {
-        title: 'Send pre-appointment information without phoning',
-        description:
-          'Forms, parking, what to bring — sent automatically before the appointment. Patients arrive prepared.',
+        title: 'Turn happy patients into reviews',
+        description: 'A review request goes out at the right moment so the clinic shows up online.',
         icon: ShieldCheck,
         features: [
-          'Pre-appointment information automatically',
-          'Forms completed before arrival',
-          'Less time on the phone explaining',
+          'Review requests after appointments',
+          'Asked when the patient is happiest',
+          'More reviews where local people search',
         ],
       },
       {
-        title: 'Turn finished consultations into reviews',
-        description:
-          'A polite review request goes out the day after the appointment, when the relief is freshest.',
-        icon: Star,
-        features: [
-          'Review requests after every visit',
-          'Asked when patients are most grateful',
-          'Reviews catch up to the standard of care',
-        ],
-      },
-      {
-        title: 'Show up first when local people search private',
-        description:
-          'Service pages and Google profile lined up so people in the right area find you first — not the chain hospital.',
+        title: 'Show up when local people search',
+        description: 'Service pages and Google profile lined up so you appear when someone nearby looks for a clinic.',
         icon: Search,
         features: [
-          'Pages for the conditions and treatments you handle',
-          'Found on Maps for private appointment searches',
-          'Less time on enquiries that aren’t a fit',
+          'Found on Maps for the work you do',
+          'Service pages that match real searches',
+          'Local area coverage that is visible',
         ],
       },
     ],
@@ -173,26 +147,26 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
   const comparisonData = {
     badge: 'What Actually Changes',
     title: 'A normal week, before and after',
-    description: 'The clinical care stays personal. The admin friction goes.',
+    description: 'You still do the work. What changes is the part that used to depend on someone remembering.',
     comparisons: [
       {
         type: 'before' as const,
         title: 'How it runs now',
         items: [
-          'Three Sunday-night enquiries went unanswered until Monday afternoon. Two booked elsewhere.',
-          'A consultation took ten emails to confirm.',
-          'Two deposit invoices sat unpaid for a week. Slots stayed empty.',
-          '“Meant to ask for a Google review” — said about every grateful patient.',
+          'Reception is busy. The phone rings out. The new patient is lost.',
+          'A patient wants a consultation. Three messages later, still no time set.',
+          'A treatment plan went home with the patient last week. Nobody followed up.',
+          'You did great work last month. They never got asked for a review.',
         ],
       },
       {
         type: 'after' as const,
         title: 'How it runs after',
         items: [
-          'After-hours enquiries get an instant reply with fees and a slot.',
-          'Consultations booked online with deposit paid up front.',
-          'Pending enquiries followed up at sensible intervals.',
-          'Reviews get asked for the day after every appointment.',
+          'Missed call gets a text back inside a minute. They know reception will reply.',
+          'They pick a slot from a link. Confirmed. Reminder fires the day before.',
+          'The plan gets a polite follow-up. You can see who is still deciding.',
+          'A review request goes out after the visit. Reviews start stacking quietly.',
         ],
       },
     ],
@@ -200,41 +174,41 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
 
   const pathwaysData = {
     badge: 'Where Most Clinics Start',
-    title: 'Three stages — most clinics feel one of them more than the others',
-    description: 'Pick whichever costs you the most consultations right now.',
+    title: 'Three stages, most clinics feel one more than the others',
+    description: 'You do not have to fix everything at once. Start with whatever is leaking the most patients.',
     packages: [
       {
-        name: 'Stop losing the after-hours enquiries',
-        description: 'For when Sunday-night enquiries go unanswered until Monday afternoon.',
+        name: 'Stop calls and enquiries going missing',
+        description: 'For when reception is busy and new patient calls do not get answered.',
         price: 'Stage 1',
-        priceDetail: 'Start here if first-reply speed is the biggest leak',
+        priceDetail: 'Start here if missed calls are the leak',
         features: [
-          'Instant reply with consultant fees and next slot',
-          'Holds the patient until reception is back',
-          'Most stop enquiring with the next clinic',
+          'Missed-call text-back so they know you will reply',
+          'One inbox for calls, forms, and web enquiries',
+          'Patient and request captured before the conversation',
         ],
       },
       {
-        name: 'Take the booking and the deposit without phoning',
-        description: 'For when consultations take ten emails and deposits sit unpaid for a week.',
+        name: 'Get the consultation booked the same day',
+        description: 'Once enquiries are caught, this stage takes the friction out of confirming a consultation.',
         price: 'Stage 2',
-        priceDetail: 'Start here if booking and deposits are the leak',
+        priceDetail: 'Start here if booking is where it slows down',
         features: [
-          'Self-serve consultation booking',
-          'Deposit-to-confirm built in',
-          'Reminders the day before',
+          'Slots patients can pick themselves',
+          'Reminders the day before so chairs stay full',
+          'Reception sees the day at a glance',
         ],
         popular: true,
       },
       {
-        name: 'Build the local proof and convert the maybes',
-        description: 'For when consultants are excellent but the clinic looks small online.',
+        name: 'Keep treatment plans moving and turn visits into reviews',
+        description: 'For when the diary is fine but plans go quiet and reviews never get asked for.',
         price: 'Stage 3',
-        priceDetail: 'Start here if reviews and pending enquiries are the weak spot',
+        priceDetail: 'Start here if follow-up and reputation are the weak spots',
         features: [
-          'Follow-up sequences for pending enquiries',
-          'Review requests after every visit',
-          'Pages for the conditions and treatments you handle',
+          'Treatment plans followed up automatically',
+          'Past patients nudged back in',
+          'Review requests at the right moment',
         ],
       },
     ],
@@ -243,30 +217,30 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
   const workflowExamplesData = {
     badge: 'Real Situations',
     title: 'A few moments where the difference shows up',
-    description: 'Small moments at reception where things used to slip through.',
+    description: 'Small handoffs that used to depend on reception remembering.',
     workflows: [
       {
-        trigger: 'A new patient enquires Sunday night about a private dermatology consultation.',
+        trigger: 'Reception is busy and a new patient call rings out.',
         actions: [
-          'Instant reply goes out with fees and the next available slot',
-          'Calendar link lets them book on the spot',
-          'They stop enquiring with the next clinic',
+          'They get a text inside a minute saying reception will reply',
+          'The text captures the patient and the request',
+          'The lead is held instead of going to the next clinic',
         ],
       },
       {
-        trigger: 'A consultation booking needs a deposit to confirm.',
+        trigger: 'A patient wants a consultation this week.',
         actions: [
-          'Deposit link goes out automatically',
-          'Reminder a few days later if unpaid',
-          'Slot doesn’t sit empty waiting',
+          'They pick a slot from a link, no more text tag',
+          'A reminder goes out the day before',
+          'Reception sees who is coming in and why',
         ],
       },
       {
-        trigger: 'A patient enquired two weeks ago but never booked.',
+        trigger: 'A treatment plan was discussed last week and has not been booked.',
         actions: [
-          'A polite check-in goes out at the right interval',
-          'Reassurance plus a current available slot',
-          'A meaningful share quietly book back in',
+          'A polite follow-up goes out automatically',
+          'You can see all the open plans in one place',
+          'If they say yes, the booking happens without another five messages',
         ],
       },
     ],
@@ -277,21 +251,18 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
   const caseStudiesData = {
     category: 'local-appointment-businesses' as const,
     title: 'Related Case Studies',
-    description:
-      'Examples of how the system supports local appointment businesses in this category.',
+    description: 'Examples of how the system supports local appointment businesses in this category.',
     limit: 2,
   };
 
   const exploreData = {
     badge: 'Related',
-    description:
-      'The other parts of the system that come up most often for small private clinics.',
+    description: 'The other parts of the system that come up most often for small private clinics.',
     cards: [
       {
         icon: Workflow,
         title: 'Smart Website Systems',
-        description:
-          'See the core system layer that holds clinic enquiry, booking flow, and follow-up together.',
+        description: 'The core layer that holds enquiry, booking, and follow-up together.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -299,7 +270,7 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
       {
         icon: Calendar,
         title: 'Booking & Scheduling System',
-        description: 'Support appointments, reminders, and clearer next-step handling.',
+        description: 'Support consultation booking, reminders, and clearer next steps.',
         href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
@@ -307,8 +278,7 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
       {
         icon: Search,
         title: 'Local Authority & SEO Systems',
-        description:
-          'Strengthen area visibility, local credibility, and appointment-led discovery.',
+        description: 'Strengthen clinic visibility and local trust.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -316,7 +286,7 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Review Systems',
-        description: 'Turn completed visits into stronger proof and review flow.',
+        description: 'Turn appointments into reviews and proof.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -327,38 +297,38 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Things clinic managers usually ask',
-    description: 'Straight answers about how this fits a small private clinic.',
+    title: 'Things small private clinics usually ask',
+    description: 'Straight answers about how this fits into a busy clinic.',
     faqs: [
       {
-        question: 'Reception is already overwhelmed. Will this need more admin?',
+        question: 'Reception is already stretched. Will this make more work for them?',
         answer:
-          'No — the whole point is that it relieves reception. After-hours replies, online booking, deposit handling, pre-appointment forms — all automatic. Reception focuses on the patients in front of them.',
+          'It does the opposite. Missed calls get answered by text on their own. Reminders fire by themselves. Reception sees a clearer day at a glance.',
       },
       {
-        question: 'Will it work alongside our practice management system?',
+        question: 'Will patients feel like they are getting an automated response?',
         answer:
-          'Yes. Whatever you use — Cliniko, Heydoc, semble — stays. The system improves the bit between the patient enquiry and the appointment landing in the diary.',
+          'No. The messages are short and written like reception would actually text someone. The aim is to hold the lead until you can reply.',
       },
       {
-        question: 'How does the after-hours enquiry handling work?',
+        question: 'Can it handle plans that need to be discussed in the chair?',
         answer:
-          'A patient enquires Sunday night. Within seconds they get a reply with consultant fees, the next available slots, and a calendar link. Most book then and there. Reception sees the result on Monday morning.',
+          'Yes. The first reply confirms a consultation and the plan follows after the appointment.',
       },
       {
-        question: 'Is patient data handled safely?',
+        question: 'Do we have to chase reviews ourselves?',
         answer:
-          'Yes. Forms and deposits go through compliant providers. Sensitive medical detail isn’t exposed to the website — it lives in your practice management system as it always has.',
+          'No. The request goes out on its own after the visit, when the patient is happiest.',
       },
       {
-        question: 'How do I get more reviews without nagging?',
+        question: 'What about plans sitting in old emails?',
         answer:
-          'A polite request goes out the day after the appointment, when the relief is freshest. People who would have meant to leave one actually do.',
+          'Those get worked in too. Many clinics find that reactivating older plans brings in real treatment value before any new marketing kicks in.',
       },
       {
-        question: 'Do I need to scrap my current website?',
+        question: 'Do we need a brand new website?',
         answer:
-          'Usually not. We look at what you have first. The leak is normally the bit between the enquiry and the appointment landing in the diary — not the site itself.',
+          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
       },
     ],
   };
@@ -376,15 +346,15 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'local-appointment-businesses',
     seo: {
-      title: 'Small Private Clinics — Stop Losing After-Hours Enquiries, Consultations & Deposits | MindWP',
+      title: 'Small Private Clinics — Stop Losing Patients and Treatment Plans | MindWP',
       description:
-        'For private clinics where NHS-to-private enquiries arrive Sunday night and book elsewhere by Monday, where consultations take ten emails to confirm, and where deposits sit unpaid for a week. We put the system in place that catches them.',
+        'For small private clinics where calls miss reception, treatment plans go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
       keywords: [
         'private clinic website design',
-        'clinic booking workflow',
+        'private clinic booking system',
         'private clinic lead handling system',
         'private clinic seo services',
-        'clinic review system',
+        'private clinic reputation management system',
       ],
       canonical: '/industries/local-appointment-businesses/small-private-clinics',
     },
@@ -401,12 +371,11 @@ function buildSmallPrivateClinicsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the diary is leaking',
+      title: 'Tell us where patients are slipping',
       description:
-        'If after-hours enquiries go unanswered, if consultations take ten emails to confirm, or if deposits sit unpaid — walk us through how the clinic runs and we’ll show you the first thing worth fixing.',
+        'If calls miss reception, treatment plans go quiet, or reviews never get asked for, walk us through how the week runs and we will show you the first thing worth fixing.',
     },
   };
 }
 
-export const smallPrivateClinicsIndustryPageData: IndustryPageData =
-  buildSmallPrivateClinicsIndustryPageData();
+export const smallPrivateClinicsIndustryPageData: IndustryPageData = buildSmallPrivateClinicsIndustryPageData();

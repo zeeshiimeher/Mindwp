@@ -1,14 +1,13 @@
 import {
-  Bell,
+  Building2,
   Calendar,
-  Home,
+  Clock3,
+  KeyRound,
   MessageSquare,
   Search,
   ShieldCheck,
   Star,
-  Users,
   Workflow,
-  Wrench,
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
@@ -16,43 +15,38 @@ import type { IndustryPageData } from '@/domains/industries/types';
 function buildPropertyManagersIndustryPageData(): IndustryPageData {
   const heroData = {
     badge: 'For Property Managers',
-    title: 'A Landlord With 12 Units Got Three Quotes On Sunday Night. Whoever Sent A Clear Fee Breakdown Monday Morning Got The Portfolio.',
+    title: 'A Landlord Wants to Switch Agents. They Picked Whoever Replied First.',
     description:
-      'Owner enquiries land in the same inbox as tenant maintenance requests, and both wait. Landlords compare three managers in a weekend. Tenants send the same boiler complaint twice because nobody acknowledged the first one. We put the system in place that separates the two flows, gives owners visibility, and stops requests from disappearing.',
-    list: [
-      'Owner enquiries that sat with tenant complaints in the same inbox',
-      'Maintenance requests that took three follow-ups before being logged',
-      'Owner reports that took half a day to compile manually',
-      'Reviews from happy landlords you never asked for',
-    ],
+      'Property management enquiries arrive between viewings and maintenance calls. The phone rings out. The landlord signs with whoever followed up first.',
+    list: ['Slow replies', 'Lost landlords', 'Tenant chasing', 'Few reviews'],
     cssPrefix: 'property-managers-hero',
   };
 
   const imageStripData = {
-    badge: 'How Property Enquiries Actually Land',
-    title: 'Landlord with 12 units got three quotes on Sunday. Clearest fee breakdown wins.',
+    badge: 'How New Doors Come In',
+    title: 'A landlord wants to know if you can take it on',
     description:
-      'It’s landlord portfolio enquiries, urgent boiler failures, vacancy windows, owner reports the morning of a board meeting. Two completely different audiences competing for the same inbox.',
+      'A new property, a switch from another agent, a portfolio. They want to know what you do, how you handle tenants, and that you will reply.',
     items: [
       {
-        title: 'Owner and management enquiries',
+        title: 'New landlord enquiries',
         image: '/images/placeholders/service-card-5.svg',
-        alt: 'Abstract placeholder image representing property management owner enquiries',
+        alt: 'Abstract placeholder image representing property management enquiries',
       },
       {
-        title: 'Tenant requests and communication',
+        title: 'Valuations and onboarding',
         image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing tenant communication and requests',
+        alt: 'Abstract placeholder image representing property management onboarding',
       },
       {
-        title: 'Maintenance and scheduling flow',
+        title: 'Tenant communication',
         image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing property maintenance coordination',
+        alt: 'Abstract placeholder image representing tenant communication',
       },
       {
-        title: 'Trust, reviews, and follow-up',
+        title: 'Reviews and referrals',
         image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing property management follow-up and trust signals',
+        alt: 'Abstract placeholder image representing property management reviews',
       },
     ],
     backgroundColor: 'bg-base',
@@ -60,36 +54,31 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Where Portfolios Get Lost',
-    title: 'You’re sorting a leak in flat 4. The new portfolio enquiry sits unread.',
-    description: 'Same handful of leaks across nearly every management business. None of them are about how well you actually manage properties.',
+    badge: 'Where Doors Slip',
+    title: 'The portfolio is busy. The bit between enquiry and signed agreement is where it leaks.',
     benefits: [
       {
-        icon: Users,
-        title: 'A 12-unit portfolio enquiry sat in the inbox behind 14 maintenance complaints',
-        description:
-          'By the time it was spotted on Monday afternoon, the landlord had already booked a meeting with another firm.',
+        icon: Building2,
+        title: 'Calls miss while you are at a viewing',
+        description: 'The team is on the road. The phone rings out. The landlord picks the next agent.',
         iconType: 'primary' as const,
       },
       {
-        icon: Wrench,
-        title: 'A tenant submitted the same boiler complaint three times',
-        description:
-          'No acknowledgement on the first two. By the third, they’d already complained to the landlord and Trustpilot.',
+        icon: Calendar,
+        title: 'Valuations take days to arrange',
+        description: 'A simple visit takes too many emails before anything is on the diary.',
         iconType: 'secondary' as const,
       },
       {
-        icon: Bell,
-        title: 'Monthly owner reports took half a day to compile manually',
-        description:
-          'Spreadsheets, screenshots, copy-paste. Owners still rang to ask when the report was coming.',
+        icon: Clock3,
+        title: 'Onboarding stalls',
+        description: 'Documents are outstanding. The landlord goes quiet. Nobody chases.',
         iconType: 'accent' as const,
       },
       {
-        icon: Home,
-        title: 'You manage 180 properties. You have 14 reviews.',
-        description:
-          'Your owners are happy. Online you look like a two-flat operation because nobody asked for the review at the right moment.',
+        icon: KeyRound,
+        title: 'Online you look smaller than the portfolio you run',
+        description: 'Plenty of happy landlords and tenants. Almost no reviews to show for them.',
         iconType: 'primary' as const,
       },
     ],
@@ -98,74 +87,57 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
 
   const systemLayersData = {
     badge: 'What Gets Put In Place',
-    title: 'A steadier way to separate landlord enquiries from tenant requests',
-    description:
-      'Each piece does one job. Together they keep portfolios coming in while tenant requests stop slipping through the cracks.',
+    title: 'A steadier way to handle every enquiry, valuation, and onboarding',
+    description: 'Each piece does one job. Together they keep landlords from slipping between viewings.',
     featureCategories: [
       {
-        title: 'Send landlord enquiries down a different path to tenants',
-        description:
-          'A landlord enquiring about portfolio management goes one place. A tenant reporting a leak goes another. Neither waits behind the other.',
+        title: 'Catch every call and form',
+        description: 'Calls, missed calls, web forms — all in one place with the landlord and the property noted.',
         icon: MessageSquare,
         features: [
-          'Separate intake for landlords vs tenants',
-          'Portfolio enquiries flagged as priority',
-          'Maintenance requests captured with photos and urgency',
+          'Missed calls texted back instantly',
+          'Web enquiries sent to the office',
+          'Landlord and property captured up front',
         ],
       },
       {
-        title: 'Acknowledge every tenant request automatically',
-        description:
-          'Tenant submits a request. Within seconds they get a reference number and an update. The same complaint stops being submitted three times.',
+        title: 'Get the valuation booked without email tag',
+        description: 'A clear way to offer a slot, confirm it, and remind both sides the day before.',
         icon: Calendar,
         features: [
-          'Instant acknowledgement with reference number',
-          'Status updates as the job progresses',
-          'Repeat-complaint loops stop',
+          'Valuation slots landlords can pick themselves',
+          'Confirmations and reminders sent automatically',
+          'Team sees the property before they arrive',
         ],
       },
       {
-        title: 'Send owners their reports without compiling them by hand',
-        description:
-          'Monthly owner statements, occupancy stats, maintenance summaries — sent automatically on the same date every month. The phone stops ringing about reports.',
+        title: 'Stop onboarding stalling',
+        description: 'Every new instruction gets a follow-up on a schedule, even when the office is busy.',
         icon: Workflow,
         features: [
-          'Owner reports sent on schedule',
-          'Occupancy and maintenance summaries automated',
-          'Owners stop chasing the report',
+          'Outstanding documents chased automatically',
+          'Open instructions visible in one place',
+          'Old enquiries warmed up instead of forgotten',
         ],
       },
       {
-        title: 'Win the landlord portfolio with a clear fee breakdown',
-        description:
-          'Landlord enquires Sunday night. They get a clear fee breakdown and a calendar link Monday morning. Most stop comparing.',
+        title: 'Turn happy landlords into proof',
+        description: 'A review request goes out at the right moment so the agency shows up online.',
         icon: ShieldCheck,
         features: [
-          'Fast response with fee transparency',
-          'Calendar link for portfolio review meetings',
-          'Stops the comparison shopping',
+          'Review requests after onboarding',
+          'Asked when the landlord is most positive',
+          'More reviews where landlords look',
         ],
       },
       {
-        title: 'Turn happy landlords into reviews',
-        description:
-          'A polite review request goes out after a successful renewal or a smooth maintenance episode. Owners who would have meant to leave one actually do.',
-        icon: Star,
-        features: [
-          'Review requests timed to good moments',
-          'Asked when landlords are most satisfied',
-          'Reviews finally match the size of your portfolio',
-        ],
-      },
-      {
-        title: 'Show up first when local landlords search',
-        description:
-          'Pages and Google profile lined up so landlords in your patch find you first — not the corporate firm with a London office.',
+        title: 'Show up when landlords search',
+        description: 'Service pages and Google profile lined up so you appear when someone looks for an agent.',
         icon: Search,
         features: [
-          'Pages for the property types you actually manage',
-          'Found on Maps for local management searches',
-          'Less time on enquiries from outside your area',
+          'Found on Maps for the work you do',
+          'Service pages that match real searches',
+          'Local area coverage that is visible',
         ],
       },
     ],
@@ -175,68 +147,68 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
   const comparisonData = {
     badge: 'What Actually Changes',
     title: 'A normal week, before and after',
-    description: 'The relationships stay personal. The chasing stops.',
+    description: 'You still do the work. What changes is the part that used to depend on someone remembering.',
     comparisons: [
       {
         type: 'before' as const,
         title: 'How it runs now',
         items: [
-          'Portfolio enquiry sat behind tenant complaints. Landlord booked elsewhere.',
-          'Same boiler complaint submitted three times because nobody acknowledged it.',
-          'Half a day spent compiling owner reports manually.',
-          '“Meant to ask for a Google review” — said about every successful renewal.',
+          'Phone rings while the team is at a viewing. Goes to voicemail. Lost.',
+          'A landlord wants a valuation. Three emails later, still no time set.',
+          'New instruction has been waiting on documents for days. Nobody chased.',
+          'You took on three new doors last month. They never got asked for a review.',
         ],
       },
       {
         type: 'after' as const,
         title: 'How it runs after',
         items: [
-          'Landlord and tenant intake flow separately. Portfolio enquiries flagged as priority.',
-          'Tenants get instant acknowledgement and a reference number.',
-          'Owner reports sent automatically on the same date every month.',
-          'Reviews get asked for after every good moment.',
+          'Missed call gets a text back inside a minute. They know the office will reply.',
+          'They pick a slot from a link. Confirmed. Reminder fires the day before.',
+          'Outstanding documents get a polite chase. You can see who is waiting.',
+          'A review request goes out after onboarding. Reviews start stacking quietly.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Where Most Property Managers Start',
-    title: 'Three stages — most management firms feel one of them more than the others',
-    description: 'Pick whichever costs you the most peace of mind right now.',
+    badge: 'Where Most Agents Start',
+    title: 'Three stages, most agents feel one more than the others',
+    description: 'You do not have to fix everything at once. Start with whatever is leaking the most landlords.',
     packages: [
       {
-        name: 'Stop losing the landlord enquiries',
-        description: 'For when portfolio enquiries get buried behind tenant complaints.',
+        name: 'Stop calls and enquiries going missing',
+        description: 'For when the team is on the road and quick enquiries sit unread.',
         price: 'Stage 1',
-        priceDetail: 'Start here if landlord acquisition is the biggest leak',
+        priceDetail: 'Start here if missed calls are the leak',
         features: [
-          'Separate intake for landlords vs tenants',
-          'Fast response with fee breakdown',
-          'Calendar link for portfolio review meetings',
+          'Missed-call text-back so they know you will reply',
+          'One inbox for calls, forms, and web enquiries',
+          'Landlord and property noted before the conversation',
         ],
       },
       {
-        name: 'Sort the maintenance request chaos',
-        description: 'For when tenants submit the same complaint three times.',
+        name: 'Get the valuation booked the same week',
+        description: 'Once enquiries are caught, this stage takes the friction out of confirming a valuation.',
         price: 'Stage 2',
-        priceDetail: 'Start here if maintenance coordination is the leak',
+        priceDetail: 'Start here if booking is where it slows down',
         features: [
-          'Instant acknowledgement with reference number',
-          'Status updates as the job progresses',
-          'Repeat-complaint loops stop',
+          'Valuation slots landlords can pick themselves',
+          'Reminders the day before so visits actually happen',
+          'Team sees the property before they arrive',
         ],
         popular: true,
       },
       {
-        name: 'Automate owner reporting and reviews',
-        description: 'For when owner reports take half a day and reviews never get asked for.',
+        name: 'Keep onboarding moving and turn doors into reviews',
+        description: 'For when enquiries come in fine but onboarding stalls and reviews never get asked for.',
         price: 'Stage 3',
-        priceDetail: 'Start here if owner retention and proof are the weak spot',
+        priceDetail: 'Start here if follow-up and reputation are the weak spots',
         features: [
-          'Owner reports sent on schedule',
-          'Review requests timed to good moments',
-          'Pages for the property types you actually manage',
+          'Outstanding documents chased automatically',
+          'Past enquiries nudged at the right moment',
+          'Review requests after onboarding',
         ],
       },
     ],
@@ -245,30 +217,30 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
   const workflowExamplesData = {
     badge: 'Real Situations',
     title: 'A few moments where the difference shows up',
-    description: 'Small moments in the week of a property manager where things used to slip through.',
+    description: 'Small handoffs that used to depend on someone remembering.',
     workflows: [
       {
-        trigger: 'A landlord with a 12-unit portfolio enquires Sunday night.',
+        trigger: 'The team is at a viewing and a landlord rings the office.',
         actions: [
-          'They get a clear fee breakdown and calendar link Monday morning',
-          'They book a portfolio review meeting before the week starts',
-          'They stop comparing the other two firms',
+          'They get a text inside a minute saying the office will reply',
+          'The text captures the landlord and the property',
+          'The lead is held instead of going to the next agent',
         ],
       },
       {
-        trigger: 'A tenant reports a leaking boiler at 9pm.',
+        trigger: 'A landlord wants a valuation this week.',
         actions: [
-          'They get an instant acknowledgement with a reference number',
-          'A contractor is dispatched and the tenant gets status updates',
-          'The same complaint stops being submitted three times',
+          'They pick a slot from a link, no more email tag',
+          'A reminder goes out the day before',
+          'The team arrives with the property already noted',
         ],
       },
       {
-        trigger: 'It’s the first of the month — owner report day.',
+        trigger: 'New instruction has been waiting on documents for days.',
         actions: [
-          'Reports compile and send automatically with occupancy and maintenance summaries',
-          'Owners stop ringing to ask when the report is coming',
-          'You spend the morning on actual work instead of spreadsheets',
+          'A polite chase goes out automatically',
+          'Open instructions are visible in one place',
+          'When the documents arrive, onboarding moves without another five emails',
         ],
       },
     ],
@@ -279,20 +251,18 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
   const caseStudiesData = {
     category: 'real-estate-property-services' as const,
     title: 'Related Case Studies',
-    description: 'Examples of how the system supports property businesses in this category.',
+    description: 'Examples of how the system supports real estate and property businesses in this category.',
     limit: 2,
   };
 
   const exploreData = {
     badge: 'Related',
-    description:
-      'The other parts of the system that come up most often for property managers.',
+    description: 'The other parts of the system that come up most often for property managers.',
     cards: [
       {
         icon: Workflow,
         title: 'Smart Website Systems',
-        description:
-          'See the core system layer that holds property enquiries, coordination flow, and follow-up together.',
+        description: 'The core layer that holds enquiry, booking, and follow-up together.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -300,7 +270,7 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
       {
         icon: Calendar,
         title: 'Booking & Scheduling System',
-        description: 'Support inspections, visits, reminders, and clearer next-step handling.',
+        description: 'Support valuation booking, reminders, and clearer next steps.',
         href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
@@ -308,8 +278,7 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
       {
         icon: Search,
         title: 'Local Authority & SEO Systems',
-        description:
-          'Strengthen service-area visibility, location credibility, and property discovery support.',
+        description: 'Strengthen agency visibility and local trust.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -317,8 +286,7 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Review Systems',
-        description:
-          'Turn completed service coordination into stronger trust proof and review flow.',
+        description: 'Turn happy landlords into reviews and proof.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -330,37 +298,37 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
 
   const faqData = {
     title: 'Things property managers usually ask',
-    description: 'Straight answers about how this fits a management firm.',
+    description: 'Straight answers about how this fits into a busy agency.',
     faqs: [
       {
-        question: 'My team is small. Will this need someone new in the office?',
+        question: 'The team is on the road most of the day. How much extra work is this?',
         answer:
-          'No. The whole point is it runs while the team handles actual properties. Tenant acknowledgements, owner reports, landlord enquiries — all automatic. The team handles the work that needs a human.',
+          'Almost none after setup. Missed calls get answered by text on their own. Document chasing goes out on a schedule. Reminders fire by themselves.',
       },
       {
-        question: 'Will it work alongside my management software (Arthur, PayProp, Reapit, etc)?',
+        question: 'Will landlords feel like they are getting an automated response?',
         answer:
-          'Yes. Whatever you use stays. The system improves the bit between the enquiry coming in and the job sitting in your management software ready to be worked on.',
+          'No. The messages are short and written like the office would actually reply. The aim is to hold the lead until you can speak to them.',
       },
       {
-        question: 'How does separating landlord and tenant enquiries actually work?',
+        question: 'Can it handle landlords who need a valuation before any agreement?',
         answer:
-          'The website asks one question up front — “Are you a landlord or a tenant?”. Landlords go to a portfolio enquiry flow. Tenants go to a maintenance request flow. Neither waits behind the other.',
+          'Yes. The first reply confirms a valuation and the agreement follows after the visit.',
       },
       {
-        question: 'What about repeat tenant complaints?',
+        question: 'Do we have to chase reviews ourselves?',
         answer:
-          'Every request gets an instant acknowledgement with a reference number and a status update as it progresses. Tenants stop submitting the same complaint because they can see it’s been received and what’s happening.',
+          'No. The request goes out on its own after onboarding, when the landlord is most positive.',
       },
       {
-        question: 'How do I stop owners ringing for their monthly reports?',
+        question: 'What about enquiries sitting in old emails?',
         answer:
-          'Owner reports compile and send automatically on the same date every month — occupancy stats, maintenance summaries, financials. The phone stops ringing about reports.',
+          'Those get worked in too. Many agencies find that warming up old enquiries brings in real doors before any new marketing kicks in.',
       },
       {
-        question: 'Do I need to scrap my current website?',
+        question: 'Do we need a brand new website?',
         answer:
-          'Usually not. We look at what you have first. The leak is normally the bit between an enquiry and the job sitting in your management software — not the site itself.',
+          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
       },
     ],
   };
@@ -378,15 +346,15 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'real-estate-property-services',
     seo: {
-      title: 'Property Managers — Stop Losing Landlord Enquiries, Tenant Requests & Owner Trust | MindWP',
+      title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
       description:
-        'For property managers where landlord portfolio enquiries get buried behind tenant complaints, where the same boiler request is submitted three times, and where owner reports take half a day to compile. We put the system in place that catches them.',
+        'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
       keywords: [
         'property management website design',
+        'property management booking system',
         'property management lead handling system',
-        'tenant maintenance request workflow',
         'property management seo services',
-        'property management review system',
+        'property management reputation management system',
       ],
       canonical: '/industries/real-estate-property-services/property-managers',
     },
@@ -403,12 +371,11 @@ function buildPropertyManagersIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the portfolio is leaking',
+      title: 'Tell us where landlords are slipping',
       description:
-        'If landlord enquiries get buried behind tenant complaints, if maintenance requests get submitted three times, or if owner reports take half a day to compile — walk us through how the firm runs and we’ll show you the first thing worth fixing.',
+        'If calls go to voicemail at viewings, onboarding stalls, or reviews never get asked for, walk us through how the week runs and we will show you the first thing worth fixing.',
     },
   };
 }
 
-export const propertyManagersIndustryPageData: IndustryPageData =
-  buildPropertyManagersIndustryPageData();
+export const propertyManagersIndustryPageData: IndustryPageData = buildPropertyManagersIndustryPageData();

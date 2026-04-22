@@ -2,11 +2,11 @@ import {
   Calendar,
   Clock3,
   Droplets,
-  MapPinned,
   MessageSquare,
   Search,
   ShieldCheck,
   Star,
+  Wrench,
   Workflow,
 } from 'lucide-react';
 
@@ -14,81 +14,71 @@ import type { IndustryPageData } from '@/domains/industries/types';
 
 function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
   const heroData = {
-    badge: 'For Plumbing Businesses',
-    title: 'Their Kitchen’s Flooding. They’ve Already Called Two Other Plumbers.',
+    badge: 'For Plumbing Companies',
+    title: 'A Pipe Bursts. The Phones Light Up. They Book Whoever Answers First.',
     description:
-      'When water’s on the floor, people don’t leave voicemails — they ring the next number. Same with a quoted boiler swap that goes quiet for a week. We put the system in place that catches the urgent calls, follows up the quotes, and asks for the review without anyone in the office remembering.',
-    list: [
-      'Emergency calls that go to whoever picked up first',
-      'Boiler quotes nobody chased',
-      'Review requests nobody sent',
-      'Postcodes you never wanted to drive to',
-    ],
+      'Plumbing enquiries are urgent. The customer is calling around. The plumber that answers first usually gets the job.',
+    list: ['Surge calls', 'Slow callbacks', 'Quiet quotes', 'Few reviews'],
     cssPrefix: 'plumbing-companies-hero',
   };
 
   const imageStripData = {
-    badge: 'How Plumbing Calls Actually Land',
-    title: 'A leak at 7pm doesn’t wait for you to ring back tomorrow',
+    badge: 'How Plumbing Work Comes In',
+    title: 'A customer wants someone out as soon as possible',
     description:
-      'Burst pipe, blocked toilet, no hot water on a Sunday. People panic and dial. Whoever answers first usually wins the job — and often the next three for that household.',
+      'A leak, a blockage, a broken boiler. They want to know if you can come out, what it might cost, and that you will turn up.',
     items: [
       {
-        title: 'Emergency plumbing enquiries',
+        title: 'Emergency and routine enquiries',
         image: '/images/placeholders/service-card-5.svg',
-        alt: 'Abstract placeholder image representing emergency plumbing enquiries',
+        alt: 'Abstract placeholder image representing plumbing enquiries',
       },
       {
-        title: 'Booked repairs and visits',
+        title: 'Site visits and bookings',
         image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing booked plumbing visits',
+        alt: 'Abstract placeholder image representing plumbing site visits',
       },
       {
-        title: 'Quotes and installation decisions',
+        title: 'Quotes and approvals',
         image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing plumbing quotes and installation decisions',
+        alt: 'Abstract placeholder image representing plumbing quotes',
       },
       {
-        title: 'Reviews and local proof',
+        title: 'Reviews and repeat customers',
         image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing plumbing reviews and local proof',
+        alt: 'Abstract placeholder image representing plumbing reviews',
       },
     ],
     backgroundColor: 'bg-base',
-    cssPrefix: 'plumbing-image-strip',
+    cssPrefix: 'plumbing-companies-image-strip',
   };
 
   const operatingPatternsData = {
     badge: 'Where The Work Slips',
-    title: 'You’re under a sink. The phone rings. They call the next plumber.',
-    description: 'Same handful of leaks in nearly every plumbing business. None of them are about the work itself.',
+    title: 'The work is there. The way it gets handled is what loses it.',
     benefits: [
       {
         icon: Droplets,
-        title: '“Water’s coming through the ceiling” went to voicemail',
-        description:
-          'You were already on a job. They didn’t leave a message — they rang the next plumber on Google.',
+        title: 'When something bursts, the phones go off all at once',
+        description: 'Most calls go to voicemail. By the next morning the customer has already booked someone else.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'A quoted boiler swap went quiet for two weeks',
-        description:
-          "£4,800 of work. One follow-up text would have closed it. Nobody had time to send it.",
+        title: 'Booking turns into a back and forth',
+        description: 'A simple visit takes too many texts before anything is on the diary.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Reviews don’t reflect the actual workload',
-        description:
-          'Hundreds of jobs done well. 19 reviews online. Nobody was asked at the right moment.',
+        title: 'Quotes go out and never get chased',
+        description: 'A price gets sent. The customer thinks about it. Nobody follows up.',
         iconType: 'accent' as const,
       },
       {
-        icon: MapPinned,
-        title: 'Half your callouts are 40 minutes away',
-        description:
-          'Not the postcodes you actually want. The site brings in whoever finds you, not the right area.',
+        icon: Wrench,
+        title: 'Online you look smaller than the work you do',
+        description: 'Plenty of finished jobs. Almost no reviews to show for them.',
         iconType: 'primary' as const,
       },
     ],
@@ -97,63 +87,57 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
 
   const systemLayersData = {
     badge: 'What Gets Put In Place',
-    title: 'A steadier way to catch the urgent calls and follow up the bigger jobs',
-    description:
-      'Each piece does one job. Together they keep the work moving while you’re in somebody’s loft.',
+    title: 'A steadier way to handle every call, visit, and quote',
+    description: 'Each piece does one job. Together they keep work from falling on the floor when the phones go off.',
     featureCategories: [
       {
-        title: 'Catch every call, even when you’re under a sink',
-        description:
-          'Missed call gets an instant text — “on a job, what’s happening, can call back in 20.” Most stop dialling the next plumber.',
+        title: 'Catch every call and form',
+        description: 'Calls, missed calls, web forms — all in one place with the address and the issue noted.',
         icon: MessageSquare,
         features: [
-          'Missed-call text-back automatically',
-          'Urgency captured up front',
-          'Holds the lead until you’re free',
+          'Missed calls texted back instantly',
+          'Web enquiries sent to the office and the team lead',
+          'Address and issue captured up front',
         ],
       },
       {
-        title: 'Take the booking without the back-and-forth',
-        description:
-          'For non-urgent work, they pick a slot themselves. The office stops being a calendar.',
+        title: 'Get the visit booked without phone tag',
+        description: 'A clear way to offer a slot, confirm it, and remind the customer the day before.',
         icon: Calendar,
         features: [
-          'Online booking for non-urgent visits',
-          'Reminders the day before',
-          'Reschedule link instead of a no-show',
+          'Visit slots people can pick themselves',
+          'Confirmations and reminders sent automatically',
+          'Team sees the address and the issue before they arrive',
         ],
       },
       {
-        title: 'Follow up the quotes nobody has time to chase',
-        description:
-          'Boiler swap quote sent Monday, automatic check-in Friday, another the week after. Quietly closes more.',
+        title: 'Stop quotes going quiet',
+        description: 'Every quote gets a follow-up on a schedule, even when the team is back on a job.',
         icon: Workflow,
         features: [
-          'Quote follow-up at the right intervals',
-          'Pending jobs visible in one place',
-          'Closing rate goes up without nagging',
+          'Quotes chased automatically',
+          'Open quotes in one place',
+          'Old quotes warmed up instead of forgotten',
         ],
       },
       {
-        title: 'Turn finished jobs into reviews you can show',
-        description:
-          'A polite review request goes out the day after the job, when the kitchen’s working again.',
+        title: 'Turn finished jobs into proof',
+        description: 'A review request goes out at the right moment so the work shows up online.',
         icon: ShieldCheck,
         features: [
           'Review requests after every job',
-          'Asked when customers are happiest',
-          'Reviews catch up to the workload',
+          'Asked when the customer is happiest',
+          'More reviews where local people search',
         ],
       },
       {
-        title: 'Show up for the postcodes you actually want',
-        description:
-          'Service pages, Google profile, and local search lined up so the right area finds you first.',
+        title: 'Show up when local people search',
+        description: 'Service pages and Google profile lined up so you appear when someone nearby needs a plumber.',
         icon: Search,
         features: [
-          'Pages for the services and areas you want',
-          'Found on Maps for local searches',
-          'Less time driving to the wrong postcodes',
+          'Found on Maps for the work you do',
+          'Service pages that match real searches',
+          'Local area coverage that is visible',
         ],
       },
     ],
@@ -162,27 +146,27 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
 
   const comparisonData = {
     badge: 'What Actually Changes',
-    title: 'A normal week on the tools, before and after',
-    description: 'The work stays. The chasing and the missed calls stop.',
+    title: 'A normal week, before and after',
+    description: 'You still do the work. What changes is the part that used to depend on someone remembering.',
     comparisons: [
       {
         type: 'before' as const,
         title: 'How it runs now',
         items: [
-          'Three urgent calls missed during a single boiler service',
-          'A £4,800 quote went quiet for two weeks. No follow-up sent.',
-          '“Meant to ask for a review” — said about 200 jobs.',
-          'Half the new enquiries are from postcodes 40 minutes away.',
+          'Pipe bursts. Phones ring all morning. Most go to voicemail. Lost.',
+          'A customer wants a visit. Three texts later, still no time set.',
+          'Quote sent on Monday. By Friday nobody has chased it.',
+          'You finished a great job last week. They never got asked for a review.',
         ],
       },
       {
         type: 'after' as const,
         title: 'How it runs after',
         items: [
-          'Missed calls get an instant text. Most wait the 20 minutes.',
-          'Quotes get followed up automatically. More close, none feel pestered.',
-          'Every customer gets asked the day after. Reviews catch up to the work.',
-          'The right postcodes find you first. Less driving for less money.',
+          'Missed call gets a text back inside a minute. They know you will ring back.',
+          'They pick a slot from a link. Confirmed. Reminder fires the day before.',
+          'The quote gets a polite chase the next morning. You can see who is waiting.',
+          'A review request goes out the day you finish. Reviews start stacking quietly.',
         ],
       },
     ],
@@ -190,41 +174,41 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
 
   const pathwaysData = {
     badge: 'Where Most Plumbers Start',
-    title: 'Three stages — most businesses feel one of them more than the others',
-    description: 'Pick whichever costs you the most jobs right now.',
+    title: 'Three stages, most plumbers feel one more than the others',
+    description: 'You do not have to fix everything at once. Start with whatever is leaking the most work.',
     packages: [
       {
-        name: 'Stop missing the urgent calls',
-        description: 'For when emergency calls hit while you’re on a job and go to the next plumber.',
+        name: 'Stop calls and enquiries going missing',
+        description: 'For when the phones go off and most never get answered.',
         price: 'Stage 1',
-        priceDetail: 'Start here if missed calls during work hours is the biggest leak',
+        priceDetail: 'Start here if missed calls are the leak',
         features: [
-          'Missed-call text-back the moment you can’t answer',
-          'Urgent vs non-urgent triaged automatically',
-          'Most callers wait instead of dialling the next plumber',
+          'Missed-call text-back so they know you will ring',
+          'One inbox for calls, forms, and web enquiries',
+          'Address and issue noted before the conversation',
         ],
       },
       {
-        name: 'Close the quotes that go quiet',
-        description: 'For when bigger jobs get quoted and you never hear back.',
+        name: 'Get the visit booked the same day',
+        description: 'Once enquiries are caught, this stage takes the friction out of confirming a site visit.',
         price: 'Stage 2',
-        priceDetail: 'Start here if quote-to-booking conversion is the leak',
+        priceDetail: 'Start here if booking is where it slows down',
         features: [
-          'Quote follow-ups at the right intervals',
-          'Pending jobs visible in one place',
-          'No more “what happened to that boiler quote?”',
+          'Visit slots customers can pick themselves',
+          'Reminders the day before so visits actually happen',
+          'Team sees the job before they arrive',
         ],
         popular: true,
       },
       {
-        name: 'Build the local proof that fills the diary on its own',
-        description: 'For when work is great but reviews and the right postcodes don’t reflect it.',
+        name: 'Keep quotes moving and turn jobs into reviews',
+        description: 'For when work comes in fine but quotes go quiet and reviews never get asked for.',
         price: 'Stage 3',
-        priceDetail: 'Start here if reviews and area targeting are the weak spot',
+        priceDetail: 'Start here if follow-up and reputation are the weak spots',
         features: [
-          'Review requests after every job',
-          'Service pages for the work and postcodes you want',
-          'Less time driving to jobs you don’t want',
+          'Quotes chased automatically',
+          'Past customers nudged for return work',
+          'Review requests at the right moment',
         ],
       },
     ],
@@ -233,47 +217,52 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
   const workflowExamplesData = {
     badge: 'Real Situations',
     title: 'A few moments where the difference shows up',
-    description: 'Small moments on the tools and after, where things used to slip through.',
+    description: 'Small handoffs that used to depend on someone remembering.',
     workflows: [
       {
-        trigger: 'A burst pipe call comes in while you’re on a boiler service.',
+        trigger: 'A burst pipe call comes in while the team is on site.',
         actions: [
-          'Missed call gets an instant text within seconds',
-          'They get told you’re on a job and when you’ll be free',
-          'Most wait. The ones who can’t are flagged as truly urgent.',
+          'They get a text inside a minute saying you will ring back',
+          'The text captures the address and the issue',
+          'The lead is held instead of going to the next plumber',
         ],
       },
       {
-        trigger: 'A boiler installation quote was sent Monday and went quiet.',
+        trigger: 'A customer needs a visit this week.',
         actions: [
-          'A friendly check-in goes out Friday',
-          'Another a week later if no reply',
-          'Quote-to-booking quietly improves',
+          'They pick a slot from a link, no more text tag',
+          'A reminder goes out the day before',
+          'You arrive with the address and the issue already noted',
         ],
       },
       {
-        trigger: 'A job is finished and the kitchen sink is working again.',
+        trigger: 'You sent a quote a few days ago and have not heard back.',
         actions: [
-          'A polite review request goes out the next day',
-          'Asked when the customer is happiest',
-          'Local reviews catch up to the workload',
+          'A polite chase goes out automatically',
+          'Open quotes are visible in one place',
+          'If they say yes, the booking happens without another five messages',
         ],
       },
     ],
     backgroundColor: 'bg-base',
-    cssPrefix: 'plumbing-workflow-examples',
+    cssPrefix: 'plumbing-companies-workflow-examples',
+  };
+
+  const caseStudiesData = {
+    category: 'home-services' as const,
+    title: 'Related Case Studies',
+    description: 'Examples of how the system supports home service businesses in this category.',
+    limit: 2,
   };
 
   const exploreData = {
     badge: 'Related',
-    description:
-      'The other parts of the system that come up most often for plumbers trying to stop missing work.',
+    description: 'The other parts of the system that come up most often for plumbing companies.',
     cards: [
       {
         icon: Workflow,
         title: 'Smart Website Systems',
-        description:
-          'See the core system layer that holds plumbing demand, booking, and follow-up together.',
+        description: 'The core layer that holds enquiry, booking, and follow-up together.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -281,7 +270,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Calendar,
         title: 'Booking & Scheduling System',
-        description: 'Support visits, reminders, and clearer next-step handling.',
+        description: 'Support visit booking, reminders, and clearer next steps.',
         href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
@@ -289,7 +278,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Search,
         title: 'Local Authority & SEO Systems',
-        description: 'Strengthen local plumbing visibility and service-area trust.',
+        description: 'Strengthen plumbing visibility and local trust.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -297,7 +286,7 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Review Systems',
-        description: 'Turn completed jobs into stronger local proof and review flow.',
+        description: 'Turn finished jobs into reviews and proof.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -308,38 +297,38 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Things plumbers usually ask',
-    description: 'Straight answers about how this fits a plumbing business.',
+    title: 'Things plumbing companies usually ask',
+    description: 'Straight answers about how this fits into a busy plumbing business.',
     faqs: [
       {
-        question: 'I’m on the tools all day. Will this need me sat at a screen?',
+        question: 'When something bursts the phones never stop. Will this actually keep up?',
         answer:
-          'No. The whole point is that it runs while you’re on a job. You’ll see what came in on your phone between calls, but nothing waits on you to operate it.',
+          'That is the part it handles best. Every missed call gets a text back instantly, and every enquiry lands in one place so nothing gets lost in the surge.',
       },
       {
-        question: 'How does the missed-call text-back actually work?',
+        question: 'Will customers feel like they are getting an automated response?',
         answer:
-          'A call comes in while you’re under a sink. It rings out. Within seconds the caller gets a text — “on a job, can call back in 20, what’s happening?” Most stop dialling the next plumber.',
+          'No. The messages are short and written like you would actually text someone. The aim is to hold the lead until you can ring back.',
       },
       {
-        question: 'Can it handle quote follow-ups for boiler swaps and bigger jobs?',
+        question: 'Can it handle quotes for jobs that need a site visit first?',
         answer:
-          'Yes — friendly check-in messages go out at the right intervals after a quote is sent. Quote-to-booking conversion changes noticeably without anybody chasing.',
+          'Yes. The first reply confirms a visit and the quote follows after the inspection.',
       },
       {
-        question: 'How do I get more reviews without nagging?',
+        question: 'Do I have to chase reviews myself?',
         answer:
-          'A polite request goes out the day after the job, when the kitchen’s working again. People who would have meant to leave one actually do.',
+          'No. The request goes out on its own after the job is done, when the customer is happiest.',
       },
       {
-        question: 'Can I stop being shown for postcodes I don’t want to drive to?',
+        question: 'What about old quotes sitting in the inbox?',
         answer:
-          'Yes — service pages and local search get tightened around the areas you actually want. Less time driving for less money.',
+          'Those get worked in too. Many plumbers find that warming up old quotes brings in real money before any new marketing kicks in.',
       },
       {
-        question: 'Do I need to scrap my current website?',
+        question: 'Do I need a brand new website?',
         answer:
-          'Usually not. We look at what you have first. The leak is normally the bit between the call coming in and the review going up — not the site itself.',
+          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
       },
     ],
   };
@@ -357,14 +346,14 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'home-services',
     seo: {
-      title: 'Plumbing Companies — Stop Losing Calls, Quotes & Reviews | MindWP',
+      title: 'Plumbing Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
       description:
-        'For plumbers where urgent calls go to whoever picked up first, quoted boiler swaps go quiet for weeks, and reviews don’t reflect the workload. We put the system in place that catches every job.',
+        'For plumbing companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
       keywords: [
         'plumbing website design',
-        'plumbing lead generation website',
-        'plumbing marketing system',
-        'plumbing lead automation system',
+        'plumbing booking system',
+        'plumbing lead handling system',
+        'plumbing seo services',
         'plumbing reputation management system',
       ],
       canonical: '/industries/home-services/plumbing-companies',
@@ -378,15 +367,15 @@ function buildPlumbingCompaniesIndustryPageData(): IndustryPageData {
     comparison: comparisonData,
     pathways: pathwaysData,
     workflowExamples: workflowExamplesData,
+    caseStudies: caseStudiesData,
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the work is leaking',
+      title: 'Tell us where the work is slipping',
       description:
-        'If urgent calls go to voicemail, if quoted jobs go quiet, or if reviews never get asked for — walk us through how the business runs and we’ll show you the first thing worth fixing.',
+        'If surge calls go to voicemail, quotes stall, or reviews never get asked for, walk us through how the week runs and we will show you the first thing worth fixing.',
     },
   };
 }
 
-export const plumbingCompaniesIndustryPageData: IndustryPageData =
-  buildPlumbingCompaniesIndustryPageData();
+export const plumbingCompaniesIndustryPageData: IndustryPageData = buildPlumbingCompaniesIndustryPageData();

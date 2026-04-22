@@ -1287,19 +1287,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          title: 'Unified Communication System for Service Businesses | MindWP',
           description:
-            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
-          slug: 'system-migration-platform-consolidation',
-          path: '/services/system-migration-platform-consolidation',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
@@ -1321,15 +1321,23 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Local Authority System Impact',
+          title: 'Auto Repair Missed Call Recovery',
           description:
-            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
-          slug: 'local-authority-system-impact',
-          path: '/case-studies/local-authority-system-impact',
+            'How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.',
+          slug: 'auto-repair-missed-call-recovery',
+          path: '/case-studies/auto-repair-missed-call-recovery',
           nodeType: 'case-study',
         },
       ],
       resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
         {
           title: 'Local Service Page Architecture',
           description:
@@ -1344,14 +1352,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
           slug: 'automotive-review-generation-system',
           path: '/resources/automotive-review-generation-system',
-          nodeType: 'resource',
-        },
-        {
-          title: 'Booking Systems Inside Website Infrastructure',
-          description:
-            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
-          slug: 'booking-systems-inside-website-infrastructure',
-          path: '/resources/booking-systems-inside-website-infrastructure',
           nodeType: 'resource',
         },
       ],
@@ -1607,19 +1607,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'CRM Setup for Service Businesses | MindWP',
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
           description:
-            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
-          slug: 'crm-infrastructure-implementation',
-          path: '/services/crm-infrastructure-implementation',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
-          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          title: 'Unified Communication System for Service Businesses | MindWP',
           description:
-            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
-          slug: 'website-crm-integration-vs-manual-lead-handling',
-          path: '/services/website-crm-integration-vs-manual-lead-handling',
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
           nodeType: 'service',
         },
       ],
@@ -1641,29 +1641,29 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'CRM Pipeline Visibility Transformation',
+          title: 'Auto Repair Missed Call Recovery',
           description:
-            'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
-          slug: 'crm-pipeline-visibility-transformation',
-          path: '/case-studies/crm-pipeline-visibility-transformation',
+            'How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.',
+          slug: 'auto-repair-missed-call-recovery',
+          path: '/case-studies/auto-repair-missed-call-recovery',
           nodeType: 'case-study',
         },
       ],
       resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
         {
           title: 'Local Service Page Architecture',
           description:
             'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
           slug: 'local-service-page-architecture',
           path: '/resources/local-service-page-architecture',
-          nodeType: 'resource',
-        },
-        {
-          title: 'HVAC Review Generation Framework',
-          description:
-            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
-          slug: 'hvac-review-generation-framework',
-          path: '/resources/hvac-review-generation-framework',
           nodeType: 'resource',
         },
         {
@@ -2159,19 +2159,19 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'mobile-mechanics': {
       services: [
         {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
           title: 'Missed Call Recovery for Service Businesses | MindWP',
           description:
             'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
           slug: 'missed-call-recovery-system',
           path: '/services/missed-call-recovery-system',
-          nodeType: 'service',
-        },
-        {
-          title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
-          description:
-            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
-          slug: 'local-seo-authority',
-          path: '/services/local-seo-authority',
           nodeType: 'service',
         },
         {
@@ -2201,11 +2201,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'case-study',
         },
         {
-          title: 'Real Estate Inquiry Routing',
+          title: 'Auto Repair Missed Call Recovery',
           description:
-            'How a Brighton estate agency reduced response time from 8 hours to 11 minutes and increased viewings by 38% using automated multi-channel lead routing.',
-          slug: 'real-estate-inquiry-routing',
-          path: '/case-studies/real-estate-inquiry-routing',
+            'How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.',
+          slug: 'auto-repair-missed-call-recovery',
+          path: '/case-studies/auto-repair-missed-call-recovery',
           nodeType: 'case-study',
         },
       ],
@@ -2227,11 +2227,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'resource',
         },
         {
-          title: 'Build a 5-Minute Auto-Reply Funnel (SMS + Email Template)',
+          title: 'Automotive Review Generation System',
           description:
-            'Set up automatic replies for enquiries in 5 minutes. Get more bookings with instant SMS and email responses that feel personal but run on autopilot.',
-          slug: 'auto-reply-funnel',
-          path: '/resources/auto-reply-funnel',
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
           nodeType: 'resource',
         },
       ],
@@ -2807,11 +2807,11 @@ export const AUTHORITY_MAP: AuthorityMap = {
           nodeType: 'service',
         },
         {
-          title: 'Smart Website Systems for Service Businesses | MindWP',
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
           description:
-            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
-          slug: 'smart-website-systems',
-          path: '/services/smart-website-systems',
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
           nodeType: 'service',
         },
         {
@@ -2851,14 +2851,6 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       resources: [
         {
-          title: 'Roofing Estimate Follow-Up Workflow',
-          description:
-            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
-          slug: 'roofing-estimate-follow-up-workflow',
-          path: '/resources/roofing-estimate-follow-up-workflow',
-          nodeType: 'resource',
-        },
-        {
           title: 'Auto Repair Lead Handling Example',
           description:
             'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
@@ -2872,6 +2864,14 @@ export const AUTHORITY_MAP: AuthorityMap = {
             'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
           slug: 'local-service-page-architecture',
           path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Missed Call Recovery for Roofing',
+          description:
+            'See how roofing companies recover missed calls with automated SMS responses that capture lead details and convert unanswered calls into booked appointments.',
+          slug: 'missed-call-recovery-for-roofing',
+          path: '/resources/missed-call-recovery-for-roofing',
           nodeType: 'resource',
         },
       ],
@@ -3227,27 +3227,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -3281,25 +3281,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3335,25 +3335,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3389,25 +3389,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
           description:
-            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'mortgage-brokers',
           path: '/industries/real-estate-property-services/mortgage-brokers',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Smart Website Systems | MindWP',
+          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
           description:
-            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'property-managers',
           path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
@@ -3443,25 +3443,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3497,25 +3497,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -3551,25 +3551,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Nail Salons — Smart Website Systems | MindWP',
+          title: 'Nail Salons — Stop Losing Bookings to Missed Calls | MindWP',
           description:
-            'Smart Website systems for nail salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For nail salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'nail-salons',
           path: '/industries/beauty-personal-care/nail-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Lash Lift & Extensions — Smart Website Systems | MindWP',
+          title: 'Lash Studios — Stop Losing Bookings and Refills | MindWP',
           description:
-            'Smart Website systems for lash studios that need clearer booking flow, no-show reduction, review automation, and stronger local visibility to fill more appointments.',
+            'For lash studios where calls go to voicemail, refill clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'lash-lift-and-extensions',
           path: '/industries/beauty-personal-care/lash-lift-and-extensions',
           nodeType: 'industry-detail',
@@ -3605,25 +3605,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Small Med Spas — Smart Website Systems | MindWP',
+          title: 'Med Spas — Stop Losing Consultations and Treatment Plans | MindWP',
           description:
-            'Smart Website systems for small med spas that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For med spas where new client calls miss reception, treatment plans go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'small-med-spas',
           path: '/industries/beauty-personal-care/small-med-spas',
           nodeType: 'industry-detail',
@@ -3659,25 +3659,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -3713,25 +3713,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Small Med Spas — Smart Website Systems | MindWP',
+          title: 'Med Spas — Stop Losing Consultations and Treatment Plans | MindWP',
           description:
-            'Smart Website systems for small med spas that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For med spas where new client calls miss reception, treatment plans go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'small-med-spas',
           path: '/industries/beauty-personal-care/small-med-spas',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -3767,25 +3767,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Small Med Spas — Smart Website Systems | MindWP',
+          title: 'Med Spas — Stop Losing Consultations and Treatment Plans | MindWP',
           description:
-            'Smart Website systems for small med spas that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For med spas where new client calls miss reception, treatment plans go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'small-med-spas',
           path: '/industries/beauty-personal-care/small-med-spas',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -3821,25 +3821,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -3875,25 +3875,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -3929,25 +3929,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
           description:
-            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'mortgage-brokers',
           path: '/industries/real-estate-property-services/mortgage-brokers',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Smart Website Systems | MindWP',
+          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
           description:
-            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'property-managers',
           path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
@@ -3983,25 +3983,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Plumbing — Smart Website Systems | MindWP',
+          title: 'Plumbing Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for plumbing companies that need clearer emergency routing, booking support, and stronger follow-up.',
+            'For plumbing companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'plumbing-companies',
           path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
@@ -4037,25 +4037,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Plumbing — Smart Website Systems | MindWP',
+          title: 'Plumbing Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for plumbing companies that need clearer emergency routing, booking support, and stronger follow-up.',
+            'For plumbing companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'plumbing-companies',
           path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
@@ -4091,25 +4091,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -4145,25 +4145,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Plumbing — Smart Website Systems | MindWP',
+          title: 'Plumbing Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for plumbing companies that need clearer emergency routing, booking support, and stronger follow-up.',
+            'For plumbing companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'plumbing-companies',
           path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
@@ -4199,25 +4199,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4253,25 +4253,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4307,27 +4307,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -4361,25 +4361,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4415,25 +4415,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -4469,25 +4469,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Repair Shops — Smart Website Systems | MindWP',
+          title: 'Repair Shops — Stop Losing Bookings to Missed Calls and Quiet Quotes | MindWP',
           description:
-            'Smart Website systems for repair shops that need clearer booking flow, service qualification, and stronger local trust support.',
+            'For repair shops where calls go to voicemail at the bench, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'repair-shops',
           path: '/industries/local-appointment-businesses/repair-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Small Law Firms — Smart Website Systems | MindWP',
+          title: 'Small Law Firms — Stop Losing Consultations and Quiet Engagements | MindWP',
           description:
-            'Smart Website systems for small law firms that need clearer qualification, consultation flow, and stronger trust support.',
+            'For small law firms where calls go to voicemail, engagement letters go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'small-law-firms',
           path: '/industries/legal-professional-services/small-law-firms',
           nodeType: 'industry-detail',
@@ -4523,25 +4523,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
           description:
-            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'mortgage-brokers',
           path: '/industries/real-estate-property-services/mortgage-brokers',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Smart Website Systems | MindWP',
+          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
           description:
-            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'property-managers',
           path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
@@ -4577,25 +4577,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Plumbing — Smart Website Systems | MindWP',
+          title: 'Plumbing Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for plumbing companies that need clearer emergency routing, booking support, and stronger follow-up.',
+            'For plumbing companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'plumbing-companies',
           path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
@@ -4631,27 +4631,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
       ],
@@ -4685,25 +4685,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4739,27 +4739,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Electrical — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
-          slug: 'electrical-companies',
-          path: '/industries/home-services/electrical-companies',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          description:
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -4793,25 +4793,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          description:
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -4847,27 +4847,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -4901,27 +4901,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -4955,27 +4955,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -5009,27 +5009,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -5063,25 +5063,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          description:
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5117,25 +5117,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5171,25 +5171,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Landscaping — Smart Website Systems | MindWP',
+          title: 'Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP',
           description:
-            'Smart Website systems for landscaping companies that need clearer service routing, estimate booking, and stronger seasonal follow-up.',
+            'For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'landscaping-companies',
           path: '/industries/home-services/landscaping-companies',
           nodeType: 'industry-detail',
@@ -5225,25 +5225,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Landscaping — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for landscaping companies that need clearer service routing, estimate booking, and stronger seasonal follow-up.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP',
+          description:
+            'For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'landscaping-companies',
           path: '/industries/home-services/landscaping-companies',
           nodeType: 'industry-detail',
@@ -5279,27 +5279,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -5333,27 +5333,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -5387,27 +5387,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -5441,27 +5441,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -5495,25 +5495,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5549,25 +5549,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
           description:
-            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'mortgage-brokers',
           path: '/industries/real-estate-property-services/mortgage-brokers',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Smart Website Systems | MindWP',
+          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
           description:
-            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'property-managers',
           path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
@@ -5603,27 +5603,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -5657,25 +5657,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Nail Salons — Smart Website Systems | MindWP',
+          title: 'Nail Salons — Stop Losing Bookings to Missed Calls | MindWP',
           description:
-            'Smart Website systems for nail salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For nail salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'nail-salons',
           path: '/industries/beauty-personal-care/nail-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Lash Lift & Extensions — Smart Website Systems | MindWP',
+          title: 'Lash Studios — Stop Losing Bookings and Refills | MindWP',
           description:
-            'Smart Website systems for lash studios that need clearer booking flow, no-show reduction, review automation, and stronger local visibility to fill more appointments.',
+            'For lash studios where calls go to voicemail, refill clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'lash-lift-and-extensions',
           path: '/industries/beauty-personal-care/lash-lift-and-extensions',
           nodeType: 'industry-detail',
@@ -5711,25 +5711,26 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Accounting Firms — Smart Website Systems | MindWP',
+          title:
+            'Accounting Firms — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
           description:
-            'Smart Website systems for accounting firms that need clearer qualification, consultation flow, and stronger trust support.',
+            'For accounting firms where calls go to voicemail in meetings, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'accounting-firms',
           path: '/industries/legal-professional-services/accounting-firms',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Small Law Firms — Smart Website Systems | MindWP',
+          title: 'Small Law Firms — Stop Losing Consultations and Quiet Engagements | MindWP',
           description:
-            'Smart Website systems for small law firms that need clearer qualification, consultation flow, and stronger trust support.',
+            'For small law firms where calls go to voicemail, engagement letters go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'small-law-firms',
           path: '/industries/legal-professional-services/small-law-firms',
           nodeType: 'industry-detail',
@@ -5765,25 +5766,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -5819,25 +5820,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -5873,25 +5874,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5927,25 +5928,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          description:
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -5981,25 +5982,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6035,25 +6036,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6089,25 +6090,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
           description:
-            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'mortgage-brokers',
           path: '/industries/real-estate-property-services/mortgage-brokers',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Smart Website Systems | MindWP',
+          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
           description:
-            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'property-managers',
           path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
@@ -6143,27 +6144,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing — Smart Website Systems | MindWP',
+          title: 'Electrical Companies — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Electrical — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
+            'For electrical companies where calls go to voicemail on site, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'electrical-companies',
           path: '/industries/home-services/electrical-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP',
+          description:
+            'For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'landscaping-companies',
+          path: '/industries/home-services/landscaping-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -6197,25 +6198,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          description:
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -6251,25 +6252,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
           description:
-            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'mortgage-brokers',
           path: '/industries/real-estate-property-services/mortgage-brokers',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Smart Website Systems | MindWP',
+          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
           description:
-            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'property-managers',
           path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Consultants — Smart Website Systems | MindWP',
+          title: 'Consultants — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
           description:
-            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
+            'For consultants where calls go to voicemail in client work, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'consultants',
           path: '/industries/legal-professional-services/consultants',
           nodeType: 'industry-detail',
@@ -6305,25 +6306,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
           description:
-            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'mortgage-brokers',
           path: '/industries/real-estate-property-services/mortgage-brokers',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Smart Website Systems | MindWP',
+          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
           description:
-            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'property-managers',
           path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Consultants — Smart Website Systems | MindWP',
+          title: 'Consultants — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
           description:
-            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
+            'For consultants where calls go to voicemail in client work, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'consultants',
           path: '/industries/legal-professional-services/consultants',
           nodeType: 'industry-detail',
@@ -6359,25 +6360,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
           description:
-            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'mortgage-brokers',
           path: '/industries/real-estate-property-services/mortgage-brokers',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Smart Website Systems | MindWP',
+          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
           description:
-            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'property-managers',
           path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
@@ -6413,25 +6414,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6467,27 +6468,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing — Smart Website Systems | MindWP',
+          title: 'Electrical Companies — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Electrical — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
+            'For electrical companies where calls go to voicemail on site, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'electrical-companies',
           path: '/industries/home-services/electrical-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP',
+          description:
+            'For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'landscaping-companies',
+          path: '/industries/home-services/landscaping-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -6521,25 +6522,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6575,25 +6576,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          description:
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -6629,25 +6630,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -6683,25 +6684,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -6737,25 +6738,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -6791,25 +6792,26 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Accounting Firms — Smart Website Systems | MindWP',
+          title:
+            'Accounting Firms — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
           description:
-            'Smart Website systems for accounting firms that need clearer qualification, consultation flow, and stronger trust support.',
+            'For accounting firms where calls go to voicemail in meetings, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'accounting-firms',
           path: '/industries/legal-professional-services/accounting-firms',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Consultants — Smart Website Systems | MindWP',
+          title: 'Consultants — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
           description:
-            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
+            'For consultants where calls go to voicemail in client work, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'consultants',
           path: '/industries/legal-professional-services/consultants',
           nodeType: 'industry-detail',
@@ -6845,25 +6847,26 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Accounting Firms — Smart Website Systems | MindWP',
+          title:
+            'Accounting Firms — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
           description:
-            'Smart Website systems for accounting firms that need clearer qualification, consultation flow, and stronger trust support.',
+            'For accounting firms where calls go to voicemail in meetings, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'accounting-firms',
           path: '/industries/legal-professional-services/accounting-firms',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Consultants — Smart Website Systems | MindWP',
+          title: 'Consultants — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
           description:
-            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
+            'For consultants where calls go to voicemail in client work, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'consultants',
           path: '/industries/legal-professional-services/consultants',
           nodeType: 'industry-detail',
@@ -6899,25 +6902,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -6953,25 +6956,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -7007,27 +7010,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -7061,27 +7064,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Electrical — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
-          slug: 'electrical-companies',
-          path: '/industries/home-services/electrical-companies',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          description:
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -7115,25 +7118,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Small Med Spas — Smart Website Systems | MindWP',
+          title: 'Med Spas — Stop Losing Consultations and Treatment Plans | MindWP',
           description:
-            'Smart Website systems for small med spas that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For med spas where new client calls miss reception, treatment plans go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'small-med-spas',
           path: '/industries/beauty-personal-care/small-med-spas',
           nodeType: 'industry-detail',
@@ -7169,27 +7172,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
       ],
@@ -7223,27 +7226,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Electrical — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
-          slug: 'electrical-companies',
-          path: '/industries/home-services/electrical-companies',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          description:
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -7277,27 +7280,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -7331,25 +7334,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
           description:
-            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'mortgage-brokers',
           path: '/industries/real-estate-property-services/mortgage-brokers',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Smart Website Systems | MindWP',
+          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
           description:
-            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'property-managers',
           path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
@@ -7385,27 +7388,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -7439,25 +7442,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          description:
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -7493,27 +7496,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Electrical — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
-          slug: 'electrical-companies',
-          path: '/industries/home-services/electrical-companies',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          description:
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -7547,27 +7550,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -7601,27 +7604,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -7655,25 +7658,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
           description:
-            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'mortgage-brokers',
           path: '/industries/real-estate-property-services/mortgage-brokers',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Smart Website Systems | MindWP',
+          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
           description:
-            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'property-managers',
           path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
@@ -7709,25 +7712,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -7763,27 +7766,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Electrical — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
-          slug: 'electrical-companies',
-          path: '/industries/home-services/electrical-companies',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          description:
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -7817,25 +7820,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -7871,25 +7874,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Repair Shops — Smart Website Systems | MindWP',
+          title: 'Repair Shops — Stop Losing Bookings to Missed Calls and Quiet Quotes | MindWP',
           description:
-            'Smart Website systems for repair shops that need clearer booking flow, service qualification, and stronger local trust support.',
+            'For repair shops where calls go to voicemail at the bench, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'repair-shops',
           path: '/industries/local-appointment-businesses/repair-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Small Law Firms — Smart Website Systems | MindWP',
+          title: 'Small Law Firms — Stop Losing Consultations and Quiet Engagements | MindWP',
           description:
-            'Smart Website systems for small law firms that need clearer qualification, consultation flow, and stronger trust support.',
+            'For small law firms where calls go to voicemail, engagement letters go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'small-law-firms',
           path: '/industries/legal-professional-services/small-law-firms',
           nodeType: 'industry-detail',
@@ -7925,25 +7928,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Repair Shops — Smart Website Systems | MindWP',
+          title: 'Repair Shops — Stop Losing Bookings to Missed Calls and Quiet Quotes | MindWP',
           description:
-            'Smart Website systems for repair shops that need clearer booking flow, service qualification, and stronger local trust support.',
+            'For repair shops where calls go to voicemail at the bench, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'repair-shops',
           path: '/industries/local-appointment-businesses/repair-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Small Law Firms — Smart Website Systems | MindWP',
+          title: 'Small Law Firms — Stop Losing Consultations and Quiet Engagements | MindWP',
           description:
-            'Smart Website systems for small law firms that need clearer qualification, consultation flow, and stronger trust support.',
+            'For small law firms where calls go to voicemail, engagement letters go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'small-law-firms',
           path: '/industries/legal-professional-services/small-law-firms',
           nodeType: 'industry-detail',
@@ -7965,25 +7968,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8019,27 +8022,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Electrical — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
-          slug: 'electrical-companies',
-          path: '/industries/home-services/electrical-companies',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          description:
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -8073,27 +8076,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -8119,25 +8122,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -8157,25 +8160,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8203,25 +8206,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -8257,25 +8260,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -8303,25 +8306,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -8349,25 +8352,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Small Med Spas — Smart Website Systems | MindWP',
+          title: 'Med Spas — Stop Losing Consultations and Treatment Plans | MindWP',
           description:
-            'Smart Website systems for small med spas that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For med spas where new client calls miss reception, treatment plans go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'small-med-spas',
           path: '/industries/beauty-personal-care/small-med-spas',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -8403,25 +8406,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8457,25 +8460,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8503,25 +8506,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -8549,25 +8552,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -8595,25 +8598,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
           description:
-            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'mortgage-brokers',
           path: '/industries/real-estate-property-services/mortgage-brokers',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Smart Website Systems | MindWP',
+          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
           description:
-            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'property-managers',
           path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
@@ -8641,25 +8644,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
           description:
-            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'mortgage-brokers',
           path: '/industries/real-estate-property-services/mortgage-brokers',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Smart Website Systems | MindWP',
+          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
           description:
-            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'property-managers',
           path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
@@ -8679,25 +8682,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Plumbing — Smart Website Systems | MindWP',
+          title: 'Plumbing Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for plumbing companies that need clearer emergency routing, booking support, and stronger follow-up.',
+            'For plumbing companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'plumbing-companies',
           path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
@@ -8733,25 +8736,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8771,25 +8774,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8809,25 +8812,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8863,25 +8866,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -8909,25 +8912,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -8963,25 +8966,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Plumbing — Smart Website Systems | MindWP',
+          title: 'Plumbing Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for plumbing companies that need clearer emergency routing, booking support, and stronger follow-up.',
+            'For plumbing companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'plumbing-companies',
           path: '/industries/home-services/plumbing-companies',
           nodeType: 'industry-detail',
@@ -9017,27 +9020,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Electrical — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
-          slug: 'electrical-companies',
-          path: '/industries/home-services/electrical-companies',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          description:
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -9055,25 +9058,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -9109,27 +9112,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Electrical — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
-          slug: 'electrical-companies',
-          path: '/industries/home-services/electrical-companies',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          description:
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -9163,27 +9166,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -9209,25 +9212,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Repair Shops — Smart Website Systems | MindWP',
+          title: 'Repair Shops — Stop Losing Bookings to Missed Calls and Quiet Quotes | MindWP',
           description:
-            'Smart Website systems for repair shops that need clearer booking flow, service qualification, and stronger local trust support.',
+            'For repair shops where calls go to voicemail at the bench, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'repair-shops',
           path: '/industries/local-appointment-businesses/repair-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Small Law Firms — Smart Website Systems | MindWP',
+          title: 'Small Law Firms — Stop Losing Consultations and Quiet Engagements | MindWP',
           description:
-            'Smart Website systems for small law firms that need clearer qualification, consultation flow, and stronger trust support.',
+            'For small law firms where calls go to voicemail, engagement letters go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'small-law-firms',
           path: '/industries/legal-professional-services/small-law-firms',
           nodeType: 'industry-detail',
@@ -9263,27 +9266,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -9317,27 +9320,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -9355,25 +9358,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -9409,25 +9412,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Landscaping — Smart Website Systems | MindWP',
+          title: 'Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP',
           description:
-            'Smart Website systems for landscaping companies that need clearer service routing, estimate booking, and stronger seasonal follow-up.',
+            'For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'landscaping-companies',
           path: '/industries/home-services/landscaping-companies',
           nodeType: 'industry-detail',
@@ -9447,27 +9450,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -9485,27 +9488,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
-          slug: 'realtors',
-          path: '/industries/real-estate-property-services/realtors',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
       ],
@@ -9523,27 +9526,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Realtors — Smart Website Systems | MindWP',
+          title: 'Realtors — Stop Losing Viewings and Cold Pipelines | MindWP',
           description:
-            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+            'For realtors where calls go to voicemail at viewings, past enquiries go cold, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'realtors',
           path: '/industries/real-estate-property-services/realtors',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -9577,27 +9580,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -9631,27 +9634,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -9685,27 +9688,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Roofing — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -9739,27 +9742,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -9785,27 +9788,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
-          slug: 'hvac-companies',
-          path: '/industries/home-services/hvac-companies',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -9839,27 +9842,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -9893,25 +9896,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Nail Salons — Smart Website Systems | MindWP',
+          title: 'Nail Salons — Stop Losing Bookings to Missed Calls | MindWP',
           description:
-            'Smart Website systems for nail salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For nail salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'nail-salons',
           path: '/industries/beauty-personal-care/nail-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Lash Lift & Extensions — Smart Website Systems | MindWP',
+          title: 'Lash Studios — Stop Losing Bookings and Refills | MindWP',
           description:
-            'Smart Website systems for lash studios that need clearer booking flow, no-show reduction, review automation, and stronger local visibility to fill more appointments.',
+            'For lash studios where calls go to voicemail, refill clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'lash-lift-and-extensions',
           path: '/industries/beauty-personal-care/lash-lift-and-extensions',
           nodeType: 'industry-detail',
@@ -9931,25 +9934,26 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Accounting Firms — Smart Website Systems | MindWP',
+          title:
+            'Accounting Firms — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
           description:
-            'Smart Website systems for accounting firms that need clearer qualification, consultation flow, and stronger trust support.',
+            'For accounting firms where calls go to voicemail in meetings, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'accounting-firms',
           path: '/industries/legal-professional-services/accounting-firms',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Small Law Firms — Smart Website Systems | MindWP',
+          title: 'Small Law Firms — Stop Losing Consultations and Quiet Engagements | MindWP',
           description:
-            'Smart Website systems for small law firms that need clearer qualification, consultation flow, and stronger trust support.',
+            'For small law firms where calls go to voicemail, engagement letters go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'small-law-firms',
           path: '/industries/legal-professional-services/small-law-firms',
           nodeType: 'industry-detail',
@@ -9969,25 +9973,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10007,25 +10011,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          description:
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -10045,25 +10049,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10083,25 +10087,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10129,25 +10133,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -10183,27 +10187,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing — Smart Website Systems | MindWP',
+          title: 'Electrical Companies — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Electrical — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
+            'For electrical companies where calls go to voicemail on site, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'electrical-companies',
           path: '/industries/home-services/electrical-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP',
+          description:
+            'For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'landscaping-companies',
+          path: '/industries/home-services/landscaping-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -10237,27 +10241,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Electrical — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
-          slug: 'electrical-companies',
-          path: '/industries/home-services/electrical-companies',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          description:
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -10275,25 +10279,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          description:
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -10321,25 +10325,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
           description:
-            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'mortgage-brokers',
           path: '/industries/real-estate-property-services/mortgage-brokers',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Smart Website Systems | MindWP',
+          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
           description:
-            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'property-managers',
           path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Consultants — Smart Website Systems | MindWP',
+          title: 'Consultants — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
           description:
-            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
+            'For consultants where calls go to voicemail in client work, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'consultants',
           path: '/industries/legal-professional-services/consultants',
           nodeType: 'industry-detail',
@@ -10375,27 +10379,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Electrical — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
-          slug: 'electrical-companies',
-          path: '/industries/home-services/electrical-companies',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          description:
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],
@@ -10413,25 +10417,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10467,27 +10471,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Roofing — Smart Website Systems | MindWP',
+          title: 'Electrical Companies — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
-          slug: 'roofing-companies',
-          path: '/industries/home-services/roofing-companies',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Electrical — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
+            'For electrical companies where calls go to voicemail on site, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'electrical-companies',
           path: '/industries/home-services/electrical-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP',
+          description:
+            'For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'landscaping-companies',
+          path: '/industries/home-services/landscaping-companies',
           nodeType: 'industry-detail',
         },
       ],
@@ -10521,25 +10525,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10567,25 +10571,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -10621,25 +10625,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -10667,25 +10671,26 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Accounting Firms — Smart Website Systems | MindWP',
+          title:
+            'Accounting Firms — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
           description:
-            'Smart Website systems for accounting firms that need clearer qualification, consultation flow, and stronger trust support.',
+            'For accounting firms where calls go to voicemail in meetings, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'accounting-firms',
           path: '/industries/legal-professional-services/accounting-firms',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Consultants — Smart Website Systems | MindWP',
+          title: 'Consultants — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
           description:
-            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
+            'For consultants where calls go to voicemail in client work, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'consultants',
           path: '/industries/legal-professional-services/consultants',
           nodeType: 'industry-detail',
@@ -10721,25 +10726,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
       ],
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
@@ -10751,25 +10756,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'appointment-business-booking-automation': {
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Nail Salons — Smart Website Systems | MindWP',
+          title: 'Nail Salons — Stop Losing Bookings to Missed Calls | MindWP',
           description:
-            'Smart Website systems for nail salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For nail salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'nail-salons',
           path: '/industries/beauty-personal-care/nail-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Lash Lift & Extensions — Smart Website Systems | MindWP',
+          title: 'Lash Studios — Stop Losing Bookings and Refills | MindWP',
           description:
-            'Smart Website systems for lash studios that need clearer booking flow, no-show reduction, review automation, and stronger local visibility to fill more appointments.',
+            'For lash studios where calls go to voicemail, refill clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'lash-lift-and-extensions',
           path: '/industries/beauty-personal-care/lash-lift-and-extensions',
           nodeType: 'industry-detail',
@@ -10818,27 +10823,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'auto-repair-missed-call-recovery': {
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -10885,25 +10890,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'beauty-salon-online-booking-local-seo-manchester-all-sections': {
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Nail Salons — Smart Website Systems | MindWP',
+          title: 'Nail Salons — Stop Losing Bookings to Missed Calls | MindWP',
           description:
-            'Smart Website systems for nail salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For nail salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'nail-salons',
           path: '/industries/beauty-personal-care/nail-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Lash Lift & Extensions — Smart Website Systems | MindWP',
+          title: 'Lash Studios — Stop Losing Bookings and Refills | MindWP',
           description:
-            'Smart Website systems for lash studios that need clearer booking flow, no-show reduction, review automation, and stronger local visibility to fill more appointments.',
+            'For lash studios where calls go to voicemail, refill clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'lash-lift-and-extensions',
           path: '/industries/beauty-personal-care/lash-lift-and-extensions',
           nodeType: 'industry-detail',
@@ -10939,25 +10944,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'beauty-salon-online-booking-local-seo-manchester-custom': {
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Nail Salons — Smart Website Systems | MindWP',
+          title: 'Nail Salons — Stop Losing Bookings to Missed Calls | MindWP',
           description:
-            'Smart Website systems for nail salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For nail salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'nail-salons',
           path: '/industries/beauty-personal-care/nail-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Lash Lift & Extensions — Smart Website Systems | MindWP',
+          title: 'Lash Studios — Stop Losing Bookings and Refills | MindWP',
           description:
-            'Smart Website systems for lash studios that need clearer booking flow, no-show reduction, review automation, and stronger local visibility to fill more appointments.',
+            'For lash studios where calls go to voicemail, refill clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'lash-lift-and-extensions',
           path: '/industries/beauty-personal-care/lash-lift-and-extensions',
           nodeType: 'industry-detail',
@@ -10993,25 +10998,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'crm-pipeline-visibility-transformation': {
       industries: [
         {
-          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          title: 'Mortgage Brokers — Stop Losing Enquiries and Stalled Applications | MindWP',
           description:
-            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+            'For mortgage brokers where calls go to voicemail, applications stall, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'mortgage-brokers',
           path: '/industries/real-estate-property-services/mortgage-brokers',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Property Managers — Smart Website Systems | MindWP',
+          title: 'Property Managers — Stop Losing Landlords and Stalled Onboarding | MindWP',
           description:
-            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+            'For property managers where calls go to voicemail, onboarding stalls, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'property-managers',
           path: '/industries/real-estate-property-services/property-managers',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Consultants — Smart Website Systems | MindWP',
+          title: 'Consultants — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
           description:
-            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
+            'For consultants where calls go to voicemail in client work, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'consultants',
           path: '/industries/legal-professional-services/consultants',
           nodeType: 'industry-detail',
@@ -11047,25 +11052,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'hvac-emergency-lead-routing': {
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'mobile-mechanics',
           path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
@@ -11114,25 +11119,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'hvac-seasonal-lead-surge-handling': {
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -11181,25 +11186,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'law-firm-consultation-booking-system': {
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Nail Salons — Smart Website Systems | MindWP',
+          title: 'Nail Salons — Stop Losing Bookings to Missed Calls | MindWP',
           description:
-            'Smart Website systems for nail salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For nail salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'nail-salons',
           path: '/industries/beauty-personal-care/nail-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Lash Lift & Extensions — Smart Website Systems | MindWP',
+          title: 'Lash Studios — Stop Losing Bookings and Refills | MindWP',
           description:
-            'Smart Website systems for lash studios that need clearer booking flow, no-show reduction, review automation, and stronger local visibility to fill more appointments.',
+            'For lash studios where calls go to voicemail, refill clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'lash-lift-and-extensions',
           path: '/industries/beauty-personal-care/lash-lift-and-extensions',
           nodeType: 'industry-detail',
@@ -11235,25 +11240,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'local-authority-system-impact': {
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
-          slug: 'auto-repair',
-          path: '/industries/automotive-services/auto-repair',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Roofing — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'roofing-companies',
           path: '/industries/home-services/roofing-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
+          description:
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -11289,27 +11294,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'real-estate-inquiry-routing': {
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Mobile Mechanics — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
-          slug: 'body-shops',
-          path: '/industries/automotive-services/body-shops',
+            'For mobile mechanics where calls go to voicemail mid-job, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
         },
       ],
@@ -11369,25 +11374,26 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'roofing-website-rebuild-with-crm': {
       industries: [
         {
-          title: 'Landscaping — Smart Website Systems | MindWP',
+          title: 'Landscaping Companies — Stop Losing Seasonal Quotes and Bookings | MindWP',
           description:
-            'Smart Website systems for landscaping companies that need clearer service routing, estimate booking, and stronger seasonal follow-up.',
+            'For landscaping companies where peak-season calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'landscaping-companies',
           path: '/industries/home-services/landscaping-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Accounting Firms — Smart Website Systems | MindWP',
+          title:
+            'Accounting Firms — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
           description:
-            'Smart Website systems for accounting firms that need clearer qualification, consultation flow, and stronger trust support.',
+            'For accounting firms where calls go to voicemail in meetings, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'accounting-firms',
           path: '/industries/legal-professional-services/accounting-firms',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Consultants — Smart Website Systems | MindWP',
+          title: 'Consultants — Stop Losing Prospects to Missed Calls and Quiet Proposals | MindWP',
           description:
-            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
+            'For consultants where calls go to voicemail in client work, proposals go quiet, and reviews never get asked for. We put the routing, follow-up, and visibility in place.',
           slug: 'consultants',
           path: '/industries/legal-professional-services/consultants',
           nodeType: 'industry-detail',
@@ -11423,25 +11429,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'salon-booking-automation': {
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Car Detailing — Smart Website Systems | MindWP',
+          title: 'Car Detailing — Stop Losing Bookings to Slow Replies | MindWP',
           description:
-            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+            'For car detailers where calls go unanswered, past customers never come back, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'car-detailing',
           path: '/industries/automotive-services/car-detailing',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          title: 'Aesthetic & Cosmetic Clinics — Stop Losing Patients to a Slow Reply | MindWP',
           description:
-            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+            'For aesthetic clinics where high-intent enquiries go cold, consultations do not convert, and aftercare gets sent when somebody remembers. We put the system in place that turns enquiries into long-term patients.',
           slug: 'aesthetic-cosmetic-clinics',
           path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
           nodeType: 'industry-detail',
@@ -11477,25 +11483,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'salon-no-show-reduction-system': {
       industries: [
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Nail Salons — Smart Website Systems | MindWP',
+          title: 'Nail Salons — Stop Losing Bookings to Missed Calls | MindWP',
           description:
-            'Smart Website systems for nail salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For nail salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'nail-salons',
           path: '/industries/beauty-personal-care/nail-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Lash Lift & Extensions — Smart Website Systems | MindWP',
+          title: 'Lash Studios — Stop Losing Bookings and Refills | MindWP',
           description:
-            'Smart Website systems for lash studios that need clearer booking flow, no-show reduction, review automation, and stronger local visibility to fill more appointments.',
+            'For lash studios where calls go to voicemail, refill clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'lash-lift-and-extensions',
           path: '/industries/beauty-personal-care/lash-lift-and-extensions',
           nodeType: 'industry-detail',
@@ -11531,25 +11537,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'salon-review-generation-automation': {
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Hair Salons — Smart Website Systems | MindWP',
+          title: 'Hair Salons — Stop Losing Bookings to Missed Calls and No-Shows | MindWP',
           description:
-            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+            'For hair salons where calls miss the front desk, past clients drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hair-salons',
           path: '/industries/beauty-personal-care/hair-salons',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -11585,25 +11591,25 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'smart-website-infrastructure-implementation': {
       industries: [
         {
-          title: 'HVAC — Smart Website Systems | MindWP',
+          title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+            'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'hvac-companies',
           path: '/industries/home-services/hvac-companies',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
           nodeType: 'industry-detail',
@@ -11639,27 +11645,27 @@ export const AUTHORITY_MAP: AuthorityMap = {
     'storm-season-lead-handling-system': {
       industries: [
         {
-          title: 'Auto Repair — Smart Website Systems | MindWP',
+          title: 'Roofing Companies — Stop Losing Storm-Day Calls and Stalled Quotes | MindWP',
           description:
-            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+            'For roofing companies where storm-day calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair Shops — Stop Losing Calls, Quotes, and Repeat Work | MindWP',
+          description:
+            'For auto repair shops where calls get missed during jobs, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'auto-repair',
           path: '/industries/automotive-services/auto-repair',
           nodeType: 'industry-detail',
         },
         {
-          title: 'Body Shops — Smart Website Systems | MindWP',
+          title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
           description:
-            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+            'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
           slug: 'body-shops',
           path: '/industries/automotive-services/body-shops',
-          nodeType: 'industry-detail',
-        },
-        {
-          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
-          description:
-            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
-          slug: 'mobile-mechanics',
-          path: '/industries/automotive-services/mobile-mechanics',
           nodeType: 'industry-detail',
         },
       ],

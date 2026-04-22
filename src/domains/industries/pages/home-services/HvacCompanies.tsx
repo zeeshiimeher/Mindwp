@@ -1,14 +1,13 @@
 import {
-  Bell,
   Calendar,
   Clock3,
-  MapPinned,
   MessageSquare,
   Search,
+  ShieldCheck,
   Star,
   Thermometer,
+  Wind,
   Workflow,
-  Wrench,
 } from 'lucide-react';
 
 import type { IndustryPageData } from '@/domains/industries/types';
@@ -16,80 +15,70 @@ import type { IndustryPageData } from '@/domains/industries/types';
 function buildHvacCompaniesIndustryPageData(): IndustryPageData {
   const heroData = {
     badge: 'For HVAC Companies',
-    title: 'It’s 32 Degrees. Their Aircon’s Dead. They’ve Already Phoned Two Other Companies.',
+    title: 'A System Goes Down. The Phones Light Up. They Book Whoever Replies First.',
     description:
-      'Heatwave hits, boiler dies in January, the calls don’t stop. Whoever picks up first wins the job. Same with a quoted boiler swap or new install that goes quiet for a week. We put the system in place that catches the urgent calls, follows up the quotes, and brings customers back for service every year.',
-    list: [
-      'Heatwave and cold-snap calls that overflow',
-      'Install quotes nobody chased',
-      'Annual services nobody reminded about',
-      'Reviews that don’t match the workload',
-    ],
+      'HVAC demand comes in waves. When it gets cold or hot, every nearby home and business is calling around. The companies that answer first usually get the work.',
+    list: ['Surge calls', 'Slow callbacks', 'Quiet quotes', 'Few reviews'],
     cssPrefix: 'hvac-companies-hero',
   };
 
   const imageStripData = {
-    badge: 'How HVAC Demand Actually Lands',
-    title: 'A heatwave hits and the phone doesn’t stop for three days',
+    badge: 'How HVAC Work Comes In',
+    title: 'A customer wants someone out as soon as possible',
     description:
-      'No heat in January, no cool air in July, a boiler banging at 9pm. People panic and dial. Whoever answers first usually gets the job — and the annual service for the next ten years.',
+      'A breakdown, a service due, a new install. They want to know if you can come out, what it might cost, and that you will turn up.',
     items: [
       {
-        title: 'Emergency heating and cooling calls',
+        title: 'Breakdown and service enquiries',
         image: '/images/placeholders/service-card-5.svg',
-        alt: 'Abstract placeholder image representing urgent HVAC calls',
+        alt: 'Abstract placeholder image representing HVAC enquiries',
       },
       {
-        title: 'Service and tune-up scheduling',
+        title: 'Site visits and bookings',
         image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing HVAC scheduling',
+        alt: 'Abstract placeholder image representing HVAC site visits',
       },
       {
-        title: 'Install and estimate decisions',
+        title: 'Quotes and approvals',
         image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing HVAC estimate decisions',
+        alt: 'Abstract placeholder image representing HVAC quotes',
       },
       {
-        title: 'Maintenance follow-up',
+        title: 'Reviews and repeat customers',
         image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing HVAC maintenance follow-up',
+        alt: 'Abstract placeholder image representing HVAC reviews',
       },
     ],
     backgroundColor: 'bg-base',
-    cssPrefix: 'hvac-image-strip',
+    cssPrefix: 'hvac-companies-image-strip',
   };
 
   const operatingPatternsData = {
     badge: 'Where The Work Slips',
-    title: 'You’re on the roof. The phone’s ringing. They call the next company.',
-    description: 'Same handful of leaks in nearly every HVAC business. None of them are about the work itself.',
+    title: 'The work is there. The way it gets handled is what loses it.',
     benefits: [
       {
         icon: Thermometer,
-        title: 'Three days of heatwave, twenty missed calls',
-        description:
-          'Half rang somebody else. The other half left it. The team works flat out and still loses jobs.',
+        title: 'When the weather turns, the phones go off all at once',
+        description: 'Most calls go to voicemail. By the next morning the customer has already booked someone else.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'A quoted boiler swap went quiet for two weeks',
-        description:
-          '£5,200 of work. One follow-up text would have closed it. Nobody had time to send it.',
+        title: 'Booking turns into a back and forth',
+        description: 'A simple visit takes too many texts before anything is on the diary.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'Annual services nobody reminded customers about',
-        description:
-          'Hundreds of installs done. The reminder emails were always going to start “next month.”',
+        title: 'Quotes go out and never get chased',
+        description: 'A price gets sent. The customer thinks about it. Nobody follows up.',
         iconType: 'accent' as const,
       },
       {
-        icon: MapPinned,
-        title: 'The company up the road has 600 reviews. You have 41.',
-        description:
-          'Your work is better. Locally you look smaller because nobody was ever asked.',
+        icon: Wind,
+        title: 'Online you look smaller than the work you do',
+        description: 'Plenty of finished jobs. Almost no reviews to show for them.',
         iconType: 'primary' as const,
       },
     ],
@@ -98,63 +87,57 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
 
   const systemLayersData = {
     badge: 'What Gets Put In Place',
-    title: 'A steadier way to catch the calls, close the installs, and bring customers back yearly',
-    description:
-      'Each piece does one job. Together they keep the work moving while the team is on the roof.',
+    title: 'A steadier way to handle every call, visit, and quote',
+    description: 'Each piece does one job. Together they keep work from falling on the floor when the phones go off.',
     featureCategories: [
       {
-        title: 'Catch every call during a heatwave or cold snap',
-        description:
-          'Missed call gets an instant text — “on a job, what’s happening, can call back in 30.” Most stop dialling the next company.',
+        title: 'Catch every call and form',
+        description: 'Calls, missed calls, web forms — all in one place with the address and the issue noted.',
         icon: MessageSquare,
         features: [
-          'Missed-call text-back automatically',
-          'Urgency captured up front',
-          'Holds the lead until you’re free',
+          'Missed calls texted back instantly',
+          'Web enquiries sent to the office and the team lead',
+          'Address and issue captured up front',
         ],
       },
       {
-        title: 'Take the booking without the back-and-forth',
-        description:
-          'For services and tune-ups, customers pick a slot themselves. The office stops being a calendar.',
+        title: 'Get the visit booked without phone tag',
+        description: 'A clear way to offer a slot, confirm it, and remind the customer the day before.',
         icon: Calendar,
         features: [
-          'Online booking for services and tune-ups',
-          'Reminders the day before',
-          'Reschedule link instead of a no-show',
+          'Visit slots people can pick themselves',
+          'Confirmations and reminders sent automatically',
+          'Team sees the address and the issue before they arrive',
         ],
       },
       {
-        title: 'Bring last year’s installs back for service',
-        description:
-          '12-month nudge goes out automatically. Annual services stop falling off the radar.',
-        icon: Bell,
+        title: 'Stop quotes going quiet',
+        description: 'Every quote gets a follow-up on a schedule, even when the team is back on a job.',
+        icon: Workflow,
         features: [
-          'Annual service reminders sent automatically',
-          'Repeat demand without anyone remembering',
-          'Customers feel looked after, not chased',
+          'Quotes chased automatically',
+          'Open quotes in one place',
+          'Old quotes warmed up instead of forgotten',
         ],
       },
       {
-        title: 'Close the install quotes that go quiet',
-        description:
-          'Boiler swap quote sent Monday, automatic check-in Friday, another the week after. Quietly closes more.',
-        icon: Wrench,
+        title: 'Turn finished jobs into proof',
+        description: 'A review request goes out at the right moment so the work shows up online.',
+        icon: ShieldCheck,
         features: [
-          'Quote follow-up at the right intervals',
-          'Pending installs visible in one place',
-          'Closing rate goes up without nagging',
+          'Review requests after every job',
+          'Asked when the customer is happiest',
+          'More reviews where local people search',
         ],
       },
       {
-        title: 'Show up first when local people search',
-        description:
-          'Service pages, Google profile, and reviews lined up so the right area finds you first.',
+        title: 'Show up when local people search',
+        description: 'Service pages and Google profile lined up so you appear when someone nearby needs HVAC help.',
         icon: Search,
         features: [
-          'Service pages for the work and areas you want',
-          'Found on Maps for local searches',
-          'Reviews that catch up to the workload',
+          'Found on Maps for the work you do',
+          'Service pages that match real searches',
+          'Local area coverage that is visible',
         ],
       },
     ],
@@ -163,69 +146,69 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
 
   const comparisonData = {
     badge: 'What Actually Changes',
-    title: 'A heatwave week, before and after',
-    description: 'The work stays. The chasing and the missed calls stop.',
+    title: 'A normal week, before and after',
+    description: 'You still do the work. What changes is the part that used to depend on someone remembering.',
     comparisons: [
       {
         type: 'before' as const,
         title: 'How it runs now',
         items: [
-          'Twenty missed calls in a heatwave week. Half went elsewhere.',
-          'A £5,200 boiler quote went quiet for two weeks. No follow-up sent.',
-          'Last year’s installs never got their annual service nudge.',
-          '“Meant to ask for a review” — said about hundreds of jobs.',
+          'Cold snap. Phones ring all morning. Most go to voicemail. Lost.',
+          'A customer wants a visit. Three texts later, still no time set.',
+          'Quote sent on Monday. By Friday nobody has chased it.',
+          'You finished a great job last week. They never got asked for a review.',
         ],
       },
       {
         type: 'after' as const,
         title: 'How it runs after',
         items: [
-          'Missed calls get an instant text. Most wait the 30 minutes.',
-          'Quotes get followed up automatically. More close, none feel pestered.',
-          'Annual service reminders go out at 12 months. Repeat demand smooths out.',
-          'Every customer gets asked the day after. Reviews catch up to the work.',
+          'Missed call gets a text back inside a minute. They know you will ring back.',
+          'They pick a slot from a link. Confirmed. Reminder fires the day before.',
+          'The quote gets a polite chase the next morning. You can see who is waiting.',
+          'A review request goes out the day you finish. Reviews start stacking quietly.',
         ],
       },
     ],
   };
 
   const pathwaysData = {
-    badge: 'Where Most HVAC Companies Start',
-    title: 'Three stages — most businesses feel one of them more than the others',
-    description: 'Pick whichever costs you the most jobs right now.',
+    badge: 'Where Most Companies Start',
+    title: 'Three stages, most companies feel one more than the others',
+    description: 'You do not have to fix everything at once. Start with whatever is leaking the most work.',
     packages: [
       {
-        name: 'Stop missing the heatwave and cold-snap calls',
-        description: 'For when seasonal call spikes go past the office and the team can’t answer fast enough.',
+        name: 'Stop calls and enquiries going missing',
+        description: 'For when the phones go off and most never get answered.',
         price: 'Stage 1',
-        priceDetail: 'Start here if missed calls during peak weeks is the biggest leak',
+        priceDetail: 'Start here if missed calls are the leak',
         features: [
-          'Missed-call text-back the moment you can’t answer',
-          'Urgent vs scheduled triaged automatically',
-          'Most callers wait instead of dialling the next company',
+          'Missed-call text-back so they know you will ring',
+          'One inbox for calls, forms, and web enquiries',
+          'Address and issue noted before the conversation',
         ],
       },
       {
-        name: 'Close the install quotes that go quiet',
-        description: 'For when boiler swaps and new installs get quoted and you never hear back.',
+        name: 'Get the visit booked the same day',
+        description: 'Once enquiries are caught, this stage takes the friction out of confirming a site visit.',
         price: 'Stage 2',
-        priceDetail: 'Start here if quote-to-install conversion is the leak',
+        priceDetail: 'Start here if booking is where it slows down',
         features: [
-          'Quote follow-ups at the right intervals',
-          'Pending installs visible in one place',
-          'No more “what happened to that boiler quote?”',
+          'Visit slots customers can pick themselves',
+          'Reminders the day before so visits actually happen',
+          'Team sees the job before they arrive',
         ],
         popular: true,
       },
       {
-        name: 'Bring every install back for annual service',
-        description: 'For when last year’s installs never got their service reminder.',
+        name: 'Keep quotes moving and turn jobs into reviews',
+        description: 'For when work comes in fine but quotes go quiet and reviews never get asked for.',
         price: 'Stage 3',
-        priceDetail: 'Start here if repeat-service demand is the weak spot',
+        priceDetail: 'Start here if follow-up and reputation are the weak spots',
         features: [
-          'Annual service reminders sent automatically',
-          'Review requests after every job',
-          'Repeat demand smooths out the seasonal peaks',
+          'Quotes chased automatically',
+          'Past customers nudged for return work',
+          'Review requests at the right moment',
         ],
       },
     ],
@@ -234,47 +217,52 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
   const workflowExamplesData = {
     badge: 'Real Situations',
     title: 'A few moments where the difference shows up',
-    description: 'Small moments on the tools and after, where things used to slip through.',
+    description: 'Small handoffs that used to depend on someone remembering.',
     workflows: [
       {
-        trigger: 'A “no cool air, baby in the house” call comes in during a heatwave.',
+        trigger: 'A cold snap has just hit and the phones are going off.',
         actions: [
-          'Missed call gets an instant text within seconds',
-          'They get told you’re on a job and when you’ll be free',
-          'Most wait. The truly urgent ones get flagged.',
+          'Every missed call gets a text inside a minute',
+          'Each enquiry is logged with the address and the issue',
+          'The team lead sees a clear list of who needs a visit first',
         ],
       },
       {
-        trigger: 'A boiler install quote was sent Monday and went quiet.',
+        trigger: 'A customer needs a visit this week.',
         actions: [
-          'A friendly check-in goes out Friday',
-          'Another a week later if no reply',
-          'Quote-to-install quietly improves',
+          'They pick a slot from a link, no more text tag',
+          'A reminder goes out the day before',
+          'You arrive with the address and the issue already noted',
         ],
       },
       {
-        trigger: 'It’s 12 months since a system was installed.',
+        trigger: 'You sent a quote a few days ago and have not heard back.',
         actions: [
-          'A polite annual service reminder goes out',
-          'Booking link in the same message',
-          'Repeat demand stops depending on memory',
+          'A polite chase goes out automatically',
+          'Open quotes are visible in one place',
+          'If they say yes, the booking happens without another five messages',
         ],
       },
     ],
     backgroundColor: 'bg-base',
-    cssPrefix: 'hvac-workflow-examples',
+    cssPrefix: 'hvac-companies-workflow-examples',
+  };
+
+  const caseStudiesData = {
+    category: 'home-services' as const,
+    title: 'Related Case Studies',
+    description: 'Examples of how the system supports home service businesses in this category.',
+    limit: 2,
   };
 
   const exploreData = {
     badge: 'Related',
-    description:
-      'The other parts of the system that come up most often for HVAC companies trying to stop missing work.',
+    description: 'The other parts of the system that come up most often for HVAC companies.',
     cards: [
       {
         icon: Workflow,
         title: 'Smart Website Systems',
-        description:
-          'See the core system layer that holds HVAC service demand, booking, and follow-up together.',
+        description: 'The core layer that holds enquiry, booking, and follow-up together.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -282,7 +270,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Calendar,
         title: 'Booking & Scheduling System',
-        description: 'Support service booking, reminders, and clearer appointment handling.',
+        description: 'Support visit booking, reminders, and clearer next steps.',
         href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
@@ -290,7 +278,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Search,
         title: 'Local Authority & SEO Systems',
-        description: 'Strengthen emergency and maintenance visibility in local search.',
+        description: 'Strengthen HVAC visibility and local trust.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -298,7 +286,7 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Review Systems',
-        description: 'Turn completed service into reviews and stronger local trust.',
+        description: 'Turn finished jobs into reviews and proof.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -309,38 +297,38 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Things HVAC owners usually ask',
-    description: 'Straight answers about how this fits an HVAC business.',
+    title: 'Things HVAC companies usually ask',
+    description: 'Straight answers about how this fits into a busy HVAC business.',
     faqs: [
       {
-        question: 'The team is on the roof all day. Will this need someone in the office?',
+        question: 'When the weather turns the phones never stop. Will this actually keep up?',
         answer:
-          'No. The whole point is that it runs while the team is working. You’ll see what came in on your phone between calls, but nothing waits on you to operate it.',
+          'That is the part it handles best. Every missed call gets a text back instantly, and every enquiry lands in one place so nothing gets lost in the surge.',
       },
       {
-        question: 'How does the missed-call text-back actually work?',
+        question: 'Will customers feel like they are getting an automated response?',
         answer:
-          'A call comes in during a heatwave week. It rings out. Within seconds the caller gets a text — “on a job, can call back in 30, what’s the issue?” Most stop dialling the next company.',
+          'No. The messages are short and written like you would actually text someone. The aim is to hold the lead until you can ring back.',
       },
       {
-        question: 'Can it bring last year’s installs back for annual service?',
+        question: 'Can it handle quotes for jobs that need a site visit first?',
         answer:
-          'Yes — a polite reminder goes out at 12 months with a booking link. Annual service stops depending on someone in the office remembering.',
+          'Yes. The first reply confirms a visit and the quote follows after the inspection.',
       },
       {
-        question: 'Can it handle quote follow-ups for boiler swaps and new installs?',
+        question: 'Do I have to chase reviews myself?',
         answer:
-          'Yes — friendly check-in messages go out at the right intervals after a quote is sent. Quote-to-install conversion changes noticeably without anybody chasing.',
+          'No. The request goes out on its own after the job is done, when the customer is happiest.',
       },
       {
-        question: 'How do I get more reviews without nagging?',
+        question: 'What about old quotes sitting in the inbox?',
         answer:
-          'A polite request goes out the day after the job, when the heating or cooling is back on. People who would have meant to leave one actually do.',
+          'Those get worked in too. Many HVAC companies find that warming up old quotes brings in real money before any new marketing kicks in.',
       },
       {
-        question: 'Do I need to scrap my current website?',
+        question: 'Do I need a brand new website?',
         answer:
-          'Usually not. We look at what you have first. The leak is normally the bit between the call coming in and the review going up — not the site itself.',
+          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
       },
     ],
   };
@@ -358,14 +346,14 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'home-services',
     seo: {
-      title: 'HVAC Companies — Stop Losing Heatwave Calls, Install Quotes & Annual Services | MindWP',
+      title: 'HVAC Companies — Stop Losing Surge Calls and Stalled Quotes | MindWP',
       description:
-        'For HVAC where heatwave calls overflow, boiler quotes go quiet, and last year’s installs never get their annual service reminder. We put the system in place that catches the calls, closes the installs, and brings customers back yearly.',
+        'For HVAC companies where surge calls go to voicemail, quotes stall, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
       keywords: [
         'hvac website design',
-        'hvac lead generation website',
-        'hvac marketing system',
-        'hvac contractor website system',
+        'hvac booking system',
+        'hvac lead handling system',
+        'hvac seo services',
         'hvac reputation management system',
       ],
       canonical: '/industries/home-services/hvac-companies',
@@ -379,12 +367,13 @@ function buildHvacCompaniesIndustryPageData(): IndustryPageData {
     comparison: comparisonData,
     pathways: pathwaysData,
     workflowExamples: workflowExamplesData,
+    caseStudies: caseStudiesData,
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the work is leaking',
+      title: 'Tell us where the work is slipping',
       description:
-        'If heatwave calls go to voicemail, if install quotes go quiet, or if annual services never get reminded — walk us through how the business runs and we’ll show you the first thing worth fixing.',
+        'If surge calls go to voicemail, quotes stall, or reviews never get asked for, walk us through how the week runs and we will show you the first thing worth fixing.',
     },
   };
 }

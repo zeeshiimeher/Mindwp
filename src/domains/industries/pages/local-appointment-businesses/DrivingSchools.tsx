@@ -14,43 +14,38 @@ import type { IndustryPageData } from '@/domains/industries/types';
 function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
   const heroData = {
     badge: 'For Driving Schools',
-    title: 'A 17-Year-Old Texted Three Driving Schools On TikTok. Whoever Replied With A Slot Got The Block Booking.',
+    title: 'A Learner Wants to Start This Month. They Picked Whoever Replied First.',
     description:
-      'Learners don’t ring round anymore. They DM three schools at 9pm and book whoever sent a calendar link first. We put the system in place that catches the enquiries while you’re teaching, books the first lesson, and stops cancellations from costing you a tank of fuel.',
-    list: [
-      'Enquiries that came in while you were in a lesson',
-      'First lessons that took ten messages to book',
-      'Last-minute cancellations nobody could refill',
-      'Reviews from passes you never asked for',
-    ],
+      'Driving school enquiries arrive while you are mid-lesson. Calls go to voicemail. By the next day the learner has booked another instructor.',
+    list: ['Missed calls', 'Slow replies', 'Lost bookings', 'Few reviews'],
     cssPrefix: 'driving-schools-hero',
   };
 
   const imageStripData = {
-    badge: 'How Learner Enquiries Actually Land',
-    title: 'You’re mid-roundabout when the phone buzzes. They booked someone else by the next lesson.',
+    badge: 'How Learners Come In',
+    title: 'A learner wants to get started or book more lessons',
     description:
-      'Enquiries hit at evenings, weekends, school holidays. You’re in the car teaching. Whoever replies first with a price and a slot wins the block booking.',
+      'A first lesson, a block of lessons, a test ahead. They want to know if you have space, what it costs, and that you will reply.',
     items: [
       {
-        title: 'Lesson and package enquiries',
+        title: 'New learner enquiries',
         image: '/images/placeholders/service-card-5.svg',
         alt: 'Abstract placeholder image representing driving school enquiries',
       },
       {
-        title: 'Scheduling and lesson cadence',
+        title: 'Lesson bookings and reminders',
         image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing driving lesson scheduling',
+        alt: 'Abstract placeholder image representing driving school bookings',
       },
       {
-        title: 'Preparation and next-step guidance',
+        title: 'Test prep and intensive courses',
         image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing driving lesson preparation guidance',
+        alt: 'Abstract placeholder image representing driving school test prep',
       },
       {
-        title: 'Reviews and local proof',
+        title: 'Reviews and referrals',
         image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing driving school reviews and local proof',
+        alt: 'Abstract placeholder image representing driving school reviews',
       },
     ],
     backgroundColor: 'bg-base',
@@ -58,36 +53,31 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Where The Diary Slips',
-    title: 'You’re mid-lesson. The phone buzzes. By the time you reply, they’re booked with someone else.',
-    description: 'Same handful of leaks across nearly every driving school. None of them are about the teaching.',
+    badge: 'Where Learners Slip',
+    title: 'The diary is full but new learners and rebookings slip through',
     benefits: [
       {
         icon: Car,
-        title: 'Three new enquiries came in during a Saturday lesson',
-        description:
-          'You couldn’t check your phone with a learner doing roundabouts. By 5pm, two had booked elsewhere.',
+        title: 'Calls miss while you are mid-lesson',
+        description: 'You are in the car. The phone rings out. The learner books the next instructor.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'Ten DMs to book one first lesson',
-        description:
-          '“What days?” “Where from?” “How much?” The Gen Z learners ghost after three.',
+        title: 'Booking turns into a back and forth',
+        description: 'A simple slot takes too many texts before anything is on the diary.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'A 4pm cancellation cost you the rest of the day',
-        description:
-          'Two-hour gap, half a tank of diesel, no way to fill it. Nobody had time to text the waitlist.',
+        title: 'Past learners drift away',
+        description: 'A learner did a few lessons. Nobody nudged them for the next block.',
         iconType: 'accent' as const,
       },
       {
-        icon: Star,
-        title: 'You pass learners every week. Online you have 18 reviews.',
-        description:
-          'Pass rates speak for themselves — but only if anyone’s asked at the right moment.',
+        icon: ShieldCheck,
+        title: 'Online you look smaller than the work you do',
+        description: 'Plenty of passes. Almost no reviews to show for them.',
         iconType: 'primary' as const,
       },
     ],
@@ -96,63 +86,57 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
 
   const systemLayersData = {
     badge: 'What Gets Put In Place',
-    title: 'A steadier way to catch enquiries while you’re teaching and refill the cancellations',
-    description:
-      'Each piece does one job. Together they keep the diary full while you’re in the passenger seat.',
+    title: 'A steadier way to handle every enquiry, booking, and rebooking',
+    description: 'Each piece does one job. Together they keep the diary full without you chasing.',
     featureCategories: [
       {
-        title: 'Reply to enquiries while you’re in a lesson',
-        description:
-          'DM, form, or missed call lands. An instant reply goes out with price, area covered, and a calendar link. Most stop messaging the next school.',
+        title: 'Catch every call and form',
+        description: 'Calls, missed calls, web forms — all in one place with the learner and the request noted.',
         icon: MessageSquare,
         features: [
-          'Instant acknowledgement on every enquiry',
-          'Price and area covered up front',
-          'Holds the learner until you can reply properly',
+          'Missed calls texted back instantly',
+          'Web enquiries sent to your phone',
+          'Learner and request captured up front',
         ],
       },
       {
-        title: 'Book the first lesson without ten messages',
-        description:
-          'Learners pick a slot themselves. Block bookings paid for online. The DM tennis stops.',
+        title: 'Get the lesson booked without phone tag',
+        description: 'A clear way to offer a slot, confirm it, and remind them the day before.',
         icon: Calendar,
         features: [
-          'Self-serve first lesson booking',
-          'Block bookings paid online',
-          'Reminders the day before',
+          'Slots learners can pick themselves',
+          'Confirmations and reminders sent automatically',
+          'You see the day at a glance',
         ],
       },
       {
-        title: 'Refill the cancellations before they cost you fuel',
-        description:
-          '4pm learner cancels at 3.30. A waitlist text goes out automatically. Most slots get refilled.',
+        title: 'Bring past learners back',
+        description: 'Gentle nudges for the next block of lessons so the diary fills itself.',
         icon: Workflow,
         features: [
-          'Cancellation waitlist text-back',
-          'Reschedule link instead of a no-show',
-          'Diary stays earning while you teach',
+          'Past learners nudged automatically',
+          'Rebookings without you chasing',
+          'Test prep prompts at the right moment',
         ],
       },
       {
-        title: 'Turn passes into reviews and referrals',
-        description:
-          'A polite review request goes out the day after the test pass, when they’re still buzzing.',
+        title: 'Turn passes into proof',
+        description: 'A review request goes out at the right moment so the work shows up online.',
         icon: ShieldCheck,
         features: [
-          'Review requests after every pass',
-          'Asked at the right moment',
-          'Reviews catch up to your pass rate',
+          'Review requests after a pass',
+          'Asked when the learner is happiest',
+          'More reviews where local learners search',
         ],
       },
       {
-        title: 'Show up first when local learners search',
-        description:
-          'Service pages and Google profile lined up so learners in the right area find you first.',
+        title: 'Show up when local learners search',
+        description: 'Service pages and Google profile lined up so you appear when someone nearby looks for an instructor.',
         icon: Search,
         features: [
-          'Pages for the postcodes you actually want',
-          'Found on Maps for local searches',
-          'Less time on enquiries miles away',
+          'Found on Maps for the work you do',
+          'Service pages that match real searches',
+          'Local area coverage that is visible',
         ],
       },
     ],
@@ -162,26 +146,26 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
   const comparisonData = {
     badge: 'What Actually Changes',
     title: 'A normal week, before and after',
-    description: 'The teaching stays. The diary stops haemorrhaging.',
+    description: 'You still do the work. What changes is the part that used to depend on you remembering.',
     comparisons: [
       {
         type: 'before' as const,
         title: 'How it runs now',
         items: [
-          'Three Saturday enquiries went unanswered until evening. Two booked elsewhere.',
-          'Ten DMs to lock down one first lesson.',
-          'A 4pm cancellation killed half the afternoon’s earnings.',
-          '“Meant to ask for a Google review” — said about every test pass.',
+          'Phone rings while you are mid-lesson. Goes to voicemail. Lost.',
+          'A learner wants a slot. Three texts later, still no time set.',
+          'A learner did a few lessons. Nobody nudged them for the next block.',
+          'A learner just passed. They never got asked for a review.',
         ],
       },
       {
         type: 'after' as const,
         title: 'How it runs after',
         items: [
-          'Every enquiry gets an instant reply with a calendar link.',
-          'First lessons booked online without DM tennis.',
-          'Cancellations get refilled from a waitlist automatically.',
-          'Reviews get asked for the day after every pass.',
+          'Missed call gets a text back inside a minute. They know you will reply.',
+          'They pick a slot from a link. Confirmed. Reminder fires the day before.',
+          'A gentle nudge goes out and the next block lands without effort.',
+          'A review request goes out after the pass. Reviews start stacking quietly.',
         ],
       },
     ],
@@ -189,41 +173,41 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
 
   const pathwaysData = {
     badge: 'Where Most Schools Start',
-    title: 'Three stages — most schools feel one of them more than the others',
-    description: 'Pick whichever costs you the most lessons right now.',
+    title: 'Three stages, most schools feel one more than the others',
+    description: 'You do not have to fix everything at once. Start with whatever is leaking the most learners.',
     packages: [
       {
-        name: 'Stop losing the evening enquiries',
-        description: 'For when learners DM at 9pm and book whoever replied first.',
+        name: 'Stop calls and enquiries going missing',
+        description: 'For when you are mid-lesson and new learner calls do not get answered.',
         price: 'Stage 1',
-        priceDetail: 'Start here if first-reply speed is the biggest leak',
+        priceDetail: 'Start here if missed calls are the leak',
         features: [
-          'Instant reply with price and area covered',
-          'Calendar link straight away',
-          'Most learners stop messaging the next school',
+          'Missed-call text-back so they know you will reply',
+          'One inbox for calls, forms, and web enquiries',
+          'Learner and request captured before the conversation',
         ],
       },
       {
-        name: 'Refill the diary without driving for free',
-        description: 'For when first lessons take ten DMs and last-minute cancellations cost you fuel.',
+        name: 'Get the lesson booked the same day',
+        description: 'Once enquiries are caught, this stage takes the friction out of confirming a slot.',
         price: 'Stage 2',
-        priceDetail: 'Start here if booking and cancellations are the leak',
+        priceDetail: 'Start here if booking is where it slows down',
         features: [
-          'Self-serve first lesson booking',
-          'Block bookings paid online',
-          'Cancellation waitlist text-back',
+          'Slots learners can pick themselves',
+          'Reminders the day before so lessons actually happen',
+          'You see the day at a glance',
         ],
         popular: true,
       },
       {
-        name: 'Build the local proof that fills the diary on its own',
-        description: 'For when pass rate is great but the school looks small online.',
+        name: 'Bring past learners back and turn passes into reviews',
+        description: 'For when the diary is fine but past learners drift away and reviews never get asked for.',
         price: 'Stage 3',
-        priceDetail: 'Start here if reviews and area visibility are the weak spot',
+        priceDetail: 'Start here if rebookings and reputation are the weak spots',
         features: [
-          'Review requests after every pass',
-          'Pages for the postcodes you want',
-          'Less time on enquiries miles away',
+          'Past learners nudged automatically',
+          'Test prep prompts at the right moment',
+          'Review requests after a pass',
         ],
       },
     ],
@@ -232,30 +216,30 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
   const workflowExamplesData = {
     badge: 'Real Situations',
     title: 'A few moments where the difference shows up',
-    description: 'Small moments in the week of an instructor where the diary used to leak.',
+    description: 'Small handoffs that used to depend on you remembering.',
     workflows: [
       {
-        trigger: 'A learner DMs on Instagram at 9pm.',
+        trigger: 'You are mid-lesson and a new enquiry call rings out.',
         actions: [
-          'Instant reply goes out with price, area, and calendar link',
-          'They book a first lesson without messaging again',
-          'They stop DMing the other two schools',
+          'They get a text inside a minute saying you will reply',
+          'The text captures the learner and the request',
+          'The lead is held instead of going to the next instructor',
         ],
       },
       {
-        trigger: 'A 4pm learner cancels at 3.30.',
+        trigger: 'A learner wants their next lesson booked.',
         actions: [
-          'A waitlist text goes out automatically',
-          'Someone snaps the slot up',
-          'Half-day of earnings saved',
+          'They pick a slot from a link, no more text tag',
+          'A reminder goes out the day before',
+          'You see the day at a glance',
         ],
       },
       {
-        trigger: 'A learner passed the test on Wednesday morning.',
+        trigger: 'A past learner is overdue for the next block.',
         actions: [
-          'A polite review request goes out Thursday',
-          'They’re still buzzing — they leave a 5-star',
-          'Review count quietly catches up to the pass rate',
+          'A gentle nudge goes out automatically',
+          'They book again without you chasing',
+          'The diary keeps filling without extra marketing',
         ],
       },
     ],
@@ -266,21 +250,18 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
   const caseStudiesData = {
     category: 'local-appointment-businesses' as const,
     title: 'Related Case Studies',
-    description:
-      'Examples of how the system supports local appointment businesses in this category.',
+    description: 'Examples of how the system supports local appointment businesses in this category.',
     limit: 2,
   };
 
   const exploreData = {
     badge: 'Related',
-    description:
-      'The other parts of the system that come up most often for driving schools.',
+    description: 'The other parts of the system that come up most often for driving schools.',
     cards: [
       {
         icon: Workflow,
         title: 'Smart Website Systems',
-        description:
-          'See the core system layer that holds learner enquiry, booking flow, and follow-up together.',
+        description: 'The core layer that holds enquiry, booking, and follow-up together.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -288,7 +269,7 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
       {
         icon: Calendar,
         title: 'Booking & Scheduling System',
-        description: 'Support lessons, reminders, and clearer next-step handling.',
+        description: 'Support lesson booking, reminders, and clearer next steps.',
         href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
@@ -296,7 +277,7 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
       {
         icon: Search,
         title: 'Local Authority & SEO Systems',
-        description: 'Strengthen area visibility, local credibility, and learner discovery.',
+        description: 'Strengthen instructor visibility and local trust.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -304,7 +285,7 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Review Systems',
-        description: 'Turn completed learner journeys into stronger proof and review flow.',
+        description: 'Turn passes into reviews and proof.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -315,38 +296,38 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Things instructors usually ask',
-    description: 'Straight answers about how this fits a driving school.',
+    title: 'Things driving schools usually ask',
+    description: 'Straight answers about how this fits into a busy instructor diary.',
     faqs: [
       {
-        question: 'I’m in the car teaching all day. Will this need someone in the office?',
+        question: 'I am in the car most of the day. How much extra work is this?',
         answer:
-          'No. The whole point is it runs while you’re in lessons. You’ll see what came in on your phone between sessions, but nothing waits on you to operate it.',
+          'Almost none after setup. Missed calls get answered by text on their own. Reminders fire by themselves. Rebooking nudges go out automatically.',
       },
       {
-        question: 'How does the missed-call/DM text-back work?',
+        question: 'Will learners feel like they are getting an automated response?',
         answer:
-          'A learner messages while you’re mid-lesson. Within seconds they get an instant reply with price, area covered, and a calendar link. Most stop messaging the next school.',
+          'No. The messages are short and written like you would actually text someone. The aim is to hold the lead until you can reply.',
       },
       {
-        question: 'Will it work for a single instructor or only larger schools?',
+        question: 'Can it handle blocks of lessons and intensive courses?',
         answer:
-          'Both. For a single instructor it’s about catching evening enquiries and refilling cancellations. For a larger school it’s about routing enquiries to the right instructor and area.',
+          'Yes. The first reply confirms a first lesson or sets up the block, depending on how you usually work.',
       },
       {
-        question: 'Can it really refill last-minute cancellations?',
+        question: 'Do I have to chase reviews myself?',
         answer:
-          'Yes — a waitlist text goes out automatically when a slot opens. Most refill before the end of the day. Saves the fuel and the dead time.',
+          'No. The request goes out on its own after a pass, when the learner is happiest.',
       },
       {
-        question: 'How do I get more reviews without nagging?',
+        question: 'What about learners we have not seen in a while?',
         answer:
-          'A polite request goes out the day after the test pass, when learners are still buzzing. People who would have meant to leave one actually do.',
+          'They get gentle nudges so the next block happens without effort.',
       },
       {
-        question: 'Do I need to scrap my current website?',
+        question: 'Do I need a brand new website?',
         answer:
-          'Usually not. We look at what you have first. The leak is normally the bit between the enquiry coming in and the lesson booked — not the site itself.',
+          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
       },
     ],
   };
@@ -364,15 +345,15 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'local-appointment-businesses',
     seo: {
-      title: 'Driving Schools — Stop Losing Evening Enquiries, First Lessons & Last-Minute Cancellations | MindWP',
+      title: 'Driving Schools — Stop Losing Bookings to Missed Calls and Slow Replies | MindWP',
       description:
-        'For driving instructors and schools where learners DM three schools and book whoever replied first, where ten DMs barely get one lesson booked, and where last-minute cancellations cost a tank of fuel. We put the system in place that keeps the diary full.',
+        'For driving schools where calls go to voicemail mid-lesson, learners drift away, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
       keywords: [
         'driving school website design',
-        'driving lesson booking workflow',
+        'driving school booking system',
         'driving school lead handling system',
         'driving school seo services',
-        'driving school review system',
+        'driving school reputation management system',
       ],
       canonical: '/industries/local-appointment-businesses/driving-schools',
     },
@@ -389,12 +370,11 @@ function buildDrivingSchoolsIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the diary is leaking',
+      title: 'Tell us where bookings are slipping',
       description:
-        'If evening enquiries go unanswered, if first lessons take ten DMs, or if cancellations cost you fuel — walk us through how the school runs and we’ll show you the first thing worth fixing.',
+        'If calls go to voicemail mid-lesson, learners drift away, or reviews never get asked for, walk us through how the week runs and we will show you the first thing worth fixing.',
     },
   };
 }
 
-export const drivingSchoolsIndustryPageData: IndustryPageData =
-  buildDrivingSchoolsIndustryPageData();
+export const drivingSchoolsIndustryPageData: IndustryPageData = buildDrivingSchoolsIndustryPageData();

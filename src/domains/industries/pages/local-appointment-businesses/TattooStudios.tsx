@@ -1,8 +1,9 @@
 import {
+  Brush,
   Calendar,
   Clock3,
   MessageSquare,
-  PenTool,
+  Palette,
   Search,
   ShieldCheck,
   Star,
@@ -14,43 +15,38 @@ import type { IndustryPageData } from '@/domains/industries/types';
 function buildTattooStudiosIndustryPageData(): IndustryPageData {
   const heroData = {
     badge: 'For Tattoo Studios',
-    title: 'A £400 Sleeve DM Came In At 11pm. By Morning, Three Other Studios Had Already Replied.',
+    title: 'A Client Wants a Consultation Soon. They Picked Whoever Replied First.',
     description:
-      'Tattoo decisions happen on Instagram at midnight. People DM three studios with reference images and book whoever replied first with a price and a date. We put the system in place that catches the DMs while you’re tattooing, takes the deposit so the chair doesn’t sit empty, and stops Sunday no-shows from killing the day rate.',
-    list: [
-      'DMs that came in while you were tattooing',
-      'Quote conversations that took 20 messages',
-      'Deposits that never quite got paid',
-      'Reviews from finished pieces you never asked for',
-    ],
+      'Tattoo enquiries arrive while you are tattooing. The phone rings out. The client books the next studio.',
+    list: ['Slow replies', 'Lost consultations', 'No deposit', 'Few reviews'],
     cssPrefix: 'tattoo-studios-hero',
   };
 
   const imageStripData = {
-    badge: 'How Tattoo Enquiries Actually Land',
-    title: 'Reference image lands at 11pm. They DM’d three studios. Whoever replied first wins.',
+    badge: 'How Clients Come In',
+    title: 'A client wants a consultation about a piece',
     description:
-      'Instagram DMs at evenings and weekends. Reference photos. “How much for this on the forearm?” The decision happens in 24 hours.',
+      'A new piece, a cover-up, a touch-up. They want to know if you can do it, what it might cost, and that the studio will reply.',
     items: [
       {
-        title: 'Style and fit enquiries',
+        title: 'New client enquiries',
         image: '/images/placeholders/service-card-5.svg',
-        alt: 'Abstract placeholder image representing tattoo consultation enquiries',
+        alt: 'Abstract placeholder image representing tattoo studio enquiries',
       },
       {
-        title: 'Consultation and booking timing',
+        title: 'Consultations and deposits',
         image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing tattoo booking timing',
+        alt: 'Abstract placeholder image representing tattoo studio consultations',
       },
       {
-        title: 'Preparation and next-step guidance',
+        title: 'Bookings and reminders',
         image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing tattoo preparation guidance',
+        alt: 'Abstract placeholder image representing tattoo studio bookings',
       },
       {
-        title: 'Reviews and credibility proof',
+        title: 'Reviews and referrals',
         image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing tattoo reviews and credibility',
+        alt: 'Abstract placeholder image representing tattoo studio reviews',
       },
     ],
     backgroundColor: 'bg-base',
@@ -58,36 +54,31 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
   };
 
   const operatingPatternsData = {
-    badge: 'Where The Chair Sits Empty',
-    title: 'You’re mid-piece. The DMs pile up. By the time you reply, they’re booked elsewhere.',
-    description: 'Same handful of leaks across nearly every tattoo studio. None of them are about the artwork.',
+    badge: 'Where Bookings Slip',
+    title: 'The chair is full but new clients and consultations slip through',
     benefits: [
       {
-        icon: PenTool,
-        title: 'Six DMs piled up while you tattooed a back piece',
-        description:
-          'You couldn’t answer mid-shading. Three booked with the studio across town by Sunday.',
+        icon: Brush,
+        title: 'Enquiries arrive while you are tattooing',
+        description: 'You are mid-piece. The phone rings out. The client books the next studio.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'A sleeve quote took 20 messages back and forth',
-        description:
-          '“How much?” “How many sessions?” “What date?” The client lost patience around message twelve.',
+        title: 'Consultations take days to arrange',
+        description: 'A simple consultation takes too many messages before anything is on the diary.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'A Saturday client no-showed. £400 day gone.',
-        description:
-          'No deposit taken. The chair sat empty. The artist sat scrolling.',
+        title: 'Deposits go quiet',
+        description: 'A consultation went well. The deposit never came. Nobody followed up.',
         iconType: 'accent' as const,
       },
       {
-        icon: Star,
-        title: 'You do incredible work. The studio down the road has 300 reviews. You have 32.',
-        description:
-          'Your portfolio is better. Online you look smaller because nobody asked at the right moment.',
+        icon: Palette,
+        title: 'Online you look smaller than the work you do',
+        description: 'Plenty of finished pieces. Almost no reviews to show for them.',
         iconType: 'primary' as const,
       },
     ],
@@ -96,74 +87,57 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
 
   const systemLayersData = {
     badge: 'What Gets Put In Place',
-    title: 'A steadier way to catch the DMs and make sure the chair doesn’t sit empty',
-    description:
-      'Each piece does one job. Together they keep the diary booked and the deposit in the bank.',
+    title: 'A steadier way to handle every enquiry, consultation, and booking',
+    description: 'Each piece does one job. Together they keep the chair full without you chasing.',
     featureCategories: [
       {
-        title: 'Reply to DMs while you’re tattooing',
-        description:
-          'DM lands at 11pm. Instant reply asks for reference, size, placement — then sends a price band and a calendar link. Most stop messaging the next studio.',
+        title: 'Catch every call and form',
+        description: 'Calls, missed calls, web forms — all in one place with the client and the piece noted.',
         icon: MessageSquare,
         features: [
-          'Instant reply on every DM and form',
-          'Price band sent up front',
-          'Holds the client until you can quote properly',
+          'Missed calls texted back instantly',
+          'Web enquiries sent to the studio',
+          'Client and piece captured up front',
         ],
       },
       {
-        title: 'Take the deposit when they book',
-        description:
-          'Calendar link goes out with a deposit-to-confirm built in. No deposit, no booking. The chair stops sitting empty.',
+        title: 'Get the consultation booked without phone tag',
+        description: 'A clear way to offer a slot, confirm it, and remind them the day before.',
         icon: Calendar,
         features: [
-          'Self-serve booking with deposit-to-confirm',
-          'Reminders the day before',
-          'No-shows drop sharply',
+          'Consultation slots clients can pick themselves',
+          'Confirmations and reminders sent automatically',
+          'Studio sees the day at a glance',
         ],
       },
       {
-        title: 'Convert the people sitting in the maybe pile',
-        description:
-          'Quote went out two weeks ago, no reply? Polite check-in goes out automatically. A meaningful share book back in.',
+        title: 'Stop deposits going quiet',
+        description: 'Every consultation gets a follow-up on a schedule, even when the chair is busy.',
         icon: Workflow,
         features: [
-          'Follow-up at sensible intervals',
-          'Pending quotes visible in one place',
-          'Conversion goes up without anybody chasing',
+          'Deposit reminders sent automatically',
+          'Open consultations in one place',
+          'Old enquiries warmed up instead of forgotten',
         ],
       },
       {
-        title: 'Send aftercare without typing it out',
-        description:
-          'Aftercare instructions go out automatically the night of the session. Less re-explaining, fewer touch-up requests.',
+        title: 'Turn finished pieces into proof',
+        description: 'A review request goes out at the right moment so the work shows up online.',
         icon: ShieldCheck,
         features: [
-          'Aftercare sent automatically',
-          'Pre-session preparation included',
-          'Less time on repetitive admin',
+          'Review requests after a piece',
+          'Asked when the client is happiest',
+          'More reviews where local people search',
         ],
       },
       {
-        title: 'Turn finished pieces into reviews and referrals',
-        description:
-          'A polite review request goes out a week after healing, when the piece looks its best.',
-        icon: Star,
-        features: [
-          'Review requests timed for healed work',
-          'Asked when clients are happiest',
-          'Reviews catch up to the portfolio',
-        ],
-      },
-      {
-        title: 'Show up first when local people search for an artist',
-        description:
-          'Service pages and Google profile lined up so people in the right area find you first.',
+        title: 'Show up when local people search',
+        description: 'Service pages and Google profile lined up so you appear when someone nearby looks for a studio.',
         icon: Search,
         features: [
-          'Pages for the styles you actually do',
-          'Found on Maps for local searches',
-          'Less time on enquiries that aren’t a fit',
+          'Found on Maps for the work you do',
+          'Service pages that match real searches',
+          'Local area coverage that is visible',
         ],
       },
     ],
@@ -173,26 +147,26 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
   const comparisonData = {
     badge: 'What Actually Changes',
     title: 'A normal week, before and after',
-    description: 'The artwork stays. The chair stops sitting empty.',
+    description: 'You still do the work. What changes is the part that used to depend on someone remembering.',
     comparisons: [
       {
         type: 'before' as const,
         title: 'How it runs now',
         items: [
-          'Six DMs piled up while you tattooed. Three booked elsewhere.',
-          'Sleeve quotes took 20 messages and the client lost patience.',
-          'Saturday client no-showed. £400 day gone, no deposit taken.',
-          '“Meant to ask for a Google review” — said about every back piece.',
+          'Phone rings while you are tattooing. Goes to voicemail. Lost.',
+          'A client wants a consultation. Three messages later, still no time set.',
+          'A consultation went well last week. The deposit never came.',
+          'You finished a great piece last week. They never got asked for a review.',
         ],
       },
       {
         type: 'after' as const,
         title: 'How it runs after',
         items: [
-          'Every DM gets an instant reply with a price band and a calendar link.',
-          'Bookings come with a deposit. No-shows drop sharply.',
-          'Pending quotes followed up at sensible intervals.',
-          'Reviews get asked for once the piece has healed.',
+          'Missed call gets a text back inside a minute. They know the studio will reply.',
+          'They pick a slot from a link. Confirmed. Reminder fires the day before.',
+          'A polite reminder goes out about the deposit. You can see who is still deciding.',
+          'A review request goes out after the piece. Reviews start stacking quietly.',
         ],
       },
     ],
@@ -200,41 +174,41 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
 
   const pathwaysData = {
     badge: 'Where Most Studios Start',
-    title: 'Three stages — most studios feel one of them more than the others',
-    description: 'Pick whichever costs you the most chair time right now.',
+    title: 'Three stages, most studios feel one more than the others',
+    description: 'You do not have to fix everything at once. Start with whatever is leaking the most clients.',
     packages: [
       {
-        name: 'Stop losing the late-night DMs',
-        description: 'For when DMs pile up while you tattoo and clients book the studio across town.',
+        name: 'Stop calls and enquiries going missing',
+        description: 'For when you are tattooing and quick enquiries sit unread.',
         price: 'Stage 1',
-        priceDetail: 'Start here if first-reply speed is the biggest leak',
+        priceDetail: 'Start here if missed calls are the leak',
         features: [
-          'Instant reply on every DM and form',
-          'Price band and calendar link up front',
-          'Most stop messaging the next studio',
+          'Missed-call text-back so they know you will reply',
+          'One inbox for calls, forms, and web enquiries',
+          'Client and piece captured before the conversation',
         ],
       },
       {
-        name: 'Stop the no-shows from killing the day rate',
-        description: 'For when Saturday no-shows cost £400 because no deposit was taken.',
+        name: 'Get the consultation booked the same week',
+        description: 'Once enquiries are caught, this stage takes the friction out of confirming a consultation.',
         price: 'Stage 2',
-        priceDetail: 'Start here if no-shows and deposits are the leak',
+        priceDetail: 'Start here if booking is where it slows down',
         features: [
-          'Self-serve booking with deposit-to-confirm',
-          'Aftercare sent automatically',
-          'Reminders the day before',
+          'Consultation slots clients can pick themselves',
+          'Reminders the day before so consultations actually happen',
+          'Studio sees the day at a glance',
         ],
         popular: true,
       },
       {
-        name: 'Build the local proof and convert the maybes',
-        description: 'For when your portfolio is incredible but the studio looks small online.',
+        name: 'Keep deposits moving and turn pieces into reviews',
+        description: 'For when consultations come in fine but deposits go quiet and reviews never get asked for.',
         price: 'Stage 3',
-        priceDetail: 'Start here if reviews and pending quotes are the weak spot',
+        priceDetail: 'Start here if follow-up and reputation are the weak spots',
         features: [
-          'Follow-up sequences for pending quotes',
-          'Review requests timed for healed work',
-          'Pages for the styles you actually do',
+          'Deposit reminders sent automatically',
+          'Past clients nudged back in',
+          'Review requests at the right moment',
         ],
       },
     ],
@@ -243,30 +217,30 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
   const workflowExamplesData = {
     badge: 'Real Situations',
     title: 'A few moments where the difference shows up',
-    description: 'Small moments in the studio where things used to slip through.',
+    description: 'Small handoffs that used to depend on you remembering.',
     workflows: [
       {
-        trigger: 'A DM with a reference image lands at 11pm.',
+        trigger: 'You are tattooing and a new enquiry call rings out.',
         actions: [
-          'Instant reply asks for size, placement, timing',
-          'Price band and calendar link sent automatically',
-          'They stop DMing the next studio',
+          'They get a text inside a minute saying the studio will reply',
+          'The text captures the client and the piece',
+          'The lead is held instead of going to the next studio',
         ],
       },
       {
-        trigger: 'A client books a Saturday session.',
+        trigger: 'A client wants a consultation this week.',
         actions: [
-          'Deposit-to-confirm built into the booking',
-          'Reminder sent the day before',
-          'No-shows drop sharply',
+          'They pick a slot from a link, no more text tag',
+          'A reminder goes out the day before',
+          'You see the day at a glance',
         ],
       },
       {
-        trigger: 'A back piece is finished and healing.',
+        trigger: 'A consultation went well and the deposit has not come in.',
         actions: [
-          'Aftercare goes out the night of the session',
-          'Review request goes out a week later when it looks its best',
-          'Review count quietly catches up to the portfolio',
+          'A polite reminder goes out automatically',
+          'Open consultations are visible in one place',
+          'If they pay, the booking is locked in without another five messages',
         ],
       },
     ],
@@ -277,21 +251,18 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
   const caseStudiesData = {
     category: 'local-appointment-businesses' as const,
     title: 'Related Case Studies',
-    description:
-      'Examples of how the system supports local appointment businesses in this category.',
+    description: 'Examples of how the system supports local appointment businesses in this category.',
     limit: 2,
   };
 
   const exploreData = {
     badge: 'Related',
-    description:
-      'The other parts of the system that come up most often for tattoo studios.',
+    description: 'The other parts of the system that come up most often for tattoo studios.',
     cards: [
       {
         icon: Workflow,
         title: 'Smart Website Systems',
-        description:
-          'See the core system layer that holds tattoo enquiry, booking flow, and follow-up together.',
+        description: 'The core layer that holds enquiry, booking, and follow-up together.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -299,7 +270,7 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
       {
         icon: Calendar,
         title: 'Booking & Scheduling System',
-        description: 'Support consultations, reminders, and clearer next-step handling.',
+        description: 'Support consultation booking, reminders, and clearer next steps.',
         href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
@@ -307,7 +278,7 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
       {
         icon: Search,
         title: 'Local Authority & SEO Systems',
-        description: 'Strengthen area visibility, local credibility, and artist-led discovery.',
+        description: 'Strengthen studio visibility and local trust.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -315,7 +286,7 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Review Systems',
-        description: 'Turn completed sessions into stronger proof and review flow.',
+        description: 'Turn finished pieces into reviews and proof.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -326,38 +297,38 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
   };
 
   const faqData = {
-    title: 'Things studio owners usually ask',
-    description: 'Straight answers about how this fits a tattoo studio.',
+    title: 'Things tattoo studios usually ask',
+    description: 'Straight answers about how this fits into a busy studio.',
     faqs: [
       {
-        question: 'I’m tattooing all day. Will this need someone on the front desk?',
+        question: 'I am tattooing most of the day. How much extra work is this?',
         answer:
-          'No. The whole point is it runs while you’re tattooing. Instant DM replies, deposit-to-book, aftercare, review requests — all automatic. You handle the actual artwork.',
+          'Almost none after setup. Missed calls get answered by text on their own. Deposit reminders go out on a schedule. Booking reminders fire by themselves.',
       },
       {
-        question: 'How does the deposit-to-book actually work?',
+        question: 'Will clients feel like they are getting an automated response?',
         answer:
-          'When a client books a session, the calendar link includes a deposit payment. No deposit, no confirmed slot. The chair stops sitting empty on Saturdays.',
+          'No. The messages are short and written like the studio would actually text someone. The aim is to hold the lead until you can reply.',
       },
       {
-        question: 'Will it work alongside my booking software (Setmore, Square, etc)?',
+        question: 'Can it handle pieces that need a consultation first?',
         answer:
-          'Yes. It sits in front of whatever you use. The system improves the bit between the DM coming in and the deposit landing in the bank.',
+          'Yes. The first reply confirms a consultation and the booking follows after the deposit.',
       },
       {
-        question: 'Can it really stop the late-night DMs from going to other studios?',
+        question: 'Do we have to chase reviews ourselves?',
         answer:
-          'Yes — an instant reply with a price band and a calendar link goes out the moment a DM lands. Most clients stop messaging the next studio.',
+          'No. The request goes out on its own after the piece, when the client is happiest.',
       },
       {
-        question: 'How do I get more reviews without nagging?',
+        question: 'What about consultations sitting without deposits?',
         answer:
-          'A polite request goes out a week after the session, when the piece is healing nicely. People who would have meant to leave one actually do.',
+          'Those get worked in too. Many studios find that warming up old consultations brings in real bookings before any new marketing kicks in.',
       },
       {
-        question: 'Do I need to scrap my current website?',
+        question: 'Do we need a brand new website?',
         answer:
-          'Usually not. We look at what you have first. The leak is normally the bit between the DM and the deposit in the bank — not the site itself.',
+          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
       },
     ],
   };
@@ -375,15 +346,15 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'local-appointment-businesses',
     seo: {
-      title: 'Tattoo Studios — Stop Losing Late-Night DMs, Deposits & Saturday Slots | MindWP',
+      title: 'Tattoo Studios — Stop Losing Consultations and Deposits | MindWP',
       description:
-        'For tattoo studios where DMs pile up while you tattoo, where Saturday no-shows cost £400 because no deposit was taken, and where the studio across town has 10x the reviews. We put the system in place that catches them.',
+        'For tattoo studios where calls go to voicemail mid-piece, deposits go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
       keywords: [
         'tattoo studio website design',
-        'tattoo consultation booking workflow',
-        'tattoo lead handling system',
+        'tattoo studio booking system',
+        'tattoo studio lead handling system',
         'tattoo studio seo services',
-        'tattoo review system',
+        'tattoo studio reputation management system',
       ],
       canonical: '/industries/local-appointment-businesses/tattoo-studios',
     },
@@ -400,9 +371,9 @@ function buildTattooStudiosIndustryPageData(): IndustryPageData {
     explore: exploreData,
     faq: faqData,
     cta: {
-      title: 'Tell us where the chair is sitting empty',
+      title: 'Tell us where bookings are slipping',
       description:
-        'If late-night DMs go unanswered, if Saturday no-shows kill the day rate, or if pending quotes never close — walk us through how the studio runs and we’ll show you the first thing worth fixing.',
+        'If calls go to voicemail mid-piece, deposits go quiet, or reviews never get asked for, walk us through how the week runs and we will show you the first thing worth fixing.',
     },
   };
 }

@@ -15,44 +15,38 @@ import type { IndustryPageData } from '@/domains/industries/types';
 function buildBodyShopsIndustryPageData(): IndustryPageData {
   const heroData = {
     badge: 'For Body Shops',
-    title: 'They Send Photos. You Send a Quote. Then Nothing.',
+    title: 'They Sent a Photo of the Damage. Two Days Later They Booked Elsewhere.',
     description:
-      'Someone’s had a knock. They want to know what it’ll cost and how soon you can take the car. The first hour matters — by the next day they’re ringing the next shop. Most body shops don’t lose work on price. They lose it because nobody chased the estimate or replied fast enough.',
-    list: [
-      'Photos sent, no reply for hours',
-      'Estimates that go cold',
-      'Insurance jobs that stall',
-      'Reviews that never get asked for',
-    ],
+      'Body shop enquiries arrive after an accident. The driver wants to know if you can take a look, what it might cost, and how soon. The shop that replies first usually wins the job.',
+    list: ['Slow replies', 'Quiet quotes', 'Lost bookings', 'Few reviews'],
     cssPrefix: 'body-shops-hero',
   };
 
   const imageStripData = {
-    badge: 'How Body Work Comes In',
-    title:
-      'Most body shop enquiries arrive with a few phone photos and one big question — can you sort it, and how much?',
+    badge: 'How Repair Work Comes In',
+    title: 'A driver wants someone to look at the damage',
     description:
-      'Insurance claims, kerbed alloys, supermarket dings, full panel work. People are usually frustrated, sometimes shaken, and almost always shopping at two or three other shops at the same time. Speed and clarity decide who they bring the car to.',
+      'A bumper, a panel, a scrape from the car park. They want to know if you can help, what it might cost, and that the car will look right again.',
     items: [
       {
-        title: 'Damage and repair enquiries',
+        title: 'Damage photos and enquiries',
         image: '/images/placeholders/service-card-5.svg',
-        alt: 'Abstract placeholder image representing body shop damage enquiries',
+        alt: 'Abstract placeholder image representing body shop enquiries',
       },
       {
-        title: 'Assessment and estimate steps',
+        title: 'Estimates and approvals',
         image: '/images/placeholders/service-card-6.svg',
-        alt: 'Abstract placeholder image representing body shop estimate flow',
+        alt: 'Abstract placeholder image representing body shop estimates',
       },
       {
-        title: 'Booking and repair coordination',
+        title: 'Booking and drop-off',
         image: '/images/placeholders/service-card-7.svg',
-        alt: 'Abstract placeholder image representing body shop booking coordination',
+        alt: 'Abstract placeholder image representing body shop booking',
       },
       {
-        title: 'Reviews and handoff follow-up',
+        title: 'Reviews and return visits',
         image: '/images/placeholders/service-card-8.svg',
-        alt: 'Abstract placeholder image representing body shop reviews and handoff follow-up',
+        alt: 'Abstract placeholder image representing body shop reviews',
       },
     ],
     backgroundColor: 'bg-base',
@@ -61,36 +55,30 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
 
   const operatingPatternsData = {
     badge: 'Where The Work Slips',
-    title: 'Good repairs going out. Decent leads going cold.',
-    description:
-      'It’s not the workshop. It’s the bit before and after — photos sat in an inbox, quotes nobody chased, insurance jobs that hit a wall halfway through.',
+    title: 'The work is there. The way enquiries get handled is what loses it.',
     benefits: [
       {
         icon: Car,
-        title: 'Damage photos land in an inbox nobody opens until tonight',
-        description:
-          'They sent the pictures at lunch. By the time someone replies, they’ve already had two other quotes back.',
+        title: 'A photo comes in and sits unread',
+        description: 'The driver sent a picture of the damage. By the time you see it, they have already messaged another shop.',
         iconType: 'primary' as const,
       },
       {
         icon: Calendar,
-        title: 'Trying to book an assessment turns into seven texts',
-        description:
-          'They want to drop the car. Your team is busy. The slot doesn’t get confirmed for two days.',
+        title: 'Estimates take days to send',
+        description: 'A simple ballpark price takes too long because the estimator is in the workshop.',
         iconType: 'secondary' as const,
       },
       {
         icon: Clock3,
-        title: 'The estimate goes out. The job sits at “thinking about it”.',
-        description:
-          'No follow-up. No nudge. The customer either rings back themselves or quietly goes elsewhere.',
+        title: 'Quotes go out and never get chased',
+        description: 'A price gets sent. The driver thinks about it. Nobody follows up.',
         iconType: 'accent' as const,
       },
       {
         icon: MapPinned,
-        title: 'Five years of great paintwork. Eleven Google reviews.',
-        description:
-          'You know the work is good. Online, the next shop along looks busier just because they ask people for reviews.',
+        title: 'Online you look smaller than the work you do',
+        description: 'You finish good repairs every week. Online there are barely any reviews to show for it.',
         iconType: 'primary' as const,
       },
     ],
@@ -99,63 +87,57 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
 
   const systemLayersData = {
     badge: 'What Gets Put In Place',
-    title: 'A steadier way to handle every photo, quote, and follow-up',
-    description:
-      'Each piece does one job. Together they make sure repair work doesn’t quietly slip to the shop down the road while your team is in the booth.',
+    title: 'A steadier way to handle every enquiry, estimate, and finished repair',
+    description: 'Each piece does one job. Together they keep work from slipping while the team is in the workshop.',
     featureCategories: [
       {
-        title: 'Catch every enquiry, even when the team is spraying',
-        description:
-          'Photos, calls, web forms — all land in one place with the damage and the customer’s details already attached.',
+        title: 'Catch every call, photo, and form',
+        description: 'Calls, missed calls, web forms, photos — all in one place with the car and the damage noted.',
         icon: MessageSquare,
         features: [
-          'Missed calls texted back inside a minute',
-          'Photos saved against the right enquiry',
-          'Insurance vs. private clearly tagged',
+          'Missed calls texted back instantly',
+          'Photos and forms land in one inbox',
+          'Vehicle and damage noted up front',
         ],
       },
       {
-        title: 'Get the assessment booked the same day',
-        description:
-          'A clear way to offer a drop-off slot, confirm it, and remind them the day before so cars actually turn up.',
+        title: 'Get the estimate out the same day',
+        description: 'A clear way to send a ballpark, confirm a visit, and keep the conversation moving.',
         icon: Calendar,
         features: [
-          'Drop-off slots customers can pick',
-          'Reminders the day before',
-          'Front desk knows what’s booked in',
+          'First reply goes out fast',
+          'Visit slots customers can pick themselves',
+          'Reminders sent automatically',
         ],
       },
       {
-        title: 'Stop quotes from going cold',
-        description:
-          'Every estimate gets a polite chase on a schedule. Insurance jobs get nudged through their stages.',
+        title: 'Stop quotes going quiet',
+        description: 'Every quote gets a follow-up on a schedule, even when the team is flat out.',
         icon: Workflow,
         features: [
-          'Quotes followed up automatically',
-          'A live list of jobs sitting on a yes/no',
+          'Quotes chased automatically',
+          'Open quotes in one place',
           'Old quotes warmed up instead of forgotten',
         ],
       },
       {
-        title: 'Turn finished cars into proof you can show',
-        description:
-          'After a job goes out, a review request fires at the right moment. Your reputation catches up to the work.',
+        title: 'Turn finished repairs into proof',
+        description: 'A review request goes out at the right moment so the work shows up online.',
         icon: ShieldCheck,
         features: [
-          'Review requests after each handover',
-          'Before/after shots filed in one place',
-          'More five-stars where local people search',
+          'Review requests after every job',
+          'Asked when the customer is happiest',
+          'More reviews where local people search',
         ],
       },
       {
-        title: 'Show up when local drivers search for the work you do',
-        description:
-          'Service pages, the Google profile, and local listings lined up so you appear for “bumper repair near me” — not buried on page two.',
+        title: 'Show up when local drivers search',
+        description: 'Service pages and Google profile lined up so you appear when someone nearby needs help.',
         icon: Search,
         features: [
-          'Found on Maps for real local searches',
-          'Pages for the specific work you do',
-          'Service-area coverage that’s visible',
+          'Found on Maps for the work you do',
+          'Service pages that match real searches',
+          'Local area coverage that is visible',
         ],
       },
     ],
@@ -164,28 +146,27 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
 
   const comparisonData = {
     badge: 'What Actually Changes',
-    title: 'Same workshop. Different week.',
-    description:
-      'The repair quality stays. What changes is the part that depended on someone seeing a message at the right time.',
+    title: 'A normal week at the shop, before and after',
+    description: 'The workshop still runs the workshop. What changes is the part that used to depend on someone remembering.',
     comparisons: [
       {
         type: 'before' as const,
         title: 'How it runs now',
         items: [
-          'Photos arrive at lunchtime, sit in the inbox until 6pm.',
-          'A drop-off slot takes three days of texts to confirm.',
-          'Quote sent Monday. Friday rolls round and nobody’s chased it.',
-          'Customer collects the keys, drives off, never gets asked for a review.',
+          'Photo of damage sent in. Sits unread for days. Lost.',
+          'A driver wants an estimate. Three messages later, still no price.',
+          'Quote sent on Monday. By Friday nobody has chased it.',
+          'You finished a great repair last week. They never got asked for a review.',
         ],
       },
       {
         type: 'after' as const,
         title: 'How it runs after',
         items: [
-          'Photos hit one inbox, the customer gets a holding reply within minutes.',
-          'Drop-off slot picked from a link, confirmed automatically, reminder fires the day before.',
-          'The estimate gets a polite nudge the next morning. You can see who’s waiting on a yes.',
-          'A review request goes out the day they collect. Reviews start stacking quietly.',
+          'Photo lands in one inbox. First reply goes out the same day.',
+          'They pick a slot from a link. Confirmed. Reminder fires the day before.',
+          'The quote gets a polite chase the next morning. You can see who is waiting.',
+          'A review request goes out the day they pick the car up. Reviews start stacking quietly.',
         ],
       },
     ],
@@ -193,45 +174,41 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
 
   const pathwaysData = {
     badge: 'Where Most Shops Start',
-    title: 'Three stages — most shops feel one of them more than the others',
-    description:
-      'Pick whichever is leaking the most work right now. The rest can follow.',
+    title: 'Three stages, most shops feel one more than the others',
+    description: 'You do not have to fix everything at once. Start with whatever is leaking the most work.',
     packages: [
       {
-        name: 'Stop enquiries from going missing',
-        description:
-          'For shops where photos sit unread for hours and missed calls don’t get a reply until evening.',
+        name: 'Stop enquiries going missing',
+        description: 'For when calls and photos sit unread and quick enquiries get lost.',
         price: 'Stage 1',
-        priceDetail: 'Start here if first replies are slow',
+        priceDetail: 'Start here if first replies are the leak',
         features: [
-          'Missed-call text-back',
-          'One inbox for photos, calls, and forms',
-          'Damage and customer details captured up front',
+          'Missed-call text-back so they know you will reply',
+          'One inbox for calls, forms, photos, and web enquiries',
+          'Vehicle and damage noted before the conversation',
         ],
       },
       {
-        name: 'Get the assessment in the diary same day',
-        description:
-          'For shops where the back-and-forth around drop-off slots is killing momentum.',
+        name: 'Get the estimate out the same day',
+        description: 'Once enquiries are caught, this stage takes the friction out of sending an estimate.',
         price: 'Stage 2',
-        priceDetail: 'Start here if booking is the bottleneck',
+        priceDetail: 'Start here if estimates are where it slows down',
         features: [
-          'Drop-off slots customers pick themselves',
-          'Reminders the day before',
-          'Clear front-desk to workshop handover',
+          'Faster first reply',
+          'Slots customers can pick themselves',
+          'Reminders the day before so visits actually happen',
         ],
         popular: true,
       },
       {
-        name: 'Keep estimates moving and turn jobs into reviews',
-        description:
-          'For shops where quotes go quiet and reputation online doesn’t match the actual work.',
+        name: 'Keep quotes moving and turn jobs into reviews',
+        description: 'For when work comes in fine but quotes go quiet and reviews never get asked for.',
         price: 'Stage 3',
-        priceDetail: 'Start here if follow-up and reviews are the weak spots',
+        priceDetail: 'Start here if follow-up and reputation are the weak spots',
         features: [
           'Quotes chased automatically',
-          'Insurance jobs nudged through the stages',
-          'Review requests after every handover',
+          'Past customers nudged for return work',
+          'Review requests at the right moment',
         ],
       },
     ],
@@ -240,32 +217,29 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
   const workflowExamplesData = {
     badge: 'Real Situations',
     title: 'A few moments where the difference shows up',
-    description: 'Small handoffs that used to depend on someone seeing a message in time.',
+    description: 'Small handoffs that used to depend on someone remembering.',
     workflows: [
       {
-        trigger:
-          'A driver sends three photos of a kerbed alloy and a scuffed bumper at 1pm.',
+        trigger: 'A driver sends a photo of the damage.',
         actions: [
-          'They get a holding reply within minutes confirming you’ve received the photos',
-          'The enquiry gets logged with the photos and customer attached',
-          'A team member is told someone is waiting for an estimate',
+          'It lands in one inbox with the car noted',
+          'A first reply goes out the same day',
+          'A visit slot can be confirmed without phone tag',
         ],
       },
       {
-        trigger:
-          'They’re ready to bring the car in and want to know when they can drop it.',
+        trigger: 'A driver wants an estimate before the weekend.',
         actions: [
           'They pick a slot from a link, no more text tag',
-          'A reminder fires the day before',
-          'Workshop sees the booking with the photos already attached',
+          'A reminder goes out the day before',
+          'Front desk sees the booking with the car and the damage attached',
         ],
       },
       {
-        trigger:
-          'You sent a quote on Monday and haven’t heard back by Wednesday.',
+        trigger: 'You sent a quote a few days ago and have not heard back.',
         actions: [
-          'A polite chase goes out the next morning',
-          'The estimate stays visible on a list of open jobs',
+          'A polite chase goes out automatically the next morning',
+          'Open quotes are visible in one place',
           'If they say yes, the booking happens without another five messages',
         ],
       },
@@ -277,21 +251,18 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
   const caseStudiesData = {
     category: 'automotive-services' as const,
     title: 'Related Case Studies',
-    description:
-      'Examples of how the system supports automotive service businesses in this category.',
+    description: 'Examples of how the system supports automotive service businesses in this category.',
     limit: 2,
   };
 
   const exploreData = {
     badge: 'Related',
-    description:
-      'The other parts of the system that come up most often for body shops trying to stop work slipping to the next garage.',
+    description: 'The other parts of the system that come up most often for body shops.',
     cards: [
       {
         icon: Workflow,
         title: 'Smart Website Systems',
-        description:
-          'See the core system layer that holds repair enquiry, assessment, and follow-up together.',
+        description: 'The core layer that holds enquiry, estimate, and follow-up together.',
         href: '/services/smart-website-systems',
         gradient: 'purple',
         iconBg: 'purple',
@@ -299,7 +270,7 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
       {
         icon: Calendar,
         title: 'Booking & Scheduling System',
-        description: 'Support assessments, reminders, and clearer next-step handling.',
+        description: 'Support visit booking, reminders, and clearer next steps.',
         href: '/services/crm-infrastructure-implementation',
         gradient: 'teal',
         iconBg: 'teal',
@@ -307,7 +278,7 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
       {
         icon: Search,
         title: 'Local Authority & SEO Systems',
-        description: 'Strengthen repair visibility, maps trust, and local service discovery.',
+        description: 'Strengthen body shop visibility and local trust.',
         href: '/services/local-seo-authority',
         gradient: 'blue',
         iconBg: 'blue',
@@ -315,7 +286,7 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
       {
         icon: Star,
         title: 'Reputation & Review Systems',
-        description: 'Turn completed repair work into stronger proof and review flow.',
+        description: 'Turn finished repairs into reviews and proof.',
         href: '/services/reputation-review-systems',
         gradient: 'amber',
         iconBg: 'amber',
@@ -327,37 +298,37 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
 
   const faqData = {
     title: 'Things body shops usually ask',
-    description: 'Straight answers about how this fits a workshop that’s already busy.',
+    description: 'Straight answers about how this fits into a busy workshop.',
     faqs: [
       {
-        question: 'Most of our enquiries come with photos. Can it handle that?',
+        question: 'We are flat out. How much extra work is this for the team?',
         answer:
-          'Yes — photos land in the same place as the rest of the enquiry, attached to that customer. No more digging through three different inboxes to find the right ones.',
+          'Almost none after setup. Missed calls get answered by text on their own. Quote chasing goes out on a schedule. Reminders fire by themselves.',
       },
       {
-        question: 'Will customers feel they’re getting an automated response?',
+        question: 'Will customers feel like they are getting an automated response?',
         answer:
-          'No. The first reply is short, sounds like a person, and just buys you the time you need to come back with a proper answer. The actual quote still comes from you.',
+          'No. The messages are short and written like you would actually text someone. The aim is to hold the lead until you can reply.',
       },
       {
-        question: 'A lot of our work is insurance jobs. Does this still help?',
+        question: 'Can it handle estimates that need photos to price?',
         answer:
-          'Yes. Insurance jobs have stages — photos, assessment, parts, repair, handover. Each one is a moment where things stall. The system nudges them through so jobs don’t live in limbo.',
+          'Yes. Photos land in one inbox with the car noted, and the first reply can confirm a visit before the full estimate.',
       },
       {
-        question: 'We’re bad at asking for reviews. Can it do that for us?',
+        question: 'Do we have to chase reviews ourselves?',
         answer:
-          'That’s exactly what it’s for. The request goes out at handover when people are happiest. You’ll see Google reviews appear without anyone chasing.',
+          'No. The request goes out on its own after the job is done, when the customer is happiest.',
       },
       {
-        question: 'What about quotes from a few weeks ago that went quiet?',
+        question: 'What about old quotes sitting in the inbox?',
         answer:
-          'They get warmed up too. A lot of body shops find that re-engaging old estimates pulls in real money before any new marketing kicks in.',
+          'Those get worked in too. Many shops find that warming up old quotes brings in real money before any new marketing kicks in.',
       },
       {
-        question: 'Do we need a brand new website for this?',
+        question: 'Do we need a brand new website?',
         answer:
-          'Usually not. We look at what you have first. Often the site is fine — the gap is everything that happens after the form is sent.',
+          'Usually not. We look at what you have first. Often the gap is everything that happens after the form is sent.',
       },
     ],
   };
@@ -375,13 +346,13 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
     type: 'detail',
     parentSlug: 'automotive-services',
     seo: {
-      title: 'Body Shops — Stop Losing Quotes to the Garage Down the Road | MindWP',
+      title: 'Body Shops — Stop Losing Estimates and Repairs to Slow Replies | MindWP',
       description:
-        'For body shops where damage photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place so the work already coming in actually books.',
+        'For body shops where photos sit unread, quotes go quiet, and reviews never get asked for. We put the routing, follow-up, and local visibility in place.',
       keywords: [
         'body shop website design',
         'body shop booking system',
-        'body shop marketing system',
+        'body shop lead handling system',
         'body shop seo services',
         'body shop reputation management system',
       ],
@@ -402,7 +373,7 @@ function buildBodyShopsIndustryPageData(): IndustryPageData {
     cta: {
       title: 'Tell us where the work is slipping',
       description:
-        'If photos sit unread, quotes go quiet, or reviews never get asked for — walk us through how the shop runs and we’ll show you the first thing worth fixing.',
+        'If photos sit unread, quotes go quiet, or reviews never get asked for, walk us through how the week runs and we will show you the first thing worth fixing.',
     },
   };
 }
