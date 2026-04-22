@@ -1,0 +1,39 @@
+# Production caching headers (Netlify/Vercel compatible)
+# Static assets - cache aggressively
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Images - cache for 1 year
+*.png
+  Cache-Control: public, max-age=31536000
+
+*.jpg
+  Cache-Control: public, max-age=31536000
+
+*.jpeg
+  Cache-Control: public, max-age=31536000
+
+*.webp
+  Cache-Control: public, max-age=31536000
+
+*.svg
+  Cache-Control: public, max-age=31536000
+
+# Fonts - cache for 1 year
+*.woff2
+  Cache-Control: public, max-age=31536000
+
+*.woff
+  Cache-Control: public, max-age=31536000
+
+# HTML - no cache (SPA routing)
+*.html
+  Cache-Control: public, max-age=0, must-revalidate
+
+# API routes (if any) - short cache
+/api/*
+  Cache-Control: public, max-age=300
+
+# Service worker
+sw.js
+  Cache-Control: public, max-age=0, must-revalidate

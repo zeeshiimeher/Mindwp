@@ -1,0 +1,890 @@
+/* ==========================================================================
+   MindWP Framework v1 — Layout Primitives
+   Pure CSS only (no @apply, no --tw-*, no Tailwind references)
+  Breakpoints: 640px, 768px, 1024px, 1280px
+   ========================================================================== */
+
+:root {
+  --l-container-narrow: 1080px;
+  --l-container-wide: 1180px;
+
+  /* Container padding maps to site tokens (scaled per breakpoint below) */
+  --l-container-padding-x: calc(var(--site-padding-x) * 0.5);
+
+  --l-stack-gap-sm: var(--space-3); /* 12px */
+  --l-stack-gap: var(--space-4); /* 16px */
+  --l-stack-gap-lg: var(--space-6); /* 24px */
+
+  /* Default section paddings map to the canonical site padding tokens */
+  --l-section-padding: calc(var(--site-padding-y) * 0.5);
+  --l-section-padding-compact: var(--space-6);
+  --l-section-padding-spacious: var(--space-10);
+}
+
+/* ---------------------------------------------------------
+   Container
+   --------------------------------------------------------- */
+
+.l-container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--l-container-padding-x);
+  padding-right: var(--l-container-padding-x);
+}
+
+.l-container--narrow {
+  max-width: var(--l-container-narrow);
+}
+
+.l-container--wide {
+  max-width: var(--l-container-wide);
+}
+
+/* ---------------------------------------------------------
+   Section
+   --------------------------------------------------------- */
+
+.l-section {
+  padding-top: var(--l-section-padding);
+  padding-bottom: var(--l-section-padding);
+}
+
+.l-section--compact {
+  padding-top: var(--l-section-padding-compact);
+  padding-bottom: var(--l-section-padding-compact);
+}
+
+.l-section--spacious {
+  padding-top: var(--l-section-padding-spacious);
+  padding-bottom: var(--l-section-padding-spacious);
+}
+
+/* ---------------------------------------------------------
+   Unified breakpoint scaling
+   - 640px: tablet baseline
+   - 1024px: desktop
+   - 1280px: wide
+   `section-*` scaling without 481–991 ranges.
+   --------------------------------------------------------- */
+
+@media (min-width: 640px) {
+  :root {
+    --l-container-padding-x: calc(var(--site-padding-x) * 0.75);
+    --l-section-padding: calc(var(--site-padding-y) * 0.75);
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --l-container-padding-x: calc(var(--site-padding-x) * 0.875);
+    --l-section-padding: calc(var(--site-padding-y) * 0.875);
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --l-container-padding-x: var(--site-padding-x);
+    --l-section-padding: var(--site-padding-y);
+  }
+}
+
+/* ---------------------------------------------------------
+   Stack
+   --------------------------------------------------------- */
+
+.l-stack {
+  --l-stack-gap-current: var(--l-stack-gap);
+}
+
+.l-stack--sm {
+  --l-stack-gap-current: var(--l-stack-gap-sm);
+}
+
+.l-stack--tight {
+  --l-stack-gap-current: var(--l-stack-gap-sm);
+}
+
+.l-stack--lg {
+  --l-stack-gap-current: var(--l-stack-gap-lg);
+}
+
+.l-stack--loose {
+  --l-stack-gap-current: var(--l-stack-gap-lg);
+}
+
+.l-stack > :not([hidden]) ~ :not([hidden]) {
+  margin-top: var(--l-stack-gap-sm);
+}
+.l-stack--tight > :not([hidden]) ~ :not([hidden]) {
+  margin-top: var(--space-3);
+}
+
+/* ---------------------------------------------------------
+   Row
+   --------------------------------------------------------- */
+
+.l-row {
+  display: flex;
+  gap: var(--l-gap, 0);
+}
+
+.l-row-between {
+  justify-content: space-between;
+}
+
+.l-row-center {
+  justify-content: center;
+}
+
+.l-row-start {
+  justify-content: flex-start;
+}
+
+.l-row-wrap {
+  flex-wrap: wrap;
+}
+
+/* ---------------------------------------------------------
+   Grid
+   --------------------------------------------------------- */
+
+.l-grid {
+  display: grid;
+  gap: var(--l-gap, 0);
+}
+
+.l-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.l-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.l-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.l-grid-6 {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+/* ---------------------------------------------------------
+   Split Layout (2-col ratio variants)
+   --------------------------------------------------------- */
+
+.l-split-60-40 {
+  grid-template-columns: 3fr 2fr;
+}
+
+.l-split-40-60 {
+  grid-template-columns: 2fr 3fr;
+}
+
+.l-split-reverse {
+  direction: rtl;
+}
+
+.l-split-reverse > * {
+  direction: ltr;
+}
+
+/* ---------------------------------------------------------
+   Stack (flex-based vertical rhythm — gap-driven, no owl selector)
+   --------------------------------------------------------- */
+
+.l-stack-flex {
+  display: flex;
+  flex-direction: column;
+  gap: var(--l-gap, var(--l-stack-gap));
+}
+
+/* ---------------------------------------------------------
+   Alignment helpers (used for Tailwind layout replacements)
+   --------------------------------------------------------- */
+
+.l-items-center {
+  align-items: center;
+}
+
+.l-items-start {
+  align-items: flex-start;
+}
+
+.l-items-baseline {
+  align-items: baseline;
+}
+
+.l-items-end {
+  align-items: flex-end;
+}
+
+.l-items-stretch {
+  align-items: stretch;
+}
+
+.l-justify-center {
+  justify-content: center;
+}
+
+.l-justify-between {
+  justify-content: space-between;
+}
+
+.l-justify-start {
+  justify-content: flex-start;
+}
+
+.l-justify-end {
+  justify-content: flex-end;
+}
+
+/* ---------------------------------------------------------
+   Gap helpers (Tailwind-aligned: l-gap-N = N × 4px)
+   --------------------------------------------------------- */
+
+.l-gap-0 {
+  --l-gap: 0;
+}
+
+.l-gap-1 {
+  --l-gap: var(--space-1);
+}
+
+.l-gap-2 {
+  --l-gap: var(--space-2);
+}
+
+.l-gap-3 {
+  --l-gap: var(--space-3);
+}
+
+.l-gap-4 {
+  --l-gap: var(--space-4);
+}
+
+.l-gap-5 {
+  --l-gap: var(--space-5);
+}
+
+.l-gap-6 {
+  --l-gap: var(--space-6);
+}
+
+.l-gap-8 {
+  --l-gap: var(--space-7);
+}
+
+.l-gap-10 {
+  --l-gap: 40px;
+}
+
+.l-gap-12 {
+  --l-gap: var(--space-8);
+}
+
+/* ---------------------------------------------------------
+   Max-width + centering helpers (maps from Tailwind max-w-* / mx-auto)
+   --------------------------------------------------------- */
+
+.l-mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.l-max-w-sm {
+  max-width: 24rem;
+}
+
+.l-max-w-md {
+  max-width: 28rem;
+}
+
+.l-max-w-lg {
+  max-width: 32rem;
+}
+
+.l-max-w-xl {
+  max-width: 36rem;
+}
+
+.l-max-w-2xl {
+  max-width: 42rem;
+}
+
+.l-max-w-3xl {
+  max-width: 48rem;
+}
+
+.l-max-w-4xl {
+  max-width: 56rem;
+}
+
+.l-max-w-5xl {
+  max-width: 64rem;
+}
+
+.l-max-w-6xl {
+  max-width: 72rem;
+}
+
+.l-max-w-7xl {
+  max-width: 80rem;
+}
+
+.l-max-w-80p {
+  max-width: 80%;
+}
+
+/* ---------------------------------------------------------
+   Breakpoints
+   --------------------------------------------------------- */
+
+/*
+  Responsive variants for MindWP classes.
+  Tailwind-style prefixes (e.g. `md:l-row`) are literal class names in HTML.
+  To make them work with our pure CSS utilities we define escaped selectors
+  inside media queries (e.g. `.md\:l-row { ... }`).
+*/
+
+@media (min-width: 640px) {
+  .sm\:l-row {
+    display: flex;
+    gap: var(--l-gap, 0);
+  }
+
+  .sm\:l-row-wrap {
+    flex-wrap: wrap;
+  }
+
+  .sm\:l-grid {
+    display: grid;
+    gap: var(--l-gap, 0);
+  }
+
+  .sm\:l-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:l-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sm\:l-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .sm\:l-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--l-gap, var(--l-stack-gap));
+  }
+
+  .sm\:l-items-center {
+    align-items: center;
+  }
+
+  .sm\:l-items-start {
+    align-items: flex-start;
+  }
+
+  .sm\:l-items-end {
+    align-items: flex-end;
+  }
+
+  .sm\:l-items-stretch {
+    align-items: stretch;
+  }
+
+  .sm\:l-justify-start {
+    justify-content: flex-start;
+  }
+
+  .sm\:l-justify-center {
+    justify-content: center;
+  }
+
+  .sm\:l-justify-end {
+    justify-content: flex-end;
+  }
+
+  .sm\:l-justify-between {
+    justify-content: space-between;
+  }
+
+  .sm\:l-row-start {
+    justify-content: flex-start;
+  }
+
+  .sm\:l-row-center {
+    justify-content: center;
+  }
+
+  .sm\:l-row-between {
+    justify-content: space-between;
+  }
+
+  .sm\:l-mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .sm\:l-max-w-sm {
+    max-width: 24rem;
+  }
+
+  .sm\:l-max-w-md {
+    max-width: 28rem;
+  }
+
+  .sm\:l-max-w-lg {
+    max-width: 32rem;
+  }
+
+  .sm\:l-max-w-xl {
+    max-width: 36rem;
+  }
+
+  .sm\:l-max-w-2xl {
+    max-width: 42rem;
+  }
+
+  .sm\:l-max-w-3xl {
+    max-width: 48rem;
+  }
+
+  .sm\:l-max-w-4xl {
+    max-width: 56rem;
+  }
+
+  .sm\:l-max-w-5xl {
+    max-width: 64rem;
+  }
+
+  .sm\:l-max-w-6xl {
+    max-width: 72rem;
+  }
+
+  .sm\:l-max-w-7xl {
+    max-width: 80rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .md\:l-row {
+    display: flex !important;
+    gap: var(--l-gap, 0);
+  }
+
+  .md\:l-row-wrap {
+    flex-wrap: wrap;
+  }
+
+  .md\:l-grid {
+    display: grid;
+    gap: var(--l-gap, 0);
+  }
+
+  .md\:l-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:l-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .md\:l-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .md\:l-grid-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .md\:l-split-60-40 {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .md\:l-split-40-60 {
+    grid-template-columns: 2fr 3fr;
+  }
+
+  .md\:l-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--l-gap, var(--l-stack-gap));
+  }
+
+  .md\:l-items-center {
+    align-items: center;
+  }
+
+  .md\:l-items-start {
+    align-items: flex-start;
+  }
+
+  .md\:l-items-end {
+    align-items: flex-end;
+  }
+
+  .md\:l-items-stretch {
+    align-items: stretch;
+  }
+
+  .md\:l-justify-start {
+    justify-content: flex-start;
+  }
+
+  .md\:l-justify-center {
+    justify-content: center;
+  }
+
+  .md\:l-justify-end {
+    justify-content: flex-end;
+  }
+
+  .md\:l-justify-between {
+    justify-content: space-between;
+  }
+
+  .md\:l-row-start {
+    justify-content: flex-start;
+  }
+
+  .md\:l-row-center {
+    justify-content: center;
+  }
+
+  .md\:l-row-between {
+    justify-content: space-between;
+  }
+
+  .md\:l-mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .md\:l-max-w-sm {
+    max-width: 24rem;
+  }
+
+  .md\:l-max-w-md {
+    max-width: 28rem;
+  }
+
+  .md\:l-max-w-lg {
+    max-width: 32rem;
+  }
+
+  .md\:l-max-w-xl {
+    max-width: 36rem;
+  }
+
+  .md\:l-max-w-2xl {
+    max-width: 42rem;
+  }
+
+  .md\:l-max-w-3xl {
+    max-width: 48rem;
+  }
+
+  .md\:l-max-w-4xl {
+    max-width: 56rem;
+  }
+
+  .md\:l-max-w-5xl {
+    max-width: 64rem;
+  }
+
+  .md\:l-max-w-6xl {
+    max-width: 72rem;
+  }
+
+  .md\:l-max-w-7xl {
+    max-width: 80rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lg\:l-row {
+    display: flex;
+    gap: var(--l-gap, 0);
+  }
+
+  .lg\:l-row-wrap {
+    flex-wrap: wrap;
+  }
+
+  .lg\:l-grid {
+    display: grid;
+    gap: var(--l-gap, 0);
+  }
+
+  .lg\:l-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .lg\:l-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:l-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .lg\:l-grid-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .lg\:l-split-60-40 {
+    grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
+  }
+
+  .lg\:l-split-40-60 {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+  }
+
+  .lg\:l-split-50-70 {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr);
+  }
+
+  .lg\:l-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--l-gap, var(--l-stack-gap));
+  }
+
+  .lg\:l-items-center {
+    align-items: center;
+  }
+
+  .lg\:l-items-start {
+    align-items: flex-start;
+  }
+
+  .lg\:l-items-end {
+    align-items: flex-end;
+  }
+
+  .lg\:l-items-stretch {
+    align-items: stretch;
+  }
+
+  .lg\:l-justify-start {
+    justify-content: flex-start;
+  }
+
+  .lg\:l-justify-center {
+    justify-content: center;
+  }
+
+  .lg\:l-justify-end {
+    justify-content: flex-end;
+  }
+
+  .lg\:l-justify-between {
+    justify-content: space-between;
+  }
+
+  .lg\:l-row-start {
+    justify-content: flex-start;
+  }
+
+  .lg\:l-row-center {
+    justify-content: center;
+  }
+
+  .lg\:l-row-between {
+    justify-content: space-between;
+  }
+
+  .lg\:l-mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .lg\:l-gap-2 {
+    --l-gap: var(--space-2);
+  }
+
+  .lg\:l-gap-3 {
+    --l-gap: var(--space-3);
+  }
+
+  .lg\:l-gap-4 {
+    --l-gap: var(--space-4);
+  }
+
+  .lg\:l-gap-6 {
+    --l-gap: var(--space-6);
+  }
+
+  .lg\:l-gap-8 {
+    --l-gap: var(--space-7);
+  }
+
+  .lg\:l-max-w-sm {
+    max-width: 24rem;
+  }
+
+  .lg\:l-max-w-md {
+    max-width: 28rem;
+  }
+
+  .lg\:l-max-w-lg {
+    max-width: 32rem;
+  }
+
+  .lg\:l-max-w-xl {
+    max-width: 36rem;
+  }
+
+  .lg\:l-max-w-2xl {
+    max-width: 42rem;
+  }
+
+  .lg\:l-max-w-3xl {
+    max-width: 48rem;
+  }
+
+  .lg\:l-max-w-4xl {
+    max-width: 56rem;
+  }
+
+  .lg\:l-max-w-5xl {
+    max-width: 64rem;
+  }
+
+  .lg\:l-max-w-6xl {
+    max-width: 72rem;
+  }
+
+  .lg\:l-max-w-7xl {
+    max-width: 80rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .xl\:l-row {
+    display: flex;
+    gap: var(--l-gap, 0);
+  }
+
+  .xl\:l-row-wrap {
+    flex-wrap: wrap;
+  }
+
+  .xl\:l-grid {
+    display: grid;
+    gap: var(--l-gap, 0);
+  }
+
+  .xl\:l-grid-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .xl\:l-grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .xl\:l-grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .xl\:l-stack {
+    display: flex;
+    flex-direction: column;
+    gap: var(--l-gap, var(--l-stack-gap));
+  }
+
+  .xl\:l-items-center {
+    align-items: center;
+  }
+
+  .xl\:l-items-start {
+    align-items: flex-start;
+  }
+
+  .xl\:l-items-end {
+    align-items: flex-end;
+  }
+
+  .xl\:l-items-stretch {
+    align-items: stretch;
+  }
+
+  .xl\:l-justify-start {
+    justify-content: flex-start;
+  }
+
+  .xl\:l-justify-center {
+    justify-content: center;
+  }
+
+  .xl\:l-justify-end {
+    justify-content: flex-end;
+  }
+
+  .xl\:l-justify-between {
+    justify-content: space-between;
+  }
+
+  .xl\:l-row-start {
+    justify-content: flex-start;
+  }
+
+  .xl\:l-row-center {
+    justify-content: center;
+  }
+
+  .xl\:l-row-between {
+    justify-content: space-between;
+  }
+
+  .xl\:l-mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .xl\:l-max-w-sm {
+    max-width: 24rem;
+  }
+
+  .xl\:l-max-w-md {
+    max-width: 28rem;
+  }
+
+  .xl\:l-max-w-lg {
+    max-width: 32rem;
+  }
+
+  .xl\:l-max-w-xl {
+    max-width: 36rem;
+  }
+
+  .xl\:l-max-w-2xl {
+    max-width: 42rem;
+  }
+
+  .xl\:l-max-w-3xl {
+    max-width: 48rem;
+  }
+
+  .xl\:l-max-w-4xl {
+    max-width: 56rem;
+  }
+
+  .xl\:l-max-w-5xl {
+    max-width: 64rem;
+  }
+
+  .xl\:l-max-w-6xl {
+    max-width: 72rem;
+  }
+
+  .xl\:l-max-w-7xl {
+    max-width: 80rem;
+  }
+}

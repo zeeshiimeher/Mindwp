@@ -1,0 +1,111 @@
+{
+  "lead-capture": {
+    "queries": [
+      "plumbing plumber at work answering phone multi channel person natural lighting",
+      "plumbing plumber workshop answering phone multi channel person natural lighting business service customer interaction real professional working environment"
+    ],
+    "provider": "unsplash",
+    "avgScore": 60,
+    "count": 29
+  },
+  "review-automation": {
+    "queries": [
+      "roofing roofer on job site laptop review automation person natural lighting",
+      "roofing construction worker rooftop laptop review automation natural lighting business service customer interaction real professional working environment"
+    ],
+    "provider": "pexels",
+    "avgScore": 59,
+    "count": 15
+  },
+  "customer-feedback": {
+    "queries": [
+      "business professional office natural lighting",
+      "business professional office natural lighting analysis strategy planning real working environment"
+    ],
+    "provider": "unsplash",
+    "avgScore": 59,
+    "count": 13
+  },
+  "pipeline-visibility": {
+    "queries": [
+      "plumbing plumber at work computer screen person natural lighting",
+      "plumbing plumber workshop computer screen person natural lighting office analysis strategy planning real business professional working environment"
+    ],
+    "provider": "pexels",
+    "avgScore": 59,
+    "count": 10
+  },
+  "follow-up": {
+    "queries": [
+      "plumbing plumber at work laptop person natural lighting",
+      "plumbing plumber workshop laptop person natural lighting real business client interaction service delivery professional working environment"
+    ],
+    "provider": "pexels",
+    "avgScore": 60,
+    "count": 15
+  },
+  "booking-automation": {
+    "queries": [
+      "dental receptionist laptop person natural lighting real business client interaction service delivery professional working environment",
+      "automotive mechanic at service desk calendar person natural lighting software usage dashboard workflow real business professional working environment",
+      "automotive mechanic at service desk calendar person natural lighting consultation teamwork business discussion real professional working environment",
+      "salon stylist with client laptop hair person natural lighting field service technician customer location real business professional working environment",
+      "salon stylist with client laptop hair person natural lighting on site tools field service technician equipment customer location real professional job"
+    ],
+    "provider": "unsplash",
+    "avgScore": 62,
+    "count": 62
+  },
+  "lead-management": {
+    "queries": [
+      "automotive mechanic at service desk office person natural lighting",
+      "automotive mechanic at service desk office person natural lighting software usage dashboard workflow real business professional working environment"
+    ],
+    "provider": "pexels",
+    "avgScore": 60,
+    "count": 21
+  },
+  "conversion-optimization": {
+    "queries": [
+      "plumbing plumber at work answering phone person natural lighting",
+      "plumbing plumber workshop answering phone person natural lighting consultation teamwork business discussion real professional working environment"
+    ],
+    "provider": "unsplash",
+    "avgScore": 60,
+    "count": 20
+  },
+  "missed-calls": {
+    "queries": [
+      "hvac technician answering phone person natural lighting real business client interaction service delivery professional working environment"
+    ],
+    "provider": "pexels",
+    "avgScore": 65,
+    "count": 13
+  },
+  "pipeline-architecture": {
+    "queries": [
+      "plumbing plumber workshop computer screen person natural lighting office analysis strategy planning real business professional working environment"
+    ],
+    "provider": "pexels",
+    "avgScore": 60,
+    "count": 3
+  },
+  "review-generation": {
+    "queries": [
+      "hvac technician happy customer natural lighting office analysis strategy planning real business professional working environment",
+      "hvac technician happy customer natural lighting service business planning operations dispatch reviews appointments communication real desk phone paperwork"
+    ],
+    "provider": "pexels",
+    "avgScore": 59,
+    "count": 11
+  },
+  "emergency-handling": {
+    "queries": [
+      "hvac technician laptop website person natural lighting field service customer location real business professional working environment",
+      "hvac technician laptop website person natural lighting on site tools field service equipment customer location real professional job"
+    ],
+    "provider": "pexels",
+    "avgScore": 66,
+    "count": 4
+  }
+}

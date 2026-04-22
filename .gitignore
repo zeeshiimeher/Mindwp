@@ -1,0 +1,48 @@
+node_modules/
+
+# Build output
+build/
+.next/
+.next-audit/
+out/
+reports/
+tmp/
+pids/
+logs/
+
+# Tooling caches
+.vite/
+.eslintcache
+.cache/
+.turbo/
+*.tsbuildinfo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Local env
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# Test artifacts
+test-results/
+playwright-report/
+__workspace/
+_workspace/
+
+# Coverage
+coverage/
+
+# Generated caches (build-time precomputation)
+src/lib/generated/resolverCache.json
+src/lib/generated/authorityScores.json

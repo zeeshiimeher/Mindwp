@@ -1,0 +1,56 @@
+{
+  "blog-short": {
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "layout": 3,
+    "vignetteStrength": 1,
+    "count": 14,
+    "avgScore": 10
+  },
+  "resources-short": {
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1.0150000000000003,
+    "layout": 1,
+    "vignetteStrength": 1.0150000000000003,
+    "count": 14,
+    "avgScore": 9.992857142857144
+  },
+  "case-studies-short": {
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "layout": 2,
+    "vignetteStrength": 1,
+    "count": 16,
+    "avgScore": 10
+  },
+  "features-medium": {
+    "titleScale": 1.0425962086330778,
+    "maxTextWidth": 594,
+    "gradientStrength": 1,
+    "layout": 2,
+    "vignetteStrength": 1,
+    "count": 30,
+    "avgScore": 10
+  },
+  "services-medium": {
+    "titleScale": 1.7739590619925152,
+    "maxTextWidth": 738,
+    "gradientStrength": 1.4147739657143685,
+    "layout": 2,
+    "vignetteStrength": 1.4147739657143685,
+    "count": 20,
+    "avgScore": 9.959999999999999
+  },
+  "industries-short": {
+    "titleScale": 1,
+    "maxTextWidth": 780,
+    "gradientStrength": 1,
+    "layout": 1,
+    "vignetteStrength": 1,
+    "count": 2,
+    "avgScore": 10
+  }
+}

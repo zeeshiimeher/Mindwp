@@ -1,0 +1,149 @@
+import { Check } from 'lucide-react';
+
+import { CardGrid, SectionWrapper } from '@/components/reusable/primitives';
+import { Badge } from '@/components/reusable/single/Badge';
+import { Button } from '@/components/reusable/single/Button';
+import { Card } from '@/components/reusable/single/Card';
+import { SectionIntro } from '@/components/reusable/single/SectionIntro';
+import type { SmartCTAProps } from '@/components/system/SmartCTA';
+import { cn } from '@/components/ui/utils';
+import { resolveTierCardCtaLabel } from '@/config/ctaLabels';
+import { buildContactHref } from '@/lib/contact/contactHref';
+import { toContactSourceType } from '@/lib/page/pageIdentity';
+
+const BLOCK = 'c-tier-cards-section';
+
+export interface PackageItem {
+  name: string;
+  description: string;
+  price: string;
+  priceDetail?: string;
+  features: string[];
+  popular?: boolean;
+  buttonText?: string;
+  buttonHref?: string;
+  ctaVariant?: string;
+}
+
+export interface TierCardsSectionProps {
+  badge?: string;
+  title?: string;
+  description?: string;
+  packages: PackageItem[];
+  smartCta?: {
+    system: NonNullable<SmartCTAProps['system']>;
+    pageType: NonNullable<SmartCTAProps['pageType']>;
+    slug: NonNullable<SmartCTAProps['slug']>;
+  };
+  cssPrefix?: string;
+  backgroundColor?: string;
+}
+
+function buildPackageHref(
+  smartCta: NonNullable<TierCardsSectionProps['smartCta']>,
+  pkg: PackageItem
+) {
+  if (pkg.buttonHref) {
+    return pkg.buttonHref;
+  }
+
+  return buildContactHref({
+    system: smartCta.system,
+    sourceType: toContactSourceType(smartCta.pageType),
+    slug: smartCta.slug,
+  });
+}
+
+function buildPackageLabel(pkg: PackageItem) {
+  return resolveTierCardCtaLabel(pkg.buttonHref, pkg.buttonText);
+}
+
+function resolvePrimaryActionVariant(
+  variant: string | undefined,
+  popular: boolean | undefined
+): SmartCTAProps['primaryActionVariant'] {
+  if (
+    variant === 'primary' ||
+    variant === 'outline' ||
+    variant === 'outline-light' ||
+    variant === 'secondary' ||
+    variant === 'white' ||
+    variant === 'link'
+  ) {
+    return variant;
+  }
+
+  return popular ? 'primary' : 'outline';
+}
+
+export function TierCardsSection({
+  badge,
+  title,
+  description,
+  packages,
+  smartCta,
+  cssPrefix = '',
+  backgroundColor = '',
+}: TierCardsSectionProps) {
+  return (
+    <SectionWrapper background={backgroundColor} className={cn(BLOCK, cssPrefix)}>
+      {(badge || title || description) && (
+        <SectionIntro
+          {...(badge !== undefined && { badge })}
+          title={title || ''}
+          {...(description !== undefined && { description })}
+          className={`${BLOCK}__header`}
+        />
+      )}
+
+      <CardGrid columns={3} gap={8} mode='controlled'>
+        {packages.map(pkg => (
+          <Card
+            key={pkg.name}
+            className={cn(`${BLOCK}__card`, pkg.popular && `${BLOCK}__card--popular`)}
+          >
+            {pkg.popular && (
+              <div className={`${BLOCK}__popular-badge`}>
+                <Badge variant='primary' size='sm' context='meta'>
+                  Most Popular
+                </Badge>
+              </div>
+            )}
+
+            <div className={`${BLOCK}__content l-stack l-stack--loose`}>
+              <div>
+                <h3 className={`${BLOCK}__name`}>{pkg.name}</h3>
+                <p className={`${BLOCK}__desc`}>{pkg.description}</p>
+              </div>
+
+              <div className={`${BLOCK}__price`}>
+                <span className={`${BLOCK}__price-value`}>{pkg.price}</span>
+                {pkg.priceDetail && (
+                  <div className={`${BLOCK}__price-detail`}>{pkg.priceDetail}</div>
+                )}
+              </div>
+
+              <ul className={`${BLOCK}__features l-stack`}>
+                {pkg.features.map(feature => (
+                  <li key={feature} className={`${BLOCK}__feature`}>
+                    <Check className={`${BLOCK}__check`} />
+                    <span className={`${BLOCK}__feature-text`}>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              {smartCta ? (
+                <Button
+                  href={buildPackageHref(smartCta, pkg)}
+                  variant={resolvePrimaryActionVariant(pkg.ctaVariant, pkg.popular)}
+                  label={buildPackageLabel(pkg)}
+                  cssPrefix='btn-block'
+                />
+              ) : null}
+            </div>
+          </Card>
+        ))}
+      </CardGrid>
+    </SectionWrapper>
+  );
+}

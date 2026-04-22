@@ -1,0 +1,58 @@
+import { Suspense } from 'react';
+
+import { ensureGraphInitialized } from '@/domains/init/ensureGraphInitialized';
+import { categories, resources } from '@/domains/resources/api';
+import { ResourcesHub } from '@/domains/resources/pages/ResourcesHub';
+import { resolveSEO } from '@/lib/seo/seoResolver';
+
+export const dynamic = 'force-static';
+export const revalidate = false;
+
+export async function generateMetadata() {
+  return resolveSEO({ path: '/resources', type: 'resource-index', slug: 'resources' });
+}
+
+export default async function Page() {
+  await ensureGraphInitialized();
+
+  const categoryItems = categories.map(category => {
+    const count = resources.filter(resource => resource.category === category.id).length;
+
+    return {
+      id: category.slug,
+      name: category.label,
+      description: category.description,
+      icon: category.iconComponent,
+      count,
+      href: `/resources/category/${category.slug}`,
+    };
+  });
+
+  const resourceItems = [...resources]
+    .sort((left, right) => {
+      const leftDate = Date.parse(`${left.updatedAt ?? left.publishedAt}T00:00:00Z`);
+      const rightDate = Date.parse(`${right.updatedAt ?? right.publishedAt}T00:00:00Z`);
+      return rightDate - leftDate;
+    })
+    .map(resource => {
+      const categoryLabel =
+        categories.find(category => category.id === resource.category)?.label ??
+        String(resource.category);
+
+      return {
+        title: resource.title,
+        url: resource.seo.canonical,
+        categoryLabel,
+        excerpt: resource.description,
+        freshnessBadge: undefined,
+        dateLabel: '',
+        dateText: '',
+      };
+    });
+
+  return (
+    <Suspense fallback={<div className='l-section' aria-hidden='true' />}>
+      <ResourcesHub categoryItems={categoryItems} resourceItems={resourceItems} />
+    </Suspense>
+  );
+}

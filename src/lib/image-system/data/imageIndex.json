@@ -1,0 +1,226 @@
+{
+  "sales-pipeline-visibility-framework": {
+    "featured-clean": {
+      "file": "public/images/resources/sales-pipeline-visibility-framework-raw.webp",
+      "hash": "e0d2921a1a126000",
+      "provider": "pexels",
+      "imageId": "5831337",
+      "generatedAt": "2026-04-06T22:19:38.309Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/resources/sales-pipeline-visibility-framework.webp",
+      "hash": "e0d2921a1a126000",
+      "provider": "pexels",
+      "imageId": "5831337",
+      "generatedAt": "2026-04-06T22:19:38.310Z"
+    }
+  },
+  "customer-feedback-loop-framework": {
+    "featured-clean": {
+      "file": "public/images/resources/customer-feedback-loop-framework-raw.webp",
+      "hash": "783ababca666f000",
+      "provider": "pexels",
+      "imageId": "8353819",
+      "generatedAt": "2026-04-06T23:30:01.574Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/resources/customer-feedback-loop-framework.webp",
+      "hash": "783ababca666f000",
+      "provider": "pexels",
+      "imageId": "8353819",
+      "generatedAt": "2026-04-06T23:30:01.575Z"
+    }
+  },
+  "review-automation-for-roofing-companies": {
+    "featured-clean": {
+      "file": "public/images/blog/review-automation-for-roofing-companies-raw.webp",
+      "hash": "f0d0f0e8f9333800",
+      "provider": "pexels",
+      "imageId": "32927094",
+      "generatedAt": "2026-04-07T01:18:29.400Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/blog/review-automation-for-roofing-companies.webp",
+      "hash": "f0d0f0e8f9333800",
+      "provider": "pexels",
+      "imageId": "32927094",
+      "generatedAt": "2026-04-07T01:18:29.401Z"
+    }
+  },
+  "appointment-business-booking-automation": {
+    "featured-clean": {
+      "file": "public/images/case-studies/appointment-business-booking-automation-raw.webp",
+      "hash": "9cb8b9b991d17000",
+      "provider": "pexels",
+      "imageId": "6812445",
+      "generatedAt": "2026-04-07T01:19:04.742Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/case-studies/appointment-business-booking-automation.webp",
+      "hash": "9cb8b9b991d17000",
+      "provider": "pexels",
+      "imageId": "6812445",
+      "generatedAt": "2026-04-07T01:19:04.742Z"
+    }
+  },
+  "crm-pipeline-architecture": {
+    "featured-clean": {
+      "file": "public/images/resources/crm-pipeline-architecture-raw.webp",
+      "hash": "7972606070f9fc00",
+      "provider": "pexels",
+      "imageId": "8353773",
+      "generatedAt": "2026-04-07T01:19:55.594Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/resources/crm-pipeline-architecture.webp",
+      "hash": "7972606070f9fc00",
+      "provider": "pexels",
+      "imageId": "8353773",
+      "generatedAt": "2026-04-07T01:19:55.594Z"
+    }
+  },
+  "multi-channel-lead-capture-for-salons": {
+    "featured-clean": {
+      "file": "public/images/blog/multi-channel-lead-capture-for-salons-raw.webp",
+      "hash": "c0b9f1e1b3765800",
+      "provider": "pexels",
+      "imageId": "8682788",
+      "generatedAt": "2026-04-07T01:39:10.507Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/blog/multi-channel-lead-capture-for-salons.webp",
+      "hash": "c0b9f1e1b3765800",
+      "provider": "pexels",
+      "imageId": "8682788",
+      "generatedAt": "2026-04-07T01:39:10.507Z"
+    }
+  },
+  "workflows": {
+    "featured-clean": {
+      "file": "public/images/features/workflows-raw.webp",
+      "hash": "38387663335d6000",
+      "provider": "pexels",
+      "imageId": "6870305",
+      "generatedAt": "2026-04-07T02:01:37.967Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/features/workflows.webp",
+      "hash": "38387663335d6000",
+      "provider": "pexels",
+      "imageId": "6870305",
+      "generatedAt": "2026-04-07T02:01:37.967Z"
+    }
+  },
+  "smart-website-systems": {
+    "featured-clean": {
+      "file": "public/images/services/smart-website-systems-raw.webp",
+      "hash": "7f526260d096b000",
+      "provider": "pexels",
+      "imageId": "4895436",
+      "generatedAt": "2026-04-07T02:02:02.091Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/services/smart-website-systems.webp",
+      "hash": "7f526260d096b000",
+      "provider": "pexels",
+      "imageId": "4895436",
+      "generatedAt": "2026-04-07T02:02:02.091Z"
+    }
+  },
+  "realtor-lead-follow-up-automation": {
+    "featured-clean": {
+      "file": "public/images/case-studies/realtor-lead-follow-up-automation-raw.webp",
+      "hash": "a7233161221c5000",
+      "provider": "pexels",
+      "imageId": "7180908",
+      "generatedAt": "2026-04-07T02:22:58.836Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/case-studies/realtor-lead-follow-up-automation.webp",
+      "hash": "a7233161221c5000",
+      "provider": "pexels",
+      "imageId": "7180908",
+      "generatedAt": "2026-04-07T02:22:58.836Z"
+    }
+  },
+  "calendars": {
+    "featured-clean": {
+      "file": "public/images/features/calendars-raw.webp",
+      "hash": "e4e4901a2e263000",
+      "provider": "pexels",
+      "imageId": "8985609",
+      "generatedAt": "2026-04-07T02:23:05.072Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/features/calendars.webp",
+      "hash": "e4e4901a2e263000",
+      "provider": "pexels",
+      "imageId": "8985609",
+      "generatedAt": "2026-04-07T02:23:05.073Z"
+    }
+  },
+  "home-services/hvac-companies": {
+    "featured-clean": {
+      "file": "public/images/industries/home-services/hvac-companies-raw.webp",
+      "hash": "7e4d8c8d42786400",
+      "provider": "unsplash",
+      "imageId": "ydTyt7V01o4",
+      "generatedAt": "2026-04-07T02:25:04.755Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/industries/home-services/hvac-companies.webp",
+      "hash": "7e4d8c8d42786400",
+      "provider": "unsplash",
+      "imageId": "ydTyt7V01o4",
+      "generatedAt": "2026-04-07T02:25:04.756Z"
+    }
+  },
+  "beauty-personal-care/hair-salons": {
+    "featured-clean": {
+      "file": "public/images/industries/beauty-personal-care/hair-salons-raw.webp",
+      "hash": "796d6d4fc783c800",
+      "provider": "unsplash",
+      "imageId": "-THiqda3iGM",
+      "generatedAt": "2026-04-07T02:25:21.899Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/industries/beauty-personal-care/hair-salons.webp",
+      "hash": "796d6d4fc783c800",
+      "provider": "unsplash",
+      "imageId": "-THiqda3iGM",
+      "generatedAt": "2026-04-07T02:25:21.900Z"
+    }
+  },
+  "hvac-review-generation-framework": {
+    "featured-clean": {
+      "file": "public/images/resources/hvac-review-generation-framework-raw.webp",
+      "hash": "f0d0312123e6c800",
+      "provider": "pexels",
+      "imageId": "8297362",
+      "generatedAt": "2026-04-07T02:27:04.599Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/resources/hvac-review-generation-framework.webp",
+      "hash": "f0d0312123e6c800",
+      "provider": "pexels",
+      "imageId": "8297362",
+      "generatedAt": "2026-04-07T02:27:04.600Z"
+    }
+  },
+  "hvac-emergency-lead-routing": {
+    "featured-clean": {
+      "file": "public/images/case-studies/hvac-emergency-lead-routing-raw.webp",
+      "hash": "4743432531191400",
+      "provider": "pexels",
+      "imageId": "7709141",
+      "generatedAt": "2026-04-07T02:43:50.072Z"
+    },
+    "featured-overlay": {
+      "file": "public/images/case-studies/hvac-emergency-lead-routing.webp",
+      "hash": "4743432531191400",
+      "provider": "pexels",
+      "imageId": "7709141",
+      "generatedAt": "2026-04-07T02:43:50.072Z"
+    }
+  }
+}

@@ -1,0 +1,12538 @@
+// AUTO-GENERATED FILE - DO NOT EDIT
+export interface AuthorityMapItem {
+  title: string;
+  description: string;
+  slug: string;
+  path: string;
+  nodeType: string;
+}
+
+interface ServiceSlots {
+  services: AuthorityMapItem[];
+}
+interface FeatureSlots {
+  services: AuthorityMapItem[];
+}
+interface IndustrySlots {
+  services: AuthorityMapItem[];
+  caseStudies: AuthorityMapItem[];
+  resources: AuthorityMapItem[];
+}
+interface BlogSlots {
+  resources: AuthorityMapItem[];
+  industries: AuthorityMapItem[];
+}
+interface ResourceSlots {
+  services: AuthorityMapItem[];
+  industries: AuthorityMapItem[];
+}
+interface CaseStudySlots {
+  industries: AuthorityMapItem[];
+  resources: AuthorityMapItem[];
+}
+
+export interface AuthorityMap {
+  service: Record<string, ServiceSlots>;
+  feature: Record<string, FeatureSlots>;
+  industry: Record<string, IndustrySlots>;
+  blog: Record<string, BlogSlots>;
+  resource: Record<string, ResourceSlots>;
+  caseStudy: Record<string, CaseStudySlots>;
+}
+
+export const AUTHORITY_MAP: AuthorityMap = {
+  service: {
+    'ai-lead-handling': {
+      services: [
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+    },
+    'bricks-builder': {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          description:
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+    },
+    'conversion-funnel-system-vs-landing-page-development': {
+      services: [
+        {
+          title: 'Lead Reactivation System for Service Businesses | MindWP',
+          description:
+            'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
+          slug: 'lead-reactivation-system',
+          path: '/services/lead-reactivation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Conversion Layer for Service Businesses | MindWP',
+          description:
+            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
+          slug: 'conversion-layer',
+          path: '/services/conversion-layer',
+          nodeType: 'service',
+        },
+      ],
+    },
+    'conversion-layer': {
+      services: [
+        {
+          title: 'Lead Reactivation System for Service Businesses | MindWP',
+          description:
+            'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
+          slug: 'lead-reactivation-system',
+          path: '/services/lead-reactivation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Conversion Funnel System vs Landing Page Development | MindWP',
+          description:
+            'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
+          slug: 'conversion-funnel-system-vs-landing-page-development',
+          path: '/services/conversion-funnel-system-vs-landing-page-development',
+          nodeType: 'service',
+        },
+      ],
+    },
+    'crm-infrastructure-implementation': {
+      services: [
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+    },
+    divi5: {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          description:
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+    },
+    ecommerce: {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          description:
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+    },
+    elementor: {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          description:
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+    },
+    'lead-reactivation-system': {
+      services: [
+        {
+          title: 'Conversion Layer for Service Businesses | MindWP',
+          description:
+            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
+          slug: 'conversion-layer',
+          path: '/services/conversion-layer',
+          nodeType: 'service',
+        },
+        {
+          title: 'Conversion Funnel System vs Landing Page Development | MindWP',
+          description:
+            'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
+          slug: 'conversion-funnel-system-vs-landing-page-development',
+          path: '/services/conversion-funnel-system-vs-landing-page-development',
+          nodeType: 'service',
+        },
+      ],
+    },
+    'local-seo-authority': {
+      services: [],
+    },
+    'missed-call-recovery-system': {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+    },
+    'reputation-review-systems': {
+      services: [],
+    },
+    'service-pages-vs-one-generic-services-page': {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          description:
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+    },
+    'smart-website-systems': {
+      services: [
+        {
+          title: 'Service Pages vs One Generic Services Page | MindWP',
+          description:
+            'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
+          slug: 'service-pages-vs-one-generic-services-page',
+          path: '/services/service-pages-vs-one-generic-services-page',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          description:
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+    },
+    'system-migration-platform-consolidation': {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Service Pages vs One Generic Services Page | MindWP',
+          description:
+            'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
+          slug: 'service-pages-vs-one-generic-services-page',
+          path: '/services/service-pages-vs-one-generic-services-page',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          description:
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+      ],
+    },
+    'unified-communication-system': {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+      ],
+    },
+    'website-crm-integration-vs-manual-lead-handling': {
+      services: [
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+      ],
+    },
+    'website-redesign-system-rebuild': {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Service Pages vs One Generic Services Page | MindWP',
+          description:
+            'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
+          slug: 'service-pages-vs-one-generic-services-page',
+          path: '/services/service-pages-vs-one-generic-services-page',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+    },
+    'wordpress-development': {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          description:
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+    },
+  },
+  feature: {
+    aichat: {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+    },
+    calendars: {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Conversion Layer for Service Businesses | MindWP',
+          description:
+            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
+          slug: 'conversion-layer',
+          path: '/services/conversion-layer',
+          nodeType: 'service',
+        },
+        {
+          title: 'Conversion Funnel System vs Landing Page Development | MindWP',
+          description:
+            'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
+          slug: 'conversion-funnel-system-vs-landing-page-development',
+          path: '/services/conversion-funnel-system-vs-landing-page-development',
+          nodeType: 'service',
+        },
+      ],
+    },
+    crm: {
+      services: [
+        {
+          title: 'Lead Reactivation System for Service Businesses | MindWP',
+          description:
+            'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
+          slug: 'lead-reactivation-system',
+          path: '/services/lead-reactivation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Conversion Layer for Service Businesses | MindWP',
+          description:
+            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
+          slug: 'conversion-layer',
+          path: '/services/conversion-layer',
+          nodeType: 'service',
+        },
+        {
+          title: 'Conversion Funnel System vs Landing Page Development | MindWP',
+          description:
+            'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
+          slug: 'conversion-funnel-system-vs-landing-page-development',
+          path: '/services/conversion-funnel-system-vs-landing-page-development',
+          nodeType: 'service',
+        },
+      ],
+    },
+    inbox: {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+    },
+    reputation: {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
+          description:
+            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
+          nodeType: 'service',
+        },
+      ],
+    },
+    voicecalls: {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+    },
+    workflows: {
+      services: [
+        {
+          title: 'Lead Reactivation System for Service Businesses | MindWP',
+          description:
+            'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
+          slug: 'lead-reactivation-system',
+          path: '/services/lead-reactivation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Conversion Layer for Service Businesses | MindWP',
+          description:
+            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
+          slug: 'conversion-layer',
+          path: '/services/conversion-layer',
+          nodeType: 'service',
+        },
+        {
+          title: 'Conversion Funnel System vs Landing Page Development | MindWP',
+          description:
+            'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
+          slug: 'conversion-funnel-system-vs-landing-page-development',
+          path: '/services/conversion-funnel-system-vs-landing-page-development',
+          nodeType: 'service',
+        },
+      ],
+    },
+  },
+  industry: {
+    'accounting-firms': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'CRM Pipeline Visibility Transformation',
+          description:
+            'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
+          slug: 'crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Website + CRM Integration Explained',
+          description:
+            'Understand how website-CRM integration connects form submissions, booking data, and visitor behaviour directly to your CRM pipeline for faster response and better tracking.',
+          slug: 'website-crm-integration-explained',
+          path: '/resources/website-crm-integration-explained',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Reputation Monitoring Systems',
+          description:
+            'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
+          slug: 'reputation-monitoring-systems',
+          path: '/resources/reputation-monitoring-systems',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'aesthetic-cosmetic-clinics': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'CRM Pipeline Visibility Transformation',
+          description:
+            'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
+          slug: 'crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'auto-repair': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Auto Repair Missed Call Recovery',
+          description:
+            'How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.',
+          slug: 'auto-repair-missed-call-recovery',
+          path: '/case-studies/auto-repair-missed-call-recovery',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'automotive-services': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Auto Repair Missed Call Recovery',
+          description:
+            'How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.',
+          slug: 'auto-repair-missed-call-recovery',
+          path: '/case-studies/auto-repair-missed-call-recovery',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'beauty-personal-care': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Salon Booking Automation',
+          description:
+            'How a Liverpool salon moved from phone-only bookings to 68% online adoption in 8 weeks, unlocking after-hours appointments and 22% more volume.',
+          slug: 'salon-booking-automation',
+          path: '/case-studies/salon-booking-automation',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'body-shops': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Auto Repair Missed Call Recovery',
+          description:
+            'How a Leicester garage recovered 9 leads per week and £3,800 monthly revenue by automating missed call detection and SMS follow-up during the morning rush.',
+          slug: 'auto-repair-missed-call-recovery',
+          path: '/case-studies/auto-repair-missed-call-recovery',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Build a 5-Minute Auto-Reply Funnel (SMS + Email Template)',
+          description:
+            'Set up automatic replies for enquiries in 5 minutes. Get more bookings with instant SMS and email responses that feel personal but run on autopilot.',
+          slug: 'auto-reply-funnel',
+          path: '/resources/auto-reply-funnel',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'car-detailing': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Local Authority System Impact',
+          description:
+            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
+          slug: 'local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    consultants: {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'CRM Pipeline Visibility Transformation',
+          description:
+            'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
+          slug: 'crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Website + CRM Integration Explained',
+          description:
+            'Understand how website-CRM integration connects form submissions, booking data, and visitor behaviour directly to your CRM pipeline for faster response and better tracking.',
+          slug: 'website-crm-integration-explained',
+          path: '/resources/website-crm-integration-explained',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Sales Pipeline Visibility Framework',
+          description:
+            'Build a pipeline visibility framework that shows real-time deal health, flags stalled deals, and provides accurate revenue forecasting for your service business.',
+          slug: 'sales-pipeline-visibility-framework',
+          path: '/resources/sales-pipeline-visibility-framework',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'dental-clinics': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Local Authority System Impact',
+          description:
+            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
+          slug: 'local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'driving-schools': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Local Authority System Impact',
+          description:
+            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
+          slug: 'local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'electrical-companies': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Local Authority System Impact',
+          description:
+            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
+          slug: 'local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'hair-salons': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Salon No-Show Reduction System',
+          description:
+            'How an Edinburgh salon reduced no-shows from 18% to 4% and recovered £870 per week using automated reminders and cancellation-triggered waitlist recovery.',
+          slug: 'salon-no-show-reduction-system',
+          path: '/case-studies/salon-no-show-reduction-system',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'home-inspectors': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'CRM Pipeline Visibility Transformation',
+          description:
+            'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
+          slug: 'crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Review Generation Framework',
+          description:
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'home-services': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'HVAC Emergency Lead Routing',
+          description:
+            'How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage, on-call technician routing, and CRM lead tracking.',
+          slug: 'hvac-emergency-lead-routing',
+          path: '/case-studies/hvac-emergency-lead-routing',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Review Generation Framework',
+          description:
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Lead Handling Example',
+          description:
+            'See how HVAC companies use automated lead handling to respond to every inquiry within minutes, route emergency calls instantly, and capture peak-season revenue that manual processes miss.',
+          slug: 'hvac-lead-handling-example',
+          path: '/resources/hvac-lead-handling-example',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'hvac-companies': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'HVAC Emergency Lead Routing',
+          description:
+            'How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage, on-call technician routing, and CRM lead tracking.',
+          slug: 'hvac-emergency-lead-routing',
+          path: '/case-studies/hvac-emergency-lead-routing',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Review Generation Framework',
+          description:
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'landscaping-companies': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
+          description:
+            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Local Authority System Impact',
+          description:
+            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
+          slug: 'local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'lash-lift-and-extensions': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Salon No-Show Reduction System',
+          description:
+            'How an Edinburgh salon reduced no-shows from 18% to 4% and recovered £870 per week using automated reminders and cancellation-triggered waitlist recovery.',
+          slug: 'salon-no-show-reduction-system',
+          path: '/case-studies/salon-no-show-reduction-system',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'legal-professional-services': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'CRM Pipeline Visibility Transformation',
+          description:
+            'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
+          slug: 'crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Sales Pipeline Visibility Framework',
+          description:
+            'Build a pipeline visibility framework that shows real-time deal health, flags stalled deals, and provides accurate revenue forecasting for your service business.',
+          slug: 'sales-pipeline-visibility-framework',
+          path: '/resources/sales-pipeline-visibility-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Reputation Monitoring Systems',
+          description:
+            'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
+          slug: 'reputation-monitoring-systems',
+          path: '/resources/reputation-monitoring-systems',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'local-appointment-businesses': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Local Authority System Impact',
+          description:
+            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
+          slug: 'local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'mobile-mechanics': {
+      services: [
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
+          description:
+            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Real Estate Inquiry Routing',
+          description:
+            'How a Brighton estate agency reduced response time from 8 hours to 11 minutes and increased viewings by 38% using automated multi-channel lead routing.',
+          slug: 'real-estate-inquiry-routing',
+          path: '/case-studies/real-estate-inquiry-routing',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Build a 5-Minute Auto-Reply Funnel (SMS + Email Template)',
+          description:
+            'Set up automatic replies for enquiries in 5 minutes. Get more bookings with instant SMS and email responses that feel personal but run on autopilot.',
+          slug: 'auto-reply-funnel',
+          path: '/resources/auto-reply-funnel',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'mortgage-brokers': {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'CRM Pipeline Visibility Transformation',
+          description:
+            'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
+          slug: 'crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+          description:
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'nail-salons': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Salon No-Show Reduction System',
+          description:
+            'How an Edinburgh salon reduced no-shows from 18% to 4% and recovered £870 per week using automated reminders and cancellation-triggered waitlist recovery.',
+          slug: 'salon-no-show-reduction-system',
+          path: '/case-studies/salon-no-show-reduction-system',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'plumbing-companies': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'HVAC Emergency Lead Routing',
+          description:
+            'How a Manchester HVAC company captured 91% of after-hours emergency calls using automated SMS triage, on-call technician routing, and CRM lead tracking.',
+          slug: 'hvac-emergency-lead-routing',
+          path: '/case-studies/hvac-emergency-lead-routing',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Customer Feedback Loop Framework',
+          description:
+            'Build a structured feedback loop that captures customer sentiment after every job, routes issues to private resolution, and drives continuous service improvement.',
+          slug: 'customer-feedback-loop-framework',
+          path: '/resources/customer-feedback-loop-framework',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'property-managers': {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'CRM Pipeline Visibility Transformation',
+          description:
+            'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
+          slug: 'crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+          description:
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'real-estate-property-services': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'CRM Pipeline Visibility Transformation',
+          description:
+            'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
+          slug: 'crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Review Generation Framework',
+          description:
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    realtors: {
+      services: [
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
+          description:
+            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'CRM Pipeline Visibility Transformation',
+          description:
+            'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
+          slug: 'crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Visibility Optimization Guide for Realtors',
+          description:
+            'A step-by-step guide to improving realtor local visibility — covering post-transaction review automation, citation management, and competitive ranking tracking.',
+          slug: 'local-visibility-optimization-guide-for-realtors',
+          path: '/resources/local-visibility-optimization-guide-for-realtors',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'repair-shops': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Local Authority System Impact',
+          description:
+            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
+          slug: 'local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Review Generation Framework',
+          description:
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'roofing-companies': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Local Authority System Impact',
+          description:
+            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
+          slug: 'local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Roofing Estimate Follow-Up Workflow',
+          description:
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'small-law-firms': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'CRM Pipeline Visibility Transformation',
+          description:
+            'How a Southampton maintenance company went from zero pipeline visibility to tracking every lead, increasing close rate from 21% to 34% with CRM automation.',
+          slug: 'crm-pipeline-visibility-transformation',
+          path: '/case-studies/crm-pipeline-visibility-transformation',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Response Optimization Checklist for HVAC Businesses',
+          description:
+            'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
+          slug: 'lead-response-optimization-checklist-for-hvac-businesses',
+          path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Reputation Monitoring Systems',
+          description:
+            'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
+          slug: 'reputation-monitoring-systems',
+          path: '/resources/reputation-monitoring-systems',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'small-med-spas': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Local Authority System Impact',
+          description:
+            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
+          slug: 'local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'small-private-clinics': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Local Authority System Impact',
+          description:
+            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
+          slug: 'local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'tattoo-studios': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      caseStudies: [
+        {
+          title: 'Beauty Salon Case Study - All Sections Demo',
+          description:
+            'Demonstration case study showing every supported section type, including workflows, deliverables, business impact, and pinned FAQ layouts.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-all-sections',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-all-sections',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Custom Beauty Salon Case Study - Demonstrating Template Flexibility',
+          description:
+            'Demonstration case study showing how the template system supports full customization of labels, badges, and content while maintaining structure.',
+          slug: 'beauty-salon-online-booking-local-seo-manchester-custom',
+          path: '/case-studies/beauty-salon-online-booking-local-seo-manchester-custom',
+          nodeType: 'case-study',
+        },
+        {
+          title: 'Local Authority System Impact',
+          description:
+            'How an Oxford electrician went from page 2 of Google Maps to the top 3, grew from 2 to 17 organic leads per month, and halved Google Ads dependency.',
+          slug: 'local-authority-system-impact',
+          path: '/case-studies/local-authority-system-impact',
+          nodeType: 'case-study',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+    },
+  },
+  blog: {
+    'ai-reception-for-automotive-shops': {
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Build a 5-Minute Auto-Reply Funnel (SMS + Email Template)',
+          description:
+            'Set up automatic replies for enquiries in 5 minutes. Get more bookings with instant SMS and email responses that feel personal but run on autopilot.',
+          slug: 'auto-reply-funnel',
+          path: '/resources/auto-reply-funnel',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Response Time Framework',
+          description:
+            'Understand why lead response time determines conversion rates and how to build systems that respond in seconds instead of hours using automation and priority routing.',
+          slug: 'lead-response-time-framework',
+          path: '/resources/lead-response-time-framework',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'authority-signals-for-local-search': {
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Google Business Profile System Architecture Guide',
+          description:
+            'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
+          slug: 'google-business-profile-system-architecture',
+          path: '/resources/google-business-profile-system-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local SEO vs Website Optimisation',
+          description:
+            'Understand the difference between local SEO and website optimisation, learn where each applies, and know which investments drive the most visibility for service businesses.',
+          slug: 'local-seo-vs-website-optimization',
+          path: '/resources/local-seo-vs-website-optimization',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'authority-signals-for-salons': {
+      resources: [
+        {
+          title: 'Salon Review Generation Framework',
+          description:
+            'See how salons automate review collection with photo prompts, stylist-specific personalisation, and post-appointment timing to build the Google review profile that drives booking decisions.',
+          slug: 'salon-review-generation-framework',
+          path: '/resources/salon-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Review Automation Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building review automation for salons — covering post-appointment triggers, personalised SMS requests, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-salons',
+          path: '/resources/review-automation-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'How Review Automation Improves Local Authority Guide',
+          description:
+            'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
+          slug: 'how-review-automation-improves-local-authority',
+          path: '/resources/how-review-automation-improves-local-authority',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'automotive-crm-pipeline-for-repair-jobs': {
+      resources: [
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+          description:
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Service Reminder Automation Framework',
+          description:
+            'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
+          slug: 'automotive-service-reminder-automation',
+          path: '/resources/automotive-service-reminder-automation',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Property Managers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'automotive-review-generation-system': {
+      resources: [
+        {
+          title: 'HVAC Review Generation Framework',
+          description:
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Review Generation System',
+          description:
+            'Learn how to build an automated review generation system that requests reviews from every customer after service completion without relying on team memory.',
+          slug: 'review-generation-system',
+          path: '/resources/review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Roofing Review Generation System',
+          description:
+            'See how roofing companies automate review collection after every job, build photo-rich Google reviews, and create the social proof homeowners need to choose their business.',
+          slug: 'roofing-review-generation-system',
+          path: '/resources/roofing-review-generation-system',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'automotive-service-reminders-explained': {
+      resources: [
+        {
+          title: 'Automotive CRM Pipeline for Repair Jobs',
+          description:
+            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
+          slug: 'automotive-crm-pipeline-for-repair-jobs',
+          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Building Revenue Visibility Through CRM Tracking Guide',
+          description:
+            'Learn how to build CRM-based revenue tracking that shows exactly where your revenue comes from, where it leaks, and where the biggest growth opportunities exist.',
+          slug: 'building-revenue-visibility-through-crm-tracking',
+          path: '/resources/building-revenue-visibility-through-crm-tracking',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Service Reminder Automation Framework',
+          description:
+            'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
+          slug: 'automotive-service-reminder-automation',
+          path: '/resources/automotive-service-reminder-automation',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'autonomous-booking-systems-for-salons': {
+      resources: [
+        {
+          title: 'Reducing Salon No-Shows with Automation',
+          description:
+            'See how salons use automated reminders, waitlist management, and smart deposit policies to cut no-show rates by 60-80% and recover thousands in monthly lost revenue.',
+          slug: 'reducing-salon-no-shows-with-automation',
+          path: '/resources/reducing-salon-no-shows-with-automation',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Nail Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for nail salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'nail-salons',
+          path: '/industries/beauty-personal-care/nail-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Lash Lift & Extensions — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for lash studios that need clearer booking flow, no-show reduction, review automation, and stronger local visibility to fill more appointments.',
+          slug: 'lash-lift-and-extensions',
+          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'booking-systems-for-salons-explained': {
+      resources: [
+        {
+          title: 'Reducing Salon No-Shows with Automation',
+          description:
+            'See how salons use automated reminders, waitlist management, and smart deposit policies to cut no-show rates by 60-80% and recover thousands in monthly lost revenue.',
+          slug: 'reducing-salon-no-shows-with-automation',
+          path: '/resources/reducing-salon-no-shows-with-automation',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Small Med Spas — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for small med spas that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'small-med-spas',
+          path: '/industries/beauty-personal-care/small-med-spas',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'building-revenue-visibility-through-crm-tracking': {
+      resources: [
+        {
+          title: 'Automotive CRM Pipeline for Repair Jobs',
+          description:
+            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
+          slug: 'automotive-crm-pipeline-for-repair-jobs',
+          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Client Reactivation Systems',
+          description:
+            'Build an automated reactivation system that identifies lapsed customers, sends targeted re-engagement campaigns, and recovers revenue from your existing customer base.',
+          slug: 'client-reactivation-systems',
+          path: '/resources/client-reactivation-systems',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Service Reminder Automation Framework',
+          description:
+            'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
+          slug: 'automotive-service-reminder-automation',
+          path: '/resources/automotive-service-reminder-automation',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'client-reactivation-for-salons': {
+      resources: [
+        {
+          title: 'Reducing Salon No-Shows with Automation',
+          description:
+            'See how salons use automated reminders, waitlist management, and smart deposit policies to cut no-show rates by 60-80% and recover thousands in monthly lost revenue.',
+          slug: 'reducing-salon-no-shows-with-automation',
+          path: '/resources/reducing-salon-no-shows-with-automation',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Client Reactivation Systems',
+          description:
+            'Build an automated reactivation system that identifies lapsed customers, sends targeted re-engagement campaigns, and recovers revenue from your existing customer base.',
+          slug: 'client-reactivation-systems',
+          path: '/resources/client-reactivation-systems',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Small Med Spas — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for small med spas that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'small-med-spas',
+          path: '/industries/beauty-personal-care/small-med-spas',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'client-reactivation-systems-for-service-businesses': {
+      resources: [
+        {
+          title: 'Automotive CRM Pipeline for Repair Jobs',
+          description:
+            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
+          slug: 'automotive-crm-pipeline-for-repair-jobs',
+          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Client Reactivation Systems',
+          description:
+            'Build an automated reactivation system that identifies lapsed customers, sends targeted re-engagement campaigns, and recovers revenue from your existing customer base.',
+          slug: 'client-reactivation-systems',
+          path: '/resources/client-reactivation-systems',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Service Reminder Automation Framework',
+          description:
+            'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
+          slug: 'automotive-service-reminder-automation',
+          path: '/resources/automotive-service-reminder-automation',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Small Med Spas — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for small med spas that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'small-med-spas',
+          path: '/industries/beauty-personal-care/small-med-spas',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'conversion-tracking-for-hvac-companies': {
+      resources: [
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC CRM Pipeline Structure',
+          description:
+            'See how HVAC companies structure multi-track CRM pipelines for emergency, installation, and maintenance work — with automations that protect recurring revenue and enable capacity planning.',
+          slug: 'hvac-crm-pipeline-structure',
+          path: '/resources/hvac-crm-pipeline-structure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Conversion Tracking for Service Businesses Guide',
+          description:
+            'Learn how to set up conversion tracking that connects website activity to CRM pipeline outcomes and measures which pages and channels produce paying customers.',
+          slug: 'conversion-tracking-for-service-businesses',
+          path: '/resources/conversion-tracking-for-service-businesses',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'conversion-tracking-for-service-businesses-explained': {
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Conversion Tracking for Service Businesses Guide',
+          description:
+            'Learn how to set up conversion tracking that connects website activity to CRM pipeline outcomes and measures which pages and channels produce paying customers.',
+          slug: 'conversion-tracking-for-service-businesses',
+          path: '/resources/conversion-tracking-for-service-businesses',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'crm-pipeline-architecture-for-service-businesses': {
+      resources: [
+        {
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+          description:
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Architecture',
+          description:
+            'Learn how to architect a CRM pipeline with custom stages, automated follow-up, and accurate forecasting that mirrors your actual sales process.',
+          slug: 'crm-pipeline-architecture',
+          path: '/resources/crm-pipeline-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive CRM Pipeline for Repair Jobs',
+          description:
+            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
+          slug: 'automotive-crm-pipeline-for-repair-jobs',
+          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Property Managers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'customer-feedback-loop-for-plumbing-companies': {
+      resources: [
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'How Review Automation Improves Local Authority Guide',
+          description:
+            'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
+          slug: 'how-review-automation-improves-local-authority',
+          path: '/resources/how-review-automation-improves-local-authority',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Customer Feedback Loop Framework',
+          description:
+            'Build a structured feedback loop that captures customer sentiment after every job, routes issues to private resolution, and drives continuous service improvement.',
+          slug: 'customer-feedback-loop-framework',
+          path: '/resources/customer-feedback-loop-framework',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Plumbing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for plumbing companies that need clearer emergency routing, booking support, and stronger follow-up.',
+          slug: 'plumbing-companies',
+          path: '/industries/home-services/plumbing-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'customer-feedback-loop-framework-for-service-businesses': {
+      resources: [
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'How Review Automation Improves Local Authority Guide',
+          description:
+            'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
+          slug: 'how-review-automation-improves-local-authority',
+          path: '/resources/how-review-automation-improves-local-authority',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Customer Feedback Loop Framework',
+          description:
+            'Build a structured feedback loop that captures customer sentiment after every job, routes issues to private resolution, and drives continuous service improvement.',
+          slug: 'customer-feedback-loop-framework',
+          path: '/resources/customer-feedback-loop-framework',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Plumbing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for plumbing companies that need clearer emergency routing, booking support, and stronger follow-up.',
+          slug: 'plumbing-companies',
+          path: '/industries/home-services/plumbing-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'future-crm-visibility-for-hvac-companies': {
+      resources: [
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC CRM Pipeline Structure',
+          description:
+            'See how HVAC companies structure multi-track CRM pipelines for emergency, installation, and maintenance work — with automations that protect recurring revenue and enable capacity planning.',
+          slug: 'hvac-crm-pipeline-structure',
+          path: '/resources/hvac-crm-pipeline-structure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Architecture',
+          description:
+            'Learn how to architect a CRM pipeline with custom stages, automated follow-up, and accurate forecasting that mirrors your actual sales process.',
+          slug: 'crm-pipeline-architecture',
+          path: '/resources/crm-pipeline-architecture',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'future-local-seo-after-google-business-profile-automation': {
+      resources: [
+        {
+          title: 'Google Business Profile System Architecture Guide',
+          description:
+            'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
+          slug: 'google-business-profile-system-architecture',
+          path: '/resources/google-business-profile-system-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local SEO vs Website Optimisation',
+          description:
+            'Understand the difference between local SEO and website optimisation, learn where each applies, and know which investments drive the most visibility for service businesses.',
+          slug: 'local-seo-vs-website-optimization',
+          path: '/resources/local-seo-vs-website-optimization',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Authority Signals for Local Search',
+          description:
+            'Understand the five authority pillars Google uses to rank local businesses and learn how to systematically build each one to improve your local search visibility.',
+          slug: 'authority-signals-for-local-search',
+          path: '/resources/authority-signals-for-local-search',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Plumbing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for plumbing companies that need clearer emergency routing, booking support, and stronger follow-up.',
+          slug: 'plumbing-companies',
+          path: '/industries/home-services/plumbing-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'google-business-profile-for-hvac-companies': {
+      resources: [
+        {
+          title: 'Google Business Profile System Architecture Guide',
+          description:
+            'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
+          slug: 'google-business-profile-system-architecture',
+          path: '/resources/google-business-profile-system-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local SEO vs Website Optimisation',
+          description:
+            'Understand the difference between local SEO and website optimisation, learn where each applies, and know which investments drive the most visibility for service businesses.',
+          slug: 'local-seo-vs-website-optimization',
+          path: '/resources/local-seo-vs-website-optimization',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Authority Signals for Local Search',
+          description:
+            'Understand the five authority pillars Google uses to rank local businesses and learn how to systematically build each one to improve your local search visibility.',
+          slug: 'authority-signals-for-local-search',
+          path: '/resources/authority-signals-for-local-search',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'google-business-profile-system-architecture': {
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local SEO vs Website Optimisation',
+          description:
+            'Understand the difference between local SEO and website optimisation, learn where each applies, and know which investments drive the most visibility for service businesses.',
+          slug: 'local-seo-vs-website-optimization',
+          path: '/resources/local-seo-vs-website-optimization',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Authority Signals for Local Search',
+          description:
+            'Understand the five authority pillars Google uses to rank local businesses and learn how to systematically build each one to improve your local search visibility.',
+          slug: 'authority-signals-for-local-search',
+          path: '/resources/authority-signals-for-local-search',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'how-ai-search-changes-local-business-visibility': {
+      resources: [
+        {
+          title: 'Local Visibility Framework',
+          description:
+            'Build a local visibility framework that coordinates search, directories, reviews, and content into a unified strategy that maximises how often customers find your business.',
+          slug: 'local-visibility-framework',
+          path: '/resources/local-visibility-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Google Business Profile System Architecture Guide',
+          description:
+            'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
+          slug: 'google-business-profile-system-architecture',
+          path: '/resources/google-business-profile-system-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Authority Signals for Local Search',
+          description:
+            'Understand the five authority pillars Google uses to rank local businesses and learn how to systematically build each one to improve your local search visibility.',
+          slug: 'authority-signals-for-local-search',
+          path: '/resources/authority-signals-for-local-search',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'how-review-automation-improves-local-authority': {
+      resources: [
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Review Automation Setup Guide for Roofing Companies',
+          description:
+            'A step-by-step guide to building review automation for roofing companies — covering post-job triggers, direct review links, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-roofing-companies',
+          path: '/resources/review-automation-setup-guide-for-roofing-companies',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Review Automation Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building review automation for salons — covering post-appointment triggers, personalised SMS requests, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-salons',
+          path: '/resources/review-automation-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'how-smart-website-systems-work-for-local-businesses': {
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'How Smart Website Systems Work',
+          description:
+            'Learn how smart website systems connect lead capture, CRM, booking, and follow-up into one operational infrastructure for service businesses.',
+          slug: 'how-smart-website-systems-work',
+          path: '/resources/how-smart-website-systems-work',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'how-to-fix-lead-response-time-in-automotive-businesses-using-crm-automation': {
+      resources: [
+        {
+          title: 'Automotive CRM Pipeline for Repair Jobs',
+          description:
+            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
+          slug: 'automotive-crm-pipeline-for-repair-jobs',
+          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Response Optimization Checklist for HVAC Businesses',
+          description:
+            'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
+          slug: 'lead-response-optimization-checklist-for-hvac-businesses',
+          path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Service Reminder Automation Framework',
+          description:
+            'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
+          slug: 'automotive-service-reminder-automation',
+          path: '/resources/automotive-service-reminder-automation',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Repair Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for repair shops that need clearer booking flow, service qualification, and stronger local trust support.',
+          slug: 'repair-shops',
+          path: '/industries/local-appointment-businesses/repair-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Small Law Firms — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for small law firms that need clearer qualification, consultation flow, and stronger trust support.',
+          slug: 'small-law-firms',
+          path: '/industries/legal-professional-services/small-law-firms',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'hvac-crm-pipeline-for-service-companies': {
+      resources: [
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+          description:
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC CRM Pipeline Structure',
+          description:
+            'See how HVAC companies structure multi-track CRM pipelines for emergency, installation, and maintenance work — with automations that protect recurring revenue and enable capacity planning.',
+          slug: 'hvac-crm-pipeline-structure',
+          path: '/resources/hvac-crm-pipeline-structure',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Property Managers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'hvac-emergency-call-handling-mistakes': {
+      resources: [
+        {
+          title: 'Roofing Estimate Follow-Up Workflow',
+          description:
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Reducing Salon No-Shows with Automation',
+          description:
+            'See how salons use automated reminders, waitlist management, and smart deposit policies to cut no-show rates by 60-80% and recover thousands in monthly lost revenue.',
+          slug: 'reducing-salon-no-shows-with-automation',
+          path: '/resources/reducing-salon-no-shows-with-automation',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Plumbing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for plumbing companies that need clearer emergency routing, booking support, and stronger follow-up.',
+          slug: 'plumbing-companies',
+          path: '/industries/home-services/plumbing-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'hvac-local-visibility-system-for-service-areas': {
+      resources: [
+        {
+          title: 'HVAC Review Generation Framework',
+          description:
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Visibility Optimization Guide for HVAC Companies',
+          description:
+            'A step-by-step guide to improving HVAC local visibility — covering Google Business Profile optimisation, citation audit, review automation, and ranking tracking.',
+          slug: 'local-visibility-optimization-guide-for-hvac-companies',
+          path: '/resources/local-visibility-optimization-guide-for-hvac-companies',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Visibility Optimization Guide for Realtors',
+          description:
+            'A step-by-step guide to improving realtor local visibility — covering post-transaction review automation, citation management, and competitive ranking tracking.',
+          slug: 'local-visibility-optimization-guide-for-realtors',
+          path: '/resources/local-visibility-optimization-guide-for-realtors',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'hvac-review-generation-framework': {
+      resources: [
+        {
+          title: 'Review Generation System',
+          description:
+            'Learn how to build an automated review generation system that requests reviews from every customer after service completion without relying on team memory.',
+          slug: 'review-generation-system',
+          path: '/resources/review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Roofing Review Generation System',
+          description:
+            'See how roofing companies automate review collection after every job, build photo-rich Google reviews, and create the social proof homeowners need to choose their business.',
+          slug: 'roofing-review-generation-system',
+          path: '/resources/roofing-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'lead-automation-framework-for-service-businesses': {
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Lead Handling Example',
+          description:
+            'See how HVAC companies use automated lead handling to respond to every inquiry within minutes, route emergency calls instantly, and capture peak-season revenue that manual processes miss.',
+          slug: 'hvac-lead-handling-example',
+          path: '/resources/hvac-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Automation Framework Guide',
+          description:
+            'Understand the four-layer lead automation framework — capture, routing, qualification, and follow-up — that handles leads systematically and converts more enquiries into booked jobs.',
+          slug: 'lead-automation-framework',
+          path: '/resources/lead-automation-framework',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Electrical — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'lead-qualification-for-roofing-companies': {
+      resources: [
+        {
+          title: 'Roofing Estimate Follow-Up Workflow',
+          description:
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Missed Call Recovery for Roofing',
+          description:
+            'See how roofing companies recover missed calls with automated SMS responses that capture lead details and convert unanswered calls into booked appointments.',
+          slug: 'missed-call-recovery-for-roofing',
+          path: '/resources/missed-call-recovery-for-roofing',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Qualification Framework',
+          description:
+            'Learn how to build a lead qualification framework that scores and prioritises leads automatically so your team focuses on the highest-value opportunities.',
+          slug: 'lead-qualification-framework',
+          path: '/resources/lead-qualification-framework',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'lead-qualification-framework-for-service-businesses': {
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Build a 5-Minute Auto-Reply Funnel (SMS + Email Template)',
+          description:
+            'Set up automatic replies for enquiries in 5 minutes. Get more bookings with instant SMS and email responses that feel personal but run on autopilot.',
+          slug: 'auto-reply-funnel',
+          path: '/resources/auto-reply-funnel',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Qualification Framework',
+          description:
+            'Learn how to build a lead qualification framework that scores and prioritises leads automatically so your team focuses on the highest-value opportunities.',
+          slug: 'lead-qualification-framework',
+          path: '/resources/lead-qualification-framework',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'lead-response-time-for-service-businesses': {
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Build a 5-Minute Auto-Reply Funnel (SMS + Email Template)',
+          description:
+            'Set up automatic replies for enquiries in 5 minutes. Get more bookings with instant SMS and email responses that feel personal but run on autopilot.',
+          slug: 'auto-reply-funnel',
+          path: '/resources/auto-reply-funnel',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Response Time Framework',
+          description:
+            'Understand why lead response time determines conversion rates and how to build systems that respond in seconds instead of hours using automation and priority routing.',
+          slug: 'lead-response-time-framework',
+          path: '/resources/lead-response-time-framework',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'lead-routing-for-hvac-companies': {
+      resources: [
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Lead Handling Example',
+          description:
+            'See how HVAC companies use automated lead handling to respond to every inquiry within minutes, route emergency calls instantly, and capture peak-season revenue that manual processes miss.',
+          slug: 'hvac-lead-handling-example',
+          path: '/resources/hvac-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Routing Models for Service Companies Guide',
+          description:
+            'Understand the four lead routing models — round-robin, skill-based, territory-based, and priority-based — and how to implement the right model for your service business.',
+          slug: 'lead-routing-models-for-service-companies',
+          path: '/resources/lead-routing-models-for-service-companies',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'lead-routing-models-for-service-companies': {
+      resources: [
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Build a 5-Minute Auto-Reply Funnel (SMS + Email Template)',
+          description:
+            'Set up automatic replies for enquiries in 5 minutes. Get more bookings with instant SMS and email responses that feel personal but run on autopilot.',
+          slug: 'auto-reply-funnel',
+          path: '/resources/auto-reply-funnel',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'local-seo-for-roofing-companies-explained': {
+      resources: [
+        {
+          title: 'Google Business Profile System Architecture Guide',
+          description:
+            'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
+          slug: 'google-business-profile-system-architecture',
+          path: '/resources/google-business-profile-system-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local SEO vs Website Optimisation',
+          description:
+            'Understand the difference between local SEO and website optimisation, learn where each applies, and know which investments drive the most visibility for service businesses.',
+          slug: 'local-seo-vs-website-optimization',
+          path: '/resources/local-seo-vs-website-optimization',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Authority Signals for Local Search',
+          description:
+            'Understand the five authority pillars Google uses to rank local businesses and learn how to systematically build each one to improve your local search visibility.',
+          slug: 'authority-signals-for-local-search',
+          path: '/resources/authority-signals-for-local-search',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'local-seo-vs-website-optimization': {
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Google Business Profile System Architecture Guide',
+          description:
+            'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
+          slug: 'google-business-profile-system-architecture',
+          path: '/resources/google-business-profile-system-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Authority Signals for Local Search',
+          description:
+            'Understand the five authority pillars Google uses to rank local businesses and learn how to systematically build each one to improve your local search visibility.',
+          slug: 'authority-signals-for-local-search',
+          path: '/resources/authority-signals-for-local-search',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'local-service-page-architecture-for-local-businesses': {
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Google Business Profile System Architecture Guide',
+          description:
+            'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
+          slug: 'google-business-profile-system-architecture',
+          path: '/resources/google-business-profile-system-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Authority Signals for Local Search',
+          description:
+            'Understand the five authority pillars Google uses to rank local businesses and learn how to systematically build each one to improve your local search visibility.',
+          slug: 'authority-signals-for-local-search',
+          path: '/resources/authority-signals-for-local-search',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Landscaping — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for landscaping companies that need clearer service routing, estimate booking, and stronger seasonal follow-up.',
+          slug: 'landscaping-companies',
+          path: '/industries/home-services/landscaping-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'local-service-page-architecture-for-roofing-companies': {
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Authority Signals for Local Search',
+          description:
+            'Understand the five authority pillars Google uses to rank local businesses and learn how to systematically build each one to improve your local search visibility.',
+          slug: 'authority-signals-for-local-search',
+          path: '/resources/authority-signals-for-local-search',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Landscaping — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for landscaping companies that need clearer service routing, estimate booking, and stronger seasonal follow-up.',
+          slug: 'landscaping-companies',
+          path: '/industries/home-services/landscaping-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'local-visibility-framework-for-service-businesses': {
+      resources: [
+        {
+          title: 'Local Visibility Framework',
+          description:
+            'Build a local visibility framework that coordinates search, directories, reviews, and content into a unified strategy that maximises how often customers find your business.',
+          slug: 'local-visibility-framework',
+          path: '/resources/local-visibility-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Google Business Profile System Architecture Guide',
+          description:
+            'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
+          slug: 'google-business-profile-system-architecture',
+          path: '/resources/google-business-profile-system-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Authority Signals for Local Search',
+          description:
+            'Understand the five authority pillars Google uses to rank local businesses and learn how to systematically build each one to improve your local search visibility.',
+          slug: 'authority-signals-for-local-search',
+          path: '/resources/authority-signals-for-local-search',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'missed-call-recovery-for-service-businesses': {
+      resources: [
+        {
+          title: 'Missed Call Recovery for HVAC',
+          description:
+            'See how HVAC companies recover missed calls with instant text responses, emergency escalation, and automated booking — capturing revenue that would otherwise go to competitors.',
+          slug: 'missed-call-recovery-for-hvac',
+          path: '/resources/missed-call-recovery-for-hvac',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Missed Call Recovery for Roofing',
+          description:
+            'See how roofing companies recover missed calls with automated SMS responses that capture lead details and convert unanswered calls into booked appointments.',
+          slug: 'missed-call-recovery-for-roofing',
+          path: '/resources/missed-call-recovery-for-roofing',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Missed Call Recovery for Auto Repair',
+          description:
+            'See how auto repair shops recover missed calls with instant text responses and booking links, converting unanswered calls into confirmed MOTs, services, and repair bookings.',
+          slug: 'missed-call-recovery-for-auto-repair',
+          path: '/resources/missed-call-recovery-for-auto-repair',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'multi-channel-lead-capture-for-salons': {
+      resources: [
+        {
+          title: 'Reducing Salon No-Shows with Automation',
+          description:
+            'See how salons use automated reminders, waitlist management, and smart deposit policies to cut no-show rates by 60-80% and recover thousands in monthly lost revenue.',
+          slug: 'reducing-salon-no-shows-with-automation',
+          path: '/resources/reducing-salon-no-shows-with-automation',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Missed Call Recovery for Salons',
+          description:
+            'See how salons recover missed calls with instant booking link texts, converting unanswered phone calls into confirmed appointments even during the busiest service hours.',
+          slug: 'missed-call-recovery-for-salons',
+          path: '/resources/missed-call-recovery-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Multi-Channel Lead Capture Systems',
+          description:
+            'Learn how to build a multi-channel lead capture system that routes phone, web, chat, and social leads to one CRM pipeline with consistent tracking and follow-up.',
+          slug: 'multi-channel-lead-capture-systems',
+          path: '/resources/multi-channel-lead-capture-systems',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'multi-channel-lead-capture-system-for-service-businesses': {
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Build a 5-Minute Auto-Reply Funnel (SMS + Email Template)',
+          description:
+            'Set up automatic replies for enquiries in 5 minutes. Get more bookings with instant SMS and email responses that feel personal but run on autopilot.',
+          slug: 'auto-reply-funnel',
+          path: '/resources/auto-reply-funnel',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Multi-Channel Lead Capture Systems',
+          description:
+            'Learn how to build a multi-channel lead capture system that routes phone, web, chat, and social leads to one CRM pipeline with consistent tracking and follow-up.',
+          slug: 'multi-channel-lead-capture-systems',
+          path: '/resources/multi-channel-lead-capture-systems',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'negative-reviews-for-auto-repair-shops': {
+      resources: [
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Customer Feedback Loop Framework',
+          description:
+            'Build a structured feedback loop that captures customer sentiment after every job, routes issues to private resolution, and drives continuous service improvement.',
+          slug: 'customer-feedback-loop-framework',
+          path: '/resources/customer-feedback-loop-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Responding to Negative Reviews Systematically Guide',
+          description:
+            'Build a systematic process for handling negative reviews with professional templates, fast response times, and resolution follow-up that protects your reputation.',
+          slug: 'responding-to-negative-reviews-systematically',
+          path: '/resources/responding-to-negative-reviews-systematically',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'plumbing-crm-pipeline-for-job-management': {
+      resources: [
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+          description:
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive CRM Pipeline for Repair Jobs',
+          description:
+            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
+          slug: 'automotive-crm-pipeline-for-repair-jobs',
+          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Property Managers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'realtor-local-visibility-system-for-lead-generation': {
+      resources: [
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Visibility Optimization Guide for HVAC Companies',
+          description:
+            'A step-by-step guide to improving HVAC local visibility — covering Google Business Profile optimisation, citation audit, review automation, and ranking tracking.',
+          slug: 'local-visibility-optimization-guide-for-hvac-companies',
+          path: '/resources/local-visibility-optimization-guide-for-hvac-companies',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Visibility Optimization Guide for Realtors',
+          description:
+            'A step-by-step guide to improving realtor local visibility — covering post-transaction review automation, citation management, and competitive ranking tracking.',
+          slug: 'local-visibility-optimization-guide-for-realtors',
+          path: '/resources/local-visibility-optimization-guide-for-realtors',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'reducing-salon-no-shows-with-automation': {
+      resources: [
+        {
+          title: 'Roofing Estimate Follow-Up Workflow',
+          description:
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Nail Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for nail salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'nail-salons',
+          path: '/industries/beauty-personal-care/nail-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Lash Lift & Extensions — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for lash studios that need clearer booking flow, no-show reduction, review automation, and stronger local visibility to fill more appointments.',
+          slug: 'lash-lift-and-extensions',
+          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'reputation-monitoring-systems-for-service-businesses': {
+      resources: [
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Customer Feedback Loop Framework',
+          description:
+            'Build a structured feedback loop that captures customer sentiment after every job, routes issues to private resolution, and drives continuous service improvement.',
+          slug: 'customer-feedback-loop-framework',
+          path: '/resources/customer-feedback-loop-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Reputation Monitoring Systems',
+          description:
+            'Build a reputation monitoring system that tracks reviews, listings, and competitor benchmarks across all platforms with real-time alerts and trend analysis.',
+          slug: 'reputation-monitoring-systems',
+          path: '/resources/reputation-monitoring-systems',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Accounting Firms — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for accounting firms that need clearer qualification, consultation flow, and stronger trust support.',
+          slug: 'accounting-firms',
+          path: '/industries/legal-professional-services/accounting-firms',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Small Law Firms — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for small law firms that need clearer qualification, consultation flow, and stronger trust support.',
+          slug: 'small-law-firms',
+          path: '/industries/legal-professional-services/small-law-firms',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'responding-to-negative-reviews-systematically': {
+      resources: [
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'How Review Automation Improves Local Authority Guide',
+          description:
+            'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
+          slug: 'how-review-automation-improves-local-authority',
+          path: '/resources/how-review-automation-improves-local-authority',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Customer Feedback Loop Framework',
+          description:
+            'Build a structured feedback loop that captures customer sentiment after every job, routes issues to private resolution, and drives continuous service improvement.',
+          slug: 'customer-feedback-loop-framework',
+          path: '/resources/customer-feedback-loop-framework',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'revenue-visibility-for-roofing-companies': {
+      resources: [
+        {
+          title: 'Roofing Estimate Follow-Up Workflow',
+          description:
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Roofing CRM Pipeline Structure',
+          description:
+            'See how roofing companies structure their CRM pipeline to track every job from inquiry to completion, eliminate missed estimates, and build predictable revenue visibility.',
+          slug: 'roofing-crm-pipeline-structure',
+          path: '/resources/roofing-crm-pipeline-structure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Building Revenue Visibility Through CRM Tracking Guide',
+          description:
+            'Learn how to build CRM-based revenue tracking that shows exactly where your revenue comes from, where it leaks, and where the biggest growth opportunities exist.',
+          slug: 'building-revenue-visibility-through-crm-tracking',
+          path: '/resources/building-revenue-visibility-through-crm-tracking',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'review-automation-for-hvac-companies': {
+      resources: [
+        {
+          title: 'Review Automation Setup Guide for Roofing Companies',
+          description:
+            'A step-by-step guide to building review automation for roofing companies — covering post-job triggers, direct review links, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-roofing-companies',
+          path: '/resources/review-automation-setup-guide-for-roofing-companies',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Review Automation Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building review automation for salons — covering post-appointment triggers, personalised SMS requests, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-salons',
+          path: '/resources/review-automation-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'How Review Automation Improves Local Authority Guide',
+          description:
+            'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
+          slug: 'how-review-automation-improves-local-authority',
+          path: '/resources/how-review-automation-improves-local-authority',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'review-automation-for-roofing-companies': {
+      resources: [
+        {
+          title: 'Review Automation Setup Guide for Roofing Companies',
+          description:
+            'A step-by-step guide to building review automation for roofing companies — covering post-job triggers, direct review links, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-roofing-companies',
+          path: '/resources/review-automation-setup-guide-for-roofing-companies',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Review Automation Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building review automation for salons — covering post-appointment triggers, personalised SMS requests, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-salons',
+          path: '/resources/review-automation-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'How Review Automation Improves Local Authority Guide',
+          description:
+            'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
+          slug: 'how-review-automation-improves-local-authority',
+          path: '/resources/how-review-automation-improves-local-authority',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'review-automation-for-salons': {
+      resources: [
+        {
+          title: 'Review Automation Setup Guide for Roofing Companies',
+          description:
+            'A step-by-step guide to building review automation for roofing companies — covering post-job triggers, direct review links, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-roofing-companies',
+          path: '/resources/review-automation-setup-guide-for-roofing-companies',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Review Automation Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building review automation for salons — covering post-appointment triggers, personalised SMS requests, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-salons',
+          path: '/resources/review-automation-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'How Review Automation Improves Local Authority Guide',
+          description:
+            'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
+          slug: 'how-review-automation-improves-local-authority',
+          path: '/resources/how-review-automation-improves-local-authority',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'review-generation-system-for-local-businesses': {
+      resources: [
+        {
+          title: 'HVAC Review Generation Framework',
+          description:
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Review Generation System',
+          description:
+            'Learn how to build an automated review generation system that requests reviews from every customer after service completion without relying on team memory.',
+          slug: 'review-generation-system',
+          path: '/resources/review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'roofing-crm-pipeline-for-estimates': {
+      resources: [
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+          description:
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Roofing CRM Pipeline Structure',
+          description:
+            'See how roofing companies structure their CRM pipeline to track every job from inquiry to completion, eliminate missed estimates, and build predictable revenue visibility.',
+          slug: 'roofing-crm-pipeline-structure',
+          path: '/resources/roofing-crm-pipeline-structure',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Property Managers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'roofing-estimate-follow-up-delays': {
+      resources: [
+        {
+          title: 'Roofing Estimate Follow-Up Workflow',
+          description:
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Reducing Salon No-Shows with Automation',
+          description:
+            'See how salons use automated reminders, waitlist management, and smart deposit policies to cut no-show rates by 60-80% and recover thousands in monthly lost revenue.',
+          slug: 'reducing-salon-no-shows-with-automation',
+          path: '/resources/reducing-salon-no-shows-with-automation',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Electrical — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'roofing-review-generation-system': {
+      resources: [
+        {
+          title: 'HVAC Review Generation Framework',
+          description:
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Review Generation System',
+          description:
+            'Learn how to build an automated review generation system that requests reviews from every customer after service completion without relying on team memory.',
+          slug: 'review-generation-system',
+          path: '/resources/review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'sales-pipeline-visibility-for-hvac-companies': {
+      resources: [
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC CRM Pipeline Structure',
+          description:
+            'See how HVAC companies structure multi-track CRM pipelines for emergency, installation, and maintenance work — with automations that protect recurring revenue and enable capacity planning.',
+          slug: 'hvac-crm-pipeline-structure',
+          path: '/resources/hvac-crm-pipeline-structure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Sales Pipeline Visibility Framework',
+          description:
+            'Build a pipeline visibility framework that shows real-time deal health, flags stalled deals, and provides accurate revenue forecasting for your service business.',
+          slug: 'sales-pipeline-visibility-framework',
+          path: '/resources/sales-pipeline-visibility-framework',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Property Managers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Consultants — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
+          slug: 'consultants',
+          path: '/industries/legal-professional-services/consultants',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'sales-pipeline-visibility-framework': {
+      resources: [
+        {
+          title: 'Automotive CRM Pipeline for Repair Jobs',
+          description:
+            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
+          slug: 'automotive-crm-pipeline-for-repair-jobs',
+          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Building Revenue Visibility Through CRM Tracking Guide',
+          description:
+            'Learn how to build CRM-based revenue tracking that shows exactly where your revenue comes from, where it leaks, and where the biggest growth opportunities exist.',
+          slug: 'building-revenue-visibility-through-crm-tracking',
+          path: '/resources/building-revenue-visibility-through-crm-tracking',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Service Reminder Automation Framework',
+          description:
+            'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
+          slug: 'automotive-service-reminder-automation',
+          path: '/resources/automotive-service-reminder-automation',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Property Managers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Consultants — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
+          slug: 'consultants',
+          path: '/industries/legal-professional-services/consultants',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'salon-crm-pipeline-for-client-retention': {
+      resources: [
+        {
+          title: 'Reducing Salon No-Shows with Automation',
+          description:
+            'See how salons use automated reminders, waitlist management, and smart deposit policies to cut no-show rates by 60-80% and recover thousands in monthly lost revenue.',
+          slug: 'reducing-salon-no-shows-with-automation',
+          path: '/resources/reducing-salon-no-shows-with-automation',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+          description:
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Property Managers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'salon-review-generation-framework': {
+      resources: [
+        {
+          title: 'HVAC Review Generation Framework',
+          description:
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Review Generation System',
+          description:
+            'Learn how to build an automated review generation system that requests reviews from every customer after service completion without relying on team memory.',
+          slug: 'review-generation-system',
+          path: '/resources/review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'service-business-follow-up-automation': {
+      resources: [
+        {
+          title: 'Roofing Estimate Follow-Up Workflow',
+          description:
+            'See how roofing companies use automated estimate follow-up to stay top of mind during homeowner decision cycles, improving close rates and recovering jobs that would otherwise go silent.',
+          slug: 'roofing-estimate-follow-up-workflow',
+          path: '/resources/roofing-estimate-follow-up-workflow',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Service Business Follow-Up Automation Guide',
+          description:
+            'Learn how to build automated follow-up sequences triggered by CRM pipeline stages that ensure every lead receives consistent, timely communication.',
+          slug: 'service-business-follow-up-automation-guide',
+          path: '/resources/service-business-follow-up-automation-guide',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Electrical — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'service-page-architecture-for-service-businesses': {
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Service Page Architecture That Converts',
+          description:
+            'Learn how to architect service pages that guide visitors through decision paths with search-intent matching, multi-path CTAs, and CRM-connected forms.',
+          slug: 'service-page-architecture-that-converts',
+          path: '/resources/service-page-architecture-that-converts',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'smart-website-systems-for-roofing-companies': {
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'How Smart Website Systems Work',
+          description:
+            'Learn how smart website systems connect lead capture, CRM, booking, and follow-up into one operational infrastructure for service businesses.',
+          slug: 'how-smart-website-systems-work',
+          path: '/resources/how-smart-website-systems-work',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'systems-first-website-for-hvac-companies': {
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'What Is a Systems-First Website?',
+          description:
+            'Understand the systems-first website approach — designing around operational workflows instead of templates to build websites that run your business.',
+          slug: 'what-is-a-systems-first-website',
+          path: '/resources/what-is-a-systems-first-website',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'tracking-customer-lifetime-value-using-crm': {
+      resources: [
+        {
+          title: 'Tracking Salon Client Lifetime Value',
+          description:
+            'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
+          slug: 'tracking-salon-client-lifetime-value',
+          path: '/resources/tracking-salon-client-lifetime-value',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive CRM Pipeline for Repair Jobs',
+          description:
+            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
+          slug: 'automotive-crm-pipeline-for-repair-jobs',
+          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Service Reminder Automation Framework',
+          description:
+            'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
+          slug: 'automotive-service-reminder-automation',
+          path: '/resources/automotive-service-reminder-automation',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'tracking-salon-client-lifetime-value': {
+      resources: [
+        {
+          title: 'Reducing Salon No-Shows with Automation',
+          description:
+            'See how salons use automated reminders, waitlist management, and smart deposit policies to cut no-show rates by 60-80% and recover thousands in monthly lost revenue.',
+          slug: 'reducing-salon-no-shows-with-automation',
+          path: '/resources/reducing-salon-no-shows-with-automation',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Tracking Customer Lifetime Value Using CRM Guide',
+          description:
+            'Learn how to calculate and track Customer Lifetime Value using CRM data to make better acquisition, retention, and pricing decisions for your service business.',
+          slug: 'tracking-customer-lifetime-value-using-crm',
+          path: '/resources/tracking-customer-lifetime-value-using-crm',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'website-crm-integration-for-salons': {
+      resources: [
+        {
+          title: 'Reducing Salon No-Shows with Automation',
+          description:
+            'See how salons use automated reminders, waitlist management, and smart deposit policies to cut no-show rates by 60-80% and recover thousands in monthly lost revenue.',
+          slug: 'reducing-salon-no-shows-with-automation',
+          path: '/resources/reducing-salon-no-shows-with-automation',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Website + CRM Integration Explained',
+          description:
+            'Understand how website-CRM integration connects form submissions, booking data, and visitor behaviour directly to your CRM pipeline for faster response and better tracking.',
+          slug: 'website-crm-integration-explained',
+          path: '/resources/website-crm-integration-explained',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Accounting Firms — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for accounting firms that need clearer qualification, consultation flow, and stronger trust support.',
+          slug: 'accounting-firms',
+          path: '/industries/legal-professional-services/accounting-firms',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Consultants — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
+          slug: 'consultants',
+          path: '/industries/legal-professional-services/consultants',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'website-crm-integration-for-service-businesses': {
+      resources: [
+        {
+          title: 'Automotive CRM Pipeline for Repair Jobs',
+          description:
+            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
+          slug: 'automotive-crm-pipeline-for-repair-jobs',
+          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Website + CRM Integration Explained',
+          description:
+            'Understand how website-CRM integration connects form submissions, booking data, and visitor behaviour directly to your CRM pipeline for faster response and better tracking.',
+          slug: 'website-crm-integration-explained',
+          path: '/resources/website-crm-integration-explained',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Service Reminder Automation Framework',
+          description:
+            'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
+          slug: 'automotive-service-reminder-automation',
+          path: '/resources/automotive-service-reminder-automation',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Accounting Firms — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for accounting firms that need clearer qualification, consultation flow, and stronger trust support.',
+          slug: 'accounting-firms',
+          path: '/industries/legal-professional-services/accounting-firms',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Consultants — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
+          slug: 'consultants',
+          path: '/industries/legal-professional-services/consultants',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'website-design-that-supports-crm-systems': {
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Designing Websites That Support CRM Systems',
+          description:
+            'Learn how to design service business websites that natively support CRM integration with proper form architecture, data mapping, and pipeline-aligned page structure.',
+          slug: 'designing-websites-that-support-crm-systems',
+          path: '/resources/designing-websites-that-support-crm-systems',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'what-is-a-systems-first-website-for-service-businesses': {
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'What Is a Systems-First Website?',
+          description:
+            'Understand the systems-first website approach — designing around operational workflows instead of templates to build websites that run your business.',
+          slug: 'what-is-a-systems-first-website',
+          path: '/resources/what-is-a-systems-first-website',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-auto-repair-missed-calls-lose-booked-work': {
+      resources: [
+        {
+          title: 'Missed Call Recovery for HVAC',
+          description:
+            'See how HVAC companies recover missed calls with instant text responses, emergency escalation, and automated booking — capturing revenue that would otherwise go to competitors.',
+          slug: 'missed-call-recovery-for-hvac',
+          path: '/resources/missed-call-recovery-for-hvac',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Missed Call Recovery for Roofing',
+          description:
+            'See how roofing companies recover missed calls with automated SMS responses that capture lead details and convert unanswered calls into booked appointments.',
+          slug: 'missed-call-recovery-for-roofing',
+          path: '/resources/missed-call-recovery-for-roofing',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Missed Call Recovery for Auto Repair',
+          description:
+            'See how auto repair shops recover missed calls with instant text responses and booking links, converting unanswered calls into confirmed MOTs, services, and repair bookings.',
+          slug: 'missed-call-recovery-for-auto-repair',
+          path: '/resources/missed-call-recovery-for-auto-repair',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-auto-repair-shops-lose-phone-leads': {
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Lead Handling Example',
+          description:
+            'See how HVAC companies use automated lead handling to respond to every inquiry within minutes, route emergency calls instantly, and capture peak-season revenue that manual processes miss.',
+          slug: 'hvac-lead-handling-example',
+          path: '/resources/hvac-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Automation Framework Guide',
+          description:
+            'Understand the four-layer lead automation framework — capture, routing, qualification, and follow-up — that handles leads systematically and converts more enquiries into booked jobs.',
+          slug: 'lead-automation-framework',
+          path: '/resources/lead-automation-framework',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Electrical — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-booking-systems-need-website-infrastructure': {
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Conversion Architecture for Service Websites',
+          description:
+            'Learn how conversion architecture structures service business websites to turn visitors into booked customers through decision-path design and system integration.',
+          slug: 'conversion-architecture-for-service-websites',
+          path: '/resources/conversion-architecture-for-service-websites',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Small Med Spas — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for small med spas that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'small-med-spas',
+          path: '/industries/beauty-personal-care/small-med-spas',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-hvac-companies-disappear-from-local-search': {
+      resources: [
+        {
+          title: 'HVAC Review Generation Framework',
+          description:
+            'See how HVAC companies automate review collection with job-type-specific timing, build year-round review velocity from maintenance visits, and create the social proof that leads in local search.',
+          slug: 'hvac-review-generation-framework',
+          path: '/resources/hvac-review-generation-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Visibility Optimization Guide for HVAC Companies',
+          description:
+            'A step-by-step guide to improving HVAC local visibility — covering Google Business Profile optimisation, citation audit, review automation, and ranking tracking.',
+          slug: 'local-visibility-optimization-guide-for-hvac-companies',
+          path: '/resources/local-visibility-optimization-guide-for-hvac-companies',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Visibility Optimization Guide for Realtors',
+          description:
+            'A step-by-step guide to improving realtor local visibility — covering post-transaction review automation, citation management, and competitive ranking tracking.',
+          slug: 'local-visibility-optimization-guide-for-realtors',
+          path: '/resources/local-visibility-optimization-guide-for-realtors',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-hvac-companies-lose-leads-after-hours': {
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Lead Handling Example',
+          description:
+            'See how HVAC companies use automated lead handling to respond to every inquiry within minutes, route emergency calls instantly, and capture peak-season revenue that manual processes miss.',
+          slug: 'hvac-lead-handling-example',
+          path: '/resources/hvac-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Automation Framework Guide',
+          description:
+            'Understand the four-layer lead automation framework — capture, routing, qualification, and follow-up — that handles leads systematically and converts more enquiries into booked jobs.',
+          slug: 'lead-automation-framework',
+          path: '/resources/lead-automation-framework',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Electrical — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-hvac-missed-calls-lose-after-hours-revenue': {
+      resources: [
+        {
+          title: 'Missed Call Recovery for HVAC',
+          description:
+            'See how HVAC companies recover missed calls with instant text responses, emergency escalation, and automated booking — capturing revenue that would otherwise go to competitors.',
+          slug: 'missed-call-recovery-for-hvac',
+          path: '/resources/missed-call-recovery-for-hvac',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Missed Call Recovery for Roofing',
+          description:
+            'See how roofing companies recover missed calls with automated SMS responses that capture lead details and convert unanswered calls into booked appointments.',
+          slug: 'missed-call-recovery-for-roofing',
+          path: '/resources/missed-call-recovery-for-roofing',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Missed Call Recovery for Auto Repair',
+          description:
+            'See how auto repair shops recover missed calls with instant text responses and booking links, converting unanswered calls into confirmed MOTs, services, and repair bookings.',
+          slug: 'missed-call-recovery-for-auto-repair',
+          path: '/resources/missed-call-recovery-for-auto-repair',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-plumbing-companies-lose-jobs-without-crm-pipeline': {
+      resources: [
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+          description:
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive CRM Pipeline for Repair Jobs',
+          description:
+            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
+          slug: 'automotive-crm-pipeline-for-repair-jobs',
+          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Property Managers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-realtors-lose-leads-without-local-visibility': {
+      resources: [
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Visibility Optimization Guide for HVAC Companies',
+          description:
+            'A step-by-step guide to improving HVAC local visibility — covering Google Business Profile optimisation, citation audit, review automation, and ranking tracking.',
+          slug: 'local-visibility-optimization-guide-for-hvac-companies',
+          path: '/resources/local-visibility-optimization-guide-for-hvac-companies',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local Visibility Optimization Guide for Realtors',
+          description:
+            'A step-by-step guide to improving realtor local visibility — covering post-transaction review automation, citation management, and competitive ranking tracking.',
+          slug: 'local-visibility-optimization-guide-for-realtors',
+          path: '/resources/local-visibility-optimization-guide-for-realtors',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-roofing-companies-lose-jobs-without-review-automation': {
+      resources: [
+        {
+          title: 'Review Automation Setup Guide for Roofing Companies',
+          description:
+            'A step-by-step guide to building review automation for roofing companies — covering post-job triggers, direct review links, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-roofing-companies',
+          path: '/resources/review-automation-setup-guide-for-roofing-companies',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Review Automation Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building review automation for salons — covering post-appointment triggers, personalised SMS requests, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-salons',
+          path: '/resources/review-automation-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'How Review Automation Improves Local Authority Guide',
+          description:
+            'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
+          slug: 'how-review-automation-improves-local-authority',
+          path: '/resources/how-review-automation-improves-local-authority',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-roofing-companies-lose-leads-during-storm-season': {
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Lead Handling Example',
+          description:
+            'See how HVAC companies use automated lead handling to respond to every inquiry within minutes, route emergency calls instantly, and capture peak-season revenue that manual processes miss.',
+          slug: 'hvac-lead-handling-example',
+          path: '/resources/hvac-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Roofing Lead Handling Example',
+          description:
+            'See how roofing companies implement AI-assisted lead handling systems that respond instantly, qualify by job type, and route emergency and quote leads to the right team members.',
+          slug: 'roofing-lead-handling-example',
+          path: '/resources/roofing-lead-handling-example',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Electrical — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-roofing-missed-calls-cost-emergency-jobs': {
+      resources: [
+        {
+          title: 'Missed Call Recovery for HVAC',
+          description:
+            'See how HVAC companies recover missed calls with instant text responses, emergency escalation, and automated booking — capturing revenue that would otherwise go to competitors.',
+          slug: 'missed-call-recovery-for-hvac',
+          path: '/resources/missed-call-recovery-for-hvac',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Missed Call Recovery for Roofing',
+          description:
+            'See how roofing companies recover missed calls with automated SMS responses that capture lead details and convert unanswered calls into booked appointments.',
+          slug: 'missed-call-recovery-for-roofing',
+          path: '/resources/missed-call-recovery-for-roofing',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Missed Call Recovery for Auto Repair',
+          description:
+            'See how auto repair shops recover missed calls with instant text responses and booking links, converting unanswered calls into confirmed MOTs, services, and repair bookings.',
+          slug: 'missed-call-recovery-for-auto-repair',
+          path: '/resources/missed-call-recovery-for-auto-repair',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-salons-lose-calls-during-service-hours': {
+      resources: [
+        {
+          title: 'Missed Call Recovery for HVAC',
+          description:
+            'See how HVAC companies recover missed calls with instant text responses, emergency escalation, and automated booking — capturing revenue that would otherwise go to competitors.',
+          slug: 'missed-call-recovery-for-hvac',
+          path: '/resources/missed-call-recovery-for-hvac',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Missed Call Recovery for Salons',
+          description:
+            'See how salons recover missed calls with instant booking link texts, converting unanswered phone calls into confirmed appointments even during the busiest service hours.',
+          slug: 'missed-call-recovery-for-salons',
+          path: '/resources/missed-call-recovery-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Missed Call Recovery for Auto Repair',
+          description:
+            'See how auto repair shops recover missed calls with instant text responses and booking links, converting unanswered calls into confirmed MOTs, services, and repair bookings.',
+          slug: 'missed-call-recovery-for-auto-repair',
+          path: '/resources/missed-call-recovery-for-auto-repair',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-salons-lose-clients-without-crm-pipeline': {
+      resources: [
+        {
+          title: 'Reducing Salon No-Shows with Automation',
+          description:
+            'See how salons use automated reminders, waitlist management, and smart deposit policies to cut no-show rates by 60-80% and recover thousands in monthly lost revenue.',
+          slug: 'reducing-salon-no-shows-with-automation',
+          path: '/resources/reducing-salon-no-shows-with-automation',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building a salon CRM pipeline for client retention — covering lifecycle stages, rebooking automation, at-risk detection, and retention reporting.',
+          slug: 'crm-pipeline-setup-guide-for-salons',
+          path: '/resources/crm-pipeline-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Setup Guide for Plumbing Businesses',
+          description:
+            'A step-by-step guide to building a CRM pipeline for plumbing businesses — covering pipeline stages, automated quote follow-up, and conversion reporting.',
+          slug: 'crm-pipeline-setup-guide-for-plumbing-businesses',
+          path: '/resources/crm-pipeline-setup-guide-for-plumbing-businesses',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Property Managers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-salons-lose-clients-without-review-automation': {
+      resources: [
+        {
+          title: 'Review Automation Setup Guide for Roofing Companies',
+          description:
+            'A step-by-step guide to building review automation for roofing companies — covering post-job triggers, direct review links, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-roofing-companies',
+          path: '/resources/review-automation-setup-guide-for-roofing-companies',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Review Automation Setup Guide for Salons',
+          description:
+            'A step-by-step guide to building review automation for salons — covering post-appointment triggers, personalised SMS requests, and review velocity tracking.',
+          slug: 'review-automation-setup-guide-for-salons',
+          path: '/resources/review-automation-setup-guide-for-salons',
+          nodeType: 'resource',
+        },
+        {
+          title: 'How Review Automation Improves Local Authority Guide',
+          description:
+            'Understand the connection between automated review collection and local search authority, and how consistent review velocity compounds into ranking improvements.',
+          slug: 'how-review-automation-improves-local-authority',
+          path: '/resources/how-review-automation-improves-local-authority',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-salons-need-lead-handling-systems': {
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC Lead Handling Example',
+          description:
+            'See how HVAC companies use automated lead handling to respond to every inquiry within minutes, route emergency calls instantly, and capture peak-season revenue that manual processes miss.',
+          slug: 'hvac-lead-handling-example',
+          path: '/resources/hvac-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Salon Lead Handling Example',
+          description:
+            'See how salons use automated lead handling to respond instantly across Instagram, phone, and web, convert inquiries into self-service bookings, and grow new client acquisition by 50%.',
+          slug: 'salon-lead-handling-example',
+          path: '/resources/salon-lead-handling-example',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Electrical — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-service-business-websites-fail-to-convert': {
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Conversion Architecture for Service Websites',
+          description:
+            'Learn how conversion architecture structures service business websites to turn visitors into booked customers through decision-path design and system integration.',
+          slug: 'conversion-architecture-for-service-websites',
+          path: '/resources/conversion-architecture-for-service-websites',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-slow-lead-response-is-killing-automotive-businesses': {
+      resources: [
+        {
+          title: 'Automotive CRM Pipeline for Repair Jobs',
+          description:
+            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
+          slug: 'automotive-crm-pipeline-for-repair-jobs',
+          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Response Optimization Checklist for HVAC Businesses',
+          description:
+            'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
+          slug: 'lead-response-optimization-checklist-for-hvac-businesses',
+          path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Service Reminder Automation Framework',
+          description:
+            'See how auto repair shops use automated MOT reminders, service interval tracking, and seasonal campaigns to reactivate existing customers and generate predictable recurring revenue.',
+          slug: 'automotive-service-reminder-automation',
+          path: '/resources/automotive-service-reminder-automation',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Repair Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for repair shops that need clearer booking flow, service qualification, and stronger local trust support.',
+          slug: 'repair-shops',
+          path: '/industries/local-appointment-businesses/repair-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Small Law Firms — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for small law firms that need clearer qualification, consultation flow, and stronger trust support.',
+          slug: 'small-law-firms',
+          path: '/industries/legal-professional-services/small-law-firms',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'why-slow-lead-response-is-killing-hvac-businesses': {
+      resources: [
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'HVAC CRM Pipeline Structure',
+          description:
+            'See how HVAC companies structure multi-track CRM pipelines for emergency, installation, and maintenance work — with automations that protect recurring revenue and enable capacity planning.',
+          slug: 'hvac-crm-pipeline-structure',
+          path: '/resources/hvac-crm-pipeline-structure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Response Optimization Checklist for HVAC Businesses',
+          description:
+            'A step-by-step checklist to audit and fix HVAC lead response time using CRM automation — covering instant acknowledgement, emergency routing, and response tracking.',
+          slug: 'lead-response-optimization-checklist-for-hvac-businesses',
+          path: '/resources/lead-response-optimization-checklist-for-hvac-businesses',
+          nodeType: 'resource',
+        },
+      ],
+      industries: [
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Repair Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for repair shops that need clearer booking flow, service qualification, and stronger local trust support.',
+          slug: 'repair-shops',
+          path: '/industries/local-appointment-businesses/repair-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Small Law Firms — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for small law firms that need clearer qualification, consultation flow, and stronger trust support.',
+          slug: 'small-law-firms',
+          path: '/industries/legal-professional-services/small-law-firms',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+  },
+  resource: {
+    'authority-signals-for-local-search': {
+      services: [
+        {
+          title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
+          description:
+            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'auto-repair-lead-handling-example': {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Electrical — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'auto-reply-funnel': {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'automotive-crm-pipeline-for-repair-jobs': {
+      services: [
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'automotive-review-generation-system': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'automotive-service-reminder-automation': {
+      services: [
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'booking-systems-inside-website-infrastructure': {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          description:
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'building-revenue-visibility-through-crm-tracking': {
+      services: [
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'client-reactivation-systems': {
+      services: [
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Small Med Spas — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for small med spas that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'small-med-spas',
+          path: '/industries/beauty-personal-care/small-med-spas',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'conversion-architecture-for-service-websites': {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Service Pages vs One Generic Services Page | MindWP',
+          description:
+            'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
+          slug: 'service-pages-vs-one-generic-services-page',
+          path: '/services/service-pages-vs-one-generic-services-page',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'conversion-tracking-for-service-businesses': {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          description:
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'crm-pipeline-architecture': {
+      services: [
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'crm-pipeline-automation': {
+      services: [
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'crm-pipeline-setup-guide-for-plumbing-businesses': {
+      services: [
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Property Managers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'crm-pipeline-setup-guide-for-salons': {
+      services: [
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Property Managers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'customer-feedback-loop-framework': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Plumbing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for plumbing companies that need clearer emergency routing, booking support, and stronger follow-up.',
+          slug: 'plumbing-companies',
+          path: '/industries/home-services/plumbing-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'designing-websites-that-support-crm-systems': {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Service Pages vs One Generic Services Page | MindWP',
+          description:
+            'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
+          slug: 'service-pages-vs-one-generic-services-page',
+          path: '/services/service-pages-vs-one-generic-services-page',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'google-business-profile-system-architecture': {
+      services: [
+        {
+          title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
+          description:
+            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'how-review-automation-improves-local-authority': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'how-smart-website-systems-work': {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          description:
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'hvac-crm-pipeline-structure': {
+      services: [
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'hvac-emergency-call-handling-system': {
+      services: [
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Plumbing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for plumbing companies that need clearer emergency routing, booking support, and stronger follow-up.',
+          slug: 'plumbing-companies',
+          path: '/industries/home-services/plumbing-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'hvac-lead-handling-example': {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Electrical — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'hvac-review-generation-framework': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'lead-automation-framework': {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Electrical — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'lead-qualification-framework': {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'lead-response-optimization-checklist-for-hvac-businesses': {
+      services: [
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Repair Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for repair shops that need clearer booking flow, service qualification, and stronger local trust support.',
+          slug: 'repair-shops',
+          path: '/industries/local-appointment-businesses/repair-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Small Law Firms — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for small law firms that need clearer qualification, consultation flow, and stronger trust support.',
+          slug: 'small-law-firms',
+          path: '/industries/legal-professional-services/small-law-firms',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'lead-response-time-framework': {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'lead-routing-models-for-service-companies': {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'local-seo-vs-website-optimization': {
+      services: [
+        {
+          title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
+          description:
+            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'local-service-page-architecture': {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Service Pages vs One Generic Services Page | MindWP',
+          description:
+            'A BOFU service page for businesses deciding whether a single generic services page is enough or whether dedicated service pages are required for visibility and conversion.',
+          slug: 'service-pages-vs-one-generic-services-page',
+          path: '/services/service-pages-vs-one-generic-services-page',
+          nodeType: 'service',
+        },
+        {
+          title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
+          description:
+            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Landscaping — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for landscaping companies that need clearer service routing, estimate booking, and stronger seasonal follow-up.',
+          slug: 'landscaping-companies',
+          path: '/industries/home-services/landscaping-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'local-visibility-framework': {
+      services: [
+        {
+          title: 'Local SEO for Service Businesses | Show Up When Customers Search | MindWP',
+          description:
+            'Local customers search for your services every day. If they find your competitors instead, that is business you lose. We make your website, Google profile, and listings work together so the right people find you.',
+          slug: 'local-seo-authority',
+          path: '/services/local-seo-authority',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'local-visibility-optimization-guide-for-hvac-companies': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'local-visibility-optimization-guide-for-realtors': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Realtors — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for realtors that need clearer enquiry handling, appointment flow, and stronger local trust.',
+          slug: 'realtors',
+          path: '/industries/real-estate-property-services/realtors',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'missed-call-recovery-for-auto-repair': {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'missed-call-recovery-for-hvac': {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'missed-call-recovery-for-roofing': {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'missed-call-recovery-for-salons': {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'missed-call-recovery-system': {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'multi-channel-lead-capture-systems': {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'reducing-salon-no-shows-with-automation': {
+      services: [
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Nail Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for nail salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'nail-salons',
+          path: '/industries/beauty-personal-care/nail-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Lash Lift & Extensions — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for lash studios that need clearer booking flow, no-show reduction, review automation, and stronger local visibility to fill more appointments.',
+          slug: 'lash-lift-and-extensions',
+          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'reputation-monitoring-systems': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Accounting Firms — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for accounting firms that need clearer qualification, consultation flow, and stronger trust support.',
+          slug: 'accounting-firms',
+          path: '/industries/legal-professional-services/accounting-firms',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Small Law Firms — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for small law firms that need clearer qualification, consultation flow, and stronger trust support.',
+          slug: 'small-law-firms',
+          path: '/industries/legal-professional-services/small-law-firms',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'responding-to-negative-reviews-systematically': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'review-automation-setup-guide-for-roofing-companies': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'review-automation-setup-guide-for-salons': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'review-generation-system': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'roofing-crm-pipeline-structure': {
+      services: [
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'roofing-estimate-follow-up-workflow': {
+      services: [
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Electrical — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'roofing-lead-handling-example': {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Electrical — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'roofing-review-generation-system': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'sales-pipeline-visibility-framework': {
+      services: [
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Property Managers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Consultants — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
+          slug: 'consultants',
+          path: '/industries/legal-professional-services/consultants',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'salon-lead-handling-example': {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Electrical — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'salon-review-generation-framework': {
+      services: [
+        {
+          title: 'Reputation & Review Management for Service Businesses | MindWP',
+          description:
+            "Your customers are happy. Your reviews don't show it. Timed review requests, complaint routing, and monitoring that turns real satisfaction into visible proof.",
+          slug: 'reputation-review-systems',
+          path: '/services/reputation-review-systems',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'service-business-follow-up-automation-guide': {
+      services: [
+        {
+          title: 'AI Lead Handling for Service Businesses | MindWP',
+          description:
+            "Enquiries come in at all hours. Nobody's always available. AI handles the first response — answers, captures details, hands off to the right person before interest dies.",
+          slug: 'ai-lead-handling',
+          path: '/services/ai-lead-handling',
+          nodeType: 'service',
+        },
+        {
+          title: 'Missed Call Recovery for Service Businesses | MindWP',
+          description:
+            'When nobody picks up, the caller rings someone else. Missed call recovery catches those moments — text back instantly, capture the details, get someone on it before the job goes elsewhere.',
+          slug: 'missed-call-recovery-system',
+          path: '/services/missed-call-recovery-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Unified Communication System for Service Businesses | MindWP',
+          description:
+            'Enquiries arrive through calls, forms, chat, and email. Nobody sees the full picture. Unified communication with clear routing, ownership, and follow-up across every channel.',
+          slug: 'unified-communication-system',
+          path: '/services/unified-communication-system',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Electrical — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for electrical companies that need clearer service routing, booking support, and stronger follow-up.',
+          slug: 'electrical-companies',
+          path: '/industries/home-services/electrical-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'service-page-architecture-that-converts': {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website Redesign & Rebuild for Service Businesses | MindWP',
+          description:
+            'Thinking about redesigning your website? Before you invest, make sure the problem is actually the design. Most service business websites fail at handling enquiries, not at looking good.',
+          slug: 'website-redesign-system-rebuild',
+          path: '/services/website-redesign-system-rebuild',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'tracking-customer-lifetime-value-using-crm': {
+      services: [
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'tracking-salon-client-lifetime-value': {
+      services: [
+        {
+          title: 'Lead Reactivation System for Service Businesses | MindWP',
+          description:
+            'Old enquiries, stalled quotes, and past customers sitting in your CRM doing nothing. Structured reactivation that turns forgotten contacts into recovered revenue.',
+          slug: 'lead-reactivation-system',
+          path: '/services/lead-reactivation-system',
+          nodeType: 'service',
+        },
+        {
+          title: 'Conversion Layer for Service Businesses | MindWP',
+          description:
+            "Visitors arrive interested. Then they can't figure out what to do next. Conversion work that fixes the gap between attention and action — offer clarity, CTA alignment, and enquiry follow-up.",
+          slug: 'conversion-layer',
+          path: '/services/conversion-layer',
+          nodeType: 'service',
+        },
+        {
+          title: 'Conversion Funnel System vs Landing Page Development | MindWP',
+          description:
+            'A service decision page comparing isolated landing-page development against a full conversion funnel system for service businesses that need stronger movement from attention to action.',
+          slug: 'conversion-funnel-system-vs-landing-page-development',
+          path: '/services/conversion-funnel-system-vs-landing-page-development',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'website-crm-integration-explained': {
+      services: [
+        {
+          title: 'CRM Setup for Service Businesses | MindWP',
+          description:
+            "Leads come in from your website, calls, and messages. Some get answered. Some don't. A properly set up CRM captures every one, follows up on time, and shows you where every opportunity stands.",
+          slug: 'crm-infrastructure-implementation',
+          path: '/services/crm-infrastructure-implementation',
+          nodeType: 'service',
+        },
+        {
+          title: 'Website CRM Integration vs Manual Lead Handling | MindWP',
+          description:
+            'A decision page for service businesses comparing manual lead handling against integrated CRM infrastructure. See where manual follow-up breaks and what connected CRM systems fix.',
+          slug: 'website-crm-integration-vs-manual-lead-handling',
+          path: '/services/website-crm-integration-vs-manual-lead-handling',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Accounting Firms — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for accounting firms that need clearer qualification, consultation flow, and stronger trust support.',
+          slug: 'accounting-firms',
+          path: '/industries/legal-professional-services/accounting-firms',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Consultants — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
+          slug: 'consultants',
+          path: '/industries/legal-professional-services/consultants',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+    'what-is-a-systems-first-website': {
+      services: [
+        {
+          title: 'Smart Website Systems for Service Businesses | MindWP',
+          description:
+            'Websites that capture every enquiry, route it to the right person, and follow up automatically. Built for service businesses losing leads to broken websites.',
+          slug: 'smart-website-systems',
+          path: '/services/smart-website-systems',
+          nodeType: 'service',
+        },
+        {
+          title: 'WordPress Development for Service Businesses | MindWP',
+          description:
+            "A properly built WordPress site is a good start. But the build alone doesn't bring in work. What matters is what happens when someone visits and tries to get in touch.",
+          slug: 'wordpress-development',
+          path: '/services/wordpress-development',
+          nodeType: 'service',
+        },
+        {
+          title: 'System Migration & Platform Consolidation for Service Businesses | MindWP',
+          description:
+            'You want off the old platform. Fair enough. But a new platform with the same missing pieces gives you the same results on a different login screen.',
+          slug: 'system-migration-platform-consolidation',
+          path: '/services/system-migration-platform-consolidation',
+          nodeType: 'service',
+        },
+      ],
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+      ],
+    },
+  },
+  caseStudy: {
+    'appointment-business-booking-automation': {
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Nail Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for nail salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'nail-salons',
+          path: '/industries/beauty-personal-care/nail-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Lash Lift & Extensions — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for lash studios that need clearer booking flow, no-show reduction, review automation, and stronger local visibility to fill more appointments.',
+          slug: 'lash-lift-and-extensions',
+          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'How Smart Website Systems Work',
+          description:
+            'Learn how smart website systems connect lead capture, CRM, booking, and follow-up into one operational infrastructure for service businesses.',
+          slug: 'how-smart-website-systems-work',
+          path: '/resources/how-smart-website-systems-work',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'appointment-reminder-no-show-reduction': {
+      industries: [],
+      resources: [
+        {
+          title: 'Tracking Salon Client Lifetime Value',
+          description:
+            'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
+          slug: 'tracking-salon-client-lifetime-value',
+          path: '/resources/tracking-salon-client-lifetime-value',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'auto-repair-missed-call-recovery': {
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'Missed Call Recovery for Auto Repair',
+          description:
+            'See how auto repair shops recover missed calls with instant text responses and booking links, converting unanswered calls into confirmed MOTs, services, and repair bookings.',
+          slug: 'missed-call-recovery-for-auto-repair',
+          path: '/resources/missed-call-recovery-for-auto-repair',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Build a 5-Minute Auto-Reply Funnel (SMS + Email Template)',
+          description:
+            'Set up automatic replies for enquiries in 5 minutes. Get more bookings with instant SMS and email responses that feel personal but run on autopilot.',
+          slug: 'auto-reply-funnel',
+          path: '/resources/auto-reply-funnel',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Response Time Framework',
+          description:
+            'Understand why lead response time determines conversion rates and how to build systems that respond in seconds instead of hours using automation and priority routing.',
+          slug: 'lead-response-time-framework',
+          path: '/resources/lead-response-time-framework',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'automotive-service-reminder-automation': {
+      industries: [],
+      resources: [
+        {
+          title: 'Tracking Salon Client Lifetime Value',
+          description:
+            'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
+          slug: 'tracking-salon-client-lifetime-value',
+          path: '/resources/tracking-salon-client-lifetime-value',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'beauty-salon-online-booking-local-seo-manchester-all-sections': {
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Nail Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for nail salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'nail-salons',
+          path: '/industries/beauty-personal-care/nail-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Lash Lift & Extensions — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for lash studios that need clearer booking flow, no-show reduction, review automation, and stronger local visibility to fill more appointments.',
+          slug: 'lash-lift-and-extensions',
+          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'beauty-salon-online-booking-local-seo-manchester-custom': {
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Nail Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for nail salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'nail-salons',
+          path: '/industries/beauty-personal-care/nail-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Lash Lift & Extensions — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for lash studios that need clearer booking flow, no-show reduction, review automation, and stronger local visibility to fill more appointments.',
+          slug: 'lash-lift-and-extensions',
+          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'crm-pipeline-visibility-transformation': {
+      industries: [
+        {
+          title: 'Mortgage Brokers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mortgage brokers that need clearer enquiry qualification, consultation flow, and stronger trust support.',
+          slug: 'mortgage-brokers',
+          path: '/industries/real-estate-property-services/mortgage-brokers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Property Managers — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for property managers that need clearer owner and tenant routing, service coordination, and stronger trust flow.',
+          slug: 'property-managers',
+          path: '/industries/real-estate-property-services/property-managers',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Consultants — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
+          slug: 'consultants',
+          path: '/industries/legal-professional-services/consultants',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'Roofing CRM Pipeline Structure',
+          description:
+            'See how roofing companies structure their CRM pipeline to track every job from inquiry to completion, eliminate missed estimates, and build predictable revenue visibility.',
+          slug: 'roofing-crm-pipeline-structure',
+          path: '/resources/roofing-crm-pipeline-structure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'CRM Pipeline Architecture',
+          description:
+            'Learn how to architect a CRM pipeline with custom stages, automated follow-up, and accurate forecasting that mirrors your actual sales process.',
+          slug: 'crm-pipeline-architecture',
+          path: '/resources/crm-pipeline-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Building Revenue Visibility Through CRM Tracking Guide',
+          description:
+            'Learn how to build CRM-based revenue tracking that shows exactly where your revenue comes from, where it leaks, and where the biggest growth opportunities exist.',
+          slug: 'building-revenue-visibility-through-crm-tracking',
+          path: '/resources/building-revenue-visibility-through-crm-tracking',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'hvac-emergency-lead-routing': {
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'HVAC Emergency Call Handling System',
+          description:
+            'See how HVAC companies implement dedicated emergency call handling with tiered triage, automated dispatch, and premium pricing to capture high-value work around the clock.',
+          slug: 'hvac-emergency-call-handling-system',
+          path: '/resources/hvac-emergency-call-handling-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Missed Call Recovery for HVAC',
+          description:
+            'See how HVAC companies recover missed calls with instant text responses, emergency escalation, and automated booking — capturing revenue that would otherwise go to competitors.',
+          slug: 'missed-call-recovery-for-hvac',
+          path: '/resources/missed-call-recovery-for-hvac',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Routing Models for Service Companies Guide',
+          description:
+            'Understand the four lead routing models — round-robin, skill-based, territory-based, and priority-based — and how to implement the right model for your service business.',
+          slug: 'lead-routing-models-for-service-companies',
+          path: '/resources/lead-routing-models-for-service-companies',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'hvac-maintenance-plan-reactivation': {
+      industries: [],
+      resources: [
+        {
+          title: 'Tracking Salon Client Lifetime Value',
+          description:
+            'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
+          slug: 'tracking-salon-client-lifetime-value',
+          path: '/resources/tracking-salon-client-lifetime-value',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'hvac-seasonal-lead-surge-handling': {
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'Missed Call Recovery for HVAC',
+          description:
+            'See how HVAC companies recover missed calls with instant text responses, emergency escalation, and automated booking — capturing revenue that would otherwise go to competitors.',
+          slug: 'missed-call-recovery-for-hvac',
+          path: '/resources/missed-call-recovery-for-hvac',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Build a 5-Minute Auto-Reply Funnel (SMS + Email Template)',
+          description:
+            'Set up automatic replies for enquiries in 5 minutes. Get more bookings with instant SMS and email responses that feel personal but run on autopilot.',
+          slug: 'auto-reply-funnel',
+          path: '/resources/auto-reply-funnel',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Response Time Framework',
+          description:
+            'Understand why lead response time determines conversion rates and how to build systems that respond in seconds instead of hours using automation and priority routing.',
+          slug: 'lead-response-time-framework',
+          path: '/resources/lead-response-time-framework',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'law-firm-client-intake-automation': {
+      industries: [],
+      resources: [
+        {
+          title: 'Tracking Salon Client Lifetime Value',
+          description:
+            'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
+          slug: 'tracking-salon-client-lifetime-value',
+          path: '/resources/tracking-salon-client-lifetime-value',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'law-firm-consultation-booking-system': {
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Nail Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for nail salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'nail-salons',
+          path: '/industries/beauty-personal-care/nail-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Lash Lift & Extensions — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for lash studios that need clearer booking flow, no-show reduction, review automation, and stronger local visibility to fill more appointments.',
+          slug: 'lash-lift-and-extensions',
+          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'How Smart Website Systems Work',
+          description:
+            'Learn how smart website systems connect lead capture, CRM, booking, and follow-up into one operational infrastructure for service businesses.',
+          slug: 'how-smart-website-systems-work',
+          path: '/resources/how-smart-website-systems-work',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'local-authority-system-impact': {
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Roofing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for roofing companies that need clearer inspections, quote follow-up, and stronger local trust.',
+          slug: 'roofing-companies',
+          path: '/industries/home-services/roofing-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Visibility Framework',
+          description:
+            'Build a local visibility framework that coordinates search, directories, reviews, and content into a unified strategy that maximises how often customers find your business.',
+          slug: 'local-visibility-framework',
+          path: '/resources/local-visibility-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Google Business Profile System Architecture Guide',
+          description:
+            'Learn how to fully architect your Google Business Profile with complete categories, descriptions, photos, and activity to maximise local search visibility.',
+          slug: 'google-business-profile-system-architecture',
+          path: '/resources/google-business-profile-system-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Local SEO vs Website Optimisation',
+          description:
+            'Understand the difference between local SEO and website optimisation, learn where each applies, and know which investments drive the most visibility for service businesses.',
+          slug: 'local-seo-vs-website-optimization',
+          path: '/resources/local-seo-vs-website-optimization',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'real-estate-inquiry-routing': {
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'Build a 5-Minute Auto-Reply Funnel (SMS + Email Template)',
+          description:
+            'Set up automatic replies for enquiries in 5 minutes. Get more bookings with instant SMS and email responses that feel personal but run on autopilot.',
+          slug: 'auto-reply-funnel',
+          path: '/resources/auto-reply-funnel',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Response Time Framework',
+          description:
+            'Understand why lead response time determines conversion rates and how to build systems that respond in seconds instead of hours using automation and priority routing.',
+          slug: 'lead-response-time-framework',
+          path: '/resources/lead-response-time-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Routing Models for Service Companies Guide',
+          description:
+            'Understand the four lead routing models — round-robin, skill-based, territory-based, and priority-based — and how to implement the right model for your service business.',
+          slug: 'lead-routing-models-for-service-companies',
+          path: '/resources/lead-routing-models-for-service-companies',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'realtor-lead-follow-up-automation': {
+      industries: [],
+      resources: [
+        {
+          title: 'Tracking Salon Client Lifetime Value',
+          description:
+            'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
+          slug: 'tracking-salon-client-lifetime-value',
+          path: '/resources/tracking-salon-client-lifetime-value',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'roofing-estimate-follow-up-automation': {
+      industries: [],
+      resources: [
+        {
+          title: 'Tracking Salon Client Lifetime Value',
+          description:
+            'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
+          slug: 'tracking-salon-client-lifetime-value',
+          path: '/resources/tracking-salon-client-lifetime-value',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'roofing-website-rebuild-with-crm': {
+      industries: [
+        {
+          title: 'Landscaping — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for landscaping companies that need clearer service routing, estimate booking, and stronger seasonal follow-up.',
+          slug: 'landscaping-companies',
+          path: '/industries/home-services/landscaping-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Accounting Firms — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for accounting firms that need clearer qualification, consultation flow, and stronger trust support.',
+          slug: 'accounting-firms',
+          path: '/industries/legal-professional-services/accounting-firms',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Consultants — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for consultants that need clearer qualification, discovery flow, and stronger trust support.',
+          slug: 'consultants',
+          path: '/industries/legal-professional-services/consultants',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'Local Service Page Architecture',
+          description:
+            'Learn how to architect dedicated service + location pages that target the specific local searches your customers use and give Google the relevance signals needed to rank.',
+          slug: 'local-service-page-architecture',
+          path: '/resources/local-service-page-architecture',
+          nodeType: 'resource',
+        },
+        {
+          title: 'How Smart Website Systems Work',
+          description:
+            'Learn how smart website systems connect lead capture, CRM, booking, and follow-up into one operational infrastructure for service businesses.',
+          slug: 'how-smart-website-systems-work',
+          path: '/resources/how-smart-website-systems-work',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Conversion Architecture for Service Websites',
+          description:
+            'Learn how conversion architecture structures service business websites to turn visitors into booked customers through decision-path design and system integration.',
+          slug: 'conversion-architecture-for-service-websites',
+          path: '/resources/conversion-architecture-for-service-websites',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'salon-booking-automation': {
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Car Detailing — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for car detailing businesses that need clearer booking flow, preparation support, and stronger repeat-visit follow-up.',
+          slug: 'car-detailing',
+          path: '/industries/automotive-services/car-detailing',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Aesthetic & Cosmetic Clinics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for aesthetic and cosmetic clinics that need clearer consultation flow, booking support, and stronger trust-building follow-up.',
+          slug: 'aesthetic-cosmetic-clinics',
+          path: '/industries/beauty-personal-care/aesthetic-cosmetic-clinics',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'Auto Repair Lead Handling Example',
+          description:
+            'See how auto repair shops use automated lead handling and online booking to capture every inquiry, reduce phone volume for routine services, and recover revenue lost to missed calls.',
+          slug: 'auto-repair-lead-handling-example',
+          path: '/resources/auto-repair-lead-handling-example',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Booking Systems Inside Website Infrastructure',
+          description:
+            'Learn how to integrate booking systems into your website architecture so appointments flow directly into CRM with automated confirmations, reminders, and pipeline tracking.',
+          slug: 'booking-systems-inside-website-infrastructure',
+          path: '/resources/booking-systems-inside-website-infrastructure',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Conversion Architecture for Service Websites',
+          description:
+            'Learn how conversion architecture structures service business websites to turn visitors into booked customers through decision-path design and system integration.',
+          slug: 'conversion-architecture-for-service-websites',
+          path: '/resources/conversion-architecture-for-service-websites',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'salon-no-show-reduction-system': {
+      industries: [
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Nail Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for nail salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'nail-salons',
+          path: '/industries/beauty-personal-care/nail-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Lash Lift & Extensions — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for lash studios that need clearer booking flow, no-show reduction, review automation, and stronger local visibility to fill more appointments.',
+          slug: 'lash-lift-and-extensions',
+          path: '/industries/beauty-personal-care/lash-lift-and-extensions',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'Reducing Salon No-Shows with Automation',
+          description:
+            'See how salons use automated reminders, waitlist management, and smart deposit policies to cut no-show rates by 60-80% and recover thousands in monthly lost revenue.',
+          slug: 'reducing-salon-no-shows-with-automation',
+          path: '/resources/reducing-salon-no-shows-with-automation',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Tracking Salon Client Lifetime Value',
+          description:
+            'See how salons use CRM data to track client lifetime value, identify their most profitable client segments, and shift marketing investment toward channels that produce long-term relationships.',
+          slug: 'tracking-salon-client-lifetime-value',
+          path: '/resources/tracking-salon-client-lifetime-value',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Automotive CRM Pipeline for Repair Jobs',
+          description:
+            'See how auto repair shops implement CRM pipelines with workshop-specific stages that automate quote follow-ups, trigger parts ordering, and chain post-collection lifecycle automation for reviews and future bookings.',
+          slug: 'automotive-crm-pipeline-for-repair-jobs',
+          path: '/resources/automotive-crm-pipeline-for-repair-jobs',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'salon-review-generation-automation': {
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Hair Salons — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for hair salons that need clearer booking flow, reminder support, and stronger repeat-visit follow-up.',
+          slug: 'hair-salons',
+          path: '/industries/beauty-personal-care/hair-salons',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'Automotive Review Generation System',
+          description:
+            'See how auto repair shops generate trust-focused reviews timed to vehicle collection, use service-type segmentation for prompts, and build the online reputation that converts local searchers into customers.',
+          slug: 'automotive-review-generation-system',
+          path: '/resources/automotive-review-generation-system',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Customer Feedback Loop Framework',
+          description:
+            'Build a structured feedback loop that captures customer sentiment after every job, routes issues to private resolution, and drives continuous service improvement.',
+          slug: 'customer-feedback-loop-framework',
+          path: '/resources/customer-feedback-loop-framework',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Responding to Negative Reviews Systematically Guide',
+          description:
+            'Build a systematic process for handling negative reviews with professional templates, fast response times, and resolution follow-up that protects your reputation.',
+          slug: 'responding-to-negative-reviews-systematically',
+          path: '/resources/responding-to-negative-reviews-systematically',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'smart-website-infrastructure-implementation': {
+      industries: [
+        {
+          title: 'HVAC — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for HVAC companies that need clearer service booking, seasonal lead handling, and stronger maintenance follow-up.',
+          slug: 'hvac-companies',
+          path: '/industries/home-services/hvac-companies',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'How Smart Website Systems Work',
+          description:
+            'Learn how smart website systems connect lead capture, CRM, booking, and follow-up into one operational infrastructure for service businesses.',
+          slug: 'how-smart-website-systems-work',
+          path: '/resources/how-smart-website-systems-work',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Conversion Architecture for Service Websites',
+          description:
+            'Learn how conversion architecture structures service business websites to turn visitors into booked customers through decision-path design and system integration.',
+          slug: 'conversion-architecture-for-service-websites',
+          path: '/resources/conversion-architecture-for-service-websites',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Conversion Tracking for Service Businesses Guide',
+          description:
+            'Learn how to set up conversion tracking that connects website activity to CRM pipeline outcomes and measures which pages and channels produce paying customers.',
+          slug: 'conversion-tracking-for-service-businesses',
+          path: '/resources/conversion-tracking-for-service-businesses',
+          nodeType: 'resource',
+        },
+      ],
+    },
+    'storm-season-lead-handling-system': {
+      industries: [
+        {
+          title: 'Auto Repair — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for auto repair shops that need clearer diagnostics, estimate follow-up, and stronger local trust.',
+          slug: 'auto-repair',
+          path: '/industries/automotive-services/auto-repair',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Body Shops — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for body shops that need clearer assessment flow, estimate follow-up, and stronger local trust.',
+          slug: 'body-shops',
+          path: '/industries/automotive-services/body-shops',
+          nodeType: 'industry-detail',
+        },
+        {
+          title: 'Mobile Mechanics — Smart Website Systems | MindWP',
+          description:
+            'Smart Website systems for mobile mechanics that need clearer callout routing, booking support, and stronger local trust.',
+          slug: 'mobile-mechanics',
+          path: '/industries/automotive-services/mobile-mechanics',
+          nodeType: 'industry-detail',
+        },
+      ],
+      resources: [
+        {
+          title: 'Missed Call Recovery for Roofing',
+          description:
+            'See how roofing companies recover missed calls with automated SMS responses that capture lead details and convert unanswered calls into booked appointments.',
+          slug: 'missed-call-recovery-for-roofing',
+          path: '/resources/missed-call-recovery-for-roofing',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Build a 5-Minute Auto-Reply Funnel (SMS + Email Template)',
+          description:
+            'Set up automatic replies for enquiries in 5 minutes. Get more bookings with instant SMS and email responses that feel personal but run on autopilot.',
+          slug: 'auto-reply-funnel',
+          path: '/resources/auto-reply-funnel',
+          nodeType: 'resource',
+        },
+        {
+          title: 'Lead Response Time Framework',
+          description:
+            'Understand why lead response time determines conversion rates and how to build systems that respond in seconds instead of hours using automation and priority routing.',
+          slug: 'lead-response-time-framework',
+          path: '/resources/lead-response-time-framework',
+          nodeType: 'resource',
+        },
+      ],
+    },
+  },
+};
+
+export interface ConversionMeta {
+  conversionGoal: string;
+  conversionPriority: number;
+}
+
+export const CONVERSION_META: Record<string, ConversionMeta> = {
+  'ai-lead-handling': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  'bricks-builder': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  'conversion-funnel-system-vs-landing-page-development': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  'conversion-layer': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  'crm-infrastructure-implementation': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  divi5: {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  ecommerce: {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  elementor: {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  'lead-reactivation-system': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  'local-seo-authority': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  'missed-call-recovery-system': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'reputation-review-systems': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  'service-pages-vs-one-generic-services-page': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  'smart-website-systems': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  'system-migration-platform-consolidation': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  'unified-communication-system': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  'website-crm-integration-vs-manual-lead-handling': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  'website-redesign-system-rebuild': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  'wordpress-development': {
+    conversionGoal: 'consultation',
+    conversionPriority: 100,
+  },
+  aichat: {
+    conversionGoal: 'demo',
+    conversionPriority: 80,
+  },
+  calendars: {
+    conversionGoal: 'demo',
+    conversionPriority: 80,
+  },
+  crm: {
+    conversionGoal: 'demo',
+    conversionPriority: 80,
+  },
+  inbox: {
+    conversionGoal: 'demo',
+    conversionPriority: 80,
+  },
+  reputation: {
+    conversionGoal: 'demo',
+    conversionPriority: 80,
+  },
+  voicecalls: {
+    conversionGoal: 'demo',
+    conversionPriority: 80,
+  },
+  workflows: {
+    conversionGoal: 'demo',
+    conversionPriority: 80,
+  },
+  'accounting-firms': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'aesthetic-cosmetic-clinics': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'auto-repair': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'automotive-services': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'beauty-personal-care': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'body-shops': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'car-detailing': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  consultants: {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'dental-clinics': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'driving-schools': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'electrical-companies': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'hair-salons': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'home-inspectors': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'home-services': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'hvac-companies': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'landscaping-companies': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'lash-lift-and-extensions': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'legal-professional-services': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'local-appointment-businesses': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'mobile-mechanics': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'mortgage-brokers': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'nail-salons': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'plumbing-companies': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'property-managers': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'real-estate-property-services': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  realtors: {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'repair-shops': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'roofing-companies': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'small-law-firms': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'small-med-spas': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'small-private-clinics': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'tattoo-studios': {
+    conversionGoal: 'lead',
+    conversionPriority: 90,
+  },
+  'ai-reception-for-automotive-shops': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'authority-signals-for-local-search': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'authority-signals-for-salons': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'automotive-crm-pipeline-for-repair-jobs': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'automotive-review-generation-system': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'automotive-service-reminders-explained': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'autonomous-booking-systems-for-salons': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'booking-systems-for-salons-explained': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'building-revenue-visibility-through-crm-tracking': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'client-reactivation-for-salons': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'client-reactivation-systems-for-service-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'conversion-tracking-for-hvac-companies': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'conversion-tracking-for-service-businesses-explained': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'crm-pipeline-architecture-for-service-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'customer-feedback-loop-for-plumbing-companies': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'customer-feedback-loop-framework-for-service-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'future-crm-visibility-for-hvac-companies': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'future-local-seo-after-google-business-profile-automation': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'google-business-profile-for-hvac-companies': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'google-business-profile-system-architecture': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'how-ai-search-changes-local-business-visibility': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'how-review-automation-improves-local-authority': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'how-smart-website-systems-work-for-local-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'how-to-fix-lead-response-time-in-automotive-businesses-using-crm-automation': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'hvac-crm-pipeline-for-service-companies': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'hvac-emergency-call-handling-mistakes': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'hvac-local-visibility-system-for-service-areas': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'hvac-review-generation-framework': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'lead-automation-framework-for-service-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'lead-qualification-for-roofing-companies': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'lead-qualification-framework-for-service-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'lead-response-time-for-service-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'lead-routing-for-hvac-companies': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'lead-routing-models-for-service-companies': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'local-seo-for-roofing-companies-explained': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'local-seo-vs-website-optimization': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'local-service-page-architecture-for-local-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'local-service-page-architecture-for-roofing-companies': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'local-visibility-framework-for-service-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'missed-call-recovery-for-service-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'multi-channel-lead-capture-for-salons': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'multi-channel-lead-capture-system-for-service-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'negative-reviews-for-auto-repair-shops': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'plumbing-crm-pipeline-for-job-management': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'realtor-local-visibility-system-for-lead-generation': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'reducing-salon-no-shows-with-automation': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'reputation-monitoring-systems-for-service-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'responding-to-negative-reviews-systematically': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'revenue-visibility-for-roofing-companies': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'review-automation-for-hvac-companies': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'review-automation-for-roofing-companies': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'review-automation-for-salons': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'review-generation-system-for-local-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'roofing-crm-pipeline-for-estimates': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'roofing-estimate-follow-up-delays': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'roofing-review-generation-system': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'sales-pipeline-visibility-for-hvac-companies': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'sales-pipeline-visibility-framework': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'salon-crm-pipeline-for-client-retention': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'salon-review-generation-framework': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'service-business-follow-up-automation': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'service-page-architecture-for-service-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'smart-website-systems-for-roofing-companies': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'systems-first-website-for-hvac-companies': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'tracking-customer-lifetime-value-using-crm': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'tracking-salon-client-lifetime-value': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'website-crm-integration-for-salons': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'website-crm-integration-for-service-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'website-design-that-supports-crm-systems': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'what-is-a-systems-first-website-for-service-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-auto-repair-missed-calls-lose-booked-work': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-auto-repair-shops-lose-phone-leads': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-booking-systems-need-website-infrastructure': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-hvac-companies-disappear-from-local-search': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-hvac-companies-lose-leads-after-hours': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-hvac-missed-calls-lose-after-hours-revenue': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-plumbing-companies-lose-jobs-without-crm-pipeline': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-realtors-lose-leads-without-local-visibility': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-roofing-companies-lose-jobs-without-review-automation': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-roofing-companies-lose-leads-during-storm-season': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-roofing-missed-calls-cost-emergency-jobs': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-salons-lose-calls-during-service-hours': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-salons-lose-clients-without-crm-pipeline': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-salons-lose-clients-without-review-automation': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-salons-need-lead-handling-systems': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-service-business-websites-fail-to-convert': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-slow-lead-response-is-killing-automotive-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'why-slow-lead-response-is-killing-hvac-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 40,
+  },
+  'auto-repair-lead-handling-example': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'auto-reply-funnel': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'automotive-service-reminder-automation': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'booking-systems-inside-website-infrastructure': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'client-reactivation-systems': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'conversion-architecture-for-service-websites': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'conversion-tracking-for-service-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'crm-pipeline-architecture': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'crm-pipeline-automation': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'crm-pipeline-setup-guide-for-plumbing-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'crm-pipeline-setup-guide-for-salons': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'customer-feedback-loop-framework': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'designing-websites-that-support-crm-systems': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'how-smart-website-systems-work': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'hvac-crm-pipeline-structure': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'hvac-emergency-call-handling-system': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'hvac-lead-handling-example': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'lead-automation-framework': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'lead-qualification-framework': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'lead-response-optimization-checklist-for-hvac-businesses': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'lead-response-time-framework': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'local-service-page-architecture': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'local-visibility-framework': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'local-visibility-optimization-guide-for-hvac-companies': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'local-visibility-optimization-guide-for-realtors': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'missed-call-recovery-for-auto-repair': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'missed-call-recovery-for-hvac': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'missed-call-recovery-for-roofing': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'missed-call-recovery-for-salons': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'multi-channel-lead-capture-systems': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'reputation-monitoring-systems': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'review-automation-setup-guide-for-roofing-companies': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'review-automation-setup-guide-for-salons': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'review-generation-system': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'roofing-crm-pipeline-structure': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'roofing-estimate-follow-up-workflow': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'roofing-lead-handling-example': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'salon-lead-handling-example': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'service-business-follow-up-automation-guide': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'service-page-architecture-that-converts': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'website-crm-integration-explained': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'what-is-a-systems-first-website': {
+    conversionGoal: 'email-capture',
+    conversionPriority: 50,
+  },
+  'appointment-business-booking-automation': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'appointment-reminder-no-show-reduction': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'auto-repair-missed-call-recovery': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'beauty-salon-online-booking-local-seo-manchester-all-sections': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'beauty-salon-online-booking-local-seo-manchester-custom': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'crm-pipeline-visibility-transformation': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'hvac-emergency-lead-routing': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'hvac-maintenance-plan-reactivation': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'hvac-seasonal-lead-surge-handling': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'law-firm-client-intake-automation': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'law-firm-consultation-booking-system': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'local-authority-system-impact': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'real-estate-inquiry-routing': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'realtor-lead-follow-up-automation': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'roofing-estimate-follow-up-automation': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'roofing-website-rebuild-with-crm': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'salon-booking-automation': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'salon-no-show-reduction-system': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'salon-review-generation-automation': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'smart-website-infrastructure-implementation': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+  'storm-season-lead-handling-system': {
+    conversionGoal: 'consultation',
+    conversionPriority: 70,
+  },
+};
