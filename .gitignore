@@ -46,3 +46,4 @@ coverage/
 # Generated caches (build-time precomputation)
 src/lib/generated/resolverCache.json
 src/lib/generated/authorityScores.json
+*.zip
